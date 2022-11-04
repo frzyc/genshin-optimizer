@@ -18,7 +18,7 @@ const elementKey: ElementKey = "cryo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1.1
@@ -66,41 +66,40 @@ const datamine = {
 
 const [condCoilPath, condCoil] = cond(key, "coil")
 const normal_dmg_ = lookup(condCoil, {
-  "coil1": subscript(input.total.skillIndex, datamine.skill.coilNormalDmgBonus1, { unit: "%" }),
-  "coil2": subscript(input.total.skillIndex, datamine.skill.coilNormalDmgBonus2, { unit: "%" }),
-  "coil3": subscript(input.total.skillIndex, datamine.skill.coilNormalDmgBonus3, { unit: "%" }),
-  "rush": subscript(input.total.skillIndex, datamine.skill.rushingNormalDmgBonus, { unit: "%" })
+  "coil1": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, { unit: "%" }),
+  "coil2": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, { unit: "%" }),
+  "coil3": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, { unit: "%" }),
+  "rush": subscript(input.total.skillIndex, dm.skill.rushingNormalDmgBonus, { unit: "%" })
 }, naught)
-const atk_ = greaterEq(input.asc, 1, unequal(condCoil, undefined, percent(datamine.passive1.atkInc)))
+const atk_ = greaterEq(input.asc, 1, unequal(condCoil, undefined, percent(dm.passive1.atkInc)))
 
 const [condA1Path, condA1] = cond(key, "A1")
 const teamAtk_ = greaterEq(input.asc, 1, equal(condA1, "on",
-  unequal(input.activeCharKey, key, percent(datamine.passive1.teamAtkInc))))
+  unequal(input.activeCharKey, key, percent(dm.passive1.teamAtkInc))))
 
 const [condA4Path, condA4] = cond(key, "A4")
 const cryo_dmg_ = greaterEq(input.asc, 4,
-  lookup(condA4, Object.fromEntries(range(1, 10).map(i => [i, percent(datamine.passive2.cryoDmgBonus * i)])), naught))
+  lookup(condA4, Object.fromEntries(range(1, 10).map(i => [i, percent(dm.passive2.cryoDmgBonus * i)])), naught))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal", {
       hit: {
         ele: compareEq("rush", condCoil, elementKey, "physical")
       }
     })])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('cryo') } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    freezeBombDmg: dmgNode("atk", datamine.skill.freezeBombDmg, "skill"),
-    chillWaterBomblets: dmgNode("atk", datamine.skill.chillWaterBomblets, "skill"),
-    atkDecrease: subscript(input.total.skillIndex, datamine.skill.atkDecrease)
+    freezeBombDmg: dmgNode("atk", dm.skill.freezeBombDmg, "skill"),
+    chillWaterBomblets: dmgNode("atk", dm.skill.chillWaterBomblets, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
   },
 }
 
@@ -130,7 +129,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i === 0 ? 0 : -1)}`), textSuffix: i === 0 ? "(1)" : i === 1 ? "(2)" : "" }),
       }))
     }, {
@@ -159,14 +158,14 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.chillWaterBomblets, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.atkDecrease, { name: ct.chg(`skill.skillParams.2_`) }),
+        node: subscript(input.total.skillIndex, dm.skill.atkDecrease, { name: ct.chg(`skill.skillParams.2`), unit: "%" }),
       }, {
         text: ct.chg("skill.skillParams.3"),
-        value: `${datamine.skill.atkDecreaseDuration}`,
+        value: `${dm.skill.atkDecreaseDuration}`,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.7"),
-        value: `${datamine.skill.cd}`,
+        value: `${dm.skill.cd}`,
         unit: "s"
       }]
     }, ct.condTem("skill", {
@@ -200,7 +199,7 @@ const sheet: ICharacterSheet = {
             text: ct.ch("normCryoInfus"),
           }, {
             text: ct.chg("skill.skillParams.6"),
-            value: datamine.skill.rushingDuration,
+            value: dm.skill.rushingDuration,
             unit: "s"
           }]
         },
@@ -212,11 +211,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }]),
 
@@ -225,7 +224,7 @@ const sheet: ICharacterSheet = {
         node: atk_
       }, {
         text: stg("duration"),
-        value: datamine.passive1.duration,
+        value: dm.passive1.duration,
         unit: "s"
       }]
     }), ct.condTem("passive1", {
@@ -240,7 +239,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(teamAtk_, KeyMap.info("atk_"))
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s"
           }]
         }

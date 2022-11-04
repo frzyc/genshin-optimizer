@@ -16,7 +16,7 @@ const data_gen = data_gen_src as CharacterData
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -69,7 +69,7 @@ const datamine = {
 } as const
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const normalEle_dmg_ = equal(condAfterBurst, "on", percent(datamine.burst.dmg_bonus_), KeyMap.info("normalEle_dmg_"))
+const normalEle_dmg_ = equal(condAfterBurst, "on", percent(dm.burst.dmg_bonus_), KeyMap.info("normalEle_dmg_"))
 
 const hydroInfusion = equalStr(condAfterBurst, "on",
   lookup(target.weaponType,
@@ -77,7 +77,7 @@ const hydroInfusion = equalStr(condAfterBurst, "on",
 
 const a4_normalEle_dmg_ = greaterEq(input.asc, 4, equal(condAfterBurst, "on",
   prod(
-    percent(datamine.passive2.normalEle_dmg_),
+    percent(dm.passive2.normalEle_dmg_),
     input.total.hp,
     1 / 1000
   )
@@ -85,26 +85,26 @@ const a4_normalEle_dmg_ = greaterEq(input.asc, 4, equal(condAfterBurst, "on",
 
 const [condC2AfterSkillHitPath, condC2AfterSkillHit] = cond(key, "c2AfterSkillHit")
 const c2_hp_ = greaterEq(input.constellation, 2,
-  equal(condC2AfterSkillHit, "on", percent(datamine.constellation2.hp_))
+  equal(condC2AfterSkillHit, "on", percent(dm.constellation2.hp_))
 )
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
   skill: {
-    shield: shieldNodeTalent("hp", datamine.skill.shield_hp_, datamine.skill.shield_base, "skill"),
-    hydroShield: shieldElement("hydro", shieldNodeTalent("hp", datamine.skill.shield_hp_, datamine.skill.shield_base, "skill")),
-    basicDmg: dmgNode("hp", datamine.skill.basic_dmg, "skill"),
-    chargedDmg: dmgNode("hp", datamine.skill.charged_dmg, "skill"),
+    shield: shieldNodeTalent("hp", dm.skill.shield_hp_, dm.skill.shield_base, "skill"),
+    hydroShield: shieldElement("hydro", shieldNodeTalent("hp", dm.skill.shield_hp_, dm.skill.shield_base, "skill")),
+    basicDmg: dmgNode("hp", dm.skill.basic_dmg, "skill"),
+    chargedDmg: dmgNode("hp", dm.skill.charged_dmg, "skill"),
   },
   burst: {
-    skillDmg: dmgNode("hp", datamine.burst.skill_dmg, "burst"),
-    waveDmg: dmgNode("hp", datamine.burst.wave_dmg, "burst"),
+    skillDmg: dmgNode("hp", dm.burst.skill_dmg, "burst"),
+    waveDmg: dmgNode("hp", dm.burst.wave_dmg, "burst"),
   },
   passive2: {
     normalEle_dmg_: a4_normalEle_dmg_
@@ -112,7 +112,7 @@ const dmgFormulas = {
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
       prod(
-        datamine.constellation6.dmg,
+        dm.constellation6.dmg,
         input.total.hp
       ), "burst"
     ))
@@ -152,7 +152,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 3 ? 0 : -1)}`), textSuffix: i === 2 || i === 3 ? `(${i - 1})` : "" }),
       }))
     }, {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         text: ct.chg("auto.skillParams.5"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -187,13 +187,13 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.chargedDmg, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
         text: st("pressCD"),
-        value: datamine.skill.pressCd,
+        value: dm.skill.pressCd,
         unit: 's'
       }, {
         text: st("holdCD"),
         value: (data) => data.get(input.constellation).value >= 4
-          ? datamine.skill.pressCd
-          : datamine.skill.holdCd,
+          ? dm.skill.pressCd
+          : dm.skill.holdCd,
         unit: 's'
       }]
     }, ct.condTem("constellation2", {
@@ -207,7 +207,7 @@ const sheet: ICharacterSheet = {
             node: c2_hp_
           }, {
             text: stg("duration"),
-            value: datamine.constellation2.duration,
+            value: dm.constellation2.duration,
             unit: "s"
           }]
         }
@@ -221,14 +221,14 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.waveDmg, { name: ct.chg(`burst.skillParams.3`) })
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.num_waves,
+        value: dm.burst.num_waves,
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.cost,
+        value: dm.burst.cost,
       }]
     }, ct.condTem("burst", {
       path: condAfterBurstPath,
@@ -244,8 +244,8 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: (data) => data.get(input.constellation).value >= 1
-              ? `${datamine.burst.duration}s + ${datamine.constellation1.durationInc}s = ${datamine.burst.duration + datamine.constellation1.durationInc}`
-              : datamine.burst.duration,
+              ? `${dm.burst.duration}s + ${dm.constellation1.durationInc}s = ${dm.burst.duration + dm.constellation1.durationInc}`
+              : dm.burst.duration,
             unit: "s"
           }]
         }
@@ -273,7 +273,7 @@ const sheet: ICharacterSheet = {
             node: c2_hp_
           }, {
             text: stg("duration"),
-            value: datamine.constellation2.duration,
+            value: dm.constellation2.duration,
             unit: "s"
           }]
         }

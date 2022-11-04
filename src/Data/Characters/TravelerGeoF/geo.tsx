@@ -18,7 +18,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   const [, ch] = trans("char", condCharKey)
 
   let s = 0, b = 0
-  const datamine = {
+  const dm = {
     skill: {
       dmg: skillParam_gen.skill[s++],
       duration: skillParam_gen.skill[s++][0],
@@ -52,15 +52,15 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
 
   const [condC1BurstAreaPath, condC1BurstArea] = cond(condCharKey, `${elementKey}C1BurstArea`)
   const c1BurstArea_critRate_Disp = greaterEq(input.constellation, 1,
-    equal(condC1BurstArea, "on", datamine.constellation1.critRate_)
+    equal(condC1BurstArea, "on", dm.constellation1.critRate_)
   )
   const c1BurstArea_critRate_ = equal(input.activeCharKey, target.charKey, c1BurstArea_critRate_Disp)
 
   const [condC4BurstHitPath, condC4BurstHit] = cond(condCharKey, `${elementKey}C4BurstHit`)
   const c4Burst_energyRestore = lookup(condC4BurstHit,
-    Object.fromEntries(range(1, datamine.constellation4.maxTriggers).map(stack => [
+    Object.fromEntries(range(1, dm.constellation4.maxTriggers).map(stack => [
       stack,
-      constant(stack * datamine.constellation4.energyRestore)
+      constant(stack * dm.constellation4.energyRestore)
     ])),
     naught
   )
@@ -68,18 +68,18 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+      dmg: dmgNode("atk", dm.skill.dmg, "skill"),
     },
     burst: {
-      dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+      dmg: dmgNode("atk", dm.burst.dmg, "burst"),
     },
     passive2: {
       dmg: customDmgNode(
-        prod(input.total.atk, datamine.passive2.geoDmg), "elemental", { hit: { ele: constant("geo") } }
+        prod(input.total.atk, dm.passive2.geoDmg), "elemental", { hit: { ele: constant("geo") } }
       )
     },
     constellation2: {
-      dmg: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg, "skill")),
+      dmg: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill")),
     }
   } as const
 
@@ -105,20 +105,20 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: data => data.get(input.constellation).value >= 6
-          ? `${datamine.skill.duration}s + ${datamine.constellation6.skillDuration}s = ${datamine.skill.duration + datamine.constellation6.skillDuration}`
-          : datamine.skill.duration,
+          ? `${dm.skill.duration}s + ${dm.constellation6.skillDuration}s = ${dm.skill.duration + dm.constellation6.skillDuration}`
+          : dm.skill.duration,
         unit: "s",
       }, {
         text: stg("cd"),
         value: data => data.get(input.asc).value >= 1
-          ? `${datamine.skill.cd}s - ${datamine.passive1.skill_cdRed}s = ${datamine.skill.cd - datamine.passive1.skill_cdRed}`
-          : datamine.skill.cd,
+          ? `${dm.skill.cd}s - ${dm.passive1.skill_cdRed}s = ${dm.skill.cd - dm.passive1.skill_cdRed}`
+          : dm.skill.cd,
         unit: "s",
       }]
     }, ct.headerTem("passive1", {
       fields: [{
         text: st("skillCDRed"),
-        value: datamine.passive1.skill_cdRed,
+        value: dm.passive1.skill_cdRed,
         unit: "s"
       }]
     }), ct.headerTem("constellation2", {
@@ -128,7 +128,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     }), ct.headerTem("constellation6", {
       fields: [{
         text: st("durationInc"),
-        value: datamine.constellation6.skillDuration,
+        value: dm.constellation6.skillDuration,
         unit: "s"
       }]
     })]),
@@ -137,21 +137,21 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       fields: [{
         node: infoMut(dmgFormulas.burst.dmg, {
           name: stg(`skillDMG`),
-          multi: datamine.burst.numShockwaves,
+          multi: dm.burst.numShockwaves,
         }),
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: data => data.get(input.constellation).value >= 6
-          ? `${datamine.burst.duration}s + ${datamine.constellation6.burstDuration}s = ${datamine.burst.duration + datamine.constellation6.burstDuration}`
-          : datamine.burst.duration,
+          ? `${dm.burst.duration}s + ${dm.constellation6.burstDuration}s = ${dm.burst.duration + dm.constellation6.burstDuration}`
+          : dm.burst.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("constellation1", {
       value: condC1BurstArea,
@@ -171,7 +171,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       value: condC4BurstHit,
       path: condC4BurstHitPath,
       name: st("hitOp.burst"),
-      states: Object.fromEntries(range(1, datamine.constellation4.maxTriggers).map(stack => [
+      states: Object.fromEntries(range(1, dm.constellation4.maxTriggers).map(stack => [
         stack,
         {
           name: st("hits", { count: stack }),
@@ -183,7 +183,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     }), ct.headerTem("constellation6", {
       fields: [{
         text: st("durationInc"),
-        value: datamine.constellation6.burstDuration,
+        value: dm.constellation6.burstDuration,
         unit: "s"
       }]
     })]),

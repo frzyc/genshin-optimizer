@@ -16,7 +16,7 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
   const [, ch] = trans("char", condCharKey)
   let s = 0, b = 0
-  const datamine = {
+  const dm = {
     skill: {
       dmg: skillParam_gen.skill[s++],
       energyRestore: skillParam_gen.skill[s++],
@@ -57,36 +57,36 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
 
   const [condSkillAmuletPath, condSkillAmulet] = cond(condCharKey, `${elementKey}SkillAmulet`)
   const p2_enerRech_ = greaterEq(input.asc, 4,
-    prod(input.premod.enerRech_, percent(datamine.passive2.enerRech_))
+    prod(input.premod.enerRech_, percent(dm.passive2.enerRech_))
   )
   const skillAmulet_enerRech_Disp = equal(condSkillAmulet, "on",
     sum(
-      percent(datamine.skill.enerRech_),
+      percent(dm.skill.enerRech_),
       p2_enerRech_
     )
   )
   const skillAmulet_enerRech_ = equal(input.activeCharKey, target.charKey, skillAmulet_enerRech_Disp)
 
-  const burstEnergyRestore = subscript(input.total.burstIndex, datamine.burst.energyRestore,
+  const burstEnergyRestore = subscript(input.total.burstIndex, dm.burst.energyRestore,
     { name: ct.chg(`burst.skillParmas.2`) }
   )
 
   const [condC2ThunderPath, condC2Thunder] = cond(condCharKey, `${elementKey}C2Thunder`)
   const c2Thunder_electro_enemyRes_ = greaterEq(input.constellation, 2,
-    equal(condC2Thunder, "on", datamine.constellation2.electro_enemyRes)
+    equal(condC2Thunder, "on", dm.constellation2.electro_enemyRes)
   )
 
   const [condC6After2ThunderPath, condC6After2Thunder] = cond(condCharKey, `${elementKey}C6After2Thunder`)
-  const c6_thunder_dmg_ = greaterEq(input.constellation, 6, equal(condC6After2Thunder, "on", datamine.constellation6.thunder_dmg_))
+  const c6_thunder_dmg_ = greaterEq(input.constellation, 6, equal(condC6After2Thunder, "on", dm.constellation6.thunder_dmg_))
 
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+      dmg: dmgNode("atk", dm.skill.dmg, "skill"),
     },
     burst: {
-      pressDmg: dmgNode("atk", datamine.burst.pressDmg, "burst"),
-      thunderDmg: dmgNode("atk", datamine.burst.thunderDmg, "burst",
+      pressDmg: dmgNode("atk", dm.burst.pressDmg, "burst"),
+      thunderDmg: dmgNode("atk", dm.burst.thunderDmg, "burst",
         { premod: { burst_dmg_: c6_thunder_dmg_ } })
     }
   } as const
@@ -116,15 +116,15 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
       }, {
         text: ch("skill.amuletGenAmt"),
         value: data => data.get(input.constellation).value >= 1
-          ? datamine.skill.amulets + datamine.constellation1.addlAmulets
-          : datamine.skill.amulets
+          ? dm.skill.amulets + dm.constellation1.addlAmulets
+          : dm.skill.amulets
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.amuletDuration,
+        value: dm.skill.amuletDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
         fixed: 1
       }]
@@ -136,14 +136,14 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
       states: {
         on: {
           fields: [{
-            node: subscript(input.total.skillIndex, datamine.skill.energyRestore,
+            node: subscript(input.total.skillIndex, dm.skill.energyRestore,
               { name: ct.chg(`skill.skillParams.1`) }
             )
           }, {
             node: infoMut(skillAmulet_enerRech_Disp, KeyMap.info("enerRech_"))
           }, {
             text: stg("duration"),
-            value: datamine.skill.enerRech_duration,
+            value: dm.skill.enerRech_duration,
             unit: "s"
           }]
         }
@@ -169,22 +169,22 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
         )
       }, {
         text: ch("burst.thunderCd"),
-        value: datamine.burst.thunderCd,
+        value: dm.burst.thunderCd,
         unit: "s",
         fixed: 1
       }, {
         node: infoMut(burstEnergyRestore, { name: ct.chg(`burst.skillParams.2`) })
       }, {
         text: stg("duration"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("constellation2", {
       value: condC2Thunder,
@@ -197,7 +197,7 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
             node: c2Thunder_electro_enemyRes_
           }, {
             text: stg("duration"),
-            value: datamine.constellation2.duration,
+            value: dm.constellation2.duration,
             unit: "s"
           }]
         }
@@ -214,7 +214,7 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
             )
           }, {
             text: ct.chg("burst.skillParams.2"),
-            value: datamine.constellation6.energyRestore
+            value: dm.constellation6.energyRestore
           }]
         }
       }

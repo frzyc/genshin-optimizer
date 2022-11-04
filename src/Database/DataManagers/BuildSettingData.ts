@@ -33,10 +33,9 @@ export interface BuildSetting {
 export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSettings", BuildSetting, BuildSetting>{
   constructor(database: ArtCharDatabase) {
     super(database, "buildSettings")
-    for (const key of this.database.storage.keys) {
+    for (const key of this.database.storage.keys)
       if (key.startsWith("buildSetting_") && !this.set(key.split("buildSetting_")[1] as CharacterKey, {}))
         this.database.storage.remove(key)
-    }
   }
   toStorageKey(key: string): string {
     return `buildSetting_${key}`
@@ -70,8 +69,24 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   }
 
   set(key: CharacterKey, value: BuildSettingReducerAction) {
-    const oldState = this.get(key) as BuildSetting
-    return super.set(key, buildSettingsReducer(oldState, value))
+    // TODO:
+    // This is the same code as `super.set` with `buildSettingsReducer`
+    // replacing simple object merging. Refactor so that we don't need
+    // this replication.
+    const old = this.getStorage(key)
+    const validated = this.validate(buildSettingsReducer(old, value), key)
+    if (!validated) {
+      this.trigger(key, "invalid", value)
+      return false
+    }
+    const cached = this.toCache(validated, key)
+    if (!cached) {
+      this.trigger(key, "invalid", value)
+      return false
+    }
+    if (!old) this.trigger(key, "new", cached)
+    this.setCached(key, cached)
+    return true
   }
 }
 type BSMainStatKey = {

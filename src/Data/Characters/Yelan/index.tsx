@@ -18,7 +18,7 @@ const elementKey: ElementKey = "hydro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -79,25 +79,25 @@ const datamine = {
   }
 }
 
-const a1_hp_ = greaterEq(input.asc, 1, subscript(tally.ele, datamine.passive1.hp_Arr))
+const a1_hp_ = greaterEq(input.asc, 1, subscript(tally.ele, dm.passive1.hp_Arr))
 
 const [condA4StacksPath, condA4Stacks] = cond(key, "a4Stacks")
-const a4Stacks = range(0, datamine.passive2.maxStacks)
+const a4Stacks = range(0, dm.passive2.maxStacks)
 const a4Dmg_Disp = greaterEq(input.asc, 4,
   lookup(condA4Stacks, Object.fromEntries(a4Stacks.map(stacks => [
     stacks,
-    sum(percent(datamine.passive2.baseDmg_), prod(stacks, percent(datamine.passive2.stackDmg_)))
+    sum(percent(dm.passive2.baseDmg_), prod(stacks, percent(dm.passive2.stackDmg_)))
   ])),
     naught)
 )
 const a4Dmg = equal(target.charKey, input.activeCharKey, a4Dmg_Disp)
 
 const [condC4StacksPath, condC4Stacks] = cond(key, "c4Stacks")
-const c4Stacks = range(1, datamine.constellation4.maxStacks)
+const c4Stacks = range(1, dm.constellation4.maxStacks)
 const c4Hp_ = greaterEq(input.constellation, 4,
   lookup(condC4Stacks, Object.fromEntries(c4Stacks.map(stacks => [
     stacks,
-    prod(stacks, percent(datamine.constellation4.bonusHp_))
+    prod(stacks, percent(dm.constellation4.bonusHp_))
   ])),
     naught)
 )
@@ -107,26 +107,26 @@ const c6Active = greaterEq(input.constellation, 6, equal(condC6Active, "on", 1))
 
 const hitEle = { hit: { ele: constant(elementKey) } }
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, unequal(c6Active, 1, dmgNode("atk", arr, "normal"))])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", hitEle),
-    barb: dmgNode("hp", datamine.charged.barb, "charged", hitEle),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", hitEle),
+    barb: dmgNode("hp", dm.charged.barb, "charged", hitEle),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("hp", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("hp", dm.skill.dmg, "skill"),
   },
   burst: {
-    pressDmg: dmgNode("hp", datamine.burst.pressDmg, "burst"),
-    throwDmg: dmgNode("hp", datamine.burst.throwDmg, "burst"),
+    pressDmg: dmgNode("hp", dm.burst.pressDmg, "burst"),
+    throwDmg: dmgNode("hp", dm.burst.throwDmg, "burst"),
   },
   constellation2: {
     arrowDmg: greaterEq(input.constellation, 2, customDmgNode(
       prod(
-        percent(datamine.constellation2.arrowDmg_),
+        percent(dm.constellation2.arrowDmg_),
         input.total.hp
       ),
       "burst",
@@ -136,8 +136,8 @@ const dmgFormulas = {
   constellation6: {
     barbDmg: equal(c6Active, 1, customDmgNode(
       prod(
-        subscript(input.total.autoIndex, datamine.charged.barb, { unit: "%" }),
-        percent(datamine.constellation6.dmg_),
+        subscript(input.total.autoIndex, dm.charged.barb, { unit: "%" }),
+        percent(dm.constellation6.dmg_),
         input.total.hp
       ),
       "charged",
@@ -178,7 +178,7 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal"),
     }, {
       canShow: unequal(c6Active, 1, 1),
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
           name: ct.chg(`auto.skillParams.${i}`),
           multi: i === 3 ? 2 : undefined,
@@ -194,10 +194,10 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.constellation6.barbDmg, { name: ct.ch("c6.dmg") }),
           }, {
             text: st("charges"),
-            value: datamine.constellation6.charges,
+            value: dm.constellation6.charges,
           }, {
             text: stg("duration"),
-            value: datamine.constellation6.duration
+            value: dm.constellation6.duration
           }]
         }
       }
@@ -232,11 +232,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.1"),
-        value: datamine.skill.maxDuration,
+        value: dm.skill.maxDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }, {
         canShow: (data) => data.get(input.constellation).value >= 1,
@@ -246,7 +246,7 @@ const sheet: ICharacterSheet = {
     }, ct.headerTem("constellation1", {
       fields: [{
         text: st("addlCharge"),
-        value: datamine.constellation1.addlCharge,
+        value: dm.constellation1.addlCharge,
       }]
     }), ct.condTem("constellation4", {
       path: condC4StacksPath,
@@ -261,7 +261,7 @@ const sheet: ICharacterSheet = {
             node: c4Hp_,
           }, {
             text: stg("duration"),
-            value: datamine.constellation4.duration,
+            value: dm.constellation4.duration,
             unit: "s"
           }]
         }
@@ -275,15 +275,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.throwDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: stg("duration"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("passive2", {
       path: condA4StacksPath,
@@ -304,7 +304,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.constellation2.arrowDmg, { name: ct.ch("c2.dmg") })
       }, {
         text: stg("cd"),
-        value: datamine.constellation2.cd,
+        value: dm.constellation2.cd,
         unit: "s",
         fixed: 1,
       }]

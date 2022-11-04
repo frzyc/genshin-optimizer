@@ -19,7 +19,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   let s = 0, b = 0
-  const datamine = {
+  const dm = {
     skill: {
       initial_dmg: skillParam_gen.skill[s++],
       initial_max: skillParam_gen.skill[s++],
@@ -52,21 +52,21 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
 
   const [condSkillAbsorptionPath, condSkillAbsorption] = cond(condCharKey, "skillAbsorption")
   const [condBurstAbsorptionPath, condBurstAbsorption] = cond(condCharKey, `${elementKey}BurstAbsorption`)
-  const nodeC2 = greaterEq(input.constellation, 2, datamine.constellation2.enerRech_)
+  const nodeC2 = greaterEq(input.constellation, 2, dm.constellation2.enerRech_)
   const [condC6Path, condC6] = cond(condCharKey, `${elementKey}C6Hit`)
-  const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", datamine.constellation6.enemyRes_))
-  const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, greaterEq(input.constellation, 6, equal(condC6, "on", equal(condBurstAbsorption, ele, datamine.constellation6.enemyRes_)))])
+  const nodeC6 = greaterEq(input.constellation, 6, equal(condC6, "on", dm.constellation6.enemyRes_))
+  const nodesC6 = objectKeyValueMap(absorbableEle, ele => [`${ele}_enemyRes_`, greaterEq(input.constellation, 6, equal(condC6, "on", equal(condBurstAbsorption, ele, dm.constellation6.enemyRes_)))])
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      initial_dmg: dmgNode("atk", datamine.skill.initial_dmg, "skill"),
-      initial_max: dmgNode("atk", datamine.skill.initial_max, "skill"),
+      initial_dmg: dmgNode("atk", dm.skill.initial_dmg, "skill"),
+      initial_max: dmgNode("atk", dm.skill.initial_max, "skill"),
       initial_ele_dmg: unequal(condSkillAbsorption, undefined, customDmgNode(
         prod(
           infoMut(
             prod(
-              datamine.skill.ele_dmg,
-              subscript(input.total.skillIndex, datamine.skill.initial_dmg),
+              dm.skill.ele_dmg,
+              subscript(input.total.skillIndex, dm.skill.initial_dmg),
             ), { asConst: true, unit: "%" }
           ),
           input.total.atk
@@ -76,25 +76,25 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         prod(
           infoMut(
             prod(
-              datamine.skill.ele_dmg,
-              subscript(input.total.skillIndex, datamine.skill.initial_max),
+              dm.skill.ele_dmg,
+              subscript(input.total.skillIndex, dm.skill.initial_max),
             ), { asConst: true, unit: "%" }
           ),
           input.total.atk
         ), "skill", { hit: { ele: condSkillAbsorption } }
       )),
-      storm_dmg: dmgNode("atk", datamine.skill.storm_dmg, "skill"),
-      storm_max: dmgNode("atk", datamine.skill.storm_max, "skill"),
+      storm_dmg: dmgNode("atk", dm.skill.storm_dmg, "skill"),
+      storm_max: dmgNode("atk", dm.skill.storm_max, "skill"),
     },
     burst: {
-      dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-      absorb: dmgNode("atk", datamine.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } }),
+      dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+      absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", dm.burst.absorbDmg, "burst", { hit: { ele: condBurstAbsorption } })),
     },
     passive1: {
-      dmg: greaterEq(input.asc, 1, customDmgNode(prod(input.total.atk, datamine.passive1.dmg), "elemental", { hit: { ele: constant(elementKey) } })),
+      dmg: greaterEq(input.asc, 1, customDmgNode(prod(input.total.atk, dm.passive1.dmg), "elemental", { hit: { ele: constant(elementKey) } })),
     },
     passive2: {
-      heal: greaterEq(input.asc, 2, customHealNode(prod(percent(datamine.passive2.heal_), input.total.hp))),
+      heal: greaterEq(input.asc, 2, customHealNode(prod(percent(dm.passive2.heal_), input.total.hp))),
     }
   } as const
 
@@ -128,11 +128,11 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         node: infoMut(dmgFormulas.skill.storm_max, { name: ct.chg(`skill.skillParams.3`) }),
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.skill.maxCd,
+        value: dm.skill.maxCd,
         unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 4,
@@ -159,15 +159,15 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", {
       value: condBurstAbsorption,

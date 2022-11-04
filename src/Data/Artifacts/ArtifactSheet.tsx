@@ -1,4 +1,3 @@
-import { ArtifactSlotKey } from "pipeline";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
@@ -97,7 +96,7 @@ export class ArtifactSheet {
   }
   hasEnough = (setNum: SetNum, data: UIData) => (data.get(input.artSet[this.key]).value ?? 0) >= setNum
 }
-export const setHeaderTemplate = (setKey: ArtifactSetKey, icons: Partial<Record<ArtifactSlotKey, string>>): ((setNum: SetNum) => IDocumentHeader) => {
+export const setHeaderTemplate = (setKey: ArtifactSetKey, icons: Partial<Record<SlotKey, string>>): ((setNum: SetNum) => IDocumentHeader) => {
   const tr = (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
   return (setNum: SetNum) => ({
     title: tr("setName"),

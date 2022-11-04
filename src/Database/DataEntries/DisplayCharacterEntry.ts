@@ -1,5 +1,4 @@
-import { WeaponTypeKey } from "pipeline";
-import { allElements, allWeaponTypeKeys, ElementKey } from "../../Types/consts";
+import { allElements, allWeaponTypeKeys, ElementKey, WeaponTypeKey } from "../../Types/consts";
 import { CharacterSortKey, characterSortKeys } from "../../Util/CharacterSort";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";

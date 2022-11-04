@@ -18,7 +18,7 @@ const elementKey: ElementKey = "pyro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -82,39 +82,39 @@ const datamine = {
 
 const [condAfterlifePath, condAfterlife] = cond(key, "GuideToAfterlifeVoyage")
 const atk = equal("on", condAfterlife, min(
-  prod(subscript(input.total.skillIndex, datamine.skill.atkInc), input.premod.hp),
-  prod(percent(datamine.skill.maxAtkInc), input.base.atk)))
+  prod(subscript(input.total.skillIndex, dm.skill.atkInc), input.premod.hp),
+  prod(percent(dm.skill.maxAtkInc), input.base.atk)))
 const infusion = equalStr("on", condAfterlife, elementKey)
 
 const [condA1Path, condA1] = cond(key, "FlutterBy")
-const critRateTeam_1 = equal("on", condA1, unequal(input.activeCharKey, input.charKey, percent(datamine.passive1.critRateInc), KeyMap.info("critRate_")))
+const critRateTeam_1 = equal("on", condA1, unequal(input.activeCharKey, input.charKey, percent(dm.passive1.critRateInc), KeyMap.info("critRate_")))
 const [condA2Path, condA2] = cond(key, "SanguineRouge")
-const pyro_dmg_ = equal("on", condA2, percent(datamine.passive2.pyroDmgInc))
+const pyro_dmg_ = equal("on", condA2, percent(dm.passive2.pyroDmgInc))
 
 const [condC4Path, condC4] = cond(key, "GardenOfEternalRest")
-const critRateTeam_2 = equal("on", condC4, unequal(input.activeCharKey, input.charKey, percent(datamine.constellation4.critRateInc), KeyMap.info("critRate_")))
+const critRateTeam_2 = equal("on", condC4, unequal(input.activeCharKey, input.charKey, percent(dm.constellation4.critRateInc), KeyMap.info("critRate_")))
 
 const [condC6Path, condC6] = cond(key, "ButterflysEmbrace")
-const critRate_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(datamine.constellation6.critRateInc)))
-const ele_res_s = Object.fromEntries(allElementsWithPhy.map(ele => [ele, equal("on", condC6, greaterEq(input.constellation, 6, percent(datamine.constellation6.elePhysResInc)))]))
+const critRate_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.critRateInc)))
+const ele_res_s = Object.fromEntries(allElementsWithPhy.map(ele => [ele, equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.elePhysResInc)))]))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: lessThan(input.constellation, 2, dmgNode("atk", datamine.skill.dmg, "skill")),
-    dmgC2: greaterEq(input.constellation, 2, dmgNode("atk", datamine.skill.dmg, "skill", { hit: { dmgInc: prod(input.total.hp, datamine.constellation2.bloodBlossomDmgInc) } })),
+    dmg: lessThan(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill")),
+    dmgC2: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill", { hit: { dmgInc: prod(input.total.hp, dm.constellation2.bloodBlossomDmgInc) } })),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    lowHpDmg: dmgNode("atk", datamine.burst.lowHpDmg, "burst"),
-    regen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, datamine.burst.regen, { unit: "%" }))),
-    lowHpRegen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, datamine.burst.lowHpRegen, { unit: "%" }))),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    lowHpDmg: dmgNode("atk", dm.burst.lowHpDmg, "burst"),
+    regen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, dm.burst.regen, { unit: "%" }))),
+    lowHpRegen: customHealNode(prod(input.total.hp, subscript(input.total.burstIndex, dm.burst.lowHpRegen, { unit: "%" }))),
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -156,7 +156,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 5 ? 0 : -1)}`), textSuffix: i === 4 ? "(1)" : i === 5 ? "(2)" : "" }),
 
       }))
@@ -167,7 +167,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmgC2, { name: ct.chg("skill.skillParams.2"), textSuffix: "(C2)" }),
       }, {
         text: ct.chg("skill.skillParams.3"),
-        value: datamine.skill.bloodBlossomDuration,
+        value: dm.skill.bloodBlossomDuration,
         unit: 's'
       }]
     }, ct.condTem("skill", {
@@ -199,7 +199,7 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: ct.chg("skill.skillParams.0"),
-            value: datamine.skill.activationCost * 100, // Convert to percentage
+            value: dm.skill.activationCost * 100, // Convert to percentage
             unit: '% Current HP'
           }, {
             node: atk,
@@ -207,11 +207,11 @@ const sheet: ICharacterSheet = {
             text: <ColorText color="pyro">Pyro Infusion</ColorText>
           }, {
             text: ct.chg("skill.skillParams.4"),
-            value: datamine.skill.duration,
+            value: dm.skill.duration,
             unit: 's'
           }, {
             text: ct.chg("skill.skillParams.5"),
-            value: datamine.skill.cd,
+            value: dm.skill.cd,
             unit: 's'
           }]
         }
@@ -229,11 +229,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.lowHpRegen, { name: ct.chg(`burst.skillParams.3`) })
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: 's'
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.enerCost
+        value: dm.burst.enerCost
       }, {
         canShow: (data) => data.get(input.constellation).value > 1,
         text: ct.ch("constellation2.applyBloodBlossom"),
@@ -252,7 +252,7 @@ const sheet: ICharacterSheet = {
             node: critRateTeam_1,
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: 's'
           }]
         }
@@ -261,7 +261,7 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA2,
       path: condA2Path,
-      name: st("lessEqPercentHP", { percent: datamine.passive2.minHp * 100 }),
+      name: st("lessEqPercentHP", { percent: dm.passive2.minHp * 100 }),
       states: {
         on: {
           fields: [{
@@ -286,7 +286,7 @@ const sheet: ICharacterSheet = {
             node: critRateTeam_2,
           }, {
             text: stg("duration"),
-            value: datamine.constellation4.duration,
+            value: dm.constellation4.duration,
             unit: 's'
           }]
         }
@@ -303,7 +303,7 @@ const sheet: ICharacterSheet = {
             node: critRate_,
           }, {
             text: stg("duration"),
-            value: datamine.constellation6.duration,
+            value: dm.constellation6.duration,
             unit: 's'
           }, {
             text: stg("cd"),

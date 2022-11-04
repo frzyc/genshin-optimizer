@@ -18,7 +18,7 @@ const elementKey: ElementKey = "anemo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -70,12 +70,12 @@ const [condSwirlReactionPath, condSwirlReaction] = cond(key, "swirl")
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
 
 // Conditional Output
-const asc1Disp = greaterEq(input.asc, 1, datamine.passive1.eleMas)
+const asc1Disp = greaterEq(input.asc, 1, dm.passive1.eleMas)
 const asc1 = unequal(target.charKey, key, // Not applying to Sucrose
   equal(target.charEle, condSwirlReaction, asc1Disp)) // And element matches the swirl
 const asc4Disp = equal("hit", condSkillHitOpponent,
   greaterEq(input.asc, 4,
-    prod(percent(datamine.passive2.eleMas_), input.premod.eleMas)))
+    prod(percent(dm.passive2.eleMas_), input.premod.eleMas)))
 const asc4 = unequal(target.charKey, key, asc4Disp)
 const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
@@ -83,20 +83,20 @@ const c6Bonus = objectKeyMap(absorbableEle.map(ele => `${ele}_dmg_` as const), k
   equal(condAbsorption, key.slice(0, -5), c6Base))
 
 export const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged")
+    dmg: dmgNode("atk", dm.charged.dmg, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill")
+    press: dmgNode("atk", dm.skill.press, "skill")
   },
   burst: {
-    dot: dmgNode("atk", datamine.burst.dot, "burst"),
+    dot: dmgNode("atk", dm.burst.dot, "burst"),
     ...Object.fromEntries(absorbableEle.map(key =>
-      [key, equal(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
+      [key, equal(condAbsorption, key, dmgNode("atk", dm.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
 }
 
@@ -125,7 +125,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal")
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
         }))
       }, {
@@ -135,7 +135,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
         }, {
           text: ct.chg("auto.skillParams.5"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }],
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -154,7 +154,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
         }, {
           text: ct.chg("skill.skillParams.1"),
-          value: datamine.skill.cd,
+          value: dm.skill.cd,
           unit: "s"
         }, {
           canShow: (data) => data.get(input.constellation).value >= 1,
@@ -169,16 +169,16 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("burst.skillParams.2"),
           value: data => data.get(input.constellation).value >= 2
-            ? `${datamine.burst.duration}s + 2`
-            : datamine.burst.duration,
+            ? `${dm.burst.duration}s + 2`
+            : dm.burst.duration,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.3"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.4"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }]
       }, ct.condTem("burst", { // Absorption
         value: condAbsorption,
@@ -219,7 +219,7 @@ const sheet: ICharacterSheet = {
             node: infoMut(asc1Disp, KeyMap.info("eleMas"))
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s",
           }],
         }]))
@@ -237,7 +237,7 @@ const sheet: ICharacterSheet = {
               node: infoMut(asc4Disp, KeyMap.info("eleMas")),
             }, {
               text: stg("duration"),
-              value: datamine.passive2.duration,
+              value: dm.passive2.duration,
               unit: "s"
             }],
           }

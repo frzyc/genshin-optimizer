@@ -18,7 +18,7 @@ const regionKey: Region = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -76,38 +76,38 @@ const datamine = {
   },
 } as const
 
-const regen = healNodeTalent("atk", datamine.burst.burstActivationAtkModifier, datamine.burst.burstActionFlatModifier, "burst")
-const contRegen = healNodeTalent("atk", datamine.burst.burstRegenAtkModifier, datamine.burst.burstRegenFlatModifier, "burst")
-const a1Regen = greaterEq(input.asc, 1, customHealNode(prod(percent(datamine.passive1.atkPercentage), input.total.atk)))
+const regen = healNodeTalent("atk", dm.burst.burstActivationAtkModifier, dm.burst.burstActionFlatModifier, "burst")
+const contRegen = healNodeTalent("atk", dm.burst.burstRegenAtkModifier, dm.burst.burstRegenFlatModifier, "burst")
+const a1Regen = greaterEq(input.asc, 1, customHealNode(prod(percent(dm.passive1.atkPercentage), input.total.atk)))
 
 const [condC1Path, condC1] = cond(key, "c1")
-const skill_dmg_ = equal(condC1, "on", greaterEq(input.constellation, 1, datamine.constellation1.increaseDmg))
+const skill_dmg_ = equal(condC1, "on", greaterEq(input.constellation, 1, dm.constellation1.increaseDmg))
 
 const [condC2Path, condC2] = cond(key, "c2")
-const atkSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(datamine.constellation2.atkSpd)))
-const moveSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(datamine.constellation2.moveSpd)))
+const atkSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(dm.constellation2.atkSpd)))
+const moveSPD_ = equal(condC2, "on", greaterEq(input.constellation, 2, percent(dm.constellation2.moveSpd)))
 
 const [condC4Path, condC4] = cond(key, "c4")
-const anemo_enemyRes_ = equal(condC4, "on", greaterEq(input.constellation, 4, percent(-Math.abs(datamine.constellation4.anemoRes))))
+const anemo_enemyRes_ = equal(condC4, "on", greaterEq(input.constellation, 4, percent(-Math.abs(dm.constellation4.anemoRes))))
 
 const [condC6Path, condC6] = cond(key, "c6")
-const dmgRed_disp = equal(condC6, "on", greaterEq(input.constellation, 6, percent(datamine.constellation6.dmgReduction)))
+const dmgRed_disp = equal(condC6, "on", greaterEq(input.constellation, 6, percent(dm.constellation6.dmgReduction)))
 const dmgRed_ = equal(input.activeCharKey, target.charKey, dmgRed_disp)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    enterExitDmg: dmgNode("atk", datamine.burst.enterExitDmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    enterExitDmg: dmgNode("atk", dm.burst.enterExitDmg, "burst"),
     regen,
     contRegen
   },
@@ -152,7 +152,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
         }))
       }, {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.5`) }),
         }, {
           text: ct.chg("auto.skillParams.6"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }],
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -181,15 +181,15 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
         }, {
           text: ct.chg("skill.skillParams.1"),
-          value: `${datamine.skill.stamina}`,
+          value: `${dm.skill.stamina}`,
           unit: "/s"
         }, {
           text: ct.chg("skill.skillParams.2"),
-          value: `${datamine.skill.duration}`,
+          value: `${dm.skill.duration}`,
           unit: "s"
         }, {
           text: ct.chg("skill.skillParams.3"),
-          value: `${datamine.skill.cd}`,
+          value: `${dm.skill.cd}`,
           unit: "s"
         }],
       }, ct.condTem("constellation1", {
@@ -222,11 +222,11 @@ const sheet: ICharacterSheet = {
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.4"),
-          value: `${datamine.burst.cd}`,
+          value: `${dm.burst.cd}`,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.5"),
-          value: `${datamine.burst.enerCost}`,
+          value: `${dm.burst.enerCost}`,
         }]
       }, ct.condTem("constellation4", {
         value: condC4,
@@ -262,7 +262,7 @@ const sheet: ICharacterSheet = {
       passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
         fields: [{
           text: st("energyRegen"),
-          value: datamine.passive2.energyRegen
+          value: dm.passive2.energyRegen
         }]
       })]),
       passive3: ct.talentTem("passive3"),
@@ -280,7 +280,7 @@ const sheet: ICharacterSheet = {
               node: moveSPD_
             }, {
               text: stg("duration"),
-              value: datamine.constellation2.duration,
+              value: dm.constellation2.duration,
               unit: "s"
             }]
           }

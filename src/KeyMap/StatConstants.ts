@@ -27,10 +27,6 @@ export type AdditiveReactionsKey = keyof typeof additiveReactions
 export const otherReactions = {
   crystallize: "Crystallize",
 } as const
-
-// https://github.com/Dimbreath/GenshinData/blob/72c9112a7c5e8e5014f61009a1a2764e266aeab7/ExcelBinOutput/ElementCoeffExcelConfigData.json
-//   or if the permalink is dead,
-// https://github.com/Dimbreath/GenshinData/blob/master/ExcelBinOutput/ElementCoeffExcelConfigData.json
 //
 // PlayerElementLevelCo
 export const transformativeReactionLevelMultipliers = [-1.0, // lvl 0

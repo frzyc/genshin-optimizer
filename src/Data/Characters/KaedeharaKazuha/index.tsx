@@ -18,7 +18,7 @@ const elementKey: ElementKey = "anemo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -54,7 +54,7 @@ const datamine = {
     enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    asorbAdd: skillParam_gen.passive1[p1++][0],
+    absorbAdd: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
     elemas_dmg_: skillParam_gen.passive2[p2++][0],
@@ -79,17 +79,17 @@ const asc4 = Object.fromEntries(absorbableEle.map(ele =>
   [`${ele}_dmg_`, greaterEq(input.asc, 4,
     equal(ele, condSwirls[ele],
       // Use premod since this is a percentage-based effect
-      prod(percent(datamine.passive2.elemas_dmg_, { fixed: 2 }), input.premod.eleMas)
+      prod(percent(dm.passive2.elemas_dmg_, { fixed: 2 }), input.premod.eleMas)
     ))]))
 
 // 2 C2 conds for the 2 parts of his C2
 const [condC2Path, condC2] = cond(key, "c2")
 const c2EleMas = greaterEq(input.constellation, 2,
-  equal("c2", condC2, datamine.constellation2.elemas))
+  equal("c2", condC2, dm.constellation2.elemas))
 
 const [condC2PPath, condC2P] = cond(key, "c2p")
 const c2PEleMasDisp = greaterEq(input.constellation, 2,
-  equal("c2p", condC2P, datamine.constellation2.elemas)
+  equal("c2p", condC2P, dm.constellation2.elemas)
 )
 const c2PEleMas = equal(input.activeCharKey, target.charKey, // Apply to active character
   unequal(target.charKey, key, c2PEleMasDisp) // But not to Kazuha
@@ -100,7 +100,7 @@ const c6infusion = greaterEqStr(input.constellation, 6,
   equalStr("c6", condC6, "anemo"))
 const c6Dmg_ = greaterEq(input.constellation, 6,
   // Not sure if this should be premod or total. I am guessing premod
-  equal("c6", condC6, prod(percent(datamine.constellation6.auto_), input.premod.eleMas))
+  equal("c6", condC6, prod(percent(dm.constellation6.auto_), input.premod.eleMas))
 )
 // Share `match` and `prod` between the three nodes
 const c6NormDmg_ = { ...c6Dmg_ }
@@ -110,29 +110,29 @@ const c6PlungingDmg_ = { ...c6Dmg_ }
 const passive = percent(0.2)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged")
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    press: dmgNode("atk", datamine.skill.press, "skill"),
-    hold: dmgNode("atk", datamine.skill.hold, "skill"),
-    pdmg: dmgNode("atk", datamine.plunging.dmg, "plunging", { hit: { ele: constant("anemo") } }),
-    plow: dmgNode("atk", datamine.plunging.low, "plunging", { hit: { ele: constant("anemo") } }),
-    phigh: dmgNode("atk", datamine.plunging.high, "plunging", { hit: { ele: constant("anemo") } }),
+    press: dmgNode("atk", dm.skill.press, "skill"),
+    hold: dmgNode("atk", dm.skill.hold, "skill"),
+    pdmg: dmgNode("atk", dm.plunging.dmg, "plunging", { hit: { ele: constant("anemo") } }),
+    plow: dmgNode("atk", dm.plunging.low, "plunging", { hit: { ele: constant("anemo") } }),
+    phigh: dmgNode("atk", dm.plunging.high, "plunging", { hit: { ele: constant("anemo") } }),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    dot: dmgNode("atk", datamine.burst.dot, "burst"),
-    ...Object.fromEntries(absorbableEle.map(key =>
-      [key, equal(condBurstAbsorption, key, dmgNode("atk", datamine.burst.add, "burst", { hit: { ele: constant(key) } }))]))
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    dot: dmgNode("atk", dm.burst.dot, "burst"),
+    absorb: unequal(condBurstAbsorption, undefined, dmgNode("atk", dm.burst.add, "burst", { hit: { ele: condBurstAbsorption } }))
   },
-  passive1: Object.fromEntries(absorbableEle.map(key =>
-    [key, equal(condSkillAbsorption, key, customDmgNode(prod(input.total.atk, datamine.passive1.asorbAdd), "plunging", { hit: { ele: constant(key) } }))])),
+  passive1: {
+    absorb: unequal(condSkillAbsorption, undefined, customDmgNode(prod(input.total.atk, dm.passive1.absorbAdd), "plunging", { hit: { ele: condSkillAbsorption } }))
+  },
   passive2: asc4,
   constellation6: {
     normal_dmg_: c6NormDmg_,
@@ -184,7 +184,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
           name: ct.chg(`auto.skillParams.${i + (i < 3 ? 0 : -1)}`),
           textSuffix: i === 2 ? "(1)" : i === 3 ? "(2)" : "",
@@ -200,7 +200,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -220,16 +220,16 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cd} - 10% = ${datamine.skill.cd * (1 - 0.10)}`
-          : `${datamine.skill.cd}`,
+          ? `${dm.skill.cd} - 10% = ${dm.skill.cd * (1 - 0.10)}`
+          : `${dm.skill.cd}`,
         unit: "s"
       }, {
         node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
         text: st("holdCD"),
         value: data => data.get(input.constellation).value >= 1
-          ? `${datamine.skill.cdHold} - 10% = ${datamine.skill.cdHold * (1 - 0.10)}`
-          : `${datamine.skill.cdHold}`,
+          ? `${dm.skill.cdHold} - 10% = ${dm.skill.cdHold * (1 - 0.10)}`
+          : `${dm.skill.cdHold}`,
         unit: "s"
       }]
     }, ct.headerTem("skill", {
@@ -255,15 +255,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dot, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", { // Burst absorption
       value: condBurstAbsorption,
@@ -272,7 +272,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.burst[eleKey], { name: ct.chg(`burst.skillParams.2`) }),
+          node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.2`) }),
         }]
       }]))
     }), ct.condTem("constellation2", { // C2 self
@@ -309,7 +309,7 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: infoMut(dmgFormulas.passive1[eleKey], { name: stg(`addEleDMG`) }),
+          node: infoMut(dmgFormulas.passive1.absorb, { name: stg(`addEleDMG`) }),
         }]
       }]))
     })]),
@@ -323,7 +323,7 @@ const sheet: ICharacterSheet = {
           node: asc4[`${ele}_dmg_`]
         }, {
           text: stg("duration"),
-          value: datamine.passive2.duration,
+          value: dm.passive2.duration,
           unit: "s"
         }]
       }]))
@@ -376,7 +376,7 @@ const sheet: ICharacterSheet = {
             node: c6PlungingDmg_
           }, {
             text: stg("duration"),
-            value: datamine.constellation6.duration,
+            value: dm.constellation6.duration,
             unit: "s",
           }]
         }

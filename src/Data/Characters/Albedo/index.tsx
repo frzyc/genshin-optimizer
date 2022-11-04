@@ -18,7 +18,7 @@ const elementKey: ElementKey = "geo"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -78,19 +78,19 @@ const datamine = {
 
 const [condBurstBlossomPath, condBurstBlossom] = cond(key, "burstBlossom")
 const [condBurstUsedPath, condBurstUsed] = cond(key, "burstUsed")
-const p2Burst_eleMas = equal(condBurstUsed, "burstUsed", greaterEq(input.asc, 4, datamine.passive2.eleMasInc))
+const p2Burst_eleMas = equal(condBurstUsed, "burstUsed", greaterEq(input.asc, 4, dm.passive2.eleMasInc))
 
 const [condP1EnemyHpPath, condP1EnemyHp] = cond(key, "p1EnemyHp")
-const p1_blossom_dmg_ = equal(condP1EnemyHp, "belowHp", greaterEq(input.asc, 1, datamine.passive1.blossomDmgInc))
+const p1_blossom_dmg_ = equal(condP1EnemyHp, "belowHp", greaterEq(input.asc, 1, dm.passive1.blossomDmgInc))
 
 const [condC2StacksPath, condC2Stacks] = cond(key, "c2Stacks")
 const c2_burst_dmgInc = greaterEq(input.constellation, 2,
   prod(
     lookup(
       condC2Stacks,
-      Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(i =>
+      Object.fromEntries(range(1, dm.constellation2.maxStacks).map(i =>
         [i,
-          prod(i, datamine.constellation2.blossomDmgInc)]
+          prod(i, dm.constellation2.blossomDmgInc)]
       )
       ),
       naught
@@ -101,7 +101,7 @@ const c2_burst_dmgInc = greaterEq(input.constellation, 2,
 
 const [condSkillInFieldPath, condSkillInField] = cond(key, "skillInField")
 const c4_plunging_dmg_disp = greaterEq(input.constellation, 4,
-  equal(condSkillInField, "skillInField", datamine.constellation4.plunging_dmg_)
+  equal(condSkillInField, "skillInField", dm.constellation4.plunging_dmg_)
 )
 const c4_plunging_dmg_ = equal(input.activeCharKey, target.charKey, c4_plunging_dmg_disp)
 
@@ -110,27 +110,27 @@ const c4_plunging_dmg_ = equal(input.activeCharKey, target.charKey, c4_plunging_
 const [condC6CrystallizePath, condC6Crystallize] = cond(key, "c6Crystallize")
 const c6_Crystal_all_dmg_disp = greaterEq(input.constellation, 6,
   equal(condSkillInField, "skillInField",
-    equal(condC6Crystallize, "c6Crystallize", datamine.constellation6.bonus_dmg_)
+    equal(condC6Crystallize, "c6Crystallize", dm.constellation6.bonus_dmg_)
   )
 )
 const c6_Crystal_all_dmg_ = equal(input.activeCharKey, target.charKey, c6_Crystal_all_dmg_disp)
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged"),
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.skillDmg, "skill"),
-    blossom: dmgNode("def", datamine.skill.blossomDmg, "skill", { total: { skill_dmg_: p1_blossom_dmg_ } }),
+    dmg: dmgNode("atk", dm.skill.skillDmg, "skill"),
+    blossom: dmgNode("def", dm.skill.blossomDmg, "skill", { total: { skill_dmg_: p1_blossom_dmg_ } }),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.burstDmg, "burst"),
-    blossom: equal("isoOnField", condBurstBlossom, dmgNode("atk", datamine.burst.blossomDmg, "burst")),
+    dmg: dmgNode("atk", dm.burst.burstDmg, "burst"),
+    blossom: equal("isoOnField", condBurstBlossom, dmgNode("atk", dm.burst.blossomDmg, "burst")),
   },
 }
 
@@ -167,7 +167,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }],
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -200,21 +200,21 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.blossom, { name: ct.chg(`skill.skillParams.1`) })
       }, {
         text: ct.ch("blossomCD"),
-        value: datamine.skill.blossomCd,
+        value: dm.skill.blossomCd,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("passive1", {
       value: condP1EnemyHp,
       path: condP1EnemyHpPath,
-      name: st("enemyLessPercentHP", { percent: datamine.passive1.hpThresh }),
+      name: st("enemyLessPercentHP", { percent: dm.passive1.hpThresh }),
       states: {
         belowHp: {
           fields: [{
@@ -225,7 +225,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTem("constellation1", {
       fields: [{
         text: ct.ch("enerPerBlossom"),
-        value: datamine.constellation1.blossomEner,
+        value: dm.constellation1.blossomEner,
         fixed: 1,
       }]
     }), ct.condTem("constellation4", {
@@ -260,11 +260,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("burst", {
       value: condBurstBlossom,
@@ -275,7 +275,7 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: infoMut(dmgFormulas.burst.blossom, {
               name: ct.chg(`burst.skillParams.1`),
-              multi: datamine.burst.blossomAmt,
+              multi: dm.burst.blossomAmt,
             }),
           }]
         }
@@ -291,7 +291,7 @@ const sheet: ICharacterSheet = {
             node: p2Burst_eleMas
           }, {
             text: stg("duration"),
-            value: datamine.passive2.duration,
+            value: dm.passive2.duration,
             unit: "s"
           }]
         }
@@ -300,7 +300,7 @@ const sheet: ICharacterSheet = {
       value: condC2Stacks,
       path: condC2StacksPath,
       name: ct.ch("c2Stacks"),
-      states: Object.fromEntries(range(1, datamine.constellation2.maxStacks).map(i =>
+      states: Object.fromEntries(range(1, dm.constellation2.maxStacks).map(i =>
         [i, {
           name: st("stack", { count: i }),
           fields: [{
