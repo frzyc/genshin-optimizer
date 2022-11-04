@@ -18,7 +18,7 @@ const elementKey: ElementKey = "electro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -74,26 +74,26 @@ const datamine = {
 } as const
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged"),
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    stiletto: dmgNode("atk", datamine.skill.stiletto, "skill"),
-    slash: dmgNode("atk", datamine.skill.slash, "skill"),
-    thunderclap: dmgNode("atk", datamine.skill.thunderclap, "skill"),
+    stiletto: dmgNode("atk", dm.skill.stiletto, "skill"),
+    slash: dmgNode("atk", dm.skill.slash, "skill"),
+    thunderclap: dmgNode("atk", dm.skill.thunderclap, "skill"),
   },
   burst: {
-    initial: dmgNode("atk", datamine.burst.initial, "burst"),
-    slash: dmgNode("atk", datamine.burst.slash, "burst"),
-    final: dmgNode("atk", datamine.burst.final, "burst"),
+    initial: dmgNode("atk", dm.burst.initial, "burst"),
+    slash: dmgNode("atk", dm.burst.slash, "burst"),
+    final: dmgNode("atk", dm.burst.final, "burst"),
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, datamine.constellation1.dmg), "elemental", { hit: { ele: constant(elementKey) } }))
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, dm.constellation1.dmg), "elemental", { hit: { ele: constant(elementKey) } }))
   }
 }
 
@@ -106,17 +106,17 @@ const afterRecastInfusion = equalStr("afterRecast", condAfterRecast,
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
-const afterBurstCritRate_ = greaterEq(input.asc, 4, equal("afterBurst", condAfterBurst, percent(datamine.passive2.critInc_)))
+const afterBurstCritRate_ = greaterEq(input.asc, 4, equal("afterBurst", condAfterBurst, percent(dm.passive2.critInc_)))
 const afterBurstEnerRech_ = { ...afterBurstCritRate_ }
 
 const [condAfterReactPath, condAfterReact] = cond(key, "afterReact")
-const afterReactAtk_ = greaterEq(input.constellation, 4, equal("afterReact", condAfterReact, percent(datamine.constellation4.atkInc)))
+const afterReactAtk_ = greaterEq(input.constellation, 4, equal("afterReact", condAfterReact, percent(dm.constellation4.atkInc)))
 
 const [condC6StackPath, condC6Stack] = cond(key, "c6Stack")
 const c6Electro_dmg_ = greaterEq(input.constellation, 6,
   prod(
     lookup(condC6Stack, objectKeyMap(range(1, 4), i => constant(i)), constant(0)),
-    datamine.constellation6.electroInc
+    dm.constellation6.electroInc
   )
 )
 
@@ -149,7 +149,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 4 ? 0 : -1)}`), textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : "" }),
       }))
     }, {
@@ -161,7 +161,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -184,7 +184,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.thunderclap, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
         fixed: 1
       }]
@@ -199,7 +199,7 @@ const sheet: ICharacterSheet = {
             text: <ColorText color="electro">{st("infusion.electro")}</ColorText>
           }, {
             text: stg("duration"),
-            value: datamine.passive1.duration,
+            value: dm.passive1.duration,
             unit: "s"
           }]
         }
@@ -218,11 +218,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.final, { name: ct.chg(`burst.skillParams.2`) })
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s",
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.cost,
+        value: dm.burst.cost,
       }]
     }, ct.condTem("passive2", {
       value: condAfterBurst,

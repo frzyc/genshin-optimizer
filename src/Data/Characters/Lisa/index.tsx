@@ -16,7 +16,7 @@ const data_gen = data_gen_src as CharacterData
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -61,26 +61,26 @@ const datamine = {
 const [condA4Path, condA4] = cond(key, "LisaA4")
 const [condC2Path, condC2] = cond(key, "LisaC2")
 
-const nodeA4DefShred = equal(condA4, "on", greaterEq(input.asc, 1, datamine.passive2.defShred))
+const nodeA4DefShred = equal(condA4, "on", greaterEq(input.asc, 1, dm.passive2.defShred))
 const nodeC2DefIncrease = equal(condC2, "on", greaterEq(input.constellation, 2, constant(0.25))) // Doesn't exist in skillParam_gen
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
   skill: {
-    stack0: dmgNode("atk", datamine.skill.stack0, "skill"),
-    stack1: dmgNode("atk", datamine.skill.stack1, "skill"),
-    stack2: dmgNode("atk", datamine.skill.stack2, "skill"),
-    stack3: dmgNode("atk", datamine.skill.stack3, "skill"),
-    press: dmgNode("atk", datamine.skill.press, "skill")
+    stack0: dmgNode("atk", dm.skill.stack0, "skill"),
+    stack1: dmgNode("atk", dm.skill.stack1, "skill"),
+    stack2: dmgNode("atk", dm.skill.stack2, "skill"),
+    stack3: dmgNode("atk", dm.skill.stack3, "skill"),
+    press: dmgNode("atk", dm.skill.press, "skill")
   },
   burst: {
-    tick: dmgNode("atk", datamine.burst.tick, "burst")
+    tick: dmgNode("atk", dm.burst.tick, "burst")
   },
 }
 
@@ -113,7 +113,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
         }))
       }, {
@@ -123,7 +123,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) }),
         }, {
           text: ct.chg("auto.skillParams.5"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }]
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -145,11 +145,11 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill[`stack${i}`], { name: ct.chg(`skill.skillParams.${2 + i}`) })
         })), {
           text: stg("press.cd"),
-          value: datamine.skill.pressCD,
+          value: dm.skill.pressCD,
           unit: 's'
         }, {
           text: stg("hold.cd"),
-          value: datamine.skill.holdCD,
+          value: dm.skill.holdCD,
           unit: 's'
         }]
       }]),
@@ -159,15 +159,15 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.tick, { name: ct.chg(`burst.skillParams.0`) }),
         }, {
           text: ct.chg("burst.skillParams.1"),
-          value: datamine.burst.duration,
+          value: dm.burst.duration,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.2"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s"
         }, {
           text: ct.chg("burst.skillParams.3"),
-          value: datamine.burst.cost,
+          value: dm.burst.cost,
         }]
       }]),
 
@@ -183,7 +183,7 @@ const sheet: ICharacterSheet = {
               node: nodeA4DefShred
             }, {
               text: stg("duration"),
-              value: datamine.passive2.duration,
+              value: dm.passive2.duration,
               unit: 's'
             }]
           }

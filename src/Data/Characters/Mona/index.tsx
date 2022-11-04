@@ -17,7 +17,7 @@ const elementKey: ElementKey = "hydro"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, sp = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -81,39 +81,39 @@ const datamine = {
   }
 } as const
 
-const hydro_dmg_ = greaterEq(input.asc, 4, prod(input.premod.enerRech_, percent(datamine.passive2.percentage)))
+const hydro_dmg_ = greaterEq(input.asc, 4, prod(input.premod.enerRech_, percent(dm.passive2.percentage)))
 
 const [condOmenPath, condOmen] = cond(key, "Omen")
-const all_dmg_ = equal("on", condOmen, subscript(input.total.burstIndex, datamine.burst.dmgBonus, { unit: "%" }))
+const all_dmg_ = equal("on", condOmen, subscript(input.total.burstIndex, dm.burst.dmgBonus, { unit: "%" }))
 
 const [condPoSPath, condPoS] = cond(key, "ProphecyOfSubmersion")
-const electrocharged_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(datamine.constellation1.electroChargeDmgInc)))
-const swirl_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(datamine.constellation1.hydroSwirlDmgInc)))
-const vaporize_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(datamine.constellation1.vaporizeDmgInc)))
+const electrocharged_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(dm.constellation1.electroChargeDmgInc)))
+const swirl_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(dm.constellation1.hydroSwirlDmgInc)))
+const vaporize_dmg_ = greaterEq(input.constellation, 1, equal("on", condPoS, percent(dm.constellation1.vaporizeDmgInc)))
 
 const [condPoOPath, condPoO] = cond(key, "ProphecyOfOblivion")
-const critRate_ = greaterEq(input.constellation, 4, equal("on", condPoO, percent(datamine.constellation4.critRateIncNeg)))
+const critRate_ = greaterEq(input.constellation, 4, equal("on", condPoO, percent(dm.constellation4.critRateIncNeg)))
 
 const [condRoCPath, condRoC] = cond(key, "RhetoricsOfCalamitas")
-const charged_dmg_ = greaterEq(input.constellation, 6, lookup(condRoC, objectKeyMap(range(1, 3), i => percent(i * datamine.constellation6.dmgBonus)), 0))
+const charged_dmg_ = greaterEq(input.constellation, 6, lookup(condRoC, objectKeyMap(range(1, 3), i => percent(i * dm.constellation6.dmgBonus)), 0))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dot: dmgNode("atk", datamine.skill.dot, "skill"),
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill")
+    dot: dmgNode("atk", dm.skill.dot, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill")
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst")
+    dmg: dmgNode("atk", dm.burst.dmg, "burst")
   },
   passive1: {
-    dmg: prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.passive1.percentage))
+    dmg: prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.passive1.percentage))
   }
 }
 
@@ -152,7 +152,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
         }))
       }, {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.4`) })
         }, {
           text: ct.chg("auto.skillParams.5"),
-          value: datamine.charged.stamina,
+          value: dm.charged.stamina,
         }]
       }, {
         text: ct.chg("auto.fields.plunging"),
@@ -183,24 +183,24 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.1`) }),
         }, {
           text: ct.chg("skill.skillParams.2"),
-          value: datamine.skill.cd,
+          value: dm.skill.cd,
           unit: "s",
         }]
       }]),
       burst: ct.talentTem("burst", [{
         fields: [{
           text: ct.ch("bubbleDuration"),
-          value: datamine.burst.bubbleDuration,
+          value: dm.burst.bubbleDuration,
           unit: "s",
         }, {
           node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.1`) })
         }, {
           text: stg("cd"),
-          value: datamine.burst.cd,
+          value: dm.burst.cd,
           unit: "s",
         }, {
           text: stg("energyCost"),
-          value: datamine.burst.enerCost,
+          value: dm.burst.enerCost,
         }]
       }, ct.condTem("burst", {
         value: condOmen,
@@ -213,7 +213,7 @@ const sheet: ICharacterSheet = {
               node: all_dmg_,
             }, {
               text: ct.ch("omenDuration"),
-              value: (data) => datamine.burst.omenDuration[data.get(input.total.burstIndex).value],
+              value: (data) => dm.burst.omenDuration[data.get(input.total.burstIndex).value],
               unit: "s",
             }]
           }
@@ -223,10 +223,10 @@ const sheet: ICharacterSheet = {
       sprint: ct.talentTem("sprint", [{
         fields: [{
           text: st("activationStam"),
-          value: datamine.sprint.active_stam,
+          value: dm.sprint.active_stam,
         }, {
           text: st("stamDrain"),
-          value: datamine.sprint.drain_stam,
+          value: dm.sprint.drain_stam,
           unit: "/s",
         }]
       }]),
@@ -236,7 +236,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.passive1.dmg, { name: ct.chg(`skill.skillParams.1`) })
         }, {
           text: ct.ch("phantomDuration"),
-          value: datamine.passive1.phantomDuration,
+          value: dm.passive1.phantomDuration,
           unit: "s"
         }]
       })]),
@@ -261,7 +261,7 @@ const sheet: ICharacterSheet = {
               node: vaporize_dmg_,
             }, {
               text: ct.ch("frozenDuration"),
-              value: datamine.constellation1.frozenExtension * 100, // Convert to percentage
+              value: dm.constellation1.frozenExtension * 100, // Convert to percentage
               unit: "%",
             }]
           }
@@ -293,7 +293,7 @@ const sheet: ICharacterSheet = {
             { node: charged_dmg_ },
             {
               text: stg("duration"),
-              value: datamine.constellation6.duration,
+              value: dm.constellation6.duration,
               unit: 's'
             }]
         }]))

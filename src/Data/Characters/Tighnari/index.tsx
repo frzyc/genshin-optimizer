@@ -18,7 +18,7 @@ const region: Region = "sumeru"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -77,45 +77,45 @@ const datamine = {
 } as const
 
 const [condA1AfterWreathPath, condA1AfterWreath] = cond(key, "p1AfterWreath")
-const a1AfterWreath_eleMas = greaterEq(input.asc, 1, equal(condA1AfterWreath, "on", datamine.passive1.eleMas))
+const a1AfterWreath_eleMas = greaterEq(input.asc, 1, equal(condA1AfterWreath, "on", dm.passive1.eleMas))
 
 const a4_charged_dmg_ = greaterEq(input.asc, 4, min(
-  prod(percent(datamine.passive2.charged_burst_dmg_, { fixed: 2 }), input.total.eleMas),
-  percent(datamine.passive2.maxDmg_)
+  prod(percent(dm.passive2.charged_burst_dmg_, { fixed: 2 }), input.total.eleMas),
+  percent(dm.passive2.maxDmg_)
 ))
 const a4_burst_dmg_ = { ...a4_charged_dmg_ }
 const chargedShaftAddl: Data = {
   hit: { ele: constant(elementKey) },
 }
 
-const c1_charged_critRate_ = greaterEq(input.constellation, 1, datamine.constellation1.charged_critRate_)
+const c1_charged_critRate_ = greaterEq(input.constellation, 1, dm.constellation1.charged_critRate_)
 
 const [condC2EnemyFieldPath, condC2EnemyField] = cond(key, "c2EnemyField")
-const c2EnemyField_dendro_dmg_ = greaterEq(input.constellation, 2, equal(condC2EnemyField, "on", datamine.constellation2.dendro_dmg_))
+const c2EnemyField_dendro_dmg_ = greaterEq(input.constellation, 2, equal(condC2EnemyField, "on", dm.constellation2.dendro_dmg_))
 
 const [condC4Path, condC4] = cond(key, "c4")
 const c4_eleMas = greaterEq(input.constellation, 4, lookup(condC4, {
-  after: constant(datamine.constellation4.eleMas),
-  react: constant(datamine.constellation4.eleMas * 2)
+  after: constant(dm.constellation4.eleMas),
+  react: constant(dm.constellation4.eleMas * 2)
 }, naught))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    aimedCharged: dmgNode("atk", datamine.charged.aimedCharged, "charged", chargedShaftAddl),
-    wreath: dmgNode("atk", datamine.charged.wreathArrow, "charged", chargedShaftAddl),
-    cluster: dmgNode("atk", datamine.charged.clusterArrow, "charged", chargedShaftAddl),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", chargedShaftAddl),
+    wreath: dmgNode("atk", dm.charged.wreathArrow, "charged", chargedShaftAddl),
+    cluster: dmgNode("atk", dm.charged.clusterArrow, "charged", chargedShaftAddl),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    primaryDmg: dmgNode("atk", datamine.burst.primaryDmg, "burst"),
-    secondaryDmg: dmgNode("atk", datamine.burst.secondaryDmg, "burst"),
+    primaryDmg: dmgNode("atk", dm.burst.primaryDmg, "burst"),
+    secondaryDmg: dmgNode("atk", dm.burst.secondaryDmg, "burst"),
   },
   passive2: {
     charged_dmg_: a4_charged_dmg_,
@@ -123,7 +123,7 @@ const dmgFormulas = {
   },
   constellation6: {
     cluster: greaterEq(input.constellation, 6, customDmgNode(
-      prod(percent(datamine.constellation6.dmg), input.total.atk),
+      prod(percent(dm.constellation6.dmg), input.total.atk),
       "elemental",
       { hit: { ele: constant(elementKey) } }
     ))
@@ -164,7 +164,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal")
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined, }),
       })),
     }, {
@@ -197,7 +197,7 @@ const sheet: ICharacterSheet = {
     }), ct.headerTem("constellation6", {
       fields: [{
         text: ct.ch("c6WreathRed"),
-        value: datamine.constellation6.chargeTimeRed,
+        value: dm.constellation6.chargeTimeRed,
         unit: "s",
         fixed: 1
       }, {
@@ -220,15 +220,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.1"),
-        value: datamine.skill.fieldDuration,
+        value: dm.skill.fieldDuration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: datamine.skill.penetratorDuration,
+        value: dm.skill.penetratorDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s"
       }]
     }, ct.condTem("constellation2", {
@@ -251,11 +251,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.secondaryDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.energyCost,
+        value: dm.burst.energyCost,
       }]
     }, ct.condTem("constellation4", {
       path: condC4Path,
@@ -269,7 +269,7 @@ const sheet: ICharacterSheet = {
             node: c4_eleMas,
           }, {
             text: stg("duration"),
-            value: datamine.constellation4.duration,
+            value: dm.constellation4.duration,
             unit: "s"
           }]
         },
@@ -279,7 +279,7 @@ const sheet: ICharacterSheet = {
             node: c4_eleMas
           }, {
             text: stg("duration"),
-            value: datamine.constellation4.duration,
+            value: dm.constellation4.duration,
             unit: "s"
           }]
         }

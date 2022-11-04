@@ -15,7 +15,7 @@ const key: CharacterKey = "KujouSara"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0, p2 = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -59,34 +59,34 @@ const datamine = {
 } as const
 
 const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
-const atkIncRatio = subscript(input.total.skillIndex, datamine.skill.atkBonus.map(x => x), { unit: "%" })
+const atkIncRatio = subscript(input.total.skillIndex, dm.skill.atkBonus.map(x => x), { unit: "%" })
 const skillTenguAmbush_disp = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
   prod(input.base.atk, atkIncRatio)
 )
 const skillTenguAmbush_ = equal(input.activeCharKey, target.charKey, skillTenguAmbush_disp)
 
 const [condC6Path, condC6] = cond(key, "c6")
-const c6ElectroCritDmg_ = greaterEq(input.constellation, 6, equal("c6", condC6, percent(datamine.constellation6.atkInc)))
+const c6ElectroCritDmg_ = greaterEq(input.constellation, 6, equal("c6", condC6, percent(dm.constellation6.atkInc)))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    aimed: dmgNode("atk", datamine.charged.aimed, "charged"),
-    fullyAimed: dmgNode("atk", datamine.charged.fullyAimed, "charged", { hit: { ele: constant('electro') } }),
+    aimed: dmgNode("atk", dm.charged.aimed, "charged"),
+    fullyAimed: dmgNode("atk", dm.charged.fullyAimed, "charged", { hit: { ele: constant('electro') } }),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
     skillTenguAmbush_
   },
   burst: {
-    titanbreaker: dmgNode("atk", datamine.burst.titanBreakerDmg, "burst"),
-    stormcluster: dmgNode("atk", datamine.burst.stormClusterDmg, "burst"),
+    titanbreaker: dmgNode("atk", dm.burst.titanBreakerDmg, "burst"),
+    stormcluster: dmgNode("atk", dm.burst.stormClusterDmg, "burst"),
   },
   constellation2: {
-    dmg: greaterEq(input.constellation, 2, prod(dmgNode("atk", datamine.skill.dmg, "skill"), percent(datamine.constellation2.crowfeatherDmg))),
+    dmg: greaterEq(input.constellation, 2, prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.constellation2.crowfeatherDmg))),
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -119,7 +119,7 @@ const sheet: ICharacterSheet = {
   talent: {  auto: ct.talentTem("auto", [{
         text: ct.chg("auto.fields.normal"),
       }, {
-        fields: datamine.normal.hitArr.map((_, i) => ({
+        fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
         }))
       }, {
@@ -147,10 +147,10 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
         }, {
           text: ct.chg("skill.skillParams.2"),
-          value: `${datamine.skill.duration}s`,
+          value: `${dm.skill.duration}s`,
         }, {
           text: ct.chg("skill.skillParams.3"),
-          value: `${datamine.skill.cd}s`,
+          value: `${dm.skill.cd}s`,
         }]
       }, ct.condTem("skill", {
         value: condSkillTenguAmbush,
@@ -177,10 +177,10 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.burst.stormcluster, { name: ct.chg(`burst.skillParams.1`) }),
         }, {
           text: ct.chg("burst.skillParams.2"),
-          value: `${datamine.burst.cd}s`,
+          value: `${dm.burst.cd}s`,
         }, {
           text: ct.chg("burst.skillParams.3"),
-          value: `${datamine.burst.enerCost}`,
+          value: `${dm.burst.enerCost}`,
         }]
       }]),
 
@@ -188,7 +188,7 @@ const sheet: ICharacterSheet = {
       passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
         fields: [{
           text: ct.ch("a4.enerRest"),
-          value: data => data.get(input.total.enerRech_).value * datamine.passive2.energyGen,
+          value: data => data.get(input.total.enerRech_).value * dm.passive2.energyGen,
           fixed: 2
         }]
       })]),

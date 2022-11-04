@@ -18,7 +18,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
 
   let s = 0, b = 0
-  const datamine = {
+  const dm = {
     skill: {
       dmg: skillParam_gen.skill[s++],
       cd: skillParam_gen.skill[s++][0],
@@ -52,36 +52,36 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   } as const
 
   const [condA1StacksPath, condA1Stacks] = cond(condCharKey, "a1Stacks")
-  const a1StacksArr = range(1, datamine.passive1.maxStacks)
+  const a1StacksArr = range(1, dm.passive1.maxStacks)
   const a1_eleMas_disp = greaterEq(input.asc, 1,
     lookup(condA1Stacks, Object.fromEntries(a1StacksArr.map(stack => [
       stack,
-      prod(datamine.passive1.eleMas, stack)
+      prod(dm.passive1.eleMas, stack)
     ])), naught),
     KeyMap.info("eleMas")
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
   const a4_skill_dmg_ = greaterEq(input.asc, 4,
-    prod(percent(datamine.passive2.skill_dmgInc, { fixed: 2 }), input.total.eleMas),
+    prod(percent(dm.passive2.skill_dmgInc, { fixed: 2 }), input.total.eleMas),
     { unit: "%" }
   )
   const a4_burst_dmg_ = greaterEq(input.asc, 4,
-    prod(percent(datamine.passive2.burst_dmgInc), input.total.eleMas),
+    prod(percent(dm.passive2.burst_dmgInc), input.total.eleMas),
     { unit: "%" }
   )
 
   const [condC6BurstEffectPath, condC6BurstEffect] = cond(condCharKey, "c6BurstEffect")
   const [condC6BurstElePath, condC6BurstEle] = cond(condCharKey, "c6BurstEle")
   const c6_dendro_dmg_disp = greaterEq(input.constellation, 6,
-    equal(condC6BurstEffect, "on", percent(datamine.constellation6.ele_dmg_))
+    equal(condC6BurstEffect, "on", percent(dm.constellation6.ele_dmg_))
   )
   const c6_dendro_dmg_ = equal(input.activeCharKey, target.charKey, c6_dendro_dmg_disp)
   const c6_ele_dmg_disp = Object.fromEntries(["hydro", "pyro", "electro"].map(ele => [
     ele,
     greaterEq(input.constellation, 6,
       equal(condC6BurstEffect, "on",
-        equal(condC6BurstEle, ele, percent(datamine.constellation6.ele_dmg_))
+        equal(condC6BurstEle, ele, percent(dm.constellation6.ele_dmg_))
       )
     )
   ]))
@@ -93,11 +93,11 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+      dmg: dmgNode("atk", dm.skill.dmg, "skill"),
     },
     burst: {
-      lampDmg: dmgNode("atk", datamine.burst.lampDmg, "burst"),
-      explosionDmg: dmgNode("atk", datamine.burst.explosionDmg, "burst")
+      lampDmg: dmgNode("atk", dm.burst.lampDmg, "burst"),
+      explosionDmg: dmgNode("atk", dm.burst.explosionDmg, "burst")
     }
   } as const
 
@@ -128,7 +128,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
       }, {
         text: stg("cd"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
       }]
     }]),
@@ -145,16 +145,16 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       }, {
         text: stg("duration"),
         value: (data) => data.get(input.constellation).value >= 2
-          ? `${datamine.burst.lampDuration}s + ${datamine.constellation2.durationInc}s = ${datamine.burst.lampDuration + datamine.constellation2.durationInc}`
-          : datamine.burst.lampDuration,
+          ? `${dm.burst.lampDuration}s + ${dm.constellation2.durationInc}s = ${dm.burst.lampDuration + dm.constellation2.durationInc}`
+          : dm.burst.lampDuration,
         unit: "s"
       }, {
         text: stg("cd"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: stg("energyCost"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }]
     }, ct.condTem("passive1", {
       path: condA1StacksPath,
@@ -173,7 +173,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
     }), ct.headerTem("constellation2", {
       fields: [{
         text: st("durationInc"),
-        value: datamine.constellation2.durationInc,
+        value: dm.constellation2.durationInc,
         unit: "s"
       }]
     }), ct.condTem("constellation6", {

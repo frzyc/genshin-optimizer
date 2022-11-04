@@ -15,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++], // 1
@@ -63,22 +63,22 @@ const nodeC2ChargedDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2
 const nodeC2NormalDmgInc = equal(condC2, "on", greaterEq(input.constellation, 2, 0.15))
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg: dmgNode("atk", datamine.charged.dmg, "charged"),
+    dmg: dmgNode("atk", dm.charged.dmg, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([name, arr]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([name, arr]) =>
     [name, dmgNode("atk", arr, "plunging")])),
   skill: {
-    castDmg: dmgNode("atk", datamine.skill.castDmg, "skill"),
-    tickDmg: dmgNode("atk", datamine.skill.tickDmg, "skill"),
-    hitRegen: healNodeTalent("atk", datamine.skill.hitRegenPercent, datamine.skill.hitRegenFlat, "skill"),
-    contRegen: healNodeTalent("atk", datamine.skill.contRegenPercent, datamine.skill.contRegenFlat, "skill")
+    castDmg: dmgNode("atk", dm.skill.castDmg, "skill"),
+    tickDmg: dmgNode("atk", dm.skill.tickDmg, "skill"),
+    hitRegen: healNodeTalent("atk", dm.skill.hitRegenPercent, dm.skill.hitRegenFlat, "skill"),
+    contRegen: healNodeTalent("atk", dm.skill.contRegenPercent, dm.skill.contRegenFlat, "skill")
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
-    heal: healNodeTalent("atk", datamine.burst.healPercent, datamine.burst.healFlat, "burst")
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
+    heal: healNodeTalent("atk", dm.burst.healPercent, dm.burst.healFlat, "burst")
   },
 }
 
@@ -109,7 +109,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 2 || i === 3) ? 2 : undefined }),
       }))
     }, {
@@ -122,7 +122,7 @@ const sheet: ICharacterSheet = {
         }),
       }, {
         text: ct.chg("auto.skillParams.6"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg("auto.fields.plunging"),
@@ -147,11 +147,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.tickDmg, { name: ct.chg(`skill.skillParams.3`) })
       }, {
         text: ct.chg("skill.skillParams.4"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: 's'
       }, {
         text: ct.chg("skill.skillParams.5"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: 's'
       }]
     }]),
@@ -164,15 +164,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.heal, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.skill.duration,
+        value: dm.skill.duration,
         unit: 's'
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: 's'
       }, {
         text: ct.chg("burst.skillParams.4"),
-        value: datamine.burst.cost,
+        value: dm.burst.cost,
       }]
     }]),
 

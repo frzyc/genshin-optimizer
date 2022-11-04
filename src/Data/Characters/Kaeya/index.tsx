@@ -17,7 +17,7 @@ const region: Region = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
 
 let a = 0, s = 0, b = 0
-const datamine = {
+const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
@@ -61,26 +61,26 @@ const datamine = {
 } as const
 
 const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+  normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
-    dmg1: dmgNode("atk", datamine.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", datamine.charged.dmg2, "charged")
+    dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged")
   },
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+  plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    dmg: dmgNode("atk", datamine.skill.dmg, "skill"),
+    dmg: dmgNode("atk", dm.skill.dmg, "skill"),
   },
   burst: {
-    dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
+    dmg: dmgNode("atk", dm.burst.dmg, "burst"),
   },
   passive1: {
-    heal: healNode("atk", percent(datamine.passive2.healAtk_), 0),
+    heal: healNode("atk", percent(dm.passive2.healAtk_), 0),
   },
   constellation4: {
-    shield: greaterEq(input.constellation, 4, shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0)),
-    cryoShield: greaterEq(input.constellation, 4, shieldElement("cryo", shieldNode("hp", percent(datamine.constellation4.shieldHp_), 0))),
+    shield: greaterEq(input.constellation, 4, shieldNode("hp", percent(dm.constellation4.shieldHp_), 0)),
+    cryoShield: greaterEq(input.constellation, 4, shieldElement("cryo", shieldNode("hp", percent(dm.constellation4.shieldHp_), 0))),
   }
 }
 
@@ -89,8 +89,8 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 //Conditional C1: Oppo affected by Cryo
 const [condC1Path, condC1Cryo] = cond(key, "CryoC1")
-const nodeC1NormalCritRate = equal(condC1Cryo, "on", greaterEq(input.constellation, 1, datamine.constellation1.critRate_))
-const nodeC1ChargeCritRate = equal(condC1Cryo, "on", greaterEq(input.constellation, 1, datamine.constellation1.critRate_))
+const nodeC1NormalCritRate = equal(condC1Cryo, "on", greaterEq(input.constellation, 1, dm.constellation1.critRate_))
+const nodeC1ChargeCritRate = equal(condC1Cryo, "on", greaterEq(input.constellation, 1, dm.constellation1.critRate_))
 
 export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, dmgFormulas, {
   bonus: {
@@ -115,7 +115,7 @@ const sheet: ICharacterSheet = {
     auto: ct.talentTem("auto", [{
       text: ct.chg("auto.fields.normal"),
     }, {
-      fields: datamine.normal.hitArr.map((_, i) => ({
+      fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
       }))
     }, {
@@ -127,7 +127,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("auto.skillParams.7"),
-        value: datamine.charged.stamina,
+        value: dm.charged.stamina,
       }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
@@ -146,7 +146,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.1"),
-        value: datamine.skill.cd,
+        value: dm.skill.cd,
         unit: "s",
       }]
     }]),
@@ -156,15 +156,15 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.burst.duration,
+        value: dm.burst.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: datamine.burst.cd,
+        value: dm.burst.cd,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
-        value: datamine.burst.enerCost,
+        value: dm.burst.enerCost,
       }, {
         canShow: data => data.get(input.constellation).value >= 2,
         text: ct.ch("c2burstDuration"),
@@ -201,11 +201,11 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.constellation4.cryoShield, { name: st(`dmgAbsorption.cryo`) }),
       }, {
         text: ct.chg("burst.skillParams.2"),
-        value: datamine.constellation4.duration,
+        value: dm.constellation4.duration,
         unit: "s"
       }, {
         text: ct.chg("burst.skillParams.1"),
-        value: datamine.constellation4.cooldown,
+        value: dm.constellation4.cooldown,
         unit: "s"
       }]
     })]),

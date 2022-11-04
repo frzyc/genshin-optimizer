@@ -25,10 +25,6 @@ yarn-error.log*
 .vscode
 .eslintcache
 
-# datamined data repo
-/pipeline/GenshinData
-/pipeline/Texture2D
-
 # localization generated JSON
 *_gen.json
 public/locales/*
