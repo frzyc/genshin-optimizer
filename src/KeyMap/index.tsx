@@ -3,7 +3,7 @@ import { Info } from "../Formula/type";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
 import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import elementalData from "./ElementalData";
-import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
+import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, crittableTransformativeReactions, CrittableTransformativeReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
 
 const statMap = {
   hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
@@ -138,6 +138,14 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, variants }])
   })
   else statMap[`${reaction}_hit`] = `${name} DMG`
   statMap[`${reaction}_multi`] = `${name} Multiplier`
+})
+
+export type TransformativeReactionsCritRateKey = `${CrittableTransformativeReactionsKey}_critRate_`
+export type TransformativeReactionsCritDMGKey = `${CrittableTransformativeReactionsKey}_critDMG_`
+
+crittableTransformativeReactions.forEach(reaction => {
+  statMap[`${reaction}_critRate_`] = `${transformativeReactions[reaction].name} Crit Rate`
+  statMap[`${reaction}_critDMG_`] = `${transformativeReactions[reaction].name} Crit DMG`
 });
 
 //Crystallize
@@ -163,7 +171,7 @@ Object.entries(additiveReactions).forEach(([reaction, { name }]) => {
 })
 
 /* EVERY stat key */
-export type StatKey = BaseKeys | ElementExtKey | MoveExtKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey | AdditiveReactionsDmgKey
+export type StatKey = BaseKeys | ElementExtKey | MoveExtKey | TransformativeReactionsDmgKey | TransformativeReactionsCritRateKey | TransformativeReactionsCritDMGKey | AmplifyingReactionsDmgKey | AdditiveReactionsDmgKey
 
 export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon' | 'teamBuff'
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {

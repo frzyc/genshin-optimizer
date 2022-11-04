@@ -2,18 +2,20 @@ export const hitTypes = { hit: "DMG", avgHit: "Avg. DMG", critHit: "CRIT Hit DMG
 export const hitMoves = { normal: "Normal Att.", charged: "Charged Att.", plunging: "Plunging Att.", elemental: "Elemental Att.", skill: "Ele. Skill", burst: "Ele. Burst" } as const
 export type HitMoveKey = keyof typeof hitMoves
 export const transformativeReactions = {
-  overloaded: { name: "Overloaded", multi: 2, variants: ["pyro"], resist: "pyro" },
-  shattered: { name: "Shattered", multi: 1.5, variants: ["physical"], resist: "physical" },
-  electrocharged: { name: "Electro-Charged", multi: 1.2, variants: ["electro"], resist: "electro" },
-  superconduct: { name: "Superconduct", multi: 0.5, variants: ["cryo"], resist: "cryo" },
-  swirl: { name: "Swirl", multi: 0.6, variants: ["pyro", "hydro", "electro", "cryo"], resist: "pyro" },
-  burning: { name: "Burning", multi: 0.25, variants: ["pyro", "dendro"], resist: "pyro" },
-  bloom: { name: "Bloom", multi: 2, variants: ["dendro", "hydro"], resist: "dendro" },
-  burgeon: { name: "Burgeon", multi: 3, variants: ["pyro"], resist: "dendro" },
-  hyperbloom: { name: "Hyperbloom", multi: 3, variants: ["electro"], resist: "dendro" },
+  overloaded: { name: "Overloaded", multi: 2, variants: ["pyro"], resist: "pyro", canCrit: false },
+  shattered: { name: "Shattered", multi: 1.5, variants: ["physical"], resist: "physical", canCrit: false },
+  electrocharged: { name: "Electro-Charged", multi: 1.2, variants: ["electro"], resist: "electro", canCrit: false },
+  superconduct: { name: "Superconduct", multi: 0.5, variants: ["cryo"], resist: "cryo", canCrit: false },
+  swirl: { name: "Swirl", multi: 0.6, variants: ["pyro", "hydro", "electro", "cryo"], resist: "pyro", canCrit: false },
+  burning: { name: "Burning", multi: 0.25, variants: ["pyro", "dendro"], resist: "pyro", canCrit: true },
+  bloom: { name: "Bloom", multi: 2, variants: ["dendro", "hydro"], resist: "dendro", canCrit: true },
+  burgeon: { name: "Burgeon", multi: 3, variants: ["pyro"], resist: "dendro", canCrit: true },
+  hyperbloom: { name: "Hyperbloom", multi: 3, variants: ["electro"], resist: "dendro", canCrit: true },
 
 } as const
 export type TransformativeReactionsKey = keyof typeof transformativeReactions
+export const crittableTransformativeReactions = ["burning", "bloom", "burgeon", "hyperbloom"] as const
+export type CrittableTransformativeReactionsKey = typeof crittableTransformativeReactions[number]
 export const amplifyingReactions = {
   vaporize: { name: "Vaporize", variants: { pyro: 1.5, hydro: 2 } },
   melt: { name: "Melt", variants: { pyro: 2, cryo: 1.5 } },

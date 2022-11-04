@@ -19,6 +19,8 @@
   "seconds_other": "{{count}} Seconds",
   "uses_one": "{{count}} Use",
   "uses_other": "{{count}} Uses",
+  "opponents_one": "{{count}} Opponent",
+  "opponents_other": "{{count}} Opponents",
   "afterDefeatEnemy": "After defeating an opponent",
   "opponentsDamaged": "Opponents damaged",
   "hitOp": {

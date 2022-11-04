@@ -1,6 +1,7 @@
 import { WeaponCatalystKey } from '../../../Types/consts'
 import WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
+import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BlackcliffAgate from './BlackcliffAgate'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
@@ -30,6 +31,7 @@ import WanderingEvenstar from './WanderingEvenstar'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
+  AThousandFloatingDreams,
   BlackcliffAgate,
   DodocoTales,
   EmeraldOrb,

@@ -1,5 +1,5 @@
 import KeyMap, { allEleEnemyResKeys } from "../KeyMap"
-import { transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
+import { crittableTransformativeReactions, transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { artifactTr } from "../names"
 import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "../Types/consts"
 import { crawlObject, objectKeyMap, objectKeyValueMap } from "../Util/Util"
@@ -35,6 +35,10 @@ const allNonModStats = [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
     `${x}_critRate_` as const]),
+  ...crittableTransformativeReactions.flatMap(x => [
+    `${x}_critRate_` as const,
+    `${x}_critDMG_` as const,
+  ]),
   "all_dmgInc" as const,
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
@@ -60,6 +64,10 @@ for (const ele of allElements) {
 for (const reaction of [...allTransformative, ...allAmplifying, ...allAdditive]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
+crittableTransformativeReactions.forEach(reaction => {
+  allNonModStatNodes[`${reaction}_critRate_`].info!.variant = reaction
+  allNonModStatNodes[`${reaction}_critDMG_`].info!.variant = reaction
+})
 allNonModStatNodes.healInc.info!.variant = "heal"
 allNonModStatNodes.incHeal_.info!.variant = "heal"
 allModStatNodes.heal_.info!.variant = "heal"
