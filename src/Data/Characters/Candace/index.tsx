@@ -75,13 +75,13 @@ const hydroInfusion = equalStr(condAfterBurst, "on",
   lookup(target.weaponType,
     { "sword": constant("hydro"), "claymore": constant("hydro"), "polearm": constant("hydro") }, constant("")))
 
-const a4_normalEle_dmg_ = greaterEq(input.asc, 4, equal(condAfterBurst, "on",
+const a4_normalEle_dmg_ = infoMut(greaterEq(input.asc, 4, equal(condAfterBurst, "on",
   prod(
     percent(dm.passive2.normalEle_dmg_),
     input.total.hp,
     1 / 1000
   )
-), KeyMap.info("normalEle_dmg_"))
+)), KeyMap.info("normalEle_dmg_"))
 
 const [condC2AfterSkillHitPath, condC2AfterSkillHit] = cond(key, "c2AfterSkillHit")
 const c2_hp_ = greaterEq(input.constellation, 2,
