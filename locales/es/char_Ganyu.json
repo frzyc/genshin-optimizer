@@ -1,0 +1,12 @@
+{
+  "a1": {
+    "condName": "Tras lanzar una Flecha helada",
+    "critRateInc": "Aumento de Prob. CRIT de Flecha helada"
+  },
+  "c1": {
+    "condName": "Enemigo recibe Daño por una Flecha helada de Carga 2 o una Explosión de escarcha"
+  },
+  "c4": {
+    "lingerDuration": "Duración de efecto persistente"
+  }
+}

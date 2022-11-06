@@ -1,0 +1,25 @@
+{
+  "addAimed": "Additional Aimed Shot DMG",
+  "addFullAimed": "Additional Full-Charged Aimed Shot DMG",
+  "upcurrentDuration": "Upcurrent Duration",
+  "regenEner": "Regen 15 Energy to Venti after effect ends",
+  "fullBurstDMG": {
+    "description": {
+      "0": "<strong>Full Elemental Burst DMG</strong>",
+      "1": "This calculates the total Elemental Burst DMG, including Swirl. This calculation assumes",
+      "2": "20 ticks of <anemo>Burst DMG</anemo>",
+      "3": "15 ticks of absorption DMG",
+      "4": "7 ticks of Swirl, for one enemy, OR,",
+      "5": "14 ticks of Swirl, for multiple enemies with an element that has an AoE Swirl."
+    },
+    "dmg7": "Total DMG (7 Swirl ticks)",
+    "dmg14": "Total DMG (14 Swirl ticks)"
+  },
+  "c6": "Targets who take DMG from <strong>Wind's Grand Ode</strong>",
+  "c4": "Venti picks up an Elemental Orb or Particle",
+  "q": "Regen 15 Energy to all characters of the absorbed element in the party.",
+  "c2": {
+    "hit": "Opponent hit",
+    "launched": "Opponent launched"
+  }
+}

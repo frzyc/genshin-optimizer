@@ -1,0 +1,29 @@
+{
+  "setName": "Thundersoother",
+  "setEffects": {
+    "2": "Electro RES +40%.",
+    "4": "Meningkatkan 35% DMG terhadap musuh yang terpengaruh Electro."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Thundersoother's Heart",
+      "desc": "Bunga yang mekar merekah meskipun tumbuh di bawah sambaran guntur dan petir. Sampai hari ini, bunga ini tetap digunakan sebagai tanda keberanian dan perlindungan, biasanya diberikan kepada petualang sebelum menghadapi badai petir."
+    },
+    "plume": {
+      "name": "Thundersoother's Plume",
+      "desc": "Menurut legenda, bulu ini berasal dari seekor makhluk yang terbang menaiki halilintar. Sebelumnya dikenal sebagai lambang dari pahlawan legendaris yang dapat menenangkan guntur dan halilintar."
+    },
+    "sands": {
+      "name": "Hour of Soothing Thunder",
+      "desc": "Alat penunjuk waktu yang digunakan oleh pahlawan yang berhasil menaklukkan guntur dan petir. Pecahan Electro di dalamnya berayun dari satu sisi ke sisi yang lain seiring berlalunya waktu."
+    },
+    "goblet": {
+      "name": "Thundersoother's Goblet",
+      "desc": "Cangkir anggur yang pernah digunakan oleh Thundersoother, seorang pahlawan yang konon berhasil mengalahkan Beast of Thunder."
+    },
+    "circlet": {
+      "name": "Thundersoother's Diadem",
+      "desc": "Mahkota yang diserahkan kepada Thundersoother sebagai tanda penghargaan atas jasanya dalam mengalahkan Beast of Thunder yang telah mendatangkan malapetaka di atas daratan."
+    }
+  }
+}

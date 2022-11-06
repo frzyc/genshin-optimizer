@@ -1,0 +1,8 @@
+{
+  "name": "Schwert der Niederkunft",
+  "description": "Ein Schwert von außergewöhnlicher Machart. Es scheint nicht von dieser Welt zu sein.",
+  "passiveName": "Niederkunft",
+  "passiveDescription": {
+    "0": "<cryo>Nur für Spieler auf folgender Plattform wirksam:</cryo>\\n<cryo>„PlayStation Network“</cryo>\\nVerursacht beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von <cryo>50 %</cryo> Schaden in Höhe von <cryo>200 %</cryo> ANG mit geringer Reichweite. 10 s Abklingzeit. Erhöht den ANG zusätzlich um <cryo>66</cryo> Punkte, wenn {F#die}{M#der} Reisende mit dem Schwert der Niederkunft ausgerüstet ist."
+  }
+}

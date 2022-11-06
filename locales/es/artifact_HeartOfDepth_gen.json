@@ -1,0 +1,29 @@
+{
+  "setName": "Corazón de las Profundidades",
+  "setEffects": {
+    "2": "Bono de Daño Hydro +15%.",
+    "4": "Tras usar la Habilidad Elemental, aumenta el daño de Ataque Normal y Ataque Cargado en un 30% durante 15 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Broche Dorado",
+      "desc": "Un broche cuyo color y brillo se han atenuado. Su revestimiento dorado original se ha perdido debido a la erosión de la brisa marina."
+    },
+    "plume": {
+      "name": "Brisa de los Recuerdos",
+      "desc": "Una pluma arrastrada por el sollozo de la brisa marina y las sangrientas olas del océano. Su forma y color han ido cambiando con el tiempo."
+    },
+    "sands": {
+      "name": "Brújula de Cobre Resistente",
+      "desc": "Una brújula hecha de cobre cuya manecilla siempre apunta a una costa muy lejana y a un puerto cuya existencia no se conoce."
+    },
+    "goblet": {
+      "name": "Cáliz de las Profundidades",
+      "desc": "Un cáliz desteñido que alguien sacó del agua por casualidad. Sus tenues colores murmuran historias que tuvieron lugar bajo las olas del mar."
+    },
+    "circlet": {
+      "name": "Gorro de Capitán Manchado de Vino",
+      "desc": "Un antiguo gorro de capitán con un hedor a alcohol imposible de quitar. En él, hay algunas manchas de vino."
+    }
+  }
+}

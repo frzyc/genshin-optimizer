@@ -1,0 +1,13 @@
+{
+  "dmg": "DGT",
+  "hits": "{{hits}} coup",
+  "lessPercentHP": "< {{percent}}% PV",
+  "hitOp": {
+    "normal": "Attaque Normale touche des ennemis",
+    "charged": "Attaque Chargée touche des ennemis",
+    "plunging": "Attaque Plongeante touche des ennemis",
+    "skill": "Compétence Élémentaire touche des ennemis",
+    "burst": "Déchaînement Élémentaire touche des ennemis"
+  },
+  "eleAbsor": "Absorption Élémentaire"
+}

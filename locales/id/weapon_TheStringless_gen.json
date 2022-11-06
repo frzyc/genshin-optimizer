@@ -1,0 +1,12 @@
+{
+  "name": "The Stringless",
+  "description": "Sebuah busur yang dulunya merupakan instrumen luar biasa. Kini tak mampu lagi untuk membuat orang menari.",
+  "passiveName": "Arrowless Song",
+  "passiveDescription": {
+    "0": "Meningkatkan <cryo>24%</cryo> DMG Elemental Skill dan Elemental Burst.",
+    "1": "Meningkatkan <cryo>30%</cryo> DMG Elemental Skill dan Elemental Burst.",
+    "2": "Meningkatkan <cryo>36%</cryo> DMG Elemental Skill dan Elemental Burst.",
+    "3": "Meningkatkan <cryo>42%</cryo> DMG Elemental Skill dan Elemental Burst.",
+    "4": "Meningkatkan <cryo>48%</cryo> DMG Elemental Skill dan Elemental Burst."
+  }
+}

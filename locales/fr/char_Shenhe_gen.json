@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "Transcendance solitaire",
+  "description": "Une disciple Adepte avec un air des plus inhabituels. Après avoir passé beaucoup de temps à s'instruire en isolement dans les montagnes de Liyue, elle est devenue tout aussi froide et distante que les Adeptes eux-mêmes.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Percée des étoiles",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocation d'esprit printanier",
+    "description": {
+      "0": "La rosée givrée et argentée exorcisera tous les démons.",
+      "1": "Accorde un effet de Pennage glacé à tous les membres de l'équipe à proximité, et inflige des <cryo>DGT Cryo</cryo> de différentes manières selon que la capacité a été activée avec un appui simple ou long.",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Se précipite vers l'avant avec un esprit talismanique, infligeant des <cryo>DGT Cryo</cryo> aux ennemis en chemin.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Ordonne à l'esprit talismanique d'infliger des <cryo>DGT Cryo de zone</cryo>.",
+      "8": "<br/>",
+      "9": "<strong>Pennage glacé</strong>",
+      "10": "Lorsqu'une attaque normale, chargée ou plongeante, une compétence ou un déchaînement élémentaire inflige des <cryo>DGT Cryo</cryo> à un ennemi, les DGT infligés augmentent en fonction de l'ATQ actuelle de Shenhe.",
+      "11": "<br/>",
+      "12": "Les effets du pennage glacé disparaissent à la fin de sa durée ou après avoir activé un certain nombre de cumuls. En utilisant un pennage glacé avec un appui long à la place d'un appui simple, sa durée et le nombre de cumuls générés augmentent.",
+      "13": "Lorsqu'une attaque de <cryo>DGT Cryo</cryo> touche plusieurs ennemis en même temps, les cumuls sont consommés selon le nombre d'ennemis touchés. Les cumuls de pennage glacé sont calculés indépendamment pour tous les personnages de l'équipe.",
+      "14": "<br/>",
+      "15": "<i>« Le pouvoir des esprits n'est pas un mensonge. Même accablée par les ordres, la demoiselle divine continue !{NON_BREAK_SPACE}»</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "Bonus de DGT",
+      "3": "Durée d'appui simple/long",
+      "4": "Cumuls d'appui simple/long",
+      "5": "TdR appui simple",
+      "6": "TdR appui long",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Délivrance de la demoiselle divine",
+    "description": {
+      "0": "Libère la puissance de l'esprit talismanique, lui permettant de se déplacer librement dans ce plan d'existence pour infliger des <cryo>DGT Cryo de zone</cryo>.",
+      "1": "L'esprit talismanique crée alors un champ qui diminue les <cryo>RÉS Cryo</cryo> et physique des ennemis, et inflige des <cryo>DGT Cryo</cryo> de façon continue aux ennemis à l'intérieur.",
+      "2": "<br/>",
+      "3": "<i>« La voie des Adeptes n'est pas pour ceux pris dans le mystère et l'imagination. Ce n'est qu'en observant les changements des cieux et de la terre, et en comprenant les lois de cause à effet de ce royaume, que l'on peut saisir son essence. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Baisse RÉS",
+      "2": "DGT continus",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Étreinte divine",
+    "description": {
+      "0": "Lorsque le personnage déployé est dans le champ généré par <strong>Délivrance de la demoiselle divine</strong>, son <cryo>bonus de DGT Cryo</cryo> augmente de 15 %."
+    }
+  },
+  "passive2": {
+    "name": "Sceau de communion spirituelle",
+    "description": {
+      "0": "Lorsque Shenhe utilise <strong>Invocation d'esprit printanier</strong>, tous les personnages de l'équipe à proximité bénéficient des effets suivants :",
+      "1": [
+        " Appui simple : les DGT infligés par les compétences et les déchaînements élémentaires augmentent de 15 % pendant 10 s.",
+        " Appui long : les DGT infligés par les attaques normales, chargées et plongeantes augmentent de 15 % pendant 15 s."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Arrivée opportune",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Liyue de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Clarté du cœur",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Invocation d'esprit printanier</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "Esprit centré",
+    "description": {
+      "0": "Prolonge la durée de <strong>Délivrance de la demoiselle divine</strong> de 6 s. De plus, les DGT CRIT des <cryo>DGT Cryo</cryo> du personnage déployé dans le champ augmentent de 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Isolement",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Invocation d'esprit printanier</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Clairvoyance",
+    "description": {
+      "0": "Lorsqu'un personnage affecté par le <strong>pennage glacé</strong> de Shenhe déclenche l'effet de bonus de DGT de la flèche, Shenhe obtient 1 cumul de Mantra de givre :",
+      "1": [
+        " Lorsque Shenhe utilise <strong>Invocation d'esprit printanier</strong>, tous les cumuls de Mantra de givre sont consommés pour augmenter les DGT infligés par cette invocation d'esprit printanier de 5 % pour chaque cumul consommé.",
+        " Cet effet peut être cumulé 50 fois maximum et dure 60 s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Divinisation",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Délivrance de la demoiselle divine</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Abandon mystique",
+    "description": {
+      "0": "Lorsqu'un personnage déclenche les effets d'un <strong>pennage glacé</strong> avec les DGT d'une attaque normale ou chargée, aucun cumul n'est consommé."
+    }
+  }
+}

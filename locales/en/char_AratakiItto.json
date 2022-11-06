@@ -1,0 +1,15 @@
+{
+  "a1": {
+    "name": "When Arataki Itto uses consecutive Arataki Kesagiri"
+  },
+  "a4": {
+    "dmgInc": "Arataki Kesagiri DMG increase"
+  },
+  "c1": {
+    "initialGain": "Stacks of Superlative Superstrength gained",
+    "timedGain": "After 1s, stacks of Superlative Superstrength gained every 0.5s for 1.5s"
+  },
+  "c4": {
+    "name": "When the Raging Oni King state caused by <strong>Royal Descent: Behold, Itto the Evil!</strong> ends"
+  }
+}

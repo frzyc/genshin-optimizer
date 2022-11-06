@@ -1,0 +1,29 @@
+{
+  "setName": "Último Juramento do Gladiador",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Se o portador deste conjunto de artefato usar uma Espada, Espadão ou Lança, aumenta o Dano de seus Ataques Normais em 35%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nostalgia do Gladiador",
+      "desc": "Ninguém sabe por que o lendário lutador sempre usou essa pequena flor no peito. Este é o único ponto fraco do guerreiro."
+    },
+    "plume": {
+      "name": "Destino do Gladiador",
+      "desc": "Uma pena que sonha em ter a liberdade de um falcão. No final de sua carreira lendária, o pássaro indomável colocou esta pena em seu coração."
+    },
+    "sands": {
+      "name": "Esperança do Gladiador",
+      "desc": "Um testemunho dos dias sangrentos de um gladiador. Representa o caminho árduo percorrido para alcançar a liberdade."
+    },
+    "goblet": {
+      "name": "Embriaguez do Gladiador",
+      "desc": "O copo de ouro usado pelos Gladiadores Antigos para beber o vinho da vitória. O copo traz consigo todas as memórias até o seu último momento."
+    },
+    "circlet": {
+      "name": "Triunfo do Gladiador",
+      "desc": "Capacete dos antigos gladiadores lendários, manchado com o sangue de inúmeros rivais e momentos de glória."
+    }
+  }
+}

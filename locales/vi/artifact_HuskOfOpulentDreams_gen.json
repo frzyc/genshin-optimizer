@@ -1,0 +1,29 @@
+{
+  "setName": "Giấc Mộng Phù Hoa",
+  "setEffects": {
+    "2": "Phòng ngự tăng 30%.",
+    "4": "Nhân vật trang bị bộ Thánh Di Vật này sẽ nhận hiệu quả \"Vấn Đáp\" trong các trường hợp sau đây: Sau khi nhân vật trong trận sử dụng tấn công Nguyên Tố Nham đánh trúng kẻ địch sẽ nhận 1 tầng, mỗi 0.3s tối đa kích hoạt 1 lần; trong đội chờ, mỗi 3s nhận 1 tầng. Vấn Đáp cộng dồn tối đa 4 tầng, mỗi tầng sẽ tăng 6% phòng ngự và 6% buff sát thương Nguyên Tố Nham. Mỗi 6s, nếu chưa nhận hiệu quả Vấn Đáp sẽ mất đi 1 tầng."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Thời Khắc Nở Rộ",
+      "desc": "Trang sức nhỏ hình bông hoa sáu cánh không bao giờ tàn lụi, nó tượng trưng cho sự ngắn ngủi của vinh quang chốn phàm trần."
+    },
+    "plume": {
+      "name": "Lông Vũ Phù Hoa",
+      "desc": "Chứng nhận có hình dạng lông vũ được đem ra từ nơi hẻo lánh cách biệt với thế giới. Do lòng trắc ẩn của người sáng tạo, nên nó đã được để lại cùng với hình hài đang ngủ say trong căn phòng."
+    },
+    "sands": {
+      "name": "Khúc Ca Chúng Sinh",
+      "desc": "Theo người dân Inazuma nói thì đây là vật phẩm đến từ bên ngoài. Linh kiện bên trong lõi đã bị tháo gỡ, kim châm cũng đã không còn chuyển động."
+    },
+    "goblet": {
+      "name": "Hồ Lô Tỉnh Mộng",
+      "desc": "Hồ lô với những đường nét trang trí màu đen và vàng, đã không còn nhận ra màu sắc ban đầu của nó nữa, có vẻ chủ yếu là dùng để làm đạo cụ diễn xuất."
+    },
+    "circlet": {
+      "name": "Nón Hình Hài",
+      "desc": "Chiếc nón che nắng che mưa của kẻ lang thang, nhưng sau này lại trở thành đạo cụ hữu ích để che đi gương mặt và giấu đi cảm xúc."
+    }
+  }
+}

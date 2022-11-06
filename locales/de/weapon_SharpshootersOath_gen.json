@@ -1,0 +1,12 @@
+{
+  "name": "Eid des Scharfschützen",
+  "description": "Dieser perfekt ausgearbeitete Bogen gehörte angeblich einst einem meisterlichen Bogenschützen. Aufgrund seines starken Geruchs eignet er sich aber nicht gut zum Jagen.",
+  "passiveName": "Präzision",
+  "passiveDescription": {
+    "0": "Erhöht den Schwachstellen zugefügten Schaden um <cryo>24 %</cryo>.",
+    "1": "Erhöht den Schwachstellen zugefügten Schaden um <cryo>30 %</cryo>.",
+    "2": "Erhöht den Schwachstellen zugefügten Schaden um <cryo>36 %</cryo>.",
+    "3": "Erhöht den Schwachstellen zugefügten Schaden um <cryo>42 %</cryo>.",
+    "4": "Erhöht den Schwachstellen zugefügten Schaden um <cryo>48 %</cryo>."
+  }
+}

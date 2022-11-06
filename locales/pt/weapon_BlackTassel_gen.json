@@ -1,0 +1,12 @@
+{
+  "name": "Borla Preta",
+  "description": "Bem, isso resolve o problema das borlas brancas que se mancham facilmente.",
+  "passiveName": "Atacante Pesado",
+  "passiveDescription": {
+    "0": "Aumenta o Dano contra os Slimes em <cryo>40%</cryo>.",
+    "1": "O Dano causado em Slimes aumentam <cryo>50%</cryo>.",
+    "2": "Aumenta o Dano contra os Slimes em <cryo>60%</cryo>.",
+    "3": "Aumenta o Dano contra os Slimes em <cryo>70%</cryo>.",
+    "4": "Aumenta o Dano contra os Slimes em <cryo>80%</cryo>."
+  }
+}

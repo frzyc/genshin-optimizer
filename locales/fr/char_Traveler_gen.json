@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Restauration énergie élémentaire",
+      "enerRechInc": "Bonus recharge d'énergie"
+    },
+    "burst": {
+      "thunderDMG": "DGT Foudre majestueuse"
+    }
+  }
+}

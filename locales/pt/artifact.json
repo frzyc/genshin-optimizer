@@ -1,0 +1,88 @@
+{
+  "editor": {
+    "title": "Editor de Artefatos",
+    "set": {
+      "artifactSet": "Conjunto de artefatos",
+      "maxRarity": "Raridade Máxima <1></1>"
+    },
+    "substat": {
+      "substatFormat": "Subatributo {{value}}",
+      "noSubstat": "Sem Subatributos",
+      "selectSub": "Selecione um Subatributo",
+      "error": {
+        "noCalc": "Não foi possível calcular o sorteio dos atributos.",
+        "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
+      },
+      "noRoll": "Sem Sorteios",
+      "noStat": "Sem Valor",
+      "eff": "Eficiência: <1></1>"
+    },
+    "rarity": "Raridade",
+    "level": "Nível",
+    "unknownPieceName": "Nome da Peça Desconhecido",
+    "mainSelect": "Selecione o Atributo Principal",
+    "curSubEff": "Eficiência Atual do Subatributo",
+    "curSubEffDesc": "A cada 4 aumentos no nível no artefato, você ganha um sorteio no subatributo. <strong>Eficiência do Subatributo</strong> calcula como uma porcentagem o quão alto o subatributo foi sorteado.",
+    "maxSubEff": "Eficiência Máxima do Subatributo",
+    "maxSubEffDesc": "A <strong>Eficiência Máxima do Subatributo</strong> de um artefato calcula a eficiência máxima nos aumentos de nível restantes.",
+    "preview": "Visualização do Artefato",
+    "dupArt": "Artefato duplicado detectado.",
+    "upArt": "Artefato atualizado detectado.",
+    "beforeEdit": "Antes de Editar",
+    "btnSave": "Salvar o Artefato",
+    "btnAdd": "Adicionar Artefato",
+    "btnClear": "Limpar",
+    "btnRandom": "Aleatório",
+    "btnUpdate": "Atualizar o Artefato",
+    "clearPrompt": "Existe um artefato no editor. Tem certeza de que deseja limpar o editor?"
+  },
+  "artifactFilter": "Filtro de Artefatos",
+  "filterLocation": {
+    "inventory": "Inventário",
+    "currentlyEquipped": "Atualmente Equipado",
+    "any": "Qualquer"
+  },
+  "button": {
+    "unequipArtifacts": "Desequipar Artefatos",
+    "deleteArtifacts": "Excluir Artefatos",
+    "excludeArtifacts": "Bloquear Artefatos",
+    "includeArtifacts": "Desbloquear Artefatos"
+  },
+  "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3>",
+  "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
+  "tipsOfTheDay": [
+    "A eficiência máxima de um artefato de 4 estrelas é de cerca de 60%.",
+    "A eficiência máxima de um artefato geralmente diminuirá conforme você aumenta o nível. É perfeitamente normal!",
+    "Subatributos com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
+    "Se todos os seus sorteios(6) foram para um único subatributo, ele será roxo!",
+    "Clique em \"Detalhes\" quando estiver atualizando seus artefatos no jogo para digitalizar conforme você o aumenta o nível.",
+    "Agora você pode fazer upload de capturas de tela de vários artefatos para serem digitalizados!"
+  ],
+  "mainStat": "Atributo Principal",
+  "slot": "Slot",
+  "slotName": {
+    "flower": "Flor da Vida",
+    "plume": "Pluma da Morte",
+    "sands": "Areia do Tempo",
+    "goblet": "Cálice de Erátema",
+    "circlet": "Tiara de Logos"
+  },
+  "info": {
+    "title": "Edição de Artefato/Guia de Gerenciamento",
+    "section1": "<0>Sorteio dos subatributos</0><1>O <1>número de sorteios</1> que um subatributo possui é mostrado no seu lado esquerdo. À medida que o número aumenta, o subatributo fica mais colorido:<3></3>.</1><2>Eficiência do Subatributo</2><3>A eficiência de um subatributo é uma porcentagem do valor atual sobre o valor potencial de um 5<1></1>. Na imagem o valor máximo de rolagem de DANO CRIT é 7,8%. Em eficiência: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiência Atual vs. Máxima Eficiência Potencial</4><5>Quando um 5<1></1> tiver 9(4+5) sorteios no total, com cada um tendo o valor mais alto, isso é definido como um artefato 100% eficiente. No entanto, a maioria dos artefatos não tem essa sorte. A <3>eficiência atual</3> de um artefato é uma porcentagem sobre esse artefato 100%. A <5>eficiência máxima</5> é a eficiência máxima possível que um artefato pode alcançar, se os sorteios restantes dos aumentos de nível forem o valor mais alto.</5><6>Bloqueando um artefato</6><7>Ao bloquear um artefato <1></1>, este artefato não será usado pelo gerador de builds para otimização. Um artefato equipado é bloqueado por padrão.</7>",
+    "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um subatributo é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
+    "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com subatributos: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
+  },
+  "exclusionDisplay": "Bloqueado: {{value}}",
+  "exclusion": {
+    "any": "Qualquer",
+    "excluded": "Bloqueado",
+    "included": "Desbloqueado"
+  },
+  "sortMap": {
+    "quality": "Qualidade",
+    "level": "Nível",
+    "efficiency": "Efic. Atual do Subatributo",
+    "mefficiency": "Efic. Máxima do Subatributo"
+  }
+}

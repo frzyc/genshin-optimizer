@@ -1,0 +1,29 @@
+{
+  "setName": "Emblema del Destino",
+  "setEffects": {
+    "2": "Recarga de Energía +20%.",
+    "4": "Aumenta el daño infligido con la Habilidad Definitiva en una cantidad equivalente al 25% de la Recarga de Energía. Se puede obtener un aumento del 75% como máximo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Guardamano del Honor",
+      "desc": "Cuenta la leyenda que este magnífico guardamano le fue otorgado a la oni que traicionó a la Shogun."
+    },
+    "plume": {
+      "name": "Pluma de la Laceración",
+      "desc": "Una pluma negra perteneciente a una guerrera tengu y muy apreciada por un gran samurái del pasado."
+    },
+    "sands": {
+      "name": "Inrou de la Tempestad",
+      "desc": "Una exquisita cajita de laca de color violeta oscuro que sirve para guardar objetos. Está decorada con brillantes incrustaciones de caracolas y oro."
+    },
+    "goblet": {
+      "name": "Cáliz Escarlata",
+      "desc": "Un exquisito cáliz para guardar vino que perteneció a un reconocido samurái."
+    },
+    "circlet": {
+      "name": "Casco Ornamentado",
+      "desc": "Un casco firme y seguro que un honorable samurái usaba para protegerse."
+    }
+  }
+}

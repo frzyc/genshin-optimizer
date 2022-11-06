@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "amuletGenAmt": "Number of Abundance Amulets generated",
+    "absorb": "Active character absorbing an Abundance Amulet"
+  },
+  "burst": {
+    "3rd": "3rd Falling Thunder DMG",
+    "thunderCd": "Falling Thunder CD"
+  },
+  "passive2": {
+    "enerRech_": "Abundance Amulet Energy Recharge effect inc."
+  },
+  "c2": {
+    "thunderHit": "<strong>Falling Thunder</strong> hits opponent"
+  },
+  "c6": {
+    "fallingThunder3": "3rd <strong>Falling Thunder</strong> attack",
+    "fallingThunderBonus_": "<strong>Falling Thunder</strong> DMG bonus"
+  }
+}

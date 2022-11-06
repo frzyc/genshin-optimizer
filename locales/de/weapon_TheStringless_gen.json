@@ -1,0 +1,12 @@
+{
+  "name": "Der Sehnenlose",
+  "description": "Ein großer, prächtiger Bogen, der einst als Musikinstrument gedient hat. Mittlerweile bringt er niemanden mehr zum Tanzen.",
+  "passiveName": "Pfeilloser Gesang",
+  "passiveDescription": {
+    "0": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um <cryo>24 %</cryo>.",
+    "1": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um <cryo>30 %</cryo>.",
+    "2": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um <cryo>36 %</cryo>.",
+    "3": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um <cryo>42 %</cryo>.",
+    "4": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um <cryo>48 %</cryo>."
+  }
+}

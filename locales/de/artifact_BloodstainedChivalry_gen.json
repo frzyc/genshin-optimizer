@@ -1,0 +1,29 @@
+{
+  "setName": "Blutiger Weg eines Ritters",
+  "setEffects": {
+    "2": "Erhöht den verursachten physischen Schaden um 25 %.",
+    "4": "Verbraucht beim Besiegen von Gegnern 10 s lang für die Anwendung von heftigen Schlägen keine Ausdauer und erhöht den mit heftigen Schlägen verursachten Schaden um 50 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Herz des Blutbefleckten",
+      "desc": "Eine getrocknete Blume, die aufgrund des vielen Blutes eisenhart geworden ist. Für ihren vorigen Besitzer war sie wohl so etwas wie ein Erinnerungsstück."
+    },
+    "plume": {
+      "name": "Feder des Blutbefleckten",
+      "desc": "Die schwarze Feder vom Mantel eines Ritters. Da sie so oft in dunkles Blut getränkt wurde, hat sie eine Farbe wie schwarze Tinte angenommen."
+    },
+    "sands": {
+      "name": "Uhr des Blutbefleckten",
+      "desc": "Das Gerät zur Zeitmessung eines Ritters. Die Flüssigkeit darin ist längst geronnen, sodass man keine Zeit mehr messen kann."
+    },
+    "goblet": {
+      "name": "Kelch des Blutbefleckten",
+      "desc": "Der trübe Kelch des Blutbefleckten. Das am Rand haftende Blut war lange Ruß und Rauch ausgesetzt und ist nun so schwarz wie Pech."
+    },
+    "circlet": {
+      "name": "Eisenmaske des Blutbefleckten",
+      "desc": "Eine eiserne Maske, mit der ein Ritter sein Gesicht schützte. Was sich unter der Maske verbarg, war damals Gegenstand von Spekulationen."
+    }
+  }
+}

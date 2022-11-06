@@ -1,0 +1,12 @@
+{
+  "name": "Lion's Roar",
+  "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
+  "passiveName": "Bane of Fire and Thunder",
+  "passiveDescription": {
+    "0": "Increases DMG against opponents affected by Pyro or Electro by <cryo>20%</cryo>.",
+    "1": "Increases DMG against opponents affected by Pyro or Electro by <cryo>24%</cryo>.",
+    "2": "Increases DMG against opponents affected by Pyro or Electro by <cryo>28%</cryo>.",
+    "3": "Increases DMG against opponents affected by Pyro or Electro by <cryo>32%</cryo>.",
+    "4": "Increases DMG against opponents affected by Pyro or Electro by <cryo>36%</cryo>."
+  }
+}

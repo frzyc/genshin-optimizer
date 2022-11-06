@@ -1,0 +1,29 @@
+{
+  "setName": "Maiden Beloved",
+  "setEffects": {
+    "2": "Meningkatkan 15% efek pemulihan karakter.",
+    "4": "Menggunakan Elemental Skill atau Elemental Burst meningkatkan 20% pemulihan yang diterima seluruh anggota party selama 10 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Maiden's Distant Love",
+      "desc": "Bunga harum semerbak yang tidak pernah layu, dan tidak pernah kehilangan kesegarannya."
+    },
+    "plume": {
+      "name": "Maiden's Heart-stricken Infatuation",
+      "desc": "Bulu burung yang mengandung makna kerinduan hati seseorang, seperti burung yang merindukan tiupan angin Selatan."
+    },
+    "sands": {
+      "name": "Maiden's Passing Youth",
+      "desc": "Jarum jam yang tidak pernah berhenti berdetak, tidak sama halnya dengan kecantikan paras muda seorang wanita."
+    },
+    "goblet": {
+      "name": "Maiden's Fleeting Leisure",
+      "desc": "Sebuah piala yang dibuat untuk menampung teh hitam, dan bukan arak, dibuat untuk menampung sesuatu yang manis, dan bukan sesuatu yang pahit."
+    },
+    "circlet": {
+      "name": "Maiden's Fading Beauty",
+      "desc": "Sebuah topi wanita yang dirawat dengan sangat baik, dapat membantu untuk menutupi keriput wajah dengan sempurna."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Œil d'assermentation",
+  "description": "Un trésor national de Byakuyakoku conservé dans le Dainichi Mikoshi. Après la venue de la divinité serpent, cet objet a été utilisé pour certifier nombre de grands serments et souhaits.",
+  "passiveName": "Peuple des profondeurs enténébrées",
+  "passiveDescription": {
+    "0": "Augmente la recharge d'énergie de <cryo>24{NON_BREAK_SPACE}%</cryo> pendant 10 s après l'utilisation d'une compétence élémentaire.",
+    "1": "Augmente la recharge d'énergie de <cryo>30{NON_BREAK_SPACE}%</cryo> pendant 10 s après l'utilisation d'une compétence élémentaire.",
+    "2": "Augmente la recharge d'énergie de <cryo>36{NON_BREAK_SPACE}%</cryo> pendant 10 s après l'utilisation d'une compétence élémentaire.",
+    "3": "Augmente la recharge d'énergie de <cryo>42{NON_BREAK_SPACE}%</cryo> pendant 10 s après l'utilisation d'une compétence élémentaire.",
+    "4": "Augmente la recharge d'énergie de <cryo>48{NON_BREAK_SPACE}%</cryo> pendant 10 s après l'utilisation d'une compétence élémentaire."
+  }
+}

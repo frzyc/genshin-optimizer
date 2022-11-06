@@ -1,0 +1,51 @@
+{
+  "editor": {
+    "title": "聖遺物エディター",
+    "set": {
+      "artifactSet": "聖遺物セット",
+      "maxRarity": "最高レア度 <1></1>"
+    },
+    "substat": {
+      "substatFormat": "サブステータス {{value}}",
+      "noSubstat": "サブステータスなし",
+      "selectSub": "サブステータスを選択",
+      "eff": "効率: <1></1>"
+    },
+    "rarity": "レア度",
+    "level": "レベル",
+    "unknownPieceName": "ピース名不明",
+    "mainSelect": "メイン効果",
+    "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
+    "maxSubEff": "最大サブステータス効率",
+    "preview": "聖遺物プレビュー",
+    "dupArt": "重複する聖遺物が検出されました。",
+    "beforeEdit": "編集前",
+    "btnSave": "聖遺物保存する",
+    "btnAdd": "聖遺物追加する",
+    "btnClear": "削除する",
+    "btnUpdate": "聖遺物を変更する"
+  },
+  "artifactFilter": "聖遺物フィルター",
+  "filterLocation": {
+    "inventory": "インベントリー",
+    "currentlyEquipped": "装備中"
+  },
+  "button": {
+    "unequipArtifacts": "聖遺物を外す",
+    "deleteArtifacts": "聖遺物を消す",
+    "excludeArtifacts": "聖遺物をロック",
+    "includeArtifacts": "聖遺物をアンロック"
+  },
+  "mainStat": "メインオプション",
+  "slot": "スロット",
+  "slotName": {
+    "flower": "生の花",
+    "plume": "死の羽",
+    "sands": "時の砂",
+    "goblet": "空の杯",
+    "circlet": "理の冠"
+  },
+  "sortMap": {
+    "level": "レベル"
+  }
+}

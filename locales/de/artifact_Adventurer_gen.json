@@ -1,0 +1,29 @@
+{
+  "setName": "Abenteurer",
+  "setEffects": {
+    "2": "Erhöht die max. LP um 1000.",
+    "4": "Stellt nach dem Öffnen jeglicher Truhen 5 s lang 30 % LP wieder her."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Blume eines Abenteurers",
+      "desc": "Ein Blümchen, das die harten Bedingungen inmitten einer alten Stadt überlebt hat und nun voller Stolz vor der Brust getragen wird."
+    },
+    "plume": {
+      "name": "Abenteurerschwanzfeder",
+      "desc": "Die Feder eines exotischen Vogels, den man hierzulande selten sieht."
+    },
+    "sands": {
+      "name": "Taschenuhr eines Abenteurers",
+      "desc": "Abenteurer vergessen in tiefen Abgründen und alten Ruinen oft die Zeit."
+    },
+    "goblet": {
+      "name": "Goldkelch eines Abenteurers",
+      "desc": "Die Beute eines Abenteurers von einer seiner Reisen, auf die man trotz der Einkerbungen stolz sein kann."
+    },
+    "circlet": {
+      "name": "Kopftuch eines Abenteurers",
+      "desc": "Ein Tuch, das man sich um die Stirn wickelt. Es ist voller Schweiß und mit Dreck bedeckt, ist aber der ganze Stolz eines Abenteurers."
+    }
+  }
+}

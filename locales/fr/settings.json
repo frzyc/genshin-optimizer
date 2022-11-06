@@ -1,0 +1,13 @@
+{
+  "title": "Paramètres",
+  "languageCard": {
+    "selectLanguage": "Choisir la langue",
+    "languageFormat": "Langue: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Téléverser la base de données",
+    "replaceDatabase": "Remplacer la base de données",
+    "hint": "Téléverser votre fichier JSON ici...",
+    "hintPaste": "...ou coller vos données ci-dessous."
+  }
+}

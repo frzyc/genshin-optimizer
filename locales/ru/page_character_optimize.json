@@ -1,0 +1,37 @@
+{
+  "mainStat": {
+    "title": "Главный "
+  },
+  "tcGraph": {
+    "notSel": "Не Выбран",
+    "downloadData": "Скачать Данные",
+    "optTarget": "Цель Оптимизации"
+  },
+  "levelFilter": "Фильтровать Артефакты по Lvl.",
+  "useEquipped": {
+    "title": "Исп. Одетые Артефакты",
+    "modal": {
+      "status": {
+        "use": "Исп. Артефакты",
+        "dont": "Не Исп. Артефакты",
+        "curr": "Выбранный Перс."
+      },
+      "add": "Доб. Персонажа в лист",
+      "clearList": "Отчистить Лист"
+    }
+  },
+  "constraintFilter": {
+    "title": "Постоянное Значение"
+  },
+  "artSetConfig": {
+    "title": "Конфиг. Сета Артефактов",
+    "enabled": "Включен",
+    "allowed": "Разрешен",
+    "excluded": "Запретить",
+    "selected": "Выбран",
+    "allowAll2set": "Разрешить Все 2-Сета",
+    "excludeAll2set": "Запретить Все 2-Сета",
+    "allowAll4set": "Разрешить Все 4-Сета",
+    "excludeAll4set": "Запретить Все 4-Сета"
+  }
+}

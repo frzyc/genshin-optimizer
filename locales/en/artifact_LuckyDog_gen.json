@@ -1,0 +1,29 @@
+{
+  "setName": "Lucky Dog",
+  "setEffects": {
+    "2": "DEF increased by 100.",
+    "4": "Picking up Mora restores 300 HP."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lucky Dog's Clover",
+      "desc": "A four-leaf clover that grows in the wild. It was picked because it is said to bring good luck."
+    },
+    "plume": {
+      "name": "Lucky Dog's Eagle Feather",
+      "desc": "A monster once cornered an adventurer, but was then picked off by a hunting eagle... That eagle dropped this feather, which now carries some of the adventurer's good luck."
+    },
+    "sands": {
+      "name": "Lucky Dog's Hourglass",
+      "desc": "A broken hourglass from which all the sand has escaped. But it's fine, because the passage of time means nothing to someone without a single worry in the whole world."
+    },
+    "goblet": {
+      "name": "Lucky Dog's Goblet",
+      "desc": "An exquisite metallic vessel that was once used to knock out a thief."
+    },
+    "circlet": {
+      "name": "Lucky Dog's Silver Circlet",
+      "desc": "Its former owner once fell into a cave and found the treasure trove of an exiled royal. This is a souvenir from that incident."
+    }
+  }
+}

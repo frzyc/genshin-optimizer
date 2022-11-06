@@ -1,0 +1,9 @@
+{
+  "ShatteringIce": {
+    "cond": "얼음 원소가 부착되어 있거나 빙결 상태인 적 공격"
+  },
+  "SprawlingGreenery": {
+    "cond2ele": "연소, 활성, 개화 반응 발동",
+    "cond3ele": "촉진, 발산, 만개, 발화 반응 발동"
+  }
+}

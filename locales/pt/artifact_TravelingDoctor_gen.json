@@ -1,0 +1,29 @@
+{
+  "setName": "O Doutor viajante",
+  "setEffects": {
+    "2": "Aumenta o efeito de cura em 20%.",
+    "4": "Após usar o Supremo, restaura 20% de Vida."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Lótus de Prata do Doutor Viajante",
+      "desc": "Um ingrediente medicinal precioso que perdeu por completo seus valores medicinais depois de tanto tempo."
+    },
+    "plume": {
+      "name": "Pena de Coruja do Doutor Viajante",
+      "desc": "A pena dura de uma coruja. É usada como um método de auto-motivação quando sai para tratar pacientes tarde da noite."
+    },
+    "sands": {
+      "name": "Relógio de Bolso do Doutor Viajante",
+      "desc": "Uma ferramenta para exibir o tempo precisamente. Para um doutor, cada segundo é valioso."
+    },
+    "goblet": {
+      "name": "Pote de Medicamentos do Doutor Viajante",
+      "desc": "Costumava transportar misturas extremamente potentes e refinadas. O cheiro forte é tudo o que resta."
+    },
+    "circlet": {
+      "name": "Lenço do Doutor Viajante",
+      "desc": "Usado para amarrar os cabelos enquanto atende os pacientes, mas também pode ser usado como curativo para braços quebrados ou emergências."
+    }
+  }
+}

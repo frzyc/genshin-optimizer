@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "amuletGenAmt": "풍요의 곡옥 생성 수",
+    "absorb": "현재 캐릭터가 풍요의 곡옥을 흡수"
+  },
+  "burst": {
+    "3rd": "3번째 위광의 낙뢰 피해량",
+    "thunderCd": "위광의 낙뢰 재생성 시간"
+  },
+  "passive2": {
+    "enerRech_": "풍요의 곡옥이 제공하는 원소 충전 효율 증가"
+  },
+  "c2": {
+    "thunderHit": "<strong>위광의 낙뢰</strong>가 적응 명중"
+  },
+  "c6": {
+    "fallingThunder3": "3번째 <strong>위광의 낙뢰</strong> 공격",
+    "fallingThunderBonus_": "<strong>위광의 낙뢰</strong> 피해량 증가"
+  }
+}

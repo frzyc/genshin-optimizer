@@ -1,0 +1,160 @@
+{
+  "name": "Fischl",
+  "title": "Princesa dos Pecados!",
+  "description": "Uma mulher misteriosa que se autointitula \"Princesa dos Pecados\" e viaja com um corvo chamado Oz.",
+  "constellationName": "Corvus",
+  "auto": {
+    "name": "Flechas da Culpa",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong> Realiza até 5 tiros consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso e com Dano aumentado.",
+        "2": "Durante a mira, espíritos sombrios dos relâmpagos da escuridão atenderão o chamado de sua Princesa e residirão na ponta encantada de sua flecha. Quando estiver completamente incorporado, o relâmpago vingativo irá infligir um imenso <electro>Dano Electro</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Atira uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Disparo com Mira",
+      "6": "Disparo com Mira com Energização Completa",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Asas da Vigilância Noturna",
+    "description": {
+      "0": "Evoca o Oz. O corvo da noite moldado pela escuridão e relâmpagos desce à terra, infligindo <electro>Dano Electro</electro> em uma pequena AdE.",
+      "1": "Ao longo da duração da habilidade, Oz irá continuamente atacar inimigos próximos com <electro>Bolas Eletrificantes</electro>.",
+      "2": "<br/>",
+      "3": "Mantenha pressionado para ajustar a localização de onde o Oz será evocado.",
+      "4": "Pressione a qualquer momento ao longo da duração da habilidade para chamá-lo novamente para o lado de Fischl.",
+      "5": "<br/>",
+      "6": "<i>\"Meu tempo é muito precioso, e eu não o desperdiçarei com tipos como você... Vá Oz, recaia sobre eles, e traga-os até seu Relâmpago Vingativo, que dilacera a longa noite.\"</i>",
+      "7": "<i>—Flores para a Princesa Fischl Volume (IV) Adeus Frau Welt</i>"
+    },
+    "skillParams": {
+      "0": "Dano de ATQ de Oz",
+      "1": "Dano de Invocação",
+      "2": "Duração de Oz",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ilusão Noturna",
+    "description": {
+      "0": "Evoca Oz para estender suas asas gêmeas do crepúsculo e defender Fischl.",
+      "1": "Tem as seguintes propriedades ao longo da duração da habilidade:",
+      "2": "Fischl se transforma na forma de Oz, aumentando incrivelmente sua Velocidade de Movimento.",
+      "3": "Ataca inimigos próximos com relâmpago, infligindo <electro>Dano Electro</electro> em inimigos que ela entra em contato. Cada inimigo pode ser atingido apenas uma vez.",
+      "4": "Quando o efeito dessa habilidade acaba, Oz continuará em campo, então reiniciará a duração de sua presença.",
+      "5": "<br/>",
+      "6": "<i>\"...Nas hordas de feras que perseguem o sangue amaldiçoado, apenas o Príncipe Nachtraben, que foi testemunha da extinção de milhares de mundos, sabe sua verdadeira grandeza. Assim, as asas noturnas que ele estende são suas eternas promessas em proteger Sua Alteza Real.\"</i>",
+      "7": "<i>—Flores para a Princesa Fischl Volume (I): Decomposição, fim dos tempos.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Eletrocutamento",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Predador Estelar",
+    "description": {
+      "0": "Quando Fischl atinge Oz com um Disparo com Mira totalmente carregado, Oz traz a Retribuição Trovejante, causando <electro>Dano Electro AdE</electro> igual a 152.7% do Dano da flecha."
+    }
+  },
+  "passive2": {
+    "name": "Desfeito Seja Teu Feitiço Pecaminoso",
+    "description": {
+      "0": "Se o seu próprio personagem desencadeia uma <electro>Reação Elemental do tipo Electro</electro> quando Oz está em campo, o inimigo será infligido com Retribuição Trovejante, causando <electro>Dano Electro</electro> igual a 80% do ATQ de Fischl."
+    }
+  },
+  "passive3": {
+    "name": "Meu Jardim Secreto",
+    "description": {
+      "0": "Quando despachada em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Olhar das Profundezas",
+    "description": {
+      "0": "Mesmo que Oz não esteja presente no combate, ele ainda pode proteger Fischl através de seus Olhos de Corvo. Quando Fishl ataca um inimigo, Oz atacará simultaneamente, causando 22% de Dano de ATQ."
+    }
+  },
+  "constellation2": {
+    "name": "Devorador de Todos os Pecados",
+    "description": {
+      "0": "Quando as <strong>Asas da Vigilância Noturna</strong> são usadas, causa um adicional de 200% de ATQ como Dano e a sua AdE é aumentada em 50%."
+    }
+  },
+  "constellation3": {
+    "name": "Asas do Pesadelo",
+    "description": {
+      "0": "Aumenta o nível das <strong>Asas da Vigilância Noturna</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fantasia da Rainha",
+    "description": {
+      "0": "Quando <strong>Ilusão Noturna</strong> é usada, causa 222% de ATQ como <electro>Dano Electro</electro> nos inimigos próximos.",
+      "1": "Quando a habilidade termina, Fischl regenera 20% de sua Vida."
+    }
+  },
+  "constellation5": {
+    "name": "Noite Silenciosa",
+    "description": {
+      "0": "Aumenta o nível da <strong>Ilusão Noturna</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Corvo da Noite Eterna",
+    "description": {
+      "0": "Aumenta a duração da evocação de Oz por 2 segundos. Adicionalmente, Oz ataca juntamente com o seu próprio personagem quando presente, causando 30% do ATQ de Fischl como <electro>Dano Electro</electro>."
+    }
+  }
+}

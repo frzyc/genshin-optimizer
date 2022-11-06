@@ -1,0 +1,32 @@
+{
+  "title": "Configurações",
+  "languageCard": {
+    "selectLanguage": "Selecione o Idioma",
+    "languageFormat": "Idioma: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Upload de Banco de Dados",
+    "replaceDatabase": "Substituir Banco de Dados",
+    "hint": "Faça upload do seu arquivo JSON aqui...",
+    "hintPaste": "...ou cole seus dados abaixo.",
+    "goUpload": {
+      "title": "Formato <strong>Genshin Optimizer</strong>",
+      "deleteDatabasePrompt": "Tem certeza que deseja excluir seu banco de dados?"
+    },
+    "error": {
+      "unknown": "Formato de arquivo desconhecido."
+    },
+    "dbSource": "Origem dos dados:"
+  },
+  "count": {
+    "chars": "Personagens:",
+    "arts": "Artefatos:",
+    "weapons": "Armas:",
+    "total": "Total:",
+    "new": "Novo:",
+    "updated": "Atualizado:",
+    "removed": "Removido:",
+    "unchanged": "Inalterado:",
+    "invalid": "inválido:"
+  }
+}

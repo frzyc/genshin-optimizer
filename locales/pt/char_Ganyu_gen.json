@@ -1,0 +1,163 @@
+{
+  "name": "Ganyu",
+  "title": "Defensora Devota",
+  "description": "Secretária do Pavilhão Yuehai. O sangue da besta iluminada Qilin flui nas suas veias.",
+  "constellationName": "Sinae Unicornis",
+  "auto": {
+    "name": "Disparo Liutian",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 6 disparos consecutivos com um arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso com Dano aumentado.",
+        "2": "Ao mirar, uma aura congelante acumulará na ponta da flecha antes de ser disparada. Tem diferentes efeitos baseados em quanto tempo a energia foi carregada:",
+        "3": "Carga Nível 1: Dispara uma Flecha Congelante que causa <cryo>Dano Cryo</cryo>",
+        "4": "Carga Nível 2: Dispara uma Flecha Congelante que causa <cryo>Dano Cryo</cryo>. A Flecha Congelante floresce após acertar seu alvo, causando <cryo>Dano Cryo em uma AdE</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de cair e atingir o chão, causando Dano em uma AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano do 6° Golpe",
+      "6": "Disparo com Mira",
+      "7": "Disparo Carregado com Mira Nv.1",
+      "8": "Dano da Flecha Congelante",
+      "9": "Dano de Explosão da Flecha Congelante",
+      "10": "Dano Durante a Queda",
+      "11": "Dano de Queda de Baixa/Alta Altitude",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Rastros de Qilin",
+    "description": {
+      "0": "Lançando uma Lótus de Gelo, Ganyu salta para trás, causando <cryo>Dano em uma AdE Cryo</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Lótus de Gelo</strong>",
+      "3": [
+        "Provoca inimigos ao seu redor, atraindo-os para a atacar.",
+        "Sua resistência aumenta de acordo a Vida Máxima de Ganyu.",
+        "Floresce quando destruída ou quando sua duração acaba, causando <cryo>Dano Cryo em uma AdE</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Você disse que me viu? Acho que você está enganad{F#a}{M#o}. Eu estava trabalhando horas extras\".</i>"
+    },
+    "skillParams": {
+      "0": "Vida Recebida",
+      "1": "Dano de Habilidade",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chuva Celestial",
+    "description": {
+      "0": "Funde a geada e a neve atmosférica, evocando uma Gema Cryo Sagrada que exorciza o mal.",
+      "1": "Ao longo da duração desta habilidade, a Gema Cryo Sagrada irá chover continuamente lascas de gelo, golpeando inimigos em uma AdE e infligindo <cryo>Dano Cryo</cryo>.",
+      "2": "<br/>",
+      "3": "<i>Ganyu pode trazer uma chuva agradável de forma natural. Mas contra demônios e hereges, elas viram uma desagradável neve congelante.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Fragmento de Gelo",
+      "1": "Duração",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Com Todo Coração",
+    "description": {
+      "0": "Após disparar uma Flecha Congelante, a Taxa CRIT das Flechas Congelantes subsequentes e seus efeitos de florescimento resultantes é aumentada em 20% por 5s."
+    }
+  },
+  "passive2": {
+    "name": "Harmonia entre o Céu e a Terra",
+    "description": {
+      "0": "<strong>Chuva Celestial</strong> concede 20% de <cryo>Bônus de Dano Cryo</cryo> aos membros ativos no grupo em uma AdE."
+    }
+  },
+  "passive3": {
+    "name": "Preservado para a Caça",
+    "description": {
+      "0": "Retorna 15% dos minérios usados ao criar armas do tipo Arco."
+    }
+  },
+  "constellation1": {
+    "name": "Bebedor de Orvalho",
+    "description": {
+      "0": "Receber Dano de uma Carga Nível 2 da Flecha Congelante ou da Explosão da Flecha Congelante diminui a <cryo>RES Cryo</cryo> dos inimigos em 15% por 6s.",
+      "1": "Um golpe restaura 2 de Energia para Ganyu. Este efeito pode ocorrer apenas uma vez por Carga Nível 2 da Flecha Congelante, independentemente se a Flecha Congelante em si ou sua explosão acertar o alvo."
+    }
+  },
+  "constellation2": {
+    "name": "O Auspicioso",
+    "description": {
+      "0": "Os <strong>Rastros de Qilin</strong> aumentam 1 Carga Adicional."
+    }
+  },
+  "constellation3": {
+    "name": "Itinerante das Nuvens",
+    "description": {
+      "0": "Aumenta o nível da <strong>Chuva Celestial</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Estadia no Oeste",
+    "description": {
+      "0": "Os inimigos dentro da AdE da <strong>Chuva Celestial</strong> recebem Dano aumentado. Este efeito fica mais forte com o tempo.",
+      "1": "O Dano aumentado recebido começa em 5% e aumenta 5% a cada 3s, chegando no máximo a 25%.",
+      "2": "Este efeito permanece por 3s após o inimigo sair da AdE."
+    }
+  },
+  "constellation5": {
+    "name": "O Misericordioso",
+    "description": {
+      "0": "Aumenta o nível dos <strong>Rastros de Qilin</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "O Clemente",
+    "description": {
+      "0": "Usando o <strong>Rastros de Qilin</strong> faz com que durante 30s seguintes a primeira Flecha Congelante não precise ser carregada."
+    }
+  }
+}

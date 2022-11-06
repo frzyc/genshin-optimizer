@@ -1,0 +1,53 @@
+{
+  "dmg": "Урон",
+  "hits": "Ударов",
+  "lessPercentHP": "HP меньше {{percent}}%",
+  "hitOp": {
+    "normal": "Обычная атака попала по врагу",
+    "charged": "Заряженная атака попала по врагу",
+    "plunging": "Атака в падении попала по врагу",
+    "skill": "Элементальный навык попал по врагу",
+    "burst": "Взрыв стихий попал по врагу",
+    "geo": "Гео-удар по противникам",
+    "anemo": "Анемо-удар по противникам",
+    "hydro": "Гидро-удар по противникам",
+    "cryo": "Крио-удар по противникам",
+    "pyro": "Пайро-удар по противникам",
+    "electro": "Электро-удар по противникам",
+    "crit": "Крит. попадание по противнику",
+    "normalChargedOrPlunging": "Обычные / Заряженные / Атаки в палении по врагу"
+  },
+  "eleAbsor": "Поглощение стихий",
+  "absorDot": "Доп. элементальный урон",
+  "afterUse": {
+    "skill": "После использования Элементального навыка",
+    "burst": "После использования Взрыва стихии",
+    "skillOrBurst": "После применения Элементального навыка или взрыва"
+  },
+  "increase": {
+    "atk": "Увеличение атаки"
+  },
+  "lessEqPercentHP": "HP меньше или равно {{percent}}%",
+  "greaterPercentHP": "HP больше, чем {{percent}}%",
+  "greaterEqPercentHP": "HP больше или равно {{percent}}%",
+  "lessPercentEnergy": "Энергии меньше, чем {{percent}}%",
+  "enemyLessPercentHP": "HP противника меньше {{percent}}%",
+  "enemyLessEqPercentHP": "HP противника меньше или равно {{percent}}%",
+  "enemyGreaterPercentHP": "HP противника больше {{percent}}% ",
+  "enemyGreaterEqPercentHP": "HP противника больше или равно {{percent}}%",
+  "afterSprint": "После рывка",
+  "infusion": {
+    "pyro": "Пиро инфузия",
+    "cryo": "Крио инфузия",
+    "anemo": "Анемо инфузия"
+  },
+  "durationInc": "Увеличение продолжительности",
+  "protectedByShield": "Под щитом",
+  "talents": {
+    "skill": "Навык"
+  },
+  "bonusScaling": {
+    "skill_": "Увел. Бонуса Элем. Навыка"
+  },
+  "energy": "Энергия"
+}

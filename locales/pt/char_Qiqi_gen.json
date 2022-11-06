@@ -1,0 +1,159 @@
+{
+  "name": "Qiqi",
+  "title": "Ressurreição Gélida",
+  "description": "Uma aprendiz e colhedora de ervas no Chalé de Bubu. Uma morta-viva com pele branca como osso, ela raramente tem muitas palavras ou emoções.",
+  "constellationName": "Pristina Nola",
+  "auto": {
+    "name": "Arte da Espada Antiga",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Arte do Adeptus: Arauto da Floresta",
+    "description": {
+      "0": "Ao usar o Talismã das Veias Congelantes, Qiqi invoca o Arauto da Floresta, causando <cryo>Dano Cryo</cryo> a todos os inimigos ao redor.",
+      "1": "<br/>",
+      "2": "<strong>Arauto da Floresta</strong>",
+      "3": "Quando Qiqi atinge um alvo com seu Ataque Normal ou Ataque Carregado, ela regenera Vida para seu próprio personagem e aos personagens aliados ao redor. A Cura aumenta com base no ATQ de Qiqi.",
+      "4": "Regenera Vida ao seu próprio personagem em intervalos regulares.",
+      "5": "Segue o personagem ao redor, causando <cryo>Dano Cryo</cryo> aos inimigos em seu caminho.",
+      "6": "<br/>",
+      "7": "<i>Eu uso isso para prevenir o aquecimento e a podridão... dos preciosos ingredientes do Dr. Bai.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Regeneração de Vida por Acerto",
+      "2": "Regeneração Contínua",
+      "3": "Dano do Arauto da Floresta",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Arte do Adeptus: Preservador da Fortuna",
+    "description": {
+      "0": "Qiqi libera o poder do Adeptus selado dentro de si, marcando inimigos próximos com o Amuleto de Preservação da Fortuna que inflige <cryo>Dano Cryo</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Amuleto de Preservação da Fortuna</strong>",
+      "3": "Quando inimigos afetados por esse Amuleto recebem Dano, o personagem que causou esse Dano regenera Vida.",
+      "4": "<br/>",
+      "5": "<i>\"Eu sou a Preservadora da Fortuna, a Criada da Ressureição.\"</i>",
+      "6": "<i>— Qiqi não lembra destas palavras.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Cura",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Métodos que Prolongam a Vida",
+    "description": {
+      "0": "Quando um personagem está sob o efeito de <strong>Arte do Adeptus: Arauto da Floresta</strong> aciona uma Reação Elemental, seu Bônus de Cura Recebido é aumentado em 20% por 8 segundos."
+    }
+  },
+  "passive2": {
+    "name": "Um Vislumbre do Arcano",
+    "description": {
+      "0": "Quando Qiqi atinge inimigos com seus Ataques normais e Carregados, ela tem 50% de chance de aplicar um Talismã de preservação de fortuna a eles por 6s. Este efeito pode ser ativado apenas uma vez a cada 30s."
+    }
+  },
+  "passive3": {
+    "name": "Memórias da Vida Passada",
+    "description": {
+      "0": "Mostra a localização de <strong>Especialidades de Liyue</strong> próximos no mapa."
+    }
+  },
+  "constellation1": {
+    "name": "Ascéticos do Gelo",
+    "description": {
+      "0": "Quando o Arauto da Floresta atinge um inimigo marcado pelo Talismã da Preservação da Fortuna, Qiqi regenera 2 de Energia."
+    }
+  },
+  "constellation2": {
+    "name": "Congelando até os Ossos",
+    "description": {
+      "0": "O Dano do Ataque Normal e Ataque Carregado de Qiqi contra os inimigos afetados por <cryo>Cryo</cryo> aumentam 15%."
+    }
+  },
+  "constellation3": {
+    "name": "Elogio Ascendente",
+    "description": {
+      "0": "Aumenta o Nível de <strong>Arte do Adeptus: Preservador da Fortuna</strong> em 3.",
+      "1": "Pode ser elevado até Nv.15."
+    }
+  },
+  "constellation4": {
+    "name": "Supressão Divina",
+    "description": {
+      "0": "Os alvos marcados com o Talismã da Preservação da Fortuna terão seu ATQ reduzidos em 20%."
+    }
+  },
+  "constellation5": {
+    "name": "Flor de Lótus Carmesim",
+    "description": {
+      "0": "Aumenta o Nível de <strong>Arauto da Floresta</strong> em 3.",
+      "1": "Pode ser elevado até Nv.15."
+    }
+  },
+  "constellation6": {
+    "name": "Ritual de Ressurreição",
+    "description": {
+      "0": "Ao usar a <strong>Arte do Adeptus: Preservador da Fortuna</strong>, revive todos os personagens de equipe caídos ao redor e regenera 50% da Vida deles.",
+      "1": "Este efeito pode ocorrer apenas uma vez a cada 15 min."
+    }
+  }
+}

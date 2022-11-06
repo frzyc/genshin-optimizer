@@ -1,0 +1,54 @@
+{
+  "title": "Настройки",
+  "languageCard": {
+    "selectLanguage": "Выбрать Язык",
+    "languageFormat": "Язык: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Загрузить Данные",
+    "replaceDatabase": "Обновить данные",
+    "hint": "Загрузите сюда ваш JSON файл...",
+    "hintPaste": "...либо вставьте данные ниже.",
+    "goUpload": {
+      "title": "Формат <strong>Genshin Optimizer</strong>",
+      "migrate": "База данных будет перенесена в новую версию. Пожалуйста, после импорта, заново сохраните базу данных.",
+      "deleteDatabasePrompt": "Вы уверены, что хотите заменить базу данных? Все существующие персонажи и артефакты будут удалены."
+    },
+    "error": {
+      "jsonParse": "Невозможно считать JSON файл.",
+      "unknown": "Неизвестный формат файла.",
+      "monaInvalid": "Неверный формат Mona-Uranai файла",
+      "goInvalid": "Неверный формат данных GO"
+    },
+    "dbSource": "Источник данных:",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) формат"
+    },
+    "buttons": {
+      "open": "Открыть"
+    }
+  },
+  "count": {
+    "chars": "Персонажи:",
+    "arts": "Артефакты:",
+    "weapons": "Оружие:",
+    "total": "Общая сумма",
+    "new": "Новое:",
+    "updated": "Обновлено:",
+    "removed": "Удалено:",
+    "unchanged": "Не изменено:",
+    "invalid": "Неисправны:",
+    "upgraded": "Улучшеные:"
+  },
+  "DatabaseCard": {
+    "title": "Данные",
+    "button": {
+      "download": "Скачать",
+      "copy": "Буфер-обмена",
+      "delete": "Удалить",
+      "upload": "Выгрузить",
+      "swap": "Сменить"
+    },
+    "currentDB": "Выбранные Данные"
+  }
+}

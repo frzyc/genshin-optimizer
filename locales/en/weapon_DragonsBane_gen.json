@@ -1,0 +1,12 @@
+{
+  "name": "Dragon's Bane",
+  "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
+  "passiveName": "Bane of Flame and Water",
+  "passiveDescription": {
+    "0": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>20%</cryo>.",
+    "1": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>24%</cryo>.",
+    "2": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>28%</cryo>.",
+    "3": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>32%</cryo>.",
+    "4": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>36%</cryo>."
+  }
+}

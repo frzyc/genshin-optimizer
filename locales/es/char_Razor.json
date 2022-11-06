@@ -1,0 +1,18 @@
+{
+  "electroSigil": "Insignia Electro",
+  "electroSigilAbsorbed": "Energía regenerada si Insignia Electro es eliminada",
+  "pickUpElementalOrbParticle": "Se recoge un Orbe o Partícula Elemental",
+  "opHitWithClawAndThunder": "Enemigos golpeados con <strong>Garra y trueno</strong> (Pulsar una vez)",
+  "electroSigilPerProc": "Insignias Electro cada vez",
+  "fullBurstDMG": {
+    "description": {
+      "0": "<strong>Daño Total de Habilidad Definitiva</strong>",
+      "1": "Esto calcula el daño combinado por los ataques normales de Razor durante su Habilidad Definitiva.",
+      "2": "Simplemente suma el Daño de X Golpes del acompañante junto a los correspondientes X Golpes de Daño del ataque normal que lo causa."
+    },
+    "dmg1": "Daño de Golpe Normal + Lobo 1",
+    "dmg2": "Daño de Golpe Normal + Lobo 2",
+    "dmg3": "Daño de Golpe Normal + Lobo 3",
+    "dmg4": "Daño de Golpe Normal + Lobo 4"
+  }
+}

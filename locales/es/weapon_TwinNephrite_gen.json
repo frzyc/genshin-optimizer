@@ -1,0 +1,12 @@
+{
+  "name": "Nefrita Gemela",
+  "description": "Un colgante de nefrita colocado entre dos piedras de jade.",
+  "passiveName": "Táctica de asalto",
+  "passiveDescription": {
+    "0": "Derrotar a un enemigo aumenta la Vel. Movimiento y el ATQ en un <cryo>12%</cryo> durante 15 s.",
+    "1": "Derrotar a un enemigo aumenta la Vel. Movimiento y el ATQ en un <cryo>14%</cryo> durante 15 s.",
+    "2": "Derrotar a un enemigo aumenta la Vel. Movimiento y el ATQ en un <cryo>16%</cryo> durante 15 s.",
+    "3": "Derrotar a un enemigo aumenta la Vel. Movimiento y el ATQ en un <cryo>18%</cryo> durante 15 s.",
+    "4": "Derrotar a un enemigo aumenta la Vel. Movimiento y el ATQ en un <cryo>20%</cryo> durante 15 s."
+  }
+}

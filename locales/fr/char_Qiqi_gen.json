@@ -1,0 +1,161 @@
+{
+  "name": "Qiqi",
+  "title": "Renaissance gelée",
+  "description": "Qiqi est une jeune apprentie du Cottage Bubu, en charge notamment de la récolte des herbes médicinales. C'est également un zombie au teint blafard et aux mots comptés.",
+  "constellationName": "Pristina Nola",
+  "auto": {
+    "name": "Escrime ancienne des nuages",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Arcane d'Adepte : Héraut de givre",
+    "description": {
+      "0": "Utilise un talisman infusé de glace et de sang pour invoquer un Héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
+      "1": "<br/>",
+      "2": "<strong>Héraut de givre</strong>",
+      "3": [
+        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
+        " Régénère les PV du personnage déployé à intervalles réguliers.",
+        " Le héraut suit le personnage déployé et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route."
+      ],
+      "4": "<br/>",
+      "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de monsieur Baizhu, bien sûr. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins équipe",
+      "2": "Soins continus",
+      "3": "DGT Héraut de givre",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Arcane d'Adepte : Talisman sacré",
+    "description": {
+      "0": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis d'un talisman qui leur inflige des <cryo>DGT Cryo</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Talisman</strong>",
+      "3": "Les personnages récupèrent des PV équivalant aux DGT subis par les ennemis marqués.",
+      "4": "<br/>",
+      "5": "<i>« Je suis l'envoyée de la Providence, le symbole de la renaissance. »</i>",
+      "6": "<i>— Qiqi est bien incapable de se rappeler de ces mots.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Survie en milieu hostile",
+    "description": {
+      "0": "Lorsqu'un personnage sous l'effet d'<strong>Arcane d'Adepte : Héraut de givre</strong> déclenche une réaction élémentaire, il gagne un bonus de soins reçus de 20 % pendant 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Ouverture des arcanes",
+    "description": {
+      "0": "Les attaques normales et chargées de Qiqi ont 50 % de chances de marquer l'ennemi touché d'un talisman pendant 6 s. Cet effet peut être déclenché une fois toutes les 30 s."
+    }
+  },
+  "passive3": {
+    "name": "Souvenir d'une vie lointaine",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Liyue</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Ascèse du givre",
+    "description": {
+      "0": "Qiqi récupère 2 pts d'énergie élémentaire à chaque fois que son Héraut de givre touche un ennemi marqué par un talisman."
+    }
+  },
+  "constellation2": {
+    "name": "Gelé jusqu'à l'os",
+    "description": {
+      "0": "Les attaques normales et chargées de Qiqi infligent 15 % de DGT supplémentaires contre les ennemis affectés par <cryo>Cryo</cryo>."
+    }
+  },
+  "constellation3": {
+    "name": "Louange vers le ciel",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Arcane d'Adepte : Talisman sacré</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Répression divine",
+    "description": {
+      "0": "L'ATQ des cibles marquées par un talisman est réduite de 20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Éclosion du lotus rouge",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Arcane d'Adepte : Héraut de givre</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Symbole de la renaissance",
+    "description": {
+      "0": "L'activation d'<strong>Arcane d'Adepte : Talisman sacré</strong> réanime tous les personnages de l'équipe à proximité et restaure 50 % de leurs PV.",
+      "1": "Cet effet peut être déclenché une fois toutes les 15 min."
+    }
+  }
+}

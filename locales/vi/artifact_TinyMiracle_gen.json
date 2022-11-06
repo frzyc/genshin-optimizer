@@ -1,0 +1,29 @@
+{
+  "setName": "Kỳ Tích",
+  "setEffects": {
+    "2": "Tất cả kháng Nguyên Tố tăng 20%.",
+    "4": "Sau khi nhận sát thương Nguyên Tố, kháng tương ứng tăng 30%, kéo dài 10s. Mỗi 10s chỉ thi triển 1 lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Hoa Kỳ Tích",
+      "desc": "Hoa mọc ra từ nham thạch. Có thể xuyên qua đá cứng để tìm ánh sáng."
+    },
+    "plume": {
+      "name": "Lông Vũ Kỳ Tích",
+      "desc": "Lông của mãnh thú có tốc độ cực nhanh, mắt thường khó có thể nhìn thấy được."
+    },
+    "sands": {
+      "name": "Cát Kỳ Tích",
+      "desc": "Đồng hồ cát bình thường, những hạt cát khô cuộn chảy theo sự vận động trông như dòng nước."
+    },
+    "goblet": {
+      "name": "Ly Kỳ Tích",
+      "desc": "Ly dùng trong nghi thức bói toán lưu truyền trong dân gian, cũng có thể đựng nước."
+    },
+    "circlet": {
+      "name": "Bông Tai Kỳ Tích",
+      "desc": "Trang sức rẻ tiền, nhưng được làm từ kim loại mà sao băng thời cổ đại mang đến."
+    }
+  }
+}

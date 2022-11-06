@@ -1,0 +1,29 @@
+{
+  "setName": "Blizzard Strayer",
+  "setEffects": {
+    "2": "Cryo DMG Bonus +15%",
+    "4": "When a character attacks an opponent affected by Cryo, their CRIT Rate is increased by 20%. If the opponent is Frozen, CRIT Rate is increased by an additional 20%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Snowswept Memory",
+      "desc": "A long-extinct flower, covered in beads of frost, that once grew on the glaciers. There was a time when even the proudest and most arrogant warriors bowed before it."
+    },
+    "plume": {
+      "name": "Icebreaker's Resolve",
+      "desc": "A feather that exudes a chilly aura. One can almost feel the turbulent winds that brought it here, wailing over snow-covered plains and between frosty peaks."
+    },
+    "sands": {
+      "name": "Frozen Homeland's Demise",
+      "desc": "A timepiece from a nation of old that waited for their warriors' return. What flows inside is not sand, but bits of ice that never melt."
+    },
+    "goblet": {
+      "name": "Frost-Weaved Dignity",
+      "desc": "A cup carved out of ice that is as chilly and biting as winter. Its former master would drink an unfreezable liquor from it."
+    },
+    "circlet": {
+      "name": "Broken Rime's Echo",
+      "desc": "The crown of an ancient hero who dreamt of conquering the cold. It is proof of its former master's bravery in facing the bone-chilling cold of winter."
+    }
+  }
+}

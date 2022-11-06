@@ -1,0 +1,67 @@
+{
+  "normal": {
+    "hit1": "1단 공격 피해",
+    "hit2": "2단 공격 피해",
+    "hit3": "3단 공격 피해",
+    "hit4": "4단 공격 피해",
+    "hit5": "5단 공격 피해",
+    "hit6": "6단 공격 피해"
+  },
+  "charged": {
+    "dmg": "강공격 피해",
+    "spinning": "강공격 순환 피해",
+    "final": "강공격 종결 피해",
+    "stamina": "강공격 스태미나 소모",
+    "aimed": "조준 사격",
+    "fullyAimed": "풀차지 조준 사격"
+  },
+  "plunging": {
+    "dmg": "낙하 기간 피해",
+    "low": "저공 추락 충격 피해",
+    "high": "고공 추락 충격 피해"
+  },
+  "maxDuration": "최대 지속 시간",
+  "maxStacks": "에너지 스택 최대치",
+  "skillDMG": "스킬 피해",
+  "burstDMG": "버스트 피해",
+  "dmgAbsorption": "흡수량",
+  "healing": "치유량",
+  "duration": "지속 시간",
+  "cd": "재사용 대기시간",
+  "energyCost": "원소 에너지",
+  "baseDMG": "기본 피해",
+  "dot": "지속 피해",
+  "addEleDMG": "부가 원소 피해",
+  "press": {
+    "dmg": "짧은 터치 피해",
+    "cd": "짧은 터치 재사용 대기시간"
+  },
+  "hold": {
+    "dmg": "홀드 피해",
+    "cd": "홀드 재사용 대기시간"
+  },
+  "element": {
+    "anemo": "바람",
+    "geo": "바위 원소",
+    "pyro": "불",
+    "hydro": "물 원소",
+    "cryo": "얼음",
+    "electro": "번개",
+    "dendro": "풀 원소"
+  },
+  "reaction": {
+    "swirl": "확산",
+    "crystallize": "결정",
+    "overloaded": "과부하",
+    "electrocharged": "감전",
+    "superconduct": "초전도",
+    "vaporize": "증발",
+    "melt": "융해",
+    "bloom": "Bloom",
+    "burgeon": "발화",
+    "hyperbloom": "만개",
+    "quicken": "활성",
+    "aggravate": "촉진",
+    "spread": "발산"
+  }
+}

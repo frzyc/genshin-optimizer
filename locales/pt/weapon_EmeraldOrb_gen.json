@@ -1,0 +1,12 @@
+{
+  "name": "Orbe de Esmeralda",
+  "description": "Um catalisador esculpido com uma jade rígida de Relevo de Jueyun, norte de Liyue. É pequena, leve e durável.",
+  "passiveName": "Corrente Torrencial",
+  "passiveDescription": {
+    "0": "Após causar uma reação elemental de Vaporização, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho de Hydro, o ATQ é aumentado em <cryo>20%</cryo> por 12s.",
+    "1": "Após causar uma reação elemental de Vaporização, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho de Hydro, o ATQ é aumentado em <cryo>25%</cryo> por 12s.",
+    "2": "Após causar uma reação elemental de Vaporização, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho de Hydro, o ATQ é aumentado em <cryo>30%</cryo> por 12s.",
+    "3": "Após causar uma reação elemental de Vaporização, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho de Hydro, o ATQ é aumentado em <cryo>35%</cryo> por 12s.",
+    "4": "Após causar uma reação elemental de Vaporizar, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho com Hydro, o ATQ é aumentado em <cryo>40%</cryo> por 12s."
+  }
+}

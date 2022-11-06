@@ -1,0 +1,19 @@
+{
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh.",
+    "p2": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>",
+    "p3": "Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh và nên xuất sang định dạng mặc định của ứng dụng."
+  },
+  "am": {
+    "title": "「天目」-- Amenoma",
+    "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>.",
+    "p2": "Phiên bản beta của ứng dụng này cũng có thể quét dữ liệu cho <1> Seelie.me </1>"
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
+    "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
+  },
+  "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD."
+}

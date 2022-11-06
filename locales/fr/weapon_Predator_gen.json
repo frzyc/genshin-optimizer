@@ -1,0 +1,8 @@
+{
+  "name": "Predator",
+  "description": "Un arc à la conception unique. Il ne doit probablement pas appartenir à ce monde.",
+  "passiveName": "Frappe puissante",
+  "passiveDescription": {
+    "0": "<cryo>Uniquement pour les joueurs sur :</cryo>\\n<cryo>« PlayStation Network »</cryo>\\nAprès avoir infligé des DGT Cryo aux ennemis, les DGT infligés par les attaques normales et chargées augmentent de 10 % pendant 6 s. Cet effet peut être cumulé 2 fois maximum. De plus, lorsqu'Aloy équipe le Predator, son ATQ augmente de 66 pts."
+  }
+}

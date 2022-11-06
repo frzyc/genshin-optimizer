@@ -1,0 +1,29 @@
+{
+  "setName": "Scholar",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "Mendapatkan Elemental Particle/Orb akan memberikan 3 Energy kepada seluruh anggota party yang mengenakan bow atau catalyst. Dapat terpicu setiap 3 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Scholar's Bookmark",
+      "desc": "Bunga kering yang digunakan sebagai pembatas buku, aroma bunganya kini telah tergantikan dengan aroma buku."
+    },
+    "plume": {
+      "name": "Scholar's Quill Pen",
+      "desc": "Bulu seekor burung yang digunakan sebagai pena untuk menulis. Ujungnya yang tadinya putih kini berwarna hitam pekat."
+    },
+    "sands": {
+      "name": "Scholar's Clock",
+      "desc": "Sebuah jam kecil yang cocok diletakkan di atas meja. Berguna sebagai satu-satunya petunjuk waktu bagi pelajar yang tenggelam dalam buku-buku bacaannya."
+    },
+    "goblet": {
+      "name": "Scholar's Goblet",
+      "desc": "Awalnya merupakan alat penampung air yang digunakan untuk minum. Kini telah berubah warna menjadi hitam karena digunakan untuk mencuci kuas tinta."
+    },
+    "circlet": {
+      "name": "Scholar's Glasses",
+      "desc": "Membaca terlalu banyak, terkadang dapat membuat penglihatan menjadi buruk. Alat ini digunakan untuk mengurangi dampak dari buruknya penglihatan mata."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Prenúncio do Alvorecer",
+  "description": "Uma espada que, uma vez, brilhou como o sol. O portador desta espada será abençoado com um bônus de \"boa sensação\". O material refletivo em sua lâmina já se desgastou há muito tempo.",
+  "passiveName": "Vigoroso",
+  "passiveDescription": {
+    "0": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em <cryo>14%</cryo>.",
+    "1": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em <cryo>17.5%</cryo>.",
+    "2": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em <cryo>21%</cryo>.",
+    "3": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em <cryo>24.5%</cryo>.",
+    "4": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em <cryo>28%</cryo>."
+  }
+}

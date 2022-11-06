@@ -1,0 +1,29 @@
+{
+  "setName": "Beschützerinstinkt",
+  "setEffects": {
+    "2": "Erhöht die VTD um 30 %.",
+    "4": "Erhöht für jedes unterschiedliche Element der eigenen Figuren in der Truppe den eigenen WDS des jeweiligen Elements um 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Wächterblume",
+      "desc": "Eine Schwertlilie, die einst einem Wächter gehörte, der sie sehr schätzte. Leider hatte er keine Gelegenheit, sie seiner Geliebten zu überreichen."
+    },
+    "plume": {
+      "name": "Wächterabzeichen",
+      "desc": "Eine Brosche in der Form einer Feder, die an den Wunsch erinnern soll, andere zu beschützen."
+    },
+    "sands": {
+      "name": "Wächtertischuhr",
+      "desc": "Ein kleines Gerät, das die aktuelle Uhrzeit anzeigt. In mondlosen Nächten dient es als einziger Bezugsrahmen für die Zeit."
+    },
+    "goblet": {
+      "name": "Wächterflachmann",
+      "desc": "Ein metallenes Gefäß, das für Flüssigkeiten gedacht ist, die die Einsamkeit beim Wachehalten vertreiben sollen."
+    },
+    "circlet": {
+      "name": "Wächterband",
+      "desc": "Ein aus Stoff gefertigtes Band, das die Farbe der Nacht angenommen hat. In Notfällen eignet es sich auch als Verband."
+    }
+  }
+}

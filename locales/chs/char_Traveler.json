@@ -1,0 +1,35 @@
+{
+  "electro": {
+    "skill": {
+      "absorb": "场上角色获取丰穰勾玉",
+      "amuletGenAmt": "丰穰勾玉生成数量"
+    },
+    "c2": {
+      "thunderHit": "<strong>威光落雷</strong>命中敌人后"
+    },
+    "burst": {
+      "3rd": "第三下威光落雷伤害",
+      "thunderCd": "威光落雷冷却时间"
+    },
+    "passive2": {
+      "enerRech_": "丰穰勾玉提供的元素充能效率提升"
+    },
+    "c6": {
+      "fallingThunder3": "强化<strong>威光落雷</strong>攻击",
+      "fallingThunderBonus_": "<strong>威光落雷</strong>伤害加成"
+    }
+  },
+  "anemo": {
+    "p1": "裂空之风伤害",
+    "c1": "持续期间受到伤害降低",
+    "c6": "受到<strong>风息激荡</strong>伤害的目标"
+  },
+  "geo": {
+    "passive2": {
+      "key": "狂乱的崩岩伤害"
+    },
+    "c2": {
+      "key": "不稳的熔岩(二命)伤害"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Brave Heart",
+  "setEffects": {
+    "2": "ATK +18%.",
+    "4": "Increases DMG by 30% against opponents with more than 50% HP."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Medal of the Brave",
+      "desc": "A simple flower brooch that is a keepsake from someone's first adventure."
+    },
+    "plume": {
+      "name": "Prospect of the Brave",
+      "desc": "A shimmering feather from a songbird that brings a nudge of courage to its wearer."
+    },
+    "sands": {
+      "name": "Fortitude of the Brave",
+      "desc": "A dated miniature hourglass that serves no practical purpose. It seems as elusive as time itself."
+    },
+    "goblet": {
+      "name": "Outset of the Brave",
+      "desc": "A crude wooden vessel filled only with memories."
+    },
+    "circlet": {
+      "name": "Crown of the Brave",
+      "desc": "A rough-and-ready laurel wreath that seems as precious as a king's golden crown."
+    }
+  }
+}

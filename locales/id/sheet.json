@@ -1,0 +1,27 @@
+{
+  "dmg": "DMG",
+  "hits": "{{count}} Hit",
+  "lessPercentHP": "< {{percent}}% HP",
+  "hitOp": {
+    "normal": "Normal Attack mengenai musuh",
+    "charged": "Charged Attack mengenai musuh",
+    "plunging": "Plunging Attack mengenai musuh",
+    "skill": "Elemental Skill mengenai musuh",
+    "burst": "Elemental Burst mengenai musuh",
+    "geo": "Geo DMG mengenai musuh",
+    "anemo": "Anemo DMG mengenai musuh",
+    "hydro": "Hydro DMG mengenai musuh",
+    "cryo": "Cryo DMG mengenai musuh",
+    "pyro": "Pyro DMG mengenai musuh",
+    "electro": "Electro DMG mengenai musuh"
+  },
+  "eleAbsor": "Elemental Absorption",
+  "absorDot": "DMG Berkelanjutan",
+  "afterUse": {
+    "skill": "Setelah menggunakan Elemental Skill",
+    "burst": "Setelah menggunakan Elemental Burst"
+  },
+  "increase": {
+    "atk": "ATK Meningkat"
+  }
+}

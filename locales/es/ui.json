@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefactos",
+    "characters": "Personajes",
+    "tools": "Herramientas",
+    "weapons": "Armas",
+    "doc": "Docs",
+    "setting": "Ajustes"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Nivel Mínimo",
+    "maxLevel": "Nivel Máximo",
+    "rarity": "Rareza",
+    "level": "Nivel"
+  },
+  "unselect": "No seleccionado",
+  "ascending": "Ascendente",
+  "descending": "Descendente",
+  "loading": "Cargando...",
+  "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por HoYoverse.",
+  "appVersion": "$t(pageTitle) Versión: {{version}}",
+  "underConstruction": "En construcción",
+  "error": "Error",
+  "reset": "Restablecer",
+  "info": "INFO",
+  "inventory": "Inventario",
+  "close": "Cerrar",
+  "sortMap": {
+    "new": "Nuevo",
+    "name": "Nombre",
+    "level": "Nivel",
+    "rarity": "Rareza",
+    "efficiency": "VdT Actual",
+    "mefficiency": "VdT Máximo",
+    "artsetkey": "Conjunto de Artefactos",
+    "probability": "Probabilidad de Tirada"
+  },
+  "link": {
+    "download": "Enlace de Descarga",
+    "discord": "Enlace de Invitación a Discord"
+  },
+  "sortBy": "Ordenar por:",
+  "locked": "Bloqueado",
+  "unlocked": "Desbloqueado"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Himmelsflug-Schwert",
+  "description": "Ein recht robustes Schwert. Der sagenumwobene „Schwertprinz“ hat einst versucht, mit ihm gen Himmel zu fliegen.",
+  "passiveName": "Zielstrebigkeit",
+  "passiveDescription": {
+    "0": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um <cryo>12 %</cryo>.",
+    "1": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um <cryo>15 %</cryo>.",
+    "2": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um <cryo>18 %</cryo>.",
+    "3": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um <cryo>21 %</cryo>.",
+    "4": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um <cryo>24 %</cryo>."
+  }
+}

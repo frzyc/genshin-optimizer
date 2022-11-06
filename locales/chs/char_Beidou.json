@@ -1,0 +1,14 @@
+{
+  "skillOneHit": "受击一次",
+  "skillTwoHit": "受击两次",
+  "duringBurst": "斫雷持续期间",
+  "baneOfEvil_": "敌人的雷元素抗性",
+  "tidecallerMaxDmg": "施放拥有最高伤害加成的捉浪",
+  "a4normalDmg_": "普通攻击伤害加成",
+  "a4chargeDmg_": "重击伤害加成",
+  "a4atkSpeed_": "攻速加成",
+  "a4duration": "持续时间",
+  "a4charge": "减少重击需要的准备时间",
+  "c4dmg": "雷元素伤害",
+  "burstDmgRed_": "伤害减免"
+}

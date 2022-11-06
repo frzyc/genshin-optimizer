@@ -1,0 +1,22 @@
+{
+  "dmg": "Schaden",
+  "hits": "({{hits}} Treffer)",
+  "lessPercentHP": "< {{percent}}% HP",
+  "hitOp": {
+    "normal": "Treffer gegen Gegner bei normalen Schlägen",
+    "charged": "Treffer gegen Gegner bei heftigen Schlägen",
+    "plunging": "Treffer gegen Gegnern aus dem Fall",
+    "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
+    "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
+  },
+  "eleAbsor": "Elementarumwandlung",
+  "absorDot": "Fortlaufender Umwandlungs-Schaden",
+  "afterUse": {
+    "skill": "Nach Anwendung von Elementarfähigkeiten",
+    "burst": "Nach Anwendung von Spezialfähigkeiten"
+  },
+  "increase": {
+    "atk": "ANG-Erhöhung"
+  },
+  "energy": "Energie"
+}

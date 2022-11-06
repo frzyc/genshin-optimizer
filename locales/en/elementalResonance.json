@@ -1,0 +1,10 @@
+{
+  "ShatteringIce": {
+    "cond": "Against enemies that are Frozen or affected by Cryo"
+  },
+  "SprawlingGreenery": {
+    "cond2ele": "After triggering Burn, Catalyze, or Bloom reactions",
+    "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions",
+    "eleMas": "Sprawling Greenery Elemental Mastery"
+  }
+}

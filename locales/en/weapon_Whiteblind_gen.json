@@ -1,0 +1,12 @@
+{
+  "name": "Whiteblind",
+  "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
+  "passiveName": "Infusion Blade",
+  "passiveDescription": {
+    "0": "On hit, Normal or Charged Attacks increase ATK and DEF by <cryo>6%</cryo> for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+    "1": "On hit, Normal or Charged Attacks increase ATK and DEF by <cryo>7.5%</cryo> for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+    "2": "On hit, Normal or Charged Attacks increase ATK and DEF by <cryo>9%</cryo> for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+    "3": "On hit, Normal or Charged Attacks increase ATK and DEF by <cryo>10.5%</cryo> for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+    "4": "On hit, Normal or Charged Attacks increase ATK and DEF by <cryo>12%</cryo> for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+  }
+}

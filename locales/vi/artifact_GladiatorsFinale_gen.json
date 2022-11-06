@@ -1,0 +1,29 @@
+{
+  "setName": "Lễ Bế Mạc Của Giác Đấu Sĩ",
+  "setEffects": {
+    "2": "Tấn công tăng 18%",
+    "4": "Khi nhân vật trang bị bộ Thánh Di Vật này dùng kiếm đơn, trọng kiếm, vũ khí cán dài, sát thương tấn công thường nhân vật tạo thành tăng 35%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nỗi Nhớ Của Giác Đấu Sĩ",
+      "desc": "Không ai biết đấu sĩ truyền thuyết tại sao luôn đeo bông hoa này trên ngực, đây là điểm yếu duy nhất trên người của chiến sĩ."
+    },
+    "plume": {
+      "name": "Giác Đấu Sĩ Trở Về",
+      "desc": "Chiếc lông của hy vọng. Ở điểm cuối cùng trong kiếp sống huyền thoại, loài phi điểu đã đặt chiếc lông này lên ngực hắn."
+    },
+    "sands": {
+      "name": "Hy Vọng Của Giác Đấu Sĩ",
+      "desc": "Ghi lại năm tháng đẫm máu của giác đấu sĩ. Đối với người đó thì lại tượng trưng cho con đường đi đến tự do."
+    },
+    "goblet": {
+      "name": "Giác Đấu Sĩ Uống Say",
+      "desc": "Ly vàng uống rượu mừng chiến thắng của giác đấu sĩ cổ đại. Cho đến khi hắn ngã xuống thì ly rượu cũng được năm tháng rót đầy."
+    },
+    "circlet": {
+      "name": "Nón Giác Đấu Sĩ",
+      "desc": "Nón của giác đấu sĩ cổ đại, từng nhuốm máu của vô số kẻ địch, cũng từng nhận vô số sự ngưỡng mộ của người xem."
+    }
+  }
+}

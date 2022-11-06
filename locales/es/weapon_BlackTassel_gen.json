@@ -1,0 +1,12 @@
+{
+  "name": "Borla Negra",
+  "description": "El hecho de que sea de color oscuro soluciona el problema que tienen las borlas blancas, las cuales se manchan muy fácilmente.",
+  "passiveName": "Antipegajoso",
+  "passiveDescription": {
+    "0": "Aumenta en un <cryo>40%</cryo> el daño contra los Slimes.",
+    "1": "Aumenta en un <cryo>50%</cryo> el daño contra los Slimes.",
+    "2": "Aumenta en un <cryo>60%</cryo> el daño contra los Slimes.",
+    "3": "Aumenta en un <cryo>70%</cryo> el daño contra los Slimes.",
+    "4": "Aumenta en un <cryo>80%</cryo> el daño contra los Slimes."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "skillOneHit": "Un golpe recibido",
+  "skillTwoHit": "Dos golpes recibidos",
+  "duringBurst": "Durante la duración de Quebrantatormentas",
+  "baneOfEvil_": "RES a Daño Electro de Enemigos",
+  "tidecallerMaxDmg": "Lanzar Invocadora de Mareas con su máximo bono de Daño",
+  "a4normalDmg_": "Bono de Daño de Ata. Normal",
+  "a4chargeDmg_": "Bono de Daño de Ata. Cargado",
+  "a4atkSpeed_": "Bono de Vel. de Ataque",
+  "a4duration": "Duración",
+  "a4charge": "Reduce el tiempo de preparación de Ataques Cargados",
+  "c4dmg": "Daño Electro",
+  "burstDmgRed_": "Reducción de Daño"
+}

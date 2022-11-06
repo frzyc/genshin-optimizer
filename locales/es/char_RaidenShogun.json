@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "eye": "Ojo del Castigo Atronador",
+    "partyCost": "Coste de Energía"
+  },
+  "burst": {
+    "resolves": "Cargas de Ambición"
+  },
+  "a4": {
+    "enerRest": "Regeneración de Energía otorgada por <strong>Mente Onírica</strong>",
+    "eleDMG": "Bono de Daño Electro"
+  },
+  "c4": {
+    "expires": "Al terminar <strong>Mente Onírica</strong> activada mediante <strong>Técnica secreta: Verdad onírica</strong>"
+  }
+}

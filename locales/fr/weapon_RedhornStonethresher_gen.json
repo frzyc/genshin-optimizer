@@ -1,0 +1,12 @@
+{
+  "name": "Brise-pierre de corne rouge",
+  "description": "D'après son ancien propriétaire, cette arme serait le «{NON_BREAK_SPACE}puissant seigneur lion doré écraseur d'or et briseur de pierres en corne rouge » pouvant faire déguerpir n'importe quel monstre sur-le-champ...",
+  "passiveName": "Gokadaiou du Roi Otogi",
+  "passiveDescription": {
+    "0": "Augmente la DÉF de <cryo>28{NON_BREAK_SPACE}%</cryo>, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à <cryo>40 %</cryo> de la DÉF.",
+    "1": "Augmente la DÉF de <cryo>35{NON_BREAK_SPACE}%</cryo>, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à <cryo>50 %</cryo> de la DÉF.",
+    "2": "Augmente la DÉF de <cryo>42{NON_BREAK_SPACE}%</cryo>, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à <cryo>60 %</cryo> de la DÉF.",
+    "3": "Augmente la DÉF de <cryo>49{NON_BREAK_SPACE}%</cryo>, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à <cryo>70 %</cryo> de la DÉF.",
+    "4": "Augmente la DÉF de <cryo>56{NON_BREAK_SPACE}%</cryo>, et augmente les DGT des attaques normales et chargées d'une valeur équivalant à <cryo>80 %</cryo> de la DÉF."
+  }
+}

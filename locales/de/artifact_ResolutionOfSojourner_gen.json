@@ -1,0 +1,29 @@
+{
+  "setName": "Fernweh",
+  "setEffects": {
+    "2": "Erhöht den ANG um 18 %.",
+    "4": "Erhöht die KT heftiger Schläge um 30 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Sinn der Kameradschaft",
+      "desc": "Ein hellblaues Blümchen mit einem kleinen Band an ihrem Stängel."
+    },
+    "plume": {
+      "name": "Feder der Heimkehr",
+      "desc": "Eine blaue Pfeilfeder, der man die Sehnsucht nach der Ferne ablesen kann."
+    },
+    "sands": {
+      "name": "Stein der Lichtjagd",
+      "desc": "Eine Sonnenuhr, die die Wandlungen der Zeit miterlebt hat und deren Fortgang still und zuverlässig aufzeichnet."
+    },
+    "goblet": {
+      "name": "Kelch der Fremde",
+      "desc": "Ein Becher aus weißem Porzellan, der früher eine große Zahl an alkoholischen Getränken fasste."
+    },
+    "circlet": {
+      "name": "Kranz des Abschieds",
+      "desc": "Ein Blumenkranz, der nach einer frischen Frühlingsbrise duftet."
+    }
+  }
+}

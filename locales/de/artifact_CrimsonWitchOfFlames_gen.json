@@ -1,0 +1,29 @@
+{
+  "setName": "Brennende Pyro-Hexe",
+  "setEffects": {
+    "2": "Erhöht den Pyro-Schaden um 15 %.",
+    "4": "Erhöht den mit den Reaktionen „Überladen“, „In Flammen“ und „Flammenspross“ verursachten Schaden um 40 % und den den von den Reaktionen „Verdampfen“ und „Schmelzen“ betroffenen Gegnern zugefügten Schaden um 15 %. Erhöht den Effekt eines 2er-Sets bei Anwendung von Elementarfähigkeiten 10 s lang um 50 %, 3-fach stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Blume der Pyro-Hexe",
+      "desc": "Eine Blume, die die Pyro-Hexe, die eigentlich die Welt zerstören wollte, einmal berührt hat. Die kleinen Stichflammen züngeln wild und empfangen jeden, der die Blume berührt."
+    },
+    "plume": {
+      "name": "Feder der Pyro-Hexe",
+      "desc": "Eine Feder, die die Pyro-Hexe, die eigentlich die Welt zerstören wollte, einmal berührt hat. Sie brennt unaufhörlich und verströmt daher große Hitze."
+    },
+    "sands": {
+      "name": "Stunde der Vernichtung",
+      "desc": "Ein Zeitmesser, den die Pyro-Hexe, die eigentlich die Welt zerstören wollte, früher bei sich trug. In ihm befindet sich die Lebenszeit der Hexe, die diese dem Feuer übergeben hat."
+    },
+    "goblet": {
+      "name": "Herz der Pyro-Hexe",
+      "desc": "Ein brennender Tonkrug, den die Pyro-Hexe hinterlassen hat. Eigentlich wollte sie damit die Welt zerstören. Der Krug steht immer noch in Flammen, ganz wie die Hexe."
+    },
+    "circlet": {
+      "name": "Brennender Hexenhut",
+      "desc": "Ein Hexenhut, den die Pyro-Hexe, die eigentlich die Welt zerstören wollte, getragen hat. Die breite Krempe muss ihr Sichtfeld deutlich eingeschränkt haben."
+    }
+  }
+}

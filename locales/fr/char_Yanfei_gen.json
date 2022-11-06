@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Sage innocence",
+  "description": "Une célèbre conseillère juridique du Port de Liyue. Du sang d'Adepte coule dans les veines de cette jeune femme ingénieuse.",
+  "constellationName": "Bestia Iustitia",
+  "auto": {
+    "name": "Sceau embrasé",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Tire des boules de feu qui infligent jusqu'à 3 vagues de <pyro>DGT Pyro</pyro>.",
+        "2": "Lorsqu'une attaque normale touche un ennemi, Yanfei obtient un sceau écarlate. Yanfei peut détenir un maximum de 3 sceaux écarlates, et chaque fois que cet effet se déclenche, la durée des sceaux en sa possession est réinitialisée.",
+        "3": "Chaque sceau écarlate diminue la consommation d'endurance de Yanfei, et disparaît lorsque Yanfei quitte le champ de bataille."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance et tous les sceaux écarlates pour infliger des <pyro>DGT Pyro de zone</pyro> aux ennemis en face de Yanfei après un court délai.",
+        "2": "La portée et l'intensité de ces DGT Pyro de zone augmentent avec le nombre de sceaux écarlates consommés."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Yanfei concentre son énergie Pyro et plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des <pyro>DGT Pyro de zone</pyro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "Réduction du coût d'endurance",
+      "6": "Durée des sceaux écarlates",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pacte des flammes",
+    "description": {
+      "0": "Yanfei en appelle aux flammes dévastatrices, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "Lorsque des ennemis sont touchés, Yanfei gagne le nombre maximum de sceaux écarlates.",
+      "2": "<br/>",
+      "3": "<i>En plus de leur valeur juridique, les sceaux de Yanfei présentent des conditions d'utilisation très personnalisées. Après tout, ce n'est pas comme si le Bureau des affaires civiles pouvait changer les lois de la nature.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Application des peines",
+    "description": {
+      "0": "Invoque une explosion de flammes intenses qui jaillit vers les ennemis proches, infligeant des <pyro>DGT Pyro de zone</pyro> et conférant à Yanfei le nombre maximum de sceaux écarlates, tout en appliquant l'effet Brillance.",
+      "1": "<br/>",
+      "2": "<strong>Brillance</strong>",
+      "3": "Confère les effets suivants :",
+      "4": [
+        " Confère à Yanfei un sceau écarlate à intervalles réguliers.",
+        " Augmente les DGT infligés par ses attaques chargées."
+      ],
+      "5": "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue.",
+      "6": "<br/>",
+      "7": "<i>« Veuillez trouver ici les termes de cette question de vie ou de mort, et par là j'entends ma vie et votre mort ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "",
+      "2": "Intervalle entre les sceaux écarlates",
+      "3": "Bonus ATQ chargée",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dispositions supplémentaires",
+    "description": {
+      "0": "Lorsque Yanfei consomme un sceau écarlate en utilisant une attaque chargée, chaque sceau écarlate augmente le <pyro>bonus de DGT Pyro</pyro> de Yanfei de 5 % pour 6 s. Utiliser une attaque chargée avant la fin de la durée d'un effet dissipe l'effet précédent."
+    }
+  },
+  "passive2": {
+    "name": "Œil de la justice",
+    "description": {
+      "0": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des <pyro>DGT Pyro de zone</pyro> supplémentaires équivalant à 80 % de son ATQ. Ces DGT comptent comme des DGT d'attaque chargée."
+    }
+  },
+  "passive3": {
+    "name": "Connaissance du terrain",
+    "description": {
+      "0": "Affiche l'emplacement des <strong>produits de Liyue</strong> sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Plaidoyer convaincant",
+    "description": {
+      "0": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement."
+    }
+  },
+  "constellation2": {
+    "name": "Verdict final",
+    "description": {
+      "0": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis dont les PV sont inférieurs à 50 %."
+    }
+  },
+  "constellation3": {
+    "name": "Mise sous scellés",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Pacte des flammes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Droit commun",
+    "description": {
+      "0": "<strong>Application des peines</strong> confère les effets suivants :",
+      "1": "Génère un bouclier qui absorbe une quantité de DGT équivalant à 45 % des PV max et dure 15 s.",
+      "2": "Le bouclier est efficace à 250 % contre les <pyro>DGT Pyro</pyro>."
+    }
+  },
+  "constellation5": {
+    "name": "Déclaration sous serment",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Application des peines</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Clause complémentaire",
+    "description": {
+      "0": "Augmente le nombre max de sceaux écarlates de 1."
+    }
+  }
+}

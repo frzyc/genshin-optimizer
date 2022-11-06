@@ -1,0 +1,173 @@
+{
+  "name": "Thoma",
+  "title": "El Protector de Tierras Lejanas",
+  "description": "El amo de llaves del clan Kamisato y un intermediario muy activo en Inazuma.",
+  "constellationName": "Rubeum Scuta",
+  "auto": {
+    "name": "Lanza devastadora",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Bendición incandescente",
+    "description": {
+      "0": "Thoma clava su lanza en el suelo para usarla como apoyo, canalizar las llamas y dar una patada que inflige <pyro>Daño Pyro en el AdE</pyro>. Además, invoca un escudo llameante que, al ser creado, aplica <pyro>Pyro</pyro> sobre Thoma.",
+      "1": "La absorción de daño del escudo es proporcional a la Vida Máx. de Thoma.",
+      "2": "El escudo llameante tiene las siguientes propiedades:",
+      "3": [
+        "250% de eficiencia de absorción de <pyro>Daño Pyro</pyro>.",
+        "La cantidad de absorción de daño que le quede a un escudo llameante se acumulará con la del siguiente escudo que cree Thoma, y su duración se reiniciará."
+      ],
+      "4": "<br/>",
+      "5": "La absorción de daño del escudo no podrá sobrepasar cierta proporción de la Vida Máx. de Thoma.",
+      "6": "<br/>",
+      "7": "<i>Como forastero que es, la única forma de dominar la exquisita y pura técnica de lanza de Inazuma es prendiendo la llama de la hospitalidad. Pero los logros de Thoma no se reducen a ser “el discípulo que más rápido aprende” y “un gran experto lancero”, sino que ha imbuido su técnica de lanza con su voluntad para proteger a los demás y para defenderse de los enemigos.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Absorción de daño del escudo",
+      "2": "Duración del escudo",
+      "3": "Absorción de daño máx.",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Armadura calcinante",
+    "description": {
+      "0": "Thoma hace girar su lanza para que ataque a los enemigos de alrededor con unas flagrantes llamas que infligen <pyro>Daño Pyro en el AdE</pyro> y que crean una coraza abrasadora.",
+      "1": "<br/>",
+      "2": "<strong>Coraza abrasadora</strong>",
+      "3": "Cuando un personaje en uso que esté bajo los efectos de la coraza abrasadora realiza un Ataque Normal, provocará un estallido flamígero que inflige <pyro>Daño Pyro en el AdE</pyro> y crea un escudo llameante.",
+      "4": "Solo puede ocurrir un estallido flamígero por segundo.",
+      "5": "<br/>",
+      "6": "Además de absorber daño, este escudo tiene las mismas propiedades que el escudo llameante de la Habilidad Elemental de Thoma, Bendición incandescente:",
+      "7": [
+        "250% de eficiencia de absorción de <pyro>Daño Pyro</pyro>.",
+        "La cantidad de absorción de daño que le quede a un escudo llameante se acumulará con la del siguiente escudo que cree Thoma, y su duración se reiniciará."
+      ],
+      "8": "<br/>",
+      "9": "La absorción de daño del escudo no podrá sobrepasar cierta proporción de la Vida Máx. de Thoma.",
+      "10": "<br/>",
+      "11": "Si este es derrotado, los efectos de la coraza abrasadora desaparecerán.",
+      "12": "<br/>",
+      "13": "<i>“Jamás olvidaré la promesa que hice. Así pues, que estas llamas nunca se extingan para proteger a las personas que más estimo”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de estallido flamígero",
+      "2": "Absorción de daño del escudo",
+      "3": "Duración del escudo",
+      "4": "Duración de coraza abrasadora",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cota de malla",
+    "description": {
+      "0": "Cuando tu personaje en uso obtiene un <strong>escudo llameante</strong> o reinicia su duración, la Protección de Escudo de dicho personaje aumenta en un 5% durante 6 s.",
+      "1": "Este efecto solo puede ocurrir una vez cada 0.3 s y acumularse 5 veces."
+    }
+  },
+  "passive2": {
+    "name": "Ofensiva incineradora",
+    "description": {
+      "0": "El daño de los estallidos flamígeros provocados por <strong>Armadura calcinante</strong> aumenta en una cantidad equivalente al 2.2% de la Vida Máx. de Thoma."
+    }
+  },
+  "passive3": {
+    "name": "Apasionado de la pesca",
+    "description": {
+      "0": "Cuando {F#la}{M#el} viajer{F#a}{M#o} <strong>pesca</strong> en Inazuma, hay un 20% de probabilidad de obtener el doble de peces gracias a la ayuda de Thoma."
+    }
+  },
+  "constellation1": {
+    "name": "El deber de un compañero",
+    "description": {
+      "0": "Cuando los personajes que estén bajo la protección de un <strong>escudo llameante</strong> (a excepción de Thoma) reciben un ataque, tanto el TdE de <strong>Bendición incandescente</strong> como el de <strong>Armadura calcinante</strong> se reducen en 3 s.",
+      "1": "Este efecto solo puede ocurrir una vez cada 20 s."
+    }
+  },
+  "constellation2": {
+    "name": "Hábil sirviente",
+    "description": {
+      "0": "Aumenta en 3 s la duración de <strong>Armadura calcinante</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Voluntad protectora",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Bendición incandescente</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Plan de servicio",
+    "description": {
+      "0": "Al realizar <strong>Armadura calcinante</strong>, Thoma recupera 15 pts. de Energía Elemental."
+    }
+  },
+  "constellation5": {
+    "name": "Fuego incontrolado",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Armadura calcinante</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Corazón fervoroso",
+    "description": {
+      "0": "Al obtener un <strong>escudo llameante</strong> o reiniciar su duración, el daño de los Ataques Normales, Cargados y Descendentes de todos los miembros del equipo aumenta en un 15% durante 6 s."
+    }
+  }
+}

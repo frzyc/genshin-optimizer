@@ -1,0 +1,50 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Артефакты",
+    "characters": "Персонажи",
+    "tools": "Инструменты",
+    "weapons": "Оружия",
+    "doc": "Документация",
+    "setting": "Настройки",
+    "scanner": "Сканеры"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Мин. Уровень",
+    "maxLevel": "Макс. Уровень",
+    "rarity": "Редкость",
+    "level": "Уровень"
+  },
+  "unselect": "Отменить",
+  "ascending": "По возрастанию",
+  "descending": "По убыванию",
+  "loading": "Загрузка...",
+  "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается miHoYo.",
+  "appVersion": "$t(pageTitle) Версия: {{version}}",
+  "underConstruction": "В разработке",
+  "error": "Ошибка",
+  "reset": "Сбросить",
+  "info": "Информация",
+  "inventory": "Инвентарь",
+  "close": "Закрыть",
+  "sortMap": {
+    "new": "Новое",
+    "name": "Имя",
+    "level": "Уровень",
+    "rarity": "Редкость",
+    "efficiency": "Текущая ЦР",
+    "mefficiency": "Максимальная ЦР",
+    "artsetkey": "Набор артефактов",
+    "probability": "Вероятные хар-ки"
+  },
+  "link": {
+    "download": "Ссылка на скачивание",
+    "discord": "Приглашение в Discord"
+  },
+  "selectlevel": "Изменить Уровень"
+}

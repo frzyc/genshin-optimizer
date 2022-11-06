@@ -1,0 +1,34 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Cubierta protectora",
+    "desc": "Todas las RES Elementales y la RES Física aumentan en un 15%."
+  },
+  "FerventFlames": {
+    "name": "Llamas fervientes",
+    "desc": "Reduce en un 40% la duración de los efectos Cryo sobre ti. Aumenta el ATQ en un 25%."
+  },
+  "SoothingWater": {
+    "name": "Agua medicinal",
+    "desc": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta la Vida Máx. en un 25%."
+  },
+  "ShatteringIce": {
+    "name": "Hielo fragmentado",
+    "desc": "Reduce en un 40% la duración de los efectos Electro sobre ti. Aumenta en un 15% la Prob. CRIT contra enemigos afectados por Cryo o congelados."
+  },
+  "HighVoltage": {
+    "name": "Alto voltaje",
+    "desc": "Reduce en un 40% la duración de los efectos Hydro sobre ti. Superconductor, Sobrecarga, Electrocargado, Aceleración, Intensificación y Sobreflorecimiento tienen un 100% de probabilidad de generar una partícula elemental Electro (TdE: 5 s)."
+  },
+  "ImpetuousWinds": {
+    "name": "Vientos impetuosos",
+    "desc": "El Coste de Aguante se reduce en un 15%. Aumenta la Vel. Movimiento en un 10% y reduce en un 5% el TdE de las habilidades."
+  },
+  "EnduringRock": {
+    "name": "Roca resistente",
+    "desc": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% más de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15 s."
+  },
+  "SprawlingGreenery": {
+    "name": "Planta trepadora",
+    "desc": "La Maestría Elemental aumenta en 50 pts. Tras causar una reacción de Quemadura, Aceleración o Florecimiento, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 30 pts. durante 6 s. Tras causar una reacción de Intensificación, Propagación, Sobreflorecimiento o Crepitar, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 20 pts. durante 6 s. La duración de estos efectos se calcula de manera independiente."
+  }
+}

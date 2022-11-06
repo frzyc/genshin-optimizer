@@ -1,0 +1,29 @@
+{
+  "setName": "Defender's Will",
+  "setEffects": {
+    "2": "DEF +30%.",
+    "4": "Meningkatkan 30% Elemental RES diri sendiri untuk setiap jenis elemen karakter di dalam party."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Guardian's Flower",
+      "desc": "Bunga iris yang dikasihi oleh para Guardian. Namun sangat disesali, sang Guardian tidak pernah mendapatkan kesempatan untuk memberikannya kepada orang yang dia kasihi."
+    },
+    "plume": {
+      "name": "Guardian's Sigil",
+      "desc": "Bros berbentuk sehelai bulu yang melambangkan keinginan seseorang untuk melindungi."
+    },
+    "sands": {
+      "name": "Guardian's Clock",
+      "desc": "Peralatan yang berfungsi untuk menunjukkan waktu. Di malam tanpa bulan, hanya benda ini yang dapat memberikan referensi waktu."
+    },
+    "goblet": {
+      "name": "Guardian's Vessel",
+      "desc": "Wadah metalik yang biasanya digunakan untuk menyimpan minuman, untuk meredakan rasa kesepian di tengah panjangnya pekerjaan berjaga."
+    },
+    "circlet": {
+      "name": "Guardian's Band",
+      "desc": "Kain dekorasi berwarna biru nila kehitaman. Dapat juga digunakan untuk mengikat luka di saat darurat."
+    }
+  }
+}

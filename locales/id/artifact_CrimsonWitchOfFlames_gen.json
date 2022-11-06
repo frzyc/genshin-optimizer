@@ -1,0 +1,29 @@
+{
+  "setName": "Crimson Witch of Flames",
+  "setEffects": {
+    "2": "Pyro DMG Bonus +15%.",
+    "4": "Meningkatkan 40% DMG Overloaded, Burning, dan Burgeon. Meningkatkan 15% DMG Vaporize dan Melt. Setelah menggunakan Elemental Skill, meningkatkan 50% efek Set 2 Bagian selama 10 detik. Maksimum 3 lapis."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Witch's Flower of Blaze",
+      "desc": "Bunga yang pernah disentuh oleh Crimson Witch of Flame yang pernah bermimpi untuk membakar semua iblis di dunia. Api tanpa nama di atasnya mengusap dengan hangat tangan yang menyentuhnya."
+    },
+    "plume": {
+      "name": "Witch's Ever-Burning Plume",
+      "desc": "Bulu burung yang disentuh oleh Crimson Witch of Flame yang pernah bermimpi untuk membakar semua iblis di dunia. Apinya yang kekal berkobar dengan hebat."
+    },
+    "sands": {
+      "name": "Witch's End Time",
+      "desc": "Sebuah penunjuk waktu yang pernah dikenakan oleh Crimson Witch of Flame yang pernah bermimpi untuk membakar semua iblis di dunia. Tahun-tahun yang didedikasikan oleh witch tersebut mengalir dalam bara api di dalamnya."
+    },
+    "goblet": {
+      "name": "Witch's Heart Flames",
+      "desc": "Guci abu yang menyemburkan api, ditinggalkan oleh Crimson Witch of Flame yang pernah bermimpi untuk membakar semua iblis di dunia. Api di dalam guci ini tidak pernah padam, terbakar bersama hati tuannya."
+    },
+    "circlet": {
+      "name": "Witch's Scorching Hat",
+      "desc": "Topi yang pernah dikenakan oleh Crimson Witch of Flame yang pernah bermimpi untuk membakar semua iblis di dunia. Bagian depan topinya terlihat membatasi pandangannya."
+    }
+  }
+}

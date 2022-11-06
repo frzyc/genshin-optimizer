@@ -1,0 +1,176 @@
+{
+  "name": "Yelan",
+  "title": "Valley Orchid",
+  "description": "A mysterious person who claims to work for the Ministry of Civil Affairs, but is a \"non-entity\" on the Ministry of Civil Affairs' list.",
+  "constellationName": "Umbrabilis Orchis",
+  "auto": {
+    "name": "Stealthy Bowshot",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, flowing water will accumulate on the arrowhead. A fully charged torrential arrow will deal <hydro>Hydro DMG</hydro>."
+      },
+      "breakthrough": {
+        "0": "<strong>Breakthrough</strong>",
+        "1": "Yelan will enter a \"Breakthrough\" state after spending 5s out of combat, which will cause her next Charged Aimed Shot to have 80% decreased charge time, and once charged, she can fire a \"Breakthrough Barb\" that will deal <hydro>AoE Hydro DMG</hydro> based on Yelan's Max HP."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Aimed Shot",
+      "5": "Fully-Charged Aimed Shot",
+      "6": "Breakthrough Barb DMG",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lingering Lifeline",
+    "description": {
+      "0": "Fires off a Lifeline that allows her to move rapidly, entangling and marking opponents along its path.",
+      "1": "When this rapid movement ends, the Lifeline will explode, dealing <hydro>Hydro DMG</hydro> to the marked opponents based on Yelan's Max HP.",
+      "2": "<br/>",
+      "3": "<strong>Tap</strong>",
+      "4": "Moves a certain distance forward swiftly.",
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Engages in continuous, swift movement, during which Yelan's resistance to interruption is increased.",
+      "8": "During this time, Yelan can control this rapid movement and end it by using this Skill again.",
+      "9": "<br/>",
+      "10": "Additionally, each opponent marked by the Lifeline when it explodes grants Yelan a 34% chance to reset her Breakthrough state.",
+      "11": "<br/>",
+      "12": "<i>Not until she begins to tug on the strings do evildoers, crooks, and scheming villains alike know that there is no escape.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Max Duration (Hold)",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Depth-Clarion Dice",
+    "description": {
+      "0": "Deals <hydro>AoE Hydro DMG</hydro> and creates an \"Exquisite Throw,\" which aids her in battle.",
+      "1": "<br/>",
+      "2": "<strong>Exquisite Throw</strong>",
+      "3": "Follows the character around and will initiate a coordinated attack under the following circumstances, dealing <hydro>Hydro DMG</hydro> based on Yelan's Max HP:",
+      "4": [
+        "Can occur once every second when your active character uses a Normal Attack.",
+        "Will occur each time Yelan's Lifeline explodes and hits opponents."
+      ],
+      "5": "<br/>",
+      "6": "<i>\"A gambling addiction is going to do you no good. I mean, let me just do the math for you as the dealer. What do you think your odds of beating me are, when I have seven dice and you, only one?\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Exquisite Throw DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Turn Control",
+    "description": {
+      "0": "When the party has 1/2/3/4 Elemental Types, Yelan's Max HP is increased by 6%/12%/18%/30%."
+    }
+  },
+  "passive2": {
+    "name": "Adapt With Ease",
+    "description": {
+      "0": "So long as an <strong>Exquisite Throw</strong> is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.",
+      "1": "The pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration."
+    }
+  },
+  "passive3": {
+    "name": "Necessary Calculation",
+    "description": {
+      "0": "Gains 25% more rewards when dispatched on a Liyue Expedition for 20 hours."
+    }
+  },
+  "constellation1": {
+    "name": "Enter the Plotters",
+    "description": {
+      "0": "<strong>Lingering Lifeline</strong> gains 1 additional charge."
+    }
+  },
+  "constellation2": {
+    "name": "Taking All Comers",
+    "description": {
+      "0": "When <strong>Exquisite Throw</strong> conducts a coordinated attack, it will fire an additional water arrow that will deal 14% of Yelan's Max HP as Hydro DMG.",
+      "1": "This effect can trigger once every 1.8s."
+    }
+  },
+  "constellation3": {
+    "name": "Beware the Trickster's Dice",
+    "description": {
+      "0": "Increases the Level of <strong>Depth-Clarion Dice</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Bait-and-Switch",
+    "description": {
+      "0": "Increases all party members' Max HP by 10% for 25s for every opponent marked by <strong>Lifeline</strong> when the Lifeline explodes. A maximum increase of 40% Max HP can be attained in this manner."
+    }
+  },
+  "constellation5": {
+    "name": "Dealer's Sleight",
+    "description": {
+      "0": "Increases the Level of <strong>Lingering Lifeline</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Winner Takes All",
+    "description": {
+      "0": "After using <strong>Depth-Clarion Dice</strong>, Yelan will enter the Mastermind state.",
+      "1": "In this state, all of Yelan's Normal Attacks will be special Breakthrough Barbs. These Breakthrough Barbs will have similar abilities to normal ones and the DMG dealt will be considered Charged Attack DMG, dealing 156% of a normal Breakthrough Barb's DMG.",
+      "2": "<br/>",
+      "3": "The Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows."
+    }
+  }
+}

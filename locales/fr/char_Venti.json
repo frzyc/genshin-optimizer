@@ -1,0 +1,13 @@
+{
+  "addAimed": "DGTs tir visé",
+  "addFullAimed": "DGTs tir visé (Pleine charge)",
+  "upcurrentDuration": "Durée",
+  "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
+  "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
+  "c4": "Venti obtient une orbe ou une particule",
+  "q": "Régénère 15 Énergies à chaque personnage <1>{{elementKey}}</1>.",
+  "c2": {
+    "hit": "Ennemi touché",
+    "launched": "Ennemi projeté"
+  }
+}

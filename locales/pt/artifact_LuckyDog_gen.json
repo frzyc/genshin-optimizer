@@ -1,0 +1,29 @@
+{
+  "setName": "O Sortudo",
+  "setEffects": {
+    "2": "DEF +100",
+    "4": "Ao coletar Mora, restaura 300 de Vida."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Verde do Sortudo",
+      "desc": "Um trevo-de-quatro-folhas que cresce na natureza. Foi colhido porque dizem dar muita sorte."
+    },
+    "plume": {
+      "name": "Pena de Águia do Sortudo",
+      "desc": "Um monstro no caminho foi pego por uma águia caçadora... Às vezes, esta pena pode trazer muita sorte."
+    },
+    "sands": {
+      "name": "Ampulheta do Sortudo",
+      "desc": "A ampulheta está desprovida de areia devido a danos. A passagem do tempo não tem sentido para quem vive sem preocupações."
+    },
+    "goblet": {
+      "name": "Cálice do Sortudo",
+      "desc": "Feito de metal requintado, uma vez foi usado para nocautear um ladrão."
+    },
+    "circlet": {
+      "name": "Grinalda de Prata do Sortudo",
+      "desc": "Seu dono antigo entrou em uma caverna e encontrou o tesouro da realeza exilada. Esta é uma lembrança desse incidente."
+    }
+  }
+}

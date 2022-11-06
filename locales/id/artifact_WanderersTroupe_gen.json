@@ -1,0 +1,29 @@
+{
+  "setName": "Wanderer's Troupe",
+  "setEffects": {
+    "2": "Elemental Mastery +80.",
+    "4": "Meningkatkan 35% DMG Charged Attack karakter yang menggunakan Catalyst, Bow."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Troupe's Dawnlight",
+      "desc": "Medali kecil yang berbentuk bunga. Saat berada di tempat yang sangat tenang, suara nyanyian dan seruling terasa hampir bisa terdengar darinya."
+    },
+    "plume": {
+      "name": "Bard's Arrow Feather",
+      "desc": "Bulu anak panah zamrud yang tidak layu ataupun tertekuk meskipun disimpan untuk waktu yang lama. Suara seperti air yang mengalir dapat terdengar dari dalamnya."
+    },
+    "sands": {
+      "name": "Concert's Final Hour",
+      "desc": "Jam pasir yang digunakan saat kelompok panggung memainkan lagu. Pernah mengeluarkan suara yang merdu di masa lalu, tetapi kini pertunjukan telah berakhir."
+    },
+    "goblet": {
+      "name": "Wanderer's String-Kettle",
+      "desc": "Botol minuman kuno dengan bentuk yang aneh. Senar harpa terpasang di dalamnya, dan menimbulkan suara yang merdu setiap kali air dikucurkan dari botol ini."
+    },
+    "circlet": {
+      "name": "Conductor's Top Hat",
+      "desc": "Topi tua yang masih tetap memancarkan kilaunya. Melodi tua seakan dapat terdengar saat melihat rupanya yang sangat kuno."
+    }
+  }
+}

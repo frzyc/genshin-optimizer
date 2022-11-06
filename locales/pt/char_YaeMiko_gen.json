@@ -1,0 +1,161 @@
+{
+  "name": "Yae Miko",
+  "title": "Diversão Astuta",
+  "description": "A Senhorita Guuji do Grande Santuário Narukami, e também a Editora-Chefe da Editora Yae. Por trás de sua bela aparência escondem-se sabedoria e astúcia inimagináveis.",
+  "constellationName": "Divina Vulpes",
+  "auto": {
+    "name": "Kitsune Devora-pecados",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Evoca espíritos kitsune que realizam até 3 ataques que infligem <electro>Dano Electro</electro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina que inflige <electro>Dano Electro em uma AdE</electro> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do relâmpago, Yae Miko mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <electro>Dano Electro em uma AdE</electro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Evocação Yakan: Sesshou Sakura",
+    "description": {
+      "0": "Para Yae, as coisas que podem ser resolvidas ao invocar os espíritos não precisam ser feitas pessoalmente.",
+      "1": "Ela se move rapidamente, deixando uma Sesshou Sakura para trás.",
+      "2": "<br/>",
+      "3": "<strong>Sesshou Sakura</strong>",
+      "4": "Tem as seguintes propriedades:",
+      "5": [
+        " Ataca um inimigo próximo periodicamente com um relâmpago, causando <electro>Dano Electro</electro>;",
+        " Quando há outras Sesshou Sakura por perto, seu nível aumenta, aumentando o Dano causado por seus ataques."
+      ],
+      "6": "<br/>",
+      "7": "Esta habilidade pode ser usada até três vezes.",
+      "8": "Um máximo de 3 Sesshou Sakura podem existir simultaneamente. Ao ser criada, a Sesshou Sakura iniciará no nível 1, o nível mais alto que cada Sesshou Sakura pode atingir é 3. Criar uma Sesshou Sakura muito próxima de outra já existente fará com que a Sesshou Sakura existente seja destruída.",
+      "9": "<br/>",
+      "10": "<i>\"Os espíritos kitsune selados nos ramos são todos yakan que se deterioraram até quererem ferir os humanos. Os yakan estão dois níveis abaixo de nós, Kitsunes Celestiais, e por isso não vejo qualquer problema com... pedir-lhes para cumprir minhas ordens. Agora, isso não significa que os humanos devem copiar nossos sistemas de classificação. Afinal de contas, quem é superior? Humanos ou kitsunes? Você quer realmente saber?\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano da Sesshou Sakura — Nível 1",
+      "1": "Dano da Sesshou Sakura — Nível 2",
+      "2": "Dano da Sesshou Sakura — Nível 3",
+      "3": "Dano da Sesshou Sakura — Nível 4",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Grande Arte Secreta: Tenko Kenshin",
+    "description": {
+      "0": "A lenda da \"kitsunetsuki\", ou a manifestação do poder kitsune, é uma das lendas de Inazuma. Dentre elas, a da Kitsune Celestial é considerada especial, caindo sobre os inimigos do Grande Santuário Narukami sob a forma de relâmpagos, causando <electro>Dano Electro em uma AdE</electro>.",
+      "1": "Quando ela usa esta habilidade, Yae Miko irá retirar os selos das Sesshou Sakura próximas, destruindo suas formas externas e transformando-as em Relâmpagos de Kitsunes Celestiais que caem dos céus, causando <electro>Dano Electro em uma AdE</electro>. Cada Sesshou Sakura destruída desta forma irá criar um Relâmpago.",
+      "2": "<br/>",
+      "3": "<i>Yae apenas usa os sinais da Kitsune Celestial em momentos assim, empunhando o próprio relâmpago. Todos que viram a cauda da Senhora Guuji foram transformados em cinzas, portanto, lembre-se, a Senhorita Yae não tem cauda alguma.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano do Relâmpago de Kitsune Celestial",
+      "2": "Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sombra Sagrada",
+    "description": {
+      "0": "Ao lançar <strong>Grande Arte Secreta: Tenko Kenshin</strong>, cada Sesshou Sakura destruída redefinirá o Tempo de Recarga de uma carga de <strong>Evocação Yakan: Sesshou Sakura</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Bênção Iluminada",
+    "description": {
+      "0": "Cada ponto de Proficiência Elemental que Yae Miko possui aumenta o Dano infligido por <strong>Sesshou Sakura</strong> em 0.15%."
+    }
+  },
+  "passive3": {
+    "name": "Meditações de uma Yako",
+    "description": {
+      "0": "Há 25% de chance de obter um Material de Talento extra aleatório da mesma região. A raridade será a mesma dos materiais consumidos ao fabricar."
+    }
+  },
+  "constellation1": {
+    "name": "Oferenda Yakan",
+    "description": {
+      "0": "Cada vez que <strong>Grande Arte Secreta: Tenko Kenshin</strong> desencadeia Relâmpago de Kitsune Celestial, Yae Miko regenera para ela mesma 8 pontos de Energia Elemental."
+    }
+  },
+  "constellation2": {
+    "name": "Uivos ao Luar",
+    "description": {
+      "0": "<strong>Sesshou Sakura</strong> inicia no Nível 2 quando é criada. O nível máximo é aumentado para 4, e a AdE de seu ataque aumenta em 60%."
+    }
+  },
+  "constellation3": {
+    "name": "Sete Transformações",
+    "description": {
+      "0": "Aumenta o nível de <strong>Evocação Yakan: Sesshou Sakura</strong> em 3.",
+      "1": "Nível máximo é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Canalização da Sakura",
+    "description": {
+      "0": "Depois de o raio de <strong>Sesshou Sakura</strong> atingir os inimigos, todos os personagens próximos da equipe obterão 20% de <electro>Bônus de Dano Electro</electro> por 5s."
+    }
+  },
+  "constellation5": {
+    "name": "Escárnio Implacável",
+    "description": {
+      "0": "Aumenta o nível de <strong>Grande Arte Secreta: Tenko Kenshin</strong> em 3.",
+      "1": "Nível máximo é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Técnica Proibida: Massacre",
+    "description": {
+      "0": "Quando a <strong>Sesshou Sakura</strong> ataca os inimigos, ignora 60% de sua DEF."
+    }
+  }
+}

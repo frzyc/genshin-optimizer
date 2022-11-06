@@ -1,0 +1,12 @@
+{
+  "name": "Bâton des sables écarlates",
+  "description": "L'un des sceptres d'une paire fabriquée à partir d'obsidiennes. La légende raconte que ces bâtons accordent le droit de gouverner les peuples du désert, mais aucun courtisan pouvant vérifier la bonne apparence de ces parures ne vit aujourd'hui...",
+  "passiveName": "Chimère de fin de mirage",
+  "passiveDescription": {
+    "0": "Le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>52 %</cryo> de sa maîtrise élémentaire. Lorsqu'une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>28{NON_BREAK_SPACE}%</cryo> de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+    "1": "Le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>65 %</cryo> de sa maîtrise élémentaire. Lorsqu'une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>35{NON_BREAK_SPACE}%</cryo> de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+    "2": "Le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>78 %</cryo> de sa maîtrise élémentaire. Lorsqu'une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>42{NON_BREAK_SPACE}%</cryo> de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+    "3": "Le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>91 %</cryo> de sa maîtrise élémentaire. Lorsqu'une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>49{NON_BREAK_SPACE}%</cryo> de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum.",
+    "4": "Le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>104 %</cryo> de sa maîtrise élémentaire. Lorsqu'une compétence élémentaire touche un ennemi, un effet de Rêve des sables rouges de 10 s est généré : le personnage équipé de l'arme obtient un bonus d'ATQ équivalant à <cryo>56{NON_BREAK_SPACE}%</cryo> de sa maîtrise élémentaire, cet effet pouvant être cumulé 3 fois maximum."
+  }
+}

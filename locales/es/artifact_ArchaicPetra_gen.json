@@ -1,0 +1,29 @@
+{
+  "setName": "Petra Arcaica",
+  "setEffects": {
+    "2": "Bono de Daño Geo +15%.",
+    "4": "Al obtener un cristal creado a través de la reacción de Cristalización, todos los miembros del equipo obtienen durante 10 s un 35% de Bono de Daño Elemental del elemento que causó dicha reacción. Solo se puede obtener un tipo de Bono de Daño Elemental a la vez."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor del Acantilado Agrietado",
+      "desc": "Una flor que brota en las grietas de las rocas y los minerales. Sus pétalos se mecen con la brisa, tal y como una flor real."
+    },
+    "plume": {
+      "name": "Pluma de la Cordillera Escarpada",
+      "desc": "Una dura pluma de un gran halcón de montaña. La punta de basalto de la pluma a veces brilla con las gotas del rocío."
+    },
+    "sands": {
+      "name": "Reloj de Sol de Jade Sempiterno",
+      "desc": "Un reloj de sol tallado en una sola pieza grande de jade. Está tallado con un patrón que registra silenciosamente el paso del tiempo."
+    },
+    "goblet": {
+      "name": "Cáliz del Escultor de Montañas",
+      "desc": "Un recipiente de vino que es tan bello como solemne. Hace mil años, estaba repleto de incrustaciones de jade."
+    },
+    "circlet": {
+      "name": "Máscara de Basalto Inerte",
+      "desc": "Una máscara majestuosa tallada en basalto. Las cavidades de sus ojos miran con frialdad hacia adelante."
+    }
+  }
+}

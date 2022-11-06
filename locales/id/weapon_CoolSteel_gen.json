@@ -1,0 +1,12 @@
+{
+  "name": "Cool Steel",
+  "description": "Senjata yang dibentuk dari banyak lapisan baja, juga menjadi tanda akan petualangan-petualangan besar pemiliknya.",
+  "passiveName": "Bane of Water and Ice",
+  "passiveDescription": {
+    "0": "Meningkatkan <cryo>12%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+    "1": "Meningkatkan <cryo>15%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+    "2": "Meningkatkan <cryo>18%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+    "3": "Meningkatkan <cryo>21%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+    "4": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terkena elemen Hydro atau Cryo."
+  }
+}

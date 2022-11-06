@@ -1,0 +1,12 @@
+{
+  "name": "Protótipo da Luz Lunar Pálida",
+  "description": "Um arco de protótipo descoberto na Forja do Penhasco Obscuro. A flecha disparada deste arco brilha como um raio de luar.",
+  "passiveName": "Sem Retorno",
+  "passiveDescription": {
+    "0": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em <cryo>36%</cryo> por 10s.",
+    "1": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em <cryo>45%</cryo> por 10s.",
+    "2": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em <cryo>54%</cryo> por 10s.",
+    "3": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em <cryo>63%</cryo> por 10s.",
+    "4": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em <cryo>72%</cryo> por 10s."
+  }
+}

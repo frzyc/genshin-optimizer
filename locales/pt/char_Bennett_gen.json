@@ -1,0 +1,168 @@
+{
+  "name": "Bennett",
+  "title": "Julgamento por Fogo",
+  "description": "Um aventureiro de Mondstadt justo e bondoso, mas muito azarado.",
+  "constellationName": "Rota Calamitas",
+  "auto": {
+    "name": "Espada da Sorte",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Sobrecarga de Paixão",
+    "description": {
+      "0": "Bennett coloca todo seu fogo e sua paixão por aventura em sua espada. Os resultados podem variar baseados no quão fervente ele está...",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Um único e rápido ataque de chamas que causa <pyro>Dano Pyro</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Manter pressionado (Brevemente)</strong>",
+      "6": "Sobrecarrega, resultando em diferentes efeitos quando liberado baseado no Nível de Carga.",
+      "7": " Nível 1: Ataca duas vezes, causando <pyro>Dano Pyro</pyro> e lançando inimigos.",
+      "8": " Nível 2: Desfere 3 ataques consecutivos que causam um incrível <pyro>Dano Pyro</pyro>, mas o último ataque desencadeia uma explosão que lança Bennett e seu inimigo.",
+      "9": "Bennett não leva nenhum dano ao ser lançado.",
+      "10": "<br/>",
+      "11": "<i>Um ataque que combina os sonhos do Bennett e sua paixão por Pyro. Mas a paixão às vezes é muito ardente e Pyro acaba explodindo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Toque",
+      "1": "Dano da 1ª Energização",
+      "2": "Dano da 2ª Energização",
+      "3": "Dano de Explosão",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Viagem Fantástica",
+    "description": {
+      "0": "Bennett pula, causando <pyro>Dano Pyro</pyro>, e cria um Campo de Inspiração.",
+      "1": "<br/>",
+      "2": "<strong>Campo de Inspiração</strong>",
+      "3": [
+        "Se a Vida dos personagens dentro da AdE for igual ou cair para menos de 70%, regenerará Vida continuamente. A regeneração de Vida se baseia na Vida Máxima de Bennett.",
+        "Se a Vida dos personagens dentro da AdE for maior que 70%, receberão um Bônus de ATQ proporcional ao Ataque Básico de Bennett.",
+        "Aplica-se aos personagens dentro da AdE <pyro>Elemento Pyro</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>A Equipe de Aventura de Benny sempre encontra perigos e acidentes quando parte para explorar. Apesar disso, Bennett prefere dizer que isso é \"uma jornada cheia de maravilhas, beleza e excitação\".</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Regeneração Contínua",
+      "2": "Taxa de Bônus de ATQ",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ressurgimento da Paixão",
+    "description": {
+      "0": "Diminui o Tempo de Recarga da <strong>Sobrecarga da Paixão</strong> em 20%."
+    }
+  },
+  "passive2": {
+    "name": "Fervor Intrépido",
+    "description": {
+      "0": "Dentro da área criada pela <strong>Viagem Fantástica</strong>, a <strong>Sobrecarga da Paixão</strong> recebe os seguintes efeitos:",
+      "1": "A Recarga é reduzida em 50%.",
+      "2": "Bennett não será lançado pelos efeitos da Carga Nível 2."
+    }
+  },
+  "passive3": {
+    "name": "Deve Ser Seguro...",
+    "description": {
+      "0": "Quando despachado em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%"
+    }
+  },
+  "constellation1": {
+    "name": "Grande Expectativa",
+    "description": {
+      "0": "O aumento do ATQ da <strong>Viagem Fantástica</strong> não possui mais restrição de Vida, e aumenta numericamente 20% do ATQ Básico de Bennett."
+    }
+  },
+  "constellation2": {
+    "name": "Escape da Desolação",
+    "description": {
+      "0": "Quando a Vida de Bennett cair abaixo de 70%, a Recarga da sua Energia é aumentada em 30%."
+    }
+  },
+  "constellation3": {
+    "name": "Paixão Ardente",
+    "description": {
+      "0": "Aumenta o nível da <strong>Sobrecarga de Paixão</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Odisseia Inesperada",
+    "description": {
+      "0": "Usar um Ataque Normal ao executar um segundo ataque de Carga Nível 1 da <strong>Sobrecarga da Paixão</strong> permite realizar um ataque adicional.",
+      "1": "Esse ataque adicional causa 135% do Dano do segundo ataque."
+    }
+  },
+  "constellation5": {
+    "name": "O Verdadeiro Explorador",
+    "description": {
+      "0": "Aumenta o nível da <strong>Viagem Fantástica</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fogo e Coragem",
+    "description": {
+      "0": "<strong>Viagem Fantástica</strong> concede 15% de <pyro>Bônus de Dano Pyro</pyro> aos membros do grupo dentro da AdE. Além disso, personagens que usam Espadas, Espadões e Lanças recebem um <pyro>Encantamento Pyro</pyro>."
+    }
+  }
+}

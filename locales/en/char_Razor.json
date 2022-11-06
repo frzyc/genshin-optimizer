@@ -1,0 +1,18 @@
+{
+  "electroSigil": "Electro Sigil",
+  "electroSigilAbsorbed": "Energy Regenerated if Electro Sigil is Cleared",
+  "pickUpElementalOrbParticle": "Picked up an Elemental Orb or Particle",
+  "opHitWithClawAndThunder": "Opponents hit with <strong>Claw and Thunder</strong> (Press)",
+  "electroSigilPerProc": "Electro Sigils per Proc",
+  "fullBurstDMG": {
+    "description": {
+      "0": "<strong>Full Elemental Burst DMG</strong>",
+      "1": "This calculates the combined damage from Razor's normal attacks during his Elemental Burst.",
+      "2": "It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it."
+    },
+    "dmg1": "Normal + Wolf Hit DMG 1",
+    "dmg2": "Normal + Wolf Hit DMG 2",
+    "dmg3": "Normal + Wolf Hit DMG 3",
+    "dmg4": "Normal + Wolf Hit DMG 4"
+  }
+}

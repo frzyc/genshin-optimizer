@@ -1,0 +1,11 @@
+{
+  "omen": "Presagio",
+  "omenDuration": "Duración de Presagio",
+  "bubbleDuration": "Duración de Burbuja ilusoria",
+  "phantomDuration": "Duración de Fantasma",
+  "hitOp": {
+    "affectedByOmen": "Cualquier miembro del equipo golpea a un enemigo afectado por un Presagio"
+  },
+  "frozenDuration": "Aumenta la duración de <cryo>Congelado</cryo> en",
+  "uponSprint": "Al entrar en Torrente ilusorio"
+}

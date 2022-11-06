@@ -1,0 +1,12 @@
+{
+  "name": "Akuoumaru",
+  "description": "Từng là thanh đao yêu thích của \"Akuou\". Thân đao trông rất nặng và đồ sộ, nhưng khi sử dụng lại nhẹ ngoài sức tưởng tượng.",
+  "passiveName": "Kẻ Cưỡi Sóng Watatsumi",
+  "passiveDescription": {
+    "0": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng <cryo>0.12%</cryo> sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa <cryo>40%</cryo>.",
+    "1": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng <cryo>0.15%</cryo> sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa <cryo>50%</cryo>.",
+    "2": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng <cryo>0.18%</cryo> sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa <cryo>60%</cryo>.",
+    "3": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng <cryo>0.21%</cryo> sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa <cryo>70%</cryo>.",
+    "4": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng <cryo>0.24%</cryo> sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa <cryo>80%</cryo>."
+  }
+}
