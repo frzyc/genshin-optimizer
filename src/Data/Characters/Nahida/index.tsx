@@ -211,9 +211,6 @@ const dmgFormulas = {
       triKarmaAddl
     )
   },
-  passive1: {
-    a1InBurst_eleMas
-  },
   passive2: {
     a4Karma_dmg_,
     a4Karma_critRate_
