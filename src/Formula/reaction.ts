@@ -66,12 +66,12 @@ const trans = {
   })
 }
 const infusionReactions = {
-  overloaded: equal(infusionNode, "pyro", trans.overloaded, KeyMap.info("overloaded_hit")),
-  electrocharged: equal(infusionNode, "hydro", trans.electrocharged, KeyMap.info("electrocharged_hit")),
-  superconduct: equal(infusionNode, "cryo", trans.superconduct, KeyMap.info("superconduct_hit")),
-  burning: equal(infusionNode, "pyro", trans.burning, KeyMap.info("burning_hit")),
-  bloom: equal(infusionNode, "hydro", trans.bloom, KeyMap.info("bloom_hit")),
-  burgeon: equal(infusionNode, "pyro", trans.burgeon, KeyMap.info("burgeon_hit")),
+  overloaded: infoMut(equal(infusionNode, "pyro", trans.overloaded), KeyMap.info("overloaded_hit")),
+  electrocharged: infoMut(equal(infusionNode, "hydro", trans.electrocharged), KeyMap.info("electrocharged_hit")),
+  superconduct: infoMut(equal(infusionNode, "cryo", trans.superconduct), KeyMap.info("superconduct_hit")),
+  burning: infoMut(equal(infusionNode, "pyro", trans.burning), KeyMap.info("burning_hit")),
+  bloom: infoMut(equal(infusionNode, "hydro", trans.bloom), KeyMap.info("bloom_hit")),
+  burgeon: infoMut(equal(infusionNode, "pyro", trans.burgeon), KeyMap.info("burgeon_hit")),
 }
 export const reactions = {
   anemo: {

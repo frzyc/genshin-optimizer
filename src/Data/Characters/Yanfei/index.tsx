@@ -223,7 +223,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(dmgFormulas.passive2.dmg, { name: ct.chg("passive2.key") })
+            node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch("passive2.key") })
           }]
         }
       }

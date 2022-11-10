@@ -9,7 +9,7 @@ import { StatColoredWithUnit, StatWithUnit } from './StatDisplay';
 
 
 export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
-  statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (statFilters: Dict<StatKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element) => JSX.Element
+  statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (statFilters: Dict<StatKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
 }) {
   const remainingKeys = useMemo(() => statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key)), [statKeys, statFilters])
   const setKey = useCallback(
@@ -37,7 +37,7 @@ export default function StatEditorList({ statKeys, statFilters, setStatFilters, 
 
   return <>
     {Object.entries(statFilters).map(([statKey, min]) =>
-      wrapperFunc(<StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} disabled={disabled} value={min} setValue={setFilter} setKey={setKey} delKey={delKey} />)
+      wrapperFunc(<StatFilterItem key={statKey} statKey={statKey} statKeys={remainingKeys} disabled={disabled} value={min} setValue={setFilter} setKey={setKey} delKey={delKey} />, statKey)
     )}
     {wrapperFunc(<StatFilterItem statKeys={remainingKeys} setValue={setFilter} setKey={setKey} delKey={delKey} disabled={disabled} />)}
   </>

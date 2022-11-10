@@ -257,7 +257,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
   </Accordion>
 }
 const keys = [...allInputPremodKeys]
-const wrapperFunc = (e: JSX.Element) => <Grid item xs={1}>{e}</Grid>
+const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
 function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget, rank, maxRank, setTargetIndex, onDup }: { customTarget: CustomTarget, setCustomTarget: (t: CustomTarget) => void, deleteCustomTarget: () => void, rank: number, maxRank: number, setTargetIndex: (ind?: number) => void, onDup: () => void }) {
   const { t } = useTranslation("page_character")
   const { characterSheet } = useContext(CharacterContext)

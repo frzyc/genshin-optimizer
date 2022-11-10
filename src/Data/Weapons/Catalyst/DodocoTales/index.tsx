@@ -13,7 +13,7 @@ const key: WeaponKey = "DodocoTales"
 const data_gen = data_gen_json as WeaponData
 
 const chargedDmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
-const atkInc = [0.8, 0.10, 0.12, 0.14, 0.16]
+const atkInc = [0.08, 0.10, 0.12, 0.14, 0.16]
 
 const [condNormalPath, condNormal] = cond(key, "DodoventureNormal")
 const [condChargedPath, condCharged] = cond(key, "DodoventureCharged")

@@ -36,7 +36,7 @@ export default function StatModal({ open, onClose }) {
   </ModalWrapper>
 }
 const keys = [...allInputPremodKeys]
-const wrapperFunc = (e: JSX.Element) => <Grid item xs={1}>{e}</Grid>
+const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
 function BonusStatsEditor() {
   const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
   const setFilter = useCallback((bonusStats) => characterDispatch({ bonusStats }), [characterDispatch],)
