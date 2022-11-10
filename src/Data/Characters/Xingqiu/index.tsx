@@ -56,7 +56,7 @@ const dm = {
   },
   constellation2: {
     hydro_enemyRes_: -0.15,
-    skill_duration: 3
+    burst_duration: 3
   },
   constellation4: {
     dmg_: 0.50
@@ -175,9 +175,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.press2, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(2)" }),
       }, {
         text: ct.chg("skill.skillParams.2"),
-        value: data => data.get(input.constellation).value >= 2
-          ? `${dm.skill.duration}s + ${dm.constellation2.skill_duration}`
-          : `${dm.skill.duration}`,
+        value: dm.skill.duration,
         unit: "s"
       }, {
         text: ct.chg("skill.skillParams.3"),
@@ -217,7 +215,9 @@ const sheet: ICharacterSheet = {
             node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
           }, {
             text: ct.chg("burst.skillParams.1"),
-            value: dm.burst.duration,
+            value: data => data.get(input.constellation).value >= 2
+              ? `${dm.burst.duration}s + ${dm.constellation2.burst_duration}s = ${dm.burst.duration + dm.constellation2.burst_duration}`
+              : `${dm.burst.duration}`,
             unit: "s"
           }, {
             node: nodeC4
