@@ -1,13 +1,15 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
-import { useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Label, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
+import { DataContext } from '../../../../../Context/DataContext';
 import { NumNode } from '../../../../../Formula/type';
+import { objPathValue } from '../../../../../Util/Util';
 import { Build } from '../common';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
@@ -26,6 +28,7 @@ type ChartCardProps = {
 type Point = { x: number, y: number, min?: number }
 export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
+  const { data } = useContext(DataContext)
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
 
@@ -59,6 +62,9 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
     return { displayData: increasingX, downloadData }
   }, [chartData])
 
+  const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
+  const invalidTarget = !plotBase || !plotBaseNode || plotBaseNode.isEmpty
+
   return <CardLight>
     <CardContent>
       <Grid container spacing={1} alignItems="center">
@@ -79,7 +85,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
         </Grid>
         <Grid item>
           <BootstrapTooltip title={!plotBase ? "" : t("ui:reset")} placement="top">
-            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
+            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={invalidTarget}>
               <Replay />
             </Button></span>
           </BootstrapTooltip>
