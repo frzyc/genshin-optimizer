@@ -61,8 +61,8 @@ const dm = {
   },
   constellation2: {
     duration: skillParam_gen.constellation2[0],
-    sproutDmg: skillParam_gen.constellation2[0],
-    durationInc: skillParam_gen.constellation2[0],
+    sproutDmg: skillParam_gen.constellation2[1],
+    durationInc: skillParam_gen.constellation2[2],
   },
   constellation4: {
     eleMas: skillParam_gen.constellation4[0],
