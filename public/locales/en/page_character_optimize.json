@@ -91,5 +91,9 @@
     "selectGraphTarget": "Select a Graph Target",
     "invalidTarget": "INVALID TARGET"
   },
-  "selectTargetFirst": "Select an Optimization Target first"
+  "selectTargetFirst": "Select an Optimization Target first",
+  "generateButton": {
+    "cancel": "Cancel",
+    "generateBuilds": "Generate Builds"
+  }
 }

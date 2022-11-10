@@ -422,7 +422,7 @@ export default function TabBuild() {
               onClick={generatingBuilds ? () => cancelToken.current() : generateBuilds}
               startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
               sx={{ borderRadius: "0px 4px 4px 0px" }}
-            >{generatingBuilds ? "Cancel" : "Generate Builds"}</Button>
+            >{generatingBuilds ? t("generateButton.cancel") : t("generateButton.generateBuilds")}</Button>
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
