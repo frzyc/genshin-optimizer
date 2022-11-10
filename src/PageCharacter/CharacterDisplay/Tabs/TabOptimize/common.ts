@@ -149,7 +149,14 @@ function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean 
 /** Remove artifacts that cannot be in top `numTop` builds */
 function pruneOrder(arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion): ArtifactsBySlot {
   let progress = false
-  const noRainbow = !exclusion.rainbow?.length
+  /**
+   * Note:
+   * This function assumes that every base (reaffined) stats are monotonically increasing. That is, artifacts
+   * with higher stats are better. This remains true as long as the main and substats are in increasing. Set
+   * effects that decrease enemy resistance (which is monotonically decreasing) does not violate this assumption
+   * as set effects are not handled here.
+   */
+  const allowRainbow = !exclusion.rainbow?.length, keys = Object.keys(arts.base)
   const noSwitchIn = new Set(Object.entries(exclusion).filter(([_, v]) => v.length).map(([k]) => k) as ArtifactSetKey[])
   const noSwitchOut = new Set(Object.entries(exclusion).filter(([_, v]) => v.includes(2) && !v.includes(4)).map(([k]) => k) as ArtifactSetKey[])
   const values = objectKeyMap(allSlotKeys, slot => {
@@ -157,11 +164,11 @@ function pruneOrder(arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExcl
     const newList = list.filter(art => {
       let count = 0
       return list.every(other => {
-        const greaterEqual = Object.entries(other.values).every(([k, o]) => o >= art.values[k])
-        const greater = Object.entries(other.values).some(([k, o]) => o > art.values[k])
-        if (greaterEqual && (greater || other.id > art.id) &&
-          ((noRainbow && !noSwitchIn.has(other.set!) && !noSwitchOut.has(art.set!)) || art.set === other.set))
-          count++
+        const otherBetterEqual = keys.every(k => (other.values[k] ?? 0) >= (art.values[k] ?? 0))
+        const otherMaybeBetter = keys.some(k => (other.values[k] ?? 0) > (art.values[k] ?? 0))
+        const otherBetter = otherBetterEqual && (otherMaybeBetter || other.id > art.id)
+        const canSwitch = (allowRainbow && !noSwitchIn.has(other.set!) && !noSwitchOut.has(art.set!)) || art.set === other.set
+        if (otherBetter && canSwitch) count++
         return count < numTop
       })
     })
