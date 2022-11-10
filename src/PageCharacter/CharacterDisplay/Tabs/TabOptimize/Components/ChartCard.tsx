@@ -63,7 +63,11 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
   }, [chartData])
 
   const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
-  const invalidTarget = !plotBase || !plotBaseNode || plotBaseNode.isEmpty
+  const invalidTarget = !plotBaseNode || plotBaseNode.isEmpty
+
+  const buttonText = invalidTarget
+    ? t("page_character_optimize:targetSelector.invalidTarget")
+    : t("page_character_optimize:targetSelector.selectGraphTarget")
 
   return <CardLight>
     <CardContent>
@@ -77,7 +81,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
               <OptimizationTargetSelector
                 optimizationTarget={plotBase}
                 setTarget={target => setPlotBase(target)}
-                defaultText={t("page_character_optimize:targetSelector.selectGraphTarget")}
+                defaultText={buttonText}
                 disabled={disabled}
               />
             </span>
@@ -85,7 +89,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
         </Grid>
         <Grid item>
           <BootstrapTooltip title={!plotBase ? "" : t("ui:reset")} placement="top">
-            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={invalidTarget}>
+            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
               <Replay />
             </Button></span>
           </BootstrapTooltip>

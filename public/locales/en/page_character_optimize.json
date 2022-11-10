@@ -88,7 +88,8 @@
   "thread_other": "<0>{{count}}</0> Threads",
   "targetSelector": {
     "selectOptTarget": "Select an Optimization Target",
-    "selectGraphTarget": "Select a Graph Target"
+    "selectGraphTarget": "Select a Graph Target",
+    "invalidTarget": "INVALID TARGET"
   },
   "selectTargetFirst": "Select an Optimization Target first"
 }
