@@ -1,6 +1,6 @@
 import StatIcon from "../Components/StatIcon";
 import { Translate } from "../Components/Translate";
-import { tally } from "../Formula";
+import { input, tally } from "../Formula";
 import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
 import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils";
@@ -8,7 +8,7 @@ import KeyMap from "../KeyMap";
 import { allElements, allElementsWithPhy } from "../Types/consts";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
-import { condReadNode, stg, st } from "./SheetUtil";
+import { condReadNode, st, stg } from "./SheetUtil";
 const tr = (strKey: string) => <Translate ns="elementalResonance_gen" key18={strKey} />
 const trm = (strKey: string) => <Translate ns="elementalResonance" key18={strKey} />
 
@@ -23,7 +23,12 @@ type IResonance = {
 const teamSize = sum(...allElements.map(ele => tally[ele]))
 
 // Protective Canopy
-const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [`${e}_res_`, greaterEq(tally.ele, 4, percent(0.15))])
+const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [
+  `${e}_res_`,
+  equal(input.activeCharKey, input.charKey,
+    greaterEq(tally.ele, 4, percent(0.15))
+  )
+])
 
 const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),
@@ -37,7 +42,11 @@ const protectiveCanopy: IResonance = {
 }
 
 // Fervent Flames
-const ffNode = greaterEq(teamSize, 4, greaterEq(tally.pyro, 2, percent(0.25)))
+const ffNode = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.pyro, 2, percent(0.25))
+  )
+)
 const ferventFlames: IResonance = {
   name: tr("FerventFlames.name"),
   desc: tr("FerventFlames.desc"),
@@ -56,7 +65,11 @@ const ferventFlames: IResonance = {
 }
 
 // Soothing Waters
-const swNode = greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25)))
+const swNode = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.hydro, 2, percent(0.25))
+  )
+)
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),
@@ -77,7 +90,13 @@ const soothingWaters: IResonance = {
 //ShatteringIce
 const condSIPath = ["resonance", "ShatteringIce"]
 const condSI = condReadNode(condSIPath)
-const siNode = greaterEq(teamSize, 4, greaterEq(tally.cryo, 2, equal(condSI, "on", percent(0.15))))
+const siNode = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.cryo, 2,
+      equal(condSI, "on", percent(0.15))
+    )
+  )
+)
 const shatteringIce: IResonance = {
   name: tr("ShatteringIce.name"),
   desc: tr("ShatteringIce.desc"),
@@ -126,9 +145,21 @@ const highVoltage: IResonance = {
 }
 
 // Impetuous Winds
-const iwNodeStam = greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.15)))
-const iwNodeMove = greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(0.1)))
-const iwNodeCD = greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.05)))
+const iwNodeStam = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.anemo, 2, percent(-0.15))
+  )
+)
+const iwNodeMove = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.anemo, 2, percent(0.1))
+  )
+)
+const iwNodeCD = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.anemo, 2, percent(-0.05))
+  )
+)
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
   desc: tr("ImpetuousWinds.desc"),
@@ -149,9 +180,25 @@ const impetuousWinds: IResonance = {
 // Enduring Rock
 const condERPath = ["resonance", "EnduringRock"]
 const condER = condReadNode(condERPath)
-const erNodeshield_ = greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15)))
-const erNodeDMG_ = greaterEq(teamSize, 4, greaterEq(tally.geo, 2, equal(condER, "on", percent(0.15))))
-const erNodeRes_ = greaterEq(teamSize, 4, greaterEq(tally.geo, 2, equal(condER, "on", percent(-0.2))))
+const erNodeshield_ = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.geo, 2, percent(0.15))
+  )
+)
+const erNodeDMG_ = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.geo, 2,
+      equal(condER, "on", percent(0.15))
+    )
+  )
+)
+const erNodeRes_ = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.geo, 2,
+      equal(condER, "on", percent(-0.2))
+    )
+  )
+)
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
   desc: tr("EnduringRock.desc"),
@@ -188,14 +235,30 @@ const enduringRock: IResonance = {
   }]
 }
 
-// Sprawling Canopy
-const condSC2elePath = ["resonance", "SprawlingCanopy2ele"]
-const condSC2ele = condReadNode(condSC2elePath)
-const condSC3elePath = ["resonance", "SprawlingCanopy3ele"]
-const condSC3ele = condReadNode(condSC3elePath)
-const scBase_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50, KeyMap.info("eleMas")))
-const sc2ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC2ele, "on", 30, KeyMap.info("eleMas"))))
-const sc3ele_eleMas = greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, equal(condSC3ele, "on", 20, KeyMap.info("eleMas"))))
+// Sprawling Greenery
+const condSG2elePath = ["resonance", "SprawlingCanopy2ele"]
+const condSG2ele = condReadNode(condSG2elePath)
+const condSG3elePath = ["resonance", "SprawlingCanopy3ele"]
+const condSG3ele = condReadNode(condSG3elePath)
+const sgBase_eleMas = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.dendro, 2, 50,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+  )
+)
+const sg2ele_eleMas = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.dendro, 2,
+      equal(condSG2ele, "on", 30,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+    )
+  )
+)
+const sg3ele_eleMas = equal(input.activeCharKey, input.charKey,
+  greaterEq(teamSize, 4,
+    greaterEq(tally.dendro, 2,
+      equal(condSG3ele, "on", 20,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+    )
+  )
+)
 const sprawlingGreenery: IResonance = {
   name: tr("SprawlingGreenery.name"),
   desc: tr("SprawlingGreenery.desc"),
@@ -204,11 +267,11 @@ const sprawlingGreenery: IResonance = {
   sections: [{
     teamBuff: true,
     text: tr("SprawlingGreenery.desc"),
-    fields: [{ node: scBase_eleMas }]
+    fields: [{ node: sgBase_eleMas }]
   }, {
     teamBuff: true,
-    path: condSC2elePath,
-    value: condSC2ele,
+    path: condSG2elePath,
+    value: condSG2ele,
     header: {
       title: tr("SprawlingGreenery.name"),
       icon: StatIcon.dendro,
@@ -217,7 +280,7 @@ const sprawlingGreenery: IResonance = {
     states: {
       on: {
         fields: [{
-          node: sc2ele_eleMas
+          node: sg2ele_eleMas
         }, {
           text: stg("duration"),
           value: 6,
@@ -227,8 +290,8 @@ const sprawlingGreenery: IResonance = {
     }
   }, {
     teamBuff: true,
-    path: condSC3elePath,
-    value: condSC3ele,
+    path: condSG3elePath,
+    value: condSG3ele,
     header: {
       title: tr("SprawlingGreenery.name"),
       icon: StatIcon.dendro,
@@ -237,7 +300,7 @@ const sprawlingGreenery: IResonance = {
     states: {
       on: {
         fields: [{
-          node: sc3ele_eleMas
+          node: sg3ele_eleMas
         }, {
           text: stg("duration"),
           value: 6,
@@ -261,20 +324,22 @@ export const resonanceSheets: IResonance[] = [
 ]
 
 export const resonanceData = inferInfoMut({
-  premod: {
-    ...pcNodes,
-    atk_: ffNode,
-    hp_: swNode,
-    staminaDec_: iwNodeStam,
-    moveSPD_: iwNodeMove,
-    cdRed_: iwNodeCD,
-    shield_: erNodeshield_,
-    all_dmg_: erNodeDMG_,
-    geo_enemyRes_: erNodeRes_,
-    eleMas: infoMut(sum(scBase_eleMas, sc2ele_eleMas, sc3ele_eleMas), { pivot: true }),
-  },
-  total: {
-    // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
-    critRate_: siNode
+  teamBuff: {
+    premod: {
+      ...pcNodes,
+      atk_: ffNode,
+      hp_: swNode,
+      staminaDec_: iwNodeStam,
+      moveSPD_: iwNodeMove,
+      cdRed_: iwNodeCD,
+      shield_: erNodeshield_,
+      all_dmg_: erNodeDMG_,
+      geo_enemyRes_: erNodeRes_,
+      eleMas: infoMut(sum(sgBase_eleMas, sg2ele_eleMas, sg3ele_eleMas), { pivot: true }),
+    },
+    total: {
+      // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
+      critRate_: siNode
+    }
   }
 })
