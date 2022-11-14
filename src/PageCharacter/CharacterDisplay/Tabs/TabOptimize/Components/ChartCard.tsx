@@ -1,13 +1,15 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
-import { useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Label, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
+import { DataContext } from '../../../../../Context/DataContext';
 import { NumNode } from '../../../../../Formula/type';
+import { objPathValue } from '../../../../../Util/Util';
 import { Build } from '../common';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
@@ -26,6 +28,7 @@ type ChartCardProps = {
 type Point = { x: number, y: number, min?: number }
 export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
+  const { data } = useContext(DataContext)
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
 
@@ -59,6 +62,13 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
     return { displayData: increasingX, downloadData }
   }, [chartData])
 
+  const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
+  const invalidTarget = !plotBaseNode || plotBaseNode.isEmpty
+
+  const buttonText = invalidTarget
+    ? t("page_character_optimize:targetSelector.invalidTarget")
+    : t("page_character_optimize:targetSelector.selectGraphTarget")
+
   return <CardLight>
     <CardContent>
       <Grid container spacing={1} alignItems="center">
@@ -71,7 +81,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
               <OptimizationTargetSelector
                 optimizationTarget={plotBase}
                 setTarget={target => setPlotBase(target)}
-                defaultText={t("page_character_optimize:targetSelector.selectGraphTarget")}
+                defaultText={buttonText}
                 disabled={disabled}
               />
             </span>
@@ -154,7 +164,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
 }
 
 function getLabelFromNode(node: NumNode, t: any) {
-  console.log(node)
   return typeof node.info?.name === "string"
     ? node.info.name
     : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`

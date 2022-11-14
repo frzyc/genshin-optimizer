@@ -19,7 +19,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
-import { UIData } from '../../../../Formula/uiData';
+import { NodeDisplay, UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -73,6 +73,7 @@ export default function TabBuild() {
   const { buildResult: { builds, buildDate }, buildResultDispatch } = useBuildResult(characterKey)
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel)
   const { characterSheet, target: data } = teamData?.[characterKey as CharacterKey] ?? {}
+  const optimizationTargetNode = optimizationTarget && objPathValue(data?.getDisplay(), optimizationTarget)
   const isSM = ["xs", "sm"].includes(useMediaQueryUp())
 
   //register changes in artifact database
@@ -132,8 +133,9 @@ export default function TabBuild() {
 
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
     const status: Omit<BuildStatus, "type"> = { tested: 0, failed: 0, skipped: 0, total: NaN, startTime: performance.now() }
-    if (plotBase) {
-      unoptimizedNodes.push(objPathValue(workerData.display ?? {}, plotBase))
+    const plotBaseNumNode: NumNode = plotBase && objPathValue(workerData.display ?? {}, plotBase)
+    if (plotBaseNumNode) {
+      unoptimizedNodes.push(plotBaseNumNode)
       minimum.push(-Infinity)
     }
 
@@ -145,7 +147,7 @@ export default function TabBuild() {
     }))
     nodes = optimize(nodes, {}, _ => false)
 
-    const plotBaseNode = plotBase ? nodes.pop() : undefined
+    const plotBaseNode = plotBaseNumNode ? nodes.pop() : undefined
     let optimizationTargetNode = nodes.pop()!
 
     const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => ({ src: "", val: -Infinity })) }
@@ -270,17 +272,16 @@ export default function TabBuild() {
       status.skipped = 0
       status.total = 0
     } else {
-      if (plotBase) {
+      if (plotBaseNumNode) {
         const plotData = mergePlot(results.map(x => x.plotData!))
-        const plotBaseNode = objPathValue(workerData.display ?? {}, plotBase) as NumNode
         let data = Object.values(plotData)
         if (targetNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
-        if (plotBaseNode.info?.unit === "%")
+        if (plotBaseNumNode.info?.unit === "%")
           data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
         setchartData({
           valueNode: targetNode,
-          plotNode: plotBaseNode,
+          plotNode: plotBaseNumNode,
           data
         })
       }
@@ -416,12 +417,12 @@ export default function TabBuild() {
         <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
           <span>
             <Button
-              disabled={!characterKey || !optimizationTarget || !objPathValue(data?.getDisplay(), optimizationTarget)}
+              disabled={!characterKey || !optimizationTarget || !optimizationTargetNode || optimizationTargetNode.isEmpty}
               color={generatingBuilds ? "error" : "success"}
               onClick={generatingBuilds ? () => cancelToken.current() : generateBuilds}
               startIcon={generatingBuilds ? <Close /> : <TrendingUp />}
               sx={{ borderRadius: "0px 4px 4px 0px" }}
-            >{generatingBuilds ? "Cancel" : "Generate Builds"}</Button>
+            >{generatingBuilds ? t("generateButton.cancel") : t("generateButton.generateBuilds")}</Button>
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
