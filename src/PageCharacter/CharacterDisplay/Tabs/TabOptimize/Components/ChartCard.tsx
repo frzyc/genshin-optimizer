@@ -63,7 +63,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
   }, [chartData])
 
   const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
-  const invalidTarget = !plotBaseNode || plotBaseNode.isEmpty
+  const invalidTarget = plotBase && (!plotBaseNode || plotBaseNode.isEmpty)
 
   const buttonText = invalidTarget
     ? t("page_character_optimize:targetSelector.invalidTarget")
