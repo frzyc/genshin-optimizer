@@ -1,8 +1,13 @@
-import { AppBar, Box, Skeleton, Typography } from "@mui/material";
+import { AppBar, Box, CardContent, CardHeader, Divider, Skeleton, Tooltip, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Suspense } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import packageInfo from '../package.json';
+import CardLight from "./Components/Card/CardLight";
+import ModalWrapper from "./Components/ModalWrapper";
+import { evtExcerpt, evtFoundTitle } from "./event";
+import useBoolState from "./ReactHooks/useBoolState";
+import emoji from "./Layla4SleepSpin.png"
 
 export default function Footer() {
   return <Suspense fallback={<Skeleton variant="rectangular" height={64} />}>
@@ -19,16 +24,39 @@ function FooterContent() {
       <Typography variant="caption" sx={{ color: grey[200], textAlign: "right" }} >
         <Trans t={t} i18nKey="ui:appVersion" values={{ version: packageInfo.version }}>
           Genshin Optimizer Version:
-          <a
-            href={`${process.env.REACT_APP_URL_GITHUB_GO}/releases`}
-            style={{ color: "white", fontFamily: "monospace" }}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <VWrapper>
             {{ version: packageInfo.version }}
-          </a>
+          </VWrapper>
         </Trans>
       </Typography>
     </Box>
   </AppBar >
+}
+function VWrapper({ children }) {
+  const [show, onShow, onHide] = useBoolState(false)
+
+  return <>
+    <ModalWrapper containerProps={{ maxWidth: "md" }} open={show} onClose={onHide}>
+      <CardLight>
+        <CardHeader title={evtFoundTitle} />
+        <Divider />
+        <CardContent>
+          {evtExcerpt}
+          <Typography><strong><code>:Layla4Sleep:</code></strong></Typography>
+          <img src={emoji} alt="" />
+          <Typography variant='h6'><code>0xDEADBEEF</code></Typography>
+        </CardContent>
+      </CardLight>
+    </ModalWrapper>
+    <Tooltip arrow title={<Suspense fallback={<Box width="200" height="200" />}><img src={emoji} onClick={onShow} style={{ cursor: "pointer" }} alt="" /></Suspense>}>
+      <a
+        href={`${process.env.REACT_APP_URL_GITHUB_GO}/releases`}
+        style={{ color: "white", fontFamily: "monospace" }}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {children}
+      </a>
+    </Tooltip>
+  </>
 }

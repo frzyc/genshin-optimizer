@@ -27,6 +27,7 @@ function handleStorage(this: Window, event: StorageEvent) {
   root.render(<React.StrictMode><NewTab /></React.StrictMode>);
 }
 window.addEventListener("storage", handleStorage)
+localStorage.setItem("newTab", `${Math.random()}`)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

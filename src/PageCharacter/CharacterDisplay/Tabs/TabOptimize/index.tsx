@@ -1,5 +1,5 @@
 import { CheckBox, CheckBoxOutlineBlank, Close, Science, TrendingUp } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
@@ -9,17 +9,20 @@ import CardLight from '../../../../Components/Card/CardLight';
 import CharacterCard from '../../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
+import ModalWrapper from '../../../../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
 import { DatabaseContext } from '../../../../Database/Database';
 import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry';
+import { evtExcerpt, evtFoundTitle } from '../../../../event';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
+import useBoolState from '../../../../ReactHooks/useBoolState';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -44,11 +47,13 @@ import UseExcluded from './Components/UseExcluded';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
+import emoji from "../../../../yaeglasses.png"
 
 export default function TabBuild() {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
+  const [show, onShow, onHide] = useBoolState(false)
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
@@ -287,9 +292,10 @@ export default function TabBuild() {
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+      Math.random() < 0.005 && onShow()
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority])
+  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority, onShow])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -308,6 +314,18 @@ export default function TabBuild() {
   />
 
   return <Box display="flex" flexDirection="column" gap={1}>
+    <ModalWrapper containerProps={{ maxWidth: "md" }} open={show} onClose={onHide}>
+      <CardLight>
+        <CardHeader title={evtFoundTitle} />
+        <Divider />
+        <CardContent>
+          {evtExcerpt}
+          <Typography><strong><code>:YaeGlasses:</code></strong></Typography>
+          <img src={emoji} alt="" />
+          <Typography variant='h6'><code>EMBACRANBW</code></Typography>
+        </CardContent>
+      </CardLight>
+    </ModalWrapper>
     {noArtifact && <Alert severity="warning" variant="filled"><Trans t={t} i18nKey="noArtis">Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifacts">Artifacts</Link> page and add some!</Trans></Alert>}
     {/* Build Generator Editor */}
     {dataContext && <DataContext.Provider value={dataContext}>
@@ -356,7 +374,7 @@ export default function TabBuild() {
             onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
             disabled={generatingBuilds}
           >
-              {t`allowPartial`}
+            {t`allowPartial`}
           </Button>
           { /* Level Filter */}
           <CardLight>

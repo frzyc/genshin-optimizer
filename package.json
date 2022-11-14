@@ -49,7 +49,7 @@
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -b knetevt",
     "check-types": "tsc --noEmit",
     "audit": "npm audit --production",
     "pull": "git pull && cd ./pipeline && npm run pull"

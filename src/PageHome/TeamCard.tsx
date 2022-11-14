@@ -8,6 +8,9 @@ import stain from "./teamIcons/stain.png"
 import sin from "./teamIcons/sin.png"
 import { Groups } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
+import useBoolState from "../ReactHooks/useBoolState";
+import gan4joy from "../gan4joy.png"
+import Puzzle from "../Puzzle";
 const team = [{
   name: "frzyc",
   img: frzyc,
@@ -42,7 +45,9 @@ const team = [{
 
 export default function TeamCard() {
   const { t } = useTranslation(["page_home", "ui"])
+  const [show, onShow, onHide] = useBoolState()
   return <CardDark>
+    <Puzzle show={show} onHide={onHide} />
     <CardHeader title={<Typography variant="h5">{t`teamCard.title`}</Typography>} avatar={<Groups fontSize="large" />} />
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
@@ -50,7 +55,8 @@ export default function TeamCard() {
         {team.map(({ name, img, title, subtitle, url }, i) => <Grid item key={name} xs={i < 2 ? 3 : 2} md={1}>
           <CardLight sx={{ height: "100%" }}>
             <CardContent>
-              <Box component="img" src={img} sx={{ width: "100%", height: "auto", borderRadius: "50%" }} />
+              {name === "frzyc" ? <Box component="img" src={gan4joy} sx={{ width: "100%", height: "auto", borderRadius: "50%", cursor: "pointer" }} onClick={onShow} /> :
+                <Box component="img" src={img} sx={{ width: "100%", height: "auto", borderRadius: "50%" }} />}
               <Box display="flex" flexDirection="column">
                 {url ? <Typography variant="h6" sx={{ textAlign: "center" }} color="inherit" component={Link} href={url} target="_blank" rel="noopener"><strong>{name}</strong></Typography> :
                   <Typography variant="h6" sx={{ textAlign: "center" }}><strong>{name}</strong></Typography>}

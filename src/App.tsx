@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Header from './Header';
 import './i18n';
 import './index.css';
+import KC from './KC';
 import useTitle from './ReactHooks/useTitle';
 import { theme } from './Theme';
 
@@ -103,6 +104,7 @@ function Content() {
     <Grid item >
       <Header anchor="back-to-top-anchor" />
     </Grid>
+    <KC />
     <Container maxWidth="xl" sx={{ px: { xs: 0.5, sm: 1, md: 2 } }}>
       <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%" }} />}>
         <Routes>
@@ -125,7 +127,7 @@ function Content() {
     <Grid item >
       <Footer />
     </Grid>
-  </Grid>
+  </Grid >
 }
 function MatchTitle() {
   const { t } = useTranslation("ui")
