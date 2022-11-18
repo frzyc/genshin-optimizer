@@ -89,6 +89,7 @@
   "targetSelector": {
     "selectOptTarget": "Select an Optimization Target",
     "selectGraphTarget": "Select a Graph Target",
+    "selectBuildTarget": "Select a Build Constraint Target",
     "invalidTarget": "INVALID TARGET"
   },
   "selectTargetFirst": "Select an Optimization Target first",
