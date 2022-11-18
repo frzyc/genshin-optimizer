@@ -51,9 +51,11 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           {iconDisplay}
           <span>{title}</span>
-          {!!action && <SqBadge color='success'>{action}</SqBadge>}
+          {!!action && <SqBadge color='success' sx={{ whiteSpace: "normal" }}>{action}</SqBadge>}
         </Box>
-        <SqBadge color={variant}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <SqBadge color={variant} sx={{ whiteSpace: "normal" }}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
+        </Box>
       </Stack>}
     </Button>
     <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />
