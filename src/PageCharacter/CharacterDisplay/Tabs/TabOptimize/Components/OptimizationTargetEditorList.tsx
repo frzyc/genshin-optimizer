@@ -64,7 +64,6 @@ type OptimizationTargetEditorItemProps = {
 function OptimizationTargetEditorItem({ path, setting, setTarget, delTarget, setValue, setDisabled, disabled }: OptimizationTargetEditorItemProps) {
   const { data } = useContext(DataContext)
   const onChange = useCallback((val: number | undefined) => path && setValue(path, val ?? 0), [setValue, path])
-  const isSM = ["xs", "sm"].includes(useMediaQueryUp())
   const buttonGroupStyle = {
     "& .MuiButtonGroup-grouped": { minWidth: 24 }
   }
