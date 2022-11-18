@@ -53,6 +53,7 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         header: setHeader(4),
+        teamBuff: true,
         path: condPassivePath,
         value: condPassive,
         name: st("afterReaction"),
