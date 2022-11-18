@@ -16,10 +16,9 @@ import { OptimizationTargetContext } from '../../../../Context/OptimizationTarge
 import { DatabaseContext } from '../../../../Database/Database';
 import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry';
 import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
-import { NodeDisplay, UIData } from '../../../../Formula/uiData';
+import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -119,10 +118,14 @@ export default function TabBuild() {
     let unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
-    const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
-      if (key.endsWith("_")) value = value / 100 // TODO: Conversion
-      return { value: input.total[key], minimum: value }
-    }).filter(x => x.value && x.minimum > -Infinity)
+    const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters)
+      .filter(([_, setting]) => !setting.disabled)
+      .map(([pathStr, setting]) => {
+        const filterNode: NumNode = objPathValue(workerData.display ?? {}, JSON.parse(pathStr))
+        const minimum = filterNode.info?.unit === "%" ? setting.value / 100 : setting.value // TODO: Conversion
+        return { value: filterNode, minimum: minimum }
+      })
+      .filter(x => x.value && x.minimum > -Infinity)
 
     setchartData(undefined)
 
@@ -357,7 +360,7 @@ export default function TabBuild() {
             onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
             disabled={generatingBuilds}
           >
-              {t`allowPartial`}
+            {t`allowPartial`}
           </Button>
           { /* Level Filter */}
           <CardLight>
