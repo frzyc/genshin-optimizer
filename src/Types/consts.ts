@@ -90,6 +90,7 @@ export const nonTravelerCharacterKeys = [
   "Klee",
   "KujouSara",
   "KukiShinobu",
+  "Layla",
   "Lisa",
   "Mona",
   "Nahida",
