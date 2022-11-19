@@ -80,10 +80,10 @@ const [condTidalIllusionPath, condTidalIllusion] = cond(key, "TidalIllusion")
 const def_ = sum(equal("stack1", condGrimheart, percent(dm.skill.defBonus)), equal("stack2", condGrimheart, percent(2 * dm.skill.defBonus)))
 const cryo_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.cryoResDecNegative))
 const physical_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.physResDecNegative))
-const physical_dmg_ = equal("on", condTidalIllusion, percent(dm.constellation1.physInc))
+const physical_dmg_ = greaterEq(input.constellation, 1, equal("on", condTidalIllusion, percent(dm.constellation1.physInc)))
 
 const lightSwordAdditional: Data = {
-  premod: { burst_dmg_: equal(condC4, "on", constant(dm.constellation4.dmgInc)) },
+  premod: { burst_dmg_: greaterEq(input.constellation, 4, equal(condC4, "on", constant(dm.constellation4.dmgInc))) },
   hit: { ele: constant("physical") }
 }
 
@@ -116,9 +116,10 @@ const dmgFormulas = {
       ), "burst", lightSwordAdditional),
   },
   passive1: {
-    shatteredLightfallSword: prod(
+    shatteredLightfallSword: greaterEq(input.asc, 1, prod(
       percent(dm.passive1.percentage),
-      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional))
+      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional)
+    ))
   }
 }
 
