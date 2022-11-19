@@ -29,6 +29,7 @@ import Keqing from './Keqing'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
+import Layla from './Layla'
 import Lisa from './Lisa'
 import Mona from './Mona'
 import Nahida from './Nahida'
@@ -96,6 +97,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Klee,
   KujouSara,
   KukiShinobu,
+  Layla,
   Lisa,
   Mona,
   Nahida,
