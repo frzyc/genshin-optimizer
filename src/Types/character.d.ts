@@ -3,6 +3,7 @@ import { EleEnemyResKey } from "../KeyMap";
 import { MainStatKey } from "./artifact";
 import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
 import { IConditionalValues } from "./IConditional";
+import { SubstatKey } from "./artifact";
 
 export interface CustomTarget {
   weight: number,

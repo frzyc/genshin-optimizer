@@ -33,19 +33,24 @@ import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";
-import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
+import { computeUIData, dataObjForWeapon, mergeData } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import useBoolState from "../../../../ReactHooks/useBoolState";
 import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
-import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
+import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
-import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType, WeaponTypeKey } from "../../../../Types/consts";
+import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType, WeaponTypeKey } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
-import { deepClone, objectMap } from "../../../../Util/Util";
+import { deepClone, objectMap, objPathValue } from "../../../../Util/Util";
 import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
 import useCharTC from "./useCharTC";
+import OptimizationTargetSelector from "../TabOptimize/Components/OptimizationTargetSelector";
+import { optimize, precompute } from "../../../../Formula/optimization";
+import { NumNode } from "../../../../Formula/type";
+import { dynamicData } from "../TabOptimize/foreground";
+import { mapFormulas } from "../../../../Formula/internal";
 const WeaponSelectionModal = React.lazy(() => import('../../../../Components/Weapon/WeaponSelectionModal'))
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
@@ -90,7 +95,7 @@ export default function TabTheorycraft() {
         value === 3 ? 2 :
           value === 5 ? 4 :
             value === 1 && !(key as string).startsWith("PrayersFor") ? 0 : value
-      ]).filter(([key, value]) => value))
+      ]).filter(([, value]) => value))
       setData(newData)
     },
     [data, setData],
@@ -177,6 +182,82 @@ export default function TabTheorycraft() {
       oldData: compareData ? oldData : undefined,
     }
   }, [dataContextValue, compareData, oldData])
+
+  // Fixme: persist across page reloads
+  const [optimizationTarget, setOptimizationTarget] = useState<string[] | undefined>(undefined);
+
+  // This is mostly copied from TabOptimize/index.tsx except where noted and where i forgot to note
+  const optimizeSubstats = useCallback(async () => {
+    if (!characterKey || !optimizationTarget) return
+    if (!teamData) return
+    // Fixme: why is data an array?
+    const workerData = teamData[characterKey]?.target.data[0]
+    if (!workerData) return
+    Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
+    const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
+    if (!unoptimizedOptimizationTargetNode) return
+    let unoptimizedNodes = [unoptimizedOptimizationTargetNode]
+    let nodes = optimize(unoptimizedNodes, workerData, ({ path: [p] }) => p !== "dyn")
+    // Const fold the artifact set
+    nodes = mapFormulas(nodes, f => {
+      if (f.operation === "read" && f.path[0] === "dyn") {
+        const a = data.artifact.sets[f.path[1]];
+        if (a) {
+          return constant(a)
+        } else if (allArtifactSets.includes(f.path[1] as any)) {
+          return constant(0)
+        }
+      }
+      return f
+    }, f => f)
+    nodes = optimize(nodes, {}, _ => false)
+
+    // xd
+    const subs = new Set<string>()
+    let compute = precompute(nodes, {}, f => {
+      subs.add(f.path[1])
+      return f.path[1]
+    }, 3)
+    const realSubs = [...subs].filter(x => allSubstatKeys.includes(x as any))
+    const comp = (statKey: string) => statKey.endsWith("_") ? 100 : 1
+
+    // KQMC
+    // Fixme: inputs
+    const freeSubs = 20
+    // Fixme: -2 per main stat
+    const maxSubs = Object.fromEntries(allSubstatKeys.map(x => [x, 10]))
+
+    let max = -Infinity
+    const buffer = Object.fromEntries([...subs].map(x => [x, 0]))
+    let maxBuffer: typeof buffer | undefined;
+    const bufferMain = objectMap(data.artifact.slots, ({ statKey, rarity, level }) => Artifact.mainStatValue(statKey, rarity, level) / comp(statKey))
+    const bufferSubs = objectMap(data.artifact.substats.stats, (v, k) => v / comp(k))
+    const g = (freeSubs: number, [x, ...xs]: string[]) => {
+      if (xs.length === 0) {
+        if (freeSubs > maxSubs[x])
+          return
+        buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * freeSubs;
+        const [result] = compute([{ values: bufferMain }, { values: bufferSubs }, { values: buffer }]);
+        if (result > max) {
+          max = result
+          maxBuffer = JSON.parse(JSON.stringify(buffer))
+        }
+        return
+      }
+      for (let i = 0; i <= Math.min(maxSubs[x], freeSubs); i++) {
+        buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * i;
+        g(freeSubs - i, xs)
+      }
+    }
+    g(freeSubs, realSubs)
+    console.log(maxBuffer)
+    console.log(objectMap(maxBuffer!, (v, x) =>
+      allSubstatKeys.includes(x as any) ?
+        v / (Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x)) :
+        v
+    ))
+  }, [characterKey, data.artifact.sets, data.artifact.slots, data.artifact.substats.stats, data.artifact.substats.type, optimizationTarget, teamData])
+
   return <Stack spacing={1}>
     <CardLight>
       <Box sx={{ display: "flex", gap: 1, p: 1 }}>
@@ -200,6 +281,16 @@ export default function TabTheorycraft() {
           <ArtifactSubCard substats={data.artifact.substats.stats} setSubstats={setSubstats} substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType} mainStatKeys={Object.values(data.artifact.slots).map(s => s.statKey)} />
         </Grid>
       </Grid >
+      <OptimizationTargetSelector
+        optimizationTarget={optimizationTarget}
+        setTarget={target => setOptimizationTarget(target)}
+      />
+      <Button
+        onClick={optimizeSubstats}
+        disabled={!optimizationTarget}
+      >
+        Optimize Substats
+      </Button>
     </DataContext.Provider> : <Skeleton variant='rectangular' width='100%' height={500} />}
     <CardLight sx={{ flexGrow: 1, p: 1 }}>
       {dataContextValueWithOld ? <DataContext.Provider value={dataContextValueWithOld}>
@@ -236,7 +327,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
         <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
         <Divider />
         {weaponUIData && <FieldDisplayList>
-          {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node, i) => {
+          {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map((node) => {
             const n = weaponUIData.get(node)
             if (n.isEmpty || !n.value) return null
             return <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} component={ListItem} />

@@ -75,14 +75,14 @@ describe("optimization", () => {
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
       const compute = precompute([output1] as OptNode[], {}, x => x.path[0], 1)
-      expect([...compute([{ id: "", values: { 0: 32, 1: 77 } }]).slice(0, 1)]).toEqual([1 + 32 + 77])
+      expect([...compute([{ values: { 0: 32, 1: 77 } }]).slice(0, 1)]).toEqual([1 + 32 + 77])
     })
     test("Output is read node", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
       const compute = precompute([r1], {}, x => x.path[0], 1)
-      expect([...compute([{ id: "", values: { 0: 32 } }]).slice(0, 1)]).toEqual([32])
+      expect([...compute([{ values: { 0: 32 } }]).slice(0, 1)]).toEqual([32])
     })
     test("Output is constant node", () => {
       const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
@@ -96,7 +96,7 @@ describe("optimization", () => {
       const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
 
       const compute = precompute([output3, output3] as OptNode[], {}, x => x.path[0], 1)
-      expect([...compute([{ id: "", values: { 0: 2, 1: 44, 2: 7 } }]).slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
+      expect([...compute([{ values: { 0: 2, 1: 44, 2: 7 } }]).slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
     })
   })
 })

@@ -1,4 +1,4 @@
-import type { ArtifactBuildData } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import type { ArtifactBuildData, DynStat } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { customMapFormula, forEachNodes, mapFormulas } from "./internal"
 import { AnyNode, CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode, ThresholdNode } from "./type"
@@ -31,7 +31,19 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
   opts = flatten(opts)
   return deduplicate(opts)
 }
-export function precompute(formulas: OptNode[], initial: ArtifactBuildData["values"], binding: (readNode: ReadNode<number> | ReadNode<string | undefined>) => string, slotCount: number): (_: ArtifactBuildData[]) => number[] {
+
+/**
+ * Compile an array of `formulas` into a JS `Function`
+ *
+ * The nodes in the array should be automatically deduped by the JS engine
+ *
+ * @param formulas
+ * @param initial base stats for the formula
+ * @param binding
+ * @param slotCount the number of slots in the build (usually 5)
+ * @returns
+ */
+export function precompute(formulas: OptNode[], initial: DynStat, binding: (readNode: ReadNode<number>) => string, slotCount: number): (_: { values: DynStat }[]) => number[] {
   let body = `
 "use strict";
 // copied from the code above
@@ -69,6 +81,9 @@ const x0=0`; // making sure `const` has at least one entry
       case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`; break
 
       default: assertUnreachable(operation)
+    }
+    if (operation !== "const") {
+      body += "\n"
     }
   })
   body += `;\nreturn [${formulas.map(f => names.get(f)!)}]`

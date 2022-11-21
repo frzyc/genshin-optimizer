@@ -19,7 +19,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
-import { NodeDisplay, UIData } from '../../../../Formula/uiData';
+import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -113,7 +113,7 @@ export default function TabBuild() {
 
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
+    const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     let unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
