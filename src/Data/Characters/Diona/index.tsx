@@ -114,12 +114,12 @@ const dmgFormulas = {
   },
 }
 
-const nodeA1MoveSpeed = equal(condA1, "on", percent(dm.passive1.moveSpeed_),)
-const nodeA1Stamina = equal(condA1, "on", percent(dm.passive1.stamRed_),)
+const nodeA1MoveSpeed = greaterEq(input.asc, 1, equal(condA1, "on", percent(dm.passive1.moveSpeed_)))
+const nodeA1Stamina = greaterEq(input.asc, 1, equal(condA1, "on", percent(dm.passive1.stamRed_)))
 
-const nodeC6healing_Disp = equal(condC6, "lower", percent(dm.constellation6.healingBonus_),)
+const nodeC6healing_Disp = greaterEq(input.constellation, 6, equal(condC6, "lower", percent(dm.constellation6.healingBonus_)))
 const nodeC6healing_ = equal(input.activeCharKey, target.charKey, nodeC6healing_Disp)
-const nodeC6emDisp = equal(condC6, "higher", dm.constellation6.emBonus,)
+const nodeC6emDisp = greaterEq(input.constellation, 6, equal(condC6, "higher", dm.constellation6.emBonus))
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {

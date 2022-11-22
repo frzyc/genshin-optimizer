@@ -92,7 +92,9 @@ const pyro_dmg_ = greaterEq(input.asc, 1, equal(condSkill, "skill", infoMut(prod
 const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, key,
   sum(percent(dm.passive2.fixed_atk_), prod(percent(dm.passive2.var_atk_), a1Stacks)))))
 const c1atk_ = equal(condC1, 'c1', percent(dm.constellation1.atk_))
-const c2pyro_dmg_ = equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), KeyMap.info("pyro_dmg_"))
+const c2pyro_dmg_ = greaterEq(input.constellation, 2,
+  equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), KeyMap.info("pyro_dmg_"))
+)
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
   i,
