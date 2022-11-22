@@ -19,7 +19,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
-import { NodeDisplay, UIData } from '../../../../Formula/uiData';
+import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -185,6 +185,10 @@ export default function TabBuild() {
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker(new URL('./BackgroundWorker.ts', import.meta.url))
+      worker.addEventListener("error", e => {
+        console.error("Failed to load worker")
+        window.location.reload()
+      });
 
       const setup: Setup = {
         command: "setup",
@@ -357,7 +361,7 @@ export default function TabBuild() {
             onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
             disabled={generatingBuilds}
           >
-              {t`allowPartial`}
+            {t`allowPartial`}
           </Button>
           { /* Level Filter */}
           <CardLight>
