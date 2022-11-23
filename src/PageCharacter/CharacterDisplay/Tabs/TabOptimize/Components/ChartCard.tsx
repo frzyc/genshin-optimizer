@@ -20,12 +20,17 @@ export type ChartData = {
 }
 type ChartCardProps = {
   chartData?: ChartData
-  plotBase?: string[],
+  plotBase?: string[]
   setPlotBase: (path: string[] | undefined) => void
   disabled?: boolean
   showTooltip?: boolean
 }
-type Point = { x: number, y: number, min?: number }
+type Point = {
+  x: number
+  y: number
+  artifactIds: string[]
+  min?: number
+}
 export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
   const { data } = useContext(DataContext)
@@ -34,7 +39,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
 
   const { displayData, downloadData } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
-    const points = chartData.data.map(({ value: y, plot: x }) => ({ x, y })) as Point[]
+    const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => ({ x, y, artifactIds })) as Point[]
     const increasingX: Point[] = points.sort((a, b) => a.x - b.x)
     const minimumData: Point[] = []
     for (const point of increasingX) {

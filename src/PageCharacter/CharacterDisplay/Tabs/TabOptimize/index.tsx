@@ -276,9 +276,9 @@ export default function TabBuild() {
         const plotData = mergePlot(results.map(x => x.plotData!))
         let data = Object.values(plotData)
         if (targetNode.info?.unit === "%")
-          data = data.map(({ value, plot }) => ({ value: value * 100, plot })) as Build[]
+          data = data.map(({ value, plot, artifactIds }) => ({ value: value * 100, plot, artifactIds })) as Build[]
         if (plotBaseNumNode.info?.unit === "%")
-          data = data.map(({ value, plot }) => ({ value, plot: (plot ?? 0) * 100 })) as Build[]
+          data = data.map(({ value, plot, artifactIds }) => ({ value, plot: (plot ?? 0) * 100, artifactIds })) as Build[]
         setchartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
