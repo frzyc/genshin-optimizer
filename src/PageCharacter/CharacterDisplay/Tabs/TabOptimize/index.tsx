@@ -66,6 +66,12 @@ export default function TabBuild() {
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
 
+  // Clear state when changing characters
+  useEffect(() => {
+    setchartData(undefined)
+    setBuildStatus({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 })
+  }, [characterKey])
+
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
 
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
