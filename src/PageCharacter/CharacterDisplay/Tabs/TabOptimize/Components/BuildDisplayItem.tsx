@@ -3,8 +3,6 @@ import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
-import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTooltip';
-import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
@@ -13,13 +11,13 @@ import SqBadge from '../../../../../Components/SqBadge';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../Context/DataContext';
-import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
-import usePromise from '../../../../../ReactHooks/usePromise';
-import { allSlotKeys, ArtifactSetKey, charKeyToLocCharKey, SlotKey } from '../../../../../Types/consts';
+import { ICachedArtifact } from '../../../../../Types/artifact';
+import { allSlotKeys, charKeyToLocCharKey } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
+import { ArtifactSetBadges } from './ArtifactSetBadges';
 
 type NewOld = {
   newId: string,
@@ -59,18 +57,28 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtonsRigh
     return dataContext_
   }, [dataContext, compareBuild])
 
+  const artifactIdsBySlot = useMemo(() => Object.fromEntries(allSlotKeys.map(slotKey => [
+    slotKey,
+    data.get(input.art[slotKey].id).value
+  ])), [data])
+  const artifacts = useMemo(() => artifactIdsBySlot && Object.values(artifactIdsBySlot)
+    .map((artiId: string) => database.arts.get(artiId))
+    .filter(arti => arti) as ICachedArtifact[],
+    [artifactIdsBySlot, database.arts]
+  )
+
   // Memoize Arts because of its dynamic onClick
   const artNanos = useMemo(() => allSlotKeys.map(slotKey =>
     <Grid item xs={1} key={slotKey} >
-      <ArtifactCardNano showLocation slotKey={slotKey} artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
+      <ArtifactCardNano showLocation slotKey={slotKey} artifactId={artifactIdsBySlot[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
         const oldId = equippedArtifacts[slotKey]
-        const newId = data.get(input.art[slotKey].id).value!
+        const newId = artifactIdsBySlot[slotKey]!
         setNewOld({ oldId: oldId !== newId ? oldId : undefined, newId })
       }} />
-    </Grid>), [data, setNewOld, equippedArtifacts, mainStatAssumptionLevel])
+    </Grid>), [setNewOld, equippedArtifacts, mainStatAssumptionLevel, artifactIdsBySlot])
 
   if (!oldData) return null
-  const currentlyEquipped = allSlotKeys.every(slotKey => data.get(input.art[slotKey].id).value === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
+  const currentlyEquipped = allSlotKeys.every(slotKey => artifactIdsBySlot[slotKey] === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
@@ -78,7 +86,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtonsRigh
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
           {index !== undefined && <SqBadge color="info"><Typography><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
-          <SetBadges currentlyEquipped={currentlyEquipped} />
+          <ArtifactSetBadges artifacts={artifacts} currentlyEquipped={currentlyEquipped} />
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>
           {extraButtonsLeft}
@@ -97,34 +105,6 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtonsRigh
       </CardContent>
     </Suspense>
   </CardLight>
-}
-function SetBadges({ currentlyEquipped = false }: { currentlyEquipped: boolean }) {
-  const { data } = useContext(DataContext)
-  const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = {}
-  allSlotKeys.forEach(slotKey => {
-    const set = data.get(input.art[slotKey].set).value as ArtifactSetKey | undefined
-    if (!set) return
-    if (setToSlots[set]) setToSlots[set]!.push(slotKey)
-    else setToSlots[set] = [slotKey]
-  })
-  return <>{Object.entries(setToSlots).sort(([k1, slotarr1], [k2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-    <SetBadge key={key} setKey={key} currentlyEquipped={currentlyEquipped} slotarr={slotarr} />
-  )}</>
-
-}
-function SetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
-  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
-  if (!artifactSheet) return null
-  const numInSet = slotarr.length
-  const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
-  return <Box>
-    <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet} >
-      <SqBadge color={currentlyEquipped ? "success" : "primary"} ><Typography >
-        {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
-        {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
-      </Typography></SqBadge>
-    </ArtifactSetTooltip>
-  </Box>
 }
 
 function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
