@@ -1,6 +1,6 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, Stack, styled, Typography } from '@mui/material';
-import { useCallback, useContext, useMemo, useState } from 'react';
+import { Button, CardContent, Collapse, Divider, Grid, Skeleton, Stack, styled, Typography } from '@mui/material';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, Line, ResponsiveContainer, Scatter, Tooltip, TooltipProps, XAxis, YAxis, ZAxis } from 'recharts';
 import ArtifactCardPico from '../../../../../Components/Artifact/ArtifactCardPico';
@@ -314,6 +314,7 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
     ),
     [database.arts, selectedPoint]
   )
+
   const currentlyEquipped = artifactsBySlot && allSlotKeys.every(slotKey => artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value)
 
   if (tooltipProps.active && selectedPoint) {
@@ -323,7 +324,9 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
           {currentlyEquipped && <SqBadge color="info"><strong>{t("artifact:filterLocation.currentlyEquipped")}</strong></SqBadge>}
           <Stack direction="row" alignItems="start">
             <Stack spacing={0.5}>
-              <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
+              <Suspense fallback={<Skeleton width={300} height={50} />}>
+                <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
+              </Suspense>
             </Stack>
             <Grid item flexGrow={1} />
             <CloseButton onClick={() => setSelectedPoint(undefined)} />
@@ -331,7 +334,9 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
           <Grid container direction="row" spacing={0.75} columns={5}>
             {allSlotKeys.map(key =>
               <Grid item key={key} xs={1}>
-                <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
+                <Suspense fallback={<Skeleton width={75} height={75} />}>
+                  <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
+                </Suspense>
               </Grid>
             )}
           </Grid>
