@@ -1,16 +1,25 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
-import { useContext, useMemo, useState } from 'react';
+import { Button, CardContent, Collapse, Divider, Grid, Stack, styled, Typography } from '@mui/material';
+import { useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CartesianGrid, ComposedChart, Label, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
+import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, Line, ResponsiveContainer, Scatter, Tooltip, TooltipProps, XAxis, YAxis, ZAxis } from 'recharts';
+import ArtifactCardPico from '../../../../../Components/Artifact/ArtifactCardPico';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
+import CloseButton from '../../../../../Components/CloseButton';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
+import SqBadge from '../../../../../Components/SqBadge';
 import { DataContext } from '../../../../../Context/DataContext';
+import { DatabaseContext } from '../../../../../Database/Database';
+import { input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
+import { Unit, valueString } from '../../../../../KeyMap';
+import { ICachedArtifact } from '../../../../../Types/artifact';
+import { allSlotKeys } from '../../../../../Types/consts';
 import { objPathValue } from '../../../../../Util/Util';
 import { Build } from '../common';
+import { ArtifactSetBadges } from './ArtifactSetBadges';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
 export type ChartData = {
@@ -142,34 +151,196 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 function Chart({ displayData, plotNode, valueNode, showMin }: {
-  displayData: Point[],
-  plotNode: NumNode,
-  valueNode: NumNode,
+  displayData: Point[]
+  plotNode: NumNode
+  valueNode: NumNode
   showMin: boolean
 }) {
   const { t } = useTranslation("page_character_optimize")
+  const [selectedPoint, setSelectedPoint] = useState<Point>()
+  const chartOnClick = useCallback((props) => {
+    if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
+  }, [setSelectedPoint, displayData])
+
   // Below works because character translation should already be loaded
-  const xLabel = <Label fill="white" dy={10}>
-    {getLabelFromNode(plotNode, t)}
-  </Label>
-  const yLabel = <Label fill="white" angle={-90} dx={-40}>
-    {getLabelFromNode(valueNode, t)}
-  </Label>
+  const xLabelValue = getLabelFromNode(plotNode, t)
+  const yLabelValue = getLabelFromNode(valueNode, t)
+
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={displayData}>
+    <ComposedChart data={displayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="x" scale="linear" unit={plotNode.info?.unit} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} label={xLabel} height={50} />
-      <YAxis name="DMG" domain={["auto", "auto"]} unit={valueNode.info?.unit} allowDecimals={false} tick={{ fill: 'white' }} type="number" label={yLabel} width={100} />
+      <XAxis
+        dataKey="x"
+        scale="linear"
+        unit={plotNode.info?.unit}
+        domain={["auto", "auto"]}
+        tick={{ fill: 'white' }}
+        type="number"
+        tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)}
+        label={<Label fill="white" dy={10}>{xLabelValue}</Label>}
+        height={50}
+      />
+      <YAxis
+        name="DMG"
+        domain={["auto", "auto"]}
+        unit={valueNode.info?.unit}
+        allowDecimals={false}
+        tick={{ fill: 'white' }}
+        type="number"
+        label={<Label fill="white" angle={-90} dx={-40}>{yLabelValue}</Label>}
+        width={100}
+      />
       <ZAxis dataKey="y" range={[3, 25]} />
+      <Tooltip
+        content={<CustomTooltip
+          xLabel={xLabelValue}
+          xUnit={plotNode.info?.unit}
+          yLabel={yLabelValue}
+          yUnit={valueNode.info?.unit}
+          selectedPoint={selectedPoint}
+          setSelectedPoint={setSelectedPoint}
+        />}
+        trigger="click"
+        wrapperStyle={{ pointerEvents: "auto", cursor: "auto" }}
+        cursor={false}
+      />
       <Legend />
-      <Scatter name={t`tcGraph.optTarget`} dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
-      {showMin && <Line name={t`tcGraph.minStatReqThr`} dataKey="min" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} isAnimationActive={false} />}
+      {/* TODO: Split scatter into 3: opt-target, current-build, displayed builds */}
+      <Scatter
+        name={t`tcGraph.optTarget`}
+        dataKey="y"
+        fill="#8884d8"
+        isAnimationActive={false}
+        shape={<CustomDot selectedPoint={selectedPoint} />}
+      />
+      <Brush height={30} gap={5}/>
+      {showMin && <Line
+        name={t`tcGraph.minStatReqThr`}
+        dataKey="min"
+        stroke="#ff7300"
+        type="stepBefore"
+        connectNulls
+        strokeWidth={2}
+        isAnimationActive={false}
+        dot={<CustomDot selectedPoint={selectedPoint} colorUnselected="#ff7300" />}
+        activeDot={false}
+      />}
     </ComposedChart>
   </ResponsiveContainer>
+}
+
+function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: Point[]) {
+  const nearestDomPtData = Array.from(document.querySelectorAll(".custom-dot"))
+    .reduce((domPtA, domPtB) => {
+      const { chartX: aChartX, chartY: aChartY } = (domPtA as any).dataset
+      const aDistance = Math.sqrt((clickedX - aChartX) ** 2 + (clickedY - aChartY) ** 2)
+      const { chartX: bChartX, chartY: bChartY } = (domPtB as any).dataset
+      const bDistance = Math.sqrt((clickedX - bChartX) ** 2 + (clickedY - bChartY) ** 2)
+      return aDistance <= bDistance
+        ? domPtA
+        : domPtB
+    })["dataset"]
+
+  // Don't select a point too far away
+  const distance = Math.sqrt((clickedX - nearestDomPtData.chartX) ** 2 + (clickedY - nearestDomPtData.chartY) ** 2)
+  return distance < threshold
+    ? data.find(d => d.x === +nearestDomPtData.xValue && d.y === +nearestDomPtData.yValue)
+    : undefined
 }
 
 function getLabelFromNode(node: NumNode, t: any) {
   return typeof node.info?.name === "string"
     ? node.info.name
     : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
+}
+
+type CustomDotProps = DotProps & {
+  selectedPoint: Point | undefined
+  payload?: Point
+  radiusSelected?: number
+  radiusUnselected?: number
+  colorSelected?: string
+  colorUnselected?: string
+}
+function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected = "#8884d8" }: CustomDotProps) {
+  const { data } = useContext(DataContext)
+
+  if (!cx || !cy || !payload) return null
+
+  const currentlyEquipped = payload && allSlotKeys.every(slotKey => payload.artifactIds.some(id => id === data.get(input.art[slotKey].id).value))
+
+  const isSelected = selectedPoint && selectedPoint.x === payload.x && selectedPoint.y === payload.y;
+
+  return (
+    <g
+      className="custom-dot"
+      data-chart-x={cx}
+      data-chart-y={cy}
+      data-x-value={payload.x}
+      data-y-value={payload.y}
+      data-radius={isSelected ? radiusUnselected : radiusSelected}
+    >
+      {!isSelected
+        ? <circle cx={cx} cy={cy} r={radiusUnselected} fill={currentlyEquipped ? "lightgreen" : colorUnselected} />
+        : <>
+          <circle cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
+          <circle cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
+        </>
+      }
+    </g>
+  )
+}
+
+type CustomTooltipProps = TooltipProps<number, string> & {
+  xLabel: Displayable
+  xUnit: Unit | undefined
+  yLabel: Displayable
+  yUnit: Unit | undefined
+  selectedPoint: Point | undefined
+  setSelectedPoint: (pt: Point | undefined) => void
+}
+function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, ...tooltipProps }: CustomTooltipProps) {
+  const { database } = useContext(DatabaseContext)
+  const { data } = useContext(DataContext)
+  const { t } = useTranslation("artifact")
+
+  const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(() =>
+    selectedPoint && selectedPoint.artifactIds && Object.fromEntries(selectedPoint.artifactIds
+      .map(id => {
+        const artiObj = database.arts.get(id)
+        return [artiObj?.slotKey, artiObj]
+      })
+      .filter(arti => arti)
+    ),
+    [database.arts, selectedPoint]
+  )
+  const currentlyEquipped = artifactsBySlot && allSlotKeys.every(slotKey => artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value)
+
+  if (tooltipProps.active && selectedPoint) {
+    return <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
+      <CardContent>
+        <Stack spacing={1}>
+          {currentlyEquipped && <SqBadge color="info"><strong>{t("artifact:filterLocation.currentlyEquipped")}</strong></SqBadge>}
+          <Stack direction="row" alignItems="start">
+            <Stack spacing={0.5}>
+              <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
+            </Stack>
+            <Grid item flexGrow={1} />
+            <CloseButton onClick={() => setSelectedPoint(undefined)} />
+          </Stack>
+          <Grid container direction="row" spacing={0.75} columns={5}>
+            {allSlotKeys.map(key =>
+              <Grid item key={key} xs={1}>
+                <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
+              </Grid>
+            )}
+          </Grid>
+          <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
+          <Typography>{yLabel}: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
+        </Stack>
+      </CardContent>
+    </CardDark>
+  }
+
+  return null
 }
