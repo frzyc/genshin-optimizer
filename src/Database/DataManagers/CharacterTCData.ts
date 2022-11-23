@@ -20,7 +20,9 @@ export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs",
     if (!weapon) return
     const artifact = validateCharTCArtifact(obj.artifact)
     if (!artifact) return
-    return { artifact, weapon }
+    const optimization = validateCharTcOptimization(obj.optimization)
+    if (!optimization) return
+    return { artifact, weapon, optimization }
   }
   toStorageKey(key: CharacterKey): string {
     return `charTC_${key}`
@@ -51,6 +53,11 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
         stats: objectKeyMap(allSubstatKeys, () => 0)
       },
       sets: {}
+    },
+    optimization: {
+      target: undefined,
+      distributedSubstats: 20,
+      maxSubstats: initCharTcOptimizationMaxSubstats()
     }
   }
 }
@@ -84,4 +91,27 @@ function validateCharTCArtifactSlots(slots: any): ICharTC["artifact"]["slots"] |
   if (typeof slots !== "object") return initCharTCArtifactSlots()
   if (Object.keys(slots).length !== allSlotKeys.length || Object.keys(slots).some(s => !allSlotKeys.includes(s as any))) return initCharTCArtifactSlots()
   return slots
+}
+function validateCharTcOptimization(optimization: any): ICharTC["optimization"] | undefined {
+  if (typeof optimization !== "object") return
+  let { target, distributedSubstats, maxSubstats } = optimization
+  if (!Array.isArray(target)) target = undefined
+  if (typeof distributedSubstats !== "number") distributedSubstats = 20
+  if (typeof maxSubstats !== "object") maxSubstats = initCharTcOptimizationMaxSubstats()
+  maxSubstats = objectKeyMap([...allSubstatKeys, "useMaxOff", "max", "offset",],
+    k => {
+      if (k === "useMaxOff")
+        return typeof maxSubstats[k] === "boolean" ? maxSubstats[k] : true
+      else
+        return typeof maxSubstats[k] === "number" ? maxSubstats[k] : 0
+    })
+  return { target, distributedSubstats, maxSubstats }
+}
+function initCharTcOptimizationMaxSubstats(): ICharTC["optimization"]["maxSubstats"] {
+  return {
+    ...objectKeyMap(allSubstatKeys, () => 0),
+    useMaxOff: true,
+    max: 10,
+    offset: 2
+  }
 }

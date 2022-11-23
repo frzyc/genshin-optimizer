@@ -38,7 +38,7 @@ export function CustomNumberInputButtonGroupWrapper({ children, disableRipple, d
   return <Wrapper disableRipple disableFocusRipple disableTouchRipple {...props}>{children}</Wrapper>
 }
 
-export default function CustomNumberInput({ value = 0, onChange, disabled = false, float = false, ...props }: CustomNumberInputProps) {
+export default function CustomNumberInput({ value = 0, onChange, float = false, ...props }: CustomNumberInputProps) {
   const { inputProps = {}, ...restProps } = props
 
   const [number, setNumber] = useState(value)
@@ -74,7 +74,6 @@ export default function CustomNumberInput({ value = 0, onChange, disabled = fals
     onChange={onInputChange}
     onBlur={onBlur}
     onFocus={onFocus}
-    disabled={disabled}
     onKeyDown={onKeyDown}
     {...restProps}
   />

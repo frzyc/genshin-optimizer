@@ -2,7 +2,7 @@ import { input } from "../Formula";
 import { EleEnemyResKey } from "../KeyMap";
 import { MainStatKey } from "./artifact";
 import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
-import { IConditionalValues } from "./IConditional";
+import { IConditionalValues } from "./sheet";
 import { SubstatKey } from "./artifact";
 
 export interface CustomTarget {
@@ -65,5 +65,14 @@ export type ICharTC = {
       stats: Record<SubstatKey, number>
     },
     sets: Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
+  }
+  optimization: {
+    target?: string[]
+    distributedSubstats: number
+    maxSubstats: Record<SubstatKey, number> & {
+      useMaxOff: boolean
+      max: number
+      offset: number
+    }
   }
 }

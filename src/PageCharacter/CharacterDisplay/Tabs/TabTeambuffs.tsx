@@ -102,7 +102,7 @@ function TeammateDisplay({ index }: { index: number }) {
       if (!teamMateKey) return
       if (!("conditional" in state)) return
       const { conditional } = state
-      characterDispatch({ type: "teamConditional", teamMateKey: teamMateKey, conditional })
+      characterDispatch({ type: "teamConditional", teamMateKey: teamMateKey, conditional: conditional! })
     }
   }, [active, teamMateKey, dataBundle, characterDispatch])
   const teamMateDataContext: dataContextObj | undefined = useMemo(() => dataBundle && {

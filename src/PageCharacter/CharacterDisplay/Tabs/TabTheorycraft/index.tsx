@@ -43,7 +43,7 @@ import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../../
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
 import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType, WeaponTypeKey } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
-import { deepClone, objectMap, objPathValue } from "../../../../Util/Util";
+import { deepClone, objectKeyMap, objectMap, objPathValue } from "../../../../Util/Util";
 import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
 import useCharTC from "./useCharTC";
 import OptimizationTargetSelector from "../TabOptimize/Components/OptimizationTargetSelector";
@@ -183,14 +183,35 @@ export default function TabTheorycraft() {
     }
   }, [dataContextValue, compareData, oldData])
 
-  // Fixme: persist across page reloads
-  const [optimizationTarget, setOptimizationTarget] = useState<string[] | undefined>(undefined);
+  const optimizationTarget = data.optimization.target
+  const setOptimizationTarget = useCallback((optimizationTarget: ICharTC["optimization"]["target"]) => {
+    const data_ = deepClone(data)
+    data_.optimization.target = optimizationTarget
+    setData(data_)
+  }, [data, setData])
+
+  const distributedSubstats = data.optimization.distributedSubstats
+  const setDistributedSubstats = (distributedSubstats: ICharTC["optimization"]["distributedSubstats"]) => {
+    const data_ = deepClone(data)
+    data_.optimization.distributedSubstats = distributedSubstats
+    setData(data_)
+  }
+  const maxSubstats = useMemo(() => {
+    let result: Record<SubstatKey, number>
+    let maxSubstats = data.optimization.maxSubstats;
+    if (maxSubstats.useMaxOff) {
+      const { max, offset } = maxSubstats;
+      result = objectKeyMap(allSubstatKeys, (k) => max - offset * Object.values(data.artifact.slots).reduce((p, s) => p + +(s.statKey === k), 0));
+    } else {
+      result = maxSubstats
+    }
+    return result;
+  }, [data.artifact.slots, data.optimization.maxSubstats])
 
   // This is mostly copied from TabOptimize/index.tsx except where noted and where i forgot to note
-  const optimizeSubstats = useCallback(async () => {
+  const optimizeSubstats = useCallback((apply: boolean) => () => {
     if (!characterKey || !optimizationTarget) return
     if (!teamData) return
-    // Fixme: why is data an array?
     const workerData = teamData[characterKey]?.target.data[0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
@@ -218,45 +239,48 @@ export default function TabTheorycraft() {
       subs.add(f.path[1])
       return f.path[1]
     }, 3)
-    const realSubs = [...subs].filter(x => allSubstatKeys.includes(x as any))
+    let realSubs = [...subs].filter(x => allSubstatKeys.includes(x as any))
+    if (realSubs.reduce((p, x) => p + maxSubstats[x], 0) < distributedSubstats)
+      realSubs.push("__unused__")
     const comp = (statKey: string) => statKey.endsWith("_") ? 100 : 1
-
-    // KQMC
-    // Fixme: inputs
-    const freeSubs = 20
-    // Fixme: -2 per main stat
-    const maxSubs = Object.fromEntries(allSubstatKeys.map(x => [x, 10]))
 
     let max = -Infinity
     const buffer = Object.fromEntries([...subs].map(x => [x, 0]))
     let maxBuffer: typeof buffer | undefined;
     const bufferMain = objectMap(data.artifact.slots, ({ statKey, rarity, level }) => Artifact.mainStatValue(statKey, rarity, level) / comp(statKey))
     const bufferSubs = objectMap(data.artifact.substats.stats, (v, k) => v / comp(k))
-    const g = (freeSubs: number, [x, ...xs]: string[]) => {
+    const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {
-        if (freeSubs > maxSubs[x])
+        if (distributedSubstats > maxSubstats[x])
           return
-        buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * freeSubs;
+        if (x !== "__unused__")
+          buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * distributedSubstats;
         const [result] = compute([{ values: bufferMain }, { values: bufferSubs }, { values: buffer }]);
         if (result > max) {
           max = result
-          maxBuffer = JSON.parse(JSON.stringify(buffer))
+          maxBuffer = structuredClone(buffer)
         }
         return
       }
-      for (let i = 0; i <= Math.min(maxSubs[x], freeSubs); i++) {
+      for (let i = 0; i <= Math.min(maxSubstats[x], distributedSubstats); i++) {
         buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * i;
-        g(freeSubs - i, xs)
+        permute(distributedSubstats - i, xs)
       }
     }
-    g(freeSubs, realSubs)
+    permute(distributedSubstats, realSubs)
     console.log(maxBuffer)
     console.log(objectMap(maxBuffer!, (v, x) =>
       allSubstatKeys.includes(x as any) ?
         v / (Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x)) :
         v
     ))
-  }, [characterKey, data.artifact.sets, data.artifact.slots, data.artifact.substats.stats, data.artifact.substats.type, optimizationTarget, teamData])
+
+    if (apply) {
+      const data_ = deepClone(data)
+      data_.artifact.substats.stats = objectMap(data.artifact.substats.stats, (v, k) => v + (maxBuffer![k] ?? 0) * comp(k))
+      setData(data_)
+    }
+  }, [characterKey, data, distributedSubstats, maxSubstats, optimizationTarget, setData, teamData])
 
   return <Stack spacing={1}>
     <CardLight>
@@ -277,8 +301,36 @@ export default function TabTheorycraft() {
           <WeaponEditorCard weapon={weapon} setWeapon={setWeapon} weaponTypeKey={characterSheet.weaponTypeKey} />
           <ArtifactMainLevelCard artifactData={data.artifact} setArtifactData={setArtifact} />
         </Grid>
-        <Grid item sx={{ flexGrow: 1 }}  >
-          <ArtifactSubCard substats={data.artifact.substats.stats} setSubstats={setSubstats} substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType} mainStatKeys={Object.values(data.artifact.slots).map(s => s.statKey)} />
+        <Grid item sx={{ flexGrow: 1 }}>
+          <ArtifactSubCard
+            substats={data.artifact.substats.stats} setSubstats={setSubstats}
+            substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType}
+            mainStatKeys={Object.values(data.artifact.slots).map(s => s.statKey)}
+            distributedSubstats={distributedSubstats} setDistributedSubstats={setDistributedSubstats}
+            maxSubstats={maxSubstats} setMaxSubstats={(k: SubstatKey) => (v: number) => {
+              if (data.optimization.maxSubstats[k] === v) return
+              const data_ = deepClone(data)
+              data_.optimization.maxSubstats.useMaxOff = false
+              data_.optimization.maxSubstats[k] = v
+              setData(data_)
+            }}
+            max={data.optimization.maxSubstats.max}
+            setMax={(v) => {
+              if (data.optimization.maxSubstats.max === v) return
+              const data_ = deepClone(data)
+              data_.optimization.maxSubstats.useMaxOff = true
+              data_.optimization.maxSubstats.max = v
+              setData(data_)
+            }}
+            offset={data.optimization.maxSubstats.offset}
+            setOffset={(v) => {
+              if (data.optimization.maxSubstats.offset === v) return
+              const data_ = deepClone(data)
+              data_.optimization.maxSubstats.useMaxOff = true
+              data_.optimization.maxSubstats.offset = v
+              setData(data_)
+            }}
+            disableMaxSubstats={data.optimization.maxSubstats.useMaxOff} />
         </Grid>
       </Grid >
       <OptimizationTargetSelector
@@ -286,10 +338,16 @@ export default function TabTheorycraft() {
         setTarget={target => setOptimizationTarget(target)}
       />
       <Button
-        onClick={optimizeSubstats}
+        onClick={optimizeSubstats(false)}
         disabled={!optimizationTarget}
       >
         Optimize Substats
+      </Button>
+      <Button
+        onClick={optimizeSubstats(true)}
+        disabled={!optimizationTarget}
+      >
+        Optimize & Apply Substats
       </Button>
     </DataContext.Provider> : <Skeleton variant='rectangular' width='100%' height={500} />}
     <CardLight sx={{ flexGrow: 1, p: 1 }}>
@@ -297,7 +355,6 @@ export default function TabTheorycraft() {
         <StatDisplayComponent />
       </DataContext.Provider> : <Skeleton variant='rectangular' width='100%' height={500} />}
     </CardLight>
-
   </Stack>
 }
 
@@ -477,14 +534,24 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     </Stack>}
   </CardLight>
 }
-function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType, mainStatKeys }: { substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void, substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void, mainStatKeys: MainStatKey[] }) {
+function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType, mainStatKeys, distributedSubstats, setDistributedSubstats, maxSubstats, setMaxSubstats, disableMaxSubstats, max, setMax, offset, setOffset
+}: {
+  substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void,
+  substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void,
+  mainStatKeys: MainStatKey[],
+  distributedSubstats: number, setDistributedSubstats: (f: number) => void,
+  maxSubstats: Record<SubstatKey, number>, setMaxSubstats: (k: SubstatKey) => (v: number) => void,
+  max: number, setMax: (v: number) => void,
+  offset: number, setOffset: (v: number) => void,
+  disableMaxSubstats: boolean
+}) {
   const setValue = useCallback((key: SubstatKey) => (v: number) => setSubstats({ ...substats, [key]: v }), [substats, setSubstats])
   const { t } = useTranslation("page_character")
   const rv = Object.entries(substats).reduce((t, [k, v]) => t + (v / Artifact.substatValue(k)), 0) * 100
   const rolls = Object.entries(substats).reduce((t, [k, v]) => t + (v / Artifact.substatValue(k, undefined, substatsType)), 0)
   return <CardLight sx={{ p: 1, height: "100%" }}>
     <Box sx={{ mb: 1, display: "flex", gap: 1 }}>
-      <DropdownButton fullWidth title={t(`tabTheorycraft.substatType.${substatsType}`)}>
+      <DropdownButton title={t(`tabTheorycraft.substatType.${substatsType}`)}>
         {substatType.map(st => <MenuItem key={st} disabled={substatsType === st} onClick={() => setSubstatsType(st)}>{t(`tabTheorycraft.substatType.${st}`)}</MenuItem>)}
       </DropdownButton>
       <BootstrapTooltip title={<Typography>{t`tabTheorycraft.maxTotalRolls`}</Typography>} placement="top">
@@ -493,13 +560,53 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
           <ColorText color={rolls > 45 ? "warning" : undefined} >RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
         </CardDark>
       </BootstrapTooltip>
+      <CustomNumberInput
+        value={distributedSubstats}
+        onChange={v => v !== undefined && setDistributedSubstats(v)}
+        endAdornment={"Distributed Substats"}
+        sx={{ borderRadius: 1, px: 1, width: "50%" }}
+        inputProps={{ sx: { textAlign: "right", px: 1, width: "20%" }, min: 0 }}
+      />
+      <CustomNumberInput
+        value={max}
+        onChange={v => v !== undefined && setMax(v)}
+        endAdornment={"Max"}
+        color={!disableMaxSubstats ? "error" : "success"}
+        sx={{ borderRadius: 1, px: 1 }}
+        inputProps={{ sx: { textAlign: "right", px: 1 }, min: 0 }}
+      />
+      <CustomNumberInput
+        value={offset}
+        onChange={v => v !== undefined && setOffset(v)}
+        endAdornment={"Offset"}
+        color={!disableMaxSubstats ? "error" : "success"}
+        sx={{ borderRadius: 1, px: 1 }}
+        inputProps={{ sx: { textAlign: "right", px: 1 }, min: 0 }}
+      />
     </Box>
     <Stack spacing={1}>
-      {Object.entries(substats).map(([k, v]) => <ArtifactSubstatEditor key={k} statKey={k} value={v} setValue={setValue(k)} substatsType={substatsType} mainStatKeys={mainStatKeys} />)}
+      {Object.entries(substats).map(([k, v]) =>
+        <ArtifactSubstatEditor
+          key={k}
+          statKey={k}
+          value={v} setValue={setValue(k)}
+          substatsType={substatsType}
+          mainStatKeys={mainStatKeys}
+          maxSubstat={maxSubstats[k]}
+          disableMaxSubstats={disableMaxSubstats}
+          setMaxSubstat={setMaxSubstats(k)}
+        />)}
     </Stack>
   </CardLight>
 }
-function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainStatKeys }: { statKey: SubstatKey, value: number, setValue: (v: number) => void, substatsType: SubstatType, mainStatKeys: MainStatKey[] }) {
+function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainStatKeys, maxSubstat, setMaxSubstat, disableMaxSubstats }: {
+  statKey: SubstatKey,
+  value: number, setValue: (v: number) => void,
+  substatsType: SubstatType,
+  mainStatKeys: MainStatKey[],
+  maxSubstat: number, setMaxSubstat: (v: number) => void,
+  disableMaxSubstats: boolean,
+}) {
   const { t } = useTranslation("page_character")
   const substatValue = Artifact.substatValue(statKey, 5, substatsType)
   const [rolls, setRolls] = useState(() => value / substatValue)
@@ -553,6 +660,12 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         startAdornment={<Box sx={{ whiteSpace: "nowrap", width: "7em", display: "flex", justifyContent: "space-between" }}><span>{cacheValueString(substatValue, unit)}{unit}</span><span>x</span></Box>}
         value={parseFloat(rolls.toFixed(2))}
         onChange={v => v !== undefined && setValue(v * substatValue)}
+        sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
+        inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
+      <CustomNumberInput
+        value={maxSubstat}
+        onChange={v => v !== undefined && setMaxSubstat(v)}
+        color={disableMaxSubstats ? "error" : "success"}
         sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
         inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
     </Box>
