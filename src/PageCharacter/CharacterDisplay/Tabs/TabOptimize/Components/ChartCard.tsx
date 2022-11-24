@@ -37,7 +37,7 @@ type Point = {
 export default function ChartCard({ plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
   const { data } = useContext(DataContext)
-  const { chartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
+  const { chartData } = useContext(GraphContext)
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
 
@@ -128,7 +128,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} graphBuilds={graphBuilds} setGraphBuilds={setGraphBuilds} />
+      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
     </CardContent>}
   </CardLight >
 }
@@ -146,14 +146,13 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 
-function Chart({ displayData, plotNode, valueNode, showMin, graphBuilds, setGraphBuilds }: {
+function Chart({ displayData, plotNode, valueNode, showMin }: {
   displayData: Point[]
   plotNode: NumNode
   valueNode: NumNode
   showMin: boolean
-  graphBuilds: string[][] | undefined
-  setGraphBuilds: (builds: string[][] | undefined) => void
 }) {
+  const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { t } = useTranslation("page_character_optimize")
   const [selectedPoint, setSelectedPoint] = useState<Point>()
   const chartOnClick = useCallback(props => {
@@ -212,6 +211,7 @@ function Chart({ displayData, plotNode, valueNode, showMin, graphBuilds, setGrap
         fill="#8884d8"
         isAnimationActive={false}
         shape={<CustomDot selectedPoint={selectedPoint} />}
+        data={displayData}
       />
       <Brush height={30} gap={5}/>
       {showMin && <Line
