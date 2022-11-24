@@ -25,7 +25,7 @@ type NewOld = {
 }
 
 type BuildDisplayItemProps = {
-  label?: string,
+  label?: Displayable,
   compareBuild: boolean,
   disabled?: boolean,
   extraButtonsRight?: JSX.Element,

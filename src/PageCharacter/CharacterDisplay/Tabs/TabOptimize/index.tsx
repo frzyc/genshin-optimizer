@@ -460,7 +460,7 @@ export default function TabBuild() {
         </CardContent>
       </CardLight>
       <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => `Graph #${index + 1}`} setBuilds={setGraphBuilds} />}
+        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>Graph #{{count: index + 1}}</Trans>} setBuilds={setGraphBuilds} />}
         <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => `#${index + 1}`} />
       </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
@@ -473,7 +473,7 @@ function BuildList({ builds, setBuilds, characterKey, data, compareData, disable
   data?: UIData
   compareData: boolean
   disabled: boolean
-  getLabel: (index: number) => string
+  getLabel: (index: number) => Displayable
 }) {
   const deleteBuild = useCallback((index: number) => {
     if (setBuilds) {
@@ -499,12 +499,13 @@ function BuildList({ builds, setBuilds, characterKey, data, compareData, disable
 }
 function BuildItemWrapper({ index, label, build, compareData, disabled, deleteBuild }: {
   index: number
-  label: string
+  label: Displayable
   build: string[]
   compareData: boolean
   disabled: boolean
   deleteBuild?: (index: number) => void
 }) {
+  const { t } = useTranslation("page_character_optimize")
   const location = useLocation()
   const navigate = useNavigate()
   const toTC = useCallback(() => {
@@ -515,8 +516,8 @@ function BuildItemWrapper({ index, label, build, compareData, disabled, deleteBu
 
   return <BuildDisplayItem label={label} compareBuild={compareData} disabled={disabled}
     extraButtonsLeft={<>
-      <Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>
-      {deleteBuild && <Button color="error" size="small" startIcon={<DeleteForever />} onClick={() => deleteBuild(index)}>TODO TRANSLATE Remove Build</Button>}
+      <Button color="info" size="small" startIcon={<Science />} onClick={toTC}>{t("theorycraftButton")}</Button>
+      {deleteBuild && <Button color="error" size="small" startIcon={<DeleteForever />} onClick={() => deleteBuild(index)}>{t("removeBuildButton")}</Button>}
     </>}
   />
 }

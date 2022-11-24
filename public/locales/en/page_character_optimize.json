@@ -95,5 +95,10 @@
   "generateButton": {
     "cancel": "Cancel",
     "generateBuilds": "Generate Builds"
-  }
+  },
+  "removeBuildButton": "Remove Build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Currently Equipped",
+  "addBuildToList": "Add build to list",
+  "graphBuildLabel": "Graph #<1>{{count}}</1>"
 }

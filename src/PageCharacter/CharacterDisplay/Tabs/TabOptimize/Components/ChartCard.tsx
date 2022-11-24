@@ -166,7 +166,7 @@ function Chart({ displayData, plotNode, valueNode, showMin, graphBuilds, setGrap
   const chartOnClick = useCallback(props => {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
   }, [setSelectedPoint, displayData])
-  const addBuildToList = useCallback((build: string[]) => setGraphBuilds([build, ...(graphBuilds ?? [])]), [setGraphBuilds, graphBuilds])
+  const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
@@ -310,7 +310,7 @@ type CustomTooltipProps = TooltipProps<number, string> & {
 function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, addBuildToList, ...tooltipProps }: CustomTooltipProps) {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
-  const { t } = useTranslation("artifact")
+  const { t } = useTranslation("page_character_optimize")
 
   const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(() =>
     selectedPoint && selectedPoint.artifactIds && Object.fromEntries(selectedPoint.artifactIds
@@ -329,7 +329,7 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
     return <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
       <CardContent>
         <Stack spacing={1}>
-          {currentlyEquipped && <SqBadge color="info"><strong>{t("artifact:filterLocation.currentlyEquipped")}</strong></SqBadge>}
+          {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
           <Stack direction="row" alignItems="start">
             <Stack spacing={0.5}>
               <Suspense fallback={<Skeleton width={300} height={50} />}>
@@ -350,7 +350,7 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
           </Grid>
           <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
           <Typography>{yLabel}: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
-          <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>TODO: Translate Add Build To List</Button>
+          <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
         </Stack>
       </CardContent>
     </CardDark>
