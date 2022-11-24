@@ -2,7 +2,7 @@ import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-mat
 import { Button, CardContent, Collapse, Divider, Grid, Skeleton, Stack, styled, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, Line, ResponsiveContainer, Scatter, Tooltip, TooltipProps, XAxis, YAxis, ZAxis } from 'recharts';
+import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, Line, ResponsiveContainer, Scatter, ScatterChart, Tooltip, TooltipProps, XAxis, YAxis, ZAxis } from 'recharts';
 import ArtifactCardPico from '../../../../../Components/Artifact/ArtifactCardPico';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -10,6 +10,7 @@ import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../Context/DataContext';
 import { GraphContext } from '../../../../../Context/GraphContext';
 import { DatabaseContext } from '../../../../../Database/Database';
@@ -19,6 +20,7 @@ import { Unit, valueString } from '../../../../../KeyMap';
 import { ICachedArtifact } from '../../../../../Types/artifact';
 import { allSlotKeys } from '../../../../../Types/consts';
 import { objPathValue } from '../../../../../Util/Util';
+import useBuildResult from '../useBuildResult';
 import { ArtifactSetBadges } from './ArtifactSetBadges';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
@@ -153,12 +155,48 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   showMin: boolean
 }) {
   const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
+  const { data } = useContext(DataContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { buildResult: { builds } } = useBuildResult(characterKey)
   const { t } = useTranslation("page_character_optimize")
   const [selectedPoint, setSelectedPoint] = useState<Point>()
   const chartOnClick = useCallback(props => {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
   }, [setSelectedPoint, displayData])
   const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
+  const { currentDatum, selectedData, restData } = useMemo(() => {
+    const currentDatum = displayData.find(pt =>
+      allSlotKeys.every(slotKey =>
+        pt.artifactIds.some(id =>
+          id === data.get(input.art[slotKey].id).value
+        )
+      )
+    )
+    const allBuilds = [...builds, ...(graphBuilds ?? [])]
+    const selectedData = displayData
+      .filter(pt => {
+        let isCurrentDatum = true
+        const isSelectedData = allBuilds.map(_ => true)
+        pt.artifactIds.forEach(id => {
+          if (!currentDatum?.artifactIds.includes(id)) isCurrentDatum = false
+          allBuilds.forEach((artiIds, index) => {
+            if (!isSelectedData[index]) return
+            if (!artiIds.includes(id)) isSelectedData[index] = false
+          })
+        })
+        if (isCurrentDatum) return false
+        return isSelectedData.some(selected => selected)
+      })
+    const restData = displayData.filter(pt =>
+      pt.artifactIds.some(id =>
+        !currentDatum?.artifactIds.includes(id)
+        && selectedData.every(datum =>
+          !datum.artifactIds.includes(id)
+        )
+      )
+    )
+    return { currentDatum, selectedData, restData }
+  }, [data, displayData, builds, graphBuilds])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
@@ -204,16 +242,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         cursor={false}
       />
       <Legend />
-      {/* TODO: Split scatter into 3: opt-target, current-build, displayed builds */}
-      <Scatter
-        name={t`tcGraph.optTarget`}
-        dataKey="y"
-        fill="#8884d8"
-        isAnimationActive={false}
-        shape={<CustomDot selectedPoint={selectedPoint} />}
-        data={displayData}
-      />
-      <Brush height={30} gap={5}/>
       {showMin && <Line
         name={t`tcGraph.minStatReqThr`}
         dataKey="min"
@@ -225,6 +253,31 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         dot={<CustomDot selectedPoint={selectedPoint} colorUnselected="#ff7300" />}
         activeDot={false}
       />}
+      <Scatter
+        name={t`tcGraph.optTarget`}
+        dataKey="y"
+        fill="#8884d8"
+        isAnimationActive={false}
+        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="#8884d8" />}
+        data={restData}
+      />
+      <Scatter
+        name={t`tcGraph.highlightedBuilds`}
+        dataKey="y"
+        fill="cyan"
+        isAnimationActive={false}
+        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="cyan" />}
+        data={selectedData}
+      />
+      <Scatter
+        name={t`tcGraph.currentBuild`}
+        dataKey="y"
+        fill="lightgreen"
+        isAnimationActive={false}
+        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="lightgreen" />}
+        data={[currentDatum]}
+      />
+      <Brush height={30} gap={5}/>
     </ComposedChart>
   </ResponsiveContainer>
 }
@@ -260,14 +313,10 @@ type CustomDotProps = DotProps & {
   radiusSelected?: number
   radiusUnselected?: number
   colorSelected?: string
-  colorUnselected?: string
+  colorUnselected: string
 }
-function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected = "#8884d8" }: CustomDotProps) {
-  const { data } = useContext(DataContext)
-
+function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected }: CustomDotProps) {
   if (!cx || !cy || !payload) return null
-
-  const currentlyEquipped = payload && allSlotKeys.every(slotKey => payload.artifactIds.some(id => id === data.get(input.art[slotKey].id).value))
 
   const isSelected = selectedPoint && selectedPoint.x === payload.x && selectedPoint.y === payload.y;
 
@@ -281,7 +330,7 @@ function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusU
       data-radius={isSelected ? radiusUnselected : radiusSelected}
     >
       {!isSelected
-        ? <circle cx={cx} cy={cy} r={radiusUnselected} fill={currentlyEquipped ? "lightgreen" : colorUnselected} />
+        ? <circle cx={cx} cy={cy} r={radiusUnselected} fill={colorUnselected} />
         : <>
           <circle cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
           <circle cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
