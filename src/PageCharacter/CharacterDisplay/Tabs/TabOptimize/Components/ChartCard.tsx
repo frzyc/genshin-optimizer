@@ -11,6 +11,7 @@ import CloseButton from '../../../../../Components/CloseButton';
 import InfoTooltip from '../../../../../Components/InfoTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
 import { DataContext } from '../../../../../Context/DataContext';
+import { GraphContext } from '../../../../../Context/GraphContext';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { input } from '../../../../../Formula';
 import { NumNode } from '../../../../../Formula/type';
@@ -18,21 +19,12 @@ import { Unit, valueString } from '../../../../../KeyMap';
 import { ICachedArtifact } from '../../../../../Types/artifact';
 import { allSlotKeys } from '../../../../../Types/consts';
 import { objPathValue } from '../../../../../Util/Util';
-import { Build } from '../common';
 import { ArtifactSetBadges } from './ArtifactSetBadges';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
-export type ChartData = {
-  valueNode: NumNode,
-  plotNode: NumNode,
-  data: Build[]
-}
 type ChartCardProps = {
-  chartData?: ChartData
   plotBase?: string[]
   setPlotBase: (path: string[] | undefined) => void
-  graphBuilds: string[][] | undefined
-  setGraphBuilds: (builds: string[][] | undefined) => void
   disabled?: boolean
   showTooltip?: boolean
 }
@@ -42,9 +34,10 @@ type Point = {
   artifactIds: string[]
   min?: number
 }
-export default function ChartCard({ chartData, plotBase, setPlotBase, graphBuilds, setGraphBuilds, disabled = false, showTooltip = false }: ChartCardProps) {
+export default function ChartCard({ plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
   const { data } = useContext(DataContext)
+  const { chartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
 

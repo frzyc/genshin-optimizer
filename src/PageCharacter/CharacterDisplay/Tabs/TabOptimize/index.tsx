@@ -12,6 +12,7 @@ import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEdi
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
+import { GraphContext } from '../../../../Context/GraphContext';
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
 import { DatabaseContext } from '../../../../Database/Database';
 import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry';
@@ -35,7 +36,7 @@ import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
-import ChartCard, { ChartData } from './Components/ChartCard';
+import ChartCard from './Components/ChartCard';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
@@ -49,12 +50,10 @@ export default function TabBuild() {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
+  const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
-
-  const [chartData, setchartData] = useState(undefined as ChartData | undefined)
-  const [graphBuilds, setGraphBuilds] = useState<string[][]>()
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
@@ -69,8 +68,6 @@ export default function TabBuild() {
 
   // Clear state when changing characters
   useEffect(() => {
-    setchartData(undefined)
-    setGraphBuilds(undefined)
     setBuildStatus({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 })
   }, [characterKey])
 
@@ -132,7 +129,7 @@ export default function TabBuild() {
       return { value: input.total[key], minimum: value }
     }).filter(x => x.value && x.minimum > -Infinity)
 
-    setchartData(undefined)
+    setChartData(undefined)
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
@@ -287,7 +284,7 @@ export default function TabBuild() {
           data = data.map(({ value, plot, artifactIds }) => ({ value: value * 100, plot, artifactIds })) as Build[]
         if (plotBaseNumNode.info?.unit === "%")
           data = data.map(({ value, plot, artifactIds }) => ({ value, plot: (plot ?? 0) * 100, artifactIds })) as Build[]
-        setchartData({
+        setChartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
           data
@@ -298,14 +295,14 @@ export default function TabBuild() {
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority])
+  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority, setChartData])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
   const setPlotBase = useCallback(plotBase => {
     buildSettingDispatch({ plotBase })
-    setchartData(undefined)
-  }, [buildSettingDispatch])
+    setChartData(undefined)
+  }, [buildSettingDispatch, setChartData])
   const dataContext: dataContextObj | undefined = useMemo(() => {
     return data && teamData && { data, teamData }
   }, [data, teamData])
@@ -437,7 +434,7 @@ export default function TabBuild() {
 
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
-        <ChartCard disabled={generatingBuilds || !optimizationTarget} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} graphBuilds={graphBuilds} setGraphBuilds={setGraphBuilds} />
+        <ChartCard disabled={generatingBuilds || !optimizationTarget} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} />
       </Box>
       <CardLight>
         <CardContent>
