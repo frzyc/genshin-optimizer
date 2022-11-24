@@ -25,14 +25,14 @@ type NewOld = {
 }
 
 type BuildDisplayItemProps = {
-  index?: number,
+  label?: string,
   compareBuild: boolean,
   disabled?: boolean,
   extraButtonsRight?: JSX.Element,
   extraButtonsLeft?: JSX.Element,
 }
 //for displaying each artifact build
-export default function BuildDisplayItem({ index, compareBuild, extraButtonsRight, extraButtonsLeft, disabled }: BuildDisplayItemProps) {
+export default function BuildDisplayItem({ label, compareBuild, extraButtonsRight, extraButtonsLeft, disabled }: BuildDisplayItemProps) {
   const { character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
   const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
@@ -85,7 +85,7 @@ export default function BuildDisplayItem({ index, compareBuild, extraButtonsRigh
       {newOld && <CompareArtifactModal newOld={newOld} mainStatAssumptionLevel={mainStatAssumptionLevel} onClose={close} />}
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
-          {index !== undefined && <SqBadge color="info"><Typography><strong>#{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
+          {label !== undefined && <SqBadge color="info"><Typography><strong>{label}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
           <ArtifactSetBadges artifacts={artifacts} currentlyEquipped={currentlyEquipped} />
           <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-end" }}>
           </Box>

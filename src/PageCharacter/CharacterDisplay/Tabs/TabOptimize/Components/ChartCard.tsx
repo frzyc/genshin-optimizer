@@ -31,6 +31,8 @@ type ChartCardProps = {
   chartData?: ChartData
   plotBase?: string[]
   setPlotBase: (path: string[] | undefined) => void
+  graphBuilds: string[][] | undefined
+  setGraphBuilds: (builds: string[][] | undefined) => void
   disabled?: boolean
   showTooltip?: boolean
 }
@@ -40,7 +42,7 @@ type Point = {
   artifactIds: string[]
   min?: number
 }
-export default function ChartCard({ chartData, plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
+export default function ChartCard({ chartData, plotBase, setPlotBase, graphBuilds, setGraphBuilds, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
   const { data } = useContext(DataContext)
   const [showDownload, setshowDownload] = useState(false)
@@ -133,7 +135,7 @@ export default function ChartCard({ chartData, plotBase, setPlotBase, disabled =
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
+      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} graphBuilds={graphBuilds} setGraphBuilds={setGraphBuilds} />
     </CardContent>}
   </CardLight >
 }
@@ -150,17 +152,21 @@ function DataDisplay({ data, }: { data?: object }) {
     target.selectionEnd = target.value.length;
   }} />
 }
-function Chart({ displayData, plotNode, valueNode, showMin }: {
+
+function Chart({ displayData, plotNode, valueNode, showMin, graphBuilds, setGraphBuilds }: {
   displayData: Point[]
   plotNode: NumNode
   valueNode: NumNode
   showMin: boolean
+  graphBuilds: string[][] | undefined
+  setGraphBuilds: (builds: string[][] | undefined) => void
 }) {
   const { t } = useTranslation("page_character_optimize")
   const [selectedPoint, setSelectedPoint] = useState<Point>()
-  const chartOnClick = useCallback((props) => {
+  const chartOnClick = useCallback(props => {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
   }, [setSelectedPoint, displayData])
+  const addBuildToList = useCallback((build: string[]) => setGraphBuilds([build, ...(graphBuilds ?? [])]), [setGraphBuilds, graphBuilds])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
@@ -199,6 +205,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
           yUnit={valueNode.info?.unit}
           selectedPoint={selectedPoint}
           setSelectedPoint={setSelectedPoint}
+          addBuildToList={addBuildToList}
         />}
         trigger="click"
         wrapperStyle={{ pointerEvents: "auto", cursor: "auto" }}
@@ -298,8 +305,9 @@ type CustomTooltipProps = TooltipProps<number, string> & {
   yUnit: Unit | undefined
   selectedPoint: Point | undefined
   setSelectedPoint: (pt: Point | undefined) => void
+  addBuildToList: (build: string[]) => void
 }
-function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, ...tooltipProps }: CustomTooltipProps) {
+function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, addBuildToList, ...tooltipProps }: CustomTooltipProps) {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const { t } = useTranslation("artifact")
@@ -342,6 +350,7 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
           </Grid>
           <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
           <Typography>{yLabel}: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
+          <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>TODO: Translate Add Build To List</Button>
         </Stack>
       </CardContent>
     </CardDark>

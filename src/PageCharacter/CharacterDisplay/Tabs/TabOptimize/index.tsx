@@ -1,4 +1,4 @@
-import { CheckBox, CheckBoxOutlineBlank, Close, Science, TrendingUp } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -19,7 +19,7 @@ import { mergeData, uiDataForTeam } from '../../../../Formula/api';
 import { uiInput as input } from '../../../../Formula/index';
 import { optimize } from '../../../../Formula/optimization';
 import { NumNode } from '../../../../Formula/type';
-import { NodeDisplay, UIData } from '../../../../Formula/uiData';
+import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
@@ -54,6 +54,7 @@ export default function TabBuild() {
   const generatingBuilds = buildStatus.type !== "inactive"
 
   const [chartData, setchartData] = useState(undefined as ChartData | undefined)
+  const [graphBuilds, setGraphBuilds] = useState<string[][]>()
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
@@ -69,6 +70,7 @@ export default function TabBuild() {
   // Clear state when changing characters
   useEffect(() => {
     setchartData(undefined)
+    setGraphBuilds(undefined)
     setBuildStatus({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 })
   }, [characterKey])
 
@@ -363,7 +365,7 @@ export default function TabBuild() {
             onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
             disabled={generatingBuilds}
           >
-              {t`allowPartial`}
+            {t`allowPartial`}
           </Button>
           { /* Level Filter */}
           <CardLight>
@@ -435,7 +437,7 @@ export default function TabBuild() {
 
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
-        <ChartCard disabled={generatingBuilds || !optimizationTarget} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} />
+        <ChartCard disabled={generatingBuilds || !optimizationTarget} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} graphBuilds={graphBuilds} setGraphBuilds={setGraphBuilds} />
       </Box>
       <CardLight>
         <CardContent>
@@ -458,18 +460,29 @@ export default function TabBuild() {
         </CardContent>
       </CardLight>
       <OptimizationTargetContext.Provider value={optimizationTarget}>
-        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} />
+        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => `Graph #${index + 1}`} setBuilds={setGraphBuilds} />}
+        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => `#${index + 1}`} />
       </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
 }
-function BuildList({ builds, characterKey, data, compareData, disabled }: {
-  builds: string[][],
-  characterKey?: "" | CharacterKey,
-  data?: UIData,
-  compareData: boolean,
-  disabled: boolean,
+function BuildList({ builds, setBuilds, characterKey, data, compareData, disabled, getLabel }: {
+  builds: string[][]
+  setBuilds?: (builds: string[][] | undefined) => void
+  characterKey?: "" | CharacterKey
+  data?: UIData
+  compareData: boolean
+  disabled: boolean
+  getLabel: (index: number) => string
 }) {
+  const deleteBuild = useCallback((index: number) => {
+    if (setBuilds) {
+      const builds_ = [...builds]
+      builds_.splice(index, 1)
+      setBuilds(builds_)
+    }
+  },
+  [builds, setBuilds])
   // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
     {builds?.map((build, index) => characterKey && data && <DataContextWrapper
@@ -478,17 +491,19 @@ function BuildList({ builds, characterKey, data, compareData, disabled }: {
       build={build}
       oldData={data}
     >
-      <BuildItemWrapper index={index} build={build} compareData={compareData} disabled={disabled} />
+      <BuildItemWrapper index={index} label={getLabel(index)} build={build} compareData={compareData} disabled={disabled} deleteBuild={setBuilds ? deleteBuild : undefined} />
     </DataContextWrapper>
     )}
-  </Suspense>, [builds, characterKey, data, compareData, disabled])
+  </Suspense>, [builds, characterKey, data, compareData, disabled, getLabel, deleteBuild, setBuilds])
   return list
 }
-function BuildItemWrapper({ index, build, compareData, disabled }: {
+function BuildItemWrapper({ index, label, build, compareData, disabled, deleteBuild }: {
   index: number
-  build: string[],
-  compareData: boolean,
-  disabled: boolean,
+  label: string
+  build: string[]
+  compareData: boolean
+  disabled: boolean
+  deleteBuild?: (index: number) => void
 }) {
   const location = useLocation()
   const navigate = useNavigate()
@@ -498,8 +513,12 @@ function BuildItemWrapper({ index, build, compareData, disabled }: {
     navigate(`${paths.join("/")}/theorycraft`, { state: { build } })
   }, [navigate, build, location.pathname])
 
-  return <BuildDisplayItem index={index} compareBuild={compareData} disabled={disabled}
-    extraButtonsLeft={<Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>} />
+  return <BuildDisplayItem label={label} compareBuild={compareData} disabled={disabled}
+    extraButtonsLeft={<>
+      <Button color="info" size="small" startIcon={<Science />} onClick={toTC}>Theorycraft</Button>
+      {deleteBuild && <Button color="error" size="small" startIcon={<DeleteForever />} onClick={() => deleteBuild(index)}>TODO TRANSLATE Remove Build</Button>}
+    </>}
+  />
 }
 
 type Prop = {
