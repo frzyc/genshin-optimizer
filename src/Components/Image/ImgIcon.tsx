@@ -7,7 +7,7 @@ const ImgIcon = styled("img", {
   slot: 'Root',
 })<ImgIconProps>(({ size = 1 }) => ({
   display: "inline-block",
-  width: "auto",
+  width: `${size * 1.2}em`,
   height: `${size * 1.2}em`,
   verticalAlign: "text-bottom"
 }))
