@@ -35,7 +35,7 @@ const dm = {
   skill: {
     screenHpMod: skillParam_gen.skill[s++], // 100% + skillParam_gen.skill[s++] * 100
     skillDmg: skillParam_gen.skill[s++],
-    screenHp: skillParam_gen.skill[s++], //screenHp * 100%
+    screenHp: skillParam_gen.skill[s++], // screenHp * 100%
     cd: skillParam_gen.skill[s++][0],
   },
   burst: {
@@ -49,14 +49,14 @@ const dm = {
   },
 } as const
 
-const [condA4Path, condA4] = cond(key, "Ascension4") //12% Geo DMG bonus after passing through the Jade Screen
+const [condA4Path, condA4] = cond(key, "Ascension4") // 12% Geo DMG bonus after passing through the Jade Screen
 const [condC4Path, condC4] = cond(key, "Constellation4")
 
-const nodeA4GeoDmgBonus_ = equal(condA4, "on", percent(dm.passive2.geoDmgBonus_), { name: ct.chg("a4bonus_") })
+const nodeA4GeoDmgBonus_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(dm.passive2.geoDmgBonus_)))
 
 const nodesC4 = Object.fromEntries(allElements.map(ele => [
   `${ele}_res_`,
-  equal(condC4, "on", percent(0.10))
+  greaterEq(input.constellation, 4, equal(condC4, "on", percent(0.10)))
 ]))
 
 const dmgFormulas = {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: nodeA4GeoDmgBonus_
           }, {
-            text: ct.ch("a4duration"),
+            text: stg("duration"),
             value: dm.passive2.duration,
             unit: "s"
           }]

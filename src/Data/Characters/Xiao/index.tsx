@@ -98,12 +98,12 @@ const infusion = equalStr("inBurst", condInBurst, elementKey)
 
 const [condA1BurstStackPath, condA1BurstStack] = cond(key, "a1BurstStack")
 const a1BurstStackArr = range(0, 4)
-const all_dmg_ = equal("inBurst", condInBurst,
+const all_dmg_ = greaterEq(input.asc, 1, equal("inBurst", condInBurst,
   lookup(condA1BurstStack,
     Object.fromEntries(a1BurstStackArr.map(i => [i, prod(dm.passive1.dmgBonus, i + 1)])),
     naught
   )
-)
+))
 
 const [condA4SkillStackPath, condA4SkillStack] = cond(key, "a4SkillStack")
 const a4SkillStackArr = range(1, dm.passive2.maxStacks)

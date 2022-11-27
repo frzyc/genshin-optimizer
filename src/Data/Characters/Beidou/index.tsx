@@ -82,10 +82,10 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 const skillDmgOneHit = dm.skill.dmgBase.map((dmg, i) => dmg + dm.skill.onHitDmgBonus[i])
 const skillDmgTwoHits = dm.skill.dmgBase.map((dmg, i) => dmg + 2 * dm.skill.onHitDmgBonus[i])
 
-const nodeBurstElectroResRed_ = equal(condC6, "on", percent(dm.constellation6.electroResShred_), { name: ct.ch("baneOfEvil_"), unit: "%" })
-const nodeSkillNormalDmg_ = equal(condA4, "on", percent(dm.ascension4.normalDmg_), { name: ct.ch("a4normalDmg_"), unit: "%" })
-const nodeSkillChargeDmg_ = equal(condA4, "on", percent(dm.ascension4.chargeDmg_), { name: ct.ch("a4chargeDmg_"), unit: "%" })
-const nodeSkillAttackSpeed_ = equal(condA4, "on", percent(dm.ascension4.attackSpeed), { name: ct.ch("a4atkSpeed_"), unit: "%" })
+const nodeBurstElectroResRed_ = greaterEq(input.constellation, 6, equal(condC6, "on", percent(dm.constellation6.electroResShred_)))
+const nodeSkillNormalDmg_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(dm.ascension4.normalDmg_)))
+const nodeSkillChargeDmg_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(dm.ascension4.chargeDmg_)))
+const nodeSkillAttackSpeed_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(dm.ascension4.attackSpeed)))
 
 const skillShieldNode = shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill")
 const c1ShieldNode = shieldNode("hp", percent(dm.constellation1.shieldHp_), 0)
@@ -123,11 +123,13 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   bonus: {
     skill: nodeC3,
     burst: nodeC5,
-  }, customBonus: {
+  },
+  premod: {
     normal_dmg_: nodeSkillNormalDmg_,
     charged_dmg_: nodeSkillChargeDmg_,
     atkSPD_: nodeSkillAttackSpeed_,
-  }, teamBuff: {
+  },
+  teamBuff: {
     premod: {
       electro_enemyRes_: nodeBurstElectroResRed_
     }
@@ -208,7 +210,7 @@ const sheet: ICharacterSheet = {
           }, {
             node: nodeSkillAttackSpeed_,
           }, {
-            text: ct.ch("a4duration"),
+            text: stg("duration"),
             value: 10,
             unit: "s"
           }, {

@@ -72,11 +72,11 @@ const dm = {
 
 const burst_critRate_ = greaterEq(input.asc, 1, percent(dm.passive1.critRateInc))
 const [condA4Path, condA4] = cond(key, "A4")
-const atk_ = equal("on", condA4, percent(dm.passive2.atkInc))
+const atk_ = greaterEq(input.asc, 4, equal("on", condA4, percent(dm.passive2.atkInc)))
 
 const [condC6Path, condC6] = cond(key, "C6")
-const moveSPD_ = equal("on", condC6, percent(dm.constellation6.moveSpdInc))
-const teamAtk_ = equal("on", condC6, percent(dm.constellation6.atkInc))
+const moveSPD_ = greaterEq(input.constellation, 6, equal("on", condC6, percent(dm.constellation6.moveSpdInc)))
+const teamAtk_ = greaterEq(input.constellation, 6, equal("on", condC6, percent(dm.constellation6.atkInc)))
 
 const dmgFormulas = {
   normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
