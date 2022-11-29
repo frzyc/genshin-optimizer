@@ -45,10 +45,10 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
   if (tooltipProps.active && selectedPoint) {
     return <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
       <CardContent>
-        <Stack spacing={1}>
-          {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
-          <Stack direction="row" alignItems="start">
-            <Stack spacing={0.5}>
+        <Stack gap={1}>
+          <Stack direction="row" alignItems="start" gap={1}>
+            <Stack spacing={0.5} flexGrow={99}>
+              {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
               <Suspense fallback={<Skeleton width={300} height={50} />}>
                 <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
               </Suspense>
