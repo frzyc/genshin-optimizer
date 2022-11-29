@@ -38,7 +38,7 @@ export function TargetSelectorModal({ show, onClose, setTarget, showEmptyTargets
       })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
       // Determine if a section has all empty entries
       .filter(([_key, sectionObj]) => Object.keys(sectionObj).length)
-  }, [data, excludeSections, flatOnly, showEmptyTargets])
+  }, [data, excludeSections, flatOnly, showEmptyTargets, excludeHeal])
 
   return <ModalWrapper open={show} onClose={onClose}>
     <CardDark>
