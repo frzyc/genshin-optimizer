@@ -2,7 +2,7 @@ import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-mat
 import { Button, CardContent, Collapse, Divider, Grid, Skeleton, Stack, styled, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, Line, ResponsiveContainer, Scatter, ScatterChart, Tooltip, TooltipProps, XAxis, YAxis, ZAxis } from 'recharts';
+import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, TooltipProps, XAxis, YAxis } from 'recharts';
 import ArtifactCardPico from '../../../../../Components/Artifact/ArtifactCardPico';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
@@ -24,17 +24,29 @@ import useBuildResult from '../useBuildResult';
 import { ArtifactSetBadges } from './ArtifactSetBadges';
 import OptimizationTargetSelector from './OptimizationTargetSelector';
 
-type ChartCardProps = {
-  plotBase?: string[]
-  setPlotBase: (path: string[] | undefined) => void
-  disabled?: boolean
-  showTooltip?: boolean
-}
 type Point = {
   x: number
   y: number
   artifactIds: string[]
   min?: number
+}
+type EnhancedPoint = {
+  x: number
+  y?: number
+  artifactIds: string[]
+  min?: number
+  current?: number
+  highlighted?: number
+}
+function getEnhancedPointY(pt: EnhancedPoint) {
+  return (pt.y || pt.current || pt.highlighted) as number
+}
+
+type ChartCardProps = {
+  plotBase?: string[]
+  setPlotBase: (path: string[] | undefined) => void
+  disabled?: boolean
+  showTooltip?: boolean
 }
 export default function ChartCard({ plotBase, setPlotBase, disabled = false, showTooltip = false }: ChartCardProps) {
   const { t } = useTranslation(["page_character_optimize", "ui"])
@@ -148,6 +160,10 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 
+const optTargetColor = "#8884d8"
+const highlightedColor = "cyan"
+const currentColor = "green"
+const lineColor = "#ff7300"
 function Chart({ displayData, plotNode, valueNode, showMin }: {
   displayData: Point[]
   plotNode: NumNode
@@ -159,43 +175,48 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildResult: { builds } } = useBuildResult(characterKey)
   const { t } = useTranslation("page_character_optimize")
-  const [selectedPoint, setSelectedPoint] = useState<Point>()
-  const chartOnClick = useCallback(props => {
-    if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
-  }, [setSelectedPoint, displayData])
+  const [selectedPoint, setSelectedPoint] = useState<EnhancedPoint>()
   const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
-  const { currentData, highlightedData, restData } = useMemo(() => {
-    const currentData: Point[] = [], highlightedData: Point[] = [], restData: Point[] = []
-    const currentBuild = allSlotKeys.map(slotKey => data.get(input.art[slotKey].id).value ?? "")
+  // Convert from Point -> EnhancedPoint so we can get data for current and highlighted builds
+  const enhancedDisplayData = useMemo(() => {
+    // const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
+    const currentBuild = allSlotKeys.map(slotKey => data?.get(input.art[slotKey].id).value ?? "")
     const highlightedBuilds = [...builds, ...(graphBuilds ?? [])]
 
-    for (const datum of displayData) {
-      const isCurrentBuild = currentBuild.every(artiId => datum.artifactIds.includes(artiId))
+    return displayData.map((datum: EnhancedPoint) => {
+      // TODO: Need to redo this checking. There is currently no handling of a build with multiple empty slots
+      // Also there is a weird bug when you try to add a build to a list with any empty slots?
+      const datumArtiMap = {}
+      datum.artifactIds.forEach(artiId => datumArtiMap[artiId] = true)
+      const isCurrentBuild = currentBuild.every(artiId => datumArtiMap[artiId])
       if (isCurrentBuild) {
-        currentData.push(datum)
-        continue
+        datum.current = getEnhancedPointY(datum)
+        // Remove the Y-value so there are not 2 dots displayed for these builds
+        datum.y = undefined
+        return datum
       }
 
       const isHighlightedBuild = highlightedBuilds.some(artiIds =>
-        artiIds.every(artiId => datum.artifactIds.includes(artiId))
+        artiIds.every(artiId => datumArtiMap[artiId])
       )
       if (isHighlightedBuild) {
-        highlightedData.push(datum)
-        continue
+        datum.highlighted = getEnhancedPointY(datum)
+        // Remove the Y-value so there are not 2 dots displayed for these builds
+        datum.y = undefined
       }
-
-      restData.push(datum)
-    }
-
-    return { currentData, highlightedData, restData }
-  }, [data, displayData, builds, graphBuilds])
+      return datum
+    })
+  }, [displayData, data, builds, graphBuilds])
+  const chartOnClick = useCallback(props => {
+    if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, enhancedDisplayData))
+  }, [setSelectedPoint, displayData])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
   const yLabelValue = getLabelFromNode(valueNode, t)
 
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={displayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
+    <ComposedChart data={enhancedDisplayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis
         dataKey="x"
@@ -218,7 +239,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         label={<Label fill="white" angle={-90} dx={-40}>{yLabelValue}</Label>}
         width={100}
       />
-      <ZAxis dataKey="y" range={[3, 25]} />
       <Tooltip
         content={<CustomTooltip
           xLabel={xLabelValue}
@@ -233,48 +253,50 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         wrapperStyle={{ pointerEvents: "auto", cursor: "auto" }}
         cursor={false}
       />
-      <Legend />
+      <Legend payload={[
+        ...(showMin ? [{ id: "min", value: t`tcGraph.minStatReqThr`, type: "line" as LegendType, color: lineColor }] : []),
+        { id: "y", value: t`tcGraph.optTarget`, type: "circle", color: optTargetColor },
+        { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
+        { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
+      ]}/>
       {showMin && <Line
         name={t`tcGraph.minStatReqThr`}
         dataKey="min"
-        stroke="#ff7300"
+        stroke={lineColor}
         type="stepBefore"
         connectNulls
         strokeWidth={2}
         isAnimationActive={false}
-        dot={<CustomDot selectedPoint={selectedPoint} colorUnselected="#ff7300" />}
+        dot={<CustomDot selectedPoint={selectedPoint} colorUnselected={lineColor} />}
         activeDot={false}
       />}
       <Scatter
         name={t`tcGraph.optTarget`}
         dataKey="y"
-        fill="#8884d8"
+        fill={optTargetColor}
         isAnimationActive={false}
-        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="#8884d8" />}
-        data={restData}
+        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected={optTargetColor} />}
       />
       <Scatter
         name={t`tcGraph.highlightedBuilds`}
-        dataKey="y"
-        fill="cyan"
+        dataKey="highlighted"
+        fill={highlightedColor}
         isAnimationActive={false}
-        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="cyan" />}
-        data={highlightedData}
+        shape={<CustomDot shape="square" selectedPoint={selectedPoint} colorUnselected={highlightedColor} />}
       />
       <Scatter
         name={t`tcGraph.currentBuild`}
-        dataKey="y"
-        fill="lightgreen"
+        dataKey="current"
+        fill={currentColor}
         isAnimationActive={false}
-        shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="lightgreen" />}
-        data={currentData}
+        shape={<CustomDot shape="diamond" selectedPoint={selectedPoint} colorUnselected={currentColor} />}
       />
       <Brush height={30} gap={5}/>
     </ComposedChart>
   </ResponsiveContainer>
 }
 
-function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: Point[]) {
+function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: EnhancedPoint[]) {
   const nearestDomPtData = Array.from(document.querySelectorAll(".custom-dot"))
     .reduce((domPtA, domPtB) => {
       const { chartX: aChartX, chartY: aChartY } = (domPtA as any).dataset
@@ -289,7 +311,7 @@ function getNearestPoint(clickedX: number, clickedY: number, threshold: number, 
   // Don't select a point too far away
   const distance = Math.sqrt((clickedX - nearestDomPtData.chartX) ** 2 + (clickedY - nearestDomPtData.chartY) ** 2)
   return distance < threshold
-    ? data.find(d => d.x === +nearestDomPtData.xValue && d.y === +nearestDomPtData.yValue)
+    ? data.find(d => d.x === +nearestDomPtData.xValue && getEnhancedPointY(d) === +nearestDomPtData.yValue)
     : undefined
 }
 
@@ -299,18 +321,23 @@ function getLabelFromNode(node: NumNode, t: any) {
     : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
 }
 
+type CustomShapeType = "circle" | "diamond" | "square"
 type CustomDotProps = DotProps & {
-  selectedPoint: Point | undefined
-  payload?: Point
+  selectedPoint: EnhancedPoint | undefined
+  payload?: EnhancedPoint
   radiusSelected?: number
   radiusUnselected?: number
   colorSelected?: string
   colorUnselected: string
+  shape?: CustomShapeType
 }
-function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected }: CustomDotProps) {
-  if (!cx || !cy || !payload) return null
+function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected, shape = "circle" }: CustomDotProps) {
+  if (!cx || !cy || !payload) {
+    return null
+  }
 
-  const isSelected = selectedPoint && selectedPoint.x === payload.x && selectedPoint.y === payload.y;
+  const isSelected = selectedPoint && selectedPoint.x === payload.x
+    && getEnhancedPointY(selectedPoint) === getEnhancedPointY(payload)
 
   return (
     <g
@@ -318,18 +345,28 @@ function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusU
       data-chart-x={cx}
       data-chart-y={cy}
       data-x-value={payload.x}
-      data-y-value={payload.y}
+      data-y-value={getEnhancedPointY(payload)}
       data-radius={isSelected ? radiusUnselected : radiusSelected}
     >
       {!isSelected
-        ? <circle cx={cx} cy={cy} r={radiusUnselected} fill={colorUnselected} />
+        ? <CustomShape shape={shape} cx={cx} cy={cy} r={radiusUnselected} fill={colorUnselected} />
         : <>
-          <circle cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
-          <circle cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
+          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
+          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
         </>
       }
     </g>
   )
+}
+function CustomShape({ shape, cx, cy, r, fill, stroke}: { shape: CustomShapeType, cx: number, cy: number, r: number, fill?: string, stroke?: string }) {
+  switch(shape) {
+    case "circle":
+      return <circle cx={cx} cy={cy} r={r} fill={fill} stroke={stroke} />
+    case "square":
+      return <rect x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} />
+    case "diamond":
+      return <rect x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} transform={`rotate(45, ${cx}, ${cy})`} />
+  }
 }
 
 type CustomTooltipProps = TooltipProps<number, string> & {
@@ -337,8 +374,8 @@ type CustomTooltipProps = TooltipProps<number, string> & {
   xUnit: Unit | undefined
   yLabel: Displayable
   yUnit: Unit | undefined
-  selectedPoint: Point | undefined
-  setSelectedPoint: (pt: Point | undefined) => void
+  selectedPoint: EnhancedPoint | undefined
+  setSelectedPoint: (pt: EnhancedPoint | undefined) => void
   addBuildToList: (build: string[]) => void
 }
 function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, addBuildToList, ...tooltipProps }: CustomTooltipProps) {
@@ -383,7 +420,7 @@ function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelecte
             )}
           </Grid>
           <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
-          <Typography>{yLabel}: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
+          <Typography>{yLabel}: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
           <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
         </Stack>
       </CardContent>
