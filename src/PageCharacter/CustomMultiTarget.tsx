@@ -273,7 +273,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
     <Box sx={{ p: 1, flexGrow: 1 }} >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { pl: 0.5, width: "2em" }, min: 0 }} />
-        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} ignoreGlobal targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
+        <OptimizationTargetSelector optimizationTarget={path} setTarget={path => setCustomTarget({ ...customTarget, path, reaction: undefined, infusionAura: undefined })} showEmptyTargets targetSelectorModalProps={{ flatOnly: true, excludeSections: ["basic", "custom"] }} />
         <Box sx={{ flexGrow: 1 }} />
         {node && <ReactionDropdown reaction={reaction} setReactionMode={(rm) => setCustomTarget({ ...customTarget, reaction: rm })} node={node} infusionAura={infusionAura} />}
         <DropdownButton title={t(`hitmode.${hitMode}`)}>
@@ -332,7 +332,7 @@ function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[], m?: number
 
   return <>
     <Button fullWidth onClick={onShow} startIcon={<Add />} sx={{ mb: 1 }}>{t`multiTarget.addNewTarget`}</Button>
-    <TargetSelectorModal ignoreGlobal flatOnly show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
+    <TargetSelectorModal showEmptyTargets flatOnly excludeHeal show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
   </>
 }
 const TextArea = styled("textarea")({

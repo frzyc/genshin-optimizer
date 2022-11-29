@@ -13,8 +13,8 @@ import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
 
-export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, ignoreGlobal = false, defaultText, targetSelectorModalProps = {} }: {
-  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, ignoreGlobal?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
+export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, showEmptyTargets = false, defaultText, targetSelectorModalProps = {} }: {
+  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, showEmptyTargets?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
 }) {
   const { t } = useTranslation("page_character_optimize")
   const [show, onShow, onClose] = useBoolState(false)
@@ -37,7 +37,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 
   const invalidTarget = !optimizationTarget || !displayHeader || !node
     // Make sure the opt target is valid, if we are not in multi-target
-    || (!ignoreGlobal && node.isEmpty)
+    || (!showEmptyTargets && node.isEmpty)
 
   const prevariant = invalidTarget ? "secondary" : node.info.variant
   const variant = prevariant === "invalid" ? undefined : prevariant
@@ -58,6 +58,6 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
         </Box>
       </Stack>}
     </Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />
+    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} showEmptyTargets={showEmptyTargets} {...targetSelectorModalProps} />
   </>
 }
