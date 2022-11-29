@@ -164,38 +164,30 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
   }, [setSelectedPoint, displayData])
   const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
-  const { currentDatum, selectedData, restData } = useMemo(() => {
-    const currentDatum = displayData.find(pt =>
-      allSlotKeys.every(slotKey =>
-        pt.artifactIds.some(id =>
-          id === data.get(input.art[slotKey].id).value
-        )
+  const { currentData, highlightedData, restData } = useMemo(() => {
+    const currentData: Point[] = [], highlightedData: Point[] = [], restData: Point[] = []
+    const currentBuild = allSlotKeys.map(slotKey => data.get(input.art[slotKey].id).value ?? "")
+    const highlightedBuilds = [...builds, ...(graphBuilds ?? [])]
+
+    for (const datum of displayData) {
+      const isCurrentBuild = currentBuild.every(artiId => datum.artifactIds.includes(artiId))
+      if (isCurrentBuild) {
+        currentData.push(datum)
+        continue
+      }
+
+      const isHighlightedBuild = highlightedBuilds.some(artiIds =>
+        artiIds.every(artiId => datum.artifactIds.includes(artiId))
       )
-    )
-    const allBuilds = [...builds, ...(graphBuilds ?? [])]
-    const selectedData = displayData
-      .filter(pt => {
-        let isCurrentDatum = true
-        const isSelectedData = allBuilds.map(_ => true)
-        pt.artifactIds.forEach(id => {
-          if (!currentDatum?.artifactIds.includes(id)) isCurrentDatum = false
-          allBuilds.forEach((artiIds, index) => {
-            if (!isSelectedData[index]) return
-            if (!artiIds.includes(id)) isSelectedData[index] = false
-          })
-        })
-        if (isCurrentDatum) return false
-        return isSelectedData.some(selected => selected)
-      })
-    const restData = displayData.filter(pt =>
-      pt.artifactIds.some(id =>
-        !currentDatum?.artifactIds.includes(id)
-        && selectedData.every(datum =>
-          !datum.artifactIds.includes(id)
-        )
-      )
-    )
-    return { currentDatum, selectedData, restData }
+      if (isHighlightedBuild) {
+        highlightedData.push(datum)
+        continue
+      }
+
+      restData.push(datum)
+    }
+
+    return { currentData, highlightedData, restData }
   }, [data, displayData, builds, graphBuilds])
 
   // Below works because character translation should already be loaded
@@ -267,7 +259,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         fill="cyan"
         isAnimationActive={false}
         shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="cyan" />}
-        data={selectedData}
+        data={highlightedData}
       />
       <Scatter
         name={t`tcGraph.currentBuild`}
@@ -275,7 +267,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         fill="lightgreen"
         isAnimationActive={false}
         shape={<CustomDot selectedPoint={selectedPoint} colorUnselected="lightgreen" />}
-        data={[currentDatum]}
+        data={currentData}
       />
       <Brush height={30} gap={5}/>
     </ComposedChart>
