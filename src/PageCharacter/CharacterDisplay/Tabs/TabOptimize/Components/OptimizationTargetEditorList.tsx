@@ -77,7 +77,7 @@ function OptimizationTargetEditorItem({ path, setting, setTarget, delTarget, set
     {!!setting && !!path && <Button sx={buttonStyle} color={setting.disabled ? "secondary" : "success"} onClick={() => setDisabled(path, !setting.disabled)} disabled={disabled}>
       {setting.disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
     </Button>}
-    <OptimizationTargetSelector ignoreGlobal optimizationTarget={path} setTarget={setTarget} defaultText={t("targetSelector.selectBuildTarget")} />
+    <OptimizationTargetSelector showEmptyTargets optimizationTarget={path} setTarget={setTarget} defaultText={t("targetSelector.selectBuildTarget")} />
     <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
       <CustomNumberInput
         float
