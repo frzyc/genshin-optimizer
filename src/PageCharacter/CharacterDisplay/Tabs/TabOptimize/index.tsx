@@ -443,13 +443,13 @@ export default function TabBuild() {
               {builds ? <span>Showing <strong>{builds.length + (graphBuilds ? graphBuilds.length : 0)}</strong> build generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
                 : <span>Select a character to generate builds.</span>}
             </Typography>
-            <Button disabled={!builds.length} color="error" onClick={() => buildResultDispatch({ builds: [], buildDate: 0 })} >Clear Builds</Button>
+            <Button disabled={!builds.length} color="error" onClick={() => { setGraphBuilds(undefined); buildResultDispatch({ builds: [], buildDate: 0 }) }} >Clear Builds</Button>
           </Box>
           <Grid container display="flex" spacing={1}>
             <Grid item><HitModeToggle size="small" /></Grid>
             <Grid item><ReactionToggle size="small" /></Grid>
             <Grid item flexGrow={1} />
-            <Grid item><SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
+            <Grid item><SolidToggleButtonGroup exclusive value={compareData} onChange={(_e, v) => characterDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>Show new builds</ToggleButton>
               <ToggleButton value={true} disabled={compareData}>Compare vs. equipped</ToggleButton>
             </SolidToggleButtonGroup></Grid>

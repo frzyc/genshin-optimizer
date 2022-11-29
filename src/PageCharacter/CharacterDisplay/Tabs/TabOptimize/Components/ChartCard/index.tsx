@@ -169,7 +169,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
     const highlightedBuilds = [...builds, ...(graphBuilds ?? [])]
 
     return displayData.map(datum => {
-      // TODO: Also there is a weird bug when you try to add a build to a list with any empty slots?
       const enhancedDatum: EnhancedPoint = {...datum}
       const datumSlotMap = convertArtiIdsToArtiSlotMap(datum.artifactIds, database)
 
@@ -245,7 +244,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
       ]}/>
-      {/* TODO: This line disappears strangely with the Brush */}
       {showMin && <Line
         name={t`tcGraph.minStatReqThr`}
         dataKey="min"
