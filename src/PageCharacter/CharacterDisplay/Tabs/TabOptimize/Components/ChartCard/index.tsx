@@ -1,47 +1,32 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, Skeleton, Stack, styled, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
+import { useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Brush, CartesianGrid, ComposedChart, DotProps, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, TooltipProps, XAxis, YAxis } from 'recharts';
-import ArtifactCardPico from '../../../../../Components/Artifact/ArtifactCardPico';
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
-import CardDark from '../../../../../Components/Card/CardDark';
-import CardLight from '../../../../../Components/Card/CardLight';
-import CloseButton from '../../../../../Components/CloseButton';
-import InfoTooltip from '../../../../../Components/InfoTooltip';
-import SqBadge from '../../../../../Components/SqBadge';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
-import { DataContext } from '../../../../../Context/DataContext';
-import { GraphContext } from '../../../../../Context/GraphContext';
-import { DatabaseContext } from '../../../../../Database/Database';
-import { input } from '../../../../../Formula';
-import { NumNode } from '../../../../../Formula/type';
-import { Unit, valueString } from '../../../../../KeyMap';
-import { ICachedArtifact } from '../../../../../Types/artifact';
-import { allSlotKeys } from '../../../../../Types/consts';
-import { objPathValue } from '../../../../../Util/Util';
-import useBuildResult from '../useBuildResult';
-import { ArtifactSetBadges } from './ArtifactSetBadges';
-import OptimizationTargetSelector from './OptimizationTargetSelector';
+import { Brush, CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
+import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip';
+import CardDark from '../../../../../../Components/Card/CardDark';
+import CardLight from '../../../../../../Components/Card/CardLight';
+import InfoTooltip from '../../../../../../Components/InfoTooltip';
+import { CharacterContext } from '../../../../../../Context/CharacterContext';
+import { DataContext } from '../../../../../../Context/DataContext';
+import { GraphContext } from '../../../../../../Context/GraphContext';
+import { ArtCharDatabase, DatabaseContext } from '../../../../../../Database/Database';
+import { input } from '../../../../../../Formula';
+import { NumNode } from '../../../../../../Formula/type';
+import { allSlotKeys, SlotKey } from '../../../../../../Types/consts';
+import { objectKeyValueMap, objPathValue } from '../../../../../../Util/Util';
+import useBuildResult from '../../useBuildResult';
+import OptimizationTargetSelector from '../OptimizationTargetSelector';
+import CustomDot from './CustomDot';
+import CustomTooltip from './CustomTooltip';
+import { EnhancedPoint, getEnhancedPointY } from './EnhancedPoint';
 
-type Point = {
+export type Point = {
   x: number
   y: number
   artifactIds: string[]
   min?: number
 }
-type EnhancedPoint = {
-  x: number
-  y?: number
-  artifactIds: string[]
-  min?: number
-  current?: number
-  highlighted?: number
-}
-function getEnhancedPointY(pt: EnhancedPoint) {
-  return (pt.y || pt.current || pt.highlighted) as number
-}
-
 type ChartCardProps = {
   plotBase?: string[]
   setPlotBase: (path: string[] | undefined) => void
@@ -162,7 +147,7 @@ function DataDisplay({ data, }: { data?: object }) {
 
 const optTargetColor = "#8884d8"
 const highlightedColor = "cyan"
-const currentColor = "green"
+const currentColor = "#46a046"
 const lineColor = "#ff7300"
 function Chart({ displayData, plotNode, valueNode, showMin }: {
   displayData: Point[]
@@ -172,6 +157,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
 }) {
   const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { data } = useContext(DataContext)
+  const { database } = useContext(DatabaseContext)
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildResult: { builds } } = useBuildResult(characterKey)
   const { t } = useTranslation("page_character_optimize")
@@ -179,37 +165,37 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
   // Convert from Point -> EnhancedPoint so we can get data for current and highlighted builds
   const enhancedDisplayData = useMemo(() => {
-    // const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
-    const currentBuild = allSlotKeys.map(slotKey => data?.get(input.art[slotKey].id).value ?? "")
+    const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
     const highlightedBuilds = [...builds, ...(graphBuilds ?? [])]
 
-    return displayData.map((datum: EnhancedPoint) => {
-      // TODO: Need to redo this checking. There is currently no handling of a build with multiple empty slots
-      // Also there is a weird bug when you try to add a build to a list with any empty slots?
-      const datumArtiMap = {}
-      datum.artifactIds.forEach(artiId => datumArtiMap[artiId] = true)
-      const isCurrentBuild = currentBuild.every(artiId => datumArtiMap[artiId])
+    return displayData.map(datum => {
+      // TODO: Also there is a weird bug when you try to add a build to a list with any empty slots?
+      const enhancedDatum: EnhancedPoint = {...datum}
+      const datumSlotMap = convertArtiIdsToArtiSlotMap(datum.artifactIds, database)
+
+      const isCurrentBuild = allSlotKeys.every(slotKey => currentBuild[slotKey] === datumSlotMap[slotKey])
       if (isCurrentBuild) {
-        datum.current = getEnhancedPointY(datum)
+        enhancedDatum.current = datum.y
         // Remove the Y-value so there are not 2 dots displayed for these builds
-        datum.y = undefined
-        return datum
+        enhancedDatum.y = undefined
+        return enhancedDatum
       }
 
-      const isHighlightedBuild = highlightedBuilds.some(artiIds =>
-        artiIds.every(artiId => datumArtiMap[artiId])
-      )
+      const isHighlightedBuild = highlightedBuilds.some(artiIds => {
+        const highlightedSlotMap = convertArtiIdsToArtiSlotMap(artiIds, database)
+        return allSlotKeys.every(slotKey => highlightedSlotMap[slotKey] === datumSlotMap[slotKey])
+      })
       if (isHighlightedBuild) {
-        datum.highlighted = getEnhancedPointY(datum)
+        enhancedDatum.highlighted = datum.y
         // Remove the Y-value so there are not 2 dots displayed for these builds
-        datum.y = undefined
+        enhancedDatum.y = undefined
       }
-      return datum
+      return enhancedDatum
     })
-  }, [displayData, data, builds, graphBuilds])
+  }, [displayData, data, builds, graphBuilds, database])
   const chartOnClick = useCallback(props => {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, enhancedDisplayData))
-  }, [setSelectedPoint, displayData])
+  }, [setSelectedPoint, enhancedDisplayData])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
@@ -259,6 +245,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
       ]}/>
+      {/* TODO: This line disappears strangely with the Brush */}
       {showMin && <Line
         name={t`tcGraph.minStatReqThr`}
         dataKey="min"
@@ -267,7 +254,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         connectNulls
         strokeWidth={2}
         isAnimationActive={false}
-        dot={<CustomDot selectedPoint={selectedPoint} colorUnselected={lineColor} />}
+        dot={false}
         activeDot={false}
       />}
       <Scatter
@@ -291,9 +278,19 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         isAnimationActive={false}
         shape={<CustomDot shape="diamond" selectedPoint={selectedPoint} colorUnselected={currentColor} />}
       />
-      <Brush height={30} gap={5}/>
+      <Brush dataKey="x" height={30} gap={10} travellerWidth={20} tickFormatter={n => n.toFixed()} />
     </ComposedChart>
   </ResponsiveContainer>
+}
+
+function convertArtiIdsToArtiSlotMap(artifactIds: string[], database: ArtCharDatabase) {
+  // Create partial mapping of slotkey -> build artifact
+  const partialArtiSlotMap: Dict<SlotKey, string> = Object.fromEntries(artifactIds.map(artiId => {
+    const arti = database.arts.get(artiId)
+    return arti ? [arti.slotKey, arti.id] : []
+  }))
+  // Fill in the blanks so we have a StrictDict<SlotKey, string>
+  return objectKeyValueMap(allSlotKeys, slotKey => [slotKey, partialArtiSlotMap[slotKey] ?? ""])
 }
 
 function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: EnhancedPoint[]) {
@@ -319,113 +316,4 @@ function getLabelFromNode(node: NumNode, t: any) {
   return typeof node.info?.name === "string"
     ? node.info.name
     : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`
-}
-
-type CustomShapeType = "circle" | "diamond" | "square"
-type CustomDotProps = DotProps & {
-  selectedPoint: EnhancedPoint | undefined
-  payload?: EnhancedPoint
-  radiusSelected?: number
-  radiusUnselected?: number
-  colorSelected?: string
-  colorUnselected: string
-  shape?: CustomShapeType
-}
-function CustomDot({ cx, cy, payload, selectedPoint, radiusSelected = 6, radiusUnselected = 3, colorSelected = "red", colorUnselected, shape = "circle" }: CustomDotProps) {
-  if (!cx || !cy || !payload) {
-    return null
-  }
-
-  const isSelected = selectedPoint && selectedPoint.x === payload.x
-    && getEnhancedPointY(selectedPoint) === getEnhancedPointY(payload)
-
-  return (
-    <g
-      className="custom-dot"
-      data-chart-x={cx}
-      data-chart-y={cy}
-      data-x-value={payload.x}
-      data-y-value={getEnhancedPointY(payload)}
-      data-radius={isSelected ? radiusUnselected : radiusSelected}
-    >
-      {!isSelected
-        ? <CustomShape shape={shape} cx={cx} cy={cy} r={radiusUnselected} fill={colorUnselected} />
-        : <>
-          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
-          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
-        </>
-      }
-    </g>
-  )
-}
-function CustomShape({ shape, cx, cy, r, fill, stroke}: { shape: CustomShapeType, cx: number, cy: number, r: number, fill?: string, stroke?: string }) {
-  switch(shape) {
-    case "circle":
-      return <circle cx={cx} cy={cy} r={r} fill={fill} stroke={stroke} />
-    case "square":
-      return <rect x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} />
-    case "diamond":
-      return <rect x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} transform={`rotate(45, ${cx}, ${cy})`} />
-  }
-}
-
-type CustomTooltipProps = TooltipProps<number, string> & {
-  xLabel: Displayable
-  xUnit: Unit | undefined
-  yLabel: Displayable
-  yUnit: Unit | undefined
-  selectedPoint: EnhancedPoint | undefined
-  setSelectedPoint: (pt: EnhancedPoint | undefined) => void
-  addBuildToList: (build: string[]) => void
-}
-function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPoint, setSelectedPoint, addBuildToList, ...tooltipProps }: CustomTooltipProps) {
-  const { database } = useContext(DatabaseContext)
-  const { data } = useContext(DataContext)
-  const { t } = useTranslation("page_character_optimize")
-
-  const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(() =>
-    selectedPoint && selectedPoint.artifactIds && Object.fromEntries(selectedPoint.artifactIds
-      .map(id => {
-        const artiObj = database.arts.get(id)
-        return [artiObj?.slotKey, artiObj]
-      })
-      .filter(arti => arti)
-    ),
-    [database.arts, selectedPoint]
-  )
-
-  const currentlyEquipped = artifactsBySlot && allSlotKeys.every(slotKey => artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value)
-
-  if (tooltipProps.active && selectedPoint) {
-    return <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
-      <CardContent>
-        <Stack spacing={1}>
-          {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
-          <Stack direction="row" alignItems="start">
-            <Stack spacing={0.5}>
-              <Suspense fallback={<Skeleton width={300} height={50} />}>
-                <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
-              </Suspense>
-            </Stack>
-            <Grid item flexGrow={1} />
-            <CloseButton onClick={() => setSelectedPoint(undefined)} />
-          </Stack>
-          <Grid container direction="row" spacing={0.75} columns={5}>
-            {allSlotKeys.map(key =>
-              <Grid item key={key} xs={1}>
-                <Suspense fallback={<Skeleton width={75} height={75} />}>
-                  <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
-                </Suspense>
-              </Grid>
-            )}
-          </Grid>
-          <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
-          <Typography>{yLabel}: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
-          <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
-        </Stack>
-      </CardContent>
-    </CardDark>
-  }
-
-  return null
 }
