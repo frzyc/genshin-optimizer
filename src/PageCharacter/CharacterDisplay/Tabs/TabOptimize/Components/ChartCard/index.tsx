@@ -201,7 +201,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   const yLabelValue = getLabelFromNode(valueNode, t)
 
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={enhancedDisplayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
+    <ComposedChart id="chartContainer" data={enhancedDisplayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis
         dataKey="x"

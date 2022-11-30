@@ -29,22 +29,22 @@ export default function CustomDot({ cx, cy, payload, selectedPoint, radiusSelect
       data-radius={isSelected ? radiusUnselected : radiusSelected}
     >
       {!isSelected
-        ? <CustomShape shape={shape} cx={cx} cy={cy} r={radiusUnselected} fill={colorUnselected} />
+        ? <CustomShape id="customShapeUnselected" shape={shape} cx={cx} cy={cy} z={1} r={radiusUnselected} fill={colorUnselected} />
         : <>
-          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected / 2} fill={colorSelected} />
-          <CustomShape shape={shape} cx={cx} cy={cy} r={radiusSelected} fill="none" stroke={colorSelected} />
+          <CustomShape id="customShapeSelected" shape={shape} cx={cx} cy={cy} z={50} r={radiusSelected / 2} fill={colorSelected} />
+          <CustomShape id="customShapeBorder" shape={shape} cx={cx} cy={cy} z={50} r={radiusSelected} fill="none" stroke={colorSelected} />
         </>
       }
     </g>
   )
 }
-function CustomShape({ shape, cx, cy, r, fill, stroke}: { shape: CustomShapeType, cx: number, cy: number, r: number, fill?: string, stroke?: string }) {
+function CustomShape({ shape, id, cx, cy, z, r, fill, stroke}: { shape: CustomShapeType, id?: string, cx: number, cy: number, z: number, r: number, fill?: string, stroke?: string }) {
   switch(shape) {
     case "circle":
-      return <circle cx={cx} cy={cy} r={r} fill={fill} stroke={stroke} />
+      return <circle id={id} cx={cx} cy={cy} r={r} fill={fill} stroke={stroke} />
     case "square":
-      return <rect x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} />
+      return <rect id={id} x={cx-r} y={cy-r} width={r*2} height={r*2} fill={fill} stroke={stroke} />
     case "diamond":
-      return <polygon points={`${cx},${cy+r*2.5} ${cx+r*1.5},${cy} ${cx},${cy-r*2.5} ${cx-r*1.5},${cy}`} fill={fill} stroke={stroke} />
+      return <polygon id={id} points={`${cx},${cy+r*2.5} ${cx+r*1.5},${cy} ${cx},${cy-r*2.5} ${cx-r*1.5},${cy}`} fill={fill} stroke={stroke} />
   }
 }

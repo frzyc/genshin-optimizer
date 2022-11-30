@@ -1,5 +1,5 @@
-import { CardContent, Stack, Skeleton, Grid, Typography, Button, ClickAwayListener } from "@mui/material"
-import { useContext, useMemo, Suspense } from "react"
+import { Button, CardContent, ClickAwayListener, Grid, Skeleton, Stack, Typography } from "@mui/material"
+import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { TooltipProps } from "recharts"
 import ArtifactCardPico from "../../../../../../Components/Artifact/ArtifactCardPico"
@@ -39,11 +39,16 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
     ),
     [database.arts, selectedPoint]
   )
+  const clickAwayHandler = useCallback((e) => {
+    if (!(e.target.id.includes("customShape") || e.target.id.includes("chartContainer"))) {
+      setSelectedPoint(undefined)
+    }
+  }, [setSelectedPoint])
 
   const currentlyEquipped = artifactsBySlot && allSlotKeys.every(slotKey => artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value)
 
   if (tooltipProps.active && selectedPoint) {
-    return <ClickAwayListener onClickAway={() => setSelectedPoint(undefined)}>
+    return <ClickAwayListener onClickAway={clickAwayHandler}>
       <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
         <CardContent>
           <Stack gap={1}>
