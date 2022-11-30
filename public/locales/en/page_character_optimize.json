@@ -13,10 +13,10 @@
   "tcGraph": {
     "vs": "Graph Optimization Target vs.",
     "notSel": "Not Selected",
-    "showMinStatThr": "Show Min Stat Threshold",
+    "showStatThr": "Show Stat Threshold Line",
     "downloadData": "Download Data",
-    "optTarget": "Optimization Target",
-    "minStatReqThr": "Minimum Stat Requirement Threshold",
+    "generatedBuilds": "Generated Builds",
+    "statReqThr": "Stat Requirement Threshold Line",
     "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
     "currentBuild": "Current Build",
     "highlightedBuilds": "Highlighted Builds"

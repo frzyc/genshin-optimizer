@@ -108,7 +108,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         {!!downloadData && <Grid item>
           <Button size='small' startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
             color={showMin ? "success" : "secondary"}
-            onClick={() => setshowMin(!showMin)}>{t`tcGraph.showMinStatThr`}</Button>
+            onClick={() => setshowMin(!showMin)}>{t`tcGraph.showStatThr`}</Button>
         </Grid>}
         {!!downloadData && <Grid item>
           <Button size='small' color="info" startIcon={<Download />} onClick={() => setshowDownload(!showDownload)}>{t`tcGraph.downloadData`}</Button>
@@ -239,13 +239,12 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         cursor={false}
       />
       <Legend payload={[
-        ...(showMin ? [{ id: "min", value: t`tcGraph.minStatReqThr`, type: "line" as LegendType, color: lineColor }] : []),
-        { id: "y", value: t`tcGraph.optTarget`, type: "circle", color: optTargetColor },
+        ...(showMin ? [{ id: "min", value: t`tcGraph.statReqThr`, type: "line" as LegendType, color: lineColor }] : []),
+        { id: "y", value: t`tcGraph.generatedBuilds`, type: "circle", color: optTargetColor },
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
       ]}/>
       {showMin && <Line
-        name={t`tcGraph.minStatReqThr`}
         dataKey="min"
         stroke={lineColor}
         type="stepBefore"
@@ -256,23 +255,17 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         activeDot={false}
       />}
       <Scatter
-        name={t`tcGraph.optTarget`}
         dataKey="y"
-        fill={optTargetColor}
         isAnimationActive={false}
         shape={<CustomDot selectedPoint={selectedPoint} colorUnselected={optTargetColor} />}
       />
       <Scatter
-        name={t`tcGraph.highlightedBuilds`}
         dataKey="highlighted"
-        fill={highlightedColor}
         isAnimationActive={false}
         shape={<CustomDot shape="square" selectedPoint={selectedPoint} colorUnselected={highlightedColor} />}
       />
       <Scatter
-        name={t`tcGraph.currentBuild`}
         dataKey="current"
-        fill={currentColor}
         isAnimationActive={false}
         shape={<CustomDot shape="diamond" selectedPoint={selectedPoint} colorUnselected={currentColor} />}
       />
