@@ -1,4 +1,4 @@
-import { CardContent, Stack, Skeleton, Grid, Typography, Button } from "@mui/material"
+import { CardContent, Stack, Skeleton, Grid, Typography, Button, ClickAwayListener } from "@mui/material"
 import { useContext, useMemo, Suspense } from "react"
 import { useTranslation } from "react-i18next"
 import { TooltipProps } from "recharts"
@@ -43,34 +43,36 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
   const currentlyEquipped = artifactsBySlot && allSlotKeys.every(slotKey => artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value)
 
   if (tooltipProps.active && selectedPoint) {
-    return <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
-      <CardContent>
-        <Stack gap={1}>
-          <Stack direction="row" alignItems="start" gap={1}>
-            <Stack spacing={0.5} flexGrow={99}>
-              {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
-              <Suspense fallback={<Skeleton width={300} height={50} />}>
-                <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
-              </Suspense>
-            </Stack>
-            <Grid item flexGrow={1} />
-            <CloseButton onClick={() => setSelectedPoint(undefined)} />
-          </Stack>
-          <Grid container direction="row" spacing={0.75} columns={5}>
-            {allSlotKeys.map(key =>
-              <Grid item key={key} xs={1}>
-                <Suspense fallback={<Skeleton width={75} height={75} />}>
-                  <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
+    return <ClickAwayListener onClickAway={() => setSelectedPoint(undefined)}>
+      <CardDark sx={{ minWidth: "400px", maxWidth: "400px" }} onClick={(e) => e.stopPropagation()}>
+        <CardContent>
+          <Stack gap={1}>
+            <Stack direction="row" alignItems="start" gap={1}>
+              <Stack spacing={0.5} flexGrow={99}>
+                {currentlyEquipped && <SqBadge color="info"><strong>{t("currentlyEquippedBuild")}</strong></SqBadge>}
+                <Suspense fallback={<Skeleton width={300} height={50} />}>
+                  <ArtifactSetBadges artifacts={Object.values(artifactsBySlot)} currentlyEquipped={currentlyEquipped} />
                 </Suspense>
-              </Grid>
-            )}
-          </Grid>
-          <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
-          <Typography>{yLabel}: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
-          <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
-        </Stack>
-      </CardContent>
-    </CardDark>
+              </Stack>
+              <Grid item flexGrow={1} />
+              <CloseButton onClick={() => setSelectedPoint(undefined)} />
+            </Stack>
+            <Grid container direction="row" spacing={0.75} columns={5}>
+              {allSlotKeys.map(key =>
+                <Grid item key={key} xs={1}>
+                  <Suspense fallback={<Skeleton width={75} height={75} />}>
+                    <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
+                  </Suspense>
+                </Grid>
+              )}
+            </Grid>
+            <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
+            <Typography>{yLabel}: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
+            <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
+          </Stack>
+        </CardContent>
+      </CardDark>
+    </ClickAwayListener>
   }
 
   return null
