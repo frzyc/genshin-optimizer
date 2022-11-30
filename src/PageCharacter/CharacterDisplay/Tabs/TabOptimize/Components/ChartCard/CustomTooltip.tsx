@@ -71,8 +71,8 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
                 </Grid>
               )}
             </Grid>
-            <Typography>{xLabel}: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
-            <Typography>{yLabel}: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
+            <Typography><strong>{xLabel}</strong>: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
+            <Typography><strong>{yLabel}</strong>: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
             <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
           </Stack>
         </CardContent>
