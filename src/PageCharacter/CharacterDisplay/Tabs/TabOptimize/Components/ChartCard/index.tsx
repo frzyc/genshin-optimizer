@@ -1,8 +1,8 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, styled, Typography } from '@mui/material';
+import { Button, CardContent, Collapse, Divider, Grid, Slider, styled, Typography } from '@mui/material';
 import { useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Brush, CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
+import { CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../../Components/Card/CardLight';
@@ -13,6 +13,7 @@ import { GraphContext } from '../../../../../../Context/GraphContext';
 import { ArtCharDatabase, DatabaseContext } from '../../../../../../Database/Database';
 import { input } from '../../../../../../Formula';
 import { NumNode } from '../../../../../../Formula/type';
+import { valueString } from '../../../../../../KeyMap';
 import { allSlotKeys, SlotKey } from '../../../../../../Types/consts';
 import { objectKeyValueMap, objPathValue } from '../../../../../../Util/Util';
 import useBuildResult from '../../useBuildResult';
@@ -39,16 +40,62 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
   const { chartData } = useContext(GraphContext)
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
+  const { graphBuilds } = useContext(GraphContext)
+  const { database } = useContext(DatabaseContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { buildResult: { builds } } = useBuildResult(characterKey)
 
-  const { displayData, downloadData } = useMemo(() => {
+  const [sliderLow, setSliderLow] = useState(0)
+  const [sliderHigh, setSliderHigh] = useState(100)
+  const setSlider = useCallback(
+    (_e: unknown, value: number | number[]) => {
+      if (typeof value === "number") throw new TypeError()
+      const [l, h] = value
+      setSliderLow(l)
+      setSliderHigh(h)
+    },
+    [setSliderLow, setSliderHigh]
+  )
+
+  const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
-    const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => ({ x, y, artifactIds })) as Point[]
-    const increasingX: Point[] = points.sort((a, b) => a.x - b.x)
-    const minimumData: Point[] = []
-    for (const point of increasingX) {
-      let last: Point | undefined
+    let sliderMin = Infinity
+    let sliderMax = -Infinity
+    const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
+    const highlightedBuildsSlotMap = [...builds, ...(graphBuilds ?? [])].map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
+    // Shape the data so we know the current and highlighted builds
+    const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => {
+      if (x === undefined) return null
+      if (x < sliderMin) sliderMin = x
+      if (x > sliderMax) sliderMax = x
+      const enhancedDatum: EnhancedPoint = { x, y, artifactIds }
+      const datumSlotMap = convertArtiIdsToArtiSlotMap(artifactIds, database)
+
+      const isCurrentBuild = allSlotKeys.every(slotKey => currentBuild[slotKey] === datumSlotMap[slotKey])
+      if (isCurrentBuild) {
+        enhancedDatum.current = y
+        // Remove the Y-value so there are not 2 dots displayed for these builds
+        enhancedDatum.y = undefined
+        return enhancedDatum
+      }
+
+      const isHighlightedBuild = highlightedBuildsSlotMap.some(highlightedSlotMap =>
+        allSlotKeys.every(slotKey => highlightedSlotMap[slotKey] === datumSlotMap[slotKey])
+      )
+      if (isHighlightedBuild) {
+        enhancedDatum.highlighted = y
+        // Remove the Y-value so there are not 2 dots displayed for these builds
+        enhancedDatum.y = undefined
+      }
+      return enhancedDatum
+    })
+    .sort((a, b) => a!.x - b!.x) as EnhancedPoint[]
+
+    const minimumData: EnhancedPoint[] = []
+    for (const point of points) {
+      let last: EnhancedPoint | undefined
       while ((last = minimumData.pop())) {
-        if (last.y > point.y) {
+        if (getEnhancedPointY(last) > getEnhancedPointY(point)) {
           minimumData.push(last)
           break
         }
@@ -59,16 +106,17 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     // Note:
     // We can also just use `minimumData` if the plotter supports multiple data sources.
     // It could be faster too since there're no empty entries in `minimumData`.
-    if (minimumData[0]?.x !== increasingX[0]?.x)
-      increasingX[0].min = minimumData[0].y
-    minimumData.forEach(x => { x.min = x.y })
+    // From my limited testing, using multiple data sources makes the graph behave strangely though.
+    if (minimumData[0]?.x !== points[0]?.x)
+      points[0].min = getEnhancedPointY(minimumData[0])
+    minimumData.forEach(pt => { pt.min = getEnhancedPointY(pt) })
 
     const downloadData = {
-      minimum: minimumData.map(({ x, y }) => [x, y]),
-      allData: increasingX.map(({ x, y }) => [x, y]),
+      minimum: minimumData.map(point => [point.x, getEnhancedPointY(point)]),
+      allData: points.map(point => [point.x, getEnhancedPointY(point)]),
     }
-    return { displayData: increasingX, downloadData }
-  }, [chartData])
+    return { displayData: points.filter(pt => pt && pt.x >= sliderLow && pt.x <= sliderHigh), downloadData, sliderMin, sliderMax }
+  }, [chartData, builds, data, database, graphBuilds, sliderLow, sliderHigh])
 
   const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
   const invalidTarget = plotBase && (!plotBaseNode || plotBaseNode.isEmpty)
@@ -128,6 +176,18 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         </CardDark>
       </Collapse>
       <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
+      <Slider
+        marks
+        value={[sliderLow, sliderHigh]}
+        onChange={setSlider}
+        onChangeCommitted={setSlider}
+        min={sliderMin}
+        max={sliderMax}
+        step={(sliderMax - sliderMin) / 20}
+        valueLabelDisplay="auto"
+        valueLabelFormat={n => valueString(chartData.plotNode.info?.unit === "%" ? n / 100 : n, chartData.plotNode.info?.unit)}
+        sx={{ ml: 13, width: "88%" }}
+      />
     </CardContent>}
   </CardLight >
 }
@@ -150,58 +210,25 @@ const highlightedColor = "cyan"
 const currentColor = "#46a046"
 const lineColor = "#ff7300"
 function Chart({ displayData, plotNode, valueNode, showMin }: {
-  displayData: Point[]
+  displayData: EnhancedPoint[]
   plotNode: NumNode
   valueNode: NumNode
   showMin: boolean
 }) {
   const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
-  const { data } = useContext(DataContext)
-  const { database } = useContext(DatabaseContext)
-  const { character: { key: characterKey } } = useContext(CharacterContext)
-  const { buildResult: { builds } } = useBuildResult(characterKey)
   const { t } = useTranslation("page_character_optimize")
   const [selectedPoint, setSelectedPoint] = useState<EnhancedPoint>()
   const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
-  // Convert from Point -> EnhancedPoint so we can get data for current and highlighted builds
-  const enhancedDisplayData = useMemo(() => {
-    const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
-    const highlightedBuilds = [...builds, ...(graphBuilds ?? [])]
-
-    return displayData.map(datum => {
-      const enhancedDatum: EnhancedPoint = {...datum}
-      const datumSlotMap = convertArtiIdsToArtiSlotMap(datum.artifactIds, database)
-
-      const isCurrentBuild = allSlotKeys.every(slotKey => currentBuild[slotKey] === datumSlotMap[slotKey])
-      if (isCurrentBuild) {
-        enhancedDatum.current = datum.y
-        // Remove the Y-value so there are not 2 dots displayed for these builds
-        enhancedDatum.y = undefined
-        return enhancedDatum
-      }
-
-      const isHighlightedBuild = highlightedBuilds.some(artiIds => {
-        const highlightedSlotMap = convertArtiIdsToArtiSlotMap(artiIds, database)
-        return allSlotKeys.every(slotKey => highlightedSlotMap[slotKey] === datumSlotMap[slotKey])
-      })
-      if (isHighlightedBuild) {
-        enhancedDatum.highlighted = datum.y
-        // Remove the Y-value so there are not 2 dots displayed for these builds
-        enhancedDatum.y = undefined
-      }
-      return enhancedDatum
-    })
-  }, [displayData, data, builds, graphBuilds, database])
   const chartOnClick = useCallback(props => {
-    if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, enhancedDisplayData))
-  }, [setSelectedPoint, enhancedDisplayData])
+    if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
+  }, [setSelectedPoint, displayData])
 
   // Below works because character translation should already be loaded
   const xLabelValue = getLabelFromNode(plotNode, t)
   const yLabelValue = getLabelFromNode(valueNode, t)
 
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart id="chartContainer" data={enhancedDisplayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
+    <ComposedChart id="chartContainer" data={displayData} onClick={chartOnClick} style={{ cursor: "pointer" }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis
         dataKey="x"
@@ -269,7 +296,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         isAnimationActive={false}
         shape={<CustomDot shape="diamond" selectedPoint={selectedPoint} colorUnselected={currentColor} />}
       />
-      <Brush dataKey="x" height={30} gap={10} travellerWidth={20} tickFormatter={n => n.toFixed()} />
     </ComposedChart>
   </ResponsiveContainer>
 }
