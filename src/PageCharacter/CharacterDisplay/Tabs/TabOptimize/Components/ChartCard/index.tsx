@@ -1,6 +1,6 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, Slider, styled, Typography } from '@mui/material';
-import { useCallback, useContext, useMemo, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
 import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip';
@@ -45,8 +45,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildResult: { builds } } = useBuildResult(characterKey)
 
-  const [sliderLow, setSliderLow] = useState(0)
-  const [sliderHigh, setSliderHigh] = useState(100)
+  const [sliderLow, setSliderLow] = useState(-Infinity)
+  const [sliderHigh, setSliderHigh] = useState(Infinity)
   const setSlider = useCallback(
     (_e: unknown, value: number | number[]) => {
       if (typeof value === "number") throw new TypeError()
@@ -56,6 +56,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     },
     [setSliderLow, setSliderHigh]
   )
+  useEffect(() => { setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
 
   const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
