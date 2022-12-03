@@ -11,7 +11,7 @@ export interface StatFilterSetting {
   value: number
   disabled: boolean
 }
-export type StatFilters = Dict<string, StatFilterSetting>
+export type StatFilters = Dict<string, StatFilterSetting[]>
 export interface BuildSetting {
   artSetExclusion: ArtSetExclusion
   statFilters: StatFilters

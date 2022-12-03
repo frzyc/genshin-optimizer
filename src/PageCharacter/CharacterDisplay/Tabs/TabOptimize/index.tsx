@@ -119,12 +119,15 @@ export default function TabBuild() {
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters)
-      .filter(([_, setting]) => !setting.disabled)
-      .map(([pathStr, setting]) => {
-        const filterNode: NumNode = objPathValue(workerData.display ?? {}, JSON.parse(pathStr))
-        const minimum = filterNode.info?.unit === "%" ? setting.value / 100 : setting.value // TODO: Conversion
-        return { value: filterNode, minimum: minimum }
-      })
+      .flatMap(([pathStr, settings]) =>
+        settings
+          .filter(setting => !setting.disabled)
+          .map(setting => {
+            const filterNode: NumNode = objPathValue(workerData.display ?? {}, JSON.parse(pathStr))
+            const minimum = filterNode.info?.unit === "%" ? setting.value / 100 : setting.value // TODO: Conversion
+            return { value: filterNode, minimum: minimum }
+          })
+      )
       .filter(x => x.value && x.minimum > -Infinity)
 
     setchartData(undefined)

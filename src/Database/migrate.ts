@@ -80,10 +80,10 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         const statFilters = (b as any).statFilters
         const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
           `["basic","${statKey}"]`,
-          {
+          [{
             "value": value,
             "disabled": false
-          }
+          }]
         ])))
         return { ...b, statFilters: newStatFilters}
       })
@@ -181,10 +181,10 @@ export function migrate(storage: DBStorage) {
         const statFilters = buildSettings.statFilters
         const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
           `["basic","${statKey}"]`,
-          {
+          [{
             "value": value,
             "disabled": false
-          }
+          }]
         ])))
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
       }
