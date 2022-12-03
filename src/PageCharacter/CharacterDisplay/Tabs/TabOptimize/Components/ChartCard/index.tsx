@@ -187,7 +187,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         step={(sliderMax - sliderMin) / 20}
         valueLabelDisplay="auto"
         valueLabelFormat={n => valueString(chartData.plotNode.info?.unit === "%" ? n / 100 : n, chartData.plotNode.info?.unit)}
-        sx={{ ml: 13, width: "88%" }}
+        sx={{ ml: "6%", width: "93%" }}
       />
     </CardContent>}
   </CardLight >
