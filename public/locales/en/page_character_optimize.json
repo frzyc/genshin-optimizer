@@ -19,7 +19,8 @@
     "statReqThr": "Stat Requirement Threshold Line",
     "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
     "currentBuild": "Current Build",
-    "highlightedBuilds": "Highlighted Builds"
+    "highlightedBuilds": "Highlighted Builds",
+    "buildAlreadyInList": "Build is already in the list"
   },
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {

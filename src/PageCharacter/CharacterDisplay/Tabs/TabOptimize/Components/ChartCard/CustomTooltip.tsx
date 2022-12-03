@@ -3,15 +3,19 @@ import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { TooltipProps } from "recharts"
 import ArtifactCardPico from "../../../../../../Components/Artifact/ArtifactCardPico"
+import BootstrapTooltip from "../../../../../../Components/BootstrapTooltip"
 import CardDark from "../../../../../../Components/Card/CardDark"
 import CloseButton from "../../../../../../Components/CloseButton"
 import SqBadge from "../../../../../../Components/SqBadge"
+import { CharacterContext } from "../../../../../../Context/CharacterContext"
 import { DataContext } from "../../../../../../Context/DataContext"
+import { GraphContext } from "../../../../../../Context/GraphContext"
 import { DatabaseContext } from "../../../../../../Database/Database"
 import { input } from "../../../../../../Formula"
 import { Unit, valueString } from "../../../../../../KeyMap"
 import { ICachedArtifact } from "../../../../../../Types/artifact"
 import { allSlotKeys } from "../../../../../../Types/consts"
+import useBuildResult from "../../useBuildResult"
 import { ArtifactSetBadges } from "../ArtifactSetBadges"
 import EnhancedPoint from "./EnhancedPoint"
 
@@ -28,6 +32,13 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const { t } = useTranslation("page_character_optimize")
+  const { graphBuilds } = useContext(GraphContext)
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { buildResult: { builds } } = useBuildResult(characterKey)
+
+  const canAddBuild = useMemo(() => ![...builds, ...(graphBuilds ?? [])].some(artiIds =>
+    artiIds.every(id => selectedPoint?.artifactIds.includes(id))
+  ), [builds, graphBuilds, selectedPoint])
 
   const artifactsBySlot: { [slot: string]: ICachedArtifact } = useMemo(() =>
     selectedPoint && selectedPoint.artifactIds && Object.fromEntries(selectedPoint.artifactIds
@@ -73,7 +84,11 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
             </Grid>
             <Typography><strong>{xLabel}</strong>: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
             <Typography><strong>{yLabel}</strong>: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
-            <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
+            <BootstrapTooltip title={canAddBuild ? "" : t("tcGraph.buildAlreadyInList")} placement="top">
+              <span>
+                <Button sx={{ width: "100%" }} disabled={!canAddBuild} color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
+              </span>
+            </BootstrapTooltip>
           </Stack>
         </CardContent>
       </CardDark>
