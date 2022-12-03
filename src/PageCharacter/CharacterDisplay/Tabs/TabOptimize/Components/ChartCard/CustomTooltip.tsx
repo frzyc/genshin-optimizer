@@ -13,7 +13,7 @@ import { Unit, valueString } from "../../../../../../KeyMap"
 import { ICachedArtifact } from "../../../../../../Types/artifact"
 import { allSlotKeys } from "../../../../../../Types/consts"
 import { ArtifactSetBadges } from "../ArtifactSetBadges"
-import { EnhancedPoint, getEnhancedPointY } from "./EnhancedPoint"
+import EnhancedPoint from "./EnhancedPoint"
 
 type CustomTooltipProps = TooltipProps<number, string> & {
   xLabel: Displayable
@@ -72,7 +72,7 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
               )}
             </Grid>
             <Typography><strong>{xLabel}</strong>: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>
-            <Typography><strong>{yLabel}</strong>: {valueString(yUnit === "%" ? getEnhancedPointY(selectedPoint) / 100 : getEnhancedPointY(selectedPoint), yUnit)}</Typography>
+            <Typography><strong>{yLabel}</strong>: {valueString(yUnit === "%" ? selectedPoint.y / 100 : selectedPoint.y, yUnit)}</Typography>
             <Button color="info" onClick={() => addBuildToList(selectedPoint.artifactIds)}>{t("addBuildToList")}</Button>
           </Stack>
         </CardContent>

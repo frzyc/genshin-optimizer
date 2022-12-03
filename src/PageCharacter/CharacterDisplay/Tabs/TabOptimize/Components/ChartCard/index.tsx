@@ -20,7 +20,7 @@ import useBuildResult from '../../useBuildResult';
 import OptimizationTargetSelector from '../OptimizationTargetSelector';
 import CustomDot from './CustomDot';
 import CustomTooltip from './CustomTooltip';
-import { EnhancedPoint, getEnhancedPointY } from './EnhancedPoint';
+import EnhancedPoint from './EnhancedPoint';
 
 export type Point = {
   x: number
@@ -68,7 +68,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       if (x === undefined) return null
       if (x < sliderMin) sliderMin = x
       if (x > sliderMax) sliderMax = x
-      const enhancedDatum: EnhancedPoint = { x, y, artifactIds }
+      const enhancedDatum: EnhancedPoint = new EnhancedPoint(x, y, artifactIds)
       const datumSlotMap = convertArtiIdsToArtiSlotMap(artifactIds, database)
 
       const isCurrentBuild = allSlotKeys.every(slotKey => currentBuild[slotKey] === datumSlotMap[slotKey])
@@ -95,7 +95,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     for (const point of points) {
       let last: EnhancedPoint | undefined
       while ((last = minimumData.pop())) {
-        if (getEnhancedPointY(last) > getEnhancedPointY(point)) {
+        if (last.y > point.y) {
           minimumData.push(last)
           break
         }
@@ -108,12 +108,12 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     // It could be faster too since there're no empty entries in `minimumData`.
     // From my limited testing, using multiple data sources makes the graph behave strangely though.
     if (minimumData[0]?.x !== points[0]?.x)
-      points[0].min = getEnhancedPointY(minimumData[0])
-    minimumData.forEach(pt => { pt.min = getEnhancedPointY(pt) })
+      points[0].min = minimumData[0].y
+    minimumData.forEach(pt => { pt.min = pt.y })
 
     const downloadData = {
-      minimum: minimumData.map(point => [point.x, getEnhancedPointY(point)]),
-      allData: points.map(point => [point.x, getEnhancedPointY(point)]),
+      minimum: minimumData.map(point => [point.x, point.y]),
+      allData: points.map(point => [point.x, point.y]),
     }
     return { displayData: points.filter(pt => pt && pt.x >= sliderLow && pt.x <= sliderHigh), downloadData, sliderMin, sliderMax }
   }, [chartData, builds, data, database, graphBuilds, sliderLow, sliderHigh])
@@ -267,7 +267,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
       />
       <Legend payload={[
         ...(showMin ? [{ id: "min", value: t`tcGraph.statReqThr`, type: "line" as LegendType, color: lineColor }] : []),
-        { id: "y", value: t`tcGraph.generatedBuilds`, type: "circle", color: optTargetColor },
+        { id: "trueY", value: t`tcGraph.generatedBuilds`, type: "circle", color: optTargetColor },
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
       ]}/>
@@ -282,7 +282,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         activeDot={false}
       />}
       <Scatter
-        dataKey="y"
+        dataKey="trueY"
         isAnimationActive={false}
         shape={<CustomDot selectedPoint={selectedPoint} colorUnselected={optTargetColor} />}
       />
@@ -325,7 +325,7 @@ function getNearestPoint(clickedX: number, clickedY: number, threshold: number, 
   // Don't select a point too far away
   const distance = Math.sqrt((clickedX - nearestDomPtData.chartX) ** 2 + (clickedY - nearestDomPtData.chartY) ** 2)
   return distance < threshold
-    ? data.find(d => d.x === +nearestDomPtData.xValue && getEnhancedPointY(d) === +nearestDomPtData.yValue)
+    ? data.find(d => d.x === +nearestDomPtData.xValue && d.y === +nearestDomPtData.yValue)
     : undefined
 }
 

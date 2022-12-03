@@ -1,5 +1,5 @@
 import { DotProps } from "recharts"
-import { EnhancedPoint, getEnhancedPointY } from "./EnhancedPoint"
+import EnhancedPoint from "./EnhancedPoint"
 
 type CustomShapeType = "circle" | "diamond" | "square"
 type CustomDotProps = DotProps & {
@@ -16,8 +16,7 @@ export default function CustomDot({ cx, cy, payload, selectedPoint, radiusSelect
     return null
   }
 
-  const isSelected = selectedPoint && selectedPoint.x === payload.x
-    && getEnhancedPointY(selectedPoint) === getEnhancedPointY(payload)
+  const isSelected = selectedPoint && selectedPoint.x === payload.x && selectedPoint.y === payload.y
 
   return (
     <g
@@ -25,7 +24,7 @@ export default function CustomDot({ cx, cy, payload, selectedPoint, radiusSelect
       data-chart-x={cx}
       data-chart-y={cy}
       data-x-value={payload.x}
-      data-y-value={getEnhancedPointY(payload)}
+      data-y-value={payload.y}
       data-radius={isSelected ? radiusUnselected : radiusSelected}
     >
       {!isSelected
