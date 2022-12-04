@@ -38,6 +38,7 @@ const sheet: IWeaponSheet = {
       node: atk_,
     }],
   }, {
+    teamBuff: true,
     value: condPassive,
     path: condPassivePath,
     header: headerTemplate(key, icon, iconAwaken, st("conditional")),

@@ -1,11 +1,11 @@
 import { CharacterData } from 'pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
-import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from "../../../Formula/utils"
+import { constant, equal, greaterEq, infoMut, percent, prod, sum, unequal } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
 import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
 import { objectKeyMap } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
@@ -65,14 +65,15 @@ const dm = {
 
 const [condAbsorptionPath, condAbsorption] = cond(key, "absorption")
 // A1 Swirl Reaction Element
-const [condSwirlReactionPath, condSwirlReaction] = cond(key, "swirl")
+const condSwirlPaths = objectKeyMap(absorbableEle, ele => [key, `swirl${ele}`])
+const condSwirls = objectKeyMap(absorbableEle, ele => condReadNode(condSwirlPaths[ele]))
 // Set to "hit" if skill hit opponents
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
 
 // Conditional Output
 const asc1Disp = greaterEq(input.asc, 1, dm.passive1.eleMas)
-const asc1 = unequal(target.charKey, key, // Not applying to Sucrose
-  equal(target.charEle, condSwirlReaction, asc1Disp)) // And element matches the swirl
+const asc1 = objectKeyMap(absorbableEle, ele => unequal(target.charKey, key, // Not applying to Sucrose
+  equal(target.charEle, condSwirls[ele], asc1Disp), { ...KeyMap.info("eleMas"), isTeamBuff: true })) // And element matches the swirl
 const asc4Disp = equal("hit", condSkillHitOpponent,
   greaterEq(input.asc, 4,
     prod(percent(dm.passive2.eleMas_), input.premod.eleMas)))
@@ -109,7 +110,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   },
   teamBuff: {
     total: { eleMas: asc4 },
-    premod: { ...c6Bonus, eleMas: asc1 },
+    premod: { ...c6Bonus, eleMas: sum(...Object.values(asc1)) },
   }
 })
 
@@ -208,13 +209,12 @@ const sheet: ICharacterSheet = {
       passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
         // Swirl Element
         teamBuff: true,
-        value: condSwirlReaction,
-        path: condSwirlReactionPath,
-        name: st("eleSwirled"),
         // Hide for Sucrose
         canShow: unequal(input.activeCharKey, key, 1),
-        states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        states: objectKeyMap(absorbableEle, ele => ({
+          path: condSwirlPaths[ele],
+          value: condSwirls[ele],
+          name: st(`swirlReaction.${ele}`),
           fields: [{
             node: infoMut(asc1Disp, KeyMap.info("eleMas"))
           }, {
@@ -222,7 +222,7 @@ const sheet: ICharacterSheet = {
             value: dm.passive1.duration,
             unit: "s",
           }],
-        }]))
+        }))
       })]),
       passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
         // Swirl element
