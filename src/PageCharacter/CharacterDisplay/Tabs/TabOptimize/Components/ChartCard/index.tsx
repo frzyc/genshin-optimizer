@@ -56,7 +56,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     },
     [setSliderLow, setSliderHigh]
   )
-  useEffect(() => { console.log("A"); setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
+  useEffect(() => { setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
 
   const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
