@@ -56,7 +56,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     },
     [setSliderLow, setSliderHigh]
   )
-  useEffect(() => { setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
+  useEffect(() => { console.log("A"); setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
 
   const { displayData, downloadData, sliderMin, sliderMax } = useMemo(() => {
     if (!chartData) return { displayData: null, downloadData: null }
@@ -164,8 +164,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         </Grid>}
       </Grid>
     </CardContent>
-    {!!displayData && <Divider />}
-    {chartData && !!displayData && <CardContent>
+    {displayData && displayData.length && <Divider />}
+    {chartData && displayData && displayData.length && <CardContent>
       <Collapse in={!!downloadData && showDownload}>
         <CardDark sx={{ mb: 2 }}>
           <CardContent>
@@ -177,7 +177,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         </CardDark>
       </Collapse>
       <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
-      <Slider
+      {displayData.length > 1 && <Slider
         marks
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
@@ -188,7 +188,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         valueLabelDisplay="auto"
         valueLabelFormat={n => valueString(chartData.plotNode.info?.unit === "%" ? n / 100 : n, chartData.plotNode.info?.unit)}
         sx={{ ml: "6%", width: "93%" }}
-      />
+      />}
     </CardContent>}
   </CardLight >
 }
