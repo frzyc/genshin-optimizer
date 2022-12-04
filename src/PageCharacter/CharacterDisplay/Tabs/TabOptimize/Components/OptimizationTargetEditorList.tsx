@@ -16,11 +16,22 @@ type OptimizationTargetEditorListProps = {
 }
 
 export default function OptimizationTargetEditorList({ statFilters, setStatFilters, disabled = false }: OptimizationTargetEditorListProps) {
-  const setNewTarget = useCallback((path: string[]) => {
+  const setTarget = useCallback((path: string[], oldPath?: string[], oldIndex?: number) => {
     const statFilters_ = { ...statFilters }
+    const oldPathStr = JSON.stringify(oldPath)
+    const oldFilterArr = oldPath ? [...statFilters[oldPathStr]!] : undefined
     const pathStr = JSON.stringify(path)
-    const filterArr = [...(statFilters[pathStr] ?? []), { value: 0, disabled: false }]
+    const filterArr = [...(statFilters[pathStr] ?? [])]
+    // Copy/create new setting
+    if (oldIndex !== undefined && oldFilterArr) filterArr.push(oldFilterArr[oldIndex])
+    else filterArr.push({ value: 0, disabled: false })
     statFilters_[pathStr] = filterArr
+    // Remove old setting
+    if (oldIndex !== undefined && oldFilterArr) {
+      oldFilterArr.splice(oldIndex, 1)
+      if (!!oldFilterArr.length) statFilters_[oldPathStr] = oldFilterArr
+      else delete statFilters_[oldPathStr]
+    }
     setStatFilters({ ...statFilters_ })
   }, [setStatFilters, statFilters])
 
@@ -29,7 +40,8 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
     const pathStr = JSON.stringify(path)
     const filterArr = [...statFilters[pathStr]!]
     filterArr.splice(index, 1)
-    statFilters_[pathStr] = filterArr
+    if (!!filterArr.length) statFilters_[pathStr] = filterArr
+    else delete statFilters_[pathStr]
     setStatFilters({ ...statFilters_ })
   }, [setStatFilters, statFilters])
 
@@ -53,11 +65,11 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
 
   return <>
     {Object.entries(statFilters).flatMap(([pathStr, settings]) =>
-      settings.map((setting, index) =>
-        <OptimizationTargetEditorItem path={JSON.parse(pathStr)} setting={setting} index={index} setNewTarget={setNewTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} key={pathStr + index} />
+      settings?.map((setting, index) =>
+        <OptimizationTargetEditorItem path={JSON.parse(pathStr)} setting={setting} index={index} setTarget={setTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} key={pathStr + index} />
       )
     )}
-    <OptimizationTargetEditorItem setNewTarget={setNewTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} />
+    <OptimizationTargetEditorItem setTarget={setTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} />
   </>
 }
 
@@ -65,13 +77,13 @@ type OptimizationTargetEditorItemProps = {
   path?: string[]
   setting?: StatFilterSetting
   index?: number
-  setNewTarget: (path: string[]) => void
+  setTarget: (path: string[], oldPath?: string[], oldIndex?: number) => void
   delTarget: (path: string[], index: number) => void
   setValue: (path: string[], index: number, value: number) => void
   setDisabled: (path: string[], index: number, disabled: boolean) => void
   disabled: boolean
 }
-function OptimizationTargetEditorItem({ path, setting, index, setNewTarget, delTarget, setValue, setDisabled, disabled }: OptimizationTargetEditorItemProps) {
+function OptimizationTargetEditorItem({ path, setting, index, setTarget, delTarget, setValue, setDisabled, disabled }: OptimizationTargetEditorItemProps) {
   const { t } = useTranslation("page_character_optimize")
   const { data } = useContext(DataContext)
   const onChange = useCallback((val: number | undefined) => path && (index !== undefined) && setValue(path, index, val ?? 0), [setValue, path, index])
@@ -84,7 +96,7 @@ function OptimizationTargetEditorItem({ path, setting, index, setNewTarget, delT
     {!!setting && !!path && (index !== undefined) && <Button sx={buttonStyle} color={setting.disabled ? "secondary" : "success"} onClick={() => setDisabled(path, index, !setting.disabled)} disabled={disabled}>
       {setting.disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
     </Button>}
-    <OptimizationTargetSelector showEmptyTargets optimizationTarget={path} setTarget={setNewTarget} defaultText={t("targetSelector.selectBuildTarget")} />
+    <OptimizationTargetSelector showEmptyTargets optimizationTarget={path} setTarget={(target) => setTarget(target, path, index)} defaultText={t("targetSelector.selectBuildTarget")} />
     <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
       <CustomNumberInput
         float
