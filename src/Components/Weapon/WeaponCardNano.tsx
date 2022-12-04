@@ -75,5 +75,5 @@ function LocationIcon({ location }: { location: LocationKey }) {
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(location ? database.chars.LocationToCharacterKey(location) : "", gender), [location, gender])
-  return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} sx={{ height: "3em", marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
+  return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} size={2.5} sx={{ marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }
