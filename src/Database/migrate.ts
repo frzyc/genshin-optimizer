@@ -3,12 +3,13 @@ import { DBStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
 
 // MIGRATION STEP
-// 0. DO NOT change old `migrateV<x>ToV<x+1>` code
-// 1. Add new `migrateV<x>ToV<x+1>`
-// 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
+// 0. DO NOT change old `migrateVersion` calls
+// 1. Add new `migrateVersion` call within `migrateGOOD` function
+// 2. Add new `migrateVersion` call within `migrate` function
 // 3. Update `currentDBVersion`
+// 4. Test on import, and also on version update
 
-export const currentDBVersion = 21
+export const currentDBVersion = 22
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
@@ -41,7 +42,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     })
   })
 
-  // 8.22.0 - Present
+  // 8.22.0 - 8.27.0
   migrateVersion(21, () => {
     const states = (good as any).states as Array<object & { key: string }> | undefined
     if (states) (states as any[]).forEach(value => {
@@ -70,6 +71,25 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     if (buildSettings)
       good.buildSettings = buildSettings.map(b => ({ ...b, id: b.key }))
   })
+
+  // 8.28.0 - Present
+  migrateVersion(22, () => {
+    const buildSettings = (good as any).buildSettings
+    if (buildSettings) {
+      good.buildSettings = buildSettings.map(b => {
+        const statFilters = (b as any).statFilters
+        const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
+          `["basic","${statKey}"]`,
+          [{
+            "value": value,
+            "disabled": false
+          }]
+        ])))
+        return { ...b, statFilters: newStatFilters}
+      })
+    }
+  })
+
   good.dbVersion = currentDBVersion
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
   return good
@@ -129,7 +149,7 @@ export function migrate(storage: DBStorage) {
     })
   })
 
-  // 8.22.0 - Present
+  // 8.22.0 - 8.27.0
   migrateVersion(21, () => {
     function swap(from, to) {
       const data = storage.get(from)
@@ -153,6 +173,23 @@ export function migrate(storage: DBStorage) {
     swap("state_CharacterDisplay", "display_character")
   })
 
+  // 8.28.0 - Present
+  migrateVersion(22, () => {
+    for (const key of storage.keys) {
+      if (key.startsWith("buildSetting_")) {
+        const buildSettings = storage.get(key)
+        const statFilters = buildSettings.statFilters
+        const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
+          `["basic","${statKey}"]`,
+          [{
+            "value": value,
+            "disabled": false
+          }]
+        ])))
+        storage.set(key, { ...buildSettings, statFilters: newStatFilters })
+      }
+    }
+  })
 
   storage.setDBVersion(currentDBVersion)
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)

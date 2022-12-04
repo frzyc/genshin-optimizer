@@ -1,4 +1,3 @@
-import { StatKey } from "../../KeyMap";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
 import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
@@ -8,29 +7,34 @@ import { DataManager } from "../DataManager";
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
+export interface StatFilterSetting {
+  value: number
+  disabled: boolean
+}
+export type StatFilters = Dict<string, StatFilterSetting[]>
 export interface BuildSetting {
   artSetExclusion: ArtSetExclusion
-  statFilters: Dict<StatKey, number>
+  statFilters: StatFilters
   mainStatKeys: {
-    sands: MainStatKey[],
-    goblet: MainStatKey[],
-    circlet: MainStatKey[],
-    flower?: never,
-    plume?: never,
-  },
-  optimizationTarget?: string[],
-  mainStatAssumptionLevel: number,
-  useExcludedArts: boolean,
-  useEquippedArts: boolean,
-  allowPartial: boolean,
-  maxBuildsToShow: number,
-  plotBase?: string[],
-  compareBuild: boolean,
-  levelLow: number,
-  levelHigh: number,
+    sands: MainStatKey[]
+    goblet: MainStatKey[]
+    circlet: MainStatKey[]
+    flower?: never
+    plume?: never
+  }
+  optimizationTarget?: string[]
+  mainStatAssumptionLevel: number
+  useExcludedArts: boolean
+  useEquippedArts: boolean
+  allowPartial: boolean
+  maxBuildsToShow: number
+  plotBase?: string[]
+  compareBuild: boolean
+  levelLow: number
+  levelHigh: number
 }
 
-export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSettings", BuildSetting, BuildSetting>{
+export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSettings", BuildSetting, BuildSetting> {
   constructor(database: ArtCharDatabase) {
     super(database, "buildSettings")
     for (const key of this.database.storage.keys)
@@ -61,7 +65,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (levelHigh === undefined) levelHigh = 20
     if (!artSetExclusion) artSetExclusion = {};
     if (!allowPartial) allowPartial = false
-    artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([k, a]) => a.length))
+    artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
     return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
@@ -116,10 +120,10 @@ const initialBuildSettings: BuildSetting = deepFreeze({
 
 function buildSettingsReducer(state: BuildSetting = initialBuildSettings, action: BuildSettingReducerAction): BuildSetting {
   if ("type" in action) switch (action.type) {
-    case 'mainStatKey': {
+    case "mainStatKey": {
       const { slotKey, mainStatKey } = action
-      const mainStatKeys = deepClone(state.mainStatKeys)//create a new object to update react dependencies
-      //when mainstatkey is empty, then it resets the slot
+      const mainStatKeys = deepClone(state.mainStatKeys) // create a new object to update react dependencies
+      // when mainstatkey is empty, then it resets the slot
       if (!mainStatKey) {
         mainStatKeys[slotKey] = []
         return { ...state, mainStatKeys }

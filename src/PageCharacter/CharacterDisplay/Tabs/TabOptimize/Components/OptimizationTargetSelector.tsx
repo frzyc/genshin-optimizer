@@ -13,8 +13,8 @@ import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
 
-export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, ignoreGlobal = false, defaultText, targetSelectorModalProps = {} }: {
-  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, ignoreGlobal?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
+export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, showEmptyTargets = false, defaultText, targetSelectorModalProps = {} }: {
+  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, showEmptyTargets?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
 }) {
   const { t } = useTranslation("page_character_optimize")
   const [show, onShow, onClose] = useBoolState(false)
@@ -37,7 +37,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
 
   const invalidTarget = !optimizationTarget || !displayHeader || !node
     // Make sure the opt target is valid, if we are not in multi-target
-    || (!ignoreGlobal && node.isEmpty)
+    || (!showEmptyTargets && node.isEmpty)
 
   const prevariant = invalidTarget ? "secondary" : node.info.variant
   const variant = prevariant === "invalid" ? undefined : prevariant
@@ -51,11 +51,13 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           {iconDisplay}
           <span>{title}</span>
-          {!!action && <SqBadge color='success'>{action}</SqBadge>}
+          {!!action && <SqBadge color='success' sx={{ whiteSpace: "normal" }}>{action}</SqBadge>}
         </Box>
-        <SqBadge color={variant}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <SqBadge color={variant} sx={{ whiteSpace: "normal" }}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
+        </Box>
       </Stack>}
     </Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} ignoreGlobal={ignoreGlobal} {...targetSelectorModalProps} />
+    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} showEmptyTargets={showEmptyTargets} {...targetSelectorModalProps} />
   </>
 }

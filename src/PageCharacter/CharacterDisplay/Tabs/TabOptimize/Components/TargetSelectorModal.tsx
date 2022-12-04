@@ -18,28 +18,27 @@ export interface TargetSelectorModalProps {
   show: boolean,
   onClose: () => void,
   setTarget: (target: string[], multi?: number) => void,
-  ignoreGlobal?: boolean,
+  showEmptyTargets?: boolean,
   flatOnly?: boolean
   excludeSections?: string[]
+  excludeHeal?: boolean
 }
-export function TargetSelectorModal({ show, onClose, setTarget, ignoreGlobal = false, flatOnly = false, excludeSections = [] }: TargetSelectorModalProps) {
+export function TargetSelectorModal({ show, onClose, setTarget, showEmptyTargets = false, flatOnly = false, excludeSections = [], excludeHeal = false }: TargetSelectorModalProps) {
   const { data } = useContext(DataContext)
 
   const sections = useMemo(() => {
     return getDisplaySections(data).filter(([key]) => !excludeSections.includes(key))
-      .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([sectionKey, node]) => {
+      .map(([key, sectionObj]) => [key, Object.fromEntries(Object.entries(sectionObj).filter(([_sectionKey, node]) => {
         if (flatOnly && node.info.unit === "%") return false
 
-        // Assume `ignoreGlobal`= multitarget, ignore heal nodes on multi-target
-        if (ignoreGlobal && node.info.variant === "heal") return false
+        if (excludeHeal && node.info.variant === "heal") return false
 
-        // Assume `ignoreGlobal`= multitarget, allow showing of empty nodes as targets.
-        if (!ignoreGlobal && node.isEmpty) return false
+        if (!showEmptyTargets && node.isEmpty) return false
         return true
       })) as DisplaySub<NodeDisplay>] as [string, DisplaySub<NodeDisplay>])
       // Determine if a section has all empty entries
-      .filter(([key, sectionObj]) => Object.keys(sectionObj).length)
-  }, [data, excludeSections, flatOnly, ignoreGlobal])
+      .filter(([_key, sectionObj]) => Object.keys(sectionObj).length)
+  }, [data, excludeSections, flatOnly, showEmptyTargets, excludeHeal])
 
   return <ModalWrapper open={show} onClose={onClose}>
     <CardDark>
