@@ -1,0 +1,6 @@
+{
+  "fullBurstDMG": {
+    "text": "<0><strong>Full Elemental Burst DMG</strong></0><1>Menghitung kombinasi damage dari normal attack Razor selama Elemental Burst. Dengan kata lain, menambahkan Wolf Hit DMG dengan DMG X-Hit dari normal attack yang memicunya.</1>",
+    "label": "Normal + Wolf Hit DMG {{hitNum}}"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "fullBurstDMG": {
+    "text": "<0><strong>Tổng sát thương kỹ năng nộ</strong></0><1>Công thức này bao gồm sát thương từ đòn đánh thường của Razor khi trong trạng thái nộ. Nó đơn giản là tổng X-hit của Sói và X-hit đánh thường của Razor kích hoạt nó.</1>",
+    "label": "Sát thương đánh thường + sói {{hitNum}}"
+  }
+}
