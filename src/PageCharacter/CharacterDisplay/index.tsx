@@ -1,6 +1,6 @@
 import { BarChart, Calculate, FactCheck, Groups, Person, Science, TrendingUp } from '@mui/icons-material';
 import { Box, Button, CardContent, Skeleton, Tab, Tabs } from '@mui/material';
-import { Suspense, useCallback, useContext, useMemo } from 'react';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom';
 import CardDark from '../../Components/Card/CardDark';
@@ -12,6 +12,7 @@ import SqBadge from '../../Components/SqBadge';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../Context/DataContext';
 import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext';
+import { ChartData, GraphContext, GraphContextObj } from '../../Context/GraphContext';
 import CharacterSheet from '../../Data/Characters/CharacterSheet';
 import { DatabaseContext } from '../../Database/Database';
 import useBoolState from '../../ReactHooks/useBoolState';
@@ -84,35 +85,55 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
       characterDispatch
     }
   }, [character, characterSheet, characterDispatch])
+
+  const [chartData, setChartData] = useState(undefined as ChartData | undefined)
+  const [graphBuilds, setGraphBuilds] = useState<string[][]>()
+  const graphContextValue: GraphContextObj | undefined = useMemo(() => {
+    return {
+      chartData,
+      setChartData,
+      graphBuilds,
+      setGraphBuilds
+    }
+  }, [chartData, graphBuilds])
+
+  // Clear state when switching characters
+  useEffect(() => {
+    setChartData(undefined)
+    setGraphBuilds(undefined)
+  }, [characterKey])
+
   return <CardDark >
-    {dataContextValue && characterContextValue ? <CharacterContext.Provider value={characterContextValue}><DataContext.Provider value={dataContextValue}>
-      <FormulaDataWrapper><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <Box display="flex" >
-          <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-            <CharSelectDropdown />
-            <TravelerElementSelect />
-            <TravelerGenderSelect />
-            <DetailStatButton />
-            <CustomMultiTargetButton />
-            <FormulasButton />
+    {dataContextValue && characterContextValue && graphContextValue
+      ? <CharacterContext.Provider value={characterContextValue}><DataContext.Provider value={dataContextValue}><GraphContext.Provider value={graphContextValue}>
+        <FormulaDataWrapper><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          <Box display="flex" >
+            <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
+              <CharSelectDropdown />
+              <TravelerElementSelect />
+              <TravelerGenderSelect />
+              <DetailStatButton />
+              <CustomMultiTargetButton />
+              <FormulasButton />
+            </Box>
+            {!!onClose && <CloseButton onClick={onClose} />}
           </Box>
-          {!!onClose && <CloseButton onClick={onClose} />}
-        </Box>
-        <Box display="flex" gap={1} flexWrap="wrap">
-          {character && <LevelSelect level={character.level} ascension={character.ascension} setBoth={characterDispatch} />}
-          <HitModeToggle size="small" />
-          <InfusionAuraDropdown />
-          <ReactionToggle size="small" />
-        </Box>
-        <CardLight>
-          <TabNav tab={tab} />
-        </CardLight>
-        <CharacterPanel />
-        <CardLight>
-          <TabNav tab={tab} />
-        </CardLight>
-      </CardContent></FormulaDataWrapper>
-    </DataContext.Provider></CharacterContext.Provider> : <Skeleton variant='rectangular' width='100%' height={1000} />
+          <Box display="flex" gap={1} flexWrap="wrap">
+            {character && <LevelSelect level={character.level} ascension={character.ascension} setBoth={characterDispatch} />}
+            <HitModeToggle size="small" />
+            <InfusionAuraDropdown />
+            <ReactionToggle size="small" />
+          </Box>
+          <CardLight>
+            <TabNav tab={tab} />
+          </CardLight>
+          <CharacterPanel />
+          <CardLight>
+            <TabNav tab={tab} />
+          </CardLight>
+        </CardContent></FormulaDataWrapper>
+      </GraphContext.Provider></DataContext.Provider></CharacterContext.Provider>
+      : <Skeleton variant='rectangular' width='100%' height={1000} />
     }
   </CardDark >
 }

@@ -52,13 +52,13 @@ export class ComputeWorker {
           const value = result[min.length], { builds, plotData } = self
           let build: Build | undefined
           if (value >= self.threshold) {
-            build = { value, artifactIds: buffer.map(x => x.id) }
+            build = { value, artifactIds: buffer.map(x => x.id).filter(id => id) }
             builds.push(build)
           }
           if (plotData) {
             const x = result[min.length + 1]
             if (!plotData[x] || plotData[x]!.value < value) {
-              if (!build) build = { value, artifactIds: buffer.map(x => x.id) }
+              if (!build) build = { value, artifactIds: buffer.map(x => x.id).filter(id => id) }
               build.plot = x
               plotData[x] = build
             }
