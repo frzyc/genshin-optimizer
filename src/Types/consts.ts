@@ -31,6 +31,7 @@ export const allArtifactSets = [
   "DesertPavilionChronicle",
   "EchoesOfAnOffering",
   "EmblemOfSeveredFate",
+  "FlowerOfParadiseLost",
   "Gambler",
   "GildedDreams",
   "GladiatorsFinale",

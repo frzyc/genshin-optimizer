@@ -13,6 +13,7 @@ import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
+import FlowerOfParadiseLost from './FlowerOfParadiseLost'
 import Gambler from './Gambler'
 import GildedDreams from './GildedDreams'
 import GladiatorsFinale from './GladiatorsFinale'
@@ -56,6 +57,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   DesertPavilionChronicle,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
+  FlowerOfParadiseLost,
   Gambler,
   GildedDreams,
   GladiatorsFinale,
