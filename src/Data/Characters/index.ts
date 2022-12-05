@@ -16,6 +16,7 @@ import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
 import Eula from './Eula'
+import Faruzan from './Faruzan'
 import Fischl from './Fischl'
 import Ganyu from './Ganyu'
 import Gorou from './Gorou'
@@ -85,6 +86,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Diona,
   Dori,
   Eula,
+  Faruzan,
   Fischl,
   Ganyu,
   Gorou,

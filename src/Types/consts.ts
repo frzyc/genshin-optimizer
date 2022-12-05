@@ -77,6 +77,7 @@ export const nonTravelerCharacterKeys = [
   "Diona",
   "Dori",
   "Eula",
+  "Faruzan",
   "Fischl",
   "Ganyu",
   "Gorou",
