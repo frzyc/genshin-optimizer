@@ -12,12 +12,14 @@ export const languageCodeList = [
   "es",
   "fr",
   "id",
+  "it",
   "ja",
   "ko",
   "pt",
   "ru",
   "th",
-  "vi"
+  "tr",
+  "vi",
 ];
 
 /**
