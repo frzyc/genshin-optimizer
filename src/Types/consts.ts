@@ -325,6 +325,7 @@ export const allWeaponCatalystKeys = [
   "SolarPearl",
   "TheWidsith",
   "ThrillingTalesOfDragonSlayers",
+  "TulaytullahsRemembrance",
   "TwinNephrite",
   "WanderingEvenstar",
   "WineAndSong",
