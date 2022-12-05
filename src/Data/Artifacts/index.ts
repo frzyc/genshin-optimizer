@@ -10,6 +10,7 @@ import BraveHeart from './BraveHeart'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
+import DesertPavilionChronicle from './DesertPavilionChronicle'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import Gambler from './Gambler'
@@ -52,6 +53,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
+  DesertPavilionChronicle,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   Gambler,

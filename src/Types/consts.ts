@@ -28,6 +28,7 @@ export const allArtifactSets = [
   "CrimsonWitchOfFlames",
   "DeepwoodMemories",
   "DefendersWill",
+  "DesertPavilionChronicle",
   "EchoesOfAnOffering",
   "EmblemOfSeveredFate",
   "Gambler",
