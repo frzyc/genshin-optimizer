@@ -194,6 +194,7 @@ export const allWeaponSwordKeys = [
   "TheAlleyFlash",
   "TheBlackSword",
   "TheFlute",
+  "ToukabouShigure",
   "TravelersHandySword",
   "XiphosMoonlight",
 ] as const
