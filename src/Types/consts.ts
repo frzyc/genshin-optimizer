@@ -110,6 +110,7 @@ export const nonTravelerCharacterKeys = [
   "Thoma",
   "Tighnari",
   "Venti",
+  "Wanderer",
   "Xiangling",
   "Xiao",
   "Xingqiu",

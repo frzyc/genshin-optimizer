@@ -53,9 +53,12 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
   return additional ? data(healNode, additional) : healNode
 }
 /** Note: `additional` applies only to this formula */
-export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}, specialMultiplier?: NumNode): NumNode {
   const talentType = getTalentType(move)
-  return customDmgNode(prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base]), move, additional)
+  return customDmgNode(specialMultiplier
+    ? prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base], specialMultiplier)
+    : prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base]),
+  move, additional)
 }
 /** Note: `additional` applies only to this formula */
 export function shieldNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
