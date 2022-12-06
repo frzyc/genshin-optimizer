@@ -1,5 +1,5 @@
 import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material";
 import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";

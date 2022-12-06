@@ -1,6 +1,6 @@
 import { BusinessCenter, People } from "@mui/icons-material"
 import { CardActionArea, CardContent, CardHeader, Chip, Divider, Typography, useMediaQuery } from "@mui/material"
-import { useTheme } from "@mui/system"
+import { useTheme } from "@mui/material"
 import { useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { Link as RouterLink } from 'react-router-dom'

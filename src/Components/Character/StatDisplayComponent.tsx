@@ -1,6 +1,6 @@
 import { Masonry } from "@mui/lab"
 import { Divider, ListItem } from "@mui/material"
-import { Box } from "@mui/system"
+import { Box } from "@mui/material"
 import { useContext, useMemo } from "react"
 import { DataContext } from "../../Context/DataContext"
 import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"

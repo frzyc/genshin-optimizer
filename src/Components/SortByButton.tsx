@@ -1,7 +1,7 @@
 import { faSortAmountDownAlt, faSortAmountUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, ButtonGroup, ButtonGroupProps, MenuItem } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
 import DropdownButton from "./DropdownMenu/DropdownButton";
 
