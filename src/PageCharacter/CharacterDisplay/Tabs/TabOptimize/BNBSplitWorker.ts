@@ -165,7 +165,7 @@ export class BNBSplitWorker implements SplitWorker {
       .reduce((accu, val) => accu + val, approxs[i].base - this.min[i]))
     const newValues = objectMap(arts.values, (arts, slot) => {
       const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
-      return arts.filter(({ id }) => approxs.every(({ conts }, i) => conts[id] > requiredConts[i]))
+      return arts.filter(({ id }) => approxs.every(({ conts }, i) => conts[id] >= requiredConts[i]))
     })
     arts = { base: arts.base, values: newValues }
     const newCount = countBuilds(arts)
