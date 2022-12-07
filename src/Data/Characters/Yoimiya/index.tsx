@@ -86,7 +86,7 @@ const [condC1Path, condC1] = cond(key, "c1")
 const [condC2Path, condC2] = cond(key, "c2")
 const const3TalentInc = greaterEq(input.constellation, 3, 3)
 const const5TalentInc = greaterEq(input.constellation, 5, 3)
-const normal_dmgMult = compareEq(condSkill, "skill", subscript(input.total.skillIndex, dm.skill.dmg_, { name: ct.ch("normMult_"), unit: "%" }), one)
+const normal_dmgMult = compareEq(condSkill, "skill", subscript(input.total.skillIndex, dm.skill.dmg_, { name: st("dmgMult.normal"), unit: "%" }), one)
 const a1Stacks = lookup(condA1, Object.fromEntries(range(1, dm.passive1.maxStacks).map(i => [i, constant(i)])), 0)
 const pyro_dmg_ = greaterEq(input.asc, 1, equal(condSkill, "skill", infoMut(prod(percent(dm.passive1.pyro_dmg_), a1Stacks), KeyMap.info("pyro_dmg_"))))
 const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.activeCharKey, key,
@@ -98,13 +98,7 @@ const c2pyro_dmg_ = greaterEq(input.constellation, 2,
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
   i,
-  customDmgNode(
-    prod(subscript(input.total.autoIndex, arr, { unit: "%" }), input.total.atk, normal_dmgMult),
-    "normal", {
-    hit: {
-      ele: compareEq(condSkill, "skill", elementKey, "physical")
-    }
-  })
+  dmgNode("atk", arr, "normal", { hit: { ele: compareEq(condSkill, "skill", elementKey, "physical") } }, normal_dmgMult)
 ])
 
 // This might just need to be a single dmgNode of her kindling arrow, with proper scaling applied.

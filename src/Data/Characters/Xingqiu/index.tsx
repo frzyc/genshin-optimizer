@@ -1,11 +1,11 @@
 import { CharacterData } from 'pipeline'
 import { input } from "../../../Formula/index"
-import { constant, equal, greaterEq, infoMut, min, one, percent, prod, subscript, sum } from "../../../Formula/utils"
+import { compareEq, constant, equal, greaterEq, infoMut, min, one, percent, prod, subscript, sum } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey } from '../../../Types/consts'
-import { cond, stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
-import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -59,7 +59,7 @@ const dm = {
     burst_duration: 3
   },
   constellation4: {
-    dmg_: 0.50
+    dmg_: 1.50
   },
 } as const
 
@@ -73,7 +73,9 @@ const [condSkillPath, condSkill] = cond(key, "skill")
 
 const [condBurstPath, condBurst] = cond(key, "burst")
 const nodeC4 = greaterEq(input.constellation, 4,
-  equal(condBurst, "on", dm.constellation4.dmg_), { name: ct.ch("c4dmg_"), unit: "%" })
+  compareEq(condBurst, "on", dm.constellation4.dmg_, one),
+  { name: st("dmgMult.skill"), unit: "%" }
+)
 
 const nodeSkillDmgRed_ = equal(condSkill, "on",
   sum(subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: "%" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))))
@@ -90,17 +92,8 @@ export const dmgFormulas = {
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
-    // Multiplicative DMG increase requires customDmgNode
-    press1: customDmgNode(prod(
-      subscript(input.total.skillIndex, dm.skill.hit1, { unit: "%" }),
-      input.total.atk,
-      sum(one, nodeC4)
-    ), "skill"),
-    press2: customDmgNode(prod(
-      subscript(input.total.skillIndex, dm.skill.hit2, { unit: "%" }),
-      input.total.atk,
-      sum(one, nodeC4)
-    ), "skill"),
+    press1: dmgNode("atk", dm.skill.hit1, "skill", undefined, nodeC4),
+    press2: dmgNode("atk", dm.skill.hit2, "skill", undefined, nodeC4),
     dmgRed_: nodeSkillDmgRed_,
   },
   passive1: {
