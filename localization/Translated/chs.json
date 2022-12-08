@@ -112,7 +112,8 @@
             "set": "圣遗物套装"
         },
         "substat_one": "{{count}}项副词条",
-        "substat_other": "{{count}}项副词条"
+        "substat_other": "{{count}}项副词条",
+        "addNew": "添加新圣遗物"
     },
     "languages": {
         "chs": "简体中文",
@@ -455,7 +456,9 @@
             "skill_": "元素战技额外倍率"
         },
         "energy": "能量",
-        "teamBuff": "队伍加成"
+        "teamBuff": "队伍加成",
+        "opponents_one": "{{count}} 个敌人",
+        "opponents_other": "{{count}} 个敌人"
     },
     "weapon_SongOfBrokenPines": {
         "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -495,7 +498,6 @@
         "p2": "全队攻击加成",
         "p2p": "使用<strong>琉金云间草</strong>",
         "normPyroInfus": "<pyro>普通攻击火元素附魔</pyro>",
-        "normMult_": "普攻伤害倍数",
         "c6Key_": "长野原龙势流星群倍率"
     },
     "char_RaidenShogun": {
@@ -733,12 +735,7 @@
         "skillOneHit": "受击一次",
         "skillTwoHit": "受击两次",
         "duringBurst": "斫雷持续期间",
-        "baneOfEvil_": "敌人的雷元素抗性",
         "tidecallerMaxDmg": "施放拥有最高伤害加成的捉浪",
-        "a4normalDmg_": "普通攻击伤害加成",
-        "a4chargeDmg_": "重击伤害加成",
-        "a4atkSpeed_": "攻速加成",
-        "a4duration": "持续时间",
         "a4charge": "减少重击需要的准备时间",
         "c4dmg": "雷元素伤害",
         "burstDmgRed_": "伤害减免"
@@ -804,10 +801,7 @@
             "end": "蝶引来生施加的彼岸蝶舞状态结束后"
         },
         "constellation2": {
-            "applyBloodBlossom": "施加二命血梅香效果",
-            "skillParams": {
-                "2": "二命血梅香伤害"
-            }
+            "applyBloodBlossom": "施加二命血梅香效果"
         },
         "constellation4": {
             "condName": "处于胡桃自己施加的血梅香状态影响下的敌人被击败时"
@@ -857,8 +851,6 @@
         "starJadeStaminaCost": "50；拥有星璇：0",
         "skillReset": "碎裂时清除冷却时间，每6秒只能触发一次",
         "a4toggle": "穿过璇玑屏",
-        "a4bonus_": "岩元素伤害加成",
-        "a4duration": "持续时间",
         "c4toggle": "距离璇玑屏10米内的角色",
         "c6bonus": "生成的星璇"
     },
@@ -931,8 +923,7 @@
     "char_Xingqiu": {
         "skillCond": "雨帘剑破碎",
         "burstCond": "裁雨留虹",
-        "c2Cond": "受到剑雨攻击的敌人",
-        "c4dmg_": "<strong>古华剑·画雨笼山</strong>造成的伤害提升"
+        "c2Cond": "受到剑雨攻击的敌人"
     },
     "char_Xinyan": {
         "skill": {
@@ -1306,10 +1297,8 @@
         "tcGraph": {
             "vs": "绘制与优化目标的关系图",
             "notSel": "未选",
-            "showMinStatThr": "显示最低词条阈值",
             "downloadData": "下载数据",
-            "optTarget": "优化目标",
-            "minStatReqThr": "最低词条要求阈值"
+            "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度"
         },
         "levelFilter": "圣遗物等级过滤器",
         "useExcluded": {
@@ -1370,6 +1359,23 @@
                     "4rain": "<0><0>排除<1></1>5散件</0></0>会排除纯散件的搭配：<2><0>RRRRR</0></2>。\n"
                 }
             }
+        },
+        "buildDropdownDesc": "减少生成的配装数量可以减少生成大量配装时的计算时间。",
+        "threadDropdownDesc": "增加线程数可以加快速度，但是也会耗费更多CPU算力。",
+        "noArtis": "哎呀！你似乎还没有在GO中添加圣遗物！你应该先在<1>圣遗物<1>页面中添加一些！",
+        "build_one": "<0>{{count}}</0> 组配装",
+        "build_other": "<0>{{count}}</0> 组配装",
+        "thread_one": "<0>{{count}}</0> 线程",
+        "thread_other": "<0>{{count}}</0> 线程",
+        "targetSelector": {
+            "selectOptTarget": "选择优化目标",
+            "selectGraphTarget": "选择绘图目标",
+            "invalidTarget": "目标无效"
+        },
+        "selectTargetFirst": "首先选择一个优化目标",
+        "generateButton": {
+            "cancel": "取消",
+            "generateBuilds": "生成配装"
         }
     },
     "weapon_CalamityQueller": {
@@ -1477,5 +1483,19 @@
     },
     "weapon_XiphosMoonlight": {
         "condName": "增益效果产生"
+    },
+    "char_Nahida": {
+        "karmaDmg_": "灭净三业伤害提升",
+        "karmaCritRate_": "灭净三业暴击率提升",
+        "karmaIntervalDec": "灭净三业触发间隔降低",
+        "noBurstEffect": "提示：元素爆发没有效果，请激活1命并/或添加<pyro>火</pyro>、<electro>雷</electro>、<hydro>水</hydro>元素队友",
+        "partyInBurst": "队伍在领域内",
+        "c1Key": "<strong>摩耶之殿</strong>加成中额外计入的<pyro>火</pyro>、<electro>雷</electro>、<hydro>水</hydro>元素队友",
+        "c2": {
+            "bloomCondName": "敌人被<strong>蕴种印</strong>标记",
+            "qasCondName": "被<strong>蕴种印</strong>标记的敌人受到原激化、超激化、蔓激化反应影响"
+        },
+        "c4CondName": "附近处于<strong>所闻遍计</strong>的蕴种印状态下的敌人数量",
+        "c6KarmicDmg": "业障除伤害"
     }
 }
