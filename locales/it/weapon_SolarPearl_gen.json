@@ -1,0 +1,12 @@
+{
+  "name": "Perla solare",
+  "description": "Una perla dorata, realizzata con un materiale sconosciuto che assorbe la luce del sole e della luna e pulsa di una tiepida energia.",
+  "passiveName": "Splendore solare",
+  "passiveDescription": {
+    "0": "I colpi da attacco normale aumentano i DAN di abilità e Tripudio elementali di un <cryo>20%</cryo> per 6{NON_BREAK_SPACE}s. Allo stesso modo, i colpi da abilità e Tripudio elementali aumentano i DAN d'attacco normale di un <cryo>20%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "1": "I colpi da attacco normale aumentano i DAN di abilità e Tripudio elementali di un <cryo>25%</cryo> per 6{NON_BREAK_SPACE}s. Allo stesso modo, i colpi da abilità e Tripudio elementali aumentano i DAN d'attacco normale di un <cryo>25%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "2": "I colpi da attacco normale aumentano i DAN di abilità e Tripudio elementali di un <cryo>30%</cryo> per 6{NON_BREAK_SPACE}s. Allo stesso modo, i colpi da abilità e Tripudio elementali aumentano i DAN d'attacco normale di un <cryo>30%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "3": "I colpi da attacco normale aumentano i DAN di abilità e Tripudio elementali di un <cryo>35%</cryo> per 6{NON_BREAK_SPACE}s. Allo stesso modo, i colpi da abilità e Tripudio elementali aumentano i DAN d'attacco normale di un <cryo>35%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "4": "I colpi da attacco normale aumentano i DAN di abilità e Tripudio elementali di un <cryo>40%</cryo> per 6{NON_BREAK_SPACE}s. Allo stesso modo, i colpi da abilità e Tripudio elementali aumentano i DAN d'attacco normale di un <cryo>40%</cryo> per 6{NON_BREAK_SPACE}s."
+  }
+}

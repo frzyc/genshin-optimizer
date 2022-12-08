@@ -1,7 +1,7 @@
 {
   "name": "Cyno",
   "title": "Judicator of Secrets",
-  "description": "\"Mahamatra Umum\" yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada \"Vayuvyastra Agung\" buatan Kshahrewar.",
+  "description": "\"Mahamatra Agung\" yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada \"Vayuvyastra Agung\" buatan Kshahrewar.",
   "constellationName": "Lupus Aureus",
   "auto": {
     "name": "Invoker's Spear",
@@ -77,7 +77,7 @@
       "5": "<br/>",
       "6": "Efek ini akan hilang saat Cyno meninggalkan medan pertempuran, dan bisa berlangsung selama maksimal 18 detik.",
       "7": "<br/>",
-      "8": "<i>Ritual rahasia yang diturunkan dari bangsa kuno adalah bentuk penghakiman terakhir kepada Mahamatra Umum.</i>",
+      "8": "<i>Ritual rahasia yang diturunkan dari bangsa kuno adalah bentuk penghakiman terakhir kepada Mahamatra Agung.</i>",
       "9": "<i>Entah itu sekarang atau masa lalu, badai besar atau ular raksasa, tidak akan ada yang bisa menggoyahkan kemuliaan hukum. </i>"
     },
     "skillParams": {

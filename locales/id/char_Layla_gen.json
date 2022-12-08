@@ -44,13 +44,14 @@
       "0": "Mengaktifkan Curtain of Slumber dan mengakibatkan <cryo>Cryo DMG Area</cryo>.",
       "1": "Curtain of Slumber dapat menahan DMG berdasarkan Maks. HP Layla, perisai juga memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>. Saat mengaktifkan perisai, akan memberikan <cryo>efek Cryo</cryo> sementara untuk Layla.",
       "2": "<br/>",
-      "3": "<strong>Night Star and Shooting Star</strong>Selama Curtain of Slumber aktif, maka setiap 1,5 detik akan menghasilkan 1 buah Night Star yang melekat ke perisai; Saat Karakter yang berada di dalam perlindungan perisai melancarkan Elemental Skill, 2 buah Night Star akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,3 detik, sampai maksimal 4 buah Night Star.",
-      "4": "Saat Night Star pada Curtain of Slumber mencapai 4 buah, dan jika ada musuh di sekitar, maka Night Star secara otomatis berubah menjadi Shooting Star yang bisa mengejar musuh, dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh yang terkena.",
-      "5": "Saat durasi Curtain of Slumber berakhir atau perisainya hancur, Night Star juga akan turut lenyap. Jika Night Star sudah berubah menjadi Shooting Star dan sudah diluncurkan, maka Shooting Star akan terus diluncurkan sampai habis.",
-      "6": "<br/>",
-      "7": "Night Star yang baru tidak akan bisa dihasilkan sebelum Shooting Star yang lama habis.",
-      "8": "<br/>",
-      "9": "<i>\"Aku dan dia seperti dua pengrajin ahli yang belum pernah bertemu, yang duduk di alas yang sama, menyulam sekuntum bunga impian yang sama.\"</i>"
+      "3": "<strong>Night Star and Shooting Star</strong>",
+      "4": "Selama Curtain of Slumber aktif, maka setiap 1,5 detik akan menghasilkan 1 buah Night Star yang melekat ke perisai; Saat Karakter yang berada di dalam perlindungan perisai melancarkan Elemental Skill, 2 buah Night Star akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,3 detik, sampai maksimal 4 buah Night Star.",
+      "5": "Saat Night Star pada Curtain of Slumber mencapai 4 buah, dan jika ada musuh di sekitar, maka Night Star secara otomatis berubah menjadi Shooting Star yang bisa mengejar musuh, dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh yang terkena.",
+      "6": "Saat durasi Curtain of Slumber berakhir atau perisainya hancur, Night Star juga akan turut lenyap. Jika Night Star sudah berubah menjadi Shooting Star dan sudah diluncurkan, maka Shooting Star akan terus diluncurkan sampai habis.",
+      "7": "<br/>",
+      "8": "Night Star yang baru tidak akan bisa dihasilkan sebelum Shooting Star yang lama habis.",
+      "9": "<br/>",
+      "10": "<i>\"Aku dan dia seperti dua pengrajin ahli yang belum pernah bertemu, yang duduk di alas yang sama, menyulam sekuntum bunga impian yang sama.\"</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -143,8 +144,8 @@
   "constellation4": {
     "name": "Starry Illumination",
     "description": {
-      "0": "Saat <strong>Nights of Formal Focus</strong> mulai menembakkan Shooting Star, akan memberikan efek Dawn Star terhadap seluruh anggota party di sekitar: DMG yang diakibatkan Normal Attack dan Plunging Attack akan meningkat sebesar 5% Max HP Layla.",
-      "1": "Efek Dawn Star bertahan selama 3 detik, dan akan hilang 0,05 detik setelah Normal Attack atau Plunging Attack mengakibatkan DMG."
+      "0": "Saat <strong>Nights of Formal Focus</strong> mulai menembakkan Shooting Star, akan memberikan efek Dawn Star terhadap seluruh anggota party di sekitar: DMG yang diakibatkan Normal Attack dan Charged Attack akan meningkat sebesar 5% Max HP Layla.",
+      "1": "Efek Dawn Star bertahan selama 3 detik, dan akan hilang 0,05 detik setelah Normal Attack atau Charged Attack mengakibatkan DMG."
     }
   },
   "constellation5": {

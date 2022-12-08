@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del viento y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+        "1": "Concentra el poder del viento, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -74,7 +74,7 @@
       "4": "Si el espíritu del viento entra en contacto con <hydro>Hydro</hydro>/<pyro>Pyro </pyro>/<cryo>Cryo </cryo>/<electro>Electro </electro>, infligirá Daño Elemental adicional de ese tipo.",
       "5": "Solo puede ocurrir un cambio elemental en toda la duración de esta habilidad.",
       "6": "<br/>",
-      "7": "<i>Sacarosa solía dar nombres a sus volátiles Hipostasis Anemo. Pero el linaje de Hipostasis creció tan rápido que acabó superando al Barón Bunny n.º 893.</i>"
+      "7": "<i>Sacarosa solía dar nombres a sus volátiles Hipóstasis Anemo. Pero el linaje de Hipóstasis creció tan rápido que acabó superando al Barón Bunny n.º 893.</i>"
     },
     "skillParams": {
       "0": "Daño continuo",
@@ -120,7 +120,7 @@
     }
   },
   "constellation2": {
-    "name": "Bett: Forma no consolidada",
+    "name": "Bet: Forma no consolidada",
     "description": {
       "0": "Aumenta en 2 s la duración de <strong>Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong>."
     }

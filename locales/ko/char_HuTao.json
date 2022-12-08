@@ -4,15 +4,12 @@
     "end": "나비의 서가 부여하는 피안접무 상태 종료"
   },
   "constellation2": {
-    "applyBloodBlossom": "혈매향 효과 적용(2돌)",
-    "skillParams": {
-      "2": "혈매향 피해(2돌)"
-    }
+    "applyBloodBlossom": "혈매향 효과 적용(2돌)"
   },
   "constellation4": {
     "condName": "호두가 부여한 혈매향 효과 상태의 적 처치시"
   },
   "constellation6": {
-    "condName": "HP가 25% 이하로 떨어지거나 전투 뷸능이 될 정도의 피해를 입음"
+    "condName": "체력이 25% 이하로 떨어지거나 전투 뷸능이 될 정도의 피해를 입음"
   }
 }

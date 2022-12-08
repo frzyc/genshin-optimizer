@@ -175,6 +175,10 @@
     "name": "Tael antiguo",
     "description": "Un Tael antiguo hecho de hierro. Según Ulman, vale una verdadera fortuna. Aunque a primera vista no parece nada especial..."
   },
+  "PlayerEXP": {
+    "name": "EXP de jugador",
+    "description": "Se obtiene al ganar duelos de Invocación de los Sabios. Cada duelo ganado pavimenta el camino hacia la victoria, pues esa es la esencia de la experiencia. No hay mayor fortaleza que la de saber cómo vencer al rival incluso en la más complicada de las situaciones."
+  },
   "BusinessEarnings": {
     "name": "Ingresos",
     "description": "Una cantidad considerable de néctares cristalizados que representa la suma total de tus ganancias durante la venta benéfica. Cuando el Festival de la Vendimia llegue a su fin, Bernhard lo intercambiará por Moras para donarlo a los ancianos y niños más necesitados."
@@ -197,7 +201,11 @@
   },
   "ShatteredPhenocryst": {
     "name": "Fenocristal fragmentado",
-    "description": "Unos misteriosos cristales que obtuviste al derrotar a los poderosos Hipostasis en un dominio desconocido hasta ahora. Sus llamativos colores brillan como si se tratara de la sustancia residual que dejan tras de sí los elementos.\\nPuedes utilizarlos en el evento «Sinfonía Hipostásica: Periodo disonante» para canjearlos por distintos materiales."
+    "description": "Unos misteriosos cristales que obtuviste al derrotar a los poderosos Hipóstasis en un dominio desconocido hasta ahora. Sus llamativos colores brillan como si se tratara de la sustancia residual que dejan tras de sí los elementos.\\nPuedes utilizarlos en el evento «Sinfonía Hipostásica: Periodo disonante» para canjearlos por distintos materiales."
+  },
+  "CourageTestTicket": {
+    "name": "Cupón de valor",
+    "description": "Un cupón que se obtiene al superar algunos desafíos especiales de la Prueba de Valor organizada por la Comisión Yashiro. Es un símbolo del reconocimiento que los valientes participantes ganaron con esfuerzo y osadía.\\nPodrás intercambiarlos por valiosos objetos durante el evento «Prueba de Valor de Akitsu»."
   },
   "Primogem": {
     "name": "Protogema",
@@ -551,6 +559,14 @@
     "name": "Laila",
     "description": "Una estudiante de la Facultad Rtawahist especializada en astrología teórica. A veces con sonambulismo, otras veces con insomnio, esta chica siempre tiene problemas de sueño."
   },
+  "Wanderer": {
+    "name": "Trotamundos",
+    "description": "Un joven errante de identidad enigmática. Viste como un asceta, pero no actúa como tal."
+  },
+  "Faruzan": {
+    "name": "Faruzán",
+    "description": "Una erudita “con cien años de antigüedad” a la que le encanta recalcar que tiene más experiencia que los demás. Posee unos amplios conocimientos sobre textos antiguos y sobre todo tipo de mecanismos."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": "Material de activación de constelación de Kamisato Ayaka"
@@ -791,6 +807,14 @@
     "name": "Stella Fortuna de Laila",
     "description": "Material de activación de constelación de Laila"
   },
+  "WanderersStellaFortuna": {
+    "name": "Stella Fortuna del Trotamundos",
+    "description": "Material de activación de constelación del Trotamundos"
+  },
+  "FaruzansStellaFortuna": {
+    "name": "Stella Fortuna de Faruzán",
+    "description": "Material de activación de constelación de Faruzán"
+  },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador",
     "description": "Un diario de viaje en el que está escrito en orden cronológico todo lo que has visto y escuchado en tu viaje por Teyvat. No sabes por qué tienes este borrador. ¿Acaso has estado aquí antes?\\n\\nDespués de usarlo, podrás obtener el Pase de Batalla del Gnóstico actual."
@@ -798,6 +822,10 @@
   "BlessingOfTheWelkinMoonNewMoon": {
     "name": "Bendición Lunar - Mes nuevo",
     "description": "Un ritual de rezo a la luna por riqueza y buena fortuna cuando sale la luna nueva. Puedes asumir que esta es la primera luna nueva de Teyvat o, al menos, la primera que has visto.\\n\\nUsa este objeto para recibir recompensas de la Bendición Lunar durante 30 días."
+  },
+  "AnAppellativeStroke": {
+    "name": "Pincel de la resignificación",
+    "description": "Un pincel capaz de conceder un nuevo nombre a cierta persona.\\nUna vez que se elija el nombre, no podrá volver a cambiarse."
   },
   "EnergyOrbPyro": {
     "name": "Orbe de energía (Pyro)",
@@ -1223,7 +1251,7 @@
     "name": "Carne congelada",
     "description": "Un tipo de carne fresca muy poco común.\\nSegún los registros escritos, proviene de una especie ya extinta parecida al jabalí. Su carne ha podido conservarse hasta la actualidad gracias al clima extremo de Espinadragón. Es considerado un ingrediente prácticamente celestial por los amantes de la gastronomía de Teyvat."
   },
-  "UnagiMeat": {
+  "EelMeat": {
     "name": "Anguila",
     "description": "Carne de anguila fresca. Si se prepara correctamente, puede usarse para hacer un plato muy sabroso."
   },
@@ -2639,7 +2667,7 @@
     "name": "Colmillo de dragón imbuido de fuerza vital",
     "description": "Un diente de dragón que ha absorbido fuerza vital. Su brillo y textura tienen un aspecto inquietante."
   },
-  "PrincesssBox": {
+  "PrincessBox": {
     "name": "Cofre de la princesa",
     "description": "Un cofre cuyo fondo está decorado con un tipo de patrón al que aún le faltan dos partes. Si puedes reunir las que quedan, tal vez puedas abrir la puerta de algún sitio.\\n“Me temo que no puedo completar el mural”.\\n“Hace mucho tiempo que no veo el azul del cielo y el verde del campo. No sé qué tipo de azul y de verde debo usar para dibujar el paisaje de nieve derretida que quiere mi padre”.\\n“Cuando él vuelva, todo volverá a la normalidad. Pero hace demasiado frío y yo ya no puedo más”.\\n“Lo siento, papá. Ukko, siento que nos hayas tenido que ver así”.\\n“Imunlaukr, ojalá pudiera verte una última vez...”"
   },
@@ -3857,7 +3885,7 @@
   },
   "RukkhashavaMushrooms": {
     "name": "Champiñón rukkhashava",
-    "description": "Un hongo que crece en capas, como si de un mar de nubes se tratara. La mayoría de estos hongos extraños crecen en los troncos de los árboles situados en las zonas más profundas de la selva. Por eso, la gente de Sumeru los considera la sagrada encarnación del legado de la mismísima Rukkhadevata."
+    "description": "Un hongo que crece en capas, como si de un mar de nubes se tratara. La mayoría de estos hongos extraños crecen en los troncos de los árboles situados en las zonas más profundas de la selva."
   },
   "Padisarah": {
     "name": "Orquídea padishá",
@@ -5316,7 +5344,7 @@
     "description": "Se trata de un mero amuleto hecho con la destreza de un niño. No se sabe qué significado podrá tener. Al estar afectado por el elemento Dendro, mantiene las flores frescas durante más tiempo. No esconde otra particularidad más allá de estar afectado por la energía Dendro."
   },
   "FreshlyPickedMushroom": {
-    "name": "Champiñones recién recogidos",
+    "name": "Champiñón recién recogido",
     "description": "Champiñones recogidos en la localización que te proporcionó Hanbei. Aparte del hecho de que crecen en los troncos de los árboles, no parecen tener nada de especial. No darán ningún problema, ¿verdad?"
   },
   "StrangeSumeruRose": {
@@ -5361,7 +5389,7 @@
   },
   "SacredSealValley": {
     "name": "Piedra sagrada: Valle",
-    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de alguna estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Los eruditos creen que el significado original de la inscripción es “valle”."
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Los eruditos creen que el significado original de la inscripción es “valle”."
   },
   "SacredSealBirdHead": {
     "name": "Piedra sagrada: Cabeza de pájaro",
@@ -5893,7 +5921,7 @@
   },
   "LiyueShrineOfDepthsKey": {
     "name": "Llave de Santuario de Liyue",
-    "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por todo Liyue.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
+    "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Liyue.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
   },
   "InazumaShrineOfDepthsKey": {
     "name": "Llave de Santuario de Inazuma",
@@ -5938,6 +5966,18 @@
   "SumeruShrineOfDepthsKey": {
     "name": "Llave de Santuario de las Profundidades de Sumeru",
     "description": "Capaz de romper los sellos de los antiguos santuarios esparcidos por toda Sumeru.\\nEl altar de una deidad antigua se levanta imponente, a pesar de la destrucción de su civilización. Las llaves, que pueden encontrarse en dominios, pueden romper su sello. Tal vez un soplo del pasado pueda hacer que la deidad del altar olvide sus aflicciones."
+  },
+  "BlankDynamicCard": {
+    "name": "Carta holográfica en blanco",
+    "description": "Una carta holográfica con cierto diseño en el reverso, pero completamente en blanco en el anverso. Dicen que si en el espacio en blanco de la cubierta escribes el nombre de la carta holográfica que quieres, podrás llevársela al representante de la Asociación en la taberna para obtener la cubierta holográfica de dicha carta."
+  },
+  "MatchInvitationLetter": {
+    "name": "Invitación de duelo",
+    "description": "Interactúa con el tablón de invitaciones que hay en la taberna Cola de Gato y elige a un jugador de la lista para que la taberna le envíe la Invitación de duelo. El jugador que reciba la invitación se dirigirá a la taberna para afrontar el duelo."
+  },
+  "LuckyCoin": {
+    "name": "Moneda de la suerte",
+    "description": "La divisa reconocida y utilizada por la Asociación de Jugadores. Puede utilizarse para comprar toda clase de accesorios de Invocación de los Sabios. Dicen que en un principio la llamaron “Moneda de la suerte” para desearle a sus poseedores la capacidad de cambiar su suerte para bien. ¿O quizás se refiere a que solo los bienaventurados pueden usarla?"
   },
   "Dish": {
     "name": "Plato",
@@ -7593,7 +7633,7 @@
   },
   "SuspiciousTahchin": {
     "name": "Tahchín extraño",
-    "description": "Un clásico plato de arroz que se sirve en gran cantidad y que resulta muy saciante. El color de la parte exterior ennegrecido no parece muy apetitoso. Al probarlo, está tan duro que da la sensación de que la comida está luchando con los dientes. Por el bien de la salud dental, es mejor comer solo el relleno..."
+    "description": "Un clásico plato de arroz que se sirve en gran cantidad y que resulta muy saciante. El color ennegrecido de la parte exterior no parece muy apetitoso. Al probarlo, está tan duro que da la sensación de que la comida está luchando con los dientes. Por el bien de la salud dental, es mejor comer solo el relleno..."
   },
   "Tahchin": {
     "name": "Tahchín",
@@ -7818,6 +7858,26 @@
   "Halvamazd": {
     "name": "Halvamazda",
     "description": "La especialidad de Nahida. Al parecer, “mazda” significa “sabiduría” en Sumeru, y da la casualidad de que este pedacito de sabiduría resulta simplemente irresistible. Los ojos de Nahida brillan con amabilidad al decir: “La anémona de mar ayudó al pececito y lo vio crecer, así que es natural que el pececito quisiera ofrecerle algo a cambio”."
+  },
+  "SuspiciousSamosa": {
+    "name": "Samosas extrañas",
+    "description": "Un pequeño aperitivo frito. La masa exterior tiene una textura grasienta, con un relleno tan abundante que es prácticamente imposible no atragantarse con él. Aunque se combinara con el refrescante sabor de una salsa de menta, el comensal no querría repetir."
+  },
+  "Samosa": {
+    "name": "Samosas",
+    "description": "Un pequeño aperitivo frito. El relleno se ha extendido uniformemente sobre una fina capa de masa a la que más tarde se da forma de triángulo y se fríe en una sartén con una cantidad considerable de aceite hasta que se dora. Suele rellenarse tanto de carne como de verduras, por lo que suele ser un “alimento de conflicto frecuente” entre carnívoros y vegetarianos."
+  },
+  "DeliciousSamosa": {
+    "name": "Samosas deliciosas",
+    "description": "Un pequeño aperitivo frito. La fina y crujiente masa dorada está ligeramente abultada debido al jugoso y abundante relleno que contiene. La primera la engulles cual espinodrilo hambriento, pero la segunda la degustas como los Arcontes mandan. Sin darte cuenta, te sumes en un embriagador festín para tus papilas gustativas y, cuando vuelves a estirar la mano en busca de otra samosa, descubres con gran pesar que el plato está vacío."
+  },
+  "TraditionallyMadeCharcoalBakedAjilenakhCake": {
+    "name": "Panecillos de dátil carbonizados tradicionales",
+    "description": "La especialidad de Faruzán. Los ennegrecidos bollitos de dátiles reposan sobre un lecho de salsa de color verde menta, casi como si de algún tipo de misterioso y antiguo mecanismo se tratara. Tu vacilación no pasa desapercibida a los ojos de Faruzán, quien inmediatamente te asegura que se trata de una receta centenaria tradicional de Sumeru y que su sabor no te decepcionará. ¿D-de verdad los gustos de los habitantes de Sumeru eran tan peculiares hace cien años?"
+  },
+  "ShimiChazuke": {
+    "name": "Chazuke auténtico",
+    "description": "La especialidad del Trotamundos. El amargo regusto del té y el dulce paladar del arroz se combinan para dar lugar a un manjar que se volverá casi adictivo después del primer bocado. ¿Dónde habrá aprendido a dominar así las artes culinarias? Como si pudiera adivinar lo que estás pensando, el Trotamundos te dirige una mirada severa: “¿Qué esperas? Si has acabado, ve a lavar el cuenco”."
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -8359,6 +8419,10 @@
     "name": "Receta: Natillas de rosa",
     "description": "Receta paso a paso para hacer unas natillas de rosa."
   },
+  "RecipeSamosa": {
+    "name": "Receta: Samosas",
+    "description": "Receta paso a paso para hacer samosas."
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado",
     "description": "Objetos creados al combinar materiales."
@@ -8785,7 +8849,7 @@
   },
   "ChaosBolt": {
     "name": "Perno del caos",
-    "description": "Proviene de un Dragón de las Ruinas inactivo.\\nEn el antiguo reino caído había un grupo de gente que estaba obsesionada con la idea del mimetismo. Ya fueran los elementos puros y en perfecto orden de los Hipostasis o el poder primigenio y ancestral de los dragones, estas personas creían que todo podía replicarse y modificarse hasta superar a sus homólogos naturales.\\nDesde esta óptica, un cuerpo físico superior e inmaculado podría ser capaz de reemplazar el decadente orden destinado a ser destruido."
+    "description": "Proviene de un Dragón de las Ruinas inactivo.\\nEn el antiguo reino caído había un grupo de gente que estaba obsesionada con la idea del mimetismo. Ya fueran los elementos puros y en perfecto orden de los Hipóstasis o el poder primigenio y ancestral de los dragones, estas personas creían que todo podía replicarse y modificarse hasta superar a sus homólogos naturales.\\nDesde esta óptica, un cuerpo físico superior e inmaculado podría ser capaz de reemplazar el decadente orden destinado a ser destruido."
   },
   "DamagedPrism": {
     "name": "Prisma dañado",
@@ -8801,11 +8865,11 @@
   },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
-    "description": "La forma condensada del Hipostasis Anemo después de ser derrotado. En su interior contiene poder Anemo puro.\\nSe dice que una mariposa frágil y débil contiene el poder para generar un huracán. Esta mariposa hecha de viento puro, sin duda, espera el día para volver a invocar la tormenta."
+    "description": "La forma condensada del Hipóstasis Anemo después de ser derrotado. En su interior contiene poder Anemo puro.\\nSe dice que una mariposa frágil y débil contiene el poder para generar un huracán. Esta mariposa hecha de viento puro, sin duda, espera el día para volver a invocar la tormenta."
   },
   "LightningPrism": {
     "name": "Prisma del relámpago",
-    "description": "Utilizado por el Hipostasis Electro para concentrar poder elemental. Contiene poder Electro puro.\\nLos prismas pueden descomponer la luz en colores, así como el Prisma del relámpago entrelaza la energía que fluye en rayos puros. Aunque el Hipostasis Electro haya sido derrotado, el elemento Electro continúa concentrado en este prisma."
+    "description": "Utilizado por el Hipóstasis Electro para concentrar poder elemental. Contiene poder Electro puro.\\nLos prismas pueden descomponer la luz en colores, así como el Prisma del relámpago entrelaza la energía que fluye en rayos puros. Aunque el Hipóstasis Electro haya sido derrotado, el elemento Electro continúa concentrado en este prisma."
   },
   "DvalinsPlume": {
     "name": "Pluma de Stormterror",
@@ -8833,7 +8897,7 @@
   },
   "BasaltPillar": {
     "name": "Pilar de basalto",
-    "description": "Pilares que forman la coraza del Hipostasis Geo, creadas a partir de altas concentraciones de elemento Geo.\\nEl elemento Geo es considerado el más pesado de todos. El Hipostasis Geo construye su coraza con estelas altísimas y se eleva encima de ellas, quizás no solo para enfrentarse al enemigo, sino también para estar más cerca del cielo."
+    "description": "Pilares que forman la coraza del Hipóstasis Geo, creadas a partir de altas concentraciones de elemento Geo.\\nEl elemento Geo es considerado el más pesado de todos. El Hipóstasis Geo construye su coraza con estelas altísimas y se eleva encima de ellas, quizás no solo para enfrentarse al enemigo, sino también para estar más cerca del cielo."
   },
   "HoarfrostCore": {
     "name": "Núcleo de escarcha",
@@ -8877,7 +8941,7 @@
   },
   "CrystallineBloom": {
     "name": "Flor cristalina",
-    "description": "Un cristal de hielo de una pureza extrema que se crea cuando un Hipostasis Cryo florece.\\nEstos cristales de escarcha siempre crecerán y florecerán sin parar según las reglas del frío, hasta que un día se transformen en la flor invernal que lo congela todo. Quizás el tiempo estancado, ese corazón que nunca se derrite, es la esencia de esta flor inmortal."
+    "description": "Un cristal de hielo de una pureza extrema que se crea cuando un Hipóstasis Cryo florece.\\nEstos cristales de escarcha siempre crecerán y florecerán sin parar según las reglas del frío, hasta que un día se transformen en la flor invernal que lo congela todo. Quizás el tiempo estancado, ese corazón que nunca se derrite, es la esencia de esta flor inmortal."
   },
   "DreamSolvent": {
     "name": "Solvente de sueños",
@@ -8893,7 +8957,7 @@
   },
   "SmolderingPearl": {
     "name": "Perla abrasante",
-    "description": "La cristalización de un Hipostasis Pyro que emite calor constantemente.\\nLas ardientes llamas también se apagarán tarde o temprano, y el fuego extinguido también puede volver a avivarse con fuerza. Debe ser entonces cuando el mundo se propone que el Hipostasis Pyro se apague y recobre la fugacidad de sus llamas una y otra vez sin cesar, como la vida eterna de los miles de seres que habitan el universo."
+    "description": "La cristalización de un Hipóstasis Pyro que emite calor constantemente.\\nLas ardientes llamas también se apagarán tarde o temprano, y el fuego extinguido también puede volver a avivarse con fuerza. Debe ser entonces cuando el mundo se propone que el Hipóstasis Pyro se apague y recobre la fugacidad de sus llamas una y otra vez sin cesar, como la vida eterna de los miles de seres que habitan el universo."
   },
   "MoltenMoment": {
     "name": "Momento del derretimiento",
@@ -8909,7 +8973,7 @@
   },
   "DewOfRepudiation": {
     "name": "Rocío del rechazo",
-    "description": "Una gota de agua dejada por el Hipostasis Hydro al ser derrotado.\\nTiene una fuerte capacidad de rechazo, y consiste en uno de los métodos de ataque de este Hipostasis. Dicen que el agua contiene recuerdos y fuerza de voluntad, los cuales incrementan cuando dos cuerpos de agua convergen. Sin embargo, las olas que invoca el Hipostasis Hydro son incompatibles con las corrientes que fluyen por dentro y fuera de la tierra. Aunque cayera en las puras aguas de Petrichor, esta gota seguiría resistiéndose a converger con ellas como si de mercurio se tratara."
+    "description": "Una gota de agua dejada por el Hipóstasis Hydro al ser derrotado.\\nTiene una fuerte capacidad de rechazo, y consiste en uno de los métodos de ataque de este Hipóstasis. Dicen que el agua contiene recuerdos y fuerza de voluntad, los cuales incrementan cuando dos cuerpos de agua convergen. Sin embargo, las olas que invoca el Hipóstasis Hydro son incompatibles con las corrientes que fluyen por dentro y fuera de la tierra. Aunque cayera en las puras aguas de Petrichor, esta gota seguiría resistiéndose a converger con ellas como si de mercurio se tratara."
   },
   "StormBeads": {
     "name": "Abalorio de la tempestad",
@@ -8957,7 +9021,7 @@
   },
   "QuelledCreeper": {
     "name": "Trepadora supresora",
-    "description": "Una sustancia elemental pura de la que finalmente se condensa el Hipostasis Dendro. Se trata de un cristal cúbico puro y protegido por unas robustas enredaderas.\\nEl elemento Dendro, que es el más contrario al orden natural de las cosas y, al mismo tiempo, el más adecuado para la vida, y el Hipostasis, un ser elemental muy alejado del resto de las formas de vida, no deberían haber sido capaces de unirse en este mundo. Se dice que el Hipostasis es capaz de “aprender” de su entorno y que es por ello que comprende los sueños y matices del bosque. Su forma actual es el resultado de miles de años de transformación."
+    "description": "Una sustancia elemental pura de la que finalmente se condensa el Hipóstasis Dendro. Se trata de un cristal cúbico puro y protegido por unas robustas enredaderas.\\nEl elemento Dendro, que es el más contrario al orden natural de las cosas y, al mismo tiempo, el más adecuado para la vida, y el Hipóstasis, un ser elemental muy alejado del resto de las formas de vida, no deberían haber sido capaces de unirse en este mundo. Se dice que el Hipóstasis es capaz de “aprender” de su entorno y que es por ello que comprende los sueños y matices del bosque. Su forma actual es el resultado de miles de años de transformación."
   },
   "PuppetStrings": {
     "name": "Tubo de marioneta",
@@ -9673,7 +9737,7 @@
   },
   "LimitedEditionDesertSpecialTravelPack": {
     "name": "Bolsa especial de viaje para el desierto de edición limitada",
-    "description": "Unas bolsas de viaje que le compraste a Dori. Están llena de cosas extrañas. Aunque a primera vista resultan desconcertantes, una inspección más a fondo revela que en realidad podrían ser bastante útiles."
+    "description": "Una bolsa de viaje que le compraste a Dori. Está llena de cosas extrañas. Aunque a primera vista resulta desconcertante, una inspección más a fondo revela que en realidad podría resultar de mucha utilidad."
   },
   "AShortLetter": {
     "name": "Una carta corta",
@@ -9735,6 +9799,22 @@
     "name": "Carta Fatui misteriosa",
     "description": "Una carta que descubriste al derrotar al Recaudador Fatui con el que te topaste. Aún te preguntas por qué llevaría encima algo así."
   },
+  "HiltLikeObject": {
+    "name": "Empuñadura",
+    "description": "Un objeto cuya forma se parece a la de una empuñadura. Tal vez se trate de parte de la Cuchilla Oculta que buscaba Lan..."
+  },
+  "ABriefAnalysisOfPossibleEventsOfHistoricalImportanceInTheTatarasunaArea": {
+    "name": "Breve análisis sobre un importante acontecimiento histórico que podría haber ocurrido en Tatarasuna",
+    "description": "Breve análisis sobre un importante acontecimiento histórico que podría haber ocurrido en Tatarasuna"
+  },
+  "TheIsleOfDarklingClouds": {
+    "name": "La isla de las nubes negras",
+    "description": ""
+  },
+  "BoxfulOfHomelandSoil": {
+    "name": "Caja con “tierra natal”",
+    "description": "Tierra que Sun Yu reclamó de su lugar de origen. Su viaje será largo, y su final, incierto."
+  },
   "DerivedContents": {
     "name": "Contenido descifrado",
     "description": "Información que descubriste al unir todas las pistas de las que disponías."
@@ -9742,6 +9822,10 @@
   "XudongsLetter": {
     "name": "Carta de Xu Dong",
     "description": "Una carta que dejó Xu Dong. Parece que también hay algo escondido en el sobre..."
+  },
+  "RandomWeaponShards": {
+    "name": "Fragmentos de un arma",
+    "description": "Fragmentos de algún arma. No se sabe cómo acabaron en este estado..."
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -10067,6 +10151,10 @@
     "name": "Pluma de los vientos cambiantes",
     "description": "Objeto de refinamiento exclusivo para el arma “Alabarda del Viento Epistolar”.\\nUna antigua pluma tallada en turquesa que, en el pasado, servía como accesorio decorativo o como objeto conmemorativo."
   },
+  "ParasolTalcum": {
+    "name": "Talco de paraguas",
+    "description": "Objeto de refinamiento exclusivo para el arma “Diluvio Florífero”.\\nUna especie de polvo utilizado para unir las varas de bambú al paraguas.\\nAunque las estaciones se sucedan y el agua de la lluvia se evapore, los recuerdos y pensamientos siempre permanecen, como si se tratara de un letargo al amparo de un paraguas."
+  },
   "FalconsDance": {
     "name": "Danza del halcón",
     "description": "Cuando un personaje realiza un Ataque Descendente, genera una onda de choque que inflige Daño en el AdE. Cada personaje solo puede generar una onda de choque cada 8 s."
@@ -10305,7 +10393,7 @@
   },
   "SucroseBioAlchemy": {
     "name": "Sacarosa - Bioalquimia",
-    "description": "Diseño de tarjeta de presentación.\\nSi examinas detenidamente un Hipostasis Anemo antes de que desaparezca, descubrirás que, en realidad, son bastante cuadrados."
+    "description": "Diseño de tarjeta de presentación.\\nSi examinas detenidamente un Hipóstasis Anemo antes de que desaparezca, descubrirás que, en realidad, son bastante cuadrados."
   },
   "FischlNightRaven": {
     "name": "Fischl - Cuervo",
@@ -10468,7 +10556,7 @@
     "description": "Diseño de tarjeta de presentación.\\nDel viejo árbol brotan ramas nuevas."
   },
   "CelebrationHypostasis": {
-    "name": "Celebración - Hipostasis",
+    "name": "Celebración - Hipóstasis",
     "description": "Diseño de tarjeta de presentación.\\n¿Qué estilo artístico seguirá mi rival de hoy?"
   },
   "XiaoMask": {
@@ -10811,6 +10899,22 @@
     "name": "PB - Fungolandia",
     "description": "Diseño de tarjeta de presentación.\\n“No derrames lágrimas, viajer{F#a}{M#o}. Los vientos del amanecer continuarán acunando en su regazo las esporas fúngicas de tus hermosos sueños hasta tu reino de esperanza...”."
   },
+  "WandererDriftersBallad": {
+    "name": "Trotamundos - Balada a la deriva",
+    "description": "Diseño de tarjeta de presentación.\\nEl pasado se oculta en un mundo definido por la transitoriedad, mientras finas capas de nieve acompañan los caprichosos pétalos que se pavonean por el aire."
+  },
+  "FaruzanSealedSecret": {
+    "name": "Faruzán - Secreto velado",
+    "description": "Diseño de tarjeta de presentación.\\nL-la próxima vez que quieras hacer una pregunta, ¡no olvides referirte a mí como “doña”! ¡Hum!"
+  },
+  "AchievementInvoker": {
+    "name": "Logro - {F#Invocadora}{M#Invocador}",
+    "description": "Diseño de tarjeta de presentación.\\n¡No tengo rival en esta aldea!"
+  },
+  "TravelNotesStellarRivers": {
+    "name": "Pase de Batalla - Cauce espiritual",
+    "description": "Diseño de tarjeta de presentación.\\nOlvidado fue el nombre del festín de antaño y desperdigados están los tres ríos entre los estratos de nubes, mientras el otoño se aferra al curvilíneo crepúsculo."
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
     "description": "Puede utilizarse en Mondstadt para encontrar anemóculus en las cercanías.\\nUn disco de piedra con características similares a las Estatuas de Los Siete que emite un sonido cuando hay anemóculus en los alrededores.\\nEstos discos son una burda imitación de las Estatuas de Los Siete diseminadas por todo el continente. Como falsificaciones que son, desean el poder de los óculus y ofrecen a devotos y aventureros la oportunidad de encontrarlos."
@@ -10995,6 +11099,10 @@
     "name": "Escrituras Araniaka",
     "description": "Un cuaderno que te dio Arama.\\nTiene el aspecto de haber presenciado muchas primaveras. Parece que antes alguien registraba cierto contenido en su interior, pero este acabó deteriorándose y desapareciendo con el paso del tiempo.\\nPuedes usarlo para registrar tus aventuras con los aranara."
   },
+  "CasketOfTomes": {
+    "name": "Caja arcana",
+    "description": "Una caja de cartas entregada por la Asociación de Jugadores de Invocación de los Sabios. Solo pueden obtenerla aquellos jugadores novatos que han demostrado conocer las reglas básicas y han obtenido cierto reconocimiento.\\nSe dice que los eruditos de la Academia de Sumeru están detrás de la fabricación de esta caja, la cual contiene un mecanismo especial que permite detectar las Cajas arcanas de otros jugadores cercanos.\\n¡Utiliza esta función para retar a más jugadores!"
+  },
   "DendroculusResonanceStone": {
     "name": "Roca de resonancia de dendróculus",
     "description": "Puede utilizarse en Sumeru para encontrar dendróculus en las cercanías.\\nUn particular amuleto protector con cualidades similares a las de las Estatuas de Los Siete Dendro, razón por la cual siente atracción por los dendróculus.\\nPlantas, árboles, enredaderas, flores... Los seres vivos que dependen del elemento Dendro tienen todo tipo de formas. Aunque sean de formas distintas y tampoco se parezcan en otros aspectos, los seres que proceden de un mismo lugar acabarán por volver a él."
@@ -11050,6 +11158,10 @@
   "CloudRetainersDamaskedDevice": {
     "name": "Dispositivo papirofléxico de Preservadora de Nubes",
     "description": "Un dispositivo liviano hecho de papel y con forma de pájaro que te entregó Preservadora de Nubes.\\nAunque se llame “dispositivo”, no parece que contenga componentes mecánicos tradicionales, al menos visto desde el exterior.\\nParece que esta Adeptus ha mejorado aún más sus habilidades mecánicas."
+  },
+  "WildernessCompass": {
+    "name": "Brújula indómita",
+    "description": "Una brújula muy especial que te dieron en el Gremio de Aventureros. Dicen que trae buena suerte."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus",
@@ -11231,6 +11343,522 @@
     "name": "Banquete en Wanmin",
     "description": "Un fuego artificial muy original creado a imagen del ayudante de cierta chef del Restaurante Wanmin. Al ver a este pequeño ayudante, los habitantes de Liyue no pueden evitar pensar en platos deliciosos. ¡Un banquete familiar es una parte indispensable del festival!"
   },
+  "RhodeiaOfLoch": {
+    "name": "Oceánida - Rhodeia",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FatuiPyroAgent": {
+    "name": "Recaudador Pyro",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MaguuKenki": {
+    "name": "Oni Espadachín",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StonehideLawachurl": {
+    "name": "Lawachurl Acorazado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MirrorMaiden": {
+    "name": "Doncella del Espejo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "JadeplumeTerrorshroom": {
+    "name": "Espantohongo Plumaverde",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "UndividedHeart": {
+    "name": "Corazón indiviso",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ColdBloodedStrike": {
+    "name": "Espada de sangre fría",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SteadyBreathing": {
+    "name": "Respiración inalterable",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "KantenSenmyouBlessing": {
+    "name": "Edicto helado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheScentRemained": {
+    "name": "Lluvia sobre mojado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ProphecyOfSubmersion": {
+    "name": "Profecía de sumersión",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FlowingFlame": {
+    "name": "Flujo llameante",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Crossfire": {
+    "name": "Fuego cruzado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "GrandExpectation": {
+    "name": "Visión de aventura",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "NaganoharaMeteorSwarm": {
+    "name": "Lluvia de meteoros Naganohara",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StellarPredator": {
+    "name": "Cuervo devoraestrellas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Awakening": {
+    "name": "Despertar",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ThunderingPenance": {
+    "name": "Penitencia del trueno",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ChaoticEntropy": {
+    "name": "Entropía caótica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LandsOfDandelion": {
+    "name": "Reino de Dandelion",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StrategicReserve": {
+    "name": "Reserva estratégica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "IGotYourBack": {
+    "name": "Yo te cubro",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FloralSidewinder": {
+    "name": "Retorno foliáceo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StreamingSurge": {
+    "name": "Corriente desenfrenada",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "PaidInFull": {
+    "name": "Recuperación completa",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TranscendentAutomaton": {
+    "name": "Trascendencia autómata",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StonehideReforged": {
+    "name": "Refundición: Geoarmadura",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ShakenNotPurred": {
+    "name": "Ronroneo glacial",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FeatherfallJudgment": {
+    "name": "Juicio de la pluma",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "GloriousSeason": {
+    "name": "Momento de gloria",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MirrorCage": {
+    "name": "Jaula de espejos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ProliferatingSpores": {
+    "name": "Propagaesporas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MagicGuide": {
+    "name": "Guía Mágica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SacrificialFragments": {
+    "name": "Memorias de Sacrificios",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SkywardAtlas": {
+    "name": "Pergamino Celestial",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "RavenBow": {
+    "name": "Arco de Cuervo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SacrificialBow": {
+    "name": "Arco del Sacrificio",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SkywardHarp": {
+    "name": "Alas Celestiales",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WhiteIronGreatsword": {
+    "name": "Espada de Hierro Blanco",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SacrificialGreatsword": {
+    "name": "Gran Espada de Sacrificio",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WolfsGravestone": {
+    "name": "Lápida del Lobo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WhiteTassel": {
+    "name": "Borla Blanca",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LithicSpear": {
+    "name": "Lanza Lítica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SkywardSpine": {
+    "name": "Púa Celestial",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TravelersHandySword": {
+    "name": "Espada del Viajero",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SacrificialSword": {
+    "name": "Espada de Sacrificio",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AquilaFavonia": {
+    "name": "Aquila Favonia",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AdventurersBandana": {
+    "name": "Bandana del Aventurero",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LuckyDogsSilverCirclet": {
+    "name": "Tiara de Plata del Afortunado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TravelingDoctorsHandkerchief": {
+    "name": "Pañuelo de la Médica Itinerante",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "GamblersEarrings": {
+    "name": "Aretes de la Jugadora",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "InstructorsCap": {
+    "name": "Gorra del Instructor",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ExilesCirclet": {
+    "name": "Diadema del Exiliado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "BrokenRimesEcho": {
+    "name": "Eco de la Escarcha",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "BlizzardStrayer": {
+    "name": "Nómada del Invierno",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WineStainedTricorne": {
+    "name": "Gorro de Capitán Manchado de Vino",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "HeartOfDepth": {
+    "name": "Corazón de las Profundidades",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WitchsScorchingHat": {
+    "name": "Sombrero Abrasador de la Bruja",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "CrimsonWitchOfFlames": {
+    "name": "Bruja Carmesí en Llamas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ThunderSummonersCrown": {
+    "name": "Corona del Invocador de Truenos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ThunderingFury": {
+    "name": "Furia del Trueno",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ViridescentVenerersDiadem": {
+    "name": "Sombrero de la Cazadora Verde Esmeralda",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ViridescentVenerer": {
+    "name": "Sombra Verde Esmeralda",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MaskOfSolitudeBasalt": {
+    "name": "Máscara de Basalto Inerte",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ArchaicPetra": {
+    "name": "Petra Arcaica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LaurelCoronet": {
+    "name": "Corona Láurea",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "DeepwoodMemories": {
+    "name": "Recuerdos del Bosque",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LiyueHarborWharf": {
+    "name": "Puerto de Liyue",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "KnightsOfFavoniusLibrary": {
+    "name": "Biblioteca de los Caballeros de Favonius",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "JadeChamber": {
+    "name": "Cámara de Jade",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "DawnWinery": {
+    "name": "Viñedo del Amanecer",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WangshuInn": {
+    "name": "Posada Wangshu",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FavoniusCathedral": {
+    "name": "Catedral de Favonius",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Paimon": {
+    "name": "Paimon",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Katheryne": {
+    "name": "Katheryne",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Timaeus": {
+    "name": "Timaeus",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Wagner": {
+    "name": "Wagner",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ChefMao": {
+    "name": "Chef Mao",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Tubby": {
+    "name": "Gordi",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Timmie": {
+    "name": "Timmie",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Liben": {
+    "name": "Liben",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ChangTheNinth": {
+    "name": "Chang el Noveno",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Ellin": {
+    "name": "Ellin",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "IronTongueTian": {
+    "name": "Tian Lengua de acero",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LiuSu": {
+    "name": "Liu Su",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "NRE": {
+    "name": "Bolsita nutritiva",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenIce": {
+    "name": "Consonancia elemental: Hielo entrelazado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceShatteringIce": {
+    "name": "Consonancia elemental: Hielo fragmentado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenWaters": {
+    "name": "Consonancia elemental: Agua entrelazada",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceSoothingWater": {
+    "name": "Consonancia elemental: Agua medicinal",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenFlames": {
+    "name": "Consonancia elemental: Fuego entrelazado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceFerventFlames": {
+    "name": "Consonancia elemental: Llamas fervientes",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenThunder": {
+    "name": "Consonancia elemental: Rayos entrelazados",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceHighVoltage": {
+    "name": "Consonancia elemental: Alto voltaje",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenWinds": {
+    "name": "Consonancia elemental: Viento entrelazado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceImpetuousWinds": {
+    "name": "Consonancia elemental: Vientos impetuosos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenStone": {
+    "name": "Consonancia elemental: Rocas entrelazadas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceEnduringRock": {
+    "name": "Consonancia elemental: Roca resistente",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceWovenWeeds": {
+    "name": "Consonancia elemental: Vegetación entrelazada",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElementalResonanceSprawlingGreenery": {
+    "name": "Consonancia elemental: Planta trepadora",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheBestestTravelCompanion": {
+    "name": "¡La mejor compañera de viaje!",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ChangingShifts": {
+    "name": "Relevo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TossUp": {
+    "name": "El universo, jugado a los dados",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Strategize": {
+    "name": "Planificación táctica",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "IHaventLostYet": {
+    "name": "¡No oí la campana!",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LeaveItToMe": {
+    "name": "¡Déjemelo a mí!",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WhenTheCraneReturned": {
+    "name": "Retorno de la grulla",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Starsigns": {
+    "name": "Presagio estelar",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "CalxsArts": {
+    "name": "Técnica de la caliza",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MasterOfWeaponry": {
+    "name": "Maestro de armas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "BlessingOfTheDivineRelicsInstallation": {
+    "name": "Bendición de la reliquia divina",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "QuickKnit": {
+    "name": "Técnica costurera",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SendOff": {
+    "name": "Despedida",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "GuardiansOath": {
+    "name": "Juramento protector",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AbyssalSummons": {
+    "name": "Llamado del abismo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Origin": {
+    "name": "Origen",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Mondstadt": {
+    "name": "Mondstadt",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Liyue": {
+    "name": "Liyue",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Inazuma": {
+    "name": "Inazuma",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Sumeru": {
+    "name": "Sumeru",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Legend": {
+    "name": "Leyenda",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "Adept": {
+    "name": "Especialista",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "HydroCrystalChunk": {
+    "name": "Pedazo de cristal",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "BeginnerPlayerBadge": {
+    "name": "Medalla de {F#invocadora}{M#invocador} principiante",
+    "description": "Dicen que esta es una medalla que cualquier novato obtiene al comenzar a jugar a Invocación de los Sabios.\\nIncluso los más grandes jugadores comenzaron recibiendo esta placa, hasta convertirse gradualmente en leyendas.\\nTen paciencia, todo comienza aquí."
+  },
+  "AdvancedPlayerBadge": {
+    "name": "Medalla de {F#invocadora}{M#invocador} experimentad{F#a}{M#o}",
+    "description": "Una medalla que pueden conseguir quienes juegan frecuentemente a Invocación de los Sabios tras superar el duelo necesario para convertirse en invocadores experimentados.\\nMuchas personas pueden convertirse en jugadores que se toman Invocación de los Sabios como un simple pasatiempo, pero muy pocos llegan a ser invocadores experimentados.\\nAunque solo sea un juego, quien se lo tome en serio recibirá las recompensas que se merece."
+  },
+  "ExpertPlayerBadge": {
+    "name": "Medalla de {F#invocadora experta}{M#invocador experto}",
+    "description": "Una medalla que pueden conseguir los jugadores de Invocación de los Sabios con un conocimiento considerable sobre el juego tras superar el duelo necesario para convertirse en invocadores expertos.\\nEs posible que la sensación que tengas en este momento sea distinta a la que tenías al empezar a jugar a Invocación de los Sabios, pero siempre encontrarás la diversión en este gran juego.\\nPasas tiempo jugando porque te resulta divertido, y disfrutas de cada momento porque te gusta la emoción de un buen duelo."
+  },
+  "MasterPlayerBadge": {
+    "name": "Medalla de {F#invocadora maestra}{M#invocador maestro}",
+    "description": "Una medalla que pueden conseguir los jugadores de Invocación de los Sabios con muy buen nivel de juego tras superar el duelo necesario para convertirse en invocadores maestros.\\nDicen que son pocos los jugadores que llegan a conseguir esta medalla, y que cada uno tiene una comprensión única sobre el juego.\\nDe hecho, hace tiempo que la victoria dejó de ser lo único que buscan estos invocadores."
+  },
+  "LegendPlayerBadge": {
+    "name": "Medalla de {F#invocadora legendaria}{M#invocador legendario}",
+    "description": "Una medalla que pueden conseguir los jugadores de Invocación de los Sabios tras superar el duelo necesario para convertirse en invocadores legendarios.\\nEs la prueba de que has puesto pie en un legendario camino forjado por ti mism{F#a}{M#o}.\\nAhora, ¡sigue avanzando hasta alcanzar límites desconocidos!"
+  },
   "SummertimeSparkle": {
     "name": "Verano radiante",
     "description": "La vestimenta de playa de Bárbara. Este veraniego y hermoso minivestido recuerda a una fresca brisa estival."
@@ -11401,7 +12029,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Estudio Feiyun",
-    "description": "Plano detallado para colocar Estudio Feiyun.\\nEn Liyue hay estudios de muchos estilos distintos, pero el lujo solo es un elemento opcional, ya que los estudiosos dan más importancia al ambiente y a la elegancia. Una planta equilibra el nivel de humedad de la habitación, y la mesa y las estanterías emiten una sutil fragancia a madera que combina con el diseño sencillo y el brillo anaranjado de las luces para proporcionar inspiración al escribir.\\nSe dice que, hace muchos años, alguien que se alojaba en la Pendiente Feiyun decoró su estudio de esta forma, y el anterior dueño de la Casa de Libros Wanwen adoptó el diseño y lo popularizó. Por eso, este tipo de estudio llamado Feiyun es conocido en todo Liyue.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xingchiu, Zhongli, Ninguang, Yun Jin."
+    "description": "Plano detallado para colocar Estudio Feiyun.\\nEn Liyue hay estudios de muchos estilos distintos, pero el lujo solo es un elemento opcional, ya que los estudiosos dan más importancia al ambiente y a la elegancia. Una planta equilibra el nivel de humedad de la habitación, y la mesa y las estanterías emiten una sutil fragancia a madera que combina con el diseño sencillo y el brillo anaranjado de las luces para proporcionar inspiración al escribir.\\nSe dice que, hace muchos años, alguien que se alojaba en la Pendiente Feiyun decoró su estudio de esta forma, y el anterior dueño de la Casa de Libros Wanwen adoptó el diseño y lo popularizó. Por eso, este tipo de estudio llamado Feiyun es conocido en toda Liyue.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xingchiu, Zhongli, Ninguang, Yun Jin."
   },
   "CloudyHazeDreamCourt": {
     "name": "Pabellón de los sueños",
@@ -11509,15 +12137,15 @@
   },
   "FervidAroma": {
     "name": "Intenso aroma",
-    "description": "Este lujoso plano de decoración imita el interior de un conocido café de la Ciudad de Sumeru, aunque incorpora los cambios necesarios para adecuarlo a la residencia del mundo interior. Posee una soberbia decoración perfectamente organizada. En su interior, los vapores de las cocinas y el delicioso aroma de los manjares que se sirven se entremezclan, inundando el ambiente de una agradable sensación. Buena compañía y una jarra de vino es todo lo que se necesita para disfrutar de la mejor experiencia gastronómica posible.\\nAquellos que viajaban con frecuencia de un lado para otro siempre eligen de antemano los restaurantes donde comerán, teniendo en cuenta la amplitud del establecimiento y la cantidad de las raciones. Para esa clase de personas, un restaurante de carne a la parrilla es siempre la opción más segura. Incluso aquellos que viajan solos pueden aprovechar el animado ambiente de este café para mantener en secreto el objeto de su viaje u tantear, observar y analizar la situación desde la seguridad que supone este concurrido establecimiento."
+    "description": "Este lujoso plano de decoración imita el interior de un conocido café de la Ciudad de Sumeru, aunque incorpora los cambios necesarios para adecuarlo a la residencia del mundo interior. Posee una soberbia decoración perfectamente organizada. En su interior, los vapores de las cocinas y el delicioso aroma de los manjares que se sirven se entremezclan, inundando el ambiente de una agradable sensación. Buena compañía y una jarra de vino es todo lo que se necesita para disfrutar de la mejor experiencia gastronómica posible.\\nAquellos que viajaban con frecuencia de un lado para otro siempre eligen de antemano los restaurantes donde comerán, teniendo en cuenta la amplitud del establecimiento y la cantidad de las raciones. Para esa clase de personas, un restaurante de carne a la parrilla es siempre la opción más segura. Incluso aquellos que viajan solos pueden aprovechar el animado ambiente de este café para mantener en secreto el objeto de su viaje o tantear, observar y analizar la situación desde la seguridad que supone este concurrido establecimiento."
   },
   "OfSettledThoughts": {
     "name": "Una habitación propia",
-    "description": "Un estudio completamente amueblado con estanterías tan altas como muros y abarrotadas con las mejores colecciones de libros habidas y por haber. Cuando la mirada de una persona de a pie recorre los estantes y contempla la variedad de ejemplares, es inevitable sentirse algo abrumado.\\nAunque, claro está, la barrera entre el saber y el desconocimiento es una fina línea que todo aquel con ánimo puede cruzar a voluntad. Si alguien pone su empeño en ello y se sienta cada día en una habitación como esta con una planificación clara a estudiar y analizar libro tras libro, será capaz de adquirir una sorprendente cantidad de conocimiento mucho antes de lo que uno podría esperar.\\nLos siguientes acompañantes prefieren este conjunto: Cyno."
+    "description": "Un estudio completamente amueblado con estanterías tan altas como muros y abarrotadas con las mejores colecciones de libros habidas y por haber. Cuando la mirada de una persona de a pie recorre los estantes y contempla la variedad de ejemplares, es inevitable sentirse algo abrumado.\\nAunque, claro está, la barrera entre el saber y el desconocimiento es una fina línea que todo aquel con ánimo puede cruzar a voluntad. Si alguien pone su empeño en ello y se sienta cada día en una habitación como esta con una planificación clara a estudiar y analizar libro tras libro, será capaz de adquirir una sorprendente cantidad de conocimiento mucho antes de lo que uno podría esperar.\\nLos siguientes acompañantes prefieren este conjunto: Cyno y Faruzán."
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Hasta luego, preocupaciones",
-    "description": "Un dormitorio decorado al más puro estilo de Sumeru. Está equipada con todo tipo de objetos y utensilios que la gente utiliza en su día a día. Gracias al efecto restaurador de la creación dimensional, cada pieza del mobiliario parece recién pulida, lo que confiere a la estancia un aire de orden, limpieza y amplitud perfecto para el descanso y la relajación.\\nIncluso cuando uno vive sin preocupaciones, siempre habrá asuntos que puedan acarrear sentimientos negativos. Incluso cuando uno está por encima de los demás, no podrá evitar toparse con situaciones difíciles de resolver. En esos momentos, la mejor solución olvidar todas las preocupaciones y echarse un buen sueñecito. Solo se pueden afrontar las vicisitudes de la vida cuando tienes las pilas bien cargadas.\\nLos siguientes acompañantes prefieren este conjunto: Nahida y Laila."
+    "description": "Un dormitorio decorado al más puro estilo de Sumeru. Está equipada con todo tipo de objetos y utensilios que la gente utiliza en su día a día. Gracias al efecto restaurador de la creación dimensional, cada pieza del mobiliario parece recién pulida, lo que confiere a la estancia un aire de orden, limpieza y amplitud perfecto para el descanso y la relajación.\\nIncluso cuando uno vive sin preocupaciones, siempre habrá asuntos que puedan acarrear sentimientos negativos. Incluso cuando uno está por encima de los demás, no podrá evitar toparse con situaciones difíciles de resolver. En esos momentos, la mejor solución es olvidar todas las preocupaciones y echarse un buen sueñecito. Solo se pueden afrontar las vicisitudes de la vida cuando tienes las pilas bien cargadas.\\nLos siguientes acompañantes prefieren este conjunto: Nahida y Laila."
   },
   "DwellingAmidstTheSands": {
     "name": "{F#Moradora}{M#Morador} de las arenas",
@@ -11525,11 +12153,11 @@
   },
   "AmidstProsperingMarkets": {
     "name": "Entre el bullicio mercader",
-    "description": "Una bulliciosa zona comercial decorada con gran gusto que recuerda a las calles llenas de puestos de la Ciudad de Sumeru o al diseño del Gran Bazar. Aquí encontrarás de todo; desde puestos de frutas y verduras frescas y deliciosos aperitivos para amenizar la jornada, hasta productos de uso cotidiano, y todo a pocos metros de distancia. Este tipo de mercados se caracteriza por su ambiente divertido y ajetreado.\\nSe rumorea que la distribución de los puestos y tiendas de las calles de Sumeru a ambos lados de la calle sigue una planificada organización fruto del resultado de las investigaciones llevadas a cabo por la Academia. El objetivo es aprovechar el uso del espacio y reducir la necesidad de gestión de tareas para así poder ofrecer un servicio de mayor calidad a la clientela.\\nLos siguientes acompañantes prefieren este conjunto: Dori."
+    "description": "Una bulliciosa zona comercial decorada con gran gusto que recuerda a las calles llenas de puestos de la Ciudad de Sumeru o al diseño del Gran Bazar. Aquí encontrarás de todo; desde puestos de frutas y verduras frescas y deliciosos aperitivos para amenizar la jornada, hasta productos de uso cotidiano, y todo a pocos metros de distancia. Este tipo de mercados se caracteriza por su ambiente divertido y ajetreado.\\nSe rumorea que la distribución de los puestos y tiendas de las calles de Sumeru a ambos lados de la calle sigue una planificada organización fruto del resultado de las investigaciones llevadas a cabo por la Academia. El objetivo es aprovechar el uso del espacio y reducir la necesidad de gestión de tareas para así poder ofrecer un servicio de mayor calidad a la clientela.\\nLos siguientes acompañantes prefieren este conjunto: Dori y Faruzán."
   },
   "DeepInTheQuietForest": {
     "name": "La quietud del bosque",
-    "description": "Un asentamiento formado por edificaciones propias de los bosques de Sumeru que recuerda a la estética de la Villa Gandharva. No importante donde estés, las clásicas tonalidades esmeraldas y azulonas de este diseño te harán sentir como si estuvieras en mitad del bosque.\\nAunque, claro está, para la vida en el bosque es necesario contar con todo un repertorio de habilidades de supervivencia para adecuarse a los pequeños inconvenientes que presenta un clima tan húmedo. Tampoco viene mal que te familiarices con las costumbres y directrices de los guardas forestales...\\nLos siguientes acompañantes prefieren este conjunto: Collei y Cyno."
+    "description": "Un asentamiento formado por edificaciones propias de los bosques de Sumeru que recuerda a la estética de la Villa Gandharva. No importa donde estés, las clásicas tonalidades esmeraldas y azulonas de este diseño te harán sentir como si estuvieras en mitad del bosque.\\nAunque, claro está, para la vida en el bosque es necesario contar con todo un repertorio de habilidades de supervivencia para adecuarse a los pequeños inconvenientes que presenta un clima tan húmedo. Tampoco viene mal que te familiarices con las costumbres y directrices de los guardas forestales...\\nLos siguientes acompañantes prefieren este conjunto: Collei y Cyno."
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Danza de las sombras",
@@ -11537,7 +12165,7 @@
   },
   "QuietTimesByTheRiverbank": {
     "name": "Momentos de sosiego junto al río",
-    "description": "Un pacífico asentamiento que refleja el paisaje rústico de la Aldea Vimara. No importa si no estás cerca del río o del mar, el olor del pescado fresco en la aldea siempre consigue evocar el sonido de las olas en el corazón de sus habitantes.\\nEn comparación con los campamentos de los guardabosques, el ritmo de vida en la aldea es completamente diferente. La mayoría de sus habitantes carece de responsabilidades apremiantes, por lo que sus vidas son relativamente calmadas. Sin duda es el lugar ideal para relajarse."
+    "description": "Un pacífico asentamiento que refleja el paisaje rústico de la Aldea Vimara. No importa si no estás cerca del río o del mar, el olor del pescado fresco en la aldea siempre consigue evocar el sonido de las olas en el corazón de sus habitantes.\\nEn comparación con los campamentos de los guardabosques, el ritmo de vida en la aldea es completamente diferente. La mayoría de sus habitantes carece de responsabilidades apremiantes, por lo que sus vidas son relativamente calmadas. Sin duda es el lugar ideal para relajarse.\\nLos siguientes acompañantes prefieren este conjunto: {REALNAME[ID(1)|HOSTONLY(true)]}"
   },
   "SetekhDemurs": {
     "name": "El azote de la tormenta",
@@ -11545,7 +12173,7 @@
   },
   "TheTravelingTroopsPomp": {
     "name": "Pompa militar desplegada",
-    "description": "Un campamento de estilo militar equipado con todo tipo de armamento, materiales y mercancías. Está rodeado por fortificaciones defensivas. Las hogueras debidamente dispuestas son requisito indispensable para llevar a cabo operaciones nocturnas. En teoría, este tipo de campamentos puede hacer frente a un gran número de enemigos y, con la cantidad necesaria de soldados, podría incluso servir como puesto de apoyo en el frente de defensa.\\nSin embargo, su traslado y montaje requiere de un mayor esfuerza y las tiendas no están pensadas para resistir el frío y la lluvia, por lo que las condiciones en el campamento suelen ser adversas... Por eso, es un campamento muy popular entre los mercenarios, que son hábiles luchadores y capaces de dormir a la intemperie sin inmutarse siquiera."
+    "description": "Un campamento de estilo militar equipado con todo tipo de armamento, materiales y mercancías. Está rodeado por fortificaciones defensivas. Las hogueras debidamente dispuestas son requisito indispensable para llevar a cabo operaciones nocturnas. En teoría, este tipo de campamentos puede hacer frente a un gran número de enemigos y, con la cantidad necesaria de soldados, podría incluso servir como puesto de apoyo en el frente de defensa.\\nSin embargo, su traslado y montaje requiere de un mayor esfuerzo y las tiendas no están pensadas para resistir el frío y la lluvia, por lo que las condiciones en el campamento suelen ser adversas... Por eso, es un campamento muy popular entre los mercenarios, que son hábiles luchadores y capaces de dormir a la intemperie sin inmutarse siquiera."
   },
   "AmidstScentsAndSerenity": {
     "name": "Mente en calma",
@@ -11553,7 +12181,7 @@
   },
   "ChorusOfDesertAndWood": {
     "name": "Beneplácito del desierto y el bosque",
-    "description": "Un maravilloso espacio lleno de fertilidad. La creación dimensional del mundo interior ha permitido ajustar las características medioambientales del espacio para que puedan convivir todo tipo de plantas. Lo coalescencia de la vegetación más característica del desierto y la frondosidad vegetal del bosque dota a este terreno de vida y armonía.\\nPara los eruditos interesados en plantas, este florido espacio de llamativas tonalidades es un regalo de los dioses en el que pueden dar rienda suelta a su sed de investigación.\\nLos siguientes acompañantes prefieren este conjunto: Tignari."
+    "description": "Un maravilloso espacio lleno de fertilidad. La creación dimensional del mundo interior ha permitido ajustar las características medioambientales del espacio para que puedan convivir todo tipo de plantas. Lo coalescencia de la vegetación más característica del desierto y la frondosidad vegetal del bosque dota a este terreno de vida y armonía.\\nPara los eruditos interesados en plantas, este florido espacio de llamativas tonalidades es un regalo de los dioses en el que pueden dar rienda suelta a su sed de investigación.\\nLos siguientes acompañantes prefieren este conjunto: Tignari y {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "TimberWallWithJadeEaves": {
     "name": "Pared de madera con alero de jade",
@@ -11871,6 +12499,10 @@
     "name": "Mesa para dos",
     "description": "Plano detallado para fabricar “Mesa para dos”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "LongAdhighamaChamferTable": {
+    "name": "Mesa angulada de madera de bodhi",
+    "description": "Plano detallado para fabricar una Mesa angulada de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa",
     "description": "Plano detallado para fabricar una Cama baja suave como la brisa.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -11954,6 +12586,10 @@
   "SatisfactionOfSatedThirst": {
     "name": "El placer de una copa en silencio",
     "description": "Plano detallado para fabricar “El placer de una copa en silencio”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AdhigamaVineBackedChair": {
+    "name": "Silla hojuda de madera de bodhi",
+    "description": "Plano detallado para fabricar una Silla hojuda de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "NorthernStoneHearth": {
     "name": "Chimenea de piedra del norte",
@@ -12087,6 +12723,10 @@
     "name": "Delicioso aroma de asado a fuego lento",
     "description": "Plano detallado para fabricar “Delicioso aroma de asado a fuego lento”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "DeepwoodDwellersAggregation": {
+    "name": "Posesiones de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Posesiones de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
     "description": "Plano detallado para fabricar una Alfombra de Mondstadt: Ardor carmesí.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -12150,6 +12790,10 @@
   "JoyfulIllumination": {
     "name": "Oportunismo luminiscente",
     "description": "Plano detallado para fabricar “Oportunismo luminiscente”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "LightOfTheLandOfWisdom": {
+    "name": "Luz tenue de la casa del saber",
+    "description": "Plano detallado para fabricar “Luz tenue de la casa del saber”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arreglo floral: Tranquilidad celeste",
@@ -12286,6 +12930,18 @@
   "EphemeralSpirit": {
     "name": "El efímero aroma a vino",
     "description": "Plano detallado para fabricar “El efímero aroma a vino”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AmidstBitterAromas": {
+    "name": "Amargazón del incensario",
+    "description": "Plano detallado para fabricar “Amargazón del incensario”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodDwellersIngenuity": {
+    "name": "Formulación de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Formulación de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeepwoodDwellersBrilliance": {
+    "name": "Realce de los moradores del bosque",
+    "description": "Plano detallado para fabricar “Realce de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LandscapePaintingCountryHome": {
     "name": "Paisaje: Casa de campo",
@@ -12813,7 +13469,7 @@
   },
   "MansionCourtyardWarblingPavilion": {
     "name": "Plataforma de residencia: Pabellón de la cháchara",
-    "description": "Plano detallado para fabricar una Decoración de residencia: Árbol de la contemplación.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Plataforma de residencia: Pabellón de la cháchara.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "MansionCourtyardWatchtowerOfForesight": {
     "name": "Plataforma de residencia: Atalaya",
@@ -12821,7 +13477,7 @@
   },
   "MansionCourtyardPlaceOfRepose": {
     "name": "Plataforma de residencia: Salón de té",
-    "description": "Plano detallado para fabricar una Decoración de residencia: Árbol de la contemplación.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Plataforma de residencia: Salón de té.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "MansionCourtyardCuisiniersAbode": {
     "name": "Plataforma de residencia: Terreno humeante",
@@ -12841,7 +13497,7 @@
   },
   "TenacityOfTheCityOfWisdom": {
     "name": "Fogosidad de la ciudad de la sabiduría",
-    "description": "Plano detallado para fabricar “Aroma de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Fogosidad de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CommerceOfTheCityOfWisdom": {
     "name": "Auxilio en la mar de la ciudad de la sabiduría",
@@ -12870,6 +13526,18 @@
   "BuildingBlockOfTheCityOfWisdom": {
     "name": "Universalidad de la ciudad de la sabiduría",
     "description": "Plano detallado para fabricar “Universalidad de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ContrastsOfTheCityOfWisdom": {
+    "name": "Asonancia de la ciudad de la sabiduría",
+    "description": "Plano detallado para fabricar “Asonancia de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PeaceInTheCityOfWisdom": {
+    "name": "Reposo de la ciudad de la sabiduría",
+    "description": "Plano detallado para fabricar “Reposo de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ErrandsInTheCityOfWisdom": {
+    "name": "Comisiones de la ciudad de la sabiduría",
+    "description": "Plano detallado para fabricar “Comisiones de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
@@ -13098,6 +13766,18 @@
   "DesertWallStalwartDefense": {
     "name": "Pared del desierto: Defensa incondicional",
     "description": "Plano detallado para fabricar Pared del desierto: Defensa incondicional.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DesertGateWindjammer": {
+    "name": "Pórtico del desierto: Disuadevientos",
+    "description": "Plano detallado para fabricar un Pórtico del desierto: Disuadevientos.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DomedGateForestTune": {
+    "name": "Pórtico residencial: Canto en la floresta",
+    "description": "Plano detallado para fabricar un Pórtico residencial: Canto en la floresta.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DomedWallTheBirdsSang": {
+    "name": "Pared residencial: Coro de aves",
+    "description": "Plano detallado para fabricar una Pared residencial: Coro de aves.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Suelo rocoso: Fortuna y tranquilidad",
@@ -13499,6 +14179,22 @@
     "name": "Renombre de mercenario",
     "description": "Plano detallado para fabricar “Renombre de mercenario”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "AnElegantVoice": {
+    "name": "Sutil reverberación",
+    "description": "Plano detallado para fabricar “Sutil reverberación”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AMellowVoice": {
+    "name": "Insondable reverberación",
+    "description": "Plano detallado para fabricar “Insondable reverberación”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "KarmaphalaThreePlyNoticeboard": {
+    "name": "Cartel publicitario tripanelado de madera kármica",
+    "description": "Plano detallado para fabricar un Cartel publicitario tripanelado de madera kármica.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TeaBreakShade": {
+    "name": "Umbelífera consumición",
+    "description": "Plano detallado para fabricar “Umbelífera consumición”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Farola de hierro con adornos",
     "description": "Plano detallado para fabricar una Farola de hierro con adornos.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -13698,6 +14394,10 @@
   "PearOrchardAccessoryAttendAndListen": {
     "name": "Atrezo del peral: Presten atención",
     "description": "Plano detallado para fabricar un Atrezo del peral: Presten atención.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "KarmaphalaDisplayTable": {
+    "name": "Expositor de madera kármica",
+    "description": "Plano detallado para fabricar un Expositor de madera kármica.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Mostrador de tienda de vinos: Mil copas",

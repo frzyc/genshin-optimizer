@@ -52,7 +52,7 @@
       "8": "<strong>Seed of Skandha</strong>",
       "9": "Musuh yang berada dalam status ini akan saling terhubung jika berada di dalam jarak tertentu.",
       "10": "Setelah memicu reaksi elemental terhadap musuh yang berada dalam status ini, atau setelah musuh ini menerima DMG yang diakibatkan oleh Dendro Core (termasuk Burgeon dan Hyperbloom), Nahida akan melancarkan Tri-Karma Purification terhadap musuh ini dan semua musuh yang terhubung, dan mengakibatkan <dendro>Dendro DMG</dendro> berdasarkan ATK dan Elemental Mastery Nahida.",
-      "11": "Memicu sekali Tri-Karma Purification dalam waktu singkat.",
+      "11": "Tri-Karma Purification hanya bisa terpicu sekali dalam waktu singkat.",
       "12": "<br/>",
       "13": "<i>Oh, para dewa dedaunan dan pepohonan memancarkan kebenaran mutlaknya dalam kehampaan, menerangi asal mula dan kehancuran dari tiga karma.</i>"
     },
@@ -80,7 +80,7 @@
     "description": {
       "0": "Memanifestasikan Court of Dreams dan membentuk medan Shrine of Maya.",
       "1": "<br/>",
-      "2": "Saat medan Shrine of Maya dilancarkan, efek berikut akan diperoleh Karakter di dalam party sesuai dengan elemen yang dimilikinya.",
+      "2": "Saat medan Shrine of Maya dilancarkan, efek berikut akan diperoleh sesuai dengan jenis elemen Karakter di dalam party.",
       "3": [
         "<pyro>Pyro</pyro>: Saat Nahida berada di dalam Shrine of Maya, akan meningkatkan DMG Tri-Karma Purification dari Elemental Skill \"All Schemes to Know\";",
         "<electro>Electro</electro>: Saat Nahida berada di dalam Shrine of Maya, akan mengurangi jeda waktu terpicunya Tri-Karma Purification dari Elemental Skill \"All Schemes to Know\";",

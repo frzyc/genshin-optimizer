@@ -1,0 +1,12 @@
+{
+  "name": "Ebedi Mehtap",
+  "description": "Denizin derinliklerinden gelen zarif bir yeşim yüzük. Ay kadar parlak ve bir o kadar ulaşılmaz.",
+  "passiveName": "Byakuya Kougetsu",
+  "passiveDescription": {
+    "0": "İyileştirme Bonusu <cryo>%10</cryo> artar, Normal Saldırı Hasarı bu silahı kuşanan karakterin <cryo>%1</cryo> Maks. Can kadar artar. Bir Element Patlaması kullandıktan 12 saniye sonra, düşmana isabet eden Normal Saldırılar 0,6 Enerji yeniler. Bu şekilde her 0,1 saniyede bir Enerji yenilenebilir.",
+    "1": "İyileştirme Bonusu <cryo>%12,5</cryo> artar, Normal Saldırı Hasarı bu silahı kuşanan karakterin <cryo>%1,5</cryo> Maks. Can kadar artar. Bir Element Patlaması kullandıktan 12 saniye sonra, düşmana isabet eden Normal Saldırılar 0,6 Enerji yeniler. Bu şekilde her 0,1 saniyede bir Enerji yenilenebilir.",
+    "2": "İyileştirme Bonusu <cryo>%15</cryo> artar, Normal Saldırı Hasarı bu silahı kuşanan karakterin <cryo>%2</cryo> Maks. Can kadar artar. Bir Element Patlaması kullandıktan 12 saniye sonra, düşmana isabet eden Normal Saldırılar 0,6 Enerji yeniler. Bu şekilde her 0,1 saniyede bir Enerji yenilenebilir.",
+    "3": "İyileştirme Bonusu <cryo>%17,5</cryo> artar, Normal Saldırı Hasarı bu silahı kuşanan karakterin <cryo>%2,5</cryo> Maks. Can kadar artar. Bir Element Patlaması kullandıktan 12 saniye sonra, düşmana isabet eden Normal Saldırılar 0,6 Enerji yeniler. Bu şekilde her 0,1 saniyede bir Enerji yenilenebilir.",
+    "4": "İyileştirme Bonusu <cryo>%20</cryo> artar, Normal Saldırı Hasarı bu silahı kuşanan karakterin <cryo>%3</cryo> Maks. Can kadar artar. Bir Element Patlaması kullandıktan 12 saniye sonra, düşmana isabet eden Normal Saldırılar 0,6 Enerji yeniler. Bu şekilde her 0,1 saniyede bir Enerji yenilenebilir."
+  }
+}

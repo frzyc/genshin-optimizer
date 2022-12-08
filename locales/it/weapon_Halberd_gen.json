@@ -1,0 +1,12 @@
+{
+  "name": "Alabarda",
+  "description": "Una lancia con un'ascia montata in cima che può infliggere gravi danni. La favorita degli ufficiali Milleliti.",
+  "passiveName": "Ponderosità",
+  "passiveDescription": {
+    "0": "Gli attacchi normali infliggono DAN extra pari a un <cryo>160%</cryo> dell'ATT. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s.",
+    "1": "Gli attacchi normali infliggono DAN extra pari a un <cryo>200%</cryo> dell'ATT. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s.",
+    "2": "Gli attacchi normali infliggono DAN extra pari a un <cryo>240%</cryo> dell'ATT. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s.",
+    "3": "Gli attacchi normali infliggono DAN extra pari a un <cryo>280%</cryo> dell'ATT. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s.",
+    "4": "Gli attacchi normali infliggono DAN extra pari a un <cryo>320%</cryo> dell'ATT. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s."
+  }
+}

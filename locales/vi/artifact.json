@@ -3,7 +3,7 @@
     "title": "Trình chỉnh sửa Thánh Di Vật",
     "set": {
       "artifactSet": "Bộ Thánh Di Vật",
-      "maxRarity": "Độ hiếm cao nhất <1></1>"
+      "maxRarity": "Phẩm chất cao nhất <1></1>"
     },
     "substat": {
       "substatFormat": "Chỉ số phụ {{value}}",
@@ -18,11 +18,11 @@
       "eff": "Hiệu suất: <1></1>",
       "nextRolls": "Rolls kế tiếp:"
     },
-    "rarity": "Độ hiếm",
+    "rarity": "Phẩm chất",
     "level": "Cấp độ",
-    "unknownPieceName": "Check tên bạn ơi",
-    "mainSelect": "Chọn chỉ số chính",
-    "curSubEff": "Hiệu suất của chỉ số phụ",
+    "unknownPieceName": "Tên món TDV không rõ",
+    "mainSelect": "Chọn một chỉ số chính",
+    "curSubEff": "RV hiện tại",
     "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã rolls cao thấp bao nhiêu theo tỉ lệ phần trăm.",
     "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
     "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
@@ -54,17 +54,17 @@
   "filterLevelFormat": "Cấp độ <1>Thấp</1>/<3>Cao</3>",
   "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
   "tipsOfTheDay": [
-    "Hiệu suất tối đa của thánh di vật 4 sao ở khoảng 60%.",
-    "Hiệu suất tối đa của thánh di vật có thể bị giảm khi bạn cường hóa thánh di vật. Đó là bình thường!",
-    "Chỉ số phụ có chứa số \"1\" trong hình là khó để quét nhất.",
-    "Nếu tất cả các lần cường hóa vào hết 1 chỉ số phụ (6 lần), nó sẽ chuyển thành màu tím!",
-    "Bấm vào \"chi tiết\" nếu bạn đang cường hóa thánh di vật và muốn chụp hình để quét.",
-    "Bạn có thể tải lên nhiều hình ảnh cùng lúc, nó sẽ vào hàng chờ."
+    "RV tối đa của một Thánh Di Vật 4 sao rơi vào khoảng 540%.",
+    "RV tối đa của một Thánh Di Vật thường sẽ giảm đi khi bạn nâng nó lên: Đó là chuyện bình thường!",
+    "Các thuộc tính phụ có số \"1\" là những cái khó quét nhất trong ảnh chụp.",
+    "Nếu tất cả số lần nhảy chỉ số (6 lần) đều vào một dòng, nó sẽ có màu tím!",
+    "Nhấn vào \"Chi Tiết\" khi bạn đang nâng thánh di vật trong game để có thể đồng thời vừa nâng vừa quét.",
+    "Giờ bạn có thể tải lên nhiều ảnh chụp thánh di vật để quét!"
   ],
   "mainStat": "Chỉ số chính",
-  "slot": "Vị trí",
+  "slot": "Vị Trí",
   "slotName": {
-    "flower": "Hoa sự sống",
+    "flower": "Hoa Sự Sống",
     "plume": "Lông vũ tử vong",
     "sands": "Cát thời gian",
     "goblet": "Ly không gian",

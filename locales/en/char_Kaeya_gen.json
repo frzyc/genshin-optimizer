@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Never-Ending Performance",
     "description": {
-      "0": "Every time <strong>Glacial Waltz</strong> defeats an opponent during its duration, its duration is increased by 2.5s, up to a maximum of 15s."
+      "0": "While <strong>Glacial Waltz</strong> is in effect, for each opponent defeated, its duration is increased by 2.5s, up to a maximum of 15s."
     }
   },
   "constellation3": {

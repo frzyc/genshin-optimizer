@@ -43,19 +43,19 @@
     "name": "Campo gélido",
     "description": {
       "0": "Lanza una bomba helada hacia la dirección en la que apunta y, al impactar, produce una explosión que inflige <cryo>Daño Cryo</cryo>. Al explotar, la bomba se divide en varias minibombas ultracongelantes que explotan al entrar en contacto con un enemigo o tras cierto tiempo, infligiendo <cryo>Daño Cryo</cryo>.",
-      "1": "Al golpear a un enemigo, la bomba helada o las minibombas ultracongelantes reducen el ATQ de dicho enemigo y otorgan a Aloy una carga del efecto de inducción.",
-      "2": "Solo se puede obtener una carga de inducción cada 0.1 s.",
+      "1": "Al golpear a un enemigo con la bomba helada o las minibombas ultracongelantes, se reduce el ATQ de dicho enemigo y Aloy obtiene una carga del efecto de inducción.",
+      "2": "Solo se puede obtener una carga de inducción cada 0.1{NON_BREAK_SPACE}s.",
       "3": "<br/>",
       "4": "<strong>Inducción</strong>",
       "5": [
         "Aumenta el daño que inflige Aloy con su Ataque Normal en función del número de cargas de inducción.",
-        "Cuando tiene 4 cargas, Aloy las consume todas y obtiene “hielo galopante”, el cual aumenta aún más el daño de su Ataque Normal y transforma en <cryo>Daño Cryo</cryo> todo el daño infligido con dicho ataque."
+        "Cuando tiene 4 cargas, Aloy las consume todas y obtiene “hielo galopante”, el cual aumenta aún más el daño de su Ataque Normal y lo transforma en <cryo>Daño Cryo</cryo>."
       ],
       "6": "<br/>",
       "7": "En el estado de hielo galopante, Aloy no podrá beneficiarse de inducción.",
-      "8": "Los efectos de inducción se perderán 30 s después de que Aloy sea retirada de combate.",
+      "8": "Los efectos de inducción se perderán 30{NON_BREAK_SPACE}s después de que Aloy sea retirada de combate.",
       "9": "<br/>",
-      "10": "<i>¿Crees que eso está frío? Eso es porque nunca has estado en El Corte.</i>"
+      "10": "<i>¿Crees que eso está frío? Eso es porque nunca has estado en El Tajo.</i>"
     },
     "skillParams": {
       "0": "Daño de bomba helada",

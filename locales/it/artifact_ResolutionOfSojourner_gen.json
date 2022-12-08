@@ -1,0 +1,29 @@
+{
+  "setName": "Risoluzione del viandante",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Aumenta il tasso di CRIT dell'attacco caricato di un 30%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Cuore dell'amicizia",
+      "desc": "Un fiorellino ceruleo con un fiocco appuntato sullo stelo."
+    },
+    "plume": {
+      "name": "Piuma del ritorno",
+      "desc": "Una freccia azzurra impregnata dei sentimenti dei viaggiatori che sono svaniti nell'orizzonte."
+    },
+    "sands": {
+      "name": "Meridiana del viandante",
+      "desc": "Un'antica meridiana che ha sempre scandito in silenzio i cicli del sole e della luna nel cielo."
+    },
+    "goblet": {
+      "name": "Calice del viandante",
+      "desc": "Un semplice calice di porcellana che un tempo traboccava di birre deliziose."
+    },
+    "circlet": {
+      "name": "Corona dell'addio",
+      "desc": "Una coroncina fiorita che emana la brezza primaverile."
+    }
+  }
+}

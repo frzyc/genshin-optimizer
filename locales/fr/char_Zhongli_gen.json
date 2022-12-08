@@ -63,7 +63,7 @@
       "14": "<br/>",
       "15": "<strong>Bouclier de jade</strong>",
       "16": "Le bouclier de jade est efficace à 150 % contre les DGT élémentaires et physiques.",
-      "17": "Lorsqu'un bouclier de jade protège un personnage, les RÉS élémentaires et physique des ennemis proches sont réduites de 20 %. Cet effet n'est pas cumulable.",
+      "17": "Lorsqu'un bouclier de jade protège un personnage, les RÉS élémentaires et physique des ennemis proches sont réduites de 20 %. Cet effet est non cumulable.",
       "18": "<br/>",
       "19": "<i>Un vrai maître de la roche doit savoir sculpter le jade et l'or.</i>"
     },

@@ -18,7 +18,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder de la roca y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <geo>Daño Geo en el AdE</geo> en el momento del impacto."
+        "1": "Concentra el poder de la roca, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <geo>Daño Geo en el AdE</geo> en el momento del impacto."
       }
     },
     "skillParams": {

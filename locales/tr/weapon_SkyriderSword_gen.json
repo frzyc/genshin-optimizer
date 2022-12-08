@@ -1,0 +1,12 @@
+{
+  "name": "Gökbinicisi Kılıcı",
+  "description": "Sağlam bir çelik kılıç. Efsanevi Gökbinicisinin onu uçan kılıç olarak kullanmaya çalıştığı söylenir...",
+  "passiveName": "Kararlılık",
+  "passiveDescription": {
+    "0": "Bir Element Patlaması kullanmak, 15 saniyeliğine Saldırı ve Hareket Hızını <cryo>%12</cryo> artırır.",
+    "1": "Bir Element Patlaması kullanmak, 15 saniyeliğine Saldırı ve Hareket Hızını <cryo>%15</cryo> artırır.",
+    "2": "Bir Element Patlaması kullanmak, 15 saniyeliğine Saldırı ve Hareket Hızını <cryo>%18</cryo> artırır.",
+    "3": "Bir Element Patlaması kullanmak, 15 saniyeliğine Saldırı ve Hareket Hızını <cryo>%21</cryo> artırır.",
+    "4": "Bir Element Patlaması kullanmak, 15 saniyeliğine Saldırı ve Hareket Hızını <cryo>%24</cryo> artırır."
+  }
+}

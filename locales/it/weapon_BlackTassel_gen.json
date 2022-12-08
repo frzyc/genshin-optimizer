@@ -1,0 +1,12 @@
+{
+  "name": "Pennacchio nero",
+  "description": "Una lancia dallo straordinario potere che, a differenza dei pennacchi bianchi, ha il vantaggio di non sporcarsi facilmente.",
+  "passiveName": "Flagello antimelma",
+  "passiveDescription": {
+    "0": "Aumenta i DAN contro i Melmosi di un <cryo>40%</cryo>.",
+    "1": "Aumenta i DAN contro i Melmosi di un <cryo>50%</cryo>.",
+    "2": "Aumenta i DAN contro i Melmosi di un <cryo>60%</cryo>.",
+    "3": "Aumenta i DAN contro i Melmosi di un <cryo>70%</cryo>.",
+    "4": "Aumenta i DAN contro i Melmosi di un <cryo>80%</cryo>."
+  }
+}

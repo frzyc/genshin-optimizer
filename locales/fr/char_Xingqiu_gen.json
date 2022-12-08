@@ -44,7 +44,7 @@
       "0": "Lance une succession de 2 coups d'épée qui infligent des <hydro>DGT Hydro</hydro> aux ennemis en face. En même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.",
       "1": "Les épées de pluie ont les propriétés suivantes :",
       "2": [
-        " Les épées se brisent lorsque Xingqiu subit des DGT et ce faisant réduisent les DGT subis.",
+        " Les épées se brisent lorsque Xingqiu subit des DGT, et ce faisant, réduisent les DGT subis.",
         " Augmentent la RÉS à l'interruption du personnage."
       ],
       "3": "20 % du <hydro>bonus de DGT Hydro</hydro> de Xingqiu est converti en réduction de DGT supplémentaire par les épées de pluie.",
@@ -109,7 +109,7 @@
   "passive1": {
     "name": "Clé d'invocation d'eau",
     "description": {
-      "0": "Lorsque une épée de pluie est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé d'une quantité de PV équivalant à 6 % des PV max de Xingqiu."
+      "0": "Lorsqu'une épée de pluie est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé d'une quantité de PV équivalant à 6 % des PV max de Xingqiu."
     }
   },
   "passive2": {

@@ -39,7 +39,7 @@
     }
   },
   "skill": {
-    "name": "Tuyết Tập Kích",
+    "name": "Đột Kích Băng Giá",
     "description": {
       "0": "Nhanh chóng tỏa ra khí lạnh, gây cho địch phía trước <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
       "1": "<br/>",
@@ -65,7 +65,7 @@
     }
   },
   "burst": {
-    "name": "Vũ Điệu Băng Giá",
+    "name": "Vũ Điệu Giá Rét",
     "description": {
       "0": "Ngưng tự sương lạnh trong không khí, triệu hồi 3 nhũ băng lạnh giá xoay quanh người.",
       "1": "Trong thời gian tồn tại, nhũ băng lạnh giá sẽ chuyển động theo nhân vật, gây cho địch trên đường <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
@@ -94,14 +94,14 @@
   "passive1": {
     "name": "Lãnh Huyết Kiếm",
     "description": {
-      "0": "<strong>Tuyết Tập Kích</strong> mỗi khi đánh trúng 1 đơn vị, sẽ hồi phục HP cho Kaeya tương đương 15% lực tấn công."
+      "0": "<strong>Đột Kích Băng Giá</strong> mỗi khi đánh trúng 1 đơn vị, sẽ hồi phục HP cho Kaeya tương đương 15% lực tấn công."
     }
   },
   "passive2": {
     "name": "Trái Tim Vực Băng",
     "description": {
-      "0": "Khi <strong>Tuyết Tập Kích</strong> khiến địch bị <cryo>đóng băng</cryo>, thì địch sẽ rơi ra Nguyên Tố Hạt Nhân.",
-      "1": "Một lần Tuyết Tập Kích tối đa sinh ra 2 Nguyên Tố Hạt Nhân."
+      "0": "Khi <strong>Đột Kích Băng Giá</strong> khiến địch bị <cryo>đóng băng</cryo>, thì địch sẽ rơi ra Nguyên Tố Hạt Nhân.",
+      "1": "Một lần Đột Kích Băng Giá tối đa sinh ra 2 Nguyên Tố Hạt Nhân."
     }
   },
   "passive3": {
@@ -120,13 +120,13 @@
   "constellation2": {
     "name": "Vũ Điệu Trắng Vô Tận",
     "description": {
-      "0": "Trong thời gian có <strong>Vũ Điệu Băng Giá</strong>, nếu đánh bại địch sẽ cộng thêm 2,5s, tối đa 15s."
+      "0": "Trong thời gian có <strong>Vũ Điệu Giá Rét</strong>, nếu đánh bại địch sẽ cộng thêm 2,5s, tối đa 15s."
     }
   },
   "constellation3": {
     "name": "Vở Kịch Băng Giá",
     "description": {
-      "0": "Cấp kỹ năng <strong>Tuyết Tập Kích</strong> +3.",
+      "0": "Cấp kỹ năng <strong>Đột Kích Băng Giá</strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
@@ -142,14 +142,14 @@
   "constellation5": {
     "name": "Cái Ôm Lạnh Giá",
     "description": {
-      "0": "Cấp kỹ năng <strong>Vũ Điệu Băng Giá</strong> +3.",
+      "0": "Cấp kỹ năng <strong>Vũ Điệu Giá Rét</strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {
     "name": "Vòng Tròn Băng Giá",
     "description": {
-      "0": "<strong>Vũ Điệu Băng Giá</strong> sẽ tạo ra thêm 1 nhũ băng lạnh giá, đồng thời hồi 15 điểm Năng Lượng Nguyên Tố khi thi triển."
+      "0": "<strong>Vũ Điệu Giá Rét</strong> sẽ tạo ra thêm 1 nhũ băng lạnh giá, đồng thời hồi 15 điểm Năng Lượng Nguyên Tố khi thi triển."
     }
   }
 }

@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Katastrophe des Abgrunds – Sprudelndes Wasser",
     "description": {
-      "0": "Löst bei Anwesenheit des von Tartaglia verursachten Effekts Verisegen alle 4 s Versiegen – Hieb aus, wenn Tartaglia im Nahkampfmodus von <strong>Dämonengewand – Stürmische Gezeiten</strong> ist, löst andernfalls Versiegen – Blitz aus.",
+      "0": "Löst bei Anwesenheit des von Tartaglia verursachten Effekts Versiegen alle 4 s Versiegen – Hieb aus, wenn Tartaglia im Nahkampfmodus von <strong>Dämonengewand – Stürmische Gezeiten</strong> ist, löst andernfalls Versiegen – Blitz aus.",
       "1": "Versiegen – Hieb und Versiegen – Blitz werden, wenn sie durch dieses Sternbild ausgelöst werden, nicht von der zeitlichen Beschränkung der beiden Zustände des Versiegens beeinflusst und wirken sich auch nicht auf die Zeitabstände zum Auslösen aus."
     }
   },

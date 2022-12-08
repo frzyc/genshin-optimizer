@@ -45,7 +45,7 @@
     "name": "Rede da Vida Salvadora",
     "description": {
       "0": "Tira seu \"Fio da Vida\" e corre, marcando os inimigos no caminho.",
-      "1": "Quando termina de correr, o \"Fio da Vida\" explodirá e infligirá <hydro>Dano Hydro</hydro> contra os inimigos marcados baseado na Vida Máxima de Yelan.",
+      "1": "Quando termina de correr, o \"Fio da Vida\" explodirá e infligirá <hydro>Dano Hydro</hydro> contra os inimigos marcados, baseado na Vida Máxima de Yelan.",
       "2": "<br/>",
       "3": "<strong>Pressionar</strong>",
       "4": "Corre uma certa distância para frente rapidamente.",
@@ -119,7 +119,7 @@
   "passive2": {
     "name": "Adaptação Esperta",
     "description": {
-      "0": "Enquanto o <strong>Dado Misterioso</strong> existir, aumenta o Dano do personagem ativo no campo de batalha em 1%, e a cada 1s aumenta em 3.5%. Permite aumentar o Dano infligido pelo personagem em até 50%.",
+      "0": "Enquanto o <strong>Dado Misterioso</strong> existir, aumenta o Dano do personagem ativo no campo de batalha em 1%, e a cada 1s aumenta em 3.5%. Permite aumentar o Dano infligido pela personagem em até 50%.",
       "1": "Se Dado das Profundezas Claras for lançado novamente enquanto o efeito estiver ativo, esse efeito original será eliminado."
     }
   },

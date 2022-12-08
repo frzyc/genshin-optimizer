@@ -1,0 +1,12 @@
+{
+  "name": "Beyaz Püskül",
+  "description": "Taşordu askerlerinin beylik silahı. Sağlam ve sivri ucuyla güvenilir bir silah.",
+  "passiveName": "Keskin",
+  "passiveDescription": {
+    "0": "Normal Saldırı Hasarını <cryo>%24</cryo> artırır.",
+    "1": "Normal Saldırı Hasarını <cryo>%30</cryo> artırır.",
+    "2": "Normal Saldırı Hasarını <cryo>%36</cryo> artırır.",
+    "3": "Normal Saldırı Hasarını <cryo>%42</cryo> artırır.",
+    "4": "Normal Saldırı Hasarını <cryo>%48</cryo> artırır."
+  }
+}

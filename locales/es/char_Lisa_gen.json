@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del rayo y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <electro>Daño Electro en el AdE</electro> en el momento del impacto."
+        "1": "Concentra el poder del rayo, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <electro>Daño Electro en el AdE</electro> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -143,7 +143,7 @@
   "constellation4": {
     "name": "Erupción de plasma",
     "description": {
-      "0": "Aumenta el número de rayos lanzados por <strong>Rayo de la rosa</strong> de 1 a 3."
+      "0": "<strong>Rayo de la rosa</strong> lanza entre 1 y 3 rayos al atacar."
     }
   },
   "constellation5": {

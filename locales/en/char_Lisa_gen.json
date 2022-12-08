@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Plasma Eruption",
     "description": {
-      "0": "Increases the number of lightning bolts released by <strong>Lightning Rose</strong> by 1-3."
+      "0": "<strong>Lightning Rose</strong> now unleashes 1-3 lightning bolts when it attacks."
     }
   },
   "constellation5": {

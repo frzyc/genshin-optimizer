@@ -1,0 +1,8 @@
+{
+  "name": "Yırtıcı",
+  "description": "Benzersiz tasarıma sahip bir yay. Başka bir dünyadan gelmiş olabilir.",
+  "passiveName": "Güçlü Vuruş",
+  "passiveDescription": {
+    "0": "<cryo>Sadece aşağıdaki platformda geçerlidir: </cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nDüşmanlara Buz Hasarı vermek 6 saniyeliğine bu karakterin Normal ve Yüklü Saldırısını %10 artırır. Bu etki 2 kademeye kadar birikir. Ayrıca Aloy, Yırtıcıyı kuşandığında Saldırısı 66 artar."
+  }
+}

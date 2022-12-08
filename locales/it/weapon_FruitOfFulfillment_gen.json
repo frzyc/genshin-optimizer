@@ -1,0 +1,12 @@
+{
+  "name": "Frutto della sazietà",
+  "description": "Un frutto che hai ottenuto da una storia degli Aranara. Serba il potenziale per scongiurare ogni crisi.",
+  "passiveName": "Cerchio completo",
+  "passiveDescription": {
+    "0": "Ottieni l'effetto Crescente e calante dopo aver scatenato una reazione elementale, ottenendo <cryo>24</cryo> di maestria elementale, perdendo al contempo un 5% di ATT. Ogni 0,3 s, viene accumulato un livello di Crescente e calante, per un massimo di 5 livelli. Ogni 6 s passati senza aver attivato una reazione elementale, verrà perso 1 livello. Quest'effetto può essere attivato anche quando il personaggio non è sul campo.",
+    "1": "Ottieni l'effetto Crescente e calante dopo aver scatenato una reazione elementale, ottenendo <cryo>27</cryo> di maestria elementale, perdendo al contempo un 5% di ATT. Ogni 0,3 s, viene accumulato un livello di Crescente e calante, per un massimo di 5 livelli. Ogni 6 s passati senza aver attivato una reazione elementale, verrà perso 1 livello. Quest'effetto può essere attivato anche quando il personaggio non è sul campo.",
+    "2": "Ottieni l'effetto Crescente e calante dopo aver scatenato una reazione elementale, ottenendo <cryo>30</cryo> di maestria elementale, perdendo al contempo un 5% di ATT. Ogni 0,3 s, viene accumulato un livello di Crescente e calante, per un massimo di 5 livelli. Ogni 6 s passati senza aver attivato una reazione elementale, verrà perso 1 livello. Quest'effetto può essere attivato anche quando il personaggio non è sul campo.",
+    "3": "Ottieni l'effetto Crescente e calante dopo aver scatenato una reazione elementale, ottenendo <cryo>33</cryo> di maestria elementale, perdendo al contempo un 5% di ATT. Ogni 0,3 s, viene accumulato un livello di Crescente e calante, per un massimo di 5 livelli. Ogni 6 s passati senza aver attivato una reazione elementale, verrà perso 1 livello. Quest'effetto può essere attivato anche quando il personaggio non è sul campo.",
+    "4": "Ottieni l'effetto Crescente e calante dopo aver scatenato una reazione elementale, ottenendo <cryo>36</cryo> di maestria elementale, perdendo al contempo un 5% di ATT. Ogni 0,3 s, viene accumulato un livello di Crescente e calante, per un massimo di 5 livelli. Ogni 6 s passati senza aver attivato una reazione elementale, verrà perso 1 livello. Quest'effetto può essere attivato anche quando il personaggio non è sul campo."
+  }
+}

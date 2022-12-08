@@ -1,0 +1,12 @@
+{
+  "name": "Avcının Yolu",
+  "description": "Bu yaldızlı yay, değerli dallar kullanılarak yapıldı. Ormana sızmaya çalışan sayısız canavarın son durağı olmuştur.",
+  "passiveName": "Yabandaki İzin Sonu",
+  "passiveDescription": {
+    "0": "Tüm Element Hasarları için <cryo>%12</cryo> Bonus sağlar. Bir düşmana Yüklü Saldırın isabet ettikten sonra Amansız Av etkisi kazanırsın. Bu etki, Yüklü Saldırı Hasarını Element Ustalığının <cryo>%160'ı</cryo> kadar artırır. Bu etki, 12 Yüklü Saldırı veya 10 saniye sonrasında kaybolur. Her 12 saniyede 1 defa Amansız Av kazanılabilir.",
+    "1": "Tüm Element Hasarları için <cryo>%15</cryo> Bonus sağlar. Bir düşmana Yüklü Saldırın isabet ettikten sonra Amansız Av etkisi kazanırsın. Bu etki, Yüklü Saldırı Hasarını Element Ustalığının <cryo>%200'ü</cryo> kadar artırır. Bu etki, 12 Yüklü Saldırı veya 10 saniye sonrasında kaybolur. Her 12 saniyede 1 defa Amansız Av kazanılabilir.",
+    "2": "Tüm Element Hasarları için <cryo>%18</cryo> Bonus sağlar. Bir düşmana Yüklü Saldırın isabet ettikten sonra Amansız Av etkisi kazanırsın. Bu etki, Yüklü Saldırı Hasarını Element Ustalığının <cryo>%240'ı</cryo> kadar artırır. Bu etki, 12 Yüklü Saldırı veya 10 saniye sonrasında kaybolur. Her 12 saniyede 1 defa Amansız Av kazanılabilir.",
+    "3": "Tüm Element Hasarları için <cryo>%21</cryo> Bonus sağlar. Bir düşmana Yüklü Saldırın isabet ettikten sonra Amansız Av etkisi kazanırsın. Bu etki, Yüklü Saldırı Hasarını Element Ustalığının <cryo>%280'i</cryo> kadar artırır. Bu etki, 12 Yüklü Saldırı veya 10 saniye sonrasında kaybolur. Her 12 saniyede 1 defa Amansız Av kazanılabilir.",
+    "4": "Tüm Element Hasarları için <cryo>%24</cryo> Bonus sağlar. Bir düşmana Yüklü Saldırın isabet ettikten sonra Amansız Av etkisi kazanırsın. Bu etki, Yüklü Saldırı Hasarını Element Ustalığının <cryo>%320'si</cryo> kadar artırır. Bu etki, 12 Yüklü Saldırı veya 10 saniye sonrasında kaybolur. Her 12 saniyede 1 defa Amansız Av kazanılabilir."
+  }
+}

@@ -29,7 +29,7 @@
     "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
   },
   "increase": {
-    "atk": "ATK 증가"
+    "atk": "공격력 증가"
   },
   "hits_one": "{{count}}회 명중",
   "hits_other": "{{count}}회 명중",
@@ -102,6 +102,8 @@
   "opponentsDamaged": "대상이 피해를 받음",
   "press": "짧은 터치",
   "hold": "홀드",
+  "addlCharge": "사용 가능 횟수 증가",
+  "conditional": "조건부",
   "maxStacks": "최대 스택",
   "1set": "1세트",
   "2set": "2세트",
@@ -138,5 +140,7 @@
   "bonusScaling": {
     "skill_": "원소 전투 스킬 피해 증가량"
   },
-  "teamBuff": "파티 버프"
+  "teamBuff": "파티 버프",
+  "opponents_one": "{{count}} 마리",
+  "opponents_other": "{{count}} 마리"
 }

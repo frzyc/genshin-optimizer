@@ -13,10 +13,8 @@
   "tcGraph": {
     "vs": "绘制与优化目标的关系图",
     "notSel": "未选",
-    "showMinStatThr": "显示最低词条阈值",
     "downloadData": "下载数据",
-    "optTarget": "优化目标",
-    "minStatReqThr": "最低词条要求阈值"
+    "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度"
   },
   "levelFilter": "圣遗物等级过滤器",
   "useExcluded": {
@@ -77,5 +75,22 @@
         "4rain": "<0><0>排除<1></1>5散件</0></0>会排除纯散件的搭配：<2><0>RRRRR</0></2>。\n"
       }
     }
+  },
+  "buildDropdownDesc": "减少生成的配装数量可以减少生成大量配装时的计算时间。",
+  "threadDropdownDesc": "增加线程数可以加快速度，但是也会耗费更多CPU算力。",
+  "noArtis": "哎呀！你似乎还没有在GO中添加圣遗物！你应该先在<1>圣遗物<1>页面中添加一些！",
+  "build_one": "<0>{{count}}</0> 组配装",
+  "build_other": "<0>{{count}}</0> 组配装",
+  "thread_one": "<0>{{count}}</0> 线程",
+  "thread_other": "<0>{{count}}</0> 线程",
+  "targetSelector": {
+    "selectOptTarget": "选择优化目标",
+    "selectGraphTarget": "选择绘图目标",
+    "invalidTarget": "目标无效"
+  },
+  "selectTargetFirst": "首先选择一个优化目标",
+  "generateButton": {
+    "cancel": "取消",
+    "generateBuilds": "生成配装"
   }
 }

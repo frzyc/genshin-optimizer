@@ -175,6 +175,10 @@
     "name": "Sapèque ancienne",
     "description": "Ulman a affirmé qu'une sapèque aussi ancienne pouvait être vendue pour beaucoup d'argent. Au toucher, elle n'a cependant rien de spécial..."
   },
+  "PlayerEXP": {
+    "name": "EXP de joueur",
+    "description": "Récompense obtenue en gagnant des duels d'Invocation des Sept. Chaque partie gagnée fait avancer sur le chemin de la victoire et de l'expérience. Savoir dominer son adversaire dans n'importe quelle situation est le plus grand avantage qu'un joueur puisse posséder."
+  },
   "BusinessEarnings": {
     "name": "Revenu commercial",
     "description": "Une quantité considérable de gelées de cru, représentant la somme totale de vos gains lors de cette vente caritative. Lorsque le Weinlesefest touchera à sa fin, Bernhard les échangera contre des moras pour les donner aux personnes âgées et aux enfants dans le besoin."
@@ -198,6 +202,10 @@
   "ShatteredPhenocryst": {
     "name": "Phénocristal brisé",
     "description": "Une mystérieuse substance cristalline que vous avez obtenue après avoir vaincu les puissantes Hypostases dans un donjon que nul n'a encore découvert. Ses jolies couleurs rappellent les vestiges lumière que laissent les éléments en se dispersant.\\nCet objet peut être échangé contre de précieuses ressources lors de l'événement « Symphonie Hypostase : Verset de dissonance »."
+  },
+  "CourageTestTicket": {
+    "name": "Coupon du test de bravoure",
+    "description": "Un ticket obtenu à l'issue des défis spéciaux du test de bravoure organisé par la Commission culturelle en reconnaissance du courage et de l'audace des participants.\\nVous pouvez les échanger contre de précieuses ressources lors de l'événement « Kimodameshi d'Akitsu »."
   },
   "Primogem": {
     "name": "Primo-gemme",
@@ -551,6 +559,14 @@
     "name": "Layla",
     "description": "Une étudiante du Rtawahist spécialisée en astrologie théorique. Parfois somnambule, parfois insomniaque, elle souffre de troubles du sommeil."
   },
+  "Wanderer": {
+    "name": "Nomade",
+    "description": "Une silhouette itinérante dont l'identité est un mystère. S'habillant comme un ascète des montagnes, il n'en joue cependant pas le rôle."
+  },
+  "Faruzan": {
+    "name": "Faruzan",
+    "description": "Une chercheuse qui vient « du siècle dernier ». Elle aime être l'aînée de tous et possède de vastes connaissances sur les textes anciens et la mécanique classique."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
     "description": "Matériau d'activation de la constellation d'Ayaka."
@@ -791,13 +807,25 @@
     "name": "Stella Fortuna de Layla",
     "description": "Matériau d'activation de la constellation de Layla."
   },
+  "WanderersStellaFortuna": {
+    "name": "Stella Fortuna du Nomade",
+    "description": "Matériau d'activation de la constellation du Nomade."
+  },
+  "FaruzansStellaFortuna": {
+    "name": "Stella Fortuna de Faruzan",
+    "description": "Matériau d'activation de la constellation de Faruzan."
+  },
   "GnosticHymnOldNotes": {
     "name": "Pass de bataille « Gnostique » - Ébauche",
     "description": "Une ébauche de l'histoire d'{M#un voyageur}{F#une voyageuse} à travers les contrées de Teyvat, comprenant des notes sur ses découvertes. Pourquoi ce document est-il en votre possession ? Avez-vous vécu ces aventures ?\\nUtilisez cet objet pour débloquer le Pass de bataille « Gnostique » pour une session."
   },
   "BlessingOfTheWelkinMoonNewMoon": {
     "name": "Faveur de l'astre de la nuit - Nouvelle lune",
-    "description": "Une prière récitée lors da première nuit de la nouvelle lune pour lui demander sa faveur sous forme de richesse et de bonheur. Dans votre cas, vous pouvez estimer qu'il s'agit de la première nouvelle lune de Teyvat, car c'est la première que vous voyez ici.\\n\\nUtilisez cet objet pour bénéficier des récompenses de la Faveur de l'astre de la nuit pendant 30 jours."
+    "description": "Une prière récitée lors de la première nuit de la nouvelle lune pour lui demander sa faveur sous forme de richesse et de bonheur. Dans votre cas, vous pouvez estimer qu'il s'agit de la première nouvelle lune de Teyvat, car c'est la première que vous voyez ici.\\n\\nUtilisez cet objet pour bénéficier des récompenses de la Faveur de l'astre de la nuit pendant 30 jours."
+  },
+  "AnAppellativeStroke": {
+    "name": "Plume d'appellation",
+    "description": "Le pinceau avec lequel vous donnez un nouveau nom à une certaine personne.\\nUne fois le nouveau nom décidé, il ne peut plus être changé."
   },
   "EnergyOrbPyro": {
     "name": "Orbe d'énergie (Pyro)",
@@ -1223,7 +1251,7 @@
     "name": "Viande congelée",
     "description": "Morceau de viande aussi rare que délicieux.\\nD'après les annales, cette viande provient d'un type de sanglier disparu depuis plusieurs siècles ; les conditions climatiques extrêmes des Monts Dosdragon ont permis sa conservation. Aux yeux des amateurs de bonne chère de Mondstadt, il s'agit pour ainsi dire d'un mets sans égal."
   },
-  "UnagiMeat": {
+  "EelMeat": {
     "name": "Anguille",
     "description": "Un morceau de chair d'unagi qui une fois cuisiné offre une saveur inimitable."
   },
@@ -2639,7 +2667,7 @@
     "name": "Croc de dragon infusé de vitalité",
     "description": "Un croc de dragon infusé de force vitale. Sa brillance et sa texture suffisent à éveiller l'inquiétude de celui qui l'observe..."
   },
-  "PrincesssBox": {
+  "PrincessBox": {
     "name": "Coffre de la princesse",
     "description": "Un coffre aux trésors avec un motif décoratif en trois parties. Une porte devrait s'ouvrir une fois le motif complet.\\n« Je crains de ne pouvoir terminer cette fresque. »\\n« Cela fait bien longtemps que je n'ai pas vu le bleu du ciel ou le vert des champs. Je ne sais plus quelles couleurs utiliser pour capturer ce paysage de neige et glace fondues si cher à mon père. »\\n« Quand il reviendra, tout sera revenu comme avant. Mais je n'en peux plus de ce froid. »\\n« Pardonne-moi, père, j'ai été stupide. »\\n« Imunlaukr, j'aimerais tellement te revoir... »"
   },
@@ -3225,7 +3253,7 @@
   },
   "FreshSlimeCondensate": {
     "name": "Bave de Blob fraîche",
-    "description": "De la bave de blob fraîchement obtenue. Personne ne sait ce que Diona a l'intention d'en faire..."
+    "description": "De la bave de Blob fraîchement obtenue. Personne ne sait ce que Diona a l'intention d'en faire..."
   },
   "MinaciousIsleMural": {
     "name": "Fresque des Îles funestes",
@@ -3857,7 +3885,7 @@
   },
   "RukkhashavaMushrooms": {
     "name": "Champignon sacramental",
-    "description": "Un champignon qui pousse en couches successives telle une mer de nuages et que l'on trouve principalement sur les arbres au cœur de la forêt tropicale. Les habitants de Sumeru les considèrent comme la cristallisation sacrée de l'héritage de Rukkhadevata."
+    "description": "Un champignon qui pousse en couches successives telle une mer de nuages et que l'on trouve principalement sur les arbres au cœur de la forêt tropicale."
   },
   "Padisarah": {
     "name": "Padisachidée",
@@ -5153,7 +5181,7 @@
   },
   "SlimeCondensateSoakedSoil": {
     "name": "Terre gorgée de bave de Blob",
-    "description": "De la terre imbibée de bave de blob. À quoi ce truc collant va-t-il servir à Akim ?"
+    "description": "De la terre imbibée de bave de Blob. À quoi ce truc collant va-t-il servir à Akim ?"
   },
   "WhopperflowerRootSoil": {
     "name": "Terre de Fleur mensongère",
@@ -5939,6 +5967,18 @@
     "name": "Clé de Sanctuaire des profondeurs de Sumeru",
     "description": "Une clé qui peut briser le scellé des anciens sanctuaires des profondeurs disséminés sur les terres de Sumeru.\\nCes Sanctuaires des profondeurs ont été scellés lorsque l'ancienne civilisation qui les a construits a disparu. Les clés secrètes trouvées au fond des donjons peuvent briser les scellés, ou peut-être qu'elles font oublier aux sanctuaires divins ce qu'ils ont perdu le temps d'un instant."
   },
+  "BlankDynamicCard": {
+    "name": "Illustration dynamique vierge",
+    "description": "Une carte vierge avec un dos peint. On dit que si vous y inscrivez le nom d'une illustration dynamique que vous désirez, vous pouvez l'obtenir auprès de l'agent de l'Association situé à la taverne."
+  },
+  "MatchInvitationLetter": {
+    "name": "Lettre d'invitation de partie",
+    "description": "Vous pouvez sélectionner un joueur à défier dans l'annuaire du tableau d'invitations pour que La Queue de Chat lui envoie cette lettre d'invitation. Le joueur invité se rendra ensuite à la taverne pour vous affronter en duel."
+  },
+  "LuckyCoin": {
+    "name": "Jeton de chance",
+    "description": "La devise reconnue et utilisée par l'Association des joueurs, pouvant être échangée contre divers objets liés à l'Invocation des Sept. On dit que ces jetons ont été initialement nommés ainsi dans l'espoir qu'ils apporteraient de la chance à leur propriétaire... Ou alors, c'est peut-être parce que seuls les plus chanceux pouvaient en posséder..."
+  },
   "Dish": {
     "name": "Plat",
     "description": "Objets obtenus en cuisant"
@@ -6265,7 +6305,7 @@
   },
   "JueyunChiliChicken": {
     "name": "Poulet pimenté de Jueyun",
-    "description": "Poulet froid en sauce. La délicieuse saveur du poulet a été conservée grâce à une technique et une exécution hors-pair. La peau croustillante possède un goût légèrement épicé."
+    "description": "Poulet froid en sauce. La délicieuse saveur du poulet a été conservée grâce à une technique et une exécution hors pair. La peau croustillante possède un goût légèrement épicé."
   },
   "DeliciousJueyunChiliChicken": {
     "name": "Poulet pimenté de Jueyun (délicieux)",
@@ -6417,7 +6457,7 @@
   },
   "AdeptusTemptation": {
     "name": "Attrape-Adepte",
-    "description": "Un plat traditionnel liyuéen à la préparation complexe. Les ingrédients sélectionnés avec soin sont mijotés dans du bouillon à feu doux. Un Adepte aurait fait un saut dans le monde des mortels sans broncher pour en manger afin de palier à ses souvenirs flous lorsqu'il s'apprêtait à recopier la recette du plat."
+    "description": "Un plat traditionnel liyuéen à la préparation complexe. Les ingrédients sélectionnés avec soin sont mijotés dans du bouillon à feu doux. Un Adepte aurait fait un saut dans le monde des mortels sans broncher pour en manger afin de pallier ses souvenirs flous lorsqu'il s'apprêtait à recopier la recette du plat."
   },
   "DeliciousAdeptusTemptation": {
     "name": "Attrape-Adepte (délicieux)",
@@ -7112,15 +7152,15 @@
     "description": "Un plat de chair de crabe cuit directement à la flamme. La chair de crabe a toujours une belle teinte écarlate et sa texture est tendre et juteuse. Les œufs de crabe ont un arôme rafraîchissant et sont riches et moelleux au goût. La grâce pure de ce plat sur votre langue vous fait commencer à vous demander quel goût pourrait avoir la carapace du crabe."
   },
   "SuspiciousSakuraTempura": {
-    "name": "Beignets de crevettes (suspects)",
+    "name": "Tempuras de sakura (suspects)",
     "description": "Un plat frit dans l'huile. C'est peut-être dû au manque d'expérience dans le contrôle de la température de l'huile, mais les ingrédients ont commencé à dégager une fumée âcre dès qu'ils ont été plongés dans le wok. La pâte est maintenant toute marbrée et dorée. Dommage pour le gaspillage... mais c'est peut-être mieux de ne pas en manger."
   },
   "SakuraTempura": {
-    "name": "Beignets de crevettes",
-    "description": "Un plat frit dans l'huile. Incorporez les pétales de fleurs de cerisier marinés à la pâte avant d'enrober uniformément les crevettes et les légumes frais, les faire frire, puis égoutter l'huile. Tout cela semble assez simple, mais une bonne préparation de beignet ne se fait pas en un jour."
+    "name": "Tempuras de sakura",
+    "description": "Un plat frit dans l'huile. Incorporez les pétales de fleurs de cerisier marinés à la pâte avant d'enrober uniformément les crevettes et les légumes frais, les faire frire, puis égoutter l'huile. Tout cela semble assez simple, mais une bonne préparation de tempura ne se fait pas en un jour."
   },
   "DeliciousSakuraTempura": {
-    "name": "Beignets de crevettes (délicieux)",
+    "name": "Tempuras de sakura (délicieux)",
     "description": "Un plat frit dans l'huile. La pâte est fine et transparente, comme un ensemble de vêtements luxueux sur les ingrédients. Le croustillant extérieur et la fraîcheur à l'intérieur forment des couches de texture étonnantes, amenant ceux qui le mangent à s'émerveiller de la façon dont cette délicatesse a été créée."
   },
   "SnowOnTheHearth": {
@@ -7819,6 +7859,26 @@
     "name": "Halvamazd",
     "description": "Spécialité culinaire de Nahida. Le terme «{NON_BREAK_SPACE}mazd » signifie sagesse en sumérien et personne ne peut résister à ce genre de «{NON_BREAK_SPACE}sagesse ». Un sourire apparaît dans les yeux de Nahida : « L'anémone de mer a aidé le petit poisson à grandir, et ce dernier veut évidemment lui rendre la pareille. »"
   },
+  "SuspiciousSamosa": {
+    "name": "Samoussas (suspects)",
+    "description": "Un encas frit. Sa croûte grasse et sa farce trop assaisonnée dissuadent d'en reprendre une deuxième bouchée, malgré la tentative d'équilibrer le goût avec de la menthe."
+  },
+  "Samosa": {
+    "name": "Samoussas",
+    "description": "Un encas frit. La farce bien mélangée est enveloppée dans une croûte fine. Une fois façonné en forme de triangle, le mets est frit dans une casserole jusqu'à ce qu'il prenne une couleur dorée. Les farces avec ou sans viande sont très communes, ce qui est une source de discorde récurrente entre omnivores et végétariens."
+  },
+  "DeliciousSamosa": {
+    "name": "Samoussas (délicieux)",
+    "description": "Un encas frit. Chaque beignet doré et croustillant est rempli d'une farce compacte. Vous en dévorez un, avant d'en prendre un deuxième et de le savourer... Ce plaisir pour vos papilles vous enivre et vous en prenez un autre, puis encore un autre, avant de vous rendre compte que l'assiette est vide."
+  },
+  "TraditionallyMadeCharcoalBakedAjilenakhCake": {
+    "name": "Charbon d'ajilenakh traditionnel",
+    "description": "Spécialité culinaire de Faruzan.\\nCes gâteaux sucrés à la couleur sombre qui reposent sur un lit de sauce verte à la menthe ressemblent à un mécanisme mystérieux. Faruzan a remarqué votre perplexité avant de se redresser et de vous affirmer avec confiance qu'il s'agit d'un plat traditionnel de Sumeru et que c'est délicieux. Mais... les Sumériens d'antan avaient-ils vraiment des goûts aussi particuliers ?"
+  },
+  "ShimiChazuke": {
+    "name": "Chazuke authentique",
+    "description": "Spécialité culinaire du Nomade.\\nLa légère amertume du thé et la douceur du riz se marient à la perfection, vous n'en faites qu'une bouchée. Comment a-t-il réussi à cuisiner un plat aussi délicieux ? Votre expression a sûrement trahi vos pensées, car son visage s'est assombri. « Tu as fini ? Arrête de rêvasser et va plutôt faire la vaisselle. »"
+  },
   "RecipeItem": {
     "name": "Ingrédient",
     "description": "Objet pour débloquer des recettes"
@@ -8160,8 +8220,8 @@
     "description": "Étapes de préparation du kourayaki d'œufs de crabe."
   },
   "RecipeSakuraTempura": {
-    "name": "Recette : Beignets de crevettes",
-    "description": "Étapes de préparation des beignets de crevettes."
+    "name": "Recette : Tempuras de sakura",
+    "description": "Étapes de préparation des tempuras de sakura."
   },
   "RecipeRicePudding": {
     "name": "Recette : Pudding de riz",
@@ -8358,6 +8418,10 @@
   "RecipeRoseCustard": {
     "name": "Recette : Crème à la rose",
     "description": "Étapes de préparation de la crème à la rose."
+  },
+  "RecipeSamosa": {
+    "name": "Recette : Samoussas",
+    "description": "Étapes de préparation des samoussas."
   },
   "CraftedItems": {
     "name": "Produit synthétisé",
@@ -9735,6 +9799,22 @@
     "name": "Mystérieuse lettre des Fatui",
     "description": "Une lettre que vous avez obtenue par hasard après avoir vaincu un Usurier des Fatui. Qu'est-ce qu'il faisait en sa possession ?"
   },
+  "HiltLikeObject": {
+    "name": "Objet semblable à une garde",
+    "description": "Cet objet ressemble à une garde d'épée. Peut-être s'agit-il du Glaive occulte que Lan recherche ?"
+  },
+  "ABriefAnalysisOfPossibleEventsOfHistoricalImportanceInTheTatarasunaArea": {
+    "name": "« Brève analyse des possibles événements d'importance historique dans la région inazumienne de Tatarasuna »",
+    "description": "« Brève analyse des possibles événements d'importance historique dans la région inazumienne de Tatarasuna »"
+  },
+  "TheIsleOfDarklingClouds": {
+    "name": "« L'île aux nuages sombres »",
+    "description": ""
+  },
+  "BoxfulOfHomelandSoil": {
+    "name": "Boîte pleine de terre du pays",
+    "description": "De la terre que vous avez ramassée pour Sun Yu et qui provient de son pays natal.\\nSon voyage sera long et son retour incertain."
+  },
   "DerivedContents": {
     "name": "Contenu déchiffré",
     "description": "Les informations que vous avez découvertes en rassemblant tous les indices dont vous disposiez."
@@ -9742,6 +9822,10 @@
   "XudongsLetter": {
     "name": "Lettre de Xudong",
     "description": "Une lettre que Xudong vous a laissée. Elle comporte une pièce jointe..."
+  },
+  "RandomWeaponShards": {
+    "name": "Fragments d'arme",
+    "description": "Des fragments d'une certaine arme. La raison de la casse est inconnue..."
   },
   "SilkFlowerSeed": {
     "name": "Graine de fleur de soie",
@@ -9893,7 +9977,7 @@
   },
   "GoldenKoi": {
     "name": "Koï doré",
-    "description": "Un gros poisson dont on dit qu'il serait un descendant des dragons.\\nSa corne, l'absence d'écailles sur une peau rouge et or et une élégance naturelle font de lui l'empereur des eaux. Cependant, il ne saurait être plus éloigné du dragon, et ce aussi bien par son origine que par ses caractéristiques, ne possédant ni sa puissance, ni sa capacité à dominer. Sa personnalité désespérément accommodante en fait même souvent la victime d'espèces prédatrices qui n'hésitent pas à le délester de sa nourriture, en contradiction totale avec la majestueuse impression qu'il dégage. Ceci explique probablement pourquoi le surnom de « descendant des dragons » pour le désigner fut très tôt abandonné."
+    "description": "Un gros poisson dont on dit qu'il serait un descendant des dragons.\\nSa corne, l'absence d'écailles sur une peau rouge et or et une élégance naturelle font de lui l'empereur des eaux. Cependant, il ne saurait être plus éloigné du dragon, et ce, aussi bien par son origine que par ses caractéristiques, ne possédant ni sa puissance, ni sa capacité à dominer. Sa personnalité désespérément accommodante en fait même souvent la victime d'espèces prédatrices qui n'hésitent pas à le délester de sa nourriture, en contradiction totale avec la majestueuse impression qu'il dégage. Ceci explique probablement pourquoi le surnom de « descendant des dragons » pour le désigner fut très tôt abandonné."
   },
   "RustyKoi": {
     "name": "Koï rouillé",
@@ -10066,6 +10150,10 @@
   "PlumeOfTheChangingWinds": {
     "name": "Panache des vents changeants",
     "description": "Matériau de raffinement spécial pour la Lance du vent saisonnier.\\nUne ancienne plume taillée dans la turquoise. Elle était autrefois utilisée comme une sorte d'ornement ou de gage."
+  },
+  "ParasolTalcum": {
+    "name": "Talc de parapluie",
+    "description": "Matériau de raffinement spécial pour la Pluie florale.\\nUne substance poudreuse censée fixer du bambou à un parapluie.\\nMalgré le changement des saisons et le passage du temps, les souvenirs et les pensées restent toujours, comme endormis sous un parapluie au sein d'un songe."
   },
   "FalconsDance": {
     "name": "Danse du faucon",
@@ -10811,6 +10899,22 @@
     "name": "PB - Fongisme",
     "description": "Thème.\\n« ... {M#Voyageur}{F#Voyageuse}, nul besoin d'être triste. À l'aube, un nouveau vent soufflera les spores qui transportent de merveilleux rêves vers tes terres d'espoir... »"
   },
+  "WandererDriftersBallad": {
+    "name": "Nomade - Ballade d'errance",
+    "description": "Thème.\\nLe passé se cache dans un monde où l'éphémère règne et la neige fine épouse la forme des fleurs."
+  },
+  "FaruzanSealedSecret": {
+    "name": "Faruzan - Secret scellé",
+    "description": "Thème.\\n« B—Bon, il faut m'appeler «{NON_BREAK_SPACE}madame » la prochaine fois que vous me posez une question ! »"
+  },
+  "AchievementInvoker": {
+    "name": "Succès - Invocateur",
+    "description": "Thème.\\n« Personne ne m'arrive à la cheville dans ce village ! »"
+  },
+  "TravelNotesStellarRivers": {
+    "name": "PB - Rivières stellaires",
+    "description": "Thème.\\nLe nom du festin tomba dans l'oubli, les trois rivières se dispersèrent dans les nuages de fumée et l'automne demeura à la courbe du crépuscule."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
     "description": "Outil permettant de détecter les Anémoculus proches à Mondstadt.\\nUn disque de pierre fabriqué par l'homme, dont les caractéristiques se rapprochent de celles des Statues des Sept et capable de résonner avec les Anémoculus.\\nCe type de pierre résonnant avec les Oculus est un dérivé maladroit des Statues des Sept construites autrefois à travers les terres. C'est précisément cette infériorité qui explique cette soif de résonance vis-à-vis des statues représentant les Archons, en faisant un ustensile prisé des aventuriers et des croyants pour la collecte d'Oculus."
@@ -10995,6 +11099,10 @@
     "name": "Aranyaka",
     "description": "Un livre que vous a remis Arama.\\nIl semble avoir été témoin du passage de nombreuses années. Il semblerait que quelqu'un y ait noté des choses, mais certains des écrits qui y figuraient ont été perdus.\\nServez-vous-en pour documenter votre aventure avec les aranaras."
   },
+  "CasketOfTomes": {
+    "name": "Coffret d'arcanes",
+    "description": "Une boîte de cartes distribuée par l'Association des joueurs d'Invocation des Sept. Seuls les débutants qui ont appris les règles de base et sont certifiés en tant que joueurs peuvent en récupérer une.\\nOn raconte que ces boîtes ont été fabriquées par des chercheurs de l'Académie de Sumeru et qu'elles disposent d'un mécanisme spécial qui permet de détecter les personnes à proximité qui possèdent également un coffret d'arcanes de ce type.\\nN'hésitez pas à utiliser cette fonction pour participer à des parties contre des joueurs du coin{NON_BREAK_SPACE}!"
+  },
   "DendroculusResonanceStone": {
     "name": "Pierre de résonance Dendroculus",
     "description": "Utilisez cet objet à Sumeru pour localiser les Dendroculus proches de vous.\\nUne amulette de protection qui produit des effets similaires aux Statues des Sept Dendro, ce qui explique qu'elle soit attirée par les Dendroculus.\\nDes plantes, des arbres, des lianes, ou encore des fleurs... Les formes de vie qui dépendent de l'élément Dendro se présentent sous diverses formes. Bien qu'elles diffèrent par leur apparence et divers autres aspects, elles sont toutes nées de la même terre et finiront toutes par y retourner."
@@ -11050,6 +11158,10 @@
   "CloudRetainersDamaskedDevice": {
     "name": "Appareil turquoise de Souffle-Nuages",
     "description": "Ce mécanisme léger fait à partir de papier et à l'apparence d'un oiseau vous a été offert par Souffle-Nuages.\\nBien qu'il s'agisse effectivement d'un mécanisme, il est impossible de distinguer un quelconque composant quand on le regarde.\\nIl semblerait que cet Adepte se soit encore amélioré dans l'art de fabriquer des mécanismes..."
+  },
+  "WildernessCompass": {
+    "name": "Boussole sauvage",
+    "description": "Une boussole spéciale que vous avez obtenue de la Guilde des aventuriers. Certaines rumeurs disent qu'elle porte chance..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus",
@@ -11230,6 +11342,522 @@
   "WanminFeast": {
     "name": "Banquet de Wanmin",
     "description": "Un feu d'artifice à l'image de l'assistant de la célèbre cheffe du Restaurant Wanmin. Les Liyuéens pensent à la bonne nourriture en le voyant, car les festivals riment avec de délicieux festins en famille."
+  },
+  "RhodeiaOfLoch": {
+    "name": "Océanide - Rhodeia",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "FatuiPyroAgent": {
+    "name": "Usurier Pyro",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MaguuKenki": {
+    "name": "Lame oni",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "StonehideLawachurl": {
+    "name": "Chef Brutorocheux",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MirrorMaiden": {
+    "name": "Suivante miroir",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "JadeplumeTerrorshroom": {
+    "name": "Champieffroi panaché",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "UndividedHeart": {
+    "name": "Cœur indivisible",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ColdBloodedStrike": {
+    "name": "Épée de la cruauté",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SteadyBreathing": {
+    "name": "Respiration stable",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "KantenSenmyouBlessing": {
+    "name": "Bénédiction de Kanten Senmyou",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TheScentRemained": {
+    "name": "Parfum persistant",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ProphecyOfSubmersion": {
+    "name": "Prophétie immersive",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "FlowingFlame": {
+    "name": "Flamme courante",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Crossfire": {
+    "name": "Feux croisés",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "GrandExpectation": {
+    "name": "Perspective de voyage",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "NaganoharaMeteorSwarm": {
+    "name": "Pluie de météores de Naganohara",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "StellarPredator": {
+    "name": "Corbeau maléfique",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Awakening": {
+    "name": "Éveil",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ThunderingPenance": {
+    "name": "Pénitence retentissante",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ChaoticEntropy": {
+    "name": "Théorie de l'entropie",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LandsOfDandelion": {
+    "name": "Territoire des pissenlits",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "StrategicReserve": {
+    "name": "Réserve stratégique",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "IGotYourBack": {
+    "name": "J'assure vos arrières",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "FloralSidewinder": {
+    "name": "Retour folié",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "StreamingSurge": {
+    "name": "Torrent déchaîné",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "PaidInFull": {
+    "name": "Paiement total",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TranscendentAutomaton": {
+    "name": "Automate transcendant",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "StonehideReforged": {
+    "name": "Peau-pierre reforgée",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ShakenNotPurred": {
+    "name": "On the rocks",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "FeatherfallJudgment": {
+    "name": "Jugement des plumes",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "GloriousSeason": {
+    "name": "Splendide saison",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MirrorCage": {
+    "name": "Prison de miroir",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ProliferatingSpores": {
+    "name": "Spores proliférantes",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MagicGuide": {
+    "name": "Guide de magie",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SacrificialFragments": {
+    "name": "Mémoires de rituels",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SkywardAtlas": {
+    "name": "Atlas de la Voûte d'Azur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "RavenBow": {
+    "name": "Arc du corbeau",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SacrificialBow": {
+    "name": "Arc rituel",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SkywardHarp": {
+    "name": "Ailes de la Voûte d'Azur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WhiteIronGreatsword": {
+    "name": "Grande épée en fer blanc",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SacrificialGreatsword": {
+    "name": "Espadon rituel",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WolfsGravestone": {
+    "name": "Mort-du-loup",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WhiteTassel": {
+    "name": "Pampille blanche",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LithicSpear": {
+    "name": "Lance des Millelithes",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SkywardSpine": {
+    "name": "Berge de la Voûte d'Azur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TravelersHandySword": {
+    "name": "Épée du voyageur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SacrificialSword": {
+    "name": "Épée rituelle",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "AquilaFavonia": {
+    "name": "Épée du faucon",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "AdventurersBandana": {
+    "name": "Bandeau de l'Aventurier",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LuckyDogsSilverCirclet": {
+    "name": "Diadème d'argent du Chanceux",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TravelingDoctorsHandkerchief": {
+    "name": "Mouchoir du Médecin itinérant",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "GamblersEarrings": {
+    "name": "Boucles d'oreilles du Parieur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "InstructorsCap": {
+    "name": "Chapeau de l'Instructeur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ExilesCirclet": {
+    "name": "Diadème de l'Exilé",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "BrokenRimesEcho": {
+    "name": "Écho de l'hiver",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "BlizzardStrayer": {
+    "name": "Briseur de glace",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WineStainedTricorne": {
+    "name": "Calot taché de vin",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "HeartOfDepth": {
+    "name": "Âme des profondeurs",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WitchsScorchingHat": {
+    "name": "Chapeau brûlé de la Sorcière",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "CrimsonWitchOfFlames": {
+    "name": "Sorcière des flammes ardentes",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ThunderSummonersCrown": {
+    "name": "Diadème de l'Invocateur de tonnerre",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ThunderingFury": {
+    "name": "Colère de tonnerre",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ViridescentVenerersDiadem": {
+    "name": "Diadème de la Verte Chasseuse",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ViridescentVenerer": {
+    "name": "Ombre de la Verte Chasseuse",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MaskOfSolitudeBasalt": {
+    "name": "Masque en basalte inerte",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ArchaicPetra": {
+    "name": "Roche ancienne",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LaurelCoronet": {
+    "name": "Couronne de laurier",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "DeepwoodMemories": {
+    "name": "Souvenir de forêt",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LiyueHarborWharf": {
+    "name": "Quai du Port de Liyue",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "KnightsOfFavoniusLibrary": {
+    "name": "Bibliothèque de l'Ordre de Favonius",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "JadeChamber": {
+    "name": "Chambre de Jade",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "DawnWinery": {
+    "name": "Domaine de l'Aurore",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WangshuInn": {
+    "name": "Auberge Wangshu",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "FavoniusCathedral": {
+    "name": "Cathédrale de Favonius",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Paimon": {
+    "name": "Paimon",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Katheryne": {
+    "name": "Catherine",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Timaeus": {
+    "name": "Timaeus",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Wagner": {
+    "name": "Wagner",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ChefMao": {
+    "name": "Chef Mao",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Tubby": {
+    "name": "Taby",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Timmie": {
+    "name": "Timmy",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Liben": {
+    "name": "Li le fiable",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ChangTheNinth": {
+    "name": "Chang le Neuvième",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Ellin": {
+    "name": "Eileen",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "IronTongueTian": {
+    "name": "Tian la langue de fer",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LiuSu": {
+    "name": "Liu Su",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "NRE": {
+    "name": "Poche nutritive",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenIce": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Glace tissée",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceShatteringIce": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Gel pulvérisateur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenWaters": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Eau tissée",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceSoothingWater": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Eau salvatrice",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenFlames": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Feu tissé",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceFerventFlames": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Flammes de la ferveur",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenThunder": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Éclair tissé",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceHighVoltage": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Tonnerre puissant",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenWinds": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Vent tissé",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceImpetuousWinds": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Vents de la célérité",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenStone": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Terre tissée",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceEnduringRock": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Roc inamovible",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceWovenWeeds": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Herbe tissée",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ElementalResonanceSprawlingGreenery": {
+    "name": "Résonance élémentaire{NON_BREAK_SPACE}: Plante grimpante",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TheBestestTravelCompanion": {
+    "name": "La meilleure des amies !",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "ChangingShifts": {
+    "name": "Relève",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TossUp": {
+    "name": "Lancer en l'air",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Strategize": {
+    "name": "Stratège",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "IHaventLostYet": {
+    "name": "Pas encore perdu{NON_BREAK_SPACE}!",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LeaveItToMe": {
+    "name": "Je m'en charge !",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "WhenTheCraneReturned": {
+    "name": "Retour de la grue",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Starsigns": {
+    "name": "Présage astrologique",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "CalxsArts": {
+    "name": "Arts de Calx",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "MasterOfWeaponry": {
+    "name": "Maîtrise de l'armement",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "BlessingOfTheDivineRelicsInstallation": {
+    "name": "Bénédiction de relique divine",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "QuickKnit": {
+    "name": "Tricot rapide",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SendOff": {
+    "name": "Adios",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "GuardiansOath": {
+    "name": "Serment du gardien",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "AbyssalSummons": {
+    "name": "Appel de l'Abîme",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "Origin": {
+    "name": "Origine",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Mondstadt": {
+    "name": "Mondstadt",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Liyue": {
+    "name": "Liyue",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Inazuma": {
+    "name": "Inazuma",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Sumeru": {
+    "name": "Sumeru",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Legend": {
+    "name": "Légende",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "Adept": {
+    "name": "Spécialiste",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "HydroCrystalChunk": {
+    "name": "Morceau de cristal",
+    "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
+  },
+  "BeginnerPlayerBadge": {
+    "name": "Badge de {M#joueur débutant}{F#joueuse débutante}",
+    "description": "On dit que toute personne qui débute avec l'Invocation des Sept peut obtenir ce badge de joueur.\\nMême le joueur le plus doué doit commencer à partir de là, construisant ensuite sa légende au fur et à mesure de ses victoires.\\nRestez aux aguets, car votre saga commence ici !"
+  },
+  "AdvancedPlayerBadge": {
+    "name": "Badge de {M#joueur avancé}{F#joueuse avancée}",
+    "description": "Ceux qui jouent souvent à l'Invocation des Sept et réussissent l'épreuve de joueur avancé obtiendront ce badge.\\nBeaucoup sont ceux qui deviennent joueurs, mais la grande majorité considère ce jeu comme une sorte de passe-temps... Ceux qui deviennent des joueurs avancés sont donc peu nombreux.\\nMême les jeux offrent des récompenses uniques à ceux qui sont animés par la passion."
+  },
+  "ExpertPlayerBadge": {
+    "name": "Badge de {M#joueur expert}{F#joueuse experte}",
+    "description": "Ceux qui étudient l'art de l'Invocation des Sept et réussissent l'épreuve de joueur expert obtiendront ce badge.\\nPeut-être que votre attitude à ce stade est différente de celle de vos débuts, mais vous trouvez toujours de la joie lors de vos parties...\\n... En consacrant du temps à quelque chose que vous trouvez intéressant, et en appréciant tout ce qui compose ce que vous aimez."
+  },
+  "MasterPlayerBadge": {
+    "name": "Badge de {M#joueur}{F#joueuse} maître",
+    "description": "Ceux qui atteignent une maîtrise considérable de l'Invocation des Sept et réussissent l'épreuve de joueur maître obtiendront ce badge.\\nIl est dit que peu de joueurs peuvent obtenir ce badge, et que chacun d'eux possède sa propre vision du jeu.\\nLa victoire, semble-t-il, n'est peut-être plus le seul objectif ici..."
+  },
+  "LegendPlayerBadge": {
+    "name": "Badge de {M#joueur}{F#joueuse} légendaire",
+    "description": "Ceux qui réussissent l'épreuve de joueur légendaire obtiendront ce badge.\\nCe badge prouve que vous êtes sur la bonne voie pour forger votre propre mythe de joueur.\\nAllez de l'avant, allez au-delà et atteignez de nouveaux sommets !"
   },
   "SummertimeSparkle": {
     "name": "Été radieux",
@@ -11513,7 +12141,7 @@
   },
   "OfSettledThoughts": {
     "name": "Pensées arrêtées",
-    "description": "Un bureau dans lequel sont empilés des tomes et dont les bibliothèques ressemblent à des murs. Il est difficile de ne pas se sentir intimidé devant ces montagnes d'ouvrages, mais les connaisseurs savent que la frontière entre la sagesse et l'ignorance n'est pas insurmontable. Il faut seulement être prêt à lire tous ces livres, un par un, en suivant un plan soigneusement élaboré pour rapidement acquérir de nombreuses nouvelles connaissances.\\nCompagnon préférant ce set : Cyno."
+    "description": "Un bureau dans lequel sont empilés des tomes et dont les bibliothèques ressemblent à des murs. Il est difficile de ne pas se sentir intimidé devant ces montagnes d'ouvrages, mais les connaisseurs savent que la frontière entre la sagesse et l'ignorance n'est pas insurmontable. Il faut seulement être prêt à lire tous ces livres, un par un, en suivant un plan soigneusement élaboré pour rapidement acquérir de nombreuses nouvelles connaissances.\\nCompagnons préférant ce set : Cyno, Faruzan."
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Bref d'adieu à l'agitation et la peine",
@@ -11525,7 +12153,7 @@
   },
   "AmidstProsperingMarkets": {
     "name": "Au milieu de marchés prospères",
-    "description": "Ce quartier marchand est meublé de façon exquise. Il rend hommage aux rues de la Ville Sumeru et de son Grand bazar. Les étals proposent des fruits frais, des plats délicieux et des produits de consommation courante à la vente. En faisant quelques tours dans le quartier, vous ressentirez sans doute une certaine familiarité qui s'installe quand l'on fréquente un marché animé.\\nLes boutiques et les étals situés de part et d'autre des rues de la Ville de Sumeru ont apparemment été modifiés selon des règles spécifiques qui ont été déterminées par certaines recherches de l'Académie, de sorte de fournir le meilleur service possible avec le moins de place et une gestion facile.\\nCompagnon préférant ce set : Dori."
+    "description": "Ce quartier marchand est meublé de façon exquise. Il rend hommage aux rues de la Ville Sumeru et de son Grand bazar. Les étals proposent des fruits frais, des plats délicieux et des produits de consommation courante à la vente. En faisant quelques tours dans le quartier, vous ressentirez sans doute une certaine familiarité qui s'installe quand l'on fréquente un marché animé.\\nLes boutiques et les étals situés de part et d'autre des rues de la Ville de Sumeru ont apparemment été modifiés selon des règles spécifiques qui ont été déterminées par certaines recherches de l'Académie, de sorte de fournir le meilleur service possible avec le moins de place et une gestion facile.\\nCompagnons préférant ce set : Dori, Faruzan."
   },
   "DeepInTheQuietForest": {
     "name": "Au fond de la forêt tranquille",
@@ -11537,7 +12165,7 @@
   },
   "QuietTimesByTheRiverbank": {
     "name": "Temps calmes au bord de la rivière",
-    "description": "Un village paisible qui revêt l'esthétique unique du Village de Vimara. Bien qu'il ne soit pas situé au bord d'une rivière ou de la mer, l'arôme du poisson qui embaume dans ce village suffit à vous faire entendre le bruit de l'eau.\\nLe Village de Vimara est très différent du camp des gardes forestiers : ses habitants n'effectuent pas de tâches à haute responsabilité et mènent une vie tranquille, ce qui en fait un lieu très agréable la détente."
+    "description": "Un village paisible qui revêt l'esthétique unique du Village de Vimara. Bien qu'il ne soit pas situé au bord d'une rivière ou de la mer, l'arôme du poisson qui embaume dans ce village suffit à vous faire entendre le bruit de l'eau.\\nLe Village de Vimara est très différent du camp des gardes forestiers : ses habitants n'effectuent pas de tâches à haute responsabilité et mènent une vie tranquille, ce qui en fait un lieu très agréable la détente.\\nCompagnon préférant ce set : {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "SetekhDemurs": {
     "name": "Refus de Setekh",
@@ -11553,7 +12181,7 @@
   },
   "ChorusOfDesertAndWood": {
     "name": "Chœur du désert et des bois",
-    "description": "De nombreuses variétés de plantes poussent en abondance dans cet espace merveilleux. Grâce à l'énergie dimensionnelle, les propriétés des plantes ont été harmonisées pour avoir la possibilité de pousser côte à côte, qu'elles viennent du désert ou de la forêt tropicale, et donner ainsi un magnifique ensemble de fleurs, d'arbres et d'herbes sauvages.\\nLes chercheurs férus de plantes considèrent ce genre de zones comme de véritables mines d'or pour leur travail, mais de simples passants peuvent également y trouver un intérêt particulier...\\nCompagnon préférant ce set : Tighnari."
+    "description": "De nombreuses variétés de plantes poussent en abondance dans cet espace merveilleux. Grâce à l'énergie dimensionnelle, les propriétés des plantes ont été harmonisées pour avoir la possibilité de pousser côte à côte, qu'elles viennent du désert ou de la forêt tropicale, et donner ainsi un magnifique ensemble de fleurs, d'arbres et d'herbes sauvages.\\nLes chercheurs férus de plantes considèrent ce genre de zones comme de véritables mines d'or pour leur travail, mais de simples passants peuvent également y trouver un intérêt particulier...\\nCompagnons préférant ce set : Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "TimberWallWithJadeEaves": {
     "name": "Mur en bois avec alcôve de jade",
@@ -11871,6 +12499,10 @@
     "name": "Table pour deux",
     "description": "Étapes de fabrication de la table pour deux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "LongAdhighamaChamferTable": {
+    "name": "Table longue avec chanfrein en bois d'épiphanie",
+    "description": "Étapes de fabrication de la table longue avec chanfrein en bois d'épiphanie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »",
     "description": "Étapes de fabrication du lit « Douce brise ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -11954,6 +12586,10 @@
   "SatisfactionOfSatedThirst": {
     "name": "« Satisfaction de la soif rassasiée »",
     "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Satisfaction de la soif rassasiée ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AdhigamaVineBackedChair": {
+    "name": "Chaise à dossier de feuille en bois d'épiphanie",
+    "description": "Étapes de fabrication de la chaise à dossier de feuille en bois d'épiphanie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "NorthernStoneHearth": {
     "name": "Cheminée en pierre du nord",
@@ -12087,6 +12723,10 @@
     "name": "Parfum de rôti à feu doux",
     "description": "Étapes de fabrication du parfum de rôti à feu doux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "DeepwoodDwellersAggregation": {
+    "name": "« Agrégation de l'habitant des bois »",
+    "description": "Étapes de fabrication de l'«{NON_BREAK_SPACE}Agrégation de l'habitant des bois{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapis de Mondstadt « Ardeur pourpre »",
     "description": "Étapes de fabrication du tapis de Mondstadt « Ardeur pourpre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12150,6 +12790,10 @@
   "JoyfulIllumination": {
     "name": "Illumination joyeuse",
     "description": "Étapes de fabrication de l'illumination joyeuse.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LightOfTheLandOfWisdom": {
+    "name": "« Lumière du pays de la sagesse »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Lumière du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Composition florale « Tranquillité céleste »",
@@ -12286,6 +12930,18 @@
   "EphemeralSpirit": {
     "name": "Esprit éphémère",
     "description": "Étapes de fabrication de l'esprit éphémère.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AmidstBitterAromas": {
+    "name": "« Au milieu des arômes amers »",
+    "description": "Étapes de fabrication d'« Au milieu des arômes amers ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DeepwoodDwellersIngenuity": {
+    "name": "« Ingéniosité de l'habitant des bois{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication de l'«{NON_BREAK_SPACE}Ingéniosité de l'habitant des bois{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DeepwoodDwellersBrilliance": {
+    "name": "« Brillance de l'habitant des bois »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Brillance de l'habitant des bois ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "LandscapePaintingCountryHome": {
     "name": "Tableau de paysage « Maison de campagne »",
@@ -12871,6 +13527,18 @@
     "name": "« Universalité de la cité de la sagesse »",
     "description": "Étapes de fabrication de l'«{NON_BREAK_SPACE}Universalité de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "ContrastsOfTheCityOfWisdom": {
+    "name": "« Contraste de la cité de la sagesse{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du «{NON_BREAK_SPACE}Contraste de la cité de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PeaceInTheCityOfWisdom": {
+    "name": "« Paix de la cité de la sagesse »",
+    "description": "Étapes de fabrication de la « Paix de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ErrandsInTheCityOfWisdom": {
+    "name": "« Commission de la cité de la sagesse »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Commission de la cité de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux",
     "description": "Étapes de fabrication de la fontaine à fleurs et oiseaux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -13098,6 +13766,18 @@
   "DesertWallStalwartDefense": {
     "name": "Mur du désert « Défense sérieuse{NON_BREAK_SPACE}»",
     "description": "Étapes de fabrication du mur du désert « Défense sérieuse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DesertGateWindjammer": {
+    "name": "Portail du désert « Coupe-vent »",
+    "description": "Étapes de fabrication du portail du désert « Coupe-vent ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DomedGateForestTune": {
+    "name": "Portail en dôme « Mélodie sylvestre{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du portail en dôme « Mélodie sylvestre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DomedWallTheBirdsSang": {
+    "name": "Mur en dôme « Chant d'oiseau »",
+    "description": "Étapes de fabrication du mur en dôme « Chant d'oiseau ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fondations de pierre « Temps fortuné »",
@@ -13499,6 +14179,22 @@
     "name": "Renommée des Érémites",
     "description": "Étapes de fabrication de la renommée des Érémites.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "AnElegantVoice": {
+    "name": "« Voix élégante »",
+    "description": "Étapes de fabrication de la « Voix élégante ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AMellowVoice": {
+    "name": "« Voix douce »",
+    "description": "Étapes de fabrication de la « Voix douce ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KarmaphalaThreePlyNoticeboard": {
+    "name": "Panneau d'affichage triple en bois de karmaphalien",
+    "description": "Étapes de fabrication du panneau d'affichage triple en bois de karmaphalien.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TeaBreakShade": {
+    "name": "« Ombre du goûter »",
+    "description": "Étapes de fabrication de l'« Ombre du goûter ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampadaire en fer forgé",
     "description": "Étapes de fabrication du lampadaire en fer forgé.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -13698,6 +14394,10 @@
   "PearOrchardAccessoryAttendAndListen": {
     "name": "Accessoire des poiriers « Audience captivée »",
     "description": "Étapes de fabrication de l'accessoire des poiriers «{NON_BREAK_SPACE}Audience captivée ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KarmaphalaDisplayTable": {
+    "name": "Table d'exposition en bois de karmaphalien",
+    "description": "Étapes de fabrication de la table d'exposition en bois de karmaphalien.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Présentoir de bar à vin « Boisson à volonté »",

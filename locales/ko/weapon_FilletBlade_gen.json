@@ -1,6 +1,6 @@
 {
   "name": "흘호 생선회칼",
-  "description": "회를 뜨는데 쓰이는 좁고 긴 예리한 철검. 아주 날카롭다",
+  "description": "회를 뜨는 데 쓰이는 좁고 긴 예리한 철검. 아주 날카롭다",
   "passiveName": "결",
   "passiveDescription": {
     "0": "공격 명중 시 50%의 확률로 단일 타깃에게 공격력 <cryo>240%</cryo>의 피해를 준다. 해당 효과는 <cryo>15</cryo>초마다 1회만 발동한다",

@@ -11,12 +11,19 @@
     "hintPaste": "...ou cole seus dados abaixo.",
     "goUpload": {
       "title": "Formato <strong>Genshin Optimizer</strong>",
+      "migrate": "A base de dados será migrada para uma nova versão. Baixe a base de dados novamente após importá-los.",
       "deleteDatabasePrompt": "Tem certeza que deseja excluir seu banco de dados?"
     },
     "error": {
-      "unknown": "Formato de arquivo desconhecido."
+      "jsonParse": "Não foi possível ler o arquivo JSON",
+      "unknown": "Formato de arquivo desconhecido.",
+      "monaInvalid": "O formato de arquivo Mona-Uranai é inválido",
+      "goInvalid": "O formato do arquivo backup GO é inválido."
     },
-    "dbSource": "Origem dos dados:"
+    "dbSource": "Origem dos dados:",
+    "goodUpload": {
+      "title": "Formato <strong>Genshin Open Object Description</strong> (GOOD)"
+    }
   },
   "count": {
     "chars": "Personagens:",

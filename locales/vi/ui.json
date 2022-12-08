@@ -1,9 +1,9 @@
 {
   "pageTitle": "Genshin Optimizer",
   "tabs": {
-    "artifacts": "Thánh di vật",
-    "characters": "Nhân vật",
-    "tools": "Công cụ",
+    "artifacts": "Thánh Di Vật",
+    "characters": "Nhân Vật",
+    "tools": "Công Cụ",
     "weapons": "Vũ khí",
     "doc": "Docs",
     "scanner": "Máy quét"
@@ -16,15 +16,15 @@
   "game": {
     "minLevel": "Cấp thấp nhất",
     "maxLevel": "Cấp cao nhất",
-    "rarity": "Độ hiếm",
+    "rarity": "Phẩm Chất",
     "level": "Cấp"
   },
   "unselect": "Bỏ chọn",
   "ascending": "Tăng dần",
   "descending": "Giảm dần",
   "loading": "Đang tải...",
-  "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
-  "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
+  "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc chứng thực bởi HoYoverse",
+  "appVersion": "Phiên bản của $t(pageTitle): {{version}}",
   "underConstruction": "Đang hoàn thiện",
   "error": "Lỗi",
   "reset": "Cài lại",

@@ -141,21 +141,21 @@
   "constellation3": {
     "name": "Admiración floral",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Estilo Kamisato: Belleza reflejada</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "0": "Aumenta el nivel de habilidad de <strong>Estilo Kamisato: Belleza reflejada</strong> {NON_BREAK_SPACE}+3.",
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
     "name": "Flujo inagotable",
     "description": {
-      "0": "Tras usar <strong>Estilo Kamisato: Jardín ácueo</strong>, la Vel. de Ataque Normal de los miembros del equipo cercanos aumenta en un 15% durante 15 s."
+      "0": "Tras usar <strong>Estilo Kamisato: Jardín ácueo</strong>, la Vel. de Ataque Normal de los miembros del equipo cercanos aumenta en un 15% durante 15{NON_BREAK_SPACE}s."
     }
   },
   "constellation5": {
     "name": "Rocío pluvial",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Estilo Kamisato: Jardín ácueo</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

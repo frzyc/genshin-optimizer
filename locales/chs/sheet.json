@@ -144,5 +144,7 @@
     "skill_": "元素战技额外倍率"
   },
   "energy": "能量",
-  "teamBuff": "队伍加成"
+  "teamBuff": "队伍加成",
+  "opponents_one": "{{count}} 个敌人",
+  "opponents_other": "{{count}} 个敌人"
 }

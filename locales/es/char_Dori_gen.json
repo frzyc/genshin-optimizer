@@ -76,7 +76,7 @@
       "4": [
         "Recuperará Vida continuamente en función de la Vida Máx. de Dori.",
         "Recuperará Energía Elemental continuamente.",
-        "Se <electro>imbuirá del elemento Electro</electro>."
+        "Será afectado por <electro>Electro</electro>."
       ],
       "5": "<br/>",
       "6": "Además, cuando el conector entre el personaje y el genio de la lámpara choca contra un enemigo, le inflige un golpe de <electro>Daño Electro</electro> cada 0.4 s.",

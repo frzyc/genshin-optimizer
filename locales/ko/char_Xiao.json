@@ -1,8 +1,8 @@
 {
   "burst": {
     "autoAtkDmgBonus_": "일반/강/낙하 공격 피해 증가",
-    "lifeDrain_": "HP 유실",
-    "currentHPPerSec": "(초당 현재 HP 대비)",
+    "lifeDrain_": "체력 유실",
+    "currentHPPerSec": "(초당 현재 체력 대비)",
     "incJump": "점프력 대폭 상승",
     "incAtkAoe": "공격 범위 증가",
     "inBurst": "<strong>나자의 춤</strong> 상태인 동안",

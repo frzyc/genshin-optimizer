@@ -1,14 +1,14 @@
 {
-  "title": "Cài đặt",
+  "title": "Cài Đặt",
   "languageCard": {
     "selectLanguage": "Lựa chọn ngôn ngữ",
     "languageFormat": "Ngôn ngữ: {{language}}"
   },
   "uploadCard": {
-    "title": "Tải dữ liệu",
-    "replaceDatabase": "Thay thế dữ liệu",
-    "hint": "Tải lên tệp JSON ở đây...",
-    "hintPaste": "...hoặc dán thông tin của bạn bên dưới.",
+    "title": "Tải lên CSDL",
+    "replaceDatabase": "Cập nhật CSDL",
+    "hint": "Tải tệp JSON của bạn tại đây...",
+    "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
     "goUpload": {
       "title": "Định dạng <strong>Genshin Optimizer</strong>",
       "migrate": "Cơ sở dữ liệu sẽ được chuyển sang phiên bản mới hơn. Vui lòng xem xét tải xuống lại cơ sở dữ liệu sau khi nhập.",

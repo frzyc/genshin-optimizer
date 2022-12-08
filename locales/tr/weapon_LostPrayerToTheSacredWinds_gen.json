@@ -1,0 +1,12 @@
+{
+  "name": "Kutsal Rüzgarların Kayıp Duası",
+  "description": "Rüzgarın ilk hizmetkarları tarafından yazılmış kutsal bir eser. Bin yıl boyunca bu mesajı taşıyan eser rüzgar tarafından kutsandı.",
+  "passiveName": "Sonsuz Lütuf",
+  "passiveDescription": {
+    "0": "Hareket Hızını %10 artırır. Savaştayken her 4 saniyede bir <cryo>%8</cryo> Element Hasarı Bonusu kazandırır. 4 kademeye kadar birikir. Karakter yenilene veya savaştan ayrılana kadar devam eder.",
+    "1": "Hareket Hızını %10 artırır. Savaştayken her 4 saniyede bir <cryo>%10</cryo> Element Hasarı Bonusu kazandırır. 4 kademeye kadar birikir. Karakter yenilene veya savaştan ayrılana kadar devam eder.",
+    "2": "Hareket Hızını %10 artırır. Savaştayken her 4 saniyede bir <cryo>%12</cryo> Element Hasarı Bonusu kazandırır. 4 kademeye kadar birikir. Karakter yenilene veya savaştan ayrılana kadar devam eder.",
+    "3": "Hareket Hızını %10 artırır. Savaştayken her 4 saniyede bir <cryo>%14</cryo> Element Hasarı Bonusu kazandırır. 4 kademeye kadar birikir. Karakter yenilene veya savaştan ayrılana kadar devam eder.",
+    "4": "Hareket Hızını %10 artırır. Savaştayken her 4 saniyede bir <cryo>%16</cryo> Element Hasarı Bonusu kazandırır. 4 kademeye kadar birikir. Karakter yenilene veya savaştan ayrılana kadar devam eder."
+  }
+}

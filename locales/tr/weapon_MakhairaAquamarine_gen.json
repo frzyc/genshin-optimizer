@@ -1,0 +1,12 @@
+{
+  "name": "Makhaira Deniz Yeşili",
+  "description": "Su gibi parıldayan kadim bir büyük kılıç. Yıllar boyu süren kum erozyonu keskinliğini bir nebze bile köreltememiş.",
+  "passiveName": "Çöl Konağı",
+  "passiveDescription": {
+    "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%24'ü</cryo> kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir.",
+    "1": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%30'u</cryo> kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir.",
+    "2": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%36'sı</cryo> kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir.",
+    "3": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%42'si</cryo> kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir.",
+    "4": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine Element Ustalığının <cryo>%48'i</cryo> kadar bonus Saldırı kazanır. Yakındaki grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+  }
+}

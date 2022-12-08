@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "RIGEN energia",
+      "enerRechInc": "Aumento ricarica d'energia"
+    },
+    "burst": {
+      "thunderDMG": "DAN da Pioggia di tuoni"
+    }
+  }
+}

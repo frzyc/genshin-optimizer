@@ -1,0 +1,29 @@
+{
+  "setName": "Berserker",
+  "setEffects": {
+    "2": "Tasso di CRIT +12%.",
+    "4": "Quando i PS sono inferiori a un 70%, il tasso di CRIT aumenta di un ulteriore 24%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Rosa del berserker",
+      "desc": "Un fiore grazioso tinto di rosso, che rappresenta le qualità del berserker."
+    },
+    "plume": {
+      "name": "Piuma blu del berserker",
+      "desc": "La piuma di un corvo leggendario, parzialmente tinta di rosso."
+    },
+    "sands": {
+      "name": "Clessidra del berserker",
+      "desc": "Uno strumento che racchiude un flusso eterno e inesorabile. Ricorda al berserker del poco tempo che gli rimane, sia sul campo di battaglia che nel mondo."
+    },
+    "goblet": {
+      "name": "Calice d'osso del berserker",
+      "desc": "Un calice fatto con l'osso di una bestia ignota. Il trofeo di uno scontro mortale."
+    },
+    "circlet": {
+      "name": "Maschera da guerra del berserker",
+      "desc": "Una maschera di ferro rivoltante, danneggiata a seguito di cruenti battaglie."
+    }
+  }
+}

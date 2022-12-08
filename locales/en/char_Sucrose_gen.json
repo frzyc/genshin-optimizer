@@ -110,7 +110,7 @@
   "passive3": {
     "name": "Astable Invention",
     "description": {
-      "0": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product."
+      "0": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% chance to obtain double the product."
     }
   },
   "constellation1": {

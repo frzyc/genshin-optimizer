@@ -1,0 +1,12 @@
+{
+  "name": "Büyü Rehberi",
+  "description": "12. Baskı. En güncel gelişmeler eklendi ve 11. Baskıdaki hatalar düzeltildi.",
+  "passiveName": "Fırtına ve Dalganın Laneti",
+  "passiveDescription": {
+    "0": "Su veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%12</cryo> artırır.",
+    "1": "Su veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%15</cryo> artırır.",
+    "2": "Su veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%18</cryo> artırır.",
+    "3": "Su veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%21</cryo> artırır.",
+    "4": "Su veya Elektrikten etkilenen düşmanlara verilen Hasarı <cryo>%24</cryo> artırır."
+  }
+}

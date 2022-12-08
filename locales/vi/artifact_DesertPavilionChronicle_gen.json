@@ -1,0 +1,29 @@
+{
+  "setName": "Sử Ký Đình Đài Cát",
+  "setEffects": {
+    "2": "Nhận 15% buff sát thương nguyên tố Phong.",
+    "4": "Khi trọng kích trúng kẻ địch, tốc độ tấn công thường của nhân vật này tăng 10%; sát thương gây ra từ tấn công thường, trọng kích, tấn công khi đáp tăng 40%, duy trì 15s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Khởi Đầu Của Vương Đô Vua",
+      "desc": "Đóa hoa ánh lên ánh sáng kỳ ảo, lắng nghe thật kỹ có thể nghe được tiếng cười đâu đó vọng lại."
+    },
+    "plume": {
+      "name": "Ngày Tàn Của Vương Đô Vàng",
+      "desc": "Lông vũ nhân tạo óng ánh, là một trong những di vật của vương đô cổ xưa, tiếng kêu của chim ưng có vẻ như cũng bị phong ấn trong đó."
+    },
+    "sands": {
+      "name": "Đồng Hồ Con Đường Lạc Lối",
+      "desc": "Đồng hồ cổ xưa, mảnh Trấn Linh vẫn còn lấp lánh phát sáng ở phía trung tâm. Khi lắc nhẹ có vẻ như đang nói gì đó..."
+    },
+    "goblet": {
+      "name": "Bảo Hộ Say Giấc Mộng Dài",
+      "desc": "Một chiếc ly cổ bằng vàng, tạo hình hoa lệ, bên trong lờ mờ nghe thấy âm thanh xào xạc."
+    },
+    "circlet": {
+      "name": "Di Sản Của Quý Tộc Cát",
+      "desc": "Trang sức được chế tạo từ vàng hổ phách, trên đó có khảm đá quý, lấp lánh ánh sáng kỳ ảo."
+    }
+  }
+}

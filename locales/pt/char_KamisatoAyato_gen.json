@@ -42,7 +42,7 @@
     "name": "Arte Kamisato: Beleza Refletida",
     "description": {
       "0": "Kamisato Ayato troca de posição e entra no estado \"Reflexão Torrencial\".",
-      "1": "Após esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo <hydro>Dano Hydro em AdE</hydro>.",
+      "1": "Após esta troca, ele deixará uma Ilusão de Água na sua localização original. Após sua formação, a Ilusão de Água explodirá se os oponentes estiverem próximos ou quando sua duração terminar, infligindo <hydro>Dano Hydro em uma AdE</hydro>.",
       "2": "<br/>",
       "3": "<strong>Reflexão Torrencial</strong>",
       "4": "Nesse estado, Kamisato Ayato usa sua Espada Aquática para realizar ataques rápidos, fazendo com que o Dano de seus Ataques Normais seja convertido em <hydro>Dano Hydro em AdE</hydro> que não pode ser substituído pelo encantamento de outros elementos.",
@@ -153,7 +153,7 @@
   "constellation5": {
     "name": "Orvalho de Mil Gotas",
     "description": {
-      "0": "Aumenta o nível <strong>Arte Kamisato: Jardim Aquático</strong> em 3.",
+      "0": "Aumenta o nível da <strong>Arte Kamisato: Jardim Aquático</strong> em 3.",
       "1": "O nível máximo de elevação é 15."
     }
   },

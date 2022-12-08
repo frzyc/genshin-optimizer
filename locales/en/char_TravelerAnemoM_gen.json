@@ -4,7 +4,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "1": "Performs up to 5 rapid strikes."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

@@ -175,6 +175,10 @@
     "name": "Antike Eisenmünze",
     "description": "Eine antike Eisenmünze, von der Ulman sagt, man könne sie für viel Geld verkaufen. Fühlt sich ganz normal an ..."
   },
+  "PlayerEXP": {
+    "name": "Kartenbeschwörer-EP",
+    "description": "Durch erfolgreiche Partien von „Geniale Beschwörung“ zu erhalten. Mit jeder gewonnenen Partie vergrößert sich dein Repertoire an Wegen zum Sieg, das ist es, was Erfahrung bedeutet. Unter allen wie auch immer gearteten Umständen zu wissen, wie du gewinnen kannst, darin liegt die wahre Stärke eines großen Kartenbeschwörers."
+  },
   "BusinessEarnings": {
     "name": "Betriebseinnahmen",
     "description": "Eine beachtliche Menge „Weingelee“. Es ist das Gesamtergebnis des Wohltätigkeitsverkaufs. Zum Schlussakkord des „Weinlesefests“ wird Bernhard diese gegen Mora eintauschen und den bedürftigen Alten und Kindern spenden."
@@ -198,6 +202,10 @@
   "ShatteredPhenocryst": {
     "name": "Phänokristall-Bruckstück",
     "description": "Eine mysteriöse kristalline Substanz, die nach dem Sieg über die Hypostase in einer unbekannten Sphäre erhalten wird. Ihre strahlenden Farben sind wie das Nachleuchten aufgelöster Elementarkraft.\\nDu kannst diese Gegenstände in der Aktion „Sinfonie der Hypostasen – Dissonantes Segment“ gegen wertvolle Materialien eintauschen."
+  },
+  "CourageTestTicket": {
+    "name": "Ticket des Mutes",
+    "description": "Ein bei der von der Yashiro-Verwaltung veranstalteten „Probe des Mutes“ durch Abschließen einiger besonderer Herausforderungen erhaltenes Ticket, welches den Mut der Teilnehmer bezeugt.\\nBei der Aktion „Akitsu Kimodameshi“ kannst du sie gegen seltene Waren tauschen."
   },
   "Primogem": {
     "name": "Urgestein",
@@ -401,7 +409,7 @@
   },
   "Qiqi": {
     "name": "Qiqi",
-    "description": "Schülerin in der Bubu-Hütte und Kräutersammlerin. Sie ist leichenblass und redet nur sehr wenig. Ihr Miene verzieht sie kein einziges Mal."
+    "description": "Schülerin in der Bubu-Hütte und Kräutersammlerin. Sie ist leichenblass und redet nur sehr wenig. Ihre Miene verzieht sie kein einziges Mal."
   },
   "Chongyun": {
     "name": "Chongyun",
@@ -550,6 +558,14 @@
   "Layla": {
     "name": "Layla",
     "description": "Eine Rtawahist-Studentin, die sich auf theoretische Astrologie spezialisiert hat. Manchmal schlafwandelnd, manchmal schlaflos. Sie leidet immer unter Schlafproblemen."
+  },
+  "Wanderer": {
+    "name": "Wanderer",
+    "description": "Ein Wanderer, dessen Identität ein Geheimnis ist. Er kleidet sich wie ein Shugenja, spielt aber nicht die Rolle eines solchen."
+  },
+  "Faruzan": {
+    "name": "Faruzan",
+    "description": "Eine Gelehrte von „vor hundert Jahren“, die sich gern als angesehene Gelehrte ausgibt und über umfangreiche Kenntnisse über alte Schriften und Vorrichtungen aller Arten verfügt."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
@@ -791,6 +807,14 @@
     "name": "Stella Fortuna von Layla",
     "description": "Material zum Aktivieren von Laylas Sternbild"
   },
+  "WanderersStellaFortuna": {
+    "name": "Stella Fortuna des Wanderers",
+    "description": "Material zum Aktivieren des Sternbilds des Wanderers"
+  },
+  "FaruzansStellaFortuna": {
+    "name": "Stella Fortuna von Faruzan",
+    "description": "Material zum Aktivieren von Faruzans Sternbild"
+  },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen",
     "description": "Aufzeichnungen über die vielen Erlebnisse, die jemand in Teyvat gemacht hat. Aber wie kommst du nur dazu? Warst du etwa schon einmal hier?\\n\\nAktiviert nach der Anwendung den Gnostiker-Erlebnispass für die aktuelle Saison."
@@ -798,6 +822,10 @@
   "BlessingOfTheWelkinMoonNewMoon": {
     "name": "Mondsegen – Neumond",
     "description": "Ein Ritual zur Feier des ersten Neumonds, bei dem man den Mond hoch oben im Himmel anbetet, um Reichtum und Glück zu erfahren. Du kannst davon ausgehen, dass dies der erste Neumond in Teyvat überhaupt ist. Denn du warst ja nur bei diesem dabei.\\n\\nErhalte nach der Anwendung 30 Tage Gültigkeit für den Mondsegen."
+  },
+  "AnAppellativeStroke": {
+    "name": "Umschreibungspinsel",
+    "description": "Ein Pinsel, mit dem der „Name“ einer Person geändert werden kann.\\nNach Durchführen dieser Namensänderung ist keine weitere Änderung mehr möglich."
   },
   "EnergyOrbPyro": {
     "name": "Elementarenergiekugel (Pyro)",
@@ -1223,8 +1251,8 @@
     "name": "„Kaltes Gourmetfleisch“",
     "description": "Ein sehr seltenes, delikates Fleisch.\\nEs kommt von einer Spezies, die angeblich bereits seit Hunderten von Jahren ausgestorben ist und hat sich dank des extrem kalten Wetters auf dem Drachengrat so gut erhalten. Für viele Feinschmecker aus allen Teilen Teyvats ist dieses Fleisch der Heilige Gral unter den Fleischsorten."
   },
-  "UnagiMeat": {
-    "name": "Unagi-Fleisch",
+  "EelMeat": {
+    "name": "Aalfleisch",
     "description": "Das frische Fleisch eines Unagi. Wenn es richtig behandelt wird, kann es für die Zubereitung von frischem, herrlichem Essen verwendet werden."
   },
   "GlabrousBeans": {
@@ -2639,7 +2667,7 @@
     "name": "Lebensenergie saugender Drachenzahn",
     "description": "Ein von Vitalität durchdrungener Drachenzahn. Allein sein Glanz und seine Ausstrahlung genügen, um einen ganz unruhig zu machen ..."
   },
-  "PrincesssBox": {
+  "PrincessBox": {
     "name": "Schmuckkästchen der Prinzessin",
     "description": "Eins von insgesamt drei Schmuckkästchen, dessen Boden mit einem dekorativen Muster verziert ist. Wenn man die übrigen zwei Kästchen finden und zusammensetzen könnte, würde sich vielleicht irgendwo eine Tür öffnen:\\n„Ich fürchte, ich kann das Wandbild nicht vollenden.“\\n„Zu lange habe ich bereits keinen blauen Himmel oder grüne Felder mehr gesehen. Ich weiß nicht, mit welchem Blau und Grün ich die geschmolzene Schneelandschaft malen soll, die mein Vater sich wünscht.“\\n„Wenn er zurückkommt, wird alles wieder normal sein. Aber es ist zu kalt und ich halte es nicht mehr aus.“\\n„Tut mir leid, Papa, tut mir leid, dass du dir immer meine Faxen ansehen musst.“\\n„Imunlaukr, ich wünschte, ich könnte dich ein letztes Mal sehen ...“"
   },
@@ -2649,7 +2677,7 @@
   },
   "ScribesBox": {
     "name": "Schmuckkästchen des Archivars",
-    "description": "Eins von insgesamt drei Schmuckkästchen, dessen Boden mit einem dekorativen Muster verziert ist. Wenn man die übrigen zwei Kästchen finden und zusammensetzen könnte, würde sich vielleicht irgendwo eine Tür öffnen:\\n„Möge dieser gefrorene, verschneite Himmel brennen, bis kein Anzeichen von Leben mehr in der Welt zu sehen ist.“\\n„Mögen auch wir zu Asche werden, die vom Winde verweht wird, bis wir den Fremden erreichen, der die Prinzessin verlassen hat und nicht zu ihr zurückgekehrt ist.“\\n„Möge der dunkle Drache, von dem die Prinzessin einst träumte, sein scharlachrotes Gift über diese erbärmliche Erde ausbreiten.“\\nIch bin der Letzte, ich muss hier nicht länger bleiben.“\\n„Irgendwo scheint jemand eine gottlose Nation zu errichten. Vielleicht haben sie dort ja auch einen Geist des Widerstands gegen den Rest der Welt.“"
+    "description": "Eins von insgesamt drei Schmuckkästchen, dessen Boden mit einem dekorativen Muster verziert ist. Wenn man die übrigen zwei Kästchen finden und zusammensetzen könnte, würde sich vielleicht irgendwo eine Tür öffnen:\\n„Möge dieser gefrorene, verschneite Himmel brennen, bis kein Anzeichen von Leben mehr in der Welt zu sehen ist.“\\n„Mögen auch wir zu Asche werden, die vom Winde verweht wird, bis wir den Fremden erreichen, der die Prinzessin verlassen hat und nicht zu ihr zurückgekehrt ist.“\\n„Möge der dunkle Drache, von dem die Prinzessin einst träumte, sein scharlachrotes Gift über diese erbärmliche Erde ausbreiten.“\\n„Ich bin der Letzte, ich muss hier nicht länger bleiben.“\\n„Irgendwo scheint jemand eine gottlose Nation zu errichten. Vielleicht haben sie dort ja auch einen Geist des Widerstands gegen den Rest der Welt.“"
   },
   "VeryOrdinaryLookingSweetFlower": {
     "name": "Ganz normal aussehende Zuckerblume",
@@ -3361,7 +3389,7 @@
   },
   "XianglingsHandwrittenNotes": {
     "name": "Xianglings handschriftliche Notizen",
-    "description": "Xianglingss handschriftliche Notizen. Sie hält einige ihrer ... neuartigen Ideen bezüglich des Kochens fest."
+    "description": "Xianglings handschriftliche Notizen. Sie hält einige ihrer ... neuartigen Ideen bezüglich des Kochens fest."
   },
   "YellowedLetter": {
     "name": "Vergilbter Brief",
@@ -3857,7 +3885,7 @@
   },
   "RukkhashavaMushrooms": {
     "name": "Rukkhashava-Pilz",
-    "description": "Wie die Wolken türmen sich diese Pilze Schicht für Schicht übereinander. Die meisten davon leben parasitär in der Tiefe des Waldes an Bäumen. Daher betrachten die Einwohner von Sumeru sie als den zurückgelassenen heiligen Körper der Höheren Herrin Rukkhadevata."
+    "description": "Wie die Wolken türmen sich diese Pilze Schicht für Schicht übereinander. Die meisten davon leben parasitär in der Tiefe des Waldes an Bäumen."
   },
   "Padisarah": {
     "name": "Padisarah",
@@ -5939,6 +5967,18 @@
     "name": "Schlüssel zu den Schreinen der Tiefe in Sumeru",
     "description": "Mit diesen Schlüsseln kannst du die Versieglung der alten Schreine der Tiefe, die überall in Sumeru zu finden sind, lösen.\\nDiese Schreine versiegelten sich selbst, als die alte Zivilisation, die sie erbaute, unterging. Diese Siegel können mithilfe der Schlüssel, die tief in bestimmten Sphären zu finden sind, gelöst werden. Möglicherweise vergessen die Schreine angesichts der Kraft der Vergangenheit einen Moment lang den Schmerz der Zerstörung."
   },
+  "BlankDynamicCard": {
+    "name": "Leere dynamische Karte",
+    "description": "Eine Karte mit einem bemalten Kartenrücken, deren Bildseite aber leer ist. Es heißt, wenn du den Namen einer gewünschten Karte darauf schreibst, kannst du in der Taverne die dynamische Bildseite dieser Karte vom Vertreter der Kartenbeschwörervereinigung erhalten."
+  },
+  "MatchInvitationLetter": {
+    "name": "Duelleinladung",
+    "description": "Interagiere mit der Duell-Einladungstafel in der Taverne zum Katzenschwanz und wähle jemanden aus der Kartenbeschwörerliste aus, den du zu einem Duell in der Taverne einladen möchtest. Mithilfe dieser Duelleinladung wird der eingeladene Kartenbeschwörer dann in der Taverne auf dich warten."
+  },
+  "LuckyCoin": {
+    "name": "Glücksmünze",
+    "description": "Eine innerhalb der Kartenbeschwörervereinigung anerkannte und weithin verwendete Währung, mit der Objekte, die mit „Geniale Beschwörung“ zu tun haben, erworben werden können. Es heißt, dass der Name Glücksmünze ursprünglich in der Hoffnung gewählt wurde, dass sie ihren Besitzern Glück bringen würde. Aber möglicherweise können sie nur diejenigen bekommen, die bereits das Glück haben ..."
+  },
   "Dish": {
     "name": "Gerichte",
     "description": "Zubereitete Gerichte"
@@ -6905,7 +6945,7 @@
   },
   "StormcrestPie": {
     "name": "Stürmische Calzone",
-    "description": "Eulas Spezialzubereitung. Es ist schwer zu sagen, ob die Abweichung von der traditionellen Vollmond-Form der absichtliche Rebell gegen die Tradition ist oder ihr „Zahn für Zahn”-Ethos ausdrücken soll. Unter der goldenen Kruste kommt ein salziger, frischer, geräucherter Geschmack zum Vorschein, der in seiner Fülle und Intensität wahrscheinlich von keinem anderen in Mondstadt erreicht wird. Am besten sagst du ihr das aber nicht, damit sie sich nicht daran „erinnert“."
+    "description": "Eulas Spezialzubereitung. Es ist schwer zu sagen, ob die Abweichung von der traditionellen Vollmond-Form der absichtliche Rebell gegen die Tradition ist oder ihr „Zahn für Zahn“-Ethos ausdrücken soll. Unter der goldenen Kruste kommt ein salziger, frischer, geräucherter Geschmack zum Vorschein, der in seiner Fülle und Intensität wahrscheinlich von keinem anderen in Mondstadt erreicht wird. Am besten sagst du ihr das aber nicht, damit sie sich nicht daran „erinnert“."
   },
   "SuspiciousChickenTofuPudding": {
     "name": "Misslungener Hühnerpudding",
@@ -7197,7 +7237,7 @@
   },
   "InvigoratingKittyMeal": {
     "name": "Belebende Katzenmahlzeit",
-    "description": "Dieses Hauptgericht sieht ziemlich süß aus. Mit Kiminami Annas Hilfe wurde dieses Gericht nach dem Geschmack der vorläufigen Oberpriesterin Neko zubereitet. Obwohl es nicht ganz an den Geschmack von Hibiki herankommt, scheint Neko dennoch recht zufrieden mit Ihrer Arbeit zu sein. Aufgrund der fehlenden Gewürze könnten die Menschen dieses Gericht ein wenig schlicht finden."
+    "description": "Dieses Hauptgericht sieht ziemlich süß aus. Mit Kiminami Annas Hilfe wurde dieses Gericht nach dem Geschmack der vorläufigen Oberpriesterin Neko zubereitet. Obwohl es nicht ganz an den Geschmack von Hibiki herankommt, scheint Neko dennoch recht zufrieden mit ihrer Arbeit zu sein. Aufgrund der fehlenden Gewürze könnten die Menschen dieses Gericht ein wenig schlicht finden."
   },
   "DeliciousInvigoratingKittyMeal": {
     "name": "Leckere belebende Katzenmahlzeit",
@@ -7819,6 +7859,26 @@
     "name": "Halvamazd",
     "description": "Nahidas Spezialzubereitung. Es wird gesagt, dass „Mazd“ in Sumeru „Weisheit“ bedeutet, und solch exquisite und zarte „Weisheit“ ist einfach unwiderstehlich. In Nahidas Augen breitet sich ein sanftes Lächeln aus: „Seeanemonen haben Fisch beim Wachsen geholfen und sein Wachstum begleitet, daher ist es für Fisch selbstverständlich, etwas zurückzugeben.“"
   },
+  "SuspiciousSamosa": {
+    "name": "Misslungene Samosa",
+    "description": "Eine frittierte Knabberei. Die fettige Kruste und die übermäßig würzige Füllung bewirken trotz des Versuchs eines Konters mit erfrischender Minzpaste, dass sich niemand traut, einen zweiten Bissen zu wagen."
+  },
+  "Samosa": {
+    "name": "Samosa",
+    "description": "Eine frittierte Knabberei. Ein hauchdünner Teig wurde gerollt und darin eine gleichmäßig verührte Füllung verteilt. Die Teigtasche wurde dann in eine Dreiecksform gebracht und schließlich wurde sie einer Fritteuse goldgelb gebraten. Sowohl vegetarische Varianten als auch solche mit Fleisch sind häufig anzutreffen, daher wurde sie zu einem „umkämpften Gebiet“ im Streit zwischen Vegetariern und Fleischessern."
+  },
+  "DeliciousSamosa": {
+    "name": "Leckere Samosa",
+    "description": "Eine frittierte Knabberei. Jede goldgelbe, knusprige Tasche ist vollgestopft mit einer sanften, klebrigen Füllung. Die erste schlingt man voller Verlangen hinunter; die zweite kostet man voller Genuss ... Wenn man zuletzt im Rausch der Geschmackssinne gedankenlos die Hände nach einer weiteren ausstreckt, stellt man irgendwann fest, dass der Teller schon lange leer ist."
+  },
+  "TraditionallyMadeCharcoalBakedAjilenakhCake": {
+    "name": "Gebackener Dattelfladen nach Geheimrezept",
+    "description": "Faruzans Spezialzubereitung. Der dunkle und süße Fladen, längs getaucht in die minzgrüne Paste wirkt wie ein mysteriöser Mechanismus. Vielleicht hat Faruzan dein Zögern bemerkt, denn sie beginnt, dir mit aller Kraft zu versichern, dass dies eines der beliebtesten Gerichte von Sumeru vor einem Jahrhundert war und der Geschmack wunderbar sein muss. Aber ... aber ... war der Geschmack der Menschen in Sumeru vor einhundert Jahren wirklich so?"
+  },
+  "ShimiChazuke": {
+    "name": "Shinmi-Chazuke",
+    "description": "Spezialzubereitung des Wanderers. Die leicht bittere Note des Tees und das erfrischend süße Aroma von Reis verschmelzen perfekt zu einer Einheit, wenn man einmal begonnen hat es zu essen, will man nicht mehr aufhören. Wie schafft er solche Küchenkunst? Als hätte er deine Gedanken gehört, macht er plötzlich ein düsteres Gesicht und sagt: „Worauf wartest du? Spül nach dem Essen schleunigst das Geschirr.“"
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
     "description": "Objekt zum Freischalten von Rezepten"
@@ -8359,6 +8419,10 @@
     "name": "Rezept: Rosenmus",
     "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Rosenmus“."
   },
+  "RecipeSamosa": {
+    "name": "Rezept: Samosa",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Samosa“."
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": "Selbst aus verschiedenen Stoffen hergestellte Produkte"
@@ -8489,7 +8553,7 @@
   },
   "RedrotBait": {
     "name": "Rotpastenköder",
-    "description": "Fischköder aus einer Mischung von Dendrobium und püriertem Fleisch. Die einzigartige süße Geruch dieses Köders breitet sich sehr schnell im Wasser aus und lockt wilde Wasserraubtiere an. Verwende ihn jedoch mit Vorsicht! Wenn du zu viel von diesem Köder auswirfst, kann es sein, dass du dir bösere Beute anlockst, als du erwartet hast!\\n\\nZum Fangen von Stichlingen geeignet."
+    "description": "Fischköder aus einer Mischung von Dendrobium und püriertem Fleisch. Der einzigartige süße Geruch dieses Köders breitet sich sehr schnell im Wasser aus und lockt wilde Wasserraubtiere an. Verwende ihn jedoch mit Vorsicht! Wenn du zu viel von diesem Köder auswirfst, kann es sein, dass du dir bösere Beute anlockst, als du erwartet hast!\\n\\nZum Fangen von Stichlingen geeignet."
   },
   "FalseWormBait": {
     "name": "Falscher Wurmköder",
@@ -8972,20 +9036,20 @@
     "description": "Dieses schellenförmige Kugelgelenk verbindet mechanische Gliedmaßen miteinander. Es wirkt klein und fein und doch kann es unvorstellbar große Energiemengen übertragen.\\nWenn man sie mit den Armen verbindet, verlieren diese ihr Gefühl.\\nWenn man sie mit den Beinen verbindet, verlieren diese nahezu alle Kraft.\\nUnd wenn man sie mit dem Kopf dieser Maschine verbindet ...\\nDann können Hass und Leid, Wahnsinn und Arroganz nicht mehr ausgelöscht werden.\\nZum Glück."
   },
   "TileOfDecarabiansTower": {
-    "name": "Decabarians zerbrochener Ziegel",
-    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDvalins Ruinen, wie sie in letzter Zeit genannt werden, waren ursprünglich die Palastanlagen des Archons des Windes „Decabarian“. Da dieser majestätische Traum von einem Archon geschaffen wurde, ist die Macht dieses Bruchstücks auch nach dem Untergang des Traums enorm."
+    "name": "Decarabians zerbrochener Ziegel",
+    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDvalins Ruinen, wie sie in letzter Zeit genannt werden, waren ursprünglich die Palastanlagen des Archons des Windes „Decarabian“. Da dieser majestätische Traum von einem Archon geschaffen wurde, ist die Macht dieses Bruchstücks auch nach dem Untergang des Traums enorm."
   },
   "DebrisOfDecarabiansCity": {
-    "name": "Decabarians zerbröckelter Wall",
-    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDer Archon des Windes Decabarian war so zufrieden mit dem Palast, den er sich geschaffen hatte, dass er jeden mit einem Wunsch in seinem hohen Turm empfing. Jedoch wusste er nicht, dass die Menschen nicht zu ihm aufsahen und ihn achteten."
+    "name": "Decarabians zerbröckelter Wall",
+    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDer Archon des Windes Decarabian war so zufrieden mit dem Palast, den er sich geschaffen hatte, dass er jeden mit einem Wunsch in seinem hohen Turm empfing. Jedoch wusste er nicht, dass die Menschen nicht zu ihm aufsahen und ihn achteten."
   },
   "FragmentOfDecarabiansEpic": {
-    "name": "Decabarians Palastfragment",
-    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nAndrius erklärte Decabarian den Krieg, konnte aber nichts gegen den Palast ausrichten. Hätte das Lied der Freiheit diese Stadt nicht zum Einsturz gebracht, ginge dieser Traum endlos weiter."
+    "name": "Decarabians Palastfragment",
+    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nAndrius erklärte Decarabian den Krieg, konnte aber nichts gegen den Palast ausrichten. Hätte das Lied der Freiheit diese Stadt nicht zum Einsturz gebracht, ginge dieser Traum endlos weiter."
   },
   "ScatteredPieceOfDecarabiansDream": {
-    "name": "Decabarians zerstörter Traum",
-    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDie Menschen sahen nicht zu Decabarian auf und achteten ihn nicht, sondern sie lebten in Furcht vor seinen schrecklichen Stürmen. Die Bestrebungen und zerstörten Träume des Anemo-Archons spielten noch vor der Zeit Barbartos’.\\nEr träumte mit aller Macht, sodass diese Macht auch ein Teil der Bruchstücke seines Traumes wurde."
+    "name": "Decarabians zerstörter Traum",
+    "description": "Material mit der Kraft, Waffen aufsteigen zu lassen.\\nDie Menschen sahen nicht zu Decarabian auf und achteten ihn nicht, sondern sie lebten in Furcht vor seinen schrecklichen Stürmen. Die Bestrebungen und zerstörten Träume des Anemo-Archons spielten noch vor der Zeit Barbartos’.\\nEr träumte mit aller Macht, sodass diese Macht auch ein Teil der Bruchstücke seines Traumes wurde."
   },
   "BorealWolfsMilkTooth": {
     "name": "Milchzahn des borealischen Wolfs",
@@ -9221,11 +9285,11 @@
   },
   "MaterialShareBundle": {
     "name": "Material-Teilpaket",
-    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n- Decabarians zerbrochener Ziegel\\n- Milchzahn des borealischen Wolfs\\n- Fesseln des Löwenzahnkämpfers\\n- Leuchtender Sand von Guyun\\n- Bleikugeln des Nebelschleiers\\n- Körnchen pechschwarzer Aerosiderit\\n- Korallenzweig eines fernen Meeres\\n- Narukamis Weisheit\\n- Die Maske des bösen Leutnants\\n- Kupfertalisman des Waldtaus\\n- Reminiszenz der Oase der blühenden Blumen\\n- Echo der sengenden Macht"
+    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n- Decarabians zerbrochener Ziegel\\n- Milchzahn des borealischen Wolfs\\n- Fesseln des Löwenzahnkämpfers\\n- Leuchtender Sand von Guyun\\n- Bleikugeln des Nebelschleiers\\n- Körnchen pechschwarzer Aerosiderit\\n- Korallenzweig eines fernen Meeres\\n- Narukamis Weisheit\\n- Die Maske des bösen Leutnants\\n- Kupfertalisman des Waldtaus\\n- Reminiszenz der Oase der blühenden Blumen\\n- Echo der sengenden Macht"
   },
   "EminentShareBundle": {
     "name": "Teilpaket mit nützlichen Materialien",
-    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n· Decabarians zerbröckelter Wall\\n· Zersplitterter Zahn des borealischen Wolfs\\n· Ketten des Löwenzahnkämpfers\\n· Glänzender Stein von Guyun\\n· Quecksilberkugeln des Nebelschleiers\\n· Stückchen pechschwarzer Aerosiderit\\n· Juwelenzweig eines fernen Meeres\\n· Narukamis Freude\\n· Die Maske des Tigerbisses\\n· Eisentalisman des Waldtaus\\n· Gnade der Oase der blühenden Blumen\\n· Nachglimmen der sengenden Macht"
+    "description": "Nützliche Materialien, die die Gilde regelmäßig herausgibt. Einige davon enthalten unbegrenzte Möglichkeiten.\\n\\nWähle beim Anwenden eins der folgenden Objekte:\\n· Decarabians zerbröckelter Wall\\n· Zersplitterter Zahn des borealischen Wolfs\\n· Ketten des Löwenzahnkämpfers\\n· Glänzender Stein von Guyun\\n· Quecksilberkugeln des Nebelschleiers\\n· Stückchen pechschwarzer Aerosiderit\\n· Juwelenzweig eines fernen Meeres\\n· Narukamis Freude\\n· Die Maske des Tigerbisses\\n· Eisentalisman des Waldtaus\\n· Gnade der Oase der blühenden Blumen\\n· Nachglimmen der sengenden Macht"
   },
   "WeaponAscensionBundleHigh": {
     "name": "Höheres Wahlpaket für Waffenaufstieg",
@@ -9735,6 +9799,22 @@
     "name": "Rätselhafter Brief der Fatui",
     "description": "Ein Brief, der nach dem Sieg über einen zufällig getroffenen Schuldeneintreiber der Fatui gefunden wurde. Aus unbekannten Gründen nahm er diesen Brief mit."
   },
+  "HiltLikeObject": {
+    "name": "Einem „Schwertgriff“ ähnelndes Objekt",
+    "description": "Ein Gegenstand, der aussieht wie ein „Schwertgriff“. Ob er zur „Versteckten Klinge“ gehört, nach der Lan sucht ..."
+  },
+  "ABriefAnalysisOfPossibleEventsOfHistoricalImportanceInTheTatarasunaArea": {
+    "name": "„Eine kurze Analyse eines möglichen historischen Vorfalls in Tatarasuna bei Inazuma“",
+    "description": "„Eine kurze Analyse eines möglichen historischen Vorfalls in Tatarasuna bei Inazuma“"
+  },
+  "TheIsleOfDarklingClouds": {
+    "name": "„Die Insel der düsteren Wolken“",
+    "description": ""
+  },
+  "BoxfulOfHomelandSoil": {
+    "name": "Schachtel mit „Heimaterde“",
+    "description": "Für Sun Yu besorgte „Heimaterde“.\\nDas Kind verlässt die Heimat, wer weiß, wann es zurückkehrt."
+  },
   "DerivedContents": {
     "name": "Interpretierter Inhalt",
     "description": "Der Inhalt, der anhand von Hinweisen interpretiert wurde."
@@ -9742,6 +9822,10 @@
   "XudongsLetter": {
     "name": "Xudongs Brief",
     "description": "Ein Brief von Xudong. Es scheint auch noch etwas anderes darin zu sein ..."
+  },
+  "RandomWeaponShards": {
+    "name": "„Bruchstück“ einer Waffe",
+    "description": "Ein Bruchstück einer Waffe. Warum sie wohl derart zugerichtet wurde ..."
   },
   "SilkFlowerSeed": {
     "name": "Seidenblumensamen",
@@ -10066,6 +10150,10 @@
   "PlumeOfTheChangingWinds": {
     "name": "Feder des wechselnden Windes",
     "description": "Objekt zur Verfeinerung von „Spitze der klingenden Winde“.\\nEin aus Türkis geschnitzter antiker Federkiel, der anscheinend einst als Schmuck oder eine Art Zeichen verwendet wurde."
+  },
+  "ParasolTalcum": {
+    "name": "Regenschirmstaub",
+    "description": "Objekt zur Verfeinerung von „Toukabou Shigure“.\\nEin Puder, das zur Verbindung des Bambusstocks mit der Schirmfläche dient.\\nAuch wenn die Jahreszeiten sich stets wandeln und der Regen der Vergangenheit sich verflüchtigt, werden Erinnerungen und Gedanken stets verweilen wie der Schlaf und die Träume unter dem aufgespannten Schirm."
   },
   "FalconsDance": {
     "name": "Falkentanz",
@@ -10533,7 +10621,7 @@
   },
   "KaedeharaKazuhaAutumnMapleViewing": {
     "name": "Kaedehara Kazuha – Ahornschau im Herbst",
-    "description": "Ein Motiv für ein Namenskärtchen.\\n„Die Kiefern flüstern, während die roten Blätter im Wind tanzen.“"
+    "description": "Ein Motiv für Namenskärtchen.\\n„Die Kiefern flüstern, während die roten Blätter im Wind tanzen.“"
   },
   "TravelNotesMidsummer": {
     "name": "Erlebnispass – Hochsommer",
@@ -10609,15 +10697,15 @@
   },
   "RaidenShogunEnlightenment": {
     "name": "Shougun Raiden – Aufklärung",
-    "description": "Namenskärtchen.\\nNicht nur Ei, und nicht nur Shougun Raiden. Beobachte auch dich selbst mit einem stürmischen Auge, und du wirst eines Tages einen Durchbruch erreichen."
+    "description": "Ein Motiv für Namenskärtchen.\\nNicht nur Ei, und nicht nur Shougun Raiden. Beobachte auch dich selbst mit einem stürmischen Auge, und du wirst eines Tages einen Durchbruch erreichen."
   },
   "SangonomiyaKokomiTheDeep": {
     "name": "Sangonomiya Kokomi – Tiefe",
-    "description": "Namenskärtchen.\\nAlle Einwohner von Watatsumi kennen diese Geschichte, dass tief unter den Wellen ihre ehemalige Heimat liegt."
+    "description": "Ein Motiv für Namenskärtchen.\\nAlle Einwohner von Watatsumi kennen diese Geschichte, dass tief unter den Wellen ihre ehemalige Heimat liegt."
   },
   "KujouSaraTengu": {
     "name": "Kujou Sara – Tengu",
-    "description": "Namenskärtchen.\\nKujou Sara mag den arroganten Lebensstil der Tengu-Krieger aufgegeben haben, aber sie hat nie deren ausgezeichneten Schwertkunst oder Transzendenz verlernt."
+    "description": "Ein Motiv für Namenskärtchen.\\nKujou Sara mag den arroganten Lebensstil der Tengu-Krieger aufgegeben haben, aber sie hat nie deren ausgezeichnete Schwertkunst oder Transzendenz verlernt."
   },
   "AloyDawn": {
     "name": "Aloy – Horizont",
@@ -10625,15 +10713,15 @@
   },
   "TravelNotesMoonchaser": {
     "name": "Erlebnispass – Vollmondtanz",
-    "description": "Namenskärtchen.\\nMöge das Mondlicht dich umspülen!"
+    "description": "Ein Motiv für Namenskärtchen.\\nMöge das Mondlicht dich umspülen!"
   },
   "InazumaSangonomiyaCrest": {
     "name": "Inazuma – Sangonomiya-Wappen",
-    "description": "Namenskärtchen.\\nDies ist das Wappen des Sangonomiya-Klans, der das Volk von Watatsumi anführt."
+    "description": "Ein Motiv für Namenskärtchen.\\nDies ist das Wappen des Sangonomiya-Klans, der das Volk von Watatsumi anführt."
   },
   "AchievementNails": {
     "name": "Errungenschaften – Nadelhaken",
-    "description": "Namenskärtchen.\\n„Warte, wenn diese Fische überhaupt nicht essbar sind, warum hämmern wir noch die Nägel in Angelhaken?„Oh, das würdest du nicht verstehen.“"
+    "description": "Ein Motiv für Namenskärtchen.\\n„Warte, wenn diese Fische überhaupt nicht essbar sind, warum hämmern wir noch die Nägel in Angelhaken?“ „Oh, das würdest du nicht verstehen.“"
   },
   "CelebrationTunefulDelight": {
     "name": "Feierlichkeit – Lauschende Ohren",
@@ -10811,6 +10899,22 @@
     "name": "Erlebnispass – Pilzfeld",
     "description": "Ein Motiv für Namenskärtchen.\\n„... {F#Reisende}{M#Reisender}, sei nicht traurig, denn der Morgenwind wird die Pilzsporen, die deine Träume enthalten, zu dem Feld tragen, von dem du träumst ...“"
   },
+  "WandererDriftersBallad": {
+    "name": "Wanderer – Ballade des Herumtreibers",
+    "description": "Ein Motiv für Namenskärtchen.\\nDie Geschichte der Vergangenheit ist in der sterblichen Welt ausgeblendet worden, dennoch bieten die Schneeflocken den Blumen, die auf den Flüssen treiben, weiterhin ihre Begleitung."
+  },
+  "FaruzanSealedSecret": {
+    "name": "Faruzan – Versiegelte Geheimnisse",
+    "description": "Ein Motiv für Namenskärtchen.\\n„H... Hab ein wenig Respekt, wenn du mir eine Frage stellst! Also wirklich ...“"
+  },
+  "AchievementInvoker": {
+    "name": "Errungenschaft – Beschwörer",
+    "description": "Ein Motiv für Namenskärtchen.\\n„In diesem Dorf kann mich keiner besiegen!“"
+  },
+  "TravelNotesStellarRivers": {
+    "name": "Erlebnispass – Milchstraße",
+    "description": "Ein Motiv für Namenskärtchen.\\nDer Name des Festmahls von einst längst vergessen, aufgegangen die drei Flüsse in Nebel und Wolken, in dem Himmel glimmt noch das Zwielicht des Herbstes."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": "Im Gebiet von Mondstadt angewendet kannst du hiermit verlorene Anemoculi in der Nähe aufspüren.\\nDiese künstliche Steinplatte besitzt eine gewisse Charakteristik, die der der Anemo-Statuen der Sieben ähnelt und ihr die Kraft verleiht, mit den Anemoculi zu interagieren.\\nOculus-Resonanzsteine sind grobe Imitationen der Statuen der Sieben, die von den Menschen des Altertums gebaut wurden. Gerade die Rohheit solcher Steine ist es, was sie dazu bringt, nach der Kraft der Oculi zu verlangen, um Anhängern der Götter und Abenteurern die Möglichkeit zu geben, Oculi zu finden."
@@ -10833,7 +10937,7 @@
   },
   "AdeptiSeekersStove": {
     "name": "Adeptensucher-Gourmet",
-    "description": "Ein tragbarer Herd, der schnell aufgestellt werden kann, um vor Ort Gerichte zu zuzubereiten. Sollte in der Nähe ein Kampf stattfinden, wir dieses Objekt zerstört.\\nDas Gebiet um Liyue herum ist weitläufig, abwechslungsreich und manchmal sogar unwirtlich und doch teilen alle seine Bewohner die Liebe zu gutem Essen. Diese Phänomene könnten nicht koexistieren, wenn es nicht tragbare Kochgeräte wie dieses gäbe. Ganz gleich, ob man die Höhen des Jueyun-Karsts erklimmt oder die Inseln um die Guyun-Türme herum erkundet, ein tragbarer Kocher bedeutet, dass man immer eine köstliche und frisch gekochte warme Mahlzeit im Handumdrehen zur Hand haben kann."
+    "description": "Ein tragbarer Herd, der schnell aufgestellt werden kann, um vor Ort Gerichte zu zuzubereiten. Sollte in der Nähe ein Kampf stattfinden, wird dieses Objekt zerstört.\\nDas Gebiet um Liyue herum ist weitläufig, abwechslungsreich und manchmal sogar unwirtlich und doch teilen alle seine Bewohner die Liebe zu gutem Essen. Diese Phänomene könnten nicht koexistieren, wenn es nicht tragbare Kochgeräte wie dieses gäbe. Ganz gleich, ob man die Höhen des Jueyun-Karsts erklimmt oder die Inseln um die Guyun-Türme herum erkundet, ein tragbarer Kocher bedeutet, dass man immer eine köstliche und frisch gekochte warme Mahlzeit im Handumdrehen zur Hand haben kann."
   },
   "CondensedResin": {
     "name": "Angereichertes Harz",
@@ -10877,7 +10981,7 @@
   },
   "SpecialKamera": {
     "name": "Besonderer Fotoapparat",
-    "description": "Dieses nützliche Gerät kann die Szenerie davor speichern und ihr einen speziellen Farbton hinzufügen.\\nEin seltsames Gerät von Fontaine, das nicht nur Szenerien aufnimmt, sondern ausgedruckten Bildern auch spezielle Farben  hinzufügt. Es ist die Antwort auf eine Anfrage vom „Dampfvogel“ nach einem Apparat, der nicht nur die Umgebung, sondern auch die Emotionen der Person einfängt, die das Bild aufnimmt. Leider kann das Endprodukt die Vorgaben nicht ganz erfüllen."
+    "description": "Dieses nützliche Gerät kann die Szenerie davor speichern und ihr einen speziellen Farbton hinzufügen.\\nEin seltsames Gerät von Fontaine, das nicht nur Szenerien aufnimmt, sondern ausgedruckten Bildern auch spezielle Farben hinzufügt. Es ist die Antwort auf eine Anfrage vom „Dampfvogel“ nach einem Apparat, der nicht nur die Umgebung, sondern auch die Emotionen der Person einfängt, die das Bild aufnimmt. Leider kann das Endprodukt die Vorgaben nicht ganz erfüllen."
   },
   "ParametricTransformer": {
     "name": "Parameterwandler",
@@ -10929,7 +11033,7 @@
   },
   "SeedDispensary": {
     "name": "Saatschachtel",
-    "description": "Eine magische Schachtel, die du von Madame Ping erhalten hast. Ihr zufolge kann man mit dieser Schachtel aus Pflanzen auch Samen „gewonnen“ ... Abhängig von den ursprünglichen Pflanzen können die „gewonnenen“ Samen in das entsprechende Ackerfeld der „Kanne der Vergänglichkeit“ gepflanzt werden.\\nWas du pflanzen kannst: Seidenblume, Zuckerblume, Cecilia, Glaslilie, Windmühlenaster, Qingxin, Glasglöckchen, Valbeere, Lampenkraut, Jueyun-Peperoni, Möhre, Rettich, Minze, Champignon, Naku-Kraut, Pferdeschwanz, Goldfischkraut, Lotosfrucht, Wasserlilie, Seegras, Meereslackporling, Harra-Frucht, Zaytun-Pfirsich und Sumeru-Rose."
+    "description": "Eine magische Schachtel, die du von Madame Ping erhalten hast. Ihr zufolge kann man mit dieser Schachtel aus Pflanzen auch Samen „gewinnen“ ... Abhängig von den ursprünglichen Pflanzen können die „gewonnenen“ Samen in das entsprechende Ackerfeld der „Kanne der Vergänglichkeit“ gepflanzt werden.\\nWas du pflanzen kannst: Seidenblume, Zuckerblume, Cecilia, Glaslilie, Windmühlenaster, Qingxin, Glasglöckchen, Valbeere, Lampenkraut, Jueyun-Peperoni, Möhre, Rettich, Minze, Champignon, Naku-Kraut, Pferdeschwanz, Goldfischkraut, Lotosfrucht, Wasserlilie, Seegras, Meereslackporling, Harra-Frucht, Zaytun-Pfirsich und Sumeru-Rose."
   },
   "ElectroTreasureCompass": {
     "name": "Elektro-Schatzkompass",
@@ -10989,11 +11093,15 @@
   },
   "Kusava": {
     "name": "„Kusava“",
-    "description": "Lege es an, um die Kraft der Aranara zu nutzen.\\n„Fette Frucht, bittere Frucht.“\\nEin vorübergehendes Zuhause für Aranaras Erinnerungen. Kusava macht Aranara stark."
+    "description": "Lege es an, um die Kraft der Aranara zu nutzen.\\n„Fette Frucht, bittere Frucht.“\\nEin vorübergehendes Zuhause für die Erinnerungen der Aranara. Kusava macht Aranara stark."
   },
   "Aranyaka": {
     "name": "„Aranyaka“",
     "description": "Arama hat dir dieses Buch übergeben.\\nEs scheint den Lauf der Zeit mitgemacht zu haben. So wie es aussieht, hat jemand darin Aufzeichnungen geschrieben, die jetzt nicht mehr auffindbar sind.\\nNutze es, um dein gemeinsames Abenteuer mit Aranara zu dokumentieren."
+  },
+  "CasketOfTomes": {
+    "name": "Kodex-Schatulle",
+    "description": "Eine Schatulle für Karten, die von der Kartenbeschwörervereinigung ausgegeben wird. Nur Anfänger, die die Grundregeln gelernt haben und als Kartenbeschwörer verifiziert sind, können eine erhalten.\\nEs heißt, dass die Gelehrten der Akademie in Sumeru diese Schatulle entwickelt haben. Sie enthält eine spezielle Vorrichtung, die es ihr ermöglicht, die anderen Besitzer von Kodex-Schatullen in der Nähe aufzuspüren.\\nNutz das aus, um dich mit möglichst vielen Kartenbeschwörern zu duellieren!"
   },
   "DendroculusResonanceStone": {
     "name": "Dendroculus-Resonanzstein",
@@ -11050,6 +11158,10 @@
   "CloudRetainersDamaskedDevice": {
     "name": "Türkis verzierte Papiervorrichtung – Stehende Wolken",
     "description": "Eine aus Papier aufgestapelte Vorrichtung, mit der Form eines graziösen Vogels, ein Geschenk der Fürstin der stehenden Wolken und des stillen Windes.\\nAuch wenn es eine „Vorrichtung“ ist, kann man dies von außen nicht erkennen, da es keinerlei für Vorrichtungen typische Strukturen besitzt.\\nDie Fähigkeit dieser Adeptin, Vorrichtungen zu schaffen, scheint sich noch ein wenig gesteigert zu haben ..."
+  },
+  "WildernessCompass": {
+    "name": "Spurensucherkompass",
+    "description": "Ein ganz besonderer Kompass, den du von der Abenteurergilde erhalten hast. Es heißt, er bringe Glück ..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
@@ -11177,7 +11289,7 @@
   },
   "SilkenPrint": {
     "name": "Seidendruck",
-    "description": "Eine Gebetstafel mit farbiger Malerei, die die liebliche Landschaft von Inazuman zeigt, geschnitzt auf exquisitem Yumemiru-Holz.\\nDu kannst die Raumschaffung verwenden, um diese elegante Landschaft auf der Tafel in deine Kanne der Vergänglichkeit zu übertragen ..."
+    "description": "Eine Gebetstafel mit farbiger Malerei, die die liebliche Landschaft von Inazuma zeigt, geschnitzt auf exquisitem Yumemiru-Holz.\\nDu kannst die Raumschaffung verwenden, um diese elegante Landschaft auf der Tafel in deine Kanne der Vergänglichkeit zu übertragen ..."
   },
   "NaturesTrueFruit": {
     "name": "„Wahre Frucht des Waldes“",
@@ -11230,6 +11342,522 @@
   "WanminFeast": {
     "name": "Wanmin-Bankett",
     "description": "Ein Feuerwerk, das dem kleinen Helfer des berühmten Kochs des Restaurants Wanmin gewidmet ist. Wenn jemand aus Liyue dieses kleine Helferlein sieht, denkt man sofort an gutes Essen. Und wo es ein Fest gibt, muss es auch gutes Essen geben!"
+  },
+  "RhodeiaOfLoch": {
+    "name": "Okeanide Rhodeia",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "FatuiPyroAgent": {
+    "name": "Pyro-Schuldeneintreiber",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MaguuKenki": {
+    "name": "Maguu Kenki",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "StonehideLawachurl": {
+    "name": "Steinhaut-Lawachurl",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MirrorMaiden": {
+    "name": "Spiegeljungfrau",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "JadeplumeTerrorshroom": {
+    "name": "Gefiederte Pilzbestie",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "UndividedHeart": {
+    "name": "Eintracht",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ColdBloodedStrike": {
+    "name": "Grausames Schwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SteadyBreathing": {
+    "name": "Atemtechnik",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "KantenSenmyouBlessing": {
+    "name": "Kanten-Senmyou-Segen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TheScentRemained": {
+    "name": "Nachgeschmack",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ProphecyOfSubmersion": {
+    "name": "Prophezeiung des Untergangs",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "FlowingFlame": {
+    "name": "Fließende Flamme",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Crossfire": {
+    "name": "Kreuzfeuer",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "GrandExpectation": {
+    "name": "Lust auf Abenteuer",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "NaganoharaMeteorSwarm": {
+    "name": "Naganohara-Meteorstrom",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "StellarPredator": {
+    "name": "Sterneverschlinger",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Awakening": {
+    "name": "Erwachen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ThunderingPenance": {
+    "name": "Donnernde Strafe",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ChaoticEntropy": {
+    "name": "Chaotische Entropie",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LandsOfDandelion": {
+    "name": "Reich des Löwenzahns",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "StrategicReserve": {
+    "name": "Rücklagen für alle Fälle",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "IGotYourBack": {
+    "name": "Fürsorgliche Unterstützung",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "FloralSidewinder": {
+    "name": "Wiederkehr des fliegenden Laubs",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "StreamingSurge": {
+    "name": "Ungebremste Ströme",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "PaidInFull": {
+    "name": "Komplett beglichen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TranscendentAutomaton": {
+    "name": "Maschinelle Geschicklichkeit",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "StonehideReforged": {
+    "name": "Erneut gehärtet: Steinhaut",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ShakenNotPurred": {
+    "name": "Eiskalte Pfoten",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "FeatherfallJudgment": {
+    "name": "Urteil der Federn",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "GloriousSeason": {
+    "name": "Glanzvolle Jahreszeit",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MirrorCage": {
+    "name": "Spiegelkäfig",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ProliferatingSpores": {
+    "name": "Sporenvermehrung",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MagicGuide": {
+    "name": "Magieführer",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SacrificialFragments": {
+    "name": "Opferrituale",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SkywardAtlas": {
+    "name": "Himmelsatlas",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "RavenBow": {
+    "name": "Rabenbogen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SacrificialBow": {
+    "name": "Opferbogen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SkywardHarp": {
+    "name": "Himmelsflügel",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WhiteIronGreatsword": {
+    "name": "Weißes Eisengroßschwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SacrificialGreatsword": {
+    "name": "Opfergroßschwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WolfsGravestone": {
+    "name": "Wolfsgrab",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WhiteTassel": {
+    "name": "Weiße Quaste",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LithicSpear": {
+    "name": "Millelithenlanze",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SkywardSpine": {
+    "name": "Himmelsgrat",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TravelersHandySword": {
+    "name": "Reiseschwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SacrificialSword": {
+    "name": "Opferschwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "AquilaFavonia": {
+    "name": "Windfalke",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "AdventurersBandana": {
+    "name": "Kopftuch eines Abenteurers",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LuckyDogsSilverCirclet": {
+    "name": "Silberner Glückshaarreif",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TravelingDoctorsHandkerchief": {
+    "name": "Wanderarzttuch",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "GamblersEarrings": {
+    "name": "Glücksspiel-Ohrringe",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "InstructorsCap": {
+    "name": "Ausbilderhut",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ExilesCirclet": {
+    "name": "Haarreif des Verbannten",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "BrokenRimesEcho": {
+    "name": "Echo des Eisbrechers",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "BlizzardStrayer": {
+    "name": "Im Schnee irrender Recke",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WineStainedTricorne": {
+    "name": "Weinverschmierte Kapitänsmütze",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "HeartOfDepth": {
+    "name": "Tief im Herzen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WitchsScorchingHat": {
+    "name": "Brennender Hexenhut",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "CrimsonWitchOfFlames": {
+    "name": "Brennende Pyro-Hexe",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ThunderSummonersCrown": {
+    "name": "Donnerkrone",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ThunderingFury": {
+    "name": "Donnernder Zorn",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ViridescentVenerersDiadem": {
+    "name": "Feldjägerhut",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ViridescentVenerer": {
+    "name": "Grünlicher Schatten",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MaskOfSolitudeBasalt": {
+    "name": "Maske des starren Gesteins",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ArchaicPetra": {
+    "name": "Archaischer Fels",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LaurelCoronet": {
+    "name": "Unschätzbarer Lorbeerkranz",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "DeepwoodMemories": {
+    "name": "Erinnerungen des tiefen Waldes",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LiyueHarborWharf": {
+    "name": "Hafen von Liyue",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "KnightsOfFavoniusLibrary": {
+    "name": "Ordensbibliothek",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "JadeChamber": {
+    "name": "Jadegemach",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "DawnWinery": {
+    "name": "Weingut Morgenröte",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WangshuInn": {
+    "name": "Gasthaus Wangshu",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "FavoniusCathedral": {
+    "name": "Favonius-Kathedrale",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Paimon": {
+    "name": "Paimon",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Katheryne": {
+    "name": "Katheryne",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Timaeus": {
+    "name": "Timaeus",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Wagner": {
+    "name": "Wagner",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ChefMao": {
+    "name": "Koch Mao",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Tubby": {
+    "name": "Knolle",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Timmie": {
+    "name": "Timmie",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Liben": {
+    "name": "Liben",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ChangTheNinth": {
+    "name": "Chang IX.",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Ellin": {
+    "name": "Ellin",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "IronTongueTian": {
+    "name": "Tian mit der eisernen Zunge",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LiuSu": {
+    "name": "Liu Su",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "NRE": {
+    "name": "Praktischer Nahrungsbeutel",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenIce": {
+    "name": "Elementarer Einklang – Gebündeltes Eis",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceShatteringIce": {
+    "name": "Elementarer Einklang – Zerspringendes Eis",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenWaters": {
+    "name": "Elementarer Einklang – Gebündeltes Wasser",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceSoothingWater": {
+    "name": "Elementarer Einklang – Heilendes Wasser",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenFlames": {
+    "name": "Elementarer Einklang – Gebündeltes Feuer",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceFerventFlames": {
+    "name": "Elementarer Einklang – Aufrichtiges Feuer",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenThunder": {
+    "name": "Elementarer Einklang – Gebündelter Blitz",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceHighVoltage": {
+    "name": "Elementarer Einklang – Energiereicher Blitz",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenWinds": {
+    "name": "Elementarer Einklang – Gebündelter Wind",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceImpetuousWinds": {
+    "name": "Elementarer Einklang – Ungestümer Wind",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenStone": {
+    "name": "Elementarer Einklang – Gebündeltes Gestein",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceEnduringRock": {
+    "name": "Elementarer Einklang – Beständiges Gestein",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceWovenWeeds": {
+    "name": "Elementarer Einklang – Gebündeltes Gras",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ElementalResonanceSprawlingGreenery": {
+    "name": "Elementarer Einklang – Überwucherndes Gras",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TheBestestTravelCompanion": {
+    "name": "Allerbeste Reisegefährtin!",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "ChangingShifts": {
+    "name": "Schichtwechsel",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "TossUp": {
+    "name": "Umwerfendes Würfeln",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Strategize": {
+    "name": "Gewinnstrategie",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "IHaventLostYet": {
+    "name": "Noch nicht verloren!",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "LeaveItToMe": {
+    "name": "Überlass das mir!",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "WhenTheCraneReturned": {
+    "name": "Heimkehr des Kranichs",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Starsigns": {
+    "name": "Gestirn-Vorzeichen",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "CalxsArts": {
+    "name": "Calx-Technik",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "MasterOfWeaponry": {
+    "name": "Ausgeklügelte Bewaffnung",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "BlessingOfTheDivineRelicsInstallation": {
+    "name": "Segensspruch zur Schatzwanderung",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "QuickKnit": {
+    "name": "Flink, flick, Fleck",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "SendOff": {
+    "name": "Lebe wohl!",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "GuardiansOath": {
+    "name": "Eid des Schutzes",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "AbyssalSummons": {
+    "name": "Ruf des Abgrunds",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "Origin": {
+    "name": "Anbeginn",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Mondstadt": {
+    "name": "Mondstadt",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Liyue": {
+    "name": "Liyue",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Inazuma": {
+    "name": "Inazuma",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Sumeru": {
+    "name": "Sumeru",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Legend": {
+    "name": "Legende",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "Adept": {
+    "name": "Profi",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "HydroCrystalChunk": {
+    "name": "Brocken Kristall",
+    "description": "Ein Kartenrücken, den man im Kartenspiel „Geniale Beschwörung“ erhalten und verwenden kann. Man sagt, verschiedene Kartenrücken sollen aus unterschiedlichen Materialien bestehen, die sich auch in der Haptik leicht unterscheiden. An Kartenbeschwörern, die diese Kartenrücken mit Freude sammeln, mangelt es nicht."
+  },
+  "BeginnerPlayerBadge": {
+    "name": "Kartenspielwappen – Anfänger",
+    "description": "Man sagt, dies sei ein Wappen, das jeder erhält, der anfängt, Geniale Beschwörung zu spielen.\\nSogar die größten Kartenbeschwörer sind mit diesem kleinen Wappen ihren langen Weg zur „Legende“ angetreten.\\nBleib daran, deine Legende fängt nun an!"
+  },
+  "AdvancedPlayerBadge": {
+    "name": "Kartenspielwappen – Fortgeschrittener",
+    "description": "Ein Wappen, das diejenigen erhalten können, die häufig Geniale Beschwörung spielen und die Aufstiegsprüfung zum „Fortgeschrittenen“ bestanden haben.\\nEs gibt viele, die „Geniale Beschwörung“ als einfaches Hobby betreiben, aber nur sehr wenige werden „Fortgeschrittene“.\\nAuch wenn es nur ein Spiel ist, werden diejenigen, die es ernst nehmen, die wohlverdiente Belohnung erhalten."
+  },
+  "ExpertPlayerBadge": {
+    "name": "Kartenspielwappen – Kenner",
+    "description": "Ein Wappen, das die wirklich mit der Materie von Geniale Beschwörung vertrauten Kartenbeschwörer nach Ablegen der Aufstiegsprüfung zum „Kenner“ erhalten können.\\nWahrscheinlich hat sich die Vorstellung im Vergleich zu der Zeit, als sie begonnen haben, Geniale Beschwörung zu spielen, bereits gewandelt, aber noch immer machen sie dabei neue und spannende Erfahrungen.\\nWeil es so spannend ist, sind sie bereit, Zeit zu investieren. Weil es ihre Leidenschaft ist, gefällt ihnen alles daran."
+  },
+  "MasterPlayerBadge": {
+    "name": "Kartenspielwappen – Experte",
+    "description": "Ein Wappen, das die Kartenbeschwörer, die bei Geniale Beschwörung ein sehr hohes Niveau erreicht und die Aufstiegsprüfung zum „Experten“ bestanden haben, erhalten können.\\nEs heißt, nur sehr wenige Kartenbeschwörer erhalten dieses Wappen und jeder davon habe sein eigenes Verständnis von Geniale Beschwörung.\\nDer Sieg allein ist womöglich schon lange nicht mehr das einzige Begehren."
+  },
+  "LegendPlayerBadge": {
+    "name": "Kartenspielwappen – Legende",
+    "description": "Ein Wappen, das durch das Abschließen der Aufstiegsprüfung zur „Legende“ erhalten wird.\\nDieses Wappen beweist, dass du auf dem Weg bist, deine eigene, einzigartige Legende als Kartenbeschwörer zu erschaffen.\\nStreb weiter nach noch höheren Zielen."
   },
   "SummertimeSparkle": {
     "name": "Glänzende Darbietung",
@@ -11393,7 +12021,7 @@
   },
   "AmidstPoeticPondering": {
     "name": "Inmitten des poetischen Nachdenkens",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Inmitten des poetischen Nachdenkens“.\\nEin subtil dekoriertes Arbeitszimmer, das stark an die Büroräume des Ordo Favonius angelehnt ist. Es heißt, dass jeder Teil dieses Arbeitszimmers strengen Einrichtungsrichtlinien folgt, wodurch das Kerzenlicht und die Schatten perfekt ineinander übergehen, was eine einzigartige Beleuchtung schafft. Liebhaber von Literatur, ob selbst Autor oder Leseratte, werden hier eine Quelle der Inspiration finden, und Arbeitstiere können sich hier ohne Ablenkung ganz in ihre Aufgabe vertiefen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Begleitern bevorzugt: Jean, Lisa, Fischl, Mona und Eula"
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Inmitten des poetischen Nachdenkens“.\\nEin subtil dekoriertes Arbeitszimmer, das stark an die Büroräume des Ordo Favonius angelehnt ist. Es heißt, dass jeder Teil dieses Arbeitszimmers strengen Einrichtungsrichtlinien folgt, wodurch das Kerzenlicht und die Schatten perfekt ineinander übergehen, was eine einzigartige Beleuchtung schafft. Liebhaber von Literatur, ob selbst Autor oder Leseratte, werden hier eine Quelle der Inspiration finden, und Arbeitstiere können sich hier ohne Ablenkung ganz in ihre Aufgabe vertiefen.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Jean, Lisa, Fischl, Mona und Eula"
   },
   "AmidstWhisperingWinds": {
     "name": "Inmitten der flüsternden Winde",
@@ -11501,11 +12129,11 @@
   },
   "ForestPatrolAnecdotes": {
     "name": "Tausend Anekdoten der Waldpatrouille",
-    "description": "Ein voll ausgestatteter Pausenraum, dessen Gestaltung sich an den Behausungen der Waldhüter in Gandharva orientiert. Die Gestaltung des Raums wurde auch nach den Aufträgen der Waldhüter angepasst.\\nWenn sie gerufen werden, können sie sofort ihre Taschen packen und gehen, und wenn sie von der Patrouille zurückkehren, können sie sich schnell an die Verarbeitung, Lagerung oder Analyse von Proben machen. Wenn sie bis spät in die Nacht auf der Wache sind, können sie sogar den Herd im Inneren benutzen, um sich ein Abendessen zuzubereiten und neue Energie zu tanken. Alles in allem könnte dieser Pausenraum die Waldhüter jederzeit in Topform halten ... Natürlich nur, wenn die Dienstpläne gut ausgearbeitet sind.\\nDieses Set wird von den folgenden Gefährten bevorzugt: Tighnari, Collei"
+    "description": "Ein voll ausgestatteter Pausenraum, dessen Gestaltung sich an den Behausungen der Waldhüter in Gandharva orientiert. Die Gestaltung des Raums wurde auch nach den Aufträgen der Waldhüter angepasst.\\nWenn sie gerufen werden, können sie sofort ihre Taschen packen und gehen, und wenn sie von der Patrouille zurückkehren, können sie sich schnell an die Verarbeitung, Lagerung oder Analyse von Proben machen. Wenn sie bis spät in die Nacht auf der Wache sind, können sie sogar den Herd im Inneren benutzen, um sich ein Abendessen zuzubereiten und neue Energie zu tanken. Alles in allem könnte dieser Pausenraum die Waldhüter jederzeit in Topform halten ... Natürlich nur, wenn die Dienstpläne gut ausgearbeitet sind.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tighnari, Collei"
   },
   "CoalescedBrilliance": {
     "name": "Der Glanz der Schätze",
-    "description": "Ein Raum, der mit verschiedenen Edelsteinen, Ornamenten und einer Sammlung von kostbaren Gegenständen geschmückt ist. Sein Inneres strahlt einen Hauch von Luxus aus und eine Stehlampe in der Ecke reicht aus, um das glühende Licht des Raumes zu reflektieren.\\nFür diejenigen, die nach Reichtum streben, ist ein solcher Raum wie ein köstlicher Nachtisch mit genau der richtigen Menge Zucker und einem anhaltenden Nachgeschmack. Und für diejenigen, die mehr Wert auf Ästhetik legen, werden sie von der Schönheit der Kunstwerke im Raum beeindruckt sein, egal aus welchem Blickwinkel sie sie betrachten.\\nDieses Set wird von den folgenden Gefährten bevorzugt: Dori, Nilou"
+    "description": "Ein Raum, der mit verschiedenen Edelsteinen, Ornamenten und einer Sammlung von kostbaren Gegenständen geschmückt ist. Sein Inneres strahlt einen Hauch von Luxus aus und eine Stehlampe in der Ecke reicht aus, um das glühende Licht des Raumes zu reflektieren.\\nFür diejenigen, die nach Reichtum streben, ist ein solcher Raum wie ein köstlicher Nachtisch mit genau der richtigen Menge Zucker und einem anhaltenden Nachgeschmack. Und diejenigen, die mehr Wert auf Ästhetik legen, werden von der Schönheit der Kunstwerke im Raum beeindruckt sein, egal aus welchem Blickwinkel sie diese betrachten.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Dori, Nilou"
   },
   "FervidAroma": {
     "name": "Wundervolles Aroma",
@@ -11513,35 +12141,35 @@
   },
   "OfSettledThoughts": {
     "name": "Raum der Besinnung",
-    "description": "Ein Arbeitszimmer, in dem sich die Bücherregale wie unüberwindbare Mauern stapeln. Wenn die gewöhnlichen Menschen die vielen Bücher sehen, kommt unweigerlich ein Gefühl der Ehrfurcht in ihren Herzen auf.\\nNatürlich wissen die Eingeweihten, dass es keine unüberschreitbare Grenze zwischen Weisheit und Unwissenheit gibt. Solange man bereit ist, sich darauf einzulassen und diese Bücher, eines nach dem anderen, nach einem sorgfältig ausgearbeiteten Plan zu lesen, wird man schon bald eine unermessliche Menge an neuem Wissen gewinnen.\\nDieses Set wird von dem folgenden Gefährten bevorzugt: Cyno"
+    "description": "Ein Arbeitszimmer, in dem sich die Bücherregale wie unüberwindbare Mauern stapeln. Wenn die gewöhnlichen Menschen die vielen Bücher sehen, kommt unweigerlich ein Gefühl der Ehrfurcht in ihren Herzen auf.\\nNatürlich wissen die Eingeweihten, dass es keine unüberschreitbare Grenze zwischen Weisheit und Unwissenheit gibt. Solange man bereit ist, sich darauf einzulassen und diese Bücher, eines nach dem anderen, nach einem sorgfältig ausgearbeiteten Plan zu lesen, wird man schon bald eine unermessliche Menge an neuem Wissen gewinnen.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Cyno, Faruzan"
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Ein kurzer Abschied von Hektik und Ärger",
-    "description": "Ein Schlafzimmer im Stil der Häuser in Sumeru. Die verschiedenen Geräte und Utensilien, die hier zu sehen sind, finden sich auch in vielen Häusern von Sumeru. Dank der perfekten Replikationskraft der Raumschaffung wirkt jede Dekoration wie frisch gemacht und vermittelt jedem, der den Raum betritt, ein sauberes, ordentliches, offenes und großzügiges Gefühl, was den Raum einen schönen Ort zum Ausruhen und Entspannen macht.\\nSelbst die Wohlhabenden werden manchmal von Negativität beeinflusst, und selbst diejenigen, die sich in Positionen befinden, um die sie andere vielleicht beneiden, können den Problemen des Lebens nicht entkommen. In solchen Zeiten ist es eine sichere und solide Entscheidung, den Kopf zu leeren und sich auszuschlafen, damit man der Welt wieder mit voller Kraft entgegentreten kann ...\\nDieses Set wird von den folgenden Gefährten bevorzugt: Nahida, Layla"
+    "description": "Ein Schlafzimmer im Stil der Häuser in Sumeru. Die verschiedenen Geräte und Utensilien, die hier zu sehen sind, finden sich auch in vielen Häusern von Sumeru. Dank der perfekten Replikationskraft der Raumschaffung wirkt jede Dekoration wie frisch gemacht und vermittelt jedem, der den Raum betritt, ein sauberes, ordentliches, offenes und großzügiges Gefühl, was den Raum einen schönen Ort zum Ausruhen und Entspannen macht.\\nSelbst die Wohlhabenden werden manchmal von Negativität beeinflusst, und selbst diejenigen, die sich in Positionen befinden, um die sie andere vielleicht beneiden, können den Problemen des Lebens nicht entkommen. In solchen Zeiten ist es eine sichere und solide Entscheidung, den Kopf zu leeren und sich auszuschlafen, damit man der Welt wieder mit voller Kraft entgegentreten kann ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nahida, Layla"
   },
   "DwellingAmidstTheSands": {
     "name": "Wohnung inmitten des Sandes",
-    "description": "Ein schlicht dekorierter Raum, in dem Geräte und Utensilien verwendet werden, die aus der Inneneinrichtung des Aaru-Dorfes stammen. Diejenigen, die in der Wüste leben, haben aufgrund ihrer Umgebung besondere Gewohnheiten entwickelt, wie zum Beispiel das rechtzeitige Abschütteln des Sandes, der mit ihrer Kleidung hereingebracht wurde, oder das Aufrechterhalten der Temperatur und der Feuchtigkeit eines Raumes mit geringem Aufwand ...\\nNatürlich sind solche Praktiken in dem gemütlichen Kannenreich nicht notwendig, aber sie können dennoch eine herzerwärmende Atmosphäre bringen. Bei dieser Inneneinrichtung wurde auf so viele kleine Details geachtet, dass man sich darin wie in einem Haus in der Wüste fühlt.\\nDieses Set wird von der folgenden Gefährtin bevorzugt: Candace"
+    "description": "Ein schlicht dekorierter Raum, in dem Geräte und Utensilien verwendet werden, die aus der Inneneinrichtung des Aaru-Dorfes stammen. Diejenigen, die in der Wüste leben, haben aufgrund ihrer Umgebung besondere Gewohnheiten entwickelt, wie zum Beispiel das rechtzeitige Abschütteln des Sandes, der mit ihrer Kleidung hereingebracht wurde, oder das Aufrechterhalten der Temperatur und der Feuchtigkeit eines Raumes mit geringem Aufwand ...\\nNatürlich sind solche Praktiken in dem gemütlichen Kannenreich nicht notwendig, aber sie können dennoch eine herzerwärmende Atmosphäre bringen. Bei dieser Inneneinrichtung wurde auf so viele kleine Details geachtet, dass man sich darin wie in einem Haus in der Wüste fühlt.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Candace"
   },
   "AmidstProsperingMarkets": {
     "name": "Inmitten florierender Märkte",
-    "description": "Ein exquisit eingerichtetes Handelsviertel, das dem Straßenlayout von Sumeru und dem Großen Basar nachempfunden ist. Frische Früchte, köstliche Gerichte und alle Arten von Waren des Alltagslebens werden hier an den Ständen angeboten. Nach ein paar Runden durch das Viertel wirst du sicher die einzigartige Intimität eines belebten Marktes erleben.\\nEs heißt, dass die Läden und Stände auf beiden Seiten der Straßen von Sumeru nach bestimmten Regeln geplant wurden, die das Ergebnis der Forschungen der Akademie sind, sodass ein ganzheitlicher Service mit möglichst geringem Verwaltungsaufwand und Flächenverbrauch geboten werden kann.\\nDieses Set wird von der folgenden Gefährtin bevorzugt: Dori"
+    "description": "Ein exquisit eingerichtetes Handelsviertel, das dem Straßenlayout von Sumeru und dem Großen Basar nachempfunden ist. Frische Früchte, köstliche Gerichte und alle Arten von Waren des Alltagslebens werden hier an den Ständen angeboten. Nach ein paar Runden durch das Viertel wirst du sicher die einzigartige Intimität eines belebten Marktes erleben.\\nEs heißt, dass die Läden und Stände auf beiden Seiten der Straßen von Sumeru nach bestimmten Regeln geplant wurden, die das Ergebnis der Forschungen der Akademie sind, so dass ein ganzheitlicher Service mit möglichst geringem Verwaltungsaufwand und Flächenverbrauch geboten werden kann.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Dori, Faruzan"
   },
   "DeepInTheQuietForest": {
     "name": "Tief im stillen Wald",
-    "description": "Diese Siedlung ist im Stil von Gandharva gestaltet, wobei viele ästhetische Inspirationen aus dem grünen Regenwald stammen. Der grüne Regenwald ist ein Genuss. Die Erfahrung, im Regenwald zu leben, kann in diesem Gebiet unabhängig von der umgebenden Landschaft erlebt werden.\\nNatürlich musst du noch mehr Überlebensfähigkeiten erwerben, wenn du wirklich in den Regenwald ziehst, z. B. deine Routine und deinen Rhythmus anpassen, um die durch das feuchte Klima verursachten kleinen Unannehmlichkeiten zu vermeiden. Und du musst noch einige tägliche Gewohnheiten der Waldhüter verstehen ...\\nDieses Set wird von den folgenden Gefährten bevorzugt: Collei, Cyno"
+    "description": "Diese Siedlung ist im Stil von Gandharva gestaltet, wobei viele ästhetische Inspirationen aus dem grünen Regenwald stammen. Der grüne Regenwald ist ein Genuss. Die Erfahrung, im Regenwald zu leben, kann in diesem Gebiet unabhängig von der umgebenden Landschaft erlebt werden.\\nNatürlich musst du noch mehr Überlebensfähigkeiten erwerben, wenn du wirklich in den Regenwald ziehst, z. B. deine Routine und deinen Rhythmus anpassen, um die durch das feuchte Klima verursachten kleinen Unannehmlichkeiten zu vermeiden. Und du musst noch einige tägliche Gewohnheiten der Waldhüter verstehen ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Collei, Cyno"
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Schatten der Tänzer",
-    "description": "Ein großes und prächtiges Theater. Neben der prächtigen Bühne, dem sprudelnden Brunnen wurden noch viele kostbaren Blumen eingerichtet, die von der Raumschaffung zum Leben erweckt wurden. Damit imitiert dieser Ort die festliche Atmosphäre vom Theater Zubayr.\\nMan sagt, dass manche Aufführungen am besten in der Nacht zu sehen sind. Die Platzierung der Theaterlampen ist offensichtlich auch das Ergebnis einer sorgfältigen Studie, die darauf abzielt, dass jeder Zuschauer die Tänzer sehen kann, unabhängig davon, in welchem Winkel er sitzt oder steht. Und die richtig eingestellte Beleuchtung und Farbton ermöglichen es dem Publikum, die Aufführung der Tänzer besser zu genießen.\\nDieses Set wird von der folgenden Gefährtin bevorzugt: Nilou"
+    "description": "Ein großes und prächtiges Theater. Neben der prächtigen Bühne, dem sprudelnden Brunnen wurden noch viele kostbaren Blumen eingerichtet, die von der Raumschaffung zum Leben erweckt wurden. Damit imitiert dieser Ort die festliche Atmosphäre vom Theater Zubayr.\\nMan sagt, dass manche Aufführungen am besten in der Nacht zu sehen sind. Die Platzierung der Theaterlampen ist offensichtlich auch das Ergebnis einer sorgfältigen Studie, die darauf abzielt, dass jeder Zuschauer die Tänzer sehen kann, unabhängig davon, in welchem Winkel er sitzt oder steht. Und die richtig eingestellte Beleuchtung und Farbton ermöglichen es dem Publikum, die Aufführung der Tänzer besser zu genießen.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nilou"
   },
   "QuietTimesByTheRiverbank": {
     "name": "Stille Zeiten am Flussufer",
-    "description": "Eine friedliche Siedlung, die die einzigartige Ästhetik von Vimara annimmt. Auch wenn sie nicht an einem Fluss oder am Meer liegt, lässt der Hauch von Fischgeruch, der durch dieses Dorf zieht, das Wasser in deinen Ohren glucksen.\\nDas Dorf Vimara hat eine völlig andere Atmosphäre als die Posten der Waldhüter, denn seine Bewohner haben größtenteils keine wichtigen Pflichten und führen ein gemächliches Leben, was es zu einem sehr schönen Ort für diejenigen macht, die sich entspannen möchte."
+    "description": "Eine friedliche Siedlung, die die einzigartige Ästhetik von Vimara annimmt. Auch wenn sie nicht an einem Fluss oder am Meer liegt, lässt der Hauch von Fischgeruch, der durch dieses Dorf zieht, das Wasser in deinen Ohren glucksen.\\nDas Dorf Vimara hat eine völlig andere Atmosphäre als die Posten der Waldhüter, denn seine Bewohner haben größtenteils keine wichtigen Pflichten und führen ein gemächliches Leben, was es zu einem sehr schönen Ort für diejenigen macht, die sich entspannen möchte.\\nDieses Set wird von den folgenden Kameraden bevorzugt: {REALNAME[ID(1)|HOSTONLY(true)]}"
   },
   "SetekhDemurs": {
     "name": "Eine Setekh ablehnende Siedlung",
-    "description": "Diese Siedlung, die dem Aaru-Dorf nachempfunden ist, besteht aus massiven Häusern, die weder die Erosion durch den Sand noch das Eindringen ungebetener wilder Tiere oder ungebetener Gäste fürchten, denn sie sind viel stabiler als Holzgebäude. Es heißt jedoch, dass die Bewohner aufgrund der verwendeten speziellen Materialien die Innenwände jedes Gebäudes regelmäßig warten müssen, um sie nach langer Sonnen- und Witterungseinwirkung auf Risse zu überprüfen und sie rechtzeitig zu reparieren. Diese Arbeit trägt auch dazu bei, die Wahrnehmung der Bewohner zu schärfen und sie vorsichtiger und genauer in Bezug auf jeden Aspekt ihres Lebens zu machen.\\nDieses Set wird von den folgenden Gefährten bevorzugt: Candace, Layla"
+    "description": "Diese Siedlung, die dem Aaru-Dorf nachempfunden ist, besteht aus massiven Häusern, die weder die Erosion durch den Sand noch das Eindringen ungebetener wilder Tiere oder ungebetener Gäste fürchten, denn sie sind viel stabiler als Holzgebäude. Es heißt jedoch, dass die Bewohner aufgrund der verwendeten speziellen Materialien die Innenwände jedes Gebäudes regelmäßig warten müssen, um sie nach langer Sonnen- und Witterungseinwirkung auf Risse zu überprüfen und sie rechtzeitig zu reparieren. Diese Arbeit trägt auch dazu bei, die Wahrnehmung der Bewohner zu schärfen und sie vorsichtiger und genauer in Bezug auf jeden Aspekt ihres Lebens zu machen.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Candace, Layla"
   },
   "TheTravelingTroopsPomp": {
     "name": "Majestätische Truppenaufstellung",
@@ -11549,11 +12177,11 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "In Wohlgeruch und Stille",
-    "description": "Ein eleganter und ruhiger Garten, der den Stil von Razan-Garten und Pardis Dhyai annimmt. Aber es geht an diesem Ort nicht um eine absolute Einheit der verschiedenen architektonischen Stille, sondern vielmehr um die Schaffung einer ruhigen Atmosphäre.\\nDie schönen Blüten schlummern hier in Frieden und die Stehlampen lassen den Brunnen erstrahlen ... Sobald sich die Nachtstunden nähern, kann ein Spaziergang durch diesen Garten dazu führen, dass sich die lärmenden Gedanken in deinem Kopf wie Wolkenfetzen auflösen. Vielleicht fällt dir sogar eine Inspiration ein, die du normalerweise schwer finden würdest ...\\nDieses Set wird von der folgenden Gefährtin bevorzugt: Nahida"
+    "description": "Ein eleganter und ruhiger Garten, der den Stil von Razan-Garten und Pardis Dhyai annimmt. Aber es geht an diesem Ort nicht um eine absolute Einheit der verschiedenen architektonischen Stille, sondern vielmehr um die Schaffung einer ruhigen Atmosphäre.\\nDie schönen Blüten schlummern hier in Frieden und die Stehlampen lassen den Brunnen erstrahlen ... Sobald sich die Nachtstunden nähern, kann ein Spaziergang durch diesen Garten dazu führen, dass sich die lärmenden Gedanken in deinem Kopf wie Wolkenfetzen auflösen. Vielleicht fällt dir sogar eine Inspiration ein, die du normalerweise schwer finden würdest ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nahida"
   },
   "ChorusOfDesertAndWood": {
     "name": "Wüsten- und Waldchor",
-    "description": "Ein wunderbares Gebiet, in dem viele Pflanzenarten gedeihen. Dieser Ort bringt die Eigenschaften der verschiedenen Arten durch die Raumschaffung des Kannenreiches in Einklang, sodass Pflanzen aus der Wüste und dem Regenwald nebeneinander existieren können, was einen wunderschönen Chor aus Blumen, Bäumen und Wildgräsern komponiert.\\nFür Gelehrte, die Pflanzen lieben, sind solche Gebiete wahre Schatztruhen für die Forschung und für Passanten ist der Wald mit bunten Farben auch sehr interessant ...\\nDieses Set wird von dem folgenden Gefährten bevorzugt: Tighnari"
+    "description": "Ein wunderbares Gebiet, in dem viele Pflanzenarten gedeihen. Dieser Ort bringt die Eigenschaften der verschiedenen Arten durch die Raumschaffung des Kannenreiches in Einklang, so dass Pflanzen aus der Wüste und dem Regenwald nebeneinander existieren können, was einen wunderschönen Chor aus Blumen, Bäumen und Wildgräsern komponiert.\\nFür Gelehrte, die Pflanzen lieben, sind solche Gebiete wahre Schatztruhen für die Forschung und für Passanten ist der Wald mit bunten Farben auch sehr interessant ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}"
   },
   "TimberWallWithJadeEaves": {
     "name": "Holzwand mit Jadetraufe",
@@ -11871,6 +12499,10 @@
     "name": "„Durststillende Muße“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Durststillende Muße“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "LongAdhighamaChamferTable": {
+    "name": "Langer Tisch mit benutzerfreundlichen Tischkanten aus Adhigama-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Langer Tisch mit benutzerfreundlichen Tischkanten aus Adhigama-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "BreezeBlessedBed": {
     "name": "Brisenbelüftetes Bett",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Brisenbelüftetes Bett“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -11954,6 +12586,10 @@
   "SatisfactionOfSatedThirst": {
     "name": "„Heiterkeit müßigen Umtrunkes“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Heiterkeit müßigen Umtrunkes“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AdhigamaVineBackedChair": {
+    "name": "Stuhl mit Rückenlehne aus Adhigama-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Stuhl mit Rückenlehne aus Adhigama-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "NorthernStoneHearth": {
     "name": "Steinherd aus dem Norden",
@@ -12087,6 +12723,10 @@
     "name": "„Duft von Niedrigtemperatur-Röstung“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Duft von Niedrigtemperatur-Röstung“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "DeepwoodDwellersAggregation": {
+    "name": "„Lagerstätte des Waldbewohners“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Lagerstätte des Waldbewohners“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Teppich (Mondstadt) – „Rotglühende Begeisterung“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Teppich (Mondstadt) – Rotglühende Begeisterung“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -12150,6 +12790,10 @@
   "JoyfulIllumination": {
     "name": "„Licht der Freude“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Licht der Freude“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "LightOfTheLandOfWisdom": {
+    "name": "„Licht am Ort der Gelehrsamkeit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Licht am Ort der Gelehrsamkeit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Blumenarrangement – „Himmelblaue Ruhe“",
@@ -12286,6 +12930,18 @@
   "EphemeralSpirit": {
     "name": "„Nicht haltbare Spirituosen“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Nicht haltbare Spirituosen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AmidstBitterAromas": {
+    "name": "„Aroma inmitten von Bitterkeit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Aroma inmitten von Bitterkeit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DeepwoodDwellersIngenuity": {
+    "name": "„Einfallsreichtum des Waldbewohners“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Einfallsreichtum des Waldbewohners“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DeepwoodDwellersBrilliance": {
+    "name": "„Brillanz des Waldbewohners“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Brillanz des Waldbewohners“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "LandscapePaintingCountryHome": {
     "name": "Landschaftsmalerei – „Landhaus“",
@@ -12871,6 +13527,18 @@
     "name": "„Routine in der Stadt der Weisheit“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Routine in der Stadt der Weisheit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "ContrastsOfTheCityOfWisdom": {
+    "name": "„Gleichklang der Stadt der Weisheit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gleichklang der Stadt der Weisheit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "PeaceInTheCityOfWisdom": {
+    "name": "„Frieden der Stadt der Weisheit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Frieden der Stadt der Weisheit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "ErrandsInTheCityOfWisdom": {
+    "name": "„Besorgungen in der Stadt der Weisheit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Besorgungen in der Stadt der Weisheit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Springbrunnen mit Blumen- und Vogelmuster“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -13098,6 +13766,18 @@
   "DesertWallStalwartDefense": {
     "name": "Wüstenwall – „Standhafte Abwehr“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstenwall – Standhafte Abwehr“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DesertGateWindjammer": {
+    "name": "Wüstentor – „Windschutz“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Wüstentor – Windschutz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DomedGateForestTune": {
+    "name": "Hoftor des Gutshauses – „Gesang inmitten des Waldes“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Hoftor des Gutshauses – Gesang inmitten des Waldes“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "DomedWallTheBirdsSang": {
+    "name": "Hofmauer des Gutshauses – „Unisono der Vögel“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Hofmauer des Gutshauses – Unisono der Vögel“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Steinbodenbelag – „Glückliche Zeiten“",
@@ -13499,6 +14179,22 @@
     "name": "„Ruhm der Brigaden“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Ruhm der Brigaden“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "AnElegantVoice": {
+    "name": "„Elegante Stimme“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Elegante Stimme“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AMellowVoice": {
+    "name": "„Sanfte Stimme“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Sanfte Stimme“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "KarmaphalaThreePlyNoticeboard": {
+    "name": "Dreiteilige Werbetafel aus Karmaphala-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Dreiteilige Werbetafel aus Karmaphala-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TeaBreakShade": {
+    "name": "„Schattiges Plätzchen für Teepausen“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schattiges Plätzchen für Teepausen“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Eiserne Straßenlaterne mit Gravur",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Eiserne Straßenlaterne mit Gravur“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -13698,6 +14394,10 @@
   "PearOrchardAccessoryAttendAndListen": {
     "name": "Birnengarten-Zubehör – „Aufgepasst und zugehört“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Birnengarten-Zubehör – Aufgepasst und zugehört“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "KarmaphalaDisplayTable": {
+    "name": "Ausstellungstisch aus Karmaphala-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Ausstellungstisch aus Karmaphala-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Weinladen-Theke – „Nach Herzenslust“",

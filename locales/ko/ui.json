@@ -28,7 +28,7 @@
   "appVersion": "$t(pageTitle) 버전: {{version}}",
   "underConstruction": "개발중",
   "error": "오류",
-  "reset": "리셋",
+  "reset": "초기화",
   "info": "정보",
   "inventory": "보관함",
   "close": "닫기",

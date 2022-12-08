@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan pedang."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

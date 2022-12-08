@@ -1,0 +1,12 @@
+{
+  "name": "Spada del Cavalcacieli",
+  "description": "Una spada d'acciaio affidabile. Una volta, il leggendario Cavalcacieli tentò di cavalcarla come se fosse una spada volante...",
+  "passiveName": "Determinazione",
+  "passiveDescription": {
+    "0": "L'uso di un Tripudio elementale garantisce un <cryo>12%</cryo> di aumento di ATT e VEL di movimento per 15{NON_BREAK_SPACE}s.",
+    "1": "L'uso di un Tripudio elementale garantisce un <cryo>15%</cryo> di aumento di ATT e VEL di movimento per 15{NON_BREAK_SPACE}s.",
+    "2": "L'uso di un Tripudio elementale garantisce un <cryo>18%</cryo> di aumento di ATT e VEL di movimento per 15{NON_BREAK_SPACE}s.",
+    "3": "L'uso di un Tripudio elementale garantisce un <cryo>21%</cryo> di aumento di ATT e VEL di movimento per 15{NON_BREAK_SPACE}s.",
+    "4": "L'uso di un Tripudio elementale garantisce un <cryo>24%</cryo> di aumento di ATT e VEL di movimento per 15{NON_BREAK_SPACE}s."
+  }
+}

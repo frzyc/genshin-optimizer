@@ -111,5 +111,6 @@
     "set": "圣遗物套装"
   },
   "substat_one": "{{count}}项副词条",
-  "substat_other": "{{count}}项副词条"
+  "substat_other": "{{count}}项副词条",
+  "addNew": "添加新圣遗物"
 }

@@ -1,0 +1,12 @@
+{
+  "name": "Gece Avcısı",
+  "description": "Büyük bir ustalıkla üretilmiş gösterişli bir yay. Hiç yakalanmadan yaşamış iyi kalpli bir hayduda aitti.",
+  "passiveName": "Sokak Saldırısı",
+  "passiveDescription": {
+    "0": "Bu silahı kuşanan karakter grubun arka planındayken, Hasar oranı her saniye <cryo>%2</cryo> artarak <cryo>%20</cryo>'ye ulaşabilir. Karakter savaş alanına çıktıktan 4 saniye sonra, kazandığı güçlendirme %0'a ulaşana kadar saniyede <cryo>%4</cryo> azalır.",
+    "1": "Bu silahı kuşanan karakter grubun arka planındayken, Hasar oranı her saniye <cryo>%2,5</cryo> artarak <cryo>%25</cryo>'ye ulaşabilir. Karakter savaş alanına çıktıktan 4 saniye sonra, kazandığı güçlendirme %0'a ulaşana kadar saniyede <cryo>%5</cryo> azalır.",
+    "2": "Bu silahı kuşanan karakter grubun arka planındayken, Hasar oranı her saniye <cryo>%3</cryo> artarak <cryo>%30</cryo>'ye ulaşabilir. Karakter savaş alanına çıktıktan 4 saniye sonra, kazandığı güçlendirme %0'a ulaşana kadar saniyede <cryo>%6</cryo> azalır.",
+    "3": "Bu silahı kuşanan karakter grubun arka planındayken, Hasar oranı her saniye <cryo>%3,5</cryo> artarak <cryo>%35</cryo>'ye ulaşabilir. Karakter savaş alanına çıktıktan 4 saniye sonra, kazandığı güçlendirme %0'a ulaşana kadar saniyede <cryo>%7</cryo> azalır.",
+    "4": "Bu silahı kuşanan karakter grubun arka planındayken, Hasar oranı her saniye <cryo>%4</cryo> artarak <cryo>%40</cryo>'ye ulaşabilir. Karakter savaş alanına çıktıktan 4 saniye sonra, kazandığı güçlendirme %0'a ulaşana kadar saniyede <cryo>%8</cryo> azalır."
+  }
+}

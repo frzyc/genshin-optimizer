@@ -29,6 +29,6 @@
   },
   "SprawlingGreenery": {
     "name": "Überwucherndes Gras",
-    "desc": "Erhöht die Elementarkunde um 50 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „In Flammen“ „Urwuchs“ und „Sprießen“ 6 s lang um 30 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „Suprawuchs“, „Rankenwuchs“, „Supraspross“ und „Flammenspross“ 6 s lang um 20 Punkte. Wirkungsdauer der beiden Wirkungen ist unabhängig."
+    "desc": "Erhöht die Elementarkunde um 50 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „In Flammen“ „Urwuchs“ und „Sprießen“ 6 s lang um 30 Punkte. Erhöht die Elementarkunde aller Truppenmitglieder in der Nähe beim Auslösen der Reaktionen „Suprawuchs“, „Rankenwuchs“, „Supraspross“ und „Flammenspross“ 6 s lang um 20 Punkte. Die Wirkungsdauer der oben genannten Wirkungen wird unabhängig voneinander berechnet."
   }
 }

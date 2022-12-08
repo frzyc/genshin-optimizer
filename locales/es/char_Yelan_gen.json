@@ -128,7 +128,7 @@
   "passive3": {
     "name": "Jugada táctica",
     "description": {
-      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue."
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20{NON_BREAK_SPACE}h en Liyue."
     }
   },
   "constellation1": {

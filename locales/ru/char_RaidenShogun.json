@@ -4,7 +4,9 @@
     "partyCost": "Потребление энергии (отряда)"
   },
   "burst": {
-    "resolves": "Уровень решимости"
+    "resolves": "Уровень решимости",
+    "resolveInitial_": "<electro>Бонус увеличения урона Мусо но хитотати</electro",
+    "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>"
   },
   "a4": {
     "enerRest": "Восстановление энергии от <strong>Мусо иссин</strong>",

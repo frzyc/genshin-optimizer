@@ -24,7 +24,7 @@
   "ascending": "По возрастанию",
   "descending": "По убыванию",
   "loading": "Загрузка...",
-  "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается miHoYo.",
+  "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается HoYoverse.",
   "appVersion": "$t(pageTitle) Версия: {{version}}",
   "underConstruction": "В разработке",
   "error": "Ошибка",
@@ -46,5 +46,14 @@
     "download": "Ссылка на скачивание",
     "discord": "Приглашение в Discord"
   },
-  "selectlevel": "Изменить Уровень"
+  "sortBy": "Сортировать по:",
+  "delete": "Удалить",
+  "locked": "Заблокировано",
+  "unlocked": "Разблокировано",
+  "refinement": "Ранг пробуждения {{value}}",
+  "selectlevel": "Выбрать Уровень",
+  "gender": {
+    "F": "Женский",
+    "M": "Мужской"
+  }
 }

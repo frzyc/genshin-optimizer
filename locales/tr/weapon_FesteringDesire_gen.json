@@ -1,0 +1,12 @@
+{
+  "name": "Yıkıcı Arzu",
+  "description": "Yaşama hasret kalmış habis bir düz kılıç. Bir ejderi bile etkisiz hale getirebilecek kadar güçlü bir zehre sahip.",
+  "passiveName": "Sonsuz Hayranlık",
+  "passiveDescription": {
+    "0": "Element Becerisi Hasarını <cryo>%16</cryo> ve Element Becerisi Kritik Oranını <cryo>%6</cryo> artırır.",
+    "1": "Element Becerisi Hasarını <cryo>%20</cryo> ve Element Becerisi Kritik Oranını <cryo>%7,5</cryo> artırır.",
+    "2": "Element Becerisi Hasarını <cryo>%24</cryo> ve Element Becerisi Kritik Oranını <cryo>%9</cryo> artırır.",
+    "3": "Element Becerisi Hasarını <cryo>%28</cryo> ve Element Becerisi Kritik Oranını <cryo>%10,5</cryo> artırır.",
+    "4": "Element Becerisi Hasarını <cryo>%32</cryo> ve Element Becerisi Kritik Oranını <cryo>%12</cryo> artırır."
+  }
+}

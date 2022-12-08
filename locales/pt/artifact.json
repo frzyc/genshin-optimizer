@@ -15,7 +15,10 @@
       },
       "noRoll": "Sem Sorteios",
       "noStat": "Sem Valor",
-      "eff": "Eficiência: <1></1>"
+      "eff": "Eficiência: <1></1>",
+      "nextRolls": "Próximos rolls:",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Raridade",
     "level": "Nível",
@@ -46,7 +49,9 @@
     "unequipArtifacts": "Desequipar Artefatos",
     "deleteArtifacts": "Excluir Artefatos",
     "excludeArtifacts": "Bloquear Artefatos",
-    "includeArtifacts": "Desbloquear Artefatos"
+    "includeArtifacts": "Desbloquear Artefatos",
+    "lockArtifacts": "Trancar Artefatos",
+    "unlockrtifacts": "Destrancar Artefatos"
   },
   "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3>",
   "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
@@ -84,5 +89,13 @@
     "level": "Nível",
     "efficiency": "Efic. Atual do Subatributo",
     "mefficiency": "Efic. Máxima do Subatributo"
-  }
+  },
+  "efficiencyFilter": {
+    "title": "Atributos secundários usados no cálculo de valor do Roll"
+  },
+  "resetFilters": "Limpar Filtros",
+  "setEffectNum": "Conjunto de {{setNum}} Pç.",
+  "excludeArtifactTip": "Excluir um artefato irá impedir o gerador de builds de escolhê-lo numa montagem.",
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
 }

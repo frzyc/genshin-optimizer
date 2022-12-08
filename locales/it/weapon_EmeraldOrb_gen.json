@@ -1,0 +1,12 @@
+{
+  "name": "Sfera smeraldina",
+  "description": "Un catalizzatore realizzato con la giada proveniente dai Monti di Jueyun, a nord di Liyue. Piccolo, leggero e durevole, è anche noto come \"sfera di giada\".",
+  "passiveName": "Rapide",
+  "passiveDescription": {
+    "0": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura o Turbinio di Hydro, l'ATT aumenta di un <cryo>20%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "1": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura o Turbinio di Hydro, l'ATT aumenta di un <cryo>25%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "2": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura o Turbinio di Hydro, l'ATT aumenta di un <cryo>30%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "3": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura o Turbinio di Hydro, l'ATT aumenta di un <cryo>35%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "4": "Dopo aver causato una reazione di Vaporizzazione, Electrocarica, Congelamento, Fioritura o Turbinio di Hydro, l'ATT aumenta di un <cryo>40%</cryo> per 12{NON_BREAK_SPACE}s."
+  }
+}

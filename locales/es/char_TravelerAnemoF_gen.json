@@ -146,7 +146,7 @@
   "constellation6": {
     "name": "Vientos entrelazados",
     "description": {
-      "0": "Reduce en un 20% la <anemo>RES Anemo</anemo> de los enemigos que reciban daño con <strong>Oleada de ráfagas</strong> .",
+      "0": "Reduce en un 20% la <anemo>RES Anemo</anemo> de los enemigos que reciban daño con <strong>Oleada de ráfagas</strong>.",
       "1": "Si ocurre un cambio elemental, la RES elemental del elemento al que se cambió se reducirá en un 20%."
     }
   }

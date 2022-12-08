@@ -53,13 +53,13 @@
       ],
       "6": "<br/>",
       "7": "While in the Rushing Ice state, Aloy cannot obtain new Coil stacks.",
-      "8": "Coil effects will be cleared 30s after Aloy leaves the field.",
+      "8": "Coil effects will be cleared 30s after Aloy leaves combat.",
       "9": "<br/>",
       "10": "<i>You think that's cold? Guess you've never been to The Cut.</i>"
     },
     "skillParams": {
       "0": "Freeze Bomb DMG",
-      "1": "Chillwater Bomblets",
+      "1": "Chillwater Bomblet DMG",
       "2": "ATK Decrease",
       "3": "ATK Decrease Duration",
       "4": "Coil Normal Attack DMG Bonus",

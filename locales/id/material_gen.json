@@ -175,6 +175,10 @@
     "name": "Ancient Iron Coin",
     "description": "Ancient Iron Coin yang konon disebut-sebut oleh Ulman bisa dijual dengan harga tinggi, sepertinya tidak ada yang khusus saat disentuh ...."
   },
+  "PlayerEXP": {
+    "name": "EXP Pemain",
+    "description": "Diperoleh dengan memenangkan pertandingan Genius Invokation TCG. Setiap duel yang dimenangkan terbangun di atas jalan menuju kemenangan, itulah satu-satunya cara untuk mendapatkan pengalaman itu sendiri. Tahu cara mengatasi dan menaklukkan musuh dalam situasi apa pun adalah kekuatan terbesar yang bisa dimiliki seorang pemain."
+  },
   "BusinessEarnings": {
     "name": "Pendapatan Usaha",
     "description": "Fairbrew Jelly dengan jumlah yang lumayan, mewakili jumlah pendapatan dalam acara penjualan amal. Saat event Weinlesefest hampir berakhir, Bernhard akan menukarkan Fairbrew Jelly ini dengan Mora untuk diberikan kepada orang tua dan anak-anak yang membutuhkan."
@@ -198,6 +202,10 @@
   "ShatteredPhenocryst": {
     "name": "Shattered Phenocryst",
     "description": "Kristal misterius yang diperoleh setelah mengalahkan Hypostasis yang kuat di dalam Domain tak dikenal. Warna-warnanya yang indah seperti sisa cahaya dari elemen-elemen yang tersebar.\\nBisa digunakan untuk ditukarkan dengan berbagai barang berharga dalam event Simfoni Hypostasis: Bait Falsetto."
+  },
+  "CourageTestTicket": {
+    "name": "Tiket Uji Nyali",
+    "description": "Tiket yang diperoleh setelah menyelesaikan tantangan khusus tertentu dalam Uji Nyali yang diadakan oleh Yashiro Commission.\\nKamu bisa menukarkan tiket ini dengan hadiah berharga dalam event semasa event Akitsu Kimodameshi."
   },
   "Primogem": {
     "name": "Primogem",
@@ -537,7 +545,7 @@
   },
   "Cyno": {
     "name": "Cyno",
-    "description": "\"Mahamatra Umum\" yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada \"Vayuvyastra Agung\" buatan Kshahrewar."
+    "description": "\"Mahamatra Agung\" yang mengawasi para peneliti di Akademiya. Saat bekerja, lebih efisien daripada \"Vayuvyastra Agung\" buatan Kshahrewar."
   },
   "Candace": {
     "name": "Candace",
@@ -550,6 +558,14 @@
   "Layla": {
     "name": "Layla",
     "description": "Siswa Darshan Rtawahist yang mengambil spesialisasi Teori Astrologi. Sering tidur berjalan, kadang kala terus terjaga sampai sekian lama. Intinya, dia bermasalah untuk urusan tidur dan istirahat."
+  },
+  "Wanderer": {
+    "name": "Wanderer",
+    "description": "Seorang pengelana dengan identitas misterius. Berpakaian seperti \"shugenja\", tapi tutur kata dan perbuatannya malah tidak seperti \"shugenja\"."
+  },
+  "Faruzan": {
+    "name": "Faruzan",
+    "description": "Peneliti dari \"seratus tahun lalu\". Dia suka mengaku diri sebagai seniornya semua orang dan punya pengetahuan luas tentang berbagai naskah kuno dan segala jenis mesin."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
@@ -791,6 +807,14 @@
     "name": "Layla's Stella Fortuna",
     "description": "Material aktivasi untuk konstelasi Layla"
   },
+  "WanderersStellaFortuna": {
+    "name": "Wanderer's Stella Fortuna",
+    "description": "Material aktivasi Konstelasi Wanderer"
+  },
+  "FaruzansStellaFortuna": {
+    "name": "Faruzan's Stella Fortuna",
+    "description": "Material aktivasi Konstelasi Faruzan"
+  },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes",
     "description": "Catatan perjalanan awal seorang pengembara yang mencatat semua pengalamannya di berbagai negeri. Tapi kenapa catatan ini ada? Apa kamu pernah ke sini sebelumnya?\\n\\nGunakan item ini untuk membuka Gnostic Hymn untuk satu periode."
@@ -798,6 +822,10 @@
   "BlessingOfTheWelkinMoonNewMoon": {
     "name": "Blessing of the Welkin Moon - New Moon",
     "description": "Doa ritual yang diucapkan saat terbitnya bulan baru pertama, untuk memohon restu bulan berupa harta dan rejeki. Demi tujuanmu, bulan baru yang harus kamu doakan adalah bulan baru pertama di Teyvat, karena ini adalah bulan pertama yang kamu lihat di sini.\\n\\nGunakan item ini untuk menerima Blessing of the Welkin Moon selama 30 hari."
+  },
+  "AnAppellativeStroke": {
+    "name": "An Appellative Stroke",
+    "description": "Pena yang dapat memberikan \"nama\" baru kepada seseorang.\\nSetelah memberikan \"nama\" baru, nama ini tidak dapat diganti lagi."
   },
   "EnergyOrbPyro": {
     "name": "Small Energy Orb (Pyro)",
@@ -1223,8 +1251,8 @@
     "name": "Chilled Meat",
     "description": "Jenis daging yang lezat dan langka.\\nBerdasarkan catatan yang ada, daging ini berasal dari boar yang sudah punah ratusan tahun lalu dan terawetkan oleh cuaca yang sangat dingin di Dragonspine. Bagi para penikmat makanan di Teyvat, daging ini adalah makanan yang sangat dipuja-puja."
   },
-  "UnagiMeat": {
-    "name": "Unagi Meat",
+  "EelMeat": {
+    "name": "Eel Meat",
     "description": "Daging segar Unagi, bisa dibuat menjadi makanan yang segar dan enak jika pengolahannya dilakukan secara tepat."
   },
   "GlabrousBeans": {
@@ -2639,7 +2667,7 @@
     "name": "Gigi Naga yang Telah Menyerap Energi Kehidupan",
     "description": "Gigi naga yang telah menyerap energi kehidupan. Penampilan dan teksturnya membuat orang merasa tidak nyaman..."
   },
-  "PrincesssBox": {
+  "PrincessBox": {
     "name": "Kotak Putri",
     "description": "Sebuah kotak harta dengan sebuah pola di sepertiga bagian bawah kotak. Mungkin kalau kamu berhasil menaikkan kedua bagian lainnya, kamu akan membuka gerbang di suatu tempat.\\n\"Sepertinya mural itu sudah tidak bisa diselesaikan.\"\\n\"Aku sudah lama sekali tidak melihat langit dan rerumputan. Aku tidak tahu harus menggunakan warna biru yang mana, warna hijau yang mana, untuk menggambar pemandangan yang ayah inginkan, pemandangan saat salju sudah mencair.\"\\n\"Semuanya akan kembali seperti semula saat dia kembali nanti. Tapi, aku sudah tidak kuat lagi, dingin sekali di sini.\"\\n\"Maafkan aku, ayah. Maaf kamu harus terus melihat sarang gagakku yang buruk rupa.\"\\n\"Andai aku bisa melihatmu sekali lagi... Imunlaukr.\""
   },
@@ -3857,7 +3885,7 @@
   },
   "RukkhashavaMushrooms": {
     "name": "Rukkhashava Mushroom",
-    "description": "Jamur yang tumbuh berlapis-lapis seperti lautan awan, dan kebanyakan tumbuh di pepohonan yang jauh di dalam hutan hujan. Oleh karena itu, mereka dianggap oleh masyarakat Sumeru sebagai kristalisasi suci warisan dari Rukkhadevata."
+    "description": "Jamur yang tumbuh berlapis-lapis seperti lautan awan, dan kebanyakan tumbuh di pepohonan yang jauh di dalam hutan hujan."
   },
   "Padisarah": {
     "name": "Padisarah",
@@ -3884,7 +3912,7 @@
     "description": "Memiliki warna yang cerah dan indah, bunga berwarna ungu ini mengeluarkan aroma memabukkan yang akan membuat orang-orang yang melewatinya berhenti sejenak. Sementara beberapa orang menyebutnya sebagai jenis \"mawar semak-semak\", karena meskipun mereka mawar, mereka tidak mirip dengan bunga lain dari klasifikasi bunga yang sama."
   },
   "HennaBerry": {
-    "name": "Redcrest",
+    "name": "Henna Berry",
     "description": "Buah yang tumbuh bahkan di lingkungan padang pasir yang paling kejam sekalipun. Warna merahnya benar-benar terlihat sangat menyentuh jika dipadukan dengan latar pasir berwarna kuning di belakangnya."
   },
   "AjilenakhNut": {
@@ -5939,6 +5967,18 @@
     "name": "Sumeru Shrine of Depths Key",
     "description": "Kunci yang dapat menghancurkan segel Shrine of Depths yang tersebar di Sumeru.\\nShrine of Depths menyegel diri mereka sendiri saat peradaban yang membangun mereka hilang. Kunci yang hilang di kedalaman Domain dapat menghancurkan segelnya. Atau mungkin, untuk sesaat, kunci ini membantu segelnya melupakan segalanya yang telah hilang dari mereka."
   },
+  "BlankDynamicCard": {
+    "name": "Blank Dynamic Card",
+    "description": "Kartu kosong dengan bagian belakangnya yang dicat. Orang mengatakan kalau kamu meletakkan nama kartu dinamis yang diinginkan pada kartu kosong ini, kamu bisa mendapatkan Dynamic Skin dari agen Asosiasi yang berlokasi di tavern."
+  },
+  "MatchInvitationLetter": {
+    "name": "Surat Undangan Bertanding",
+    "description": "Kamu dapat memilih pemain dari Daftar Pemain melalui papan undangan, lalu memercayakan Cat's Tail untuk mengirimkan undangannya menggunakan Surat Undangan ini. Pemain yang diundang akan datang ke tavern dan menantikan untuk berduel denganmu."
+  },
+  "LuckyCoin": {
+    "name": "Lucky Coin",
+    "description": "Mata uang yang disertifikasi dan digunakan oleh Asosiasi Pemain Genius Invokation TCG. Dapat digunakan untuk membeli berbagai item yang terkait dengan Genius Invokation TCG. Konon katanya koin ini disebut sebagai Lucky Coin pada awalnya untuk mengharapkan agar orang yang memilikinya bisa beruntung. Namun, mungkin hanya orang yang cukup beruntung yang bisa memilikinya ...."
+  },
   "Dish": {
     "name": "Masakan",
     "description": "Item yang diperoleh dengan cooking"
@@ -7712,15 +7752,15 @@
     "description": "Camilan yang renyah. Aroma krim yang samar-samar akan melekat di lidahmu, berpadu dengan kelembutan jamur dan renyahnya roti panggang. Rasa kepuasan yang tiada duanya ini membuatmu terus-menerus menginginkannya, bahkan untuk menyisakan remah-remah yang ada di ujung jarimu saja, kamu tidak akan rela."
   },
   "SuspiciousCharcoalBakedAjilenakhCake": {
-    "name": "Suspicious Coconut Charcoal Cake",
+    "name": "Suspicious Charcoal-Baked Ajilenakh Cake",
     "description": "Makanan pastri berwarna gelap. Sekilas terlihat seperti hidangan kegelapan, setelah memberanikan diri untuk mencoba satu gigitan, teksturnya yang kering dan kasar ini ... Apa ada yang tidak sengaja menyuguhkan arang ke atas meja makan, ya?"
   },
   "CharcoalBakedAjilenakhCake": {
-    "name": "Coconut Charcoal Cake",
+    "name": "Charcoal-Baked Ajilenakh Cake",
     "description": "Makanan pastri berwarna gelap. Pertama-tama Ajilenakh Nut-nya dipanggang, lalu ditumbuk dan disaring, kemudian ditambahkan ke dalam adonan dan dipanggang lagi. Bentuk hasil akhirnya tidak menakjubkan, tapi aroma Ajilenakh Nut-nya tercium harum dan sangat cocok dimakan dengan selai."
   },
   "DeliciousCharcoalBakedAjilenakhCake": {
-    "name": "Delicious Coconut Charcoal Cake",
+    "name": "Delicious Charcoal-Baked Ajilenakh Cake",
     "description": "Makanan pastri berwarna gelap. Kuenya halus, dan hampir berkilauan. Aroma Ajilenakh Nut sangat kental dan dipenuhi kehangatan. Makanan ini terasa empuk dan lembut saat memasuki mulutmu, rasanya mengangkat semua keletihan dan penderitaanmu. Ah, sama seperti pepatah yang mengatakan, jangan menilai sebuah buku dari sampulnya, janganlah pula menilai kue dari luarnya."
   },
   "SuspiciousBaklava": {
@@ -7818,6 +7858,26 @@
   "Halvamazd": {
     "name": "Halvamazd",
     "description": "Masakan andalan Nahida. \"Mazd\" adalah bahasa Sumeru yang berarti \"kebijaksanaan\", dan tentunya nikmat kebijaksanaan yang begitu lembut tidak bisa kau dustakan. Mata Nahida pun menyinarkan senyuman: \"Rumput laut menolong ikan kecil dan menyaksikan ia bertumbuh, maka sudah sepantasnya ikan kecil itu membalas budi\"."
+  },
+  "SuspiciousSamosa": {
+    "name": "Suspicious Samosa",
+    "description": "Camilan yang digoreng kering. Kulitnya yang berminyak dan isiannya yang terlalu beraroma membuat tidak ada orang yang berani untuk mencoba gigitan kedua, bahkan setelah mencoba untuk menyeimbangkan aromanya dengan Mint."
+  },
+  "Samosa": {
+    "name": "Samosa",
+    "description": "Camilan yang digoreng kering. Isinya yang nikmat dibungkus dengan kulit yang tipis, dibentuk segitiga, lalu digoreng sampai warnanya jadi coklat keemasan. Daging dan sayur umum dipakai sebagai isiannya, dan camilan ini bisa jadi \"medan perang\" antara kaum vegetarian melawan para penikmat daging."
+  },
+  "DeliciousSamosa": {
+    "name": "Delicious Samosa",
+    "description": "Camilan yang digoreng kering. Kulit luarnya berwarna keemasan dan terasa renyah. Bagian dalamnya terdapat isian yang terasa lembut. Kamu langsung melahap yang pertama dengan tergesa-gesa, namun yang kedua, dilahap perlahan sambil dinikmati rasanya. Tanpa sadar, kamu makan satu per satu hingga akhirnya tersadar kalau piringnya sudah kosong."
+  },
+  "TraditionallyMadeCharcoalBakedAjilenakhCake": {
+    "name": "Traditionally-Made Charcoal-Baked Ajilenakh Cake",
+    "description": "Masakan Andalan Faruzan. Biskuit hitam pekat yang terletak di atas saus hijau Mint, layaknya mekanisme yang sangat misterius. Mungkin juga dia merasakan keraguanmu, sehingga Bu Faruzan langsung membusungkan dadanya dan berkata dengan penuh percaya diri kalau ini adalah hidangan tradisional Sumeru seratus tahun yang lalu, jadi rasanya pasti dijamin lezat. Tapi ... apa benar ini cita rasa aneh penduduk Sumeru seratus tahun yang lalu?"
+  },
+  "ShimiChazuke": {
+    "name": "Shimi Chazuke",
+    "description": "Masakan andalan Wanderer. Aroma teh yang sedikit pahit dan aroma nasi yang manis dan menyegarkan terpadu sempurna dan akan membuatmu melahapnya tanpa henti. Bagaimana dia bisa memasak sesuatu yang luar biasa seperti ini? Ah, sepertinya dia sudah berhasil membaca pikiranmu, karena ekspresi wajahnya tiba-tiba berubah muram: \"Kamu sudah selesai makan? Jangan melamun lagi, pergi cuci piring sekarang.\""
   },
   "RecipeItem": {
     "name": "Bahan Resep",
@@ -8332,8 +8392,8 @@
     "description": "Resep yang berisi langkah-langkah untuk membuat Milky Mushroom Crisp Tower."
   },
   "RecipeCharcoalBakedAjilenakhCake": {
-    "name": "Resep: Coconut Charcoal Cake",
-    "description": "Resep yang berisi langkah-langkah untuk membuat Coconut Charcoal Cake."
+    "name": "Resep: Charcoal-Baked Ajilenakh Cake",
+    "description": "Resep yang berisi langkah-langkah untuk membuat Charcoal-Baked Ajilenakh Cake."
   },
   "RecipeBaklava": {
     "name": "Resep: Baklava",
@@ -8358,6 +8418,10 @@
   "RecipeRoseCustard": {
     "name": "Resep: Rose Custard",
     "description": "Resep yang berisi langkah-langkah untuk membuat Rose Custard."
+  },
+  "RecipeSamosa": {
+    "name": "Resep: Samosa",
+    "description": "Resep yang berisi langkah-langkah untuk membuat Samosa."
   },
   "CraftedItems": {
     "name": "Hasil Craft",
@@ -9633,7 +9697,7 @@
   },
   "CynosIntroductionLetter": {
     "name": "Surat Pengantar Cyno",
-    "description": "Sepucuk rekomendasi Cyno tuliskan untukmu. Ini melambangkan kepercayaan Mahamatra Umum."
+    "description": "Sepucuk rekomendasi Cyno tuliskan untukmu. Ini melambangkan kepercayaan Mahamatra Agung."
   },
   "AncientMap": {
     "name": "Peta Kuno",
@@ -9735,6 +9799,22 @@
     "name": "Surat dari Fatui Misterius",
     "description": "Surat yang tiba-tiba kamu dapatkan dari Fatui Agent setelah kamu kalahkan. Tapi kenapa surat ini bisa ada di tangannya?"
   },
+  "HiltLikeObject": {
+    "name": "Benda yang Terlihat Seperti \"Gagang Pedang\"",
+    "description": "Benda yang terlihat seperti \"gagang pedang\". Mungkin ini adalah \"Unseen Razor\" yang dicari oleh Lan ...."
+  },
+  "ABriefAnalysisOfPossibleEventsOfHistoricalImportanceInTheTatarasunaArea": {
+    "name": "Analisis Singkat Kemungkinan Peristiwa Penting Bersejarah di Wilayah Tatarasuna",
+    "description": "Analisis Singkat Kemungkinan Peristiwa Penting Bersejarah di Wilayah Tatarasuna"
+  },
+  "TheIsleOfDarklingClouds": {
+    "name": "Pulau Awan Gelap",
+    "description": ""
+  },
+  "BoxfulOfHomelandSoil": {
+    "name": "Sekotak Tanah Kampung Halaman",
+    "description": "Tanah kampung halaman yang diambil untuk Sun Yu.\\nSeorang pengelana pergi meninggalkan kampung halaman, tanpa tahu kapan akan kembali."
+  },
   "DerivedContents": {
     "name": "Isi Interpretasi Catatan",
     "description": "Konten yang didapatkan setelah menggabungkan petunjuk-petunjuknya."
@@ -9742,6 +9822,10 @@
   "XudongsLetter": {
     "name": "Surat Xudong",
     "description": "Surat yang ditinggalkan oleh Xudong. Sepertinya ada sesuatu yang melekat di dalamnya ...."
+  },
+  "RandomWeaponShards": {
+    "name": "Pecahan Senjata Acak",
+    "description": "Pecahan dari sejenis senjata acak. Entah bagaimana bisa hancur jadi seperti ini ...."
   },
   "SilkFlowerSeed": {
     "name": "Silk Flower Seed",
@@ -10066,6 +10150,10 @@
   "PlumeOfTheChangingWinds": {
     "name": "Plume of the Changing Winds",
     "description": "Material refinement khusus untuk \"Missive Windspear\".\\nBulu kuno yang diukir dari pirus. Bulu ini dulunya digunakan sebagai ornamen atau semacam tanda."
+  },
+  "ParasolTalcum": {
+    "name": "Parasol Talcum",
+    "description": "Material refinement khusus untuk \"Toukabou Shigure\".\\nZat bubuk yang dimaksudkan untuk mengikat bambu ke payung.\\nBahkan saat musim berubah dan masa lalu memudar, ingatan dan kenangan itu akan selalu ada, seperti tidur di bawah payung untuk beristirahat ditemani mimpi."
   },
   "FalconsDance": {
     "name": "Falcon's Dance",
@@ -10811,6 +10899,22 @@
     "name": "Catatan Perjalanan: Ladang Jamur",
     "description": "Style Kartu Nama.\\n\"Pengembara, janganlah bersedih. Niscaya angin fajar meniup spora jamur yang membawa mimpi indahmu ke ladang, dan menanamkan semua harapanmu ....\""
   },
+  "WandererDriftersBallad": {
+    "name": "Wanderer: Drifter's Ballad",
+    "description": "Style kartu nama.\\nMasa lalu bersembunyi di dunia yang sangat fana, salju tipis tertinggal pada keinginan bunga yang mengalir."
+  },
+  "FaruzanSealedSecret": {
+    "name": "Faruzan: Sealed Secret",
+    "description": "Style kartu nama.\\n\"Po-Pokoknya! Lain kali sebelum bertanya, jangan lupa untuk panggil aku Bu! Haduh benar-benar deh ....\""
+  },
+  "AchievementInvoker": {
+    "name": "Achievement: Invoker",
+    "description": "Style Kartu Nama.\\n\"Di desa ini, tidak ada yang bisa menandingiku!\""
+  },
+  "TravelNotesStellarRivers": {
+    "name": "Catatan Perjalanan: Lautan Bintang",
+    "description": "Style Kartu Nama.\\nLupa adalah nama pesta yang telah lama berlalu, tersebar di tiga sungai di antara lautan awan, dan musim gugur masih tersisa di seberang lekukan senja."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "Dapat mencari Anemoculus terdekat saat digunakan di wilayah Mondstadt.\\nPiringan batu buatan manusia yang memiliki beberapa kemiripan dengan Patung The Seven Anemo. Batu ini dapat beresonansi dengan Anemoculus.\\n Merupakan tiruan kasar dari Patung The Seven yang sudah ada di dunia sejak dahulu kala. Batu ini memberikan kesempatan kepada para penjelajah dan petualang untuk mencari Anemoculus yang hilang."
@@ -10995,6 +11099,10 @@
     "name": "Aranyaka",
     "description": "Arama memberikan buku ini padamu.\\nSepertinya buku ini telah ada selama bertahun-tahun. Dan kelihatannya, seseorang dulu mencatat banyak hal di dalamnya tapi sekarang sepertinya tidak berguna.\\nGunakanlah buku ini untuk mendokumentasikan petualanganmu bersama dengan Aranara."
   },
+  "CasketOfTomes": {
+    "name": "Casket of Tomes",
+    "description": "Item kotak kartu yang dikeluarkan oleh Asosiasi Pemain Genius Invokation TCG. Hanya bisa diterima oleh pemain baru yang sudah mempelajari peraturan dasar dan telah mendapatkan pengakuan.\\nKonon katanya benda ini dibuat oleh peneliti dari Akademiya. Ada mekanisme khusus yang diatur di dalam kotak kartu yang dapat digunakan untuk bereaksi terhadap pemilik Casket of Tomes di sekitar.\\nManfaatkan fungsi ini untuk bermain lebih banyak ronde dengan pemain di sekitarmu!"
+  },
   "DendroculusResonanceStone": {
     "name": "Dendroculus Resonance Stone",
     "description": "Ketika digunakan di Sumeru, dapat membantu untuk menemukan \"Dendroculus\".\\nSebuah jimat dengan kekuatan yang mirip dengan Patung the Seven Dendro yang terkandung di dalamnya sehingga dapat menarik Dendroculus ke arahnya juga\\nRumput dan pepohonan, tumbuhan merambat dan bunga, kehidupan yang bergantung pada elemen Dendro terdiri dari berbagai macam bentuk. Meskipun ada perbedaan bentuk, meskipun ada perbedaan jarak antar kehidupan tersebut, mereka yang berasal dari tanah yang sama, pada akhirnya akan kembali ke tanah yang sama."
@@ -11050,6 +11158,10 @@
   "CloudRetainersDamaskedDevice": {
     "name": "Cloud Retainer's Damasked Device",
     "description": "Perangkat ringan dengan tampilan menyerupai burung ini terbuat dari kertas bertumpuk, dan Cloud Retainer menghadiahkannya padamu.\\nMeskipun dapat disebut \"perangkat\", tapi tidak terlihat adanya komponen mekanis tradisional apa padanya — yah, bukan dari luar.\\nTampaknya keterampilan Adeptus ini sebagai ahli permesinan telah meningkat lebih jauh ...."
+  },
+  "WildernessCompass": {
+    "name": "Wilderness Compass",
+    "description": "Kompas khusus diperoleh dari Adventurers' Guild. Menurut kabarnya, kompas ini bisa membawa keberuntungan ...?"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Panduan: Anemoculus Resonance Stone",
@@ -11230,6 +11342,522 @@
   "WanminFeast": {
     "name": "Wanmin Feast",
     "description": "Kembang api yang referensinya diambil dari sosok pembantu kecil dari koki terkenal Wanmin Restaurant. Saat orang Liyue mana pun melihat pembantu kecil ini, pikiran mereka akan segera terbang kepada makanan yang enak. Di mana ada festival, di situ pasti ada makanan yang lezat!"
+  },
+  "RhodeiaOfLoch": {
+    "name": "Rhodeia of Loch",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FatuiPyroAgent": {
+    "name": "Fatui Pyro Agent",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MaguuKenki": {
+    "name": "Maguu Kenki",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StonehideLawachurl": {
+    "name": "Stonehide Lawachurl",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MirrorMaiden": {
+    "name": "Mirror Maiden",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "JadeplumeTerrorshroom": {
+    "name": "Jadeplume Terrorshroom",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "UndividedHeart": {
+    "name": "Undivided Heart",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ColdBloodedStrike": {
+    "name": "Cold-Blooded Strike",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SteadyBreathing": {
+    "name": "Steady Breathing",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "KantenSenmyouBlessing": {
+    "name": "Kanten Senmyou Blessing",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheScentRemained": {
+    "name": "The Scent Remained",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ProphecyOfSubmersion": {
+    "name": "Prophecy of Submersion",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FlowingFlame": {
+    "name": "Flowing Flame",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Crossfire": {
+    "name": "Crossfire",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "GrandExpectation": {
+    "name": "Grand Expectation",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "NaganoharaMeteorSwarm": {
+    "name": "Naganohara Meteor Swarm",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StellarPredator": {
+    "name": "Stellar Predator",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Awakening": {
+    "name": "Awakening",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ThunderingPenance": {
+    "name": "Thundering Penance",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ChaoticEntropy": {
+    "name": "Chaotic Entropy",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LandsOfDandelion": {
+    "name": "Lands of Dandelion",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StrategicReserve": {
+    "name": "Strategic Reserve",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "IGotYourBack": {
+    "name": "I Got Your Back",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FloralSidewinder": {
+    "name": "Floral Sidewinder",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StreamingSurge": {
+    "name": "Streaming Surge",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "PaidInFull": {
+    "name": "Paid in Full",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TranscendentAutomaton": {
+    "name": "Transcendent Automaton",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StonehideReforged": {
+    "name": "Stonehide Reforged",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ShakenNotPurred": {
+    "name": "Shaken, Not Purred",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FeatherfallJudgment": {
+    "name": "Featherfall Judgment",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "GloriousSeason": {
+    "name": "Glorious Season",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MirrorCage": {
+    "name": "Mirror Cage",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ProliferatingSpores": {
+    "name": "Proliferating Spores",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MagicGuide": {
+    "name": "Magic Guide",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SacrificialFragments": {
+    "name": "Sacrificial Fragments",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SkywardAtlas": {
+    "name": "Skyward Atlas",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "RavenBow": {
+    "name": "Raven Bow",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SacrificialBow": {
+    "name": "Sacrificial Bow",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SkywardHarp": {
+    "name": "Skyward Harp",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WhiteIronGreatsword": {
+    "name": "White Iron Greatsword",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SacrificialGreatsword": {
+    "name": "Sacrificial Greatsword",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WolfsGravestone": {
+    "name": "Wolf's Gravestone",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WhiteTassel": {
+    "name": "White Tassel",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LithicSpear": {
+    "name": "Lithic Spear",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SkywardSpine": {
+    "name": "Skyward Spine",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TravelersHandySword": {
+    "name": "Traveler's Handy Sword",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SacrificialSword": {
+    "name": "Sacrificial Sword",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AquilaFavonia": {
+    "name": "Aquila Favonia",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AdventurersBandana": {
+    "name": "Adventurer's Bandana",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LuckyDogsSilverCirclet": {
+    "name": "Lucky Dog's Silver Circlet",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TravelingDoctorsHandkerchief": {
+    "name": "Traveling Doctor's Handkerchief",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "GamblersEarrings": {
+    "name": "Gambler's Earrings",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "InstructorsCap": {
+    "name": "Instructor's Cap",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ExilesCirclet": {
+    "name": "Exile's Circlet",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "BrokenRimesEcho": {
+    "name": "Broken Rime's Echo",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "BlizzardStrayer": {
+    "name": "Blizzard Strayer",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WineStainedTricorne": {
+    "name": "Wine-Stained Tricorne",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "HeartOfDepth": {
+    "name": "Heart of Depth",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WitchsScorchingHat": {
+    "name": "Witch's Scorching Hat",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "CrimsonWitchOfFlames": {
+    "name": "Crimson Witch of Flames",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ThunderSummonersCrown": {
+    "name": "Thunder Summoner's Crown",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ThunderingFury": {
+    "name": "Thundering Fury",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ViridescentVenerersDiadem": {
+    "name": "Viridescent Venerer's Diadem",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ViridescentVenerer": {
+    "name": "Viridescent Venerer",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MaskOfSolitudeBasalt": {
+    "name": "Mask of Solitude Basalt",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ArchaicPetra": {
+    "name": "Archaic Petra",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LaurelCoronet": {
+    "name": "Laurel Coronet",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "DeepwoodMemories": {
+    "name": "Deepwood Memories",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LiyueHarborWharf": {
+    "name": "Liyue Harbor Wharf",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "KnightsOfFavoniusLibrary": {
+    "name": "Knights of Favonius Library",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "JadeChamber": {
+    "name": "Jade Chamber",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "DawnWinery": {
+    "name": "Dawn Winery",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WangshuInn": {
+    "name": "Wangshu Inn",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FavoniusCathedral": {
+    "name": "Katedral Favonius",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Paimon": {
+    "name": "Paimon",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Katheryne": {
+    "name": "Katheryne",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Timaeus": {
+    "name": "Timaeus",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Wagner": {
+    "name": "Wagner",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ChefMao": {
+    "name": "Koki Mao",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Tubby": {
+    "name": "Tubby",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Timmie": {
+    "name": "Timmie",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Liben": {
+    "name": "Liben",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ChangTheNinth": {
+    "name": "Chang the Ninth",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Ellin": {
+    "name": "Ellin",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "IronTongueTian": {
+    "name": "Iron Tongue Tian",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LiuSu": {
+    "name": "Liu Su",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "NRE": {
+    "name": "NRE",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenIce": {
+    "name": "Resonansi Elemental: Woven Ice",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceShatteringIce": {
+    "name": "Resonansi Elemental: Shattering Ice",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenWaters": {
+    "name": "Resonansi Elemental: Woven Waters",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceSoothingWater": {
+    "name": "Resonansi Elemental: Soothing Water",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenFlames": {
+    "name": "Resonansi Elemental: Woven Flames",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceFerventFlames": {
+    "name": "Resonansi Elemental: Fervent Flames",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenThunder": {
+    "name": "Resonansi Elemental: Woven Thunder",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceHighVoltage": {
+    "name": "Resonansi Elemental: High Voltage",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenWinds": {
+    "name": "Resonansi Elemental: Woven Winds",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceImpetuousWinds": {
+    "name": "Resonansi Elemental: Impetuous Winds",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenStone": {
+    "name": "Resonansi Elemental: Woven Stone",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceEnduringRock": {
+    "name": "Resonansi Elemental: Enduring Rock",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceWovenWeeds": {
+    "name": "Resonansi Elemental: Woven Weeds",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElementalResonanceSprawlingGreenery": {
+    "name": "Resonansi Elemental: Sprawling Greenery",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheBestestTravelCompanion": {
+    "name": "The Bestest Travel Companion!",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ChangingShifts": {
+    "name": "Changing Shifts",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TossUp": {
+    "name": "Toss-Up",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Strategize": {
+    "name": "Strategize",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "IHaventLostYet": {
+    "name": "I Haven't Lost Yet!",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LeaveItToMe": {
+    "name": "Leave it to Me!",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WhenTheCraneReturned": {
+    "name": "When the Crane Returned",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Starsigns": {
+    "name": "Starsigns",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "CalxsArts": {
+    "name": "Calx's Arts",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MasterOfWeaponry": {
+    "name": "Master of Weaponry",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "BlessingOfTheDivineRelicsInstallation": {
+    "name": "Blessing of the Divine Relic's Installation",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "QuickKnit": {
+    "name": "Quick Knit",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SendOff": {
+    "name": "Send Off",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "GuardiansOath": {
+    "name": "Guardian's Oath",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AbyssalSummons": {
+    "name": "Abyssal Summons",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Origin": {
+    "name": "Origin",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Mondstadt": {
+    "name": "Mondstadt",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Liyue": {
+    "name": "Liyue",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Inazuma": {
+    "name": "Inazuma",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Sumeru": {
+    "name": "Sumeru",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Legend": {
+    "name": "Legendaris",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "Adept": {
+    "name": "Expert",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "HydroCrystalChunk": {
+    "name": "Crystal Chunk",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "BeginnerPlayerBadge": {
+    "name": "Lencana Pemain Pemula",
+    "description": "Konon katanya adalah lencana pemain yang bisa diperoleh seluruh pemain yang baru saja mulai bermain Genius Invokation TCG.\\nSetiap pemain yang hebat pasti dimulai dari menerima lencana ini, dan pelan-pelan menjadi seorang legenda.\\nTunggu saja. Semuanya akan dimulai dari sini."
+  },
+  "AdvancedPlayerBadge": {
+    "name": "Lencana Pemain Tingkat Tinggi",
+    "description": "Lencana pemain yang dapat diperoleh pemain Genius Invokation TCG yang sering bermain dan melewati pertandingan Tantangan Ascension Pemain Tingkat Tinggi.\\nAda banyak orang yang menjadi pemain, tetapi kebanyakan dari mereka hanya menganggap Genius Invokation TCG sebagai sebuah hobi belaka dan tidak banyak yang bisa menjadi Pemain Tingkat Tinggi.\\nMeski cuma permainan saja, orang-orang yang serius pasti akan memperoleh imbalannya."
+  },
+  "ExpertPlayerBadge": {
+    "name": "Lencana Pemain Ahli",
+    "description": "Lencana pemain yang dapat diperoleh pemain yang telah mempelajari Genius Invokation TCG dan telah melewati pertandingan Tantangan Ascension Pemain Ahli.\\nMungkin mentalitas sekarang sudah berbeda dengan saat pertama kali bertemu dengan Genius Invokation TCG. Tapi dari dalamnya, tetap bisa terasa hal-hal yang baru dan menarik.\\nSeseorang hanya akan rela menginvestasikan waktunya karena merasa permainan ini menyenangkan, hanya bisa menikmati segalanya karena menyukainya."
+  },
+  "MasterPlayerBadge": {
+    "name": "Lencana Pemain Master",
+    "description": "Lencana pemain yang dapat diperoleh pemain Genius Invokation TCG yang telah mencapai standar yang tinggi dan telah melewati pertandingan Tantangan Ascension Pemain Master.\\nDengar-dengar tidak banyak pemain yang bisa menerima lencana ini, dan mereka yang memperolehnya sudah memiliki pemahaman unik mereka sendiri tentang Genius Invokation TCG.\\nKemenangan mungkin bukan lagi satu-satunya hal yang mereka kejar."
+  },
+  "LegendPlayerBadge": {
+    "name": "Lencana Pemain Legendaris",
+    "description": "Lencana pemain yang dapat diperoleh pemain yang telah melewati pertandingan Tantangan Ascension Pemain Legendaris.\\nLencana ini membuktikan bahwa kamu sudah menapaki perjalanan untuk menciptakan legenda milikmu sendiri sebagai seorang pemain.\\nTeruslah jelajahi alam yang lebih tinggi yang bisa kamu capai!"
   },
   "SummertimeSparkle": {
     "name": "Summertime Sparkle",
@@ -11513,7 +12141,7 @@
   },
   "OfSettledThoughts": {
     "name": "Sumber Pemikiran",
-    "description": "Sebuah ruang belajar yang ditumpuk dengan buku-buku tebal, rak bukunya menjulang tinggi seperti dinding yang tak terukur. Ketika kebanyakan orang menatap banyak buku yang terbentang di depan mata mereka, sulit rasanya untuk tidak merasa sedikit kagum.\\nTentu saja, mereka yang tahu menyadari bahwa batas antara kebijaksanaan dan ketidaktahuan bukanlah batas yang tidak boleh dilewati. Selama seseorang bersedia untuk membaca buku-buku ini, satu per satu, mengikuti rencana yang disusun dengan hati-hati, seseorang akan memperoleh pengetahuan baru yang tak terhitung jumlahnya.\\nRekan yang menyukai set perabot ini: Cyno"
+    "description": "Sebuah ruang belajar yang ditumpuk dengan buku-buku tebal, rak bukunya menjulang tinggi seperti dinding yang tak terukur. Ketika kebanyakan orang menatap banyak buku yang terbentang di depan mata mereka, sulit rasanya untuk tidak merasa sedikit kagum.\\nTentu saja, mereka yang tahu menyadari bahwa batas antara kebijaksanaan dan ketidaktahuan bukanlah batas yang tidak boleh dilewati. Selama seseorang bersedia untuk membaca buku-buku ini, satu per satu, mengikuti rencana yang disusun dengan hati-hati, seseorang akan memperoleh pengetahuan baru yang tak terhitung jumlahnya.\\nRekan yang menyukai set perabot ini: Cyno, Faruzan"
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Perpisahan Singkat dengan Kebisingan dan Kekhawatiran",
@@ -11525,7 +12153,7 @@
   },
   "AmidstProsperingMarkets": {
     "name": "Di tengah Pasar yang Makmur",
-    "description": "Sebuah distrik perdagangan dengan perabotan indah yang menyerupai kepada tata letak jalan-jalan Kota Sumeru dan Grand Bazaar. Buah-buahan segar, hidangan lezat, dan segala macam barang sehari-hari dapat ditemukan di kios-kios di sini. Kalau kamu berkeliling, kamu pasti akan bisa menemukan hawa yang unik seperti benar-benar datang ke pasar yang ramai.\\nMereka mengatakan bahwa toko-toko dan kios-kios di kedua sisi jalan Sumeru telah dimodifikasi sesuai dengan aturan khusus yang merupakan produk dari beberapa Penelitian Akademiya, sehingga dapat memberikan pelayanan yang holistik dengan tingkat kesulitan pengelolaan yang seminimal mungkin dan bisa memaksimalkan area yang digunakan.\\nRekan yang menyukai set perabot ini: Dori"
+    "description": "Sebuah distrik perdagangan dengan perabotan indah yang menyerupai kepada tata letak jalan-jalan Kota Sumeru dan Grand Bazaar. Buah-buahan segar, hidangan lezat, dan segala macam barang sehari-hari dapat ditemukan di kios-kios di sini. Kalau kamu berkeliling, kamu pasti akan bisa menemukan hawa yang unik seperti benar-benar datang ke pasar yang ramai.\\nMereka mengatakan bahwa toko-toko dan kios-kios di kedua sisi jalan Sumeru telah dimodifikasi sesuai dengan aturan khusus yang merupakan produk dari beberapa Penelitian Akademiya, sehingga dapat memberikan pelayanan yang holistik dengan tingkat kesulitan pengelolaan yang seminimal mungkin dan bisa memaksimalkan area yang digunakan.\\nRekan yang menyukai set perabot ini: Dori, Faruzan"
   },
   "DeepInTheQuietForest": {
     "name": "Keheningan dalam Hutan yang Tenang",
@@ -11537,7 +12165,7 @@
   },
   "QuietTimesByTheRiverbank": {
     "name": "Waktu Tenang di Tepi Sungai",
-    "description": "Pemukiman yang tenang dengan estetika unik Desa Vimara. Meskipun set perabotan ini tidak terletak di tepi sungai atau di tepi laut, aroma ikan yang tercium melalui desa ini seolah membuatmu jadi mendengar suara gemericik air di telingamu.\\nPerasaan di Desa Vimara sangat berbeda dari kemah Penjaga Hutan, sebagian besar penghuninya tidak memikul tugas penting dan dengan demikian mereka menjalani kehidupan yang santai dan damai sehingga menjadikannya tempat yang sangat menyenangkan bagi mereka yang ingin bersantai."
+    "description": "Pemukiman yang tenang dengan estetika unik Desa Vimara. Meskipun set perabotan ini tidak terletak di tepi sungai atau di tepi laut, aroma ikan yang tercium melalui desa ini seolah membuatmu jadi mendengar suara gemericik air di telingamu.\\nPerasaan di Desa Vimara sangat berbeda dari kemah Penjaga Hutan, sebagian besar penghuninya tidak memikul tugas penting dan dengan demikian mereka menjalani kehidupan yang santai dan damai sehingga menjadikannya tempat yang sangat menyenangkan bagi mereka yang ingin bersantai.\\nRekan yang menyukai set perabot ini: {REALNAME[ID(1)|HOSTONLY(true)]}"
   },
   "SetekhDemurs": {
     "name": "Setekh Demurs",
@@ -11553,7 +12181,7 @@
   },
   "ChorusOfDesertAndWood": {
     "name": "Paduan Suara Gurun dan Kayu",
-    "description": "Banyak varietas tanaman tumbuh subur di ruang yang luar biasa ini, tampaknya ini juga berkat Sub-Space Creation yang dapat menyelaraskan berbagai spesialisasi yang dimiliki tanaman ini sehingga tanaman yang berasal dari gurun dan hutan pun dapat hidup berdampingan dan dengan demikian mengatur perpaduan bunga, pohon, dan rerumputan liar menjadi terlihat indah.\\nBagi peneliti yang menyukai tanaman, area seperti itu benar-benar merupakan harta karun untuk diteliti, meskipun hutan yang semarak ini juga akan menjadi area pemandangan yang menarik bagi orang yang lewat.\\nRekan yang menyukai set perabot ini: Tighnari"
+    "description": "Banyak varietas tanaman tumbuh subur di ruang yang luar biasa ini, tampaknya ini juga berkat Sub-Space Creation yang dapat menyelaraskan berbagai spesialisasi yang dimiliki tanaman ini sehingga tanaman yang berasal dari gurun dan hutan pun dapat hidup berdampingan dan dengan demikian mengatur perpaduan bunga, pohon, dan rerumputan liar menjadi terlihat indah.\\nBagi peneliti yang menyukai tanaman, area seperti itu benar-benar merupakan harta karun untuk diteliti, meskipun hutan yang semarak ini juga akan menjadi area pemandangan yang menarik bagi orang yang lewat.\\nRekan yang menyukai set perabot ini: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}"
   },
   "TimberWallWithJadeEaves": {
     "name": "Tembok Kayu Dengan Tepi Atap Giok",
@@ -11871,6 +12499,10 @@
     "name": "Meja untuk Berdua",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Meja untuk Berdua.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "LongAdhighamaChamferTable": {
+    "name": "Meja Panjang Tanpa Sudut Adhigama",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Panjang Tanpa Sudut Adhigama\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Ranjang Sesejuk Angin\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -11954,6 +12586,10 @@
   "SatisfactionOfSatedThirst": {
     "name": "Kepuasan dari Dahaga yang Terpuaskan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Kepuasan dari Dahaga yang Terpuaskan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AdhigamaVineBackedChair": {
+    "name": "Kursi Sandaran Rambat Adhigama",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kursi Sandaran Rambat Adhigama\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland",
@@ -12087,6 +12723,10 @@
     "name": "Aroma Panggangan dengan Suhu Rendah",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Aroma Panggangan dengan Suhu Rendah.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "DeepwoodDwellersAggregation": {
+    "name": "Tabungan Penghuni Hutan",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Tabungan Penghuni Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Karpet Mondstadt: Semangat Membara",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Karpet Mondstadt: Semangat Membara\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -12150,6 +12790,10 @@
   "JoyfulIllumination": {
     "name": "Cahaya Kegembiraan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Cahaya Kegembiraan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "LightOfTheLandOfWisdom": {
+    "name": "Cahaya Tanah Kebijaksanaan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Cahaya Tanah Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Karangan Bunga: Biru yang Tenang",
@@ -12286,6 +12930,18 @@
   "EphemeralSpirit": {
     "name": "Aroma yang Fana",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Aroma yang Fana.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AmidstBitterAromas": {
+    "name": "Aroma di Tengah Kepahitan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Di Tengah Aroma yang Pahit\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DeepwoodDwellersIngenuity": {
+    "name": "Resep Penghuni Hutan",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Kecerdasan Penghuni Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DeepwoodDwellersBrilliance": {
+    "name": "Gemilang Penghuni Hutan",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Kecemerlangan Penghuni Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "LandscapePaintingCountryHome": {
     "name": "Lukisan Pemandangan: Kampung Halaman",
@@ -12871,6 +13527,18 @@
     "name": "Kerangka Kota Kebijaksanaan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Keseharian Kota Kebijaksanaan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "ContrastsOfTheCityOfWisdom": {
+    "name": "Kontras Kota Kebijaksanaan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kontras Kota Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PeaceInTheCityOfWisdom": {
+    "name": "Ketenangan Kota Kebijaksanaan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Ketenangan Kota Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "ErrandsInTheCityOfWisdom": {
+    "name": "Tugas Kota Kebijaksanaan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Tugas Kota Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Air Mancur Bunga & Burung",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Air Mancur Bunga & Burung\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13098,6 +13766,18 @@
   "DesertWallStalwartDefense": {
     "name": "Dinding Gurun: Pertahanan Sempurna",
     "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Dinding Gurun: Pertahanan yang Kokoh.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DesertGateWindjammer": {
+    "name": "Gerbang Padang Pasir: Penolak Angin",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Gerbang Padang Pasir: Penolak Angin\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DomedGateForestTune": {
+    "name": "Gerbang Kubah: Nada Hutan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Gerbang Kubah: Nada Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DomedWallTheBirdsSang": {
+    "name": "Gerbang Kubah: Kicauan Burung",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Gerbang Kubah: Kicauan Burung\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fondasi Batu: Waktu Penuh Keberuntungan",
@@ -13499,6 +14179,22 @@
     "name": "Nama Besar Eremite",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Nama Besar Eremite.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "AnElegantVoice": {
+    "name": "Suara Elegan",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Suara yang Elegan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AMellowVoice": {
+    "name": "Suara yang Lembut",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Suara yang Lembut\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "KarmaphalaThreePlyNoticeboard": {
+    "name": "Papan Pengumuman Vertikal Tiga Sisi Karmaphala",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Papan Pengumuman Vertikal Tiga Sisi Karmaphala\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TeaBreakShade": {
+    "name": "Rindang Santai Teh",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rindang Santai Teh\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampu Jalan dengan Ukiran Besi",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Lampu Jalan dengan Ukiran Besi\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13698,6 +14394,10 @@
   "PearOrchardAccessoryAttendAndListen": {
     "name": "Aksesoris Kebun Pir - Hadir dan Dengarkan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Aksesori Kebun Pir: Dengar dan Pahami.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "KarmaphalaDisplayTable": {
+    "name": "Meja Pajangan Karmaphala",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Pajangan Karmaphala\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Rak Toko Anggur: Sepuas Hati",

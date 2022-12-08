@@ -1,0 +1,12 @@
+{
+  "name": "Spada delle ombre",
+  "description": "Una spada forgiata su misura per un celebre samurai, in grado di abbattere perfino un guerriero tengu a mezz'aria.",
+  "passiveName": "Discendenza d'Iwakura",
+  "passiveDescription": {
+    "0": "Dopo l'uso di un'abilità elementale, ottieni un 1 Seme della discendenza. Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s. Il Seme della discendenza dura per 30 s e puoi averne fino a 3 contemporaneamente. Una volta usato un Tripudio elementale, tutti i Semi della discendenza verranno consumati. Dopo 2{NON_BREAK_SPACE}s, il personaggio rigenera <cryo>6</cryo> di energia per ogni Seme consumato.",
+    "1": "Dopo l'uso di un'abilità elementale, ottieni un 1 Seme della discendenza. Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s. Il Seme della discendenza dura per 30{NON_BREAK_SPACE}s, e puoi averne fino a 3 contemporaneamente. Una volta usato un Tripudio elementale, tutti i Semi della discendenza verranno consumati. Dopo 2{NON_BREAK_SPACE}s, il personaggio rigenererà <cryo>7,5</cryo> di energia per ogni Seme consumato.",
+    "2": "Dopo l'uso di un'abilità elementale, ottieni un 1 Seme della discendenza. Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s. Il Seme della discendenza dura per 30 s, e puoi averne fino a 3 contemporaneamente. Una volta usato un Tripudio elementale, tutti i Semi della discendenza verranno consumati. Dopo 2 s, il personaggio rigenererà <cryo>9</cryo> di energia per ogni Seme consumato.",
+    "3": "Dopo l'uso di un'abilità elementale, ottieni un 1 Seme della discendenza. Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s. Il Seme della discendenza dura per 30 s, e puoi averne fino a 3 contemporaneamente. Una volta usato un Tripudio elementale, tutti i Semi della discendenza verranno consumati. Dopo 2{NON_BREAK_SPACE}s, il personaggio rigenererà <cryo>10,5</cryo> di energia per ogni Seme consumato.",
+    "4": "Dopo l'uso di un'abilità elementale, ottieni un 1 Seme della discendenza. Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s. Il Seme della discendenza dura per 30 s, e puoi averne fino a 3 contemporaneamente. Una volta usato un Tripudio elementale, tutti i Semi della discendenza verranno consumati. Dopo 2{NON_BREAK_SPACE}s, il personaggio rigenererà <cryo>12</cryo> di energia per ogni Seme consumato."
+  }
+}

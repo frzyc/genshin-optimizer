@@ -44,7 +44,7 @@
     "description": {
       "0": "Aloy lança uma Bomba Congelante na direção desejada que explode no impacto, causando <cryo>Dano Cryo</cryo>. Depois de explodir, a Bomba Congelante se dividirá em muitas Bombinhas Congelantes que explodirão ao entrar em contato com os oponentes ou após um curto período de tempo, causando <cryo>Dano Cryo</cryo>.",
       "1": "Quando a Bomba Congelante ou suas bombinhas atingem os oponentes, elas diminuirão o ATQ dos oponentes e concederão 1 acúmulo de Bobina a Aloy.",
-      "2": "Aloy pode ganhar 1 acúmulo de Bobinas a cada 0,1s.",
+      "2": "Aloy pode ganhar 1 acúmulo de Bobinas a cada 0.1s.",
       "3": "<br/>",
       "4": "<strong>Bobina</strong>",
       "5": "Cada acúmulo aumentará o Dano do Ataque Normal de Aloy.",
@@ -79,7 +79,7 @@
     "description": {
       "0": "Arremessa uma Bateria cheia com Cryo na direção do alvo antes de ligá-la com uma flecha, causando <cryo>Dano Cryo em uma AdE</cryo>.",
       "1": "<br/>",
-      "2": "<i>Seja \"Zero Dawn\" refira-se à esperança ou à extinção, não importa mais. Aloy já salvou seu mundo... E este também tem seus próprios heróis que se preocuparão com seu destino.</i>"
+      "2": "<i>Quer \"Zero Dawn\" se refira à esperança ou à extinção, não importa mais. Aloy já salvou seu mundo... E este também tem seus próprios heróis que se preocuparão com seu destino.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",

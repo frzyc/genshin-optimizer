@@ -51,7 +51,7 @@
       "7": "Ordonne à l'esprit talismanique d'infliger des <cryo>DGT Cryo de zone</cryo>.",
       "8": "<br/>",
       "9": "<strong>Pennage glacé</strong>",
-      "10": "Lorsqu'une attaque normale, chargée ou plongeante, une compétence ou un déchaînement élémentaire inflige des <cryo>DGT Cryo</cryo> à un ennemi, les DGT infligés augmentent en fonction de l'ATQ actuelle de Shenhe.",
+      "10": "Lorsqu'une attaque normale, chargée ou plongeante, une compétence ou un déchaînement élémentaires inflige des <cryo>DGT Cryo</cryo> à un ennemi, les DGT infligés augmentent en fonction de l'ATQ actuelle de Shenhe.",
       "11": "<br/>",
       "12": "Les effets du pennage glacé disparaissent à la fin de sa durée ou après avoir activé un certain nombre de cumuls. En utilisant un pennage glacé avec un appui long à la place d'un appui simple, sa durée et le nombre de cumuls générés augmentent.",
       "13": "Lorsqu'une attaque de <cryo>DGT Cryo</cryo> touche plusieurs ennemis en même temps, les cumuls sont consommés selon le nombre d'ennemis touchés. Les cumuls de pennage glacé sont calculés indépendamment pour tous les personnages de l'équipe.",
@@ -129,7 +129,7 @@
   "constellation1": {
     "name": "Clarté du cœur",
     "description": {
-      "0": "Confère une utilisation supplémentaire de <strong>Invocation d'esprit printanier</strong>."
+      "0": "Confère une utilisation supplémentaire d'<strong>Invocation d'esprit printanier</strong>."
     }
   },
   "constellation2": {

@@ -138,7 +138,7 @@
   "constellation2": {
     "name": "Wellen des Wolkenmeers",
     "description": {
-      "0": "Gewährt Sangonomiya Kokomi Heilungsboni in Bezug auf Figuren mit 50 % oder weiniger LP basierend auf ihren max. LP auf folgende Art und Weise:",
+      "0": "Gewährt Sangonomiya Kokomi Heilungsboni in Bezug auf Figuren mit 50 % oder weniger LP basierend auf ihren max. LP auf folgende Art und Weise:",
       "1": [
         " Durch „Bakekurage“ von <strong>Eid des Kurage</strong>: 4,5 % der max. LP",
         " Durch Standardangriffe und heftige Schläge von <strong>Nereidenaufstieg</strong>: 0,6 % der max. LP."
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Mond über den Strömen",
     "description": {
-      "0": "Erhöht die Angriffsgeschwindigkeit der Standardangriffe von Sangonomiya Kokomi im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> um 10 % und stellt 0,8 Punkt Elementarenergie wieder, wenn die Standardangriffe Gegener treffen.",
+      "0": "Erhöht die Angriffsgeschwindigkeit der Standardangriffe von Sangonomiya Kokomi im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> um 10 % und stellt 0,8 Punkt Elementarenergie wieder, wenn die Standardangriffe Gegner treffen.",
       "1": "0,2 s Abklingzeit."
     }
   },

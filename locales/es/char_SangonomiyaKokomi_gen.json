@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del agua y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso e infligir <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
       }
     },
     "skillParams": {

@@ -1,0 +1,12 @@
+{
+  "name": "Ode al Florvento",
+  "description": "Un arco adornato di fiori ignoti che custodisce le speranze di una persona altrettanto ignota.",
+  "passiveName": "Desiderio del Florvento",
+  "passiveDescription": {
+    "0": "Dopo l'uso di un'abilità elementale, ricevi un dono dall'antico Desiderio del Florvento, aumentando l'ATT di un <cryo>16%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "1": "Dopo l'uso di un'abilità elementale, ricevi un dono dall'antico Desiderio del Florvento, aumentando l'ATT di un <cryo>20%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "2": "Dopo l'uso di un'abilità elementale, ricevi un dono dall'antico Desiderio del Florvento, aumentando l'ATT di un <cryo>24%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "3": "Dopo l'uso di un'abilità elementale, ricevi un dono dall'antico Desiderio del Florvento, aumentando l'ATT di un <cryo>28%</cryo> per 6{NON_BREAK_SPACE}s.",
+    "4": "Dopo l'uso di un'abilità elementale, ricevi un dono dall'antico Desiderio del Florvento, aumentando l'ATT di un <cryo>32%</cryo> per 6{NON_BREAK_SPACE}s."
+  }
+}

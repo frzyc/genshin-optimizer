@@ -1,3 +1,10 @@
 {
-  "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> depois da corrida"
+  "afterSprint": "Após Correr",
+  "afterSkill": "Após usar a <strong>Arte Kamisato: Hyouka</strong>",
+  "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> depois da corrida",
+  "staminaRestore": "Stamina Recuperada",
+  "snowflakeDMG": "Dano do Granizo",
+  "dmgBySnowflake": "Inimigos foram atingidos pelo Granizo Seki no To da <strong>Arte Kamisato: Soumetsu</strong>",
+  "afterBurst": "Após usar <strong>Arte Kamisato: Soumetsu</strong>",
+  "c6Active": "Usuhari Butou está ativo"
 }

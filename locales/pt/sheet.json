@@ -5,14 +5,23 @@
   "hitOp": {
     "normal": "Acertos de Ataques Normais nos oponentes",
     "charged": "Acertos de Ataques Carregados nos oponentes",
+    "plunging": "Quando um Ataque Imersivo atinge inimigos",
+    "skill": "Quando a Habilidade Elemental atinge inimigos",
+    "burst": "Quando o Supremo atinge inimigos",
+    "geo": "<geo>Dano Geo</geo> aos oponentes",
     "anemo": "<anemo>Dano Anemo</anemo> acerta os oponentes",
     "hydro": "<hydro>Dano Hydro</hydro> acerta os oponentes",
     "cryo": "<cryo>Dano Cryo</cryo> acerta os oponentes",
     "pyro": "<pyro>Dano Pyro</pyro> acerta os oponentes",
-    "electro": "<electro>Dano Electro</electro> acerta os oponentes"
+    "electro": "<electro>Dano Electro</electro> acerta os oponentes",
+    "dendro": "<dendro>Dano Dendro</dendro> acerta no oponente"
   },
+  "eleAbsor": "Absorção Elemental",
   "afterUse": {
     "skill": "Após usar a Habilidade Elemental",
     "burst": "Após usar o Supremo"
+  },
+  "increase": {
+    "atk": "Aumento de ATQ"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "Fendiluvio",
+  "description": "Uno spadone fluorescente non affilato che annienta i nemici con la forza bruta.",
+  "passiveName": "Flagello della tempesta e delle maree",
+  "passiveDescription": {
+    "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Electro di un <cryo>20%</cryo>.",
+    "1": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Electro di un <cryo>24%</cryo>.",
+    "2": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Electro di un <cryo>28%</cryo>.",
+    "3": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Electro di un <cryo>32%</cryo>.",
+    "4": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Electro di un <cryo>36%</cryo>."
+  }
+}

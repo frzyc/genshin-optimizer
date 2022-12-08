@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Bis repetita",
     "description": {
-      "0": "Chaque orbe ou particule élémentaire obtenu(e) par votre personnage déployé prolonge le cercle de mélodie de <strong>C'est parti pour le show ♪</strong> de 1 s.",
+      "0": "Chaque particule ou orbe élémentaires obtenus par votre personnage déployé prolongent le cercle de mélodie de <strong>C'est parti pour le show ♪</strong> de 1 s.",
       "1": "Durée max : 5 s."
     }
   },

@@ -1,0 +1,12 @@
+{
+  "name": "Luce nei vicoli",
+  "description": "Una spada a lama dritta, nera come la notte. Appartenuta a un ladro che era solito vagare per le stradine avvolte dalle tenebre.",
+  "passiveName": "Eroe itinerante",
+  "passiveDescription": {
+    "0": "Aumenta i DAN inflitti dal personaggio con quest'arma equipaggiata di un <cryo>12%</cryo>. Subire DAN disabilita quest'effetto per 5{NON_BREAK_SPACE}s.",
+    "1": "Aumenta i DAN inflitti dal personaggio con quest'arma equipaggiata di un <cryo>15%</cryo>. Subire DAN disabilita quest'effetto per 5{NON_BREAK_SPACE}s.",
+    "2": "Aumenta i DAN inflitti dal personaggio con quest'arma equipaggiata di un <cryo>18%</cryo>. Subire DAN disabilita quest'effetto per 5{NON_BREAK_SPACE}s.",
+    "3": "Aumenta i DAN inflitti dal personaggio con quest'arma equipaggiata di un <cryo>21%</cryo>. Subire DAN disabilita quest'effetto per 5{NON_BREAK_SPACE}s.",
+    "4": "Aumenta i DAN inflitti dal personaggio con quest'arma equipaggiata di un <cryo>24%</cryo>. Subire DAN disabilita quest'effetto per 5{NON_BREAK_SPACE}s."
+  }
+}

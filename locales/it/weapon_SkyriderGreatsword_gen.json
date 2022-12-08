@@ -1,0 +1,12 @@
+{
+  "name": "Spadone del Cavalcacieli",
+  "description": "Un'affidabile spada in acciaio. Una volta, il leggendario Cavalcacieli tentò di cavalcarla come se fosse una spada volante... Per la seconda volta.",
+  "passiveName": "Coraggio",
+  "passiveDescription": {
+    "0": "Per colpo a segno, gli attacchi normali o caricati aumentano l'ATT di un <cryo>6%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una volta ogni 0,5{NON_BREAK_SPACE}s.",
+    "1": "Per colpo a segno, gli attacchi normali o caricati aumentano l'ATT di un <cryo>7%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una volta ogni 0,5{NON_BREAK_SPACE}s.",
+    "2": "Per colpo a segno, gli attacchi normali o caricati aumentano l'ATT di un <cryo>8%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una volta ogni 0,5{NON_BREAK_SPACE}s.",
+    "3": "Per colpo a segno, gli attacchi normali o caricati aumentano l'ATT di un <cryo>9%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una volta ogni 0,5{NON_BREAK_SPACE}s.",
+    "4": "Per colpo a segno, gli attacchi normali o caricati aumentano l'ATT di un <cryo>10%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una volta ogni 0,5{NON_BREAK_SPACE}s."
+  }
+}

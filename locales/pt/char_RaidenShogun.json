@@ -1,8 +1,16 @@
 {
   "skill": {
+    "eye": "Olho do Julgamento Tempestuoso",
     "partyCost": "Custo de energia"
   },
+  "burst": {
+    "resolves": "Acúmulos de Determinação"
+  },
   "a4": {
+    "enerRest": "Energia regenerada pelo <strong>Musou Isshin</strong>",
     "eleDMG": "Bônus de Dano Electro"
+  },
+  "c4": {
+    "expires": "Estado <strong>Musou Isshin</strong> iniciado pela <strong>Arte Secreta: Musou Shinsetsu</strong> expira"
   }
 }

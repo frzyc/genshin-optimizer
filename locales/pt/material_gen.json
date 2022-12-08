@@ -175,6 +175,10 @@
     "name": "Moeda de Ferro Antiga",
     "description": "Uma antiga moeda de ferro que, de acordo com Ulman, vale muito dinheiro. No entanto, não parece nada de especial ao tocá-la..."
   },
+  "PlayerEXP": {
+    "name": "EXP de Jogador",
+    "description": "Obtido ao vencer partidas de Chamado Sagrado dos Sete. Cada duelo vencido baseia-se nos caminhos para a vitória, tal é o próprio ato de ganhar experiência. Saber como superar e subjugar o adversário em qualquer situação é a maior força que um jogador pode ter."
+  },
   "BusinessEarnings": {
     "name": "Fundos",
     "description": "Uma quantidade considerável de \"Geleias de Vinho\", representando o total de sua arrecadação nesta venda beneficente. Com o encerramento do Festvinho, Bernhard irá trocar as Geleias de Vinho por Mora e entregar para os idosos e crianças mais necessitados."
@@ -193,11 +197,15 @@
   },
   "FungusMedal": {
     "name": "Insígnia Cogumelo",
-    "description": "Uma medalha feita de materiais únicos como recompensa para os melhores participantes do \"Treinamento Especial\" da Copa Nilotpala de Domadores de Feras.\\nUma das chaves para alcançar um entendimento tácito e ficar mais fortes é lutar e derrotar inimigos poderosos com seus Cogumelos no campo de treinamento especial.\\nUse seus Emblemas de Cogumelo para trocá-los por itens incríveis durante o \"Torneio Cogumélico\"."
+    "description": "Uma medalha feita de materiais únicos como recompensa para os melhores participantes do \"Treinamento Especial\" da Copa Nilotpala de Domadores de Feras.\\nUma das chaves para alcançar um entendimento tácito e ficar mais forte é lutar e derrotar inimigos poderosos com seus Cogumelos no campo de treinamento especial.\\nUse seus Emblemas de Cogumelo para trocá-los por itens incríveis durante o \"Torneio Cogumélico\"."
   },
   "ShatteredPhenocryst": {
     "name": "Fragmento de Fenocristal",
     "description": "Derrote o poderoso Hypostasis em seu Domínio desconhecido e obtenha o misterioso cristal que se forma quando sua força elemental se dissipa.\\n Durante o evento \"Sinfonia Hipostática — Verso Dissonante\", você pode usá-lo para trocar itens valiosos."
+  },
+  "CourageTestTicket": {
+    "name": "Cupom Kimodameshi",
+    "description": "Cupom ganho da exibição de coragem e engenhosidade de um participante ao concluir desafios especiais no evento do \"Teste de Coragem\" realizado pela Comissão Yashiro.\\nVocê pode trocar esses cupons por recompensas durante o evento \"Akitsu Kimodameshi\"."
   },
   "Primogem": {
     "name": "Gema Essencial",
@@ -537,7 +545,7 @@
   },
   "Cyno": {
     "name": "Cyno",
-    "description": "O General Mahamatra responsável por supervisionar os pesquisadores da Academia.\\nDizem que quando ele está trabalhando, o General Mahamatra é ainda mais eficiente do que o \"Grande Vayuvyastra\" feito pelos Kshahrewar."
+    "description": "General Mahamatra, responsável por supervisionar os estudiosos da Academia. Dizem que no trabalho, o General Mahamatra é ainda mais eficiente do que o \"Grande Vayuvyastra\" criado pelos Kshahrewar."
   },
   "Candace": {
     "name": "Candace",
@@ -550,6 +558,14 @@
   "Layla": {
     "name": "Layla",
     "description": "Estudante dos Rtawahist, especializada em astrologia teórica. Sofre de sonambulismo e insônia, ela está sempre enfrentando distúrbios de sono."
+  },
+  "Wanderer": {
+    "name": "Andarilho",
+    "description": "Um jovem andarilho de identidade misteriosa. Se veste como um shugenja, mas com certeza não age como um."
+  },
+  "Faruzan": {
+    "name": "Faruzan",
+    "description": "Uma pesquisadora de \"cem anos atrás\". Ela gosta de se identificar como a mais velha de todas, com um conhecimento significativo de escrituras antigas e máquinas de todos os tipos."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
@@ -791,6 +807,14 @@
     "name": "Stella Fortuna de Layla",
     "description": "Material de Ativação da Constelação de Layla"
   },
+  "WanderersStellaFortuna": {
+    "name": "Stella Fortuna do Andarilho",
+    "description": "Material de Ativação da Constelação do Andarilho"
+  },
+  "FaruzansStellaFortuna": {
+    "name": "Stella Fortuna de Faruzan",
+    "description": "Material de Ativação da Constelação de Faruzan"
+  },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas",
     "description": "Um rascunho inicial da história de um viajante, registrando as muitas coisas que eles viram em sua jornada pelas terras. Mas por que isso existe? É quase como se você já estivesse aqui antes...\\n\\nUse este item para desbloquear o Passe de Batalha do Gnóstico do período."
@@ -798,6 +822,10 @@
   "BlessingOfTheWelkinMoonNewMoon": {
     "name": "Bênção da Lua Nova - Lua Nova",
     "description": "Uma oração ritual, que ocorre no surgimento da lua nova, para pedir as bênçãos de riqueza e boa sorte da lua. Você pode considerá-la como a primeira lua nova em Teyvat, pelo menos é a primeira que você já viu aqui.\\n\\nUse este item para receber 30 dias de recompensas da Benção da Lua Nova."
+  },
+  "AnAppellativeStroke": {
+    "name": "Pena de Apelação",
+    "description": "Uma pena que pode dar um novo nome a uma certa pessoa.\\nQuando um novo nome é dado, ele não pode ser alterado."
   },
   "EnergyOrbPyro": {
     "name": "Orbe de Energia (Pyro)",
@@ -1223,7 +1251,7 @@
     "name": "Carne Fresca Fria",
     "description": "Um tipo de carne fresca deliciosa incomum.\\nEssa espécie de javali foi extinta há muito tempo e foi preservada pela temperaturas extremas da Espinha do Dragão. Para os amantes da gastronomia de Teyvat, isso é considerado um ingrediente sagrado."
   },
-  "UnagiMeat": {
+  "EelMeat": {
     "name": "Carne Unagi",
     "description": "Carne fresca de um Unagi. Se manuseada adequadamente, pode ser utilizada para fazer comida fresca deliciosa."
   },
@@ -2639,7 +2667,7 @@
     "name": "Dente de Dragão Que Extraiu a Vitalidade",
     "description": "Um Dente de Dragão infundido com energia vital. Não importa se é seu brilho ou textura, todos podem deixar uma pessoa inquieta..."
   },
-  "PrincesssBox": {
+  "PrincessBox": {
     "name": "Caixa da Princesa",
     "description": "Um caixa de tesouro com um padrão decorativo embaixo. A ornamentação parece ser parte de um conjunto de três peças. Quando o padrão estiver completo, uma porta poderá abrir.\\n\"Temo não poder completar este desenho.\"\\n\"Faz muito tempo desde que vi o céu azul e a grama verde. Não sei quais cores usar para capturar a paisagem do gelo derretendo e da neve que meu pai quer.\"\\n\"Quando ele retornar, tudo já estará de volta a ser como era. Mas não consigo suportar mais este frio.\"\\n\"Perdoe-me, pai, perdoe meu péssimo desempenho.\"\\n\"Imunlaukr, eu gostaria de lhe ver de novo...\""
   },
@@ -3857,7 +3885,7 @@
   },
   "RukkhashavaMushrooms": {
     "name": "Cogumelo Rukkhashava",
-    "description": "Um cogumelo que cresce em camadas, como um mar de nuvens. Normalmente cresce nas árvores das profundezas da floresta tropical. Por isso, o povo de Sumeru o considera a encarnação do legado da Lorde Maior Rukkhadevata."
+    "description": "Um cogumelo que cresce em camadas, como um mar de nuvens. Normalmente cresce nas árvores das profundezas da floresta tropical."
   },
   "Padisarah": {
     "name": "Padisarah",
@@ -5939,6 +5967,18 @@
     "name": "Chave do Santuário das Profundezas de Sumeru",
     "description": "Uma chave que pode quebrar o selo dos antigos Santuários das Profundezas espalhadas por Sumeru.\\nEstes Santuários das Profundezas se fecharam quando a civilização que os construiu foi perdida. Chaves perdidas no fundo de Domínios são capazes de quebrar os selos. Ou talvez, por um momento, essas chaves ajudem os selos a esquecer tudo o que perderam."
   },
+  "BlankDynamicCard": {
+    "name": "Carta Holográfica em Branco",
+    "description": "Uma carta em branco com o verso pintado. Dizem que se você colocar o nome de sua carta holográfica desejada nesta carta em branco, você pode conseguir a face do agente da Associação localizado na Taverna."
+  },
+  "MatchInvitationLetter": {
+    "name": "Carta de Convite",
+    "description": "Você pode selecionar um jogador da Lista de Jogadores através do mural de convites, e então confiar à Cauda do Gato o envio de um convite usando esta Carta de Convite. O jogador convidado irá até à taverna e aguardará por um duelo com você."
+  },
+  "LuckyCoin": {
+    "name": "Moedas da Sorte",
+    "description": "Moeda verificada e usada pela Associação de Jogadores. Pode ser usada para adquirir vários itens relacionados ao Chamado Sagrado dos Sete. Dizem que estas moedas eram chamadas assim no começo na esperança que trouxessem sorte àqueles que as carregavam. Entretanto, talvez sejam aqueles sortudos o bastante que consigam possuí-las..."
+  },
   "Dish": {
     "name": "Prato",
     "description": "Itens criados ao cozinhar"
@@ -7819,6 +7859,26 @@
     "name": "Halvamazd",
     "description": "A especialidade da Nahida. Diz-se que Mazi significa \"sabedoria\" em Sumeru. Uma \"sabedoria\" assim requintada é realmente irresistível. Nahida exibia um sorriso suave no olhar: \"As anêmonas do mar ajudaram e testemunharam o crescimento dos peixes, então não é nada além do normal que os peixinhos quiseram dar algo em troca\"."
   },
+  "SuspiciousSamosa": {
+    "name": "Samosa Suspeita",
+    "description": "Um lanche frito. Sua crosta gordurosa e recheio de sabor forte e agressivo sufocam facilmente o desejo de uma segunda mordida, mesmo com a tentativa de equilibrar o sabor com menta - que aparentemente falhou."
+  },
+  "Samosa": {
+    "name": "Samosa",
+    "description": "Um lanche frito. O recheio é bem mexido e enrolado em uma massa fina, em forma de triângulo, então é frito em uma frigideira até dourar. Tanto o recheio de carne quanto o vegetariano são comuns, por isso, se tornou um \"campo de batalha\" para os carnívoros e os vegetarianos."
+  },
+  "DeliciousSamosa": {
+    "name": "Samosa Deliciosa",
+    "description": "Um lanche frito. Cada bolso dourado e crocante tem um recheio macio e glutinoso. Ninguém resiste a comer um só, saboreando lentamente... pedaço por pedaço. É comum se perder no aroma sedutor da receita e, antes que perceba, o prato já está vazio."
+  },
+  "TraditionallyMadeCharcoalBakedAjilenakhCake": {
+    "name": "Bolo de Coco-Carvão Tradicional",
+    "description": "A especialidade de Faruzan. O bolo escuro e doce, deitado como está em cima de uma cama de molho verde mentolado, quase parece um mecanismo enigmático. Sua hesitação deve ter chegado de alguma forma a Faruzan, pois ela então se endireitou para assegurar-lhe assertivamente que este é um prato tradicional em Sumeru e que seu sabor é garantido. M—Mas, você não pode deixar de se perguntar, o povo de Sumeru realmente tinha gostos tão refinados há cem anos atrás?"
+  },
+  "ShimiChazuke": {
+    "name": "Chazuke Autêntico",
+    "description": "A especialidade do Andarilho. A fragrância levemente amarga do chá e o aroma doce e refrescante do arroz combinam-se perfeitamente. É impossível não terminar o prato inteiro depois de experimentá-lo. Como ele conseguiu cozinhar algo tão extraordinário? Ah, sua expressão deve ter deixado esse pensamento transparecer, pois o rosto dele de repente fica sombrio: \"Você já terminou? Pare de ficar boquiaberto e vá lavar a louça agora.\""
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Desbloquear utensílios de cozinha"
@@ -8358,6 +8418,10 @@
   "RecipeRoseCustard": {
     "name": "Receita: Creme de Rosa",
     "description": "Uma receita passo a passo detalhada para fazer Creme de Rosa."
+  },
+  "RecipeSamosa": {
+    "name": "Receita: Samosa",
+    "description": "Uma receita passo a passo detalhada para fazer Samosa."
   },
   "CraftedItems": {
     "name": "Produtos Combinados",
@@ -9735,6 +9799,22 @@
     "name": "Carta Fatui Misteriosa",
     "description": "Uma carta que você encontrou depois de derrotar um Agente de Dívidas dos Fatui. Você não sabe porque ele estava com ela."
   },
+  "HiltLikeObject": {
+    "name": "Objeto similar a uma Empunhadura",
+    "description": "Uma coisa que parece similar a empunhadura de uma espada. Será que é a Lâmina Oculta que Lan encontrou..."
+  },
+  "ABriefAnalysisOfPossibleEventsOfHistoricalImportanceInTheTatarasunaArea": {
+    "name": "Uma Análise Sobre a Possível Grande Relevância Histórica de Tatarasuna em Inazuma",
+    "description": "Uma Análise Sobre a Possível Grande Relevância Histórica de Tatarasuna em Inazuma"
+  },
+  "TheIsleOfDarklingClouds": {
+    "name": "Ilha das Nuvens Escuras",
+    "description": ""
+  },
+  "BoxfulOfHomelandSoil": {
+    "name": "Caixa de Solo da Terra Natal",
+    "description": "Terra que Sun Yu pegou de sua terra natal.\\nPor muitos lugares percorreu, e não sabe quando retornará."
+  },
   "DerivedContents": {
     "name": "Conteúdo Decifrado",
     "description": "Conteúdo decifrado depois de ter suas pistas reunidas."
@@ -9742,6 +9822,10 @@
   "XudongsLetter": {
     "name": "Carta de Xudong",
     "description": "Uma carta deixada por Xudong. Parece haver algo pressionado dentro dela..."
+  },
+  "RandomWeaponShards": {
+    "name": "Fragmento de Alguma Arma",
+    "description": "Um fragmento de alguma arma. Não se sabe porquê foi destruída..."
   },
   "SilkFlowerSeed": {
     "name": "Semente de Flor de Seda",
@@ -10066,6 +10150,10 @@
   "PlumeOfTheChangingWinds": {
     "name": "Pluma dos Ventos Oscilantes",
     "description": "Material especial de refinamento para a Lâmina do Vento Mensageiro.\\nÉ uma pena antiga entalhada em turquesa. Foi utilizada como um ornamento ou símbolo em algum momento."
+  },
+  "ParasolTalcum": {
+    "name": "Pó do Guarda-Chuva",
+    "description": "Material de Refinamento para a Chuva Floral.\\nUm pó utilizado para colar bambu e a superfície de um guarda-chuva.\\nMesmo com o passar das estações e com a dispersa chuva tornando-se neblina, sempre haverão memórias a se pensar, como um guarda-chuva acompanhando-o em seus sonhos."
   },
   "FalconsDance": {
     "name": "Dança do Falcão",
@@ -10811,6 +10899,22 @@
     "name": "Passe de Batalha: Origem Fúngica",
     "description": "Estilo de cartão de visita.\\n\"...Viajantes, não se entristeçam, pois o vento do amanhecer certamente soprará os esporos dos fungos e os levará para os campos dos belos sonhos esperançosos de vocês...\""
   },
+  "WandererDriftersBallad": {
+    "name": "Andarilho: Balada Transitória",
+    "description": "Estilo de Cartão de Visita.\\nO passado se esconde em um mundo transitório, os fluxos de flores acompanham a fina neve."
+  },
+  "FaruzanSealedSecret": {
+    "name": "Faruzan: Segredo Selado",
+    "description": "Estilo de Cartão de Visita.\\n\"Enfim, só lembre de na sua próxima pergunta, se referir a mim como Madame! Sinceramente...\""
+  },
+  "AchievementInvoker": {
+    "name": "Conquista: Sete Sagrados",
+    "description": "Estilo de Cartão de Visita.\\n\"Nessa vila, não há ninguém que possa me vencer!\""
+  },
+  "TravelNotesStellarRivers": {
+    "name": "Passe de Batalha — Rios Espirituais",
+    "description": "Estilo de Cartão de Visita.\\nO nome do banquete há muito se esqueceu, os três rios estão espalhados entre as nuvens, e o outono ainda persiste na curva do crepúsculo."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
     "description": "Pode usar em Mondstadt para buscar 'Anemoculus Perdidos' nos arredores.\\nEssa pedra tem características similares às Estátuas Anemo das Estátuas dos Sete e gera ressonância com Anemoculus.\\nAs Pedras de Ressonância de Oculus são imitações brutas das Estátuas dos Sete construídas pelos antigos. Mas é exatamente devido a essa rudeza que desejam a força de oculus elemental e oferecendo uma boa oportunidade a devotos e aventureiros para encontrar oculus."
@@ -10995,6 +11099,10 @@
     "name": "Aranyaka",
     "description": "Arama lhe deu esse livro.\\nParece ter testemunhado a passagem de muitos anos. Alguém talvez o tenha utilizado para registrar algo, mas todo seu o conteúdo agora está perdido.\\nUse-o para documentar suas aventuras com os Aranaras."
   },
+  "CasketOfTomes": {
+    "name": "Urna de Grimórios",
+    "description": "Uma caixa de cartas lançada pela Associação de Jogadores de Chamado Sagrado dos Sete. Apenas iniciantes que aprenderam as regras básicas e são jogadores verificados podem coletar uma.\\nDizem que estas caixas foram feitas por pesquisadores da Academia de Sumeru, e que elas apresentam um mecanismo especial que pode ser usado para detectar pessoas próximas que também possuam Urnas de Grimórios.\\nUse esta função para participar de mais partidas contra jogadores próximos!"
+  },
   "DendroculusResonanceStone": {
     "name": "Pedra de Ressonância de Dendroculus",
     "description": "Uma pedra que pode ser utilizada em Sumeru para procurar por Dendroculus perdidos.\\nUm amuleto peculiar com qualidades similares as Estátuas dos Sete Dendro. Por isso, é atraído para os Dendroculus.\\nNesse mundo há grama e árvores, videiras e flores — seres vivos Dendro em diversos tamanhos e formas. Apesar de aparências diferentes e vários outros aspectos, todos nasceram da mesma terra, e todos retornarão para ela."
@@ -11050,6 +11158,10 @@
   "CloudRetainersDamaskedDevice": {
     "name": "Dispositivo Adamascado da Retentora de Nuvem",
     "description": "Um dispositivo feito de papel na forma de um pássaro que Retentora de Nuvem deu para você.\\nApesar de poder ser chamado um \"dispositivo\", você não consegue ver nenhum componente mecânico tradicional aqui, bem, não do exterior. Parece que as habilidades dessa Adeptus como uma mecânica estão ainda melhores..."
+  },
+  "WildernessCompass": {
+    "name": "Bússola da Natureza",
+    "description": "Uma bússola especial obtida na Guilda de Aventureiros, dizem que ela é capaz de trazer boa sorte...?"
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus",
@@ -11165,7 +11277,7 @@
   },
   "FormulaSugardewBait": {
     "name": "Receita: Isca Adocicada",
-    "description": "Um diagrama com o passo a passo detalhado de como fazer Isca de Adocidada."
+    "description": "Um diagrama com o passo a passo detalhado de como fazer Isca Adocicada."
   },
   "InstructionsDendroculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Dendroculus",
@@ -11230,6 +11342,522 @@
   "WanminFeast": {
     "name": "Banquete de Wanmin",
     "description": "Um fogo de artifício  baseado em um pequeno ajudante de uma chef famosa do Restaurante Wanmin. Quando alguém de Liyue vê esse ajudante, imediatamente pensam em comida boa. E onde há um festival, há comida boa."
+  },
+  "RhodeiaOfLoch": {
+    "name": "Oceanids - Rhodeia",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FatuiPyroAgent": {
+    "name": "Fatui - Agente Pyro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MaguuKenki": {
+    "name": "Maguu Kenki",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StonehideLawachurl": {
+    "name": "Lawachurl da Pedra Oculta",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MirrorMaiden": {
+    "name": "Dama do Espelho",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "JadeplumeTerrorshroom": {
+    "name": "Terrorgumelo Emplumado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "UndividedHeart": {
+    "name": "Com Todo Coração",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ColdBloodedStrike": {
+    "name": "Espada do Sangue Frio",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SteadyBreathing": {
+    "name": "Respiração Constante",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "KantenSenmyouBlessing": {
+    "name": "Bênção de Kanten Senmyou",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheScentRemained": {
+    "name": "O Aroma Remanescente",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ProphecyOfSubmersion": {
+    "name": "Profecia da Submersão",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FlowingFlame": {
+    "name": "Chamas Fluidas",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Crossfire": {
+    "name": "Fogo Cruzado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "GrandExpectation": {
+    "name": "Grande Expectativa",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "NaganoharaMeteorSwarm": {
+    "name": "Chuva de Meteoros de Naganohara",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StellarPredator": {
+    "name": "Predador Estelar",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Awakening": {
+    "name": "Despertamento",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ThunderingPenance": {
+    "name": "Penitência do Trovão",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ChaoticEntropy": {
+    "name": "Entropia Caótica",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LandsOfDandelion": {
+    "name": "Terra dos Dandelions",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StrategicReserve": {
+    "name": "Reserva Estratégica",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "IGotYourBack": {
+    "name": "Estou na sua Retaguarda",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FloralSidewinder": {
+    "name": "Retorno Floral",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StreamingSurge": {
+    "name": "Torrente dos Cem Rios",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "PaidInFull": {
+    "name": "Recuperar Tudo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TranscendentAutomaton": {
+    "name": "Transcender da Destreza",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StonehideReforged": {
+    "name": "Armadura Geo Reforjada",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ShakenNotPurred": {
+    "name": "Garra de Gato Tremendo de Frio",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FeatherfallJudgment": {
+    "name": "Julgamento das Plumas",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "GloriousSeason": {
+    "name": "Temporada Gloriosa",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MirrorCage": {
+    "name": "Gaiola de Espelhos",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ProliferatingSpores": {
+    "name": "Crescimento de Esporos",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MagicGuide": {
+    "name": "Guia de Magia",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SacrificialFragments": {
+    "name": "Memórias de Sacrifício",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SkywardAtlas": {
+    "name": "Atlas Celestial",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "RavenBow": {
+    "name": "Arco de Corvo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SacrificialBow": {
+    "name": "Arco do Sacrifício",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SkywardHarp": {
+    "name": "Harpa Celestial",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WhiteIronGreatsword": {
+    "name": "Espadão de Ferro Branco",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SacrificialGreatsword": {
+    "name": "Espadão do Sacrifício",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WolfsGravestone": {
+    "name": "Túmulo do Lobo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WhiteTassel": {
+    "name": "Borla Branca",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LithicSpear": {
+    "name": "Lança de Millelith",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SkywardSpine": {
+    "name": "Espinha Celestial",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TravelersHandySword": {
+    "name": "Espada do Viajante",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SacrificialSword": {
+    "name": "Espada do Sacrifício",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AquilaFavonia": {
+    "name": "Falcão",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AdventurersBandana": {
+    "name": "Bandana de Aventureiro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LuckyDogsSilverCirclet": {
+    "name": "Grinalda de Prata do Sortudo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TravelingDoctorsHandkerchief": {
+    "name": "Lenço do Doutor Viajante",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "GamblersEarrings": {
+    "name": "Brincos de Apostador",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "InstructorsCap": {
+    "name": "Chapéu de Instrutor",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ExilesCirclet": {
+    "name": "Grinalda do Exilado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "BrokenRimesEcho": {
+    "name": "Eco do Inverno",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "BlizzardStrayer": {
+    "name": "Herói Invernal",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WineStainedTricorne": {
+    "name": "Quepe de Capitão Manchado de Vinho",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "HeartOfDepth": {
+    "name": "Profundezas do Coração",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WitchsScorchingHat": {
+    "name": "Chapéu Abrasador da Bruxa",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "CrimsonWitchOfFlames": {
+    "name": "A Bruxa das Chamas Carmesim",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ThunderSummonersCrown": {
+    "name": "Coroa do Invocador do Trovão",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ThunderingFury": {
+    "name": "Trovão Furioso",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ViridescentVenerersDiadem": {
+    "name": "Coroa do Caçador Verde",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ViridescentVenerer": {
+    "name": "Sombra Verde",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MaskOfSolitudeBasalt": {
+    "name": "Imagem de uma Pedra Imóvel",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ArchaicPetra": {
+    "name": "Pedra Arcaica",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LaurelCoronet": {
+    "name": "Diadema Láurea",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "DeepwoodMemories": {
+    "name": "Memórias da Floresta",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LiyueHarborWharf": {
+    "name": "Porto de Liyue",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "KnightsOfFavoniusLibrary": {
+    "name": "Biblioteca dos Cavaleiros de Favonius",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "JadeChamber": {
+    "name": "Câmara de Jade",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "DawnWinery": {
+    "name": "Adega do Alvorecer",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WangshuInn": {
+    "name": "Albergue Wangshu",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FavoniusCathedral": {
+    "name": "Catedral de Favonius",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Paimon": {
+    "name": "Paimon",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Katheryne": {
+    "name": "Katheryne",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Timaeus": {
+    "name": "Timaeus",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Wagner": {
+    "name": "Wagner",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ChefMao": {
+    "name": "Chef Mao",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Tubby": {
+    "name": "Tubby",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Timmie": {
+    "name": "Timmie",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Liben": {
+    "name": "Liben",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ChangTheNinth": {
+    "name": "Chang, o Nono",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Ellin": {
+    "name": "Ellin",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "IronTongueTian": {
+    "name": "Tian Língua de Ferro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LiuSu": {
+    "name": "Liusu",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "NRE": {
+    "name": "Bolsa Nutritiva",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenIce": {
+    "name": "Ressonância Elemental: Entrelaçamento Cryo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceShatteringIce": {
+    "name": "Ressonância Elemental: Impacto de Cryo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenWaters": {
+    "name": "Ressonância Elemental: Entrelaçamento Hydro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceSoothingWater": {
+    "name": "Ressonância Elemental: Cura de Hydro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenFlames": {
+    "name": "Ressonância Elemental: Entrelaçamento Pyro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceFerventFlames": {
+    "name": "Ressonância Elemental: Paixão de Pyro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenThunder": {
+    "name": "Ressonância Elemental: Entrelaçamento Electro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceHighVoltage": {
+    "name": "Ressonância Elemental: Energia de Electro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenWinds": {
+    "name": "Ressonância Elemental: Entrelaçamento Anemo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceImpetuousWinds": {
+    "name": "Ressonância Elemental: Agilidade de Anemo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenStone": {
+    "name": "Ressonância Elemental: Entrelaçamento Geo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceEnduringRock": {
+    "name": "Ressonância Elemental: Durabilidade de Geo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceWovenWeeds": {
+    "name": "Ressonância Elemental: Entrelaçamento Dendro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElementalResonanceSprawlingGreenery": {
+    "name": "Ressonância Elemental: Videira Verdejante",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheBestestTravelCompanion": {
+    "name": "A Melhor Companheira!",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ChangingShifts": {
+    "name": "Hora da Troca",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TossUp": {
+    "name": "Lançar a sorte",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Strategize": {
+    "name": "Mestra Estrategista",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "IHaventLostYet": {
+    "name": "Ainda não fui derrotado!",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "LeaveItToMe": {
+    "name": "Deixe comigo!",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WhenTheCraneReturned": {
+    "name": "O Retorno da Garça",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Starsigns": {
+    "name": "Presságio Astral",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "CalxsArts": {
+    "name": "Arte do Giz",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MasterOfWeaponry": {
+    "name": "Mestre do Armamento",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "BlessingOfTheDivineRelicsInstallation": {
+    "name": "Transferência do Tesouro Sagrado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "QuickKnit": {
+    "name": "Costura Veloz",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SendOff": {
+    "name": "Vou te dar uma ajuda",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "GuardiansOath": {
+    "name": "Juramento da Justiça",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AbyssalSummons": {
+    "name": "Chamado do Abismo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Origin": {
+    "name": "Primordial",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Mondstadt": {
+    "name": "Mondstadt",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Liyue": {
+    "name": "Liyue",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Inazuma": {
+    "name": "Inazuma",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Sumeru": {
+    "name": "Sumeru",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Legend": {
+    "name": "Lenda",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "Adept": {
+    "name": "Proficiente",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "HydroCrystalChunk": {
+    "name": "Pedaço de Cristal",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "BeginnerPlayerBadge": {
+    "name": "Emblema de Jogador Novato",
+    "description": "Dizem que qualquer um que se inicie no Chamado Sagrado dos Sete pode obter este Emblema de Jogador específico.\\nAté o jogador mais poderoso começa deste ponto, construindo suas lendas pessoais enquanto progridem.\\nFique ligado, jogador — sua saga começa aqui!"
+  },
+  "AdvancedPlayerBadge": {
+    "name": "Emblema de Jogador Avançado",
+    "description": "Aqueles que jogam o Chamado Sagrado dos Sete frequentemente e completam a partida de Julgamento de Jogador Avançado obterão este Emblema de Jogador.\\nMuitos são aqueles que se tornam jogadores, mas a maioria trata o jogo como algum tipo de passatempo, assim, aqueles que se tornam Jogadores Avançados são poucos.\\nAté jogos fornecem recompensas únicas a quem é dedicado."
+  },
+  "ExpertPlayerBadge": {
+    "name": "Emblema de Jogador Especialista",
+    "description": "Aqueles que estudam a arte de jogar o Chamado Sagrado dos Sete e concluem a partida de Julgamento de Jogador Especialista obterão este Emblema de Jogador.\\nTalvez sua atitude nesse momento seja bastante contrastante da que você tinha quando começou, mas você ainda encontra alegria em jogar—\\nEm voluntariamente dedicar tempo a algo que acha interessante, e em desfrutar de tudo que compõe aquilo que você ama."
+  },
+  "MasterPlayerBadge": {
+    "name": "Emblema de Jogador Mestre",
+    "description": "Aqueles que atingem o nível em que podem completar a partida de Julgamento do Jogador Mestre, receberão este Emblema de Jogador.\\nDizem que poucos são os jogadores que podem obter este emblema, e cada um deles tem sua própria perspectiva do jogo.\\nVitória, parece, pode não ser o único objetivo aqui."
+  },
+  "LegendPlayerBadge": {
+    "name": "Emblema de Jogador Lendário",
+    "description": "Aqueles que concluem o Julgamento de Jogador Lendário obterão este Emblema de Jogador.\\nEste emblema prova que você está bem no caminho para estabelecer seu próprio mito único como jogador.\\nAvance, vá além e alcance novos horizontes!"
   },
   "SummertimeSparkle": {
     "name": "Performance Brilhante",
@@ -11513,7 +12141,7 @@
   },
   "OfSettledThoughts": {
     "name": "Pensamentos Enraizados",
-    "description": "Um estúdio totalmente mobiliado com estantes tão altas quanto as paredes e abarrotado com as melhores coleções de livros de todos os tempos. Quando uma pessoa comum olha ao redor das prateleiras e contempla a variedade de cópias, é inevitável se sentir um pouco sobrecarregado.\\nEmbora, é claro, a barreira entre saber e não saber seja uma linha tênue que qualquer um com coragem pode cruzar à vontade Se alguém se dedicar a isso e se sentar em uma sala como essa todos os dias com um plano claro para estudar e analisar livro após livro, será capaz de adquirir uma quantidade surpreendente de conhecimento muito mais cedo do que se poderia esperar.\\nEste conjunto de decorações é o preferido do seguinte companheiro: Cyno."
+    "description": "Um estúdio totalmente mobiliado com estantes tão altas quanto as paredes e abarrotado com as melhores coleções de livros de todos os tempos. Quando uma pessoa comum olha ao redor das prateleiras e contempla a variedade de cópias, é inevitável se sentir um pouco sobrecarregado.\\nEmbora, é claro, a barreira entre saber e não saber seja uma linha tênue que qualquer um com coragem pode cruzar à vontade Se alguém se dedicar a isso e se sentar em uma sala como essa todos os dias com um plano claro para estudar e analisar livro após livro, será capaz de adquirir uma quantidade surpreendente de conhecimento muito mais cedo do que se poderia esperar.\\nEste conjunto de decorações é o preferido dos seguintes companheiros: Cyno, Faruzan."
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Despedida a Agitação e Preocupação",
@@ -11525,7 +12153,7 @@
   },
   "AmidstProsperingMarkets": {
     "name": "Mercado Próspero",
-    "description": "Uma área comercial movimentada e decorada com bom gosto, que lembra as ruas repletas de barracas da cidade de Sumeru ou o projeto do Grande Bazar. Aqui você encontra tudo; desde bancas de frutas e legumes frescos e petiscos deliciosos para animar o dia, até produtos do dia a dia, e tudo a poucos metros de distância. Este tipo de mercado é caracterizado pelo seu ambiente divertido e movimentado.\\nHá rumores de que a distribuição das barracas e lojas nas ruas de Sumeru em ambos os lados da rua segue uma organização planejada resultante das investigações realizadas pela Academia. O objetivo é aproveitar o uso do espaço e reduzir a necessidade de gerenciamento de tarefas para oferecer um serviço de maior qualidade aos clientes.\\nEste conjunto de decorações é o preferido da seguinte companheira: Dori."
+    "description": "Uma área comercial movimentada e decorada com bom gosto, que lembra as ruas repletas de barracas da cidade de Sumeru ou o projeto do Grande Bazar. Aqui você encontra tudo; desde bancas de frutas e legumes frescos e petiscos deliciosos para animar o dia, até produtos do dia a dia, e tudo a poucos metros de distância. Este tipo de mercado é caracterizado pelo seu ambiente divertido e movimentado.\\nHá rumores de que a distribuição das barracas e lojas nas ruas de Sumeru em ambos os lados da rua segue uma organização planejada resultante das investigações realizadas pela Academia. O objetivo é aproveitar o uso do espaço e reduzir a necessidade de gerenciamento de tarefas para oferecer um serviço de maior qualidade aos clientes.\\nEste conjunto de decorações é o preferido das seguinte companheiras: Dori, Faruzan."
   },
   "DeepInTheQuietForest": {
     "name": "Tranquilidade da Floresta Profunda",
@@ -11537,7 +12165,7 @@
   },
   "QuietTimesByTheRiverbank": {
     "name": "Tempos Calmos nas Margens",
-    "description": "Um assentamento tranquilo que reflete a paisagem rústica da Vila Vimara. Não importa se você não está perto do rio ou do mar, o cheiro de peixe fresco na vila sempre consegue evocar o som das ondas no coração de seus habitantes.\\nComparado aos acampamentos de guardas-florestais, o ritmo de vida na vila é completamente diferente. A maioria de seus habitantes não tem responsabilidades urgentes, então suas vidas são relativamente calmas. Com certeza é o lugar ideal para relaxar."
+    "description": "Um assentamento tranquilo que reflete a paisagem rústica da Vila Vimara. Não importa se você não está perto do rio ou do mar, o cheiro de peixe fresco na vila sempre consegue evocar o som das ondas no coração de seus habitantes.\\nComparado aos acampamentos de guardas-florestais, o ritmo de vida na vila é completamente diferente. A maioria de seus habitantes não tem responsabilidades urgentes, então suas vidas são relativamente calmas. Com certeza é o lugar ideal para relaxar.\\nCompanheiros que gostam desse conjunto de decorações: {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "SetekhDemurs": {
     "name": "Rejeição de Setekh",
@@ -11553,7 +12181,7 @@
   },
   "ChorusOfDesertAndWood": {
     "name": "Coro do Deserto e da Floresta",
-    "description": "Um espaço maravilhoso cheio de fertilidade. A criação dimensional do Paraíso Mágico do Bule permitiu ajustar as características ambientais do subespaço para que todos os tipos de plantas possam coexistir. A coalescência da vegetação mais característica do deserto e a vegetação frondosa da floresta conferem vida e harmonia a esta terra.\\nPara pesquisadores que amam plantas, essas áreas são verdadeiros tesouros para pesquisa, embora esses bosques vibrantes também sejam locais de interesse único para os transeuntes comuns.\\nEste conjunto de decorações é o preferido do seguinte companheiro: Tighnari."
+    "description": "Um espaço maravilhoso cheio de fertilidade. A criação dimensional do Paraíso Mágico do Bule permitiu ajustar as características ambientais do subespaço para que todos os tipos de plantas possam coexistir. A coalescência da vegetação mais característica do deserto e a vegetação frondosa da floresta conferem vida e harmonia a esta terra.\\nPara pesquisadores que amam plantas, essas áreas são verdadeiros tesouros para pesquisa, embora esses bosques vibrantes também sejam locais de interesse único para os transeuntes comuns.\\nEste conjunto de decorações é o preferido dos seguintes companheiros: Tighnari, {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "TimberWallWithJadeEaves": {
     "name": "Parede de Madeira com Beiral de Jade",
@@ -11871,6 +12499,10 @@
     "name": "Mesa para Dois",
     "description": "Um diagrama que descreve passo a passo como fabricar Mesa para Dois.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
   },
+  "LongAdhighamaChamferTable": {
+    "name": "Mesa Longa Angular de Madeira da Adhigama",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mesa Longa Angular de Madeira da Adhigama.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Cama Suave Como a Brisa\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -11954,6 +12586,10 @@
   "SatisfactionOfSatedThirst": {
     "name": "Alegria do Lazer ao Beber",
     "description": "Um diagrama que descreve passo a passo como fabricar a Alegria do Lazer ao Beber.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "AdhigamaVineBackedChair": {
+    "name": "Cadeira com encosto de vinha de Madeira da Adhigama",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Cadeira com encosto de vinha de Madeira da Adhigama\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "NorthernStoneHearth": {
     "name": "Lareira de Pedra do Norte",
@@ -12087,6 +12723,10 @@
     "name": "Aroma da Lenta Chama",
     "description": "Um diagrama que descreve passo a passo como fabricar Aroma da Lenta Chama.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
+  "DeepwoodDwellersAggregation": {
+    "name": "Pertences do Morador do Bosque",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Pertences do Morador do Bosque\".\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapete de Mondstadt: \"Paixão Escarlate\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Tapete de Mondstadt: \"Paixão Escarlate\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -12150,6 +12790,10 @@
   "JoyfulIllumination": {
     "name": "\"Luz de Boas-Vindas\"",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Luz de Boas-Vindas\".\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "LightOfTheLandOfWisdom": {
+    "name": "Luz do Local da Sagacidade",
+    "description": "Um diagrama que descreve passo a passo como fabricar Luz do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arranjo de Flores: \"Graciosidade Azul\"",
@@ -12286,6 +12930,18 @@
   "EphemeralSpirit": {
     "name": "Efêmero Caldo",
     "description": "Um diagrama que descreve passo a passo como fabricar Efêmero Caldo.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "AmidstBitterAromas": {
+    "name": "Austeridade Entre Aromas",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Austeridade Entre Aromas\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DeepwoodDwellersIngenuity": {
+    "name": "Curiosidade do Morador do Bosque",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Curiosidade do Morador do Bosque\".\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "DeepwoodDwellersBrilliance": {
+    "name": "Esplendor do Morador do Bosque",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Esplendor do Morador do Bosque\".\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
   "LandscapePaintingCountryHome": {
     "name": "Pintura com Paisagem: \"Casa de Campo\"",
@@ -12871,6 +13527,18 @@
     "name": "Vista Comum da Cidade da Sabedoria",
     "description": "Um diagrama que descreve passo a passo como fabricar Vista Comum da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "ContrastsOfTheCityOfWisdom": {
+    "name": "Réplicas da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Réplicas da Cidade da Sabedoria.\\nApós o uso, encontre-o na interface de colocação."
+  },
+  "PeaceInTheCityOfWisdom": {
+    "name": "Paz da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Paz da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "ErrandsInTheCityOfWisdom": {
+    "name": "Insuficiências da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Insuficiências da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Fonte com Pássaros e Flores\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -13098,6 +13766,18 @@
   "DesertWallStalwartDefense": {
     "name": "Parede do Deserto — Defesa Incondicional",
     "description": "Um diagrama que descreve passo a passo como fabricar Parede do Deserto — Defesa Incondicional.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "DesertGateWindjammer": {
+    "name": "Portão do Jardim do Deserto — \"Contra-vento\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Portão do Jardim do Deserto — \"Contra-vento\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DomedGateForestTune": {
+    "name": "Portão do Jardim Cupulado — \"Canção entre Árvores\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Portão do Jardim Cupulado — \"Canção entre Árvores\".\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "DomedWallTheBirdsSang": {
+    "name": "Parede do Jardim Cupulado — Uníssono dos Pássaros",
+    "description": "Um diagrama que descreve passo a passo como fabricar Parede do Jardim Cupulado — Uníssono dos Pássaros.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fundações de Pedra: Fortuna e Tranquilidade",
@@ -13499,6 +14179,22 @@
     "name": "Reputação da Organização",
     "description": "Um diagrama que descreve passo a passo como fabricar Reputação da Organização.\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
+  "AnElegantVoice": {
+    "name": "Voz Elegante",
+    "description": "Um diagrama que descreve passo a passo como fabricar Voz Elegante.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "AMellowVoice": {
+    "name": "Voz Humilde",
+    "description": "Um diagrama que descreve passo a passo como fabricar Voz Humilde.\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "KarmaphalaThreePlyNoticeboard": {
+    "name": "Painel de Três Faces de Madeira Karmaphal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Painel de Três Faces de Madeira Karmaphal.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "TeaBreakShade": {
+    "name": "Sombra do Descanso com Chá",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Sombra do Descanso com Chá\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Poste de Rua Esculpido em Ferro Fundido",
     "description": "Um diagrama que descreve passo a passo como fabricar Poste de Rua Esculpido em Ferro Fundido\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -13698,6 +14394,10 @@
   "PearOrchardAccessoryAttendAndListen": {
     "name": "Acessório do Pomar de Peras: Plateia Atenta",
     "description": "Um diagrama que descreve passo a passo como fabricar Acessório do Pomar de Peras: Plateia Atenta.\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "KarmaphalaDisplayTable": {
+    "name": "Mesa de Exibição de Madeira Karmaphal",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mesa de Exibição de Madeira Karmaphal.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Balcão de Loja de Vinhos: \"Para Alegrar Seu Coração\"",

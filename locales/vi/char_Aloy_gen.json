@@ -42,7 +42,7 @@
   "skill": {
     "name": "Băng Giá Hoang Dã",
     "description": {
-      "0": "Ném một quả Bom Băng Giá về hướng mục tiêu, khi trúng sẽ kích nổ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>. Bom Băng Giá khi nổ sẽ phân thành rất nhiều Bom Lạnh, kẻ địch dẫm phải hoặc sau một thời gian sẽ phát nổ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
+      "0": "Ném một quả Bom Băng Giá về hướng mục tiêu, khi trúng sẽ kích nổ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>. Bom Băng Giá khi nổ sẽ phân thành rất nhiều Bom Lạnh, kẻ địch giẫm phải hoặc sau một thời gian sẽ phát nổ, gây <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
       "1": "Bom Băng Giá hoặc Bom Lạnh khi trúng địch sẽ giảm sức tấn công của kẻ địch và cung cấp 1 tầng hiệu quả \"Dây Móc\" cho Aloy.",
       "2": "Mỗi 0.1s tối đa nhận 1 tầng hiệu quả Dây Móc.",
       "3": "<br/>",

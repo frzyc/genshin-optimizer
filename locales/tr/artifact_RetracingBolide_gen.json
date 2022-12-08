@@ -1,0 +1,29 @@
+{
+  "setName": "Geri Dönen Göktaşı",
+  "setEffects": {
+    "2": "Kalkan Gücünü %35 artırır.",
+    "4": "Bir kalkan tarafından korunurken, Normal ve Yüklü Saldırı Hasarı ek olarak %40 artar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Yaz Gecesi Çiçeği",
+      "desc": "Sürekli açan ve yapay olan bir çiçek. İçinde bir nebze hayat varsa bunu kim bilebilir?"
+    },
+    "plume": {
+      "name": "Yaz Gecesi Finali",
+      "desc": "Tahtadan yapılma sağlam bir dart. Ancak hedefine ulaştığında durur."
+    },
+    "sands": {
+      "name": "Yaz Gecesi Saati",
+      "desc": "Belirli bir zamanda durmuş bir cep saati."
+    },
+    "goblet": {
+      "name": "Yaz Gecesi Su Balonu",
+      "desc": "Yaz festivali boyunca her yerde su balonları görülebilir, ancak hiçbiri bunun kadar ince işlenmemiştir."
+    },
+    "circlet": {
+      "name": "Yaz Gecesi Maskesi",
+      "desc": "Efsanelerde betimlenen bir ilahın suretinde yapılmış popüler bir maske."
+    }
+  }
+}

@@ -46,6 +46,8 @@
     "removed": "제거:",
     "unchanged": "유지:",
     "invalid": "비정상:",
+    "upgraded": "변경됨:",
+    "dbTotal": "총 개수:",
     "notInImport": "가져오기에 미포함:"
   },
   "DatabaseCard": {
@@ -55,7 +57,7 @@
       "copy": "클립보드로 복사",
       "delete": "삭제",
       "upload": "업로드",
-      "swap": "교환"
+      "swap": "선택"
     },
     "currentDB": "현재 데이터베이스"
   }

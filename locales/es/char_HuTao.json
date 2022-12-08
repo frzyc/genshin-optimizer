@@ -4,10 +4,7 @@
     "end": "Cuando el estado de Mariposa excelsa activado por Guía hacia el más allá termina"
   },
   "constellation2": {
-    "applyBloodBlossom": "Aplica el efecto de Pétalos sangrientos (C2)",
-    "skillParams": {
-      "2": "Daño de Pétalos sangrientos (C2)"
-    }
+    "applyBloodBlossom": "Aplica el efecto de Pétalos sangrientos (C2)"
   },
   "constellation4": {
     "condName": "Al derrotar un enemigo afectado por Pétalos sangrientos aplicados por la propia Hu Tao"

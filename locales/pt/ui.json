@@ -27,5 +27,21 @@
   "underConstruction": "Em Construção",
   "error": "Erro",
   "reset": "Redefinir",
-  "info": "INFO"
+  "info": "INFO",
+  "inventory": "Inventário",
+  "close": "Fechar",
+  "sortMap": {
+    "new": "Novo",
+    "name": "Nome",
+    "level": "Nível",
+    "rarity": "Raridade",
+    "efficiency": "RV Atual",
+    "mefficiency": "RV Máximo",
+    "artsetkey": "Conjunto de Artefatos",
+    "probability": "Probabilidade do Roll"
+  },
+  "link": {
+    "download": "Link para Download",
+    "discord": "Convite do Servidor Discord"
+  }
 }

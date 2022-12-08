@@ -1,0 +1,12 @@
+{
+  "name": "Spada del viaggiatore",
+  "description": "Una pratica spada d'acciaio dotata di forbici, lente d'ingrandimento, acciarino e altri accessori utili.",
+  "passiveName": "Viaggio",
+  "passiveDescription": {
+    "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1%</cryo> di PS.",
+    "1": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,25%</cryo> di PS.",
+    "2": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,5%</cryo> di PS.",
+    "3": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,75%</cryo> di PS.",
+    "4": "Ogni sfera elementale o particella raccolta ripristina un <cryo>2%</cryo> di PS."
+  }
+}

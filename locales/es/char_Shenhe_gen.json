@@ -116,14 +116,14 @@
       "0": "Tras lanzar <strong>Espíritu exorcizador</strong>, Shenhe otorga los siguientes efectos a todos los miembros del equipo cercanos:",
       "1": [
         "Pulsar una vez: el daño de las Habilidades Elementales y Definitivas aumenta en un 15% durante 10 s.",
-        "Mantener pulsado: el daño de los Ataques Normales, Cargados y Descendentes aumenta en un 15% durante 15 s."
+        "Mantener pulsado: el daño de los Ataques Normales, Cargados y Descendentes aumenta en un 15% durante 15{NON_BREAK_SPACE}s."
       ]
     }
   },
   "passive3": {
     "name": "Llegada oportuna",
     "description": {
-      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Liyue."
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20{NON_BREAK_SPACE}h en Liyue."
     }
   },
   "constellation1": {
@@ -135,14 +135,14 @@
   "constellation2": {
     "name": "Concentración espiritual",
     "description": {
-      "0": "Aumenta en 6 s la duración de <strong>Encantamiento de la damisela divina</strong>. Además, cuando un personaje en uso está en el área de la habilidad, el Daño CRIT de los ataques que infligen <cryo>Daño Cryo</cryo> aumenta en un 15%."
+      "0": "Aumenta en 6{NON_BREAK_SPACE}s la duración de <strong>Encantamiento de la damisela divina</strong>. Además, cuando un personaje en uso está en el área de la habilidad, el Daño CRIT de los ataques que infligen <cryo>Daño Cryo</cryo> aumenta en un 15%."
     }
   },
   "constellation3": {
     "name": "Reclusión",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Espíritu exorcizador</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
@@ -151,7 +151,7 @@
       "0": "Cuando un personaje afectado por la <strong>pluma glacial</strong> de Shenhe activa el aumento de daño de la pluma, Shenhe obtiene una carga de “mantra de la escarcha”.",
       "1": [
         "Al lanzar <strong>Espíritu exorcizador</strong>, se consumirán todas las cargas del mantra de la escarcha y el daño infligido con Espíritu exorcizador aumentará en un 5% por cada carga consumida.",
-        "Este efecto puede acumularse hasta 50 veces y su duración es de 60 s."
+        "Este efecto puede acumularse hasta 50 veces y su duración es de 60{NON_BREAK_SPACE}s."
       ]
     }
   },
@@ -159,7 +159,7 @@
     "name": "Divinización",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Encantamiento de la damisela divina</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

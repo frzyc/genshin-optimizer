@@ -1,0 +1,12 @@
+{
+  "name": "Rüzgarçiçeği Kasidesi",
+  "description": "İsimsiz bir yabancı tarafından, isimsiz çiçeklerle ve büyük bir umutla süslenmiş bir yay.",
+  "passiveName": "Rüzgarçiçeği Dileği",
+  "passiveDescription": {
+    "0": "Bir Element Becerisi kullandıktan sonra Rüzgarçiçeğinin kadim dileği gerçekleşir ve 6 saniyeliğine Saldırı <cryo>%16</cryo> artar.",
+    "1": "Bir Element Becerisi kullandıktan sonra Rüzgarçiçeğinin kadim dileği gerçekleşir ve 6 saniyeliğine Saldırı <cryo>%20</cryo> artar.",
+    "2": "Bir Element Becerisi kullandıktan sonra Rüzgarçiçeğinin kadim dileği gerçekleşir ve 6 saniyeliğine Saldırı <cryo>%24</cryo> artar.",
+    "3": "Bir Element Becerisi kullandıktan sonra Rüzgarçiçeğinin kadim dileği gerçekleşir ve 6 saniyeliğine Saldırı <cryo>%28</cryo> artar.",
+    "4": "Bir Element Becerisi kullandıktan sonra Rüzgarçiçeğinin kadim dileği gerçekleşir ve 6 saniyeliğine Saldırı <cryo>%32</cryo> artar."
+  }
+}

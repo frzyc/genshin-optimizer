@@ -1,0 +1,12 @@
+{
+  "name": "Gece Parıltısı",
+  "description": "Gece kadar karanlık bir düz kılıç. Bir zamanlar karanlık sokakların efendisi olan bir hırsıza aitti.",
+  "passiveName": "Gezgin Kahraman",
+  "passiveDescription": {
+    "0": "Bu silahı kuşanan karakterin Hasarını <cryo>%12</cryo> artırır. Hasar almak bu etkiyi 5 saniyeliğine kesintiye uğratır.",
+    "1": "Bu silahı kuşanan karakterin Hasarını <cryo>%15</cryo> artırır. Hasar almak bu etkiyi 5 saniyeliğine kesintiye uğratır.",
+    "2": "Bu silahı kuşanan karakterin Hasarını <cryo>%18</cryo> artırır. Hasar almak bu etkiyi 5 saniyeliğine kesintiye uğratır.",
+    "3": "Bu silahı kuşanan karakterin Hasarını <cryo>%21</cryo> artırır. Hasar almak bu etkiyi 5 saniyeliğine kesintiye uğratır.",
+    "4": "Bu silahı kuşanan karakterin Hasarını <cryo>%24</cryo> artırır. Hasar almak bu etkiyi 5 saniyeliğine kesintiye uğratır."
+  }
+}

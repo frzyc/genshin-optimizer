@@ -2,12 +2,7 @@
   "skillOneHit": "1회 피격시",
   "skillTwoHit": "2회 피격시",
   "duringBurst": "작뢰가 지속되는 동안",
-  "baneOfEvil_": "적의 번개 원소 내성",
   "tidecallerMaxDmg": "최대 피해 보너스를 가진 파도잡이 발동",
-  "a4normalDmg_": "일반 공격 피해 증가",
-  "a4chargeDmg_": "강공격 피해 증가",
-  "a4atkSpeed_": "공격 속도 증가",
-  "a4duration": "지속시간",
   "a4charge": "강공격에 필요한 준비 시간 감소",
   "c4dmg": "추가 번개 원소 피해량",
   "burstDmgRed_": "피해 감면"

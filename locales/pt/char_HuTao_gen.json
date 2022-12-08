@@ -122,7 +122,7 @@
   "passive3": {
     "name": "Quanto Mais, Melhor",
     "description": {
-      "0": "Quando uma Culinária Perfeita é feita, tem uma chance de 18% de receber uma Culinária Esquisita de mesmo gênero."
+      "0": "Quando uma Comida Perfeita é feita, tem uma chance de 18% de receber uma Comida Estranha de mesmo tipo."
     }
   },
   "constellation1": {

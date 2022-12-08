@@ -23,15 +23,16 @@
   "tabEquip": {
     "swapWeapon": "무기 교환",
     "swapArt": "성유물 교환",
-    "compare": "현재 빌드와 비교",
+    "compare": "현재 조합과 비교",
     "unequipArts": "성유물 모두 해제"
   },
   "characterName": "캐릭터 이름",
   "teammate": "파티원 {{count}}",
   "none": "없음",
+  "noReaction": "원소 반응 없음",
   "multiTarget": {
     "title": "다중 최적화 목표 설정",
-    "addNewTarget": "새로운 대상 추가",
+    "addNewTarget": "새로운 타겟 추가",
     "addNewMTarget": "새로운 다중 최적화 목표 추가"
   },
   "addStats": {
@@ -43,7 +44,7 @@
       "max": "부옵션 최대값 사용",
       "mid": "부옵션 중간값 사용"
     },
-    "maxTotalRolls": "\"정상적인\" 빌드는 최대 45회 강화만 가질 수 있습니다.",
+    "maxTotalRolls": "\"정상적인\" 조합은 최대 45회 강화만 가질 수 있습니다.",
     "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
     "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다."
   },

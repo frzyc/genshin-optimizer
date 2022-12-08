@@ -1,0 +1,29 @@
+{
+  "setName": "Vahşi Savaşçı",
+  "setEffects": {
+    "2": "+%12 Kritik Oranı.",
+    "4": "Can %70'in altındayken Kritik Oranını ek %24 artırır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Vahşi Savaşçı Gülü",
+      "desc": "Zarif ve kırmızı bir çiçek. Vahşi Savaşçının niteliklerini temsil eder."
+    },
+    "plume": {
+      "name": "Vahşi Savaşçı Çivit Tüyü",
+      "desc": "Efsanevi bir kuzgunun bir kısmı kızıla boyanmış gece mavisi tüyü."
+    },
+    "sands": {
+      "name": "Vahşi Savaşçı Saati",
+      "desc": "Sonsuz bir döngü içinde Vahşi Savaşçıya savaşta ve bu dünyada geçirdiği zamanı hatırlatan bir kum saati."
+    },
+    "goblet": {
+      "name": "Vahşi Savaşçı Kemik Kadehi",
+      "desc": "Bilinmeyen bir canavarın kemiklerinden yapılmış bir kadeh. Zorlu mücadeleden sonra bir ganimet olarak alınmış."
+    },
+    "circlet": {
+      "name": "Vahşi Savaşçı Savaş Maskesi",
+      "desc": "Çetin savaşlardan dolayı sol tarafı çatlamış korkunç bir demir maske."
+    }
+  }
+}
