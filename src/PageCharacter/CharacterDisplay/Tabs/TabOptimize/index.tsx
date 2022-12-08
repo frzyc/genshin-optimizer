@@ -41,6 +41,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard';
 import UseEquipped from './Components/UseEquipped';
 import UseExcluded from './Components/UseExcluded';
+import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
@@ -85,6 +86,7 @@ export default function TabBuild() {
   const cancelToken = useRef(() => { })
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
+  const [workerErr, setWorkerErr] = useState(false)
   const generateBuilds = useCallback(async () => {
     const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
     if (!characterKey || !optimizationTarget) return
@@ -185,9 +187,10 @@ export default function TabBuild() {
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
       const worker = new Worker(new URL('./BackgroundWorker.ts', import.meta.url))
-      worker.addEventListener("error", e => {
+      worker.addEventListener("error", _ => {
         console.error("Failed to load worker")
-        window.location.reload()
+        setWorkerErr(true)
+        cancelToken.current()
       });
 
       const setup: Setup = {
@@ -206,6 +209,7 @@ export default function TabBuild() {
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
       worker.onmessage = async ({ data }: { data: { id: number } & WorkerResult }) => {
+        setWorkerErr(false)
         switch (data.command) {
           case "interim":
             status.tested += data.tested
@@ -430,7 +434,7 @@ export default function TabBuild() {
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
-
+      {workerErr && <WorkerErr />}
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
         <ChartCard disabled={generatingBuilds || !optimizationTarget} chartData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} />
