@@ -184,9 +184,9 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (!allow4 || slots < 4) return []
+    if (!allow4) return []
     return Object.keys(sheet.setEffects).filter(setNumKey => sheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
-  }, [sheet.setEffects, allow4, slots])
+  }, [sheet.setEffects, allow4])
   const exclude2 = setExclusionSet.includes(2)
   const exclude4 = setExclusionSet.includes(4)
   return <Grid item key={setKey} xs={1}>
@@ -211,8 +211,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>
-        {slots >= 2 && <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>}
-        {slots >= 4 && <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>}
+        <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>
+        <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>
       </ButtonGroup>
 
       {!!set4CondNums.length && <DataContext.Provider value={fakeDataContextObj}>
