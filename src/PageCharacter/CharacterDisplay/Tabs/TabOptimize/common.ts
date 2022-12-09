@@ -354,17 +354,17 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
 }
 export function mergePlot(plots: PlotData[]): PlotData {
   let scale = 0.01, reductionScaling = 2, maxCount = 1500
-  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v.plot! / scale))))
+  let keys = new Set(plots.flatMap(x => Object.values(x).map(v => Math.round(v[0].plot! / scale))))
   while (keys.size > maxCount) {
     scale *= reductionScaling
     keys = new Set([...keys].map(key => Math.round(key / reductionScaling)))
   }
   const result: PlotData = {}
   for (const plot of plots)
-    for (const build of Object.values(plot)) {
-      const x = Math.round(build.plot! / scale) * scale
-      if (!result[x] || result[x]!.value < build.value)
-        result[x] = build
+    for (const builds of Object.values(plot)) {
+      const x = Math.round(builds[0].plot! / scale) * scale
+      if (!Array.isArray(result[x]))
+        result[x] = builds
     }
   return result
 }
@@ -545,7 +545,7 @@ export type ArtifactBuildData = {
 }
 export type ArtifactsBySlot = { base: DynStat, values: StrictDict<SlotKey, ArtifactBuildData[]> }
 
-export type PlotData = Dict<number, Build>
+export type PlotData = Dict<number, Build[]>
 export interface Build {
   value: number
   plot?: number

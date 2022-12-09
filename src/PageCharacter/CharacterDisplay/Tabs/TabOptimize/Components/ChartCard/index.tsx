@@ -15,7 +15,7 @@ import { input } from '../../../../../../Formula';
 import { NumNode } from '../../../../../../Formula/type';
 import { valueString } from '../../../../../../KeyMap';
 import { allSlotKeys, SlotKey } from '../../../../../../Types/consts';
-import { objectKeyValueMap, objPathValue } from '../../../../../../Util/Util';
+import { objectKeyValueMap, objPathValue, range } from '../../../../../../Util/Util';
 import useBuildResult from '../../useBuildResult';
 import OptimizationTargetSelector from '../OptimizationTargetSelector';
 import CustomDot from './CustomDot';
@@ -176,7 +176,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} />
+      <Chart displayData={displayData} plotNode={chartData.plotNode} valueNode={chartData.valueNode} showMin={showMin} sliderMin={sliderMin} sliderMax={sliderMax} />
       {displayData.length > 1 && <Slider
         marks
         value={[sliderLow, sliderHigh]}
@@ -210,11 +210,13 @@ const optTargetColor = "#8884d8"
 const highlightedColor = "cyan"
 const currentColor = "#46a046"
 const lineColor = "#ff7300"
-function Chart({ displayData, plotNode, valueNode, showMin }: {
+function Chart({ displayData, plotNode, valueNode, showMin, sliderMin, sliderMax }: {
   displayData: EnhancedPoint[]
   plotNode: NumNode
   valueNode: NumNode
   showMin: boolean
+  sliderMin: number
+  sliderMax: number
 }) {
   const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { t } = useTranslation("page_character_optimize")
@@ -241,6 +243,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)}
         label={<Label fill="white" dy={10}>{xLabelValue}</Label>}
         height={50}
+        ticks={range(0, 15).map(num => sliderMin + (sliderMax - sliderMin) * (num / 15))}
       />
       <YAxis
         name="DMG"
