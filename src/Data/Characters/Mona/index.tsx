@@ -81,8 +81,6 @@ const dm = {
   }
 } as const
 
-const hydro_dmg_ = greaterEq(input.asc, 4, prod(input.premod.enerRech_, percent(dm.passive2.percentage)))
-
 const [condOmenPath, condOmen] = cond(key, "Omen")
 const all_dmg_ = equal("on", condOmen, subscript(input.total.burstIndex, dm.burst.dmgBonus, { unit: "%" }))
 
@@ -113,7 +111,10 @@ const dmgFormulas = {
     dmg: dmgNode("atk", dm.burst.dmg, "burst")
   },
   passive1: {
-    dmg: prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.passive1.percentage))
+    dmg: greaterEq(input.asc, 1, prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.passive1.percentage)))
+  },
+  passive2: {
+    hydro_dmg_: greaterEq(input.asc, 4, prod(input.premod.enerRech_, percent(dm.passive2.percentage)))
   }
 }
 
@@ -127,7 +128,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   },
   premod: {
     charged_dmg_,
-    hydro_dmg_,
+    hydro_dmg_: dmgFormulas.passive2.hydro_dmg_,
   },
   teamBuff: {
     premod: {
@@ -242,7 +243,7 @@ const sheet: ICharacterSheet = {
       })]),
       passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
         fields: [{
-          node: hydro_dmg_
+          node: dmgFormulas.passive2.hydro_dmg_
         }]
       })]),
       passive3: ct.talentTem("passive3"),

@@ -60,8 +60,6 @@ const dm = {
 
 } as const
 
-const nodeAsc4 = greaterEq(input.asc, 4, prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 })))
-
 const [condC4Path, condC4] = cond(key, "c4")
 const nodeC4 = greaterEq(input.constellation, 4, equal("hit", condC4, dm.constellation4.ele_dmg_))
 
@@ -85,6 +83,9 @@ const dmgFormulas = {
     dmg: dmgNode("atk", dm.burst.dmg, "burst"),
     tenkoDmg: dmgNode("atk", dm.burst.tenkoDmg, "burst"),
   },
+  passive2: {
+    nodeAsc4: greaterEq(input.asc, 4, prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 })))
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -94,7 +95,7 @@ const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFor
     burst: nodeC5
   },
   total: {
-    skill_dmg_: nodeAsc4,
+    skill_dmg_: dmgFormulas.passive2.nodeAsc4,
   },
   teamBuff: {
     premod: {
@@ -173,7 +174,7 @@ const sheet: ICharacterSheet = {
         }]
       }]),
       passive1: ct.talentTem("passive1"),
-      passive2: ct.talentTem("passive2", [{ fields: [{ node: nodeAsc4 }] }]),
+      passive2: ct.talentTem("passive2", [{ fields: [{ node: dmgFormulas.passive2.nodeAsc4 }] }]),
       passive3: ct.talentTem("passive3"),
       constellation1: ct.talentTem("constellation1"),
       constellation2: ct.talentTem("constellation2"),
