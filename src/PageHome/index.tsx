@@ -1,5 +1,4 @@
-import { Box, CardContent, Grid, Link, Typography, useMediaQuery } from "@mui/material"
-import { useTheme } from "@mui/system"
+import { Box, CardContent, Grid, Link, Typography, useMediaQuery, useTheme } from "@mui/material"
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"

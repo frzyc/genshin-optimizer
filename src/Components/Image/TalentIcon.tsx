@@ -1,4 +1,4 @@
-import { styled } from "@mui/system"
+import { styled } from "@mui/material"
 import { ElementKey } from "../../Types/consts"
 
 interface TalentIconProps {

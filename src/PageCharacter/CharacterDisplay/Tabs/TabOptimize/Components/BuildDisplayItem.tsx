@@ -1,6 +1,5 @@
 import { Checkroom, ChevronRight } from '@mui/icons-material';
-import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Button, CardContent, Grid, Skeleton, Typography, Box } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
 import CardDark from '../../../../../Components/Card/CardDark';

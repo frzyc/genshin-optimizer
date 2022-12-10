@@ -1,6 +1,5 @@
 import { Replay } from '@mui/icons-material';
-import { Button, CardContent, Divider, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Button, CardContent, Divider, Grid, Typography, Box } from '@mui/material';
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
