@@ -104,5 +104,6 @@
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Currently Equipped",
   "addBuildToList": "Add build to list",
-  "graphBuildLabel": "Graph #<1>{{count}}</1>"
+  "graphBuildLabel": "Graph #<1>{{count}}</1>",
+  "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again"
 }
