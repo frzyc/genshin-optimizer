@@ -1,6 +1,5 @@
 import { Settings, SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from "@mui/system";
+import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';

@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Typography, Box } from "@mui/material";
 
 export default function CardHeaderCustom({ avatar, title, action }: { avatar?: Displayable, title: Displayable, action?: Displayable }) {
   return <Box display="flex" gap={1} p={2} alignItems="center" >
