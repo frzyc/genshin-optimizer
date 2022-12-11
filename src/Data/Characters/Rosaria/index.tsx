@@ -75,12 +75,13 @@ const [condC1Path, condC1] = cond(key, "RosariaC1")
 const [condC6Path, condC6] = cond(key, "DilucC6")
 
 const nodeA1CritInc = equal(condA1, "on", greaterEq(input.asc, 1, dm.passive1.crInc))
-const nodeA4CritBonusDisp = equal(condA4, "on",
-  greaterEq(input.asc, 4, min(
+const nodeA4OptTarget = greaterEq(input.asc, 4, min(
     prod(percent(dm.passive2.crBonus), input.premod.critRate_),
     percent(dm.passive2.maxBonus)
-  ))
+  ),
+  { ...KeyMap.info("critRate_"), isTeamBuff: true }
 )
+const nodeA4CritBonusDisp = equal(condA4, "on", nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
 
 const nodeC1AtkSpd = equal(condC1, "on", greaterEq(input.constellation, 1, dm.constellation1.atkSpdInc))
@@ -104,6 +105,9 @@ const dmgFormulas = {
     hit2: dmgNode("atk", dm.burst.hit2, "burst"),
     dotDmg: dmgNode("atk", dm.burst.dotDmg, "burst"),
   },
+  passive2: {
+    nodeA4OptTarget
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -266,6 +270,9 @@ const sheet: ICharacterSheet = {
           }]
         }
       }
+    }), ct.fieldsTem("passive2", {
+      canShow: equal(input.activeCharKey, key, 1),
+      fields: [{ node: dmgFormulas.passive2.nodeA4OptTarget }]
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.condTem("constellation1", {

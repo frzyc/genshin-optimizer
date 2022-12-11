@@ -131,8 +131,6 @@ function burstResolve(mvArr: number[], initial = false) {
   )
 }
 
-const passive2ElecDmgBonus = greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-1)), (dm.passive2.electroDmg_bonus * 100)))
-
 const [condC4Path, condC4] = cond(key, "c4")
 const c4AtkBonus_ = greaterEq(input.constellation, 4,
   equal("c4", condC4, unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus))
@@ -165,6 +163,10 @@ const dmgFormulas = {
     plungeLow: burstResolve(dm.burst.plungeLow),
     plungeHigh: burstResolve(dm.burst.plungeHigh),
   },
+  passive2: {
+    passive2ElecDmgBonus: greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.electroDmg_bonus), 100)),
+    energyRestore: greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.energyGen), 100), { name: ct.ch("a4.enerRest"), unit: "%" })
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -176,7 +178,7 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
   },
   premod: {
     burst_dmg_: skillEye_,
-    electro_dmg_: passive2ElecDmgBonus,
+    electro_dmg_: dmgFormulas.passive2.passive2ElecDmgBonus,
   },
   teamBuff: {
     premod: {
@@ -319,11 +321,9 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        text: ct.ch("a4.enerRest"),
-        value: (data) => (data.get(input.total.enerRech_).value * 100 - 100) * (dm.passive2.energyGen * 100),
-        unit: "%"
+        node: dmgFormulas.passive2.energyRestore
       }, {
-        node: passive2ElecDmgBonus,
+        node: dmgFormulas.passive2.passive2ElecDmgBonus,
       }]
     })]),
     passive3: ct.talentTem("passive3"),

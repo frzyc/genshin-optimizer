@@ -106,6 +106,10 @@ const dmgFormulas = {
   burst: {
     singleDmg: dmgNode("hp", dm.burst.singleDmg, "burst"),
   },
+  passive2: {
+    a4Skill_dmgInc,
+    a4Skill_healInc,
+  },
   constellation4: {
     markDmg: greaterEq(input.constellation, 4, customDmgNode(prod(percent(dm.constellation4.markDmg), input.total.hp), "skill", { hit: { ele: constant(elementKey) } })),
   },

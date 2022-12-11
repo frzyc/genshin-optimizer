@@ -74,9 +74,11 @@ const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
 const asc1Disp = greaterEq(input.asc, 1, dm.passive1.eleMas)
 const asc1 = objectKeyMap(absorbableEle, ele => unequal(target.charKey, key, // Not applying to Sucrose
   equal(target.charEle, condSwirls[ele], asc1Disp), { ...KeyMap.info("eleMas"), isTeamBuff: true })) // And element matches the swirl
-const asc4Disp = equal("hit", condSkillHitOpponent,
-  greaterEq(input.asc, 4,
-    prod(percent(dm.passive2.eleMas_), input.premod.eleMas)))
+const asc4OptNode = greaterEq(input.asc, 4,
+  prod(percent(dm.passive2.eleMas_), input.premod.eleMas),
+  { ...KeyMap.info("eleMas"), isTeamBuff: true }
+)
+const asc4Disp = equal("hit", condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
 const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
@@ -99,6 +101,9 @@ export const dmgFormulas = {
     ...Object.fromEntries(absorbableEle.map(key =>
       [key, equal(condAbsorption, key, dmgNode("atk", dm.burst.dmg_, "burst", { hit: { ele: constant(key) } }))]))
   },
+  passive2: {
+    asc4OptNode
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -242,6 +247,9 @@ const sheet: ICharacterSheet = {
             }],
           }
         }
+      }), ct.fieldsTem("passive2", {
+        canShow: equal(input.activeCharKey, key, 1),
+        fields: [{ node: dmgFormulas.passive2.asc4OptNode }]
       })]),
       passive3: ct.talentTem("passive3"),
       constellation1: ct.talentTem("constellation1"),
