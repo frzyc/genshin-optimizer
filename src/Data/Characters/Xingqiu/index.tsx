@@ -72,8 +72,11 @@ const nodeC2 = greaterEq(input.constellation, 2,
 const [condSkillPath, condSkill] = cond(key, "skill")
 
 const [condBurstPath, condBurst] = cond(key, "burst")
-const nodeC4 = greaterEq(input.constellation, 4,
-  compareEq(condBurst, "on", dm.constellation4.dmg_, one),
+const nodeC4 = compareEq(
+  greaterEq(input.constellation, 4, equal(condBurst, "on", 1)),
+  1,
+  dm.constellation4.dmg_,
+  one,
   { name: st("dmgMult.skill"), unit: "%" }
 )
 
