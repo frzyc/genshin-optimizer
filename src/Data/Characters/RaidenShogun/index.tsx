@@ -165,7 +165,7 @@ const dmgFormulas = {
   },
   passive2: {
     passive2ElecDmgBonus: greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.electroDmg_bonus), 100)),
-    energyRestore: greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.energyGen), 100), { name: ct.ch("a4.enerRest"), unit: "%" })
+    energyRestore: infoMut(greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.energyGen), 100)), { name: ct.ch("a4.enerRest"), unit: "%" })
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)

@@ -75,10 +75,11 @@ const [condC1Path, condC1] = cond(key, "RosariaC1")
 const [condC6Path, condC6] = cond(key, "DilucC6")
 
 const nodeA1CritInc = equal(condA1, "on", greaterEq(input.asc, 1, dm.passive1.crInc))
-const nodeA4OptTarget = greaterEq(input.asc, 4, min(
+const nodeA4OptTarget = infoMut(
+  greaterEq(input.asc, 4, min(
     prod(percent(dm.passive2.crBonus), input.premod.critRate_),
     percent(dm.passive2.maxBonus)
-  ),
+  )),
   { ...KeyMap.info("critRate_"), isTeamBuff: true }
 )
 const nodeA4CritBonusDisp = equal(condA4, "on", nodeA4OptTarget)
