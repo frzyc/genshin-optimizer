@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/genshin-optimizer/static/css/main.b38038a8.css",
-    "main.js": "/genshin-optimizer/static/js/main.e09f152e.js",
+    "main.js": "/genshin-optimizer/static/js/main.c0903da9.js",
     "static/js/942.705b19e4.chunk.js": "/genshin-optimizer/static/js/942.705b19e4.chunk.js",
     "static/js/846.99a8360b.chunk.js": "/genshin-optimizer/static/js/846.99a8360b.chunk.js",
     "static/js/878.6c0df6c6.chunk.js": "/genshin-optimizer/static/js/878.6c0df6c6.chunk.js",
@@ -10,9 +10,9 @@
     "static/js/915.c530919d.chunk.js": "/genshin-optimizer/static/js/915.c530919d.chunk.js",
     "static/js/759.32faa0bf.chunk.js": "/genshin-optimizer/static/js/759.32faa0bf.chunk.js",
     "static/js/377.f6c44bf0.chunk.js": "/genshin-optimizer/static/js/377.f6c44bf0.chunk.js",
-    "static/js/857.215b0107.chunk.js": "/genshin-optimizer/static/js/857.215b0107.chunk.js",
+    "static/js/857.d8404b3c.chunk.js": "/genshin-optimizer/static/js/857.d8404b3c.chunk.js",
     "static/js/655.0a4c7d29.chunk.js": "/genshin-optimizer/static/js/655.0a4c7d29.chunk.js",
-    "static/js/41.ab198fe6.chunk.js": "/genshin-optimizer/static/js/41.ab198fe6.chunk.js",
+    "static/js/41.64ac2aa3.chunk.js": "/genshin-optimizer/static/js/41.64ac2aa3.chunk.js",
     "static/js/366.7c115990.chunk.js": "/genshin-optimizer/static/js/366.7c115990.chunk.js",
     "static/js/956.0bde2ba9.chunk.js": "/genshin-optimizer/static/js/956.0bde2ba9.chunk.js",
     "static/js/213.d5e1a265.chunk.js": "/genshin-optimizer/static/js/213.d5e1a265.chunk.js",
@@ -191,7 +191,7 @@
     "static/media/icon_slot_goblet.png": "/genshin-optimizer/static/media/icon_slot_goblet.073848cfcd634ccca56f.png",
     "static/media/getFetch.cjs": "/genshin-optimizer/static/media/getFetch.c780682470504fffbd04.cjs",
     "main.b38038a8.css.map": "/genshin-optimizer/static/css/main.b38038a8.css.map",
-    "main.e09f152e.js.map": "/genshin-optimizer/static/js/main.e09f152e.js.map",
+    "main.c0903da9.js.map": "/genshin-optimizer/static/js/main.c0903da9.js.map",
     "942.705b19e4.chunk.js.map": "/genshin-optimizer/static/js/942.705b19e4.chunk.js.map",
     "846.99a8360b.chunk.js.map": "/genshin-optimizer/static/js/846.99a8360b.chunk.js.map",
     "878.6c0df6c6.chunk.js.map": "/genshin-optimizer/static/js/878.6c0df6c6.chunk.js.map",
@@ -200,9 +200,9 @@
     "915.c530919d.chunk.js.map": "/genshin-optimizer/static/js/915.c530919d.chunk.js.map",
     "759.32faa0bf.chunk.js.map": "/genshin-optimizer/static/js/759.32faa0bf.chunk.js.map",
     "377.f6c44bf0.chunk.js.map": "/genshin-optimizer/static/js/377.f6c44bf0.chunk.js.map",
-    "857.215b0107.chunk.js.map": "/genshin-optimizer/static/js/857.215b0107.chunk.js.map",
+    "857.d8404b3c.chunk.js.map": "/genshin-optimizer/static/js/857.d8404b3c.chunk.js.map",
     "655.0a4c7d29.chunk.js.map": "/genshin-optimizer/static/js/655.0a4c7d29.chunk.js.map",
-    "41.ab198fe6.chunk.js.map": "/genshin-optimizer/static/js/41.ab198fe6.chunk.js.map",
+    "41.64ac2aa3.chunk.js.map": "/genshin-optimizer/static/js/41.64ac2aa3.chunk.js.map",
     "366.7c115990.chunk.js.map": "/genshin-optimizer/static/js/366.7c115990.chunk.js.map",
     "956.0bde2ba9.chunk.js.map": "/genshin-optimizer/static/js/956.0bde2ba9.chunk.js.map",
     "213.d5e1a265.chunk.js.map": "/genshin-optimizer/static/js/213.d5e1a265.chunk.js.map",
@@ -229,6 +229,6 @@
   },
   "entrypoints": [
     "static/css/main.b38038a8.css",
-    "static/js/main.e09f152e.js"
+    "static/js/main.c0903da9.js"
   ]
 }
