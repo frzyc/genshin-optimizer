@@ -74,8 +74,10 @@ const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, "skillHit")
 const asc1Disp = greaterEq(input.asc, 1, dm.passive1.eleMas)
 const asc1 = objectKeyMap(absorbableEle, ele => unequal(target.charKey, key, // Not applying to Sucrose
   equal(target.charEle, condSwirls[ele], asc1Disp), { ...KeyMap.info("eleMas"), isTeamBuff: true })) // And element matches the swirl
-const asc4OptNode = greaterEq(input.asc, 4,
-  prod(percent(dm.passive2.eleMas_), input.premod.eleMas),
+const asc4OptNode = infoMut(
+  greaterEq(input.asc, 4,
+    prod(percent(dm.passive2.eleMas_), input.premod.eleMas)
+  ),
   { ...KeyMap.info("eleMas"), isTeamBuff: true }
 )
 const asc4Disp = equal("hit", condSkillHitOpponent, asc4OptNode)

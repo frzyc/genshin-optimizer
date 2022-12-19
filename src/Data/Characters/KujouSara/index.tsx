@@ -86,7 +86,7 @@ const dmgFormulas = {
     stormcluster: dmgNode("atk", dm.burst.stormClusterDmg, "burst"),
   },
   passive2: {
-    energyRegen: greaterEq(input.asc, 4, prod(input.total.enerRech_, dm.passive2.energyGen), { name: ct.ch("a4.enerRest"), fixed: 2 })
+    energyRegen: infoMut(greaterEq(input.asc, 4, prod(input.total.enerRech_, dm.passive2.energyGen)), { name: ct.ch("a4.enerRest"), fixed: 2 })
   },
   constellation2: {
     dmg: greaterEq(input.constellation, 2, prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.constellation2.crowfeatherDmg))),
