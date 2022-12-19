@@ -327,6 +327,8 @@ export default function TabBuild() {
     disabled={!!generatingBuilds}
   />
 
+  const getLabel0 = useCallback((index) => <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>Graph #{{ count: index + 1 }}</Trans>, [t])
+  const getLabel1 = useCallback((index) => `#${index + 1}`, [])
   return <Box display="flex" flexDirection="column" gap={1}>
     {noArtifact && <Alert severity="warning" variant="filled"><Trans t={t} i18nKey="noArtis">Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifacts">Artifacts</Link> page and add some!</Trans></Alert>}
     {/* Build Generator Editor */}
@@ -471,8 +473,8 @@ export default function TabBuild() {
         </CardContent>
       </CardLight>
       <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>Graph #{{count: index + 1}}</Trans>} setBuilds={setGraphBuilds} />}
-        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={(index) => `#${index + 1}`} />
+        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getLabel0} setBuilds={setGraphBuilds} />}
+        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getLabel1} />
       </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
