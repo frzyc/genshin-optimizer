@@ -84,7 +84,6 @@ const dmgFormulas = {
     summonDmgC2: greaterEq(input.constellation, 2, customDmgNode(prod(sum(subscript(input.total.skillIndex,
       dm.skill.summonDmg, { unit: "%" }), percent(dm.constellation2.dmg)), input.total.atk), "skill",
       { hit: { ele: constant('electro') } })),
-    ozActiveCharDmg: greaterEq(input.constellation, 6, customDmgNode(prod(input.total.atk, percent(dm.constellation6.dmg)), "skill", { hit: { ele: constant('electro') } }))
   },
   burst: {
     dmg: dmgNode("atk", dm.burst.dmg, "burst"),
@@ -96,6 +95,9 @@ const dmgFormulas = {
   },
   constellation1: {
     dmg: greaterEq(input.constellation, 1, customDmgNode(prod(input.total.atk, percent(dm.constellation1.dmg)), "normal", { hit: { ele: constant('physical') } }))
+  },
+  constellation6: {
+    ozActiveCharDmg: greaterEq(input.constellation, 6, customDmgNode(prod(input.total.atk, percent(dm.constellation6.dmg)), "skill", { hit: { ele: constant('electro') } }))
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -156,9 +158,6 @@ const sheet: ICharacterSheet = {
           canShow: (data) => data.get(input.constellation).value >= 2,
           node: infoMut(dmgFormulas.skill.summonDmgC2, { name: ct.chg(`skill.skillParams.1`) }),
         }, {
-          canShow: (data) => data.get(input.constellation).value >= 6,
-          node: infoMut(dmgFormulas.skill.ozActiveCharDmg, { name: ct.ch("c6OzDmg") })
-        }, {
           text: ct.chg("skill.skillParams.2"),
           value: (data) => data.get(input.constellation).value >= 6 ? dm.skill.duration + dm.constellation6.duration : dm.skill.duration,
           unit: "s"
@@ -172,7 +171,11 @@ const sheet: ICharacterSheet = {
           value: 50,
           unit: "%"
         }]
-      }]),
+      }, ct.headerTem("constellation6", {
+        fields: [{
+          node: infoMut(dmgFormulas.constellation6.ozActiveCharDmg, { name: ct.ch("c6OzDmg") })
+        }]
+      })]),
 
       burst: ct.talentTem("burst", [{
         fields: [{
