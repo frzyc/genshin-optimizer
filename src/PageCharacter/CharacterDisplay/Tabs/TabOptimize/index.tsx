@@ -293,16 +293,17 @@ export default function TabBuild() {
     } else {
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map(x => x.plotData!))
-        let unFlatBuilds = Object.values(plotData)
-        let flatBuilds: Build[] = unFlatBuilds.flatMap(build => build)
-        if (targetNode.info?.unit === "%")
-          flatBuilds = flatBuilds.map(({ value, plot, artifactIds }) => ({ value: value * 100, plot, artifactIds }))
-        if (plotBaseNumNode.info?.unit === "%")
-          flatBuilds = flatBuilds.map(({ value, plot, artifactIds }) => ({ value, plot: (plot ?? 0) * 100, artifactIds }))
+        const isTargetNodePercent = targetNode.info?.unit === "%"
+        const isPlotNodePercent = plotBaseNumNode.info?.unit === "%"
+        const builds = Object.values(plotData).flatMap(builds => builds.map(({ value, plot, artifactIds }) => ({
+          value: isTargetNodePercent ? value * 100 : value,
+          plot: isPlotNodePercent ? (plot ?? 0) * 100 : plot,
+          artifactIds
+        })))
         setChartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
-          data: flatBuilds
+          data: builds
         })
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
