@@ -57,17 +57,15 @@ export class ComputeWorker {
           }
           if (plotData) {
             const x = result[min.length + 1]
-            // if (!plotData[x] || plotData[x]!.value < value) {
             if (!build) build = { value, artifactIds: buffer.map(x => x.id).filter(id => id) }
             build.plot = x
             if (!Array.isArray(plotData[x])) plotData[x] = []
             if (plotData[x]!.length < 3) {
-              plotData[x]?.push(build)
+              plotData[x]!.push(build)
             } else if (plotData[x]!.every(savedBuild => savedBuild.plot! < build!.plot!)) {
-              plotData[x]!.sort((a, b) => a.plot! - b.plot!).filter((_, i) => i)
-              plotData[x]?.push(build)
+              plotData[x]!.sort((a, b) => a.plot! - b.plot!).filter((_, i) => i) // Chop off first value of array
+              plotData[x]!.push(build)
             }
-            // }
           }
         }
         else count.failed += 1
