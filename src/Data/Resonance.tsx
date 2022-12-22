@@ -178,8 +178,10 @@ const impetuousWinds: IResonance = {
 }
 
 // Enduring Rock
-const condERPath = ["resonance", "EnduringRock"]
-const condER = condReadNode(condERPath)
+const condERShieldPath = ["resonance", "EnduringRock"]
+const condERShield = condReadNode(condERShieldPath)
+const condERHitPath = ["resonance", "EnduringRockHit"]
+const condERHit = condReadNode(condERHitPath)
 const erNodeshield_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.geo, 2, percent(0.15))
@@ -188,14 +190,14 @@ const erNodeshield_ = equal(input.activeCharKey, input.charKey,
 const erNodeDMG_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.geo, 2,
-      equal(condER, "on", percent(0.15))
+      equal(condERShield, "on", percent(0.15))
     )
   )
 )
 const erNodeRes_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.geo, 2,
-      equal(condER, "on", percent(-0.2))
+      equal(condERHit, "on", percent(-0.2))
     )
   )
 )
@@ -212,8 +214,8 @@ const enduringRock: IResonance = {
     }]
   }, {
     teamBuff: true,
-    path: condERPath,
-    value: condER,
+    path: condERShieldPath,
+    value: condERShield,
     header: {
       title: tr("EnduringRock.name"),
       icon: StatIcon.geo,
@@ -223,7 +225,21 @@ const enduringRock: IResonance = {
       on: {
         fields: [{
           node: erNodeDMG_
-        }, {
+        }]
+      }
+    }
+  }, {
+    teamBuff: true,
+    path: condERHitPath,
+    value: condERHit,
+    header: {
+      title: tr("EnduringRock.name"),
+      icon: StatIcon.geo,
+    },
+    name: trm("EnduringRock.hitCond"),
+    states: {
+      on: {
+        fields: [{
           node: erNodeRes_
         }, {
           text: stg("duration"),
