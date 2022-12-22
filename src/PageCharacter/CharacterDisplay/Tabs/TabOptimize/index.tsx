@@ -295,7 +295,7 @@ export default function TabBuild() {
         const plotData = mergePlot(results.map(x => x.plotData!))
         const isTargetNodePercent = targetNode.info?.unit === "%"
         const isPlotNodePercent = plotBaseNumNode.info?.unit === "%"
-        const builds = Object.values(plotData).flatMap(builds => builds.map(({ value, plot, artifactIds }) => ({
+        const builds = Object.values(plotData).flatMap(builds => builds.map(({ value, plot, artifactIds }): Build => ({
           value: isTargetNodePercent ? value * 100 : value,
           plot: isPlotNodePercent ? (plot ?? 0) * 100 : plot,
           artifactIds
