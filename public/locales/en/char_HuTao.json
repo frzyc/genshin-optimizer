@@ -10,6 +10,6 @@
     "condName": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself"
   },
   "constellation6": {
-    "condName": "HP drops below 25%, or when she suffers a lethal strike"
+    "condName": "After HP drops below 25%, or after suffering a lethal strike"
   }
 }
