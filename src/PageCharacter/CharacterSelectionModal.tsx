@@ -1,5 +1,7 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Tooltip, tooltipClasses, TooltipProps, Typography, styled } from "@mui/material";
-import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
@@ -16,6 +18,7 @@ import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ascensionMaxLevel } from "../Data/LevelData";
 import { DatabaseContext } from "../Database/Database";
 import useCharacter from "../ReactHooks/useCharacter";
+import useCharMeta from "../ReactHooks/useCharMeta";
 import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import usePromise from "../ReactHooks/usePromise";
@@ -92,7 +95,6 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
       <DataContext.Provider value={{ teamData: undefined } as any}>
         <CardContent><Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5, }}>
           {characterKeyList.map(characterKey => <Grid item key={characterKey} xs={1} >
-            {/* <CharacterCard key={characterKey} hideStats characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} /> */}
             <SelectionCard characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
           </Grid>)}
         </Grid></CardContent>
@@ -113,14 +115,35 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
   const { gender } = useDBMeta()
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const character = useCharacter(characterKey)
+  const { favorite } = useCharMeta(characterKey)
+  const { database } = useContext(DatabaseContext)
+
+  const [open, setOpen] = useState(false)
+  const handleClose = useCallback(() => setOpen(false), [])
+  const handleOpen = useCallback(() => setOpen(true), [])
+
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
-  return <CustomTooltip enterDelay={300} enterNextDelay={300} arrow placement="bottom" title={
-    <Box sx={{ width: 300 }}>
-      <CharacterCard hideStats characterKey={characterKey} />
-    </Box>
-  }>
+  return <CustomTooltip
+    enterDelay={300}
+    enterNextDelay={300}
+    arrow
+    placement="bottom"
+    open={open}
+    onClose={handleClose}
+    onOpen={handleOpen}
+    title={
+      <Box sx={{ width: 300 }}>
+        <CharacterCard hideStats characterKey={characterKey} />
+      </Box>
+    }
+  >
     <Box>
       <CardLight sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+        <Box sx={{ position: "absolute", opacity: 0.7, zIndex: 2 }}>
+          <IconButton sx={{ p: 0.25 }} onClick={_ => { setOpen(false); database.charMeta.set(characterKey, { favorite: !favorite }) }}>
+            {favorite ? <Favorite /> : <FavoriteBorder />}
+          </IconButton>
+        </Box>
         <CardActionArea onClick={onClick}>
           <Box display="flex"
             position="relative"
@@ -147,7 +170,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
               />
             </Box>
             <Box flexGrow={1} sx={{ pr: 1 }} display="flex" flexDirection="column" zIndex={1} justifyContent="space-evenly">
-              <Typography variant="body2" ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85, textShadow: "0 0 5px gray" }}>{characterSheet?.name}</SqBadge></Typography>
+              <Typography variant="body2" sx={{ flexGrow: 1 }} ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85, textShadow: "0 0 5px gray" }}>{characterSheet?.name}</SqBadge></Typography>
               {character ? <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <Box sx={{ textShadow: "0 0 5px gray" }}>
                   <Typography variant="body2" component="span" whiteSpace="nowrap" >Lv. {level}</Typography>
