@@ -4,7 +4,6 @@
   },
   "SprawlingGreenery": {
     "cond2ele": "After triggering Burn, Catalyze, or Bloom reactions",
-    "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions",
-    "eleMas": "Sprawling Greenery Elemental Mastery"
+    "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions"
   }
 }
