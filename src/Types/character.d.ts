@@ -1,8 +1,8 @@
-import { input } from "../Formula";
+import { InputPremodKey, input } from "../Formula";
 import { EleEnemyResKey } from "../KeyMap";
-import { MainStatKey } from "./artifact";
-import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, SlotKey, SubstatType } from "./consts";
-import { IConditionalValues } from "./IConditional";
+import { MainStatKey, SubstatKey } from "./artifact";
+import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, ArtifactSetKey, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, Refinement, SlotKey, SubstatType, WeaponKey } from "./consts";
+import { IConditionalValues } from "./sheet";
 
 export interface CustomTarget {
   weight: number,
