@@ -1,11 +1,12 @@
+import { element } from 'prop-types'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
-import { equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
-import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
 import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
@@ -76,9 +77,6 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
     equal(condC2Thunder, "on", dm.constellation2.electro_enemyRes)
   )
 
-  const [condC6After2ThunderPath, condC6After2Thunder] = cond(condCharKey, `${elementKey}C6After2Thunder`)
-  const c6_thunder_dmg_ = greaterEq(input.constellation, 6, equal(condC6After2Thunder, "on", dm.constellation6.thunder_dmg_))
-
   const dmgFormulas = {
     ...dmgForms,
     skill: {
@@ -86,8 +84,16 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
     },
     burst: {
       pressDmg: dmgNode("atk", dm.burst.pressDmg, "burst"),
-      thunderDmg: dmgNode("atk", dm.burst.thunderDmg, "burst",
-        { premod: { burst_dmg_: c6_thunder_dmg_ } })
+      thunderDmg: dmgNode("atk", dm.burst.thunderDmg, "burst"),
+      thirdThunderDmg: greaterEq(input.constellation, 6, customDmgNode(
+        prod(
+          subscript(input.total.burstIndex, dm.burst.thunderDmg, { unit: "%" }),
+          percent(dm.constellation6.thunder_dmg_),
+          input.total.atk
+        ),
+        "burst",
+        { hit: { ele: constant(elementKey) }}
+      ))
     }
   } as const
 
@@ -168,6 +174,8 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
           { name: ct.chg(`burst.skillParams.1`) }
         )
       }, {
+        node: infoMut(dmgFormulas.burst.thirdThunderDmg, { name: ch("burst.3rd")})
+      }, {
         text: ch("burst.thunderCd"),
         value: dm.burst.thunderCd,
         unit: "s",
@@ -199,22 +207,6 @@ export default function electro(key: CharacterSheetKey, charKey: CharacterKey, d
             text: stg("duration"),
             value: dm.constellation2.duration,
             unit: "s"
-          }]
-        }
-      }
-    }), ct.condTem("constellation6", {
-      value: condC6After2Thunder,
-      path: condC6After2ThunderPath,
-      name: ch("c6.fallingThunder3"),
-      states: {
-        on: {
-          fields: [{
-            node: infoMut(c6_thunder_dmg_,
-              { name: ch("c6.fallingThunderBonus_"), variant: "electro" }
-            )
-          }, {
-            text: ct.chg("burst.skillParams.2"),
-            value: dm.constellation6.energyRestore
           }]
         }
       }
