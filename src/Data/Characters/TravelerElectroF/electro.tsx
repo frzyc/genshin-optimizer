@@ -1,4 +1,3 @@
-import { element } from 'prop-types'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
