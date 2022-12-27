@@ -134,11 +134,6 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.maxCd,
         unit: "s"
-      }, {
-        canShow: data => data.get(input.constellation).value >= 4,
-        text: ct.ch("c4"),
-        value: 10,
-        unit: "%"
       }]
     }, ct.condTem("skill", {
       value: condSkillAbsorption,
@@ -152,6 +147,12 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
           node: infoMut(dmgFormulas.skill.max_ele_dmg, { name: ch("maxEleDmg") }),
         }]
       }]))
+    }), ct.headerTem("constellation4", {
+      fields: [{
+        text: ch("c4"),
+        value: 10,
+        unit: "%"
+      }]
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -183,7 +184,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       value: condC6,
       path: condC6Path,
       teamBuff: true,
-      name: ct.ch("c6"),
+      name: ch("c6"),
       states: {
         on: {
           fields: [{
