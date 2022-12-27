@@ -277,7 +277,7 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(c1Shun_dmg_, { name: ct.ch("c1.shun_dmg_") }),
+            node: infoMut(c1Shun_dmg_, { name: ct.ch("c1.shun_dmg_"), unit: "%" }),
           }]
         }
       }
