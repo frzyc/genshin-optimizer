@@ -3,8 +3,9 @@ import { TextField, TextFieldProps, useTheme } from "@mui/material";
 type SolidColoredTextFieldProps = Omit<TextFieldProps, "multiline" | "variant" | "color" | "hiddenLabel" | "type" | "InputLabelProps"> & {
   hasValue: boolean
   startAdornment?: Displayable
+  flattenCorners?: boolean
 }
-export default function SolidColoredTextField({ hasValue, startAdornment, InputProps, sx, ...props }: SolidColoredTextFieldProps) {
+export default function SolidColoredTextField({ hasValue, startAdornment, flattenCorners = false, InputProps, sx, ...props }: SolidColoredTextFieldProps) {
   const theme = useTheme()
   return <TextField
     {...props}
@@ -20,7 +21,7 @@ export default function SolidColoredTextField({ hasValue, startAdornment, InputP
     sx={{
       ...sx,
       // Fill in the background without using the `focused` prop
-      "& .MuiFilledInput-root": { backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, paddingTop: props.label ? undefined : 0, paddingBottom: 0, flexWrap: "nowrap", },
+      "& .MuiFilledInput-root": { backgroundColor: hasValue ? theme.palette.success.main : theme.palette.primary.main, paddingTop: props.label ? undefined : 0, paddingBottom: 0, flexWrap: "nowrap", borderTopLeftRadius: flattenCorners ? 0 : "4px", borderTopRightRadius: flattenCorners ? 0 : "4px" },
       "& .MuiFilledInput-root.Mui-focused": { backgroundColor: hasValue ? theme.palette.success.light : theme.palette.primary.light },
       "& .MuiFilledInput-root:hover": { backgroundColor: hasValue ? theme.palette.success.dark : theme.palette.primary.dark },
       // Remove the colored bar at the bottom of the input
