@@ -63,7 +63,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     let sliderMin = Infinity
     let sliderMax = -Infinity
     const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
-    const highlightedBuildsSlotMap = [...builds, ...(graphBuilds ?? [])].map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
+    const generatedBuildSlotMaps = builds.map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
+    const graphBuildSlotMaps = graphBuilds?.map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
     // Shape the data so we know the current and highlighted builds
     const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => {
       if (x === undefined) return null
@@ -80,14 +81,29 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         return enhancedDatum
       }
 
-      const isHighlightedBuild = highlightedBuildsSlotMap.some(highlightedSlotMap =>
-        allSlotKeys.every(slotKey => highlightedSlotMap[slotKey] === datumSlotMap[slotKey])
+      const generBuildIndex = generatedBuildSlotMaps.findIndex(buildSlotMap =>
+        allSlotKeys.every(slotKey => buildSlotMap[slotKey] === datumSlotMap[slotKey])
       )
-      if (isHighlightedBuild) {
+      if (generBuildIndex !== -1) {
         enhancedDatum.highlighted = y
+        enhancedDatum.buildNumber = generBuildIndex + 1
+        enhancedDatum.highlightedType = "generated"
+        // Remove the Y-value so there are not 2 dots displayed for these builds
+        enhancedDatum.y = undefined
+        return enhancedDatum
+      }
+
+      const graphBuildIndex = graphBuildSlotMaps?.findIndex(buildSlotMap =>
+        allSlotKeys.every(slotKey => buildSlotMap[slotKey] === datumSlotMap[slotKey])
+      )
+      if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
+        enhancedDatum.highlighted = y
+        enhancedDatum.buildNumber = graphBuildIndex + 1
+        enhancedDatum.highlightedType = "graph"
         // Remove the Y-value so there are not 2 dots displayed for these builds
         enhancedDatum.y = undefined
       }
+
       return enhancedDatum
     })
     .sort((a, b) => a!.x - b!.x) as EnhancedPoint[]
@@ -219,7 +235,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   const { graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { t } = useTranslation("page_character_optimize")
   const [selectedPoint, setSelectedPoint] = useState<EnhancedPoint>()
-  const addBuildToList = useCallback((build: string[]) => setGraphBuilds([...(graphBuilds ?? []), build]), [setGraphBuilds, graphBuilds])
+  const addBuildToList = useCallback((build: string[]) => { setGraphBuilds([...(graphBuilds ?? []), build]); setSelectedPoint(undefined) }, [setGraphBuilds, graphBuilds])
   const chartOnClick = useCallback(props => {
     if (props && props.chartX && props.chartY) setSelectedPoint(getNearestPoint(props.chartX, props.chartY, 20, displayData))
   }, [setSelectedPoint, displayData])
