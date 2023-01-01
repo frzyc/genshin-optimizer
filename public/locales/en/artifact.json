@@ -112,5 +112,6 @@
   },
   "substat_one": "{{count}} substat",
   "substat_other": "{{count}} substats",
-  "addNew": "Add New Artifact"
+  "addNew": "Add New Artifact",
+  "cantDeleteLock": "Cannot delete artifact because it is locked"
 }
