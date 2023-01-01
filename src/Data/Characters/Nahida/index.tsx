@@ -123,7 +123,7 @@ const a1InBurst_eleMasDisp = greaterEq(input.asc, 1,
 )
 const a1InBurst_eleMas = equal(input.activeCharKey, target.charKey, a1InBurst_eleMasDisp)
 
-const a4Karma_dmg_ = greaterEq(input.asc, 4,
+const a4Karma_dmg_ = infoMut(greaterEq(input.asc, 4,
   min(
     prod(
       percent(dm.passive2.eleMas_dmg_),
@@ -133,10 +133,10 @@ const a4Karma_dmg_ = greaterEq(input.asc, 4,
       )
     ),
     percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted)
-  ),
+  )),
   { unit: "%" }
 )
-const a4Karma_critRate_ = greaterEq(input.asc, 4,
+const a4Karma_critRate_ = infoMut(greaterEq(input.asc, 4,
   min(
     prod(
       percent(dm.passive2.eleMas_critRate_),
@@ -146,7 +146,7 @@ const a4Karma_critRate_ = greaterEq(input.asc, 4,
       )
     ),
     percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted)
-  ),
+  )),
   { unit: "%" }
 )
 
