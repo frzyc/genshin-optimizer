@@ -21,7 +21,7 @@ export default function StatEditorList({ statKeys, statFilters, setStatFilters, 
   })), [statKeys])
   const remainingOptions = useMemo(() =>
     Object.values(statOptionsMap).filter(({ key }) =>
-      !(Object.keys(statFilters) as any).some((k: StatKey) => k === key)
+      !Object.keys(statFilters).some(k => k === key)
     ), [statOptionsMap, statFilters])
 
   const setKey = useCallback(
