@@ -52,7 +52,7 @@ const dm = {
   },
   constellation4: {
     ele_dmg_: skillParam_gen.constellation4[0],
-    duration: skillParam_gen.constellation4[1],
+    duration: skillParam_gen.constellation4[0],
   },
   constellation6: {
     defIgn_: skillParam_gen.constellation6[0],
