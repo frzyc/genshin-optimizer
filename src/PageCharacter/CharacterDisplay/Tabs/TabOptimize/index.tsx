@@ -107,10 +107,10 @@ export default function TabBuild() {
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
+      if (art.exclude && !useExcludedArts) return false
+
       // If its equipped on the selected character, bypass the check
       if (art.location === charKeyToLocCharKey(characterKey)) return true
-
-      if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
       if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       return true
