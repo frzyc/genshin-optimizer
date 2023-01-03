@@ -1,0 +1,35 @@
+{
+  "weaponType": "catalyst",
+  "rarity": 1,
+  "mainStat": {
+    "type": "atk",
+    "base": 23.245,
+    "curve": "GROW_CURVE_ATTACK_101"
+  },
+  "addProps": [],
+  "ascension": [
+    {
+      "addStats": {}
+    },
+    {
+      "addStats": {
+        "atk": 11.7
+      }
+    },
+    {
+      "addStats": {
+        "atk": 23.3
+      }
+    },
+    {
+      "addStats": {
+        "atk": 35
+      }
+    },
+    {
+      "addStats": {
+        "atk": 46.7
+      }
+    }
+  ]
+}

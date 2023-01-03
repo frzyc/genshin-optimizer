@@ -1,7 +1,0 @@
-{
-  "condName": "Total Opponents Nearby",
-  "opponents": {
-    "oneOrNone": "Less than two opponents",
-    "moreThanOne": "At least two opponents"
-  }
-}
