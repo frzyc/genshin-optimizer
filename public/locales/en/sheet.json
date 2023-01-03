@@ -13,8 +13,6 @@
   "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
   "stack_one": "{{count}} Stack",
   "stack_other": "{{count}} Stacks",
-  "member_one": "{{count}} Member",
-  "member_other": "{{count}} Members",
   "seconds_one": "{{count}} Second",
   "seconds_other": "{{count}} Seconds",
   "uses_one": "{{count}} Use",
@@ -69,8 +67,7 @@
   "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
   "opponentsField": "Opponents in field",
-  "takeDmg": "On taking DMG",
-  "onHit": "On Hit",
+  "takeDmg": "After taking DMG",
   "infusion": {
     "pyro": "Pyro Infusion",
     "cryo": "Cryo Infusion",
