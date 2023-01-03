@@ -25,7 +25,7 @@
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
     "title": "Use Excluded Artifacts",
-    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
+    "usingNum_one": "Using <1>{{count}}</1> excluded artifact",
     "usingNum_other": "Using <1>{{count}}</1> excluded artifacts"
   },
   "useEquipped": {
