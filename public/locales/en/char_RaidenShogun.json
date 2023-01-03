@@ -4,6 +4,7 @@
     "partyCost": "Energy Cost"
   },
   "burst": {
+    "burstDmg": "Musou no Hitotachi DMG",
     "resolves": "Resolve Stacks",
     "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
     "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>"
