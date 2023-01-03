@@ -15,7 +15,7 @@
     "maxSubEff": "Max. Roll Value",
     "maxSubEffDesc": "The <strong>Maximum Substats Roll Value</strong> of an artifact calculates the RV if the remaining upgrades rolled their maximum values.",
     "substat": {
-      "selectSub": "Select a Substat",
+      "selectSub": "Select Value",
       "error": {
         "noCalc": "Cannot calculate stat rolls.",
         "noOverRoll": "Substat cannot be rolled more than {{value}} times."
@@ -25,7 +25,7 @@
       "RollCount_other": "{{count}} Rolls",
       "noStat": "No Value",
       "eff": "RV: <1></1>",
-      "noSubstat": "No Substat",
+      "noSubstat": "Empty",
       "substatFormat": "Substat {{value}}",
       "nextRolls": "Next rolls:"
     },
