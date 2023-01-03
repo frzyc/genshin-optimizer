@@ -1,15 +1,15 @@
 {
   "paramita": {
-    "enter": "Enter the Paramita Papilio state",
-    "end": "When a Paramita Papilio state activated by Guide to Afterlife ends"
+    "enter": "In the Paramita Papilio state",
+    "end": "After the Paramita Papilio state ends"
   },
   "constellation2": {
     "applyBloodBlossom": "Applies Blood Blossom effect (C2)"
   },
   "constellation4": {
-    "condName": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself"
+    "condName": "After defeating an enemy affected by a Blood Blossom"
   },
   "constellation6": {
-    "condName": "HP drops below 25%, or when she suffers a lethal strike"
+    "condName": "After HP drops below 25% or suffering a lethal strike"
   }
 }
