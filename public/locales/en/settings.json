@@ -35,11 +35,6 @@
     "hint": "Load your JSON file here...",
     "hintPaste": "...or paste your data below.",
     "dbSource": "Data source:",
-    "goUpload": {
-      "title": "<strong>Genshin Optimizer</strong> format",
-      "migrate": "Database will be migrated to a newer version. Please consider re-downloading the database after import.",
-      "deleteDatabasePrompt": "Are you sure you want to delete your database?"
-    },
     "goodUpload": {
       "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
     },
