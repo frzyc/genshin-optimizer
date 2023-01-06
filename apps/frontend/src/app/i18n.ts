@@ -54,8 +54,7 @@ i18n
     // For example, en-US becomes simply en.
     load: 'languageOnly',
 
-    // allow an empty value to count as invalid (by default is true)
-    returnEmptyString: false,
+    returnNull: false,
 
     backend: process.env.NODE_ENV === "development" ? {
       // Path to load localization data from.

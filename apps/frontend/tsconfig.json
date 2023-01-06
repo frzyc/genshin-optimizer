@@ -3,7 +3,9 @@
     "jsx": "react-jsx",
     "allowJs": false,
     "esModuleInterop": false,
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
     "strict": true,
     "jsxImportSource": "@emotion/react"
   },

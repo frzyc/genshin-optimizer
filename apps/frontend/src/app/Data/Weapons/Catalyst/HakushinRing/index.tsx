@@ -1,4 +1,4 @@
-import { WeaponData } from 'pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../../Components/ColoredText'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'

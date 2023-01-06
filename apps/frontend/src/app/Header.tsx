@@ -94,17 +94,17 @@ function WeaponChip() {
 
 const links = [{
   i18Key: "social.paypal",
-  href: process.env.REACT_APP_URL_PAYPAL_FRZYC,
+  href: process.env.NX_URL_PAYPAL_FRZYC,
   icon: <FontAwesomeSvgIcon icon={faPaypal} />,
   label: "paypal",
 }, {
   i18Key: "social.patreon",
-  href: process.env.REACT_APP_URL_PATREON_FRZYC,
+  href: process.env.NX_URL_PATREON_FRZYC,
   icon: <FontAwesomeSvgIcon icon={faPatreon} />,
   label: "patreon",
 }, {
   i18Key: "social.discord",
-  href: process.env.REACT_APP_URL_DISCORD_GO,
+  href: process.env.NX_URL_DISCORD_GO,
   icon: <FontAwesomeSvgIcon icon={faDiscord} />,
   label: "discord",
 },] as const

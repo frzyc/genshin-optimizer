@@ -14,7 +14,7 @@ const workerCount = 2
 const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   const scheduler = createScheduler()
   const promises = Array(workerCount).fill(0).map(async _ => {
-    const worker = createWorker({
+    const worker = await createWorker({
       errorHandler: console.error
     })
 
@@ -287,13 +287,14 @@ function parseSetKeys(texts: string[], sheets: AllArtifactSheets): Set<ArtifactS
   return results
 }
 function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<Rarity> {
-  let d = pixels, lastRowNum = 0, rowsWithNumber = 0;
+  const d = pixels
+  let lastRowNum = 0, rowsWithNumber = 0;
   const results = new Set<Rarity>([])
   for (let y = 0; y < height; y++) {
     let star = 0, onStar = false;
     for (let x = 0; x < width; x++) {
-      let i = (y * width + x) * 4
-      let r = d[i], g = d[i + 1], b = d[i + 2];
+      const i = (y * width + x) * 4
+      const r = d[i], g = d[i + 1], b = d[i + 2];
       if (colorCloseEnough({ r, g, b }, starColor)) {
         if (!onStar) {
           onStar = true

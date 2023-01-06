@@ -1,4 +1,4 @@
-import { SubstatKey } from "pipeline";
+import { SubstatKey } from "@genshin-optimizer/pipeline";
 import { infusionNode, input } from "../../Formula";
 import { inferInfoMut, mergeData } from "../../Formula/api";
 import { reactions } from "../../Formula/reaction";

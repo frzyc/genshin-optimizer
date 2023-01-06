@@ -1,4 +1,4 @@
-import { WeaponData } from 'pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'

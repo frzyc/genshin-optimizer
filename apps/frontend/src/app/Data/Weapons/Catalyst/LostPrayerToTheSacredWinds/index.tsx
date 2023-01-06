@@ -1,4 +1,4 @@
-import type { WeaponData } from 'pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, prod, subscript } from "../../../../Formula/utils"
 import { allElements, WeaponKey } from '../../../../Types/consts'

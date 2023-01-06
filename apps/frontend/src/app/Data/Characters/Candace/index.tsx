@@ -1,4 +1,4 @@
-import { CharacterData } from 'pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'

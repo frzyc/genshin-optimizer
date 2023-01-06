@@ -20,12 +20,12 @@ function FooterContent() {
         <Trans t={t} i18nKey="ui:appVersion" values={{ version: packageInfo.version }}>
           Genshin Optimizer Version:
           <a
-            href={`${process.env.REACT_APP_URL_GITHUB_GO}/releases`}
+            href={`${process.env.NX_URL_GITHUB_GO}/releases`}
             style={{ color: "white", fontFamily: "monospace" }}
             target="_blank"
             rel="noreferrer"
           >
-            {{ version: packageInfo.version }}
+            {{ version: packageInfo.version } as any}
           </a>
         </Trans>
       </Typography>

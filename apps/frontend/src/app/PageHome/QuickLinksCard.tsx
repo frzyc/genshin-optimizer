@@ -9,37 +9,37 @@ import { useTranslation } from "react-i18next"
 const smallIcons = [{
   tooltip: "Genshin Optimizer Discord",
   icon: <FontAwesomeSvgIcon icon={faDiscord} />,
-  url: process.env.REACT_APP_URL_DISCORD_GO,
+  url: process.env.NX_URL_DISCORD_GO,
   color: "discord",
 }, {
   tooltip: "Genshin Optimizer Github",
   icon: <GitHub />,
-  url: process.env.REACT_APP_URL_GITHUB_GO,
+  url: process.env.NX_URL_GITHUB_GO,
   color: "white",
 }, {
   tooltip: "Youtube (frzyc)",
   icon: <YouTube />,
-  url: process.env.REACT_APP_URL_YOUTUBE_FRZYC,
+  url: process.env.NX_URL_YOUTUBE_FRZYC,
   color: "red",
 }, {
   tooltip: "Twitch (frzyc)",
   icon: <FontAwesomeSvgIcon icon={faTwitch} />,
-  url: process.env.REACT_APP_URL_TWITCH_FRZYC,
+  url: process.env.NX_URL_TWITCH_FRZYC,
   color: "twitch",
 }, {
   tooltip: "Twitter (frzyc)",
   icon: <Twitter />,
-  url: process.env.REACT_APP_URL_TWITTER_FRZYC,
+  url: process.env.NX_URL_TWITTER_FRZYC,
   color: "twitter",
 }, {
   tooltip: "Patreon (frzyc)",
   icon: <FontAwesomeSvgIcon icon={faPatreon} />,
-  url: process.env.REACT_APP_URL_PATREON_FRZYC,
+  url: process.env.NX_URL_PATREON_FRZYC,
   color: "patreon",
 }, {
   tooltip: "PayPal (frzyc)",
   icon: <FontAwesomeSvgIcon icon={faPaypal} />,
-  url: process.env.REACT_APP_URL_PAYPAL_FRZYC,
+  url: process.env.NX_URL_PAYPAL_FRZYC,
   color: "paypal",
 },] as const
 
@@ -47,7 +47,7 @@ const buttons = [{
   title: t => t`quickLinksCard.buttons.tyGuide.title`,
   icon: <YouTube />,
   tooltip: t => t`quickLinksCard.buttons.tyGuide.tooltip`,
-  url: process.env.REACT_APP_URL_YOUTUBE_TUTPL,
+  url: process.env.NX_URL_YOUTUBE_TUTPL,
   color: "red",
 }, {
   title: t => t`quickLinksCard.buttons.scanners.title`,
@@ -59,19 +59,19 @@ const buttons = [{
   title: t => t`quickLinksCard.buttons.patchNotes.title`,
   icon: <Description />,
   tooltip: t => t`quickLinksCard.buttons.patchNotes.tooltip`,
-  url: `${process.env.REACT_APP_URL_GITHUB_GO}/releases`,
+  url: `${process.env.NX_URL_GITHUB_GO}/releases`,
   color: "secondary",
 }, {
   title: t => t`quickLinksCard.buttons.kqm.title`,
   icon: <Handshake />,
   tooltip: t => t`quickLinksCard.buttons.kqm.tooltip`,
-  url: process.env.REACT_APP_URL_WEBSITE_KQM,
+  url: process.env.NX_URL_WEBSITE_KQM,
   color: "keqing",
 }, {
   title: t => t`quickLinksCard.buttons.devDiscord.title`,
   icon: <FontAwesomeSvgIcon icon={faDiscord} />,
   tooltip: t => t`quickLinksCard.buttons.devDiscord.tooltip`,
-  url: process.env.REACT_APP_URL_DISCORD_GDEV,
+  url: process.env.NX_URL_DISCORD_GDEV,
   color: "discord",
 }, {
   title: t => t`quickLinksCard.buttons.good.title`,

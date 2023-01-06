@@ -13,19 +13,19 @@ const team = [{
   img: frzyc,
   title: t => t`teamCard.jobTitle.leadDev`,
   subtitle: "Insomniac in Chief",
-  url: process.env.REACT_APP_URL_GITHUB_FRZYC
+  url: process.env.NX_URL_GITHUB_FRZYC
 }, {
   name: "Lantua",
   img: lantua,
   title: t => t`teamCard.jobTitle.dev`,
   subtitle: "Copium Calculator",
-  url: process.env.REACT_APP_URL_GITHUB_LANTUA
+  url: process.env.NX_URL_GITHUB_LANTUA
 }, {
   name: "Van",
   img: van,
   title: t => t`teamCard.jobTitle.dev`,
   subtitle: "Waverider Stowaway",
-  url: process.env.REACT_APP_URL_GITHUB_VAN
+  url: process.env.NX_URL_GITHUB_VAN
 }, {
   name: "✦ Sin ✦",
   img: sin,

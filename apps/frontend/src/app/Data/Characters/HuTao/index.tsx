@@ -1,4 +1,4 @@
-import { CharacterData } from 'pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, lessThan, min, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'

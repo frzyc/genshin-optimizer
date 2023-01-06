@@ -3,13 +3,13 @@ import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography } from "@
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
 
-const embeds = JSON.parse(process.env.REACT_APP_URLS_GUIDES ?? "[]") as string[]
+const embeds = JSON.parse(process.env.NX_URLS_GUIDES ?? "[]") as string[]
 
 export default function VidGuideCard() {
   const { t } = useTranslation(["page_home", "ui"])
   if (!embeds.length) return null
   return <CardDark>
-    <CardHeader title={<Typography variant="h5" component={Link} color="inherit" href={process.env.REACT_APP_URL_YOUTUBE_TUTPL} target="_blank" rel="noopener">{t`vidGuideCard.title`}</Typography>} avatar={<YouTube fontSize="large" />} />
+    <CardHeader title={<Typography variant="h5" component={Link} color="inherit" href={process.env.NX_URL_YOUTUBE_TUTPL} target="_blank" rel="noopener">{t`vidGuideCard.title`}</Typography>} avatar={<YouTube fontSize="large" />} />
     <Divider />
     <CardContent>
       <Grid container columns={{ xs: 1, sm: 2 }} spacing={2} >

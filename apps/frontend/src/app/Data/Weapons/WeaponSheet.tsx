@@ -1,4 +1,4 @@
-import type { WeaponData } from 'pipeline';
+import type { WeaponData } from '@genshin-optimizer/pipeline';
 import ImgIcon from '../../Components/Image/ImgIcon';
 import SqBadge from '../../Components/SqBadge';
 import { Translate } from '../../Components/Translate';

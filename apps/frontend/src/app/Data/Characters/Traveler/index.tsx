@@ -1,4 +1,4 @@
-import { CharacterData } from 'pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { infoMut } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'

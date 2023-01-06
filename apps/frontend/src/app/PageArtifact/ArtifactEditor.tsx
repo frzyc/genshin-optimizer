@@ -122,7 +122,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
   const uploadFiles = useCallback((files: FileList) => {
     setShow(true)
-    dispatchQueue({ type: "upload", files: [...files].map(file => ({ file, fileName: file.name })) })
+    dispatchQueue({ type: "upload", files: (files as any).map(file => ({ file, fileName: file.name })) })
   }, [dispatchQueue, setShow])
   const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
 

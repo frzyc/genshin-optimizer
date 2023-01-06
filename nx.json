@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "genshin-optimizer-monorepo",
+  "npmScope": "genshin-optimizer",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",

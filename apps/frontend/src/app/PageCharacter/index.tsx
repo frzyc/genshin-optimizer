@@ -195,7 +195,7 @@ export default function PageCharacter() {
 function ShowingCharacter({ numShowing, total, t }) {
   return <Typography color="text.secondary">
     <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
-      Showing <b>{{ count: numShowing }}</b> out of {{ value: total }} Characters
+      Showing <b>{{ count: numShowing } as any}</b> out of {{ value: total } as any} Characters
     </Trans>
   </Typography>
 }
