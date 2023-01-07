@@ -1,0 +1,59 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "weapons": "Weapons",
+    "artifacts": "Artifacts",
+    "characters": "Characters",
+    "tools": "Tools",
+    "setting": "Settings",
+    "doc": "Docs",
+    "scanner": "Scanners"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "link": {
+    "download": "Download Link",
+    "discord": "Discord Invite Link"
+  },
+  "game": {
+    "minLevel": "Min Level",
+    "maxLevel": "Max Level",
+    "rarity": "Rarity",
+    "level": "Level"
+  },
+  "unselect": "Unselect",
+  "inventory": "Inventory",
+  "ascending": "Ascending",
+  "descending": "Descending",
+  "sortBy": "Sort By: ",
+  "loading": "Loading...",
+  "rightsDisclaimer": "Genshin Optimizer is not affiliated with or endorsed by HoYoverse.",
+  "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
+  "underConstruction": "Under Construction",
+  "error": "Error",
+  "reset": "Reset",
+  "info": "INFO",
+  "close": "Close",
+  "sortMap": {
+    "new": "New",
+    "name": "Name",
+    "level": "Level",
+    "rarity": "Rarity",
+    "artsetkey": "Artifact Set",
+    "efficiency": "Current RV",
+    "mefficiency": "Maximum RV",
+    "probability": "Roll Probability"
+  },
+  "delete": "Delete",
+  "locked": "Locked",
+  "unlocked": "Unlocked",
+  "refinement": "Refinement {{value}}",
+  "selectlevel": "Select Level",
+  "gender": {
+    "F": "Female",
+    "M": "Male"
+  }
+}

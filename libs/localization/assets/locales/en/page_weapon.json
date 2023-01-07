@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+  "edit": "Edit Weapon",
+  "weaponName": "Weapon Name",
+  "removeWeapon": "Are you sure you want to remove {{value}}?",
+  "addWeapon": "Add New Weapon"
+}

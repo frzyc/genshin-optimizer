@@ -3,6 +3,10 @@
   "version": "9.0.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "frontend": "nx serve frontend",
+    "buildall": "nx run-many --target=build"
+  },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
     "@emotion/babel-plugin": "11.10.5",

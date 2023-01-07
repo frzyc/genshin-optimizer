@@ -16,10 +16,18 @@
         "main": "apps/frontend/src/main.tsx",
         "polyfills": "apps/frontend/src/polyfills.ts",
         "tsConfig": "apps/frontend/tsconfig.app.json",
-        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
+        "assets": [
+          "apps/frontend/src/favicon.ico",
+          "apps/frontend/src/assets",
+          {
+            "input": "libs/localization/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "dependsOn":["^build"]
       },
       "configurations": {
         "development": {
@@ -59,7 +67,8 @@
           "buildTarget": "frontend:build:production",
           "hmr": false
         }
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -77,5 +86,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["localization"]
 }

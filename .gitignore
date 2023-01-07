@@ -43,3 +43,6 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Generated JSON files
+*_gen.json

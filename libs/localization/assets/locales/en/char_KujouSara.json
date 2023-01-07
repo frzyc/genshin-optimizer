@@ -1,0 +1,11 @@
+{
+  "skill": {
+    "ambush": "Tengu Juurai: Ambush"
+  },
+  "a4": {
+    "enerRest": "Energy restored from Tengu Juurai: Ambush"
+  },
+  "c6": {
+    "electroCritDmg": "Characters who have had their ATK increased by Tengu Juurai"
+  }
+}

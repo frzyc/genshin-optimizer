@@ -1,0 +1,7 @@
+{
+  "c2MultiplierKey_": "Special Franchise Multiplier",
+  "c2DmgKey": "Special Franchise DMG",
+  "c4ConnectedBelowHp": "Character connected to Jinni and below 50% HP",
+  "c4ConnectedBelowEner": "Character connected to Jinni and below 50% Energy",
+  "c6Heal": "Normal Attack Healing"
+}

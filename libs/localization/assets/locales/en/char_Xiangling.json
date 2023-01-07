@@ -1,0 +1,7 @@
+{
+    "afterChili": "After picking up a chili pepper",
+    "explosionDMG": "Explosion DMG",
+    "afterGuobaHit": "Opponent hit by Guoba's attacks",
+    "duringPyronado": "Pyronado active",
+    "c6Exception": "This does not affect <pyro>1-Hit Swing DMG</pyro>, <pyro>2-Hit Swing DMG</pyro>, or <pyro>Pyronado DMG</pyro>"
+}

@@ -1,0 +1,16 @@
+{
+    "skill": {
+        "pressDMG": "Press DMG",
+        "lvl1_1DMG": "Lvl 1 1st Hit DMG",
+        "lvl1_2DMG": "Lvl 1 2nd Hit DMG",
+        "lvl2_1DMG": "Lvl 2 1st Hit DMG",
+        "lvl2_2DMG": "Lvl 2 2nd Hit DMG",
+        "explDMG": "Explosion DMG",
+        "lvl1CD": "Lvl 1 CD",
+        "lvl2CD": "Lvl 2 CD"
+    },
+    "additionalATK": "Additional ATK Increase",
+    "additionalATKRatio_": "Additional ATK Bonus Ratio",
+    "c4DMG": "Unexpected Odyssey DMG",
+    "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion"
+}

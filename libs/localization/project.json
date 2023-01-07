@@ -1,0 +1,22 @@
+{
+  "name": "localization",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/localization/src",
+  "projectType": "library",
+  "targets": {
+    "build":{
+      "command": "ts-node libs/localization/src/loadTrans.ts"
+    },
+    "mainGen":{
+      "command": "ts-node libs/localization/src/mainGen.ts"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/localization/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

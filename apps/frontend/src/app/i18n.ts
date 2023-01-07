@@ -56,12 +56,9 @@ i18n
 
     returnNull: false,
 
-    backend: process.env.NODE_ENV === "development" ? {
+    backend: {
       // Path to load localization data from.
-      loadPath: 'genshin-optimizer/locales/{{lng}}/{{ns}}.json',
-    } : {
-      // Path to load localization data from.
-      loadPath: 'locales/{{lng}}/{{ns}}.json',
+      loadPath: 'assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
       escapeValue: false,//react does interlopation already

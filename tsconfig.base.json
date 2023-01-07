@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@genshin-optimizer/localization": ["libs/localization/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"]
     }
   },

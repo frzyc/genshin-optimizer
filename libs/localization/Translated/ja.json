@@ -1,0 +1,125 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "聖遺物エディター",
+            "set": {
+                "artifactSet": "聖遺物セット",
+                "maxRarity": "最高レア度 <1></1>"
+            },
+            "substat": {
+                "substatFormat": "サブステータス {{value}}",
+                "noSubstat": "サブステータスなし",
+                "selectSub": "サブステータスを選択",
+                "eff": "効率: <1></1>"
+            },
+            "rarity": "レア度",
+            "level": "レベル",
+            "unknownPieceName": "ピース名不明",
+            "mainSelect": "メイン効果",
+            "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
+            "maxSubEff": "最大サブステータス効率",
+            "preview": "聖遺物プレビュー",
+            "dupArt": "重複する聖遺物が検出されました。",
+            "beforeEdit": "編集前",
+            "btnSave": "聖遺物保存する",
+            "btnAdd": "聖遺物追加する",
+            "btnClear": "削除する",
+            "btnUpdate": "聖遺物を変更する"
+        },
+        "artifactFilter": "聖遺物フィルター",
+        "filterLocation": {
+            "inventory": "インベントリー",
+            "currentlyEquipped": "装備中"
+        },
+        "button": {
+            "unequipArtifacts": "聖遺物を外す",
+            "deleteArtifacts": "聖遺物を消す",
+            "excludeArtifacts": "聖遺物をロック",
+            "includeArtifacts": "聖遺物をアンロック"
+        },
+        "mainStat": "メインオプション",
+        "slot": "スロット",
+        "slotName": {
+            "flower": "生の花",
+            "plume": "死の羽",
+            "sands": "時の砂",
+            "goblet": "空の杯",
+            "circlet": "理の冠"
+        },
+        "sortMap": {
+            "level": "レベル"
+        }
+    },
+    "languages": {
+        "chs": "中国語 (簡体字)",
+        "cht": "中国語 (繁体字)",
+        "de": "ドイツ語",
+        "en": "英語",
+        "es": "スペイン語",
+        "fr": "フランス語",
+        "id": "インドネシア語",
+        "ja": "日本語",
+        "ko": "韓国語",
+        "pt": "ポルトガル語",
+        "ru": "ロシア語",
+        "th": "タイ語",
+        "vi": "ベトナム語"
+    },
+    "settings": {
+        "title": "設定",
+        "languageCard": {
+            "selectLanguage": "言語",
+            "languageFormat": "言語: {{language}}"
+        },
+        "uploadCard": {
+            "title": "データベースをアップロード",
+            "replaceDatabase": "データベースを入れ替え",
+            "hint": "こちらでJSONファイルをアップロードするか...",
+            "hintPaste": "...下記欄に張り付けてください。"
+        }
+    },
+    "ui": {
+        "pageTitle": "Genshin Optimizer",
+        "tabs": {
+            "artifacts": "聖遺物",
+            "characters": "キャラクター",
+            "tools": "ツール"
+        },
+        "social": {
+            "paypal": "ペイパル",
+            "patreon": "パトリオン",
+            "discord": "ディスコード"
+        },
+        "game": {
+            "minLevel": "最低レベル",
+            "maxLevel": "最上レベル",
+            "rarity": "レア度",
+            "level": "レベル"
+        },
+        "unselect": "選択削除",
+        "ascending": "昇順",
+        "descending": "降順",
+        "loading": "ロード中",
+        "rightsDisclaimer": "Genshin Optimizerは、MiHoYoと提携していません。または、これらの会社から承認を受けていません。",
+        "appVersion": "$t(pageTitle) Version: {{version}}",
+        "underConstruction": "工事中",
+        "error": "エラー"
+    },
+    "char_Eula": {
+        "skillC": {
+            "name": "冷酷な心",
+            "consumed": "冷酷な心を消費",
+            "grimheart": {
+                "name": "冷酷の心の数"
+            }
+        },
+        "burstC": {
+            "name": "光臨の剣",
+            "start5": "冷酷の心の直ちにエネルギーは5つから"
+        },
+        "c1C": {
+            "name": "<strong>冷酷な心</strong>を消費",
+            "durationStack": "一つごとに6秒+6秒、最大18秒まで"
+        }
+    }
+}
