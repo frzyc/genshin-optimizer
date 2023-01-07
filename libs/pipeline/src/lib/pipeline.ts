@@ -1,4 +1,3 @@
-
 export const tagColor = {
   "FFD780FF": "strong",
   "80FFD7FF": "anemo",
@@ -397,26 +396,11 @@ export const QualityTypeMap = {
   QUALITY_BLUE: 3,
   QUALITY_GREEN: 2,
 } as const
+export type DQualityKey = keyof typeof QualityTypeMap
 
-type WeaponGrowCurveKey = "GROW_CURVE_ATTACK_101" | "GROW_CURVE_ATTACK_102" | "GROW_CURVE_ATTACK_103" | "GROW_CURVE_ATTACK_104" |
-  "GROW_CURVE_ATTACK_105" | "GROW_CURVE_CRITICAL_101" | "GROW_CURVE_ATTACK_201" | "GROW_CURVE_ATTACK_202" | "GROW_CURVE_ATTACK_203" |
-  "GROW_CURVE_ATTACK_204" | "GROW_CURVE_ATTACK_205" | "GROW_CURVE_CRITICAL_201" | "GROW_CURVE_ATTACK_301" | "GROW_CURVE_ATTACK_302" |
-  "GROW_CURVE_ATTACK_303" | "GROW_CURVE_ATTACK_304" | "GROW_CURVE_ATTACK_305" | "GROW_CURVE_CRITICAL_301"
-type WeaponProp = {
-  type: StatKey,
-  base: number,
-  curve: WeaponGrowCurveKey
-}
-export type WeaponData = {
-  weaponType: WeaponTypeKey
-  rarity: 1 | 2 | 3 | 4 | 5
-  mainStat: WeaponProp
-  subStat?: WeaponProp
-  addProps: Partial<Record<StatKey, number>>[]
-  ascension: { addStats: Partial<Record<StatKey, number>> }[]
-}
 
-type CharacterGrowCurveKey = "GROW_CURVE_HP_S4" | "GROW_CURVE_ATTACK_S4" | "GROW_CURVE_HP_S5" | "GROW_CURVE_ATTACK_S5"
+// CharacterData that gets exported from dm
+export type CharacterGrowCurveKey = "GROW_CURVE_HP_S4" | "GROW_CURVE_ATTACK_S4" | "GROW_CURVE_HP_S5" | "GROW_CURVE_ATTACK_S5"
 export type CharacterData = {
   weaponTypeKey: WeaponTypeKey
   base: {
@@ -437,4 +421,24 @@ export type CharacterData = {
     month?: number,
     day?: number
   }
+}
+
+
+// WeaponData that gets exported from dm
+export type WeaponGrowCurveKey = "GROW_CURVE_ATTACK_101" | "GROW_CURVE_ATTACK_102" | "GROW_CURVE_ATTACK_103" | "GROW_CURVE_ATTACK_104" |
+  "GROW_CURVE_ATTACK_105" | "GROW_CURVE_CRITICAL_101" | "GROW_CURVE_ATTACK_201" | "GROW_CURVE_ATTACK_202" | "GROW_CURVE_ATTACK_203" |
+  "GROW_CURVE_ATTACK_204" | "GROW_CURVE_ATTACK_205" | "GROW_CURVE_CRITICAL_201" | "GROW_CURVE_ATTACK_301" | "GROW_CURVE_ATTACK_302" |
+  "GROW_CURVE_ATTACK_303" | "GROW_CURVE_ATTACK_304" | "GROW_CURVE_ATTACK_305" | "GROW_CURVE_CRITICAL_301"
+type WeaponProp = {
+  type: StatKey,
+  base: number,
+  curve: WeaponGrowCurveKey
+}
+export type WeaponData = {
+  weaponType: WeaponTypeKey
+  rarity: 1 | 2 | 3 | 4 | 5
+  mainStat: WeaponProp
+  subStat?: WeaponProp
+  addProps: Partial<Record<StatKey, number>>[]
+  ascension: { addStats: Partial<Record<StatKey, number>> }[]
 }

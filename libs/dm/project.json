@@ -1,0 +1,19 @@
+{
+  "name": "dm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dm/src",
+  "projectType": "library",
+  "targets": {
+    "build":{
+      "command": "ts-node libs/dm/scripts/loadDM.ts"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dm/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
