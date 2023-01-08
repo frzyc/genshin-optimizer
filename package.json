@@ -12,7 +12,7 @@
     "@emotion/babel-plugin": "11.10.5",
     "@nrwl/cypress": "15.4.2",
     "@nrwl/eslint-plugin-nx": "15.4.2",
-    "@nrwl/jest": "15.4.5",
+    "@nrwl/jest": "15.4.2",
     "@nrwl/linter": "15.4.2",
     "@nrwl/react": "15.4.2",
     "@nrwl/web": "15.4.2",

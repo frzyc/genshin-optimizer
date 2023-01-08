@@ -12,12 +12,7 @@
         "main": "libs/pipeline/src/index.ts",
         "tsConfig": "libs/pipeline/tsconfig.lib.json",
         "assets": ["libs/pipeline/*.md"]
-      },
-      "dependsOn": ["genDM"]
-    },
-    "genDM":{
-      "command": "ts-node libs/pipeline/scripts/main.ts",
-      "dependsOn": ["^build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -35,6 +30,5 @@
       }
     }
   },
-  "tags": [],
-  "implicitDependencies": ["dm"]
+  "tags": []
 }

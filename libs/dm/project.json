@@ -4,8 +4,19 @@
   "sourceRoot": "libs/dm/src",
   "projectType": "library",
   "targets": {
-    "build":{
+    "compile": {
       "command": "ts-node libs/dm/scripts/loadDM.ts"
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dm",
+        "main": "libs/dm/src/index.ts",
+        "tsConfig": "libs/dm/tsconfig.lib.json",
+        "assets": ["libs/dm/*.md", "libs/dm/GenshinData/**/*", "libs/dm/Texture2D/**/*"]
+      },
+      "dependsOn": ["compile"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -15,5 +26,8 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "namedInputs": {
+    "production":["{projectRoot}/src/**/*", "sharedGlobals"]
+  }
 }

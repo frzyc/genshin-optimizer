@@ -1,4 +1,4 @@
-import { MainPropMap } from '.';
+import { MainPropMap } from './pipeline';
 
 describe('pipeline', () => {
   it('should work', () => {

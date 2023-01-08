@@ -26,8 +26,7 @@
           }],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack",
-        "dependsOn":["^build"]
+        "webpackConfig": "@nrwl/react/plugins/webpack"
       },
       "configurations": {
         "development": {
@@ -50,7 +49,8 @@
           "extractLicenses": true,
           "vendorChunk": false
         }
-      }
+      },
+      "dependsOn": ["^build", "^pipeline"]
     },
     "serve": {
       "executor": "@nrwl/webpack:dev-server",
@@ -68,7 +68,7 @@
           "hmr": false
         }
       },
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^pipeline"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -87,5 +87,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["localization"]
+  "implicitDependencies": ["localization", "pipeline-runner"]
 }
