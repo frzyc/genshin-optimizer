@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
-      "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"]
+      "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
+      "@genshin-optimizer/util": ["libs/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

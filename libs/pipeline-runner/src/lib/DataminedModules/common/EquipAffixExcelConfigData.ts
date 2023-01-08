@@ -1,8 +1,8 @@
 
 import { readDMJSON } from "@genshin-optimizer/dm"
-import { PropTypeKey, WeaponId } from "@genshin-optimizer/pipeline"
+import { dumpFile, PropTypeKey, WeaponId } from "@genshin-optimizer/pipeline"
+import { layeredAssignment } from "@genshin-optimizer/util"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile, layeredAssignment } from "../../Util"
 
 type EquipAffixExcelConfigData = {
   "affixId": number//1125034,

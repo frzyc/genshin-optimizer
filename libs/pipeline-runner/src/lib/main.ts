@@ -1,4 +1,4 @@
-import { artifactIdMap, artifactSlotMap, CharacterData, CharacterId, characterIdMap, CharacterKey, Language, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, WeaponKey, weaponMap } from '@genshin-optimizer/pipeline'
+import { artifactIdMap, artifactSlotMap, CharacterData, CharacterId, characterIdMap, CharacterKey, dumpFile, Language, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, WeaponKey, weaponMap } from '@genshin-optimizer/pipeline'
 import { mapHashData, mapHashDataOverride } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
@@ -23,9 +23,10 @@ import { extrapolateFloat } from './extrapolateFloat'
 import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { languageMap, nameToKey, TextMapEN } from './TextMapUtil'
-import { crawlObject, dumpFile, FRONTEND_PATH, layeredAssignment } from './Util'
+import { FRONTEND_PATH } from './Util'
 
 import fs = require('fs')
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 console.log("Running Pipeline to generate files using dm.")
 loadImages();
 

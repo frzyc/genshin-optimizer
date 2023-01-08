@@ -1,7 +1,7 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
 import { PropTypeKey, SubstatKey, SubStatPropTypeMap } from "@genshin-optimizer/pipeline"
+import { layeredAssignment } from "@genshin-optimizer/util"
 import { extrapolateFloat } from "../../extrapolateFloat"
-import { layeredAssignment } from "../../Util"
 
 type ReliquaryAffixExcelConfigData = {
   "id": number//996004, AFAIK, not used

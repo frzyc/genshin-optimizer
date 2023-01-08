@@ -1,7 +1,6 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
-import { DArtifactSlotKey } from "@genshin-optimizer/pipeline"
+import { DArtifactSlotKey, dumpFile } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile } from "../../Util"
 
 type ReliquaryExcelConfigData = {
   "equipType": DArtifactSlotKey//"EQUIP_BRACER",

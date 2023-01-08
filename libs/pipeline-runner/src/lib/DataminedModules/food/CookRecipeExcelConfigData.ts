@@ -1,6 +1,6 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
+import { dumpFile } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile } from "../../Util"
 
 type CookRecipeExcelConfigData = {//Adeptus' Temptation
   "id": number// 5101,

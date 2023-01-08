@@ -1,7 +1,6 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
-import { DWeaponTypeKey } from "@genshin-optimizer/pipeline"
+import { dumpFile, DWeaponTypeKey } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile } from "../../Util"
 
 type WeaponExcelConfigData = {
   "weaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",

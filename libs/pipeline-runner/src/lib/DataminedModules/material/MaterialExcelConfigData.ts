@@ -1,6 +1,6 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
+import { dumpFile } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile } from "../../Util"
 
 export type MaterialTypeKey = null | "MATERIAL_FAKE_ABSORBATE" |
   "MATERIAL_ADSORBATE" | // Iron Coin only?

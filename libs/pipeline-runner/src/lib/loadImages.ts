@@ -1,5 +1,6 @@
 import { DM2D_PATH } from '@genshin-optimizer/dm'
-import { artifactIdMap, artifactSlotMap, characterIdMap, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
+import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import { AssetData } from './Data'
 import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
 import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
@@ -12,7 +13,7 @@ import rewardExcelConfigData from './DataminedModules/character/RewardExcelConfi
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talentsData from './DataminedModules/character/talents'
 import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
-import { crawlObject, dumpFile, FRONTEND_PATH, layeredAssignment } from './Util'
+import { FRONTEND_PATH } from './Util'
 import fs = require('fs')
 
 export default function loadImages() {

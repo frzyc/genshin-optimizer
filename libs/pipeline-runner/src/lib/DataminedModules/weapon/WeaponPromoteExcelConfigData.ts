@@ -1,8 +1,7 @@
 
 import { readDMJSON } from "@genshin-optimizer/dm"
 import { PropTypeKey } from "@genshin-optimizer/pipeline"
-import { layeredAssignment } from "../../Util"
-
+import { layeredAssignment } from '@genshin-optimizer/util'
 type WeaponPromoteExcelConfigData = {
   "weaponPromoteId": number//12406,
   "promoteLevel": number//6,

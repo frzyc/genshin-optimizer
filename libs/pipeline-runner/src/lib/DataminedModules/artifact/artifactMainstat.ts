@@ -1,7 +1,7 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
 import { MainPropMap, MainStatKey, PropTypeKey, propTypeMap } from "@genshin-optimizer/pipeline"
+import { layeredAssignment } from "@genshin-optimizer/util"
 import { extrapolateFloat } from "../../extrapolateFloat"
-import { layeredAssignment } from "../../Util"
 
 type ReliquaryLevelExcelConfigData = {
   "rank": number,

@@ -28,6 +28,6 @@
   },
   "tags": [],
   "namedInputs": {
-    "production":["{projectRoot}/src/**/*", "sharedGlobals"]
+    "production":["{projectRoot}/src/**/*", "{projectRoot}/scripts/**/*", "sharedGlobals"]
   }
 }

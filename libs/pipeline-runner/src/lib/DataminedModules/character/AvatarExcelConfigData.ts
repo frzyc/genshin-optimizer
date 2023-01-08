@@ -1,7 +1,6 @@
 import { readDMJSON } from "@genshin-optimizer/dm"
-import { CharacterGrowCurveKey, CharacterId, DQualityKey, DWeaponTypeKey } from "@genshin-optimizer/pipeline"
+import { CharacterGrowCurveKey, CharacterId, DQualityKey, dumpFile, DWeaponTypeKey } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { dumpFile } from "../../Util"
 
 type AvatarExcelConfigData = {
   "useType"?: string//"AVATAR_FORMAL",

@@ -5,10 +5,12 @@
   "projectType": "library",
   "targets": {
     "pipeline":{
-      "command": "ts-node libs/localization/src/loadTrans.ts"
+      "command": "ts-node libs/localization/src/loadTrans.ts",
+      "inputs": ["production"]
     },
     "mainGen":{
-      "command": "ts-node libs/localization/src/mainGen.ts"
+      "command": "ts-node libs/localization/src/mainGen.ts",
+      "inputs": ["production"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
