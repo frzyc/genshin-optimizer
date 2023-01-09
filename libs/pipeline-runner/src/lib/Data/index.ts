@@ -57,25 +57,3 @@ export function mapHashDataOverride() {
   (mapHashData.char as any).TravelerF.name = 3241049361;
   (mapHashData.char as any).TravelerM.name = 2329553598;
 }
-type WeaponIcon = { icon: string, awakenIcon: string }
-type WeaponIconData = { [key: string]: WeaponIcon }
-
-type CharacterIcon = {
-  icon: string,
-  iconSide: string,
-  banner: string,
-  bar: string
-}
-type CharacterIconData = { [key: string]: CharacterIcon }
-//An object to store all the asset related data.
-export const AssetData = {
-  weapon: {
-    sword: {} as WeaponIconData,
-    bow: {} as WeaponIconData,
-    catalyst: {} as WeaponIconData,
-    claymore: {} as WeaponIconData,
-    polearm: {} as WeaponIconData,
-  },
-  artifact: {},
-  char: {} as CharacterIconData,
-}

@@ -4,7 +4,7 @@
   "sourceRoot": "libs/dm/src",
   "projectType": "library",
   "targets": {
-    "compile": {
+    "loadDM": {
       "command": "ts-node libs/dm/scripts/loadDM.ts"
     },
     "build": {
@@ -16,7 +16,8 @@
         "tsConfig": "libs/dm/tsconfig.lib.json",
         "assets": ["libs/dm/*.md", "libs/dm/GenshinData/**/*", "libs/dm/Texture2D/**/*"]
       },
-      "dependsOn": ["compile"]
+      "dependsOn": ["loadDM", "^build"],
+      "inputs": ["production", "^production"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

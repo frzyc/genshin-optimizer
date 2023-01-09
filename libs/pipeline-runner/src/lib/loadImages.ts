@@ -1,20 +1,31 @@
-import { DM2D_PATH } from '@genshin-optimizer/dm'
+import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, constellations, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, skillDepot, skillGroups, talentsData, weaponExcelConfigData } from '@genshin-optimizer/dm'
 import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
-import { AssetData } from './Data'
-import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
-import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
-import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
-import constellations from './DataminedModules/character/constellations'
-import fetterCharacterCardExcelConfigData from './DataminedModules/character/FetterCharacterCardExcelConfigData'
-import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
-import skillGroups from './DataminedModules/character/passives'
-import rewardExcelConfigData from './DataminedModules/character/RewardExcelConfigData'
-import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
-import talentsData from './DataminedModules/character/talents'
-import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
 import { FRONTEND_PATH } from './Util'
 import fs = require('fs')
+
+type WeaponIcon = { icon: string, awakenIcon: string }
+type WeaponIconData = { [key: string]: WeaponIcon }
+
+type CharacterIcon = {
+  icon: string,
+  iconSide: string,
+  banner: string,
+  bar: string
+}
+type CharacterIconData = { [key: string]: CharacterIcon }
+//An object to store all the asset related data.
+export const AssetData = {
+  weapon: {
+    sword: {} as WeaponIconData,
+    bow: {} as WeaponIconData,
+    catalyst: {} as WeaponIconData,
+    claymore: {} as WeaponIconData,
+    polearm: {} as WeaponIconData,
+  },
+  artifact: {},
+  char: {} as CharacterIconData,
+}
 
 export default function loadImages() {
   const hasTexture2D = fs.existsSync(DM2D_PATH)
@@ -29,7 +40,7 @@ export default function loadImages() {
   }
 
   // Get icons for each artifact piece
-  Object.entries(reliquarySetExcelConfigData).filter(([setId, data]) => setId in artifactIdMap).forEach(([setId, data]) => {
+  Object.entries(reliquarySetExcelConfigData).forEach(([setId, data]) => {
     const { EquipAffixId, containsList } = data
     if (!EquipAffixId) return
 
@@ -48,7 +59,7 @@ export default function loadImages() {
 
 
   // Get the icon/awakened for each weapon
-  Object.entries(weaponExcelConfigData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
+  Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { icon, awakenIcon, weaponType } = weaponData
     const wepType = weaponMap[weaponType]
     AssetData.weapon[wepType][weaponIdMap[weaponid]] = {
@@ -64,7 +75,7 @@ export default function loadImages() {
   })
 
   // parse baseStat/ascension/basic data for non traveler.
-  Object.entries(avatarExcelConfigData).filter(([charId, charData]) => charId in characterIdMap).forEach(([charid, charData]) => {
+  Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { iconName, sideIconName } = charData
 
     let banner, bar;
@@ -83,7 +94,7 @@ export default function loadImages() {
   })
 
   const characterAssetDump = {}
-  Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterIdMap).forEach(([charid, charData]) => {
+  Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { iconName, sideIconName, skillDepotId, candSkillDepotIds } = charData
 
     const keys = [characterIdMap[charid]]
