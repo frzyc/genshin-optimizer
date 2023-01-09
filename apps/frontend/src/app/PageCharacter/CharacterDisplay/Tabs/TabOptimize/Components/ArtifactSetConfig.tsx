@@ -64,7 +64,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const exclude2 = artKeysByRarity.length - allow2, exclude4 = artKeysByRarity.length - allow4
   const artifactCondCount = useMemo(() =>
     (Object.keys(conditional)).filter(k =>
-      allArtifactSets.includes(k as ArtifactSetKey) && Object.keys(conditional[k]).length !== 0).length
+      allArtifactSets.includes(k as ArtifactSetKey) && conditional[k]).length
     , [conditional])
   const fakeDataContextObj = useMemo(() => ({
     ...dataContext,

@@ -101,6 +101,7 @@ function TeammateDisplay({ index }: { index: number }) {
       if (!teamMateKey) return
       if (!("conditional" in state)) return
       const { conditional } = state
+      if (!conditional) return
       characterDispatch({ type: "teamConditional", teamMateKey: teamMateKey, conditional })
     }
   }, [active, teamMateKey, dataBundle, characterDispatch])
