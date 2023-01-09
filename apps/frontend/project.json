@@ -18,6 +18,10 @@
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "assets": [
           "apps/frontend/src/favicon.ico",
+          "apps/frontend/src/logo192.png",
+          "apps/frontend/src/logo512.png",
+          "apps/frontend/src/manifest.json",
+          "apps/frontend/src/robots.txt",
           "apps/frontend/src/assets",
           {
             "input": "libs/localization/assets",
@@ -47,7 +51,8 @@
           "sourceMap": false,
           "namedChunks": false,
           "extractLicenses": true,
-          "vendorChunk": false
+          "vendorChunk": false,
+          "baseHref": "/genshin-optimizer-beta/"
         }
       },
       "dependsOn": ["^build", "^pipeline"]
@@ -69,6 +74,10 @@
         }
       },
       "dependsOn": ["^build", "^pipeline"]
+    },
+    "deploy":{
+      "command": "gh-pages -d dist/apps/frontend -r https://github.com/frzyc/genshin-optimizer-beta",
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "frontend": "nx serve frontend",
+    "deploy": "nx deploy frontend",
     "buildall": "nx run-many --target=build"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-react-hooks": "4.6.0",
+    "gh-pages": "^4.0.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "15.4.2",
