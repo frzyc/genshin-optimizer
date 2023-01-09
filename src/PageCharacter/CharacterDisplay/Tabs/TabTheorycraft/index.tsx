@@ -208,7 +208,10 @@ export default function TabTheorycraft() {
     return result;
   }, [data.artifact.slots, data.optimization.maxSubstats])
 
-  // This is mostly copied from TabOptimize/index.tsx except where noted and where i forgot to note
+  // This solves
+  // $\argmax_{x\in N^k, \sum x <= n, x <= x_max} f(x)$ without assumptions on the properties of $f$
+  // We brute force iterate over all substats in the graph and compute the maximum
+  // n.b. some substat combinations may not be materializable into real artifacts
   const optimizeSubstats = useCallback((apply: boolean) => () => {
     if (!characterKey || !optimizationTarget) return
     if (!teamData) return
@@ -233,7 +236,6 @@ export default function TabTheorycraft() {
     }, f => f)
     nodes = optimize(nodes, {}, _ => false)
 
-    // xd
     const subs = new Set<string>()
     let compute = precompute(nodes, {}, f => {
       subs.add(f.path[1])

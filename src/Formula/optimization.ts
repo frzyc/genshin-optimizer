@@ -82,9 +82,6 @@ const x0=0`; // making sure `const` has at least one entry
 
       default: assertUnreachable(operation)
     }
-    if (operation !== "const") {
-      body += "\n"
-    }
   })
   body += `;\nreturn [${formulas.map(f => names.get(f)!)}]`
   return new (Function as any)(`b`, body)
