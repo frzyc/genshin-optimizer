@@ -1,7 +1,8 @@
 import { IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact'
-import { crawlObject, layeredAssignment } from '../Util/Util'
+import { layeredAssignment } from '../Util/Util'
 import Artifact from '../Data/Artifacts/Artifact'
 import ArtifactMainStatsData from '../Data/Artifacts/artifact_main_gen.json'
+import { crawlObject } from "@genshin-optimizer/util"
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,
 // and "upgrade rolls" that occurs when all 4 substats are added. They have different

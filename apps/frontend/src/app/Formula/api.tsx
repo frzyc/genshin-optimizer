@@ -3,13 +3,13 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
+import { layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
 import { input, tally } from "./index";
 import { deepNodeClone } from "./internal";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
 import { NodeDisplay, UIData } from "./uiData";
 import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
-
+import { crawlObject } from "@genshin-optimizer/util"
 const asConst = true as const, pivot = true as const
 
 function inferInfoMut(data: Data, source?: Info["source"]): Data {

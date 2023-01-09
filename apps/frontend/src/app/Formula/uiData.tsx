@@ -3,10 +3,10 @@ import ColorText from "../Components/ColoredText"
 import { Translate } from "../Components/Translate"
 import KeyMap, { valueString } from "../KeyMap"
 import { allArtifactSets, allCharacterKeys, allWeaponKeys, ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
-import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
+import { assertUnreachable, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
-
+import { crawlObject } from "@genshin-optimizer/util"
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
