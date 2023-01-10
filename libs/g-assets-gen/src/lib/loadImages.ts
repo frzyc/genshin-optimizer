@@ -31,9 +31,10 @@ export const AssetData = {
 
 export default function loadImages() {
   const hasTexture2D = fs.existsSync(DM2D_PATH)
+  if(!hasTexture2D) return console.log(`libs/dm/Texture2D does not exist, no assets will be copied.`)
   function copyFile(src, dest) {
     if (!fs.existsSync(src)) {
-      if (hasTexture2D) console.warn("Cannot find file", src)
+      console.warn("Cannot find file", src)
       return
     }
     fs.mkdirSync(path.dirname(dest), { recursive: true })
