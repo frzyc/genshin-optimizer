@@ -1,0 +1,55 @@
+
+//https://coolors.co/171738-2e1760-3423a6-7180b9-dff3e4
+$darkbg: #0c0c1d;
+$contentbg: #1b263b;
+$lightbg: #2a364d;
+$darkfontcolor: #778da9;
+$lightfontcolor: #e0e1dd;
+
+$star5Color: #ffd700;
+$star4Color: #6a0dad;
+$star3Color: #4287f5;
+$star2Color: #008000;
+$star1Color: #808080;
+
+.text-halfsize {
+  font-size: 50%;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.grad-1star {
+  background-image: linear-gradient(to bottom right, #4f5864, #838f99);
+}
+.grad-2star {
+  background-image: linear-gradient(to bottom right, #48575c, #5e966c);
+}
+.grad-3star {
+  background-image: linear-gradient(to bottom right, #515474, #499fb3);
+}
+.grad-4star {
+  background-image: linear-gradient(to bottom right, #595482, #b886ca);
+}
+.grad-5star {
+  background-image: linear-gradient(to bottom right, #695453, #e6ac54);
+}
+
+div#formula {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+div#formula>* {
+  padding-left: 0;
+  text-indent: 0;
+}
