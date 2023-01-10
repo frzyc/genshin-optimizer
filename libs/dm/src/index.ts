@@ -1,3 +1,3 @@
-export * from "./lib/DataminedModules"
+export * from "./lib/dm"
 export * from "./lib/TextMapUtil"
 export * from "./lib/consts"

@@ -27,6 +27,11 @@
             "input": "libs/localization/assets",
             "glob": "**/*",
             "output": "assets"
+          },
+          {
+            "input": "dist/libs/dm-localization/assets",
+            "glob": "**/*",
+            "output": "assets"
           }],
         "styles": [],
         "scripts": [],
@@ -96,5 +101,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["localization", "pipeline-runner"]
+  "implicitDependencies": ["localization", "pipeline-runner","dm-localization"]
 }

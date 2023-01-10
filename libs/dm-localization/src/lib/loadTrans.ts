@@ -4,7 +4,6 @@ import { crawlObject, layeredAssignment } from "@genshin-optimizer/util"
 import { existsSync, mkdirSync } from "fs"
 import { mapHashData, mapHashDataOverride } from "./Data"
 import { parsingFunctions, preprocess } from "./parseUtil"
-import { FRONTEND_PATH } from "./Util"
 
 export default function loadTrans() {
 
@@ -159,7 +158,7 @@ export default function loadTrans() {
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${FRONTEND_PATH}/assets/locales/${lang}`
+    const fileDir = `${__dirname}/../../assets/locales/${lang}`
     if (!existsSync(fileDir)) mkdirSync(fileDir)
 
     Object.entries(data).forEach(([type, typeData]) => {

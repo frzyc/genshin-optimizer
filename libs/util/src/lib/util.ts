@@ -1,7 +1,3 @@
-export function util(): string {
-  return 'util';
-}
-
 export function crawlObject(obj: any, keys: string[] = [], validate: (o: any, keys: string[]) => boolean, cb: (o: any, keys: string[]) => void) {
   if (validate(obj, keys)) cb(obj, keys)
   else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => crawlObject(val, [...keys, key], validate, cb))
