@@ -23,7 +23,7 @@
     "shield": "Form a Level 3: Rave Shield when cast"
   },
   "c4": {
-    "swingHit": "Opponent was hit with <pyro>Swing DMG</pyro>"
+    "swingHit": "Opponent's been hit with <pyro>Swing DMG</pyro>"
   },
   "c6": {
     "duringCharge": "Performing a Charged Attack"
