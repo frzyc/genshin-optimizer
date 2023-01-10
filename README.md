@@ -6,7 +6,7 @@
 <a href="https://github.com/frzyc/genshin-optimizer"><img alt="Github-last-commit" src="https://img.shields.io/github/last-commit/frzyc/genshin-optimizer?logo=github&style=for-the-badge"></a>
 <a href="https://github.com/frzyc/genshin-optimizer/blob/master/LICENSE"><img alt="GitHub-license" src="https://img.shields.io/github/license/frzyc/genshin-optimizer?style=for-the-badge"></a>
 
-Genshin Optimize is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.mihoyo.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
+Genshin Optimizer is a helper website for the online action-rpg gacha game [Genshin Impact](https://genshin.mihoyo.com/). It is intended to assist players with optimizing artifacts to max-min their characters, while providing a clean, structured UI, and provide real-time results.
 
 <a href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -15,6 +15,10 @@ Genshin Optimize is a helper website for the online action-rpg gacha game [Gensh
 ## Development server
 
 Run `nx serve frontend` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+## Deployment
+
+Run `yarn run deploy` to build the project, and deploy based on what is specified in `apps/frontend/project.json` within the `deploy` object.
 
 ## Understand this workspace
 
