@@ -57,7 +57,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "baseHref": "/genshin-optimizer-beta/"
+          "baseHref": "/genshin-optimizer/"
         }
       },
       "dependsOn": ["^build", "^pipeline"]
@@ -81,7 +81,7 @@
       "dependsOn": ["^build", "^pipeline"]
     },
     "deploy":{
-      "command": "gh-pages -d dist/apps/frontend -r https://github.com/frzyc/genshin-optimizer-beta",
+      "command": "gh-pages -d dist/apps/frontend",
       "dependsOn": ["build"]
     },
     "lint": {
