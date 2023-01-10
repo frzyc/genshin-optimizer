@@ -14,7 +14,7 @@
         "outputPath": "dist/libs/dm",
         "main": "libs/dm/src/index.ts",
         "tsConfig": "libs/dm/tsconfig.lib.json",
-        "assets": ["libs/dm/*.md", "libs/dm/GenshinData/**/*", "libs/dm/Texture2D/**/*"]
+        "assets": ["libs/dm/*.md"]
       },
       "dependsOn": ["loadDM", "^build"],
       "inputs": ["production", "^production"]
