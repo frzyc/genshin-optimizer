@@ -12,5 +12,5 @@ if (fs.existsSync(`${projectDir}/GenshinData`)) {
     console.log("./GenshinData exists & doesn't need update");
 } else {
   console.log("./GenshinData doesn't exist, cloning repo...");
-  execSync(`cd ${projectDir} && git clone https://github.com/dimbreath/GenshinData.git --depth 1`)
+  execSync(`cd ${projectDir} && git clone git@github.com:Dimbreath/GenshinData.git --depth 1`)
 }
