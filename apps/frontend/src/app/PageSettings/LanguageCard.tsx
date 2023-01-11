@@ -22,14 +22,16 @@ const nativeLanguages = {
   "cht": "繁體中文",
   "de": "Deutsch",
   "en": "English",
-  "es": "español",
-  "fr": "français",
+  "es": "Español",
+  "fr": "Français",
   "id": "Bahasa Indonesia",
+  "it": "Italiano",
   "ja": "日本語",
   "ko": "한국어",
   "pt": "Português",
   "ru": "Русский язык",
   "th": "ภาษาไทย",
+  "tr": "Türkçe",
   "vi": "Tiếng Việt"
 }
 export function LanguageDropdown() {
