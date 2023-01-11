@@ -113,7 +113,12 @@ const burst_durationInc = equal(condPartyInBurst, "on", greaterEq(hydroLevel, 1,
 
 const [condA1ActiveInBurstPath, condA1ActiveInBurst] = cond(key, "condA1ActiveInBurst")
 const a1InBurst_eleMasDisp = greaterEq(input.asc, 1,
-  equal(condA1ActiveInBurst, "on", equal(condPartyInBurst, "on",
+  equal(condA1ActiveInBurst, "on",
+    greaterEq(sum( // Either party is in burst, or this is a teammate
+      equal(condPartyInBurst, "on", 1),
+      unequal(input.activeCharKey, key, 1)
+    ),
+    1,
     min(
       prod(percent(dm.passive1.eleMas_), tally.maxEleMas),
       dm.passive1.maxEleMas
