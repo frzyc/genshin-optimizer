@@ -1,0 +1,12 @@
+{
+  "setName": "Xamã do Ritual Pyro",
+  "setEffects": {
+    "1": "Reduz a duração dos efeitos causados por Pyro em 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Coroa do Ritual Pyro",
+      "desc": "Uma coroa usada por sacerdotes durante cerimônias antigamente. Sua imersão no fogo ao longo do ano deu-lhe uma resistência incrível."
+    }
+  }
+}

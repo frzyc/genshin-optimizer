@@ -1,0 +1,12 @@
+{
+  "name": "Lama fredda",
+  "description": "Un'arma affidabile forgiata nell'acciaio, che testimonia le avventure del suo vecchio proprietario.",
+  "passiveName": "Flagello dell'acqua e del ghiaccio",
+  "passiveDescription": {
+    "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Cryo di un <cryo>12%</cryo>.",
+    "1": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Cryo di un <cryo>15%</cryo>.",
+    "2": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Cryo di un <cryo>18%</cryo>.",
+    "3": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Cryo di un <cryo>21%</cryo>.",
+    "4": "Aumenta i DAN contro gli avversari sotto l'effetto di Hydro o Cryo di un <cryo>24%</cryo>."
+  }
+}

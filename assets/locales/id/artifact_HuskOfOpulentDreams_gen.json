@@ -1,0 +1,29 @@
+{
+  "setName": "Husk of Opulent Dreams",
+  "setEffects": {
+    "2": "DEF +30%.",
+    "4": "Karakter yang mengenakan set Artefak ini akan mendapatkan efek Curiosity dalam kondisi berikut: Karakter aktif akan mendapatkan 1 lapis setelah serangan Geo-nya mengenai musuh, dapat terpicu setiap 0,3 detik. Karakter bisa mendapatkan 1 lapis setiap 3 detik jika tidak berada di medan pertempuran. Efek Curiosity dapat ditumpuk hingga 4 lapis, setiap lapis meningkatkan 6% DEF dan 6% Geo DMG Bonus. Karakter akan kehilangan 1 lapis setiap 6 detik jika tidak mendapatkan efek Curiosity baru."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Bloom Times",
+      "desc": "Dekorasi emas berbentuk enam kelopak bunga. Melalui bentuk kelopaknya yang tidak pernah layu, pandanglah betapa fananya kejayaan dunia."
+    },
+    "plume": {
+      "name": "Plume of Luxury",
+      "desc": "Penanda berbentuk bulu yang dibawa dari sebuah aula terpencil. Karena belas kasihan dari penciptanya, benda ini diletakkan di dalam aula itu bersama sesuatu yang sedang tertidur."
+    },
+    "sands": {
+      "name": "Song of Life",
+      "desc": "Di Inazuma, ini adalah sebuah benda dari bangsa luar. Bagian dalam mekanisme ini sudah dicabut sehingga jarumnya sudah tidak bergerak lagi."
+    },
+    "goblet": {
+      "name": "Calabash of Awakening",
+      "desc": "Botol labu yang dihias dengan serbuk emas dan cat hitam. Warna aslinya sudah tidak terlihat lagi, sepertinya fungsi utamanya adalah untuk properti pertunjukan."
+    },
+    "circlet": {
+      "name": "Skeletal Hat",
+      "desc": "Topi yang sediakala berfungsi untuk melindungi pengembara dari terik matahari dan guyuran hujan, kemudian menjelma sebagai peranti bagi wajah agar tertutupi dan ekspresi untuk bersembunyi."
+    }
+  }
+}

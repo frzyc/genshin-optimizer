@@ -1,0 +1,12 @@
+{
+  "name": "Arco Recurvado",
+  "description": "Dizem que é possível caçar águias em pleno voo com este arco, mas, na verdade, depende muito das habilidades do arqueiro também.",
+  "passiveName": "Colheita",
+  "passiveDescription": {
+    "0": "Derrotar um oponente recupera <cryo>8%</cryo> da Vida.",
+    "1": "Derrotar um oponente recupera <cryo>10%</cryo> da Vida.",
+    "2": "Derrotar um oponente recupera <cryo>12%</cryo> da Vida.",
+    "3": "Derrotar um oponente recupera <cryo>14%</cryo> da Vida.",
+    "4": "Derrotar um oponente recupera <cryo>16%</cryo> da Vida."
+  }
+}

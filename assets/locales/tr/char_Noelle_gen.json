@@ -1,0 +1,170 @@
+{
+  "skill": {
+    "triggerChance": "İyileştirmenin Tetiklenme İhtimali",
+    "name": "Kalbin Zırhı",
+    "description": {
+      "0": "Koruyucu bir taş zırhla etrafındaki düşmanlara <geo>Toprak Hasarı</geo> verir ve kalkan oluşturur. Kalkanın Hasar Emilimi Noelle'in Savunmasına bağlıdır.",
+      "1": "Kalkan şu özelliklere sahiptir:",
+      "2": [
+        "Noelle'in Normal ve Yüklü Saldırıları bir hedefi vurduğunda tüm karakterlerin Canı yenilenir.",
+        "Tüm Element Hasarlarına ve Fiziksel Hasara karşı Hasar Emilimi verimliliği %150 olur."
+      ],
+      "3": "<br/>",
+      "4": "İyileştirme tetiklendiğinde yenilenen Can, Noelle'in Savunmasına göre belirlenir.",
+      "5": "<br/>",
+      "6": "<i>Noelle, hem sorumluluk sahibi bir hizmetçi hem de cesur bir şövalyedir.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Hasar Emilimi",
+      "2": "İyileştirme",
+      "3": "İyileştirmenin Tetiklenme İhtimali",
+      "4": "Süre",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "atkBonus": "Saldırı Bonusu",
+    "name": "Süpürme Vakti",
+    "description": {
+      "0": "Taşın gücünü silahında toplayan Noelle, büyük bir etki alanıyla etrafındaki düşmanlara saldırır ve <geo>Toprak Hasarı</geo> verir.",
+      "1": "Sonrasında Noelle aşağıdaki etkileri kazanır:",
+      "2": [
+        "Saldırı etki alanı genişler.",
+        "Saldırı Hasarını, farklı herhangi bir element tesiriyle değişmeyecek şekilde <geo>Toprak Hasarına</geo> dönüştürür.",
+        "Savunmasına göre Saldırısı artar."
+      ],
+      "3": "<br/>",
+      "4": "<i>Bazen başka şeylerin de süpürülmesi gerekir...</i>"
+    },
+    "skillParams": {
+      "0": "Patlama Hasarı",
+      "1": "Beceri Hasarı",
+      "2": "Saldırı Bonusu",
+      "3": "Süre",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Noelle",
+  "title": "Şövalye Çiçeği",
+  "description": "Favonius Şövalyelerine sadakatle hizmet eden bir hizmetçi. Bir gün tam teşekküllü bir şövalye olmayı hayal ediyor.",
+  "constellationName": "Yüreğin Kalkanı",
+  "auto": {
+    "name": "Favonius Kılıç Tekniği - Hizmetçi",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Zamanla Dayanıklılık harcar ve yakındaki tüm düşmanlara dönerek saldırır.",
+        "2": "Saldırıları daha güçlü bir darbeyle bitirir. "
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Döngüsel Hasarı",
+      "5": "Yüklü Saldırı Son Vuruş Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Maks. Süre",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sadakat",
+    "description": {
+      "0": "Noelle savaş alanında değilken aktif karakterin Canı %30'un altına düşerse aşağıdaki beceri otomatik olarak tetiklenir:",
+      "1": "Aktif karakterin için 20 saniye süren ve Noelle'in Savunmasının %400'üne denk Hasar emen bir kalkan oluşturur.",
+      "2": "Bu kalkanın tüm Element Hasarlarına ve Fiziksel Hasara karşı %150 etkili Hasar Emilimi vardır.",
+      "3": "Bu etki 60 saniyede bir uygulanabilir."
+    }
+  },
+  "passive2": {
+    "name": "Tertemiz",
+    "description": {
+      "0": "Noelle, <strong>Kalbin Zırhı</strong> becerisinin Bekleme Süresini düşmanlara yaptığı her 4 Normal veya Yüklü saldırı başına 1 saniye azaltır.",
+      "1": "Her 0,1 saniyede bir vuruş sayılabilir."
+    }
+  },
+  "passive3": {
+    "name": "Hizmetçi Şövalye",
+    "description": {
+      "0": "Noelle, Savunma Artırıcı bir yemeği Mükemmel Pişirdiğinde elde edilen ürün %12 ihtimalle iki katına çıkar."
+    }
+  },
+  "constellation1": {
+    "name": "Bana Güven",
+    "description": {
+      "0": "<strong>Süpürme Vakti</strong> ve <strong>Kalbin Zırhı</strong> aynı anda kullanılırken Kalbin Zırhı becerisinin iyileştirme etkisi %100 ihtimalle etkinleşir."
+    }
+  },
+  "constellation2": {
+    "name": "Savaş Hizmetçisi",
+    "description": {
+      "0": "Noelle'in Yüklü Saldırı Dayanıklılık Tüketimini %20 azaltır ve Yüklü Saldırı Hasarını %15 artırır."
+    }
+  },
+  "constellation3": {
+    "name": "Yenilmez Hizmetçi",
+    "description": {
+      "0": "<strong>Kalbin Zırhı</strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Temizlenmesi Gerek",
+    "description": {
+      "0": "<strong>Kalbin Zırhı</strong> becerisinin süresi bittiğinde veya kalkan Hasar alarak yok olduğunda çevredeki düşmanlara %400 Saldırı kadar <geo>Toprak Hasarı</geo> verir."
+    }
+  },
+  "constellation5": {
+    "name": "Favonius Temizlik Ustası",
+    "description": {
+      "0": "<strong>Süpürme Vakti</strong> seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Pırıl Pırıl",
+    "description": {
+      "0": "<strong>Süpürme Vakti</strong> kullanıldığında Noelle'in Saldırısı ek olarak Savunmasının %50'si kadar artar.",
+      "1": "Buna ek olarak beceri süresince yenilen düşman başına süre 1sn uzar. Süre artışı maksimum 10sn olabilir."
+    }
+  }
+}

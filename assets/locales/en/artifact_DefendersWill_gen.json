@@ -1,0 +1,29 @@
+{
+  "setName": "Defender's Will",
+  "setEffects": {
+    "2": "DEF +30%",
+    "4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Guardian's Flower",
+      "desc": "An iris that was cherished by the guardian. Unfortunately, the chance never came for it to be given to whom the guardian loved."
+    },
+    "plume": {
+      "name": "Guardian's Sigil",
+      "desc": "A feather-shaped brooch that symbolizes someone’s yearning to defend others like a shield."
+    },
+    "sands": {
+      "name": "Guardian's Clock",
+      "desc": "A small timekeeping gadget. On moonless nights, it was the only way its former owner could know the time."
+    },
+    "goblet": {
+      "name": "Guardian's Vessel",
+      "desc": "A metal vessel that can be filled with a drink to dispel the loneliness of the long watch."
+    },
+    "circlet": {
+      "name": "Guardian's Band",
+      "desc": "A fabric band dyed indigo by the darkness of night. Can also double as a bandage in the event of an emergency."
+    }
+  }
+}

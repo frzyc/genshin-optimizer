@@ -1,0 +1,12 @@
+{
+  "name": "Spada di ferro scuro",
+  "description": "Una spada estremamente ordinaria, ma leggermente più scura del normale.",
+  "passiveName": "Sovraccarico",
+  "passiveDescription": {
+    "0": "Dopo aver causato una reazione di Sovraccarico, Superconduzione, Electrocarica, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'ATT aumenta di un <cryo>20%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "1": "Dopo aver causato una reazione di Sovraccarico, Superconduzione, Electrocarica, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'ATT aumenta di un <cryo>25%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "2": "Dopo aver causato una reazione di Sovraccarico, Superconduzione, Electrocarica, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'ATT aumenta di un <cryo>30%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "3": "Dopo aver causato una reazione di Sovraccarico, Superconduzione, Electrocarica, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'ATT aumenta di un <cryo>35%</cryo> per 12{NON_BREAK_SPACE}s.",
+    "4": "Dopo aver causato una reazione di Sovraccarico, Superconduzione, Electrocarica, Vivificazione, Accentuazione, Iperfioritura o Turbinio di Electro, l'ATT aumenta di un <cryo>40%</cryo> per 12{NON_BREAK_SPACE}s."
+  }
+}

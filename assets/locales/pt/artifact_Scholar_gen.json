@@ -1,0 +1,29 @@
+{
+  "setName": "O Estudioso",
+  "setEffects": {
+    "2": "Recarga de Energia +20%",
+    "4": "Obter Partículas ou Orbes Elementais confere 3 de Energia a todos os membros da equipe que possuem um arco ou catalisador equipado. Pode ser ativado uma vez a cada 3s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Marca-páginas de Estudioso",
+      "desc": "Uma flor ressecada usada como marca-página. Ela chegou a absorver o aroma das páginas."
+    },
+    "plume": {
+      "name": "Caneta de Pena de Estudioso",
+      "desc": "A pena de um pássaro que serve como uma caneta de pena. A ponta está manchada de preto há muito tempo."
+    },
+    "sands": {
+      "name": "Relógio do Estudioso",
+      "desc": "Um pequeno relógio de mesa. Ele fornece a única referência ao tempo para estudiosos que passam o dia inteiro estudando."
+    },
+    "goblet": {
+      "name": "Cálice de Tinta do Estudioso",
+      "desc": "Originalmente era um recipiente para beber água. Hoje em dia está manchado de preto após ter sido usado para lavar os pincéis de tinta."
+    },
+    "circlet": {
+      "name": "Lentes do Estudioso",
+      "desc": "Ler muito pode fazer mal à vista. Estas lentes foram criadas para aliviar esse desconforto."
+    }
+  }
+}

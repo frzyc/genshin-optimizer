@@ -1,0 +1,8 @@
+{
+  "name": "Predatore",
+  "description": "Un arco di concezione unica. Non deve appartenere a questo mondo.",
+  "passiveName": "Attacco potente",
+  "passiveDescription": {
+    "0": "<cryo>Effetto efficace solo per la piattaforma </cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nInfliggere DAN da Cryo agli avversari aumenta i DAN da attacchi normali e caricati di questo personaggio di un 10% per 6{NON_BREAK_SPACE}s. Cumulabile fino a 2 volte. Inoltre, quando Aloy equipaggia il Predatore, l'ATT aumenta di 66 punti."
+  }
+}

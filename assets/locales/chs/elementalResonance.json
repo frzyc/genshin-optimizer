@@ -1,0 +1,10 @@
+{
+  "ShatteringIce": {
+    "cond": "对受到冰元素影响的敌人"
+  },
+  "SprawlingGreenery": {
+    "cond2ele": "触发燃烧、原激化、绽放反应后",
+    "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后",
+    "eleMas": "蔓生之草元素精通"
+  }
+}

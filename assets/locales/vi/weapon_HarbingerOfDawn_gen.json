@@ -1,0 +1,12 @@
+{
+  "name": "Thần Kiếm Lê Minh",
+  "description": "Một thanh bảo kiếm sáng ngời, người nắm giữ nó sẽ có được sức mạnh \"Tự mình cảm thấy ưu tú\". Nhưng thanh kiếm đã có đôi chút xuống sắc.",
+  "passiveName": "Khích Lệ",
+  "passiveDescription": {
+    "0": "Khi HP trên 90%, tỷ lệ bạo kích tăng <cryo>14%</cryo>.",
+    "1": "Khi HP trên 90%, tỷ lệ bạo kích tăng <cryo>17.5%</cryo>.",
+    "2": "Khi HP trên 90%, tỷ lệ bạo kích tăng <cryo>21%</cryo>.",
+    "3": "Khi HP trên 90%, tỷ lệ bạo kích tăng <cryo>24.5%</cryo>.",
+    "4": "Khi HP trên 90%, tỷ lệ bạo kích tăng <cryo>28%</cryo>."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "setName": "Ritual de la Iluminación",
+  "setEffects": {
+    "1": "Los efectos de Pyro causados sobre ti duran un 40% menos."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Diadema Pírica",
+      "desc": "Una corona ceremonial portada por sacerdotes de tiempos antiguos al ofrecer un sacrificio a los dioses. Al haber estado expuesta a las llamas durante tanto tiempo, ha adquirido una resistencia asombrosa."
+    }
+  }
+}

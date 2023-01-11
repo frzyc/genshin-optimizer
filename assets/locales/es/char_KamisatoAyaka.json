@@ -1,0 +1,10 @@
+{
+  "afterSprint": "Tras Esprintar",
+  "afterSkill": "Tras usar <strong>Estilo Kamisato: Flor del hielo</strong>",
+  "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> tras esprintar",
+  "staminaRestore": "Aguante Recuperado",
+  "snowflakeDMG": "Daño de Ráfaga de ventisca",
+  "dmgBySnowflake": "Enemigos reciben daño de Ráfaga de ventisca creada por <strong>Estilo Kamisato: Devastación Glacial</strong>",
+  "afterBurst": "Tras usar <strong>Estilo Kamisato: Devastación glacial</strong>",
+  "c6Active": "Gracilidad del hielo activa"
+}

@@ -1,0 +1,56 @@
+{
+  "addNew": "Add New Character",
+  "forceSet": "Force Artifact Set Filter",
+  "tabs": {
+    "overview": "Overview",
+    "talent": "Talents",
+    "teambuffs": "Team Buffs",
+    "optimize": "Optimize",
+    "theorycraft": "Theorycraft"
+  },
+  "formulas": "Formulas",
+  "calculations": "Calculations",
+  "selectCharacter": "Select a Character",
+  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "delete": "Delete Character",
+  "teammates": "Teammates",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+  "hitmode": {
+    "hit": "Non Crit DMG",
+    "avgHit": "Avg. DMG",
+    "critHit": "Crit Hit DMG"
+  },
+  "noReaction": "No Reactions",
+  "tabEquip": {
+    "swapWeapon": "Swap Weapon",
+    "swapArt": "Swap Artifact",
+    "compare": "Compare with current Build",
+    "unequipArts": "Unequip all artifacts"
+  },
+  "characterName": "Character Name",
+  "teammate": "Teammate {{count}}",
+  "none": "None",
+  "multiTarget": {
+    "title": "Multi-Optimization Target Config",
+    "addNewTarget": "Add New Custom target",
+    "addNewMTarget": "Add New Custom Multi-target"
+  },
+  "addStats": {
+    "title": "Enemy Config + Bonus Stats"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Use minimum substat rolls",
+      "max": "Use maximum substat rolls",
+      "mid": "Use median substat rolls"
+    },
+    "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
+    "maxRolls": "This substat can have a maximum of 30 rolls.",
+    "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
+  },
+  "tabTeambuff": {
+    "team_reso": "Team Resonance",
+    "resonance_tip": "The party must be full with 4 characters in order for elemental resonance to take effect."
+  }
+}

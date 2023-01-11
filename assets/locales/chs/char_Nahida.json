@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "灭净三业伤害提升",
+  "karmaCritRate_": "灭净三业暴击率提升",
+  "karmaIntervalDec": "灭净三业触发间隔降低",
+  "noBurstEffect": "提示：元素爆发没有效果，请激活1命并/或添加<pyro>火</pyro>、<electro>雷</electro>、<hydro>水</hydro>元素队友",
+  "partyInBurst": "队伍在领域内",
+  "c1Key": "<strong>摩耶之殿</strong>加成中额外计入的<pyro>火</pyro>、<electro>雷</electro>、<hydro>水</hydro>元素队友",
+  "c2": {
+    "bloomCondName": "敌人被<strong>蕴种印</strong>标记",
+    "qasCondName": "被<strong>蕴种印</strong>标记的敌人受到原激化、超激化、蔓激化反应影响"
+  },
+  "c4CondName": "附近处于<strong>所闻遍计</strong>的蕴种印状态下的敌人数量",
+  "c6KarmicDmg": "业障除伤害"
+}

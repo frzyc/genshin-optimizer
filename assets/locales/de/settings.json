@@ -1,0 +1,35 @@
+{
+  "title": "Einstellungen",
+  "languageCard": {
+    "selectLanguage": "Sprache auswählen",
+    "languageFormat": "Sprache: {{language}}"
+  },
+  "uploadCard": {
+    "title": "Datenbank importieren",
+    "replaceDatabase": "Datenbank ersetzen",
+    "hint": "Lade die JSON-Datei hier hoch...",
+    "hintPaste": "... oder kopiere den Text hierhin.",
+    "goUpload": {
+      "title": "<strong>Genshin Optimizer</strong>-Format",
+      "migrate": "Datenbank wird auf eine neuere Version migriert. Ziehe in Betracht die Datenbank nach dem Hochladen noch einmal herunterzuladen.",
+      "deleteDatabasePrompt": "Bist du dir sicher die alte Datenbank zu ersetzen? Alle existierenden Charaktere und Artefakte werden gelöscht."
+    },
+    "error": {
+      "jsonParse": "Kann JSON-File nicht parsen.",
+      "unknown": "Unbekanntes Dateiformat.",
+      "monaInvalid": "Ungültiges Mona-Uranai Dateiformat",
+      "goInvalid": "Ungültiges GO Backupdateiformat"
+    }
+  },
+  "count": {
+    "chars": "Charaktere:",
+    "arts": "Artefakte:",
+    "weapons": "Waffen:",
+    "total": "Insgesamt:",
+    "new": "Neu:",
+    "updated": "Aktualisiert:",
+    "removed": "Entfernt:",
+    "unchanged": "Unverändert:",
+    "invalid": "Ungültig:"
+  }
+}

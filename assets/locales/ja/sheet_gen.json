@@ -1,0 +1,67 @@
+{
+  "normal": {
+    "hit1": "1段ダメージ",
+    "hit2": "2段ダメージ",
+    "hit3": "3段ダメージ",
+    "hit4": "4段ダメージ",
+    "hit5": "5段ダメージ",
+    "hit6": "6段ダメージ"
+  },
+  "charged": {
+    "dmg": "重撃ダメージ",
+    "spinning": "連続重撃ダメージ",
+    "final": "重撃終了ダメージ",
+    "stamina": "重撃スタミナ消費",
+    "aimed": "狙い撃ち",
+    "fullyAimed": "フルチャージ狙い撃ち"
+  },
+  "plunging": {
+    "dmg": "落下期間のダメージ",
+    "low": "低空落下攻撃ダメージ",
+    "high": "高空落下攻撃ダメージ"
+  },
+  "maxDuration": "最大継続時間",
+  "maxStacks": "エネルギー数上限",
+  "skillDMG": "スキルダメージ",
+  "burstDMG": "爆発ダメージ",
+  "dmgAbsorption": "吸収量",
+  "healing": "回復量",
+  "duration": "継続時間",
+  "cd": "クールタイム",
+  "energyCost": "元素エネルギー",
+  "baseDMG": "基礎ダメージ",
+  "dot": "継続ダメージ",
+  "addEleDMG": "付加元素ダメージ",
+  "press": {
+    "dmg": "一回押しダメージ",
+    "cd": "一回押しクールタイム"
+  },
+  "hold": {
+    "dmg": "長押しダメージ",
+    "cd": "長押しクールタイム"
+  },
+  "element": {
+    "anemo": "風",
+    "geo": "岩元素",
+    "pyro": "炎",
+    "hydro": "水元素",
+    "cryo": "氷",
+    "electro": "雷",
+    "dendro": "草元素"
+  },
+  "reaction": {
+    "swirl": "拡散",
+    "crystallize": "結晶",
+    "overloaded": "過負荷",
+    "electrocharged": "感電",
+    "superconduct": "超電導",
+    "vaporize": "蒸発",
+    "melt": "溶解",
+    "bloom": "Bloom",
+    "burgeon": "烈開花",
+    "hyperbloom": "超開花",
+    "quicken": "原激化",
+    "aggravate": "超激化",
+    "spread": "草激化"
+  }
+}

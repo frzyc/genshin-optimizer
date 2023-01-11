@@ -1,0 +1,11 @@
+{
+  "electro": {
+    "skill": {
+      "enerRegen": "Regeneração de Energia Elemental",
+      "enerRechInc": "Aumento de Recarga de Energia"
+    },
+    "burst": {
+      "thunderDMG": "Dano do Relâmpago Poderoso"
+    }
+  }
+}

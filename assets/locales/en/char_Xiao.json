@@ -1,0 +1,12 @@
+{
+  "burst": {
+    "autoAtkDmgBonus_": "Normal/Charged/Plunging Attack DMG Bonus",
+    "lifeDrain_": "Life Drain",
+    "currentHPPerSec": "(Current HP/s)",
+    "incJump": "Greatly increases jumping ability",
+    "incAtkAoe": "Increases attack AoE",
+    "inBurst": "Under the effects of <strong>Bane of All Evil</strong>",
+    "stack": "Time spent in <strong>Bane of All Evil</strong>"
+  },
+  "skillStack": "<strong>Lemniscatic Wind Cycling</strong> uses"
+}

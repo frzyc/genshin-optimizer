@@ -1,0 +1,20 @@
+{
+  "skillC": {
+    "name": "Grimheart",
+    "consumed": "Grimheart Dikonsumsi",
+    "grimheart": {
+      "name": "Lapisan Grimheart",
+      "int": "Meningkatkan ketahanan terhadap interupsi"
+    }
+  },
+  "burstC": {
+    "name": "Lightfall Sword",
+    "start5": "Mulai dengan 5 lapis",
+    "addStacks": "50% kemungkinan untuk mendapat tambahan lapis"
+  },
+  "c1C": {
+    "name": "Mengkonsumsi lapis <strong>Grimheart</strong>",
+    "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
+  },
+  "passive1": "DMG Shattered Lightfall Sword"
+}

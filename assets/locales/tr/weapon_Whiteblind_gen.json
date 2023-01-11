@@ -1,0 +1,12 @@
+{
+  "name": "Akkörelten",
+  "description": "Bir tarafı bilenmemiş egzotik bir kılıç. Liyue'ye yabancı tüccarlar tarafından getirilmiş. Onu kullanmayı bilenlerin elinde korkulacak bir silaha dönüşür.",
+  "passiveName": "Tesirli Kılıç",
+  "passiveDescription": {
+    "0": "Normal veya Yüklü Saldırılarla darbe vurduğunda, 6 saniyeliğine Saldırı ve Savunmayı <cryo>%6</cryo> artırır. 4 kademeye kadar birikir. Bu etki 0,5 saniyede bir uygulanabilir.",
+    "1": "Normal veya Yüklü Saldırılarla darbe vurduğunda, 6 saniyeliğine Saldırı ve Savunmayı <cryo>%7,5</cryo> artırır. 4 kademeye kadar birikir. Bu etki 0,5 saniyede bir uygulanabilir.",
+    "2": "Normal veya Yüklü Saldırılarla darbe vurduğunda, 6 saniyeliğine Saldırı ve Savunmayı <cryo>%9</cryo> artırır. 4 kademeye kadar birikir. Bu etki 0,5 saniyede bir uygulanabilir.",
+    "3": "Normal veya Yüklü Saldırılarla darbe vurduğunda, 6 saniyeliğine Saldırı ve Savunmayı <cryo>%10,5</cryo> artırır. 4 kademeye kadar birikir. Bu etki 0,5 saniyede bir uygulanabilir.",
+    "4": "Normal veya Yüklü Saldırılarla darbe vurduğunda, 6 saniyeliğine Saldırı ve Savunmayı <cryo>%12</cryo> artırır. 4 kademeye kadar birikir. Bu etki 0,5 saniyede bir uygulanabilir."
+  }
+}

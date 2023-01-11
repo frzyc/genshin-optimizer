@@ -1,0 +1,12 @@
+{
+  "name": "Lancia litica",
+  "description": "Una lancia forgiata dalle rocce della Foresta di pietra di Guyun. La sua resistenza non ha eguali.",
+  "passiveName": "Assioma litico: Unità",
+  "passiveDescription": {
+    "0": "Per ogni personaggio di Liyue nel gruppo, quello equipaggiato con quest'arma ottiene un <cryo>7%</cryo> di aumento dell'ATT e un <cryo>3%</cryo> di riduzione del tasso di CRIT. Cumulabile fino a 4 volte.",
+    "1": "Per ogni personaggio di Liyue nel gruppo, quello equipaggiato con quest'arma ottiene un <cryo>8%</cryo> di aumento dell'ATT e un <cryo>4%</cryo> di riduzione del tasso di CRIT. Cumulabile fino a 4 volte.",
+    "2": "Per ogni personaggio di Liyue nel gruppo, quello equipaggiato con quest'arma ottiene un <cryo>9%</cryo> di aumento dell'ATT e un <cryo>5%</cryo> di riduzione del tasso di CRIT. Cumulabile fino a 4 volte.",
+    "3": "Per ogni personaggio di Liyue nel gruppo, quello equipaggiato con quest'arma ottiene un <cryo>10%</cryo> di aumento dell'ATT e un <cryo>6%</cryo> di riduzione del tasso di CRIT. Cumulabile fino a 4 volte.",
+    "4": "Per ogni personaggio di Liyue nel gruppo, quello equipaggiato con quest'arma ottiene un <cryo>11%</cryo> di aumento dell'ATT e un <cryo>7%</cryo> di riduzione del tasso di CRIT. Cumulabile fino a 4 volte."
+  }
+}

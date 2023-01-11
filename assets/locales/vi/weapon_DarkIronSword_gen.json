@@ -1,0 +1,12 @@
+{
+  "name": "Kiếm Sắt Đen",
+  "description": "Kiếm sắt hơi bị đen một chút",
+  "passiveName": "Quá Tải",
+  "passiveDescription": {
+    "0": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>20%</cryo>.",
+    "1": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>25%</cryo>.",
+    "2": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>30%</cryo>.",
+    "3": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>35%</cryo>.",
+    "4": "Trong 12s sau khi kích hoạt hiệu ứng Quá Tải, Siêu Dẫn, Điệm Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ hoặc Khuếch Tán nguyên tố Lôi, tấn công tăng <cryo>40%</cryo>."
+  }
+}

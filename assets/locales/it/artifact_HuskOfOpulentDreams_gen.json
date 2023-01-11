@@ -1,0 +1,29 @@
+{
+  "setName": "Guscio dei sogni opulenti",
+  "setEffects": {
+    "2": "DIF +30%.",
+    "4": "Un personaggio equipaggiato con questo set di manufatti otterrà l'effetto della Curiosità come segue: quando sarà sul campo, riceverà un 1 effetto sconfiggendo un avversario con un effetto di Geo, fino a una volta ogni 0,3{NON_BREAK_SPACE}s; quando non sarà sul campo, riceverà 1 effetto ogni 3{NON_BREAK_SPACE}s. La Curiosità è cumulabile fino a 4 volte, e ciascun effetto fornisce il 6% di DIF e di bonus DAN da Geo. Per ogni 6{NON_BREAK_SPACE}s trascorsi senza ottenere un effetto cumulabile, perderai 1 effetto cumulato."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Piena fioritura",
+      "desc": "Un piccolo ornamento d'oro con sei petali che non appassiranno mai. Simboleggia la fugacità delle glorie mortali."
+    },
+    "plume": {
+      "name": "Piuma dell'opulenza",
+      "desc": "Un oggetto a forma di piuma proveniente da un luogo secluso. Per compassione del suo creatore, fu abbandonata tra le mura di quella dimora assieme a un corpo addormentato."
+    },
+    "sands": {
+      "name": "Canzone della vita",
+      "desc": "Inazuma crede che questo piccolo oggetto provenga da una terra straniera. Il cuore del meccanismo è stato rimosso e le sue lancette non si muovono più."
+    },
+    "goblet": {
+      "name": "Calebassa del risveglio",
+      "desc": "Una calebassa decorata con polvere d'oro e vernice nera. Il suo colore originale non si riesce più a distinguere, ma ora sembra essere impiegata come oggetto di scena."
+    },
+    "circlet": {
+      "name": "Cappello del vagabondo",
+      "desc": "Un tempo, questo cappello era indossato da un vagabondo per ripararsi da pioggia e sole. Divenne infine uno strumento utile per nascondersi il volto dallo sguardo altrui."
+    }
+  }
+}

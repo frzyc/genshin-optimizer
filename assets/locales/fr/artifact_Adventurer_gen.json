@@ -1,0 +1,29 @@
+{
+  "setName": "Aventurier",
+  "setEffects": {
+    "2": "Augmente les PV max de 1 000 pts.",
+    "4": "Restaure 30 % des PV pendant 5 s après l'ouverture d'un coffre."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fleur de l'Aventurier",
+      "desc": "Une fleur qui a su survivre à l'environnement hostile d'une cité antique. Elle est désormais portée avec fierté, comme une médaille."
+    },
+    "plume": {
+      "name": "Plume de queue de l'Aventurier",
+      "desc": "Une plume d'un oiseau exotique rarement vu sur le continent."
+    },
+    "sands": {
+      "name": "Montre de poche de l'Aventurier",
+      "desc": "Les aventuriers oublient souvent la notion du temps lorsqu'ils s'aventurent dans des profondeurs obscures ou des ruines oubliées."
+    },
+    "goblet": {
+      "name": "Coupe en or de l'Aventurier",
+      "desc": "Il s'agit certainement du trophée obtenu à l'issue d'une aventure. Un bel objet, bien que légèrement endommagé."
+    },
+    "circlet": {
+      "name": "Bandeau de l'Aventurier",
+      "desc": "Un bout de tissu qu'on enroule autour du front. Bien qu'il soit plein de poussière et de sueur, il continue d'être la fierté de l'aventurier."
+    }
+  }
+}

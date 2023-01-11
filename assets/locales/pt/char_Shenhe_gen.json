@@ -1,0 +1,171 @@
+{
+  "name": "Shenhe",
+  "title": "Transcendência Solitária",
+  "description": "Uma discípula adepti com um ar muito incomum sobre ela. Tendo passado muito tempo vivendo em isolamento nas montanhas de Liyue, ela se tornou tão fria e distante quanto os próprios adepti.",
+  "constellationName": "Crista Doloris",
+  "auto": {
+    "name": "Perfuradora do Amanhecer",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Ataque Carregado",
+      "6": "Consumo de Stamina de Ataque Carregado",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Invocação Espiritual",
+    "description": {
+      "0": "O orvalho gelado, prateado e denso, exorcizará todos os demônios.",
+      "1": "Concede a todos os personagens próximos o efeito de Pena Gelada, e de acordo com Pressionar ou Manter Pressionado, inflige <cryo>Dano Cryo</cryo> de maneiras diferentes.",
+      "2": "<br/>",
+      "3": "<strong>Pressionar</strong>",
+      "4": "Avança para frente com um Talismã de Espírito, infligindo <cryo>Dano Cryo</cryo> aos inimigos que estão no caminho.",
+      "5": "<br/>",
+      "6": "<strong>Manter Pressionado</strong>",
+      "7": "Ordena o Talismã de Espírito, infligindo <cryo>Dano Cryo em uma AdE</cryo>.",
+      "8": "<br/>",
+      "9": "<strong>Pena Gelada</strong>",
+      "10": "Quando <cryo>Dano Cryo</cryo> é infligido com Ataque Normal, Ataque Carregado, Ataque Imersivo, Habilidade Elemental ou Supremo, é obtido um aumento de Dano com base no ATQ de Shenhe.",
+      "11": "<br/>",
+      "12": "Os efeitos de Pena Gelada desaparecerão quando sua duração acabar ou depois de terem sido desencadeados um certo número de vezes. Manter Pressionado ao invés de Pressionar concede uma maior duração do efeito, bem como um número maior de cargas que pode ser ativado.",
+      "13": "Quando o Ataque com <cryo>Dano Cryo</cryo> atingir múltiplos inimigos, as cargas serão consumidas com base no número de inimigos atingidos. Os efeitos de Pena Gelada, bem como seu número em cada membro da equipe são contados independentemente.",
+      "14": "<br/>",
+      "15": "<i>\"O poder dos espíritos não é uma enganação. Sob o fardo de suas ordens, a donzela divina continua sua missão.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade de Pressionar",
+      "1": "Dano de Habilidade ao Manter Pressionado",
+      "2": "Aumento de Dano",
+      "3": "Duração de Pressionar/Manter Pressionado",
+      "4": "Cargas de Pressionar/Manter Pressionado",
+      "5": "Recarga de Pressionar",
+      "6": "Recarga de Manter Pressionado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Encantamento da Donzela Divina",
+    "description": {
+      "0": "Libera o poder do Talismã de Espírito, permitindo que ande livremente nesta terra, infligindo <cryo>Dano Cryo em uma AdE</cryo>.",
+      "1": "O Talismã de Espírito formará uma AdE em que a <cryo>RES Cryo</cryo> e RES Física dos inimigos serão reduzidas, e também infligirá <cryo>Dano Cryo</cryo> continuamente contra os inimigos dentro da AdE.",
+      "2": "<br/>",
+      "3": "<i>\"O Caminho dos Adepti não para aqueles presos em mistérios e imaginação. Apenas ao observar as mudanças nos céus e na terra, e compreendendo as leis de causa e efeito deste mundo é que sua essência será entendida.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Redução de RES",
+      "2": "Dano Contínuo",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Preceito Divino",
+    "description": {
+      "0": "Personagens ativos no campo de <strong>Encantamento da Donzela Divina</strong> terão um aumento de <cryo>Bônus de Dano Cryo</cryo> de 15%."
+    }
+  },
+  "passive2": {
+    "name": "Selo da Comunhão Espiritual",
+    "description": {
+      "0": "Após Shenhe utilizar <strong>Invocação Espiritual</strong>, ela concederá a todos os membros próximos da equipe os seguintes efeitos:",
+      "1": [
+        " Pressionar: Aumento de Dano da Habilidade Elemental e do Supremo em 15% por 10s;",
+        " Manter Pressionado: o Dano do Ataque Normal, Ataque Carregado e Ataque Imersivo aumenta em 15% por 15s."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Chegada Pontual",
+    "description": {
+      "0": "Ganha 25% mais recompensas quando enviada numa Expedição em Liyue por 20 horas."
+    }
+  },
+  "constellation1": {
+    "name": "Clareza do Coração",
+    "description": {
+      "0": "<strong>Invocação Espiritual</strong> pode ser utilizada mais uma vez."
+    }
+  },
+  "constellation2": {
+    "name": "Espírito Centrado",
+    "description": {
+      "0": "Prolonga a duração de <strong>Encantamento da Donzela Divina</strong> em 6s. Personagens ativos na AdE da Habilidade infligem 15% a mais de <cryo>Dano Cryo</cryo> CRIT."
+    }
+  },
+  "constellation3": {
+    "name": "Reclusão",
+    "description": {
+      "0": "Aumenta o nível de <strong>Invocação Espiritual</strong> em 3.",
+      "1": "Nível máximo é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Clarividência",
+    "description": {
+      "0": "Personagens que estejam sob o efeito de <strong>Pena Gelada</strong> de Shenhe farão com que, ao desencadearem o Dano Bônus de Pena Gelada, Shenhe obtenha uma carga de Firmamento Gelado:",
+      "1": [
+        " Quando Shenhe lançar <strong>Invocação Espiritual</strong>, ela consumirá todos os Firmamentos Gelados, e de acordo com as cargas eliminadas, aumentará o Dano de Invocação Espiritual em 5% por cada carga consumida;",
+        " Esse efeito pode ser acumulado em até 50 vezes por 60s."
+      ]
+    }
+  },
+  "constellation5": {
+    "name": "Divinização",
+    "description": {
+      "0": "Aumenta o nível de <strong>Encantamento da Donzela Divina</strong> em 3.",
+      "1": "Nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Abandono Místico",
+    "description": {
+      "0": "Quando personagens desencadeiam os efeitos de <strong>Pena Gelada</strong> com Ataques Normais e Ataques Carregados, as cargas de Pena Gelada não serão consumidas."
+    }
+  }
+}

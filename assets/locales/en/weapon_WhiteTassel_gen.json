@@ -1,0 +1,12 @@
+{
+  "name": "White Tassel",
+  "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It's a reliable weapon.",
+  "passiveName": "Sharp",
+  "passiveDescription": {
+    "0": "Increases Normal Attack DMG by <cryo>24%</cryo>.",
+    "1": "Increases Normal Attack DMG by <cryo>30%</cryo>.",
+    "2": "Increases Normal Attack DMG by <cryo>36%</cryo>.",
+    "3": "Increases Normal Attack DMG by <cryo>42%</cryo>.",
+    "4": "Increases Normal Attack DMG by <cryo>48%</cryo>."
+  }
+}

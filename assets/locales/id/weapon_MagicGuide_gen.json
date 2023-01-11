@@ -1,0 +1,12 @@
+{
+  "name": "Magic Guide",
+  "description": "Jilid ke-12. Edisi ini merupakan revisi jilid ke-11 dengan beberapa perbaikan dan penambahan berdasarkan perkembangan terkini.",
+  "passiveName": "Bane of Storm and Tide",
+  "passiveDescription": {
+    "0": "Meningkatkan <cryo>12%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+    "1": "Meningkatkan <cryo>15%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+    "2": "Meningkatkan <cryo>18%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+    "3": "Meningkatkan <cryo>21%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+    "4": "Meningkatkan <cryo>24%</cryo> DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+  }
+}

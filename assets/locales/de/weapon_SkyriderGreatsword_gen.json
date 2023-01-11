@@ -1,0 +1,12 @@
+{
+  "name": "Himmelsflug-Großschwert",
+  "description": "Ein recht robustes Großschwert. Der sagenumwobene „Schwertprinz“ hat mit ihm den zweiten Versuch unternommen, gen Himmel zu fliegen.",
+  "passiveName": "Mut",
+  "passiveDescription": {
+    "0": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>6 %</cryo>, 4-fach stapelbar. 0,5 s Abklingzeit.",
+    "1": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>7 %</cryo>, 4-fach stapelbar. 0,5 s Abklingzeit.",
+    "2": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>8 %</cryo>, 4-fach stapelbar. 0,5 s Abklingzeit.",
+    "3": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>9 %</cryo>, 4-fach stapelbar. 0,5 s Abklingzeit.",
+    "4": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um <cryo>10 %</cryo>, 4-fach stapelbar. 0,5 s Abklingzeit."
+  }
+}

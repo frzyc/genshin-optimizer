@@ -1,0 +1,12 @@
+{
+  "name": "Regenschnitter",
+  "description": "Ein Großschwert ohne scharfe Klinge, das leicht schimmert. Hält man dieses Schwert in den Händen, zerschlägt man seine Feinde gnadenlos mit purer Gewalt.",
+  "passiveName": "Bewährtheit von Wasser und Blitz",
+  "passiveDescription": {
+    "0": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>20 %</cryo>.",
+    "1": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>24 %</cryo>.",
+    "2": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>28 %</cryo>.",
+    "3": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>32 %</cryo>.",
+    "4": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um <cryo>36 %</cryo>."
+  }
+}

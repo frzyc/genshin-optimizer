@@ -1,0 +1,29 @@
+{
+  "setName": "Sonhos Dourados",
+  "setEffects": {
+    "2": "Proficiência Elemental +80",
+    "4": "Dentro de 8s após causar uma Reação Elemental, o personagem equipando este conjunto irá obter aprimoramentos baseados no Tipo Elemental dos outros membros da equipe. O ATQ é aumentado em 14% para cada membro da equipe cujo Tipo Elemental seja o mesmo que o personagem equipando o conjunto. A Proficiência Elemental é aumentada em 50 para cada membro da equipe com Tipos Elementais diferentes. Cada um desses aprimoramentos mencionados anteriormente irá contar para até 3 personagens. Esse efeito pode ser desencadeado uma vez a cada 8s. O personagem que equipar este conjunto ainda pode ativar seu efeito mesmo que não esteja em campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor de Metal Onírica",
+      "desc": "Um botão de flor feito de um ouro escuro. Seu núcleo carmesim é envolto por pétalas que nunca irão se abrir."
+    },
+    "plume": {
+      "name": "Pluma do Julgamento",
+      "desc": "Essa pluma especial já foi utilizada para pesar os corações dos culpados, mas há muito já perdeu sua função original."
+    },
+    "sands": {
+      "name": "Anos Dourados",
+      "desc": "Este antigo relógio solar dourado-escuro, parece contar a antiga história de um antigo deserto."
+    },
+    "goblet": {
+      "name": "Banquete Final do Mel",
+      "desc": "Uma taça de vinho utilizada no passado para um banquete ancestral. Ela já perdeu muito de seu brilho."
+    },
+    "circlet": {
+      "name": "Sombra do Rei das Areias",
+      "desc": "Esta faixa de cabeça dourada era usada pelos padres do deserto nos tempos antigos. Elas foram feitas como imitação daquela usada por um lendário governante das pessoas do deserto."
+    }
+  }
+}

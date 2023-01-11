@@ -1,0 +1,12 @@
+{
+  "name": "Vérité de Kagura",
+  "description": "Les cloches utilisées lors de l'exécution de la danse Kagura, bénies par la guuji elle-même. L'odeur du cerisier sacré s'en dégage.",
+  "passiveName": "Danse Kagura du cerisier sacré",
+  "passiveDescription": {
+    "0": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>12{NON_BREAK_SPACE}%</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>12{NON_BREAK_SPACE}%</cryo>.",
+    "1": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>15{NON_BREAK_SPACE}%</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>15{NON_BREAK_SPACE}%</cryo>.",
+    "2": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>18{NON_BREAK_SPACE}%</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>18{NON_BREAK_SPACE}%</cryo>.",
+    "3": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>21{NON_BREAK_SPACE}%</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>21{NON_BREAK_SPACE}%</cryo>.",
+    "4": "Libérer une compétence élémentaire confère l'effet Danse Kagura, permettant d'augmenter les DGT infligés par les compétences élémentaires du personnage équipé de l'arme de <cryo>24{NON_BREAK_SPACE}%</cryo> pendant 16 s. Cet effet peut être cumulé 3 fois maximum. Avec 3 cumuls, le personnage bénéficie d'un bonus de DGT élémentaires de <cryo>24{NON_BREAK_SPACE}%</cryo>."
+  }
+}

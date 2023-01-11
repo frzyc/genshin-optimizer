@@ -1,0 +1,150 @@
+{
+  "name": "Xiangling",
+  "title": "Cordon-bleu du peuple",
+  "description": "Une célèbre cheffe cuisinière originaire de Liyue, connue pour ses plats épicés.",
+  "constellationName": "Trulla",
+  "auto": {
+    "name": "Cuisine-fu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Attaque Gooba",
+    "description": {
+      "0": "Xiangling invoque le panda Gooba. Tant que Gooba est actif, il crache du feu sur les ennemis, leur infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Gooba raffole des produits épicés ; mais même ça, c'est un peu trop pour lui.</i>"
+    },
+    "skillParams": {
+      "0": "DGT crachats de feu",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pyrotation",
+    "description": {
+      "0": "Démontrant à nouveau sa maîtrise du feu et des armes, Xiangling libère une tornade de feu qui tournoie autour d'elle.",
+      "1": "La tornade suit le personnage tant qu'elle est active, infligeant des <pyro>DGT Pyro</pyro> aux ennemis sur sa route.",
+      "2": "<br/>",
+      "3": "<i>On n'a jamais assez d'explosif. JAMAIS.</i>"
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tornade de feu",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Feux croisés",
+    "description": {
+      "0": "Augmente la portée des crachats de feu de Gooba de 20 %."
+    }
+  },
+  "passive2": {
+    "name": "Attention, ça pique",
+    "description": {
+      "0": "À la fin d'<strong>Attaque Gooba</strong>, le gentil petit Gooba laisse un piment à son emplacement avant de disparaître. Ce piment confère un bonus de 10 % d'ATQ pendant 10 s à celui qui le ramasse."
+    }
+  },
+  "passive3": {
+    "name": "Cheffe cuisinière",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce l'ATQ."
+    }
+  },
+  "constellation1": {
+    "name": "Croustillant à l'extérieur, tendre à l'intérieur",
+    "description": {
+      "0": "La <pyro>RÉS Pyro</pyro> des ennemis touchés par Gooba est réduite de 15 % pendant 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "L'huile sur le feu",
+    "description": {
+      "0": "Le dernier coup d'attaque normale inflige pendant 2 s un effet d'implosion aux ennemis. Au bout de ce délai, ils explosent, infligeant des <pyro>DGT Pyro de zone</pyro> équivalant à 75 % de l'ATQ."
+    }
+  },
+  "constellation3": {
+    "name": "Sauté profond",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Pyrotation</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Douce cuisine",
+    "description": {
+      "0": "Prolonge la durée de <strong>Pyrotation</strong> de 40 %."
+    }
+  },
+  "constellation5": {
+    "name": "Colère de Gooba",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Attaque Gooba</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pyrotation condensée",
+    "description": {
+      "0": "Les <pyro>DGT Pyro</pyro> de tous les personnages de l'équipe augmentent de 15 % tant que <strong>Pyrotation</strong> est active."
+    }
+  }
+}

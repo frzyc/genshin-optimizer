@@ -1,0 +1,29 @@
+{
+  "setName": "Yolcunun Azmi",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Yüklü Saldırı Kritik Oranını %30 artırır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Yoldaşlık Kalbi",
+      "desc": "Bir kurdeleyle süslenmiş küçük bir mavi çiçek."
+    },
+    "plume": {
+      "name": "Eve Dönüş Tüyü",
+      "desc": "Bir zamanlar ufuklarda kaybolan gezginlerin hatırasını taşıyan mavi bir ok tüyü."
+    },
+    "sands": {
+      "name": "Yolcunun Saati",
+      "desc": "Çağlar boyunca güneşin ve ayın döngülerine sessizce tanıklık etmiş bir güneş saati."
+    },
+    "goblet": {
+      "name": "Yolcunun Kadehi",
+      "desc": "Bir zamanlar keyif verici içkilerle dolup taşan sade bir porselen kadeh."
+    },
+    "circlet": {
+      "name": "Ayrılık Tacı",
+      "desc": "Hafif bir bahar esintisi yayan kamıştan yapılma bir taç."
+    }
+  }
+}

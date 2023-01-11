@@ -1,0 +1,29 @@
+{
+  "setName": "Perseveranza dei Milleliti",
+  "setEffects": {
+    "2": "I PS aumentano di un 20%.",
+    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT di tutti i membri del gruppo vicini aumenta di un 20% e il loro scudo diventa più efficace di un 30% per 3{NON_BREAK_SPACE}s. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio che sta usando questo set di manufatti non è sul campo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore dell'onore",
+      "desc": "Un fiore di lamine d'oro. Simbolo delle glorie e degli onori conseguiti da chi lo portava."
+    },
+    "plume": {
+      "name": "Piuma da guerra cerimoniale",
+      "desc": "La piuma di un falco utilizzata durante le cerimonie. Rappresenta la dignità e la risolutezza del Porto di Liyue dinanzi al mondo intero."
+    },
+    "sands": {
+      "name": "Meridiana d'oricalco",
+      "desc": "Uno strumento elementare per conoscere l'ora. Accessorio d'ordinanza dei Milleliti durante la guerra."
+    },
+    "goblet": {
+      "name": "Calice del giuramento del nobile",
+      "desc": "Un calice d'oro usato dai Milleliti per prestare giuramento. Emana ancora il profumo di un vino delizioso."
+    },
+    "circlet": {
+      "name": "Elmetto antico del generale",
+      "desc": "Uno splendido elmetto antico. Dagli una bella pulita e sembrerà nuovo di zecca."
+    }
+  }
+}

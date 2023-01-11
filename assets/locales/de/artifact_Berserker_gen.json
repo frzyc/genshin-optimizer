@@ -1,0 +1,29 @@
+{
+  "setName": "Berserker",
+  "setEffects": {
+    "2": "Erhöht die KT um 12 %.",
+    "4": "Erhöht die KT bei weniger als 70 % LP zusätzlich um 24 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Berserkerrose",
+      "desc": "Eine schöne rote Rose, die das Wesen eines Berserkers widerspiegelt."
+    },
+    "plume": {
+      "name": "Berserkerfeder",
+      "desc": "Die dunkelblaue Schwanzfeder eines Vogels, der in alten Geschichten den Tod ankündigt. Ein Teil davon ist mittlerweile rot gefärbt."
+    },
+    "sands": {
+      "name": "Berserkersanduhr",
+      "desc": "Ein Gerät, dessen Innern gnadenlos und immer in Bewegung ist. Es erinnert den Berserker an seine auf dem Schlachtfeld wie auch auf der Welt verbleibende Zeit."
+    },
+    "goblet": {
+      "name": "Berserkertrinkhorn",
+      "desc": "Aus den Überresten eines unbekannten großen Tiers gefertigt, die Beute einer großen Jagd."
+    },
+    "circlet": {
+      "name": "Furchteinflößende Berserkermaske",
+      "desc": "Eine Maske, aufgrund von Kämpfen bis auf den Tod zur Hälfte zerbrochen."
+    }
+  }
+}

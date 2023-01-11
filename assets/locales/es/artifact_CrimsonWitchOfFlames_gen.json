@@ -1,0 +1,29 @@
+{
+  "setName": "Bruja Carmesí en Llamas",
+  "setEffects": {
+    "2": "Bono de Daño Pyro +15%.",
+    "4": "Aumenta el daño causado por Sobrecarga, Quemadura y Crepitar en un 40%, y el de Vaporización y Derretido en un 15%. El uso de una Habilidad Elemental aumenta los efectos del conjunto de 2 piezas en un 50% durante 10 s. Puede acumularse hasta un máximo de 3 veces."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor en Llamas de la Bruja",
+      "desc": "Una flor que fue tocada por una bruja que quería quemar el mundo. La calidez de sus llamas acaricia las manos de aquellos que la intentan tocar."
+    },
+    "plume": {
+      "name": "Pluma Ardiente de la Bruja",
+      "desc": "Una pluma de pájaro tocada por una bruja que quería quemar el mundo. Su combustión constante hace que aumente drásticamente la temperatura a su alrededor."
+    },
+    "sands": {
+      "name": "Fin de los Tiempos de la Bruja",
+      "desc": "Un reloj que llevaba la bruja que quería quemar el mundo. En él fluyen los años de vida que le dedicó al fuego."
+    },
+    "goblet": {
+      "name": "Llama del Corazón de la Bruja",
+      "desc": "Un jarrón de arcilla ardiente legado por una bruja que quería quemar el mundo. Las llamas de este frasco nunca se apagan, igual que el deseo infame de la Bruja."
+    },
+    "circlet": {
+      "name": "Sombrero Abrasador de la Bruja",
+      "desc": "El sombrero que llevaba una bruja que quería quemar el mundo. Las grandes alas del sombrero podían bloquear su campo de visión."
+    }
+  }
+}

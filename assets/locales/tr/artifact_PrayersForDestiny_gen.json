@@ -1,0 +1,12 @@
+{
+  "setName": "Kader Duası",
+  "setEffects": {
+    "1": "Su etkisinde kalma süresini %40 kısaltır."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Sağanak Tacı",
+      "desc": "Kadim zamanlarda kurban adamakla görevli kişiler tarafından takılan bir taç. Her yıl, suya daldırıldığı için oldukça dayanıklı hale gelmiş."
+    }
+  }
+}

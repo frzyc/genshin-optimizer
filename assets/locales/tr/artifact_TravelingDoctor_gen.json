@@ -1,0 +1,29 @@
+{
+  "setName": "Gezgin Doktor",
+  "setEffects": {
+    "2": "Alınan iyileştirmeyi %20 artırır.",
+    "4": "Element Patlaması kullanmak %20 Can yeniler."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Gezgin Doktorun Gümüş Nilüferi",
+      "desc": "Yıllarca bekledikten sonra tüm iyileştirici özelliklerini kaybetmiş şifalı bir madde."
+    },
+    "plume": {
+      "name": "Gezgin Doktorun Baykuş Tüyü",
+      "desc": "Bir baykuşun dayanıklı tüyü. Gece üstünlüğünün simgesi olan bu tüy, Gezgin Doktora geceleri hastaları ziyaret etmesi için cesaret verdi."
+    },
+    "sands": {
+      "name": "Gezgin Doktorun Cep Saati",
+      "desc": "Zamanı takip etmek için kullanılan hassas bir saat. Bir doktor için bir saniye, yaşamla ölüm arasındaki çizgidir."
+    },
+    "goblet": {
+      "name": "Gezgin Doktorun İlaç Şişesi",
+      "desc": "Bu ilaç şişesi son derece yoğun ve güçlü karışımları barındırıyordu. Şimdi boş olsa da çok ağır bir şekilde ilaç kokuyor."
+    },
+    "circlet": {
+      "name": "Gezgin Doktorun Mendili",
+      "desc": "Doktor hastaları tedavi ederken saçlarını toplamak için kullanırdı. Acil durumlarda burkulma ve kol kırıkları için askı olarak da kullanılabilir."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Arco ricurvo",
+  "description": "Si dice che quest'arco possa abbattere aquile in volo, ma in verità questo dipende dalla bravura dell'arciere.",
+  "passiveName": "Mietitura",
+  "passiveDescription": {
+    "0": "Sconfiggere un avversario ripristina un <cryo>8%</cryo> di PS.",
+    "1": "Sconfiggere un avversario ripristina un <cryo>10%</cryo> di PS.",
+    "2": "Sconfiggere un avversario ripristina un <cryo>12%</cryo> di PS.",
+    "3": "Sconfiggere un avversario ripristina un <cryo>14%</cryo> di PS.",
+    "4": "Sconfiggere un avversario ripristina un <cryo>16%</cryo> di PS."
+  }
+}

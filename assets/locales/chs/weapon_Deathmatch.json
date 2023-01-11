@@ -1,0 +1,7 @@
+{
+  "condName": "身边敌人数量",
+  "opponents": {
+    "oneOrNone": "少于2个敌人",
+    "moreThanOne": "至少有2个敌人"
+  }
+}

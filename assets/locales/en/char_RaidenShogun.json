@@ -1,0 +1,18 @@
+{
+  "skill": {
+    "eye": "Eye of Stormy Judgement",
+    "partyCost": "Energy Cost"
+  },
+  "burst": {
+    "resolves": "Resolve Stacks",
+    "resolveInitial_": "<electro>Musou no Hitotachi Base DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>"
+  },
+  "a4": {
+    "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
+    "eleDMG": "Electro DMG Bonus"
+  },
+  "c4": {
+    "expires": "<strong>Musou Isshin</strong> state applied by <strong>Secret Art: Musou Shinsetsu</strong> expires"
+  }
+}

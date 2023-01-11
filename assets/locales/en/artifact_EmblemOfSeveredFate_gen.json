@@ -1,0 +1,29 @@
+{
+  "setName": "Emblem of Severed Fate",
+  "setEffects": {
+    "2": "Energy Recharge +20%",
+    "4": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Magnificent Tsuba",
+      "desc": "Legends hold that this ornate hand guard was once fitted upon a sword gifted to the oni who betrayed the Shogun."
+    },
+    "plume": {
+      "name": "Sundered Feather",
+      "desc": "This was once the black feather of a certain tengu warrior, and was the treasured souvenir of an ancient swordsman."
+    },
+    "sands": {
+      "name": "Storm Cage",
+      "desc": "An exquisite seal cage patterned with pansies painted upon a black backdrop, decorated with shining inlaid seashells and intricate gold-work."
+    },
+    "goblet": {
+      "name": "Scarlet Vessel",
+      "desc": "An intricately-designed wine vessel that a world-famous martial artist once drank from."
+    },
+    "circlet": {
+      "name": "Ornate Kabuto",
+      "desc": "A sturdy and hard helmet worn as armor by a noble samurai."
+    }
+  }
+}

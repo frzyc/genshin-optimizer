@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrificio di Pyro",
+  "setEffects": {
+    "1": "Riduce la durata dell'effetto di Pyro di un 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara delle fiamme",
+      "desc": "Una tiara indossata da chi offriva sacrifici nei tempi antichi. Dopo essere stata sottoposta all'ardore delle fiamme sacrificali per lungo tempo, possiede una resistenza straordinaria."
+    }
+  }
+}

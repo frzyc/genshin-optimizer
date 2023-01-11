@@ -1,0 +1,8 @@
+{
+  "name": "Kẻ Săn Mồi",
+  "description": "Chiếc cung với phong cách thiết kế đặc biệt, có vẻ như không thuộc về thế giới này.",
+  "passiveName": "Tấn Công Mạnh Mẽ",
+  "passiveDescription": {
+    "0": "<cryo>Chỉ có hiệu lực trong:</cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nSau khi gây Sát Thương Nguyên Tố Băng lên kẻ địch, tăng 10% sát thương tấn công thường và trọng kích gây ra, hiệu quả duy trì 6 giây, tối đa cộng dồn 2 lần; Ngoài ra, khi Aloy trang bị \"Kẻ Săn Mồi\", tấn công tăng 66 điểm."
+  }
+}

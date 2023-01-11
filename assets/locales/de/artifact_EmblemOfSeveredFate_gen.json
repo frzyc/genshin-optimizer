@@ -1,0 +1,29 @@
+{
+  "setName": "Wappen des getrennten Schicksals",
+  "setEffects": {
+    "2": "Erhöht die Aufladerate um 20 %.",
+    "4": "Erhöht den mit Spezialfähigkeiten verursachten Schaden basierend auf 25 % der Aufladerate. Bis zu 75 % Bonus auf diese Weise möglich."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Prunkvolles Stichblatt",
+      "desc": "In Legenden heißt es, dass dieses reich verzierte Stichblatt einst an einem Schwert angebracht war, das dem Dämon überreicht wurde, der den Shougun verraten hatte."
+    },
+    "plume": {
+      "name": "Abgetrennte Feder",
+      "desc": "Dies war einst die schwarze Feder eines gewissen Tengu-Kriegers sowie ein von einem alten Schwertkämpfer geschätztes Andenken."
+    },
+    "sands": {
+      "name": "Blitzwolkenkäfig",
+      "desc": "Ein fein gearbeiteter Käfig mit einem Blumenmuster auf schwarzem Hintergrund, verziert mit glänzenden, eingelegten Muscheln und aufwendigen Goldarbeiten."
+    },
+    "goblet": {
+      "name": "Krug mit dunkelroten Blumen",
+      "desc": "Ein aufwendig gestalteter Weinkrug, aus dem einst ein weltberühmter Kampfkünstler trank."
+    },
+    "circlet": {
+      "name": "Verzierter Helm",
+      "desc": "Ein robuster und harter Helm, der von einem edlen Samurai als Teil seiner Rüstung getragen wurde."
+    }
+  }
+}

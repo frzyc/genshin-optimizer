@@ -1,0 +1,29 @@
+{
+  "setName": "Marcheur du feu",
+  "setEffects": {
+    "2": "Augmente la RÉS Pyro de 40 %.",
+    "4": "Augmente les DGT infligés aux ennemis affectés par l'élément Pyro de 35 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Détermination du Marcheur du feu",
+      "desc": "Une fleur qui s'est épanouie au milieu des flammes. Selon la légende, les sages des temps anciens la portaient sur eux avant de traverser la mer de feu."
+    },
+    "plume": {
+      "name": "Insouciance du Marcheur du feu",
+      "desc": "Une plume de phénix. On peut presque entendre le battement des ailes au milieu des flammes."
+    },
+    "sands": {
+      "name": "Tourment du Marcheur du feu",
+      "desc": "Un sablier aux grains scintillants de sable brûlant. Le sable ne laisse aucune trace lorsqu'il s'écoule."
+    },
+    "goblet": {
+      "name": "Éveil du Marcheur du feu",
+      "desc": "Les légendes disent que cette coupe pouvait contenir de la lave. Elle est vide aujourd'hui, mais continue d'émettre une certaine chaleur."
+    },
+    "circlet": {
+      "name": "Sagesse du Marcheur du feu",
+      "desc": "La couronne de sagesse de quelqu'un qui traversa le feu. Elle brillait jadis à la lueur des flammes."
+    }
+  }
+}

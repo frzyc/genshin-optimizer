@@ -1,0 +1,181 @@
+{
+  "name": "Nahida",
+  "title": "Physic of Purity",
+  "description": "A caged bird secluded within the confines of the Sanctuary of Surasthana who can only see the world in her dreams.",
+  "constellationName": "Sapientia Oromasdis",
+  "auto": {
+    "name": "Akara",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 attacks that deal <dendro>Dendro DMG</dendro> to opponents in front of her."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <dendro>AoE Dendro DMG</dendro> to opponents in front of her after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the might of Dendro, Nahida plunges towards the ground from mid-air, damaging all opponents in her path. Deals <dendro>AoE Dendro DMG</dendro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "All Schemes to Know",
+    "description": {
+      "0": "Sends forth karmic bonds of wood and tree from her side, dealing <dendro>AoE Dendro DMG</dendro> and marking up to 8 opponents hit with the Seed of Skandha.",
+      "1": "When held, this skill will trigger differently.",
+      "2": "<br/>",
+      "3": "<strong>Hold</strong>",
+      "4": "Enters Aiming Mode, which will allow you to select a limited number of opponents within a limited area. During this time, Nahida's resistance to interruption will be increased.",
+      "5": "When released, this skill deals <dendro>Dendro DMG</dendro> to these opponents and marks them with the Seed of Skandha.",
+      "6": "Aiming Mode will last up to 5s and can select a maximum of 8 opponents.",
+      "7": "<br/>",
+      "8": "<strong>Seed of Skandha</strong>",
+      "9": "Opponents who have been marked by the Seed of Skandha will be linked to one another up till a certain distance.",
+      "10": "After you trigger Elemental Reactions on opponents who are affected by the Seeds of Skandha or when they take DMG from Dendro Cores (including Burgeon and Hyperbloom DMG), Nahida will unleash Tri-Karma Purification on the opponents and all connected opponents, dealing <dendro>Dendro DMG</dendro> based on her ATK and Elemental Mastery.",
+      "11": "You can trigger at most 1 Tri-Karma Purification within a short period of time.",
+      "12": "<br/>",
+      "13": "<i>Lo, the god of grass and trees shines her ultimate truth into the void, illuminating the origin and destruction of the three karmas.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Hold DMG",
+      "2": "Tri-Karma Purification DMG",
+      "3": "Tri-Karma Purification Trigger Interval",
+      "4": "Seed of Skandha Duration",
+      "5": "Press CD",
+      "6": "Hold CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Illusory Heart",
+    "description": {
+      "0": "Manifests the Court of Dreams and expands the Shrine of Maya.",
+      "1": "<br/>",
+      "2": "When the Shrine of Maya field is unleashed, the following effects will be separately unleashed based on the Elemental Types present within the party.",
+      "3": [
+        "<pyro>Pyro</pyro>: While Nahida remains within the Shrine of Maya, the DMG dealt by Tri-Karma Purification from \"All Schemes to Know\" is increased.",
+        "<electro>Electro</electro>: While Nahida remains within the Shrine of Maya, the interval between each Tri-Karma Purification from \"All Schemes to Know\" is decreased.",
+        "<hydro>Hydro</hydro>: The Shrine of Maya's duration is increased."
+      ],
+      "4": "<br/>",
+      "5": "If there are at least 2 party members of the aforementioned Elemental Types present when the field is deployed, the aforementioned effects will be increased further.",
+      "6": "<br/>",
+      "7": "Even if Nahida is not on the field, these bonuses will still take effect so long as party members are within the Shrine of Maya.",
+      "8": "<br/>",
+      "9": "<i>Perhaps all that dwell under the bowers of trees are naught but a fleeting upside-down dream in the eyes of the God of Wisdom.</i>"
+    },
+    "skillParams": {
+      "0": "Pyro: DMG Bonus",
+      "1": "Pyro: DMG Bonus",
+      "2": "Electro: Trigger Interval Decrease",
+      "3": "Electro: Trigger Interval Decrease",
+      "4": "Hydro: Duration Extension",
+      "5": "Hydro: Duration Extension",
+      "6": "Base Duration",
+      "7": "CD",
+      "8": "Energy Cost",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Compassion Illuminated",
+    "description": {
+      "0": "When unleashing <strong>Illusory Heart</strong>, the Shrine of Maya will gain the following effects:",
+      "1": "The Elemental Mastery of the active character within the field will be increased by 25% of the Elemental Mastery of the party member with the highest Elemental Mastery.",
+      "2": "You can gain a maximum of 250 Elemental Mastery in this manner."
+    }
+  },
+  "passive2": {
+    "name": "Awakening Elucidated",
+    "description": {
+      "0": "Each point of Nahida's Elemental Mastery beyond 200 will grant 0.1% Bonus DMG and 0.03% CRIT Rate to Tri-Karma Purification from <strong>All Schemes to Know</strong>.",
+      "1": "A maximum of 80% Bonus DMG and 24% CRIT Rate can be granted to Tri-Karma Purification in this manner."
+    }
+  },
+  "passive3": {
+    "name": "On All Things Meditated",
+    "description": {
+      "0": "Nahida can use <strong>All Schemes to Know</strong> to interact with some harvestable items within a fixed AoE.",
+      "1": "This skill may even have some other effects..."
+    }
+  },
+  "constellation1": {
+    "name": "The Seed of Stored Knowledge",
+    "description": {
+      "0": "When the <strong>Shrine of Maya</strong> is unleashed and the Elemental Types of the party members are being tabulated, the count will add 1 to the number of Pyro, Electro, and Hydro characters respectively."
+    }
+  },
+  "constellation2": {
+    "name": "The Root of All Fullness",
+    "description": {
+      "0": "Opponents that are marked by <strong>Seeds of Skandha</strong> applied by Nahida herself will be affected by the following effects:",
+      "1": [
+        "Burning, Bloom, Hyperbloom, and Burgeon Reaction DMG they receive can score CRIT Hits. CRIT Rate and CRIT DMG are fixed at 20% and 100% respectively.",
+        "Within 8s of being affected by Quicken, Aggravate, Spread, DEF is decreased by 30%."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Shoot of Conscious Attainment",
+    "description": {
+      "0": "Increases the Level of <strong>All Schemes to Know</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Stem of Manifest Inference",
+    "description": {
+      "0": "When 1/2/3/4 (or more) nearby opponents are affected by <strong>All Schemes to Know</strong>'s Seeds of Skandha, Nahida's Elemental Mastery will be increased by 100/120/140/160."
+    }
+  },
+  "constellation5": {
+    "name": "The Leaves of Enlightening Speech",
+    "description": {
+      "0": "Increases the Level of <strong>Illusory Heart</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Fruit of Reason's Culmination",
+    "description": {
+      "0": "When Nahida hits an opponent affected by <strong>All Schemes to Know</strong>'s Seeds of Skandha with Normal or Charged Attacks after unleashing <strong>Illusory Heart</strong>, she will use Tri-Karma Purification: Karmic Oblivion on this opponent and all connected opponents, dealing <dendro>Dendro DMG</dendro> based on 200% of Nahida's ATK and 400% of her Elemental Mastery.",
+      "1": "DMG dealt by Tri-Karma Purification: Karmic Oblivion is considered Elemental Skill DMG and can be triggered once every 0.2s.",
+      "2": "This effect can last up to 10s and will be removed after Nahida has unleashed 6 instances of Tri-Karma Purification: Karmic Oblivion."
+    }
+  }
+}

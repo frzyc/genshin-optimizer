@@ -1,0 +1,29 @@
+{
+  "setName": "Wanderorchester",
+  "setEffects": {
+    "2": "Erhöht Elementarkunde um 80 Punkte.",
+    "4": "Erhöht den mit heftigen Schlägen verursachten Schaden, wenn die Figur einen Katalysator oder einen Bogen trägt, um 35 %."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Morgenlicht des Ensembles",
+      "desc": "Ein kleines Abzeichen in Form einer Blume. Hält man es sich gegen das Ohr, ist es, als höre man den melodischen Klang von Flöten und Gesang."
+    },
+    "plume": {
+      "name": "Pfeilfeder des Leierspielers",
+      "desc": "Eine bläuliche Pfeilfeder, die auch nach all der Zeit weder ihre Farbe verloren hat noch zerbrochen ist. Bewegt klingt sie wie fließendes Wasser."
+    },
+    "sands": {
+      "name": "Fall des Vorhangs",
+      "desc": "Eine Sanduhr, die dem Ensemble anzeigt, wie lange die Vorstellung geht. Leider ist für sie der Vorhang längst gefallen."
+    },
+    "goblet": {
+      "name": "Bardenflasche",
+      "desc": "Eine sonderbare, altertümliche Flasche mit Saiten im Innern, die schwingen, sobald das Wasser hinausfließt, und eine unharmonische Melodie erzeugen."
+    },
+    "circlet": {
+      "name": "Trachtenhut des Dirigenten",
+      "desc": "Ein trotz Wind und Wetter noch immer leuchtend farbiger Hut. Setzt man ihn auf, meint man, altertümliche, melodische Klänge zu hören."
+    }
+  }
+}

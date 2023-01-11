@@ -1,0 +1,12 @@
+{
+  "name": "Siyah Püskül",
+  "description": "Beyaz püskülün kirlenme sorununa basit ama zarif bir çözüm sunan son derece güçlü bir mızrak.",
+  "passiveName": "Yumuşak Lanet",
+  "passiveDescription": {
+    "0": "Bodurloplara verilen Hasarı <cryo>%40</cryo> artırır.",
+    "1": "Bodurloplara verilen Hasarı <cryo>%50</cryo> artırır.",
+    "2": "Bodurloplara verilen Hasarı <cryo>%60</cryo> artırır.",
+    "3": "Bodurloplara verilen Hasarı <cryo>%70</cryo> artırır.",
+    "4": "Bodurloplara verilen Hasarı <cryo>%80</cryo> artırır."
+  }
+}

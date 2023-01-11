@@ -1,0 +1,29 @@
+{
+  "setName": "Além-vida Cinábrio",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Depois do Supremo ser usado, será desencadeado o efeito de \"Luz Nascente\" por 16s: o ATQ será aumentado em 8% e quando a Vida do personagem diminuir, o ATQ aumentará mais 10%. Esse aumento pode ocorrer desta forma no máximo 4 vezes, e pode ser desencadeado 1 vez a cada 0.8s. O efeito de \"Luz Nascente\" desaparece quando o personagem sai do campo de batalha. Quando o personagem lança novamente o Supremo durante o efeito, o efeito original de \"Luz Nascente\" será removido."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Brilho da Vitalidade",
+      "desc": "Um objeto comemorativo antigo que é tão vivo como o ser que o preservou séculos atrás."
+    },
+    "plume": {
+      "name": "Pena do Esplendor",
+      "desc": "Uma pena com um brilho opaco e com fortes memórias condensadas nelas."
+    },
+    "sands": {
+      "name": "Relíquia do Sol",
+      "desc": "Um relógio antigo de aparência robusta. Ele é tão brilhante como a areia cristalizada."
+    },
+    "goblet": {
+      "name": "Entalhe do Contrato",
+      "desc": "Um cálice de cristal antigo. Seu brilho parece não ter sido escurecido pelo passar do tempo."
+    },
+    "circlet": {
+      "name": "Postura Eletrizante",
+      "desc": "Uma máscara que dizem ter sido criada pelo povo das montanhas para um Yaksha. Sua aparência é simples, mas ela tem um brilho que não desaparece."
+    }
+  }
+}

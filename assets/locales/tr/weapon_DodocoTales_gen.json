@@ -1,0 +1,12 @@
+{
+  "name": "Dodoko Masalları",
+  "description": "Okuyanları güldürecek çocuksu hikayelerle dolu bir çocuk kitabı.\\nAnlatılan saf ve masum maceraları okurken yetişkinler bile kitabı bir an olsun elinden bırakmak istemez.",
+  "passiveName": "Dodo'nun Macerası!",
+  "passiveDescription": {
+    "0": "Normal Saldırılar düşmanlara isabet ettiğinde 6 saniyeliğine Yüklü Saldırı Hasarını <cryo>%16</cryo> artırır. Düşmanlara isabet eden Yüklü Saldırılar da 6 saniyeliğine Saldırıyı <cryo>%8</cryo> artırır.",
+    "1": "Normal Saldırılar düşmanlara isabet ettiğinde 6 saniyeliğine Yüklü Saldırı Hasarını <cryo>%20</cryo> artırır. Düşmanlara isabet eden Yüklü Saldırılar da 6 saniyeliğine Saldırıyı <cryo>%10</cryo> artırır.",
+    "2": "Normal Saldırılar düşmanlara isabet ettiğinde 6 saniyeliğine Yüklü Saldırı Hasarını <cryo>%24</cryo> artırır. Düşmanlara isabet eden Yüklü Saldırılar da 6 saniyeliğine Saldırıyı <cryo>%12</cryo> artırır.",
+    "3": "Normal Saldırılar düşmanlara isabet ettiğinde 6 saniyeliğine Yüklü Saldırı Hasarını <cryo>%28</cryo> artırır. Düşmanlara isabet eden Yüklü Saldırılar da 6 saniyeliğine Saldırıyı <cryo>%14</cryo> artırır.",
+    "4": "Normal Saldırılar düşmanlara isabet ettiğinde 6 saniyeliğine Yüklü Saldırı Hasarını <cryo>%32</cryo> artırır. Düşmanlara isabet eden Yüklü Saldırılar da 6 saniyeliğine Saldırıyı <cryo>%16</cryo> artırır."
+  }
+}

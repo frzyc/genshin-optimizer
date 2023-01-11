@@ -1,0 +1,29 @@
+{
+  "setName": "Thundering Fury",
+  "setEffects": {
+    "2": "Electro DMG Bonus +15%",
+    "4": "Increases DMG caused by Overloaded, Electro-Charged, Superconduct, and Hyperbloom by 40%, and the DMG Bonus conferred by Aggravate is increased by 20%. When Quicken or the aforementioned Elemental Reactions are triggered, Elemental Skill CD is decreased by 1s. Can only occur once every 0.8s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Thunderbird's Mercy",
+      "desc": "A lightning-infused flower, somehow spared the fate of being trodden underfoot or reduced to ash by the furious purple fire, making it the sole survivor on the day of disaster."
+    },
+    "plume": {
+      "name": "Survivor of Catastrophe",
+      "desc": "A lightning-charged feather that still flickers with the wrath of the Thunderbird's cruel retribution."
+    },
+    "sands": {
+      "name": "Hourglass of Thunder",
+      "desc": "The hourglass used to foretell the coming of the Thunderbird by the tribe that worshiped it. It has fallen into eternal silence now that the tribe is no more."
+    },
+    "goblet": {
+      "name": "Omen of Thunderstorm",
+      "desc": "A ceremonial cup that holds the blood of the innocent. It is brimming with the thundering fury of the prayers that echo within."
+    },
+    "circlet": {
+      "name": "Thunder Summoner's Crown",
+      "desc": "A crown once worn by an ancient shaman who worshiped the Thunderbird. The capricious beast remained unmoved by the shaman's devotion."
+    }
+  }
+}

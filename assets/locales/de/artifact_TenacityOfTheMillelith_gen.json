@@ -1,0 +1,29 @@
+{
+  "setName": "Zähigkeit der Millelithen",
+  "setEffects": {
+    "2": "Erhöht die LP um 20 %.",
+    "4": "Erhöht beim Treffen von Gegnern mit Elementarfähigkeiten den ANG aller Truppenmitglieder in der Nähe um 20 % sowie die Schildeffizienz um 30 %, hält 3 s, 0,5 s Abklingzeit. Die Figur mit diesem Artefaktset kann diesen Effekt auch auslösen, wenn sie inaktiv in der Truppe ist."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Belobigungsblume",
+      "desc": "Eine aus Blattgold gefertigte Blume, die die Verdienste und die Ehre ihres Trägers für alle sichtbar macht."
+    },
+    "plume": {
+      "name": "Bekundungsfeder",
+      "desc": "Die Feder eines Falken, die zu zeremoniellen Anlässen getragen wurde. Sie präsentiert die Würde und Entschlossenheit von Liyue gegenüber Fremden."
+    },
+    "sands": {
+      "name": "Kupferne Sonnenuhr",
+      "desc": "Ein pragmatisches Gerät zum Ablesen der Zeit, Standard für alle Millelithen in Zeiten des Krieges."
+    },
+    "goblet": {
+      "name": "Edler Schwurkrug",
+      "desc": "Ein metallener Krug, den die Millelithen bei Schwüren verwenden. Selbst jetzt riecht man den süßen Duft des Weins, der sich einst darin befand."
+    },
+    "circlet": {
+      "name": "Generalshelm",
+      "desc": "Ein prächtiger Helm aus alter Zeit. Einmal darüber gewischt glänzt er gleich wie neu."
+    }
+  }
+}

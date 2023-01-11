@@ -1,0 +1,12 @@
+{
+  "name": "Lanza del Duelo",
+  "description": "Una lanza afilada de color rojo sangre que fue un objeto de valor incalculable para un gladiador. Su punta está manchada con la sangre de innumerables bestias y personas.",
+  "passiveName": "Gladiador",
+  "passiveDescription": {
+    "0": "Cuando hay 2 o más enemigos cerca, el ATQ y la DEF aumentan en un <cryo>16%</cryo>. Cuando hay menos de 2 enemigos, el ATQ aumenta en un <cryo>24%</cryo>.",
+    "1": "Cuando hay 2 o más enemigos cerca, el ATQ y la DEF aumentan en un <cryo>20%</cryo>. Cuando hay menos de 2 enemigos, el ATQ aumenta en un <cryo>30%</cryo>.",
+    "2": "Cuando hay 2 o más enemigos cerca, el ATQ y la DEF aumentan en un <cryo>24%</cryo>. Cuando hay menos de 2 enemigos, el ATQ aumenta en un <cryo>36%</cryo>.",
+    "3": "Cuando hay 2 o más enemigos cerca, el ATQ y la DEF aumentan en un <cryo>28%</cryo>. Cuando hay menos de 2 enemigos, el ATQ aumenta en un <cryo>42%</cryo>.",
+    "4": "Cuando hay 2 o más enemigos cerca, el ATQ y la DEF aumentan en un <cryo>32%</cryo>. Cuando hay menos de 2 enemigos, el ATQ aumenta en un <cryo>48%</cryo>."
+  }
+}

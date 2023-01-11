@@ -1,0 +1,177 @@
+{
+  "name": "Raiden Shogun",
+  "title": "Nhất Tâm Tịnh Thổ",
+  "description": "Là Tôn Chủ Narukami Ogosho đại nhân, đưa người dân Inazuma hướng đến sự \"vĩnh hằng\" ngàn năm không đổi.",
+  "constellationName": "Cung Thiên Hạ Nhân",
+  "auto": {
+    "name": "Cội Nguồn",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, chém nhanh về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thần Biến - Ánh Chớp Tà Ác",
+    "description": {
+      "0": "Raiden Shogun khai mở Tịnh Thổ, gây <electro>Sát Thương Nguyên Tố Lôi</electro> cho kẻ địch xung quanh, khiến tất cả nhân vật trong đội gần đó nhận trạng thái \"Con Mắt Lôi Phạt\".",
+      "1": "<br/>",
+      "2": "<strong>Con Mắt Lôi Phạt</strong>",
+      "3": [
+        "Nhân vật nhận hiệu ứng này khi gây sát thương cho địch, Con Mắt Lôi Phạt sẽ hợp lực tấn công, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro> ở vị trí kẻ địch.",
+        "Nhân vật nhận được Con Mắt Lôi Phạt, trong thời gian duy trì hiệu ứng này sẽ tăng sát thương Kỹ Năng Nộ, mức độ tăng tùy theo Năng Lượng Nguyên Tố của Kỹ Năng Nộ."
+      ],
+      "4": "<br/>",
+      "5": "Con Mắt Lôi Phạt của mỗi đội mỗi 0.9s tối đa tiến hành hợp lực tấn công một lần.",
+      "6": "Nhân vật khác trong đội (không phải bản thân) kích hoạt hợp lực tấn công sẽ tạo ra sát thương bằng 20% sát thương gốc.",
+      "7": "<br/>",
+      "8": "<i>Trở thành một phần của thần. Lôi Thần có thể trao tay và mắt cho thuộc hạ để thay người phán xử.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Hợp Lực Tấn Công",
+      "2": "Thời Gian Kéo Dài",
+      "3": "Tăng Sát Thương Kỹ Năng Nộ",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Bí Kỹ - Mộng Tưởng Chân Thuyết",
+    "description": {
+      "0": "Tích tụ ngàn vạn chân ngôn, dùng hết Ý Lực Ước Nguyện Chakra, chém ra Mộng Tưởng Nhất Đao hủy diệt tất cả lời nguyền, gây <electro>Sát Thương Phạm Vi Nguyên Tố Lôi</electro>; Đồng thời sử dụng \"Mộng Tưởng Nhất Tâm\" để chiến đấu trong khoảng thời gian tiếp theo. Tăng sát thương mà Mộng Tưởng Nhất Đao và Mộng Tưởng Nhất Tâm gây ra dựa trên số tầng Ý Lực của Ước Nguyện Chakra tiêu hao khi thi triển.",
+      "1": "<br/>",
+      "2": "<strong>Mộng Tưởng Nhất Tâm</strong>",
+      "3": "Trong trạng thái này, Raiden Shogun dùng đao để tấn công, sát thương gây ra từ tấn công thường, trọng kích, tấn công khi đáp sẽ chuyển hóa thành <electro>Sát Thương Nguyên Tố Lôi</electro> không thể bị đính kèm thay thế, đồng thời khi đánh trúng kẻ địch sẽ hồi phục Năng Lượng Nguyên Tố cho tất cả nhân vật trong đội ở gần. Mỗi 1s tối đa hồi Năng Lượng Nguyên Tố một lần theo cách này, tối đa kích hoạt 5 lần trong thời gian duy trì trạng thái.",
+      "4": "Trong trạng thái này, Raiden Shogun sẽ tăng khả năng kháng gián đoạn, đồng thời miễn dịch sát thương <electro>Điện Cảm</electro>.",
+      "5": "Trong trạng thái Mộng Tưởng Nhất Tâm, sát thương gây ra từ tấn công thường, trọng kích, tấn công khi đáp sẽ được xem là sát thương kỹ năng nộ.",
+      "6": "<br/>",
+      "7": "Hiệu quả Mộng Tưởng Nhất Tâm sẽ biến mất khi Raiden Shogun rời trận.",
+      "8": "<br/>",
+      "9": "<strong>Ước Nguyện Chakra</strong>",
+      "10": "Khi nhân vật trong đội ở gần (Không bao gồm bản thân Raiden Shogun) thi triển Kỹ Năng Nộ sẽ căn cứ vào số Năng Lượng Nguyên Tố của Kỹ Năng Nộ, để tích lũy Ý Lực cho Ước Nguyện Chakra của Raiden Shogun.",
+      "11": "Tối đa tích lũy 60 tầng Ý Lực.",
+      "12": "<br/>",
+      "13": "Ý Lực tích lũy trong Ước Nguyện Chakra sẽ xóa sau khi rời chiến đấu 300s.",
+      "14": "<br/>",
+      "15": "<i>Bí kiếm mới lĩnh ngộ gần đây của Lôi Thần, loại bỏ \"Vô Tưởng\", chuyển thành \"Mộng Tưởng\". Từ \"Chân Thuyết\" có nghĩa là đổi mới, câu chuyện của Inazuma cũng sẽ sang trang.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cơ Bản Mộng Tưởng Nhất Đao",
+      "1": "Buff Ý Lực",
+      "2": "Số Tầng Ý Lực Tích Tụ",
+      "3": "Sát Thương Lần 1",
+      "4": "Sát Thương Lần 2",
+      "5": "Sát Thương Lần 3",
+      "6": "Sát Thương Lần 4",
+      "7": "Sát Thương Lần 5",
+      "8": "Sát Thương Trọng Kích",
+      "9": "Thể lực Trọng Kích tiêu hao",
+      "10": "Sát Thương Khi Rơi",
+      "11": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "12": "Mộng Tưởng Nhất Tâm Hồi Phục Năng Lượng",
+      "13": "Thời gian duy trì Mộng Tưởng Nhất Tâm",
+      "14": "CD",
+      "15": "Năng Lượng Nguyên Tố"
+    }
+  },
+  "passive1": {
+    "name": "Ngàn Vạn Ước Nguyện",
+    "description": {
+      "0": "Nhân vật trong đội ở gần khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân sẽ tích tụ 2 tầng Ý Lực cho <strong>Ước Nguyện Chakra</strong>.",
+      "1": "Hiệu quả này mỗi 3s tối đa kích hoạt một lần."
+    }
+  },
+  "passive2": {
+    "name": "Thực Thể Khai Sáng",
+    "description": {
+      "0": "Mỗi 1% thừa ra khi Hiệu Quả Nạp Nguyên Tố vượt quá 100%, sẽ giúp Raiden Shogun nhận được hiệu quả:",
+      "1": [
+        "Tăng 0.6% hồi phục Năng Lượng Nguyên Tố trong trạng thái <strong>Mộng Tưởng Nhất Tâm</strong>;",
+        "Tăng 0.4% <electro>buff Sát Thương Nguyên Tố Lôi</electro>."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Kẻ Trấn Giữ Thiên Hạ",
+    "description": {
+      "0": "Khi đột phá kiếm đơn và vũ khí cán dài, lượng Mora tiêu hao giảm 50%."
+    }
+  },
+  "constellation1": {
+    "name": "Lời Tiên Tri Đen Tối",
+    "description": {
+      "0": "<strong>Ước Nguyện Chakra</strong> có thể tích tụ Ý Lực nhanh hơn. Nhân vật <electro>Nguyên Tố Lôi</electro> sau khi thi triển Kỹ Năng Nộ sẽ tăng 80% tích lũy Ý Lực; nhân vật nguyên tố khác sau khi thi triển Kỹ Năng Nộ sẽ tăng 20% tích lũy Ý Lực."
+    }
+  },
+  "constellation2": {
+    "name": "Càn Quét Thiên Hạ",
+    "description": {
+      "0": "Khi trong trạng thái Mộng Tưởng Nhất Đao và Mộng Tưởng Nhất Tâm của <strong>Bí Kỹ - Mộng Tưởng Chân Thuyết</strong>, tấn công của Raiden Shogun sẽ bỏ qua 60% phòng ngự của địch."
+    }
+  },
+  "constellation3": {
+    "name": "Chuyện Xưa Kể Lại",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Bí Kỹ - Mộng Tưởng Chân Thuyết</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Thờ Phụng Lẽ Phải",
+    "description": {
+      "0": "<strong>Mộng Tưởng Nhất Tâm</strong> của <strong>Bí Kỹ - Mộng Tưởng Chân Thuyết</strong> sau khi kết thúc, tất cả nhân vật trong đội gần đó (Không bao gồm Raiden Shogun) sẽ tăng 30% tấn công, duy trì 10s."
+    }
+  },
+  "constellation5": {
+    "name": "Shogun Giáng Lâm",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thần Biến - Ánh Chớp Tà Ác</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Kế Thừa Ước Nguyện",
+    "description": {
+      "0": "Khi trong trạng thái <strong>Mộng Tưởng Nhất Tâm</strong> của <strong>Bí Kỹ - Mộng Tưởng Chân Thuyết</strong>, sát thương Kỹ Năng Nộ của Raiden Shogun trúng kẻ địch sẽ giảm 1s CD Kỹ Năng Nộ của tất cả nhân vật trong đội ở gần đó (Không bao gồm Raiden Shogun).",
+      "1": "Hiệu quả này mỗi giây tối đa kích hoạt 1 lần, trong thời gian duy trì tối đa kích hoạt 5 lần."
+    }
+  }
+}

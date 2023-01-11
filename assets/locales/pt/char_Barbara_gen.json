@@ -1,0 +1,160 @@
+{
+  "name": "Barbara",
+  "title": "Ídolo Radiante",
+  "description": "Todos os habitantes de Mondstadt adoram a Barbara. Contudo, ela viu a palavra \"ídolo\" pela primeira vez em uma revista.",
+  "constellationName": "Cratera",
+  "auto": {
+    "name": "Suspiro da Água",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 ataques com esguichos de água que infligem <hydro>Dano Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para infligir <hydro>Dano Hydro em uma AdE</hydro> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do Hydro, Barbara mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <hydro>Dano Hydro em uma AdE</hydro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Que Comece o Espetáculo ♪",
+    "description": {
+      "0": "Invoca gotículas de água que se assemelham a notas musicais que formam um Círculo Melódico, causando <hydro>Dano Hydro</hydro> aos oponentes próximos e aplicando o estado <hydro>Molhado</hydro> a eles.",
+      "1": "<br/>",
+      "2": "<strong>Círculo Melódico</strong>",
+      "3": "Ao acertar, os ataques normais da Barbara curam seus próprios membros de equipe e personagens aliados próximos em uma certa quantidade de Vida, que é escalonado com a Vida Máxima de Barbara.",
+      "4": "Acertar o Ataque Carregado de Barbara gera 4 vezes a quantidade de cura.",
+      "5": "Periodicamente regenera a Vida do seu próprio personagem ativo.",
+      "6": "Aplica o estado <hydro>Molhado</hydro> ao personagem e aos oponentes que entram em contato com eles.",
+      "7": "<i>A música da Barbara é a magia que cura seus companheiros.</i>"
+    },
+    "skillParams": {
+      "0": "Regeneração de Vida por Acerto",
+      "1": "Regeneração Contínua",
+      "2": "Dano de Gotas d'Água",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Milagre Brilhante ♪",
+    "description": {
+      "0": "Cura todas as forças aliadas e seu próprio personagem em uma grande quantidade de Vida que aumenta com a Vida Máxima de Barbara.",
+      "1": "<br/>",
+      "2": "<i>O desejo de Barbara de curar fortalece sua vontade de lutar e cantar.</i>"
+    },
+    "skillParams": {
+      "0": "Regeneração",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Temporada Gloriosa",
+    "description": {
+      "0": "O Consumo de Stamina dos personagens dentro do loop da melodia de <strong>Que Comece o Espetáculo ♪</strong> é reduzido em 12%."
+    }
+  },
+  "passive2": {
+    "name": "Encore",
+    "description": {
+      "0": "Quando seu próprio personagem ganha um Orbe/Partícula Elemental, a duração do Loop da Melodia do <strong>Que Comece o Espetáculo ♪</strong> é estendido em 1s.",
+      "1": "A extensão máxima é de 5s."
+    }
+  },
+  "passive3": {
+    "name": "Com Todo o Meu Coração♪",
+    "description": {
+      "0": "Quando uma Culinária Perfeita é feita em uma comida com efeito de recuperação, tem uma chance de 12% de receber o dobro de produção."
+    }
+  },
+  "constellation1": {
+    "name": "Balada Alegre",
+    "description": {
+      "0": "Barbara regenera 1 de Energia a cada 10s."
+    }
+  },
+  "constellation2": {
+    "name": "Explosão de Vitalidade",
+    "description": {
+      "0": "Diminui a Recarga do <strong>Que Comece o Espetáculo ♪</strong> em 15%.",
+      "1": "Durante esta habilidade, o seu próprio personagem atual ganha 15% de <hydro>Dano Hydro adicional</hydro>."
+    }
+  },
+  "constellation3": {
+    "name": "Estrela de Amanhã",
+    "description": {
+      "0": "Aumenta o nível do <strong>Milagre Brilhante ♪</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "A Atenção é o Meu Poder",
+    "description": {
+      "0": "Sempre que os Ataques Carregados da Barbara acertarem um inimigo ela regenera 1 de Energia.",
+      "1": "É possível regenerar um máximo de 5 de Energia desta maneira por vez."
+    }
+  },
+  "constellation5": {
+    "name": "Vínculo de Inocência",
+    "description": {
+      "0": "Aumenta o nível do <strong>Que Comece o Espetáculo♪</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Dedicando Tudo para Você",
+    "description": {
+      "0": "Quando a Barbara não estiver no campo de batalha e o próprio personagem da equipe for abatido:",
+      "1": "Revive automaticamente este personagem.",
+      "2": "Regenera totalmente a Vida deste personagem até 100%.",
+      "3": "Este efeito pode ser ativado uma vez a cada 15 mins."
+    }
+  }
+}

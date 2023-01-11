@@ -1,0 +1,12 @@
+{
+  "name": "Ruggito del leone",
+  "description": "Una spada affilata, con incisioni stravaganti che non sembrano comprometterne la durabilità e le capacità di taglio. Fendendo l'aria, ruggisce come un leone.",
+  "passiveName": "Flagello del fuoco e dei tuoni",
+  "passiveDescription": {
+    "0": "Aumenta i DAN contro gli avversari sotto l'effetto di Pyro o Electro di un <cryo>20%</cryo>.",
+    "1": "Aumenta i DAN contro gli avversari sotto l'effetto di Pyro o Electro di un <cryo>24%</cryo>.",
+    "2": "Aumenta i DAN contro gli avversari sotto l'effetto di Pyro o Electro di un <cryo>28%</cryo>.",
+    "3": "Aumenta i DAN contro gli avversari sotto l'effetto di Pyro o Electro di un <cryo>32%</cryo>.",
+    "4": "Aumenta i DAN contro gli avversari sotto l'effetto di Pyro o Electro di un <cryo>36%</cryo>."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefak",
+    "characters": "Karakter",
+    "tools": "Alat",
+    "weapons": "Senjata",
+    "doc": "Docs"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Level Min",
+    "maxLevel": "Level Maks",
+    "rarity": "Kualitas",
+    "level": "Level"
+  },
+  "unselect": "Batal pilih",
+  "ascending": "Meningkat",
+  "descending": "Menurun",
+  "loading": "Memuat...",
+  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
+  "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
+  "underConstruction": "Sedang Dibangun",
+  "error": "Error",
+  "reset": "Reset",
+  "info": "INFO",
+  "inventory": "Tas",
+  "close": "Tutup",
+  "sortMap": {
+    "new": "Baru",
+    "name": "Nama",
+    "level": "Level",
+    "rarity": "Kualitas",
+    "efficiency": "Substart Eff. Saat Ini",
+    "mefficiency": "Substat Eff. Maksimum",
+    "artsetkey": "Set Artefak",
+    "probability": "Probabilitas Roll"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Epiche gesta degli Ammazzadraghi",
+  "description": "Un romanzo di fantasia che narra la storia di un gruppo di cinque eroi Ammazzadraghi. Scritto male e strutturalmente incoerente. Il suo valore deriva dalla morale che vuole insegnare: sbagliando s'impara.",
+  "passiveName": "Eredità",
+  "passiveDescription": {
+    "0": "Cambiando il personaggio, quello nuovo sul campo riceve un aumento dell'ATT di un <cryo>24%</cryo> per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 20{NON_BREAK_SPACE}s.",
+    "1": "Cambiando il personaggio, quello nuovo sul campo riceve un aumento dell'ATT di un <cryo>30%</cryo> per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 20{NON_BREAK_SPACE}s.",
+    "2": "Cambiando il personaggio, quello nuovo sul campo riceve un aumento dell'ATT di un <cryo>36%</cryo> per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 20{NON_BREAK_SPACE}s.",
+    "3": "Cambiando il personaggio, quello nuovo sul campo riceve un aumento dell'ATT di un <cryo>42%</cryo> per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 20{NON_BREAK_SPACE}s.",
+    "4": "Cambiando il personaggio, quello nuovo sul campo riceve un aumento dell'ATT di un <cryo>48%</cryo> per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 20{NON_BREAK_SPACE}s."
+  }
+}

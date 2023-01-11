@@ -1,0 +1,17 @@
+{
+  "electroSigil": "번개의 인장",
+  "electroSigilAbsorbed": "번개의 인장이 지워지면 원소 에너지 증가",
+  "pickUpElementalOrbParticle": "원소 구슬 혹은 원소 입자 획득",
+  "opHitWithClawAndThunder": "<strong>날카로운 발톱과 창뢰</strong>(짧은 터치)에 적이 명중",
+  "electroSigilPerProc": "낙뢰당 번개의 인장 획득 수",
+  "fullBurstDMG": {
+    "description": {
+      "0": "<strong>총 원소 폭발 피해</strong>",
+      "1": "원소 폭발 중 레이저의 일반 공격 피해의 총량을 계산합니다."
+    },
+    "dmg1": "1단 일반 공격+늑대 영혼 피해",
+    "dmg2": "2단 일반 공격+늑대 영혼 피해",
+    "dmg3": "3단 일반 공격+늑대 영혼 피해",
+    "dmg4": "4단 일반 공격+늑대 영혼 피해"
+  }
+}

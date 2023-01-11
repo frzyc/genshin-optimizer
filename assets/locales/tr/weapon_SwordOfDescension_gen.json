@@ -1,0 +1,8 @@
+{
+  "name": "Zuhur Kılıcı",
+  "description": "Eşsiz bir ustalıkla dövülmüş bir kılıç. Sanki bu dünyaya ait değil.",
+  "passiveName": "Zuhur",
+  "passiveDescription": {
+    "0": "<cryo>Sadece aşağıdaki platformda geçerlidir: </cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nDüşmanları Normal veya Yüklü Saldırılarla vurmak, <cryo>%50</cryo> ihtimalle küçük bir alanda etkili olacak <cryo>%200</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 10 saniyede bir uygulanabilir. Buna ek olarak, Gezgin Zuhur Kılıcını kuşandığında, Saldırısı <cryo>66</cryo> artar."
+  }
+}

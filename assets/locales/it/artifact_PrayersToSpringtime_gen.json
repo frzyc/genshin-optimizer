@@ -1,0 +1,12 @@
+{
+  "setName": "Sacrificio di Cryo",
+  "setEffects": {
+    "1": "Riduce la durata dell'effetto di Cryo di un 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara del gelo",
+      "desc": "Una tiara indossata da chi offriva sacrifici nei tempi antichi. Dopo aver sopportato il freddo glaciale per lungo tempo, possiede una resistenza straordinaria."
+    }
+  }
+}

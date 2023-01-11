@@ -1,0 +1,12 @@
+{
+  "name": "Yakalayan Mızrak",
+  "description": "Uzun zaman önce ünlü bir Inazuma haydudunun en sevdiği silahıydı.",
+  "passiveName": "Heyamola",
+  "passiveDescription": {
+    "0": "Element Patlaması Hasarını <cryo>%16</cryo> ve Element Patlaması Kritik Oranını <cryo>%6</cryo> artırır.",
+    "1": "Element Patlaması Hasarını <cryo>%20</cryo> ve Element Patlaması Kritik Oranını <cryo>%7,5</cryo> artırır.",
+    "2": "Element Patlaması Hasarını <cryo>%24</cryo> ve Element Patlaması Kritik Oranını <cryo>%9</cryo> artırır.",
+    "3": "Element Patlaması Hasarını <cryo>%28</cryo> ve Element Patlaması Kritik Oranını <cryo>%10,5</cryo> artırır.",
+    "4": "Element Patlaması Hasarını <cryo>%32</cryo> ve Element Patlaması Kritik Oranını <cryo>%12</cryo> artırır."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Rainslasher",
+  "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
+  "passiveName": "Bane of Storm and Tide",
+  "passiveDescription": {
+    "0": "Increases DMG against opponents affected by Hydro or Electro by <cryo>20%</cryo>.",
+    "1": "Increases DMG against opponents affected by Hydro or Electro by <cryo>24%</cryo>.",
+    "2": "Increases DMG against opponents affected by Hydro or Electro by <cryo>28%</cryo>.",
+    "3": "Increases DMG against opponents affected by Hydro or Electro by <cryo>32%</cryo>.",
+    "4": "Increases DMG against opponents affected by Hydro or Electro by <cryo>36%</cryo>."
+  }
+}

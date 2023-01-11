@@ -1,0 +1,12 @@
+{
+  "name": "Con Ngươi Tuyên Thệ",
+  "description": "Báu vật của Vương Quốc Đêm Trắng được cất giữ ở Dainichi Mikoshi. Sau khi Thần Rắn đến, Enkanomiya dùng vật này để chứng nhận cho những lời hứa lớn lao và nguyện vọng to lớn.",
+  "passiveName": "Con Dân Của Ánh Sáng Lay Lắt",
+  "passiveDescription": {
+    "0": "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng <cryo>24%</cryo>, duy trì 10s.",
+    "1": "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng <cryo>30%</cryo>, duy trì 10s.",
+    "2": "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng <cryo>36%</cryo>, duy trì 10s.",
+    "3": "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng <cryo>42%</cryo>, duy trì 10s.",
+    "4": "Sau khi thi triển Kỹ Năng Nguyên Tố, Hiệu Quả Nạp Nguyên Tố tăng <cryo>48%</cryo>, duy trì 10s."
+  }
+}

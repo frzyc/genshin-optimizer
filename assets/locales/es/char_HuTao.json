@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "Entra en estado de Mariposa excelsa",
+    "end": "Cuando el estado de Mariposa excelsa activado por Guía hacia el más allá termina"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "Aplica el efecto de Pétalos sangrientos (C2)"
+  },
+  "constellation4": {
+    "condName": "Al derrotar un enemigo afectado por Pétalos sangrientos aplicados por la propia Hu Tao"
+  },
+  "constellation6": {
+    "condName": "Vida baja por debajo del 25%, o cuando sufra un golpe mortal"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "name": "Nahida",
+  "title": "Kết Tinh Bạch Thảo",
+  "description": "Chim nhỏ trong lồng ở sâu trong Thánh Địa Surasthana, chỉ có thể ngắm nhìn thế giới từ trong giấc mơ.",
+  "constellationName": "Cung Chủ Trí Tuệ",
+  "auto": {
+    "name": "Akara",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần tấn công về phía trước, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> cho khu vực phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Thảo, từ trên trời lao xuống mặt đất, tấn công kẻ địch trên đường đi, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lắng Nghe Thế Gian",
+    "description": {
+      "0": "Thi triển dây leo cây cỏ cạnh bản thân, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>, gắn Hạt Giống Skandha cho tối đa 8 kẻ địch trúng đòn.",
+      "1": "Khi nhấn giữ sẽ thi triển theo cách thức khác.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Vào trạng thái ngắm chuẩn, có thể ngắm chọn số lượng kẻ địch nhất định trong phạm vi nhất định, đồng thời tăng khả năng kháng gián đoạn của Nahida.",
+      "5": "Khi nhấn giữ kết thúc, sẽ gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> cho kẻ địch đã chọn, đồng thời gắn Hạt Giống Skandha cho chúng.",
+      "6": "Trạng thái ngắm chuẩn tối đa duy trì 5s, tối đa ngắm chọn 8 kẻ địch.",
+      "7": "<br/>",
+      "8": "<strong>Hạt Giống Skandha</strong>",
+      "9": "Kẻ địch trong trạng thái Hạt Giống Skandha sẽ kết nối với nhau trong một cự ly nhất định.",
+      "10": "Khi kích hoạt phản ứng nguyên tố cho kẻ địch trong trạng thái Hạt Giống Skandha, hoặc khi kẻ địch chịu phải sát thương tạo thành từ Hạt Nhân Thảo (bao gồm Bung Tỏa, Nở Rộ), Nahida sẽ căn cứ vào sức tấn công và tinh thông nguyên tố để thi triển Diệt Tịnh Tam Nghiệp cho kẻ địch đó và tất cả kẻ địch trong kết nối, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro>.",
+      "11": "Trong thời gian ngắn tối đa chỉ kích hoạt một lần Diệt Tịnh Tam Nghiệp.",
+      "12": "<br/>",
+      "13": "<i>Vị thần cỏ cây chiếu sáng chân lý tối thượng của mình vào hư không, soi sáng nguồn gốc và sự hủy diệt của tam nghiệp.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "Sát Thương Nhấn Giữ",
+      "2": "Sát Thương Diệt Tịnh Tam Nghiệp",
+      "3": "Giãn Cách Kích Hoạt Diệt Tịnh Tam Nghiệp",
+      "4": "Thời Gian Duy Trì Hạt Giống Skandha",
+      "5": "CD Nhấn",
+      "6": "CD Nhấn Giữ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ảo Ảnh Tâm Can",
+    "description": {
+      "0": "Tái hiện cung điện trong ảo mộng, tạo ra khu vực \"Cung Điện Maya\".",
+      "1": "<br/>",
+      "2": "Khi khu vực được mở, trong đội nếu tồn tại các nhân vật thuộc loại nguyên tố sau thì sẽ sản sinh hiệu quả tương ứng:",
+      "3": [
+        "<pyro>Nguyên Tố Hỏa</pyro>: Khi Nahida ở trong Cung Điện Maya sẽ tăng sát thương gây ra của Diệt Tịnh Tam Nghiệp từ kỹ năng Lắng Nghe Thế Gian;",
+        "<electro>Nguyên Tố Lôi</electro>: Khi Nahida ở trong Cung Điện Maya, giảm giãn cách kích hoạt Diệt Tịnh Tam Nghiệp từ kỹ năng Lắng Nghe Thế Gian;",
+        "<hydro>Nguyên Tố Thủy</hydro>: Kéo dài thời gian duy trì của Cung Điện Maya."
+      ],
+      "4": "<br/>",
+      "5": "Khi khu vực được thi triển, nếu số lượng nhân vật thuộc loại nguyên tố trên có ít nhất 2 người, hiệu quả sản sinh sẽ được tăng cường.",
+      "6": "<br/>",
+      "7": "Dù Nahida không ra trận, chỉ cần đồng đội ở trong Cung Điện Maya thì vẫn sẽ nhận được hiệu quả nêu trên.",
+      "8": "<br/>",
+      "9": "<i>Trong mắt của vị thần trí tuệ, sâm la vạn tượng chẳng qua cũng chỉ là giấc mộng hư ảo.</i>"
+    },
+    "skillParams": {
+      "0": "Hỏa: Tăng sát thương",
+      "1": "Hỏa: Tăng sát thương",
+      "2": "Lôi: Giảm giãn cách",
+      "3": "Lôi: Giảm giãn cách",
+      "4": "Thủy: Tăng thời gian duy trì",
+      "5": "Thủy: Tăng thời gian duy trì",
+      "6": "Thời Gian Duy Trì Cơ Bản",
+      "7": "CD",
+      "8": "Năng Lượng Nguyên Tố",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Từ Bi Chiếu Rọi",
+    "description": {
+      "0": "Khi thi triển <strong>Ảo Ảnh Tâm Can</strong>, Cung Điện Maya sẽ nhận được hiệu quả sau:",
+      "1": "Căn cứ vào 25% Tinh Thông Nguyên Tố của nhân vật có Tinh Thông Nguyên Tố cao nhất trong đội để tăng Tinh Thông Nguyên Tố cho nhân vật ra trận trong khu vực đó.",
+      "2": "Tối đa tăng 250 Tinh Thông Nguyên Tố thông qua cách này."
+    }
+  },
+  "passive2": {
+    "name": "Giác Ngộ Thức Tỉnh",
+    "description": {
+      "0": "Tính từ mức 200 điểm Tinh Thông Nguyên Tố của Nahida làm gốc, mỗi 1 điểm Tinh Thông Nguyên Tố vượt qua sẽ khiến Diệt Tịnh Tam Nghiệp của kỹ năng <strong>Lắng Nghe Thế Gian</strong> tăng 0.1% sát thương gây ra, tăng 0.03% tỉ lệ bạo kích.",
+      "1": "Tối đa khiến Diệt Tịnh Tam Nghiệp tăng 80% sát thương gây ra, 24% tỉ lệ bạo kích thông qua cách này."
+    }
+  },
+  "passive3": {
+    "name": "Tịnh Hành Tùy Niệm",
+    "description": {
+      "0": "Nahida có thể thông qua <strong>Lắng Nghe Thế Gian</strong> để tương tác với một số vật thu thập trong phạm vi nhất định.",
+      "1": "Hoặc là sẽ còn có hiệu quả khác..."
+    }
+  },
+  "constellation1": {
+    "name": "Hạt Giống Ẩn Chứa Tri Thức",
+    "description": {
+      "0": "Lúc tính toán loại nguyên tố của các nhân vật khi triển khai <strong>Cung Điện Maya</strong> sẽ cộng thêm 1 nhân vật của mỗi loại nguyên tố Hỏa, Lôi, Thủy."
+    }
+  },
+  "constellation2": {
+    "name": "Rễ Cây Chờ Đợi Thiện Kiến",
+    "description": {
+      "0": "Kẻ địch trong trạng thái <strong>Hạt Giống Skandha</strong> của bản thân Nahida sẽ chịu ảnh hưởng của hiệu quả sau:",
+      "1": [
+        "Khi chịu sát thương phản ứng Thiêu Đốt, Sum Suê, Nở Rộ, Bung Tỏa sẽ có thể bạo kích, tỉ lệ bạo kích cố định là 20%, sát thương bạo kích cố định là 100%;",
+        "Trong 8s sau khi chịu ảnh hưởng của phản ứng Sinh Trưởng, Tăng Cường, Lan Tràn, phòng thủ giảm 30%."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Mầm Chồi Thấm Dần Thành Tựu",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lắng Nghe Thế Gian</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Thân Nhánh Ước Lượng Thực Hành",
+    "description": {
+      "0": "Kẻ địch bị gắn Hạt Giống Skandha khi ở trong <strong>Lắng Nghe Thế Gian</strong> có số lượng là 1/2/3/4 hay nhiều hơn, Tinh Thông Nguyên Tố của Nahida sẽ tăng 100/120/140/160 điểm."
+    }
+  },
+  "constellation5": {
+    "name": "Nhành Lá Phá Giải Ngu Muội",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Ảo Ảnh Tâm Can</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Quả Mọng Thấu Hiểu Vạn Vật",
+    "description": {
+      "0": "Sau khi thi triển <strong>Ảo Ảnh Tâm Can</strong>, tấn công thường và trọng kích của Nahida khi đánh trúng kẻ địch có trạng thái Hạt Giống Skandha trong <strong>Lắng Nghe Thế Gian</strong> sẽ thi triển Diệt Tịnh Tam Nghiệp - Giải Nghiệp lên kẻ địch đó và tất cả kẻ địch trong kết nối, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> căn cứ theo 200% sức tấn công và 400% Tinh Thông Nguyên Tố của Nahida.",
+      "1": "Sát thương gây ra từ Diệt Tịnh Tam Nghiệp - Giải Nghiệp được xem là sát thương Kỹ Năng Nguyên Tố, mỗi 0.2s tối đa kích hoạt một lần.",
+      "2": "Hiệu quả này tối đa duy trì 10s, sẽ giải trừ khi Nahida thi triển 6 lần Diệt Tịnh Tam Nghiệp - Giải Nghiệp."
+    }
+  }
+}

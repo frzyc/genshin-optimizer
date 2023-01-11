@@ -1,0 +1,12 @@
+{
+  "setName": "Prayers to Springtime",
+  "setEffects": {
+    "1": "Affected by Cryo for 40% less time."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara of Frost",
+      "desc": "A tiara worn by those tasked with offering sacrifices in ancient times. Because it once weathered years of the icy cold, it possesses remarkable resistance."
+    }
+  }
+}

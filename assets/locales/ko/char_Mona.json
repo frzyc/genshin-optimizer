@@ -1,0 +1,11 @@
+{
+  "omen": "성이",
+  "omenDuration": "성이 지속 시간",
+  "bubbleDuration": "포영 지속 시간",
+  "phantomDuration": "허영 지속 시간",
+  "hitOp": {
+    "affectedByOmen": "파티내 캐릭터가 성이 상태의 적을 공격시"
+  },
+  "frozenDuration": "<cryo>빙결</cryo> 반응 지속 시간 증가",
+  "uponSprint": "흐르는 허와 실 상태 진입후"
+}

@@ -1,0 +1,178 @@
+{
+  "name": "Beidou",
+  "title": "Uncrowned Lord of Ocean",
+  "description": "Pemimpin dari armada laut Crux Fleet. Bos wanita yang tegas dan berpendirian teguh.",
+  "constellationName": "Victor Mare",
+  "auto": {
+    "name": "Oceanborne",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Berputar Charged Attack",
+      "6": "DMG Akhir Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack",
+      "8": "Durasi Maksimum",
+      "9": "DMG Selama Plunging",
+      "10": "DMG Plunging Attack Min./Maks.",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Tidecaller",
+    "description": {
+      "0": "Tidak ada yang perlu dikhawatirkan. Jika ada yang mengangkat tangan melawan dia atau anak buahnya, dia akan membalasnya sepuluh kali lipat dengan pedang dan petir.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Dengan akumulasi listrik, Beidou mengayunkan pedangnya dengan garang, mengakibatkan <electro>Electro DMG</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Tahan</strong>",
+      "6": "Mengangkat senjata dan menggunakannya sebagai perisai. Max DMG yang tertahan meningkat seiring dengan Max HP Beidou.",
+      "7": "Saat dilepas atau saat durasi skill selesai, menyerang dengan energi yang tersimpan di dalam pedang, mengakibatkan <electro>Electro DMG</electro>.",
+      "8": "DMG serangan meningkat berdasarkan jumlah serangan yang diterima selama skill berlangsung. Bonus DMG akan tercapai saat skill terpicu dua kali.",
+      "9": "Perisainya memiliki efek berikut:",
+      "10": [
+        "Memiliki 250% ketahanan terhadap <electro>Electro DMG</electro>.",
+        "Memberikan <electro>elemen Electro</electro> kepada Beidou saat skill diaktifkan."
+      ],
+      "11": "<br/>",
+      "12": "<i>Taklukkan deru lautan! Kendarai ombak dan terjanglah badai!</i>"
+    },
+    "skillParams": {
+      "0": "Pertahanan Perisai",
+      "1": "Base DMG",
+      "2": "Bonus DMG saat menerima DMG",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Stormbreaker",
+    "description": {
+      "0": "Dengan memanggil kembali semangat tarung saat di tengah pertarungan sengit melawan Haishan, Beidou memanggil petir dan kekuatan yang luar biasa untuk menciptakan Thunderbeast's Targe di sekelilingnya, mengakibatkan <electro>Electro DMG</electro> kepada musuh di sekitarnya.",
+      "1": "<br/>",
+      "2": "<strong>Thunderbeast's Targe</strong>",
+      "3": [
+        "Saat Normal dan Charged Attack mengenai musuh, memanggil 1 sambaran petir yang dapat melompat di antara musuh, mengakibatkan <electro>Electro DMG</electro>.",
+        "Meningkatkan ketahanan Beidou terhadap interupsi, dan mengurangi DMG yang diterima."
+      ],
+      "4": "<br/>",
+      "5": "Sambaran petir terpicu maksimum 1 kali setiap detik.",
+      "6": "<br/>",
+      "7": "<i>Dengan gemuruh petir, Haishan pun ditaklukkan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Lightning",
+      "2": "Pengurangan DMG",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Retribution",
+    "description": {
+      "0": "Membalas serangan menggunakan <strong>Tidecaller</strong> tepat saat serangan mengenai karakter akan memberikan Bonus DMG maksimum."
+    }
+  },
+  "passive2": {
+    "name": "Lightning Storm",
+    "description": {
+      "0": "Selama 10 detik setelah menggunakan skill <strong>Tidecaller</strong> dengan Bonus DMG maksimum, Beidou akan mendapatkan efek:",
+      "1": [
+        "Meningkatkan 15% DMG yang diakibatkan oleh Normal Attack dan Charged Attack. Meningkatkan 15% ATK SPD Normal Attack dan Charged Attack.",
+        "Mengurangi waktu persiapan Charged Attack secara pesat."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Conqueror of Tides",
+    "description": {
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berenang.",
+      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama."
+    }
+  },
+  "constellation1": {
+    "name": "Sea Beast's Scourge",
+    "description": {
+      "0": "Saat <strong>Stormbreaker</strong> digunakan:",
+      "1": "Membentuk perisai yang menahan DMG sebesar 16% dari Max HP Beidou selama 15 detik.",
+      "2": "Perisai ini juga menahan <electro>Electro DMG</electro> 250% lebih efektif."
+    }
+  },
+  "constellation2": {
+    "name": "Upon the Turbulent Sea, the Thunder Arises",
+    "description": {
+      "0": "Sambaran listrik <strong>Stormbreaker</strong> menyambar 2 musuh lebih banyak."
+    }
+  },
+  "constellation3": {
+    "name": "Summoner of Storm",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Tidecaller</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Stunning Revenge",
+    "description": {
+      "0": "Setelah terkena serangan, Normal Attack Beidou memperoleh 20% <electro>Electro DMG</electro> tambahan selama 10 detik."
+    }
+  },
+  "constellation5": {
+    "name": "Crimson Tidewalker",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Stormbreaker</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Bane of Evil",
+    "description": {
+      "0": "Selama durasi <strong>Stormbreaker</strong>, <electro>Electro RES</electro> musuh di sekitar berkurang 15%."
+    }
+  }
+}

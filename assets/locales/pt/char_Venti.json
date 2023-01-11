@@ -1,0 +1,13 @@
+{
+  "addAimed": "Dano Adicional no Tiro com Mira",
+  "addFullAimed": "Dano adicional no Tiro Carregado",
+  "upcurrentDuration": "Duração da corrente de vento",
+  "regenEner": "Regenera 15 de Energia para Venti após o efeito terminar",
+  "c6": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong>",
+  "c4": "Venti pega um Orbe Elemental ou Partícula",
+  "q": "Regenera 15 de Energia a todos os personagens <1>{{elementKey}}</1>.",
+  "c2": {
+    "hit": "Opponent acertado",
+    "launched": "Oponente lançado"
+  }
+}

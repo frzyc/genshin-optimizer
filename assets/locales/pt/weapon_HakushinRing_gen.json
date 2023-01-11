@@ -1,0 +1,12 @@
+{
+  "name": "Anel de Hakushin",
+  "description": "Um catalisador que guarda a memória de Kitsune Saiguu dos tempos passados. E, ainda assim, esse dispositivo é apenas um recipiente empobrecido para toda a amplitude do seu pensamento.",
+  "passiveName": "Palácio de Sakura",
+  "passiveDescription": {
+    "0": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em <cryo>10%</cryo>, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+    "1": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em <cryo>12.5%</cryo>, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+    "2": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em <cryo>15%</cryo>, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+    "3": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em <cryo>17.5%</cryo>, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+    "4": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em <cryo>20%</cryo>, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado."
+  }
+}

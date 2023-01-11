@@ -1,0 +1,29 @@
+{
+  "setName": "Dũng Sĩ Trong Băng Giá",
+  "setEffects": {
+    "2": "Tăng sát thương nguyên tố Băng 15%",
+    "4": "Khi tấn công kẻ địch đang bị Nguyên Tố Băng ảnh hưởng, sẽ tăng 20% tỷ lệ bạo kích, nếu địch ở trạng thái đóng băng, sẽ tăng thêm 20% tỷ lệ bạo kích."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Nỗi Nhớ Trải Qua Băng Tuyết",
+      "desc": "Hoa của sông băng đã tuyệt tích từ lâu, có một chút bông tuyết đọng lại. Người dũng sĩ kiêu ngạo cũng đã từng vì bông hoa này mà cúi người."
+    },
+    "plume": {
+      "name": "Chấp Niệm Phá Băng Mà Tiến Bước",
+      "desc": "Lông chim toát ra hàn băng, dường như có thể cảm nhận được tiếng gọi của mãnh thú và gió trên thảo nguyên băng tuyết."
+    },
+    "sands": {
+      "name": "Hồi Kết Của Miền Quê Băng Giá",
+      "desc": "Đồng hồ được người dân cố quốc dùng để chờ đợi dũng sĩ quay về. Thứ chảy trong đó không phải là cát mà là vụn băng không tan."
+    },
+    "goblet": {
+      "name": "Niềm Kiêu Hãnh Băng Giá",
+      "desc": "Ly được điêu khắc từ hàn băng, kiên cố như mùa đông. Từng được chủ nhân dùng để uống rượu."
+    },
+    "circlet": {
+      "name": "Tiếng Vọng Băng Vỡ Tuyết Rơi",
+      "desc": "Vương miện của người dũng sĩ cổ đại với ước muốn chinh phục băng tuyết, là bằng chứng cho dũng khí cổ vũ chủ nhân của nó trong giá lạnh."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Öbür Dünya Zincifresi",
+  "setEffects": {
+    "2": "+%18 Saldırı.",
+    "4": "Karakter bir Element Patlaması kullandıktan sonra Saklı Işık etkisini kazanır ve 16 saniyeliğine Saldırısı %8 artar. Karakterin Canı azaldığında Saldırısı ek olarak %10 artar. Bu ek artış maksimum 4 defa gerçekleşebilir. Bu etki 0,8 saniyede bir tetiklenebilir ve etki, karakter alandan ayrıldığında kaybolur. Saklı Işık etkisi devredeyken bir Element Patlaması tekrar kullanıldığında ilk Saklı Işık etkisi kaybolur."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Çiçeklenmiş Yaşam",
+      "desc": "Kadim bir yadigar. Hâlâ kendisini yüzyıllar önce muhafaza eden varlık kadar canlı duruyor."
+    },
+    "plume": {
+      "name": "Saklı Işığın Tüyü",
+      "desc": "Güçlü hatıralarla ıslanmış, hafifçe ışıldayan bir tüy."
+    },
+    "sands": {
+      "name": "Güneş Yadigarı",
+      "desc": "Oldukça sağlam görünen kadim bir saat. Üzerindeki kum kristali sayesinde etrafa ışıltı saçıyor."
+    },
+    "goblet": {
+      "name": "Sözleşme Anı",
+      "desc": "Kum kristalinden yapılmış eski bir bardak. Yıllar geçse bile parıltısı biraz olsun sönmemiş."
+    },
+    "circlet": {
+      "name": "Yıldırım Duruşu",
+      "desc": "Dağda yaşayan insanların bu maskeyi bir Yaksha için yaptığı söylenir. Yapımı oldukça basit olsa bile maskenin yüzeyi ışıl ışıl parıldar."
+    }
+  }
+}

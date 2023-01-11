@@ -1,0 +1,188 @@
+{
+  "name": "Sayu",
+  "title": "Ninja Mujina",
+  "description": "Ninja thuộc \"Shuumatsuban\". Thân hình nhỏ nhắn, lúc nào trông cũng như không ngủ đủ giấc.",
+  "constellationName": "Cung Tiểu Lạc",
+  "auto": {
+    "name": "Lưỡi Đao Ninja - Shuumatsuban",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích Tuần Hoàn",
+      "5": "Sát Thương Trọng Kích Chí Mạng",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Thời Gian Tối Đa",
+      "8": "Sát Thương Khi Rơi",
+      "9": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Trường Phái Yoohoo - Fuuin Lăn Tròn",
+    "description": {
+      "0": "Nghệ thuật độc đáo trường phái Yoohoo của kiếm pháp Ninja! Tuyệt kỹ càn quét chiến trường nhanh như chớp!",
+      "1": "Cuộn thành bánh xe gió lăn với tốc độ cao, va vào kẻ địch gây <anemo>sát thương Nguyên Tố Phong</anemo> đồng thời khi kết thúc sẽ tung ra Cú Đá Lốc Xoáy, gây <anemo>sát thương phạm vi Nguyên Tố Phong</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn</strong>",
+      "4": "Vào trạng thái bánh xe gió, lăn về phía trước một cự ly nhỏ và tung Cú Đá Lốc Xoáy.",
+      "5": "<br/>",
+      "6": "<strong>Nhấn Giữ</strong>",
+      "7": "Lăn liên tục trong trạng thái bánh xe gió, ở trạng thái này sẽ tăng khả năng kháng gián đoạn của Sayu.",
+      "8": "Sayu có thể điều khiển hướng lăn, đồng thời có thể thi triển kỹ năng lần nữa để kết thúc sớm trạng thái này, khiến Cú Đá Lốc Xoáy của bánh xe gió mạnh hơn so với việc Nhấn.",
+      "9": "Khi nhấn giữ để thi triển kỹ năng này, sẽ xảy ra chuyển hóa nguyên tố.",
+      "10": "<br/>",
+      "11": "Kéo dài tối đa 10s. Khi hiệu quả kết thúc, kỹ năng sẽ vào CD. Thời gian trong trạng thái bánh xe gió càng dài, CD sẽ càng dài.",
+      "12": "<br/>",
+      "13": "<strong>Chuyển hóa nguyên tố</strong>",
+      "14": "Nếu Sayu ở trạng thái bánh xe gió, tiếp xúc với <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ nhận thuộc tính nguyên tố tương ứng, khiến bánh xe gió và Cú Đá Lốc Xoáy kèm thêm sát thương của nguyên tố này.",
+      "15": "Chuyển hóa nguyên tố chỉ xảy ra 1 lần trong thời gian duy trì kỹ năng.",
+      "16": "<br/>",
+      "17": "<i>Sayu nhắm mắt lại cũng có thể thi triển một cách thuần thục. Vốn chỉ dùng để chạy trốn, sau khi có Vision cuối cùng cũng có thể khiến kẻ địch nếm mùi đau khổ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bánh Xe Gió Fuufuu",
+      "1": "Sát Thương Nhấn Cú Đá Lốc Xoáy",
+      "2": "Sát Thương Nhấn Giữ Cú Đá Lốc Xoáy",
+      "3": "Sát Thương Nguyên Tố Bánh Xe Gió Fuufuu",
+      "4": "Sát Thương Nguyên Tố Nhấn Giữ Cú Đá Lốc Xoáy",
+      "5": "Thời Gian Kéo Dài Tối Đa Nhấn Giữ",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Trường Phái Yoohoo - Mujina Bối Rối",
+    "description": {
+      "0": "Một nghệ thuật độc đáo trường phái Yoohoo của kiếm pháp Ninja! Có thể tạo ra trợ lý thay Sayu làm việc!",
+      "1": "Gây <anemo>sát thương Nguyên Tố Phong</anemo> cho kẻ địch bên cạnh, hồi HP cho tất cả nhân vật trong đội ở gần, lượng hồi phục phụ thuộc vào tấn công của Sayu, đồng thời triệu hồi \"Muji-Muji Daruma\".",
+      "2": "<br/>",
+      "3": "<strong>Muji-Muji Daruma</strong>",
+      "4": "Dựa vào tình trạng xung quanh, sử dụng một trong các loại hành động theo chu kỳ:",
+      "5": [
+        "Nếu HP của nhân vật ở gần đều trên 70%, Muji-Muji Daruma sẽ tấn công 1 kẻ địch ở gần, gây <anemo>sát thương Nguyên Tố Phong</anemo>;",
+        "Nếu HP của nhân vật ở gần dưới hoặc bằng 70%, sẽ hồi HP cho nhân vật ở gần có phần trăm HP thấp nhất, lượng hồi phục phụ thuộc vào tấn công của Sayu. Nếu xung quanh không có kẻ địch, thì cho dù HP của nhân vật đã trên 70%, cũng sẽ hồi HP cho nhân vật."
+      ],
+      "6": "<br/>",
+      "7": "<i>Những kẻ không hiểu về thuật Ninja đều hi vọng Sayu thể hiện chiêu thức này nhiều một chút, cũng có người muốn tìm Sayu để học hỏi. Nhưng Sayu chỉ muốn đánh một giấc chứ không thích bị làm phiền.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Dùng Kỹ Năng",
+      "1": "Lượng trị liệu kỹ năng",
+      "2": "Sát Thương Muji-Muji Daruma",
+      "3": "Lượng trị liệu Muji-Muji Daruma",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ứng Cử Viên Phù Hợp Hơn",
+    "description": {
+      "0": "Khi Sayu kích hoạt phản ứng khuếch tán trong trận, sẽ hồi 300 HP cho nhân vật phe bạn gần đó và nhân vật của bản thân. Ngoài ra, mỗi điểm Tinh Thông Nguyên Tố của Sayu sẽ hồi thêm 1.2 HP.",
+      "1": "Hiệu quả này mỗi 2s chỉ kích hoạt 1 lần."
+    }
+  },
+  "passive2": {
+    "name": "Sayu Không Cần Làm Việc Nữa",
+    "description": {
+      "0": "Muji-Muji Daruma của <strong>Trường Phái Yoohoo - Mujina Bối Rối</strong> nhận hiệu quả sau:",
+      "1": [
+        "Khi hồi HP cho nhân vật sẽ hồi 20% lượng HP này cho các nhân vật khác xung quanh nhân vật này;",
+        "Khi tấn công kẻ địch sẽ mở rộng phạm vi gây sát thương."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Trường Phái Yoohoo - Bí Truyền Yên Lặng",
+    "description": {
+      "0": "Có Sayu ở trong đội, khi nhân vật trong đội của bản thân tiếp cận một số sinh vật như Tinh Điệp sẽ không làm chúng hoảng sợ.",
+      "1": "Có thể tham khảo mục \"Khác\" ở \"Sách Sinh Vật/Động Vật Hoang Dã\" trong Thư Viện để biết các đối tượng cụ thể."
+    }
+  },
+  "constellation1": {
+    "name": "Nhất Tâm Nhị Dụng Thuật",
+    "description": {
+      "0": "Hành động của Muji-Muji Daruma <strong>Trường Phái Yoohoo - Mujina Bối Rối</strong> sẽ bỏ qua hạn chế về HP, có thể cùng lúc tấn công kẻ địch ở gần và hồi HP cho nhân vật."
+    }
+  },
+  "constellation2": {
+    "name": "Mở Đường Thoát Thân",
+    "description": {
+      "0": "<strong>Trường Phái Yoohoo - Fuuin Lăn Tròn</strong> nhận hiệu quả sau:",
+      "1": [
+        "Khi nhấn thi triển, sát thương Cú Đá Lốc Xoáy gây ra sẽ tăng 3.3%;",
+        "Khi ở trạng thái bánh xe gió sau khi nhấn giữ thi triển, mỗi 0.5s sẽ tăng 3.3% sát thương Cú Đá Lốc Xoáy gây ra lần này. Bằng cách này, sát thương do Cú Đá Lốc Xoáy gây ra có thể tăng tối đa đến 66%."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Hãy Giao Cho Phân Thân",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Trường Phái Yoohoo - Mujina Bối Rối</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cách Lười Biếng Mới Mẻ",
+    "description": {
+      "0": "Khi Sayu kích hoạt phản ứng khuếch tán trong trận sẽ hồi 1.2 Năng Lượng Nguyên Tố.",
+      "1": "Hiệu quả này mỗi 2s chỉ kích hoạt 1 lần."
+    }
+  },
+  "constellation5": {
+    "name": "Tốc Độ Là Tiên Quyết",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Trường Phái Yoohoo - Fuuin Lăn Tròn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thời Gian Ngủ Khò",
+    "description": {
+      "0": "Tấn công và lượng hồi phục của Muji-Muji Daruma được Sayu triệu hồi thông qua <strong>Trường Phái Yoohoo - Mujina Bối Rối</strong> phụ thuộc vào Tinh Thông Nguyên Tố của Sayu. Mỗi điểm Tinh Thông Nguyên Tố của Sayu có thể sinh ra hiệu quả sau:",
+      "1": [
+        "Khiến tấn công của Muji-Muji Daruma gây thêm sát thương bằng 0.2% tấn công. Bằng cách này, tối đa có thể gây thêm sát thương bằng 400% tấn công;",
+        "Lượng hồi phục của Muji-Muji Daruma tăng 3 điểm. Bằng cách này, tối đa tăng 6000 điểm hồi phục."
+      ]
+    }
+  }
+}

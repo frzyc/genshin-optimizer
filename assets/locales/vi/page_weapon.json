@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",
+  "showingNum_other": "Đang hiện <1>{{count}}</1> trên tổng {{value}} Vũ khí",
+  "edit": "Điều chỉnh Vũ khí",
+  "weaponName": "Tên vũ khí",
+  "removeWeapon": "Bạn có chắc bạn muốn xóa {{value}}?",
+  "addWeapon": "Thêm Vũ khí mới"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Otherworldly Story",
+  "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+  "passiveName": "Energy Shower",
+  "passiveDescription": {
+    "0": "Picking up an Elemental Energy Orb/Particle recovers <cryo>1%</cryo> HP.",
+    "1": "Each Elemental Orb or Particle collected restores <cryo>1.25%</cryo> HP.",
+    "2": "Each Elemental Orb or Particle collected restores <cryo>1.5%</cryo> HP.",
+    "3": "Each Elemental Orb or Particle collected restores <cryo>1.75%</cryo> HP.",
+    "4": "Each Elemental Orb or Particle collected restores <cryo>2%</cryo> HP."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "editor": {
+    "title": "Editor Artefak",
+    "set": {
+      "artifactSet": "Set Artefak",
+      "maxRarity": "Kualitas Maks <1></1>"
+    },
+    "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "Tanpa Substat",
+      "selectSub": "Pilih Substat",
+      "error": {
+        "noCalc": "Tidak dapat menghitung roll stat.",
+        "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
+      },
+      "noRoll": "Tanpa Roll",
+      "noStat": "Tanpa Nilai",
+      "eff": "Efisiensi: <1></1>",
+      "nextRolls": "Roll berikutnya"
+    },
+    "rarity": "Kualitas",
+    "level": "Level",
+    "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
+    "mainSelect": "Pilih Stat Utama",
+    "curSubEff": "Efisiensi Substat Saat Ini",
+    "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
+    "maxSubEff": "Efisiensi Substat Maksimum",
+    "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
+    "preview": "Pratinjau Artefak",
+    "dupArt": "Artefak duplikat terdeteksi.",
+    "upArt": "Artefak terupgrade terdeteksi.",
+    "beforeEdit": "Sebelum Edit",
+    "btnSave": "Simpan Artefak",
+    "btnAdd": "Tambah Artefak",
+    "btnClear": "Bersihkan",
+    "btnRandom": "Acak",
+    "btnUpdate": "Perbarui Artefak",
+    "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?"
+  },
+  "artifactFilter": "Filter Artefak",
+  "filterLocation": {
+    "inventory": "Tas",
+    "currentlyEquipped": "Dikenakan",
+    "any": "Lokasi: Semua"
+  },
+  "button": {
+    "unequipArtifacts": "Lepaskan Artefak",
+    "deleteArtifacts": "Hapus Artefak",
+    "excludeArtifacts": "Eksklusif Artefak",
+    "includeArtifacts": "Inklusif Artefak",
+    "lockArtifacts": "Kunci Artefak",
+    "unlockrtifacts": "Buka Kunci Artefak"
+  },
+  "filterLevelFormat": "Level <1>Rendah</1>/<3>Tinggi</3> (Inklusif)",
+  "buttonHint": "Catatan: tombol merah di atas hanya berlaku untuk <1>artefak terfilter</1>",
+  "tipsOfTheDay": [
+    "Efisiensi maksimum dari artefak bintang 4 adalah sekitar 60%.",
+    "Efisiensi maksimum dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
+    "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
+    "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
+    "Klik di \"Rincian/Details\" ketika kamu mengupgrade artefak-mu di dalam game untuk dipindai sekaligus di-upgrade.",
+    "Sekrang kamu bisa mengunggah banyak screenshot artefak untuk dipindai!"
+  ],
+  "mainStat": "Stat Utama",
+  "slot": "Slot",
+  "slotName": {
+    "flower": "Flower of Life",
+    "plume": "Plume of Death",
+    "sands": "Sands of Eon",
+    "goblet": "Goblet of Eonothem",
+    "circlet": "Circlet of Logos"
+  },
+  "info": {
+    "title": "Panduan Edit/Manajemen Artefak",
+    "section1": "<0>Substat Roll</0><1> <1>Jumlah roll</1> yang dimiliki substat yang terletak di sebelah kiri substat. Semakin tinggi jumlahnya, substatnya akan semakin berwarna:<3></3>.</1><2>Substat Efisiensi</2><3>Efisiensi dari substat merupakan persentasi dari jumlah saat ini dari potensi jumlah 5<1></1> tertinggi. Dari gambar tersebut, jumlah roll maksimum dari CRIT DMG adalah 7.8%. Dalam efisiensinya: <3>5.8/7.8 = 69.2%.</3></3><4>Efisiensi Substat Saat Ini vs. Efisiensi Substat Maksimum</4><5>Ketika 5<1></1> memiliki total 9(4+5) roll, dengan tiap roll-nya memiliki jumlah tertinggi, itu dinamakan efisiensi 100% artefak. Namun, kebanyakan dari artefak yang ada tidak seberuntung ini. <3>Efisiensi Substat saat ini</3> dari sebuah artefak merupakan persentasi dari efisiensi 100% tersebut. <5>Efisiensi Substat Maksimum</5> merupakan jumlah maksimum dari artefak yang bisa dicapai, jika sisa roll artefak dari upgrade merupakan jumlah tertinggi yang bisa dicapai.</5><6>Mengunci Artefak</6><7>Jika artefak tertentu dikunci <1></1>, maka artefak tersebut tidak akan dipilih oleh build generator untuk optimisasi. Artefak yang dikenakan karakter terkunci secara default.</7>",
+    "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll dan efisiensi yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+    "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
+  },
+  "exclusionDisplay": "Eksklusif: {{value}}",
+  "exclusion": {
+    "any": "Semua",
+    "excluded": "Eksklusif",
+    "included": "Inklusif"
+  },
+  "sortMap": {
+    "quality": "Kualitas",
+    "level": "Level",
+    "efficiency": "Eff. Substat Saat Ini",
+    "mefficiency": "Eff. Substat Maksimum"
+  },
+  "efficiencyFilter": {
+    "title": "Substat yang dipakai dalam perhitungan efisiensi"
+  },
+  "resetFilters": "Reset Filter",
+  "setEffectNum": "{{setNum}}-Set",
+  "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
+}

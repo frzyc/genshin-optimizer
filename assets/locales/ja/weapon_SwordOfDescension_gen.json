@@ -1,0 +1,8 @@
+{
+  "name": "降臨の剣",
+  "description": "独特な形をした剣。この世界の物ではないようだ。",
+  "passiveName": "降世",
+  "passiveDescription": {
+    "0": "<cryo>以下のプラットフォームでのみ有効です。</cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\n通常攻撃と重撃が命中時<cryo>50%</cryo>の確率で攻撃力の<cryo>200%</cryo>の狭範囲ダメージを与える。10秒毎に1回のみ発動可能。旅人が降臨の剣を装備すると、さらに攻撃力+<cryo>66</cryo>。"
+  }
+}

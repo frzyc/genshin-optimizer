@@ -1,0 +1,186 @@
+{
+  "name": "Mona",
+  "title": "Reflexão Astral",
+  "description": "Uma jovem astróloga misteriosa que proclama a si mesma como a \"Grande Astróloga Mona\" e que possui as habilidades para o título. Uma pessoa erudita, mas orgulhosa.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Destino Desencapado",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 ataques com esguichos de água que infligem <hydro>Dano Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para infligir <hydro>Dano Hydro em uma AdE</hydro> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Reunindo o poder do Hydro, Mona mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <hydro>Dano Hydro em uma AdE</hydro> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Água Ilusória",
+    "description": {
+      "0": "Cria um Fantasma ilusório do destino a partir de trombas d'águas fundidas.",
+      "1": "<br/>",
+      "2": "O <strong>Fantasma</strong> tem as seguintes propriedades especiais:",
+      "3": "Continuamente provoca inimigos próximos, atraindo seus golpes.",
+      "4": " Continuamente inflige <hydro>Dano Hydro</hydro> nos inimigos próximos.",
+      "5": " Quando sua duração expira, o Fantasma explode, infligindo <hydro>Dano Hydro em uma AdE</hydro>.",
+      "6": "<br/>",
+      "7": "<strong>Manter pressionado</strong>",
+      "8": "Utiliza a corrente da água para movimentar-se rapidamente para trás antes de conjurar o Fantasma.",
+      "9": "<br/>",
+      "10": "Apenas um Fantasma criado pelo Espelho do Reflexo do Apocalipse pode existir a qualquer momento.",
+      "11": "<br/>",
+      "12": "<i>Astrólogos qualificados sempre sonharam em usar uma cópia de si mesmos para se prevenirem do destino cruel iminente, mas Mona deve ser a primeira a fazer tamanho escárnio de todos em Teyvat.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Contínuo",
+      "1": "Dano de Explosão",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Órbita Divina",
+    "description": {
+      "0": "Mona evoca as ondas cintilantes e cria um reflexo do céu estrelado, aplicando o status de Bolha Ilusória aos oponentes em uma grande AdE",
+      "1": "<br/>",
+      "2": "<strong>Bolha Ilusória</strong>",
+      "3": "Prende inimigos em um bolso do destino e também deixa eles <hydro>Molhados</hydro>. Torna oponentes mais fracos imóveis.",
+      "4": "Quando um oponente afetado pela Bolha Ilusória recebe Dano, os seguintes efeitos são aplicados:",
+      "5": "Aplica um Presságio no oponente, que causa Dano Bônus, também aumentando o Dano do ataque que o ocasiona.",
+      "6": " Remove a Bolha Ilusória, causando Dano Elemental <hydro>Hydro</hydro> no processo.",
+      "7": "<br/>",
+      "8": "<strong>Presságio</strong>",
+      "9": "Ao longo da duração, aumenta o Dano recebido pelos inimigos.",
+      "10": "<br/>",
+      "11": "<i>No momento em que os deuses traçaram pela primeira vez as luzes no céu com seus olhos, o \"destino\" nasceu.</i>"
+    },
+    "skillParams": {
+      "0": "Duração da Sombra de Bolha",
+      "1": "Dano de Explosão da Bolha Ilusória",
+      "2": "Dano Adicional",
+      "3": "Duração do Presságio",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Vicissitude",
+    "description": {
+      "0": "<strong>Arrancada Alternativa</strong>",
+      "1": "Mona se envolve dentro do fluxo da água, consumindo Stamina para se mover rapidamente.",
+      "2": "Quando sob o efeito de Vicissitude, Mona pode se movimentar em alta velocidade sobre a água.",
+      "3": "Aplica o estado de <hydro>Molhado</hydro> para inimigos próximos quando ela ressurge.",
+      "4": "<br/>",
+      "5": "<i>Isso é algo que a Mona pode fazer, mas seu professor não pode. Bem, não é como se seu professor fosse seguir qualquer coisa relacionada às Visões Hydro de qualquer forma...</i>"
+    }
+  },
+  "passive1": {
+    "name": "\"Aquela bruxa velha veio atrás de mim!\"",
+    "description": {
+      "0": "Depois dela usar <strong>Vicissitude</strong> por 2 segundos, se existir algum inimigo próximo, Mona irá automaticamente criar um Fantasma.",
+      "1": "Um Fantasma criado dessa maneira dura por 2 segundos, e o Dano da sua explosão é igual a 50% da <strong>Água Ilusória</strong>."
+    }
+  },
+  "passive2": {
+    "name": "\"Deixe nas mãos do destino!\"",
+    "description": {
+      "0": "Aumenta o <hydro>Bônus de Dano Hydro</hydro> de Mona em certo grau, equivalente a 20% da sua Taxa de Recarga de Energia."
+    }
+  },
+  "passive3": {
+    "name": "Princípio da Astrologia",
+    "description": {
+      "0": "Quando Mona cria Materiais de Avanço de Armas, ela tem 25% de chance de recuperar parte do material usado para criação."
+    }
+  },
+  "constellation1": {
+    "name": "Profecia da Submersão",
+    "description": {
+      "0": "Os efeitos de <hydro>Reações Elementais relacionadas a Hydro</hydro> agora são aprimorados por 8 segundos depois que o seu próprio personagem de equipe atingir um inimigo afetado por um Presságio:",
+      "1": " Dano Eletricamente Carregado é aumentado em 15%.",
+      "2": " Dano de Vaporizar é aumentado em 15%.",
+      "3": " Dano de Redemoinho é aumentado em 15%.",
+      "4": "A duração em que os inimigos ficam Congelados é aumentada em 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Corrente Lunar",
+    "description": {
+      "0": "Quando um Ataque Normal acerta, existe 20% de chance que ele será automaticamente seguido de um Ataque Carregado.",
+      "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
+    }
+  },
+  "constellation3": {
+    "name": "Revolução Incessante",
+    "description": {
+      "0": "Aumenta o nível da <strong>Órbita Divina</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Profecia do Fim",
+    "description": {
+      "0": "Quando todos os personagens na equipe atacarem um inimigo afetado pelo status do Presságio, sua Taxa Crítica é aumentada em 15%."
+    }
+  },
+  "constellation5": {
+    "name": "Zombaria da Fortuna",
+    "description": {
+      "0": "Aumenta o nível da <strong>Água Ilusória</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Retórica da Calamidade",
+    "description": {
+      "0": "Ao entrar em <strong>Vicissitude</strong>, Mona ganha um aumento de 60% de Dano em seu próximo Ataque Carregado por segundo.",
+      "1": "Um máximo de 180% de Dano adicional pode ser atingido desta maneira, e este efeito dura por não mais que 8 segundos."
+    }
+  }
+}

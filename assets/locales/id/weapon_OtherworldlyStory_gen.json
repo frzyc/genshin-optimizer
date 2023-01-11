@@ -1,0 +1,12 @@
+{
+  "name": "Otherworldly Story",
+  "description": "Novel yang menceritakan sebuah kisah fantasi tanpa nilai moral apa pun. Kekuatannya sebagai Catalyst juga tentunya, hanyalah fantasi.",
+  "passiveName": "Energy Shower",
+  "passiveDescription": {
+    "0": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1%</cryo> HP.",
+    "1": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.25%</cryo> HP.",
+    "2": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.5%</cryo> HP.",
+    "3": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>1.75%</cryo> HP.",
+    "4": "Mengambil Elemental Energy Orb/Particle memulihkan <cryo>2%</cryo> HP."
+  }
+}

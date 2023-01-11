@@ -1,0 +1,35 @@
+{
+  "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to <1>Settings</1> page, and upload your file in the <strong>Database Upload</strong> section.</3>",
+  "tosWarn": "As any tools that indirectly interact with the game, although their usage is virtually undetectable, <1>there could still be risk with using them.</1> Users discretion is advised.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Game Manipulation",
+    "materials": "Materials",
+    "characters": "Characters"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "This web-based scanner can capture your game window, scan from a screenshot, or scan from a video.",
+    "p2": "The screenshot/video capture can be full screen, and does not need to be cropped.",
+    "p3": "Mobile/PlayStation can only be scanned from screenshots or video."
+  },
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.",
+    "p2": "This scanner can also scan materials for <1>Seelie.me</1>",
+    "p3": "This scanner only scans in english, and exports to GOOD format by default."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scans all artifacts in your inventory. Has a manual scanning mode.",
+    "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
+  },
+  "am": {
+    "title": "「天目」-- Amenoma",
+    "p1": "Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English versions. (Download the <1>_EN.exe</1> version to scan in english). Only the <5>GOOD</5> format is accepted in GO.",
+    "p2": "This scanner can also scan materials for <1>Seelie.me</1>"
+  },
+  "goodeng": "This scanner only scans in english, and exports to GOOD format."
+}

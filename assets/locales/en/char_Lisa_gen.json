@@ -1,0 +1,164 @@
+{
+  "name": "Lisa",
+  "title": "Witch of Purple Rose",
+  "description": "The languid but knowledgeable Librarian of the Knights of Favonius, deemed by Sumeru Akademiya to be their most distinguished graduate in the past two centuries.",
+  "constellationName": "Tempus Fugit",
+  "auto": {
+    "name": "Lightning Touch",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 lightning attacks that deal <electro>Electro DMG</electro>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <electro>AoE Electro DMG</electro> after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all opponents in her path. Deals <electro>AoE Electro DMG</electro> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Violet Arc",
+    "description": {
+      "0": "Channels the power of lightning to sweep bothersome matters away.",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "Releases a homing Lightning Orb.",
+      "4": "On hit, it deals <electro>Electro DMG</electro> and applies a stack of the Conductive status (max 3 stacks) to opponents in a small AoE.",
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "After an extended casting time, calls down lightning from the heavens, dealing massive <electro>Electro DMG</electro> to all nearby opponents.",
+      "8": "Deals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them, and clears their Conductive status.",
+      "9": "<br/>",
+      "10": "<i>Electro Purple is the raiment of the Witch of Purple Rose.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Press CD",
+      "2": "Non-Conductive Hold DMG",
+      "3": "Stack 1 Conductive Hold DMG",
+      "4": "Stack 2 Conductive Hold DMG",
+      "5": "Stack 3 Conductive Hold DMG",
+      "6": "Holding CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lightning Rose",
+    "description": {
+      "0": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding opponents and dealing <electro>Electro DMG</electro>.",
+      "1": "The Lightning Rose will continuously emit lightning to knock back opponents and deal <electro>Electro DMG</electro> throughout the ability's duration.",
+      "2": "<br/>",
+      "3": "<i>This rose is beautiful, but beware its mortal thorns.</i>"
+    },
+    "skillParams": {
+      "0": "Discharge DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Induced Aftershock",
+    "description": {
+      "0": "Hits by Charged Attacks apply <strong>Violet Arc</strong>'s Conductive status to opponents."
+    }
+  },
+  "passive2": {
+    "name": "Static Electricity Field",
+    "description": {
+      "0": "Opponents hit by <strong>Lightning Rose</strong> have their DEF decreased by 15% for 10s."
+    }
+  },
+  "passive3": {
+    "name": "General Pharmaceutics",
+    "description": {
+      "0": "When Lisa crafts a potion, she has a 20% chance to refund a portion of the crafting materials used."
+    }
+  },
+  "constellation1": {
+    "name": "Infinite Circuit",
+    "description": {
+      "0": "Lisa regenerates 2 Energy for every opponent hit while holding <strong>Violet Arc</strong>.",
+      "1": "A maximum of 10 Energy can be regenerated in this manner at any one time."
+    }
+  },
+  "constellation2": {
+    "name": "Electromagnetic Field",
+    "description": {
+      "0": "Holding <strong>Violet Arc</strong> has the following effects:",
+      "1": [
+        "Increases DEF by 25%.",
+        "Increases Lisa's resistance to interruption."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Resonant Thunder",
+    "description": {
+      "0": "Increases the Level of <strong>Lightning Rose</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Plasma Eruption",
+    "description": {
+      "0": "<strong>Lightning Rose</strong> now unleashes 1-3 lightning bolts when it attacks."
+    }
+  },
+  "constellation5": {
+    "name": "Electrocute",
+    "description": {
+      "0": "Increases the Level of <strong>Violet Arc</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pulsating Witch",
+    "description": {
+      "0": "When Lisa takes the field, she applies 3 stacks of <strong>Violet Arc</strong>'s Conductive status onto nearby opponents.",
+      "1": "This effect can only occur once every 5s."
+    }
+  }
+}

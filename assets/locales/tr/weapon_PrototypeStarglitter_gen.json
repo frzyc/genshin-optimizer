@@ -1,0 +1,12 @@
+{
+  "name": "Prototip: Yıldız Parıltısı",
+  "description": "Kara Kaya Demirci Ocağında saklı bulunan kancalı bir mızrak. Keskin ucundaki süslemeler yıldızları andırır.",
+  "passiveName": "Büyü Bağımlısı",
+  "passiveDescription": {
+    "0": "Bir Element Becerisi kullanıldıktan sonra, 12 saniyeliğine Normal ve Yüklü Saldırı Hasarını <cryo>%8</cryo> artırır. 2 kademeye kadar birikir.",
+    "1": "Bir Element Becerisi kullanıldıktan sonra, 12 saniyeliğine Normal ve Yüklü Saldırı Hasarını <cryo>%10</cryo> artırır. 2 kademeye kadar birikir.",
+    "2": "Bir Element Becerisi kullanıldıktan sonra, 12 saniyeliğine Normal ve Yüklü Saldırı Hasarını <cryo>%12</cryo> artırır. 2 kademeye kadar birikir.",
+    "3": "Bir Element Becerisi kullanıldıktan sonra, 12 saniyeliğine Normal ve Yüklü Saldırı Hasarını <cryo>%14</cryo> artırır. 2 kademeye kadar birikir.",
+    "4": "Bir Element Becerisi kullanıldıktan sonra, 12 saniyeliğine Normal ve Yüklü Saldırı Hasarını <cryo>%16</cryo> artırır. 2 kademeye kadar birikir."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Cool Steel",
+  "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
+  "passiveName": "Bane of Water and Ice",
+  "passiveDescription": {
+    "0": "Increases DMG against opponents affected by Hydro or Cryo by <cryo>12%</cryo>.",
+    "1": "Increases DMG against opponents affected by Hydro or Cryo by <cryo>15%</cryo>.",
+    "2": "Increases DMG against opponents affected by Hydro or Cryo by <cryo>18%</cryo>.",
+    "3": "Increases DMG against opponents affected by Hydro or Cryo by <cryo>21%</cryo>.",
+    "4": "Increases DMG against opponents affected by Hydro or Cryo by <cryo>24%</cryo>."
+  }
+}

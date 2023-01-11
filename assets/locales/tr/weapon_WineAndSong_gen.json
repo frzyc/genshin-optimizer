@@ -1,0 +1,12 @@
+{
+  "name": "Şarap ve Şarkı",
+  "description": "Bestecisi uzun süre önce unutulmuş, aristokratik dönem eserlerini içeren bir şarkı kitabı. Bazı şarkılarda ünlü bir eşkıyanın hikayeleri anlatılır.",
+  "passiveName": "Sürekli Değişim",
+  "passiveDescription": {
+    "0": "Bir düşmanı bir Normal Saldırıyla vurmak 5 saniyeliğine Depar veya Alternatif Depar için Dayanıklılık tüketimini <cryo>%14</cryo> azaltır. Ayrıca bir Depar veya Alternatif Depar kullanıldığında 5 saniyeliğine Saldırı <cryo>%20</cryo> artar.",
+    "1": "Bir düşmanı bir Normal Saldırıyla vurmak 5 saniyeliğine Depar veya Alternatif Depar için Dayanıklılık tüketimini <cryo>%16</cryo> azaltır. Ayrıca bir Depar veya Alternatif Depar kullanıldığında 5 saniyeliğine Saldırı <cryo>%25</cryo> artar.",
+    "2": "Bir düşmanı bir Normal Saldırıyla vurmak 5 saniyeliğine Depar veya Alternatif Depar için Dayanıklılık tüketimini <cryo>%18</cryo> azaltır. Ayrıca bir Depar veya Alternatif Depar kullanıldığında 5 saniyeliğine Saldırı <cryo>%30</cryo> artar.",
+    "3": "Bir düşmanı bir Normal Saldırıyla vurmak 5 saniyeliğine Depar veya Alternatif Depar için Dayanıklılık tüketimini <cryo>%20</cryo> azaltır. Ayrıca bir Depar veya Alternatif Depar kullanıldığında 5 saniyeliğine Saldırı <cryo>%35</cryo> artar.",
+    "4": "Bir düşmanı bir Normal Saldırıyla vurmak 5 saniyeliğine Depar veya Alternatif Depar için Dayanıklılık tüketimini <cryo>%22</cryo> azaltır. Ayrıca bir Depar veya Alternatif Depar kullanıldığında 5 saniyeliğine Saldırı <cryo>%40</cryo> artar."
+  }
+}

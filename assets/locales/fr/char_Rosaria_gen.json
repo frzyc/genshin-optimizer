@@ -1,0 +1,154 @@
+{
+  "name": "Rosalia",
+  "title": "Rogue bienfaisance",
+  "description": "Une religieuse qui n'en a que l'apparence. Ses paroles sont acérées et son comportement, froid. Elle agit toujours seule.",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Lance expiatoire",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis sur la route."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT Chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Confession des péchés",
+    "description": {
+      "0": "Rosalia se déplace rapidement derrière sa cible qu'elle transperce et tranche de sa lance, infligeant des <cryo>DGT Cryo</cryo>.",
+      "1": "Ce mouvement ne fonctionne pas avec les ennemis trop grands.",
+      "2": "<br/>",
+      "3": "<i>Rosalia ne pardonne pas les péchés de ceux qui se confessent à elle. Au contraire, plus le péché est grand, plus sa punition glaciale est implacable.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sacrement mortel",
+    "description": {
+      "0": "Rosalia officie pour une prière pas comme les autres. Après avoir exécuté une attaque circulaire balayant les ennemis à proximité, Rosalia invoque une lance de glace qui frappe le sol. Les deux actions infligent des <cryo>DGT Cryo</cryo>.",
+      "1": "Tant que la lance de glace est active, elle émet de façon intermittente des ondes de froid, qui infligent des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
+      "2": "<br/>",
+      "3": "<i>Un procès est bien trop long, autant en arriver directement à la sentence et donner les derniers sacrements. Rosalia ne croyant pas à l'Archon Anémo, c'est d'autant plus accommodant.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT continus lance de glace",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Confession forcée",
+    "description": {
+      "0": "Le taux CRIT de Rosalia augmente de 12 % pendant 5 s lorsqu'elle frappe un ennemi de dos avec <strong>Confession des péchés</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Samaritain de l'ombre",
+    "description": {
+      "0": "Exécuter <strong>Sacrement mortel</strong> confère à tous les personnages de l'équipe proches (hormis Rosalia) un bonus de taux CRIT équivalant à 15 % du taux CRIT de Rosalia pendant 10 s.",
+      "1": "Le bonus de taux CRIT ainsi obtenu ne peut pas excéder 15 %."
+    }
+  },
+  "passive3": {
+    "name": "Balade nocturne",
+    "description": {
+      "0": "Augmente la VIT de déplacement des personnages de votre équipe pendant la nuit (18 h 00 - 06 h 00) de 10 %.",
+      "1": "Cet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Guide du pécheur",
+    "description": {
+      "0": "Lorsque les attaques de Rosalia infligent un coup CRIT, sa VIT d'attaque et les DGT des attaques normales augmentent de 10 % pendant 4 s."
+    }
+  },
+  "constellation2": {
+    "name": "Terre sacrée",
+    "description": {
+      "0": "Prolonge la durée de la lance de glace de <strong>Sacrement mortel</strong> de 4 s."
+    }
+  },
+  "constellation3": {
+    "name": "Rite de confession",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Confession des péchés</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Souffrance bénie",
+    "description": {
+      "0": "Rosalia récupère 5 pts d'énergie élémentaire lorsque <strong>Confession des péchés</strong> inflige un coup CRIT.",
+      "1": "Cet effet ne peut être déclenché qu'une fois par Confession des péchés."
+    }
+  },
+  "constellation5": {
+    "name": "Prière agonisante",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Sacrement mortel</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Châtiment divin",
+    "description": {
+      "0": "Les attaques de <strong>Sacrement mortel</strong> réduisent la RÉS physique des ennemis de 20 % pendant 10 s."
+    }
+  }
+}

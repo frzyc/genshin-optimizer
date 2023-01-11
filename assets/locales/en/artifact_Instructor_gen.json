@@ -1,0 +1,29 @@
+{
+  "setName": "Instructor",
+  "setEffects": {
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Instructor's Brooch",
+      "desc": "Whenever the instructor wore this brooch, it meant there would be no training sessions that day."
+    },
+    "plume": {
+      "name": "Instructor's Feather Accessory",
+      "desc": "Any instructor who has mastered the art of de-escalation knows to keep this accessory firmly in their grasp at all times."
+    },
+    "sands": {
+      "name": "Instructor's Pocket Watch",
+      "desc": "A stopwatch used not for general timekeeping but to measure the duration of a training session."
+    },
+    "goblet": {
+      "name": "Instructor's Tea Cup",
+      "desc": "It may seem like an ordinary tea cup to most. But to students, it is the symbol of the instructor's authority."
+    },
+    "circlet": {
+      "name": "Instructor's Cap",
+      "desc": "A standard-issue honorary instructor's cap, only granted to those who turn down a promotion."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Alabarda del Viento Epistolar",
+  "description": "Un estandarte que puede guiar hacia el viento. Los vientos que soplan por lugares idílicos no siempre son gentiles.",
+  "passiveName": "Viento inalcanzable",
+  "passiveDescription": {
+    "0": "Tras causar una Reacción Elemental, el ATQ aumenta en un <cryo>12%</cryo> y la Maestría Elemental aumenta en <cryo>48</cryo> pts. durante 10{NON_BREAK_SPACE}s.",
+    "1": "Tras causar una Reacción Elemental, el ATQ aumenta en un <cryo>15%</cryo> y la Maestría Elemental aumenta en <cryo>60</cryo> pts. durante 10{NON_BREAK_SPACE}s.",
+    "2": "Tras causar una Reacción Elemental, el ATQ aumenta en un <cryo>18%</cryo> y la Maestría Elemental aumenta en <cryo>72</cryo> pts. durante 10{NON_BREAK_SPACE}s.",
+    "3": "Tras causar una Reacción Elemental, el ATQ aumenta en un <cryo>21%</cryo> y la Maestría Elemental aumenta en <cryo>84</cryo> pts. durante 10{NON_BREAK_SPACE}s.",
+    "4": "Tras causar una Reacción Elemental, el ATQ aumenta en un <cryo>24%</cryo> y la Maestría Elemental aumenta en <cryo>96</cryo> pts. durante 10{NON_BREAK_SPACE}s."
+  }
+}

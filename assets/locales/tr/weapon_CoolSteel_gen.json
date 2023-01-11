@@ -1,0 +1,12 @@
+{
+  "name": "Soğuk Çelik",
+  "description": "Çelikten yapılmış sağlam bir kılıç, eski sahibinin efsanevi anıları hâlâ onunla yaşıyor.",
+  "passiveName": "Su ve Buzun Laneti",
+  "passiveDescription": {
+    "0": "Su veya Buzdan etkilenen düşmanlara verilen Hasarı <cryo>%12</cryo> artırır.",
+    "1": "Su veya Buzdan etkilenen düşmanlara verilen Hasarı <cryo>%15</cryo> artırır.",
+    "2": "Su veya Buzdan etkilenen düşmanlara verilen Hasarı <cryo>%18</cryo> artırır.",
+    "3": "Su veya Buzdan etkilenen düşmanlara verilen Hasarı <cryo>%21</cryo> artırır.",
+    "4": "Su veya Buzdan etkilenen düşmanlara verilen Hasarı <cryo>%24</cryo> artırır."
+  }
+}
