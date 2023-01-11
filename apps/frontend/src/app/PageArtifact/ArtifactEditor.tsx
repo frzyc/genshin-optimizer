@@ -2,7 +2,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
@@ -18,8 +18,8 @@ import { StatColoredWithUnit } from '../Components/StatDisplay';
 import StatIcon from '../Components/StatIcon';
 import Artifact from '../Data/Artifacts/Artifact';
 import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
-import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
 import { DatabaseContext } from '../Database/Database';
+import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
@@ -120,14 +120,15 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
       dispatchQueue({ type: "processed", ...processingResult })
   }, [processingResult, dispatchQueue])
 
-  const uploadFiles = useCallback((files: FileList) => {
+  const uploadFiles = useCallback((files?: FileList | null) => {
+    if (!files) return
     setShow(true)
-    dispatchQueue({ type: "upload", files: (files as any).map(file => ({ file, fileName: file.name })) })
+    dispatchQueue({ type: "upload", files: Array.from(files).map(file => ({ file, fileName: file.name })) })
   }, [dispatchQueue, setShow])
   const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
 
   useEffect(() => {
-    const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
+    const pasteFunc = (e: Event) => uploadFiles((e as ClipboardEvent).clipboardData?.files)
     allowUpload && window.addEventListener('paste', pasteFunc);
     return () => {
       if (allowUpload) window.removeEventListener('paste', pasteFunc)
@@ -135,9 +136,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   }, [uploadFiles, allowUpload])
 
   const onUpload = useCallback(
-    e => {
-      uploadFiles(e.target.files)
-      e.target.value = null // reset the value so the same file can be uploaded again...
+    (e: ChangeEvent<HTMLInputElement>) => {
+      if (!e.target) return
+      uploadFiles(e.target.files);
+      e.target.value = "" // reset the value so the same file can be uploaded again...
     },
     [uploadFiles],
   )
