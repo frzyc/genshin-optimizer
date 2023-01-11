@@ -18,7 +18,7 @@ describe("Database", () => {
   })
 
   test("Support roundtrip import-export", async () => {
-    let albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
+    const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
     const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
 
     const art1 = await randomizeArtifact({ slotKey: "circlet" }),

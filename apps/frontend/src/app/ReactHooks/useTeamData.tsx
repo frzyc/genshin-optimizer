@@ -21,7 +21,7 @@ type TeamDataBundle = {
   teamBundle: Dict<CharacterKey, CharBundle>
 }
 
-export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon): TeamData | undefined {
+export default function useTeamData(characterKey: CharacterKey | "", mainStatAssumptionLevel = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon): TeamData | undefined {
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
@@ -34,7 +34,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   return data
 }
 
-async function getTeamDataCalc(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
+async function getTeamDataCalc(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
   Promise<TeamData | undefined> {
   if (!characterKey) return
 
@@ -57,7 +57,7 @@ async function getTeamDataCalc(database: ArtCharDatabase, characterKey: Characte
   return data
 }
 
-export async function getTeamData(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
+export async function getTeamData(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
   Promise<TeamDataBundle | undefined> {
   if (!characterKey) return
   const character = database.chars.get(characterKey)

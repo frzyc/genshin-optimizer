@@ -27,7 +27,7 @@ export default function InventoryCard() {
     const chars = database.chars.keys
     const tally = objectKeyMap(allElements, () => 0)
     if (characterSheets) chars.forEach(ck => {
-      let elementKey = characterSheets(ck, gender)!.elementKey
+      const elementKey = characterSheets(ck, gender)!.elementKey
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
@@ -38,7 +38,7 @@ export default function InventoryCard() {
     const weapons = database.weapons.values
     const tally = objectKeyMap(allWeaponTypeKeys, () => 0)
     if (weaponSheets) weapons.forEach(wp => {
-      let type = weaponSheets(wp.key).weaponType
+      const type = weaponSheets(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }

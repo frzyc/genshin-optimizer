@@ -44,7 +44,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
     case "count": {
       const { exclusion } = data, arts = computeWorker.arts
       const setPerm = filterFeasiblePerm(artSetPerm(exclusion, [...new Set(Object.values(arts.values).flatMap(x => x.map(x => x.set!)))]), arts)
-      let counts = data.arts.map(_ => 0)
+      const counts = data.arts.map(_ => 0)
       for (const perm of setPerm)
         data.arts.forEach((arts, i) => counts[i] += countBuilds(filterArts(arts, perm)));
       result = { command: "count", counts }

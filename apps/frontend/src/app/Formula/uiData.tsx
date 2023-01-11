@@ -182,7 +182,7 @@ export class UIData {
     const [v1Node, v2Node, matchNode, unmatchNode] = node.operands
     const v1 = this.computeNode(v1Node), v2 = this.computeNode(v2Node)
     const matching = v1.value === v2.value
-    let result = this.computeNode(matching ? matchNode : unmatchNode)
+    const result = this.computeNode(matching ? matchNode : unmatchNode)
     return ((matching && node.emptyOn === "match") || (!matching && node.emptyOn === "unmatch"))
       ? makeEmpty(result.value) : result
   }

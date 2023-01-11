@@ -10,7 +10,7 @@ import DropdownButton from './DropdownMenu/DropdownButton';
 export default function LevelSelect({ level, ascension, setBoth, useLow = false }: { level: number, ascension: Ascension, setBoth: (action: { level?: number, ascension?: Ascension }) => void, useLow?: boolean }) {
   const { t } = useTranslation("ui")
   const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
-  const setLevel = useCallback((level: number = 1) => {
+  const setLevel = useCallback((level = 1) => {
     level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
     const ascension = ascensionMaxLevels.findIndex(ascenML => level <= ascenML) as Ascension
     setBoth({ level, ascension })

@@ -22,7 +22,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = KeyMap.unit(key), rollNum = rolls.length
 
-  let error: string = "", rollData: readonly number[] = [], allowedRolls = 0
+  let error = "", rollData: readonly number[] = [], allowedRolls = 0
 
   if (artifact) {
     // Account for the rolls it will need to fill all 4 substates, +1 for its base roll

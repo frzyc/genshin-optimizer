@@ -191,16 +191,16 @@ export default class KeyMap {
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]
   }
-  static getStr(key: string = ""): string | undefined {
+  static getStr(key = ""): string | undefined {
     return statMap[key]
   }
   static getArtStr(key: MainStatKey | SubstatKey): string {
     return statMap[key] + (showPercentKeys.includes(key) ? "%" : "")
   }
-  static get(key: string = "") {
+  static get(key = "") {
     return KeyMap.getStr(key) ?? key
   }
-  static getVariant(key: string = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
+  static getVariant(key = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
     const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
     if (trans) return trans
     const amp = Object.keys(amplifyingReactions).find(e => key.startsWith(e))
@@ -210,7 +210,7 @@ export default class KeyMap {
     if (key.includes("heal")) return "heal"
     return allElementsWithPhy.find(e => key.startsWith(e))
   }
-  static unit(key: string = ""): Unit {
+  static unit(key = ""): Unit {
     if (key.endsWith("_")) return "%"
     return ""
   }

@@ -36,7 +36,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
     let { key, level: rawLevel, ascension: rawAscension, refinement, location, lock } = obj
     if (!allWeaponKeys.includes(key)) return
-    let { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+    const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
     if (!locationCharacterKeys.includes(location)) location = ""
 

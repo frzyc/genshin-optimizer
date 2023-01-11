@@ -29,7 +29,7 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
     // Remove old setting
     if (oldIndex !== undefined && oldFilterArr) {
       oldFilterArr.splice(oldIndex, 1)
-      if (!!oldFilterArr.length) statFilters_[oldPathStr] = oldFilterArr
+      if (oldFilterArr.length) statFilters_[oldPathStr] = oldFilterArr
       else delete statFilters_[oldPathStr]
     }
     setStatFilters({ ...statFilters_ })
@@ -40,7 +40,7 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
     const pathStr = JSON.stringify(path)
     const filterArr = [...statFilters[pathStr]!]
     filterArr.splice(index, 1)
-    if (!!filterArr.length) statFilters_[pathStr] = filterArr
+    if (filterArr.length) statFilters_[pathStr] = filterArr
     else delete statFilters_[pathStr]
     setStatFilters({ ...statFilters_ })
   }, [setStatFilters, statFilters])

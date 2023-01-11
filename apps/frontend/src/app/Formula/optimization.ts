@@ -114,7 +114,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
 
     const factored: ComputeNode<OptNode> = { operation: wrap.common.operation, operands: arrayFromCounts(wrap.common.counts) }
 
-    let candidatesByOperation = new Map<Operation, [ComputeNode<OptNode>, Map<OptNode, number>][]>()
+    const candidatesByOperation = new Map<Operation, [ComputeNode<OptNode>, Map<OptNode, number>][]>()
     for (const operation of Object.keys(allCommutativeMonoidOperations))
       candidatesByOperation.set(operation, [])
 

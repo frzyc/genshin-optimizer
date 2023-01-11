@@ -78,7 +78,7 @@ export function pruneExclusion(nodes: OptNode[], exclusion: ArtSetExclusion): Op
   })
 }
 
-function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename: boolean = false): { nodes: OptNode[], arts: ArtifactsBySlot } {
+function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename = false): { nodes: OptNode[], arts: ArtifactsBySlot } {
   const affineNodes = new Set<OptNode>(), topLevelAffine = new Set<OptNode>()
 
   function visit(node: OptNode, isAffine: boolean) {

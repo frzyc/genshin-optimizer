@@ -39,7 +39,7 @@ export default function CharacterDisplay() {
   const navigate = useNavigate();
   const { database } = useContext(DatabaseContext)
   const onClose = useCallback(() => navigate("/characters"), [navigate])
-  let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
+  const { characterKey } = useParams<{ characterKey?: CharacterKey }>();
   const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)
   if (invalidKey)
     return <Navigate to="/characters" />
@@ -61,7 +61,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
   const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
-  let { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
+  const { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }
   const { t } = useTranslation(["charNames_gen", "page_character"])
 
   useTitle(useMemo(() => `${t(`charNames_gen:${charKeyToCharName(characterKey, gender)}`)} - ${t(`page_character:tabs.${tab}`)}`, [t, characterKey, gender, tab]))

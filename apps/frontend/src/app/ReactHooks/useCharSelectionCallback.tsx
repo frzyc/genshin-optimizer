@@ -15,7 +15,7 @@ export default function useCharSelectionCallback() {
   const { database } = useContext(DatabaseContext)
   const navigate = useNavigate()
   // Used to maintain the previous tab, if there is one
-  let { params: { tab = "" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "" } }
+  const { params: { tab = "" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "" } }
   const cb = useCallback(
     async (characterKey: CharacterKey) => {
       const character = database.chars.get(characterKey)

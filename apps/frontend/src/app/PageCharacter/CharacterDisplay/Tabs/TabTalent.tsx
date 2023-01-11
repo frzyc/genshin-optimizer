@@ -70,7 +70,7 @@ export default function CharacterTalentPane() {
         </Grid>}
         {/* passives */}
         {passivesList.map(([tKey, tText, asc]) => {
-          let enabled = ascension >= asc
+          const enabled = ascension >= asc
           if (!characterSheet.getTalentOfKey(tKey)) return null
           return <Grid item key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} {...talentSpacing} >
             <SkillDisplayCard
@@ -142,7 +142,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
 
   // Hide header if the header matches the current talent
   const hideHeader = (section: DocumentSection): boolean => {
-    let headerAction = section.header?.action
+    const headerAction = section.header?.action
     if (headerAction && (typeof headerAction !== "string")) {
       const key: string = headerAction.props.children.props.key18
       return key.includes(talentKey)

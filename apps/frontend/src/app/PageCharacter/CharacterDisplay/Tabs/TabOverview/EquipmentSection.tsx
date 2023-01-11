@@ -72,7 +72,7 @@ export default function EquipmentSection() {
           <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip extraButtons={<WeaponSwapButton weaponTypeKey={characterSheet.weaponTypeKey} />} />
         </Grid>
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
-          {!!data.get(input.art[slotKey].id).value ?
+          {data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
               extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}

@@ -29,7 +29,7 @@ function initCustomMultiTarget() {
     targets: []
   }
 }
-function initCustomTarget(path: string[], multi: number = 1): CustomTarget {
+function initCustomTarget(path: string[], multi = 1): CustomTarget {
   return {
     weight: multi,
     path,
@@ -115,7 +115,7 @@ export function CustomMultiTargetButton() {
     toIndex = clamp(toIndex - 1, 0, customMultiTarget.length - 1)
     if (fromIndex === toIndex) return
     const arr = [...customMultiTarget]
-    var element = arr[fromIndex];
+    const element = arr[fromIndex];
     arr.splice(fromIndex, 1);
     arr.splice(toIndex, 0, element);
     setCustomTargets(arr)

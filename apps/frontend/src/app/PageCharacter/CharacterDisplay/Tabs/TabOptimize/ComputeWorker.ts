@@ -6,7 +6,7 @@ export class ComputeWorker {
   builds: Build[] = []
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
-  threshold: number = -Infinity
+  threshold = -Infinity
   maxBuilds: number
   min: number[]
 

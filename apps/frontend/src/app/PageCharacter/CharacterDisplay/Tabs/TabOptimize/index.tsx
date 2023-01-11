@@ -95,7 +95,7 @@ export default function TabBuild() {
     const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
     if (!characterKey || !optimizationTarget) return
 
-    let cantTakeList: Set<LocationCharacterKey> = new Set()
+    const cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
       if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
@@ -122,7 +122,7 @@ export default function TabBuild() {
     const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
-    let unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
+    const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
     const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters)
@@ -161,7 +161,7 @@ export default function TabBuild() {
     nodes = optimize(nodes, {}, _ => false)
 
     const plotBaseNode = plotBaseNumNode ? nodes.pop() : undefined
-    let optimizationTargetNode = nodes.pop()!
+    const optimizationTargetNode = nodes.pop()!
 
     const wrap = { buildValues: Array(maxBuildsToShow).fill(0).map(_ => ({ src: "", val: -Infinity })) }
 

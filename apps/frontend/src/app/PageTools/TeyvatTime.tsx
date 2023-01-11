@@ -28,7 +28,7 @@ export default function TeyvatTime() {
   const [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
   //set a timer. timer resets when timezone is changed.
   useEffect(() => {
-    let setSecondTimeout = () => {
+    const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
       return setTimeout(() => {
         interval = setSecondTimeout()
@@ -45,8 +45,8 @@ export default function TeyvatTime() {
     resetTime = new Date(resetTime.getTime() + DAY_MS)
     resetTime.setUTCHours(4, 0, 0, 0)
   }
-  let remaningTimeMs = resetTime.getTime() - time.getTime()
-  let remainingResetString = timeString(remaningTimeMs)
+  const remaningTimeMs = resetTime.getTime() - time.getTime()
+  const remainingResetString = timeString(remaningTimeMs)
 
   return <CardDark>
     <Grid container sx={{ px: 2, py: 1 }} spacing={2}>

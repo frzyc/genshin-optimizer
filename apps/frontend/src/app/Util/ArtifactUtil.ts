@@ -30,7 +30,7 @@ export async function randomizeArtifact(base: Partial<IArtifact> = {}): Promise<
     remainingSubstats = remainingSubstats.filter(key => key !== substat.key)
   }
   for (let i = 0; i < numUpgradesOrUnlocks; i++) {
-    let substat = getRandomElementFromArray(substats)
+    const substat = getRandomElementFromArray(substats)
     substat.value += RollStat(substat.key as any)
   }
   for (const substat of substats)

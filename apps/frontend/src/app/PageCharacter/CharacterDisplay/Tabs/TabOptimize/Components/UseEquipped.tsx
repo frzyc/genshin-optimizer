@@ -35,7 +35,7 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
 
   const setPrioRank = useCallback((fromIndex, toIndex) => {
     const arr = [...equipmentPriority]
-    var element = arr[fromIndex];
+    const element = arr[fromIndex];
     arr.splice(fromIndex, 1);
     arr.splice(toIndex, 0, element);
     setPrio(arr)

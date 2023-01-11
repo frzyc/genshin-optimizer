@@ -48,16 +48,16 @@ export default function EXPCalc() {
   const [state, setState] = useState(() => initExpCalc())
   const { mora, level, curExp, goUnder, books, books: { advice, experience, wit } } = state
 
-  let milestoneLvl = milestone.find(lvl => lvl > level)!
+  const milestoneLvl = milestone.find(lvl => lvl > level)!
   let expReq = -curExp
   for (let i = level; i < Math.min(milestoneLvl, levelExp.length); i++)  expReq += levelExp[i]
-  let bookResult = calculateBooks(wit, experience, advice, expReq, goUnder) || []
-  let [numWit = 0, numExperience = 0, numAdvice = 0] = bookResult
-  let bookResultObj = { advice: numAdvice, experience: numExperience, wit: numWit }
-  let expFromBooks = numWit * 20000 + numExperience * 5000 + numAdvice * 1000
-  let moraCost = expFromBooks / 5
-  let expDiff = expReq - expFromBooks
-  let finalMora = mora - moraCost
+  const bookResult = calculateBooks(wit, experience, advice, expReq, goUnder) || []
+  const [numWit = 0, numExperience = 0, numAdvice = 0] = bookResult
+  const bookResultObj = { advice: numAdvice, experience: numExperience, wit: numWit }
+  const expFromBooks = numWit * 20000 + numExperience * 5000 + numAdvice * 1000
+  const moraCost = expFromBooks / 5
+  const expDiff = expReq - expFromBooks
+  const finalMora = mora - moraCost
   let finalExp = expFromBooks + curExp
   let finalLvl = level
   for (; finalLvl < Math.min(milestoneLvl, levelExp.length); finalLvl++) {
@@ -218,7 +218,7 @@ export default function EXPCalc() {
   </CardDark >
 }
 function BookDisplay(props) {
-  let { bookKey, value = 0, setValue, required = 0 } = props
+  const { bookKey, value = 0, setValue, required = 0 } = props
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography>{booksData[bookKey].name}</Typography>
@@ -251,11 +251,11 @@ function BookDisplay(props) {
 function calculateBooks(c20000, c5000, c1000, required, goUnder) {
   let current = goUnder ? Math.floor(required / 1000) : Math.ceil(required / 1000)
 
-  let r20000 = Math.min(Math.floor(current / 20), c20000)
+  const r20000 = Math.min(Math.floor(current / 20), c20000)
   current -= r20000 * 20
-  let r5000 = Math.min(Math.floor(current / 5), c5000)
+  const r5000 = Math.min(Math.floor(current / 5), c5000)
   current -= r5000 * 5
-  let r1000 = Math.min(current, c1000)
+  const r1000 = Math.min(current, c1000)
   current -= r1000
   if (goUnder || current === 0)
     return [r20000, r5000, r1000]

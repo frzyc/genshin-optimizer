@@ -323,7 +323,7 @@ const sheet: ICharacterSheet = {
 export default new CharacterSheet(sheet, data, assets);
 
 function calculateSkillCD(data: UIData, skillCD: number): string {
-  let cdFactor: number = 1.00;
+  let cdFactor = 1.00;
   let result: string = skillCD + "s"
   if (data.get(input.asc).value >= 1) {
     cdFactor = 0.80;

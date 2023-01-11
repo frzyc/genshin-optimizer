@@ -28,7 +28,7 @@ function inferInfoMut(data: Data, source?: Info["source"]): Data {
 
   return data
 }
-function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
+function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel = 0): Data {
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
   stats.push([art.mainStatKey, mainStatVal])

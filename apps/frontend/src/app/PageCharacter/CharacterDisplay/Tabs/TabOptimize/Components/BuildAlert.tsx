@@ -33,7 +33,7 @@ export default function BuildAlert({ status: { type, tested, failed, skipped, to
 
   const durationString = <Monospace>{timeStringMs(Math.round((finishTime ?? performance.now()) - (startTime ?? NaN)))}</Monospace>
 
-  let color = "success" as "success" | "warning" | "error"
+  const color = "success" as "success" | "warning" | "error"
   let title = "" as ReactNode
   let subtitle = "" as ReactNode
   let progress = undefined as undefined | number

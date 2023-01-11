@@ -161,8 +161,7 @@ function Overview() {
   </>
 }
 function KeyNamingPane() {
-  return <>
-    <CardDark>
+  return <CardDark>
       <CardContent>
         <Typography>Key Naming Convention</Typography>
       </CardContent>
@@ -175,7 +174,6 @@ function KeyNamingPane() {
         <Typography><code>"The Catch"</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>TheCatch</code></Typography>
       </CardContent>
     </CardDark>
-  </>
 }
 
 function StatKeyPane() {

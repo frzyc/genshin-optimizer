@@ -49,10 +49,10 @@ export function strPadLeft(string, pad, length) {
 
 //fuzzy compare strings. longer the distance, the higher the mismatch.
 export function hammingDistance(str1, str2) {
-  var dist = 0;
+  let dist = 0;
   str1 = str1.toLowerCase();
   str2 = str2.toLowerCase();
-  for (var i = 0, j = Math.max(str1.length, str2.length); i < j; i++) {
+  for (let i = 0, j = Math.max(str1.length, str2.length); i < j; i++) {
     let match = true
     if (!str1[i] || !str2[i] || str1[i] !== str2[i])
       match = false
@@ -154,7 +154,7 @@ export function toggleArr<T>(arr: T[], value: T) {
   return arr.includes(value) ? arr.filter(a => a !== value) : [...arr, value]
 }
 
-export function deepFreeze<T>(obj: T, layers: number = 5): T {
+export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
   if (typeof obj === "object")
     Object.values(Object.freeze(obj)).forEach(o => deepFreeze(o, layers--))

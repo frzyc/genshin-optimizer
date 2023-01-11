@@ -222,7 +222,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
     const { index, substatRolls } = allPossibleRolls[rolls.length]
     for (const roll of substatRolls) {
       rolls.push({ index, roll })
-      let newScore = Math.min(currentScore, -roll.length)
+      const newScore = Math.min(currentScore, -roll.length)
       if (newScore >= highestScore) // Scores won't get better, so we can skip.
         tryAllSubstats(rolls, newScore, total + roll.length)
       rolls.pop()
@@ -239,7 +239,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
     errors.push(`${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`)
 
   if (substats.some((substat) => !substat.key)) {
-    let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
+    const substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
     if (substat)
       errors.push(`Substat ${KeyMap.getStr(substat.key)} has > 1 roll, but not all substats are unlocked.`)
   }
