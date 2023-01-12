@@ -18,7 +18,7 @@ type FetterInfoExcelConfigData = {
   "avatarConstellationAfterTextMapHash": number//1057268155,
   "fetterId": number//122,
   "avatarId": CharacterId//10000034,
-  "openConds": any[]//[],
+  "openConds": number[]//[],
   "finishConds": object[]
   // [
   //   {
@@ -27,9 +27,9 @@ type FetterInfoExcelConfigData = {
   //   }
   // ]
 }
-const characterInfoSrc = JSON.parse(readDMJSON("ExcelBinOutput/FetterInfoExcelConfigData.json")) as FetterInfoExcelConfigData[]
+const fetterInfoExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/FetterInfoExcelConfigData.json")) as FetterInfoExcelConfigData[]
 
-const characterInfo = Object.fromEntries(characterInfoSrc.map(data =>
+const fetterInfoExcelConfigData = Object.fromEntries(fetterInfoExcelConfigDataSrc.map(data =>
   [data.avatarId, data])) as Record<CharacterId, FetterInfoExcelConfigData>
 
-export default characterInfo
+export default fetterInfoExcelConfigData

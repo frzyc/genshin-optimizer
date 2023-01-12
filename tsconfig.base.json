@@ -18,6 +18,7 @@
       "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
       "@genshin-optimizer/dm-localization": ["libs/dm/src/index.ts"],
       "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],
+      "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"]

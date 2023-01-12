@@ -75,13 +75,13 @@ export type ProudSkillExcelConfigData = {
   //     0.0
   // ]
 }
-const passivesSrc = JSON.parse(readDMJSON("ExcelBinOutput/ProudSkillExcelConfigData.json")) as ProudSkillExcelConfigData[]
+const proudSkillExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/ProudSkillExcelConfigData.json")) as ProudSkillExcelConfigData[]
 
-const skillGroups = {} as { [id: number]: ProudSkillExcelConfigData[] }
+const proudSkillExcelConfigData = {} as { [id: number]: ProudSkillExcelConfigData[] }
 
-passivesSrc.forEach(data => {
+proudSkillExcelConfigDataSrc.forEach(data => {
   const { proudSkillGroupId, level } = data
-  if (!skillGroups[proudSkillGroupId]) skillGroups[proudSkillGroupId] = []
-  skillGroups[proudSkillGroupId][level - 1] = data
+  if (!proudSkillExcelConfigData[proudSkillGroupId]) proudSkillExcelConfigData[proudSkillGroupId] = []
+  proudSkillExcelConfigData[proudSkillGroupId][level - 1] = data
 })
-export default skillGroups
+export default proudSkillExcelConfigData

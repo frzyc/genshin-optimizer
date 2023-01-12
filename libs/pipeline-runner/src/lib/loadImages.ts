@@ -1,4 +1,4 @@
-import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, constellations, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, skillDepot, skillGroups, talentsData, weaponExcelConfigData } from '@genshin-optimizer/dm'
+import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, proudSkillExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, weaponExcelConfigData } from '@genshin-optimizer/dm'
 import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import { FRONTEND_PATH } from './Util'
@@ -114,36 +114,36 @@ export default function loadImages() {
 
       // auto icons are shared.
       // layeredAssignment(characterAssetDump, [...keys, "auto"], talents[normal].skillIcon)
-      layeredAssignment(characterAssetDump, [...keys, "skill"], talentsData[skill].skillIcon)
+      layeredAssignment(characterAssetDump, [...keys, "skill"], avatarSkillExcelConfigData[skill].skillIcon)
 
       // burst has a more detailed _HD version
-      layeredAssignment(characterAssetDump, [...keys, "burst"], talentsData[burst].skillIcon + "_HD")
+      layeredAssignment(characterAssetDump, [...keys, "burst"], avatarSkillExcelConfigData[burst].skillIcon + "_HD")
       if (sprint)
-        layeredAssignment(characterAssetDump, [...keys, "sprint"], talentsData[sprint].skillIcon)
+        layeredAssignment(characterAssetDump, [...keys, "sprint"], avatarSkillExcelConfigData[sprint].skillIcon)
 
-      passive1.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive1"], skillGroups[passive1.proudSkillGroupId][0].icon)
-      passive2.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive2"], skillGroups[passive2.proudSkillGroupId][0].icon)
+      passive1.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive1"], proudSkillExcelConfigData[passive1.proudSkillGroupId][0].icon)
+      passive2.proudSkillGroupId && layeredAssignment(characterAssetDump, [...keys, "passive2"], proudSkillExcelConfigData[passive2.proudSkillGroupId][0].icon)
       if (passive3?.proudSkillGroupId)
-        layeredAssignment(characterAssetDump, [...keys, "passive3"], skillGroups[passive3.proudSkillGroupId][0].icon)
+        layeredAssignment(characterAssetDump, [...keys, "passive3"], proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon)
 
       // Seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId)
-        layeredAssignment(characterAssetDump, [...keys, "passive"], skillGroups[passive.proudSkillGroupId][0].icon)
+        layeredAssignment(characterAssetDump, [...keys, "passive"], proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon)
 
       talents.forEach((skId, i) => {
-        layeredAssignment(characterAssetDump, [...keys, `constellation${i + 1}`], constellations[skId].icon)
+        layeredAssignment(characterAssetDump, [...keys, `constellation${i + 1}`], avatarTalentExcelConfigData[skId].icon)
       })
     }
 
     if (candSkillDepotIds.length) { // Traveler
       const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
       const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
-      genTalentHash(["TravelerAnemo" + gender], skillDepot[anemo])
-      genTalentHash(["TravelerGeo" + gender], skillDepot[geo])
-      genTalentHash(["TravelerElectro" + gender], skillDepot[electro])
-      genTalentHash(["TravelerDendro" + gender], skillDepot[dendro])
+      genTalentHash(["TravelerAnemo" + gender], avatarSkillDepotExcelConfigData[anemo])
+      genTalentHash(["TravelerGeo" + gender], avatarSkillDepotExcelConfigData[geo])
+      genTalentHash(["TravelerElectro" + gender], avatarSkillDepotExcelConfigData[electro])
+      genTalentHash(["TravelerDendro" + gender], avatarSkillDepotExcelConfigData[dendro])
     } else {
-      genTalentHash(keys, skillDepot[skillDepotId])
+      genTalentHash(keys, avatarSkillDepotExcelConfigData[skillDepotId])
     }
   })
   // Dump out the asset List.

@@ -1,4 +1,4 @@
-import { artifactMainstatData, artifactSubstatData, artifactSubstatRollCorrection, artifactSubstatRollData, ascensionData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, characterExpCurve, characterInfo, constellations, equipAffixExcelConfigData, materialExcelConfigData, nameToKey, ProudSkillExcelConfigData, skillDepot, skillGroups, talentsData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
+import { artifactMainstatData, artifactSubstatData, artifactSubstatRollCorrection, artifactSubstatRollData, ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, materialExcelConfigData, nameToKey, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
 import { CharacterData, CharacterId, characterIdMap, CharacterKey, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, WeaponKey, weaponMap } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FRONTEND_PATH } from './Util'
@@ -9,7 +9,7 @@ export default function loadValues() {
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
     const { weaponType, qualityType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
-    const { infoBirthDay, infoBirthMonth, } = characterInfo[charid]
+    const { infoBirthDay, infoBirthMonth, } = fetterInfoExcelConfigData[charid]
     const result: CharacterData = {
       weaponTypeKey: weaponMap[weaponType],
       base: { hp: hpBase, atk: attackBase, def: defenseBase },
@@ -47,24 +47,24 @@ export default function loadValues() {
       const skillParam = skillParamUntrimmed.filter(arr => !arr.every(i => !i))
       layeredAssignment(characterSkillParamDump, keys, skillParam)
     }
-    parseSkillParams([...keys, "auto"], skillGroups[talentsData[normal].proudSkillGroupId])
+    parseSkillParams([...keys, "auto"], proudSkillExcelConfigData[avatarSkillExcelConfigData[normal].proudSkillGroupId])
 
-    parseSkillParams([...keys, "skill"], skillGroups[talentsData[skill].proudSkillGroupId])
-    parseSkillParams([...keys, "burst"], skillGroups[talentsData[burst].proudSkillGroupId])
+    parseSkillParams([...keys, "skill"], proudSkillExcelConfigData[avatarSkillExcelConfigData[skill].proudSkillGroupId])
+    parseSkillParams([...keys, "burst"], proudSkillExcelConfigData[avatarSkillExcelConfigData[burst].proudSkillGroupId])
 
     if (sprint)
-      parseSkillParams([...keys, "sprint"], skillGroups[talentsData[sprint].proudSkillGroupId])
+      parseSkillParams([...keys, "sprint"], proudSkillExcelConfigData[avatarSkillExcelConfigData[sprint].proudSkillGroupId])
 
-    passive1.proudSkillGroupId && parseSkillParams([...keys, "passive1"], skillGroups[passive1.proudSkillGroupId])
-    passive2.proudSkillGroupId && parseSkillParams([...keys, "passive2"], skillGroups[passive2.proudSkillGroupId])
+    passive1.proudSkillGroupId && parseSkillParams([...keys, "passive1"], proudSkillExcelConfigData[passive1.proudSkillGroupId])
+    passive2.proudSkillGroupId && parseSkillParams([...keys, "passive2"], proudSkillExcelConfigData[passive2.proudSkillGroupId])
     if (passive3?.proudSkillGroupId)
-      parseSkillParams([...keys, "passive3"], skillGroups[passive3.proudSkillGroupId])
+      parseSkillParams([...keys, "passive3"], proudSkillExcelConfigData[passive3.proudSkillGroupId])
     //seems to be only used by sangonomiyaKokomi
     if (passive?.proudSkillGroupId)
-      parseSkillParams([...keys, "passive"], skillGroups[passive.proudSkillGroupId])
+      parseSkillParams([...keys, "passive"], proudSkillExcelConfigData[passive.proudSkillGroupId])
 
     talents.forEach((skId, i) =>
-      layeredAssignment(characterSkillParamDump, [...keys, `constellation${i + 1}`], constellations[skId].paramList.filter(i => i).map(value => extrapolateFloat(value))))
+      layeredAssignment(characterSkillParamDump, [...keys, `constellation${i + 1}`], avatarTalentExcelConfigData[skId].paramList.filter(i => i).map(value => extrapolateFloat(value))))
   }
   Object.entries(avatarExcelConfigData).forEach(([ci, charData]) => {
     const charid: CharacterId = ci as unknown as CharacterId
@@ -73,12 +73,12 @@ export default function loadValues() {
     if (candSkillDepotIds.length) { //Traveler
       const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
       const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
-      genTalentHash(["TravelerAnemo" + gender], skillDepot[anemo])
-      genTalentHash(["TravelerGeo" + gender], skillDepot[geo])
-      genTalentHash(["TravelerElectro" + gender], skillDepot[electro])
-      genTalentHash(["TravelerDendro" + gender], skillDepot[dendro])
+      genTalentHash(["TravelerAnemo" + gender], avatarSkillDepotExcelConfigData[anemo])
+      genTalentHash(["TravelerGeo" + gender], avatarSkillDepotExcelConfigData[geo])
+      genTalentHash(["TravelerElectro" + gender], avatarSkillDepotExcelConfigData[electro])
+      genTalentHash(["TravelerDendro" + gender], avatarSkillDepotExcelConfigData[dendro])
     } else {
-      genTalentHash([characterIdMap[charid]], skillDepot[skillDepotId])
+      genTalentHash([characterIdMap[charid]], avatarSkillDepotExcelConfigData[skillDepotId])
     }
   })
   dumpFile(`${__dirname}/allChar_gen.json`, characterSkillParamDump)
@@ -128,7 +128,7 @@ export default function loadValues() {
 
   //exp curve to generate  stats at every level
   dumpFile(`${FRONTEND_PATH}/app/Data/Weapons/expCurve_gen.json`, weaponCurveExcelConfigData)
-  dumpFile(`${FRONTEND_PATH}/app/Data/Characters/expCurve_gen.json`, characterExpCurve)
+  dumpFile(`${FRONTEND_PATH}/app/Data/Characters/expCurve_gen.json`, avatarCurveExcelConfigData)
 
   //dump artifact data
   dumpFile(`${FRONTEND_PATH}/app/Data/Artifacts/artifact_sub_gen.json`, artifactSubstatData)

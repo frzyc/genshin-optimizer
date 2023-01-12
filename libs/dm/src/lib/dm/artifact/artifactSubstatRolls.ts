@@ -98,7 +98,7 @@ function getRolls(key: string, possibleRolls: number[], maxRolls: number, rarity
 }
 
 export const artifactSubstatRollData = Object.fromEntries(Object.entries(rollsForRarity).map(([rarity, maxRolls]) =>
-  [rarity, Object.fromEntries(Object.entries(artifactSubstatData[rarity]).map(([statKey, rolls]) =>
+  [rarity, Object.fromEntries(Object.entries(artifactSubstatData[parseInt(rarity)]).map(([statKey, rolls]) =>
     [statKey, getRolls(statKey, rolls as number[], maxRolls, rarity)]))]))
 
 type RollValue = {

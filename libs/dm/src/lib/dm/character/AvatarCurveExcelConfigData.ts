@@ -28,7 +28,7 @@ type AvatarCurveExcelConfigData = {
   ]
 }
 
-const characterExpCurveSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarCurveExcelConfigData.json")) as AvatarCurveExcelConfigData[]
+const avatarCurveExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarCurveExcelConfigData.json")) as AvatarCurveExcelConfigData[]
 
 export type CharacterExpCurveData = {
   GROW_CURVE_HP_S4: {
@@ -40,13 +40,16 @@ export type CharacterExpCurveData = {
   GROW_CURVE_HP_S5: {
     [level: number]: number
   }
+  GROW_CURVE_ATTACK_S5: {
+    [level: number]: number
+  },
 }
 
-const characterExpCurve = {} as CharacterExpCurveData
-characterExpCurveSrc.forEach(({ level, curveInfos }) =>
+const avatarCurveExcelConfigData = {} as CharacterExpCurveData
+avatarCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
   curveInfos.forEach(({ type, value }) => {
-    if (!characterExpCurve[type]) characterExpCurve[type] = {} // TODO: [0]
-    characterExpCurve[type][level] = extrapolateFloat(value)
+    if (!avatarCurveExcelConfigData[type]) avatarCurveExcelConfigData[type] = {} // TODO: [0]
+    avatarCurveExcelConfigData[type][level] = extrapolateFloat(value)
   }))
 
-export default characterExpCurve
+export default avatarCurveExcelConfigData

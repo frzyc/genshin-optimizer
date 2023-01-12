@@ -360,6 +360,7 @@ export const SubStatPropTypeMap = {
   FIGHT_PROP_ELEMENT_MASTERY: "eleMas",
   FIGHT_PROP_CHARGE_EFFICIENCY: "enerRech_",
 } as const
+export type DSubstatKey = keyof typeof SubStatPropTypeMap
 export type SubstatKey = typeof SubStatPropTypeMap[keyof typeof SubStatPropTypeMap]
 
 const { FIGHT_PROP_DEFENSE, ...mainPart } = SubStatPropTypeMap//subtract flat def

@@ -1,4 +1,4 @@
-import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, characterInfo, constellations, equipAffixExcelConfigData, languageMap, materialExcelConfigData, nameToKey, reliquarySetExcelConfigData, skillDepot, skillGroups, talentsData, TextMapEN, weaponExcelConfigData } from "@genshin-optimizer/dm"
+import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, languageMap, materialExcelConfigData, nameToKey, proudSkillExcelConfigData, reliquarySetExcelConfigData, TextMapEN, weaponExcelConfigData } from "@genshin-optimizer/dm"
 import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, Language, weaponIdMap } from "@genshin-optimizer/pipeline"
 import { crawlObject, layeredAssignment } from "@genshin-optimizer/util"
 import { existsSync, mkdirSync } from "fs"
@@ -10,7 +10,7 @@ export default function loadTrans() {
   //generate the MapHashes for localization for characters
   Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { nameTextMapHash, descTextMapHash, skillDepotId, candSkillDepotIds } = charData
-    const { avatarTitleTextMapHash, avatarConstellationBeforTextMapHash } = characterInfo[charid]
+    const { avatarTitleTextMapHash, avatarConstellationBeforTextMapHash } = fetterInfoExcelConfigData[charid]
 
     mapHashData.charNames[characterIdMap[charid]] = nameTextMapHash
     const charKey = characterIdMap[charid]
@@ -22,54 +22,54 @@ export default function loadTrans() {
     !mapHashData.char[characterIdMap[charid]].constellationName && layeredAssignment(mapHashData, ["char", charKey, "constellationName"], avatarConstellationBeforTextMapHash)
     function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
       const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
-      layeredAssignment(mapHashData, [...keys, "auto", "name"], [talentsData[normal].nameTextMapHash, "autoName"])
-      layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talentsData[normal].descTextMapHash, "autoFields"])
-      layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], skillGroups[talentsData[normal].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
+      layeredAssignment(mapHashData, [...keys, "auto", "name"], [avatarSkillExcelConfigData[normal].nameTextMapHash, "autoName"])
+      layeredAssignment(mapHashData, [...keys, "auto", "fields"], [avatarSkillExcelConfigData[normal].descTextMapHash, "autoFields"])
+      layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], proudSkillExcelConfigData[avatarSkillExcelConfigData[normal].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
 
-      layeredAssignment(mapHashData, [...keys, "skill", "name"], talentsData[skill].nameTextMapHash)
-      layeredAssignment(mapHashData, [...keys, "skill", "description"], [talentsData[skill].descTextMapHash, "paragraph"])
-      layeredAssignment(mapHashData, [...keys, "skill", "skillParams"], skillGroups[talentsData[skill].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
+      layeredAssignment(mapHashData, [...keys, "skill", "name"], avatarSkillExcelConfigData[skill].nameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "skill", "description"], [avatarSkillExcelConfigData[skill].descTextMapHash, "paragraph"])
+      layeredAssignment(mapHashData, [...keys, "skill", "skillParams"], proudSkillExcelConfigData[avatarSkillExcelConfigData[skill].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
 
-      layeredAssignment(mapHashData, [...keys, "burst", "name"], talentsData[burst].nameTextMapHash)
-      layeredAssignment(mapHashData, [...keys, "burst", "description"], [talentsData[burst].descTextMapHash, "paragraph"])
-      layeredAssignment(mapHashData, [...keys, "burst", "skillParams"], skillGroups[talentsData[burst].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
+      layeredAssignment(mapHashData, [...keys, "burst", "name"], avatarSkillExcelConfigData[burst].nameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "burst", "description"], [avatarSkillExcelConfigData[burst].descTextMapHash, "paragraph"])
+      layeredAssignment(mapHashData, [...keys, "burst", "skillParams"], proudSkillExcelConfigData[avatarSkillExcelConfigData[burst].proudSkillGroupId][0].paramDescList.map(id => [id, "skillParam"]))
 
       if (sprint) {
-        layeredAssignment(mapHashData, [...keys, "sprint", "name"], talentsData[sprint].nameTextMapHash)
-        layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talentsData[sprint].descTextMapHash, "paragraph"])
+        layeredAssignment(mapHashData, [...keys, "sprint", "name"], avatarSkillExcelConfigData[sprint].nameTextMapHash)
+        layeredAssignment(mapHashData, [...keys, "sprint", "description"], [avatarSkillExcelConfigData[sprint].descTextMapHash, "paragraph"])
       }
 
-      passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "name"], skillGroups[passive1.proudSkillGroupId][0].nameTextMapHash)
-      passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "description"], [skillGroups[passive1.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+      passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "name"], proudSkillExcelConfigData[passive1.proudSkillGroupId][0].nameTextMapHash)
+      passive1.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive1", "description"], [proudSkillExcelConfigData[passive1.proudSkillGroupId][0].descTextMapHash, "paragraph"])
 
-      passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "name"], skillGroups[passive2.proudSkillGroupId][0].nameTextMapHash)
-      passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "description"], [skillGroups[passive2.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+      passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "name"], proudSkillExcelConfigData[passive2.proudSkillGroupId][0].nameTextMapHash)
+      passive2.proudSkillGroupId && layeredAssignment(mapHashData, [...keys, "passive2", "description"], [proudSkillExcelConfigData[passive2.proudSkillGroupId][0].descTextMapHash, "paragraph"])
 
       if (passive3?.proudSkillGroupId) {
-        layeredAssignment(mapHashData, [...keys, "passive3", "name"], skillGroups[passive3.proudSkillGroupId][0].nameTextMapHash)
-        layeredAssignment(mapHashData, [...keys, "passive3", "description"], [skillGroups[passive3.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+        layeredAssignment(mapHashData, [...keys, "passive3", "name"], proudSkillExcelConfigData[passive3.proudSkillGroupId][0].nameTextMapHash)
+        layeredAssignment(mapHashData, [...keys, "passive3", "description"], [proudSkillExcelConfigData[passive3.proudSkillGroupId][0].descTextMapHash, "paragraph"])
       }
       //seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId) {
-        layeredAssignment(mapHashData, [...keys, "passive", "name"], skillGroups[passive.proudSkillGroupId][0].nameTextMapHash)
-        layeredAssignment(mapHashData, [...keys, "passive", "description"], [skillGroups[passive.proudSkillGroupId][0].descTextMapHash, "paragraph"])
+        layeredAssignment(mapHashData, [...keys, "passive", "name"], proudSkillExcelConfigData[passive.proudSkillGroupId][0].nameTextMapHash)
+        layeredAssignment(mapHashData, [...keys, "passive", "description"], [proudSkillExcelConfigData[passive.proudSkillGroupId][0].descTextMapHash, "paragraph"])
       }
 
       talents.forEach((skId, i) => {
-        layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "name"], constellations[skId].nameTextMapHash)
-        layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "description"], [constellations[skId].descTextMapHash, "paragraph"])
+        layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "name"], avatarTalentExcelConfigData[skId].nameTextMapHash)
+        layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "description"], [avatarTalentExcelConfigData[skId].descTextMapHash, "paragraph"])
       })
     }
 
     if (candSkillDepotIds.length) { //Traveler
       const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
       const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
-      genTalentHash(["char", "TravelerAnemo" + gender], skillDepot[anemo])
-      genTalentHash(["char", "TravelerGeo" + gender], skillDepot[geo])
-      genTalentHash(["char", "TravelerElectro" + gender], skillDepot[electro])
-      genTalentHash(["char", "TravelerDendro" + gender], skillDepot[dendro])
+      genTalentHash(["char", "TravelerAnemo" + gender], avatarSkillDepotExcelConfigData[anemo])
+      genTalentHash(["char", "TravelerGeo" + gender], avatarSkillDepotExcelConfigData[geo])
+      genTalentHash(["char", "TravelerElectro" + gender], avatarSkillDepotExcelConfigData[electro])
+      genTalentHash(["char", "TravelerDendro" + gender], avatarSkillDepotExcelConfigData[dendro])
     } else {
-      genTalentHash(["char", charKey], skillDepot[skillDepotId])
+      genTalentHash(["char", charKey], avatarSkillDepotExcelConfigData[skillDepotId])
     }
   })
 

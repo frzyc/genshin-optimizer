@@ -24,7 +24,7 @@ type AvatarSkillExcelConfigData = {
   "proudSkillGroupId": number//3439,
   "globalValueKey": string//""
 }
-const talentsSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarSkillExcelConfigData.json")) as AvatarSkillExcelConfigData[]
-const talentsData = Object.fromEntries(talentsSrc.map(data => [data.id, data])) as { [id: number]: AvatarSkillExcelConfigData }
+const avatarSkillExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarSkillExcelConfigData.json")) as AvatarSkillExcelConfigData[]
+const avatarSkillExcelConfigData = Object.fromEntries(avatarSkillExcelConfigDataSrc.map(data => [data.id, data])) as { [id: number]: AvatarSkillExcelConfigData }
 
-export default talentsData
+export default avatarSkillExcelConfigData

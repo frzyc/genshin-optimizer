@@ -3,8 +3,8 @@ import { readDMJSON } from "../../util"
 
 type AvatarPromoteExcelConfigData = {
   "avatarPromoteId": number//2,
-  "promoteAudio": number//1,
-  "promoteLevel": string//"",
+  "promoteAudio": string//"",
+  "promoteLevel": number//1,
   "scoinCost"?: number//20000,
   "costItems": Array<{
     "id": number//104161,

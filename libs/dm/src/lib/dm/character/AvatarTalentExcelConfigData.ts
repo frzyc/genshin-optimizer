@@ -9,7 +9,7 @@ type AvatarTalentExcelConfigData = {
   "mainCostItemId": number//1129,
   "mainCostItemCount": number//1,
   "openConfig": string//"Klee_Constellation_3",
-  "addProps": any[]
+  "addProps": object[]
   // [
   //     {},
   //     {}
@@ -24,7 +24,7 @@ type AvatarTalentExcelConfigData = {
   //     0.0
   // ]
 }
-const constellationsSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarTalentExcelConfigData.json")) as AvatarTalentExcelConfigData[]
-const constellations = Object.fromEntries(constellationsSrc.map(data => [data.talentId, data])) as { [id: number]: AvatarTalentExcelConfigData }
+const avatarTalentExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarTalentExcelConfigData.json")) as AvatarTalentExcelConfigData[]
+const avatarTalentExcelConfigData = Object.fromEntries(avatarTalentExcelConfigDataSrc.map(data => [data.talentId, data])) as { [id: number]: AvatarTalentExcelConfigData }
 
-export default constellations
+export default avatarTalentExcelConfigData
