@@ -188,6 +188,10 @@ const sheet: ICharacterSheet = {
           hit: {
             fields: [{
               node: nodeC4,
+            }, {
+              text: stg("duration"),
+              value: dm.constellation4.duration,
+              unit: "s"
             }]
           }
         }
