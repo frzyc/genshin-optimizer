@@ -31,7 +31,7 @@ const sheet: IWeaponSheet = {
     value: condStack,
     path: condStackPath,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
-    name: st("hitOps.none"),
+    name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 4).map(i => [i, {
       name: st("stack", { count: i }),
       fields: [{
