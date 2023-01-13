@@ -1,20 +1,18 @@
 import { Add } from '@mui/icons-material';
-import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, ToggleButton, Typography } from '@mui/material';
+import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
-import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
-import { StarsDisplay } from '../Components/StarDisplay';
+import RarityToggle from '../Components/ToggleButton/RarityToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allRarities, WeaponKey } from '../Types/consts';
-import { handleMultiSelect } from '../Util/MultiSelect';
+import { allRarities, allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
@@ -28,7 +26,6 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 const sortKeys = Object.keys(weaponSortMap)
-const rarityHandler = handleMultiSelect([...allRarities])
 export default function PageWeapon() {
   const { t } = useTranslation(["page_weapon", "ui", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
@@ -113,6 +110,18 @@ export default function PageWeapon() {
       resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
+  const weaponTotals = useMemo(() => {
+    const tot = dbDirty && Object.fromEntries(allWeaponTypeKeys.map(k => [k, 0])) as Record<WeaponTypeKey, number>
+    if (weaponSheets) database.weapons.values.forEach(w => tot[weaponSheets(w.key).weaponType]++)
+    return tot
+  }, [weaponSheets, database, dbDirty])
+
+  const weaponRarityTotals = useMemo(() => {
+    const tot = dbDirty && Object.fromEntries(allRarities.map(k => [k, 0])) as Record<Rarity, number>
+    if (weaponSheets) database.weapons.values.forEach(w => tot[weaponSheets(w.key).rarity]++)
+    return tot
+  }, [weaponSheets, database, dbDirty])
+
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
       <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
@@ -129,12 +138,10 @@ export default function PageWeapon() {
     <CardDark ref={invScrollRef}><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
         </Grid>
         <Grid item>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => database.displayWeapon.set({ rarity: rarityHandler(rarity, star) })}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
-          </SolidToggleButtonGroup>
+          <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
           <TextField

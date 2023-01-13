@@ -75,21 +75,21 @@ function ArtifactChip() {
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.arts.followAny(() => setDirty()), [database, setDirty])
   const total = useMemo(() => dirty && database.arts.keys.length, [dirty, database,])
-  return <Chip label={<strong>{total}</strong>} />
+  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function CharacterChip() {
   const { database } = useContext(DatabaseContext)
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.chars.followAny(() => setDirty()), [database, setDirty])
   const total = useMemo(() => dirty && database.chars.keys.length, [dirty, database,])
-  return <Chip label={<strong>{total}</strong>} />
+  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function WeaponChip() {
   const { database } = useContext(DatabaseContext)
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.weapons.followAny(() => setDirty()), [database, setDirty])
   const total = useMemo(() => dirty && database.weapons.keys.length, [database, dirty])
-  return <Chip label={<strong>{total}</strong>} />
+  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 const links = [{

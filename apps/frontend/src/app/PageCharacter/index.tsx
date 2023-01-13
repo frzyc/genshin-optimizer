@@ -13,13 +13,14 @@ import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import CharacterSheet from '../Data/Characters/CharacterSheet';
+import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBMeta from '../ReactHooks/useDBMeta';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { CharacterKey, charKeyToCharName } from '../Types/consts';
+import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
@@ -98,6 +99,21 @@ export default function PageCharacter() {
   }, [charKeyList, pageIndex, maxNumToDisplay])
 
   const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
+  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
+  const weaponTotals = useMemo(() => {
+    const tot = dbDirty && Object.fromEntries(allWeaponTypeKeys.map(k => [k, 0])) as Record<WeaponTypeKey, number>
+    if (weaponSheets) database.chars.values.forEach(char => {
+      const weapon = database.weapons.get(char.equippedWeapon)
+      weapon && tot[weaponSheets(weapon.key).weaponType]++
+    })
+    return tot
+  }, [weaponSheets, database, dbDirty])
+
+  const elementTotals = useMemo(() => {
+    const tot = dbDirty && Object.fromEntries(allElements.map(k => [k, 0])) as Record<ElementKey, number>
+    if (characterSheets) database.chars.values.forEach(char => tot[characterSheets(char.key, database.gender).elementKey]++)
+    return tot
+  }, [characterSheets, database, dbDirty])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
@@ -106,12 +122,14 @@ export default function PageCharacter() {
     <CardDark ref={invScrollRef} ><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
         </Grid>
         <Grid item>
-          <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} size="small" />
+          <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} totals={elementTotals} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
+        </Grid>
+        <Grid item>
           <TextField
             autoFocus
             value={searchTerm}
@@ -124,20 +142,14 @@ export default function PageCharacter() {
             }}
           />
         </Grid>
-        <Grid item >
-          <SortByButton sx={{ height: "100%" }}
-            sortKeys={sortKeys} value={sortType} onChange={sortType => database.displayCharacter.set({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
-        </Grid>
       </Grid>
-      <Grid container alignItems="flex-end">
-        <Grid item flexGrow={1}>
-          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
-        </Grid>
-        <Grid item>
-          <ShowingCharacter numShowing={charKeyListToShow.length} total={totalShowing} t={t} />
-        </Grid>
-      </Grid>
+      <Box display="flex" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap">
+        <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        <ShowingCharacter numShowing={charKeyListToShow.length} total={totalShowing} t={t} />
+        <SortByButton
+          sortKeys={sortKeys} value={sortType} onChange={sortType => database.displayCharacter.set({ sortType })}
+          ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
+      </Box>
     </CardContent></CardDark>
     <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<Add />} >{t`addNew`}</Button>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
