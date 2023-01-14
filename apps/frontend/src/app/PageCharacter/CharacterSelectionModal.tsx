@@ -1,4 +1,4 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Tooltip, tooltipClasses, TooltipProps, Typography, styled } from "@mui/material";
+import { Box, CardActionArea, CardContent, Divider, Grid, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
 import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
@@ -20,9 +20,10 @@ import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey, WeaponTypeKey, ElementKey } from "../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../Types/consts";
 import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
+import { catTotal } from "../Util/totalUtils";
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
@@ -61,17 +62,17 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
       .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
   }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm, filter])
 
-  const weaponTotals = useMemo(() => {
-    const tot = Object.fromEntries(allWeaponTypeKeys.map(k => [k, 0])) as Record<WeaponTypeKey, number>
-    if (characterSheets) allCharacterKeys.forEach(ck => tot[characterSheets(ck, database.gender).weaponTypeKey]++)
-    return tot
-  }, [characterSheets, database])
+  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => characterSheets && allCharacterKeys.forEach(ck => {
+    const wtk = characterSheets(ck, database.gender).weaponTypeKey
+    ct[wtk].total++
+    if (characterKeyList.includes(ck)) ct[wtk].current++
+  })), [characterSheets, characterKeyList, database])
 
-  const elementTotals = useMemo(() => {
-    const tot = Object.fromEntries(allElements.map(k => [k, 0])) as Record<ElementKey, number>
-    if (characterSheets) allCharacterKeys.forEach(ck => tot[characterSheets(ck, database.gender).elementKey]++)
-    return tot
-  }, [characterSheets, database])
+  const elementTotals = useMemo(() => catTotal(allElements, ct => characterSheets && allCharacterKeys.forEach(ck => {
+    const ele = characterSheets(ck, database.gender).elementKey
+    ct[ele].total++
+    if (characterKeyList.includes(ck)) ct[ele].current++
+  })), [characterSheets, characterKeyList, database])
 
   if (!characterSheets) return null
 

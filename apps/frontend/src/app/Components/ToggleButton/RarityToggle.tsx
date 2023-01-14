@@ -6,7 +6,7 @@ import { StarsDisplay } from "../StarDisplay";
 type RarityToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"> & {
   onChange: (value: Rarity[]) => void
   value: Rarity[],
-  totals: Record<Rarity, number>
+  totals: Record<Rarity, Displayable>
 }
 const rarityHandler = handleMultiSelect([...allRarities])
 export default function RarityToggle({ value, totals, onChange, ...props }: RarityToggleProps) {

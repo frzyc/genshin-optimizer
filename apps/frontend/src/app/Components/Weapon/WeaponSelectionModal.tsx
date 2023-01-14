@@ -6,6 +6,7 @@ import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../Database/Database"
 import usePromise from "../../ReactHooks/usePromise"
 import { allRarities, allWeaponKeys, allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from "../../Types/consts"
+import { catTotal } from "../../Util/totalUtils"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
@@ -39,23 +40,27 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const { rarity } = state
-  const weaponIdList = !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
-    .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
-    .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
-    .filter(wKey => rarity.includes(weaponSheets(wKey).rarity))
-    .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity)
+  const weaponIdList = useMemo(() =>
+    !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
+      .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
+      .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
+      .filter(wKey => rarity.includes(weaponSheets(wKey).rarity))
+      .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity),
+    [deferredSearchTerm, filter, rarity, t, weaponFilter, weaponSheets])
 
-  const weaponTotals = useMemo(() => {
-    const tot = Object.fromEntries(allWeaponTypeKeys.map(k => [k, 0])) as Record<WeaponTypeKey, number>
-    if (weaponSheets) allWeaponKeys.forEach(wk => tot[weaponSheets(wk).weaponType]++)
-    return tot
-  }, [weaponSheets])
+  const weaponTotals = useMemo(() =>
+    catTotal(allWeaponTypeKeys, ct => weaponSheets && allWeaponKeys.forEach(wk => {
+      const wtk = weaponSheets(wk).weaponType
+      ct[wtk].total++
+      if (weaponIdList.includes(wk)) ct[wtk].current++
+    })), [weaponSheets, weaponIdList])
 
-  const weaponRarityTotals = useMemo(() => {
-    const tot = Object.fromEntries(allRarities.map(k => [k, 0])) as Record<Rarity, number>
-    if (weaponSheets) allWeaponKeys.forEach(wk => tot[weaponSheets(wk).rarity]++)
-    return tot
-  }, [weaponSheets])
+  const weaponRarityTotals = useMemo(() =>
+    catTotal(allRarities, ct => weaponSheets && allWeaponKeys.forEach(wk => {
+      const wr = weaponSheets(wk).rarity
+      ct[wr].total++
+      if (weaponIdList.includes(wk)) ct[wr].current++
+    })), [weaponSheets, weaponIdList])
 
   if (!weaponSheets) return null
 

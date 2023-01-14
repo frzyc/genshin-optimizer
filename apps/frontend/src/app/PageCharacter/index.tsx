@@ -23,7 +23,8 @@ import usePromise from '../ReactHooks/usePromise';
 import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
-import { clamp } from '../Util/Util';
+import { catTotal } from '../Util/totalUtils';
+import { clamp, objectMap } from '../Util/Util';
 const CharacterSelectionModal = React.lazy(() => import('./CharacterSelectionModal'))
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
@@ -100,20 +101,22 @@ export default function PageCharacter() {
 
   const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
-  const weaponTotals = useMemo(() => {
-    const tot = dbDirty && Object.fromEntries(allWeaponTypeKeys.map(k => [k, 0])) as Record<WeaponTypeKey, number>
-    if (weaponSheets) database.chars.values.forEach(char => {
-      const weapon = database.weapons.get(char.equippedWeapon)
-      weapon && tot[weaponSheets(weapon.key).weaponType]++
-    })
-    return tot
-  }, [weaponSheets, database, dbDirty])
 
-  const elementTotals = useMemo(() => {
-    const tot = dbDirty && Object.fromEntries(allElements.map(k => [k, 0])) as Record<ElementKey, number>
-    if (characterSheets) database.chars.values.forEach(char => tot[characterSheets(char.key, database.gender).elementKey]++)
-    return tot
-  }, [characterSheets, database, dbDirty])
+  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys,
+    ct => weaponSheets && Object.entries(database.chars.data).forEach(([ck, char]) => {
+      const weapon = database.weapons.get(char.equippedWeapon)
+      if (!weapon) return
+      const wtk = weaponSheets(weapon.key).weaponType
+      ct[wtk].total++
+      if (charKeyList.includes(ck)) ct[wtk].current++
+    })), [weaponSheets, database, charKeyList])
+
+  const elementTotals = useMemo(() => catTotal(allElements,
+    ct => characterSheets && Object.entries(database.chars.data).forEach(([ck, char]) => {
+      const eleKey = characterSheets(char.key, database.gender).elementKey
+      ct[eleKey].total++
+      if (charKeyList.includes(ck)) ct[eleKey].current++
+    })), [characterSheets, database, charKeyList])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
@@ -127,8 +130,7 @@ export default function PageCharacter() {
         <Grid item>
           <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} totals={elementTotals} size="small" />
         </Grid>
-        <Grid item flexGrow={1}>
-        </Grid>
+        <Grid item flexGrow={1} />
         <Grid item>
           <TextField
             autoFocus

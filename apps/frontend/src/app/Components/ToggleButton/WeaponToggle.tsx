@@ -7,7 +7,7 @@ import SolidToggleButtonGroup, { SolidToggleButtonGroupProps } from "../SolidTog
 type WeaponToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"> & {
   onChange: (value: WeaponTypeKey[]) => void
   value: WeaponTypeKey[],
-  totals: Record<WeaponTypeKey, number>
+  totals: Record<WeaponTypeKey, Displayable>
 }
 const weaponTypeHandler = handleMultiSelect([...allWeaponTypeKeys])
 export default function WeaponToggle({ value, totals, onChange, ...props }: WeaponToggleProps) {

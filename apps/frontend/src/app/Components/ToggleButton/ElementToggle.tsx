@@ -7,7 +7,7 @@ import StatIcon from "../StatIcon";
 type ElementToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"> & {
   onChange: (value: ElementKey[]) => void
   value: ElementKey[],
-  totals: Record<ElementKey, number>
+  totals: Record<ElementKey, Displayable>
 }
 const elementHandler = handleMultiSelect([...allElements])
 export default function ElementToggle({ value, totals, onChange, ...props }: ElementToggleProps) {
