@@ -2,10 +2,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
+import ArtifactSetAutocomplete from "apps/frontend/src/app/Components/Artifact/ArtifactSetAutocomplete";
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { ArtifactSetSingleAutocomplete } from "../../../../Components/Artifact/ArtifactAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
 import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
@@ -30,8 +30,8 @@ import { DataContext, dataContextObj } from "../../../../Context/DataContext";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
-import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { DatabaseContext } from "../../../../Database/Database";
+import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
@@ -328,22 +328,13 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
 
   return <Stack spacing={1} sx={{ flexGrow: 1 }}>
     {Object.entries(artSet).map(([setKey, value]) => <ArtifactSetEditor key={setKey} setKey={setKey} value={value} setValue={setValue(setKey)} deleteValue={deleteValue(setKey)} remaining={remaining} />)}
-    <CardLight sx={{ flexGrow: 1 }}>
-      <ArtifactSetSingleAutocomplete
-        showDefault
+    <CardLight sx={{ flexGrow: 1, overflow: "visible" }}>
+      <ArtifactSetAutocomplete
         disableClearable
-        size="small"
         artSetKey={""}
         setArtSetKey={setSet}
-        sx={(theme) => ({
-          flexGrow: 1,
-          ".MuiFilledInput-root": {
-            borderBottomRightRadius: theme.shape.borderRadius,
-            borderBottomLeftRadius: theme.shape.borderRadius
-          }
-        })}
         defaultText={"New Artifact Set"}
-        disable={(setKey) => Object.keys(artSet).includes(setKey) || !artifactSheets?.(setKey) || Object.keys(artifactSheets(setKey).setEffects).every(n => parseInt(n) > remaining)}
+        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !(key && artifactSheets?.(key)) || Object.keys(artifactSheets(key).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>
 

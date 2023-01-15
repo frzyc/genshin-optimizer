@@ -1,5 +1,5 @@
 import { PersonAdd } from "@mui/icons-material";
-import { AutocompleteProps, CardContent, CardHeader, Divider, Grid, Skeleton, Typography, Box } from "@mui/material";
+import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import CardLight from "../../../Components/Card/CardLight";
@@ -8,7 +8,7 @@ import ThumbSide from "../../../Components/Character/ThumbSide";
 import ColorText from "../../../Components/ColoredText";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
-import GeneralAutocomplete, { GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
+import { GeneralAutocomplete, GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
 import InfoTooltip from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";

@@ -11,8 +11,10 @@ import { allArtifactRarities, allSlotKeys, ArtifactRarity, SlotKey } from "../..
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
-import { ArtifactMainStatMultiAutocomplete, ArtifactSetMultiAutocomplete, ArtifactSubstatMultiAutocomplete } from "./ArtifactAutocomplete";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
+import ArtifactMainStatMultiAutocomplete from "./ArtifactMainStatMultiAutocomplete";
+import ArtifactSetMultiAutocomplete from "./ArtifactSetMultiAutocomplete";
+import ArtifactSubstatMultiAutocomplete from "./ArtifactSubstatMultiAutocomplete";
 import LocationFilterAutocomplete from "./LocationFilterAutocomplete";
 import RVSlide from "./RVSlide";
 import { artifactSlotIcon } from "./SlotNameWIthIcon";

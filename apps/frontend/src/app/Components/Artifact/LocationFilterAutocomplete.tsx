@@ -9,7 +9,7 @@ import useDBMeta from "../../ReactHooks/useDBMeta"
 import usePromise from "../../ReactHooks/usePromise"
 import { charKeyToCharName, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
 import ThumbSide from "../Character/ThumbSide"
-import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import { GeneralAutocomplete, GeneralAutocompleteOption } from "../GeneralAutocomplete"
 
 export default function LocationFilterAutocomplete({ location, setLocation }: { location: FilterLocationKey, setLocation: (v: FilterLocationKey) => void }) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
@@ -50,5 +50,21 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
       return a.label.localeCompare(b.label)
     })
   ], [t, toText, isFavorite, database])
-  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
+  const toVariant = useCallback(
+    (key: FilterLocationKey) => {
+      switch (key) {
+        case "":
+        case "Inventory":
+        case "Equipped":
+        case "Traveler":
+          return undefined
+        default:
+          return characterSheets?.(database.chars.LocationToCharacterKey(key), gender)?.elementKey ?? undefined
+      }
+    },
+    [characterSheets, database, gender],
+  )
+
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}>
+    <GeneralAutocomplete options={values} valueKey={location} onChange={setLocation} toImg={toImg} toVariant={toVariant} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
 }

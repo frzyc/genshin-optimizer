@@ -7,17 +7,23 @@ import { DatabaseContext } from "../../Database/Database"
 import useDBMeta from "../../ReactHooks/useDBMeta"
 import usePromise from "../../ReactHooks/usePromise"
 import { charKeyToCharName, charKeyToLocCharKey, LocationCharacterKey, LocationKey, travelerKeys } from "../../Types/consts"
-import GeneralAutocomplete, { GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import { GeneralAutocomplete, GeneralAutocompleteOption } from "../GeneralAutocomplete"
 import ThumbSide from "./ThumbSide"
-
-export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteProps = {} }:
-  { location: LocationKey, setLocation: (v: LocationKey) => void, filter?: (v: CharacterSheet) => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<LocationKey>, false, true, false>, "renderInput" | "onChange" | "options"> }) {
+type LocationAutocompleteProps = {
+  location: LocationKey,
+  setLocation: (v: LocationKey) => void,
+  filter?: (v: CharacterSheet) => void,
+  autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<LocationKey>, false, true, false>, "renderInput" | "onChange" | "options">
+}
+export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteProps = {} }: LocationAutocompleteProps) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
-  const toImg = useCallback((key: LocationKey) => key === "" ? <BusinessCenter /> : characterSheets ? <ThumbSide src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [database, gender, characterSheets])
+  const toImg = useCallback((key: LocationKey) => key === "" ? <BusinessCenter /> : characterSheets ?
+    <ThumbSide src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{ pr: 1 }} /> : undefined,
+    [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.charMeta.get(key).favorite) :
     key ? database.charMeta.get(key).favorite : false, [database])
@@ -26,7 +32,7 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
     key: "",
     label: t`artifact:filterLocation.inventory`,
   },
-  ...Array.from(new Set(database.chars.keys.filter(k => characterSheets?.(k, gender) ? filter(characterSheets(k, gender)!) : true).map(k => charKeyToLocCharKey(k))))
+  ...Array.from(new Set(database.chars.keys.filter(k => characterSheets?.(k, gender) ? filter(characterSheets(k, gender)) : true).map(k => charKeyToLocCharKey(k))))
     .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
     .sort((a, b) => {
       if (a.favorite && !b.favorite) return -1

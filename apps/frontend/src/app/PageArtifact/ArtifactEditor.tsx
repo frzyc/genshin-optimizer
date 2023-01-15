@@ -4,8 +4,8 @@ import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/ic
 import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { ArtifactSetSingleAutocomplete } from '../Components/Artifact/ArtifactAutocomplete';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
+import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -251,24 +251,17 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           {/* Left column */}
           <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
             {/* set & rarity */}
-            <Box sx={{ display: "flex", gap: 1, mb: 1 }}>
+            <Box sx={{ display: "flex", gap: 1 }}>
               {/* Artifact Set */}
-              <ArtifactSetSingleAutocomplete
+              <ArtifactSetAutocomplete
                 disabled={disableSet}
-                showDefault
                 disableClearable
                 size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
-                sx={(theme) => ({
-                  flexGrow: 1,
-                  ".MuiFilledInput-root": {
-                    borderBottomRightRadius: theme.shape.borderRadius,
-                    borderBottomLeftRadius: theme.shape.borderRadius
-                  }
-                })}
+                sx={{ flexGrow: 1 }}
                 defaultText={t("editor.unknownSetName")}
-                disable={setACDisable}
+                getOptionDisabled={({ key }) => setACDisable(key)}
               />
               {/* rarity dropdown */}
               <ArtifactRarityDropdown rarity={artifact ? rarity : undefined} onChange={r => update({ rarity: r })} filter={r => !!sheet?.rarity?.includes?.(r)} disabled={!sheet} />
