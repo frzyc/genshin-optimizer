@@ -100,7 +100,7 @@ export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys:
       {!!option.favorite && <Favorite />}
     </MenuItem>}
     renderTags={(selected, getTagProps) => selected.map(({ key, label, variant }, index) => {
-      return <Chip {...getTagProps({ index })} key={index + key + label} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
+      return <Chip {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
     })}
     {...acProps}
   />
