@@ -20,7 +20,7 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
   const toImg = useCallback((key: FilterLocationKey) => {
     switch (key) {
       case "":
-        return <></>
+        return undefined
       case "Inventory":
         return <BusinessCenter />
       case "Equipped":
@@ -29,9 +29,23 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
         return characterSheets ? <ThumbSide src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>
     }
   }, [database, gender, characterSheets])
+
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.charMeta.get(key).favorite) :
     key ? database.charMeta.get(key).favorite : false, [database])
+
+  const toVariant = useCallback((key: FilterLocationKey) => {
+    switch (key) {
+      case "":
+      case "Inventory":
+      case "Equipped":
+      case "Traveler":
+        return undefined
+      default:
+        return characterSheets?.(database.chars.LocationToCharacterKey(key), gender)?.elementKey ?? undefined
+    }
+  }, [characterSheets, database, gender])
+
   const values: GeneralAutocompleteOption<FilterLocationKey>[] = useMemo(() => [{
     key: "",
     label: t`artifact:filterLocation.any`,
@@ -43,28 +57,14 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
     label: t`artifact:filterLocation.inventory`
   },
   ...locationCharacterKeys.filter(lck => database.chars.get(database.chars.LocationToCharacterKey(lck)))
-    .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
+    .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v), variant: toVariant(v) }))
     .sort((a, b) => {
       if (a.favorite && !b.favorite) return -1
       if (!a.favorite && b.favorite) return 1
       return a.label.localeCompare(b.label)
     })
-  ], [t, toText, isFavorite, database])
-  const toVariant = useCallback(
-    (key: FilterLocationKey) => {
-      switch (key) {
-        case "":
-        case "Inventory":
-        case "Equipped":
-        case "Traveler":
-          return undefined
-        default:
-          return characterSheets?.(database.chars.LocationToCharacterKey(key), gender)?.elementKey ?? undefined
-      }
-    },
-    [characterSheets, database, gender],
-  )
+  ], [t, toText, isFavorite, toVariant, database])
 
   return <Suspense fallback={<Skeleton variant="text" width={100} />}>
-    <GeneralAutocomplete options={values} valueKey={location} onChange={setLocation} toImg={toImg} toVariant={toVariant} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
+    <GeneralAutocomplete options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
 }

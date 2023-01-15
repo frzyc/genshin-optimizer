@@ -2,13 +2,14 @@ import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Chip, Grid, ToggleButton } from "@mui/material";
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
-import useForceUpdate from "../../ReactHooks/useForceUpdate";
-import { allArtifactRarities, allSlotKeys, ArtifactRarity, SlotKey } from "../../Types/consts";
+import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
+import { allArtifactRarities, allArtifactSets, allSlotKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
+import { catTotal } from "../../Util/totalUtils";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
@@ -31,46 +32,68 @@ const lineHandler = handleMultiSelect([1, 2, 3, 4])
 interface ArtifactFilterDisplayProps {
   filterOption: FilterOption
   filterOptionDispatch: (option: Partial<FilterOption>) => void
-  disableSlotFilter?: boolean
+  disableSlotFilter?: boolean,
+  filteredIds: string[]
 }
-export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
+export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, filteredIds, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
   const { t } = useTranslation(["artifact", "ui"]);
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow = 0, levelHigh = 20, substats = [],
     location = "", exclusion = [...exclusionValues], locked = [...lockedValues], rvLow = 0, rvHigh = 900, lines = [] } = filterOption
 
   const { database } = useContext(DatabaseContext)
-  const [dbDirty, forceUpdate] = useForceUpdate()
-  useEffect(() => database.arts.followAny(() => forceUpdate()), [database, forceUpdate])
 
-  const rarityTotal = useMemo(() => {
-    const tot = dbDirty && Object.fromEntries(allArtifactRarities.map(r => [r, 0])) as Record<ArtifactRarity, number>
-    database.arts.values.forEach(a => tot[a.rarity]++)
-    return tot
-  }, [dbDirty, database])
-  const slotTotal = useMemo(() => {
-    const tot = dbDirty && Object.fromEntries(allSlotKeys.map(r => [r, 0])) as Record<SlotKey, number>
-    database.arts.values.forEach(a => tot[a.slotKey]++)
-    return tot
-  }, [dbDirty, database])
+  const rarityTotal = useMemo(() => catTotal(allArtifactRarities, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const rarity = art.rarity
+    ct[rarity].total++
+    if (filteredIds.includes(id)) ct[rarity].current++
+  })), [database, filteredIds])
 
-  const excludedTotal = useMemo(() => {
-    const tot = dbDirty && { excluded: 0, included: 0 }
-    database.arts.values.forEach(a => tot[a.exclude ? "excluded" : "included"]++)
-    return tot
-  }, [dbDirty, database])
+  const slotTotal = useMemo(() => catTotal(allSlotKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const sk = art.slotKey
+    ct[sk].total++
+    if (filteredIds.includes(id)) ct[sk].current++
+  })), [database, filteredIds])
 
-  const lockedTotal = useMemo(() => {
-    const tot = dbDirty && { locked: 0, unlocked: 0 }
-    database.arts.values.forEach(a => tot[a.lock ? "locked" : "unlocked"]++)
-    return tot
-  }, [dbDirty, database])
+  const excludedTotal = useMemo(() => catTotal(["excluded", "included"], ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const sk = art.exclude ? "excluded" : "included"
+    ct[sk].total++
+    if (filteredIds.includes(id)) ct[sk].current++
+  })), [database, filteredIds])
 
-  const linesTotal = useMemo(() => {
-    const tot = dbDirty && { 1: 0, 2: 0, 3: 0, 4: 0 }
-    database.arts.values.forEach(a => tot[a.substats.filter(s => s.value).length]++)
-    return tot
-  }, [dbDirty, database])
+  const lockedTotal = useMemo(() => catTotal(["locked", "unlocked"], ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const sk = art.lock ? "locked" : "unlocked"
+    ct[sk].total++
+    if (filteredIds.includes(id)) ct[sk].current++
+  })), [database, filteredIds])
+
+  const linesTotal = useMemo(() => catTotal(["1", "2", "3", "4"], ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const lns = art.substats.filter(s => s.value).length
+    ct[lns].total++
+    if (filteredIds.includes(id)) ct[lns].current++
+  })), [database, filteredIds])
+
+  const artSetTotal = useMemo(() => catTotal(allArtifactSets, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const sk = art.setKey
+    ct[sk].total++
+    if (filteredIds.includes(id)) ct[sk].current++
+  })), [database, filteredIds])
+
+  const artMainTotal = useMemo(() => catTotal(allMainStatKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    const mk = art.mainStatKey
+    ct[mk].total++
+    if (filteredIds.includes(id)) ct[mk].current++
+  })), [database, filteredIds])
+
+  const artSubTotal = useMemo(() => catTotal(allSubstatKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    Object.values(art.substats).map(sub => {
+      if (typeof sub !== "object") return
+      const key = sub.key
+      if (!key) return
+      ct[key].total++
+      if (filteredIds.includes(id)) ct[key].current++
+    })
+  })), [database, filteredIds])
 
   return <Grid container spacing={1}>
     {/* left */}
@@ -115,9 +138,9 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     {/* right */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact Set */}
-      <ArtifactSetMultiAutocomplete artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
-      <ArtifactMainStatMultiAutocomplete mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
-      <ArtifactSubstatMultiAutocomplete substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
+      <ArtifactSetMultiAutocomplete totals={artSetTotal} artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
+      <ArtifactMainStatMultiAutocomplete totals={artMainTotal} mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
+      <ArtifactSubstatMultiAutocomplete totals={artSubTotal} substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
       <LocationFilterAutocomplete location={location} setLocation={location => filterOptionDispatch({ location })} />
     </Grid>
   </Grid>
