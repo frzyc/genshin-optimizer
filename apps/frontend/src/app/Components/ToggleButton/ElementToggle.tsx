@@ -12,7 +12,7 @@ type ElementToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"
 const elementHandler = handleMultiSelect([...allElements])
 export default function ElementToggle({ value, totals, onChange, ...props }: ElementToggleProps) {
   return <ToggleButtonGroup exclusive value={value} {...props}>
-    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
+    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} sx={{ minWidth: "7em" }} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
       <Box sx={{ fontSize: "2em", lineHeight: 1 }}>{StatIcon[ele]}  </Box><Chip label={totals[ele]} size="small" />
     </SolidColoredToggleButton>)}
   </ToggleButtonGroup>
