@@ -53,6 +53,10 @@ export interface Read extends Base<'read', never> {
   tag: Tag
   agg: (Sum | Prod | Min | Max)['op'] | undefined
 }
+export interface ReRead {
+  op: 'reread'
+  tag: Tag
+}
 
 export type NumNode<PermitOP extends OP = OP> = Const<number> | Sum<PermitOP> | Prod<PermitOP> | Max<PermitOP> | Min<PermitOP> | SumFrac<PermitOP> |
   Threshold<NumNode<PermitOP>, PermitOP> | Match<NumNode<PermitOP>, PermitOP> | Lookup<NumNode<PermitOP>, PermitOP> | Subscript<PermitOP> |
