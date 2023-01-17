@@ -1,0 +1,75 @@
+{
+  "name": "formula",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/formula/src",
+  "projectType": "library",
+  "targets": {
+    "genfiles": {
+      "command": "npx ts-node -r tsconfig-paths/register -P libs/formula/tsconfig.lib.json libs/formula/src/data.gen.ts",
+      "inputs": [
+        "production",
+        "^production"
+      ],
+      "outputs": [
+        "{projectRoot}/src/**/*.gen.json"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/formula",
+        "main": "libs/formula/src/index.ts",
+        "tsConfig": "libs/formula/tsconfig.lib.json",
+        "assets": [
+          "libs/formula/*.md"
+        ]
+      },
+      "dependsOn": [
+        "genfiles"
+      ],
+      "inputs": [
+        "!{projectRoot}/**/*.gen.ts"
+      ]
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs formula {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/formula/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "libs/formula/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": [
+        "genfiles"
+      ]
+    }
+  },
+  "tags": []
+}
