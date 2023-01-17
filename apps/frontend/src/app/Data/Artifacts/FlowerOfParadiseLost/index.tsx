@@ -23,7 +23,7 @@ const [condStacksPath, condStacks] = cond(key, "stacks")
 const stacksArr = range(1, 4)
 const stack_bloom_dmg_ = greaterEq(input.artSet.FlowerOfParadiseLost, 4, lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
   stack,
-  prod(stack, percent(0.1))
+  prod(stack, percent(0.25))
 ])), naught, KeyMap.info("bloom_dmg_")))
 const stack_hyperbloom_dmg_ = { ...stack_bloom_dmg_, info: KeyMap.info("hyperbloom_dmg_") }
 const stack_burgeon_dmg_ = { ...stack_bloom_dmg_, info: KeyMap.info("burgeon_dmg_") }
