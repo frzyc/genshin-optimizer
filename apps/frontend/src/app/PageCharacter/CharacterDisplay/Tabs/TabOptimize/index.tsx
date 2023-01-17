@@ -1,6 +1,6 @@
 import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
@@ -10,6 +10,7 @@ import CharacterCard from '../../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
+import SqBadge from '../../../../Components/SqBadge';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../Context/DataContext';
 import { GraphContext } from '../../../../Context/GraphContext';
@@ -86,22 +87,17 @@ export default function TabBuild() {
     database.arts.followAny(setArtsDirty),
     [setArtsDirty, database])
 
-  // Provides a function to cancel the work
-  const cancelToken = useRef(() => { })
-  //terminate worker when component unmounts
-  useEffect(() => () => cancelToken.current(), [])
-  const [workerErr, setWorkerErr] = useState(false)
-  const generateBuilds = useCallback(async () => {
-    const { artSetExclusion, plotBase, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, levelLow, levelHigh } = buildSetting
-    if (!characterKey || !optimizationTarget) return
-
+  const deferredArtsDirty = useDeferredValue(artsDirty)
+  const deferredBuildSetting = useDeferredValue(buildSetting)
+  const filteredArts = useMemo(() => {
+    const { mainStatKeys, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
     const cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
       if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
       else equipmentPriority.slice(0, index).forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
     }
-    const filteredArts = database.arts.values.filter(art => {
+    return database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -115,6 +111,30 @@ export default function TabBuild() {
       if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       return true
     })
+  }, [database, characterKey, equipmentPriority, deferredArtsDirty, deferredBuildSetting])
+
+  const filteredArtIds = useMemo(() => filteredArts.map(a => a.id), [filteredArts])
+  const levelTotal = useMemo(() => {
+    const { levelLow, levelHigh } = deferredBuildSetting
+    let total = 0, current = 0
+    Object.entries(database.arts.data).forEach(([id, art]) => {
+      if (art.level >= levelLow && art.level <= levelHigh) {
+        total++
+        if (filteredArtIds.includes(id)) current++
+      }
+    })
+    return `${current}/${total}`
+  }, [deferredBuildSetting, filteredArtIds, database])
+
+  // Provides a function to cancel the work
+  const cancelToken = useRef(() => { })
+  //terminate worker when component unmounts
+  useEffect(() => () => cancelToken.current(), [])
+  const [workerErr, setWorkerErr] = useState(false)
+  const generateBuilds = useCallback(async () => {
+    const { artSetExclusion, plotBase, statFilters, optimizationTarget, mainStatAssumptionLevel, allowPartial, maxBuildsToShow } = buildSetting
+    if (!characterKey || !optimizationTarget) return
+
     const split = compactArtifacts(filteredArts, mainStatAssumptionLevel, allowPartial)
 
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
@@ -141,7 +161,8 @@ export default function TabBuild() {
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
 
-    let unoptimizedNodes = [...valueFilter.map(x => x.value), unoptimizedOptimizationTargetNode], arts = split!
+    const unoptimizedNodes = [...valueFilter.map(x => x.value), unoptimizedOptimizationTargetNode]
+    let arts = split!
     const setPerms = filterFeasiblePerm(artSetPerm(artSetExclusion, Object.values(split.values).flatMap(x => x.map(x => x.set!))), split)
 
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
@@ -309,7 +330,7 @@ export default function TabBuild() {
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, database, buildResultDispatch, maxWorkers, buildSetting, equipmentPriority, setChartData])
+  }, [characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, setChartData])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -345,7 +366,6 @@ export default function TabBuild() {
         <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
           <CardLight>
             <CardContent  >
-              <Typography gutterBottom>{t`mainStat.title`}</Typography>
               <BootstrapTooltip placement="top" title={<Box>
                 <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
                 <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
@@ -356,7 +376,7 @@ export default function TabBuild() {
               </BootstrapTooltip>
             </CardContent>
             {/* main stat selector */}
-            <MainStatSelectionCard disabled={generatingBuilds} />
+            <MainStatSelectionCard disabled={generatingBuilds} filteredArtIds={filteredArtIds} />
           </CardLight>
           <BonusStatsCard />
         </Grid>
@@ -369,7 +389,7 @@ export default function TabBuild() {
           <UseExcluded disabled={generatingBuilds} artsDirty={artsDirty} />
 
           {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} />
+          <UseEquipped disabled={generatingBuilds} filteredArts={filteredArts} />
 
           <Button
             fullWidth
@@ -382,7 +402,7 @@ export default function TabBuild() {
           </Button>
           { /* Level Filter */}
           <CardLight>
-            <CardContent>{t`levelFilter`}</CardContent>
+            <CardContent>{t`levelFilter`} <SqBadge color="info">{levelTotal}</SqBadge></CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
               setLow={levelLow => buildSettingDispatch({ levelLow })}
               setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
@@ -495,7 +515,7 @@ function BuildList({ builds, setBuilds, characterKey, data, compareData, disable
       setBuilds(builds_)
     }
   },
-  [builds, setBuilds])
+    [builds, setBuilds])
   // Memoize the build list because calculating/rendering the build list is actually very expensive, which will cause longer optimization times.
   const list = useMemo(() => <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
     {builds?.map((build, index) => characterKey && data && <DataContextWrapper

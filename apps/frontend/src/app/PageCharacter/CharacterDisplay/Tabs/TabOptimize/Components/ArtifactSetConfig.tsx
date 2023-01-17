@@ -19,6 +19,7 @@ import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
 import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
+import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData';
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
@@ -142,8 +143,8 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
               <CardContent>
                 <Typography gutterBottom><strong><Trans t={t} i18nKey="artSetConfig.alExRainbow"><ColorText color='success'>Allow <FontAwesomeIcon icon={faChartLine} className="fa-fw" /></ColorText> / <ColorText color='secondary' variant='light'>Exclude <FontAwesomeIcon icon={faBan} className="fa-fw" /></ColorText> Rainbow Builds</Trans></strong></Typography>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 2 })} color={allowRainbow2 ? "success" : "secondary"} startIcon={!allowRainbow2 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.2rainbow`}</Button>
-                  <Button fullWidth onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey: "rainbow", num: 4 })} color={allowRainbow4 ? "success" : "secondary"} startIcon={!allowRainbow4 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.4rainbow`}</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, "rainbow", 2) })} color={allowRainbow2 ? "success" : "secondary"} startIcon={!allowRainbow2 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.2rainbow`}</Button>
+                  <Button fullWidth onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, "rainbow", 4) })} color={allowRainbow4 ? "success" : "secondary"} startIcon={!allowRainbow4 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={<FontAwesomeIcon icon={allowRainbow4 ? faChartLine : faBan} className="fa-fw" />}>{t`artSetConfig.4rainbow`}</Button>
                 </Box>
               </CardContent>
             </CardLight>
@@ -178,7 +179,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   const { t } = useTranslation("sheet")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
-  const setExclusionSet = buildSetting?.artSetExclusion?.[setKey] ?? []
+  const { artSetExclusion } = buildSetting
+  const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
   const slots = useMemo(() => getNumSlots(slotCount), [slotCount])
 
@@ -211,8 +213,8 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>
-        <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 2 })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>
-        <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ type: "artSetExclusion", setKey, num: 4 })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>
+        <Button startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 2) })} color={exclude2 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude2 ? faBan : faChartLine} className="fa-fw" />}>{t`2set`}</Button>
+        <Button startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />} onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 4) })} color={exclude4 ? 'secondary' : 'success'} endIcon={<FontAwesomeIcon icon={exclude4 ? faBan : faChartLine} className="fa-fw" />}>{t`4set`}</Button>
       </ButtonGroup>
 
       {!!set4CondNums.length && <DataContext.Provider value={fakeDataContextObj}>

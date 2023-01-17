@@ -58,8 +58,8 @@ function TextSectionDisplay({ section }: { section: IDocumentText }) {
 
 export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocumentHeader, hideDesc?: boolean, hideDivider?: boolean | ((section: DocumentSection) => boolean) }) {
   const { data } = useContext(DataContext)
-  let { icon, title, action } = header
-  icon = evalIfFunc(icon, data)
+  const { icon: preicon, title, action } = header
+  const icon = evalIfFunc(preicon, data)
   const description = !hideDesc && evalIfFunc(header.description, data)
   const displayTitle = hideDesc ? title : <span>{title} <InfoTooltip title={<Typography>{description}</Typography>} /></span>
   return <>

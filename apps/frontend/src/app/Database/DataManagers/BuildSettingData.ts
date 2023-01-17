@@ -1,3 +1,4 @@
+import Artifact from "../../Data/Artifacts/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
 import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
@@ -52,6 +53,11 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
 
     if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet)
       mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
+    else { // make sure the arrays are not empty
+      (["sands", "goblet", "circlet"] as const).forEach(sk => {
+        if (!mainStatKeys[sk].length) mainStatKeys[sk] = [...Artifact.slotMainStats(sk)]
+      })
+    }
 
     if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
@@ -71,41 +77,12 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
   }
-
-  set(key: CharacterKey, value: BuildSettingReducerAction) {
-    // TODO:
-    // This is the same code as `super.set` with `buildSettingsReducer`
-    // replacing simple object merging. Refactor so that we don't need
-    // this replication.
-    const old = this.getStorage(key)
-    const validated = this.validate(buildSettingsReducer(old, value), key)
-    if (!validated) {
-      this.trigger(key, "invalid", value)
-      return false
-    }
-    const cached = this.toCache(validated, key)
-    if (!cached) {
-      this.trigger(key, "invalid", value)
-      return false
-    }
-    if (!old) this.trigger(key, "new", cached)
-    this.setCached(key, cached)
-    return true
-  }
 }
-type BSMainStatKey = {
-  type: "mainStatKey", slotKey: "sands" | "goblet" | "circlet", mainStatKey?: MainStatKey
-}
-type BSArtSetExclusion = {
-  type: "artSetExclusion", setKey: ArtifactSetKey | "rainbow", num: 2 | 4
-}
-
-export type BuildSettingReducerAction = BSMainStatKey | BSArtSetExclusion | Partial<BuildSetting>
 
 const initialBuildSettings: BuildSetting = deepFreeze({
   artSetExclusion: {},
   statFilters: {},
-  mainStatKeys: { sands: [], goblet: [], circlet: [] },
+  mainStatKeys: { sands: [...Artifact.slotMainStats("sands")], goblet: [...Artifact.slotMainStats("goblet")], circlet: [...Artifact.slotMainStats("circlet")] },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   useExcludedArts: false,
@@ -118,36 +95,13 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   levelHigh: 20,
 })
 
-function buildSettingsReducer(state: BuildSetting = initialBuildSettings, action: BuildSettingReducerAction): BuildSetting {
-  if ("type" in action) switch (action.type) {
-    case "mainStatKey": {
-      const { slotKey, mainStatKey } = action
-      const mainStatKeys = deepClone(state.mainStatKeys) // create a new object to update react dependencies
-      // when mainstatkey is empty, then it resets the slot
-      if (!mainStatKey) {
-        mainStatKeys[slotKey] = []
-        return { ...state, mainStatKeys }
-      }
-
-      if (state.mainStatKeys[slotKey].includes(mainStatKey))
-        mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
-      else
-        mainStatKeys[slotKey].push(mainStatKey)
-      return { ...state, mainStatKeys }
-    }
-    case "artSetExclusion": {
-      const { setKey, num } = action
-      const artSetExclusion = deepClone(state.artSetExclusion)
-      if (!artSetExclusion[setKey]) artSetExclusion[setKey] = [num]
-      else if (!artSetExclusion[setKey].includes(num)) artSetExclusion[setKey] = [...artSetExclusion[setKey], num]
-      else {
-        artSetExclusion[setKey] = artSetExclusion[setKey].filter(n => n !== num)
-        if (!artSetExclusion[setKey].length) delete artSetExclusion[setKey]
-      }
-      return { ...state, artSetExclusion }
-    }
-    default:
-      break;
+export function handleArtSetExclusion(currentArtSetExclusion: ArtSetExclusion, setKey: ArtifactSetKey | "rainbow", num: 2 | 4) {
+  const artSetExclusion = deepClone(currentArtSetExclusion)
+  if (!artSetExclusion[setKey]) artSetExclusion[setKey] = [num]
+  else if (!artSetExclusion[setKey].includes(num)) artSetExclusion[setKey] = [...artSetExclusion[setKey], num]
+  else {
+    artSetExclusion[setKey] = artSetExclusion[setKey].filter(n => n !== num)
+    if (!artSetExclusion[setKey].length) delete artSetExclusion[setKey]
   }
-  return { ...state, ...action }
+  return artSetExclusion
 }

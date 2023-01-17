@@ -20,11 +20,11 @@ import useDBMeta from '../ReactHooks/useDBMeta';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from '../Types/consts';
+import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { catTotal } from '../Util/totalUtils';
-import { clamp, objectMap } from '../Util/Util';
+import { clamp } from '../Util/Util';
 const CharacterSelectionModal = React.lazy(() => import('./CharacterSelectionModal'))
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
