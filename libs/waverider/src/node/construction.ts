@@ -1,5 +1,5 @@
 import type { Tag } from '../tag'
-import type { AnyNode, Const, Lookup, Match, Max, Min, NumNode, Prod, Read, StrNode, Subscript, Sum, SumFrac, TagOverride, Threshold } from './type'
+import type { AnyNode, Const, Lookup, Match, Max, Min, NumNode, Prod, Read, ReRead, StrNode, Subscript, Sum, SumFrac, TagOverride, Threshold } from './type'
 
 type _value = number | string
 type Num = NumNode | number
@@ -97,6 +97,9 @@ export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
 
 export function read(tag: Tag, agg: Read['agg']): Read {
   return { op: 'read', x: [], br: [], tag, agg }
+}
+export function reread(tag: Tag): ReRead {
+  return { op: 'reread', tag }
 }
 
 function toV(val: Num): NumNode

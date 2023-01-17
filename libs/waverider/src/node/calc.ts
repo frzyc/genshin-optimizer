@@ -2,18 +2,18 @@ import type { Tag } from '../tag'
 import { CompiledTagMapKeys, CompiledTagMapValues, TagMap, TagMapKeys, TagMapValues } from '../tag/map'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, selectBranch } from './formula'
-import type { AnyNode, NumNode, Read, StrNode } from './type'
+import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
 
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V, meta: M }
 export class Calculator<M = undefined> {
   keys: TagMapKeys
-  nodes: TagMap<AnyNode>
+  nodes: TagMap<AnyNode | ReRead>
   tagged: TagMapValues<TaggedCalculator<M>>
   untagged: TaggedCalculator<M>
 
-  constructor(keys: CompiledTagMapKeys, ...values: CompiledTagMapValues<AnyNode>[]) {
+  constructor(keys: CompiledTagMapKeys, ...values: CompiledTagMapValues<AnyNode | ReRead>[]) {
     this.keys = new TagMapKeys(keys)
     this.nodes = new TagMap(keys, ...values)
     this.tagged = new TagMapValues(this.keys.tagLen)
@@ -48,19 +48,22 @@ export class Calculator<M = undefined> {
 
 class TaggedCalculator<M> {
   tag: Tag
-  nodes: AnyNode[]
+  nodes: (AnyNode | ReRead)[]
   parent: Calculator<M>
 
   computed: CalcResult<number | string, M>[] | undefined
 
-  constructor(tag: Tag, nodes: AnyNode[], parent: Calculator<M>) {
+  constructor(tag: Tag, nodes: (AnyNode | ReRead)[], parent: Calculator<M>) {
     this.tag = tag
     this.nodes = nodes
     this.parent = parent
   }
 
   getAll(): CalcResult<number | string, M>[] {
-    this.computed = this.computed ?? this.nodes.map(n => this.get(n))
+    this.computed = this.computed ?? this.nodes
+      .flatMap(n => n.op === 'reread'
+        ? this.withTag(n.tag).getAll()
+        : [this.get(n)])
     return this.computed
   }
 

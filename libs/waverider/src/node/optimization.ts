@@ -15,34 +15,45 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): A
 export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): AnyTagFree[] {
   const allDynTags = new Set(dynTags.superset({}))
 
-  function internal(n: AnyNode, tag: Tag | undefined): AnyTagFree {
+  function read(tag: Tag): AnyTagFree[] {
+    return [...calc.nodes.subset(tag).flatMap(n => {
+      if (n.op === 'reread') {
+        const newTag = { ...tag, ...n.tag }
+        return read(newTag).map(x => map(x, newTag))
+      }
+      return [map(n, tag)]
+    }),
+    ...dynTags.subset(tag)
+    ]
+  }
+  function map(n: AnyNode, tag: Tag | undefined): AnyTagFree {
     if (allDynTags.has(n as Read)) return n as Read
 
     switch (n.op) {
       case 'read': {
         const readTag = { ...tag, ...n.tag }
         // Strictly speaking, `x`s are not `NumNode` yet, but it's easier to handle `agg` this way
-        const x = [...calc.nodes.subset(readTag), ...dynTags.subset(readTag)] as NumNode[]
+        const x = read(readTag) as NumNode<Exclude<OP, 'tag'>>[]
         switch (n.agg) {
-          case 'sum': return internal(sum(...x), readTag)
-          case 'prod': return internal(prod(...x), readTag)
-          case 'min': return internal(min(...x), readTag)
-          case 'max': return internal(max(...x), readTag)
-          case undefined: return internal(x[0] ?? constant(undefined as any), readTag)
+          case 'sum': return sum(...x) as AnyTagFree
+          case 'prod': return prod(...x) as AnyTagFree
+          case 'min': return min(...x) as AnyTagFree
+          case 'max': return max(...x) as AnyTagFree
+          case undefined: return x[0] ?? constant(undefined as any) as AnyTagFree
           default: assertUnreachable(n.agg)
         }
       }
-      case 'tag': return internal(n.x[0]!, { ...tag, ...n.tag })
+      case 'tag': return map(n.x[0]!, { ...tag, ...n.tag })
     }
-    let x = n.x.map(n => internal(n, tag))
-    let br = n.br.map(n => internal(n, tag))
+    let x = n.x.map(n => map(n, tag))
+    let br = n.br.map(n => map(n, tag))
     if (x.every((x, i) => x === n.x[i])) x = n.x as AnyTagFree[]
     if (br.every((br, i) => br === n.br[i])) br = n.br as AnyTagFree[]
 
     return (x !== n.x || br != n.br) ? { ...n, x, br } as any : n
   }
 
-  return n.map(n => internal(n, undefined))
+  return n.map(n => map(n, undefined))
 }
 
 export function constantFold(n: NumTagFree[]): NumTagFree[]
