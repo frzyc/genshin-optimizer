@@ -28,6 +28,7 @@
     "normalOrCharged": "After hitting an opponent with a Normal/Charged Attack",
     "plunging": "After hitting an opponent with a Plunging Attack",
     "normalChargedOrPlunging": "After hitting an opponent with a Normal/Charged/Plunging Attack",
+    "normalEle": "After hitting an opponent with an Elemental Normal Attack hit",
     "skill": "After hitting an opponent with an Elemental Skill",
     "burst": "After hitting an opponent with an Elemental Burst",
     "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
@@ -113,6 +114,7 @@
   "4set": "4-Set",
   "activationStam": "Activation Stamina Consumption",
   "stamDrain": "Stamina Drain",
+  "stamRestored": "Stamina Restored",
   "talents": {
     "auto": "Auto",
     "skill": "Skill",
@@ -147,5 +149,6 @@
     "charged": "Charged Att. DMG Mult.",
     "skill": "Skill DMG Mult."
   },
-  "energy": "Energy"
+  "energy": "Energy",
+  "triggerQuota": "Trigger Quota"
 }
