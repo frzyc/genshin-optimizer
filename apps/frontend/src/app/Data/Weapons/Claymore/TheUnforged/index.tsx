@@ -60,7 +60,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condWithShield,
     path: condWithShieldPath,
-    header: headerTemplate(key, icon, iconAwaken, trm("shield")),
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     name: st("protectedByShield"),
     states: {
       protected: {

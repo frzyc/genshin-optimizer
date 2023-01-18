@@ -13,7 +13,7 @@ import icon from './Icon.png'
 const key: WeaponKey = "CalamityQueller"
 const data_gen = data_gen_json as WeaponData
 
-const [tr] = trans("weapon", key)
+const [tr, trm] = trans("weapon", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 // const [condActivePath, condActive] = cond(key, "active")
@@ -25,7 +25,7 @@ const dmg_Nodes = Object.fromEntries(allElements.map(e => [`${e}_dmg_`, subscrip
 const atkInc = prod(
   compareEq(input.activeCharKey, input.charKey,
     constant(1, { /* TODO: Add key for active char */ }),
-    constant(2, { name: WeaponSheet.trm(key)("inactiveKey") })),
+    constant(2, { name: trm("inactiveKey") })),
   lookup(condStack, objectKeyMap(range(1, 6), i => constant(i, { name: st("stacks") })), 0),
   subscript(input.weapon.refineIndex, atk_, { unit: "%" }),
 )

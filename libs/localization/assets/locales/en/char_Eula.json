@@ -3,7 +3,6 @@
     "name": "Grimheart",
     "consumed": "Grimheart Consumed",
     "grimheart": {
-      "name": "Grimheart Stacks",
       "int": "Increase resistance to interruption"
     }
   },
