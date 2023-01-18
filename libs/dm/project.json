@@ -1,0 +1,42 @@
+{
+  "name": "dm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dm/src",
+  "projectType": "library",
+  "targets": {
+    "loadDM": {
+      "command": "ts-node libs/dm/scripts/loadDM.ts"
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dm",
+        "main": "libs/dm/src/index.ts",
+        "tsConfig": "libs/dm/tsconfig.lib.json",
+        "assets": ["libs/dm/*.md"]
+      },
+      "dependsOn": ["loadDM", "^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dm/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "namedInputs": {
+    "production":[
+      "{projectRoot}/src/**/*",
+      "{projectRoot}/scripts/**/*",
+      "sharedGlobals",
+      "{projectRoot}/.eslintrc.json",
+      "{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "{projectRoot}/tsconfig.spec.json",
+      "{projectRoot}/jest.config.[jt]s"
+    ]
+  }
+}
