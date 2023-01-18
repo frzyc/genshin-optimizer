@@ -1,0 +1,34 @@
+{
+  "name": "g-assets-gen",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/g-assets-gen/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/g-assets-gen",
+        "main": "libs/g-assets-gen/src/index.ts",
+        "tsConfig": "libs/g-assets-gen/tsconfig.lib.json",
+        "assets": ["libs/g-assets-gen/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "g-assets-gen:build",
+        "watch": false
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/g-assets-gen/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

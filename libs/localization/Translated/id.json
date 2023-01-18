@@ -1,0 +1,375 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "Editor Artefak",
+            "set": {
+                "artifactSet": "Set Artefak",
+                "maxRarity": "Kualitas Maks <1></1>"
+            },
+            "substat": {
+                "substatFormat": "Substat {{value}}",
+                "noSubstat": "Tanpa Substat",
+                "selectSub": "Pilih Substat",
+                "error": {
+                    "noCalc": "Tidak dapat menghitung roll stat.",
+                    "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
+                },
+                "noRoll": "Tanpa Roll",
+                "noStat": "Tanpa Nilai",
+                "eff": "Efisiensi: <1></1>",
+                "nextRolls": "Roll berikutnya"
+            },
+            "rarity": "Kualitas",
+            "level": "Level",
+            "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
+            "mainSelect": "Pilih Stat Utama",
+            "curSubEff": "Efisiensi Substat Saat Ini",
+            "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
+            "maxSubEff": "Efisiensi Substat Maksimum",
+            "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
+            "preview": "Pratinjau Artefak",
+            "dupArt": "Artefak duplikat terdeteksi.",
+            "upArt": "Artefak terupgrade terdeteksi.",
+            "beforeEdit": "Sebelum Edit",
+            "btnSave": "Simpan Artefak",
+            "btnAdd": "Tambah Artefak",
+            "btnClear": "Bersihkan",
+            "btnRandom": "Acak",
+            "btnUpdate": "Perbarui Artefak",
+            "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?"
+        },
+        "artifactFilter": "Filter Artefak",
+        "filterLocation": {
+            "inventory": "Tas",
+            "currentlyEquipped": "Dikenakan",
+            "any": "Lokasi: Semua"
+        },
+        "button": {
+            "unequipArtifacts": "Lepaskan Artefak",
+            "deleteArtifacts": "Hapus Artefak",
+            "excludeArtifacts": "Eksklusif Artefak",
+            "includeArtifacts": "Inklusif Artefak",
+            "lockArtifacts": "Kunci Artefak",
+            "unlockrtifacts": "Buka Kunci Artefak"
+        },
+        "filterLevelFormat": "Level <1>Rendah</1>/<3>Tinggi</3> (Inklusif)",
+        "buttonHint": "Catatan: tombol merah di atas hanya berlaku untuk <1>artefak terfilter</1>",
+        "tipsOfTheDay": [
+            "Efisiensi maksimum dari artefak bintang 4 adalah sekitar 60%.",
+            "Efisiensi maksimum dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
+            "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
+            "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
+            "Klik di \"Rincian/Details\" ketika kamu mengupgrade artefak-mu di dalam game untuk dipindai sekaligus di-upgrade.",
+            "Sekrang kamu bisa mengunggah banyak screenshot artefak untuk dipindai!"
+        ],
+        "mainStat": "Stat Utama",
+        "slot": "Slot",
+        "slotName": {
+            "flower": "Flower of Life",
+            "plume": "Plume of Death",
+            "sands": "Sands of Eon",
+            "goblet": "Goblet of Eonothem",
+            "circlet": "Circlet of Logos"
+        },
+        "info": {
+            "title": "Panduan Edit/Manajemen Artefak",
+            "section1": "<0>Substat Roll</0><1> <1>Jumlah roll</1> yang dimiliki substat yang terletak di sebelah kiri substat. Semakin tinggi jumlahnya, substatnya akan semakin berwarna:<3></3>.</1><2>Substat Efisiensi</2><3>Efisiensi dari substat merupakan persentasi dari jumlah saat ini dari potensi jumlah 5<1></1> tertinggi. Dari gambar tersebut, jumlah roll maksimum dari CRIT DMG adalah 7.8%. Dalam efisiensinya: <3>5.8/7.8 = 69.2%.</3></3><4>Efisiensi Substat Saat Ini vs. Efisiensi Substat Maksimum</4><5>Ketika 5<1></1> memiliki total 9(4+5) roll, dengan tiap roll-nya memiliki jumlah tertinggi, itu dinamakan efisiensi 100% artefak. Namun, kebanyakan dari artefak yang ada tidak seberuntung ini. <3>Efisiensi Substat saat ini</3> dari sebuah artefak merupakan persentasi dari efisiensi 100% tersebut. <5>Efisiensi Substat Maksimum</5> merupakan jumlah maksimum dari artefak yang bisa dicapai, jika sisa roll artefak dari upgrade merupakan jumlah tertinggi yang bisa dicapai.</5><6>Mengunci Artefak</6><7>Jika artefak tertentu dikunci <1></1>, maka artefak tersebut tidak akan dipilih oleh build generator untuk optimisasi. Artefak yang dikenakan karakter terkunci secara default.</7>",
+            "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll dan efisiensi yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+            "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
+        },
+        "exclusionDisplay": "Eksklusif: {{value}}",
+        "exclusion": {
+            "any": "Semua",
+            "excluded": "Eksklusif",
+            "included": "Inklusif"
+        },
+        "sortMap": {
+            "quality": "Kualitas",
+            "level": "Level",
+            "efficiency": "Eff. Substat Saat Ini",
+            "mefficiency": "Eff. Substat Maksimum"
+        },
+        "efficiencyFilter": {
+            "title": "Substat yang dipakai dalam perhitungan efisiensi"
+        },
+        "resetFilters": "Reset Filter",
+        "setEffectNum": "{{setNum}}-Set",
+        "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
+    },
+    "languages": {
+        "chs": "Mandarin (Sederhana)",
+        "cht": "Mandarin (Tradisional)",
+        "de": "Jerman",
+        "en": "Inggris",
+        "es": "Spanyol",
+        "fr": "Prancis",
+        "id": "Bahasa Indonesia",
+        "ja": "Jepang",
+        "ko": "Korea",
+        "pt": "Portugis",
+        "ru": "Rusia",
+        "th": "Thai",
+        "vi": "Vietnam"
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "languageCard": {
+            "selectLanguage": "Pilih Bahasa",
+            "languageFormat": "Bahasa: {{language}}"
+        },
+        "uploadCard": {
+            "title": "Unggah Database",
+            "replaceDatabase": "Ganti Database",
+            "hint": "Unggah file JSON di sini...",
+            "hintPaste": "...atau tempel datamu di bawah.",
+            "goUpload": {
+                "title": "<strong>Genshin Optimizer</strong> format",
+                "migrate": "Database akan dipindahkan ke versi terbaru. Disarankan untuk mengunduh ulang database setelah mengimpor.",
+                "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database-mu? Semua karakter dan artefak yang ada akan dihapus."
+            },
+            "error": {
+                "jsonParse": "Tidak dapat mengurai file JSON.",
+                "unknown": "Format file tidak dikenal.",
+                "monaInvalid": "Format file Mona-Uranai tidak valid",
+                "goInvalid": "Format file cadangan GO tidak valid."
+            },
+            "dbSource": "Sumber data:",
+            "goodUpload": {
+                "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+            }
+        },
+        "count": {
+            "chars": "Karakter:",
+            "arts": "Artefak:",
+            "weapons": "Senjata:",
+            "total": "Total:",
+            "new": "Baru:",
+            "updated": "Terupdate:",
+            "removed": "Dihilangkan:",
+            "unchanged": "Tidak berubah:",
+            "invalid": "Invalid:"
+        }
+    },
+    "ui": {
+        "pageTitle": "Genshin Optimizer",
+        "tabs": {
+            "artifacts": "Artefak",
+            "characters": "Karakter",
+            "tools": "Alat",
+            "weapons": "Senjata",
+            "doc": "Docs"
+        },
+        "social": {
+            "paypal": "Paypal",
+            "patreon": "Patreon",
+            "discord": "Discord"
+        },
+        "game": {
+            "minLevel": "Level Min",
+            "maxLevel": "Level Maks",
+            "rarity": "Kualitas",
+            "level": "Level"
+        },
+        "unselect": "Batal pilih",
+        "ascending": "Meningkat",
+        "descending": "Menurun",
+        "loading": "Memuat...",
+        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
+        "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
+        "underConstruction": "Sedang Dibangun",
+        "error": "Error",
+        "reset": "Reset",
+        "info": "INFO",
+        "inventory": "Tas",
+        "close": "Tutup",
+        "sortMap": {
+            "new": "Baru",
+            "name": "Nama",
+            "level": "Level",
+            "rarity": "Kualitas",
+            "efficiency": "Substart Eff. Saat Ini",
+            "mefficiency": "Substat Eff. Maksimum",
+            "artsetkey": "Set Artefak",
+            "probability": "Probabilitas Roll"
+        }
+    },
+    "char_Eula": {
+        "skillC": {
+            "name": "Grimheart",
+            "consumed": "Grimheart Dikonsumsi",
+            "grimheart": {
+                "name": "Lapisan Grimheart",
+                "int": "Meningkatkan ketahanan terhadap interupsi"
+            }
+        },
+        "burstC": {
+            "name": "Lightfall Sword",
+            "start5": "Mulai dengan 5 lapis",
+            "addStacks": "50% kemungkinan untuk mendapat tambahan lapis"
+        },
+        "c1C": {
+            "name": "Mengkonsumsi lapis <strong>Grimheart</strong>",
+            "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
+        },
+        "passive1": "DMG Shattered Lightfall Sword"
+    },
+    "char_Noelle": {
+        "p4cd": "24 dtk, -1 dtk Setiap 4 hit",
+        "c6duration": "15 dtk, +1 dtk/kill, maks 10 dtk",
+        "qlarger": "Serangan area yang lebih besar"
+    },
+    "char_Venti": {
+        "addAimed": "Tambahan DMG Membidik",
+        "addFullAimed": "Tambahan DMG Membidik Penuh",
+        "upcurrentDuration": "Durasi Arus Angin",
+        "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
+        "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
+        "c4": "Venti mengambil sebuah Elemental Orb atau Partikel",
+        "q": "Memulihkan 15 Energy ke pada anggota party yang memiliki elemen tersebut.",
+        "c2": {
+            "hit": "Musuh di-Hit",
+            "launched": "Musuh terhempas"
+        }
+    },
+    "sheet": {
+        "dmg": "DMG",
+        "hits": "{{count}} Hit",
+        "lessPercentHP": "< {{percent}}% HP",
+        "hitOp": {
+            "normal": "Normal Attack mengenai musuh",
+            "charged": "Charged Attack mengenai musuh",
+            "plunging": "Plunging Attack mengenai musuh",
+            "skill": "Elemental Skill mengenai musuh",
+            "burst": "Elemental Burst mengenai musuh",
+            "geo": "Geo DMG mengenai musuh",
+            "anemo": "Anemo DMG mengenai musuh",
+            "hydro": "Hydro DMG mengenai musuh",
+            "cryo": "Cryo DMG mengenai musuh",
+            "pyro": "Pyro DMG mengenai musuh",
+            "electro": "Electro DMG mengenai musuh"
+        },
+        "eleAbsor": "Elemental Absorption",
+        "absorDot": "DMG Berkelanjutan",
+        "afterUse": {
+            "skill": "Setelah menggunakan Elemental Skill",
+            "burst": "Setelah menggunakan Elemental Burst"
+        },
+        "increase": {
+            "atk": "ATK Meningkat"
+        }
+    },
+    "weapon_SongOfBrokenPines": {
+        "name": "Millennial Movement: Banner-Hymn"
+    },
+    "char_KaedeharaKazuha": {
+        "c1": "Menggunanakan <strong>Kazuha Slash</strong> me-reset CD",
+        "c2": "Dalam area Autumn Whilelwind",
+        "c6": {
+            "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
+            "bonus": "DMG Normal, Charged dan Plunging"
+        }
+    },
+    "char_Rosaria": {
+        "a1": "Setelah Hit dari Belakang",
+        "a4": {
+            "name": "Setelah munggunakan <strong>Rites of Termination</strong>",
+            "text": "Peningkatan CRIT Rate party"
+        }
+    },
+    "char_KamisatoAyaka": {
+        "afterSprint": "Setelah Lari",
+        "afterSkill": "Setelah menggunakan <strong>Kamisato Art: Hyouka</strong>",
+        "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Lari",
+        "staminaRestore": "Memulihkan 10 Stamina",
+        "snowflakeDMG": "DMG Saat Mekar",
+        "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>",
+        "afterBurst": "Setelah menggunakan <strong>Kamisato Art: Soumetsu</strong>"
+    },
+    "weapon_MistsplitterReforged": {
+        "emblem": "Mistsplitter's Emblem"
+    },
+    "char_Yoimiya": {
+        "c1": "Musuh terkena efek <strong>Aurous Blaze</strong> dikalahkan",
+        "c2": "Crit dari <pyro>Pyro DMG</pyro>",
+        "p2": "Peningkatan ATK party",
+        "p2p": "Melancarkan <strong>Ryuukin Saxifrage</strong>"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "Eye of Stormy Judgement",
+            "partyCost": "Konsumsi Energi (party)"
+        },
+        "burst": {
+            "resolves": "Lapisan Resolve"
+        },
+        "a4": {
+            "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
+            "eleDMG": "Electro DMG Bonus"
+        },
+        "c4": {
+            "expires": "Status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong> menghilang"
+        }
+    },
+    "char_Aloy": {
+        "skill": {
+            "coil": "Coil",
+            "coil1": "Lapisan Coil 1",
+            "coil2": "Lapisan Coil 2",
+            "coil3": "Lapisan Coil 3",
+            "rush": "Rushing Ice"
+        }
+    },
+    "char_KujouSara": {
+        "skill": {
+            "ambush": "Tengu Juurai: Ambush"
+        }
+    },
+    "char_SangonomiyaKokomi": {
+        "burst": "Ceremonial Garment",
+        "c2": "Karakter dengan HP kurang dari 50%",
+        "c6": "Setelah Normal dan Charged Attack memulihkan karakter dengan HP 80% atau lebih"
+    },
+    "page_home": {
+        "intro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer (GO) merupakan website fan-made open source untuk game gacha RPG <1><strong>Genshin Impact</strong></1>. Alat ini bertujuan untuk mempermudah pemain untuk mengoptimisasi artefak yang ada dalam game tersebut. Dikarenakan artefak mampu menentukan seberapa efektif karaktermu di dalam game, GO akan mencoba mencari artefak yang terbaik dari semua artefak yang kamu miliki untuk karaktermu.</1><2>GO bisa menyimpan informasi artefak yang kamu miliki serta bisa membandingkan dan memfilter artefak agar mempermudah pencarian artefak yang bagus di dalam tas untuk ditingkatkan levelnya atau artefak yang bisa dijadikan tumbal.</2><3>Karena GO sanggup menyalin stat untuk semua karakter, serta sanggup mengkalkulasi semua jumlah damage hingga akurasi 1%, alat ini bisa dijadikan sebagai kalkulator damage dan alat untuk theory crafting.</3>"
+    },
+    "page_scanner": {
+        "intro": "<0>Pemindai Otomatis</0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual,<1> risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><2> Aspek yang paling penting dalam menggunakan pemindai dengan GO adalah format outputnya:</2><3><0><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1>v6.0.0</1>, GO bisa mengimpor data ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></0></3><4>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </4><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam <strong>\"Database Upload\"</strong>.</5>"
+    },
+    "weapon_EverlastingMoonglow": {
+        "name": "DMG Normal Attack meningkat"
+    },
+    "weapon_Akuoumaru": {
+        "party": "Kapasitas Energy Party"
+    },
+    "artifact_ArchaicPetra": {
+        "condName": "Memperoleh Elemental Shard"
+    },
+    "artifact_Instructor": {
+        "condName": "Memicu Reaksi Elemental"
+    },
+    "artifact_TenacityOfTheMillelith": {
+        "condName": "Elemental Skill mengenai musuh"
+    },
+    "artifact_ViridescentVenerer": {
+        "condName": "Elemen terkena Swirl"
+    },
+    "char_Thoma": {
+        "a1": "Menciptakan/Memperbarui <strong>Blazing Barrier</strong>",
+        "c6": "Saat menciptakan atau memperbarui <strong>Blazing Barrier</strong>"
+    },
+    "weapon_CinnabarSpindle": {
+        "name": "Normal Attack DMG meningkat"
+    },
+    "weapon_ElegyForTheEnd": {
+        "condName": "Millennial Movement: Farewell Song"
+    },
+    "weapon_MouunsMoon": {
+        "party": "Kapasitas energy party"
+    },
+    "weapon_ThrillingTalesOfDragonSlayers": {
+        "condName": "Berganti karakter"
+    },
+    "weapon_WavebreakersFin": {
+        "party": "Kapasitas energy party"
+    }
+}
