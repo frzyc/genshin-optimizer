@@ -6,7 +6,7 @@ import { CharacterKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { customDmgNode, dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
 import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -201,20 +201,7 @@ const dmgFormulas = {
   skill: {
     pressDmg: dmgNode("atk", dm.skill.pressDmg, "skill"),
     holdDmg: dmgNode("atk", dm.skill.holdDmg, "skill"),
-    karmaDmg: customDmgNode(
-      sum(
-        prod(
-          subscript(input.total.skillIndex, dm.skill.karmaAtkDmg, { unit: "%" }),
-          input.total.atk
-        ),
-        prod(
-          subscript(input.total.skillIndex, dm.skill.karmaEleMasDmg, { unit: "%" }),
-          input.total.eleMas
-        ),
-      ),
-      "skill",
-      triKarmaAddl
-    )
+    karmaDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.karmaAtkDmg, dm.skill.karmaEleMasDmg], "skill", triKarmaAddl)
   },
   passive2: {
     a4Karma_dmg_,

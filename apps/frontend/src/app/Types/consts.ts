@@ -65,6 +65,7 @@ export const allArtifactSets = [
 ] as const
 export const nonTravelerCharacterKeys = [
   "Albedo",
+  "Alhaitham",
   "Aloy",
   "Amber",
   "AratakiItto",
@@ -120,6 +121,7 @@ export const nonTravelerCharacterKeys = [
   "Xinyan",
   "YaeMiko",
   "Yanfei",
+  "Yaoyao",
   "Yelan",
   "Yoimiya",
   "YunJin",
@@ -181,6 +183,7 @@ export const allWeaponSwordKeys = [
   "HarbingerOfDawn",
   "IronSting",
   "KeyOfKhajNisut",
+  "LightOfFoliarIncision",
   "LionsRoar",
   "MistsplitterReforged",
   "PrimordialJadeCutter",
