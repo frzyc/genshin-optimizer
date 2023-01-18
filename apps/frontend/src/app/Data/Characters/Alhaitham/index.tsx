@@ -91,12 +91,11 @@ const dm = {
   }
 } as const
 
-    // TODO: Is this a special multiplier? It kind of sounds like it...
-const a4SkillDmgBonus = greaterEq(input.asc, 4, min(
+const a4_skill_dmg_ = greaterEq(input.asc, 4, min(
   prod(percent(dm.passive2.dmgInc), input.total.eleMas), // TODO: is this total or premod; test with nahida
   percent(dm.passive2.maxDmgInc)
 ))
-const a4BurstDmgBonus = {...a4SkillDmgBonus}
+const a4_burst_dmg_ = {...a4_skill_dmg_}
 
 const [condWithMirrorsPath, condWithMirrors] = cond(key, "withMirrors")
 const withMirrorsInfusion = equalStr(condWithMirrors, "on", constant(elementKey))
@@ -147,14 +146,14 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     rushDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.rushDmgAtk, dm.skill.rushDmgEm], "skill"),
-    mirrorDmg1: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.mirrorDmgAtk, dm.skill.mirrorDmgEm], "skill", { premod: { skill_dmg_: a4SkillDmgBonus } }),
+    mirrorDmg1: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.mirrorDmgAtk, dm.skill.mirrorDmgEm], "skill", { premod: { skill_dmg_: a4_skill_dmg_ } }),
   },
   burst: {
-    instanceDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.burst.instanceDmgAtk, dm.burst.instanceDmgEm], "burst", { premod: { burst_dmg_: a4BurstDmgBonus } }),
+    instanceDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.burst.instanceDmgAtk, dm.burst.instanceDmgEm], "burst", { premod: { burst_dmg_: a4_burst_dmg_ } }),
   },
   passive2: {
-    a4SkillDmgBonus,
-    a4BurstDmgBonus,
+    a4SkillDmgBonus: a4_skill_dmg_,
+    a4BurstDmgBonus: a4_burst_dmg_,
   }
 }
 
@@ -252,7 +251,7 @@ const sheet: ICharacterSheet = {
       }
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4SkillDmgBonus, { name: ct.ch("projectionAttack_dmg_"), unit: "%" })
+        node: infoMut(a4_skill_dmg_, { name: ct.ch("projectionAttack_dmg_"), unit: "%" })
       }]
     })]),
 
@@ -272,7 +271,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4BurstDmgBonus, KeyMap.info("burst_dmg_"))
+        node: infoMut(a4_burst_dmg_, KeyMap.info("burst_dmg_"))
       }]
     }), ct.condTem("constellation4", {
       path: condMirrorsConsumedPath,
