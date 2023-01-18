@@ -1,79 +1,107 @@
-import { AnyNode, Calculator, compileTagMapValues, constant, jsonToTagMapValues, TagMap, traverse } from "@genshin-optimizer/waverider";
+import { AnyNode, Calculator, compileTagMapValues, constant, jsonToTagMapValues, read, Read, ReRead, reread, TagMap, traverse } from "@genshin-optimizer/waverider";
 import { keys, preValues } from "./data";
+import { nosrc } from "./data/util";
 import { reader, stats, Tag } from "./data/util/read";
 
 const values = jsonToTagMapValues<AnyNode>(preValues)
 
 describe('Genshin Database', () => {
-  const r = reader.char('Nahida'), { lvl, ascension, constellation } = r.qq
-  const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = reader.customQ
+  const preset = nosrc.preset(0)
+  const nahida = preset.src('Nahida', 'sum')
+  const { lvl } = nahida.q, { ascension, constellation } = nahida.base
+  const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = nahida.custom
 
-  const compiled = compileTagMapValues<AnyNode>(keys, [
+  const compiled = compileTagMapValues<AnyNode | ReRead>(keys, [
+    // Replace "char" with "Nahida"
+    preset.src('char').addNode(reread(reader.src('Nahida').tag)),
+
     lvl.addNode(constant(12)),
     ascension.addNode(constant(0)),
     constellation.addNode(constant(2)),
 
     c2Bloom.addNode(constant('on')),
-
-    // Team Buff
-    ...stats.map(s => r.q(s).addNode(r.with('char', 'team', 'sum'))),
+    preset.src('custom').base.critRate_.addNode(constant(0.90))
   ])
   const calc = new Calculator(keys, values, compiled)
 
   test('Basic Query', () => {
-    expect(calc._compute(r.final.q('def')).val).toBeCloseTo(94.15)
-
-    checkDependency([r.final.burgeon.q('critRate_')], calc.nodes, {})
+    expect(calc._compute(preset.final.def).val).toBeCloseTo(94.15)
+    expect(calc._compute(preset.final.critRate_.burgeon).val).toBeCloseTo(1.10)
+    expect(calc._compute(preset.q.cappedCritRate_).val).toBe(0.90)
+    expect(calc._compute(preset.burgeon.q.cappedCritRate_).val).toBe(1)
   })
 })
 
-let lastID = 1
-function checkDependency(n: AnyNode[], db: TagMap<AnyNode>, tag: Tag, translation = new TagMap<number>(keys), visiting: Tag[] = [], visitingID = new Set<number>()) {
-  const tags = [tag]
-  traverse(n, (n, map) => {
-    const { op } = n
-    switch (op) {
-      case 'read': {
-        const baseTag = tags[tags.length - 1]
-        const tag = { ...baseTag, ...n.tag }
-
-        let id = translation.exact(tag)[0]
-        if (id === undefined) {
-          id = lastID++
-          translation.add(tag, id)
-        }
-
-        if (visitingID.has(id)) {
-          console.log(visiting, tag)
-          throw "Cyclical dependencies found"
-        }
-
-        visiting.push(n.tag)
-        visitingID.add(id)
-
-        const nodes = db.subset(tag)
-        if (!n.agg) {
-          if (nodes.length !== 1) {
-            console.log(visiting, tag)
-            throw "Invalid Non-aggregating Read Found"
-          }
-        }
-        checkDependency(nodes, db, tag, translation, visiting, visitingID)
-
-        visitingID.delete(id)
-        visiting.pop()
-        return
-      }
-      case 'tag':
-        const tag = n.tag
-        tags.push({ ...tags[tags.length - 1], ...tag })
-        visiting.push(tag)
-        map(n.x[0])
-        visiting.pop()
-        tags.pop()
-        return
-    }
-    n.x.forEach(x => map(x))
-    n.br.forEach(br => map(br))
+function dependencyString(tag: Tag, calc: Calculator) {
+  const str = listDependencies(tag, calc).map(({ tag, read, reread }) => {
+    const result: any = { tag: tagString(tag) }
+    if (read.length) result.dep = read.map(tagString)
+    if (reread.length) result.re = reread.map(tagString)
+    return result
   })
+  return str
+}
+function tagString(tag: Tag): string {
+  return `{ ${Object.entries(tag).map(([k, v]) => `${k}:${v}`).join(" ")} }`
+}
+
+let lastID = 1
+function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], reread: Tag[] }[] {
+  const result: { tag: Tag, read: Tag[], reread: Tag[] }[] = []
+  const translation = new TagMap<number>(keys), visited: Set<number> = new Set(), visiting: Tag[] = [], visitingID = new Set<number>()
+  function getID(tag: Tag): number {
+    let id = translation.exact(tag)[0]
+    if (id === undefined) {
+      id = lastID++
+      translation.add(tag, id)
+    }
+    return id
+  }
+
+  function internal(tag: Tag) {
+    const { nodes } = calc.withTag(tag)
+    const n = nodes.filter(x => x.op !== 'reread') as AnyNode[]
+    const re = nodes.filter(x => x.op === 'reread') as ReRead[]
+    const read: Tag[] = [], reread: Tag[] = []
+    result.push({ tag, read, reread })
+
+    const id = getID(tag)
+    if (visited.has(id)) return
+    if (visitingID.has(id)) {
+      console.log(visiting, tag)
+      throw "Cyclical dependencies found"
+    }
+    visitingID.add(id)
+
+    const tags = [tag]
+    traverse(n, (n, map) => {
+      switch (n.op) {
+        case 'read': {
+          const newTag = { ...tags[tags.length - 1], ...n.tag }
+          read.push(newTag)
+          internal(newTag)
+          return
+        }
+        case 'tag': {
+          tags.push({ ...tags[tags.length - 1], ...n.tag })
+          map(n.x[0])
+          tags.pop()
+          return
+        }
+      }
+      n.x.forEach(map)
+      n.br.forEach(map)
+    })
+
+    for (const { tag: extra } of re) {
+      const newTag = { ...tag, ...extra }
+      internal(newTag)
+      reread.push(newTag)
+    }
+
+    visitingID.delete(id)
+    visited.add(id)
+  }
+  internal(tag)
+  return result
 }

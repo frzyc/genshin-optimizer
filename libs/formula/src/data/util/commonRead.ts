@@ -5,10 +5,9 @@ export function percent(x: number | NumNode): NumNode {
   return typeof x === 'number' ? constant(x) : x
 }
 export const one = percent(1), naught = percent(0)
-export const { base, premod, final } = reader
 
-export const team = reader.char('team'), enemy = reader.char('enemy')
+export const { team, enemy, none: nosrc } = reader.withAll('src')
 export const activeChar = todo
 
-export const cappedCritRate_ = reader.q('cappedCritRate_')
+export const cappedCritRate_ = nosrc.q.cappedCritRate_
 export const hitEle = todo

@@ -1,7 +1,6 @@
-import { AnyNode, cmpEq, cmpGE, min, prod, RawTagMapEntries, subscript } from "@genshin-optimizer/waverider"
-import { activeChar, enemy, percent, reader, team } from "../../util"
+import { cmpEq, cmpGE, subscript } from "@genshin-optimizer/waverider"
+import { Data, enemy, percent, reader, team } from "../../util"
 import { entriesForChar } from "../util"
-
 import data_gen from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -74,42 +73,35 @@ const dm = {
 } as const
 
 const charKey = 'Nahida', ele = 'dendro'
-const r = reader.char(charKey), { premod, final } = r
-const { auto, skill, burst, constellation, ascension } = r.qq
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = r.base.customQ
+const r = reader.src(charKey), { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = r.custom
 
-const c2_critRate_ = cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critRate_)))
-const c2_critDMG_ = cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critDMG_)))
-const c2qsa_defRed_ = cmpGE(constellation, 2, cmpEq(c2QSA, "on", percent(dm.constellation2.defDec_)))
-const a1InBurst_eleMasDisp = cmpGE(ascension, 1, cmpEq(a1ActiveInBurst, "on",
-  min(
-    prod(dm.passive1.eleMas_, team.q('eleMas')),
-    dm.passive1.maxEleMas,
-  )
-))
+const { auto, skill, burst, constellation, ascension } = reader.base
+const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = reader.custom
 
 // TODO: DMG Formulas
 
-const a1InBurst_eleMas = cmpEq(activeChar, charKey, a1InBurst_eleMasDisp)
-const data: RawTagMapEntries<AnyNode> = [
-  ...entriesForChar(r, ele, 'sumeru', data_gen),
+const data: Data = [
+  ...entriesForChar(charKey, ele, 'sumeru', data_gen),
   skill.addNode(cmpGE(constellation, 3, 3)),
   burst.addNode(cmpGE(constellation, 5, 3)),
 
-  premod.q('eleMas').addNode(cmpGE(constellation, 4, subscript(c4Count, [NaN, ...dm.constellation4.eleMas]))),
+  r.premod.eleMas.addNode(cmpGE(constellation, 4, subscript(c4Count, [NaN, ...dm.constellation4.eleMas]))),
 
-  team.premod.burning.q('critRate_').addNode(c2_critRate_),
-  team.premod.bloom.q('critRate_').addNode(c2_critRate_),
-  team.premod.hyperbloom.q('critRate_').addNode(c2_critRate_),
-  team.premod.burgeon.q('critRate_').addNode(c2_critRate_),
+  c2_critRate_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critRate_)))),
+  team.premod.critRate_.burning.reread(c2_critRate_.tag),
+  team.premod.critRate_.bloom.reread(c2_critRate_.tag),
+  team.premod.critRate_.hyperbloom.reread(c2_critRate_.tag),
+  team.premod.critRate_.burgeon.reread(c2_critRate_.tag),
 
-  team.premod.burning.q('critDMG_').addNode(c2_critDMG_),
-  team.premod.bloom.q('critDMG_').addNode(c2_critDMG_),
-  team.premod.hyperbloom.q('critDMG_').addNode(c2_critDMG_),
-  team.premod.burgeon.q('critDMG_').addNode(c2_critDMG_),
+  c2_critDMG_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critDMG_)))),
+  team.premod.critDMG_.burning.reread(c2_critDMG_.tag),
+  team.premod.critDMG_.bloom.reread(c2_critDMG_.tag),
+  team.premod.critDMG_.hyperbloom.reread(c2_critDMG_.tag),
+  team.premod.critDMG_.burgeon.reread(c2_critDMG_.tag),
 
-  enemy.q('defRed_').addNode(c2qsa_defRed_),
+  c2qsa_defRed_.addNode(cmpGE(constellation, 2, cmpEq(c2QSA, "on", percent(dm.constellation2.defDec_)))),
+  enemy.base.defRed_.reread(c2qsa_defRed_.tag),
 
-  team.final.q('eleMas').addNode(a1InBurst_eleMas),
+  // team.final.eleMas.addNode(), // TODO: a1
 ]
 export default data

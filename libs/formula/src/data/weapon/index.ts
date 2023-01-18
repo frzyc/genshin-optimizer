@@ -1,5 +1,5 @@
-import type { AnyNode, RawTagMapEntries } from "@genshin-optimizer/waverider"
+import { Data } from "../util"
 
-const data: RawTagMapEntries<AnyNode> = [
+const data: Data = [
 ]
 export default data
