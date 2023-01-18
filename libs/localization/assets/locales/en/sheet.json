@@ -13,8 +13,6 @@
   "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
   "stack_one": "{{count}} Stack",
   "stack_other": "{{count}} Stacks",
-  "member_one": "{{count}} Member",
-  "member_other": "{{count}} Members",
   "seconds_one": "{{count}} Second",
   "seconds_other": "{{count}} Seconds",
   "uses_one": "{{count}} Use",
@@ -24,23 +22,23 @@
   "afterDefeatEnemy": "After defeating an opponent",
   "opponentsDamaged": "Opponents damaged",
   "hitOp": {
-    "none": "Hits on opponents",
-    "normal": "Normal Attack hits on opponents",
-    "charged": "Charged Attack hits on opponents",
-    "normalOrCharged": "Normal / Charged Attack hits on opponents",
-    "plunging": "Plunging Attack hits on opponents",
-    "normalChargedOrPlunging": "Normal / Charged / Plunging Attack hits on opponents",
-    "skill": "Elemental Skill hits on opponents",
-    "burst": "Elemental Burst hits on opponents",
-    "skillOrBurst": "Elemental Skill or Elemental Burst hits on opponents",
-    "geo": "<geo>Geo DMG</geo> hits on opponents",
-    "anemo": "<anemo>Anemo DMG</anemo> hits on opponents",
-    "hydro": "<hydro>Hydro DMG</hydro> hits on opponents",
-    "cryo": "<cryo>Cryo DMG</cryo> hits on opponents",
-    "pyro": "<pyro>Pyro DMG</pyro> hits on opponents",
-    "electro": "<electro>Electro DMG</electro> hits on opponents",
-    "dendro": "<dendro>Dendro DMG</dendro> hits on opponents",
-    "crit": "CRIT hits on opponents"
+    "none": "After hitting an opponent",
+    "normal": "After hitting an opponent with a Normal Attack",
+    "charged": "After hitting an opponent with a Charged Attack",
+    "normalOrCharged": "After hitting an opponent with a Normal/Charged Attack",
+    "plunging": "After hitting an opponent with a Plunging Attack",
+    "normalChargedOrPlunging": "After hitting an opponent with a Normal/Charged/Plunging Attack",
+    "skill": "After hitting an opponent with an Elemental Skill",
+    "burst": "After hitting an opponent with an Elemental Burst",
+    "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
+    "geo": "After dealing <geo>Geo DMG</geo>",
+    "anemo": "After dealing <anemo>Anemo DMG</anemo>",
+    "hydro": "After dealing <hydro>Hydro DMG</hydro>",
+    "cryo": "After dealing <cryo>Cryo DMG</cryo>",
+    "pyro": "After dealing <pyro>Pyro DMG</pyro>",
+    "electro": "After dealing <electro>Electro DMG</electro>",
+    "dendro": "After dealing <dendro>Dendro DMG</dendro>",
+    "crit": "After dealing CRIT DMG"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",
@@ -62,15 +60,14 @@
   "eleAbsor": "Elemental Absorption",
   "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
-  "incInterRes": "Increase resistance to interruption",
+  "incInterRes": "Increased resistance to interruption",
   "charges": "Charges",
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
   "activeCharField": "Active Character in field",
   "opponentsField": "Opponents in field",
-  "takeDmg": "On taking DMG",
-  "onHit": "On Hit",
+  "takeDmg": "After taking DMG",
   "infusion": {
     "pyro": "Pyro Infusion",
     "cryo": "Cryo Infusion",
@@ -98,7 +95,6 @@
   "teamBuff": "Team Buff",
   "maxStacks": "Maximum stacks",
   "members": "Members",
-  "hits": "Hits",
   "protectedByShield": "Protected by a shield",
   "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
   "staminaDec_": "Stamina Consumption Decrease",
@@ -134,14 +130,14 @@
     "constellation6": "C6"
   },
   "swirlReaction": {
-    "hydro": "Upon triggering a <hydro>Hydro</hydro> Swirl reaction",
-    "pyro": "Upon triggering a <pyro>Pyro</pyro> Swirl reaction",
-    "electro": "Upon triggering an <electro>Electro</electro> Swirl reaction",
-    "cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
+    "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
+    "pyro": "After triggering a <pyro>Pyro</pyro> Swirl reaction",
+    "electro": "After triggering an <electro>Electro</electro> Swirl reaction",
+    "cryo": "After triggering a <cryo>Cryo</cryo> Swirl reaction"
   },
   "elementalReaction": {
-    "hydro": "Upon triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
-    "electro": "Upon triggering an <electro>Electro-related</electro> Elemental Reaction"
+    "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
   },
   "bonusScaling": {
     "skill_": "Ele. Skill Bonus Scaling"

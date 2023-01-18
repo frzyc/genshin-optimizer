@@ -25,7 +25,7 @@
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
     "title": "Use Excluded Artifacts",
-    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
+    "usingNum_one": "Using <1>{{count}}</1> excluded artifact",
     "usingNum_other": "Using <1>{{count}}</1> excluded artifacts"
   },
   "useEquipped": {
@@ -68,7 +68,7 @@
     "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
     "modal": {
       "setCond": {
-        "title": "Default Artifact Set Conditional Effects",
+        "title": "Artifact Set Conditional Effects",
         "reset": "Reset Conditionals",
         "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
       },
