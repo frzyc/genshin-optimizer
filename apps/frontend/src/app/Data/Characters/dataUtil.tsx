@@ -61,6 +61,17 @@ export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[],
   move, additional)
 }
 /** Note: `additional` applies only to this formula */
+export function splitScaleDmgNode(bases: (MainStatKey | SubstatKey)[], lvlMultipliers: number[][], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+  const talentType = getTalentType(move)
+  return customDmgNode(
+    sum(...bases.map((base, i) =>
+      prod(subscript(input.total[`${talentType}Index`], lvlMultipliers[i], { unit: "%" }), input.total[base])
+    )),
+    move,
+    additional
+  )
+}
+/** Note: `additional` applies only to this formula */
 export function shieldNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
   return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
 }

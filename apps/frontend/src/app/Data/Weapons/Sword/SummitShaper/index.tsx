@@ -44,7 +44,7 @@ const sheet: IWeaponSheet = {
     value: condPassive,
     path: condPassivePath,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
-    name: st("hits"),
+    name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 5).map(i =>
       [i, {
         name: st("stack", { count: i }),

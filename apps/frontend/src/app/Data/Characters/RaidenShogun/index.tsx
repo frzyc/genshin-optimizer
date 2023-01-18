@@ -265,7 +265,7 @@ const sheet: ICharacterSheet = {
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.ch(`burst.burstDmg`) }),
       }, {
         node: infoMut(dmgFormulas.burst.hit1, { name: ct.chg(`burst.skillParams.3`) }),
       }, {
