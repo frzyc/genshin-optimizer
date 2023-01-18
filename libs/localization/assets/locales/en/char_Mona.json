@@ -1,0 +1,11 @@
+{
+  "omen": "After hitting an opponent affected by Omen",
+  "omenDuration": "Omen Duration",
+  "bubbleDuration": "Illusory Bubble Duration",
+  "phantomDuration": "Phantom Duration",
+  "hitOp": {
+    "affectedByOmen": "After hitting an opponent affected by Omen"
+  },
+  "frozenDuration": "<cryo>Frozen</cryo> duration extended by",
+  "uponSprint": "After using Illusory Torrent"
+}
