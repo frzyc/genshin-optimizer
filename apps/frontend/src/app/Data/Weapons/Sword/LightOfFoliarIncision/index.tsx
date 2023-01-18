@@ -18,7 +18,7 @@ const critRate_ = equal(input.weapon.key, key, subscript(input.weapon.refineInde
 const [condAfterNormalElePath, condAfterNormalEle] = cond(key, "afterNormalEle")
 const dmgIncArr = [1.2, 1.5, 1.8, 2.1, 2.4]
 // TODO: Check if this is total or premod. Probably will be total since it is dmgInc
-const normal_dmgInc = equal(condAfterNormalEle, "on", prod(subscript(input.weapon.refineIndex, dmgIncArr, { unit: "%" }), input.total.eleMas))
+const normal_dmgInc = equal(input.weapon.key, key, equal(condAfterNormalEle, "on", prod(subscript(input.weapon.refineIndex, dmgIncArr, { unit: "%" }), input.total.eleMas)))
 const skill_dmgInc = {...normal_dmgInc}
 
 const data = dataObjForWeaponSheet(key, data_gen, {

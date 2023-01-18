@@ -92,10 +92,11 @@ const dm = {
 } as const
 
     // TODO: Is this a special multiplier? It kind of sounds like it...
-const a4DmgBonus = greaterEq(input.asc, 4, min(
+const a4SkillDmgBonus = greaterEq(input.asc, 4, min(
   prod(percent(dm.passive2.dmgInc), input.total.eleMas), // TODO: is this total or premod; test with nahida
   percent(dm.passive2.maxDmgInc)
 ))
+const a4BurstDmgBonus = {...a4SkillDmgBonus}
 
 const [condWithMirrorsPath, condWithMirrors] = cond(key, "withMirrors")
 const withMirrorsInfusion = equalStr(condWithMirrors, "on", constant(elementKey))
@@ -146,13 +147,14 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     rushDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.rushDmgAtk, dm.skill.rushDmgEm], "skill"),
-    mirrorDmg1: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.mirrorDmgAtk, dm.skill.mirrorDmgEm], "skill", { premod: { skill_dmg_: a4DmgBonus } }),
+    mirrorDmg1: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.mirrorDmgAtk, dm.skill.mirrorDmgEm], "skill", { premod: { skill_dmg_: a4SkillDmgBonus } }),
   },
   burst: {
-    instanceDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.burst.instanceDmgAtk, dm.burst.instanceDmgEm], "burst", { premod: { burst_dmg_: a4DmgBonus } }),
+    instanceDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.burst.instanceDmgAtk, dm.burst.instanceDmgEm], "burst", { premod: { burst_dmg_: a4BurstDmgBonus } }),
   },
   passive2: {
-    a4DmgBonus
+    a4SkillDmgBonus,
+    a4BurstDmgBonus,
   }
 }
 
@@ -250,7 +252,7 @@ const sheet: ICharacterSheet = {
       }
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut({...a4DmgBonus}, { name: ct.ch("projectionAttack_dmg_"), unit: "%" })
+        node: infoMut(a4SkillDmgBonus, { name: ct.ch("projectionAttack_dmg_"), unit: "%" })
       }]
     })]),
 
@@ -270,7 +272,7 @@ const sheet: ICharacterSheet = {
       }]
     }, ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4DmgBonus, KeyMap.info("burst_dmg_"))
+        node: infoMut(a4BurstDmgBonus, KeyMap.info("burst_dmg_"))
       }]
     }), ct.condTem("constellation4", {
       path: condMirrorsConsumedPath,
