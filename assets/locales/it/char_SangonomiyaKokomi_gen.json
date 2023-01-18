@@ -138,9 +138,9 @@
   "constellation2": {
     "name": "Come le onde, le nuvole si increspano",
     "description": {
-      "0": "Sangonomiya Kokomi ottiene un bonus di guarigione per i personaggi i cui PS sono pari o inferiori a un 50% nel seguente modo:",
+      "0": "Sangonomiya Kokomi ottiene un bonus di guarigione per i personaggi i cui PS sono pari o inferiori a un 50% nei seguenti modi:",
       "1": [
-        " Bake-Kurage <strong>Giuramento di Kurage</strong>: 4,5% dei PS max di Kokomi;",
+        " Bake-Kurage di <strong>Giuramento di Kurage</strong>: 4,5% dei PS max di Kokomi;",
         " attacchi normali e caricati di <strong>Ascensione della Nereide</strong>: 0,6% dei PS max di Kokomi."
       ]
     }
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, Sangonomiya Kokomi ottiene un <hydro>Bonus DAN da Hydro</hydro> di un 40% per 4 s quando i suoi attacchi normali e caricati guariscono, o guariranno, i membri del gruppo i cui PS sono pari o superiori a un 80%."
+      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, Sangonomiya Kokomi ottiene un <hydro>Bonus DAN da Hydro</hydro> di un 40% per 4{NON_BREAK_SPACE}s quando i suoi attacchi normali e caricati guariscono, o guarirebbero, i membri del gruppo i cui PS sono pari o superiori a un 80%."
     }
   }
 }

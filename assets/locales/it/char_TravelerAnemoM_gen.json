@@ -114,7 +114,7 @@
   "constellation1": {
     "name": "Vortice furente",
     "description": {
-      "0": "<strong>Vortice del palmo</strong> attira gli avversari e gli oggetti in un raggio di 5 m."
+      "0": "<strong>Vortice del palmo</strong> attira gli avversari e gli oggetti in un raggio di 5{NON_BREAK_SPACE}m."
     }
   },
   "constellation2": {
@@ -133,7 +133,7 @@
   "constellation4": {
     "name": "Brezza protettrice",
     "description": {
-      "0": "Riduce di un 10% i DAN subiti quando viene usato <strong>Vortice del palmo</strong>."
+      "0": "Riduce di un 10% i DAN subiti durante l'utilizzo di <strong>Vortice del palmo</strong>."
     }
   },
   "constellation5": {

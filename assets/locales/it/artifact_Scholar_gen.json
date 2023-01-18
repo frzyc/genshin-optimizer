@@ -1,7 +1,7 @@
 {
   "setName": "Studiosa",
   "setEffects": {
-    "2": "Ricarica energia +20%.",
+    "2": "Ricarica d'energia +20%.",
     "4": "Ottenere particelle o sfere elementali fornisce 3 di energia a tutti i membri del gruppo equipaggiati con un arco o un catalizzatore. Si può verificare una sola volta ogni 3{NON_BREAK_SPACE}s."
   },
   "pieces": {

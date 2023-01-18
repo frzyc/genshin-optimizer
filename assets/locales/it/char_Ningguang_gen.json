@@ -8,13 +8,13 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attacco normale</strong>",
-        "1": "Spara gemme che infliggono <geo>DAN da Geo</geo>.",
+        "1": "Scaglia gemme che infliggono <geo>DAN da Geo</geo>.",
         "2": "Quando il colpo va a segno, Ningguang ottiene 1 Giada stellare."
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
-        "1": "Consuma una determinata quantità di vigore per sparare una gemma gigante che infligge <geo>DAN da Geo</geo>.",
-        "2": "Se Ningguang ha delle pietre di Giada stellare, rilasciando un attacco caricato sparerà tutte le pietre di Giada stellare verso il nemico, infliggendo DAN aggiuntivi."
+        "1": "Consuma una determinata quantità di vigore per scagliare una gemma gigante che infligge <geo>DAN da Geo</geo>.",
+        "2": "Se Ningguang ha delle pietre di Giada stellare a disposizione, rilasciando un attacco caricato le scaglierà tutte verso il nemico, infliggendo DAN aggiuntivi."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -47,7 +47,7 @@
       "1": "<br/>",
       "2": "<strong>Paravento di giada</strong>",
       "3": [
-        " Respinge i proiettili degli avversari.",
+        " Blocca i proiettili degli avversari.",
         " La resistenza varia in base ai PS max di Ningguang."
       ],
       "4": "<br/>",
@@ -77,8 +77,8 @@
   "burst": {
     "name": "Spaccastelle",
     "description": {
-      "0": "Ningguang ammucchia un gran numero di gemme e le disperde tutte in una volta, scagliando proiettili a ricerca che infliggono ingenti <geo>DAN da Geo</geo> agli avversari.",
-      "1": "Se Spaccastelle viene usato quando un Paravento di giada è nelle vicinanze, il Paravento di giada sparerà proiettili di gemme aggiuntivi nello stesso momento.",
+      "0": "Ningguang accumula un gran numero di gemme e le disperde tutte in una volta, scagliando proiettili a ricerca che infliggono ingenti <geo>DAN da Geo</geo> agli avversari.",
+      "1": "Se Spaccastelle viene usato quando un Paravento di giada è nelle vicinanze, il Paravento di giada scaglierà proiettili di gemme aggiuntivi nello stesso momento.",
       "2": "<br/>",
       "3": "<i>Le stelle si sgretolano. Il silenzio cade.</i>"
     },
@@ -128,7 +128,7 @@
   "constellation2": {
     "name": "Effetto shock",
     "description": {
-      "0": "Quando il <strong>Paravento di giada</strong> viene distrutto, il suo TdR viene ripristinato.",
+      "0": "Quando il <strong>Paravento di giada</strong> viene distrutto, il suo TdR viene azzerato.",
       "1": "Si può verificare una sola volta ogni 6{NON_BREAK_SPACE}s."
     }
   },
@@ -155,7 +155,7 @@
   "constellation6": {
     "name": "Grandiose son le{NON_BREAK_SPACE}Sette{NON_BREAK_SPACE}Stelle",
     "description": {
-      "0": "Quando si usa <strong>Spaccastelle</strong>, Ningguang ottiene 7 Giade stellari."
+      "0": "Quando si usa <strong>Spaccastelle</strong>, Ningguang ottiene 7 pietre di Giada stellare."
     }
   }
 }

@@ -74,9 +74,10 @@
         " <pyro>Pyro</pyro>: la Lampada esplode dopo un breve lasso di tempo e poi scompare, infliggendo <dendro>DAN da Dendro ad area</dendro>."
       ],
       "6": "La Lampada di loto può realizzare una sola Trasfigurazione della luce di loto nel corso della sua durata.",
-      "7": "{F#La}{M#Il} viaggiat{F#rice}{M#ore} può creare una sola lampada alla volta.",
-      "8": "<br/>",
-      "9": "<i>Tu e Paimon avete ascoltato le piante germogliare dopo la pioggia.</i>"
+      "7": "<br/>",
+      "8": "{F#La}{M#Il} viaggiat{F#rice}{M#ore} può creare una sola lampada alla volta.",
+      "9": "<br/>",
+      "10": "<i>Tu e Paimon avete ascoltato le piante germogliare dopo la pioggia.</i>"
     },
     "skillParams": {
       "0": "DAN da ATT Lampada di loto Lea",
@@ -106,7 +107,7 @@
   "passive2": {
     "name": "Fasto verdeggiante",
     "description": {
-      "0": "Ogni punto di maestria elementale in possesso del viaggiat{F#rice}{M#ore} aumenta i DAN inflitti da <strong>Foglialama affilata</strong> di uno 0,15% e i danni inflitti da <strong>Manifestazione silvestre</strong> dello 0,1%."
+      "0": "Ogni punto di maestria elementale posseduto da{F#lla}{M#l} viaggiat{F#rice}{M#ore} aumenta i DAN inflitti da <strong>Foglialama affilata</strong> di uno 0,15% e i danni inflitti da <strong>Manifestazione silvestre</strong> dello 0,1%."
     }
   },
   "constellation1": {
@@ -131,7 +132,7 @@
   "constellation4": {
     "name": "Erbadolce",
     "description": {
-      "0": "Quando la <strong>Lampada di loto Lea</strong> innesca una Trasfigurazione della luce di loto, ottiene 5 cariche dell'effetto Luce di Loto inondante dal talento passivo Supercrescita verdeggiante.",
+      "0": "Quando la <strong>Lampada di loto Lea</strong> innesca una Trasfigurazione della luce di loto, ottiene 5 accumuli dell'effetto Luce di Loto inondante dal talento passivo Supercrescita verdeggiante.",
       "1": "Devi prima aver sbloccato questo talento passivo."
     }
   },

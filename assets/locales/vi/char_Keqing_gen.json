@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Sự Trừng Phạt Sấm Sét",
     "description": {
-      "0": "Ở thời gian Đá Lôi tồn tại, trong vòng 5s sau khi thi triển <strong>Tinh Đẩu Quy Vị</strong>, Keqing nhận <electro>Nguyên Tố Lôi đính kèm</electro>."
+      "0": "Trong thời gian Đá Lôi tồn tại, trong vòng 5s sau khi thi triển <strong>Tinh Đẩu Quy Vị</strong>, Keqing nhận <electro>đính kèm Nguyên Tố Lôi</electro>."
     }
   },
   "passive2": {

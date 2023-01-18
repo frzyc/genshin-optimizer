@@ -2,7 +2,7 @@
   "setName": "Volontà del difensore",
   "setEffects": {
     "2": "DIF +30%.",
-    "4": "Per ogni personaggio di tipo elementale diverso nel tuo gruppo, ottieni un aumento di un 30% della RES per quell'elemento."
+    "4": "Per ogni personaggio di tipo elementale diverso nel tuo gruppo, ottieni un aumento di un 30% della RES per ciascun elemento corrispondente."
   },
   "pieces": {
     "flower": {

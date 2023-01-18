@@ -134,7 +134,7 @@
   "constellation1": {
     "name": "Devoir de camarade",
     "description": {
-      "0": "Lorsqu'un personnage protégé par la <strong>barrière brûlante</strong> de Thomas subit une attaque (Thomas excepté), les TdR de <strong>Bénédiction flamboyante</strong> et d'<strong>O-yoroi écarlate</strong> de Thomas diminuent de 3 s.",
+      "0": "Lorsqu'un personnage protégé par la <strong>barrière brûlante</strong> de Thomas subit une attaque (hormis Thomas), les TdR de <strong>Bénédiction flamboyante</strong> et d'<strong>O-yoroi écarlate</strong> de Thomas diminuent de 3 s.",
       "1": "Cet effet peut être déclenché une fois toutes les 20 s."
     }
   },

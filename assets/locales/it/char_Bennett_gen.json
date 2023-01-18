@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -166,7 +166,7 @@
   "constellation6": {
     "name": "Coraggio incandescente",
     "description": {
-      "0": "I personaggi che usano una spada, una claymore o una lancia nel raggio di <strong>Viaggio fantastico</strong> ottengono un <pyro>bonus DAN da Pyro</pyro> di un 15% e le loro armi otterranno un'infusione di <pyro>Pyro</pyro>."
+      "0": "I personaggi che usano una spada, una claymore o una lancia nel raggio di <strong>Viaggio fantastico</strong> ottengono un <pyro>bonus DAN da Pyro</pyro> di un 15% e le loro armi vengono infuse col potere di <pyro>Pyro</pyro>."
     }
   }
 }

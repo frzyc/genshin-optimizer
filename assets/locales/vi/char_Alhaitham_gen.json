@@ -1,0 +1,175 @@
+{
+  "name": "Alhaitham",
+  "title": "Lời Khuyên Tận Tình",
+  "description": "Quan Thư Ký đương nhiệm của Giáo Viện Sumeru, có tài năng và trí tuệ hơn người. Cuộc sống tự do tự tại, người thường cơ bản là sẽ không thể tìm được anh ấy.",
+  "constellationName": "Cung Thiên Chuẩn",
+  "auto": {
+    "name": "Suy Luận Hồi Tố",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Trọng Kích tiêu hao thể lực",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Phổ Quát - Soạn Thảo Theo Mẫu",
+    "description": {
+      "0": "Đột kích siêu tốc, khi kết thúc đột kích sẽ gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> cho kẻ địch bên cạnh, đồng thời ngưng tụ \"Trác Quang Kính\".",
+      "1": "Khi nhấn giữ sẽ thi triển theo cách thức khác.",
+      "2": "<br/>",
+      "3": "<strong>Nhấn Giữ</strong>",
+      "4": "Vào trạng thái ngắm chuẩn để điều chỉnh phương hướng đột kích.",
+      "5": "<br/>",
+      "6": "<strong>Trác Quang Kính</strong>",
+      "7": "Khi thi triển kỹ năng này, Alhaitham sẽ sản sinh 1 Trác Quang Kính. Nếu lúc này chưa có Trác Quang Kính nào thì sẽ sản sinh thêm 1 cái. Trác Quang Kính sẽ có hiệu quả sau:",
+      "8": [
+        "Khi có Trác Quang Kính thì tấn công thường, trọng kích và tấn công khi đáp của Alhaitham sẽ chuyển hóa thành <dendro>Sát Thương Nguyên Tố Thảo</dendro> không thể bị thay thế.",
+        "Đòn tấn công nêu trên khi đánh trúng kẻ địch, Trác Quang Kính sẽ thi triển Ánh Sáng Xung Kích, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> dựa vào số lượng Trác Quang Kính;",
+        "Tối đa tồn tại 3 Trác Quang Kính;",
+        "Trác Quang Kính sẽ lần lượt biến mất theo thời gian, hoặc sẽ biến mất toàn bộ khi Alhaitham rời trận."
+      ],
+      "9": "<br/>",
+      "10": "<i>\"Chân lý chưa bao giờ là khái niệm chắc chắn, dù là học giả vĩ đại đi nữa cũng không tránh khỏi mắc sai lầm.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Đột Kích",
+      "1": "Giãn Cách Ánh Sáng Xung Kích",
+      "2": "Sát Thương 1 Ánh Sáng Xung Kích",
+      "3": "Sát Thương 2 Ánh Sáng Xung Kích",
+      "4": "Sát Thương 3 Ánh Sáng Xung Kích",
+      "5": "Giãn Cách Biến Mất Của Trác Quang Kính",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Khu Vực - Xiềng Xích Cảnh Tượng",
+    "description": {
+      "0": "Tạo ra Khu Vực Trói Buộc, gây nhiều lần <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro>.",
+      "1": "Khi thi triển, nếu như có Trác Quang Kính thì sẽ tiêu hao tất cả Trác Quang Kính để gia tăng số lần sát thương gây ra.",
+      "2": "2s sau khi thi triển xong, dựa vào 0/1/2/3 Trác Quang Kính tiêu hao lúc thi triển để sản sinh lại cho Alhaitham 3/2/1/0 Trác Quang Kính.",
+      "3": "<br/>",
+      "4": "<i>\"Học giả nếu lấy trí tuệ làm mục tiêu của mình thì họ nên sẵn sàng trở thành kẻ thù của mọi từ họ đọc. Chỉ khi đó họ mới có thể tránh được sự thiên vị.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Mỗi Lần",
+      "1": "Số Lần Tấn Công Cơ Bản",
+      "2": "Số Lần Tấn Công 1 Kính",
+      "3": "Số Lần Tấn Công 2 Kính",
+      "4": "Số Lần Tấn Công 3 Kính",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bốn Nguyên Nhân Hiệu Chỉnh",
+    "description": {
+      "0": "Trọng kích hoặc tấn công khi đáp của Alhaitham khi trúng kẻ địch sẽ sản sinh 1 Trác Quang Kính. Hiệu quả này mỗi 12s tối đa kích hoạt một lần."
+    }
+  },
+  "passive2": {
+    "name": "Phơi Bày Bí Mật",
+    "description": {
+      "0": "Mỗi điểm Tinh Thông Nguyên Tố của Alhaitham sẽ tăng 0.1% sát thương gây ra từ Ánh Sáng Xung Kích và <strong>Khu Vực - Xiềng Xích Cảnh Tượng</strong>.",
+      "1": "Sát thương gây ra từ Ánh Sáng Xung Kích và Khu Vực - Xiềng Xích Cảnh Tượng tăng tối đa 100% thông qua cách này."
+    }
+  },
+  "passive3": {
+    "name": "Quy Luật Rút Gọn Xác Định Lại",
+    "description": {
+      "0": "Khi ghép nguyên liệu đột phá vũ khí sẽ có 10% tỷ lệ nhận x2 thành phẩm."
+    }
+  },
+  "constellation1": {
+    "name": "Trực Quan",
+    "description": {
+      "0": "Ánh Sáng Xung Kích khi đánh trúng kẻ địch sẽ khiến CD của <strong>Phổ Quát - Soạn Thảo Theo Mẫu</strong> giảm 1.2s. Hiệu quả này mỗi 1s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation2": {
+    "name": "Tranh Luận",
+    "description": {
+      "0": "Khi Alhaitham sản sinh Trác Quang Kính, mỗi 1 Trác Quang Kính sản sinh sẽ tăng 50 Tinh Thông Nguyên Tố trong 8s. Hiệu quả này tối đa cộng dồn 4 tầng, mỗi tầng sẽ tính thời gian độc lập với nhau. Số lượng Trác Quang Kính khi đạt giới hạn vẫn sẽ có thể kích hoạt hiệu quả này."
+    }
+  },
+  "constellation3": {
+    "name": "Phủ Định",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Phổ Quát - Soạn Thảo Theo Mẫu</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sáng Tỏ",
+    "description": {
+      "0": "Khi thi triển <strong>Khu Vực - Xiềng Xích Cảnh Tượng</strong> sẽ căn cứ vào số lượng Trác Quang Kính tiêu hao và sản sinh trong lần đó để kích hoạt các hiệu quả sau:",
+      "1": [
+        "Mỗi tiêu hao 1 Trác Quang Kính sẽ khiến thành viên khác trong đội gần đó tăng 30 Tinh Thông Nguyên Tố trong 15s;",
+        "Mỗi sản sinh 1 Trác Quang Kính sẽ khiến Alhaitham nhận 10% <dendro>Buff Sát Thương Nguyên Tố Thảo</dendro> trong 15s."
+      ],
+      "2": "<br/>",
+      "3": "Trong thời gian tồn tại của hiệu quả trên nếu thi triển lại Khu Vực - Xiềng Xích Cảnh Tượng thì sẽ xóa hiệu quả ban đầu trước."
+    }
+  },
+  "constellation5": {
+    "name": "Minh Mẫn",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Khu Vực - Xiềng Xích Cảnh Tượng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lẽ Phải",
+    "description": {
+      "0": "Alhaitham nhận được hiệu quả sau:",
+      "1": [
+        "Sau 2s sau khi thi triển xong <strong>Khu Vực - Xiềng Xích Cảnh Tượng</strong>, sẽ bỏ qua số lượng Trác Quang Kính tiêu hao, cố định sản sinh 3 Trác Quang Kính;",
+        "Khi Alhaitham sản sinh Trác Quang Kính, nếu số lượng Trác Quang Kính đạt đến giới hạn sẽ tăng cho Alhaitham 10% Tỉ Lệ Bạo Kích và 70% Sát Thương Bạo Kích trong 6s. Hiệu quả này nếu kích hoạt lại trong thời gian duy trì thì thời gian duy trì còn lại sẽ tăng thêm 6s."
+      ]
+    }
+  }
+}

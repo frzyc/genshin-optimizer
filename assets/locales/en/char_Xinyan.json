@@ -13,19 +13,19 @@
     }
   },
   "p1": {
-    "desc": "Decrease hit trigger for <strong>Sweeping Fervor</strong> by 1"
+    "desc": "Decreases hit quota for <strong>Sweeping Fervor</strong> by 1"
   },
   "p2": {
-    "activeShield": "Active character shielded by <strong>Sweeping Fervor</strong>"
+    "activeShield": "Character is shielded by <strong>Sweeping Fervor</strong>"
   },
   "c2": {
     "key_": "<strong>Riff Revolution</strong> Physical DMG CRIT Rate Bonus",
     "shield": "Form a Level 3: Rave Shield when cast"
   },
   "c4": {
-    "swingHit": "<pyro>Swing DMG</pyro> hits on opponents"
+    "swingHit": "Opponent's been hit with <pyro>Swing DMG</pyro>"
   },
   "c6": {
-    "duringCharge": "While performing a Charged Attack"
+    "duringCharge": "Performing a Charged Attack"
   }
 }

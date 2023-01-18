@@ -53,7 +53,7 @@
       "8": "Sayu peut contrôler la direction dans laquelle elle roule, et utiliser à nouveau la compétence permet de sortir de cet état et d'exécuter un coup de pied Fuufuu plus puissant.",
       "9": "L'appui long de cette compétence peut déclencher une absorption élémentaire.",
       "10": "<br/>",
-      "11": "Cette compétence a une durée max de 10 s, et entre en TdR lorsque son effet prend fin. Plus Sayu reste longtemps en tourbillon Fuufuu, plus le TdR est long.",
+      "11": "Cette compétence a une durée maximum de 10 s, et entre en TdR lorsque son effet prend fin. Plus Sayu reste longtemps en tourbillon Fuufuu, plus le TdR est long.",
       "12": "<br/>",
       "13": "<strong>Absorption élémentaire</strong>",
       "14": "Si Sayu entre en contact avec les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> lorsqu'elle est en tourbillon Fuufuu, elle obtient les attributs élémentaires correspondants, et le tourbillon Fuufuu ainsi que le coup de pied Fuufuu infligent des DGT supplémentaires de l'élément absorbé.",
@@ -117,7 +117,7 @@
   "passive1": {
     "name": "Quelqu'un de plus efficace",
     "description": {
-      "0": "Lorsque Sayu déclenche une réaction de Dispersion sur le champ de bataille, elle soigne les personnages de l'équipe ainsi que les personnages alliés proches à hauteur de 300 PV. Sayu récupère de plus 1,2 PV supplémentaires pour chacun de ses pts de maîtrise élémentaire.",
+      "0": "Lorsque Sayu déclenche une réaction de Dispersion sur le champ de bataille, elle soigne les personnages de l'équipe ainsi que les personnages alliés proches à hauteur de 300 PV. Sayu récupère de plus 1,2 PV supplémentaires pour chaque point de maîtrise élémentaire qu'elle possède.",
       "1": "Cet effet peut être déclenché une fois toutes les 2 s."
     }
   },
@@ -150,7 +150,7 @@
       "0": "<strong>École Yoohoo : Course Fuuin</strong> obtient les effets suivants :",
       "1": [
         " Les DGT infligés par le coup de pied Fuufuu après un appui simple augmentent de 3,3 % ;",
-        " Les DGT infligés par le coup de pied Fuufuu après un appui long augmentent de 3,3 % toutes les 0,5 s passées en tourbillon Fuufuu, jusqu'à un max de 66 %."
+        " Les DGT infligés par le coup de pied Fuufuu après un appui long augmentent de 3,3 % toutes les 0,5 s passées en tourbillon Fuufuu, jusqu'à un maximum de 66 %."
       ]
     }
   },
@@ -178,9 +178,9 @@
   "constellation6": {
     "name": "C'est l'heure d'un bon dodo",
     "description": {
-      "0": "Les attaques et les soins du Daruma Muji-muji invoqué par Sayu lors d'<strong>École Yoohoo : Bourrasque du mujina</strong> augmentent avec le Niv. de maîtrise élémentaire de Sayu. Chaque pt de maîtrise élémentaire de Sayu confère les effets suivants :",
+      "0": "Les attaques et les soins du Daruma Muji-muji invoqué par Sayu lors d'<strong>École Yoohoo : Bourrasque du mujina</strong> augmentent avec le Niv. de maîtrise élémentaire de Sayu. Chaque point de maîtrise élémentaire que Sayu possède confère les effets suivants :",
       "1": [
-        " Augmente les DGT infligés par les attaques du Daruma Muji-muji de 0,2 % de l'ATQ, jusqu'à 400 % de l'ATQ max ;",
+        " Augmente les DGT infligés par les attaques du Daruma Muji-muji de 0,2 % de l'ATQ, jusqu'à 400 % de l'ATQ maximum ;",
         " Augmente de 3 les PV soignés par le Daruma Muji-muji, jusqu'à 6 000 PV max."
       ]
     }

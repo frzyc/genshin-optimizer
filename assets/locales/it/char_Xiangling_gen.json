@@ -118,7 +118,7 @@
   "constellation2": {
     "name": "Olio e fuoco",
     "description": {
-      "0": "L'ultimo attacco di una sequenza di attacchi normali applica lo stato di Implosione all'avversario per 2{NON_BREAK_SPACE}s. Al termine della sua durata, si verifica un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari al 75% dell'ATT di Xiangling."
+      "0": "L'ultimo attacco di una sequenza di attacchi normali applica lo stato di Implosione all'avversario per 2{NON_BREAK_SPACE}s. Al termine della sua durata, si verifica un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 75% dell'ATT di Xiangling."
     }
   },
   "constellation3": {

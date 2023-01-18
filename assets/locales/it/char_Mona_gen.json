@@ -84,7 +84,7 @@
       "1": "<br/>",
       "2": "<strong>Bolla illusoria</strong>",
       "3": "Intrappola i nemici applicando lo stato di <hydro>Umidità</hydro>. Gli avversari più deboli vengono immobilizzati.",
-      "4": "Quando un avversario affetto da Bolla illusoria subisce DAN, gli effetti seguenti saranno attivi:",
+      "4": "Quando un avversario affetto da Bolla illusoria subisce DAN, si attivano i seguenti effetti:",
       "5": [
         " applica un Presagio all'avversario, che conferisce un bonus DAN e aumenta i DAN dell'attacco che li causa;",
         " rimuove la Bolla illusoria, infliggendo al contempo DAN da <hydro>Hydro</hydro>."
@@ -129,14 +129,14 @@
   "passive1": {
     "name": "\"Prova a prendermi, vecchia megera!\"",
     "description": {
-      "0": "Dopo aver usato <strong>Torrente illusorio</strong> per 2 s, se ci sono avversari nelle vicinanze Mona genererà automaticamente un Fantasma.",
-      "1": "La durata del Fantasma è di 2 s, e i suoi DAN da esplosione sono pari a un 50% di <strong>Condanna riflessa</strong>."
+      "0": "Dopo aver usato <strong>Torrente illusorio</strong> per 2{NON_BREAK_SPACE}s, se ci sono avversari nelle vicinanze Mona genererà automaticamente un Fantasma.",
+      "1": "La durata del Fantasma è di 2{NON_BREAK_SPACE}s, e i suoi DAN da esplosione sono pari a un 50% di <strong>Condanna riflessa</strong>."
     }
   },
   "passive2": {
     "name": "Destino acquatile",
     "description": {
-      "0": "Aumenta il <hydro>bonus DAN da Hydro</hydro> di Mona di una quantità pari a un 20% della sua velocità di ricarica d'energia."
+      "0": "Aumenta il <hydro>bonus DAN da Hydro</hydro> di Mona di una quantità pari a un 20% del suo tasso di ricarica d'energia."
     }
   },
   "passive3": {
@@ -148,7 +148,7 @@
   "constellation1": {
     "name": "Profezia sommersa",
     "description": {
-      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8 s.",
+      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8{NON_BREAK_SPACE}s.",
       "1": [
         " I DAN da Electrocarica aumentano di un 15%.",
         " I DAN da Vaporizzazione aumentano di un 15%.",
@@ -174,7 +174,7 @@
   "constellation4": {
     "name": "Profezia dell'oblio",
     "description": {
-      "0": "Quando un membro del gruppo attacca un avversario sotto l'effetto di un Presagio, il suo Tasso di CRIT aumenta di un 15%."
+      "0": "Quando un membro del gruppo attacca un avversario sotto l'effetto di un Presagio, il suo tasso di CRIT aumenta di un 15%."
     }
   },
   "constellation5": {

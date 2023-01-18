@@ -24,7 +24,7 @@
       "1": "DAN da 2º colpo",
       "2": "DAN da 3º colpo",
       "3": "DAN da 4º colpo",
-      "4": "DAN da attacco caricato",
+      "4": "DAN da ATT caricato",
       "5": "Costo vigore attacco caricato",
       "6": "DAN da ATT in picchiata",
       "7": "DAN da ATT in picchiata basso/alto",
@@ -41,7 +41,7 @@
   "skill": {
     "name": "Karma vincolante",
     "description": {
-      "0": "Applica vincoli karmici alle piante intorno a lei, infliggendo <dendro>DAN da Dendro ad area</dendro> e marchiando fino a 8 avversari colpiti con il Seme di Skandha.",
+      "0": "Sprigiona i vincoli karmici delle piante intorno a sé, infliggendo <dendro>DAN da Dendro ad area</dendro> e marchiando fino a 8 avversari colpiti con il Seme di Skandha.",
       "1": "Quest'abilità può attivarsi in modi diversi in base al tipo di pressione.",
       "2": "<br/>",
       "3": "<strong>Pressione prolungata</strong>",
@@ -133,7 +133,7 @@
     "name": "Meditazione del tutto",
     "description": {
       "0": "Nahida può usare il <strong>Karma vincolante</strong> per interagire con alcuni oggetti da raccogliere presenti in una data area d'effetto.",
-      "1": "Quest'abilità può determinare anche altri effetti..."
+      "1": "Quest'abilità può avere anche altri effetti..."
     }
   },
   "constellation1": {
@@ -148,7 +148,7 @@
       "0": "Gli avversari marchiati con i <strong>Semi di Skandha</strong> applicati da Nahida subiscono gli effetti seguenti:",
       "1": [
         " i DAN delle reazioni di Ustione, Fioritura, Iperfioritura e Germinazione possono infliggere colpi CRIT. Il tasso di CRIT e i DAN da CRIT sono fissi, rispettivamente a un 20% e a un 100%;",
-        " entro 8 s dall'attivazione dell'effetto di Vivificazione, Accentuazione e Propagazione, la DIF si riduce di un 30%."
+        " entro 8{NON_BREAK_SPACE}s dall'attivazione dell'effetto di Vivificazione, Accentuazione e Propagazione, la DIF si riduce di un 30%."
       ]
     }
   },

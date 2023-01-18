@@ -50,7 +50,7 @@
         " Danse de tourbillon : Nilou déchaîne une roue à eau qui inflige des <hydro>DGT Hydro de zone</hydro> et crée une aura de tranquillité qui suit votre personnage déployé et applique de façon continue l'état <hydro>Trempé</hydro> aux ennemis à portée."
       ],
       "5": "<br/>",
-      "6": "Nilou ne peut pas utiliser d'attaques chargées lorsqu'elle est sous les effets de Pirouette ou de Prière lunaire. Ces effets cessent lorsque Nilou quitte le champ de bataille.",
+      "6": "Nilou ne peut pas utiliser d'attaques chargées lorsqu'elle est sous les effets de pirouette ou de prière lunaire. Ces effets cessent lorsque Nilou quitte le champ de bataille.",
       "7": "<br/>",
       "8": "<i>« Délicatement, ses orteils touchent le visage de l'eau, et la lumière qui ondule égale même les sept cieux. »</i>"
     },
@@ -105,16 +105,16 @@
     "description": {
       "0": "Lorsque les personnages de l'équipe sont de l'élément <dendro>Dendro</dendro> ou <hydro>Hydro</hydro> et qu'il y a au moins un personnage Dendro et un personnage Hydro :",
       "1": "La complétion du troisième pas de la <strong>Danse des haftkarsvars</strong> de Nilou accorde à tous les personnages à proximité l'effet Prime du calice d'or pendant 30{NON_BREAK_SPACE}s.",
-      "2": "Lorsqu'un personnage sous l'effet de Prime du calice d'or subit une <dendro>attaque Dendro</dendro>, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement permet de créer des noyaux d'abondance au lieu de noyaux Dendro.",
+      "2": "Lorsqu'un personnage sous l'effet Prime du calice d'or subit une <dendro>attaque Dendro</dendro>, la maîtrise élémentaire de tous les personnages à proximité augmente de 100 pts pendant 10 s. De plus, déclencher une réaction de Fleurissement permet de créer des noyaux d'abondance au lieu de noyaux Dendro.",
       "3": "Comparés aux noyaux Dendro, ces noyaux d'abondance éclatent très rapidement après avoir été créés et possèdent une zone d'effet plus grande.",
-      "4": "Les noyaux d'abondance ne peuvent pas déclencher de réactions d'Exubérance ou de Bourgeonnement et partagent une limite avec les noyaux Dendro. Les attaques des noyaux d'abondance sont considérées comme étant des attaques infligées par les noyaux Dendro générés par la réaction de Fleurissement.",
-      "5": "Quand le type élémentaire des personnages de l'équipe ne remplit pas les conditions de cette aptitude passive, tous les effets existants de Prime du calice d'or sont annulés."
+      "4": "Les noyaux d'abondance ne peuvent pas déclencher de réactions d'Exubérance ou de Bourgeonnement et partagent une limite avec les noyaux Dendro. Les attaques des noyaux d'abondance sont considérées comme des attaques infligées par les noyaux Dendro générés par la réaction de Fleurissement.",
+      "5": "Quand le type élémentaire des personnages de l'équipe ne remplit pas les conditions de cette aptitude passive, tous les effets Prime du calice d'or existants sont annulés."
     }
   },
   "passive2": {
     "name": "Danse onirique des éons",
     "description": {
-      "0": "Pour chaque tranche de 1 000 au-dessus de 30 000 PV max que Nilou possède, les DGT infligés par les noyaux d'abondance déclenchés par les personnages sous l'effet de Prime du calice d'or augmentent de 9 %.",
+      "0": "Pour chaque tranche de 1 000 au-dessus de 30 000 PV max que Nilou possède, les DGT infligés par les noyaux d'abondance déclenchés par les personnages sous l'effet Prime du calice d'or augmentent de 9 %.",
       "1": "Les DGT des noyaux d'abondance peuvent être augmentés d'un maximum de 400 % de cette manière."
     }
   },
@@ -137,7 +137,7 @@
   "constellation2": {
     "name": "Pluie de fleurs du ciel étoilé",
     "description": {
-      "0": "Lorsqu'un personnage sous l'effet de Prime du calice d'or a infligé des <hydro>DGT Hydro</hydro> à un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 10 s. Lorsqu'une réaction de Fleurissement a infligé des DGT à un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 35 % pendant 10 s.",
+      "0": "Lorsqu'un personnage sous l'effet Prime du calice d'or a infligé des <hydro>DGT Hydro</hydro> à un ennemi, la <hydro>RÉS Hydro</hydro> de ce dernier diminue de 35 % pendant 10 s. Lorsqu'une réaction de Fleurissement a infligé des DGT à un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 35 % pendant 10 s.",
       "1": "L'aptitude passive « Cour des pétales dansants » doit être déjà débloquée."
     }
   },

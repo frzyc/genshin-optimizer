@@ -42,7 +42,7 @@
     "name": "Vũ Điệu Haftkarsvar",
     "description": {
       "0": "Vào trạng thái \"Xoay Người\", gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh dựa vào giới hạn HP của Nilou.",
-      "1": "Trong trạng thái Xoay Người, Nilou đánh thường hoặc dùng Kỹ Năng Nguyên Tố sẽ lần lượt chuyển thành thi triển \"Vũ Điệu Bão Kiếm\" và \"Vũ Điệu Xoay Vòng\" tương ứng, sát thương gây ra sẽ được tính là <hydro>Sát Thương Nguyên Tố Thủy</hydro> của Kỹ Năng Nguyên Tố và không thể bị thay thế.",
+      "1": "Trong trạng thái Xoay Người, Nilou đánh thường hoặc dùng Kỹ Năng Nguyên Tố sẽ lần lượt chuyển thành thi triển \"Vũ Điệu Bão Kiếm\" và \"Vũ Điệu Xoay Vòng\" tương ứng, sát thương gây ra sẽ được tính là <hydro>Sát Thương Nguyên Tố Thủy</hydro> của Kỹ Năng Nguyên Tố và không thể bị đính kèm thay thế.",
       "2": "<br/>",
       "3": "Trong trạng thái này, Vũ Điệu thứ ba của Nilou sẽ hóa giải trạng thái \"Xoay Người\", đồng thời căn cứ vào loại hình của Vũ Điệu thứ ba để sản sinh các hiệu quả sau:",
       "4": [

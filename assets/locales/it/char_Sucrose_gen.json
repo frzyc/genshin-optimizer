@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Richiamando il potere dei suoi Spiriti del vento, Sucrose si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+        "1": "Richiamando il potere dei suoi Spiriti dei venti, Sucrose si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
       }
     },
     "skillParams": {
@@ -149,7 +149,7 @@
   "constellation6": {
     "name": "Entropia caotica",
     "description": {
-      "0": "Se <strong>Creazione proibita: Isomero 75 Tipo II</strong> innesca un assorbimento elementale, tutti i membri del gruppo ottengono un 20% di bonus DAN dell'elemento assorbito."
+      "0": "Se <strong>Creazione proibita: Isomero 75 Tipo II</strong> innesca un assorbimento elementale, tutti i membri del gruppo ottengono un 20% di bonus DAN dell'elemento assorbito per la sua durata."
     }
   }
 }

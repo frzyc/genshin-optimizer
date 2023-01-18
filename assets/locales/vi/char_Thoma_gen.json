@@ -41,7 +41,7 @@
   "skill": {
     "name": "Liệt Hỏa Hộ Mệnh",
     "description": {
-      "0": "Thoma dùng mũi giáo làm điểm tựa, tiếp thêm sức mạnh của lửa để tung cú đá về phía trước, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> và triệu hồi Khiên Lửa Hộ Mệnh, đồng thời trong phút chốc khi thi triển sẽ khiến Thoma nhận <pyro>đính kèm Nguyên Tố Hỏa</pyro>.",
+      "0": "Thoma dùng mũi giáo làm điểm tựa, tiếp thêm sức mạnh của lửa để tung cú đá về phía trước, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> và triệu hồi Khiên Lửa Hộ Mệnh, đồng thời trong phút chốc khi thi triển sẽ gán <pyro>ấn nguyên tố Hỏa</pyro> cho Thoma.",
       "1": "Lượng hấp thụ sát thương của khiên sẽ bị ảnh hưởng bởi giới hạn HP của Thoma.",
       "2": "Khiên Lửa Hộ Mệnh có những đặc tính sau:",
       "3": [

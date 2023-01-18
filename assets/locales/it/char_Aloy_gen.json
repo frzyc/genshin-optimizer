@@ -43,7 +43,7 @@
     "name": "Natura congelata",
     "description": {
       "0": "Aloy lancia una Bomba congelante nella direzione indicata, che esplode all'impatto infliggendo <cryo>DAN da Cryo</cryo>. Dopo l'esplosione, la Bomba congelante si divide in tanti Frammenti di Acquagelida che esplodono a contatto con gli avversari o dopo un breve lasso di tempo, infliggendo <cryo>DAN da Cryo</cryo>.",
-      "1": "Quando una Bomba congelante o un Frammento di Acquagelida colpisce un avversario, l'ATT dell'avversario si riduce e Aloy ottiene un accumulo di Bobina.",
+      "1": "Quando una Bomba congelante o un Frammento di Acquagelida colpisce un avversario, l'ATT dell'avversario si riduce e Aloy ottiene 1 accumulo di Bobina.",
       "2": "Aloy può ottenere fino a 1 accumulo di Bobina ogni 0,1{NON_BREAK_SPACE}s.",
       "3": "<br/>",
       "4": "<strong>Bobina</strong>",
@@ -53,13 +53,13 @@
       ],
       "6": "<br/>",
       "7": "Mentre è nello stato di Frenesia di gelo, Aloy non può accumulare Bobina.",
-      "8": "Gli effetti di Bobina si annullano 30 s dopo che Aloy lascia il campo di battaglia.",
+      "8": "Gli effetti di Bobina si annullano 30{NON_BREAK_SPACE}s dopo che Aloy abbandona il combattimento.",
       "9": "<br/>",
       "10": "<i>Credi che faccia freddo? Allora non hai mai visitato il Tumulo.</i>"
     },
     "skillParams": {
       "0": "DAN da Bomba congelante",
-      "1": "Frammenti di Acquagelida",
+      "1": "DAN da Frammento di Acquagelida",
       "2": "Riduzione ATT",
       "3": "Durata riduzione ATT",
       "4": "Bonus DAN da ATT normale Bobina",
@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Piano piano",
     "description": {
-      "0": "Quando Aloy è nel gruppo, gli animali che producono pollame, carne cruda o carne congelata non fuggiranno dallo spavento quando i membri del gruppo si avvicinano a loro."
+      "0": "Quando Aloy è nel gruppo, gli animali che forniscono pollame, carne cruda o carne congelata non fuggiranno dallo spavento se i membri del gruppo si avvicinano a loro."
     }
   },
   "constellation1": {

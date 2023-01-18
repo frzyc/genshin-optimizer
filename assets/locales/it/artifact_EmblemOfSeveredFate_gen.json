@@ -2,7 +2,7 @@
   "setName": "Emblema del fato spezzato",
   "setEffects": {
     "2": "Ricarica energia +20%.",
-    "4": "Aumenta i DAN da Tripudio elementale per un 25% della ricarica di energia. In questo modo puoi ottenere fino a un 75% di DAN bonus."
+    "4": "Aumenta i DAN da Tripudio elementale di un 25% della ricarica d'energia. In questo modo puoi ottenere fino a un 75% di bonus DAN."
   },
   "pieces": {
     "flower": {

@@ -145,7 +145,7 @@
     "name": "Chasse vers l'ouest",
     "description": {
       "0": "Les DGT subis par les ennemis se trouvant dans la zone de <strong>Baptême céleste</strong> augmentent ; cet effet se cumule avec le temps.",
-      "1": "Bonus de DGT initial : 5 %. Ce bonus augmente de 5 % toutes les 3 s (cumul max : 25 %).",
+      "1": "Bonus de DGT initial : 5 %. Ce bonus augmente de 5 % toutes les 3 s (cumul maximum : 25 %).",
       "2": "L'effet perdure pendant 3 s après avoir quitté la zone."
     }
   },

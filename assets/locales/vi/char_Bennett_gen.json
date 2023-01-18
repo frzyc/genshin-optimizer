@@ -83,7 +83,7 @@
       "3": [
         "Nhân vật đứng trong vùng đất này, nếu HP dưới hoặc bằng 70%, HP tối đa sẽ liên tục được hồi, lượng hồi phụ thuộc vào giới hạn HP của Bennett.",
         "Nếu nhân vật trong vùng đất có HP cao hơn 70% HP tối đa, nhân vật ở trong đó sẽ nhận buff tấn công, giá trị bằng với tấn công cơ bản của Bennett, tăng tấn công với tỷ lệ nhất định.",
-        "Thêm <pyro>nguyên tố hỏa kèm theo</pyro> cho nhân vật trong đó."
+        "Gán <pyro>ấn nguyên tố Hỏa</pyro> cho nhân vật trong đó."
       ],
       "4": "<br/>",
       "5": "<i>Đoàn mạo hiểm Benny mỗi lần bắt đầu hành trình mạo hiểm đều đầy sự rủi ro. Chỉ duy nhất Bennett lại cho rằng đây là \"hành trình tuyệt vời, kịch tính và kì diệu\".</i>"
@@ -165,7 +165,7 @@
   "constellation6": {
     "name": "Lửa Và Can Đảm",
     "description": {
-      "0": "Nhân vật sử dụng kiếm đơn, trọng kiếm, vũ khí cán dài trong đội hiện đang trong trận ở khu vực <strong>Hành Trình Kỳ Diệu</strong> được nhận 15% <pyro>tăng sát thương Nguyên Tố Hỏa</pyro> và nhận <pyro>Nguyên Tố Hỏa đính kèm</pyro>."
+      "0": "Nhân vật sử dụng kiếm đơn, trọng kiếm, vũ khí cán dài trong đội hiện đang trong trận ở khu vực <strong>Hành Trình Kỳ Diệu</strong> được nhận 15% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro> và nhận <pyro>đính kèm Nguyên Tố Hỏa</pyro>."
     }
   }
 }

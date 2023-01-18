@@ -1,7 +1,7 @@
 {
   "setName": "Fiore del paradiso perduto",
   "setEffects": {
-    "2": "Aumenta la maestria elementale di 80.",
+    "2": "Maestria elementale +80.",
     "4": "I DAN da reazioni di Fioritura, Iperfioritura e Germinazione del personaggio equipaggiato aumentano di un 40%. In più, se il personaggio innesca Fioritura, Iperfioritura o Germinazione, ottiene un ulteriore 25% di bonus per il suddetto effetto. Ogni accumulo del bonus dura 10{NON_BREAK_SPACE}s. Massimo 4 accumuli contemporaneamente. Quest'effetto può attivarsi solo una volta al secondo. Il personaggio equipaggiato può attivare l'effetto anche se non è presente sul campo."
   },
   "pieces": {
@@ -23,7 +23,7 @@
     },
     "circlet": {
       "name": "Corona d'ametista",
-      "desc": "Una corona decorata con ametiste e smeraldi. Sembra fosse usato come copricapo dagli antichi sacerdoti della Dea dei fiori."
+      "desc": "Una corona decorata con ametiste e smeraldi. Sembra fosse usata come copricapo dagli antichi sacerdoti della Dea dei fiori."
     }
   }
 }

@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -44,7 +44,7 @@
       "0": "Crea un Anello d'erba purificatore spendendo parte dei suoi PS, infliggendo <electro>DAN da Electro</electro> agli avversari vicini.",
       "1": "<br/>",
       "2": "<strong>Anello d'erba purificatore</strong>",
-      "3": "Segue il tuo personaggio attivo. Infligge <electro>DAN da Electro</electro> agli avversari vicini ogni 1,5 s e ripristina i PS dei personaggi attivi all'interno dell'area d'effetto dell'anello in base ai PS max di Kuki Shinobu.",
+      "3": "Segue il tuo personaggio attivo. Infligge <electro>DAN da Electro</electro> agli avversari vicini ogni 1,5{NON_BREAK_SPACE}s e ripristina i PS dei personaggi attivi all'interno dell'area d'effetto dell'anello in base ai PS max di Kuki Shinobu.",
       "4": "<br/>",
       "5": "Il consumo di PS per l'uso di questa abilità può ridurre i suoi PS fino a un 20%.",
       "6": "<br/>",
@@ -72,7 +72,7 @@
   "burst": {
     "name": "Rituale di Gyoei Narukami Kariyama",
     "description": {
-      "0": "Conficca nel terreno una lama purificatrice, creando un campo che libera l'area da ogni male e infligge <electro>DAN da Electro</electro> continui agli avversari all'interno della sua area d'effetto in base ai PS max di Shinobu.",
+      "0": "Conficca nel terreno una lama purificatrice, creando un campo che libera la zona da ogni male e infligge <electro>DAN da Electro</electro> continui agli avversari all'interno della sua area d'effetto, in base ai PS max di Shinobu.",
       "1": "Se i PS di Shinobu sono inferiori o pari alla metà quando si usa questa abilità, il campo avrà una maggiore durata.",
       "2": "<br/>",
       "3": "<i>Questa era in origine una tecnica usata per estirpare le erbacce e impiegata nelle preghiere rituali per il raccolto annuale, ma Shinobu non l'ha mai dimenticata, nonostante non sia più una sacerdotessa.</i>"
@@ -107,8 +107,8 @@
     "description": {
       "0": "Le abilità dell'<strong>Anello purificatore</strong> vengono potenziate in base alla maestria elementale di Shinobu:",
       "1": [
-        " la guarigione aumenta di una quantità pari a un 75% della maestria elementale;",
-        " i DAN inflitti aumentano di una quantità pari a un 25% della maestria elementale."
+        " la guarigione aumenta di un 75% della maestria elementale;",
+        " i DAN inflitti aumentano di un 25% della maestria elementale."
       ]
     }
   },

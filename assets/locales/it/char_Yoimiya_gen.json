@@ -49,11 +49,11 @@
       "0": "Yoimiya agita una stellina e un anello di salnitro compare intorno a lei.",
       "1": "<br/>",
       "2": "<strong>Niwabi Enshou</strong>",
-      "3": "In questo lasso di tempo, le frecce scoccate dall'attacco normale di Yoimiya diventano Frecce infuocate, e i loro DAN aumentano e sono convertiti in <pyro>DAN da Pyro</pyro>. L'attacco normale Vampata pirotecnica non crea Dardi pirotecnici al livello di carica 2.",
+      "3": "In questo lasso di tempo, le frecce scoccate dall'attacco normale di Yoimiya diventano Frecce infuocate, e i loro DAN aumentano e sono convertiti in <pyro>DAN da Pyro</pyro>. Inoltre, Attacco normale: Vampata pirotecnica non crea Dardi pirotecnici al livello di carica 2.",
       "4": "<br/>",
       "5": "Questo effetto si disattiva quando Yoimiya lascia il campo di battaglia.",
       "6": "<br/>",
-      "7": "<i>Il Niwabi è un tipo di fuoco d'artificio all'incenso creato da Yoimiya in persona. Si può accendere senza avere ricevuto un addestramento o preparazione, perciò gode di molta popolarità. A seguito di molti incidenti legati agli incendi, la Commissione Tenryou ha bandito l'uso dei Niwabi, ma si possono ancora vedere delle piccole scintille nel cielo notturno. Se le si guarda dall'alto, sembrano quasi delle stelle luccicanti.</i>"
+      "7": "<i>Il Niwabi è un tipo di fuoco d'artificio all'incenso creato da Yoimiya in persona. Si può accendere senza aver ricevuto alcun addestramento o preparazione, perciò gode di molta popolarità. A seguito di molti incidenti legati agli incendi, la Commissione Tenryou ha bandito l'uso dei Niwabi, ma si possono ancora vedere delle piccole scintille nel cielo notturno. Se le si guarda dall'alto, sembrano quasi delle stelle luccicanti.</i>"
     },
     "skillParams": {
       "0": "DAN da Freccia infuocata",
@@ -80,7 +80,7 @@
       "0": "Yoimiya balza in aria insieme alla sua creazione originale, la Sassifraga Ryuukin, e spara razzi infuocati pieni di sorprese che infliggono <pyro>DAN da Pyro ad area</pyro> e marcano uno degli avversari colpiti con Vampata aurea.",
       "1": "<br/>",
       "2": "<strong>Vampata aurea</strong>",
-      "3": "Se un membro del gruppo oltre a Yoimiya colpisce un avversario marcato da Vampata aurea con attacchi normali/caricati/in picchiata, abilità elementali e Tripudi elementali, innescherà un'esplosione infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "3": "Se un membro del gruppo diverso da Yoimiya colpisce un avversario marcato da Vampata aurea con attacchi normali/caricati/in picchiata, abilità elementali e Tripudi elementali, innescherà un'esplosione infliggendo <pyro>DAN da Pyro ad area</pyro>.",
       "4": "Quando un avversario colpito da Vampata aurea viene sconfitto prima del termine della sua durata, l'effetto sarà trasferito a un altro avversario vicino, che ne erediterà la durata rimanente.",
       "5": "<br/>",
       "6": "Un'esplosione di Vampata aurea può attivarsi ogni 2{NON_BREAK_SPACE}s. Quando Yoimiya è a terra, gli effetti di Vampata aurea causati dalle sue abilità saranno disattivati.",
@@ -109,13 +109,13 @@
   "passive1": {
     "name": "Trucchi da combinaguai",
     "description": {
-      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, l'attacco normale di Yoimiya aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 2% per ogni colpo andato a segno. Quest'effetto dura per 3 s ed è cumulabile fino a 10 volte."
+      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, l'attacco normale di Yoimiya aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 2% per ogni colpo andato a segno. Quest'effetto dura per 3{NON_BREAK_SPACE}s ed è cumulabile fino a 10 volte."
     }
   },
   "passive2": {
     "name": "Alba d'una notte d'estate",
     "description": {
-      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15 s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di effetti cumulati di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni effetto accumulato."
+      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15{NON_BREAK_SPACE}s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
     }
   },
   "passive3": {
@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Ryuukin d'agata",
     "description": {
-      "0": "La Vampata aurea creata da <strong>Sassifraga Ryuukin</strong> dura 4 s in più.",
+      "0": "La Vampata aurea creata da <strong>Sassifraga Ryuukin</strong> dura 4{NON_BREAK_SPACE}s in più.",
       "1": "Inoltre, quando un avversario viene sconfitto mentre è affetto da Vampata aurea, l'ATT di Yoimiya aumenta di un 20% per 20{NON_BREAK_SPACE}s."
     }
   },

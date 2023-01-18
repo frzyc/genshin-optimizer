@@ -84,7 +84,7 @@
       "4": "Si può usare a mezz'aria.",
       "5": "<br/>",
       "6": "<strong>Pressione prolungata</strong>",
-      "7": "Carica l'abilità per poi aumentare i <anemo>DAN da Anemo</anemo> e l'area d'effetto rispetto alla variante alla pressione.",
+      "7": "Carica l'abilità per poi aumentare i <anemo>DAN da Anemo</anemo> e l'area d'effetto rispetto alla variante a pressione.",
       "8": "<br/>",
       "9": "<strong>Attacco in picchiata: Midare Ranzan</strong>",
       "10": "Quando viene eseguito un attacco in picchiata usando gli effetti dell'abilità elementale Chihayaburu, i DAN da attacco in picchiata sono convertiti in <anemo>DAN da Anemo</anemo>. Una volta a terra, Kazuha crea un piccolo tunnel di vento tramite una tecnica segreta con la spada, che attira gli oggetti vicini e gli avversari.",
@@ -123,7 +123,7 @@
   "passive2": {
     "name": "Poesia di Fuubutsu",
     "description": {
-      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà un bonus DAN pari a uno 0,04% dell'elemento assorbito dal Turbinio, per ogni suo punto di maestria elementale, a tutti i membri del gruppo per 8{NON_BREAK_SPACE}s. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
+      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà per 8{NON_BREAK_SPACE}s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
     }
   },
   "passive3": {
@@ -145,7 +145,7 @@
     "description": {
       "0": "Il campo Turbine d'autunno generato da <strong>Fendente di Kazuha</strong> ha i seguenti effetti:",
       "1": [
-        " aumenta di 200 la durata della maestria elementale di Kaedehara Kazuha;",
+        " aumenta di 200 la maestria elementale di Kaedehara Kazuha per tutta la durata del campo;",
         " aumenta di 200 la maestria elementale dei personaggi all'interno del campo."
       ],
       "2": "<br/>",

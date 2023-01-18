@@ -163,9 +163,9 @@
     "description": {
       "0": "<strong>Özel Karışım</strong> alanındaki karakterler, sahip oldukları Can miktarına göre aşağıdaki etkileri kazanır:",
       "1": [
-        "Can %50 veya altındayken Gelen İyileştirme Bonusu %30 artar."
-      ],
-      "2": " Can %50'nin üzerindeyken Element Ustalığı 200 artar."
+        "Can %50 veya altındayken Gelen İyileştirme Bonusu %30 artar.",
+        "Can %50'nin üzerindeyken Element Ustalığı 200 artar."
+      ]
     }
   }
 }

@@ -193,11 +193,11 @@
   },
   "MushroomCurrency": {
     "name": "Hongomoras",
-    "description": "Una moneda conmemorativa elaborada con gran gusto a modo de recompensa para los participantes de “Atrapahongos” y “Mira ese potencial” del Torneo Loto Niloptala de Doma de Bestias.\\nAl margen de los resultados, esta moneda conmemorativa es el vivo recuerdo del intercambio amistoso entablado entre los participantes y los Hongos.\\nUtiliza tus Hongomoras para canjearlas por increíbles objetos durante «La Chámpiñons»."
+    "description": "Una moneda conmemorativa elaborada con gran gusto a modo de recompensa para los participantes de “Atrapahongos” y “Mira ese potencial” del Torneo Loto Nilotpala de Doma de Bestias.\\nAl margen de los resultados, esta moneda conmemorativa es el vivo recuerdo del intercambio amistoso entablado entre los participantes y los Hongos.\\nUtiliza tus Hongomoras para canjearlas por increíbles objetos durante «La Chámpiñons»."
   },
   "FungusMedal": {
     "name": "Insignia fúngica",
-    "description": "Una medalla elaborada con materiales únicos a modo de recompensa para los participantes sobresalientes del “Entrenamiento de fuerza” del Torneo Loto Niloptala de Doma de Bestias.\\nUna de las claves para alcanzar un entendimiento tácito y volverse cada vez más fuertes juntos es luchar y derrotar a poderosos enemigos junto a tus Hongos en el campo de entrenamiento especial.\\nUtiliza tus Insignias fúngicas para canjearlas por increíbles objetos durante «La Chámpiñons»."
+    "description": "Una medalla elaborada con materiales únicos a modo de recompensa para los participantes sobresalientes del “Entrenamiento de fuerza” del Torneo Loto Nilotpala de Doma de Bestias.\\nUna de las claves para alcanzar un entendimiento tácito y volverse cada vez más fuertes juntos es luchar y derrotar a poderosos enemigos junto a tus Hongos en el campo de entrenamiento especial.\\nUtiliza tus Insignias fúngicas para canjearlas por increíbles objetos durante «La Chámpiñons»."
   },
   "ShatteredPhenocryst": {
     "name": "Fenocristal fragmentado",
@@ -421,7 +421,7 @@
   },
   "Albedo": {
     "name": "Albedo",
-    "description": "Alquimista en Jefe de los Caballeros de Favonius y Capitán del equipo de investigación. Lo llaman el “Príncipe de la Roca Caliza”."
+    "description": "Alquimista Jefe de los Caballeros de Favonius y Capitán del equipo de investigación. Lo llaman el “Príncipe de la Roca Caliza”."
   },
   "Diona": {
     "name": "Diona",
@@ -497,7 +497,7 @@
   },
   "YaeMiko": {
     "name": "Yae Miko",
-    "description": "La Suma Sacerdotisa del Gran Santuario Narukami y editora en jefe de la Editorial Yae. Bajo su increíble encanto esconde una inteligencia y una astucia inimaginables."
+    "description": "La Suma Sacerdotisa del Gran Santuario Narukami y editora jefa de la Editorial Yae. Bajo su increíble encanto esconde una inteligencia y una astucia inimaginables."
   },
   "ShikanoinHeizou": {
     "name": "Shikanoin Heizou",
@@ -566,6 +566,14 @@
   "Faruzan": {
     "name": "Faruzán",
     "description": "Una erudita “con cien años de antigüedad” a la que le encanta recalcar que tiene más experiencia que los demás. Posee unos amplios conocimientos sobre textos antiguos y sobre todo tipo de mecanismos."
+  },
+  "Yaoyao": {
+    "name": "Yaoyao",
+    "description": "La discípula más joven de Caminante Errante. Es una “pequeña adulta” de lo más dulce y considerada."
+  },
+  "Alhaitham": {
+    "name": "Alhacén",
+    "description": "El actual escriba de la Academia de Sumeru, un hombre de gran inteligencia y talento. Vive su vida libremente y es prácticamente imposible de encontrar."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
@@ -814,6 +822,14 @@
   "FaruzansStellaFortuna": {
     "name": "Stella Fortuna de Faruzán",
     "description": "Material de activación de constelación de Faruzán"
+  },
+  "YaoyaosStellaFortuna": {
+    "name": "Stella Fortuna de Yaoyao",
+    "description": "Material de activación de constelación de Yaoyao."
+  },
+  "AlhaithamsStellaFortuna": {
+    "name": "Stella Fortuna de Alhacén",
+    "description": "Material de activación de constelación de Alhacén."
   },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador",
@@ -1258,6 +1274,10 @@
   "GlabrousBeans": {
     "name": "Legumbres peladas",
     "description": "Una legumbre típica en Teyvat. Tiene un olor neutro. Dado que existen muchas formas de cocinarla, su uso está muy extendido y aceptado por todos."
+  },
+  "MysteriousMeat": {
+    "name": "Carne misteriosa",
+    "description": "Un trozo de carne fresca recién cortada que emana un olor enigmático. ¿A qué sabrá cuando le hinques el diente?"
   },
   "JeansDocumentPackage": {
     "name": "Paquete de documentos de Jean",
@@ -1897,11 +1917,11 @@
   },
   "RingOfRainingBladesI": {
     "name": "Lluvia de cuchillas (I)",
-    "description": "Un pasaje de «Lluvia de cuchillas (I)», una de las historias de Liu Su. Narra la historia la Academia Guhua..."
+    "description": "Un pasaje de «Lluvia de cuchillas (I)», una de las historias de Liu Su. Narra la historia de la Academia Guhua..."
   },
   "RingOfRainingBladesII": {
     "name": "Lluvia de cuchillas (II)",
-    "description": "Un pasaje de «Lluvia de cuchillas (II)», una de las historias de Liu Su. Narra la historia la Academia Guhua..."
+    "description": "Un pasaje de «Lluvia de cuchillas (II)», una de las historias de Liu Su. Narra la historia de la Academia Guhua..."
   },
   "MealBoxBySmileyYanxiaoForJiangxue": {
     "name": "Comida preparada por Yanxiao para Jiangxue",
@@ -3919,6 +3939,10 @@
     "name": "Dátil",
     "description": "El fruto de un árbol de hoja perenne que crece en los oasis del desierto. La carne que se encuentra bajo su dura piel es gruesa, dulce y deliciosa. Es una importante fuente de alimento para los habitantes del desierto."
   },
+  "SandGreasePupa": {
+    "name": "Crisálida arenosa",
+    "description": "Una cáscara seca que solo se encuentra en los criaderos de anguilas del desierto situados en lo más profundo del mar de arena. Esta resistente capa exterior protege los débiles cuerpos de las crías de anguila hasta que finalmente se aclimatan a las condiciones ambientales desérticas."
+  },
   "Scarab": {
     "name": "Escarabajo dorado",
     "description": "Un tenaz escarabajo que habita en el vasto mar de arena del desierto. Los patrones dorados de su caparazón parecen tener cierta conexión con las antiguas ruinas distribuidas por todo el desierto."
@@ -5613,7 +5637,7 @@
   },
   "AgnidusAgateSliver": {
     "name": "Pedacito de ágata agnidus",
-    "description": "Material de ascensión de personaje"
+    "description": "Material de ascensión de personaje."
   },
   "AgnidusAgateFragment": {
     "name": "Fragmento de ágata agnidus",
@@ -5629,7 +5653,7 @@
   },
   "VarunadaLazuriteSliver": {
     "name": "Pedacito de lazurita varunada",
-    "description": "Material de ascensión de personaje"
+    "description": "Material de ascensión de personaje."
   },
   "VarunadaLazuriteFragment": {
     "name": "Fragmento de lazurita varunada",
@@ -5645,7 +5669,7 @@
   },
   "NagadusEmeraldSliver": {
     "name": "Pedacito de esmeralda nagadus",
-    "description": "Material de ascensión de personaje"
+    "description": "Material de ascensión de personaje."
   },
   "NagadusEmeraldFragment": {
     "name": "Fragmento de esmeralda nagadus",
@@ -5661,7 +5685,7 @@
   },
   "VajradaAmethystSliver": {
     "name": "Pedacito de amatista vajrada",
-    "description": "Material de ascensión de personaje"
+    "description": "Material de ascensión de personaje."
   },
   "VajradaAmethystFragment": {
     "name": "Fragmento de amatista vajrada",
@@ -6997,7 +7021,7 @@
   },
   "SuspiciousSashimiPlatter": {
     "name": "Surtido de sashimi extraño",
-    "description": "Un plato de hecho con ingredientes de mar frescos. Parece un plato de prueba, ya que, al cortar mal el pescado, se ha estropeado su sabor. Además, no se le han quitado todas las espinas. Vamos, llama a un chef profesional para que arregle este estropicio..."
+    "description": "Un plato hecho con ingredientes de mar frescos. Parece un plato de prueba, ya que, al cortar mal el pescado, se ha estropeado su sabor. Además, no se le han quitado todas las espinas. Vamos, llama a un chef profesional para que arregle este estropicio..."
   },
   "SashimiPlatter": {
     "name": "Surtido de sashimi",
@@ -7521,7 +7545,7 @@
   },
   "TheOnlyTruth": {
     "name": "La verdad y nada más que la verdad",
-    "description": "La especialidad de Shikanoin Heizou. La dorada y jugosa carne descansa sobre un cama de huevo y desprende un aroma irresistible. Tras comerlo, sientes el impulso de contar algunos de los privados secretos de tu corazón. ¿Será esta el arma secreta del detective Heizou?"
+    "description": "La especialidad de Shikanoin Heizou. La dorada y jugosa carne descansa sobre una cama de huevo y desprende un aroma irresistible. Tras comerlo, sientes el impulso de contar algunos de los privados secretos de tu corazón. ¿Será esta el arma secreta del detective Heizou?"
   },
   "SuspiciousButterChicken": {
     "name": "Pollo con mantequilla extraño",
@@ -7878,6 +7902,42 @@
   "ShimiChazuke": {
     "name": "Chazuke auténtico",
     "description": "La especialidad del Trotamundos. El amargo regusto del té y el dulce paladar del arroz se combinan para dar lugar a un manjar que se volverá casi adictivo después del primer bocado. ¿Dónde habrá aprendido a dominar así las artes culinarias? Como si pudiera adivinar lo que estás pensando, el Trotamundos te dirige una mirada severa: “¿Qué esperas? Si has acabado, ve a lavar el cuenco”."
+  },
+  "SuspiciousSabzMeatStew": {
+    "name": "Estofado de carne de Sabz extraño",
+    "description": "Un estofado con un sabor distintivo. Basta con que su aroma acre asalte las fosas nasales para empezar a tener asociaciones mentales poco halagüeñas... Si se le deja reposar más tiempo, quizás hasta crezcan hongos en él."
+  },
+  "SabzMeatStew": {
+    "name": "Estofado de carne de Sabz",
+    "description": "Un estofado con un sabor distintivo. Se mezclan y trocean juntas distintas hortalizas verdes y luego son puestas a cocer con trozos de carne en una olla. El limón añadido le da un toque cálido y ligeramente amargo. La gente de Sumeru suele degustar este plato derramado sobre arroz hervido."
+  },
+  "DeliciousSabzMeatStew": {
+    "name": "Estofado de carne de Sabz delicioso",
+    "description": "Un estofado con un sabor distintivo. El particular aroma de los ingredientes se funde en una deliciosa sinfonía para el paladar. Los grandes pedazos de carne, cocidos hasta quedar tiernos y jugosos, están recubiertos de una suntuosa capa verde oscuro, como invitando a quienes lo prueban a un sosegado paseo por la frondosa selva."
+  },
+  "SuspiciousScentedMeatBalls": {
+    "name": "Albóndigas especiadas extrañas",
+    "description": "Un plato hecho a base de carne picada. Su inapetente apariencia hace que sea imposible imaginar lo que contiene. Si pruebas un bocado... Sí, parece que contiene trigo. Si no tienes cuidado, las espigas de trigo podrían pincharte los labios."
+  },
+  "ScentedMeatBalls": {
+    "name": "Albóndigas especiadas",
+    "description": "Un plato hecho a base de carne picada. Primero, se tritura el trigo y se cuece, la carne picada se mezcla para crear la capa exterior, y luego la cebolla y la carne se saltean para el relleno. Por último, la carne se amasa y se fríe hasta que se dore. Cocinado con la temperatura adecuada, es perfecto para disfrutar de la felicidad de un buen bocado de carne."
+  },
+  "DeliciousScentedMeatBalls": {
+    "name": "Albóndigas especiadas deliciosas",
+    "description": "Un plato hecho a base de carne picada. El revestimiento crujiente envuelve un delicioso y sabroso relleno, lo que le confiere una textura más estratificada que la de las albóndigas ordinarias. Un solo bocado de este plato es una delicia única que, junto al aroma de la carne, hará que te invada una sensación de felicidad sin igual."
+  },
+  "IdealCircumstance": {
+    "name": "Situación ideal",
+    "description": "La especialidad de Alhacén. Se trata de un plato que se hace añadiendo verduras y carne sobre una sartén con un patrón en la base. El chef debe de haber modificado la receta, ya que es bastante diferente del plato original. La palabra que aparece en el plato significa “pensar”. En palabras del chef: “La situación ideal sería que todo el mundo pudiera hacerlo, pero eso no es posible”."
+  },
+  "QingceHouseholdDish": {
+    "name": "Plato casero de Chingtsé",
+    "description": "La especialidad de Yaoyao. Sin la glamurosa presentación de un buen restaurante, puede parecer poco pretencioso, pero un solo bocado te dejará una cálida sensación hogareña que quedará grabada en la memoria para siempre. El sabor va desde la punta de la lengua hasta la cabeza. Quizá el secreto de su excelente sabor sea el cariño de Yaoyao."
+  },
+  "CrocodileJerky": {
+    "name": "Cecina de espinodrilo",
+    "description": "Cecina de espinodrilo elaborada con una receta especial de la tribu de los Tanit. Aunque es bastante difícil de masticar, es fácil de almacenar, por lo que es el alimento preferido de los cazadores de la tribu.\\nEl sabor se asemeja mucho al de la carne de ave, aunque al parecer es ocho veces más nutritivo que cualquier otro tipo de carne cruda."
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -8423,6 +8483,14 @@
     "name": "Receta: Samosas",
     "description": "Receta paso a paso para hacer samosas."
   },
+  "RecipeSabzMeatStew": {
+    "name": "Receta: Estofado de carne de Sabz",
+    "description": "Receta paso a paso para hacer un estofado de carne de Sabz."
+  },
+  "RecipeScentedMeatBalls": {
+    "name": "Receta: Albóndigas especiadas",
+    "description": "Receta paso a paso para hacer unas albóndigas especiadas."
+  },
   "CraftedItems": {
     "name": "Objeto sintetizado",
     "description": "Objetos creados al combinar materiales."
@@ -8863,6 +8931,18 @@
     "name": "Prisma radiante",
     "description": "Una pieza de exquisita elaboración obtenida tras derrotar a una Creación Primigenia.\\nEn el pasado, el rey del desierto tuvo un sueño e hizo muchas promesas.\\nCuentan las leyendas del desierto que estas máquinas fueron creadas para cumplir esas promesas. Sin embargo, hoy en día, tanto el sueño como las promesas han sido olvidados y solo viven en la memoria mecánica de estas máquinas."
   },
+  "DesiccatedShell": {
+    "name": "Caparazón desfigurado",
+    "description": "El caparazón roto de una Bestia Sacrósea.\\nUna prueba fehaciente del desastre que asoló el mundo en el pasado, y que en la actualidad solo puede hallarse en lugares en los que nadie osa aventurarse."
+  },
+  "SturdyShell": {
+    "name": "Caparazón sólido",
+    "description": "El sólido caparazón de una Bestia Sacrósea.\\nLos restos de una bestia, nacida de la ruina, que roía la carne y huesos de grandes seres caídos. Aunque las bestias rapiñen una hebra del poder de los dioses de antaño, acabarán corriendo la misma suerte."
+  },
+  "MarkedShell": {
+    "name": "Caparazón grabado",
+    "description": "El caparazón de una Bestia Sacrósea grabado con inscripciones antiguas.\\nSobre el pálido caparazón persisten tenuemente los pesares de una época remota. Llegará el día en que los huesos de las bestias se conviertan en polvo blanco esparcido al viento, y solo entonces los nobles seres caídos en el pasado conocerán por fin el reposo eterno."
+  },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
     "description": "La forma condensada del Hipóstasis Anemo después de ser derrotado. En su interior contiene poder Anemo puro.\\nSe dice que una mariposa frágil y débil contiene el poder para generar un huracán. Esta mariposa hecha de viento puro, sin duda, espera el día para volver a invocar la tormenta."
@@ -9034,6 +9114,10 @@
   "DakasBell": {
     "name": "Cascabel de anulación",
     "description": "Una rótula con forma de cascabel que sirve para conectar las extremidades mecánicas del cuerpo. Aunque tiene un aspecto endeble, es capaz de cargar con una gran cantidad de energía.\\nSi se conecta a los brazos, se perderá toda sensibilidad en ellos.\\nSi se conecta a las piernas, se perderá casi toda la fuerza en ellas.\\nPero si se conecta al cráneo... el odio, el sufrimiento, la locura y la arrogancia permanecerán intactas.\\nPor suerte."
+  },
+  "PseudoStamens": {
+    "name": "Pseudoestambre",
+    "description": "Un élitro de color verdoso oculto en la parte trasera de un gusano de arena, fino y esbelto como un estambre.\\nCuenta la leyenda que, en una época anterior a la existencia del tiempo, estos gusanos se desplazaban a través de la húmeda tierra de praderas y bosques ciclópeos con la misma desenvoltura que las aves surcan el cielo o los peces nadan en el agua. La opinión generalizada es que este mimetismo floral tiene la finalidad de atraer posibles presas extraviadas en las tormentas de arena. Pero hay quien dice que este aspecto de flor exuberante es el reflejo de una era remota en la que, en vez de dorada arena, la tierra estaba cubierta de un frondoso manto de plantas y flores."
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian",
@@ -9619,6 +9703,10 @@
     "name": "Estrella del porvenir",
     "description": "En cierto contexto cosmológico, la Estrella del Porvenir Definitiva es un valioso tesoro lleno de esperanza y posibilidades infinitas, mientras que las estrellas del porvenir solo son fragmentos separados de ella. Si reúnes los seis fragmentos que existen, podrás invocar la Estrella del Porvenir Definitiva, sobre cuyo aspecto y utilidad no hay información.\\nEn un contexto distinto, las estrellas del porvenir también podrían tratarse de valiosos objetos en la colección de cierta organización llamada “Academia de Sumeru”, y denominarse “núcleos de Parvo” en sus registros. Como nadie las ha usado en mucho tiempo, sobre ellas hay una pequeña capa de polvo."
   },
+  "EnergyTransformationCapacitor": {
+    "name": "Condensador de conversión energética",
+    "description": "Un condensador de conversión energética.\\nSe desconocen su diseño y nombre exactos, por lo que ya no se puede volver a producir. Tal vez podría servir como material de alimentación para una Creación Primigenia."
+  },
   "RaefsPackage": {
     "name": "Paquete de Raef",
     "description": "Un paquete que contiene macetas, semillas, fertilizantes y muchos otros artículos de jardinería. Es muy pesado. No es fácil llevarlo a través del desierto..."
@@ -9695,6 +9783,106 @@
     "name": "Recibo de Guanchui",
     "description": "Un recibo que Georg le entregó a Guanchui. Contiene el precio de 100 cajas de jugo festivo, el detalle de los costes, la fecha de compra y la fecha prevista de entrega de la mercancía. Cuando el cliente lo lea, seguro que se sentirá más tranquilo."
   },
+  "Soulferry": {
+    "name": "Barca de las almas",
+    "description": "Una pieza de tablero de la plaza del Templo de Gurabad. Se asemeja a la legendaria barca que transportaba las almas de los muertos."
+  },
+  "KhajNisut": {
+    "name": "Sala de la Coronación",
+    "description": "Una pieza de tablero de la plaza del Templo de Gurabad. Es un modelo en miniatura de la Sala de la Coronación."
+  },
+  "BorderFort": {
+    "name": "Fuerte fronterizo",
+    "description": "Una pieza de tablero de la plaza del Templo de Gurabad. Está tallada de modo que se asemeja a un antiguo fuerte fronterizo."
+  },
+  "KingDeshretsPillar": {
+    "name": "Pilar del Rey Deshret",
+    "description": "Una pieza de tablero de la plaza del Templo de Gurabad. Se asemeja a uno de los majestuosos monumentos de la antigua civilización del Rey Deshret."
+  },
+  "TempleOfGurabad": {
+    "name": "Templo de Gurabad",
+    "description": "Una pieza de tablero de la plaza del Templo de Gurabad. Se asemeja al majestuoso Templo del Rey Deshret en Gurabad."
+  },
+  "ActivationDeviceTheMausoleumOfKingDeshret": {
+    "name": "Componente de activación: Mausoleo del Rey Deshret",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceDeshretsGlassGoblet": {
+    "name": "Componente de activación: Cáliz de cristal del Rey Deshret",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceSoulferry": {
+    "name": "Componente de activación: Barca de las almas",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceKhajNisut": {
+    "name": "Componente de activación: Sala de la Coronación",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceBorderFort": {
+    "name": "Componente de activación: Fuerte fronterizo",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceKingDeshretsPillar": {
+    "name": "Componente de activación: Pilar del Rey Deshret",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "ActivationDeviceTempleOfGurabad": {
+    "name": "Componente de activación: Templo de Gurabad",
+    "description": "Un componente de activación de una pieza de tablero. Solo las genios que en su día juraron lealtad al Rey Deshret pueden comprender la complejidad de sus mecanismos."
+  },
+  "MemoriesOfTheEternalOasisI": {
+    "name": "Recuerdo del Oasis Eterno (I)",
+    "description": "Un recuerdo antiguo del Oasis Eterno, plasmado en una runa flotante."
+  },
+  "MemoriesOfTheEternalOasisII": {
+    "name": "Recuerdo del Oasis Eterno (II)",
+    "description": "Un recuerdo antiguo del Oasis Eterno, plasmado en una runa flotante."
+  },
+  "MemoriesOfTheEternalOasisIII": {
+    "name": "Recuerdo del Oasis Eterno (III)",
+    "description": "Un recuerdo antiguo del Oasis Eterno, plasmado en una runa flotante."
+  },
+  "TadhlasFeather": {
+    "name": "Pluma de Tadla",
+    "description": "Una de las plumas que necesita un halcón para volar. Una vez arrancada, ya no podrá remontar el vuelo."
+  },
+  "FatuiStrongholdKey": {
+    "name": "Llave de la base Fatui",
+    "description": "Una llave para abrir la puerta principal de la base que los Fatui construyeron en el desierto. Con ella probablemente puedas abrir la compuerta de la base de los Fatui."
+  },
+  "SacredSealPrecipice": {
+    "name": "Piedra sagrada: Precipicio",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. Antes se creía que esta simbolizaba un laúd de algún reino antiguo, pero solía aparecer en descripciones de situaciones peligrosas. Luego se confirmó que se trata de la silueta de un acantilado, y que se usaba para avisar sobre algún infortunio inminente."
+  },
+  "SacredSealGrandDoor": {
+    "name": "Piedra sagrada: Puerta gigante",
+    "description": "Una placa de piedra con una inscripción antigua. Parece que originariamente formaba parte de algún tipo de estructura. No se sabe desde hace cuánto tiempo se encuentra inactiva en medio del mar de arena. Tampoco se sabe a quién pertenecen los deseos que contiene. El símbolo parece ser la silueta de la puerta de piedra de algún palacio antiguo."
+  },
+  "MysteriousStoneSlateI": {
+    "name": "Losa de piedra misteriosa (I)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
+  "MysteriousStoneSlateII": {
+    "name": "Losa de piedra misteriosa (II)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
+  "MysteriousStoneSlateIII": {
+    "name": "Losa de piedra misteriosa (III)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
+  "MysteriousStoneSlateIV": {
+    "name": "Losa de piedra misteriosa (IV)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
+  "MysteriousStoneSlateV": {
+    "name": "Losa de piedra misteriosa (V)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
+  "MysteriousStoneSlateVI": {
+    "name": "Losa de piedra misteriosa (VI)",
+    "description": "Una losa antigua con inscripciones grabadas. Tiene un aspecto sólido y fascinante a la vez."
+  },
   "CynosIntroductionLetter": {
     "name": "Carta de presentación de Cyno",
     "description": "Una carta de presentación escrita por Cyno. Simboliza la confianza del Gran Juez."
@@ -9739,13 +9927,17 @@
     "name": "Bolsa especial de viaje para el desierto de edición limitada",
     "description": "Una bolsa de viaje que le compraste a Dori. Está llena de cosas extrañas. Aunque a primera vista resulta desconcertante, una inspección más a fondo revela que en realidad podría resultar de mucha utilidad."
   },
+  "NascentBambooShoots": {
+    "name": "Brote de bambú tierno",
+    "description": "En cierta época del año, los brotes de bambú que recién despuntan en la tierra de la Aldea Chingtsé desprenden un sutil y fresco aroma. Constituyen un valioso y poco común ingrediente culinario."
+  },
   "AShortLetter": {
     "name": "Una carta corta",
     "description": "Una breve carta escrita en código. No sabes quién la escribió o por qué, pero ahí está."
   },
   "SilverTwig": {
     "name": "Retoño blanco",
-    "description": "Un retoño extraído directamente del centro del mundo.\\nHabía una vez un árbol gigante que atravesaba el mundo entero, y esta rama era parte de él. Aunque fue arrancada, nunca ha perdido su conexión con el árbol del que procedía. Por eso, mientras el gran árbol blanco que simboliza el centro del mundo siga vivo, esta rama nunca se secará.\\n\\nLos árboles son el símbolo de la vida. Cuenta la leyenda de cierto lugar que una persona que estaba en el lecho de muerte trasmitió su consciencia a las ramas de un gran árbol blanco, pues así ni su vida ni sus sueños llegarían a su fin. Mientras tuvieran sol y lluvia, las ramas seguirían creciendo, brotando, floreciendo y, finalmente, dando frutos.\\nAsimismo, los árboles también simbolizan la sabiduría. Según otra leyenda de aquel lugar, un sabio que colgaba bocabajo del árbol adquirió el conocimiento para inscribir runas y controlar las palabras sagradas. Así, caminó por el reino que se extendía bajo las raíces del gran árbol y vislumbró los secretos del cosmos.\\nTodo el conocimiento, todos los recuerdos y todas las vivencias del mundo circulan por las raíces del gran árbol, como arroyos que convergen para formar un río que desemboca en el mar y, finalmente, se convierte en agua de lluvia caída de las nubes. Ese es el ciclo de la vida."
+    "description": "Un retoño extraído directamente del centro del mundo.\\nHabía una vez un árbol gigante que atravesaba el mundo entero, y esta rama era parte de él. Aunque fue arrancada, nunca ha perdido su conexión con el árbol del que procedía. Por eso, mientras el gran árbol blanco que simboliza el centro del mundo siga vivo, esta rama nunca se secará.\\n\\nLos árboles son el símbolo de la vida. Cuenta la leyenda de cierto lugar que una persona que estaba en el lecho de muerte transmitió su consciencia a las ramas de un gran árbol blanco, pues así ni su vida ni sus sueños llegarían a su fin. Mientras tuvieran sol y lluvia, las ramas seguirían creciendo, brotando, floreciendo y, finalmente, dando frutos.\\nAsimismo, los árboles también simbolizan la sabiduría. Según otra leyenda de aquel lugar, un sabio que colgaba bocabajo del árbol adquirió el conocimiento para inscribir runas y controlar las palabras sagradas. Así, caminó por el reino que se extendía bajo las raíces del gran árbol y vislumbró los secretos del cosmos.\\nTodo el conocimiento, todos los recuerdos y todas las vivencias del mundo circulan por las raíces del gran árbol, como arroyos que convergen para formar un río que desemboca en el mar y, finalmente, se convierte en agua de lluvia caída de las nubes. Ese es el ciclo de la vida."
   },
   "VaguelyReadableInscription": {
     "name": "Inscripción apenas reconocible",
@@ -9758,6 +9950,46 @@
   "SomeonesDiary": {
     "name": "Diario de autoría desconocida",
     "description": ""
+  },
+  "InternalWithdrawalDocument": {
+    "name": "Documento de evacuación interna",
+    "description": "Un documento oficial que ha sido desechado a la ligera en el campamento."
+  },
+  "PreliminaryTestOnExperimentalSubject": {
+    "name": "Examen inicial del sujeto de prueba",
+    "description": "Un grueso montón de cartas y documentos de investigación. En ellos se detalla el estado de cierto “espécimen humano”."
+  },
+  "TransferNotification": {
+    "name": "Notificación de evacuación",
+    "description": "Una notificación oficial Fatui. Parece estar relacionada con el destino de evacuación de las tropas."
+  },
+  "PathfindersLogI": {
+    "name": "Diario de explorador (I)",
+    "description": "Primera parte del diario de un explorador."
+  },
+  "PathfindersLogII": {
+    "name": "Diario de explorador (II)",
+    "description": "Segunda parte del diario de un explorador."
+  },
+  "PathfindersLogIII": {
+    "name": "Diario de explorador (III)",
+    "description": "Tercera parte del diario de un explorador."
+  },
+  "PathfindersLogIV": {
+    "name": "Diario de explorador (IV)",
+    "description": "Cuarta parte del diario de un explorador."
+  },
+  "PathfindersLogV": {
+    "name": "Diario de explorador (V)",
+    "description": "Quinta parte del diario de un explorador."
+  },
+  "PathfindersLogVI": {
+    "name": "Diario de explorador (VI)",
+    "description": "Sexta parte del diario de un explorador."
+  },
+  "NoteRegardingAnExchangeOfGoods": {
+    "name": "Carta de respuesta sobre la transacción de bienes",
+    "description": "Una carta de respuesta, por lo visto de procedencia Fatui. En ella se desglosan lo que parecen ser detalles sobre la transacción entre Aderfi y los Fatui."
   },
   "EventNotice": {
     "name": "Anuncio de evento",
@@ -9785,7 +10017,7 @@
   },
   "InitialInvestigationClues": {
     "name": "Pistas preliminares de la investigación",
-    "description": "Una serie de pistas que reuniste al fotografiar lo que había encima de la mesa del puesto del agar floral del Torneo Loto Niloptala de Doma de Bestias aprovechando que no había nadie cerca.\\nNecesitarás a alguien experto en la materia para que te ayude a interpretar la información."
+    "description": "Una serie de pistas que reuniste al fotografiar lo que había encima de la mesa del puesto del agar floral del Torneo Loto Nilotpala de Doma de Bestias aprovechando que no había nadie cerca.\\nNecesitarás a alguien experto en la materia para que te ayude a interpretar la información."
   },
   "HaniyyahsNotes": {
     "name": "Notas de Haniyyah",
@@ -9823,9 +10055,201 @@
     "name": "Carta de Xu Dong",
     "description": "Una carta que dejó Xu Dong. Parece que también hay algo escondido en el sobre..."
   },
+  "RecordsOfGurabadPartI": {
+    "name": "Crónicas de Gurabad (I)",
+    "description": "Primera parte de «Crónicas de Gurabad»."
+  },
+  "RecordsOfGurabadPartII": {
+    "name": "Crónicas de Gurabad (II)",
+    "description": "Segunda parte de «Crónicas de Gurabad»."
+  },
+  "RecordsOfGurabadPartIII": {
+    "name": "Crónicas de Gurabad (III)",
+    "description": "Tercera parte de «Crónicas de Gurabad»."
+  },
+  "RecordsOfGurabadPartIV": {
+    "name": "Crónicas de Gurabad (IV)",
+    "description": "Cuarta parte de «Crónicas de Gurabad»."
+  },
+  "RecordsOfGurabadPartV": {
+    "name": "Crónicas de Gurabad (V)",
+    "description": "Quinta parte de «Crónicas de Gurabad»."
+  },
+  "RecordsOfMtDamavandPartI": {
+    "name": "Crónicas del Monte Damavand (I)",
+    "description": "Primera parte de «Crónicas del Monte Damavand»."
+  },
+  "RecordsOfMtDamavandPartII": {
+    "name": "Crónicas del Monte Damavand (II)",
+    "description": "Segunda parte de «Crónicas del Monte Damavand»."
+  },
+  "RecordsOfMtDamavandPartIII": {
+    "name": "Crónicas del Monte Damavand (III)",
+    "description": "Tercera parte de «Crónicas del Monte Damavand»."
+  },
+  "DogmaOfTheBrassMaskPartI": {
+    "name": "Enseñanzas de la Máscara de Latón (I)",
+    "description": "Primera parte de las enseñanzas de la Máscara de Latón."
+  },
+  "DogmaOfTheBrassMaskPartII": {
+    "name": "Enseñanzas de la Máscara de Latón (II)",
+    "description": "Segunda parte de las enseñanzas de la Máscara de Latón."
+  },
+  "DogmaOfTheBrassMaskPartIII": {
+    "name": "Enseñanzas de la Máscara de Latón (III)",
+    "description": "Tercera parte de las enseñanzas de la Máscara de Latón."
+  },
+  "RecordsOfTheAncientOasesPartI": {
+    "name": "Crónicas del antiguo oasis (I)",
+    "description": "Primera parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartII": {
+    "name": "Crónicas del antiguo oasis (II)",
+    "description": "Segunda parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartIII": {
+    "name": "Crónicas del antiguo oasis (III)",
+    "description": "Tercera parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartIV": {
+    "name": "Crónicas del antiguo oasis (IV)",
+    "description": "Cuarta parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartV": {
+    "name": "Crónicas del antiguo oasis (V)",
+    "description": "Quinta parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartVI": {
+    "name": "Crónicas del antiguo oasis (VI)",
+    "description": "Sexta parte de «Crónicas del antiguo oasis»."
+  },
+  "ConscriptionSlate": {
+    "name": "Placa con orden de alistamiento",
+    "description": "Una placa que tiene inscrita una orden de alistamiento."
+  },
+  "RedVulturesFeather": {
+    "name": "Pluma de buitre escarlata",
+    "description": "Las plumas que permiten volar a los buitres escarlata. Pueden usarse para hacer coloridos pigmentos... o venenos letales."
+  },
+  "ScorpionsSting": {
+    "name": "Aguijón de escorpión",
+    "description": "El aguijón de un escorpión conectado a sus glándulas. Tradicionalmente, la elección predilecta de los asesinos del desierto."
+  },
+  "FlyingSerpentsHorn": {
+    "name": "Cuerno de aerofidio",
+    "description": "Como su propio nombre indica, se trata del cuerno de un aerofidio. Las tribus del desierto lo suelen moler hasta convertirlo en polvo, para así crear pociones ineficaces y vendérselas a los eruditos de la ciudad como si fueran tónicos contra el insomnio. Se venden muy bien."
+  },
+  "CaptainZoyaSnezhevnasReportI": {
+    "name": "Informe de operación de la capitana Zoya Snezhevna (I)",
+    "description": "Primera parte del informe de operación de la capitana Zoya Snezhevna."
+  },
+  "CaptainZoyaSnezhevnasReportII": {
+    "name": "Informe de operación de la capitana Zoya Snezhevna (II)",
+    "description": "Segunda parte del informe de operación de la capitana Zoya Snezhevna."
+  },
+  "CaptainZoyaSnezhevnasReportIII": {
+    "name": "Informe de operación de la capitana Zoya Snezhevna (III)",
+    "description": "Tercera parte del informe de operación de la capitana Zoya Snezhevna."
+  },
+  "DamagedRecordsI": {
+    "name": "Registros dañados (I)",
+    "description": "Primera parte de unos registros dañados."
+  },
+  "DamagedRecordsII": {
+    "name": "Registros dañados (II)",
+    "description": "Segunda parte de unos registros dañados."
+  },
+  "TanitEmblemMarkedRecords": {
+    "name": "Registros con el emblema de los Tanit",
+    "description": "Unos registros con el emblema de los Tanit."
+  },
+  "FatuiLetter": {
+    "name": "Carta Fatui",
+    "description": "Un documento de evacuación interna."
+  },
+  "AnAbandonedLetter": {
+    "name": "Carta abandonada",
+    "description": "Una carta abandonada."
+  },
+  "AkademiyaEmblemMarkedContract": {
+    "name": "Contrato con el emblema de la Academia de Sumeru",
+    "description": "Un contrato con el emblema de la Academia de Sumeru."
+  },
+  "RestoredBlueprintsOfAMechanicalBehemothsPowerSystem": {
+    "name": "Planos restaurados del sistema de alimentación de una máquina gigante",
+    "description": "Unos planos restaurados del sistema de alimentación de una máquina gigante."
+  },
+  "SecretLetterToAderfi": {
+    "name": "Carta secreta para Aderfi",
+    "description": "Una carta secreta para Aderfi."
+  },
   "RandomWeaponShards": {
     "name": "Fragmentos de un arma",
     "description": "Fragmentos de algún arma. No se sabe cómo acabaron en este estado..."
+  },
+  "UnattributedRamenVoucher": {
+    "name": "Cupón de ramen de origen incierto",
+    "description": "Un obsequio por ayudar a Arataki “el Luchador Escaradiablo Supremo” Itto a hacerle frente al formidable escaradiablo de combate del Gran Maestre Hanakado. Es la clara prueba del ascenso meteórico de la Mano del Rey Oni y de la Onicalavanda Perforacielos.\\nEn palabras del Luchador Escaradiablo Supremo, basta con mostrar este cupón al dueño del puesto para disfrutar de un cuenco de ramen gratis todos los días durante dos meses. Sin embargo... ¿en qué puesto se supone que se puede canjear?"
+  },
+  "NeatNote": {
+    "name": "Nota pulcramente escrita",
+    "description": "Una nota escrita con mucho esmero."
+  },
+  "JehtsLetter": {
+    "name": "Carta de Yeht",
+    "description": "Una carta escrita por Yeht."
+  },
+  "UfairahsNotes": {
+    "name": "Anotaciones de Ufairah",
+    "description": "Unas notas escritas por Ufairah."
+  },
+  "AncientStoneKey": {
+    "name": "Llave de piedra antigua",
+    "description": "Una misteriosa llave que la matriarca de la tribu de los Tanit solía llevar consigo. Parece que podría utilizarse para abrir una puerta..."
+  },
+  "CrumpledNamelist": {
+    "name": "Lista de nombres arrugada",
+    "description": "Una lista de nombres arrugada."
+  },
+  "WarehouseInventoryRecords": {
+    "name": "Pedido de suministros del almacén",
+    "description": "Un pedido de suministros del almacén."
+  },
+  "RecordsOfTheAncientOasesPartVII": {
+    "name": "Crónicas del antiguo oasis (VII)",
+    "description": "Séptima parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartVIII": {
+    "name": "Crónicas del antiguo oasis (VIII)",
+    "description": "Octava parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartIX": {
+    "name": "Crónicas del antiguo oasis (IX)",
+    "description": "Novena parte de «Crónicas del antiguo oasis»."
+  },
+  "RecordsOfTheAncientOasesPartX": {
+    "name": "Crónicas del antiguo oasis (X)",
+    "description": "Décima parte de «Crónicas del antiguo oasis»."
+  },
+  "EmploymentCodeOfConductTablet": {
+    "name": "Placa de reglamento de contratación",
+    "description": "Una placa que tiene inscrito el reglamento de una contratación."
+  },
+  "TribeMerchantsLetter": {
+    "name": "Carta del comerciante de la tribu",
+    "description": "Una carta del comerciante de la tribu."
+  },
+  "JehtsNote": {
+    "name": "Nota de Yeht",
+    "description": "Una nota escrita por Yeht."
+  },
+  "PipingHotBambooShootSoup": {
+    "name": "Sopa de brotes de bambú caliente",
+    "description": "Una sopa de brotes de bambú preparada con una cocinadora mecánica suprema. Según la valoración de Zhongli, “tiene un aspecto de lo más apetecible, y emana un aroma intenso y delicioso”. Entre los ingredientes utilizados se encuentran los brotes tiernos de bambú, nada fáciles de conseguir. Por diversos motivos, su valor conmemorativo excede con creces al valor culinario. Dado que es un plato creado por los Adeptus, no debería echarse a perder incluso si lo dejas en la mochila."
+  },
+  "WarriorsSpiritSwordfightingArenaTicket": {
+    "name": "Pase de admisión para «Doctrina marcial»",
+    "description": "En la doctrina marcial no se hacen distinciones de procedencia ni de estatus, y la amistad se forja espada en mano."
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -10041,7 +10465,7 @@
   },
   "HalcyonJadeAxeMarlin": {
     "name": "Marlín de jade",
-    "description": "Pariente lejano del pez mariposa, este pez posee un esqueleto de gran tamaño y forma curvilínea. Cuenta la leyenda que el primer pescador que atrapó uno de estos peces lo hizo enganchando la caña al extremo de la aleta caudal de pez, y descubrió así que la forma resultante se parecía a la de una lanza. De ahí que este pez se denomine lanza jadeíta. En comparación con su nombre científico, gancho de mariposa, esta denominación resulta más llamativa, por lo que se ha extendido entre la gente de a pie.\\nAl lanza jadeíta le gusta vivir en entornos con un exuberante lecho marino y sus tonalidades esmeraldas se camuflan con el entorno. Con frecuencia, los peces más pequeños que se mueven por el fondo marino, se topan con sus cuerpos camuflados y se desorientan. Sin embargo, el lanza jadeíta no se lo toma como una provocación. Al contrario, suele ofrecer cobijo y protección a otros peces."
+    "description": "Pariente lejano del pez mariposa, este pez posee un esqueleto de gran tamaño y forma curvilínea. Cuenta la leyenda que el primer pescador que atrapó uno de estos peces lo hizo enganchando la caña al extremo de la aleta caudal de pez, y descubrió así que la forma resultante se parecía a la de una lanza. De ahí que este pez se denomine lanza jadeíta. En comparación con su nombre científico, gancho de mariposa, esta denominación resulta más llamativa, por lo que se ha extendido entre la gente de a pie.\\nAl lanza jadeíta le gusta vivir en entornos con un exuberante lecho marino y sus tonalidades esmeraldas se camuflan con el entorno. Con frecuencia, los peces más pequeños que se mueven por el fondo marino se topan con sus cuerpos camuflados y se desorientan. Sin embargo, el lanza jadeíta no se lo toma como una provocación. Al contrario, suele ofrecer cobijo y protección a otros peces."
   },
   "WingsOfFirstFlight": {
     "name": "Alas de principiante",
@@ -10801,7 +11225,7 @@
   },
   "TravelNotesIrodori": {
     "name": "PB - Irodori",
-    "description": "Diseño de tarjeta de presentación.\\nLos aficionados a las fanficciones comparten su gran pasión por este género. Ahora que la editora en jefe kitsune aún no ha ideado una ley de derechos de autor, es el mejor momento para que cada uno cuente su historia. ¿O tal vez sí ha ideado una ley pero no le importa en absoluto?"
+    "description": "Diseño de tarjeta de presentación.\\nLos aficionados a las fanficciones comparten su gran pasión por este género. Ahora que la editora jefa kitsune aún no ha ideado una ley de derechos de autor, es el mejor momento para que cada uno cuente su historia. ¿O tal vez sí ha ideado una ley pero no le importa en absoluto?"
   },
   "YelanThrow": {
     "name": "Yelan - Lanzamiento",
@@ -10885,7 +11309,7 @@
   },
   "AchievementMirroredDreams": {
     "name": "Logro - Reflejo de un sueño",
-    "description": "Diseño de tarjeta de presentación.\\n“Las obsesiones y los anhelos de miles de años se han desvanecido en las tormentas de arena de las noches luminosas. Sin embargo, el oasis eterno con el que ella soñaba sigue siendo tan exuberante como siempre”."
+    "description": "Diseño de tarjeta de presentación.\\n“Las obsesiones y los anhelos de miles de años se han desvanecido en las tormentas de arena de las noches luminosas. Sin embargo, el Oasis Eterno con el que ella soñaba sigue siendo tan exuberante como siempre”."
   },
   "NahidaCrescent": {
     "name": "Nahida - Cuarto creciente",
@@ -10914,6 +11338,26 @@
   "TravelNotesStellarRivers": {
     "name": "Pase de Batalla - Cauce espiritual",
     "description": "Diseño de tarjeta de presentación.\\nOlvidado fue el nombre del festín de antaño y desperdigados están los tres ríos entre los estratos de nubes, mientras el otoño se aferra al curvilíneo crepúsculo."
+  },
+  "AlhaithamEnlightenment": {
+    "name": "Alhacén - Erudición",
+    "description": "Diseño de tarjeta de presentación.\\n“Las máximas de un erudito son la teoría y la argumentación. Solo dudando de todas las cosas en todo momento es posible evitar caer en el prejuicio”."
+  },
+  "YaoyaoYuegui": {
+    "name": "Yaoyao - Yuegui",
+    "description": "Diseño de tarjeta de presentación.\\n“Adivina, ¿cuál de ellos es Yuegui? ¡Acertaste! ¡Todos lo son!”."
+  },
+  "CelebrationLenticularClouds": {
+    "name": "Celebración - Nimbos biconvexos",
+    "description": "Diseño de tarjeta de presentación.\\nDiluidas nubes se escabullen entre las más altas cumbres en busca del amanecer."
+  },
+  "TravelNotesRhythmAndRhyme": {
+    "name": "Pase de Batalla{NON_BREAK_SPACE}-{NON_BREAK_SPACE}Eufonía",
+    "description": "Diseño de tarjeta de presentación.\\nCentelleos grana iluminan las mansas aguas del mar y los despejados cielos. En este atardecer celebraremos el comienzo de un nuevo año. Cortinas perladas adornan los gualdos salones, la luna alumbra con destellos argentos el estanque. Una celebración de iridiscentes melodías tiene lugar bajo un cielo cubierto de fuegos artificiales. El ambiente y el espectáculo son de una belleza sin precedentes."
+  },
+  "AchievementSandstorm": {
+    "name": "Logro - Polvareda",
+    "description": "Diseño de tarjeta de presentación.\\nArcaicos sueños se ocultan tras las perpetuas tormentas de arena..."
   },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
@@ -11151,9 +11595,13 @@
     "name": "Daguerrotipo burbujeante",
     "description": "Al usar este artilugio, registrarás y guardarás la imagen de un paisaje a color.\\nEsta herramienta de origen desconocido es excelente para conseguir imágenes. Aunque en su interior no tiene agua, al capturar una imagen, esta presenta muchas burbujitas alrededor, lo que le da una sensación ilusoria.\\nPor eso, cierto Capitán de Caballería dice que esta máquina “captura las ganas de tener algo fresco”."
   },
+  "JinniInTheMagicBottleLiloupar": {
+    "name": "Lámpara mágica de Lilúpar",
+    "description": "La gran genio Lilúpar, nacida de los nenúfares, fue excomulgada, y su espíritu fue extirpado y sellado en una lámpara traslúcida... hasta hoy, que ha encontrado {F#una nueva ama}{M#un nuevo amo}.\\n\\nActualmente solo posee la milmillonésima parte de su antiguo poder, el cual usa para ayudar a su {F#señora}{M#señor} a cruzar las arenas y las arcaicas ciudades del Desierto de Hadramavet."
+  },
   "WisdomOrb": {
     "name": "Orbe de la sabiduría",
-    "description": "Un objeto indispensable que te entregó el organizador del Torneo Loto Niloptala de Doma de Bestias. Con él podrás capturar, almacenar y controlar Hongos de cierto intelecto. Dicen que es obra del erudito Kautilya. Solo aquellos capaces de manejar este artilugio con maestría serán merecedores de participar en este torneo. Dicho esto, ¿por qué este objeto resulta tan familiar? Tiene funciones que parece que ya habías visto antes..."
+    "description": "Un objeto indispensable que te entregó el organizador del Torneo Loto Nilotpala de Doma de Bestias. Con él podrás capturar, almacenar y controlar Hongos de cierto intelecto. Dicen que es obra del erudito Kautilya. Solo aquellos capaces de manejar este artilugio con maestría serán merecedores de participar en este torneo. Dicho esto, ¿por qué este objeto resulta tan familiar? Tiene funciones que parece que ya habías visto antes..."
   },
   "CloudRetainersDamaskedDevice": {
     "name": "Dispositivo papirofléxico de Preservadora de Nubes",
@@ -11343,6 +11791,30 @@
     "name": "Banquete en Wanmin",
     "description": "Un fuego artificial muy original creado a imagen del ayudante de cierta chef del Restaurante Wanmin. Al ver a este pequeño ayudante, los habitantes de Liyue no pueden evitar pensar en platos deliciosos. ¡Un banquete familiar es una parte indispensable del festival!"
   },
+  "BetweenTheExquisiteThrowsOfHerEnigmaticDice": {
+    "name": "Dado jaspeado enigmático",
+    "description": "Un fuego pirotécnico en forma de dado. Cada vez que se enciende brota de él un número distinto. Se dice que fue fabricado por un artesano pirotécnico como muestra de aprecio a la nueva dueña del Salón de Té Yanshang. Desde que asumió la gestión del salón de té, los ludópatas desaparecieron sin dejar rastro, y las cartas y los Moras son como el agua y el aceite. La esencia pura y sosegada de los juegos de azar ha vuelto a reinar."
+  },
+  "InuzakaGeneralsFriendlyHelper": {
+    "name": "Escuadrón canino de motivación",
+    "description": "Un autor errante visitó la Isla Watatsumi en alguna ocasión, donde tuvo un recibimiento grato por un general de orejas puntiagudas. El pequeño ayudante de aquel general le causó una gran impresión, por lo que sirvió de inspiración en la fabricación de este fuego pirotécnico."
+  },
+  "CliffbreakersBannerFluttersInDrumRolls": {
+    "name": "Redobles y estandartes",
+    "description": "Un fuego pirotécnico elaborado con sumo cuidado por un artesano aficionado al teatro. Al encenderlo, brota de él una imagen que evoca los estandartes de una obra. La ópera es el pasatiempo favorito de muchos habitantes de Liyue. Con solo ver la imagen de este fuego pirotécnico, brota en sus mentes el exquisito canto de cierta artista."
+  },
+  "ThatFairlyEffectualAdviceAgainstWine": {
+    "name": "Abstemio itinerante",
+    "description": "Un comerciante que va y viene con frecuencia entre Liyue y Mondstadt pidió a un artesano que fabricara un fuego pirotécnico. Según sus palabras, era en agradecimiento a una cantinera peculiar cuyas palabras le hicieron entrar en razón y abandonó el alcohol, lo cual lo condujo al éxito en los negocios."
+  },
+  "RainforestBornFungi": {
+    "name": "Hongo aguamarino",
+    "description": "Un fuego artificial inspirado en un Flotihongo Hydro.\\nSe dice que, después de haber visitado Sumeru, un funcionario del Ministerio de Asuntos Civiles trabajó en su diseño redondo junto a un artesano con la esperanza de enternecer los corazones de la gente."
+  },
+  "ObligingLittleYuegui": {
+    "name": "¡Pequeño Yuegui al rescate!",
+    "description": "Un fuego pirotécnico inspirado en el acompañante de una entusiasta jovencita.\\nMuchas personas en Liyue han recibido ayuda de esta pequeña, pero nunca han sabido cómo se llama. Lo único que han escuchado son sus gritos llamando a Yuegui, su acompañante. Es por eso que, como muestra de agradecimiento, decidieron encargar a un artesano la fabricación de este fuego artificial."
+  },
   "RhodeiaOfLoch": {
     "name": "Oceánida - Rhodeia",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
@@ -11473,6 +11945,14 @@
   },
   "ProliferatingSpores": {
     "name": "Propagaesporas",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "PoundingSurprise": {
+    "name": "Regalo explosivo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "LightningStorm": {
+    "name": "Tormenta eléctrica",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "MagicGuide": {
@@ -11899,6 +12379,14 @@
     "name": "Monja libertina",
     "description": "Modelo de vestimenta de Rosaria. Una indumentaria confeccionada por la Iglesia especialmente para ella."
   },
+  "SpringbloomMissive": {
+    "name": "Misiva de la florescencia",
+    "description": "El atuendo de excursión de Kamisato Ayaka.\\nSu diseño parece estar basado en los vestidos de Fontaine que aparecen en las novelas ligeras ilustradas. Es como una ventana al estilo de vida refinado de las mujeres de dicha nación."
+  },
+  "ASobriquetUnderShade": {
+    "name": "Identidad velada",
+    "description": "Un atuendo que Lisa mandó hacer por encargo para volver de visita a Sumeru. Un vestido tan práctico como elegante que se asemeja al uniforme que solía llevar en sus años de estudiante."
+  },
   "AdventurerCamp": {
     "name": "Campamento del aventurero",
     "description": "Plano detallado para colocar un Campamento del aventurero.\\nUn campamento montado con prisas en la espesura.\\nCuando los aventureros levantan un campamento, tienen que vallarlo para que no se acerquen los animales salvajes. Pero normalmente en la zona no hay madera suficiente como para rodear completamente el campamento, por lo que se deben organizar turnos de vigilancia y hacer sonar la alarma para evitar desgracias.\\nTras usarlo, entra en el menú de colocación para verlo."
@@ -12041,7 +12529,7 @@
   },
   "CottageKitchen": {
     "name": "Leña y ahumados",
-    "description": "Plano detallado para colocar Leña y ahumados.\\nUna cocina completamente equipada y con un armario lleno de condimentos preparados cuidadosamente.\\nLos chefs que aspiran a la excelencia compran los ingredientes más frescos del día en el mercado, y los artistas de los fogones prestan incluso más atención a la leña usada en su fuego. Una vez, la joven cocinera del Restaurante Wanmin compartió sus conocimientos con sus colegas del gremio: para preparar los platos tradicionales de la Aldea Chingtsé, se debe hacer el fuego con trozos secos de bambú y controlar constantemente las llamas. Si se consigue madera de los arbustos que rodean a los ganchos de lobo, incluso se puede agregar una nota de sabor típica de Mondstadt.\\nLos distintos tipos de leña producen efectos muy diferentes y la mayoría de los cocineros nunca logran dominar esta técnica, así que puede decirse que el Restaurante Wanmin tiene el monopolio sobre ella.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Tartaglia, Mona, Xiao, Xiangling, Razor."
+    "description": "Plano detallado para colocar Leña y ahumados.\\nUna cocina completamente equipada y con un armario lleno de condimentos preparados cuidadosamente.\\nLos chefs que aspiran a la excelencia compran los ingredientes más frescos del día en el mercado, y los artistas de los fogones prestan incluso más atención a la leña usada en su fuego. Una vez, la joven cocinera del Restaurante Wanmin compartió sus conocimientos con sus colegas del gremio: para preparar los platos tradicionales de la Aldea Chingtsé, se debe hacer el fuego con trozos secos de bambú y controlar constantemente las llamas. Si se consigue madera de los arbustos que rodean a los ganchos de lobo, incluso se puede agregar una nota de sabor típica de Mondstadt.\\nLos distintos tipos de leña producen efectos muy diferentes y la mayoría de los cocineros nunca logran dominar esta técnica, así que puede decirse que el Restaurante Wanmin tiene el monopolio sobre ella.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao."
   },
   "WeaponForgingStation": {
     "name": "Forja de espadas",
@@ -12065,7 +12553,7 @@
   },
   "QingceCloudResidence": {
     "name": "Residencia entre nubes",
-    "description": "Plano detallado para colocar Residencia entre nubes.\\nUn pueblo de montaña al estilo de la Aldea Chingtsé. Al poner un pie en este lugar, los viajeros se contagian de la atmósfera amistosa, sus corazones se tranquilizan, y redescubren los placeres sencillos que habían olvidado.\\nPerseguir ideales y labrarse una carrera cuando se es joven es digno de elogio, sin duda. Pero, probablemente, el cansancio llegue tras pasar muchos años de esa manera. En ese momento, una vida tranquila en el campo parece la mejor opción. La Aldea Chingtsé siempre ha respetado a los jóvenes que salen a buscar fortuna y los recibe con los brazos abiertos cuando quieren regresar.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan."
+    "description": "Plano detallado para colocar Residencia entre nubes.\\nUn pueblo de montaña al estilo de la Aldea Chingtsé. Al poner un pie en este lugar, los viajeros se contagian de la atmósfera amistosa, sus corazones se tranquilizan, y redescubren los placeres sencillos que habían olvidado.\\nPerseguir ideales y labrarse una carrera cuando se es joven es digno de elogio, sin duda. Pero, probablemente, el cansancio llegue tras pasar muchos años de esa manera. En ese momento, una vida tranquila en el campo parece la mejor opción. La Aldea Chingtsé siempre ha respetado a los jóvenes que salen a buscar fortuna y los recibe con los brazos abiertos cuando quieren regresar.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao."
   },
   "OfHuntingAndDancing": {
     "name": "Cánticos de cazadores",
@@ -12093,7 +12581,7 @@
   },
   "AncientBranchShrine": {
     "name": "Ala de santuario antigua",
-    "description": "Plano detallado para colocar una Ala de santuario antigua.\\nDestaca su diseño hermoso y sosegado, su diseño arquitectónico, el tono rojo de la pintura y la disposición general que tanto recuerda al estilo del Gran Santuario Narukami. Para los mortales, este lugar es idóneo para relajarse y aclarar sus pensamientos. Para Su Excelencia, el paisaje de este lugar es como si fuera un retrato difuso que inspira en su mente recuerdos de un pasado remoto...\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Shogun Raiden, Yae Miko."
+    "description": "Plano detallado para colocar una Ala de santuario antigua.\\nDestaca su diseño hermoso y sosegado, su estructura arquitectónica, el tono rojo de la pintura y la disposición general que tanto recuerda al estilo del Gran Santuario Narukami. Para los mortales, este lugar es idóneo para relajarse y aclarar sus pensamientos. Para Su Excelencia, el paisaje de este lugar es como si fuera un retrato difuso que inspira en su mente recuerdos de un pasado remoto...\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Shogun Raiden, Yae Miko."
   },
   "MilitaryExerciseGrounds": {
     "name": "Campo de entrenamiento de mil ejércitos",
@@ -12137,11 +12625,11 @@
   },
   "FervidAroma": {
     "name": "Intenso aroma",
-    "description": "Este lujoso plano de decoración imita el interior de un conocido café de la Ciudad de Sumeru, aunque incorpora los cambios necesarios para adecuarlo a la residencia del mundo interior. Posee una soberbia decoración perfectamente organizada. En su interior, los vapores de las cocinas y el delicioso aroma de los manjares que se sirven se entremezclan, inundando el ambiente de una agradable sensación. Buena compañía y una jarra de vino es todo lo que se necesita para disfrutar de la mejor experiencia gastronómica posible.\\nAquellos que viajaban con frecuencia de un lado para otro siempre eligen de antemano los restaurantes donde comerán, teniendo en cuenta la amplitud del establecimiento y la cantidad de las raciones. Para esa clase de personas, un restaurante de carne a la parrilla es siempre la opción más segura. Incluso aquellos que viajan solos pueden aprovechar el animado ambiente de este café para mantener en secreto el objeto de su viaje o tantear, observar y analizar la situación desde la seguridad que supone este concurrido establecimiento."
+    "description": "Este lujoso plano de decoración imita el interior de un conocido café de la Ciudad de Sumeru, aunque incorpora los cambios necesarios para adecuarlo a la residencia del mundo interior. Posee una soberbia decoración perfectamente organizada. En su interior, los vapores de las cocinas y el delicioso aroma de los manjares que se sirven se entremezclan, inundando el ambiente de una agradable sensación. Buena compañía y una jarra de vino es todo lo que se necesita para disfrutar de la mejor experiencia gastronómica posible.\\nAquellos que viajaban con frecuencia de un lado para otro siempre eligen de antemano los restaurantes donde comerán, teniendo en cuenta la amplitud del establecimiento y la cantidad de las raciones. Para esa clase de personas, un restaurante de carne a la parrilla es siempre la opción más segura. Incluso aquellos que viajan solos pueden aprovechar el animado ambiente de este café para mantener en secreto el objeto de su viaje o tantear, observar y analizar la situación desde la seguridad que supone este concurrido establecimiento.\\nLos siguientes acompañantes prefieren este conjunto: Alhacén."
   },
   "OfSettledThoughts": {
     "name": "Una habitación propia",
-    "description": "Un estudio completamente amueblado con estanterías tan altas como muros y abarrotadas con las mejores colecciones de libros habidas y por haber. Cuando la mirada de una persona de a pie recorre los estantes y contempla la variedad de ejemplares, es inevitable sentirse algo abrumado.\\nAunque, claro está, la barrera entre el saber y el desconocimiento es una fina línea que todo aquel con ánimo puede cruzar a voluntad. Si alguien pone su empeño en ello y se sienta cada día en una habitación como esta con una planificación clara a estudiar y analizar libro tras libro, será capaz de adquirir una sorprendente cantidad de conocimiento mucho antes de lo que uno podría esperar.\\nLos siguientes acompañantes prefieren este conjunto: Cyno y Faruzán."
+    "description": "Un estudio completamente amueblado con estanterías tan altas como muros y abarrotadas con las mejores colecciones de libros habidas y por haber. Cuando la mirada de una persona de a pie recorre los estantes y contempla la variedad de ejemplares, es inevitable sentirse algo abrumado.\\nAunque, claro está, la barrera entre el saber y el desconocimiento es una fina línea que todo aquel con ánimo puede cruzar a voluntad. Si alguien pone su empeño en ello y se sienta cada día en una habitación como esta con una planificación clara a estudiar y analizar libro tras libro, será capaz de adquirir una sorprendente cantidad de conocimiento mucho antes de lo que uno podría esperar.\\nLos siguientes acompañantes prefieren este conjunto: Cyno, Faruzán y Alhacén."
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Hasta luego, preocupaciones",
@@ -12245,7 +12733,7 @@
   },
   "NightOfThePartyPumpkins": {
     "name": "Fiesta de las calabazas",
-    "description": "Plano detallado para fabricar Fiesta de las calabazas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Fiesta de las calabazas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EmbroideredLanternLoftyGrandeur": {
     "name": "Linterna bordada: Pabellón exquisito",
@@ -12295,6 +12783,10 @@
     "name": "Árbol multicolor: Fortuna temprana",
     "description": "Plano detallado para fabricar un Árbol multicolor: Fortuna temprana.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "CountlessHomesLightUpTheMoon": {
+    "name": "Linterna lunar del pueblo",
+    "description": "Plano detallado para fabricar una Linterna lunar del pueblo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "StoneworksLampDeepingGloomCandle": {
     "name": "Lámpara de mampostería: Candelero de las profundidades",
     "description": "Plano detallado para fabricar una Lámpara de mampostería: Candelero de las profundidades.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -12322,6 +12814,14 @@
   "BloomingIllumination": {
     "name": "Destello de sinuosidad",
     "description": "Plano detallado para fabricar “Destello de sinuosidad”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FlutteringLight": {
+    "name": "Halo fluctuante",
+    "description": "Plano detallado para fabricar “Halo fluctuante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "LightOfSlumber": {
+    "name": "Halo aletargado",
+    "description": "Plano detallado para fabricar “Halo aletargado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral",
@@ -12353,7 +12853,7 @@
   },
   "PlainBrightwoodShelf": {
     "name": "Estantería aséptica de madera radiante",
-    "description": "Plano detallado para fabricar “Estantería aséptica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Estantería aséptica de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertDeskHospitality": {
     "name": "Escritorio del desierto: Hospitalidad",
@@ -12366,6 +12866,14 @@
   "BrightwoodInvigoratingNightstand": {
     "name": "Mesita de noche de madera radiante: Convalecencia",
     "description": "Plano detallado para fabricar una Mesita de noche de madera radiante: Convalecencia.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelTripleDrawerCabinet": {
+    "name": "Cómoda compartimentada de madera de tamarisco",
+    "description": "Plano detallado para fabricar una Cómoda compartimentada de madera de tamarisco.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelPotteryShelf": {
+    "name": "Estantería para cerámica de madera tamarisco",
+    "description": "Plano detallado para fabricar una Estantería para cerámica de tamarisco.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Estantería de biblioteca de dos pisos",
@@ -12381,7 +12889,7 @@
   },
   "LostBetweenThePagesOfABook": {
     "name": "Tiempo entre las páginas de un libro",
-    "description": "Plano detallado para fabricar Tiempo entre las páginas de un libro.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Tiempo entre las páginas de un libro”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ArchivistsTreasureTrove": {
     "name": "Tesoro del archivero",
@@ -12481,7 +12989,7 @@
   },
   "BrightwoodPotteryWorktable": {
     "name": "Mesa para cerámica de madera radiante",
-    "description": "Plano detallado para fabricar “Mesa para cerámica de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Mesa para cerámica de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LongAthelwoodTable": {
     "name": "Mesa larga de madera de tamarisco",
@@ -12499,7 +13007,7 @@
     "name": "Mesa para dos",
     "description": "Plano detallado para fabricar “Mesa para dos”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
-  "LongAdhighamaChamferTable": {
+  "LongAdhigamaChamferTable": {
     "name": "Mesa angulada de madera de bodhi",
     "description": "Plano detallado para fabricar una Mesa angulada de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
@@ -12541,7 +13049,7 @@
   },
   "DesertStudyConscientiousness": {
     "name": "Escritorio del desierto: Meticulosidad",
-    "description": "Plano detallado para fabricar Escritorio del desierto: Meticulosidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Escritorio del desierto: Meticulosidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WitnessOfTavernAffairs": {
     "name": "Aquello que todo lo ve",
@@ -12553,11 +13061,11 @@
   },
   "ClearBlueAfternoon": {
     "name": "Tarde de cielo azul",
-    "description": "Plano detallado para fabricar Tarde de cielo azul.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Tarde de cielo azul”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "UnwaveringDetermination": {
     "name": "Determinación inquebrantable",
-    "description": "Plano detallado para fabricar Determinación inquebrantable.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Determinación inquebrantable”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PineDiningChair": {
     "name": "Silla de comedor de pino",
@@ -12665,31 +13173,31 @@
   },
   "HuedVaseCerulean": {
     "name": "Vasija pigmentada: Cerúlea",
-    "description": "Plano detallado para fabricar “Vasija pigmentada: Cerúlea”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Cerúlea.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HuedVaseMalachite": {
     "name": "Vasija pigmentada: Malaquita",
-    "description": "Plano detallado para fabricar “Vasija pigmentada: Malaquita”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Malaquita.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HuedVaseAmber": {
     "name": "Vasija pigmentada: Pajiza",
-    "description": "Plano detallado para fabricar “Vasija pigmentada: Pajiza”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Pajiza.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PlainVaseBronze": {
     "name": "Jarrón simple: Bronce",
-    "description": "Plano detallado para fabricar “Jarrón simple: Bronce”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Jarrón simple: Bronce.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PlainVaseTawny": {
     "name": "Jarrón simple: Arcilla",
-    "description": "Plano detallado para fabricar “Jarrón simple: Arcilla”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Jarrón simple: Arcilla.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PlainVaseOcher": {
     "name": "Jarrón simple: Ocre",
-    "description": "Plano detallado para fabricar “Jarrón simple: Ocre”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Jarrón simple: Ocre.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PlainVaseSepia": {
     "name": "Jarrón simple: Tostado",
-    "description": "Plano detallado para fabricar “Jarrón simple: Tostado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Jarrón simple: Tostado.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HuedVaseSeashell": {
     "name": "Vasija pigmentada: Concha marina",
@@ -12727,6 +13235,10 @@
     "name": "Posesiones de los moradores del bosque",
     "description": "Plano detallado para fabricar “Posesiones de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "HuedVaseMoltenSand": {
+    "name": "Vasija pigmentada: Arenisca",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Arenisca.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
     "description": "Plano detallado para fabricar una Alfombra de Mondstadt: Ardor carmesí.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -12763,6 +13275,10 @@
     "name": "Timidez olivácea",
     "description": "Plano detallado para fabricar “Timidez olivácea”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "PureLikeWheatSprouts": {
+    "name": "Glauca remembranza de pulcritud",
+    "description": "Plano detallado para fabricar “Glauca remembranza de pulcritud”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "TrustyPortableLamp": {
     "name": "Lámpara portátil inapagable",
     "description": "Plano detallado para fabricar una Lámpara portátil inapagable.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -12773,7 +13289,7 @@
   },
   "TianyuanLanternFragrantBrilliance": {
     "name": "Linterna Tianyuan: Brillo fragante",
-    "description": "Plano detallado para fabricar Linterna Tianyuan: Brillo fragante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Linterna Tianyuan: Brillo fragante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SeashellTableLamp": {
     "name": "Lámpara caracola",
@@ -12794,6 +13310,18 @@
   "LightOfTheLandOfWisdom": {
     "name": "Luz tenue de la casa del saber",
     "description": "Plano detallado para fabricar “Luz tenue de la casa del saber”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "NightwatchersCandlelight": {
+    "name": "Fulgor del incursionista",
+    "description": "Plano detallado para fabricar un Fulgor del incursionista.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ListeningCandelight": {
+    "name": "Veladora del oyente",
+    "description": "Plano detallado para fabricar una Veladora del oyente.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TwowayIronLamp": {
+    "name": "Aleación refulgente",
+    "description": "Plano detallado para fabricar “Aleación refulgente”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arreglo floral: Tranquilidad celeste",
@@ -12837,11 +13365,11 @@
   },
   "ScholarsWeariness": {
     "name": "El cansancio del erudito",
-    "description": "Plano detallado para fabricar El cansancio del erudito.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “El cansancio del erudito”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EtiquetteOfCorrespondence": {
     "name": "Protocolo de la correspondencia",
-    "description": "Plano detallado para fabricar Protocolo de la correspondencia.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Protocolo de la correspondencia”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ExquisiteHourglassOrnament": {
     "name": "Adorno de reloj de arena exquisito",
@@ -12849,15 +13377,15 @@
   },
   "AlchemicDeviceBetweenFireAndWater": {
     "name": "Equipamiento para alquimia: Entre el agua y el fuego",
-    "description": "Plano detallado para fabricar Equipamiento para alquimia: Entre el agua y el fuego.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Equipamiento para alquimia: Entre el agua y el fuego.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "AlchemicComponentBurdenOfDust": {
     "name": "Componente para alquimia: El peso del polvo",
-    "description": "Plano detallado para fabricar Componente para alquimia: El peso del polvo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Componente para alquimia: El peso del polvo.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CalligraphySetAssiduousCalligraphy": {
     "name": "Conjunto para caligrafía: Escritura asidua",
-    "description": "Plano detallado para fabricar Conjunto para caligrafía: Escritura asidua.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Conjunto para caligrafía: Escritura asidua.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "GoldenTripleArmCandelabrum": {
     "name": "Candelabro dorado de tres brazos",
@@ -12877,11 +13405,11 @@
   },
   "CalligraphySetProperPenmanship": {
     "name": "Conjunto para caligrafía: Trazos precisos",
-    "description": "Plano detallado para fabricar Conjunto para caligrafía: Trazos precisos.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Conjunto para caligrafía: Trazos precisos.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EvilSlayingBows": {
     "name": "Arcos destructores del mal",
-    "description": "Plano detallado para fabricar Arcos destructores del mal.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar unos Arcos destructores del mal.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SpiritchaserScreen": {
     "name": "Pantalla ahuyentaespíritus",
@@ -12943,29 +13471,49 @@
     "name": "Realce de los moradores del bosque",
     "description": "Plano detallado para fabricar “Realce de los moradores del bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "HuedVaseSprout": {
+    "name": "Vasija pigmentada: Epicótilo glauco",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Epicótilo glauco.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "StarShapedMultipurposeBottle": {
+    "name": "Jarrón multiusos estrellado",
+    "description": "Plano detallado para fabricar un Jarrón multiusos estrellado.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "RealizationsFromTheLandOfWisdom": {
+    "name": "Desvelo del emplazamiento del saber",
+    "description": "Plano detallado para fabricar “Desvelo del emplazamiento del saber”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "RestorativeFragrance": {
+    "name": "Fragancia del resarcimiento",
+    "description": "Plano detallado para fabricar “Fragancia del resarcimiento”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheArtOfRetainingWater": {
+    "name": "El arte de preservar el agua",
+    "description": "Plano detallado para fabricar “El arte de preservar el agua”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Paisaje: Casa de campo",
-    "description": "Plano detallado para fabricar Paisaje: Casa de campo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Paisaje: Casa de campo”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LandscapePaintingDistantClouds": {
     "name": "Paisaje: Nubes distantes",
-    "description": "Plano detallado para fabricar Paisaje: Nubes distantes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Paisaje: Nubes distantes”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LandscapePaintingNamelessPrecipice": {
     "name": "Paisaje: Precipicio sin nombre",
-    "description": "Plano detallado para fabricar Paisaje: Precipicio sin nombre.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Paisaje: Precipicio sin nombre”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FineBrushworkPeaksOfMinlin": {
     "name": "Pintura al pastel: Picos de Minlin",
-    "description": "Plano detallado para fabricar Pintura al pastel: Picos de Minlin.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Pintura al pastel: Picos de Minlin.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FineBrushworkBowlOfBlossoms": {
     "name": "Pintura al pastel: Jarrón con flores",
-    "description": "Plano detallado para fabricar Pintura al pastel: Jarrón con flores.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Pintura al pastel: Jarrón con flores.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FineBrushworkMountainsRisingFromTheMist": {
     "name": "Pintura al pastel: Montañas entre la niebla",
-    "description": "Plano detallado para fabricar Pintura al pastel: Montañas entre la niebla.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Pintura al pastel: Montañas entre la niebla.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PaintedVisionOfMountainsAndSkiesDistant": {
     "name": "Paisaje pintado: Montañas y cielos distantes",
@@ -13033,7 +13581,7 @@
   },
   "DesertWallDrapesSunset": {
     "name": "Decoración de pared del desierto: Puesta de sol",
-    "description": "Plano detallado para fabricar Decoración de pared del desierto: Puesta de sol.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Decoración de pared del desierto: Puesta de sol.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertWallDrapesFlamingFeathers": {
     "name": "Decoración de pared del desierto: Plumas igníferas",
@@ -13042,6 +13590,10 @@
   "ForestWatchersConsiderations": {
     "name": "Muestras de un guarda forestal",
     "description": "Plano detallado para fabricar “Muestras de un guarda forestal”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelwoodMetalCombatShield": {
+    "name": "Escudo de combate de madera de tamarisco",
+    "description": "Plano detallado para fabricar un Escudo de combate de madera de tamarisco.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "LingeringMoment": {
     "name": "Momento inolvidable",
@@ -13081,7 +13633,7 @@
   },
   "WingHouseDawnDusk": {
     "name": "Ala de mansión: Alba y ocaso",
-    "description": "Plano detallado para fabricar Ala de mansión: Alba y ocaso.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Ala de mansión: Alba y ocaso.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PavilionStargazersShelter": {
     "name": "Pabellón: Contemplación de estrellas",
@@ -13177,7 +13729,7 @@
   },
   "FruitAndVeggieStallHarvestBounties": {
     "name": "Puesto de frutas y verduras: Cosecha abundante",
-    "description": "Plano detallado para fabricar Puesto de frutas y verduras: Cosecha abundante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto de frutas y verduras: Cosecha abundante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "OtogiWoodRamenStand": {
     "name": "Puesto de ramen de madera de murmurador",
@@ -13185,15 +13737,15 @@
   },
   "WovenDepth": {
     "name": "Telar abismal",
-    "description": "Plano detallado para fabricar “Telar abismal”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Telar abismal.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WovenLength": {
     "name": "Telar longitudinal",
-    "description": "Plano detallado para fabricar “Telar longitudinal”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Telar longitudinal.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WovenFruition": {
     "name": "Telar fructífero",
-    "description": "Plano detallado para fabricar “Telar fructífero”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Telar fructífero.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SweetnessInExchange": {
     "name": "Transacción azucarada",
@@ -13201,7 +13753,7 @@
   },
   "SweetnessInTheShade": {
     "name": "Dulzor a la sombra",
-    "description": "Plano detallado para fabricar “Dulce sombra”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Dulzor a la sombra”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SweetnessInStorage": {
     "name": "Acopio de dulces",
@@ -13221,11 +13773,19 @@
   },
   "BrightwoodGroceryStall": {
     "name": "Puesto callejero multiusos de madera radiante",
-    "description": "Plano detallado para fabricar “Puesto callejero multiusos de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto callejero multiusos de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BrightwoodKebabCart": {
     "name": "Puesto de brochetas de madera radiante",
-    "description": "Plano detallado para fabricar “Puesto ambulante de brochetas de madera radiante”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto de brochetas de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AbundanceOfCrispAir": {
+    "name": "Abundancia de aire fresco",
+    "description": "Plano detallado para fabricar “Abundancia de aire fresco”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeliberationOfChoice": {
+    "name": "Elección deliberada",
+    "description": "Plano detallado para fabricar “Elección deliberada”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HilichurlOutpostHut": {
     "name": "Cabaña de avanzadilla Hilichurl",
@@ -13237,7 +13797,7 @@
   },
   "CloudsEastOfBishui": {
     "name": "Deambulando al este del Bishui",
-    "description": "Plano detallado para fabricar Deambulando al este del Bishui.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Deambulando al este del Bishui”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "StrawShed": {
     "name": "Cobertizo de paja",
@@ -13317,31 +13877,31 @@
   },
   "InazumanStoreNumberlessGems": {
     "name": "Tienda de Inazuma: Primeriza",
-    "description": "Plano detallado para fabricar Tienda de Inazuma: Mar de gemas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Tienda de Inazuma: Mar de gemas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanHomeTheWorkOfGenerations": {
     "name": "Casa de Inazuma: Labor multigeneracional",
-    "description": "Plano detallado para fabricar Casa de Inazuma: Labor de generaciones.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa de Inazuma: Labor de generaciones.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanHomeEasyAdaptation": {
     "name": "Casa de Inazuma: Nuevos usos, nuevas reformas",
-    "description": "Plano detallado para fabricar Casa de Inazuma: Nuevos tiempos, nuevas maneras.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa de Inazuma: Nuevos tiempos, nuevas maneras.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanWorkshopExhaustiveRegularity": {
     "name": "Taller de Inazuma: Regularidad exhaustiva",
-    "description": "Plano detallado para fabricar Taller de Inazuma: Regularidad Exhaustiva.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Taller de Inazuma: Regularidad Exhaustiva.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanHomeRoutineDimensions": {
     "name": "Casa de Inazuma: Dimensiones comunes",
-    "description": "Plano detallado para fabricar Casa de Inazuma: Dimensiones comunes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa de Inazuma: Dimensiones comunes.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanBambooRoofedHomeTheLongPeace": {
     "name": "Casa con tejado de bambú de Inazuma: Paz duradera",
-    "description": "Plano detallado para fabricar Casa con tejado de bambú de Inazuma: Paz duradera.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa con tejado de bambú de Inazuma: Paz duradera.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanBambooRoofedHomeWildHeart": {
     "name": "Casa con tejado de bambú de Inazuma: Corazón salvaje",
-    "description": "Plano detallado para fabricar Casa con tejado de bambú de Inazuma: Corazón salvaje.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa con tejado de bambú de Inazuma: Corazón salvaje.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanWorkshopMultipurpose": {
     "name": "Taller de Inazuma: Polivalente",
@@ -13349,7 +13909,7 @@
   },
   "InazumanHomeClankingMetal": {
     "name": "Casa de Inazuma: Chasquido metálico",
-    "description": "Plano detallado para fabricar Casa de Inazuma: Chasquido metálico.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa de Inazuma: Chasquido metálico.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "InazumanWorkshopSweetnessSought": {
     "name": "Taller de Inazuma: Búsqueda del descanso",
@@ -13401,7 +13961,7 @@
   },
   "EstateReceptionPrimAndProper": {
     "name": "Recepción oficial: Solemnidad",
-    "description": "Plano detallado para fabricar Recepción oficial: Solemnidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Recepción oficial: Solemnidad.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EstateStorehouseWeHaveReserves": {
     "name": "Depósito exquisito: Guardando para cuando no haya",
@@ -13437,11 +13997,11 @@
   },
   "DesertHouseOrdinaryLives": {
     "name": "Casa del desierto: Vida ordinaria",
-    "description": "Plano detallado para fabricar Casa del desierto: Vida ordinaria.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa del desierto: Vida ordinaria.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertHouseSpicesAbound": {
     "name": "Casa del desierto: Especias abundantes",
-    "description": "Plano detallado para fabricar Casa del desierto: Especias abundantes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa del desierto: Especias abundantes.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertHouseHueAndCry": {
     "name": "Casa del desierto: Torre del clamor",
@@ -13449,15 +14009,15 @@
   },
   "DesertHouseBriefSleep": {
     "name": "Casa del desierto: Sueño breve",
-    "description": "Plano detallado para fabricar Casa del desierto: Sueño breve.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa del desierto: Sueño breve.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertHouseHiddenLight": {
     "name": "Casa del desierto: Luz oculta",
-    "description": "Plano detallado para fabricar Casa del desierto: Luz oculta.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa del desierto: Luz oculta.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertHouseSaveAndStore": {
     "name": "Casa del desierto: Almacén",
-    "description": "Plano detallado para fabricar Casa del desierto: Almacén.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Casa del desierto: Almacén.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "MansionPagodaFlowerOfRevelation": {
     "name": "Decoración de residencia: Árbol de la contemplación",
@@ -13539,6 +14099,14 @@
     "name": "Comisiones de la ciudad de la sabiduría",
     "description": "Plano detallado para fabricar “Comisiones de la ciudad de la sabiduría”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "SilkyQuellerOfSeaMonsters": {
+    "name": "Cañamazo protector contra monstruos marinos",
+    "description": "Plano detallado para fabricar “Cañamazo protector contra monstruos marinos”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "NightOfSerenityInTheSandyBreeze": {
+    "name": "Noches apacibles bajo brisas desérticas",
+    "description": "Plano detallado para fabricar “Noches apacibles bajo brisas desérticas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
     "description": "Plano detallado para fabricar una Fuente con flores y pájaros.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -13553,7 +14121,7 @@
   },
   "BalladSpinningWindwheel": {
     "name": "Molino de viento de las baladas",
-    "description": "Plano detallado para fabricar Molino de viento de las baladas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Molino de viento de las baladas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TemporaryWorkQuarters": {
     "name": "Caseta de obra temporal",
@@ -13561,7 +14129,7 @@
   },
   "PureGorgeousSummer": {
     "name": "Verano esplendoroso",
-    "description": "Plano detallado para fabricar Verano esplendoroso.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Verano esplendoroso”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ScarletToriiGateDoorOfSilence": {
     "name": "Arco torii escarlata: Puerta del silencio",
@@ -13589,7 +14157,7 @@
   },
   "OfFieldsGreenClearSpringFountain": {
     "name": "Verdes campos: Fuente cristalina",
-    "description": "Plano detallado para fabricar Verdes campos: Fuente cristalina.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Verdes campos: Fuente cristalina”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SubSpaceCabochonInSoaringFlight": {
     "name": "Cabujón dimensional: En pleno vuelo",
@@ -13609,7 +14177,7 @@
   },
   "DesertHutQuestions": {
     "name": "Tienda de campaña del desierto: Indicaciones",
-    "description": "Plano detallado para fabricar Tienda de campaña del desierto: Indicaciones.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Tienda de campaña del desierto: Indicaciones.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertHutWilting": {
     "name": "Tienda de campaña del desierto: Agostamiento",
@@ -13617,7 +14185,7 @@
   },
   "DesertHutRest": {
     "name": "Tienda de campaña del desierto: Reposo",
-    "description": "Plano detallado para fabricar Tienda de campaña del desierto: Reposo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Tienda de campaña del desierto: Reposo.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TheatersCoolMist": {
     "name": "Fresca bruma teatral",
@@ -13626,6 +14194,22 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "Lucidez del emplazamiento del saber",
     "description": "Plano detallado para fabricar “Lucidez del emplazamiento del saber”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PortOrmosGPCraneIII": {
+    "name": "Grúa de uso común de Puerto Ormos (III)",
+    "description": "Plano detallado para fabricar una Grúa de uso común de Puerto Ormos (III).\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "CompositeTimberLongDistanceHandCart": {
+    "name": "Carreta de transporte a larga distancia de madera conglomerada",
+    "description": "Plano detallado para fabricar una Carreta de transporte a larga distancia de madera conglomerada.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "CompositeTimberInPortTransferCart": {
+    "name": "Carreta de transporte portuaria de madera conglomerada",
+    "description": "Plano detallado para fabricar una Carreta de transporte portuaria de madera conglomerada.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ThreeWheeledMountainHandCart": {
+    "name": "Carretilla de cuatro ruedas de montaña",
+    "description": "Plano detallado para fabricar una Carretilla de cuatro ruedas de montaña.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "AdeptusGate": {
     "name": "Puerta de Adeptus",
@@ -13649,31 +14233,31 @@
   },
   "CourtyardWallSpringAndAutumnSplendor": {
     "name": "Muro de patio: Primavera y otoño",
-    "description": "Plano detallado para fabricar Muro de patio: Primavera y otoño.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Muro de patio: Primavera y otoño.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WallCornerFragrantNook": {
     "name": "Esquina de muro: Recoveco fragante",
-    "description": "Plano detallado para fabricar Esquina de muro: Recoveco fragante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Esquina de muro: Recoveco fragante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CourtyardWallAllInARow": {
     "name": "Muro de patio: Joyas alineadas",
-    "description": "Plano detallado para fabricar Muro de patio: Joyas alineadas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Muro de patio: Joyas alineadas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CourtyardWallPeaceAcross": {
     "name": "Muro de patio: Paz en el camino",
-    "description": "Plano detallado para fabricar Muro de patio: Paz en el camino.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Muro de patio: Paz en el camino.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "MainEntranceGatewayToTheClouds": {
     "name": "Entrada principal: Acceso a las nubes",
-    "description": "Plano detallado para fabricar Entrada principal: Acceso a las nubes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Entrada principal: Acceso a las nubes.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PerimeterWallScenicArchway": {
     "name": "Muro decorado: Sauces y flores",
-    "description": "Plano detallado para fabricar Muro decorado: Sauces y flores.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Muro decorado: Sauces y flores.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "VerandaCornerPavilionsWatch": {
     "name": "Esquina de corredor: Vista del pabellón",
-    "description": "Plano detallado para fabricar Esquina de corredor: Vista del pabellón.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Esquina de corredor: Vista del pabellón.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "KeyGatewayBeneathTheClouds": {
     "name": "Puerta estratégica: Bajo las nubes",
@@ -13705,7 +14289,7 @@
   },
   "EncampmentFenceHoningGoad": {
     "name": "Estacas de cuartel: Pincho doloroso",
-    "description": "Plano detallado para fabricar Estacas de cuartel: Pincho doloroso.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar unas Estacas de cuartel: Pincho doloroso.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ShrineCorridorSakuraDustedPath": {
     "name": "Corredor de santuario: Camino de flores sagradas",
@@ -13737,35 +14321,35 @@
   },
   "HotSpringOuterWallNoVaulting": {
     "name": "Pared externa para aguas termales: No pasar",
-    "description": "Plano detallado para fabricar Muro externo para aguas termales: No pasar.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Muro externo para aguas termales: No pasar.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HotSpringWallWellGrounded": {
     "name": "Pared para aguas termales: Base estable",
-    "description": "Plano detallado para fabricar Panel para aguas termales: Base estable.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Panel para aguas termales: Base estable.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HotSpringFoyerShelterFromTheCold": {
     "name": "Entrada para aguas termales: Refugio contra el frío",
-    "description": "Plano detallado para fabricar Entrada para aguas termales: Refugio contra el frío.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Entrada para aguas termales: Refugio contra el frío.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FishermansFence": {
     "name": "Valla limítrofe de pescador",
-    "description": "Plano detallado para fabricar “Valla limítrofe de pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Valla limítrofe de pescador.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "NoFishingAhead": {
     "name": "Valla limitadora de pescador",
-    "description": "Plano detallado para fabricar “Valla limitadora de pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Valla limitadora de pescador.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertStoneStepsClimbing": {
     "name": "Escalones de piedra del desierto: Tobogán",
-    "description": "Plano detallado para fabricar Escalones de piedra del desierto: Tobogán.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar unos Escalones de piedra del desierto: Tobogán.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertWallSurpriseAttack": {
     "name": "Pared del desierto: Ataque sorpresa",
-    "description": "Plano detallado para fabricar Pared del desierto: Ataque sorpresa.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Pared del desierto: Ataque sorpresa.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertWallStalwartDefense": {
     "name": "Pared del desierto: Defensa incondicional",
-    "description": "Plano detallado para fabricar Pared del desierto: Defensa incondicional.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Pared del desierto: Defensa incondicional.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DesertGateWindjammer": {
     "name": "Pórtico del desierto: Disuadevientos",
@@ -13793,11 +14377,11 @@
   },
   "MessyPileOfFirCrates": {
     "name": "Cajas de abeto desordenadas",
-    "description": "Plano detallado para fabricar Cajas de abeto desordenadas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar unas Cajas de abeto desordenadas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "NeatStackOfFirKegs": {
     "name": "Barriles de abeto ordenados",
-    "description": "Plano detallado para fabricar Barriles de abeto ordenados.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar unos Barriles de abeto ordenados.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "HeavyHayBale": {
     "name": "Fardo de heno pesado",
@@ -13809,15 +14393,15 @@
   },
   "ToyStandDazzlingDelights": {
     "name": "Puesto de juguetes: Maravillas por doquier",
-    "description": "Plano detallado para fabricar Puesto de juguetes: Maravillas por doquier.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto de juguetes: Maravillas por doquier.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "UmbrellaShopKaleidoscopeOfParasolColors": {
     "name": "Puesto de sombrillas: Caleidoscopio de colores",
-    "description": "Plano detallado para fabricar Puesto de sombrillas: Caleidoscopio de colores.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto de sombrillas: Caleidoscopio de colores.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "StorageSackBuzzOffBag": {
     "name": "Saco de almacenamiento: A prueba de plagas",
-    "description": "Plano detallado para fabricar Saco de almacenamiento: A prueba de plagas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Saco de almacenamiento: A prueba de plagas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FruitSellersCaution": {
     "name": "Precaución del vendedor de fruta y verdura",
@@ -13869,15 +14453,15 @@
   },
   "FeatherLightPraise": {
     "name": "Saludo emplumado",
-    "description": "Plano detallado para fabricar Saludo emplumado.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Saludo emplumado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ABloattyFloattysDreamOfTheSky": {
     "name": "Sueño aéreo de los floti flotis",
-    "description": "Plano detallado para fabricar Sueño aéreo de los floti flotis.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Sueño aéreo de los floti flotis”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "AGuideInTheSummerWoods": {
     "name": "Guía estival en el bosque",
-    "description": "Plano detallado para fabricar Guía estival en el bosque.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Guía estival en el bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TrainingGroundSupportStakes": {
     "name": "Soporte para maniquíes de entrenamiento",
@@ -13885,7 +14469,7 @@
   },
   "AMessengerInTheSummerWoods": {
     "name": "Correo estival en el bosque",
-    "description": "Plano detallado para fabricar Correo estival en el bosque.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Correo estival en el bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CourtyardCleansingPool": {
     "name": "Fuente de la pureza",
@@ -13959,9 +14543,45 @@
     "name": "Perspicacia del pescador",
     "description": "Plano detallado para fabricar “Perspicacia del pescador”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "HeavyBrightwoodPotteryWheel": {
+    "name": "Torno pesado para cerámica de madera radiante",
+    "description": "Plano detallado para fabricar un Torno pesado para cerámica de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "IronSandTreasure": {
+    "name": "Hierro, arena y oro",
+    "description": "Plano detallado para fabricar “Hierro, arena y oro”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "IronBloodBrokenArmor": {
+    "name": "Sangre, sudor y armaduras rotas",
+    "description": "Plano detallado para fabricar “Sangre, sudor y armaduras rotas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "IronWaterSteam": {
+    "name": "Hierro, agua y vapor",
+    "description": "Plano detallado para fabricar “Hierro, agua y vapor”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "KarmaphalaWoodLiquidCargoRack": {
+    "name": "Palé de carga para líquidos de madera kármica",
+    "description": "Plano detallado para fabricar un Palé de carga para líquidos de madera kármica.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "StringFeatherTrajectory": {
+    "name": "Cuerda, flecha y trayectoria",
+    "description": "Plano detallado para fabricar “Cuerda, flecha y trayectoria”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "IngenuityOfTheForestForager": {
+    "name": "Inventiva en la espesura",
+    "description": "Plano detallado para fabricar “Inventiva en la espesura”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ItJustMightWork": {
+    "name": "¡Podría funcionar!",
+    "description": "Plano detallado para fabricar “¡Podría funcionar!”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ColorationAndPrecipitation": {
+    "name": "Pigmentación y secado",
+    "description": "Plano detallado para fabricar “Pigmentación y secado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante",
-    "description": "Plano detallado para fabricar Maceta: Verdor abundante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Maceta: Verdor abundante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WaterRetainingFlowerBeds": {
     "name": "Macizo floral con depósito de agua",
@@ -13977,7 +14597,7 @@
   },
   "FirShelves": {
     "name": "Estantería de abeto",
-    "description": "Plano detallado para fabricar una Estantería de abeto\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Estantería de abeto.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FirWeaponRack": {
     "name": "Estantería para armas de abeto",
@@ -14005,15 +14625,15 @@
   },
   "RoofedWellForPurity": {
     "name": "Pozo con cubierta: Búsqueda de claridad",
-    "description": "Plano detallado para fabricar Pozo con cubierta: Búsqueda de claridad.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Pozo con cubierta: Búsqueda de claridad.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "StoneLionStatueTheWarding": {
     "name": "León de piedra: Vigilante",
-    "description": "Plano detallado para fabricar León de piedra: Vigilante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un León de piedra: Vigilante.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "StoneLionStatueTheKnowing": {
     "name": "León de piedra: Conocedor",
-    "description": "Plano detallado para fabricar León de piedra: Conocedor.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un León de piedra: Conocedor.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CountrysideTeaStand": {
     "name": "Puesto de té rural",
@@ -14025,7 +14645,7 @@
   },
   "WitchsChorus": {
     "name": "El repertorio de la bruja",
-    "description": "Plano detallado para fabricar El repertorio de la bruja.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “El repertorio de la bruja”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "YumemiruSaikyoFortuneSlipHanger": {
     "name": "Estante anti-mala suerte de madera onírica",
@@ -14195,6 +14815,34 @@
     "name": "Umbelífera consumición",
     "description": "Plano detallado para fabricar “Umbelífera consumición”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "PropitiousScreenFogGatheringOnSmokyMountains": {
+    "name": "Pantalla auspiciosa: Cúmulo en las montañas",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Cúmulo en las montañas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PropitiousScreenFleetFeathersAgainstEmeraldWaves": {
+    "name": "Pantalla auspiciosa: Aleteo índigo",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Aleteo índigo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PropitiousScreenInstrumentsInTheDistance": {
+    "name": "Pantalla auspiciosa: Tañidos distantes",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Tañidos distantes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PropitiousScreenOldSongsLingering": {
+    "name": "Pantalla auspiciosa: Tonadas de antaño",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Melodías de antaño.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PropitiousScreenOverlappingCloudsAbovePeaks": {
+    "name": "Pantalla auspiciosa: Cordilleras intermitentes",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Cordilleras intermitentes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PropitiousScreenGenuineWordsTravelFar": {
+    "name": "Pantalla auspiciosa: Melodías lontanas",
+    "description": "Plano detallado para fabricar una Pantalla auspiciosa: Melodías lontanas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TrumpetAndFirewood": {
+    "name": "Cuerno y leña",
+    "description": "Plano detallado para fabricar “Cuerno y leña”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "WroughtIronCarvedStreetLight": {
     "name": "Farola de hierro con adornos",
     "description": "Plano detallado para fabricar una Farola de hierro con adornos.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -14205,15 +14853,15 @@
   },
   "EvilRepellingLanternAllAroundLighting": {
     "name": "Linterna repeledemonios: Luz por todas partes",
-    "description": "Plano detallado para fabricar Linterna repeledemonios: Luz por todas partes.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Linterna repeledemonios: Luz por todas partes.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FourCornersLanternAmityFromAfar": {
     "name": "Linterna de cuatro lados: Amistades lejanas",
-    "description": "Plano detallado para fabricar Linterna de cuatro lados: Amistades lejanas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Linterna de cuatro lados: Amistades lejanas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "ShadowLampPaintedShadow": {
     "name": "Lámpara de sombras: Trazos y pinceladas",
-    "description": "Plano detallado para fabricar Lámpara de sombras: Trazos y pinceladas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Lámpara de sombras: Trazos y pinceladas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "StoneLanternFudoumyousLight": {
     "name": "Farola de piedra: Luz inamovible",
@@ -14221,7 +14869,7 @@
   },
   "ThreeReachesBright": {
     "name": "Brillo de los tres alcances",
-    "description": "Plano detallado para fabricar Brillo de los tres alcances.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Brillo de los tres alcances”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WhitestoneMeichuuStandingLamp": {
     "name": "Linterna de pie Meichuu de piedra blanca",
@@ -14361,19 +15009,19 @@
   },
   "TwoTierVendorsBoothRisingFortunes": {
     "name": "Puesto comercial doble: Fortuna en ascenso",
-    "description": "Plano detallado para fabricar Puesto comercial doble: Fortuna en ascenso.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Puesto comercial doble: Fortuna en ascenso.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BambooOutdoorTeaTable": {
     "name": "Mesa de té de bambú exterior",
-    "description": "Plano detallado para fabricar Mesa de té de bambú exterior.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Mesa de té de bambú exterior.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WoodenOutdoorTeaTable": {
     "name": "Mesa de té de madera exterior",
-    "description": "Plano detallado para fabricar Mesa de té de madera exterior.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar una Mesa de té de madera exterior.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "SummerForestBanquet": {
     "name": "Festín estival en el bosque",
-    "description": "Plano detallado para fabricar Festín estival en el bosque.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Festín estival en el bosque”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "GoogolTable": {
     "name": "Mesa Gúgol",
@@ -14401,7 +15049,7 @@
   },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Mostrador de tienda de vinos: Mil copas",
-    "description": "Plano detallado para fabricar Mostrador de tienda de vinos: Mil copas.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar un Mostrador de tienda de vinos: Mil copas.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "CrudeDoubleDeckerPallet": {
     "name": "Palé de dos niveles resistente a las olas",
@@ -14429,7 +15077,7 @@
   },
   "OfFieldsGreenCookieRoad": {
     "name": "Verdes campos: Camino de galleta",
-    "description": "Plano detallado para fabricar Verdes campos: Camino de galleta.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Verdes campos: Camino de galleta”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FoundationsOfStoneGrandDesign": {
     "name": "Suelo rocoso: Patrón magnificente",

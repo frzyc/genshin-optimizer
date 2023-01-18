@@ -1,7 +1,7 @@
 {
   "setName": "Attraversafuochi",
   "setEffects": {
-    "2": "La RES a Pyro aumenta di un 40%.",
+    "2": "RES a Pyro +40%.",
     "4": "I DAN contro gli avversari affetti da Pyro aumentano di un 35%."
   },
   "pieces": {

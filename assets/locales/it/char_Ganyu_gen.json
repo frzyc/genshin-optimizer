@@ -46,7 +46,7 @@
   "skill": {
     "name": "Scia del Qilin",
     "description": {
-      "0": "Lasciandosi alle spalle un singolo Loto di ghiaccio, Ganyu scatta all'indietro, scansando tutte le impurità e infliggendo <cryo>DAN da Cryo ad area</cryo>.",
+      "0": "Lasciando sul posto un singolo Loto di ghiaccio, Ganyu scatta all'indietro, scansando tutte le impurità e infliggendo <cryo>DAN da Cryo ad area</cryo>.",
       "1": "<br/>",
       "2": "<strong>Loto di ghiaccio</strong>",
       "3": [
@@ -125,7 +125,7 @@
     "name": "Il sapore della rugiada",
     "description": {
       "0": "Per colpo a segno, le frecce Fiocco di ghiaccio o i fiori delle frecce Fiocco di ghiaccio al livello di carica 2 riducono di un 15% la <cryo>RES a Cryo</cryo> degli avversari per 6{NON_BREAK_SPACE}s. ",
-      "1": "Inoltre, l'energia di Ganyu si rigenera di 2. Si può verificare una sola volta per ogni freccia Fiocco di ghiaccio al livello di carica 2, a prescindere dal fatto che la freccia o il fiore Fiocco di ghiaccio colpiscano il bersaglio."
+      "1": "Inoltre, l'energia di Ganyu si rigenera di 2 a ogni colpo. Si può verificare una sola volta per ogni freccia Fiocco di ghiaccio al livello di carica 2, a prescindere dal fatto che la freccia o il fiore Fiocco di ghiaccio colpisca il bersaglio."
     }
   },
   "constellation2": {
@@ -145,8 +145,8 @@
     "name": "Viaggio verso ovest",
     "description": {
       "0": "Gli avversari all'interno dell'area d'effetto di <strong>Pioggia celestiale</strong> subiscono DAN extra. Quest'effetto si potenzia nel tempo.",
-      "1": "L'aumento di DAN subiti inizia con un 5% e aumenta di un 5% ogni 3 s, fino a un massimo di 25%.",
-      "2": "L'effetto si protrae per 3 s dopo che l'avversario esce dall'area d'effetto."
+      "1": "L'aumento di DAN subiti inizia con un 5% e aumenta di un 5% ogni 3{NON_BREAK_SPACE}s, fino a un massimo di 25%.",
+      "2": "L'effetto si protrae per 3{NON_BREAK_SPACE}s dopo che l'avversario esce dall'area d'effetto."
     }
   },
   "constellation5": {
@@ -159,7 +159,7 @@
   "constellation6": {
     "name": "Clemenza",
     "description": {
-      "0": "<strong>Scia del Qilin</strong> consente di non ricaricare la prossima freccia Fiocco di ghiaccio scagliata nei successivi 30{NON_BREAK_SPACE}s."
+      "0": "L'uso di <strong>Scia del Qilin</strong> consente di non ricaricare la prossima freccia Fiocco di ghiaccio scagliata nei successivi 30{NON_BREAK_SPACE}s."
     }
   }
 }

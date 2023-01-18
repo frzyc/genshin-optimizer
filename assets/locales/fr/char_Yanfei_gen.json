@@ -79,7 +79,7 @@
         " Confère à Yanfei un sceau écarlate à intervalles réguliers.",
         " Augmente les DGT infligés par ses attaques chargées."
       ],
-      "5": "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue.",
+      "5": "Les effets de la brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue.",
       "6": "<br/>",
       "7": "<i>« Veuillez trouver ici les termes de cette question de vie ou de mort, et par là j'entends ma vie et votre mort ! »</i>"
     },
@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Œil de la justice",
     "description": {
-      "0": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des <pyro>DGT Pyro de zone</pyro> supplémentaires équivalant à 80 % de son ATQ. Ces DGT comptent comme des DGT d'attaque chargée."
+      "0": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des <pyro>DGT Pyro de zone</pyro> supplémentaires équivalant à 80 % de son ATQ. Ces DGT sont considérés comme des DGT d'attaque chargée."
     }
   },
   "passive3": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Clause complémentaire",
     "description": {
-      "0": "Augmente le nombre max de sceaux écarlates de 1."
+      "0": "Augmente le nombre maximum de sceaux écarlates de 1."
     }
   }
 }

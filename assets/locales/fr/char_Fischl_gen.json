@@ -46,10 +46,11 @@
       "1": "Oz tire de façon continue des <electro>balles électrifiées</electro> sur les ennemis proches tant qu'il est actif.",
       "2": "<br/>",
       "3": "<strong>Appui long</strong>",
-      "4": "Ajuste la zone où la compétence sera lancée ; appuyez à nouveau lorsque Oz est actif pour le faire revenir.",
-      "5": "<br/>",
-      "6": "<i>« Vous ne méritez pas que je gaspille mon pouvoir sur vous... Oz, fais pleuvoir les éclairs de la justice. »</i>",
-      "7": "<i>—— « Fleurs pour la princesse Fischl - Tome IV : Adieu, maîtresse. »</i>"
+      "4": "Ajuste la zone où la compétence sera lancée.",
+      "5": "Appuyez à nouveau lorsque Oz est actif pour le faire revenir.",
+      "6": "<br/>",
+      "7": "<i>« Vous ne méritez pas que je gaspille mon pouvoir sur vous... Oz, fais pleuvoir les éclairs de la justice. »</i>",
+      "8": "<i>— « Fleurs pour la princesse Fischl - Tome IV : Adieu, maîtresse. »</i>"
     },
     "skillParams": {
       "0": "DGT d'Oz",
@@ -77,13 +78,12 @@
       "1": "Pendant la durée de la compétence :",
       "2": [
         " Fischl prend la forme d'Oz, ce qui lui permet d'augmenter sa VIT de déplacement.",
-        " Les ennemis sur sa route sont frappés par la foudre et subissent des <electro>DGT Électro</electro>. Chaque ennemi ne peut être frappé qu'une fois."
+        " Les ennemis à proximité sont frappés par la foudre et subissent des <electro>DGT Électro</electro>. Chaque ennemi ne peut être frappé qu'une fois."
       ],
       "3": "Lorsque l'effet prend fin, Oz reste pour combattre les ennemis de sa maîtresse. Si Oz est déjà présent sur le terrain avant l'utilisation de cette compétence, son temps de présence sera remis à zéro.",
-      "4": "Restaure une partie de l'énergie élémentaire de Fischl une fois terminé.",
-      "5": "<br/>",
-      "6": "<i>« ... De toutes les bêtes suivant le sang maudit, seul le seigneur corbeau, dont les yeux ont été témoins de la destruction de mille mondes, était capable de comprendre sa grandeur. Et, la recouvrant d'un voile d'ébène, il fit le serment de la protéger à jamais. »</i>",
-      "7": "<i>—— « Fleurs pour la princesse Fischl - Tome I : Apocalypse »</i>"
+      "4": "<br/>",
+      "5": "<i>« ... De toutes les bêtes suivant le sang maudit, seul le seigneur corbeau, dont les yeux ont été témoins de la destruction de mille mondes, était capable de comprendre sa grandeur. Et, la recouvrant d'un voile d'ébène, il fit le serment de la protéger à jamais. »</i>",
+      "6": "<i>— « Fleurs pour la princesse Fischl - Tome I : Apocalypse »</i>"
     },
     "skillParams": {
       "0": "DGT foudre",
@@ -131,7 +131,7 @@
   "constellation2": {
     "name": "Plume de jugement",
     "description": {
-      "0": "<strong>Ailes de surveillance nocturne</strong> inflige un bonus de DGT équivalant à 200 % de l'ATQ ; la zone d'effet augmente de 50 %."
+      "0": "<strong>Ailes de surveillance nocturne</strong> inflige un bonus de DGT équivalant à 200 % de l'ATQ et sa zone d'effet augmente de 50 %."
     }
   },
   "constellation3": {

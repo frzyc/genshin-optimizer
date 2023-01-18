@@ -108,7 +108,7 @@
     "name": "Dompteur de démons : Conquérant du mal",
     "description": {
       "0": "Xiao inflige 5 % de DGT supplémentaires tant que <strong>Fléau du mal</strong> est actif. Un cumul de 5 % de DGT supplémentaires est ensuite appliqué toutes les 3 s tant que dure la compétence.",
-      "1": "Cumul max : 25 % de DGT supplémentaires."
+      "1": "Cumul maximum : 25 % de DGT supplémentaires."
     }
   },
   "passive2": {
@@ -160,7 +160,7 @@
   "constellation6": {
     "name": "Dompteur de démons : Gardien Yaksha",
     "description": {
-      "0": "Lorsque <strong>Fléau du mal</strong> est actif, les attaques plongeantes touchant au moins 2 ennemis confèrent immédiatement un cumul de <strong>Cycle du vent lemniscatique</strong> supplémentaire, qui peut être activé dans la seconde qui suit même s'il n'est pas entièrement rechargé."
+      "0": "Lorsque <strong>Fléau du mal</strong> est actif, les attaques plongeantes touchant au moins 2 ennemis confèrent immédiatement un cumul de <strong>cycle du vent lemniscatique</strong> supplémentaire, qui peut être activé dans la seconde qui suit même s'il n'est pas entièrement rechargé."
     }
   }
 }

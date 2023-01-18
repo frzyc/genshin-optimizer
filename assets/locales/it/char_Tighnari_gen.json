@@ -13,10 +13,10 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Effettua un <strong>ATT mirato</strong> ancora più preciso con DAN aumentati.",
-        "2": "Mentre mira, il potere di Dendro si accumula nella punta della freccia prima che venga scoccata. Ha diversi effetti in base alla durata della carica dell'energia.",
+        "2": "Mentre mira, il potere di Dendro si accumula nella punta della freccia prima che venga scoccata. Ha diversi effetti in base al tempo di carica dell'energia.",
         "3": [
           " Livello di carica 1: scocca una freccia infusa di potere della natura che infligge <dendro>DAN da Dendro</dendro>.",
-          " Livello di carica 2: scocca una Freccia ghirlanda che infligge <dendro>DAN da Dendro</dendro>. Dopo aver colpito l'obiettivo, la Freccia ghirlanda crea 4 Frecce a grappolo che inseguono automaticamente il bersaglio infliggendo <dendro>DAN da Dendro ad area</dendro>."
+          " Livello di carica 2: scocca una Freccia ghirlanda che infligge <dendro>DAN da Dendro</dendro>. Dopo aver colpito l'obiettivo, la Freccia ghirlanda crea 4 Frecce a grappolo che inseguono automaticamente il bersaglio infliggendo <dendro>DAN da Dendro</dendro>."
         ]
       },
       "plunging": {
@@ -46,7 +46,7 @@
   "skill": {
     "name": "Bomba Vijnana-Phala",
     "description": {
-      "0": "Tighnari lancia in avanti una Vijnana Cuortempesta che infligge <dendro>DAN da Dendro ad area</dendro>, e crea un Campo Vijnana-Khanda che cattura l'attenzione degli avversari e attira il fuoco nemico.",
+      "0": "Tighnari lancia in avanti una Vijnana cuortempesta che infligge <dendro>DAN da Dendro ad area</dendro>, e crea un Campo Vijnana-Khanda che cattura l'attenzione degli avversari e attira il fuoco nemico.",
       "1": "Inoltre, Tighnari ottiene l'effetto Effusione Vijnana, che diminuisce il tempo di ricarica della Freccia ghirlanda di 2,4{NON_BREAK_SPACE}s. Quest'effetto svanisce una volta terminata l'abilità o dopo che Tighnari avrà scoccato 3 Frecce ghirlanda.",
       "2": "<br/>",
       "3": "<i>\"Se un seme appassisce fuori dal terreno, non rimarrà che un unico seme. Ma se restituito al terreno, si moltiplicherà dieci milioni di volte.\"</i>"
@@ -74,9 +74,9 @@
     "name": "Frecce a groviglio",
     "description": {
       "0": "Combina la potenza di tutti i semi per sparare 6 Frecce a groviglio che possono inseguire gli avversari e infliggere <dendro>DAN da Dendro</dendro>.",
-      "1": "Quando colpiscono l'obiettivo, le Frecce a groviglio creano un'ondata secondaria di Frecce a groviglio che può inseguire gli avversari e infliggere <dendro>DAN da Dendro</dendro> quando colpiscono.",
+      "1": "Quando colpiscono l'obiettivo, le Frecce a groviglio creano un'ondata secondaria di Frecce a groviglio che possono inseguire gli avversari vicini e infliggere <dendro>DAN da Dendro</dendro> quando colpiscono.",
       "2": "<br/>",
-      "3": "<i>\"Non cercare di scappare così facilmente. I rampicanti crescono e ricrescono sempre. Le cose possono diventare pericolose se non li elimini tutti fino all'ultimo.</i>"
+      "3": "<i>\"Non cercare di scappare così facilmente. I rampicanti crescono e ricrescono sempre. Le cose possono diventare pericolose se non li elimini tutti fino all'ultimo.\"</i>"
     },
     "skillParams": {
       "0": "DAN da Frecce a groviglio",
@@ -126,7 +126,7 @@
     "name": "Stelo primordiale",
     "description": {
       "0": "Se all'interno del Campo Vijnana-Khanda creato dalla <strong>Bomba Vijnana-Phala</strong> ci sono dei nemici, Tighnari ottiene un 20% di <dendro>bonus DAN da Dendro</dendro>.",
-      "1": "Quest'effetto termina 6 s dopo che il campo si è esaurito o quando non ci sono nemici al suo interno."
+      "1": "Quest'effetto termina 6{NON_BREAK_SPACE}s dopo che il campo si è esaurito o quando non ci sono nemici al suo interno."
     }
   },
   "constellation3": {

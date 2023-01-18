@@ -1,7 +1,7 @@
 {
   "setName": "Domatore di tuoni",
   "setEffects": {
-    "2": "La RES a Electro aumenta di un 40%.",
+    "2": "RES a Electro +40%.",
     "4": "Aumenta di un 35% i DAN contro gli avversari sotto l'effetto di Electro."
   },
   "pieces": {

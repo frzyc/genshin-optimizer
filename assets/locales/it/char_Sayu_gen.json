@@ -43,17 +43,17 @@
     "name": "Arte Yoohoo: Scatto Fuuin",
     "description": {
       "0": "La tecnica speciale delle arti ninja Yoohoo!",
-      "1": "Sayu si raggomitola trasformandosi in un Turbine Fuufuu e si schianta sugli avversari ad alta velocità, infliggendo <anemo>DAN da Anemo</anemo>. Al termine della durata di questa tecnica, Sayu rilascia un Calcio turbine Fuufuu, infliggendo <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "Sayu si raggomitola trasformandosi in un Turbine Fuufuu e si schianta sugli avversari ad alta velocità, infliggendo <anemo>DAN da Anemo</anemo>. Al termine della durata di questa tecnica, Sayu assesta un Calcio turbine Fuufuu, infliggendo <anemo>DAN da Anemo ad area</anemo>.",
       "2": "<br/>",
       "3": "<strong>Pressione</strong>",
       "4": "Entra nello stato di Turbine Fuufuu e percorre una breve distanza rotolando prima di usare il Calcio turbine Fuufuu.",
       "5": "<br/>",
       "6": "<strong>Pressione prolungata</strong>",
-      "7": "Continua a rotolare nello stato di Turbine Fuufuu, aumentando la resistenza all'interruzione di Sayu mentre è in quello stato.",
-      "8": "In questo lasso di tempo, Sayu può controllare la direzione in cui rotola e può usare di nuovo l'abilità per interrompere il suo stato di Turbine Fuufuu e sferrare una versione più forte del suo Calcio turbine Fuufuu.",
+      "7": "Continua a rotolare nello stato di Turbine Fuufuu, aumentando la sua resistenza all'interruzione mentre è in quello stato.",
+      "8": "In questo lasso di tempo, Sayu può controllare la direzione in cui rotola e può usare di nuovo l'abilità per interrompere il suo stato di Turbine Fuufuu e sferrare una versione più forte del Calcio turbine Fuufuu.",
       "9": "In caso di pressione prolungata, è possibile innescare l'assorbimento elementale.",
       "10": "<br/>",
-      "11": "L'abilità ha una durata massima di 10 s e il TdR comincia quando il suo effetto termina. Più tempo Sayu resta nel suo stato di Turbine Fuufuu, più lungo sarà il TdR.",
+      "11": "L'abilità ha una durata massima di 10{NON_BREAK_SPACE}s e il TdR comincia quando il suo effetto termina. Più tempo Sayu resta nel suo stato di Turbine Fuufuu, più lungo sarà il TdR.",
       "12": "<br/>",
       "13": "<strong>Assorbimento elementale</strong>",
       "14": "Se Sayu entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> mentre è nello stato di Turbine Fuufuu, infliggerà DAN elementali aggiuntivi di quel tipo.",
@@ -90,7 +90,7 @@
       "4": "A intervalli specifici, il Daruma effettuerà una delle seguenti azioni in base alla situazione:",
       "5": [
         " se i PS dei personaggi vicini sono superiori a un 70%, attaccherà un avversario vicino, infliggendo <anemo>DAN da Anemo</anemo>;",
-        " se ci sono personaggi attivi vicini con un 70% dei PS o meno, guarirà il personaggio attivo con la percentuale di PS rimasti più bassa. Se non ci sono avversari vicini, guarirà i personaggi attivi vicini anche se hanno ancora un 70% o più di PS."
+        " se ci sono personaggi attivi vicini con un 70% dei PS o meno, guarirà il personaggio attivo con la percentuale di PS rimasti più bassa. Se non ci sono avversari vicini, guarirà i personaggi attivi vicini anche se hanno un 70% o più di PS."
       ],
       "6": "<br/>",
       "7": "<i>Coloro che non conoscono affatto il ninjutsu amano vedere Sayu mettere in mostra la sua abilità, e c'è persino chi ha cercato di imparare da lei. Ma Sayu vuole solo dormire senza essere disturbata.</i>"
@@ -126,7 +126,7 @@
     "description": {
       "0": "Il Daruma Muji-Muji creato da <strong>Arte Yoohoo: Frullio Mujina</strong> ottiene i seguenti effetti:",
       "1": [
-        " quando guarisce un personaggio, ripristina anche un 20% dei PS dei personaggi vicini;",
+        " quando guarisce un personaggio, ripristina anche un 20% dei PS dei personaggi vicini al personaggio guarito;",
         " aumenta l'area d'effetto del suo attacco contro gli avversari."
       ]
     }
@@ -150,7 +150,7 @@
       "0": "L'Arte Yoohoo <strong>Scatto Fuuin</strong> riceve i seguenti effetti:",
       "1": [
         " i DAN di Calcio turbine Fuufuu nella variante a pressione aumentano di un 3,3%;",
-        " ogni 0,5 s nello stato di Turbine Fuufuu, i DAN di Calcio turbine Fuufuu aumentano di un 3,3%. In questo modo è possibile ottenere fino a un 66% di aumento dei DAN."
+        " per ogni 0,5 s nello stato di Turbine Fuufuu, i DAN di Calcio turbine Fuufuu aumentano di un 3,3%. In questo modo è possibile ottenere fino a un 66% di aumento dei DAN."
       ]
     }
   },
@@ -180,7 +180,7 @@
     "description": {
       "0": "Il Daruma Muji-Muji creato da <strong>Arte Yoohoo: Frullio Mujina</strong> di Sayu può trarre vantaggio dalla sua maestria elementale. Ogni punto di maestria elementale di Sayu genererà i seguenti effetti:",
       "1": [
-        " aumenta i danni inflitti dagli attacchi del Daruma Muji-Muji di una quantità pari a uno 0,2% dell'ATT. In questo modo è possibile ottenere fino a un 400% di aumento DAN;",
+        " aumenta i danni inflitti dagli attacchi del Daruma Muji-Muji di una quantità pari a uno 0,2% dell'ATT. In questo modo è possibile ottenere un incremento massimo dei DAN pari a un 400% dell'ATT;",
         " aumenta di 3 i PS ripristinati dal Daruma Muji-Muji. In questo modo è possibile ripristinare fino a 6.000 PS aggiuntivi."
       ]
     }

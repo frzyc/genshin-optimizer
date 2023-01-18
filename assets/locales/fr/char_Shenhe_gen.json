@@ -42,7 +42,7 @@
     "name": "Invocation d'esprit printanier",
     "description": {
       "0": "La rosée givrée et argentée exorcisera tous les démons.",
-      "1": "Accorde un effet de Pennage glacé à tous les membres de l'équipe à proximité, et inflige des <cryo>DGT Cryo</cryo> de différentes manières selon que la capacité a été activée avec un appui simple ou long.",
+      "1": "Accorde l'effet Pennage glacé à tous les membres de l'équipe à proximité, et inflige des <cryo>DGT Cryo</cryo> de différentes manières selon que la capacité a été activée avec un appui simple ou long.",
       "2": "<br/>",
       "3": "<strong>Appui simple</strong>",
       "4": "Se précipite vers l'avant avec un esprit talismanique, infligeant des <cryo>DGT Cryo</cryo> aux ennemis en chemin.",
@@ -148,9 +148,9 @@
   "constellation4": {
     "name": "Clairvoyance",
     "description": {
-      "0": "Lorsqu'un personnage affecté par le <strong>pennage glacé</strong> de Shenhe déclenche l'effet de bonus de DGT de la flèche, Shenhe obtient 1 cumul de Mantra de givre :",
+      "0": "Lorsqu'un personnage affecté par le <strong>pennage glacé</strong> de Shenhe déclenche l'effet de bonus de DGT de la flèche, Shenhe obtient 1 cumul de mantra de givre :",
       "1": [
-        " Lorsque Shenhe utilise <strong>Invocation d'esprit printanier</strong>, tous les cumuls de Mantra de givre sont consommés pour augmenter les DGT infligés par cette invocation d'esprit printanier de 5 % pour chaque cumul consommé.",
+        " Lorsque Shenhe utilise <strong>Invocation d'esprit printanier</strong>, tous les cumuls de mantra de givre sont consommés pour augmenter les DGT infligés par cette invocation d'esprit printanier de 5 % pour chaque cumul consommé.",
         " Cet effet peut être cumulé 50 fois maximum et dure 60 s."
       ]
     }

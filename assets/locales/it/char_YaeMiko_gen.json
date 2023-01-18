@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
-        "1": "Consuma una certa quantità di vigore per infliggere <electro>DAN da Electro ad area</electro> per un breve lasso di tempo dopo il lancio."
+        "1": "Consuma una determinata quantità di vigore per infliggere <electro>DAN da Electro ad area</electro> dopo un breve periodo di lancio."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -81,7 +81,7 @@
       "0": "Le leggende sulla \"kitsunetsuki\", altrimenti nota come manifestazione della potenza di una kitsune, sono comuni a Inazuma. Un racconto particolarmente evocativo è quello della Kitsune celeste, che si dice faccia cadere un fulmine sui nemici del Gran Santuario di Narukami. Evoca un fulmine, infliggendo <electro>DAN da Electro ad area</electro>.",
       "1": "Quando usa questa abilità, Yae Miko rivela i Sakura Sesshou nelle vicinanze, distruggendone le forme esterne e trasformandoli così in Saette Tenko che piombano dal cielo, infliggendo <electro>DAN da Electro ad area</electro>. Ogni Sakura Sesshou distrutto in questo modo dà vita a una Saetta Tenko.",
       "2": "<br/>",
-      "3": "<i>Solo in momenti come questi Yae rivela la sua forma da Kitsune celeste e arriva a brandire lo stesso fulmine. Nessuno ha mai visto le code di Lady Guuji ed è riuscito a sopravvivere per poterlo raccontare... Ricorda: per quanto ne sai, Lady Yae non ha la coda.</i>"
+      "3": "<i>Solo in momenti come questi Yae rivela la sua forma da Kitsune celeste e arriva a brandire il fulmine. Nessuno ha mai visto le code di Lady Guuji ed è riuscito a sopravvivere per poterlo raccontare... Ricorda: per quanto ne sai, Lady Yae non ha nessuna coda.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -129,7 +129,7 @@
   "constellation2": {
     "name": "Richiamo della luna",
     "description": {
-      "0": "Quando vengono creati, il livello dei <strong>Sakura Sesshou</strong> equivale a 2, il loro livello massimo è portato a 4 e il loro raggio d'attacco è aumentato di un 60%."
+      "0": "Quando vengono creati, il livello dei <strong>Sakura Sesshou</strong> equivale a 2, il loro livello massimo sale a 4 e il loro raggio d'attacco aumenta di un 60%."
     }
   },
   "constellation3": {

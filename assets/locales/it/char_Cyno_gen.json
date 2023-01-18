@@ -162,7 +162,7 @@
     "name": "Veste: Bilancia dell'equità",
     "description": {
       "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong> o attivato l'effetto Verdetto del talento passivo Giudizio della piuma cadente, Cyno ottiene 4 accumuli dell'effetto Giorno dello sciacallo. Quando colpisce gli avversari con gli attacchi normali, consuma 1 accumulo di Giorno dello sciacallo per scagliare un Dardo del braccatore.",
-      "1": "Giorno dello sciacallo dura 8 s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
+      "1": "Giorno dello sciacallo dura 8{NON_BREAK_SPACE}s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
       "2": "È possibile scagliare 1 Dardo del braccatore in questo modo ogni 0,4{NON_BREAK_SPACE}s.",
       "3": "Devi prima sbloccare il talento passivo Giudizio della piuma cadente."
     }

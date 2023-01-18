@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -50,7 +50,7 @@
         " Segue il personaggio, infliggendo <cryo>DAN da Cryo</cryo> agli avversari sul percorso."
       ],
       "4": "<br/>",
-      "5": "<i>Lo uso per evitare che... i preziosi ingredienti del Dottor Bai si riscaldino e marciscano. Sì.</i>"
+      "5": "<i>Lo uso per evitare che... i preziosi ingredienti del dottor Bai si riscaldino e marciscano. Sì.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -110,7 +110,7 @@
   "passive2": {
     "name": "Mistero arcano",
     "description": {
-      "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 30{NON_BREAK_SPACE}s.s."
+      "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 30{NON_BREAK_SPACE}s."
     }
   },
   "passive3": {
@@ -155,7 +155,7 @@
     "name": "Rito della rinascita",
     "description": {
       "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri sconfitti del gruppo e rigenera un 50% dei loro PS.",
-      "1": "Si può verificare una sola volta ogni 15 min."
+      "1": "Si può verificare una sola volta ogni 15{NON_BREAK_SPACE}min."
     }
   }
 }

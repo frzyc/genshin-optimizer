@@ -1,0 +1,180 @@
+{
+  "name": "Yaoyao",
+  "title": "Burgeoning Grace",
+  "description": "Streetward Rambler's youngest disciple. A gentle and caring \"little adult.\"",
+  "constellationName": "Osmanthus",
+  "auto": {
+    "name": "Toss 'N' Turn Spear",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Raphanus Sky Cluster",
+    "description": {
+      "0": "Calls upon \"Yuegui: Throwing Mode,\" a special device created by a certain adeptus to help Yaoyao solve her problems.",
+      "1": "This skill will be used differently in Holding Mode.",
+      "2": "<br/>",
+      "3": "<strong>Hold</strong>",
+      "4": "Enters Aiming Mode to adjust the throw direction.",
+      "5": "<br/>",
+      "6": "<strong>Yuegui: Throwing Mode</strong>",
+      "7": "Throws out White Jade Radishes that will explode upon hitting characters or opponents, dealing <dendro>Dendro DMG</dendro> to opponents within a certain AoE, and healing characters within that same AoE based on Yaoyao's Max HP. If a radish does not hit either an opponent or a character, the radish will remain where it is and explode on contact with a character or opponent, or will explode after its duration expires.",
+      "8": "Yuegui: Throwing Mode will choose its radish-throw targets.",
+      "9": [
+        "If all nearby characters have more than 70% HP remaining, then it will throw the radish at a nearby opponent.",
+        "If nearby characters have 70% or less HP remaining, it will throw a radish at the character with the lowest HP percentage remaining. If no opponents exist nearby, Yuegui will also throw White Jade Radishes at characters if they all have more than 70% HP and less than 100% HP remaining. Otherwise, it will throw radishes into the area at random."
+      ],
+      "10": "<br/>",
+      "11": "A maximum of 2 instances of Yuegui: Throwing Mode can exist at any one time.",
+      "12": "<br/>",
+      "13": "<i>\"A radish a day keeps trouble away! ... Oh, this isn't about a radish's medical properties, exactly, but it does have some health benefits, yeah!\"</i>"
+    },
+    "skillParams": {
+      "0": "White Jade Radish DMG",
+      "1": "White Jade Radish Healing",
+      "2": "Yuegui: Throwing Mode Duration",
+      "3": "White Jade Radish Duration",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Moonjade Descent",
+    "description": {
+      "0": "At the enjoinment of a certain adeptus, Yuegui's full potential can be unleashed in an emergency, dealing <dendro>Dendro DMG</dendro> to nearby opponents and entering an (in some sense) unsurpassed Adeptal Legacy state.",
+      "1": "<br/>",
+      "2": "<strong>Adeptal Legacy</strong>",
+      "3": [
+        "White Jade Radishes generated will be changed to heal and deal DMG according to this skill. Explosions will heal all nearby party members, and the <dendro>Dendro DMG</dendro> that they deal will be viewed as Elemental Burst DMG instead.",
+        "Summons \"Yuegui: Jumping Mode\" at intervals until their limit has been reached. The behavior of this version of Yuegui is the same as that of \"Yuegui: Throwing Mode\" in the Elemental Skill, Raphanus Sky Cluster. A maximum of 3 Yuegui: Jumping Mode can exist at any one time.",
+        "Yaoyao's Movement SPD is increased by 15%.",
+        "Yaoyao's <dendro>Dendro RES</dendro> will be increased."
+      ],
+      "4": "<br/>",
+      "5": "The Adeptal Legacy state will end once Yaoyao is off-field, and all remaining Yuegui: Jumping Mode will be cleared once this state ends.",
+      "6": "<br/>",
+      "7": "<i>\"Eh? Which one of these is actually Yuegui, you ask? Aren't they all Yuegui?\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Adeptal Legacy White Jade Radish DMG",
+      "2": "Adeptal Legacy White Jade Radish Healing",
+      "3": "Dendro RES Bonus",
+      "4": "Adeptal Legacy Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Starscatter",
+    "description": {
+      "0": "While affected by the Adeptal Legacy state caused by <strong>Moonjade Descent</strong>, Yaoyao will constantly throw White Jade Radishes at nearby opponents when she is sprinting, jumping, or running. She can throw 1 White Jade Radish this way once every 0.6s."
+    }
+  },
+  "passive2": {
+    "name": "In Others' Shoes",
+    "description": {
+      "0": "When <strong>White Jade Radishes</strong> explode, active characters within their AoE will regain HP every 1s based on 0.8% of Yaoyao's Max HP. This effect lasts 5s."
+    }
+  },
+  "passive3": {
+    "name": "Tailing on Tiptoes",
+    "description": {
+      "0": "When Yaoyao is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.",
+      "1": "Check the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on."
+    }
+  },
+  "constellation1": {
+    "name": "Adeptus' Tutelage",
+    "description": {
+      "0": "When <strong>White Jade Radishes</strong> explode, active characters within their AoE will gain 15% <dendro>Dendro DMG Bonus</dendro> for 8s and have 15 Stamina restored to them. This form of Stamina Restoration can only be triggered every 5s."
+    }
+  },
+  "constellation2": {
+    "name": "Innocent",
+    "description": {
+      "0": "While affected by the Adeptal Legacy state caused by <strong>Moonjade Descent</strong>, if White Jade Radish explosions hit opponents, 3 Energy will be restored to Yaoyao. This form of Energy regeneration can occur once every 0.8s."
+    }
+  },
+  "constellation3": {
+    "name": "Loyal and Kind",
+    "description": {
+      "0": "Increases the Level of <strong>Raphanus Sky Cluster</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Winsome",
+    "description": {
+      "0": "After using <strong>Raphanus Sky Cluster</strong> or <strong>Moonjade Descent</strong>, Yaoyao's Elemental Mastery will be increased based on 0.3% of her Max HP for 8s. The maximum Elemental Mastery she can gain this way is 120."
+    }
+  },
+  "constellation5": {
+    "name": "Compassionate",
+    "description": {
+      "0": "Increases the Level of <strong>Moonjade Descent</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Beneficent",
+    "description": {
+      "0": "For every 2 White Jade Radishes <strong>Yuegui: Throwing Mode</strong> throws out, the next throw will also release a Mega Radish that will have a larger AoE than the standard White Jade Radish and have the following effects upon exploding:",
+      "1": [
+        "Deals <dendro>AoE Dendro DMG</dendro> based on 75% of Yaoyao's ATK.",
+        "Restores HP for the active character based on 7.5% of Yaoyao's Max HP."
+      ],
+      "2": "<br/>",
+      "3": "Every Yuegui: Throwing Mode can throw out a maximum of 2 Mega Radishes."
+    }
+  }
+}

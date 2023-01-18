@@ -5,19 +5,19 @@
   },
   "FerventFlames": {
     "name": "Hỏa Nhiệt Tình",
-    "desc": "Thời gian duy trì nguyên tố Băng kèm theo giảm 40%. Tấn công tăng 25%."
+    "desc": "Thời gian duy trì ấn nguyên tố Băng giảm 40%. Tấn công tăng 25%."
   },
   "SoothingWater": {
     "name": "Thủy Trị Liệu",
-    "desc": "Thời gian duy trì của đính kèm nguyên tố Hỏa giảm 40%. Giới hạn HP tăng 25%."
+    "desc": "Thời gian duy trì ấn nguyên tố Hỏa giảm 40%. Giới hạn HP tăng 25%."
   },
   "ShatteringIce": {
     "name": "Băng Vụn Vỡ",
-    "desc": "Thời gian duy trì nguyên tố Lôi đính kèm giảm 40%. Khi tấn công kẻ địch bị đính kèm nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%."
+    "desc": "Thời gian duy trì ấn nguyên tố Lôi giảm 40%. Khi tấn công kẻ địch bị gán ấn nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%."
   },
   "HighVoltage": {
     "name": "Lôi Mạnh Mẽ",
-    "desc": "Thời gian duy trì của đính kèm nguyên tố Thủy giảm 40%. Khi kích hoạt phản ứng Siêu Dẫn, Quá Tải, Điện Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ sẽ có 100% tỉ lệ rơi 1 Nguyên Tố Hạt Nhân Lôi, CD 5s."
+    "desc": "Thời gian duy trì ấn nguyên tố Thủy giảm 40%. Khi kích hoạt phản ứng Siêu Dẫn, Quá Tải, Điện Cảm, Sinh Trưởng, Tăng Cường, Nở Rộ sẽ có 100% tỉ lệ rơi 1 Nguyên Tố Hạt Nhân Lôi, CD 5s."
   },
   "ImpetuousWinds": {
     "name": "Phong Nhạy Bén",

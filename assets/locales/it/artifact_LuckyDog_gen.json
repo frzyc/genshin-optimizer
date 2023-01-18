@@ -1,7 +1,7 @@
 {
   "setName": "Fortunello",
   "setEffects": {
-    "2": "La DIF aumenta di 100.",
+    "2": "DIF +100.",
     "4": "Raccogliere Mora ripristina 300 PS."
   },
   "pieces": {

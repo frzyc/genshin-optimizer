@@ -106,13 +106,13 @@
   "passive1": {
     "name": "Impetuous Flow",
     "description": {
-      "0": "Saat Faruzan berada dalam status Manifest Gale dari <strong>Wind Realm of Nasamjnin</strong>, waktu charge Serangan Membidik berkurang 60%; Akan bisa menambahkan efek Perfidious Wind's Bale dari <strong>The Wind's Secret Ways</strong> terhadap musuh yang terkena pusaran angin yang dihasilkan oleh Pressurized Wind."
+      "0": "Saat Faruzan berada dalam status Manifest Gale dari <strong>Wind Realm of Nasamjnin</strong>, waktu charge Serangan Membidik berkurang 60%; Akan bisa menambahkan efek Perfidious Wind's Bale dari <strong>The Wind's Secret Ways</strong> terhadap musuh yang terkena pusaran angin yang dihasilkan oleh Pressurized Collapse."
     }
   },
   "passive2": {
     "name": "Lost Wisdom of the Seven Caverns",
     "description": {
-      "0": "Pada saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill atau Elemental Burst Karakter yang berada dalam status Prayerful Wind's Benefit dari <strong>The Wind's Secret Ways</strong> mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh, akan menghasilkan efek Hurricane Guard: DMG yang diakibatkan akan ditingkatkan berdasarkan 32% Base ATK Faruzan. Hurricane Guard bisa terpicu setiap 0,8 detik sekali. Efek ini akan hilang setelah durasi Prayerful Wind's Benefit berakhir atau aktif satu kali."
+      "0": "Pada saat Normal Attack, Charged Attack, Plunging Attack, Elemental Skill atau Elemental Burst Karakter yang berada dalam status Prayerful Wind's Benefit dari <strong>The Wind's Secret Ways</strong> mengakibatkan <anemo>Anemo DMG</anemo> terhadap musuh, akan menghasilkan efek Hurricane Guard: DMG yang diakibatkan akan ditingkatkan berdasarkan 32% Base ATK Faruzan. Hurricane Guard bisa terpicu setiap 0,8 detik sekali. Efek ini akan hilang setelah durasi Prayerful Wind's setelah efeknya terpicu satu kali."
     }
   },
   "passive3": {

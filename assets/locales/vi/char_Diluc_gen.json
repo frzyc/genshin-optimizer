@@ -72,7 +72,7 @@
     "name": "Bình Minh",
     "description": {
       "0": "Bùng cháy sức mạnh lửa, đánh lui địch xung quanh, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro>. Sau đó ngưng tụ lửa lên vũ khí, vung ra chim lửa bay về phía trước, gây cho địch trên đường lượng lớn <pyro>Sát Thương Nguyên Tố Hỏa</pyro> đồng thời ở điểm đến cuối cùng của chim lửa gây lượng lớn <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
-      "1": "Ngọn lửa trên vũ khí khiến Diluc nhận được <pyro>Nguyên Tố Hỏa đính kèm</pyro>.",
+      "1": "Ngọn lửa trên vũ khí khiến Diluc nhận được <pyro>đính kèm Nguyên Tố Hỏa</pyro>.",
       "2": "<br/>",
       "3": "<i>Bước đi trong bóng tối là để mang lại ánh sáng. Nhìn vào ánh sáng xa xăm tỏa ra trong màn đêm tĩnh lặng, là điềm báo bình minh sẽ đến.</i>"
     },
@@ -104,7 +104,7 @@
   "passive2": {
     "name": "Đôi Cánh Rực Lửa",
     "description": {
-      "0": "Kéo dài 4s thời gian <strong>Nguyên Tố Hỏa đính kèm</strong> mà <pyro>Bình Minh</pyro> mang đến. Ngoài ra, trong thời gian còn hiệu lực, Diluc nhận 20% <pyro>buff sát thương Nguyên Tố Hỏa</pyro>."
+      "0": "Kéo dài 4s thời gian <strong>đính kèm Nguyên Tố Hỏa</strong> mà <pyro>Bình Minh</pyro> mang đến. Ngoài ra, trong thời gian còn hiệu lực, Diluc nhận 20% <pyro>buff sát thương Nguyên Tố Hỏa</pyro>."
     }
   },
   "passive3": {

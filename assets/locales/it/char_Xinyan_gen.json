@@ -45,7 +45,7 @@
       "0": "Xinyan brandisce il suo strumento, infliggendo <pyro>DAN da Pyro</pyro> agli avversari vicini, generando uno scudo fatto del fervore del suo pubblico.",
       "1": "L'assorbimento DAN dello scudo varia in base alla DIF di Xinyan e al numero di avversari colpiti.",
       "2": [
-        " Colpire 0-1 avversari garantisce il Livello scudo 1: Ad libitum.",
+        " Colpire 0-1 avversari garantisce il Livello scudo 1: Ad lib.",
         " Colpire 2 avversari garantisce il Livello scudo 2: Introduzione.",
         " Colpire 3 o più avversari garantisce il Livello scudo 3: Delirio, che infligge, inoltre, <pyro>DAN da Pyro</pyro> intermittenti agli avversari vicini."
       ],
@@ -56,7 +56,7 @@
         " ha un 250% di efficacia di assorbimento DAN contro i <pyro>DAN da Pyro</pyro>."
       ],
       "6": "<br/>",
-      "7": "<i>Xinyan insiste che questi fuochi d'artificio siano l'apice dell'arte performativa, e che siano fenomeni fisici che nulla hanno a che fare con la sua Visione.</i>"
+      "7": "<i>Xinyan insiste nel dire che questi fuochi d'artificio siano l'apice dell'arte performativa, e che siano fenomeni fisici che nulla hanno a che fare con la sua Visione.</i>"
     },
     "skillParams": {
       "0": "DAN da sferzata",

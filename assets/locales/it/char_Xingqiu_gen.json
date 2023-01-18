@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -77,7 +77,7 @@
   "burst": {
     "name": "Spada Guhua: Fendipioggia",
     "description": {
-      "0": "Attiva Tecnica dell'iridescenza e combatti usando una pioggia di spade illusoria, mentre crei il numero massimo di Spade della pioggia.",
+      "0": "Attiva Tecnica dell'iridescenza e combatte usando una pioggia di spade illusoria, mentre crea il numero massimo di Spade della pioggia.",
       "1": "<br/>",
       "2": "<strong>Tecnica dell'iridescenza</strong>",
       "3": [
@@ -140,7 +140,7 @@
   "constellation3": {
     "name": "Tessitore di versi",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Spada Guhua: Fendipioggio</strong>.",
+      "0": "Aumenta di 3 il livello di <strong>Spada Guhua: Fendipioggia</strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },

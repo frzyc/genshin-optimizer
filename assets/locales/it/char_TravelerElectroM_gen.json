@@ -102,7 +102,7 @@
   "passive1": {
     "name": "Lampo della folgore",
     "description": {
-      "0": "Quando un altro personaggio del gruppo vicino ottiene un Amuleto dell'abbondanza creato da <strong>Lama di fulmine</strong>, il TdR di <strong>Lama di fulmine</strong> si riduce di un 1,5%."
+      "0": "Quando un altro personaggio del gruppo vicino ottiene un Amuleto dell'abbondanza creato da <strong>Lama di fulmine</strong>, il TdR di <strong>Lama di fulmine</strong> si riduce di 1,5{NON_BREAK_SPACE}s."
     }
   },
   "passive2": {

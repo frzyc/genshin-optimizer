@@ -77,7 +77,7 @@
     "description": {
       "0": "Stellt befreundeten Figuren in der Nähe und allen eigenen Truppenmitgliedern viele LP basierend auf Barbaras max. LP wieder her.",
       "1": "<br/>",
-      "2": "<i>Kampf und Gesang sind die Quelle für Barbaras Macht, andere zu heilen.</i>"
+      "2": "<i>Der Wille, andere zu heilen, verstärkt die Kraft von Barbaras Gesang und Kampf.</i>"
     },
     "skillParams": {
       "0": "Heilung",

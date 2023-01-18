@@ -1,8 +1,8 @@
 {
   "setName": "Roccia arcaica",
   "setEffects": {
-    "2": "Ottieni un 15% di bonus DAN da Geo.",
-    "4": "Una volta ottenuto un frammento elementale generato con la reazione della Cristallizzazione, tutti i membri del gruppo ricevono un 35% di bonus DAN della durata di 10 s per quel particolare elemento. Applicabile a un solo elemento per volta."
+    "2": "Bonus DAN da Geo +15%.",
+    "4": "Quando si ottiene un frammento elementale generato con la reazione della Cristallizzazione, tutti i membri del gruppo ricevono un 35% di bonus DAN per quel particolare elemento della durata di 10{NON_BREAK_SPACE}s. È possibile ottenere un solo bonus DAN elementali alla volta."
   },
   "pieces": {
     "flower": {

@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Commande inattendue",
     "description": {
-      "0": "Le personnage a 25 % de chance de récupérer des matériaux de synthèse lors de la synthèse de matériaux d'amélioration de personnage ou d'arme."
+      "0": "Le personnage a 25 % de chances de récupérer des matériaux de synthèse lors de la synthèse de matériaux d'amélioration de personnage ou d'arme."
     }
   },
   "constellation1": {
@@ -133,7 +133,7 @@
   "constellation2": {
     "name": "Franchise spéciale",
     "description": {
-      "0": "En combat, lorsque le <strong>djinn</strong> soigne le personnage auquel il est relié, un tir djinn est déclenché à l'emplacement du personnage, infligeant des DGT équivalant à 50 % de l'ATQ de Dori."
+      "0": "Au combat, lorsque le <strong>djinn</strong> soigne le personnage auquel il est relié, un tir djinn est déclenché à l'emplacement du personnage, infligeant des DGT équivalant à 50 % de l'ATQ de Dori."
     }
   },
   "constellation3": {

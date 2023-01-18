@@ -111,7 +111,7 @@
         " <hydro>Hydro</hydro>: Erhöht das max. Kuugoryoku um 20 Punkte.",
         " <pyro>Pyro</pyro>: Erhöht den ANG um 30 %.",
         " <cryo>Kryo</cryo>: Erhöht die KT um 20 %.",
-        " <electro>Elektro</electro>: Stellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen 0,8 Punkt Elementarenergie wieder her, Abklingzeit 0,2 s."
+        " <electro>Elektro</electro>: Stellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen 0,8 Punkte Elementarenergie wieder her, Abklingzeit 0,2 s."
       ],
       "2": "<br/>",
       "3": "Es können gleichzeitig höchstens 2 unterschiedliche Verstärkungseffekte der entsprechenden Elemente verliehen werden."

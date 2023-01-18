@@ -42,7 +42,7 @@
   "skill": {
     "name": "Sonetto celeste",
     "description": {
-      "0": "Oh, vento sul quale volano tutti gli inni e i canti, solleva questi terrestri in cielo!",
+      "0": "O vento, sul quale volano tutti gli inni e i canti, solleva questi terrestri in cielo!",
       "1": "<br/>",
       "2": "<strong>Pressione</strong>",
       "3": "Evoca un dominio di vento nella posizione dell'avversario, infliggendo <anemo>DAN da Anemo ad area</anemo> e scagliando gli avversari in aria.",
@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Venti avvolgenti",
     "description": {
-      "0": "Usando la variante a pressione prolungata di <strong>Sonetto celeste</strong>, si crea una corrente ascendente di 20 s."
+      "0": "Usando la variante a pressione prolungata di <strong>Sonetto celeste</strong>, si crea una corrente ascendente di 20{NON_BREAK_SPACE}s."
     }
   },
   "passive2": {
@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Venti divisi",
     "description": {
-      "0": "Scocca 2 frecce aggiuntive per ogni <strong>attacco mirato</strong>, ognuna delle quali infligge un 33% dei DAN iniziali della freccia."
+      "0": "Scocca 2 frecce aggiuntive per ogni <strong>attacco mirato</strong>, ognuna delle quali infligge un 33% dei DAN della freccia originale."
     }
   },
   "constellation2": {

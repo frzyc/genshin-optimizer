@@ -47,7 +47,7 @@
       "3": "Muove la sua lancia in una posizione da Sfregianubi, infliggendo <geo>DAN da Geo</geo>.",
       "4": "<br/>",
       "5": "<strong>Pressione prolungata</strong>",
-      "6": "Assume la posa di Gesto d'apertura e carica l'abilità, creando uno scudo. L'Assorbimento dei DAN si basa sui PS max di Yun Jin e ha un 150% di efficacia contro tutti i DAN elementali e DAN fisici. Lo scudo dura finché Yun Jin non smette di utilizzare la sua abilità elementale.",
+      "6": "Assume la posa di Gesto d'apertura e carica l'abilità, creando uno scudo. L'assorbimento DAN si basa sui PS max di Yun Jin e ha un 150% di efficacia contro tutti i DAN elementali e fisici. Lo scudo dura finché Yun Jin non smette di utilizzare la sua abilità elementale.",
       "7": "Quando l'abilità viene rilasciata, al termine della durata o quando lo scudo si infrange, Yun Jin libera l'energia accumulata sotto forma di attacco, infliggendo <geo>DAN da Geo</geo>.",
       "8": "In base al tempo di carica dell'abilità, rilascerà un attacco al livello di carica 1 o 2.",
       "9": "<br/>",
@@ -81,7 +81,7 @@
       "3": "Quando gli avversari subiscono DAN da attacco normale, vengono inflitti DAN bonus in base all'attuale DIF di Yun Jin.",
       "4": "<br/>",
       "5": "Gli effetti di quest'abilità cesseranno dopo una durata prestabilita o dopo averla attivata un numero specifico di volte.",
-      "6": "Quando un attacco normale colpisce più avversari, l'effetto si attiva più volte a seconda del numero di avversari colpiti. Il numero di volte in cui l'effetto si attiva si conta singolarmente per ogni membro del gruppo con Formazione Bandiera della nube volante.",
+      "6": "Quando un attacco normale colpisce più avversari, l'effetto si attiva più volte a seconda del numero di avversari colpiti. Il numero di volte in cui l'effetto si attiva si conta in maniera indipendente per ogni membro del gruppo con Formazione Bandiera della nube volante.",
       "7": "<br/>",
       "8": "<i>Al suono dei tamburi, mentre spade e alabarde si intrecciano e scontrano, la donzella si trasforma in un potente generale.</i>",
       "9": "<i>Mentre gli strumenti sul palco risuonano all'unisono, ecco che lei sbaraglia i demoni!</i>"

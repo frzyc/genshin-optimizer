@@ -121,7 +121,7 @@
   "constellation2": {
     "name": "Terra sconsacrata",
     "description": {
-      "0": "La durata dell'Asta di ghiaccio creata da <strong>Sacramento finale</strong> aumenta di 4{NON_BREAK_SPACE}s."
+      "0": "La durata dell'Asta di ghiaccio creata da <strong>Sacramento finale</strong> si estende di 4{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {
@@ -135,7 +135,7 @@
     "name": "Consacrazione della sofferenza",
     "description": {
       "0": "I colpi CRIT di <strong>Confessione devastante</strong> rigenerano l'energia di Rosaria di 5.",
-      "1": "Si può attivare ogni volta che si usa Confessione devastante."
+      "1": "Si può attivare una volta sola per ogni uso di Confessione devastante."
     }
   },
   "constellation5": {

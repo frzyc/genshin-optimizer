@@ -567,6 +567,14 @@
     "name": "Faruzan",
     "description": "Une chercheuse qui vient « du siècle dernier ». Elle aime être l'aînée de tous et possède de vastes connaissances sur les textes anciens et la mécanique classique."
   },
+  "Yaoyao": {
+    "name": "Yaoyao",
+    "description": "La plus jeune disciple de Flâne-Sentier, une « petite adulte » douce et attentionnée."
+  },
+  "Alhaitham": {
+    "name": "Alhaitham",
+    "description": "L'actuel scribe de l'Académie de Sumeru, doté d'une intelligence et d'un talent extraordinaires. Son goût pour une vie libre de contraintes est tel qu'il est difficile pour la plupart de gens de savoir où le trouver."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
     "description": "Matériau d'activation de la constellation d'Ayaka."
@@ -814,6 +822,14 @@
   "FaruzansStellaFortuna": {
     "name": "Stella Fortuna de Faruzan",
     "description": "Matériau d'activation de la constellation de Faruzan."
+  },
+  "YaoyaosStellaFortuna": {
+    "name": "Stella Fortuna de Yaoyao",
+    "description": "Matériau d'activation de la constellation de Yaoyao."
+  },
+  "AlhaithamsStellaFortuna": {
+    "name": "Stella Fortuna d'Alhaitham",
+    "description": "Matériau d'activation de la constellation d'Alhaitham."
   },
   "GnosticHymnOldNotes": {
     "name": "Pass de bataille « Gnostique » - Ébauche",
@@ -1258,6 +1274,10 @@
   "GlabrousBeans": {
     "name": "Haricot glabre",
     "description": "Un légume commun en Teyvat qui dégage un parfum léger. Il se cuisine de diverses manières et son utilisation est donc répandue dans le monde entier."
+  },
+  "MysteriousMeat": {
+    "name": "Viande mystérieuse",
+    "description": "Un morceau de viande fraîche qui émet une odeur mystérieuse. Quel goût peut-il bien avoir ?"
   },
   "JeansDocumentPackage": {
     "name": "Paquet de documents de Jean",
@@ -2053,7 +2073,7 @@
   },
   "LegendOfTheShatteredHalberdI": {
     "name": "Le Bris de l'arme divine - Tome I",
-    "description": "Dans les temps anciens, neuf royaumes existaient, traversés par le mont sacré. Celui des hommes était appelé « Zhongzhou », tandis que « Shenxiao » était le nom de celui des dieux.\\nUne guerre éclata entre les déités lors de la dernière calamité ; le roi des dieux tomba en brisant sa lance, et les neuf royaumes furent mis à sang.\\nLe monde est né à nouveau, et la vie a repris le dessus. Le mont sacré a été scellé, et le passage entre les royaumes n'est plus.\\nLe roman haletant suivant la recherche de la hallebarde sacrée du roi des dieux arrive !"
+    "description": "Dans les temps anciens, neuf royaumes existaient, traversés par le mont sacré. Celui des hommes était appelé « Zhongzhou », tandis que « Shenxiao » était le nom de celui des dieux.\\nUne guerre éclata entre les déités lors de la dernière calamité ; le roi divin tomba en brisant sa lance, et les neuf royaumes furent mis à sang.\\nLe monde est né à nouveau, et la vie a repris le dessus. Le mont sacré a été scellé, et le passage entre les royaumes n'est plus.\\nLe roman haletant suivant la recherche de la hallebarde sacrée du roi divin arrive !"
   },
   "LegendOfTheShatteredHalberdII": {
     "name": "Le Bris de l'arme divine - Tome II",
@@ -3918,6 +3938,10 @@
   "AjilenakhNut": {
     "name": "Noix d'ajilenakh",
     "description": "Un fruit qui pousse sur les arbres à feuilles persistantes dans les oasis du désert. La chair sous sa peau dure est épaisse, sucrée et délicieuse, ce qui en fait une source de nourriture importante parmi les peuples du désert."
+  },
+  "SandGreasePupa": {
+    "name": "Pupe graisseuse des sables",
+    "description": "On ne trouve ces carapaces séchées que dans les profondeurs du désert où les anguilles des sables se reproduisent. Leur surface solide est destinée à protéger les corps larvaires des anguilles le temps qu'elles s'acclimatent à l'environnement sec et chaud du désert."
   },
   "Scarab": {
     "name": "Scarabée",
@@ -7879,6 +7903,42 @@
     "name": "Chazuke authentique",
     "description": "Spécialité culinaire du Nomade.\\nLa légère amertume du thé et la douceur du riz se marient à la perfection, vous n'en faites qu'une bouchée. Comment a-t-il réussi à cuisiner un plat aussi délicieux ? Votre expression a sûrement trahi vos pensées, car son visage s'est assombri. « Tu as fini ? Arrête de rêvasser et va plutôt faire la vaisselle. »"
   },
+  "SuspiciousSabzMeatStew": {
+    "name": "Ragoût de Sabz (suspect)",
+    "description": "Un ragoût à la saveur particulière. Son acidité agresse les narines, et rien que de le sentir fait penser à des choses fort peu agréables. Si on le laisse reposer un peu plus de temps, des champignons pourraient même pousser dessus..."
+  },
+  "SabzMeatStew": {
+    "name": "Ragoût de Sabz",
+    "description": "Un ragoût à la saveur particulière. Différents légumes verts sont mélangés et hachés ensemble, puis cuits avec des morceaux de viande dans une marmite. On y ajoute du citron, ce qui lui donne un goût chaud et légèrement amer. Les habitants de Sumeru apprécient généralement ce plat que l'on verse sur du riz."
+  },
+  "DeliciousSabzMeatStew": {
+    "name": "Ragoût de Sabz (délicieux)",
+    "description": "Un ragoût à la saveur particulière. Les ingrédients parfumés qu'il comporte se complètent parfaitement. De gros morceaux de viande fraîche sont cuits à l'étouffée jusqu'à ce qu'ils deviennent tendres et prennent un enrobage vert foncé, comme s'ils invitaient tous ceux qui les goûtent à une promenade tranquille dans la forêt."
+  },
+  "SuspiciousScentedMeatBalls": {
+    "name": "Boulettes aux épices (suspectes)",
+    "description": "Un plat à base de viande hachée. Avec son aspect terne, il est difficile de s'imaginer ce qu'il peut bien contenir. Ça se voit qu'il y a du blé dedans : des brins de blés viennent vous écorcher les lèvres même lorsque vous voulez goûter une petite bouchée."
+  },
+  "ScentedMeatBalls": {
+    "name": "Boulettes aux épices",
+    "description": "Un plat à base de viande hachée. Tout d'abord, le blé est râpé et cuit, la viande hachée est mélangée pour créer une croûte. Les oignons et la viande sont ensuite sautés pour former la garniture. Enfin, le mélange est malaxé en une boule et frit jusqu'à ce qu'il soit doré. Il suffit de bien contrôler le temps de cuisson pour se régaler à grandes bouchées de cette viande délicieuse."
+  },
+  "DeliciousScentedMeatBalls": {
+    "name": "Boulettes aux épices (délicieuses)",
+    "description": "Un plat à base de viande hachée. L'enrobage croustillant enveloppe une garniture délicieuse et savoureuse, lui donnant une texture plus étagée que les boulettes de viande ordinaires. Une seule bouchée de ce plat est un régal unique qui, avec l'arôme de la viande, vous fera ressentir un sentiment de bonheur inégalé."
+  },
+  "IdealCircumstance": {
+    "name": "Circonstance idéale",
+    "description": "Spécialité culinaire d'Alhaitham. Un plat que l'on prépare en ajoutant des légumes et de la viande sur une poêle à frire au fond décoré de motifs. Le chef a dû modifier la recette, car elle est très différente du plat original. Le mot qui apparaît dans le plat signifie « réfléchir ». Selon les mots du chef : « L'idéal serait que tout le monde puisse le faire, mais ce n'est pas possible »."
+  },
+  "QingceHouseholdDish": {
+    "name": "Plat maison de Qingce",
+    "description": "Spécialité culinaire de Yaoyao. Ne possédant pas le dressage élégant d'un grand restaurant, son apparence peut sembler assez sommaire, mais une seule bouchée est suffisante pour laisser un délicieux sentiment d'intimité et de chaleur qui reste inscrit dans la mémoire. Ce goût voyage du bout de la langue à la tête. Le secret de cette saveur se trouve sans doute dans l'affection de Yaoyao."
+  },
+  "CrocodileJerky": {
+    "name": "Viande séchée de crocodile",
+    "description": "De la viande de crocodile séchée préparée selon une recette spéciale de la tribu des Tanit. Bien qu'un peu difficile à mâcher, la facilité de conservation de la viande en fait un mets délicat couramment consommé par les chasseurs de la tribu.\\nMalgré son goût de volaille, la valeur nutritive de la viande de crocodile est réputée être huit fois supérieure à celle de la chair de bêtes plus typiques..."
+  },
   "RecipeItem": {
     "name": "Ingrédient",
     "description": "Objet pour débloquer des recettes"
@@ -8423,6 +8483,14 @@
     "name": "Recette : Samoussas",
     "description": "Étapes de préparation des samoussas."
   },
+  "RecipeSabzMeatStew": {
+    "name": "Recette : Ragoût de Sabz",
+    "description": "Étapes de préparation du ragoût de Sabz."
+  },
+  "RecipeScentedMeatBalls": {
+    "name": "Recette : Boulettes aux épices",
+    "description": "Étapes de préparation des boulettes aux épices."
+  },
   "CraftedItems": {
     "name": "Produit synthétisé",
     "description": "Objet obtenu du système de synthèse"
@@ -8863,6 +8931,18 @@
     "name": "Prisme radieux",
     "description": "Un composant de fabrication subtile que vous avez obtenu après avoir vaincu une Structure primale.\\nLe roi du désert a autrefois fait un rêve et a jadis formulé beaucoup de promesses.\\nIl est dit dans les légendes du désert que ces machines avaient à l'origine été créées pour réaliser ces promesses. Aujourd'hui, cependant, ces promesses et ce rêve ont été oubliés et ne survivent qu'à l'intérieur de la mémoire mécanique de ces engins."
   },
+  "DesiccatedShell": {
+    "name": "Coque desséchée",
+    "description": "La coque desséchée d'une Bête sacralisée.\\nUne preuve de la calamité qui a ravagé le monde dans le passé, et qui aujourd'hui ne peut être trouvée que dans des endroits où personne n'ose s'aventurer."
+  },
+  "SturdyShell": {
+    "name": "Coque robuste",
+    "description": "La coque solide d'une Bête sacralisée.\\nLes restes d'une bête née de la ruine, qui rongeait la chair et les os de grands êtres déchus. Même si ces bêtes ont reçu une once de pouvoir des divinités d'antan, elles connaîtront la même fin que ces derniers."
+  },
+  "MarkedShell": {
+    "name": "Coque marquée",
+    "description": "La coque d'une Bête sacralisée sur laquelle figurent des inscriptions anciennes.\\nSur cette carapace pâle persistent faiblement les chagrins d'un âge lointain. Le jour viendra où les os des bêtes deviendront de la poussière blanche dispersée par le vent, et alors, les défunts exaltés pourront enfin saluer leur dernier repos..."
+  },
   "HurricaneSeed": {
     "name": "Graine d'ouragan",
     "description": "La forme effondrée d'une Hypostase Anémo après avoir été vaincue. Elle contient un pouvoir Anémo d'une grande pureté.\\nLa légende raconte qu'un petit papillon fragile possède également le pouvoir de provoquer un ouragan. Ce papillon fait partie du vent pur, attendant avec patience le jour pour invoquer à nouveau l'ouragan."
@@ -9034,6 +9114,10 @@
   "DakasBell": {
     "name": "Cloche de daka",
     "description": "Une boule utilisée pour articuler deux membres mécaniques qui a la forme d'une cloche. Sous ses airs délicats se cache une quantité d'énergie inimaginable.\\nSi elle est utilisée pour relier les bras, ces derniers perdront toute sensation, tandis que ce sera la force qui disparaîtra pour les jambes.\\nSi elle relie le crâne...\\nLa haine, la douleur, la folie et l'orgueil demeurent intacts.\\nQuelle chance."
+  },
+  "PseudoStamens": {
+    "name": "Pseudo-étamines",
+    "description": "Les élytres de couleur verdâtre cachés dans la queue d'un Wenut. Ils sont aussi fins que les étamines d'une fleur.\\nOn dit qu'autrefois, avant même la nuit des temps, ces vers s'enfonçaient dans la terre humide de prairies et de forêts colossales de la même manière que des oiseaux qui planent dans le ciel ou des poissons qui nagent dans l'eau. On pense généralement que leur mimétisme des fleurs est destiné à attirer les proies perdues dans les tempêtes de sable. Mais certains disent que cette apparence de fleur est le reflet d'une époque révolue où, au lieu du sable doré, la terre était recouverte d'une couverture luxuriante de plantes et de fleurs."
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décabarian",
@@ -9619,6 +9703,10 @@
     "name": "Étoile du futur",
     "description": "Dans un certain scénario, la grande étoile du futur est un précieux trésor qui contient de l'espoir et des possibilités sans fin, tandis que les étoiles sans fin ne sont que les fragments qui la composent. Si vous parvenez à rassembler les six fragments, vous pourrez invoquer la Grande Étoile du futur. Le scénario ne précise cependant pas à quoi cet objet peut servir ou à quoi il ressemble.\\nDans un autre scénario, cet objet fait partie de la collection d'une organisation appelée l'« Académie », et est enregistré sous le nom de « noyau de Parvo ». Il est recouvert d'une fine couche de poussière, étant donné que personne ne s'en est servi depuis bien longtemps."
   },
+  "EnergyTransformationCapacitor": {
+    "name": "Condensateur de transformation d'énergie",
+    "description": "Un condensateur de transformation d'énergie.\\nSon nom exact et ses méthodes de fabrication sont inconnus, il ne peut donc plus être produit. Il semble pouvoir être capable d'alimenter les Structures primales en énergie."
+  },
   "RaefsPackage": {
     "name": "Colis de Raef",
     "description": "Un paquet contenant un pot de fleur, des graines, de l'engrais et plusieurs objets de jardinage. Il est extrêmement lourd, le transporter à travers le désert ne doit pas être facile..."
@@ -9695,6 +9783,106 @@
     "name": "Bon de commande de Guanchui",
     "description": "Bon de commande que Georg a rédigé pour Guanchui. Il y est indiqué le prix convenu pour 100 cartons de jus de fruits du festival, le détail des différents frais impliqués, l'heure de la transaction ainsi que la date de livraison prévue. C'est un reçu qui ne manquera pas de rassurer le client qui le lira."
   },
+  "Soulferry": {
+    "name": "Bac des âmes",
+    "description": "Une pièce d'échecs trouvée sur la place du temple de Gurabad. Elle est censée ressembler à une embarcation destinée à transporter les défunts."
+  },
+  "KhajNisut": {
+    "name": "Khaj-Nisut",
+    "description": "Une pièce d'échecs trouvée sur la place du temple de Gurabad. Cette pièce est une version miniature du Khaj-Nisut."
+  },
+  "BorderFort": {
+    "name": "Fort frontalier",
+    "description": "Une pièce d'échecs trouvée sur la place du temple de Gurabad. Elle a été sculptée pour représenter les forts frontaliers des temps anciens."
+  },
+  "KingDeshretsPillar": {
+    "name": "Pilier du roi Deshret",
+    "description": "Une pièce d'échecs trouvée sur la place du temple de Gurabad. Elle représente une grande stèle commémorative dédiée à l'ancienne civilisation du roi Deshret."
+  },
+  "TempleOfGurabad": {
+    "name": "Temple de Gurabad",
+    "description": "Une pièce d'échecs trouvée sur la place du temple de Gurabad. Elle représente le grand temple du roi Deshret de Gurabad."
+  },
+  "ActivationDeviceTheMausoleumOfKingDeshret": {
+    "name": "Composant d'activation : Mausolée du roi Deshret",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceDeshretsGlassGoblet": {
+    "name": "Composant d'activation : Calice du roi Deshret",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceSoulferry": {
+    "name": "Composant d'activation : Bac des âmes",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceKhajNisut": {
+    "name": "Composant d'activation : Khaj-Nisut",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceBorderFort": {
+    "name": "Composant d'activation : Fort frontalier",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceKingDeshretsPillar": {
+    "name": "Composant d'activation : Pilier du roi Deshret",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "ActivationDeviceTempleOfGurabad": {
+    "name": "Composant d'activation : Temple de Gurabad",
+    "description": "Un composant activable pour une pièce d'échecs. Seuls les djinns qui ont servi le roi Deshret peuvent comprendre la complexité de ses mécanismes."
+  },
+  "MemoriesOfTheEternalOasisI": {
+    "name": "Souvenirs de l'Oasis éternelle - 1",
+    "description": "Des souvenirs anciens de l'Oasis éternelle, qui ressemblent à des runes flottant dans les airs."
+  },
+  "MemoriesOfTheEternalOasisII": {
+    "name": "Souvenirs de l'Oasis éternelle - 2",
+    "description": "Des souvenirs anciens de l'Oasis éternelle, qui ressemblent à des runes flottant dans les airs."
+  },
+  "MemoriesOfTheEternalOasisIII": {
+    "name": "Souvenirs de l'Oasis éternelle - 3",
+    "description": "Des souvenirs anciens de l'Oasis éternelle, qui ressemblent à des runes flottant dans les airs."
+  },
+  "TadhlasFeather": {
+    "name": "Plume de Tadhla",
+    "description": "Une des plumes dont un faucon se sert pour voler. Si elles sont arrachées, le faucon ne peut plus s'envoler..."
+  },
+  "FatuiStrongholdKey": {
+    "name": "Clé de la base des Fatui",
+    "description": "La clé de la base des Fatui dans le désert. Avec elle, il devrait être possible d'ouvrir les portes de leur forteresse. En tout cas, c'est à espérer..."
+  },
+  "SacredSealPrecipice": {
+    "name": "Sceau sacré : Précipice",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes et qui semble être une partie d'un édifice. On ignore depuis combien de temps elle est restée endormie au milieu de la mer de sable ou à qui appartenaient les souhaits qu'elle contient. Certains ont affirmé qu'elle avait la forme d'une cithare d'une nation révolue, mais en réalité, elle apparaît souvent dans des descriptions de situations dangereuses. Il a été confirmé par la suite qu'elle représente le contour d'une falaise, et qu'elle était utilisée pour avertir d'un malheur imminent."
+  },
+  "SacredSealGrandDoor": {
+    "name": "Sceau sacré : Grande porte",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes et qui semble être une partie d'un édifice. On ignore depuis combien de temps elle est restée endormie au milieu de la mer de sable ou à qui appartenaient les souhaits qu'elle contient. Ses inscriptions représentent le contour des portes en pierre d'un ancien palais."
+  },
+  "MysteriousStoneSlateI": {
+    "name": "Stèle mystérieuse (1)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
+  "MysteriousStoneSlateII": {
+    "name": "Stèle mystérieuse (2)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
+  "MysteriousStoneSlateIII": {
+    "name": "Stèle mystérieuse (3)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
+  "MysteriousStoneSlateIV": {
+    "name": "Stèle mystérieuse (4)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
+  "MysteriousStoneSlateV": {
+    "name": "Stèle mystérieuse (5)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
+  "MysteriousStoneSlateVI": {
+    "name": "Stèle mystérieuse (6)",
+    "description": "Une tablette de pierre sur laquelle figurent des inscriptions anciennes. Elle a un aspect solide et une apparence fascinante."
+  },
   "CynosIntroductionLetter": {
     "name": "Lettre d'introduction de Cyno",
     "description": "Une recommandation que Cyno a écrite pour vous. Elle représente la confiance du général mahamatra."
@@ -9739,6 +9927,10 @@
     "name": "Kit de voyage en désert, édition limitée",
     "description": "Un kit de voyage acheté à Dori. Il est rempli de choses étranges. À première vue, il est impossible de comprendre à quoi ça sert, mais peut-être qu'en étudiant tout ça de plus près, vous trouverez quelque chose d'utile..."
   },
+  "NascentBambooShoots": {
+    "name": "Pousse de bambou naissante",
+    "description": "À certaines saisons, les pousses de bambou cultivées dans le village de Qingce dégagent un parfum des plus délectables, qui trahit son statut d'ingrédient précieux et rare."
+  },
   "AShortLetter": {
     "name": "Courte lettre",
     "description": "Un message court écrit en langage codé. Vous ne savez pas qui en est l'auteur et pourquoi il a été laissé ici."
@@ -9758,6 +9950,46 @@
   "SomeonesDiary": {
     "name": "Journal de quelqu'un",
     "description": ""
+  },
+  "InternalWithdrawalDocument": {
+    "name": "Document de retrait interne",
+    "description": "Un document officiel qui était posé négligemment quelque part à l'intérieur du camp."
+  },
+  "PreliminaryTestOnExperimentalSubject": {
+    "name": "Test préliminaire sur sujet expérimental",
+    "description": "Une épaisse pile de lettres et de documents de recherche. Ils décrivent l'état physique d'un certain « spécimen humain »."
+  },
+  "TransferNotification": {
+    "name": "Notification de transfert",
+    "description": "Une notification officielle des Fatui qui semble parler d'un lieu de destination pour un transfert de troupes."
+  },
+  "PathfindersLogI": {
+    "name": "Journal des éclaireurs I",
+    "description": "Journal des éclaireurs I"
+  },
+  "PathfindersLogII": {
+    "name": "Journal des éclaireurs II",
+    "description": "Journal des éclaireurs II"
+  },
+  "PathfindersLogIII": {
+    "name": "Journal des éclaireurs III",
+    "description": "Journal des éclaireurs III"
+  },
+  "PathfindersLogIV": {
+    "name": "Journal des éclaireurs IV",
+    "description": "Journal des éclaireurs IV"
+  },
+  "PathfindersLogV": {
+    "name": "Journal des éclaireurs V",
+    "description": "Journal des éclaireurs V"
+  },
+  "PathfindersLogVI": {
+    "name": "Journal des éclaireurs VI",
+    "description": "Journal des éclaireurs VI"
+  },
+  "NoteRegardingAnExchangeOfGoods": {
+    "name": "Note sur un échange de marchandises",
+    "description": "Une lettre de réponse qui semble avoir été envoyée par les Fatui. Elle détaille ce qui semble être une transaction entre Aderfi et les Fatui."
   },
   "EventNotice": {
     "name": "Annonce d'événement",
@@ -9823,9 +10055,201 @@
     "name": "Lettre de Xudong",
     "description": "Une lettre que Xudong vous a laissée. Elle comporte une pièce jointe..."
   },
+  "RecordsOfGurabadPartI": {
+    "name": "Chroniques de Gurabad I",
+    "description": "Chroniques de Gurabad I"
+  },
+  "RecordsOfGurabadPartII": {
+    "name": "Chroniques de Gurabad II",
+    "description": "Chroniques de Gurabad II"
+  },
+  "RecordsOfGurabadPartIII": {
+    "name": "Chroniques de Gurabad III",
+    "description": "Chroniques de Gurabad III"
+  },
+  "RecordsOfGurabadPartIV": {
+    "name": "Chroniques de Gurabad IV",
+    "description": "Chroniques de Gurabad IV"
+  },
+  "RecordsOfGurabadPartV": {
+    "name": "Chroniques de Gurabad V",
+    "description": "Chroniques de Gurabad V"
+  },
+  "RecordsOfMtDamavandPartI": {
+    "name": "Chroniques du Mont Damavand I",
+    "description": "Chroniques du Mont Damavand I"
+  },
+  "RecordsOfMtDamavandPartII": {
+    "name": "Chroniques du Mont Damavand II",
+    "description": "Chroniques du Mont Damavand II"
+  },
+  "RecordsOfMtDamavandPartIII": {
+    "name": "Chroniques du Mont Damavand III",
+    "description": "Chroniques du Mont Damavand III"
+  },
+  "DogmaOfTheBrassMaskPartI": {
+    "name": "Enseignements du masque de cuivre I",
+    "description": "Enseignements du masque de cuivre I"
+  },
+  "DogmaOfTheBrassMaskPartII": {
+    "name": "Enseignements du masque de cuivre II",
+    "description": "Enseignements du masque de cuivre II"
+  },
+  "DogmaOfTheBrassMaskPartIII": {
+    "name": "Enseignements du masque de cuivre III",
+    "description": "Enseignements du masque de cuivre III"
+  },
+  "RecordsOfTheAncientOasesPartI": {
+    "name": "Chroniques des anciennes oasis (1)",
+    "description": "Chroniques des anciennes oasis (1)"
+  },
+  "RecordsOfTheAncientOasesPartII": {
+    "name": "Chroniques des anciennes oasis (2)",
+    "description": "Chroniques des anciennes oasis (2)"
+  },
+  "RecordsOfTheAncientOasesPartIII": {
+    "name": "Chroniques des anciennes oasis (3)",
+    "description": "Chroniques des anciennes oasis (3)"
+  },
+  "RecordsOfTheAncientOasesPartIV": {
+    "name": "Chroniques des anciennes oasis (4)",
+    "description": "Chroniques des anciennes oasis (4)"
+  },
+  "RecordsOfTheAncientOasesPartV": {
+    "name": "Chroniques des anciennes oasis (5)",
+    "description": "Chroniques des anciennes oasis (5)"
+  },
+  "RecordsOfTheAncientOasesPartVI": {
+    "name": "Chroniques des anciennes oasis (6)",
+    "description": "Chroniques des anciennes oasis (6)"
+  },
+  "ConscriptionSlate": {
+    "name": "Stèle de conscription",
+    "description": "Stèle de conscription"
+  },
+  "RedVulturesFeather": {
+    "name": "Plume de Vautour rouge",
+    "description": "Un des plumes qui permettent au Vautour rouge de voler. Elles peuvent être utilisées pour créer des pigments éclatants... Ou encore des poisons mortels."
+  },
+  "ScorpionsSting": {
+    "name": "Dard de Scorpion",
+    "description": "Le dard d'un Scorpion relié à ses glandes. Autrefois le choix de prédilection pour les assassinats dans le désert."
+  },
+  "FlyingSerpentsHorn": {
+    "name": "Corne de Serpent volant",
+    "description": "Comme son nom l'indique, il s'agit de la corne d'un Serpent volant. Les tribus du désert la réduisent souvent en poudre pour en faire des potions inefficaces qu'ils vendent aux chercheurs de la ville comme tonique pour l'insomnie. Celles-ci se vendent très bien."
+  },
+  "CaptainZoyaSnezhevnasReportI": {
+    "name": "Rapport du capitaine Zoya Snezhevna I",
+    "description": "Rapport du capitaine Zoya Snezhevna I"
+  },
+  "CaptainZoyaSnezhevnasReportII": {
+    "name": "Rapport du capitaine Zoya Snezhevna II",
+    "description": "Rapport du capitaine Zoya Snezhevna II"
+  },
+  "CaptainZoyaSnezhevnasReportIII": {
+    "name": "Rapport du capitaine Zoya Snezhevna III",
+    "description": "Rapport du capitaine Zoya Snezhevna III"
+  },
+  "DamagedRecordsI": {
+    "name": "Registre endommagé I",
+    "description": "Registre endommagé I"
+  },
+  "DamagedRecordsII": {
+    "name": "Registre endommagé II",
+    "description": "Registre endommagé II"
+  },
+  "TanitEmblemMarkedRecords": {
+    "name": "Registre avec l'emblème des Tanit",
+    "description": "Registre avec l'emblème des Tanit"
+  },
+  "FatuiLetter": {
+    "name": "Lettre des Fatui",
+    "description": "Document de retrait interne"
+  },
+  "AnAbandonedLetter": {
+    "name": "Une lettre abandonnée",
+    "description": "Une lettre abandonnée"
+  },
+  "AkademiyaEmblemMarkedContract": {
+    "name": "Contrat avec le sceau de l'Académie",
+    "description": "Contrat avec le sceau de l'Académie"
+  },
+  "RestoredBlueprintsOfAMechanicalBehemothsPowerSystem": {
+    "name": "Croquis restauré du système d'alimentation d'une énorme machine",
+    "description": "Croquis restauré du système d'alimentation d'une énorme machine"
+  },
+  "SecretLetterToAderfi": {
+    "name": "Lettre secrète pour Aderfi",
+    "description": "Lettre secrète pour Aderfi"
+  },
   "RandomWeaponShards": {
     "name": "Fragments d'arme",
     "description": "Des fragments d'une certaine arme. La raison de la casse est inconnue..."
+  },
+  "UnattributedRamenVoucher": {
+    "name": "Coupon pour ramen d'origine inconnue",
+    "description": "Un cadeau de remerciement pour avoir aidé l'« Authentique Roi oni des scarabées de combat » Arataki Itto à concourir contre le Grand Maître Hanakado lors de «{NON_BREAK_SPACE}L'extraordinaire et exaltante bagarre extrême de scarabées du sublime Arataki ». Il est également la preuve de l'ascension rapide de deux étoiles montantes des combats de scarabées, « Bras droit du Roi oni » et « Melon lavande de fer blanc ».\\nL'Authentique Roi oni des scarabées de combat affirme que vous pouvez « profiter d'un bol de ramen gratuitement pendant deux mois d'affilée » en montrant ce coupon à l'étal. Mais... De quel étal parle-t-il exactement ?"
+  },
+  "NeatNote": {
+    "name": "Note soignée",
+    "description": "Notes organisées"
+  },
+  "JehtsLetter": {
+    "name": "Lettre de Jeht",
+    "description": "Lettre de Jeht"
+  },
+  "UfairahsNotes": {
+    "name": "Notes d'Ufairah",
+    "description": "Notes d'Ufairah"
+  },
+  "AncientStoneKey": {
+    "name": "Vieille clé en pierre",
+    "description": "Une clé mystérieuse portée par la matriarche de la tribu des Tanit. Elle devrait être capable d'ouvrir une certaine porte quelque part..."
+  },
+  "CrumpledNamelist": {
+    "name": "Liste de noms froissée",
+    "description": "Liste de noms froissée"
+  },
+  "WarehouseInventoryRecords": {
+    "name": "Inventaire de l'entrepôt",
+    "description": "Inventaire de l'entrepôt"
+  },
+  "RecordsOfTheAncientOasesPartVII": {
+    "name": "Chroniques des anciennes oasis (7)",
+    "description": "Chroniques des anciennes oasis (7)"
+  },
+  "RecordsOfTheAncientOasesPartVIII": {
+    "name": "Chroniques des anciennes oasis (8)",
+    "description": "Chroniques des anciennes oasis (8)"
+  },
+  "RecordsOfTheAncientOasesPartIX": {
+    "name": "Chroniques des anciennes oasis (9)",
+    "description": "Chroniques des anciennes oasis (9)"
+  },
+  "RecordsOfTheAncientOasesPartX": {
+    "name": "Chroniques des anciennes oasis (10)",
+    "description": "Chroniques des anciennes oasis (10)"
+  },
+  "EmploymentCodeOfConductTablet": {
+    "name": "Tablette de conduite des employeurs",
+    "description": "Tablette de conduite des employeurs"
+  },
+  "TribeMerchantsLetter": {
+    "name": "Lettre du marchand de clan",
+    "description": "Lettre du marchand de clan"
+  },
+  "JehtsNote": {
+    "name": "Note de Jeht",
+    "description": "Note de Jeht"
+  },
+  "PipingHotBambooShootSoup": {
+    "name": "Soupe piquante de porc aux pousses de bambou",
+    "description": "De la soupe de porc aux pousses de bambou cuisinée avec le cuiseur suprême de Souffle-Nuages. « Son apparence est exquise, et son arôme riche et intense », d'après la critique qu'en a faite Zhongli. Parmi ses ingrédients clés, on trouve notamment des pousses de bambou naissantes, qui sont connues pour être difficiles à trouver... Pour diverses raisons, la valeur commémorative de ce plat dépasse de loin sa valeur culinaire. Étant donné qu'il a été créé par un Adepte, il ne devrait pas se détériorer même si vous le mettez dans votre sac."
+  },
+  "WarriorsSpiritSwordfightingArenaTicket": {
+    "name": "Ticket d'entrée « La voie du guerrier{NON_BREAK_SPACE}»",
+    "description": "Au-delà des nations et des identités, unis par la voie du guerrier."
   },
   "SilkFlowerSeed": {
     "name": "Graine de fleur de soie",
@@ -10161,7 +10585,7 @@
   },
   "Steelwing": {
     "name": "Ailes d'acier",
-    "description": "Lorsqu'un personnage plane ou se retrouve en l'air suite à un saut, il obtient 1 cumul d'Ailes d'acier toutes les 0,3 s, jusqu'à un maximum de 3 cumuls. Lorsque le personnage exécute une attaque plongeante, chaque cumul d'Ailes d'acier augmente les DGT de cette attaque de 35 %. Tous les cumuls d'Ailes d'acier de ce personnage sont alors consommés."
+    "description": "Lorsqu'un personnage plane ou se retrouve en l'air suite à un saut, il obtient 1 cumul d'ailes d'acier toutes les 0,3 s, jusqu'à un maximum de 3 cumuls. Lorsque le personnage exécute une attaque plongeante, chaque cumul d'ailes d'acier augmente les DGT de cette attaque de 35 %. Tous les cumuls d'ailes d'acier de ce personnage sont alors consommés."
   },
   "Galespring": {
     "name": "Source du vent",
@@ -10193,7 +10617,7 @@
   },
   "BladeDance": {
     "name": "Danse de lames",
-    "description": "Les personnages disposent de 5 cumuls de l'effet Danse de lames, chaque cumul augmentant les DGT des attaques normales de 15 %. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %. Lorsqu'un personnage subit des DGT, il perd 1 cumul de Danse de lames. Un maximum de 1 cumul peut être perdu toutes les secondes de cette manière. Un personnage obtient 1 cumul de Danse de lames toutes les 10 s qu'il passe sur le champ de bataille, jusqu'à un maximum de 5 cumuls. Le TdR, le nombre de cumuls et les effets sont calculés indépendamment pour tous les personnages."
+    "description": "Les personnages disposent de 5 cumuls de l'effet Danse de lames, chaque cumul augmentant les DGT des attaques normales de 15 %. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %. Lorsqu'un personnage subit des DGT, il perd 1 cumul de danse de lames. Un maximum de 1 cumul peut être perdu toutes les secondes de cette manière. Un personnage obtient 1 cumul de danse de lames toutes les 10 s qu'il passe sur le champ de bataille, jusqu'à un maximum de 5 cumuls. Le TdR, le nombre de cumuls et les effets sont calculés indépendamment pour tous les personnages."
   },
   "Courageous": {
     "name": "Vaillance",
@@ -10209,7 +10633,7 @@
   },
   "IntertwinedSteps": {
     "name": "Pas de danse",
-    "description": "Lorsqu'un personnage de l'équipe utilise un déchaînement élémentaire, un effet de rotation élémentaire se produit, augmentant la maîtrise élémentaire de tous les personnages de l'équipe de 100 pts pendant 20 s, avec un maximum de 3 cumuls. Si l'effet est déclenché en ayant déjà 3 cumuls, une onde de choc est libérée, infligeant des DGT de zone."
+    "description": "Lorsqu'un personnage de l'équipe utilise un déchaînement élémentaire, l'effet Rotation élémentaire se produit, augmentant la maîtrise élémentaire de tous les personnages de l'équipe de 100 pts pendant 20 s, avec un maximum de 3 cumuls. Si l'effet est déclenché en ayant déjà 3 cumuls, une onde de choc est libérée, infligeant des DGT de zone."
   },
   "Ritual": {
     "name": "Restauration rituelle",
@@ -10229,7 +10653,7 @@
   },
   "RefinedBurst": {
     "name": "Déchaînement amélioré",
-    "description": "Augmente le Niv. du déchaînement élémentaire de tous les personnages de l'équipe de 1.\\nNiveau max : 15"
+    "description": "Augmente le Niv. du déchaînement élémentaire de tous les personnages de l'équipe de 1.\\nNiv. maximum : 15"
   },
   "ChargeUp": {
     "name": "Restauration élémentaire",
@@ -10301,7 +10725,7 @@
   },
   "Challenger": {
     "name": "Duelliste acharné",
-    "description": "En combat, lorsqu'il n'y a pas plus de 2 ennemis à proximité d'un personnage, son ATQ augmente de 20 % et sa DÉF de 20 %."
+    "description": "Au combat, lorsqu'il n'y a pas plus de 2 ennemis à proximité d'un personnage, son ATQ augmente de 20 % et sa DÉF de 20 %."
   },
   "FracturedFruitBit": {
     "name": "Morceau de fruit fracturé",
@@ -10317,7 +10741,7 @@
   },
   "DanceOfAbundance": {
     "name": "Danse de l'abondance",
-    "description": "Après avoir utilisé un déchaînement élémentaire, un effet de profusion élémentaire se déclenche, augmentant les DGT infligés par les déchaînements élémentaires de tous les personnages de l'équipe de 12 % pendant 15 s. Cet effet peut être cumulé 5 fois maximum. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %."
+    "description": "Après avoir utilisé un déchaînement élémentaire, l'effet Profusion élémentaire se déclenche, augmentant les DGT infligés par les déchaînements élémentaires de tous les personnages de l'équipe de 12 % pendant 15 s. Cet effet peut être cumulé 5 fois maximum. Avec 5 cumuls, la VIT d'attaque normale augmente de 15 %."
   },
   "Conductivity": {
     "name": "Conductivité",
@@ -10915,6 +11339,26 @@
     "name": "PB - Rivières stellaires",
     "description": "Thème.\\nLe nom du festin tomba dans l'oubli, les trois rivières se dispersèrent dans les nuages de fumée et l'automne demeura à la courbe du crépuscule."
   },
+  "AlhaithamEnlightenment": {
+    "name": "Alhaitham - Érudition",
+    "description": "Thème.\\n« Les seules choses auxquelles les chercheurs doivent se conformer sont les débats et la dialectique. Ce n'est qu'en remettant tout en question à tout moment que l'on peut éviter de tomber dans les préjugés. »"
+  },
+  "YaoyaoYuegui": {
+    "name": "Yaoyao - Yuegui",
+    "description": "Thème.\\n« Pouvez-vous deviner lequel est mon Yuegui ? Eh oui, ils le sont tous ! »"
+  },
+  "CelebrationLenticularClouds": {
+    "name": "Célébration - Nuage lenticulaire",
+    "description": "Thème.\\nLes nuages flottants se dispersaient vers les mille sommets à l'aube."
+  },
+  "TravelNotesRhythmAndRhyme": {
+    "name": "PB - Rime",
+    "description": "Thème.\\nSous de magnifiques rayons écarlates éclairant le ciel nocturne, des carillons sont orchestrés pour célébrer l'année écoulée. Les palais dorés sont ornés de rideaux de perles, les balustrades peintes en argent par le clair de lune et les fêtes sont remplies de chants et de danses joyeux. Dans les feux d'artifice, une richesse d'instruments joue à l'unisson, harmonieusement."
+  },
+  "AchievementSandstorm": {
+    "name": "Succès - Tempête de sable",
+    "description": "Thème.\\nDans l'interminable tempête de sable se cachent des rêves anciens..."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
     "description": "Outil permettant de détecter les Anémoculus proches à Mondstadt.\\nUn disque de pierre fabriqué par l'homme, dont les caractéristiques se rapprochent de celles des Statues des Sept et capable de résonner avec les Anémoculus.\\nCe type de pierre résonnant avec les Oculus est un dérivé maladroit des Statues des Sept construites autrefois à travers les terres. C'est précisément cette infériorité qui explique cette soif de résonance vis-à-vis des statues représentant les Archons, en faisant un ustensile prisé des aventuriers et des croyants pour la collecte d'Oculus."
@@ -11151,6 +11595,10 @@
     "name": "« Daguerréotype pétillant »",
     "description": "Ce gadget permet d'enregistrer et de stocker des paysages tout en y ajoutant un filtre de couleur spécial.\\nUn objet à la provenance inconnue. Il capture des images qui ne ressemblent à nulle autre, car celles-ci sont entourées de bulles, ce qui leur donne un aspect fantaisiste. C'est assez curieux, étant donné que l'intérieur de l'appareil ne contient pas d'eau.\\nUn certain capitaine de cavalerie a dit au sujet de cette machine qu'elle « capture le désir de fraîcheur des gens »."
   },
+  "JinniInTheMagicBottleLiloupar": {
+    "name": "Lampe magique de Liloupar",
+    "description": "Liloupar, la grande djinn née des nénuphars dont l'âme a été brisée par un ancien châtiment, a été scellée dans une lampe magique transparente...\\nMaintenant, il semble qu'elle ait trouvé {F#une nouvelle maîtresse}{M#un nouveau maître}...\\n\\nBien qu'elle ne possède qu'un cent millionième de sa puissance d'antan, elle utilisera ce qui lui reste pour aider {F#sa maîtresse}{M#son maître} à traverser les sables chauds et les ruines antiques du Désert de Hadramaveth."
+  },
   "WisdomOrb": {
     "name": "Orbe de sagesse",
     "description": "Un objet important que vous a remis l'organisateur du tournoi de dompteur de la Coupe des nilotpalotus et qui aurait été inventé par le chercheur Kautilya. Utilisez-le pour capturer, héberger et commander des Fongus intelligents. Seuls ceux qui sont capables d'en faire usage peuvent participer au tournoi. Étrangement, cet Orbe vous donne une sensation de déjà-vu..."
@@ -11343,6 +11791,30 @@
     "name": "Banquet de Wanmin",
     "description": "Un feu d'artifice à l'image de l'assistant de la célèbre cheffe du Restaurant Wanmin. Les Liyuéens pensent à la bonne nourriture en le voyant, car les festivals riment avec de délicieux festins en famille."
   },
+  "BetweenTheExquisiteThrowsOfHerEnigmaticDice": {
+    "name": "Entre les lancers exquis de dés",
+    "description": "Un feu d'artifice en forme de dé qui affiche un numéro différent à chaque fois qu'il est déclenché. Il paraît qu'il s'agit d'un cadeau d'un artificier voulant montrer son respect pour la nouvelle propriétaire de la Maison de thé Yanshang. En effet, depuis que cette dernière a repris les lieux, presque tous les joueurs compulsifs ont disparu, le jeu de cartes n'ayant maintenant plus rien à voir avec les moras et étant retourné à sa forme originale et la plus pure : un simple jeu de divertissement."
+  },
+  "InuzakaGeneralsFriendlyHelper": {
+    "name": "Gentil assistant du général d'Inuzaka",
+    "description": "Un romancier itinérant a une fois été chaleureusement accueilli par un général aux oreilles pointues lors de son séjour sur l'Île de Watatsumi. Le petit compagnon canin du général l'ayant profondément marqué, il a chargé un artisan de fabriquer ce feu d'artifice."
+  },
+  "CliffbreakersBannerFluttersInDrumRolls": {
+    "name": "Bannière dans les roulements de tambour",
+    "description": "Un feu d'artifice méticuleusement conçu par un artificier passionné d'art lyrique. Il explose sous la forme des bannières souvent vues dans les spectacles d'opéra. Regarder des opéras est le passe-temps favori de nombreux Liyuéens, et lorsqu'un tel feu d'artifice fleurit dans le ciel, une mélodie inoubliable chantée par une certaine artiste célèbre ne manque pas de vous venir à l'esprit..."
+  },
+  "ThatFairlyEffectualAdviceAgainstWine": {
+    "name": "Conseil efficace contre le vin",
+    "description": "Un feu d'artifice commandé par un marchand qui voyageait souvent entre Liyue et Mondstadt. Il est dit que ce feu d'artifice était un signe de gratitude pour une certaine barmaid, car c'est après avoir été profondément bouleversé par ses paroles que le marchand a arrêté sa consommation excessive d'alcool et a fait une grande fortune."
+  },
+  "RainforestBornFungi": {
+    "name": "Fongus originaire de la forêt tropicale",
+    "description": "Un feu d'artifice qui explose sous la forme d'un Fongus Hydro flottant.\\nUn employé du Bureau des affaires civiles aurait proposé ce design rond après son retour d'un voyage d'affaires à Sumeru, en espérant que son apparence adorable illuminerait le cœur de tous."
+  },
+  "ObligingLittleYuegui": {
+    "name": "Petit Yuegui obligeant",
+    "description": "Un feu d'artifice inspiré par une petite fille chaleureuse.\\nDe nombreuses personnes ont reçu son aide, mais personne ne connaît son nom. Tout ce qu'ils savent, c'est qu'elle appelait son compagnon « Yuegui ». Ce feu d'artifice a donc été commandé en guise d'expression de leur gratitude et de leurs vœux."
+  },
   "RhodeiaOfLoch": {
     "name": "Océanide - Rhodeia",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
@@ -11473,6 +11945,14 @@
   },
   "ProliferatingSpores": {
     "name": "Spores proliférantes",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "PoundingSurprise": {
+    "name": "Cadeau explosif",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "LightningStorm": {
+    "name": "Tempête de coups de tonnerre",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
   },
   "MagicGuide": {
@@ -11899,6 +12379,14 @@
     "name": "Dévote non-conformiste",
     "description": "Tenue de Rosalia. Elle semble avoir été confectionnée sur mesure par l'Église."
   },
+  "SpringbloomMissive": {
+    "name": "Missive de floraison printanière",
+    "description": "Tenue de voyage d'Ayaka. Sa conception est basée sur les robes fontainoises représentées dans les romans légers et semble refléter le style de vie des dames respectables qui résident dans cette nation."
+  },
+  "ASobriquetUnderShade": {
+    "name": "Sobriquet à l'ombre",
+    "description": "Tenue que Lisa avait commandée lors d'une nouvelle visite à Sumeru. D'un équilibre parfait entre praticité et élégance, cette robe ressemble à l'uniforme qu'elle portait lorsqu'elle étudiait à l'Académie."
+  },
   "AdventurerCamp": {
     "name": "Campement d'aventurier",
     "description": "Étapes de mise en place du campement d'aventurier.\\nUn campement qui a été installé à la hâte par des aventuriers dans la nature.\\nLors de l'installation, les aventuriers placent habituellement une barrière pour se protéger contre les monstres. Néanmoins, le bois est rare dans les environs pour fabriquer une barrière solide, les forçant à monter la garde à tour de rôle pour assurer leur sécurité.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations."
@@ -12041,7 +12529,7 @@
   },
   "CottageKitchen": {
     "name": "Maison de fumée de bois",
-    "description": "Étapes de mise en place de la maison de fumée de bois.\\nUne cuisine entièrement équipée dont l'armoire est remplie de condiments soigneusement préparés.\\nLes chefs à la recherche de l'excellence achèteront quotidiennement des ingrédients frais au marché et les vrais artistes culinaires porteront même une attention particulière au bois de chauffage utilisé dans leur cuisine. La jeune cheffe du Restaurant Wanmin a un jour partagé que pour préparer les plats traditionnels du Village de Qingce, il fallait d'abord placer des copeaux de bambou secs dans le poêle et en contrôler soigneusement la flamme. De plus, si l'on peut transformer les arbustes près des baies à crochet en minces bûchettes de chauffage, on peut même ajouter une touche d'arôme mondstadtois.\\nDifférents types de bois de chauffage produisent des effets très différents, et la plupart des chefs ne les maîtriseront jamais vraiment tous. En tant que tel, le Restaurant Wanmin a la mainmise sur cette technique particulière.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Tartaglia, Mona, Xiao, Xiangling, Razor."
+    "description": "Étapes de mise en place de la maison de fumée de bois.\\nUne cuisine entièrement équipée dont l'armoire est remplie de condiments soigneusement préparés.\\nLes chefs à la recherche de l'excellence achèteront quotidiennement des ingrédients frais au marché et les vrais artistes culinaires porteront même une attention particulière au bois de chauffage utilisé dans leur cuisine. La jeune cheffe du Restaurant Wanmin a un jour partagé que pour préparer les plats traditionnels du Village de Qingce, il fallait d'abord placer des copeaux de bambou secs dans le poêle et en contrôler soigneusement la flamme. De plus, si l'on peut transformer les arbustes près des baies à crochet en minces bûchettes de chauffage, on peut même ajouter une touche d'arôme mondstadtois.\\nDifférents types de bois de chauffage produisent des effets très différents, et la plupart des chefs ne les maîtriseront jamais vraiment tous. En tant que tel, le Restaurant Wanmin a la mainmise sur cette technique particulière.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao."
   },
   "WeaponForgingStation": {
     "name": "Station de forgeage d'armes",
@@ -12065,7 +12553,7 @@
   },
   "QingceCloudResidence": {
     "name": "Résidence des nuages de Qingce",
-    "description": "Étapes de mise en place de la résidence des nuages de Qingce.\\nUn hameau de montagne inspiré du Village de Qingce. On dit que l'atmosphère amicale y est contagieuse et que les visiteurs qui y pénètrent se trouveront plus calmes et plus attentifs aux joies simples qu'ils ont peut-être autrefois oubliées.\\nPartir à la poursuite de ses idéaux et passer ses années à chasser une carrière est certainement louable. Mais après avoir passé beaucoup de temps à faire de telles choses, on peut éventuellement se sentir fatigué, et une fois que cela se produit, une vie calme et paisible à la campagne peut rester un bon choix. Le Village de Qingce a toujours maintenu son acceptation de ces jeunes gens qui partent chercher fortune et est prêt à les accueillir de nouveau à bras ouverts à tout moment.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan."
+    "description": "Étapes de mise en place de la résidence des nuages de Qingce.\\nUn hameau de montagne inspiré du Village de Qingce. On dit que l'atmosphère amicale y est contagieuse et que les visiteurs qui y pénètrent se trouveront plus calmes et plus attentifs aux joies simples qu'ils ont peut-être autrefois oubliées.\\nPartir à la poursuite de ses idéaux et passer ses années à chasser une carrière est certainement louable. Mais après avoir passé beaucoup de temps à faire de telles choses, on peut éventuellement se sentir fatigué, et une fois que cela se produit, une vie calme et paisible à la campagne peut rester un bon choix. Le Village de Qingce a toujours maintenu son acceptation de ces jeunes gens qui partent chercher fortune et est prêt à les accueillir de nouveau à bras ouverts à tout moment.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao."
   },
   "OfHuntingAndDancing": {
     "name": "Camp de chasse",
@@ -12137,11 +12625,11 @@
   },
   "FervidAroma": {
     "name": "Arôme fervent",
-    "description": "Le modèle de ce restaurant au décor exquis est une célèbre taverne de la Ville de Sumeru... Modifié pour être utilisé dans la Sérénithéière, évidemment. La vapeur et les effluves des épices flottent dans l'air, enrichissant une expérience déjà joyeuse. Un peu de bon vin et de compagnie suffiront pour un bon repas.\\nLes personnes qui voyagent souvent en groupe choisissent les restaurants où elles mangent en fonction du nombre de places et de la taille des plats. De ce fait, un restaurant de viande grillée constitue un choix optimal. Quant à celles qui voyagent seules, l'ambiance bruyante et animée de ce genre de lieux leur permet de dissimuler leurs gestes pour mieux observer, suivre et manigancer."
+    "description": "Le modèle de ce restaurant au décor exquis est une célèbre taverne de la Ville de Sumeru... Modifié pour être utilisé dans la Sérénithéière, évidemment. La vapeur et les effluves des épices flottent dans l'air, enrichissant une expérience déjà joyeuse. Un peu de bon vin et de compagnie suffira pour un bon repas.\\nLes personnes qui voyagent souvent en groupe choisissent les restaurants où elles mangent en fonction du nombre de places et de la taille des plats. De ce fait, un restaurant de viande grillée constitue un choix optimal. Quant à celles qui voyagent seules, l'ambiance bruyante et animée de ce genre de lieux leur permet de dissimuler leurs gestes pour mieux observer, suivre et manigancer.\\nCompagnon préférant ce set : Alhaitham."
   },
   "OfSettledThoughts": {
     "name": "Pensées arrêtées",
-    "description": "Un bureau dans lequel sont empilés des tomes et dont les bibliothèques ressemblent à des murs. Il est difficile de ne pas se sentir intimidé devant ces montagnes d'ouvrages, mais les connaisseurs savent que la frontière entre la sagesse et l'ignorance n'est pas insurmontable. Il faut seulement être prêt à lire tous ces livres, un par un, en suivant un plan soigneusement élaboré pour rapidement acquérir de nombreuses nouvelles connaissances.\\nCompagnons préférant ce set : Cyno, Faruzan."
+    "description": "Un bureau dans lequel sont empilés des tomes et dont les bibliothèques ressemblent à des murs. Il est difficile de ne pas se sentir intimidé devant ces montagnes d'ouvrages, mais les connaisseurs savent que la frontière entre la sagesse et l'ignorance n'est pas insurmontable. Il faut seulement être prêt à lire tous ces livres, un par un, en suivant un plan soigneusement élaboré pour rapidement acquérir de nombreuses nouvelles connaissances.\\nCompagnons préférant ce set : Cyno, Faruzan, Alhaitham."
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Bref d'adieu à l'agitation et la peine",
@@ -12295,6 +12783,10 @@
     "name": "Lumière arc-en-ciel « Célébration matinale »",
     "description": "Étapes de fabrication de la lumière arc-en-ciel « Célébration matinale ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "CountlessHomesLightUpTheMoon": {
+    "name": "« Infinité de demeures éclairant la lune »",
+    "description": "Étapes de fabrication de l'« Infinité de demeures éclairant la lune ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "StoneworksLampDeepingGloomCandle": {
     "name": "Lampe de maçonnerie « Chandelle des profondeurs »",
     "description": "Étapes de fabrication de la Lampe de maçonnerie « Chandelle des profondeurs ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12322,6 +12814,14 @@
   "BloomingIllumination": {
     "name": "Illumination florissante",
     "description": "Étapes de fabrication de l'illumination florissante.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "FlutteringLight": {
+    "name": "« Lumière fluctuante »",
+    "description": "Étapes de fabrication de la lumière fluctuante.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LightOfSlumber": {
+    "name": "« Lumière engourdissante »",
+    "description": "Étapes de fabrication de la lumière engourdissante.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente",
@@ -12366,6 +12866,14 @@
   "BrightwoodInvigoratingNightstand": {
     "name": "Table de chevet « Vivifiance » en bois radiant",
     "description": "Étapes de fabrication de la table de chevet « Vivifiance » en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AthelTripleDrawerCabinet": {
+    "name": "Armoire à trois tiroirs en bois de tamaris Athel",
+    "description": "Étapes de fabrication de l'armoire à trois tiroirs en bois de tamaris Athel.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AthelPotteryShelf": {
+    "name": "Étagère de poterie en bois de tamaris Athel",
+    "description": "Étapes de fabrication de l'étagère de poterie en bois de tamaris Athel.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Bibliothèque à deux étages",
@@ -12499,7 +13007,7 @@
     "name": "Table pour deux",
     "description": "Étapes de fabrication de la table pour deux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
-  "LongAdhighamaChamferTable": {
+  "LongAdhigamaChamferTable": {
     "name": "Table longue avec chanfrein en bois d'épiphanie",
     "description": "Étapes de fabrication de la table longue avec chanfrein en bois d'épiphanie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
@@ -12727,6 +13235,10 @@
     "name": "« Agrégation de l'habitant des bois »",
     "description": "Étapes de fabrication de l'«{NON_BREAK_SPACE}Agrégation de l'habitant des bois{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "HuedVaseMoltenSand": {
+    "name": "Vase teinté « Sable fondu »",
+    "description": "Étapes de fabrication du vase teinté «{NON_BREAK_SPACE}Sable fondu ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapis de Mondstadt « Ardeur pourpre »",
     "description": "Étapes de fabrication du tapis de Mondstadt « Ardeur pourpre ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12763,6 +13275,10 @@
     "name": "Oliveraie",
     "description": "Étapes de fabrication de l'oliveraie.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "PureLikeWheatSprouts": {
+    "name": "Pureté des germes de blé",
+    "description": "Étapes de fabrication de la pureté des germes de blé.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "TrustyPortableLamp": {
     "name": "Lanterne constamment allumée",
     "description": "Étapes de fabrication de la lanterne constamment allumée.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -12794,6 +13310,18 @@
   "LightOfTheLandOfWisdom": {
     "name": "« Lumière du pays de la sagesse »",
     "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Lumière du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "NightwatchersCandlelight": {
+    "name": "Chandelle du veilleur de nuit",
+    "description": "Étapes de fabrication de la chandelle du veilleur de nuit.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ListeningCandelight": {
+    "name": "Chandelle d'écoute",
+    "description": "Étapes de fabrication de la chandelle d'écoute.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TwowayIronLamp": {
+    "name": "Lampe double en fer",
+    "description": "Étapes de fabrication de la lampe double en fer.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Composition florale « Tranquillité céleste »",
@@ -12943,6 +13471,26 @@
     "name": "« Brillance de l'habitant des bois »",
     "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Brillance de l'habitant des bois ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "HuedVaseSprout": {
+    "name": "Vase teinté « Germe »",
+    "description": "Étapes de fabrication du vase teinté « Germe ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "StarShapedMultipurposeBottle": {
+    "name": "Bouteille polyvalente en étoile",
+    "description": "Étapes de fabrication de la bouteille polyvalente en étoile.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "RealizationsFromTheLandOfWisdom": {
+    "name": "« Réalisation du pays de la sagesse »",
+    "description": "Étapes de fabrication de la « Réalisation du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "RestorativeFragrance": {
+    "name": "« Parfum réparateur »",
+    "description": "Étapes de fabrication du « Parfum réparateur ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TheArtOfRetainingWater": {
+    "name": "« L'art de retenir l'eau »",
+    "description": "Étapes de fabrication de « L'art de retenir l'eau ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Tableau de paysage « Maison de campagne »",
     "description": "Étapes de fabrication du tableau de paysage « Maison de campagne ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -13042,6 +13590,10 @@
   "ForestWatchersConsiderations": {
     "name": "« Considérations du brigadier forestier »",
     "description": "Étapes de fabrication des «{NON_BREAK_SPACE}Considérations du brigadier forestier ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AthelwoodMetalCombatShield": {
+    "name": "Bouclier de combat en bois de tamaris Athel",
+    "description": "Étapes de fabrication du bouclier de combat en bois de tamaris Athel.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "LingeringMoment": {
     "name": "« Moment suspendu »",
@@ -13226,6 +13778,14 @@
   "BrightwoodKebabCart": {
     "name": "Chariot à kebab en bois radiant",
     "description": "Étapes de fabrication du chariot à kebab en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "AbundanceOfCrispAir": {
+    "name": "Abondance d'air vif",
+    "description": "Étapes de fabrication de l'abondance d'air vif.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "DeliberationOfChoice": {
+    "name": "Délibération des choix",
+    "description": "Étapes de fabrication de la délibération des choix.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "HilichurlOutpostHut": {
     "name": "Avant-poste Brutocollinus",
@@ -13539,6 +14099,14 @@
     "name": "« Commission de la cité de la sagesse »",
     "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Commission de la cité de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "SilkyQuellerOfSeaMonsters": {
+    "name": "« Tissu protecteur des bêtes marines{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du « Tissu protecteur des bêtes marines ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "NightOfSerenityInTheSandyBreeze": {
+    "name": "Nuit de sérénité dans la brise de sable",
+    "description": "Étapes de fabrication de la nuit de sérénité dans la brise de sable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux",
     "description": "Étapes de fabrication de la fontaine à fleurs et oiseaux.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -13626,6 +14194,22 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "« Clarté du pays de la sagesse »",
     "description": "Étapes de fabrication de la « Clarté du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PortOrmosGPCraneIII": {
+    "name": "Élévateur type III du Port Ormos",
+    "description": "Étapes de fabrication de l'élévateur type III du Port Ormos.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "CompositeTimberLongDistanceHandCart": {
+    "name": "Chariot longue distance en bois composite",
+    "description": "Étapes de fabrication du chariot longue distance en bois composite.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "CompositeTimberInPortTransferCart": {
+    "name": "Chariot de transfert en bois composite",
+    "description": "Étapes de fabrication du chariot de transfert en bois composite.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ThreeWheeledMountainHandCart": {
+    "name": "Chariot de montagnes à trois roues",
+    "description": "Étapes de fabrication du chariot de montagnes à trois roues.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "AdeptusGate": {
     "name": "Portail des Adeptes",
@@ -13959,6 +14543,42 @@
     "name": "« Clémence du pêcheur »",
     "description": "Étapes de fabrication de la « Clémence du pêcheur ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
+  "HeavyBrightwoodPotteryWheel": {
+    "name": "Tour de potier en bois radiant",
+    "description": "Étapes de fabrication du tour de potier en bois radiant.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "IronSandTreasure": {
+    "name": "« Fer, sable, trésor »",
+    "description": "Étapes de fabrication de « Fer, sable, trésor ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "IronBloodBrokenArmor": {
+    "name": "« Fer, sang, armure brisée »",
+    "description": "Étapes de fabrication de « Fer, sang, armure brisée ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "IronWaterSteam": {
+    "name": "« Fer, eau, vapeur »",
+    "description": "Étapes de fabrication de « Fer, eau, vapeur ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "KarmaphalaWoodLiquidCargoRack": {
+    "name": "Rangement pour produits liquides en bois de karmaphalien",
+    "description": "Étapes de fabrication du rangement pour produits liquides en bois de karmaphalien.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "StringFeatherTrajectory": {
+    "name": "« Corde, plume, trajectoire »",
+    "description": "Étapes de fabrication de « Corde, plume, trajectoire ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "IngenuityOfTheForestForager": {
+    "name": "Ingéniosité du butineur forestier",
+    "description": "Étapes de fabrication de l'ingéniosité du butineur forestier.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ItJustMightWork": {
+    "name": "« Ça pourrait marcher ! »",
+    "description": "Étapes de fabrication de « Ça pourrait marcher ! ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ColorationAndPrecipitation": {
+    "name": "« Coloration et précipitation »",
+    "description": "Étapes de fabrication de « Coloration et précipitation ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Plante en pot « Immensité verdoyante »",
     "description": "Étapes de fabrication de la plante en pot « Immensité verdoyante ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
@@ -14194,6 +14814,34 @@
   "TeaBreakShade": {
     "name": "« Ombre du goûter »",
     "description": "Étapes de fabrication de l'« Ombre du goûter ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenFogGatheringOnSmokyMountains": {
+    "name": "Paravent propice « Brume sur les montagnes »",
+    "description": "Étapes de fabrication du paravent propice « Brume sur les montagnes ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenFleetFeathersAgainstEmeraldWaves": {
+    "name": "Paravent propice « Plumes contre vagues »",
+    "description": "Étapes de fabrication du paravent propice « Plumes contre vagues ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenInstrumentsInTheDistance": {
+    "name": "Paravent propice « Instruments au loin »",
+    "description": "Étapes de fabrication du paravent propice « Instruments au loin ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenOldSongsLingering": {
+    "name": "Paravent propice « Chansons d'antan{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du paravent propice « Chansons d'antan ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenOverlappingCloudsAbovePeaks": {
+    "name": "Paravent propice « Nuages sur les pics »",
+    "description": "Étapes de fabrication du paravent propice « Nuages sur les pics ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PropitiousScreenGenuineWordsTravelFar": {
+    "name": "Paravent propice « Paroles du lointain »",
+    "description": "Étapes de fabrication du paravent propice « Paroles du lointain ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TrumpetAndFirewood": {
+    "name": "« Trompette et bois de chauffage »",
+    "description": "Étapes de fabrication de « Trompette et bois de chauffage ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampadaire en fer forgé",

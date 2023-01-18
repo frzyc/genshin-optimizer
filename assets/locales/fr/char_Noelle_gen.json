@@ -166,7 +166,7 @@
     "name": "Aucune poussière",
     "description": {
       "0": "<strong>Grand ménage</strong> fait bénéficier Noëlle d'un bonus supplémentaire d'ATQ à hauteur de 50 % de sa DÉF.",
-      "1": "De plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée de 1 s (10 s max)."
+      "1": "De plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée de 1 s (10 s maximum)."
     }
   }
 }

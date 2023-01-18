@@ -76,7 +76,7 @@
     "name": "Tụ Phong Cước",
     "description": {
       "0": "Nhảy lên và tung Trường Phái Fudou - Đạn Chân Không về phía kẻ địch, khi trúng sẽ phát nổ, tạo ra Hang Gió để hút lấy vật thể và kẻ địch xung quanh, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
-      "1": "Trường Phái Fudou - Đạn Chân Không khi đánh trúng kẻ địch đính kèm <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ kích hoạt hiệu ứng \"Tụ Phong Nhãn\", hiệu ứng này sẽ phát nổ trong giây lát và gây sát thương phạm vi của thuộc tính nguyên tố tương ứng.",
+      "1": "Trường Phái Fudou - Đạn Chân Không khi đánh trúng kẻ địch có gán ấn <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro> sẽ kích hoạt hiệu ứng \"Tụ Phong Nhãn\", hiệu ứng này sẽ phát nổ trong giây lát và gây sát thương phạm vi của thuộc tính nguyên tố tương ứng.",
       "2": "Trường Phái Fudou - Đạn Chân Không tối đa gây \"Tụ Phong Nhãn\" cho 4 kẻ địch trúng phải; Kẻ địch sẽ không thể ở trong trạng thái \"Tụ Phong Nhãn\" của nhiều loại nguyên tố cùng một lúc.",
       "3": "<br/>",
       "4": "<i>Tích tụ nguyên tố Phong và đá chúng đi là chiêu thức đặc biệt, sẽ luôn đá trúng kẻ địch khi chúng cố chạy trốn.</i>"

@@ -2,7 +2,7 @@
   "setName": "Meteorite inverso",
   "setEffects": {
     "2": "Efficacia scudo +35%.",
-    "4": "Sotto la protezione dello scudo, ottieni un ulteriore aumento dei DAN da attacchi normali e caricati di un 40%."
+    "4": "Sotto la protezione di uno scudo, ottieni un ulteriore aumento dei DAN da attacchi normali e caricati di un 40%."
   },
   "pieces": {
     "flower": {

@@ -49,7 +49,7 @@
       "5": "<br/>",
       "6": "<strong>Détection</strong>",
       "7": "Augmente les DGT du prochain Poing d'arrêt cardiaque. Cet effet peut être cumulé 4 fois maximum.",
-      "8": "Avec 4 cumuls de Détection, vous obtenez un effet de Conviction, permettant au prochain Poing d'arrêt cardiaque d'être encore plus puissant et d'avoir une zone d'effet plus grande.",
+      "8": "Avec 4 cumuls de détection, vous obtenez l'effet Conviction, permettant au prochain Poing d'arrêt cardiaque d'être encore plus puissant et d'avoir une zone d'effet plus grande.",
       "9": "<br/>",
       "10": "<i>Ce coup apparemment ordinaire contient le désir de Heizou de pousser les criminels à se confesser et à se repentir honnêtement.</i>"
     },
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Pratique paradoxale",
     "description": {
-      "0": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion sur le champ de bataille, il obtient 1 cumul de Détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 0,1 s."
+      "0": "Lorsque Shikanoin Heizou déclenche une réaction de Dispersion sur le champ de bataille, il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 0,1 s."
     }
   },
   "passive2": {
@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Justice juvénile",
     "description": {
-      "0": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de Détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 10{NON_BREAK_SPACE}s."
+      "0": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 10{NON_BREAK_SPACE}s."
     }
   },
   "constellation2": {
@@ -155,7 +155,7 @@
   "constellation6": {
     "name": "Dossier étrange",
     "description": {
-      "0": "Chaque cumul de Détection augmente le taux CRIT de <strong>Poing d'arrêt cardiaque</strong> de 4 %. Sous l'effet de Conviction, les DGT CRIT du Poing d'arrêt cardiaque augmentent de 32 %."
+      "0": "Chaque cumul de détection augmente le taux CRIT de <strong>Poing d'arrêt cardiaque</strong> de 4 %. Sous l'effet Conviction, les DGT CRIT du Poing d'arrêt cardiaque augmentent de 32 %."
     }
   }
 }

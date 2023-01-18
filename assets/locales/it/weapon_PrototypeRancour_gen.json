@@ -5,7 +5,7 @@
   "passiveDescription": {
     "0": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>4%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s.",
     "1": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>5%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s.",
-    "2": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>6%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Quest'effetto si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s.",
+    "2": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>6%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s.",
     "3": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>7%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s.",
     "4": "Per colpo a segno, gli attacchi normali o caricati aumentano ATT e DIF di un <cryo>8%</cryo> per 6{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. Si può verificare una sola volta ogni 0,3{NON_BREAK_SPACE}s."
   }

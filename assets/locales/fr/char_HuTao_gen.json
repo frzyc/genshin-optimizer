@@ -53,7 +53,7 @@
       ],
       "5": "<br/>",
       "6": "<strong>Bourgeon de prune</strong>",
-      "7": "Les ennemis affectés par Bourgeon de prune subissent des <pyro>DGT Pyro</pyro> toutes les 4 s, qui sont considérés comme étant des DGT de compétence élémentaire.",
+      "7": "Les ennemis affectés par Bourgeon de prune subissent des <pyro>DGT Pyro</pyro> toutes les 4 s, qui sont considérés comme des DGT de compétence élémentaire.",
       "8": "La même cible ne peut être affectée que par un seul Bourgeon de prune à la fois, et la durée de cet effet ne peut être rafraîchie que par Hu Tao.",
       "9": "<br/>",
       "10": "L'état <strong>Paramita Papilio</strong> se termine à la fin de sa durée, lorsque Hu Tao quitte le champ de bataille ou lorsqu'elle est vaincue.",
@@ -83,7 +83,7 @@
     "name": "Apaisement divin",
     "description": {
       "0": "Faisant appel aux âmes ardentes, Hu Tao inflige des <pyro>DGT Pyro</pyro> dans une large zone.",
-      "1": "Hu Tao récupère à chaque ennemi touché (5 ennemis max) une quantité de PV proportionnelle à ses PV max.",
+      "1": "Hu Tao récupère à chaque ennemi touché (5 ennemis maximum) une quantité de PV proportionnelle à ses PV max.",
       "2": "Les DGT infligés et les PV récupérés sont plus importants si les PV de Hu Tao sont inférieurs ou égaux à 50 % lorsque la compétence touche.",
       "3": "<br/>",
       "4": "<i>Le Funérarium Wangsheng ne voit pas d'un bon œil les âmes refusant de quitter ce monde. La crémation est pour Hu Tao le meilleur moyen d'avoir l'esprit tranquille – mais plus elle est anxieuse et plus son feu est puissant.</i>"

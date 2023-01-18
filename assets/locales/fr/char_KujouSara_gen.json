@@ -14,7 +14,7 @@
         "0": "<strong>Attaque chargée</strong>",
         "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
         "2": "Lors de la visée, des éclairs crépitants s'accumulent sur le carreau de la flèche. Une flèche complètement chargée inflige des <electro>DGT Électro</electro>.",
-        "3": "Sous l'effet de la Protection corvidée, une flèche complètement chargée laisse une plume de corbeau à l'emplacement atteint."
+        "3": "Sous l'effet de la protection corvidée, une flèche complètement chargée laisse une plume de corbeau à l'emplacement atteint."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -44,7 +44,7 @@
     "name": "Tempestrier tengu",
     "description": {
       "0": "Recule à la vitesse d'un Tengu et invoque la protection des corbeaux.",
-      "1": "Bénéficie de la Protection corvidée pendant 18 s, un effet qui est consommé lorsque Sara tire une flèche complètement chargée et laisse une plume de corbeau à l'emplacement atteint par la flèche.",
+      "1": "Bénéficie de la protection corvidée pendant 18 s, un effet qui est consommé lorsque Sara tire une flèche complètement chargée et laisse une plume de corbeau à l'emplacement atteint par la flèche.",
       "2": "La plume de corbeau déclenche Tengu Juurai : Embuscade après un court moment, infligeant des <electro>DGT Électro</electro> aux ennemis proches, et accordant au personnage déployé à portée un bonus d'ATQ en fonction de l'ATQ de base de Sara.",
       "3": "<br/>",
       "4": "Les bonus d'ATQ des différents Tengu Juurai ne se cumulent pas, et leur effet et durée sont déterminés par le dernier Tengu Juurai actif.",
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Volonté immuable",
     "description": {
-      "0": "Sous l'effet de la Protection corvidée de <strong>Tempestrier tengu</strong>, la durée de charge du tir visé est réduite de 60 %."
+      "0": "Sous l'effet de la protection corvidée de <strong>Tempestrier tengu</strong>, la durée de charge du tir visé est réduite de 60 %."
     }
   },
   "passive2": {

@@ -17,7 +17,7 @@
       },
       "breakthrough": {
         "0": "<strong>Squarcio</strong>",
-        "1": "Trascorsi 5 s fuori combattimento, Yelan entra nello stato Squarcio, che comporta una riduzione di un 80% del tempo di ricarica del suo colpo mirato caricato, il quale, una volta a piena carica, permette a Yelan di scoccare una Freccia squarciante, che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max."
+        "1": "Trascorsi 5 s fuori combattimento, Yelan entra nello stato Squarcio, che comporta una riduzione di un 80% del tempo di carica del suo attacco mirato, il quale, una volta a piena carica, permette a Yelan di scoccare una Freccia squarciante, che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -44,10 +44,10 @@
     }
   },
   "skill": {
-    "name": "Linfa persistente",
+    "name": "Linea persistente",
     "description": {
-      "0": "Spara una Linfa salvavita che le permette di muoversi rapidamente, aggrovigliando e marchiando gli avversari lungo il suo percorso.",
-      "1": "Al termine di questo movimento rapido, la Linfa salvavita esplode infliggendo <hydro>DAN da Hydro</hydro> agli avversari marchiati in base ai PS max di Yelan.",
+      "0": "Scaglia una Linea salvavita che le permette di muoversi rapidamente, aggrovigliando e marchiando gli avversari lungo il suo percorso.",
+      "1": "Al termine di questo movimento rapido, la Linea salvavita esplode infliggendo <hydro>DAN da Hydro</hydro> agli avversari marchiati in base ai PS max di Yelan.",
       "2": "<br/>",
       "3": "<strong>Pressione</strong>",
       "4": "Yelan si sposta rapidamente in avanti per una certa distanza.",
@@ -56,7 +56,7 @@
       "7": "Effettua continui movimenti rapidi, durante i quali la resistenza all'interruzione di Yelan aumenta.",
       "8": "Durante questo lasso di tempo, Yelan può controllare i suoi movimenti rapidi e fermarsi utilizzando di nuovo l'abilità.",
       "9": "<br/>",
-      "10": "Inoltre, quando la Linfa salvavita esplode, ogni avversario marchiato garantisce a Yelan un 34% di probabilità di ripristinare lo stato Squarcio.",
+      "10": "Inoltre, quando la Linea salvavita esplode, ogni avversario marchiato garantisce a Yelan un 34% di probabilità di ripristinare lo stato Squarcio.",
       "11": "<br/>",
       "12": "<i>Quando lei inizia a tirare le corde, i malvagi, i furfanti e i subdoli nemici ormai sanno che non c'è più scampo.</i>"
     },
@@ -88,7 +88,7 @@
       "3": "Segue il personaggio e dà inizio a un attacco coordinato nelle circostanze seguenti, infliggendo <hydro>DAN da Hydro</hydro> in base ai PS max di Yelan:",
       "4": [
         " può verificarsi una volta ogni secondo quando il personaggio attivo usa un attacco normale;",
-        " si verifica ogni volta che la Linfa salvavita di Yelan esplode e colpisce gli avversari."
+        " si verifica ogni volta che la Linea salvavita di Yelan esplode e colpisce gli avversari."
       ],
       "5": "<br/>",
       "6": "<i>\"La dipendenza dal gioco d'azzardo ti farà solo del male. Su, lascia che sia io, il mazziere, a fare i calcoli per te. Quante possibilità di battermi pensi di avere, se io ho sette dadi e tu solo uno?\"</i>"
@@ -134,7 +134,7 @@
   "constellation1": {
     "name": "Trappola anticospiratori",
     "description": {
-      "0": "<strong>Linfa persistente</strong> ottiene 1 carica aggiuntiva."
+      "0": "<strong>Linea persistente</strong> ottiene 1 carica aggiuntiva."
     }
   },
   "constellation2": {
@@ -154,23 +154,23 @@
   "constellation4": {
     "name": "Scambio favorevole",
     "description": {
-      "0": "Aumenta di un 10% i PS max di tutti i membri del gruppo per 25{NON_BREAK_SPACE}s per ogni avversario marchiato dalla <strong>Linfa salvavita</strong> quando essa esplode. È possibile ottenere un aumento massimo di un 40% dei PS max in questo modo."
+      "0": "Aumenta di un 10% i PS max di tutti i membri del gruppo per 25{NON_BREAK_SPACE}s per ogni avversario marchiato dalla <strong>Linea salvavita</strong> quando essa esplode. È possibile ottenere un aumento massimo di un 40% dei PS max in questo modo."
     }
   },
   "constellation5": {
     "name": "Trucco del mazziere",
     "description": {
-      "0": "Aumenta di 3 il livello di <strong>Linfa persistente</strong>.",
+      "0": "Aumenta di 3 il livello di <strong>Linea persistente</strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
     "name": "Asso pigliatutto",
     "description": {
-      "0": "Dopo aver usato <strong>Dado Chiaroprofondo</strong>, Yelan entra nello stato Mente superiore.",
+      "0": "Dopo aver usato <strong>Dado Chiaroprofondo</strong>, Yelan entra nello stato di Mente superiore.",
       "1": "In questo stato, tutti gli attacchi normali di Yelan saranno convertiti in Frecce squarcianti speciali. Queste Frecce squarcianti possiedono abilità simili a quelle normali e i DAN inflitti sono considerati DAN da attacco caricato, infliggendo un 156% dei DAN da Freccia squarciante normale.",
       "2": "<br/>",
-      "3": "Lo stato Mente superiore ha una durata di 20 s e termina quando Yelan scocca 5 frecce."
+      "3": "Lo stato Mente superiore ha una durata di 20{NON_BREAK_SPACE}s e termina quando Yelan scocca 5 frecce."
     }
   }
 }

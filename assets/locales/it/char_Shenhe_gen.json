@@ -53,8 +53,8 @@
       "9": "<strong>Aculeo di ghiaccio</strong>",
       "10": "Quando gli attacchi normali, caricati e in picchiata, le abilità elementali e i Tripudi elementali infliggono <cryo>DAN da Cryo</cryo> agli avversari, i DAN inflitti aumentano in base all'ATT attuale di Shenhe.",
       "11": "<br/>",
-      "12": "Gli effetti di Aculeo di ghiaccio cesseranno al termine della sua durata o una volta attivato un determinato numero di volte. Quando si effettua una pressione prolungata anziché una pressione breve, l'effetto Aculeo di ghiaccio dura di più e si può attivare più volte.",
-      "13": "Quando un <cryo>DAN da Cryo</cryo> colpisce più avversari, l'effetto si attiva più volte in base al numero di avversari colpiti. Il numero di volte in cui si attiva l'effetto si calcola singolarmente per ogni membro del gruppo con Aculeo di ghiaccio.",
+      "12": "Gli effetti di Aculeo di ghiaccio cesseranno al termine della sua durata o dopo un certo numero di attivazioni. Quando si effettua una pressione prolungata anziché una pressione breve, l'effetto Aculeo di ghiaccio dura di più e si può attivare più volte.",
+      "13": "Quando un'iterazione di <cryo>DAN da Cryo</cryo> colpisce più avversari, l'effetto si attiva più volte in base al numero di avversari colpiti. Il numero di volte in cui si attiva l'effetto si calcola singolarmente per ogni membro del gruppo con Aculeo di ghiaccio.",
       "14": "<br/>",
       "15": "<i>Il potere degli spiriti non è una falsità. Con l'onere dei suoi ordini, la fanciulla divina si affretta a procedere!</i>"
     },
@@ -83,7 +83,7 @@
       "0": "Libera il potere dello Spirito talismano, permettendogli di aggirarsi liberamente in questo piano infliggendo <cryo>DAN da Cryo ad area</cryo>.",
       "1": "Lo Spirito talismano crea poi un campo che riduce la <cryo>RES a Cryo</cryo> e la RES fisica degli avversari dentro di esso. Infligge inoltre <cryo>DAN da Cryo</cryo> agli avversari all'interno del campo.",
       "2": "<br/>",
-      "3": "<i>La via degli Adepti non è definita esclusivamente dal misterioso e dal fantastico. Solo osservando i cambiamenti nei cieli e nella terra e comprendendo le leggi di causa ed effetto in questo regno, la sua essenza può essere compresa.</i>"
+      "3": "<i>La via degli Adepti non è definita esclusivamente dal misterioso e dal fantastico. Solo osservando i cambiamenti nei cieli e nella terra, e comprendendo le leggi di causa ed effetto in questo regno, la sua essenza può essere compresa.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -115,8 +115,8 @@
     "description": {
       "0": "Dopo aver usato <strong>Evocazione dello spirito primaverile</strong>, Shenhe conferisce a tutti i membri del gruppo vicini i seguenti effetti:",
       "1": [
-        " Pressione: DAN da abilità elementale e Tripudio elementale aumentato di un 15% per 10{NON_BREAK_SPACE}s;",
-        " Pressione prolungata: DAN da attacco normale, caricato e in picchiata aumentato di un 15% per 15{NON_BREAK_SPACE}s."
+        " Pressione: DAN da abilità elementale e Tripudio elementale aumentati di un 15% per 10{NON_BREAK_SPACE}s;",
+        " Pressione prolungata: DAN da attacco normale, caricato e in picchiata aumentati di un 15% per 15{NON_BREAK_SPACE}s."
       ]
     }
   },
@@ -148,10 +148,10 @@
   "constellation4": {
     "name": "Vista acuta",
     "description": {
-      "0": "Quando i personaggi sotto l'effetto di <strong>Aculeo di ghiaccio</strong> applicato da Shenhe attivano i suoi effetti bonus DAN, Shenhe otterrà una carica di Mantra Gelocielo:",
+      "0": "Quando i personaggi sotto l'effetto di <strong>Aculeo di ghiaccio</strong> applicato da Shenhe attivano i suoi effetti bonus DAN, Shenhe otterrà un accumulo di Mantra Gelocielo:",
       "1": [
-        " quando Shenhe usa <strong>Evocazione dello spirito primaverile</strong>, consumerà tutte le cariche di Mantra Gelocielo, aumentando di un 5% i DAN inflitti da Evocazione dello spirito primaverile per ogni carica cumulata usata;",
-        " cumulabile fino a 50 volte. Ogni carica dura 60{NON_BREAK_SPACE}s."
+        " quando Shenhe usa <strong>Evocazione dello spirito primaverile</strong>, consumerà tutti gli accumuli di Mantra Gelocielo, aumentando di un 5% i DAN inflitti da Evocazione dello spirito primaverile per ogni accumulo usato;",
+        " cumulabile fino a 50 volte. Ogni accumulo dura 60{NON_BREAK_SPACE}s."
       ]
     }
   },

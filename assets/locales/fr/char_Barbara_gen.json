@@ -75,7 +75,7 @@
   "burst": {
     "name": "Miracle brillant ♪",
     "description": {
-      "0": "Restaure considérablement les PV des alliés et de vos personnages dans l'équipe ; la quantité de PV restaurés est proportionnelle aux PV max de Barbara.",
+      "0": "Restaure considérablement les PV des alliés et de vos personnages dans l'équipe, la quantité de PV restaurés étant proportionnelle aux PV max de Barbara.",
       "1": "<br/>",
       "2": "<i>Soigner le cœur de chacun, telle est la force du chant de Barbara.</i>"
     },

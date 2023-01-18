@@ -1,7 +1,7 @@
 {
   "setName": "Avventuriere",
   "setEffects": {
-    "2": "I PS max aumentano di 1.000.",
+    "2": "PS max +1.000.",
     "4": "Aprire un baule rigenera un 30% dei PS max per 5{NON_BREAK_SPACE}s."
   },
   "pieces": {

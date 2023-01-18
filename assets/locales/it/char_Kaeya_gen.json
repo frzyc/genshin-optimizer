@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Esibizione eterna",
     "description": {
-      "0": "Finché è attivo, ogni volta che <strong>Valzer glaciale</strong> sconfigge un avversario, la sua durata aumenta di 2,5 s, fino a un massimo di 15{NON_BREAK_SPACE}s."
+      "0": "Finché è attivo, ogni volta che <strong>Valzer glaciale</strong> sconfigge un avversario, la sua durata aumenta di 2,5{NON_BREAK_SPACE}s, fino a un massimo di 15{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {
@@ -151,7 +151,7 @@
   "constellation6": {
     "name": "Tornado glaciale",
     "description": {
-      "0": "<strong>Valzer glaciale</strong> genera 1 stalattite aggiuntiva e viene l'energia viene ripristinata di 15."
+      "0": "<strong>Valzer glaciale</strong> genera 1 stalattite aggiuntiva e ripristina l'energia di 15."
     }
   }
 }

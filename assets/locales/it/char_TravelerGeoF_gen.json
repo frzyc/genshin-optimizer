@@ -101,7 +101,7 @@
   "passive2": {
     "name": "Smottamento frenetico",
     "description": {
-      "0": "Il colpo finale di una combo d'attacco normale innesca un crollo, infliggendo un 60% di ATT come <geo>DAN da Geo ad area</geo>."
+      "0": "Il colpo finale di una combo d'attacco normale innesca un crollo, infliggendo un 60% dell'ATT come <geo>DAN da Geo ad area</geo>."
     }
   },
   "constellation1": {
@@ -140,8 +140,8 @@
   "constellation6": {
     "name": "Macigno perpetuo",
     "description": {
-      "0": "La barriera generata da <strong>Risveglio terrestre</strong> dura 5 s in più.",
-      "1": "Il meteorite generato da <strong>Lama stellare</strong> dura 10 s in più."
+      "0": "La barriera generata da <strong>Risveglio terrestre</strong> dura 5{NON_BREAK_SPACE}s in più.",
+      "1": "Il meteorite generato da <strong>Lama stellare</strong> dura 10{NON_BREAK_SPACE}s in più."
     }
   }
 }

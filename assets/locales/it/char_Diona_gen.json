@@ -135,7 +135,7 @@
     "name": "Agitato, non \"miaoscolato\"",
     "description": {
       "0": "Aumenta i DAN di <strong>Zampe glaciali</strong> e l'assorbimento DAN del suo scudo di un 15%.",
-      "1": "Inoltre, quando Zampe glaciali colpisce i loro bersagli, genera uno scudo che protegge i personaggi vicini sul campo. Ha un 50% di assorbimento DAN dello scudo di <strong>Zampe glaciali</strong> per 5{NON_BREAK_SPACE}s."
+      "1": "Inoltre, quando le zampe colpiscono i loro bersagli, si genera uno scudo che protegge i personaggi vicini sul campo. Ha un 50% di assorbimento DAN dello scudo di <strong>Zampe glaciali</strong> e dura 5{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {

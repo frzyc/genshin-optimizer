@@ -47,9 +47,9 @@
       "2": "<strong>Bannière de général</strong>",
       "3": "Accorde les effets suivants aux personnages déployés dans la zone d'effet en fonction de la quantité de personnages de type <geo>Géo</geo> dans l'équipe au moment de l'utilisation :",
       "4": [
-        " Avoir 1 personnage Géo accorde un effet de Pied ferme : bonus de DÉF.",
-        " Avoir 2 personnages Géo accorde un effet d'Imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
-        " Avoir 3 personnages Géo accorde un effet de Fracas : effets précédents + <geo>bonus de DGT Géo</geo>."
+        " Avoir 1 personnage Géo accorde l'effet Pied ferme : bonus de DÉF.",
+        " Avoir 2 personnages Géo accorde l'effet Imprenabilité : effet précédent + bonus de RÉS à l'interruption.",
+        " Avoir 3 personnages Géo accorde l'effet Fracas : effets précédents + <geo>bonus de DGT Géo</geo>."
       ],
       "5": "<br/>",
       "6": "Gorou ne peut générer qu'une bannière de général à la fois, et les personnages ne peuvent bénéficier des effets que d'une seule bannière de général à la fois. Lorsque le personnage quitte la zone, les effets continuent pendant 2 s.",
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "Vivacité canine : Célérité du vent",
     "description": {
-      "0": "Lorsqu'un personnage déployé (autre que Gorou) dans la zone d'effet de la <strong>bannière de général</strong> ou du champ de <strong>prestige de général</strong> créés par Gorou inflige des DGT Géo à un ennemi, le TdR de <strong>Défense intégrale d'Inuzaka</strong> de Gorou diminue de 2 s.",
+      "0": "Lorsqu'un personnage déployé (hormis Gorou) dans la zone d'effet de la <strong>bannière de général</strong> ou du champ de <strong>prestige de général</strong> créés par Gorou inflige des DGT Géo à un ennemi, le TdR de <strong>Défense intégrale d'Inuzaka</strong> de Gorou diminue de 2 s.",
       "1": "Cet effet peut être déclenché une fois toutes les 10 s."
     }
   },

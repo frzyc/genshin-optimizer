@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
-        "2": "Mentre mira, gli spiriti oscuri del fulmine di Immernachtreich risponderanno alla chiamata della loro Prinzessin e albergheranno nella punta incantata della freccia. Se caricato completamente, il Rachsüchtig Blitz infligge immensi <electro>DAN da Electro</electro>."
+        "2": "Mentre mira, gli spiriti oscuri del fulmine dell'Immernachtreich rispondono alla chiamata della loro Prinzessin per albergare nella punta incantata della freccia. Se caricato completamente, il Rachsüchtig Blitz infligge immensi <electro>DAN da Electro</electro>."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -45,10 +45,10 @@
       "0": "Evoca Oz. Il corvo della notte forgiato di oscurità e fulmine scende in terra, infliggendo <electro>DAN da Electro</electro> in una piccola area d'effetto.",
       "1": "Finché l'abilità è attiva, Oz attacca continuamente gli avversari vicini con i <electro>Freikugel</electro>.",
       "2": "<br/>",
-      "3": "Tieni premuto per regolare il luogo in cui Oz sarà evocato.",
+      "3": "Tieni premuto per regolare la posizione in cui Oz sarà evocato.",
       "4": "Premi di nuovo in qualsiasi momento nella durata dell'abilità per evocarlo di nuovo al fianco di Fischl.",
       "5": "<br/>",
-      "6": "<i>\"Il mio tempo è preziosissimo e non lo sprecherò con gente come voi... Vai, Oz, scagliati e scaglia su di loro il tuo Rachsüchtig Blitz, il lampo che squarcia la lunga notte.\"</i>",
+      "6": "<i>\"Il mio tempo è preziosissimo e non lo sprecherò con gente come voi... Vai, Oz, lanciati e scaglia su di loro il tuo Rachsüchtig Blitz, il lampo che squarcia la lunga notte.\"</i>",
       "7": "<i>—Fiori per la principessa Fischl (IV): Addio Frau Welt</i>"
     },
     "skillParams": {
@@ -73,16 +73,16 @@
   "burst": {
     "name": "Fantasmagoria di mezzanotte",
     "description": {
-      "0": "Evoca Oz perché dispieghi le sue ali gemelle del crepuscolo e difenda Fischl.",
+      "0": "Evoca Oz affinché dispieghi le sue ali gemelle del crepuscolo e difenda Fischl.",
       "1": "Finché l'abilità è attiva, ha le seguenti proprietà:",
       "2": [
-        " Fischl assume la forma di Oz, aumentando notevolmente la sua Velocità di movimento;",
+        " Fischl assume la forma di Oz, aumentando notevolmente la sua VEL di movimento;",
         " colpisce gli avversari vicini con fulmini, infliggendo <electro>DAN da Electro</electro> agli avversari con cui entra in contatto. Ogni avversario si può colpire una sola volta;",
         " al termine degli effetti di quest'abilità, Oz rimane sul campo di battaglia e attacca i nemici della sua Prinzessin. Se Oz è già sul campo di battaglia, questo ripristinerà la durata della sua permanenza."
       ],
       "3": "<br/>",
-      "4": "<i>\"... Nelle orde di bestie che seguono il sangue maledetto, solo il principe Nachtraben, che vide coi suoi occhi l'estinzione di migliaia di mondi, conosce la sua vera grandezza. Perciò, le ali della notte che dispiega sono la sua eterna promessa di proteggere Sua altezza reale.\"</i>",
-      "5": "<i>—Fiori per la principessa Fischl (I): dissoluzione finale</i>"
+      "4": "<i>\"...Nelle orde di bestie che seguono il sangue maledetto, solo il principe Nachtraben, che vide coi suoi occhi l'estinzione di migliaia di mondi, conosce la vera grandezza di lei. Perciò, le ali della notte che dispiega sono la sua eterna promessa di proteggere Sua Altezza Reale.\"</i>",
+      "5": "<i>—Fiori per la principessa Fischl (I): Dissoluzione finale</i>"
     },
     "skillParams": {
       "0": "DAN da Pioggia di tuoni",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Supplizio dei peccatori",
     "description": {
-      "0": "Se il tuo personaggio attivo innesca una <electro>reazione elementale di Electro</electro> quando Oz è in campo, l'avversario viene colpito da una Folgore del castigo, infliggendo <electro>DAN da Electro</electro> pari a un 80% dell'ATT di Fischl."
+      "0": "Se il tuo personaggio attivo innesca una <electro>reazione elementale di Electro</electro> quando Oz è in campo, l'avversario viene colpito da una Folgore del castigo, e subisce <electro>DAN da Electro</electro> pari a un 80% dell'ATT di Fischl."
     }
   },
   "passive3": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Corvo dell'Immernacht",
     "description": {
-      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, Oz effettua un attacco congiunto con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
+      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, quando presente, Oz effettua un attacco congiunto con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
     }
   }
 }

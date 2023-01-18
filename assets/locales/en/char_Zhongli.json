@@ -3,8 +3,8 @@
     "stele": "Stone Stele DMG",
     "resonance": "Resonance DMG",
     "maxStele": "Maximum number of Steles",
-    "nearShield": "Enemies near <strong>Jade Shield</strong>"
+    "nearShield": "Enemy is near the <strong>Jade Shield</strong>"
   },
-  "p1cond": "When the <strong>Jade Shield</strong> takes DMG",
+  "p1cond": "The <strong>Jade Shield</strong> has taken DMG",
   "c6heal": "Maximum Health Regen"
 }

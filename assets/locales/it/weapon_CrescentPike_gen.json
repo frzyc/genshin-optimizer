@@ -3,10 +3,10 @@
   "description": "Un'arma esotica con una lama estremamente lunga alla sommità e un'altra a forma di mezzaluna alla base. Trasportata a Liyue da mercanti stranieri. Con la pratica, può infliggere gravi danni.",
   "passiveName": "Ago energizzante",
   "passiveDescription": {
-    "0": "Una volta raccolta una sfera/particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>20%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
-    "1": "Una volta raccolta una sfera/particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>25%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
-    "2": "Una volta raccolta una sfera/particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>30%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
-    "3": "Una volta raccolta una sfera/particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>35%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
-    "4": "Una volta raccolta una sfera/particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>40%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s."
+    "0": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>20%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
+    "1": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>25%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
+    "2": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>30%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
+    "3": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>35%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s.",
+    "4": "Dopo aver raccolto una sfera o particella elementale, gli attacchi normali e caricati infliggono DAN extra pari a un <cryo>40%</cryo> dell'ATT per 5{NON_BREAK_SPACE}s."
   }
 }

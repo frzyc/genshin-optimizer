@@ -1,0 +1,12 @@
+{
+  "name": "Yaprak Kesen Işık",
+  "description": "Bu yaldızlı kılıç, değerli beyaz dallar kullanılarak yapıldı. Bir zamanlar ormana bela olmuş sayısız zehri yok etmek için kullanılmıştı.",
+  "passiveName": "Beyaz Ay Fırçası",
+  "passiveDescription": {
+    "0": "Kritik Oranı <cryo>%4</cryo> artar. Normal Saldırılar, Element Hasarı verdiğinde Normal Saldırı ve Element Becerilerinin Hasarını, Element Ustalığının <cryo>%120'si</cryo> oranında artıran Yaprak Kesen etkisi kazanılır. Bu etki, 28 defa Hasar verdiğinde veya 12 saniye sonra kaybolur. Yaprak Kesen her 12 saniyede bir tetiklenebilir.",
+    "1": "Kritik Oranı <cryo>%5</cryo> artar. Normal Saldırılar, Element Hasarı verdiğinde Normal Saldırı ve Element Becerilerinin Hasarını, Element Ustalığının <cryo>%150'si</cryo> oranında artıran Yaprak Kesen etkisi kazanılır. Bu etki, 28 defa Hasar verdiğinde veya 12 saniye sonra kaybolur. Yaprak Kesen her 12 saniyede bir tetiklenebilir.",
+    "2": "Kritik Oranı <cryo>%6</cryo> artar. Normal Saldırılar, Element Hasarı verdiğinde Normal Saldırı ve Element Becerilerinin Hasarını, Element Ustalığının <cryo>%180'i</cryo> oranında artıran Yaprak Kesen etkisi kazanılır. Bu etki, 28 defa Hasar verdiğinde veya 12 saniye sonra kaybolur. Yaprak Kesen her 12 saniyede bir tetiklenebilir.",
+    "3": "Kritik Oranı <cryo>%7</cryo> artar. Normal Saldırılar, Element Hasarı verdiğinde Normal Saldırı ve Element Becerilerinin Hasarını, Element Ustalığının <cryo>%210'u</cryo> oranında artıran Yaprak Kesen etkisi kazanılır. Bu etki, 28 defa Hasar verdiğinde veya 12 saniye sonra kaybolur. Yaprak Kesen her 12 saniyede bir tetiklenebilir.",
+    "4": "Kritik Oranı <cryo>%8</cryo> artar. Normal Saldırılar, Element Hasarı verdiğinde Normal Saldırı ve Element Becerilerinin Hasarını, Element Ustalığının <cryo>%240'ı</cryo> oranında artıran Yaprak Kesen etkisi kazanılır. Bu etki, 28 defa Hasar verdiğinde veya 12 saniye sonra kaybolur. Yaprak Kesen her 12 saniyede bir tetiklenebilir."
+  }
+}

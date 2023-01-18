@@ -53,13 +53,13 @@
       ],
       "6": "<br/>",
       "7": "Aloy, Buz Akımı durum etkisindeyken yeni Bobin kademesi elde edemez.",
-      "8": "Bobinin etkileri Aloy alandan ayrıldıktan 30sn sonra kaybolur.",
+      "8": "Bobinin etkileri Aloy savaştan ayrıldıktan 30sn sonra kaybolur.",
       "9": "<br/>",
       "10": "<i>Sana göre burası soğuksa Cut'a hiç gitmemelisin.</i>"
     },
     "skillParams": {
       "0": "Buz Bombası Hasarı",
-      "1": "Buzlu Bombacık",
+      "1": "Buzlu Bombacık Hasarı",
       "2": "Saldırı Azalması",
       "3": "Saldırı Azalma Süresi",
       "4": "Bobin Normal Saldırı Hasar Bonusu",

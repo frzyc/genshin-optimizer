@@ -1,8 +1,8 @@
 {
   "setName": "Compagnia del vagabondo",
   "setEffects": {
-    "2": "Aumenta la maestria elementale di 80.",
-    "4": "Se il personaggio usa un Catalizzatore o un Arco, aumenta di un 35% i DAN da attacco caricato."
+    "2": "Maestria elementale +80.",
+    "4": "Se il personaggio usa un catalizzatore o un arco, aumenta di un 35% i DAN da attacco caricato."
   },
   "pieces": {
     "flower": {

@@ -48,8 +48,8 @@
       "4": "Accumula energia per scagliare un colpo ancora più potente. Mentre accumula energia, ottiene l'effetto Deterioramento che aumenta il potere del Colpo cardiaco. Quando l'abilità viene rilasciata o l'accumulo di energia termina, colpisce in avanti infliggendo <anemo>DAN da Anemo</anemo>.",
       "5": "<br/>",
       "6": "<strong>Deterioramento</strong>",
-      "7": "Aumenta il potere del prossimo Colpo cardiaco. Cumulabile fino a 4 volte.",
-      "8": "4 accumuli di Deterioramento producono l'effetto Condanna, che rendono il prossimo Colpo cardiaco ancora più potente e aumentano l'area d'effetto.",
+      "7": "Aumenta il potere del Colpo cardiaco successivo. Cumulabile fino a 4 volte.",
+      "8": "4 accumuli di Deterioramento producono l'effetto Condanna, che rendono il Colpo cardiaco successivo ancora più potente e ne aumentano l'area d'effetto.",
       "9": "<br/>",
       "10": "<i>Questo colpo all'apparenza ordinario racchiude ciò che Heizou desidera: vedere i criminali confessare le proprie colpe e pentirsi di ciò che hanno fatto.</i>"
     },
@@ -77,7 +77,7 @@
     "description": {
       "0": "Balza in aria e usa Picchiatore vacuo stile Fudou, sferrando un calcio all'avversario. Il Picchiatore vacuo esplode all'impatto col nemico e crea un Tunnel di vento che attrae gli oggetti e gli avversari nelle vicinanze, infliggendo <anemo>DAN da Anemo ad area</anemo>.",
       "1": "Quando Picchiatore vacuo colpisce avversari affetti da <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, applica loro Iride Acchiappavento. Quest'ultima esplode dopo poco tempo e si dissolve, infliggendo DAN ad area del tipo elementale corrispondente.",
-      "2": "Il Picchiatore vacuo può applicare l'Iride Acchiappavento a un massimo di 4 avversari. Un singolo avversario non può essere sotto l'effetto Iridi acchiappavento di elementi diversi contemporaneamente.",
+      "2": "Il Picchiatore vacuo può applicare l'Iride Acchiappavento a un massimo di 4 avversari. Un singolo avversario non può essere sotto l'effetto di Iridi acchiappavento di elementi diversi contemporaneamente.",
       "3": "<br/>",
       "4": "<i>Una tecnica unica che incanala l'elemento Anemo in un punto prima di rilasciarlo in un colpo solo. Una risorsa sempre utile per colpire i criminali in fuga!</i>"
     },
@@ -103,7 +103,7 @@
   "passive1": {
     "name": "Pratica paradossale",
     "description": {
-      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per ogni <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1{NON_BREAK_SPACE}s."
+      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1{NON_BREAK_SPACE}s."
     }
   },
   "passive2": {
@@ -122,13 +122,13 @@
   "constellation1": {
     "name": "Giustizia esuberante",
     "description": {
-      "0": "Per 5 s dopo che Shikanoin Heizou scende in campo, la sua VEL d'attacco normale aumenta di un 15%. Ottiene anche 1 accumulo di Deterioramento per ogni <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 10{NON_BREAK_SPACE}s."
+      "0": "Per 5 s dopo che Shikanoin Heizou scende in campo, la sua VEL d'attacco normale aumenta di un 15%. Ottiene anche 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 10{NON_BREAK_SPACE}s."
     }
   },
   "constellation2": {
     "name": "Raccolta investigativa",
     "description": {
-      "0": "Potenzia l'effetto di attrazione del Tunnel di vento creato da <strong>Calcio acchiappavento</strong> e aumenta la sua durata di 1{NON_BREAK_SPACE}s."
+      "0": "Potenzia l'effetto di attrazione del Tunnel di vento creato da <strong>Calcio acchiappavento</strong> ed estende la sua durata a 1{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {
@@ -141,7 +141,7 @@
   "constellation4": {
     "name": "Tomo delle menzogne",
     "description": {
-      "0": "La prima esplosione dell'Iris acchiappavento in ogni <strong>Calcio acchiappavento</strong> rigenera l'energia elementale di Shikanoin Heizou di 9. Ogni esplosione successiva rigenera l'energia di Heizou di un ulteriore 1,5.",
+      "0": "La prima esplosione dell'Iride acchiappavento in ogni <strong>Calcio acchiappavento</strong> rigenera l'energia elementale di Shikanoin Heizou di 9. Ogni esplosione successiva dello stesso Calcio acchiappavento rigenera l'energia di Heizou di un ulteriore 1,5.",
       "1": "In questo modo, un <strong>Calcio acchiappavento</strong> può rigenerare l'energia di Heizou fino a un totale di 13,5."
     }
   },

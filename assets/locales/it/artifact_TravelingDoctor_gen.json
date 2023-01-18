@@ -1,7 +1,7 @@
 {
   "setName": "Dottoressa errante",
   "setEffects": {
-    "2": "Aumenta di un 20% la guarigione in arrivo.",
+    "2": "Guarigione ricevuta +20%.",
     "4": "Usare il Tripudio elementale ripristina un 20% dei PS."
   },
   "pieces": {

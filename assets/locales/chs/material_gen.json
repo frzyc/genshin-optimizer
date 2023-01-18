@@ -567,6 +567,14 @@
     "name": "珐露珊",
     "description": "来自「一百年前」的学者，喜欢以前辈自居，对各类古老文字与古典机关都颇有研究。"
   },
+  "Yaoyao": {
+    "name": "瑶瑶",
+    "description": "歌尘浪市真君膝下最年幼的弟子，温柔体贴的「小大人」。"
+  },
+  "Alhaitham": {
+    "name": "艾尔海森",
+    "description": "须弥教令院现任书记官，有过人的智慧与才能。生活得自由自在，一般人基本找不到他。"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "神里绫华的命星",
     "description": "神里绫华的命之座激活素材"
@@ -814,6 +822,14 @@
   "FaruzansStellaFortuna": {
     "name": "珐露珊的命星",
     "description": "珐露珊的命之座激活素材"
+  },
+  "YaoyaosStellaFortuna": {
+    "name": "瑶瑶的命星",
+    "description": "瑶瑶的命之座激活素材"
+  },
+  "AlhaithamsStellaFortuna": {
+    "name": "艾尔海森的命星",
+    "description": "艾尔海森的命之座激活素材"
   },
   "GnosticHymnOldNotes": {
     "name": "珍珠纪行·初稿",
@@ -1258,6 +1274,10 @@
   "GlabrousBeans": {
     "name": "秃秃豆",
     "description": "提瓦特常见的豆类作物。带有淡淡的香气，因食用方法多样而被各地民众广泛接受。"
+  },
+  "MysteriousMeat": {
+    "name": "神秘的肉",
+    "description": "散发着神秘气息的新鲜肉块。不知道吃起来会是什么味道呢？"
   },
   "JeansDocumentPackage": {
     "name": "琴的文件包裹",
@@ -3918,6 +3938,10 @@
   "AjilenakhNut": {
     "name": "枣椰",
     "description": "沙漠绿洲中的常绿乔木结出的果实。坚硬果皮下的果肉肉质绵厚，甘甜可口，对沙海子民而言是重要的食物来源。"
+  },
+  "SandGreasePupa": {
+    "name": "沙脂蛹",
+    "description": "在沙漠深处流沙鳗鳗的繁殖地才能找到的枯壳。其坚硬的表壳是为了保护流沙鳗鳗的幼体，直到它们得以适应炎热干燥的沙漠环境而存在的。"
   },
   "Scarab": {
     "name": "圣金虫",
@@ -7879,6 +7903,42 @@
     "name": "真味茶泡饭",
     "description": "流浪者的特色料理。微苦的茶香与清甜的米饭浑然一体，吃上一口就停不下来。如此高超的厨艺，他是怎么做到的？似乎察觉到了你的内心想法，只见他脸色一沉：「还等什么？吃完了就赶快去洗碗。」"
   },
+  "SuspiciousSabzMeatStew": {
+    "name": "奇怪的萨布兹炖肉",
+    "description": "颇具风味的炖肉。酸气有些刺鼻，光是闻着味道，就让人有了一些不妙的联想…放置得再久一些，或许里面会长出蕈兽吧？"
+  },
+  "SabzMeatStew": {
+    "name": "萨布兹炖肉",
+    "description": "颇具风味的炖肉。将多种绿色蔬菜，混合后切碎，与肉块一起放入锅中炖煮。由于加入了柠檬，成品带有温和的酸味。须弥人通常会将其浇在米饭上一同享用。"
+  },
+  "DeliciousSabzMeatStew": {
+    "name": "美味的萨布兹炖肉",
+    "description": "颇具风味的炖肉。香气独特的食材搭配在一起，给味蕾带来了奇妙的享受。大块鲜肉被炖煮得绵软，裹上了深深的幽绿色，仿佛招引着品尝之人信步漫游于苍翠密林。"
+  },
+  "SuspiciousScentedMeatBalls": {
+    "name": "奇怪的秘香肉团",
+    "description": "以肉末为主的菜肴。黯淡的外表，让人无法想象出里面究竟放了什么。稍稍尝上一口…嗯，看来有小麦，嘴唇很明显是被小麦壳刮了一下。"
+  },
+  "ScentedMeatBalls": {
+    "name": "秘香肉团",
+    "description": "以肉末为主的菜肴。先将小麦碾碎烹煮，混合碎肉制成表皮，再炒制洋葱和肉作为内馅，最后揉成肉团炸至金黄。只要火候掌控得当，轻而易举就能享受到大口吃肉的幸福。"
+  },
+  "DeliciousScentedMeatBalls": {
+    "name": "美味的秘香肉团",
+    "description": "以肉末为主的菜肴。酥脆又带嚼劲的表皮包裹着鲜香可口的内馅，相比普通的肉团更具层次感。仅是吃下一个，迷人的肉香就席卷着幸福感直冲头顶，带来独一无二的曼妙享受。"
+  },
+  "IdealCircumstance": {
+    "name": "「理想情况」",
+    "description": "艾尔海森的特色料理。往带有底纹的煎锅中加入蔬菜与肉类制作而成的菜肴。制作者应该是改良了配方，和原菜肴出入甚大。菜肴上的文字意为「思考」。用制作者的话来说：「理想情况是每个人都能做到，但那不可能。」"
+  },
+  "QingceHouseholdDish": {
+    "name": "轻策家常菜",
+    "description": "瑶瑶的特色料理。没有高级餐馆那样的华丽摆盘，外观看似朴实无奇，但只要吃上一口，那种温馨又亲切的味觉享受，便会永远烙印在记忆中。如此滋味，才下舌尖，又上心头。要说其中的缘由，或许这道菜的「调味秘诀」，正是瑶瑶的「关心」。"
+  },
+  "CrocodileJerky": {
+    "name": "鳄鱼肉干",
+    "description": "用塔尼特部族的秘方特制而成的鳄鱼肉干。尽管嚼起来有些费劲，但便于储存的特性依然使其成为了最受部落猎人们喜爱的美味。\\n味道有些像禽肉，但据说营养含量是普通兽肉的八倍以上…"
+  },
   "RecipeItem": {
     "name": "食谱道具",
     "description": "解锁食谱的道具"
@@ -8423,6 +8483,14 @@
     "name": "食谱：萨巴桑炸角",
     "description": "步骤详实的食谱，记载着「萨巴桑炸角」的制作方法。"
   },
+  "RecipeSabzMeatStew": {
+    "name": "食谱：萨布兹炖肉",
+    "description": "步骤详实的食谱，记载着「萨布兹炖肉」的制作方法。"
+  },
+  "RecipeScentedMeatBalls": {
+    "name": "食谱：秘香肉团",
+    "description": "步骤详实的食谱，记载着「秘香肉团」的制作方法。"
+  },
   "CraftedItems": {
     "name": "合成产物",
     "description": "合成系统的产出道具"
@@ -8863,6 +8931,18 @@
     "name": "辉光棱晶",
     "description": "打倒元能构装体后获得的精巧零件。\\n荒漠的王曾经做过一个梦，也做出过许多许诺。\\n在荒漠的传说中，这些机械的造物原本是践行诺言的道具，如今也只有它们的机械记忆体中刻写着无人记得的梦与承诺吧。"
   },
+  "DesiccatedShell": {
+    "name": "残毁的横脊",
+    "description": "圣骸兽脊背上残毁的骨壳。\\n昔日遍布四方之土的灾厄之证，如今唯有在人迹罕至之处方能寻得踪影。"
+  },
+  "SturdyShell": {
+    "name": "密固的横脊",
+    "description": "圣骸兽脊背上坚实的骨壳。\\n噬啮殒落的伟大生灵之躯骸，并藉此升衍的灾兽之骨。纵然窃得昔日权能的片影，兽群终究无法逃过与诸神相同的终局。"
+  },
+  "MarkedShell": {
+    "name": "锲纹的横脊",
+    "description": "圣骸兽脊背上铭镌着古老徽记的骨壳。\\n琅霜般净固的骨壳上，依稀萦绕着遥世的遗恨。终有一日，兽骨会在时之风中散作白灰，而那旧日倾殒的高贵者，最终也会迎来安眠之日吧…"
+  },
   "HurricaneSeed": {
     "name": "飓风之种",
     "description": "无相之风被击败后，所坍缩成的形态。其中蕴含着至纯的风之力。\\n传说在纤细脆弱的蝴蝶体内，也藏有引发飓风的力量。这由纯粹的风构成的蝴蝶，无疑在等待着再次召来暴风的那一天吧。"
@@ -9029,11 +9109,15 @@
   },
   "MirrorOfMushin": {
     "name": "无心的渊镜",
-    "description": "正机之主胸前用于隔断外界的镜面。特意绘上了三重巴纹以宣告其身份与威严。\\n此纹样并非向雷之主人宣告臣服，\\n而是刺往世间既有之威能的利刃；\\n此镜面并非隔绝世人批判之目光；\\n而是断却俗世一切之污脏的宫墙。\\n于此大殿中施舍惩戒，洗净蒙昧，\\n颠倒梦想、剜去心因，重书定业。"
+    "description": "正机之主胸前用于隔断外界的镜面。特意绘上了三重巴纹以宣告其身份与威严。\\n此纹样并非向雷之主人宣告臣服，\\n而是刺往世间既有之威能的利刃；\\n此镜面并非隔绝世人批判之目光，\\n而是断却俗世一切之污脏的宫墙。\\n于此大殿中施舍惩戒，洗净蒙昧，\\n颠倒梦想、剜去心因，重书定业。"
   },
   "DakasBell": {
     "name": "空行的虚铃",
     "description": "状似铃铛，用来连接机体臂部的球形关节部件。看起来精致小巧，却能负荷远超想象的能量。\\n链接手臂，自己的双臂就会失去知觉；\\n链接腿部，自己的双腿几乎无法使力；\\n而链接这颗机械之颅…\\n憎恨与痛苦，疯狂与自傲，都不会被洗去。\\n万幸。"
+  },
+  "PseudoStamens": {
+    "name": "苍砾蕊羽",
+    "description": "沙虫隐于尾中的苍色鞘翼，仿若绽露的花蕊般纤薄。\\n传说在时间开始之前的过去，它们曾在草甸与巨木之下的湿润土地中穿行，如空中飞鸟、水中游鱼。一般认为，花的拟态是为了引诱沙暴中迷途的猎物，但也有说法认为，那盛绽的浮花之形，仿拓的是归于黄沙的，在无数纪元之前的，芳草遍布、繁花依旧盛开的时代。"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦",
@@ -9619,6 +9703,10 @@
     "name": "未来星",
     "description": "某个设定中，大未来星是蕴含着希望和无穷可能的珍贵宝物，未来星仅仅是它分裂出的碎片。如果能集齐全部六个碎片，就可以召唤出真正的大未来星。至于大未来星具体什么样子、有什么用处，这个设定没有说。\\n当然，在其他的设定中，它也可能是一个名叫教令院的组织的库藏物品，而它登记在册的名字是帕沃核心。因为长期无人使用而落上了薄薄一层灰。"
   },
+  "EnergyTransformationCapacitor": {
+    "name": "充能转化容器",
+    "description": "「充能转化容器」\\n不知其名，配方不明，已不可再造的提取物。似乎可作为元能构装体的供能物质。"
+  },
   "RaefsPackage": {
     "name": "里夫的包裹",
     "description": "装有花盆，花种，肥料和许多园艺用品的包裹。拿起来十分沉重，想扛着它跨越沙漠，想必不是一件容易的事…"
@@ -9695,6 +9783,106 @@
     "name": "关垂的订货单据",
     "description": "格奥尔格写给关垂的订货单据，记载着100箱「假日果酿」成交的价格、各项费用的细节、交易的时间和货品预计送达的日期。采购货物的客人阅读后，想必会深感安心。"
   },
+  "Soulferry": {
+    "name": "「渡魂之舟」",
+    "description": "居尔城神殿广场上的「棋子」，其外形来自传说中亡者灵魂所乘坐的扁舟。"
+  },
+  "KhajNisut": {
+    "name": "「圣显厅」",
+    "description": "居尔城神殿广场上的「棋子」，是赤王圣显厅的微缩模型。"
+  },
+  "BorderFort": {
+    "name": "「边境堡垒」",
+    "description": "居尔城神殿广场上的「棋子」，被雕刻成了古代边境堡垒的样子。"
+  },
+  "KingDeshretsPillar": {
+    "name": "「赤王之柱」",
+    "description": "居尔城神殿广场上的「棋子」，其外形来自古老赤王文明的宏大纪念碑。"
+  },
+  "TempleOfGurabad": {
+    "name": "「居尔城神殿」",
+    "description": "居尔城神殿广场上的「棋子」，其外形来自于居尔城宏大的赤王神殿。"
+  },
+  "ActivationDeviceTheMausoleumOfKingDeshret": {
+    "name": "激活器件·「赤王陵」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceDeshretsGlassGoblet": {
+    "name": "激活器件·「赤王的水晶杯」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceSoulferry": {
+    "name": "激活器件·「渡魂之舟」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceKhajNisut": {
+    "name": "激活器件·「圣显厅」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceBorderFort": {
+    "name": "激活器件·「边境堡垒」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceKingDeshretsPillar": {
+    "name": "激活器件·「赤王之柱」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "ActivationDeviceTempleOfGurabad": {
+    "name": "激活器件·「居尔城神殿」",
+    "description": "「棋子」的激活器件，只有当年为赤王效忠的镇灵能够理解其中复杂的机构。"
+  },
+  "MemoriesOfTheEternalOasisI": {
+    "name": "永恒绿洲的记忆·一",
+    "description": "「永恒绿洲」的古老记忆，具象成为了漂浮的符文。"
+  },
+  "MemoriesOfTheEternalOasisII": {
+    "name": "永恒绿洲的记忆·二",
+    "description": "「永恒绿洲」的古老记忆，具象成为了漂浮的符文。"
+  },
+  "MemoriesOfTheEternalOasisIII": {
+    "name": "永恒绿洲的记忆·三",
+    "description": "「永恒绿洲」的古老记忆，具象成为了漂浮的符文。"
+  },
+  "TadhlasFeather": {
+    "name": "塔德菈的翎羽",
+    "description": "猎鹰赖以飞行的羽毛，一旦被拔下就再也飞不起来了…"
+  },
+  "FatuiStrongholdKey": {
+    "name": "愚人众据点钥匙",
+    "description": "愚人众于沙漠建立的据点大门钥匙，有了这把钥匙应该能轻松打开他们的大门吧，希望如此…"
+  },
+  "SacredSealPrecipice": {
+    "name": "圣章石·峭崖",
+    "description": "刻有古老文字的石板，似乎原本是某种构筑物的一部分。在沙海中沉睡了不知几许，又不知承载了谁人的祈愿。曾有人说这是古老国度琴的形制，但却往往出现在讲述情境危险的描述中。后被确认或是峭壁的沿型，即将到来的不幸的预示。"
+  },
+  "SacredSealGrandDoor": {
+    "name": "圣章石·巨门",
+    "description": "刻有古老文字的石板，似乎原本是某种构筑物的一部分。在沙海中沉睡了不知几许，又不知承载了谁人的祈愿。字形或是古老殿堂石门的轮廓。"
+  },
+  "MysteriousStoneSlateI": {
+    "name": "神秘的石板·一",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
+  "MysteriousStoneSlateII": {
+    "name": "神秘的石板·二",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
+  "MysteriousStoneSlateIII": {
+    "name": "神秘的石板·三",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
+  "MysteriousStoneSlateIV": {
+    "name": "神秘的石板·四",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
+  "MysteriousStoneSlateV": {
+    "name": "神秘的石板·五",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
+  "MysteriousStoneSlateVI": {
+    "name": "神秘的石板·六",
+    "description": "刻有铭文的古老石板，材质坚硬，外形奇妙。"
+  },
   "CynosIntroductionLetter": {
     "name": "赛诺的介绍信",
     "description": "由赛诺写下的介绍信，象征着大风纪官赛诺的信任。"
@@ -9739,6 +9927,10 @@
     "name": "「限定款沙漠特别旅行包」",
     "description": "从多莉手中购置的旅行包，里面装满了各种奇奇怪怪的东西。乍一看让人摸不着头脑，仔细研究发现其实很实用…？"
   },
+  "NascentBambooShoots": {
+    "name": "萌蘖的竹笋",
+    "description": "特定时节，在轻策庄一带新鲜生长出土的竹笋，散发着鲜嫩的清香，是不可多得的珍贵食材。"
+  },
   "AShortLetter": {
     "name": "一封短信",
     "description": "用密语写就的短信。不知是谁，出于何种目的置于此处。"
@@ -9758,6 +9950,46 @@
   "SomeonesDiary": {
     "name": "不知何人的日记",
     "description": ""
+  },
+  "InternalWithdrawalDocument": {
+    "name": "内部撤离行动公文",
+    "description": "一份正式公文，被随意地丢在了营地里。"
+  },
+  "PreliminaryTestOnExperimentalSubject": {
+    "name": "关于实验用个体的初步检测",
+    "description": "厚厚一叠信件和研究文件，记录了某个「人类实验样本」的状态。"
+  },
+  "TransferNotification": {
+    "name": "转移通知文件",
+    "description": "愚人众的正式通知文件，似乎与部队的转移目的地有关。"
+  },
+  "PathfindersLogI": {
+    "name": "远途勘探者留书·其一",
+    "description": "远途勘探者留书·其一"
+  },
+  "PathfindersLogII": {
+    "name": "远途勘探者留书·其二",
+    "description": "远途勘探者留书·其二"
+  },
+  "PathfindersLogIII": {
+    "name": "远途勘探者留书·其三",
+    "description": "远途勘探者留书·其三"
+  },
+  "PathfindersLogIV": {
+    "name": "远途勘探者留书·其四",
+    "description": "远途勘探者留书·其四"
+  },
+  "PathfindersLogV": {
+    "name": "远途勘探者留书·其五",
+    "description": "远途勘探者留书·其五"
+  },
+  "PathfindersLogVI": {
+    "name": "远途勘探者留书·其六",
+    "description": "远途勘探者留书·其六"
+  },
+  "NoteRegardingAnExchangeOfGoods": {
+    "name": "关于货物交易的回函",
+    "description": "一封信函，大概是由愚人众寄来，上面似乎书写着阿德菲与他们进行交易的一些细节。"
   },
   "EventNotice": {
     "name": "活动公告",
@@ -9823,9 +10055,201 @@
     "name": "旭东的信",
     "description": "旭东所留下的信，信封里似乎还夹着什么东西…"
   },
+  "RecordsOfGurabadPartI": {
+    "name": "居尔城记事·其一",
+    "description": "居尔城记事·其一"
+  },
+  "RecordsOfGurabadPartII": {
+    "name": "居尔城记事·其二",
+    "description": "居尔城记事·其二"
+  },
+  "RecordsOfGurabadPartIII": {
+    "name": "居尔城记事·其三",
+    "description": "居尔城记事·其三"
+  },
+  "RecordsOfGurabadPartIV": {
+    "name": "居尔城记事·其四",
+    "description": "居尔城记事·其四"
+  },
+  "RecordsOfGurabadPartV": {
+    "name": "居尔城记事·其五",
+    "description": "居尔城记事·其五"
+  },
+  "RecordsOfMtDamavandPartI": {
+    "name": "达马山记事·其一",
+    "description": "达马山记事·其一"
+  },
+  "RecordsOfMtDamavandPartII": {
+    "name": "达马山记事·其二",
+    "description": "达马山记事·其二"
+  },
+  "RecordsOfMtDamavandPartIII": {
+    "name": "达马山记事·其三",
+    "description": "达马山记事·其三"
+  },
+  "DogmaOfTheBrassMaskPartI": {
+    "name": "「黄铜面具」的教导·其一",
+    "description": "「黄铜面具」的教导·其一"
+  },
+  "DogmaOfTheBrassMaskPartII": {
+    "name": "「黄铜面具」的教导·其二",
+    "description": "「黄铜面具」的教导·其二"
+  },
+  "DogmaOfTheBrassMaskPartIII": {
+    "name": "「黄铜面具」的教导·其三",
+    "description": "「黄铜面具」的教导·其三"
+  },
+  "RecordsOfTheAncientOasesPartI": {
+    "name": "古绿洲记事·其一",
+    "description": "古绿洲记事·其一"
+  },
+  "RecordsOfTheAncientOasesPartII": {
+    "name": "古绿洲记事·其二",
+    "description": "古绿洲记事·其二"
+  },
+  "RecordsOfTheAncientOasesPartIII": {
+    "name": "古绿洲记事·其三",
+    "description": "古绿洲记事·其三"
+  },
+  "RecordsOfTheAncientOasesPartIV": {
+    "name": "古绿洲记事·其四",
+    "description": "古绿洲记事·其四"
+  },
+  "RecordsOfTheAncientOasesPartV": {
+    "name": "古绿洲记事·其五",
+    "description": "古绿洲记事·其五"
+  },
+  "RecordsOfTheAncientOasesPartVI": {
+    "name": "古绿洲记事·其六",
+    "description": "古绿洲记事·其六"
+  },
+  "ConscriptionSlate": {
+    "name": "征发令石板",
+    "description": "征发令石板"
+  },
+  "RedVulturesFeather": {
+    "name": "赤鹫翎羽",
+    "description": "赤鹫用以飞翔的羽毛，可以用来研磨出鲜艳的颜料…或致命的毒药。"
+  },
+  "ScorpionsSting": {
+    "name": "毒蝎尾部",
+    "description": "毒蝎的尾刺及与之相连的毒腺，古老沙漠中暗杀者的首选。"
+  },
+  "FlyingSerpentsHorn": {
+    "name": "飞蛇之角",
+    "description": "顾名思义，飞蛇的角。沙漠中的部族人会将它磨成粉，制成毫无疗效的药剂，冒充助眠补品卖给城里的学者，销量不错。"
+  },
+  "CaptainZoyaSnezhevnasReportI": {
+    "name": "佐娅·雪奈茨芙娜大尉的行动报告·其一",
+    "description": "佐娅·雪奈茨芙娜大尉的行动报告·其一"
+  },
+  "CaptainZoyaSnezhevnasReportII": {
+    "name": "佐娅·雪奈茨芙娜大尉的行动报告·其二",
+    "description": "佐娅·雪奈茨芙娜大尉的行动报告·其二"
+  },
+  "CaptainZoyaSnezhevnasReportIII": {
+    "name": "佐娅·雪奈茨芙娜大尉的行动报告·其三",
+    "description": "佐娅·雪奈茨芙娜大尉的行动报告·其三"
+  },
+  "DamagedRecordsI": {
+    "name": "残损的记录·其一",
+    "description": "残损的记录·其一"
+  },
+  "DamagedRecordsII": {
+    "name": "残损的记录·其二",
+    "description": "残损的记录·其二"
+  },
+  "TanitEmblemMarkedRecords": {
+    "name": "印有塔尼特徽记的记录",
+    "description": "印有塔尼特徽记的记录"
+  },
+  "FatuiLetter": {
+    "name": "愚人众信件",
+    "description": "内部撤离行动公文"
+  },
+  "AnAbandonedLetter": {
+    "name": "一封遗留的书信",
+    "description": "一封遗留的书信"
+  },
+  "AkademiyaEmblemMarkedContract": {
+    "name": "印有教令院徽记的约契",
+    "description": "印有教令院徽记的约契"
+  },
+  "RestoredBlueprintsOfAMechanicalBehemothsPowerSystem": {
+    "name": "巨大机械的能源系统复原图",
+    "description": "巨大机械的能源系统复原图"
+  },
+  "SecretLetterToAderfi": {
+    "name": "给阿德菲的密信",
+    "description": "给阿德菲的密信"
+  },
   "RandomWeaponShards": {
     "name": "某种武器的「碎片」",
     "description": "某种武器的碎片。不知道为何会被摧毁成这样…"
+  },
+  "UnattributedRamenVoucher": {
+    "name": "归属不明的拉面优惠券",
+    "description": "在「荒泷极意堂堂斗虫大试合」中，协助「真剑斗虫大鬼王」荒泷一斗对抗「花角玉将」一派的斗虫好手后得到的谢礼，也是「鬼王的左膀右臂」和「破空白铁小堇瓜」两位斗虫新星迅速崛起的证明。\\n「真剑斗虫大鬼王」声称，只要向店家出售这张优惠券，就能「连续两个月，每天都免费吃一碗拉面」。不过…这张优惠券究竟能被用在哪家拉面店呢？"
+  },
+  "NeatNote": {
+    "name": "整洁的字条",
+    "description": "一份整洁的字条"
+  },
+  "JehtsLetter": {
+    "name": "婕德的信",
+    "description": "婕德的信"
+  },
+  "UfairahsNotes": {
+    "name": "优菲的笔记",
+    "description": "优菲的笔记"
+  },
+  "AncientStoneKey": {
+    "name": "古老的石制钥匙",
+    "description": "塔尼特部族的主母曾随身携带的神秘钥匙，似乎能够开启某处大门…"
+  },
+  "CrumpledNamelist": {
+    "name": "被揉皱的名单",
+    "description": "被揉皱的名单"
+  },
+  "WarehouseInventoryRecords": {
+    "name": "仓库物资订单",
+    "description": "仓库物资订单"
+  },
+  "RecordsOfTheAncientOasesPartVII": {
+    "name": "古绿洲记事·其七",
+    "description": "古绿洲记事·其七"
+  },
+  "RecordsOfTheAncientOasesPartVIII": {
+    "name": "古绿洲记事·其八",
+    "description": "古绿洲记事·其八"
+  },
+  "RecordsOfTheAncientOasesPartIX": {
+    "name": "古绿洲记事·其九",
+    "description": "古绿洲记事·其九"
+  },
+  "RecordsOfTheAncientOasesPartX": {
+    "name": "古绿洲记事·其十",
+    "description": "古绿洲记事·其十"
+  },
+  "EmploymentCodeOfConductTablet": {
+    "name": "雇佣守则石板",
+    "description": "雇佣守则石板"
+  },
+  "TribeMerchantsLetter": {
+    "name": "部族行商的信件",
+    "description": "部族行商的信件"
+  },
+  "JehtsNote": {
+    "name": "婕德的便条",
+    "description": "婕德的便条"
+  },
+  "PipingHotBambooShootSoup": {
+    "name": "热腾腾的腌笃鲜",
+    "description": "用「机关烹饪神机」烹饪出的「腌笃鲜」。被钟离评价为「色泽饱满，气味醇香」。所选食材之一为萌蘖的竹笋，来之不易…如此种种缘由叠加，纪念意义已高过了它作为食物本身的价值。既然是仙家出品，就这么放在包里，应该也不会坏吧？"
+  },
+  "WarriorsSpiritSwordfightingArenaTicket": {
+    "name": "「演武传心」大赛入场券",
+    "description": "不分国籍，不论身份，以武会友，演武传心。"
   },
   "SilkFlowerSeed": {
     "name": "「霓裳花」的种子",
@@ -10915,6 +11339,26 @@
     "name": "纪行·灵津",
     "description": "名片纹饰。\\n旧宴何为名，三川流散烟云中，秋津犹尚浮暮景。"
   },
+  "AlhaithamEnlightenment": {
+    "name": "艾尔海森·诲明",
+    "description": "名片纹饰。\\n「学者应当遵循之物，唯有知论与证辩。只有时刻保持对一切的质疑，才能避免陷入偏见。」"
+  },
+  "YaoyaoYuegui": {
+    "name": "瑶瑶·月桂",
+    "description": "名片纹饰。\\n「猜猜看，这里哪一个是月桂？没错，大家都是月桂喔！」"
+  },
+  "CelebrationLenticularClouds": {
+    "name": "庆典·岫云",
+    "description": "名片纹饰。\\n浮云晓向千峰散。"
+  },
+  "TravelNotesRhythmAndRhyme": {
+    "name": "纪行·合韵",
+    "description": "名片纹饰。\\n霞明玉映海灯天，今宵共奏华年。金殿珠帘，月彻银栏，虹歌流彩绣筵。花如烟。瑟彼清弦，鸾笙瑶管，和乐且湛。"
+  },
+  "AchievementSandstorm": {
+    "name": "成就·砂岚",
+    "description": "名片纹饰。\\n永不停息的沙暴之内，隐匿着古老的梦想…"
+  },
   "AnemoculusResonanceStone": {
     "name": "风神瞳共鸣石",
     "description": "在蒙德使用时，能寻找附近的「散失的风神瞳」。\\n与风之七天神像有着某种近似特性的人造石盘，能与风神瞳产生共鸣。\\n神瞳共鸣石是对古代建立在大地各处的七天神像的拙劣仿造。正因拙劣，才会渴求神瞳的力量，为虔信者与冒险者提供收集神瞳的机会。"
@@ -11151,6 +11595,10 @@
     "name": "「清冽水沫留影机」",
     "description": "使用时，会记录储存当前景象，并附带特殊色调的便利道具。\\n来历不明的奇特道具，成像效果尤为别致，机器内部明明没有多余的水分，拍摄出的画片周围却有着缤纷的泡沫，使得画面具备了一种梦幻的观感。\\n因此，某位骑兵队长形容这台机器「捕捉到了人们对清凉的期待」。"
   },
+  "JinniInTheMagicBottleLiloupar": {
+    "name": "魔瓶镇灵·利露帕尔",
+    "description": "自睡莲而生的大镇灵利露帕尔，因遭受古老的绝罚而神魂分裂，被封印在透明的魔瓶之中…\\n如今，似乎她又寻得了新的主人…\\n\\n如今只拥有过往伟大力量的一万万分之一。会利用这些力量，帮助她的「主人」通行于千壑沙地的热砂与古城。"
+  },
   "WisdomOrb": {
     "name": "「意智宝珠」",
     "description": "「月莲杯」驯兽师大赛官方提供的关键道具，能够捕捉、容纳与指挥富有灵性的蕈兽，据称是学者考特里亚的发明。唯有娴熟地使用这种道具，才能获准参加「月莲杯」驯兽师大赛。不过，这种道具的部分表现令人倍感熟悉，似乎在某些地方见过…"
@@ -11343,6 +11791,30 @@
     "name": "万民宴聚享肴绮",
     "description": "以某位万民堂名厨的小帮手为参考制作的创意烟花。一看到这位名厨的小帮手，璃月居民们就会回想起格外美味的菜肴。丰盛的家宴对于佳节而言必不可少。"
   },
+  "BetweenTheExquisiteThrowsOfHerEnigmaticDice": {
+    "name": "玲珑玉骰玄掷间",
+    "description": "骰子造型的烟花，每次燃放时，都有可能绽放出不同的点数，据说是烟花工匠为表对「岩上茶室」新老板的敬重所制的产物。自从新的老板接管了那间茶室，嗜赌之徒几乎全数销声匿迹，牌戏与摩拉再无关联，回归了最初最纯粹的形态——闲暇时的普通游戏。"
+  },
+  "InuzakaGeneralsFriendlyHelper": {
+    "name": "犬坂牙将助阵勤",
+    "description": "某位四处云游的作家访问海祇岛期间，曾被一位「尖耳大将」盛情招待，对他的小小助手印象深刻。因此，作家为工匠提供了灵感，制作了这款烟花。"
+  },
+  "CliffbreakersBannerFluttersInDrumRolls": {
+    "name": "破嶂旌旗桴鼓鸣",
+    "description": "热爱戏曲的烟花工匠精心设计的烟花，绽放后的形貌宛如戏曲中出现的旌旗。听戏是许多璃月人最为喜爱的活动，只要观赏到这种烟花，耳畔似乎就响起了某位名角精妙绝伦的唱段…"
+  },
+  "ThatFairlyEffectualAdviceAgainstWine": {
+    "name": "辞拒杜康吼彩霞",
+    "description": "曾在璃月与蒙德之间频繁来往的商人委托工匠制作的烟花，据说是为了对某位特别的酒保表示感谢——被那位酒保的话语震撼后，商人不再贪杯，并因此斩获了大量业绩。"
+  },
+  "RainforestBornFungi": {
+    "name": "琼林潏露生灵蕈",
+    "description": "「浮游水蕈兽」造型的创意烟花。\\n据称，一位曾出差至须弥的总务司文员为烟花工匠提供了建议，共同设计了这种圆滚滚的烟花，希望它的可爱造型能让人们心情愉快。"
+  },
+  "ObligingLittleYuegui": {
+    "name": "扶危济困小月桂",
+    "description": "以某位热心小姑娘的搭档为灵感所作的烟花。\\n璃月港曾有不少人得到一位小姑娘的帮助，但无从得知她的名字，只听她呼唤自己的搭档为「月桂」，于是便请工匠打造了这种烟花，以表感谢和祝福。"
+  },
   "RhodeiaOfLoch": {
     "name": "纯水精灵·洛蒂娅",
     "description": "「七圣召唤」桌面游戏的卡牌，质地坚韧，其上作为牌面的插画不知道是用什么特殊的方式印刷，看上去十分精致。"
@@ -11473,6 +11945,14 @@
   },
   "ProliferatingSpores": {
     "name": "孢子增殖",
+    "description": "「七圣召唤」桌面游戏的卡牌，质地坚韧，其上作为牌面的插画不知道是用什么特殊的方式印刷，看上去十分精致。"
+  },
+  "PoundingSurprise": {
+    "name": "砰砰礼物",
+    "description": "「七圣召唤」桌面游戏的卡牌，质地坚韧，其上作为牌面的插画不知道是用什么特殊的方式印刷，看上去十分精致。"
+  },
+  "LightningStorm": {
+    "name": "霹雳连霄",
     "description": "「七圣召唤」桌面游戏的卡牌，质地坚韧，其上作为牌面的插画不知道是用什么特殊的方式印刷，看上去十分精致。"
   },
   "MagicGuide": {
@@ -11899,6 +12379,14 @@
     "name": "致教会自由人",
     "description": "罗莎莉亚的装扮款式。这套衣服似乎是教会为她专门定制的礼物。"
   },
+  "SpringbloomMissive": {
+    "name": "花时来信",
+    "description": "神里绫华的出游装扮。比照轻小说插画中的枫丹女性装束而制作的洋装，似乎能借其一窥枫丹淑女的生活风貌。"
+  },
+  "ASobriquetUnderShade": {
+    "name": "叶隐芳名",
+    "description": "丽莎重游须弥时请人订做的服饰。裙装干练而不失优雅，与她学生时代的制服有几分相似之处。"
+  },
   "AdventurerCamp": {
     "name": "冒险家的临时营地",
     "description": "步骤详实的图纸，记载着「冒险家的临时营地」的放置方法。\\n深入荒野的冒险家临时建立的营地。\\n冒险家们准备宿营时，需要设置围栏，以防走兽袭扰。可附近的木材往往不足以建立起完整的屏护，只能用轮流值班放哨来确保万无一失。\\n使用后可进入放置界面查看。"
@@ -12041,7 +12529,7 @@
   },
   "CottageKitchen": {
     "name": "柴烟庖屋",
-    "description": "步骤详实的图纸，记载着「柴烟庖屋」的放置方法。\\n烹饪器具完备的厨房，橱柜中存放着精心制备的调味品。\\n追求卓越的厨师会从市场购买当日的新鲜食材，而技艺出神入化的厨师，连用于炉灶的干柴都会仔细考量。万民堂的年轻大厨就曾向同行们分享经验——想要烹调出轻策庄的传统菜肴，须在炉中加入干燥的竹片，细心控制火候；如果找来钩钩果附近的灌木，处理成细长的木柴，更是能还原出邻国蒙德的风味。\\n各种干柴燃烧时的特性截然不同，大多厨师无法掌握要领，因此，万民堂一直独占着这门技艺。\\n使用后可进入放置界面查看。\\n偏好这套摆设的同伴：达达利亚、莫娜、魈、香菱、雷泽"
+    "description": "步骤详实的图纸，记载着「柴烟庖屋」的放置方法。\\n烹饪器具完备的厨房，橱柜中存放着精心制备的调味品。\\n追求卓越的厨师会从市场购买当日的新鲜食材，而技艺出神入化的厨师，连用于炉灶的干柴都会仔细考量。万民堂的年轻大厨就曾向同行们分享经验——想要烹调出轻策庄的传统菜肴，须在炉中加入干燥的竹片，细心控制火候；如果找来钩钩果附近的灌木，处理成细长的木柴，更是能还原出邻国蒙德的风味。\\n各种干柴燃烧时的特性截然不同，大多厨师无法掌握要领，因此，万民堂一直独占着这门技艺。\\n使用后可进入放置界面查看。\\n偏好这套摆设的同伴：达达利亚、莫娜、魈、香菱、雷泽、瑶瑶"
   },
   "WeaponForgingStation": {
     "name": "兵刃锻造站",
@@ -12065,7 +12553,7 @@
   },
   "QingceCloudResidence": {
     "name": "轻策闲云居",
-    "description": "步骤详实的图纸，记载着「轻策闲云居」的放置方法。\\n以轻策庄为摹版布置的山间村庄。据说踏入此地后，游人便会被亲切的氛围感染，心境归于平和，发现以往疏忽的质朴之美。\\n年少之时追求理想，为了事业闯荡，经历一段波澜壮阔的岁月，固然值得肯定。不过常年在外闯荡，可能也会有疲惫的一天。彼时，和睦的邻里与平静的乡间生活，也不失为一种选择。对于出门远游的年轻人，轻策庄始终持以长辈般的包容，随时欢迎他们归乡发展。\\n使用后可进入放置界面查看。\\n偏好这套摆设的同伴：辛焱、魈、胡桃、七七、申鹤、夜兰"
+    "description": "步骤详实的图纸，记载着「轻策闲云居」的放置方法。\\n以轻策庄为摹版布置的山间村庄。据说踏入此地后，游人便会被亲切的氛围感染，心境归于平和，发现以往疏忽的质朴之美。\\n年少之时追求理想，为了事业闯荡，经历一段波澜壮阔的岁月，固然值得肯定。不过常年在外闯荡，可能也会有疲惫的一天。彼时，和睦的邻里与平静的乡间生活，也不失为一种选择。对于出门远游的年轻人，轻策庄始终持以长辈般的包容，随时欢迎他们归乡发展。\\n使用后可进入放置界面查看。\\n偏好这套摆设的同伴：辛焱、魈、胡桃、七七、申鹤、夜兰、瑶瑶"
   },
   "OfHuntingAndDancing": {
     "name": "狩猎与歌舞之营",
@@ -12137,11 +12625,11 @@
   },
   "FervidAroma": {
     "name": "至烈至强的醇香",
-    "description": "以须弥城内有名的酒馆与咖啡馆为蓝本，根据壶中洞天宅邸布局进行调整后，精心布置的餐厅。热雾与香气弥漫，令人倍感享受。若是有挚友相伴，再备上几壶好酒，就能在此获得完美的用餐体验。\\n常与团队同行之人挑选饭馆时，往往会提前考虑餐位的数量和菜品的份量，在这类人看来，烤肉店是相当稳妥的选择。而独行之人也能借助烤肉店的热闹氛围隐去自己的行踪，或是为观察、追踪与思考谋取相对低调与安全的条件。"
+    "description": "以须弥城内有名的酒馆与咖啡馆为蓝本，根据壶中洞天宅邸布局进行调整后，精心布置的餐厅。热雾与香气弥漫，令人倍感享受。若是有挚友相伴，再备上几壶好酒，就能在此获得完美的用餐体验。\\n常与团队同行之人挑选饭馆时，往往会提前考虑餐位的数量和菜品的份量，在这类人看来，烤肉店是相当稳妥的选择。而独行之人也能借助烤肉店的热闹氛围隐去自己的行踪，或是为观察、追踪与思考谋取相对低调与安全的条件。\\n偏好这套摆设的同伴：艾尔海森"
   },
   "OfSettledThoughts": {
     "name": "识见沉降之地",
-    "description": "卷藏颇丰的书房，硕大的书柜宛如不可逾越的高墙。常人的视线扫过琳琅满目的书脊时，心底难免会有敬畏浮现。\\n当然，对于有心之人而言，智慧与无知之间绝不存在无法逾越的界线。若是能沉下心来，每日都在这种书房中静坐，遵照条理清晰的计划，一本一本仔细阅览书柜中的卷藏，无需太长的时日，就能触及难以计量的新识见。\\n偏好这套摆设的同伴：赛诺、珐露珊"
+    "description": "卷藏颇丰的书房，硕大的书柜宛如不可逾越的高墙。常人的视线扫过琳琅满目的书脊时，心底难免会有敬畏浮现。\\n当然，对于有心之人而言，智慧与无知之间绝不存在无法逾越的界线。若是能沉下心来，每日都在这种书房中静坐，遵照条理清晰的计划，一本一本仔细阅览书柜中的卷藏，无需太长的时日，就能触及难以计量的新识见。\\n偏好这套摆设的同伴：赛诺、珐露珊、艾尔海森"
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "暂别喧扰与烦忧",
@@ -12295,6 +12783,10 @@
     "name": "晴虹灯树-「元辰吉庆」",
     "description": "步骤详实的图纸，记载着「晴虹灯树-『元辰吉庆』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "CountlessHomesLightUpTheMoon": {
+    "name": "「万家华灯照朗月」",
+    "description": "步骤详实的图纸，记载着「『万家华灯照朗月』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "StoneworksLampDeepingGloomCandle": {
     "name": "岩厂提灯-「洞幽烛远」",
     "description": "步骤详实的图纸，记载着「岩厂提灯-『洞幽烛远』」的制作方法。\\n使用后可进入制作界面查看。"
@@ -12322,6 +12814,14 @@
   "BloomingIllumination": {
     "name": "「盛放之光」",
     "description": "步骤详实的图纸，记载着「『盛放之光』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "FlutteringLight": {
+    "name": "「飘悠之光」",
+    "description": "步骤详实的图纸，记载着「『飘悠之光』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "LightOfSlumber": {
+    "name": "「寝息之光」",
+    "description": "步骤详实的图纸，记载着「『寝息之光』」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "EfflorescentIllumination": {
     "name": "「花叶百相之光」",
@@ -12366,6 +12866,14 @@
   "BrightwoodInvigoratingNightstand": {
     "name": "辉木「疗愈」床头柜",
     "description": "步骤详实的图纸，记载着「辉木『疗愈』床头柜」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "AthelTripleDrawerCabinet": {
+    "name": "柽木三重屉柜",
+    "description": "步骤详实的图纸，记载着「柽木三重屉柜」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "AthelPotteryShelf": {
+    "name": "柽木陶器置物柜",
+    "description": "步骤详实的图纸，记载着「柽木陶器置物柜」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "TwoTierLibraryBookshelf": {
     "name": "图书馆双层书架",
@@ -12499,7 +13007,7 @@
     "name": "「小酌两杯的闲适」",
     "description": "步骤详实的图纸，记载着「『小酌两杯的闲适』」的制作方法。\\n使用后可进入制作界面查看。"
   },
-  "LongAdhighamaChamferTable": {
+  "LongAdhigamaChamferTable": {
     "name": "证悟木切角长桌",
     "description": "步骤详实的图纸，记载着「证悟木切角长桌」的制作方法。\\n使用后可进入制作界面查看。"
   },
@@ -12727,6 +13235,10 @@
     "name": "「林居之人的存积」",
     "description": "步骤详实的图纸，记载着「『林居之人的存积』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "HuedVaseMoltenSand": {
+    "name": "妙彩宝瓶-「熔沙」",
+    "description": "步骤详实的图纸，记载着「妙彩宝瓶-『熔沙』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "蒙德地毯-「明红的热忱」",
     "description": "步骤详实的图纸，记载着「蒙德地毯-『明红的热忱』」的制作方法。\\n使用后可进入制作界面查看。"
@@ -12763,6 +13275,10 @@
     "name": "「谏果般森丽之纹」",
     "description": "步骤详实的图纸，记载着「『谏果般森丽之纹』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "PureLikeWheatSprouts": {
+    "name": "「麦苗般纯净之纹」",
+    "description": "步骤详实的图纸，记载着「『麦苗般纯净之纹』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "TrustyPortableLamp": {
     "name": "恒亮不熄的提灯",
     "description": "步骤详实的图纸，记载着「恒亮不熄的提灯」的制作方法。\\n使用后可进入制作界面查看。"
@@ -12794,6 +13310,18 @@
   "LightOfTheLandOfWisdom": {
     "name": "「卓识之地的柔光」",
     "description": "步骤详实的图纸，记载着「『卓识之地的柔光』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "NightwatchersCandlelight": {
+    "name": "「更巡的烛火」",
+    "description": "步骤详实的图纸，记载着「『更巡的烛火』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "ListeningCandelight": {
+    "name": "「谛听的烛火」",
+    "description": "步骤详实的图纸，记载着「『谛听的烛火』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "TwowayIronLamp": {
+    "name": "铸铁双用摆灯",
+    "description": "步骤详实的图纸，记载着「铸铁双用摆灯」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花卉瓶栽-「淡蓝的从容」",
@@ -12943,6 +13471,26 @@
     "name": "「林居之人的增辉」",
     "description": "步骤详实的图纸，记载着「『林居之人的增辉』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "HuedVaseSprout": {
+    "name": "妙彩宝瓶-「青苗」",
+    "description": "步骤详实的图纸，记载着「妙彩宝瓶-『青苗』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "StarShapedMultipurposeBottle": {
+    "name": "星状带棱多用瓶",
+    "description": "步骤详实的图纸，记载着「星状带棱多用瓶」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "RealizationsFromTheLandOfWisdom": {
+    "name": "「卓识之地的余醒」",
+    "description": "步骤详实的图纸，记载着「『卓识之地的余醒』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "RestorativeFragrance": {
+    "name": "「疗渴的芳香」",
+    "description": "步骤详实的图纸，记载着「『疗渴的芳香』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "TheArtOfRetainingWater": {
+    "name": "「积蓄净水的艺术」",
+    "description": "步骤详实的图纸，记载着「『积蓄净水的艺术』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "LandscapePaintingCountryHome": {
     "name": "风景画-「乡野民居」",
     "description": "步骤详实的图纸，记载着「风景画-『乡野民居』」的制作方法。\\n使用后可进入制作界面查看。"
@@ -13042,6 +13590,10 @@
   "ForestWatchersConsiderations": {
     "name": "「巡林官的牵记」",
     "description": "步骤详实的图纸，记载着「『巡林官的牵记』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "AthelwoodMetalCombatShield": {
+    "name": "柽木坚铁攻盾",
+    "description": "步骤详实的图纸，记载着「柽木坚铁攻盾」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "LingeringMoment": {
     "name": "「萦绊之刻」",
@@ -13226,6 +13778,14 @@
   "BrightwoodKebabCart": {
     "name": "辉木移动烧烤铺",
     "description": "步骤详实的图纸，记载着「辉木移动烧烤铺」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "AbundanceOfCrispAir": {
+    "name": "「盛积于干爽之中」",
+    "description": "步骤详实的图纸，记载着「『盛积于干爽之中』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "DeliberationOfChoice": {
+    "name": "「纷罗于甄选之后」",
+    "description": "步骤详实的图纸，记载着「『纷罗于甄选之后』」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "HilichurlOutpostHut": {
     "name": "丘丘前哨小屋",
@@ -13539,6 +14099,14 @@
     "name": "「智慧之城的差事」",
     "description": "步骤详实的图纸，记载着「『智慧之城的差事』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "SilkyQuellerOfSeaMonsters": {
+    "name": "「拒止海兽的丝织」",
+    "description": "步骤详实的图纸，记载着「『拒止海兽的丝织』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "NightOfSerenityInTheSandyBreeze": {
+    "name": "「宁静深夜的沙风」",
+    "description": "步骤详实的图纸，记载着「『宁静深夜的沙风』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鸟喷泉",
     "description": "步骤详实的图纸，记载着「花鸟喷泉」的制作方法。\\n使用后可进入制作界面查看。"
@@ -13626,6 +14194,22 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "「卓识之地的朗澈」",
     "description": "步骤详实的图纸，记载着「『卓识之地的朗澈』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PortOrmosGPCraneIII": {
+    "name": "奥摩斯港三型通用起重机",
+    "description": "步骤详实的图纸，记载着「奥摩斯港三型通用起重机」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "CompositeTimberLongDistanceHandCart": {
+    "name": "复合木材长途货车",
+    "description": "步骤详实的图纸，记载着「复合木材长途货车」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "CompositeTimberInPortTransferCart": {
+    "name": "复合木材港内转运货车",
+    "description": "步骤详实的图纸，记载着「复合木材港内转运货车」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "ThreeWheeledMountainHandCart": {
+    "name": "双重轮径山地货车",
+    "description": "步骤详实的图纸，记载着「双重轮径山地货车」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "AdeptusGate": {
     "name": "三眼守仙牌",
@@ -13959,6 +14543,42 @@
     "name": "「渔采的择取机网」",
     "description": "步骤详实的图纸，记载着「『渔采的择取机网』」的制作方法。\\n使用后可进入制作界面查看。"
   },
+  "HeavyBrightwoodPotteryWheel": {
+    "name": "辉木重型制陶架",
+    "description": "步骤详实的图纸，记载着「辉木重型制陶架」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "IronSandTreasure": {
+    "name": "「铁与沙与金钱」",
+    "description": "步骤详实的图纸，记载着「『铁与沙与金钱』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "IronBloodBrokenArmor": {
+    "name": "「铁与血与破甲」",
+    "description": "步骤详实的图纸，记载着「『铁与血与破甲』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "IronWaterSteam": {
+    "name": "「铁与水与蒸汽」",
+    "description": "步骤详实的图纸，记载着「『铁与水与蒸汽』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "KarmaphalaWoodLiquidCargoRack": {
+    "name": "业果木远海液货货架",
+    "description": "步骤详实的图纸，记载着「业果木远海液货货架」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "StringFeatherTrajectory": {
+    "name": "「弦与翎与箭轨」",
+    "description": "步骤详实的图纸，记载着「『弦与翎与箭轨』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "IngenuityOfTheForestForager": {
+    "name": "「林中觅食的巧方」",
+    "description": "步骤详实的图纸，记载着「『林中觅食的巧方』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "ItJustMightWork": {
+    "name": "「说不定就成功了！」",
+    "description": "步骤详实的图纸，记载着「『说不定就成功了！』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "ColorationAndPrecipitation": {
+    "name": "「着色与沉淀」",
+    "description": "步骤详实的图纸，记载着「『着色与沉淀』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
   "PottedPlantVerdantVastness": {
     "name": "绿植盆栽-「苍翠寸泓中」",
     "description": "步骤详实的图纸，记载着「绿植盆栽-『苍翠寸泓中』」的制作方法。\\n使用后可进入制作界面查看。"
@@ -14194,6 +14814,34 @@
   "TeaBreakShade": {
     "name": "「茶歇的阴凉」",
     "description": "步骤详实的图纸，记载着「『茶歇的阴凉』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenFogGatheringOnSmokyMountains": {
+    "name": "吉庆画屏-「雾聚烟山」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『雾聚烟山』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenFleetFeathersAgainstEmeraldWaves": {
+    "name": "吉庆画屏-「碧波迅羽」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『碧波迅羽』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenInstrumentsInTheDistance": {
+    "name": "吉庆画屏-「丝竹遥袅」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『丝竹遥袅』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenOldSongsLingering": {
+    "name": "吉庆画屏-「故曲往旋」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『故曲往旋』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenOverlappingCloudsAbovePeaks": {
+    "name": "吉庆画屏-「连云迭嶂」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『连云迭嶂』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "PropitiousScreenGenuineWordsTravelFar": {
+    "name": "吉庆画屏-「衷音弥远」",
+    "description": "步骤详实的图纸，记载着「吉庆画屏-『衷音弥远』」的制作方法。\\n使用后可进入制作界面查看。"
+  },
+  "TrumpetAndFirewood": {
+    "name": "「号角与薪柴」",
+    "description": "步骤详实的图纸，记载着「『号角与薪柴』」的制作方法。\\n使用后可进入制作界面查看。"
   },
   "WroughtIronCarvedStreetLight": {
     "name": "铁艺雕花路灯",

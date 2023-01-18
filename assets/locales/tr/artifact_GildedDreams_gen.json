@@ -1,7 +1,7 @@
 {
   "setName": "Yaldızlı Rüyalar",
   "setEffects": {
-    "2": "+80 Element Ustalığı.",
+    "2": "Element Ustalığını 80 artırır.",
     "4": "Bir Element Tepkimesi tetiklendikten sonraki 8 saniye boyunca bunu kuşanan karakter, gruptaki diğer karakterlerin Element Türlerine göre güçlendirmeler elde eder. Kuşanan karakterle aynı Element Türüne sahip olan her bir grup üyesi için Saldırı %14 artarken Element Türü farklı olan her bir grup üyesi için Element Ustalığı 50 artar. Bu güçlendirmeler en fazla 3 karakteri kapsar. Bu etki her 8 saniyede bir tetiklenebilir. Bunu kuşanan karakter savaş alanında olmasa bile etkilerini tetikleyebilir."
   },
   "pieces": {

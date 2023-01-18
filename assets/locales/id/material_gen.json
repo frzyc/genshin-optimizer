@@ -567,6 +567,14 @@
     "name": "Faruzan",
     "description": "Peneliti dari \"seratus tahun lalu\". Dia suka mengaku diri sebagai seniornya semua orang dan punya pengetahuan luas tentang berbagai naskah kuno dan segala jenis mesin."
   },
+  "Yaoyao": {
+    "name": "Yaoyao",
+    "description": "Murid Streetward Rambler yang paling muda. Usianya masih kecil tapi sudah seperti orang dewasa, pribadinya lemah lembut dan penuh perhatian."
+  },
+  "Alhaitham": {
+    "name": "Alhaitham",
+    "description": "Panitera Akademiya Sumeru saat ini, memiliki kecerdasan dan bakat yang luar biasa. Dia seseorang yang mencintai kebebasan, dan tidak bisa ditemukan kecuali bila dia sendiri ingin ditemukan."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": "Material aktivasi untuk konstelasi Kamisato Ayaka"
@@ -814,6 +822,14 @@
   "FaruzansStellaFortuna": {
     "name": "Faruzan's Stella Fortuna",
     "description": "Material aktivasi Konstelasi Faruzan"
+  },
+  "YaoyaosStellaFortuna": {
+    "name": "Yaoyao's Stella Fortuna",
+    "description": "Material aktivasi untuk konstelasi Yaoyao"
+  },
+  "AlhaithamsStellaFortuna": {
+    "name": "Alhaitham's Stella Fortuna",
+    "description": "Material aktivasi untuk konstelasi Alhaitham"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes",
@@ -1258,6 +1274,10 @@
   "GlabrousBeans": {
     "name": "Glabrous Beans",
     "description": "Tumbuhan kacang-kacangan yang umum ditemukan di Teyvat. Karena aromanya yang ringan, bahan ini bisa dimasak menjadi berbagai jenis hidangan dan disukai oleh orang-orang dari segala penjuru."
+  },
+  "MysteriousMeat": {
+    "name": "Mysterious Meat",
+    "description": "Sepotong daging segar yang tampaknya memancarkan aura misterius. Penasaran kan seperti apa rasanya kalau dicicipi?"
   },
   "JeansDocumentPackage": {
     "name": "Parsel Dokumen Jean",
@@ -3919,6 +3939,10 @@
     "name": "Ajilenakh Nut",
     "description": "Buah yang tumbuh dari pohon yang selalu berwarna hijau di oasis padang pasir. Buah yang terletak di bawah permukaan kulitnya yang keras dan tebal terasa manis dan lezat. Merupakan sumber makanan yang sangat penting bagi penduduk padang pasir."
   },
+  "SandGreasePupa": {
+    "name": "Sand Grease Pupa",
+    "description": "Kamu hanya dapat menemukan cangkang ini jauh di dalam padang pasir tempat Quicksand Unagi berkembang biak. Cangkang yang mengeras ini dimaksudkan untuk melindungi tubuh larva Unagi sampai akhirnya mereka bisa menyesuaikan diri dengan kondisi padang pasir yang kering."
+  },
   "Scarab": {
     "name": "Scarab",
     "description": "Kumbang tangguh yang menghuni lautan pasir yang luas. Di atas cangkangnya terdapat pola yang menyerupai reruntuhan kuno di padang pasir, seolah menunjukkan bahwa ada kaitan erat di antara keduanya."
@@ -4985,7 +5009,7 @@
   },
   "TheSiblingsFlowers": {
     "name": "Bunga Persaudaraan",
-    "description": "Bunga yang diberikan oleh Arapacati dan saudara-saudaranya.\\nKerinduan untuk terhubung sebagai \"saudara\", masing-masing Aranara mengambil peran sebagai saudara. Obsesi mereka dalam memasak bermula dari keinginan untuk berbagi makanan dengan keluarga.\\nNamun demikian, indera perasa Aranara tidak bisa dipercaya."
+    "description": "Bunga yang diberikan oleh Arapacati dan saudara-saudaranya.\\nKerinduan untuk terhubung sebagai \"saudara\", masing-masing Aranara mengambil peran sebagai saudara. Obsesi mereka dalam memasak bermula dari keinginan untuk berbagi makanan dengan keluarga.\\nNamun demikian, indra perasa Aranara tidak bisa dipercaya."
   },
   "TheSongGatherersFlowers": {
     "name": "Bunga Pengumpul Lagu",
@@ -7785,7 +7809,7 @@
   },
   "DeliciousCandiedAjilenakhNut": {
     "name": "Delicious Candied Ajilenakh Nut",
-    "description": "Makanan pencuci mulut dengan isian yang kaya dan padat. Sirupnya sendiri akan meleleh saat bersentuhan dengan mulutmu, sehingga rasa kacang yang nikmat seperti permata yang terbungkus beludru langsung menyentuh indera perasamu. Setiap lapisannya menambah lapisan kegembiraan yang sebelumnya. Satu gigitan kecil saja sudah membuatmu seolah-olah direndam dalam bak yang berisi dengan rasa manis yang sempurna. Kok? Benar-benar harus buat lebih banyak dan lebih banyak lagi lain kali."
+    "description": "Makanan pencuci mulut dengan isian yang kaya dan padat. Sirupnya sendiri akan meleleh saat bersentuhan dengan mulutmu, sehingga rasa kacang yang nikmat seperti permata yang terbungkus beludru langsung menyentuh indra perasamu. Setiap lapisannya menambah lapisan kegembiraan yang sebelumnya. Satu gigitan kecil saja sudah membuatmu seolah-olah direndam dalam bak yang berisi dengan rasa manis yang sempurna. Kok? Benar-benar harus buat lebih banyak dan lebih banyak lagi lain kali."
   },
   "SuspiciousPadisarahPudding": {
     "name": "Suspicious Padisarah Pudding",
@@ -7833,7 +7857,7 @@
   },
   "UtmostCare": {
     "name": "Utmost Care",
-    "description": "Masakan andalan Candace. Aroma hidangan ini bahkan sudah mencapai indera penciumanmu jauh sebelum disajikan di depanmu. Sepertinya Candace juga bisa melindungi \"nafsu makan\"nya dengan sangat baik. Tapi ... ini benar-benar jumlah Aaru Mixed Rice yang sangat banyak. Ba-bagaimana caramu menghadapi hidangan dengan \"pertimbangan yang sudah terlalu berlebihan\" ini?"
+    "description": "Masakan andalan Candace. Aroma hidangan ini bahkan sudah mencapai indra penciumanmu jauh sebelum disajikan di depanmu. Sepertinya Candace juga bisa melindungi \"nafsu makan\"nya dengan sangat baik. Tapi ... ini benar-benar jumlah Aaru Mixed Rice yang sangat banyak. Ba-bagaimana caramu menghadapi hidangan dengan \"pertimbangan yang sudah terlalu berlebihan\" ini?"
   },
   "SparklingBerryJuice": {
     "name": "Sparkling Berry Juice",
@@ -7878,6 +7902,42 @@
   "ShimiChazuke": {
     "name": "Shimi Chazuke",
     "description": "Masakan andalan Wanderer. Aroma teh yang sedikit pahit dan aroma nasi yang manis dan menyegarkan terpadu sempurna dan akan membuatmu melahapnya tanpa henti. Bagaimana dia bisa memasak sesuatu yang luar biasa seperti ini? Ah, sepertinya dia sudah berhasil membaca pikiranmu, karena ekspresi wajahnya tiba-tiba berubah muram: \"Kamu sudah selesai makan? Jangan melamun lagi, pergi cuci piring sekarang.\""
+  },
+  "SuspiciousSabzMeatStew": {
+    "name": "Suspicious Sabz Meat Stew",
+    "description": "Semur daging dengan rasa yang unik. Rasa asamnya terasa sedikit berlebihan. Aromanya itu sendiri membuat orang yang menciumnya jadi tidak selera makan ... Kalau lama dibiarkan dalam keadaan begini, jangan-jangan Fungus pun bisa berkembang biak di atasnya."
+  },
+  "SabzMeatStew": {
+    "name": "Sabz Meat Stew",
+    "description": "Semur daging dengan rasa yang unik. Berbagai sayuran dicampur menjadi satu, kemudian dicincang dan direbus bersama daging. Setelah ditambahkan lemon, rasa hidangannya setelah jadi menjadi agak asam. Orang Sumeru biasanya memakan hidangan ini bersama nasi."
+  },
+  "DeliciousSabzMeatStew": {
+    "name": "Delicious Sabz Meat Stew",
+    "description": "Semur daging dengan rasa yang unik. Perpaduan bahan-bahan dengan aroma yang unik menghadirkan kenikmatan yang luar biasa di lidah. Potongan besar daging segar direbus hingga empuk dan dilapisi dengan warna hijau tua, memberikan kesan seolah mengundang siapa saja yang mencicipinya untuk berjalan-jalan santai di hutan."
+  },
+  "SuspiciousScentedMeatBalls": {
+    "name": "Suspicious Scented Meat Roll",
+    "description": "Hidangan berbahan dasar daging giling. Penampilannya yang suram membuat orang mustahil membayangkan apa yang ada di dalamnya. Saat digigit sedikit untuk dicoba ... ya, ternyata ada gandum di dalamnya. Waspadalah, bibirmu bisa tergores kalau kurang berhati-hati."
+  },
+  "ScentedMeatBalls": {
+    "name": "Scented Meat Roll",
+    "description": "Hidangan berbahan dasar daging giling. Setelah gandum dihancurkan dan dimasak di atas api, daging giling ditambahkan untuk melapisi bagian luarnya. Bawang dan daging kemudian ditumis serentak untuk dibuat menjadi isian. Terakhir, adonan dibentuk menjadi bola dan digoreng hingga berwarna keemasan. Kapan lagi bisa menikmati daging dalam satu suapan sepraktis ini!"
+  },
+  "DeliciousScentedMeatBalls": {
+    "name": "Delicious Scented Meat Roll",
+    "description": "Hidangan berbahan dasar daging giling. Lapisan yang renyah dan kenyal membungkus isian yang gurih, memberikan kesan yang lebih berlapis dan mudah dipotong daripada bakso pada umumnya. Makan satu saja, dan aroma daging yang menawan ini akan mengguyurkan kebahagiaan sampai ke ubun-ubun, menghadirkan kenikmatan yang unik dan anggun."
+  },
+  "IdealCircumstance": {
+    "name": "Ideal Circumstance",
+    "description": "Masakan andalan Alhaitham. Sajian melalui perpaduan sayuran dan daging yang disajikan dalam wajan bermotif. Pengembangan cita rasa sudah pernah diterapkan pada resepnya, sehingga rasanya kini menjadi sangat berbeda dari hidangan aslinya. Tulisan yang terdapat pada makanan ini memiliki makna \"kontemplasi\". Kalau mengutip perkataan yang diucapkan pembuatnya: \"Setiap orang idealnya mampu berkontemplasi dengan dirinya sendiri. Tapi tampaknya sulit juga mengharapkan semua orang mampu melakukan ini.\""
+  },
+  "QingceHouseholdDish": {
+    "name": "Qingce Household Dish",
+    "description": "Masakan andalan Yaoyao. Penampilannya memang terlihat biasa saja karena tidak disajikan dengan estetika mewah layaknya hidangan yang disiapkan oleh restoran-restoran mewah. Namun, sekali digigit, rasanya langsung memberikan orang yang memakannya sebuah pengalaman yang hangat dan bersahabat, dan pasti akan meninggalkan kesan yang abadi. Sekali dicicipi, selamanya diresapi. Kalau mau menggali makna yang lebih dalam di balik racikan makanan ini, mungkin bahan rahasia dari resep ini tidak lain tidak bukan adalah \"hati Yaoyao yang selalu peduli\"."
+  },
+  "CrocodileJerky": {
+    "name": "Crocodile Jerky",
+    "description": "Daging buaya yang disiapkan menggunakan resep khusus suku Tanit. Meskipun agak sulit dikunyah, kemudahan penyimpanan dagingnya membuatnya menjadi makanan yang biasa dikonsumsi oleh para pemburu di suku.\\nMeskipun rasanya seperti daging unggas, kandungan gizi daging buaya boleh dibilang delapan kali lebih banyak daripada daging yang biasa kamu konsumsi ...."
   },
   "RecipeItem": {
     "name": "Bahan Resep",
@@ -8423,6 +8483,14 @@
     "name": "Resep: Samosa",
     "description": "Resep yang berisi langkah-langkah untuk membuat Samosa."
   },
+  "RecipeSabzMeatStew": {
+    "name": "Resep: Sabz Meat Stew",
+    "description": "Resep yang berisi langkah-langkah untuk membuat Sabz Meat Stew."
+  },
+  "RecipeScentedMeatBalls": {
+    "name": "Resep: Scented Meat Roll",
+    "description": "Resep yang berisi langkah-langkah untuk membuat Scented Meat Roll."
+  },
   "CraftedItems": {
     "name": "Hasil Craft",
     "description": "Item yang terbentuk dari proses Crafting."
@@ -8863,6 +8931,18 @@
     "name": "Radiant Prism",
     "description": "Komponen tidak utuh yang diperoleh dengan cara mengalahkan Primal Construct.\\nPenguasa padang pasir yang tandus suatu kali pernah bermimpi, juga pernah banyak berjanji.\\nDalam sebuah legenda padang pasir, konon katanya mesin ini awalnya adalah kendaraan untuk janji-janji yang tidak diketahui ini. Sekarang semuanya hanya hidup di dalam bank memori mekanis mereka."
   },
+  "DesiccatedShell": {
+    "name": "Desiccated Shell",
+    "description": "Cangkang Consecrated Beast yang sudah hancur.\\nSebuah bukti nyata dari bencana besar yang melanda tanah di seluruh penjuru pada masa lampau. Biasanya hanya dapat ditemukan di tempat-tempat yang tidak berani ditapaki oleh orang-orang."
+  },
+  "SturdyShell": {
+    "name": "Sturdy Shell",
+    "description": "Cangkang dari Consecrated Beast yang masih kokoh.\\nSisa-sisa dari penggerogotan makhluk agung yang jatuh. Bahkan jika hewan buas ini mendapatkan sedikit kekuatan dari para dewa di masa lalu, mereka tetap akan menghadapi akhir yang sama seperti dewa-dewa itu."
+  },
+  "MarkedShell": {
+    "name": "Marked Shell",
+    "description": "Cangkang dari Consecrated Beast yang sudah ditandai dan bertuliskan tulisan kuno.\\nPada kontur pucat cangkangnya, terukir penyesalan dari masa lalu. Suatu hari, tulang-tulang hewan ini akan berserakan seperti debu yang tertiup angin, dan pada akhirnya, semoga almarhum yang dimuliakan bisa menyambut peristirahatan terakhir mereka ...."
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": "Bentuk Anemo Hypostasis setelah dikalahkan.\\nBerisi esensi energi Anemo.\\nKonon, tubuhnya yang rapuh ini memiliki kekuatan untuk menciptakan badai. Kupu-kupu yang murni dengan energi Anemo ini pasti sedang menunggu datangnya hari di mana dia bisa menciptakan badai lagi."
@@ -9035,6 +9115,10 @@
     "name": "Daka's Bell",
     "description": "Sambungan bola ini dulunya digunakan untuk menghubungkan anggota tubuh mekanis, berbentuk hampir seperti lonceng. Bentuknya halus tetapi dapat digunakan untuk membawa energi dalam jumlah besar yang tak terbayangkan.\\nJika terhubung ke lengan seseorang, maka semua rasa di lengan akan hilang.\\nJika terhubung dengan kaki, maka semua rasa di kaki tersebut akan hilang.\\nHubungkan sendi ini ke tengkorak seseorang maka ....\\nAh. Kebencian, rasa sakit, kegilaan, kebanggaan — tidak ada yang hilang.\\nUntunglah."
   },
+  "PseudoStamens": {
+    "name": "Pseudo-Stamens",
+    "description": "Selubung sayap pucat Wenut, setipis benang sari bunga yang mekar.\\nKonon katanya pada masa lalu sebelum waktu dimulai, mereka pernah berjalan melalui tanah basah di bawah padang rumput dan pohon-pohon raksasa layaknya burung yang terbang bebas di udara dan ikan yang berenang bebas di air. Teori umumnya adalah, mereka meniru bunga untuk menarik mangsa yang tersesat karena badai pasir. Akan tetapi, ada juga yang bilang kalau cara benang sari mereka ditampilkan mirip pada zaman ketika tumbuhan ada di mana-mana dan bunga masih bermekaran pada zaman-zaman pasir emas jutaan tahun yang lalu."
+  },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower",
     "description": "Material Ascension Senjata.\\nTempat yang sekarang dikenal sebagai Stormterror's Lair dulunya adalah ibu kota yang dibangun oleh Decarabian sang Dewa Badai. Karena mimpi kemakmuran ini dibangun oleh kekuatannya, pecahan-pecahan yang tertinggal saat mimpinya hancur masih memiliki kekuatan besar."
@@ -9197,19 +9281,19 @@
   },
   "OasisGardensReminiscence": {
     "name": "Oasis Garden's Reminiscence",
-    "description": "Material Ascension Senjata.\\nKonon orang-orang dulu mengatakan kalau Lord of Flowers adalah Lord of Joy and Happiness. Mata air segar mengalir dari lengan bajunya, menciptakan oasis yang penuh dengan bunga di tengah-tengah padang pasir. Bunga dan rerumputan tumbuh di jejak kakinya, cahaya rembulan pun membukakan jalan untuk dirinya.\\nDi hari yang kelam saat langit pun tidak mengacuhkan daratan, Lord of Flower tetap mengulurkan belas kasihannya kepada setiap manusia, agar mereka semua bisa mendapatkan kembali kebahagiaan dan egonya. Dan melanjutkan kesenangan dan kemewahan mereka."
+    "description": "Material Ascension Senjata.\\nKonon orang-orang dulu mengatakan kalau Ratu Bunga adalah Ratu Sukacita dan Kebahagiaan. Mata air segar mengalir dari lengan bajunya, menciptakan oasis yang penuh dengan bunga di tengah-tengah padang pasir. Bunga dan rerumputan tumbuh di jejak kakinya, cahaya rembulan pun membukakan jalan untuk dirinya.\\nDi hari yang kelam saat langit pun tidak mengacuhkan daratan, Ratu Bunga tetap mengulurkan belas kasihannya kepada setiap manusia, agar mereka semua bisa mendapatkan kembali kebahagiaan dan egonya. Dan melanjutkan kesenangan dan kemewahan mereka."
   },
   "OasisGardensKindness": {
     "name": "Oasis Garden's Kindness",
-    "description": "Material Ascension Senjata.\\nDalam teks kuno yang terkubur jauh di dalam pasir berwarna kuning, Lord of Flower dulunya adalah Owner of Dreams.\\nDia yang menciptakan mimpi untuk orang yang dikucilkan, yang menggila, dan yang bodoh. Mereka akan diberikan kebahagiaan yang meluap-luap di dalam mimpi itu. Karena beratnya beban dalam kehidupan, mereka terpesona oleh Lord of Flower dan terpikat oleh kecantikan serta perhatiannya."
+    "description": "Material Ascension Senjata.\\nDalam teks kuno yang terkubur jauh di dalam pasir berwarna kuning, Ratu Bunga dulunya adalah Pemilik Segala Mimpi.\\nDia yang menciptakan mimpi untuk orang yang dikucilkan, yang menggila, dan yang bodoh. Mereka akan diberikan kebahagiaan yang meluap-luap di dalam mimpi itu. Karena beratnya beban dalam kehidupan, mereka terpesona oleh Ratu Bunga dan terpikat oleh kecantikan serta perhatiannya."
   },
   "OasisGardensMourning": {
     "name": "Oasis Garden's Mourning",
-    "description": "Material Ascension Senjata.\\nSang Lord of Flowers memiliki hubungan yang baik dengan roh penjaga.\\nSang pemilik bunga dan oasis bekerja sama dengan Lord of Deserts untuk membangun Ay-Khanuum, yaitu \"City of Amphitheater\", yang juga berarti \"City of Moon's Daughter\" dalam bahasa kuno milik sang roh penjaga.\\nTapi setelahnya, dikatakan bahwa Lord of Flowers meninggal karena kerasnya panas matahari dan pasir di gurun, hingga akhirnya Padisarah ungu tidak pernah muncul lagi di oasis.\\nSetelah kepergian Lord of Flower, badai pasir berkabung, roh penjaga menangis, piring permata dari cahaya bulan telah kehilangan kesenangannya dan memberikan kilauan yang menyedihkan."
+    "description": "Material Ascension Senjata.\\nSang Ratu Bunga memiliki hubungan yang baik dengan roh penjaga.\\nSang pemilik bunga dan oasis bekerja sama dengan Raja Pasir Kuning untuk membangun Ay-Khanuum, yaitu \"City of Amphitheater\", yang juga berarti \"City of Moon's Daughter\" dalam bahasa kuno milik sang roh penjaga.\\nTapi setelahnya, dikatakan bahwa Ratu Bunga meninggal karena kerasnya panas matahari dan pasir di gurun, hingga akhirnya Padisarah ungu tidak pernah muncul lagi di oasis.\\nSetelah kepergian Ratu Bunga, badai pasir berkabung, roh penjaga menangis, piring permata dari cahaya bulan telah kehilangan kesenangannya dan memberikan kilauan yang menyedihkan."
   },
   "OasisGardensTruth": {
     "name": "Oasis Garden's Truth",
-    "description": "Material Ascension Senjata.\\n\"Siapa gerangan yang akan menyembah dewa yang telah meninggal?\"\\nLord of Flowers pernah bersekutu dengan dua rekannya. Tapi terlepas dari kebijaksanaan dan kekuatannya, dia mendatangkan belas kasihan dan kegembiraan kepada rakyatnya.\\nSama seperti bumi yang butuh lebih dari sekadar sinar matahari yang membakar dan hujan yang lebat, bagi rakyat Lord of Flowers, kegembiraan dan cinta, nyanyian dan musik, serta anggur dan kemewahan sama pentingnya dengan rasionalitas dan kekuatan.\\nDikatakan bahwa tujuan dari mekarnya setangkai bunga adalah layunya yang mulia, dan layunya yang mulia itulah tujuan yang didambakan oleh Lord of Flowers sejak awal — karena kematian menambah kepahitan pada kebahagiaan yang telah hilang dan membuatnya muncul lebih dan lebih kuat lagi dalam ingatan yang tak terbatas.\\nLord of Deserts yang arogan tidak pernah sadar akan filosofinya. Dia hanya menikmati pesona dan keanggunannya yang luar biasa — sepalsu kasih sayang yang begitu kuat, dan itu pun menjadi hal yang sudah Lord of Flowers perhitungkan."
+    "description": "Material Ascension Senjata.\\n\"Siapa gerangan yang akan menyembah dewa yang telah meninggal?\"\\nRatu Bunga pernah bersekutu dengan dua rekannya. Tapi terlepas dari kebijaksanaan dan kekuatannya, dia mendatangkan belas kasihan dan kegembiraan kepada rakyatnya.\\nSama seperti bumi yang butuh lebih dari sekadar sinar matahari yang membakar dan hujan yang lebat, bagi rakyat Ratu Bunga, kegembiraan dan cinta, nyanyian dan musik, serta anggur dan kemewahan sama pentingnya dengan rasionalitas dan kekuatan.\\nDikatakan bahwa tujuan dari mekarnya setangkai bunga adalah layunya yang mulia, dan layunya yang mulia itulah tujuan yang didambakan oleh Ratu Bunga sejak awal — karena kematian menambah kepahitan pada kebahagiaan yang telah hilang dan membuatnya muncul lebih dan lebih kuat lagi dalam ingatan yang tak terbatas.\\nRaja Pasir Kuning yang arogan tidak pernah sadar akan filosofinya. Dia hanya menikmati pesona dan keanggunannya yang luar biasa — sepalsu kasih sayang yang begitu kuat, dan itu pun menjadi hal yang sudah Ratu Bunga perhitungkan."
   },
   "EchoOfScorchingMight": {
     "name": "Echo of Scorching Might",
@@ -9225,7 +9309,7 @@
   },
   "OldenDaysOfScorchingMight": {
     "name": "Olden Days of Scorching Might",
-    "description": "Material Ascension Senjata.\\nDi masa ketika Lord of Deserts yang bodoh memerintah, kekuatan emas seperti matahari yang terik menyebar ke seluruh bumi.\\nDalam catatan tablet batu kuno, dia mengubah kekuatannya menjadi tujuh sinar cahaya yang menyilaukan atau tujuh pilar, yang dia berikan secara adil dan merata serta penuh belas kasihan kepada semua orang, sehingga tidak ada orang yang terabaikan, ataupun yang merasa tidak puas.\\nItu adalah masa keemasan yang terlupakan, masa ketika Lord of Flowers menghilang ke dalam pasir dan Lord of Flora memutuskan untuk pergi. Hanya merekalah para keturunan di atas pasir kuning yang memilih untuk mengikuti dewanya. Bahkan ketika bayangan malapetaka yang suram pun semakin membayangi, keyakinan mereka pada dewa tetaplah kuat bersinar terang seperti kuning dan emas.\\nNamun akhirnya bencana tetap saja menimpa. Lambang emas terkubur di kedalaman kuil dan istana, di bawah pilar runtuh yang diukir dengan elang dan kepala banteng."
+    "description": "Material Ascension Senjata.\\nDi masa ketika Raja Pasir Kuning yang bodoh memerintah, kekuatan emas seperti matahari yang terik menyebar ke seluruh bumi.\\nDalam catatan tablet batu kuno, dia mengubah kekuatannya menjadi tujuh sinar cahaya yang menyilaukan atau tujuh pilar, yang dia berikan secara adil dan merata serta penuh belas kasihan kepada semua orang, sehingga tidak ada orang yang terabaikan, ataupun yang merasa tidak puas.\\nItu adalah masa keemasan yang terlupakan, masa ketika Ratu Bunga menghilang ke dalam pasir dan Lord of Flora memutuskan untuk pergi. Hanya merekalah para keturunan di atas pasir kuning yang memilih untuk mengikuti dewanya. Bahkan ketika bayangan malapetaka yang suram pun semakin membayangi, keyakinan mereka pada dewa tetaplah kuat bersinar terang seperti kuning dan emas.\\nNamun akhirnya bencana tetap saja menimpa. Lambang emas terkubur di kedalaman kuil dan istana, di bawah pilar runtuh yang diukir dengan elang dan kepala banteng."
   },
   "StarterSupplyBundle": {
     "name": "Starter Supply Bundle",
@@ -9619,6 +9703,10 @@
     "name": "Bintang Masa Depan",
     "description": "Dalam pengaturan kosmologis tertentu, Bintang Masa Depan Terhebat adalah harta berharga yang berisi harapan dan kemungkinan tak terbatas, sementara Bintang Masa Depan hanyalah sebagian kecil darinya. Kalau kamu berhasil mengumpulkan keenam fragmennya, kamu dapat memanggil Bintang Masa Depan Terhebat yang sangat sesungguhnya. Adapun mengenai Bintang Masa Depan Terhebat ini seperti apa dan apakah kegunaannya, pengaturan ini tidak menjelaskannya.\\nTapi tentu saja dalam beberapa pengaturan lain, mungkin benda ini menjadi benda yang disimpan oleh organisasi yang dikenal dengan sebutan Akademiya. Dan bahkan nama yang tercatatnya mungkin Parvo Core. Benda ini agak berdebu karena sudah lama tidak digunakan."
   },
+  "EnergyTransformationCapacitor": {
+    "name": "Kapasitor Transformasi Energi",
+    "description": "Kapasitor Transformasi Energi.\\nDesain dan namanya tidak diketahui dan tidak bisa memproduksi apa pun lagi. Sepertinya bisa dijadikan sebagai suplai untuk Primal Construct."
+  },
   "RaefsPackage": {
     "name": "Tas Raef",
     "description": "Tas ini berisi pot, bibit bunga, pupuk, dan banyak perlengkapan berkebun lainnya. Bobotnya memang sangat berat. Pasti cukup sulit untuk membawanya melintasi padang pasir ...."
@@ -9695,6 +9783,106 @@
     "name": "Faktur Guanchui",
     "description": "Faktur yang ditulis Georg untuk Guanchui. Faktur ini mencatat harga dari 100 kotak Fruits of the Festival, rincian biaya-biaya, waktu transaksi, dan estimasi waktu kedatangan barang. Pelanggan yang membeli barang pasti akan merasa lega setelah membaca ini."
   },
+  "Soulferry": {
+    "name": "Kapal Jiwa",
+    "description": "Sebuah bidak catur yang ditempatkan di Kuil Gurabad. Bagian ini menyerupai kapal yang dimaksudkan untuk membawa orang mati."
+  },
+  "KhajNisut": {
+    "name": "Khaj-Nisut",
+    "description": "Sebuah bidak catur yang ditempatkan di Kuil Gurabad. Bagian ini dibangun untuk menjadi miniatur Khaj-Nisut yang dulunya merupakan milik Raja Deshret."
+  },
+  "BorderFort": {
+    "name": "Benteng Perbatasan",
+    "description": "Sebuah bidak catur yang ditempatkan di Kuil Gurabad. Bagian ini diukir agar terlihat seperti benteng di perbatasan."
+  },
+  "KingDeshretsPillar": {
+    "name": "Pilar Raja Deshret",
+    "description": "Sebuah bidak catur yang ditempatkan di Kuil Gurabad. Bagian ini menyerupai monumen besar yang didedikasikan untuk peradaban kuno Raja Deshret."
+  },
+  "TempleOfGurabad": {
+    "name": "Kuil Gurabad",
+    "description": "Sebuah bidak catur yang ditempatkan di Kuil Gurabad. Bagian ini menyerupai kuil agung Gurabad di bawah Raja Deshret."
+  },
+  "ActivationDeviceTheMausoleumOfKingDeshret": {
+    "name": "Perangkat Pengaktif: Mausoleum Raja Deshret",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceDeshretsGlassGoblet": {
+    "name": "Perangkat Pengaktif: Gelas Kaca Deshret",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceSoulferry": {
+    "name": "Perangkat Pengaktif: Kapal Jiwa",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceKhajNisut": {
+    "name": "Perangkat Pengaktif: Khaj-Nisut",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceBorderFort": {
+    "name": "Perangkat Pengaktif: Benteng Perbatasan",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceKingDeshretsPillar": {
+    "name": "Perangkat Pengaktif: Pilar Raja Deshret",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "ActivationDeviceTempleOfGurabad": {
+    "name": "Perangkat Pengaktif: Kuil Gurabad",
+    "description": "Perangkat yang dapat mengaktifkan bidak catur. Hanya Jinni yang melayani Raja Deshret pada masa itu yang dapat memahami kerumitan mekanismenya."
+  },
+  "MemoriesOfTheEternalOasisI": {
+    "name": "Ingatan Oasis Abadi (I)",
+    "description": "Ingatan kuno yang terhubung ke Oasis Abadi, menjelma ke dalam wujud nyata simbol kuno yang mengambang di udara."
+  },
+  "MemoriesOfTheEternalOasisII": {
+    "name": "Ingatan Oasis Abadi (II)",
+    "description": "Ingatan kuno yang terhubung ke Oasis Abadi, menjelma ke dalam wujud nyata simbol kuno yang mengambang di udara."
+  },
+  "MemoriesOfTheEternalOasisIII": {
+    "name": "Ingatan Oasis Abadi (III)",
+    "description": "Ingatan kuno yang terhubung ke Oasis Abadi, menjelma ke dalam wujud nyata simbol kuno yang mengambang di udara."
+  },
+  "TadhlasFeather": {
+    "name": "Bulu Tadhla",
+    "description": "Bulu yang dibutuhkan Elang Pemburu agar bisa terbang. Sekali ia tercabut, sang Elang sudah tidak lagi sanggup terbang ...."
+  },
+  "FatuiStrongholdKey": {
+    "name": "Kunci Markas Fatui",
+    "description": "Kunci ke gerbang depan benteng Fatui di padang gurun. Seharusnya bisa membuka gerbang besar mereka tanpa masalah. Semoga saja memang demikian ...."
+  },
+  "SacredSealPrecipice": {
+    "name": "Segel Suci: Jurang",
+    "description": "Lempengan batu dengan ukiran teks kuno di atasnya yang tampaknya pernah menjadi sebuah bagian dari suatu bangunan. Entah sudah berapa lama ia tertidur di bawah lautan pasir, dan entah keinginan siapa pula yang kini dibawanya? Beberapa orang mengklaim bahwa ini berbentuk sitar dari bangsa kuno, tetapi simbol ini sering muncul dalam deskripsi yang menggambarkan sebuah situasi genting. Belakangan dipastikan bahwa itu mungkin berbentuk tebing, yang menandakan bahwa kemalangan akan datang."
+  },
+  "SacredSealGrandDoor": {
+    "name": "Segel Suci: Pintu Raksasa",
+    "description": "Lempengan batu dengan ukiran teks kuno di atasnya yang tampaknya pernah menjadi sebuah bagian dari suatu bangunan. Entah sudah berapa lama ia tertidur di bawah lautan pasir, dan entah keinginan siapa pula yang kini dibawanya? Simbolnya adalah bentuk siluet pintu batu dari sebuah istana kuno."
+  },
+  "MysteriousStoneSlateI": {
+    "name": "Tablet Batu Misterius (I)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
+  "MysteriousStoneSlateII": {
+    "name": "Tablet Batu Misterius (II)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
+  "MysteriousStoneSlateIII": {
+    "name": "Tablet Batu Misterius (III)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
+  "MysteriousStoneSlateIV": {
+    "name": "Tablet Batu Misterius (IV)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
+  "MysteriousStoneSlateV": {
+    "name": "Tablet Batu Misterius (V)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
+  "MysteriousStoneSlateVI": {
+    "name": "Tablet Batu Misterius (VI)",
+    "description": "Tablet batu kuno yang terukir dengan tulisan. Materialnya kokoh dan memiliki bentuk yang indah."
+  },
   "CynosIntroductionLetter": {
     "name": "Surat Pengantar Cyno",
     "description": "Sepucuk rekomendasi Cyno tuliskan untukmu. Ini melambangkan kepercayaan Mahamatra Agung."
@@ -9739,6 +9927,10 @@
     "name": "Paket Peralatan Spesial Padang Pasir Edisi Terbatas",
     "description": "Tas bertualang yang dibeli dari Dori. Dalamnya berisi segala macam barang yang aneh. Agak membingungkan sebenarnya benda-benda apakah ini, tapi saat diteliti lebih lanjut ternyata mereka cukup berguna ...?"
   },
+  "NascentBambooShoots": {
+    "name": "Nascent Bamboo Shoot",
+    "description": "Pada musim tertentu, tunas bambu yang tumbuh di Desa Qingce akan menebarkan aroma yang segar dan lembut. Ini adalah bahan makanan yang langka dan berharga."
+  },
   "AShortLetter": {
     "name": "Sepucuk Surat Pendek",
     "description": "Sepucuk surat pendek yang ditulis dengan berbagai kode. Kamu tidak tahu siapa yang menulisnya dan kenapa, dan tidak tahu juga kenapa ada di sini."
@@ -9758,6 +9950,46 @@
   "SomeonesDiary": {
     "name": "Buku Harian Seseorang",
     "description": ""
+  },
+  "InternalWithdrawalDocument": {
+    "name": "Dokumen Penarikan Internal",
+    "description": "Perintah resmi yang ditinggalkan di dalam barak."
+  },
+  "PreliminaryTestOnExperimentalSubject": {
+    "name": "Tes Pendahuluan pada Subjek Eksperimen",
+    "description": "Sebuah dokumen penelitian yang terlipat tebal, mencatat tentang kondisi \"Spesimen Manusia\"."
+  },
+  "TransferNotification": {
+    "name": "Pemberitahuan Pemindahan",
+    "description": "Pemberitahuan resmi Fatui. Tampaknya berhubungan tentang tujuan pemindahan pasukan."
+  },
+  "PathfindersLogI": {
+    "name": "Catatan Pencari Jalan: I",
+    "description": "Catatan Pencari Jalan: I"
+  },
+  "PathfindersLogII": {
+    "name": "Catatan Pencari Jalan: II",
+    "description": "Catatan Pencari Jalan: II"
+  },
+  "PathfindersLogIII": {
+    "name": "Catatan Pencari Jalan: III",
+    "description": "Catatan Pencari Jalan: III"
+  },
+  "PathfindersLogIV": {
+    "name": "Catatan Pencari Jalan: IV",
+    "description": "Catatan Pencari Jalan: IV"
+  },
+  "PathfindersLogV": {
+    "name": "Catatan Pencari Jalan: V",
+    "description": "Catatan Pencari Jalan: V"
+  },
+  "PathfindersLogVI": {
+    "name": "Catatan Pencari Jalan: VI",
+    "description": "Catatan Pencari Jalan: VI"
+  },
+  "NoteRegardingAnExchangeOfGoods": {
+    "name": "Catatan Mengenai Penukaran Barang",
+    "description": "Sepucuk surat balasan, sepertinya dari Fatui dan berisi tentang detail dari kesepakatan Aderfi dengan mereka."
   },
   "EventNotice": {
     "name": "Pengumuman Event",
@@ -9823,9 +10055,201 @@
     "name": "Surat Xudong",
     "description": "Surat yang ditinggalkan oleh Xudong. Sepertinya ada sesuatu yang melekat di dalamnya ...."
   },
+  "RecordsOfGurabadPartI": {
+    "name": "Sejarah Gurabad: I",
+    "description": "Sejarah Gurabad: I"
+  },
+  "RecordsOfGurabadPartII": {
+    "name": "Sejarah Gurabad: II",
+    "description": "Sejarah Gurabad: II"
+  },
+  "RecordsOfGurabadPartIII": {
+    "name": "Sejarah Gurabad: III",
+    "description": "Sejarah Gurabad: III"
+  },
+  "RecordsOfGurabadPartIV": {
+    "name": "Sejarah Gurabad: IV",
+    "description": "Sejarah Gurabad: IV"
+  },
+  "RecordsOfGurabadPartV": {
+    "name": "Sejarah Gurabad: V",
+    "description": "Sejarah Gurabad: V"
+  },
+  "RecordsOfMtDamavandPartI": {
+    "name": "Catatan Gunung Damavand: I",
+    "description": "Catatan Gunung Damavand: I"
+  },
+  "RecordsOfMtDamavandPartII": {
+    "name": "Catatan Gunung Damavand: II",
+    "description": "Catatan Gunung Damavand: II"
+  },
+  "RecordsOfMtDamavandPartIII": {
+    "name": "Catatan Gunung Damavand: III",
+    "description": "Catatan Gunung Damavand: III"
+  },
+  "DogmaOfTheBrassMaskPartI": {
+    "name": "Ajaran Topeng Kuningan: I",
+    "description": "Ajaran Topeng Kuningan: I"
+  },
+  "DogmaOfTheBrassMaskPartII": {
+    "name": "Ajaran Topeng Kuningan: II",
+    "description": "Ajaran Topeng Kuningan: II"
+  },
+  "DogmaOfTheBrassMaskPartIII": {
+    "name": "Ajaran Topeng Kuningan: III",
+    "description": "Ajaran Topeng Kuningan: III"
+  },
+  "RecordsOfTheAncientOasesPartI": {
+    "name": "Catatan Oasis Kuno: I",
+    "description": "Catatan Oasis Kuno: I"
+  },
+  "RecordsOfTheAncientOasesPartII": {
+    "name": "Catatan Oasis Kuno: II",
+    "description": "Catatan Oasis Kuno: II"
+  },
+  "RecordsOfTheAncientOasesPartIII": {
+    "name": "Catatan Oasis Kuno: III",
+    "description": "Catatan Oasis Kuno: III"
+  },
+  "RecordsOfTheAncientOasesPartIV": {
+    "name": "Catatan Oasis Kuno: IV",
+    "description": "Catatan Oasis Kuno: IV"
+  },
+  "RecordsOfTheAncientOasesPartV": {
+    "name": "Catatan Oasis Kuno: V",
+    "description": "Catatan Oasis Kuno: V"
+  },
+  "RecordsOfTheAncientOasesPartVI": {
+    "name": "Catatan Oasis Kuno: VI",
+    "description": "Catatan Oasis Kuno: VI"
+  },
+  "ConscriptionSlate": {
+    "name": "Tablet Batu Militer",
+    "description": "Tablet Batu Militer"
+  },
+  "RedVulturesFeather": {
+    "name": "Bulu Red Vulture",
+    "description": "Bulu-bulu yang mendukung kemampuan terbang burung Red Vulture. Dapat digunakan untuk membuat warna yang kontras ... Atau bahkan racun yang mematikan."
+  },
+  "ScorpionsSting": {
+    "name": "Ekor Scorpion",
+    "description": "Ekor Scorpion yang terhubung dengan kelenjar racunnya. Instrumen klasik yang dapat disertifikasi untuk pembunuhan di padang gunung."
+  },
+  "FlyingSerpentsHorn": {
+    "name": "Tanduk Flying Serpent",
+    "description": "Seperti namanya, ini adalah tanduk Flying Serpent. Suku-suku di padang gurun akan menggilingnya menjadi bubuk untuk dijadikan sebagai ramuan yang tidak efektif dan menjadikan penciptaan ini sebagai obat bantu tidur untuk menipu para peneliti di kota. Penjualannya lumayan laris juga."
+  },
+  "CaptainZoyaSnezhevnasReportI": {
+    "name": "Laporan Kapten Zoya Snezhevna: I",
+    "description": "Laporan Kapten Zoya Snezhevna: I"
+  },
+  "CaptainZoyaSnezhevnasReportII": {
+    "name": "Laporan Kapten Zoya Snezhevna: II",
+    "description": "Laporan Kapten Zoya Snezhevna: II"
+  },
+  "CaptainZoyaSnezhevnasReportIII": {
+    "name": "Laporan Kapten Zoya Snezhevna: III",
+    "description": "Laporan Kapten Zoya Snezhevna: III"
+  },
+  "DamagedRecordsI": {
+    "name": "Laporan Rusak: I",
+    "description": "Laporan Rusak: I"
+  },
+  "DamagedRecordsII": {
+    "name": "Laporan Rusak: II",
+    "description": "Laporan Rusak: II"
+  },
+  "TanitEmblemMarkedRecords": {
+    "name": "Catatan dengan Simbol Tanit",
+    "description": "Catatan dengan Simbol Tanit"
+  },
+  "FatuiLetter": {
+    "name": "Surat Fatui",
+    "description": "Dokumen Penarikan Internal"
+  },
+  "AnAbandonedLetter": {
+    "name": "Sepucuk Surat yang Ditinggalkan",
+    "description": "Sepucuk Surat yang Ditinggalkan"
+  },
+  "AkademiyaEmblemMarkedContract": {
+    "name": "Kontrak dengan Simbol Akademiya",
+    "description": "Kontrak dengan Simbol Akademiya"
+  },
+  "RestoredBlueprintsOfAMechanicalBehemothsPowerSystem": {
+    "name": "Cetak Biru yang Dipulihkan dari Sistem Tenaga Mekanikal Behemoth",
+    "description": "Cetak Biru yang Dipulihkan dari Sistem Tenaga Mekanikal Behemoth"
+  },
+  "SecretLetterToAderfi": {
+    "name": "Surat Rahasia untuk Aderfi",
+    "description": "Surat Rahasia untuk Aderfi"
+  },
   "RandomWeaponShards": {
     "name": "Pecahan Senjata Acak",
     "description": "Pecahan dari sejenis senjata acak. Entah bagaimana bisa hancur jadi seperti ini ...."
+  },
+  "UnattributedRamenVoucher": {
+    "name": "Voucher Ramen Tak Beralamat",
+    "description": "Hadiah sebagai ungkapan terima kasih karena telah membantu \"Raja Oni Pendekar Kumbang Sejati\" Arataki Itto dalam bertanding melawan Grandmaster Hanakado dalam \"Lomba Adu Kumbang Arataki yang Paling Seru dan Paling Gila\", sekaligus juga berfungsi sebagai bukti kebangkitan kilat dari dua bintang kumbang petarung, yaitu \"Tangan Kanan Raja Oni\" dan \"Lavender Melon Pembelah Langit dan Bumi\".\\n\"Raja Oni Pendekar Kumbang Sejati\" mengklaim bahwa selama kamu menjual voucher ini ke toko, kamu bisa \"menikmati semangkuk ramen gratis setiap hari selama dua bulan berturut-turut\"! Tapi ... sebenarnya kuponnya bisa dipakai di \"toko\" yang mana ya?"
+  },
+  "NeatNote": {
+    "name": "Catatan Rapi",
+    "description": "Catatan Rapi"
+  },
+  "JehtsLetter": {
+    "name": "Surat Jeht",
+    "description": "Surat Jeht"
+  },
+  "UfairahsNotes": {
+    "name": "Catatan Ufairah",
+    "description": "Catatan Ufairah"
+  },
+  "AncientStoneKey": {
+    "name": "Kunci Bantu Kuno",
+    "description": "Kunci misterius yang dipegang oleh Matriark dari Suku Tanit. Seharusnya bisa membuka sebuah pintu di suatu tempat ...."
+  },
+  "CrumpledNamelist": {
+    "name": "Daftar Nama Lecek",
+    "description": "Daftar Nama Lecek"
+  },
+  "WarehouseInventoryRecords": {
+    "name": "Catatan Persediaan Gudang",
+    "description": "Catatan Persediaan Gudang"
+  },
+  "RecordsOfTheAncientOasesPartVII": {
+    "name": "Catatan Oasis Kuno: VII",
+    "description": "Catatan Oasis Kuno: VII"
+  },
+  "RecordsOfTheAncientOasesPartVIII": {
+    "name": "Catatan Oasis Kuno: VIII",
+    "description": "Catatan Oasis Kuno: VIII"
+  },
+  "RecordsOfTheAncientOasesPartIX": {
+    "name": "Catatan Oasis Kuno: IX",
+    "description": "Catatan Oasis Kuno: IX"
+  },
+  "RecordsOfTheAncientOasesPartX": {
+    "name": "Catatan Oasis Kuno: X",
+    "description": "Catatan Oasis Kuno: X"
+  },
+  "EmploymentCodeOfConductTablet": {
+    "name": "Tablet Batu Peraturan Karyawan",
+    "description": "Tablet Batu Peraturan Karyawan"
+  },
+  "TribeMerchantsLetter": {
+    "name": "Surat Pedagang Suku",
+    "description": "Surat Pedagang Suku"
+  },
+  "JehtsNote": {
+    "name": "Catatan Jeht",
+    "description": "Catatan Jeht"
+  },
+  "PipingHotBambooShootSoup": {
+    "name": "Bamboo Shoot Soup Mendidih",
+    "description": "Hidangan Bamboo Shoot Soup yang dibuat oleh Supreme Cuisine Machine. Zhongli menilai makanan ini sebagai: \"Warna yang sempurna dengan aroma seperti anggur.\" Bahan-bahannya adalah Bamboo Shoot yang baru tumbuh, bahan ini sulit sekali diperoleh ... Dan karena berbagai alasan, nilai kenang-kenangannya jauh melebihi nilainya sebagai bahan masakan. Karena makanan ini dibuat oleh Adeptus, makanan ini tidak akan rusak meskipun kamu menaruhnya begitu saja di dalam tasmu."
+  },
+  "WarriorsSpiritSwordfightingArenaTicket": {
+    "name": "Tiket Masuk Arena Pertarungan Jiwa Pejuang",
+    "description": "Melampaui batas bangsa dan identitas — bersatu atas nama keberanian dan kekuatan."
   },
   "SilkFlowerSeed": {
     "name": "Silk Flower Seed",
@@ -10913,7 +11337,27 @@
   },
   "TravelNotesStellarRivers": {
     "name": "Catatan Perjalanan: Lautan Bintang",
-    "description": "Style Kartu Nama.\\nLupa adalah nama pesta yang telah lama berlalu, tersebar di tiga sungai di antara lautan awan, dan musim gugur masih tersisa di seberang lekukan senja."
+    "description": "Style Kartu Nama.\\nNama pesta yang lama berlalu telah dilupakan, tersebar di tiga sungai di antara lautan awan, dan musim gugur masih tersisa menyebrangi lekukan senja."
+  },
+  "AlhaithamEnlightenment": {
+    "name": "Alhaitham: Enlightenment",
+    "description": "Style kartu nama.\\n\"Satu-satunya hal yang harus dipatuhi oleh peneliti adalah debat dan dialektika. Pertanyakanlah segala sesuatu supaya prasangka-prasangka dijauhkan darimu.\""
+  },
+  "YaoyaoYuegui": {
+    "name": "Yaoyao: Yuegui",
+    "description": "Style Kartu Nama.\\n\"Coba kamu tebak siapa di sini yang sebenarnya Yuegui? Betul, semuanya!\""
+  },
+  "CelebrationLenticularClouds": {
+    "name": "Perayaan: Awan Lentikularis",
+    "description": "Style kartu nama.\\nKala fajar menyingsing, awan mengapung tersebar ke ribuan puncak."
+  },
+  "TravelNotesRhythmAndRhyme": {
+    "name": "Catatan Perjalanan: Ritme dan Irama",
+    "description": "Style kartu nama.\\nSeiring dengan cahaya mentari luar biasa yang menyinari langit malam, lonceng telah dipersiapkan untuk mengumandangkan bunyi pertanda segera mengakhiri tahun yang telah berlalu. Istana-istana berlapis emas dihiasi dengan tirai manik-manik, pagarnya dicat perak oleh terangnya sinar rembulan, dan pesta-pesta dimeriahkan oleh nyanyian dan tarian yang riang gembira. Itukah bunga, atau kembang api? Banyak instrumen dimainkan secara serempak, harmonis dan menyenangkan hati."
+  },
+  "AchievementSandstorm": {
+    "name": "Achievement: Badai Pasir",
+    "description": "Style kartu nama.\\nBadai pasir yang tak kunjung berhenti menyimpan mimpi yang kuno ...."
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
@@ -11151,6 +11595,10 @@
     "name": "\"Bubbly Kamera\"",
     "description": "Saat digunakan, alat yang berguna ini dapat merekam dan menyimpan pemandangan yang ada di hadapannya seraya menambahkan nada warna khusus kepadanya.\\nBenda ini adalah alat aneh yang tidak diketahui asalnya. Foto yang diambil pun memiliki efek yang aneh. Siapa sangka kalau mesin tanpa air di dalamnya ini ternyata bisa menghasilkan foto dengan gelembung riang dengan sebuah perasaan fantasi di dalamnya?\\nTerhadap fungsinya yang spesial ini, Kapten Kavaleri mendeskripsikan mesin ini sebagai \"mesin yang pengertian terhadap keinginan orang untuk menikmati hari yang sejuk dan menyegarkan\"."
   },
+  "JinniInTheMagicBottleLiloupar": {
+    "name": "Jinni in the Magic Bottle — Liloupar",
+    "description": "Liloupar — Jinni yang agung, yang terlahir dari bunga teratai air dan telah terbelah jiwanya oleh karena hukuman kuno, kini disegel dalam botol ajaib yang transparan.\\nSekarang, ia tampaknya telah menemukan tuannya yang baru ....\\n\\nMeskipun ia kini hanya memiliki seperseratus juta dari kekuatan dahsyatnya di masa lalu, ia tetap akan menggunakan kekuatan yang tersisa dari dirinya ini untuk membantu tuannya melewati pasir panas dan kota kuno Desert of Hadramaveth."
+  },
   "WisdomOrb": {
     "name": "Wisdom Orb",
     "description": "Item kunci yang diberikan oleh penyelenggara Turnamen Piala Nilotpala untuk Pawang Penjinak. Dapat digunakan untuk menangkap, menampung, dan memerintah Fungus yang pintar. Katanya item ini adalah penemuan dari si pelajar, Kautilya. Hanya mereka yang terampil menggunakan item ini yang dapat berpartisipasi dalam Turnamen Piala Nilotpala untuk Pawang Penjinak. Namun, sebagian dari tampilan item ini terasa tidak asing dan sepertinya pernah terlihat di beberapa tempat ...."
@@ -11343,6 +11791,30 @@
     "name": "Wanmin Feast",
     "description": "Kembang api yang referensinya diambil dari sosok pembantu kecil dari koki terkenal Wanmin Restaurant. Saat orang Liyue mana pun melihat pembantu kecil ini, pikiran mereka akan segera terbang kepada makanan yang enak. Di mana ada festival, di situ pasti ada makanan yang lezat!"
   },
+  "BetweenTheExquisiteThrowsOfHerEnigmaticDice": {
+    "name": "Between the Exquisite Throws of Her Enigmatic Dice",
+    "description": "Kembang api berbentuk dadu yang dapat menampilkan titik yang berbeda setiap kali dinyalakan. Dikatakan bahwa ahli kembang api menciptakan pola tersebut untuk menunjukkan rasa hormat mereka kepada pemilik baru Kedai Teh Yanshang. Sejak pemilik baru tersebut mengambil alih tempat itu, semua penjudi hampir tidak tampak lagi. Permainan kartu kini sudah tidak ada sangkut pautnya lagi dengan Mora, dan telah kembali ke wujud aslinya yang paling murni — permainan biasa di waktu senggang."
+  },
+  "InuzakaGeneralsFriendlyHelper": {
+    "name": "Inuzaka General's Friendly Helper",
+    "description": "Seorang novelis keliling pernah disambut dengan hangat oleh seorang Jenderal bertelinga runcing pada saat kunjungannya di Pulau Watatsumi. Begitu berkesannya si asisten kecil pendamping sang Jenderal, sehingga dia memberikan inspirasi bagi seorang pengrajin untuk membuat kembang api ini."
+  },
+  "CliffbreakersBannerFluttersInDrumRolls": {
+    "name": "Cliffbreaker's Banner Flutters in Drum Rolls",
+    "description": "Kembang api yang dirancang dengan cermat oleh pengrajin kembang api yang juga seorang pecinta opera. Saat meledak, kembang api ini akan menampilkan bentuk spanduk seperti yang sering dilihat dalam pertunjukan opera. Menonton opera merupakan hiburan favorit mayoritas penduduk lokal di Liyue, dan saat kembang api dengan pola seperti ini bermekaran di langit, melodi tak terlupakan yang pernah dinyanyikan oleh seorang seniman terkenal pun tak elak langsung muncul di dalam benak ...."
+  },
+  "ThatFairlyEffectualAdviceAgainstWine": {
+    "name": "That Fairly Effectual \"Advice\" Against Wine",
+    "description": "Kembang api yang dipesan oleh seorang pedagang yang sering melakukan perjalanan antara Liyue dan Mondstadt. Dikatakan bahwa kembang api ini dibuat sebagai tanda ungkapan terima kasih untuk seorang bartender tertentu, yang oleh karena perkataan sang bartender tersebut, dirinya merasa terguncang, kemudian dia mengambil sikap untuk berhenti minum-minum secara berlebihan dan kini mampu menghasilkan banyak uang."
+  },
+  "RainforestBornFungi": {
+    "name": "Rainforest-Born Fungi",
+    "description": "Kembang api yang meledak dalam bentuk Floating Hydro Fungus.\\nDikatakan bahwa seorang pegawai Bagian Urusan Sipil menyarankan untuk membuat pola kembang api yang bulat ini setelah kembali dari perjalanan dinasnya di Sumeru, dan dia berharap kalau penampilan yang menggemaskan dari kembang api ini akan mencerahkan hati semua orang."
+  },
+  "ObligingLittleYuegui": {
+    "name": "Obliging Little Yuegui",
+    "description": "Kembang api yang terinspirasi oleh sesosok gadis kecil yang ramah.\\nDi Pelabuhan Liyue, banyak orang yang telah menerima uluran tangan dari gadis tersebut, namun tidak ada yang tahu tentang namanya — yang mereka tahu hanyalah bahwa dia memanggil rekannya dengan sebutan \"Yuegui\". Kembang api ini dibuat sebagai tanda ungkapan terima kasih dan harapan baik mereka."
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch",
     "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
@@ -11473,6 +11945,14 @@
   },
   "ProliferatingSpores": {
     "name": "Proliferating Spores",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "PoundingSurprise": {
+    "name": "Pounding Surprise",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "LightningStorm": {
+    "name": "Lightning Storm",
     "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MagicGuide": {
@@ -11899,6 +12379,14 @@
     "name": "To the Church's Free Spirit",
     "description": "Model pakaian Rosaria. Set pakaian ini tampaknya adalah hadiah eksklusif yang dibuat oleh Katedral untuk Rosaria."
   },
+  "SpringbloomMissive": {
+    "name": "Springbloom Missive",
+    "description": "Kostum perjalanan Kamisato Ayaka. Gaun yang dirancang mengikuti model gaun para wanita Fontaine dalam ilustrasi novel ringan, yang menunjukkan sekilas gaya hidup para wanita terhormat di sana."
+  },
+  "ASobriquetUnderShade": {
+    "name": "A Sobriquet Under Shade",
+    "description": "Kostum Lisa yang dipesankan oleh seseorang saat dirinya berkunjung kembali ke Sumeru. Keseimbangan sempurna antara kepraktisan dan keanggunan, modelnya lumayan mirip dengan seragam lamanya ketika masih belajar di Akademiya dulu."
+  },
   "AdventurerCamp": {
     "name": "Kemah Petualang",
     "description": "Blueprint yang berisi langkah-langkah untuk memasang \"Kemah Petualang\".\\nKemah yang dipasang secara terburu-buru di alam liar oleh para petualang.\\nSaat para petualang memasang kemah, mereka harus memasang pagar di sekelilingnya untuk menghalau binatang buas. Tapi karena di sekitarnya tidak ada cukup kayu untuk pertahanan yang kokoh, mereka harus berjaga secara bergantian untuk memastikan tidak ada bahaya.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Penempatan."
@@ -12041,7 +12529,7 @@
   },
   "CottageKitchen": {
     "name": "Dapur Rumah Kecil",
-    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Dapur Rumah Kecil\".\\nDapur lengkap dengan lemari berisi bumbu yang disiapkan dengan cermat.\\nKoki yang hebat akan membeli bahan-bahan segar dari pasar setiap hari, dan seorang kuliner sejati bahkan akan memperhatikan kayu bakar yang digunakan dalam kompor mereka. Kepala koki muda di Wanmin Restaurant pernah berkata bahwa untuk membuat hidangan tradisional Desa Qingce, pertama-tama orang harus memasukkan bambu kering ke dalam kompor dan mengontrol apinya dengan hati-hati. Jika seseorang dapat mengolah semak Wolfhook menjadi kayu bakar yang tipis, maka dia akan dapat menambahkan sedikit sentuhan Mondstadt di dalamnya.\\nJenis kayu bakar yang berbeda menghasilkan efek yang sangat berbeda, dan sebagian besar koki tidak akan pernah benar-benar menguasainya. Karena itu, Wanmin Restaurant telah memonopoli teknik khusus ini.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Penempatan.\\nRekan yang menyukai Set Perabotan ini: Tartaglia, Mona, Xiao, Xiangling, Razor"
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Dapur Rumah Kecil\".\\nDapur lengkap dengan lemari berisi bumbu yang disiapkan dengan cermat.\\nKoki yang hebat akan membeli bahan-bahan segar dari pasar setiap hari, dan seorang kuliner sejati bahkan akan memperhatikan kayu bakar yang digunakan dalam kompor mereka. Kepala koki muda di Wanmin Restaurant pernah berkata bahwa untuk membuat hidangan tradisional Desa Qingce, pertama-tama orang harus memasukkan bambu kering ke dalam kompor dan mengontrol apinya dengan hati-hati. Jika seseorang dapat mengolah semak Wolfhook menjadi kayu bakar yang tipis, maka dia akan dapat menambahkan sedikit sentuhan Mondstadt di dalamnya.\\nJenis kayu bakar yang berbeda menghasilkan efek yang sangat berbeda, dan sebagian besar koki tidak akan pernah benar-benar menguasainya. Karena itu, Wanmin Restaurant telah memonopoli teknik khusus ini.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Penempatan.\\nRekan yang menyukai Set Perabotan ini: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao"
   },
   "WeaponForgingStation": {
     "name": "Stasiun Penempaan Senjata",
@@ -12065,7 +12553,7 @@
   },
   "QingceCloudResidence": {
     "name": "Hunian Awan Qingce",
-    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Hunian Awan Qingce\".\\nSebuah dusun pegunungan yang meniru Desa Qingce. Dikatakan bahwa suasana di sana sangat ramah dan setiap pengunjung yang datang akan merasa tenang dan lebih bersyukur akan hal-hal kecil yang tidak mereka sadari sebelumnya.\\nMerantau untuk mengejar cita-cita dan menghabiskan bertahun-tahun untuk mengejar karir tentunya patut dipuji. Tapi setelah bertahun-tahun melakukannya, seseorang pasti akan merasa lelah, dan saat itu terjadi, kehidupan yang tenang dan damai di pinggiran kota adalah pilihan yang baik. Desa Qingce selalu menerima keputusan anak-anak muda yang pergi mencari peruntungan dan siap menyambut mereka kembali dengan tangan terbuka kapan saja.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Penempatan.\\nRekan yang menyukai Set Perabotan ini: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan"
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Hunian Awan Qingce\".\\nSebuah dusun pegunungan yang meniru Desa Qingce. Dikatakan bahwa suasana di sana sangat ramah dan setiap pengunjung yang datang akan merasa tenang dan lebih bersyukur akan hal-hal kecil yang tidak mereka sadari sebelumnya.\\nMerantau untuk mengejar cita-cita dan menghabiskan bertahun-tahun untuk mengejar karir tentunya patut dipuji. Tapi setelah bertahun-tahun melakukannya, seseorang pasti akan merasa lelah, dan saat itu terjadi, kehidupan yang tenang dan damai di pinggiran kota adalah pilihan yang baik. Desa Qingce selalu menerima keputusan anak-anak muda yang pergi mencari peruntungan dan siap menyambut mereka kembali dengan tangan terbuka kapan saja.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Penempatan.\\nRekan yang menyukai Set Perabotan ini: Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan, Yaoyao"
   },
   "OfHuntingAndDancing": {
     "name": "Kemah Berburu dan Menari",
@@ -12137,11 +12625,11 @@
   },
   "FervidAroma": {
     "name": "Aroma yang Berlimpah",
-    "description": "Blueprint untuk restoran yang didekorasi dengan indah ini adalah kedai terkenal di Kota Sumeru ... yang tentunya sudah dimodifikasi untuk digunakan di dalam Serenitea Pot. Uap dan aroma rempah-rempah samar-samar tercium di udara, seolah melipatgandakan pengalaman menyenangkan yang pernah dilalui. Yang dibutuhkan hanyalah beberapa teman untuk menemanimu dan beberapa anggur berkualitas, dan ini akan menjadi pengalaman bersantap yang paling sempurna.\\nBagi mereka yang sering bepergian bersama, jika mempertimbangkan jumlah kursi dan jumlah makanan yang dibutuhkan, maka tempat barbekyu akan menjadi pilihan sempurna. Sedangkan bagi mereka yang senang bepergian sendiri, suasana yang bising dari tempat-tempat tersebut memungkinkan mereka untuk menyamarkan gerakan mereka, sekaligus menyediakan kondisi yang aman untuk mengamati, melacak, atau bahkan merencanakan sesuatu."
+    "description": "Blueprint untuk restoran yang didekorasi dengan indah ini adalah kedai terkenal di Kota Sumeru ... yang tentunya sudah dimodifikasi untuk digunakan di dalam Serenitea Pot. Uap dan aroma rempah-rempah samar-samar tercium di udara, seolah melipatgandakan pengalaman menyenangkan yang pernah dilalui. Yang dibutuhkan hanyalah beberapa teman untuk menemanimu dan beberapa anggur berkualitas, dan ini akan menjadi pengalaman bersantap yang paling sempurna.\\nBagi mereka yang sering bepergian bersama, jika mempertimbangkan jumlah kursi dan jumlah makanan yang dibutuhkan, maka tempat barbekyu akan menjadi pilihan sempurna. Sedangkan bagi mereka yang senang bepergian sendiri, suasana yang bising dari tempat-tempat tersebut memungkinkan mereka untuk menyamarkan gerakan mereka, sekaligus menyediakan kondisi yang aman untuk mengamati, melacak, atau bahkan merencanakan sesuatu.\\nRekan yang menyukai Set Perabotan ini: Alhaitham"
   },
   "OfSettledThoughts": {
     "name": "Sumber Pemikiran",
-    "description": "Sebuah ruang belajar yang ditumpuk dengan buku-buku tebal, rak bukunya menjulang tinggi seperti dinding yang tak terukur. Ketika kebanyakan orang menatap banyak buku yang terbentang di depan mata mereka, sulit rasanya untuk tidak merasa sedikit kagum.\\nTentu saja, mereka yang tahu menyadari bahwa batas antara kebijaksanaan dan ketidaktahuan bukanlah batas yang tidak boleh dilewati. Selama seseorang bersedia untuk membaca buku-buku ini, satu per satu, mengikuti rencana yang disusun dengan hati-hati, seseorang akan memperoleh pengetahuan baru yang tak terhitung jumlahnya.\\nRekan yang menyukai set perabot ini: Cyno, Faruzan"
+    "description": "Sebuah ruang belajar yang ditumpuk dengan buku-buku tebal, rak bukunya menjulang tinggi seperti dinding yang tak terukur. Ketika kebanyakan orang menatap banyak buku yang terbentang di depan mata mereka, sulit rasanya untuk tidak merasa sedikit kagum.\\nTentu saja, mereka yang tahu menyadari bahwa batas antara kebijaksanaan dan ketidaktahuan bukanlah batas yang tidak boleh dilewati. Selama seseorang bersedia untuk membaca buku-buku ini, satu per satu, mengikuti rencana yang disusun dengan hati-hati, seseorang akan memperoleh pengetahuan baru yang tak terhitung jumlahnya.\\nRekan yang menyukai set perabot ini: Cyno, Faruzan, Alhaitham"
   },
   "AFarewellBriefToBustleAndBother": {
     "name": "Perpisahan Singkat dengan Kebisingan dan Kekhawatiran",
@@ -12295,6 +12783,10 @@
     "name": "Lentera Pelangi: Perayaan Saat Fajar",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Lentera Pelangi: Perayaan Saat Fajar\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "CountlessHomesLightUpTheMoon": {
+    "name": "\"Ribuan Rumah Terangi Bulan\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Ribuan Rumah Terangi Bulan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "StoneworksLampDeepingGloomCandle": {
     "name": "Lampu Pabrik Batu: Lilin dari Kegelapan",
     "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Lampu Pabrik Batu: Lilin dari Kegelapan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -12322,6 +12814,14 @@
   "BloomingIllumination": {
     "name": "Cahaya Bermekaran",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Cahaya Bermekaran.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "FlutteringLight": {
+    "name": "\"Cahaya yang Berkibar\"",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Cahaya yang Berkibar\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "LightOfSlumber": {
+    "name": "\"Cahaya Tidur\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Cahaya Tidur\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "EfflorescentIllumination": {
     "name": "Iluminasi Berbunga",
@@ -12366,6 +12866,14 @@
   "BrightwoodInvigoratingNightstand": {
     "name": "Meja Nakas Kayu Brightwood: Pemulihan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Meja Nakas kayu Brightwood: Pemulihan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AthelTripleDrawerCabinet": {
+    "name": "Kabinet Tiga Laci Athel",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kabinet Tiga Laci Athel\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AthelPotteryShelf": {
+    "name": "Rak Tembikar Athel",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rak Tembikar Athel\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "TwoTierLibraryBookshelf": {
     "name": "Rak Buku Perpustakaan 2 Lapis",
@@ -12499,7 +13007,7 @@
     "name": "Meja untuk Berdua",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Meja untuk Berdua.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
-  "LongAdhighamaChamferTable": {
+  "LongAdhigamaChamferTable": {
     "name": "Meja Panjang Tanpa Sudut Adhigama",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Panjang Tanpa Sudut Adhigama\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
@@ -12727,6 +13235,10 @@
     "name": "Tabungan Penghuni Hutan",
     "description": "Diagram yang berisi langkah-langkah untuk membuat \"Tabungan Penghuni Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "HuedVaseMoltenSand": {
+    "name": "Vas Berwarna: Pasir Cair",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Vas Berwarna: Pasir Cair\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Karpet Mondstadt: Semangat Membara",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Karpet Mondstadt: Semangat Membara\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -12763,6 +13275,10 @@
     "name": "Kebun Zaitun",
     "description": "Diagram yang berisi langkah-langkah untuk membuat Kebun Zaitun.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "PureLikeWheatSprouts": {
+    "name": "Murni Bagaikan Kecambah Gandum",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Murni Bagaikan Kecambah Gandum.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "TrustyPortableLamp": {
     "name": "Lentera yang Tidak Pernah Padam",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Lentera yang Tidak Pernah Padam\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -12794,6 +13310,18 @@
   "LightOfTheLandOfWisdom": {
     "name": "Cahaya Tanah Kebijaksanaan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Cahaya Tanah Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "NightwatchersCandlelight": {
+    "name": "\"Cahaya Lilin Pengamat Malam\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Cahaya Lilin Pengamat Malam\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "ListeningCandelight": {
+    "name": "\"Cahaya Lilin yang Mendengarkan\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Cahaya Lilin yang Mendengarkan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TwowayIronLamp": {
+    "name": "Lampu Besi Dua Arah",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Lampu Besi Dua Arah.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Karangan Bunga: Biru yang Tenang",
@@ -12943,6 +13471,26 @@
     "name": "Gemilang Penghuni Hutan",
     "description": "Diagram yang berisi langkah-langkah untuk membuat \"Kecemerlangan Penghuni Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "HuedVaseSprout": {
+    "name": "Vas Berwarna: Tanaman Muda",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Vas Berwarna: Tanaman Muda\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "StarShapedMultipurposeBottle": {
+    "name": "Botol Serbaguna Berbentuk Bintang",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat Botol Serbaguna Berbentuk Bintang.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "RealizationsFromTheLandOfWisdom": {
+    "name": "\"Kesadaran dari Tanah Kebijaksanaan\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kesadaran dari Tanah Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "RestorativeFragrance": {
+    "name": "\"Aroma Pemulihan\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Aroma Pemulihan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TheArtOfRetainingWater": {
+    "name": "\"Seni Menghemat Air Bersih\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Seni Menghemat Air Bersih\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "LandscapePaintingCountryHome": {
     "name": "Lukisan Pemandangan: Kampung Halaman",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Lukisan Pemandangan: Kampung Halaman\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13042,6 +13590,10 @@
   "ForestWatchersConsiderations": {
     "name": "Kekhawatiran Penjaga Hutan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Kekhawatiran Penjaga Hutan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AthelwoodMetalCombatShield": {
+    "name": "Tameng Tarung Besi Athelwood",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Tameng Tarung Besi Athelwood.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan",
@@ -13226,6 +13778,14 @@
   "BrightwoodKebabCart": {
     "name": "Kios Kebab Brightwood",
     "description": "Diagram yang berisi langkah-langkah untuk membuat \"Kios Kebab Brightwood\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AbundanceOfCrispAir": {
+    "name": "Kelimpahan dalam Udara Renyah",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Kelimpahan dalam Udara Renyah.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DeliberationOfChoice": {
+    "name": "Pertimbangan Pilihan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Pertimbangan Pilihan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "HilichurlOutpostHut": {
     "name": "Pondok Pos Hilichurl",
@@ -13539,6 +14099,14 @@
     "name": "Tugas Kota Kebijaksanaan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Tugas Kota Kebijaksanaan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "SilkyQuellerOfSeaMonsters": {
+    "name": "\"Penakluk Halus Monster Laut\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Penakluk Halus Monster Laut\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "NightOfSerenityInTheSandyBreeze": {
+    "name": "\"Badai Pasir di Malam yang Tenang\"",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Badai Pasir di Malam yang Tenang\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Air Mancur Bunga & Burung",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Air Mancur Bunga & Burung\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13626,6 +14194,22 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "Kejernihan Kota Kebijaksanaan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Kejernihan Kota Kebijaksanaan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PortOrmosGPCraneIII": {
+    "name": "Derek Universal III Pelabuhan Ormos",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Derek Universal III Pelabuhan Ormos\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "CompositeTimberLongDistanceHandCart": {
+    "name": "Truk Jarak Jauh Kayu Komposit",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Truk Jarak Jauh Kayu Komposit\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "CompositeTimberInPortTransferCart": {
+    "name": "Truk Angkut Kayu Pelabuhan Komposit",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Truk Angkut Kayu Pelabuhan Komposit\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "ThreeWheeledMountainHandCart": {
+    "name": "Truk Gunung Berdiameter Roda Ganda",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Truk Gunung Berdiameter Roda Ganda\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "AdeptusGate": {
     "name": "Gerbang Adeptus",
@@ -13959,6 +14543,42 @@
     "name": "Insting Tajam Nelayan",
     "description": "Diagram yang berisi langkah-langkah untuk membuat \"Insting Tajam Nelayan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "HeavyBrightwoodPotteryWheel": {
+    "name": "Roda Tembikar Brightwood Berat",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat Roda Tembikar Brightwood Berat.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "IronSandTreasure": {
+    "name": "\"Besi, Pasir, dan Harta Karun\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Besi, Pasir, dan Harta Karun\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "IronBloodBrokenArmor": {
+    "name": "\"Besi, Darah, dan Zirah Patah\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Besi, Darah, dan Zirah Patah\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "IronWaterSteam": {
+    "name": "\"Besi, Air, dan Uap\"",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Besi, Air, dan Uap\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "KarmaphalaWoodLiquidCargoRack": {
+    "name": "Rak Kargo Cair Kayu Karmaphala",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rak Kargo Cair Kayu Karmaphala\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "StringFeatherTrajectory": {
+    "name": "String, Bulu, dan Lintasan",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"String, Bulu, dan Lintasan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "IngenuityOfTheForestForager": {
+    "name": "Kecerdikan Penjelajah Hutan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kecerdikan Penjelajah Hutan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "ItJustMightWork": {
+    "name": "\"Berhasil Nih Tampaknya!\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Berhasil Nih Tampaknya!\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "ColorationAndPrecipitation": {
+    "name": "\"Pewarnaan dan Curah Hujan\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Pewarnaan dan Curah Hujan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Pot Tanaman: Hamparan Hijau\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -14194,6 +14814,34 @@
   "TeaBreakShade": {
     "name": "Rindang Santai Teh",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rindang Santai Teh\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenFogGatheringOnSmokyMountains": {
+    "name": "Layar Keberuntungan: Berkumpulnya Kabut di Gunung Berasap",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Berkumpulnya Kabut di Gunung Berasap.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenFleetFeathersAgainstEmeraldWaves": {
+    "name": "Layar Keberuntungan: Bulu Armada Penantang Gelombang Zamrud",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Bulu Armada Penantang Gelombang Zamrud.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenInstrumentsInTheDistance": {
+    "name": "Layar Keberuntungan: Instrumen di Kejauhan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Instrumen di Kejauhan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenOldSongsLingering": {
+    "name": "Layar Keberuntungan: Lagu Lawas Masih Bersenandung",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Lagu Lawas Masih Bersenandung.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenOverlappingCloudsAbovePeaks": {
+    "name": "Layar Keberuntungan: Di Atas Puncak Masih Ada Awan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Di Atas Puncak Masih Ada Awan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PropitiousScreenGenuineWordsTravelFar": {
+    "name": "Layar Keberuntungan: Ucapan Tulus Melanglang Buana Jauh",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat Layar Keberuntungan: Ucapan Tulus Melanglang Buana Jauh.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TrumpetAndFirewood": {
+    "name": "\"Terompet dan Kayu Bakar\"",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Terompet dan Kayu Bakar\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampu Jalan dengan Ukiran Besi",

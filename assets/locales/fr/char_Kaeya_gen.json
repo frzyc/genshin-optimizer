@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Danse givrée éternelle",
     "description": {
-      "0": "Chaque ennemi éliminé pendant la durée de <strong>Valse glaciale</strong> prolonge la durée de la compétence de 2,5 s. Cumul max : 15 s."
+      "0": "Chaque ennemi éliminé pendant la durée de <strong>Valse glaciale</strong> prolonge la durée de la compétence de 2,5 s. Cumul maximum : 15 s."
     }
   },
   "constellation3": {

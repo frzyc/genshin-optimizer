@@ -1,8 +1,8 @@
 {
   "setName": "Miracolo",
   "setEffects": {
-    "2": "La RES a tutti gli elementi aumenta di un 20%.",
-    "4": "I DAN elementali in arrivo aumentano la RES elementale corrispondente di un 30% per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s."
+    "2": "RES a tutti gli elementi +20%.",
+    "4": "I DAN elementali subiti aumentano la RES elementale corrispondente di un 30% per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s."
   },
   "pieces": {
     "flower": {

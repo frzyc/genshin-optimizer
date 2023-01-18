@@ -9,15 +9,15 @@
       "normal": {
         "0": "<strong><strong>Attacco normale</strong>",
         "1": "Sferra fino a 4 colpi consecutivi.",
-        "2": "Quando il secondo e il quarto colpo colpiscono gli avversari, Itto accumula rispettivamente 1 e 2 cariche di Superforza superlativa.",
+        "2": "Quando il secondo e il quarto colpo colpiscono gli avversari, Itto ottiene rispettivamente 1 e 2 accumuli di Superforza superlativa.",
         "3": "L'effetto è cumulabile fino a 5 volte. Attivare questo effetto ripristina la durata attuale degli accumuli esistenti.",
         "4": "<br/>",
-        "5": "Inoltre, la combo d'attacco normale di Itto non si azzera dopo lo Scatto o dopo aver usato la sua abilità elementale Masatsu Zetsugi Scoppio Akaushi!."
+        "5": "Inoltre, la combo d'attacco normale di Itto non si azzera immediatamente dopo lo Scatto o dopo aver usato la sua abilità elementale Masatsu Zetsugi: Scoppio Akaushi!."
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
-        "1": "Quando tieni premuto per eseguire un attacco caricato, Itto libera una serie di fendenti Arataki Kesagiri senza consumare vigore. Invece, ogni Arataki Kesagiri consuma 1 carica di Superforza superlativa. Quando l'ultima carica viene consumata, Itto sferra un potente fendente finale.",
-        "2": "Se non è disponibile alcuna carica di Superforza superlativa, Itto esegue un singolo Fendente Saichimonji."
+        "1": "Quando tieni premuto per eseguire un attacco caricato, Itto sferra una serie di fendenti Arataki Kesagiri senza consumare vigore. Ogni Arataki Kesagiri consuma 1 accumulo di Superforza superlativa. Quando l'ultimo accumulo viene consumato, Itto sferra un potente fendente finale.",
+        "2": "Se non è disponibile alcun accumulo di Superforza superlativa, Itto esegue un singolo Fendente Saichimonji."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -51,9 +51,9 @@
       "2": "Ushi rimane sul campo e fornisce supporto nei seguenti modi:",
       "3": [
         " provoca gli avversari circostanti e attira i loro attacchi;",
-        " riceve PS in base a una percentuale dei PS max di Arataki Itto;",
-        " quando Ushi subisce danni, Arataki Itto ottiene 1 accumulo di Superforza superlativa. È possibile ottenere solo 1 accumulo ogni 2 s in questo modo;",
-        " Ushi fugge via quando i suoi PS raggiungono lo 0 o al termine della sua durata. Quando se ne va, Arataki Itto riceve 1 accumulo di Superforza superlativa."
+        " eredita PS in base a una percentuale dei PS max di Arataki Itto;",
+        " quando Ushi subisce danni, Arataki Itto ottiene 1 accumulo di Superforza superlativa. È possibile ottenere solo 1 accumulo ogni 2{NON_BREAK_SPACE}s in questo modo;",
+        " Ushi fugge via quando i suoi PS raggiungono lo 0 o al termine della sua durata. Quando lascia il campo, Arataki Itto riceve 1 accumulo di Superforza superlativa."
       ],
       "4": "<br/>",
       "5": "<strong>Pressione prolungata</strong>",
@@ -123,7 +123,7 @@
     "description": {
       "0": "Quando Arataki Itto usa consecutivamente Arataki Kesagiri, ottiene i seguenti effetti:",
       "1": [
-        " ogni fendente aumenta di un 10% la VEL d'ATT del prossimo fendente. La VEL d'ATT massima è di un 30%;",
+        " ogni fendente aumenta di un 10% la VEL d'ATT del fendente successivo. La VEL d'ATT massima è di un 30%;",
         " aumenta la sua resistenza all'interruzione."
       ],
       "2": "<br/>",
@@ -139,20 +139,20 @@
   "passive3": {
     "name": "Il taglialegna",
     "description": {
-      "0": "Quando un membro del gruppo usa gli attacchi per ottenere il legno da un albero, ha un 25% di probabilità di ottenere un tronco di legno extra."
+      "0": "Quando un membro del gruppo usa gli attacchi per ottenere il legno da un albero, ha un 25% di probabilità di ottenere un pezzo di legno extra."
     }
   },
   "constellation1": {
     "name": "Apri bene le orecchie!",
     "description": {
-      "0": "Dopo aver usato <strong>Discesa regale: Osservate, Itto il Malvagio!</strong>, Arataki Itto ottiene 2 cariche di Superforza superlativa. Dopo 1{NON_BREAK_SPACE}s, Itto otterrà 1 carica di Superforza superlativa ogni 0,5{NON_BREAK_SPACE}s per la durata di 1,5{NON_BREAK_SPACE}s."
+      "0": "Dopo aver usato <strong>Discesa regale: Osservate, Itto il Malvagio!</strong>, Arataki Itto ottiene 2 accumuli di Superforza superlativa. Dopo 1{NON_BREAK_SPACE}s, Itto otterrà 1 accumulo di Superforza superlativa ogni 0,5{NON_BREAK_SPACE}s per 1,5{NON_BREAK_SPACE}s."
     }
   },
   "constellation2": {
     "name": "Accorrete, è l'ora della rissa!",
     "description": {
-      "0": "Dopo aver usato <strong>Discesa regale: Osservate, Itto il Malvagio!</strong>, ogni membro del gruppo il cui elemento è <geo>Geo</geo> ridurrà il TdR dell'abilità di 1,5 s e ripristinerà di 6 l'energia di Arataki Itto.",
-      "1": "In questo modo è possibile ridurre il TdR fino a 4,5 s e può essere ripristinata un massimo di 18 di energia."
+      "0": "Dopo aver usato <strong>Discesa regale: Osservate, Itto il Malvagio!</strong>, ogni membro del gruppo il cui elemento è <geo>Geo</geo> ridurrà il TdR della suddetta abilità di 1,5{NON_BREAK_SPACE}s e ripristinerà di 6 l'energia di Arataki Itto.",
+      "1": "In questo modo è possibile ridurre il TdR fino a 4,5{NON_BREAK_SPACE}s e può essere ripristinato un massimo di 18 di energia."
     }
   },
   "constellation3": {

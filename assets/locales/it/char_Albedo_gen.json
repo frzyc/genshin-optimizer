@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -44,16 +44,16 @@
       "0": "Albedo crea un'Isotoma solare usando l'alchimia, che infligge <geo>DAN da Geo ad area</geo> quando compare.",
       "1": "<br/>",
       "2": "<strong>Isotoma solare</strong>",
-      "3": "Quando gli avversari all'interno dell'Isotoma solare subiscono dei DAN, l'Isotoma solare genera Boccioli effimeri che infliggono <geo>DAN da Geo ad area</geo>. I DAN inflitti variano in base alla DIF di Albedo.",
-      "4": [
-        " I Boccioli effimeri possono essere generati una volta ogni 2 s.",
+      "3": [
+        " Quando gli avversari all'interno dell'Isotoma solare subiscono dei DAN, l'Isotoma solare genera Boccioli effimeri che infliggono <geo>DAN da Geo ad area</geo>. I DAN inflitti variano in base alla DIF di Albedo.",
+        " I Boccioli effimeri possono essere generati una volta ogni 2{NON_BREAK_SPACE}s.",
         " Quando un personaggio si trova nella posizione dell'Isotoma solare, l'Isotoma solare accumula potere di Geo per formare una piattaforma cristallizzata che solleva il personaggio fino a una certa altezza. Può esistere solo una piattaforma cristallizzata alla volta.",
-        " L'Isotoma solare è considerato un <geo>costrutto di Geo</geo>. Può esistere solo un'Isotoma solare creato da Albedo stesso alla volta. "
+        " L'Isotoma solare è considerato un <geo>costrutto di Geo</geo>. Può esistere solo un'Isotoma solare creata da Albedo stesso alla volta. "
       ],
-      "5": "<br/>",
-      "6": "<strong>Tieni premuto</strong> per decidere la posizione dell'abilità.",
-      "7": "<br/>",
-      "8": "<i>Questo bocciolo di Geo ha una proprietà inusuale riflessa nello scopo dell'alchimia. Ergersi dalla terra, levarsi in cielo e divenire il sole.</i>"
+      "4": "<br/>",
+      "5": "<strong>Tieni premuto</strong> per decidere la posizione dell'abilità.",
+      "6": "<br/>",
+      "7": "<i>Questo bocciolo di Geo ha una proprietà inusuale riflessa nello scopo dell'alchimia. Ergersi dalla terra, levarsi in cielo e divenire il sole.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -80,7 +80,7 @@
       "0": "Sotto il comando di Albedo, i cristalli di Geo si ergono ed esplodono, infliggendo <geo>DAN da Geo ad area</geo> davanti a lui.",
       "1": "Se un'Isotoma solare creato da Albedo è sul campo, 7 Boccioli fatali verranno generati nel campo dell'Isotoma solare, sbocciando violentemente con uno scoppio e infliggendo <geo>DAN da Geo ad area</geo>.",
       "2": "<br/>",
-      "3": "Il DAN da Ondata tettonica e il DAN da Bocciolo fatale non genereranno Boccioli effimeri.",
+      "3": "I DAN da Ondata tettonica e i DAN da Bocciolo fatale non genereranno Boccioli effimeri.",
       "4": "<br/>",
       "5": "<i>Sotto il comando di Kreideprinz, l'ondata tettonica della creazione ribolle e dà vita.</i>"
     },
@@ -130,9 +130,9 @@
   "constellation2": {
     "name": "Eone Fanerozoico",
     "description": {
-      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30 s:",
+      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30{NON_BREAK_SPACE}s:",
       "1": [
-        " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consumerà tutti gli effetti cumulati di Giudizio fatale. Ciascuna carica consumata di Giudizio fatale aumenta i DAN inflitti da Boccioli fatali e da Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
+        " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consuma tutti gli accumuli di Giudizio fatale. Ciascun accumulo consumato aumenta i DAN inflitti dai Boccioli fatali e da Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
         " cumulabile fino a 4 volte."
       ]
     }

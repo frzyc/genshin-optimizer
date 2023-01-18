@@ -74,7 +74,7 @@
   "burst": {
     "name": "Rito sacro: Marea della cutrettola",
     "description": {
-      "0": "Candace solleva la sua arma ed evoca una benedizione divina che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max e conferisce continuamente Lode della Corona cremisi al personaggio attivo.",
+      "0": "Candace innalza l'arma ed evoca una benedizione divina che infligge <hydro>DAN da Hydro ad area</hydro> in base ai suoi PS max e conferisce continuamente Lode della Corona cremisi al personaggio attivo.",
       "1": "<br/>",
       "2": "<strong>Lode della Corona cremisi</strong>",
       "3": "Questo effetto possiede le seguenti proprietà:",
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Egida della croce di frecce",
     "description": {
-      "0": "Se Candace viene colpita da un attacco mentre usa la variante a pressione prolungata di <strong>Rito sacro: Santuario dell'airone</strong>, l'abilità si ricarica all'istante."
+      "0": "Se Candace viene colpita da un attacco mentre usa la variante a pressione prolungata di <strong>Rito sacro: Santuario dell'airone</strong>, l'abilità finisce immediatamente di caricarsi."
     }
   },
   "passive2": {
@@ -160,7 +160,7 @@
     "name": "Trabocco",
     "description": {
       "0": "Quando i personaggi (esclusa Candace) sotto l'effetto di Lode della Corona cremisi derivante da <strong>Rito sacro: Marea della cutrettola</strong> infliggono DAN elementali agli avversari tramite gli attacchi normali, viene sprigionata un'onda d'urto che infligge <hydro>DAN da Hydro ad area</hydro> pari a un 15% dei PS max di Candace.",
-      "1": "Quest'effetto può attivarsi una volta ogni 2,3 s e i DAN che infligge sono considerati DAN da Tripudio elementale."
+      "1": "Quest'effetto può attivarsi una volta ogni 2,3{NON_BREAK_SPACE}s e i DAN che infligge sono considerati DAN da Tripudio elementale."
     }
   }
 }

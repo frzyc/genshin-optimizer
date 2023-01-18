@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
         "1": "Consuma una determinata quantità di vigore per scagliare via un avversario usando il potere del vento.",
-        "2": "Gli avversari scagliati via cadranno lentamente verso il suolo."
+        "2": "Gli avversari scagliati via cadono lentamente verso il suolo."
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
@@ -42,14 +42,14 @@
   "skill": {
     "name": "Lama burrascosa",
     "description": {
-      "0": "Concentrando la forza del vento informe intorno alla sua lama, Jean scatena una tempesta in miniatura, scagliando gli avversari nella direzione a cui mira, infliggendo ingenti <anemo>DAN da Anemo</anemo>.",
+      "0": "Concentrando la forza del vento informe intorno alla sua lama, Jean scatena una tempesta in miniatura, scagliando gli avversari nella direzione verso cui mira, infliggendo ingenti <anemo>DAN da Anemo</anemo>.",
       "1": "<br/>",
       "2": "<strong>Pressione prolungata</strong>",
       "3": "Al costo del continuo consumo di vigore, Jean può comandare il vortice affinché aspiri gli avversari e gli oggetti circostanti portandoli davanti a lei.",
       "4": "La direzione può essere regolata.",
       "5": "Il personaggio è immobile per la durata dell'abilità.",
       "6": "<br/>",
-      "7": "<i>Ciò che segue Jean, il sincero difensore, è un vento guardiano che può scacciare il pericolo dalla presenza dei suoi compagni.</i>"
+      "7": "<i>Ciò che segue Jean, la sincera difenditrice, è un vento guardiano che può scacciare il pericolo dalla presenza dei suoi compagni.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -78,7 +78,7 @@
       "2": "<br/>",
       "3": "<strong>Campo di denti di leone</strong>",
       "4": [
-        " Rigenera continuamente i PS dei personaggi all'interno dell'area d'effetto e li pervade continuamente di <anemo>Anemo</anemo>.",
+        " Rigenera continuamente i PS dei personaggi all'interno dell'area d'effetto e li infonde continuamente di <anemo>Anemo</anemo>.",
         " Infligge <anemo>DAN da Anemo</anemo> agli avversari che entrano o escono dal Campo di denti di leone."
       ],
       "5": "<br/>",
@@ -130,7 +130,7 @@
   "constellation2": {
     "name": "Egida del popolo",
     "description": {
-      "0": "Quando Jean raccoglie una particella o sfera elementale, la VEL di movimento di tutti i membri del gruppo aumenta di un 15% per 15{NON_BREAK_SPACE}s."
+      "0": "Quando Jean raccoglie una particella o sfera elementale, la VEL di movimento e di attacco di tutti i membri del gruppo aumenta di un 15% per 15{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {

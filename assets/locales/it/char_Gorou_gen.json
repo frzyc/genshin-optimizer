@@ -86,9 +86,9 @@
       "2": "<strong>Gloria del generale</strong>",
       "3": "Il campo ha le seguenti proprietà:",
       "4": [
-        " similmente allo Stendardo bellico del generale creato dalla Difesa a tutto tondo Inuzaka, esso conferisce effetti positivi ai personaggi attivi all'interno dell'area d'effetto dell'abilità in base al numero di personaggi di <geo>Geo</geo> presenti nel gruppo. Inoltre, si muove insieme al tuo personaggio attivo;",
-        " genera 1 Crollo cristallino ogni 1,5 s che infligge <geo>DAN da Geo ad area</geo> a 1 avversario all'interno dell'area d'effetto dell'abilità;",
-        " attira 1 frammento elementale nell'area d'effetto dell'abilità verso la posizione del tuo personaggio attivo ogni 1,5 s (i frammenti elementali sono creati dalle reazioni di Cristallizzazione)."
+        " similmente allo Stendardo bellico del generale creato da Difesa a tutto tondo Inuzaka, esso conferisce effetti positivi ai personaggi attivi all'interno dell'area d'effetto dell'abilità in base al numero di personaggi di <geo>Geo</geo> presenti nel gruppo. Inoltre, si muove insieme al tuo personaggio attivo;",
+        " genera 1 Crollo cristallino ogni 1,5{NON_BREAK_SPACE}s che infligge <geo>DAN da Geo ad area</geo> a 1 avversario all'interno dell'area d'effetto dell'abilità;",
+        " attira 1 frammento elementale nell'area d'effetto dell'abilità verso la posizione del tuo personaggio attivo ogni 1,5{NON_BREAK_SPACE}s (i frammenti elementali sono creati dalle reazioni di Cristallizzazione)."
       ],
       "5": "<br/>",
       "6": "Se uno Stendardo bellico del generale creato da Gorou è presente sul campo quando quest'abilità viene usata, sarà distrutto. Inoltre, mentre il campo Gloria del generale è attivo, l'abilità elementale di Gorou Difesa a tutto tondo Inuzaka non creerà lo Stendardo bellico del generale.",

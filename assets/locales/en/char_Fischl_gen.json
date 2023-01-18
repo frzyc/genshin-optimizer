@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Undone Be Thy Sinful Hex",
     "description": {
-      "0": "If your current active character triggers an <electro>Electro-related Elemental Reaction</electro> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <electro>Electro DMG</electro> equal to 80% of Fischl's ATK."
+      "0": "If your current active character triggers an <electro>Electro-related Elemental Reaction</electro> when Oz is on the field, the opponent shall be stricken with Thundering Retribution that deals <electro>Electro DMG</electro> equal to 80% of Fischl's ATK."
     }
   },
   "passive3": {
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Gaze of the Deep",
     "description": {
-      "0": "Even when Oz is not present in combat, he can still watch over Fischl through his raven eyes. When Fischl performs a Normal Attack against an opponent, Oz fires a joint attack, dealing DMG equal to 22% of Fischl's ATK."
+      "0": "Even when Oz is not present in combat, he can still watch over Fischl through his raven eyes. When Fischl performs a Normal Attack against an opponent, Oz fires a coordinated attack, dealing DMG equal to 22% of Fischl's ATK."
     }
   },
   "constellation2": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Evernight Raven",
     "description": {
-      "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs joint attacks with your active character when present, dealing 30% of Fischl's ATK as <electro>Electro DMG</electro>."
+      "0": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs coordinated attacks with your active character when present, dealing 30% of Fischl's ATK as <electro>Electro DMG</electro>."
     }
   }
 }

@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Attacco normale</strong>",
-        "1": "Sferra fino a 3 attacchi usando una lama di vento, infliggendo <anemo>DAN da Anemo</anemo>."
+        "1": "Sferra fino a 3 attacchi usando lame di vento, infliggendo <anemo>DAN da Anemo</anemo>."
       },
       "charged": {
         "0": "<strong>Attacco caricato</strong>",
@@ -23,7 +23,7 @@
       "0": "DAN da 1º colpo",
       "1": "DAN da 2º colpo",
       "2": "DAN da 3º colpo",
-      "3": "DAN da attacco caricato",
+      "3": "DAN da ATT caricato",
       "4": "Costo vigore ATT caricato",
       "5": "DAN da ATT in picchiata",
       "6": "DAN da ATT in picchiata basso/alto",
@@ -120,7 +120,7 @@
   "passive2": {
     "name": "Fantasticheria burrascosa",
     "description": {
-      "0": "Quando il Vagabondo colpisce gli avversari con Kuugo: Fushoudan o Kuugo: Toufukai nel suo stato di <strong>Vento prospero</strong> ha un 16% di probabilità di ottenere l'effetto Discesa: la volta successiva che il Vagabondo accelera a mezz'aria mentre è in stato di Vento prospero, questo effetto viene rimosso. L'accelerazione non consuma alcun punto di Kuugoryoku, e il personaggio scocca 4 frecce di vento che infliggono <anemo>DAN da Anemo</anemo> pari a un 35% del suo ATT ciascuna.",
+      "0": "Quando il Vagabondo colpisce gli avversari con Kuugo: Fushoudan o Kuugo: Toufukai nel suo stato di <strong>Vento prospero</strong> ha un 16% di probabilità di ottenere l'effetto Discesa: la volta successiva che il Vagabondo accelera a mezz'aria mentre è in stato di Vento prospero, questo effetto viene rimosso. In questo caso, l'accelerazione non consuma alcun punto di Kuugoryoku, e il personaggio scocca 4 frecce di vento che infliggono <anemo>DAN da Anemo</anemo> ciascuna pari a un 35% del suo ATT.",
       "1": "Per ogni Kuugo: Fushoudan e Kuugo: Toufukai che non produce quest'effetto, l'attacco successivo di uno dei due tipi ha un 12% di probabilità in più di produrlo. Il calcolo della produzione dell'effetto viene effettuato ogni 0,1{NON_BREAK_SPACE}s."
     }
   },

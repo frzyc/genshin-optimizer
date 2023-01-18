@@ -53,10 +53,10 @@
       ],
       "5": "<br/>",
       "6": "<strong>Bocciolo di sangue</strong>",
-      "7": "I nemici affetti da Bocciolo di sangue subiscono <pyro>DAN da Pyro</pyro> ogni 4 s. Questo tipo di DAN è considerato DAN da abilità elementale.",
+      "7": "I nemici affetti da Bocciolo di sangue subiscono <pyro>DAN da Pyro</pyro> ogni 4{NON_BREAK_SPACE}s. Questo tipo di DAN è considerato DAN da abilità elementale.",
       "8": "Ogni nemico può subire un solo effetto di Bocciolo di sangue alla volta e la durata può essere ripristinata da Hu Tao.",
       "9": "<br/>",
-      "10": "<strong>Paramita Papilio</strong> smette di avere effetto al termine della sua durata, quando Hu Tao lascia il campo di battaglia o viene sconfitta.",
+      "10": "<strong>Paramita Papilio</strong> smette di avere effetto al termine della sua durata, quando Hu Tao lascia il campo di battaglia o quando viene sconfitta.",
       "11": "<br/>",
       "12": "<i>La tecnica segreta di Hu Tao con la lancia si basa su varie regole, la prima delle quali è: \"La lancia apre le porte dell'aldilà e le farfalle formano un ponte tra questo e l'altro mondo\".</i>"
     },
@@ -84,7 +84,7 @@
     "description": {
       "0": "Ordina a uno spirito infuocato di attaccare, infliggendo <pyro>DAN da Pyro</pyro> in un'ampia area d'effetto.",
       "1": "Dopo aver colpito il nemico, rigenera una percentuale dei PS max di Hu Tao. Questo effetto può attivarsi fino a 5 volte, in base al numero di nemici colpiti.",
-      "2": "Se i PS di Hu Tao sono inferiori o pari a un 50% quando il nemico viene colpito, sia i DAN che la Rigenerazione PS aumentano.",
+      "2": "Se i PS di Hu Tao sono inferiori o pari a un 50% quando il nemico viene colpito, sia i DAN che la RIGEN PS aumentano.",
       "3": "<br/>",
       "4": "<i>Le attività soprannaturali di coloro che hanno già lasciato questo mondo è fonte di grande ansia per i Servizi Funebri Wangsheng. In questi casi, la cremazione porta sempre sollievo a Hu Tao. Più ansia prova, più forte è la fiamma.</i>"
     },
@@ -162,8 +162,8 @@
     "name": "L'abbraccio della farfalla",
     "description": {
       "0": "Si attiva quando i PS di Hu Tao scendono al di sotto di un 25% o quando subisce un colpo letale:",
-      "1": "Hu Tao non verrà sconfitta a causa dei DAN subiti. Inoltre, per i 10 s successivi, la sua RES elementale e fisica aumenta di un 200%, il suo tasso di CRIT aumenta di un 100%, e la sua resistenza all'interruzione aumenta notevolmente.",
-      "2": "Questo effetto si attiva automaticamente quando Hu Tao ha 1 PS rimanente.",
+      "1": "Hu Tao non verrà sconfitta a causa dei DAN subiti. Inoltre, per i 10{NON_BREAK_SPACE}s successivi, la sua RES elementale e fisica aumenta di un 200%, il suo tasso di CRIT aumenta di un 100%, e la sua resistenza all'interruzione aumenta notevolmente.",
+      "2": "Questo effetto si attiva in automatico quando Hu Tao ha 1 PS rimanente.",
       "3": "Si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
     }
   }

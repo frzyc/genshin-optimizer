@@ -40,9 +40,9 @@
       "0": "Radunando la forza della pietra intorno alla sua arma, Noelle colpisce gli avversari che la circondano in un'ampia area d'effetto, infliggendo <geo>DAN da Geo</geo>.",
       "1": "Dopodiché, Noelle ottiene i seguenti effetti:",
       "2": [
-        " area d'effetto degli attacchi più ampia;",
+        " l'area d'effetto degli attacchi è più ampia;",
         " trasforma i DAN da attacco in <geo>DAN da Geo</geo> che non possono essere annullati da altre infusioni elementali;",
-        " ATT aumentato in base alla sua DIF."
+        " L'ATT aumenta in base alla sua DIF."
       ],
       "3": "<br/>",
       "4": "<i>A volte, è necessario spazzare via non solo la polvere...</i>"
@@ -110,9 +110,9 @@
     "name": "Devozione",
     "description": {
       "0": "Quando Noelle è nel gruppo ma non sul campo, quest'abilità si attiva automaticamente quando i PS del personaggio attivo scendono al di sotto di un 30%.",
-      "1": "Genera uno scudo per il personaggio attivo che dura 20 s e assorbe DAN pari a un 400% della DIF di Noelle.",
+      "1": "Genera uno scudo per il personaggio attivo che dura 20{NON_BREAK_SPACE}s e assorbe DAN pari a un 400% della DIF di Noelle.",
       "2": "Lo scudo ha un'efficacia di assorbimento DAN pari a un 150% contro tutti i DAN elementali e fisici.",
-      "3": "Si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
+      "3": "Questo effetto si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
     }
   },
   "passive2": {

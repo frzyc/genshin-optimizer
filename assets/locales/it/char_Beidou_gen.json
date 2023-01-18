@@ -49,7 +49,7 @@
       "4": "<br/>",
       "5": "<strong>Pressione prolungata</strong>",
       "6": "Leva la sua arma come uno scudo. I DAN massimi assorbiti variano in base ai PS max di Beidou.",
-      "7": "Attacca usando l'energia contenuta nello spadone quando viene rilasciata o al termine della durata dell'abilità infliggendo <electro>DAN da Electro</electro>. I DAN inflitti variano in base al numero di volte in cui Beidou viene attaccata per la durata dell'abilità. Il bonus DAN più alto sarà raggiunto quando l'effetto viene attivato due volte.",
+      "7": "Attacca usando l'energia contenuta nello spadone quando viene rilasciata o al termine della durata dell'abilità infliggendo <electro>DAN da Electro</electro>. I DAN inflitti variano in base al numero di volte in cui Beidou viene attaccata per la durata dell'abilità. Il bonus DAN più alto viene raggiunto quando l'effetto viene attivato due volte.",
       "8": "Lo scudo possiede le seguenti proprietà:",
       "9": [
         " ha un 250% di efficienza di assorbimento <electro>DAN da Electro</electro>;",
@@ -122,8 +122,8 @@
     "description": {
       "0": "Ottieni i seguenti effetti per 10 s dopo aver usato <strong>Governamaree</strong> con il bonus DAN massimo: ",
       "1": [
-        " il DAN inflitto dagli attacchi normali e caricati è aumentato di un 15%. La VEL d'ATT di attacchi normali e caricati è aumentata di un 15%;",
-        " lo scarto di tempo è molto più breve dopo aver rilasciato un attacco caricato."
+        " i DAN inflitti dagli attacchi normali e caricati aumentano di un 15%. La VEL d'ATT di attacchi normali e caricati aumenta di un 15%;",
+        " lo scarto di tempo è molto più breve dopo il rilascio di un attacco caricato."
       ]
     }
   },
@@ -139,7 +139,7 @@
     "description": {
       "0": "Quando si usa <strong>Tempesta tagliente</strong>:",
       "1": [
-        " genera uno scudo che assorbe fino a un 16% dei PS max di Beidou per 15 s;",
+        " genera uno scudo che assorbe fino a un 16% dei PS max di Beidou per 15{NON_BREAK_SPACE}s;",
         " lo scudo assorbe <electro>DAN da Electro</electro> con un'efficacia superiore di un 250%."
       ]
     }

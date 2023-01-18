@@ -49,7 +49,7 @@
       "5": "<br/>",
       "6": "<strong>Pressione prolungata</strong>",
       "7": "Dopo un tempo di lancio esteso, richiama i fulmini dal cielo infliggendo ingenti <electro>DAN da Electro</electro> a tutti gli avversari vicini.",
-      "8": "Infligge grandi quantità di danni extra agli avversari in base al numero di cariche di Conduzione applicate a essi e rimuove lo stato di Conduzione.",
+      "8": "Infligge grandi quantità di danni extra agli avversari in base al numero di accumuli di Conduzione applicati, rimuovendo il loro stato di Conduzione.",
       "9": "<br/>",
       "10": "<i>Il viola di Electro è l'abbigliamento della Strega della Rosa purpurea.</i>"
     },
@@ -76,7 +76,7 @@
     "name": "Rosa fulminante",
     "description": {
       "0": "Evoca una Rosa fulminante che rilascia potenti saette, scagliando via gli avversari circostanti e infliggendo <electro>DAN da Electro</electro>.",
-      "1": "La Rosa fulminante emetterà continuamente fulmini per respingere gli avversari e infliggere <electro>DAN da Electro</electro> per tutta la durata dell'abilità.",
+      "1": "La Rosa fulminante emette continuamente fulmini per respingere gli avversari e infliggere <electro>DAN da Electro</electro> per tutta la durata dell'abilità.",
       "2": "<br/>",
       "3": "<i>Questa rosa è splendida, ma attenzione alle sue spine mortali.</i>"
     },
@@ -121,7 +121,7 @@
     "name": "Circuito infinito",
     "description": {
       "0": "L'energia di Lisa si rigenera di 2 per ogni avversario colpito tenendo premuto <strong>Tuono violetto</strong>.",
-      "1": "In questo modo può essere rigenerata fino a 10 di energia alla volta."
+      "1": "In questo modo può rigenerare fino a 10 di energia alla volta."
     }
   },
   "constellation2": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Strega pulsante",
     "description": {
-      "0": "Quando Lisa scende in campo, applica 3 cariche di Conduzione di <strong>Tuono violetto</strong> agli avversari vicini.",
+      "0": "Quando Lisa entra in campo, applica 3 cariche di Conduzione di <strong>Tuono violetto</strong> agli avversari vicini.",
       "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
     }
   }

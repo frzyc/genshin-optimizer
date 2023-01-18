@@ -42,7 +42,7 @@
     "name": "Đêm Ngon Giấc",
     "description": {
       "0": "Triển khai Màn Chắn Say Giấc và gây <cryo>Sát Thương Phạm Vi Nguyên Tố Băng</cryo>.",
-      "1": "Lượng hấp thụ sát thương của Màn Chắn Say Giấc căn cứ vào giới hạn HP của Layla, đồng thời có 250% hiệu quả hấp thụ đối với <cryo>Sát Thương Nguyên Tố Băng</cryo>. Khi lá chắn được triển khai, Layla sẽ được <cryo>đính kèm Nguyên Tố Băng</cryo> ngắn hạn.",
+      "1": "Lượng hấp thụ sát thương của Màn Chắn Say Giấc căn cứ vào giới hạn HP của Layla, đồng thời có 250% hiệu quả hấp thụ đối với <cryo>Sát Thương Nguyên Tố Băng</cryo>. Khi lá chắn được triển khai, Layla sẽ được <cryo>gán ấn nguyên tố Băng</cryo> ngắn hạn.",
       "2": "<br/>",
       "3": "<strong>Sao Đêm và Sao Bay</strong>",
       "4": "Trong thời gian duy trì Màn Chắn Say Giấc, mỗi 1.5s sẽ sản sinh 1 Sao Đêm; nhân vật được tấm khiên này bảo hộ khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh 2 Sao Đêm, mỗi 0.3s tối đa sản sinh một lần Sao Đêm bằng cách này, tối đa tồn tại cùng lúc 4 Sao Đêm.",

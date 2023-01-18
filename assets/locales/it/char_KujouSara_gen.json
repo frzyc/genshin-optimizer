@@ -44,13 +44,13 @@
     "name": "Richiamo tengu della tempesta",
     "description": {
       "0": "Kujou Sara si ritira con la rapidità di un tengu, evocando la protezione della Piuma corvina.",
-      "1": "Ottiene la Copertura della Piuma corvina per 18 s che, quando effettua un attacco mirato a piena carica, si consuma e rilascia una Piuma corvina nella posizione dell'obiettivo.",
-      "2": "Le Piume corvine attivano Tengu Juurai: Imboscata dopo un breve periodo, infliggendo <electro>DAN da Electro</electro> e conferendo al personaggio attivo un bonus ATT nella sua area d'effetto, in base all'ATT di base di Kujou Sara.",
+      "1": "Ottiene la Copertura della Piuma corvina per 18{NON_BREAK_SPACE}s che, quando si effettua un attacco mirato a piena carica, si consuma e rilascia una Piuma corvina nella posizione dell'obiettivo.",
+      "2": "Le Piume corvine attivano Tengu Juurai: Imboscata dopo un breve periodo, infliggendo <electro>DAN da Electro</electro> e conferendo al personaggio attivo nella sua area d'effetto un bonus ATT, in base all'ATT di base di Kujou Sara.",
       "3": "<br/>",
       "4": "I bonus ATT dei diversi Tengu Juurai non sono cumulabili e i loro effetti e la durata sono determinati in base all'ultimo Tengu Juurai attivato.",
       "5": "<br/>",
-      "6": "<i>La razza tengu non ha mai mancato di talenti eccezionali che hanno ricevuto una Visione di Electro. È solo che spesso cantano abitualmente lodi all'Archon di Electro mentre manipolano l'Electro. I canti fanno più o meno così:</i>",
-      "7": "<i>\"Mostra la tua potenza, o Narukami degno di lode, e dona a questi supplicanti la tua forza tonante! Sowaka!\"</i>"
+      "6": "<i>La razza tengu non ha mai mancato di talenti eccezionali che hanno ricevuto una Visione di Electro. È solo che spesso cantano abitualmente lodi all'Archon di Electro mentre manipolano l'Electro. I canti recitano più o meno così:</i>",
+      "7": "<i>\"Mostra la tua potenza, o lodevole Narukami, e dona a questi supplicanti la tua forza tonante! Sowaka!\"</i>"
     },
     "skillParams": {
       "0": "DAN da Tengu Juurai: Imboscata",
@@ -103,13 +103,13 @@
   "passive1": {
     "name": "Volontà inamovibile",
     "description": {
-      "0": "Mentre lo stato di Copertura della Piuma corvina creato da <strong>Richiamo tengu della tempesta</strong> è attivo, il tempo di ricarica dell'attacco mirato si riduce di un 60%."
+      "0": "Mentre lo stato di Copertura della Piuma corvina creato da <strong>Richiamo tengu della tempesta</strong> è attivo, il tempo di carica dell'attacco mirato si riduce di un 60%."
     }
   },
   "passive2": {
     "name": "Decoro",
     "description": {
-      "0": "Quando Tengu Juurai: Imboscata colpisce gli avversari, Kujou Sara ripristina 1,2 di energia a tutti i membri del gruppo per ogni 100% di ricarica d'energia in suo possesso. Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s."
+      "0": "Quando Tengu Juurai: Imboscata colpisce gli avversari, Kujou Sara ripristina di 1,2 l'energia di tutti i membri del gruppo per ogni 100% di ricarica d'energia in suo possesso. Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s."
     }
   },
   "passive3": {
@@ -121,14 +121,14 @@
   "constellation1": {
     "name": "Occhi di corvo",
     "description": {
-      "0": "Quando Tengu Juurai fornisce ai personaggi bonus ATT o quando colpisce gli avversari, il TdR di <strong>Richiamo tengu della tempesta</strong> si riduce di 1{NON_BREAK_SPACE}s.",
+      "0": "Quando Tengu Juurai fornisce bonus ATT ai personaggi o colpisce gli avversari, il TdR di <strong>Richiamo tengu della tempesta</strong> si riduce di 1{NON_BREAK_SPACE}s.",
       "1": "Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s."
     }
   },
   "constellation2": {
     "name": "Ali tenebrose",
     "description": {
-      "0": "Usare <strong>Richiamo tengu della tempesta</strong> rilascerà una Piuma corvina più debole nella posizione iniziale di Kujou Sara, che infliggerà un 30% dei suoi DAN iniziali."
+      "0": "Usare <strong>Richiamo tengu della tempesta</strong> rilascerà una Piuma corvina più debole nella posizione iniziale di Kujou Sara, che infliggerà un 30% dei suoi DAN originali."
     }
   },
   "constellation3": {
@@ -141,7 +141,7 @@
   "constellation4": {
     "name": "Prova schiacciante",
     "description": {
-      "0": "Il numero di Tengu Juurai: Ammassatempesta rilasciati da <strong>Soggiogamento: Koukou Sendou</strong> aumenta di 6."
+      "0": "Il numero di Tengu Juurai: Ammassatempesta rilasciati da <strong>Soggiogamento: Koukou Sendou</strong> aumenta a 6."
     }
   },
   "constellation5": {

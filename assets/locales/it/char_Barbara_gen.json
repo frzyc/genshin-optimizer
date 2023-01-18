@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Accumulando la forza di Hydro, Mona si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+        "1": "Accumulando la forza di Hydro, Barbara si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
       }
     },
     "skillParams": {
@@ -41,12 +41,12 @@
   "skill": {
     "name": "Che lo spettacolo abbia inizio♪",
     "description": {
-      "0": "Evoca gocce d'acqua simili a note musicali che formano un Ritornello melodioso, infliggendo <hydro>DAN da Hydro</hydro> agli avversari circostanti e applicando a essi lo stato di <hydro>Umidità</hydro>.",
+      "0": "Evoca gocce d'acqua simili a note musicali che formano un Cerchio melodioso, infliggendo <hydro>DAN da Hydro</hydro> agli avversari circostanti e applicando a essi lo stato di <hydro>Umidità</hydro>.",
       "1": "<br/>",
-      "2": "<strong>Ritornello melodioso</strong>",
+      "2": "<strong>Cerchio melodioso</strong>",
       "3": [
         " Quando vanno a segno, gli attacchi normali di Barbara ripristinano una determinata quantità di PS dei membri del tuo gruppo e dei compagni di squadra vicini, in base ai PS max di Barbara.",
-        " Quando va a segno, l'attacco caricato di Barbara genera il quadruplo della guarigione.",
+        " Quando va a segno, l'attacco caricato di Barbara fornisce il quadruplo della guarigione.",
         " Rigenera periodicamente i PS del tuo personaggio attivo.",
         " Applica lo stato di <hydro>Umidità</hydro> al personaggio e agli avversari che vi entrano in contatto."
       ],
@@ -127,7 +127,7 @@
     "name": "Tripudio di vitalità",
     "description": {
       "0": "Riduce il TdR di <strong>Che lo spettacolo abbia inizio♪</strong> di un 15%.",
-      "1": "Finché l'abilità è attiva, il tuo personaggio selezionato ottiene un 15% di <hydro>bonus DAN da Hydro</hydro>."
+      "1": "Finché l'abilità è attiva, il tuo personaggio attivo ottiene un 15% di <hydro>bonus DAN da Hydro</hydro>."
     }
   },
   "constellation3": {
@@ -159,7 +159,7 @@
         " rianima automaticamente il personaggio sconfitto;",
         " ripristina i PS del personaggio rianimato al massimo."
       ],
-      "2": "Si può verificare una sola volta ogni 15 min."
+      "2": "Si può verificare una sola volta ogni 15{NON_BREAK_SPACE}min."
     }
   }
 }

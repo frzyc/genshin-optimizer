@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Attacco in picchiata</strong>",
-        "1": "Attacchi scagliandoti contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
       }
     },
     "skillParams": {
@@ -82,7 +82,7 @@
       "0": "Keqing sprigiona il potere del fulmine, infliggendo <electro>DAN da Electro</electro> in un'area d'effetto.",
       "1": "Keqing si fonde poi con l'ombra della sua spada, sferrando una serie di colpi tonanti simultanei agli avversari vicini, che infliggono <electro>DAN da Electro</electro> multipli. L'attacco finale infligge ingenti <electro>DAN da Electro ad area</electro>.",
       "2": "<br/>",
-      "3": "<i>Essendo la tecnica più rapida nell'arsenale personale di Keqing, essa è abbastanza veloce da far cadere a terra persino le stelle.</i>"
+      "3": "<i>Essendo la tecnica più rapida nell'arsenale personale di Keqing, essa è abbastanza veloce da far precipitare persino le stelle.</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Armonizzazione",
     "description": {
-      "0": "Per 10 s dopo l'innesco di una <electro>reazione elementale di Electro</electro>, l'ATT di Keqing aumenta di un 25%."
+      "0": "Per 10 s dopo l'innesco di una <electro>reazione elementale di Electro</electro> da parte di Keqing, il suo ATT aumenta di un 25%."
     }
   },
   "constellation5": {
@@ -157,8 +157,8 @@
   "constellation6": {
     "name": "Stella tenace",
     "description": {
-      "0": "Quando Keqing usa un attacco normale, un attacco caricato, un'abilità elementale o un tripudio elementale, ottiene un <electro>bonus DAN da Electro</electro> di un 6% per 8{NON_BREAK_SPACE}s.",
-      "1": "Gli effetti attivati dagli attacchi normali, attacchi caricati, abilità elementali e tripudi elementali sono indipendenti gli uni dagli altri."
+      "0": "Quando Keqing usa un attacco normale, un attacco caricato, un'abilità elementale o un Tripudio elementale, ottiene un <electro>bonus DAN da Electro</electro> di un 6% per 8{NON_BREAK_SPACE}s.",
+      "1": "Gli effetti attivati dagli attacchi normali e caricati, e da abilità elementali e Tripudi elementali, sono indipendenti gli uni dagli altri."
     }
   }
 }

@@ -81,7 +81,7 @@
       "3": "Mentre Ooyoroi rovente è attivo, gli attacchi normali del personaggio attivo innescano Crollo infuocato, infliggendo <pyro>DAN da Pyro ad area</pyro> ed evocando una Barriera ardente.",
       "4": "Crollo infuocato può attivarsi una volta ogni secondo.",
       "5": "<br/>",
-      "6": "Eccetto per la quantità di DAN che possono assorbire, le Barriere ardenti create in questo modo sono identiche a quelle create grazie all'abilità elementale Benedizione ardente:",
+      "6": "Eccetto per la quantità di DAN che può assorbire, una Barriera ardente creata in questo modo è identica a quelle create grazie all'abilità elementale Benedizione ardente:",
       "7": [
         " assorbe <pyro>DAN da Pyro</pyro> con un'efficacia superiore di un 250%;",
         " quando una nuova Barriera ardente viene evocata, l'assorbimento DAN della Barriera ardente esistente si accumula e la sua durata viene ripristinata."
@@ -128,13 +128,13 @@
   "passive3": {
     "name": "Passione per la pesca",
     "description": {
-      "0": "Quando <strong>peschi</strong> a Inazuma, l'aiuto di Thoma fornisce un 20% di probabilità di catturare due pesci."
+      "0": "Quando <strong>peschi</strong> a Inazuma, l'aiuto di Thoma fornisce un 20% di probabilità di catturare due pesci allo stesso tempo."
     }
   },
   "constellation1": {
     "name": "Compagno fedele",
     "description": {
-      "0": "Quando un personaggio protetto da <strong>Barriera ardente</strong> di Thoma (escluso Thoma) viene attaccato, il TdR di <strong>Benedizione ardente</strong> di Thoma si riduce di 3 s, e il TdR del suo <strong>Ooyoroi cremisi</strong> si riduce di 3{NON_BREAK_SPACE}s.",
+      "0": "Quando un personaggio protetto da <strong>Barriera ardente</strong> di Thoma (escluso Thoma) viene attaccato, il TdR di <strong>Benedizione ardente</strong> di Thoma e del suo <strong>Ooyoroi cremisi</strong> si riducono di 3{NON_BREAK_SPACE}s.",
       "1": "Quest'effetto può attivarsi una volta ogni 20{NON_BREAK_SPACE}s."
     }
   },
