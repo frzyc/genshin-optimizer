@@ -88,19 +88,19 @@ const data: Data = [
   r.premod.eleMas.addNode(cmpGE(constellation, 4, subscript(c4Count, [NaN, ...dm.constellation4.eleMas]))),
 
   c2_critRate_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critRate_)))),
-  team.premod.critRate_.burning.reread(c2_critRate_.tag),
-  team.premod.critRate_.bloom.reread(c2_critRate_.tag),
-  team.premod.critRate_.hyperbloom.reread(c2_critRate_.tag),
-  team.premod.critRate_.burgeon.reread(c2_critRate_.tag),
+  team.premod.critRate_.burning.reread(c2_critRate_),
+  team.premod.critRate_.bloom.reread(c2_critRate_),
+  team.premod.critRate_.hyperbloom.reread(c2_critRate_),
+  team.premod.critRate_.burgeon.reread(c2_critRate_),
 
   c2_critDMG_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critDMG_)))),
-  team.premod.critDMG_.burning.reread(c2_critDMG_.tag),
-  team.premod.critDMG_.bloom.reread(c2_critDMG_.tag),
-  team.premod.critDMG_.hyperbloom.reread(c2_critDMG_.tag),
-  team.premod.critDMG_.burgeon.reread(c2_critDMG_.tag),
+  team.premod.critDMG_.burning.reread(c2_critDMG_),
+  team.premod.critDMG_.bloom.reread(c2_critDMG_),
+  team.premod.critDMG_.hyperbloom.reread(c2_critDMG_),
+  team.premod.critDMG_.burgeon.reread(c2_critDMG_),
 
   c2qsa_defRed_.addNode(cmpGE(constellation, 2, cmpEq(c2QSA, "on", percent(dm.constellation2.defDec_)))),
-  enemy.base.defRed_.reread(c2qsa_defRed_.tag),
+  enemy.base.defRed_.reread(c2qsa_defRed_),
 
   // team.final.eleMas.addNode(), // TODO: a1
 ]

@@ -57,7 +57,7 @@ export class BetterRead implements Read {
     return new BetterRead({ ...this.tag, ...tag }, agg ?? this.agg)
   }
   addNode<V>(value: V): { tag: Tag, value: V } { return { tag: this.tag, value } }
-  reread(tag: Tag): { tag: Tag, value: ReRead } { return { tag: this.tag, value: reread(tag) } }
+  reread(r: BetterRead): { tag: Tag, value: ReRead } { return { tag: this.tag, value: reread(r.tag) } }
 
   get custom(): Record<string, BetterRead> {
     return new Proxy(this, { get(t, q: typeof queries[number]) { return usedCustomTags.add(q), t.withTag({ q, stage: 'base' }) } }) as any

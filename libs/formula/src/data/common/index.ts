@@ -7,11 +7,11 @@ const data: Data = [
   final.addNode(premod),
   premod.addNode(base),
 
-  nosrc.reread({ src: 'char' }),
-  nosrc.reread({ src: 'weapon' }),
-  nosrc.reread({ src: 'art' }),
-  nosrc.reread({ src: 'team' }),
-  nosrc.reread({ src: 'custom' }),
+  nosrc.reread(reader.src('char')),
+  nosrc.reread(reader.src('weapon')),
+  nosrc.reread(reader.src('art')),
+  nosrc.reread(reader.src('team')),
+  nosrc.reread(reader.src('custom')),
 ]
 
 export default data
