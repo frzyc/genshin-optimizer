@@ -119,7 +119,7 @@ const dmgFormulas = {
     dmg: greaterEq(input.constellation, 2, customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.shotDmg, { unit: "%" }),
-        percent(dm.constellation2.toopDmg, { name: ct.chg("c2MultiplierKey_") }),
+        percent(dm.constellation2.toopDmg, { name: ct.ch("c2MultiplierKey_") }),
         input.total.atk
       ),
       "elemental",
