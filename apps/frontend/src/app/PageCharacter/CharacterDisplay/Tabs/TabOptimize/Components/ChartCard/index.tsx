@@ -10,12 +10,11 @@ import InfoTooltip from '../../../../../../Components/InfoTooltip';
 import { CharacterContext } from '../../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../../Context/DataContext';
 import { GraphContext } from '../../../../../../Context/GraphContext';
-import { ArtCharDatabase, DatabaseContext } from '../../../../../../Database/Database';
 import { input } from '../../../../../../Formula';
 import { NumNode } from '../../../../../../Formula/type';
 import { valueString } from '../../../../../../KeyMap';
-import { allSlotKeys, SlotKey } from '../../../../../../Types/consts';
-import { objectKeyValueMap, objPathValue } from '../../../../../../Util/Util';
+import { allSlotKeys } from '../../../../../../Types/consts';
+import { objectKeyMap, objPathValue } from '../../../../../../Util/Util';
 import useBuildResult from '../../useBuildResult';
 import OptimizationTargetSelector from '../OptimizationTargetSelector';
 import CustomDot from './CustomDot';
@@ -41,9 +40,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
   const { graphBuilds } = useContext(GraphContext)
-  const { database } = useContext(DatabaseContext)
   const { character: { key: characterKey } } = useContext(CharacterContext)
-  const { buildResult: { builds } } = useBuildResult(characterKey)
+  const { buildResult: { builds: generatedBuilds } } = useBuildResult(characterKey)
 
   const [sliderLow, setSliderLow] = useState(-Infinity)
   const [sliderHigh, setSliderHigh] = useState(Infinity)
@@ -62,18 +60,16 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     if (!chartData) return { displayData: null, downloadData: null }
     let sliderMin = Infinity
     let sliderMax = -Infinity
-    const currentBuild = objectKeyValueMap(allSlotKeys, slotKey => [slotKey, data?.get(input.art[slotKey].id).value ?? ""])
-    const generatedBuildSlotMaps = builds.map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
-    const graphBuildSlotMaps = graphBuilds?.map(artiIds => convertArtiIdsToArtiSlotMap(artiIds, database))
+    const currentBuild = allSlotKeys.map(slotKey => data?.get(input.art[slotKey].id).value ?? "")
     // Shape the data so we know the current and highlighted builds
     const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => {
       if (x === undefined) return null
       if (x < sliderMin) sliderMin = x
       if (x > sliderMax) sliderMax = x
       const enhancedDatum: EnhancedPoint = new EnhancedPoint(x, y, artifactIds)
-      const datumSlotMap = convertArtiIdsToArtiSlotMap(artifactIds, database)
+      const datumBuildMap = objectKeyMap(artifactIds, _ => true)
 
-      const isCurrentBuild = allSlotKeys.every(slotKey => currentBuild[slotKey] === datumSlotMap[slotKey])
+      const isCurrentBuild = currentBuild.every(aId => datumBuildMap[aId])
       if (isCurrentBuild) {
         enhancedDatum.current = y
         // Remove the Y-value so there are not 2 dots displayed for these builds
@@ -81,8 +77,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         return enhancedDatum
       }
 
-      const generBuildIndex = generatedBuildSlotMaps.findIndex(buildSlotMap =>
-        allSlotKeys.every(slotKey => buildSlotMap[slotKey] === datumSlotMap[slotKey])
+      const generBuildIndex = generatedBuilds.findIndex(build =>
+        build.every(aId => datumBuildMap[aId])
       )
       if (generBuildIndex !== -1) {
         enhancedDatum.highlighted = y
@@ -93,8 +89,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         return enhancedDatum
       }
 
-      const graphBuildIndex = graphBuildSlotMaps?.findIndex(buildSlotMap =>
-        allSlotKeys.every(slotKey => buildSlotMap[slotKey] === datumSlotMap[slotKey])
+      const graphBuildIndex = graphBuilds?.findIndex(build =>
+        build.every(aId => datumBuildMap[aId])
       )
       if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
         enhancedDatum.highlighted = y
@@ -133,7 +129,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       allData: points.map(point => [point.x, point.y]),
     }
     return { displayData: points.filter(pt => pt && pt.x >= sliderLow && pt.x <= sliderHigh), downloadData, sliderMin, sliderMax }
-  }, [chartData, builds, data, database, graphBuilds, sliderLow, sliderHigh])
+  }, [chartData, generatedBuilds, data, graphBuilds, sliderLow, sliderHigh])
 
   const plotBaseNode = plotBase && objPathValue(data?.getDisplay(), plotBase)
   const invalidTarget = plotBase && (!plotBaseNode || plotBaseNode.isEmpty)
@@ -315,16 +311,6 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
       />
     </ComposedChart>
   </ResponsiveContainer>
-}
-
-function convertArtiIdsToArtiSlotMap(artifactIds: string[], database: ArtCharDatabase) {
-  // Create partial mapping of slotkey -> build artifact
-  const partialArtiSlotMap: Dict<SlotKey, string> = Object.fromEntries(artifactIds.map(artiId => {
-    const arti = database.arts.get(artiId)
-    return arti ? [arti.slotKey, arti.id] : []
-  }))
-  // Fill in the blanks so we have a StrictDict<SlotKey, string>
-  return objectKeyValueMap(allSlotKeys, slotKey => [slotKey, partialArtiSlotMap[slotKey] ?? ""])
 }
 
 function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: EnhancedPoint[]) {
