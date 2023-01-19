@@ -9,7 +9,7 @@ for (let i = 1; i < 1 << data.length; i++) {
   if (i < 1 << 2 * count) data[2 * count]?.push(i)
 
   // Technically, we can omit each odd entry `i`, and use the first half of `i + 1`.
-  // However, the overhead here is minimal, and it's easier handle than separating
+  // However, the overhead here is minimal, and it's easier to handle than separating
   // odd/even code paths in the library.
   if (i < 1 << 2 * count - 1) data[2 * count - 1]?.push(i)
 }

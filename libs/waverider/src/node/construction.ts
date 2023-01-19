@@ -103,8 +103,8 @@ export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
 }
 
-export function read(tag: Tag, agg: Read['agg']): Read {
-  return { op: 'read', x: [], br: [], tag, agg }
+export function read(tag: Tag, accu: Read['accu']): Read {
+  return { op: 'read', x: [], br: [], tag, accu }
 }
 export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }

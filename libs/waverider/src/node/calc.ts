@@ -81,7 +81,7 @@ class TaggedCalculator<M> {
       case 'thres': case 'match': case 'lookup':
         return this._conditional(op, n.br, n.x, n.ex)
       case 'tag': return this._tag(n.x[0]!, n.tag)
-      case 'read': return this._read(n.agg, n.tag)
+      case 'read': return this._read(n.accu, n.tag)
       default: assertUnreachable(op)
     }
   }
@@ -111,32 +111,26 @@ class TaggedCalculator<M> {
   _tag(xIn: AnyNode, extraTag: Tag): CalcResult<number | string, M> {
     return this.withTag(extraTag).get(xIn)
   }
-  _read(agg: Read['agg'], extraTag: Tag | undefined): CalcResult<number | string, M> {
+  _read(accu: Read['accu'], extraTag: Tag | undefined): CalcResult<number | string, M> {
     if (extraTag && Object.keys(extraTag).length)
-      return this.parent.withTag({ ...this.tag, ...extraTag })._read(agg, undefined)
+      return this.parent.withTag({ ...this.tag, ...extraTag })._read(accu, undefined)
 
     const computed = this.getAll()
 
     let result: CalcResult<number | string, M>
-    switch (agg) {
+    switch (accu) {
       case undefined:
-        let errorMsg = undefined
-        if (!computed.length) {
-          errorMsg = `Found no nodes with no aggregation on tag ${tagString(this.tag)}`
-          result = this._leaf('read', undefined as any)
-        } else {
-          if (computed.length > 1)
-            errorMsg = `Found multiple nodes with no aggregation on tag ${tagString(this.tag)}`
-          result = computed[0]!
-        }
-        if (errorMsg)
+        if (computed.length !== 1) {
+          const errorMsg = `Found ${computed.length} nodes while reading tag ${tagString(this.tag)} with no accumulator`
           if (process.env['NODE_ENV'] !== 'production')
             throw new Error(errorMsg)
           else console.error(errorMsg)
+        }
+        result = computed[0] ?? this._leaf('read', undefined as any)
         break
       default:
-        const val = arithmetic[agg](getV(computed) as number[], undefined)
-        result = this._meta(agg, this.tag, val, computed, [])
+        const val = arithmetic[accu](getV(computed) as number[], undefined)
+        result = this._meta(accu, this.tag, val, computed, [])
     }
     return result
   }
