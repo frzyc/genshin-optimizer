@@ -435,7 +435,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         onChange={v => v !== undefined && setValue(v)}
         sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
         inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
-      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
+      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow:"visible" }}>
         <Slider
           size="small"
           value={rolls}
@@ -443,6 +443,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
           min={0}
           step={1}
           marks
+          valueLabelDisplay="auto"
           onChange={(e, v) => setRolls(v as number)}
           onChangeCommitted={(e, v) => setRValue(v as number)}
         />
