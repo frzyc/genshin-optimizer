@@ -363,7 +363,7 @@ export default function TabBuild() {
         </Grid>
 
         {/* 2 */}
-        <Grid item xs={12} sm={6} lg={3} display="flex" flexDirection="column" gap={1}>
+        <Grid item xs={12} sm={6} lg={4} display="flex" flexDirection="column" gap={1}>
           <CardLight>
             <CardContent  >
               <BootstrapTooltip placement="top" title={<Box>
@@ -382,7 +382,7 @@ export default function TabBuild() {
         </Grid>
 
         {/* 3 */}
-        <Grid item xs={12} sm={6} lg={6} display="flex" flexDirection="column" gap={1}>
+        <Grid item xs={12} sm={6} lg={5} display="flex" flexDirection="column" gap={1}>
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
