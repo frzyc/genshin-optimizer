@@ -1,8 +1,8 @@
 import { cmpEq, cmpGE, subscript } from "@genshin-optimizer/waverider"
 import { Data, enemy, percent, reader, team } from "../../util"
 import { entriesForChar } from "../util"
-import data_gen from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
+import data_gen from './data.gen.json'
+import skillParam_gen from './skillParam.gen.json'
 
 let a = 0, s = 0, b = 0
 const dm = {
@@ -72,11 +72,12 @@ const dm = {
   }
 } as const
 
-const charKey = 'Nahida', ele = 'dendro'
-const r = reader.src(charKey), { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = r.custom
-
-const { auto, skill, burst, constellation, ascension } = reader.base
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = reader.custom
+const charKey = 'Nahida', ele = 'dendro', r = reader.src(charKey)
+const { auto, skill, burst, constellation, ascension } = r.base
+const {
+  c2_critRate_, c2_critDMG_, c2qsa_defRed_,
+  a1ActiveInBurst, c2Bloom, c2QSA, c4Count,
+} = r.custom
 
 // TODO: DMG Formulas
 

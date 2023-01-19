@@ -7,7 +7,7 @@ export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemen
 
 export const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_', 'stamina'] as const
 export const summableQueries = [...stats, 'auto', 'skill', 'burst', 'constellation', 'ascension', 'defRed_', 'count'] as const
-export const queries = [...summableQueries, 'weaponType', 'lvl', 'hitMode', 'special', 'cappedCritRate_', 'dmg'] as const
+export const queries = [...summableQueries, 'weaponType', 'lvl', 'hitMode', 'special', 'cappedCritRate_', 'dmg', 'infusion'] as const
 
 export const characters = ['Nahida'] as const // TODO
 export const weapons = [] as const // TODO
@@ -18,14 +18,6 @@ export const amplifyingReactions = ['vaporize', 'melt'] as const
 export const catalyzeReactions = ['spread', 'aggravate'] as const
 
 export const regions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
-
-/*
- * Depending on how tags are added to `BetterRead`, tag categories are separated into two
- * types; common and fixed. If a tag `<cat>:<val>` is fixed, it can be added to existing
- * `BetterRead` using `betterRead.<val>`. If it is common, use `betterRead.cat(<val>)`.
- *
- * Common vs fixed distinction is otherwise not used anywhere else.
- */
 
 export const fixedCats = {
   q: queries, src: srcs, stage: stages, region: regions,
@@ -78,6 +70,23 @@ export class BetterRead implements Read {
   preset = (n: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, agg?: Read['agg']) => this.with('preset', `preset${n}`, agg)
   src = (src: typeof srcs[number], agg?: Read['agg']) => this.with('src', src, agg)
 
+  // Move
+  get normal(): BetterRead { return this.with('move', 'normal') }
+  get charged(): BetterRead { return this.with('move', 'charged') }
+  get plunging(): BetterRead { return this.with('move', 'plunging') }
+  get skill(): BetterRead { return this.with('move', 'skill') }
+  get burst(): BetterRead { return this.with('move', 'burst') }
+  get elemental(): BetterRead { return this.with('move', 'elemental') }
+
+  // Element
+  get pyro(): BetterRead { return this.with('ele', 'pyro') }
+  get hydro(): BetterRead { return this.with('ele', 'hydro') }
+  get geo(): BetterRead { return this.with('ele', 'geo') }
+  get cryo(): BetterRead { return this.with('ele', 'cryo') }
+  get electro(): BetterRead { return this.with('ele', 'electro') }
+  get dendro(): BetterRead { return this.with('ele', 'dendro') }
+  get physical(): BetterRead { return this.with('ele', 'physical') }
+
   // Reactions
   get overloaded(): BetterRead { return this.with('tran', 'overloaded') }
   get shattered(): BetterRead { return this.with('tran', 'shattered') }
@@ -92,6 +101,16 @@ export class BetterRead implements Read {
   get melt(): BetterRead { return this.with('amp', 'melt') }
   get spread(): BetterRead { return this.with('cata', 'spread') }
   get aggravate(): BetterRead { return this.with('cata', 'aggravate') }
+
+  // Region
+  get mondstadt(): BetterRead { return this.with('region', 'mondstadt') }
+  get liyue(): BetterRead { return this.with('region', 'liyue') }
+  get inazuma(): BetterRead { return this.with('region', 'inazuma') }
+  get sumeru(): BetterRead { return this.with('region', 'sumeru') }
+  get fontaine(): BetterRead { return this.with('region', 'fontaine') }
+  get natlan(): BetterRead { return this.with('region', 'natlan') }
+  get snezhnaya(): BetterRead { return this.with('region', 'snezhnaya') }
+  get khaenriah(): BetterRead { return this.with('region', 'khaenriah') }
 }
 
 export const reader = new BetterRead({}, undefined)
