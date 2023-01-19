@@ -40,5 +40,7 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
       return a.label.localeCompare(b.label)
     })
   ], [t, toText, isFavorite, database, characterSheets, filter, gender])
-  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" {...autoCompleteProps} /></Suspense>
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}>
+    <GeneralAutocomplete size="small" options={values} valueKey={location} onChange={(k => setLocation(k ?? ""))} toImg={toImg} {...autoCompleteProps} />
+  </Suspense>
 }

@@ -260,7 +260,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
                 sx={{ flexGrow: 1 }}
-                defaultText={t("editor.unknownSetName")}
+                label={t("editor.unknownSetName")}
                 getOptionDisabled={({ key }) => setACDisable(key)}
               />
               {/* rarity dropdown */}

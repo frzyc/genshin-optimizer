@@ -109,7 +109,7 @@ function TeammateDisplay({ index }: { index: number }) {
     data: dataBundle.target,
     teamData: teamData,
   }, [dataBundle, teamData])
-  return <CardLight>
+  return <CardLight sx={{ overflow: "visible" }}>
     <TeammateAutocomplete characterKey={teamMateKey} team={team}
       setChar={setTeammate}
       label={t("teammate", { count: index + 1 })}
@@ -177,17 +177,12 @@ function TeammateAutocomplete({ characterKey, team, label, setChar, autoComplete
   const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets(key, gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.charMeta.get(key).favorite, [database])
   const onDisable = useCallback(({ key }: { key: CharacterKey | "" }) => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
-  const values: GeneralAutocompleteOption<CharacterKey | "">[] = useMemo(() => [{
-    key: "",
-    label: t`page_character:none`,
-  },
-  ...database.chars.keys
+  const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(() => database.chars.keys
     .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
     .sort((a, b) => {
       if (a.favorite && !b.favorite) return -1
       if (!a.favorite && b.favorite) return 1
       return a.label.localeCompare(b.label)
-    })
-  ], [t, toText, isFavorite, database])
-  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" label={label} options={values} valueKey={characterKey} clearKey="" onChange={setChar} getOptionDisabled={onDisable} toImg={toImg} {...autoCompleteProps} /></Suspense>
+    }), [toText, isFavorite, database])
+  return <Suspense fallback={<Skeleton variant="text" width={100} />}><GeneralAutocomplete size="small" label={label} options={values} valueKey={characterKey} onChange={k => setChar(k ?? "")} getOptionDisabled={onDisable} toImg={toImg} {...autoCompleteProps} /></Suspense>
 }

@@ -333,7 +333,7 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
         disableClearable
         artSetKey={""}
         setArtSetKey={setSet}
-        defaultText={"New Artifact Set"}
+        label={"New Artifact Set"}
         getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !(key && artifactSheets?.(key)) || Object.keys(artifactSheets(key).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>

@@ -9,29 +9,23 @@ import ColorText from "./ColoredText"
 export type GeneralAutocompleteOption<T extends string> = { key: T, label: string, grouper?: string | number, variant?: Variant, favorite?: boolean }
 type GeneralAutocompletePropsBase<T extends string> = {
   label?: string,
-  defaultText?: string
   toImg: (v: T) => JSX.Element | undefined,
   toExItemLabel?: (v: T) => Displayable | undefined,
   toExLabel?: (v: T) => Displayable | undefined,
-  clearKey?: T
 }
-export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T, onChange: (v: T) => void, } &
+export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T | null, onChange: (v: T | null) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
-export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, clearKey, toImg, toExItemLabel, toExLabel, defaultText, ...acProps }: GeneralAutocompleteProps<T>) {
-  const value = findOption(options, key, defaultText)
+export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteProps<T>) {
+  const value = options.find(o => o.key === key)
   const theme = useTheme()
   return <Autocomplete
     autoHighlight
     options={options}
     value={value}
-    clearIcon={key !== clearKey ? undefined : null}
-    onChange={(event, newValue, reason) => {
-      if (reason === "clear" && clearKey !== undefined) return onChange(clearKey)
-      return newValue !== null && onChange(newValue.key)
-    }}
-    isOptionEqualToValue={(option, value) => option.key === value.key}
+    onChange={(event, newValue, reason) => onChange(newValue?.key)}
+    isOptionEqualToValue={(option, value) => option.key === value?.key}
     renderInput={(params) => {
-      const variant = value.variant
+      const variant = value?.variant
       const color = variant ? theme.palette[variant]?.main : undefined
       return <TextField
         {...params}
@@ -65,8 +59,8 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
 }
 export type GeneralAutocompleteMultiProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKeys: T[], onChange: (v: T[]) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, true, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
-export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys: keys, label, onChange, toImg, toExItemLabel, toExLabel, defaultText, ...acProps }: GeneralAutocompleteMultiProps<T>) {
-  const value = useMemo(() => keys.map(k => findOption(options, k, defaultText)), [options, defaultText, keys])
+export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys: keys, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteMultiProps<T>) {
+  const value = useMemo(() => keys.map(k => options.find(o => o.key === k)).filter(o => o) as unknown as GeneralAutocompleteOption<T>[], [options, keys])
   return <Autocomplete
     autoHighlight
     options={options}
@@ -99,12 +93,9 @@ export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys:
       </ListItemText>
       {!!option.favorite && <Favorite />}
     </MenuItem>}
-    renderTags={(selected, getTagProps) => selected.map(({ key, label, variant }, index) => {
-      return <Chip {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
-    })}
+    renderTags={(selected, getTagProps) => selected.map(({ key, label, variant }, index) =>
+      <Chip {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
+    )}
     {...acProps}
   />
-}
-function findOption<T extends string>(options: readonly GeneralAutocompleteOption<T>[], key: T, label = "ERROR") {
-  return options.find(o => o.key === key) ?? { key: "" as T, label }
 }

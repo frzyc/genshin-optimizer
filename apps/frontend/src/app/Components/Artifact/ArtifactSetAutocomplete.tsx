@@ -25,7 +25,7 @@ export default function ArtifactSetAutocomplete({ artSetKey, setArtSetKey, label
   return <GeneralAutocomplete
     options={options}
     valueKey={artSetKey}
-    onChange={setArtSetKey}
+    onChange={k => setArtSetKey(k ?? "")}
     toImg={toImg}
     label={label}
     groupBy={(option) => option.grouper?.toString() ?? ""}

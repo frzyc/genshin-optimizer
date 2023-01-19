@@ -47,9 +47,6 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
   }, [characterSheets, database, gender])
 
   const values: GeneralAutocompleteOption<FilterLocationKey>[] = useMemo(() => [{
-    key: "",
-    label: t`artifact:filterLocation.any`,
-  }, {
     key: "Equipped",
     label: t`artifact:filterLocation.currentlyEquipped`
   }, {
@@ -66,5 +63,5 @@ export default function LocationFilterAutocomplete({ location, setLocation }: { 
   ], [t, toText, isFavorite, toVariant, database])
 
   return <Suspense fallback={<Skeleton variant="text" width={100} />}>
-    <GeneralAutocomplete options={values} valueKey={location} onChange={setLocation} toImg={toImg} clearKey="" label={t`artifact:filterLocation.location`} /></Suspense>
+    <GeneralAutocomplete options={values} valueKey={location} onChange={k => setLocation(k ?? "")} toImg={toImg} label={t`artifact:filterLocation.location`} /></Suspense>
 }
