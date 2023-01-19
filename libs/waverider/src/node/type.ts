@@ -51,7 +51,7 @@ export interface TagOverride<Output, PermitOP extends OP = OP> extends Base<'tag
 export interface Read extends Base<'read', never> {
   ex?: never
   tag: Tag
-  agg: (Sum | Prod | Min | Max)['op'] | undefined
+  accu: (Sum | Prod | Min | Max)['op'] | undefined
 }
 export interface ReRead {
   op: 'reread'

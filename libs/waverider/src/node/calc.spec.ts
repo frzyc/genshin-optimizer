@@ -12,7 +12,7 @@ describe('Calculator', () => {
   it('is initializable with no entry', () => {
     new Calculator(keys)
   })
-  it('can process aggregated queries', () => {
+  it('can process queries matching multiple entries', () => {
     const calc = new Calculator(keys, compileTagMapValues(keys, [
       { tag: { cat1: 'val1', cat2: 'val1' }, value: constant(3) },
       { tag: { cat1: 'val1', cat2: 'val1', cat3: 'val2' }, value: constant(4) }

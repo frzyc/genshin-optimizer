@@ -32,15 +32,15 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): A
     switch (n.op) {
       case 'read': {
         const readTag = { ...tag, ...n.tag }
-        // Strictly speaking, `x`s are not `NumNode` yet, but it's easier to handle `agg` this way
+        // Strictly speaking, `x`s are not `NumNode` yet, but it's easier to handle `accu` this way
         const x = read(readTag) as NumNode<Exclude<OP, 'tag'>>[]
-        switch (n.agg) {
+        switch (n.accu) {
           case 'sum': return sum(...x) as AnyTagFree
           case 'prod': return prod(...x) as AnyTagFree
           case 'min': return min(...x) as AnyTagFree
           case 'max': return max(...x) as AnyTagFree
           case undefined: return x[0] ?? constant(undefined as any) as AnyTagFree
-          default: assertUnreachable(n.agg)
+          default: assertUnreachable(n.accu)
         }
       }
       case 'tag': return map(n.x[0]!, { ...tag, ...n.tag })
