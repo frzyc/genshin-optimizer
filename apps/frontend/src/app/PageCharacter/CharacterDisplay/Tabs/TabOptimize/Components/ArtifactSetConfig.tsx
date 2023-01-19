@@ -94,7 +94,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <strong>{t`artSetConfig.title`}</strong>
         </Typography>
         <Stack spacing={1}>
-          <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("artSetConfig.enabled")}</SqBadge></Typography>
+          <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t<string>("artSetConfig.enabled")}</SqBadge></Typography>
           <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
           <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <FontAwesomeIcon icon={faChartLine} className="fa-fw" /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <FontAwesomeIcon icon={faBan} className="fa-fw" /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
           <Typography>{t`artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}><FontAwesomeIcon icon={allowRainbow2 ? faChartLine : faBan} className="fa-fw" /> {allowRainbow2 ? t<string>("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
@@ -116,7 +116,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
             <Typography><strong>{t`artSetConfig.modal.setCond.title`}</strong></Typography>
-            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "secondary"}>{artifactCondCount} {t<string>("artSetConfig.selected")}</SqBadge></Typography>
+            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t<string>("artSetConfig.selected")}</SqBadge></Typography>
             <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>{t`artSetConfig.modal.setCond.reset`}</Button>
           </Box>
           <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
