@@ -6,11 +6,11 @@ export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'p
 export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemental'] as const
 
 export const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_', 'stamina'] as const
-export const summableQueries = [...stats, 'auto', 'skill', 'burst', 'constellation', 'ascension', 'defRed_', 'count'] as const
-export const queries = [...summableQueries, 'weaponType', 'lvl', 'hitMode', 'special', 'cappedCritRate_', 'dmg', 'infusion'] as const
+export const summableQueries = [...stats, 'auto', 'skill', 'burst', 'constellation', 'ascension', 'refinement', 'defRed_', 'res', 'count'] as const
+export const queries = [...summableQueries, 'weaponType', 'lvl', 'hitMode', 'special', 'cappedCritRate_', 'dmg', 'eleCount', 'infusion'] as const
 
-export const characters = ['Nahida'] as const // TODO
-export const weapons = [] as const // TODO
+export const characters = ['Nahida', 'Nilou'] as const // TODO
+export const weapons = ['KeyOfKhajNisut', 'TulaytullahsRemembrance'] as const // TODO
 export const arts = [] as const // TODO
 export const srcs = [...characters, ...weapons, ...arts, 'art', 'char', 'weapon', 'team', 'enemy', 'custom', 'none'] as const
 export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom'] as const
@@ -24,7 +24,7 @@ export const fixedCats = {
   preset: presets, ele: elements, move: moves,
   tran: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions,
 } as const
-export type Tag = { [key in keyof typeof fixedCats]?: typeof fixedCats[key][number] }
+export type Tag = { [key in keyof typeof fixedCats]?: typeof fixedCats[key][number] } & { name?: string }
 export type AllTag = Required<Tag>
 
 export class BetterRead implements Read {
@@ -54,10 +54,10 @@ export class BetterRead implements Read {
   get custom(): Record<string, BetterRead> {
     return new Proxy(this, { get(t, q: typeof queries[number]) { return usedCustomTags.add(q), t.withTag({ q, stage: 'base' }) } }) as any
   }
-  get q(): Record<Exclude<typeof queries[number], typeof summableQueries[number]>, BetterRead> {
-    return new Proxy(this, { get(t, q: typeof queries[number]) { return t.withTag({ q, stage: 'base' }) } }) as any
+  get q(): Record<Exclude<typeof queries[number], typeof stats[number]>, BetterRead> {
+    return new Proxy(this, { get(t, q: typeof queries[number]) { return t.withTag({ q, stage: 'base' }, summableQueries.includes(q as any) ? 'sum' : undefined) } }) as any
   }
-  get base(): Record<typeof summableQueries[number], BetterRead> {
+  get base(): Record<typeof stats[number], BetterRead> {
     return new Proxy(this, { get(t, q: typeof stats[number]) { return t.withTag({ q, stage: 'base' }, 'sum') } }) as any
   }
   get premod(): Record<typeof stats[number], BetterRead> {
@@ -69,6 +69,7 @@ export class BetterRead implements Read {
 
   preset = (n: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, agg?: Read['agg']) => this.with('preset', `preset${n}`, agg)
   src = (src: typeof srcs[number], agg?: Read['agg']) => this.with('src', src, agg)
+  name = (name: string) => this.with('name', name)
 
   // Move
   get normal(): BetterRead { return this.with('move', 'normal') }

@@ -1,36 +1,36 @@
-import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData } from '@genshin-optimizer/dm'
-import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, CharacterKey, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
+import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
+import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, CharacterKey, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, WeaponGrowCurveKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
 type FormulaCharacterData = {
   weaponType: WeaponTypeKey
-  lvlCurves: { [key: string]: { base: number, curve: CharacterGrowCurveKey } }
-  ascensionBonus: { [key: string]: number[] }
-
-  // Do we need this?
-  star: 1 | 2 | 3 | 4 | 5,
-  birthday: { month?: number, day?: number }
+  lvlCurves: { key: string, base: number, curve: CharacterGrowCurveKey }[]
+  ascensionBonus: { key: string, values: number[] }[]
 }
+type FormulaWeaponData = {
+  weaponType: WeaponTypeKey
+  lvlCurves: { key: string, base: number, curve: WeaponGrowCurveKey }[]
+  refinementBonus: { key: string, values: number[] }[]
+  ascensionBonus: { key: string, values: number[] }[]
+}
+
 
 export default function loadFormulas() {
   //parse baseStat/ascension/basic data
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
     const { weaponType, qualityType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
-    const { infoBirthDay, infoBirthMonth, } = fetterInfoExcelConfigData[charid as any as keyof typeof fetterInfoExcelConfigData]
     const ascensions = ascensionData[avatarPromoteId]
     const ascensionKeys = new Set(ascensions.flatMap(a => Object.keys(a.props)))
     const result: FormulaCharacterData = {
       weaponType: weaponMap[weaponType],
-      lvlCurves: {
-        hp: { base: hpBase, curve: curves.hp },
-        atk: { base: attackBase, curve: curves.atk },
-        def: { base: defenseBase, curve: curves.def },
-      },
-      ascensionBonus: Object.fromEntries([...ascensionKeys].map(k => [k, ascensions.map(a => a.props[k]! ?? 0)])),
-      star: QualityTypeMap[qualityType] ?? 5,
-      birthday: { month: infoBirthMonth, day: infoBirthDay },
+      lvlCurves: [
+        { key: 'hp', base: hpBase, curve: curves.hp },
+        { key: 'atk', base: attackBase, curve: curves.atk },
+        { key: 'def', base: defenseBase, curve: curves.def },
+      ],
+      ascensionBonus: [...ascensionKeys].map(key => ({ key, values: ascensions.map(a => a.props[key]! ?? 0) })),
     }
     const charKey = characterIdMap[charid as unknown as CharacterId]
     return [charKey.startsWith("Traveler") ? "Traveler" : charKey, result]
@@ -99,10 +99,47 @@ export default function loadFormulas() {
     dumpFile(`${FORMULA_PATH}/character/${characterKey}/skillParam.gen.json`, data))
 
   // TODO Update DM to export better structure so that we don't need to do this restructuring shenanigans
-  const expCurve = Object.fromEntries(Object.entries(avatarCurveExcelConfigData).map(([k, v]) => {
-    const result = [0]
+  const charExpCurve = Object.fromEntries(Object.entries(avatarCurveExcelConfigData).map(([k, v]) => {
+    const result = [-1]
     Object.entries(v).forEach(([lvl, v]) => result[+lvl] = v)
     return [k, result]
   }))
-  dumpFile(`${FORMULA_PATH}/character/expCurve.gen.json`, expCurve)
+  dumpFile(`${FORMULA_PATH}/character/expCurve.gen.json`, charExpCurve)
+
+  const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).map(([weaponid, weaponData]) => {
+    const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } = weaponData
+    const [main, sub] = weaponProp
+    const [refinementDataId,] = skillAffix
+
+    const refData = refinementDataId ? equipAffixExcelConfigData[refinementDataId] : []
+    const refKeys = new Set(refData.filter(x => x).flatMap(ref => ref.addProps.filter(a => a.value && a.propType).map(p => p.propType)))
+
+    const ascData = weaponPromoteExcelConfigData[weaponPromoteId]
+    const ascKeys = new Set(ascData.filter(x => x).flatMap(asc => asc!.addProps.filter(a => a.value && a.propType).map(a => a.propType)))
+
+    const result: FormulaWeaponData = {
+      weaponType: weaponMap[weaponType],
+      lvlCurves: [
+        { key: propTypeMap[main.propType], base: extrapolateFloat(main.initValue), curve: main.type },
+        ...(sub.propType ? [{ key: propTypeMap[sub.propType], base: extrapolateFloat(sub.initValue), curve: sub.type }] : [])
+      ],
+      refinementBonus: [...refKeys].map(key =>
+        ({ key: propTypeMap[key], values: refData.map(x => x.addProps.reduce((accu, x) => x.propType === key ? accu + extrapolateFloat(x.value) : accu, 0) ?? 0) })),
+      ascensionBonus: [...ascKeys].map(key =>
+        ({ key: propTypeMap[key], values: ascData.map(x => x?.addProps.reduce((accu, x) => x.propType === key ? accu + extrapolateFloat(x.value) : accu, 0) ?? 0) }))
+    }
+    return [weaponIdMap[weaponid], result]
+  })) as Record<WeaponKey, FormulaWeaponData>
+
+  //dump data file to respective weapon directory.
+  Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
+    dumpFile(`${FORMULA_PATH}/weapon/${weaponKey}/data.gen.json`, data))
+
+  //exp curve to generate  stats at every level
+  const weaponExpCurve = Object.fromEntries(Object.entries(weaponCurveExcelConfigData).map(([k, v]) => {
+    const result = [-1]
+    Object.entries(v).forEach(([lvl, v]) => result[+lvl] = v)
+    return [k, result]
+  }))
+  dumpFile(`${FORMULA_PATH}/weapon/expCurve.gen.json`, weaponExpCurve)
 }

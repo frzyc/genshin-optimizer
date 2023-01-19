@@ -1,5 +1,13 @@
 import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider';
-import { AllTag, characters, reader, regions, stats, team } from '../util';
+import { AllTag, BetterRead, characters, Data, moves, reader, regions, stats, team } from '../util';
+
+export function dmgNode(base: typeof stats[number], levelScaling: number[], move: typeof moves[number]): AnyNode {
+  throw "TODO"
+}
+
+export function customDmgNode(base: AnyNode, move: typeof moves[number]): AnyNode {
+  throw "TODO"
+}
 
 export function entriesForChar(
   char: typeof characters[number],
@@ -7,8 +15,8 @@ export function entriesForChar(
   region: typeof regions[number],
   gen: {
     weaponType: string, // TODO: Weapon Type
-    lvlCurves: { [key in typeof stats[number]]?: { base: number, curve: string /* TODO: key of char curves */ } },
-    ascensionBonus: { [key in typeof stats[number]]?: number[] },
+    lvlCurves: { key: string, base: number, curve: string /* TODO: key of char curves */ }[],
+    ascensionBonus: { key: string, values: number[] }[],
   }
 ): RawTagMapEntries<AnyNode> {
   const specials = new Set(Object.keys(gen.lvlCurves) as AllTag['q'][])
@@ -19,17 +27,17 @@ export function entriesForChar(
   const r = reader.src(char)
   return [
     // Stats
-    ...Object.entries(gen.lvlCurves).flatMap(([k, { base, curve }]) =>
-      r.base[k as typeof stats[number]].addNode(prod(base, r.custom[curve]))),
-    ...Object.entries(gen.ascensionBonus).flatMap(([k, ascs]) =>
-      r.base[k as typeof stats[number]].addNode(subscript(r.base.ascension, ascs))),
+    ...gen.lvlCurves.map(({ key, base, curve }) =>
+      r.base[key as any as typeof stats[number]].addNode(prod(base, r.custom[curve]))),
+    ...gen.ascensionBonus.map(({ key, values }) =>
+      r.base[key as any as typeof stats[number]].addNode(subscript(r.q.ascension, values))),
 
     // Constants
     ...[...specials].map(s => r.q.special.addNode(constant(s))),
     r.q.weaponType.addNode(constant(gen.weaponType)),
 
     // Team counters
-    team[element].base.count.addNode(constant(1)),
-    team[region].base.count.addNode(constant(1)),
+    team[element].q.count.addNode(constant(1)),
+    team[region].q.count.addNode(constant(1)),
   ]
 }
