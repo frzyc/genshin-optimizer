@@ -42,6 +42,14 @@ export function cmpEq(v1: Str, v2: Str, eq: Str, neq: Str): Match<StrNode>
 export function cmpEq(v1: Val, v2: Val, eq: Val, neq: Val = 0): Match<AnyNode> {
   return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
 }
+/** v1 != v2 ? neq : eq */
+export function cmpNE(v1: Num, v2: Num, neq: Num, eq?: Num): Match<NumNode>
+export function cmpNE(v1: Num, v2: Num, neq: Str, eq: Str): Match<StrNode>
+export function cmpNE(v1: Str, v2: Str, neq: Num, eq?: Num): Match<NumNode>
+export function cmpNE(v1: Str, v2: Str, neq: Str, eq: Str): Match<StrNode>
+export function cmpNE(v1: Val, v2: Val, neq: Val, eq: Val = 0): Match<AnyNode> {
+  return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
+}
 
 /** v1 >= v2 ? ge : lt */
 function thres(v1: Num, v2: Num, ge: Val, lt: Val): Threshold<AnyNode> {
