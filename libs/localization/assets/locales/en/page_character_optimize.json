@@ -50,8 +50,8 @@
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
-    "title": "Build Constraints",
-    "tooltip": "Set certain requirements that generated builds must confirm to. e.g. Generated builds must have at least 140% Energy Recharge."
+    "title": "Minimum Build Constraints",
+    "tooltip": "Set certain minimum requirements that generated builds must conform to. e.g. Generated builds must have at least 140% Energy Recharge."
   },
   "artSetConfig": {
     "title": "Artifact Set Configuration",

@@ -1,15 +1,10 @@
 {
   "editor": {
     "title": "Artifact Editor",
-    "set": {
-      "artifactSet": "Artifact Set",
-      "maxRarity": "Max Rarity <1></1>"
-    },
     "rarity": "Rarity",
     "level": "Level",
     "unknownPieceName": "Unknown Piece Name",
     "unknownSetName": "Unknown Set Name",
-    "mainSelect": "Select a Main Stat",
     "curSubEff": "Current Roll Value",
     "curSubEffDesc": "Every 4 artifact upgrades, you get a substat roll. <strong>Roll Value</strong> calculates how high the substat rolled as a percentage.",
     "maxSubEff": "Max. Roll Value",
@@ -72,7 +67,6 @@
     "lockArtifacts": "Lock Artifacts",
     "unlockrtifacts": "Unlock Artifacts"
   },
-  "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Inclusive)",
   "buttonHint": "Note: the red buttons above only applies to <1>filtered artifacts</1>",
   "tipsOfTheDay": [
     "The maximum RV of a 4 star artifact is around 540%.",
@@ -82,7 +76,6 @@
     "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
     "You can now upload mutiple artifact screenshots to scan!"
   ],
-  "exclusionDisplay": "Exclusion: {{value}}",
   "exclusion": {
     "exclusion": "Exclusion",
     "any": "Any",
@@ -90,7 +83,6 @@
     "included": "Included"
   },
   "sortMap": {
-    "quality": "Quality",
     "level": "Level",
     "efficiency": "Current Roll Value",
     "mefficiency": "Maximum Roll Value"
@@ -111,5 +103,6 @@
   },
   "substat_one": "{{count}} substat",
   "substat_other": "{{count}} substats",
-  "addNew": "Add New Artifact"
+  "addNew": "Add New Artifact",
+  "cantDeleteLock": "Cannot delete artifact because it is locked"
 }
