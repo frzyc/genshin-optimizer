@@ -151,7 +151,6 @@ export default function loadTrans() {
       }
       const string = parsingFunctions[processing](lang as Language, preprocess(rawString), keys)
       if (string === undefined) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
-
       layeredAssignment(languageData, [lang, ...keys], string)
     });
 
@@ -164,7 +163,6 @@ export default function loadTrans() {
           `${languageData[lang].charNames[`Traveler${gender}`]} (${languageData[lang].sheet.element[ele.toLowerCase()]})`)
       })
     })
-    // console.log(languageData[lang].charNames)
   })
 
 
