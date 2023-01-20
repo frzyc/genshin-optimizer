@@ -350,14 +350,12 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   if (typeof value !== "number") return
   node.valueDisplay = <ColorText color="info">{valueString(value, unit, fixed)}</ColorText>
   if (name) {
-    console.log(source)
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
     const sourceText = source && (
       (allArtifactSets.includes(source as ArtifactSetKey) && <Translate ns="artifactNames_gen" key18={source} />) ||
       (allWeaponKeys.includes(source as WeaponKey) && <Translate ns="weaponNames_gen" key18={source} />) ||
       (allCharacterSheetKeys.includes(source as CharacterSheetKey) && <Translate ns="charNames_gen" key18={source} />)
     )
-    console.log(sourceText)
     const sourceDisplay = sourceText ? <ColorText color="secondary"> ({sourceText})</ColorText> : null
     node.name = <><ColorText color={variant}>{prefixDisplay}{name}</ColorText>{sourceDisplay}</>
 
