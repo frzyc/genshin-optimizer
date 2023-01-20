@@ -1,5 +1,5 @@
 import { Favorite } from "@mui/icons-material"
-import { Autocomplete, AutocompleteProps, Chip, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, useTheme } from "@mui/material"
+import { Autocomplete, AutocompleteProps, Chip, ChipProps, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, useTheme } from "@mui/material"
 import { Suspense, useMemo } from "react"
 import { Variant } from "../Formula/type"
 import ColorText from "./ColoredText"
@@ -12,6 +12,7 @@ type GeneralAutocompletePropsBase<T extends string> = {
   toImg: (v: T) => JSX.Element | undefined,
   toExItemLabel?: (v: T) => Displayable | undefined,
   toExLabel?: (v: T) => Displayable | undefined,
+  chipProps?: Partial<ChipProps>
 }
 export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T | null, onChange: (v: T | null) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
@@ -59,7 +60,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
 }
 export type GeneralAutocompleteMultiProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKeys: T[], onChange: (v: T[]) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, true, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
-export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys: keys, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteMultiProps<T>) {
+export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys: keys, label, onChange, toImg, toExItemLabel, toExLabel, chipProps, ...acProps }: GeneralAutocompleteMultiProps<T>) {
   const value = useMemo(() => keys.map(k => options.find(o => o.key === k)).filter(o => o) as unknown as GeneralAutocompleteOption<T>[], [options, keys])
   return <Autocomplete
     autoHighlight
@@ -94,7 +95,7 @@ export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys:
       {!!option.favorite && <Favorite />}
     </MenuItem>}
     renderTags={(selected, getTagProps) => selected.map(({ key, label, variant }, index) =>
-      <Chip {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
+      <Chip {...chipProps} {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
     )}
     {...acProps}
   />

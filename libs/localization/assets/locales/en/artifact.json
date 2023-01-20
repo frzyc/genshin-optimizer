@@ -103,6 +103,10 @@
   },
   "substat_one": "{{count}} substat",
   "substat_other": "{{count}} substats",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
   "addNew": "Add New Artifact",
-  "cantDeleteLock": "Cannot delete artifact because it is locked"
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "Equipped Artifacts",
+  "artInInv": "Artifacts in Inventory"
 }
