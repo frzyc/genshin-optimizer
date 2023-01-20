@@ -1,5 +1,6 @@
 import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
+import useDBMeta from 'apps/frontend/src/app/ReactHooks/useDBMeta';
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
@@ -51,6 +52,7 @@ export default function TabBuild() {
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
+  const { gender } = useDBMeta()
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
@@ -119,7 +121,7 @@ export default function TabBuild() {
 
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
+    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
