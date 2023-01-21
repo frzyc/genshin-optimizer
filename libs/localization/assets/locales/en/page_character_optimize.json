@@ -45,8 +45,8 @@
       "add": "Add character to list",
       "clearList": "Clear List"
     },
-    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <2>{{count}}</2> character",
-    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <2>{{count}}</2> characters"
+    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
