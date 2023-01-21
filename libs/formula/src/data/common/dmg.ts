@@ -1,6 +1,6 @@
-import { cmpEq, cmpGE, lookup, prod, sum, sumfrac } from "@genshin-optimizer/waverider"
-import { cappedCritRate_, Data, elements, enemy, one, percent, reader, todo } from "../util"
-import { ampMulti, crystallizeHit, transHit } from './reaction'
+import { cmpGE, lookup, prod, sum, sumfrac } from "@genshin-optimizer/waverider"
+import { Data, elements, percent, read, todo } from "../util"
+import { ampMulti } from './reaction'
 
 const preRes = todo
 const res = cmpGE(preRes, percent(0.75),
@@ -11,37 +11,40 @@ const res = cmpGE(preRes, percent(0.75),
   )
 )
 
-const { critDMG_ } = reader.final
 const nonOverridableSelfInfusion = todo, teamInfusion = todo, overridableSelfInfusion = todo
-const infusion = reader.q.infusion, baseInfusion = todo
 const move = todo, charEle = todo, hitEle = todo
-const baseDmg = todo, outDmg = todo, inDef = todo
-const finalDmg = todo, baseDmgInc = todo, dmgBonus = todo
-const hitMode = todo, cataAddi = todo
-const enemyDef = todo, lvl = todo, enemyLvl = todo
+const baseDmg = todo
+const baseDmgInc = todo, dmgBonus = todo
+const cataAddi = todo
+const enemyDef = todo, lvl = todo
 const enemyDefRed = todo, enemyDefIgn = todo
+
+const {
+  input: { final: { critDMG_ }, common: { infusion, weaponType }, dmg, enemy },
+  output: { selfBuff }
+} = read('agg')
 
 const data: Data = [
   hitEle.addNode(
     lookup(move, { skill: charEle, burst: charEle },
-      lookup(reader.q.weaponType, { bow: 'physical', catalyst: charEle },
+      lookup(weaponType, { bow: 'physical', catalyst: charEle },
         infusion))),
-  outDmg.addNode(prod(
+  selfBuff.dmg.outDmg.addNode(prod(
     ampMulti,
     sum(baseDmg, baseDmgInc),
-    sum(one, dmgBonus),
+    sum(percent(1), dmgBonus),
   )),
-  inDef.addNode(prod(
-    enemy.final.def,
+  selfBuff.dmg.inDmg.addNode(prod(
+    enemy.lvl,
     lookup(hitEle, Object.fromEntries(elements.map(ele =>
-      [ele, enemy.with('ele', ele).custom['res']])))
+      [ele, enemy.res[ele]])))
   )),
   enemyDef.addNode(sumfrac(
     sum(lvl, 100),
     prod(
-      sum(enemyLvl, 100),
-      sum(one, prod(-1, enemyDefRed)), // TODO: Cap
-      sum(one, prod(-1, enemyDefIgn)), // TODO: Cap
+      sum(enemy.lvl, 100),
+      sum(percent(1), prod(-1, enemyDefRed)), // TODO: Cap
+      sum(percent(1), prod(-1, enemyDefIgn)), // TODO: Cap
     )
   )),
 ]

@@ -11,6 +11,6 @@ const data: Data = [
 
   // Weapon curves
   ...Object.entries(weaponCurves).map(([k, v]) =>
-    reader.custom[k].addNode(subscript(reader.q.lvl, v))),
+    reader.custom[k].addNode(subscript(reader.weapon.lvl, v))),
 ]
 export default data

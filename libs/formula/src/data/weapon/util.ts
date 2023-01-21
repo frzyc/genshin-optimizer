@@ -1,8 +1,8 @@
 import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider';
-import { reader, stats, weapons } from '../util';
+import { read, Stat, Weapon } from '../util';
 
 export function entriesForWeapon(
-  weapon: typeof weapons[number],
+  name: Weapon,
   gen: {
     weaponType: string, // TODO: Weapon Type
     lvlCurves: { key: string, base: number, curve: string /* TODO: key of char curves */ }[],
@@ -10,17 +10,21 @@ export function entriesForWeapon(
     refinementBonus: { key: string, values: number[] }[],
   }
 ): RawTagMapEntries<AnyNode> {
-  const r = reader.src(weapon)
+  const {
+    input: { weapon: { refinement, ascension } },
+    custom,
+    output: { selfBuff }
+  } = read(name)
   return [
     // Stats
     ...gen.lvlCurves.map(({ key, base, curve }) =>
-      r.base[key as any as typeof stats[number]].addNode(prod(base, r.custom[curve]))),
+      selfBuff.base[key as any as Stat].addNode(prod(base, custom[curve]))),
     ...gen.ascensionBonus.map(({ key, values }) =>
-      r.base[key as any as typeof stats[number]].addNode(subscript(r.q.ascension, values))),
+      selfBuff.base[key as any as Stat].addNode(subscript(ascension, values))),
     ...gen.refinementBonus.map(({ key, values }) =>
-      r.base[key as any as typeof stats[number]].addNode(subscript(r.q.refinement, values))),
+      selfBuff.base[key as any as Stat].addNode(subscript(refinement, values))),
 
     // Constants
-    r.q.weaponType.addNode(constant(gen.weaponType)),
+    selfBuff.common.weaponType.addNode(constant(gen.weaponType)),
   ]
 }

@@ -1,27 +1,32 @@
 import { max, min, prod } from "@genshin-optimizer/waverider"
-import { Data, naught, one, reader } from "../util"
+import { Data, percent, presets, reader } from "../util"
 import dmg from './dmg'
 
-const nosrc = reader.src('none', 'sum')
+const { self, team } = reader.with('src', 'agg')._withAll('et')
+const srcs = reader._withAll('src')
 
 const data: Data = [
   ...dmg,
 
   // Final <= Premod <= Base
-  nosrc.with('stage', 'final').addNode(reader.with('stage', 'premod', 'sum')),
-  nosrc.with('stage', 'premod').addNode(reader.with('stage', 'base', 'sum')),
+  self.with('qt', 'final').addNode(self.with('qt', 'premod', 'sum')),
+  self.with('qt', 'premod').addNode(self.with('qt', 'base', 'sum')),
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp'] as const).map(s =>
-    nosrc.premod[s].addNode(prod(reader.base[s], reader.premod[`${s}_`]))),
+    self.premod[s].addNode(prod(self.base[s], self.premod[`${s}_`]))),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
-  nosrc.q.cappedCritRate_.addNode(max(min(reader.final.critRate_, one), naught)),
+  self.common.cappedCritRate_.addNode(max(min(self.final.critRate_, percent(1)), percent(0))),
 
-  nosrc.reread(reader.src('char')),
-  nosrc.reread(reader.src('weapon')),
-  nosrc.reread(reader.src('art')),
-  nosrc.reread(reader.src('team')),
-  nosrc.reread(reader.src('custom')),
+  // agg <= char + weapon + art + team + custom
+  srcs.agg.reread(srcs.char),
+  srcs.agg.reread(srcs.weapon),
+  srcs.agg.reread(srcs.art),
+  srcs.agg.reread(srcs.custom),
+
+  ...presets.map(dst =>
+    // TODO: Upstream possibility that tag value may be null
+    reader.withTag({ dst, et: 'target' }).reread(self.withTag({ dst: null as any, et: 'self' }))),
 ]
 export default data

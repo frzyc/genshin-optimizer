@@ -1,119 +1,123 @@
-import { Read, reread, ReRead } from "@genshin-optimizer/waverider";
+import { Read as Base, reread, ReRead } from "@genshin-optimizer/waverider";
+import { amplifyingReactions, catalyzeReactions, CharacterStat, CommonQuery, DmgQuery, dsts, elements, EnemyStat, entryTypes, fixedQueries, moves, presets, queryTypes, regions, srcs, Stat, summableQueries, TeamStat, transformativeReactions, WeaponStat } from "./listing";
 
-export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
-export const stages = ['base', 'premod', 'final'] as const
-export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const
-export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemental'] as const
-
-export const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_', 'stamina'] as const
-export const summableQueries = [...stats, 'auto', 'skill', 'burst', 'constellation', 'ascension', 'refinement', 'defRed_', 'res', 'count'] as const
-export const queries = [...summableQueries, 'weaponType', 'lvl', 'hitMode', 'special', 'cappedCritRate_', 'dmg', 'eleCount', 'infusion'] as const
-
-export const characters = ['Nahida', 'Nilou'] as const // TODO
-export const weapons = ['KeyOfKhajNisut', 'TulaytullahsRemembrance'] as const // TODO
-export const arts = [] as const // TODO
-export const srcs = [...characters, ...weapons, ...arts, 'art', 'char', 'weapon', 'team', 'enemy', 'custom', 'none'] as const
-export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom'] as const
-export const amplifyingReactions = ['vaporize', 'melt'] as const
-export const catalyzeReactions = ['spread', 'aggravate'] as const
-
-export const regions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
-
-export const fixedCats = {
-  q: queries, src: srcs, stage: stages, region: regions,
-  preset: presets, ele: elements, move: moves,
-  tran: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions,
+export const fixedTags = {
+  preset: presets, et: entryTypes,
+  src: srcs, dst: dsts,
+  qt: queryTypes,
+  region: regions, ele: elements, move: moves,
+  tran: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions
 } as const
-export type Tag = { [key in keyof typeof fixedCats]?: typeof fixedCats[key][number] } & { name?: string }
+export type Tag = {
+  [key in keyof typeof fixedTags]?: typeof fixedTags[key][number]
+} & { name?: string, q?: string } &
+  ( // Permissible queries by query type
+    { qt: 'base' | 'premod' | 'final', q: Stat } |
+    { qt: 'char', q: CharacterStat } |
+    { qt: 'weapon', q: WeaponStat } |
+    { qt: 'team', q: TeamStat } |
+    { qt: 'enemy', q: EnemyStat } |
+    { qt: 'common', q: CommonQuery } |
+    { qt: 'dmg', q: DmgQuery } |
+    { qt: 'misc', q: string } |
+    { qt?: never, q?: never }
+  )
 export type AllTag = Required<Tag>
 
-export class BetterRead implements Read {
+export class Read implements Base {
   op = 'read' as const
   x = []
   br = []
   tag: Tag
-  agg: Read['agg']
+  accu: Base['accu']
 
-  constructor(tag: Tag, agg: Read['agg']) {
+  constructor(tag: Tag, accu: Read['accu']) {
     this.tag = tag
-    this.agg = agg
+    this.accu = accu
   }
 
-  with<C extends keyof Tag>(cat: C, val: AllTag[C], agg?: Read['agg']): BetterRead {
-    return new BetterRead({ ...this.tag, [cat]: val }, agg ?? this.agg)
+  with<C extends keyof Tag>(cat: C, val: AllTag[C], accu?: Read['accu']): Read {
+    return new Read({ ...this.tag, [cat]: val }, accu ?? this.accu)
   }
-  withAll<C extends keyof Tag>(cat: C, agg?: Read['agg']): Record<AllTag[C], BetterRead> {
-    return new Proxy(this, { get(t, q: AllTag[C]) { return t.with(cat, q, agg) } }) as any
+  withTag(tag: Tag, accu?: Read['accu']): Read {
+    return new Read({ ...this.tag, ...tag }, accu ?? this.accu)
   }
-  withTag(tag: Tag, agg?: Read['agg']): BetterRead {
-    return new BetterRead({ ...this.tag, ...tag }, agg ?? this.agg)
+  _withAll<C extends keyof Tag>(cat: C, accu?: Read['accu']): Record<AllTag[C], Read> {
+    return new Proxy(this, { get(t, p: AllTag[C]) { return t.with(cat, p, accu) } }) as any
   }
   addNode<V>(value: V): { tag: Tag, value: V } { return { tag: this.tag, value } }
-  reread(r: BetterRead): { tag: Tag, value: ReRead } { return { tag: this.tag, value: reread(r.tag) } }
+  reread(r: Read): { tag: Tag, value: ReRead } { return { tag: this.tag, value: reread(r.tag) } }
 
-  get custom(): Record<string, BetterRead> {
-    return new Proxy(this, { get(t, q: typeof queries[number]) { return usedCustomTags.add(q), t.withTag({ q, stage: 'base' }) } }) as any
-  }
-  get q(): Record<Exclude<typeof queries[number], typeof stats[number]>, BetterRead> {
-    return new Proxy(this, { get(t, q: typeof queries[number]) { return t.withTag({ q, stage: 'base' }, summableQueries.includes(q as any) ? 'sum' : undefined) } }) as any
-  }
-  get base(): Record<typeof stats[number], BetterRead> {
-    return new Proxy(this, { get(t, q: typeof stats[number]) { return t.withTag({ q, stage: 'base' }, 'sum') } }) as any
-  }
-  get premod(): Record<typeof stats[number], BetterRead> {
-    return new Proxy(this, { get(t, q: typeof stats[number]) { return t.withTag({ q, stage: 'premod' }, 'sum') } }) as any
-  }
-  get final(): Record<typeof stats[number], BetterRead> {
-    return new Proxy(this, { get(t, q: typeof stats[number]) { return t.withTag({ q, stage: 'final' }, 'sum') } }) as any
+  // Accumulation type
+  get sum() { return new Read(this.tag, 'sum') }
+  get max() { return new Read(this.tag, 'max') }
+  get min() { return new Read(this.tag, 'min') }
+
+  // Queries
+  get base() { return this._q<Stat>('base') }
+  get premod() { return this._q<Stat>('premod') }
+  get final() { return this._q<Stat>('final') }
+  get char() { return this._q<CharacterStat>('char') }
+  get weapon() { return this._q<WeaponStat>('weapon') }
+  get common() { return this._q<CommonQuery>('common') }
+  get enemy() { return this._q<EnemyStat>('enemy') }
+  get team() { return this._q<TeamStat>('team') }
+  get dmg() { return this._q<DmgQuery>('dmg') }
+  get custom() { return this._q<string>('misc') }
+  _q<V extends AllTag['q']>(qt: AllTag['qt']): Record<V, Read> {
+    return new Proxy(this, {
+      get(r, q: any) {
+        if (qt === 'misc') usedCustomTags.add(q)
+        return r.withTag({ qt, q }, summableQueries.has(q) ? 'sum' : undefined)
+      }
+    }) as any
   }
 
-  preset = (n: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9, agg?: Read['agg']) => this.with('preset', `preset${n}`, agg)
-  src = (src: typeof srcs[number], agg?: Read['agg']) => this.with('src', src, agg)
-  name = (name: string) => this.with('name', name)
+  // Additional Modifiers
 
   // Move
-  get normal(): BetterRead { return this.with('move', 'normal') }
-  get charged(): BetterRead { return this.with('move', 'charged') }
-  get plunging(): BetterRead { return this.with('move', 'plunging') }
-  get skill(): BetterRead { return this.with('move', 'skill') }
-  get burst(): BetterRead { return this.with('move', 'burst') }
-  get elemental(): BetterRead { return this.with('move', 'elemental') }
+  get normal(): Read { return this.with('move', 'normal') }
+  get charged(): Read { return this.with('move', 'charged') }
+  get plunging(): Read { return this.with('move', 'plunging') }
+  get skill(): Read { return this.with('move', 'skill') }
+  get burst(): Read { return this.with('move', 'burst') }
+  get elemental(): Read { return this.with('move', 'elemental') }
 
   // Element
-  get pyro(): BetterRead { return this.with('ele', 'pyro') }
-  get hydro(): BetterRead { return this.with('ele', 'hydro') }
-  get geo(): BetterRead { return this.with('ele', 'geo') }
-  get cryo(): BetterRead { return this.with('ele', 'cryo') }
-  get electro(): BetterRead { return this.with('ele', 'electro') }
-  get dendro(): BetterRead { return this.with('ele', 'dendro') }
-  get physical(): BetterRead { return this.with('ele', 'physical') }
+  get pyro(): Read { return this.with('ele', 'pyro') }
+  get hydro(): Read { return this.with('ele', 'hydro') }
+  get geo(): Read { return this.with('ele', 'geo') }
+  get cryo(): Read { return this.with('ele', 'cryo') }
+  get electro(): Read { return this.with('ele', 'electro') }
+  get dendro(): Read { return this.with('ele', 'dendro') }
+  get physical(): Read { return this.with('ele', 'physical') }
 
   // Reactions
-  get overloaded(): BetterRead { return this.with('tran', 'overloaded') }
-  get shattered(): BetterRead { return this.with('tran', 'shattered') }
-  get electrocharged(): BetterRead { return this.with('tran', 'electrocharged') }
-  get superconduct(): BetterRead { return this.with('tran', 'superconduct') }
-  get swirl(): BetterRead { return this.with('tran', 'swirl') }
-  get burning(): BetterRead { return this.with('tran', 'burning') }
-  get bloom(): BetterRead { return this.with('tran', 'bloom') }
-  get burgeon(): BetterRead { return this.with('tran', 'burgeon') }
-  get hyperbloom(): BetterRead { return this.with('tran', 'hyperbloom') }
-  get vaporize(): BetterRead { return this.with('amp', 'vaporize') }
-  get melt(): BetterRead { return this.with('amp', 'melt') }
-  get spread(): BetterRead { return this.with('cata', 'spread') }
-  get aggravate(): BetterRead { return this.with('cata', 'aggravate') }
+  get overloaded(): Read { return this.with('tran', 'overloaded') }
+  get shattered(): Read { return this.with('tran', 'shattered') }
+  get electrocharged(): Read { return this.with('tran', 'electrocharged') }
+  get superconduct(): Read { return this.with('tran', 'superconduct') }
+  get swirl(): Read { return this.with('tran', 'swirl') }
+  get burning(): Read { return this.with('tran', 'burning') }
+  get bloom(): Read { return this.with('tran', 'bloom') }
+  get burgeon(): Read { return this.with('tran', 'burgeon') }
+  get hyperbloom(): Read { return this.with('tran', 'hyperbloom') }
+  get vaporize(): Read { return this.with('amp', 'vaporize') }
+  get melt(): Read { return this.with('amp', 'melt') }
+  get spread(): Read { return this.with('cata', 'spread') }
+  get aggravate(): Read { return this.with('cata', 'aggravate') }
 
   // Region
-  get mondstadt(): BetterRead { return this.with('region', 'mondstadt') }
-  get liyue(): BetterRead { return this.with('region', 'liyue') }
-  get inazuma(): BetterRead { return this.with('region', 'inazuma') }
-  get sumeru(): BetterRead { return this.with('region', 'sumeru') }
-  get fontaine(): BetterRead { return this.with('region', 'fontaine') }
-  get natlan(): BetterRead { return this.with('region', 'natlan') }
-  get snezhnaya(): BetterRead { return this.with('region', 'snezhnaya') }
-  get khaenriah(): BetterRead { return this.with('region', 'khaenriah') }
+  get mondstadt(): Read { return this.with('region', 'mondstadt') }
+  get liyue(): Read { return this.with('region', 'liyue') }
+  get inazuma(): Read { return this.with('region', 'inazuma') }
+  get sumeru(): Read { return this.with('region', 'sumeru') }
+  get fontaine(): Read { return this.with('region', 'fontaine') }
+  get natlan(): Read { return this.with('region', 'natlan') }
+  get snezhnaya(): Read { return this.with('region', 'snezhnaya') }
+  get khaenriah(): Read { return this.with('region', 'khaenriah') }
 }
 
-export const reader = new BetterRead({}, undefined)
-export const todo = new BetterRead({ todo: 'TODO' } as {}, undefined)
+export const reader = new Read({}, undefined)
+export const todo = new Read({ todo: 'TODO' } as {}, undefined)
 export const usedCustomTags = new Set<string>()

@@ -1,34 +1,61 @@
-import { AnyNode, Calculator, compileTagMapValues, constant, jsonToTagMapValues, read, Read, ReRead, reread, TagMap, traverse } from "@genshin-optimizer/waverider";
+import { AnyNode, Calculator, compileTagMapValues, constant, jsonToTagMapValues, ReRead, TagMap, traverse } from "@genshin-optimizer/waverider";
 import { keys, preValues } from "./data";
-import { nosrc } from "./data/util";
-import { reader, stats, Tag } from "./data/util/read";
+import { Data, Preset, read, reader, Tag } from "./data/util";
 
 const values = jsonToTagMapValues<AnyNode>(preValues)
 
 describe('Genshin Database', () => {
-  const preset = nosrc.preset(0)
-  const nahida = preset.src('Nahida', 'sum')
-  const { lvl } = nahida.q, { ascension, constellation } = nahida.base
-  const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count } = nahida.custom
+  const data: Data = [], active: Preset[] = ['preset0'], team: Preset[] = ['preset0', 'preset1']
 
-  const compiled = compileTagMapValues<AnyNode | ReRead>(keys, [
-    // Replace "char" with "Nahida"
-    preset.src('char').addNode(reread(reader.src('Nahida').tag)),
+  {
+    // Preset 0 <= Nahida
+    const r = reader.withTag({ preset: 'preset0' }), {
+      custom: { a1ActiveInBurst, c2Bloom, c2QSA, c4Count },
+      output: {
+        selfBuff,
+        selfBuff: {
+          char: { lvl, ascension, constellation },
+        }
+      }
+    } = read('Nahida', r)
 
-    lvl.addNode(constant(12)),
-    ascension.addNode(constant(0)),
-    constellation.addNode(constant(2)),
+    data.push(
+      // character <= Nahida
+      r.with('src', 'char').reread(r.with('src', 'Nahida')),
 
-    c2Bloom.addNode(constant('on')),
-    preset.src('custom').base.critRate_.addNode(constant(0.90))
-  ])
+      // Add preset0 stat
+      lvl.addNode(constant(12)),
+      ascension.addNode(constant(0)),
+      constellation.addNode(constant(2)),
+      c2Bloom.addNode(constant('on')),
+      selfBuff.base.critRate_.addNode(constant(0.90)),
+    )
+  }
+
+  {
+    // Team
+    for (const dst of team) {
+      const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
+      data.push(...team.map(src =>
+        entry.reread(reader.withTag({ preset: src, dst, et: 'teamBuff', src: 'agg' }))
+      ))
+    }
+    for (const dst of active) {
+      const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
+      data.push(...team.map(src =>
+        entry.reread(reader.withTag({ preset: src, dst, et: 'active', src: 'agg' }))))
+    }
+  }
+
+  const compiled = compileTagMapValues<Data[number]['value']>(keys, data)
   const calc = new Calculator(keys, values, compiled)
 
+  const nahida = reader.withTag({ preset: 'preset0', et: 'self', src: 'agg' })
   test('Basic Query', () => {
-    expect(calc._compute(preset.final.def).val).toBeCloseTo(94.15)
-    expect(calc._compute(preset.final.critRate_.burgeon).val).toBeCloseTo(1.10)
-    expect(calc._compute(preset.q.cappedCritRate_).val).toBe(0.90)
-    expect(calc._compute(preset.burgeon.q.cappedCritRate_).val).toBe(1)
+    expect(calc._compute(nahida.final.def).val).toBeCloseTo(94.15)
+    expect(calc._compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
+    expect(calc._compute(nahida.common.cappedCritRate_).val).toBe(0.90)
+    expect(calc._compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)
   })
 })
 
