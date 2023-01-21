@@ -62,5 +62,13 @@
   "Wanderer": "방랑자",
   "Faruzan": "파루잔",
   "Yaoyao": "요요",
-  "Alhaitham": "알하이탐"
+  "Alhaitham": "알하이탐",
+  "TravelerAnemoF": "루미네 (바람)",
+  "TravelerGeoF": "루미네 (바위 원소)",
+  "TravelerElectroF": "루미네 (번개)",
+  "TravelerDendroF": "루미네 (풀 원소)",
+  "TravelerAnemoM": "아이테르 (바람)",
+  "TravelerGeoM": "아이테르 (바위 원소)",
+  "TravelerElectroM": "아이테르 (번개)",
+  "TravelerDendroM": "아이테르 (풀 원소)"
 }

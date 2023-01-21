@@ -12,9 +12,5 @@
   },
   "c2": {
     "thunderHit": "<strong>Falling Thunder</strong> hits opponent"
-  },
-  "c6": {
-    "fallingThunder3": "3rd <strong>Falling Thunder</strong> attack",
-    "fallingThunderBonus_": "<strong>Falling Thunder</strong> DMG bonus"
   }
 }

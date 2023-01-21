@@ -62,5 +62,13 @@
   "Wanderer": "Avare",
   "Faruzan": "Faruzan",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhaitham"
+  "Alhaitham": "Alhaitham",
+  "TravelerAnemoF": "Lumine (Rüzgar)",
+  "TravelerGeoF": "Lumine (Toprak)",
+  "TravelerElectroF": "Lumine (Elektrik)",
+  "TravelerDendroF": "Lumine (Doğa)",
+  "TravelerAnemoM": "Aether (Rüzgar)",
+  "TravelerGeoM": "Aether (Toprak)",
+  "TravelerElectroM": "Aether (Elektrik)",
+  "TravelerDendroM": "Aether (Doğa)"
 }

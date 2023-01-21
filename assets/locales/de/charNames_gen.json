@@ -62,5 +62,13 @@
   "Wanderer": "Wanderer",
   "Faruzan": "Faruzan",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhaitham"
+  "Alhaitham": "Alhaitham",
+  "TravelerAnemoF": "Lumine (Anemo)",
+  "TravelerGeoF": "Lumine (Geo)",
+  "TravelerElectroF": "Lumine (Elektro)",
+  "TravelerDendroF": "Lumine (Dendro)",
+  "TravelerAnemoM": "Leer (Anemo)",
+  "TravelerGeoM": "Leer (Geo)",
+  "TravelerElectroM": "Leer (Elektro)",
+  "TravelerDendroM": "Leer (Dendro)"
 }

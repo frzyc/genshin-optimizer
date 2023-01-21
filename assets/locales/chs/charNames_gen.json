@@ -62,5 +62,13 @@
   "Wanderer": "流浪者",
   "Faruzan": "珐露珊",
   "Yaoyao": "瑶瑶",
-  "Alhaitham": "艾尔海森"
+  "Alhaitham": "艾尔海森",
+  "TravelerAnemoF": "荧 (风)",
+  "TravelerGeoF": "荧 (岩元素)",
+  "TravelerElectroF": "荧 (雷)",
+  "TravelerDendroF": "荧 (草元素)",
+  "TravelerAnemoM": "空 (风)",
+  "TravelerGeoM": "空 (岩元素)",
+  "TravelerElectroM": "空 (雷)",
+  "TravelerDendroM": "空 (草元素)"
 }

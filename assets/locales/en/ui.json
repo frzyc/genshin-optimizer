@@ -18,12 +18,6 @@
     "download": "Download Link",
     "discord": "Discord Invite Link"
   },
-  "game": {
-    "minLevel": "Min Level",
-    "maxLevel": "Max Level",
-    "rarity": "Rarity",
-    "level": "Level"
-  },
   "unselect": "Unselect",
   "inventory": "Inventory",
   "ascending": "Ascending",

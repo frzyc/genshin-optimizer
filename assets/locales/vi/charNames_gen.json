@@ -62,5 +62,13 @@
   "Wanderer": "Kẻ Lang Thang",
   "Faruzan": "Faruzan",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhaitham"
+  "Alhaitham": "Alhaitham",
+  "TravelerAnemoF": "Lumine (Phong)",
+  "TravelerGeoF": "Lumine (Nham)",
+  "TravelerElectroF": "Lumine (Lôi)",
+  "TravelerDendroF": "Lumine (Thảo)",
+  "TravelerAnemoM": "Aether (Phong)",
+  "TravelerGeoM": "Aether (Nham)",
+  "TravelerElectroM": "Aether (Lôi)",
+  "TravelerDendroM": "Aether (Thảo)"
 }

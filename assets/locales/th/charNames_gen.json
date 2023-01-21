@@ -62,5 +62,13 @@
   "Wanderer": "ผู้พเนจร",
   "Faruzan": "Faruzan",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhaitham"
+  "Alhaitham": "Alhaitham",
+  "TravelerAnemoF": "Lumine (ลม)",
+  "TravelerGeoF": "Lumine (หิน)",
+  "TravelerElectroF": "Lumine (ไฟฟ้า)",
+  "TravelerDendroF": "Lumine (ไม้)",
+  "TravelerAnemoM": "Aether (ลม)",
+  "TravelerGeoM": "Aether (หิน)",
+  "TravelerElectroM": "Aether (ไฟฟ้า)",
+  "TravelerDendroM": "Aether (ไม้)"
 }

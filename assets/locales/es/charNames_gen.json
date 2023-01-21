@@ -62,5 +62,13 @@
   "Wanderer": "Trotamundos",
   "Faruzan": "Faruzán",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhacén"
+  "Alhaitham": "Alhacén",
+  "TravelerAnemoF": "Lumina (Anemo)",
+  "TravelerGeoF": "Lumina (Geo)",
+  "TravelerElectroF": "Lumina (Electro)",
+  "TravelerDendroF": "Lumina (Dendro)",
+  "TravelerAnemoM": "Éter (Anemo)",
+  "TravelerGeoM": "Éter (Geo)",
+  "TravelerElectroM": "Éter (Electro)",
+  "TravelerDendroM": "Éter (Dendro)"
 }

@@ -62,5 +62,13 @@
   "Wanderer": "Vagabondo",
   "Faruzan": "Faruzan",
   "Yaoyao": "Yaoyao",
-  "Alhaitham": "Alhaitham"
+  "Alhaitham": "Alhaitham",
+  "TravelerAnemoF": "Lumine (Anemo)",
+  "TravelerGeoF": "Lumine (Geo)",
+  "TravelerElectroF": "Lumine (Electro)",
+  "TravelerDendroF": "Lumine (Dendro)",
+  "TravelerAnemoM": "Aether (Anemo)",
+  "TravelerGeoM": "Aether (Geo)",
+  "TravelerElectroM": "Aether (Electro)",
+  "TravelerDendroM": "Aether (Dendro)"
 }

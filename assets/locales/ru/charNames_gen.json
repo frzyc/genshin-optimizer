@@ -62,5 +62,13 @@
   "Wanderer": "Странник",
   "Faruzan": "Фарузан",
   "Yaoyao": "Яо Яо",
-  "Alhaitham": "Аль-Хайтам"
+  "Alhaitham": "Аль-Хайтам",
+  "TravelerAnemoF": "Люмин (Анемо)",
+  "TravelerGeoF": "Люмин (Гео)",
+  "TravelerElectroF": "Люмин (Электро)",
+  "TravelerDendroF": "Люмин (Дендро)",
+  "TravelerAnemoM": "Итэр (Анемо)",
+  "TravelerGeoM": "Итэр (Гео)",
+  "TravelerElectroM": "Итэр (Электро)",
+  "TravelerDendroM": "Итэр (Дендро)"
 }
