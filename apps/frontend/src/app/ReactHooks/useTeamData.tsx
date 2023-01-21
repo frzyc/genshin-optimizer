@@ -10,9 +10,10 @@ import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, mergeData, u
 import { Data } from "../Formula/type";
 import { ICachedArtifact } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { CharacterKey } from "../Types/consts";
+import { CharacterKey, Gender } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { objectMap } from "../Util/Util";
+import useDBMeta from "./useDBMeta";
 import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 
@@ -25,7 +26,8 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   const { database } = useContext(DatabaseContext)
   const [dbDirty, setDbDirty] = useForceUpdate()
   const dbDirtyDeferred = useDeferredValue(dbDirty)
-  const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
+  const { gender } = useDBMeta()
+  const data = usePromise(() => getTeamDataCalc(database, characterKey, mainStatAssumptionLevel, gender, overrideArt, overrideWeapon), [dbDirtyDeferred, characterKey, database, mainStatAssumptionLevel, overrideArt, overrideWeapon])
 
   useEffect(() =>
     characterKey ? database.chars.follow(characterKey, setDbDirty) : undefined,
@@ -34,7 +36,7 @@ export default function useTeamData(characterKey: CharacterKey | "", mainStatAss
   return data
 }
 
-async function getTeamDataCalc(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel = 0, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
+async function getTeamDataCalc(database: ArtCharDatabase, characterKey: CharacterKey | "", mainStatAssumptionLevel = 0, gender: Gender, overrideArt?: ICachedArtifact[] | Data, overrideWeapon?: ICachedWeapon):
   Promise<TeamData | undefined> {
   if (!characterKey) return
 
@@ -46,7 +48,7 @@ async function getTeamDataCalc(database: ArtCharDatabase, characterKey: Characte
   const { teamData, teamBundle } = (await getTeamData(database, characterKey, mainStatAssumptionLevel, overrideArt, overrideWeapon)) ?? {}
   if (!teamData || !teamBundle) return
 
-  const calcData = uiDataForTeam(teamData, characterKey as CharacterKey)
+  const calcData = uiDataForTeam(teamData, gender, characterKey)
 
   const data = objectMap(calcData, (obj, ck) => {
     const { data: _, ...rest } = teamBundle[ck]!

@@ -1,6 +1,6 @@
 import type { KeyMapPrefix, Unit } from "../KeyMap"
 import type { AdditiveReactionsKey, AmplifyingReactionsKey, TransformativeReactionsKey } from "../KeyMap/StatConstants"
-import type { ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey } from "../Types/consts"
+import type { ArtifactSetKey, CharacterSheetKey, ElementKeyWithPhy, WeaponKey } from "../Types/consts"
 import type { input, uiInput } from "./index"
 
 export type NumNode = ComputeNode | ThresholdNode<NumNode> |
@@ -20,7 +20,7 @@ interface Info {
   unit?: Unit
   icon?: Displayable
   prefix?: KeyMapPrefix
-  source?: CharacterKey | WeaponKey | ArtifactSetKey
+  source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
   variant?: Variant
   subVariant?: Variant
   asConst?: true
