@@ -5,7 +5,7 @@ const arts = [] as const // TODO
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 export const fixedQueries = {
   base: stats, premod: stats, final: stats,
-  char: ['lvl', 'auto', 'skill', 'burst', 'constellation', 'ascension', 'stamina', 'res'],
+  char: ['lvl', 'auto', 'skill', 'ele', 'burst', 'constellation', 'ascension', 'stamina', 'res'],
   weapon: ['lvl', 'refinement', 'ascension'],
   team: ['count', 'eleCount'],
   common: ['isActive', 'weaponType', 'critMode', 'special', 'cappedCritRate_', 'dmg', 'infusion'],

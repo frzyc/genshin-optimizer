@@ -37,6 +37,7 @@ export function entriesForChar(
     // Constants
     ...[...specials].map(s => selfBuff.common.special.addNode(constant(s))),
     selfBuff.common.weaponType.addNode(constant(gen.weaponType)),
+    selfBuff.char.ele.addNode(constant(element)),
 
     // Team counters
     selfBuff[element].team.count.addNode(constant(1)),
