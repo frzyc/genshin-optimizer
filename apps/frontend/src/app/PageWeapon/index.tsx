@@ -1,21 +1,20 @@
 import { Add } from '@mui/icons-material';
-import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, ToggleButton, Typography } from '@mui/material';
+import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
-import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
-import { StarsDisplay } from '../Components/StarDisplay';
+import RarityToggle from '../Components/ToggleButton/RarityToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import WeaponSheet from '../Data/Weapons/WeaponSheet';
 import { DatabaseContext } from '../Database/Database';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import usePromise from '../ReactHooks/usePromise';
-import { allRarities, WeaponKey } from '../Types/consts';
-import { handleMultiSelect } from '../Util/MultiSelect';
+import { allRarities, allWeaponTypeKeys, WeaponKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
+import { catTotal } from '../Util/totalUtils';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
 import { initialWeapon } from '../Util/WeaponUtil';
@@ -28,7 +27,6 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 const sortKeys = Object.keys(weaponSortMap)
-const rarityHandler = handleMultiSelect([...allRarities])
 export default function PageWeapon() {
   const { t } = useTranslation(["page_weapon", "ui", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
@@ -113,6 +111,20 @@ export default function PageWeapon() {
       resetEditWeapon()
   }, [database, editWeaponId, resetEditWeapon])
 
+  const weaponTotals = useMemo(() =>
+    catTotal(allWeaponTypeKeys, ct => weaponSheets && Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+      const wtk = weaponSheets(weapon.key).weaponType
+      ct[wtk].total++
+      if (weaponIdList.includes(id)) ct[wtk].current++
+    })), [weaponSheets, database, weaponIdList])
+
+  const weaponRarityTotals = useMemo(() =>
+    catTotal(allRarities, ct => weaponSheets && Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+      const wr = weaponSheets(weapon.key).rarity
+      ct[wr].total++
+      if (weaponIdList.includes(id)) ct[wr].current++
+    })), [weaponSheets, database, weaponIdList])
+
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
       <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
@@ -129,14 +141,13 @@ export default function PageWeapon() {
     <CardDark ref={invScrollRef}><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       <Grid container spacing={1}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} size="small" />
+          <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
         </Grid>
         <Grid item>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
-            {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => database.displayWeapon.set({ rarity: rarityHandler(rarity, star) })}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
-          </SolidToggleButtonGroup>
+          <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
         </Grid>
-        <Grid item flexGrow={1}>
+        <Grid item flexGrow={1} />
+        <Grid item >
           <TextField
             autoFocus
             size="small"
@@ -149,21 +160,15 @@ export default function PageWeapon() {
             }}
           />
         </Grid>
-        <Grid item>
-          <SortByButton sx={{ height: "100%" }} sortKeys={sortKeys}
-            value={sortType} onChange={sortType => database.displayWeapon.set({ sortType })}
-            ascending={ascending} onChangeAsc={ascending => database.displayWeapon.set({ ascending })}
-          />
-        </Grid>
       </Grid>
-      <Grid container alignItems="flex-end">
-        <Grid item flexGrow={1}>
-          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
-        </Grid>
-        <Grid item>
-          <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
-        </Grid>
-      </Grid>
+      <Box display="flex" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap">
+        <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
+        <SortByButton sx={{ height: "100%" }} sortKeys={sortKeys}
+          value={sortType} onChange={sortType => database.displayWeapon.set({ sortType })}
+          ascending={ascending} onChangeAsc={ascending => database.displayWeapon.set({ ascending })}
+        />
+      </Box>
     </CardContent></CardDark>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} />}>
       <Button fullWidth onClick={() => setnewWeaponModalShow(true)} color="info" startIcon={<Add />} >{t("page_weapon:addWeapon")}</Button>

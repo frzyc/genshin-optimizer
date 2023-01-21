@@ -48,7 +48,7 @@ const sheet: IWeaponSheet = {
     path: condPassivePath,
     teamBuff: true,
     header: headerTemplate(key, icon, iconAwaken, st("stacks")),
-    name: st("hits"),
+    name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 5).map(i =>
       [i, {
         name: st("stack", { count: i }),
@@ -64,7 +64,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condWithShield,
     path: condWithShieldPath,
-    header: headerTemplate(key, icon, iconAwaken, trm("shield")),
+    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
     name: st("protectedByShield"),
     states: {
       protected: {

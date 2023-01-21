@@ -2,6 +2,7 @@ import { CharacterSheetKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
 
 import Albedo from './Albedo'
+import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
@@ -65,6 +66,7 @@ import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
 import Yanfei from './Yanfei'
+import Yaoyao from './Yaoyao'
 import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
 import YunJin from './YunJin'
@@ -72,6 +74,7 @@ import Zhongli from './Zhongli'
 
 const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Albedo,
+  Alhaitham,
   Aloy,
   Amber,
   AratakiItto,
@@ -135,6 +138,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Xinyan,
   YaeMiko,
   Yanfei,
+  Yaoyao,
   Yelan,
   Yoimiya,
   YunJin,

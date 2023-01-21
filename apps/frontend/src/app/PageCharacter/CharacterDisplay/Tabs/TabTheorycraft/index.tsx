@@ -2,10 +2,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
+import ArtifactSetAutocomplete from "apps/frontend/src/app/Components/Artifact/ArtifactSetAutocomplete";
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { ArtifactSetSingleAutocomplete } from "../../../../Components/Artifact/ArtifactAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
 import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
@@ -30,8 +30,8 @@ import { DataContext, dataContextObj } from "../../../../Context/DataContext";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
-import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { DatabaseContext } from "../../../../Database/Database";
+import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
@@ -328,22 +328,13 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
 
   return <Stack spacing={1} sx={{ flexGrow: 1 }}>
     {Object.entries(artSet).map(([setKey, value]) => <ArtifactSetEditor key={setKey} setKey={setKey} value={value} setValue={setValue(setKey)} deleteValue={deleteValue(setKey)} remaining={remaining} />)}
-    <CardLight sx={{ flexGrow: 1 }}>
-      <ArtifactSetSingleAutocomplete
-        showDefault
+    <CardLight sx={{ flexGrow: 1, overflow: "visible" }}>
+      <ArtifactSetAutocomplete
         disableClearable
-        size="small"
         artSetKey={""}
         setArtSetKey={setSet}
-        sx={(theme) => ({
-          flexGrow: 1,
-          ".MuiFilledInput-root": {
-            borderBottomRightRadius: theme.shape.borderRadius,
-            borderBottomLeftRadius: theme.shape.borderRadius
-          }
-        })}
-        defaultText={"New Artifact Set"}
-        disable={(setKey) => Object.keys(artSet).includes(setKey) || !artifactSheets?.(setKey) || Object.keys(artifactSheets(setKey).setEffects).every(n => parseInt(n) > remaining)}
+        label={"New Artifact Set"}
+        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !(key && artifactSheets?.(key)) || Object.keys(artifactSheets(key).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>
 
@@ -444,7 +435,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         onChange={v => v !== undefined && setValue(v)}
         sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
         inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
-      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
+      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow:"visible" }}>
         <Slider
           size="small"
           value={rolls}
@@ -452,6 +443,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
           min={0}
           step={1}
           marks
+          valueLabelDisplay="auto"
           onChange={(e, v) => setRolls(v as number)}
           onChangeCommitted={(e, v) => setRValue(v as number)}
         />

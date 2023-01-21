@@ -1,19 +1,19 @@
-import { Box, CardActionArea, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
-import { ChangeEvent, useContext, useDeferredValue, useEffect, useState } from "react"
+import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
+import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../Assets/Assets"
 import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../Database/Database"
 import usePromise from "../../ReactHooks/usePromise"
-import { allRarities, allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
-import { handleMultiSelect } from "../../Util/MultiSelect"
+import { allRarities, allWeaponKeys, allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from "../../Types/consts"
+import { catTotal } from "../../Util/totalUtils"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
 import ImgIcon from "../Image/ImgIcon"
 import ModalWrapper from "../ModalWrapper"
-import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
 import { StarsDisplay } from "../StarDisplay"
+import RarityToggle from "../ToggleButton/RarityToggle"
 import WeaponToggle from "../ToggleButton/WeaponToggle"
 
 type WeaponSelectionModalProps = {
@@ -25,7 +25,6 @@ type WeaponSelectionModalProps = {
   weaponTypeFilter?: WeaponTypeKey,
 }
 
-const rarityHandler = handleMultiSelect([...allRarities])
 export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponTypeFilter }: WeaponSelectionModalProps) {
   const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
   const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
@@ -41,11 +40,27 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const { rarity } = state
-  const weaponIdList = !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
-    .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
-    .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
-    .filter(wKey => rarity.includes(weaponSheets(wKey).rarity))
-    .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity)
+  const weaponIdList = useMemo(() =>
+    !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
+      .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
+      .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
+      .filter(wKey => rarity.includes(weaponSheets(wKey).rarity))
+      .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity),
+    [deferredSearchTerm, filter, rarity, t, weaponFilter, weaponSheets])
+
+  const weaponTotals = useMemo(() =>
+    catTotal(allWeaponTypeKeys, ct => weaponSheets && allWeaponKeys.forEach(wk => {
+      const wtk = weaponSheets(wk).weaponType
+      ct[wtk].total++
+      if (weaponIdList.includes(wk)) ct[wtk].current++
+    })), [weaponSheets, weaponIdList])
+
+  const weaponRarityTotals = useMemo(() =>
+    catTotal(allRarities, ct => weaponSheets && allWeaponKeys.forEach(wk => {
+      const wr = weaponSheets(wk).rarity
+      ct[wr].total++
+      if (weaponIdList.includes(wk)) ct[wr].current++
+    })), [weaponSheets, weaponIdList])
 
   if (!weaponSheets) return null
 
@@ -54,12 +69,10 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
       <CardContent sx={{ py: 1 }}>
         <Grid container spacing={1}>
           <Grid item>
-            <WeaponToggle value={weaponFilter} onChange={setWeaponfilter} disabled={!!weaponTypeFilter} size="small" />
+            <WeaponToggle value={weaponFilter} totals={weaponTotals} onChange={setWeaponfilter} disabled={!!weaponTypeFilter} size="small" />
           </Grid >
           <Grid item>
-            <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
-              {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => database.displayWeapon.set({ rarity: rarityHandler(rarity, star) })}><Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box></ToggleButton>)}
-            </SolidToggleButtonGroup>
+            <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
           </Grid>
           <Grid item flexGrow={1}>
             <TextField

@@ -2,7 +2,7 @@ import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
 import { Translate } from "../Components/Translate"
 import KeyMap, { valueString } from "../KeyMap"
-import { allArtifactSets, allCharacterKeys, allWeaponKeys, ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
+import { allArtifactSets, allCharacterKeys, allCharacterSheetKeys, allWeaponKeys, ArtifactSetKey, CharacterKey, CharacterSheetKey, WeaponKey } from "../Types/consts"
 import { assertUnreachable, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
@@ -354,7 +354,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
     const sourceText = source && (
       (allArtifactSets.includes(source as ArtifactSetKey) && <Translate ns="artifactNames_gen" key18={source} />) ||
       (allWeaponKeys.includes(source as WeaponKey) && <Translate ns="weaponNames_gen" key18={source} />) ||
-      (allCharacterKeys.includes(source as CharacterKey) && <Translate ns="charNames_gen" key18={source} />)
+      (allCharacterSheetKeys.includes(source as CharacterSheetKey) && <Translate ns="charNames_gen" key18={source} />)
     )
     const sourceDisplay = sourceText ? <ColorText color="secondary"> ({sourceText})</ColorText> : null
     node.name = <><ColorText color={variant}>{prefixDisplay}{name}</ColorText>{sourceDisplay}</>

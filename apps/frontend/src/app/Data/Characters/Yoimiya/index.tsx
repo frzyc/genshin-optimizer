@@ -291,7 +291,7 @@ const sheet: ICharacterSheet = {
       canShow: unequal(input.activeCharKey, key, 1),
       path: condBurstPath,
       value: condBurst,
-      name: ct.chg("burst.name"),
+      name: ct.ch("p2p"),
       states: {
         on: {
           fields: [{

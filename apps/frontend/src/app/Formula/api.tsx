@@ -1,9 +1,9 @@
 import Artifact from "../Data/Artifacts/Artifact";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, ArtifactSetKey, CharacterKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey, CharacterKey, Gender } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { layeredAssignment, objectKeyMap, objectMap, objPathValue } from "../Util/Util";
+import { layeredAssignment, objectKeyMap, objectKeyValueMap, objectMap, objPathValue } from "../Util/Util";
 import { input, tally } from "./index";
 import { deepNodeClone } from "./internal";
 import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
@@ -125,7 +125,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
 const teamBuff = setReadNodeKeys(deepNodeClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
-function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: CharacterKey): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
+function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, gender: Gender, activeCharKey?: CharacterKey): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
 
@@ -150,6 +150,9 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
 
   Object.values(result).forEach(({ targetRef, buffs, calcs }) =>
     mergedData.forEach(([sourceKey, source]) => {
+      const sourceKeyWithGender = sourceKey.includes("Traveler")
+        ? `${sourceKey}${gender}`
+        : sourceKey
       const sourceBuff = source.teamBuff
       // Create new copy of `calc` as we're mutating it later
       const buff: Data = {}, calc: Data = deepNodeClone({ teamBuff: sourceBuff })
@@ -165,7 +168,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, activeCharKey?: Cha
       //   calculation in `calc`.
 
       crawlObject(sourceBuff, [], (x: any) => x.operation, (x: NumNode | StrNode, path: string[]) => {
-        const info: Info = { ...objPathValue(input, path), source: sourceKey, prefix: undefined, asConst }
+        const info: Info = { ...objPathValue(input, path), source: sourceKeyWithGender, prefix: undefined, asConst }
         layeredAssignment(buff, path, resetData(getReadNode(["teamBuff", ...path]), calc, info))
 
         crawlObject(x, [], (x: any) => x?.operation === "read", (x: ReadNode<number | string>) => {
