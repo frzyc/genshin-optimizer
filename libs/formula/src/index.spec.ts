@@ -8,28 +8,80 @@ describe('Genshin Database', () => {
   const data: Data = [], active: Preset[] = ['preset0'], team: Preset[] = ['preset0', 'preset1']
 
   {
-    // Preset 0 <= Nahida
-    const r = reader.withTag({ preset: 'preset0' }), {
-      custom: { a1ActiveInBurst, c2Bloom, c2QSA, c4Count },
-      output: {
-        selfBuff,
-        selfBuff: {
-          char: { lvl, ascension, constellation },
+    // Preset 0 <= Nahida + TulaytullahsRemembrance
+    const preset = 'preset0', r = reader.withTag({ preset })
+
+    {
+      // Preset 0 <= Nahida
+      const name = 'Nahida', {
+        custom: { a1ActiveInBurst, c2Bloom, c2QSA, c4Count },
+        output: {
+          selfBuff: { base, char: { lvl, ascension, constellation }, }
         }
-      }
-    } = read('Nahida', r)
+      } = read(name, r)
+      data.push(
+        r.with('src', 'char').reread(r.with('src', name)),
 
-    data.push(
-      // character <= Nahida
-      r.with('src', 'char').reread(r.with('src', 'Nahida')),
+        lvl.addNode(constant(12)),
+        ascension.addNode(constant(0)),
+        constellation.addNode(constant(2)),
+        c2Bloom.addNode(constant('on')),
+        base.critRate_.addNode(constant(0.90)),
+      )
+    }
+    {
+      // Preset 0 <= TulaytullahsRemembrance
+      const name = 'TulaytullahsRemembrance', {
+        custom: { timePassive, hitPassive },
+        output: { selfBuff: { weapon: { lvl, ascension, refinement } } }
+      } = read(name, r)
+      data.push(
+        r.with('src', 'weapon').reread(r.with('src', name)),
 
-      // Add preset0 stat
-      lvl.addNode(constant(12)),
-      ascension.addNode(constant(0)),
-      constellation.addNode(constant(2)),
-      c2Bloom.addNode(constant('on')),
-      selfBuff.base.critRate_.addNode(constant(0.90)),
-    )
+        lvl.addNode(constant(42)),
+        ascension.addNode(constant(2)),
+        refinement.addNode(constant(2)),
+      )
+    }
+  }
+  {
+    // Preset 1 <= Nilou + KeyOfKhajNisut
+    const preset = 'preset1', r = reader.withTag({ preset })
+
+    {
+      // Preset 1 <= Nilou
+      const name = 'Nilou', {
+        custom: {
+          a1AfterSkill, a1AfterHit,
+          c2Hydro, c2Dendro, c4AfterPirHit
+        },
+        output: { selfBuff: { char: { lvl, ascension, constellation }, } }
+      } = read('Nilou', r)
+
+      data.push(
+        r.with('src', 'char').reread(r.with('src', name)),
+
+        lvl.addNode(constant(33)),
+        ascension.addNode(constant(1)),
+        constellation.addNode(constant(3)),
+      )
+    }
+    {
+      // Preset 1 <= KeyOfKhajNisut
+      const name = 'KeyOfKhajNisut', {
+        custom: { afterSkillStacks },
+        output: { selfBuff: { weapon: { lvl, ascension, refinement } } }
+      } = read(name, r)
+
+      data.push(
+        r.with('src', 'weapon').reread(r.with('src', name)),
+
+        lvl.addNode(constant(59)),
+        ascension.addNode(constant(3)),
+        refinement.addNode(constant(3)),
+        afterSkillStacks.addNode(constant(3)),
+      )
+    }
   }
 
   {
@@ -51,8 +103,13 @@ describe('Genshin Database', () => {
   const calc = new Calculator(keys, values, compiled)
 
   const nahida = reader.withTag({ preset: 'preset0', et: 'self', src: 'agg' })
+  const nilou = reader.withTag({ preset: 'preset1', et: 'self', src: 'agg' })
+
   test('Basic Query', () => {
+    expect(calc._compute(nilou.final.hp).val.toFixed(1)).toEqual("9479.7")
+    expect(calc._compute(nahida.final.atk).val).toBeCloseTo(346.21)
     expect(calc._compute(nahida.final.def).val).toBeCloseTo(94.15)
+    expect(calc._compute(nahida.final.eleMas).val).toBeCloseTo(28.44)
     expect(calc._compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
     expect(calc._compute(nahida.common.cappedCritRate_).val).toBe(0.90)
     expect(calc._compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)

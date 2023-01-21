@@ -22,7 +22,7 @@ export function entriesForWeapon(
     ...gen.ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as any as Stat].addNode(subscript(ascension, values))),
     ...gen.refinementBonus.map(({ key, values }) =>
-      selfBuff.base[key as any as Stat].addNode(subscript(refinement, values))),
+      selfBuff.premod[key as any as Stat].addNode(subscript(refinement, values))),
 
     // Constants
     selfBuff.common.weaponType.addNode(constant(gen.weaponType)),

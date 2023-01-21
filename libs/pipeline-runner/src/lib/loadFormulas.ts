@@ -124,7 +124,7 @@ export default function loadFormulas() {
         ...(sub.propType ? [{ key: propTypeMap[sub.propType], base: extrapolateFloat(sub.initValue), curve: sub.type }] : [])
       ],
       refinementBonus: [...refKeys].map(key =>
-        ({ key: propTypeMap[key], values: refData.map(x => x.addProps.reduce((accu, x) => x.propType === key ? accu + extrapolateFloat(x.value) : accu, 0) ?? 0) })),
+        ({ key: propTypeMap[key], values: [-1, ...refData.map(x => x.addProps.reduce((accu, x) => x.propType === key ? accu + extrapolateFloat(x.value) : accu, 0) ?? 0)] })),
       ascensionBonus: [...ascKeys].map(key =>
         ({ key: propTypeMap[key], values: ascData.map(x => x?.addProps.reduce((accu, x) => x.propType === key ? accu + extrapolateFloat(x.value) : accu, 0) ?? 0) }))
     }

@@ -19,7 +19,6 @@ const name: Weapon = 'TulaytullahsRemembrance', {
 const time_normal_dmg_ = prod(timePassive, percent(subscript(refinement, time_normal_dmg_arr)))
 const hit_normal_dmg_ = prod(hitPassive, percent(subscript(refinement, hit_normal_dmg_arr)))
 
-// TODO: Add to Premod
 const normal_dmg_ = min(
   percent(subscript(refinement, max_normal_dmg_arr)),
   sum(time_normal_dmg_, hit_normal_dmg_)
