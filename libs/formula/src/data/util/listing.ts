@@ -13,11 +13,11 @@ export const fixedQueries = {
   dmg: ['final', 'inDmg', 'outDmg', 'dmgEle', 'critMulti'],
 } as const
 export const queryTypes = ['base', 'premod', 'final', 'char', 'weapon', 'team', 'common', 'enemy', 'dmg', 'misc'] as const
-export const summableQueries = new Set([...stats, 'stamina', 'auto', 'skill', 'burst', 'constellation', 'ascension', 'refinement', 'defRed_', 'defIgn', 'res', 'count'])
+export const summableQueries = new Set([...stats, 'stamina', 'auto', 'skill', 'burst', 'constellation', 'ascension', 'refinement', 'defRed_', 'defIgn', 'res', 'count', 'eleCount'])
 
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
-export const entryTypes = ['self', 'team', 'teamBuff', 'active', 'enemy', 'target'] as const
-export const srcs = [...characters, ...weapons, ...arts, 'char', 'weapon', 'art', 'enemy', 'custom', 'agg'] as const
+export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'target'] as const
+export const srcs = [...characters, ...weapons, ...arts, 'char', 'weapon', 'art', 'enemy', 'custom', 'agg', 'team'] as const
 export const dsts = presets
 
 export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const

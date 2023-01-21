@@ -8,13 +8,14 @@ export function percent(x: number | NumNode): NumNode {
 
 export function read(src: Source, r = reader) {
   const {
-    self: { base, premod, final, char, weapon, common, dmg }, enemy: { enemy }, target: buffTarget, team
+    self: { base, premod, final, char, weapon, common, dmg }, enemy: { enemy }, target: buffTarget
   } = r.with('src', 'agg')._withAll('et')
   const {
     self: { custom }, self: selfBuff,
     teamBuff, active: activeCharBuff,
     enemy: enemyDebuff,
   } = r.with('src', src)._withAll('et')
+  const team = r.withTag({ et: 'self', src: 'team' })
 
   return {
     input: { base, premod, final, char, weapon, common, dmg, enemy, buffTarget, team },

@@ -10,7 +10,5 @@ const data: Data = [
 
   // Char curves
   ...Object.entries(charCurves).map(([k, v]) => reader.custom[k].addNode(subscript(reader.char.lvl, v))),
-
-  // TODO: Team ele count
 ]
 export default data

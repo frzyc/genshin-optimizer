@@ -64,6 +64,7 @@ describe('Genshin Database', () => {
         lvl.addNode(constant(33)),
         ascension.addNode(constant(1)),
         constellation.addNode(constant(3)),
+        a1AfterSkill.addNode(constant("off")),
       )
     }
     {
@@ -97,6 +98,12 @@ describe('Genshin Database', () => {
       data.push(...team.map(src =>
         entry.reread(reader.withTag({ preset: src, dst, et: 'active', src: 'agg' }))))
     }
+
+    for (const dst of team) {
+      const entry = reader.withTag({ preset: dst, et: 'self', src: 'team' })
+      data.push(...team.map(src =>
+        entry.reread(reader.withTag({ preset: src, et: 'self', src: 'agg' }))))
+    }
   }
 
   const compiled = compileTagMapValues<Data[number]['value']>(keys, data)
@@ -113,6 +120,9 @@ describe('Genshin Database', () => {
     expect(calc._compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
     expect(calc._compute(nahida.common.cappedCritRate_).val).toBe(0.90)
     expect(calc._compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)
+    expect(calc._compute(nahida.withTag({ src: 'team' }).team.count.dendro).val).toBe(1)
+    expect(calc._compute(nahida.withTag({ src: 'team' }).team.count.hydro).val).toBe(1)
+    expect(calc._compute(nahida.withTag({ src: 'team' }).team.eleCount).val).toBe(2)
   })
 })
 
