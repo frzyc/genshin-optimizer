@@ -11,7 +11,7 @@
         "outputPath": "dist/libs/dm-localization",
         "main": "libs/dm-localization/src/index.ts",
         "tsConfig": "libs/dm-localization/tsconfig.lib.json",
-        "assets": ["libs/dm-localization/*.md","libs/dm-localization/assets/**/*"]
+        "assets": ["libs/dm-localization/*.md"]
       }
     },
     "pipeline": {

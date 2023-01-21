@@ -23,6 +23,7 @@ import { NumNode } from '../../../../Formula/type';
 import { UIData } from '../../../../Formula/uiData';
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
+import useDBMeta from '../../../../ReactHooks/useDBMeta';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
@@ -52,6 +53,7 @@ export default function TabBuild() {
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
+  const { gender } = useDBMeta()
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
@@ -139,7 +141,7 @@ export default function TabBuild() {
 
     const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, characterKey)[characterKey as CharacterKey]?.target.data![0]
+    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
