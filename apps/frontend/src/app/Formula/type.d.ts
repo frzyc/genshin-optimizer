@@ -21,8 +21,8 @@ interface Info {
   icon?: Displayable
   prefix?: KeyMapPrefix
   source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
-  variant?: Variant
-  subVariant?: Variant
+  variant?: InfoVariant
+  subVariant?: InfoVariant
   asConst?: true
   pivot?: true
   fixed?: number
