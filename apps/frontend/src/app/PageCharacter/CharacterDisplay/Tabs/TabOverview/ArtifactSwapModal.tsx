@@ -50,7 +50,7 @@ export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }
       <Divider />
       <CardContent>
         <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={200} />}>
-          <ArtifactFilterDisplay filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} disableSlotFilter />
+          <ArtifactFilterDisplay filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filteredIds={artIdList} disableSlotFilter />
         </Suspense>
         <Box mt={1}>
           <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>

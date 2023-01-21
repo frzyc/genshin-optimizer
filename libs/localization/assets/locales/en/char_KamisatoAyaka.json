@@ -1,10 +1,10 @@
 {
-  "afterSprint": "After Sprint",
+  "afterSprint": "After Sprinting",
   "afterSkill": "After using <strong>Kamisato Art: Hyouka</strong>",
   "afterBurst": "After using <strong>Kamisato Art: Soumetsu</strong>",
-  "afterSprintCryo": "Applying <cryo>Cryo</cryo> After Sprint",
+  "afterSprintCryo": "After applying <cryo>Cryo</cryo> Sprinting",
   "staminaRestore": "Stamina Restored",
   "snowflakeDMG": "Snowflake DMG",
-  "dmgBySnowflake": "Opponents damaged by <strong>Kamisato Art: Soumetsu</strong>'s Frostflake Seki no To",
-  "c6Active": "Usurahi Butou active"
+  "dmgBySnowflake": "Enemy's been hit by Frostflake Seki no To",
+  "c6Active": "Under the Usurahi Butou effect"
 }

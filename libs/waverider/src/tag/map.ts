@@ -112,11 +112,12 @@ export class TagMapKeys {
   get(tag: Tag): TagID {
     const raw = new Int32Array(this.tagLen).fill(0)
     for (const [category, value] of Object.entries(tag)) {
+      if (value === null) continue
       const entry = this.data[category]!
       // Make sure `category` existed during compilation. Otherwise, it
       // would crash here, and this non-shaming text would be visible.
       const { offset, mapping } = entry, word = mapping[value]!
-      if (word === undefined && process.env['NODE_ENV'] !== 'production')
+      if (process.env['NODE_ENV'] !== 'production' && word === undefined)
         throw `NonExistent tag ${category}:${value}`
       raw[offset] |= word // non-existent `value`s is treated as zero
     }

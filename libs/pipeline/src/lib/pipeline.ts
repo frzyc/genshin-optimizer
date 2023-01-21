@@ -78,6 +78,8 @@ export const characterIdMap = {
   10000074: "Layla",
   10000075: "Wanderer",
   10000076: "Faruzan",
+  10000077: "Yaoyao",
+  10000078: "Alhaitham",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -135,6 +137,7 @@ export const weaponIdMap = {
   11509: "MistsplitterReforged",
   11510: "HaranGeppakuFutsu",
   11511: "KeyOfKhajNisut",
+  11512: "LightOfFoliarIncision",
 
   //claymore
   12101: "WasterGreatsword",

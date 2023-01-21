@@ -1,6 +1,5 @@
 {
   "addNew": "Add New Character",
-  "forceSet": "Force Artifact Set Filter",
   "tabs": {
     "overview": "Overview",
     "talent": "Talents",
@@ -30,7 +29,6 @@
   },
   "characterName": "Character Name",
   "teammate": "Teammate {{count}}",
-  "none": "None",
   "multiTarget": {
     "title": "Multi-Optimization Target Config",
     "addNewTarget": "Add New Custom target",

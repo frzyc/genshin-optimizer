@@ -17,6 +17,7 @@ import HaranGeppakuFutsu from "./HaranGeppakuFutsu"
 import HarbingerOfDawn from "./HarbingerOfDawn"
 import IronSting from "./IronSting"
 import KeyOfKhajNisut from "./KeyOfKhajNisut"
+import LightOfFoliarIncision from "./LightOfFoliarIncision"
 import LionsRoar from "./LionsRoar"
 import MistsplitterReforged from "./MistsplitterReforged"
 import PrimordialJadeCutter from "./PrimordialJadeCutter"
@@ -52,6 +53,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   HarbingerOfDawn,
   IronSting,
   KeyOfKhajNisut,
+  LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,
   PrimordialJadeCutter,

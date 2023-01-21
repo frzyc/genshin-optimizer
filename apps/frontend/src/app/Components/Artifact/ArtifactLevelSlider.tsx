@@ -26,7 +26,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
   useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
 
   useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
-  return <Card sx={{ width: "100%", display: "flex", alignItems: "center", bgcolor: dark ? "contentDark.main" : "contentLight.main" }}>
+  return <Card sx={{ width: "100%", display: "flex", alignItems: "center", bgcolor: dark ? "contentDark.main" : "contentLight.main", overflow: "visible" }}>
     <CustomNumberInput
       value={sliderLow}
       onChange={val => setLow(clamp(val, 0, levelHigh))}

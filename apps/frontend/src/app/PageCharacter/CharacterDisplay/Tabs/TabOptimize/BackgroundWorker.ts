@@ -12,7 +12,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
   const { command } = data
   let result: WorkerResult
   switch (command) {
-    case "setup":
+    case "setup": {
       id = data.id
       const splitID = `split${id}`, computeID = `compute${id}`
       try {
@@ -23,6 +23,7 @@ onmessage = ({ data }: { data: WorkerCommand }) => {
       computeWorker = new ComputeWorker(data, interim => postMessage({ id, source: computeID, ...interim }))
       result = { command: "iterate" }
       break
+    }
     case "split": {
       if (data.filter) splitWorker.addFilter(data.filter)
       const filter = splitWorker.split(data.threshold, data.minCount)

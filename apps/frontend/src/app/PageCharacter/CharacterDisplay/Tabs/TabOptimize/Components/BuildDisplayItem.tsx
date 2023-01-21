@@ -43,11 +43,18 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
+    const char = database.chars.get(characterKey)
+    if (!char) return
     allSlotKeys.forEach(s => {
       const aid = data.get(input.art[s].id).value
       if (aid) database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
+      else {
+        const oldAid = char.equippedArtifacts[s]
+        if (oldAid && database.arts.get(oldAid)) database.arts.set(oldAid, { location: "" })
+      }
     })
-    database.weapons.set(data.get(input.weapon.id).value!, { location: charKeyToLocCharKey(characterKey) })
+    const weapon = data.get(input.weapon.id).value
+    if (weapon) database.weapons.set(weapon, { location: charKeyToLocCharKey(characterKey) })
   }, [characterKey, data, database])
 
   const statProviderContext = useMemo(() => {

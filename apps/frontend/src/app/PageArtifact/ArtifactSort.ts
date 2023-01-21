@@ -1,12 +1,10 @@
 import Artifact from "../Data/Artifacts/Artifact";
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
-import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, LocationKey, SlotKey } from "../Types/consts";
+import { allArtifactRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, LocationCharacterKey, LocationKey, SlotKey } from "../Types/consts";
 import { FilterConfigs, SortConfigs } from "../Util/SortByFilters";
 import { probability } from "./RollProbability";
 export const artifactSortKeys = ["rarity", "level", "artsetkey", "efficiency", "mefficiency", "probability"] as const
 export type ArtifactSortKey = typeof artifactSortKeys[number]
-
-export type FilterLocationKey = LocationKey | "Equipped" | "Inventory"
 
 export type FilterOption = {
   artSetKeys: ArtifactSetKey[],
@@ -16,7 +14,9 @@ export type FilterOption = {
   slotKeys: SlotKey[],
   mainStatKeys: MainStatKey[],
   substats: SubstatKey[]
-  location: FilterLocationKey
+  locations: LocationCharacterKey[]
+  showEquipped: boolean
+  showInventory: boolean
   exclusion: Array<"excluded" | "included">,
   locked: Array<"locked" | "unlocked">,
   rvLow: number,
@@ -33,7 +33,9 @@ export function initialFilterOption(): FilterOption {
     slotKeys: [...allSlotKeys],
     mainStatKeys: [],
     substats: [],
-    location: "",
+    locations: [],
+    showEquipped: true,
+    showInventory: true,
     exclusion: ["excluded", "included"],
     locked: ["locked", "unlocked"],
     rvLow: 0,
@@ -69,12 +71,21 @@ export function artifactFilterConfigs(effFilterSet: Set<SubstatKey> = new Set(al
       if (!filter.includes("unlocked") && !art.lock) return false
       return true
     },
-    location: (art, filter) => {
-      if (!filter) return true
-      if (filter === "Inventory" && !art.location) return true
-      if (filter === "Equipped" && art.location) return true
-      if (filter === art.location) return true
-      return false
+    locations: (art, filter, filters) => {
+      if(!filters.showEquipped)
+        return filter.includes(art.location) || !art.location
+      return true
+    },
+    showEquipped: (art, filter, filters) => {
+      if (!filter) {
+        return !!art.location === filter || !filter && filters.locations.includes(art.location)
+      }
+      return true
+    },
+    showInventory: (art, filter) => {
+      if (!filter)
+        return !!art.location
+      return true
     },
     artSetKeys: (art, filter) => filter.length ? filter.includes(art.setKey) : true,
     slotKeys: (art, filter) => filter.includes(art.slotKey),

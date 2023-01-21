@@ -46,6 +46,7 @@ export default function PageArtifact() {
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
+  const dbDirtyDeferred = useDeferredValue(dbDirty)
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback((id: string) => database.arts.remove(id), [database])
 
@@ -76,8 +77,8 @@ export default function PageArtifact() {
       .filter(filterFunction(filterOption, filterConfigs))
       .sort(sortFunction(artifactSortMap[sortType] ?? [], ascending, sortConfigs))
       .map(art => art.id)
-    return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [deferredArtifactDisplayState, dbDirty, database, sortConfigs, filterConfigs, showProbability])
+    return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirtyDeferred }//use dbDirty to shoo away warnings!
+  }, [deferredArtifactDisplayState, dbDirtyDeferred, database, sortConfigs, filterConfigs, showProbability])
 
 
   const { artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
@@ -113,7 +114,7 @@ export default function PageArtifact() {
 
     {noArtifact && <Alert severity="info" variant="filled">Looks like you haven't added any artifacts yet. If you want, there are <Link color="warning.main" component={RouterLink} to="/scanner">automatic scanners</Link> that can speed up the import process!</Alert>}
 
-    <ArtifactFilter numShowing={artifactIds.length} total={totalArtNum} />
+    <ArtifactFilter numShowing={artifactIds.length} total={totalArtNum} artifactIds={artifactIds} />
     <CardDark ref={invScrollRef}>
       <CardContent>
         <Grid container sx={{ mb: 1 }}>

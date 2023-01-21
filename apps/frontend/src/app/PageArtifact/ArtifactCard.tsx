@@ -1,11 +1,12 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip';
 import SlotNameWithIcon from '../Components/Artifact/SlotNameWIthIcon';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardLight from '../Components/Card/CardLight';
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete';
 import LocationName from '../Components/Character/LocationName';
@@ -156,22 +157,26 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             : <LocationName location={location} />}
         </Box>
         {editable && <ButtonGroup sx={{ height: "100%" }}>
-          {editorProps && <Tooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
-            <Button color="info" size="small" onClick={onShowEditor} >
+          {editorProps && <BootstrapTooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
+            <Button color="info" size="small" onClick={onShowEditor} sx={{ borderRadius: "4px 0px 0px 4px" }}>
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>
-          </Tooltip>}
-          {canExclude && <Tooltip title={<Box>
+          </BootstrapTooltip>}
+          {canExclude && <BootstrapTooltip title={<Box>
             <Typography>{t`artifact:excludeArtifactTip`}</Typography>
             <Typography><ColorText color={exclude ? "error" : "success"}>{t(`artifact:${exclude ? "excluded" : "included"}`)}</ColorText></Typography>
           </Box>} placement="top" arrow>
-            <Button onClick={() => database.arts.set(id, { exclude: !exclude })} color={exclude ? "error" : "success"} size="small" >
+            <Button onClick={() => database.arts.set(id, { exclude: !exclude })} color={exclude ? "error" : "success"} size="small" sx={{ borderRadius: "4px 0px 0px 4px" }}>
               <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
             </Button>
-          </Tooltip>}
-          {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
-            <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-          </Button>}
+          </BootstrapTooltip>}
+          {!!onDelete && <BootstrapTooltip title={lock ? t("artifact:cantDeleteLock") : ""} placement="top">
+            <span>
+              <Button color="error" size="small" sx={{ height: "100%", borderRadius: "0px 4px 4px 0px" }} onClick={() => onDelete(id)} disabled={lock}>
+                <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+              </Button>
+            </span>
+          </BootstrapTooltip>}
           {extraButtons}
         </ButtonGroup>}
       </Box>

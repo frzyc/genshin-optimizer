@@ -13,7 +13,7 @@ import { FilterOption } from "./ArtifactSort"
 
 const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/ArtifactFilterDisplay'))
 
-export default function ArtifactFilter({ numShowing, total, }: { numShowing: number, total: number }) {
+export default function ArtifactFilter({ numShowing, total, artifactIds }: { numShowing: number, total: number, artifactIds:string[] }) {
   const { t } = useTranslation(["artifact", "ui"])
   const { database } = useContext(DatabaseContext)
   const { filterOption } = useDisplayArtifact()
@@ -27,7 +27,7 @@ export default function ArtifactFilter({ numShowing, total, }: { numShowing: num
             <Typography variant="h6"><Trans t={t} i18nKey="artifactFilter">Artifact Filter</Trans></Typography>
           </Grid>
           <Grid item flexGrow={1} display="flex" justifyContent="center" alignItems="center">
-            {numShowing !== total && <Typography>Filtered {numShowing} / {total}</Typography>}
+            {numShowing !== total && <Typography>Filtered <strong>{numShowing}</strong> / {total}</Typography>}
           </Grid>
           <Grid item>
             <Button size="small" color="error" onClick={() => database.displayArtifact.set({ action: "reset" })} startIcon={<Replay />}>
@@ -36,7 +36,7 @@ export default function ArtifactFilter({ numShowing, total, }: { numShowing: num
           </Grid>
         </Grid>
         <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={200} />}>
-          <ArtifactFilterDisplay filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} />
+          <ArtifactFilterDisplay filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filteredIds={artifactIds} />
         </Suspense>
       </CardContent>
     </CardDark>

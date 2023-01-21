@@ -35,7 +35,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
 
     if (typeof filterOption !== "object") filterOption = initialFilterOption()
     else {
-      let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, location, exclusion, locked, rvLow, rvHigh, lines } = filterOption
+      let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSets, [])
       rarity = validateArr(rarity, allArtifactRarities)
 
@@ -47,7 +47,9 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
       slotKeys = validateArr(slotKeys, allSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
       substats = validateArr(substats, allSubstatKeys, [])
-      if (typeof location !== "string" || (![...locationCharacterKeys, "", "Inventory", "Equipped"].includes(location as LocationCharacterKey))) location = ""
+      locations = validateArr(locations, locationCharacterKeys, [])
+      if (typeof showEquipped !== "boolean") showEquipped = true
+      if (typeof showInventory !== "boolean") showInventory = true
       exclusion = validateArr(exclusion, ["excluded", "included"])
       locked = validateArr(locked, ["locked", "unlocked"])
 
@@ -56,7 +58,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
 
       lines = validateArr(lines, [1, 2, 3, 4])
 
-      filterOption = { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, location, exclusion, locked, rvLow, rvHigh, lines } as FilterOption
+      filterOption = { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } as FilterOption
     }
 
     if (typeof ascending !== "boolean") ascending = false

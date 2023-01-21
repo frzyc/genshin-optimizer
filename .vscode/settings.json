@@ -3,5 +3,6 @@
   "editor.detectIndentation": false,
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "typescript.preferences.importModuleSpecifier": "relative"
 }

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { DatabaseContext } from "../../../../Database/Database";
-import { BuildSetting, BuildSettingReducerAction } from "../../../../Database/DataManagers/BuildSettingData";
+import { BuildSetting } from "../../../../Database/DataManagers/BuildSettingData";
 import { CharacterKey } from "../../../../Types/consts";
 
 export default function useBuildSetting(characterKey: CharacterKey) {
@@ -10,7 +10,7 @@ export default function useBuildSetting(characterKey: CharacterKey) {
   useEffect(() =>
     database.buildSettings.follow(characterKey, (k, r, v) => r === "update" && setBuildSetting(v)),
     [characterKey, setBuildSetting, database])
-  const buildSettingDispatch = useCallback((action: BuildSettingReducerAction) => characterKey && database.buildSettings.set(characterKey, action), [characterKey, database],)
+  const buildSettingDispatch = useCallback((action: Partial<BuildSetting>) => characterKey && database.buildSettings.set(characterKey, action), [characterKey, database],)
 
   return { buildSetting: buildSetting as BuildSetting, buildSettingDispatch }
 }

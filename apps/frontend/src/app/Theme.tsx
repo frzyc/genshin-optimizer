@@ -160,6 +160,17 @@ declare module "@mui/material/Chip" {
     melt: true;
     spread: true;
     aggravate: true;
+    overloaded: true;
+    superconduct: true;
+    electrocharged: true;
+    shattered: true;
+    swirl: true;
+    burning: true;
+    crystallize: true;
+    heal: true;
+    bloom: true;
+    burgeon: true;
+    hyperbloom: true;
   }
 }
 declare module "@mui/material/InputBase" {

@@ -12,8 +12,8 @@ export default function loadTrans() {
     const { nameTextMapHash, descTextMapHash, skillDepotId, candSkillDepotIds } = charData
     const { avatarTitleTextMapHash, avatarConstellationBeforTextMapHash } = fetterInfoExcelConfigData[charid]
 
-    mapHashData.charNames[characterIdMap[charid]] = nameTextMapHash
     const charKey = characterIdMap[charid]
+    mapHashData.charNames[charKey] = nameTextMapHash
     layeredAssignment(mapHashData, ["char", charKey, "name"], nameTextMapHash)
     layeredAssignment(mapHashData, ["char", charKey, "title"], avatarTitleTextMapHash)
     layeredAssignment(mapHashData, ["char", charKey, "description"], descTextMapHash)
@@ -152,6 +152,16 @@ export default function loadTrans() {
       const string = parsingFunctions[processing](lang as Language, preprocess(rawString), keys)
       if (string === undefined) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
       layeredAssignment(languageData, [lang, ...keys], string)
+    });
+
+    // Add the traveler variants to charNames_gen
+    (["F", "M"]).forEach((gender: string) => {
+      (["Anemo", "Geo", "Electro", "Dendro"]).forEach((ele: string) => {
+        layeredAssignment(
+          languageData,
+          [lang, "charNames", `Traveler${ele}${gender}`],
+          `${languageData[lang].charNames[`Traveler${gender}`]} (${languageData[lang].sheet.element[ele.toLowerCase()]})`)
+      })
     })
   })
 
@@ -159,7 +169,7 @@ export default function loadTrans() {
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
     const fileDir = `${__dirname}/../../assets/locales/${lang}`
-    if (!existsSync(fileDir)) mkdirSync(fileDir)
+    if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localiation namespaces
