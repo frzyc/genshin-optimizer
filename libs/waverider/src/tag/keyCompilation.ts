@@ -18,9 +18,11 @@ export function tagMapFromEntries<V>(entries: RawTagMapEntries<V>): TagMap<V> {
 export function compileTagMapKeys(tags: Tag[], tagOrder: TagCategory[]): CompiledTagMapKeys {
   const foundTags: Record<TagCategory, Set<TagValue>> = {}
   for (const tag of tags)
-    for (const [category, value] of Object.entries(tag))
+    for (const [category, value] of Object.entries(tag)) {
+      if (value === null) continue
       if (category in foundTags) foundTags[category]!.add(value)
       else foundTags[category] = new Set([value])
+    }
 
   // Allow custom tag ordering so that one can optimize the lookup process
   const entries: CompiledTagMapKeys['data'] = {}, knownOrders = new Set(tagOrder)
