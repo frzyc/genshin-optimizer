@@ -1,6 +1,5 @@
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
 import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
@@ -23,9 +22,10 @@ import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, CharacterKey } from "../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../Types/consts";
 import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
+import { catTotal } from "../Util/totalUtils";
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
@@ -64,6 +64,18 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
       .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
   }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm, filter])
 
+  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => characterSheets && allCharacterKeys.forEach(ck => {
+    const wtk = characterSheets(ck, database.gender).weaponTypeKey
+    ct[wtk].total++
+    if (characterKeyList.includes(ck)) ct[wtk].current++
+  })), [characterSheets, characterKeyList, database])
+
+  const elementTotals = useMemo(() => catTotal(allElements, ct => characterSheets && allCharacterKeys.forEach(ck => {
+    const ele = characterSheets(ck, database.gender).elementKey
+    ct[ele].total++
+    if (characterKeyList.includes(ck)) ct[ele].current++
+  })), [characterSheets, characterKeyList, database])
+
   if (!characterSheets) return null
 
   const { weaponType, element, sortType, ascending } = state
@@ -71,8 +83,8 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
   return <ModalWrapper open={show} onClose={onHide} sx={{ "& .MuiContainer-root": { justifyContent: "normal" } }}>
     <CardDark>
       <CardContent sx={{ py: 1, display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
-        <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} size="small" />
-        <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} size="small" />
+        <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => database.displayCharacter.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
+        <ElementToggle sx={{ height: "100%" }} onChange={element => database.displayCharacter.set({ element })} value={element} totals={elementTotals} size="small" />
         <Box flexGrow={1}>
           <TextField
             autoFocus

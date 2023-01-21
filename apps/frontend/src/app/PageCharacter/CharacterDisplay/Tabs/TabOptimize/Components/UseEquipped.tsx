@@ -16,12 +16,13 @@ import { DatabaseContext } from "../../../../../Database/Database";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
+import { ICachedArtifact } from "../../../../../Types/artifact";
 import { ICachedCharacter } from "../../../../../Types/character";
-import { CharacterKey } from "../../../../../Types/consts";
+import { CharacterKey, charKeyToLocCharKey } from "../../../../../Types/consts";
 import useBuildSetting from "../useBuildSetting";
 const CharacterSelectionModal = React.lazy(() => import('../../../../CharacterSelectionModal'))
 
-export default function UseEquipped({ disabled = false }: { disabled?: boolean }) {
+export default function UseEquipped({ disabled = false, filteredArts }: { disabled?: boolean, filteredArts: ICachedArtifact[] }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -61,6 +62,8 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
     return database.chars.keys.length - equipmentPriority.length
   }, [equipmentPriority, database])
 
+  const totArts = useMemo(() => filteredArts.filter(a => a.location && a.location !== charKeyToLocCharKey(characterKey)).length, [filteredArts, characterKey])
+
   return <Box display="flex" gap={1}>
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "sm" }}><CardDark>
       <CardContent>
@@ -94,9 +97,9 @@ export default function UseEquipped({ disabled = false }: { disabled?: boolean }
     </CardDark ></ModalWrapper>
     <ButtonGroup sx={{ display: "flex", width: "100%" }}>
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
-        <Box>
+        <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <span><Trans t={t} i18nKey="useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge><Trans t={t} i18nKey="useEquipped.usingNum" count={numUseEquippedChar}>Using from <strong>{{ count: numUseEquippedChar } as any}</strong> characters</Trans></SqBadge>}
+          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTotzz" count={numUnlisted} arts={totArts}>Using <strong>{{ arts: totArts } as any}</strong> artifacts from <strong>{{ count: numUnlisted } as any}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}

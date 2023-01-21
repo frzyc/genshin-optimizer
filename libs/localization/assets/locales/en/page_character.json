@@ -29,7 +29,6 @@
   },
   "characterName": "Character Name",
   "teammate": "Teammate {{count}}",
-  "none": "None",
   "multiTarget": {
     "title": "Multi-Optimization Target Config",
     "addNewTarget": "Add New Custom target",

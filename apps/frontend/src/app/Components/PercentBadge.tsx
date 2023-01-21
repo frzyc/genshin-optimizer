@@ -8,8 +8,7 @@ export default function PercentBadge({ value, max = 1, valid }: {
   value: number | string,
   max?: number
 }) {
-  let [badgeColor, text]: [color: ButtonProps['color'], text: string] = typeof value === 'number' ?
+  const [badgeColor, text]: [color: ButtonProps['color'], text: string] = typeof value === 'number' ?
     [`roll${clamp(Math.floor((value / max) * 10) - 4, 1, 6)}` as RollColorKey, value.toFixed() + "%"] : ["secondary", value]
-  if (!valid) badgeColor = "error"
-  return <SqBadge color={badgeColor} >{text}</SqBadge>
+  return <SqBadge color={valid ? badgeColor : "error"} >{text}</SqBadge>
 }

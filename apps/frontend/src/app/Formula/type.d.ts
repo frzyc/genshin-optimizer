@@ -21,8 +21,8 @@ interface Info {
   icon?: Displayable
   prefix?: KeyMapPrefix
   source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
-  variant?: Variant
-  subVariant?: Variant
+  variant?: InfoVariant
+  subVariant?: InfoVariant
   asConst?: true
   pivot?: true
   fixed?: number
@@ -30,7 +30,8 @@ interface Info {
   multi?: number
   textSuffix?: Displayable
 }
-export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | "invalid"
+export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal"
+export type InfoVariant = Variant | "invalid"
 
 interface Base<Leaf extends Base<Leaf>> {
   info?: Info
