@@ -23,23 +23,30 @@ export class Calculator<M = undefined> {
 
   get<V extends number | string = number | string>(tag: Tag): CalcResult<V, M>[]
   get(tag: Tag): CalcResult<number | string, M>[] {
-    return this.preread(createSubsetCache(this.keys, this.nodes).with(tag))
+    return this._preread(createSubsetCache(this.keys, this.nodes).with(tag))
   }
 
-  preread(cache: TagCache): CalcResult<number | string, M>[] {
+  compute(n: NumNode): CalcResult<number, M>
+  compute(n: StrNode): CalcResult<string, M>
+  compute(n: AnyNode): CalcResult<number | string, M>
+  compute(n: AnyNode): CalcResult<number | string, M> {
+    return this._compute(n, createSubsetCache(this.keys, this.nodes))
+  }
+
+  _preread(cache: TagCache): CalcResult<number | string, M>[] {
     const { id, mask } = this.keys.getMask(cache.tag)
     const result = this.calculated.refExact(id, mask)
     if (result.length) return result[0]!
 
     result.push(cache.subset().flatMap(n =>
-      n.op === 'reread' ? this.preread(cache.with(n.tag)) : [this.compute(n, cache)]))
+      n.op === 'reread' ? this._preread(cache.with(n.tag)) : [this._compute(n, cache)]))
     return result[0]!
   }
 
-  compute(n: StrNode, cache: TagCache): CalcResult<string, M>
-  compute(n: NumNode, cache: TagCache): CalcResult<number, M>
-  compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
-  compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
+  _compute(n: StrNode, cache: TagCache): CalcResult<string, M>
+  _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
+  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
+  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
     const self = this
     function meta(op: AnyNode['op'], tag: Tag | undefined, val: any, x: (CalcResult<any, M> | undefined)[], br: CalcResult<any, M>[], ex?: any): CalcResult<any, M> {
       return { val, meta: self.computeMeta(op, tag, val, x, br, ex) }
@@ -50,18 +57,18 @@ export class Calculator<M = undefined> {
       case 'const': return meta(op, undefined, n.ex, [], [])
       case 'sum': case 'prod': case 'min': case 'max':
       case 'sumfrac': case 'subscript': {
-        const x = n.x.map(n => this.compute(n, cache)), ex = n.ex
+        const x = n.x.map(n => this._compute(n, cache)), ex = n.ex
         return meta(op, undefined, arithmetic[op](getV(x), ex), x, [], ex)
       }
       case 'thres': case 'match': case 'lookup': {
-        const br = n.br.map(br => this.compute(br, cache)), branchID = selectBranch[op](getV(br), n.ex)
-        const x = [...Array(n.x.length)], result = this.compute(n.x[branchID]!, cache)
+        const br = n.br.map(br => this._compute(br, cache)), branchID = selectBranch[op](getV(br), n.ex)
+        const x = [...Array(n.x.length)], result = this._compute(n.x[branchID]!, cache)
         x[branchID] = result
         return meta(op, undefined, result.val, x, br, n.ex)
       }
-      case 'tag': return this.compute(n.x[0]!, cache.with(n.tag))
+      case 'tag': return this._compute(n.x[0]!, cache.with(n.tag))
       case 'read': {
-        const computed = this.preread(cache.with(n.tag)), accu = n.accu
+        const computed = this._preread(cache.with(n.tag)), accu = n.accu
 
         switch (accu) {
           case undefined:

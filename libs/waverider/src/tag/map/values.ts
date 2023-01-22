@@ -7,7 +7,7 @@ export class TagMapValues<V> {
 
   constructor(tagLen: number, values: CompiledTagMapValues<V>) {
     this.tagLen = tagLen
-    this.internal = createInternalTagMapValues(0, tagLen, values)
+    this.internal = createInternal(0, tagLen, values)
   }
 
   allValues(): V[] {
@@ -16,8 +16,7 @@ export class TagMapValues<V> {
       if (offset === tagLen) result.push(...v.values)
       else v.children.forEach(v => v.forEach(v => crawl(v, offset + 1)))
     }
-    crawl(this.internal, 0)
-    return result
+    return crawl(this.internal, 0), result
   }
   subset(id: TagID): V[] {
     const result: V[] = [], tagLen = this.tagLen
@@ -25,8 +24,7 @@ export class TagMapValues<V> {
       if (offset === tagLen) result.push(...v.values)
       else v.subset(id[offset]!).forEach(v => crawl(v, offset + 1))
     }
-    crawl(this.internal, 0)
-    return result
+    return crawl(this.internal, 0), result
   }
   refExact(id: TagID, mask: TagID): V[] {
     let current = this.internal, tagLen = this.tagLen
@@ -35,10 +33,10 @@ export class TagMapValues<V> {
   }
 }
 
-function createInternalTagMapValues<V>(offset: number, tagLen: number, values: CompiledTagMapValues<V> | V[]): InternalTagMapValues<V> {
+function createInternal<V>(offset: number, tagLen: number, values: CompiledTagMapValues<V> | V[]): InternalTagMapValues<V> {
   if (offset === tagLen) return new InternalTagMapValues(values as V[], new Map())
   return new InternalTagMapValues([], new Map((values as CompiledTagMapValues<V>).map(({ mask, mapping }) =>
-    [mask, new Map(mapping.map(({ id, values }) => [id, createInternalTagMapValues(offset + 1, tagLen, values)]))])))
+    [mask, new Map(mapping.map(({ id, values }) => [id, createInternal(offset + 1, tagLen, values)]))])))
 }
 
 export class InternalTagMapValues<V> {
