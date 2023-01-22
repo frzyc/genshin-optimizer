@@ -5,5 +5,5 @@
     "declaration": true,
     "types": ["node"]
   },
-  "include": ["src/index.ts", "src/preprocess.ts"]
+  "include": ["src/index.ts"]
 }

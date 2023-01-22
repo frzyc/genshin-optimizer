@@ -1,9 +1,10 @@
-import type { Tag, TagMap } from '../tag'
+import type { TagMap } from '../tag'
+import { createSubsetCache, TagMapSubsetCache } from '../tag/map/cache'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, max, min, prod, sum } from './construction'
 import { arithmetic, selectBranch } from './formula'
-import type { AnyNode, Const, NumNode, OP, Read, StrNode } from './type'
+import type { AnyNode, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
 
 type NumTagFree = NumNode<Exclude<OP, 'tag'>>
 type StrTagFree = StrNode<Exclude<OP, 'tag'>>
@@ -13,27 +14,25 @@ export function detach(n: NumNode[], calc: Calculator, dynTags: TagMap<Read>): N
 export function detach(n: StrNode[], calc: Calculator, dynTags: TagMap<Read>): StrTagFree[]
 export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): AnyTagFree[]
 export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): AnyTagFree[] {
-  const allDynTags = new Set(dynTags.superset({}))
+  const allDynTags = new Set(dynTags.allValues())
 
-  function read(tag: Tag): AnyTagFree[] {
-    return [...calc.nodes.subset(tag).flatMap(n => {
-      if (n.op === 'reread') {
-        const newTag = { ...tag, ...n.tag }
-        return read(newTag).map(x => map(x, newTag))
-      }
-      return [map(n, tag)]
-    }),
-    ...dynTags.subset(tag)
+  function read(cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree[] {
+    return [
+      ...cache.subset().flatMap(n => {
+        if (n.op !== 'reread') return map(n, cache)
+        cache = cache.with(n.tag)
+        return read(cache).map(x => map(x, cache))
+      }),
+      ...dynTags.subset(cache.tag),
     ]
   }
-  function map(n: AnyNode, tag: Tag | undefined): AnyTagFree {
+  function map(n: AnyNode, cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree {
     if (allDynTags.has(n as Read)) return n as Read
 
     switch (n.op) {
       case 'read': {
-        const readTag = { ...tag, ...n.tag }
         // Strictly speaking, `x`s are not `NumNode` yet, but it's easier to handle `accu` this way
-        const x = read(readTag) as NumNode<Exclude<OP, 'tag'>>[]
+        const x = read(cache.with(n.tag)) as NumNode<Exclude<OP, 'tag'>>[]
         switch (n.accu) {
           case 'sum': return sum(...x) as AnyTagFree
           case 'prod': return prod(...x) as AnyTagFree
@@ -43,17 +42,17 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): A
           default: assertUnreachable(n.accu)
         }
       }
-      case 'tag': return map(n.x[0]!, { ...tag, ...n.tag })
+      case 'tag': return map(n.x[0]!, cache.with(n.tag))
     }
-    let x = n.x.map(n => map(n, tag))
-    let br = n.br.map(n => map(n, tag))
+    let x = n.x.map(n => map(n, cache))
+    let br = n.br.map(n => map(n, cache))
     if (x.every((x, i) => x === n.x[i])) x = n.x as AnyTagFree[]
     if (br.every((br, i) => br === n.br[i])) br = n.br as AnyTagFree[]
 
     return (x !== n.x || br != n.br) ? { ...n, x, br } as any : n
   }
 
-  return n.map(n => map(n, undefined))
+  return n.map(n => map(n, createSubsetCache(calc.keys, calc.nodes)))
 }
 
 export function constantFold(n: NumTagFree[]): NumTagFree[]

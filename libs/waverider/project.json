@@ -4,19 +4,6 @@
   "sourceRoot": "libs/waverider/src",
   "projectType": "library",
   "targets": {
-    "genfiles": {
-      "command": "npx ts-node -r tsconfig-paths/register -P libs/waverider/tsconfig.lib.json libs/waverider/src/index.gen.ts",
-      "inputs": [
-        "!{projectRoot}/src/**/*.gen.json",
-        "^production"
-      ],
-      "outputs": [
-        "{projectRoot}/src/**/*.gen.json"
-      ],
-      "dependsOn": [
-        "^build"
-      ]
-    },
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": [
@@ -29,13 +16,7 @@
         "assets": [
           "libs/waverider/*.md"
         ]
-      },
-      "dependsOn": [
-        "genfiles"
-      ],
-      "inputs": [
-        "!{projectRoot}/**/*.gen.ts"
-      ]
+      }
     },
     "publish": {
       "executor": "nx:run-commands",
