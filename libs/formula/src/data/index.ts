@@ -1,20 +1,20 @@
-import { compileTagMapKeys, compileTagMapValues, tagMapValuesToJSON } from "@genshin-optimizer/waverider/preprocess"
+import { compileTagMapKeys, compileTagMapValues } from "@genshin-optimizer/waverider"
 import artifact from "./artifact"
 import character from "./character"
 import common from "./common"
-import { Data, dsts, elements, entryTypes, fixedQueries, fixedTags, regions, srcs, usedCustomTags } from "./util"
+import { Data, fixedQueries, fixedTags, usedCustomTags, usedNames } from "./util"
 import weapon from "./weapon"
 
 
 const data: Data = [...common, ...artifact, ...character, ...weapon]
 const tags = [
-  ...Object.entries(fixedTags).flatMap(([k, v]) => v.map(v => ({ [k]: v }))),
-  ...Object.entries(fixedQueries).flatMap(([qt, q]) => q.map(q => ({ qt, q }))),
-  ...[...usedCustomTags].map(q => ({ q })),
-  ...data.map(data => data.tag),
-  { todo: "TODO" },
+  ...Object.entries(fixedTags).map(([k, v]) => ({ category: k, values: v })),
+  { category: 'qt', values: [...Object.keys(fixedQueries), 'misc'] },
+  { category: 'q', values: [...usedCustomTags, ...Object.values(fixedQueries).flat()] },
+  { category: 'name', values: [...usedNames] },
+  { category: 'todo', values: ["TODO"] },
 ]
-const keys = compileTagMapKeys(tags, []) // TODO: Find optimum tag order
-const preValues = tagMapValuesToJSON(compileTagMapValues(keys, data))
+const keys = compileTagMapKeys(tags) // TODO: Find optimum tag order
+const values = compileTagMapValues(keys, data)
 
-export { keys, preValues }
+export { keys, values }

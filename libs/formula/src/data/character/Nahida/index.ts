@@ -116,7 +116,7 @@ const a1InBurst_eleMas = cmpGE(ascension, 1,
   cmpEq(a1ActiveInBurst, "on",
     // Either party is in burst, or this is a teammate
     cmpGE(sum(cmpEq(partyInBurst, "on", 1), cmpNE(buffTarget.common.isActive, 1, 1)), 1,
-      min(prod(percent(dm.passive1.eleMas_), team.final.eleMas.max), dm.passive1.maxEleMas)
+      min(prod(percent(dm.passive1.eleMas_), team.premod.eleMas.max), dm.passive1.maxEleMas)
     )
   )
 )
@@ -136,7 +136,7 @@ const data: Data = [
 
   selfBuff.premod.eleMas.addNode(cmpGE(constellation, 4, subscript(c4Count, [NaN, ...dm.constellation4.eleMas]))),
 
-  activeCharBuff.final.eleMas.addNode(a1InBurst_eleMas),
+  // activeCharBuff.final.eleMas.addNode(a1InBurst_eleMas),
 
   c2_critRate_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critRate_)))),
   teamBuff.premod.critRate_.burning.reread(c2_critRate_),

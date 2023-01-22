@@ -1,8 +1,7 @@
-import { AnyNode, Calculator, compileTagMapValues, constant, jsonToTagMapValues, ReRead, TagMap, traverse } from "@genshin-optimizer/waverider";
-import { keys, preValues } from "./data";
+import { AnyNode, Calculator, compileTagMapValues, constant, ReRead, TagMap, traverse } from "@genshin-optimizer/waverider";
+import { createSubsetCache, TagMapSubsetCache } from "../../waverider/src/tag/map/cache";
+import { keys, values } from "./data";
 import { Data, Preset, read, reader, Tag } from "./data/util";
-
-const values = jsonToTagMapValues<AnyNode>(preValues)
 
 describe('Genshin Database', () => {
   const data: Data = [], active: Preset[] = ['preset0'], team: Preset[] = ['preset0', 'preset1']
@@ -113,16 +112,16 @@ describe('Genshin Database', () => {
   const nilou = reader.withTag({ preset: 'preset1', et: 'self', src: 'agg' })
 
   test('Basic Query', () => {
-    expect(calc._compute(nilou.final.hp).val.toFixed(1)).toEqual("9479.7")
-    expect(calc._compute(nahida.final.atk).val).toBeCloseTo(346.21)
-    expect(calc._compute(nahida.final.def).val).toBeCloseTo(94.15)
-    expect(calc._compute(nahida.final.eleMas).val).toBeCloseTo(28.44)
-    expect(calc._compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
-    expect(calc._compute(nahida.common.cappedCritRate_).val).toBe(0.90)
-    expect(calc._compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)
-    expect(calc._compute(nahida.withTag({ src: 'team' }).team.count.dendro).val).toBe(1)
-    expect(calc._compute(nahida.withTag({ src: 'team' }).team.count.hydro).val).toBe(1)
-    expect(calc._compute(nahida.withTag({ src: 'team' }).team.eleCount).val).toBe(2)
+    expect(calc.compute(nilou.final.hp).val.toFixed(1)).toEqual("9479.7")
+    expect(calc.compute(nahida.final.atk).val).toBeCloseTo(346.21)
+    expect(calc.compute(nahida.final.def).val).toBeCloseTo(94.15)
+    expect(calc.compute(nahida.final.eleMas).val).toBeCloseTo(28.44)
+    expect(calc.compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
+    expect(calc.compute(nahida.common.cappedCritRate_).val).toBe(0.90)
+    expect(calc.compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)
+    expect(calc.compute(nahida.withTag({ src: 'team' }).team.count.dendro).val).toBe(1)
+    expect(calc.compute(nahida.withTag({ src: 'team' }).team.count.hydro).val).toBe(1)
+    expect(calc.compute(nahida.withTag({ src: 'team' }).team.eleCount).val).toBe(2)
   })
 })
 
@@ -142,18 +141,15 @@ function tagString(tag: Tag): string {
 let lastID = 1
 function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], reread: Tag[] }[] {
   const result: { tag: Tag, read: Tag[], reread: Tag[] }[] = []
-  const translation = new TagMap<number>(keys), visited: Set<number> = new Set(), visiting: Tag[] = [], visitingID = new Set<number>()
+  const translation = new TagMap<number>(keys, []), visited: Set<number> = new Set(), visiting: Tag[] = [], visitingID = new Set<number>()
   function getID(tag: Tag): number {
-    let id = translation.exact(tag)[0]
-    if (id === undefined) {
-      id = lastID++
-      translation.add(tag, id)
-    }
-    return id
+    let cache = translation.refExact(tag)
+    if (!cache.length) cache[0] = lastID++
+    return cache[0]
   }
 
-  function internal(tag: Tag) {
-    const { nodes } = calc.withTag(tag)
+  function internal(cache: TagMapSubsetCache<AnyNode | ReRead>) {
+    const nodes = cache.subset(), tag = cache.tag
     const n = nodes.filter(x => x.op !== 'reread') as AnyNode[]
     const re = nodes.filter(x => x.op === 'reread') as ReRead[]
     const read: Tag[] = [], reread: Tag[] = []
@@ -166,13 +162,14 @@ function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], 
       throw "Cyclical dependencies found"
     }
     visitingID.add(id)
+    visiting.push(tag)
 
     const tags = [tag]
     traverse(n, (n, map) => {
       switch (n.op) {
         case 'read': {
-          const newTag = { ...tags[tags.length - 1], ...n.tag }
-          read.push(newTag)
+          const newTag = cache.with(n.tag)
+          read.push(newTag.tag)
           internal(newTag)
           return
         }
@@ -188,14 +185,15 @@ function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], 
     })
 
     for (const { tag: extra } of re) {
-      const newTag = { ...tag, ...extra }
-      internal(newTag)
-      reread.push(newTag)
+      const newTag = cache.with(extra)
+      internal(cache.with(extra))
+      reread.push(newTag.tag)
     }
 
+    visiting.pop()
     visitingID.delete(id)
     visited.add(id)
   }
-  internal(tag)
+  internal(createSubsetCache(calc.keys, calc.nodes).with(tag))
   return result
 }

@@ -22,7 +22,7 @@ export function read(src: Source, r = reader) {
     custom,
     output: {
       selfBuff, teamBuff, activeCharBuff, enemyDebuff,
-      dmgEntry(name: string) { return r.withTag({ name, src, qt: 'dmg', q: 'final' }) },
+      dmgEntry(name: string) { return r.name(name).dmg.final.withTag({ src }) },
     },
   }
 }

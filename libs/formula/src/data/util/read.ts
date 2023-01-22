@@ -39,7 +39,7 @@ export class Read implements Base {
   with<C extends keyof Tag>(cat: C, val: AllTag[C], accu?: Read['accu']): Read {
     return new Read({ ...this.tag, [cat]: val }, accu ?? this.accu)
   }
-  withTag(tag: Tag, accu?: Read['accu']): Read {
+  withTag(tag: Omit<Tag, 'name' | 'qt' | 'q'>, accu?: Read['accu']): Read {
     return new Read({ ...this.tag, ...tag }, accu ?? this.accu)
   }
   _withAll<C extends keyof Tag>(cat: C, accu?: Read['accu']): Record<AllTag[C], Read> {
@@ -68,10 +68,11 @@ export class Read implements Base {
     return new Proxy(this, {
       get(r, q: any) {
         if (qt === 'misc') usedCustomTags.add(q)
-        return r.withTag({ qt, q }, summableQueries.has(q) ? 'sum' : undefined)
+        return r.withTag({ qt, q } as any, summableQueries.has(q) ? 'sum' : undefined)
       }
     }) as any
   }
+  name(name: string): Read { return usedNames.add(name), this.with('name', name) }
 
   // Additional Modifiers
 
@@ -121,3 +122,4 @@ export class Read implements Base {
 export const reader = new Read({}, undefined)
 export const todo = new Read({ todo: 'TODO' } as {}, undefined)
 export const usedCustomTags = new Set<string>()
+export const usedNames = new Set<string>()
