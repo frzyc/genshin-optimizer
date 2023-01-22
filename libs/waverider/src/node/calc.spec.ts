@@ -1,12 +1,12 @@
-import { compileTagMapValues } from '../tag'
-import { compileTagMapKeys } from '../tag/keyCompilation'
+import { compileTagMapKeys, compileTagMapValues } from '../tag'
 import { Calculator } from './calc'
 import { constant } from './construction'
 
-const tags = [4, 4, 4].flatMap((v, i) =>
-  [...Array(v)].map((_, j) => ({ [`cat${i + 1}`]: `val${j + 1}` }))
-)
-const keys = compileTagMapKeys(tags, [])
+const keys = compileTagMapKeys([
+  { category: 'cat1', values: [...Array(4)].map((_, i) => `val${i}`) },
+  { category: 'cat2', values: [...Array(4)].map((_, i) => `val${i}`) },
+  { category: 'cat3', values: [...Array(4)].map((_, i) => `val${i}`) },
+])
 
 describe('Calculator', () => {
   it('is initializable with no entry', () => {

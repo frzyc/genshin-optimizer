@@ -1,137 +1,94 @@
 import type { Tag } from '../tag'
-import { CompiledTagMapKeys, CompiledTagMapValues, TagMap, TagMapKeys, TagMapValues } from '../tag/map'
+import { CompiledTagMapKeys, CompiledTagMapValues, TagMapKeys, TagMapValues } from '../tag/map'
+import { createSubsetCache, TagMapSubsetCache } from '../tag/map/cache'
+import { mergeTagMapValues } from '../tag/map/compilation'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, selectBranch } from './formula'
-import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
+import type { AnyNode, NumNode, ReRead, StrNode } from './type'
 
+type TagCache = TagMapSubsetCache<AnyNode | ReRead>
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V, meta: M }
 export class Calculator<M = undefined> {
   keys: TagMapKeys
-  nodes: TagMap<AnyNode | ReRead>
-  tagged: TagMapValues<TaggedCalculator<M>>
-  untagged: TaggedCalculator<M>
+  nodes: TagMapValues<AnyNode | ReRead>
+  calculated: TagMapValues<CalcResult<number | string, M>[]>
 
   constructor(keys: CompiledTagMapKeys, ...values: CompiledTagMapValues<AnyNode | ReRead>[]) {
     this.keys = new TagMapKeys(keys)
-    this.nodes = new TagMap(keys, ...values)
-    this.tagged = new TagMapValues(this.keys.tagLen)
-    this.untagged = this.withTag({})
+    this.nodes = new TagMapValues(keys.tagLen, mergeTagMapValues(this.keys.tagLen, values))
+    this.calculated = new TagMapValues(keys.tagLen, [])
   }
 
+  get<V extends number | string = number | string>(tag: Tag): CalcResult<V, M>[]
   get(tag: Tag): CalcResult<number | string, M>[] {
-    return this.withTag(tag).getAll()
+    return this._preread(createSubsetCache(this.keys, this.nodes).with(tag))
   }
 
-  _compute(n: NumNode): CalcResult<number, M>
-  _compute(n: StrNode): CalcResult<string, M>
-  _compute(n: AnyNode): CalcResult<number | string, M> {
-    return this.untagged.get(n)
+  compute(n: NumNode): CalcResult<number, M>
+  compute(n: StrNode): CalcResult<string, M>
+  compute(n: AnyNode): CalcResult<number | string, M>
+  compute(n: AnyNode): CalcResult<number | string, M> {
+    return this._compute(n, createSubsetCache(this.keys, this.nodes))
   }
 
-  withTag(tag: Tag): TaggedCalculator<M> {
-    const tagID = this.keys.get(tag)
-    let [cache] = this.tagged.exact(tagID)
-    if (!cache) {
-      const nodes = this.nodes.values.subset(tagID)
-      cache = new TaggedCalculator(tag, nodes, this)
-      this.tagged.add(tagID, cache)
+  _preread(cache: TagCache): CalcResult<number | string, M>[] {
+    const { id, mask } = this.keys.getMask(cache.tag)
+    const result = this.calculated.refExact(id, mask)
+    if (result.length) return result[0]!
+
+    result.push(cache.subset().flatMap(n =>
+      n.op === 'reread' ? this._preread(cache.with(n.tag)) : [this._compute(n, cache)]))
+    return result[0]!
+  }
+
+  _compute(n: StrNode, cache: TagCache): CalcResult<string, M>
+  _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
+  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
+  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
+    const self = this
+    function meta(op: AnyNode['op'], tag: Tag | undefined, val: any, x: (CalcResult<any, M> | undefined)[], br: CalcResult<any, M>[], ex?: any): CalcResult<any, M> {
+      return { val, meta: self.computeMeta(op, tag, val, x, br, ex) }
     }
-    return cache
-  }
 
-  computeMeta(_op: AnyNode['op'], _tag: Tag | undefined, _value: any, _x: (CalcResult<any, M> | undefined)[], _br: CalcResult<any, M>[], _ex: any): M {
-    return undefined as any
-  }
-}
-
-class TaggedCalculator<M> {
-  tag: Tag
-  nodes: (AnyNode | ReRead)[]
-  parent: Calculator<M>
-
-  computed: CalcResult<number | string, M>[] | undefined
-
-  constructor(tag: Tag, nodes: (AnyNode | ReRead)[], parent: Calculator<M>) {
-    this.tag = tag
-    this.nodes = nodes
-    this.parent = parent
-  }
-
-  getAll(): CalcResult<number | string, M>[] {
-    this.computed = this.computed ?? this.nodes
-      .flatMap(n => n.op === 'reread'
-        ? this.withTag(n.tag).getAll()
-        : [this.get(n)])
-    return this.computed
-  }
-
-  get(n: NumNode): CalcResult<number, M>
-  get(n: StrNode): CalcResult<string, M>
-  get(n: AnyNode): CalcResult<number | string, M>
-  get(n: AnyNode): CalcResult<number | string, M> {
     const { op } = n
     switch (op) {
-      case 'const':
-        return this._leaf('const', n.ex)
+      case 'const': return meta(op, undefined, n.ex, [], [])
       case 'sum': case 'prod': case 'min': case 'max':
-      case 'sumfrac': case 'subscript':
-        return this._arithmetic(op, n.x, n.ex)
-      case 'thres': case 'match': case 'lookup':
-        return this._conditional(op, n.br, n.x, n.ex)
-      case 'tag': return this._tag(n.x[0]!, n.tag)
-      case 'read': return this._read(n.accu, n.tag)
+      case 'sumfrac': case 'subscript': {
+        const x = n.x.map(n => this._compute(n, cache)), ex = n.ex
+        return meta(op, undefined, arithmetic[op](getV(x), ex), x, [], ex)
+      }
+      case 'thres': case 'match': case 'lookup': {
+        const br = n.br.map(br => this._compute(br, cache)), branchID = selectBranch[op](getV(br), n.ex)
+        const x = [...Array(n.x.length)], result = this._compute(n.x[branchID]!, cache)
+        x[branchID] = result
+        return meta(op, undefined, result.val, x, br, n.ex)
+      }
+      case 'tag': return this._compute(n.x[0]!, cache.with(n.tag))
+      case 'read': {
+        const computed = this._preread(cache.with(n.tag)), accu = n.accu
+
+        switch (accu) {
+          case undefined:
+            if (computed.length !== 1) {
+              const errorMsg = `Found ${computed.length} nodes while reading tag ${tagString(cache.tag)} with no accumulator`
+              if (process.env['NODE_ENV'] !== 'production')
+                throw new Error(errorMsg)
+              else console.error(errorMsg)
+            }
+            return computed[0] ?? meta(op, undefined, undefined, [], [])
+          default:
+            const val = arithmetic[accu](getV(computed) as number[], undefined)
+            return meta(accu, cache.tag, val, computed, [])
+        }
+      }
       default: assertUnreachable(op)
     }
   }
 
-  _meta(op: AnyNode['op'], tag: Tag | undefined, val: any, x: (CalcResult<any, M> | undefined)[], br: CalcResult<any, M>[], ex?: any): CalcResult<any, M> {
-    return { val, meta: this.parent.computeMeta(op, tag, val, x, br, ex) }
-  }
-
-  _leaf<V extends number | string>(op: AnyNode['op'], val: V): CalcResult<V, M> {
-    return this._meta(op, undefined, val, [], [])
-  }
-  _arithmetic(op: keyof typeof arithmetic, xIn: NumNode[], ex: any): CalcResult<number, M> {
-    const x = xIn.map(n => this.get(n))
-    return this._meta(op, undefined, arithmetic[op](getV(x), ex), x, [], ex)
-  }
-  _conditional(op: keyof typeof selectBranch, brIn: AnyNode[], xIn: AnyNode[], ex: any): CalcResult<number | string, M> {
-    const br = brIn.map(br => this.get(br)), branchID = selectBranch[op](getV(br), ex)
-    const x = [...Array(xIn.length)], result = this.get(xIn[branchID]!)
-    x[branchID] = result
-    return this._meta(op, undefined, result.val, x, br, ex)
-  }
-
-  withTag(tag: Tag): TaggedCalculator<M> {
-    return this.parent.withTag({ ...this.tag, ...tag })
-  }
-
-  _tag(xIn: AnyNode, extraTag: Tag): CalcResult<number | string, M> {
-    return this.withTag(extraTag).get(xIn)
-  }
-  _read(accu: Read['accu'], extraTag: Tag | undefined): CalcResult<number | string, M> {
-    if (extraTag && Object.keys(extraTag).length)
-      return this.parent.withTag({ ...this.tag, ...extraTag })._read(accu, undefined)
-
-    const computed = this.getAll()
-
-    let result: CalcResult<number | string, M>
-    switch (accu) {
-      case undefined:
-        if (computed.length !== 1) {
-          const errorMsg = `Found ${computed.length} nodes while reading tag ${tagString(this.tag)} with no accumulator`
-          if (process.env['NODE_ENV'] !== 'production')
-            throw new Error(errorMsg)
-          else console.error(errorMsg)
-        }
-        result = computed[0] ?? this._leaf('read', undefined as any)
-        break
-      default:
-        const val = arithmetic[accu](getV(computed) as number[], undefined)
-        result = this._meta(accu, this.tag, val, computed, [])
-    }
-    return result
+  computeMeta(_op: AnyNode['op'], _tag: Tag | undefined, _value: any, _x: (CalcResult<any, M> | undefined)[], _br: CalcResult<any, M>[], _ex: any): M {
+    return undefined as any
   }
 }

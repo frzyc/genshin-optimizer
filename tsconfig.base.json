@@ -23,7 +23,6 @@
       "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
       "@genshin-optimizer/waverider": ["libs/waverider/src"],
-      "@genshin-optimizer/waverider/*": ["libs/waverider/src/*"],
       "@genshin-optimizer/formula": ["libs/formula/src/index.ts"]
     }
   },

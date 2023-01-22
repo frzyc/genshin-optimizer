@@ -1,7 +1,7 @@
 import type { Tag } from '../tag'
 
 export function assertUnreachable(_: never): never {
-  throw new Error("Shouldn't reach this line")
+  throw new Error('Should not reach this line')
 }
 
 export const tagString = (record: Tag): string =>
