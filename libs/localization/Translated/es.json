@@ -2,10 +2,6 @@
     "artifact": {
         "editor": {
             "title": "Editor de Artefactos",
-            "set": {
-                "artifactSet": "Conjunto de Artefactos",
-                "maxRarity": "Rareza Máxima <1></1>"
-            },
             "substat": {
                 "substatFormat": "Substat {{value}}",
                 "noSubstat": "Sin Substat",
@@ -24,7 +20,6 @@
             "rarity": "Rareza",
             "level": "Nivel",
             "unknownPieceName": "Nombre de Pieza Desconocido",
-            "mainSelect": "Selecciona un Stat Principal",
             "curSubEff": "Valor de Tirada Actual",
             "curSubEffDesc": "Cada 4 niveles de mejora de artefacto, se obtiene una tirada de substat. El <strong>Valor de Tirada</strong> calcula cómo de alta fué la tirada de substat como un porcentaje.",
             "maxSubEff": "Valor de Tirada Máx.",
@@ -45,7 +40,6 @@
         "filterLocation": {
             "inventory": "Inventario",
             "currentlyEquipped": "Actualmente Equipados",
-            "any": "Cualquiera",
             "location": "Ubicación"
         },
         "button": {
@@ -56,7 +50,6 @@
             "lockArtifacts": "Bloquear Artefactos",
             "unlockrtifacts": "Desbloquear Artefactos"
         },
-        "filterLevelFormat": "Nivel <1>Bajo</1>/<3>Alto</3> (Inclusivo)",
         "buttonHint": "Nota: los botones anteriores sólo se aplican a los <1>artefactos filtrados</1>",
         "tipsOfTheDay": [
             "El VdT máximo de un artefacto de 4 estrellas es en torno al 540%.",
@@ -81,14 +74,13 @@
             "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
             "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
         },
-        "exclusionDisplay": "Exclusión: {{value}}",
         "exclusion": {
             "any": "Cualquiera",
             "excluded": "Excluído",
-            "included": "Incluído"
+            "included": "Incluído",
+            "exclusion": ""
         },
         "sortMap": {
-            "quality": "Calidad",
             "level": "Nivel",
             "efficiency": "Valor de Tirada Actual",
             "mefficiency": "Valor de Tirada Máximo"
@@ -105,9 +97,19 @@
         "excluded": "Este artefacto está excluido.",
         "included": "Este artefacto no está excluido.",
         "autocompleteLabels": {
+            "sets": "",
+            "mainStats": "",
             "substats": "Sub-atributos",
             "set": "Set de artefacto"
-        }
+        },
+        "substat_one": "",
+        "substat_other": "",
+        "addNew": "",
+        "sub_one": "",
+        "sub_other": "",
+        "cantDeleteLock": "",
+        "equippedArt": "",
+        "artInInv": ""
     },
     "languages": {
         "chs": "Chino (Simplificado)",
@@ -122,7 +124,9 @@
         "pt": "Portugués",
         "ru": "Ruso",
         "th": "Tailandés",
-        "vi": "Vietnamita"
+        "vi": "Vietnamita",
+        "it": "",
+        "tr": ""
     },
     "settings": {
         "title": "Ajustes",
@@ -135,11 +139,6 @@
             "replaceDatabase": "Reemplazar Base de Datos",
             "hint": "Cargue su archivo JSON aquí...",
             "hintPaste": "...o pegue su contenido a continuación.",
-            "goUpload": {
-                "title": "Formato <strong>Genshin Optimizer</strong>",
-                "migrate": "La base de datos será actualizada a una nueva versión. Por favor considere volver a descargar la base de datos después de importarla.",
-                "deleteDatabasePrompt": "¿Estás seguro de que quieres reemplazar tu base de datos? Todos los personajes y artefactos existentes serán eliminados."
-            },
             "error": {
                 "jsonParse": "Incapaz de analizar el archivo JSON.",
                 "unknown": "Formato de archivo desconocido.",
@@ -149,6 +148,17 @@
             "dbSource": "Origen de Datos:",
             "goodUpload": {
                 "title": "Formato <strong>Genshin Open Object Description</strong> (GOOD)"
+            },
+            "buttons": {
+                "open": "",
+                "detectDups": "",
+                "delNotInImport": ""
+            },
+            "tooltip": {
+                "detectdup": "",
+                "ignoreDup": "",
+                "delNotInImport": "",
+                "keepNotInImport": ""
             }
         },
         "count": {
@@ -160,7 +170,10 @@
             "updated": "Actualizados:",
             "removed": "Borrados:",
             "unchanged": "Sin cambios:",
-            "invalid": "No válidos:"
+            "invalid": "No válidos:",
+            "upgraded": "",
+            "dbTotal": "",
+            "notInImport": ""
         },
         "DatabaseCard": {
             "title": "Base de datos",
@@ -182,18 +195,13 @@
             "tools": "Herramientas",
             "weapons": "Armas",
             "doc": "Docs",
-            "setting": "Ajustes"
+            "setting": "Ajustes",
+            "scanner": ""
         },
         "social": {
             "paypal": "PayPal",
             "patreon": "Patreon",
             "discord": "Discord"
-        },
-        "game": {
-            "minLevel": "Nivel Mínimo",
-            "maxLevel": "Nivel Máximo",
-            "rarity": "Rareza",
-            "level": "Nivel"
         },
         "unselect": "No seleccionado",
         "ascending": "Ascendente",
@@ -222,15 +230,21 @@
             "discord": "Enlace de Invitación a Discord"
         },
         "sortBy": "Ordenar por:",
+        "delete": "",
         "locked": "Bloqueado",
-        "unlocked": "Desbloqueado"
+        "unlocked": "Desbloqueado",
+        "refinement": "",
+        "selectlevel": "",
+        "gender": {
+            "F": "",
+            "M": ""
+        }
     },
     "char_Eula": {
         "skillC": {
             "name": "Corazón impasible",
             "consumed": "Corazón impasible consumido",
             "grimheart": {
-                "name": "Cargas de corazón impasible",
                 "int": "Aumenta la RES a interrupción"
             }
         },
@@ -268,23 +282,10 @@
         "c2": {
             "hit": "Enemigo golpeado",
             "launched": "Enemigo lanzado"
-        },
-        "fullBurstDMG": {
-            "description": {
-                "0": "<strong>Daño Total de Habilidad Definitiva</strong>",
-                "1": "Esto calcula el Daño total de la Habilidad Definitiva, incluyendo Torbellino. Éste cálculo asume",
-                "2": "20 marcas de <anemo>Daño Definitivo</anemo>",
-                "3": "15 marcas de Daño de absorción",
-                "4": "7 marcas de Torbellino, para un enemigo, O,",
-                "5": "14 marcas de Torbellino, para múltiples enemigos con un elemento que causa Torbellino en AdE."
-            },
-            "dmg7": "Daño Total (7 marcas de Torbellino)",
-            "dmg14": "Daño Total (14 marcas de Torbellino)"
         }
     },
     "sheet": {
         "dmg": "Daño",
-        "hits": "Golpes",
         "lessPercentHP": "Vida menor de {{percent}}%",
         "hitOp": {
             "normal": "Ataque Normal golpea a enemigos",
@@ -301,7 +302,10 @@
             "none": "Golpes sobre enemigos",
             "normalOrCharged": "Ataque Normal / Cargado golpea a enemigos",
             "skillOrBurst": "Habilidad Elemental o Definitiva golpea a enemigos",
-            "crit": "Golpe CRIT golpea a enemigos"
+            "crit": "Golpe CRIT golpea a enemigos",
+            "normalChargedOrPlunging": "",
+            "dendro": "",
+            "normalEle": ""
         },
         "eleAbsor": "Absorción Elemental",
         "absorDot": "DoT de Absorción",
@@ -325,8 +329,6 @@
         "enemyGreaterEqPercentHP": "Enemigo con Vida mayor o igual al {{percent}}%",
         "stack_one": "{{count}} Carga",
         "stack_other": "{{count}} Cargas",
-        "member_one": "{{count}} Miembro",
-        "member_other": "{{count}} Miembros",
         "seconds_one": "{{count}} Segundo",
         "seconds_other": "{{count}} Segundos",
         "uses_one": "{{count}} Uso",
@@ -346,7 +348,6 @@
         "activeCharField": "Personaje activo en el área",
         "opponentsField": "Enemigos en el área",
         "takeDmg": "Al recibir Daño",
-        "onHit": "Al Golpear",
         "infusion": {
             "pyro": "Imbuído por Pyro",
             "cryo": "Imbuído por Cryo",
@@ -369,7 +370,6 @@
         "durationInc": "Aumento de Duración",
         "base": "Base",
         "stacks": "Cargas",
-        "members": "Miembros",
         "protectedByShield": "Protegido por un escudo",
         "protectedByShieldCrystal": "Protegido por un escudo creado por Cristalización",
         "staminaDec_": "Reducción de coste de Aguante",
@@ -380,23 +380,63 @@
             "hydro": "Absorción de Daño Hydro",
             "electro": "Absorción de Daño Electro",
             "dendro": "Absorción de Daño Dendro",
-            "geo": "Absorción de Daño Geo"
+            "geo": "Absorción de Daño Geo",
+            "none": ""
         },
         "opponentsDamaged": "Oponentes dañados",
+        "press": "",
+        "hold": "",
         "addlCharge": "Carga adicional",
+        "conditional": "",
+        "maxStacks": "",
         "1set": "1-set",
         "2set": "2-set",
         "4set": "4-set",
+        "activationStam": "",
+        "stamDrain": "",
         "talents": {
+            "auto": "",
+            "skill": "",
+            "burst": "",
+            "passive": "",
             "passive1": "Ascensión 1",
             "passive2": "Ascensión 4",
+            "passive3": "",
+            "sprint": "",
             "constellation1": "C1",
             "constellation2": "C2",
             "constellation3": "C3",
             "constellation4": "C4",
             "constellation5": "C5",
             "constellation6": "C6"
-        }
+        },
+        "swirlReaction": {
+            "hydro": "",
+            "pyro": "",
+            "electro": "",
+            "cryo": ""
+        },
+        "afterReaction": "",
+        "aoeInc": "",
+        "elementalReaction": {
+            "hydro": "",
+            "electro": ""
+        },
+        "bonusScaling": {
+            "skill_": ""
+        },
+        "energy": "",
+        "teamBuff": "",
+        "opponents_one": "",
+        "opponents_other": "",
+        "dmgMult": {
+            "normal": "",
+            "charged": "",
+            "skill": ""
+        },
+        "members": "",
+        "stamRestored": "",
+        "triggerQuota": ""
     },
     "weapon_SongOfBrokenPines": {
         "name": "Recibe efecto Gran concierto milenario: Canción de la revelación"
@@ -433,9 +473,9 @@
     "char_Yoimiya": {
         "c1": "Derrotar enemigo afectado por <strong>Ascua Dorada</strong>",
         "c2": "Golpe CRIT por <pyro>Daño Pyro</pyro>",
-        "p2": "Aumento de ATQ del equipo",
         "p2p": "Usando <strong>Saxifraga de Oro</strong>",
-        "normPyroInfus": "<pyro>Ata. Normal imbuído por Pyro</pyro>"
+        "normPyroInfus": "<pyro>Ata. Normal imbuído por Pyro</pyro>",
+        "c6Key_": ""
     },
     "char_RaidenShogun": {
         "skill": {
@@ -443,7 +483,10 @@
             "partyCost": "Coste de Energía"
         },
         "burst": {
-            "resolves": "Cargas de Ambición"
+            "resolves": "Cargas de Ambición",
+            "resolveInitial_": "",
+            "resolveInfused_": "",
+            "burstDmg": ""
         },
         "a4": {
             "enerRest": "Regeneración de Energía otorgada por <strong>Mente Onírica</strong>",
@@ -462,7 +505,8 @@
             "rush": "Hielo Galopante",
             "rushState": "Durante el estado de Hielo Galopante (1 carga / s)"
         },
-        "a1CondName": "Cuando Aloy recibe el efecto de Inducción por <strong>Campo Gélido</strong>"
+        "a1CondName": "Cuando Aloy recibe el efecto de Inducción por <strong>Campo Gélido</strong>",
+        "normCryoInfus": ""
     },
     "char_KujouSara": {
         "skill": {
@@ -478,19 +522,51 @@
     "char_SangonomiyaKokomi": {
         "burst": "Manto Ceremonial",
         "c2": "Personajes con un 50% de Vida o menos",
-        "c6": "Tras realizar ataques Normales y Cargados que curan un personaje con un 80% o más de Vida"
+        "c6": "Tras realizar ataques Normales y Cargados que curan un personaje con un 80% o más de Vida",
+        "c2SkillHeal": "",
+        "c2BurstHeal": ""
     },
     "page_home": {
         "intro": "<0>¿Qué es Genshin Optimizer?</0><1>Genshin Optimizer (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
         "quickLinksCard": {
+            "title": "",
             "buttons": {
+                "tyGuide": {
+                    "title": "",
+                    "tooltip": ""
+                },
+                "scanners": {
+                    "title": "",
+                    "tooltip": ""
+                },
                 "kqm": {
-                    "title": "KeqingMains"
+                    "title": "KeqingMains",
+                    "tooltip": ""
+                },
+                "devDiscord": {
+                    "title": "",
+                    "tooltip": ""
+                },
+                "good": {
+                    "title": "",
+                    "tooltip": ""
+                },
+                "patchNotes": {
+                    "title": "",
+                    "tooltip": ""
                 }
             }
         },
+        "inventoryCard": {
+            "title": ""
+        },
+        "vidGuideCard": {
+            "title": ""
+        },
         "teamCard": {
+            "title": "",
             "jobTitle": {
+                "leadDev": "",
                 "dev": "Desarrollador",
                 "mod": "Moderador"
             }
@@ -515,16 +591,21 @@
             "p2": "Este escáner también puede ser configurado para nuevos artefactos en versiones nuevas del juego sin necesidad de una actualización."
         },
         "goodeng": "Este escáner solamente escanea en inglés y exporta al formato GOOD.",
+        "tosWarn": "",
         "tags": {
             "pc": "PC",
             "mobile": "Móvil",
             "ps": "PlayStation",
+            "gameMani": "",
             "materials": "Materiales",
             "characters": "Personajes"
+        },
+        "nb": {
+            "title": "",
+            "p1": "",
+            "p2": "",
+            "p3": ""
         }
-    },
-    "weapon_EverlastingMoonglow": {
-        "name": "Aumento de Daño de ataque Normal"
     },
     "weapon_Akuoumaru": {
         "party": "Capacidad de Energía del equipo"
@@ -655,7 +736,8 @@
         "passive2": "Daño de invocación de Filo espiritual",
         "asc4Cond": "Enemigos golpeados por Hoja Cazaescarcha",
         "constellation1": "Daño de Cuchillas de hielo",
-        "constellation6": "Enemigo con un porcentaje de Vida máxima restante más bajo"
+        "constellation6": "Enemigo con un porcentaje de Vida máxima restante más bajo",
+        "blades": ""
     },
     "char_Diluc": {
         "skillB": {
@@ -666,7 +748,8 @@
     "char_Diona": {
         "skillDuration": "Duración por Zarpazo",
         "holdShield": "Absorción de Daño por Escudo al mantener pulsado",
-        "a1shielded": "Personaje escudado por <strong>Zarpazo helado</strong>"
+        "a1shielded": "Personaje escudado por <strong>Zarpazo helado</strong>",
+        "holdCryoShield": ""
     },
     "char_Fischl": {
         "a1Name": "Disparo Preciso completamente cargado sobre Oz - Daño de Retribución del trueno",
@@ -755,18 +838,7 @@
         "electroSigilAbsorbed": "Energía regenerada si Insignia Electro es eliminada",
         "pickUpElementalOrbParticle": "Se recoge un Orbe o Partícula Elemental",
         "opHitWithClawAndThunder": "Enemigos golpeados con <strong>Garra y trueno</strong> (Pulsar una vez)",
-        "electroSigilPerProc": "Insignias Electro cada vez",
-        "fullBurstDMG": {
-            "description": {
-                "0": "<strong>Daño Total de Habilidad Definitiva</strong>",
-                "1": "Esto calcula el daño combinado por los ataques normales de Razor durante su Habilidad Definitiva.",
-                "2": "Simplemente suma el Daño de X Golpes del acompañante junto a los correspondientes X Golpes de Daño del ataque normal que lo causa."
-            },
-            "dmg1": "Daño de Golpe Normal + Lobo 1",
-            "dmg2": "Daño de Golpe Normal + Lobo 2",
-            "dmg3": "Daño de Golpe Normal + Lobo 3",
-            "dmg4": "Daño de Golpe Normal + Lobo 4"
-        }
+        "electroSigilPerProc": "Insignias Electro cada vez"
     },
     "char_Sayu": {
         "burstHits": "Número de activaciones de Tejón daruma",
@@ -903,6 +975,14 @@
     "elementalResonance": {
         "ShatteringIce": {
             "cond": "Contra Enemigos que están Congelados o afectados por Cryo"
+        },
+        "SprawlingGreenery": {
+            "cond2ele": "",
+            "cond3ele": "",
+            "eleMas": ""
+        },
+        "EnduringRock": {
+            "hitCond": ""
         }
     },
     "weapon_AlleyHunter": {
@@ -958,12 +1038,6 @@
     "weapon_LionsRoar": {
         "condName": "Contra Enemigos Afectados por <pyro>Pyro</pyro> / <electro>Electro</electro>"
     },
-    "weapon_LithicBlade": {
-        "condName": "Total de Miembros del equipo de Liyue"
-    },
-    "weapon_LithicSpear": {
-        "condName": "Total de Miembros del equipo de Liyue"
-    },
     "weapon_MagicGuide": {
         "condName": "Contra Enemigos Afectados por <hydro>Hydro</hydro> / <electro>Electro</electro>"
     },
@@ -1000,14 +1074,12 @@
         "cryoAffectedDmg": "Daño sobre enemigos afectados por <cryo>Cryo</cryo>"
     },
     "weapon_SummitShaper": {
-        "shield": "Escudo",
         "atkEffInc": "Efecto de aumento de ATQ"
     },
     "weapon_TheAlleyFlash": {
         "condName": "Sin Daño Recibido"
     },
     "weapon_TheUnforged": {
-        "shield": "Escudo",
         "atkEffInc": "Efecto de aumento de ATQ"
     },
     "weapon_TheWidsith": {
@@ -1019,12 +1091,43 @@
         "condName": "Emblema del Trueno"
     },
     "weapon_VortexVanquisher": {
-        "shield": "Escudo",
         "atkEffInc": "Efecto de aumento de ATQ"
     },
     "artifact_EchoesOfAnOffering": {
+        "mode": "",
         "avg": "Promedio",
         "always": "Siempre"
+    },
+    "char_KamisatoAyato": {
+        "skill": {
+            "unableToAuto": "",
+            "namisenStacks": "",
+            "shun_dmgInc": ""
+        },
+        "passive1": {
+            "afterUse": "",
+            "afterExplode": ""
+        },
+        "c1": {
+            "shun_dmg_": ""
+        },
+        "c2": {
+            "addlStacks": ""
+        },
+        "c6": {
+            "dmg": ""
+        }
+    },
+    "char_KukiShinobu": {
+        "skill": {
+            "cost": ""
+        },
+        "a4": {
+            "heal": ""
+        },
+        "c4": {
+            "dmg": ""
+        }
     },
     "char_Yelan": {
         "c2": {
@@ -1034,7 +1137,8 @@
             "condName": "Número de oponentes marcados por Atadura Salvavidas"
         },
         "c6": {
-            "condName": "En estado de planificación táctica"
+            "condName": "En estado de planificación táctica",
+            "dmg": ""
         }
     },
     "page_character": {
@@ -1042,7 +1146,9 @@
         "tabs": {
             "overview": "General",
             "talent": "Talentos",
-            "optimize": "Optimizar"
+            "teambuffs": "",
+            "optimize": "Optimizar",
+            "theorycraft": ""
         },
         "formulas": "Fórmulas",
         "calculations": "Cálculos",
@@ -1065,8 +1171,29 @@
         },
         "characterName": "Nombre del personaje",
         "teammate": "Compañero {{count}}",
-        "none": "Ninguno",
-        "noReaction": "Sin reacciones"
+        "noReaction": "Sin reacciones",
+        "multiTarget": {
+            "title": "",
+            "addNewTarget": "",
+            "addNewMTarget": ""
+        },
+        "addStats": {
+            "title": ""
+        },
+        "tabTheorycraft": {
+            "substatType": {
+                "min": "",
+                "max": "",
+                "mid": ""
+            },
+            "maxTotalRolls": "",
+            "maxRolls": "",
+            "maxRollsMain": ""
+        },
+        "tabTeambuff": {
+            "team_reso": "",
+            "resonance_tip": ""
+        }
     },
     "page_weapon": {
         "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} arma",
@@ -1076,16 +1203,78 @@
         "removeWeapon": "¿Estás seguro que quieres remover {{value}}?",
         "addWeapon": "Añadir nueva arma"
     },
+    "weapon_AquaSimulacra": {
+        "condName": ""
+    },
+    "weapon_FadingTwilight": {
+        "states": {
+            "evengleam": "",
+            "afterglow": "",
+            "dawnblaze": ""
+        },
+        "condName": ""
+    },
+    "weapon_HaranGeppakuFutsu": {
+        "consumed": ""
+    },
+    "char_Collei": {
+        "sproutDmg": "",
+        "miniAnbarDmg": ""
+    },
+    "char_Dori": {
+        "c2MultiplierKey_": "",
+        "c2DmgKey": "",
+        "c4ConnectedBelowHp": "",
+        "c4ConnectedBelowEner": "",
+        "c6Heal": ""
+    },
+    "char_ShikanoinHeizou": {
+        "declensionStacks": "",
+        "takingField": ""
+    },
+    "char_Tighnari": {
+        "p1Cond": "",
+        "c4ReactCond": "",
+        "c6DmgKey": "",
+        "c6WreathRed": ""
+    },
     "page_character_optimize": {
+        "mainStat": {
+            "levelAssTooltip": {
+                "title": "",
+                "desc": ""
+            },
+            "assumptionLvl": {
+                "no": "",
+                "lvl": ""
+            }
+        },
+        "tcGraph": {
+            "vs": "",
+            "notSel": "",
+            "downloadData": "",
+            "desc": "",
+            "showStatThr": "",
+            "generatedBuilds": "",
+            "statReqThr": "",
+            "currentBuild": "",
+            "highlightedBuilds": "",
+            "buildAlreadyInList": ""
+        },
         "levelFilter": "Filtro de nivel de artefactos",
         "useExcluded": {
             "title": "Usar artefactos excluidos",
             "usingNum_one": "Usando <1>{{count}}</1> artefacto excluido",
-            "usingNum_other": "Usando <1>{{count}}</1> artefactos excluidos"
+            "usingNum_other": "Usando <1>{{count}}</1> artefactos excluidos",
+            "excNum_one": "",
+            "excNum_other": ""
         },
         "useEquipped": {
             "title": "Usar artefactos equipados",
             "modal": {
+                "title": "",
+                "desc1": "",
+                "desc2": "",
                 "usingNum_one": "Usando artefactos de <1>{{count}}</1> personaje",
                 "usingNum_other": "Usando artefactos de <1>{{count}}</1> personajes no listados",
                 "status": {
@@ -1096,16 +1285,228 @@
                 "add": "Añadir personaje a la lista",
                 "clearList": "Limpiar lista"
             },
-            "usingNum_one": "Usando de <1>{{count}}</1> personaje",
-            "usingNum_other": "Usando de <1>{{count}}</1> personajes"
+            "usingNumTot_one": "",
+            "usingNumTot_other": ""
+        },
+        "allowPartial": "",
+        "constraintFilter": {
+            "title": "",
+            "tooltip": ""
         },
         "artSetConfig": {
             "title": "Ajustes de sets de artefactos",
+            "setEffCond": "",
+            "enabled": "",
             "allowed": "Permitido(s)",
             "excluded": "Excluido(s)",
             "selected": "Seleccionado(s)",
+            "2rainbow": "",
+            "4rainbow": "",
             "allowAll2set": "Permitir todos los 2-sets",
-            "excludeAll2set": "Excluir todos los 2-sets"
+            "excludeAll2set": "Excluir todos los 2-sets",
+            "allowAll4set": "",
+            "excludeAll4set": "",
+            "alExRainbow": "",
+            "modal": {
+                "setCond": {
+                    "title": "",
+                    "reset": "",
+                    "text": ""
+                },
+                "ArtSetFilter": {
+                    "title": "",
+                    "intro": "",
+                    "2set": "",
+                    "4set": "",
+                    "2rain": "",
+                    "4rain": ""
+                }
+            }
+        },
+        "buildDropdownDesc": "",
+        "threadDropdownDesc": "",
+        "noArtis": "",
+        "build_one": "",
+        "build_other": "",
+        "thread_one": "",
+        "thread_other": "",
+        "targetSelector": {
+            "selectOptTarget": "",
+            "selectGraphTarget": "",
+            "invalidTarget": "",
+            "selectBuildTarget": ""
+        },
+        "selectTargetFirst": "",
+        "generateButton": {
+            "cancel": "",
+            "generateBuilds": ""
+        },
+        "removeBuildButton": "",
+        "theorycraftButton": "",
+        "currentlyEquippedBuild": "",
+        "addBuildToList": "",
+        "graphBuildLabel": "",
+        "workerLoadFailed": ""
+    },
+    "weapon_CalamityQueller": {
+        "inactiveKey": ""
+    },
+    "weapon_ForestRegalia": {
+        "condName": ""
+    },
+    "weapon_FruitOfFulfillment": {
+        "stackName": ""
+    },
+    "weapon_Moonpiercer": {
+        "condName": ""
+    },
+    "weapon_SapwoodBlade": {
+        "condName": ""
+    },
+    "char_TravelerAnemo": {
+        "p1": "",
+        "c6": "",
+        "c4": "",
+        "initialEleDmg": "",
+        "maxEleDmg": ""
+    },
+    "char_TravelerElectro": {
+        "skill": {
+            "amuletGenAmt": "",
+            "absorb": ""
+        },
+        "burst": {
+            "3rd": "",
+            "thunderCd": ""
+        },
+        "passive2": {
+            "enerRech_": ""
+        },
+        "c2": {
+            "thunderHit": ""
         }
+    },
+    "char_TravelerGeo": {
+        "passive2": {
+            "key": ""
+        },
+        "c2": {
+            "key": ""
+        }
+    },
+    "page_newTab": {
+        "title": "",
+        "p1": "",
+        "symptom": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": ""
+        },
+        "p2": "",
+        "choice": {
+            "1": "",
+            "2": ""
+        },
+        "refresh": ""
+    },
+    "char_Candace": {
+        "hydroInfusion": ""
+    },
+    "char_Cyno": {
+        "p1Dmg": "",
+        "judication": "",
+        "burstNormalDmgInc": "",
+        "boltDmgInc": ""
+    },
+    "char_Nilou": {
+        "skill": {
+            "dance1": "",
+            "dance2": "",
+            "whirl1": "",
+            "whirl2": "",
+            "moon": "",
+            "wheel": ""
+        },
+        "passive1": {
+            "underChaliceEffect": "",
+            "notDendroHydroTeam": "",
+            "condName": "",
+            "bountifulCores": ""
+        },
+        "c1": {
+            "moon_dmg_": ""
+        },
+        "c4": {
+            "condName": ""
+        }
+    },
+    "weapon_MakhairaAquamarine": {
+        "condName": ""
+    },
+    "weapon_WanderingEvenstar": {
+        "condName": ""
+    },
+    "weapon_XiphosMoonlight": {
+        "condName": ""
+    },
+    "char_Nahida": {
+        "karmaDmg_": "",
+        "karmaCritRate_": "",
+        "karmaIntervalDec": "",
+        "noBurstEffect": "",
+        "partyInBurst": "",
+        "c1Key": "",
+        "c2": {
+            "bloomCondName": "",
+            "qasCondName": ""
+        },
+        "c4CondName": "",
+        "c6KarmicDmg": ""
+    },
+    "artifact_FlowerOfParadiseLost": {
+        "condName": ""
+    },
+    "char_Faruzan": {
+        "giftCondName": "",
+        "a4CondName": "",
+        "c2DurationInc": "",
+        "c6Arrow": ""
+    },
+    "char_Layla": {
+        "starDmgInc": "",
+        "c1ShieldBonusKey_": "",
+        "c4CondKey": "",
+        "starDmg_": "",
+        "slugDmg_": "",
+        "starInterval_": ""
+    },
+    "char_Wanderer": {
+        "windfavoredState": "",
+        "p1": {
+            "pyroCondName": "",
+            "cryoCondName": ""
+        },
+        "p2Dmg": "",
+        "c1BonusKey": "",
+        "c2CondName": "",
+        "c6Key": ""
+    },
+    "weapon_ToukabouShigure": {
+        "condName": ""
+    },
+    "char_Alhaitham": {
+        "withMirrors": "",
+        "debateStacks": "",
+        "mirrorsConsumed": "",
+        "projectionAttack_dmg_": "",
+        "excessMirror": ""
+    },
+    "char_Yaoyao": {
+        "a4Heal": "",
+        "inExplosionAoE": "",
+        "inLegacy": "",
+        "megaDmg": "",
+        "megaHeal": ""
     }
 }
