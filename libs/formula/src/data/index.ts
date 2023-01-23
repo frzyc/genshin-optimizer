@@ -5,7 +5,6 @@ import common from "./common"
 import { Data, fixedQueries, fixedTags, usedCustomTags, usedNames } from "./util"
 import weapon from "./weapon"
 
-
 const data: Data = [...common, ...artifact, ...character, ...weapon]
 const tags = [
   ...Object.entries(fixedTags).map(([k, v]) => ({ category: k, values: v })),

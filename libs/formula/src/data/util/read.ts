@@ -9,8 +9,8 @@ export const fixedTags = {
   tran: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions
 } as const
 export type Tag = {
-  [key in keyof typeof fixedTags]?: typeof fixedTags[key][number]
-} & { name?: string, q?: string } &
+  [key in keyof typeof fixedTags]?: typeof fixedTags[key][number] | null
+} & { name?: string | null, q?: string | null } &
   ( // Permissible queries by query type
     { qt: 'base' | 'premod' | 'final', q: Stat } |
     { qt: 'char', q: CharacterStat } |
@@ -20,9 +20,12 @@ export type Tag = {
     { qt: 'common', q: CommonQuery } |
     { qt: 'dmg', q: DmgQuery } |
     { qt: 'misc', q: string } |
+    { qt: null, q: null } |
     { qt?: never, q?: never }
   )
-export type AllTag = Required<Tag>
+export type AllTag = {
+  [key in keyof Tag]-?: Exclude<Tag[key], null>
+}
 
 export class Read implements Base {
   op = 'read' as const

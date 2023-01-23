@@ -1,7 +1,8 @@
-import { AnyNode, Calculator, compileTagMapValues, constant, ReRead, TagMap, traverse } from "@genshin-optimizer/waverider";
-import { createSubsetCache, TagMapSubsetCache } from "../../waverider/src/tag/map/cache";
+import { AnyNode, Calculator, compileTagMapValues, constant, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from "@genshin-optimizer/waverider";
 import { keys, values } from "./data";
 import { Data, Preset, read, reader, Tag } from "./data/util";
+
+const tagKeys = new TagMapKeys(keys)
 
 describe('Genshin Database', () => {
   const data: Data = [], active: Preset[] = ['preset0'], team: Preset[] = ['preset0', 'preset1']
@@ -85,23 +86,24 @@ describe('Genshin Database', () => {
   }
 
   {
-    // Team
+    // Team Buff
     for (const dst of team) {
       const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
       data.push(...team.map(src =>
         entry.reread(reader.withTag({ preset: src, dst, et: 'teamBuff', src: 'agg' }))
       ))
     }
+    // Active Member Buff
     for (const dst of active) {
       const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
       data.push(...team.map(src =>
         entry.reread(reader.withTag({ preset: src, dst, et: 'active', src: 'agg' }))))
     }
-
+    // Total Team Stat
     for (const dst of team) {
       const entry = reader.withTag({ preset: dst, et: 'self', src: 'team' })
       data.push(...team.map(src =>
-        entry.reread(reader.withTag({ preset: src, et: 'self', src: 'agg' }))))
+        entry.reread(reader.withTag({ dst: null, preset: src, et: 'self', src: 'agg' }))))
     }
   }
 
@@ -112,11 +114,11 @@ describe('Genshin Database', () => {
   const nilou = reader.withTag({ preset: 'preset1', et: 'self', src: 'agg' })
 
   test('Basic Query', () => {
-    expect(calc.compute(nilou.final.hp).val.toFixed(1)).toEqual("9479.7")
-    expect(calc.compute(nahida.final.atk).val).toBeCloseTo(346.21)
-    expect(calc.compute(nahida.final.def).val).toBeCloseTo(94.15)
-    expect(calc.compute(nahida.final.eleMas).val).toBeCloseTo(28.44)
-    expect(calc.compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10)
+    expect(calc.compute(nilou.final.hp).val).toBeCloseTo(9479.7, 1)
+    expect(calc.compute(nahida.final.atk).val).toBeCloseTo(346.21, 2)
+    expect(calc.compute(nahida.final.def).val).toBeCloseTo(94.15, 2)
+    expect(calc.compute(nahida.final.eleMas).val).toBeCloseTo(28.44, 2)
+    expect(calc.compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(1.10, 2)
     expect(calc.compute(nahida.common.cappedCritRate_).val).toBe(0.90)
     expect(calc.compute(nahida.common.cappedCritRate_.burgeon).val).toBe(1)
     expect(calc.compute(nahida.withTag({ src: 'team' }).team.count.dendro).val).toBe(1)
@@ -128,41 +130,37 @@ describe('Genshin Database', () => {
 function dependencyString(tag: Tag, calc: Calculator) {
   const str = listDependencies(tag, calc).map(({ tag, read, reread }) => {
     const result: any = { tag: tagString(tag) }
-    if (read.length) result.dep = read.map(tagString)
-    if (reread.length) result.re = reread.map(tagString)
+    if (read.length || reread.length)
+      result.deps = [
+        ...read.map(tagString),
+        ...reread.map(tagString),
+      ]
     return result
   })
   return str
 }
 function tagString(tag: Tag): string {
-  return `{ ${Object.entries(tag).map(([k, v]) => `${k}:${v}`).join(" ")} }`
+  return `${Object.entries(tag).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(" ")}`
 }
 
-let lastID = 1
 function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], reread: Tag[] }[] {
-  const result: { tag: Tag, read: Tag[], reread: Tag[] }[] = []
-  const translation = new TagMap<number>(keys, []), visited: Set<number> = new Set(), visiting: Tag[] = [], visitingID = new Set<number>()
-  function getID(tag: Tag): number {
-    let cache = translation.refExact(tag)
-    if (!cache.length) cache[0] = lastID++
-    return cache[0]
-  }
+  const result: { tag: Tag, read: Tag[], reread: Tag[] }[] = [], stack: Tag[] = []
+  /** Stack depth when first encountered the tag, or 0 if already visited */
+  const openDepth = new TagMapExactValues<number>(keys.tagLen, {})
 
   function internal(cache: TagMapSubsetCache<AnyNode | ReRead>) {
-    const nodes = cache.subset(), tag = cache.tag
+    const tag = cache.tag, depth = openDepth.refExact(tagKeys.get(tag))
+    if (depth[0] > 0) {
+      console.log(stack.slice(depth[0] - 1))
+      throw new Error("Cyclical dependencies found")
+    } else if (depth[0] == 0)
+      return // Already visited
+    depth[0] = stack.push(tag)
+
+    const nodes = cache.subset(), read: Tag[] = [], reread: Tag[] = []
     const n = nodes.filter(x => x.op !== 'reread') as AnyNode[]
     const re = nodes.filter(x => x.op === 'reread') as ReRead[]
-    const read: Tag[] = [], reread: Tag[] = []
     result.push({ tag, read, reread })
-
-    const id = getID(tag)
-    if (visited.has(id)) return
-    if (visitingID.has(id)) {
-      console.log(visiting, tag)
-      throw "Cyclical dependencies found"
-    }
-    visitingID.add(id)
-    visiting.push(tag)
 
     const tags = [tag]
     traverse(n, (n, map) => {
@@ -174,7 +172,7 @@ function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], 
           return
         }
         case 'tag': {
-          tags.push({ ...tags[tags.length - 1], ...n.tag })
+          tags.push({ ...tags.at(-1), ...n.tag })
           map(n.x[0])
           tags.pop()
           return
@@ -186,14 +184,13 @@ function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], 
 
     for (const { tag: extra } of re) {
       const newTag = cache.with(extra)
-      internal(cache.with(extra))
+      internal(newTag)
       reread.push(newTag.tag)
     }
 
-    visiting.pop()
-    visitingID.delete(id)
-    visited.add(id)
+    depth[0] = 0
+    stack.pop()
   }
-  internal(createSubsetCache(calc.keys, calc.nodes).with(tag))
+  internal(calc.nodes.cache(calc.keys).with(tag))
   return result
 }
