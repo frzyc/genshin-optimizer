@@ -17,7 +17,7 @@ export const summableQueries = new Set([...stats, 'stamina', 'auto', 'skill', 'b
 
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
 export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'target'] as const
-export const srcs = [...characters, ...weapons, ...arts, 'char', 'weapon', 'art', 'enemy', 'custom', 'agg', 'team'] as const
+export const srcs = [...characters, ...weapons, ...arts, 'art', 'enemy', 'custom', 'agg', 'team'] as const
 export const dsts = presets
 
 export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const

@@ -20,7 +20,7 @@ describe('Genshin Database', () => {
         }
       } = read(name, r)
       data.push(
-        r.with('src', 'char').reread(r.with('src', name)),
+        r.with('src', 'agg').reread(r.with('src', name)),
 
         lvl.addNode(constant(12)),
         ascension.addNode(constant(0)),
@@ -36,7 +36,7 @@ describe('Genshin Database', () => {
         output: { selfBuff: { weapon: { lvl, ascension, refinement } } }
       } = read(name, r)
       data.push(
-        r.with('src', 'weapon').reread(r.with('src', name)),
+        r.with('src', 'agg').reread(r.with('src', name)),
 
         lvl.addNode(constant(42)),
         ascension.addNode(constant(2)),
@@ -59,7 +59,7 @@ describe('Genshin Database', () => {
       } = read('Nilou', r)
 
       data.push(
-        r.with('src', 'char').reread(r.with('src', name)),
+        r.with('src', 'agg').reread(r.with('src', name)),
 
         lvl.addNode(constant(33)),
         ascension.addNode(constant(1)),
@@ -75,7 +75,7 @@ describe('Genshin Database', () => {
       } = read(name, r)
 
       data.push(
-        r.with('src', 'weapon').reread(r.with('src', name)),
+        r.with('src', 'agg').reread(r.with('src', name)),
 
         lvl.addNode(constant(59)),
         ascension.addNode(constant(3)),

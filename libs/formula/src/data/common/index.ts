@@ -20,12 +20,6 @@ const data: Data = [
   // Capped CR = Max(Min(Final CR, 1), 0)
   self.common.cappedCritRate_.addNode(max(min(self.final.critRate_, percent(1)), percent(0))),
 
-  // agg <= char + weapon + art + custom
-  srcs.agg.reread(srcs.char),
-  srcs.agg.reread(srcs.weapon),
-  srcs.agg.reread(srcs.art),
-  srcs.agg.reread(srcs.custom),
-
   ...presets.map(dst =>
     reader.withTag({ dst, et: 'target' }).reread(self.withTag({ dst: null as any, et: 'self' }))),
 ]
