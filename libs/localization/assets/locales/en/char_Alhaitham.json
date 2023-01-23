@@ -1,8 +1,8 @@
 {
   "withMirrors": "In possession of Chisel-Light Mirrors",
   "debateStacks": "After generating Chisel-Light Mirrors",
-  "mirrorsConsumed": "After unleashing <strong>Particular Field: Fetters of Phenomena</strong> and consuming Mirrors",
+  "mirrorsConsumed": "Mirrors consumed after unleashing <strong>Particular Field: Fetters of Phenomena</strong>",
   "projectionDmg": "Projection Attack DMG",
   "projectionAttack_dmg_": "Projection Attack DMG Bonus",
-  "excessMirror": "After a Chisel-Light Mirror is generated when they have reached their maximum amount"
+  "excessMirror": "After a Chisel-Light Mirror is generated when their amount has reached its limit"
 }
