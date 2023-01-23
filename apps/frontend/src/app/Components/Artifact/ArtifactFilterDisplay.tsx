@@ -123,7 +123,6 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     if (filteredIds.includes(id)) ct[lk].current++
   })), [database, filteredIds])
 
-  const [locationsTooltipOpen, setlocationsTooltipOpen] = useState(false)
   return <Grid container spacing={1}>
     {/* left */}
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
@@ -173,11 +172,11 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <ArtifactMainStatMultiAutocomplete totals={artMainTotal} mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
       <ArtifactSubstatMultiAutocomplete totals={artSubTotal} substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
       <Suspense fallback={null}>
-        <BootstrapTooltip title={t`locationsTooltip`} placement="top" open={showEquipped ? locationsTooltipOpen : false} disableInteractive arrow>
-          <Box component="span" onMouseOver={() => setlocationsTooltipOpen(true)} onMouseLeave={() => setlocationsTooltipOpen(false)} >
+        <BootstrapTooltip title={showEquipped ? t`locationsTooltip` : ""} placement="top">
+          <span>
             <LocationFilterMultiAutocomplete totals={locationTotal} locations={showEquipped ? [] : locations} setLocations={locations =>
               filterOptionDispatch({ locations })} disabled={showEquipped} />
-          </Box>
+          </span>
         </BootstrapTooltip>
       </Suspense>
     </Grid>
