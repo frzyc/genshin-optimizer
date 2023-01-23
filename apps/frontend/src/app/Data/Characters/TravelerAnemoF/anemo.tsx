@@ -9,14 +9,13 @@ import { cond, stg, st, trans } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
-import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "anemo"
   const condCharKey = "TravelerAnemo"
   const [, ch] = trans("char", condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
 
   let s = 0, b = 0
   const dm = {

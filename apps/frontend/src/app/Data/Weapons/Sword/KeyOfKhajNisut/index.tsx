@@ -6,9 +6,7 @@ import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "KeyOfKhajNisut"
 const data_gen = data_gen_json as WeaponData
@@ -54,13 +52,11 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 })
 
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, st("base")),
     fields: [{ node: hp_ }]
   }, {
-    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    header: headerTemplate(key, st("stacks")),
     teamBuff: true,
     path: condAfterSkillStacksPath,
     value: condAfterSkillStacks,
@@ -79,7 +75,7 @@ const sheet: IWeaponSheet = {
       }
     ]))
   }, {
-    header: headerTemplate(key, icon, iconAwaken, st("teamBuff")),
+    header: headerTemplate(key, st("teamBuff")),
     canShow: equal(condAfterSkillStacks, "3", 1),
     teamBuff: true,
     fields: [{

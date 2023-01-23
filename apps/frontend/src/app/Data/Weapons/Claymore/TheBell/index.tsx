@@ -6,9 +6,7 @@ import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "TheBell"
 const data_gen = data_gen_json as WeaponData
@@ -29,12 +27,10 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   shield
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("takeDmg"),
     states: {
       on: {
@@ -50,7 +46,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condWithShield,
     path: condWithShieldPath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("protectedByShield"),
     states: {
       protected: {

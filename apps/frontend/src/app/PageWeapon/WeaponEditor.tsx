@@ -1,3 +1,4 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, Typography } from "@mui/material"
 import React, { useCallback, useContext, useEffect, useMemo } from "react"
@@ -56,7 +57,7 @@ export default function WeaponEditor({
   const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
-  const img = weaponSheet?.getImg(ascension)
+  const img = key ? weaponAsset(key, ascension >= 2) : ""
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {

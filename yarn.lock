@@ -3830,10 +3830,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.11.9":
-  version: 18.11.9
-  resolution: "@types/node@npm:18.11.9"
-  checksum: cc0aae109e9b7adefc32eecb838d6fad931663bb06484b5e9cbbbf74865c721b03d16fd8d74ad90e31dbe093d956a7c2c306ba5429ba0c00f3f7505103d7a496
+"@types/node@npm:18.7.1":
+  version: 18.7.1
+  resolution: "@types/node@npm:18.7.1"
+  checksum: f1e2b701b107f97be01da4c46845cd23bcdcb2865f9abbb2847546d09587e726ea207daca6f0d1e72196875ef8c62feeeff5f1c1f2070445acd6d1a61d815c7c
   languageName: node
   linkType: hard
 
@@ -8127,12 +8127,13 @@ __metadata:
     "@nrwl/react": 15.4.2
     "@nrwl/vite": 15.4.2
     "@nrwl/web": 15.4.2
+    "@nrwl/webpack": 15.4.2
     "@nrwl/workspace": 15.4.2
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.7
     "@svgr/webpack": ^6.1.2
     "@testing-library/react": 13.4.0
     "@types/jest": 28.1.1
-    "@types/node": 18.11.9
+    "@types/node": 18.7.1
     "@types/react": 18.0.25
     "@types/react-dom": 18.0.9
     "@typescript-eslint/eslint-plugin": ^5.36.1

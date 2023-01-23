@@ -24,7 +24,7 @@ import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
 import { CharacterKey, charKeyToCharName } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
-import CharSelectDropdown from './CharSelectDropdown';
+import CharSelectButton from './CharSelectButton';
 import FormulaModal from './FormulaModal';
 import StatModal from './StatModal';
 import TabBuild from './Tabs/TabOptimize';
@@ -109,7 +109,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
         <FormulaDataWrapper><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Box display="flex" >
             <Box display="flex" gap={1} flexWrap="wrap" flexGrow={1}>
-              <CharSelectDropdown />
+              <CharSelectButton />
               <TravelerElementSelect />
               <TravelerGenderSelect />
               <DetailStatButton />

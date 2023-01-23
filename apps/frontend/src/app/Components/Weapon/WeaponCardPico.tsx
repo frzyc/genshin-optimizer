@@ -1,3 +1,4 @@
+import { weaponAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
@@ -26,7 +27,7 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
       <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
         <Box
           component="img"
-          src={weaponSheet.getImg(weapon.ascension)}
+          src={weaponAsset(weapon.key, weapon.ascension >= 2)}
           maxWidth="100%"
           maxHeight="100%"
           sx={{ mt: "auto" }}

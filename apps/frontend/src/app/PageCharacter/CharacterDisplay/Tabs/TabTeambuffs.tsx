@@ -2,6 +2,7 @@ import { PersonAdd } from "@mui/icons-material";
 import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import CardLight from "../../../Components/Card/CardLight";
 import CharacterCard from "../../../Components/Character/CharacterCard";
 import ThumbSide from "../../../Components/Character/ThumbSide";
@@ -174,7 +175,7 @@ function TeammateAutocomplete({ characterKey, team, label, setChar, autoComplete
   const { gender } = useDBMeta()
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${characterSheets?.(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
-  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets(key, gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
+  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterAsset(characterKey, "iconSide", gender)} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.charMeta.get(key).favorite, [database])
   const onDisable = useCallback(({ key }: { key: CharacterKey | "" }) => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
   const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(() => database.chars.keys

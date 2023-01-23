@@ -1,5 +1,6 @@
 import { faBan, faChartLine, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
@@ -70,7 +71,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
 
   if (!art) return null
 
-  const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
+  const { id, lock, slotKey, setKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
 
@@ -124,7 +125,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
             <Box
               component="img"
-              src={sheet?.slotIcons[slotKey] ?? ""}
+              src={artifactAsset(setKey, slotKey)}
               width="auto"
               height="100%"
               sx={{ float: "right" }}

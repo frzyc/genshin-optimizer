@@ -8,14 +8,13 @@ import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = "Yoimiya"
 const elementKey: ElementKey = "pyro"
 const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 const dm = {
   normal: {
@@ -350,4 +349,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, dataObj, assets)
+export default new CharacterSheet(sheet, dataObj)

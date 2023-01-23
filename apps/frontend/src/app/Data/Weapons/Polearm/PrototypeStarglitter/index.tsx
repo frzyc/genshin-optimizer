@@ -6,9 +6,7 @@ import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "PrototypeStarglitter"
 const data_gen = data_gen_json as WeaponData
@@ -24,12 +22,10 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
   },
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condStack,
     path: condStackPath,
-    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    header: headerTemplate(key, st("stacks")),
     name: st("afterUse.skill"),
     states: Object.fromEntries(range(1, 2).map(i => [i, {
       name: st("stack", { count: i }),

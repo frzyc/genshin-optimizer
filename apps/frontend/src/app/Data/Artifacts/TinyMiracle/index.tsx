@@ -7,10 +7,9 @@ import { allElements, ArtifactSetKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "TinyMiracle"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 const [, trm] = trans("artifact", key)
 const [condElePath, condEle] = cond(key, "element")
 
@@ -33,7 +32,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Tiny Miracle", rarity: [3, 4],
-  icons,
   setEffects: {
     2: {
       document: [{

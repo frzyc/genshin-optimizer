@@ -1,10 +1,11 @@
 import { AutocompleteRenderGroupParams, Box, Chip, List, ListSubheader } from "@mui/material"
 import { useCallback, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
+import { artifactDefIcon, ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
 import usePromise from "../../ReactHooks/usePromise"
 import { ArtifactRarity, ArtifactSetKey } from "../../Types/consts"
 import { GeneralAutocompleteMulti } from "../GeneralAutocomplete"
+import ImgIcon from "../Image/ImgIcon"
 import { StarsDisplay } from "../StarDisplay"
 import sortByRarityAndName from "./sortByRarityAndName"
 
@@ -16,10 +17,7 @@ export default function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys
   const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const { t } = useTranslation(["artifact", "artifactNames_gen"])
 
-  const toImg = useCallback(
-    (key: ArtifactSetKey) => artifactSheets?.(key).defIcon,
-    [artifactSheets],
-  )
+  const toImg = useCallback((key: ArtifactSetKey) => <ImgIcon src={artifactDefIcon(key)} sx={{ fontSize: "1.5em" }} />, [])
   const toExLabel = useCallback((key: ArtifactSetKey) => <strong>{totals[key]}</strong>, [totals],)
   const toExItemLabel = useCallback((key: ArtifactSetKey) => <Chip size="small" label={totals[key]} />, [totals],)
 

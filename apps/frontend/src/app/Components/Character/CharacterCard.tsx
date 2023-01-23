@@ -1,3 +1,4 @@
+import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
@@ -159,14 +160,16 @@ function Header({ children, characterKey, onClick }: { children: JSX.Element, ch
           left: 0, top: 0,
           width: "100%", height: "100%",
           opacity: 0.7,
-          backgroundImage: `url(${characterSheet.bannerImg})`, backgroundPosition: "center", backgroundSize: "cover",
+          backgroundImage: `url(${characterAsset(characterKey, "banner", gender)})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }
       }}
       width="100%" >
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
         <Box
           component="img"
-          src={characterSheet.thumbImg}
+          src={characterAsset(characterKey, "icon", gender)}
           width="100%"
           height="auto"
           maxWidth={256}

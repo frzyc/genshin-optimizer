@@ -2,6 +2,7 @@ import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
 import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
 import CharacterCard from "../Components/Character/CharacterCard";
@@ -167,14 +168,14 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
                 left: 0, top: 0,
                 width: "100%", height: "100%",
                 opacity: 0.5,
-                backgroundImage: `url(${characterSheet?.bannerImg})`, backgroundPosition: "center", backgroundSize: "cover",
+                backgroundImage: `url(${characterAsset(characterKey, "banner", gender)})`, backgroundPosition: "center", backgroundSize: "cover",
               }
             }}
             width="100%" >
             <Box flexShrink={1} sx={{ maxWidth: { xs: "33%", lg: "30%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
               <Box
                 component="img"
-                src={characterSheet?.thumbImg}
+                src={characterAsset(characterKey, "icon", gender)}
                 width="100%"
                 height="auto"
                 maxWidth={256}

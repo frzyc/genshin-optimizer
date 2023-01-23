@@ -7,10 +7,9 @@ import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "VermillionHereafter"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.VermillionHereafter, 2, percent(0.18), KeyMap.info("atk_"))
 const [condAfterBurstPath, condAfterBurst] = cond(key, "afterBurst")
@@ -33,7 +32,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 })
 const sheet: IArtifactSheet = {
   name: "Vermillion Hereafter", rarity: [4, 5],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

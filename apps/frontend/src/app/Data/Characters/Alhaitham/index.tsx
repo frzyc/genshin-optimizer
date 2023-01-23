@@ -7,7 +7,6 @@ import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -15,7 +14,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Alhaitham"
 const elementKey: ElementKey = "dendro"
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = -1, s = -1, b = -1
 const dm = {
@@ -330,4 +329,4 @@ const sheet: ICharacterSheet = {
   }
 }
 
-export default new CharacterSheet(sheet, data, assets)
+export default new CharacterSheet(sheet, data)

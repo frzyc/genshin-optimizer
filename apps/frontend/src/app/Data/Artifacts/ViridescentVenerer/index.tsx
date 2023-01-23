@@ -6,10 +6,9 @@ import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 import { condReadNode, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
 const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
@@ -35,7 +34,7 @@ const data: Data = dataObjForArtifactSheet(key, {
 })
 
 const sheet: IArtifactSheet = {
-  name: "Viridescent Venerer", rarity: [4, 5], icons,
+  name: "Viridescent Venerer", rarity: [4, 5],
   setEffects: {
     2: {
       document: [{

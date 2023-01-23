@@ -8,14 +8,13 @@ import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = "Diluc"
 const elementKey: ElementKey = "pyro"
 const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0, c2i = 0, c6i = 0
 const dm = {
@@ -295,4 +294,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data, assets);
+export default new CharacterSheet(sheet, data);

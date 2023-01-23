@@ -6,9 +6,7 @@ import { allElements, WeaponKey } from '../../../../Types/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "AThousandFloatingDreams"
 const data_gen = data_gen_json as WeaponData
@@ -52,17 +50,15 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
   }
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, st("base")),
     fields: [{
       node: self_eleMas
     },
     ...Object.values(self_eleDmg_).map(node => ({ node }))
     ]
   }, {
-    header: headerTemplate(key, icon, iconAwaken, st("teamBuff")),
+    header: headerTemplate(key, st("teamBuff")),
     teamBuff: true,
     fields: [{
       node: team_eleMasDisp

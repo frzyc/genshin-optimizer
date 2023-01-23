@@ -1,13 +1,10 @@
-import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarTalentExcelConfigData, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, avatarSkillDepotExcelConfigData, proudSkillExcelConfigData, avatarSkillExcelConfigData, weaponExcelConfigData } from '@genshin-optimizer/dm'
-import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
+import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, proudSkillExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, weaponExcelConfigData } from '@genshin-optimizer/dm'
+import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import fs = require('fs')
 import path = require("path")
 
 export const PROJ_PATH = `${__dirname}/../../../../../libs/g-assets/src` as const
-
-type WeaponIcon = { icon: string, awakenIcon: string }
-type WeaponIconData = { [key: string]: WeaponIcon }
 
 type CharacterIcon = {
   icon: string,
@@ -18,13 +15,7 @@ type CharacterIcon = {
 type CharacterIconData = { [key: string]: CharacterIcon }
 //An object to store all the asset related data.
 export const AssetData = {
-  weapons: {
-    sword: {} as WeaponIconData,
-    bow: {} as WeaponIconData,
-    catalyst: {} as WeaponIconData,
-    claymore: {} as WeaponIconData,
-    polearm: {} as WeaponIconData,
-  },
+  weapons: {},
   artifacts: {},
   chars: {} as CharacterIconData,
 }
@@ -60,15 +51,14 @@ export default function loadImages() {
 
   // Get the icon/awakened for each weapon
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
-    const { icon, awakenIcon, weaponType } = weaponData
-    const wepType = weaponMap[weaponType]
-    AssetData.weapons[wepType][weaponIdMap[weaponid]] = {
+    const { icon, awakenIcon } = weaponData
+    AssetData.weapons[weaponIdMap[weaponid]] = {
       icon,
       awakenIcon
     }
   })
 
-  // parse baseStat/ascension/basic data for non traveler.
+  // parse baseStat/ascension/basic data for characters.
   Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { iconName, sideIconName } = charData
 
@@ -107,56 +97,58 @@ export default function loadImages() {
       bar && layeredAssignment(assetChar, [cKey, "bar"], bar)
       banner && layeredAssignment(assetChar, [cKey, "banner"], banner)
     }
-    function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
+    function genTalentHash(ck: string, depot: AvatarSkillDepotExcelConfigData) {
       const { energySkill: burst, skills: [normal, skill, sprint], talents, inherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
 
       // auto icons are shared.
       // layeredAssignment(characterAssetDump, [cKey, "auto"], talents[normal].skillIcon)
-      layeredAssignment(assetChar, [cKey, "skill"], avatarSkillExcelConfigData[skill].skillIcon)
+      layeredAssignment(assetChar, [ck, "skill"], avatarSkillExcelConfigData[skill].skillIcon)
 
       // burst has a more detailed _HD version
-      layeredAssignment(assetChar, [cKey, "burst"], avatarSkillExcelConfigData[burst].skillIcon + "_HD")
+      layeredAssignment(assetChar, [ck, "burst"], avatarSkillExcelConfigData[burst].skillIcon + "_HD")
       if (sprint)
-        layeredAssignment(assetChar, [cKey, "sprint"], avatarSkillExcelConfigData[sprint].skillIcon)
+        layeredAssignment(assetChar, [ck, "sprint"], avatarSkillExcelConfigData[sprint].skillIcon)
 
-      passive1.proudSkillGroupId && layeredAssignment(assetChar, [cKey, "passive1"], proudSkillExcelConfigData[passive1.proudSkillGroupId][0].icon)
-      passive2.proudSkillGroupId && layeredAssignment(assetChar, [cKey, "passive2"], proudSkillExcelConfigData[passive2.proudSkillGroupId][0].icon)
+      passive1.proudSkillGroupId && layeredAssignment(assetChar, [ck, "passive1"], proudSkillExcelConfigData[passive1.proudSkillGroupId][0].icon)
+      passive2.proudSkillGroupId && layeredAssignment(assetChar, [ck, "passive2"], proudSkillExcelConfigData[passive2.proudSkillGroupId][0].icon)
       if (passive3?.proudSkillGroupId)
-        layeredAssignment(assetChar, [cKey, "passive3"], proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon)
+        layeredAssignment(assetChar, [ck, "passive3"], proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon)
 
       // Seems to be only used by SangonomiyaKokomi
       if (passive?.proudSkillGroupId)
-        layeredAssignment(assetChar, [cKey, "passive"], proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon)
+        layeredAssignment(assetChar, [ck, "passive"], proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon)
 
       talents.forEach((skId, i) => {
-        layeredAssignment(assetChar, [cKey, `constellation${i + 1}`], avatarTalentExcelConfigData[skId].icon)
+        layeredAssignment(assetChar, [ck, `constellation${i + 1}`], avatarTalentExcelConfigData[skId].icon)
       })
     }
 
     if (candSkillDepotIds.length) { // Traveler
-      const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
-      const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
-      genTalentHash(["TravelerAnemo" + gender], avatarSkillDepotExcelConfigData[anemo])
-      genTalentHash(["TravelerGeo" + gender], avatarSkillDepotExcelConfigData[geo])
-      genTalentHash(["TravelerElectro" + gender], avatarSkillDepotExcelConfigData[electro])
-      genTalentHash(["TravelerDendro" + gender], avatarSkillDepotExcelConfigData[dendro])
+      const [, , , anemo, , geo, electro, dendro] = candSkillDepotIds
+      // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
+      genTalentHash("TravelerAnemo", avatarSkillDepotExcelConfigData[anemo])
+      genTalentHash("TravelerGeo", avatarSkillDepotExcelConfigData[geo])
+      genTalentHash("TravelerElectro", avatarSkillDepotExcelConfigData[electro])
+      genTalentHash("TravelerDendro", avatarSkillDepotExcelConfigData[dendro])
     } else {
-      genTalentHash([cKey], avatarSkillDepotExcelConfigData[skillDepotId])
+      genTalentHash(cKey, avatarSkillDepotExcelConfigData[skillDepotId])
     }
   })
   // Dump out the asset List.
   dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
   crawlObject(AssetData, [], s => typeof s === "string", (icon, keys) => {
-    copyFile(`${DM2D_PATH}/${icon}.png`, `${PROJ_PATH}/assets/${keys.join("/")}.png`)
+    copyFile(`${DM2D_PATH}/${icon}.png`, `${PROJ_PATH}/gen/${keys.slice(0, -1).join("/")}/${icon}.png`)
   })
 
   function crawlGen(obj, path) {
     const keys = Object.keys(obj)
     const isImg = typeof Object.values(obj)[0] === "string";
     // generate a index.ts using keys
-    const indexContent = `${keys.map(k => `// This is a generated index file.
-import ${k} from "./${isImg ? `${k}.png` : k}"`).join("\n")}
-const data = { ${keys.join(", ")} } as const
+    const indexContent = `// This is a generated index file.
+${Object.entries(obj).map(([k, v]) => `import ${k} from "./${isImg ? `${v}.png` : k}"`).join("\n")}
+const data = {
+  ${keys.join(",\n  ")}
+} as const
 export default data
 `
     fs.writeFileSync(`${path}/index.ts`, indexContent)
@@ -166,5 +158,5 @@ export default data
         crawlGen(val, `${path}/${key}`)
     })
   }
-  crawlGen(AssetData, `${PROJ_PATH}/assets`)
+  crawlGen(AssetData, `${PROJ_PATH}/gen`)
 }

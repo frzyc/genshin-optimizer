@@ -1,3 +1,4 @@
+import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import Assets from '../../Assets/Assets';
 import Artifact from '../../Data/Artifacts/Artifact';
@@ -39,7 +40,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
     <Box
       component="img"
       className={`grad-${rarity}star`}
-      src={artifactSheet.slotIcons[key]}
+      src={artifactAsset(art.setKey, art.slotKey)}
       maxWidth="100%"
       maxHeight="100%"
     />

@@ -6,9 +6,7 @@ import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "CrescentPike"
 const data_gen = data_gen_json as WeaponData
@@ -23,12 +21,10 @@ const hit = equal(input.weapon.key, key,
 const data = dataObjForWeaponSheet(key, data_gen, undefined, { hit })
 
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken),
+    header: headerTemplate(key),
     name: trm("condName"),
     states: {
       on: {
