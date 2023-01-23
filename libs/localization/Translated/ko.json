@@ -104,12 +104,7 @@
         },
         "substat_one": "부옵션 {{count}}줄",
         "substat_other": "부옵션 {{count}}줄",
-        "addNew": "새 성유물 추가",
-        "sub_one": "",
-        "sub_other": "",
-        "cantDeleteLock": "",
-        "equippedArt": "",
-        "artInInv": ""
+        "addNew": "새 성유물 추가"
     },
     "languages": {
         "chs": "중국어 (간체)",
@@ -230,7 +225,6 @@
             "discord": "디스코드 초대 링크"
         },
         "sortBy": "다음으로 정렬: ",
-        "delete": "",
         "locked": "보호됨",
         "unlocked": "보호되지않음",
         "refinement": "{{value}}재련",
@@ -304,8 +298,7 @@
             "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 대상에게 명중",
             "crit": "치명타가 대상에게 명중",
             "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
-            "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
-            "normalEle": ""
+            "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중"
         },
         "eleAbsor": "원소 전환",
         "absorDot": "원소 전환 도트 데미지",
@@ -331,8 +324,6 @@
         "stack_other": "{{count}} 스택",
         "seconds_one": "{{count}}초",
         "seconds_other": "{{count}}초",
-        "uses_one": "",
-        "uses_other": "",
         "afterDefeatEnemy": "적 처치 후",
         "afterSprint": "대시 후",
         "skillCDRed": "원소 전투 스킬 재사용 대시시간 감소",
@@ -395,7 +386,6 @@
         "activationStam": "발동 시 소모 스태미나",
         "stamDrain": "지속 스태미나 소모",
         "talents": {
-            "auto": "",
             "skill": "스킬",
             "burst": "원폭",
             "passive": "패시브",
@@ -425,7 +415,6 @@
         "bonusScaling": {
             "skill_": "원소 전투 스킬 피해 증가량"
         },
-        "energy": "",
         "teamBuff": "파티 버프",
         "opponents_one": "{{count}} 마리",
         "opponents_other": "{{count}} 마리",
@@ -433,10 +422,7 @@
             "normal": "일반 공격 피해량 계수",
             "charged": "강공격 피해량 계수",
             "skill": "스킬 피해량 계수"
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "천년의 대악장: 깃발의 노래"
@@ -485,8 +471,7 @@
         "burst": {
             "resolves": "원력 스택",
             "resolveInitial_": "<electro>백안지륜에 쌓은 원력 기반 피해 증가량</electro>",
-            "resolveInfused_": "<electro>몽상의 일심 피해 증가량</electro>",
-            "burstDmg": ""
+            "resolveInfused_": "<electro>몽상의 일심 피해 증가량</electro>"
         },
         "a4": {
             "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
@@ -978,11 +963,7 @@
         },
         "SprawlingGreenery": {
             "cond2ele": "연소, 활성, 개화 반응 발동",
-            "cond3ele": "촉진, 발산, 만개, 발화 반응 발동",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
+            "cond3ele": "촉진, 발산, 만개, 발화 반응 발동"
         }
     },
     "weapon_AlleyHunter": {
@@ -1265,9 +1246,7 @@
         "useExcluded": {
             "title": "제외된 성유물도 사용",
             "usingNum_one": "<1>{{count}}</1>개의 제외된 성유물 사용",
-            "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용",
-            "excNum_one": "",
-            "excNum_other": ""
+            "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용"
         },
         "useEquipped": {
             "title": "착용중인 성유물 사용",
@@ -1284,9 +1263,7 @@
                 },
                 "add": "캐릭터 추가",
                 "clearList": "목록 초기화"
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
+            }
         },
         "allowPartial": "성유물 일부 착용 허용(5개 미만)",
         "constraintFilter": {
@@ -1494,19 +1471,5 @@
     },
     "weapon_ToukabouShigure": {
         "condName": "우산의 장난 상태의 적"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
     }
 }
