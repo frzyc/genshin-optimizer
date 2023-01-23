@@ -1,5 +1,4 @@
-import type { TagMap } from '../tag'
-import { createSubsetCache, TagMapSubsetCache } from '../tag/map/cache'
+import type { TagMapSubsetCache, TagMapSubsetValues } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, max, min, prod, sum } from './construction'
@@ -10,10 +9,10 @@ type NumTagFree = NumNode<Exclude<OP, 'tag'>>
 type StrTagFree = StrNode<Exclude<OP, 'tag'>>
 type AnyTagFree = AnyNode<Exclude<OP, 'tag'>>
 
-export function detach(n: NumNode[], calc: Calculator, dynTags: TagMap<Read>): NumTagFree[]
-export function detach(n: StrNode[], calc: Calculator, dynTags: TagMap<Read>): StrTagFree[]
-export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): AnyTagFree[]
-export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): AnyTagFree[] {
+export function detach(n: NumNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): NumTagFree[]
+export function detach(n: StrNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): StrTagFree[]
+export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): AnyTagFree[]
+export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): AnyTagFree[] {
   const allDynTags = new Set(dynTags.allValues())
 
   function read(cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree[] {
@@ -23,7 +22,7 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): A
         cache = cache.with(n.tag)
         return read(cache).map(x => map(x, cache))
       }),
-      ...dynTags.subset(cache.tag),
+      ...dynTags.subset(cache.id),
     ]
   }
   function map(n: AnyNode, cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree {
@@ -52,7 +51,7 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMap<Read>): A
     return (x !== n.x || br != n.br) ? { ...n, x, br } as any : n
   }
 
-  return n.map(n => map(n, createSubsetCache(calc.keys, calc.nodes)))
+  return n.map(n => map(n, calc.nodes.cache(calc.keys)))
 }
 
 export function constantFold(n: NumTagFree[]): NumTagFree[]
