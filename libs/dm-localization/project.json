@@ -1,0 +1,34 @@
+{
+  "name": "dm-localization",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dm-localization/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dm-localization",
+        "main": "libs/dm-localization/src/index.ts",
+        "tsConfig": "libs/dm-localization/tsconfig.lib.json",
+        "assets": ["libs/dm-localization/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "dm-localization:build",
+        "watch": false
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dm-localization/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
