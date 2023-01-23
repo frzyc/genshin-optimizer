@@ -12,10 +12,7 @@
                 },
                 "noRoll": "ไม่มีการสุ่ม",
                 "noStat": "ไม่มีมูลค่า",
-                "eff": "RV: <1></1>",
-                "nextRolls": "",
-                "RollCount_one": "",
-                "RollCount_other": ""
+                "eff": "RV: <1></1>"
             },
             "rarity": "ความหายาก",
             "level": "เลเวล",
@@ -33,14 +30,12 @@
             "btnClear": "ล้าง",
             "btnRandom": "สุ่ม",
             "btnUpdate": "อัปเดตอาร์ติแฟกต์",
-            "clearPrompt": "มีอาร์ติแฟกต์อยู่ในการแก้ไข แน่ใจไหมว่าต้องการล้างการแก้ไขนี้?",
-            "unknownSetName": ""
+            "clearPrompt": "มีอาร์ติแฟกต์อยู่ในการแก้ไข แน่ใจไหมว่าต้องการล้างการแก้ไขนี้?"
         },
         "artifactFilter": "ตัวกรองอาร์ติแฟกต์",
         "filterLocation": {
             "inventory": "ช่องเก็บของ",
-            "currentlyEquipped": "กำลังสวมใส่",
-            "location": ""
+            "currentlyEquipped": "กำลังสวมใส่"
         },
         "button": {
             "unequipArtifacts": "ถอดอาร์ติแฟกต์",
@@ -69,16 +64,12 @@
             "circlet": "Circlet of Logos"
         },
         "info": {
-            "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ",
-            "section1": "",
-            "section2": "",
-            "section3": ""
+            "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
         },
         "exclusion": {
             "any": "Any",
             "excluded": "ไม่รวมถึง",
-            "included": "รวมถึง",
-            "exclusion": ""
+            "included": "รวมถึง"
         },
         "sortMap": {
             "level": "Level",
@@ -89,27 +80,7 @@
             "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
         },
         "resetFilters": "รีเซ็๋ตตัวกรอง",
-        "setEffectNum": "",
-        "excludeArtifactTip": "การละเว้นอาร์ติแฟกต์จะทำให้การจัด Build ไม่นำอาร์ติแฟกต์ชิ้นนี้ไปคำนวณ",
-        "showingNum_one": "",
-        "showingNum_other": "",
-        "edit": "",
-        "excluded": "",
-        "included": "",
-        "autocompleteLabels": {
-            "sets": "",
-            "mainStats": "",
-            "substats": "",
-            "set": ""
-        },
-        "substat_one": "",
-        "substat_other": "",
-        "addNew": "",
-        "sub_one": "",
-        "sub_other": "",
-        "cantDeleteLock": "",
-        "equippedArt": "",
-        "artInInv": ""
+        "excludeArtifactTip": "การละเว้นอาร์ติแฟกต์จะทำให้การจัด Build ไม่นำอาร์ติแฟกต์ชิ้นนี้ไปคำนวณ"
     },
     "languages": {
         "chs": "ภาษาจีน (ตัวย่อ)",
@@ -124,9 +95,7 @@
         "pt": "ภาษาโปรตุเกส",
         "ru": "ภาษารัสเซีย",
         "th": "ภาษาไทย",
-        "vi": "ภาษาเวียดนาม",
-        "it": "",
-        "tr": ""
+        "vi": "ภาษาเวียดนาม"
     },
     "settings": {
         "title": "ตั้งค่า",
@@ -139,26 +108,9 @@
             "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",
             "hint": "อัปโหลดไฟล์ JSON ของคุณที่นี่...",
             "hintPaste": "...หรือวางข้อมูลของคุณด้านล่าง",
-            "error": {
-                "jsonParse": "",
-                "unknown": "",
-                "monaInvalid": "",
-                "goInvalid": ""
-            },
             "dbSource": "แหล่งข้อมูล:",
             "goodUpload": {
                 "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
-            },
-            "buttons": {
-                "open": "",
-                "detectDups": "",
-                "delNotInImport": ""
-            },
-            "tooltip": {
-                "detectdup": "",
-                "ignoreDup": "",
-                "delNotInImport": "",
-                "keepNotInImport": ""
             }
         },
         "count": {
@@ -170,21 +122,7 @@
             "updated": "อัพเดต:",
             "removed": "ลบออก:",
             "unchanged": ":ไม่เปลี่ยนแปลง",
-            "invalid": ":ไม่ถูกต้อง",
-            "upgraded": "",
-            "dbTotal": "",
-            "notInImport": ""
-        },
-        "DatabaseCard": {
-            "title": "",
-            "button": {
-                "download": "",
-                "copy": "",
-                "delete": "",
-                "upload": "",
-                "swap": ""
-            },
-            "currentDB": ""
+            "invalid": ":ไม่ถูกต้อง"
         }
     },
     "ui": {
@@ -194,9 +132,7 @@
             "characters": "ตัวละคร",
             "tools": "อุปกรณ์",
             "weapons": "อาวุธ",
-            "doc": "เอกสาร",
-            "setting": "",
-            "scanner": ""
+            "doc": "เอกสาร"
         },
         "social": {
             "paypal": "Paypal",
@@ -212,7 +148,6 @@
         "underConstruction": "อยู่ระหว่างการปรับปรุง",
         "error": "ผิดพลาด",
         "reset": "รีเซ็ต",
-        "info": "",
         "inventory": "คลัง",
         "close": "ปิด",
         "sortMap": {
@@ -220,24 +155,8 @@
             "name": "ชื่อ",
             "level": "เลเวล",
             "rarity": "จำนวนดาว",
-            "efficiency": "",
-            "mefficiency": "",
             "artsetkey": "เซ็ตอาร์ติแฟกต์",
             "probability": "ความน่าจะเป็นของโรล"
-        },
-        "link": {
-            "download": "",
-            "discord": ""
-        },
-        "sortBy": "",
-        "delete": "",
-        "locked": "",
-        "unlocked": "",
-        "refinement": "",
-        "selectlevel": "",
-        "gender": {
-            "F": "",
-            "M": ""
         }
     },
     "char_Eula": {
@@ -267,9 +186,7 @@
     "char_Noelle": {
         "p4cd": "24 วินาที, -1 วินาที ทุก ๆ การโจมตี 4 ครั้ง",
         "c6duration": "15 วินาที, +1 วินาทีต่อการฆ่า สูงสุด 10 วินาที",
-        "qlarger": "ขอบเขตการโจมตีกว้างขึ้น",
-        "c4dmg": "",
-        "skillHeal_": ""
+        "qlarger": "ขอบเขตการโจมตีกว้างขึ้น"
     },
     "char_Venti": {
         "addAimed": "ความเสียหายการเล็งโจมตีเพิ่มเติม",
@@ -298,145 +215,17 @@
             "hydro": "ความเสียหายน้ำถูกศัตรู",
             "cryo": "ความเสียหายน้ำแข็งถูกศัตรู",
             "pyro": "ความเสียหายไฟถูกศัตรู",
-            "electro": "ความเสียหายไฟฟ้าถูกศัตรู",
-            "none": "",
-            "normalOrCharged": "",
-            "skillOrBurst": "",
-            "crit": "",
-            "normalChargedOrPlunging": "",
-            "dendro": "",
-            "normalEle": ""
+            "electro": "ความเสียหายไฟฟ้าถูกศัตรู"
         },
         "eleAbsor": "การดูดซับธาตุ",
         "absorDot": "ความเสียหายต่อเนื่องของการดูดซับ",
         "afterUse": {
             "skill": "หลังจากใช้งานสกิลธาตุ",
-            "burst": "หลังจากใช้งานท่าไม้ตาย",
-            "skillOrBurst": ""
+            "burst": "หลังจากใช้งานท่าไม้ตาย"
         },
         "increase": {
             "atk": "พลังโจมตีเพิ่มขึ้น"
-        },
-        "hits_one": "",
-        "hits_other": "",
-        "lessEqPercentHP": "",
-        "greaterPercentHP": "",
-        "greaterEqPercentHP": "",
-        "lessPercentEnergy": "",
-        "enemyLessPercentHP": "",
-        "enemyLessEqPercentHP": "",
-        "enemyGreaterPercentHP": "",
-        "enemyGreaterEqPercentHP": "",
-        "stack_one": "",
-        "stack_other": "",
-        "seconds_one": "",
-        "seconds_other": "",
-        "uses_one": "",
-        "uses_other": "",
-        "afterDefeatEnemy": "",
-        "afterSprint": "",
-        "skillCDRed": "",
-        "burstCDRed": "",
-        "pressCD": "",
-        "holdCD": "",
-        "triggerCD": "",
-        "eleSwirled": "",
-        "incInterRes": "",
-        "charges": "",
-        "cooldown": "",
-        "addlCharges": "",
-        "activeCharField": "",
-        "opponentsField": "",
-        "takeDmg": "",
-        "infusion": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "energyRegen": "",
-        "effectDuration": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "durationInc": "",
-        "base": "",
-        "stacks": "",
-        "protectedByShield": "",
-        "protectedByShieldCrystal": "",
-        "staminaDec_": "",
-        "dmgAbsorption": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": "",
-            "none": ""
-        },
-        "opponentsDamaged": "",
-        "press": "",
-        "hold": "",
-        "addlCharge": "",
-        "conditional": "",
-        "maxStacks": "",
-        "1set": "",
-        "2set": "",
-        "4set": "",
-        "activationStam": "",
-        "stamDrain": "",
-        "talents": {
-            "auto": "",
-            "skill": "",
-            "burst": "",
-            "passive": "",
-            "passive1": "",
-            "passive2": "",
-            "passive3": "",
-            "sprint": "",
-            "constellation1": "",
-            "constellation2": "",
-            "constellation3": "",
-            "constellation4": "",
-            "constellation5": "",
-            "constellation6": ""
-        },
-        "swirlReaction": {
-            "hydro": "",
-            "pyro": "",
-            "electro": "",
-            "cryo": ""
-        },
-        "afterReaction": "",
-        "aoeInc": "",
-        "elementalReaction": {
-            "hydro": "",
-            "electro": ""
-        },
-        "bonusScaling": {
-            "skill_": ""
-        },
-        "energy": "",
-        "teamBuff": "",
-        "opponents_one": "",
-        "opponents_other": "",
-        "dmgMult": {
-            "normal": "",
-            "charged": "",
-            "skill": ""
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "ได้รับสถานะ Millennial Movement: Banner-Hymn"
@@ -464,8 +253,7 @@
         "staminaRestore": "ฟื้นฟูพลังกาย",
         "snowflakeDMG": "ความเสียหายการฟันขนาดเล็ก",
         "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>",
-        "afterBurst": "หลังจากใช้ท่าไม้ตาย <strong>Kamisato Art: Soumetsu</strong>",
-        "c6Active": ""
+        "afterBurst": "หลังจากใช้ท่าไม้ตาย <strong>Kamisato Art: Soumetsu</strong>"
     },
     "weapon_MistsplitterReforged": {
         "emblem": "Mistsplitter's Emblem"
@@ -473,9 +261,7 @@
     "char_Yoimiya": {
         "c1": "กำจัดศัตรูที่มีผลของ <strong>Aurous Blaze</strong>",
         "c2": "<pyro>ความเสียหายไฟ</pyro> ติดคริติคอล",
-        "p2p": "ใช้ <strong>Ryuukin Saxifrage</strong>",
-        "normPyroInfus": "",
-        "c6Key_": ""
+        "p2p": "ใช้ <strong>Ryuukin Saxifrage</strong>"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -483,10 +269,7 @@
             "partyCost": "พลังงานที่ใช้"
         },
         "burst": {
-            "resolves": "Resolve Stacks",
-            "resolveInitial_": "",
-            "resolveInfused_": "",
-            "burstDmg": ""
+            "resolves": "Resolve Stacks"
         },
         "a4": {
             "enerRest": "การฟื้นฟูพลังงานจาก <strong>Musou Isshin</strong>",
@@ -505,107 +288,17 @@
             "rush": "สถานะ Rushing Ice",
             "rushState": "ระหว่างสถานะ Rushing Ice (1 สแต็คต่อวินาที)"
         },
-        "a1CondName": "เมื่อ Aloy ได้รับสถานะ Coil จากสกิล <strong>Frozen Wilds</strong>",
-        "normCryoInfus": ""
+        "a1CondName": "เมื่อ Aloy ได้รับสถานะ Coil จากสกิล <strong>Frozen Wilds</strong>"
     },
     "char_KujouSara": {
         "skill": {
             "ambush": "Tengu Juurai: Ambush"
-        },
-        "a4": {
-            "enerRest": ""
-        },
-        "c6": {
-            "electroCritDmg": ""
         }
     },
     "char_SangonomiyaKokomi": {
         "burst": "Ceremonial Garment",
         "c2": "ตัวละครที่มีพลังชีวิตต่ำกว่าหรือเท่ากับ 50%",
-        "c6": "หลังจากการโจมตีปกติหรือการชาร์จโจมตีได้รักษาตัวละครที่มีพลังชีวิตตั้งแต่ 80% ขึ้นไป",
-        "c2SkillHeal": "",
-        "c2BurstHeal": ""
-    },
-    "page_home": {
-        "intro": "",
-        "quickLinksCard": {
-            "title": "",
-            "buttons": {
-                "tyGuide": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "scanners": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "kqm": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "devDiscord": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "good": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "patchNotes": {
-                    "title": "",
-                    "tooltip": ""
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": ""
-        },
-        "vidGuideCard": {
-            "title": ""
-        },
-        "teamCard": {
-            "title": "",
-            "jobTitle": {
-                "leadDev": "",
-                "dev": "",
-                "mod": ""
-            }
-        }
-    },
-    "page_scanner": {
-        "intro": "",
-        "ik": {
-            "title": "",
-            "p1": "",
-            "p2": "",
-            "p3": ""
-        },
-        "am": {
-            "title": "",
-            "p1": "",
-            "p2": ""
-        },
-        "as": {
-            "title": "",
-            "p1": "",
-            "p2": ""
-        },
-        "goodeng": "",
-        "tosWarn": "",
-        "tags": {
-            "pc": "",
-            "mobile": "",
-            "ps": "",
-            "gameMani": "",
-            "materials": "",
-            "characters": ""
-        },
-        "nb": {
-            "title": "",
-            "p1": "",
-            "p2": "",
-            "p3": ""
-        }
+        "c6": "หลังจากการโจมตีปกติหรือการชาร์จโจมตีได้รักษาตัวละครที่มีพลังชีวิตตั้งแต่ 80% ขึ้นไป"
     },
     "weapon_Akuoumaru": {
         "party": "ผลรวมพลังงานธาตุของทั้งทีม"
@@ -624,11 +317,7 @@
     },
     "char_Thoma": {
         "a1": "ได้รับ/รีเฟรช <strong>Blazing Barrier</strong>",
-        "c6": "เมื่อได้รับหรือรีเฟรช <strong>Blazing Barrier</strong>",
-        "a2": "",
-        "c2": "",
-        "maxShield": "",
-        "maxPyroShield": ""
+        "c6": "เมื่อได้รับหรือรีเฟรช <strong>Blazing Barrier</strong>"
     },
     "weapon_CinnabarSpindle": {
         "name": "ความเสียหายสกิลธาตุเพิ่มขึ้น"
@@ -736,8 +425,7 @@
         "passive2": "ความเสียหาย Rimechaser Blade",
         "asc4Cond": "ศัตรูถูกโจมตีด้วย Rimechaser Blade",
         "constellation1": "ความเสียหายมีดน้ำแข็ง",
-        "constellation6": "ศัตรูเหลือเปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun",
-        "blades": ""
+        "constellation6": "ศัตรูเหลือเปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun"
     },
     "char_Diluc": {
         "skillB": {
@@ -748,8 +436,7 @@
     "char_Diona": {
         "skillDuration": "ระยะเวลาโล่ต่อ Icy Paw ที่โดนศัตรู",
         "holdShield": "การดูดซับความเสียหายแบบกดค้าง",
-        "a1shielded": "ตัวละครภายใต้การป้องกันของ <strong>Icy Paws</strong>",
-        "holdCryoShield": ""
+        "a1shielded": "ตัวละครภายใต้การป้องกันของ <strong>Icy Paws</strong>"
     },
     "char_Fischl": {
         "a1Name": "เล็งโจมตีเมื่อชาร์จเต็มไปที่ Oz - ความเสียหายสายฟ้าศักดิ์สิทธิ์",
@@ -791,718 +478,6 @@
         "c2CondName": "Jean ได้รับลูกแก้วธาตุ/อณูธาตุ"
     },
     "char_Kaeya": {
-        "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที",
-        "p1heal": "",
-        "c1cond": ""
-    },
-    "char_Keqing": {
-        "c1DMG": "",
-        "recast": "",
-        "effectTriggers": ""
-    },
-    "char_Klee": {
-        "a1CondName": "",
-        "a1CondName2": "",
-        "c2CondName": "",
-        "c6CondName": ""
-    },
-    "char_Lisa": {
-        "a4C": "",
-        "c2C": ""
-    },
-    "char_Mona": {
-        "omen": "",
-        "omenDuration": "",
-        "bubbleDuration": "",
-        "phantomDuration": "",
-        "hitOp": {
-            "affectedByOmen": ""
-        },
-        "frozenDuration": "",
-        "uponSprint": ""
-    },
-    "char_Ningguang": {
-        "aoeGems": "",
-        "starJadeStaminaCost": "",
-        "skillReset": "",
-        "a4toggle": "",
-        "c4toggle": "",
-        "c6bonus": ""
-    },
-    "char_Qiqi": {
-        "a1C": "",
-        "c2C": ""
-    },
-    "char_Razor": {
-        "electroSigil": "",
-        "electroSigilAbsorbed": "",
-        "pickUpElementalOrbParticle": "",
-        "opHitWithClawAndThunder": "",
-        "electroSigilPerProc": ""
-    },
-    "char_Sayu": {
-        "burstHits": "",
-        "p1Swirl": "",
-        "p2Heal": "",
-        "p2Aoe": "",
-        "c1Text": "",
-        "c2KickPressDmg_": "",
-        "c2KickDmg_": "",
-        "c2Cond": "",
-        "c4Ener": "",
-        "c6DarumaDmgInc": "",
-        "c6DarumaHealInc": ""
-    },
-    "char_Shenhe": {
-        "quill": "",
-        "c4": "",
-        "c4Bonus_": "",
-        "pressQuota": "",
-        "holdQuota": "",
-        "pressDuration": "",
-        "holdDuration": ""
-    },
-    "char_Sucrose": {
-        "asc4": ""
-    },
-    "char_Xiangling": {
-        "afterChili": "",
-        "explosionDMG": "",
-        "afterGuobaHit": "",
-        "duringPyronado": "",
-        "c6Exception": ""
-    },
-    "char_Xiao": {
-        "burst": {
-            "autoAtkDmgBonus_": "",
-            "lifeDrain_": "",
-            "currentHPPerSec": "",
-            "incJump": "",
-            "incAtkAoe": "",
-            "inBurst": "",
-            "stack": ""
-        },
-        "skillStack": ""
-    },
-    "char_Xingqiu": {
-        "skillCond": "",
-        "burstCond": "",
-        "c2Cond": ""
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "",
-                "2": "",
-                "3": ""
-            },
-            "shieldLevel": "",
-            "shieldLevels": {
-                "1": "",
-                "2": "",
-                "3": ""
-            }
-        },
-        "p1": {
-            "desc": ""
-        },
-        "p2": {
-            "activeShield": ""
-        },
-        "c2": {
-            "key_": "",
-            "shield": ""
-        },
-        "c4": {
-            "swingHit": ""
-        },
-        "c6": {
-            "duringCharge": ""
-        }
-    },
-    "char_YaeMiko": {
-        "c4": ""
-    },
-    "char_Yanfei": {
-        "seals": [
-            ""
-        ],
-        "perSeal": "",
-        "maxSeals": "",
-        "charged": {
-            "0": "",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": ""
-        },
-        "burst": {
-            "grantMax": ""
-        },
-        "passive1": {
-            "sealsConsumed": ""
-        },
-        "passive2": {
-            "chargedCrit": "",
-            "key": ""
-        },
-        "c1": {
-            "sealChargedStam_": ""
-        },
-        "c6": {
-            "maxSealInc": ""
-        }
-    },
-    "char_YunJin": {
-        "burst": "",
-        "a4Inc_": "",
-        "c4": ""
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "",
-            "resonance": "",
-            "maxStele": "",
-            "nearShield": ""
-        },
-        "p1cond": "",
-        "c6heal": ""
-    },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": ""
-        },
-        "SprawlingGreenery": {
-            "cond2ele": "",
-            "cond3ele": "",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
-        }
-    },
-    "weapon_AlleyHunter": {
-        "condName": ""
-    },
-    "weapon_AmosBow": {
-        "condName": ""
-    },
-    "weapon_BlackTassel": {
-        "condName": ""
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": ""
-    },
-    "weapon_CoolSteel": {
-        "condName": ""
-    },
-    "weapon_CrescentPike": {
-        "condName": "",
-        "hitName": ""
-    },
-    "weapon_Deathmatch": {
-        "condName": "",
-        "opponents": {
-            "oneOrNone": "",
-            "moreThanOne": ""
-        }
-    },
-    "weapon_DragonsBane": {
-        "condName": ""
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_FerrousShadow": {
-        "condName": "",
-        "resistance": ""
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": ""
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_Hamayumi": {
-        "condName": ""
-    },
-    "weapon_IronSting": {
-        "condName": ""
-    },
-    "weapon_LionsRoar": {
-        "condName": ""
-    },
-    "weapon_MagicGuide": {
-        "condName": ""
-    },
-    "weapon_MappaMare": {
-        "condName": ""
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": ""
-    },
-    "weapon_PolarStar": {
-        "condName": ""
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": ""
-    },
-    "weapon_Rainslasher": {
-        "condName": ""
-    },
-    "weapon_RavenBow": {
-        "condName": ""
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "",
-        "nameCharged": ""
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": ""
-    },
-    "weapon_Slingshot": {
-        "condName": ""
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": ""
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": ""
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": ""
-    },
-    "weapon_TheWidsith": {
-        "aria": "",
-        "interlude": "",
-        "recitative": ""
-    },
-    "weapon_ThunderingPulse": {
-        "condName": ""
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": ""
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "",
-        "avg": "",
-        "always": ""
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "",
-            "namisenStacks": "",
-            "shun_dmgInc": ""
-        },
-        "passive1": {
-            "afterUse": "",
-            "afterExplode": ""
-        },
-        "c1": {
-            "shun_dmg_": ""
-        },
-        "c2": {
-            "addlStacks": ""
-        },
-        "c6": {
-            "dmg": ""
-        }
-    },
-    "char_KukiShinobu": {
-        "skill": {
-            "cost": ""
-        },
-        "a4": {
-            "heal": ""
-        },
-        "c4": {
-            "dmg": ""
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": ""
-        },
-        "c4": {
-            "condName": ""
-        },
-        "c6": {
-            "condName": "",
-            "dmg": ""
-        }
-    },
-    "page_character": {
-        "addNew": "",
-        "tabs": {
-            "overview": "",
-            "talent": "",
-            "teambuffs": "",
-            "optimize": "",
-            "theorycraft": ""
-        },
-        "formulas": "",
-        "calculations": "",
-        "selectCharacter": "",
-        "removeCharacter": "",
-        "delete": "",
-        "teammates": "",
-        "showingNum_one": "",
-        "showingNum_other": "",
-        "hitmode": {
-            "hit": "",
-            "avgHit": "",
-            "critHit": ""
-        },
-        "tabEquip": {
-            "swapWeapon": "",
-            "swapArt": "",
-            "compare": "",
-            "unequipArts": ""
-        },
-        "characterName": "",
-        "teammate": "",
-        "noReaction": "",
-        "multiTarget": {
-            "title": "",
-            "addNewTarget": "",
-            "addNewMTarget": ""
-        },
-        "addStats": {
-            "title": ""
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "",
-                "max": "",
-                "mid": ""
-            },
-            "maxTotalRolls": "",
-            "maxRolls": "",
-            "maxRollsMain": ""
-        },
-        "tabTeambuff": {
-            "team_reso": "",
-            "resonance_tip": ""
-        }
-    },
-    "page_weapon": {
-        "showingNum_one": "",
-        "showingNum_other": "",
-        "edit": "",
-        "weaponName": "",
-        "removeWeapon": "",
-        "addWeapon": ""
-    },
-    "weapon_AquaSimulacra": {
-        "condName": ""
-    },
-    "weapon_FadingTwilight": {
-        "states": {
-            "evengleam": "",
-            "afterglow": "",
-            "dawnblaze": ""
-        },
-        "condName": ""
-    },
-    "weapon_HaranGeppakuFutsu": {
-        "consumed": ""
-    },
-    "char_Collei": {
-        "sproutDmg": "",
-        "miniAnbarDmg": ""
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "",
-        "c2DmgKey": "",
-        "c4ConnectedBelowHp": "",
-        "c4ConnectedBelowEner": "",
-        "c6Heal": ""
-    },
-    "char_ShikanoinHeizou": {
-        "declensionStacks": "",
-        "takingField": ""
-    },
-    "char_Tighnari": {
-        "p1Cond": "",
-        "c4ReactCond": "",
-        "c6DmgKey": "",
-        "c6WreathRed": ""
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "",
-                "desc": ""
-            },
-            "assumptionLvl": {
-                "no": "",
-                "lvl": ""
-            }
-        },
-        "tcGraph": {
-            "vs": "",
-            "notSel": "",
-            "downloadData": "",
-            "desc": "",
-            "showStatThr": "",
-            "generatedBuilds": "",
-            "statReqThr": "",
-            "currentBuild": "",
-            "highlightedBuilds": "",
-            "buildAlreadyInList": ""
-        },
-        "levelFilter": "",
-        "useExcluded": {
-            "title": "",
-            "usingNum_one": "",
-            "usingNum_other": "",
-            "excNum_one": "",
-            "excNum_other": ""
-        },
-        "useEquipped": {
-            "title": "",
-            "modal": {
-                "title": "",
-                "desc1": "",
-                "desc2": "",
-                "usingNum_one": "",
-                "usingNum_other": "",
-                "status": {
-                    "use": "",
-                    "dont": "",
-                    "curr": ""
-                },
-                "add": "",
-                "clearList": ""
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
-        },
-        "allowPartial": "",
-        "constraintFilter": {
-            "title": "",
-            "tooltip": ""
-        },
-        "artSetConfig": {
-            "title": "",
-            "setEffCond": "",
-            "enabled": "",
-            "allowed": "",
-            "excluded": "",
-            "selected": "",
-            "2rainbow": "",
-            "4rainbow": "",
-            "allowAll2set": "",
-            "excludeAll2set": "",
-            "allowAll4set": "",
-            "excludeAll4set": "",
-            "alExRainbow": "",
-            "modal": {
-                "setCond": {
-                    "title": "",
-                    "reset": "",
-                    "text": ""
-                },
-                "ArtSetFilter": {
-                    "title": "",
-                    "intro": "",
-                    "2set": "",
-                    "4set": "",
-                    "2rain": "",
-                    "4rain": ""
-                }
-            }
-        },
-        "buildDropdownDesc": "",
-        "threadDropdownDesc": "",
-        "noArtis": "",
-        "build_one": "",
-        "build_other": "",
-        "thread_one": "",
-        "thread_other": "",
-        "targetSelector": {
-            "selectOptTarget": "",
-            "selectGraphTarget": "",
-            "invalidTarget": "",
-            "selectBuildTarget": ""
-        },
-        "selectTargetFirst": "",
-        "generateButton": {
-            "cancel": "",
-            "generateBuilds": ""
-        },
-        "removeBuildButton": "",
-        "theorycraftButton": "",
-        "currentlyEquippedBuild": "",
-        "addBuildToList": "",
-        "graphBuildLabel": "",
-        "workerLoadFailed": ""
-    },
-    "weapon_CalamityQueller": {
-        "inactiveKey": ""
-    },
-    "weapon_ForestRegalia": {
-        "condName": ""
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": ""
-    },
-    "weapon_Moonpiercer": {
-        "condName": ""
-    },
-    "weapon_SapwoodBlade": {
-        "condName": ""
-    },
-    "char_TravelerAnemo": {
-        "p1": "",
-        "c6": "",
-        "c4": "",
-        "initialEleDmg": "",
-        "maxEleDmg": ""
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "",
-            "absorb": ""
-        },
-        "burst": {
-            "3rd": "",
-            "thunderCd": ""
-        },
-        "passive2": {
-            "enerRech_": ""
-        },
-        "c2": {
-            "thunderHit": ""
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": ""
-        },
-        "c2": {
-            "key": ""
-        }
-    },
-    "page_newTab": {
-        "title": "",
-        "p1": "",
-        "symptom": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": ""
-        },
-        "p2": "",
-        "choice": {
-            "1": "",
-            "2": ""
-        },
-        "refresh": ""
-    },
-    "char_Candace": {
-        "hydroInfusion": ""
-    },
-    "char_Cyno": {
-        "p1Dmg": "",
-        "judication": "",
-        "burstNormalDmgInc": "",
-        "boltDmgInc": ""
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "",
-            "dance2": "",
-            "whirl1": "",
-            "whirl2": "",
-            "moon": "",
-            "wheel": ""
-        },
-        "passive1": {
-            "underChaliceEffect": "",
-            "notDendroHydroTeam": "",
-            "condName": "",
-            "bountifulCores": ""
-        },
-        "c1": {
-            "moon_dmg_": ""
-        },
-        "c4": {
-            "condName": ""
-        }
-    },
-    "weapon_MakhairaAquamarine": {
-        "condName": ""
-    },
-    "weapon_WanderingEvenstar": {
-        "condName": ""
-    },
-    "weapon_XiphosMoonlight": {
-        "condName": ""
-    },
-    "char_Nahida": {
-        "karmaDmg_": "",
-        "karmaCritRate_": "",
-        "karmaIntervalDec": "",
-        "noBurstEffect": "",
-        "partyInBurst": "",
-        "c1Key": "",
-        "c2": {
-            "bloomCondName": "",
-            "qasCondName": ""
-        },
-        "c4CondName": "",
-        "c6KarmicDmg": ""
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": ""
-    },
-    "char_Faruzan": {
-        "giftCondName": "",
-        "a4CondName": "",
-        "c2DurationInc": "",
-        "c6Arrow": ""
-    },
-    "char_Layla": {
-        "starDmgInc": "",
-        "c1ShieldBonusKey_": "",
-        "c4CondKey": "",
-        "starDmg_": "",
-        "slugDmg_": "",
-        "starInterval_": ""
-    },
-    "char_Wanderer": {
-        "windfavoredState": "",
-        "p1": {
-            "pyroCondName": "",
-            "cryoCondName": ""
-        },
-        "p2Dmg": "",
-        "c1BonusKey": "",
-        "c2CondName": "",
-        "c6Key": ""
-    },
-    "weapon_ToukabouShigure": {
-        "condName": ""
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
+        "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที"
     }
 }
