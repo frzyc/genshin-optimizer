@@ -1,7 +1,7 @@
 import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
-import { Box, Button, Chip, Grid, ToggleButton, Tooltip } from "@mui/material";
+import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
 import { Suspense, useContext, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
@@ -10,6 +10,7 @@ import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
 import { allArtifactRarities, allArtifactSets, allSlotKeys, locationCharacterKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import { catTotal } from "../../Util/totalUtils";
+import BootstrapTooltip from "../BootstrapTooltip";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
@@ -106,7 +107,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
   })), [database, filteredIds])
 
   const artSubTotal = useMemo(() => catTotal(allSubstatKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
-    Object.values(art.substats).map(sub => {
+    Object.values(art.substats).forEach(sub => {
       if (typeof sub !== "object") return
       const key = sub.key
       if (!key) return
@@ -172,12 +173,12 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <ArtifactMainStatMultiAutocomplete totals={artMainTotal} mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
       <ArtifactSubstatMultiAutocomplete totals={artSubTotal} substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
       <Suspense fallback={null}>
-        <Tooltip title={t`locationsTooltip`} placement="top" open={showEquipped ? locationsTooltipOpen : false} disableInteractive arrow>
-          <Box onMouseOver={() => setlocationsTooltipOpen(true)} onMouseLeave={() => setlocationsTooltipOpen(false)} >
+        <BootstrapTooltip title={t`locationsTooltip`} placement="top" open={showEquipped ? locationsTooltipOpen : false} disableInteractive arrow>
+          <Box component="span" onMouseOver={() => setlocationsTooltipOpen(true)} onMouseLeave={() => setlocationsTooltipOpen(false)} >
             <LocationFilterMultiAutocomplete totals={locationTotal} locations={showEquipped ? [] : locations} setLocations={locations =>
               filterOptionDispatch({ locations })} disabled={showEquipped} />
           </Box>
-        </Tooltip>
+        </BootstrapTooltip>
       </Suspense>
     </Grid>
   </Grid>
