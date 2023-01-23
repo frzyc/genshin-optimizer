@@ -11,7 +11,7 @@ export function entriesForWeapon(
   }
 ): RawTagMapEntries<AnyNode> {
   const {
-    input: { weapon: { refinement, ascension } },
+    input: { self: { weapon: { refinement, ascension } } },
     custom,
     output: { selfBuff }
   } = read(name)

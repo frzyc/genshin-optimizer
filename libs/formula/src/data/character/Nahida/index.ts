@@ -75,8 +75,7 @@ const dm = {
 const name: Character = 'Nahida', ele: Element = 'dendro'
 const {
   input: {
-    final, team, buffTarget,
-    char: { skill, burst, ascension, constellation },
+    team, buffTarget, self: { final, char: { skill, burst, ascension, constellation } }
   },
   custom: {
     c2_critRate_, c2_critDMG_, c2qsa_defRed_,

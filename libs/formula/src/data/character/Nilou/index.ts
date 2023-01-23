@@ -77,8 +77,7 @@ export const dm = {
 const name: Character = "Nilou", ele: Element = "hydro"
 const {
   input: {
-    base, premod, final, team,
-    char: { ascension, constellation, skill, burst }
+    team, self: { final, char: { ascension, constellation, skill, burst } }
   },
   custom: {
     a1AfterSkill, a1AfterHit,

@@ -20,7 +20,7 @@ const enemyDef = todo, lvl = todo
 const enemyDefRed = todo, enemyDefIgn = todo
 
 const {
-  input: { final: { critDMG_ }, common: { infusion, weaponType }, dmg, enemy },
+  input: { enemy, self: { final: { critDMG_ }, common: { infusion, weaponType }, dmg } },
   output: { selfBuff }
 } = read('agg')
 

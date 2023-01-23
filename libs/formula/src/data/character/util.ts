@@ -26,7 +26,7 @@ export function entriesForChar(
   specials.delete('def')
   specials.delete('hp')
 
-  const { input: { char: { ascension } }, custom, output: { selfBuff } } = read(name)
+  const { input: { self: { char: { ascension } } }, custom, output: { selfBuff } } = read(name)
   return [
     // Stats
     ...gen.lvlCurves.map(({ key, base, curve }) =>

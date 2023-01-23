@@ -11,7 +11,7 @@ const hit_normal_dmg_arr = [0.096, 0.12, 0.144, 0.168, 0.192]
 const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const name: Weapon = 'TulaytullahsRemembrance', {
-  input: { weapon: { refinement } },
+  input: { self: { weapon: { refinement } } },
   custom: { timePassive, hitPassive },
   output: { selfBuff },
 } = read(name)

@@ -8,7 +8,7 @@ export function percent(x: number | NumNode): NumNode {
 
 export function read(src: Source, r = reader) {
   const {
-    self: { base, premod, final, char, weapon, common, dmg }, enemy: { enemy }, target: buffTarget
+    self, enemy: { enemy }, target: buffTarget
   } = r.with('src', 'agg')._withAll('et')
   const {
     self: { custom }, self: selfBuff,
@@ -18,7 +18,7 @@ export function read(src: Source, r = reader) {
   const team = r.withTag({ et: 'self', src: 'team' })
 
   return {
-    input: { base, premod, final, char, weapon, common, dmg, enemy, buffTarget, team },
+    input: { self, team, buffTarget, enemy },
     custom,
     output: {
       selfBuff, teamBuff, activeCharBuff, enemyDebuff,
