@@ -104,12 +104,7 @@
         },
         "substat_one": "{{count}}项副词条",
         "substat_other": "{{count}}项副词条",
-        "addNew": "添加新圣遗物",
-        "sub_one": "",
-        "sub_other": "",
-        "cantDeleteLock": "",
-        "equippedArt": "",
-        "artInInv": ""
+        "addNew": "添加新圣遗物"
     },
     "languages": {
         "chs": "简体中文",
@@ -304,8 +299,7 @@
             "skillOrBurst": "元素战技或元素爆发命中敌人",
             "crit": "命中敌人并造成暴击",
             "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
-            "dendro": "<dendro>草元素伤害</dendro>击中敌人",
-            "normalEle": ""
+            "dendro": "<dendro>草元素伤害</dendro>击中敌人"
         },
         "eleAbsor": "元素转化",
         "absorDot": "元素转化持续伤害",
@@ -433,10 +427,7 @@
             "normal": "普攻伤害倍率",
             "charged": "重击伤害倍率",
             "skill": "技能伤害倍率"
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -485,8 +476,7 @@
         "burst": {
             "resolves": "积攒愿力层数",
             "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",
-            "resolveInfused_": "<electro>梦想一心伤害加成</electro>",
-            "burstDmg": ""
+            "resolveInfused_": "<electro>梦想一心伤害加成</electro>"
         },
         "a4": {
             "enerRest": "<strong>梦想一心</strong>恢复的元素能量",
@@ -978,11 +968,7 @@
         },
         "SprawlingGreenery": {
             "cond2ele": "触发燃烧、原激化、绽放反应后",
-            "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
+            "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后"
         }
     },
     "weapon_AlleyHunter": {
@@ -1265,9 +1251,7 @@
         "useExcluded": {
             "title": "使用被排除的圣遗物",
             "usingNum_one": "使用<1>{{count}}</1>件已排除圣遗物",
-            "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物",
-            "excNum_one": "",
-            "excNum_other": ""
+            "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物"
         },
         "useEquipped": {
             "title": "使用已装备的圣遗物",
@@ -1284,9 +1268,7 @@
                 },
                 "add": "添加角色入列表",
                 "clearList": "清空列表"
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
+            }
         },
         "allowPartial": "允许部分配装（少于5件圣遗物）",
         "constraintFilter": {
@@ -1494,19 +1476,5 @@
     },
     "weapon_ToukabouShigure": {
         "condName": "敌人在纸伞作祟状态的影响"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
     }
 }
