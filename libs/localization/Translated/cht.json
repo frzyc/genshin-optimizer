@@ -14,7 +14,6 @@
                 "noStat": "沒有數值",
                 "eff": "估值：<1></1>",
                 "nextRolls": "下次提升：",
-                "RollCount_one": "",
                 "RollCount_other": "提升 {{count}} 次"
             },
             "rarity": "稀有度",
@@ -46,9 +45,7 @@
             "unequipArtifacts": "卸除聖遺物",
             "deleteArtifacts": "刪除聖遺物",
             "excludeArtifacts": "排除的聖遺物",
-            "includeArtifacts": "包含的聖遺物",
-            "lockArtifacts": "",
-            "unlockrtifacts": ""
+            "includeArtifacts": "包含的聖遺物"
         },
         "buttonHint": "注意:紅色選項僅用於 <1>篩選後的聖遺物</1>",
         "tipsOfTheDay": [
@@ -77,8 +74,7 @@
         "exclusion": {
             "any": "任意",
             "excluded": "已排除",
-            "included": "已包含",
-            "exclusion": ""
+            "included": "已包含"
         },
         "sortMap": {
             "level": "等級",
@@ -90,9 +86,6 @@
         },
         "resetFilters": "重設過濾器",
         "setEffectNum": "{{setNum}} 件套裝",
-        "excludeArtifactTip": "",
-        "showingNum_one": "",
-        "showingNum_other": "",
         "edit": "編輯聖遺物",
         "excluded": "此聖遺物已排除。",
         "included": "此聖遺物尚未排除。",
@@ -106,10 +99,7 @@
         "substat_other": "{{count}} 個副詞條",
         "addNew": "新增新的聖遺物",
         "sub_one": "{{count}} 副詞條",
-        "sub_other": "{{count}} 副詞條",
-        "cantDeleteLock": "",
-        "equippedArt": "",
-        "artInInv": ""
+        "sub_other": "{{count}} 副詞條"
     },
     "languages": {
         "chs": "簡體中文",
@@ -124,9 +114,7 @@
         "pt": "西班牙語",
         "ru": "俄語",
         "th": "泰語",
-        "vi": "越南語",
-        "it": "",
-        "tr": ""
+        "vi": "越南語"
     },
     "settings": {
         "title": "設定",
@@ -142,7 +130,6 @@
             "error": {
                 "jsonParse": "無法解析 JSON 檔案。",
                 "unknown": "未知的檔案格式。",
-                "monaInvalid": "",
                 "goInvalid": "無效的 GO 備份檔案格式。"
             },
             "dbSource": "資料來源：",
@@ -150,15 +137,7 @@
                 "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
             },
             "buttons": {
-                "open": "開啟",
-                "detectDups": "",
-                "delNotInImport": ""
-            },
-            "tooltip": {
-                "detectdup": "",
-                "ignoreDup": "",
-                "delNotInImport": "",
-                "keepNotInImport": ""
+                "open": "開啟"
             }
         },
         "count": {
@@ -170,10 +149,7 @@
             "updated": "已更新：",
             "removed": "已移除：",
             "unchanged": "未更動：",
-            "invalid": "無效：",
-            "upgraded": "",
-            "dbTotal": "",
-            "notInImport": ""
+            "invalid": "無效："
         },
         "DatabaseCard": {
             "title": "資料庫",
@@ -216,14 +192,12 @@
         "inventory": "庫存",
         "close": "關閉",
         "sortMap": {
-            "new": "",
             "name": "名稱",
             "level": "等級",
             "rarity": "稀有度",
             "efficiency": "目前估值",
             "mefficiency": "最高估值",
-            "artsetkey": "聖遺物套裝",
-            "probability": ""
+            "artsetkey": "聖遺物套裝"
         },
         "link": {
             "download": "下載連結",
@@ -234,7 +208,6 @@
         "locked": "已上鎖",
         "unlocked": "未上鎖",
         "refinement": "精鍊 {{value}}",
-        "selectlevel": "",
         "gender": {
             "F": "女",
             "M": "男"
@@ -247,894 +220,46 @@
             "grimheart": {
                 "int": "增加抗打斷能力"
             }
-        },
-        "burstC": {
-            "name": "",
-            "start5": "",
-            "addStacks": "",
-            "dmg": ""
-        },
-        "c1C": {
-            "name": "",
-            "durationStack": ""
-        },
-        "passive1": "",
-        "c4C": {
-            "name": "",
-            "desc": ""
-        }
-    },
-    "char_Noelle": {
-        "p4cd": "",
-        "c6duration": "",
-        "qlarger": "",
-        "c4dmg": "",
-        "skillHeal_": ""
-    },
-    "char_Venti": {
-        "addAimed": "",
-        "addFullAimed": "",
-        "upcurrentDuration": "",
-        "regenEner": "",
-        "c6": "",
-        "c4": "",
-        "q": "",
-        "c2": {
-            "hit": "",
-            "launched": ""
         }
     },
     "sheet": {
         "dmg": "傷害",
         "lessPercentHP": "血量低於 {{percent}} %",
-        "hitOp": {
-            "normal": "",
-            "charged": "",
-            "plunging": "",
-            "skill": "",
-            "burst": "",
-            "geo": "",
-            "anemo": "",
-            "hydro": "",
-            "cryo": "",
-            "pyro": "",
-            "electro": "",
-            "none": "",
-            "normalOrCharged": "",
-            "skillOrBurst": "",
-            "crit": "",
-            "normalChargedOrPlunging": "",
-            "dendro": "",
-            "normalEle": ""
-        },
-        "eleAbsor": "",
-        "absorDot": "",
-        "afterUse": {
-            "skill": "",
-            "burst": "",
-            "skillOrBurst": ""
-        },
         "increase": {
             "atk": "攻擊力上升"
         },
-        "hits_one": "",
-        "hits_other": "",
-        "lessEqPercentHP": "",
-        "greaterPercentHP": "",
-        "greaterEqPercentHP": "",
-        "lessPercentEnergy": "",
-        "enemyLessPercentHP": "",
-        "enemyLessEqPercentHP": "",
-        "enemyGreaterPercentHP": "",
-        "enemyGreaterEqPercentHP": "",
-        "stack_one": "",
-        "stack_other": "",
-        "seconds_one": "",
-        "seconds_other": "",
-        "uses_one": "",
-        "uses_other": "",
-        "afterDefeatEnemy": "",
-        "afterSprint": "",
-        "skillCDRed": "",
-        "burstCDRed": "",
-        "pressCD": "",
-        "holdCD": "",
-        "triggerCD": "",
-        "eleSwirled": "",
-        "incInterRes": "",
-        "charges": "",
-        "cooldown": "",
-        "addlCharges": "",
-        "activeCharField": "",
-        "opponentsField": "",
-        "takeDmg": "",
-        "infusion": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "energyRegen": "",
-        "effectDuration": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "durationInc": "",
-        "base": "",
-        "stacks": "",
-        "protectedByShield": "",
-        "protectedByShieldCrystal": "",
-        "staminaDec_": "",
-        "dmgAbsorption": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": "",
-            "none": ""
-        },
-        "opponentsDamaged": "",
-        "press": "",
-        "hold": "",
-        "addlCharge": "",
-        "conditional": "",
-        "maxStacks": "",
         "1set": "1 件套裝",
         "2set": "2 件套裝",
         "4set": "4 件套裝",
-        "activationStam": "",
-        "stamDrain": "",
         "talents": {
             "auto": "自動",
-            "skill": "",
-            "burst": "",
-            "passive": "",
-            "passive1": "",
-            "passive2": "",
-            "passive3": "",
-            "sprint": "",
             "constellation1": "一命",
             "constellation2": "二命",
             "constellation3": "三命",
             "constellation4": "四命",
             "constellation5": "五命",
             "constellation6": "六命"
-        },
-        "swirlReaction": {
-            "hydro": "",
-            "pyro": "",
-            "electro": "",
-            "cryo": ""
-        },
-        "afterReaction": "",
-        "aoeInc": "",
-        "elementalReaction": {
-            "hydro": "",
-            "electro": ""
-        },
-        "bonusScaling": {
-            "skill_": ""
-        },
-        "energy": "",
-        "teamBuff": "",
-        "opponents_one": "",
-        "opponents_other": "",
-        "dmgMult": {
-            "normal": "",
-            "charged": "",
-            "skill": ""
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
-    },
-    "weapon_SongOfBrokenPines": {
-        "name": ""
+        }
     },
     "char_KaedeharaKazuha": {
-        "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間",
-        "c2": "",
-        "c6": {
-            "after": "",
-            "bonus": ""
-        },
-        "skillPlunge": ""
+        "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間"
     },
     "char_Rosaria": {
-        "a1": "",
         "a4": {
-            "name": "",
             "text": "隊伍暴擊率增加"
         }
     },
-    "char_KamisatoAyaka": {
-        "afterSprint": "",
-        "afterSkill": "",
-        "afterSprintCryo": "",
-        "staminaRestore": "",
-        "snowflakeDMG": "",
-        "dmgBySnowflake": "",
-        "afterBurst": "",
-        "c6Active": ""
-    },
-    "weapon_MistsplitterReforged": {
-        "emblem": ""
-    },
-    "char_Yoimiya": {
-        "c1": "",
-        "c2": "",
-        "p2p": "",
-        "normPyroInfus": "",
-        "c6Key_": ""
-    },
-    "char_RaidenShogun": {
-        "skill": {
-            "eye": "",
-            "partyCost": ""
-        },
-        "burst": {
-            "resolves": "",
-            "resolveInitial_": "",
-            "resolveInfused_": "",
-            "burstDmg": ""
-        },
-        "a4": {
-            "enerRest": "",
-            "eleDMG": ""
-        },
-        "c4": {
-            "expires": ""
-        }
-    },
-    "char_Aloy": {
-        "skill": {
-            "coil": "",
-            "coil1": "",
-            "coil2": "",
-            "coil3": "",
-            "rush": "",
-            "rushState": ""
-        },
-        "a1CondName": "",
-        "normCryoInfus": ""
-    },
-    "char_KujouSara": {
-        "skill": {
-            "ambush": ""
-        },
-        "a4": {
-            "enerRest": ""
-        },
-        "c6": {
-            "electroCritDmg": ""
-        }
-    },
-    "char_SangonomiyaKokomi": {
-        "burst": "",
-        "c2": "",
-        "c6": "",
-        "c2SkillHeal": "",
-        "c2BurstHeal": ""
-    },
-    "page_home": {
-        "intro": "",
-        "quickLinksCard": {
-            "title": "快速連結",
-            "buttons": {
-                "tyGuide": {
-                    "title": "",
-                    "tooltip": "了解如何使用原神最佳化工具"
-                },
-                "scanners": {
-                    "title": "自動掃描器",
-                    "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
-                },
-                "kqm": {
-                    "title": "",
-                    "tooltip": ""
-                },
-                "devDiscord": {
-                    "title": "原神開發者 Discord",
-                    "tooltip": "原神開發者社群"
-                },
-                "good": {
-                    "title": "GOOD 文件",
-                    "tooltip": ""
-                },
-                "patchNotes": {
-                    "title": "原神最佳化工具更新日誌",
-                    "tooltip": ""
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": "GO 庫存"
-        },
-        "vidGuideCard": {
-            "title": ""
-        },
-        "teamCard": {
-            "title": "",
-            "jobTitle": {
-                "leadDev": "",
-                "dev": "",
-                "mod": ""
-            }
-        }
-    },
     "page_scanner": {
-        "intro": "",
-        "ik": {
-            "title": "",
-            "p1": "",
-            "p2": "",
-            "p3": ""
-        },
         "am": {
-            "title": "「天目」",
-            "p1": "",
-            "p2": ""
+            "title": "「天目」"
         },
-        "as": {
-            "title": "",
-            "p1": "",
-            "p2": ""
-        },
-        "goodeng": "",
-        "tosWarn": "",
         "tags": {
             "pc": "桌機",
-            "mobile": "",
             "ps": "PlayStation",
-            "gameMani": "",
-            "materials": "",
             "characters": "角色"
         },
         "nb": {
-            "title": "",
-            "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。",
-            "p2": "",
-            "p3": ""
-        }
-    },
-    "weapon_Akuoumaru": {
-        "party": ""
-    },
-    "artifact_ArchaicPetra": {
-        "condName": ""
-    },
-    "artifact_Instructor": {
-        "condName": ""
-    },
-    "artifact_TenacityOfTheMillelith": {
-        "condName": ""
-    },
-    "artifact_ViridescentVenerer": {
-        "condName": ""
-    },
-    "char_Thoma": {
-        "a1": "",
-        "c6": "",
-        "a2": "",
-        "c2": "",
-        "maxShield": "",
-        "maxPyroShield": ""
-    },
-    "weapon_CinnabarSpindle": {
-        "name": ""
-    },
-    "weapon_ElegyForTheEnd": {
-        "condName": ""
-    },
-    "weapon_MouunsMoon": {
-        "party": ""
-    },
-    "weapon_ThrillingTalesOfDragonSlayers": {
-        "condName": ""
-    },
-    "weapon_WavebreakersFin": {
-        "party": ""
-    },
-    "artifact_BlizzardStrayer": {
-        "condName": "",
-        "condCryo": "",
-        "condFrozen": ""
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": ""
-    },
-    "artifact_Lavawalker": {
-        "condName": ""
-    },
-    "artifact_OceanHuedClam": {
-        "condName": ""
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": ""
-    },
-    "artifact_Thundersoother": {
-        "condName": ""
-    },
-    "artifact_TinyMiracle": {
-        "condName": ""
-    },
-    "char_Albedo": {
-        "blossomCD": "",
-        "blossomDmg_": "",
-        "isotomaOnField": "",
-        "enerPerBlossom": "",
-        "c2Stacks": ""
-    },
-    "char_Amber": {
-        "secondArrow": "",
-        "critRateBonus": "",
-        "aoeRangeBonus": "",
-        "manualDetonationDmg": "",
-        "a4CondName": "",
-        "c6CondName": ""
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": ""
-        },
-        "a4": {
-            "dmgInc": ""
-        },
-        "c1": {
-            "initialGain": "",
-            "timedGain": ""
-        },
-        "c4": {
-            "name": ""
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": ""
-        },
-        "constellation2": {
-            "cond": ""
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "",
-        "skillTwoHit": "",
-        "duringBurst": "",
-        "tidecallerMaxDmg": "",
-        "a4charge": "",
-        "c4dmg": "",
-        "burstDmgRed_": ""
-    },
-    "char_Bennett": {
-        "skill": {
-            "pressDMG": "",
-            "lvl1_1DMG": "",
-            "lvl1_2DMG": "",
-            "lvl2_1DMG": "",
-            "lvl2_2DMG": "",
-            "explDMG": "",
-            "lvl1CD": "",
-            "lvl2CD": ""
-        },
-        "additionalATK": "",
-        "additionalATKRatio_": "",
-        "c4DMG": "",
-        "c6PyroInfusion": ""
-    },
-    "char_Chongyun": {
-        "infusion": "",
-        "passive2": "",
-        "asc4Cond": "",
-        "constellation1": "",
-        "constellation6": "",
-        "blades": ""
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "",
-            "1": ""
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "",
-        "holdShield": "",
-        "a1shielded": "",
-        "holdCryoShield": ""
-    },
-    "char_Fischl": {
-        "a1Name": "",
-        "a2Name": "",
-        "c1Name": "",
-        "c4AoeDmg": "",
-        "c6OzDmg": ""
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "",
-            "critRateInc": ""
-        },
-        "c1": {
-            "condName": ""
-        },
-        "c4": {
-            "lingerDuration": ""
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "",
-            "end": ""
-        },
-        "constellation2": {
-            "applyBloodBlossom": ""
-        },
-        "constellation4": {
-            "condName": ""
-        },
-        "constellation6": {
-            "condName": ""
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "",
-        "c1PullSpeed": "",
-        "c2CondName": ""
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "",
-        "p1heal": "",
-        "c1cond": ""
-    },
-    "char_Keqing": {
-        "c1DMG": "",
-        "recast": "",
-        "effectTriggers": ""
-    },
-    "char_Klee": {
-        "a1CondName": "",
-        "a1CondName2": "",
-        "c2CondName": "",
-        "c6CondName": ""
-    },
-    "char_Lisa": {
-        "a4C": "",
-        "c2C": ""
-    },
-    "char_Mona": {
-        "omen": "",
-        "omenDuration": "",
-        "bubbleDuration": "",
-        "phantomDuration": "",
-        "hitOp": {
-            "affectedByOmen": ""
-        },
-        "frozenDuration": "",
-        "uponSprint": ""
-    },
-    "char_Ningguang": {
-        "aoeGems": "",
-        "starJadeStaminaCost": "",
-        "skillReset": "",
-        "a4toggle": "",
-        "c4toggle": "",
-        "c6bonus": ""
-    },
-    "char_Qiqi": {
-        "a1C": "",
-        "c2C": ""
-    },
-    "char_Razor": {
-        "electroSigil": "",
-        "electroSigilAbsorbed": "",
-        "pickUpElementalOrbParticle": "",
-        "opHitWithClawAndThunder": "",
-        "electroSigilPerProc": ""
-    },
-    "char_Sayu": {
-        "burstHits": "",
-        "p1Swirl": "",
-        "p2Heal": "",
-        "p2Aoe": "",
-        "c1Text": "",
-        "c2KickPressDmg_": "",
-        "c2KickDmg_": "",
-        "c2Cond": "",
-        "c4Ener": "",
-        "c6DarumaDmgInc": "",
-        "c6DarumaHealInc": ""
-    },
-    "char_Shenhe": {
-        "quill": "",
-        "c4": "",
-        "c4Bonus_": "",
-        "pressQuota": "",
-        "holdQuota": "",
-        "pressDuration": "",
-        "holdDuration": ""
-    },
-    "char_Sucrose": {
-        "asc4": ""
-    },
-    "char_Xiangling": {
-        "afterChili": "",
-        "explosionDMG": "",
-        "afterGuobaHit": "",
-        "duringPyronado": "",
-        "c6Exception": ""
-    },
-    "char_Xiao": {
-        "burst": {
-            "autoAtkDmgBonus_": "",
-            "lifeDrain_": "",
-            "currentHPPerSec": "",
-            "incJump": "",
-            "incAtkAoe": "",
-            "inBurst": "",
-            "stack": ""
-        },
-        "skillStack": ""
-    },
-    "char_Xingqiu": {
-        "skillCond": "",
-        "burstCond": "",
-        "c2Cond": ""
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "",
-                "2": "",
-                "3": ""
-            },
-            "shieldLevel": "",
-            "shieldLevels": {
-                "1": "",
-                "2": "",
-                "3": ""
-            }
-        },
-        "p1": {
-            "desc": ""
-        },
-        "p2": {
-            "activeShield": ""
-        },
-        "c2": {
-            "key_": "",
-            "shield": ""
-        },
-        "c4": {
-            "swingHit": ""
-        },
-        "c6": {
-            "duringCharge": ""
-        }
-    },
-    "char_YaeMiko": {
-        "c4": ""
-    },
-    "char_Yanfei": {
-        "seals": [
-            ""
-        ],
-        "perSeal": "",
-        "maxSeals": "",
-        "charged": {
-            "0": "",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": ""
-        },
-        "burst": {
-            "grantMax": ""
-        },
-        "passive1": {
-            "sealsConsumed": ""
-        },
-        "passive2": {
-            "chargedCrit": "",
-            "key": ""
-        },
-        "c1": {
-            "sealChargedStam_": ""
-        },
-        "c6": {
-            "maxSealInc": ""
-        }
-    },
-    "char_YunJin": {
-        "burst": "",
-        "a4Inc_": "",
-        "c4": ""
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "",
-            "resonance": "",
-            "maxStele": "",
-            "nearShield": ""
-        },
-        "p1cond": "",
-        "c6heal": ""
-    },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": ""
-        },
-        "SprawlingGreenery": {
-            "cond2ele": "",
-            "cond3ele": "",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
-        }
-    },
-    "weapon_AlleyHunter": {
-        "condName": ""
-    },
-    "weapon_AmosBow": {
-        "condName": ""
-    },
-    "weapon_BlackTassel": {
-        "condName": ""
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": ""
-    },
-    "weapon_CoolSteel": {
-        "condName": ""
-    },
-    "weapon_CrescentPike": {
-        "condName": "",
-        "hitName": ""
-    },
-    "weapon_Deathmatch": {
-        "condName": "",
-        "opponents": {
-            "oneOrNone": "",
-            "moreThanOne": ""
-        }
-    },
-    "weapon_DragonsBane": {
-        "condName": ""
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_FerrousShadow": {
-        "condName": "",
-        "resistance": ""
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": ""
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_Hamayumi": {
-        "condName": ""
-    },
-    "weapon_IronSting": {
-        "condName": ""
-    },
-    "weapon_LionsRoar": {
-        "condName": ""
-    },
-    "weapon_MagicGuide": {
-        "condName": ""
-    },
-    "weapon_MappaMare": {
-        "condName": ""
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": ""
-    },
-    "weapon_PolarStar": {
-        "condName": ""
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": ""
-    },
-    "weapon_Rainslasher": {
-        "condName": ""
-    },
-    "weapon_RavenBow": {
-        "condName": ""
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "",
-        "nameCharged": ""
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": ""
-    },
-    "weapon_Slingshot": {
-        "condName": ""
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": ""
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": ""
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": ""
-    },
-    "weapon_TheWidsith": {
-        "aria": "",
-        "interlude": "",
-        "recitative": ""
-    },
-    "weapon_ThunderingPulse": {
-        "condName": ""
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": ""
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "",
-        "avg": "",
-        "always": ""
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "",
-            "namisenStacks": "",
-            "shun_dmgInc": ""
-        },
-        "passive1": {
-            "afterUse": "",
-            "afterExplode": ""
-        },
-        "c1": {
-            "shun_dmg_": ""
-        },
-        "c2": {
-            "addlStacks": ""
-        },
-        "c6": {
-            "dmg": ""
-        }
-    },
-    "char_KukiShinobu": {
-        "skill": {
-            "cost": ""
-        },
-        "a4": {
-            "heal": ""
-        },
-        "c4": {
-            "dmg": ""
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": ""
-        },
-        "c4": {
-            "condName": ""
-        },
-        "c6": {
-            "condName": "",
-            "dmg": ""
+            "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。"
         }
     },
     "page_character": {
@@ -1142,18 +267,10 @@
         "tabs": {
             "overview": "總覽",
             "talent": "天賦",
-            "teambuffs": "",
-            "optimize": "",
             "theorycraft": "理論分析"
         },
-        "formulas": "",
-        "calculations": "",
         "selectCharacter": "選擇一個角色",
-        "removeCharacter": "",
         "delete": "刪除角色",
-        "teammates": "",
-        "showingNum_one": "",
-        "showingNum_other": "",
         "hitmode": {
             "hit": "無暴擊傷害",
             "avgHit": "平均傷害",
@@ -1162,77 +279,47 @@
         "tabEquip": {
             "swapWeapon": "替換武器",
             "swapArt": "替換聖遺物",
-            "compare": "",
             "unequipArts": "卸下所有聖遺物"
         },
         "characterName": "角色名稱",
         "teammate": "隊友 {{count}}",
-        "noReaction": "",
-        "multiTarget": {
-            "title": "",
-            "addNewTarget": "",
-            "addNewMTarget": ""
-        },
-        "addStats": {
-            "title": ""
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "",
-                "max": "",
-                "mid": ""
-            },
-            "maxTotalRolls": "",
-            "maxRolls": "",
-            "maxRollsMain": ""
-        },
         "tabTeambuff": {
             "team_reso": "元素共鳴",
             "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
         }
     },
+    "page_home": {
+        "quickLinksCard": {
+            "title": "快速連結",
+            "buttons": {
+                "tyGuide": {
+                    "tooltip": "了解如何使用原神最佳化工具"
+                },
+                "scanners": {
+                    "title": "自動掃描器",
+                    "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
+                },
+                "devDiscord": {
+                    "title": "原神開發者 Discord",
+                    "tooltip": "原神開發者社群"
+                },
+                "good": {
+                    "title": "GOOD 文件"
+                },
+                "patchNotes": {
+                    "title": "原神最佳化工具更新日誌"
+                }
+            }
+        },
+        "inventoryCard": {
+            "title": "GO 庫存"
+        }
+    },
     "page_weapon": {
-        "showingNum_one": "",
-        "showingNum_other": "",
         "edit": "編輯武器",
         "weaponName": "武器名稱",
         "removeWeapon": "您確定要移除 {{value}} 嗎？",
         "addWeapon": "新增武器"
-    },
-    "weapon_AquaSimulacra": {
-        "condName": ""
-    },
-    "weapon_FadingTwilight": {
-        "states": {
-            "evengleam": "",
-            "afterglow": "",
-            "dawnblaze": ""
-        },
-        "condName": ""
-    },
-    "weapon_HaranGeppakuFutsu": {
-        "consumed": ""
-    },
-    "char_Collei": {
-        "sproutDmg": "",
-        "miniAnbarDmg": ""
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "",
-        "c2DmgKey": "",
-        "c4ConnectedBelowHp": "",
-        "c4ConnectedBelowEner": "",
-        "c6Heal": ""
-    },
-    "char_ShikanoinHeizou": {
-        "declensionStacks": "",
-        "takingField": ""
-    },
-    "char_Tighnari": {
-        "p1Cond": "",
-        "c4ReactCond": "",
-        "c6DmgKey": "",
-        "c6WreathRed": ""
     },
     "page_character_optimize": {
         "mainStat": {
@@ -1246,24 +333,13 @@
             }
         },
         "tcGraph": {
-            "vs": "",
-            "notSel": "",
-            "downloadData": "下載資料",
-            "desc": "",
-            "showStatThr": "",
-            "generatedBuilds": "",
-            "statReqThr": "",
-            "currentBuild": "",
-            "highlightedBuilds": "",
-            "buildAlreadyInList": ""
+            "downloadData": "下載資料"
         },
         "levelFilter": "聖遺物等級過濾器",
         "useExcluded": {
             "title": "使用被排除的聖遺物",
             "usingNum_one": "使用 <1>{{count}}</1> 件被排除的聖遺物",
-            "usingNum_other": "使用 <1>{{count}}</1> 件被排除的聖遺物",
-            "excNum_one": "",
-            "excNum_other": ""
+            "usingNum_other": "使用 <1>{{count}}</1> 件被排除的聖遺物"
         },
         "useEquipped": {
             "title": "使用已被裝備的聖遺物",
@@ -1272,7 +348,6 @@
                 "desc1": "每次產生配裝時，Optimizer 只會使用目前角色已裝備的聖遺物，以及除了下方角色以外的角色所裝備的聖遺物。",
                 "desc2": "如果目前角色不在下方列表中，Optimizer 只會使用未在列表中的其他角色已裝備的聖遺物。",
                 "usingNum_one": "使用 <1>{{count}}</1> 位不在列表中的角色所裝備的聖遺物",
-                "usingNum_other": "",
                 "status": {
                     "use": "使用聖遺物",
                     "dont": "不使用聖遺物",
@@ -1280,114 +355,24 @@
                 },
                 "add": "新增角色至列表中",
                 "clearList": "清除列表"
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
-        },
-        "allowPartial": "",
-        "constraintFilter": {
-            "title": "",
-            "tooltip": ""
+            }
         },
         "artSetConfig": {
             "title": "聖遺物套裝偏好設定",
-            "setEffCond": "",
-            "enabled": "",
-            "allowed": "",
             "excluded": "已排除",
             "selected": "已選擇",
-            "2rainbow": "",
-            "4rainbow": "",
             "allowAll2set": "允許所有兩件套裝",
             "excludeAll2set": "排除所有兩件套裝",
             "allowAll4set": "允許所有四件套裝",
             "excludeAll4set": "排除所有四件套裝",
-            "alExRainbow": "",
             "modal": {
                 "setCond": {
-                    "title": "",
-                    "reset": "重設條件",
-                    "text": ""
-                },
-                "ArtSetFilter": {
-                    "title": "",
-                    "intro": "",
-                    "2set": "",
-                    "4set": "",
-                    "2rain": "",
-                    "4rain": ""
+                    "reset": "重設條件"
                 }
             }
         },
-        "buildDropdownDesc": "",
-        "threadDropdownDesc": "",
-        "noArtis": "",
-        "build_one": "",
-        "build_other": "",
-        "thread_one": "",
-        "thread_other": "",
-        "targetSelector": {
-            "selectOptTarget": "",
-            "selectGraphTarget": "",
-            "invalidTarget": "",
-            "selectBuildTarget": ""
-        },
-        "selectTargetFirst": "",
         "generateButton": {
-            "cancel": "取消",
-            "generateBuilds": ""
-        },
-        "removeBuildButton": "",
-        "theorycraftButton": "",
-        "currentlyEquippedBuild": "",
-        "addBuildToList": "",
-        "graphBuildLabel": "",
-        "workerLoadFailed": ""
-    },
-    "weapon_CalamityQueller": {
-        "inactiveKey": ""
-    },
-    "weapon_ForestRegalia": {
-        "condName": ""
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": ""
-    },
-    "weapon_Moonpiercer": {
-        "condName": ""
-    },
-    "weapon_SapwoodBlade": {
-        "condName": ""
-    },
-    "char_TravelerAnemo": {
-        "p1": "",
-        "c6": "",
-        "c4": "",
-        "initialEleDmg": "",
-        "maxEleDmg": ""
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "",
-            "absorb": ""
-        },
-        "burst": {
-            "3rd": "",
-            "thunderCd": ""
-        },
-        "passive2": {
-            "enerRech_": ""
-        },
-        "c2": {
-            "thunderHit": ""
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": ""
-        },
-        "c2": {
-            "key": ""
+            "cancel": "取消"
         }
     },
     "page_newTab": {
@@ -1405,104 +390,5 @@
             "2": "關閉新的分頁 ↩️，並確保目前的分頁是唯一的 GO 網頁 🔂，重新整理此分頁 🔄。"
         },
         "refresh": "重新整理頁面"
-    },
-    "char_Candace": {
-        "hydroInfusion": ""
-    },
-    "char_Cyno": {
-        "p1Dmg": "",
-        "judication": "",
-        "burstNormalDmgInc": "",
-        "boltDmgInc": ""
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "",
-            "dance2": "",
-            "whirl1": "",
-            "whirl2": "",
-            "moon": "",
-            "wheel": ""
-        },
-        "passive1": {
-            "underChaliceEffect": "",
-            "notDendroHydroTeam": "",
-            "condName": "",
-            "bountifulCores": ""
-        },
-        "c1": {
-            "moon_dmg_": ""
-        },
-        "c4": {
-            "condName": ""
-        }
-    },
-    "weapon_MakhairaAquamarine": {
-        "condName": ""
-    },
-    "weapon_WanderingEvenstar": {
-        "condName": ""
-    },
-    "weapon_XiphosMoonlight": {
-        "condName": ""
-    },
-    "char_Nahida": {
-        "karmaDmg_": "",
-        "karmaCritRate_": "",
-        "karmaIntervalDec": "",
-        "noBurstEffect": "",
-        "partyInBurst": "",
-        "c1Key": "",
-        "c2": {
-            "bloomCondName": "",
-            "qasCondName": ""
-        },
-        "c4CondName": "",
-        "c6KarmicDmg": ""
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": ""
-    },
-    "char_Faruzan": {
-        "giftCondName": "",
-        "a4CondName": "",
-        "c2DurationInc": "",
-        "c6Arrow": ""
-    },
-    "char_Layla": {
-        "starDmgInc": "",
-        "c1ShieldBonusKey_": "",
-        "c4CondKey": "",
-        "starDmg_": "",
-        "slugDmg_": "",
-        "starInterval_": ""
-    },
-    "char_Wanderer": {
-        "windfavoredState": "",
-        "p1": {
-            "pyroCondName": "",
-            "cryoCondName": ""
-        },
-        "p2Dmg": "",
-        "c1BonusKey": "",
-        "c2CondName": "",
-        "c6Key": ""
-    },
-    "weapon_ToukabouShigure": {
-        "condName": ""
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
     }
 }
