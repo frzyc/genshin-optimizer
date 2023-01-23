@@ -1,5 +1,6 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
@@ -42,7 +43,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const { level, ascension, refinement, id, location = "", lock } = weapon
   const weaponTypeKey = UIData.get(input.weapon.type).value!
   const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(x => UIData.get(x))
-  const img = weaponSheet.getImg(ascension)
+  const img = weaponAsset(weapon.key, ascension >= 2)
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>

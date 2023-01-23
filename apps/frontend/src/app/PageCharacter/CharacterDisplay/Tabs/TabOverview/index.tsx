@@ -1,3 +1,4 @@
+import { charCard } from "@genshin-optimizer/char-cards";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Badge, Box, CardActionArea, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
 import { useCallback, useContext, useRef } from "react";
@@ -20,6 +21,7 @@ import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
+import useDBMeta from "../../../../ReactHooks/useDBMeta";
 import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
@@ -63,6 +65,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
 function CharacterProfileCard() {
   const { database } = useContext(DatabaseContext)
   const { characterSheet, character: { key: characterKey, team } } = useContext(CharacterContext)
+  const { gender } = useDBMeta()
   const { data, } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
@@ -105,7 +108,7 @@ function CharacterProfileCard() {
           <SqBadge>{getLevelString(level, ascension)}</SqBadge>
         </Typography>
       </Box>
-      <Box src={characterSheet.cardImg} component="img" width="100%" height="auto" />
+      <Box src={charCard(characterKey, gender)} component="img" width="100%" height="auto" />
     </Box>
     <Box>
       <CardActionArea sx={{ p: 1 }} onClick={() => navigate("talent")}>

@@ -7,9 +7,7 @@ import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "AmosBow"
 const data_gen = data_gen_json as WeaponData
@@ -38,10 +36,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 })
 
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, st("base")),
     fields: [{
       node: normal_dmg_
     }, {
@@ -50,7 +46,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    header: headerTemplate(key, st("stacks")),
     name: trm("condName"),
     states: objectKeyMap(range(1, 5), i => ({
       name: st("seconds", { count: i / 10 }),

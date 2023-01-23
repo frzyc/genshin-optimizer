@@ -1,23 +1,22 @@
+import { artifactAsset } from "@genshin-optimizer/g-assets";
 import { BusinessCenter } from "@mui/icons-material";
 import { alpha, Box, CardActionArea, Chip, Typography, useTheme } from "@mui/material";
 import { useCallback, useContext } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
-import useDBMeta from "../../ReactHooks/useDBMeta";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
-import { allElementsWithPhy, CharacterKey, SlotKey } from "../../Types/consts";
+import { allElementsWithPhy, SlotKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
+import LocationIcon from "../Character/LocationIcon";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
-import ImgIcon from "../Image/ImgIcon";
 import { StatColoredWithUnit } from "../StatDisplay";
 import StatIcon from "../StatIcon";
 import ArtifactTooltip from "./ArtifactTooltip";
@@ -52,13 +51,13 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         <ArtifactTooltip art={art}>
           <Box
             component="img"
-            src={sheet?.slotIcons[slotKey] ?? ""}
+            src={artifactAsset(art.setKey, slotKey)}
             sx={{ m: -1, maxHeight: "110%", maxWidth: "110%" }}
           />
         </ArtifactTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={Artifact.levelVariant(level)} />
-          {showLocation && <Chip size="small" label={<LocationIcon charKey={location && database.chars.LocationToCharacterKey(location)} />} color={"secondary"} sx={{
+          {showLocation && <Chip size="small" label={location ? <LocationIcon characterKey={location && database.chars.LocationToCharacterKey(location)} /> : <BusinessCenter />} color={"secondary"} sx={{
             overflow: "visible", ".MuiChip-label": {
               overflow: "visible"
             }
@@ -93,9 +92,4 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
       <span>{`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</span>
     </Typography>
   </Box>)
-}
-function LocationIcon({ charKey }: { charKey: CharacterKey | "" }) {
-  const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(charKey, gender), [charKey, gender])
-  return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} size={2.5} sx={{ marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

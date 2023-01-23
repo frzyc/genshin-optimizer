@@ -5,10 +5,9 @@ import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "Instructor"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "set4")
@@ -29,7 +28,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Instructor", rarity: [3, 4],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

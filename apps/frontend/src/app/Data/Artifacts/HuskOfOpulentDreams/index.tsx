@@ -7,10 +7,9 @@ import { range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "HuskOfOpulentDreams"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 const [, trm] = trans("artifact", key)
 
 const [condStackPath, condStack] = cond(key, "stack")
@@ -41,7 +40,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Husk of Opulent Dreams", rarity: [4, 5],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

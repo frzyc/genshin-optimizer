@@ -1,3 +1,4 @@
+import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback } from 'react';
 import Assets from '../../Assets/Assets';
@@ -30,13 +31,13 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
         <BootstrapTooltip placement="top" title={title}>
           <Box display="flex" className={`grad-${teammateSheet.rarity}star`}>
-            <Box
+            {characterKey && <Box
               component="img"
-              src={teammateSheet.thumbImgSide}
+              src={characterAsset(characterKey, "iconSide", gender)}
               maxWidth="100%"
               maxHeight="100%"
               sx={{ transform: "scale(1.4)", transformOrigin: "bottom" }}
-            />
+            />}
           </Box>
         </BootstrapTooltip>
         <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", top: 0, }}>

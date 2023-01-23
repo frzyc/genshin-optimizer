@@ -1,5 +1,6 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
@@ -285,7 +286,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
-                    {sheet?.getSlotName(artifact!.slotKey) ? <span><ImgIcon src={sheet.slotIcons[artifact!.slotKey]} /> {sheet?.getSlotName(artifact!.slotKey)}</span> : t`editor.unknownPieceName`}
+                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ? <span><ImgIcon src={artifactAsset(artifact.setKey, artifact.slotKey)} /> {sheet?.getSlotName(artifact!.slotKey)}</span> : t`editor.unknownPieceName`}
                   </Typography>
                 </Suspense>
               </CardLight>

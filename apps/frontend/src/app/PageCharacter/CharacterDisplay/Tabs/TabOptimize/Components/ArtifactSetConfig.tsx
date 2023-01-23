@@ -17,7 +17,7 @@ import { StarsDisplay } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
-import { ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
+import { artifactDefIcon, ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData';
 import { UIData } from '../../../../../Formula/uiData';
@@ -194,7 +194,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   return <Grid item key={setKey} xs={1}>
     <CardLight sx={{ height: "100%", opacity: slots < 2 ? "50%" : undefined }}>
       <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
-        <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto", mx: -1 }} />
+        <Box component="img" src={artifactDefIcon(setKey)} sx={{ height: 100, width: "auto", mx: -1 }} />
         <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <Typography variant="h6">{sheet.name ?? ""}</Typography>
           <Box display="flex" gap={1}>

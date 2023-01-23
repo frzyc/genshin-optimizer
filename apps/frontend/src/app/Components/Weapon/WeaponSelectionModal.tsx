@@ -1,3 +1,4 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
 import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -99,7 +100,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
           return <Grid item key={weaponKey} lg={3} md={4}>
             <CardLight sx={{ height: "100%" }} >
               <CardActionArea onClick={() => { onHide(); onSelect(weaponKey) }} sx={{ display: "flex" }}>
-                <Box component="img" src={weaponSheet.getImg(ascension)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
+                <Box component="img" src={weaponAsset(weaponKey, ascension >= 2)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
                 <Box sx={{ flexGrow: 1, px: 1 }}>
                   <Typography variant="subtitle1">{weaponSheet.name}</Typography>
                   <Typography><ImgIcon src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> <StarsDisplay stars={weaponSheet.rarity} colored /></Typography>

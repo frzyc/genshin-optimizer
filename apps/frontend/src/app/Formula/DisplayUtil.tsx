@@ -1,6 +1,7 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { input } from ".";
 import ColorText from "../Components/ColoredText";
-import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
+import { artifactDefIcon, ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import WeaponSheet from "../Data/Weapons/WeaponSheet";
 import { ArtCharDatabase } from "../Database/Database";
@@ -41,7 +42,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string, databas
       if (!sheet) return errHeader
       return {
         title: sheet.name,
-        icon: sheet.defIconSrc
+        icon: artifactDefIcon(key as ArtifactSetKey)
       }
     } else if (namespace === "weapon") {
       const sheet = await WeaponSheet.get(key as WeaponKey)
@@ -49,7 +50,7 @@ export async function getDisplayHeader(data: UIData, sectionKey: string, databas
       const asc = data.get(input.weapon.asc).value
       return {
         title: sheet.name,
-        icon: sheet.getImg(asc)
+        icon:weaponAsset(key as WeaponKey, asc >= 2)
       }
     }
   } else {

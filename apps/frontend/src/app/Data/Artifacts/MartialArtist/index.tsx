@@ -6,10 +6,9 @@ import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "MartialArtist"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 const [condStatePath, condState] = cond(key, "state")
 
 const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), KeyMap.info("normal_dmg_"))
@@ -26,7 +25,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Martial Artist", rarity: [3, 4],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2NA }, { node: set2CA }] }] },
     4: {

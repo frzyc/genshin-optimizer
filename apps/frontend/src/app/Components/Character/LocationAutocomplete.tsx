@@ -1,3 +1,4 @@
+import { characterAsset } from "@genshin-optimizer/g-assets"
 import { BusinessCenter } from "@mui/icons-material"
 import { AutocompleteProps, Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
@@ -22,7 +23,7 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
   const toImg = useCallback((key: LocationKey) => key === "" ? <BusinessCenter /> : characterSheets ?
-    <ThumbSide src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{ pr: 1 }} /> : undefined,
+    <ThumbSide src={characterAsset(database.chars.LocationToCharacterKey(key), "iconSide", gender)} sx={{ pr: 1 }} /> : undefined,
     [database, gender, characterSheets])
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.charMeta.get(key).favorite) :

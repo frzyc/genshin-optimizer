@@ -5,7 +5,6 @@ import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
 import { st, stg } from '../../SheetUtil'
 import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -13,7 +12,7 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Fischl"
 const elementKey: ElementKey = "electro"
 const region: Region = "mondstadt"
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
 const dm = {
@@ -218,4 +217,4 @@ const sheet: ICharacterSheet = {
       constellation6: ct.talentTem("constellation6"),
     },
   }
-export default new CharacterSheet(sheet, data, assets)
+export default new CharacterSheet(sheet, data)

@@ -9,13 +9,12 @@ import { cond, stg, st } from '../../SheetUtil'
 import { charTemplates, TalentSheet } from '../CharacterSheet'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import Traveler from '../Traveler'
-import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "dendro"
   const condCharKey = "TravelerDendro"
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
 
   let s = 0, b = 0
   const dm = {

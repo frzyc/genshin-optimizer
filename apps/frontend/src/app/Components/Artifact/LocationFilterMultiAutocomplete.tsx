@@ -1,6 +1,7 @@
 import { Box, Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
+import { characterAsset } from "@genshin-optimizer/g-assets"
 import CharacterSheet from "../../Data/Characters/CharacterSheet"
 import { DatabaseContext } from "../../Database/Database"
 import useDBMeta from "../../ReactHooks/useDBMeta"
@@ -14,7 +15,7 @@ export default function LocationFilterMultiAutocomplete({ locations, setLocation
   const { gender } = useDBMeta()
   const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const toText = useCallback((key: LocationCharacterKey): string => t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(key), gender)}`), [database, gender, t])
-  const toImg = useCallback((key: LocationCharacterKey) => characterSheets ? <Box><Box component="img" src={characterSheets(database.chars.LocationToCharacterKey(key), gender)?.thumbImgSide} sx={{
+  const toImg = useCallback((key: LocationCharacterKey) => characterSheets ? <Box><Box component="img" src={characterAsset(database.chars.LocationToCharacterKey(key), "iconSide", gender)} sx={{
     display: "inline-block",
     width: "auto",
     height: `3em`,

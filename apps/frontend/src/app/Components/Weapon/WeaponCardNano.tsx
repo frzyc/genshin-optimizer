@@ -1,20 +1,18 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { BusinessCenter } from "@mui/icons-material";
 import { Box, CardActionArea, Chip, Skeleton, Typography } from "@mui/material";
 import { useCallback, useContext, useMemo } from "react";
-import CharacterSheet from "../../Data/Characters/CharacterSheet";
 import WeaponSheet from "../../Data/Weapons/WeaponSheet";
 import { DatabaseContext } from "../../Database/Database";
 import { input } from "../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../Formula/api";
 import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
-import useDBMeta from "../../ReactHooks/useDBMeta";
 import usePromise from "../../ReactHooks/usePromise";
 import useWeapon from "../../ReactHooks/useWeapon";
-import { LocationKey } from "../../Types/consts";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
+import LocationIcon from "../Character/LocationIcon";
 import ConditionalWrapper from "../ConditionalWrapper";
-import ImgIcon from "../Image/ImgIcon";
 import WeaponNameTooltip from "./WeaponNameTooltip";
 
 type Data = {
@@ -25,6 +23,7 @@ type Data = {
 }
 
 export default function WeaponCardNano({ weaponId, showLocation = false, onClick, BGComponent = CardDark, }: Data) {
+  const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(weaponId)
   const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
   const actionWrapperFunc = useCallback(children => <CardActionArea sx={{ height: "100%" }} onClick={onClick}>{children}</CardActionArea>, [onClick],)
@@ -37,13 +36,13 @@ export default function WeaponCardNano({ weaponId, showLocation = false, onClick
         <WeaponNameTooltip sheet={weaponSheet}>
           <Box
             component="img"
-            src={weaponSheet.getImg(weapon.ascension)}
+            src={weaponAsset(weapon.key, weapon.ascension >= 2)}
             sx={{ mx: -1, maxHeight: "100%", maxWidth: "100%" }}
           />
         </WeaponNameTooltip>
         <Box sx={{ position: "absolute", width: "100%", height: "100%", p: 0.5, opacity: 0.85, display: "flex", justifyContent: "space-between", pointerEvents: "none" }} >
           <Chip size="small" label={<strong>{WeaponSheet.getLevelString(weapon)}</strong>} color="primary" />
-          {showLocation && <Chip size="small" label={<LocationIcon location={location} />} color={"secondary"} sx={{
+          {showLocation && <Chip size="small" label={location ? <LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} /> : <BusinessCenter />} color={"secondary"} sx={{
             overflow: "visible", ".MuiChip-label": {
               overflow: "visible"
             }
@@ -70,10 +69,4 @@ function WeaponStat({ node }: { node: NodeDisplay }) {
       <span>{nodeVStr(node)}</span>
     </Typography>
   </Box>)
-}
-function LocationIcon({ location }: { location: LocationKey }) {
-  const { database } = useContext(DatabaseContext)
-  const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(location ? database.chars.LocationToCharacterKey(location) : "", gender), [location, gender])
-  return characterSheet ? <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}><ImgIcon src={characterSheet.thumbImgSide} size={2.5} sx={{ marginTop: "-1.5em", marginLeft: "-0.5em" }} /></BootstrapTooltip> : <BusinessCenter />
 }

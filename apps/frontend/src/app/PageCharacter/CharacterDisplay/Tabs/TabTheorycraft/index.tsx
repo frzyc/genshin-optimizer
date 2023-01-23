@@ -1,11 +1,12 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
-import ArtifactSetAutocomplete from "apps/frontend/src/app/Components/Artifact/ArtifactSetAutocomplete";
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
 import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
@@ -28,7 +29,7 @@ import StatIcon from "../../../../Components/StatIcon";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../../Context/DataContext";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
-import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
+import { artifactDefIcon, ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
 import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
@@ -223,7 +224,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
         {weaponSheet && <Box
           className={`grad-${weaponSheet.rarity}star`}
           component="img"
-          src={weaponSheet.getImg(weapon.ascension)}
+          src={weaponAsset(weapon.key, ascension >= 2)}
           sx={{ flexshrink: 1, flexBasis: 0, maxWidth: "30%", borderRadius: 1 }}
         />}
         <Stack spacing={1} flexGrow={1}>
@@ -354,7 +355,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
         <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
-          <ImgIcon size={2} sx={{ m: -1 }} src={artifactSheet.defIconSrc} />
+          <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />
           <Box >{artifactSheet.setName}</Box>
           <Info />
         </Box>

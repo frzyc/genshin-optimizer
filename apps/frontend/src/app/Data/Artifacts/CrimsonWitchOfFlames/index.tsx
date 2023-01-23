@@ -7,10 +7,9 @@ import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "CrimsonWitchOfFlames"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const [condStackPath, condStack] = cond(key, "stack")
 const pyro_dmg_info: Info = KeyMap.info("pyro_dmg_")
@@ -40,7 +39,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Crimson Witch of Flames", rarity: [4, 5],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

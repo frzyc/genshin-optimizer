@@ -1,14 +1,14 @@
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import Assets from "../../Assets/Assets";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { input } from "../../Formula";
 import { Data, NumNode } from "../../Formula/type";
 import { greaterEq } from "../../Formula/utils";
-import { CharacterKey, CharacterSheetKey, ElementKey, Gender, Rarity, TravelerKey, travelerKeys, WeaponTypeKey } from "../../Types/consts";
+import { CharacterKey, CharacterSheetKey, ElementKey, Gender, Rarity, travelerFKeys, TravelerKey, travelerKeys, travelerMKeys, WeaponTypeKey } from "../../Types/consts";
 import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
 import { ascensionMaxLevel } from "../LevelData";
 import { st, trans } from "../SheetUtil";
-import { AssetType } from "./AssetType";
 
 const characterSheets = import('.').then(imp => imp.default)
 
@@ -35,22 +35,14 @@ export type ICharacterSheet = {
 export type AllCharacterSheets = (characterkey: CharacterKey, gender: Gender) => CharacterSheet
 export default class CharacterSheet {
   sheet: ICharacterSheet;
-  asset: AssetType;
   data: Data;
-  constructor(charSheet: ICharacterSheet, data: Data, asset: AssetType) {
+  constructor(charSheet: ICharacterSheet, data: Data) {
     this.sheet = charSheet
     this.data = data
-    this.asset = asset
   }
   static get = (charKey: CharacterKey | "", gender: Gender): Promise<CharacterSheet> | undefined => charKey ? characterSheets.then(c => c[charKeyToCharSheetKey(charKey, gender)]) : undefined
   static get getAll(): Promise<AllCharacterSheets> { return characterSheets.then(cs => (characterkey: CharacterKey, gender: Gender): CharacterSheet => cs[charKeyToCharSheetKey(characterkey, gender)]) }
   get name() { return this.sheet.name }
-  get icon() { return <ImgIcon src={this.thumbImgSide} size={1.667} sx={{ marginTop: "-2em", marginLeft: "-0.5em" }} /> }
-  get nameWIthIcon() { return <span>{this.icon} {this.name}</span> }
-  get cardImg() { return this.asset.card }
-  get thumbImg() { return this.asset.thumb }
-  get thumbImgSide() { return this.asset.thumbSide }
-  get bannerImg() { return this.asset.banner }
 
   get rarity() { return this.sheet.rarity }
   get elementKey() { return this.sheet.elementKey }
@@ -143,12 +135,13 @@ export interface ICharacterTemplate {
   fieldsTem: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => IDocumentFields
   condTem: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => DocumentConditional
 }
-export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, assets: AssetType): ICharacterTemplate => {
+
+export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey): ICharacterTemplate => {
   const [chg, ch] = trans("char", cKey)
 
   const img = (tk: TalentSheetElementKey): string => {
     if (tk === "auto") return Assets.weaponTypes[wKey]
-    return assets[tk] ?? ""
+    return characterAsset(charSheetKeyToCharKey(cKey), tk, "F")// Should be all genderless assets
   }
 
   return {
@@ -164,4 +157,9 @@ export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey, asse
 function charKeyToCharSheetKey(charKey: CharacterKey, gender: Gender): CharacterSheetKey {
   if (travelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
   else return charKey as CharacterSheetKey
+}
+function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {
+  if (travelerFKeys.includes(csk as any) || travelerMKeys.includes(csk as any))
+    return csk.slice(0, -1) as CharacterKey
+  else return csk as CharacterKey
 }

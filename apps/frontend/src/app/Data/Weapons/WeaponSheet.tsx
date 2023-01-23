@@ -1,3 +1,4 @@
+import { weaponAsset } from '@genshin-optimizer/g-assets';
 import type { WeaponData } from '@genshin-optimizer/pipeline';
 import ImgIcon from '../../Components/Image/ImgIcon';
 import SqBadge from '../../Components/SqBadge';
@@ -13,8 +14,6 @@ import { getLevelString } from '../LevelData';
 const weaponSheets = import('.').then(imp => imp.default)
 
 export interface IWeaponSheet {
-  icon: string,
-  iconAwaken: string,
   document: DocumentSection[],
 }
 // This is the weapon Data.displays merged together for each weapons.
@@ -52,15 +51,12 @@ export default class WeaponSheet {
   get description() { return this.tr("description") }
   passiveDescription = (refineIndex: number) => this.hasRefinement ? this.tr(`passiveDescription.${refineIndex}`) : ""
   get document() { return this.sheet.document }
-  getImg(ascsion: number) {
-    return ascsion < 2 ? this.sheet.icon : this.sheet.iconAwaken
-  }
 }
-export const headerTemplate = (weaponKey: WeaponKey, img: string, imgAwaken: string, action?: Displayable): IDocumentHeader => {
+export function headerTemplate(weaponKey: WeaponKey, action?: Displayable): IDocumentHeader {
   const tr = (strKey: string) => <Translate ns={`weapon_${weaponKey}_gen`} key18={strKey} />
   return {
     title: tr(`passiveName`),
-    icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={data.get(input.weapon.asc).value < 2 ? img : imgAwaken} />,
+    icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={weaponAsset(weaponKey, data.get(input.weapon.asc).value >= 2)} />,
     action: action && <SqBadge color="success">{action}</SqBadge>,
     description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)
   }

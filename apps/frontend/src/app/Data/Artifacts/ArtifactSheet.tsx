@@ -1,3 +1,4 @@
+import { artifactAsset } from "@genshin-optimizer/g-assets";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
@@ -9,13 +10,11 @@ import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, S
 import { DocumentSection, IDocumentHeader } from "../../Types/sheet";
 import { st } from "../SheetUtil";
 
-// TODO: remove typecasting once all sheets populated
 const artifactSheets = import(".").then(imp => imp.default)
 
 export interface IArtifactSheet {
   name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
   rarity: readonly ArtifactRarity[],
-  icons: Dict<SlotKey, string>,
   setEffects: Dict<SetNum, SetEffectEntry>
 }
 export interface SetEffectEntry {
@@ -36,20 +35,7 @@ export class ArtifactSheet {
   get tr() { return ArtifactSheet.tr(this.key) }
 
   get name() { return this.tr("setName") }
-  get defIconSrc() {
-    const slotKey = this.slots[0]
-    if (!this.slotIcons[slotKey]) return undefined
-    return this.slotIcons[slotKey]
-  }
-  get defIcon() { return <ImgIcon src={this.defIconSrc} sx={{ fontSize: "1.5em" }} /> }
   get setName() { return this.tr("setName") }
-  /**
-   * @deprecated use src directly
-   */
-  get nameWithIcon() {
-    const slotKey = this.slots[0]
-    return <span><ImgIcon src={this.slotIcons[slotKey]} /> {this.tr("setName")}</span>
-  }
 
   //This is only for OCR, because we only scan in english right now.
   get nameRaw(): string { return this.sheet.name }
@@ -63,7 +49,6 @@ export class ArtifactSheet {
       default: return [...allSlotKeys]
     }
   }
-  get slotIcons(): Dict<SlotKey, string> { return this.sheet.icons }
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
   getSlotName = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.name`)
   getSlotDesc = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.desc`)
@@ -96,12 +81,16 @@ export class ArtifactSheet {
   }
   hasEnough = (setNum: SetNum, data: UIData) => (data.get(input.artSet[this.key]).value ?? 0) >= setNum
 }
-export const setHeaderTemplate = (setKey: ArtifactSetKey, icons: Partial<Record<SlotKey, string>>): ((setNum: SetNum) => IDocumentHeader) => {
+
+export const setHeaderTemplate = (setKey: ArtifactSetKey): ((setNum: SetNum) => IDocumentHeader) => {
   const tr = (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
   return (setNum: SetNum) => ({
     title: tr("setName"),
-    icon: <ImgIcon size={2} sx={{ m: -1 }} src={icons.flower ?? icons.circlet ?? ""} />,
+    icon: <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />,
     action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
     description: tr(`setEffects.${setNum}`)
   })
+}
+export function artifactDefIcon(setKey: ArtifactSetKey) {
+  return artifactAsset(setKey, "flower") || artifactAsset(setKey, "circlet")
 }

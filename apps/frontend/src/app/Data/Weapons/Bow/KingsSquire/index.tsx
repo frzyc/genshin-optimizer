@@ -6,9 +6,7 @@ import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "KingsSquire"
 const data_gen = data_gen_json as WeaponData
@@ -34,17 +32,15 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 })
 
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, st("base")),
     fields: [{
       node: infoMut(dmg, { name: st("dmg") }),
     }]
   }, {
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("afterUse.skillOrBurst"),
     states: {
       on: {

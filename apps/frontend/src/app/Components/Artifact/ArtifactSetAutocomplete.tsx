@@ -1,10 +1,11 @@
 import { AutocompleteRenderGroupParams, Box, List, ListSubheader } from '@mui/material';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
+import { artifactDefIcon, ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
 import usePromise from '../../ReactHooks/usePromise';
 import { ArtifactRarity, ArtifactSetKey } from '../../Types/consts';
 import { GeneralAutocomplete, GeneralAutocompleteProps } from '../GeneralAutocomplete';
+import ImgIcon from '../Image/ImgIcon';
 import { StarsDisplay } from '../StarDisplay';
 import sortByRarityAndName from './sortByRarityAndName';
 
@@ -20,7 +21,7 @@ export default function ArtifactSetAutocomplete({ artSetKey, setArtSetKey, label
     .flatMap(([rarity, sets]) => sets.map(set => ({ key: set, label: t(`artifactNames_gen:${set}`), grouper: +rarity as ArtifactRarity })))
     .sort(sortByRarityAndName), [artifactSheets, t])
 
-  const toImg = useCallback((key: ArtifactSetKey | "") => key ? artifactSheets?.(key)?.defIcon : undefined, [artifactSheets])
+  const toImg = useCallback((key: ArtifactSetKey | "") => key ? <ImgIcon src={artifactDefIcon(key)} sx={{ fontSize: "1.5em" }} /> : undefined, [])
 
   return <GeneralAutocomplete
     options={options}
