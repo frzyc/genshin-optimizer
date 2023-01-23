@@ -58,7 +58,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>
       <Suspense fallback={false}>
-        <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
+        <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} weaponTypeFilter={weaponTypeKey} />
       </Suspense>
       {/* Editor/character detail display */}
       <Suspense fallback={false}>
