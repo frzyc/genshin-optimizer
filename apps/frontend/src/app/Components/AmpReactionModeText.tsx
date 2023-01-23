@@ -19,7 +19,7 @@ export const ampReactionMap = {
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export default function AmpReactionModeText({ reaction, trigger }: { reaction: AmpReactionKey, trigger?: Variant }) {
   const { t } = useTranslation("sheet_gen")
-  if (!trigger) trigger = Object.keys(ampReactionMap[reaction])[0]
+  if (!trigger) trigger = Object.keys(ampReactionMap[reaction])[0] as Variant
   const base = ampReactionMap[reaction][trigger]
   if (!base) return null;
 
