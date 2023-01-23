@@ -13,9 +13,7 @@
                 "noRoll": "Không có roll",
                 "noStat": "Không có giá trị",
                 "eff": "Hiệu suất: <1></1>",
-                "nextRolls": "Rolls kế tiếp:",
-                "RollCount_one": "",
-                "RollCount_other": ""
+                "nextRolls": "Rolls kế tiếp:"
             },
             "rarity": "Phẩm chất",
             "level": "Cấp độ",
@@ -33,14 +31,12 @@
             "btnClear": "Xóa",
             "btnRandom": "Ngẫu nhiên",
             "btnUpdate": "Nâng cấp thánh di vật",
-            "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?",
-            "unknownSetName": ""
+            "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
         },
         "artifactFilter": "Bộ lọc Thánh Di Vật",
         "filterLocation": {
             "inventory": "Túi",
-            "currentlyEquipped": "Đang trang bị",
-            "location": ""
+            "currentlyEquipped": "Đang trang bị"
         },
         "button": {
             "unequipArtifacts": "Gỡ Thánh Di Vật",
@@ -77,8 +73,7 @@
         "exclusion": {
             "any": "Bất kỳ",
             "excluded": "Đã loại trừ",
-            "included": "Bao gồm",
-            "exclusion": ""
+            "included": "Bao gồm"
         },
         "sortMap": {
             "level": "Cấp",
@@ -90,26 +85,7 @@
         },
         "resetFilters": "Cài lại bộ lọc",
         "setEffectNum": "Bộ {{setNum}} món",
-        "excludeArtifactTip": "Loại trừ thánh di vật sẽ ngăn trình tạo builds chọn nó và builds.",
-        "showingNum_one": "",
-        "showingNum_other": "",
-        "edit": "",
-        "excluded": "",
-        "included": "",
-        "autocompleteLabels": {
-            "sets": "",
-            "mainStats": "",
-            "substats": "",
-            "set": ""
-        },
-        "substat_one": "",
-        "substat_other": "",
-        "addNew": "",
-        "sub_one": "",
-        "sub_other": "",
-        "cantDeleteLock": "",
-        "equippedArt": "",
-        "artInInv": ""
+        "excludeArtifactTip": "Loại trừ thánh di vật sẽ ngăn trình tạo builds chọn nó và builds."
     },
     "languages": {
         "chs": "Tiếng Trung (giản thể)",
@@ -124,9 +100,7 @@
         "pt": "Tiếng Bồ Đào Nha",
         "ru": "Tiếng Nga",
         "th": "Tiếng Thái",
-        "vi": "Tiếng Việt",
-        "it": "",
-        "tr": ""
+        "vi": "Tiếng Việt"
     },
     "settings": {
         "title": "Cài Đặt",
@@ -148,17 +122,6 @@
             "dbSource": "Nguồn dữ liệu:",
             "goodUpload": {
                 "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
-            },
-            "buttons": {
-                "open": "",
-                "detectDups": "",
-                "delNotInImport": ""
-            },
-            "tooltip": {
-                "detectdup": "",
-                "ignoreDup": "",
-                "delNotInImport": "",
-                "keepNotInImport": ""
             }
         },
         "count": {
@@ -170,10 +133,7 @@
             "updated": "Đã cập nhật:",
             "removed": "Đã loại bỏ:",
             "unchanged": "Không thay đổi:",
-            "invalid": "Không hợp lệ:",
-            "upgraded": "",
-            "dbTotal": "",
-            "notInImport": ""
+            "invalid": "Không hợp lệ:"
         },
         "DatabaseCard": {
             "title": "Cơ sở dữ liệu",
@@ -195,7 +155,6 @@
             "tools": "Công Cụ",
             "weapons": "Vũ khí",
             "doc": "Docs",
-            "setting": "",
             "scanner": "Máy quét"
         },
         "social": {
@@ -232,13 +191,7 @@
         "sortBy": "Sắp xếp theo: ",
         "delete": "Xóa",
         "locked": "Đã khóa",
-        "unlocked": "Đã mở khóa",
-        "refinement": "",
-        "selectlevel": "",
-        "gender": {
-            "F": "",
-            "M": ""
-        }
+        "unlocked": "Đã mở khóa"
     },
     "char_Eula": {
         "skillC": {
@@ -251,25 +204,18 @@
         "burstC": {
             "name": "Kiếm Ánh Sáng",
             "start5": "Bắt đầu ở 5 tầng",
-            "addStacks": "50% cơ hội nhận thêm mỗi tầng",
-            "dmg": ""
+            "addStacks": "50% cơ hội nhận thêm mỗi tầng"
         },
         "c1C": {
             "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
             "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
         },
-        "passive1": "Sát thương Kiếm Ánh Sáng",
-        "c4C": {
-            "name": "",
-            "desc": ""
-        }
+        "passive1": "Sát thương Kiếm Ánh Sáng"
     },
     "char_Noelle": {
         "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
         "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s",
-        "qlarger": "Tăng phạm vi tấn công",
-        "c4dmg": "",
-        "skillHeal_": ""
+        "qlarger": "Tăng phạm vi tấn công"
     },
     "char_Venti": {
         "addAimed": "Sát thương mũi tên tăng thêm",
@@ -298,101 +244,25 @@
             "hydro": "Sát thương nguyên tố Thuỷ khi đánh trúng đối thủ",
             "cryo": "Sát thương nguyên tố Băng khi đánh trúng đối thủ",
             "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
-            "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ",
-            "none": "",
-            "normalOrCharged": "",
-            "skillOrBurst": "",
-            "crit": "",
-            "normalChargedOrPlunging": "",
-            "dendro": "",
-            "normalEle": ""
+            "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
         },
         "eleAbsor": "Chuyển hóa nguyên tố",
         "absorDot": "Sát thương chuyển hóa theo thời gian",
         "afterUse": {
             "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
-            "burst": "Sau khi sử dụng Kỹ năng Nộ",
-            "skillOrBurst": ""
+            "burst": "Sau khi sử dụng Kỹ năng Nộ"
         },
         "increase": {
             "atk": "Tăng tấn công"
         },
-        "hits_one": "",
-        "hits_other": "",
-        "lessEqPercentHP": "",
-        "greaterPercentHP": "",
-        "greaterEqPercentHP": "",
-        "lessPercentEnergy": "",
-        "enemyLessPercentHP": "",
-        "enemyLessEqPercentHP": "",
-        "enemyGreaterPercentHP": "",
-        "enemyGreaterEqPercentHP": "",
-        "stack_one": "",
-        "stack_other": "",
-        "seconds_one": "",
-        "seconds_other": "",
-        "uses_one": "",
-        "uses_other": "",
-        "afterDefeatEnemy": "",
-        "afterSprint": "",
-        "skillCDRed": "",
-        "burstCDRed": "",
-        "pressCD": "",
-        "holdCD": "",
-        "triggerCD": "",
-        "eleSwirled": "",
-        "incInterRes": "",
-        "charges": "",
-        "cooldown": "",
-        "addlCharges": "",
-        "activeCharField": "",
-        "opponentsField": "",
-        "takeDmg": "",
-        "infusion": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "energyRegen": "",
-        "effectDuration": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": ""
-        },
-        "durationInc": "",
-        "base": "",
-        "stacks": "",
-        "protectedByShield": "",
-        "protectedByShieldCrystal": "",
-        "staminaDec_": "",
-        "dmgAbsorption": {
-            "pyro": "",
-            "cryo": "",
-            "anemo": "",
-            "hydro": "",
-            "electro": "",
-            "dendro": "",
-            "geo": "",
-            "none": ""
-        },
         "opponentsDamaged": "Kẻ địch đã bị gây sát thương",
         "press": "Nhấn",
         "hold": "Nhấn giữ",
-        "addlCharge": "",
         "conditional": "Điều kiện",
         "maxStacks": "Tầng hiệu ứng tối đa",
         "1set": "Bộ lẻ",
         "2set": "Bộ hai",
         "4set": "Bộ bốn",
-        "activationStam": "",
         "stamDrain": "Thể lực tiêu hao",
         "talents": {
             "auto": "Tự động",
@@ -409,34 +279,7 @@
             "constellation4": "C4",
             "constellation5": "C5",
             "constellation6": "C6"
-        },
-        "swirlReaction": {
-            "hydro": "",
-            "pyro": "",
-            "electro": "",
-            "cryo": ""
-        },
-        "afterReaction": "",
-        "aoeInc": "",
-        "elementalReaction": {
-            "hydro": "",
-            "electro": ""
-        },
-        "bonusScaling": {
-            "skill_": ""
-        },
-        "energy": "",
-        "teamBuff": "",
-        "opponents_one": "",
-        "opponents_other": "",
-        "dmgMult": {
-            "normal": "",
-            "charged": "",
-            "skill": ""
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Ca Khúc Thời Đại Nghìn Năm: Khúc ca vén cờ"
@@ -447,8 +290,7 @@
         "c6": {
             "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>",
             "bonus": "Đánh thường, trọng kích, tấn công khi đáp"
-        },
-        "skillPlunge": ""
+        }
     },
     "char_Rosaria": {
         "a1": "Sau khi tấn công từ phía sau",
@@ -464,8 +306,7 @@
         "staminaRestore": "Phục hồi 10 Thể lực",
         "snowflakeDMG": "Sát thương Cổng băng tuyết",
         "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
-        "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>",
-        "c6Active": ""
+        "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>"
     },
     "weapon_MistsplitterReforged": {
         "emblem": "Vết cắt sương mù"
@@ -473,9 +314,7 @@
     "char_Yoimiya": {
         "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
         "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>",
-        "p2p": "Sử dụng <strong>Cỏ Ryukin</strong>",
-        "normPyroInfus": "",
-        "c6Key_": ""
+        "p2p": "Sử dụng <strong>Cỏ Ryukin</strong>"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -483,10 +322,7 @@
             "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
         },
         "burst": {
-            "resolves": "Ý lực",
-            "resolveInitial_": "",
-            "resolveInfused_": "",
-            "burstDmg": ""
+            "resolves": "Ý lực"
         },
         "a4": {
             "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",
@@ -502,29 +338,18 @@
             "coil1": "1 Tầng Dây Móc",
             "coil2": "2 Tầng Dây Móc",
             "coil3": "3 Tầng Dây Móc",
-            "rush": "Hồ Băng",
-            "rushState": ""
-        },
-        "a1CondName": "",
-        "normCryoInfus": ""
+            "rush": "Hồ Băng"
+        }
     },
     "char_KujouSara": {
         "skill": {
             "ambush": "Tengu Juurai: Phục kích"
-        },
-        "a4": {
-            "enerRest": ""
-        },
-        "c6": {
-            "electroCritDmg": ""
         }
     },
     "char_SangonomiyaKokomi": {
         "burst": "Lễ phục nghi thức",
         "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
-        "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên",
-        "c2SkillHeal": "",
-        "c2BurstHeal": ""
+        "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên"
     },
     "page_home": {
         "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
@@ -532,28 +357,18 @@
             "title": "Danh sách liên kết",
             "buttons": {
                 "tyGuide": {
-                    "title": "",
                     "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
                 },
                 "scanners": {
                     "title": "Tự động nhập dữ liệu",
                     "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
                 },
-                "kqm": {
-                    "title": "",
-                    "tooltip": ""
-                },
                 "devDiscord": {
                     "title": "Discord của nhà phát triển Genshin ",
                     "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
                 },
                 "good": {
-                    "title": "Tài liệu về \"GOOD\"",
-                    "tooltip": ""
-                },
-                "patchNotes": {
-                    "title": "",
-                    "tooltip": ""
+                    "title": "Tài liệu về \"GOOD\""
                 }
             }
         },
@@ -570,41 +385,6 @@
                 "dev": "Nhà phát triển",
                 "mod": "Quản trị viên"
             }
-        }
-    },
-    "page_scanner": {
-        "intro": "",
-        "ik": {
-            "title": "Inventory Kamera",
-            "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh.",
-            "p2": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>",
-            "p3": "Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh và nên xuất sang định dạng mặc định của ứng dụng."
-        },
-        "am": {
-            "title": "「天目」-- Amenoma",
-            "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>.",
-            "p2": "Phiên bản beta của ứng dụng này cũng có thể quét dữ liệu cho <1> Seelie.me </1>"
-        },
-        "as": {
-            "title": "AdeptiScanner",
-            "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
-            "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
-        },
-        "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD.",
-        "tosWarn": "",
-        "tags": {
-            "pc": "",
-            "mobile": "",
-            "ps": "",
-            "gameMani": "",
-            "materials": "",
-            "characters": ""
-        },
-        "nb": {
-            "title": "",
-            "p1": "",
-            "p2": "",
-            "p3": ""
         }
     },
     "weapon_Akuoumaru": {
@@ -624,11 +404,7 @@
     },
     "char_Thoma": {
         "a1": "Nhận/Làm mới <strong>Khiên Lửa Hộ Mệnh</strong>",
-        "c6": "Khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>",
-        "a2": "",
-        "c2": "",
-        "maxShield": "",
-        "maxPyroShield": ""
+        "c6": "Khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>"
     },
     "weapon_CinnabarSpindle": {
         "name": "Tăng sát thương tấn công thường"
@@ -645,551 +421,32 @@
     "weapon_WavebreakersFin": {
         "party": "Tổng giới hạn năng lượng nguyên tố"
     },
-    "artifact_BlizzardStrayer": {
-        "condName": "",
-        "condCryo": "",
-        "condFrozen": ""
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": ""
-    },
-    "artifact_Lavawalker": {
-        "condName": ""
-    },
-    "artifact_OceanHuedClam": {
-        "condName": ""
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": ""
-    },
-    "artifact_Thundersoother": {
-        "condName": ""
-    },
-    "artifact_TinyMiracle": {
-        "condName": ""
-    },
-    "char_Albedo": {
-        "blossomCD": "",
-        "blossomDmg_": "",
-        "isotomaOnField": "",
-        "enerPerBlossom": "",
-        "c2Stacks": ""
-    },
-    "char_Amber": {
-        "secondArrow": "",
-        "critRateBonus": "",
-        "aoeRangeBonus": "",
-        "manualDetonationDmg": "",
-        "a4CondName": "",
-        "c6CondName": ""
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": ""
+    "page_scanner": {
+        "ik": {
+            "title": "Inventory Kamera",
+            "p1": "Ứng dụng này sẽ quét tất cả các nhân vật + vũ khí + thánh di vật trong túi của bạn. Làm theo hướng dẫn trong ứng dụng để thiết lập. Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh.",
+            "p2": "Phần mềm này cũng có thể quét dữ liệu cho <1> Seelie.me </1>",
+            "p3": "Ứng dụng này chỉ quét bằng ngôn ngữ tiếng Anh và nên xuất sang định dạng mặc định của ứng dụng."
         },
-        "a4": {
-            "dmgInc": ""
+        "am": {
+            "title": "「天目」-- Amenoma",
+            "p1": "Quét tất cả các thánh di vật của bạn trong túi của bạn. Làm theo hướng dẫn để chụp cửa sổ và quét. Có cả phiên bản tiếng Trung và tiếng Anh. (Tải xuống phiên bản <1>_EN.exe</1> để quét bằng tiếng Anh). Cả định dạng <3>mona-uranai</3> và <5>GOOD</5> đều được chấp nhận trong GO. Nên sử dụng định dạng <7>GOOD</7>.",
+            "p2": "Phiên bản beta của ứng dụng này cũng có thể quét dữ liệu cho <1> Seelie.me </1>"
         },
-        "c1": {
-            "initialGain": "",
-            "timedGain": ""
+        "as": {
+            "title": "AdeptiScanner",
+            "p1": "Quét tất cả thánh di vật của bạn trong túi. Có chế độ quét thủ công.",
+            "p2": "Ứng dụng này cũng có thể được thiết lập cho các thánh di vật mới trong các phiên bản mới nhất của Genshin mà không cần cập nhật."
         },
-        "c4": {
-            "name": ""
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": ""
-        },
-        "constellation2": {
-            "cond": ""
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "",
-        "skillTwoHit": "",
-        "duringBurst": "",
-        "tidecallerMaxDmg": "",
-        "a4charge": "",
-        "c4dmg": "",
-        "burstDmgRed_": ""
-    },
-    "char_Bennett": {
-        "skill": {
-            "pressDMG": "",
-            "lvl1_1DMG": "",
-            "lvl1_2DMG": "",
-            "lvl2_1DMG": "",
-            "lvl2_2DMG": "",
-            "explDMG": "",
-            "lvl1CD": "",
-            "lvl2CD": ""
-        },
-        "additionalATK": "",
-        "additionalATKRatio_": "",
-        "c4DMG": "",
-        "c6PyroInfusion": ""
-    },
-    "char_Chongyun": {
-        "infusion": "",
-        "passive2": "",
-        "asc4Cond": "",
-        "constellation1": "",
-        "constellation6": "",
-        "blades": ""
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "",
-            "1": ""
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "",
-        "holdShield": "",
-        "a1shielded": "",
-        "holdCryoShield": ""
-    },
-    "char_Fischl": {
-        "a1Name": "",
-        "a2Name": "",
-        "c1Name": "",
-        "c4AoeDmg": "",
-        "c6OzDmg": ""
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "",
-            "critRateInc": ""
-        },
-        "c1": {
-            "condName": ""
-        },
-        "c4": {
-            "lingerDuration": ""
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "",
-            "end": ""
-        },
-        "constellation2": {
-            "applyBloodBlossom": ""
-        },
-        "constellation4": {
-            "condName": ""
-        },
-        "constellation6": {
-            "condName": ""
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "",
-        "c1PullSpeed": "",
-        "c2CondName": ""
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "",
-        "p1heal": "",
-        "c1cond": ""
-    },
-    "char_Keqing": {
-        "c1DMG": "",
-        "recast": "",
-        "effectTriggers": ""
-    },
-    "char_Klee": {
-        "a1CondName": "",
-        "a1CondName2": "",
-        "c2CondName": "",
-        "c6CondName": ""
-    },
-    "char_Lisa": {
-        "a4C": "",
-        "c2C": ""
-    },
-    "char_Mona": {
-        "omen": "",
-        "omenDuration": "",
-        "bubbleDuration": "",
-        "phantomDuration": "",
-        "hitOp": {
-            "affectedByOmen": ""
-        },
-        "frozenDuration": "",
-        "uponSprint": ""
-    },
-    "char_Ningguang": {
-        "aoeGems": "",
-        "starJadeStaminaCost": "",
-        "skillReset": "",
-        "a4toggle": "",
-        "c4toggle": "",
-        "c6bonus": ""
-    },
-    "char_Qiqi": {
-        "a1C": "",
-        "c2C": ""
-    },
-    "char_Razor": {
-        "electroSigil": "",
-        "electroSigilAbsorbed": "",
-        "pickUpElementalOrbParticle": "",
-        "opHitWithClawAndThunder": "",
-        "electroSigilPerProc": ""
-    },
-    "char_Sayu": {
-        "burstHits": "",
-        "p1Swirl": "",
-        "p2Heal": "",
-        "p2Aoe": "",
-        "c1Text": "",
-        "c2KickPressDmg_": "",
-        "c2KickDmg_": "",
-        "c2Cond": "",
-        "c4Ener": "",
-        "c6DarumaDmgInc": "",
-        "c6DarumaHealInc": ""
-    },
-    "char_Shenhe": {
-        "quill": "",
-        "c4": "",
-        "c4Bonus_": "",
-        "pressQuota": "",
-        "holdQuota": "",
-        "pressDuration": "",
-        "holdDuration": ""
-    },
-    "char_Sucrose": {
-        "asc4": ""
-    },
-    "char_Xiangling": {
-        "afterChili": "",
-        "explosionDMG": "",
-        "afterGuobaHit": "",
-        "duringPyronado": "",
-        "c6Exception": ""
-    },
-    "char_Xiao": {
-        "burst": {
-            "autoAtkDmgBonus_": "",
-            "lifeDrain_": "",
-            "currentHPPerSec": "",
-            "incJump": "",
-            "incAtkAoe": "",
-            "inBurst": "",
-            "stack": ""
-        },
-        "skillStack": ""
-    },
-    "char_Xingqiu": {
-        "skillCond": "",
-        "burstCond": "",
-        "c2Cond": ""
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "",
-                "2": "",
-                "3": ""
-            },
-            "shieldLevel": "",
-            "shieldLevels": {
-                "1": "",
-                "2": "",
-                "3": ""
-            }
-        },
-        "p1": {
-            "desc": ""
-        },
-        "p2": {
-            "activeShield": ""
-        },
-        "c2": {
-            "key_": "",
-            "shield": ""
-        },
-        "c4": {
-            "swingHit": ""
-        },
-        "c6": {
-            "duringCharge": ""
-        }
-    },
-    "char_YaeMiko": {
-        "c4": ""
-    },
-    "char_Yanfei": {
-        "seals": [
-            ""
-        ],
-        "perSeal": "",
-        "maxSeals": "",
-        "charged": {
-            "0": "",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": ""
-        },
-        "burst": {
-            "grantMax": ""
-        },
-        "passive1": {
-            "sealsConsumed": ""
-        },
-        "passive2": {
-            "chargedCrit": "",
-            "key": ""
-        },
-        "c1": {
-            "sealChargedStam_": ""
-        },
-        "c6": {
-            "maxSealInc": ""
-        }
-    },
-    "char_YunJin": {
-        "burst": "",
-        "a4Inc_": "",
-        "c4": ""
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "",
-            "resonance": "",
-            "maxStele": "",
-            "nearShield": ""
-        },
-        "p1cond": "",
-        "c6heal": ""
-    },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": ""
-        },
-        "SprawlingGreenery": {
-            "cond2ele": "",
-            "cond3ele": "",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
-        }
-    },
-    "weapon_AlleyHunter": {
-        "condName": ""
-    },
-    "weapon_AmosBow": {
-        "condName": ""
-    },
-    "weapon_BlackTassel": {
-        "condName": ""
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": ""
-    },
-    "weapon_CoolSteel": {
-        "condName": ""
-    },
-    "weapon_CrescentPike": {
-        "condName": "",
-        "hitName": ""
-    },
-    "weapon_Deathmatch": {
-        "condName": "",
-        "opponents": {
-            "oneOrNone": "",
-            "moreThanOne": ""
-        }
-    },
-    "weapon_DragonsBane": {
-        "condName": ""
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_FerrousShadow": {
-        "condName": "",
-        "resistance": ""
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": ""
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_Hamayumi": {
-        "condName": ""
-    },
-    "weapon_IronSting": {
-        "condName": ""
-    },
-    "weapon_LionsRoar": {
-        "condName": ""
-    },
-    "weapon_MagicGuide": {
-        "condName": ""
-    },
-    "weapon_MappaMare": {
-        "condName": ""
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": ""
-    },
-    "weapon_PolarStar": {
-        "condName": ""
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": ""
-    },
-    "weapon_Rainslasher": {
-        "condName": ""
-    },
-    "weapon_RavenBow": {
-        "condName": ""
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "",
-        "nameCharged": ""
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": ""
-    },
-    "weapon_Slingshot": {
-        "condName": ""
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "",
-        "cryoAffectedDmg": ""
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": ""
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": ""
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": ""
-    },
-    "weapon_TheWidsith": {
-        "aria": "",
-        "interlude": "",
-        "recitative": ""
-    },
-    "weapon_ThunderingPulse": {
-        "condName": ""
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": ""
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "",
-        "avg": "",
-        "always": ""
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "",
-            "namisenStacks": "",
-            "shun_dmgInc": ""
-        },
-        "passive1": {
-            "afterUse": "",
-            "afterExplode": ""
-        },
-        "c1": {
-            "shun_dmg_": ""
-        },
-        "c2": {
-            "addlStacks": ""
-        },
-        "c6": {
-            "dmg": ""
-        }
-    },
-    "char_KukiShinobu": {
-        "skill": {
-            "cost": ""
-        },
-        "a4": {
-            "heal": ""
-        },
-        "c4": {
-            "dmg": ""
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": ""
-        },
-        "c4": {
-            "condName": ""
-        },
-        "c6": {
-            "condName": "",
-            "dmg": ""
-        }
+        "goodeng": "Ứng dụng này chỉ quét bằng tiếng Anh và xuất sang định dạng GOOD."
     },
     "page_character": {
-        "addNew": "",
-        "tabs": {
-            "overview": "",
-            "talent": "",
-            "teambuffs": "",
-            "optimize": "",
-            "theorycraft": ""
-        },
-        "formulas": "",
-        "calculations": "",
-        "selectCharacter": "",
-        "removeCharacter": "",
-        "delete": "",
-        "teammates": "",
-        "showingNum_one": "",
-        "showingNum_other": "",
-        "hitmode": {
-            "hit": "",
-            "avgHit": "",
-            "critHit": ""
-        },
         "tabEquip": {
             "swapWeapon": "Đổi vũ khí",
             "swapArt": "Đổi thánh di vật",
-            "compare": "So sánh với bộ tdv hiện tại",
-            "unequipArts": ""
+            "compare": "So sánh với bộ tdv hiện tại"
         },
-        "characterName": "Tên nhân vật",
-        "teammate": "",
-        "noReaction": "",
-        "multiTarget": {
-            "title": "",
-            "addNewTarget": "",
-            "addNewMTarget": ""
-        },
-        "addStats": {
-            "title": ""
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "",
-                "max": "",
-                "mid": ""
-            },
-            "maxTotalRolls": "",
-            "maxRolls": "",
-            "maxRollsMain": ""
-        },
-        "tabTeambuff": {
-            "team_reso": "",
-            "resonance_tip": ""
-        }
+        "characterName": "Tên nhân vật"
     },
     "page_weapon": {
         "showingNum_one": "Đang hiện <1>{{count}}</1> trên {{value}} Vũ khí",
@@ -1212,297 +469,5 @@
     },
     "weapon_HaranGeppakuFutsu": {
         "consumed": "Tầng đã tiêu hao từ hiệu ứng \"mũi sóng\""
-    },
-    "char_Collei": {
-        "sproutDmg": "",
-        "miniAnbarDmg": ""
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "",
-        "c2DmgKey": "",
-        "c4ConnectedBelowHp": "",
-        "c4ConnectedBelowEner": "",
-        "c6Heal": ""
-    },
-    "char_ShikanoinHeizou": {
-        "declensionStacks": "",
-        "takingField": ""
-    },
-    "char_Tighnari": {
-        "p1Cond": "",
-        "c4ReactCond": "",
-        "c6DmgKey": "",
-        "c6WreathRed": ""
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "",
-                "desc": ""
-            },
-            "assumptionLvl": {
-                "no": "",
-                "lvl": ""
-            }
-        },
-        "tcGraph": {
-            "vs": "",
-            "notSel": "",
-            "downloadData": "",
-            "desc": "",
-            "showStatThr": "",
-            "generatedBuilds": "",
-            "statReqThr": "",
-            "currentBuild": "",
-            "highlightedBuilds": "",
-            "buildAlreadyInList": ""
-        },
-        "levelFilter": "",
-        "useExcluded": {
-            "title": "",
-            "usingNum_one": "",
-            "usingNum_other": "",
-            "excNum_one": "",
-            "excNum_other": ""
-        },
-        "useEquipped": {
-            "title": "",
-            "modal": {
-                "title": "",
-                "desc1": "",
-                "desc2": "",
-                "usingNum_one": "",
-                "usingNum_other": "",
-                "status": {
-                    "use": "",
-                    "dont": "",
-                    "curr": ""
-                },
-                "add": "",
-                "clearList": ""
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
-        },
-        "allowPartial": "",
-        "constraintFilter": {
-            "title": "",
-            "tooltip": ""
-        },
-        "artSetConfig": {
-            "title": "",
-            "setEffCond": "",
-            "enabled": "",
-            "allowed": "",
-            "excluded": "",
-            "selected": "",
-            "2rainbow": "",
-            "4rainbow": "",
-            "allowAll2set": "",
-            "excludeAll2set": "",
-            "allowAll4set": "",
-            "excludeAll4set": "",
-            "alExRainbow": "",
-            "modal": {
-                "setCond": {
-                    "title": "",
-                    "reset": "",
-                    "text": ""
-                },
-                "ArtSetFilter": {
-                    "title": "",
-                    "intro": "",
-                    "2set": "",
-                    "4set": "",
-                    "2rain": "",
-                    "4rain": ""
-                }
-            }
-        },
-        "buildDropdownDesc": "",
-        "threadDropdownDesc": "",
-        "noArtis": "",
-        "build_one": "",
-        "build_other": "",
-        "thread_one": "",
-        "thread_other": "",
-        "targetSelector": {
-            "selectOptTarget": "",
-            "selectGraphTarget": "",
-            "invalidTarget": "",
-            "selectBuildTarget": ""
-        },
-        "selectTargetFirst": "",
-        "generateButton": {
-            "cancel": "",
-            "generateBuilds": ""
-        },
-        "removeBuildButton": "",
-        "theorycraftButton": "",
-        "currentlyEquippedBuild": "",
-        "addBuildToList": "",
-        "graphBuildLabel": "",
-        "workerLoadFailed": ""
-    },
-    "weapon_CalamityQueller": {
-        "inactiveKey": ""
-    },
-    "weapon_ForestRegalia": {
-        "condName": ""
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": ""
-    },
-    "weapon_Moonpiercer": {
-        "condName": ""
-    },
-    "weapon_SapwoodBlade": {
-        "condName": ""
-    },
-    "char_TravelerAnemo": {
-        "p1": "",
-        "c6": "",
-        "c4": "",
-        "initialEleDmg": "",
-        "maxEleDmg": ""
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "",
-            "absorb": ""
-        },
-        "burst": {
-            "3rd": "",
-            "thunderCd": ""
-        },
-        "passive2": {
-            "enerRech_": ""
-        },
-        "c2": {
-            "thunderHit": ""
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": ""
-        },
-        "c2": {
-            "key": ""
-        }
-    },
-    "page_newTab": {
-        "title": "",
-        "p1": "",
-        "symptom": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": ""
-        },
-        "p2": "",
-        "choice": {
-            "1": "",
-            "2": ""
-        },
-        "refresh": ""
-    },
-    "char_Candace": {
-        "hydroInfusion": ""
-    },
-    "char_Cyno": {
-        "p1Dmg": "",
-        "judication": "",
-        "burstNormalDmgInc": "",
-        "boltDmgInc": ""
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "",
-            "dance2": "",
-            "whirl1": "",
-            "whirl2": "",
-            "moon": "",
-            "wheel": ""
-        },
-        "passive1": {
-            "underChaliceEffect": "",
-            "notDendroHydroTeam": "",
-            "condName": "",
-            "bountifulCores": ""
-        },
-        "c1": {
-            "moon_dmg_": ""
-        },
-        "c4": {
-            "condName": ""
-        }
-    },
-    "weapon_MakhairaAquamarine": {
-        "condName": ""
-    },
-    "weapon_WanderingEvenstar": {
-        "condName": ""
-    },
-    "weapon_XiphosMoonlight": {
-        "condName": ""
-    },
-    "char_Nahida": {
-        "karmaDmg_": "",
-        "karmaCritRate_": "",
-        "karmaIntervalDec": "",
-        "noBurstEffect": "",
-        "partyInBurst": "",
-        "c1Key": "",
-        "c2": {
-            "bloomCondName": "",
-            "qasCondName": ""
-        },
-        "c4CondName": "",
-        "c6KarmicDmg": ""
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": ""
-    },
-    "char_Faruzan": {
-        "giftCondName": "",
-        "a4CondName": "",
-        "c2DurationInc": "",
-        "c6Arrow": ""
-    },
-    "char_Layla": {
-        "starDmgInc": "",
-        "c1ShieldBonusKey_": "",
-        "c4CondKey": "",
-        "starDmg_": "",
-        "slugDmg_": "",
-        "starInterval_": ""
-    },
-    "char_Wanderer": {
-        "windfavoredState": "",
-        "p1": {
-            "pyroCondName": "",
-            "cryoCondName": ""
-        },
-        "p2Dmg": "",
-        "c1BonusKey": "",
-        "c2CondName": "",
-        "c6Key": ""
-    },
-    "weapon_ToukabouShigure": {
-        "condName": ""
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
     }
 }
