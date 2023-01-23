@@ -2,10 +2,6 @@
     "artifact": {
         "editor": {
             "title": "圣遗物编辑器",
-            "set": {
-                "artifactSet": "圣遗物套装",
-                "maxRarity": "最高稀有度 <1></1>"
-            },
             "substat": {
                 "substatFormat": "副词条 {{value}}",
                 "noSubstat": "无副词条",
@@ -24,7 +20,6 @@
             "rarity": "稀有度",
             "level": "等级",
             "unknownPieceName": "未知圣遗物名称",
-            "mainSelect": "选择主属性",
             "curSubEff": "当前副词条评分",
             "curSubEffDesc": "圣遗物每升四级，随机升级一次副词条。<strong>副词条评分</strong> 计算了副词条升级值占最大升级值的比例。",
             "maxSubEff": "最高副词条评分",
@@ -45,7 +40,6 @@
         "filterLocation": {
             "inventory": "背包",
             "currentlyEquipped": "当前装备",
-            "any": "位置：任意",
             "location": "位置"
         },
         "button": {
@@ -56,14 +50,13 @@
             "lockArtifacts": "锁定圣遗物",
             "unlockrtifacts": "解锁圣遗物"
         },
-        "filterLevelFormat": "等级<1>低值</1>/<3>高值</3> （闭区间）",
         "buttonHint": "注意:红色选项仅用于 <1>筛选后的圣遗物</1>",
         "tipsOfTheDay": [
-            "单件4星圣遗物的评分上限为540%左右。",
+            "单件4星圣遗物的评分上限为540%左右.",
             "圣遗物的评分上限一般会随着等级提升而降低，这很正常！",
-            "含有“1”的副词条较难通过截图扫描识别。",
+            "含有\"1\"的副词条较难通过截图扫描识别.",
             "如果所有强化都在同一个副词条上（累计6次），它会呈现紫色！",
-            "单击“详情”，了解如何添加在游戏内升级后的圣遗物。",
+            "单击\"详情\"，了解如何添加在游戏内升级后的圣遗物.",
             "目前支持多圣遗物截图扫描识别！"
         ],
         "mainStat": "主词条",
@@ -81,7 +74,6 @@
             "section2": "<0>圣遗物编辑器</0><1>支持任意3<1></1> 到 5<3></3>圣遗物的全功能编辑器。输入副词条后，能自动计算升级次数并评分。同时编辑器会确保你的升级次数与圣遗物等级匹配。</1><2>截图扫描</2><3>如果你不想手动输入圣遗物，可以通过截图扫描的方式识别输入圣遗物。在圣遗物编辑器界面，点击 <1>Show Me How!</1> 可见使用方法。</3><4>自动圣遗物扫描仪</4><5>如果你在PC上玩原神，你可以下载使用圣遗物扫描工具来为你扫描所有的圣遗物，并导入GO的 <1></1> 数据库内。<3>点此</3> 获取与 GO 兼容的扫描器列表。</5><6>重复/升级后圣遗物检测</6><7> GO可以检测出你导入的<1>重复</1> 圣遗物哦！原先拥有的圣遗物<3>升级后</3> 也会被检测出来。. 一旦检测到重复/升级的圣遗物，会出现预览界面允许你比较这些圣遗物（见图片）。</7>",
             "section3": "<0>圣遗物背包</0><1>所有被添加到GO的圣遗物会在此显示。筛选器可以帮助你更好浏览你拥有的圣遗物。 </1><2>例如：精确找狗粮</2><3>使用圣遗物筛选器及圣遗物评分，你可以快速地确定狗粮圣遗物。</3><4>例如，这样设置你的筛选：</4><5><0>限制圣遗物等级0-8.</0><1>未排除的圣遗物</1><2>移除小生命，小防御及元素充能对潜力的计算。</2><3>按升序最大潜能评分排序。</3></0></5><6>这样圣遗物背包就会按照需要的词条筛选出最低评分的圣遗物。</6>"
         },
-        "exclusionDisplay": "已排除： {{value}}",
         "exclusion": {
             "any": "任意",
             "excluded": "已排除",
@@ -89,7 +81,6 @@
             "exclusion": "排除"
         },
         "sortMap": {
-            "quality": "稀有度",
             "level": "等级",
             "efficiency": "当前副词条评分",
             "mefficiency": "最高副词条评分"
@@ -113,7 +104,12 @@
         },
         "substat_one": "{{count}}项副词条",
         "substat_other": "{{count}}项副词条",
-        "addNew": "添加新圣遗物"
+        "addNew": "添加新圣遗物",
+        "sub_one": "",
+        "sub_other": "",
+        "cantDeleteLock": "",
+        "equippedArt": "",
+        "artInInv": ""
     },
     "languages": {
         "chs": "简体中文",
@@ -128,7 +124,9 @@
         "pt": "葡萄牙语",
         "ru": "俄语",
         "th": "泰语",
-        "vi": "越南语"
+        "vi": "越南语",
+        "it": "意大利语",
+        "tr": "土耳其语"
     },
     "settings": {
         "title": "设置",
@@ -141,11 +139,6 @@
             "replaceDatabase": "替换数据库",
             "hint": "在此加载JSON文件…",
             "hintPaste": "…或在此粘贴数据",
-            "goUpload": {
-                "title": "<strong>Genshin Optimizer</strong> 格式",
-                "migrate": "数据库将更新为新版本，请考虑在导入后重新下载数据库。",
-                "deleteDatabasePrompt": "是否确定删除数据库？"
-            },
             "error": {
                 "jsonParse": "JSON文件解析失败。",
                 "unknown": "未知的文件格式。",
@@ -210,12 +203,6 @@
             "patreon": "Patreon",
             "discord": "Discord"
         },
-        "game": {
-            "minLevel": "最小等级",
-            "maxLevel": "最大等级",
-            "rarity": "稀有度",
-            "level": "等级"
-        },
         "unselect": "取消选择",
         "ascending": "升序",
         "descending": "降序",
@@ -258,7 +245,6 @@
             "name": "冷酷之心",
             "consumed": "消耗的冷酷之心",
             "grimheart": {
-                "name": "冷酷之心层数",
                 "int": "提高抗打断能力"
             }
         },
@@ -296,23 +282,10 @@
         "c2": {
             "hit": "被击中的敌人",
             "launched": "被击飞的敌人"
-        },
-        "fullBurstDMG": {
-            "description": {
-                "0": "<strong>元素爆发总伤害</strong>",
-                "1": "计算元素爆发的总伤害，包括扩散反应造成的伤害。",
-                "2": "20次<anemo>元素爆发伤害</anemo>",
-                "3": "15次附加元素伤害",
-                "4": "对单个敌人7次扩散反应造成的伤害或",
-                "5": "对多个敌人14次扩散反应造成的伤害"
-            },
-            "dmg7": "7次扩散反应造成的总伤害",
-            "dmg14": "14次扩散反应造成的总伤害"
         }
     },
     "sheet": {
         "dmg": "伤害",
-        "hits": "命中次数",
         "lessPercentHP": "生命值低于{{percent}}%",
         "hitOp": {
             "normal": "普通攻击命中敌人",
@@ -331,7 +304,8 @@
             "skillOrBurst": "元素战技或元素爆发命中敌人",
             "crit": "命中敌人并造成暴击",
             "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
-            "dendro": "<dendro>草元素伤害</dendro>击中敌人"
+            "dendro": "<dendro>草元素伤害</dendro>击中敌人",
+            "normalEle": ""
         },
         "eleAbsor": "元素转化",
         "absorDot": "元素转化持续伤害",
@@ -355,8 +329,6 @@
         "enemyGreaterEqPercentHP": "敌人生命值高于或等于{{percent}}%",
         "stack_one": "{{count}}层",
         "stack_other": "{{count}}层",
-        "member_one": "{{count}}名角色",
-        "member_other": "{{count}}名角色",
         "seconds_one": "{{count}} 秒",
         "seconds_other": "{{count}} 秒",
         "uses_one": "{{count}}使用次数",
@@ -376,7 +348,6 @@
         "activeCharField": "领域内的当前场上角色",
         "opponentsField": "领域内的敌人",
         "takeDmg": "受到伤害后",
-        "onHit": "攻击命中后",
         "infusion": {
             "pyro": "火元素附魔",
             "cryo": "冰元素附魔",
@@ -399,7 +370,6 @@
         "durationInc": "持续时间增加",
         "base": "基础",
         "stacks": "层数",
-        "members": "角色",
         "protectedByShield": "处于护盾庇护下",
         "protectedByShieldCrystal": "处于结晶护盾庇护下",
         "staminaDec_": "体力消耗降低",
@@ -458,7 +428,15 @@
         "energy": "能量",
         "teamBuff": "队伍加成",
         "opponents_one": "{{count}} 个敌人",
-        "opponents_other": "{{count}} 个敌人"
+        "opponents_other": "{{count}} 个敌人",
+        "dmgMult": {
+            "normal": "普攻伤害倍率",
+            "charged": "重击伤害倍率",
+            "skill": "技能伤害倍率"
+        },
+        "members": "",
+        "stamRestored": "",
+        "triggerQuota": ""
     },
     "weapon_SongOfBrokenPines": {
         "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -495,7 +473,6 @@
     "char_Yoimiya": {
         "c1": "攻击受 <strong>琉金火光</strong>影响的敌人",
         "c2": "<pyro>火元素伤害</pyro>造成暴击后",
-        "p2": "全队攻击加成",
         "p2p": "使用<strong>琉金云间草</strong>",
         "normPyroInfus": "<pyro>普通攻击火元素附魔</pyro>",
         "c6Key_": "长野原龙势流星群倍率"
@@ -508,7 +485,8 @@
         "burst": {
             "resolves": "积攒愿力层数",
             "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",
-            "resolveInfused_": "<electro>梦想一心伤害加成</electro>"
+            "resolveInfused_": "<electro>梦想一心伤害加成</electro>",
+            "burstDmg": ""
         },
         "a4": {
             "enerRest": "<strong>梦想一心</strong>恢复的元素能量",
@@ -549,7 +527,7 @@
         "c2BurstHeal": "<strong>海人化羽</strong>治疗量提升"
     },
     "page_home": {
-        "intro": "<0>什么是Genshin Optimizer?</0><1>Genshin Optimizer (GO) 是<1><strong>原神</strong></1>这款角色扮演抽卡游戏的玩家自制开源网站. 主要想帮助玩家处理原神中最复杂的部分：圣遗物的优化。因为圣遗物非常靠运气，并且直接影响了游戏内角色的强度。GO希望能够基于你现有的圣遗物，帮助你的角色选择最佳的配装。 </1><2>GO可以保存你的圣遗物，方便过滤比较圣遗物，还可以为你找到合适的圣遗物来进行升级，以及找出该吃掉的狗粮。</2><3> GO可以复原游戏内每个角色的精确数值，并且在1%误差内计算伤害数字，因此GO也可以作为伤害计算器以及数值佬的工具使用。</3>",
+        "intro": "GO是<3><i>原神</i></3>的<strong>终极</strong>计算工具，它会记录你的圣遗物/武器/角色背包，并根据你指定的方式生成最佳装备搭配。",
         "quickLinksCard": {
             "title": "快速链接",
             "buttons": {
@@ -628,9 +606,6 @@
             "p2": "截图或录屏可以是全屏的，并且不需要裁剪。",
             "p3": "移动端/PlayStation只能通过截图或视频扫描"
         }
-    },
-    "weapon_EverlastingMoonglow": {
-        "name": "普通攻击伤害加成"
     },
     "weapon_Akuoumaru": {
         "party": "队伍元素能量总量"
@@ -863,18 +838,7 @@
         "electroSigilAbsorbed": "被清除的雷之印所转化的元素能量",
         "pickUpElementalOrbParticle": "获取元素晶球或元素微粒",
         "opHitWithClawAndThunder": "被<strong>利爪与苍雷</strong>点按命中的敌人",
-        "electroSigilPerProc": "每次触发的雷之印",
-        "fullBurstDMG": {
-            "description": {
-                "0": "<strong>元素爆发总伤害</strong>",
-                "1": "计算元素爆发持续时间内，雷泽普通攻击造成的总伤害。",
-                "2": "普通攻击和其触发的狼魂攻击的伤害之和。"
-            },
-            "dmg1": "普通攻击+狼魂攻击一段",
-            "dmg2": "普通攻击+狼魂攻击二段",
-            "dmg3": "普通攻击+狼魂攻击三段",
-            "dmg4": "普通攻击+狼魂攻击四段"
-        }
+        "electroSigilPerProc": "每次触发的雷之印"
     },
     "char_Sayu": {
         "burstHits": "不倒貉貉行动次数",
@@ -1015,7 +979,10 @@
         "SprawlingGreenery": {
             "cond2ele": "触发燃烧、原激化、绽放反应后",
             "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后",
-            "eleMas": "蔓生之草元素精通"
+            "eleMas": ""
+        },
+        "EnduringRock": {
+            "hitCond": ""
         }
     },
     "weapon_AlleyHunter": {
@@ -1071,12 +1038,6 @@
     "weapon_LionsRoar": {
         "condName": "对处于<pyro>火元素</pyro>或<electro>雷元素</electro>影响下的敌人"
     },
-    "weapon_LithicBlade": {
-        "condName": "队伍中璃月角色数量"
-    },
-    "weapon_LithicSpear": {
-        "condName": "队伍中璃月角色数量"
-    },
     "weapon_MagicGuide": {
         "condName": "对处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下的敌人"
     },
@@ -1113,14 +1074,12 @@
         "cryoAffectedDmg": "对处于<cryo>冰元素</cryo>影响下的敌人造成的伤害"
     },
     "weapon_SummitShaper": {
-        "shield": "护盾",
         "atkEffInc": "攻击力提升效果提高"
     },
     "weapon_TheAlleyFlash": {
         "condName": "未受到伤害"
     },
     "weapon_TheUnforged": {
-        "shield": "护盾",
         "atkEffInc": "攻击力提升效果提高"
     },
     "weapon_TheWidsith": {
@@ -1132,7 +1091,6 @@
         "condName": "飞雷之巴印"
     },
     "weapon_VortexVanquisher": {
-        "shield": "护盾",
         "atkEffInc": "攻击力提升效果提高"
     },
     "artifact_EchoesOfAnOffering": {
@@ -1185,7 +1143,6 @@
     },
     "page_character": {
         "addNew": "添加新角色",
-        "forceSet": "强制使用圣遗物套装",
         "tabs": {
             "overview": "概览",
             "talent": "天赋",
@@ -1214,7 +1171,6 @@
         },
         "characterName": "角色名称",
         "teammate": "队友 {{count}}",
-        "none": "无",
         "noReaction": "无反应",
         "multiTarget": {
             "title": "多重优化目标配置",
@@ -1284,7 +1240,6 @@
     },
     "page_character_optimize": {
         "mainStat": {
-            "title": "主词条",
             "levelAssTooltip": {
                 "title": "等级假设",
                 "desc": "修改主词条数值至某等级之上，但不改变副词条。"
@@ -1298,13 +1253,21 @@
             "vs": "绘制与优化目标的关系图",
             "notSel": "未选",
             "downloadData": "下载数据",
-            "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度"
+            "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度",
+            "showStatThr": "显示词条阈值线",
+            "generatedBuilds": "生成配装",
+            "statReqThr": "词条阈值线",
+            "currentBuild": "当前配装",
+            "highlightedBuilds": "高亮的配装",
+            "buildAlreadyInList": "配装已经在列表中"
         },
         "levelFilter": "圣遗物等级过滤器",
         "useExcluded": {
             "title": "使用被排除的圣遗物",
             "usingNum_one": "使用<1>{{count}}</1>件已排除圣遗物",
-            "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物"
+            "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物",
+            "excNum_one": "",
+            "excNum_other": ""
         },
         "useEquipped": {
             "title": "使用已装备的圣遗物",
@@ -1322,8 +1285,8 @@
                 "add": "添加角色入列表",
                 "clearList": "清空列表"
             },
-            "usingNum_one": "使用<1>{{count}}</1>名角色的圣遗物",
-            "usingNum_other": "使用<1>{{count}}</1>名角色的圣遗物"
+            "usingNumTot_one": "",
+            "usingNumTot_other": ""
         },
         "allowPartial": "允许部分配装（少于5件圣遗物）",
         "constraintFilter": {
@@ -1370,13 +1333,20 @@
         "targetSelector": {
             "selectOptTarget": "选择优化目标",
             "selectGraphTarget": "选择绘图目标",
-            "invalidTarget": "目标无效"
+            "invalidTarget": "目标无效",
+            "selectBuildTarget": "选择一种配装限制条件"
         },
         "selectTargetFirst": "首先选择一个优化目标",
         "generateButton": {
             "cancel": "取消",
             "generateBuilds": "生成配装"
-        }
+        },
+        "removeBuildButton": "移除配装",
+        "theorycraftButton": "理论分析",
+        "currentlyEquippedBuild": "当前已装备的",
+        "addBuildToList": "将配装加入列表",
+        "graphBuildLabel": "图表 #<1>{{count}}</1>",
+        "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试"
     },
     "weapon_CalamityQueller": {
         "inactiveKey": "后台额外提升"
@@ -1414,10 +1384,6 @@
         },
         "c2": {
             "thunderHit": "<strong>威光落雷</strong>命中敌人"
-        },
-        "c6": {
-            "fallingThunder3": "第三次<strong>威光落雷</strong>攻击",
-            "fallingThunderBonus_": "<strong>威光落雷</strong>伤害提升"
         }
     },
     "char_TravelerGeo": {
@@ -1497,5 +1463,50 @@
         },
         "c4CondName": "附近处于<strong>所闻遍计</strong>的蕴种印状态下的敌人数量",
         "c6KarmicDmg": "业障除伤害"
+    },
+    "artifact_FlowerOfParadiseLost": {
+        "condName": "出发绽放、超绽放或者烈绽放"
+    },
+    "char_Faruzan": {
+        "giftCondName": "受<strong>风的秘密方式</strong>祈祷风的益处影响",
+        "a4CondName": "七窟遗智是有效的",
+        "c2DurationInc": "赫耀多方面体的存在时间延长增长",
+        "c6Arrow": "造成伤害时发射另一支飓风箭"
+    },
+    "char_Layla": {
+        "starDmgInc": "流星伤害增加",
+        "c1ShieldBonusKey_": "寐领围垣的加成",
+        "c4CondKey": "在启明的影响下",
+        "starDmg_": "流星加成伤害",
+        "slugDmg_": "星光蛞蝓加成的伤害",
+        "starInterval_": "晚星的间隔"
+    },
+    "char_Wanderer": {
+        "windfavoredState": "在<strong>优风倾姿</strong>状态下",
+        "p1": {
+            "pyroCondName": "<strong>羽画: 风姿华歌</strong> 若接触了 <pyro>火元素</pyro>",
+            "cryoCondName": "<strong>羽画: 风姿华歌</strong> 若接触了 <cryo>冰元素</cryo>"
+        },
+        "p2Dmg": "枚风矢的伤害",
+        "c1BonusKey": "枚风失伤害加成",
+        "c2CondName": "空居力上限与当前的空居力的差值",
+        "c6Key": "祝言·霞幕倾松风倍率"
+    },
+    "weapon_ToukabouShigure": {
+        "condName": "敌人在纸伞作祟状态的影响"
+    },
+    "char_Alhaitham": {
+        "withMirrors": "",
+        "debateStacks": "",
+        "mirrorsConsumed": "",
+        "projectionAttack_dmg_": "",
+        "excessMirror": ""
+    },
+    "char_Yaoyao": {
+        "a4Heal": "",
+        "inExplosionAoE": "",
+        "inLegacy": "",
+        "megaDmg": "",
+        "megaHeal": ""
     }
 }
