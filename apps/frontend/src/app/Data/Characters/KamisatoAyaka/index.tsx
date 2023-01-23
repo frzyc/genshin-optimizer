@@ -271,7 +271,7 @@ const sheet: ICharacterSheet = {
       states: {
         afterApplySprint: {
           fields: [{
-            text: ct.ch("staminaRestore"),
+            text: st("stamRestored"),
             value: dm.passive2.stamina,
           }, {
             node: afterApplySprintCryo

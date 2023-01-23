@@ -226,7 +226,7 @@ const sheet: ICharacterSheet = {
         unit: "s",
         fixed: 1
       }, {
-        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.chg(`skill.skillParams.2`) })
+        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.ch(`projectionDmg`) })
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.mirrorRemovalInterval,
