@@ -1,5 +1,6 @@
-import { Box, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
-import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
+import { Add } from "@mui/icons-material"
+import { Box, Button, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
+import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
 import CardDark from "../../../../Components/Card/CardDark"
@@ -8,15 +9,18 @@ import ImgIcon from "../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup"
 import { StarsDisplay } from "../../../../Components/StarDisplay"
+import WeaponSelectionModal from "../../../../Components/Weapon/WeaponSelectionModal"
 import WeaponSheet from "../../../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
+import WeaponEditor from "../../../../PageWeapon/WeaponEditor"
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 import usePromise from "../../../../ReactHooks/usePromise"
-import { allRarities, Rarity, WeaponTypeKey } from "../../../../Types/consts"
+import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "../../../../Types/consts"
 import { handleMultiSelect } from "../../../../Util/MultiSelect"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../../../../Util/WeaponSort'
+import { initialWeapon } from "../../../../Util/WeaponUtil"
 import CompareBuildButton from "./CompareBuildButton"
 
 const rarityHandler = handleMultiSelect([...allRarities])
@@ -24,10 +28,17 @@ const rarityHandler = handleMultiSelect([...allRarities])
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
   const { t } = useTranslation(["page_character", "page_weapon", "weaponNames_gen"])
   const { database } = useContext(DatabaseContext)
+  const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
   const clickHandler = useCallback((id: string) => {
     onChangeId(id)
     onClose()
   }, [onChangeId, onClose])
+
+  const [editWeaponId, setEditWeaponId] = useState("")
+  const newWeapon = useCallback((weaponKey: WeaponKey) => {
+    setEditWeaponId(database.weapons.new(initialWeapon(weaponKey)))
+  }, [database, setEditWeaponId])
+  const resetEditWeapon = useCallback(() => setEditWeaponId(""), [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.weapons.followAny(forceUpdate), [forceUpdate, database])
@@ -46,6 +57,17 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>
+      <Suspense fallback={false}>
+        <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} weaponTypeFilter={weaponTypeKey} />
+      </Suspense>
+      {/* Editor/character detail display */}
+      <Suspense fallback={false}>
+        <WeaponEditor
+          weaponId={editWeaponId}
+          footer
+          onClose={resetEditWeapon}
+        />
+      </Suspense>
       <CardContent sx={{ py: 1 }}>
         <Grid container>
           <Grid item flexGrow={1}>
@@ -57,8 +79,8 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
         </Grid>
       </CardContent>
       <Divider />
-      <CardContent>
-        <Grid container spacing={1} mb={1}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <Grid container spacing={1} >
           <Grid item>
             <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
               {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
@@ -80,6 +102,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
             />
           </Grid>
         </Grid>
+        <Button fullWidth onClick={() => setnewWeaponModalShow(true)} color="info" startIcon={<Add />} >{t("page_weapon:addWeapon")}</Button>
         <Grid container spacing={1}>
           {weaponIdList.map(weaponId =>
             <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3} >

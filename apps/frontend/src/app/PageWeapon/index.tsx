@@ -63,11 +63,9 @@ export default function PageWeapon() {
     database.displayWeapon.set({ editWeaponId: key })
   }, [database])
 
-  const newWeapon = useCallback(
-    (weaponKey: WeaponKey) => {
-      editWeapon(database.weapons.new(initialWeapon(weaponKey)))
-    },
-    [database, editWeapon])
+  const newWeapon = useCallback((weaponKey: WeaponKey) => {
+    editWeapon(database.weapons.new(initialWeapon(weaponKey)))
+  }, [database, editWeapon])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
