@@ -25,7 +25,6 @@ import usePromise from '../../../../ReactHooks/usePromise';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
-import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
 
@@ -33,7 +32,6 @@ const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
 export default function EquipmentSection() {
   const { character: { equippedWeapon, key: characterKey }, characterSheet } = useContext(CharacterContext)
-  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
   const [weaponId, setweaponId] = useState("")
@@ -73,7 +71,7 @@ export default function EquipmentSection() {
         </Grid>
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {data.get(input.art[slotKey].id).value ?
-            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
+            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} effFilter={deferredRvSet}
               extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
