@@ -2,6 +2,8 @@ declare global {
   type Displayable = string | JSX.Element
   type Dict<K extends string | number, V> = Partial<Record<K, V>>
   type StrictDict<K extends string | number, V> = Record<K, V>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type TransObject = any
 
   interface ObjectConstructor {
     export keys<K, V>(o: StrictDict<K, V>): `${K}`[]
