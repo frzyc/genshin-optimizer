@@ -9,11 +9,6 @@
     "replaceDatabase": "Reemplazar Base de Datos",
     "hint": "Cargue su archivo JSON aquí...",
     "hintPaste": "...o pegue su contenido a continuación.",
-    "goUpload": {
-      "title": "Formato <strong>Genshin Optimizer</strong>",
-      "migrate": "La base de datos será actualizada a una nueva versión. Por favor considere volver a descargar la base de datos después de importarla.",
-      "deleteDatabasePrompt": "¿Estás seguro de que quieres reemplazar tu base de datos? Todos los personajes y artefactos existentes serán eliminados."
-    },
     "error": {
       "jsonParse": "Incapaz de analizar el archivo JSON.",
       "unknown": "Formato de archivo desconocido.",

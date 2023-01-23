@@ -1,0 +1,19 @@
+{
+  "dmg": "傷害",
+  "lessPercentHP": "血量低於 {{percent}} %",
+  "increase": {
+    "atk": "攻擊力上升"
+  },
+  "1set": "1 件套裝",
+  "2set": "2 件套裝",
+  "4set": "4 件套裝",
+  "talents": {
+    "auto": "自動",
+    "constellation1": "一命",
+    "constellation2": "二命",
+    "constellation3": "三命",
+    "constellation4": "四命",
+    "constellation5": "五命",
+    "constellation6": "六命"
+  }
+}

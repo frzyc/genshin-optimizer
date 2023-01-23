@@ -26,6 +26,5 @@
   },
   "characterName": "Nombre del personaje",
   "teammate": "Compañero {{count}}",
-  "none": "Ninguno",
   "noReaction": "Sin reacciones"
 }

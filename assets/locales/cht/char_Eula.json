@@ -1,0 +1,9 @@
+{
+  "skillC": {
+    "name": "冷酷之心",
+    "consumed": "消耗的冷酷之心",
+    "grimheart": {
+      "int": "增加抗打斷能力"
+    }
+  }
+}

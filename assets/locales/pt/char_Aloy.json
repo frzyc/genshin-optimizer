@@ -7,5 +7,6 @@
     "rush": "Gelo Rápido",
     "rushState": "Sob o estado de Gelo Rápido (1 acúmulo/seg.)"
   },
-  "a1CondName": "Quando a Aloy recebe o efeito de Bobina da <strong>Natureza Gélida</strong>"
+  "a1CondName": "Quando a Aloy recebe o efeito de Bobina da <strong>Natureza Gélida</strong>",
+  "normCryoInfus": "<cryo>Infusão Cryo nos Ataques Normais</cryo>"
 }

@@ -1,6 +1,5 @@
 {
   "dmg": "Daño",
-  "hits": "Golpes",
   "lessPercentHP": "Vida menor de {{percent}}%",
   "hitOp": {
     "normal": "Ataque Normal golpea a enemigos",
@@ -41,8 +40,6 @@
   "enemyGreaterEqPercentHP": "Enemigo con Vida mayor o igual al {{percent}}%",
   "stack_one": "{{count}} Carga",
   "stack_other": "{{count}} Cargas",
-  "member_one": "{{count}} Miembro",
-  "member_other": "{{count}} Miembros",
   "seconds_one": "{{count}} Segundo",
   "seconds_other": "{{count}} Segundos",
   "uses_one": "{{count}} Uso",
@@ -62,7 +59,6 @@
   "activeCharField": "Personaje activo en el área",
   "opponentsField": "Enemigos en el área",
   "takeDmg": "Al recibir Daño",
-  "onHit": "Al Golpear",
   "infusion": {
     "pyro": "Imbuído por Pyro",
     "cryo": "Imbuído por Cryo",
@@ -85,7 +81,6 @@
   "durationInc": "Aumento de Duración",
   "base": "Base",
   "stacks": "Cargas",
-  "members": "Miembros",
   "protectedByShield": "Protegido por un escudo",
   "protectedByShieldCrystal": "Protegido por un escudo creado por Cristalización",
   "staminaDec_": "Reducción de coste de Aguante",

@@ -1,0 +1,47 @@
+{
+  "title": "設定",
+  "languageCard": {
+    "selectLanguage": "選擇語言",
+    "languageFormat": "語言：{{language}}"
+  },
+  "uploadCard": {
+    "title": "上傳資料檔",
+    "replaceDatabase": "更新資料檔",
+    "hint": "在此上傳 JSON 檔案...",
+    "hintPaste": "...或在底下貼上你的資料",
+    "error": {
+      "jsonParse": "無法解析 JSON 檔案。",
+      "unknown": "未知的檔案格式。",
+      "goInvalid": "無效的 GO 備份檔案格式。"
+    },
+    "dbSource": "資料來源：",
+    "goodUpload": {
+      "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
+    },
+    "buttons": {
+      "open": "開啟"
+    }
+  },
+  "count": {
+    "chars": "角色:",
+    "arts": "聖遺物：",
+    "weapons": "武器：",
+    "total": "總計：",
+    "new": "已新增：",
+    "updated": "已更新：",
+    "removed": "已移除：",
+    "unchanged": "未更動：",
+    "invalid": "無效："
+  },
+  "DatabaseCard": {
+    "title": "資料庫",
+    "button": {
+      "download": "下載",
+      "copy": "剪貼簿",
+      "delete": "刪除",
+      "upload": "上傳",
+      "swap": "轉移"
+    },
+    "currentDB": "目前資料庫"
+  }
+}

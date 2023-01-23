@@ -1,10 +1,6 @@
 {
   "editor": {
     "title": "聖遺物エディター",
-    "set": {
-      "artifactSet": "聖遺物セット",
-      "maxRarity": "最高レア度 <1></1>"
-    },
     "substat": {
       "substatFormat": "サブステータス {{value}}",
       "noSubstat": "サブステータスなし",
@@ -14,7 +10,6 @@
     "rarity": "レア度",
     "level": "レベル",
     "unknownPieceName": "ピース名不明",
-    "mainSelect": "メイン効果",
     "curSubEffDesc": "4レベルごとに、ひとつのサブステータスが増加します。<strong>サブステータス効率</strong>はどれだけ高くなったかパーセンテージとして計算します。",
     "maxSubEff": "最大サブステータス効率",
     "preview": "聖遺物プレビュー",

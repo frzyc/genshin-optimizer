@@ -1,6 +1,5 @@
 {
   "dmg": "Урон",
-  "hits": "Ударов",
   "lessPercentHP": "HP меньше {{percent}}%",
   "hitOp": {
     "normal": "Обычная атака попала по врагу",
@@ -43,6 +42,7 @@
   "enemyGreaterEqPercentHP": "HP противника больше или равно {{percent}}%",
   "stack_one": "{{count}} Стак",
   "stack_other": "{{count}} Стаки",
+  "seconds_one": "{{count}} Секунд",
   "seconds_other": "{{count}} Секунды",
   "uses_one": "{{count}} Использование",
   "uses_other": "{{count}} Использования",
@@ -76,6 +76,7 @@
     "geo": "Длительность Гео эффекта"
   },
   "durationInc": "Увеличение продолжительности",
+  "stacks": "Стаки",
   "protectedByShield": "Под щитом",
   "dmgAbsorption": {
     "pyro": "Поглощение Пиро-урона",
@@ -105,5 +106,9 @@
   "bonusScaling": {
     "skill_": "Увел. Бонуса Элем. Навыка"
   },
-  "energy": "Энергия"
+  "energy": "Энергия",
+  "teamBuff": "Командный бафф",
+  "dmgMult": {
+    "skill": "Навык"
+  }
 }

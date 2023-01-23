@@ -106,7 +106,7 @@
   "passive2": {
     "name": "Lama accademica",
     "description": {
-      "0": "Per ogni punto di maestria elementale che Tighnari possiede, i DAN del suo attacco caricato <strong>Frecce a groviglio</strong> aumentano di uno 0,06%.",
+      "0": "Per ogni punto di maestria elementale che Tighnari possiede, i DAN del suo attacco caricato e di <strong>Frecce a groviglio</strong> aumentano di uno 0,06%.",
       "1": "Il bonus DAN massimo ottenibile in questo modo è di un 60%."
     }
   },

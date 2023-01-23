@@ -1,6 +1,5 @@
 {
   "dmg": "DMG",
-  "hits": "{{count}} Hit",
   "lessPercentHP": "< {{percent}}% HP",
   "hitOp": {
     "normal": "Normal Attack mengenai musuh",

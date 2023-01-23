@@ -1,19 +1,15 @@
 {
   "editor": {
-    "title": "Editor de Artefatos",
-    "set": {
-      "artifactSet": "Conjunto de artefatos",
-      "maxRarity": "Raridade Máxima <1></1>"
-    },
+    "title": "Editar Artefato",
     "substat": {
-      "substatFormat": "Subatributo {{value}}",
-      "noSubstat": "Sem Subatributos",
-      "selectSub": "Selecione um Subatributo",
+      "substatFormat": "Atributo {{value}}",
+      "noSubstat": "Vazio",
+      "selectSub": "Selecione um Atributo",
       "error": {
-        "noCalc": "Não foi possível calcular o sorteio dos atributos.",
+        "noCalc": "Não foi possível calcular os Rolls dos Atributos.",
         "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
       },
-      "noRoll": "Sem Sorteios",
+      "noRoll": "Sem Rolls",
       "noStat": "Sem Valor",
       "eff": "Eficiência: <1></1>",
       "nextRolls": "Próximos rolls:",
@@ -23,27 +19,27 @@
     "rarity": "Raridade",
     "level": "Nível",
     "unknownPieceName": "Nome da Peça Desconhecido",
-    "mainSelect": "Selecione o Atributo Principal",
-    "curSubEff": "Eficiência Atual do Subatributo",
-    "curSubEffDesc": "A cada 4 aumentos no nível no artefato, você ganha um sorteio no subatributo. <strong>Eficiência do Subatributo</strong> calcula como uma porcentagem o quão alto o subatributo foi sorteado.",
-    "maxSubEff": "Eficiência Máxima do Subatributo",
-    "maxSubEffDesc": "A <strong>Eficiência Máxima do Subatributo</strong> de um artefato calcula a eficiência máxima nos aumentos de nível restantes.",
+    "curSubEff": "Eficiência de Rolls Atual",
+    "curSubEffDesc": "A cada 4 aumentos de nível do artefato, será realizado um Roll de Atributo Secundário. A <strong>Eficiência de Rolls</strong>  do atributo calcula como uma porcentagem o quão alto foi o Roll.",
+    "maxSubEff": "Eficiência de Rolls Máxima",
+    "maxSubEffDesc": "A <strong>Eficiência Máxima de Rolls</strong> de um artefato calcula a Eficiência se os Rolls restantes forem todos do valor máximo.",
     "preview": "Visualização do Artefato",
-    "dupArt": "Artefato duplicado detectado.",
-    "upArt": "Artefato atualizado detectado.",
+    "dupArt": "Artefato duplicado detectado",
+    "upArt": "Artefato atualizado detectado",
     "beforeEdit": "Antes de Editar",
-    "btnSave": "Salvar o Artefato",
+    "btnSave": "Salvar Artefato",
     "btnAdd": "Adicionar Artefato",
-    "btnClear": "Limpar",
+    "btnClear": "Redefinir",
     "btnRandom": "Aleatório",
-    "btnUpdate": "Atualizar o Artefato",
-    "clearPrompt": "Existe um artefato no editor. Tem certeza de que deseja limpar o editor?"
+    "btnUpdate": "Atualizar Artefato",
+    "clearPrompt": "Você está editando um artefato. Tem certeza de que quer resetá-lo?",
+    "unknownSetName": "Conjunto Desconhecido"
   },
-  "artifactFilter": "Filtro de Artefatos",
+  "artifactFilter": "Filtrar Artefatos",
   "filterLocation": {
     "inventory": "Inventário",
     "currentlyEquipped": "Atualmente Equipado",
-    "any": "Qualquer"
+    "location": "Localização"
   },
   "button": {
     "unequipArtifacts": "Desequipar Artefatos",
@@ -53,15 +49,14 @@
     "lockArtifacts": "Trancar Artefatos",
     "unlockrtifacts": "Destrancar Artefatos"
   },
-  "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3>",
-  "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
+  "buttonHint": "Nota: as opções acima só são aplicadas nos <1>artefatos filtrados</1>",
   "tipsOfTheDay": [
-    "A eficiência máxima de um artefato de 4 estrelas é de cerca de 60%.",
-    "A eficiência máxima de um artefato geralmente diminuirá conforme você aumenta o nível. É perfeitamente normal!",
-    "Subatributos com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
-    "Se todos os seus sorteios(6) foram para um único subatributo, ele será roxo!",
-    "Clique em \"Detalhes\" quando estiver atualizando seus artefatos no jogo para digitalizar conforme você o aumenta o nível.",
-    "Agora você pode fazer upload de capturas de tela de vários artefatos para serem digitalizados!"
+    "A Eficiência Máxima de um artefato 4 estrelas é de cerca de 540%",
+    "A Eficiência Máxima de um artefato geralmente diminuirá conforme você aumenta o seu nível. Isso é perfeitamente normal!",
+    "Atributos com \"1\"s são os mais difíceis de digitalizar por meio de capturas de tela.",
+    "Se todos os seus Rolls (6) forem para um único atributo, ele se tornará roxo!",
+    "Clique em \"Detalhes\" quando estiver subindo o nível de seus artefatos no jogo para digitalizá-los conforme você os melhora.",
+    "Agora você pode fazer o upload de várias capturas de tela seguidas para digitalizar vários artefatos!"
   ],
   "mainStat": "Atributo Principal",
   "slot": "Slot",
@@ -73,29 +68,41 @@
     "circlet": "Tiara de Logos"
   },
   "info": {
-    "title": "Edição de Artefato/Guia de Gerenciamento",
-    "section1": "<0>Sorteio dos subatributos</0><1>O <1>número de sorteios</1> que um subatributo possui é mostrado no seu lado esquerdo. À medida que o número aumenta, o subatributo fica mais colorido:<3></3>.</1><2>Eficiência do Subatributo</2><3>A eficiência de um subatributo é uma porcentagem do valor atual sobre o valor potencial de um 5<1></1>. Na imagem o valor máximo de rolagem de DANO CRIT é 7,8%. Em eficiência: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiência Atual vs. Máxima Eficiência Potencial</4><5>Quando um 5<1></1> tiver 9(4+5) sorteios no total, com cada um tendo o valor mais alto, isso é definido como um artefato 100% eficiente. No entanto, a maioria dos artefatos não tem essa sorte. A <3>eficiência atual</3> de um artefato é uma porcentagem sobre esse artefato 100%. A <5>eficiência máxima</5> é a eficiência máxima possível que um artefato pode alcançar, se os sorteios restantes dos aumentos de nível forem o valor mais alto.</5><6>Bloqueando um artefato</6><7>Ao bloquear um artefato <1></1>, este artefato não será usado pelo gerador de builds para otimização. Um artefato equipado é bloqueado por padrão.</7>",
-    "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um subatributo é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
-    "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com subatributos: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
+    "title": "Guia de Edição e Gerenciamento de Artefatos",
+    "section1": "<0>Rolls de Atributos Secundários</0><1>O <1>número de Rolls</1> que um atributo possui é mostrado à direita dele e é indicado pelo número de barras. À medida que o número de Rolls aumenta, a cor do atributo fica mais viva:<3></3>.</1><2>Eficiência de Rolls do Atributo</2><3>A Eficiência de Rolls de um atributo é a porcentagem do valor atual sobre o valor máximo potencial em um artefato 5<1></1>. Na imagem, o valor máximo de um Roll de Vida% é de 5,8%. Em Eficiência: <3>5,3/5,8 ≈ 90%.</3></3><4>Eficiência Atual vs. Eficiência Máxima</4><5>Quando um artefato 5<1></1> possui 9 (4 base + 5 adicionais) Rolls totais, e cada um é do maior valor, esse é um artefato com Eficiência 900%. Entretanto, muitos artefatos não têm essa sorte. A <3>Eficiência Atual</3> de um artefato é a porcentagem que ele possui sobre um artefato com Eficiência máxima. A <5>Eficiência Máxima</5> é o máximo de Eficiência que um artefato pode conseguir, se os seus Rolls futuros ao subir de nível forem do maior valor possível.</5><6>Trancando um Artefato</6><7>Bloquear um artefato <1></1> o impedirá de ser escolhido pelo Gerador de Builds para uma Otimização. Artefatos equipados são bloqueados por padrão.</7>",
+    "section2": "<0>Editor de Artefatos</0><1>Um editor de artefatos completo que aceita qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, é possível calcular os valores exatos dos Rolls  e a partir deles, sua eficiência. Ele também garante que você tenha inserido valores corretos no artefato de acordo com o nível e valida também outras informações.</1><2>Digitalize capturas de tela</2><3>Se você não quer realizar a inserção manual, é possível digitalizar artefatos a partir de capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO percebe se você insere um artefato <1>duplicado</1>, que já existe no seu inventário? Ele também pode detectar se o artefato sendo editado é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
+    "section3": "<0>Inventário de Artefatos</0><1>Todos os artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais a visualização de seus artefatos. </1><2>Exemplo: Encontrando Artefatos para Descarte</2><3>Ao filtrar por Eficiência de Rolls, você pode encontrar rapidamente um item mal-otimizado para usar como experiência para outros artefatos.</3><4>Neste exemplo, os filtros estão definidos desta forma: </4><5><0><0>Nível de 0 a 8</0><1>Artefatos Desbloqueados no Inventário</1><2>Desconsiderando Vida, DEF e ATQ simples ao calcular a Eficiência</2><3>Ordenar de forma Crescente pela Eficiência Máxima de Rolls.</3></0></5><6>Isso filtrará o Inventário de artefatos, mostrando os artefatos com menor Eficiência e com os atributos escolhidos.</6>"
   },
-  "exclusionDisplay": "Bloqueado: {{value}}",
   "exclusion": {
     "any": "Qualquer",
-    "excluded": "Bloqueado",
-    "included": "Desbloqueado"
+    "excluded": "Bloqueados",
+    "included": "Desbloqueado",
+    "exclusion": "Omissão"
   },
   "sortMap": {
-    "quality": "Qualidade",
     "level": "Nível",
-    "efficiency": "Efic. Atual do Subatributo",
-    "mefficiency": "Efic. Máxima do Subatributo"
+    "efficiency": "Eficiência de Rolls Atual",
+    "mefficiency": "Eficiência de Rolls Máxima"
   },
   "efficiencyFilter": {
-    "title": "Atributos secundários usados no cálculo de valor do Roll"
+    "title": "Atributos usados no cálculo de Eficiência de Rolls"
   },
   "resetFilters": "Limpar Filtros",
   "setEffectNum": "Conjunto de {{setNum}} Pç.",
-  "excludeArtifactTip": "Excluir um artefato irá impedir o gerador de builds de escolhê-lo numa montagem.",
+  "excludeArtifactTip": "Bloquear um artefato impedirá o Gerador de Builds de usá-lo numa Build.",
   "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
+  "edit": "Editar Artefato",
+  "excluded": "Este artefato está bloqueado.",
+  "included": "Este artefato não está bloqueado.",
+  "autocompleteLabels": {
+    "sets": "Conjuntos de Artefatos",
+    "mainStats": "Atributos Principais",
+    "substats": "Atributos Secundários",
+    "set": "Conjunto do Artefato"
+  },
+  "substat_one": "{{count}} atributo secundário",
+  "substat_other": "{{count}} atributos secundários",
+  "addNew": "Adicionar Artefato",
+  "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado"
 }

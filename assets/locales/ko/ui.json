@@ -14,12 +14,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "최소 레벨",
-    "maxLevel": "최대 레벨",
-    "rarity": "등급",
-    "level": "레벨"
-  },
   "unselect": "선택해제",
   "ascending": "오름차순",
   "descending": "내림차순",

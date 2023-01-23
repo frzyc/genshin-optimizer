@@ -1,0 +1,11 @@
+{
+  "windfavoredState": "在<strong>优风倾姿</strong>状态下",
+  "p1": {
+    "pyroCondName": "<strong>羽画: 风姿华歌</strong> 若接触了 <pyro>火元素</pyro>",
+    "cryoCondName": "<strong>羽画: 风姿华歌</strong> 若接触了 <cryo>冰元素</cryo>"
+  },
+  "p2Dmg": "枚风矢的伤害",
+  "c1BonusKey": "枚风失伤害加成",
+  "c2CondName": "空居力上限与当前的空居力的差值",
+  "c6Key": "祝言·霞幕倾松风倍率"
+}

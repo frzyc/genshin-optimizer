@@ -1,6 +1,5 @@
 {
   "dmg": "DGT",
-  "hits": "{{hits}} coup",
   "lessPercentHP": "< {{percent}}% PV",
   "hitOp": {
     "normal": "Attaque Normale touche des ennemis",

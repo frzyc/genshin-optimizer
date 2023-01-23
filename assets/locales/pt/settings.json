@@ -1,19 +1,14 @@
 {
   "title": "Configurações",
   "languageCard": {
-    "selectLanguage": "Selecione o Idioma",
+    "selectLanguage": "Selecione um Idioma",
     "languageFormat": "Idioma: {{language}}"
   },
   "uploadCard": {
-    "title": "Upload de Banco de Dados",
-    "replaceDatabase": "Substituir Banco de Dados",
-    "hint": "Faça upload do seu arquivo JSON aqui...",
-    "hintPaste": "...ou cole seus dados abaixo.",
-    "goUpload": {
-      "title": "Formato <strong>Genshin Optimizer</strong>",
-      "migrate": "A base de dados será migrada para uma nova versão. Baixe a base de dados novamente após importá-los.",
-      "deleteDatabasePrompt": "Tem certeza que deseja excluir seu banco de dados?"
-    },
+    "title": "Upload de Base de Dados",
+    "replaceDatabase": "Substituir Base de Dados",
+    "hint": "Carregue o arquivo JSON aqui...",
+    "hintPaste": "...ou cole os dados abaixo.",
     "error": {
       "jsonParse": "Não foi possível ler o arquivo JSON",
       "unknown": "Formato de arquivo desconhecido.",
@@ -23,6 +18,17 @@
     "dbSource": "Origem dos dados:",
     "goodUpload": {
       "title": "Formato <strong>Genshin Open Object Description</strong> (GOOD)"
+    },
+    "buttons": {
+      "open": "Selecionar",
+      "detectDups": "Detectar itens atualizados/duplicados",
+      "delNotInImport": "Excluir itens fora da base de dados"
+    },
+    "tooltip": {
+      "detectdup": "Detectar itens duplicados ou aprimorados no seu inventário atual e juntar a base de dados importada ao GO.",
+      "ignoreDup": "Não detectar duplicados ou aprimorados, a base de dados é simplesmente adicionada ao inventário existente.",
+      "delNotInImport": "Entende que a base de dados importada se trata do inventário completo. Itens presentes no seu inventário atual do GO que não estão no inventário importado serão excluído.",
+      "keepNotInImport": "Entende que a base de dados importada é só parte do seu inventário. Nada será excluído."
     }
   },
   "count": {
@@ -33,7 +39,21 @@
     "new": "Novo:",
     "updated": "Atualizado:",
     "removed": "Removido:",
-    "unchanged": "Inalterado:",
-    "invalid": "inválido:"
+    "unchanged": "Sem Modificações:",
+    "invalid": "Inválido:",
+    "upgraded": "Aprimorados:",
+    "dbTotal": "Total Combinado:",
+    "notInImport": "Fora da Base de Dados:"
+  },
+  "DatabaseCard": {
+    "title": "Base de Dados",
+    "button": {
+      "download": "Fazer Download",
+      "copy": "Copiar",
+      "delete": "Excluir",
+      "upload": "Fazer Upload",
+      "swap": "Mudar"
+    },
+    "currentDB": "Base de Dados Atual"
   }
 }

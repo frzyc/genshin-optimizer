@@ -1,6 +1,5 @@
 {
   "addNew": "添加新角色",
-  "forceSet": "强制使用圣遗物套装",
   "tabs": {
     "overview": "概览",
     "talent": "天赋",
@@ -29,7 +28,6 @@
   },
   "characterName": "角色名称",
   "teammate": "队友 {{count}}",
-  "none": "无",
   "noReaction": "无反应",
   "multiTarget": {
     "title": "多重优化目标配置",

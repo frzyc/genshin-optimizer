@@ -1,0 +1,27 @@
+{
+  "quickLinksCard": {
+    "title": "快速連結",
+    "buttons": {
+      "tyGuide": {
+        "tooltip": "了解如何使用原神最佳化工具"
+      },
+      "scanners": {
+        "title": "自動掃描器",
+        "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
+      },
+      "devDiscord": {
+        "title": "原神開發者 Discord",
+        "tooltip": "原神開發者社群"
+      },
+      "good": {
+        "title": "GOOD 文件"
+      },
+      "patchNotes": {
+        "title": "原神最佳化工具更新日誌"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO 庫存"
+  }
+}

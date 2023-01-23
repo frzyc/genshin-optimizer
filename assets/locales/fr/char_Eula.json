@@ -3,7 +3,6 @@
     "name": "Cœur de glace",
     "consumed": "Cœur de glace consommés",
     "grimheart": {
-      "name": "Stacks de Cœur de glace",
       "int": "Augmente la résistance à l'interruption"
     }
   },

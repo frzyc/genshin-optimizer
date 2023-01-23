@@ -1,6 +1,5 @@
 {
   "mainStat": {
-    "title": "主词条",
     "levelAssTooltip": {
       "title": "等级假设",
       "desc": "修改主词条数值至某等级之上，但不改变副词条。"
@@ -14,7 +13,13 @@
     "vs": "绘制与优化目标的关系图",
     "notSel": "未选",
     "downloadData": "下载数据",
-    "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度"
+    "desc": "本功能会显示优化目标和选择的绘图目标之间的关系，即绘图目标每变动0.01时，优化目标的数值，本功能为可选功能，并且会拖慢生成配装的速度",
+    "showStatThr": "显示词条阈值线",
+    "generatedBuilds": "生成配装",
+    "statReqThr": "词条阈值线",
+    "currentBuild": "当前配装",
+    "highlightedBuilds": "高亮的配装",
+    "buildAlreadyInList": "配装已经在列表中"
   },
   "levelFilter": "圣遗物等级过滤器",
   "useExcluded": {
@@ -37,9 +42,7 @@
       },
       "add": "添加角色入列表",
       "clearList": "清空列表"
-    },
-    "usingNum_one": "使用<1>{{count}}</1>名角色的圣遗物",
-    "usingNum_other": "使用<1>{{count}}</1>名角色的圣遗物"
+    }
   },
   "allowPartial": "允许部分配装（少于5件圣遗物）",
   "constraintFilter": {
@@ -86,11 +89,18 @@
   "targetSelector": {
     "selectOptTarget": "选择优化目标",
     "selectGraphTarget": "选择绘图目标",
-    "invalidTarget": "目标无效"
+    "invalidTarget": "目标无效",
+    "selectBuildTarget": "选择一种配装限制条件"
   },
   "selectTargetFirst": "首先选择一个优化目标",
   "generateButton": {
     "cancel": "取消",
     "generateBuilds": "生成配装"
-  }
+  },
+  "removeBuildButton": "移除配装",
+  "theorycraftButton": "理论分析",
+  "currentlyEquippedBuild": "当前已装备的",
+  "addBuildToList": "将配装加入列表",
+  "graphBuildLabel": "图表 #<1>{{count}}</1>",
+  "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试"
 }

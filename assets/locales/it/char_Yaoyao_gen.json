@@ -52,7 +52,7 @@
       "8": "Yuegui: Modalità di lancio sceglie automaticamente i bersagli da colpire.",
       "9": [
         " Se tutti i personaggi nelle vicinanze hanno più di un 70% di PS rimanenti, i ravanelli vengono lanciati in direzione dell'avversario più vicino.",
-        " Se i personaggi nelle vicinanze hanno un 70% o meno di PS rimanenti, i ravanelli vengono lanciati al personaggio con la percentuale di PS rimanenti inferiore. Se non ci sono avversari nei paraggi, Yuegui lancia i Ravanelli di giada bianca ai personaggi con più di un 70% di PS e meno di un 100% di PS rimanenti. In assenza di tale condizione, lancia i ravanelli casualmente."
+        " Se i personaggi nelle vicinanze hanno un 70% o meno di PS rimanenti, i ravanelli vengono lanciati al personaggio con la percentuale di PS rimanenti inferiore. Se non ci sono avversari nei paraggi, Yuegui lancia i Ravanelli di giada bianca ai personaggi se hanno tutti più di un 70% di PS e meno di un 100% di PS rimanenti. In assenza di tale condizione, lancia i ravanelli casualmente."
       ],
       "10": "<br/>",
       "11": "Possono esistere al massimo 2 Yuegui: Modalità di lancio contemporaneamente.",
@@ -142,7 +142,7 @@
   "constellation2": {
     "name": "Innocenza",
     "description": {
-      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, se i Ravanelli di giada bianca esplodono e danneggiano i nemici, l'energia di Yaoyao si ripristina di 3. Questa forma di recupero dell'energia può verificarsi solo una volta ogni 0,8{NON_BREAK_SPACE}s."
+      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, se i Ravanelli di giada bianca esplodono e colpiscono i nemici, l'energia di Yaoyao si ripristina di 3. Questa forma di recupero dell'energia può verificarsi solo una volta ogni 0,8{NON_BREAK_SPACE}s."
     }
   },
   "constellation3": {

@@ -12,12 +12,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "Level Min",
-    "maxLevel": "Level Maks",
-    "rarity": "Kualitas",
-    "level": "Level"
-  },
   "unselect": "Batal pilih",
   "ascending": "Meningkat",
   "descending": "Menurun",

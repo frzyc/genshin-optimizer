@@ -1,0 +1,26 @@
+{
+  "addNew": "新增角色",
+  "tabs": {
+    "overview": "總覽",
+    "talent": "天賦",
+    "theorycraft": "理論分析"
+  },
+  "selectCharacter": "選擇一個角色",
+  "delete": "刪除角色",
+  "hitmode": {
+    "hit": "無暴擊傷害",
+    "avgHit": "平均傷害",
+    "critHit": "暴擊傷害"
+  },
+  "tabEquip": {
+    "swapWeapon": "替換武器",
+    "swapArt": "替換聖遺物",
+    "unequipArts": "卸下所有聖遺物"
+  },
+  "characterName": "角色名稱",
+  "teammate": "隊友 {{count}}",
+  "tabTeambuff": {
+    "team_reso": "元素共鳴",
+    "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
+  }
+}

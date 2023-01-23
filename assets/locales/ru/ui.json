@@ -14,12 +14,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "Мин. Уровень",
-    "maxLevel": "Макс. Уровень",
-    "rarity": "Редкость",
-    "level": "Уровень"
-  },
   "unselect": "Отменить",
   "ascending": "По возрастанию",
   "descending": "По убыванию",

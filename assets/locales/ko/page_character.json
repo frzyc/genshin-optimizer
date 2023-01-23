@@ -28,7 +28,6 @@
   },
   "characterName": "캐릭터 이름",
   "teammate": "파티원 {{count}}",
-  "none": "없음",
   "noReaction": "원소 반응 없음",
   "multiTarget": {
     "title": "다중 최적화 목표 설정",

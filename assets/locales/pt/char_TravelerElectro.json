@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "amuletGenAmt": "Número de Amuletos da Abundância criados",
+    "absorb": "Personagem absorveu um Amuleto da Abundância"
+  },
+  "burst": {
+    "3rd": "Dano do 3º Relâmpago Poderoso",
+    "thunderCd": "Cooldown do Relâmpago Poderoso"
+  },
+  "passive2": {
+    "enerRech_": "Aum. do efeito de Regen. de Energia do Amuleto da Abundância"
+  },
+  "c2": {
+    "thunderHit": "Após o <strong>Relâmpago Poderoso</strong> atingir o inimigo"
+  }
+}

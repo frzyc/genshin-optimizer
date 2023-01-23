@@ -11,12 +11,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "Min Level",
-    "maxLevel": "Max Level",
-    "rarity": "Qualität",
-    "level": "Level"
-  },
   "unselect": "Abwählen",
   "ascending": "Aufsteigend",
   "descending": "Absteigend",

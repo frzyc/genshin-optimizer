@@ -1,0 +1,54 @@
+{
+  "addNew": "Adicionar Personagem",
+  "tabs": {
+    "overview": "Visão Geral",
+    "talent": "Talentos",
+    "teambuffs": "Bônus da Equipe",
+    "optimize": "Otimizar",
+    "theorycraft": "Theorycraft"
+  },
+  "formulas": "Fórmulas",
+  "calculations": "Cálculos",
+  "selectCharacter": "Selecione um Personagem",
+  "removeCharacter": "Tem certeza de que quer excluir {{value}}?",
+  "delete": "Excluir o personagem",
+  "teammates": "Companheiros",
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} personagem",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} personagens",
+  "hitmode": {
+    "hit": "Dano Não-Crítico",
+    "avgHit": "Dano Médio",
+    "critHit": "Dano do Crítico"
+  },
+  "tabEquip": {
+    "swapWeapon": "Trocar Arma",
+    "swapArt": "Trocar Artefato",
+    "compare": "Comparar com Build atual",
+    "unequipArts": "Desequipar todos os artefatos"
+  },
+  "characterName": "Nome do Personagem",
+  "teammate": "Companheiro {{count}}",
+  "noReaction": "Sem Reações",
+  "multiTarget": {
+    "title": "Configurar Multi-Objetivo",
+    "addNewTarget": "Adicionar novo Objetivo Customizado",
+    "addNewMTarget": "Adicionar novo Multi-Objetivo Customizado"
+  },
+  "addStats": {
+    "title": "Ajustes do Inimigo + Atributos Bônus"
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Usar rolls mínimos de atributos",
+      "max": "Usar rolls máximos de atributos",
+      "mid": "Usar rolls medianos de atributos"
+    },
+    "maxTotalRolls": "Uma build \"válida\" pode ter no máximo 45 rolls.",
+    "maxRolls": "Esse atributo pode ter no máximo 30 rolls.",
+    "maxRollsMain": "Já que este também é pelo menos um dos atributos principais, esse atributo pode ter no máximo {{value}} rolls."
+  },
+  "tabTeambuff": {
+    "team_reso": "Ressonância da Equipe",
+    "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
+  }
+}

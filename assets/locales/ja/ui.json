@@ -10,12 +10,6 @@
     "patreon": "パトリオン",
     "discord": "ディスコード"
   },
-  "game": {
-    "minLevel": "最低レベル",
-    "maxLevel": "最上レベル",
-    "rarity": "レア度",
-    "level": "レベル"
-  },
   "unselect": "選択削除",
   "ascending": "昇順",
   "descending": "降順",

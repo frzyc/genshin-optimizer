@@ -115,7 +115,7 @@
     "name": "Misteri svelati",
     "description": {
       "0": "Ogni punto di maestria elementale di Alhaitham aumenta i DAN inflitti dagli Attacchi proiettanti e da <strong>Campo specifico: Catene fenomeniche</strong> di uno 0,1%.",
-      "1": "L'aumento massimo di DAN per entrambe le abilità corrisponde a un 100%."
+      "1": "I DAN delle suddette abilità possono essere aumentati in questo modo fino a un 100%."
     }
   },
   "passive3": {

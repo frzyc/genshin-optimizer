@@ -16,5 +16,20 @@
     "p1": "Escaneia todos os artefatos no seu inventário. Possui um modo de leitura manual.",
     "p2": "Esse scanner pode também ser configurado para artefatos em novas versões sem precisar ser atualizado."
   },
-  "goodeng": "Esse scanner lê apenas o idioma inglês, e exporta no formato GOOD."
+  "goodeng": "Esse scanner lê apenas o idioma inglês, e exporta no formato GOOD.",
+  "tosWarn": "Assim como qualquer outra ferramenta que interage indiretamente com o jogo, apesar de seu uso ser praticamente indetectável, <1>seu uso pode acarretar algum risco.</1> Sua utilização fica a critério do usuário.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Manipulação do Jogo",
+    "materials": "Materiais",
+    "characters": "Personagens"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Esse escaneador localizado no navegador pode obter dados a partir da janela do seu jogo, de uma captura de tela, ou escanear um vídeo.",
+    "p2": "A captura de tela ou vídeo pode ser em tela cheia e não precisa ser recortada.",
+    "p3": "Mobile/PlayStation só podem escanear a partir de capturas de tela e vídeos."
+  }
 }

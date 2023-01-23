@@ -9,11 +9,6 @@
     "replaceDatabase": "Cập nhật CSDL",
     "hint": "Tải tệp JSON của bạn tại đây...",
     "hintPaste": "...hoặc dán dữ liệu của bạn xuống dưới.",
-    "goUpload": {
-      "title": "Định dạng <strong>Genshin Optimizer</strong>",
-      "migrate": "Cơ sở dữ liệu sẽ được chuyển sang phiên bản mới hơn. Vui lòng xem xét tải xuống lại cơ sở dữ liệu sau khi nhập.",
-      "deleteDatabasePrompt": "Bạn có chắc chắn muốn thay thế cơ sở dữ liệu của bạn không? Tất cả các nhân vật và thánh di vật sẽ bị xóa."
-    },
     "error": {
       "jsonParse": "Không thể phân tích tập tin JSON.",
       "unknown": "Định dạng tập tin không xác định.",

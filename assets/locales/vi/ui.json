@@ -13,12 +13,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "Cấp thấp nhất",
-    "maxLevel": "Cấp cao nhất",
-    "rarity": "Phẩm Chất",
-    "level": "Cấp"
-  },
   "unselect": "Bỏ chọn",
   "ascending": "Tăng dần",
   "descending": "Giảm dần",

@@ -1,6 +1,5 @@
 {
   "dmg": "피해",
-  "hits": "명중",
   "lessPercentHP": "체력이 {{percent}}% 미만",
   "hitOp": {
     "normal": "일반 공격이 대상에게 명중",
@@ -43,8 +42,6 @@
   "enemyGreaterEqPercentHP": "적의 체력이 {{percent}}% 이상",
   "stack_one": "{{count}} 스택",
   "stack_other": "{{count}} 스택",
-  "member_one": "{{count}}명",
-  "member_other": "{{count}}명",
   "seconds_one": "{{count}}초",
   "seconds_other": "{{count}}초",
   "afterDefeatEnemy": "적 처치 후",
@@ -62,7 +59,6 @@
   "activeCharField": "필드 위 캐릭터가 영역내 존재",
   "opponentsField": "영역에 적 존재",
   "takeDmg": "피해를 받음",
-  "onHit": "공격 명중",
   "infusion": {
     "pyro": "불 원소 부여",
     "cryo": "얼음 원소 부여",
@@ -85,7 +81,6 @@
   "durationInc": "지속시간 증가",
   "base": "기본",
   "stacks": "스택",
-  "members": "파티원",
   "protectedByShield": "보호막 존재",
   "protectedByShieldCrystal": "결정화로 생성된 보호막 존재",
   "staminaDec_": "스태미나 소모 감소",
@@ -142,5 +137,10 @@
   },
   "teamBuff": "파티 버프",
   "opponents_one": "{{count}} 마리",
-  "opponents_other": "{{count}} 마리"
+  "opponents_other": "{{count}} 마리",
+  "dmgMult": {
+    "normal": "일반 공격 피해량 계수",
+    "charged": "강공격 피해량 계수",
+    "skill": "스킬 피해량 계수"
+  }
 }

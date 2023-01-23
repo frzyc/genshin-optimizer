@@ -1,6 +1,5 @@
 {
   "dmg": "伤害",
-  "hits": "命中次数",
   "lessPercentHP": "生命值低于{{percent}}%",
   "hitOp": {
     "normal": "普通攻击命中敌人",
@@ -43,8 +42,6 @@
   "enemyGreaterEqPercentHP": "敌人生命值高于或等于{{percent}}%",
   "stack_one": "{{count}}层",
   "stack_other": "{{count}}层",
-  "member_one": "{{count}}名角色",
-  "member_other": "{{count}}名角色",
   "seconds_one": "{{count}} 秒",
   "seconds_other": "{{count}} 秒",
   "uses_one": "{{count}}使用次数",
@@ -64,7 +61,6 @@
   "activeCharField": "领域内的当前场上角色",
   "opponentsField": "领域内的敌人",
   "takeDmg": "受到伤害后",
-  "onHit": "攻击命中后",
   "infusion": {
     "pyro": "火元素附魔",
     "cryo": "冰元素附魔",
@@ -87,7 +83,6 @@
   "durationInc": "持续时间增加",
   "base": "基础",
   "stacks": "层数",
-  "members": "角色",
   "protectedByShield": "处于护盾庇护下",
   "protectedByShieldCrystal": "处于结晶护盾庇护下",
   "staminaDec_": "体力消耗降低",
@@ -146,5 +141,10 @@
   "energy": "能量",
   "teamBuff": "队伍加成",
   "opponents_one": "{{count}} 个敌人",
-  "opponents_other": "{{count}} 个敌人"
+  "opponents_other": "{{count}} 个敌人",
+  "dmgMult": {
+    "normal": "普攻伤害倍率",
+    "charged": "重击伤害倍率",
+    "skill": "技能伤害倍率"
+  }
 }

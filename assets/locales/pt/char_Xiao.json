@@ -1,0 +1,12 @@
+{
+  "burst": {
+    "autoAtkDmgBonus_": "Bônus de Dano dos Ataques Normais/Carregados/Imersivos",
+    "lifeDrain_": "Dreno de Vida",
+    "currentHPPerSec": "(Vida Atual/s)",
+    "incJump": "Aumenta consideravelmente sua capacidade de salto",
+    "incAtkAoe": "Aumenta a AdE dos ataques",
+    "inBurst": "Sob os efeitos da <Dança Nuo da Conquista do Mal</strong>",
+    "stack": "Tempo na <strong>Dança Nuo da Conquista do Mal</strong>"
+  },
+  "skillStack": "Usos do <strong>Vento Lemniscático</strong>"
+}

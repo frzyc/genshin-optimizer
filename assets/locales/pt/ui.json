@@ -5,29 +5,25 @@
     "characters": "Personagens",
     "tools": "Ferramentas",
     "weapons": "Armas",
-    "doc": "Docs"
+    "doc": "Docs",
+    "setting": "Ajustes",
+    "scanner": "Scanners"
   },
   "social": {
     "paypal": "Paypal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "Nível Mínimo",
-    "maxLevel": "Nível Máximo",
-    "rarity": "Raridade",
-    "level": "Nível"
-  },
   "unselect": "Desmarcar",
   "ascending": "Crescente",
   "descending": "Decrescente",
   "loading": "Carregando...",
-  "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
-  "appVersion": "$t(pageTitle) Versão: {{version}}",
+  "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado da HoYoverse.",
+  "appVersion": "$t(pageTitle) Versão: <1>{{version}}</1>",
   "underConstruction": "Em Construção",
   "error": "Erro",
   "reset": "Redefinir",
-  "info": "INFO",
+  "info": "EXPLICAÇÃO",
   "inventory": "Inventário",
   "close": "Fechar",
   "sortMap": {
@@ -43,5 +39,15 @@
   "link": {
     "download": "Link para Download",
     "discord": "Convite do Servidor Discord"
+  },
+  "sortBy": "Ordenar por: ",
+  "delete": "Excluir",
+  "locked": "Trancado",
+  "unlocked": "Destrancado",
+  "refinement": "Refinamento {{value}}",
+  "selectlevel": "Selecionar Nível",
+  "gender": {
+    "F": "Feminino",
+    "M": "Masculino"
   }
 }

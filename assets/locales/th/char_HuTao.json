@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "เข้าสู่สภาวะ Paramita Papilio",
+    "end": "หลังจากสภาวะ Paramita Papilio ที่เกิดขึ้นโดย Guide to Afterlife สิ้นสุดลง"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "แปะสถานะ Blood Blossom ที่ศัตรู (C2)"
+  },
+  "constellation4": {
+    "condName": "เมื่อเอาชนะศัตรูที่ได้รับผลกระทบของ Blood Blossom ได้"
+  },
+  "constellation6": {
+    "condName": "พลังชีวิตลดต่ำกว่า 25% หรือได้รับความเสียหายจากการโจมตีที่รุนแรงพอที่จะทำให้หมดสติ"
+  }
+}

@@ -1,6 +1,5 @@
 {
   "dmg": "Sát thương",
-  "hits": "{{count}} Hit",
   "lessPercentHP": "< {{percent}}% HP",
   "hitOp": {
     "normal": "Tấn công thường đánh trúng kẻ địch",

@@ -1,6 +1,5 @@
 {
   "dmg": "Schaden",
-  "hits": "({{hits}} Treffer)",
   "lessPercentHP": "< {{percent}}% HP",
   "hitOp": {
     "normal": "Treffer gegen Gegner bei normalen Schlägen",

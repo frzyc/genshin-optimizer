@@ -17,9 +17,7 @@
       },
       "add": "Añadir personaje a la lista",
       "clearList": "Limpiar lista"
-    },
-    "usingNum_one": "Usando de <1>{{count}}</1> personaje",
-    "usingNum_other": "Usando de <1>{{count}}</1> personajes"
+    }
   },
   "artSetConfig": {
     "title": "Ajustes de sets de artefactos",

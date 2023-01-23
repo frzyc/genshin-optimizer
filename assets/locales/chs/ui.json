@@ -14,12 +14,6 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
-  "game": {
-    "minLevel": "最小等级",
-    "maxLevel": "最大等级",
-    "rarity": "稀有度",
-    "level": "等级"
-  },
   "unselect": "取消选择",
   "ascending": "升序",
   "descending": "降序",

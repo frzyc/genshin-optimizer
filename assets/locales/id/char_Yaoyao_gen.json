@@ -48,7 +48,7 @@
       "4": "Memasuki Mode Membidik untuk menyesuaikan arah melempar.",
       "5": "<br/>",
       "6": "<strong>Yuegui: Throwing Mode</strong>",
-      "7": "Melemparkan White Jade Radish yang akan meledak saat mengenai Karakter atau musuh dan mengakibatkan <dendro>Dendro DMG</dendro> kepada musuh di dalam radius tertentu dan memulihkan HP Karakter. Jumlah pemulihan akan meningkat berdasarkan Max HP Yaoyao; Jika tidak mengenai musuh atau Karakter, White Jade Radish akan tetap berada di posisi awal dan akan meledak saat menyentuh Karakter atau musuh, atau setelah durasinya berakhir.",
+      "7": "Melemparkan White Jade Radish yang akan meledak saat mengenai Karakter atau musuh dan mengakibatkan <dendro>Dendro DMG</dendro> kepada musuh di dalam radius tertentu dan memulihkan HP Karakter dalam radius yang sama tersebut berdasarkan Max HP Yaoyao; Jika tidak mengenai musuh atau Karakter, White Jade Radish akan tetap berada di posisi awal dan akan meledak saat menyentuh Karakter atau musuh, atau setelah durasinya berakhir.",
       "8": "Yuegui: Throwing Mode akan memilih target pelemparan White Jade Radish berdasarkan situasi di sekitarnya:",
       "9": [
         "Saat HP Karakter di sekitar berada di atas 70%, akan dilemparkan kepada satu musuh di sekitar;",

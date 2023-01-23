@@ -1,6 +1,5 @@
 {
   "mainStat": {
-    "title": "주옵션",
     "levelAssTooltip": {
       "title": "레벨 가정",
       "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
@@ -14,7 +13,13 @@
     "vs": "최적화 대상과 다음 값을 도식화 :",
     "notSel": "선택되지 않음",
     "downloadData": "데이터 다운로드",
-    "desc": "조합기의 데이터를 사용, 최적화 대상과 선택된 도식화 대상의 관계를 그래프로 표시해 줍니다. 그래프는 선택된 도식화 대상의 0.01 단위로 최적화 대상의 최대값을 보여줍니다. 이 옵션을 켜게 되면 조합 생성 시간이 늘어나게 될 것입니다"
+    "desc": "조합기의 데이터를 사용, 최적화 대상과 선택된 도식화 대상의 관계를 그래프로 표시해 줍니다. 그래프는 선택된 도식화 대상의 0.01 단위로 최적화 대상의 최대값을 보여줍니다. 이 옵션을 켜게 되면 조합 생성 시간이 늘어나게 될 것입니다",
+    "showStatThr": "옵션의 임계선 표시",
+    "generatedBuilds": "생성된 조합",
+    "statReqThr": "옵션의 임계선",
+    "currentBuild": "현재 조합",
+    "highlightedBuilds": "표시된 조합",
+    "buildAlreadyInList": "이 빌드는 이미 리스트에 존재"
   },
   "levelFilter": "성유물 레벨 필터",
   "useExcluded": {
@@ -37,14 +42,12 @@
       },
       "add": "캐릭터 추가",
       "clearList": "목록 초기화"
-    },
-    "usingNum_one": "<1>{{count}}</1> 캐릭터 사용",
-    "usingNum_other": "<1>{{count}}</1> 캐릭터 사용"
+    }
   },
   "allowPartial": "성유물 일부 착용 허용(5개 미만)",
   "constraintFilter": {
     "title": "제한 조건",
-    "tooltip": "조합 생성시 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
+    "tooltip": "조합 생성시 만족해야 하는 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
   },
   "artSetConfig": {
     "title": "성유물 세트 설정",
@@ -86,11 +89,18 @@
   "targetSelector": {
     "selectOptTarget": "최적화 대상 선택",
     "selectGraphTarget": "도식화 대상 선택",
-    "invalidTarget": "잘못된 대상"
+    "invalidTarget": "잘못된 대상",
+    "selectBuildTarget": "제한 조건 대상 선택"
   },
   "selectTargetFirst": "최적화 대상을 먼저 선택하세요",
   "generateButton": {
     "cancel": "취소",
     "generateBuilds": "조합 생성"
-  }
+  },
+  "removeBuildButton": "조합 삭제",
+  "theorycraftButton": "이론 연구실",
+  "currentlyEquippedBuild": "현재 사용중",
+  "addBuildToList": "리스트에 빌드 추가",
+  "graphBuildLabel": "그래프 #<1>{{count}}</1>",
+  "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요"
 }

@@ -4,12 +4,6 @@
     "characters": "Personnages",
     "tools": "Outils"
   },
-  "game": {
-    "minLevel": "Niveau Min",
-    "maxLevel": "Niveau Max",
-    "rarity": "Rareté",
-    "level": "Niveau"
-  },
   "unselect": "Désélectionner",
   "ascending": "Croissant",
   "descending": "Décroissant",

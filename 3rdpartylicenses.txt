@@ -663,6 +663,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+@genshin-optimizer/char-cards
+
+@genshin-optimizer/consts
+
+@genshin-optimizer/g-assets
+
 @genshin-optimizer/util
 
 @mui/base

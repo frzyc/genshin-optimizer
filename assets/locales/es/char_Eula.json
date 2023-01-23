@@ -3,7 +3,6 @@
     "name": "Corazón impasible",
     "consumed": "Corazón impasible consumido",
     "grimheart": {
-      "name": "Cargas de corazón impasible",
       "int": "Aumenta la RES a interrupción"
     }
   },
