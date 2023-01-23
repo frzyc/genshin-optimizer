@@ -105,11 +105,7 @@
         "substat_one": "{{count}} atributo secundário",
         "substat_other": "{{count}} atributos secundários",
         "addNew": "Adicionar Artefato",
-        "sub_one": "",
-        "sub_other": "",
-        "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
-        "equippedArt": "",
-        "artInInv": ""
+        "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado"
     },
     "languages": {
         "chs": "Chinês (Simplificado)",
@@ -304,8 +300,7 @@
             "skillOrBurst": "Após atingir o inimigo com a Habilidade Elemental ou o Supremo",
             "crit": "Após infligir Dano Crítico",
             "normalChargedOrPlunging": "Após um Ataque Normal, Carregado ou Imersivo atingir um inimigo",
-            "dendro": "Após infligir <dendro>Dano Dendro</dendro>",
-            "normalEle": ""
+            "dendro": "Após infligir <dendro>Dano Dendro</dendro>"
         },
         "eleAbsor": "Absorção Elemental",
         "absorDot": "Dano Contínuo da Absorção Elemental",
@@ -433,10 +428,7 @@
             "normal": "Multipl. de Dano do Atq. Normal",
             "charged": "Multipl. de Dano do Atq. Carregado",
             "skill": "Multipl. de Dano da Habil. Elem."
-        },
-        "members": "",
-        "stamRestored": "",
-        "triggerQuota": ""
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Sob o efeito de Concerto Milenar: Música do Levantar da Bandeira"
@@ -978,11 +970,7 @@
         },
         "SprawlingGreenery": {
             "cond2ele": "Após desencadear as reações de Queimadura, Aceleração ou Florescimento",
-            "cond3ele": "Após desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação",
-            "eleMas": ""
-        },
-        "EnduringRock": {
-            "hitCond": ""
+            "cond3ele": "Após desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação"
         }
     },
     "weapon_AlleyHunter": {
@@ -1265,9 +1253,7 @@
         "useExcluded": {
             "title": "Usar Artefatos Bloqueados",
             "usingNum_one": "Usando <1>{{count}}</1> artefato bloqueado",
-            "usingNum_other": "Usando <1>{{count}}</1> artefatos bloqueados",
-            "excNum_one": "",
-            "excNum_other": ""
+            "usingNum_other": "Usando <1>{{count}}</1> artefatos bloqueados"
         },
         "useEquipped": {
             "title": "Usar Artefatos Equipados",
@@ -1284,9 +1270,7 @@
                 },
                 "add": "Adicionar Personagem à Lista",
                 "clearList": "Limpar Lista"
-            },
-            "usingNumTot_one": "",
-            "usingNumTot_other": ""
+            }
         },
         "allowPartial": "Permitir Builds Parciais (<5 artefatos)",
         "constraintFilter": {
@@ -1494,19 +1478,5 @@
     },
     "weapon_ToukabouShigure": {
         "condName": "Inimigo sob o estado de Assombração do Guarda-Chuva"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "",
-        "debateStacks": "",
-        "mirrorsConsumed": "",
-        "projectionAttack_dmg_": "",
-        "excessMirror": ""
-    },
-    "char_Yaoyao": {
-        "a4Heal": "",
-        "inExplosionAoE": "",
-        "inLegacy": "",
-        "megaDmg": "",
-        "megaHeal": ""
     }
 }
