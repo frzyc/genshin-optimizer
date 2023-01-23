@@ -71,22 +71,9 @@ export function artifactFilterConfigs(effFilterSet: Set<SubstatKey> = new Set(al
       if (!filter.includes("unlocked") && !art.lock) return false
       return true
     },
-    locations: (art, filter, filters) => {
-      if(!filters.showEquipped)
-        return filter.includes(art.location) || !art.location
-      return true
-    },
-    showEquipped: (art, filter, filters) => {
-      if (!filter) {
-        return !!art.location === filter || !filter && filters.locations.includes(art.location)
-      }
-      return true
-    },
-    showInventory: (art, filter) => {
-      if (!filter)
-        return !!art.location
-      return true
-    },
+    locations: (art, filter, filters) => (art.location && !filters.showEquipped) ? filter.includes(art.location) : true,
+    showEquipped: () => true, // Per character filtering is applied in `locations`
+    showInventory: (art, filter) => !art.location ? filter : true,
     artSetKeys: (art, filter) => filter.length ? filter.includes(art.setKey) : true,
     slotKeys: (art, filter) => filter.includes(art.slotKey),
     mainStatKeys: (art, filter) => filter.length ? filter.includes(art.mainStatKey) : true,

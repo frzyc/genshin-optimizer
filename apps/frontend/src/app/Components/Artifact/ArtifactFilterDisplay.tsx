@@ -2,14 +2,15 @@ import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
 import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
-import { useContext, useMemo } from "react";
+import { Suspense, useContext, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allSlotKeys } from "../../Types/consts";
+import { allArtifactRarities, allArtifactSets, allSlotKeys, locationCharacterKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import { catTotal } from "../../Util/totalUtils";
+import BootstrapTooltip from "../BootstrapTooltip";
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";
 import ArtifactLevelSlider from "./ArtifactLevelSlider";
@@ -73,6 +74,26 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     if (filteredIds.includes(id)) ct[lns].current++
   })), [database, filteredIds])
 
+  const equippedTotal = useMemo(() => {
+    let total = 0, current = 0
+    Object.entries(database.arts.data).forEach(([id, art]) => {
+      if (!art.location) return
+      total++
+      if (filteredIds.includes(id)) current++
+    })
+    return `${current}/${total}`
+  }, [database, filteredIds])
+
+  const unequippedTotal = useMemo(() => {
+    let total = 0, current = 0
+    Object.entries(database.arts.data).forEach(([id, art]) => {
+      if (art.location) return
+      total++
+      if (filteredIds.includes(id)) current++
+    })
+    return `${current}/${total}`
+  }, [database, filteredIds])
+
   const artSetTotal = useMemo(() => catTotal(allArtifactSets, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
     const sk = art.setKey
     ct[sk].total++
@@ -86,13 +107,20 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
   })), [database, filteredIds])
 
   const artSubTotal = useMemo(() => catTotal(allSubstatKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
-    Object.values(art.substats).map(sub => {
+    Object.values(art.substats).forEach(sub => {
       if (typeof sub !== "object") return
       const key = sub.key
       if (!key) return
       ct[key].total++
       if (filteredIds.includes(id)) ct[key].current++
     })
+  })), [database, filteredIds])
+
+  const locationTotal = useMemo(() => catTotal(locationCharacterKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+    if (!art.location) return
+    const lk = art.location
+    ct[lk].total++
+    if (filteredIds.includes(id)) ct[lk].current++
   })), [database, filteredIds])
 
   return <Grid container spacing={1}>
@@ -123,6 +151,8 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <SolidToggleButtonGroup fullWidth value={lines} size="small">
         {[1, 2, 3, 4].map(line => <ToggleButton key={line} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4> })}><Box mr={1} whiteSpace="nowrap">{t("sub", { count: line })}</Box><Chip label={linesTotal[line]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
+      <Button startIcon={<PersonSearch />} color={showEquipped ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showEquipped: !showEquipped })}>{t`equippedArt`} <Chip sx={{ ml: 1 }} label={equippedTotal} size="small" /></Button>
+      <Button startIcon={<BusinessCenter />} color={showInventory ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showInventory: !showInventory })}>{t`artInInv`} <Chip sx={{ ml: 1 }} label={unequippedTotal} size="small" /></Button>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
         setLow={levelLow => filterOptionDispatch({ levelLow })}
@@ -141,9 +171,14 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       <ArtifactSetMultiAutocomplete totals={artSetTotal} artSetKeys={artSetKeys} setArtSetKeys={artSetKeys => filterOptionDispatch({ artSetKeys })} />
       <ArtifactMainStatMultiAutocomplete totals={artMainTotal} mainStatKeys={mainStatKeys} setMainStatKeys={mainStatKeys => filterOptionDispatch({ mainStatKeys })} />
       <ArtifactSubstatMultiAutocomplete totals={artSubTotal} substatKeys={substats} setSubstatKeys={substats => filterOptionDispatch({ substats })} />
-      <LocationFilterMultiAutocomplete locations={showEquipped ? [] : locations} setLocations={locations => filterOptionDispatch({ locations })} disabled={showEquipped} />
-      <Button startIcon={<PersonSearch />} color={showEquipped ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showEquipped: !showEquipped })}>{t`equippedArt`}</Button>
-      <Button startIcon={<BusinessCenter />} color={showInventory ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showInventory: !showInventory })}>{t`artInInv`}</Button>
+      <Suspense fallback={null}>
+        <BootstrapTooltip title={showEquipped ? t`locationsTooltip` : ""} placement="top">
+          <span>
+            <LocationFilterMultiAutocomplete totals={locationTotal} locations={showEquipped ? [] : locations} setLocations={locations =>
+              filterOptionDispatch({ locations })} disabled={showEquipped} />
+          </span>
+        </BootstrapTooltip>
+      </Suspense>
     </Grid>
   </Grid>
 }

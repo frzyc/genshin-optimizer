@@ -1,4 +1,4 @@
-import { Box, Skeleton } from "@mui/material"
+import { Box, Chip, Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { characterAsset } from "@genshin-optimizer/g-assets"
@@ -9,7 +9,12 @@ import usePromise from "../../ReactHooks/usePromise"
 import { charKeyToCharName, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
 import { GeneralAutocompleteMulti, GeneralAutocompleteOption } from "../GeneralAutocomplete"
 
-export default function LocationFilterMultiAutocomplete({ locations, setLocations, disabled }: { locations: LocationCharacterKey[], setLocations: (v: LocationCharacterKey[]) => void, disabled?: boolean }) {
+export default function LocationFilterMultiAutocomplete({ locations, setLocations, totals, disabled }: {
+  locations: LocationCharacterKey[],
+  setLocations: (v: LocationCharacterKey[]) => void,
+  totals: Record<LocationCharacterKey, string>
+  disabled?: boolean
+}) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
@@ -26,6 +31,9 @@ export default function LocationFilterMultiAutocomplete({ locations, setLocation
     mr: -0.5,
     ml: -1,
   }} /></Box> : undefined, [database, gender, characterSheets])
+
+  const toExLabel = useCallback((key: LocationCharacterKey) => <strong>{totals[key]}</strong>, [totals],)
+  const toExItemLabel = useCallback((key: LocationCharacterKey) => <Chip size="small" label={totals[key]} />, [totals],)
 
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.charMeta.get(key).favorite) :
@@ -44,5 +52,15 @@ export default function LocationFilterMultiAutocomplete({ locations, setLocation
     , [toText, isFavorite, toVariant, database])
 
   return <Suspense fallback={<Skeleton variant="text" width={100} />}>
-    <GeneralAutocompleteMulti disabled={disabled} options={values} valueKeys={locations} onChange={k => setLocations(k)} toImg={toImg} label={t`artifact:filterLocation.location`} chipProps={{ variant: "outlined" }} /></Suspense>
+    <GeneralAutocompleteMulti
+      disabled={disabled}
+      options={values}
+      valueKeys={locations}
+      onChange={k => setLocations(k)}
+      toImg={toImg}
+      toExLabel={toExLabel}
+      toExItemLabel={toExItemLabel}
+      label={t`artifact:filterLocation.location`}
+      chipProps={{ variant: "outlined" }} />
+  </Suspense>
 }
