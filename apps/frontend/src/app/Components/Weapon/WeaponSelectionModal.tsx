@@ -3,10 +3,10 @@ import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography 
 import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../Assets/Assets"
+import { getWeaponSheet } from "../../Data/Weapons"
 import WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../Database/Database"
-import usePromise from "../../ReactHooks/usePromise"
-import { allRarities, allWeaponKeys, allWeaponTypeKeys, Rarity, WeaponKey, WeaponTypeKey } from "../../Types/consts"
+import { allRarities, allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
 import { catTotal } from "../../Util/totalUtils"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
@@ -28,7 +28,6 @@ type WeaponSelectionModalProps = {
 
 export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSelect, filter = () => true, weaponTypeFilter }: WeaponSelectionModalProps) {
   const { t } = useTranslation(["page_weapon", "weaponNames_gen"])
-  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(weaponTypeFilter ? [weaponTypeFilter] : [...allWeaponTypeKeys])
 
   const { database } = useContext(DatabaseContext)
@@ -42,28 +41,26 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
 
   const { rarity } = state
   const weaponIdList = useMemo(() =>
-    !weaponSheets ? [] : allWeaponKeys.filter(wKey => filter(weaponSheets(wKey)))
-      .filter(wKey => weaponFilter.includes(weaponSheets(wKey).weaponType))
+    allWeaponKeys.filter(wKey => filter(getWeaponSheet(wKey)))
+      .filter(wKey => weaponFilter.includes(getWeaponSheet(wKey).weaponType))
       .filter(wKey => !deferredSearchTerm || t(`weaponNames_gen:${wKey}`).toLowerCase().includes(deferredSearchTerm.toLowerCase()))
-      .filter(wKey => rarity.includes(weaponSheets(wKey).rarity))
-      .sort((a, b) => weaponSheets(b).rarity - weaponSheets(a).rarity),
-    [deferredSearchTerm, filter, rarity, t, weaponFilter, weaponSheets])
+      .filter(wKey => rarity.includes(getWeaponSheet(wKey).rarity))
+      .sort((a, b) => getWeaponSheet(b).rarity - getWeaponSheet(a).rarity),
+    [deferredSearchTerm, filter, rarity, t, weaponFilter])
 
   const weaponTotals = useMemo(() =>
-    catTotal(allWeaponTypeKeys, ct => weaponSheets && allWeaponKeys.forEach(wk => {
-      const wtk = weaponSheets(wk).weaponType
+    catTotal(allWeaponTypeKeys, ct => allWeaponKeys.forEach(wk => {
+      const wtk = getWeaponSheet(wk).weaponType
       ct[wtk].total++
       if (weaponIdList.includes(wk)) ct[wtk].current++
-    })), [weaponSheets, weaponIdList])
+    })), [weaponIdList])
 
   const weaponRarityTotals = useMemo(() =>
-    catTotal(allRarities, ct => weaponSheets && allWeaponKeys.forEach(wk => {
-      const wr = weaponSheets(wk).rarity
+    catTotal(allRarities, ct => allWeaponKeys.forEach(wk => {
+      const wr = getWeaponSheet(wk).rarity
       ct[wr].total++
       if (weaponIdList.includes(wk)) ct[wr].current++
-    })), [weaponSheets, weaponIdList])
-
-  if (!weaponSheets) return null
+    })), [weaponIdList])
 
   return <ModalWrapper open={show} onClose={onHide}>
     <CardDark>
@@ -96,7 +93,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
       <Divider />
       <CardContent><Grid container spacing={1}>
         {weaponIdList.map(weaponKey => {
-          const weaponSheet = weaponSheets(weaponKey)
+          const weaponSheet = getWeaponSheet(weaponKey)
           return <Grid item key={weaponKey} lg={3} md={4}>
             <CardLight sx={{ height: "100%" }} >
               <CardActionArea onClick={() => { onHide(); onSelect(weaponKey) }} sx={{ display: "flex" }}>

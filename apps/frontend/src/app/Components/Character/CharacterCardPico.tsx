@@ -1,12 +1,11 @@
 import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material';
-import { Suspense, useCallback } from 'react';
+import { Suspense, useCallback, useMemo } from 'react';
 import Assets from '../../Assets/Assets';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import { getCharSheet } from '../../Data/Characters';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useDBMeta from '../../ReactHooks/useDBMeta';
-import usePromise from '../../ReactHooks/usePromise';
 import { CharacterKey } from '../../Types/consts';
 import BootstrapTooltip from '../BootstrapTooltip';
 import CardDark from '../Card/CardDark';
@@ -16,7 +15,7 @@ import StatIcon from '../StatIcon';
 
 export default function CharacterCardPico({ characterKey = "", index = -1, onClick }: { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void }) {
   const { gender } = useDBMeta()
-  const teammateSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const teammateSheet = useMemo(() => characterKey ? getCharSheet(characterKey, gender) : undefined, [characterKey, gender])
   const character = useCharacter(characterKey)
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(

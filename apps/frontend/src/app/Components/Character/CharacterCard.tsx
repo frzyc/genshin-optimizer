@@ -4,7 +4,7 @@ import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typ
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import { getCharSheet } from '../../Data/Characters';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
 import { uiInput as input } from '../../Formula';
@@ -12,7 +12,6 @@ import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useCharMeta from '../../ReactHooks/useCharMeta';
 import useDBMeta from '../../ReactHooks/useDBMeta';
-import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
@@ -46,7 +45,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
@@ -142,7 +141,7 @@ function NewCharacterCardContent({ characterKey }: { characterKey: CharacterKey 
 
 function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -226,9 +225,8 @@ function HeaderContent() {
 }
 
 function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
-  const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, database, gender])
+  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
 
   if (!characterSheet) return null
   return <>

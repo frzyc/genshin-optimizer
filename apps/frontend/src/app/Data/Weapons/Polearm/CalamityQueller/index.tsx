@@ -5,7 +5,8 @@ import { allElements, WeaponKey } from '../../../../Types/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = "CalamityQueller"

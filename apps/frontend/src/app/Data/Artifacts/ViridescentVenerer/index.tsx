@@ -4,7 +4,8 @@ import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 import { condReadNode, stg, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "ViridescentVenerer"

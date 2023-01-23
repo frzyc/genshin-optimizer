@@ -17,8 +17,8 @@ import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
 import { StatColoredWithUnit } from '../Components/StatDisplay';
 import StatIcon from '../Components/StatIcon';
+import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
 import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
 import KeyMap, { cacheValueString } from '../KeyMap';
@@ -73,8 +73,6 @@ const InputInvis = styled('input')({
 export type ArtifactEditorProps = { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableSet?: boolean, disableSlot?: boolean }
 export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableSet = false, disableSlot = false }: ArtifactEditorProps) {
   const { t } = useTranslation("artifact")
-
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   const { database } = useContext(DatabaseContext)
 
@@ -177,14 +175,14 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
     }
   }, [artifactIdToEdit, database, dirtyDatabase])
 
-  const sheet = artifact ? artifactSheets?.(artifact.setKey) : undefined
+  const sheet = artifact ? getArtSheet(artifact.setKey) : undefined
   const reset = useCallback(() => {
     cancelEdit?.();
     dispatchQueue({ type: "pop" })
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
   const update = useCallback((newValue: Partial<IArtifact>) => {
-    const newSheet = newValue.setKey ? artifactSheets!(newValue.setKey) : sheet!
+    const newSheet = newValue.setKey ? getArtSheet(newValue.setKey) : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
       return (value && available.includes(value)) ? value : (prefer ?? available[0])
@@ -206,7 +204,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
         (artifact && artifact.substats[i].key !== newValue.mainStatKey) ? artifact!.substats[i] : { key: "", value: 0 })
     }
     artifactDispatch({ type: "update", artifact: newValue })
-  }, [artifact, artifactSheets, sheet, artifactDispatch])
+  }, [artifact, sheet, artifactDispatch])
   const setSubstat = useCallback((index: number, substat: ISubstat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
@@ -417,7 +415,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {allowEmpty && <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>}
           </Grid>
           <Grid item>
-            {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
+            {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
             <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>

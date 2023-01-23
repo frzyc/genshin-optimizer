@@ -1,11 +1,11 @@
 import { useCallback, useContext } from "react";
-import { useNavigate, useMatch } from "react-router-dom";
-import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { useMatch, useNavigate } from "react-router-dom";
+import { getCharSheet } from "../Data/Characters";
 import { DatabaseContext } from "../Database/Database";
-import { allSlotKeys, CharacterKey, charKeyToLocCharKey } from "../Types/consts";
-import { defaultInitialWeapon } from "../Util/WeaponUtil";
 import { ICachedCharacter } from "../Types/character";
+import { allSlotKeys, CharacterKey, charKeyToLocCharKey } from "../Types/consts";
 import { objectKeyMap } from "../Util/Util";
+import { defaultInitialWeapon } from "../Util/WeaponUtil";
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.
@@ -16,30 +16,27 @@ export default function useCharSelectionCallback() {
   const navigate = useNavigate()
   // Used to maintain the previous tab, if there is one
   const { params: { tab = "" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "" } }
-  const cb = useCallback(
-    async (characterKey: CharacterKey) => {
-      const character = database.chars.get(characterKey)
-      let navTab = tab
-      // Create a new character + weapon, with linking if char isnt in db.
-      if (!character) {
-        database.chars.set(characterKey, initialCharacter(characterKey))
-        const newChar = database.chars.get(characterKey)
-        if (!newChar?.equippedWeapon) {
-          const characterSheet = await CharacterSheet.get(characterKey, database.gender)
-          if (!characterSheet) return
-          const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-          const weaponId = database.weapons.new(weapon)
-          database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
-        }
-        // If we are navigating to a new character,
-        // redirect to Overview, regardless of previous tab.
-        // Trying to enforce a certain UI flow when building new characters
-        navTab = ""
+  const cb = useCallback((characterKey: CharacterKey) => {
+    const character = database.chars.get(characterKey)
+    let navTab = tab
+    // Create a new character + weapon, with linking if char isnt in db.
+    if (!character) {
+      database.chars.set(characterKey, initialCharacter(characterKey))
+      const newChar = database.chars.get(characterKey)
+      if (!newChar?.equippedWeapon) {
+        const characterSheet = getCharSheet(characterKey, database.gender)
+        if (!characterSheet) return
+        const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
+        const weaponId = database.weapons.new(weapon)
+        database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
       }
-      navigate(`/characters/${characterKey}/${navTab}`)
-    },
-    [navigate, database, tab],
-  )
+      // If we are navigating to a new character,
+      // redirect to Overview, regardless of previous tab.
+      // Trying to enforce a certain UI flow when building new characters
+      navTab = ""
+    }
+    navigate(`/characters/${characterKey}/${navTab}`)
+  }, [navigate, database, tab])
   return cb
 }
 

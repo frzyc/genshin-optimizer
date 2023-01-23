@@ -5,7 +5,8 @@ import KeyMap from '../../../KeyMap'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "VermillionHereafter"

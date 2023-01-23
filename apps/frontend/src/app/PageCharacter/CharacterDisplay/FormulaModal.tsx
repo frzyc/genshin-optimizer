@@ -1,6 +1,6 @@
 import { ExpandMore } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Divider, Skeleton, Typography } from '@mui/material';
-import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AmpReactionModeText from '../../Components/AmpReactionModeText';
 import CardDark from '../../Components/Card/CardDark';
 import CardHeaderCustom from '../../Components/Card/CardHeaderCustom';
@@ -16,7 +16,6 @@ import { DatabaseContext } from '../../Database/Database';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub, Variant } from '../../Formula/type';
 import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
-import usePromise from '../../ReactHooks/usePromise';
 import { allAmpReactions, AmpReactionKey } from '../../Types/consts';
 
 export default function FormulaModal() {
@@ -48,7 +47,7 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const { data: contextData } = useContext(FormulaDataContext)
-  const header = usePromise(() => getDisplayHeader(contextData ?? data, sectionKey, database), [contextData, data, sectionKey])
+  const header = useMemo(() => getDisplayHeader(contextData ?? data, sectionKey, database), [database, contextData, data, sectionKey])
   if (!header) return null
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header

@@ -3,7 +3,8 @@ import { Data } from '../../../Formula/type'
 import { greaterEq, percent } from '../../../Formula/utils'
 import { allElements, ArtifactSetKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "DefendersWill"

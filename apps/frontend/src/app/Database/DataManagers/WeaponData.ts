@@ -1,3 +1,4 @@
+import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { allWeaponKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
@@ -19,9 +20,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
     for (const [charKey, char] of Object.entries(this.database.chars.data)) {
       if (!char.equippedWeapon) {
-        // A default "sword" should work well enough for this case.
-        // We'd have to pull the hefty character sheet otherwise.
-        const weapon = defaultInitialWeapon("sword")
+        const weapon = defaultInitialWeapon(getCharSheet(charKey, "F").weaponTypeKey)
         const weaponId = generateRandomWeaponID(weaponIds)
 
         weaponIds.add(weaponId)

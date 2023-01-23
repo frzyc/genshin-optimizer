@@ -1,4 +1,4 @@
-import { AllCharacterSheets } from "../Data/Characters/CharacterSheet";
+import { getCharSheet } from "../Data/Characters";
 import { ArtCharDatabase } from "../Database/Database";
 import i18n from "../i18n";
 import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from "../Types/consts";
@@ -6,7 +6,7 @@ import { FilterConfigs, SortConfigs } from "./SortByFilters";
 export const characterSortKeys = ["new", "level", "rarity", "name", "favorite"] as const
 export type CharacterSortKey = typeof characterSortKeys[number]
 
-export function characterSortConfigs(database: ArtCharDatabase, characterSheets: AllCharacterSheets): SortConfigs<CharacterSortKey, CharacterKey> {
+export function characterSortConfigs(database: ArtCharDatabase): SortConfigs<CharacterSortKey, CharacterKey> {
   return {
     new: (ck) => database.chars.get(ck as CharacterKey) ? 0 : 1,
     name: (ck) => i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toString(),
@@ -14,7 +14,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       const char = database.chars.get(ck as CharacterKey)
       return char ? char.level * (char.ascension + 1) : 0
     },
-    rarity: (ck) => characterSheets(ck, database.gender)?.rarity ?? 0,
+    rarity: (ck) => getCharSheet(ck, database.gender).rarity ?? 0,
     favorite: (ck,) => (database.charMeta.get(ck).favorite ? 1 : 0),
   }
 }
@@ -23,10 +23,10 @@ export const characterFilterKeys = ["element", "weaponType", "name", "new"] as c
 export type CharacterFilterKey = typeof characterFilterKeys[number]
 
 export type CharacterFilterConfigs = FilterConfigs<CharacterFilterKey, CharacterKey>
-export function characterFilterConfigs(database: ArtCharDatabase, characterSheets: AllCharacterSheets): CharacterFilterConfigs {
+export function characterFilterConfigs(database: ArtCharDatabase): CharacterFilterConfigs {
   return {
-    element: (ck, filter) => filter.includes(characterSheets(ck, database.gender)?.elementKey),
-    weaponType: (ck, filter) => filter.includes(characterSheets(ck, database.gender)?.weaponTypeKey),
+    element: (ck, filter) => filter.includes(getCharSheet(ck, database.gender).elementKey),
+    weaponType: (ck, filter) => filter.includes(getCharSheet(ck, database.gender).weaponTypeKey),
     name: (ck, filter) => filter === undefined || (i18n.t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`).toLowerCase().includes(filter.toLowerCase())),
     new: (ck, filter) => filter === undefined || (filter === (database.chars.get(ck as CharacterKey) ? "no" : "yes")),
   }

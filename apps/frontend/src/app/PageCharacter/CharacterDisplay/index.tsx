@@ -13,13 +13,12 @@ import { CharacterContext, CharacterContextObj } from '../../Context/CharacterCo
 import { DataContext, dataContextObj } from '../../Context/DataContext';
 import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext';
 import { ChartData, GraphContext, GraphContextObj } from '../../Context/GraphContext';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import { getCharSheet } from '../../Data/Characters';
 import { DatabaseContext } from '../../Database/Database';
 import useBoolState from '../../ReactHooks/useBoolState';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useDBMeta from '../../ReactHooks/useDBMeta';
-import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
 import { CharacterKey, charKeyToCharName } from '../../Types/consts';
@@ -58,7 +57,7 @@ type CharacterDisplayCardProps = {
 function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   const { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }

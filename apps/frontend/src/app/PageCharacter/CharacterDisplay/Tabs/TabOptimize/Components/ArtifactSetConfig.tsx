@@ -17,13 +17,13 @@ import { StarsDisplay } from '../../../../../Components/StarDisplay';
 import { Translate } from '../../../../../Components/Translate';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
-import { artifactDefIcon, ArtifactSheet } from '../../../../../Data/Artifacts/ArtifactSheet';
+import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts';
+import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData';
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
-import usePromise from '../../../../../ReactHooks/usePromise';
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../../../../../Types/consts';
 import { deepClone, objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../useBuildSetting';
@@ -37,19 +37,17 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.arts.followAny(forceUpdate), [database, forceUpdate])
 
-  const artKeysByRarity = useMemo(() => artifactSheets
-    ? Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets))
-      .reverse().flatMap(([, sets]) => sets)
-      .filter(key => !key.includes("Prayers"))
-    : [], [artifactSheets])
+  const artKeysByRarity = useMemo(() => Object.entries(setKeysByRarities)
+    .reverse().flatMap(([, sets]) => sets)
+    .filter(key => !key.includes("Prayers"))
+    , [])
   const { artKeys, artSlotCount } = useMemo(() => {
     const artSlotCount = objectKeyMap(artKeysByRarity, _ => objectKeyMap(allSlotKeys, _ => 0))
-    database.arts.values.forEach(art => artSlotCount[art.setKey] && artSlotCount[art.setKey]![art.slotKey]++)
+    database.arts.values.forEach(art => artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++)
     const artKeys = [...artKeysByRarity].sort((a, b) =>
       +(getNumSlots(artSlotCount[a]) < 2) - +(getNumSlots(artSlotCount[b]) < 2))
     return dbDirty && { artKeys, artSlotCount }
@@ -106,7 +104,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         <Settings />
       </Button>
     </CardLight>
-    {artifactSheets && <ModalWrapper open={open} onClose={onClose} ><CardDark>
+    <ModalWrapper open={open} onClose={onClose} ><CardDark>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
         <Typography variant="h6" >{t`artSetConfig.title`}</Typography>
         <CloseButton onClick={onClose} />
@@ -151,16 +149,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           </Grid>
         </Grid>
         <Grid container spacing={1} columns={{ xs: 2, lg: 3 }}>
-          {artKeys.map(setKey => {
-            return <ArtifactSetCard key={setKey} setKey={setKey} sheet={artifactSheets(setKey)} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]!} />
-          })}
+          {artKeys.map(setKey => <ArtifactSetCard key={setKey} setKey={setKey} fakeDataContextObj={fakeDataContextObj} slotCount={artSlotCount[setKey]} />)}
         </Grid>
       </CardContent>
       <Divider />
       <CardContent sx={{ py: 1 }}>
         <CloseButton large onClick={onClose} />
       </CardContent>
-    </CardDark></ModalWrapper >}
+    </CardDark></ModalWrapper >
   </>
 }
 function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion }: { numAllow: number, numExclude: number, setNum: 2 | 4, setAllExclusion: (setNum: 2 | 4, exclude?: boolean) => void }) {
@@ -175,7 +171,7 @@ function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion 
     </CardContent>
   </CardLight>
 }
-function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, sheet: ArtifactSheet, fakeDataContextObj: dataContextObj, slotCount: Record<SlotKey, number> }) {
+function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, fakeDataContextObj: dataContextObj, slotCount: Record<SlotKey, number> }) {
   const { t } = useTranslation("sheet")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -183,7 +179,7 @@ function ArtifactSetCard({ sheet, setKey, fakeDataContextObj, slotCount }: { set
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
   const slots = useMemo(() => getNumSlots(slotCount), [slotCount])
-
+  const sheet = useMemo(() => getArtSheet(setKey), [setKey])
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
     if (!allow4) return []

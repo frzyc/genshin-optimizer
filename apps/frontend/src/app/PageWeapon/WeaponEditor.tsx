@@ -13,15 +13,15 @@ import ModalWrapper from "../Components/ModalWrapper"
 import RefinementDropdown from "../Components/RefinementDropdown"
 import { StarsDisplay } from "../Components/StarDisplay"
 import { DataContext } from "../Context/DataContext"
+import { getCharSheet } from "../Data/Characters"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { milestoneLevelsLow } from "../Data/LevelData"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
+import { getWeaponSheet } from "../Data/Weapons"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
 import useDBMeta from "../ReactHooks/useDBMeta"
-import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
@@ -43,13 +43,13 @@ export default function WeaponEditor({
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 1, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
+  const weaponSheet = useMemo(() => key ? getWeaponSheet(key) : undefined, [key])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
+  const characterSheet = useMemo(() => location ? getCharSheet(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 

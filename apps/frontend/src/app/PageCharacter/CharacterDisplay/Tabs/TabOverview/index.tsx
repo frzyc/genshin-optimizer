@@ -15,7 +15,7 @@ import StatIcon from "../../../../Components/StatIcon";
 import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
-import { TalentSheetElementKey } from "../../../../Data/Characters/CharacterSheet";
+import { TalentSheetElementKey } from "../../../../Data/Characters/ICharacterSheet";
 import { getLevelString } from "../../../../Data/LevelData";
 import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";

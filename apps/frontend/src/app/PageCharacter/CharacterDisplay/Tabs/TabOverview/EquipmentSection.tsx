@@ -13,15 +13,14 @@ import ModalWrapper from '../../../../Components/ModalWrapper';
 import PercentBadge from '../../../../Components/PercentBadge';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext } from '../../../../Context/DataContext';
+import { dataSetEffects } from '../../../../Data/Artifacts';
 import Artifact from '../../../../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
 import useCharMeta from '../../../../ReactHooks/useCharMeta';
-import usePromise from '../../../../ReactHooks/usePromise';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
@@ -147,7 +146,6 @@ function ArtifactSectionCard() {
   const { database } = useContext(DatabaseContext)
   const { character, character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const hasEquipped = useMemo(() => !!Object.values(equippedArtifacts).filter(i => i).length, [equippedArtifacts])
   const unequipArts = useCallback(() => {
     if (!character) return
@@ -155,7 +153,7 @@ function ArtifactSectionCard() {
     Object.values(equippedArtifacts).forEach(aid => database.arts.set(aid, { location: "" }))
   }, [character, database, equippedArtifacts])
 
-  const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
+  const setEffects = useMemo(() => dataSetEffects(data), [data])
   const { rvFilter } = useCharMeta(characterKey)
   const setRVFilter = useCallback(rvFilter => database.charMeta.set(characterKey, { rvFilter }), [database, characterKey],)
 
@@ -207,7 +205,7 @@ function ArtifactSectionCard() {
             {rvmField?.canShow?.(data) && <BasicFieldDisplay field={rvmField} component={ListItem} />}
           </FieldDisplayList>
         </CardDark>
-        {artifactSheets && setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
+        {setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
           setNumKeyArr.map(setNumKey => <CardDark key={setKey + setNumKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />
           </CardDark>)

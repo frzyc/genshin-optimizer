@@ -28,9 +28,10 @@ import { StatColoredWithUnit, StatWithUnit } from "../../../../Components/StatDi
 import StatIcon from "../../../../Components/StatIcon";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../../Context/DataContext";
+import { getArtSheet } from "../../../../Data/Artifacts";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
-import { artifactDefIcon, ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
-import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
+import { artifactDefIcon } from "../../../../Data/Artifacts/ArtifactSheet";
+import { getWeaponSheet } from "../../../../Data/Weapons";
 import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
@@ -38,7 +39,6 @@ import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import useBoolState from "../../../../ReactHooks/useBoolState";
-import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
@@ -213,26 +213,26 @@ export default function TabTheorycraft() {
 
 function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICachedWeapon, weaponTypeKey: WeaponTypeKey, setWeapon: (action: Partial<ICharTC["weapon"]>) => void }) {
   const { key, level = 0, refinement = 1, ascension = 0 } = weapon
-  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
+  const weaponSheet = useMemo(() => getWeaponSheet(key), [key])
   const [show, onShow, onHide] = useBoolState()
   const { data } = useContext(DataContext)
-  const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
+  const weaponUIData = useMemo(() => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   return <CardLight sx={{ p: 1, mb: 1 }} >
     <WeaponSelectionModal ascension={ascension} show={show} onHide={onHide} onSelect={k => setWeapon({ key: k })} weaponTypeFilter={weaponTypeKey} />
     <Box display="flex" flexDirection="column" gap={1}>
       <Box display="flex" gap={1}>
-        {weaponSheet && <Box
+        <Box
           className={`grad-${weaponSheet.rarity}star`}
           component="img"
           src={weaponAsset(weapon.key, ascension >= 2)}
           sx={{ flexshrink: 1, flexBasis: 0, maxWidth: "30%", borderRadius: 1 }}
-        />}
+        />
         <Stack spacing={1} flexGrow={1}>
           <Button fullWidth color="info" sx={{ flexGrow: 1 }} onClick={onShow}><Box sx={{ maxWidth: "10em" }}>{weaponSheet?.name}</Box></Button>
-          {weaponSheet?.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => setWeapon({ refinement: r })} />}
+          {weaponSheet.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => setWeapon({ refinement: r })} />}
         </Stack>
       </Box>
-      {weaponSheet && <LevelSelect level={level} ascension={ascension} setBoth={setWeapon} useLow={!weaponSheet.hasRefinement} />}
+      <LevelSelect level={level} ascension={ascension} setBoth={setWeapon} useLow={!weaponSheet.hasRefinement} />
       <CardDark >
         <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
         <Divider />
@@ -313,11 +313,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
 }
 
 function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(artSet: ISet) }) {
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const setSet = useCallback((setKey: ArtifactSetKey | "") => {
-    if (!setKey || !artifactSheets) return
-    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(artifactSheets(setKey).setEffects)[0]) })
-  }, [artSet, setArtSet, artifactSheets])
+    if (!setKey) return
+    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(getArtSheet(setKey).setEffects)[0]) })
+  }, [artSet, setArtSet,])
 
   const setValue = useCallback((setKey: ArtifactSetKey) => (value: 1 | 2 | 4) => setArtSet({ ...artSet, [setKey]: value }), [artSet, setArtSet])
   const deleteValue = useCallback((setKey: ArtifactSetKey) => () => {
@@ -335,22 +334,21 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
         artSetKey={""}
         setArtSetKey={setSet}
         label={"New Artifact Set"}
-        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !(key && artifactSheets?.(key)) || Object.keys(artifactSheets(key).setEffects).every(n => parseInt(n) > remaining)}
+        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !key || Object.keys(getArtSheet(key).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>
 
   </Stack>
 }
 function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: { setKey: ArtifactSetKey, value: 1 | 2 | 4, setValue: (v: 1 | 2 | 4) => void, deleteValue: () => void, remaining: number }) {
-  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
+  const artifactSheet = useMemo(() => getArtSheet(setKey), [setKey])
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (value < 4 || !artifactSheet) return []
+    if (value < 4) return []
     return Object.keys(artifactSheet.setEffects).filter(setNumKey => artifactSheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
   }, [artifactSheet, value])
 
-  if (!artifactSheet) return null
   return <CardLight>
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
@@ -436,7 +434,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         onChange={v => v !== undefined && setValue(v)}
         sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
         inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
-      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow:"visible" }}>
+      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow: "visible" }}>
         <Slider
           size="small"
           value={rolls}

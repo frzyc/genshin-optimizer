@@ -17,12 +17,11 @@ import InfoTooltip from '../Components/InfoTooltip';
 import PercentBadge from '../Components/PercentBadge';
 import { StarsDisplay } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
+import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../Database/Database';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import useArtifact from '../ReactHooks/useArtifact';
-import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { allElementsWithPhy, LocationKey, Rarity } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
@@ -48,7 +47,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
-  const sheet = usePromise(() => ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
+  const artSetKey = useMemo(() => (artifactObj ?? databaseArtifact)?.setKey, [artifactObj, databaseArtifact])
+  const sheet = useMemo(() => artSetKey && getArtSheet(artSetKey), [artSetKey])
   const setLocation = useCallback((k: LocationKey) => artifactId && database.arts.set(artifactId, { location: k }), [database, artifactId])
 
   const editable = !artifactObj

@@ -3,7 +3,8 @@ import { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, prod } from '../../../Formula/utils'
 import { ArtifactSetKey } from '../../../Types/consts'
 import { cond, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "EchoesOfAnOffering"

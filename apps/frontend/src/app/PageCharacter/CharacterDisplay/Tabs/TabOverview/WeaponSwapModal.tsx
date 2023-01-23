@@ -10,12 +10,10 @@ import ModalWrapper from "../../../../Components/ModalWrapper"
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup"
 import { StarsDisplay } from "../../../../Components/StarDisplay"
 import WeaponSelectionModal from "../../../../Components/Weapon/WeaponSelectionModal"
-import WeaponSheet from "../../../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
 import WeaponEditor from "../../../../PageWeapon/WeaponEditor"
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
-import usePromise from "../../../../ReactHooks/usePromise"
 import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "../../../../Types/consts"
 import { handleMultiSelect } from "../../../../Util/MultiSelect"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
@@ -43,17 +41,15 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.weapons.followAny(forceUpdate), [forceUpdate, database])
 
-  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
-
   const [rarity, setRarity] = useState<Rarity[]>([5, 4, 3])
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIdList = useMemo(() => (weaponSheets && dbDirty && database.weapons.values
-    .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, weaponFilterConfigs(weaponSheets)))
-    .sort(sortFunction(weaponSortMap["level"] ?? [], false, weaponSortConfigs(weaponSheets)))
+  const weaponIdList = useMemo(() => (dbDirty && database.weapons.values
+    .filter(filterFunction({ weaponType: weaponTypeKey, rarity, name: deferredSearchTerm }, weaponFilterConfigs()))
+    .sort(sortFunction(weaponSortMap["level"] ?? [], false, weaponSortConfigs()))
     .map(weapon => weapon.id)) ?? []
-    , [dbDirty, database, weaponSheets, rarity, weaponTypeKey, deferredSearchTerm])
+    , [dbDirty, database, rarity, weaponTypeKey, deferredSearchTerm])
 
   return <ModalWrapper open={show} onClose={onClose} >
     <CardDark>
