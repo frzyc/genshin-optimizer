@@ -1,6 +1,6 @@
 import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material';
-import { Suspense, useCallback, useMemo } from 'react';
+import { Suspense, useCallback } from 'react';
 import Assets from '../../Assets/Assets';
 import { getCharSheet } from '../../Data/Characters';
 import { ascensionMaxLevel } from '../../Data/LevelData';
@@ -15,7 +15,7 @@ import StatIcon from '../StatIcon';
 
 export default function CharacterCardPico({ characterKey = "", index = -1, onClick }: { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void }) {
   const { gender } = useDBMeta()
-  const teammateSheet = useMemo(() => characterKey ? getCharSheet(characterKey, gender) : undefined, [characterKey, gender])
+  const teammateSheet = characterKey ? getCharSheet(characterKey, gender): undefined
   const character = useCharacter(characterKey)
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(

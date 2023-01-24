@@ -57,7 +57,7 @@ type CharacterDisplayCardProps = {
 function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
-  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
+  const characterSheet =  getCharSheet(characterKey, gender)
   const teamData = useTeamData(characterKey)
   const { target: charUIData } = teamData?.[characterKey] ?? {}
   const { params: { tab = "overview" } } = useMatch({ path: "/characters/:charKey/:tab", end: false }) ?? { params: { tab: "overview" } }

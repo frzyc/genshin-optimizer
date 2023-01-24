@@ -13,7 +13,7 @@ import SqBadge from '../SqBadge';
 
 export default function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
-  const weaponSheet = useMemo(() => weapon?.key && getWeaponSheet(weapon.key), [weapon?.key])
+  const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   return <CardDark>

@@ -178,8 +178,8 @@ function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: Ar
   const { artSetExclusion } = buildSetting
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
-  const slots = useMemo(() => getNumSlots(slotCount), [slotCount])
-  const sheet = useMemo(() => getArtSheet(setKey), [setKey])
+  const slots = getNumSlots(slotCount)
+  const sheet = getArtSheet(setKey)
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
     if (!allow4) return []

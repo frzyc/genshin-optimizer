@@ -1,5 +1,5 @@
 import { Box, Skeleton, Typography } from "@mui/material";
-import { Suspense, useMemo } from "react";
+import { Suspense } from "react";
 import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap, { cacheValueString } from "../../KeyMap";
@@ -24,7 +24,7 @@ export default function ArtifactTooltip({ art, children }: { art: ICachedArtifac
   </BootstrapTooltip>
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
-  const sheet = useMemo(() => getArtSheet(art.setKey), [art.setKey])
+  const sheet = getArtSheet(art.setKey)
   const { slotKey, level, rarity, mainStatKey, substats } = art
   const slotName = sheet.getSlotName(slotKey)
   const mainStatUnit = KeyMap.unit(mainStatKey)

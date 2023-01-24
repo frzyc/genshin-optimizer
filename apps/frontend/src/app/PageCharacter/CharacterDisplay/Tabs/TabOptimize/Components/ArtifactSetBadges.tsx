@@ -29,7 +29,7 @@ export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: Arti
 
 }
 function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
-  const artifactSheet = useMemo(() => getArtSheet(setKey), [setKey])
+  const artifactSheet =  getArtSheet(setKey)
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
   return <Box>

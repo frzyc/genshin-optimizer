@@ -213,7 +213,7 @@ export default function TabTheorycraft() {
 
 function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICachedWeapon, weaponTypeKey: WeaponTypeKey, setWeapon: (action: Partial<ICharTC["weapon"]>) => void }) {
   const { key, level = 0, refinement = 1, ascension = 0 } = weapon
-  const weaponSheet = useMemo(() => getWeaponSheet(key), [key])
+  const weaponSheet = getWeaponSheet(key)
   const [show, onShow, onHide] = useBoolState()
   const { data } = useContext(DataContext)
   const weaponUIData = useMemo(() => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
@@ -341,7 +341,7 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
   </Stack>
 }
 function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: { setKey: ArtifactSetKey, value: 1 | 2 | 4, setValue: (v: 1 | 2 | 4) => void, deleteValue: () => void, remaining: number }) {
-  const artifactSheet = useMemo(() => getArtSheet(setKey), [setKey])
+  const artifactSheet = getArtSheet(setKey)
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {

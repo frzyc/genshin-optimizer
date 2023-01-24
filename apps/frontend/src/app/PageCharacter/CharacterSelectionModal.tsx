@@ -123,7 +123,7 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, onClick: () => void }) {
   const { gender } = useDBMeta()
-  const characterSheet = useMemo(() => getCharSheet(characterKey, gender), [characterKey, gender])
+  const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const { database } = useContext(DatabaseContext)

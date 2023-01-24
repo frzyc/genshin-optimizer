@@ -47,8 +47,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
-  const artSetKey = useMemo(() => (artifactObj ?? databaseArtifact)?.setKey, [artifactObj, databaseArtifact])
-  const sheet = useMemo(() => artSetKey && getArtSheet(artSetKey), [artSetKey])
+  const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
+  const sheet = artSetKey && getArtSheet(artSetKey)
   const setLocation = useCallback((k: LocationKey) => artifactId && database.arts.set(artifactId, { location: k }), [database, artifactId])
 
   const editable = !artifactObj

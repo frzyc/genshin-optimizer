@@ -43,7 +43,7 @@ export default function WeaponEditor({
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 1, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = useMemo(() => key ? getWeaponSheet(key) : undefined, [key])
+  const weaponSheet = key ? getWeaponSheet(key) : undefined
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
