@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { compareEq, constant, equal, greaterEq, infoMut, lookup, one, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'

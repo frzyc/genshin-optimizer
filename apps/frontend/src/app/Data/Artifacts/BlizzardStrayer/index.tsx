@@ -1,7 +1,7 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { IArtifactSheet } from '../IArtifactSheet'

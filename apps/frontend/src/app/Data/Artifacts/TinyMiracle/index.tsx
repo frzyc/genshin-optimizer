@@ -3,7 +3,7 @@ import { input } from "../../../Formula/index"
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElements, ArtifactSetKey } from '../../../Types/consts'
+import { allElements, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { IArtifactSheet } from '../IArtifactSheet'

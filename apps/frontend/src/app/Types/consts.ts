@@ -1,12 +1,22 @@
+import { allArtifactSets, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
+
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
-export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
+/**
+ * @deprecated
+ */
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
+/**
+ * @deprecated
+ */
 export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 'dendro'] as const
+/**
+ * @deprecated
+ */
 export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allInfusionAuraElements = ["pyro", 'cryo', 'hydro'] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
@@ -17,116 +27,6 @@ export const substatType = ["max", "mid", "min"] as const
 export const genderKeys = ["F", "M"] as const
 export type Gender = typeof genderKeys[number]
 
-
-export const allArtifactSets = [
-  "Adventurer",
-  "ArchaicPetra",
-  "Berserker",
-  "BlizzardStrayer",
-  "BloodstainedChivalry",
-  "BraveHeart",
-  "CrimsonWitchOfFlames",
-  "DeepwoodMemories",
-  "DefendersWill",
-  "DesertPavilionChronicle",
-  "EchoesOfAnOffering",
-  "EmblemOfSeveredFate",
-  "FlowerOfParadiseLost",
-  "Gambler",
-  "GildedDreams",
-  "GladiatorsFinale",
-  "HeartOfDepth",
-  "HuskOfOpulentDreams",
-  "Instructor",
-  "Lavawalker",
-  "LuckyDog",
-  "MaidenBeloved",
-  "MartialArtist",
-  "NoblesseOblige",
-  "OceanHuedClam",
-  "PaleFlame",
-  "PrayersForDestiny",
-  "PrayersForIllumination",
-  "PrayersForWisdom",
-  "PrayersToSpringtime",
-  "ResolutionOfSojourner",
-  "RetracingBolide",
-  "Scholar",
-  "ShimenawasReminiscence",
-  "TenacityOfTheMillelith",
-  "TheExile",
-  "ThunderingFury",
-  "Thundersoother",
-  "TinyMiracle",
-  "TravelingDoctor",
-  "VermillionHereafter",
-  "ViridescentVenerer",
-  "WanderersTroupe",
-] as const
-export const nonTravelerCharacterKeys = [
-  "Albedo",
-  "Alhaitham",
-  "Aloy",
-  "Amber",
-  "AratakiItto",
-  "Barbara",
-  "Beidou",
-  "Bennett",
-  "Candace",
-  "Chongyun",
-  "Collei",
-  "Cyno",
-  "Diluc",
-  "Diona",
-  "Dori",
-  "Eula",
-  "Faruzan",
-  "Fischl",
-  "Ganyu",
-  "Gorou",
-  "HuTao",
-  "Jean",
-  "KaedeharaKazuha",
-  "Kaeya",
-  "KamisatoAyaka",
-  "KamisatoAyato",
-  "Keqing",
-  "Klee",
-  "KujouSara",
-  "KukiShinobu",
-  "Layla",
-  "Lisa",
-  "Mona",
-  "Nahida",
-  "Nilou",
-  "Ningguang",
-  "Noelle",
-  "Qiqi",
-  "RaidenShogun",
-  "Razor",
-  "Rosaria",
-  "SangonomiyaKokomi",
-  "Sayu",
-  "Shenhe",
-  "ShikanoinHeizou",
-  "Sucrose",
-  "Tartaglia",
-  "Thoma",
-  "Tighnari",
-  "Venti",
-  "Wanderer",
-  "Xiangling",
-  "Xiao",
-  "Xingqiu",
-  "Xinyan",
-  "YaeMiko",
-  "Yanfei",
-  "Yaoyao",
-  "Yelan",
-  "Yoimiya",
-  "YunJin",
-  "Zhongli",
-] as const
 export const locationCharacterKeys = [
   ...nonTravelerCharacterKeys,
   "Traveler",
@@ -149,12 +49,18 @@ export const travelerMKeys = [
   "TravelerElectroM",
   "TravelerDendroM",
 ] as const
+/**
+ * @deprecated
+ */
 export const travelerKeys = [
   "TravelerAnemo",
   "TravelerGeo",
   "TravelerElectro",
   "TravelerDendro",
 ] as const
+/**
+ * @deprecated
+ */
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
   ...travelerKeys
@@ -166,177 +72,9 @@ export const allCharacterSheetKeys = [
   ...travelerMKeys,
 ]
 
-export const allWeaponSwordKeys = [
-  "AmenomaKageuchi",
-  "AquilaFavonia",
-  "BlackcliffLongsword",
-  "CinnabarSpindle",
-  "CoolSteel",
-  "KagotsurubeIsshin",
-  "DarkIronSword",
-  "DullBlade",
-  "FavoniusSword",
-  "FesteringDesire",
-  "FilletBlade",
-  "FreedomSworn",
-  "HaranGeppakuFutsu",
-  "HarbingerOfDawn",
-  "IronSting",
-  "KeyOfKhajNisut",
-  "LightOfFoliarIncision",
-  "LionsRoar",
-  "MistsplitterReforged",
-  "PrimordialJadeCutter",
-  "PrototypeRancour",
-  "RoyalLongsword",
-  "SacrificialSword",
-  "SapwoodBlade",
-  "SilverSword",
-  "SkyriderSword",
-  "SkywardBlade",
-  "SummitShaper",
-  "SwordOfDescension",
-  "TheAlleyFlash",
-  "TheBlackSword",
-  "TheFlute",
-  "ToukabouShigure",
-  "TravelersHandySword",
-  "XiphosMoonlight",
-] as const
-export type WeaponSwordKey = typeof allWeaponSwordKeys[number]
-
-export const allWeaponClaymoreKeys = [
-  "Akuoumaru",
-  "BlackcliffSlasher",
-  "BloodtaintedGreatsword",
-  "DebateClub",
-  "FavoniusGreatsword",
-  "FerrousShadow",
-  "ForestRegalia",
-  "KatsuragikiriNagamasa",
-  "LithicBlade",
-  "LuxuriousSeaLord",
-  "MakhairaAquamarine",
-  "OldMercsPal",
-  "PrototypeArchaic",
-  "Rainslasher",
-  "RedhornStonethresher",
-  "RoyalGreatsword",
-  "SacrificialGreatsword",
-  "SerpentSpine",
-  "SkyriderGreatsword",
-  "SkywardPride",
-  "SnowTombedStarsilver",
-  "SongOfBrokenPines",
-  "TheBell",
-  "TheUnforged",
-  "WasterGreatsword",
-  "Whiteblind",
-  "WhiteIronGreatsword",
-  "WolfsGravestone",
-] as const
-export type WeaponClaymoreKey = typeof allWeaponClaymoreKeys[number]
-
-export const allWeaponPolearmKeys = [
-  "BeginnersProtector",
-  "BlackcliffPole",
-  "BlackTassel",
-  "CalamityQueller",
-  "CrescentPike",
-  "Deathmatch",
-  "DragonsBane",
-  "DragonspineSpear",
-  "EngulfingLightning",
-  "FavoniusLance",
-  "Halberd",
-  "IronPoint",
-  "KitainCrossSpear",
-  "LithicSpear",
-  "MissiveWindspear",
-  "Moonpiercer",
-  "PrimordialJadeWingedSpear",
-  "PrototypeStarglitter",
-  "RoyalSpear",
-  "SkywardSpine",
-  "StaffOfHoma",
-  "StaffOfTheScarletSands",
-  "TheCatch",
-  "VortexVanquisher",
-  "WavebreakersFin",
-  "WhiteTassel",
-] as const
-export type WeaponPoleArmKey = typeof allWeaponPolearmKeys[number]
-
-export const allWeaponBowKeys = [
-  "AlleyHunter",
-  "AmosBow",
-  "AquaSimulacra",
-  "BlackcliffWarbow",
-  "CompoundBow",
-  "ElegyForTheEnd",
-  "EndOfTheLine",
-  "FadingTwilight",
-  "FavoniusWarbow",
-  "Hamayumi",
-  "HuntersBow",
-  "HuntersPath",
-  "KingsSquire",
-  "Messenger",
-  "MitternachtsWaltz",
-  "MouunsMoon",
-  "PolarStar",
-  "Predator",
-  "PrototypeCrescent",
-  "RavenBow",
-  "RecurveBow",
-  "RoyalBow",
-  "Rust",
-  "SacrificialBow",
-  "SeasonedHuntersBow",
-  "SharpshootersOath",
-  "SkywardHarp",
-  "Slingshot",
-  "TheStringless",
-  "TheViridescentHunt",
-  "ThunderingPulse",
-  "WindblumeOde",
-] as const
-export type WeaponBowKey = typeof allWeaponBowKeys[number]
-
-export const allWeaponCatalystKeys = [
-  "ApprenticesNotes",
-  "AThousandFloatingDreams",
-  "BlackcliffAgate",
-  "DodocoTales",
-  "EmeraldOrb",
-  "EverlastingMoonglow",
-  "EyeOfPerception",
-  "FavoniusCodex",
-  "Frostbearer",
-  "FruitOfFulfillment",
-  "HakushinRing",
-  "KagurasVerity",
-  "LostPrayerToTheSacredWinds",
-  "MagicGuide",
-  "MappaMare",
-  "MemoryOfDust",
-  "OathswornEye",
-  "OtherworldlyStory",
-  "PocketGrimoire",
-  "PrototypeAmber",
-  "RoyalGrimoire",
-  "SacrificialFragments",
-  "SkywardAtlas",
-  "SolarPearl",
-  "TheWidsith",
-  "ThrillingTalesOfDragonSlayers",
-  "TulaytullahsRemembrance",
-  "TwinNephrite",
-  "WanderingEvenstar",
-  "WineAndSong",
-] as const
-export type WeaponCatalystKey = typeof allWeaponCatalystKeys[number]
-
+/**
+ * @deprecated
+ */
 export const allWeaponKeys = [
   ...allWeaponSwordKeys,
   ...allWeaponClaymoreKeys,
@@ -344,28 +82,50 @@ export const allWeaponKeys = [
   ...allWeaponBowKeys,
   ...allWeaponCatalystKeys,
 ] as const
+/**
+ * @deprecated
+ */
 export type WeaponKey = WeaponSwordKey | WeaponClaymoreKey | WeaponPoleArmKey | WeaponBowKey | WeaponCatalystKey
 
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "dendro_dmg_"] as const
 
 export type HitModeKey = typeof allHitModes[number]
-export type Region = typeof allRegions[number]
 export type AmpReactionKey = typeof allAmpReactions[number]
 export type AdditiveReactionKey = typeof allAdditiveReactions[number]
 export type SetNum = typeof allArtifactSetCount[number]
 export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
+/**
+ * @deprecated
+ */
 export type SlotKey = typeof allSlotKeys[number]
+/**
+ * @deprecated
+ */
 export type ElementKey = typeof allElements[number]
+/**
+ * @deprecated
+ */
 export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export type InfusionAuraElements = typeof allInfusionAuraElements[number]
+/**
+ * @deprecated
+ */
 export type ArtifactSetKey = typeof allArtifactSets[number]
-export type NonTravelerCharacterKey = typeof nonTravelerCharacterKeys[number]
+/**
+ * @deprecated
+ */
 export type CharacterKey = typeof allCharacterKeys[number]
 export type CharacterSheetKey = typeof allCharacterSheetKeys[number]
 export type LocationCharacterKey = typeof locationCharacterKeys[number]
+/**
+ * @deprecated
+ */
 export type TravelerKey = typeof travelerKeys[number]
 export type TravelerElementKey = typeof travelerElements[number]
+/**
+ * @deprecated
+ */
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
 export type Ascension = typeof allAscension[number]

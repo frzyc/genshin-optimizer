@@ -1,5 +1,6 @@
 import { faBan, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
 import { CheckBox, CheckBoxOutlineBlank, Replay, Settings } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
@@ -24,7 +25,7 @@ import { handleArtSetExclusion } from '../../../../../Database/DataManagers/Buil
 import { UIData } from '../../../../../Formula/uiData';
 import { constant } from '../../../../../Formula/utils';
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../../../../../Types/consts';
+import { SetNum } from '../../../../../Types/consts';
 import { deepClone, objectKeyMap } from '../../../../../Util/Util';
 import useBuildSetting from '../useBuildSetting';
 

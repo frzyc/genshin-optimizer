@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
-import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -11,6 +11,7 @@ import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 

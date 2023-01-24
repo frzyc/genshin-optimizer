@@ -1,7 +1,7 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, min, percent, prod, subscript, sum } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import { IWeaponSheet } from '../../IWeaponSheet'

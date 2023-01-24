@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import { allElements, CharacterKey, ElementKey } from '../../../Types/consts'
+import { allElements, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'

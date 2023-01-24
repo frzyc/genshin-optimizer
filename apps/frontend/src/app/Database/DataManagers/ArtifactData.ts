@@ -1,7 +1,8 @@
+import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allSlotKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGOOD, IGO, ImportResult } from "../exim";

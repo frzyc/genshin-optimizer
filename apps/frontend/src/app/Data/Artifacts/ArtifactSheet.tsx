@@ -1,3 +1,4 @@
+import { allSlotKeys, ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts";
 import { artifactAsset } from "@genshin-optimizer/g-assets";
 import artifactSheets from ".";
 import ImgIcon from "../../Components/Image/ImgIcon";
@@ -6,7 +7,7 @@ import { Translate } from "../../Components/Translate";
 import { input } from "../../Formula";
 import { Data } from "../../Formula/type";
 import { UIData } from "../../Formula/uiData";
-import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../../Types/consts";
+import { ArtifactRarity, SetNum, } from "../../Types/consts";
 import { IDocumentHeader } from "../../Types/sheet";
 import { st } from "../SheetUtil";
 import { IArtifactSheet, SetEffectEntry } from "./IArtifactSheet";

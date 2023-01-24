@@ -1,5 +1,5 @@
 import { Data } from '../../../Formula/type'
-import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'

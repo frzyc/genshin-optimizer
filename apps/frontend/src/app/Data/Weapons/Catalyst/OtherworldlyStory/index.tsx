@@ -1,7 +1,7 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'

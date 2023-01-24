@@ -2,7 +2,7 @@ import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, percent, prod, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"

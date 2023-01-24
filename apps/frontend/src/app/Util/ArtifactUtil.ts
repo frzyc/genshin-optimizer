@@ -1,9 +1,9 @@
+import { allArtifactSets } from "@genshin-optimizer/consts"
 import { getArtSheet } from "../Data/Artifacts"
 import Artifact from "../Data/Artifacts/Artifact"
 import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from "../KeyMap"
 import { allSubstatKeys, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
-import { allArtifactSets } from "../Types/consts"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 
 export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {

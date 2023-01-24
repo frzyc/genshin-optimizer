@@ -1,5 +1,5 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet from "../../WeaponSheet"
 import { dataObjForWeaponSheet } from '../../util'

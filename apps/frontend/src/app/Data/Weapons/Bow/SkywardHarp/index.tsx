@@ -1,7 +1,7 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, percent, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
