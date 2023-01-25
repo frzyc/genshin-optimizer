@@ -1,11 +1,8 @@
+import { CharacterKey } from "@genshin-optimizer/consts";
 import { useCallback, useContext } from "react";
 import { useMatch, useNavigate } from "react-router-dom";
-import { getCharSheet } from "../Data/Characters";
 import { DatabaseContext } from "../Database/Database";
-import { ICachedCharacter } from "../Types/character";
-import { allSlotKeys, CharacterKey, charKeyToLocCharKey } from "../Types/consts";
-import { objectKeyMap } from "../Util/Util";
-import { defaultInitialWeapon } from "../Util/WeaponUtil";
+import { charKeyToLocCharKey } from "../Types/consts";
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.
@@ -21,15 +18,7 @@ export default function useCharSelectionCallback() {
     let navTab = tab
     // Create a new character + weapon, with linking if char isnt in db.
     if (!character) {
-      database.chars.set(characterKey, initialCharacter(characterKey))
-      const newChar = database.chars.get(characterKey)
-      if (!newChar?.equippedWeapon) {
-        const characterSheet = getCharSheet(characterKey, database.gender)
-        if (!characterSheet) return
-        const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-        const weaponId = database.weapons.new(weapon)
-        database.weapons.set(weaponId, { location: charKeyToLocCharKey(characterKey) })
-      }
+      database.chars.getWithInitWeapon(charKeyToLocCharKey(characterKey))
       // If we are navigating to a new character,
       // redirect to Overview, regardless of previous tab.
       // Trying to enforce a certain UI flow when building new characters
@@ -38,29 +27,4 @@ export default function useCharSelectionCallback() {
     navigate(`/characters/${characterKey}/${navTab}`)
   }, [navigate, database, tab])
   return cb
-}
-
-export function initialCharacter(key: CharacterKey): ICachedCharacter {
-  return {
-    key,
-    level: 1,
-    ascension: 0,
-    hitMode: "avgHit",
-    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
-    equippedWeapon: "",
-    conditional: {},
-    bonusStats: {},
-    enemyOverride: {},
-    talent: {
-      auto: 1,
-      skill: 1,
-      burst: 1,
-    },
-    infusionAura: "",
-    constellation: 0,
-    team: ["", "", ""],
-    teamConditional: {},
-    compareData: false,
-    customMultiTarget: []
-  }
 }

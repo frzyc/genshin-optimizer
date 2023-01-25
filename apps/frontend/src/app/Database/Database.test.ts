@@ -1,9 +1,9 @@
-import { initialCharacter } from "../ReactHooks/useCharSelectionCallback"
 import { CharacterKey } from "../Types/consts"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
-import { cachedArtifact } from "./DataManagers/ArtifactData"
 import { ArtCharDatabase } from "./Database"
+import { cachedArtifact } from "./DataManagers/ArtifactData"
+import { initialCharacter } from "./DataManagers/CharacterData"
 import { DBLocalStorage, SandboxStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
 

@@ -1,3 +1,5 @@
+import { Rarity } from "./common"
+
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 
@@ -180,3 +182,11 @@ export const allWeaponKeys = [
   ...allWeaponCatalystKeys,
 ] as const
 export type WeaponKey = WeaponSwordKey | WeaponClaymoreKey | WeaponPoleArmKey | WeaponBowKey | WeaponCatalystKey
+
+export const weaponMaxLevel: Record<Rarity, number> = {
+  1: 70,
+  2: 70,
+  3: 90,
+  4: 90,
+  5: 90,
+} as const

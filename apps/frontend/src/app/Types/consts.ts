@@ -4,6 +4,9 @@ export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
+/**
+ * @deprecated
+ */
 export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
 /**
@@ -19,6 +22,9 @@ export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 
  */
 export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allInfusionAuraElements = ["pyro", 'cryo', 'hydro'] as const
+/**
+ * @deprecated
+ */
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
 export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
@@ -93,6 +99,9 @@ export type HitModeKey = typeof allHitModes[number]
 export type AmpReactionKey = typeof allAmpReactions[number]
 export type AdditiveReactionKey = typeof allAdditiveReactions[number]
 export type SetNum = typeof allArtifactSetCount[number]
+/**
+ * @deprecated
+ */
 export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
 /**

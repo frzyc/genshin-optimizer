@@ -1,3 +1,4 @@
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "@genshin-optimizer/consts";
 import { characterAsset } from "@genshin-optimizer/g-assets";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
@@ -23,7 +24,6 @@ import useCharMeta from "../ReactHooks/useCharMeta";
 import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
 import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../Types/consts";
 import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
 import { catTotal } from "../Util/totalUtils";
@@ -64,17 +64,17 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
       .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database,), ["new", "favorite"]))
   }, [database, newFirst, deferredState, deferredDbDirty, deferredSearchTerm, gender, filter])
 
-  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct =>  allCharacterKeys.forEach(ck => {
+  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => allCharacterKeys.forEach(ck => {
     const wtk = getCharSheet(ck, database.gender).weaponTypeKey
     ct[wtk].total++
     if (characterKeyList.includes(ck)) ct[wtk].current++
-  })), [ characterKeyList, database])
+  })), [characterKeyList, database])
 
-  const elementTotals = useMemo(() => catTotal(allElements, ct =>  allCharacterKeys.forEach(ck => {
+  const elementTotals = useMemo(() => catTotal(allElements, ct => allCharacterKeys.forEach(ck => {
     const ele = getCharSheet(ck, database.gender).elementKey
     ct[ele].total++
     if (characterKeyList.includes(ck)) ct[ele].current++
-  })), [ characterKeyList, database])
+  })), [characterKeyList, database])
 
   const { weaponType, element, sortType, ascending } = state
 
