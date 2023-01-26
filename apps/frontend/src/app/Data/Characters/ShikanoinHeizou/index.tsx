@@ -2,13 +2,16 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
-import { absorbableEle, CharacterKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "ShikanoinHeizou"

@@ -1,9 +1,8 @@
 import { Box, Skeleton, Typography } from "@mui/material";
 import { Suspense } from "react";
+import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
-import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import KeyMap, { cacheValueString } from "../../KeyMap";
-import usePromise from "../../ReactHooks/usePromise";
 import { ICachedArtifact, ICachedSubstat } from "../../Types/artifact";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
@@ -25,9 +24,9 @@ export default function ArtifactTooltip({ art, children }: { art: ICachedArtifac
   </BootstrapTooltip>
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
-  const sheet = usePromise(() => ArtifactSheet.get(art.setKey), [art.setKey])
+  const sheet = getArtSheet(art.setKey)
   const { slotKey, level, rarity, mainStatKey, substats } = art
-  const slotName = sheet?.getSlotName(slotKey)
+  const slotName = sheet.getSlotName(slotKey)
   const mainStatUnit = KeyMap.unit(mainStatKey)
   const mainIcon = StatIcon[mainStatKey]
   const mainVariant = KeyMap.getVariant(mainStatKey)
@@ -41,6 +40,6 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
       </Typography>)}
     </Box>
 
-    <Typography color="success.main">{sheet?.name}</Typography>
+    <Typography color="success.main">{sheet.name}</Typography>
   </Box>
 }

@@ -4,11 +4,9 @@ import { alpha, Box, CardActionArea, Chip, Typography, useTheme } from "@mui/mat
 import { useCallback, useContext } from "react";
 import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
-import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet";
 import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import useArtifact from "../../ReactHooks/useArtifact";
-import usePromise from "../../ReactHooks/usePromise";
 import { ICachedSubstat } from "../../Types/artifact";
 import { allElementsWithPhy, SlotKey } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
@@ -33,7 +31,6 @@ type Data = {
 export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainStatAssumptionLevel = 0, showLocation = false, onClick, BGComponent = CardDark }: Data) {
   const art = useArtifact(artifactId)
   const { database } = useContext(DatabaseContext)
-  const sheet = usePromise(() => ArtifactSheet.get(art?.setKey), [art?.setKey])
   const actionWrapperFunc = useCallback(children => <CardActionArea onClick={onClick} sx={{ height: "100%" }}>{children}</CardActionArea>, [onClick],)
   const theme = useTheme()
   if (!art) return <BGComponent sx={{ display: "flex", height: "100%", alignItems: "center", justifyContent: "center" }}>

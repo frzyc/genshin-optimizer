@@ -3,8 +3,7 @@ import { useMemo } from "react"
 import ArtifactSetTooltip from "../../../../../Components/Artifact/ArtifactSetTooltip"
 import { artifactSlotIcon } from "../../../../../Components/Artifact/SlotNameWIthIcon"
 import SqBadge from "../../../../../Components/SqBadge"
-import { ArtifactSheet } from "../../../../../Data/Artifacts/ArtifactSheet"
-import usePromise from "../../../../../ReactHooks/usePromise"
+import { getArtSheet } from "../../../../../Data/Artifacts"
 import { ICachedArtifact } from "../../../../../Types/artifact"
 import { ArtifactSetKey, SlotKey } from "../../../../../Types/consts"
 
@@ -30,8 +29,7 @@ export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: Arti
 
 }
 function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
-  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
-  if (!artifactSheet) return null
+  const artifactSheet = getArtSheet(setKey)
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
   return <Box>

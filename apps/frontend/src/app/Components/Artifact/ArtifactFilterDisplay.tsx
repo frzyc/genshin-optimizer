@@ -1,13 +1,14 @@
 import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
 import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
-import { Suspense, useContext, useMemo, useState } from "react";
+import { Suspense, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
 import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allSlotKeys, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import { catTotal } from "../../Util/totalUtils";
 import BootstrapTooltip from "../BootstrapTooltip";

@@ -1,8 +1,9 @@
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "@genshin-optimizer/consts";
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
 import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { characterAsset } from "@genshin-optimizer/g-assets";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
 import CharacterCard from "../Components/Character/CharacterCard";
@@ -14,6 +15,7 @@ import { StarsDisplay } from "../Components/StarDisplay";
 import ElementToggle from "../Components/ToggleButton/ElementToggle";
 import WeaponToggle from "../Components/ToggleButton/WeaponToggle";
 import { DataContext } from "../Context/DataContext";
+import { getCharSheet } from "../Data/Characters";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ascensionMaxLevel } from "../Data/LevelData";
 import { DatabaseContext } from "../Database/Database";
@@ -21,9 +23,7 @@ import useCharacter from "../ReactHooks/useCharacter";
 import useCharMeta from "../ReactHooks/useCharMeta";
 import useDBMeta from "../ReactHooks/useDBMeta";
 import useForceUpdate from "../ReactHooks/useForceUpdate";
-import usePromise from "../ReactHooks/usePromise";
 import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "../Types/consts";
 import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../Util/SortByFilters";
 import { catTotal } from "../Util/totalUtils";
@@ -44,7 +44,7 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(() => database.displayCharacter.follow((r, s) => setState(s)), [database, setState])
 
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
+  const { gender } = useDBMeta()
 
   const [dbDirty, forceUpdate] = useForceUpdate()
 
@@ -56,28 +56,25 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
   const deferredState = useDeferredValue(state)
   const deferredDbDirty = useDeferredValue(dbDirty)
   const characterKeyList = useMemo(() => {
-    if (!characterSheets) return []
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
     return deferredDbDirty && allCharacterKeys
-      .filter(key => filter(database.chars.get(key), characterSheets[key]))
-      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
-      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
-  }, [database, newFirst, deferredState, characterSheets, deferredDbDirty, deferredSearchTerm, filter])
+      .filter(key => filter(database.chars.get(key), getCharSheet(key, gender)))
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database,)))
+      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database,), ["new", "favorite"]))
+  }, [database, newFirst, deferredState, deferredDbDirty, deferredSearchTerm, gender, filter])
 
-  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => characterSheets && allCharacterKeys.forEach(ck => {
-    const wtk = characterSheets(ck, database.gender).weaponTypeKey
+  const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => allCharacterKeys.forEach(ck => {
+    const wtk = getCharSheet(ck, database.gender).weaponTypeKey
     ct[wtk].total++
     if (characterKeyList.includes(ck)) ct[wtk].current++
-  })), [characterSheets, characterKeyList, database])
+  })), [characterKeyList, database])
 
-  const elementTotals = useMemo(() => catTotal(allElements, ct => characterSheets && allCharacterKeys.forEach(ck => {
-    const ele = characterSheets(ck, database.gender).elementKey
+  const elementTotals = useMemo(() => catTotal(allElements, ct => allCharacterKeys.forEach(ck => {
+    const ele = getCharSheet(ck, database.gender).elementKey
     ct[ele].total++
     if (characterKeyList.includes(ck)) ct[ele].current++
-  })), [characterSheets, characterKeyList, database])
-
-  if (!characterSheets) return null
+  })), [characterKeyList, database])
 
   const { weaponType, element, sortType, ascending } = state
 
@@ -126,7 +123,7 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, onClick: () => void }) {
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = getCharSheet(characterKey, gender)
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const { database } = useContext(DatabaseContext)

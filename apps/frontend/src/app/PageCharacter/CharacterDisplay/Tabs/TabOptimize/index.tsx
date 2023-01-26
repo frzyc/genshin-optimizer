@@ -139,7 +139,7 @@ export default function TabBuild() {
 
     const split = compactArtifacts(filteredArts, mainStatAssumptionLevel, allowPartial)
 
-    const teamData = await getTeamData(database, characterKey, mainStatAssumptionLevel, [])
+    const teamData = getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
     const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
     if (!workerData) return

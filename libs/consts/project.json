@@ -5,13 +5,13 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/consts",
         "main": "libs/consts/src/index.ts",
         "tsConfig": "libs/consts/tsconfig.lib.json",
-        "assets": []
+        "assets": ["libs/consts/*.md"]
       }
     },
     "publish": {

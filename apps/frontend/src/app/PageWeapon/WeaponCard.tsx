@@ -14,12 +14,11 @@ import ImgIcon from "../Components/Image/ImgIcon"
 import { StarsDisplay } from "../Components/StarDisplay"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { ascensionMaxLevel } from "../Data/LevelData"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
+import { getWeaponSheet } from "../Data/Weapons"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import { nodeVStr } from "../Formula/uiData"
-import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
 
@@ -29,7 +28,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
-  const weaponSheet = usePromise(() => weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
+  const weaponSheet = weapon?.key ? getWeaponSheet(weapon.key) : undefined
 
   const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 

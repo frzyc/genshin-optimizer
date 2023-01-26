@@ -1,8 +1,8 @@
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import { PersonAdd } from "@mui/icons-material";
 import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
-import { characterAsset } from "@genshin-optimizer/g-assets";
 import CardLight from "../../../Components/Card/CardLight";
 import CharacterCard from "../../../Components/Character/CharacterCard";
 import ThumbSide from "../../../Components/Character/ThumbSide";
@@ -13,14 +13,13 @@ import { GeneralAutocomplete, GeneralAutocompleteOption } from "../../../Compone
 import InfoTooltip from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
-import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../../../Data/Characters/CharacterSheet";
+import { dataSetEffects, getArtSheet } from "../../../Data/Artifacts";
+import { getCharSheet } from "../../../Data/Characters";
 import { resonanceSheets } from "../../../Data/Resonance";
 import { DatabaseContext } from "../../../Database/Database";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
 import useDBMeta from "../../../ReactHooks/useDBMeta";
-import usePromise from "../../../ReactHooks/usePromise";
 import { CharacterKey, charKeyToCharName } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
@@ -143,12 +142,11 @@ function TeammateDisplay({ index }: { index: number }) {
 }
 function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
-  const sections = useMemo(() => artifactSheets &&
-    Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
+  const sections = useMemo(() =>
+    Object.entries(dataSetEffects(data))
       .flatMap(([setKey, setNums]) =>
-        setNums.flatMap(sn => artifactSheets(setKey)!.setEffectDocument(sn)!))
-    , [artifactSheets, data])
+        setNums.flatMap(sn => getArtSheet(setKey).setEffectDocument(sn) ?? []))
+    , [data])
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
@@ -173,9 +171,8 @@ function TeammateAutocomplete({ characterKey, team, label, setChar, autoComplete
   const { t } = useTranslation(["charNames_gen", "page_character", "sheet_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${characterSheets?.(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
-  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterAsset(key, "iconSide", gender)} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
+  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [t, gender])
+  const toImg = useCallback((key: CharacterKey | "") => key ? <ThumbSide src={characterAsset(key, "iconSide", gender)} sx={{ pr: 1 }} /> : <PersonAdd />, [gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.charMeta.get(key).favorite, [database])
   const onDisable = useCallback(({ key }: { key: CharacterKey | "" }) => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
   const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(() => database.chars.keys

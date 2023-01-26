@@ -1,7 +1,9 @@
+import { allArtifactSets, allSlotKeys, ArtifactSetKey, artMaxLevel } from "@genshin-optimizer/consts";
+import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allSlotKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGOOD, IGO, ImportResult } from "../exim";
@@ -247,13 +249,10 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
   return { artifact: validated, errors }
 }
 
-
-export function validateArtifact(obj: any): IArtifact | undefined {
-  if (typeof obj !== "object") return
-
-  let {
-    setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock,
-  } = obj ?? {}
+export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
+  if (!obj || typeof obj !== "object") return
+  const { setKey, rarity, slotKey } = obj as IArtifact
+  let { level, mainStatKey, substats, location, exclude, lock, } = obj as IArtifact
 
   if (!allArtifactSets.includes(setKey) ||
     !allSlotKeys.includes(slotKey) ||
@@ -261,24 +260,23 @@ export function validateArtifact(obj: any): IArtifact | undefined {
     !allArtifactRarities.includes(rarity) ||
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
+  const sheet = getArtSheet(setKey as ArtifactSetKey)
+  if (!sheet.slots.includes(slotKey)) return
+  if (!sheet.rarity.includes(rarity)) return
+  level = Math.round(level)
+  if (level > artMaxLevel[rarity]) return
 
-  // TODO:
-  // These two requires information from artifact sheet,
-  // which normally isn't loaded at this point yet.
-  // - Validate artifact set vs slot
-  // - Validate artifact set vs rarity
   substats = parseSubstats(substats)
   lock = !!lock
   exclude = !!exclude
-  level = Math.round(level)
   const plausibleMainStats = Artifact.slotMainStats(slotKey)
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (!locationCharacterKeys.includes(location)) location = ""
+  if (location && !locationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
-function parseSubstats(obj: any): ISubstat[] {
+function parseSubstats(obj: unknown): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {

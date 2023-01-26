@@ -2,11 +2,12 @@ import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from "../../../../Formula/utils"
 import KeyMap from '../../../../KeyMap'
-import { allElements, WeaponKey } from '../../../../Types/consts'
+import { allElements, WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = "KagurasVerity"

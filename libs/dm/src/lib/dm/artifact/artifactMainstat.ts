@@ -11,7 +11,7 @@ type ReliquaryLevelExcelConfigData = {
     "value": number//129.0
   }[]
 }
-const artifactMainstatDataSrc =  JSON.parse(readDMJSON("ExcelBinOutput/ReliquaryLevelExcelConfigData.json")) as ReliquaryLevelExcelConfigData[]
+const artifactMainstatDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/ReliquaryLevelExcelConfigData.json")) as ReliquaryLevelExcelConfigData[]
 
 export type artifaceMainstatData = {
   [rank: number]: Record<MainStatKey, number[]>

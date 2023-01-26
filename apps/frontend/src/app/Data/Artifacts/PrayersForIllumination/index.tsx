@@ -1,6 +1,7 @@
 import { Data } from '../../../Formula/type'
-import { ArtifactSetKey } from '../../../Types/consts'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "PrayersForIllumination"

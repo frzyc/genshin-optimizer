@@ -1,4 +1,4 @@
-import { WeaponSwordKey } from "../../../Types/consts"
+import { WeaponSwordKey } from "@genshin-optimizer/consts"
 import WeaponSheet from "../WeaponSheet"
 import AmenomaKageuchi from "./AmenomaKageuchi"
 import AquilaFavonia from "./AquilaFavonia"

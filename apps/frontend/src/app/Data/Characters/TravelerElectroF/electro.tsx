@@ -4,8 +4,9 @@ import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } fr
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
-import { charTemplates, TalentSheet } from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
 import skillParam_gen from './skillParam_gen.json'
 

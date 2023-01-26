@@ -1,10 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../../Formula'
 import { prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = "LithicSpear"

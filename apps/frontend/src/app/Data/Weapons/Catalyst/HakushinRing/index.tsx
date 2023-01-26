@@ -3,10 +3,11 @@ import ColorText from '../../../../Components/ColoredText'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = "HakushinRing"

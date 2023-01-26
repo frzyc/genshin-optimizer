@@ -2,8 +2,6 @@ import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import Assets from '../../Assets/Assets';
 import Artifact from '../../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import usePromise from '../../ReactHooks/usePromise';
 import { ICachedArtifact } from '../../Types/artifact';
 import { allElementsWithPhy, SlotKey } from '../../Types/consts';
 import CardDark from '../Card/CardDark';
@@ -12,9 +10,8 @@ import StatIcon from '../StatIcon';
 import ArtifactTooltip from './ArtifactTooltip';
 
 export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
-  const artifactSheet = usePromise(() => art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
   // Blank artifact slot icon
-  if (!art || !artifactSheet)
+  if (!art)
     return <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
         <Box

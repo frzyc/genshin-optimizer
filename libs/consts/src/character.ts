@@ -1,6 +1,15 @@
 export const genderKeys = ["F", "M"] as const
 export type Gender = typeof genderKeys[number]
 
+export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo', 'dendro'] as const
+export type ElementKey = typeof allElements[number]
+
+export const allElementsWithPhy = ["physical", ...allElements] as const
+export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
+
+export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
+export type Region = typeof allRegions[number]
+
 export const nonTravelerCharacterKeys = [
   "Albedo",
   "Alhaitham",

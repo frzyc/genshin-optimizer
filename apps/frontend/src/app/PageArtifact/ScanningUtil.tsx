@@ -1,10 +1,11 @@
+import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
+import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
-import { AllArtifactSheets, ArtifactSheet } from '../Data/Artifacts/ArtifactSheet';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
-import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
+import { allArtifactRarities, ArtifactRarity, Rarity } from '../Types/consts';
 import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
 import { BorrowManager } from './BorrowManager';
 
@@ -63,12 +64,11 @@ export function processEntry(entry: OutstandingEntry) {
   const { file, fileName } = entry
   entry.imageURL = fileToURL(file)
   entry.result = entry.imageURL.then(async imageURL => {
-    const sheets = await ArtifactSheet.getAll
     const ocrResult = await ocr(imageURL)
 
     const [artifact, texts] = findBestArtifact(
-      sheets, ocrResult.rarities,
-      parseSetKeys(ocrResult.artifactSetTexts, sheets),
+      ocrResult.rarities,
+      parseSetKeys(ocrResult.artifactSetTexts),
       parseSlotKeys(ocrResult.whiteTexts),
       parseSubstats(ocrResult.substatTexts),
       parseMainStatKeys(ocrResult.whiteTexts),
@@ -132,7 +132,7 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
+export function findBestArtifact(rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   // const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
   // TODO: restore
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "EmblemOfSeveredFate"])]
@@ -148,7 +148,7 @@ export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number
   const rarityRates = objectKeyMap(allArtifactRarities, rarity => {
     let score = 0
     if (textSetKeys.size) {
-      const count = [...textSetKeys].reduce((count, set) => count + (sheets(set).rarity.includes(rarity) ? 1 : 0), 0)
+      const count = [...textSetKeys].reduce((count, set) => count + (getArtSheet(set).rarity.includes(rarity) ? 1 : 0), 0)
       score += count / textSetKeys.size
     }
     if (substats.length) {
@@ -169,7 +169,7 @@ export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number
 
       for (const [rarityString, rarityIndividualScore] of Object.entries(rarityRates)) {
         const rarity = parseInt(rarityString) as ArtifactRarity
-        const setKeys = relevantSetKey.filter(setKey => sheets(setKey).rarity.includes(rarity))
+        const setKeys = relevantSetKey.filter(setKey => getArtSheet(setKey).rarity.includes(rarity))
         const rarityScore = mainStatScore + rarityIndividualScore
 
         if (rarityScore + 2 < bestScore) continue // Early bail out
@@ -253,7 +253,7 @@ export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number
       texts[key] = inferredText(result[key], name, text)
   }
 
-  addText("setKey", textSetKeys, "Set", (value) => sheets(value).name)
+  addText("setKey", textSetKeys, "Set", (value) => getArtSheet(value).name)
   addText("rarity", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{KeyMap.getStr(value)}</>)
@@ -278,11 +278,11 @@ export function findBestArtifact(sheets: AllArtifactSheets, rarities: Set<number
   return [result, texts]
 }
 
-function parseSetKeys(texts: string[], sheets: AllArtifactSheets): Set<ArtifactSetKey> {
+function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
   const results = new Set<ArtifactSetKey>([])
   for (const text of texts)
     for (const key of allArtifactSets)
-      if (hammingDistance(text.replace(/\W/g, ''), sheets(key).nameRaw.replace(/\W/g, '')) <= 2)
+      if (hammingDistance(text.replace(/\W/g, ''), getArtSheet(key).nameRaw.replace(/\W/g, '')) <= 2)
         results.add(key)
   return results
 }

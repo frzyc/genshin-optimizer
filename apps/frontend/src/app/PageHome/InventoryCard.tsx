@@ -10,11 +10,10 @@ import CardLight from "../Components/Card/CardLight"
 import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
 import ImgIcon from "../Components/Image/ImgIcon"
 import { elementSvg } from "../Components/StatIcon"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
+import { getCharSheet } from "../Data/Characters"
+import { getWeaponSheet } from "../Data/Weapons"
 import { DatabaseContext } from "../Database/Database"
 import useDBMeta from "../ReactHooks/useDBMeta"
-import usePromise from "../ReactHooks/usePromise"
 import { allElements, allSlotKeys, allWeaponTypeKeys } from "../Types/consts"
 import { objectKeyMap } from "../Util/Util"
 
@@ -22,27 +21,25 @@ export default function InventoryCard() {
   const { t } = useTranslation(["page_home", "ui"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
     const tally = objectKeyMap(allElements, () => 0)
-    if (characterSheets) chars.forEach(ck => {
-      const elementKey = characterSheets(ck, gender)!.elementKey
+    chars.forEach(ck => {
+      const elementKey = getCharSheet(ck, gender).elementKey
       tally[elementKey] = tally[elementKey] + 1
     })
     return { characterTally: tally, characterTotal: chars.length }
-  }, [database, characterSheets, gender])
+  }, [database, gender])
 
-  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
   const { weaponTally, weaponTotal } = useMemo(() => {
     const weapons = database.weapons.values
     const tally = objectKeyMap(allWeaponTypeKeys, () => 0)
-    if (weaponSheets) weapons.forEach(wp => {
-      const type = weaponSheets(wp.key).weaponType
+    weapons.forEach(wp => {
+      const type = getWeaponSheet(wp.key).weaponType
       tally[type] = tally[type] + 1
     })
     return { weaponTally: tally, weaponTotal: weapons.length }
-  }, [database, weaponSheets])
+  }, [database])
 
   const { artifactTally, artifactTotal } = useMemo(() => {
     const tally = objectKeyMap(allSlotKeys, () => 0)

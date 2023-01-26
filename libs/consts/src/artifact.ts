@@ -1,3 +1,5 @@
+import { Rarity } from "./common"
+
 export const allArtifactSets = [
   "Adventurer",
   "ArchaicPetra",
@@ -47,3 +49,11 @@ export type ArtifactSetKey = typeof allArtifactSets[number]
 
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
 export type SlotKey = typeof allSlotKeys[number]
+
+export const artMaxLevel: Record<Rarity, number> = {
+  1: 4,
+  2: 4,
+  3: 12,
+  4: 16,
+  5: 20,
+} as const
