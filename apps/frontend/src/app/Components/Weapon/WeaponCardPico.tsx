@@ -13,7 +13,7 @@ import WeaponNameTooltip from './WeaponNameTooltip';
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
-  const weaponSheet =  weapon?.key && getWeaponSheet(weapon.key)
+  const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
 
