@@ -57,7 +57,7 @@ export class Calculator<M = undefined> {
       switch (op) {
         case 'const': return meta(op, undefined, n.ex, [], [])
         case 'sum': case 'prod': case 'min': case 'max':
-        case 'sumfrac': case 'subscript': {
+        case 'sumfrac': {
           const x = n.x.map(n => internal(n)), ex = n.ex
           return meta(op, undefined, arithmetic[op](getV(x), ex), x, [], ex)
         }
@@ -67,6 +67,9 @@ export class Calculator<M = undefined> {
           x[branchID] = result
           return meta(op, undefined, result.val, x, br, n.ex)
         }
+        case 'subscript':
+          const index = internal(n.br[0]!)
+          return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
         case 'tag': return self._compute(n.x[0]!, cache.with(n.tag))
         case 'read': {
           const computed = self._preread(cache.with(n.tag)), accu = n.accu

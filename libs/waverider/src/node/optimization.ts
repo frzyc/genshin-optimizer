@@ -62,11 +62,11 @@ export function constantFold(n: AnyTagFree[]): AnyTagFree[] {
     const { op } = n
     switch (op) {
       case 'const': case 'read': return n
-      case 'sum': case 'prod': case 'min': case 'max': case 'sumfrac': case 'subscript': {
+      case 'sum': case 'prod': case 'min': case 'max': case 'sumfrac': {
         const x = n.x.map(map) as NumTagFree[]
         if (x.every(x => x.op === 'const'))
           return constant(arithmetic[op](x.map(x => (x as Const<number>).ex), n.ex))
-        return { ...n, x, br: [] }
+        return { ...n, x }
       }
       case 'thres': case 'match': case 'lookup': {
         // We don't eagerly fold `x`. If all `br` can be folded,
@@ -78,6 +78,12 @@ export function constantFold(n: AnyTagFree[]): AnyTagFree[] {
           return map(n.x[branchID]!)
         }
         return { ...n, x: x.map(map), br } as AnyTagFree
+      }
+      case 'subscript': {
+        const index = map(n.br[0]!) as NumTagFree
+        if (index.op === 'const')
+          return constant(n.ex[index.ex]!)
+        return { ...n, br: [index] }
       }
       default: assertUnreachable(op)
     }
@@ -121,8 +127,8 @@ export function transform<I extends OP, O extends OP>(n: AnyNode<I>[], map: (n: 
     let result = map(n, internal)
     if (result.op === n.op &&
       result.ex === n.ex &&
-      result.x.every((x, i) => n.x[i] === x) &&
-      result.br.every((br, i) => n.br[i] === br)
+      (result.x === n.x || result.x.length === n.x.length && result.x.every((x, i) => n.x[i] === x)) &&
+      (result.br === n.br || result.br.length === n.br.length && result.br.every((br, i) => n.br[i] === br))
     )
       result = n as AnyNode<O>
 

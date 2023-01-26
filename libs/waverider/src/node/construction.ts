@@ -8,6 +8,7 @@ type Val = AnyNode | _value
 
 export function constant(val: number): Const<number>
 export function constant(val: string): Const<string>
+export function constant(val: _value): Const<_value>
 export function constant(val: _value): Const<_value> {
   return { op: 'const', x: [], br: [], ex: val }
 }
@@ -91,8 +92,10 @@ export function lookup(index: StrNode, table: Record<string, Val>, defaultV?: Va
   }
 }
 /** table[index] */
-export function subscript(index: NumNode, table: number[]): Subscript {
-  return { op: 'subscript', ex: table, x: [toV(index)], br: [] }
+export function subscript(index: NumNode, table: number[]): Subscript<number>
+export function subscript(index: NumNode, table: string[]): Subscript<string>
+export function subscript(index: NumNode, table: number[] | string[]): Subscript<number | string> {
+  return { op: 'subscript', ex: table, x: [], br: [toV(index)] }
 }
 
 // Tagging

@@ -27,8 +27,8 @@ export interface Max<PermitOP extends OP = OP> extends Base<'max' & PermitOP, Nu
 /** x0 / ( x0 + x1 ) */
 export interface SumFrac<PermitOP extends OP = OP> extends Base<'sumfrac' & PermitOP, NumNode<PermitOP>> { }
 /** ex[x0] */
-export interface Subscript<PermitOP extends OP = OP> extends Base<'subscript' & PermitOP, NumNode<PermitOP>> {
-  ex: number[]
+export interface Subscript<Type extends number | string, PermitOP extends OP = OP> extends Base<'subscript' & PermitOP, never, NumNode<PermitOP>> {
+  ex: Type[]
 }
 
 // Branching
@@ -59,11 +59,11 @@ export interface ReRead {
 }
 
 export type NumNode<PermitOP extends OP = OP> = Const<number> | Sum<PermitOP> | Prod<PermitOP> | Max<PermitOP> | Min<PermitOP> | SumFrac<PermitOP> |
-  Threshold<NumNode<PermitOP>, PermitOP> | Match<NumNode<PermitOP>, PermitOP> | Lookup<NumNode<PermitOP>, PermitOP> | Subscript<PermitOP> |
+  Threshold<NumNode<PermitOP>, PermitOP> | Match<NumNode<PermitOP>, PermitOP> | Lookup<NumNode<PermitOP>, PermitOP> | Subscript<number, PermitOP> |
   TagOverride<NumNode<PermitOP>, PermitOP> | Read
 export type StrNode<PermitOP extends OP = OP> = Const<string> |
-  Threshold<StrNode<PermitOP>, PermitOP> | Match<StrNode<PermitOP>, PermitOP> | Lookup<StrNode<PermitOP>, PermitOP> |
+  Threshold<StrNode<PermitOP>, PermitOP> | Match<StrNode<PermitOP>, PermitOP> | Lookup<StrNode<PermitOP>, PermitOP> | Subscript<string, PermitOP> |
   TagOverride<StrNode<PermitOP>, PermitOP> | Read
 export type AnyNode<PermitOP extends OP = OP> = Const<number | string> | Sum<PermitOP> | Prod<PermitOP> | Max<PermitOP> | Min<PermitOP> | SumFrac<PermitOP> |
-  Threshold<AnyNode<PermitOP>, PermitOP> | Match<AnyNode<PermitOP>, PermitOP> | Lookup<AnyNode<PermitOP>, PermitOP> | Subscript<PermitOP> |
+  Threshold<AnyNode<PermitOP>, PermitOP> | Match<AnyNode<PermitOP>, PermitOP> | Lookup<AnyNode<PermitOP>, PermitOP> | Subscript<number | string, PermitOP> |
   TagOverride<AnyNode<PermitOP>, PermitOP> | Read
