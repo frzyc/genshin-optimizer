@@ -1,6 +1,6 @@
-import { AnyNode, Calculator, compileTagMapValues, constant, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from "@genshin-optimizer/waverider";
-import { keys, values } from "./data";
-import { Data, Preset, read, reader, Tag } from "./data/util";
+import { AnyNode, Calculator, compileTagMapValues, constant, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from '@genshin-optimizer/waverider'
+import { keys, values } from './data'
+import { Data, Preset, read, reader, Tag } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 
@@ -64,7 +64,7 @@ describe('Genshin Database', () => {
         lvl.addNode(constant(33)),
         ascension.addNode(constant(1)),
         constellation.addNode(constant(3)),
-        a1AfterSkill.addNode(constant("off")),
+        a1AfterSkill.addNode(constant('off')),
       )
     }
     {
@@ -140,7 +140,7 @@ function dependencyString(tag: Tag, calc: Calculator) {
   return str
 }
 function tagString(tag: Tag): string {
-  return `${Object.entries(tag).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(" ")}`
+  return `${Object.entries(tag).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(' ')}`
 }
 
 function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], reread: Tag[] }[] {
@@ -152,7 +152,7 @@ function listDependencies(tag: Tag, calc: Calculator): { tag: Tag, read: Tag[], 
     const tag = cache.tag, depth = openDepth.refExact(tagKeys.get(tag))
     if (depth[0] > 0) {
       console.log(stack.slice(depth[0] - 1))
-      throw new Error("Cyclical dependencies found")
+      throw new Error('Cyclical dependencies found')
     } else if (depth[0] == 0)
       return // Already visited
     depth[0] = stack.push(tag)

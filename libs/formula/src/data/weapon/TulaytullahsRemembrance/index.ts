@@ -1,6 +1,6 @@
-import { min, prod, subscript, sum } from "@genshin-optimizer/waverider"
-import { Data, percent, read, Weapon } from "../../util"
-import { entriesForWeapon } from "../util"
+import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
+import { Data, percent, read, Weapon } from '../../util'
+import { entriesForWeapon } from '../util'
 import data_gen from './data.gen.json'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]

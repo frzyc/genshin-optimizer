@@ -1,6 +1,6 @@
-import { AnyNode, CompiledTagMapValues, compileTagMapValues, constant, RawTagMapEntries, ReRead } from "@genshin-optimizer/waverider";
-import { keys, values } from "./data.gen.json";
-import { Calculator } from "./calculator"
+import { AnyNode, CompiledTagMapValues, compileTagMapValues, constant, RawTagMapEntries, ReRead } from '@genshin-optimizer/waverider'
+import { keys, values } from './data.gen.json'
+import { Calculator } from './calculator'
 
 export function genshinCalculatorWithValues(extras: RawTagMapEntries<number>) {
   return genshinCalculatorWithEntries(extras.map(({ tag, value }) =>

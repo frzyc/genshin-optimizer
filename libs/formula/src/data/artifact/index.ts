@@ -1,4 +1,4 @@
-import { Data } from "../util"
+import { Data } from '../util'
 
 const data: Data = [
 ]

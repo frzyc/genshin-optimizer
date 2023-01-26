@@ -1,6 +1,6 @@
-import { cmpEq, cmpGE, max, min, prod, sum } from "@genshin-optimizer/waverider"
-import { Character, Data, Element, percent, read } from "../../util"
-import { dmgNode, entriesForChar } from "../util"
+import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
+import { Character, Data, Element, percent, read } from '../../util'
+import { dmgNode, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -74,7 +74,7 @@ export const dm = {
   }
 } as const
 
-const name: Character = "Nilou", ele: Element = "hydro"
+const name: Character = 'Nilou', ele: Element = 'hydro'
 const {
   input: {
     team, self: { final, char: { ascension, constellation, skill, burst } }
@@ -87,8 +87,8 @@ const {
 } = read(name)
 
 const onlyDendroHydroTeam = cmpGE(team.dendro.team.count, 1, cmpEq(team.team.eleCount, 2, 1))
-const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, "on", 1)))
-const a1AfterSkillAndHit_eleMas = cmpEq(isGoldenChaliceBountyActive, 1, cmpEq(a1AfterHit, "on", dm.passive1.eleMas))
+const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1)))
+const a1AfterSkillAndHit_eleMas = cmpEq(isGoldenChaliceBountyActive, 1, cmpEq(a1AfterHit, 'on', dm.passive1.eleMas))
 
 const bountifulBloom_dmg_ = cmpGE(ascension, 4, cmpEq(isGoldenChaliceBountyActive, 1,
   min(
@@ -100,16 +100,16 @@ const bountifulBloom_dmg_ = cmpGE(ascension, 4, cmpEq(isGoldenChaliceBountyActiv
 const c1_moon_dmg_ = cmpGE(constellation, 1, percent(dm.constellation1.moon_dmg_))
 const c2_hydro_enemyRes_ = cmpGE(constellation, 2,
   cmpEq(isGoldenChaliceBountyActive, 1,
-    cmpEq(c2Hydro, "hydro", percent(dm.constellation2.hydro_enemyRes_))
+    cmpEq(c2Hydro, 'hydro', percent(dm.constellation2.hydro_enemyRes_))
   )
 )
 const c2_dendro_enemyRes_ = cmpGE(constellation, 2,
   cmpEq(isGoldenChaliceBountyActive, 1,
-    cmpEq(c2Dendro, "dendro", percent(dm.constellation2.dendro_enemyRes_))
+    cmpEq(c2Dendro, 'dendro', percent(dm.constellation2.dendro_enemyRes_))
   )
 )
 const c4_burst_dmg_ = cmpGE(constellation, 4,
-  cmpEq(c4AfterPirHit, "on", percent(dm.constellation4.burst_dmg_)))
+  cmpEq(c4AfterPirHit, 'on', percent(dm.constellation4.burst_dmg_)))
 const c6_critRate_ = cmpGE(constellation, 6,
   min(
     prod(percent(dm.constellation6.critRate_), final.hp, 1 / 1000),
@@ -139,9 +139,9 @@ const data: Data = [
   enemyDebuff.dendro.char.res.addNode(c2_dendro_enemyRes_),
 
   // DMG Formulas
-  ...dm.normal.hitArr.map((arr, i) => dmgEntry(`normal${i}`).addNode(dmgNode("atk", arr, "normal"))),
+  ...dm.normal.hitArr.map((arr, i) => dmgEntry(`normal${i}`).addNode(dmgNode('atk', arr, 'normal'))),
   ...([1, 2] as const).map(i => dmgEntry(`charged${i}`).addNode(dmgNode('atk', dm.charged[`hit${i}`], 'charged'))),
-  ...Object.entries(dm.plunging).map(([k, v]) => dmgEntry(`plunging_${k}`).addNode(dmgNode("atk", v, "plunging"))),
+  ...Object.entries(dm.plunging).map(([k, v]) => dmgEntry(`plunging_${k}`).addNode(dmgNode('atk', v, 'plunging'))),
   ...(['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).map(k =>
     dmgEntry(`skill${k}`).addNode(dmgNode('hp', dm.skill[`${k}Dmg`], 'skill'))),
   ...(['skill', 'aeon'] as const).map(k =>

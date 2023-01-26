@@ -1,6 +1,6 @@
-import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from "@genshin-optimizer/waverider"
-import { Character, Data, Element, percent, read } from "../../util"
-import { customDmgNode, dmgNode, entriesForChar } from "../util"
+import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
+import { Character, Data, Element, percent, read } from '../../util'
+import { customDmgNode, dmgNode, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -88,7 +88,7 @@ const {
 const count = team.team.count
 
 const pyroLevel = sum(count.pyro, cmpGE(constellation, 1, 1))
-const burst_karma_dmg_ = cmpEq(partyInBurst, "on", percent(cmpGE(pyroLevel, 1,
+const burst_karma_dmg_ = cmpEq(partyInBurst, 'on', percent(cmpGE(pyroLevel, 1,
   cmpEq(pyroLevel, 1,
     subscript(burst, dm.burst.dmg_1),
     subscript(burst, dm.burst.dmg_2)
@@ -96,7 +96,7 @@ const burst_karma_dmg_ = cmpEq(partyInBurst, "on", percent(cmpGE(pyroLevel, 1,
 )))
 
 const electroLevel = sum(count.electro, cmpGE(constellation, 1, 1))
-const burst_skillIntervalDec = cmpEq(partyInBurst, "on", percent(cmpGE(electroLevel, 1,
+const burst_skillIntervalDec = cmpEq(partyInBurst, 'on', percent(cmpGE(electroLevel, 1,
   cmpEq(electroLevel, 1,
     subscript(burst, dm.burst.intervalDec_1),
     subscript(burst, dm.burst.intervalDec_2)
@@ -104,7 +104,7 @@ const burst_skillIntervalDec = cmpEq(partyInBurst, "on", percent(cmpGE(electroLe
 )))
 
 const hydroLevel = sum(count.hydro, cmpGE(constellation, 1, 1))
-const burst_durationInc = cmpEq(partyInBurst, "on", percent(cmpGE(hydroLevel, 1,
+const burst_durationInc = cmpEq(partyInBurst, 'on', percent(cmpGE(hydroLevel, 1,
   cmpEq(hydroLevel, 1,
     subscript(burst, dm.burst.durationInc1),
     subscript(burst, dm.burst.durationInc2)
@@ -112,9 +112,9 @@ const burst_durationInc = cmpEq(partyInBurst, "on", percent(cmpGE(hydroLevel, 1,
 )))
 
 const a1InBurst_eleMas = cmpGE(ascension, 1,
-  cmpEq(a1ActiveInBurst, "on",
+  cmpEq(a1ActiveInBurst, 'on',
     // Either party is in burst, or this is a teammate
-    cmpGE(sum(cmpEq(partyInBurst, "on", 1), cmpNE(buffTarget.common.isActive, 1, 1)), 1,
+    cmpGE(sum(cmpEq(partyInBurst, 'on', 1), cmpNE(buffTarget.common.isActive, 1, 1)), 1,
       min(prod(percent(dm.passive1.eleMas_), team.premod.eleMas.max), dm.passive1.maxEleMas)
     )
   )
@@ -137,27 +137,27 @@ const data: Data = [
 
   // activeCharBuff.final.eleMas.addNode(a1InBurst_eleMas),
 
-  c2_critRate_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critRate_)))),
+  c2_critRate_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, 'on', percent(dm.constellation2.critRate_)))),
   teamBuff.premod.critRate_.burning.reread(c2_critRate_),
   teamBuff.premod.critRate_.bloom.reread(c2_critRate_),
   teamBuff.premod.critRate_.hyperbloom.reread(c2_critRate_),
   teamBuff.premod.critRate_.burgeon.reread(c2_critRate_),
 
-  c2_critDMG_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, "on", percent(dm.constellation2.critDMG_)))),
+  c2_critDMG_.addNode(cmpGE(constellation, 2, cmpEq(c2Bloom, 'on', percent(dm.constellation2.critDMG_)))),
   teamBuff.premod.critDMG_.burning.reread(c2_critDMG_),
   teamBuff.premod.critDMG_.bloom.reread(c2_critDMG_),
   teamBuff.premod.critDMG_.hyperbloom.reread(c2_critDMG_),
   teamBuff.premod.critDMG_.burgeon.reread(c2_critDMG_),
 
-  c2qsa_defRed_.addNode(cmpGE(constellation, 2, cmpEq(c2QSA, "on", percent(dm.constellation2.defDec_)))),
+  c2qsa_defRed_.addNode(cmpGE(constellation, 2, cmpEq(c2QSA, 'on', percent(dm.constellation2.defDec_)))),
   enemyDebuff.enemy.defRed_.reread(c2qsa_defRed_),
 
   // DMG Formulas
   ...dm.normal.hitArr.map((arr, i) =>
-    dmgEntry(`normal${i}`).addNode(dmgNode("atk", arr, "normal"))),
+    dmgEntry(`normal${i}`).addNode(dmgNode('atk', arr, 'normal'))),
   dmgEntry(`charged`).addNode(dmgNode('atk', dm.charged.dmg, 'charged')),
   ...Object.entries(dm.plunging).map(([k, v]) =>
-    dmgEntry(`plunging_${k}`).addNode(dmgNode("atk", v, "plunging"))),
+    dmgEntry(`plunging_${k}`).addNode(dmgNode('atk', v, 'plunging'))),
   ...(['press', 'hold'] as const).map(k =>
     dmgEntry(`skill_${k}`).addNode(dmgNode('atk', dm.skill[`${k}Dmg`], 'skill'))),
   dmgEntry('karmaDmg').addNode(customDmgNode(
@@ -165,7 +165,7 @@ const data: Data = [
       prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
       prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas),
     ),
-    "skill"
+    'skill'
   )),
   dmgEntry('karmaDmg').premod.dmg_.addNode(sum(a4Karma_dmg_, burst_karma_dmg_)),
   dmgEntry('karmaDmg').premod.critRate_.addNode(a4Karma_critRate_),

@@ -1,5 +1,5 @@
-import { max, min, prod } from "@genshin-optimizer/waverider"
-import { Data, percent, presets, reader } from "../util"
+import { max, min, prod } from '@genshin-optimizer/waverider'
+import { Data, percent, presets, reader } from '../util'
 import dmg from './dmg'
 import team from './team'
 

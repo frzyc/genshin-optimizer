@@ -1,5 +1,5 @@
-import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider';
-import { read, Stat, Weapon } from '../util';
+import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
+import { read, Stat, Weapon } from '../util'
 
 export function entriesForWeapon(
   name: Weapon,

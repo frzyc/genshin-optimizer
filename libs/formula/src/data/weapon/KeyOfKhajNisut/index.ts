@@ -1,6 +1,6 @@
-import { cmpEq, prod, subscript } from "@genshin-optimizer/waverider"
-import { Data, percent, read, Weapon } from "../../util"
-import { entriesForWeapon } from "../util"
+import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
+import { Data, percent, read, Weapon } from '../../util'
+import { entriesForWeapon } from '../util'
 import data_gen from './data.gen.json'
 
 const selfEmSrc = [NaN, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]

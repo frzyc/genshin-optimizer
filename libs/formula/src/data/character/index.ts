@@ -1,5 +1,5 @@
-import { max, min, subscript, sum } from "@genshin-optimizer/waverider"
-import { Data, elements, reader } from "../util"
+import { max, min, subscript, sum } from '@genshin-optimizer/waverider'
+import { Data, elements, reader } from '../util'
 import charCurves from './expCurve.gen.json'
 import Nahida from './Nahida'
 import Nilou from './Nilou'

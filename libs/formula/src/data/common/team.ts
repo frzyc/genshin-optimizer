@@ -1,5 +1,5 @@
-import { min, sum, tag } from "@genshin-optimizer/waverider"
-import { Data, elements, reader } from "../util"
+import { min, sum, tag } from '@genshin-optimizer/waverider'
+import { Data, elements, reader } from '../util'
 
 const team = reader.withTag({ et: 'self', src: 'team' })
 

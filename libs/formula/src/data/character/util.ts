@@ -1,5 +1,5 @@
-import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider';
-import { Character, Data, Element, moves, read, reader, Region, regions, Stat } from '../util';
+import { AnyNode, constant, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
+import { Character, Data, Element, moves, read, reader, Region, regions, Stat } from '../util'
 
 export function dmgNode(base: Stat, levelScaling: number[], move: typeof moves[number]): AnyNode {
   // TODO

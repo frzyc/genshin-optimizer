@@ -1,5 +1,5 @@
-import { subscript } from "@genshin-optimizer/waverider"
-import { Data, reader } from "../util"
+import { subscript } from '@genshin-optimizer/waverider'
+import { Data, reader } from '../util'
 import weaponCurves from './expCurve.gen.json'
 
 import KeyOfKhajNisut from './KeyOfKhajNisut'

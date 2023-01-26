@@ -22,7 +22,7 @@ export const dsts = presets
 
 export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const
 export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemental'] as const
-export const regions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
+export const regions = ['mondstadt', 'liyue', 'inazuma', 'sumeru', 'fontaine', 'natlan', 'snezhnaya', 'khaenriah'] as const
 
 export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom'] as const
 export const amplifyingReactions = ['vaporize', 'melt'] as const

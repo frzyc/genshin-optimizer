@@ -1,5 +1,5 @@
-import { cmpGE, lookup, prod, sum, sumfrac } from "@genshin-optimizer/waverider"
-import { Data, elements, percent, read, todo } from "../util"
+import { cmpGE, lookup, prod, sum, sumfrac } from '@genshin-optimizer/waverider'
+import { Data, elements, percent, read, todo } from '../util'
 import { ampMulti } from './reaction'
 
 const preRes = todo

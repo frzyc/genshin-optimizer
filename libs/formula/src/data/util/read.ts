@@ -1,5 +1,5 @@
-import { Read as Base, reread, ReRead } from "@genshin-optimizer/waverider";
-import { amplifyingReactions, catalyzeReactions, CharacterStat, CommonQuery, DmgQuery, dsts, elements, EnemyStat, entryTypes, fixedQueries, moves, presets, queryTypes, regions, srcs, Stat, summableQueries, TeamStat, transformativeReactions, WeaponStat } from "./listing";
+import { Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
+import { amplifyingReactions, catalyzeReactions, CharacterStat, CommonQuery, DmgQuery, dsts, elements, EnemyStat, entryTypes, fixedQueries, moves, presets, queryTypes, regions, srcs, Stat, summableQueries, TeamStat, transformativeReactions, WeaponStat } from './listing'
 
 export const fixedTags = {
   preset: presets, et: entryTypes,
