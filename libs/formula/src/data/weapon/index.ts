@@ -1,16 +1,11 @@
-import { subscript } from '@genshin-optimizer/waverider'
-import { Data, reader } from '../util'
-import weaponCurves from './expCurve.gen.json'
-
+import { Data } from '../util'
+import CalamityQueller from './CalamityQueller'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 
 const data: Data = [
+  ...CalamityQueller,
   ...KeyOfKhajNisut,
   ...TulaytullahsRemembrance,
-
-  // Weapon curves
-  ...Object.entries(weaponCurves).map(([k, v]) =>
-    reader.custom[k].addNode(subscript(reader.weapon.lvl, v))),
 ]
 export default data

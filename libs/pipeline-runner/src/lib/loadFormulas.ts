@@ -38,7 +38,7 @@ export default function loadFormulas() {
 
   //dump data file to respective character directory.
   Object.entries(characterDataDump).forEach(([characterKey, data]) =>
-    dumpFile(`${FORMULA_PATH}/character/${characterKey}/data.gen.json`, data))
+    dumpFile(`${FORMULA_PATH}/char/${characterKey}/data.gen.json`, data))
 
   const characterSkillParamDump = {} as Record<CharacterKey, CharacterData>
   function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
@@ -96,7 +96,7 @@ export default function loadFormulas() {
   })
   //dump data file to respective character directory.
   Object.entries(characterSkillParamDump).forEach(([characterKey, data]) =>
-    dumpFile(`${FORMULA_PATH}/character/${characterKey}/skillParam.gen.json`, data))
+    dumpFile(`${FORMULA_PATH}/char/${characterKey}/skillParam.gen.json`, data))
 
   // TODO Update DM to export better structure so that we don't need to do this restructuring shenanigans
   const charExpCurve = Object.fromEntries(Object.entries(avatarCurveExcelConfigData).map(([k, v]) => {
@@ -104,7 +104,7 @@ export default function loadFormulas() {
     Object.entries(v).forEach(([lvl, v]) => result[+lvl] = v)
     return [k, result]
   }))
-  dumpFile(`${FORMULA_PATH}/character/expCurve.gen.json`, charExpCurve)
+  dumpFile(`${FORMULA_PATH}/char/expCurve.gen.json`, charExpCurve)
 
   const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).map(([weaponid, weaponData]) => {
     const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } = weaponData

@@ -1,6 +1,5 @@
-import { cmpGE, lookup, prod, sum, sumfrac } from '@genshin-optimizer/waverider'
-import { Data, elements, percent, read, todo } from '../util'
-import { ampMulti } from './reaction'
+import { cmpGE, lookup, prod, subscript, sum, sumfrac } from '@genshin-optimizer/waverider'
+import { Data, enemy, percent, priorityTable, self, todo } from '../util'
 
 const preRes = todo
 const res = cmpGE(preRes, percent(0.75),
@@ -11,41 +10,47 @@ const res = cmpGE(preRes, percent(0.75),
   )
 )
 
-const nonOverridableSelfInfusion = todo, teamInfusion = todo, overridableSelfInfusion = todo
-const move = todo, charEle = todo, hitEle = todo
+export const infusionPrio = {
+  overridable: { hydro: 4, pyro: 5 },
+  team: { hydro: 2, pyro: 3 },
+  nonOverridable: { hydro: 0, pyro: 1 },
+}
+const infusionTable = priorityTable(infusionPrio)
+
 const baseDmg = todo
 const baseDmgInc = todo, dmgBonus = todo
-const cataAddi = todo
-const enemyDef = todo, lvl = todo
+const enemyDef = todo
 const enemyDefRed = todo, enemyDefIgn = todo
 
-const {
-  input: { enemy, self: { final: { critDMG_ }, common: { infusion, weaponType }, dmg } },
-  output: { selfBuff }
-} = read('agg')
+const selfBuff = self
 
 const data: Data = [
-  hitEle.addNode(
-    lookup(move, { skill: charEle, burst: charEle },
-      lookup(weaponType, { bow: 'physical', catalyst: charEle },
-        infusion))),
   selfBuff.dmg.outDmg.addNode(prod(
-    ampMulti,
+    self.reaction.ampMulti,
     sum(baseDmg, baseDmgInc),
     sum(percent(1), dmgBonus),
   )),
-  selfBuff.dmg.inDmg.addNode(prod(
-    enemy.lvl,
-    lookup(hitEle, Object.fromEntries(elements.map(ele =>
-      [ele, enemy.res[ele]])))
-  )),
   enemyDef.addNode(sumfrac(
-    sum(lvl, 100),
+    sum(self.char.lvl, 100),
     prod(
-      sum(enemy.lvl, 100),
+      sum(enemy.common.lvl, 100),
       sum(percent(1), prod(-1, enemyDefRed)), // TODO: Cap
       sum(percent(1), prod(-1, enemyDefIgn)), // TODO: Cap
     )
   )),
+  selfBuff.preDmg.critMulti.addNode(lookup(self.common.critMode, {
+    'crit': sum(1, self.common.cappedCritRate_),
+    'nonCrit': 1,
+    'avg': sum(1, prod(self.common.cappedCritRate_, self.final.critDMG_))
+  })),
+  // TODO: merge this with `common.critMulti`
+  selfBuff.trans.critMulti.addNode(lookup(self.common.critMode, {
+    'crit': sum(1, self.trans.cappedCritRate_),
+    'nonCrit': 1,
+    'avg': sum(1, prod(self.trans.cappedCritRate_, self.trans.critDMG_))
+  })),
+
+  selfBuff.reaction.infusion.addNode(subscript(self.reaction.infusionIndex.max, infusionTable)),
+  selfBuff.reaction.infusionIndex.addNode(0),
 ]
 export default data

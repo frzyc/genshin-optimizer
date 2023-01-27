@@ -1,6 +1,6 @@
 import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
-import { Character, Data, Element, percent, read } from '../../util'
-import { dmgNode, entriesForChar } from '../util'
+import { Character, Data, Element, percent, self, team } from '../../util'
+import { CharInfo, dmg, entriesForChar, write } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -74,19 +74,16 @@ export const dm = {
   }
 } as const
 
-const name: Character = 'Nilou', ele: Element = 'hydro'
-const {
-  input: {
-    team, self: { final, char: { ascension, constellation, skill, burst } }
-  },
-  custom: {
-    a1AfterSkill, a1AfterHit,
-    c2Hydro, c2Dendro, c4AfterPirHit
-  },
-  output: { selfBuff, activeCharBuff, teamBuff, enemyDebuff, dmgEntry }
-} = read(name)
 
-const onlyDendroHydroTeam = cmpGE(team.dendro.team.count, 1, cmpEq(team.team.eleCount, 2, 1))
+const info: CharInfo = { name: 'Nilou', ele: 'hydro', weaponType: 'sword', region: 'sumeru' }
+const { final, char: { ascension, constellation, skill, burst } } = self
+const {
+  // Conditional
+  custom: { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit },
+  output: { selfBuff, teamBuff, enemyDebuff }
+} = write(info.name)
+
+const onlyDendroHydroTeam = cmpGE(team.common.count.dendro, 1, cmpEq(team.common.eleCount, 2, 1))
 const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1)))
 const a1AfterSkillAndHit_eleMas = cmpEq(isGoldenChaliceBountyActive, 1, cmpEq(a1AfterHit, 'on', dm.passive1.eleMas))
 
@@ -124,28 +121,31 @@ const c6_critDMG_ = cmpGE(constellation, 6,
 )
 
 const data: Data = [
-  ...entriesForChar(name, ele, 'sumeru', data_gen),
+  ...entriesForChar(selfBuff, info, data_gen),
   skill.addNode(cmpGE(constellation, 3, 3)),
   burst.addNode(cmpGE(constellation, 5, 3)),
 
-  selfBuff.burst.premod.dmg_.addNode(c4_burst_dmg_),
+  selfBuff.premod.dmg_.burst.addNode(c4_burst_dmg_),
   selfBuff.premod.critRate_.addNode(c6_critRate_),
   selfBuff.premod.critDMG_.addNode(c6_critDMG_),
 
   teamBuff.premod.eleMas.addNode(a1AfterSkillAndHit_eleMas),
-  teamBuff.bloom.premod.dmg_.addNode(bountifulBloom_dmg_),
+  teamBuff.premod.dmg_.bloom.addNode(bountifulBloom_dmg_),
 
-  enemyDebuff.hydro.char.res.addNode(c2_hydro_enemyRes_),
-  enemyDebuff.dendro.char.res.addNode(c2_dendro_enemyRes_),
+  enemyDebuff.common.res.hydro.addNode(c2_hydro_enemyRes_),
+  enemyDebuff.common.res.dendro.addNode(c2_dendro_enemyRes_),
 
   // DMG Formulas
-  ...dm.normal.hitArr.map((arr, i) => dmgEntry(`normal${i}`).addNode(dmgNode('atk', arr, 'normal'))),
-  ...([1, 2] as const).map(i => dmgEntry(`charged${i}`).addNode(dmgNode('atk', dm.charged[`hit${i}`], 'charged'))),
-  ...Object.entries(dm.plunging).map(([k, v]) => dmgEntry(`plunging_${k}`).addNode(dmgNode('atk', v, 'plunging'))),
-  ...(['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).map(k =>
-    dmgEntry(`skill${k}`).addNode(dmgNode('hp', dm.skill[`${k}Dmg`], 'skill'))),
-  ...(['skill', 'aeon'] as const).map(k =>
-    dmgEntry(`burst${k}`).addNode(dmgNode('hp', dm.burst[`${k}Dmg`], 'burst'))),
-  dmgEntry('skillMoon').premod.dmg_.addNode(c1_moon_dmg_),
+  ...dm.normal.hitArr.flatMap((arr, i) =>
+    dmg(`normal${i}`, info, 'atk', arr, 'normal')),
+  ...([1, 2] as const).flatMap(i =>
+    dmg(`charged${i}`, info, 'atk', dm.charged[`hit${i}`], 'charged')),
+  ...Object.entries(dm.plunging).flatMap(([k, v]) =>
+    dmg(`plunging_${k}`, info, 'atk', v, 'plunging')),
+  ...(['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).flatMap(k =>
+    dmg(`skill${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill')),
+  ...(['skill', 'aeon'] as const).flatMap(k =>
+    dmg(`burst${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst')),
+  selfBuff.premod.dmg_.name('skillMoon').addNode(c1_moon_dmg_),
 ]
 export default data

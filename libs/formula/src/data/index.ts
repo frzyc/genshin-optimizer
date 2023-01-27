@@ -1,15 +1,16 @@
 import { compileTagMapKeys, compileTagMapValues } from '@genshin-optimizer/waverider'
 import artifact from './artifact'
-import character from './character'
+import character from './char'
 import common from './common'
-import { Data, fixedQueries, fixedTags, usedCustomTags, usedNames } from './util'
+import { Data, fixedTags, queries, queryTypes, usedNames } from './util'
 import weapon from './weapon'
 
 const data: Data = [...common, ...artifact, ...character, ...weapon]
 const tags = [
+  { category: 'qt', values: queryTypes },
+  { category: 'q', values: [...queries] },
+  undefined,
   ...Object.entries(fixedTags).map(([k, v]) => ({ category: k, values: v })),
-  { category: 'qt', values: [...Object.keys(fixedQueries), 'misc'] },
-  { category: 'q', values: [...usedCustomTags, ...Object.values(fixedQueries).flat()] },
   { category: 'name', values: [...usedNames] },
   { category: 'todo', values: ['TODO'] },
 ]
