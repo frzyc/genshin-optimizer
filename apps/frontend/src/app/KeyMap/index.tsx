@@ -1,9 +1,10 @@
-import StatIcon from "../Components/StatIcon";
+import { allElementsWithPhy, ElementKeyWithPhy } from "@genshin-optimizer/consts";
 import { Info } from "../Formula/type";
+import { iconInlineProps } from "../SVGIcons";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
-import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
 import elementalData from "./ElementalData";
 import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, crittableTransformativeReactions, CrittableTransformativeReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
+import StatIcon from "./StatIcon";
 
 const statMap = {
   hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
@@ -219,7 +220,7 @@ export default class KeyMap {
     info.name = this.get(key)
     info.unit = this.unit(key)
     info.variant = this.getVariant(key)
-    info.icon = StatIcon[allElementsWithPhy.find(e => key.startsWith(`${e}_`)) ?? key]
+    info.icon = <StatIcon statKey={key} iconProps={iconInlineProps}/>
     return info
   }
 }

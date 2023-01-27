@@ -1,6 +1,7 @@
+import { allRarities, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '@genshin-optimizer/consts';
 import KeyMap, { cacheValueString } from '../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { allRarities, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, RollColorKey, SlotKey } from '../../Types/consts';
+import { ArtifactRarity, RollColorKey } from '../../Types/consts';
 import { clampPercent, objectKeyMap } from '../../Util/Util';
 import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';

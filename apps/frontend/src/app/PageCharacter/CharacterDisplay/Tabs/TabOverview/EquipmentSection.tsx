@@ -3,7 +3,7 @@ import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typo
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
-import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
+import SlotIcon from '../../../../Components/Artifact/SlotIcon';
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle';
 import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -21,6 +21,7 @@ import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
 import useCharMeta from '../../../../ReactHooks/useCharMeta';
+import { iconInlineProps } from '../../../../SVGIcons';
 import { allSubstatKeys } from '../../../../Types/artifact';
 import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
@@ -88,9 +89,10 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
+  const { t } = useTranslation("artifact")
   return <CardLight sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
     <CardContent>
-      <Typography><SlotNameWithIcon slotKey={slotKey} /></Typography>
+      <Typography sx={{ display: "flex", gap: 1 }}><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /> {t<string>(`slotName.${slotKey}`)}</Typography>
     </CardContent>
     <Divider />
     <Box sx={{

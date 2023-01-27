@@ -1,3 +1,4 @@
+import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
 import { Add } from "@mui/icons-material"
 import { Box, Button, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
 import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
@@ -14,7 +15,6 @@ import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
 import WeaponEditor from "../../../../PageWeapon/WeaponEditor"
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
-import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "../../../../Types/consts"
 import { handleMultiSelect } from "../../../../Util/MultiSelect"
 import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../../../../Util/WeaponSort'

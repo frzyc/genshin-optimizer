@@ -1,7 +1,7 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { allSlotKeys, ArtifactSetKey, SlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
 import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
-import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
+import SlotIcon from "../../../../Components/Artifact/SlotIcon";
 import BootstrapTooltip from "../../../../Components/BootstrapTooltip";
 import CardDark from "../../../../Components/Card/CardDark";
 import CardLight from "../../../../Components/Card/CardLight";
@@ -19,13 +19,11 @@ import CustomNumberInput from "../../../../Components/CustomNumberInput";
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
 import DropdownButton from "../../../../Components/DropdownMenu/DropdownButton";
 import { FieldDisplayList, NodeFieldDisplay } from "../../../../Components/FieldDisplay";
-import FontAwesomeSvgIcon from "../../../../Components/FontAwesomeSvgIcon";
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import LevelSelect from "../../../../Components/LevelSelect";
 import RefinementDropdown from "../../../../Components/RefinementDropdown";
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup";
 import { StatColoredWithUnit, StatWithUnit } from "../../../../Components/StatDisplay";
-import StatIcon from "../../../../Components/StatIcon";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../../Context/DataContext";
 import { getArtSheet } from "../../../../Data/Artifacts";
@@ -38,11 +36,13 @@ import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
+import StatIcon from "../../../../KeyMap/StatIcon";
 import useBoolState from "../../../../ReactHooks/useBoolState";
 import useTeamData from "../../../../ReactHooks/useTeamData";
+import { iconInlineProps } from "../../../../SVGIcons";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
-import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType, WeaponTypeKey } from "../../../../Types/consts";
+import { ArtifactRarity, SetNum, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
 import { deepClone, objectMap } from "../../../../Util/Util";
 import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
@@ -288,10 +288,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
     }, [level, setSlot])
 
   return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
-    <FontAwesomeSvgIcon icon={slotIconSVG[slotKey]} />
+    <SlotIcon slotKey={slotKey} />
     <CardDark sx={{ height: "100%", minWidth: "5em", flexGrow: 1, display: "flex" }}>
       {keys.length === 1 ?
-        <Box p={1} justifyContent="center" alignItems="center" width="100%" display="flex" gap={1}>{StatIcon[keys[0]]}{KeyMap.getStr(keys[0])}</Box> :
+        <Box p={1} justifyContent="center" alignItems="center" width="100%" display="flex" gap={1}><StatIcon statKey={keys[0]} iconProps={iconInlineProps} /> {KeyMap.getStr(keys[0])}</Box> :
         <DropdownButton sx={{ px: 0 }} fullWidth title={<StatWithUnit statKey={statKey} />} color={KeyMap.getVariant(statKey) ?? "success"}>
           {keys.map(msk =>
             <MenuItem key={msk} disabled={statKey === msk} onClick={() => setSlot({ statKey: msk })}>
@@ -299,10 +299,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
             </MenuItem>)}
         </DropdownButton>}
     </CardDark>
-    <DropdownButton sx={{ px: 0 }} title={<span>{rarity} <FontAwesomeIcon icon={faStar} /></span>} >
+    <DropdownButton sx={{ px: 0 }} title={<Box sx={{ display: "flex", alignItems: "center" }}>{rarity} <StarRoundedIcon fontSize="inherit" /></Box>} >
       {[5, 4, 3].map(r =>
         <MenuItem key={r} disabled={rarity === r} onClick={() => setRarity(r as ArtifactRarity)}>
-          <span>{r} <FontAwesomeIcon icon={faStar} /></span>
+          <Box sx={{ display: "flex", alignItems: "center" }}>{r} <StarRoundedIcon fontSize="inherit" /></Box>
         </MenuItem>)}
     </DropdownButton>
     <CustomNumberInput startAdornment="+" value={level} color={Artifact.levelVariant(level)} onChange={l => l !== undefined && setSlot({ level: l })} sx={{ borderRadius: 1, pl: 1, my: 0, height: "100%" }} inputProps={{ sx: { pl: 0.5, width: "2em" }, max: 20, min: 0 }} />
@@ -417,7 +417,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
   return <Stack spacing={0.5}>
     <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
       <CardDark sx={{ p: 0.5, minWidth: "11em", flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
-        {StatIcon[statKey]}{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
+        <StatIcon statKey={statKey} iconProps={{ fontSize: "inherit" }} />{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
       </CardDark>
       <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top">
         <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>

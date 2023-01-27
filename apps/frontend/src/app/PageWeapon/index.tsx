@@ -1,3 +1,4 @@
+import { allRarities, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
 import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
@@ -11,7 +12,6 @@ import { getWeaponSheet } from '../Data/Weapons';
 import { DatabaseContext } from '../Database/Database';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import { allRarities, allWeaponTypeKeys, WeaponKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { catTotal } from '../Util/totalUtils';
 import { clamp } from '../Util/Util';

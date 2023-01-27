@@ -1,7 +1,7 @@
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { allElementsWithPhy, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
+import HelpIcon from '@mui/icons-material/Help';
 import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -16,16 +16,16 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
 import { StatColoredWithUnit } from '../Components/StatDisplay';
-import StatIcon from '../Components/StatIcon';
 import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
 import { DatabaseContext } from '../Database/Database';
 import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
 import KeyMap, { cacheValueString } from '../KeyMap';
+import StatIcon from '../KeyMap/StatIcon';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
-import { allElementsWithPhy, ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
+import { ArtifactRarity } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -292,7 +292,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
             {/* main stat */}
             <Box component="div" display="flex">
-              <DropdownButton startIcon={artifact?.mainStatKey ? StatIcon[artifact.mainStatKey] : undefined}
+              <DropdownButton startIcon={artifact?.mainStatKey ? <StatIcon statKey={artifact.mainStatKey} /> : undefined}
                 title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
@@ -325,7 +325,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                       </label>
                     </Grid>
                     <Grid item>
-                      <Button color="info" sx={{ px: 2, minWidth: 0 }} onClick={() => setModalShow(true)}><Typography><FontAwesomeIcon icon={faQuestionCircle} /></Typography></Button>
+                      <Button color="info" sx={{ px: 2, minWidth: 0 }} onClick={() => setModalShow(true)}><HelpIcon /></Button>
                     </Grid>
                   </Grid>
                   {image && <Box display="flex" justifyContent="center">

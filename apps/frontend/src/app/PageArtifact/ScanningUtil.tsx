@@ -1,11 +1,11 @@
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
+import { allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '@genshin-optimizer/consts';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
 import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
 import KeyMap, { cacheValueString } from '../KeyMap';
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
-import { allArtifactRarities, ArtifactRarity, Rarity } from '../Types/consts';
+import { allArtifactRarities, ArtifactRarity } from '../Types/consts';
 import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
 import { BorrowManager } from './BorrowManager';
 

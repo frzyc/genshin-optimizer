@@ -1,5 +1,5 @@
+import { allRarities, Rarity } from "@genshin-optimizer/consts";
 import { Box, Chip, ToggleButton } from "@mui/material";
-import { allRarities, Rarity } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import SolidToggleButtonGroup, { SolidToggleButtonGroupProps } from "../SolidToggleButtonGroup";
 import { StarsDisplay } from "../StarDisplay";

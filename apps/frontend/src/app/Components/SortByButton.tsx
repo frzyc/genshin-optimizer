@@ -1,6 +1,5 @@
-import { faSortAmountDownAlt, faSortAmountUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, ButtonGroup, ButtonGroupProps, MenuItem, Box } from "@mui/material";
+import SortIcon from '@mui/icons-material/Sort';
+import { Box, Button, ButtonGroup, ButtonGroupProps, MenuItem } from "@mui/material";
 import { Trans, useTranslation } from "react-i18next";
 import DropdownButton from "./DropdownMenu/DropdownButton";
 
@@ -14,13 +13,13 @@ export default function SortByButton<Key extends string>({ sortKeys, value, onCh
 }) {
   const { t } = useTranslation("ui")
   return <Box display="flex" alignItems="center" gap={1}>
-    <Trans t={t} i18nKey={t("sortBy") as any}>Sort by: </Trans>
+    <Trans t={t} i18nKey="sortBy">Sort by: </Trans>
     <ButtonGroup {...props} >
-      <DropdownButton title={<Trans t={t} i18nKey={t(`sortMap.${value}`) as any}>{{ value: t(`sortMap.${value}`) }}</Trans>}>
+      <DropdownButton title={<Trans t={t} i18nKey={`sortMap.${value}`}>{{ value: t(`sortMap.${value}`) }}</Trans>}>
         {sortKeys.map(key =>
-          <MenuItem key={key} selected={value === key} disabled={value === key} onClick={() => onChange(key)}>{t(`sortMap.${key}`) as any}</MenuItem>)}
+          <MenuItem key={key} selected={value === key} disabled={value === key} onClick={() => onChange(key)}>{t(`sortMap.${key}`)}</MenuItem>)}
       </DropdownButton>
-      <Button onClick={() => onChangeAsc(!ascending)} startIcon={<FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />}>
+      <Button onClick={() => onChangeAsc(!ascending)} startIcon={<SortIcon sx={{ transform: ascending ? "scale(1, -1)" : "scale(1)" }} />}>
         {ascending ? <Trans t={t} i18nKey="ascending" >Ascending</Trans> : <Trans t={t} i18nKey="descending" >Descending</Trans>}
       </Button>
     </ButtonGroup>

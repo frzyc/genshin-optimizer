@@ -11,7 +11,6 @@ import StatDisplayComponent from "../../../../Components/Character/StatDisplayCo
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import SqBadge from "../../../../Components/SqBadge";
 import { StarsDisplay } from "../../../../Components/StarDisplay";
-import StatIcon from "../../../../Components/StatIcon";
 import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext } from "../../../../Context/DataContext";
@@ -19,6 +18,7 @@ import { TalentSheetElementKey } from "../../../../Data/Characters/ICharacterShe
 import { getLevelString } from "../../../../Data/LevelData";
 import { DatabaseContext } from "../../../../Database/Database";
 import { uiInput as input } from "../../../../Formula";
+import { ElementIcon } from "../../../../KeyMap/StatIcon";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import useDBMeta from "../../../../ReactHooks/useDBMeta";
@@ -94,7 +94,7 @@ function CharacterProfileCard() {
         <Box sx={{ position: "absolute", left: "50%", bottom: "5%", transform: "translate(-50%, -50%)", opacity: 0.85, width: "100%", display: "flex", justifyContent: "center", px: 1 }}>
           <Chip color={charEle} sx={{ height: "auto" }}
             label={<Typography variant="h6" sx={{ display: "flex", gap: 1, alignItems: "center" }} >
-              {StatIcon[charEle]}
+              <ElementIcon ele={charEle} />
               <Box sx={{ whiteSpace: "normal", textAlign: "center" }}>{characterSheet.name}</Box>
               <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} />
             </Typography>} />

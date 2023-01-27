@@ -1,3 +1,4 @@
+import { allElementsWithPhy, ElementKeyWithPhy } from "@genshin-optimizer/consts";
 import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material";
 import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
@@ -7,11 +8,11 @@ import { DataContext } from "../Context/DataContext";
 import { uiInput as input } from "../Formula";
 import { nodeVStr } from "../Formula/uiData";
 import KeyMap from '../KeyMap';
-import { allElementsWithPhy, ElementKeyWithPhy } from "../Types/consts";
+import { ElementIcon } from "../KeyMap/StatIcon";
+import { iconInlineProps } from "../SVGIcons";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import ExpandButton from "./ExpandButton";
-import StatIcon from "./StatIcon";
 import StatInput from "./StatInput";
 
 export function EnemyExpandCard() {
@@ -57,8 +58,9 @@ export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
   const { data } = useContext(DataContext)
   const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
-  const content = immune ? <span >{StatIcon[element]} &#8734;</span> :
-    <span >{StatIcon[element]} <strong>{nodeVStr(node)}</strong></span>
+  const icon = <ElementIcon ele={element} iconProps={iconInlineProps} />
+  const content = immune ? <span >{icon} &#8734;</span> :
+    <span>{icon} <strong>{nodeVStr(node)}</strong></span>
   return <ColorText color={element}>{content}</ColorText>
 }
 

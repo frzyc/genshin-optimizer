@@ -1,3 +1,4 @@
+import { Rarity, WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { weaponAsset } from '@genshin-optimizer/g-assets';
 import type { WeaponData } from '@genshin-optimizer/pipeline';
 import { displayDataMap } from ".";
@@ -6,7 +7,6 @@ import SqBadge from '../../Components/SqBadge';
 import { Translate } from '../../Components/Translate';
 import { input } from '../../Formula';
 import { Data } from '../../Formula/type';
-import { Rarity, WeaponKey, WeaponTypeKey } from '../../Types/consts';
 import { IDocumentHeader } from '../../Types/sheet';
 import { ICachedWeapon } from '../../Types/weapon';
 import { getLevelString } from '../LevelData';
