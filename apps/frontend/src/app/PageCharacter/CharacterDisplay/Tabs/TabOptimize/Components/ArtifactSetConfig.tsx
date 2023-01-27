@@ -12,7 +12,7 @@ import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
 import ColorText from '../../../../../Components/ColoredText';
-import InfoTooltip from '../../../../../Components/InfoTooltip';
+import InfoTooltip, { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { Translate } from '../../../../../Components/Translate';
@@ -94,11 +94,11 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <strong>{t`artSetConfig.title`}</strong>
         </Typography>
         <Stack spacing={1}>
-          <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t<string>("artSetConfig.enabled")}</SqBadge></Typography>
-          <Typography>{t`sheet:2set`} <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="success">{allow2} <ShowChartIcon {...iconInlineProps} /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="secondary">{exclude2} <BlockIcon {...iconInlineProps} /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
-          <Typography>{t`sheet:4set`} <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="success">{allow4} <ShowChartIcon {...iconInlineProps} /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="secondary">{exclude4} <BlockIcon {...iconInlineProps} /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
-          <Typography>{t`artSetConfig.2rainbow`} <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color={allowRainbow2 ? "success" : "secondary"}>{allowRainbow2 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow2 ? t<string>("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
-          <Typography>{t`artSetConfig.4rainbow`} <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color={allowRainbow4 ? "success" : "secondary"}>{allowRainbow4 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow4 ? t<string>("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+          <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t("artSetConfig.enabled")}</SqBadge></Typography>
+          <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <ShowChartIcon {...iconInlineProps} /> {t("artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <BlockIcon {...iconInlineProps} /> {t("artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <ShowChartIcon {...iconInlineProps} /> {t("artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <BlockIcon {...iconInlineProps} /> {t("artSetConfig.excluded")}</SqBadge>}</Typography>
+          <Typography>{t`artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}>{allowRainbow2 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow2 ? t("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
+          <Typography>{t`artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}>{allowRainbow4 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow4 ? t("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
         </Stack>
 
       </CardContent>
@@ -116,20 +116,20 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Box display="flex" gap={1}>
             <Typography><strong>{t`artSetConfig.modal.setCond.title`}</strong></Typography>
-            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t<string>("artSetConfig.selected")}</SqBadge></Typography>
+            <Typography sx={{ flexGrow: 1 }}><SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t("artSetConfig.selected")}</SqBadge></Typography>
             <Button size='small' onClick={resetArtConds} color="error" startIcon={<Replay />}>{t`artSetConfig.modal.setCond.reset`}</Button>
           </Box>
           <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
         </CardContent></CardLight>
         <CardLight sx={{ mb: 1 }}><CardContent>
           <Typography sx={{ flexGrow: 1 }}><strong>
-            <Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='success'>Allowed<ShowChartIcon  {...iconInlineProps} /></ColorText> / <ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Excluded<BlockIcon {...iconInlineProps} /></ColorText></Trans>
+            <Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.title" >Artifact Sets <ColorText color='success'>Allowed<ShowChartIcon  {...iconInlineProps} /></ColorText> / <ColorText color='secondary' variant='light'>Excluded<BlockIcon {...iconInlineProps} /></ColorText></Trans>
           </strong></Typography>
           <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.intro">You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='secondary' variant='light'>AA</ColorText>RRR</strong> and <strong><ColorText color='secondary' variant='light'>AAA</ColorText>RR</strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='secondary' variant='light'>AAAA</ColorText>R</strong> and <strong><ColorText color='secondary' variant='light'>AAAAA</ColorText></strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='secondary' variant='light'>RRR</ColorText></strong> and <strong>AAA<ColorText color='secondary' variant='light'>RR</ColorText></strong>.</Trans></Typography>
-          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4rain"><strong><ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 5-Rainbow</ColorText></strong> would exclude full 5-Rainbow builds: <strong><ColorText color='secondary' variant='light'>RRRRR</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2set"><strong><ColorText color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 2-Set</ColorText></strong> would exclude 2-Set builds: <strong><ColorText color='secondary' variant='light'>AA</ColorText>RRR</strong> and <strong><ColorText color='secondary' variant='light'>AAA</ColorText>RR</strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4set"><strong><ColorText color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 4-Set</ColorText></strong> would exclude 4-Set builds: <strong><ColorText color='secondary' variant='light'>AAAA</ColorText>R</strong> and <strong><ColorText color='secondary' variant='light'>AAAAA</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.2rain"><strong><ColorText color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 3-Rainbow</ColorText></strong> would exclude 2-Set + 3-Rainbow builds: <strong>AA<ColorText color='secondary' variant='light'>RRR</ColorText></strong> and <strong>AAA<ColorText color='secondary' variant='light'>RR</ColorText></strong>.</Trans></Typography>
+          <Typography><Trans t={t} i18nKey="artSetConfig.modal.ArtSetFilter.4rain"><strong><ColorText color='secondary' variant='light'>Excluding<BlockIcon {...iconInlineProps} /> 5-Rainbow</ColorText></strong> would exclude full 5-Rainbow builds: <strong><ColorText color='secondary' variant='light'>RRRRR</ColorText></strong>.</Trans></Typography>
         </CardContent></CardLight>
         <Grid container columns={{ xs: 2, lg: 3 }} sx={{ mb: 1 }} spacing={1}>
           <Grid item xs={1}>
@@ -141,7 +141,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
           <Grid item xs={1}>
             <CardLight>
               <CardContent>
-                <Typography gutterBottom><strong><Trans t={t} i18nKey="artSetConfig.alExRainbow"><ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='success'>Allow <ShowChartIcon  {...iconInlineProps} /></ColorText> / <ColorText sx={{ display: "inline-flex", gap: 0.5 }} color='secondary' variant='light'>Exclude <BlockIcon {...iconInlineProps} /></ColorText> Rainbow Builds</Trans></strong></Typography>
+                <Typography gutterBottom><strong><Trans t={t} i18nKey="artSetConfig.alExRainbow"><ColorText color='success'>Allow <ShowChartIcon  {...iconInlineProps} /></ColorText> / <ColorText color='secondary' variant='light'>Exclude <BlockIcon {...iconInlineProps} /></ColorText> Rainbow Builds</Trans></strong></Typography>
                 <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                   <Button fullWidth onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, "rainbow", 2) })} color={allowRainbow2 ? "success" : "secondary"} startIcon={!allowRainbow2 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={allowRainbow2 ? <ShowChartIcon /> : <BlockIcon />}>{t`artSetConfig.2rainbow`}</Button>
                   <Button fullWidth onClick={() => buildSettingDispatch({ artSetExclusion: handleArtSetExclusion(artSetExclusion, "rainbow", 4) })} color={allowRainbow4 ? "success" : "secondary"} startIcon={!allowRainbow4 ? <CheckBoxOutlineBlank /> : <CheckBox />} endIcon={allowRainbow4 ? <ShowChartIcon /> : <BlockIcon />}>{t`artSetConfig.4rainbow`}</Button>
@@ -165,7 +165,7 @@ function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion 
   const { t } = useTranslation(["page_character_optimize", "sheet"])
   return <CardLight>
     <CardContent>
-      <Typography gutterBottom><strong>{t(`sheet:${setNum}set`)}</strong> <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="success">{numAllow} <ShowChartIcon  {...iconInlineProps} /> {t<string>("artSetConfig.allowed")}</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge sx={{ display: "inline-flex", gap: 0.5 }} color="secondary">{numExclude} <BlockIcon {...iconInlineProps} /> {t<string>("artSetConfig.excluded")}</SqBadge>}</Typography>
+      <Typography gutterBottom><strong>{t(`sheet:${setNum}set`)}</strong> <SqBadge color="success">{numAllow} <ShowChartIcon  {...iconInlineProps} /> {t("artSetConfig.allowed")}</SqBadge>{!!numExclude && " / "}{!!numExclude && <SqBadge color="secondary">{numExclude} <BlockIcon {...iconInlineProps} /> {t("artSetConfig.excluded")}</SqBadge>}</Typography>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Button fullWidth disabled={!numExclude} onClick={() => setAllExclusion(setNum, false)} color='success' startIcon={<ShowChartIcon />}>{t(`artSetConfig.allowAll${setNum}set`)}</Button>
         <Button fullWidth disabled={!numAllow} onClick={() => setAllExclusion(setNum, true)} color='secondary' startIcon={<BlockIcon />}>{t(`artSetConfig.excludeAll${setNum}set`)}</Button>
@@ -195,19 +195,22 @@ function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: Ar
         <Box component="img" src={artifactDefIcon(setKey)} sx={{ height: 100, width: "auto", mx: -1 }} />
         <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <Typography variant="h6">{sheet.name ?? ""}</Typography>
-          <Box display="flex" gap={1}>
-            <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <Box component="span" sx={{ display: "inline-flex", alignItems:"center" }} key={ns}>{ns} <StarRoundedIcon fontSize='inherit' /> {i < (sheet.rarity.length - 1) ? "/ " : null}</Box>)}</Typography>
+          <Box >
             {/* If there is ever a 2-Set conditional, we will need to change this */}
-            <InfoTooltip title={<Box>
-              <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>
-              <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.2"} /></Typography>
-              <Box paddingTop={2} sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }} >
-                <Typography><SqBadge color="success">{t`4set`}</SqBadge></Typography>
-                <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>
-              </Box>
-            </Box>} />
+            <Typography variant="subtitle1">
+              {sheet.rarity.map((ns, i) => <Box component="span" sx={{ display: "inline-flex", alignItems: "center" }} key={ns}>{ns} <StarRoundedIcon fontSize='inherit' /> {i < (sheet.rarity.length - 1) ? "/ " : null}</Box>)}
+              {' '}
+              <InfoTooltipInline title={<Box>
+                <Typography><SqBadge color="success">{t`2set`}</SqBadge></Typography>
+                <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.2"} /></Typography>
+                <Box paddingTop={2} sx={{ opacity: setExclusionSet.includes(4) ? 0.6 : 1 }} >
+                  <Typography><SqBadge color="success">{t`4set`}</SqBadge></Typography>
+                  <Typography><Translate ns={`artifact_${setKey}_gen`} key18={"setEffects.4"} /></Typography>
+                </Box>
+              </Box>} />
+            </Typography>
           </Box>
-          <Box sx={{ display: "flex", gap: 1 }}>{Object.entries(slotCount).map(([slotKey, count]) => <Typography key={slotKey} sx={{ flexGrow: 1 }} variant="subtitle2" ><SqBadge sx={{ width: "100%" }} color={count ? "primary" : "secondary"}><SlotIcon slotKey={slotKey} iconProps={iconInlineProps}/> {count}</SqBadge></Typography>)}</Box>
+          <Box sx={{ display: "flex", gap: 1 }}>{Object.entries(slotCount).map(([slotKey, count]) => <Typography key={slotKey} sx={{ flexGrow: 1 }} variant="subtitle2" ><SqBadge sx={{ width: "100%" }} color={count ? "primary" : "secondary"}><SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {count}</SqBadge></Typography>)}</Box>
         </Box>
       </Box>
       <ButtonGroup sx={{ ".MuiButton-root": { borderRadius: 0 } }} fullWidth>

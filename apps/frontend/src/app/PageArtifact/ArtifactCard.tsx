@@ -110,12 +110,12 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1.5 }}><strong>{slotName}</strong></Typography>}
               {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip}
             </Box>
-            <Typography color="text.secondary" variant="body2" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+            <Typography paddingBottom={1} color="text.secondary" variant="body2" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
               <SlotIcon iconProps={{ fontSize: "inherit" }} slotKey={slotKey} />
-              {t<string>(`slotName.${slotKey}`)}
+              {t(`slotName.${slotKey}`)}
             </Typography>
             <Typography variant="h6" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-              <ColorText color={ele}><StatIcon statKey={mainStatKey} /></ColorText>
+              <StatIcon statKey={mainStatKey} iconProps={{ sx: { color: `${ele}.main` } }} />
               <span>{KeyMap.get(mainStatKey)}</span>
             </Typography>
             <Typography variant="h5">

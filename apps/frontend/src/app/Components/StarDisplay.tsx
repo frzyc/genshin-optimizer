@@ -1,7 +1,7 @@
 import { Rarity } from '@genshin-optimizer/consts';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ColorText from './ColoredText';
-export const StarsDisplay = ({ stars, colored = false }: { stars: Rarity, colored?: boolean }) =>
+export const StarsDisplay = ({ stars = 1, colored = false, inline = false }: { stars?: Rarity, colored?: boolean, inline?: boolean }) =>
   <ColorText color={colored ? "warning" : undefined} >
-    {stars ? [...Array(stars).keys()].map((_, i) => <StarRoundedIcon key={i} fontSize="inherit" sx={{ verticalAlign: "-10%" }} />) : null}
+    {[...Array(stars).keys()].map((_, i) => <StarRoundedIcon key={i} fontSize={inline ? "inherit" : undefined} sx={inline ? { verticalAlign: "text-top" } : undefined} />)}
   </ColorText>

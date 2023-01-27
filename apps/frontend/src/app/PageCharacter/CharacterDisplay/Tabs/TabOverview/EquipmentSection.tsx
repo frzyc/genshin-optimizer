@@ -92,7 +92,7 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   const { t } = useTranslation("artifact")
   return <CardLight sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
     <CardContent>
-      <Typography sx={{ display: "flex", gap: 1 }}><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /> {t<string>(`slotName.${slotKey}`)}</Typography>
+      <Typography><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /> {t(`slotName.${slotKey}`)}</Typography>
     </CardContent>
     <Divider />
     <Box sx={{

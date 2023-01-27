@@ -68,7 +68,7 @@ function ResonanceDisplay() {
   const teamCount = team.reduce((a, t) => a + (t ? 1 : 0), 1)
   return <>
     <CardLight>
-      <CardHeader title={<span>{t<string>("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltipInline title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
+      <CardHeader title={<span>{t("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltipInline title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
         titleTypographyProps={{ variant: "subtitle2" }} />
     </CardLight>
     {resonanceSheets.map((res, i) => <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>

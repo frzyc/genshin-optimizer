@@ -8,10 +8,8 @@ import { ascensionMaxLevel } from '../../Data/LevelData';
 import { ElementIcon } from '../../KeyMap/StatIcon';
 import useCharacter from '../../ReactHooks/useCharacter';
 import useDBMeta from '../../ReactHooks/useDBMeta';
-import { iconInlineProps } from '../../SVGIcons';
 import BootstrapTooltip from '../BootstrapTooltip';
 import CardDark from '../Card/CardDark';
-import ColorText from '../ColoredText';
 import ConditionalWrapper from '../ConditionalWrapper';
 import SqBadge from '../SqBadge';
 
@@ -26,9 +24,13 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
   if (teammateSheet && character) {
     const title = <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <Typography>
-        <ColorText color={teammateSheet.elementKey}>
-          {teammateSheet.elementKey && <ElementIcon ele={teammateSheet.elementKey} iconProps={iconInlineProps} />} {teammateSheet.name}
-        </ColorText>
+        {teammateSheet.elementKey && <ElementIcon ele={teammateSheet.elementKey} iconProps={{
+          fontSize: "inherit",
+          sx: {
+            verticalAlign: "-10%",
+            color: `${teammateSheet.elementKey}.main`
+          }
+        }} />} {teammateSheet.name}
       </Typography>
     </Suspense>
 

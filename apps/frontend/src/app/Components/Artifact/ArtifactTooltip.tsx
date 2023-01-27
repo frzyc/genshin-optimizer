@@ -33,7 +33,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   return <Box p={1}>
     <Typography variant='h6'><SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {slotName}</Typography>
     <Typography variant="subtitle1" color={`${mainVariant}.main`}><StatIcon statKey={mainStatKey} iconProps={iconInlineProps} /> {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
-    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
+    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
     <Box py={1}>
       {substats.map((stat: ICachedSubstat) => !!stat.value && <Typography key={stat.key} color={`roll${clamp(stat.rolls.length, 1, 6)}.main`}>
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {KeyMap.getStr(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>

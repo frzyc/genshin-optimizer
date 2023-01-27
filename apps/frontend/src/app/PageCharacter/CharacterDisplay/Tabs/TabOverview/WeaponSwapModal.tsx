@@ -1,5 +1,6 @@
 import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
 import { Add } from "@mui/icons-material"
+import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Button, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
 import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -9,7 +10,6 @@ import CloseButton from "../../../../Components/CloseButton"
 import ImgIcon from "../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup"
-import { StarsDisplay } from "../../../../Components/StarDisplay"
 import WeaponSelectionModal from "../../../../Components/Weapon/WeaponSelectionModal"
 import { DatabaseContext } from "../../../../Database/Database"
 import WeaponCard from "../../../../PageWeapon/WeaponCard"
@@ -80,7 +80,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
           <Grid item>
             <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
               {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
-                <Box display="flex" gap={1}><strong>{star}</strong><StarsDisplay stars={1} /></Box>
+                <Box display="flex"><strong>{star}</strong><StarRoundedIcon /></Box>
               </ToggleButton>)}
             </SolidToggleButtonGroup>
           </Grid>

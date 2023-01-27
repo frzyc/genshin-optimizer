@@ -54,9 +54,9 @@ export default function StatIcon({ statKey, iconProps = {} }: { statKey: string,
     case "stamina":
       return <StaminaIcon  {...iconProps} />
   }
-  for (const e of allElementsWithPhy)
-    if (statKey.includes(e))
-      return <ElementIcon ele={e} iconProps={iconProps} />
+  const ele = statKey.split("_")[0]
+  if (allElementsWithPhy.includes(ele as ElementKeyWithPhy))
+    return <ElementIcon ele={ele as ElementKeyWithPhy} iconProps={iconProps} />
 
   return null
 }

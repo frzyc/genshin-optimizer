@@ -15,7 +15,7 @@ import useDBMeta from '../../ReactHooks/useDBMeta';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../../Types/consts';
+import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '@genshin-optimizer/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
 import CardLight from '../Card/CardLight';

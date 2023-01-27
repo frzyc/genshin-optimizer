@@ -59,7 +59,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             <Typography component="span" variant="h5">Lv. {level}</Typography>
             <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
             <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
-            <Typography><StarsDisplay stars={weaponSheet.rarity} colored /></Typography>
+            <StarsDisplay stars={weaponSheet.rarity} colored />
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
             <Box
