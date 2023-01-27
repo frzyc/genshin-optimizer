@@ -67,3 +67,7 @@ export type StrNode<PermitOP extends OP = OP> = Const<string> |
 export type AnyNode<PermitOP extends OP = OP> = Const<number | string> | Sum<PermitOP> | Prod<PermitOP> | Max<PermitOP> | Min<PermitOP> | SumFrac<PermitOP> |
   Threshold<AnyNode<PermitOP>, PermitOP> | Match<AnyNode<PermitOP>, PermitOP> | Lookup<AnyNode<PermitOP>, PermitOP> | Subscript<number | string, PermitOP> |
   TagOverride<AnyNode<PermitOP>, PermitOP> | Read
+
+export type NumOP = NumNode['op']
+export type StrOP = StrNode['op']
+export type AnyOP = AnyNode['op']
