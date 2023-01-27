@@ -10,7 +10,7 @@ export const arithmetic: Record<Arithmetics['op'], (x: number[], ex: any) => num
   'max': x => Math.max(...x),
   'sumfrac': ([x, c]) => x! / (x! + c!),
 }
-export const selectBranch: Record<Branching<unknown>['op'], (br: any[], ex: any) => number> = {
+export const branching: Record<Branching<unknown>['op'], (br: any[], ex: any) => number> = {
   'match': ([v1, v2]) => v1 === v2 ? 0 : 1,
   'thres': ([v1, v2]) => v1 >= v2 ? 0 : 1,
   'lookup': ([v1], table) => table[v1] ?? 0,

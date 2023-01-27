@@ -2,7 +2,7 @@ import type { TagMapSubsetCache, TagMapSubsetValues } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, max, min, prod, sum } from './construction'
-import { arithmetic, selectBranch } from './formula'
+import { arithmetic, branching } from './formula'
 import type { AnyNode, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
 
 type NumTagFree = NumNode<Exclude<OP, 'tag'>>
@@ -74,7 +74,7 @@ export function constantFold(n: AnyTagFree[]): AnyTagFree[] {
         const br = n.br.map(map) as AnyTagFree[]
         let x = n.x as AnyTagFree[]
         if (br.every(n => n.op === 'const')) {
-          const branchID = selectBranch[op](br.map(br => (br as Const<any>).ex), n.ex)
+          const branchID = branching[op](br.map(br => (br as Const<any>).ex), n.ex)
           return map(n.x[branchID]!)
         }
         return { ...n, x: x.map(map), br } as AnyTagFree
