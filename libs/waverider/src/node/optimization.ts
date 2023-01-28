@@ -1,13 +1,13 @@
 import type { TagMapSubsetCache, TagMapSubsetValues } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
-import { constant, max, min, prod, sum } from './construction'
+import { constant } from './construction'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
+import type { AnyNode, AnyOP, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
 
-type NumTagFree = NumNode<Exclude<OP, 'tag'>>
-type StrTagFree = StrNode<Exclude<OP, 'tag'>>
-type AnyTagFree = AnyNode<Exclude<OP, 'tag'>>
+type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag'>>
+type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag'>>
+type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag'>>
 
 export function detach(n: NumNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): NumTagFree[]
 export function detach(n: StrNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): StrTagFree[]
@@ -25,69 +25,58 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMapSubsetValu
       ...dynTags.subset(cache.id),
     ]
   }
+
+  function map(n: NumNode, cache: TagMapSubsetCache<AnyNode | ReRead>): NumTagFree
+  function map(n: StrNode, cache: TagMapSubsetCache<AnyNode | ReRead>): StrTagFree
+  function map(n: AnyNode, cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree
   function map(n: AnyNode, cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree {
     if (allDynTags.has(n as Read)) return n as Read
 
-    switch (n.op) {
-      case 'read': {
-        // Strictly speaking, `x`s are not `NumNode` yet, but it's easier to handle `accu` this way
-        const x = read(cache.with(n.tag)) as NumNode<Exclude<OP, 'tag'>>[]
-        switch (n.accu) {
-          case 'sum': return sum(...x) as AnyTagFree
-          case 'prod': return prod(...x) as AnyTagFree
-          case 'min': return min(...x) as AnyTagFree
-          case 'max': return max(...x) as AnyTagFree
-          case undefined: return x[0] ?? constant(undefined as any) as AnyTagFree
-          default: assertUnreachable(n.accu)
-        }
-      }
-      case 'tag': return map(n.x[0]!, cache.with(n.tag))
+    if (n.op === 'read') {
+      const x = read(cache.with(n.tag))
+      if (n.accu === undefined)
+        return x[0] ?? constant(undefined as any)
+      n = { op: n.accu, x: x as NumTagFree[], br: [] } as AnyNode<Exclude<AnyOP, 'read'>>
     }
-    let x = n.x.map(n => map(n, cache))
-    let br = n.br.map(n => map(n, cache))
-    if (x.every((x, i) => x === n.x[i])) x = n.x as AnyTagFree[]
-    if (br.every((br, i) => br === n.br[i])) br = n.br as AnyTagFree[]
 
-    return (x !== n.x || br != n.br) ? { ...n, x, br } as any : n
-  }
-
-  return n.map(n => map(n, calc.nodes.cache(calc.keys)))
-}
-
-export function constantFold(n: NumTagFree[]): NumTagFree[]
-export function constantFold(n: StrTagFree[]): StrTagFree[]
-export function constantFold(n: AnyTagFree[]): AnyTagFree[]
-export function constantFold(n: AnyTagFree[]): AnyTagFree[] {
-  return transform(n, (n, map) => {
     const { op } = n
     switch (op) {
       case 'const': case 'read': return n
       case 'sum': case 'prod': case 'min': case 'max': case 'sumfrac': {
-        const x = n.x.map(map) as NumTagFree[]
+        const x = n.x.map(x => map(x, cache)) as Const<number>[]
         if (x.every(x => x.op === 'const'))
-          return constant(arithmetic[op](x.map(x => (x as Const<number>).ex), n.ex))
+          return constant(arithmetic[n.op](x.map(x => x.ex), n.ex))
         return { ...n, x }
       }
       case 'thres': case 'match': case 'lookup': {
         // We don't eagerly fold `x`. If all `br` can be folded,
         // we can short-circuit and fold only the chosen branch.
-        const br = n.br.map(map) as AnyTagFree[]
-        let x = n.x as AnyTagFree[]
+        const br = n.br.map(br => map(br, cache)) as Const<string>[]
         if (br.every(n => n.op === 'const')) {
-          const branchID = branching[op](br.map(br => (br as Const<any>).ex), n.ex)
-          return map(n.x[branchID]!)
+          const branchID = branching[n.op](br.map(br => br.ex), n.ex)
+          return map(n.x[branchID]!, cache)
         }
-        return { ...n, x: x.map(map), br } as AnyTagFree
+        return { ...n, x: n.x.map(x => map(x, cache)), br } as AnyTagFree
       }
       case 'subscript': {
-        const index = map(n.br[0]!) as NumTagFree
+        const index = map(n.br[0]!, cache)
         if (index.op === 'const')
           return constant(n.ex[index.ex]!)
         return { ...n, br: [index] }
       }
+      case 'tag': return map(n.x[0]!, cache.with(n.tag))
+      case 'dtag': {
+        const tags = n.br.map(br => map(br, cache)) as Const<string>[]
+        if (tags.some(x => x.op !== 'const'))
+          throw new Error("Dynamic tag must be resolvable during detachment")
+        cache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.ex])))
+        return map(n.x[0]!, cache)
+      }
       default: assertUnreachable(op)
     }
-  })
+  }
+
+  return n.map(n => map(n, calc.nodes.cache(calc.keys)))
 }
 
 export function flatten(n: NumTagFree[]): NumTagFree[]
