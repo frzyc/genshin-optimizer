@@ -1,22 +1,26 @@
+import { ElementKey } from "@genshin-optimizer/consts";
 import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
 import { infusionNode, uiInput as input } from "../Formula";
-import { AdditiveReactionKey, allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, ElementKey } from "../Types/consts";
+import { iconInlineProps } from "../SVGIcons";
+import CryoIcon from "../SVGIcons/Element/CryoIcon";
+import HydroIcon from "../SVGIcons/Element/HydroIcon";
+import PyroIcon from "../SVGIcons/Element/PyroIcon";
+import { AdditiveReactionKey, allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey } from "../Types/consts";
 import AdditiveReactionModeText from "./AdditiveReactionModeText";
 import AmpReactionModeText from "./AmpReactionModeText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
 import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
 import SqBadge from "./SqBadge";
-import StatIcon from "./StatIcon";
 
 export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,
-  "pyro": <span >{StatIcon.pyro} <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
-  "cryo": <span >{StatIcon.cryo} <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
-  "hydro": <span >{StatIcon.hydro} <SqBadge>Candace Burst</SqBadge> Sacred Rite: Wagtail's Tide</span>,
+  "pyro": <span><PyroIcon {...iconInlineProps} /> <SqBadge>Bennett C6</SqBadge> Fire Ventures with Me</span>,
+  "cryo": <span><CryoIcon {...iconInlineProps} /> <SqBadge>Chongyun Skill</SqBadge> Spirit Blade: Chonghua's Layered Frost</span>,
+  "hydro": <span><HydroIcon {...iconInlineProps} /> <SqBadge>Candace Burst</SqBadge> Sacred Rite: Wagtail's Tide</span>,
 }
 type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {

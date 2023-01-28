@@ -72,8 +72,8 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
   return <Accordion sx={{ bgcolor: "contentDark.main" }} expanded={node === contextNode || expanded} onChange={handleChange} ref={scrollRef} >
     <AccordionSummary expandIcon={<ExpandMore />} >
       <Typography><ColorText color={node.info.variant}>{node.info.name}</ColorText> <strong>{nodeVStr(node)}</strong></Typography>
-      {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
-        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} />
+      {allAmpReactions.includes(node.info.variant as "vaporize" | "melt") && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
+        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as "cryo" | "pyro" | "hydro" | undefined} />
       </Box>}
     </AccordionSummary>
     <AccordionDetails >

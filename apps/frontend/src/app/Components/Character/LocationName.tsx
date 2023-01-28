@@ -16,7 +16,7 @@ export default function LocationName({ location }: { location: LocationKey }) {
   return <Typography component="span">
     {(location && characterSheet?.name) ?
       <span><LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} /> {characterSheet.name}</span> :
-      <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t<string>("inventory")}</span>}
+      <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t("inventory")}</span>}
   </Typography>
 
 }

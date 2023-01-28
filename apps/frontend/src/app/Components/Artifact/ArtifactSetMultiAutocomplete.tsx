@@ -36,7 +36,7 @@ export default function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys
     groupBy={(option) => option.grouper?.toString() ?? ""}
     renderGroup={(params: AutocompleteRenderGroupParams) => params.group && <List key={params.group} component={Box}>
       <ListSubheader key={`${params.group}Header`} sx={{ top: "-1em" }}>
-        {params.group} <StarsDisplay stars={+params.group as ArtifactRarity} />
+        {params.group} <StarsDisplay stars={+params.group as ArtifactRarity} inline />
       </ListSubheader>
       {params.children}
     </List>}

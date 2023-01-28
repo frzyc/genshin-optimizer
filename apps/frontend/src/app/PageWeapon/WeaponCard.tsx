@@ -1,26 +1,26 @@
-import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { weaponAsset } from "@genshin-optimizer/g-assets"
-import { Lock, LockOpen } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext, useMemo } from "react"
-import { useTranslation } from "react-i18next"
-import Assets from "../Assets/Assets"
-import CardLight from "../Components/Card/CardLight"
-import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete"
-import LocationName from "../Components/Character/LocationName"
-import ConditionalWrapper from "../Components/ConditionalWrapper"
-import ImgIcon from "../Components/Image/ImgIcon"
-import { StarsDisplay } from "../Components/StarDisplay"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
-import { ascensionMaxLevel } from "../Data/LevelData"
-import { getWeaponSheet } from "../Data/Weapons"
-import { DatabaseContext } from "../Database/Database"
-import { uiInput as input } from "../Formula"
-import { computeUIData, dataObjForWeapon } from "../Formula/api"
-import { nodeVStr } from "../Formula/uiData"
-import useWeapon from "../ReactHooks/useWeapon"
-import { LocationKey } from "../Types/consts"
+import { weaponAsset } from "@genshin-optimizer/g-assets";
+import { Lock, LockOpen } from "@mui/icons-material";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
+import { Suspense, useCallback, useContext, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import Assets from "../Assets/Assets";
+import CardLight from "../Components/Card/CardLight";
+import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete";
+import LocationName from "../Components/Character/LocationName";
+import ConditionalWrapper from "../Components/ConditionalWrapper";
+import ImgIcon from "../Components/Image/ImgIcon";
+import { StarsDisplay } from "../Components/StarDisplay";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { ascensionMaxLevel } from "../Data/LevelData";
+import { getWeaponSheet } from "../Data/Weapons";
+import { DatabaseContext } from "../Database/Database";
+import { uiInput as input } from "../Formula";
+import { computeUIData, dataObjForWeapon } from "../Formula/api";
+import { nodeVStr } from "../Formula/uiData";
+import useWeapon from "../ReactHooks/useWeapon";
+import { LocationKey } from "../Types/consts";
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean, extraButtons?: JSX.Element }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false, extraButtons }: WeaponCardProps) {
@@ -59,7 +59,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             <Typography component="span" variant="h5">Lv. {level}</Typography>
             <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
             <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
-            <Typography><StarsDisplay stars={weaponSheet.rarity} colored /></Typography>
+            <StarsDisplay stars={weaponSheet.rarity} colored />
           </Box>
           <Box sx={{ height: "100%", position: "absolute", right: 0, top: 0 }}>
             <Box
@@ -90,11 +90,11 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         <ButtonGroup sx={{ height: "100%" }}>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>
             <Button color="info" onClick={() => onEdit(id)} >
-              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+              <EditIcon />
             </Button>
           </Tooltip>}
           {!!onDelete && <Button color="error" onClick={() => onDelete(id)} disabled={!!location || lock} >
-            <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+            <DeleteForeverIcon />
           </Button>}
           {extraButtons}
         </ButtonGroup>

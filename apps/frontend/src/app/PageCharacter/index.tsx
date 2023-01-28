@@ -1,6 +1,5 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Add, DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import AddIcon from '@mui/icons-material/Add';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
@@ -149,7 +148,7 @@ export default function PageCharacter() {
           ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
       </Box>
     </CardContent></CardDark>
-    <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<Add />} >{t`addNew`}</Button>
+    <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<AddIcon />} >{t`addNew`}</Button>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} columns={columns}>
         {charKeyListToShow.map(charKey =>
@@ -190,7 +189,7 @@ export default function PageCharacter() {
       </Grid>
     </Suspense>
     {numPages > 1 && <CardDark ><CardContent sx={{ display: "flex", gap: 1 }}>
-      <Button onClick={() => setnewCharacter(true)} color="info" sx={{ minWidth: 0 }} ><Typography><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography></Button>
+      <Button onClick={() => setnewCharacter(true)} color="info" sx={{ minWidth: 0 }} ><AddIcon /></Button>
       <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
         <Grid item flexGrow={1}>
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />

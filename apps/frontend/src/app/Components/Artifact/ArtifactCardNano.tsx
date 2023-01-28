@@ -6,6 +6,7 @@ import Assets from "../../Assets/Assets";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
+import StatIcon from "../../KeyMap/StatIcon";
 import useArtifact from "../../ReactHooks/useArtifact";
 import { ICachedSubstat } from "../../Types/artifact";
 import { allElementsWithPhy, SlotKey } from "../../Types/consts";
@@ -16,7 +17,6 @@ import LocationIcon from "../Character/LocationIcon";
 import ColorText from "../ColoredText";
 import ConditionalWrapper from "../ConditionalWrapper";
 import { StatColoredWithUnit } from "../StatDisplay";
-import StatIcon from "../StatIcon";
 import ArtifactTooltip from "./ArtifactTooltip";
 
 type Data = {
@@ -64,7 +64,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
         <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
           label={<Typography sx={{ display: "flex", gap: 0.5, px: 1, zIndex: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography><StatColoredWithUnit statKey={mainStatKey} /></Typography>} disableInteractive>
-              <span>{StatIcon[mainStatKey]}</span>
+              <StatIcon statKey={mainStatKey} />
             </BootstrapTooltip>
             <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
           </Typography>} />

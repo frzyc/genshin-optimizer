@@ -179,7 +179,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
                 sx={{ mt: "auto" }}
               />
             </Box>
-            <Box flexGrow={1} sx={{ pr: 1 }} display="flex" flexDirection="column" zIndex={1} justifyContent="space-evenly">
+            <Box flexGrow={1} sx={{ pr: 1, pt: 1 }} display="flex" flexDirection="column" zIndex={1} justifyContent="space-evenly">
               <Typography variant="body2" sx={{ flexGrow: 1 }} ><SqBadge color={characterSheet?.elementKey} sx={{ opacity: 0.85, textShadow: "0 0 5px gray" }}>{characterSheet?.name}</SqBadge></Typography>
               {character ? <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <Box sx={{ textShadow: "0 0 5px gray" }}>
@@ -188,7 +188,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
                 </Box>
                 <Typography variant="body2" >C{constellation}</Typography>
               </Box> : <Typography component="span" variant="body2" ><SqBadge>NEW</SqBadge></Typography>}
-              <Typography variant="body2" ><StarsDisplay stars={characterSheet?.rarity ?? 1} colored /></Typography>
+              <StarsDisplay stars={characterSheet?.rarity ?? 1} colored />
             </Box>
           </Box>
         </CardActionArea>

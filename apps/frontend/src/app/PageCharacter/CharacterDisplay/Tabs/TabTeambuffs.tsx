@@ -10,7 +10,7 @@ import ColorText from "../../../Components/ColoredText";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import { GeneralAutocomplete, GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
-import InfoTooltip from "../../../Components/InfoTooltip";
+import { InfoTooltipInline } from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
 import { dataSetEffects, getArtSheet } from "../../../Data/Artifacts";
@@ -68,20 +68,18 @@ function ResonanceDisplay() {
   const teamCount = team.reduce((a, t) => a + (t ? 1 : 0), 1)
   return <>
     <CardLight>
-      <CardHeader title={<span>{t<string>("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltip title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
+      <CardHeader title={<span>{t("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltipInline title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
         titleTypographyProps={{ variant: "subtitle2" }} />
     </CardLight>
-    {resonanceSheets.map((res, i) => {
-      const icon = <InfoTooltip title={<Typography>{res.desc}</Typography>} />
-      const title = <span>{res.name} {icon}</span>
-      return <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
-        <CardHeader title={title} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
-        {res.canShow(data) && <Divider />}
-        {res.canShow(data) && <CardContent>
-          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
-        </CardContent>}
-      </CardLight>
-    })}
+    {resonanceSheets.map((res, i) => <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
+      <CardHeader
+        title={<span>{res.name} <InfoTooltipInline title={<Typography>{res.desc}</Typography>} /></span>}
+        action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+      {res.canShow(data) && <Divider />}
+      {res.canShow(data) && <CardContent>
+        <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
+      </CardContent>}
+    </CardLight>)}
   </>
 }
 function TeammateDisplay({ index }: { index: number }) {

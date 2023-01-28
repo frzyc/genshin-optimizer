@@ -1,6 +1,7 @@
-import { faArrowLeft, faFileCode, faFileUpload } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import TextSnippetIcon from '@mui/icons-material/TextSnippet'
+import UploadFileIcon from '@mui/icons-material/UploadFile'
 import { Box, Button, CardContent, Divider, Grid, styled, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -9,7 +10,7 @@ import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { SandboxStorage } from '../Database/DBStorage'
 import { ImportResult, ImportResultCounter } from '../Database/exim'
-
+import { iconInlineProps } from '../SVGIcons'
 const InvisInput = styled('input')({
   display: 'none',
 });
@@ -78,7 +79,7 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
         </Grid>
         <Grid item flexGrow={1}>
           <CardDark sx={{ px: 2, py: 1 }}>
-            <Typography>{filename ? <span><FontAwesomeIcon icon={faFileCode} /> {filename}</span> : <span><FontAwesomeIcon icon={faArrowLeft} /> <Trans t={t} i18nKey="settings:uploadCard.hint" /></span>}</Typography>
+            <Typography>{filename ? <span><TextSnippetIcon {...iconInlineProps} /> {filename}</span> : <span><ArrowBackIcon {...iconInlineProps} /> <Trans t={t} i18nKey="settings:uploadCard.hint" /></span>}</Typography>
           </CardDark>
         </Grid>
       </Grid>
@@ -170,6 +171,6 @@ function GOUploadAction({ index, importedDatabase, reset }: { index: number, imp
 
 
   return <><Divider /><CardContent sx={{ py: 1 }}>
-    <Button color={importedDatabase ? "success" : "error"} disabled={!importedDatabase} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+    <Button color={importedDatabase ? "success" : "error"} disabled={!importedDatabase} onClick={replaceDB} startIcon={<UploadFileIcon />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
   </CardContent></>
 }

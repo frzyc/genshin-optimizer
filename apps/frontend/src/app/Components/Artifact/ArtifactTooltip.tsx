@@ -3,13 +3,14 @@ import { Suspense } from "react";
 import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap, { cacheValueString } from "../../KeyMap";
+import StatIcon from "../../KeyMap/StatIcon";
+import { iconInlineProps } from "../../SVGIcons";
 import { ICachedArtifact, ICachedSubstat } from "../../Types/artifact";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import SqBadge from "../SqBadge";
 import { StarsDisplay } from "../StarDisplay";
-import StatIcon from "../StatIcon";
-import { artifactSlotIcon } from "./SlotNameWIthIcon";
+import SlotIcon from "./SlotIcon";
 
 export default function ArtifactTooltip({ art, children }: { art: ICachedArtifact, children: JSX.Element }) {
   const fallback = <Box>
@@ -28,15 +29,14 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   const { slotKey, level, rarity, mainStatKey, substats } = art
   const slotName = sheet.getSlotName(slotKey)
   const mainStatUnit = KeyMap.unit(mainStatKey)
-  const mainIcon = StatIcon[mainStatKey]
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return <Box p={1}>
-    <Typography variant='h6'>{artifactSlotIcon(slotKey)} {slotName}</Typography>
-    <Typography variant="subtitle1" color={`${mainVariant}.main`}>{mainIcon} {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
-    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
+    <Typography variant='h6'><SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {slotName}</Typography>
+    <Typography variant="subtitle1" color={`${mainVariant}.main`}><StatIcon statKey={mainStatKey} iconProps={iconInlineProps} /> {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
+    <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
     <Box py={1}>
       {substats.map((stat: ICachedSubstat) => !!stat.value && <Typography key={stat.key} color={`roll${clamp(stat.rolls.length, 1, 6)}.main`}>
-        {StatIcon[stat.key]} {KeyMap.getStr(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>
+        <StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {KeyMap.getStr(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>
       </Typography>)}
     </Box>
 

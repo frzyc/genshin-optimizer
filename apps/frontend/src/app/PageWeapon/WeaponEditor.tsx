@@ -98,7 +98,7 @@ export default function WeaponEditor({
               {lock ? "Locked" : "Unlocked"}
             </Button>
           </Box>
-          <Typography><StarsDisplay stars={weaponSheet.rarity} /></Typography>
+          <StarsDisplay stars={weaponSheet.rarity} />
           <Typography variant="subtitle1"><strong>{weaponSheet.passiveName}</strong></Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>

@@ -1,13 +1,11 @@
 
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { DatabaseContext } from '../Database/Database';
 import { DAY_MS, HOUR_MS, MINUTE_MS, SECOND_MS, timeString } from '../Util/TimeUtil';
-
 export const timeZones = {
   "America": - 5 * HOUR_MS,
   "Europe": HOUR_MS,
@@ -49,20 +47,14 @@ export default function TeyvatTime() {
   const remainingResetString = timeString(remaningTimeMs)
 
   return <CardDark>
-    <Grid container sx={{ px: 2, py: 1 }} spacing={2}>
-      <Grid item>
-        <Typography variant="h6"><FontAwesomeIcon icon={faClock} className="fa-fw" /></Typography>
-      </Grid>
-      <Grid item flexGrow={1}>
-        <Typography variant="h6">Teyvat Time</Typography>
-      </Grid>
-      <Grid item>
-        <DropdownButton title={timeZoneKey}>
-          {Object.keys(timeZones).map(zoneKey =>
-            <MenuItem key={zoneKey} selected={timeZoneKey === zoneKey} disabled={timeZoneKey === zoneKey} onClick={() => setTimeZoneKey(zoneKey)} >{zoneKey}</MenuItem>)}
-        </DropdownButton>
-      </Grid>
-    </Grid>
+    <CardContent sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+      <AccessTimeFilledIcon />
+      <Typography variant="h6" sx={{ flexGrow: 1 }}>Teyvat Time</Typography>
+      <DropdownButton title={timeZoneKey}>
+        {Object.keys(timeZones).map(zoneKey =>
+          <MenuItem key={zoneKey} selected={timeZoneKey === zoneKey} disabled={timeZoneKey === zoneKey} onClick={() => setTimeZoneKey(zoneKey)} >{zoneKey}</MenuItem>)}
+      </DropdownButton>
+    </CardContent>
     <Divider />
     <CardContent>
       <Grid container justifyContent="center" spacing={3}>

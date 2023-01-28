@@ -1,12 +1,13 @@
-import { faBan, faChartLine } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
+import BlockIcon from '@mui/icons-material/Block';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
 import { Suspense, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
+import { iconInlineProps } from "../../SVGIcons";
 import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
 import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
 import { handleMultiSelect } from "../../Util/MultiSelect";
@@ -20,7 +21,7 @@ import ArtifactSetMultiAutocomplete from "./ArtifactSetMultiAutocomplete";
 import ArtifactSubstatMultiAutocomplete from "./ArtifactSubstatMultiAutocomplete";
 import LocationFilterMultiAutocomplete from "./LocationFilterMultiAutocomplete";
 import RVSlide from "./RVSlide";
-import { artifactSlotIcon } from "./SlotNameWIthIcon";
+import SlotIcon from "./SlotIcon";
 
 const exclusionValues = ["excluded", "included"] as const
 const lockedValues = ["locked", "unlocked"] as const
@@ -133,13 +134,13 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
       <SolidToggleButtonGroup fullWidth value={slotKeys} size="small" disabled={disableSlotFilter}>
-        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1 }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}>{artifactSlotIcon(slotKey)}<Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
+        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1 }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
       <Box display="flex" gap={1} flexWrap="wrap">
         <SolidToggleButtonGroup fullWidth value={exclusion} size="small">
           {exclusionValues.map((v, i) => <ToggleButton key={v} value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ exclusion: exclusionHandler(exclusion, v) })}>
-            <FontAwesomeIcon icon={i ? faChartLine : faBan} /><Trans i18nKey={`exclusion.${v}`} t={t} /><Chip label={excludedTotal[i ? "included" : "excluded"]} size="small" />
+            {i ? <ShowChartIcon /> : <BlockIcon />}<Trans i18nKey={`exclusion.${v}`} t={t} /><Chip label={excludedTotal[i ? "included" : "excluded"]} size="small" />
           </ToggleButton>)}
         </SolidToggleButtonGroup>
         <SolidToggleButtonGroup fullWidth value={locked} size="small">
