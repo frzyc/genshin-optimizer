@@ -81,7 +81,7 @@ export class Calculator<M = undefined> {
         }
         case 'dtag': {
           const tags = n.br.map(br => internal(br))
-          cache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag])))
+          cache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val])))
           const result = self._compute(n.x[0]!, cache)
           return meta('dtag', cache.tag, result.val, [result], tags, n.ex)
         }
