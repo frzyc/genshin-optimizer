@@ -1,16 +1,17 @@
 import { CompiledTagMapKeys, CompiledTagMapValues, mergeTagMapValues, Tag, TagMapExactValues, TagMapKeys, TagMapSubsetCache, TagMapSubsetValues } from '../tag'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, AnyOP, NumNode, ReRead, StrNode } from './type'
+import type { AnyNode, AnyOP, NumNode, Read, ReRead, StrNode } from './type'
 
 type TagCache = TagMapSubsetCache<AnyNode | ReRead>
+type PreRead<M> = { pre: CalcResult<number | string, M>[], computed: Partial<Record<NonNullable<Read['accu']>, CalcResult<number | string, M>>> }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V, meta: M }
 export class Calculator<M = undefined> {
   keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
-  calculated: TagMapExactValues<CalcResult<number | string, M>[]>
+  calculated: TagMapExactValues<PreRead<M>>
 
   constructor(keys: CompiledTagMapKeys, ...values: CompiledTagMapValues<AnyNode | ReRead>[]) {
     this.keys = new TagMapKeys(keys)
@@ -20,7 +21,7 @@ export class Calculator<M = undefined> {
 
   get<V extends number | string = number | string>(tag: Tag): CalcResult<V, M>[]
   get(tag: Tag): CalcResult<number | string, M>[] {
-    return this._preread(this.nodes.cache(this.keys).with(tag))
+    return this._preread(this.nodes.cache(this.keys).with(tag)).pre
   }
 
   compute(n: NumNode): CalcResult<number, M>
@@ -30,12 +31,15 @@ export class Calculator<M = undefined> {
     return this._compute(n, this.nodes.cache(this.keys))
   }
 
-  _preread(cache: TagCache): CalcResult<number | string, M>[] {
+  _preread(cache: TagCache): PreRead<M> {
     const result = this.calculated.refExact(cache.id)
     if (result.length) return result[0]!
 
-    result.push(cache.subset().flatMap(n =>
-      n.op === 'reread' ? this._preread(cache.with(n.tag)) : [this._compute(n, cache)]))
+    result.push({
+      pre: cache.subset().flatMap(n =>
+        n.op === 'reread' ? this._preread(cache.with(n.tag)).pre : [this._compute(n, cache)]),
+      computed: {}
+    })
     return result[0]!
   }
 
@@ -75,22 +79,30 @@ export class Calculator<M = undefined> {
           const result = self._compute(n.x[0]!, cache)
           return meta('tag', cache.tag, result.val, [result], [])
         }
+        case 'dtag': {
+          const tags = n.br.map(br => internal(br))
+          cache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag])))
+          const result = self._compute(n.x[0]!, cache)
+          return meta('dtag', cache.tag, result.val, [result], tags, n.ex)
+        }
         case 'read': {
           cache = cache.with(n.tag)
-          const computed = self._preread(cache), accu = n.accu
+          const { pre, computed } = self._preread(cache), accu = n.accu
 
           switch (accu) {
             case undefined:
-              if (computed.length !== 1) {
-                const errorMsg = `Found ${computed.length} nodes while reading tag ${tagString(cache.tag)} with no accumulator`
+              if (pre.length !== 1) {
+                const errorMsg = `Found ${pre.length} nodes while reading tag ${tagString(cache.tag)} with no accumulator`
                 if (process.env['NODE_ENV'] !== 'production')
                   throw new Error(errorMsg)
                 else console.error(errorMsg)
               }
-              return meta('tag', cache.tag, computed[0]?.val ?? undefined, computed, [])
+              return meta('tag', cache.tag, pre[0]?.val ?? undefined, pre, [])
             default:
-              const val = arithmetic[accu](getV(computed) as number[], undefined)
-              return meta(accu, cache.tag, val, computed, [])
+              if (computed[accu]) return computed[accu]!
+              const val = arithmetic[accu](getV(pre) as number[], undefined)
+              computed[accu] = meta(accu, cache.tag, val, pre, [])
+              return computed[accu]!
           }
         }
         default: assertUnreachable(op)

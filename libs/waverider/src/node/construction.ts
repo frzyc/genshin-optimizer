@@ -1,5 +1,5 @@
 import type { Tag } from '../tag'
-import type { AnyNode, Const, Lookup, Match, Max, Min, NumNode, Prod, Read, ReRead, StrNode, Subscript, Sum, SumFrac, TagOverride, Threshold } from './type'
+import type { AnyNode, Const, DynamicTag, Lookup, Match, Max, Min, NumNode, Prod, Read, ReRead, StrNode, Subscript, Sum, SumFrac, TagOverride, Threshold } from './type'
 
 type _value = number | string
 type Num = NumNode | number
@@ -88,7 +88,7 @@ export function lookup(index: StrNode, table: Record<string, Val>, defaultV?: Va
   return {
     op: 'lookup', br: [toV(index)],
     ex: Object.fromEntries(Object.keys(table).map((key, i) => [key, i + 1])),
-    x: toVs([defaultV ?? NaN, ...Object.values(table)])
+    x: toVs([defaultV ?? NaN, ...Object.values(table)]),
   }
 }
 /** table[index] */
@@ -104,6 +104,11 @@ export function tag(v: Num, tag: Tag): TagOverride<NumNode>
 export function tag(v: Str, tag: Tag): TagOverride<StrNode>
 export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
+}
+export function dynTag(v: Num, tag: Record<string, StrNode>): DynamicTag<NumNode>
+export function dynTag(v: Str, tag: Record<string, StrNode>): DynamicTag<StrNode>
+export function dynTag(v: Val, tag: Record<string, StrNode>): DynamicTag<AnyNode> {
+  return { op: 'dtag', x: [toV(v)], br: Object.values(tag), ex: Object.keys(tag) }
 }
 
 export function read(tag: Tag, accu: Read['accu']): Read {
