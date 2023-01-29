@@ -4,7 +4,7 @@ import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
 import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
-import { deepClone, objectKeyMap } from "../../Util/Util";
+import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
@@ -34,7 +34,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
 
     if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
     if (reaction && !allAmpReactions.includes(reaction as typeof allAmpReactions[number]) && !allAdditiveReactions.includes(reaction as typeof allAdditiveReactions[number])) reaction = undefined
-    if (infusionAura!=="" && !allInfusionAuraElements.includes(infusionAura as InfusionAuraElements)) infusionAura = ""
+    if (infusionAura !== "" && !allInfusionAuraElements.includes(infusionAura as InfusionAuraElements)) infusionAura = ""
     if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
 
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
@@ -42,9 +42,9 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
     else {
       let { auto, skill, burst } = talent
-      if (typeof auto !== "number" || auto < 1 || auto > 15) auto = 1
-      if (typeof skill !== "number" || skill < 1 || skill > 15) skill = 1
-      if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
+      auto = typeof auto !== "number" ? 1 : clamp(auto, 1, 10)
+      skill = typeof skill !== "number" ? 1 : clamp(skill, 1, 10)
+      burst = typeof burst !== "number" ? 1 : clamp(burst, 1, 10)
       talent = { auto, skill, burst }
     }
 
