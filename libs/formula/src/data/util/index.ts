@@ -1,5 +1,6 @@
-import { AnyNode, RawTagMapEntries, ReRead } from '@genshin-optimizer/waverider'
+import type { AnyNode, ReRead } from '@genshin-optimizer/waverider'
+import type { Tag } from './read'
 export * from './commonRead'
-export * from './read'
 export * from './listing'
-export type Data = RawTagMapEntries<AnyNode | ReRead>
+export * from './read'
+export type Data = { tag: Tag, value: AnyNode | ReRead }[]

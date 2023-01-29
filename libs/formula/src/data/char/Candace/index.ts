@@ -1,7 +1,7 @@
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
-import { Data, elements, percent, self } from '../../util'
-import { CharInfo, customDmg, dmg, entriesForChar, shield, write } from '../util'
+import { custom, elements, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { CharInfo, customDmg, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -59,14 +59,9 @@ const dm = {
 } as const
 
 const info: CharInfo = { name: 'Candace', ele: 'hydro', weaponType: 'polearm', region: 'sumeru' }
-const { final, char: { ascension, constellation } } = self, {
-  custom: {
-    // Conditional
-    afterBurst, c2AfterSkillHit
-    // Intermediate
-  },
-  output: { selfBuff, teamBuff },
-} = write(info.name)
+const { final, char: { ascension, constellation } } = self
+// Conditional
+const { afterBurst, c2AfterSkillHit } = custom
 
 const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
 const hydroInfusion = cmpEq(afterBurst, 'on', 'hydro', '')
@@ -76,18 +71,16 @@ const a4_normalEle_dmg_ = cmpGE(ascension, 4, cmpEq(afterBurst, 'on',
 ))
 const c2_hp_ = cmpGE(constellation, 2, cmpEq(c2AfterSkillHit, 'on', percent(dm.constellation2.hp_)))
 
+export default register(info.name,
+  ...entriesForChar(info, data_gen),
+  selfBuff.char.burst.add(cmpGE(constellation, 3, 3)),
+  selfBuff.char.skill.add(cmpGE(constellation, 5, 3)),
 
-
-const data: Data = [
-  ...entriesForChar(selfBuff, info, data_gen),
-  selfBuff.char.burst.addNode(cmpGE(constellation, 3, 3)),
-  selfBuff.char.skill.addNode(cmpGE(constellation, 5, 3)),
-
-  selfBuff.premod.hp_.addNode(c2_hp_),
+  selfBuff.premod.hp_.add(c2_hp_),
 
   ...elements.filter(ele => ele !== 'physical').map(ele =>
-    teamBuff.premod.dmg_.normal[ele].addNode(sum(normalEle_dmg_, a4_normalEle_dmg_))),
-  teamBuff.reaction.infusionIndex.addNode(infusionPrio.team.hydro),
+    teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))),
+  teamBuff.reaction.infusionIndex.add(infusionPrio.team.hydro),
 
   // Dmg Formula
   ...dm.normal.hitArr.flatMap((arr, i) =>
@@ -102,5 +95,4 @@ const data: Data = [
   ...shield(`skill_shield`, info, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill'),
   ...shield(`skill_hydroShield`, info, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill', { ele: 'hydro' }),
   ...customDmg(`c6`, info, 'burst', prod(dm.constellation6.dmg, final.hp)) // TODO Guard this behind c6
-]
-export default data
+)

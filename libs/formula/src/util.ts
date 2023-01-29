@@ -1,23 +1,20 @@
-import { Artifact, Character, convert, Data, Preset, reader, selfTag, Stat, Weapon } from './data/util'
-import { write as writeChar } from './data/char/util'
-import { write as writeWeapon } from './data/weapon/util'
+import { Artifact, Character, convert, customQueries, Data, Preset, reader, selfTag, Stat, Weapon } from './data/util'
 
 export function charData(preset: Preset, data: {
   name: Character, lvl: number, ascension: number, constellation: number
   custom: Record<string, number | string>
 }): Data {
   const { lvl, ascension, constellation } = convert(selfTag, { preset, et: 'self' }).char
-  const { custom } = writeChar(data.name, { preset })
+  const custom = customQueries({ preset })
 
   return [
-    reader.withTag({ src: 'agg', preset }).reread(reader.with('src', data.name)),
-    reader.withTag({ src: 'isoSum', preset }).reread(reader.with('src', data.name)),
+    reader.withTag({ at: 'agg', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
+    reader.withTag({ at: 'iso', et: 'self', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
 
-    lvl.addNode(data.lvl),
-    ascension.addNode(data.ascension),
-    constellation.addNode(data.constellation),
-    ...Object.entries(data.custom).map(([k, v]) =>
-      custom[k].addNode(v)),
+    lvl.add(data.lvl),
+    ascension.add(data.ascension),
+    constellation.add(data.constellation),
+    ...Object.entries(data.custom).map(([k, v]) => custom[k].add(v)),
   ]
 }
 
@@ -26,17 +23,15 @@ export function weaponData(preset: Preset, data: {
   custom: Record<string, number | string>
 }): Data {
   const { lvl, ascension, refinement } = convert(selfTag, { preset, et: 'self' }).weapon
-  const { custom } = writeWeapon(data.name, { preset })
+  const custom = customQueries({ preset })
 
   return [
-    reader.withTag({ src: 'agg', preset }).reread(reader.with('src', data.name)),
-    reader.withTag({ src: 'isoSum', preset }).reread(reader.with('src', data.name)),
+    reader.withTag({ at: 'agg', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
 
-    lvl.addNode(data.lvl),
-    ascension.addNode(data.ascension),
-    refinement.addNode(data.refinement),
-    ...Object.entries(data.custom).map(([k, v]) =>
-      custom[k].addNode(v)),
+    lvl.add(data.lvl),
+    ascension.add(data.ascension),
+    refinement.add(data.refinement),
+    ...Object.entries(data.custom).map(([k, v]) => custom[k].add(v)),
   ]
 }
 
@@ -53,8 +48,8 @@ export function artifactsData(preset: Preset, data: {
       else stats[key]! += value
   }
   return [
-    ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).addNode(v)),
-    ...Object.entries(stats).map(([k, v]) => premod[k as Stat].addNode(v)),
+    ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).add(v)),
+    ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
   ]
 }
 
@@ -62,21 +57,20 @@ export function teamData(team: Preset[], active: Preset[]): Data {
   return [
     // Team Buff
     ...team.flatMap(dst => {
-      const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
+      const entry = reader.withTag({ preset: dst, at: 'agg', et: 'self' })
       return team.map(src =>
-        entry.reread(reader.withTag({ dst, preset: src, et: 'teamBuff' })))
+        entry.reread(reader.withTag({ dst, preset: src, at: 'agg', et: 'teamBuff' })))
     }),
     // Active Member Buff
     ...active.flatMap(dst => {
-      const entry = reader.withTag({ preset: dst, et: 'self', src: 'agg' })
+      const entry = reader.withTag({ preset: dst, at: 'agg', et: 'self' })
       return team.map(src =>
-        entry.reread(reader.withTag({ dst, preset: src, et: 'active' })))
+        entry.reread(reader.withTag({ dst, preset: src, at: 'agg', et: 'active' })))
     }),
     // Total Team Stat
-    ...(['agg', 'isoSum'] as const).flatMap(src =>
-      team.flatMap(dst => {
-        const entry = reader.withTag({ preset: dst, et: 'team', src })
-        return team.map(preset => entry.reread(reader.withTag({ preset, et: 'self' })))
-      })),
+    ...team.flatMap(dst => {
+      const entry = reader.withTag({ preset: dst, at: 'comp', et: 'team' })
+      return team.map(preset => entry.reread(reader.withTag({ preset, at: 'agg', et: 'self' })))
+    }),
   ]
 }

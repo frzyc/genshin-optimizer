@@ -5,17 +5,18 @@ const arts = ['NoblesseOblige'] as const // TODO
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
-export const entryTypes = ['self', 'team', 'teamBuff', 'active', 'enemy', 'target'] as const
-export const srcs = [...characters, ...weapons, ...arts, 'art', 'reaction', 'enemy', 'custom', 'agg', 'isoSum', 'iso', 'pre'] as const
+export const aggregationType = ['agg', 'iso', 'comp'] as const
+export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'prep', 'team', 'target'] as const
+export const srcs = [...characters, ...weapons, ...arts, 'art', 'reaction', 'enemy', 'custom'] as const
 export const dsts = presets
 
 export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const
 export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemental'] as const
 export const regions = ['mondstadt', 'liyue', 'inazuma', 'sumeru', 'fontaine', 'natlan', 'snezhnaya', 'khaenriah'] as const
 
-export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom'] as const
-export const amplifyingReactions = ['vaporize', 'melt'] as const
-export const catalyzeReactions = ['spread', 'aggravate'] as const
+export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom', ''] as const
+export const amplifyingReactions = ['vaporize', 'melt', ''] as const
+export const catalyzeReactions = ['spread', 'aggravate', ''] as const
 
 export type Character = typeof characters[number]
 export type Weapon = typeof weapons[number]

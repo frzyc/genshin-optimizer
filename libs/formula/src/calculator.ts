@@ -27,7 +27,7 @@ export class Calculator extends Base<Output> {
 
       case 'const': case 'subscript': return constOverride()
       case 'match': case 'thres': case 'lookup': return x.find(x => x)!.meta
-      case 'tag': return { ...x[0]!.meta, tag }
+      case 'tag': case 'dtag': return { ...x[0]!.meta, tag }
       default: throw new Error('Should not reach this point')
     }
   }
@@ -76,7 +76,8 @@ export function translate(data: CalcResult<number, Output>, cache: Map<CalcResul
   }
   let name: string | undefined, src: string | undefined
   if (tag) {
-    name = '(' + Object.values(tag).join(' ') + `) ${data.val}`
+    const { src, ...remaining } = tag
+    name = `${Object.entries(remaining).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(' ')} ${val}`
     // TODO: Compute name, unit, source, etc.
   }
 

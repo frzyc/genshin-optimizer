@@ -1,6 +1,6 @@
 import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { Data, percent, self, Weapon } from '../../util'
-import { entriesForWeapon, write } from '../util'
+import { custom, percent, register, self, selfBuff, Weapon } from '../../util'
+import { entriesForWeapon } from '../util'
 import data_gen from './data.gen.json'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
@@ -11,10 +11,8 @@ const hit_normal_dmg_arr = [0.096, 0.12, 0.144, 0.168, 0.192]
 const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const name: Weapon = 'TulaytullahsRemembrance'
-const { weapon: { refinement } } = self, {
-  custom: { timePassive, hitPassive },
-  output: { selfBuff },
-} = write(name)
+const { weapon: { refinement } } = self
+const { timePassive, hitPassive } = custom
 
 const time_normal_dmg_ = prod(timePassive, percent(subscript(refinement, time_normal_dmg_arr)))
 const hit_normal_dmg_ = prod(hitPassive, percent(subscript(refinement, hit_normal_dmg_arr)))
@@ -24,8 +22,7 @@ const normal_dmg_ = min(
   sum(time_normal_dmg_, hit_normal_dmg_)
 )
 
-const data: Data = [
-  ...entriesForWeapon(selfBuff, data_gen),
-  selfBuff.premod.dmg_.normal.addNode(normal_dmg_),
-]
-export default data
+export default register(name,
+  ...entriesForWeapon(data_gen),
+  selfBuff.premod.dmg_.normal.add(normal_dmg_),
+)

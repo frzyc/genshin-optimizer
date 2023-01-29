@@ -1,12 +1,12 @@
 import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
-import { amplifyingReactions, catalyzeReactions, dsts, elements, entryTypes, moves, presets, regions, srcs, transformativeReactions } from './listing'
+import { aggregationType, amplifyingReactions, catalyzeReactions, dsts, elements, entryTypes, moves, presets, regions, Source, srcs, transformativeReactions } from './listing'
 
 export const fixedTags = {
-  preset: presets, et: entryTypes,
-  src: srcs, dst: dsts,
+  preset: presets, at: aggregationType, et: entryTypes,
+  nameSrc: srcs, src: srcs, dst: dsts,
 
   region: regions, ele: elements, move: moves,
-  trans: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions
+  trans: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions,
 } as const
 export type Tag = {
   [key in keyof typeof fixedTags]?: typeof fixedTags[key][number] | null
@@ -30,13 +30,13 @@ export class Read implements Base {
   with<C extends keyof Tag>(cat: C, val: AllTag[C], accu?: Read['accu']): Read {
     return new Read({ ...this.tag, [cat]: val }, accu ?? this.accu)
   }
-  withTag(tag: Omit<Tag, 'name' | 'qt' | 'q'>, accu?: Read['accu']): Read {
+  withTag(tag: Omit<Tag, 'name' | 'q'>, accu?: Read['accu']): Read {
     return new Read({ ...this.tag, ...tag }, accu ?? this.accu)
   }
   _withAll<C extends keyof Tag>(cat: C, accu?: Read['accu']): Record<AllTag[C], Read> {
     return new Proxy(this, { get(t, p: AllTag[C]) { return t.with(cat, p, accu) } }) as any
   }
-  addNode(value: number | string | AnyNode): { tag: Tag, value: AnyNode } {
+  add(value: number | string | AnyNode): { tag: Tag, value: AnyNode } {
     return { tag: this.tag, value: typeof value === 'object' ? value : constant(value) }
   }
   reread(r: Read): { tag: Tag, value: ReRead } { return { tag: this.tag, value: reread(r.tag) } }
@@ -95,5 +95,4 @@ export class Read implements Base {
 }
 
 export const reader = new Read({}, undefined)
-export const todo = new Read({ todo: 'TODO' } as {}, undefined)
 export const usedNames = new Set<string>()

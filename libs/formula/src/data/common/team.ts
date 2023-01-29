@@ -1,7 +1,7 @@
-import { sum, tag } from '@genshin-optimizer/waverider'
-import { Data, elements, reader, team } from '../util'
+import { sum } from '@genshin-optimizer/waverider'
+import { Data, elements, selfBuff, team } from '../util'
 
 const data: Data = [
-  team.common.eleCount.addNode(tag(sum(...elements.map(ele => team.common.count[ele].max)), reader.withTag({ dst: null }).tag))
+  team.common.eleCount.add(sum(...elements.map(ele => team.common.count[ele].max)))
 ]
 export default data

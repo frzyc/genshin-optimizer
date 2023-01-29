@@ -1,7 +1,7 @@
 import { AnyNode, compileTagMapValues, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from '@genshin-optimizer/waverider'
-import { Calculator } from './calculator'
+import { Calculator, translate } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, Read, selfTag, Tag } from './data/util'
+import { convert, Data, enemyDebuff, Read, reader, self, selfTag, Tag } from './data/util'
 import { charData, teamData, weaponData } from './util'
 
 const tagKeys = new TagMapKeys(keys)
@@ -34,22 +34,34 @@ describe('Genshin Database', () => {
         afterSkillStacks: 3
       }
     }),
+
+    // Enemy
+    enemyDebuff.cond.cata.with('at', 'iso').add('spread'),
+    enemyDebuff.cond.amp.with('at', 'iso').add(''),
   ], calc = new Calculator(keys, values, compileTagMapValues<Data[number]['value']>(keys, data))
 
   const nahida = convert(selfTag, { preset: 'preset0', et: 'self' })
   const nilou = convert(selfTag, { preset: 'preset1', et: 'self' })
+  const team = convert(selfTag, { preset: 'preset0', at: 'comp', et: 'team' })
 
-  test('Basic Query', () => {
+  test('Basic Queries', () => {
     expect(calc.compute(nilou.final.hp).val).toBeCloseTo(9479.7, 1)
     expect(calc.compute(nahida.final.atk).val).toBeCloseTo(346.21, 2)
     expect(calc.compute(nahida.final.def).val).toBeCloseTo(94.15, 2)
     expect(calc.compute(nahida.final.eleMas).val).toBeCloseTo(28.44, 2)
+    expect(calc.compute(nahida.final.critRate_).val).toBe(0)
     expect(calc.compute(nahida.final.critRate_.burgeon).val).toBeCloseTo(0.2, 2)
     expect(calc.compute(nahida.common.cappedCritRate_).val).toBe(0)
     expect(calc.compute(nahida.common.cappedCritRate_.burgeon).val).toBe(0.2)
-    expect(calc.compute(nahida.common.count.withTag({ et: 'team' }).dendro).val).toBe(1)
-    expect(calc.compute(nahida.common.count.withTag({ et: 'team' }).hydro).val).toBe(1)
-    expect(calc.compute(nahida.common.eleCount.withTag({ et: 'team' })).val).toBe(2)
+  })
+  test('Team queries', () => {
+    expect(calc.compute(team.common.count.dendro).val).toBe(1)
+    expect(calc.compute(team.common.count.hydro).val).toBe(1)
+    expect(calc.compute(nahida.common.count.hydro).val).toBe(0)
+    expect(calc.compute(nahida.common.count.dendro).val).toBe(1)
+    expect(calc.compute(team.common.eleCount).val).toBe(2)
+    expect(calc.compute(team.final.eleMas).val).toEqual(
+      calc.compute(nahida.final.eleMas).val + calc.compute(nilou.final.eleMas).val)
   })
 })
 
