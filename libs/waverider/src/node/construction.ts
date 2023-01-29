@@ -83,7 +83,7 @@ export function cmpGT(v1: Num, v2: Num, gt: Val, le: Val = 0): Threshold<AnyNode
 
 /** table[index] ?? defaultNode */
 export function lookup(index: StrNode, table: Record<string, Num>, defaultV?: Num): Lookup<NumNode>
-export function lookup(index: StrNode, table: Record<string, Str>, defaultV?: Str): Lookup<NumNode>
+export function lookup(index: StrNode, table: Record<string, Str>, defaultV?: Str): Lookup<StrNode>
 export function lookup(index: StrNode, table: Record<string, Val>, defaultV?: Val): Lookup<AnyNode> {
   return {
     op: 'lookup', br: [toV(index)],
@@ -105,10 +105,10 @@ export function tag(v: Str, tag: Tag): TagOverride<StrNode>
 export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
 }
-export function dynTag(v: Num, tag: Record<string, StrNode>): DynamicTag<NumNode>
-export function dynTag(v: Str, tag: Record<string, StrNode>): DynamicTag<StrNode>
-export function dynTag(v: Val, tag: Record<string, StrNode>): DynamicTag<AnyNode> {
-  return { op: 'dtag', x: [toV(v)], br: Object.values(tag), ex: Object.keys(tag) }
+export function dynTag(v: Num, tag: Record<string, Str>): DynamicTag<NumNode>
+export function dynTag(v: Str, tag: Record<string, Str>): DynamicTag<StrNode>
+export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode> {
+  return { op: 'dtag', x: [toV(v)], br: toVs(Object.values(tag)), ex: Object.keys(tag) }
 }
 
 export function read(tag: Tag, accu: Read['accu']): Read {
