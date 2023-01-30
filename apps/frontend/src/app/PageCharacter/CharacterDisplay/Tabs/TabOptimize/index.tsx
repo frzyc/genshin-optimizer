@@ -9,6 +9,7 @@ import CardLight from '../../../../Components/Card/CardLight';
 import CharacterCard from '../../../../Components/Character/CharacterCard';
 import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
 import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
+import InfoTooltip from '../../../../Components/InfoTooltip';
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
 import SqBadge from '../../../../Components/SqBadge';
 import { CharacterContext } from '../../../../Context/CharacterContext';
@@ -368,14 +369,13 @@ export default function TabBuild() {
         <Grid item xs={12} sm={6} lg={4} display="flex" flexDirection="column" gap={1}>
           <CardLight>
             <CardContent  >
-              <BootstrapTooltip placement="top" title={<Box>
-                <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
-                <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
-              </Box>}>
-                <Box>
-                  <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
-                </Box>
-              </BootstrapTooltip>
+              <Box display="flex" alignItems="center" gap={1}>
+                <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
+                <InfoTooltip title={<Box>
+                  <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
+                  <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
+                </Box>} />
+              </Box>
             </CardContent>
             {/* main stat selector */}
             <MainStatSelectionCard disabled={generatingBuilds} filteredArtIds={filteredArtIds} />
