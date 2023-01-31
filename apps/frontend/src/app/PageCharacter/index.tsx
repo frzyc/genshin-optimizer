@@ -2,7 +2,7 @@ import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icon
 import AddIcon from '@mui/icons-material/Add';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
@@ -51,7 +51,7 @@ export default function PageCharacter() {
   const [dbDirty, forceUpdate] = useForceUpdate()
   // Set follow, should run only once
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: '/characters' })
+    // ReactGA.send({ hitType: "pageview", page: '/characters' })
     return database.chars.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 

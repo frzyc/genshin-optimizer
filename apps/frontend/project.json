@@ -5,37 +5,11 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/frontend",
-        "index": "apps/frontend/src/index.html",
-        "baseHref": "/",
-        "main": "apps/frontend/src/main.tsx",
-        "polyfills": "apps/frontend/src/polyfills.ts",
-        "tsConfig": "apps/frontend/tsconfig.app.json",
-        "assets": [
-          "apps/frontend/src/favicon.ico",
-          "apps/frontend/src/logo192.png",
-          "apps/frontend/src/logo512.png",
-          "apps/frontend/src/manifest.json",
-          "apps/frontend/src/robots.txt",
-          "apps/frontend/src/assets",
-          {
-            "input": "libs/localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "dist/libs/dm-localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }],
-        "styles": [],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "outputPath": "dist/apps/frontend"
       },
       "configurations": {
         "development": {
@@ -43,7 +17,7 @@
           "optimization": false,
           "sourceMap": true,
           "vendorChunk": true,
-          "statsJson":true
+          "statsJson": true
         },
         "production": {
           "fileReplacements": [
@@ -64,7 +38,7 @@
       "dependsOn": ["^build", "^pipeline"]
     },
     "serve": {
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "frontend:build",
@@ -81,7 +55,7 @@
       },
       "dependsOn": ["^build", "^pipeline"]
     },
-    "deploy":{
+    "deploy": {
       "command": "gh-pages -d dist/apps/frontend",
       "dependsOn": ["build"]
     },
@@ -102,5 +76,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["localization", "pipeline-runner","dm-localization"]
+  "implicitDependencies": ["localization", "pipeline-runner", "dm-localization"]
 }

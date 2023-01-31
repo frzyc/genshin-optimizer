@@ -2,7 +2,7 @@ import { allArtifactSets, allWeaponKeys } from "@genshin-optimizer/consts";
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
 import { Suspense, useContext } from "react";
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import { useTranslation } from 'react-i18next';
 import { Link, Route, Routes, useMatch } from "react-router-dom";
 import CardDark from "../Components/Card/CardDark";
@@ -16,7 +16,7 @@ import { charKeyToCharName, locationCharacterKeys } from "../Types/consts";
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
-  ReactGA.send({ hitType: "pageview", page: '/doc' })
+  // ReactGA.send({ hitType: "pageview", page: '/doc' })
 
   const { params: { currentTab } } = useMatch("/doc/:currentTab") ?? { params: { currentTab: "" } }
 

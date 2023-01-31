@@ -1,7 +1,7 @@
 import { Add, Replay } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import SubstatToggle from '../Components/Artifact/SubstatToggle';
@@ -51,7 +51,7 @@ export default function PageArtifact() {
   const deleteArtifact = useCallback((id: string) => database.arts.remove(id), [database])
 
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: '/artifact' })
+    // ReactGA.send({ hitType: "pageview", page: '/artifact' })
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 

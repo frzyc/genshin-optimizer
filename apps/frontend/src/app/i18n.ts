@@ -38,7 +38,7 @@ i18n
   .use(LanguageDetector)
   // Configure localization.
   .init({
-    // debug: process.env.NODE_ENV === "development",
+    // debug: import.meta.env.NODE_ENV === "development",
     // Use English strings by default, if the current language does not include
     // the specified string.
     fallbackLng: 'en',
@@ -60,7 +60,7 @@ i18n
 
     backend: {
       // Path to load localization data from.
-      loadPath: 'assets/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
       escapeValue: false,//react does interlopation already

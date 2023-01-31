@@ -2,7 +2,7 @@ import { allRarities, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/co
 import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import CardDark from '../Components/Card/CardDark';
 import SortByButton from '../Components/SortByButton';
@@ -38,7 +38,7 @@ export default function PageWeapon() {
   const [pageIndex, setPageIndex] = useState(0)
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: '/weapon' })
+    // ReactGA.send({ hitType: "pageview", page: '/weapon' })
     return database.weapons.followAny((k, r) => (r === "new" || r === "remove") && forceUpdate())
   }, [forceUpdate, database])
 

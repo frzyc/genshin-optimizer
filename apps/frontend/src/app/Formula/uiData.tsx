@@ -232,7 +232,7 @@ export class UIData {
     switch (operation) {
       case "add": case "mul": case "min": case "max":
         const identity = allOperations[operation]([])
-        if (process.env.NODE_ENV !== "development")
+        if (import.meta.env.NODE_ENV !== "development")
           operands = operands.filter(operand => operand.value !== identity)
         if (!operands.length)
           return Object.values(info).some(x => x) ? { ...this._constant(identity), info } : this._constant(identity)

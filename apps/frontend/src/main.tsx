@@ -4,13 +4,13 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import App from './app/App';
 import './index.css';
 import NewTab from './app/NewTab';
-ReactGA.initialize(process.env.NX_GA_TRACKINGID as any, {
-  testMode: process.env.NODE_ENV === "development"
-});
+// ReactGA.initialize(import.meta.env.NX_GA_TRACKINGID as any, {
+//   testMode: import.meta.env.NODE_ENV === "development"
+// });
 let mode: "main" | "newtab" = "main"
 let root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(<React.StrictMode><App /></React.StrictMode>);

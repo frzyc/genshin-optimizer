@@ -339,7 +339,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                       <Typography>
                         <span>
                           Screenshots in file-queue: <b>{remaining}</b>
-                          {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
+                          {/* {import.meta.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                         </span>
                       </Typography>
                     </Grid>
@@ -415,7 +415,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {allowEmpty && <Button startIcon={<Replay />} disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} color="error">{t`editor.btnClear`}</Button>}
           </Grid>
           <Grid item>
-            {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
+            {import.meta.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
             <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>

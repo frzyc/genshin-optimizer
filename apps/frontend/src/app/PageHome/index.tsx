@@ -1,5 +1,5 @@
 import { Box, CardContent, Grid, Link, Typography, useMediaQuery, useTheme } from "@mui/material"
-import ReactGA from 'react-ga4'
+// import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from "../Components/Card/CardDark"
 import InventoryCard from "./InventoryCard"
@@ -13,7 +13,7 @@ export default function PageHome() {
   // const { t } = useTranslation("page_home")
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up('lg'));
-  ReactGA.send({ hitType: "pageview", page: '/home' })
+  // ReactGA.send({ hitType: "pageview", page: '/home' })
   if (lg) return <Grid container spacing={2} direction={"row-reverse"} sx={{ my: 2 }}>
     <Grid item xs={12} lg={5} xl={4} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <QuickLinksCard />

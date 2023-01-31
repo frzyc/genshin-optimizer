@@ -218,7 +218,7 @@ function mergeData(data: Data[]): Data {
       let { accu, type } = objPathValue(base, path) as ReadNode<number | string> | undefined ?? {}
       if (accu === undefined) {
         const errMsg = `Multiple entries when merging \`unique\` for key ${path}`
-        if (process.env.NODE_ENV === "development")
+        if (import.meta.env.NODE_ENV === "development")
           throw new Error(errMsg)
         else
           console.error(errMsg)

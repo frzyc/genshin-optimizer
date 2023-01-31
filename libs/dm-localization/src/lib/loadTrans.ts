@@ -168,7 +168,7 @@ export default function loadTrans() {
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${__dirname}/../../assets/locales/${lang}`
+    const fileDir = `${__dirname}/../../../../../apps/frontend/public/locales/${lang}`
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
 
     Object.entries(data).forEach(([type, typeData]) => {

@@ -221,7 +221,7 @@ export default function TabBuild() {
 
     const finalizedList: Promise<FinalizeResult>[] = []
     for (let i = 0; i < maxWorkers; i++) {
-      const worker = new Worker(new URL('./BackgroundWorker.ts', import.meta.url))
+      const worker = new Worker(new URL('./BackgroundWorker.ts?worker', import.meta.url))
       worker.addEventListener("error", _ => {
         console.error("Failed to load worker")
         setWorkerErr(true)
@@ -329,7 +329,7 @@ export default function TabBuild() {
         })
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
-      if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
+      if (import.meta.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })

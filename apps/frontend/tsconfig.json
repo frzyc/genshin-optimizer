@@ -1,16 +1,25 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
+    "skipLibCheck": true,
     "esModuleInterop": false,
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
     "strict": true,
-    "jsxImportSource": "@emotion/react"
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "noImplicitAny": false
   },
   "files": [],
-  "include": [],
+  "include": ["src"],
   "references": [
     {
       "path": "./tsconfig.app.json"

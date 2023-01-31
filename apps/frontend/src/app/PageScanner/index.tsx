@@ -1,6 +1,6 @@
 import { Backpack, Computer, Download, Gamepad, InsertLink, PersonSearch, SendToMobile, SportsEsports, Warning, YouTube } from "@mui/icons-material"
 import { Box, CardActionArea, CardContent, CardMedia, Grid, IconButton, Link, Tooltip, Typography } from "@mui/material"
-import ReactGA from 'react-ga4'
+// import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from "react-router-dom"
 import CardDark from "../Components/Card/CardDark"
@@ -13,7 +13,7 @@ import GIScanner from './GIScanner.png'
 
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
-  ReactGA.send({ hitType: "pageview", page: '/scanner' })
+  // ReactGA.send({ hitType: "pageview", page: '/scanner' })
   return <Box display="flex" flexDirection="column" gap={2} my={1}>
     <CardDark><CardContent>
       <Trans t={t} i18nKey="intro">
