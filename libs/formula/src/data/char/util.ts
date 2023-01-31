@@ -1,4 +1,4 @@
-import { AnyNode, dynTag, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
+import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
 import { Character, convert, custom, Data, Element, enemy, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
 
 export interface CharInfo {
