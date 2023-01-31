@@ -12,10 +12,11 @@ type ElementToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"
 const elementHandler = handleMultiSelect([...allElements])
 export default function ElementToggle({ value, totals, onChange, ...props }: ElementToggleProps) {
   const theme = useTheme();
+  const sm = !useMediaQuery(theme.breakpoints.up('md'));
   const xs = !useMediaQuery(theme.breakpoints.up('sm'));
   return <ToggleButtonGroup exclusive value={value} {...props}>
-    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} sx={{ p: xs ? 1 : undefined, minWidth: xs ? 0 : "6em", display: "flex" }} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
-      <ElementIcon ele={ele} iconProps={{ fontSize: xs ? "inherit" : undefined }} /><Chip sx={{ ml: 0.5 }} label={totals[ele]} size="small" />
+    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} sx={{ p: sm ? 1 : undefined, minWidth: sm ? 0 : "6em", display: "flex" }} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
+      <ElementIcon ele={ele} iconProps={{ fontSize: (sm && !xs) ? "inherit" : undefined }} />{!xs && <Chip sx={{ ml: 0.5 }} label={totals[ele]} size="small" />}
     </SolidColoredToggleButton>)}
   </ToggleButtonGroup>
 }
