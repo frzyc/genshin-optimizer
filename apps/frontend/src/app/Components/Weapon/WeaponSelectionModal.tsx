@@ -100,7 +100,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
                 <Box component="img" src={weaponAsset(weaponKey, ascension >= 2)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
                 <Box sx={{ flexGrow: 1, px: 1 }}>
                   <Typography variant="subtitle1">{weaponSheet.name}</Typography>
-                  <Typography sx={{ display: "flex", alignItems: "baseline", gap: 0.5 }}>
+                  <Typography sx={{ display: "flex", alignItems: "baseline" }}>
                     <ImgIcon size={1.5} src={Assets.weaponTypes?.[weaponSheet.weaponType]} />
                     <StarsDisplay stars={weaponSheet.rarity} colored />
                   </Typography>

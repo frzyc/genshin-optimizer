@@ -15,7 +15,7 @@ export default function LocationName({ location }: { location: LocationKey }) {
   const characterSheet = useMemo(() => location ? getCharSheet(database.chars.LocationToCharacterKey(location), gender) : undefined, [location, gender, database])
   return <Typography component="span">
     {(location && characterSheet?.name) ?
-      <Box><Box component="span" sx={{ mx: "0.5em", }}><LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} /></Box> {characterSheet.name}</Box> :
+      <Box><LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} />{characterSheet.name}</Box> :
       <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t("inventory")}</span>}
   </Typography>
 

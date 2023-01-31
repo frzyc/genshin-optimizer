@@ -254,7 +254,6 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               {/* Artifact Set */}
               <ArtifactSetAutocomplete
                 disabled={disableSet}
-                disableClearable
                 size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
@@ -285,9 +284,9 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
                     {(artifact && sheet?.getSlotName(artifact!.slotKey)) ?
-                      <Box display="flex" gap={1} alignItems="center">
+                      <span>
                         <ImgIcon size={2} src={artifactAsset(artifact.setKey, artifact.slotKey)} />{sheet?.getSlotName(artifact!.slotKey)}
-                      </Box> : t`editor.unknownPieceName`}
+                      </span> : t`editor.unknownPieceName`}
                   </Typography>
                 </Suspense>
               </CardLight>

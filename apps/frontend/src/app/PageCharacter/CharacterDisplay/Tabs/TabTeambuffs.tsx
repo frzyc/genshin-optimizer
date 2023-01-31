@@ -1,3 +1,4 @@
+import { CharacterKey } from "@genshin-optimizer/consts";
 import { characterAsset } from "@genshin-optimizer/g-assets";
 import { PersonAdd } from "@mui/icons-material";
 import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
@@ -20,7 +21,7 @@ import { DatabaseContext } from "../../../Database/Database";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
 import useDBMeta from "../../../ReactHooks/useDBMeta";
-import { CharacterKey, charKeyToCharName } from "../../../Types/consts";
+import { charKeyToCharName } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
 export default function TabTeambuffs() {
@@ -165,7 +166,7 @@ function CharTalentCondDisplay() {
 }
 
 function TeammateAutocomplete({ characterKey, team, label, setChar, autoCompleteProps = {} }:
-  { characterKey: CharacterKey | "", team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<CharacterKey | "">, false, true, false>, "renderInput" | "onChange" | "options"> }) {
+  { characterKey: CharacterKey | "", team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<CharacterKey | "">, false, false, false>, "renderInput" | "onChange" | "options"> }) {
   const { t } = useTranslation(["charNames_gen", "page_character", "sheet_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()

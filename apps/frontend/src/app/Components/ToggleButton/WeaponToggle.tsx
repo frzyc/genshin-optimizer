@@ -16,7 +16,7 @@ export default function WeaponToggle({ value, totals, onChange, ...props }: Weap
   const xs = !useMediaQuery(theme.breakpoints.up('sm'));
   return <SolidToggleButtonGroup exclusive value={value} {...props}>
     {allWeaponTypeKeys.map(wt => <ToggleButton key={wt} value={wt} sx={{ p: xs ? 1 : undefined, minWidth: xs ? 0 : "7em", display: "flex", gap: xs ? 0 : 1 }} onClick={() => onChange(weaponTypeHandler(value, wt))}>
-      <ImgIcon src={Assets.weaponTypes?.[wt]} size={2} /><Chip label={totals[wt]} size="small" />
+      <ImgIcon src={Assets.weaponTypes?.[wt]} size={2} sideMargin /><Chip label={totals[wt]} size="small" />
     </ToggleButton>)}
   </SolidToggleButtonGroup>
 }
