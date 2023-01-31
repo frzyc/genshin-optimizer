@@ -421,7 +421,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, { ...editorArtifact, location: old.location }); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>
