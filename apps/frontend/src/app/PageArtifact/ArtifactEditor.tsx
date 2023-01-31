@@ -259,7 +259,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
                 sx={{ flexGrow: 1 }}
-                label={t("editor.unknownSetName")}
+                label={artifact?.setKey ? "" : t("editor.unknownSetName")}
                 getOptionDisabled={({ key }) => setACDisable(key)}
               />
               {/* rarity dropdown */}
@@ -284,7 +284,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
-                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ? <span><ImgIcon src={artifactAsset(artifact.setKey, artifact.slotKey)} /> {sheet?.getSlotName(artifact!.slotKey)}</span> : t`editor.unknownPieceName`}
+                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ?
+                      <Box display="flex" gap={1} alignItems="center">
+                        <ImgIcon size={2} src={artifactAsset(artifact.setKey, artifact.slotKey)} />{sheet?.getSlotName(artifact!.slotKey)}
+                      </Box> : t`editor.unknownPieceName`}
                   </Typography>
                 </Suspense>
               </CardLight>

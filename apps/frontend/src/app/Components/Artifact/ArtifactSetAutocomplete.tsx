@@ -21,7 +21,7 @@ export default function ArtifactSetAutocomplete({ artSetKey, setArtSetKey, label
     .flatMap(([rarity, sets]) => sets.map(set => ({ key: set, label: t(`artifactNames_gen:${set}`), grouper: +rarity as ArtifactRarity })))
     .sort(sortByRarityAndName), [t])
 
-  const toImg = useCallback((key: ArtifactSetKey | "") => key ? <ImgIcon src={artifactDefIcon(key)} sx={{ fontSize: "1.5em" }} /> : undefined, [])
+  const toImg = useCallback((key: ArtifactSetKey | "") => key ? <ImgIcon src={artifactDefIcon(key)} size={2} /> : undefined, [])
 
   return <GeneralAutocomplete
     options={options}

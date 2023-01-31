@@ -130,11 +130,11 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     <Grid item xs={12} md={6} display="flex" flexDirection="column" gap={1}>
       {/* Artifact rarity filter */}
       <SolidToggleButtonGroup fullWidth value={rarity} size="small" >
-        {allArtifactRarities.map(star => <ToggleButton key={star} sx={{ display: "flex", gap: 1 }} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><StarsDisplay stars={star} /><Chip label={rarityTotal[star]} size="small" /></ToggleButton>)}
+        {allArtifactRarities.map(star => <ToggleButton key={star} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={star} onClick={() => filterOptionDispatch({ rarity: rarityHandler(rarity, star) })}><StarsDisplay stars={star} inline /><Chip label={rarityTotal[star]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
       <SolidToggleButtonGroup fullWidth value={slotKeys} size="small" disabled={disableSlotFilter}>
-        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1 }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
+        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
       <Box display="flex" gap={1} flexWrap="wrap">
@@ -151,7 +151,10 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       </Box>
       {/* Lines */}
       <SolidToggleButtonGroup fullWidth value={lines} size="small">
-        {[1, 2, 3, 4].map(line => <ToggleButton key={line} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4> })}><Box mr={1} whiteSpace="nowrap">{t("sub", { count: line })}</Box><Chip label={linesTotal[line]} size="small" /></ToggleButton>)}
+        {[1, 2, 3, 4].map(line => <ToggleButton key={line} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4> })}>
+          <Box whiteSpace="nowrap">{t("sub", { count: line })}</Box>
+          <Chip label={linesTotal[line]} size="small" />
+        </ToggleButton>)}
       </SolidToggleButtonGroup>
       <Button startIcon={<PersonSearch />} color={showEquipped ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showEquipped: !showEquipped })}>{t`equippedArt`} <Chip sx={{ ml: 1 }} label={equippedTotal} size="small" /></Button>
       <Button startIcon={<BusinessCenter />} color={showInventory ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showInventory: !showInventory })}>{t`artInInv`} <Chip sx={{ ml: 1 }} label={unequippedTotal} size="small" /></Button>

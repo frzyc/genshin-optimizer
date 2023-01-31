@@ -13,7 +13,7 @@ export default function ArtifactMainStatMultiAutocomplete({ mainStatKeys, setMai
 }) {
   const { t } = useTranslation("artifact")
   const options = useMemo(() => allMainStatKeys.map(key => ({ key, label: KeyMap.getArtStr(key), variant: KeyMap.getVariant(key) })), [])
-  const toImg = useCallback((key: MainStatKey) => <StatIcon statKey={key} />, [])
+  const toImg = useCallback((key: MainStatKey) => <StatIcon statKey={key} iconProps={{ sx: { ml: 1 } }} />, [])
   const toExLabel = useCallback((key: MainStatKey) => <strong>{totals[key]}</strong>, [totals],)
   const toExItemLabel = useCallback((key: MainStatKey) => <Chip size="small" label={totals[key]} />, [totals],)
   return <GeneralAutocompleteMulti

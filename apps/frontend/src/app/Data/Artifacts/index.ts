@@ -1,7 +1,7 @@
-import { allArtifactRarities, ArtifactRarity, ArtifactSetKey, SetNum } from '../../Types/consts'
-import { ArtifactSheet } from './ArtifactSheet'
-import { allArtifactSets } from '@genshin-optimizer/consts'
+import { allArtifactSets, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { mergeData, UIData } from '../../Formula/api'
+import { allArtifactRarities, ArtifactRarity, SetNum } from '../../Types/consts'
+import { ArtifactSheet } from './ArtifactSheet'
 
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'

@@ -13,7 +13,7 @@ export default function ArtifactSubstatMultiAutocomplete({ substatKeys, setSubst
 }) {
   const { t } = useTranslation("artifact")
   const options = useMemo(() => allSubstatKeys.map(key => ({ key, label: KeyMap.getArtStr(key) })), [])
-  const toImg = useCallback((key: SubstatKey) => <StatIcon statKey={key} />, [])
+  const toImg = useCallback((key: SubstatKey) => <StatIcon statKey={key} iconProps={{ sx: { ml: 1 } }} />, [])
   const toExLabel = useCallback((key: SubstatKey) => <strong>{totals[key]}</strong>, [totals],)
   const toExItemLabel = useCallback((key: SubstatKey) => <Chip size="small" label={totals[key]} />, [totals],)
   return <GeneralAutocompleteMulti

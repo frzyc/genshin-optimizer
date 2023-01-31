@@ -353,7 +353,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
         <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
-          <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />
+          <ImgIcon size={2} src={artifactDefIcon(setKey)} />
           <Box >{artifactSheet.setName}</Box>
           <Info />
         </Box>

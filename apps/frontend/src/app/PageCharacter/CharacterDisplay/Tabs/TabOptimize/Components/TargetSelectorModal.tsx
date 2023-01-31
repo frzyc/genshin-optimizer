@@ -55,7 +55,7 @@ function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: Disp
   const { database } = useContext(DatabaseContext)
   const header = useMemo(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey, database])
   return <CardLight key={sectionKey as string}>
-    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
+    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>

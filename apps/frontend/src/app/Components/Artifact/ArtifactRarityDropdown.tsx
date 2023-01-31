@@ -14,12 +14,12 @@ export default function ArtifactRarityDropdown({ rarity, onChange, filter, ...pr
   const { t } = useTranslation("artifact")
   return <DropdownButton
     {...props}
-    title={rarity ? <StarsDisplay stars={rarity} /> : t`editor.rarity`}
+    title={rarity ? <StarsDisplay stars={rarity} inline /> : t`editor.rarity`}
     color={rarity ? "success" : "primary"}
   >
     {([5, 4, 3] as ArtifactRarity[]).map(rarity =>
       <MenuItem key={rarity} disabled={!filter(rarity)} onClick={() => onChange(rarity)}>
-        <StarsDisplay stars={rarity} />
+        <StarsDisplay stars={rarity} inline />
       </MenuItem>)}
   </DropdownButton>
 }

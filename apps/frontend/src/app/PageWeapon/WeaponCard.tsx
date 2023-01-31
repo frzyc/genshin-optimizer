@@ -53,7 +53,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
           </IconButton>}
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-              <ImgIcon sx={{ fontSize: "1.5em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+              <ImgIcon size={2} src={Assets.weaponTypes?.[weaponTypeKey]} />
               <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{weaponSheet.name}</strong></Typography>
             </Box>
             <Typography component="span" variant="h5">Lv. {level}</Typography>

@@ -38,7 +38,7 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
 
   const { title, icon, action } = header
   return <CardDark >
-    <CardHeaderCustom avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
+    <CardHeaderCustom avatar={icon && <ImgIcon size={2} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
     <Divider />
     <FieldDisplayList sx={{ m: 0 }}>
       {Object.entries(displayNs).map(([nodeKey, n]) =>

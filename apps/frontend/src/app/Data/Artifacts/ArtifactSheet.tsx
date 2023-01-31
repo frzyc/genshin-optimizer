@@ -54,7 +54,7 @@ export const setHeaderTemplate = (setKey: ArtifactSetKey): ((setNum: SetNum) => 
   const tr = (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
   return (setNum: SetNum) => ({
     title: tr("setName"),
-    icon: <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />,
+    icon: <ImgIcon size={2} src={artifactDefIcon(setKey)} />,
     action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
     description: tr(`setEffects.${setNum}`)
   })
