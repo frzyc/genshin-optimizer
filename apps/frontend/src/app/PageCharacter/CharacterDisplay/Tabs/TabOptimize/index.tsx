@@ -48,13 +48,19 @@ import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
+import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
+const mp3_url = 'https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3';
+const audio = new Audio(mp3_url)
 export default function TabBuild() {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
   const { gender } = useDBMeta()
+
+  const [notification, setnotification] = useState(false)
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
@@ -128,6 +134,18 @@ export default function TabBuild() {
     })
     return `${current}/${total}`
   }, [deferredBuildSetting, filteredArtIds, database])
+
+  const tabFocused = useRef(true)
+  useEffect(() => {
+    const onFocus = () => tabFocused.current = true
+    const onBlur = () => tabFocused.current = false
+    window.addEventListener('focus', onFocus)
+    window.addEventListener('blur', onBlur)
+    return () => {
+      window.removeEventListener('focus', onFocus)
+      window.removeEventListener('blur', onBlur)
+    }
+  }, [tabFocused])
 
   // Provides a function to cancel the work
   const cancelToken = useRef(() => { })
@@ -332,8 +350,15 @@ export default function TabBuild() {
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
+    setTimeout(() => {
+      console.log("INSIDE", tabFocused.current)
+      if (!tabFocused.current && notification) {
+        audio.play()
+        window.alert("build completed")
+      }
+    }, 100);
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, setChartData])
+  }, [characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notification, setChartData, gender])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -440,7 +465,6 @@ export default function TabBuild() {
           </MenuItem>)}
         </DropdownButton>
         <DropdownButton disabled={generatingBuilds || !characterKey}
-          sx={{ borderRadius: "4px 0px 0px 4px" }}
           title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
             {{ count: maxWorkers }} Threads
           </Trans>}>
@@ -457,6 +481,9 @@ export default function TabBuild() {
             </Trans>
           </MenuItem>)}
         </DropdownButton>
+        <Button sx={{ borderRadius: "4px 0px 0px 4px" }} color='warning' onClick={() => setnotification(n => !n)} disabled={generatingBuilds}>
+          {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
+        </Button>
         <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
           <span>
             <Button
