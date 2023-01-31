@@ -1,9 +1,11 @@
 import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
-import { aggregationType, amplifyingReactions, catalyzeReactions, dsts, elements, entryTypes, moves, presets, regions, Source, srcs, transformativeReactions } from './listing'
+import { amplifyingReactions, catalyzeReactions, elements, entryTypes, members, moves, preps, presets, regions, srcs, transformativeReactions } from './listing'
 
 export const fixedTags = {
-  preset: presets, at: aggregationType, et: entryTypes,
-  nameSrc: srcs, src: srcs, dst: dsts,
+  preset: presets,
+  member: members, dst: members,
+  nameSrc: srcs, prep: preps,
+  et: entryTypes, src: srcs,
 
   region: regions, ele: elements, move: moves,
   trans: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions,

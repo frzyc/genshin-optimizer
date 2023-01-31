@@ -1,15 +1,19 @@
-import { Artifact, Character, convert, customQueries, Data, Preset, reader, selfTag, Stat, Weapon } from './data/util'
+import { Artifact, Character, convert, customQueries, Data, Member, members, Preset, reader, selfTag, Stat, Weapon } from './data/util'
 
-export function charData(preset: Preset, data: {
+export function withPreset(preset: Preset, data: Data): Data {
+  return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
+}
+
+export function charData(member: Member, data: {
   name: Character, lvl: number, ascension: number, constellation: number
   custom: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, constellation } = convert(selfTag, { preset, et: 'self' }).char
-  const custom = customQueries({ preset })
+  const { lvl, ascension, constellation } = convert(selfTag, { member, et: 'self' }).char
+  const custom = customQueries({ member, src: data.name })
 
   return [
-    reader.withTag({ at: 'agg', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
-    reader.withTag({ at: 'iso', et: 'self', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
+    reader.withTag({ src: 'agg', member }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'iso', et: 'self', member }).reread(reader.withTag({ src: data.name })),
 
     lvl.add(data.lvl),
     ascension.add(data.ascension),
@@ -18,15 +22,15 @@ export function charData(preset: Preset, data: {
   ]
 }
 
-export function weaponData(preset: Preset, data: {
+export function weaponData(member: Member, data: {
   name: Weapon, lvl: number, ascension: number, refinement: number
   custom: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, refinement } = convert(selfTag, { preset, et: 'self' }).weapon
-  const custom = customQueries({ preset })
+  const { lvl, ascension, refinement } = convert(selfTag, { member, et: 'self' }).weapon
+  const custom = customQueries({ member, src: data.name })
 
   return [
-    reader.withTag({ at: 'agg', preset }).reread(reader.withTag({ at: 'comp', src: data.name })),
+    reader.withTag({ src: 'agg', member }).reread(reader.withTag({ src: data.name })),
 
     lvl.add(data.lvl),
     ascension.add(data.ascension),
@@ -35,10 +39,10 @@ export function weaponData(preset: Preset, data: {
   ]
 }
 
-export function artifactsData(preset: Preset, data: {
+export function artifactsData(member: Member, data: {
   set: Artifact, stats: { key: Stat, value: number }[]
 }[]): Data {
-  const { common: { count }, premod } = convert(selfTag, { preset, src: 'art', et: 'self' })
+  const { common: { count }, premod } = convert(selfTag, { member, src: 'art', et: 'self' })
   const sets: Partial<Record<Artifact, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set, stats: stat } of data) {
     if (!(set in sets)) sets[set] = 1
@@ -48,29 +52,38 @@ export function artifactsData(preset: Preset, data: {
       else stats[key]! += value
   }
   return [
+    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
+    reader.withTag({ member, src: 'agg', et: 'self' }).reread(reader.withTag({ src: 'art' })),
+
     ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).add(v)),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
   ]
 }
 
-export function teamData(team: Preset[], active: Preset[]): Data {
+export function teamData(active: Member[], members: Member[]): Data {
+  const teamEntry = reader.withTag({ et: 'team' })
   return [
-    // Team Buff
-    ...team.flatMap(dst => {
-      const entry = reader.withTag({ preset: dst, at: 'agg', et: 'self' })
-      return team.map(src =>
-        entry.reread(reader.withTag({ dst, preset: src, at: 'agg', et: 'teamBuff' })))
-    }),
     // Active Member Buff
     ...active.flatMap(dst => {
-      const entry = reader.withTag({ preset: dst, at: 'agg', et: 'self' })
-      return team.map(src =>
-        entry.reread(reader.withTag({ dst, preset: src, at: 'agg', et: 'active' })))
+      const entry = reader.withTag({ member: dst, src: 'agg', et: 'self' })
+      return members.map(src =>
+        entry.reread(reader.withTag({ dst, member: src, src: 'agg', et: 'active' })))
+    }),
+    // Team Buff
+    ...members.flatMap(dst => {
+      const entry = reader.withTag({ member: dst, src: 'agg', et: 'self' })
+      return members.map(src =>
+        entry.reread(reader.withTag({ dst, member: src, src: 'agg', et: 'teamBuff' })))
     }),
     // Total Team Stat
-    ...team.flatMap(dst => {
-      const entry = reader.withTag({ preset: dst, at: 'comp', et: 'team' })
-      return team.map(preset => entry.reread(reader.withTag({ preset, at: 'agg', et: 'self' })))
-    }),
+
+    // CAUTION:
+    // This formula only works for queries with default `undefined` or `sum` accumulators.
+    // Using this on queries with other accumulators, e.g., `ampMulti` may results in an
+    // incorrect result. We cannot use `reread` here because the outer `team` query may
+    // use different accumulators from the inner query. Such is the case for maximum team
+    // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
+    // must use `sum` accumulator for a correct result.
+    ...members.map(member => teamEntry.add(reader.withTag({ member, et: 'self' }).sum)),
   ]
 }

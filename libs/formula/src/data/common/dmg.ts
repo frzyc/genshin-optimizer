@@ -9,7 +9,7 @@ export const infusionPrio = {
 const infusionTable = priorityTable(infusionPrio), preRes = enemy.common.preRes
 
 const data: Data = [
-  enemyDebuff.common.res.add(cmpGE(preRes, percent(0.75),
+  enemyDebuff.common.postRes.add(cmpGE(preRes, percent(0.75),
     sumfrac(1, prod(4, preRes)),
     cmpGE(preRes, 0,
       sum(1, prod(-1, preRes)),
@@ -25,11 +25,11 @@ const data: Data = [
         sum(percent(1), prod(-1, enemy.common.defIgn)),  // TODO: Cap
       ),
     ),
-    enemy.common.res,
+    enemy.common.postRes,
   )),
   selfBuff.dmg.outDmg.add(prod(
     self.reaction.ampMulti,
-    self.dmg.base,
+    sum(self.dmg.base, self.reaction.cataAddi),
     sum(percent(1), self.final.dmg_),
   )),
   selfBuff.preDmg.critMulti.add(lookup(self.common.critMode, {

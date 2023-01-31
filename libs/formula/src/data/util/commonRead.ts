@@ -1,7 +1,7 @@
-import { AnyNode, constant, NumNode, OP, tag } from '@genshin-optimizer/waverider'
+import { constant, NumNode, tag } from '@genshin-optimizer/waverider'
 import { Data } from '.'
 import { Source, Stat } from './listing'
-import { AllTag, Read, reader, Tag } from './read'
+import { AllTag, Read, Tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { q: '_' })
@@ -24,6 +24,7 @@ export function priorityTable<T extends Record<string, Record<string, number>>>(
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
  * |  iso   |     -     |  -  |    -     |   -    | YES  |  YES   |
+ * | static |     -     |  -  |    -     |   -    |  -   |   -    |
  * *--------*-----------*-----*----------*--------*------*--------*
  *
  * Entries below list queries in the following format:
@@ -36,10 +37,11 @@ export function priorityTable<T extends Record<string, Record<string, number>>>(
  * }
  */
 
-type Desc = { at: AllTag['at'], accu: Read['accu'] }
-const agg: Desc = { at: 'agg', accu: 'sum' }
-const iso: Desc = { at: 'iso', accu: undefined }
-const isoSum: Desc = { at: 'iso', accu: 'sum' }
+type Desc = { src: AllTag['src'], accu: Read['accu'] }
+const agg: Desc = { src: 'agg', accu: 'sum' }
+const iso: Desc = { src: 'iso', accu: undefined }
+const isoSum: Desc = { src: 'iso', accu: 'sum' }
+const fixed: Desc = { src: 'static', accu: undefined }
 
 const stats: Record<Stat, typeof agg> = {
   hp: agg, hp_: agg, atk: agg, atk_: agg, def: agg, def_: agg,
@@ -54,8 +56,8 @@ export const selfTag = {
   },
   weapon: { lvl: iso, refinement: iso, ascension: iso },
   common: {
-    isActive: iso, weaponType: iso, critMode: agg /* TODO: Make ISO */, special: iso,
-    cappedCritRate_: iso, count: isoSum, eleCount: iso
+    isActive: iso, weaponType: iso, critMode: fixed, special: iso,
+    cappedCritRate_: iso, count: isoSum, eleCount: fixed
   },
   reaction: {
     infusion: iso, infusionIndex: agg,
@@ -64,32 +66,27 @@ export const selfTag = {
     cataBase: iso, cataAddi: agg,
     bonus: agg,
   },
-  trans: { cappedCritRate_: iso, critRate_: agg, critDMG_: agg, critMulti: iso },
-  preDmg: { outDmg: iso, critMulti: iso },
-  prep: { ele: iso, move: iso, amp: iso, cata: iso },
-  dmg: { final: iso, outDmg: iso, base: agg },
+  trans: { cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: iso },
+  preDmg: { outDmg: fixed, critMulti: fixed },
+  prep: { ele: fixed, move: fixed, amp: fixed, cata: fixed, trans: fixed },
+  dmg: { final: fixed, outDmg: iso, base: agg },
 } as const
 export const enemyTag = {
-  common: { lvl: iso, inDmg: iso, defRed_: agg, defIgn: agg, preRes: agg, res: iso },
-  cond: { amp: iso, cata: iso },
+  common: { lvl: fixed, inDmg: fixed, defRed_: agg, defIgn: agg, preRes: agg, postRes: fixed },
+  cond: { amp: fixed, cata: fixed },
 } as const
 
-class CustomRead extends Read {
-  override add(value: string | number | AnyNode<OP>): { tag: Tag; value: AnyNode<OP>; } {
-    return { tag: { ...this.tag, at: 'comp' }, value: typeof value === 'object' ? value : constant(value) }
-  }
-}
 export function customQueries(tag: Tag): Record<string, Read> {
   return new Proxy(tag, {
     get(tag, q: string) {
       queries.add(q)
-      return new CustomRead({ at: 'iso', et: 'self', qt: 'misc', q, ...tag }, undefined)
+      return new Read({ et: 'self', qt: 'misc', q, ...tag }, undefined)
     }
   }) as any
 }
 export function convert<V extends Record<string, Record<string, Desc>>>(v: V, tag: Omit<Tag, 'qt' | 'q'>): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return Object.fromEntries(Object.entries(v).map(([qt, v]) => [qt, Object.fromEntries(Object.entries(v).map(([q, { at, accu }]) => {
-    return [q, new Read({ at, qt, q, ...tag }, accu)]
+  return Object.fromEntries(Object.entries(v).map(([qt, v]) => [qt, Object.fromEntries(Object.entries(v).map(([q, { src, accu }]) => {
+    return [q, new Read({ src, qt, q, ...tag }, accu)]
   }))])) as any
 }
 
@@ -105,16 +102,17 @@ export function register(src: Source, ...data: Data): Data {
 
 // Default queries
 export const self = convert(selfTag, { et: 'self' })
-export const team = convert(selfTag, { at: 'comp', et: 'team' })
+export const team = convert(selfTag, { et: 'team' })
 export const target = convert(selfTag, { et: 'target' })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
-export const custom = customQueries({}) // TODO
+export const custom = (src: Source) => customQueries({ src }) // TODO
 
-export const selfBuff = convert(selfTag, { at: 'comp', et: 'self' })
-export const teamBuff = convert(selfTag, { at: 'comp', et: 'teamBuff' })
-export const activeCharBuff = convert(selfTag, { at: 'comp', et: 'active' })
-export const enemyDebuff = convert(enemyTag, { at: 'comp', et: 'enemy' })
+export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
+export const selfBuff = convert(selfTag, { et: 'self' })
+export const teamBuff = convert(selfTag, { et: 'teamBuff' })
+export const activeCharBuff = convert(selfTag, { et: 'active' })
+export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 
 export const queryTypes = [...new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'misc'])]
 

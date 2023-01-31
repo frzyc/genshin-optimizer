@@ -44,16 +44,17 @@ export function translate(data: CalcResult<number, Output>, cache: Map<CalcResul
   if (old) return old
   const { val, meta: { tag, op, ops } } = data
 
-  function getString(ops: CalcResult<number, Output>[], prec: number, deps: FormulaText[]): string[] {
+  const deps = new Set<FormulaText>()
+  function getString(ops: CalcResult<number, Output>[], prec: number): string[] {
     return ops.map(op => {
       const text = translate(op, cache)
-      if (text.name) return deps.push(text), text.name
-      if (text.prec >= prec) return deps.push(...text.deps), text.formula
-      return `(${text.formula})`
+      if (text.name) return deps.add(text), text.name
+      text.deps.forEach(dep => deps.add(dep))
+      return text.prec >= prec ? text.formula : `(${text.formula})`
     })
   }
 
-  let formula: string, prec: number, deps: FormulaText[] = []
+  let formula: string, prec: number
   switch (op) {
     case 'const':
       formula = tag?.q?.endsWith('_')
@@ -63,12 +64,12 @@ export function translate(data: CalcResult<number, Output>, cache: Map<CalcResul
     case 'sum': case 'prod': case 'max': case 'min': {
       const { head, joiner, end } = details[op]
       prec = details[op].prec
-      formula = head + getString(ops, prec, deps).join(joiner) + end
+      formula = head + getString(ops, prec).join(joiner) + end
     }
       break
     case 'sumfrac': {
-      const [dem] = getString(ops, 2, deps)
-      const [num1, num2] = getString(ops, 1, deps)
+      const [dem] = getString(ops, 2)
+      const [num1, num2] = getString(ops, 1)
 
       formula = `${dem} / (${num1} + ${num2})`
       prec = details.prod.prec
@@ -76,9 +77,12 @@ export function translate(data: CalcResult<number, Output>, cache: Map<CalcResul
   }
   let name: string | undefined, src: string | undefined
   if (tag) {
-    const { src, ...remaining } = tag
-    name = `${Object.entries(remaining).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(' ')} ${val}`
+    const { qt, q, member, dst, et, src: s, ...remaining } = tag
+    const mem = (member ? ' m' + member.slice(6) : '') + (dst ? ' => m' + dst.slice(6) : '')
+
     // TODO: Compute name, unit, source, etc.
+    name = `(${et}${mem}) ${qt}.${q} ${Object.entries(remaining).filter(([_, v]) => v).map(([k, v]) => `${k}:${v}`).join(' ')} ${val}`
+    src = s ?? undefined
   }
 
   const result: FormulaText = { name, formula, prec, src, deps: [...new Set(deps)] }

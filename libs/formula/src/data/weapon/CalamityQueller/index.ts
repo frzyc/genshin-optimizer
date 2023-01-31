@@ -9,7 +9,7 @@ const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 const name: Weapon = 'CalamityQueller'
 const { common, weapon: { refinement } } = self
 // Conditional
-const { stack } = custom
+const { stack } = custom(name)
 
 const atkInc = prod(
   cmpEq(common.isActive, 1,

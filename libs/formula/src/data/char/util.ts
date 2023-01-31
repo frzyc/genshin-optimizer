@@ -50,23 +50,16 @@ export function customDmg(name: string, info: CharInfo, move: typeof moves[numbe
     }
   // TODO: Set final formula entry
   const entry = convert(selfTag, { name, et: 'self' })
-  const withSrc = convert(selfTag, { name, src: info.name, et: 'self' })
 
   return [
-    withSrc.dmg.outDmg.reread(self.preDmg.outDmg),
-    withSrc.dmg.base.add(base),
+    entry.dmg.outDmg.reread(self.preDmg.outDmg),
+    entry.dmg.base.add(base),
     entry.prep.ele.add(ele ?? self.reaction.infusion),
     entry.prep.move.add(move),
 
-    selfBuff.dmg.final.name(name).withTag({ et: 'prep' }).add(dynTag(prod(
+    entry.dmg.final.add(prod(
       self.dmg.outDmg, self.preDmg.critMulti, enemy.common.inDmg
-    ), {
-      src: info.name,
-      ele: self.prep.ele,
-      move: self.prep.move,
-      amp: self.prep.amp,
-      cata: self.prep.cata,
-    })),
+    )),
   ]
 }
 
@@ -106,7 +99,7 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as any as Stat].add(prod(base, custom[curve]))),
+      selfBuff.base[key as any as Stat].add(prod(base, custom('static')[curve]))),
     ...ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as any as Stat].add(subscript(ascension, values))),
 

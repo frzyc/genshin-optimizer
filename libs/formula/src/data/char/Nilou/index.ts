@@ -77,9 +77,9 @@ export const dm = {
 const info: CharInfo = { name: 'Nilou', ele: 'hydro', weaponType: 'sword', region: 'sumeru' }
 const { final, char: { ascension, constellation } } = self
 // Conditional
-const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = custom
+const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = custom(info.name)
 
-const onlyDendroHydroTeam = cmpGE(team.common.count.dendro, 1, cmpEq(team.common.eleCount, 2, 1))
+const onlyDendroHydroTeam = cmpGE(team.common.count.dendro, 1, cmpEq(self.common.eleCount, 2, 1))
 const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1)))
 const a1AfterSkillAndHit_eleMas = cmpEq(isGoldenChaliceBountyActive, 1, cmpEq(a1AfterHit, 'on', dm.passive1.eleMas))
 
@@ -128,8 +128,8 @@ export default register(info.name,
   teamBuff.premod.eleMas.add(a1AfterSkillAndHit_eleMas),
   teamBuff.premod.dmg_.bloom.add(bountifulBloom_dmg_),
 
-  enemyDebuff.common.res.hydro.add(c2_hydro_enemyRes_),
-  enemyDebuff.common.res.dendro.add(c2_dendro_enemyRes_),
+  enemyDebuff.common.preRes.hydro.add(c2_hydro_enemyRes_),
+  enemyDebuff.common.preRes.dendro.add(c2_dendro_enemyRes_),
 
   // DMG Formulas
   ...dm.normal.hitArr.flatMap((arr, i) =>

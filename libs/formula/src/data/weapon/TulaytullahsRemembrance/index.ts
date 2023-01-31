@@ -12,7 +12,7 @@ const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const name: Weapon = 'TulaytullahsRemembrance'
 const { weapon: { refinement } } = self
-const { timePassive, hitPassive } = custom
+const { timePassive, hitPassive } = custom(name)
 
 const time_normal_dmg_ = prod(timePassive, percent(subscript(refinement, time_normal_dmg_arr)))
 const hit_normal_dmg_ = prod(hitPassive, percent(subscript(refinement, hit_normal_dmg_arr)))

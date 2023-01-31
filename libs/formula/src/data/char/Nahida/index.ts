@@ -75,9 +75,9 @@ const dm = {
 const info: CharInfo = { name: 'Nahida', ele: 'dendro', weaponType: 'catalyst', region: 'sumeru' }
 const { final, char: { skill, burst, ascension, constellation } } = self
 // Conditional
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = custom
+const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = custom(info.name)
 // Intermediate
-const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = custom
+const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = custom(info.name)
 
 const count = team.common.count
 

@@ -61,10 +61,9 @@ const dm = {
 const info: CharInfo = { name: 'Candace', ele: 'hydro', weaponType: 'polearm', region: 'sumeru' }
 const { final, char: { ascension, constellation } } = self
 // Conditional
-const { afterBurst, c2AfterSkillHit } = custom
+const { afterBurst, c2AfterSkillHit } = custom(info.name)
 
 const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
-const hydroInfusion = cmpEq(afterBurst, 'on', 'hydro', '')
 
 const a4_normalEle_dmg_ = cmpGE(ascension, 4, cmpEq(afterBurst, 'on',
   prod(percent(dm.passive2.normalEle_dmg_), final.hp, 1 / 1000)
@@ -80,7 +79,7 @@ export default register(info.name,
 
   ...elements.filter(ele => ele !== 'physical').map(ele =>
     teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))),
-  teamBuff.reaction.infusionIndex.add(infusionPrio.team.hydro),
+  teamBuff.reaction.infusionIndex.add(cmpEq(afterBurst, 'on', infusionPrio.team.hydro)),
 
   // Dmg Formula
   ...dm.normal.hitArr.flatMap((arr, i) =>
