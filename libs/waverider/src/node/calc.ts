@@ -47,8 +47,12 @@ export class Calculator<M = undefined> {
   _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
-    const self = this
-    return internal(n)
+    const self = this, result = internal(n)
+    switch (n.op) {
+      case 'tag': case 'dtag': case 'read': return result
+      // Make sure top-level entries are properly tagged as the caller could be `reread`
+      default: return meta('tag', cache.tag, result.val, [result], [])
+    }
 
     function meta(op: Exclude<AnyOP, 'read'>, tag: Tag | undefined, val: any, x: (CalcResult<any, M> | undefined)[], br: CalcResult<any, M>[], ex?: any): CalcResult<any, M> {
       return { val, meta: self.computeMeta(op, tag, val, x, br, ex) }
@@ -75,33 +79,33 @@ export class Calculator<M = undefined> {
           const index = internal(n.br[0]!)
           return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
         case 'tag': {
-          cache = cache.with(n.tag)
-          const result = self._compute(n.x[0]!, cache)
-          return meta('tag', cache.tag, result.val, [result], [])
+          const newCache = cache.with(n.tag)
+          const result = self._compute(n.x[0]!, newCache)
+          return meta(op, newCache.tag, result.val, [result], [])
         }
         case 'dtag': {
           const tags = n.br.map(br => internal(br))
-          cache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val])))
-          const result = self._compute(n.x[0]!, cache)
-          return meta('dtag', cache.tag, result.val, [result], tags, n.ex)
+          const newCache = cache.with(Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val])))
+          const result = self._compute(n.x[0]!, newCache)
+          return meta(op, newCache.tag, result.val, [result], tags, n.ex)
         }
         case 'read': {
-          cache = cache.with(n.tag)
-          const { pre, computed } = self._preread(cache), accu = n.accu
+          const newCache = cache.with(n.tag)
+          const { pre, computed } = self._preread(newCache), accu = n.accu
 
           switch (accu) {
             case undefined:
               if (pre.length !== 1) {
-                const errorMsg = `Found ${pre.length} nodes while reading tag ${tagString(cache.tag)} with no accumulator`
+                const errorMsg = `Found ${pre.length} nodes while reading tag ${tagString(newCache.tag)} with no accumulator`
                 if (process.env['NODE_ENV'] !== 'production')
                   throw new Error(errorMsg)
                 else console.error(errorMsg)
               }
-              return meta('tag', cache.tag, pre[0]?.val ?? undefined, pre, [])
+              return meta('tag', newCache.tag, pre[0]?.val ?? undefined, pre, [])
             default:
               if (computed[accu]) return computed[accu]!
               const val = arithmetic[accu](getV(pre) as number[], undefined)
-              computed[accu] = meta(accu, cache.tag, val, pre, [])
+              computed[accu] = meta(accu, newCache.tag, val, pre, [])
               return computed[accu]!
           }
         }
