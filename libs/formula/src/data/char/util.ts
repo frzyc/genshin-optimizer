@@ -1,5 +1,5 @@
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
-import { Character, convert, custom, Data, Element, enemy, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
+import { Character, convert, custom, Data, Element, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
 
 export interface CharInfo {
   name: Character, weaponType: WeaponType, ele: Element, region: Region
@@ -32,9 +32,6 @@ export function fixedShield(name: string, info: CharInfo, base: Stat, percent: n
   return customShield(name, info, sum(prod(percent, self.final[base]), flat))
 }
 
-//
-// TODO: Update final formula structures
-
 export function customDmg(name: string, info: CharInfo, move: typeof moves[number], base: NumNode, extra: { ele?: Element } = {}): Data {
   usedNames.add(name)
 
@@ -48,38 +45,32 @@ export function customDmg(name: string, info: CharInfo, move: typeof moves[numbe
           case 'bow': ele = 'physical'; break
         }
     }
-  // TODO: Set final formula entry
   const entry = convert(selfTag, { name, et: 'self' })
 
   return [
-    entry.dmg.outDmg.reread(self.preDmg.outDmg),
-    entry.dmg.base.add(base),
+    entry.formula.outDmg.reread(self.preDmg.outDmg),
+    entry.formula.base.add(base),
     entry.prep.ele.add(ele ?? self.reaction.infusion),
     entry.prep.move.add(move),
-
-    entry.dmg.final.add(prod(
-      self.dmg.outDmg, self.preDmg.critMulti, enemy.common.inDmg
-    )),
   ]
 }
 
 export function customShield(name: string, info: CharInfo, base: NumNode): Data {
   usedNames.add(name)
 
-  // TODO: Add `prep formula`
   const entry = convert(selfTag, { name, et: 'self', src: info.name })
   return [
-    entry.dmg.final.add(prod(base, sum(percent(1), self.base.shield_)))
+    // TODO: Add `entry.prep.ele`
+    entry.formula.base.add(base)
   ]
 }
 
 export function customHeal(name: string, info: CharInfo, base: NumNode): Data {
   usedNames.add(name)
 
-  // TODO: Add `prep` formula
   const entry = convert(selfTag, { name, et: 'self', src: info.name })
   return [
-    entry.dmg.final.add(prod(base, sum(percent(1), self.final.heal_)))
+    entry.formula.base.add(base)
   ]
 }
 

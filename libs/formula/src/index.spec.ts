@@ -1,7 +1,7 @@
 import { AnyNode, compileTagMapValues, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from '@genshin-optimizer/waverider'
 import { Calculator, translate } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, enemyDebuff, Read, selfBuff, selfTag, Tag, userBuff } from './data/util'
+import { convert, Data, enemyDebuff, Read, reader, selfBuff, selfTag, Tag, userBuff } from './data/util'
 import { charData, teamData, weaponData } from './util'
 
 const tagKeys = new TagMapKeys(keys)
@@ -49,8 +49,6 @@ describe('Genshin Database', () => {
 
   const nahida = convert(selfTag, { member: 'member0', et: 'self' })
   const nilou = convert(selfTag, { member: 'member1', et: 'self' })
-  const member2 = convert(selfTag, { member: 'member2', et: 'self' })
-  const member3 = convert(selfTag, { member: 'member3', et: 'self' })
 
   // Note: `member` can be any valid member
   const team = convert(selfTag, { member: 'member2', et: 'team' })
@@ -77,8 +75,11 @@ describe('Genshin Database', () => {
       calc.compute(nahida.final.eleMas).val + calc.compute(nilou.final.eleMas).val)
   })
   test('Final formulas', () => {
-    const r = nahida.dmg.final.withTag({ src: 'prep', prep: 'dmg', nameSrc: 'Nahida' }).name('normal_0')
-    expect(calc.compute(r).val).toBeCloseTo(91.61, 2)
+    const normal_0 = reader.withTag({ member: 'member0', src: 'prep', prep: 'dmg', nameSrc: 'Nahida' }).name('normal_0')
+    const normal_1 = reader.withTag({ member: 'member0', src: 'prep', prep: 'dmg', nameSrc: 'Nahida' }).name('normal_1')
+
+    expect(calc.compute(normal_0).val).toBeCloseTo(91.61, 2)
+    expect(calc.compute(normal_1).val).toBeCloseTo(86.23, 2)
   })
 })
 

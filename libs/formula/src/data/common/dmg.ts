@@ -27,9 +27,9 @@ const data: Data = [
     ),
     enemy.common.postRes,
   )),
-  selfBuff.dmg.outDmg.add(prod(
+  selfBuff.formula.outDmg.add(prod(
     self.reaction.ampMulti,
-    sum(self.dmg.base, self.reaction.cataAddi),
+    sum(self.formula.base, self.reaction.cataAddi),
     sum(percent(1), self.final.dmg_),
   )),
   selfBuff.preDmg.critMulti.add(lookup(self.common.critMode, {

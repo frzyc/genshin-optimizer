@@ -69,7 +69,7 @@ export const selfTag = {
   trans: { cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: iso },
   preDmg: { outDmg: fixed, critMulti: fixed },
   prep: { ele: fixed, move: fixed, amp: fixed, cata: fixed, trans: fixed },
-  dmg: { final: fixed, outDmg: iso, base: agg },
+  formula: { outDmg: iso, base: agg },
 } as const
 export const enemyTag = {
   common: { lvl: fixed, inDmg: fixed, defRed_: agg, defIgn: agg, preRes: agg, postRes: fixed },
@@ -106,7 +106,7 @@ export const team = convert(selfTag, { et: 'team' })
 export const target = convert(selfTag, { et: 'target' })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
-export const custom = (src: Source) => customQueries({ src }) // TODO
+export const custom = (src: Source) => customQueries({ src })
 
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 export const selfBuff = convert(selfTag, { et: 'self' })

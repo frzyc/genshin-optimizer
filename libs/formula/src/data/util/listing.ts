@@ -7,7 +7,7 @@ const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_',
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
 export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'team', 'target'] as const
 export const srcs = ['prep', 'agg', 'iso', 'static', ...characters, ...weapons, ...arts, 'art', 'enemy', 'custom'] as const
-export const preps = ['dmg', 'shield', 'heal', 'trans']
+export const preps = ['dmg', 'shield', 'heal', 'trans'] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 export const dsts = presets
 

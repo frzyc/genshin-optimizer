@@ -35,8 +35,6 @@ const data: Data = [
   selfBuff.reaction.cataAddi.aggravate.electro.add(prod(subscript(self.char.lvl, transLvlMultis), 1.15, cataBase)),
 
   selfBuff.reaction.transBase.add(prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000))),
-  ...Object.entries(transReactionMulti).map(([reaction, multi]) =>
-    selfBuff.dmg.final.name(reaction).add(prod(multi, transBase, ...(crittableTrans.has(reaction) ? [self.trans.critMulti] : [])))),
   selfBuff.trans.critMulti.add(lookup(self.common.critMode, {
     'crit': sum(1, self.trans.cappedCritRate_),
     'nonCrit': 1,
@@ -44,5 +42,7 @@ const data: Data = [
   })),
 
   // TODO: Add top-level trans reactions
+  // ...Object.entries(transReactionMulti).map(([reaction, multi]) =>
+  //   selfBuff.dmg.final.name(reaction).add(prod(multi, transBase, ...(crittableTrans.has(reaction) ? [self.trans.critMulti] : [])))),
 ]
 export default data
