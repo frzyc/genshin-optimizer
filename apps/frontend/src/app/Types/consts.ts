@@ -23,6 +23,9 @@ export const allInfusionAuraElements = ["pyro", 'cryo', 'hydro'] as const
  */
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allRollColorKeys = ['roll1', 'roll2', 'roll3', 'roll4', 'roll5', 'roll6'] as const
+/**
+ * @deprecated
+ */
 export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
 export const allRefinement = [1, 2, 3, 4, 5] as const
 export const substatType = ["max", "mid", "min"] as const
@@ -129,6 +132,9 @@ export type TravelerElementKey = typeof travelerElements[number]
  */
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
 export type RollColorKey = typeof allRollColorKeys[number]
+/**
+ * @deprecated
+ */
 export type Ascension = typeof allAscension[number]
 export type Refinement = typeof allRefinement[number]
 export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]

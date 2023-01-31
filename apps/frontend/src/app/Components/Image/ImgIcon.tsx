@@ -9,6 +9,7 @@ interface ImgIconProps {
 const ImgIcon = styled("img", {
   name: 'ImgIcon',
   slot: 'Root',
+  shouldForwardProp: (pn) => !["size", "sideMargin"].includes(pn as "size" | "sideMargin")
 })<ImgIconProps>(({ size = 1, sideMargin = false }) => ({
   display: "inline-block",
   width: `${size}em`,

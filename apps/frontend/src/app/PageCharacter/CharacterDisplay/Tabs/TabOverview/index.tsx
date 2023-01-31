@@ -22,7 +22,7 @@ import { ElementIcon } from "../../../../KeyMap/StatIcon";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import useDBMeta from "../../../../ReactHooks/useDBMeta";
-import { allSlotKeys, Ascension, ElementKey } from "../../../../Types/consts";
+import { allSlotKeys, Ascension, ElementKey } from "@genshin-optimizer/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
 
