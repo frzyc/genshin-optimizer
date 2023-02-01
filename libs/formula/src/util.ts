@@ -1,23 +1,22 @@
 import { cmpEq } from '@genshin-optimizer/waverider'
-import { Artifact, Character, convert, custom, customQueries, Data, Member, Preset, reader, selfTag, Stat, Weapon } from './data/util'
+import { Artifact, Character, convert, allCustoms, customQueries, Data, Member, Preset, reader, selfTag, Stat, Weapon, selfBuff } from './data/util'
 
-export function withPreset(preset: Preset, data: Data): Data {
+export function withPreset(preset: Preset, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
-export function withMember(member: Member, data: Data): Data {
+export function withMember(member: Member, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
 }
 
-export function charData(member: Member, data: {
+export function charData(data: {
   name: Character, lvl: number, ascension: number, constellation: number
   custom: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, constellation } = convert(selfTag, { member, et: 'self' }).char
-  const custom = customQueries({ member, src: data.name })
+  const { lvl, ascension, constellation } = selfBuff.char, custom = allCustoms(data.name)
 
   return [
-    reader.withTag({ src: 'agg', member }).reread(reader.withTag({ src: data.name })),
-    reader.withTag({ src: 'iso', et: 'self', member }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'iso', et: 'self' }).reread(reader.withTag({ src: data.name })),
 
     lvl.add(data.lvl),
     ascension.add(data.ascension),
@@ -26,15 +25,14 @@ export function charData(member: Member, data: {
   ]
 }
 
-export function weaponData(member: Member, data: {
+export function weaponData(data: {
   name: Weapon, lvl: number, ascension: number, refinement: number
   custom: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, refinement } = convert(selfTag, { member, et: 'self' }).weapon
-  const custom = customQueries({ member, src: data.name })
+  const { lvl, ascension, refinement } = selfBuff.weapon, custom = allCustoms(data.name)
 
   return [
-    reader.withTag({ src: 'agg', member }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
 
     lvl.add(data.lvl),
     ascension.add(data.ascension),
@@ -43,10 +41,10 @@ export function weaponData(member: Member, data: {
   ]
 }
 
-export function artifactsData(member: Member, data: {
+export function artifactsData(data: {
   set: Artifact, stats: { key: Stat, value: number }[]
-}[], custom_: Record<Artifact, Record<string, number | string>>): Data {
-  const { common: { count }, premod } = convert(selfTag, { member, src: 'art', et: 'self' })
+}[], custom: Record<Artifact, Record<string, number | string>>): Data {
+  const { common: { count }, premod } = convert(selfTag, { src: 'art', et: 'self' })
   const sets: Partial<Record<Artifact, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set, stats: stat } of data) {
     if (!(set in sets)) sets[set] = 1
@@ -57,13 +55,15 @@ export function artifactsData(member: Member, data: {
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.withTag({ member, src: 'agg', et: 'self' }).reread(reader.withTag({ src: 'art' })),
+    reader.withTag({ src: 'agg', et: 'self' }).reread(reader.withTag({ src: 'art' })),
 
     ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).add(v)),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
-    ...Object.entries(custom_).flatMap(([art, v]) =>
-      Object.entries(v).map(([k, v]) =>
-        custom(art as Artifact)[k].add(v)))
+    ...Object.entries(custom).flatMap(([art, v]) => {
+      const custom = allCustoms(art as Artifact)
+      return Object.entries(v).map(([k, v]) =>
+        custom[k].add(v))
+    })
   ]
 }
 

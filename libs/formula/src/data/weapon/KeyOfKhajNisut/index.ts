@@ -1,5 +1,5 @@
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
-import { custom, percent, register, self, selfBuff, teamBuff, Weapon } from '../../util'
+import { allCustoms, percent, register, self, selfBuff, teamBuff, Weapon } from '../../util'
 import { entriesForWeapon } from '../util'
 import data_gen from './data.gen.json'
 
@@ -8,7 +8,7 @@ const teamEmSrc = [NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 
 const name: Weapon = 'KeyOfKhajNisut'
 const { final, weapon: { refinement } } = self
-const { afterSkillStacks } = custom(name)
+const { afterSkillStacks } = allCustoms(name)
 const selfElemas = prod(afterSkillStacks, percent(subscript(refinement, selfEmSrc)), final.hp_)
 const teamEleMas = cmpEq(afterSkillStacks, 3, prod(percent(subscript(refinement, teamEmSrc)), final.hp))
 

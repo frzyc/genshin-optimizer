@@ -1,5 +1,5 @@
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
-import { Character, convert, custom, Data, Element, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
+import { Character, convert, allCustoms, Data, Element, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
 
 export interface CharInfo {
   name: Character, weaponType: WeaponType, ele: Element, region: Region
@@ -90,7 +90,7 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as any as Stat].add(prod(base, custom('static')[curve]))),
+      selfBuff.base[key as any as Stat].add(prod(base, allCustoms('static')[curve]))),
     ...ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as any as Stat].add(subscript(ascension, values))),
 

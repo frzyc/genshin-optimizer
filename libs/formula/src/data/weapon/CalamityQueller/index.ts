@@ -1,5 +1,5 @@
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
-import { custom, elements, register, self, selfBuff, Weapon } from '../../util'
+import { allCustoms, elements, register, self, selfBuff, Weapon } from '../../util'
 import { entriesForWeapon } from '../util'
 import data_gen from './data.gen.json'
 
@@ -9,7 +9,7 @@ const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 const name: Weapon = 'CalamityQueller'
 const { common, weapon: { refinement } } = self
 // Conditional
-const { stack } = custom(name)
+const { stack } = allCustoms(name)
 
 const atkInc = prod(
   cmpEq(common.isActive, 1,

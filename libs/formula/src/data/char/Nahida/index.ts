@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { activeCharBuff, custom, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
+import { activeCharBuff, allCustoms, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
 import { CharInfo, customDmg, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -75,9 +75,9 @@ const dm = {
 const info: CharInfo = { name: 'Nahida', ele: 'dendro', weaponType: 'catalyst', region: 'sumeru' }
 const { final, char: { skill, burst, ascension, constellation } } = self
 // Conditional
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = custom(info.name)
+const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allCustoms(info.name)
 // Intermediate
-const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = custom(info.name)
+const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allCustoms(info.name)
 
 const count = team.common.count
 

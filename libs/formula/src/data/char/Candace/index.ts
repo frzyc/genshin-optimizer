@@ -1,6 +1,6 @@
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
-import { custom, elements, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { allCustoms, elements, percent, register, self, selfBuff, teamBuff } from '../../util'
 import { CharInfo, customDmg, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -61,7 +61,7 @@ const dm = {
 const info: CharInfo = { name: 'Candace', ele: 'hydro', weaponType: 'polearm', region: 'sumeru' }
 const { final, char: { ascension, constellation } } = self
 // Conditional
-const { afterBurst, c2AfterSkillHit } = custom(info.name)
+const { afterBurst, c2AfterSkillHit } = allCustoms(info.name)
 
 const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
 

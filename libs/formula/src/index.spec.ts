@@ -1,8 +1,8 @@
 import { AnyNode, compileTagMapValues, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, enemyDebuff, Member, Read, reader, selfBuff, selfTag, stack, Tag, userBuff } from './data/util'
-import { charData, teamData, weaponData } from './util'
+import { convert, Data, enemyDebuff, Member, Read, reader, selfBuff, selfTag, allStacks, Tag, userBuff } from './data/util'
+import { charData, teamData, weaponData, withMember } from './util'
 
 const tagKeys = new TagMapKeys(keys)
 
@@ -11,33 +11,35 @@ describe('Genshin Database', () => {
     // Team
     ...teamData(['member0'], ['member0', 'member1']),
 
-    // Preset 0
-    ...charData('member0', {
-      name: 'Nahida', lvl: 12, ascension: 0, constellation: 2, custom: {
-        a1ActiveInBurst: 'off', c2Bloom: 'on', c2QSA: 'off', c4Count: 'off'
-      }
-    }),
-    ...weaponData('member0', {
-      name: 'TulaytullahsRemembrance', lvl: 42, ascension: 2, refinement: 2, custom: {
-        timePassive: 0, hitPassive: 0
-      }
-    }),
-    // Preset 1
-    ...charData('member1', {
-      name: 'Nilou', lvl: 33, ascension: 1, constellation: 3, custom: {
-        a1AfterSkill: 'off', a1AfterHit: 'off',
-        c2Hydro: 'off', c2Dendro: 'off', c4AfterPirHit: 'off'
-      }
-    }),
-    ...weaponData('member1', {
-      name: 'KeyOfKhajNisut', lvl: 59, ascension: 3, refinement: 3, custom: {
-        afterSkillStacks: 3
-      }
-    }),
+    ...withMember('member0',
+      ...charData({
+        name: 'Nahida', lvl: 12, ascension: 0, constellation: 2, custom: {
+          a1ActiveInBurst: 'off', c2Bloom: 'on', c2QSA: 'off', c4Count: 'off'
+        }
+      }),
+      ...weaponData({
+        name: 'TulaytullahsRemembrance', lvl: 42, ascension: 2, refinement: 2, custom: {
+          timePassive: 0, hitPassive: 0
+        }
+      }),
+    ),
+    ...withMember('member1',
+      ...charData({
+        name: 'Nilou', lvl: 33, ascension: 1, constellation: 3, custom: {
+          a1AfterSkill: 'off', a1AfterHit: 'off',
+          c2Hydro: 'off', c2Dendro: 'off', c4AfterPirHit: 'off'
+        }
+      }),
+      ...weaponData({
+        name: 'KeyOfKhajNisut', lvl: 59, ascension: 3, refinement: 3, custom: {
+          afterSkillStacks: 3
+        }
+      }),
+    ),
 
     // Default char
-    userBuff.base.critRate_.withTag({ member: 'member0' }).add(0.05),
-    userBuff.base.critDMG_.withTag({ member: 'member0' }).add(0.5),
+    userBuff.base.critRate_.add(0.05),
+    userBuff.base.critDMG_.add(0.5),
 
     // Enemy
     enemyDebuff.cond.cata.add('spread'),
@@ -84,8 +86,8 @@ describe('Genshin Database', () => {
 
   test('Stacking', () => {
     // Need existing `q:`
-    const { hp: test1, hp_: test2 } = stack('CalamityQueller')
-    const { hp: test3, hp_: test4 } = stack('NoblesseOblige')
+    const { hp: test1, hp_: test2 } = allStacks('CalamityQueller')
+    const { hp: test3, hp_: test4 } = allStacks('NoblesseOblige')
     const members: Member[] = ['member0', 'member1', 'member2'], data: Data = [
       ...teamData(['member0', 'member2'], members),
       test1.in.with('member', 'member1').add(1),
