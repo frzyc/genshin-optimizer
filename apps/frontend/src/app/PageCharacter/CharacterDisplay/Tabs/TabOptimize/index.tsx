@@ -51,8 +51,7 @@ import useBuildSetting from './useBuildSetting';
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
-const mp3_url = 'https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3';
-const audio = new Audio(mp3_url)
+const audio = new Audio("notification.mp3")
 export default function TabBuild() {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
@@ -61,6 +60,9 @@ export default function TabBuild() {
   const { gender } = useDBMeta()
 
   const [notification, setnotification] = useState(false)
+  const notificationRef = useRef(false)
+  useEffect(() => { notificationRef.current = notification }, [notification])
+
 
   const [buildStatus, setBuildStatus] = useState({ type: "inactive", tested: 0, failed: 0, skipped: 0, total: 0 } as BuildStatus)
   const generatingBuilds = buildStatus.type !== "inactive"
@@ -351,14 +353,15 @@ export default function TabBuild() {
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
     setTimeout(() => {
-      console.log("INSIDE", tabFocused.current)
-      if (!tabFocused.current && notification) {
+      // Using a ref because a user can cancel the notification while the build is going.
+      if (notificationRef.current) {
         audio.play()
-        window.alert("build completed")
+        if (!tabFocused.current)
+          window.alert(t`buildCompleted`)
       }
     }, 100);
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
-  }, [characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notification, setChartData, gender])
+  }, [t, characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notificationRef, setChartData, gender])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -481,7 +484,7 @@ export default function TabBuild() {
             </Trans>
           </MenuItem>)}
         </DropdownButton>
-        <Button sx={{ borderRadius: "4px 0px 0px 4px" }} color='warning' onClick={() => setnotification(n => !n)} disabled={generatingBuilds}>
+        <Button sx={{ borderRadius: "4px 0px 0px 4px" }} color='warning' onClick={() => setnotification(n => !n)} >
           {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
         </Button>
         <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
