@@ -31,7 +31,8 @@
         ]
       },
       "dependsOn": [
-        "genfiles"
+        "genfiles",
+        "^pipeline"
       ],
       "inputs": [
         "!{projectRoot}/**/*.gen.ts"
@@ -71,5 +72,8 @@
       ]
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": [
+    "pipeline-runner"
+  ]
 }
