@@ -1,7 +1,11 @@
-import { Artifact, Character, convert, customQueries, Data, Member, members, Preset, reader, selfTag, Stat, Weapon } from './data/util'
+import { cmpEq } from '@genshin-optimizer/waverider'
+import { Artifact, Character, convert, custom, customQueries, Data, Member, Preset, reader, selfTag, Stat, Weapon } from './data/util'
 
 export function withPreset(preset: Preset, data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
+}
+export function withMember(member: Member, data: Data): Data {
+  return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
 }
 
 export function charData(member: Member, data: {
@@ -41,7 +45,7 @@ export function weaponData(member: Member, data: {
 
 export function artifactsData(member: Member, data: {
   set: Artifact, stats: { key: Stat, value: number }[]
-}[]): Data {
+}[], custom_: Record<Artifact, Record<string, number | string>>): Data {
   const { common: { count }, premod } = convert(selfTag, { member, src: 'art', et: 'self' })
   const sets: Partial<Record<Artifact, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set, stats: stat } of data) {
@@ -57,11 +61,19 @@ export function artifactsData(member: Member, data: {
 
     ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).add(v)),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
+    ...Object.entries(custom_).flatMap(([art, v]) =>
+      Object.entries(v).map(([k, v]) =>
+        custom(art as Artifact)[k].add(v)))
   ]
 }
 
 export function teamData(active: Member[], members: Member[]): Data {
   const teamEntry = reader.withTag({ et: 'team' })
+  const stack = {
+    in: reader.withTag({ et: 'stackIn' }),
+    int: reader.withTag({ et: 'stackInt' }),
+    out: reader.withTag({ et: 'stackOut' }),
+  }
   return [
     // Active Member Buff
     ...active.flatMap(dst => {
@@ -85,5 +97,8 @@ export function teamData(active: Member[], members: Member[]): Data {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     ...members.map(member => teamEntry.add(reader.withTag({ member, et: 'self' }).sum)),
+    // Stacking
+    ...members.map((member, i) => stack.int.add(cmpEq(stack.in.withTag({ member }).sum, 1, i + 1))),
+    ...members.map((member, i) => stack.out.withTag({ member }).add(cmpEq(stack.int.max, i + 1, 1))),
   ]
 }

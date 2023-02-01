@@ -107,6 +107,15 @@ export const target = convert(selfTag, { et: 'target' })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
 export const custom = (src: Source) => customQueries({ src })
+export const stack = (src: Source): Record<string, { in: Read, out: Read }> => new Proxy(tag, {
+  get(tag, q: string) {
+    queries.add(q)
+    return {
+      in: new Read({ src, et: 'stackIn', qt: 'misc', q, ...tag }, undefined),
+      out: new Read({ src, et: 'stackOut', qt: 'misc', q, ...tag }, undefined),
+    }
+  }
+}) as any
 
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 export const selfBuff = convert(selfTag, { et: 'self' })

@@ -1,12 +1,12 @@
 const characters = ['Candace', 'Nahida', 'Nilou'] as const // TODO
 const weapons = ['CalamityQueller', 'KeyOfKhajNisut', 'TulaytullahsRemembrance'] as const // TODO
-const arts = ['NoblesseOblige'] as const // TODO
+export const artifacts = ['NoblesseOblige'] as const // TODO
 
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
-export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'team', 'target'] as const
-export const srcs = ['prep', 'agg', 'iso', 'static', ...characters, ...weapons, ...arts, 'art', 'enemy', 'custom'] as const
+export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'team', 'target', 'stackIn', 'stackInt', 'stackOut'] as const
+export const srcs = ['prep', 'agg', 'iso', 'static', ...characters, ...weapons, ...artifacts, 'art', 'enemy', 'custom'] as const
 export const preps = ['dmg', 'shield', 'heal', 'trans'] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 export const dsts = presets
@@ -22,7 +22,7 @@ export const catalyzeReactions = ['spread', 'aggravate', ''] as const
 export type Character = typeof characters[number]
 export type Weapon = typeof weapons[number]
 export type WeaponType = 'sword' | 'bow' | 'polearm' | 'claymore' | 'catalyst'
-export type Artifact = typeof arts[number]
+export type Artifact = typeof artifacts[number]
 
 export type Stat = typeof stats[number]
 export type Preset = typeof presets[number]
