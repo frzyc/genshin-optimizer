@@ -6,18 +6,21 @@ const { move, ele, amp, cata, trans } = self.prep
 
 const data: Data = [
   reader.withTag({ src: 'prep', prep: 'dmg' }).add(
-    dynTag(prod(self.formula.outDmg, self.preDmg.critMulti, enemy.common.inDmg), {
+    dynTag(prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg), {
       move, ele, amp, cata
     })),
   reader.withTag({ src: 'prep', prep: 'trans' }).add(
-    dynTag(reader.withTag({ src: 'static', prep: null }), {
+    dynTag(prod(self.formula.preMulti, self.dmg.out, self.trans.critMulti, enemy.common.inDmg), {
       ele, trans
     })
   ),
   reader.withTag({ src: 'prep', prep: 'shield' }).add(
-    dynTag(prod(self.formula.base, sum(percent(1), self.base.shield_)), {
-      ele
-    })
+    cmpEq(ele, '',
+      prod(self.formula.base, sum(percent(1), self.base.shield_)),
+      dynTag(prod(self.formula.preMulti, self.formula.base, sum(percent(1), self.base.shield_)), {
+        ele
+      }),
+    )
   ),
   reader.withTag({ src: 'prep', prep: 'heal' }).add(
     dynTag(prod(self.formula.base, sum(percent(1), self.base.heal_)), {

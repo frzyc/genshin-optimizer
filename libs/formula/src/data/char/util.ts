@@ -1,5 +1,5 @@
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
-import { Character, convert, allCustoms, Data, Element, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
+import { allCustoms, Character, convert, Data, Element, elements, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
 
 export interface CharInfo {
   name: Character, weaponType: WeaponType, ele: Element, region: Region
@@ -13,23 +13,15 @@ export function dmg(name: string, info: CharInfo, stat: Stat, levelScaling: numb
 }
 
 export function shield(name: string, info: CharInfo, stat: Stat, tlvlMulti: number[], flat: number[], move: Exclude<Move, 'elemental'>, extra: { ele?: Element } = {}): Data {
-  const lvl = self.char[talentType(move)], ele = extra.ele
-  let eleMulti: number | NumNode
-  switch (ele) {
-    case 'geo': eleMulti = tag(1.5, reader.geo.tag); break
-    case undefined: eleMulti = 1; break
-    default: eleMulti = tag(2.5, reader[ele!].tag)
-  }
-  return customShield(name, info, prod(
-    eleMulti,
+  const lvl = self.char[talentType(move)]
+  return customShield(name, info,
     sum(
       prod(percent(subscript(lvl, tlvlMulti)), self.final[stat]),
       subscript(lvl, flat)
-    )
-  ))
+    ), extra)
 }
-export function fixedShield(name: string, info: CharInfo, base: Stat, percent: number | NumNode, flat: number | NumNode): Data {
-  return customShield(name, info, sum(prod(percent, self.final[base]), flat))
+export function fixedShield(name: string, info: CharInfo, base: Stat, percent: number | NumNode, flat: number | NumNode, extra: { ele?: Element } = {}): Data {
+  return customShield(name, info, sum(prod(percent, self.final[base]), flat), extra)
 }
 
 export function customDmg(name: string, info: CharInfo, move: typeof moves[number], base: NumNode, extra: { ele?: Element } = {}): Data {
@@ -48,20 +40,27 @@ export function customDmg(name: string, info: CharInfo, move: typeof moves[numbe
   const entry = convert(selfTag, { name, et: 'self' })
 
   return [
-    entry.formula.outDmg.reread(self.preDmg.outDmg),
     entry.formula.base.add(base),
     entry.prep.ele.add(ele ?? self.reaction.infusion),
     entry.prep.move.add(move),
   ]
 }
 
-export function customShield(name: string, info: CharInfo, base: NumNode): Data {
+export function customShield(name: string, info: CharInfo, base: NumNode, extra: { ele?: Element } = {}): Data {
   usedNames.add(name)
 
+  const ele = extra.ele
+  let eleMulti: number | NumNode
+  switch (ele) {
+    case 'geo': eleMulti = tag(1.5, reader.geo.tag); break
+    case undefined: eleMulti = 1; break
+    default: eleMulti = tag(2.5, reader[ele!].tag)
+  }
   const entry = convert(selfTag, { name, et: 'self', src: info.name })
   return [
-    // TODO: Add `entry.prep.ele`
-    entry.formula.base.add(base)
+    entry.prep.ele.add(ele ?? ''),
+    entry.formula.preMulti.add(eleMulti),
+    entry.formula.base.add(base),
   ]
 }
 

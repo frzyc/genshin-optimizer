@@ -1,7 +1,7 @@
 import { AnyNode, compileTagMapValues, ReRead, TagMapExactValues, TagMapKeys, TagMapSubsetCache, traverse } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, enemyDebuff, Member, Read, reader, selfBuff, selfTag, allStacks, Tag, userBuff } from './data/util'
+import { allStacks, convert, Data, enemyDebuff, Member, Read, reader, selfBuff, selfTag, Tag, userBuff } from './data/util'
 import { charData, teamData, weaponData, withMember } from './util'
 
 const tagKeys = new TagMapKeys(keys)
@@ -85,7 +85,7 @@ describe('Genshin Database', () => {
   })
 
   test('Stacking', () => {
-    // Need existing `q:`
+    // Use existing `q:`
     const { hp: test1, hp_: test2 } = allStacks('CalamityQueller')
     const { hp: test3, hp_: test4 } = allStacks('NoblesseOblige')
     const members: Member[] = ['member0', 'member1', 'member2'], data: Data = [

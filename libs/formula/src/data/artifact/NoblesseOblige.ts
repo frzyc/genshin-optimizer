@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE } from '../../../../waverider/src'
-import { Artifact, allCustoms, percent, register, selfBuff, allStacks, teamBuff } from '../util'
+import { allCustoms, allStacks, Artifact, percent, register, selfBuff, teamBuff } from '../util'
 import { artCount, entriesForArt } from './util'
 
 const name: Artifact = 'NoblesseOblige', count = artCount(name)

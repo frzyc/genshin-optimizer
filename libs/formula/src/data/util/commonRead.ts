@@ -66,10 +66,10 @@ export const selfTag = {
     cataBase: iso, cataAddi: agg,
     bonus: agg,
   },
-  trans: { cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: iso },
-  preDmg: { outDmg: fixed, critMulti: fixed },
+  trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, basedCritMulti: fixed, critMulti: iso },
+  dmg: { out: fixed, critMulti: fixed },
   prep: { ele: fixed, move: fixed, amp: fixed, cata: fixed, trans: fixed },
-  formula: { outDmg: iso, base: agg },
+  formula: { preMulti: fixed, base: agg },
 } as const
 export const enemyTag = {
   common: { lvl: fixed, inDmg: fixed, defRed_: agg, defIgn: agg, preRes: agg, postRes: fixed },

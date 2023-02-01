@@ -27,12 +27,12 @@ const data: Data = [
     ),
     enemy.common.postRes,
   )),
-  selfBuff.formula.outDmg.add(prod(
+  selfBuff.dmg.out.add(prod(
     self.reaction.ampMulti,
     sum(self.formula.base, self.reaction.cataAddi),
     sum(percent(1), self.final.dmg_),
   )),
-  selfBuff.preDmg.critMulti.add(lookup(self.common.critMode, {
+  selfBuff.dmg.critMulti.add(lookup(self.common.critMode, {
     'crit': sum(1, self.common.cappedCritRate_),
     'nonCrit': 1,
     'avg': sum(1, prod(self.common.cappedCritRate_, self.final.critDMG_)),

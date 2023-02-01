@@ -1,5 +1,5 @@
 import { cmpEq } from '@genshin-optimizer/waverider'
-import { Artifact, Character, convert, allCustoms, customQueries, Data, Member, Preset, reader, selfTag, Stat, Weapon, selfBuff } from './data/util'
+import { allCustoms, Artifact, Character, convert, Data, Member, Preset, reader, selfBuff, selfTag, Stat, Weapon } from './data/util'
 
 export function withPreset(preset: Preset, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
