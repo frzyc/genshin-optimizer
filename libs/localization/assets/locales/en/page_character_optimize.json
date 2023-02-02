@@ -106,5 +106,7 @@
   "currentlyEquippedBuild": "Currently Equipped",
   "addBuildToList": "Add build to list",
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
-  "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again"
+  "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again",
+  "buildCompleted": "Build Completed",
+  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out."
 }

@@ -22,6 +22,7 @@
           "apps/frontend/src/logo512.png",
           "apps/frontend/src/manifest.json",
           "apps/frontend/src/robots.txt",
+          "apps/frontend/src/notification.mp3",
           "apps/frontend/src/assets",
           {
             "input": "libs/localization/assets",
