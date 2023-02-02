@@ -70,7 +70,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     if (filteredIds.includes(id)) ct[sk].current++
   })), [database, filteredIds])
 
-  const linesTotal = useMemo(() => catTotal(["1", "2", "3", "4"], ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+  const linesTotal = useMemo(() => catTotal(["0", "1", "2", "3", "4"], ct => Object.entries(database.arts.data).forEach(([id, art]) => {
     const lns = art.substats.filter(s => s.value).length
     ct[lns].total++
     if (filteredIds.includes(id)) ct[lns].current++
