@@ -488,11 +488,9 @@ export default function TabBuild() {
           </MenuItem>)}
         </DropdownButton>
         <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
-          <span>
-            <Button sx={{ borderRadius: 0 }} color='warning' onClick={() => setnotification(n => !n)} >
-              {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
-            </Button>
-          </span>
+          <Button sx={{ borderRadius: 0 }} color='warning' onClick={() => setnotification(n => !n)} >
+            {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
+          </Button>
         </BootstrapTooltip>
         <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
           <span>
