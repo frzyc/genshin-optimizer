@@ -9,7 +9,7 @@ import KeyMap, { cacheValueString } from "../../KeyMap";
 import StatIcon from "../../KeyMap/StatIcon";
 import useArtifact from "../../ReactHooks/useArtifact";
 import { ICachedSubstat } from "../../Types/artifact";
-import { allElementsWithPhy, SlotKey } from "../../Types/consts";
+import { allElementsWithPhy, SlotKey } from "@genshin-optimizer/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
@@ -82,9 +82,9 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
+    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5, alignItems:"center" }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
       <BootstrapTooltip placement="top" title={<Typography>{stat.key && <StatColoredWithUnit statKey={stat.key} />}</Typography>} disableInteractive>
-        <span>{StatIcon[stat.key]}</span>
+        <StatIcon statKey={stat.key} iconProps={{ fontSize: "inherit" }} />
       </BootstrapTooltip>
       <span>{`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</span>
     </Typography>
