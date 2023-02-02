@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[775],{40775:(t,r,n)=>{n.d(r,{W:()=>u});var e=n(41015);function u(t,r){const n=function(t){return Object.fromEntries(t.map((t=>[t,{total:0,current:0}])))}(t);return r(n),u=n,(0,e.xh)(u,(({total:t,current:r})=>r===t?`${t}`:`${r}/${t}`));var u}}}]);
