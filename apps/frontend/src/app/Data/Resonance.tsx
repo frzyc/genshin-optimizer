@@ -1,11 +1,19 @@
-import StatIcon from "../Components/StatIcon";
+import { allElements, allElementsWithPhy } from "@genshin-optimizer/consts";
+import ElementCycle from "../Components/ElementCycle";
 import { Translate } from "../Components/Translate";
 import { input, tally } from "../Formula";
 import { inferInfoMut } from "../Formula/api";
 import { UIData } from "../Formula/uiData";
 import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils";
 import KeyMap from "../KeyMap";
-import { allElements, allElementsWithPhy } from "../Types/consts";
+import { iconInlineProps } from "../SVGIcons";
+import AnemoIcon from "../SVGIcons/Element/AnemoIcon";
+import CryoIcon from "../SVGIcons/Element/CryoIcon";
+import DendroIcon from "../SVGIcons/Element/DendroIcon";
+import ElectroIcon from "../SVGIcons/Element/ElectroIcon";
+import GeoIcon from "../SVGIcons/Element/GeoIcon";
+import HydroIcon from "../SVGIcons/Element/HydroIcon";
+import PyroIcon from "../SVGIcons/Element/PyroIcon";
 import { DocumentSection } from "../Types/sheet";
 import { objectKeyValueMap } from "../Util/Util";
 import { condReadNode, st, stg } from "./SheetUtil";
@@ -33,7 +41,7 @@ const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [
 const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),
   desc: tr("ProtectiveCanopy.desc"),
-  icon: <span>{StatIcon.anemo} {StatIcon.geo} {StatIcon.pyro} {StatIcon.hydro} {StatIcon.cryo} {StatIcon.electro} x4</span>,
+  icon: <span><ElementCycle iconProps={iconInlineProps} /> x4</span>,
   canShow: (data: UIData) => allElements.filter(e => data.get(tally[e]).value >= 1).length === 4,
   sections: [{
     teamBuff: true,
@@ -50,7 +58,7 @@ const ffNode = equal(input.activeCharKey, input.charKey,
 const ferventFlames: IResonance = {
   name: tr("FerventFlames.name"),
   desc: tr("FerventFlames.desc"),
-  icon: <span>{StatIcon.pyro} {StatIcon.pyro}</span>,
+  icon: <span><PyroIcon {...iconInlineProps} /> <PyroIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.pyro).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -73,7 +81,7 @@ const swNode = equal(input.activeCharKey, input.charKey,
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
   desc: tr("SoothingWater.desc"),
-  icon: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
+  icon: <span><HydroIcon {...iconInlineProps} /> <HydroIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.hydro).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -100,7 +108,7 @@ const siNode = equal(input.activeCharKey, input.charKey,
 const shatteringIce: IResonance = {
   name: tr("ShatteringIce.name"),
   desc: tr("ShatteringIce.desc"),
-  icon: <span>{StatIcon.cryo} {StatIcon.cryo}</span>,
+  icon: <span><CryoIcon {...iconInlineProps} /> <CryoIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.cryo).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -116,7 +124,7 @@ const shatteringIce: IResonance = {
     name: trm("ShatteringIce.cond"),
     header: {
       title: tr("ShatteringIce.name"),
-      icon: StatIcon.cryo,
+      icon: <CryoIcon />,
     },
     states: {
       on: {
@@ -132,7 +140,7 @@ const shatteringIce: IResonance = {
 const highVoltage: IResonance = {
   name: tr("HighVoltage.name"),
   desc: tr("HighVoltage.desc"),
-  icon: <span>{StatIcon.electro} {StatIcon.electro}</span>,
+  icon: <span><ElectroIcon {...iconInlineProps} /> <ElectroIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.electro).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -163,7 +171,7 @@ const iwNodeCD = equal(input.activeCharKey, input.charKey,
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
   desc: tr("ImpetuousWinds.desc"),
-  icon: <span>{StatIcon.anemo} {StatIcon.anemo}</span>,
+  icon: <span><AnemoIcon {...iconInlineProps} /> <AnemoIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.anemo).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -204,7 +212,7 @@ const erNodeRes_ = equal(input.activeCharKey, input.charKey,
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
   desc: tr("EnduringRock.desc"),
-  icon: <span>{StatIcon.geo} {StatIcon.geo}</span>,
+  icon: <span><GeoIcon {...iconInlineProps} /> <GeoIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.geo).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -218,7 +226,7 @@ const enduringRock: IResonance = {
     value: condERShield,
     header: {
       title: tr("EnduringRock.name"),
-      icon: StatIcon.geo,
+      icon: <GeoIcon />,
     },
     name: st("protectedByShield"),
     states: {
@@ -234,7 +242,7 @@ const enduringRock: IResonance = {
     value: condERHit,
     header: {
       title: tr("EnduringRock.name"),
-      icon: StatIcon.geo,
+      icon: <GeoIcon />,
     },
     name: trm("EnduringRock.hitCond"),
     states: {
@@ -258,27 +266,27 @@ const condSG3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSG3ele = condReadNode(condSG3elePath)
 const sgBase_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.dendro, 2, 50,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+    greaterEq(tally.dendro, 2, 50, { ...KeyMap.info("eleMas"), isTeamBuff: true })
   )
 )
 const sg2ele_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.dendro, 2,
-      equal(condSG2ele, "on", 30,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+      equal(condSG2ele, "on", 30, { ...KeyMap.info("eleMas"), isTeamBuff: true })
     )
   )
 )
 const sg3ele_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.dendro, 2,
-      equal(condSG3ele, "on", 20,  { ...KeyMap.info("eleMas"), isTeamBuff: true })
+      equal(condSG3ele, "on", 20, { ...KeyMap.info("eleMas"), isTeamBuff: true })
     )
   )
 )
 const sprawlingGreenery: IResonance = {
   name: tr("SprawlingGreenery.name"),
   desc: tr("SprawlingGreenery.desc"),
-  icon: <span>{StatIcon.dendro} {StatIcon.dendro}</span>,
+  icon: <span><DendroIcon {...iconInlineProps} /> <DendroIcon {...iconInlineProps} /></span>,
   canShow: (data: UIData) => data.get(tally.dendro).value >= 2 && data.get(teamSize).value >= 4,
   sections: [{
     teamBuff: true,
@@ -290,7 +298,7 @@ const sprawlingGreenery: IResonance = {
     value: condSG2ele,
     header: {
       title: tr("SprawlingGreenery.name"),
-      icon: StatIcon.dendro,
+      icon: <DendroIcon />,
     },
     name: trm("SprawlingGreenery.cond2ele"),
     states: {
@@ -310,7 +318,7 @@ const sprawlingGreenery: IResonance = {
     value: condSG3ele,
     header: {
       title: tr("SprawlingGreenery.name"),
-      icon: StatIcon.dendro,
+      icon: <DendroIcon />,
     },
     name: trm("SprawlingGreenery.cond3ele"),
     states: {

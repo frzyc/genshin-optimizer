@@ -1,18 +1,16 @@
-import { faClipboard } from '@fortawesome/free-solid-svg-icons'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
-import { Button, CardContent, Chip, Divider, Grid, Typography, Box } from '@mui/material'
+import ContentPasteIcon from '@mui/icons-material/ContentPaste'
+import { Box, Button, CardContent, Chip, Divider, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
-import FontAwesomeSvgIcon from '../Components/FontAwesomeSvgIcon'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from "../Database/Database"
 import useBoolState from '../ReactHooks/useBoolState'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
-
 export default function DatabaseCard() {
   const { t } = useTranslation(["settings"]);
   return <CardLight>
@@ -109,7 +107,7 @@ function DataCard({ index }: { index: number }) {
         <Box>
           <Grid container spacing={1} columns={{ xs: 2 }} >
             <Grid item xs={1}>
-              <Button fullWidth disabled={!hasData} color="info" onClick={copyToClipboard} startIcon={<FontAwesomeSvgIcon icon={faClipboard} />}>
+              <Button fullWidth disabled={!hasData} color="info" onClick={copyToClipboard} startIcon={<ContentPasteIcon />}>
                 <Trans t={t} i18nKey="DatabaseCard.button.copy" />
               </Button>
             </Grid>

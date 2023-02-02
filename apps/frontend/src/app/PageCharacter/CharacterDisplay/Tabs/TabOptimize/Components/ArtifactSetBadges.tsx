@@ -1,12 +1,12 @@
+import { ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts"
 import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
 import ArtifactSetTooltip from "../../../../../Components/Artifact/ArtifactSetTooltip"
-import { artifactSlotIcon } from "../../../../../Components/Artifact/SlotNameWIthIcon"
+import SlotIcon from "../../../../../Components/Artifact/SlotIcon"
 import SqBadge from "../../../../../Components/SqBadge"
-import { ArtifactSheet } from "../../../../../Data/Artifacts/ArtifactSheet"
-import usePromise from "../../../../../ReactHooks/usePromise"
+import { getArtSheet } from "../../../../../Data/Artifacts"
+import { iconInlineProps } from "../../../../../SVGIcons"
 import { ICachedArtifact } from "../../../../../Types/artifact"
-import { ArtifactSetKey, SlotKey } from "../../../../../Types/consts"
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[],
@@ -30,14 +30,13 @@ export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: Arti
 
 }
 function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
-  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
-  if (!artifactSheet) return null
+  const artifactSheet = getArtSheet(setKey)
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
   return <Box>
     <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet} >
       <SqBadge sx={{ height: "100%" }} color={currentlyEquipped ? "success" : "primary"} ><Typography >
-        {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheet.name ?? ""}
+        {slotarr.map(slotKey => <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />)} {artifactSheet.name ?? ""}
         {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
       </Typography></SqBadge>
     </ArtifactSetTooltip>

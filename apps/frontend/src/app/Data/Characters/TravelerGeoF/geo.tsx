@@ -5,16 +5,16 @@ import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st, trans } from '../../SheetUtil'
-import { charTemplates, TalentSheet } from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
-import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "geo"
   const condCharKey = "TravelerGeo"
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
   const [, ch] = trans("char", condCharKey)
 
   let s = 0, b = 0

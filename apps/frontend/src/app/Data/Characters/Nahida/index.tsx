@@ -2,12 +2,13 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally, target } from '../../../Formula'
 import { compareEq, constant, equal, greaterEq, infoMut, lookup, max, min, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -15,7 +16,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Nahida"
 const elementKey: ElementKey = "dendro"
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0
 const dm = {
@@ -483,4 +484,4 @@ const sheet: ICharacterSheet = {
     constellation6: ct.talentTem("constellation6"),
   }
 }
-export default new CharacterSheet(sheet, data, assets)
+export default new CharacterSheet(sheet, data)

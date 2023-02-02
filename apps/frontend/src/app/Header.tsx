@@ -1,16 +1,13 @@
-import { faDiscord, faPatreon, faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
-import { AppBar, Box, Button, Chip, Divider, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Box, Button, Chip, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Suspense, useContext, useEffect, useMemo, useState } from "react";
-import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from "react-i18next";
 import { Link as RouterLink, useMatch } from "react-router-dom";
 import Assets from "./Assets/Assets";
-import { slotIconSVG } from "./Components/Artifact/SlotNameWIthIcon";
-import FontAwesomeSvgIcon from "./Components/FontAwesomeSvgIcon";
 import { DatabaseContext } from "./Database/Database";
 import useDBMeta from "./ReactHooks/useDBMeta";
 import useForceUpdate from "./ReactHooks/useForceUpdate";
+import FlowerIcon from "./SVGIcons/ArtifactSlot/FlowerIcon";
 type ITab = {
   i18Key: string,
   icon: Displayable,
@@ -20,7 +17,7 @@ type ITab = {
 }
 const artifacts: ITab = {
   i18Key: "tabs.artifacts",
-  icon: <FontAwesomeSvgIcon icon={slotIconSVG.flower} />,
+  icon: <FlowerIcon />,
   to: "/artifacts",
   value: "artifacts",
   textSuffix: <ArtifactChip key="weaponAdd" />
@@ -92,23 +89,6 @@ function WeaponChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
-const links = [{
-  i18Key: "social.paypal",
-  href: process.env.NX_URL_PAYPAL_FRZYC,
-  icon: <FontAwesomeSvgIcon icon={faPaypal} />,
-  label: "paypal",
-}, {
-  i18Key: "social.patreon",
-  href: process.env.NX_URL_PATREON_FRZYC,
-  icon: <FontAwesomeSvgIcon icon={faPatreon} />,
-  label: "patreon",
-}, {
-  i18Key: "social.discord",
-  href: process.env.NX_URL_DISCORD_GO,
-  icon: <FontAwesomeSvgIcon icon={faDiscord} />,
-  label: "discord",
-},] as const
-
 export default function Header(props) {
   return <Suspense fallback={<Skeleton variant="rectangular" height={56} />}>
     <HeaderContent {...props} />
@@ -126,7 +106,7 @@ function HeaderContent({ anchor }) {
   const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
   return <Box>
-    <AppBar position="static" sx={{ bgcolor: "#343a40", display: "flex", flexWrap: "nowrap" }} elevation={0} id={anchor} >
+    <AppBar position="static" sx={{ bgcolor: "#343a40" }} elevation={0} id={anchor} >
       <Tabs
         value={currentTab}
         sx={{
@@ -146,13 +126,10 @@ function HeaderContent({ anchor }) {
         </Typography>} />
         {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
           const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
-          return <Tab key={value} value={value} component={RouterLink} to={to} icon={tooltipIcon} iconPosition="start" label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined} />
-        })}
-
-        <Box flexGrow={1} />
-        {links.map(({ i18Key, href, label, icon }) => {
-          const tooltipIcon = isXL ? icon : <Tooltip arrow title={t(i18Key)}>{icon as JSX.Element}</Tooltip>
-          return <Tab key={label} component="a" href={href} target="_blank" icon={tooltipIcon} iconPosition="start" onClick={(_: any) => ReactGA.outboundLink({ label }, () => { })} label={isXL ? t(i18Key) : undefined} />
+          return <Tab key={value} value={value} component={RouterLink} to={to}
+            icon={tooltipIcon} iconPosition="start"
+            label={(isXL || textSuffix) ? <Box display="flex" gap={1} alignItems="center">{(isXL) && <span>{t(i18Key)}</span>}{textSuffix}</Box> : undefined}
+            sx={{ ml: value === "setting" ? "auto" : undefined }} />
         })}
       </Tabs>
     </AppBar>
@@ -187,14 +164,6 @@ function MobileHeader({ anchor, currentTab }) {
             <ListItemButton key={value} component={RouterLink} to={to} selected={currentTab === value} disabled={currentTab === value} onClick={handleDrawerToggle} >
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText><Box display="flex" gap={1} alignItems="center">{t(i18Key)}{extra}</Box></ListItemText>
-            </ListItemButton >)}
-        </List>
-        <Divider />
-        <List>
-          {links.map(({ i18Key, href, icon, label }) =>
-            <ListItemButton key={label} component="a" href={href} target="_blank" onClick={e => ReactGA.outboundLink({ label }, () => { })} >
-              <ListItemIcon>{icon}</ListItemIcon>
-              <ListItemText>{t(i18Key)}</ListItemText>
             </ListItemButton >)}
         </List>
       </Drawer>

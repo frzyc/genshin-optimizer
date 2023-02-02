@@ -1,9 +1,10 @@
+import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
 import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
-import CharacterSheet from '../../Data/Characters/CharacterSheet';
+import { getCharSheet } from '../../Data/Characters';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
 import { uiInput as input } from '../../Formula';
@@ -11,11 +12,10 @@ import useCharacter from '../../ReactHooks/useCharacter';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useCharMeta from '../../ReactHooks/useCharMeta';
 import useDBMeta from '../../ReactHooks/useDBMeta';
-import usePromise from '../../ReactHooks/usePromise';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '../../Types/consts';
+import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '@genshin-optimizer/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
 import CardLight from '../Card/CardLight';
@@ -45,7 +45,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = getCharSheet(characterKey, gender)
   const characterDispatch = useCharacterReducer(characterKey)
   const data = teamData?.[characterKey]?.target
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
@@ -63,7 +63,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   }), [data, teamData])
 
   const { favorite } = useCharMeta(characterKey)
-  return <Suspense fallback={<Skeleton variant="rectangular" width={300} height={600} />}>
+  return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <Box sx={{ display: "flex", position: "absolute", zIndex: 2, opacity: 0.7 }}>
         <IconButton sx={{ p: 0.5 }} onClick={_ => database.charMeta.set(characterKey, { favorite: !favorite })}>
@@ -141,7 +141,7 @@ function NewCharacterCardContent({ characterKey }: { characterKey: CharacterKey 
 
 function Header({ children, characterKey, onClick }: { children: JSX.Element, characterKey: CharacterKey, onClick?: (characterKey: CharacterKey) => void }) {
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, gender])
+  const characterSheet = getCharSheet(characterKey, gender)
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -159,14 +159,16 @@ function Header({ children, characterKey, onClick }: { children: JSX.Element, ch
           left: 0, top: 0,
           width: "100%", height: "100%",
           opacity: 0.7,
-          backgroundImage: `url(${characterSheet.bannerImg})`, backgroundPosition: "center", backgroundSize: "cover",
+          backgroundImage: `url(${characterAsset(characterKey, "banner", gender)})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }
       }}
       width="100%" >
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
         <Box
           component="img"
-          src={characterSheet.thumbImg}
+          src={characterAsset(characterKey, "icon", gender)}
           width="100%"
           height="auto"
           maxWidth={256}
@@ -223,17 +225,16 @@ function HeaderContent() {
 }
 
 function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
-  const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => CharacterSheet.get(characterKey, gender), [characterKey, database, gender])
+  const sheet = getCharSheet(characterKey, gender)
 
-  if (!characterSheet) return null
+  if (!sheet) return null
   return <>
-    <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterSheet.elementKey} sx={{ opacity: 0.85 }} />
+    <Chip label={<Typography variant="subtitle1">{sheet.name}</Typography>} size="small" color={sheet.elementKey} sx={{ opacity: 0.85 }} />
     <Box mt={1}>
       <Typography variant="h4"><SqBadge>NEW</SqBadge></Typography>
     </Box>
-    <Typography mt={1.5} ><StarsDisplay stars={characterSheet.rarity} colored /></Typography>
+    <Typography mt={1.5} ><StarsDisplay stars={sheet.rarity} colored /></Typography>
   </>
 }
 

@@ -1,6 +1,7 @@
+import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
 import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
 import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, allArtifactSets, allSlotKeys, LocationCharacterKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";

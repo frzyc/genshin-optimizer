@@ -1,3 +1,4 @@
+import { allArtifactSets, allWeaponKeys } from "@genshin-optimizer/consts";
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
 import { Suspense, useContext } from "react";
@@ -11,7 +12,7 @@ import material from "../Data/Materials/Material";
 import { DatabaseContext } from "../Database/Database";
 import KeyMap from "../KeyMap";
 import useDBMeta from "../ReactHooks/useDBMeta";
-import { allArtifactSets, allWeaponKeys, charKeyToCharName, locationCharacterKeys } from "../Types/consts";
+import { charKeyToCharName, locationCharacterKeys } from "../Types/consts";
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")

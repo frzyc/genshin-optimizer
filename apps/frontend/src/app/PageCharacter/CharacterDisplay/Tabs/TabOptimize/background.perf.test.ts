@@ -15,9 +15,9 @@ describe.skip("Worker Perf", () => {
     const database = new ArtCharDatabase(1, new DBLocalStorage(localStorage))
     database.importGOOD(data1 as any, false, false)!
 
-    const teamData = (await getTeamData(database, "Sucrose"))!.teamData
+    const teamData = getTeamData(database, "Sucrose")!.teamData
     // Get a new `Data` for `workerData` (and not reuse the old ones) because we are mutating it later
-    const workerData = uiDataForTeam(teamData).Sucrose!.target.data[0]
+    const workerData = uiDataForTeam(teamData,"F").Sucrose!.target.data[0]
     const optimizationTargetNode = customRead(["display", "charged", "dmg"])
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
 

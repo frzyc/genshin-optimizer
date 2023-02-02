@@ -1,14 +1,13 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { infoMut, equal, prod, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "TheBell"
 const data_gen = data_gen_json as WeaponData
@@ -29,12 +28,10 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   shield
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("takeDmg"),
     states: {
       on: {
@@ -50,7 +47,7 @@ const sheet: IWeaponSheet = {
   }, {
     value: condWithShield,
     path: condWithShieldPath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("protectedByShield"),
     states: {
       protected: {

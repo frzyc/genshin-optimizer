@@ -2,12 +2,13 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, min, naught, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -15,7 +16,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Alhaitham"
 const elementKey: ElementKey = "dendro"
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = -1, s = -1, b = -1
 const dm = {
@@ -227,7 +228,7 @@ const sheet: ICharacterSheet = {
         unit: "s",
         fixed: 1
       }, {
-        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.chg(`skill.skillParams.2`) })
+        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.ch(`projectionDmg`) })
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.mirrorRemovalInterval,
@@ -330,4 +331,4 @@ const sheet: ICharacterSheet = {
   }
 }
 
-export default new CharacterSheet(sheet, data, assets)
+export default new CharacterSheet(sheet, data)

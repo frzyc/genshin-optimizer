@@ -1,15 +1,20 @@
+import { allElementsWithPhy, allSlotKeys } from '@genshin-optimizer/consts';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { artifactSlotIcon } from '../../../../../Components/Artifact/SlotNameWIthIcon';
+import SlotIcon from '../../../../../Components/Artifact/SlotIcon';
 import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import SqBadge from '../../../../../Components/SqBadge';
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay';
-import StatIcon from '../../../../../Components/StatIcon';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import Artifact from '../../../../../Data/Artifacts/Artifact';
 import { DatabaseContext } from '../../../../../Database/Database';
-import { allElementsWithPhy, allSlotKeys } from '../../../../../Types/consts';
+import StatIcon from '../../../../../KeyMap/StatIcon';
+import { iconInlineProps } from '../../../../../SVGIcons';
+import FlowerIcon from '../../../../../SVGIcons/ArtifactSlot/FlowerIcon';
+import PlumeIcon from '../../../../../SVGIcons/ArtifactSlot/PlumeIcon';
+import AtkIcon from '../../../../../SVGIcons/Stats/AtkIcon';
+import HpIcon from '../../../../../SVGIcons/Stats/HpIcon';
 import { handleMultiSelect } from '../../../../../Util/MultiSelect';
 import { catTotal } from '../../../../../Util/totalUtils';
 import { objectKeyMap } from '../../../../../Util/Util';
@@ -48,10 +53,10 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
       <CardContent sx={{ flexGrow: 1 }}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.flower`)}</Typography>}>
-            <span>{artifactSlotIcon("flower")}</span>
+            <FlowerIcon fontSize='inherit' />
           </BootstrapTooltip>
           <Box flexGrow={1}>
-            <SqBadge color="info">{StatIcon.hp} {tots.flower.hp}</SqBadge>
+            <SqBadge color="info"><HpIcon {...iconInlineProps} /> {tots.flower.hp}</SqBadge>
           </Box>
         </Box>
       </CardContent>
@@ -59,10 +64,10 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
       <CardContent sx={{ flexGrow: 1 }}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.plume`)}</Typography>}>
-            <span>{artifactSlotIcon("plume")}</span>
+            <PlumeIcon fontSize='inherit' />
           </BootstrapTooltip>
           <Box flexGrow={1}>
-            <SqBadge color="info">{StatIcon.atk} {tots.plume.atk}</SqBadge>
+            <SqBadge color="info"><AtkIcon {...iconInlineProps} /> {tots.plume.atk}</SqBadge>
           </Box>
         </Box>
       </CardContent>
@@ -76,7 +81,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
         <CardContent sx={{ pt: 1, pb: 1 }}>
           <Box sx={{ display: "flex", gap: 1, alignItems: "center", pb: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
-              <span>{artifactSlotIcon(slotKey)}</span>
+              <SlotIcon slotKey={slotKey} iconProps={{ fontSize: 'inherit' }} />
             </BootstrapTooltip>
             <Box flexGrow={1}>
               <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
@@ -90,9 +95,10 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
                 : "secondary"
               return <Grid item key={mainStatKey} flexGrow={1} xs={((i < 3 && slotKey !== "goblet") || slotKey === "goblet") ? 4 : undefined} >
                 <BootstrapTooltip placement="top" title={<Typography><strong><StatColoredWithUnit statKey={mainStatKey} /></strong></Typography>} disableInteractive>
-                  <Button fullWidth size="small" color={color} sx={{ height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined, display: "flex", gap: 0.5 }}
+                  <Button fullWidth size="small" color={color} sx={{ height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
+                    startIcon={<StatIcon statKey={mainStatKey} />}
                     onClick={() => buildSettingDispatch({ mainStatKeys: { ...mainStatKeys, [slotKey]: mainKeysHandler(selectedMainKeys, mainStatKey) } })}>
-                    {StatIcon[mainStatKey]} {tots[slotKey][mainStatKey]}
+                    {tots[slotKey][mainStatKey]}
                   </Button>
                 </BootstrapTooltip>
               </Grid>

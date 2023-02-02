@@ -1,5 +1,5 @@
 import { Masonry } from "@mui/lab"
-import { Divider, ListItem, Box } from "@mui/material"
+import { Box, Divider, ListItem } from "@mui/material"
 import { useContext, useMemo } from "react"
 import { DataContext } from "../../Context/DataContext"
 import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"
@@ -8,7 +8,6 @@ import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
 import { DisplaySub } from "../../Formula/type"
 import { NodeDisplay } from "../../Formula/uiData"
 import { customRead } from "../../Formula/utils"
-import usePromise from "../../ReactHooks/usePromise"
 import { objectMap } from "../../Util/Util"
 import CardDark from "../Card/CardDark"
 import CardHeaderCustom from "../Card/CardHeaderCustom"
@@ -33,7 +32,7 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
   const optimizationTarget = useContext(OptimizationTargetContext)
   const { data, oldData } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
-  const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
+  const header = useMemo(() => getDisplayHeader(data, sectionKey, database), [database, data, sectionKey])
   const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return <CardDark></CardDark>
 

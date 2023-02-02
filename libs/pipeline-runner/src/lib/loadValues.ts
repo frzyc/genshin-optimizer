@@ -1,5 +1,6 @@
+import { CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
 import { artifactMainstatData, artifactSubstatData, artifactSubstatRollCorrection, artifactSubstatRollData, ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, materialExcelConfigData, nameToKey, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
-import { CharacterData, CharacterId, characterIdMap, CharacterKey, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, WeaponKey, weaponMap } from '@genshin-optimizer/pipeline'
+import { CharacterData, CharacterId, characterIdMap, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FRONTEND_PATH } from './Util'
 

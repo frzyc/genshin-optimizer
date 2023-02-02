@@ -1,5 +1,5 @@
-import { Button, Divider, Stack, Box } from '@mui/material';
-import { useCallback, useContext } from 'react';
+import { Box, Button, Divider, Stack } from '@mui/material';
+import { useCallback, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import ImgIcon from '../../../../../Components/Image/ImgIcon';
 import SqBadge from '../../../../../Components/SqBadge';
@@ -8,7 +8,6 @@ import { DatabaseContext } from '../../../../../Database/Database';
 import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
 import { NodeDisplay } from '../../../../../Formula/uiData';
 import useBoolState from '../../../../../ReactHooks/useBoolState';
-import usePromise from '../../../../../ReactHooks/usePromise';
 import { objPathValue } from '../../../../../Util/Util';
 import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
 
@@ -27,7 +26,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   )
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
-  const displayHeader = usePromise(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0], database), [data, optimizationTarget, database])
+  const displayHeader = useMemo(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0], database), [data, optimizationTarget, database])
 
   if (!defaultText) defaultText = t("targetSelector.selectOptTarget")
 

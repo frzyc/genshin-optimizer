@@ -2,14 +2,14 @@ import { input, tally } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, prod, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElements, ArtifactSetKey } from '../../../Types/consts'
+import { allElements, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "GildedDreams"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.info("eleMas"))
 
@@ -47,7 +47,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Gilded Dreams", rarity: [4, 5],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

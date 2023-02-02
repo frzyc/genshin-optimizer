@@ -1,14 +1,13 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
-import iconAwaken from './AwakenIcon.png'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "PrimordialJadeWingedSpear"
 const data_gen = data_gen_json as WeaponData
@@ -25,13 +24,11 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
   },
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condStack,
     path: condStackPath,
     teamBuff: true,
-    header: headerTemplate(key, icon, iconAwaken, st("stacks")),
+    header: headerTemplate(key, st("stacks")),
     name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 7).map(i => [i, {
       name: st("hits", { count: i }),

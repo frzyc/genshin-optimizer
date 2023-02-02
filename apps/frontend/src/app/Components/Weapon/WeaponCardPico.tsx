@@ -1,10 +1,11 @@
+import { weaponAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import { useMemo } from 'react';
+import { getWeaponSheet } from '../../Data/Weapons';
 import WeaponSheet from '../../Data/Weapons/WeaponSheet';
 import { uiInput as input } from '../../Formula';
 import { computeUIData, dataObjForWeapon } from '../../Formula/api';
 import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
-import usePromise from '../../ReactHooks/usePromise';
 import useWeapon from '../../ReactHooks/useWeapon';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
@@ -12,7 +13,7 @@ import WeaponNameTooltip from './WeaponNameTooltip';
 
 export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
-  const weaponSheet = usePromise(() => weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
 
@@ -26,7 +27,7 @@ export default function WeaponCardPico({ weaponId }: { weaponId: string }) {
       <WeaponNameTooltip sheet={weaponSheet} addlText={tooltipAddl}>
         <Box
           component="img"
-          src={weaponSheet.getImg(weapon.ascension)}
+          src={weaponAsset(weapon.key, weapon.ascension >= 2)}
           maxWidth="100%"
           maxHeight="100%"
           sx={{ mt: "auto" }}

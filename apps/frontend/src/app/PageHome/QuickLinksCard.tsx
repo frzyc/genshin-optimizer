@@ -1,66 +1,68 @@
-import { faDiscord, faPatreon, faPaypal, faTwitch } from "@fortawesome/free-brands-svg-icons"
 import { Article, Description, GitHub, Handshake, InsertLink, Scanner, Twitter, YouTube } from "@mui/icons-material"
-import { Box, Button, CardContent, CardHeader, Divider, Link, Tooltip, Typography } from "@mui/material"
-import CardDark from "../Components/Card/CardDark"
-import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
-import { Link as RouterLink } from 'react-router-dom'
+import { Button, CardContent, CardHeader, Divider, Link, Tooltip, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next"
+import { Link as RouterLink } from 'react-router-dom'
+import CardDark from "../Components/Card/CardDark"
+import DiscordIcon from "../SVGIcons/DiscordIcon"
+import PatreonIcon from "../SVGIcons/PatreonIcon"
+import PaypalIcon from "../SVGIcons/PaypalIcon"
+import TwitchIcon from "../SVGIcons/TwitchIcon"
 
-const smallIcons = [{
-  tooltip: "Genshin Optimizer Discord",
-  icon: <FontAwesomeSvgIcon icon={faDiscord} />,
+
+const buttons = [{
+  title: () => "Genshin Optimizer Discord",
+  icon: <DiscordIcon />,
+  tooltip: t => "",
   url: process.env.NX_URL_DISCORD_GO,
   color: "discord",
 }, {
-  tooltip: "Genshin Optimizer Github",
+  title: () => "Genshin Optimizer Github",
   icon: <GitHub />,
+  tooltip: t => "",
   url: process.env.NX_URL_GITHUB_GO,
   color: "white",
-}, {
-  tooltip: "Youtube (frzyc)",
-  icon: <YouTube />,
-  url: process.env.NX_URL_YOUTUBE_FRZYC,
-  color: "red",
-}, {
-  tooltip: "Twitch (frzyc)",
-  icon: <FontAwesomeSvgIcon icon={faTwitch} />,
-  url: process.env.NX_URL_TWITCH_FRZYC,
-  color: "twitch",
-}, {
-  tooltip: "Twitter (frzyc)",
-  icon: <Twitter />,
-  url: process.env.NX_URL_TWITTER_FRZYC,
-  color: "twitter",
-}, {
-  tooltip: "Patreon (frzyc)",
-  icon: <FontAwesomeSvgIcon icon={faPatreon} />,
-  url: process.env.NX_URL_PATREON_FRZYC,
-  color: "patreon",
-}, {
-  tooltip: "PayPal (frzyc)",
-  icon: <FontAwesomeSvgIcon icon={faPaypal} />,
-  url: process.env.NX_URL_PAYPAL_FRZYC,
-  color: "paypal",
-},] as const
-
-const buttons = [{
-  title: t => t`quickLinksCard.buttons.tyGuide.title`,
-  icon: <YouTube />,
-  tooltip: t => t`quickLinksCard.buttons.tyGuide.tooltip`,
-  url: process.env.NX_URL_YOUTUBE_TUTPL,
-  color: "red",
-}, {
-  title: t => t`quickLinksCard.buttons.scanners.title`,
-  icon: <Scanner />,
-  tooltip: t => t`quickLinksCard.buttons.scanners.tooltip`,
-  to: "/scanner",
-  color: "primary",
 }, {
   title: t => t`quickLinksCard.buttons.patchNotes.title`,
   icon: <Description />,
   tooltip: t => t`quickLinksCard.buttons.patchNotes.tooltip`,
   url: `${process.env.NX_URL_GITHUB_GO}/releases`,
   color: "secondary",
+}, {
+  title: t => t`quickLinksCard.buttons.tyGuide.title`,
+  icon: <YouTube />,
+  tooltip: t => t`quickLinksCard.buttons.tyGuide.tooltip`,
+  url: process.env.NX_URL_YOUTUBE_TUTPL,
+  color: "red",
+}, {
+  title: () => "Twitch (frzyc)",
+  icon: <TwitchIcon />,
+  tooltip: t => "",
+  url: process.env.NX_URL_TWITCH_FRZYC,
+  color: "twitch",
+}, {
+  title: () => "Twitter (frzyc)",
+  icon: <Twitter />,
+  tooltip: t => "",
+  url: process.env.NX_URL_TWITTER_FRZYC,
+  color: "twitter",
+}, {
+  title: () => "Patreon (frzyc)",
+  icon: <PatreonIcon />,
+  tooltip: t => "",
+  url: process.env.NX_URL_PATREON_FRZYC,
+  color: "patreon",
+}, {
+  title: () => "PayPal (frzyc)",
+  icon: <PaypalIcon />,
+  tooltip: t => "",
+  url: process.env.NX_URL_PAYPAL_FRZYC,
+  color: "paypal",
+}, {
+  title: t => t`quickLinksCard.buttons.scanners.title`,
+  icon: <Scanner />,
+  tooltip: t => t`quickLinksCard.buttons.scanners.tooltip`,
+  to: "/scanner",
+  color: "primary",
 }, {
   title: t => t`quickLinksCard.buttons.kqm.title`,
   icon: <Handshake />,
@@ -69,7 +71,7 @@ const buttons = [{
   color: "keqing",
 }, {
   title: t => t`quickLinksCard.buttons.devDiscord.title`,
-  icon: <FontAwesomeSvgIcon icon={faDiscord} />,
+  icon: <DiscordIcon />,
   tooltip: t => t`quickLinksCard.buttons.devDiscord.tooltip`,
   url: process.env.NX_URL_DISCORD_GDEV,
   color: "discord",
@@ -87,12 +89,6 @@ export default function QuickLinksCard() {
     <CardHeader title={<Typography variant="h5">{t`quickLinksCard.title`}</Typography>} avatar={<InsertLink fontSize="large" />} />
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-
-      <Box display="flex" justifyContent="space-between" gap={1}>
-        {smallIcons.map(({ tooltip, icon, url, color }) => <Tooltip key={tooltip} title={tooltip} placement="top" arrow>
-          <Button fullWidth color={color} key={tooltip} sx={{ p: 1, minWidth: 0 }} component={Link} href={url} target="_blank" rel="noopener">{icon}</Button>
-        </Tooltip>)}
-      </Box>
       {buttons.map((btnProps, i) => {
         const { title, icon, tooltip, color } = btnProps
         let button;
