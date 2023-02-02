@@ -100,21 +100,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === "Traveler" ? this.getTravelerCharacterKey() : key
   }
-  getWithInit(key: LocationCharacterKey): ICachedCharacter {
-    const cKey = this.LocationToCharacterKey(key)
-
-    if (!this.keys.includes(cKey))
-      this.set(cKey, initialCharacter(cKey))
-    return this.get(cKey) as ICachedCharacter
-  }
-  getWithInitWeapon(key: LocationCharacterKey): ICachedCharacter {
-    const cKey = this.LocationToCharacterKey(key)
-    if (!this.keys.includes(cKey)) {
-      this.set(cKey, initialCharacter(cKey))
-      const cSheet = getCharSheet(cKey)
-      this.database.weapons.new({ ...defaultInitialWeapon(cSheet.weaponTypeKey), location: key })
+  getWithInitWeapon(key: CharacterKey): ICachedCharacter {
+    if (!this.keys.includes(key)) {
+      this.set(key, initialCharacter(key))
+      this.database.weapons.ensureEquipment(key)
     }
-    return this.get(cKey) as ICachedCharacter
+    return this.get(key) as ICachedCharacter
   }
 
   remove(key: CharacterKey) {

@@ -27,8 +27,8 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
     const oldArt = super.get(id)
     if (newArt.location !== oldArt?.location) {
       const slotKey = newArt.slotKey
-      const prevChar = oldArt?.location ? this.database.chars.getWithInitWeapon(oldArt.location) : undefined
-      const newChar = newArt.location ? this.database.chars.getWithInitWeapon(newArt.location) : undefined
+      const prevChar = oldArt?.location ? this.database.chars.getWithInitWeapon(this.database.chars.LocationToCharacterKey(oldArt.location)) : undefined
+      const newChar = newArt.location ? this.database.chars.getWithInitWeapon(this.database.chars.LocationToCharacterKey(newArt.location)) : undefined
 
       // previously equipped art at new location
       const prevArt = super.get(newChar?.equippedArtifacts[slotKey])
@@ -104,7 +104,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       else idtoRemoveArr.forEach(k => this.remove(k))
     } else result.artifacts.notInImport = this.values.length
 
-    this.database.weapons.ensureEquipment()
+    this.database.weapons.ensureEquipments()
   }
   findDups(editorArt: IArtifact): { duplicated: ICachedArtifact[], upgraded: ICachedArtifact[] } {
     const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorArt

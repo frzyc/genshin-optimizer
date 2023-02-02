@@ -1,7 +1,7 @@
 import artifactSubstatBaseRoll from './artifact_sub_gen.json';
 import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 import { SubstatKey } from "../../Types/artifact";
-import { extrapolateFloat } from 'pipeline/extrapolateFloat';
+import { extrapolateFloat } from '@genshin-optimizer/pipeline';
 
 /**
  * Known rarity-5 rolls
