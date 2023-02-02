@@ -60,9 +60,9 @@ const statMap = {
   infusionAura: "Elemental Infusion Aura",
 
   //talentBoost
-  autoBoost: "Normal Attack Level Boost",
-  skillBoost: "Ele. Skill Level Boost",
-  burstBoost: "Ele. Burst Level Boost",
+  auto: "Normal Attack Level Boost",
+  skill: "Ele. Skill Level Boost",
+  burst: "Ele. Burst Level Boost",
 
   // Modifiable base stats
   base_atk: "Base ATK",
