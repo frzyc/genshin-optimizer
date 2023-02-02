@@ -289,6 +289,16 @@ export default function TabBuild() {
           case "finalize":
             worker.terminate()
             finalize(data);
+
+            // Using a timeout because when an alert is displayed, the UI doesnt update, showing an incomplete loading bar
+            setTimeout(() => {
+              // Using a ref because a user can cancel the notification while the build is going.
+              if (notificationRef.current) {
+                audio.play()
+                if (!tabFocused.current)
+                  window.alert(t`buildCompleted`)
+              }
+            }, 100);
             return
           case "count":
             const [pruned, prepruned] = data.counts
@@ -352,14 +362,6 @@ export default function TabBuild() {
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
     }
-    setTimeout(() => {
-      // Using a ref because a user can cancel the notification while the build is going.
-      if (notificationRef.current) {
-        audio.play()
-        if (!tabFocused.current)
-          window.alert(t`buildCompleted`)
-      }
-    }, 100);
     setBuildStatus({ ...status, type: "inactive", finishTime: performance.now() })
   }, [t, characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notificationRef, setChartData, gender])
 
@@ -468,6 +470,7 @@ export default function TabBuild() {
           </MenuItem>)}
         </DropdownButton>
         <DropdownButton disabled={generatingBuilds || !characterKey}
+          sx={{ borderRadius: "4px 0px 0px 4px" }}
           title={<Trans t={t} i18nKey="thread" count={maxWorkers}>
             {{ count: maxWorkers }} Threads
           </Trans>}>
@@ -484,9 +487,13 @@ export default function TabBuild() {
             </Trans>
           </MenuItem>)}
         </DropdownButton>
-        <Button sx={{ borderRadius: "4px 0px 0px 4px" }} color='warning' onClick={() => setnotification(n => !n)} >
-          {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
-        </Button>
+        <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
+          <span>
+            <Button sx={{ borderRadius: 0 }} color='warning' onClick={() => setnotification(n => !n)} >
+              {notification ? <NotificationsActiveIcon /> : <NotificationsOffIcon />}
+            </Button>
+          </span>
+        </BootstrapTooltip>
         <BootstrapTooltip placement="top" title={!optimizationTarget ? t("selectTargetFirst") : ""}>
           <span>
             <Button
