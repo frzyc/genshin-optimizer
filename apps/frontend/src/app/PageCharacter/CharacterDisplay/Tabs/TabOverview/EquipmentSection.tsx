@@ -1,3 +1,4 @@
+import { allSlotKeys, SlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { Settings, SwapHoriz } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
@@ -23,7 +24,7 @@ import useBoolState from '../../../../ReactHooks/useBoolState';
 import useCharMeta from '../../../../ReactHooks/useCharMeta';
 import { iconInlineProps } from '../../../../SVGIcons';
 import { allSubstatKeys } from '../../../../Types/artifact';
-import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
+import { charKeyToLocCharKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
@@ -198,6 +199,7 @@ function ArtifactSectionCard() {
           <ModalWrapper open={show} onClose={onHide}>
             <CardDark>
               <CardContent>
+                <Typography textAlign="center" gutterBottom variant='h6'>{t`artifact:efficiencyFilter.title`}</Typography>
                 <SubstatToggle selectedKeys={rvFilter} onChange={setRVFilter} />
               </CardContent>
             </CardDark>

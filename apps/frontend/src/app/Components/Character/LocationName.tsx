@@ -1,5 +1,5 @@
 import { BusinessCenter } from "@mui/icons-material";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { getCharSheet } from "../../Data/Characters";
@@ -15,7 +15,7 @@ export default function LocationName({ location }: { location: LocationKey }) {
   const characterSheet = useMemo(() => location ? getCharSheet(database.chars.LocationToCharacterKey(location), gender) : undefined, [location, gender, database])
   return <Typography component="span">
     {(location && characterSheet?.name) ?
-      <span><LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} /> {characterSheet.name}</span> :
+      <Box><LocationIcon characterKey={database.chars.LocationToCharacterKey(location)} />{characterSheet.name}</Box> :
       <span><BusinessCenter sx={{ verticalAlign: "text-bottom" }} /> {t("inventory")}</span>}
   </Typography>
 

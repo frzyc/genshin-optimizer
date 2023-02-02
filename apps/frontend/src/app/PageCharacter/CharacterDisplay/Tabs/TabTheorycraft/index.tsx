@@ -330,7 +330,6 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
     {Object.entries(artSet).map(([setKey, value]) => <ArtifactSetEditor key={setKey} setKey={setKey} value={value} setValue={setValue(setKey)} deleteValue={deleteValue(setKey)} remaining={remaining} />)}
     <CardLight sx={{ flexGrow: 1, overflow: "visible" }}>
       <ArtifactSetAutocomplete
-        disableClearable
         artSetKey={""}
         setArtSetKey={setSet}
         label={"New Artifact Set"}
@@ -353,7 +352,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
         <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
-          <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />
+          <ImgIcon size={2} src={artifactDefIcon(setKey)} />
           <Box >{artifactSheet.setName}</Box>
           <Info />
         </Box>

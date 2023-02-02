@@ -60,7 +60,7 @@ const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displa
 const talentHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IDocumentHeader => {
   return {
     title: tr(`${talentKey}.name`),
-    icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
+    icon: <ImgIcon size={2} src={img} />,
     action: <SqBadge color="success">{st(`talents.${talentKey}`)}</SqBadge>,
     description: tr(`${talentKey}.description`),
   }

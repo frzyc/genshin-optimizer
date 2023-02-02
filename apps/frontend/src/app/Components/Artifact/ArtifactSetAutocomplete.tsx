@@ -21,12 +21,12 @@ export default function ArtifactSetAutocomplete({ artSetKey, setArtSetKey, label
     .flatMap(([rarity, sets]) => sets.map(set => ({ key: set, label: t(`artifactNames_gen:${set}`), grouper: +rarity as ArtifactRarity })))
     .sort(sortByRarityAndName), [t])
 
-  const toImg = useCallback((key: ArtifactSetKey | "") => key ? <ImgIcon src={artifactDefIcon(key)} sx={{ fontSize: "1.5em" }} /> : undefined, [])
-
+  const toImg = useCallback((key: ArtifactSetKey | "") => key ? <ImgIcon src={artifactDefIcon(key)} size={2} /> : undefined, [])
+  const onChange = useCallback((k: ArtifactSetKey | "" | null) => setArtSetKey(k ?? ""), [setArtSetKey])
   return <GeneralAutocomplete
     options={options}
     valueKey={artSetKey}
-    onChange={k => setArtSetKey(k ?? "")}
+    onChange={onChange}
     toImg={toImg}
     label={label}
     groupBy={(option) => option.grouper?.toString() ?? ""}

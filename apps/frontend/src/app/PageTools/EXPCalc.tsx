@@ -77,7 +77,7 @@ export default function EXPCalc() {
   return <CardDark>
     <Grid container sx={{ px: 2, py: 1 }} spacing={2} >
       <Grid item>
-        <ImgIcon src={booksData.wit.img} sx={{ fontSize: "2em" }} />
+        <ImgIcon src={booksData.wit.img} size={2} />
       </Grid>
       <Grid item flexGrow={1}>
         <Typography variant="h6">Experience Calculator</Typography>

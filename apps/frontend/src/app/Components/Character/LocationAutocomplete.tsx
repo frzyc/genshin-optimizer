@@ -14,7 +14,7 @@ type LocationAutocompleteProps = {
   location: LocationKey,
   setLocation: (v: LocationKey) => void,
   filter?: (v: CharacterSheet) => void,
-  autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<LocationKey>, false, true, false>, "renderInput" | "onChange" | "options">
+  autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<LocationKey>, false, false, false>, "renderInput" | "onChange" | "options">
 }
 export function LocationAutocomplete({ location, setLocation, filter = () => true, autoCompleteProps = {} }: LocationAutocompleteProps) {
   const { t } = useTranslation(["ui", "artifact", "charNames_gen"])

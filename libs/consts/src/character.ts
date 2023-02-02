@@ -10,6 +10,9 @@ export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export const allRegions = ["mondstadt", "liyue", "inazuma", "sumeru", "fontaine", "natlan", "snezhnaya", "khaenriah"] as const
 export type Region = typeof allRegions[number]
 
+export const allAscension = [0, 1, 2, 3, 4, 5, 6] as const
+export type Ascension = typeof allAscension[number]
+
 export const nonTravelerCharacterKeys = [
   "Albedo",
   "Alhaitham",

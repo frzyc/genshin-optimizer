@@ -17,7 +17,7 @@ export default function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys
 }) {
   const { t } = useTranslation(["artifact", "artifactNames_gen"])
 
-  const toImg = useCallback((key: ArtifactSetKey) => <ImgIcon src={artifactDefIcon(key)} sx={{ fontSize: "1.5em" }} />, [])
+  const toImg = useCallback((key: ArtifactSetKey) => <ImgIcon src={artifactDefIcon(key)} size={3} />, [])
   const toExLabel = useCallback((key: ArtifactSetKey) => <strong>{totals[key]}</strong>, [totals],)
   const toExItemLabel = useCallback((key: ArtifactSetKey) => <Chip size="small" label={totals[key]} />, [totals],)
 

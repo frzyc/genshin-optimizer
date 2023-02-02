@@ -36,8 +36,8 @@ function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setK
   return <Box>
     <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={numInSet} >
       <SqBadge sx={{ height: "100%" }} color={currentlyEquipped ? "success" : "primary"} ><Typography >
-        {slotarr.map(slotKey => <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />)} {artifactSheet.name ?? ""}
-        {setActive.map(n => <SqBadge sx={{ ml: 0.5 }} key={n} color="success">{n}</SqBadge>)}
+        {slotarr.map(slotKey => <SlotIcon key={slotKey} slotKey={slotKey} iconProps={iconInlineProps} />)} {artifactSheet.name ?? ""}
+        {setActive.map((n, i) => <SqBadge sx={{ ml: 0.5 }} key={"" + n + i} color="success">{n}</SqBadge>)}
       </Typography></SqBadge>
     </ArtifactSetTooltip>
   </Box>

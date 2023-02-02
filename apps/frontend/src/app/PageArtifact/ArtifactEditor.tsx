@@ -254,12 +254,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               {/* Artifact Set */}
               <ArtifactSetAutocomplete
                 disabled={disableSet}
-                disableClearable
                 size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
                 sx={{ flexGrow: 1 }}
-                label={t("editor.unknownSetName")}
+                label={artifact?.setKey ? "" : t("editor.unknownSetName")}
                 getOptionDisabled={({ key }) => setACDisable(key)}
               />
               {/* rarity dropdown */}
@@ -284,7 +283,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
-                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ? <span><ImgIcon src={artifactAsset(artifact.setKey, artifact.slotKey)} /> {sheet?.getSlotName(artifact!.slotKey)}</span> : t`editor.unknownPieceName`}
+                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ?
+                      <span>
+                        <ImgIcon size={2} src={artifactAsset(artifact.setKey, artifact.slotKey)} />{sheet?.getSlotName(artifact!.slotKey)}
+                      </span> : t`editor.unknownPieceName`}
                   </Typography>
                 </Suspense>
               </CardLight>
@@ -418,7 +420,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, { ...editorArtifact, location: old.location }); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

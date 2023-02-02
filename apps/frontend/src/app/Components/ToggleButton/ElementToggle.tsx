@@ -1,5 +1,5 @@
 import { allElements, ElementKey } from "@genshin-optimizer/consts";
-import { Chip, ToggleButtonGroup } from "@mui/material";
+import { Chip, ToggleButtonGroup, useMediaQuery, useTheme } from "@mui/material";
 import { ElementIcon } from "../../KeyMap/StatIcon";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import SolidColoredToggleButton from "../SolidColoredToggleButton";
@@ -11,9 +11,12 @@ type ElementToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"
 }
 const elementHandler = handleMultiSelect([...allElements])
 export default function ElementToggle({ value, totals, onChange, ...props }: ElementToggleProps) {
+  const theme = useTheme();
+  const sm = !useMediaQuery(theme.breakpoints.up('md'));
+  const xs = !useMediaQuery(theme.breakpoints.up('sm'));
   return <ToggleButtonGroup exclusive value={value} {...props}>
-    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} sx={{ minWidth: "7em" }} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
-      <ElementIcon ele={ele} /><Chip sx={{ ml: 0.5 }} label={totals[ele]} size="small" />
+    {allElements.map(ele => <SolidColoredToggleButton key={ele} value={ele} sx={{ p: sm ? 1 : undefined, minWidth: sm ? 0 : "6em", display: "flex" }} selectedColor={ele} onClick={() => onChange(elementHandler(value, ele))}>
+      <ElementIcon ele={ele} iconProps={{ fontSize: (sm && !xs) ? "inherit" : undefined }} />{!xs && <Chip sx={{ ml: 0.5 }} label={totals[ele]} size="small" />}
     </SolidColoredToggleButton>)}
   </ToggleButtonGroup>
 }

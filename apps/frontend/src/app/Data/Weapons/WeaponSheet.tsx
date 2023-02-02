@@ -41,7 +41,7 @@ export function headerTemplate(weaponKey: WeaponKey, action?: Displayable): IDoc
   const tr = (strKey: string) => <Translate ns={`weapon_${weaponKey}_gen`} key18={strKey} />
   return {
     title: tr(`passiveName`),
-    icon: data => <ImgIcon size={2} sx={{ m: -1 }} src={weaponAsset(weaponKey, data.get(input.weapon.asc).value >= 2)} />,
+    icon: data => <ImgIcon size={2} src={weaponAsset(weaponKey, data.get(input.weapon.asc).value >= 2)} />,
     action: action && <SqBadge color="success">{action}</SqBadge>,
     description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)
   }
