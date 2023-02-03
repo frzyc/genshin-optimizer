@@ -35,7 +35,8 @@
     "addNewMTarget": "Add New Custom Multi-target"
   },
   "addStats": {
-    "title": "Enemy Config + Bonus Stats"
+    "title": "Enemy Config + Bonus Stats",
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <1>Genshin Impact wiki</1> for specific values."
   },
   "tabTheorycraft": {
     "substatType": {
