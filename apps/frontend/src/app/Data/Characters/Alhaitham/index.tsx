@@ -162,16 +162,14 @@ const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC3,
-    burst: burstC5,
-  },
   teamBuff: {
     premod: {
       eleMas: c4MirrorsConsumed_eleMas
     }
   },
   premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
     dendro_dmg_: c4MirrorsConsumed_dendro_dmg_,
     eleMas: c2DebateStacks_eleMas,
     critRate_: c6ExcessMirror_critRate_,

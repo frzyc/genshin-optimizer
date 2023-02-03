@@ -80,9 +80,9 @@ function CharacterProfileCard() {
     burst: data.get(input.total.burst).value,
   }
   const tBoost = {
-    auto: data.get(input.bonus.auto).value,
-    skill: data.get(input.bonus.skill).value,
-    burst: data.get(input.bonus.burst).value,
+    auto: data.get(input.total.autoBoost).value,
+    skill: data.get(input.total.skillBoost).value,
+    burst: data.get(input.total.burstBoost).value,
   }
   const { favorite } = useCharMeta(characterKey)
   return <CardLight sx={{ height: "100%" }} >

@@ -94,10 +94,9 @@ const nodeC1NormalCritRate = equal(condC1Cryo, "on", greaterEq(input.constellati
 const nodeC1ChargeCritRate = equal(condC1Cryo, "on", greaterEq(input.constellation, 1, dm.constellation1.critRate_))
 
 export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  }, premod: {
+  premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     normal_critRate_: nodeC1NormalCritRate,
     charged_critRate_: nodeC1ChargeCritRate,
   }

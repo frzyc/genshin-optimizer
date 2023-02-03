@@ -85,6 +85,7 @@ function StatFilterItem({ statKey, statKeyOptions = [], value = 0, delKey, setKe
   const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
   return <ButtonGroup sx={{ width: "100%" }}>
     <GeneralAutocomplete
+      flattenCorners
       size="small"
       options={statKeyOptions}
       onChange={onKeyChange}
@@ -95,7 +96,7 @@ function StatFilterItem({ statKey, statKeyOptions = [], value = 0, delKey, setKe
       PopperComponent={(props) => <Popper {...props} style={{ width: "60%" }} />}
       sx={{ flexGrow: 1, flexBasis: 150 }}
     />
-    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
+    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1, borderRadius: 0 }}>
       <CustomNumberInput
         disabled={!statKey || disabled}
         float={isFloat}
