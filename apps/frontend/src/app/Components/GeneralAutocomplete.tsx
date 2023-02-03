@@ -13,17 +13,18 @@ type GeneralAutocompletePropsBase<T extends string> = {
   toExItemLabel?: (v: T) => Displayable | undefined,
   toExLabel?: (v: T) => Displayable | undefined,
   chipProps?: Partial<ChipProps>
+  flattenCorners?: boolean
 }
 export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T | null, onChange: (v: T | null) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
-export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteProps<T>) {
+export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, flattenCorners = false, ...acProps }: GeneralAutocompleteProps<T>) {
   const value = options.find(o => o.key === key)
   const theme = useTheme()
   return <Autocomplete
     autoHighlight
     options={options}
     value={value}
-    onChange={(event, newValue, reason) => onChange(newValue?.key)}
+    onChange={(_event, newValue, _reason) => onChange(newValue?.key)}
     isOptionEqualToValue={(option, value) => option.key === value?.key}
     renderInput={(params) => {
       const variant = value?.variant
@@ -41,6 +42,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
           style: { color }
         }}
         color={key ? "success" : "primary"}
+        sx={ flattenCorners ? { "& .MuiInputBase-root": { borderRadius: 0 } } : undefined}
       />
     }}
     renderOption={(props, option) => <MenuItem value={option.key} {...props}>
