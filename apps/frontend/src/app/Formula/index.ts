@@ -44,6 +44,7 @@ const allNonModStats = [
   "all_dmgInc" as const,
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
+  "enemyDefIgn_" as const,
   ...allMisc,
   ...allBase,
 ] as const
@@ -261,6 +262,7 @@ const common: Data = {
     def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(one, prod(-1, enemy.defRed)), sum(one, prod(-1, enemy.defIgn)))),
     defRed: total.enemyDefRed_,
     ...objectKeyValueMap(allElements, ele => [`${ele}_resMulti`, res(total[`${ele}_enemyRes_`])]),
+    defIgn: total.enemyDefIgn_
   },
 }
 
