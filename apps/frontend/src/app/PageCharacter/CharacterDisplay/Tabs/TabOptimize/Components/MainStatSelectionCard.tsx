@@ -53,7 +53,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
       <CardContent sx={{ flexGrow: 1 }}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.flower`)}</Typography>}>
-            <FlowerIcon fontSize='inherit' />
+            <Box lineHeight={0}><FlowerIcon fontSize='inherit' /></Box>
           </BootstrapTooltip>
           <Box flexGrow={1}>
             <SqBadge color="info"><HpIcon {...iconInlineProps} /> {tots.flower.hp}</SqBadge>
@@ -81,7 +81,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
         <CardContent sx={{ pt: 1, pb: 1 }}>
           <Box sx={{ display: "flex", gap: 1, alignItems: "center", pb: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
-              <SlotIcon slotKey={slotKey} iconProps={{ fontSize: 'inherit' }} />
+              <Box lineHeight={0}><SlotIcon slotKey={slotKey} iconProps={{ fontSize: 'inherit' }} /></Box>
             </BootstrapTooltip>
             <Box flexGrow={1}>
               <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
