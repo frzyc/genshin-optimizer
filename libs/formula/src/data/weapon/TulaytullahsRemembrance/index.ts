@@ -23,6 +23,6 @@ const normal_dmg_ = min(
 )
 
 export default register(name,
-  ...entriesForWeapon(data_gen),
+  entriesForWeapon(data_gen),
   selfBuff.premod.dmg_.normal.add(normal_dmg_),
 )

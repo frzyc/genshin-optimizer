@@ -6,7 +6,7 @@ const name: Artifact = 'NoblesseOblige', count = artCount(name)
 const { set4 } = allCustoms(name), { canNO4 } = allStacks(name)
 
 export default register(name,
-  ...entriesForArt(name),
+  entriesForArt(name),
   selfBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
 
   canNO4.in.add(cmpGE(count, 4, cmpEq(set4, 'on', 1))),

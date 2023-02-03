@@ -117,7 +117,7 @@ const c6_critDMG_ = cmpGE(constellation, 6,
 )
 
 export default register(info.name,
-  ...entriesForChar(info, data_gen),
+  entriesForChar(info, data_gen),
   selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),
 
@@ -132,15 +132,15 @@ export default register(info.name,
   enemyDebuff.common.preRes.dendro.add(c2_dendro_enemyRes_),
 
   // DMG Formulas
-  ...dm.normal.hitArr.flatMap((arr, i) =>
+  dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')),
-  ...([1, 2] as const).flatMap(i =>
+  ([1, 2] as const).flatMap(i =>
     dmg(`charged_${i}`, info, 'atk', dm.charged[`hit${i}`], 'charged')),
-  ...Object.entries(dm.plunging).flatMap(([k, v]) =>
+  Object.entries(dm.plunging).flatMap(([k, v]) =>
     dmg(`plunging_${k}`, info, 'atk', v, 'plunging')),
-  ...(['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).flatMap(k =>
+  (['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).flatMap(k =>
     dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill')),
-  ...(['skill', 'aeon'] as const).flatMap(k =>
+  (['skill', 'aeon'] as const).flatMap(k =>
     dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst')),
   selfBuff.premod.dmg_.name('skillMoon').add(c1_moon_dmg_),
 )

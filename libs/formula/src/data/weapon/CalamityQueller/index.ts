@@ -21,8 +21,8 @@ const atkInc = prod(
 )
 
 export default register(name,
-  ...entriesForWeapon(data_gen),
-  ...elements.filter(x => x !== 'physical').map(ele =>
+  entriesForWeapon(data_gen),
+  elements.filter(x => x !== 'physical').map(ele =>
     selfBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))),
   selfBuff.premod.atk_.add(atkInc)
 )

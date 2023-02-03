@@ -92,12 +92,13 @@ export function convert<V extends Record<string, Record<string, Desc>>>(v: V, ta
 
 export const queries = new Set([...Object.values(selfTag), ...Object.values(enemyTag)].flatMap(x => Object.keys(x)))
 
-export function register(src: Source, ...data: Data): Data {
-  return data.map(({ tag, value }) => {
+export function register(src: Source, ...data: (Data[number] | Data)[]): Data {
+  function internal({ tag, value }: Data[number]): Data[number] {
     if (tag.name) tag = { ...tag, nameSrc: src }
     else tag = { ...tag, src }
     return { tag, value }
-  })
+  }
+  return data.flatMap(data => Array.isArray(data) ? data.map(internal) : internal(data))
 }
 
 // Default queries

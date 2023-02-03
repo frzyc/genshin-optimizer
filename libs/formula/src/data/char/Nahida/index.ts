@@ -61,7 +61,7 @@ const dm = {
     duration: skillParam_gen.constellation2[2],
   },
   constellation4: {
-    eleMas: [...skillParam_gen.constellation4]
+    eleMas: skillParam_gen.constellation4
   },
   constellation6: {
     atkDmg: skillParam_gen.constellation6[0],
@@ -123,7 +123,7 @@ const a4Karma_critRate_ = percent(cmpGE(ascension, 4,
 ))
 
 export default register(info.name,
-  ...entriesForChar(info, data_gen),
+  entriesForChar(info, data_gen),
   selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),
 
@@ -147,14 +147,14 @@ export default register(info.name,
   enemyDebuff.common.defRed_.reread(c2qsa_defRed_),
 
   // DMG Formulas
-  ...dm.normal.hitArr.flatMap((arr, i) =>
+  dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')),
-  ...dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
-  ...Object.entries(dm.plunging).flatMap(([k, v]) =>
+  dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
+  Object.entries(dm.plunging).flatMap(([k, v]) =>
     dmg(`plunging_${k}`, info, 'atk', v, 'plunging')),
-  ...(['press', 'hold'] as const).flatMap(k =>
+  (['press', 'hold'] as const).flatMap(k =>
     dmg(`skill_${k}`, info, 'atk', dm.skill[`${k}Dmg`], 'skill')),
-  ...customDmg('karma_dmg', info, 'skill', sum(
+  customDmg('karma_dmg', info, 'skill', sum(
     prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
     prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas),
   )),

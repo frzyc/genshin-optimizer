@@ -13,7 +13,7 @@ const selfElemas = prod(afterSkillStacks, percent(subscript(refinement, selfEmSr
 const teamEleMas = cmpEq(afterSkillStacks, 3, prod(percent(subscript(refinement, teamEmSrc)), final.hp))
 
 export default register(name,
-  ...entriesForWeapon(data_gen),
+  entriesForWeapon(data_gen),
   selfBuff.final.eleMas.add(selfElemas),
   teamBuff.final.eleMas.add(teamEleMas),
 )
