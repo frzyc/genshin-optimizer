@@ -442,3 +442,15 @@ export type WeaponData = {
   addProps: Partial<Record<StatKey, number>>[]
   ascension: { addStats: Partial<Record<StatKey, number>> }[]
 }
+
+type InternalElement = "Fire" | "Grass" | "Electric" | "Wind" | "Ice" | "Water" | "Rock"
+type ElementKey = "pyro" | "dendro" | "electro" | "anemo" | "cryo" | "hydro" | "geo"
+export const elementMap: Record<InternalElement, ElementKey> = {
+  Fire: "pyro",
+  Grass: "dendro",
+  Electric: "electro",
+  Wind: "anemo",
+  Ice: "cryo",
+  Water: "hydro",
+  Rock: "geo"
+}

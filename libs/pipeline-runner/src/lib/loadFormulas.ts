@@ -1,6 +1,6 @@
 import { allElementKeys, allRegionKeys, CharacterKey, ElementKey, RegionKey, WeaponKey } from '@genshin-optimizer/consts'
 import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
-import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, dumpFile, extrapolateFloat, propTypeMap, WeaponGrowCurveKey, weaponIdMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
+import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, dumpFile, elementMap, extrapolateFloat, propTypeMap, WeaponGrowCurveKey, weaponIdMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
@@ -23,14 +23,16 @@ export type FormulaWeaponData = {
 export default function loadFormulas() {
   //parse baseStat/ascension/basic data
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
-    const { weaponType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
+    const { weaponType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves, skillDepotId } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
     const ascensions = ascensionData[avatarPromoteId]
     const ascensionKeys = new Set(ascensions.flatMap(a => Object.keys(a.props)))
     const fetter = fetterInfoExcelConfigData[+charid as CharacterId]
+    const skillDepot = avatarSkillDepotExcelConfigData[skillDepotId]
+    const burstInfo = avatarSkillExcelConfigData[skillDepot.energySkill]
     const result: FormulaCharacterData = {
       charKey: characterIdMap[+charid], // Will be incorrect for traveler, oh well
-      ele: allElementKeys.find(element => TextMapEN[fetter.avatarVisionBeforTextMapHash].toLowerCase().includes(element)),
+      ele: elementMap[burstInfo.costElemType],
       weaponType: weaponMap[weaponType],
       region: allRegionKeys.find(region => fetter.avatarAssocType.toLowerCase().includes(region)),
       lvlCurves: [
