@@ -1,4 +1,4 @@
-import { cmpEq, cmpGE } from '../../../../waverider/src'
+import { cmpEq, cmpGE } from '@genshin-optimizer/waverider'
 import { allCustoms, allStacks, Artifact, percent, register, selfBuff, teamBuff } from '../util'
 import { artCount, entriesForArt } from './util'
 
