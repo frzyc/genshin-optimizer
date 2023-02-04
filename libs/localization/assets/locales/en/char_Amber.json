@@ -3,6 +3,6 @@
   "critRateBonus": "<strong>Fiery Rain</strong> CRIT Rate Bonus",
   "aoeRangeBonus": "<strong>Fiery Rain</strong> AoE Range Bonus",
   "manualDetonationDmg": "Manual Detonation DMG",
-  "a4CondName": "After <strong>Aimed Shot</strong> hits on weak points",
-  "c6CondName": "After <strong>Fiery Rain</strong> is used"
+  "a4CondName": "After hitting an enemy weakpoint with an <strong>Aimed Shot</strong>",
+  "c6CondName": "After using <strong>Fiery Rain</strong>"
 }
