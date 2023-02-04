@@ -1,4 +1,4 @@
-import { allArtifactSetKeys, allCharacterKeys, allRegionKeys, allWeaponKeys } from '@genshin-optimizer/consts'
+import { allArtifactSetKeys, allCharacterKeys, allWeaponKeys } from '@genshin-optimizer/consts'
 
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 
