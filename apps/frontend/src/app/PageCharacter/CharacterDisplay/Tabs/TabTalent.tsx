@@ -8,7 +8,7 @@ import DropdownButton from "../../../Components/DropdownMenu/DropdownButton";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import { CharacterContext } from "../../../Context/CharacterContext";
 import { DataContext } from '../../../Context/DataContext';
-import { TalentSheetElementKey } from "../../../Data/Characters/CharacterSheet";
+import { TalentSheetElementKey } from "../../../Data/Characters/ICharacterSheet";
 import { uiInput as input } from "../../../Formula";
 import { NumNode } from "../../../Formula/type";
 import { NodeDisplay } from '../../../Formula/uiData';

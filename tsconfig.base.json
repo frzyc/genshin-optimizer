@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],
+      "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
       "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
       "@genshin-optimizer/dm-localization": ["libs/dm/src/index.ts"],
       "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],

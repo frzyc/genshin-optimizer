@@ -2,12 +2,14 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { infoMut } from '../../../Formula/utils'
 import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 const data_gen = data_gen_src as CharacterData
 
-export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, talentFunc: any, skillParam_gen: any, assets: any, baseTravelerSheet: Partial<ICharacterSheet>) {
+export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, talentFunc: any, skillParam_gen: any, baseTravelerSheet: Partial<ICharacterSheet>) {
   const dm = {
     normal: {
       hitArr: [
@@ -43,7 +45,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
 
   const { talent, data, elementKey } = talentFunc(key, charKey, dmgFormulas)
 
-  const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, data_gen.weaponTypeKey)
 
   talent.auto = ct.talentTem("auto", [{
     text: ct.chg("auto.fields.normal")
@@ -76,7 +78,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
 
   const sheet = { ...baseTravelerSheet, talent, key: charKey, elementKey } as ICharacterSheet
 
-  return new CharacterSheet(sheet, data, assets)
+  return new CharacterSheet(sheet, data)
 }
 
 export default {

@@ -1,4 +1,4 @@
-import { WeaponClaymoreKey } from "../../../Types/consts"
+import { WeaponClaymoreKey } from "@genshin-optimizer/consts"
 import WeaponSheet from "../WeaponSheet"
 import Akuoumaru from "./Akuoumaru"
 import BlackcliffSlasher from "./BlackcliffSlasher"

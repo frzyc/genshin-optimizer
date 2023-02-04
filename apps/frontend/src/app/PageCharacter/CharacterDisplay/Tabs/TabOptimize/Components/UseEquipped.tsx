@@ -91,7 +91,7 @@ export default function UseEquipped({ disabled = false, filteredArts }: { disabl
             <NewItem onAdd={addPrio} list={equipmentPriority} />
             <Button color="error" onClick={resetPrio} startIcon={<Replay />}><Trans t={t} i18nKey="useEquipped.modal.clearList">Clear List</Trans></Button>
           </Box>
-          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted } as any}</strong> unlisted characters</Trans></Typography></SqBadge>}
+          {!!numUseEquippedChar && <SqBadge color="success"><Typography><Trans t={t} i18nKey="useEquipped.modal.usingNum" count={numUnlisted}>Using artifacts from <strong>{{ count: numUnlisted } as TransObject}</strong> unlisted characters</Trans></Typography></SqBadge>}
         </Box>
       </CardContent>
     </CardDark ></ModalWrapper>
@@ -99,7 +99,7 @@ export default function UseEquipped({ disabled = false, filteredArts }: { disabl
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <span><Trans t={t} i18nKey="useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted} arts={totArts}>Using <strong>{{ arts: totArts } as any}</strong> artifacts from <strong>{{ count: numUnlisted } as any}</strong> characters</Trans></SqBadge>}
+          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted} arts={totArts}>Using <strong>{{ arts: totArts } as TransObject}</strong> artifacts from <strong>{{ count: numUnlisted } as TransObject}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}

@@ -6,7 +6,7 @@ import { Data, DisplaySub, NumNode } from "../../Formula/type";
 import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
-import { CharacterKey, ElementKey, Region } from "../../Types/consts";
+import { CharacterKey, ElementKey, Region } from "@genshin-optimizer/consts";
 import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
 import _charCurves from "./expCurve_gen.json";
 

@@ -1,15 +1,15 @@
 
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, TooltipProps } from "@mui/material";
+import InfoIcon from '@mui/icons-material/Info';
+import { TooltipProps } from "@mui/material";
 import BootstrapTooltip from "./BootstrapTooltip";
-
-interface ITooltipProps extends Omit<TooltipProps, "children"> {
-  className?: string,
-}
-const InfoTooltip = ({ className, ...props }: ITooltipProps) =>
-  <BootstrapTooltip placement="top" {...props} className={className}>
-    <Box component="span" sx={{ cursor: "help" }}><FontAwesomeIcon icon={faInfoCircle} /></Box>
+export default function InfoTooltip(props: Omit<TooltipProps, "children">) {
+  return <BootstrapTooltip placement="top" {...props} >
+    <InfoIcon sx={{ cursor: "help" }} />
   </BootstrapTooltip>
+}
 
-export default InfoTooltip
+export function InfoTooltipInline(props: Omit<TooltipProps, "children">) {
+  return <BootstrapTooltip placement="top" {...props} >
+    <InfoIcon fontSize='inherit' sx={{ cursor: "help", verticalAlign: "-10%" }} />
+  </BootstrapTooltip>
+}

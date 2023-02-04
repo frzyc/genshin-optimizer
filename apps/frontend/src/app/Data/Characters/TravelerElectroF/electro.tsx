@@ -4,16 +4,16 @@ import { constant, equal, greaterEq, infoMut, percent, prod, subscript, sum } fr
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { cond, stg, trans } from '../../SheetUtil'
-import { charTemplates, TalentSheet } from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
-import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 export default function electro(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "electro"
   const condCharKey = "TravelerElectro"
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
   const [, ch] = trans("char", condCharKey)
   let s = 0, b = 0
   const dm = {

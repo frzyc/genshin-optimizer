@@ -1,6 +1,6 @@
 import { ExpandMore } from '@mui/icons-material';
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Divider, Skeleton, Typography } from '@mui/material';
-import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AmpReactionModeText from '../../Components/AmpReactionModeText';
 import CardDark from '../../Components/Card/CardDark';
 import CardHeaderCustom from '../../Components/Card/CardHeaderCustom';
@@ -16,7 +16,6 @@ import { DatabaseContext } from '../../Database/Database';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub, Variant } from '../../Formula/type';
 import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
-import usePromise from '../../ReactHooks/usePromise';
 import { allAmpReactions, AmpReactionKey } from '../../Types/consts';
 
 export default function FormulaModal() {
@@ -48,12 +47,12 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const { data: contextData } = useContext(FormulaDataContext)
-  const header = usePromise(() => getDisplayHeader(contextData ?? data, sectionKey, database), [contextData, data, sectionKey])
+  const header = useMemo(() => getDisplayHeader(contextData ?? data, sectionKey, database), [database, contextData, data, sectionKey])
   if (!header) return null
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header
   return <CardLight sx={{ mb: 1 }}>
-    <CardHeaderCustom avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
+    <CardHeaderCustom avatar={icon && <ImgIcon size={2} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
     <Divider />
     <CardContent>
       {Object.entries(displayNs).map(([key, node]) => !node.isEmpty && <FormulaAccordian key={key} node={node} />)}
@@ -73,8 +72,8 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
   return <Accordion sx={{ bgcolor: "contentDark.main" }} expanded={node === contextNode || expanded} onChange={handleChange} ref={scrollRef} >
     <AccordionSummary expandIcon={<ExpandMore />} >
       <Typography><ColorText color={node.info.variant}>{node.info.name}</ColorText> <strong>{nodeVStr(node)}</strong></Typography>
-      {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
-        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} />
+      {allAmpReactions.includes(node.info.variant as "vaporize" | "melt") && <Box sx={{ display: "inline-block", ml: "auto", mr: 2 }}>
+        <AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as "cryo" | "pyro" | "hydro" | undefined} />
       </Box>}
     </AccordionSummary>
     <AccordionDetails >

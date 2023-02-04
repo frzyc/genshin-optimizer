@@ -49,7 +49,7 @@ export default function ResinCounter() {
   return <CardDark>
     <Grid container sx={{ px: 2, py: 1 }} spacing={2} >
       <Grid item>
-        <ImgIcon src={Assets.resin.fragile} sx={{ fontSize: "2em" }} />
+        <ImgIcon src={Assets.resin.fragile} size={2} />
       </Grid>
       <Grid item >
         <Typography variant="h6">Resin Counter</Typography>

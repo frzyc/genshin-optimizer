@@ -11,7 +11,7 @@ export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
     default: return "DullBlade"
   }
 }
-export const defaultInitialWeapon = (type: WeaponTypeKey): ICachedWeapon =>
+export const defaultInitialWeapon = (type: WeaponTypeKey="sword"): ICachedWeapon =>
   initialWeapon(defaultInitialWeaponKey(type))
 
 export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({

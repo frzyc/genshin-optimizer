@@ -1,6 +1,8 @@
-import { faBan, faChartLine, faTrash, faUserSlash } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen, Replay } from "@mui/icons-material"
+import BlockIcon from '@mui/icons-material/Block'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import PersonOffIcon from '@mui/icons-material/PersonOff'
+import ShowChartIcon from '@mui/icons-material/ShowChart'
 import { Button, CardContent, Grid, Skeleton, Typography } from "@mui/material"
 import { lazy, Suspense, useCallback, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
@@ -10,7 +12,6 @@ import { DatabaseContext } from "../Database/Database"
 import useDisplayArtifact from "../ReactHooks/useDisplayArtifact"
 import { ICachedArtifact } from "../Types/artifact"
 import { FilterOption } from "./ArtifactSort"
-
 const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/ArtifactFilterDisplay'))
 
 export default function ArtifactFilter({ numShowing, total, artifactIds }: { numShowing: number, total: number, artifactIds:string[] }) {
@@ -84,25 +85,25 @@ export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
 
   return <Grid container spacing={1} alignItems="center">
     <Grid item xs={12} sm={6} md={3}>
-      <Button fullWidth color="error" disabled={!numUnequip} onClick={unequipArtifacts} startIcon={<FontAwesomeIcon icon={faUserSlash} />}>
+      <Button fullWidth color="error" disabled={!numUnequip} onClick={unequipArtifacts} startIcon={<PersonOffIcon />}>
         <Trans t={t} i18nKey="button.unequipArtifacts" >Unequip Artifacts</Trans>
         <SqBadge sx={{ ml: 1 }} color={numUnequip ? "success" : "secondary"}>{numUnequip}</SqBadge>
       </Button>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-      <Button fullWidth color="error" disabled={!numDelete} onClick={deleteArtifacts} startIcon={<FontAwesomeIcon icon={faTrash} />}>
+      <Button fullWidth color="error" disabled={!numDelete} onClick={deleteArtifacts} startIcon={<DeleteForeverIcon />}>
         <Trans t={t} i18nKey="button.deleteArtifacts" >Delete Artifacts</Trans>
         <SqBadge sx={{ ml: 1 }} color={numDelete ? "success" : "secondary"}>{numDelete}</SqBadge>
       </Button>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-      <Button fullWidth color="error" disabled={!numInclude} onClick={excludeArtifacts} startIcon={<FontAwesomeIcon icon={faBan} />}>
+      <Button fullWidth color="error" disabled={!numInclude} onClick={excludeArtifacts} startIcon={<BlockIcon />}>
         <Trans t={t} i18nKey="button.excludeArtifacts" >Exclude Artifacts</Trans>
         <SqBadge sx={{ ml: 1 }} color={numInclude ? "success" : "secondary"}>{numInclude}</SqBadge>
       </Button>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-      <Button fullWidth color="error" disabled={!numExclude} onClick={includeArtifacts} startIcon={<FontAwesomeIcon icon={faChartLine} />}>
+      <Button fullWidth color="error" disabled={!numExclude} onClick={includeArtifacts} startIcon={<ShowChartIcon />}>
         <Trans t={t} i18nKey="button.includeArtifacts" >Include Artifacts</Trans>
         <SqBadge sx={{ ml: 1 }} color={numExclude ? "success" : "secondary"}>{numExclude}</SqBadge>
       </Button>

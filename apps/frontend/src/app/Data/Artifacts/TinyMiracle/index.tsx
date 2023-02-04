@@ -3,14 +3,14 @@ import { input } from "../../../Formula/index"
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElements, ArtifactSetKey } from '../../../Types/consts'
+import { allElements, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "TinyMiracle"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 const [, trm] = trans("artifact", key)
 const [condElePath, condEle] = cond(key, "element")
 
@@ -33,7 +33,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Tiny Miracle", rarity: [3, 4],
-  icons,
   setEffects: {
     2: {
       document: [{

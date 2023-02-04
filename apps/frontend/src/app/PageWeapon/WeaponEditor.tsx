@@ -1,3 +1,4 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, CardHeader, Divider, Grid, ListItem, Typography } from "@mui/material"
 import React, { useCallback, useContext, useEffect, useMemo } from "react"
@@ -12,15 +13,15 @@ import ModalWrapper from "../Components/ModalWrapper"
 import RefinementDropdown from "../Components/RefinementDropdown"
 import { StarsDisplay } from "../Components/StarDisplay"
 import { DataContext } from "../Context/DataContext"
+import { getCharSheet } from "../Data/Characters"
 import CharacterSheet from "../Data/Characters/CharacterSheet"
 import { milestoneLevelsLow } from "../Data/LevelData"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
+import { getWeaponSheet } from "../Data/Weapons"
 import { DatabaseContext } from "../Database/Database"
 import { uiInput as input } from "../Formula"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
 import useDBMeta from "../ReactHooks/useDBMeta"
-import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { LocationKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
@@ -42,13 +43,13 @@ export default function WeaponEditor({
   const { database } = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level = 0, refinement = 1, ascension = 0, lock, location = "", id } = weapon ?? {}
-  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
+  const weaponSheet = key ? getWeaponSheet(key) : undefined
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.weapons.set(propWeaponId, newWeapon)
   }, [propWeaponId, database])
   const { gender } = useDBMeta()
-  const characterSheet = usePromise(() => location ? CharacterSheet.get(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
+  const characterSheet = useMemo(() => location ? getCharSheet(database.chars.LocationToCharacterKey(location), gender) : undefined, [database, gender, location])
 
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
 
@@ -56,7 +57,7 @@ export default function WeaponEditor({
   const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
-  const img = weaponSheet?.getImg(ascension)
+  const img = key ? weaponAsset(key, ascension >= 2) : ""
 
   //check the levels when switching from a 5* to a 1*, for example.
   useEffect(() => {
@@ -97,7 +98,7 @@ export default function WeaponEditor({
               {lock ? "Locked" : "Unlocked"}
             </Button>
           </Box>
-          <Typography><StarsDisplay stars={weaponSheet.rarity} /></Typography>
+          <StarsDisplay stars={weaponSheet.rarity} />
           <Typography variant="subtitle1"><strong>{weaponSheet.passiveName}</strong></Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           <Box display="flex" flexDirection="column" gap={1}>
@@ -120,7 +121,7 @@ export default function WeaponEditor({
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
         <Grid item flexGrow={1}>
-          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key, disableClearable: true }} />
+          <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key}} />
         </Grid>
         <Grid item flexGrow={2} />
         {!!onClose && <Grid item><CloseButton sx={{ height: "100%" }} large onClick={onClose} /></Grid>}

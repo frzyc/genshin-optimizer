@@ -1,12 +1,13 @@
+import { allArtifactSets, allWeaponKeys, ArtifactSetKey, WeaponKey } from "@genshin-optimizer/consts"
+import { crawlObject } from "@genshin-optimizer/util"
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
 import { Translate } from "../Components/Translate"
 import KeyMap, { valueString } from "../KeyMap"
-import { allArtifactSets, allCharacterKeys, allCharacterSheetKeys, allWeaponKeys, ArtifactSetKey, CharacterKey, CharacterSheetKey, WeaponKey } from "../Types/consts"
+import { allCharacterSheetKeys, CharacterSheetKey } from "../Types/consts"
 import { assertUnreachable, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
-import { crawlObject } from "@genshin-optimizer/util"
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {

@@ -1,13 +1,12 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "FadingTwilight"
 const data_gen = data_gen_json as WeaponData
@@ -28,12 +27,10 @@ const data = dataObjForWeaponSheet(key, data_gen, {
 })
 
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
     value: condState,
     path: condStatePath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: trm("condName"),
     states: Object.fromEntries(Object.keys(state_dmg_dict).map(state => [
       state,

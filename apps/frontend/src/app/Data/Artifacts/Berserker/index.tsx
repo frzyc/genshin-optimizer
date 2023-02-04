@@ -2,14 +2,14 @@ import { input } from '../../../Formula'
 import { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "Berserker"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const critRate_info: Info = KeyMap.info("critRate_")
 const set2 = greaterEq(input.artSet.Berserker, 2, percent(0.12), critRate_info)
@@ -25,7 +25,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Berserker", rarity: [3, 4],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

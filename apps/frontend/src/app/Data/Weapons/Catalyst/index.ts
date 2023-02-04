@@ -1,4 +1,4 @@
-import { WeaponCatalystKey } from '../../../Types/consts'
+import { WeaponCatalystKey } from '@genshin-optimizer/consts'
 import WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
 import AThousandFloatingDreams from './AThousandFloatingDreams'

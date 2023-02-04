@@ -6,17 +6,17 @@ import KeyMap from '../../../KeyMap'
 import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, stg, st, trans } from '../../SheetUtil'
-import { charTemplates, TalentSheet } from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
-import assets from './assets'
 import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) {
   const elementKey: ElementKey = "anemo"
   const condCharKey = "TravelerAnemo"
   const [, ch] = trans("char", condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey, assets)
+  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
 
   let s = 0, b = 0
   const dm = {

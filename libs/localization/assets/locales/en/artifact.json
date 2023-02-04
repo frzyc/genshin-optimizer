@@ -55,7 +55,7 @@
     "title": "Substats to use in Roll Value calculation"
   },
   "filterLocation": {
-    "location": "Location",
+    "location": "Characters",
     "inventory": "Inventory",
     "currentlyEquipped": "Currently Equipped"
   },
@@ -107,6 +107,7 @@
   "sub_other": "{{count}} subs",
   "addNew": "Add New Artifact",
   "cantDeleteLock": "Cannot delete artifact because it is locked",
-  "equippedArt": "Equipped Artifacts",
-  "artInInv": "Artifacts in Inventory"
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip":"Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

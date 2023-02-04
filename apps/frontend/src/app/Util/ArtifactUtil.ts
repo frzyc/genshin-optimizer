@@ -1,14 +1,14 @@
+import { allArtifactSets } from "@genshin-optimizer/consts"
+import { getArtSheet } from "../Data/Artifacts"
 import Artifact from "../Data/Artifacts/Artifact"
-import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet"
 import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from "../KeyMap"
 import { allSubstatKeys, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
-import { allArtifactSets } from "../Types/consts"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 
-export async function randomizeArtifact(base: Partial<IArtifact> = {}): Promise<IArtifact> {
+export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   const setKey = base.setKey ?? getRandomElementFromArray(allArtifactSets)
-  const sheet = await ArtifactSheet.get(setKey)!
+  const sheet = getArtSheet(setKey)
   const rarity = base.rarity ?? getRandomElementFromArray(sheet.rarity)
   const slot = base.slotKey ?? getRandomElementFromArray(sheet.slots)
   const mainStatKey = base.mainStatKey ?? getRandomElementFromArray(Artifact.slotMainStats(slot))

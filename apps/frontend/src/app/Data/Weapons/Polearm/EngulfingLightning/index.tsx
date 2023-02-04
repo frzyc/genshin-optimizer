@@ -1,13 +1,12 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, min, percent, prod, subscript, sum } from '../../../../Formula/utils'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from '../../WeaponSheet'
-import iconAwaken from './AwakenIcon.png'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "EngulfingLightning"
 const data_gen = data_gen_json as WeaponData
@@ -30,10 +29,8 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
   atk_
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("base")),
+    header: headerTemplate(key, st("base")),
     fields: [{
       node: atk_,
     }],
@@ -41,7 +38,7 @@ const sheet: IWeaponSheet = {
     teamBuff: true,
     value: condPassive,
     path: condPassivePath,
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     name: st("afterUse.burst"),
     states: {
       on: {

@@ -15,25 +15,26 @@ type GeneralAutocompletePropsBase<T extends string> = {
   chipProps?: Partial<ChipProps>
 }
 export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T | null, onChange: (v: T | null) => void, } &
-  Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, true, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
+  Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, false, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
 export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteProps<T>) {
-  const value = options.find(o => o.key === key)
+  const value = options.find(o => o.key === key) ?? null
   const theme = useTheme()
   return <Autocomplete
     autoHighlight
     options={options}
     value={value}
-    onChange={(event, newValue, reason) => onChange(newValue?.key)}
+    onChange={(event, newValue, reason) => onChange(newValue?.key ?? null)}
     isOptionEqualToValue={(option, value) => option.key === value?.key}
     renderInput={(params) => {
       const variant = value?.variant
       const color = variant ? theme.palette[variant]?.main : undefined
+      const valueKey = value?.key
       return <TextField
         {...params}
         label={label}
         InputProps={{
           ...params.InputProps,
-          startAdornment: value !== undefined ? toImg(value.key) : undefined,
+          startAdornment: valueKey ? toImg(valueKey) : undefined,
         }}
         inputProps={{
           ...params.inputProps,

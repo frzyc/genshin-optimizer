@@ -1,14 +1,15 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { allSlotKeys, ArtifactSetKey, SlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
+import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
-import ArtifactSetAutocomplete from "apps/frontend/src/app/Components/Artifact/ArtifactSetAutocomplete";
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete";
 import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
 import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
-import { slotIconSVG } from "../../../../Components/Artifact/SlotNameWIthIcon";
+import SlotIcon from "../../../../Components/Artifact/SlotIcon";
 import BootstrapTooltip from "../../../../Components/BootstrapTooltip";
 import CardDark from "../../../../Components/Card/CardDark";
 import CardLight from "../../../../Components/Card/CardLight";
@@ -18,30 +19,30 @@ import CustomNumberInput from "../../../../Components/CustomNumberInput";
 import DocumentDisplay from "../../../../Components/DocumentDisplay";
 import DropdownButton from "../../../../Components/DropdownMenu/DropdownButton";
 import { FieldDisplayList, NodeFieldDisplay } from "../../../../Components/FieldDisplay";
-import FontAwesomeSvgIcon from "../../../../Components/FontAwesomeSvgIcon";
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import LevelSelect from "../../../../Components/LevelSelect";
 import RefinementDropdown from "../../../../Components/RefinementDropdown";
 import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup";
 import { StatColoredWithUnit, StatWithUnit } from "../../../../Components/StatDisplay";
-import StatIcon from "../../../../Components/StatIcon";
 import { CharacterContext } from "../../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../../Context/DataContext";
+import { getArtSheet } from "../../../../Data/Artifacts";
 import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
-import { ArtifactSheet } from "../../../../Data/Artifacts/ArtifactSheet";
-import WeaponSheet from "../../../../Data/Weapons/WeaponSheet";
+import { artifactDefIcon } from "../../../../Data/Artifacts/ArtifactSheet";
+import { getWeaponSheet } from "../../../../Data/Weapons";
 import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
+import StatIcon from "../../../../KeyMap/StatIcon";
 import useBoolState from "../../../../ReactHooks/useBoolState";
-import usePromise from "../../../../ReactHooks/usePromise";
 import useTeamData from "../../../../ReactHooks/useTeamData";
+import { iconInlineProps } from "../../../../SVGIcons";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
-import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey, SubstatType, substatType, WeaponTypeKey } from "../../../../Types/consts";
+import { ArtifactRarity, SetNum, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
 import { deepClone, objectMap } from "../../../../Util/Util";
 import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
@@ -212,26 +213,26 @@ export default function TabTheorycraft() {
 
 function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICachedWeapon, weaponTypeKey: WeaponTypeKey, setWeapon: (action: Partial<ICharTC["weapon"]>) => void }) {
   const { key, level = 0, refinement = 1, ascension = 0 } = weapon
-  const weaponSheet = usePromise(() => WeaponSheet.get(key), [key])
+  const weaponSheet = getWeaponSheet(key)
   const [show, onShow, onHide] = useBoolState()
   const { data } = useContext(DataContext)
-  const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
+  const weaponUIData = useMemo(() => weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   return <CardLight sx={{ p: 1, mb: 1 }} >
     <WeaponSelectionModal ascension={ascension} show={show} onHide={onHide} onSelect={k => setWeapon({ key: k })} weaponTypeFilter={weaponTypeKey} />
     <Box display="flex" flexDirection="column" gap={1}>
       <Box display="flex" gap={1}>
-        {weaponSheet && <Box
+        <Box
           className={`grad-${weaponSheet.rarity}star`}
           component="img"
-          src={weaponSheet.getImg(weapon.ascension)}
+          src={weaponAsset(weapon.key, ascension >= 2)}
           sx={{ flexshrink: 1, flexBasis: 0, maxWidth: "30%", borderRadius: 1 }}
-        />}
+        />
         <Stack spacing={1} flexGrow={1}>
           <Button fullWidth color="info" sx={{ flexGrow: 1 }} onClick={onShow}><Box sx={{ maxWidth: "10em" }}>{weaponSheet?.name}</Box></Button>
-          {weaponSheet?.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => setWeapon({ refinement: r })} />}
+          {weaponSheet.hasRefinement && <RefinementDropdown refinement={refinement} setRefinement={r => setWeapon({ refinement: r })} />}
         </Stack>
       </Box>
-      {weaponSheet && <LevelSelect level={level} ascension={ascension} setBoth={setWeapon} useLow={!weaponSheet.hasRefinement} />}
+      <LevelSelect level={level} ascension={ascension} setBoth={setWeapon} useLow={!weaponSheet.hasRefinement} />
       <CardDark >
         <CardHeader title={"Main Stats"} titleTypographyProps={{ variant: "subtitle2" }} />
         <Divider />
@@ -287,10 +288,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
     }, [level, setSlot])
 
   return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
-    <FontAwesomeSvgIcon icon={slotIconSVG[slotKey]} />
+    <SlotIcon slotKey={slotKey} />
     <CardDark sx={{ height: "100%", minWidth: "5em", flexGrow: 1, display: "flex" }}>
       {keys.length === 1 ?
-        <Box p={1} justifyContent="center" alignItems="center" width="100%" display="flex" gap={1}>{StatIcon[keys[0]]}{KeyMap.getStr(keys[0])}</Box> :
+        <Box p={1} justifyContent="center" alignItems="center" width="100%" display="flex" gap={1}><StatIcon statKey={keys[0]} iconProps={iconInlineProps} /> {KeyMap.getStr(keys[0])}</Box> :
         <DropdownButton sx={{ px: 0 }} fullWidth title={<StatWithUnit statKey={statKey} />} color={KeyMap.getVariant(statKey) ?? "success"}>
           {keys.map(msk =>
             <MenuItem key={msk} disabled={statKey === msk} onClick={() => setSlot({ statKey: msk })}>
@@ -298,10 +299,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
             </MenuItem>)}
         </DropdownButton>}
     </CardDark>
-    <DropdownButton sx={{ px: 0 }} title={<span>{rarity} <FontAwesomeIcon icon={faStar} /></span>} >
+    <DropdownButton sx={{ px: 0 }} title={<Box sx={{ display: "flex", alignItems: "center" }}>{rarity} <StarRoundedIcon fontSize="inherit" /></Box>} >
       {[5, 4, 3].map(r =>
         <MenuItem key={r} disabled={rarity === r} onClick={() => setRarity(r as ArtifactRarity)}>
-          <span>{r} <FontAwesomeIcon icon={faStar} /></span>
+          <Box sx={{ display: "flex", alignItems: "center" }}>{r} <StarRoundedIcon fontSize="inherit" /></Box>
         </MenuItem>)}
     </DropdownButton>
     <CustomNumberInput startAdornment="+" value={level} color={Artifact.levelVariant(level)} onChange={l => l !== undefined && setSlot({ level: l })} sx={{ borderRadius: 1, pl: 1, my: 0, height: "100%" }} inputProps={{ sx: { pl: 0.5, width: "2em" }, max: 20, min: 0 }} />
@@ -312,11 +313,10 @@ function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKe
 }
 
 function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(artSet: ISet) }) {
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const setSet = useCallback((setKey: ArtifactSetKey | "") => {
-    if (!setKey || !artifactSheets) return
-    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(artifactSheets(setKey).setEffects)[0]) })
-  }, [artSet, setArtSet, artifactSheets])
+    if (!setKey) return
+    setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(getArtSheet(setKey).setEffects)[0]) })
+  }, [artSet, setArtSet,])
 
   const setValue = useCallback((setKey: ArtifactSetKey) => (value: 1 | 2 | 4) => setArtSet({ ...artSet, [setKey]: value }), [artSet, setArtSet])
   const deleteValue = useCallback((setKey: ArtifactSetKey) => () => {
@@ -330,31 +330,29 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
     {Object.entries(artSet).map(([setKey, value]) => <ArtifactSetEditor key={setKey} setKey={setKey} value={value} setValue={setValue(setKey)} deleteValue={deleteValue(setKey)} remaining={remaining} />)}
     <CardLight sx={{ flexGrow: 1, overflow: "visible" }}>
       <ArtifactSetAutocomplete
-        disableClearable
         artSetKey={""}
         setArtSetKey={setSet}
         label={"New Artifact Set"}
-        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !(key && artifactSheets?.(key)) || Object.keys(artifactSheets(key).setEffects).every(n => parseInt(n) > remaining)}
+        getOptionDisabled={({ key }) => Object.keys(artSet).includes(key as ArtifactSetKey) || !key || Object.keys(getArtSheet(key).setEffects).every(n => parseInt(n) > remaining)}
       />
     </CardLight>
 
   </Stack>
 }
 function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: { setKey: ArtifactSetKey, value: 1 | 2 | 4, setValue: (v: 1 | 2 | 4) => void, deleteValue: () => void, remaining: number }) {
-  const artifactSheet = usePromise(() => ArtifactSheet.get(setKey), [])
+  const artifactSheet = getArtSheet(setKey)
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
   const set4CondNums = useMemo(() => {
-    if (value < 4 || !artifactSheet) return []
+    if (value < 4) return []
     return Object.keys(artifactSheet.setEffects).filter(setNumKey => artifactSheet.setEffects[setNumKey]?.document.some(doc => "states" in doc))
   }, [artifactSheet, value])
 
-  if (!artifactSheet) return null
   return <CardLight>
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
         <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
-          <ImgIcon size={2} sx={{ m: -1 }} src={artifactSheet.defIconSrc} />
+          <ImgIcon size={2} src={artifactDefIcon(setKey)} />
           <Box >{artifactSheet.setName}</Box>
           <Info />
         </Box>
@@ -418,7 +416,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
   return <Stack spacing={0.5}>
     <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
       <CardDark sx={{ p: 0.5, minWidth: "11em", flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
-        {StatIcon[statKey]}{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
+        <StatIcon statKey={statKey} iconProps={{ fontSize: "inherit" }} />{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
       </CardDark>
       <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top">
         <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
@@ -435,7 +433,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         onChange={v => v !== undefined && setValue(v)}
         sx={{ borderRadius: 1, px: 1, height: "100%", width: "6em" }}
         inputProps={{ sx: { textAlign: "right" }, min: 0 }} />
-      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow:"visible" }}>
+      <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow: "visible" }}>
         <Slider
           size="small"
           value={rolls}
