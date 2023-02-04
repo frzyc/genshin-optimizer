@@ -2,7 +2,7 @@ import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
 import { allCustoms, percent, register, self, selfBuff, teamBuff } from '../../util'
-import { CharInfo, customDmg, dmg, entriesForChar, shield } from '../util'
+import { CharDataGen, customDmg, dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -59,10 +59,10 @@ const dm = {
   },
 } as const
 
-const info: CharInfo = { name: 'Candace', ele: 'hydro', weaponType: 'polearm', region: 'sumeru' }
+const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { ascension, constellation } } = self
 // Conditional
-const { afterBurst, c2AfterSkillHit } = allCustoms(info.name)
+const { afterBurst, c2AfterSkillHit } = allCustoms(info.key)
 
 const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
 
@@ -71,7 +71,7 @@ const a4_normalEle_dmg_ = cmpGE(ascension, 4, cmpEq(afterBurst, 'on',
 ))
 const c2_hp_ = cmpGE(constellation, 2, cmpEq(c2AfterSkillHit, 'on', percent(dm.constellation2.hp_)))
 
-export default register(info.name,
+export default register(info.key,
   entriesForChar(info, data_gen),
   selfBuff.char.burst.add(cmpGE(constellation, 3, 3)),
   selfBuff.char.skill.add(cmpGE(constellation, 5, 3)),

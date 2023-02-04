@@ -1,15 +1,35 @@
-import { CharacterKey, ElementWithPhyKey, MoveKey, RegionKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, ElementWithPhyKey, MoveKey, RegionKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
 import { allCustoms, convert, Data, percent, reader, self, selfBuff, selfTag, Stat, usedNames } from '../util'
 
 export interface CharInfo {
-  name: CharacterKey, weaponType: WeaponTypeKey, ele: ElementWithPhyKey, region: RegionKey
+  key: CharacterKey /* Might need to change this to CharacterSheetKey */
+  ele: ElementKey
+  weaponType: WeaponTypeKey
+  region: RegionKey | ""
 }
+export type CharDataGen = {
+  charKey: CharacterKey
+  ele?: ElementKey
+  weaponType: WeaponTypeKey
+  region?: RegionKey
+  lvlCurves: { key: string, base: number, curve: string }[]
+  ascensionBonus: { key: string, values: number[] }[]
+}
+export function dataGenToCharInfo(data_gen: CharDataGen, travelerEle: ElementKey = "anemo"): CharInfo {
+  return {
+    key: data_gen.charKey,
+    ele: data_gen.ele ?? travelerEle,
+    weaponType: data_gen.weaponType,
+    region: data_gen.region ?? "",
+  }
+}
+
 export function dmg(name: string, info: CharInfo, stat: Stat, levelScaling: number[], move: Exclude<MoveKey, 'elemental'>, extra: { ele?: ElementWithPhyKey } = {}, specialMultiplier?: NumNode): Data {
   const { char: { auto, skill, burst }, final } = self
   const talentByMove = { normal: auto, charged: auto, plunging: auto, skill, burst } as const
   const talentMulti = percent(subscript(talentByMove[move], levelScaling))
-  const base = prod(final[stat], talentMulti, ...[specialMultiplier!].filter(x => x))
+  const base = prod(final[stat], talentMulti, ...(specialMultiplier ? [specialMultiplier] : []))
   return customDmg(name, info, move, base, extra)
 }
 
@@ -55,9 +75,9 @@ export function customShield(name: string, info: CharInfo, base: NumNode, extra:
   switch (ele) {
     case 'geo': eleMulti = tag(1.5, reader.geo.tag); break
     case undefined: eleMulti = 1; break
-    default: eleMulti = tag(2.5, reader[ele!].tag)
+    default: eleMulti = tag(2.5, reader[ele as ElementKey].tag)
   }
-  const entry = convert(selfTag, { name, et: 'self', src: info.name })
+  const entry = convert(selfTag, { name, et: 'self', src: info.key })
   return [
     entry.prep.ele.add(ele ?? ''),
     entry.formula.preMulti.add(eleMulti),
@@ -68,7 +88,7 @@ export function customShield(name: string, info: CharInfo, base: NumNode, extra:
 export function customHeal(name: string, info: CharInfo, base: NumNode): Data {
   usedNames.add(name)
 
-  const entry = convert(selfTag, { name, et: 'self', src: info.name })
+  const entry = convert(selfTag, { name, et: 'self', src: info.key })
   return [
     entry.formula.base.add(base)
   ]
@@ -101,7 +121,7 @@ export function entriesForChar(
 
     // Counters
     selfBuff.common.count[ele].add(1),
-    selfBuff.common.count[region].add(1),
+    ...(region !== "" ? [selfBuff.common.count[region].add(1)] : []),
   ]
 }
 

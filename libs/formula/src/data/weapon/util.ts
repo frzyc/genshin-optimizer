@@ -1,15 +1,15 @@
-import { WeaponTypeKey } from '@genshin-optimizer/consts'
+import { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { AnyNode, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
 import { allCustoms, self, selfBuff, Stat } from '../util'
 
-export function entriesForWeapon(
-  gen: {
-    weaponType: WeaponTypeKey,
-    lvlCurves: { key: string, base: number, curve: string /* TODO: key of char curves */ }[],
-    ascensionBonus: { key: string, values: number[] }[],
-    refinementBonus: { key: string, values: number[] }[],
-  }
-): RawTagMapEntries<AnyNode> {
+export type WeaponDataGen = {
+  weaponKey: WeaponKey
+  weaponType: WeaponTypeKey
+  lvlCurves: { key: string, base: number, curve: string /* TODO: key of char curves */ }[]
+  ascensionBonus: { key: string, values: number[] }[]
+  refinementBonus: { key: string, values: number[] }[]
+}
+export function entriesForWeapon(gen: WeaponDataGen): RawTagMapEntries<AnyNode> {
   const { refinement, ascension } = self.weapon
   return [
     // Stats

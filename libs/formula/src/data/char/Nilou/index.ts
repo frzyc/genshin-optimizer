@@ -1,6 +1,6 @@
 import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
 import { allCustoms, enemyDebuff, percent, register, self, selfBuff, team, teamBuff } from '../../util'
-import { CharInfo, dmg, entriesForChar } from '../util'
+import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -74,10 +74,10 @@ export const dm = {
   }
 } as const
 
-const info: CharInfo = { name: 'Nilou', ele: 'hydro', weaponType: 'sword', region: 'sumeru' }
+const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { ascension, constellation } } = self
 // Conditional
-const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = allCustoms(info.name)
+const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = allCustoms(info.key)
 
 const onlyDendroHydroTeam = cmpGE(team.common.count.dendro, 1, cmpEq(self.common.eleCount, 2, 1))
 const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1)))
@@ -116,7 +116,7 @@ const c6_critDMG_ = cmpGE(constellation, 6,
   )
 )
 
-export default register(info.name,
+export default register(info.key,
   entriesForChar(info, data_gen),
   selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),

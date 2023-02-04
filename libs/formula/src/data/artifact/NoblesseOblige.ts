@@ -1,6 +1,6 @@
 import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE } from '@genshin-optimizer/waverider'
-import { allCustoms, allStacks, Artifact, percent, register, selfBuff, teamBuff } from '../util'
+import { allCustoms, allStacks, percent, register, selfBuff, teamBuff } from '../util'
 import { artCount, entriesForArt } from './util'
 
 const name: ArtifactSetKey = 'NoblesseOblige', count = artCount(name)

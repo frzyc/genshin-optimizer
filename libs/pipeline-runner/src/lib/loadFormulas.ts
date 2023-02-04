@@ -5,21 +5,20 @@ import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
 type FormulaCharacterData = {
-  key: CharacterKey
+  charKey: CharacterKey
   ele?: ElementKey
   weaponType: WeaponTypeKey
   region?: RegionKey
   lvlCurves: { key: string, base: number, curve: CharacterGrowCurveKey }[]
   ascensionBonus: { key: string, values: number[] }[]
 }
-type FormulaWeaponData = {
-  key: WeaponKey
+export type FormulaWeaponData = {
+  weaponKey: WeaponKey
   weaponType: WeaponTypeKey
   lvlCurves: { key: string, base: number, curve: WeaponGrowCurveKey }[]
   refinementBonus: { key: string, values: number[] }[]
   ascensionBonus: { key: string, values: number[] }[]
 }
-
 
 export default function loadFormulas() {
   //parse baseStat/ascension/basic data
@@ -30,7 +29,7 @@ export default function loadFormulas() {
     const ascensionKeys = new Set(ascensions.flatMap(a => Object.keys(a.props)))
     const fetter = fetterInfoExcelConfigData[+charid as CharacterId]
     const result: FormulaCharacterData = {
-      key: characterIdMap[+charid], // Will be incorrect for traveler, oh well
+      charKey: characterIdMap[+charid], // Will be incorrect for traveler, oh well
       ele: allElementKeys.find(element => TextMapEN[fetter.avatarVisionBeforTextMapHash].toLowerCase().includes(element)),
       weaponType: weaponMap[weaponType],
       region: allRegionKeys.find(region => fetter.avatarAssocType.toLowerCase().includes(region)),
@@ -39,7 +38,7 @@ export default function loadFormulas() {
         { key: 'atk', base: attackBase, curve: curves.atk },
         { key: 'def', base: defenseBase, curve: curves.def },
       ],
-      ascensionBonus: [...ascensionKeys].map(key => ({ key, values: ascensions.map(a => a.props[key]! ?? 0) })),
+      ascensionBonus: [...ascensionKeys].map(key => ({ key, values: ascensions.map(a => a.props[key] ?? 0) })),
     }
     const charKey = characterIdMap[charid as unknown as CharacterId]
     return [charKey.startsWith("Traveler") ? "Traveler" : charKey, result]
@@ -93,7 +92,7 @@ export default function loadFormulas() {
     const { candSkillDepotIds, skillDepotId } = charData
 
     if (candSkillDepotIds.length) { //Traveler
-      const [_1, _2, _3, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+      const [, , , anemo, , geo, electro, dendro] = candSkillDepotIds
       const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
       genTalentHash(["TravelerAnemo" + gender], avatarSkillDepotExcelConfigData[anemo])
       genTalentHash(["TravelerGeo" + gender], avatarSkillDepotExcelConfigData[geo])
@@ -116,7 +115,7 @@ export default function loadFormulas() {
   dumpFile(`${FORMULA_PATH}/char/expCurve.gen.json`, charExpCurve)
 
   const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).map(([weaponid, weaponData]) => {
-    const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } = weaponData
+    const { weaponType, weaponProp, skillAffix, weaponPromoteId } = weaponData
     const [main, sub] = weaponProp
     const [refinementDataId,] = skillAffix
 
@@ -124,10 +123,17 @@ export default function loadFormulas() {
     const refKeys = new Set(refData.filter(x => x).flatMap(ref => ref.addProps.filter(a => a.value && a.propType).map(p => p.propType)))
 
     const ascData = weaponPromoteExcelConfigData[weaponPromoteId]
-    const ascKeys = new Set(ascData.filter(x => x).flatMap(asc => asc!.addProps.filter(a => a.value && a.propType).map(a => a.propType)))
+    const ascKeys = new Set(ascData
+      .filter((x): x is NonNullable<typeof x> => x != null)
+      .flatMap(asc =>
+        asc.addProps
+          .filter(a => a.value && a.propType)
+          .map(a => a.propType)
+      )
+    )
 
     const result: FormulaWeaponData = {
-      key: weaponIdMap[+weaponid],
+      weaponKey: weaponIdMap[+weaponid],
       weaponType: weaponMap[weaponType],
       lvlCurves: [
         { key: propTypeMap[main.propType], base: extrapolateFloat(main.initValue), curve: main.type },

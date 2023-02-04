@@ -1,7 +1,6 @@
-import { CharacterKey } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
 import { activeCharBuff, allCustoms, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
-import { CharInfo, customDmg, dmg, entriesForChar } from '../util'
+import { CharDataGen, customDmg, dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -73,12 +72,12 @@ const dm = {
   }
 } as const
 
-const info: CharInfo = { name: data_gen.name as CharacterKey, ele: data_gen.ele, weaponType: 'catalyst', region: 'sumeru' }
+const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { skill, burst, ascension, constellation } } = self
 // Conditional
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allCustoms(info.name)
+const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allCustoms(info.key)
 // Intermediate
-const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allCustoms(info.name)
+const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allCustoms(info.key)
 
 const count = team.common.count
 
@@ -123,7 +122,7 @@ const a4Karma_critRate_ = percent(cmpGE(ascension, 4,
   prod(percent(dm.passive2.eleMas_critRate_), passive2Elemas)
 ))
 
-export default register(info.name,
+export default register(info.key,
   entriesForChar(info, data_gen),
   selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
   selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),
