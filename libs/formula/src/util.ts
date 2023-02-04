@@ -47,12 +47,15 @@ export function artifactsData(data: {
 }[], custom: Record<ArtifactSetKey, Record<string, number | string>>): Data {
   const { common: { count }, premod } = convert(selfTag, { src: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {}, stats: Partial<Record<Stat, number>> = {}
-  for (const { set, stats: stat } of data) {
-    if (!(set in sets)) sets[set] = 1
-    else sets[set]! += 1
-    for (const { key, value } of stat)
-      if (!(key in stats)) stats[key] = value
-      else stats[key]! += value
+  for (const { set: setKey, stats: stat } of data) {
+    const set = sets[setKey]
+    if (set === undefined) sets[setKey] = 1
+    else sets[setKey] = set + 1
+    for (const { key, value } of stat) {
+      const stat = stats[key]
+      if (stat === undefined) stats[key] = value
+      else stats[key] = stat + value
+    }
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
