@@ -1,6 +1,8 @@
-const characters = ['Candace', 'Nahida', 'Nilou'] as const // TODO
-const weapons = ['CalamityQueller', 'KeyOfKhajNisut', 'TulaytullahsRemembrance'] as const // TODO
-export const artifacts = ['NoblesseOblige'] as const // TODO
+import { allArtifactSets, allCharacterKeys, allElementsWithPhy, allRegions, allWeaponKeys } from '@genshin-optimizer/consts'
+
+const characters = allCharacterKeys
+const weapons = allWeaponKeys
+export const artifacts = allArtifactSets
 
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 
@@ -11,9 +13,9 @@ export const preps = ['dmg', 'shield', 'heal', 'trans'] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 export const dsts = presets
 
-export const elements = ['pyro', 'hydro', 'geo', 'cryo', 'electro', 'dendro', 'physical'] as const
+export const elements = allElementsWithPhy
 export const moves = ['normal', 'charged', 'plunging', 'skill', 'burst', 'elemental'] as const
-export const regions = ['mondstadt', 'liyue', 'inazuma', 'sumeru', 'fontaine', 'natlan', 'snezhnaya', 'khaenriah'] as const
+export const regions = allRegions
 
 export const transformativeReactions = ['overloaded', 'shattered', 'electrocharged', 'superconduct', 'swirl', 'burning', 'bloom', 'burgeon', 'hyperbloom'] as const
 export const amplifyingReactions = ['vaporize', 'melt', ''] as const

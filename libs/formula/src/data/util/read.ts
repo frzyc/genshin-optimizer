@@ -62,6 +62,7 @@ export class Read implements Base {
   get elemental(): Read { return this.with('move', 'elemental') }
 
   // Element
+  get anemo(): Read { return this.with('ele', 'anemo') }
   get pyro(): Read { return this.with('ele', 'pyro') }
   get hydro(): Read { return this.with('ele', 'hydro') }
   get geo(): Read { return this.with('ele', 'geo') }
