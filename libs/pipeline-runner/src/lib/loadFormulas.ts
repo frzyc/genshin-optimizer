@@ -1,6 +1,6 @@
-import { allElementKeys, allRegionKeys, CharacterKey, ElementKey, RegionKey, WeaponKey } from '@genshin-optimizer/consts'
-import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
-import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, dumpFile, elementMap, extrapolateFloat, propTypeMap, WeaponGrowCurveKey, weaponIdMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
+import { CharacterKey, ElementKey, RegionKey, WeaponKey } from '@genshin-optimizer/consts'
+import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
+import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, dumpFile, elementMap, extrapolateFloat, propTypeMap, regionMap, WeaponGrowCurveKey, weaponIdMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
@@ -32,9 +32,9 @@ export default function loadFormulas() {
     const burstInfo = avatarSkillExcelConfigData[skillDepot.energySkill]
     const result: FormulaCharacterData = {
       charKey: characterIdMap[+charid], // Will be incorrect for traveler, oh well
-      ele: elementMap[burstInfo.costElemType],
+      ele: burstInfo ? elementMap[burstInfo.costElemType] : undefined, // TODO: Traveler handling
       weaponType: weaponMap[weaponType],
-      region: allRegionKeys.find(region => fetter.avatarAssocType.toLowerCase().includes(region)),
+      region: regionMap[fetter.avatarAssocType],
       lvlCurves: [
         { key: 'hp', base: hpBase, curve: curves.hp },
         { key: 'atk', base: attackBase, curve: curves.atk },

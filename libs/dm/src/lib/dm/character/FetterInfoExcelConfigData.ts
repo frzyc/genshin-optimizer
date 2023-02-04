@@ -1,4 +1,4 @@
-import { CharacterId } from "@genshin-optimizer/pipeline"
+import { AvatarAssocType, CharacterId } from "@genshin-optimizer/pipeline"
 import { readDMJSON } from "../../util"
 
 type FetterInfoExcelConfigData = {
@@ -9,7 +9,7 @@ type FetterInfoExcelConfigData = {
   "avatarConstellationBeforTextMapHash": number//808906466,
   "avatarTitleTextMapHash": number//2339950258,
   "avatarDetailTextMapHash": number//2464288834,
-  "avatarAssocType": string//"ASSOC_TYPE_MONDSTADT",
+  "avatarAssocType": AvatarAssocType//"ASSOC_TYPE_MONDSTADT",
   "cvChineseTextMapHash": number//4257440758,
   "cvJapaneseTextMapHash": number//2464221280,
   "cvEnglishTextMapHash": number//3349029444,
