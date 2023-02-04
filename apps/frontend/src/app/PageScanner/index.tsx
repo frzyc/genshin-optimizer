@@ -1,12 +1,11 @@
-import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { Backpack, Computer, Download, Gamepad, InsertLink, PersonSearch, SendToMobile, SportsEsports, Warning, YouTube } from "@mui/icons-material"
 import { Box, CardActionArea, CardContent, CardMedia, Grid, IconButton, Link, Tooltip, Typography } from "@mui/material"
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from "react-router-dom"
 import CardDark from "../Components/Card/CardDark"
-import FontAwesomeSvgIcon from "../Components/FontAwesomeSvgIcon"
 import SqBadge from "../Components/SqBadge"
+import DiscordIcon from "../SVGIcons/DiscordIcon"
 import AdScanner from './AdeptiScanner.png'
 import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
@@ -63,7 +62,7 @@ export default function PageScanner() {
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans></Typography>
               <IconButton href="https://discord.gg/zh56aVWe3U" target="_blank">
-                <FontAwesomeSvgIcon icon={faDiscord} />
+                <DiscordIcon />
               </IconButton>
               <IconButton href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">
                 <Download />
@@ -120,7 +119,7 @@ export default function PageScanner() {
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h5" flexGrow={1} ><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans></Typography>
               <IconButton href="https://discord.gg/BTrCYgVGFP" target="_blank">
-                <FontAwesomeSvgIcon icon={faDiscord} />
+                <DiscordIcon />
               </IconButton>
               <IconButton href="https://github.com/daydreaming666/Amenoma" target="_blank">
                 <Download />

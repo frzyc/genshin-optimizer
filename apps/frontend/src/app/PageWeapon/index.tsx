@@ -1,3 +1,4 @@
+import { allRarities, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
 import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
@@ -7,12 +8,10 @@ import CardDark from '../Components/Card/CardDark';
 import SortByButton from '../Components/SortByButton';
 import RarityToggle from '../Components/ToggleButton/RarityToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
-import WeaponSheet from '../Data/Weapons/WeaponSheet';
+import { getWeaponSheet } from '../Data/Weapons';
 import { DatabaseContext } from '../Database/Database';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import usePromise from '../ReactHooks/usePromise';
-import { allRarities, allWeaponTypeKeys, WeaponKey } from '../Types/consts';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { catTotal } from '../Util/totalUtils';
 import { clamp } from '../Util/Util';
@@ -46,8 +45,6 @@ export default function PageWeapon() {
   const brPt = useMediaQueryUp()
   const maxNumToDisplay = numToShowMap[brPt]
 
-  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
-
   const deleteWeapon = useCallback(async (key: string) => {
     const weapon = database.weapons.get(key)
     if (!weapon) return
@@ -63,11 +60,9 @@ export default function PageWeapon() {
     database.displayWeapon.set({ editWeaponId: key })
   }, [database])
 
-  const newWeapon = useCallback(
-    (weaponKey: WeaponKey) => {
-      editWeapon(database.weapons.new(initialWeapon(weaponKey)))
-    },
-    [database, editWeapon])
+  const newWeapon = useCallback((weaponKey: WeaponKey) => {
+    editWeapon(database.weapons.new(initialWeapon(weaponKey)))
+  }, [database, editWeapon])
 
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -76,13 +71,12 @@ export default function PageWeapon() {
   const { weaponIdList, totalWeaponNum } = useMemo(() => {
     const weapons = database.weapons.values
     const totalWeaponNum = weapons.length
-    if (!weaponSheets) return { weaponIdList: [], totalWeaponNum }
     const weaponIdList = weapons
-      .filter(filterFunction({ weaponType, rarity, name: deferredSearchTerm }, weaponFilterConfigs(weaponSheets)))
-      .sort(sortFunction(weaponSortMap[sortType] ?? [], ascending, weaponSortConfigs(weaponSheets)))
+      .filter(filterFunction({ weaponType, rarity, name: deferredSearchTerm }, weaponFilterConfigs()))
+      .sort(sortFunction(weaponSortMap[sortType] ?? [], ascending, weaponSortConfigs()))
       .map(weapon => weapon.id)
     return dbDirty && { weaponIdList, totalWeaponNum }
-  }, [dbDirty, database, weaponSheets, sortType, ascending, rarity, weaponType, deferredSearchTerm])
+  }, [dbDirty, database, sortType, ascending, rarity, weaponType, deferredSearchTerm])
 
   const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(weaponIdList.length / maxNumToDisplay)
@@ -112,18 +106,18 @@ export default function PageWeapon() {
   }, [database, editWeaponId, resetEditWeapon])
 
   const weaponTotals = useMemo(() =>
-    catTotal(allWeaponTypeKeys, ct => weaponSheets && Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-      const wtk = weaponSheets(weapon.key).weaponType
+    catTotal(allWeaponTypeKeys, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+      const wtk = getWeaponSheet(weapon.key).weaponType
       ct[wtk].total++
       if (weaponIdList.includes(id)) ct[wtk].current++
-    })), [weaponSheets, database, weaponIdList])
+    })), [database, weaponIdList])
 
   const weaponRarityTotals = useMemo(() =>
-    catTotal(allRarities, ct => weaponSheets && Object.entries(database.weapons.data).forEach(([id, weapon]) => {
-      const wr = weaponSheets(weapon.key).rarity
+    catTotal(allRarities, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+      const wr = getWeaponSheet(weapon.key).rarity
       ct[wr].total++
       if (weaponIdList.includes(id)) ct[wr].current++
-    })), [weaponSheets, database, weaponIdList])
+    })), [database, weaponIdList])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
@@ -139,28 +133,22 @@ export default function PageWeapon() {
     </Suspense>
 
     <CardDark ref={invScrollRef}><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-      <Grid container spacing={1}>
-        <Grid item>
-          <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
-        </Grid>
-        <Grid item>
-          <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
-        </Grid>
-        <Grid item flexGrow={1} />
-        <Grid item >
-          <TextField
-            autoFocus
-            size="small"
-            value={searchTerm}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
-            label={t("weaponName")}
-            sx={{ height: "100%" }}
-            InputProps={{
-              sx: { height: "100%" }
-            }}
-          />
-        </Grid>
-      </Grid>
+      <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
+        <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
+        <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
+        <Box flexGrow={1} />
+        <TextField
+          autoFocus
+          size="small"
+          value={searchTerm}
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+          label={t("weaponName")}
+          sx={{ height: "100%" }}
+          InputProps={{
+            sx: { height: "100%" }
+          }}
+        />
+      </Box>
       <Box display="flex" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap">
         <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />
@@ -199,7 +187,7 @@ export default function PageWeapon() {
 function ShowingWeapon({ numShowing, total, t }) {
   return <Typography color="text.secondary">
     <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
-      Showing <b>{{ count: numShowing } as any}</b> out of {{ value: total }} Weapons
+      Showing <b>{{ count: numShowing } as TransObject}</b> out of {{ value: total }} Weapons
     </Trans>
   </Typography>
 }

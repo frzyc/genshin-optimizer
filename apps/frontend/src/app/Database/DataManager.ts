@@ -17,11 +17,11 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
   toStorageKey(key: CacheKey): string {
     return `${key}`
   }
-  validate(obj: any, key: CacheKey): StorageValue | undefined {
-    return obj
+  validate(obj: unknown, key: CacheKey): StorageValue | undefined {
+    return obj as StorageValue
   }
   toCache(storageObj: StorageValue, id: CacheKey): CacheValue | undefined {
-    return { ...storageObj, id } as any as CacheValue
+    return { ...storageObj, id } as CacheValue
   }
   deCache(cacheObj: CacheValue): StorageValue {
     const { id, ...storageObj } = cacheObj as any
@@ -34,7 +34,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     }
   }
   follow(key: CacheKey, callback: Callback<CacheKey>) {
-    if (this.listeners[key]) this.listeners[key]!.push(callback)
+    if (this.listeners[key]) this.listeners[key]?.push(callback)
     else this.listeners[key] = [callback]
     return () => {
       this.listeners[key] = this.listeners[key]?.filter(cb => cb !== callback)

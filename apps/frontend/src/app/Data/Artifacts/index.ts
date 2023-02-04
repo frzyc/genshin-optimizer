@@ -1,4 +1,6 @@
-import { ArtifactSetKey } from '../../Types/consts'
+import { allArtifactSets, ArtifactSetKey } from '@genshin-optimizer/consts'
+import { mergeData, UIData } from '../../Formula/api'
+import { allArtifactRarities, ArtifactRarity, SetNum } from '../../Types/consts'
 import { ArtifactSheet } from './ArtifactSheet'
 
 import Adventurer from './Adventurer'
@@ -44,6 +46,7 @@ import TravelingDoctor from './TravelingDoctor'
 import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
 import WanderersTroupe from './WanderersTroupe'
+
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   Adventurer,
   ArchaicPetra,
@@ -90,4 +93,25 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   WanderersTroupe,
 } as const
 
+export function getArtSheet(sKey: ArtifactSetKey) {
+  return artifacts[sKey]
+}
+
+export const setKeysByRarities = Object.fromEntries(allArtifactRarities.map(r => [r, ([] as ArtifactSetKey[])])) as Record<ArtifactRarity, ArtifactSetKey[]>
+allArtifactSets.forEach(setKey => {
+  const sheet = getArtSheet(setKey)
+  const rarity = Math.max(...sheet.rarity) as ArtifactRarity
+  setKeysByRarities[rarity].push(setKey)
+})
+
+export const allArtifactData = mergeData(Object.values(artifacts).map(s => s.data))
+export function dataSetEffects(data: UIData) {
+  const artifactSetEffect: Partial<Record<ArtifactSetKey, SetNum[]>> = {}
+  allArtifactSets.forEach(setKey => {
+    const sheet = getArtSheet(setKey)
+    const setNums = (Object.keys(sheet.setEffects).map(k => parseInt(k)) as SetNum[]).filter(sn => sheet.hasEnough(sn, data))
+    if (setNums.length) artifactSetEffect[setKey] = setNums
+  })
+  return artifactSetEffect
+}
 export default artifacts

@@ -1,8 +1,10 @@
+import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { input } from ".";
 import ColorText from "../Components/ColoredText";
-import { ArtifactSheet } from "../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../Data/Characters/CharacterSheet";
-import WeaponSheet from "../Data/Weapons/WeaponSheet";
+import { getArtSheet } from "../Data/Artifacts";
+import { artifactDefIcon } from "../Data/Artifacts/ArtifactSheet";
+import { getCharSheet } from "../Data/Characters";
+import { getWeaponSheet } from "../Data/Weapons";
 import { ArtCharDatabase } from "../Database/Database";
 import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts";
 import { range } from "../Util/Util";
@@ -25,11 +27,12 @@ const talentMap = {
   passive3: "Util. Pass.",
   ...Object.fromEntries(range(1, 6).map(i => [`constellation${i}`, `Const. ${i}`]))
 }
-export async function getDisplayHeader(data: UIData, sectionKey: string, database: ArtCharDatabase): Promise<{
+
+export function getDisplayHeader(data: UIData, sectionKey: string, database: ArtCharDatabase): {
   title: Displayable,
   icon?: string,
   action?: Displayable
-}> {
+} {
   if (!sectionKey) return errHeader
   if (sectionKey === "basic") return { title: "Basic Stats" }
   if (sectionKey === "custom") return { title: "Custom Multi Target" }
@@ -37,25 +40,25 @@ export async function getDisplayHeader(data: UIData, sectionKey: string, databas
   else if (sectionKey.includes(":")) {
     const [namespace, key] = sectionKey.split(":")
     if (namespace === "artifact") {
-      const sheet = await ArtifactSheet.get(key as ArtifactSetKey)
+      const sheet = getArtSheet(key as ArtifactSetKey)
       if (!sheet) return errHeader
       return {
         title: sheet.name,
-        icon: sheet.defIconSrc
+        icon: artifactDefIcon(key as ArtifactSetKey)
       }
     } else if (namespace === "weapon") {
-      const sheet = await WeaponSheet.get(key as WeaponKey)
+      const sheet = getWeaponSheet(key as WeaponKey)
       if (!sheet) return errHeader
       const asc = data.get(input.weapon.asc).value
       return {
         title: sheet.name,
-        icon: sheet.getImg(asc)
+        icon: weaponAsset(key as WeaponKey, asc >= 2)
       }
     }
   } else {
     const cKey = data.get(input.charKey).value
     if (!cKey) return errHeader
-    const sheet = await CharacterSheet.get(cKey as CharacterKey, database.gender)
+    const sheet = getCharSheet(cKey as CharacterKey, database.gender)
     const talentKey = ["normal", "charged", "plunging"].includes(sectionKey) ? "auto" : sectionKey
     const talent = sheet?.getTalentOfKey(talentKey as any)
     if (!talent) return errHeader

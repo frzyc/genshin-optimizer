@@ -1,10 +1,15 @@
+import { allWeaponKeys, CharacterKey, weaponMaxLevel } from "@genshin-optimizer/consts";
+import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
-import { allWeaponKeys, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { getWeaponSheet } from "../../Data/Weapons";
+import { ICachedCharacter } from "../../Types/character";
+import { charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
+import { initialCharacter } from "./CharacterData";
 
 export class WeaponDataManager extends DataManager<string, "weapons", ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
@@ -13,33 +18,38 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       if (key.startsWith("weapon_") && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  ensureEquipment() {
+  ensureEquipments() {
     const weaponIds = new Set(this.keys)
     const newWeapons: IWeapon[] = []
 
-    for (const [charKey, char] of Object.entries(this.database.chars.data)) {
-      if (!char.equippedWeapon) {
-        // A default "sword" should work well enough for this case.
-        // We'd have to pull the hefty character sheet otherwise.
-        const weapon = defaultInitialWeapon("sword")
-        const weaponId = generateRandomWeaponID(weaponIds)
-
-        weaponIds.add(weaponId)
-        this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
-        newWeapons.push(weapon)
-      }
+    for (const charKey of this.database.chars.keys) {
+      const newWeapon = this.ensureEquipment(charKey, weaponIds)
+      if (newWeapon) newWeapons.push()
     }
     return newWeapons
   }
-  validate(obj: any): IWeapon | undefined {
+  ensureEquipment(charKey: CharacterKey, weaponIds?: Set<string>) {
+    const char = this.database.chars.get(charKey)
+    if (char?.equippedWeapon) return
+    if (!weaponIds) weaponIds = new Set(this.keys)
+    const weapon = defaultInitialWeapon(getCharSheet(charKey, "F").weaponTypeKey)
+    const weaponId = generateRandomWeaponID(weaponIds)
+    weaponIds.add(weaponId)
+    this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
+    return weapon
+  }
+  validate(obj: unknown): IWeapon | undefined {
     if (typeof obj !== "object") return
+    const { key, level: rawLevel, ascension: rawAscension, } = obj as IWeapon
+    let { refinement, location, lock } = obj as IWeapon
 
-    let { key, level: rawLevel, ascension: rawAscension, refinement, location, lock } = obj
     if (!allWeaponKeys.includes(key)) return
+    const sheet = getWeaponSheet(key)
+    if (rawLevel > weaponMaxLevel[sheet.rarity]) return
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
-    if (!locationCharacterKeys.includes(location)) location = ""
-
+    if (location && !locationCharacterKeys.includes(location)) location = ""
+    lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }
   toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
@@ -47,9 +57,17 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     const oldWeapon = super.get(id)
     // Disallow unequipping of weapons
     if (!newWeapon.location && oldWeapon?.location) return
+
+    // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
+    const getWithInit = (lk): ICachedCharacter => {
+      const cKey = this.database.chars.LocationToCharacterKey(lk)
+      if (!this.database.chars.keys.includes(cKey))
+        this.database.chars.set(cKey, initialCharacter(cKey))
+      return this.database.chars.get(cKey) as ICachedCharacter
+    }
     if (newWeapon.location !== oldWeapon?.location) {
-      const prevChar = oldWeapon?.location ? this.database.chars.getWithInit(oldWeapon.location) : undefined
-      const newChar = newWeapon.location ? this.database.chars.getWithInit(newWeapon.location) : undefined
+      const prevChar = oldWeapon?.location ? getWithInit(oldWeapon.location) : undefined
+      const newChar = newWeapon.location ? getWithInit(newWeapon.location) : undefined
 
       // previously equipped art at new location
       const prevWeapon = super.get(newChar?.equippedWeapon)

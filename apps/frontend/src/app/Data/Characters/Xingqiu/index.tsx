@@ -2,18 +2,19 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from "../../../Formula/index"
 import { compareEq, constant, equal, greaterEq, infoMut, min, one, percent, prod, subscript, sum } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '../../../Types/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = "Xingqiu"
 const elementKey: ElementKey = "hydro"
 const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let s = 0, b = 0
 const dm = {
@@ -254,4 +255,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data, assets);
+export default new CharacterSheet(sheet, data);

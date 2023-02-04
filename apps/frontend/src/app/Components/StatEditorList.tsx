@@ -1,12 +1,10 @@
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Button, ButtonGroup, MenuItem } from '@mui/material';
 import { useCallback, useMemo } from 'react';
 import KeyMap, { StatKey } from '../KeyMap';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
 import DropdownButton from './DropdownMenu/DropdownButton';
 import { StatColoredWithUnit, StatWithUnit } from './StatDisplay';
-
 
 export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
   statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (statFilters: Dict<StatKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
@@ -74,6 +72,6 @@ function StatFilterItem({ statKey, statKeys = [], value = 0, delKey, setKey, set
         endAdornment={KeyMap.unit(statKey)}
       />
     </CustomNumberInputButtonGroupWrapper>
-    {!!statKey && <Button color="error" onClick={() => delKey(statKey)} disabled={disabled}><FontAwesomeIcon icon={faTrashAlt} /></Button>}
+    {!!statKey && <Button color="error" onClick={() => delKey(statKey)} disabled={disabled}><DeleteForeverIcon /></Button>}
   </ButtonGroup>
 }

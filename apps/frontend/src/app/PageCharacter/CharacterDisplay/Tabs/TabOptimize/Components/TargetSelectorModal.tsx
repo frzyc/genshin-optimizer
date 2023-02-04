@@ -12,7 +12,6 @@ import { DatabaseContext } from "../../../../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
 import { DisplaySub } from "../../../../../Formula/type"
 import { NodeDisplay } from "../../../../../Formula/uiData"
-import usePromise from "../../../../../ReactHooks/usePromise"
 
 export interface TargetSelectorModalProps {
   show: boolean,
@@ -54,9 +53,9 @@ export function TargetSelectorModal({ show, onClose, setTarget, showEmptyTargets
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[], multi?: number) => void, flatOnly?: boolean }) {
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
-  const header = usePromise(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey])
+  const header = useMemo(() => getDisplayHeader(data, sectionKey, database), [data, sectionKey, database])
   return <CardLight key={sectionKey as string}>
-    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
+    {header && <CardHeader avatar={header.icon && <ImgIcon size={2} src={header.icon} />} title={header.title} action={header.action && <SqBadge>{header.action}</SqBadge>} titleTypographyProps={{ variant: "subtitle1" }} />}
     <Divider />
     <MenuList>
       {Object.entries(displayNs).map(([key, n]) =>

@@ -1,19 +1,19 @@
 import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import CardLight from '../../../Components/Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../../Components/CustomNumberInput';
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
+import PercentBadge from '../../../Components/PercentBadge';
 import SqBadge from '../../../Components/SqBadge';
-import StatIcon from '../../../Components/StatIcon';
 import TextButton from '../../../Components/TextButton';
 import Artifact from '../../../Data/Artifacts/Artifact';
 import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
 import KeyMap, { cacheValueString } from '../../../KeyMap';
+import StatIcon from '../../../KeyMap/StatIcon';
 import { allSubstatKeys, ICachedArtifact, ISubstat } from '../../../Types/artifact';
-import { clamp } from '../../../Util/Util';
-import PercentBadge from '../../../Components/PercentBadge';
 import { RollColorKey } from '../../../Types/consts';
+import { clamp } from '../../../Util/Util';
+
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", rarity = 5 } = artifact ?? {}
@@ -41,7 +41,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
     <Box sx={{ display: "flex" }}>
       <ButtonGroup size="small" sx={{ width: "100%", display: "flex" }}>
         <DropdownButton
-          startIcon={key ? StatIcon[key] : undefined}
+          startIcon={key ? <StatIcon statKey={key} /> : undefined}
           title={key ? KeyMap.getArtStr(key) : t('editor.substat.substatFormat', { value: index + 1 })}
           disabled={!artifact}
           color={key ? "success" : "primary"}
@@ -49,7 +49,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           {key && <MenuItem onClick={() => setSubstat(index, { key: "", value: 0 })}>{t`editor.substat.noSubstat`}</MenuItem>}
           {allSubstatKeys.filter(key => mainStatKey !== key)
             .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
-              <ListItemIcon>{StatIcon[k]}</ListItemIcon>
+              <ListItemIcon><StatIcon statKey={k} /></ListItemIcon>
               <ListItemText>{KeyMap.getArtStr(k)}</ListItemText>
             </MenuItem>)}
         </DropdownButton>

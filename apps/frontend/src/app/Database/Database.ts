@@ -57,7 +57,7 @@ export class ArtCharDatabase {
     // Artifacts needs to be instantiated after character to check for relations
     this.arts = new ArtifactDataManager(this)
 
-    this.weapons.ensureEquipment()
+    this.weapons.ensureEquipments()
 
     this.buildSettings = new BuildSettingDataManager(this)
 

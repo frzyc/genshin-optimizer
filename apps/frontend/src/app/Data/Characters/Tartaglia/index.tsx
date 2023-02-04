@@ -1,11 +1,12 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, Region } from '../../../Types/consts'
+import { CharacterKey, ElementKey, Region } from '@genshin-optimizer/consts'
 import { stg } from '../../SheetUtil'
-import CharacterSheet, { charTemplates, ICharacterSheet } from '../CharacterSheet'
+import CharacterSheet from '../CharacterSheet'
+import { charTemplates } from '../charTemplates'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import assets from './assets'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -14,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Tartaglia"
 const elementKey: ElementKey = "hydro"
 const region: Region = "snezhnaya"
-const ct = charTemplates(key, data_gen.weaponTypeKey, assets)
+const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0, p1 = 0
 const dm = {
@@ -258,4 +259,4 @@ const sheet: ICharacterSheet = {
     constellation6: ct.talentTem("constellation6"),
   },
 }
-export default new CharacterSheet(sheet, data, assets)
+export default new CharacterSheet(sheet, data)

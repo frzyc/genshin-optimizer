@@ -12,7 +12,7 @@ type Data = {
 }
 export default function WeaponNameTooltip({ sheet, addlText, children }: Data) {
   const title = <Suspense fallback={<Skeleton variant="text" width={100} />}>
-    <Typography><ImgIcon src={Assets.weaponTypes[sheet.weaponType]} /> {sheet.name}</Typography>
+    <Typography><ImgIcon src={Assets.weaponTypes[sheet.weaponType]} size={1.5} /> {sheet.name}</Typography>
     {addlText}
   </Suspense>
   return <BootstrapTooltip placement="top" title={title} disableInteractive>

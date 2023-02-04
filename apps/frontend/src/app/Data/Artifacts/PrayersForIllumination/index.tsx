@@ -1,17 +1,16 @@
 import { Data } from '../../../Formula/type'
-import { ArtifactSetKey } from '../../../Types/consts'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "PrayersForIllumination"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 export const data: Data = dataObjForArtifactSheet(key)
 
 const sheet: IArtifactSheet = {
   name: "Prayers for Illumination", rarity: [3, 4],
-  icons,
   setEffects: {
     1: { document: [{ header: setHeader(1), fields: [] }] }
   }

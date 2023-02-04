@@ -98,7 +98,7 @@ type WeaponCurveExcelConfigData = {
   ]
 }
 
-const weaponCurveExcelConfigDataSrc =  JSON.parse(readDMJSON("ExcelBinOutput/WeaponCurveExcelConfigData.json")) as WeaponCurveExcelConfigData[]
+const weaponCurveExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/WeaponCurveExcelConfigData.json")) as WeaponCurveExcelConfigData[]
 
 export type WeaponExpCurveData = Record<WeaponGrowCurveKey, { [level: number]: number }>
 

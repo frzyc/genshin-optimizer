@@ -1,18 +1,18 @@
 import { Groups } from "@mui/icons-material";
+import HelpIcon from '@mui/icons-material/Help';
 import { Box, Divider, List, ListItem, ListProps, Palette, PaletteColor, Skeleton, styled, Typography } from "@mui/material";
 import React, { Suspense, useCallback, useContext, useMemo } from 'react';
 import { DataContext } from "../Context/DataContext";
 import { FormulaDataContext } from "../Context/FormulaDataContext";
 import { NodeDisplay } from "../Formula/api";
-import { Variant } from "../Formula/type";
 import { nodeVStr } from "../Formula/uiData";
 import { valueString } from "../KeyMap";
 import { allAmpReactions, AmpReactionKey } from "../Types/consts";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
 import { evalIfFunc } from "../Util/Util";
 import AmpReactionModeText from "./AmpReactionModeText";
+import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";
-import QuestionTooltip from "./QuestionTooltip";
 
 export default function FieldsDisplay({ fields }: { fields: IFieldDisplay[] }) {
   return <FieldDisplayList sx={{ m: 0 }}>
@@ -64,18 +64,20 @@ export function NodeFieldDisplay({ node, oldValue, component, emphasize }: { nod
     fieldVal = <span>{valueString(oldValue, node.info.unit, node.info.fixed)}{diff > 0.0001 || diff < -0.0001 ? <ColorText color={diff > 0 ? "success" : "error"}> {diff > 0 ? "+" : ""}{valueString(diff, node.info.unit, node.info.fixed)}</ColorText> : ""}</span>
   } else fieldVal = nodeVStr(node)
 
-  const formulaTextOverlay = !!node.formula && <QuestionTooltip onClick={onClick} title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>
-    {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-flex", gap: 1, mr: 1 }}>
-      <Box><AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as Variant} /></Box>
-      <Divider orientation="vertical" flexItem />
-    </Box>}
-    <span>{node.formula}</span>
-  </Suspense></Typography>} />
   return <Box width="100%" sx={{ display: "flex", justifyContent: "space-between", gap: 1, boxShadow: emphasize ? "0px 0px 0px 2px red inset" : undefined }} component={component} >
     <NodeFieldDisplayText node={node} />
     <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
       <Typography noWrap>{multiDisplay}{fieldVal}</Typography>
-      {formulaTextOverlay}
+      {!!node.formula && <BootstrapTooltip placement="top"
+        title={<Typography><Suspense fallback={<Skeleton variant="rectangular" width={300} height={30} />}>
+          {allAmpReactions.includes(node.info.variant as any) && <Box sx={{ display: "inline-flex", gap: 1, mr: 1 }}>
+            <Box><AmpReactionModeText reaction={node.info.variant as AmpReactionKey} trigger={node.info.subVariant as "cryo" | "pyro" | "hydro" | undefined} /></Box>
+            <Divider orientation="vertical" flexItem />
+          </Box>}
+          <span>{node.formula}</span>
+        </Suspense></Typography>} >
+        <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: "help" }} />
+      </BootstrapTooltip>}
     </Box>
   </Box>
 }

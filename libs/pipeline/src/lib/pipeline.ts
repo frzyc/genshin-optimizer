@@ -91,8 +91,6 @@ export const characterIdMap = {
   // 11000035: "TEMPLATE", Lance Warrioress
 } as const
 export type CharacterId = keyof typeof characterIdMap
-export type CharacterKey = typeof characterIdMap[keyof typeof characterIdMap]
-export const characterIds = Object.keys(characterIdMap).map(id => parseInt(id))
 
 export const weaponIdMap = {
   //swords
@@ -283,7 +281,6 @@ export const weaponIdMap = {
 
 } as const
 export type WeaponId = keyof typeof weaponIdMap
-export type WeaponKey = typeof weaponIdMap[keyof typeof weaponIdMap]
 
 export const weaponMap = {
   WEAPON_SWORD_ONE_HAND: "sword",
@@ -349,7 +346,6 @@ export const artifactSlotMap = {
   EQUIP_DRESS: "circlet"
 } as const
 export type DArtifactSlotKey = keyof typeof artifactSlotMap
-export type ArtifactSlotKey = typeof artifactSlotMap[keyof typeof artifactSlotMap]
 
 export const SubStatPropTypeMap = {
   FIGHT_PROP_HP: "hp",

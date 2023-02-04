@@ -1,15 +1,16 @@
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import { absorbableEle, ArtifactSetKey } from '../../../Types/consts'
+import { absorbableEle } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 import { condReadNode, stg, st } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
 const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
@@ -35,7 +36,7 @@ const data: Data = dataObjForArtifactSheet(key, {
 })
 
 const sheet: IArtifactSheet = {
-  name: "Viridescent Venerer", rarity: [4, 5], icons,
+  name: "Viridescent Venerer", rarity: [4, 5],
   setEffects: {
     2: {
       document: [{

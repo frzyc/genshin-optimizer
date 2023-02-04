@@ -1,9 +1,10 @@
+import { allCharacterKeys, allSlotKeys, CharacterKey, SlotKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
+import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
-import { initialCharacter } from "../../ReactHooks/useCharSelectionCallback";
-import { ICachedCharacter, ICharacter } from "../../Types/character";
-import { allAdditiveReactions, allAmpReactions, allCharacterKeys, allElements, allHitModes, allSlotKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, SlotKey, TravelerKey, travelerKeys } from "../../Types/consts";
-import { deepClone, objectKeyMap } from "../../Util/Util";
+import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
+import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
+import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
@@ -17,21 +18,23 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
         this.database.storage.remove(key)
     }
   }
-  validate(obj: any): ICharacter | undefined {
-    if (typeof obj !== "object") return
-
+  validate(obj: unknown): ICharacter | undefined {
+    if (!obj || typeof obj !== "object") return
+    const {
+      key: characterKey, level: rawLevel, ascension: rawAscension,
+    } = obj as ICharacter
     let {
-      key: characterKey, level: rawLevel, ascension: rawAscension, hitMode, reaction, conditional,
+      hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
       compareData, customMultiTarget
-    } = obj
+    } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey))
       return // non-recoverable
 
     if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
-    if (!allAmpReactions.includes(reaction) && !allAdditiveReactions.includes(reaction)) reaction = undefined
-    if (!allElements.includes(infusionAura)) infusionAura = ""
+    if (reaction && !allAmpReactions.includes(reaction as typeof allAmpReactions[number]) && !allAdditiveReactions.includes(reaction as typeof allAdditiveReactions[number])) reaction = undefined
+    if (infusionAura !== "" && !allInfusionAuraElements.includes(infusionAura as InfusionAuraElements)) infusionAura = ""
     if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
 
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
@@ -39,16 +42,16 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
     else {
       let { auto, skill, burst } = talent
-      if (typeof auto !== "number" || auto < 1 || auto > 15) auto = 1
-      if (typeof skill !== "number" || skill < 1 || skill > 15) skill = 1
-      if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
+      auto = typeof auto !== "number" ? 1 : clamp(auto, 1, 10)
+      skill = typeof skill !== "number" ? 1 : clamp(skill, 1, 10)
+      burst = typeof burst !== "number" ? 1 : clamp(burst, 1, 10)
       talent = { auto, skill, burst }
     }
 
     if (!conditional)
       conditional = {}
     if (!team || !Array.isArray(team)) team = ["", "", ""]
-    else team = team.map((t, i) => allCharacterKeys.includes(t) && !team.find((ot, j) => i > j && t === ot) ? t : "") as ICharacter["team"]
+    else team = team.map((t, i) => (t && allCharacterKeys.includes(t) && !team.find((ot, j) => i > j && t === ot)) ? t : "") as ICharacter["team"]
 
     if (!teamConditional)
       teamConditional = {}
@@ -59,7 +62,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
     if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
     if (!customMultiTarget) customMultiTarget = []
-    customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t)
+    customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t) as CustomMultiTarget[]
     const char: ICharacter = {
       key: characterKey, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
@@ -97,20 +100,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === "Traveler" ? this.getTravelerCharacterKey() : key
   }
-  getWithInit(key: LocationCharacterKey): ICachedCharacter {
-    const cKey = this.LocationToCharacterKey(key)
-
-    if (!this.keys.includes(cKey))
-      this.set(cKey, initialCharacter(cKey))
-    return this.get(cKey)!
-  }
-  getWithInitWeapon(key: LocationCharacterKey): ICachedCharacter {
-    const cKey = this.LocationToCharacterKey(key)
-    if (!this.keys.includes(cKey)) {
-      this.set(cKey, initialCharacter(cKey))
-      this.database.weapons.new({ ...defaultInitialWeapon("sword"), location: key })
+  getWithInitWeapon(key: CharacterKey): ICachedCharacter {
+    if (!this.keys.includes(key)) {
+      this.set(key, initialCharacter(key))
+      this.database.weapons.ensureEquipment(key)
     }
-    return this.get(cKey)!
+    return this.get(key) as ICachedCharacter
   }
 
   remove(key: CharacterKey) {
@@ -183,7 +178,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     result.characters.beforeMerge = this.values.length
 
     const source = good.source ?? "Unknown"
-    const characters = good[this.goKey as any]
+    const characters = good[this.goKey]
     if (Array.isArray(characters) && characters?.length) {
       result.characters.import = characters.length
       const idsToRemove = new Set(this.keys)
@@ -200,5 +195,30 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
       else idtoRemoveArr.forEach(k => this.remove(k))
       result.characters.unchanged = []
     } else result.characters.notInImport = this.values.length
+  }
+}
+
+export function initialCharacter(key: CharacterKey): ICachedCharacter {
+  return {
+    key,
+    level: 1,
+    ascension: 0,
+    hitMode: "avgHit",
+    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
+    equippedWeapon: "",
+    conditional: {},
+    bonusStats: {},
+    enemyOverride: {},
+    talent: {
+      auto: 1,
+      skill: 1,
+      burst: 1,
+    },
+    infusionAura: "",
+    constellation: 0,
+    team: ["", "", ""],
+    teamConditional: {},
+    compareData: false,
+    customMultiTarget: []
   }
 }

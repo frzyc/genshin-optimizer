@@ -1,19 +1,17 @@
+import { allElementsWithPhy, SlotKey } from '@genshin-optimizer/consts';
+import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import Assets from '../../Assets/Assets';
 import Artifact from '../../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../../Data/Artifacts/ArtifactSheet';
-import usePromise from '../../ReactHooks/usePromise';
+import StatIcon from '../../KeyMap/StatIcon';
 import { ICachedArtifact } from '../../Types/artifact';
-import { allElementsWithPhy, SlotKey } from '../../Types/consts';
 import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
-import StatIcon from '../StatIcon';
 import ArtifactTooltip from './ArtifactTooltip';
 
 export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
-  const artifactSheet = usePromise(() => art?.setKey && ArtifactSheet.get(art.setKey), [art?.setKey])
   // Blank artifact slot icon
-  if (!art || !artifactSheet)
+  if (!art)
     return <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <Box sx={{ width: "100%", pb: "100%", position: "relative", }}>
         <Box
@@ -39,7 +37,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
     <Box
       component="img"
       className={`grad-${rarity}star`}
-      src={artifactSheet.slotIcons[key]}
+      src={artifactAsset(art.setKey, art.slotKey)}
       maxWidth="100%"
       maxHeight="100%"
     />
@@ -47,7 +45,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
       <strong><SqBadge sx={{ p: 0.5 }} color={Artifact.levelVariant(level)}><strong>+{level}</strong></SqBadge></strong>
     </Typography>
     <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", bottom: 0, right: 0 }}>
-      <SqBadge color={color} sx={{ p: 0.5 }}>{StatIcon[mainStatKey]}</SqBadge>
+      <SqBadge color={color} sx={{ p: 0.5 }}><StatIcon statKey={mainStatKey} iconProps={{ fontSize: "inherit" }} /></SqBadge>
     </Typography>
   </CardDark></ArtifactTooltip>
 }

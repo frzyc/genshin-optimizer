@@ -1,13 +1,12 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
-import { Suspense, useCallback, useState } from "react"
-import useBoolState from "../ReactHooks/useBoolState"
-import { getRandomElementFromArray } from "../Util/Util"
-import CardDark from "./Card/CardDark"
-import CloseButton from "./CloseButton"
-import ModalWrapper from "./ModalWrapper"
-import { Translate } from "./Translate"
+import HelpIcon from '@mui/icons-material/Help';
+import { Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material";
+import { Suspense, useCallback, useState } from "react";
+import useBoolState from "../ReactHooks/useBoolState";
+import { getRandomElementFromArray } from "../Util/Util";
+import CardDark from "./Card/CardDark";
+import CloseButton from "./CloseButton";
+import ModalWrapper from "./ModalWrapper";
+import { Translate } from "./Translate";
 export function initialInfoShownState() {
   return {
     artifactPage: true,
@@ -35,7 +34,7 @@ export default function InfoComponent({ pageKey, text = "", modalTitle = "", chi
         </Typography>
       </Grid>
       <Grid item xs="auto">
-        <Button size="small" color="info" variant="contained" onClick={onTrue} startIcon={<FontAwesomeIcon icon={faQuestionCircle} />}>
+        <Button size="small" color="info" variant="contained" onClick={onTrue} startIcon={<HelpIcon />}>
           <Translate ns="ui" key18="info" />
         </Button>
       </Grid>

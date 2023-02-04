@@ -1,6 +1,5 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Add, DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import AddIcon from '@mui/icons-material/Add';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
@@ -12,14 +11,13 @@ import CharacterCard from '../Components/Character/CharacterCard';
 import SortByButton from '../Components/SortByButton';
 import ElementToggle from '../Components/ToggleButton/ElementToggle';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
-import CharacterSheet from '../Data/Characters/CharacterSheet';
-import WeaponSheet from '../Data/Weapons/WeaponSheet';
+import { getCharSheet } from '../Data/Characters';
+import { getWeaponSheet } from '../Data/Weapons';
 import { DatabaseContext } from '../Database/Database';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBMeta from '../ReactHooks/useDBMeta';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import usePromise from '../ReactHooks/usePromise';
 import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
@@ -60,10 +58,9 @@ export default function PageCharacter() {
   // character favorite updater
   useEffect(() => database.charMeta.followAny(s => forceUpdate()), [forceUpdate, database])
 
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
   const { gender } = useDBMeta()
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
-    const chararcterSheet = await CharacterSheet.get(cKey, gender)
+    const chararcterSheet = await getCharSheet(cKey, gender)
     let name = chararcterSheet?.name
     // Use translated string
     if (typeof name === "object")
@@ -82,14 +79,13 @@ export default function PageCharacter() {
   const { charKeyList, totalCharNum } = useMemo(() => {
     const chars = database.chars.keys
     const totalCharNum = chars.length
-    if (!characterSheets) return { charKeyList: [], totalCharNum }
     const { element, weaponType, sortType, ascending } = deferredState
     const charKeyList = database.chars.keys
-      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database, characterSheets)))
-      .sort(sortFunction(characterSortMap[sortType] ?? [], ascending, characterSortConfigs(database, characterSheets), ["new", "favorite"]))
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database)))
+      .sort(sortFunction(characterSortMap[sortType] ?? [], ascending, characterSortConfigs(database), ["new", "favorite"]))
     return deferredDbDirty && { charKeyList, totalCharNum }
   },
-    [deferredDbDirty, database, characterSheets, deferredState, deferredSearchTerm])
+    [deferredDbDirty, database, deferredState, deferredSearchTerm])
 
   const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
 
@@ -100,23 +96,22 @@ export default function PageCharacter() {
   }, [charKeyList, pageIndex, maxNumToDisplay])
 
   const totalShowing = charKeyList.length !== totalCharNum ? `${charKeyList.length}/${totalCharNum}` : `${totalCharNum}`
-  const weaponSheets = usePromise(() => WeaponSheet.getAll, [])
 
   const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys,
-    ct => weaponSheets && Object.entries(database.chars.data).forEach(([ck, char]) => {
+    ct => Object.entries(database.chars.data).forEach(([ck, char]) => {
       const weapon = database.weapons.get(char.equippedWeapon)
       if (!weapon) return
-      const wtk = weaponSheets(weapon.key).weaponType
+      const wtk = getWeaponSheet(weapon.key).weaponType
       ct[wtk].total++
       if (charKeyList.includes(ck)) ct[wtk].current++
-    })), [weaponSheets, database, charKeyList])
+    })), [database, charKeyList])
 
   const elementTotals = useMemo(() => catTotal(allElements,
-    ct => characterSheets && Object.entries(database.chars.data).forEach(([ck, char]) => {
-      const eleKey = characterSheets(char.key, database.gender).elementKey
+    ct => Object.entries(database.chars.data).forEach(([ck, char]) => {
+      const eleKey = getCharSheet(char.key, database.gender).elementKey
       ct[eleKey].total++
       if (charKeyList.includes(ck)) ct[eleKey].current++
-    })), [characterSheets, database, charKeyList])
+    })), [database, charKeyList])
 
   return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <Suspense fallback={false}>
@@ -153,7 +148,7 @@ export default function PageCharacter() {
           ascending={ascending} onChangeAsc={ascending => database.displayCharacter.set({ ascending })} />
       </Box>
     </CardContent></CardDark>
-    <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<Add />} >{t`addNew`}</Button>
+    <Button fullWidth onClick={() => setnewCharacter(true)} color="info" startIcon={<AddIcon />} >{t`addNew`}</Button>
     <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} />}>
       <Grid container spacing={1} columns={columns}>
         {charKeyListToShow.map(charKey =>
@@ -194,7 +189,7 @@ export default function PageCharacter() {
       </Grid>
     </Suspense>
     {numPages > 1 && <CardDark ><CardContent sx={{ display: "flex", gap: 1 }}>
-      <Button onClick={() => setnewCharacter(true)} color="info" sx={{ minWidth: 0 }} ><Typography><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography></Button>
+      <Button onClick={() => setnewCharacter(true)} color="info" sx={{ minWidth: 0 }} ><AddIcon /></Button>
       <Grid container alignItems="flex-end" sx={{ flexGrow: 1 }}>
         <Grid item flexGrow={1}>
           <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
@@ -209,7 +204,7 @@ export default function PageCharacter() {
 function ShowingCharacter({ numShowing, total, t }) {
   return <Typography color="text.secondary">
     <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} >
-      Showing <b>{{ count: numShowing } as any}</b> out of {{ value: total } as any} Characters
+      Showing <b>{{ count: numShowing } as TransObject}</b> out of {{ value: total } as TransObject} Characters
     </Trans>
   </Typography>
 }

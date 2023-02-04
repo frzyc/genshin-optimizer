@@ -2,16 +2,16 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, prod, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '../../../Types/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
-import { ArtifactSheet, IArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import icons from './icons'
 
 const key: ArtifactSetKey = "FlowerOfParadiseLost"
 const [, trm] = trans("artifact", key)
-const setHeader = setHeaderTemplate(key, icons)
+const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.FlowerOfParadiseLost, 2, 80)
 
@@ -39,7 +39,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
 
 const sheet: IArtifactSheet = {
   name: "Flower of Paradise Lost", rarity: [4, 5],
-  icons,
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {

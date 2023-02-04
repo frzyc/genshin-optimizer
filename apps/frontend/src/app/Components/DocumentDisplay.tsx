@@ -7,7 +7,7 @@ import CardDark from "./Card/CardDark"
 import CardHeaderCustom from "./Card/CardHeaderCustom"
 import ConditionalDisplay from "./Conditional/ConditionalDisplay"
 import FieldsDisplay from "./FieldDisplay"
-import InfoTooltip from "./InfoTooltip"
+import { InfoTooltipInline } from "./InfoTooltip"
 
 type DocumentDisplayProps = {
   sections: DocumentSection[],
@@ -61,7 +61,7 @@ export function HeaderDisplay({ header, hideDesc, hideDivider }: { header: IDocu
   const { icon: preicon, title, action } = header
   const icon = evalIfFunc(preicon, data)
   const description = !hideDesc && evalIfFunc(header.description, data)
-  const displayTitle = hideDesc ? title : <span>{title} <InfoTooltip title={<Typography>{description}</Typography>} /></span>
+  const displayTitle = hideDesc ? title : <span>{title}<InfoTooltipInline title={<Typography>{description}</Typography>} /></span>
   return <>
     <CardHeaderCustom avatar={icon} title={displayTitle} action={action} />
     {!hideDivider && <Divider />}

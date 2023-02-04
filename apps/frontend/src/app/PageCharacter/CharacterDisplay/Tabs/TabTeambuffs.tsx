@@ -1,3 +1,5 @@
+import { CharacterKey } from "@genshin-optimizer/consts";
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import { PersonAdd } from "@mui/icons-material";
 import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from 'react';
@@ -9,18 +11,17 @@ import ColorText from "../../../Components/ColoredText";
 import DocumentDisplay from "../../../Components/DocumentDisplay";
 import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
 import { GeneralAutocomplete, GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
-import InfoTooltip from "../../../Components/InfoTooltip";
+import { InfoTooltipInline } from "../../../Components/InfoTooltip";
 import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
 import { DataContext, dataContextObj } from "../../../Context/DataContext";
-import { ArtifactSheet } from "../../../Data/Artifacts/ArtifactSheet";
-import CharacterSheet from "../../../Data/Characters/CharacterSheet";
+import { dataSetEffects, getArtSheet } from "../../../Data/Artifacts";
+import { getCharSheet } from "../../../Data/Characters";
 import { resonanceSheets } from "../../../Data/Resonance";
 import { DatabaseContext } from "../../../Database/Database";
 import { NodeDisplay } from "../../../Formula/uiData";
 import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
 import useDBMeta from "../../../ReactHooks/useDBMeta";
-import usePromise from "../../../ReactHooks/usePromise";
-import { CharacterKey, charKeyToCharName } from "../../../Types/consts";
+import { charKeyToCharName } from "../../../Types/consts";
 import { objPathValue, range } from "../../../Util/Util";
 
 export default function TabTeambuffs() {
@@ -68,20 +69,18 @@ function ResonanceDisplay() {
   const teamCount = team.reduce((a, t) => a + (t ? 1 : 0), 1)
   return <>
     <CardLight>
-      <CardHeader title={<span>{t<string>("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltip title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
+      <CardHeader title={<span>{t("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltipInline title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
         titleTypographyProps={{ variant: "subtitle2" }} />
     </CardLight>
-    {resonanceSheets.map((res, i) => {
-      const icon = <InfoTooltip title={<Typography>{res.desc}</Typography>} />
-      const title = <span>{res.name} {icon}</span>
-      return <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
-        <CardHeader title={title} action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
-        {res.canShow(data) && <Divider />}
-        {res.canShow(data) && <CardContent>
-          <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
-        </CardContent>}
-      </CardLight>
-    })}
+    {resonanceSheets.map((res, i) => <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
+      <CardHeader
+        title={<span>{res.name} <InfoTooltipInline title={<Typography>{res.desc}</Typography>} /></span>}
+        action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
+      {res.canShow(data) && <Divider />}
+      {res.canShow(data) && <CardContent>
+        <DocumentDisplay sections={res.sections} teamBuffOnly hideDesc />
+      </CardContent>}
+    </CardLight>)}
   </>
 }
 function TeammateDisplay({ index }: { index: number }) {
@@ -142,12 +141,11 @@ function TeammateDisplay({ index }: { index: number }) {
 }
 function CharArtifactCondDisplay() {
   const { data, } = useContext(DataContext)
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
-  const sections = useMemo(() => artifactSheets &&
-    Object.entries(ArtifactSheet.setEffects(artifactSheets, data))
+  const sections = useMemo(() =>
+    Object.entries(dataSetEffects(data))
       .flatMap(([setKey, setNums]) =>
-        setNums.flatMap(sn => artifactSheets(setKey)!.setEffectDocument(sn)!))
-    , [artifactSheets, data])
+        setNums.flatMap(sn => getArtSheet(setKey).setEffectDocument(sn) ?? []))
+    , [data])
   if (!sections) return null
   return <DocumentDisplay sections={sections} teamBuffOnly={true} />
 }
@@ -168,13 +166,12 @@ function CharTalentCondDisplay() {
 }
 
 function TeammateAutocomplete({ characterKey, team, label, setChar, autoCompleteProps = {} }:
-  { characterKey, team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<CharacterKey | "">, false, true, false>, "renderInput" | "onChange" | "options"> }) {
+  { characterKey: CharacterKey | "", team: Array<CharacterKey | "">, label: string, setChar: (k: CharacterKey | "") => void, autoCompleteProps?: Omit<AutocompleteProps<GeneralAutocompleteOption<CharacterKey | "">, false, false, false>, "renderInput" | "onChange" | "options"> }) {
   const { t } = useTranslation(["charNames_gen", "page_character", "sheet_gen"])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const characterSheets = usePromise(() => CharacterSheet.getAll, [])
-  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${characterSheets?.(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [characterSheets, t, gender])
-  const toImg = useCallback((key: CharacterKey | "") => key === "" ? <PersonAdd /> : characterSheets ? <ThumbSide src={characterSheets(key, gender)?.thumbImgSide} sx={{ pr: 1 }} /> : <></>, [characterSheets, gender])//
+  const toText = useCallback((key: CharacterKey): string => key.startsWith("Traveler") ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(`sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`)})` : t(`charNames_gen:${key}`), [t, gender])
+  const toImg = useCallback((key: CharacterKey | "") => key ? <ThumbSide src={characterAsset(key, "iconSide", gender)} sx={{ pr: 1 }} /> : <PersonAdd />, [gender])//
   const isFavorite = useCallback((key: CharacterKey) => database.charMeta.get(key).favorite, [database])
   const onDisable = useCallback(({ key }: { key: CharacterKey | "" }) => team.filter(t => t && t !== characterKey).includes(key) || (key.startsWith("Traveler") && team.some((t, i) => t.startsWith("Traveler"))), [team, characterKey])
   const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(() => database.chars.keys

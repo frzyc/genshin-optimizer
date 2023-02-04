@@ -1,9 +1,10 @@
+import { allSlotKeys, SlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { Settings, SwapHoriz } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
-import SlotNameWithIcon from '../../../../Components/Artifact/SlotNameWIthIcon';
+import SlotIcon from '../../../../Components/Artifact/SlotIcon';
 import SubstatToggle from '../../../../Components/Artifact/SubstatToggle';
 import CardDark from '../../../../Components/Card/CardDark';
 import CardLight from '../../../../Components/Card/CardLight';
@@ -13,19 +14,18 @@ import ModalWrapper from '../../../../Components/ModalWrapper';
 import PercentBadge from '../../../../Components/PercentBadge';
 import { CharacterContext } from '../../../../Context/CharacterContext';
 import { DataContext } from '../../../../Context/DataContext';
+import { dataSetEffects } from '../../../../Data/Artifacts';
 import Artifact from '../../../../Data/Artifacts/Artifact';
-import { ArtifactSheet } from '../../../../Data/Artifacts/ArtifactSheet';
 import { DatabaseContext } from '../../../../Database/Database';
 import { uiInput as input } from '../../../../Formula';
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
 import WeaponCard from '../../../../PageWeapon/WeaponCard';
 import useBoolState from '../../../../ReactHooks/useBoolState';
 import useCharMeta from '../../../../ReactHooks/useCharMeta';
-import usePromise from '../../../../ReactHooks/usePromise';
+import { iconInlineProps } from '../../../../SVGIcons';
 import { allSubstatKeys } from '../../../../Types/artifact';
-import { allSlotKeys, charKeyToLocCharKey, SlotKey, WeaponTypeKey } from '../../../../Types/consts';
+import { charKeyToLocCharKey } from '../../../../Types/consts';
 import { IFieldDisplay } from '../../../../Types/fieldDisplay';
-import useBuildSetting from '../TabOptimize/useBuildSetting';
 import ArtifactSwapModal from './ArtifactSwapModal';
 import WeaponSwapModal from './WeaponSwapModal';
 
@@ -33,7 +33,6 @@ const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
 export default function EquipmentSection() {
   const { character: { equippedWeapon, key: characterKey }, characterSheet } = useContext(CharacterContext)
-  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
   const [weaponId, setweaponId] = useState("")
@@ -73,7 +72,7 @@ export default function EquipmentSection() {
         </Grid>
         {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {data.get(input.art[slotKey].id).value ?
-            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} mainStatAssumptionLevel={mainStatAssumptionLevel} effFilter={deferredRvSet}
+            <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} effFilter={deferredRvSet}
               extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
@@ -91,9 +90,10 @@ function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
+  const { t } = useTranslation("artifact")
   return <CardLight sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
     <CardContent>
-      <Typography><SlotNameWithIcon slotKey={slotKey} /></Typography>
+      <Typography><SlotIcon iconProps={iconInlineProps} slotKey={slotKey} /> {t(`slotName.${slotKey}`)}</Typography>
     </CardContent>
     <Divider />
     <Box sx={{
@@ -149,7 +149,6 @@ function ArtifactSectionCard() {
   const { database } = useContext(DatabaseContext)
   const { character, character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const artifactSheets = usePromise(() => ArtifactSheet.getAll, [])
   const hasEquipped = useMemo(() => !!Object.values(equippedArtifacts).filter(i => i).length, [equippedArtifacts])
   const unequipArts = useCallback(() => {
     if (!character) return
@@ -157,7 +156,7 @@ function ArtifactSectionCard() {
     Object.values(equippedArtifacts).forEach(aid => database.arts.set(aid, { location: "" }))
   }, [character, database, equippedArtifacts])
 
-  const setEffects = useMemo(() => artifactSheets && ArtifactSheet.setEffects(artifactSheets, data), [artifactSheets, data])
+  const setEffects = useMemo(() => dataSetEffects(data), [data])
   const { rvFilter } = useCharMeta(characterKey)
   const setRVFilter = useCallback(rvFilter => database.charMeta.set(characterKey, { rvFilter }), [database, characterKey],)
 
@@ -200,6 +199,7 @@ function ArtifactSectionCard() {
           <ModalWrapper open={show} onClose={onHide}>
             <CardDark>
               <CardContent>
+                <Typography textAlign="center" gutterBottom variant='h6'>{t`artifact:efficiencyFilter.title`}</Typography>
                 <SubstatToggle selectedKeys={rvFilter} onChange={setRVFilter} />
               </CardContent>
             </CardDark>
@@ -209,7 +209,7 @@ function ArtifactSectionCard() {
             {rvmField?.canShow?.(data) && <BasicFieldDisplay field={rvmField} component={ListItem} />}
           </FieldDisplayList>
         </CardDark>
-        {artifactSheets && setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
+        {setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
           setNumKeyArr.map(setNumKey => <CardDark key={setKey + setNumKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />
           </CardDark>)

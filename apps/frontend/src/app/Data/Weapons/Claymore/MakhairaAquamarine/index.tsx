@@ -3,13 +3,12 @@ import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, percent, prod, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '../../../../Types/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import WeaponSheet, { headerTemplate, IWeaponSheet } from "../../WeaponSheet"
-import iconAwaken from './AwakenIcon.png'
+import { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
-import icon from './Icon.png'
 
 const key: WeaponKey = "MakhairaAquamarine"
 const data_gen = data_gen_json as WeaponData
@@ -41,10 +40,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   atkTeamDisp
 })
 const sheet: IWeaponSheet = {
-  icon,
-  iconAwaken,
   document: [{
-    header: headerTemplate(key, icon, iconAwaken, st("conditional")),
+    header: headerTemplate(key, st("conditional")),
     path: condPassivePath,
     value: condPassive,
     teamBuff: true,
@@ -61,7 +58,7 @@ const sheet: IWeaponSheet = {
       }
     }
   }, {
-    header: headerTemplate(key, icon, iconAwaken, st("teamBuff")),
+    header: headerTemplate(key, st("teamBuff")),
     teamBuff: true,
     canShow: equal(condPassive, "on", 1),
     fields: [{
