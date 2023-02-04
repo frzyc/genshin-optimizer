@@ -5,7 +5,7 @@ import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
 type FormulaCharacterData = {
-  name: string
+  key: CharacterKey
   ele?: ElementKey
   weaponType: WeaponTypeKey
   region?: RegionKey
@@ -13,6 +13,7 @@ type FormulaCharacterData = {
   ascensionBonus: { key: string, values: number[] }[]
 }
 type FormulaWeaponData = {
+  key: WeaponKey
   weaponType: WeaponTypeKey
   lvlCurves: { key: string, base: number, curve: WeaponGrowCurveKey }[]
   refinementBonus: { key: string, values: number[] }[]
@@ -23,13 +24,13 @@ type FormulaWeaponData = {
 export default function loadFormulas() {
   //parse baseStat/ascension/basic data
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
-    const { nameTextMapHash, weaponType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
+    const { weaponType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
     const ascensions = ascensionData[avatarPromoteId]
     const ascensionKeys = new Set(ascensions.flatMap(a => Object.keys(a.props)))
     const fetter = fetterInfoExcelConfigData[+charid as CharacterId]
     const result: FormulaCharacterData = {
-      name: TextMapEN[nameTextMapHash].replace(/ /, ""),
+      key: characterIdMap[+charid], // Will be incorrect for traveler, oh well
       ele: allElementKeys.find(element => TextMapEN[fetter.avatarVisionBeforTextMapHash].toLowerCase().includes(element)),
       weaponType: weaponMap[weaponType],
       region: allRegionKeys.find(region => fetter.avatarAssocType.toLowerCase().includes(region)),
@@ -126,6 +127,7 @@ export default function loadFormulas() {
     const ascKeys = new Set(ascData.filter(x => x).flatMap(asc => asc!.addProps.filter(a => a.value && a.propType).map(a => a.propType)))
 
     const result: FormulaWeaponData = {
+      key: weaponIdMap[+weaponid],
       weaponType: weaponMap[weaponType],
       lvlCurves: [
         { key: propTypeMap[main.propType], base: extrapolateFloat(main.initValue), curve: main.type },
