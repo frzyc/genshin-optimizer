@@ -1,11 +1,14 @@
-import { CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
-import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
+import { allElementKeys, allRegionKeys, CharacterKey, ElementKey, RegionKey, WeaponKey } from '@genshin-optimizer/consts'
+import { ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
 import { CharacterData, CharacterGrowCurveKey, CharacterId, characterIdMap, dumpFile, extrapolateFloat, propTypeMap, WeaponGrowCurveKey, weaponIdMap, weaponMap, WeaponTypeKey } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FORMULA_PATH } from './Util'
 
 type FormulaCharacterData = {
+  name: string
+  ele?: ElementKey
   weaponType: WeaponTypeKey
+  region?: RegionKey
   lvlCurves: { key: string, base: number, curve: CharacterGrowCurveKey }[]
   ascensionBonus: { key: string, values: number[] }[]
 }
@@ -20,12 +23,16 @@ type FormulaWeaponData = {
 export default function loadFormulas() {
   //parse baseStat/ascension/basic data
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
-    const { weaponType, qualityType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
+    const { nameTextMapHash, weaponType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
     const ascensions = ascensionData[avatarPromoteId]
     const ascensionKeys = new Set(ascensions.flatMap(a => Object.keys(a.props)))
+    const fetter = fetterInfoExcelConfigData[+charid as CharacterId]
     const result: FormulaCharacterData = {
+      name: TextMapEN[nameTextMapHash].replace(/ /, ""),
+      ele: allElementKeys.find(element => TextMapEN[fetter.avatarVisionBeforTextMapHash].toLowerCase().includes(element)),
       weaponType: weaponMap[weaponType],
+      region: allRegionKeys.find(region => fetter.avatarAssocType.toLowerCase().includes(region)),
       lvlCurves: [
         { key: 'hp', base: hpBase, curve: curves.hp },
         { key: 'atk', base: attackBase, curve: curves.atk },

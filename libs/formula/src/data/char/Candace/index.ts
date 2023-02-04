@@ -1,6 +1,7 @@
+import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
-import { allCustoms, elements, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { allCustoms, percent, register, self, selfBuff, teamBuff } from '../../util'
 import { CharInfo, customDmg, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -77,7 +78,7 @@ export default register(info.name,
 
   selfBuff.premod.hp_.add(c2_hp_),
 
-  elements.filter(ele => ele !== 'physical').map(ele =>
+  allElementKeys.map(ele =>
     teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))),
   teamBuff.reaction.infusionIndex.add(cmpEq(afterBurst, 'on', infusionPrio.team.hydro)),
 

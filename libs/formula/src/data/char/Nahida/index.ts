@@ -1,3 +1,4 @@
+import { CharacterKey } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
 import { activeCharBuff, allCustoms, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
 import { CharInfo, customDmg, dmg, entriesForChar } from '../util'
@@ -72,7 +73,7 @@ const dm = {
   }
 } as const
 
-const info: CharInfo = { name: 'Nahida', ele: 'dendro', weaponType: 'catalyst', region: 'sumeru' }
+const info: CharInfo = { name: data_gen.name as CharacterKey, ele: data_gen.ele, weaponType: 'catalyst', region: 'sumeru' }
 const { final, char: { skill, burst, ascension, constellation } } = self
 // Conditional
 const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allCustoms(info.name)

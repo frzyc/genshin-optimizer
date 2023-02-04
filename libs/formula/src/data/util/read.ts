@@ -1,5 +1,6 @@
+import { allAmplifyingReactionKeys, allCatalyzeReactionKeys, allElementWithPhyKeys, allMoveKeys, allRegionKeys, allTransformativeReactionKeys } from '@genshin-optimizer/consts'
 import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
-import { amplifyingReactions, catalyzeReactions, elements, entryTypes, members, moves, preps, presets, regions, srcs, transformativeReactions } from './listing'
+import { entryTypes, members, preps, presets, srcs } from './listing'
 
 export const fixedTags = {
   preset: presets,
@@ -7,8 +8,8 @@ export const fixedTags = {
   nameSrc: srcs, prep: preps,
   et: entryTypes, src: srcs,
 
-  region: regions, ele: elements, move: moves,
-  trans: transformativeReactions, amp: amplifyingReactions, cata: catalyzeReactions,
+  region: allRegionKeys, ele: allElementWithPhyKeys, move: allMoveKeys,
+  trans: allTransformativeReactionKeys, amp: [...allAmplifyingReactionKeys, ""], cata: [...allCatalyzeReactionKeys, ""],
 } as const
 export type Tag = {
   [key in keyof typeof fixedTags]?: typeof fixedTags[key][number] | null

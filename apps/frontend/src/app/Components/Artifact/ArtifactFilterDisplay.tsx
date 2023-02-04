@@ -1,4 +1,4 @@
-import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -27,7 +27,7 @@ const exclusionValues = ["excluded", "included"] as const
 const lockedValues = ["locked", "unlocked"] as const
 
 const rarityHandler = handleMultiSelect([...allArtifactRarities])
-const slotHandler = handleMultiSelect([...allSlotKeys])
+const slotHandler = handleMultiSelect([...allArtifactSlotKeys])
 const exclusionHandler = handleMultiSelect([...exclusionValues])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
@@ -52,7 +52,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     if (filteredIds.includes(id)) ct[rarity].current++
   })), [database, filteredIds])
 
-  const slotTotal = useMemo(() => catTotal(allSlotKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+  const slotTotal = useMemo(() => catTotal(allArtifactSlotKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
     const sk = art.slotKey
     ct[sk].total++
     if (filteredIds.includes(id)) ct[sk].current++
@@ -96,7 +96,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     return `${current}/${total}`
   }, [database, filteredIds])
 
-  const artSetTotal = useMemo(() => catTotal(allArtifactSets, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
+  const artSetTotal = useMemo(() => catTotal(allArtifactSetKeys, ct => Object.entries(database.arts.data).forEach(([id, art]) => {
     const sk = art.setKey
     ct[sk].total++
     if (filteredIds.includes(id)) ct[sk].current++
@@ -134,7 +134,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       </SolidToggleButtonGroup>
       {/* Artifact Slot */}
       <SolidToggleButtonGroup fullWidth value={slotKeys} size="small" disabled={disableSlotFilter}>
-        {allSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
+        {allArtifactSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
       <Box display="flex" gap={1} flexWrap="wrap">

@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ElementKeyWithPhy } from "@genshin-optimizer/consts";
+import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
 import { Info } from "../Formula/type";
 import { iconInlineProps } from "../SVGIcons";
 import { MainStatKey, SubstatKey } from "../Types/artifact";
@@ -78,20 +78,20 @@ export type BaseKeys = keyof typeof statMap
 
 /* Elemental extension keys */
 
-export type EleDmgKey = `${ElementKeyWithPhy}_dmg_`
-export const allEleDmgKeys = allElementsWithPhy.map(e => `${e}_dmg_`) as EleDmgKey[]
+export type EleDmgKey = `${ElementWithPhyKey}_dmg_`
+export const allEleDmgKeys = allElementWithPhyKeys.map(e => `${e}_dmg_`) as EleDmgKey[]
 
-export type EleResKey = `${ElementKeyWithPhy}_res_`
-export const allEleResKeys = allElementsWithPhy.map(e => `${e}_res_`) as EleResKey[]
+export type EleResKey = `${ElementWithPhyKey}_res_`
+export const allEleResKeys = allElementWithPhyKeys.map(e => `${e}_res_`) as EleResKey[]
 
-export type EleDmgIncKey = `${ElementKeyWithPhy}_dmgInc`
-export const allEleDmgIncKeys = allElementsWithPhy.map(ele => `${ele}_dmgInc` as const) as EleDmgIncKey[]
+export type EleDmgIncKey = `${ElementWithPhyKey}_dmgInc`
+export const allEleDmgIncKeys = allElementWithPhyKeys.map(ele => `${ele}_dmgInc` as const) as EleDmgIncKey[]
 
-export type EleEnemyResKey = `${ElementKeyWithPhy}_enemyRes_`
-export const allEleEnemyResKeys = allElementsWithPhy.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
+export type EleEnemyResKey = `${ElementWithPhyKey}_enemyRes_`
+export const allEleEnemyResKeys = allElementWithPhyKeys.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
 
-export type EleECritDmgKey = `${ElementKeyWithPhy}_critDMG_`
-export const allEleECritDmgKeys = allElementsWithPhy.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
+export type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
+export const allEleECritDmgKeys = allElementWithPhyKeys.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
 
 Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_dmg_`] = `${name} DMG Bonus`
@@ -201,7 +201,7 @@ export default class KeyMap {
   static get(key = "") {
     return KeyMap.getStr(key) ?? key
   }
-  static getVariant(key = ""): ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
+  static getVariant(key = ""): ElementWithPhyKey | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
     const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
     if (trans) return trans
     const amp = Object.keys(amplifyingReactions).find(e => key.startsWith(e))
@@ -209,7 +209,7 @@ export default class KeyMap {
     const add = Object.keys(additiveReactions).find(e => key.startsWith(e))
     if (add) return add
     if (key.includes("heal")) return "heal"
-    return allElementsWithPhy.find(e => key.startsWith(e))
+    return allElementWithPhyKeys.find(e => key.startsWith(e))
   }
   static unit(key = ""): Unit {
     if (key.endsWith("_")) return "%"

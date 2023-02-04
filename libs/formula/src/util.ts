@@ -1,5 +1,6 @@
+import { ArtifactSetKey, CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq } from '@genshin-optimizer/waverider'
-import { allCustoms, Artifact, Character, convert, Data, Member, Preset, reader, selfBuff, selfTag, Stat, Weapon } from './data/util'
+import { allCustoms, convert, Data, Member, Preset, reader, selfBuff, selfTag, Stat } from './data/util'
 
 export function withPreset(preset: Preset, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
@@ -9,7 +10,7 @@ export function withMember(member: Member, ...data: Data): Data {
 }
 
 export function charData(data: {
-  name: Character, lvl: number, ascension: number, constellation: number
+  name: CharacterKey, lvl: number, ascension: number, constellation: number
   custom: Record<string, number | string>
 }): Data {
   const { lvl, ascension, constellation } = selfBuff.char, custom = allCustoms(data.name)
@@ -26,7 +27,7 @@ export function charData(data: {
 }
 
 export function weaponData(data: {
-  name: Weapon, lvl: number, ascension: number, refinement: number
+  name: WeaponKey, lvl: number, ascension: number, refinement: number
   custom: Record<string, number | string>
 }): Data {
   const { lvl, ascension, refinement } = selfBuff.weapon, custom = allCustoms(data.name)
@@ -42,10 +43,10 @@ export function weaponData(data: {
 }
 
 export function artifactsData(data: {
-  set: Artifact, stats: { key: Stat, value: number }[]
-}[], custom: Record<Artifact, Record<string, number | string>>): Data {
+  set: ArtifactSetKey, stats: { key: Stat, value: number }[]
+}[], custom: Record<ArtifactSetKey, Record<string, number | string>>): Data {
   const { common: { count }, premod } = convert(selfTag, { src: 'art', et: 'self' })
-  const sets: Partial<Record<Artifact, number>> = {}, stats: Partial<Record<Stat, number>> = {}
+  const sets: Partial<Record<ArtifactSetKey, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set, stats: stat } of data) {
     if (!(set in sets)) sets[set] = 1
     else sets[set]! += 1
@@ -57,10 +58,10 @@ export function artifactsData(data: {
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
     reader.withTag({ src: 'agg', et: 'self' }).reread(reader.withTag({ src: 'art' })),
 
-    ...Object.entries(sets).map(([k, v]) => count.with('src', k as Artifact).add(v)),
+    ...Object.entries(sets).map(([k, v]) => count.with('src', k as ArtifactSetKey).add(v)),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
     ...Object.entries(custom).flatMap(([art, v]) => {
-      const custom = allCustoms(art as Artifact)
+      const custom = allCustoms(art as ArtifactSetKey)
       return Object.entries(v).map(([k, v]) =>
         custom[k].add(v))
     })

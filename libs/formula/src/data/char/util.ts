@@ -1,10 +1,11 @@
+import { CharacterKey, ElementWithPhyKey, MoveKey, RegionKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum, tag } from '@genshin-optimizer/waverider'
-import { allCustoms, Character, convert, Data, Element, elements, Move, moves, percent, reader, Region, self, selfBuff, selfTag, Stat, usedNames, WeaponType } from '../util'
+import { allCustoms, convert, Data, percent, reader, self, selfBuff, selfTag, Stat, usedNames } from '../util'
 
 export interface CharInfo {
-  name: Character, weaponType: WeaponType, ele: Element, region: Region
+  name: CharacterKey, weaponType: WeaponTypeKey, ele: ElementWithPhyKey, region: RegionKey
 }
-export function dmg(name: string, info: CharInfo, stat: Stat, levelScaling: number[], move: Exclude<typeof moves[number], 'elemental'>, extra: { ele?: Element } = {}, specialMultiplier?: NumNode): Data {
+export function dmg(name: string, info: CharInfo, stat: Stat, levelScaling: number[], move: Exclude<MoveKey, 'elemental'>, extra: { ele?: ElementWithPhyKey } = {}, specialMultiplier?: NumNode): Data {
   const { char: { auto, skill, burst }, final } = self
   const talentByMove = { normal: auto, charged: auto, plunging: auto, skill, burst } as const
   const talentMulti = percent(subscript(talentByMove[move], levelScaling))
@@ -12,7 +13,7 @@ export function dmg(name: string, info: CharInfo, stat: Stat, levelScaling: numb
   return customDmg(name, info, move, base, extra)
 }
 
-export function shield(name: string, info: CharInfo, stat: Stat, tlvlMulti: number[], flat: number[], move: Exclude<Move, 'elemental'>, extra: { ele?: Element } = {}): Data {
+export function shield(name: string, info: CharInfo, stat: Stat, tlvlMulti: number[], flat: number[], move: Exclude<MoveKey, 'elemental'>, extra: { ele?: ElementWithPhyKey } = {}): Data {
   const lvl = self.char[talentType(move)]
   return customShield(name, info,
     sum(
@@ -20,11 +21,11 @@ export function shield(name: string, info: CharInfo, stat: Stat, tlvlMulti: numb
       subscript(lvl, flat)
     ), extra)
 }
-export function fixedShield(name: string, info: CharInfo, base: Stat, percent: number | NumNode, flat: number | NumNode, extra: { ele?: Element } = {}): Data {
+export function fixedShield(name: string, info: CharInfo, base: Stat, percent: number | NumNode, flat: number | NumNode, extra: { ele?: ElementWithPhyKey } = {}): Data {
   return customShield(name, info, sum(prod(percent, self.final[base]), flat), extra)
 }
 
-export function customDmg(name: string, info: CharInfo, move: typeof moves[number], base: NumNode, extra: { ele?: Element } = {}): Data {
+export function customDmg(name: string, info: CharInfo, move: MoveKey, base: NumNode, extra: { ele?: ElementWithPhyKey } = {}): Data {
   usedNames.add(name)
 
   let { ele } = extra
@@ -46,7 +47,7 @@ export function customDmg(name: string, info: CharInfo, move: typeof moves[numbe
   ]
 }
 
-export function customShield(name: string, info: CharInfo, base: NumNode, extra: { ele?: Element } = {}): Data {
+export function customShield(name: string, info: CharInfo, base: NumNode, extra: { ele?: ElementWithPhyKey } = {}): Data {
   usedNames.add(name)
 
   const ele = extra.ele
@@ -80,7 +81,7 @@ export function entriesForChar(
     ascensionBonus: { key: string, values: number[] }[],
   }
 ): RawTagMapEntries<AnyNode> {
-  const specials = new Set(Object.keys(lvlCurves) as Stat[])
+  const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
   specials.delete('atk')
   specials.delete('def')
   specials.delete('hp')
@@ -89,9 +90,9 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as any as Stat].add(prod(base, allCustoms('static')[curve]))),
+      selfBuff.base[key as Stat].add(prod(base, allCustoms('static')[curve]))),
     ...ascensionBonus.map(({ key, values }) =>
-      selfBuff.base[key as any as Stat].add(subscript(ascension, values))),
+      selfBuff.base[key as Stat].add(subscript(ascension, values))),
 
     // Constants
     ...[...specials].map(s => selfBuff.common.special.add(s)),
@@ -104,7 +105,7 @@ export function entriesForChar(
   ]
 }
 
-function talentType(move: Exclude<Move, 'elemental'>): 'auto' | 'skill' | 'burst' {
+function talentType(move: Exclude<MoveKey, 'elemental'>): 'auto' | 'skill' | 'burst' {
   switch (move) {
     case 'normal': case 'charged': case 'plunging': return 'auto'
     default: return move

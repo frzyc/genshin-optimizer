@@ -2,7 +2,7 @@ import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, tally, target } from '../../../../Formula'
 import { equal, infoMut, lookup, naught, prod, subscript, sum, unequal } from "../../../../Formula/utils"
 import KeyMap from '../../../../KeyMap'
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import { IWeaponSheet } from '../../IWeaponSheet'
@@ -16,16 +16,16 @@ const self_eleMasArr = [32, 40, 48, 56, 64]
 const self_eleDmg_arr = [0.10, 0.14, 0.18, 0.22, 0.26]
 const team_eleMasArr = [40, 42, 44, 46, 48]
 
-const numSameElement = lookup(input.charEle, Object.fromEntries(allElements.map(ele => [
+const numSameElement = lookup(input.charEle, Object.fromEntries(allElementKeys.map(ele => [
   ele,
   infoMut(sum(tally[ele], -1), { asConst: true }) // Subtract wielder from count
 ])), naught)
-const partySize = sum(...allElements.map(ele => tally[ele]))
+const partySize = sum(...allElementKeys.map(ele => tally[ele]))
 const self_eleMas = prod(
   numSameElement,
   subscript(input.weapon.refineIndex, self_eleMasArr)
 )
-const self_eleDmg_ = Object.fromEntries(allElements.map(ele => [
+const self_eleDmg_ = Object.fromEntries(allElementKeys.map(ele => [
   `${ele}_dmg_`,
   equal(input.charEle, ele, prod(
     infoMut(sum(partySize, -1, prod(numSameElement, -1)), { asConst: true }),
