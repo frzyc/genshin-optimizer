@@ -30,7 +30,7 @@ export interface FinalizeResult {
   plotData?: PlotData
 }
 
-export abstract class SolverBase<Command_t, Result_t extends { command: string }> {
+export abstract class SolverBase<Command, Result extends { command: string }> {
   protected arts: ArtifactsBySlot
   protected opt: OptNode
   protected constraints: { value: OptNode; min: number }[]
@@ -47,8 +47,7 @@ export abstract class SolverBase<Command_t, Result_t extends { command: string }
   callOnWorkerError?: (e: ErrorEvent) => void
   callOnSuccess?: () => void
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private doCancel: () => void = () => { }
+  private doCancel: () => void = () => { /* default do nothing. Set in constructor. */ }
   private cancelled: Promise<void>
   protected idleWorkers: number[] = []
 
@@ -75,7 +74,6 @@ export abstract class SolverBase<Command_t, Result_t extends { command: string }
     // Common pre-processing steps go here.
     return input
   }
-
 
   // Runs the main optimization process
   async solve() {
@@ -108,7 +106,7 @@ export abstract class SolverBase<Command_t, Result_t extends { command: string }
 
       let finalize: (_: FinalizeResult) => void
       const finalized = new Promise<FinalizeResult>(r => finalize = r)
-      worker.onmessage = async ({ data }: { data: Result_t | SourcedInterimResult | FinalizeResult }) => {
+      worker.onmessage = async ({ data }: { data: Result | SourcedInterimResult | FinalizeResult }) => {
         switch (data.command) {
           case "finalize":
             worker.terminate()
@@ -118,21 +116,21 @@ export abstract class SolverBase<Command_t, Result_t extends { command: string }
             this.handleInterim(data as SourcedInterimResult)
             break
           default:
-            this.ipc(data as Result_t, i)
+            this.ipc(data as Result, i)
         }
         this.afterOnMessage()
       }
       this.workers.push(worker)
-      this.cancelled?.then(() => worker.terminate())
+      this.cancelled.then(() => worker.terminate())
       this.finalizedList.push(finalized)
     }
   }
 
   // Detailed inter-process communication must be handled by implementation.
-  protected abstract ipc(result: Result_t, id: number): void
+  protected abstract ipc(result: Result, id: number): void
   protected abstract afterOnMessage(): void
-  protected broadcast(cmd: Command_t) { this.workers.forEach(worker => worker.postMessage(cmd)) }
-  protected sendToIdle(cmd: Command_t) {
+  protected broadcast(cmd: Command) { this.workers.forEach(worker => worker.postMessage(cmd)) }
+  protected sendToIdle(cmd: Command) {
     const id = this.idleWorkers.pop()
     if (!id) return false
     this.workers[id].postMessage(cmd)

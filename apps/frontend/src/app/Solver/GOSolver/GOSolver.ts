@@ -53,7 +53,7 @@ export class GOSolver extends SolverBase<WorkerCommand, WorkerResult> {
   constructor(input: OptProblemInput) {
     super(input)
 
-    // Initialization for EnumerationSolver.
+    // Initialization for GOSolver.
     const setPerms = filterFeasiblePerm(artSetPerm(this.artSetExcl, Object.values(this.arts.values).flatMap(x => x.map(x => x.set!))), this.arts)
     this.unprunedFilters = setPerms[Symbol.iterator]()
     this.requestFilters = []
@@ -77,7 +77,6 @@ export class GOSolver extends SolverBase<WorkerCommand, WorkerResult> {
       case "count": {
         const [pruned] = result.counts
         this.computeStatus.total = pruned
-        // this.computeStatus.skipped += prepruned - pruned
         break
       }
       default:
