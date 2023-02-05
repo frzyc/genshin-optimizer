@@ -33,6 +33,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+.yarn/install-state.gz
 
 # System Files
 .DS_Store
