@@ -21,6 +21,8 @@ Run `yarn` to install dependencies.
 
 Run `nx serve frontend` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+There is an ongoing NX bug that breaks web workers on the dev server. To test optimization workflows on the dev server, you can adopt [this local fix](https://github.com/nrwl/nx/issues/13628#issuecomment-1407416656)
+
 ## Deployment
 
 Run `yarn run deploy` to build the project, and deploy based on what is specified in `apps/frontend/project.json` within the `deploy` object.
