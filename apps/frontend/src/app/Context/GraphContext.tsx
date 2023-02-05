@@ -1,6 +1,6 @@
 import { createContext } from "react"
 import { NumNode } from "../Formula/type"
-import { Build } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import { Build } from "../Solver/common"
 
 export type ChartData = {
   valueNode: NumNode,

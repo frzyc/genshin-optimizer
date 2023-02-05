@@ -1,10 +1,10 @@
-import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildSettingData";
-import { forEachNodes, mapFormulas } from "../../../../Formula/internal";
-import { allOperations, constantFold, OptNode } from "../../../../Formula/optimization";
-import { ConstantNode } from "../../../../Formula/type";
-import { constant, customRead, max, min, threshold } from "../../../../Formula/utils";
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts";
-import { assertUnreachable, objectKeyMap, objectMap, range } from "../../../../Util/Util";
+import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData";
+import { forEachNodes, mapFormulas } from "../Formula/internal";
+import { allOperations, constantFold, OptNode } from "../Formula/optimization";
+import { ConstantNode } from "../Formula/type";
+import { constant, customRead, max, min, threshold } from "../Formula/utils";
+import { allSlotKeys, ArtifactSetKey, SlotKey } from "../Types/consts";
+import { assertUnreachable, objectKeyMap, objectMap, range } from "../Util/Util";
 
 type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
 export function pruneAll(nodes: OptNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion, forced: Dict<MicropassOperation, boolean>): { nodes: OptNode[], arts: ArtifactsBySlot } {
