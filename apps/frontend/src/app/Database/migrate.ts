@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { travelerElements } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
@@ -78,14 +79,17 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     if (buildSettings) {
       good.buildSettings = buildSettings.map(b => {
         const statFilters = (b as any).statFilters
-        const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
-          `["basic","${statKey}"]`,
-          [{
-            "value": value,
-            "disabled": false
-          }]
-        ])))
-        return { ...b, statFilters: newStatFilters}
+        const newStatFilters = Object.fromEntries(Object.entries(statFilters)
+          .filter(([, value]) => !Array.isArray(value))
+          .map(([statKey, value]) => ([
+            `["basic","${statKey}"]`,
+            [{
+              "value": value,
+              "disabled": false
+            }]
+          ]))
+        )
+        return { ...b, statFilters: newStatFilters }
       })
     }
   })
@@ -179,13 +183,16 @@ export function migrate(storage: DBStorage) {
       if (key.startsWith("buildSetting_")) {
         const buildSettings = storage.get(key)
         const statFilters = buildSettings.statFilters
-        const newStatFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, value]) => ([
-          `["basic","${statKey}"]`,
-          [{
-            "value": value,
-            "disabled": false
-          }]
-        ])))
+        const newStatFilters = Object.fromEntries(Object.entries(statFilters)
+          .filter(([, value]) => !Array.isArray(value))
+          .map(([statKey, value]) => ([
+            `["basic","${statKey}"]`,
+            [{
+              "value": value,
+              "disabled": false
+            }]
+          ]))
+        )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
       }
     }
