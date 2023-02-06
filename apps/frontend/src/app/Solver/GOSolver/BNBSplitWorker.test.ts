@@ -1,7 +1,7 @@
-import { allOperations } from "../../../../Formula/optimization"
-import { constant, customRead, frac, max, min, prod, res, sum, threshold } from "../../../../Formula/utils"
+import { allOperations } from "../../Formula/optimization"
+import { constant, customRead, frac, max, min, prod, res, sum, threshold } from "../../Formula/utils"
 import { Linear, linearUpperBound } from "./BNBSplitWorker"
-import { ArtifactsBySlot, DynStat } from "./common"
+import { ArtifactsBySlot, DynStat } from "../common"
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce((accu, [k, v]) => accu + v * (value[k] ?? 0), linear.$c)

@@ -6,7 +6,7 @@ import { Data, NumNode } from "../../../../Formula/type";
 import { constant, setReadNodeKeys } from "../../../../Formula/utils";
 import { allMainStatKeys, allSubstatKeys, ICachedArtifact } from "../../../../Types/artifact";
 import { deepClone, objectKeyMap, objectMap } from "../../../../Util/Util";
-import type { ArtifactBuildData, ArtifactsBySlot, DynStat } from "./common";
+import type { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../../../../Solver/common";
 
 const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
 export const dynamicData = {
