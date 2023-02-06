@@ -217,7 +217,7 @@ export default function TabBuild() {
         // Using a ref because a user can cancel the notification while the build is going.
         if (results && notificationRef.current) {
           audio.play()
-          if (!tabFocused.current) window.alert(t`buildCompleted`)
+          if (!tabFocused.current) setTimeout(() => window.alert(t`buildCompleted`), 1)
         }
       }, 100)
     })
