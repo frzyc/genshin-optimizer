@@ -1,5 +1,5 @@
+import type { Interim, Setup } from '..';
 import { optimize, OptNode, precompute } from '../../Formula/optimization';
-import type { InterimResult, Setup } from './BackgroundWorker';
 import { ArtifactBuildData, ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from '../common';
 
 export class ComputeWorker {
@@ -7,21 +7,21 @@ export class ComputeWorker {
   buildValues: number[] | undefined = undefined
   plotData: PlotData | undefined
   threshold = -Infinity
-  maxBuilds: number
+  topN: number
   min: number[]
 
   arts: ArtifactsBySlot
   nodes: OptNode[]
 
-  callback: (interim: InterimResult) => void
+  callback: (interim: Interim) => void
 
-  constructor({ arts, optimizationTarget, filters, plotBase, maxBuilds }: Setup, callback: (interim: InterimResult) => void) {
+  constructor({ arts, optTarget, constraints, plotBase, topN }: Setup, callback: (interim: Interim) => void) {
     this.arts = arts
-    this.min = filters.map(x => x.min)
-    this.maxBuilds = maxBuilds
+    this.min = constraints.map(x => x.min)
+    this.topN = topN
     this.callback = callback
-    this.nodes = filters.map(x => x.value)
-    this.nodes.push(optimizationTarget)
+    this.nodes = constraints.map(x => x.value)
+    this.nodes.push(optTarget)
     if (plotBase) {
       this.plotData = {}
       this.nodes.push(plotBase)
@@ -29,14 +29,16 @@ export class ComputeWorker {
     this.nodes = optimize(this.nodes, {}, _ => false)
   }
 
-  compute(newThreshold: number, filter: RequestFilter) {
+  setThreshold(newThreshold: number) {
     if (this.threshold > newThreshold) this.threshold = newThreshold
-    const { min, interimReport } = this, self = this // `this` in nested functions means different things
+  }
+  compute(filter: RequestFilter) {
+    const { min } = this, self = this // `this` in nested functions means different things
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts), oldMaxBuildCount = this.builds.length
 
     let nodes = this.nodes;
-    ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.maxBuilds, {}, {
+    ({ nodes, arts: preArts } = pruneAll(nodes, min, preArts, this.topN, {}, {
       pruneArtRange: true, pruneNodeRange: true,
     }))
     const arts = Object.values(preArts.values).sort((a, b) => a.length - b.length)
@@ -74,30 +76,30 @@ export class ComputeWorker {
       if (i === 0) {
         count.tested += arts[0].length
         if (count.tested > 1 << 16)
-          interimReport(count)
+          self.interimReport(count)
       }
     }
 
     permute(arts.length - 1)
-    interimReport(count, this.builds.length > oldMaxBuildCount)
+    this.interimReport(count, this.builds.length > oldMaxBuildCount)
   }
 
   refresh(force: boolean): void {
-    const { maxBuilds } = this
+    const { topN } = this
     if (Object.keys(this.plotData ?? {}).length >= 100000)
       this.plotData = mergePlot([this.plotData!])
 
     if (this.builds.length >= 1000 || force) {
       this.builds = this.builds
         .sort((a, b) => b.value - a.value)
-        .slice(0, maxBuilds)
+        .slice(0, topN)
       this.buildValues = this.builds.map(x => x.value)
-      this.threshold = Math.max(this.threshold, this.buildValues[maxBuilds - 1] ?? -Infinity)
+      this.threshold = Math.max(this.threshold, this.buildValues[topN - 1] ?? -Infinity)
     }
   }
-  interimReport = (count: { tested: number, failed: number, skipped: number }, forced = false) => {
+  interimReport(count: { tested: number, failed: number, skipped: number }, forced = false) {
     this.refresh(forced)
-    this.callback({ command: "interim", buildValues: this.buildValues, ...count })
+    this.callback({ resultType: "interim", buildValues: this.buildValues, ...count })
     this.buildValues = undefined
     count.tested = 0
     count.failed = 0

@@ -1,49 +1,59 @@
 import { allSlotKeys } from '@genshin-optimizer/consts';
-import type { InterimResult, Setup, SplitWorker } from './BackgroundWorker';
+import { Interim, Setup } from '..';
+import { assertUnreachable } from '../../Util/Util';
 import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from '../common';
+import type { SplitWorker } from './BackgroundWorker';
 
 export class DefaultSplitWorker implements SplitWorker {
   arts: ArtifactsBySlot
-  filters: RequestFilter[] = []
+  stack: { filter: RequestFilter, count: number, splittedBy: 'id' | 'set' }[] = []
 
-  constructor({ arts }: Setup, _callback: (interim: InterimResult) => void) {
+  constructor({ arts }: Setup, _callback: (interim: Interim) => void) {
     this.arts = arts
   }
-  addFilter(filter: RequestFilter) {
-    this.filters.push(filter)
+
+  setThreshold(_newThreshold: number): void { }
+  add(filter: RequestFilter, splittedBy: typeof this.stack[number]['splittedBy']) {
+    this.stack.push({ filter, count: countBuilds(filterArts(this.arts, filter)), splittedBy })
   }
-  split(_newThreshold: number, minCount: number) {
-    while (this.filters.length) {
-      const filter = this.filters.pop()!, count = countBuilds(filterArts(this.arts, filter))
-      if (count <= minCount) return filter
-      splitBySetOrID(this.arts, filter, minCount).forEach(filter => this.addFilter(filter))
+  *split(filter: RequestFilter, minCount: number): Generator<RequestFilter> {
+    this.add(filter, 'set')
+    for (let current = this.stack.pop(); current; current = this.stack.pop()) {
+      const { filter, count, splittedBy } = current
+      if (count <= minCount) {
+        yield filter
+        continue
+      }
+
+      switch (splittedBy) {
+        case 'set': this.splitBySet(filter); break
+        case 'id': this.splitByID(filter, count, minCount); break
+        default: assertUnreachable(splittedBy)
+      }
     }
   }
-}
 
-function splitBySetOrID(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): RequestFilter[] {
-  const arts = filterArts(_arts, filter)
+  splitBySet(filter: RequestFilter): void {
+    const arts = filterArts(this.arts, filter), candidates = allSlotKeys
+      .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
+      .filter(({ sets }) => sets.size > 1)
 
-  const candidates = allSlotKeys
-    .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
-    .filter(({ sets }) => sets.size > 1)
-  if (!candidates.length)
-    return splitByID(arts, filter, limit)
-  const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
-  return [...sets].map(set => ({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }))
-}
-function splitByID(_arts: ArtifactsBySlot, filter: RequestFilter, limit: number): RequestFilter[] {
-  const arts = filterArts(_arts, filter)
-  const count = countBuilds(arts)
+    if (candidates.length) {
+      const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
+      sets.forEach(set => this.add({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }, 'set'))
+    } else
+      return this.add(filter, 'id')
+  }
+  splitByID(filter: RequestFilter, count: number, minCount: number): void {
+    const arts = filterArts(this.arts, filter), candidates = allSlotKeys
+      .map(slot => ({ slot, length: arts.values[slot].length }))
+      .filter(x => x.length > 1)
+    const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
 
-  const candidates = allSlotKeys
-    .map(slot => ({ slot, length: arts.values[slot].length }))
-    .filter(x => x.length > 1)
-  const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
-
-  const numChunks = Math.ceil(count / limit)
-  const boundedNumChunks = Math.min(numChunks, length)
-  const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
-  arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
-  return chunk.map(ids => ({ ...filter, [slot]: { kind: "id", ids } }))
+    const numChunks = Math.ceil(count / minCount)
+    const boundedNumChunks = Math.min(numChunks, length)
+    const chunk = Array(boundedNumChunks).fill(0).map(_ => new Set<string>())
+    arts.values[slot].forEach(({ id }, i) => chunk[i % boundedNumChunks].add(id))
+    chunk.forEach(ids => this.add({ ...filter, [slot]: { kind: "id", ids } }, 'id'))
+  }
 }

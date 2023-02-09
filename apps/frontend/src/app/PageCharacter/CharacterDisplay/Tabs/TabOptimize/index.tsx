@@ -1,4 +1,6 @@
 import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -28,10 +30,12 @@ import useDBMeta from '../../../../ReactHooks/useDBMeta';
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp';
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
+import { OptProblemInput } from '../../../../Solver';
+import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
+import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
 import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
 import { objPathValue, range } from '../../../../Util/Util';
 import { maxBuildsToShowList } from './Build';
-import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -47,10 +51,6 @@ import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
-import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import { OptProblemInput, SolverBase } from '../../../../Solver/SolverBase';
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
 
 const audio = new Audio("notification.mp3")
 export default function TabBuild() {
@@ -198,42 +198,25 @@ export default function TabBuild() {
     const plotBaseNode = plotBaseNumNode ? nodes.pop() : undefined
     const optimizationTargetNode = nodes.pop()!
 
-    const baseProblem: OptProblemInput = {
+    const problem: OptProblemInput = {
       arts: split, optimizationTarget: optimizationTargetNode,
-      artSet: artSetExclusion, constraints: nodes.map((value, i) => ({ value, min: minimum[i] })),
+      exclusion: artSetExclusion, constraints: nodes.map((value, i) => ({ value, min: minimum[i] })),
 
-      topN: maxBuildsToShow, plotBase: plotBaseNode, numWorkers: maxWorkers
+      topN: maxBuildsToShow, plotBase: plotBaseNode
     }
-    const solver: SolverBase<unknown, { command: string }> = new GOSolver(baseProblem)
-    cancelled.then(() => solver.cancel())
-    solver.onWorkerError(e => {
-      console.log('Failed to load worker')
-      console.log(e)
-      setWorkerErr(true)
-      cancelToken.current()
-    })
-    solver.onSuccess(() => {
-      setTimeout(() => {
-        // Using a ref because a user can cancel the notification while the build is going.
-        if (results && notificationRef.current) {
-          audio.play()
-          if (!tabFocused.current) setTimeout(() => window.alert(t`buildCompleted`), 1)
-        }
-      }, 100)
-    })
-    const buildTimer = setInterval(() => setBuildStatus({ type: "active", ...solver.computeStatus }), 100)
+    const status: Omit<BuildStatus, 'type'> = { tested: 0, failed: 0, skipped: 0, total: 0, startTime: performance.now() }
+    const statusUpdateTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
 
-    const results = await solver.solve()
+    const cancellationError = new Error()
+    try {
+      const solver = new GOSolver(problem, status, maxWorkers)
+      cancelled.then(() => solver.cancel(cancellationError))
 
-    clearInterval(buildTimer)
-    cancelToken.current = () => { }
+      const results = await solver.solve()
+      solver.cancel() // Done using `solver`
 
-    if (!results) {
-      solver.computeStatus.tested = 0
-      solver.computeStatus.failed = 0
-      solver.computeStatus.skipped = 0
-      solver.computeStatus.total = 0
-    } else {
+      cancelToken.current = () => { }
+
       if (plotBaseNumNode) {
         const plotData = mergePlot(results.map(x => x.plotData!))
         let data = Object.values(plotData)
@@ -249,9 +232,33 @@ export default function TabBuild() {
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
       if (process.env.NODE_ENV === "development") console.log("Build Result", builds)
+
       buildResultDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+
+      setTimeout(() => {
+        // Using a ref because a user can cancel the notification while the build is going.
+        if (results && notificationRef.current) {
+          audio.play()
+          if (!tabFocused.current) setTimeout(() => window.alert(t`buildCompleted`), 1)
+        }
+      }, 100)
+    } catch (e) {
+      // Worker error, cancelled, printer catches on fire, etc.
+      if (e !== cancellationError) {
+        console.log('Failed to load worker')
+        console.log(e)
+        setWorkerErr(true)
+      }
+
+      cancelToken.current()
+      status.tested = 0
+      status.failed = 0
+      status.skipped = 0
+      status.total = 0
+    } finally {
+      clearInterval(statusUpdateTimer)
+      setBuildStatus({ type: "inactive", ...status, finishTime: performance.now() })
     }
-    setBuildStatus({ ...solver.computeStatus, type: "inactive", finishTime: performance.now() })
   }, [t, characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notificationRef, setChartData, gender])
 
   const characterName = characterSheet?.name ?? "Character Name"
