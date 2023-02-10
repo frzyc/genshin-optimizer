@@ -1,6 +1,6 @@
 export class WorkerCoordinator<Command extends { command: string, resultType?: never }, Response extends { command?: never, resultType: string }> {
   prio: Map<Command['command'], number>
-  commands: Command[][]
+  commands: FIFO<Command>[]
   workers: Promise<Worker>[]
   workDone: Map<Worker, () => void> = new Map()
   _workers: Worker[]
@@ -11,7 +11,7 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
   notifyNonEmpty: (() => void) | undefined
 
   constructor(workers: Worker[], prio: Command['command'][], callback: (_: Response, w: Worker) => void) {
-    this.commands = prio.map(_ => [])
+    this.commands = prio.map(_ => new FIFO())
     this.prio = new Map(prio.map((p, i) => [p, i]))
     this.callback = callback
 
@@ -41,7 +41,7 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
     })()
 
     while (true) {
-      const command = this.commands.find(x => x.length)?.pop()
+      const command = this.commands.find(x => x.length)?.dequeue()
       if (command === undefined) {
         const hasCommand = await Promise.race([
           new Promise<boolean>(res => this.notifyNonEmpty = () => res(true)),
@@ -71,7 +71,7 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
   /** May be ignored after `execute` ends */
   add(command: Command) {
     const prio = this.prio.get(command.command)!
-    this.commands[prio].push(command)
+    this.commands[prio].enqueue(command)
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
@@ -85,5 +85,19 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
         this.workDone.set(w, () => res(w))
       })))
     this._workers.forEach(w => w.postMessage(command))
+  }
+}
+
+// Simple two-stack FIFO implementation
+class FIFO<T> {
+  head: T[] = []
+  tail: T[] = []
+
+  get length(): number { return this.head.length + this.tail.length }
+  enqueue(t: T): void { this.tail.push(t) }
+  dequeue(): T | undefined {
+    if (!this.head.length && this.tail.length)
+      [this.head, this.tail] = [this.tail.reverse(), this.head]
+    return this.head.pop()
   }
 }

@@ -34,21 +34,24 @@ export class DefaultSplitWorker implements SplitWorker {
   }
 
   splitBySet(filter: RequestFilter): void {
-    const arts = filterArts(this.arts, filter), candidates = allSlotKeys
+    const arts = filterArts(this.arts, filter)
+    const candidates = allSlotKeys
       .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
       .filter(({ sets }) => sets.size > 1)
 
-    if (candidates.length) {
-      const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
-      sets.forEach(set => this.add({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }, 'set'))
-    } else
+    if (!candidates.length)
       return this.add(filter, 'id')
+
+    const { sets, slot } = candidates.reduce((a, b) => a.sets.size < b.sets.size ? a : b)
+    sets.forEach(set => this.add({ ...filter, [slot]: { kind: "required", sets: new Set([set]) } }, 'set'))
   }
   splitByID(filter: RequestFilter, count: number, minCount: number): void {
-    const arts = filterArts(this.arts, filter), candidates = allSlotKeys
+    const arts = filterArts(this.arts, filter)
+    const { slot, length } = allSlotKeys
       .map(slot => ({ slot, length: arts.values[slot].length }))
       .filter(x => x.length > 1)
-    const { slot, length } = candidates.reduce((a, b) => a.length < b.length ? a : b)
+      // We always have entries because `count > 1`
+      .reduce((a, b) => a.length < b.length ? a : b)
 
     const numChunks = Math.ceil(count / minCount)
     const boundedNumChunks = Math.min(numChunks, length)
