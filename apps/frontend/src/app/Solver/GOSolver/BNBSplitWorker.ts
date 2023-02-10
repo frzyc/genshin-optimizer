@@ -1,11 +1,12 @@
+import { Interim, Setup } from "..";
 import { customMapFormula, forEachNodes } from "../../Formula/internal";
 import { allOperations, OptNode } from "../../Formula/optimization";
 import { ConstantNode } from "../../Formula/type";
 import { prod, threshold } from "../../Formula/utils";
 import { SlotKey } from "../../Types/consts";
 import { assertUnreachable, objectKeyValueMap, objectMap } from "../../Util/Util";
-import type { InterimResult, Setup, SplitWorker } from "./BackgroundWorker";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "../common";
+import type { SplitWorker } from "./BackgroundWorker";
 
 type Approximation = {
   base: number,
@@ -30,7 +31,7 @@ export class BNBSplitWorker implements SplitWorker {
   min: number[]
   nodes: OptNode[]
   arts: ArtifactsBySlot
-  maxBuilds: number
+  topN: number
 
   /**
    * Filters are not neccessarily in a valid state, i.e., "calculated".
@@ -38,17 +39,17 @@ export class BNBSplitWorker implements SplitWorker {
    * overhead doesn't lead to lag.
    */
   filters: Filter[] = []
-  interim: InterimResult | undefined
+  interim: Interim | undefined
   firstUncalculated = 0
 
-  callback: (interim: InterimResult) => void
+  callback: (interim: Interim) => void
 
-  constructor({ arts, optimizationTarget, filters, maxBuilds }: Setup, callback: (interim: InterimResult) => void) {
+  constructor({ arts, optTarget, constraints, topN }: Setup, callback: (interim: Interim) => void) {
     this.arts = arts
-    this.min = [-Infinity, ...filters.map(x => x.min)]
-    this.nodes = [optimizationTarget, ...filters.map(x => x.value)]
+    this.min = [-Infinity, ...constraints.map(x => x.min)]
+    this.nodes = [optTarget, ...constraints.map(x => x.value)]
     this.callback = callback
-    this.maxBuilds = maxBuilds
+    this.topN = topN
 
     // make sure we can approximate it
     linearUpperBound(this.nodes, arts)
@@ -59,29 +60,32 @@ export class BNBSplitWorker implements SplitWorker {
     if (count)
       this.filters.push({ nodes: this.nodes, arts, maxConts: [], approxs: [], age: 0, count })
   }
-  split(newThreshold: number, minCount: number): RequestFilter | undefined {
+  setThreshold(newThreshold: number): void {
     if (newThreshold > this.min[0]) {
       this.min[0] = newThreshold
       // All calculations become stale
       this.firstUncalculated = 0
       this.filters.forEach(filter => delete filter.calculated)
     }
-    if (this.firstUncalculated < this.filters.length)
-      this.calculateFilter(this.firstUncalculated++) // Amortize the filter calculation to 1-per-split
+  }
+  *split(filter: RequestFilter, minCount: number): Generator<RequestFilter> {
+    this.addFilter(filter)
 
     while (this.filters.length) {
       const filter = this.getApproxFilter(), { arts, count } = filter
-      this.reportInterim(false)
-      if (!count) continue
 
       if (count <= minCount) {
-        this.reportInterim(true)
-        return objectMap(arts.values, arts => ({ kind: "id" as const, ids: new Set(arts.map(art => art.id)) }))
-      }
-      this.splitOldFilter(filter)
+        if (!count) continue
+        if (this.firstUncalculated < this.filters.length)
+          this.calculateFilter(this.firstUncalculated++) // Amortize the filter calculation to 1-per-split
+
+        this.reportInterim(false)
+        yield objectMap(arts.values, arts => ({ kind: "id" as const, ids: new Set(arts.map(art => art.id)) }))
+      } else
+        this.splitOldFilter(filter)
     }
+
     this.reportInterim(true)
-    return undefined
   }
 
   reportInterim(forced = false) {
@@ -150,7 +154,7 @@ export class BNBSplitWorker implements SplitWorker {
     if (age < 3 || age % 5 === 2) { // Make sure the condition includes initial filter `age === 0`
       // Either the filter is so early that we can get a good cutoff, or the problem has
       // gotten small enough that the old approximation becomes inaccurate
-      ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.maxBuilds, {}, { pruneNodeRange: true }))
+      ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.topN, {}, { pruneNodeRange: true }))
       if (Object.values(arts.values).every(x => x.length)) {
         approxs = approximation(nodes, arts)
         maxConts = approxs.map(approx => objectMap(arts.values, val => maxContribution(val, approx)))
@@ -171,7 +175,7 @@ export class BNBSplitWorker implements SplitWorker {
     const newCount = countBuilds(arts)
     if (newCount !== oldCount)
       if (this.interim) this.interim.skipped += oldCount - newCount
-      else this.interim = { command: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: oldCount - newCount }
+      else this.interim = { resultType: "interim", buildValues: undefined, tested: 0, failed: 0, skipped: oldCount - newCount }
     this.filters[i] = { nodes, arts, maxConts, approxs, age, count: newCount, calculated: true }
   }
 }
