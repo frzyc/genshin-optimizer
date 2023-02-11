@@ -39,19 +39,19 @@ const statMap = {
 
   // Reaction
   transformative_level_multi: "Transformative Reaction Level Multiplier",
-  crystallize_level_multi: "Crystallize Reaction Level Multiplier",
+  crystallize_level_multi_: "Crystallize Reaction Level Multiplier",
   amplificative_dmg_: "Amplificative Reaction DMG Bonus",
   transformative_dmg_: "Transformative Reaction DMG Bonus",
   crystallize_dmg_: "Crystallize Bonus",
   crystallize: `Crystallize`, // for displaying general crystallize
-  base_amplifying_multi: "Base Amplifying Multiplier",
-  base_transformative_multi: "Base Transformative Multiplier",
-  base_crystallize_multi: "Base Crystallize Multiplier",
+  base_amplifying_multi_: "Base Amplifying Multiplier",
+  base_transformative_multi_: "Base Transformative Multiplier",
+  base_crystallize_multi_: "Base Crystallize Multiplier",
 
   // Enemy
   enemyLevel: "Enemy Level",
-  enemyLevel_multi: "Enemy Level RES Multiplier",
-  enemyDef_multi: "Enemy DEF Multiplier",
+  enemyLevel_multi_: "Enemy Level RES Multiplier",
+  enemyDef_multi_: "Enemy DEF Multiplier",
   enemyDefRed_: "Enemy DEF Reduction",
   enemyDefIgn_: "Enemy DEF Ignore",
 
@@ -138,7 +138,7 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, variants }])
     statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
   })
   else statMap[`${reaction}_hit`] = `${name} DMG`
-  statMap[`${reaction}_multi`] = `${name} Multiplier`
+  statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
 
 export type TransformativeReactionsCritRateKey = `${CrittableTransformativeReactionsKey}_critRate_`
@@ -160,7 +160,7 @@ export const allAmplifyingReactionsDmgKey = Object.keys(amplifyingReactions).map
 
 Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
-  statMap[`${reaction}_multi`] = `${name} Multiplier`
+  statMap[`${reaction}_multi_`] = `${name} Multiplier`
 })
 
 export type AdditiveReactionsDmgKey = `${AdditiveReactionsKey}_dmg_`
