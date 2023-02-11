@@ -1,5 +1,11 @@
-import { Add, ContentCopy, ContentPaste, DeleteForever, ExpandLess, ExpandMore, Settings } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, Tooltip, Typography } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import ContentPasteIcon from "@mui/icons-material/ContentPaste";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SettingsIcon from "@mui/icons-material/Settings";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
@@ -71,13 +77,15 @@ function validateCustomTarget(ct: any): CustomTarget | undefined {
   return { weight, path, hitMode, reaction, infusionAura, bonusStats }
 }
 export function validateCustomMultiTarget(cmt: any): CustomMultiTarget | undefined {
-  let { name, targets } = cmt
+  let { name, notes: description, targets } = cmt
   if (typeof name !== "string")
     name = "New Custom Target"
+  if (typeof description !== "string")
+    description = undefined
   if (!Array.isArray(targets))
     return undefined
   targets = targets.map(t => validateCustomTarget(t)).filter(t => t)
-  return { name, targets }
+  return { name, description, targets }
 }
 
 export function CustomMultiTargetButton() {
@@ -143,7 +151,7 @@ export function CustomMultiTargetButton() {
   }, [origUIData, teamData])
 
   return <Suspense fallback={<Skeleton variant="rectangular" height="100%" width={100} />}>
-    <Button color="info" onClick={onShow} startIcon={<Settings />}>{t`multiTarget.title`}</Button>
+    <Button color="info" onClick={onShow} startIcon={<SettingsIcon />}>{t`multiTarget.title`}</Button>
     <DataContext.Provider value={dataContextObj}>
       <ModalWrapper open={show} onClose={onClose} containerProps={{ sx: { overflow: "visible" } }}>
         <CardDark>
@@ -166,7 +174,7 @@ export function CustomMultiTargetButton() {
                 onOrder={setOrder(i)}
                 nTargets={customMultiTarget.length}
               />)}
-              <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<Add />} sx={{ mt: 1 }}>{t`multiTarget.addNewMTarget`}</Button>
+              <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<AddIcon />} sx={{ mt: 1 }}>{t`multiTarget.addNewMTarget`}</Button>
             </Box>
           </CardContent>
         </CardDark>
@@ -177,7 +185,9 @@ export function CustomMultiTargetButton() {
 
 function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup, onOrder, nTargets }:
   { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void, onOrder: (nInd: number) => void, nTargets: number }) {
+  const { t } = useTranslation("page_character")
   const setName = useCallback((e) => setTarget({ ...target, name: e.target.value }), [setTarget, target])
+  const setDescription = useCallback((e) => setTarget({ ...target, description: e.target.value }), [setTarget, target])
   const addTarget = useCallback((t: string[], multi?: number) => {
     const target_ = { ...target }
     target_.targets = [...target_.targets, initCustomTarget(t, multi)]
@@ -215,34 +225,42 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     <AccordionSummary expandIcon={<Button color="info"
       sx={{ pointerEvents: "auto" }}
       onClick={onExpand}>
-      <Settings />
-      {expanded ? <ExpandLess /> : <ExpandMore />}
+      <SettingsIcon />
+      {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
     </Button>}
       component="div"
       sx={{
         pointerEvents: "none",
+        // Prevent rotation of the button, since we have two icons in the button
         '& .MuiAccordionSummary-expandIconWrapper': {
-          transform: "none"
+          transform: "rotate(0)"
+        },
+        '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+          transform: "rotate(0)"
         }
       }}
     >
-      <Box display="flex" gap={1} alignItems="center" flexWrap="wrap"
-        sx={{ pointerEvents: "auto", width: "100%", pr: 1 }}
-      >
-        <Chip sx={{ minWidth: "8em" }} color={target.targets.length ? "success" : undefined} label={`${target.targets.length} Targets`}></Chip>
-        <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
-        <ButtonGroup size="small">
-          <CustomNumberInputButtonGroupWrapper >
-            <CustomNumberInput onChange={n => onOrder(n!)} value={index + 1}
-              inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
-              sx={{ width: "100%", height: "100%", pl: 2 }} />
-          </CustomNumberInputButtonGroupWrapper>
-          <Tooltip title="Duplicate" placement="top" >
-            <Button onClick={onDup} color="info"><ContentCopy /></Button>
-          </Tooltip>
-          <Button color="error" onClick={onDelete} ><DeleteForever /></Button>
-        </ButtonGroup>
-      </Box>
+      <Grid container columns={1} alignItems="center" spacing={1} pr={1}>
+        <Grid item gap={1} display="flex" sx={{ pointerEvents: "auto", width: "100%" }}>
+          <Chip sx={{ minWidth: "8em" }} color={target.targets.length ? "success" : undefined} label={`${target.targets.length} Targets`}></Chip>
+          <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
+          <ButtonGroup size="small">
+            <CustomNumberInputButtonGroupWrapper >
+              <CustomNumberInput onChange={n => onOrder(n!)} value={index + 1}
+                inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
+                sx={{ width: "100%", height: "100%", pl: 2 }} />
+            </CustomNumberInputButtonGroupWrapper>
+            <Tooltip title="Duplicate" placement="top" >
+              <Button onClick={onDup} color="info"><ContentCopyIcon /></Button>
+            </Tooltip>
+            <Button color="error" onClick={onDelete} ><DeleteForeverIcon /></Button>
+          </ButtonGroup>
+        </Grid>
+        <Grid item gap={1} display="flex" sx={{ pointerEvents: "auto", width: "100%", alignItems: "center" }}>
+          {t("multiTarget.description")}
+          <TextField multiline value={target.description} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setDescription} />
+        </Grid>
+      </Grid>
     </AccordionSummary>
     <AccordionDetails>
       <Box mb={1}>
@@ -296,8 +314,8 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
       <CustomNumberInputButtonGroupWrapper>
         <CustomNumberInput value={rank} onChange={setTargetIndex} sx={{ pl: 2 }} inputProps={{ sx: { width: "1em" }, min: 1, max: maxRank }} />
       </CustomNumberInputButtonGroupWrapper>
-      <Button size="small" color="info" onClick={onDup} ><ContentCopy /></Button>
-      <Button size="small" color="error" onClick={deleteCustomTarget} ><DeleteForever /></Button>
+      <Button size="small" color="info" onClick={onDup} ><ContentCopyIcon /></Button>
+      <Button size="small" color="error" onClick={deleteCustomTarget} ><DeleteForeverIcon /></Button>
     </ButtonGroup>
   </CardDark >
 }
@@ -331,7 +349,7 @@ function AddCustomTargetBtn({ setTarget }: { setTarget: (t: string[], m?: number
     }, [onClose, setTarget])
 
   return <>
-    <Button fullWidth onClick={onShow} startIcon={<Add />} sx={{ mb: 1 }}>{t`multiTarget.addNewTarget`}</Button>
+    <Button fullWidth onClick={onShow} startIcon={<AddIcon />} sx={{ mb: 1 }}>{t`multiTarget.addNewTarget`}</Button>
     <TargetSelectorModal showEmptyTargets flatOnly excludeHeal show={show} onClose={onClose} setTarget={setTargetHandler} excludeSections={["basic", "custom"]} />
   </>
 }
@@ -376,7 +394,7 @@ function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarg
         target.selectionStart = 0;
         target.selectionEnd = target.value.length;
       }} onChange={(e) => validate(e.target.value)} />
-      <Button color="info" disabled={!!error} onClick={copyToClipboard}><ContentPaste /></Button>
+      <Button color="info" disabled={!!error} onClick={copyToClipboard}><ContentPasteIcon /></Button>
     </Box>
     {!!error && <ColorText color="error"><Typography>{error}</Typography></ColorText>}
   </Box>

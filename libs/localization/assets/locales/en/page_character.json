@@ -32,7 +32,8 @@
   "multiTarget": {
     "title": "Multi-Optimization Target Config",
     "addNewTarget": "Add New Custom target",
-    "addNewMTarget": "Add New Custom Multi-target"
+    "addNewMTarget": "Add New Custom Multi-target",
+    "description": "Description"
   },
   "addStats": {
     "title": "Enemy Config + Bonus Stats"
