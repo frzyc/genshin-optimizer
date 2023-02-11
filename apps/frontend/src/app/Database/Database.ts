@@ -128,6 +128,11 @@ export class ArtCharDatabase {
   importGOOD(good: IGOOD & IGO, keepNotInImport: boolean, ignoreDups: boolean): ImportResult {
     good = migrateGOOD(good)
     const source = good.source ?? "Unknown"
+    // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
+    if (source !== "Genshin Optimizer") {
+      good.artifacts?.forEach(a => delete (a as unknown as { id?: string }).id)
+      good.weapons?.forEach(a => delete (a as unknown as { id?: string }).id)
+    }
     const result: ImportResult = newImportResult(source, keepNotInImport, ignoreDups);
 
     // Follow updates from char/art/weapon to gather import results

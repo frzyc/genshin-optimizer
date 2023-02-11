@@ -129,7 +129,8 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       upgraded = upgraded.filter(a => idsToRemove.has(a.id))
 
       if (duplicated[0] || upgraded[0]) {
-        const match = duplicated[0] || upgraded[0]
+        // Favor upgrades with the same location, else use 1st dupe
+        const match = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ? upgraded[0] : (duplicated[0] || upgraded[0])
         idsToRemove.delete(match.id)
         if (duplicated[0]) result.weapons.unchanged.push(weapon)
         else if (upgraded[0]) result.weapons.upgraded.push(weapon)
@@ -159,13 +160,13 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       level > candidate.level ||
       ascension > candidate.ascension ||
       refinement > candidate.refinement
-    )
+    ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     // Strictly duplicated weapons
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
       ascension === candidate.ascension &&
       refinement === candidate.refinement
-    )
+    ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     return { duplicated, upgraded }
   }
 }

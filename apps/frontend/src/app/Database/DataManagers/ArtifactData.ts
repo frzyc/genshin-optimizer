@@ -97,7 +97,8 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       duplicated = duplicated.filter(a => idsToRemove.has(a.id))
       upgraded = upgraded.filter(a => idsToRemove.has(a.id))
       if (duplicated[0] || upgraded[0]) {
-        const match = duplicated[0] || upgraded[0]
+        // Favor upgrades with the same location, else use 1st dupe
+        const match = (hasEquipment && art.location && upgraded[0]?.location === art.location) ? upgraded[0] : (duplicated[0] || upgraded[0])
         idsToRemove.delete(match.id)
         if (duplicated[0]) result.artifacts.unchanged.push(art)
         else if (upgraded[0]) result.artifacts.upgraded.push(art)
@@ -142,7 +143,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
             substat.key // Extra roll to new substat
         )
       )
-    )
+    ).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     // Strictly duplicated artifact
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
@@ -151,7 +152,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         candidate.substats.some(candidateSubstat =>
           substat.key === candidateSubstat.key && // Or same slot
           substat.value === candidateSubstat.value
-        )))
+        ))).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     return { duplicated, upgraded }
   }
 }
