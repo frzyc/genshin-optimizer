@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { ICharacterSheet } from '../ICharacterSheet.d'
@@ -61,6 +61,9 @@ const dm = {
     duration1: skillParam_gen.constellation2[0],
     duration2: skillParam_gen.constellation2[1],
     dmg: skillParam_gen.constellation2[2],
+  },
+  constellation4: {
+    durationInc: skillParam_gen.constellation4[0],
   },
   constellation6: {
     pyroDmg: skillParam_gen.constellation6[0],
@@ -200,7 +203,9 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.dmgNado, { name: ct.chg(`burst.skillParams.3`) },)
       }, {
         text: stg("duration"),
-        value: dm.burst.duration,
+        value: (data) => data.get(input.constellation).value >= 4
+          ? `${dm.burst.duration}s + ${dm.burst.duration * dm.constellation4.durationInc}s = ${dm.burst.duration * (1 + dm.constellation4.durationInc)}`
+          : dm.burst.duration,
         unit: "s",
       }, {
         text: stg("cd"),
@@ -210,7 +215,13 @@ const sheet: ICharacterSheet = {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
       }]
-    }, ct.condTem("constellation6", {
+    }, ct.headerTem("constellation4", {
+      fields: [{
+        text: st("durationInc"),
+        value: dm.burst.duration * dm.constellation4.durationInc,
+        unit: "s"
+      }]
+    }), ct.condTem("constellation6", {
       value: condDuringPyronado,
       path: condDuringPyronadoPath,
       name: ct.ch("duringPyronado"),
