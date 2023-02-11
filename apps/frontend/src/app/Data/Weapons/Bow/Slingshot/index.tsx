@@ -38,7 +38,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, st("conditional")),
     name: trm("condName"),
     states: objectKeyMap(condPassiveStates, state => ({
-      name: trm(`${state}`),
+      name: trm(state),
       fields: [{
         node: normal_dmg_
       }, {
