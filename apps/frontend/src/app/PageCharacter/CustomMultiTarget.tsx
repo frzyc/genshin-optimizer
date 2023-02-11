@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
@@ -16,6 +16,7 @@ import ColorText from "../Components/ColoredText";
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
 import DropdownButton from "../Components/DropdownMenu/DropdownButton";
 import { infusionVals } from "../Components/HitModeEditor";
+import InfoTooltip, { InfoTooltipInline } from "../Components/InfoTooltip";
 import ModalWrapper from "../Components/ModalWrapper";
 import StatEditorList from "../Components/StatEditorList";
 import { CharacterContext } from "../Context/CharacterContext";
@@ -156,9 +157,10 @@ export function CustomMultiTargetButton() {
       <ModalWrapper open={show} onClose={onClose} containerProps={{ sx: { overflow: "visible" } }}>
         <CardDark>
           <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <Box display="flex" gap={1} justifyContent={"space-between"}>
+            <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h6">{t`multiTarget.title`}</Typography>
-              <CloseButton onClick={onClose} />
+              <InfoTooltip title={<Trans t={t} i18nKey="multiTarget.info">Note: Community created custom Multi-Optimization Targets can be found within the <a href={process.env.NX_URL_DISCORD_GO} target="_blank" rel="noreferrer" style={{ color: "white" }}>GO Discord</a> or <a href={process.env.NX_URL_DISCORD_KQM} target="_blank" rel="noreferrer" style={{ color: "white" }}>KQM Discord</a>, however the validity of such configurations cannot be guaranteed.\n\nIt is the responsibility of the user to confirm the accuracy for their own use case.</Trans>} />
+              <CloseButton onClick={onClose} sx={{ marginLeft: "auto" }} />
             </Box>
             <Box>
               {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
