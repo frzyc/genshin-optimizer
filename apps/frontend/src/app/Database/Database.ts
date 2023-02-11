@@ -130,6 +130,7 @@ export class ArtCharDatabase {
     const source = good.source ?? "Unknown"
     const result: ImportResult = newImportResult(source, keepNotInImport, ignoreDups);
 
+    // Follow updates from char/art/weapon to gather import results
     const unfollows = [
       this.chars.followAny((key, reason, value) => {
         const arr = result.characters[reason]
@@ -144,7 +145,7 @@ export class ArtCharDatabase {
     this.dataManagers.map(dm => dm.importGOOD(good, result));
     this.dataEntries.map(de => de.importGOOD(good, result))
 
-    unfollows.map(f => f())
+    unfollows.forEach(f => f())
 
     return result
   }

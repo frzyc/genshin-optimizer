@@ -1,8 +1,7 @@
-import { CharacterKey } from "../Types/consts"
+import { CharacterKey } from "@genshin-optimizer/consts"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"
-import { cachedArtifact } from "./DataManagers/ArtifactData"
 import { initialCharacter } from "./DataManagers/CharacterData"
 import { DBLocalStorage, SandboxStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
@@ -150,14 +149,13 @@ describe("Database", () => {
 
   test("Test import with initials", async () => {
     // When adding artifacts with equipment, expect character/weapons to be created
-    const art1 = cachedArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact,
-      art2 = cachedArtifact(await randomizeArtifact(), "circlet").artifact
+    const art1 = randomizeArtifact({ slotKey: "circlet", location: "Albedo" }),
+      art2 = randomizeArtifact({ location: "Amber" })
+    console.log({ art1, art2 })
 
     const amberWeapon = defaultInitialWeapon("bow")
     amberWeapon.location = "Amber"
 
-    art1.location = "Albedo"
-    art2.location = "Amber"
     const good: IGOOD = {
       format: "GOOD",
       version: 1,
@@ -170,20 +168,21 @@ describe("Database", () => {
         amberWeapon
       ]
     }
-    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)!
-    expect(importResult).toBeTruthy()
+    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
+    expect(importResult.characters?.new?.length).toEqual(2)
     expect(importResult.artifacts.invalid.length).toEqual(0)
     expect(importResult.artifacts?.new?.length).toEqual(2)
+    console.log(importResult.weapons.new)
     expect(importResult.weapons?.new?.length).toEqual(2)
-    expect(importResult.characters?.new?.length).toEqual(2)
+
   })
 
   test("Test import with no equip", async () => {
     // When adding artifacts with equipment, expect character/weapons to be created
-    const art1 = cachedArtifact(await randomizeArtifact({ slotKey: "circlet" }), "").artifact
+    const art1 = randomizeArtifact({ slotKey: "circlet", location: "Amber" })
 
     // Implicitly assign location
-    const id = database.arts.new({ ...art1, location: "Amber" })
+    const id = database.arts.new(art1)
 
     expect(database.chars.get("Amber")!.equippedArtifacts.circlet).toEqual(id)
 
@@ -206,21 +205,20 @@ describe("Database", () => {
     const albedo = initialCharacter("Albedo")
     const albedoWeapon = defaultInitialWeapon("sword")
 
-    const art1 = cachedArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate" }), "").artifact
-    art1.location = "Albedo"
+    const art1 = randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate", location: "Albedo" })
 
     database.chars.set(albedo.key, albedo)
     albedoWeapon.id = database.weapons.new(albedoWeapon)
 
-    art1.id = database.arts.new(art1)
-    expect(database.chars.get("Albedo")?.equippedArtifacts.circlet).toEqual(art1.id)
+    const art1id = database.arts.new(art1)
+    expect(database.chars.get("Albedo")?.equippedArtifacts.circlet).toEqual(art1id)
     const good1: IGOOD = {
       format: "GOOD",
       version: 1,
       source: "Scanner",
       artifacts: [
-        cachedArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "Instructor" }), "").artifact,
-        { ...cachedArtifact(await randomizeArtifact({ slotKey: "circlet", setKey: "Adventurer" }), "").artifact, location: "Albedo" }
+        randomizeArtifact({ slotKey: "circlet", setKey: "Instructor" }),
+        randomizeArtifact({ slotKey: "circlet", setKey: "Adventurer", location: "Albedo" })
       ],
       weapons: [
         { ...initialWeapon("Akuoumaru"), location: "Albedo" }
