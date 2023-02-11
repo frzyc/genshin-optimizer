@@ -1,4 +1,4 @@
-import { allSlotKeys } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts';
 import { Interim, Setup } from '..';
 import { assertUnreachable } from '../../Util/Util';
 import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from '../common';
@@ -35,7 +35,7 @@ export class DefaultSplitWorker implements SplitWorker {
 
   splitBySet(filter: RequestFilter): void {
     const arts = filterArts(this.arts, filter)
-    const candidates = allSlotKeys
+    const candidates = allArtifactSlotKeys
       .map(slot => ({ slot, sets: new Set(arts.values[slot].map(x => x.set)) }))
       .filter(({ sets }) => sets.size > 1)
 
@@ -47,7 +47,7 @@ export class DefaultSplitWorker implements SplitWorker {
   }
   splitByID(filter: RequestFilter, count: number, minCount: number): void {
     const arts = filterArts(this.arts, filter)
-    const { slot, length } = allSlotKeys
+    const { slot, length } = allArtifactSlotKeys
       .map(slot => ({ slot, length: arts.values[slot].length }))
       .filter(x => x.length > 1)
       // We always have entries because `count > 1`

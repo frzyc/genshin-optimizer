@@ -1,4 +1,4 @@
-import { allArtifactSets, allWeaponKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allWeaponKeys } from "@genshin-optimizer/consts";
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
 import { Suspense, useContext } from "react";
@@ -192,7 +192,7 @@ function StatKeyPane() {
 }
 function ArtifactSetKeyPane() {
   const { t } = useTranslation("artifactNames_gen")
-  const artSetKeysCode = `type ArtifactSetKey\n  = ${[...new Set(allArtifactSets)].sort().map(k => `"${k}" //${t(`artifactNames_gen:${k}`)}`).join(`\n  | `)}`
+  const artSetKeysCode = `type ArtifactSetKey\n  = ${[...new Set(allArtifactSetKeys)].sort().map(k => `"${k}" //${t(`artifactNames_gen:${k}`)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">ArtifactSetKey</Typography>
     <CardDark>

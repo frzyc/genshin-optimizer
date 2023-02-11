@@ -27,7 +27,7 @@ import StatIcon from '../KeyMap/StatIcon';
 import useArtifact from '../ReactHooks/useArtifact';
 import { iconInlineProps } from '../SVGIcons';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { allElementsWithPhy, Rarity } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, RarityKey } from '@genshin-optimizer/consts';
 import { LocationKey } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import { ArtifactEditorProps } from './ArtifactEditor';
@@ -86,7 +86,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
     <Suspense fallback={<Skeleton variant="text" width={100} />}><Typography variant='h6'>{slotName}</Typography></Suspense>
     <Typography>{slotDesc}</Typography>
   </Box>} />
-  const ele = allElementsWithPhy.find(e => mainStatKey.startsWith(e))
+  const ele = allElementWithPhyKeys.find(e => mainStatKey.startsWith(e))
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     {editorProps && <Suspense fallback={false}>
@@ -188,7 +188,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
     </CardLight >
   </Suspense>
 }
-function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: Rarity }) {
+function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: RarityKey }) {
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? Artifact.substatValue(stat.key) : 0
   const rollData = useMemo(() => stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : [], [stat.key, rarity])

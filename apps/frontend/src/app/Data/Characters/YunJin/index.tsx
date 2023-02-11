@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../Formula'
 import { equal, greaterEq, infoMut, prod, subscript, sum, unequal } from '../../../Formula/utils'
-import { allElements, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -70,7 +70,7 @@ const dm = {
 } as const
 
 const nodeA4 = greaterEq(input.asc, 4,
-  subscript(sum(...allElements.map(ele => greaterEq(tally[ele], 1, 1))), [0, ...dm.passive2.dmgInc], { unit: "%" }))
+  subscript(sum(...allElementKeys.map(ele => greaterEq(tally[ele], 1, 1))), [0, ...dm.passive2.dmgInc], { unit: "%" }))
 
 const [condBurstPath, condBurst] = cond(key, "skill")
 const nodeSkill = equal("on", condBurst, sum(

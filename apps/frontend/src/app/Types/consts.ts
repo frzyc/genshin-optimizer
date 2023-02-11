@@ -1,4 +1,4 @@
-import { allArtifactSets, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
 
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
@@ -115,7 +115,7 @@ export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 /**
  * @deprecated
  */
-export type ArtifactSetKey = typeof allArtifactSets[number]
+export type ArtifactSetKey = typeof allArtifactSetKeys[number]
 /**
  * @deprecated
  */
