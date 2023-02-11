@@ -89,7 +89,7 @@ export class ArtCharDatabase {
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
-    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charMeta] as const
+    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charTCs, this.charMeta] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayWeapon, this.displayArtifact, this.displayOptimize, this.displayCharacter, this.displayTool] as const
