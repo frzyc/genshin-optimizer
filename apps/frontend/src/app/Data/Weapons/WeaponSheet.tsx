@@ -1,4 +1,4 @@
-import { Rarity, WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts';
+import { RarityKey, WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { weaponAsset } from '@genshin-optimizer/g-assets';
 import type { WeaponData } from '@genshin-optimizer/pipeline';
 import { displayDataMap } from ".";
@@ -15,7 +15,7 @@ export default class WeaponSheet {
   readonly key: WeaponKey;
   readonly sheet: IWeaponSheet;
   readonly data: Data;
-  readonly rarity: Rarity;
+  readonly rarity: RarityKey;
   readonly weaponType: WeaponTypeKey;
   constructor(key: WeaponKey, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
     this.rarity = weaponData.rarity

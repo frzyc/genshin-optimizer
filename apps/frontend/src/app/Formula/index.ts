@@ -2,7 +2,7 @@ import { crawlObject } from "@genshin-optimizer/util"
 import KeyMap, { allEleEnemyResKeys } from "../KeyMap"
 import { crittableTransformativeReactions, transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { artifactTr } from "../names"
-import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allElementWithPhyKeys, allRegionKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts"
 import { objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { deepNodeClone } from "./internal"
 import { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
@@ -10,7 +10,7 @@ import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, pe
 
 const asConst = true as const, pivot = true as const
 
-const allElements = allElementsWithPhy
+const allElements = allElementWithPhyKeys
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
 const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "dendro_dmg_", "heal_"] as const
@@ -111,9 +111,9 @@ const input = setReadNodeKeys(deepNodeClone({
 
   art: withDefaultInfo({ prefix: "art", asConst }, {
     ...objectKeyMap(allArtModStats, key => allModStatNodes[key]),
-    ...objectKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
+    ...objectKeyMap(allArtifactSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
-  artSet: objectKeyMap(allArtifactSets, set => read("add", { name: artifactTr(set) })),
+  artSet: objectKeyMap(allArtifactSetKeys, set => read("add", { name: artifactTr(set) })),
 
   weapon: withDefaultInfo({ prefix: "weapon", asConst }, {
     id: stringRead(),
@@ -267,7 +267,7 @@ const common: Data = {
 
 const target = setReadNodeKeys(deepNodeClone(input), ["target"])
 const _tally = setReadNodeKeys({
-  ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
+  ...objectKeyMap([...allElements, ...allRegionKeys], _ => read("add")),
   maxEleMas: read("max"),
 }, ["tally"])
 const tally = {

@@ -1,4 +1,4 @@
-import { ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts"
+import { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts"
 import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
 import ArtifactSetTooltip from "../../../../../Components/Artifact/ArtifactSetTooltip"
@@ -13,7 +13,7 @@ type ArtifactSetBadgesProps = {
   currentlyEquipped?: boolean
 }
 export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: ArtifactSetBadgesProps) {
-  const setToSlots: Partial<Record<ArtifactSetKey, SlotKey[]>> = useMemo(() => artifacts
+  const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> = useMemo(() => artifacts
     .filter(arti => arti)
     .reduce((acc, curr) => {
       acc[curr.setKey] ? acc[curr.setKey].push(curr.slotKey) : acc[curr.setKey] = [curr.slotKey]
@@ -29,7 +29,7 @@ export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: Arti
   }</>
 
 }
-function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: SlotKey[] }) {
+function ArtifactSetBadge({ setKey, currentlyEquipped = false, slotarr }: { setKey: ArtifactSetKey, currentlyEquipped: boolean, slotarr: ArtifactSlotKey[] }) {
   const artifactSheet = getArtSheet(setKey)
   const numInSet = slotarr.length
   const setActive = Object.keys(artifactSheet.setEffects).map((setKey) => parseInt(setKey)).filter(setNum => setNum <= numInSet)
