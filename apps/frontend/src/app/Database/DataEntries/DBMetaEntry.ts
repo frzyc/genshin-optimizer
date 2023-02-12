@@ -25,7 +25,7 @@ export class DBMetaEntry extends DataEntry<"dbMeta", "dbMeta", IDBMeta, IDBMeta>
     if (typeof obj !== "object") return
     let { name, lastEdit, gender } = obj
     if (typeof name !== "string") name = `Database ${this.database.storage.getDBIndex()}`
-    if (typeof lastEdit !== "number") console.log("lastEdit INVALID")
+    if (typeof lastEdit !== "number") console.warn("lastEdit INVALID")
     if (typeof lastEdit !== "number") lastEdit = 0
     if (!genderKeys.includes(gender)) gender = "F"
 

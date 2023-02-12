@@ -1,12 +1,13 @@
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, artMaxLevel } from "@genshin-optimizer/consts";
 import { getArtSheet } from "../../Data/Artifacts";
-import Artifact from "../../Data/Artifacts/Artifact";
+import Artifact, { artifactSubRange } from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, ArtifactRarity, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { IGOOD, IGO, ImportResult } from "../exim";
+import { IGO, IGOOD, ImportResult } from "../exim";
+import { clamp } from "../../Util/Util"
 
 export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
@@ -275,7 +276,9 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return
 
-  substats = parseSubstats(substats)
+  substats = parseSubstats(substats, rarity)
+  // substat cannot have same key as mainstat
+  if (substats.find(sub => sub.key === mainStatKey)) return
   lock = !!lock
   exclude = !!exclude
   const plausibleMainStats = Artifact.slotMainStats(slotKey)
@@ -285,17 +288,24 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   if (location && !locationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
-function parseSubstats(obj: unknown): ISubstat[] {
+function defSub(): ISubstat {
+  return { key: "", value: 0 }
+}
+function parseSubstats(obj: unknown, rarity: ArtifactRarity): ISubstat[] {
   if (!Array.isArray(obj))
-    return new Array(4).map(_ => ({ key: "", value: 0 }))
-  const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
-    if (!allSubstatKeys.includes(key) || typeof value !== "number" || !isFinite(value))
-      return { key: "", value: 0 }
-    value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
+    return new Array(4).map(_ => (defSub()))
+  const substats = (obj as ISubstat[]).slice(0, 4).map(({ key = "", value = 0 }) => {
+    if (!allSubstatKeys.includes(key as SubstatKey) || typeof value !== "number" || !isFinite(value)) return defSub()
+    if (key) {
+      value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
+      const { low, high } = artifactSubRange(rarity, key)
+      value = clamp(value, low, high)
+    } else
+      value = 0
     return { key, value }
   })
   while (substats.length < 4)
-    substats.push({ key: "", value: 0 })
+    substats.push(defSub())
 
   return substats
 }

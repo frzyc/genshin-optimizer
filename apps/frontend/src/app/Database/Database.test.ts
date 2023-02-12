@@ -20,8 +20,7 @@ describe("Database", () => {
     const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
     const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
 
-    const art1 = await randomizeArtifact({ slotKey: "circlet" }),
-      art2 = await randomizeArtifact()
+    const art1 = randomizeArtifact({ slotKey: "circlet" }), art2 = randomizeArtifact()
     albedo.talent.auto = 4
     art1.location = "Albedo"
     albedoWeapon.location = "Albedo"
@@ -151,7 +150,6 @@ describe("Database", () => {
     // When adding artifacts with equipment, expect character/weapons to be created
     const art1 = randomizeArtifact({ slotKey: "circlet", location: "Albedo" }),
       art2 = randomizeArtifact({ location: "Amber" })
-    console.log({ art1, art2 })
 
     const amberWeapon = defaultInitialWeapon("bow")
     amberWeapon.location = "Amber"
@@ -172,7 +170,6 @@ describe("Database", () => {
     expect(importResult.characters?.new?.length).toEqual(2)
     expect(importResult.artifacts.invalid.length).toEqual(0)
     expect(importResult.artifacts?.new?.length).toEqual(2)
-    console.log(importResult.weapons.new)
     expect(importResult.weapons?.new?.length).toEqual(2)
 
   })
@@ -197,21 +194,24 @@ describe("Database", () => {
 
     // Import the new artifact, with no location. this should respect current equipment
     database.importGOOD(good as IGOOD & IGO, false, false)
-    expect(database.chars.get("Amber")!.equippedArtifacts.circlet).toEqual(id)
+    expect(database.chars.get("Amber")?.equippedArtifacts.circlet).toEqual(id)
   })
 
   test("Test partial merge", async () => {
     // Add Character and Artifact
     const albedo = initialCharacter("Albedo")
     const albedoWeapon = defaultInitialWeapon("sword")
+    albedoWeapon.location = "Albedo"
 
     const art1 = randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate", location: "Albedo" })
 
     database.chars.set(albedo.key, albedo)
-    albedoWeapon.id = database.weapons.new(albedoWeapon)
+    const weaponid = database.weapons.new(albedoWeapon)
+    database.weapons.set(weaponid, albedoWeapon)
 
     const art1id = database.arts.new(art1)
     expect(database.chars.get("Albedo")?.equippedArtifacts.circlet).toEqual(art1id)
+    expect(database.chars.get("Albedo")?.equippedWeapon).toEqual(weaponid)
     const good1: IGOOD = {
       format: "GOOD",
       version: 1,
@@ -221,10 +221,10 @@ describe("Database", () => {
         randomizeArtifact({ slotKey: "circlet", setKey: "Adventurer", location: "Albedo" })
       ],
       weapons: [
-        { ...initialWeapon("Akuoumaru"), location: "Albedo" }
+        { ...initialWeapon("CinnabarSpindle"), location: "Albedo" }
       ]
     }
-    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)!
+    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
     expect(importResult.artifacts.new.length).toEqual(2)
     expect(importResult.weapons.new.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)
@@ -235,7 +235,7 @@ describe("Database", () => {
     const circletId = database.chars.get("Albedo")?.equippedArtifacts.circlet
     expect(circletId).toBeTruthy()
     expect(database.arts.get(circletId)?.setKey).toEqual("Adventurer")
-    expect(database.weapons.get(database.chars.get("Albedo")!.equippedWeapon)?.key).toEqual("Akuoumaru")
+    expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("CinnabarSpindle")
   })
   test("Test Traveler share equipment", async () => {
     database.chars.set("TravelerAnemo", initialCharacter("TravelerAnemo"))
@@ -277,4 +277,30 @@ describe("Database", () => {
     expect(database.arts.get(art2Id)!.location).toEqual("")
     expect(database.weapons.get(weapon2Id)!.location).toEqual("")
   })
+})
+test("Test invalid weapon location", async () => {
+  // Add Character and Artifact
+  const albedo = initialCharacter("Albedo")
+  const albedoWeapon = defaultInitialWeapon("sword")
+  albedoWeapon.location = "Albedo"
+
+
+  database.chars.set(albedo.key, albedo)
+  const swordid = database.weapons.new(albedoWeapon)
+  database.weapons.set(swordid, albedoWeapon)
+
+  expect(database.chars.get("Albedo")?.equippedWeapon).toEqual(swordid)
+  const good1: IGOOD = {
+    format: "GOOD",
+    version: 1,
+    source: "Scanner",
+    weapons: [
+      //invalid bow on sword char
+      { ...initialWeapon("AlleyHunter"), location: "Albedo" }
+    ]
+  }
+  const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+  expect(importResult.weapons.invalid.length).toEqual(1)
+  expect(importResult.characters.new.length).toEqual(0)
+  expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("DullBlade")
 })

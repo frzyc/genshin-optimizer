@@ -9,6 +9,13 @@ import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
 const maxStar: Rarity = 5
 
+export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
+  const values = Object.keys(ArtifactSubstatLookupTable[rarity][key])
+  const low = parseFloat(values[0])
+  const high = parseFloat(values[values.length - 1])
+  return { low, high }
+}
+
 export const maxArtifactLevel = {
   1: 4,
   2: 4,

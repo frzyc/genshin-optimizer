@@ -3,7 +3,7 @@ import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { getWeaponSheet } from "../../Data/Weapons";
 import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { charKeyToLocCharKey, LocationCharacterKey, locationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -49,6 +49,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
     if (location && !locationCharacterKeys.includes(location)) location = ""
+    if (location && (getCharSheet(this.database.chars.LocationToCharacterKey(location)).weaponTypeKey !== sheet.weaponType)) return
     lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }
@@ -59,7 +60,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (!newWeapon.location && oldWeapon?.location) return
 
     // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
-    const getWithInit = (lk): ICachedCharacter => {
+    const getWithInit = (lk:LocationCharacterKey): ICachedCharacter => {
       const cKey = this.database.chars.LocationToCharacterKey(lk)
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacter(cKey))
@@ -117,7 +118,6 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     const hasEquipment = weapons.some(w => w.location)
     weapons.forEach(w => {
       const weapon = this.validate(w)
-      if (!weapon) console.log({ w })
       if (!weapon) return result.weapons.invalid.push(w)
 
       let importWeapon = weapon
