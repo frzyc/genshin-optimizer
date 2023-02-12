@@ -108,6 +108,8 @@ export const allLocationCharacterKeys = [
 ] as const
 export type LocationCharacterKey = typeof allLocationCharacterKeys[number]
 
+export type LocationKey = LocationCharacterKey | ""
+
 export function charKeyToLocGenderedCharKey(charKey: CharacterKey, gender: GenderKey): LocationGenderedCharacterKey {
   if (travelerKeys.includes(charKey as TravelerKey)) return `Traveler${gender}`
   return charKey as LocationGenderedCharacterKey

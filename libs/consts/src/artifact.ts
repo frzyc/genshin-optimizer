@@ -57,3 +57,5 @@ export const artMaxLevel: Record<RarityKey, number> = {
   4: 16,
   5: 20,
 } as const
+
+export const allArtifactRarityKeys = [5, 4, 3] as const

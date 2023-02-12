@@ -4,6 +4,9 @@ export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
+/**
+ * @deprecated
+ */
 export const allArtifactRarities = [5, 4, 3] as const
 /**
  * @deprecated
@@ -171,6 +174,9 @@ export function TravelerToElement(key: TravelerKey, element: TravelerElementKey)
   return "Traveler" + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
 }
 
+/**
+ * @deprecated
+ */
 export type LocationKey = LocationCharacterKey | ""
 
 export function charKeyToCharName(ck: CharacterKey, gender: Gender): string {
