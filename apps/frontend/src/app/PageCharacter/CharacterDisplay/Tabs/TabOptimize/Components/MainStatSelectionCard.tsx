@@ -1,4 +1,4 @@
-import { allElementsWithPhy, allSlotKeys } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -30,7 +30,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { mainStatKeys }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
-  const tots = useMemo(() => objectKeyMap(allSlotKeys, slotKey =>
+  const tots = useMemo(() => objectKeyMap(allArtifactSlotKeys, slotKey =>
     catTotal(Artifact.slotMainStats(slotKey), ct => Object.entries(database.arts.data).forEach(([id, a]) => {
       const sk = a.slotKey
       if (sk !== slotKey) return
@@ -89,7 +89,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
           </Box>
           <Grid container spacing={1}>
             {mainKeys.map((mainStatKey, i) => {
-              const element = allElementsWithPhy.find(ele => mainStatKey.includes(ele))
+              const element = allElementWithPhyKeys.find(ele => mainStatKey.includes(ele))
               const color = selectedMainKeys.includes(mainStatKey)
                 ? element ?? "success"
                 : "secondary"

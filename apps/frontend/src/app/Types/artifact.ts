@@ -1,9 +1,9 @@
-import { ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts";
+import { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
 import { ArtifactRarity, LocationKey } from "./consts";
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,

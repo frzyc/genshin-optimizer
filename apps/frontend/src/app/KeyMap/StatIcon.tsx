@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ElementKeyWithPhy } from "@genshin-optimizer/consts"
+import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts"
 import { SvgIconProps } from "@mui/material"
 import AnemoIcon from "../SVGIcons/Element/AnemoIcon"
 import CryoIcon from "../SVGIcons/Element/CryoIcon"
@@ -55,13 +55,13 @@ export default function StatIcon({ statKey, iconProps = {} }: { statKey: string,
       return <StaminaIcon  {...iconProps} />
   }
   const ele = statKey.split("_")[0]
-  if (allElementsWithPhy.includes(ele as ElementKeyWithPhy))
-    return <ElementIcon ele={ele as ElementKeyWithPhy} iconProps={iconProps} />
+  if (allElementWithPhyKeys.includes(ele as ElementWithPhyKey))
+    return <ElementIcon ele={ele as ElementWithPhyKey} iconProps={iconProps} />
 
   return null
 }
 
-export function ElementIcon({ ele, iconProps = {} }: { ele: ElementKeyWithPhy, iconProps?: SvgIconProps }) {
+export function ElementIcon({ ele, iconProps = {} }: { ele: ElementWithPhyKey, iconProps?: SvgIconProps }) {
   switch (ele) {
     case "anemo":
       return <AnemoIcon {...iconProps} />

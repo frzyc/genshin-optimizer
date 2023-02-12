@@ -1,4 +1,4 @@
-import { allRarities, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
+import { allRarityKeys, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
 import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
@@ -113,7 +113,7 @@ export default function PageWeapon() {
     })), [database, weaponIdList])
 
   const weaponRarityTotals = useMemo(() =>
-    catTotal(allRarities, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+    catTotal(allRarityKeys, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
       const wr = getWeaponSheet(weapon.key).rarity
       ct[wr].total++
       if (weaponIdList.includes(id)) ct[wr].current++

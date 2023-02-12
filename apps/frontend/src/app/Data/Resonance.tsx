@@ -1,4 +1,4 @@
-import { allElements, allElementsWithPhy } from "@genshin-optimizer/consts";
+import { allElementKeys, allElementWithPhyKeys } from "@genshin-optimizer/consts";
 import ElementCycle from "../Components/ElementCycle";
 import { Translate } from "../Components/Translate";
 import { input, tally } from "../Formula";
@@ -28,10 +28,10 @@ type IResonance = {
   sections: DocumentSection[]
 }
 
-const teamSize = sum(...allElements.map(ele => tally[ele]))
+const teamSize = sum(...allElementKeys.map(ele => tally[ele]))
 
 // Protective Canopy
-const pcNodes = objectKeyValueMap(allElementsWithPhy, e => [
+const pcNodes = objectKeyValueMap(allElementWithPhyKeys, e => [
   `${e}_res_`,
   equal(input.activeCharKey, input.charKey,
     greaterEq(tally.ele, 4, percent(0.15))
@@ -42,7 +42,7 @@ const protectiveCanopy: IResonance = {
   name: tr("ProtectiveCanopy.name"),
   desc: tr("ProtectiveCanopy.desc"),
   icon: <span><ElementCycle iconProps={iconInlineProps} /> x4</span>,
-  canShow: (data: UIData) => allElements.filter(e => data.get(tally[e]).value >= 1).length === 4,
+  canShow: (data: UIData) => allElementKeys.filter(e => data.get(tally[e]).value >= 1).length === 4,
   sections: [{
     teamBuff: true,
     fields: Object.values(pcNodes).map(node => ({ node }))
