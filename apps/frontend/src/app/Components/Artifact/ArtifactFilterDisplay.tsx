@@ -59,19 +59,19 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     subStatTotal,
     locationTotal
   } = useMemo(() => {
-    const catTotals = {
-      "rarityTotal": allArtifactRarityKeys,
-      "slotTotal": allArtifactSlotKeys,
-      "excludedTotal": ["excluded", "included"],
-      "lockedTotal": ["locked", "unlocked"],
-      "linesTotal": [0, 1, 2, 3, 4],
-      "equippedTotal": ["equipped", "unequipped"],
-      "setTotal": allArtifactSetKeys,
-      "mainStatTotal": allMainStatKeys,
-      "subStatTotal": allSubstatKeys,
-      "locationTotal": [...allLocationCharacterKeys, ""]
+    const catKeys = {
+      rarityTotal: allArtifactRarityKeys,
+      slotTotal: allArtifactSlotKeys,
+      excludedTotal: ["excluded", "included"],
+      lockedTotal: ["locked", "unlocked"],
+      linesTotal: [0, 1, 2, 3, 4],
+      equippedTotal: ["equipped", "unequipped"],
+      setTotal: allArtifactSetKeys,
+      mainStatTotal: allMainStatKeys,
+      subStatTotal: allSubstatKeys,
+      locationTotal: [...allLocationCharacterKeys, ""]
     } as const
-    return bulkCatTotal(catTotals, ctMap =>
+    return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
         const { rarity, slotKey, location, setKey, mainStatKey, substats } = art
         const excluded = art.exclude ? "excluded": "included"
