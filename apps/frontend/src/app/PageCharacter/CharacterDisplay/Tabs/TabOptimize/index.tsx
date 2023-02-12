@@ -1,3 +1,4 @@
+import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '@genshin-optimizer/consts';
 import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
@@ -33,8 +34,7 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { OptProblemInput } from '../../../../Solver';
 import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
-import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '../../../../Types/consts';
-import { objPathValue, range } from '../../../../Util/Util';
+import { objectKeyMap, objPathValue, range } from '../../../../Util/Util';
 import { maxBuildsToShowList } from './Build';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
@@ -125,18 +125,18 @@ export default function TabBuild() {
     })
   }, [database, characterKey, equipmentPriority, deferredArtsDirty, deferredBuildSetting])
 
-  const filteredArtIds = useMemo(() => filteredArts.map(a => a.id), [filteredArts])
+  const filteredArtIdMap = useMemo(() => objectKeyMap(filteredArts.map(({ id }) => id), _ => true), [filteredArts])
   const levelTotal = useMemo(() => {
     const { levelLow, levelHigh } = deferredBuildSetting
     let total = 0, current = 0
     Object.entries(database.arts.data).forEach(([id, art]) => {
       if (art.level >= levelLow && art.level <= levelHigh) {
         total++
-        if (filteredArtIds.includes(id)) current++
+        if (filteredArtIdMap[id]) current++
       }
     })
     return `${current}/${total}`
-  }, [deferredBuildSetting, filteredArtIds, database])
+  }, [deferredBuildSetting, filteredArtIdMap, database])
 
   const tabFocused = useRef(true)
   useEffect(() => {
@@ -304,7 +304,7 @@ export default function TabBuild() {
               </Box>
             </CardContent>
             {/* main stat selector */}
-            <MainStatSelectionCard disabled={generatingBuilds} filteredArtIds={filteredArtIds} />
+            <MainStatSelectionCard disabled={generatingBuilds} filteredArtIdMap={filteredArtIdMap} />
           </CardLight>
           <BonusStatsCard />
         </Grid>

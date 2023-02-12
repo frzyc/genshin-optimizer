@@ -1,7 +1,7 @@
 import { allArtifactSetKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts";
 import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
 import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, allLocationCharacterKeys } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";
@@ -48,7 +48,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
       slotKeys = validateArr(slotKeys, allArtifactSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
       substats = validateArr(substats, allSubstatKeys, [])
-      locations = validateArr(locations, locationCharacterKeys, [])
+      locations = validateArr(locations, allLocationCharacterKeys, [])
       if (typeof showEquipped !== "boolean") showEquipped = true
       if (typeof showInventory !== "boolean") showInventory = true
       exclusion = validateArr(exclusion, ["excluded", "included"])

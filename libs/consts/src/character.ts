@@ -102,7 +102,18 @@ export const allCharacterKeys = [
 ] as const
 export type CharacterKey = typeof allCharacterKeys[number]
 
-export function characterKeyToLocationGenderedCharacterKey(charKey: CharacterKey, gender: GenderKey): LocationGenderedCharacterKey {
+export const allLocationCharacterKeys = [
+  ...nonTravelerCharacterKeys,
+  "Traveler",
+] as const
+export type LocationCharacterKey = typeof allLocationCharacterKeys[number]
+
+export function charKeyToLocGenderedCharKey(charKey: CharacterKey, gender: GenderKey): LocationGenderedCharacterKey {
   if (travelerKeys.includes(charKey as TravelerKey)) return `Traveler${gender}`
   return charKey as LocationGenderedCharacterKey
+}
+
+export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey {
+  if (travelerKeys.includes(charKey as TravelerKey)) return "Traveler"
+  return charKey as LocationCharacterKey
 }

@@ -22,9 +22,9 @@ import useBuildSetting from '../useBuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
-export default function MainStatSelectionCard({ disabled = false, filteredArtIds }: {
+export default function MainStatSelectionCard({ disabled = false, filteredArtIdMap }: {
   disabled?: boolean,
-  filteredArtIds: string[]
+  filteredArtIdMap: Record<string, boolean>
 }) {
   const { t } = useTranslation("artifact")
   const { character: { key: characterKey } } = useContext(CharacterContext)
@@ -37,15 +37,15 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
       const msk = a.mainStatKey
       if (!msk || !ct[msk]) return
       ct[msk].total++
-      if (filteredArtIds.includes(id)) ct[msk].current++
+      if (filteredArtIdMap[id]) ct[msk].current++
     }))
-  ), [filteredArtIds, database])
+  ), [filteredArtIdMap, database])
   const slotTots = useMemo(() => catTotal(artifactsSlotsToSelectMainStats, ct => Object.entries(database.arts.data).forEach(([id, a]) => {
     const sk = a.slotKey
     if (!ct[sk]) return
     ct[sk].total++
-    if (filteredArtIds.includes(id)) ct[sk].current++
-  })), [filteredArtIds, database])
+    if (filteredArtIdMap[id]) ct[sk].current++
+  })), [filteredArtIdMap, database])
 
   return <Box display="flex" flexDirection="column">
     <Divider />

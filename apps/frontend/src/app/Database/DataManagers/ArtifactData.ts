@@ -3,7 +3,7 @@ import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, charKeyToLocCharKey, allLocationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGOOD, IGO, ImportResult } from "../exim";
@@ -273,7 +273,7 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (location && !locationCharacterKeys.includes(location)) location = ""
+  if (location && !allLocationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 function parseSubstats(obj: unknown): ISubstat[] {

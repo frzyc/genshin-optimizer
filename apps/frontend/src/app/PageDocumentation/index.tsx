@@ -12,7 +12,7 @@ import material from "../Data/Materials/Material";
 import { DatabaseContext } from "../Database/Database";
 import KeyMap from "../KeyMap";
 import useDBMeta from "../ReactHooks/useDBMeta";
-import { charKeyToCharName, locationCharacterKeys } from "../Types/consts";
+import { charKeyToCharName, allLocationCharacterKeys } from "../Types/consts";
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -206,7 +206,7 @@ function CharacterKeyPane() {
   const { t } = useTranslation("charNames_gen")
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const charKeysCode = `type CharacterKey\n  = ${[...new Set(locationCharacterKeys)].sort().map(k => `"${k}" //${t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(k), gender)}`)}`).join(`\n  | `)}`
+  const charKeysCode = `type CharacterKey\n  = ${[...new Set(allLocationCharacterKeys)].sort().map(k => `"${k}" //${t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(k), gender)}`)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">CharacterKey</Typography>
     <CardDark>
