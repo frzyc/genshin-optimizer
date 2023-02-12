@@ -71,10 +71,10 @@ export default function TabBuild() {
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
   const [{ equipmentPriority, threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
-  useEffect(() => database.displayOptimize.follow((r, to) => setDisplayOptimize(to)), [database, setDisplayOptimize])
+  useEffect(() => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)), [database, setDisplayOptimize])
 
   const maxWorkers = threads > defThreads ? defThreads : threads
-  const setMaxWorkers = useCallback(threads => database.displayOptimize.set({ threads }), [database],)
+  const setMaxWorkers = useCallback((threads: number) => database.displayOptimize.set({ threads }), [database],)
 
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
@@ -101,7 +101,7 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const filteredArts = useMemo(() => {
+  const { filteredArts, numExcludedUsed, numEquippedUsed } = useMemo(() => {
     const { mainStatKeys, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
     const cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
@@ -109,7 +109,8 @@ export default function TabBuild() {
       if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
       else equipmentPriority.slice(0, index).forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
     }
-    return database.arts.values.filter(art => {
+    let numExcludedUsed = 0, numEquippedUsed = 0
+    const filteredArts = database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -118,11 +119,18 @@ export default function TabBuild() {
       if (art.exclude && !useExcludedArts) return false
 
       // If its equipped on the selected character, bypass the check
-      if (art.location === charKeyToLocCharKey(characterKey)) return true
-      if (art.location && !useEquippedArts) return false
-      if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
+      const locKey = charKeyToLocCharKey(characterKey)
+      if (art.location !== locKey) {
+        if (art.location && !useEquippedArts) return false
+        if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
+      }
+
+      if (art.exclude) numExcludedUsed++
+      if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })
+
+    return { filteredArts, numExcludedUsed, numEquippedUsed }
   }, [database, characterKey, equipmentPriority, deferredArtsDirty, deferredBuildSetting])
 
   const filteredArtIdMap = useMemo(() => objectKeyMap(filteredArts.map(({ id }) => id), _ => true), [filteredArts])
@@ -263,7 +271,7 @@ export default function TabBuild() {
 
   const characterName = characterSheet?.name ?? "Character Name"
 
-  const setPlotBase = useCallback(plotBase => {
+  const setPlotBase = useCallback((plotBase: string[] | undefined) => {
     buildSettingDispatch({ plotBase })
     setChartData(undefined)
   }, [buildSettingDispatch, setChartData])
@@ -277,8 +285,8 @@ export default function TabBuild() {
     disabled={!!generatingBuilds}
   />
 
-  const getLabel0 = useCallback((index) => <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>Graph #{{ count: index + 1 }}</Trans>, [t])
-  const getLabel1 = useCallback((index) => `#${index + 1}`, [])
+  const getGraphBuildLabel = useCallback((index: number) => <Trans t={t} i18nKey="graphBuildLabel" count={index + 1}>Graph #{{ count: index + 1 }}</Trans>, [t])
+  const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
   return <Box display="flex" flexDirection="column" gap={1}>
     {noArtifact && <Alert severity="warning" variant="filled"><Trans t={t} i18nKey="noArtis">Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifacts">Artifacts</Link> page and add some!</Trans></Alert>}
     {/* Build Generator Editor */}
@@ -296,7 +304,7 @@ export default function TabBuild() {
           <CardLight>
             <CardContent  >
               <Box display="flex" alignItems="center" gap={1}>
-                <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={mainStatAssumptionLevel => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
+                <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={(mainStatAssumptionLevel: number) => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 <InfoTooltip title={<Box>
                   <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
                   <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
@@ -314,10 +322,10 @@ export default function TabBuild() {
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} artsDirty={artsDirty} />
+          <UseExcluded disabled={generatingBuilds} numExcludedArt={numExcludedUsed} />
 
           {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} filteredArts={filteredArts} />
+          <UseEquipped disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
 
           <Button
             fullWidth
@@ -426,8 +434,8 @@ export default function TabBuild() {
         </CardContent>
       </CardLight>
       <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getLabel0} setBuilds={setGraphBuilds} />}
-        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getLabel1} />
+        {graphBuilds && <BuildList builds={graphBuilds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getGraphBuildLabel} setBuilds={setGraphBuilds} />}
+        <BuildList builds={builds} characterKey={characterKey} data={data} compareData={compareData} disabled={!!generatingBuilds} getLabel={getNormBuildLabel} />
       </OptimizationTargetContext.Provider>
     </DataContext.Provider>}
   </Box>
