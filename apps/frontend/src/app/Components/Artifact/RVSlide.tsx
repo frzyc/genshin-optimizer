@@ -30,7 +30,7 @@ export default function RVSlide({ levelLow, levelHigh, setLow, setHigh, setBoth,
     <CustomNumberInput
       value={sliderLow}
       onChange={val => setLow(clamp(val, 0, levelHigh))}
-      sx={{ px: 1, pl: 2, width: 100 }}
+      sx={{ px: 1, pl: 2, width: 100, borderRadius: "4px 0 0 4px" }}
       inputProps={{ sx: { textAlign: "right" } }}
       startAdornment={"RV: "}
       disabled={disabled}
@@ -47,7 +47,7 @@ export default function RVSlide({ levelLow, levelHigh, setLow, setHigh, setBoth,
     <CustomNumberInput
       value={sliderHigh}
       onChange={val => setHigh(clamp(val, levelLow, 900))}
-      sx={{ px: 1, width: 50, }}
+      sx={{ px: 1, width: 50, borderRadius: "0 4px 4px 0" }}
       inputProps={{ sx: { textAlign: "center" } }}
       disabled={disabled}
     />
