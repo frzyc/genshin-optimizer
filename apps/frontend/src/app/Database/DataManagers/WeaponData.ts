@@ -60,7 +60,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (!newWeapon.location && oldWeapon?.location) return
 
     // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
-    const getWithInit = (lk:LocationCharacterKey): ICachedCharacter => {
+    const getWithInit = (lk: LocationCharacterKey): ICachedCharacter => {
       const cKey = this.database.chars.LocationToCharacterKey(lk)
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacter(cKey))
@@ -130,10 +130,10 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
       if (duplicated[0] || upgraded[0]) {
         // Favor upgrades with the same location, else use 1st dupe
-        const match = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ? upgraded[0] : (duplicated[0] || upgraded[0])
+        const [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
+          [upgraded[0], true] : ([duplicated[0], false] || [upgraded[0], true])
         idsToRemove.delete(match.id)
-        if (duplicated[0]) result.weapons.unchanged.push(weapon)
-        else if (upgraded[0]) result.weapons.upgraded.push(weapon)
+        isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
         importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
         importKey = importKey ?? match.id
       }
