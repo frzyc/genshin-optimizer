@@ -3,7 +3,7 @@ import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { getWeaponSheet } from "../../Data/Weapons";
 import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { charKeyToLocCharKey, allLocationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -48,7 +48,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (rawLevel > weaponMaxLevel[sheet.rarity]) return
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
-    if (location && !locationCharacterKeys.includes(location)) location = ""
+    if (location && !allLocationCharacterKeys.includes(location)) location = ""
     lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }

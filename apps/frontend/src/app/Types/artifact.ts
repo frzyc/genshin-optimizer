@@ -34,3 +34,5 @@ export const allMainStatKeys = ["hp", "hp_", "atk", "atk_", "def_", "eleMas", "e
 export const allSubstatKeys = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_",] as const
 export type MainStatKey = typeof allMainStatKeys[number]
 export type SubstatKey = typeof allSubstatKeys[number]
+
+export const allArtifactRarityKeys = [5, 4, 3] as const
