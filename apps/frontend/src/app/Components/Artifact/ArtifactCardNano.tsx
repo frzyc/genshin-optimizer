@@ -61,9 +61,9 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
           }} />}
         </Box>
         {/* mainstats */}
-        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
+        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color, p: 1 }}
           icon={<BootstrapTooltip placement="top" title={<Typography><StatColoredWithUnit statKey={mainStatKey} /></Typography>} disableInteractive>
-            <Box lineHeight={0}><StatIcon statKey={mainStatKey} iconProps={{ fontSize: "small" }} /></Box>
+            <Box lineHeight={0}><StatIcon statKey={mainStatKey} iconProps={{ style: { padding: "4px" }}} /></Box>
           </BootstrapTooltip>}
           label={<Typography sx={{ mx: -0.7 }}><ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText></Typography>} />
       </Box>
