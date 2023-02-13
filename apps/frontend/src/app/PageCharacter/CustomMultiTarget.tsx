@@ -85,6 +85,8 @@ export function validateCustomMultiTarget(cmt: unknown): CustomMultiTarget | und
     name = "New Custom Target"
   if (typeof description !== "string")
     description = undefined
+  else if (description.length > 2000)
+    description = description.slice(0, 2000)
   if (!Array.isArray(targets))
     return undefined
   targets = targets.map(t => validateCustomTarget(t)).filter((t): t is NonNullable<CustomTarget> => t !== undefined)
@@ -238,18 +240,23 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     </Button>}
       component="div"
       sx={{
+        alignItems: "stretch",
         pointerEvents: "none",
         // Prevent rotation of the button, since we have two icons in the button
         '& .MuiAccordionSummary-expandIconWrapper': {
+          paddingTop: "12px",
+          paddingBottom: "12px",
           transform: "rotate(0)"
         },
         '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+          paddingTop: "20px",
+          paddingBottom: "20px",
           transform: "rotate(0)"
         }
       }}
     >
       <Grid container columns={1} alignItems="center" spacing={1} pr={1}>
-        <Grid item gap={1} display="flex" sx={{ pointerEvents: "auto", width: "100%" }}>
+        <Grid item gap={1} display="flex" flexWrap="wrap" sx={{ pointerEvents: "auto", width: "100%" }}>
           <Chip
             sx={{ minWidth: "8em" }}
             color={target.targets.length ? "success" : undefined}
