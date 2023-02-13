@@ -1,4 +1,4 @@
-import { allArtifactRarityKeys, allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
 import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -7,7 +7,7 @@ import { Suspense, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { DatabaseContext } from "../../Database/Database";
 import { FilterOption } from "../../PageArtifact/ArtifactSort";
-import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
+import { allArtifactRarityKeys, allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import { bulkCatTotal } from "../../Util/totalUtils";
 import { objectKeyMap } from "../../Util/Util";
