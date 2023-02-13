@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import HelpIcon from '@mui/icons-material/Help';
@@ -43,7 +43,7 @@ type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
 interface IEditorArtifact {
   setKey: ArtifactSetKey,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
@@ -223,7 +223,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const theme = useTheme();
   const grmd = useMediaQuery(theme.breakpoints.up('md'));
 
-  const element = artifact ? allElementsWithPhy.find(ele => artifact.mainStatKey.includes(ele)) : undefined
+  const element = artifact ? allElementWithPhyKeys.find(ele => artifact.mainStatKey.includes(ele)) : undefined
   const color = artifact
     ? element ?? "success"
     : "primary"

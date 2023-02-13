@@ -2,7 +2,7 @@ import { crawlObject } from "@genshin-optimizer/util"
 import KeyMap, { allEleEnemyResKeys } from "../KeyMap"
 import { crittableTransformativeReactions, transformativeReactionLevelMultipliers } from "../KeyMap/StatConstants"
 import { artifactTr } from "../names"
-import { allArtifactSets, allElementsWithPhy, allRegions, allSlotKeys } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allElementWithPhyKeys, allRegionKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts"
 import { objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { deepNodeClone } from "./internal"
 import { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
@@ -10,7 +10,7 @@ import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, pe
 
 const asConst = true as const, pivot = true as const
 
-const allElements = allElementsWithPhy
+const allElements = allElementWithPhyKeys
 const allTalents = ["auto", "skill", "burst"] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst", "elemental"] as const
 const allArtModStats = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "dendro_dmg_", "heal_"] as const
@@ -111,9 +111,9 @@ const input = setReadNodeKeys(deepNodeClone({
 
   art: withDefaultInfo({ prefix: "art", asConst }, {
     ...objectKeyMap(allArtModStats, key => allModStatNodes[key]),
-    ...objectKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
+    ...objectKeyMap(allArtifactSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   }),
-  artSet: objectKeyMap(allArtifactSets, set => read("add", { name: artifactTr(set) })),
+  artSet: objectKeyMap(allArtifactSetKeys, set => read("add", { name: artifactTr(set) })),
 
   weapon: withDefaultInfo({ prefix: "weapon", asConst }, {
     id: stringRead(),
@@ -124,8 +124,8 @@ const input = setReadNodeKeys(deepNodeClone({
   }),
 
   enemy: {
-    def: read("add", { ...KeyMap.info("enemyDef_multi"), pivot }),
-    ...objectKeyMap(allElements.map(ele => `${ele}_resMulti` as const), _ => read()),
+    def: read("add", { ...KeyMap.info("enemyDef_multi_"), pivot }),
+    ...objectKeyMap(allElements.map(ele => `${ele}_resMulti_` as const), _ => read()),
 
     level: read(undefined, KeyMap.info("enemyLevel")),
     ...objectKeyValueMap(allElements, ele => [`${ele}_res_`, read(undefined, { prefix: "base", ...KeyMap.info(`${ele}_enemyRes_`) })]),
@@ -161,7 +161,7 @@ total.critRate_.info!.prefix = "uncapped"
 // Nodes that are not used anywhere else but `common` below
 
 /** Base Amplifying Bonus */
-const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { ...KeyMap.info("base_amplifying_multi"), pivot })
+const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), { ...KeyMap.info("base_amplifying_multi_"), pivot })
 
 /** Base Additive Bonus */
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
@@ -242,17 +242,17 @@ const common: Data = {
       }, NaN),
       enemy.def,
       lookup(hit.ele,
-        objectKeyMap(allElements, ele => enemy[`${ele}_resMulti` as const]), NaN),
+        objectKeyMap(allElements, ele => enemy[`${ele}_resMulti_` as const]), NaN),
       hit.ampMulti,
     ),
     ampMulti: lookup(hit.reaction, {
       vaporize: lookup(hit.ele, {
-        hydro: prod(2, sum(baseAmpBonus, total.vaporize_dmg_)),
-        pyro: prod(1.5, sum(baseAmpBonus, total.vaporize_dmg_)),
+        hydro: prod(constant(2, KeyMap.info("vaporize_multi_")), sum(baseAmpBonus, total.vaporize_dmg_)),
+        pyro: prod(constant(1.5, KeyMap.info("vaporize_multi_")), sum(baseAmpBonus, total.vaporize_dmg_)),
       }, one),
       melt: lookup(hit.ele, {
-        pyro: prod(constant(2, KeyMap.info("melt_multi")), sum(baseAmpBonus, total.melt_dmg_)),
-        cryo: prod(constant(1.5, KeyMap.info("melt_multi")), sum(baseAmpBonus, total.melt_dmg_)),
+        pyro: prod(constant(2, KeyMap.info("melt_multi_")), sum(baseAmpBonus, total.melt_dmg_)),
+        cryo: prod(constant(1.5, KeyMap.info("melt_multi_")), sum(baseAmpBonus, total.melt_dmg_)),
       }, one),
     }, one),
   },
@@ -261,13 +261,13 @@ const common: Data = {
     // TODO: shred cap of 90%
     def: frac(sum(input.lvl, 100), prod(sum(enemy.level, 100), sum(one, prod(-1, enemy.defRed)), sum(one, prod(-1, enemy.defIgn)))),
     defRed: total.enemyDefRed_,
-    ...objectKeyValueMap(allElements, ele => [`${ele}_resMulti`, res(total[`${ele}_enemyRes_`])]),
+    ...objectKeyValueMap(allElements, ele => [`${ele}_resMulti_`, res(total[`${ele}_enemyRes_`])]),
   },
 }
 
 const target = setReadNodeKeys(deepNodeClone(input), ["target"])
 const _tally = setReadNodeKeys({
-  ...objectKeyMap([...allElements, ...allRegions], _ => read("add")),
+  ...objectKeyMap([...allElements, ...allRegionKeys], _ => read("add")),
   maxEleMas: read("max"),
 }, ["tally"])
 const tally = {

@@ -1,7 +1,7 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -13,7 +13,7 @@ const key: WeaponKey = "SkywardAtlas"
 const data_gen = data_gen_json as WeaponData
 
 const dmgBonus = [0.12, 0.15, 0.18, 0.21, 0.24]
-const eleBonus_ = Object.fromEntries(allElements.map(ele => [ele, subscript(input.weapon.refineIndex, dmgBonus)]))
+const eleBonus_ = Object.fromEntries(allElementKeys.map(ele => [ele, subscript(input.weapon.refineIndex, dmgBonus)]))
 const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
 
 const dmg = equal(input.weapon.key, key,
@@ -22,7 +22,7 @@ const dmg = equal(input.weapon.key, key,
   }))
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
+    ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
   }
 }, { dmg })
 
@@ -30,7 +30,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [
-      ...allElements.map(ele => ({ node: eleBonus_[ele] })),
+      ...allElementKeys.map(ele => ({ node: eleBonus_[ele] })),
       {
         node: infoMut(dmg, { name: st("dmg") }),
       }]

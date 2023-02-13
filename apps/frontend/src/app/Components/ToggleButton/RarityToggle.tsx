@@ -1,19 +1,19 @@
-import { allRarities, Rarity } from "@genshin-optimizer/consts";
+import { allRarityKeys, RarityKey } from "@genshin-optimizer/consts";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from "@mui/material";
 import { handleMultiSelect } from "../../Util/MultiSelect";
 import SolidToggleButtonGroup, { SolidToggleButtonGroupProps } from "../SolidToggleButtonGroup";
 type RarityToggleProps = Omit<SolidToggleButtonGroupProps, "onChange" | "value"> & {
-  onChange: (value: Rarity[]) => void
-  value: Rarity[],
-  totals: Record<Rarity, Displayable>
+  onChange: (value: RarityKey[]) => void
+  value: RarityKey[],
+  totals: Record<RarityKey, Displayable>
 }
-const rarityHandler = handleMultiSelect([...allRarities])
+const rarityHandler = handleMultiSelect([...allRarityKeys])
 export default function RarityToggle({ value, totals, onChange, ...props }: RarityToggleProps) {
   const theme = useTheme();
   const xs = !useMediaQuery(theme.breakpoints.up('sm'));
   return <SolidToggleButtonGroup exclusive value={value} {...props}>
-    {allRarities.map(star =>
+    {allRarityKeys.map(star =>
       <ToggleButton key={star} value={star} sx={{ p: xs ? 1 : undefined, minWidth: xs ? 0 : "7em", display: "flex", gap: xs ? 0 : 1 }} onClick={() => onChange(rarityHandler(value, star))}>
         <Box display="flex">
           <strong>{star}</strong>

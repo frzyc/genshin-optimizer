@@ -70,8 +70,6 @@ const [condC2Path, condC2] = cond(key, "c2")
 const nodeC2 = greaterEq(input.constellation, 2,
   equal(condC2, "on", dm.constellation2.hydro_enemyRes_))
 
-const [condSkillPath, condSkill] = cond(key, "skill")
-
 const [condBurstPath, condBurst] = cond(key, "burst")
 const nodeC4 = compareEq(
   greaterEq(input.constellation, 4, equal(condBurst, "on", 1)),
@@ -81,8 +79,7 @@ const nodeC4 = compareEq(
   { name: st("dmgMult.skill"), unit: "%" }
 )
 
-const nodeSkillDmgRed_ = equal(condSkill, "on",
-  sum(subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: "%" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))))
+const nodeSkillDmgRed_ = sum(subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: "%" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_)))
 
 const nodeA4Heal = customHealNode(greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06))))
 
@@ -117,7 +114,6 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   teamBuff: {
     premod: {
       hydro_enemyRes_: nodeC2,
-      dmgRed_: infoMut(nodeSkillDmgRed_, KeyMap.info("dmgRed_")),
     }
   },
   premod: {
@@ -171,6 +167,8 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.skill.press2, { name: ct.chg(`skill.skillParams.0`), textSuffix: "(2)" }),
       }, {
+        node: infoMut(dmgFormulas.skill.dmgRed_, KeyMap.info("dmgRed_")),
+      }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.duration,
         unit: "s"
@@ -179,19 +177,7 @@ const sheet: ICharacterSheet = {
         value: dm.skill.cd,
         unit: "s"
       }]
-    }, ct.condTem("skill", {
-      teamBuff: true,
-      value: condSkill,
-      path: condSkillPath,
-      name: ct.ch("skillCond"),
-      states: {
-        on: {
-          fields: [{
-            node: dmgFormulas.skill.dmgRed_,
-          }]
-        }
-      }
-    })]),
+    }]),
 
     burst: ct.talentTem("burst", [{
       fields: [{

@@ -5,10 +5,10 @@ import { objectKeyMap } from "../Util/Util";
 import { infusionNode, input } from "./index";
 import { constant, data, equal, frac, infoMut, lookup, max, min, naught, one, percent, prod, subscript, sum } from "./utils";
 
-const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, KeyMap.info("crystallize_level_multi"))
+const crystallizeMulti1 = subscript(input.lvl, crystallizeLevelMultipliers, KeyMap.info("crystallize_level_multi_"))
 const crystallizeElemas = prod(40 / 9, frac(input.total.eleMas, 1400))
 const crystallizeHit = infoMut(prod(
-  infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), { pivot: true, ...KeyMap.info("base_crystallize_multi") }),
+  infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), { pivot: true, ...KeyMap.info("base_crystallize_multi_") }),
   crystallizeMulti1),
   KeyMap.info("crystallize"))
 
@@ -18,9 +18,9 @@ const trans = {
   ...objectKeyMap(Object.keys(transformativeReactions), reaction => {
     const { multi, resist, canCrit } = transformativeReactions[reaction]
     return infoMut(prod(
-      prod(constant(multi, KeyMap.info(`${reaction}_multi`)), transMulti1),
+      prod(constant(multi, KeyMap.info(`${reaction}_multi_`)), transMulti1),
       sum(
-        infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi") }),
+        infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi_") }),
         input.total[`${reaction}_dmg_`]
       ),
       lookup(input.hit.hitMode, {
@@ -40,15 +40,15 @@ const trans = {
           )
           : one
       }, NaN),
-      input.enemy[`${resist}_resMulti`]
+      input.enemy[`${resist}_resMulti_`]
     ), KeyMap.info(`${reaction}_hit`))
   }),
   swirl: objectKeyMap(transformativeReactions.swirl.variants, ele => {
     const base = prod(
-      prod(constant(transformativeReactions.swirl.multi, KeyMap.info("swirl_multi")), transMulti1),
-      sum(infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi") }), input.total.swirl_dmg_)
+      prod(constant(transformativeReactions.swirl.multi, KeyMap.info("swirl_multi_")), transMulti1),
+      sum(infoMut(sum(one, transMulti2), { pivot: true, ...KeyMap.info("base_transformative_multi_") }), input.total.swirl_dmg_)
     )
-    const res = input.enemy[`${ele}_resMulti`]
+    const res = input.enemy[`${ele}_resMulti_`]
     return infoMut(
       // CAUTION:
       // Add amp multiplier/additive term only to swirls that have amp/additive reactions.

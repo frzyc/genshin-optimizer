@@ -1,4 +1,4 @@
-import { CharacterKey, ElementKey, Rarity, WeaponTypeKey } from "@genshin-optimizer/consts";
+import { CharacterKey, ElementKey, RarityKey, WeaponTypeKey } from "@genshin-optimizer/consts";
 import { DocumentSection } from "../../Types/sheet";
 
 export interface TalentSheetElement {
@@ -12,7 +12,7 @@ export type TalentSheet = Dict<TalentSheetElementKey, TalentSheetElement>
 export type ICharacterSheet = {
   key: CharacterKey
   name: Displayable
-  rarity: Rarity
+  rarity: RarityKey
   weaponTypeKey: WeaponTypeKey
   gender: string
   constellationName: Displayable

@@ -3,7 +3,7 @@ import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, greaterEqStr, infoMut, min, percent, prod, subscript } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey, Region } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -16,7 +16,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Dori"
 const elementKey: ElementKey = "electro"
-const regionKey: Region = "sumeru"
+const regionKey: RegionKey = "sumeru"
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0
@@ -228,7 +228,7 @@ const sheet: ICharacterSheet = {
             value: dm.constellation6.infusionDuration,
             unit: "s"
           }, {
-            node: infoMut(dmgFormulas.constellation6.heal, { name: ct.chg("c6Heal"), variant: "heal" })
+            node: infoMut(dmgFormulas.constellation6.heal, { name: ct.ch("c6Heal"), variant: "heal" })
           }, {
             text: stg("cd"),
             value: dm.constellation6.cd,
