@@ -12,7 +12,7 @@ export interface IArtifact {
   substats: ISubstat[],
 
   // GO-specific
-  exclude: boolean,
+  exclude?: boolean,
 }
 export interface ICachedArtifact extends IArtifact {
   id: string,
