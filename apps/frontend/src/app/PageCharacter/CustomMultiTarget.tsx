@@ -32,7 +32,7 @@ import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Comp
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
 
 const MAX_NAME_LENGTH = 200
-const MAX_DESC_LENGTH = 20
+const MAX_DESC_LENGTH = 2000
 const MAX_DESC_TOOLTIP_LENGTH = 300
 function initCustomMultiTarget() {
   return {
