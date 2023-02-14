@@ -165,7 +165,10 @@ export function CustomMultiTargetButton() {
               <Typography variant="h6">{t`multiTarget.title`}</Typography>
               <InfoTooltip
                 title={<Typography>
-                  <Trans t={t} i18nKey="multiTarget.info">Note: Community created custom Multi-Optimization Targets can be found within the <a href={process.env.NX_URL_DISCORD_GO} target="_blank" rel="noreferrer" style={{ color: "white" }}>GO Discord</a> or <a href={process.env.NX_URL_KQM_MULTI_GUIDE} target="_blank" rel="noreferrer" style={{ color: "white" }}>KQM Multi-Opt Guide</a>, however the validity of such configurations cannot be guaranteed.\n\nIt is the responsibility of the user to confirm the accuracy for their own use case.</Trans>
+                  <Trans t={t} i18nKey="multiTarget.info1">Note: Community created custom Multi-Optimization Targets can be found within the <a href={process.env.NX_URL_DISCORD_GO} target="_blank" rel="noreferrer" style={{ color: "white" }}>GO Discord</a> or <a href={process.env.NX_URL_KQM_MULTI_GUIDE} target="_blank" rel="noreferrer" style={{ color: "white" }}>KQM Multi-Opt Guide</a>, however the validity of such configurations cannot be guaranteed.</Trans>
+                  <br />
+                  <br />
+                  {t("multiTarget.info2")}
                 </Typography>}
               />
               <CloseButton onClick={onClose} sx={{ marginLeft: "auto" }} />
@@ -240,53 +243,52 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     </Button>}
       component="div"
       sx={{
-        alignItems: "stretch",
         pointerEvents: "none",
         // Prevent rotation of the button, since we have two icons in the button
         '& .MuiAccordionSummary-expandIconWrapper': {
-          paddingTop: "12px",
-          paddingBottom: "12px",
           transform: "rotate(0)"
         },
         '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-          paddingTop: "20px",
-          paddingBottom: "20px",
           transform: "rotate(0)"
         }
       }}
     >
-      <Grid container columns={1} alignItems="center" spacing={1} pr={1}>
-        <Grid item gap={1} display="flex" flexWrap="wrap" sx={{ pointerEvents: "auto", width: "100%" }}>
-          <Chip
-            sx={{ minWidth: "8em" }}
-            color={target.targets.length ? "success" : undefined}
-            label={<Trans t={t} i18nKey="multiTarget.target" count={target.targets.length}>{{ count: target.targets.length }} Targets</Trans>}
-          />
-          <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
-          <ButtonGroup size="small">
-            <CustomNumberInputButtonGroupWrapper >
-              <CustomNumberInput onChange={n => onOrder(n ?? 0)} value={index + 1}
-                inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
-                sx={{ width: "100%", height: "100%", pl: 2 }} />
-            </CustomNumberInputButtonGroupWrapper>
-            <Tooltip title={t("multiTarget.duplicate")} placement="top" >
-              <Button onClick={onDup} color="info"><ContentCopyIcon /></Button>
-            </Tooltip>
-            <Button color="error" onClick={onDelete} ><DeleteForeverIcon /></Button>
-          </ButtonGroup>
-        </Grid>
-        <Grid item gap={1} display="flex" sx={{ pointerEvents: "auto", width: "100%" }}>
-          <TextField
-            multiline
-            placeholder={t("multiTarget.description")}
-            value={target.description}
-            onChange={setDescription}
-            sx={{ flexGrow: 1 }}
-          />
-        </Grid>
-      </Grid>
+      <Box gap={1} pr={1} display="flex" flexWrap="wrap" sx={{ pointerEvents: "auto", width: "100%", alignItems: "center" }}>
+        <Chip
+          sx={{ minWidth: "8em" }}
+          color={target.targets.length ? "success" : undefined}
+          label={<Trans t={t} i18nKey="multiTarget.target" count={target.targets.length}>{{ count: target.targets.length }} Targets</Trans>}
+        />
+        <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
+        {target.description && <InfoTooltip title={
+          <Typography>
+            {target.description.length > 315 ? target.description.slice(0, 300) + "..." : target.description}
+          </Typography>
+        }/>}
+        <ButtonGroup size="small">
+          <CustomNumberInputButtonGroupWrapper >
+            <CustomNumberInput onChange={n => onOrder(n ?? 0)} value={index + 1}
+              inputProps={{ min: 1, max: nTargets, sx: { textAlign: "center" } }}
+              sx={{ width: "100%", height: "100%", pl: 2 }} />
+          </CustomNumberInputButtonGroupWrapper>
+          <Tooltip title={t("multiTarget.duplicate")} placement="top" >
+            <Button onClick={onDup} color="info"><ContentCopyIcon /></Button>
+          </Tooltip>
+          <Button color="error" onClick={onDelete} ><DeleteForeverIcon /></Button>
+        </ButtonGroup>
+      </Box>
     </AccordionSummary>
     <AccordionDetails>
+      <Box mb={1} display="flex" sx={{ pointerEvents: "auto", width: "100%" }}>
+        <TextField
+          multiline
+          size="small"
+          placeholder={t("multiTarget.description")}
+          value={target.description}
+          onChange={setDescription}
+          sx={{ flexGrow: 1 }}
+        />
+      </Box>
       <Box mb={1}>
         <CopyArea customMultiTarget={target} setCustomMultiTarget={setTarget} />
       </Box>
