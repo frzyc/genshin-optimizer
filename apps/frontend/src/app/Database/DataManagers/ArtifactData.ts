@@ -100,7 +100,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       if (duplicated[0] || upgraded[0]) {
         // Favor upgrades with the same location, else use 1st dupe
         const [match, isUpgrade] = (hasEquipment && art.location && upgraded[0]?.location === art.location) ?
-          [upgraded[0], true] : ([duplicated[0], false] || [upgraded[0], true])
+          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
         idsToRemove.delete(match.id)
         isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
         importArt = { ...art, location: hasEquipment ? art.location : match.location }
