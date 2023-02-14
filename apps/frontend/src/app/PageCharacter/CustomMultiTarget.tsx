@@ -6,7 +6,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
-import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
@@ -199,8 +199,10 @@ export function CustomMultiTargetButton() {
 function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup, onOrder, nTargets }:
   { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void, onOrder: (nInd: number) => void, nTargets: number }) {
   const { t } = useTranslation("page_character")
-  const setName = useCallback((e: ChangeEvent<HTMLInputElement>) => setTarget({ ...target, name: e.target.value }), [setTarget, target])
-  const setDescription = useCallback((e: ChangeEvent<HTMLInputElement>) => setTarget({ ...target, description: e.target.value }), [setTarget, target])
+  const [name, setName] = useState(target.name)
+  const [description, setDescription] = useState(target.description)
+  const saveName = useCallback((_e: FocusEvent<HTMLTextAreaElement>) => setTarget({ ...target, name }), [setTarget, target, name])
+  const saveDescription = useCallback((_e: FocusEvent<HTMLInputElement>) => setTarget({ ...target, description }), [setTarget, target, description])
   const addTarget = useCallback((t: string[], multi?: number) => {
     const target_ = { ...target }
     target_.targets = [...target_.targets, initCustomTarget(t, multi)]
@@ -259,7 +261,12 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
           color={target.targets.length ? "success" : undefined}
           label={<Trans t={t} i18nKey="multiTarget.target" count={target.targets.length}>{{ count: target.targets.length }} Targets</Trans>}
         />
-        <StyledInputBase value={target.name} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={setName} />
+        <StyledInputBase
+          value={name}
+          sx={{ borderRadius: 1, px: 1, flexGrow: 1 }}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+          onBlur={saveName}
+        />
         {target.description && <InfoTooltip title={
           <Typography>
             {target.description.length > 315 ? target.description.slice(0, 300) + "..." : target.description}
@@ -284,8 +291,9 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
           multiline
           size="small"
           placeholder={t("multiTarget.description")}
-          value={target.description}
-          onChange={setDescription}
+          value={description}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
+          onBlur={saveDescription}
           sx={{ flexGrow: 1 }}
         />
       </Box>
