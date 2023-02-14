@@ -14,6 +14,7 @@ export interface CustomTarget {
 }
 export interface CustomMultiTarget {
   name: string,
+  description?: string,
   targets: CustomTarget[]
 }
 
