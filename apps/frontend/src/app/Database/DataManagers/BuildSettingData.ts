@@ -1,7 +1,7 @@
+import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "@genshin-optimizer/consts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
-import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
 import { deepClone, deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
@@ -23,6 +23,7 @@ export interface BuildSetting {
     flower?: never
     plume?: never
   }
+  artExclusion: string[]
   optimizationTarget?: string[]
   mainStatAssumptionLevel: number
   useExcludedArts: boolean
@@ -47,7 +48,8 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   }
   validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return
-    let { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = (obj as any) ?? {}
+    if (typeof obj !== "object") return
+    let { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
 
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -62,9 +64,12 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (!optimizationTarget || !Array.isArray(optimizationTarget)) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0
+
+    if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
+    else artExclusion = [...(new Set(artExclusion))].filter(id => this.database.arts.keys.includes(id))
     useExcludedArts = !!useExcludedArts
     useEquippedArts = !!useEquippedArts
-    if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
+    if (!maxBuildsToShowList.includes(maxBuildsToShow as typeof maxBuildsToShowList[number])) maxBuildsToShow = maxBuildsToShowDefault
     if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
     if (compareBuild === undefined) compareBuild = false
     if (levelLow === undefined) levelLow = 0
@@ -72,7 +77,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (!artSetExclusion) artSetExclusion = {};
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
-    return { artSetExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+    return { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -81,6 +86,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
 
 const initialBuildSettings: BuildSetting = deepFreeze({
   artSetExclusion: {},
+  artExclusion: [],
   statFilters: {},
   mainStatKeys: { sands: [...Artifact.slotMainStats("sands")], goblet: [...Artifact.slotMainStats("goblet")], circlet: [...Artifact.slotMainStats("circlet")] },
   optimizationTarget: undefined,

@@ -46,7 +46,7 @@ import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
 import UseEquipped from './Components/UseEquipped';
-import UseExcluded from './Components/UseExcluded';
+import UseExcluded from './Components/ExcludeArt';
 import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
@@ -102,7 +102,7 @@ export default function TabBuild() {
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const { filteredArts, numExcludedUsed, numEquippedUsed } = useMemo(() => {
-    const { mainStatKeys, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
+    const { mainStatKeys, artExclusion, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
     const cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
       const index = equipmentPriority.indexOf(characterKey)
@@ -115,8 +115,8 @@ export default function TabBuild() {
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
-
-      if (art.exclude && !useExcludedArts) return false
+      const inArtExclusion = artExclusion.includes(art.id)
+      if (inArtExclusion && !useExcludedArts) return false
 
       // If its equipped on the selected character, bypass the check
       const locKey = charKeyToLocCharKey(characterKey)
@@ -125,7 +125,7 @@ export default function TabBuild() {
         if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       }
 
-      if (art.exclude) numExcludedUsed++
+      if (inArtExclusion) numExcludedUsed++
       if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })
@@ -322,7 +322,7 @@ export default function TabBuild() {
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} numExcludedArt={numExcludedUsed} />
+          <UseExcluded disabled={generatingBuilds} />
 
           {/* use equipped */}
           <UseEquipped disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />

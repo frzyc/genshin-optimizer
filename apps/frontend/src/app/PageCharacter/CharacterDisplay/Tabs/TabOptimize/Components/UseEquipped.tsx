@@ -64,14 +64,10 @@ export default function UseEquipped({ disabled = false, numArtsEquippedUsed }: {
   return <Box display="flex" gap={1}>
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "sm" }}><CardDark>
       <CardContent>
-        <Grid container spacing={1}>
-          <Grid item flexGrow={1}>
-            <Typography variant="h6">{t`useEquipped.modal.title`}</Typography>
-          </Grid>
-          <Grid item sx={{ mb: -1 }}>
-            <CloseButton onClick={onClose} />
-          </Grid>
-        </Grid>
+        <Box display="flex" gap={1}>
+          <Typography variant="h6" flexGrow={1}>{t`useEquipped.modal.title`}</Typography>
+          <CloseButton onClick={onClose} size="small" />
+        </Box>
       </CardContent>
       <Divider />
       <CardContent>

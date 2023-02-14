@@ -23,11 +23,15 @@
   },
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
-    "title": "Use Excluded Artifacts",
+    "title_exclude": "Exclude Artifacts",
+    "title_tooltip": "Exclude Artifacts from being used in generated builds for this character.",
     "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
     "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
     "excNum_one": "<1>{{count}}</1> artifact is excluded",
-    "excNum_other": "<1>{{count}}</1> artifacts are excluded"
+    "excNum_other": "<1>{{count}}</1> artifacts are excluded",
+    "addExc": "Exclude artifact from generating builds for this character",
+    "selExc": "Select artifact to exlude from generating builds for this character",
+    "deSelectExc": "Click on artifact cards to remove from exclusion list."
   },
   "useEquipped": {
     "title": "Use Equipped Artifacts",

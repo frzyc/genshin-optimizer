@@ -1,10 +1,16 @@
+import { allArtifactSlotKeys, charKeyToLocCharKey } from '@genshin-optimizer/consts';
 import { Checkroom, ChevronRight } from '@mui/icons-material';
-import { Button, CardContent, Grid, Skeleton, Typography, Box } from '@mui/material';
+import BlockIcon from '@mui/icons-material/Block';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import { Box, Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
+import ColorText from '../../../../../Components/ColoredText';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
@@ -14,7 +20,6 @@ import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import { ICachedArtifact } from '../../../../../Types/artifact';
-import { allSlotKeys, charKeyToLocCharKey } from '../../../../../Types/consts';
 import useBuildSetting from '../useBuildSetting';
 import { ArtifactSetBadges } from './ArtifactSetBadges';
 
@@ -45,7 +50,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
     if (!window.confirm("Do you want to equip this build to this character?")) return
     const char = database.chars.get(characterKey)
     if (!char) return
-    allSlotKeys.forEach(s => {
+    allArtifactSlotKeys.forEach(s => {
       const aid = data.get(input.art[s].id).value
       if (aid) database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
       else {
@@ -63,7 +68,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
     return dataContext_
   }, [dataContext, compareBuild])
 
-  const artifactIdsBySlot = useMemo(() => Object.fromEntries(allSlotKeys.map(slotKey => [
+  const artifactIdsBySlot = useMemo(() => Object.fromEntries(allArtifactSlotKeys.map(slotKey => [
     slotKey,
     data.get(input.art[slotKey].id).value
   ])), [data])
@@ -74,7 +79,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
   )
 
   // Memoize Arts because of its dynamic onClick
-  const artNanos = useMemo(() => allSlotKeys.map(slotKey =>
+  const artNanos = useMemo(() => allArtifactSlotKeys.map(slotKey =>
     <Grid item xs={1} key={slotKey} >
       <ArtifactCardNano showLocation slotKey={slotKey} artifactId={artifactIdsBySlot[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onClick={() => {
         const oldId = equippedArtifacts[slotKey]
@@ -84,7 +89,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
     </Grid>), [setNewOld, equippedArtifacts, mainStatAssumptionLevel, artifactIdsBySlot])
 
   if (!oldData) return null
-  const currentlyEquipped = allSlotKeys.every(slotKey => artifactIdsBySlot[slotKey] === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
+  const currentlyEquipped = allArtifactSlotKeys.every(slotKey => artifactIdsBySlot[slotKey] === oldData.get(input.art[slotKey].id).value) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
@@ -125,12 +130,29 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
       <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
-        {oldId && <Box minWidth={320}><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip editorProps={{ disableSet: true, disableSlot: true }} /></Box>}
+        {oldId && <Box minWidth={320}><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={oldId} />} /></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
         {oldId && <Box display="flex" alignItems="center" justifyContent="center"><Button onClick={onEquip} sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></Button></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        <Box minWidth={320}><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canExclude canEquip editorProps={{ disableSet: true, disableSlot: true }} /></Box>
+        <Box minWidth={320}><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={newId} />} /></Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>
+}
+function ExcludeButton({ id }: { id: string }) {
+  const { t } = useTranslation("artifact")
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { buildSetting: { artExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const excluded = artExclusion.includes(id)
+  const toggle = useCallback(() => excluded ? buildSettingDispatch({ artExclusion: artExclusion.filter(i => i !== id) }) : buildSettingDispatch({ artExclusion: [...artExclusion, id] }), [id, excluded, artExclusion, buildSettingDispatch])
+
+  return <BootstrapTooltip title={<Box>
+    <Typography>{t`excludeArtifactTip`}</Typography>
+    <Typography><ColorText color={excluded ? "error" : "success"}>{t(excluded ? "excluded" : "included")}</ColorText></Typography>
+  </Box>} placement="top" arrow>
+    <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" >
+      {excluded ? <BlockIcon /> : <ShowChartIcon />}
+    </Button>
+  </BootstrapTooltip>
+
 }
