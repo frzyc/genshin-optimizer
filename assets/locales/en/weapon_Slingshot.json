@@ -1,3 +1,5 @@
 {
-  "condName": "Normal/Charged Attack Hit within 0.3s"
+  "condName": "Normal/Charged Attack Hit",
+  "less": "Within 0.3s of being fired",
+  "more": "After 0.3s of being fired"
 }

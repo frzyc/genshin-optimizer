@@ -4,5 +4,8 @@
   },
   "c2": {
     "key": "Rockcore Meltdown DMG"
+  },
+  "c4": {
+    "energyRestore": "Energy restored per shockwave hit"
   }
 }
