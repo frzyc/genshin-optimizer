@@ -285,7 +285,7 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (location && !allLocationCharacterKeys.includes(location)) location = ""
+  if (!location || !allLocationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 function defSub(): ISubstat {
