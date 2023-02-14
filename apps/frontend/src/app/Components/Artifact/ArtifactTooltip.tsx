@@ -1,13 +1,20 @@
+import { characterAsset } from "@genshin-optimizer/g-assets";
 import { Box, Skeleton, Typography } from "@mui/material";
-import { Suspense } from "react";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import { Suspense, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { getArtSheet } from "../../Data/Artifacts";
 import Artifact from "../../Data/Artifacts/Artifact";
+import { DatabaseContext } from "../../Database/Database";
 import KeyMap, { cacheValueString } from "../../KeyMap";
 import StatIcon from "../../KeyMap/StatIcon";
+import useDBMeta from "../../ReactHooks/useDBMeta";
 import { iconInlineProps } from "../../SVGIcons";
 import { ICachedArtifact, ICachedSubstat } from "../../Types/artifact";
+import { charKeyToCharName } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
+import ThumbSide from "../Character/ThumbSide";
 import SqBadge from "../SqBadge";
 import { StarsDisplay } from "../StarDisplay";
 import SlotIcon from "./SlotIcon";
@@ -25,6 +32,9 @@ export default function ArtifactTooltip({ art, children }: { art: ICachedArtifac
   </BootstrapTooltip>
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
+  const { t } = useTranslation(["ui", "charNames_gen"])
+  const { database } = useContext(DatabaseContext)
+  const { gender } = useDBMeta()
   const sheet = getArtSheet(art.setKey)
   const { slotKey, level, rarity, mainStatKey, substats } = art
   const slotName = sheet.getSlotName(slotKey)
@@ -41,5 +51,15 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
     </Box>
 
     <Typography color="success.main">{sheet.name}</Typography>
+    {art.location
+      ? <Typography color="secondary.main" sx={{ display: "flex", alignItems: "center" }}>
+        <ThumbSide src={characterAsset(database.chars.LocationToCharacterKey(art.location), "iconSide", gender)} sx={{ pr: 1 }} />
+        {t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(art.location), gender)}`)}
+      </Typography>
+      : <Typography color="secondary.main" sx={{ display: "flex", alignItems: "center" }}>
+        <BusinessCenterIcon />
+        {t("ui:inventory")}
+      </Typography>
+    }
   </Box>
 }
