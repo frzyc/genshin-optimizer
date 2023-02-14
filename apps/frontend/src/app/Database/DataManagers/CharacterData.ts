@@ -1,11 +1,9 @@
-import { allCharacterKeys, allArtifactSlotKeys, CharacterKey, ArtifactSlotKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
-import { getCharSheet } from "../../Data/Characters";
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
 import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
 import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
-import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
