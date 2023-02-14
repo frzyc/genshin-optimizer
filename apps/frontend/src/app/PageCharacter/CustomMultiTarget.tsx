@@ -6,7 +6,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
-import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
@@ -24,6 +24,7 @@ import { DataContext } from "../Context/DataContext";
 import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
+import useTimeout from "../ReactHooks/useTimeout";
 import { CustomMultiTarget, CustomTarget } from "../Types/character";
 import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
 import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util";
@@ -31,7 +32,7 @@ import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Comp
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
 
 const MAX_NAME_LENGTH = 200
-const MAX_DESC_LENGTH = 2000
+const MAX_DESC_LENGTH = 20
 const MAX_DESC_TOOLTIP_LENGTH = 300
 function initCustomMultiTarget() {
   return {
@@ -300,11 +301,23 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
 }
 function NameTextField({ name, setName }: { name: string, setName: (name: string) => void }) {
   const [innerName, setInnerName] = useState(name)
+  useEffect(() => setInnerName(name), [name, setInnerName])
+  const [error, onError, noNotError] = useBoolState(false)
+  const timeoutFunc = useTimeout()
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    let newVal = e.target.value
+    if (newVal.length >= MAX_NAME_LENGTH) {
+      timeoutFunc(noNotError, 2000)
+      onError()
+      newVal = newVal.slice(0, MAX_NAME_LENGTH)
+    } else timeoutFunc(noNotError, 1)
+    setInnerName(newVal)
+  }
   return <TextField
-    error={innerName.length >= MAX_NAME_LENGTH}
+    error={error}
     size="small"
     value={innerName}
-    onChange={(e: ChangeEvent<HTMLInputElement>) => setInnerName(e.target.value.slice(0, MAX_NAME_LENGTH))}
+    onChange={onChange}
     onBlur={(_e: FocusEvent<HTMLInputElement>) => setName(innerName)}
     sx={{ flexGrow: 1 }}
   />
@@ -313,13 +326,25 @@ function DescTextField({ desc, setDesc }: { desc: string, setDesc: (desc: string
   const { t } = useTranslation("page_character")
   const [innerDesc, setInnerDesc] = useState(desc)
   useEffect(() => setInnerDesc(desc), [desc, setInnerDesc])
+  const [error, onError, noNotError] = useBoolState(false)
+  const timeoutFunc = useTimeout()
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    let newVal = e.target.value
+    if (newVal.length >= MAX_DESC_LENGTH) {
+      timeoutFunc(noNotError, 2000)
+      onError()
+      newVal = newVal.slice(0, MAX_DESC_LENGTH)
+    } else timeoutFunc(noNotError, 1)
+    setInnerDesc(newVal)
+  }
+
   return <TextField
-    error={innerDesc.length >= MAX_DESC_LENGTH}
+    error={error}
     multiline
     size="small"
     placeholder={t("multiTarget.description")}
     value={innerDesc}
-    onChange={(e: ChangeEvent<HTMLInputElement>) => setInnerDesc(e.target.value.slice(0, MAX_DESC_LENGTH))}
+    onChange={onChange}
     onBlur={(_e: FocusEvent<HTMLInputElement>) => setDesc(innerDesc)}
     sx={{ flexGrow: 1 }}
   />
