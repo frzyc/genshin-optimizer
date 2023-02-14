@@ -13,7 +13,7 @@ import AmpReactionModeText from "../Components/AmpReactionModeText";
 import CardDark from "../Components/Card/CardDark";
 import CloseButton from "../Components/CloseButton";
 import ColorText from "../Components/ColoredText";
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput";
 import DropdownButton from "../Components/DropdownMenu/DropdownButton";
 import { infusionVals } from "../Components/HitModeEditor";
 import InfoTooltip from "../Components/InfoTooltip";
@@ -30,6 +30,9 @@ import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util";
 import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
 import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
 
+const MAX_NAME_LENGTH = 200
+const MAX_DESC_LENGTH = 2000
+const MAX_DESC_TOOLTIP_LENGTH = 300
 function initCustomMultiTarget() {
   return {
     name: "New Custom Target",
@@ -83,10 +86,12 @@ export function validateCustomMultiTarget(cmt: unknown): CustomMultiTarget | und
   let { name, description, targets } = cmt as CustomMultiTarget
   if (typeof name !== "string")
     name = "New Custom Target"
+  else if (name.length > MAX_NAME_LENGTH)
+    name = name.slice(0, MAX_NAME_LENGTH)
   if (typeof description !== "string")
     description = undefined
-  else if (description.length > 2000)
-    description = description.slice(0, 2000)
+  else if (description.length > MAX_DESC_LENGTH)
+    description = description.slice(0, MAX_DESC_LENGTH)
   if (!Array.isArray(targets))
     return undefined
   targets = targets.map(t => validateCustomTarget(t)).filter((t): t is NonNullable<CustomTarget> => t !== undefined)
@@ -199,10 +204,8 @@ export function CustomMultiTargetButton() {
 function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand, onDelete, onDup, onOrder, nTargets }:
   { index: number, target: CustomMultiTarget, setTarget: (t: CustomMultiTarget) => void, expanded: boolean, onExpand: () => void, onDelete: () => void, onDup: () => void, onOrder: (nInd: number) => void, nTargets: number }) {
   const { t } = useTranslation("page_character")
-  const [name, setName] = useState(target.name)
-  const [description, setDescription] = useState(target.description)
-  const saveName = useCallback((_e: FocusEvent<HTMLTextAreaElement>) => setTarget({ ...target, name }), [setTarget, target, name])
-  const saveDescription = useCallback((_e: FocusEvent<HTMLInputElement>) => setTarget({ ...target, description }), [setTarget, target, description])
+  const saveName = useCallback((name: string) => setTarget({ ...target, name }), [setTarget, target])
+  const saveDesc = useCallback((description: string) => setTarget({ ...target, description }), [setTarget, target])
   const addTarget = useCallback((t: string[], multi?: number) => {
     const target_ = { ...target }
     target_.targets = [...target_.targets, initCustomTarget(t, multi)]
@@ -261,17 +264,12 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
           color={target.targets.length ? "success" : undefined}
           label={<Trans t={t} i18nKey="multiTarget.target" count={target.targets.length}>{{ count: target.targets.length }} Targets</Trans>}
         />
-        <StyledInputBase
-          value={name}
-          sx={{ borderRadius: 1, px: 1, flexGrow: 1 }}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-          onBlur={saveName}
-        />
+        <NameTextField name={target.name} setName={saveName} />
         {target.description && <InfoTooltip title={
           <Typography>
-            {target.description.length > 315 ? target.description.slice(0, 300) + "..." : target.description}
+            {target.description.length > MAX_DESC_TOOLTIP_LENGTH ? target.description.slice(0, MAX_DESC_TOOLTIP_LENGTH) + "..." : target.description}
           </Typography>
-        }/>}
+        } />}
         <ButtonGroup size="small">
           <CustomNumberInputButtonGroupWrapper >
             <CustomNumberInput onChange={n => onOrder(n ?? 0)} value={index + 1}
@@ -287,15 +285,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     </AccordionSummary>
     <AccordionDetails>
       <Box mb={1} display="flex" sx={{ pointerEvents: "auto", width: "100%" }}>
-        <TextField
-          multiline
-          size="small"
-          placeholder={t("multiTarget.description")}
-          value={description}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setDescription(e.target.value)}
-          onBlur={saveDescription}
-          sx={{ flexGrow: 1 }}
-        />
+        <DescTextField desc={target.description ?? ""} setDesc={saveDesc} />
       </Box>
       <Box mb={1}>
         <CopyArea customMultiTarget={target} setCustomMultiTarget={setTarget} />
@@ -307,6 +297,32 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
 
     </AccordionDetails>
   </Accordion>
+}
+function NameTextField({ name, setName }: { name: string, setName: (name: string) => void }) {
+  const [innerName, setInnerName] = useState(name)
+  return <TextField
+    error={innerName.length >= MAX_NAME_LENGTH}
+    size="small"
+    value={innerName}
+    onChange={(e: ChangeEvent<HTMLInputElement>) => setInnerName(e.target.value.slice(0, MAX_NAME_LENGTH))}
+    onBlur={(_e: FocusEvent<HTMLInputElement>) => setName(innerName)}
+    sx={{ flexGrow: 1 }}
+  />
+}
+function DescTextField({ desc, setDesc }: { desc: string, setDesc: (desc: string) => void }) {
+  const { t } = useTranslation("page_character")
+  const [innerDesc, setInnerDesc] = useState(desc)
+  useEffect(() => setInnerDesc(desc), [desc, setInnerDesc])
+  return <TextField
+    error={innerDesc.length >= MAX_DESC_LENGTH}
+    multiline
+    size="small"
+    placeholder={t("multiTarget.description")}
+    value={innerDesc}
+    onChange={(e: ChangeEvent<HTMLInputElement>) => setInnerDesc(e.target.value.slice(0, MAX_DESC_LENGTH))}
+    onBlur={(_e: FocusEvent<HTMLInputElement>) => setDesc(innerDesc)}
+    sx={{ flexGrow: 1 }}
+  />
 }
 const keys = [...allInputPremodKeys]
 const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
