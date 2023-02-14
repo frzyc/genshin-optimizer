@@ -1,4 +1,4 @@
-import type { ArtifactBuildData } from "../PageCharacter/CharacterDisplay/Tabs/TabOptimize/common"
+import type { ArtifactBuildData } from "../Solver/common"
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { customMapFormula, forEachNodes, mapFormulas } from "./internal"
 import { AnyNode, CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode, ThresholdNode } from "./type"

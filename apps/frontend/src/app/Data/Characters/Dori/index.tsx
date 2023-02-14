@@ -228,7 +228,7 @@ const sheet: ICharacterSheet = {
             value: dm.constellation6.infusionDuration,
             unit: "s"
           }, {
-            node: infoMut(dmgFormulas.constellation6.heal, { name: ct.chg("c6Heal"), variant: "heal" })
+            node: infoMut(dmgFormulas.constellation6.heal, { name: ct.ch("c6Heal"), variant: "heal" })
           }, {
             text: stg("cd"),
             value: dm.constellation6.cd,

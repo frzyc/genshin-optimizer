@@ -102,7 +102,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
 
       return enhancedDatum
     })
-    .sort((a, b) => a!.x - b!.x) as EnhancedPoint[]
+      .sort((a, b) => a!.x - b!.x) as EnhancedPoint[]
 
     const minimumData: EnhancedPoint[] = []
     for (const point of points) {
@@ -158,7 +158,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         </Grid>
         <Grid item>
           <BootstrapTooltip title={!plotBase ? "" : t("ui:reset")} placement="top">
-            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
+            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase || disabled}>
               <Replay />
             </Button></span>
           </BootstrapTooltip>
@@ -283,7 +283,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         { id: "trueY", value: t`tcGraph.generatedBuilds`, type: "circle", color: optTargetColor },
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
-      ]}/>
+      ]} />
       {showMin && <Line
         dataKey="min"
         stroke={lineColor}

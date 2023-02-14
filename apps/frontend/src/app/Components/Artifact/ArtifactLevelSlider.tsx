@@ -30,7 +30,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
     <CustomNumberInput
       value={sliderLow}
       onChange={val => setLow(clamp(val, 0, levelHigh))}
-      sx={{ px: 1, pl: showLevelText ? 2 : undefined, width: showLevelText ? 100 : 50, }}
+      sx={{ px: 1, pl: showLevelText ? 2 : undefined, width: showLevelText ? 100 : 50, borderRadius: "4px 0 0 4px" }}
       inputProps={{ sx: { textAlign: showLevelText ? "right" : "center" } }}
       startAdornment={showLevelText ? "Level: " : undefined}
       disabled={disabled}
@@ -47,7 +47,7 @@ export default function ArtifactLevelSlider({ levelLow, levelHigh, setLow, setHi
     <CustomNumberInput
       value={sliderHigh}
       onChange={val => setHigh(clamp(val, levelLow, 20))}
-      sx={{ px: 1, width: 50, }}
+      sx={{ px: 1, width: 50, borderRadius: "0 4px 4px 0" }}
       inputProps={{ sx: { textAlign: "center" } }}
       disabled={disabled}
     />

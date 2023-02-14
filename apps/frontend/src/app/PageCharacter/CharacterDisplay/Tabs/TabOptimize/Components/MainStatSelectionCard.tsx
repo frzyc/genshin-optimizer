@@ -1,4 +1,4 @@
-import { allElementWithPhyKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
 import { useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -16,36 +16,47 @@ import PlumeIcon from '../../../../../SVGIcons/ArtifactSlot/PlumeIcon';
 import AtkIcon from '../../../../../SVGIcons/Stats/AtkIcon';
 import HpIcon from '../../../../../SVGIcons/Stats/HpIcon';
 import { handleMultiSelect } from '../../../../../Util/MultiSelect';
-import { catTotal } from '../../../../../Util/totalUtils';
-import { objectKeyMap } from '../../../../../Util/Util';
+import { bulkCatTotal } from '../../../../../Util/totalUtils';
 import useBuildSetting from '../useBuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
-export default function MainStatSelectionCard({ disabled = false, filteredArtIds }: {
+export default function MainStatSelectionCard({ disabled = false, filteredArtIdMap }: {
   disabled?: boolean,
-  filteredArtIds: string[]
+  filteredArtIdMap: Record<string, boolean>
 }) {
   const { t } = useTranslation("artifact")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { mainStatKeys }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
-  const tots = useMemo(() => objectKeyMap(allArtifactSlotKeys, slotKey =>
-    catTotal(Artifact.slotMainStats(slotKey), ct => Object.entries(database.arts.data).forEach(([id, a]) => {
-      const sk = a.slotKey
-      if (sk !== slotKey) return
-      const msk = a.mainStatKey
-      if (!msk || !ct[msk]) return
-      ct[msk].total++
-      if (filteredArtIds.includes(id)) ct[msk].current++
-    }))
-  ), [filteredArtIds, database])
-  const slotTots = useMemo(() => catTotal(artifactsSlotsToSelectMainStats, ct => Object.entries(database.arts.data).forEach(([id, a]) => {
-    const sk = a.slotKey
-    if (!ct[sk]) return
-    ct[sk].total++
-    if (filteredArtIds.includes(id)) ct[sk].current++
-  })), [filteredArtIds, database])
+  const { mainStatSlotTots, slotTots } = useMemo(() => {
+    const catKeys = {
+      flowerMainStatTots: Artifact.slotMainStats("flower"),
+      plumeMainStatTots: Artifact.slotMainStats("plume"),
+      sandsMainStatTots: Artifact.slotMainStats("sands"),
+      gobletMainStatTots: Artifact.slotMainStats("goblet"),
+      circletMainStatTots: Artifact.slotMainStats("circlet"),
+      slotTots: artifactsSlotsToSelectMainStats
+    } as const
+    const catTotals = bulkCatTotal(catKeys, ctMap =>
+      Object.entries(database.arts.data).forEach(([id, art]) => {
+        const { slotKey, mainStatKey } = art
+        if ((artifactsSlotsToSelectMainStats as readonly string[]).includes(slotKey)) {
+          ctMap.slotTots[slotKey].total++
+          if (filteredArtIdMap[id]) ctMap.slotTots[slotKey].current++
+        }
+        ctMap[`${slotKey}MainStatTots`][mainStatKey].total++
+        if (filteredArtIdMap[id]) ctMap[`${slotKey}MainStatTots`][mainStatKey].current++
+      })
+    )
+    return { mainStatSlotTots: {
+      flower: catTotals.flowerMainStatTots,
+      plume: catTotals.plumeMainStatTots,
+      sands: catTotals.sandsMainStatTots,
+      goblet: catTotals.gobletMainStatTots,
+      circlet: catTotals.circletMainStatTots,
+    }, slotTots: catTotals.slotTots}
+  }, [database, filteredArtIdMap])
 
   return <Box display="flex" flexDirection="column">
     <Divider />
@@ -56,7 +67,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
             <FlowerIcon fontSize='inherit' />
           </BootstrapTooltip>
           <Box flexGrow={1}>
-            <SqBadge color="info"><HpIcon {...iconInlineProps} /> {tots.flower.hp}</SqBadge>
+            <SqBadge color="info"><HpIcon {...iconInlineProps} /> {mainStatSlotTots.flower.hp}</SqBadge>
           </Box>
         </Box>
       </CardContent>
@@ -67,7 +78,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
             <PlumeIcon fontSize='inherit' />
           </BootstrapTooltip>
           <Box flexGrow={1}>
-            <SqBadge color="info"><AtkIcon {...iconInlineProps} /> {tots.plume.atk}</SqBadge>
+            <SqBadge color="info"><AtkIcon {...iconInlineProps} /> {mainStatSlotTots.plume.atk}</SqBadge>
           </Box>
         </Box>
       </CardContent>
@@ -81,7 +92,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
         <CardContent sx={{ pt: 1, pb: 1 }}>
           <Box sx={{ display: "flex", gap: 1, alignItems: "center", pb: 1 }}>
             <BootstrapTooltip placement="top" title={<Typography>{t(`slotName.${slotKey}`)}</Typography>}>
-              <SlotIcon slotKey={slotKey} iconProps={{ fontSize: 'inherit' }} />
+              <Box lineHeight={0}><SlotIcon slotKey={slotKey} iconProps={{ fontSize: 'inherit' }} /></Box>
             </BootstrapTooltip>
             <Box flexGrow={1}>
               <SqBadge color="info">{slotTots[slotKey]}</SqBadge>
@@ -98,7 +109,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIds
                   <Button fullWidth size="small" color={color} sx={{ height: "100%", pointerEvents: disabled ? "none" : undefined, cursor: disabled ? "none" : undefined }}
                     startIcon={<StatIcon statKey={mainStatKey} />}
                     onClick={() => buildSettingDispatch({ mainStatKeys: { ...mainStatKeys, [slotKey]: mainKeysHandler(selectedMainKeys, mainStatKey) } })}>
-                    {tots[slotKey][mainStatKey]}
+                    {mainStatSlotTots[slotKey][mainStatKey]}
                   </Button>
                 </BootstrapTooltip>
               </Grid>

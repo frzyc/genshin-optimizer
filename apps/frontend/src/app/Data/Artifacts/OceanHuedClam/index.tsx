@@ -13,7 +13,7 @@ const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
 const heal = greaterEq(input.artSet.OceanHuedClam, 4,
   prod(
     prod(percent(0.9), 30000),
-    input.enemy.physical_resMulti
+    input.enemy.physical_resMulti_
   )
 )
 
