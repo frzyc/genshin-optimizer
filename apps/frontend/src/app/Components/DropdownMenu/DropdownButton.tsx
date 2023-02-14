@@ -38,6 +38,7 @@ export default function DropdownButton({ title, children, id = "dropdownbtn", ..
       placement="bottom-start"
       transition
       onClick={handleClose}
+      sx={{ zIndex: 1500 }} // Appear above modals
     >
       {({ TransitionProps, placement }) => (
         <Grow
