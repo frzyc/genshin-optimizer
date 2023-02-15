@@ -50,11 +50,12 @@ export default function DropdownButton({ title, children, id = "dropdownbtn", ..
         >
           {/* Replicating previous menu paper */}
           <Paper sx={{
-            maxHeight: "calc(100% - 96px)",
+            maxHeight: "50vh",
             backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12))",
             boxShadow: "rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px",
             paddingTop: "1px",
-            paddingBottom: "1px"
+            paddingBottom: "1px",
+            overflow: "auto"
           }}>
             <ClickAwayListener onClickAway={handleClose}>
               <div> {/* div needed for ClickAwayListener to function */}
