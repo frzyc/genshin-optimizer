@@ -16,22 +16,22 @@ export function newImportResult(source: string, keepNotInImport: boolean, ignore
     weapons: newCounter(),
     characters: newCounter(),
     keepNotInImport,
-    ignoreDups,
-    importArtIds: new Map<string, string>()
+    ignoreDups
   }
 }
 export type IGOOD = {
   format: "GOOD"
   source: string
   version: 1
-  characters?: any[]
-  artifacts?: any[]
-  weapons?: any[]
+  characters?: ICharacter[]
+  artifacts?: IArtifact[]
+  weapons?: IWeapon[]
 }
 export type IGO = {
   dbVersion: number
   source: typeof GOSource
   buildSettings?: Array<BuildSetting & { id: string }>
+  [gokey: string]: unknown
 }
 
 export type ImportResultCounter<T> = {
@@ -53,5 +53,4 @@ export type ImportResult = {
   characters: ImportResultCounter<ICharacter>,
   keepNotInImport: boolean,
   ignoreDups: boolean
-  importArtIds: Map<string, string>
 }

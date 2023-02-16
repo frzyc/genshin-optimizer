@@ -99,11 +99,11 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     Object.entries(this.data).forEach(([k, v]) => this.saveStorageEntry(k as CacheKey, v))
   }
   exportGOOD(go: Partial<IGOOD & IGO>) {
-    go[this.goKey as any] = Object.entries(this.data).map(([id, value]) => ({ ...this.deCache(value), id }))
+    go[this.goKey] = Object.entries(this.data).map(([id, value]) => ({ ...this.deCache(value), id }))
   }
   importGOOD(go: IGOOD & IGO, result: ImportResult) {
-    const entries = go[this.goKey as any]
-    if (entries && Array.isArray(entries)) entries.map(ele => ele.id && this.set(ele.id, ele))
+    const entries = go[this.goKey]
+    if (entries && Array.isArray(entries)) entries.forEach(ele => ele.id && this.set(ele.id, ele))
   }
 }
 export type TriggerString = "update" | "remove" | "new" | "invalid"

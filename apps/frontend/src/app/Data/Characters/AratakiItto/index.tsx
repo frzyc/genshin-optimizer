@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, min, percent, prod, subscript, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElementsWithPhy, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -89,7 +89,7 @@ const [condC4Path, condC4] = cond(key, "constellation4")
 const nodeSkillHP = prod(subscript(input.total.skillIndex, dm.skill.hp, KeyMap.info("hp_")), input.total.hp)
 const nodeBurstAtk = equal(condBurst, "on", prod(subscript(input.total.burstIndex, dm.burst.defConv, KeyMap.info("def_")), input.total.def))
 const nodeBurstAtkSpd = equal(condBurst, "on", dm.burst.atkSpd, KeyMap.info("atkSPD_"))
-const allNodeBurstRes = Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, equal(condBurst, "on", -dm.burst.resDec)]))
+const allNodeBurstRes = Object.fromEntries(allElementWithPhyKeys.map(ele => [`${ele}_res_`, equal(condBurst, "on", -dm.burst.resDec)]))
 const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(dm.passive2.def_), input.premod.def))
 const nodeP1AtkSpd = greaterEq(input.asc, 4, lookup(condP1, Object.fromEntries(range(1, dm.passive1.maxStacks).map(i => [i, constant(dm.passive1.atkSPD_ * i)])), 0, KeyMap.info("atkSPD_")))

@@ -1,7 +1,7 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, prod, subscript } from "../../../../Formula/utils"
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -17,14 +17,14 @@ const [condPassivePath, condPassive] = cond(key, "BoundlessBlessing")
 
 const moveSPD_ = percent(0.1)
 const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s, { unit: "%" })
-const eleDmgStacks = Object.fromEntries(allElements.map(ele => [ele, lookup(condPassive, {
+const eleDmgStacks = Object.fromEntries(allElementKeys.map(ele => [ele, lookup(condPassive, {
   ...objectKeyMap(range(1, 4), i => prod(eleDmgInc, i)),
 }, naught)]))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     moveSPD_,
-    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, eleDmgStacks[ele]])),
+    ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, eleDmgStacks[ele]])),
   },
 })
 const sheet: IWeaponSheet = {
@@ -38,7 +38,7 @@ const sheet: IWeaponSheet = {
     name: st("activeCharField"),
     states: objectKeyMap(range(1, 4), i => ({
       name: st("seconds", { count: i * 4 }),
-      fields: allElements.map(ele => ({ node: eleDmgStacks[ele] }))
+      fields: allElementKeys.map(ele => ({ node: eleDmgStacks[ele] }))
     }))
   }],
 }

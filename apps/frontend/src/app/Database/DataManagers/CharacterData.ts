@@ -1,11 +1,9 @@
-import { allCharacterKeys, allSlotKeys, CharacterKey, SlotKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
-import { getCharSheet } from "../../Data/Characters";
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
 import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
 import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
-import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
@@ -73,7 +71,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
   toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
-      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
+      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allArtifactSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
       equippedWeapon: oldChar ? oldChar.equippedWeapon : (Object.values(this.database.weapons?.data ?? {}).find(w => w.location === charKeyToLocCharKey(id))?.id ?? ""),
       ...storageObj,
     }
@@ -130,7 +128,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
    * This does not update the `location` on artifact
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
-  setEquippedArtifact(key: LocationCharacterKey, slotKey: SlotKey, artid: string) {
+  setEquippedArtifact(key: LocationCharacterKey, slotKey: ArtifactSlotKey, artid: string) {
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
@@ -204,7 +202,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: "avgHit",
-    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
+    equippedArtifacts: objectKeyMap(allArtifactSlotKeys, () => ""),
     equippedWeapon: "",
     conditional: {},
     bonusStats: {},

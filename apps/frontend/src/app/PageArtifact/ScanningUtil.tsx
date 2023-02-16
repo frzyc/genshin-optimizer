@@ -1,4 +1,4 @@
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '@genshin-optimizer/consts';
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, RarityKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
 import { getArtSheet } from '../Data/Artifacts';
@@ -109,7 +109,7 @@ function imageDataToCanvas(imageData: ImageData) {
   return canvas // produces a PNG file
 }
 
-async function ocr(imageURL: string): Promise<{ artifactSetTexts: string[], substatTexts: string[], whiteTexts: string[], rarities: Set<Rarity> }> {
+async function ocr(imageURL: string): Promise<{ artifactSetTexts: string[], substatTexts: string[], whiteTexts: string[], rarities: Set<RarityKey> }> {
   const imageData = await urlToImageData(imageURL)
 
   const width = imageData.width, halfHeight = Math.floor(imageData.height / 2)
@@ -132,7 +132,7 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
+export function findBestArtifact(rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<ArtifactSlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   // const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
   // TODO: restore
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "EmblemOfSeveredFate"])]
@@ -160,7 +160,7 @@ export function findBestArtifact(rarities: Set<number>, textSetKeys: Set<Artifac
   })
 
   // Test all *probable* combinations
-  for (const slotKey of allSlotKeys) {
+  for (const slotKey of allArtifactSlotKeys) {
     for (const mainStatKey of Artifact.slotMainStats(slotKey)) {
       const mainStatScore = (slotKeys.has(slotKey) ? 1 : 0) + (mainStatKeys.has(mainStatKey) ? 1 : 0)
       const relevantMainStatValues = mainStatValues
@@ -281,15 +281,15 @@ export function findBestArtifact(rarities: Set<number>, textSetKeys: Set<Artifac
 function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
   const results = new Set<ArtifactSetKey>([])
   for (const text of texts)
-    for (const key of allArtifactSets)
+    for (const key of allArtifactSetKeys)
       if (hammingDistance(text.replace(/\W/g, ''), getArtSheet(key).nameRaw.replace(/\W/g, '')) <= 2)
         results.add(key)
   return results
 }
-function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<Rarity> {
+function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<RarityKey> {
   const d = pixels
   let lastRowNum = 0, rowsWithNumber = 0;
-  const results = new Set<Rarity>([])
+  const results = new Set<RarityKey>([])
   for (let y = 0; y < height; y++) {
     let star = 0, onStar = false;
     for (let x = 0; x < width; x++) {
@@ -310,7 +310,7 @@ function parseRarities(pixels: Uint8ClampedArray, width: number, height: number)
       rowsWithNumber = 1;
     } else if (lastRowNum) {
       rowsWithNumber++
-      if (rowsWithNumber >= 10) results.add(clamp(lastRowNum, 3, 5) as Rarity)
+      if (rowsWithNumber >= 10) results.add(clamp(lastRowNum, 3, 5) as RarityKey)
     }
   }
   return results
@@ -321,10 +321,10 @@ function colorCloseEnough(color1, color2, threshold = 5) {
     intCloseEnough(color1.g, color2.g) &&
     intCloseEnough(color1.b, color2.b)
 }
-function parseSlotKeys(texts: string[]): Set<SlotKey> {
-  const results = new Set<SlotKey>()
+function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
+  const results = new Set<ArtifactSlotKey>()
   for (const text of texts)
-    for (const key of allSlotKeys)
+    for (const key of allArtifactSlotKeys)
       if (hammingDistance(text.replace(/\W/g, ''), Artifact.slotName(key).replace(/\W/g, '')) <= 2)
         results.add(key)
   return results

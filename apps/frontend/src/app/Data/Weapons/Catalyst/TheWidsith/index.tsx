@@ -1,7 +1,7 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import { IWeaponSheet } from '../../IWeaponSheet'
@@ -17,7 +17,7 @@ const refinementEleMasVals = [240, 300, 360, 420, 480]
 
 const [condPassivePath, condPassive] = cond(key, "Debut")
 const atk_ = equal("recitative", condPassive, subscript(input.weapon.refineIndex, refinementAtkVals))
-const eleBonus_ = Object.fromEntries(allElements.map(
+const eleBonus_ = Object.fromEntries(allElementKeys.map(
   ele => [ele, equal("aria", condPassive, subscript(input.weapon.refineIndex, refinementEleDmgVals))]
 ))
 const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineIndex, refinementEleMasVals))
@@ -25,7 +25,7 @@ const eleMas = equal("interlude", condPassive, subscript(input.weapon.refineInde
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    ...Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
+    ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
     eleMas
   }
 })
@@ -41,7 +41,7 @@ const sheet: IWeaponSheet = {
       aria: {
         name: trm("aria"),
         fields: [
-          ...allElements.map(ele => ({ node: eleBonus_[ele] }))
+          ...allElementKeys.map(ele => ({ node: eleBonus_[ele] }))
         ,{
           text: stg("duration"),
           value: 10,
