@@ -34,6 +34,7 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { OptProblemInput } from '../../../../Solver';
 import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
+import { bulkCatTotal } from '../../../../Util/totalUtils';
 import { objectKeyMap, objPathValue, range } from '../../../../Util/Util';
 import { maxBuildsToShowList } from './Build';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
@@ -101,7 +102,7 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const { filteredArts, numExcludedUsed, numEquippedUsed } = useMemo(() => {
+  const filteredArts = useMemo(() => {
     const { mainStatKeys, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
     const cantTakeList: Set<LocationCharacterKey> = new Set()
     if (useEquippedArts) {
@@ -109,8 +110,7 @@ export default function TabBuild() {
       if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
       else equipmentPriority.slice(0, index).forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
     }
-    let numExcludedUsed = 0, numEquippedUsed = 0
-    const filteredArts = database.arts.values.filter(art => {
+    return database.arts.values.filter(art => {
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -125,26 +125,37 @@ export default function TabBuild() {
         if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       }
 
-      if (art.exclude) numExcludedUsed++
-      if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })
-
-    return { filteredArts, numExcludedUsed, numEquippedUsed }
   }, [database, characterKey, equipmentPriority, deferredArtsDirty, deferredBuildSetting])
 
   const filteredArtIdMap = useMemo(() => objectKeyMap(filteredArts.map(({ id }) => id), _ => true), [filteredArts])
-  const levelTotal = useMemo(() => {
+  const { levelTotal, excludedTotal, equippedTotal } = useMemo(() => {
     const { levelLow, levelHigh } = deferredBuildSetting
-    let total = 0, current = 0
-    Object.entries(database.arts.data).forEach(([id, art]) => {
-      if (art.level >= levelLow && art.level <= levelHigh) {
-        total++
-        if (filteredArtIdMap[id]) current++
-      }
-    })
-    return `${current}/${total}`
-  }, [deferredBuildSetting, filteredArtIdMap, database])
+    const catKeys = {
+      levelTotal: ["inRange"],
+      excludedTotal: ["usingExcluded", "numExcluded"],
+      equippedTotal: ["equipped"]
+    } as const
+    return bulkCatTotal(catKeys, ctMap =>
+      Object.entries(database.arts.data).forEach(([id, art]) => {
+        const { level, exclude, location } = art
+        if (level >= levelLow && level <= levelHigh) {
+          ctMap.levelTotal.inRange.total++
+          if (filteredArtIdMap[id]) ctMap.levelTotal.inRange.current++
+        }
+        if (exclude) {
+          ctMap.excludedTotal.usingExcluded.total++
+          if (filteredArtIdMap[id]) ctMap.excludedTotal.usingExcluded.current++
+          ctMap.excludedTotal.numExcluded.total++
+          ctMap.excludedTotal.numExcluded.current++
+        }
+        if (location) {
+          ctMap.equippedTotal.equipped.total++
+          if (filteredArtIdMap[id]) ctMap.equippedTotal.equipped.current++
+        }
+      }))
+  }, [deferredBuildSetting, database.arts.data, filteredArtIdMap])
 
   const tabFocused = useRef(true)
   useEffect(() => {
@@ -322,10 +333,10 @@ export default function TabBuild() {
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} numExcludedArt={numExcludedUsed} />
+          <UseExcluded disabled={generatingBuilds} usingExcludedTotal={excludedTotal.usingExcluded} numExcluded={+excludedTotal.numExcluded} />
 
           {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
+          <UseEquipped disabled={generatingBuilds} equippedTotal={equippedTotal.equipped} />
 
           <Button
             fullWidth
@@ -338,7 +349,7 @@ export default function TabBuild() {
           </Button>
           { /* Level Filter */}
           <CardLight>
-            <CardContent>{t`levelFilter`} <SqBadge color="info">{levelTotal}</SqBadge></CardContent>
+            <CardContent>{t`levelFilter`} <SqBadge color="info">{levelTotal.inRange}</SqBadge></CardContent>
             <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
               setLow={levelLow => buildSettingDispatch({ levelLow })}
               setHigh={levelHigh => buildSettingDispatch({ levelHigh })}

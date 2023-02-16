@@ -21,7 +21,7 @@ import { ICachedCharacter } from "../../../../../Types/character";
 import useBuildSetting from "../useBuildSetting";
 const CharacterSelectionModal = React.lazy(() => import('../../../../CharacterSelectionModal'))
 
-export default function UseEquipped({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
+export default function UseEquipped({ disabled = false, equippedTotal }: { disabled?: boolean, equippedTotal: string }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -96,7 +96,7 @@ export default function UseEquipped({ disabled = false, numArtsEquippedUsed }: {
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <span><Trans t={t} i18nKey="useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted} arts={numArtsEquippedUsed}>Using <strong>{{ arts: numArtsEquippedUsed } as TransObject}</strong> artifacts from <strong>{{ count: numUnlisted } as TransObject}</strong> characters</Trans></SqBadge>}
+          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted}>Using <strong>{{ arts: equippedTotal} as TransObject}</strong> artifact(s) from <strong>{{ count: numUnlisted } as TransObject}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}

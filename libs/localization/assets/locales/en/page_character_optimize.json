@@ -24,10 +24,9 @@
   "levelFilter": "Artifact Level Filter",
   "useExcluded": {
     "title": "Use Excluded Artifacts",
-    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
-    "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
-    "excNum_one": "<1>{{count}}</1> artifact is excluded",
-    "excNum_other": "<1>{{count}}</1> artifacts are excluded"
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+    "excNum_one": "Excluding <1>{{totalStr}}</1> artifact",
+    "excNum_other": "Excluding <1>{{count}}</1> artifacts"
   },
   "useEquipped": {
     "title": "Use Equipped Artifacts",
@@ -45,8 +44,8 @@
       "add": "Add character to list",
       "clearList": "Clear List"
     },
-    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
-    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
+    "usingNumTot_one": "Using <1>{{arts}}</1> artifact(s) from <3>{{count}}</3> character",
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifact(s) from <3>{{count}}</3> characters"
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
