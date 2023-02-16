@@ -1,4 +1,4 @@
-import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, allTravelerKeys } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
@@ -93,7 +93,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     return `char_${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
-    return travelerKeys.find(k => this.keys.includes(k)) ?? travelerKeys[0]
+    return allTravelerKeys.find(k => this.keys.includes(k)) ?? allTravelerKeys[0]
   }
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === "Traveler" ? this.getTravelerCharacterKey() : key
@@ -112,12 +112,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
       // Only unequip from artifact from traveler if there are no more "Travelers" in the database
-      if (art && (art.location === key || (art.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+      if (art && (art.location === key || (art.location === "Traveler" && allTravelerKeys.includes(key as TravelerKey) && !allTravelerKeys.find(t => t !== key && this.keys.includes(t)))))
         this.database.arts.setCached(artKey, { ...art, location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
     // Only unequip from weapon from traveler if there are no more "Travelers" in the database
-    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && allTravelerKeys.includes(key as TravelerKey) && !allTravelerKeys.find(t => t !== key && this.keys.includes(t)))))
       this.database.weapons.setCached(char.equippedWeapon, { ...weapon, location: "" })
     super.remove(key)
   }
@@ -136,7 +136,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }
-    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    if (key === "Traveler") allTravelerKeys.forEach(k => setEq(k))
     else setEq(key)
   }
 
@@ -151,7 +151,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
       if (!char) return
       super.setCached(k, { ...char, equippedWeapon })
     }
-    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    if (key === "Traveler") allTravelerKeys.forEach(k => setEq(k))
     else setEq(key)
   }
 
@@ -169,7 +169,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     }
   }
   triggerCharacter(key: LocationCharacterKey, reason: TriggerString) {
-    if (key === "Traveler") travelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
+    if (key === "Traveler") allTravelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
     else this.trigger(key, reason, this.get(key))
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
