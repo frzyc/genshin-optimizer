@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import HelpIcon from '@mui/icons-material/Help';
@@ -43,7 +43,7 @@ type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
 interface IEditorArtifact {
   setKey: ArtifactSetKey,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
@@ -223,7 +223,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const theme = useTheme();
   const grmd = useMediaQuery(theme.breakpoints.up('md'));
 
-  const element = artifact ? allElementsWithPhy.find(ele => artifact.mainStatKey.includes(ele)) : undefined
+  const element = artifact ? allElementWithPhyKeys.find(ele => artifact.mainStatKey.includes(ele)) : undefined
   const color = artifact
     ? element ?? "success"
     : "primary"
@@ -254,12 +254,11 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               {/* Artifact Set */}
               <ArtifactSetAutocomplete
                 disabled={disableSet}
-                disableClearable
                 size="small"
                 artSetKey={artifact?.setKey ?? ""}
                 setArtSetKey={updateSetKey}
                 sx={{ flexGrow: 1 }}
-                label={t("editor.unknownSetName")}
+                label={artifact?.setKey ? "" : t("editor.unknownSetName")}
                 getOptionDisabled={({ key }) => setACDisable(key)}
               />
               {/* rarity dropdown */}
@@ -284,7 +283,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                 <Suspense fallback={<Skeleton width="60%" />}>
                   <Typography color="text.secondary">
-                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ? <span><ImgIcon src={artifactAsset(artifact.setKey, artifact.slotKey)} /> {sheet?.getSlotName(artifact!.slotKey)}</span> : t`editor.unknownPieceName`}
+                    {(artifact && sheet?.getSlotName(artifact!.slotKey)) ?
+                      <span>
+                        <ImgIcon size={2} src={artifactAsset(artifact.setKey, artifact.slotKey)} />{sheet?.getSlotName(artifact!.slotKey)}
+                      </span> : t`editor.unknownPieceName`}
                   </Typography>
                 </Suspense>
               </CardLight>
@@ -418,7 +420,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {process.env.NODE_ENV === "development" && <Button color="info" startIcon={<Shuffle />} onClick={() => artifactDispatch({ type: "overwrite", artifact: randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
           </Grid>
           {old && oldType !== "edit" && <Grid item>
-            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, editorArtifact!); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
+            <Button startIcon={<Update />} onClick={() => { database.arts.set(old.id, { ...editorArtifact, location: old.location }); allowEmpty ? reset() : setShow(false) }} disabled={!editorArtifact || !isValid} color="success">{t`editor.btnUpdate`}</Button>
           </Grid>}
         </Grid>
       </CardContent>

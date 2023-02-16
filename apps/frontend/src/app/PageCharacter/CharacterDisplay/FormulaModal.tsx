@@ -52,7 +52,7 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
   const { title, icon, action } = header
   return <CardLight sx={{ mb: 1 }}>
-    <CardHeaderCustom avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
+    <CardHeaderCustom avatar={icon && <ImgIcon size={2} src={icon} />} title={title} action={action && <SqBadge>{action}</SqBadge>} />
     <Divider />
     <CardContent>
       {Object.entries(displayNs).map(([key, node]) => !node.isEmpty && <FormulaAccordian key={key} node={node} />)}

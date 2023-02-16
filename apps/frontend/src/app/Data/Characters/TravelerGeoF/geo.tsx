@@ -1,11 +1,10 @@
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
-import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
+import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { CharacterSheetKey } from '../../../Types/consts'
-import { range } from '../../../Util/Util'
-import { cond, stg, st, trans } from '../../SheetUtil'
+import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { TalentSheet } from '../ICharacterSheet.d'
@@ -56,15 +55,6 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     equal(condC1BurstArea, "on", dm.constellation1.critRate_)
   )
   const c1BurstArea_critRate_ = equal(input.activeCharKey, target.charKey, c1BurstArea_critRate_Disp)
-
-  const [condC4BurstHitPath, condC4BurstHit] = cond(condCharKey, `${elementKey}C4BurstHit`)
-  const c4Burst_energyRestore = lookup(condC4BurstHit,
-    Object.fromEntries(range(1, dm.constellation4.maxTriggers).map(stack => [
-      stack,
-      constant(stack * dm.constellation4.energyRestore)
-    ])),
-    naught
-  )
 
   const dmgFormulas = {
     ...dmgForms,
@@ -168,19 +158,11 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
           }]
         }
       }
-    }), ct.condTem("constellation4", {
-      value: condC4BurstHit,
-      path: condC4BurstHitPath,
-      name: st("hitOp.burst"),
-      states: Object.fromEntries(range(1, dm.constellation4.maxTriggers).map(stack => [
-        stack,
-        {
-          name: st("hits", { count: stack }),
-          fields: [{
-            node: infoMut(c4Burst_energyRestore, { name: st("energyRegen") }),
-          }]
-        }
-      ]))
+    }), ct.headerTem("constellation4", {
+      fields: [{
+        text: ch("c4.energyRestore"),
+        value: dm.constellation4.energyRestore,
+      }]
     }), ct.headerTem("constellation6", {
       fields: [{
         text: st("durationInc"),

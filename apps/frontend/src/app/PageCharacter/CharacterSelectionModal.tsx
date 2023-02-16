@@ -1,4 +1,4 @@
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey } from "@genshin-optimizer/consts";
+import { allCharacterKeys, allElementKeys, allWeaponTypeKeys, CharacterKey } from "@genshin-optimizer/consts";
 import { characterAsset } from "@genshin-optimizer/g-assets";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
@@ -70,7 +70,7 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
     if (characterKeyList.includes(ck)) ct[wtk].current++
   })), [characterKeyList, database])
 
-  const elementTotals = useMemo(() => catTotal(allElements, ct => allCharacterKeys.forEach(ck => {
+  const elementTotals = useMemo(() => catTotal(allElementKeys, ct => allCharacterKeys.forEach(ck => {
     const ele = getCharSheet(ck, database.gender).elementKey
     ct[ele].total++
     if (characterKeyList.includes(ck)) ct[ele].current++

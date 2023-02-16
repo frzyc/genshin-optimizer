@@ -89,8 +89,6 @@ const p1_shield_ = greaterEq(input.asc, 1,
 
 const p2Collapse_dmgInc = greaterEq(input.asc, 4, prod(input.total.hp, dm.passive2.collapse_dmgInc))
 
-const [condC4AfterBurstPath, condC4AfterBurst] = cond(key, "c4AfterBurst")
-
 const [condC6AfterBarrierPath, condC6AfterBarrier] = cond(key, "c6AfterBarrier")
 const c6_normal_dmg_ = greaterEq(input.constellation, 6,
   equal(condC6AfterBarrier, "on", dm.c6.auto_dmg)
@@ -266,18 +264,11 @@ const sheet: ICharacterSheet = {
         value: dm.c2.burstDuration,
         unit: "s"
       }]
-    }), ct.condTem("constellation4", {
-      value: condC4AfterBurst,
-      path: condC4AfterBurstPath,
-      name: st("afterUse.burst"),
-      states: {
-        on: {
-          fields: [{
-            text: st("energyRegen"),
-            value: dm.c4.energyRestore,
-          }]
-        }
-      }
+    }), ct.headerTem("constellation4", {
+      fields: [{
+        text: st("energyRegen"),
+        value: dm.c4.energyRestore,
+      }]
     }), ct.condTem("constellation6", {
       value: condC6AfterBarrier,
       path: condC6AfterBarrierPath,

@@ -53,7 +53,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
           </IconButton>}
           <Box sx={{ position: "relative", zIndex: 1 }}>
             <Box component="div" sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-              <ImgIcon sx={{ fontSize: "1.5em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />
+              <ImgIcon size={2} src={Assets.weaponTypes?.[weaponTypeKey]} />
               <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1 }}><strong>{weaponSheet.name}</strong></Typography>
             </Box>
             <Typography component="span" variant="h5">Lv. {level}</Typography>
@@ -84,7 +84,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
       <Box sx={{ p: 1, display: "flex", gap: 1, justifyContent: "space-between", alignItems: "center" }}>
         <Box sx={{ flexGrow: 1 }}>
           {canEquip
-            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key, disableClearable: true }} />
+            ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key }} />
             : <LocationName location={location} />}
         </Box>
         <ButtonGroup sx={{ height: "100%" }}>

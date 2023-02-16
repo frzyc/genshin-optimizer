@@ -1,9 +1,9 @@
-import { ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts";
+import { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
 import { ArtifactRarity, LocationKey } from "./consts";
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
@@ -12,7 +12,7 @@ export interface IArtifact {
   substats: ISubstat[],
 
   // GO-specific
-  exclude: boolean,
+  exclude?: boolean,
 }
 export interface ICachedArtifact extends IArtifact {
   id: string,
@@ -34,3 +34,5 @@ export const allMainStatKeys = ["hp", "hp_", "atk", "atk_", "def_", "eleMas", "e
 export const allSubstatKeys = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_",] as const
 export type MainStatKey = typeof allMainStatKeys[number]
 export type SubstatKey = typeof allSubstatKeys[number]
+
+export const allArtifactRarityKeys = [5, 4, 3] as const

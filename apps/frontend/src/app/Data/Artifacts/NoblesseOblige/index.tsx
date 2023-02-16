@@ -1,11 +1,11 @@
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "NoblesseOblige"
 const setHeader = setHeaderTemplate(key)

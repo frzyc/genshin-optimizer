@@ -3,7 +3,7 @@ import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, lessThan, min, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElementsWithPhy, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -97,7 +97,7 @@ const critRateTeam_2 = equal("on", condC4, unequal(input.activeCharKey, input.ch
 
 const [condC6Path, condC6] = cond(key, "ButterflysEmbrace")
 const critRate_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.critRateInc)))
-const ele_res_s = Object.fromEntries(allElementsWithPhy.map(ele => [ele, equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.elePhysResInc)))]))
+const ele_res_s = Object.fromEntries(allElementWithPhyKeys.map(ele => [ele, equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.elePhysResInc)))]))
 
 const dmgFormulas = {
   normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
@@ -126,7 +126,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skillBoost: nodeC3,
     burstBoost: nodeC5,
     pyro_dmg_,
-    ...Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, ele_res_s[ele]])),
+    ...Object.fromEntries(allElementWithPhyKeys.map(ele => [`${ele}_res_`, ele_res_s[ele]])),
     critRate_
   },
   total: {
@@ -298,7 +298,7 @@ const sheet: ICharacterSheet = {
       name: ct.ch("constellation6.condName"),
       states: {
         on: {
-          fields: [...allElementsWithPhy.map(ele => ({ node: ele_res_s[ele] })), {
+          fields: [...allElementWithPhyKeys.map(ele => ({ node: ele_res_s[ele] })), {
             node: critRate_,
           }, {
             text: stg("duration"),

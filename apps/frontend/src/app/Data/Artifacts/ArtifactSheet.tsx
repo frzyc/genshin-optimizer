@@ -1,4 +1,4 @@
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
 import { artifactAsset } from "@genshin-optimizer/g-assets";
 import artifactSheets from ".";
 import ImgIcon from "../../Components/Image/ImgIcon";
@@ -29,18 +29,18 @@ export class ArtifactSheet {
   //This is only for OCR, because we only scan in english right now.
   get nameRaw(): string { return this.sheet.name }
   get rarity(): readonly ArtifactRarity[] { return this.sheet.rarity }
-  get slots(): SlotKey[] {
+  get slots(): ArtifactSlotKey[] {
     switch (this.key) {
       case "PrayersForDestiny":
       case "PrayersForIllumination":
       case "PrayersForWisdom":
       case "PrayersToSpringtime": return ["circlet"]
-      default: return [...allSlotKeys]
+      default: return [...allArtifactSlotKeys]
     }
   }
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
-  getSlotName = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.name`)
-  getSlotDesc = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.desc`)
+  getSlotName = (slotKey: ArtifactSlotKey) => this.tr(`pieces.${slotKey}.name`)
+  getSlotDesc = (slotKey: ArtifactSlotKey) => this.tr(`pieces.${slotKey}.desc`)
   setEffectDesc = (setNum: SetNum): Displayable => this.tr(`setEffects.${setNum}`)
   setEffectDocument = (setNum: SetNum) => this.sheet.setEffects[setNum]?.document
   static trm(setKey: ArtifactSetKey) { return (strKey: string) => <Translate ns={`artifact_${setKey}`} key18={strKey} /> }
@@ -54,7 +54,7 @@ export const setHeaderTemplate = (setKey: ArtifactSetKey): ((setNum: SetNum) => 
   const tr = (strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
   return (setNum: SetNum) => ({
     title: tr("setName"),
-    icon: <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />,
+    icon: <ImgIcon size={2} src={artifactDefIcon(setKey)} />,
     action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
     description: tr(`setEffects.${setNum}`)
   })

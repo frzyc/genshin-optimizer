@@ -88,7 +88,7 @@ export function artifactFilterConfigs(effFilterSet: Set<SubstatKey> = new Set(al
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
     },
-    lines: (art, filter) => filter.includes(art.substats.filter(s => s.value).length),
+    lines: (art, filter) => [0, ...filter].includes(art.substats.filter(s => s.value).length),
   }
 }
 export const artifactSortMap: Partial<Record<ArtifactSortKey, ArtifactSortKey[]>> = {

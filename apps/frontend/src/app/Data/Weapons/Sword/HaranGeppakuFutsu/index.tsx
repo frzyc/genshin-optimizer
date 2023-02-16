@@ -2,7 +2,7 @@ import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
 import KeyMap from '../../../../KeyMap'
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -18,7 +18,7 @@ const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
 const stack_normal_dmg_ = [0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPath, condNode] = cond(key, "HonedFlow")
-const passive_dmg_ = Object.fromEntries(allElements.map(ele =>
+const passive_dmg_ = Object.fromEntries(allElementKeys.map(ele =>
   [`${ele}_dmg_`,
   subscript(input.weapon.refineIndex, passiveRefine, KeyMap.info(`${ele}_dmg_`))]
 ))
@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [ // Passive
-      ...allElements.map((ele) => {
+      ...allElementKeys.map((ele) => {
         return { node: passive_dmg_[`${ele}_dmg_`] }
       })
     ],

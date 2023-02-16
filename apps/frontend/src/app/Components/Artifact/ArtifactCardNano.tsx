@@ -9,7 +9,7 @@ import KeyMap, { cacheValueString } from "../../KeyMap";
 import StatIcon from "../../KeyMap/StatIcon";
 import useArtifact from "../../ReactHooks/useArtifact";
 import { ICachedSubstat } from "../../Types/artifact";
-import { allElementsWithPhy, SlotKey } from "../../Types/consts";
+import { allElementWithPhyKeys, ArtifactSlotKey } from "@genshin-optimizer/consts";
 import { clamp } from "../../Util/Util";
 import BootstrapTooltip from "../BootstrapTooltip";
 import CardDark from "../Card/CardDark";
@@ -21,7 +21,7 @@ import ArtifactTooltip from "./ArtifactTooltip";
 
 type Data = {
   artifactId?: string,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   mainStatAssumptionLevel?: number,
   onClick?: () => void,
   showLocation?: boolean,
@@ -40,7 +40,7 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
   const { slotKey, rarity, level, mainStatKey, substats, location } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
-  const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
+  const element = allElementWithPhyKeys.find(ele => art.mainStatKey.includes(ele))
   const color = element ? alpha(theme.palette[element].main, 0.6) : alpha(theme.palette.secondary.main, 0.6)
   return <BGComponent sx={{ height: "100%" }}><ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}  >
     <Box display="flex" height="100%">
@@ -61,13 +61,11 @@ export default function ArtifactCardNano({ artifactId, slotKey: pSlotKey, mainSt
           }} />}
         </Box>
         {/* mainstats */}
-        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color }}
-          label={<Typography sx={{ display: "flex", gap: 0.5, px: 1, zIndex: 1 }}>
-            <BootstrapTooltip placement="top" title={<Typography><StatColoredWithUnit statKey={mainStatKey} /></Typography>} disableInteractive>
-              <StatIcon statKey={mainStatKey} />
-            </BootstrapTooltip>
-            <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText>
-          </Typography>} />
+        <Chip size="small" sx={{ position: "absolute", bottom: 0, mb: 1, backgroundColor: color, p: 1 }}
+          icon={<BootstrapTooltip placement="top" title={<Typography><StatColoredWithUnit statKey={mainStatKey} /></Typography>} disableInteractive>
+            <Box lineHeight={0}><StatIcon statKey={mainStatKey} iconProps={{ style: { padding: "4px" }}} /></Box>
+          </BootstrapTooltip>}
+          label={<Typography sx={{ mx: -0.7 }}><ColorText color={mainStatLevel !== level ? "warning" : undefined}>{cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</ColorText></Typography>} />
       </Box>
       {/* substats */}
       <Box display="flex" flexDirection="column" justifyContent="space-between" sx={{ p: 1, }}>
@@ -82,9 +80,9 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
   const unit = KeyMap.unit(stat.key)
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
+    <Typography sx={{ flexGrow: 1, display: "flex", gap: 0.5, alignItems: "center" }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">
       <BootstrapTooltip placement="top" title={<Typography>{stat.key && <StatColoredWithUnit statKey={stat.key} />}</Typography>} disableInteractive>
-        <span>{StatIcon[stat.key]}</span>
+        <Box lineHeight={0}><StatIcon statKey={stat.key} iconProps={{ fontSize: "inherit" }} /></Box>
       </BootstrapTooltip>
       <span>{`${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</span>
     </Typography>

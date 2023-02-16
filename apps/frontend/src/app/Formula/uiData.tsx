@@ -1,4 +1,4 @@
-import { allArtifactSets, allWeaponKeys, ArtifactSetKey, WeaponKey } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allWeaponKeys, ArtifactSetKey, WeaponKey } from "@genshin-optimizer/consts"
 import { crawlObject } from "@genshin-optimizer/util"
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
@@ -353,7 +353,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   if (name) {
     const prefixDisplay = (prefix && !source) ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
     const sourceText = source && (
-      (allArtifactSets.includes(source as ArtifactSetKey) && <Translate ns="artifactNames_gen" key18={source} />) ||
+      (allArtifactSetKeys.includes(source as ArtifactSetKey) && <Translate ns="artifactNames_gen" key18={source} />) ||
       (allWeaponKeys.includes(source as WeaponKey) && <Translate ns="weaponNames_gen" key18={source} />) ||
       (allCharacterSheetKeys.includes(source as CharacterSheetKey) && <Translate ns="charNames_gen" key18={source} />)
     )

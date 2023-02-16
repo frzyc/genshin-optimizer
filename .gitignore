@@ -34,6 +34,15 @@ yarn-error.log
 testem.log
 /typings
 
+# Yarn zero-install
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # System Files
 .DS_Store
 Thumbs.db

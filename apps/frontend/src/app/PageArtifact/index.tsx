@@ -1,10 +1,11 @@
-import { Add, Replay } from '@mui/icons-material';
+import { Add } from '@mui/icons-material';
 import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga4';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import SubstatToggle from '../Components/Artifact/SubstatToggle';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import InfoComponent from '../Components/InfoComponent';
 import SortByButton from '../Components/SortByButton';
@@ -13,7 +14,7 @@ import useBoolState from '../ReactHooks/useBoolState';
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import { allSubstatKeys, SubstatKey } from '../Types/artifact';
+import { SubstatKey } from '../Types/artifact';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -117,13 +118,9 @@ export default function PageArtifact() {
     <ArtifactFilter numShowing={artifactIds.length} total={totalArtNum} artifactIds={artifactIds} />
     <CardDark ref={invScrollRef}>
       <CardContent>
-        <Grid container sx={{ mb: 1 }}>
-          <Grid item flexGrow={1}><span><Trans t={t} i18nKey="efficiencyFilter.title">Substats to use in efficiency calculation</Trans></span></Grid>
-          <Grid item>
-            <Button size="small" color="error" onClick={() => database.displayArtifact.set({ effFilter: [...allSubstatKeys] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
-          </Grid>
-        </Grid>
-        <SubstatToggle selectedKeys={effFilter} onChange={n => database.displayArtifact.set({ effFilter: n })} />
+        <BootstrapTooltip placement="top" title={<Trans t={t} i18nKey="efficiencyFilter.title">Substats to use in efficiency calculation</Trans>}>
+          <Box><SubstatToggle selectedKeys={effFilter} onChange={n => database.displayArtifact.set({ effFilter: n })} /></Box>
+        </BootstrapTooltip>
       </CardContent>
     </CardDark>
     <CardDark ><CardContent>

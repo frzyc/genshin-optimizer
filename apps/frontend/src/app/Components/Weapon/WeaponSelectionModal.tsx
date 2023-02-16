@@ -1,4 +1,4 @@
-import { allRarities, allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allRarityKeys, allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
 import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
 import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
@@ -56,7 +56,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
     })), [weaponIdList])
 
   const weaponRarityTotals = useMemo(() =>
-    catTotal(allRarities, ct => allWeaponKeys.forEach(wk => {
+    catTotal(allRarityKeys, ct => allWeaponKeys.forEach(wk => {
       const wr = getWeaponSheet(wk).rarity
       ct[wr].total++
       if (weaponIdList.includes(wk)) ct[wr].current++
@@ -100,7 +100,10 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
                 <Box component="img" src={weaponAsset(weaponKey, ascension >= 2)} sx={{ width: 100, height: "auto" }} className={` grad-${weaponSheet.rarity}star`} />
                 <Box sx={{ flexGrow: 1, px: 1 }}>
                   <Typography variant="subtitle1">{weaponSheet.name}</Typography>
-                  <Typography><ImgIcon size={1.5} src={Assets.weaponTypes?.[weaponSheet.weaponType]} /> <StarsDisplay stars={weaponSheet.rarity} colored /></Typography>
+                  <Typography sx={{ display: "flex", alignItems: "baseline" }}>
+                    <ImgIcon size={1.5} src={Assets.weaponTypes?.[weaponSheet.weaponType]} />
+                    <StarsDisplay stars={weaponSheet.rarity} colored />
+                  </Typography>
                 </Box>
               </CardActionArea>
             </CardLight>

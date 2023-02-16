@@ -1,4 +1,4 @@
-import { allRarities, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
+import { allRarityKeys, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
 import { Add } from '@mui/icons-material';
 import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
 import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
@@ -113,7 +113,7 @@ export default function PageWeapon() {
     })), [database, weaponIdList])
 
   const weaponRarityTotals = useMemo(() =>
-    catTotal(allRarities, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
+    catTotal(allRarityKeys, ct => Object.entries(database.weapons.data).forEach(([id, weapon]) => {
       const wr = getWeaponSheet(weapon.key).rarity
       ct[wr].total++
       if (weaponIdList.includes(id)) ct[wr].current++
@@ -133,28 +133,22 @@ export default function PageWeapon() {
     </Suspense>
 
     <CardDark ref={invScrollRef}><CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-      <Grid container spacing={1}>
-        <Grid item>
-          <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
-        </Grid>
-        <Grid item>
-          <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
-        </Grid>
-        <Grid item flexGrow={1} />
-        <Grid item >
-          <TextField
-            autoFocus
-            size="small"
-            value={searchTerm}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
-            label={t("weaponName")}
-            sx={{ height: "100%" }}
-            InputProps={{
-              sx: { height: "100%" }
-            }}
-          />
-        </Grid>
-      </Grid>
+      <Box display="flex" flexWrap="wrap" gap={1} alignItems="stretch">
+        <WeaponToggle onChange={weaponType => database.displayWeapon.set({ weaponType })} value={weaponType} totals={weaponTotals} size="small" />
+        <RarityToggle sx={{ height: "100%" }} onChange={rarity => database.displayWeapon.set({ rarity })} value={rarity} totals={weaponRarityTotals} size="small" />
+        <Box flexGrow={1} />
+        <TextField
+          autoFocus
+          size="small"
+          value={searchTerm}
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+          label={t("weaponName")}
+          sx={{ height: "100%" }}
+          InputProps={{
+            sx: { height: "100%" }
+          }}
+        />
+      </Box>
       <Box display="flex" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap">
         <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
         <ShowingWeapon numShowing={weaponIdsToShow.length} total={totalShowing} t={t} />

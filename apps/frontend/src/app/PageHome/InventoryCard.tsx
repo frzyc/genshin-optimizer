@@ -1,4 +1,4 @@
-import { allElements, allSlotKeys, allWeaponTypeKeys } from "@genshin-optimizer/consts"
+import { allElementKeys, allArtifactSlotKeys, allWeaponTypeKeys } from "@genshin-optimizer/consts"
 import { BusinessCenter, People } from "@mui/icons-material"
 import { CardActionArea, CardContent, CardHeader, Chip, Divider, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { useContext, useMemo } from "react"
@@ -23,7 +23,7 @@ export default function InventoryCard() {
   const { gender } = useDBMeta()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
-    const tally = objectKeyMap(allElements, () => 0)
+    const tally = objectKeyMap(allElementKeys, () => 0)
     chars.forEach(ck => {
       const elementKey = getCharSheet(ck, gender).elementKey
       tally[elementKey] = tally[elementKey] + 1
@@ -42,7 +42,7 @@ export default function InventoryCard() {
   }, [database])
 
   const { artifactTally, artifactTotal } = useMemo(() => {
-    const tally = objectKeyMap(allSlotKeys, () => 0)
+    const tally = objectKeyMap(allArtifactSlotKeys, () => 0)
     const arts = database.arts.values
     arts.forEach(art => {
       const slotKey = art.slotKey

@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, Region } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -14,7 +14,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Kaeya"
 const elementKey: ElementKey = "cryo"
-const region: Region = "mondstadt"
+const region: RegionKey = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0

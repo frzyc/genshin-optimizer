@@ -1,4 +1,4 @@
-import { allSlotKeys, ArtifactSetKey, SlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
 import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
@@ -251,7 +251,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
 
 function ArtifactMainLevelCard({ artifactData, setArtifactData }:
   { artifactData: ICharTC["artifact"], setArtifactData: (a: ICharTC["artifact"]) => void }) {
-  const setSlot = useCallback((slotKey: SlotKey) => (slot: ICharTCArtifactSlot) => {
+  const setSlot = useCallback((slotKey: ArtifactSlotKey) => (slot: ICharTCArtifactSlot) => {
     const artifactData_ = deepClone(artifactData)
     artifactData_.slots[slotKey] = slot
     setArtifactData(artifactData_)
@@ -266,7 +266,7 @@ function ArtifactMainLevelCard({ artifactData, setArtifactData }:
   return <Stack spacing={1} >
     <CardLight sx={{ p: 1 }}>
       <Stack spacing={1}>
-        {allSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} slot={artifactData.slots[s]} setSlot={setSlot(s)} />)}
+        {allArtifactSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} slot={artifactData.slots[s]} setSlot={setSlot(s)} />)}
       </Stack>
     </CardLight>
     <Suspense fallback={<Skeleton variant='rectangular' width='100%' height={200} />}>
@@ -274,7 +274,7 @@ function ArtifactMainLevelCard({ artifactData, setArtifactData }:
     </Suspense>
   </Stack>
 }
-function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKey: SlotKey, slot: ICharTCArtifactSlot, setSlot: (s: ICharTCArtifactSlot) => void }) {
+function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKey: ArtifactSlotKey, slot: ICharTCArtifactSlot, setSlot: (s: ICharTCArtifactSlot) => void }) {
   const { level, statKey, rarity } = slot
   const keys = Artifact.slotMainStats(slotKey)
   const setSlot = useCallback((action: Partial<ICharTCArtifactSlot>) => {
@@ -330,7 +330,6 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
     {Object.entries(artSet).map(([setKey, value]) => <ArtifactSetEditor key={setKey} setKey={setKey} value={value} setValue={setValue(setKey)} deleteValue={deleteValue(setKey)} remaining={remaining} />)}
     <CardLight sx={{ flexGrow: 1, overflow: "visible" }}>
       <ArtifactSetAutocomplete
-        disableClearable
         artSetKey={""}
         setArtSetKey={setSet}
         label={"New Artifact Set"}
@@ -353,7 +352,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     <Box display="flex">
       <ArtifactSetTooltip artifactSheet={artifactSheet} numInSet={value}>
         <Box flexGrow={1} p={1} display="flex" gap={1} alignItems="center">
-          <ImgIcon size={2} sx={{ m: -1 }} src={artifactDefIcon(setKey)} />
+          <ImgIcon size={2} src={artifactDefIcon(setKey)} />
           <Box >{artifactSheet.setName}</Box>
           <Info />
         </Box>

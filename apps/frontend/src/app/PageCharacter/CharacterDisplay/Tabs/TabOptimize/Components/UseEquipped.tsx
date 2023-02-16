@@ -1,3 +1,4 @@
+import { CharacterKey } from "@genshin-optimizer/consts";
 import { Add, CheckBox, CheckBoxOutlineBlank, Close, KeyboardArrowDown, KeyboardArrowUp, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp, Replay, Settings } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from "@mui/material";
 import React, { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
@@ -16,32 +17,30 @@ import { DatabaseContext } from "../../../../../Database/Database";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useCharacter from "../../../../../ReactHooks/useCharacter";
 import useCharSelectionCallback from "../../../../../ReactHooks/useCharSelectionCallback";
-import { ICachedArtifact } from "../../../../../Types/artifact";
 import { ICachedCharacter } from "../../../../../Types/character";
-import { CharacterKey, charKeyToLocCharKey } from "../../../../../Types/consts";
 import useBuildSetting from "../useBuildSetting";
 const CharacterSelectionModal = React.lazy(() => import('../../../../CharacterSelectionModal'))
 
-export default function UseEquipped({ disabled = false, filteredArts }: { disabled?: boolean, filteredArts: ICachedArtifact[] }) {
+export default function UseEquipped({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { useEquippedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
   const [{ equipmentPriority: tempEquipmentPriority }, setTO] = useState(database.displayOptimize.get())
-  useEffect(() => database.displayOptimize.follow((r, to) => setTO(to)), [database, setTO])
+  useEffect(() => database.displayOptimize.follow((_r, to) => setTO(to)), [database, setTO])
   //Basic validate for the equipmentPrio list to remove dups and characters that doesnt exist.
   const equipmentPriority = useMemo(() => [...new Set(tempEquipmentPriority)].filter(ck => database.chars.get(ck)), [database, tempEquipmentPriority])
   const setPrio = useCallback((equipmentPriority: CharacterKey[]) => database.displayOptimize.set({ equipmentPriority }), [database])
 
-  const setPrioRank = useCallback((fromIndex, toIndex) => {
+  const setPrioRank = useCallback((fromIndex: number, toIndex: number) => {
     const arr = [...equipmentPriority]
     const element = arr[fromIndex];
     arr.splice(fromIndex, 1);
     arr.splice(toIndex, 0, element);
     setPrio(arr)
   }, [equipmentPriority, setPrio])
-  const removePrio = useCallback((fromIndex) => {
+  const removePrio = useCallback((fromIndex: number) => {
     const arr = [...equipmentPriority]
     arr.splice(fromIndex, 1)
     setPrio(arr)
@@ -61,8 +60,6 @@ export default function UseEquipped({ disabled = false, filteredArts }: { disabl
   const numUnlisted = useMemo(() => {
     return database.chars.keys.length - equipmentPriority.length
   }, [equipmentPriority, database])
-
-  const totArts = useMemo(() => filteredArts.filter(a => a.location && a.location !== charKeyToLocCharKey(characterKey)).length, [filteredArts, characterKey])
 
   return <Box display="flex" gap={1}>
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "sm" }}><CardDark>
@@ -99,7 +96,7 @@ export default function UseEquipped({ disabled = false, filteredArts }: { disabl
       <Button sx={{ flexGrow: 1 }} onClick={() => buildSettingDispatch({ useEquippedArts: !useEquippedArts })} disabled={disabled} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={useEquippedArts ? "success" : "secondary"}>
         <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
           <span><Trans t={t} i18nKey="useEquipped.title">Use Equipped Artifacts</Trans></span>
-          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted} arts={totArts}>Using <strong>{{ arts: totArts } as TransObject}</strong> artifacts from <strong>{{ count: numUnlisted } as TransObject}</strong> characters</Trans></SqBadge>}
+          {useEquippedArts && <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="useEquipped.usingNumTot" count={numUnlisted} arts={numArtsEquippedUsed}>Using <strong>{{ arts: numArtsEquippedUsed } as TransObject}</strong> artifacts from <strong>{{ count: numUnlisted } as TransObject}</strong> characters</Trans></SqBadge>}
         </Box>
       </Button>
       {useEquippedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><Settings /></Button>}

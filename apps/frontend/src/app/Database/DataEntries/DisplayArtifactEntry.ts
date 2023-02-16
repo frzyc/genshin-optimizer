@@ -1,7 +1,7 @@
-import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts";
 import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
 import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, allLocationCharacterKeys } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";
@@ -37,7 +37,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
     if (typeof filterOption !== "object") filterOption = initialFilterOption()
     else {
       let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } = filterOption
-      artSetKeys = validateArr(artSetKeys, allArtifactSets, [])
+      artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
       rarity = validateArr(rarity, allArtifactRarities)
 
       if (typeof levelLow !== "number") levelLow = 0
@@ -45,10 +45,10 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
       if (typeof levelHigh !== "number") levelHigh = 0
       else levelHigh = clamp(levelHigh, 0, 20)
 
-      slotKeys = validateArr(slotKeys, allSlotKeys)
+      slotKeys = validateArr(slotKeys, allArtifactSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
       substats = validateArr(substats, allSubstatKeys, [])
-      locations = validateArr(locations, locationCharacterKeys, [])
+      locations = validateArr(locations, allLocationCharacterKeys, [])
       if (typeof showEquipped !== "boolean") showEquipped = true
       if (typeof showInventory !== "boolean") showInventory = true
       exclusion = validateArr(exclusion, ["excluded", "included"])

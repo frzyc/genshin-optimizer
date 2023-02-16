@@ -15,7 +15,7 @@ import useDBMeta from '../../ReactHooks/useDBMeta';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, CharacterKey, ElementKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
 import CardLight from '../Card/CardLight';
@@ -242,11 +242,11 @@ function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
-    [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
+    allArtifactSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
+    [data, database]) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
-    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
+    {artifacts.map(([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) =>
       <Grid item key={key} xs={1}>
         <ArtifactCardPico artifactObj={art} slotKey={key} />
       </Grid>
