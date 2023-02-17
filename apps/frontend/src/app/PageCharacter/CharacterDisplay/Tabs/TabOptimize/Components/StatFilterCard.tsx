@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import CardLight from "../../../../../Components/Card/CardLight"
 import InfoTooltip from "../../../../../Components/InfoTooltip"
 import { CharacterContext } from "../../../../../Context/CharacterContext"
-import { StatSettings } from "../../../../../Types/character"
+import { StatFilters } from "../../../../../Database/DataManagers/BuildSettingData"
 import useBuildSetting from "../useBuildSetting"
 import OptimizationTargetEditorList from "./OptimizationTargetEditorList"
 
@@ -12,7 +12,7 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { statFilters }, buildSettingDispatch } = useBuildSetting(characterKey)
-  const setStatFilters = useCallback((statFilters: StatSettings) => buildSettingDispatch({ statFilters }), [buildSettingDispatch])
+  const setStatFilters = useCallback((statFilters: StatFilters) => buildSettingDispatch({ statFilters }), [buildSettingDispatch])
 
   return <Box>
     <CardLight>

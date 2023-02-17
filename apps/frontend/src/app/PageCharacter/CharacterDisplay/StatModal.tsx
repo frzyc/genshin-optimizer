@@ -1,5 +1,5 @@
 import { CardContent, CardHeader, Grid, ListItem, Stack, Typography, Box, Alert } from "@mui/material";
-import { Key, useCallback, useContext, useMemo } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
@@ -35,7 +35,7 @@ export default function StatModal({ open, onClose }) {
   </ModalWrapper>
 }
 const keys = [...allInputPremodKeys]
-const wrapperFunc = (e: JSX.Element, key?: Key) => <Grid item key={key} xs={1}>{e}</Grid>
+const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
 function BonusStatsEditor() {
   const { t } = useTranslation("page_character")
   const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
@@ -49,7 +49,7 @@ function BonusStatsEditor() {
               You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">Genshin Impact wiki</a> for specific values.
             </Trans></Alert>
         </Grid>
-        <StatEditorList statKeys={keys} statSettings={bonusStats} setStatSettings={setFilter} wrapperFunc={wrapperFunc} />
+        <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
       </Grid>
     </CardContent>
   </CardLight>

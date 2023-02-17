@@ -4,11 +4,10 @@ import CardLight from "../Components/Card/CardLight"
 import ColorText from "../Components/ColoredText"
 import StatEditorList from "../Components/StatEditorList"
 import { allSubstatKeys, SubstatKey } from "../Types/artifact"
-import { StatSettings } from "../Types/character"
 const keys = [...allSubstatKeys]
-export default function ProbabilityFilter({ probabilityFilter, setProbabilityFilter, disabled = false }: {
-  probabilityFilter: StatSettings<SubstatKey>,
-  setProbabilityFilter: (object: StatSettings<SubstatKey>) => void,
+export default function ProbabilityFilter({ probabilityFilter: statFilters = {}, setProbabilityFilter: setStatFilters, disabled = false }: {
+  probabilityFilter: Dict<SubstatKey, number>,
+  setProbabilityFilter: (object: Dict<SubstatKey, number>) => void,
   disabled?: boolean
 }) {
   return <CardDark>
@@ -30,8 +29,8 @@ export default function ProbabilityFilter({ probabilityFilter, setProbabilityFil
             </CardContent>
           </CardLight>
         </Grid>
-        <Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          <StatEditorList<SubstatKey> statKeys={keys} statSettings={probabilityFilter} setStatSettings={setProbabilityFilter} disabled={disabled} />
+        <Grid item xs={12} md={6} spacing={1} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          <StatEditorList statKeys={keys} statFilters={statFilters} setStatFilters={setStatFilters} disabled={disabled} />
         </Grid>
       </Grid>
     </CardContent>
