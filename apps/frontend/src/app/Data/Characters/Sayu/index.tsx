@@ -312,7 +312,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: burstC3 }] }]),
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
-        text: ct.ch("c4Ener"),
+        text: st("energyRegen"),
         value: dm.constellation4.ener,
         fixed: 1
       }, {
