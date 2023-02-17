@@ -96,7 +96,7 @@ function StatFilterItem({ statKey, statKeyOptions = [], value = 0, delKey, setKe
       sx={{ flexGrow: 1, flexBasis: 150 }}
       textFieldProps={{ sx: { "& .MuiInputBase-root": { borderRadius: "4px 0 0 4px" } } }}
     />
-    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1, borderRadius: 0 }}>
+    <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1, borderRadius: "0 4px 4px 0" }}>
       <CustomNumberInput
         disabled={!statKey || disabled}
         float={isFloat}
