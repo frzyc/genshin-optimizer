@@ -38,7 +38,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
   if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
   if (allowedRolls < 0) error = error || t("editor.substat.error.noOverRoll", { value: allowedRolls + rollNum })
 
-  const marks = useMemo(() => key ? artifactSubRolls(rarity, key).map(v => ({ value: v, })) : [{ value: 0 }], [key, rarity])
+  const marks = useMemo(() => key ? [{ value: 0 }, ...artifactSubRolls(rarity, key).map(v => ({ value: v, }))] : [{ value: 0 }], [key, rarity])
 
   return <CardLight>
     <Box sx={{ display: "flex" }}>
