@@ -4,14 +4,14 @@ import { useCallback, useContext } from "react"
 import { useTranslation } from "react-i18next"
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../../../../../Components/CustomNumberInput"
 import { DataContext } from "../../../../../Context/DataContext"
-import { StatFilters, StatFilterSetting } from "../../../../../Database/DataManagers/BuildSettingData"
 import { NodeDisplay } from "../../../../../Formula/uiData"
+import { DisablableValue, StatSettings } from "../../../../../Types/character"
 import { objPathValue } from "../../../../../Util/Util"
 import OptimizationTargetSelector from "./OptimizationTargetSelector"
 
 type OptimizationTargetEditorListProps = {
-  statFilters: StatFilters
-  setStatFilters: (statFilters: StatFilters) => void
+  statFilters: StatSettings
+  setStatFilters: (statFilters: StatSettings) => void
   disabled: boolean
 }
 
@@ -49,7 +49,7 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
     const statFilters_ = { ...statFilters }
     const pathStr = JSON.stringify(path)
     const filterArr = [...statFilters[pathStr]!]
-    filterArr[index] = { ...filterArr[index], value } as StatFilterSetting
+    filterArr[index] = { ...filterArr[index], value } as DisablableValue
     statFilters_[pathStr] = filterArr
     setStatFilters({ ...statFilters_ })
   }, [setStatFilters, statFilters])
@@ -58,7 +58,7 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
     const statFilters_ = { ...statFilters }
     const pathStr = JSON.stringify(path)
     const filterArr = [...statFilters[pathStr]!]
-    filterArr[index] = { ...filterArr[index], disabled } as StatFilterSetting
+    filterArr[index] = { ...filterArr[index], disabled } as DisablableValue
     statFilters_[pathStr] = filterArr
     setStatFilters({ ...statFilters_ })
   }, [setStatFilters, statFilters])
@@ -75,7 +75,7 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
 
 type OptimizationTargetEditorItemProps = {
   path?: string[]
-  setting?: StatFilterSetting
+  setting?: DisablableValue
   index?: number
   setTarget: (path: string[], oldPath?: string[], oldIndex?: number) => void
   delTarget: (path: string[], index: number) => void

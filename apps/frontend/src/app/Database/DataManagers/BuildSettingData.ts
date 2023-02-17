@@ -1,21 +1,17 @@
+import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "@genshin-optimizer/consts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
-import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "../../Types/consts";
+import { StatSettings } from "../../Types/character";
 import { deepClone, deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
-export interface StatFilterSetting {
-  value: number
-  disabled: boolean
-}
-export type StatFilters = Dict<string, StatFilterSetting[]>
 export interface BuildSetting {
   artSetExclusion: ArtSetExclusion
-  statFilters: StatFilters
+  statFilters: StatSettings
   mainStatKeys: {
     sands: MainStatKey[]
     goblet: MainStatKey[]

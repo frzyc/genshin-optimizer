@@ -72,8 +72,12 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
     customBonus: {},
   }
 
-  for (const [key, value] of Object.entries(char.bonusStats))
+  for (const [key, setting] of Object.entries(char.bonusStats)) {
+    const value = setting.reduce((sum, { value, disabled }) => {
+      return disabled ? sum : sum + value
+    }, 0)
     result.customBonus![key] = key.endsWith('_') ? percent(value / 100) : constant(value)
+  }
 
   if (char.enemyOverride.enemyDefRed_)
     result.premod!.enemyDefRed_ = percent(char.enemyOverride.enemyDefRed_ / 100)
@@ -94,7 +98,12 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
         return prod(
           constant(weight),
           infoMut(data(targetNode, {
-            premod: objectMap(bonusStats, (v, k) => k.endsWith('_') ? percent(v / 100) : constant(v)),
+            premod: objectMap(bonusStats, (settings, key) => {
+              const value = settings.reduce((sum, { value, disabled }) => {
+                return disabled ? sum : sum + value
+              }, 0)
+              return key.endsWith('_') ? percent(value / 100) : constant(value)
+            }),
             hit: {
               hitMode: constant(hitMode),
               reaction: reaction ? constant(reaction) : none,

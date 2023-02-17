@@ -1,7 +1,7 @@
-import { allArtifactSetKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
 import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
-import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, allLocationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarityKeys, allSubstatKeys, SubstatKey } from "../../Types/artifact";
+import { StatSettings } from "../../Types/character";
 import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";
@@ -13,10 +13,10 @@ export type IDisplayArtifact = {
   ascending: boolean
   sortType: ArtifactSortKey
   effFilter: SubstatKey[],
-  probabilityFilter: Dict<SubstatKey, number>,
+  probabilityFilter: StatSettings<SubstatKey>,
 }
 
-function initialState() {
+function initialState(): IDisplayArtifact {
   return {
     filterOption: initialFilterOption(),
     ascending: false,
@@ -30,15 +30,15 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
   constructor(database: ArtCharDatabase) {
     super(database, "display_artifact", initialState, "display_artifact")
   }
-  validate(obj: any): IDisplayArtifact | undefined {
+  validate(obj: unknown): IDisplayArtifact | undefined {
     if (typeof obj !== "object") return
-    let { filterOption, ascending, sortType, effFilter, probabilityFilter } = obj
+    let { filterOption, ascending, sortType, effFilter, probabilityFilter } = obj as IDisplayArtifact
 
     if (typeof filterOption !== "object") filterOption = initialFilterOption()
     else {
       let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
-      rarity = validateArr(rarity, allArtifactRarities)
+      rarity = validateArr(rarity, allArtifactRarityKeys)
 
       if (typeof levelLow !== "number") levelLow = 0
       else levelLow = clamp(levelLow, 0, 20)
@@ -67,7 +67,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
 
     effFilter = validateArr(effFilter, allSubstatKeys)
 
-    probabilityFilter = validateObject(probabilityFilter, k => allSubstatKeys.includes(k as SubstatKey), e => typeof e === "number")
+    probabilityFilter = validateObject(probabilityFilter, k => allSubstatKeys.includes(k as SubstatKey), e => Array.isArray(e))
 
     return { filterOption, ascending, sortType, effFilter, probabilityFilter } as IDisplayArtifact
   }

@@ -1,12 +1,14 @@
-import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
+import { allInputPremodKeys } from "../../Formula";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
-import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
+import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, InfusionAuraElements } from "../../Types/consts";
 import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
+import { validateObject } from "../validationUtil";
 
 export class CharacterDataManager extends DataManager<CharacterKey, "characters", ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
@@ -56,9 +58,8 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
 
     if (typeof compareData !== "boolean") compareData = false
 
-    // TODO: validate bonusStats
-    if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
-    if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
+  bonusStats = validateObject(bonusStats, v => (allInputPremodKeys as readonly string[]).includes(v), e => Array.isArray(e))
+    if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).every(([_, num]) => typeof num === "number")) enemyOverride = {}
     if (!customMultiTarget) customMultiTarget = []
     customMultiTarget = customMultiTarget.map(cmt => validateCustomMultiTarget(cmt)).filter(t => t) as CustomMultiTarget[]
     const char: ICharacter = {

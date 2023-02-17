@@ -6,7 +6,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
-import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FocusEvent, Key, Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
@@ -21,6 +21,7 @@ import ModalWrapper from "../Components/ModalWrapper";
 import StatEditorList from "../Components/StatEditorList";
 import { CharacterContext } from "../Context/CharacterContext";
 import { DataContext } from "../Context/DataContext";
+import { validateObject } from "../Database/validationUtil";
 import { allInputPremodKeys, InputPremodKey } from "../Formula";
 import { NodeDisplay, UIData } from "../Formula/uiData";
 import useBoolState from "../ReactHooks/useBoolState";
@@ -76,9 +77,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   if (!bonusStats)
     bonusStats = {}
 
-  bonusStats = Object.fromEntries(Object.entries(bonusStats).filter(([key, value]) =>
-    allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number"
-  ))
+  bonusStats = validateObject(bonusStats, v => (allInputPremodKeys as readonly string[]).includes(v), e => Array.isArray(e))
 
   return { weight, path, hitMode, reaction, infusionAura, bonusStats }
 }
@@ -350,7 +349,7 @@ function DescTextField({ desc, setDesc }: { desc: string, setDesc: (desc: string
   />
 }
 const keys = [...allInputPremodKeys]
-const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
+const wrapperFunc = (e: JSX.Element, key?: Key) => <Grid item key={key} xs={1}>{e}</Grid>
 function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget, rank, maxRank, setTargetIndex, onDup }: { customTarget: CustomTarget, setCustomTarget: (t: CustomTarget) => void, deleteCustomTarget: () => void, rank: number, maxRank: number, setTargetIndex: (ind?: number) => void, onDup: () => void }) {
   const { t } = useTranslation("page_character")
   const { characterSheet } = useContext(CharacterContext)
@@ -358,7 +357,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const { path, weight, hitMode, reaction, bonusStats, infusionAura } = customTarget
   const setWeight = useCallback(weight => setCustomTarget({ ...customTarget, weight }), [customTarget, setCustomTarget])
   const node = objPathValue(data.getDisplay(), path) as NodeDisplay | undefined
-  const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
+  const setBonusStats = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
   const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
   const isTransformativeReaction = path[0] === "reaction"
@@ -382,7 +381,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
                 onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined, reaction: undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
-        <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
+        <StatEditorList<InputPremodKey> statKeys={keys} statSettings={bonusStats} setStatSettings={setBonusStats} wrapperFunc={wrapperFunc} />
       </Grid>
     </Box>
     <ButtonGroup orientation="vertical" sx={{ borderTopLeftRadius: 0, "*": { flexGrow: 1 } }}>

@@ -15,6 +15,7 @@ import useDisplayArtifact from '../ReactHooks/useDisplayArtifact';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
 import { SubstatKey } from '../Types/artifact';
+import { StatSettings } from '../Types/character';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
@@ -56,18 +57,34 @@ export default function PageArtifact() {
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 
-  const setProbabilityFilter = useCallback(probabilityFilter => database.displayArtifact.set({ probabilityFilter }), [database],)
+  const setProbabilityFilter = useCallback((probabilityFilter: StatSettings<SubstatKey>) =>
+    database.displayArtifact.set({ probabilityFilter }),
+    [database]
+  )
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
   const filterConfigs = useMemo(() => artifactFilterConfigs(effFilterSet), [effFilterSet])
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
+  const deferredProbability = useMemo(() =>
+    Object.fromEntries(Object.entries(deferredProbabilityFilter)
+      .map(([key, settings]) => [
+        key,
+        settings
+          .reduce((max, { value, disabled }) => {
+            return disabled ? max : Math.max(max, value)
+          }, 0)
+      ])
+    ),
+    [deferredProbabilityFilter]
+  )
+  console.log(deferredProbability)
   useEffect(() => {
     if (!showProbability) return
-    database.arts.values.forEach(art => database.arts.setProbability(art.id, probability(art, deferredProbabilityFilter)))
+    database.arts.values.forEach(art => database.arts.setProbability(art.id, probability(art, deferredProbability)))
     return () => database.arts.values.forEach(art => database.arts.setProbability(art.id, -1))
-  }, [database, showProbability, deferredProbabilityFilter])
+  }, [database, showProbability, deferredProbability])
 
   const { artifactIds, totalArtNum } = useMemo(() => {
     const { sortType = artifactSortKeys[0], ascending = false, filterOption } = deferredArtifactDisplayState
