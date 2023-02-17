@@ -1,17 +1,17 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { constant, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 
@@ -87,8 +87,6 @@ const dm = {
 
 const [condSkillAbsorptionPath, condSkillAbsorption] = cond(key, "skillAbsorption")
 
-const [condActiveSwirlPath, condActiveSwirl] = cond(key, "activeSwirl")
-
 const [condC2SkillStackPath, condC2SkillStack] = cond(key, "c2SkillStack")
 const c2_kickPressDmg_ = greaterEq(input.constellation, 2, percent(dm.constellation2.dmgInc))
 const c2_kickDmg_ = greaterEq(input.constellation, 2,
@@ -154,11 +152,11 @@ const dmgFormulas = {
     darumaHeal
   },
   passive1: {
-    heal: greaterEq(input.asc, 1, equal(condActiveSwirl, "activeSwirl",
+    heal: greaterEq(input.asc, 1,
       customHealNode(
         sum(dm.passive1.baseHeal, prod(dm.passive1.emHeal, input.total.eleMas))
       )
-    ))
+    )
   },
   passive2: {
     extraHeal: greaterEq(input.asc, 4, prod(darumaHeal, percent(dm.passive2.nearHeal)))
@@ -169,9 +167,9 @@ const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC5,
-    burst: burstC3
+  premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3
   }
 })
 
@@ -289,21 +287,14 @@ const sheet: ICharacterSheet = {
       }]
     })]),
 
-    passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
-      value: condActiveSwirl,
-      path: condActiveSwirlPath,
-      name: ct.ch("p1Swirl"),
-      states: {
-        activeSwirl: {
-          fields: [{
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg(`healing`) })
-          }, {
-            text: stg("cd"),
-            value: dm.passive1.cd,
-            unit: "s"
-          }]
-        }
-      }
+    passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
+      fields: [{
+        node: infoMut(dmgFormulas.passive1.heal, { name: stg(`healing`) })
+      }, {
+        text: stg("cd"),
+        value: dm.passive1.cd,
+        unit: "s"
+      }]
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),

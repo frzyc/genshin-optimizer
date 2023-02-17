@@ -1,11 +1,9 @@
-import { allCharacterKeys, allSlotKeys, CharacterKey, SlotKey, TravelerKey, travelerKeys } from "@genshin-optimizer/consts";
-import { getCharSheet } from "../../Data/Characters";
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, TravelerKey, allTravelerKeys } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
 import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
 import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, charKeyToLocCharKey, InfusionAuraElements, LocationCharacterKey } from "../../Types/consts";
 import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
-import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
 import { DataManager, TriggerString } from "../DataManager";
 import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
@@ -73,7 +71,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
   toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
-      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
+      equippedArtifacts: oldChar ? oldChar.equippedArtifacts : objectKeyMap(allArtifactSlotKeys, sk => Object.values(this.database.arts?.data ?? {}).find(a => a.location === charKeyToLocCharKey(id) && a.slotKey === sk)?.id ?? ""),
       equippedWeapon: oldChar ? oldChar.equippedWeapon : (Object.values(this.database.weapons?.data ?? {}).find(w => w.location === charKeyToLocCharKey(id))?.id ?? ""),
       ...storageObj,
     }
@@ -95,7 +93,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     return `char_${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
-    return travelerKeys.find(k => this.keys.includes(k)) ?? travelerKeys[0]
+    return allTravelerKeys.find(k => this.keys.includes(k)) ?? allTravelerKeys[0]
   }
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === "Traveler" ? this.getTravelerCharacterKey() : key
@@ -114,12 +112,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.database.arts.get(artKey)
       // Only unequip from artifact from traveler if there are no more "Travelers" in the database
-      if (art && (art.location === key || (art.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+      if (art && (art.location === key || (art.location === "Traveler" && allTravelerKeys.includes(key as TravelerKey) && !allTravelerKeys.find(t => t !== key && this.keys.includes(t)))))
         this.database.arts.setCached(artKey, { ...art, location: "" })
     }
     const weapon = this.database.weapons.get(char.equippedWeapon)
     // Only unequip from weapon from traveler if there are no more "Travelers" in the database
-    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && travelerKeys.includes(key as TravelerKey) && !travelerKeys.find(t => t !== key && this.keys.includes(t)))))
+    if (weapon && (weapon.location === key || (weapon.location === "Traveler" && allTravelerKeys.includes(key as TravelerKey) && !allTravelerKeys.find(t => t !== key && this.keys.includes(t)))))
       this.database.weapons.setCached(char.equippedWeapon, { ...weapon, location: "" })
     super.remove(key)
   }
@@ -130,7 +128,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
    * This does not update the `location` on artifact
    * This function should be use internally for database to maintain cache on ICachedCharacter.
    */
-  setEquippedArtifact(key: LocationCharacterKey, slotKey: SlotKey, artid: string) {
+  setEquippedArtifact(key: LocationCharacterKey, slotKey: ArtifactSlotKey, artid: string) {
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
@@ -138,7 +136,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }
-    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    if (key === "Traveler") allTravelerKeys.forEach(k => setEq(k))
     else setEq(key)
   }
 
@@ -153,7 +151,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
       if (!char) return
       super.setCached(k, { ...char, equippedWeapon })
     }
-    if (key === "Traveler") travelerKeys.forEach(k => setEq(k))
+    if (key === "Traveler") allTravelerKeys.forEach(k => setEq(k))
     else setEq(key)
   }
 
@@ -171,7 +169,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     }
   }
   triggerCharacter(key: LocationCharacterKey, reason: TriggerString) {
-    if (key === "Traveler") travelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
+    if (key === "Traveler") allTravelerKeys.forEach(ck => this.trigger(ck, reason, this.get(ck)))
     else this.trigger(key, reason, this.get(key))
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
@@ -204,7 +202,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: "avgHit",
-    equippedArtifacts: objectKeyMap(allSlotKeys, () => ""),
+    equippedArtifacts: objectKeyMap(allArtifactSlotKeys, () => ""),
     equippedWeapon: "",
     conditional: {},
     bonusStats: {},

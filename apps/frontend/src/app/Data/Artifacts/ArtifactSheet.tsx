@@ -1,4 +1,4 @@
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
 import { artifactAsset } from "@genshin-optimizer/g-assets";
 import artifactSheets from ".";
 import ImgIcon from "../../Components/Image/ImgIcon";
@@ -29,18 +29,18 @@ export class ArtifactSheet {
   //This is only for OCR, because we only scan in english right now.
   get nameRaw(): string { return this.sheet.name }
   get rarity(): readonly ArtifactRarity[] { return this.sheet.rarity }
-  get slots(): SlotKey[] {
+  get slots(): ArtifactSlotKey[] {
     switch (this.key) {
       case "PrayersForDestiny":
       case "PrayersForIllumination":
       case "PrayersForWisdom":
       case "PrayersToSpringtime": return ["circlet"]
-      default: return [...allSlotKeys]
+      default: return [...allArtifactSlotKeys]
     }
   }
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
-  getSlotName = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.name`)
-  getSlotDesc = (slotKey: SlotKey) => this.tr(`pieces.${slotKey}.desc`)
+  getSlotName = (slotKey: ArtifactSlotKey) => this.tr(`pieces.${slotKey}.name`)
+  getSlotDesc = (slotKey: ArtifactSlotKey) => this.tr(`pieces.${slotKey}.desc`)
   setEffectDesc = (setNum: SetNum): Displayable => this.tr(`setEffects.${setNum}`)
   setEffectDocument = (setNum: SetNum) => this.sheet.setEffects[setNum]?.document
   static trm(setKey: ArtifactSetKey) { return (strKey: string) => <Translate ns={`artifact_${setKey}`} key18={strKey} /> }

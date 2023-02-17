@@ -1,5 +1,7 @@
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts';
 import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
-import { Button, CardContent, Collapse, Divider, Grid, Slider, styled, Typography } from '@mui/material';
+import { Button, CardContent, Collapse, Divider, Grid, Slider, Typography } from '@mui/material';
+import { TFunction } from 'i18next';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
@@ -7,13 +9,13 @@ import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip';
 import CardDark from '../../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../../Components/Card/CardLight';
 import InfoTooltip from '../../../../../../Components/InfoTooltip';
+import ReadOnlyTextArea from '../../../../../../Components/ReadOnlyTextArea';
 import { CharacterContext } from '../../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../../Context/DataContext';
 import { GraphContext } from '../../../../../../Context/GraphContext';
 import { input } from '../../../../../../Formula';
 import { NumNode } from '../../../../../../Formula/type';
 import { valueString } from '../../../../../../KeyMap';
-import { allSlotKeys } from '../../../../../../Types/consts';
 import { objectKeyMap, objPathValue } from '../../../../../../Util/Util';
 import useBuildResult from '../../useBuildResult';
 import OptimizationTargetSelector from '../OptimizationTargetSelector';
@@ -60,7 +62,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
     if (!chartData) return { displayData: null, downloadData: null }
     let sliderMin = Infinity
     let sliderMax = -Infinity
-    const currentBuild = allSlotKeys.map(slotKey => data?.get(input.art[slotKey].id).value ?? "")
+    const currentBuild = allArtifactSlotKeys.map(slotKey => data?.get(input.art[slotKey].id).value ?? "")
     // Shape the data so we know the current and highlighted builds
     const points = chartData.data.map(({ value: y, plot: x, artifactIds }) => {
       if (x === undefined) return null
@@ -102,7 +104,8 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
 
       return enhancedDatum
     })
-    .sort((a, b) => a!.x - b!.x) as EnhancedPoint[]
+      .filter((pt): pt is NonNullable<EnhancedPoint> => pt !== null)
+      .sort((a, b) => a.x - b.x)
 
     const minimumData: EnhancedPoint[] = []
     for (const point of points) {
@@ -158,7 +161,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         </Grid>
         <Grid item>
           <BootstrapTooltip title={!plotBase ? "" : t("ui:reset")} placement="top">
-            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase}>
+            <span><Button color="error" onClick={() => setPlotBase(undefined)} disabled={!plotBase || disabled}>
               <Replay />
             </Button></span>
           </BootstrapTooltip>
@@ -182,9 +185,9 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         <CardDark sx={{ mb: 2 }}>
           <CardContent>
             <Typography>Min Data</Typography>
-            <DataDisplay data={downloadData?.minimum} />
+            <ReadOnlyTextArea value={JSON.stringify(downloadData?.minimum)} />
             <Typography>All Data</Typography>
-            <DataDisplay data={downloadData?.allData} />
+            <ReadOnlyTextArea value={JSON.stringify(downloadData?.allData)} />
           </CardContent>
         </CardDark>
       </Collapse>
@@ -203,19 +206,6 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       />}
     </CardContent>}
   </CardLight >
-}
-const TextArea = styled("textarea")({
-  width: "100%",
-  fontFamily: "monospace",
-  resize: "vertical",
-  minHeight: "5em"
-})
-function DataDisplay({ data, }: { data?: object }) {
-  return <TextArea readOnly value={JSON.stringify(data)} onClick={e => {
-    const target = e.target as HTMLTextAreaElement;
-    target.selectionStart = 0;
-    target.selectionEnd = target.value.length;
-  }} />
 }
 
 const optTargetColor = "#8884d8"
@@ -283,7 +273,7 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
         { id: "trueY", value: t`tcGraph.generatedBuilds`, type: "circle", color: optTargetColor },
         { id: "highlighted", value: t`tcGraph.highlightedBuilds`, type: "square", color: highlightedColor },
         { id: "current", value: t`tcGraph.currentBuild`, type: "diamond", color: currentColor },
-      ]}/>
+      ]} />
       {showMin && <Line
         dataKey="min"
         stroke={lineColor}
@@ -313,12 +303,20 @@ function Chart({ displayData, plotNode, valueNode, showMin }: {
   </ResponsiveContainer>
 }
 
+interface DomPt extends Element {
+  dataset: {
+    chartX: number
+    chartY: number
+    xValue: string
+    yValue: string
+  },
+}
 function getNearestPoint(clickedX: number, clickedY: number, threshold: number, data: EnhancedPoint[]) {
-  const nearestDomPtData = Array.from(document.querySelectorAll(".custom-dot"))
+  const nearestDomPtData = Array.from(document.querySelectorAll<DomPt>(".custom-dot"))
     .reduce((domPtA, domPtB) => {
-      const { chartX: aChartX, chartY: aChartY } = (domPtA as any).dataset
+      const { chartX: aChartX, chartY: aChartY } = domPtA.dataset
       const aDistance = Math.sqrt((clickedX - aChartX) ** 2 + (clickedY - aChartY) ** 2)
-      const { chartX: bChartX, chartY: bChartY } = (domPtB as any).dataset
+      const { chartX: bChartX, chartY: bChartY } = domPtB.dataset
       const bDistance = Math.sqrt((clickedX - bChartX) ** 2 + (clickedY - bChartY) ** 2)
       return aDistance <= bDistance
         ? domPtA
@@ -332,7 +330,7 @@ function getNearestPoint(clickedX: number, clickedY: number, threshold: number, 
     : undefined
 }
 
-function getLabelFromNode(node: NumNode, t: any) {
+function getLabelFromNode(node: NumNode, t: TFunction) {
   return typeof node.info?.name === "string"
     ? node.info.name
     : `${t(`${node.info?.name?.props.ns}:${node.info?.name?.props.key18}`)}${node.info?.textSuffix ? ` ${node.info?.textSuffix}` : ""}`

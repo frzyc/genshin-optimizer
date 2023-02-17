@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, lookup, min, naught, percent, prod } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, Region } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -15,7 +15,7 @@ const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = "Tighnari"
 const elementKey: ElementKey = "dendro"
-const region: Region = "sumeru"
+const region: RegionKey = "sumeru"
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0, p1 = 0, p2 = 0
@@ -125,7 +125,7 @@ const dmgFormulas = {
   constellation6: {
     cluster: greaterEq(input.constellation, 6, customDmgNode(
       prod(percent(dm.constellation6.dmg), input.total.atk),
-      "elemental",
+      "charged",
       { hit: { ele: constant(elementKey) } }
     ))
   }
@@ -134,11 +134,9 @@ const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC5,
-    burst: burstC3,
-  },
   premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3,
     eleMas: a1AfterWreath_eleMas,
     charged_dmg_: a4_charged_dmg_,
     burst_dmg_: a4_burst_dmg_,

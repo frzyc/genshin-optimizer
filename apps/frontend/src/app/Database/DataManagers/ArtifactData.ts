@@ -1,12 +1,13 @@
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, artMaxLevel } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, artMaxLevel } from "@genshin-optimizer/consts";
 import { getArtSheet } from "../../Data/Artifacts";
-import Artifact from "../../Data/Artifacts/Artifact";
+import Artifact, { artifactSubRange } from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, ArtifactRarity, charKeyToLocCharKey, allLocationCharacterKeys } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { IGOOD, IGO, ImportResult } from "../exim";
+import { IGO, IGOOD, ImportResult } from "../exim";
+import { clamp } from "../../Util/Util"
 
 export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
@@ -16,7 +17,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       if (key.startsWith("artifact_") && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  validate(obj: object): IArtifact | undefined {
+  validate(obj: unknown): IArtifact | undefined {
     return validateArtifact(obj)
   }
   toCache(storageObj: IArtifact, id: string): ICachedArtifact | undefined {
@@ -76,33 +77,42 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
 
     // Match artifacts for counter, metadata, and locations
     const artifacts = good.artifacts
-    if (Array.isArray(artifacts) && artifacts?.length) {
-      result.artifacts.import = artifacts.length
-      const idsToRemove = new Set(this.values.map(a => a.id))
-      const hasEquipment = artifacts.some(a => a.location)
-      artifacts.forEach((a, i) => {
-        const art = this.validate(a)
-        if (!art) return result.artifacts.invalid.push(a)
-        let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDups(art)
 
-        // Don't reuse dups/upgrades
-        duplicated = duplicated.filter(a => idsToRemove.has(a.id))
-        upgraded = upgraded.filter(a => idsToRemove.has(a.id))
+    if (!Array.isArray(artifacts) || !artifacts.length) {
+      result.artifacts.notInImport = this.values.length
+      return
+    }
 
-        if (duplicated[0] || upgraded[0]) {
-          const match = duplicated[0] || upgraded[0]
-          idsToRemove.delete(match.id)
-          if (duplicated[0]) result.artifacts.unchanged.push(art)
-          else if (upgraded[0]) result.artifacts.upgraded.push(art)
-          this.set(match.id, { ...art, location: hasEquipment ? art.location : match.location })
-          result.importArtIds.set(`artifact_${i}`, match.id)
-        } else
-          result.importArtIds.set(`artifact_${i}`, this.new(art))
-      })
-      const idtoRemoveArr = Array.from(idsToRemove)
-      if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
-      else idtoRemoveArr.forEach(k => this.remove(k))
-    } else result.artifacts.notInImport = this.values.length
+    result.artifacts.import = artifacts.length
+    const idsToRemove = new Set(this.values.map(a => a.id))
+    const hasEquipment = artifacts.some(a => a.location)
+    artifacts.forEach((a, i) => {
+      const art = this.validate(a)
+      if (!art) return result.artifacts.invalid.push(a)
+
+      let importArt = art
+      let importKey: string | undefined = (a as ICachedArtifact).id
+
+      let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDups(art)
+      // Don't reuse dups/upgrades
+      duplicated = duplicated.filter(a => idsToRemove.has(a.id))
+      upgraded = upgraded.filter(a => idsToRemove.has(a.id))
+      if (duplicated[0] || upgraded[0]) {
+        // Favor upgrades with the same location, else use 1st dupe
+        const [match, isUpgrade] = (hasEquipment && art.location && upgraded[0]?.location === art.location) ?
+          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
+        idsToRemove.delete(match.id)
+        isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
+        importArt = { ...art, location: hasEquipment ? art.location : match.location }
+        importKey = importKey ?? match.id
+      }
+      if (importKey) this.set(importKey, importArt)
+      else this.new(importArt)
+    })
+    const idtoRemoveArr = Array.from(idsToRemove)
+    if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
+    else idtoRemoveArr.forEach(k => this.remove(k))
+
 
     this.database.weapons.ensureEquipments()
   }
@@ -134,7 +144,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
             substat.key // Extra roll to new substat
         )
       )
-    )
+    ).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     // Strictly duplicated artifact
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
@@ -143,7 +153,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         candidate.substats.some(candidateSubstat =>
           substat.key === candidateSubstat.key && // Or same slot
           substat.value === candidateSubstat.value
-        )))
+        ))).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     return { duplicated, upgraded }
   }
 }
@@ -249,13 +259,13 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
   return { artifact: validated, errors }
 }
 
-export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
+export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArtifact | undefined {
   if (!obj || typeof obj !== "object") return
   const { setKey, rarity, slotKey } = obj as IArtifact
   let { level, mainStatKey, substats, location, exclude, lock, } = obj as IArtifact
 
-  if (!allArtifactSets.includes(setKey) ||
-    !allSlotKeys.includes(slotKey) ||
+  if (!allArtifactSetKeys.includes(setKey) ||
+    !allArtifactSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
     !allArtifactRarities.includes(rarity) ||
     typeof level !== "number" || level < 0 || level > 20)
@@ -266,27 +276,36 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return
 
-  substats = parseSubstats(substats)
+  substats = parseSubstats(substats, rarity, allowZeroSub)
+  // substat cannot have same key as mainstat
+  if (substats.find(sub => sub.key === mainStatKey)) return
   lock = !!lock
   exclude = !!exclude
   const plausibleMainStats = Artifact.slotMainStats(slotKey)
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (location && !locationCharacterKeys.includes(location)) location = ""
+  if (!location || !allLocationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
-function parseSubstats(obj: unknown): ISubstat[] {
+function defSub(): ISubstat {
+  return { key: "", value: 0 }
+}
+function parseSubstats(obj: unknown, rarity: ArtifactRarity, allowZeroSub = false): ISubstat[] {
   if (!Array.isArray(obj))
-    return new Array(4).map(_ => ({ key: "", value: 0 }))
-  const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
-    if (!allSubstatKeys.includes(key) || typeof value !== "number" || !isFinite(value))
-      return { key: "", value: 0 }
-    value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
+    return new Array(4).map(_ => (defSub()))
+  const substats = (obj as ISubstat[]).slice(0, 4).map(({ key = "", value = 0 }) => {
+    if (!allSubstatKeys.includes(key as SubstatKey) || typeof value !== "number" || !isFinite(value)) return defSub()
+    if (key) {
+      value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
+      const { low, high } = artifactSubRange(rarity, key)
+      value = clamp(value, allowZeroSub ? 0 : low, high)
+    } else
+      value = 0
     return { key, value }
   })
   while (substats.length < 4)
-    substats.push({ key: "", value: 0 })
+    substats.push(defSub())
 
   return substats
 }

@@ -1,9 +1,12 @@
-import { allArtifactSets, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
 
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
+/**
+ * @deprecated
+ */
 export const allArtifactRarities = [5, 4, 3] as const
 /**
  * @deprecated
@@ -32,7 +35,10 @@ export const substatType = ["max", "mid", "min"] as const
 export const genderKeys = ["F", "M"] as const
 export type Gender = typeof genderKeys[number]
 
-export const locationCharacterKeys = [
+/**
+ * @deprecated
+ */
+export const allLocationCharacterKeys = [
   ...nonTravelerCharacterKeys,
   "Traveler",
 ] as const
@@ -115,13 +121,16 @@ export type InfusionAuraElements = typeof allInfusionAuraElements[number]
 /**
  * @deprecated
  */
-export type ArtifactSetKey = typeof allArtifactSets[number]
+export type ArtifactSetKey = typeof allArtifactSetKeys[number]
 /**
  * @deprecated
  */
 export type CharacterKey = typeof allCharacterKeys[number]
 export type CharacterSheetKey = typeof allCharacterSheetKeys[number]
-export type LocationCharacterKey = typeof locationCharacterKeys[number]
+/**
+ * @deprecated
+ */
+export type LocationCharacterKey = typeof allLocationCharacterKeys[number]
 /**
  * @deprecated
  */
@@ -153,6 +162,9 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
 
 export type SubstatType = typeof substatType[number]
 
+/**
+ * @deprecated
+ */
 export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey {
   if (travelerKeys.includes(charKey as TravelerKey)) return "Traveler"
   return charKey as LocationCharacterKey
@@ -162,6 +174,9 @@ export function TravelerToElement(key: TravelerKey, element: TravelerElementKey)
   return "Traveler" + element.toUpperCase().slice(0, 1) + element.slice(1) as TravelerKey
 }
 
+/**
+ * @deprecated
+ */
 export type LocationKey = LocationCharacterKey | ""
 
 export function charKeyToCharName(ck: CharacterKey, gender: Gender): string {

@@ -1,7 +1,7 @@
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import { allElements, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
@@ -17,7 +17,7 @@ const [condPassivePath, condPassive] = cond(key, "InfusionScroll")
 
 const dmgBonus = [0.08, 0.1, 0.12, 0.14, 0.16]
 const allDmgInc = subscript(input.weapon.refineIndex, dmgBonus)
-const eleDmgs = objectKeyValueMap(allElements, e => [`${e}_dmg_`, lookup(condPassive, {
+const eleDmgs = objectKeyValueMap(allElementKeys, e => [`${e}_dmg_`, lookup(condPassive, {
   ...objectKeyMap(range(1, 2), i => prod(allDmgInc, i))
 }, naught)])
 

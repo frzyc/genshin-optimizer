@@ -1,4 +1,4 @@
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { CheckBox, CheckBoxOutlineBlank, Replay, Settings } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -12,7 +12,7 @@ import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
 import ColorText from '../../../../../Components/ColoredText';
-import InfoTooltip, { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
+import { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { Translate } from '../../../../../Components/Translate';
@@ -48,7 +48,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     .filter(key => !key.includes("Prayers"))
     , [])
   const { artKeys, artSlotCount } = useMemo(() => {
-    const artSlotCount = objectKeyMap(artKeysByRarity, _ => objectKeyMap(allSlotKeys, _ => 0))
+    const artSlotCount = objectKeyMap(artKeysByRarity, _ => objectKeyMap(allArtifactSlotKeys, _ => 0))
     database.arts.values.forEach(art => artSlotCount[art.setKey] && artSlotCount[art.setKey][art.slotKey]++)
     const artKeys = [...artKeysByRarity].sort((a, b) =>
       +(getNumSlots(artSlotCount[a]) < 2) - +(getNumSlots(artSlotCount[b]) < 2))
@@ -65,14 +65,14 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const exclude2 = artKeysByRarity.length - allow2, exclude4 = artKeysByRarity.length - allow4
   const artifactCondCount = useMemo(() =>
     (Object.keys(conditional)).filter(k =>
-      allArtifactSets.includes(k as ArtifactSetKey) && conditional[k]).length
+      allArtifactSetKeys.includes(k as ArtifactSetKey) && !!Object.keys(conditional[k] ?? {}).length).length
     , [conditional])
   const fakeDataContextObj = useMemo(() => ({
     ...dataContext,
-    data: new UIData({ ...dataContext.data.data[0], artSet: objectKeyMap(allArtifactSets, _ => constant(4)) }, undefined)
+    data: new UIData({ ...dataContext.data.data[0], artSet: objectKeyMap(allArtifactSetKeys, _ => constant(4)) }, undefined)
   }), [dataContext])
   const resetArtConds = useCallback(() => {
-    const tconditional = Object.fromEntries(Object.entries(conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
+    const tconditional = Object.fromEntries(Object.entries(conditional).filter(([k, v]) => !allArtifactSetKeys.includes(k as any)))
     characterDispatch({ conditional: tconditional })
   }, [conditional, characterDispatch]);
   const setAllExclusion = useCallback(
@@ -173,7 +173,7 @@ function AllSetAllowExcludeCard({ numAllow, numExclude, setNum, setAllExclusion 
     </CardContent>
   </CardLight>
 }
-function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, fakeDataContextObj: dataContextObj, slotCount: Record<SlotKey, number> }) {
+function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: ArtifactSetKey, fakeDataContextObj: dataContextObj, slotCount: Record<ArtifactSlotKey, number> }) {
   const { t } = useTranslation("sheet")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)

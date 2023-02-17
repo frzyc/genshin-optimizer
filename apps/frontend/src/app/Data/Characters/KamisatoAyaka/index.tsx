@@ -120,10 +120,6 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   teamBuff: {
     premod: {
       enemyDefRed_: afterBurst
@@ -133,6 +129,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
     overridableSelf: afterSprintInfusion,
   },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     normal_dmg_: a1NormDmg_,
     charged_dmg_: sum(a1ChargedDmg_, c6ChargedDmg_),
     cryo_dmg_: afterApplySprintCryo,

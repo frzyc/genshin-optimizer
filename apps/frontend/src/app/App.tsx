@@ -7,6 +7,7 @@ import './App.scss';
 import './Database/Database';
 import { ArtCharDatabase, DatabaseContext } from './Database/Database';
 import { DBLocalStorage, SandboxStorage } from './Database/DBStorage';
+import ErrorBoundary from './ErrorBoundary';
 import Footer from './Footer';
 import Header from './Header';
 import './i18n';
@@ -82,17 +83,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <DatabaseContext.Provider value={dbContextObj}>
-        <HashRouter basename="/">
-          <Suspense fallback={null}>
-            <MatchTitle />
-          </Suspense>
-          <Content />
-          <ScrollTop >
-            <Fab color="secondary" size="small" aria-label="scroll back to top">
-              <KeyboardArrowUp />
-            </Fab>
-          </ScrollTop>
-        </HashRouter>
+        <ErrorBoundary>
+          <HashRouter basename="/">
+            <Suspense fallback={null}>
+              <MatchTitle />
+            </Suspense>
+            <Content />
+            <ScrollTop >
+              <Fab color="secondary" size="small" aria-label="scroll back to top">
+                <KeyboardArrowUp />
+              </Fab>
+            </ScrollTop>
+          </HashRouter>
+        </ErrorBoundary>
       </DatabaseContext.Provider>
     </ThemeProvider>
   </StyledEngineProvider>

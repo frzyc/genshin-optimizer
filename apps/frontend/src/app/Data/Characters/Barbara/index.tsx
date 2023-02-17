@@ -94,9 +94,9 @@ const dmgFormulas = {
 
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
+  premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
   }, teamBuff: {
     premod: {
       staminaDec_: nodeA1,

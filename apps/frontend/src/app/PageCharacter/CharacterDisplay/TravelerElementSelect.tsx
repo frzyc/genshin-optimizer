@@ -1,4 +1,4 @@
-import { allElements, TravelerKey } from '@genshin-optimizer/consts';
+import { allElementKeys, TravelerKey } from '@genshin-optimizer/consts';
 import { MenuItem } from '@mui/material';
 import { useContext } from 'react';
 import ColorText from '../../Components/ColoredText';
@@ -14,7 +14,7 @@ export default function TravelerElementSelect() {
   const setCharacter = useCharSelectionCallback()
   if (!(key.startsWith("Traveler"))) return null
 
-  const elementKey = allElements.find(e => key.toLowerCase().includes(e))
+  const elementKey = allElementKeys.find(e => key.toLowerCase().includes(e))
   if (!elementKey) return null
 
   return <DropdownButton color={elementKey} title={<strong>{stg(`element.${elementKey}`)}</strong>}>

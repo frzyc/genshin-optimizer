@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, Region } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -13,7 +13,7 @@ import skillParam_gen from './skillParam_gen.json'
 const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Klee"
 const elementKey: ElementKey = "pyro"
-const regionKey: Region = "mondstadt"
+const regionKey: RegionKey = "mondstadt"
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0, s = 0, b = 0
@@ -101,11 +101,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     charged_dmg_
   },
   teamBuff: {

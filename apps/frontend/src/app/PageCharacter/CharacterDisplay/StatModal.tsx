@@ -1,6 +1,6 @@
-import { CardContent, CardHeader, Grid, ListItem, Stack, Typography, Box } from "@mui/material";
+import { CardContent, CardHeader, Grid, ListItem, Stack, Typography, Box, Alert } from "@mui/material";
 import { useCallback, useContext, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CloseButton from "../../Components/CloseButton";
@@ -37,11 +37,18 @@ export default function StatModal({ open, onClose }) {
 const keys = [...allInputPremodKeys]
 const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1}>{e}</Grid>
 function BonusStatsEditor() {
+  const { t } = useTranslation("page_character")
   const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
   const setFilter = useCallback((bonusStats) => characterDispatch({ bonusStats }), [characterDispatch],)
   return <CardLight>
     <CardContent sx={{ display: "flex" }}>
       <Grid container columns={cols} sx={{ pt: 1 }} spacing={1}>
+        <Grid item xs={12}>
+          <Alert severity="info" variant="filled">
+            <Trans i18nKey={"addStats.info"} t={t}>
+              You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">Genshin Impact wiki</a> for specific values.
+            </Trans></Alert>
+        </Grid>
         <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
       </Grid>
     </CardContent>
@@ -59,7 +66,7 @@ const otherStatKeys = [
   "stamina", "incHeal_", "shield_", "cdRed_"
 ] as const
 
-const miscStatkeys = allInputPremodKeys.filter(k => !mainEditKeys.includes(k as any) && !otherStatKeys.includes(k as any))
+const miscStatkeys = allInputPremodKeys.filter(k => !(mainEditKeys as readonly string[]).includes(k) && !(otherStatKeys as readonly string[]).includes(k))
 
 
 function StatDisplayContent({ nodes, extra }: { nodes: ReadNode<number>[], extra?: Displayable }) {

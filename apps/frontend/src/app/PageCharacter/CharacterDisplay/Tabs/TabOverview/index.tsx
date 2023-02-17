@@ -22,7 +22,7 @@ import { ElementIcon } from "../../../../KeyMap/StatIcon";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import useDBMeta from "../../../../ReactHooks/useDBMeta";
-import { allSlotKeys, Ascension, ElementKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, AscensionKey, ElementKey } from "@genshin-optimizer/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
 
@@ -55,7 +55,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
     <Grid item xs={1}>
       <WeaponCardNano weaponId={equippedWeapon} BGComponent={CardLight} onClick={onClick} />
     </Grid>
-    {allSlotKeys.map(slotKey =>
+    {allArtifactSlotKeys.map(slotKey =>
       <Grid item key={slotKey} xs={1} >
         <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={onClick} />
       </Grid>)}
@@ -72,7 +72,7 @@ function CharacterProfileCard() {
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
-  const ascension = data.get(input.asc).value as Ascension
+  const ascension = data.get(input.asc).value as AscensionKey
   const constellation = data.get(input.constellation).value
   const tlvl = {
     auto: data.get(input.total.auto).value,
@@ -80,9 +80,9 @@ function CharacterProfileCard() {
     burst: data.get(input.total.burst).value,
   }
   const tBoost = {
-    auto: data.get(input.bonus.auto).value,
-    skill: data.get(input.bonus.skill).value,
-    burst: data.get(input.bonus.burst).value,
+    auto: data.get(input.total.autoBoost).value,
+    skill: data.get(input.total.skillBoost).value,
+    burst: data.get(input.total.burstBoost).value,
   }
   const { favorite } = useCharMeta(characterKey)
   return <CardLight sx={{ height: "100%" }} >
