@@ -11,7 +11,8 @@ import { DatabaseContext } from "../Database/Database"
 import useBoolState from '../ReactHooks/useBoolState'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
-export default function DatabaseCard() {
+
+export default function DatabaseCard({ readOnly = false }: { readOnly?: boolean }) {
   const { t } = useTranslation(["settings"]);
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
@@ -23,14 +24,14 @@ export default function DatabaseCard() {
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Grid container spacing={2} columns={{ xs: 1, md: 2, }}>
         {range(0, 3).map(i => <Grid key={i} item xs={1}>
-          <DataCard index={i} />
+          <DataCard index={i} readOnly={readOnly} />
         </Grid>)}
       </Grid>
     </CardContent >
   </CardLight >
 }
 
-function DataCard({ index }: { index: number }) {
+function DataCard({ index, readOnly }: { index: number, readOnly: boolean }) {
   const { databases, database: mainDB, setDatabase } = useContext(DatabaseContext)
   const database = databases[index]
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
@@ -91,8 +92,8 @@ function DataCard({ index }: { index: number }) {
 
   return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
-      < StyledInputBase value={tempName} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={(e) => setTempName(e.target.value)} onBlur={onBlur} onKeyDown={onKeyDOwn} />
-      {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">{t`DatabaseCard.button.swap`}</Button>}
+      < StyledInputBase value={tempName} sx={{ borderRadius: 1, px: 1, flexGrow: 1 }} onChange={(e) => setTempName(e.target.value)} onBlur={onBlur} onKeyDown={onKeyDOwn} disabled={readOnly} />
+      {!current && <Button startIcon={<ImportExport />} onClick={onSwap} color="warning" disabled={readOnly}>{t`DatabaseCard.button.swap`}</Button>}
       <Chip color={current ? "success" : "secondary"} label={current ? t`DatabaseCard.currentDB` : `${t`DatabaseCard.title`} ${database.dbIndex}`} />
     </CardContent>
     <Divider />
@@ -115,7 +116,7 @@ function DataCard({ index }: { index: number }) {
               <ModalWrapper open={uploadOpen} onClose={onClose} >
                 <UploadCard index={index} onReplace={onClose} />
               </ModalWrapper>
-              <Button fullWidth component="span" color="info" startIcon={<Upload />} onClick={onOpen}>
+              <Button fullWidth component="span" color="info" startIcon={<Upload />} onClick={onOpen} disabled={readOnly}>
                 {t`DatabaseCard.button.upload`}
               </Button>
             </Grid>
@@ -125,7 +126,7 @@ function DataCard({ index }: { index: number }) {
               </Button>
             </Grid>
             <Grid item xs={1}>
-              <Button fullWidth disabled={!hasData} color="error" onClick={onDelete} startIcon={<Delete />}>
+              <Button fullWidth disabled={!hasData || readOnly} color="error" onClick={onDelete} startIcon={<Delete />}>
                 {t`DatabaseCard.button.delete`}
               </Button>
             </Grid>
