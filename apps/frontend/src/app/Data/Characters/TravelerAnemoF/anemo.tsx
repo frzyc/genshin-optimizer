@@ -1,9 +1,10 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { Data, DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { absorbableEle, CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
+import { absorbableEle, CharacterSheetKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
@@ -97,11 +98,9 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
   const nodeC3 = greaterEq(input.constellation, 3, 3)
   const nodeC5 = greaterEq(input.constellation, 5, 3)
   const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
-    bonus: {
-      skill: nodeC5,
-      burst: nodeC3,
-    },
     premod: {
+      skillBoost: nodeC5,
+      burstBoost: nodeC3,
       enerRech_: nodeC2,
     },
     teamBuff: {

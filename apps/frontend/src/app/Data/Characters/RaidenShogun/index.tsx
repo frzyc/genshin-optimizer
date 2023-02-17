@@ -1,13 +1,13 @@
+import { CharacterKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
-import { CharacterKey } from '@genshin-optimizer/consts'
 import { objectKeyMap } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -126,7 +126,7 @@ function burstResolve(mvArr: number[], initial = false) {
         ele: constant('electro')
       }, enemy: {
         // if Raiden is above or equal to C2, then account for DEF Ignore else not
-        defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore)
+        defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore, { unit: "%" })
       }
     }
   )
@@ -173,11 +173,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     burst_dmg_: skillEye_,
     electro_dmg_: dmgFormulas.passive2.passive2ElecDmgBonus,
   },

@@ -124,11 +124,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     pyro_dmg_,
     ...Object.fromEntries(allElementWithPhyKeys.map(ele => [`${ele}_res_`, ele_res_s[ele]])),
     critRate_,

@@ -145,11 +145,9 @@ const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC3,
-    burst: burstC5,
-  },
   premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
     charged_dmg_: afterBurst_charged_dmg_,
     charged_critRate_: c2EnemyHp_critRate_,
     pyro_dmg_: p1_pyro_dmg_,
