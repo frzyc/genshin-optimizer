@@ -125,7 +125,7 @@ const dmgFormulas = {
   constellation6: {
     cluster: greaterEq(input.constellation, 6, customDmgNode(
       prod(percent(dm.constellation6.dmg), input.total.atk),
-      "elemental",
+      "charged",
       { hit: { ele: constant(elementKey) } }
     ))
   }

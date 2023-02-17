@@ -116,8 +116,6 @@ export default function TabBuild() {
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
-      if (art.exclude && !useExcludedArts) return false
-
       // If its equipped on the selected character, bypass the check
       const locKey = charKeyToLocCharKey(characterKey)
       if (art.location !== locKey) {
@@ -125,7 +123,11 @@ export default function TabBuild() {
         if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       }
 
-      if (art.exclude) numExcludedUsed++
+      if (art.exclude) {
+        numExcludedUsed++
+        if (!useExcludedArts) return false
+      }
+
       if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })
