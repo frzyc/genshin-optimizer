@@ -12,7 +12,7 @@ import { IGO, IGOOD } from "./exim"
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-export const currentDBVersion = 22
+export const currentDBVersion = 23
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
@@ -77,7 +77,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       good.buildSettings = buildSettings.map(b => ({ ...b, id: b.key }))
   })
 
-  // 8.28.0 - Present
+  // 8.28.0 - 9.3.8
   migrateVersion(22, () => {
     const buildSettings = (good as any).buildSettings
     if (buildSettings) {
@@ -94,6 +94,55 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           ]))
         )
         return { ...b, statFilters: newStatFilters }
+      })
+    }
+  })
+
+  // 9.4.0 - Present
+  migrateVersion(23, () => {
+    function convertOldToNew(statSetting) {
+      return Object.fromEntries(
+        Object.entries(statSetting)
+          .filter(([_, value]) => !Array.isArray(value))
+          .map(([key, value]) => ([
+            key,
+            [{
+              value,
+              disabled: false
+            }]
+          ]))
+      )
+    }
+    // Convert probability filter and bonus stats from old format to new disablable format
+    const display_artifact = (good as any).display_artifact
+    if (display_artifact) {
+      const probabilityFilter = display_artifact.probabilityFilter
+      if (probabilityFilter) {
+        (good as any).display_artifact.probabilityFilter = convertOldToNew(probabilityFilter)
+      }
+    }
+    const characters = good.characters
+    if (characters) {
+      good.characters = characters.map(char => {
+        const bonusStats = char.bonusStats
+        if (bonusStats) {
+          char.bonusStats = convertOldToNew(bonusStats)
+        }
+        const cmt = char.customMultiTarget
+        if (cmt) {
+          char.customMultiTarget = cmt.map(mt => {
+            const targets = mt.targets
+            if (!targets) return mt
+            mt.targets = targets.map(target => {
+              const tbs = target.bonusStats
+              if (!tbs) return target
+              target.bonusStats = convertOldToNew(tbs)
+              return target
+            })
+            return mt
+          })
+        }
+        return char
       })
     }
   })
@@ -181,7 +230,7 @@ export function migrate(storage: DBStorage) {
     swap("state_CharacterDisplay", "display_character")
   })
 
-  // 8.28.0 - Present
+  // 8.28.0 - 9.3.8
   migrateVersion(22, () => {
     for (const key of storage.keys) {
       if (key.startsWith("buildSetting_")) {
@@ -198,6 +247,55 @@ export function migrate(storage: DBStorage) {
           ]))
         )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
+      }
+    }
+  })
+
+  // 9.4.0 - Present
+  migrateVersion(23, () => {
+    function convertOldToNew(statSetting) {
+      return Object.fromEntries(
+        Object.entries(statSetting)
+          .filter(([_, value]) => !Array.isArray(value))
+          .map(([key, value]) => ([
+            key,
+            [{
+              value,
+              disabled: false
+            }]
+          ]))
+      )
+    }
+    // Convert probability filter and bonus stats from old format to new disablable format
+    for (const key of storage.keys) {
+      if (key.startsWith("display_artifact")) {
+        const display_artifact = storage.get(key)
+        const probabilityFilter = display_artifact.probabilityFilter
+        if (probabilityFilter) {
+          storage.set(key, { ...display_artifact, probabilityFilter: convertOldToNew(probabilityFilter) })
+        }
+      }
+      if (key.startsWith("char_")) {
+        const char = storage.get(key)
+        const bonusStats = char.bonusStats
+        if (bonusStats) {
+          char.bonusStats = convertOldToNew(bonusStats)
+        }
+        const cmt = char.customMultiTarget
+        if (cmt) {
+          char.customMultiTarget = cmt.map(mt => {
+            const targets = mt.targets
+            if (!targets) return mt
+            mt.targets = targets.map(target => {
+              const tbs = target.bonusStats
+              if (!tbs) return target
+              target.bonusStats = convertOldToNew(tbs)
+              return target
+            })
+            return mt
+          })
+        }
+        storage.set(key, char)
       }
     }
   })
