@@ -46,7 +46,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
         sx={ flattenCorners ? { "& .MuiInputBase-root": { borderRadius: 0 } } : undefined}
       />
     }}
-    renderOption={(props, option) => <MenuItem value={option.key} {...props}>
+    renderOption={(props, option) => <MenuItem value={option.key} sx={{ whiteSpace: "normal" }} {...props}>
       <ListItemIcon>{toImg(option.key)}</ListItemIcon>
       <ListItemText color={option.variant}>
         <Suspense fallback={<Skeleton variant="text" width={100} />}>
