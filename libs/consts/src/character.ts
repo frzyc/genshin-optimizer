@@ -81,13 +81,13 @@ export const nonTravelerCharacterKeys = [
   'Zhongli',
 ] as const
 
-export const travelerKeys = [
+export const allTravelerKeys = [
   'TravelerAnemo',
   'TravelerGeo',
   'TravelerElectro',
   'TravelerDendro',
 ] as const
-export type TravelerKey = typeof travelerKeys[number]
+export type TravelerKey = typeof allTravelerKeys[number]
 
 export const locationGenderedCharacterKeys = [
   ...nonTravelerCharacterKeys,
@@ -98,7 +98,7 @@ export type LocationGenderedCharacterKey = typeof locationGenderedCharacterKeys[
 
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
-  ...travelerKeys
+  ...allTravelerKeys
 ] as const
 export type CharacterKey = typeof allCharacterKeys[number]
 
@@ -111,11 +111,11 @@ export type LocationCharacterKey = typeof allLocationCharacterKeys[number]
 export type LocationKey = LocationCharacterKey | ""
 
 export function charKeyToLocGenderedCharKey(charKey: CharacterKey, gender: GenderKey): LocationGenderedCharacterKey {
-  if (travelerKeys.includes(charKey as TravelerKey)) return `Traveler${gender}`
+  if (allTravelerKeys.includes(charKey as TravelerKey)) return `Traveler${gender}`
   return charKey as LocationGenderedCharacterKey
 }
 
 export function charKeyToLocCharKey(charKey: CharacterKey): LocationCharacterKey {
-  if (travelerKeys.includes(charKey as TravelerKey)) return "Traveler"
+  if (allTravelerKeys.includes(charKey as TravelerKey)) return "Traveler"
   return charKey as LocationCharacterKey
 }
