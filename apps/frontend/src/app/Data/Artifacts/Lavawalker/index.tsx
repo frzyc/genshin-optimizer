@@ -31,7 +31,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condState,
         path: condStatePath,
-        name: trm("condName"),
+        name: st("enemyAffected.burningOrPyro"),
         states: {
           on: {
             fields: [{

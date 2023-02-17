@@ -32,7 +32,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condState,
         path: condStatePath,
-        name: trm("condName"),
+        name: st("enemyAffected.electro"),
         states: {
           on: {
             fields: [{

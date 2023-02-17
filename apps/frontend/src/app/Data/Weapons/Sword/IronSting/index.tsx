@@ -29,7 +29,7 @@ const sheet: IWeaponSheet = {
     value: condPassive,
     path: condPassivePath,
     header: headerTemplate(key, st("stacks")),
-    name: trm("condName"),
+    name: st("hitOp.ele"),
     states: Object.fromEntries(eleDmgDealtStack.map(c => [c, {
       name: st("stack", { count: c }),
       fields: [{

@@ -238,7 +238,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         value: condSkillHitOpponent,
         path: condSkillHitOpponentPath,
-        name: ct.ch("asc4"),
+        name: st("hitOp.skillOrBurst"),
         canShow: unequal(input.activeCharKey, key, 1),
         states: {
           hit: {

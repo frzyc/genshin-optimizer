@@ -328,7 +328,7 @@ const sheet: ICharacterSheet = {
       ct.condTem("constellation4", {
         value: condC4,
         path: condC4Path,
-        name: ct.ch("c4"),
+        name: st("getElementalOrbParticle"),
         states: {
           pickup: {
             fields: [{

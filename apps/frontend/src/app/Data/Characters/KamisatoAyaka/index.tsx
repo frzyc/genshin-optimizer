@@ -191,7 +191,7 @@ const sheet: ICharacterSheet = {
     }, ct.condTem("passive1", {
       value: condAfterSkillA1,
       path: condAfterSkillA1Path,
-      name: ct.ch("afterSkill"),
+      name: st("afterUse.skill"),
       states: {
         afterSkill: {
           fields: [{
@@ -253,7 +253,7 @@ const sheet: ICharacterSheet = {
     }, ct.condTem("sprint", {
       value: condAfterSprint,
       path: condAfterSprintPath,
-      name: ct.ch("afterSprint"),
+      name: st("afterSprint"),
       states: {
         afterSprint: {
           fields: [{
