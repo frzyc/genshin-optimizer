@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, SliderProps, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import CardLight from '../../../Components/Card/CardLight';
@@ -81,7 +81,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
       </ButtonGroup>
     </Box>
     <Box px={2}>
-      <SliderWrapper value={value} marks={marks} setValue={v => setSubstat(index, { key, value: (v as number) ?? 0 })} />
+      <SliderWrapper value={value} marks={marks} setValue={v => setSubstat(index, { key, value: (v as number) ?? 0 })} disabled={!key} />
     </Box>
     <Box sx={{ px: 1, pb: 1 }}>
       {error ? <SqBadge color="error">{t`ui:error`}</SqBadge> : <Grid container>
@@ -106,18 +106,19 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
     </Box>
   </CardLight >
 }
-function SliderWrapper({ value, setValue, marks }) {
+function SliderWrapper({ value, setValue, marks, disabled = false }:
+  { value: number, setValue: (v: number) => void, marks: Array<{ value: number }>, disabled: boolean }) {
   const [innerValue, setinnerValue] = useState(value)
   useEffect(() => setinnerValue(value), [value])
   return <Slider
     value={innerValue}
     step={null}
-    disabled={!value}
+    disabled={disabled}
     marks={marks}
-    min={marks[0]?.value ?? 0}
+    min={0}
     max={marks[marks.length - 1]?.value ?? 0}
-    onChange={(e, v) => setinnerValue(v)}
-    onChangeCommitted={(e, v) => setValue(v)}
+    onChange={(e, v) => setinnerValue(v as number)}
+    onChangeCommitted={(e, v) => setValue(v as number)}
     valueLabelDisplay="auto"
   />
 }

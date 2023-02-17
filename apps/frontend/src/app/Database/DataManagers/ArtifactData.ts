@@ -259,7 +259,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
   return { artifact: validated, errors }
 }
 
-export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
+export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArtifact | undefined {
   if (!obj || typeof obj !== "object") return
   const { setKey, rarity, slotKey } = obj as IArtifact
   let { level, mainStatKey, substats, location, exclude, lock, } = obj as IArtifact
@@ -276,7 +276,7 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return
 
-  substats = parseSubstats(substats, rarity)
+  substats = parseSubstats(substats, rarity, allowZeroSub)
   // substat cannot have same key as mainstat
   if (substats.find(sub => sub.key === mainStatKey)) return
   lock = !!lock
@@ -291,7 +291,7 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
 function defSub(): ISubstat {
   return { key: "", value: 0 }
 }
-function parseSubstats(obj: unknown, rarity: ArtifactRarity): ISubstat[] {
+function parseSubstats(obj: unknown, rarity: ArtifactRarity, allowZeroSub = false): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => (defSub()))
   const substats = (obj as ISubstat[]).slice(0, 4).map(({ key = "", value = 0 }) => {
@@ -299,7 +299,7 @@ function parseSubstats(obj: unknown, rarity: ArtifactRarity): ISubstat[] {
     if (key) {
       value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
       const { low, high } = artifactSubRange(rarity, key)
-      value = clamp(value, low, high)
+      value = clamp(value, allowZeroSub ? 0 : low, high)
     } else
       value = 0
     return { key, value }
