@@ -123,8 +123,10 @@ export default function TabBuild() {
         if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       }
 
-      if (art.exclude) numExcludedUsed++
-      if (art.exclude && !useExcludedArts) return false
+      if (art.exclude) {
+        numExcludedUsed++
+        if (!useExcludedArts) return false
+      }
 
       if (art.location && art.location !== locKey) numEquippedUsed++
       return true
