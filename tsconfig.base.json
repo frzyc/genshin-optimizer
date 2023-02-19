@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2021", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],
+      "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
+      "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
+      "@genshin-optimizer/dm-localization": ["libs/dm/src/index.ts"],
+      "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],
+      "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
+      "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
+      "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
+      "@genshin-optimizer/util": ["libs/util/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
