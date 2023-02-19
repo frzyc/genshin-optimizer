@@ -1,6 +1,6 @@
 import { CharacterSheetKey } from '../../Types/consts'
 import CharacterSheet from './CharacterSheet'
-import { CharacterKey, GenderKey, TravelerKey, travelerKeys } from '@genshin-optimizer/consts'
+import { CharacterKey, GenderKey, TravelerKey, allTravelerKeys } from '@genshin-optimizer/consts'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
@@ -150,7 +150,7 @@ export function getCharSheet(charKey: CharacterKey, gender: GenderKey = "F") {
 }
 
 function charKeyToCharSheetKey(charKey: CharacterKey, gender: GenderKey): CharacterSheetKey {
-  if (travelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
+  if (allTravelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
   else return charKey as CharacterSheetKey
 }
 

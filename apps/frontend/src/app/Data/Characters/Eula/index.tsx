@@ -1,14 +1,14 @@
+import { CharacterKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
-import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum } from '../../../Formula/utils'
-import { CharacterKey } from '@genshin-optimizer/consts'
+import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { objectKeyMap, range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -73,18 +73,29 @@ const dm = {
   },
 } as const
 
-const [condGrimheartPath, condGrimheart] = cond(key, "Grimheart")
+const [condGrimheartStacksPath, condGrimheartStacks] = cond(key, "Grimheart")
+const [condGrimheartConsumedPath, condGrimheartConsumed] = cond(key, "grimheartConsumed")
 const [condLightfallSwordPath, condLightfallSword] = cond(key, "LightfallSword")
 const [condC4Path, condC4] = cond(key, "LightfallSwordC4")
 const [condTidalIllusionPath, condTidalIllusion] = cond(key, "TidalIllusion")
 
-const def_ = sum(equal("stack1", condGrimheart, percent(dm.skill.defBonus)), equal("stack2", condGrimheart, percent(2 * dm.skill.defBonus)))
-const cryo_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.cryoResDecNegative))
-const physical_enemyRes_ = equal("consumed", condGrimheart, subscript(input.total.skillIndex, dm.skill.physResDecNegative))
+const lightfallSwordStacks = range(1, 30)
+const lightfallSwordBonusScaling = prod(
+  subscript(input.total.burstIndex, dm.burst.dmgPerStack, { name: ct.ch("burstC.bonusScaling"), unit: "%", variant: "physical" }),
+  lookup(condLightfallSword, objectKeyMap(lightfallSwordStacks, stack => constant(stack)), naught, { name: ct.ch("burstC.name") }),
+)
+
+const def_ = lookup(condGrimheartStacks,
+  { "stack1": percent(dm.skill.defBonus), "stack2": percent(2 * dm.skill.defBonus) },
+  naught
+)
+const cryo_enemyRes_ = equal("on", condGrimheartConsumed, subscript(input.total.skillIndex, dm.skill.cryoResDecNegative))
+const physical_enemyRes_ = equal("on", condGrimheartConsumed, subscript(input.total.skillIndex, dm.skill.physResDecNegative))
 const physical_dmg_ = greaterEq(input.constellation, 1, equal("on", condTidalIllusion, percent(dm.constellation1.physInc)))
 
+const c4_sword_dmg_ = greaterEq(input.constellation, 4, equal(condC4, "on", constant(dm.constellation4.dmgInc)), { name: ct.ch("c4C.dmgBonus")})
 const lightSwordAdditional: Data = {
-  premod: { burst_dmg_: greaterEq(input.constellation, 4, equal(condC4, "on", constant(dm.constellation4.dmgInc))) },
+  premod: { burst_dmg_: c4_sword_dmg_ },
   hit: { ele: constant("physical") }
 }
 
@@ -108,18 +119,14 @@ const dmgFormulas = {
       prod(
         sum(
           subscript(input.total.burstIndex, dm.burst.lightfallDmg, { unit: "%" }),
-          prod(
-            lookup(condLightfallSword, objectKeyMap(range(1, 30), i => constant(i)), constant(0)),
-            subscript(input.total.burstIndex, dm.burst.dmgPerStack, { unit: "%" })
-          ),
+          lightfallSwordBonusScaling,
         ),
         input.total.atk
       ), "burst", lightSwordAdditional),
   },
   passive1: {
     shatteredLightfallSword: greaterEq(input.asc, 1, prod(
-      percent(dm.passive1.percentage),
-      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional)
+      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional, percent(dm.passive1.percentage))
     ))
   }
 }
@@ -128,11 +135,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, "cryo", "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     def_,
     cryo_enemyRes_,
     physical_enemyRes_,
@@ -205,8 +210,8 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.skill.icewhirl, { name: ct.chg(`skill.skillParams.2`) }),
       }]
     }, ct.condTem("skill", {
-      value: condGrimheart,
-      path: condGrimheartPath,
+      value: condGrimheartStacks,
+      path: condGrimheartStacksPath,
       name: ct.ch("skillC.name"),
       states: {
         "stack1": {
@@ -214,7 +219,7 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: def_,
           }, {
-            text: ct.ch("skillC.grimheart.int")
+            text: st("incInterRes")
           }, {
             text: ct.chg("skill.skillParams.4"),
             value: dm.skill.grimheartDuration,
@@ -226,15 +231,20 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: def_,
           }, {
-            text: ct.ch("skillC.grimheart.int")
+            text: st("incInterRes")
           }, {
             text: ct.chg("skill.skillParams.4"),
             value: dm.skill.grimheartDuration,
             unit: 's'
           }]
         },
-        "consumed": {
-          name: ct.ch("skillC.consumed"),
+      }
+    }), ct.condTem("skill", {
+      value: condGrimheartConsumed,
+      path: condGrimheartConsumedPath,
+      name: ct.ch("c1C.name"),
+      states: {
+        "on": {
           fields: [{
             node: cryo_enemyRes_,
           }, {
@@ -270,14 +280,10 @@ const sheet: ICharacterSheet = {
       path: condLightfallSwordPath,
       name: ct.ch("burstC.name"),
       states: {
-        ...objectKeyMap(range(1, 30), i => ({
+        ...objectKeyMap(lightfallSwordStacks, i => ({
           name: st("stack", { count: i }),
           fields: [{
-            canShow: data => data.get(input.constellation).value >= 6,
-            text: ct.ch("burstC.start5"),
-          }, {
-            canShow: data => data.get(input.constellation).value >= 6,
-            text: ct.ch("burstC.addStacks"),
+            node: infoMut(lightfallSwordBonusScaling, { name: ct.ch("burstC.bonusScaling"), unit: "%", variant: "physical" })
           }]
         })),
       }
@@ -288,10 +294,16 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            text: ct.ch("c4C.desc")
+            node: infoMut(c4_sword_dmg_, { name: ct.ch("c4C.dmgBonus"), unit: "%", variant: "physical" })
           }]
         }
       }
+    }), ct.headerTem("constellation6", {
+      fields: [{
+        text: ct.ch("burstC.start5"),
+      }, {
+        text: ct.ch("burstC.addStacks"),
+      }]
     })]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {

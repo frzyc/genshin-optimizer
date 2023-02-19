@@ -82,7 +82,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact), [editorArtifact])
+  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact, true), [editorArtifact])
 
   const [modalShow, setModalShow] = useState(false)
 

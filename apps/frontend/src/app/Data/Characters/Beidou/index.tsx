@@ -121,11 +121,9 @@ const dmgFormulas = {
 }
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     normal_dmg_: nodeSkillNormalDmg_,
     charged_dmg_: nodeSkillChargeDmg_,
     atkSPD_: nodeSkillAttackSpeed_,

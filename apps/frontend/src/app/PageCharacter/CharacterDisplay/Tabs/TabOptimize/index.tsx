@@ -115,8 +115,6 @@ export default function TabBuild() {
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
-      const inArtExclusion = artExclusion.includes(art.id)
-      if (inArtExclusion && !useExcludedArts) return false
 
       // If its equipped on the selected character, bypass the check
       const locKey = charKeyToLocCharKey(characterKey)
@@ -125,7 +123,11 @@ export default function TabBuild() {
         if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
       }
 
-      if (inArtExclusion) numExcludedUsed++
+      if (art.exclude) {
+        numExcludedUsed++
+        if (!useExcludedArts) return false
+      }
+
       if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })

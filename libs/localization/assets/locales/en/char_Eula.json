@@ -1,16 +1,13 @@
 {
   "skillC": {
-    "name": "Grimheart",
-    "consumed": "Grimheart Consumed",
-    "grimheart": {
-      "int": "Increase resistance to interruption"
-    }
+    "name": "Grimheart Stacks"
   },
   "burstC": {
-    "name": "Lightfall Sword",
+    "name": "Lightfall Sword Energy Stacks",
     "dmg": "Lightfall Sword Explosion DMG",
-    "start5": "Starts at 5 stacks",
-    "addStacks": "50% chance to get additional stacks from Normal Attacks, Elemental Skills and Elemental Bursts"
+    "start5": "Start at 5 Lightfall Sword Energy Stacks",
+    "addStacks": "50% chance to get additional energy stacks from Normal Attacks, Elemental Skills and Elemental Bursts",
+    "bonusScaling": "Lightfall Sword Bonus Scaling"
   },
   "c1C": {
     "name": "After consuming <strong>Grimheart</strong> stacks",
@@ -18,7 +15,7 @@
   },
   "c4C": {
     "name": "Opponents have less than 50% HP",
-    "desc": "Lightfall Swords deal 25% increased DMG"
+    "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
   },
   "passive1": "Shattered Lightfall Sword DMG"
 }

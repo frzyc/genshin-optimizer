@@ -1,9 +1,10 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
+import { CharacterSheetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
@@ -105,11 +106,9 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
   const burstC5 = greaterEq(input.constellation, 5, 3)
 
   const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
-    bonus: {
-      burst: burstC5,
-      skill: skillC3,
-    },
     premod: {
+      burstBoost: burstC5,
+      skillBoost: skillC3,
       skill_dmg_: a4_skill_dmg_,
       burst_dmg_: a4_burst_dmg_,
     },

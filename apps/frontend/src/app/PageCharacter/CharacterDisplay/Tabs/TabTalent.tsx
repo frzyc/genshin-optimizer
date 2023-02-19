@@ -118,7 +118,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   const { character: { talent }, characterSheet, characterDispatch } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
 
-  const actionWrapeprFunc = useCallback(
+  const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>,
     [onClickTitle],
   )
@@ -129,7 +129,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   let header: Displayable | null = null
 
   if (talentKey in talent) {
-    const levelBoost = data.get(input.bonus[talentKey] as NumNode).value
+    const levelBoost = data.get(input.total[`${talentKey}Boost`] as NumNode).value
     const level = data.get(input.total[talentKey]).value
     const asc = data.get(input.asc).value
 
@@ -153,7 +153,7 @@ function SkillDisplayCard({ talentKey, subtitle, onClickTitle }: SkillDisplayCar
   return <CardLight sx={{ height: "100%" }}>
     {header}
     <CardContent>
-      <ConditionalWrapper condition={!!onClickTitle} wrapper={actionWrapeprFunc} >
+      <ConditionalWrapper condition={!!onClickTitle} wrapper={actionWrapperFunc} >
         <Grid container sx={{ flexWrap: "nowrap" }}>
           <Grid item>
             <Box component="img" src={talentSheet?.img} sx={{ width: 60, height: "auto" }} />

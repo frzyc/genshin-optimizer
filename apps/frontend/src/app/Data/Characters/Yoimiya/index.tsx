@@ -138,16 +138,14 @@ export const dmgFormulas = {
 }
 
 export const dataObj = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: const3TalentInc,
-    burst: const5TalentInc,
-  },
   teamBuff: {
     premod: {
       atk_,
     }
   },
   premod: {
+    skill: const3TalentInc,
+    burst: const5TalentInc,
     atk_: c1atk_,
     pyro_dmg_: sum(pyro_dmg_, c2pyro_dmg_),
   }

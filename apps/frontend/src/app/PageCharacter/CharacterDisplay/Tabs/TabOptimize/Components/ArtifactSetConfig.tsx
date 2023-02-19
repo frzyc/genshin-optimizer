@@ -12,7 +12,7 @@ import CardDark from '../../../../../Components/Card/CardDark';
 import CardLight from '../../../../../Components/Card/CardLight';
 import CloseButton from '../../../../../Components/CloseButton';
 import ColorText from '../../../../../Components/ColoredText';
-import InfoTooltip, { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
+import { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
 import ModalWrapper from '../../../../../Components/ModalWrapper';
 import SqBadge from '../../../../../Components/SqBadge';
 import { Translate } from '../../../../../Components/Translate';
@@ -65,7 +65,7 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   const exclude2 = artKeysByRarity.length - allow2, exclude4 = artKeysByRarity.length - allow4
   const artifactCondCount = useMemo(() =>
     (Object.keys(conditional)).filter(k =>
-      allArtifactSetKeys.includes(k as ArtifactSetKey) && conditional[k]).length
+      allArtifactSetKeys.includes(k as ArtifactSetKey) && !!Object.keys(conditional[k] ?? {}).length).length
     , [conditional])
   const fakeDataContextObj = useMemo(() => ({
     ...dataContext,

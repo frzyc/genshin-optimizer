@@ -1,34 +1,41 @@
+import { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { infoMut } from '../../../Formula/utils'
-import { CharacterKey, CharacterSheetKey, WeaponTypeKey } from '../../../Types/consts'
+import { CharacterSheetKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet, TalentSheetElement, TalentSheetElementKey } from '../ICharacterSheet.d'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
+import { Data, DisplaySub } from '../../../Formula/type'
 const data_gen = data_gen_src as CharacterData
 
-export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, talentFunc: any, skillParam_gen: any, baseTravelerSheet: Partial<ICharacterSheet>) {
+type TravelerTalentFunc = (key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) => {
+  talent: Partial<Record<TalentSheetElementKey, TalentSheetElement>>
+  data: Data
+  elementKey: ElementKey
+}
+export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, talentFunc: TravelerTalentFunc, skillParam_gen: { [key: string]: number[] | number[][]}, baseTravelerSheet: Partial<ICharacterSheet>) {
   const dm = {
     normal: {
       hitArr: [
-        skillParam_gen.auto[0],
-        skillParam_gen.auto[1],
-        skillParam_gen.auto[2],
-        skillParam_gen.auto[3],
-        skillParam_gen.auto[4],
+        skillParam_gen.auto[0] as number[],
+        skillParam_gen.auto[1] as number[],
+        skillParam_gen.auto[2] as number[],
+        skillParam_gen.auto[3] as number[],
+        skillParam_gen.auto[4] as number[],
       ]
     },
     charged: {
-      hit1: skillParam_gen.auto[5],
-      hit2: skillParam_gen.auto[6],
+      hit1: skillParam_gen.auto[5] as number[],
+      hit2: skillParam_gen.auto[6] as number[],
       stamina: skillParam_gen.auto[7][0],
     },
     plunging: {
-      dmg: skillParam_gen.auto[8],
-      low: skillParam_gen.auto[9],
-      high: skillParam_gen.auto[10],
+      dmg: skillParam_gen.auto[8] as number[],
+      low: skillParam_gen.auto[9] as number[],
+      high: skillParam_gen.auto[10] as number[],
     },
   } as const
 
@@ -50,16 +57,16 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
   talent.auto = ct.talentTem("auto", [{
     text: ct.chg("auto.fields.normal")
   }, {
-    fields: dm.normal.hitArr.map((_: any, i: number) => ({
-      node: infoMut(dmgFormulas.normal[i]!, { name: ct.chg(`auto.skillParams.${i}`) }),
+    fields: dm.normal.hitArr.map((_, i) => ({
+      node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
     }))
   }, {
     text: ct.chg("auto.fields.charged"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.charged.dmg1!, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(1)" }),
+      node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(1)" }),
     }, {
-      node: infoMut(dmgFormulas.charged.dmg2!, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
+      node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.5`), textSuffix: "(2)" }),
     }, {
       text: ct.chg("auto.skillParams.6"),
       value: dm.charged.stamina,
@@ -68,11 +75,11 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
     text: ct.chg("auto.fields.plunging"),
   }, {
     fields: [{
-      node: infoMut(dmgFormulas.plunging.dmg!, { name: stg("plunging.dmg") }),
+      node: infoMut(dmgFormulas.plunging.dmg, { name: stg("plunging.dmg") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.low!, { name: stg("plunging.low") }),
+      node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
     }, {
-      node: infoMut(dmgFormulas.plunging.high!, { name: stg("plunging.high") }),
+      node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
     }]
   }])
 
