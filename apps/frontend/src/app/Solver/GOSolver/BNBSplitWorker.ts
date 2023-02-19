@@ -7,6 +7,7 @@ import { SlotKey } from "../../Types/consts";
 import { assertUnreachable, objectKeyValueMap, objectMap } from "../../Util/Util";
 import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "../common";
 import type { SplitWorker } from "./BackgroundWorker";
+import { dbgLinear, linearUB } from "./linearUB";
 
 type Approximation = {
   base: number,
@@ -52,7 +53,11 @@ export class BNBSplitWorker implements SplitWorker {
     this.topN = topN
 
     // make sure we can approximate it
-    linearUpperBound(this.nodes, arts)
+    const out = linearUB(this.nodes, arts)
+    console.log('working LUB?', out)
+
+    // dbgLinear(this.nodes, arts)
+    // throw Error('die')
   }
 
   addFilter(filter: RequestFilter): void {
@@ -157,6 +162,7 @@ export class BNBSplitWorker implements SplitWorker {
       ({ nodes, arts } = pruneAll(nodes, this.min, arts, this.topN, {}, { pruneNodeRange: true }))
       if (Object.values(arts.values).every(x => x.length)) {
         approxs = approximation(nodes, arts)
+        console.log({ approxs, artbase: arts.base })
         maxConts = approxs.map(approx => objectMap(arts.values, val => maxContribution(val, approx)))
       }
     }
@@ -184,7 +190,8 @@ function maxContribution(arts: ArtifactBuildData[], approximation: Approximation
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
 function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[] {
-  return linearUpperBound(nodes, arts).map(weight => ({
+  // return linearUpperBound(nodes, arts).map(weight => ({
+  return linearUB(nodes, arts).map(weight => ({
     base: dot(arts.base, weight, weight.$c),
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
       data => [data.id, dot(data.values, weight, 0)])

@@ -44,11 +44,12 @@ onmessage = async (e: MessageEvent<WorkerCommand>) => {
       break
     }
     case "setup":
-      try {
-        splitWorker = new BNBSplitWorker(data, x => postMessage(x))
-      } catch {
-        splitWorker = new DefaultSplitWorker(data, x => postMessage(x))
-      }
+      splitWorker = new BNBSplitWorker(data, x => postMessage(x))
+      // splitWorker = new DefaultSplitWorker(data, x => postMessage(x))
+      // try {
+      // } catch {
+      //   splitWorker = new DefaultSplitWorker(data, x => postMessage(x))
+      // }
       computeWorker = new ComputeWorker(data, x => postMessage(x))
       break
     default: assertUnreachable(command)
