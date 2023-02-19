@@ -29,7 +29,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot) {
 }
 
 function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
-  if (bounds.length === 0) return { w: [], $c: 0, err: 0 }
+  if (bounds.length === 0) return { w: [], $c: 1, err: 0 } // vacuous product is 0
   const nVar = bounds.length
 
   // Re-scale bounds to [0, 1] for numerical stability.
