@@ -32,7 +32,6 @@ function findPiv1(A: number[][]) {
 
     if (minloc.i < 0) throw Error('UNBOUNDED FEASIBLE')
   }
-
   if (minloc.i < 0) throw Error('NO PIVOTS (done)')
   return { i: minloc.i, j: minloc.j }
 }

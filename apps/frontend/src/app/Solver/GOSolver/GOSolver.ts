@@ -27,8 +27,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status.total = NaN
     this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
 
-    console.log('arts base', problem.arts.base)
-
     this.notifiedBroadcast(this.preprocess(problem))
   }
 

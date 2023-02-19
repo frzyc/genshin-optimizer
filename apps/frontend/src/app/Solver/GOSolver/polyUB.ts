@@ -3,15 +3,15 @@ import { OptNode, allOperations } from "../../Formula/optimization";
 import { ConstantNode } from "../../Formula/type";
 import { prod, threshold } from "../../Formula/utils";
 import { assertUnreachable, cartesian } from "../../Util/Util";
-import { ArtifactsBySlot, DynStat, MinMax, computeFullArtRange, computeNodeRange } from "../common";
+import { ArtifactsBySlot, MinMax, computeFullArtRange, computeNodeRange } from "../common";
+import { Linear } from "./BNBSplitWorker";
 
 export type Polynomial = PolyProd | PolySum | LinTerm
-type Linear = DynStat & { $c: number }
 type LinTerm = { type: 'lin', lin: Linear }
 type PolyProd = { type: 'prod', terms: Polynomial[], $k: number }
 type PolySum = { type: 'sum', terms: Polynomial[], $c: number }
 
-/** Conveniece functions modify in-place if possible */
+/** Convenience functions modify in-place if possible */
 function constP(n: number): LinTerm { return { type: 'lin', lin: { $c: n } } }
 function readP(k: string): LinTerm { return { type: 'lin', lin: { [k]: 1, $c: 0 } } }
 
@@ -129,7 +129,8 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot) {
         const yThresh = isFirstHalf ? pass : fail
         const slope = (pass - fail) / (isFirstHalf ? (thresh - min) : (max - thresh))
         return slopePoint(slope, thresh, yThresh, v)
-      } default: assertUnreachable(operation)
+      }
+      default: assertUnreachable(operation)
     }
   })
 
@@ -151,8 +152,7 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
     return ret
   }, { $k: 1, terms: [] }))
 }
-function foldLikeTerms(mono: Monomial[]): Monomial[] {
-  const mon = [...mono]
+function foldLikeTerms(mon: Monomial[]): Monomial[] {
   mon.forEach(m => m.terms.sort())
   mon.sort(({ terms: termsA }, { terms: termsB }) => {
     if (termsA.length !== termsB.length) return termsA.length - termsB.length

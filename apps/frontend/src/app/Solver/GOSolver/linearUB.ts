@@ -38,7 +38,7 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
   bounds = bounds.map(({ min, max }) => ({ min: min / max, max: 1 }))
 
   // Setting up the linear program in terms of constraints.
-  // cartesian(bounds) loops 2^nVar times
+  //   cartesian(bounds) loops 2^nVar times
   const cons = cartesian(...bounds.map(({ min, max }) => [min, max])).flatMap((coords) => {
     const prod = coords.reduce((prod, v) => prod * v, 1)
     return [
@@ -66,10 +66,4 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
     console.log('Possibly numerical instability issue.')
     throw e
   }
-}
-
-export function dbgLinear(nodes: OptNode[], arts: ArtifactsBySlot) {
-  console.log({ nodes, arts })
-
-  console.log(linearUB(nodes, arts))
 }
