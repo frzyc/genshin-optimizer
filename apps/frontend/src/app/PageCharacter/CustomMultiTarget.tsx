@@ -114,18 +114,18 @@ export function CustomMultiTargetButton() {
     setCustomTargets([...customMultiTarget, initCustomMultiTarget()])
     setExpandedInd(customMultiTarget.length)
   }, [customMultiTarget, setCustomTargets, setExpandedInd])
-  const setCustomMultiTarget = useCallback((ind: number, newTarget: CustomMultiTarget) => {
+  const setCustomMultiTarget = useCallback((ind: number) => (newTarget: CustomMultiTarget) => {
     const customTargets_ = [...customMultiTarget]
     customTargets_[ind] = newTarget
     setCustomTargets(customTargets_)
   }, [customMultiTarget, setCustomTargets])
-  const deleteCustomMultiTarget = useCallback(ind => {
+  const deleteCustomMultiTarget = useCallback((ind: number) => () => {
     if (customMultiTarget[ind].targets.length && !window.confirm(`Are you sure you want to delete "${customMultiTarget[ind].name}"?`)) return
     const customTargets_ = [...customMultiTarget]
     customTargets_.splice(ind, 1)
     setCustomTargets(customTargets_)
   }, [customMultiTarget, setCustomTargets])
-  const dupCustomMultiTarget = useCallback(ind => {
+  const dupCustomMultiTarget = useCallback((ind: number) => () => {
     const customTargets_ = [...customMultiTarget]
     customTargets_.splice(ind, 0, customMultiTarget[ind])
     setCustomTargets(customTargets_)
@@ -144,6 +144,7 @@ export function CustomMultiTargetButton() {
       onCloseModal()
       characterDispatch({ customMultiTarget })
     }, [customMultiTarget, onCloseModal, characterDispatch])
+  const onExpand = useCallback((i: number) => () => setExpandedInd(i === expandedInd ? false : i), [expandedInd])
 
   const { data: origUIData, teamData } = useContext(DataContext)
   const dataContextObj = useMemo(() => {
@@ -160,6 +161,23 @@ export function CustomMultiTargetButton() {
       teamData
     }
   }, [origUIData, teamData])
+
+  const customMultiTargetDisplays = useMemo(() =>
+    customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
+      // Use a unique key, because indices dont allow for swapping very well.
+      key={`${i}${ctar.name}`}
+      index={i}
+      expanded={i === expandedInd}
+      onExpand={onExpand(i)}
+      target={ctar}
+      setTarget={setCustomMultiTarget(i)}
+      onDelete={deleteCustomMultiTarget(i)}
+      onDup={dupCustomMultiTarget(i)}
+      onOrder={setOrder(i)}
+      nTargets={customMultiTarget.length}
+    />),
+    [customMultiTarget, deleteCustomMultiTarget, dupCustomMultiTarget, expandedInd, onExpand, setCustomMultiTarget, setOrder]
+  )
 
   return <Suspense fallback={<Skeleton variant="rectangular" height="100%" width={100} />}>
     <Button color="info" onClick={onShow} startIcon={<SettingsIcon />}>{t`multiTarget.title`}</Button>
@@ -180,19 +198,7 @@ export function CustomMultiTargetButton() {
               <CloseButton onClick={onClose} sx={{ marginLeft: "auto" }} />
             </Box>
             <Box>
-              {customMultiTarget.map((ctar, i) => <CustomMultiTargetDisplay
-                // Use a unique key, because indices dont allow for swapping very well.
-                key={`${i}${JSON.stringify(ctar.targets)}`}
-                index={i}
-                expanded={i === expandedInd}
-                onExpand={() => setExpandedInd(i === expandedInd ? false : i)}
-                target={ctar}
-                setTarget={(t) => setCustomMultiTarget(i, t)}
-                onDelete={() => deleteCustomMultiTarget(i)}
-                onDup={() => dupCustomMultiTarget(i)}
-                onOrder={setOrder(i)}
-                nTargets={customMultiTarget.length}
-              />)}
+              {customMultiTargetDisplays}
               <Button fullWidth onClick={addNewCustomMultiTarget} startIcon={<AddIcon />} sx={{ mt: 1 }}>{t`multiTarget.addNewMTarget`}</Button>
             </Box>
           </CardContent>
@@ -213,13 +219,13 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     setTarget(target_)
   }, [target, setTarget])
 
-  const setCustomTarget = useCallback((index: number, ctarget: CustomTarget) => {
+  const setCustomTarget = useCallback((index: number) => (ctarget: CustomTarget) => {
     const targets = [...target.targets]
     targets[index] = ctarget
     setTarget({ ...target, targets })
   }, [target, setTarget])
 
-  const deleteCustomTarget = useCallback((index: number) => {
+  const deleteCustomTarget = useCallback((index: number) => () => {
     if (Object.values(target.targets[index].bonusStats).length && !window.confirm(`Are you sure you want to delete this target?`)) return
     const targets = [...target.targets]
     targets.splice(index, 1)
@@ -239,6 +245,11 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
     targets.splice(index, 0, deepClone(targets[index]));
     setTarget({ ...target, targets })
   }, [target, setTarget])
+
+  const customTargetDisplays = useMemo(() =>
+    target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={setCustomTarget(i)} deleteCustomTarget={deleteCustomTarget(i)} rank={i + 1} maxRank={target.targets.length} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />),
+    [deleteCustomTarget, dupCustomTarget, setCustomTarget, setTargetIndex, target.targets]
+  )
 
   return <Accordion sx={{ bgcolor: "contentLight.main" }} expanded={expanded} >
     <AccordionSummary expandIcon={<Button color="info"
@@ -292,7 +303,7 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
         <CopyArea customMultiTarget={target} setCustomMultiTarget={setTarget} />
       </Box>
       <Box display="flex" gap={1} flexDirection="column">
-        {target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={(ct) => setCustomTarget(i, ct)} deleteCustomTarget={() => deleteCustomTarget(i)} rank={i + 1} maxRank={target.targets.length} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />)}
+        {customTargetDisplays}
         <AddCustomTargetBtn setTarget={addTarget} />
       </Box>
 
@@ -360,6 +371,11 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const node = objPathValue(data.getDisplay(), path) as NodeDisplay | undefined
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
+  const statEditorList = useMemo(() =>
+    <StatEditorList statKeys={keys} statFilters={customTarget.bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />,
+    [customTarget.bonusStats, setFilter]
+  )
+
   const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
   const isTransformativeReaction = path[0] === "reaction"
   return <CardDark sx={{ display: "flex", }} >
@@ -382,7 +398,7 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
                 onClick={() => setCustomTarget({ ...customTarget, infusionAura: key ? key : undefined, reaction: undefined })}>{text}</MenuItem>)}
           </DropdownButton>
         </Grid>}
-        <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />
+        {statEditorList}
       </Grid>
     </Box>
     <ButtonGroup orientation="vertical" sx={{ borderTopLeftRadius: 0, "*": { flexGrow: 1 } }}>
