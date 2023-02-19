@@ -1,10 +1,11 @@
-import { allCharacterKeys, ArtifactSetKey, CharacterKey } from "@genshin-optimizer/consts";
+import { allCharacterKeys, allLocationCharacterKeys, ArtifactSetKey, CharacterKey, LocationKey } from "@genshin-optimizer/consts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
 import { deepClone, deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
+import { validateArr } from "../validationUtil";
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
@@ -23,11 +24,10 @@ export interface BuildSetting {
     flower?: never
     plume?: never
   }
+  allowLocations: LocationKey[]
   artExclusion: string[]
   optimizationTarget?: string[]
   mainStatAssumptionLevel: number
-  useExcludedArts: boolean
-  useEquippedArts: boolean
   allowPartial: boolean
   maxBuildsToShow: number
   plotBase?: string[]
@@ -49,7 +49,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return
     if (typeof obj !== "object") return
-    let { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
+    let { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
 
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -67,8 +67,9 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
 
     if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
     else artExclusion = [...(new Set(artExclusion))].filter(id => this.database.arts.keys.includes(id))
-    useExcludedArts = !!useExcludedArts
-    useEquippedArts = !!useEquippedArts
+
+    allowLocations = validateArr(allowLocations, allLocationCharacterKeys.filter(k => k !== key), []).filter(lk => this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)))
+
     if (!maxBuildsToShowList.includes(maxBuildsToShow as typeof maxBuildsToShowList[number])) maxBuildsToShow = maxBuildsToShowDefault
     if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
     if (compareBuild === undefined) compareBuild = false
@@ -77,7 +78,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (!artSetExclusion) artSetExclusion = {};
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
-    return { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+    return { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations: allowLocations, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -91,8 +92,7 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   mainStatKeys: { sands: [...Artifact.slotMainStats("sands")], goblet: [...Artifact.slotMainStats("goblet")], circlet: [...Artifact.slotMainStats("circlet")] },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
-  useExcludedArts: false,
-  useEquippedArts: false,
+  allowLocations: [],
   allowPartial: false,
   maxBuildsToShow: 5,
   plotBase: undefined,

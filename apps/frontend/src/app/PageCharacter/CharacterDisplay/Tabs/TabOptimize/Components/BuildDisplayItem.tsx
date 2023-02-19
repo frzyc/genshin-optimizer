@@ -1,4 +1,4 @@
-import { allArtifactSlotKeys, charKeyToLocCharKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, charKeyToLocCharKey, LocationKey } from '@genshin-optimizer/consts';
 import { Checkroom, ChevronRight } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
@@ -20,6 +20,7 @@ import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import { ICachedArtifact } from '../../../../../Types/artifact';
+import { toggleArr } from '../../../../../Util/Util';
 import useBuildSetting from '../useBuildSetting';
 import { ArtifactSetBadges } from './ArtifactSetBadges';
 
@@ -126,15 +127,18 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
     database.arts.set(newId, { location: charKeyToLocCharKey(characterKey) })
     onClose()
   }, [newId, database, characterKey, onClose])
-
+  const newLoc = database.arts.get(newId)?.location ?? ""
   return <ModalWrapper open={!!newId} onClose={onClose} containerProps={{ maxWidth: oldId ? "md" : "xs" }}>
     <CardDark>
-      <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2, height: "100%" }}>
+      <CardContent sx={{ display: "flex", justifyContent: "center", alignItems: "stretch", gap: 2 }}>
         {oldId && <Box minWidth={320}><ArtifactCard artifactId={oldId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={oldId} />} /></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
         {oldId && <Box display="flex" alignItems="center" justifyContent="center"><Button onClick={onEquip} sx={{ display: "flex" }}><ChevronRight sx={{ fontSize: 40 }} /></Button></Box>}
         {oldId && <Box display="flex" flexGrow={1} />}
-        <Box minWidth={320}><ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={newId} />} /></Box>
+        <Box minWidth={320} display="flex" flexDirection="column" gap={1} >
+          <ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={newId} />} />
+          {newLoc && <ExcludeEquipButton locationKey={newLoc} />}
+        </Box>
       </CardContent>
     </CardDark>
   </ModalWrapper>
@@ -144,7 +148,7 @@ function ExcludeButton({ id }: { id: string }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { artExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
   const excluded = artExclusion.includes(id)
-  const toggle = useCallback(() => excluded ? buildSettingDispatch({ artExclusion: artExclusion.filter(i => i !== id) }) : buildSettingDispatch({ artExclusion: [...artExclusion, id] }), [id, excluded, artExclusion, buildSettingDispatch])
+  const toggle = useCallback(() => buildSettingDispatch({ artExclusion: toggleArr(artExclusion, id) }), [id, artExclusion, buildSettingDispatch])
 
   return <BootstrapTooltip title={<Box>
     <Typography>{t`excludeArtifactTip`}</Typography>
@@ -155,4 +159,15 @@ function ExcludeButton({ id }: { id: string }) {
     </Button>
   </BootstrapTooltip>
 
+}
+function ExcludeEquipButton({ locationKey }: { locationKey: LocationKey }) {
+  const { t } = useTranslation("artifact")
+  const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { buildSetting: { allowLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const excluded = !allowLocations.includes(locationKey)
+  const toggle = useCallback(() => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, locationKey) }), [locationKey, allowLocations, buildSettingDispatch])
+
+  return <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" startIcon={excluded ? <BlockIcon /> : <ShowChartIcon />} >
+    {excluded ? t`excludeEquipTip` : t`allowEquipTip`}
+  </Button>
 }

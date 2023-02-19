@@ -1,3 +1,4 @@
+import { allElementKeys, allWeaponTypeKeys, CharacterKey } from '@genshin-optimizer/consts';
 import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
@@ -18,7 +19,7 @@ import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useDBMeta from '../ReactHooks/useDBMeta';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
-import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName } from '../Types/consts';
+import { charKeyToCharName } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { catTotal } from '../Util/totalUtils';
@@ -106,7 +107,7 @@ export default function PageCharacter() {
       if (charKeyList.includes(ck)) ct[wtk].current++
     })), [database, charKeyList])
 
-  const elementTotals = useMemo(() => catTotal(allElements,
+  const elementTotals = useMemo(() => catTotal(allElementKeys,
     ct => Object.entries(database.chars.data).forEach(([ck, char]) => {
       const eleKey = getCharSheet(char.key, database.gender).elementKey
       ct[eleKey].total++

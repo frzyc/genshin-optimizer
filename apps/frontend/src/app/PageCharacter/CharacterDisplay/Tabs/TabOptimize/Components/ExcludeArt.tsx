@@ -1,7 +1,6 @@
-import { CheckBox, CheckBoxOutlineBlank } from "@mui/icons-material";
 import AddIcon from '@mui/icons-material/Add';
-import SettingsIcon from '@mui/icons-material/Settings';
-import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material";
+import BlockIcon from '@mui/icons-material/Block';
+import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import ArtifactCardNano from "../../../../../Components/Artifact/ArtifactCardNano";
@@ -25,7 +24,7 @@ import useBuildSetting from "../useBuildSetting";
 export default function ExcludeArt({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
-  const { buildSetting: { useExcludedArts, artExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { buildSetting: { artExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
   const [show, onOpen, onClose] = useBoolState(false)
   const numExcludedArt = artExclusion.length
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
@@ -58,16 +57,12 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
         </Grid>
       </CardContent>
     </CardDark ></ModalWrapper>
-    <ButtonGroup>
-      <Button fullWidth onClick={() => buildSettingDispatch({ useExcludedArts: !useExcludedArts })} disabled={disabled} startIcon={!useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />} color={!useExcludedArts ? "success" : "secondary"}>
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <Box>{t("useExcluded.title_exclude")}</Box>
-          {!useExcludedArts ? <SqBadge color="error"><Trans t={t} i18nKey="useExcluded.excNum" count={numExcludedArt}>Excluded <strong>{{ count: numExcludedArt } as TransObject}</strong> artifacts</Trans></SqBadge> :
-            <SqBadge><Trans t={t} i18nKey="useExcluded.usingNum" count={numExcludedArt}>Using <strong>{{ count: numExcludedArt } as TransObject}</strong> excluded artifacts</Trans></SqBadge>}
-        </Box>
-      </Button>
-      {!useExcludedArts && <Button sx={{ flexShrink: 1 }} color="info" onClick={onOpen} disabled={disabled}><SettingsIcon /></Button>}
-    </ButtonGroup>
+    <Button fullWidth onClick={onOpen} disabled={disabled} startIcon={<BlockIcon />} color="info">
+      <Box sx={{ display: "flex", gap: 1 }}>
+        <Box>{t("useExcluded.title_exclude")}</Box>
+        <SqBadge><Trans t={t} i18nKey="useExcluded.excNum" count={numExcludedArt}>Excluded <strong>{{ count: numExcludedArt } as TransObject}</strong> artifacts</Trans></SqBadge>
+      </Box>
+    </Button>
   </>
 }
 

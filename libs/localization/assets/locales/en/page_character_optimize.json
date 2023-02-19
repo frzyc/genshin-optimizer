@@ -33,21 +33,12 @@
     "selExc": "Select artifact to exlude from generating builds for this character",
     "deSelectExc": "Click on artifact cards to remove from exclusion list."
   },
-  "useEquipped": {
-    "title": "Use Equipped Artifacts",
+  "ExcludeChar": {
+    "title": "Allow Equipped Artifacts",
     "modal": {
-      "title": "Character Priority for Equipped Artifacts",
-      "desc1": "When generating a build, the Optimizer will only consider equipped artifacts from characters below the current character or those not on the list.",
-      "desc2": "If the current character is not on the list, the Optimizer will only consider equipped artifacts from others characters that are not on the list.",
-      "usingNum_one": "Using artifacts from <1>{{count}}</1> character",
-      "usingNum_other": "Using artifacts from <1>{{count}}</1> unlisted characters",
-      "status": {
-        "use": "Use artifacts",
-        "dont": "Don't use artifacts",
-        "curr": "Current character"
-      },
-      "add": "Add character to list",
-      "clearList": "Clear List"
+      "title_sel": "Allow artifacts from selected characters for build generation",
+      "allow_all": "Allow equipped artifacts from all characters",
+      "disallow_All": "Disallow equipped artifacts from all characters"
     },
     "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
     "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
