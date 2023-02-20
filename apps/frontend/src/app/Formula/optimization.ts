@@ -35,8 +35,6 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
 /**
  * Compile an array of `formulas` into a JS `Function`
  *
- * The nodes in the array should be automatically deduped by the JS engine
- *
  * @param formulas
  * @param initial base stats for the formula
  * @param binding
@@ -44,9 +42,9 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
  * @returns
  */
 export function precompute(formulas: OptNode[], initial: DynStat, binding: (readNode: ReadNode<number>) => string, slotCount: number): (_: { values: DynStat }[]) => number[] {
+  // res copied from the code above
   let body = `
 "use strict";
-// copied from the code above
 function res(res) {
   if (res < 0) return 1 - res / 2
   else if (res >= 0.75) return 1 / (res * 4 + 1)
@@ -56,7 +54,7 @@ const x0=0`; // making sure `const` has at least one entry
 
   let i = 1;
   const names = new Map<NumNode | StrNode, string>()
-  forEachNodes(formulas, _ => { }, f => {
+  forEachNodes(formulas, _ => {/* */ }, f => {
     const { operation, operands } = f, name = `x${i++}`, operandNames = operands.map((x: OptNode) => names.get(x)!)
     names.set(f, name)
     switch (operation) {
@@ -66,19 +64,19 @@ const x0=0`; // making sure `const` has at least one entry
         if (initial[key] && initial[key] !== 0) {
           arr = [initial[key].toString(), ...arr]
         }
-        body += `,${name}=${arr.join('+')}`
+        body += `,${name}=${arr.join('+')}\n`
         break
       }
       case "const": names.set(f, `(${f.value})`); break
-      case "add": case "mul": body += `,${name}=${operandNames.join(operation === "add" ? "+" : "*")}`; break
-      case "min": case "max": body += `,${name}=Math.${operation}(${operandNames})`; break
+      case "add": case "mul": body += `,${name}=${operandNames.join(operation === "add" ? "+" : "*")}\n`; break
+      case "min": case "max": body += `,${name}=Math.${operation}(${operandNames})\n`; break
       case "threshold": {
         const [value, threshold, pass, fail] = operandNames
-        body += `,${name}=(${value}>=${threshold})?${pass}:${fail}`
+        body += `,${name}=(${value}>=${threshold})?${pass}:${fail}\n`
         break
       }
-      case "res": body += `,${name}=res(${operandNames[0]})`; break
-      case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})`; break
+      case "res": body += `,${name}=res(${operandNames[0]})\n`; break
+      case "sum_frac": body += `,${name}=${operandNames[0]}/(${operandNames[0]}+${operandNames[1]})\n`; break
 
       default: assertUnreachable(operation)
     }
@@ -121,12 +119,12 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
     }
   }
 
-  while (true) {
+  for (; ;) {
     let next: typeof wrap.common | undefined
 
     const factored: ComputeNode<OptNode> = { operation: wrap.common.operation, operands: arrayFromCounts(wrap.common.counts) }
 
-    let candidatesByOperation = new Map<Operation, [ComputeNode<OptNode>, Map<OptNode, number>][]>()
+    const candidatesByOperation = new Map<Operation, [ComputeNode<OptNode>, Map<OptNode, number>][]>()
     for (const operation of Object.keys(allCommutativeMonoidOperations))
       candidatesByOperation.set(operation, [])
 

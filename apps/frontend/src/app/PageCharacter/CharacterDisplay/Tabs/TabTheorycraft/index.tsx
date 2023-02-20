@@ -199,7 +199,7 @@ export default function TabTheorycraft() {
   }
   const maxSubstats = useMemo(() => {
     let result: Record<SubstatKey, number>
-    let maxSubstats = data.optimization.maxSubstats;
+    const maxSubstats = data.optimization.maxSubstats;
     if (maxSubstats.useMaxOff) {
       const { max, offset } = maxSubstats;
       result = objectKeyMap(allSubstatKeys, (k) => max - offset * Object.values(data.artifact.slots).reduce((p, s) => p + +(s.statKey === k), 0));
@@ -221,7 +221,7 @@ export default function TabTheorycraft() {
     workerData = { ...workerData, ...mergeData([workerData, dynamicData]) } // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
-    let unoptimizedNodes = [unoptimizedOptimizationTargetNode]
+    const unoptimizedNodes = [unoptimizedOptimizationTargetNode]
     let nodes = optimize(unoptimizedNodes, workerData, ({ path: [p] }) => p !== "dyn")
     // Const fold the artifact set
     nodes = mapFormulas(nodes, f => {
@@ -238,11 +238,11 @@ export default function TabTheorycraft() {
     nodes = optimize(nodes, {}, _ => false)
 
     const subs = new Set<string>()
-    let compute = precompute(nodes, {}, f => {
+    const compute = precompute(nodes, {}, f => {
       subs.add(f.path[1])
       return f.path[1]
     }, 3)
-    let realSubs = [...subs].filter(x => allSubstatKeys.includes(x as any))
+    const realSubs = [...subs].filter(x => allSubstatKeys.includes(x as any))
     if (realSubs.reduce((p, x) => p + maxSubstats[x], 0) < distributedSubstats)
       realSubs.push("__unused__")
     const comp = (statKey: string) => statKey.endsWith("_") ? 100 : 1
@@ -250,7 +250,9 @@ export default function TabTheorycraft() {
     let max = -Infinity
     const buffer = Object.fromEntries([...subs].map(x => [x, 0]))
     let maxBuffer: typeof buffer | undefined;
-    const bufferMain = objectMap(data.artifact.slots, ({ statKey, rarity, level }) => Artifact.mainStatValue(statKey, rarity, level) / comp(statKey))
+    const bufferMain = Object.entries(data.artifact.slots).map((
+      [_, { statKey, rarity, level }]) => [statKey, Artifact.mainStatValue(statKey, rarity, level) / comp(statKey)] as const
+    ).reduce<Partial<Record<MainStatKey, number>>>((acc, [k, v]) => ((acc[k] = (acc[k] ?? 0) + v, acc)), {})
     const bufferSubs = objectMap(data.artifact.substats.stats, (v, k) => v / comp(k))
     const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {
