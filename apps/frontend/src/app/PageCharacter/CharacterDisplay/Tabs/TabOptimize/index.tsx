@@ -42,7 +42,7 @@ import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
 import ChartCard from './Components/ChartCard';
-import UseExcluded from './Components/ExcludeArt';
+import ExcludeArt from './Components/ExcludeArt';
 import AllowChar from './Components/AllowChar';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
@@ -323,7 +323,7 @@ export default function TabBuild() {
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} />
+          <ExcludeArt disabled={generatingBuilds} />
 
 
           <Button

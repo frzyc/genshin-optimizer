@@ -84,11 +84,6 @@
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "resetFilters": "Reset Filters",
   "edit": "Edit Artifact",
-  "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds.",
-  "excluded": "This artifact is excluded.",
-  "included": "This artifact is not excluded.",
-  "allowEquipTip": "Allow builder to take artifacts from this character",
-  "excludeEquipTip": "Disallow builder to take artifacts from this character",
   "autocompleteLabels": {
     "sets": "Artifact Sets",
     "mainStats": "Main Stats",

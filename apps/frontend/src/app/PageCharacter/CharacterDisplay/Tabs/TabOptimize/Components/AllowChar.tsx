@@ -59,7 +59,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} >
-          <Typography variant="h6" flexGrow={1}>{t`ExcludeChar.modal.title_sel`}</Typography>
+          <Typography variant="h6" flexGrow={1}>{t`excludeChar.modal.title_sel`}</Typography>
           <CloseButton onClick={onClose} size="small" />
         </Box>
       </CardContent>
@@ -67,11 +67,11 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
       <CardContent>
         <Box pb={1} display="flex" gap={1} flexWrap="wrap">
           <Button color="success" sx={{ flexGrow: 1 }} onClick={allowAll} >
-            {t`ExcludeChar.modal.allow_all`}
+            {t`excludeChar.modal.allow_all`}
             <SqBadge sx={{ ml: 1 }}><strong>{`${useTot}/${total}`}</strong></SqBadge>
           </Button>
           <Button color="error" sx={{ flexGrow: 1 }} onClick={disallowAll} >
-            {t`ExcludeChar.modal.disallow_All`}
+            {t`excludeChar.modal.disallow_All`}
             <SqBadge sx={{ ml: 1 }}><strong>{`${total - useTot}/${total}`}</strong></SqBadge>
           </Button>
         </Box>
@@ -86,8 +86,8 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
     </CardDark ></ModalWrapper>
     <Button sx={{ flexGrow: 1 }} color="info" onClick={onOpen} disabled={disabled} startIcon={<SettingsAccessibilityIcon />} >
       <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-        <span>{t`ExcludeChar.title`}</span>
-        <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="ExcludeChar.usingNumTot" count={useTot} arts={numArtsEquippedUsed}>Using <strong>{{ arts: numArtsEquippedUsed } as TransObject}</strong> artifacts from <strong>{{ count: useTot } as TransObject}</strong> characters</Trans></SqBadge>
+        <span>{t`excludeChar.title`}</span>
+        <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="excludeChar.usingNumTot" count={useTot} arts={numArtsEquippedUsed}>Using <strong>{{ arts: numArtsEquippedUsed } as TransObject}</strong> artifacts from <strong>{{ count: useTot } as TransObject}</strong> characters</Trans></SqBadge>
       </Box>
     </Button>
   </Box >

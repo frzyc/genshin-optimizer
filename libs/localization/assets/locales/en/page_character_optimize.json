@@ -22,24 +22,29 @@
     "buildAlreadyInList": "Build is already in the list"
   },
   "levelFilter": "Artifact Level Filter",
-  "useExcluded": {
+  "excludeArt": {
     "title_exclude": "Exclude Artifacts",
-    "title_tooltip": "Exclude Artifacts from being used in generated builds for this character.",
+    "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
     "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
     "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
     "excNum_one": "<1>{{count}}</1> artifact is excluded",
     "excNum_other": "<1>{{count}}</1> artifacts are excluded",
-    "addExc": "Exclude artifact from generating builds for this character",
-    "selExc": "Select artifact to exlude from generating builds for this character",
-    "deSelectExc": "Click on artifact cards to remove from exclusion list."
+    "addExc": "Add artifact to this character's exclusion list",
+    "selExc": "Select artifact to add to this character's exclusion list",
+    "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+    "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
+    "excluded": "This artifact is excluded.",
+    "included": "This artifact is not excluded."
   },
-  "ExcludeChar": {
+  "excludeChar": {
     "title": "Allow Equipped Artifacts",
     "modal": {
-      "title_sel": "Allow artifacts from selected characters for build generation",
-      "allow_all": "Allow equipped artifacts from all characters",
-      "disallow_All": "Disallow equipped artifacts from all characters"
+      "title_sel": "Allow equipped artifacts",
+      "allow_all": "Add all characters to the allow list",
+      "disallow_All": "Remove all characters from the allow list"
     },
+    "allowEquip": "Allow using artifacts from",
+    "excludeEquip": "Disallow using artifacts from",
     "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
     "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
   },

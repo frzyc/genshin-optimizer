@@ -38,8 +38,8 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} alignItems="center">
-          <Typography variant="h6" >{t`useExcluded.title_exclude`}</Typography>
-          <InfoTooltip title={<Typography>{t`useExcluded.title_tooltip`}</Typography>} />
+          <Typography variant="h6" >{t`excludeArt.title_exclude`}</Typography>
+          <InfoTooltip title={<Typography>{t`excludeArt.title_tooltip`}</Typography>} />
           <Box flexGrow={1} />
           <CloseButton onClick={onClose} size="small" />
         </Box>
@@ -47,8 +47,8 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
       <Divider />
       <CardContent>
         <ArtifactSelectModal show={showSel} onClose={onCloseSel} onSelect={onSelect} artExclusion={artExclusion} />
-        <Button fullWidth onClick={onOpenSel} color="info" sx={{ mb: 1 }} startIcon={<AddIcon />} >{t`useExcluded.addExc`}</Button>
-        {!!numExcludedArt && <CardLight sx={{ mb: 1 }}><Typography textAlign="center">{t`useExcluded.deSelectExc`}</Typography></CardLight>}
+        <Button fullWidth onClick={onOpenSel} color="info" sx={{ mb: 1 }} startIcon={<AddIcon />} >{t`excludeArt.addExc`}</Button>
+        {!!numExcludedArt && <CardLight sx={{ mb: 1 }}><Typography textAlign="center">{t`excludeArt.deSelectExc`}</Typography></CardLight>}
         <Grid container columns={{ xs: 3, md: 5, lg: 6, xl: 8 }} spacing={1}>
           {artExclusion.map(id =>
             <Grid item key={id} xs={1} >
@@ -59,8 +59,8 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
     </CardDark ></ModalWrapper>
     <Button fullWidth onClick={onOpen} disabled={disabled} startIcon={<BlockIcon />} color="info">
       <Box sx={{ display: "flex", gap: 1 }}>
-        <Box>{t("useExcluded.title_exclude")}</Box>
-        <SqBadge><Trans t={t} i18nKey="useExcluded.excNum" count={numExcludedArt}>Excluded <strong>{{ count: numExcludedArt } as TransObject}</strong> artifacts</Trans></SqBadge>
+        <Box>{t("excludeArt.title_exclude")}</Box>
+        <SqBadge><Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>Excluded <strong>{{ count: numExcludedArt } as TransObject}</strong> artifacts</Trans></SqBadge>
       </Box>
     </Button>
   </>
@@ -75,7 +75,6 @@ function ArtifactSelectModal({ onSelect, show, onClose, artExclusion }:
   const clickHandler = useCallback((id: string) => {
     onSelect(id)
     onClose()
-    console.log({ id })
   }, [onSelect, onClose])
 
   const [filterOption, filterOptionDispatch] = useReducer(filterOptionReducer, initialFilterOption())
@@ -94,7 +93,7 @@ function ArtifactSelectModal({ onSelect, show, onClose, artExclusion }:
   return <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} >
     <CardDark>
       <CardContent sx={{ py: 1, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography variant="h6">{t`useExcluded.selExc`}</Typography>
+        <Typography variant="h6">{t`excludeArt.selExc`}</Typography>
         <CloseButton onClick={onClose} />
       </CardContent>
       <Divider />

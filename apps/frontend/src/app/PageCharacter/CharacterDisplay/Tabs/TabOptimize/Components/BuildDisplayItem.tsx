@@ -1,6 +1,8 @@
-import { allArtifactSlotKeys, charKeyToLocCharKey, LocationKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from '@genshin-optimizer/consts';
 import { Checkroom, ChevronRight } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { Box, Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
@@ -16,6 +18,7 @@ import SqBadge from '../../../../../Components/SqBadge';
 import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
 import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../Context/DataContext';
+import { getCharSheet } from '../../../../../Data/Characters';
 import { DatabaseContext } from '../../../../../Database/Database';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
@@ -144,15 +147,15 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
   </ModalWrapper>
 }
 function ExcludeButton({ id }: { id: string }) {
-  const { t } = useTranslation("artifact")
+  const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { artExclusion }, buildSettingDispatch } = useBuildSetting(characterKey)
   const excluded = artExclusion.includes(id)
   const toggle = useCallback(() => buildSettingDispatch({ artExclusion: toggleArr(artExclusion, id) }), [id, artExclusion, buildSettingDispatch])
 
   return <BootstrapTooltip title={<Box>
-    <Typography>{t`excludeArtifactTip`}</Typography>
-    <Typography><ColorText color={excluded ? "error" : "success"}>{t(excluded ? "excluded" : "included")}</ColorText></Typography>
+    <Typography>{t`excludeArt.excludeArtifactTip`}</Typography>
+    <Typography><ColorText color={excluded ? "error" : "success"}>{t(excluded ? "excludeArt.excluded" : "excludeArt.included")}</ColorText></Typography>
   </Box>} placement="top" arrow>
     <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" >
       {excluded ? <BlockIcon /> : <ShowChartIcon />}
@@ -160,14 +163,16 @@ function ExcludeButton({ id }: { id: string }) {
   </BootstrapTooltip>
 
 }
-function ExcludeEquipButton({ locationKey }: { locationKey: LocationKey }) {
-  const { t } = useTranslation("artifact")
+function ExcludeEquipButton({ locationKey }: { locationKey: LocationCharacterKey }) {
+  const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
+  const { database } = useContext(DatabaseContext)
+  const characterSheet =  getCharSheet(database.chars.LocationToCharacterKey(locationKey))
   const { buildSetting: { allowLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
   const excluded = !allowLocations.includes(locationKey)
   const toggle = useCallback(() => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, locationKey) }), [locationKey, allowLocations, buildSettingDispatch])
 
-  return <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" startIcon={excluded ? <BlockIcon /> : <ShowChartIcon />} >
-    {excluded ? t`excludeEquipTip` : t`allowEquipTip`}
+  return <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />} >
+    <span>{excluded ? t`excludeChar.excludeEquip` : t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong></span>
   </Button>
 }
