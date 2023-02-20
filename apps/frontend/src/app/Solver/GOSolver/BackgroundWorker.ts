@@ -44,8 +44,6 @@ onmessage = async (e: MessageEvent<WorkerCommand>) => {
       break
     }
     case "setup":
-      // @lantua Do we want to split GOSolver -> EnumerationSolver & BNBSolver?
-      //         Then support Solver switching in PageOptimize/index.ts
       try {
         splitWorker = new BNBSplitWorker(data, x => postMessage(x))
       } catch {

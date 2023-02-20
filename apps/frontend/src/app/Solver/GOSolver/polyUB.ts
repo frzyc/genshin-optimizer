@@ -137,7 +137,7 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot) {
   return poly.map(p => expandPoly(p))
 }
 
-export type Polynomial2 = Monomial[]
+export type SumOfMonomials = Monomial[]
 type Monomial = {
   $k: number
   terms: string[]
@@ -171,7 +171,7 @@ function foldLikeTerms(mon: Monomial[]): Monomial[] {
   }
   return mon
 }
-function expandPoly(node: Polynomial): Polynomial2 {
+function expandPoly(node: Polynomial): SumOfMonomials {
   function toExpandedPoly(n: Polynomial): Monomial[] {
     switch (n.type) {
       case 'lin':

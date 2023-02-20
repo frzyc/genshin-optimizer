@@ -28,6 +28,21 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot) {
   )
 }
 
+/**
+ * Constructs a linear upper bound for a monomial on a bounded domain using an LP.
+ *
+ * Monomial is assumed to be
+ *    m(x) = x1 * x2 * ... * xn
+ * on bounded domain
+ *    min_1 <= x1 <= max_1
+ *    min_2 <= x2 <= max_2
+ *    ...
+ *    min_n <= xn <= max_n
+ *
+ * @param bounds List of min/max bounds for each xi
+ * @returns A linear function L(x) = w•x + $c
+ *            satisfying      L(x) - m(x) <= err
+ */
 function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
   if (bounds.length === 0) return { w: [], $c: 1, err: 0 } // vacuous product is 0
   const nVar = bounds.length
@@ -46,10 +61,6 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
       [...coords, -1, -1, prod],
     ]
   })
-
-  // Force equality at upper & lower corners?
-  // cons.push([...bounds.map(lu => lu.lower), -1, 0, bounds.reduce((prod, { lower }) => prod * lower, 1)])
-  // cons.push([...bounds.map(lu => lu.upper), -1, 0, bounds.reduce((prod, { upper }) => prod * upper, 1)])
 
   const objective = [...bounds.map(_ => 0), 0, 1]
   try {
