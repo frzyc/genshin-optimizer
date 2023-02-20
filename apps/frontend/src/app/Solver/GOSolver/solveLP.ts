@@ -20,13 +20,12 @@ export function isFeasible(Ab: number[][], x: number[]): boolean {
  * Implemented according to the Simplex Method (Sec 4) of:
  *   Ferguson, https://www.math.ucla.edu/~tom/LP.pdf
  *
- * Does not implement any cycle detection, though that *shouldnt* a problem for GO's use
- *   case. This algorithm may be fairly numerically unstable though, use with care & always
- *   try to verify the solution.
+ * Does not implement any cycle detection, though that *shouldnt* be a problem for GO's use
+ *   case. This algorithm will always return a feasible solution, though it may be suboptimal.
  *
  * @param c        Objective vector
  * @param Ab       Constraints matrix with thresholds. Inputted in block form [A, b]
- * @returns        the optimal solution x
+ * @returns        a valid solution x, optimal if everything went well.
  */
 export function solveLP(c: number[], Ab: number[][]) {
   const rows = Ab.length + 1
@@ -36,21 +35,21 @@ export function solveLP(c: number[], Ab: number[][]) {
   Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => tableau[i][j] = Aij))
   c.forEach((cj, j) => tableau[rows - 1][j] = cj)
 
-  const pivotRecord: Pivot[] = []
+  const pivotHistory: Pivot[] = []  // Keep track of all chosen pivots for backtracking later
 
   while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
     const piv = findPiv2(tableau)
-    pivotRecord.push(piv)
+    pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
 
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < 0)) {
     const piv = findPiv1(tableau)
-    pivotRecord.push(piv)
+    pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
 
-  const xOpt = c.map((_, i) => backtrack(tableau, pivotRecord, i))
+  const xOpt = c.map((_, i) => backtrack(tableau, pivotHistory, i))
   if (!isFeasible(Ab, xOpt)) throw Error('COMPUTED SOLUTION IS NOT FEASIBLE')
   return xOpt
 }
@@ -115,9 +114,9 @@ function findPiv2(A: number[][]) {
 }
 
 /** Backtracking algorithm to find solution vector */
-function backtrack(tableau: number[][], pivotRecord: Pivot[], targ: number) {
+function backtrack(tableau: number[][], pivotHistory: Pivot[], targ: number) {
   let side = 1;  // 0 left, 1 right
-  pivotRecord.forEach(({ i, j }) => {
+  pivotHistory.forEach(({ i, j }) => {
     if (side === 1 && j === targ) {
       targ = i
       side = 0

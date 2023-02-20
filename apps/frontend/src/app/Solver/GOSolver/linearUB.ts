@@ -42,7 +42,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
  *
  * @param bounds List of min/max bounds for each xi
  * @returns A linear function L(x) = w . x + $c
- *            satisfying      L(x) - m(x) <= err
+ *            satisfying      m(x) <= L(x) <= m(x) + err
  */
 function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
   if (bounds.length === 0) return { w: [], $c: 1, err: 0 } // vacuous product is 0
