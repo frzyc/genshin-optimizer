@@ -1,9 +1,10 @@
 import { OptNode } from "../../Formula/optimization";
 import { cartesian } from "../../Util/Util";
-import { ArtifactsBySlot, MinMax, computeFullArtRange } from "../common";
-import { Linear } from "./BNBSplitWorker";
+import { ArtifactsBySlot, DynStat, MinMax, computeFullArtRange } from "../common";
 import { polyUB } from "./polyUB";
 import { solveLP } from "./solveLP";
+
+export type Linear = DynStat & { $c: number }
 
 function weightedSum(...entries: readonly (readonly [number, Linear])[]): Linear {
   const result = { $c: 0 }

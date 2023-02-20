@@ -4,7 +4,7 @@ import { ConstantNode } from "../../Formula/type";
 import { prod, threshold } from "../../Formula/utils";
 import { assertUnreachable, cartesian } from "../../Util/Util";
 import { ArtifactsBySlot, MinMax, computeFullArtRange, computeNodeRange } from "../common";
-import { Linear } from "./BNBSplitWorker";
+import { Linear } from "./linearUB";
 
 /**
  * With xi being the variables and pi(x1, x2, ...) being polynomials on xi
