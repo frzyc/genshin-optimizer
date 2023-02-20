@@ -1,3 +1,15 @@
+// Matrix convention is row-major, indexed A_{ij} = A[i][j]
+type Pivot = { i: number, j: number }
+const zero = 1e-8  // Small number equivalent to 0 for numerical instability
+
+/** Checks that all constraints are satisfied (Ax <= b) */
+export function isFeasible(Ab: number[][], x: number[]): boolean {
+  const b = x.length
+  return Ab.every(row =>
+    x.reduce((tot, xi, i) => tot + xi * row[i], 0) <= row[b] + zero
+  )
+}
+
 /**
  * Solve a Linear Program defined by:
  *              min  c^T x
@@ -24,25 +36,27 @@ export function solveLP(c: number[], Ab: number[][]) {
   Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => tableau[i][j] = Aij))
   c.forEach((cj, j) => tableau[rows - 1][j] = cj)
 
-  const ijTrack: { i: number, j: number }[] = []
+  const pivotRecord: Pivot[] = []
 
   while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
-    const ij = findPiv2(tableau)
-    ijTrack.push(ij)
-    pivotInplace(tableau, ij)
+    const piv = findPiv2(tableau)
+    pivotRecord.push(piv)
+    pivotInplace(tableau, piv)
   }
 
   while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < 0)) {
-    const ij = findPiv1(tableau)
-    ijTrack.push(ij)
-    pivotInplace(tableau, ij)
+    const piv = findPiv1(tableau)
+    pivotRecord.push(piv)
+    pivotInplace(tableau, piv)
   }
 
-  return c.map((_, i) => backtrack(tableau, ijTrack, i))
+  const xOpt = c.map((_, i) => backtrack(tableau, pivotRecord, i))
+  if (!isFeasible(Ab, xOpt)) throw Error('COMPUTED SOLUTION IS NOT FEASIBLE')
+  return xOpt
 }
 
 /** Standard `pivot` operation on LPs */
-function pivotInplace(A: number[][], { i, j }: { i: number, j: number }) {
+function pivotInplace(A: number[][], { i, j }: Pivot) {
   const Aij = A[i][j]
   for (let h = 0; h < A.length; h++) {
     if (h === i) continue
@@ -69,7 +83,7 @@ function findPiv1(A: number[][]) {
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= 0) continue
     for (let i = 0; i < r - 1; i++) {
-      if (A[i][j] > 1e-5) {
+      if (A[i][j] > zero) {
         const cmp = A[i][c - 1] / A[i][j]
         if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }
@@ -88,7 +102,7 @@ function findPiv2(A: number[][]) {
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= 0) continue
     for (let j = 0; j < c - 1; j++) {
-      if (A[i][j] < -1e-5) {
+      if (A[i][j] < -zero) {
         const cmp = A[i][c - 1] / A[i][j]
         if (cmp < minloc.cmp) minloc = { i, j, cmp }
       }
@@ -100,10 +114,10 @@ function findPiv2(A: number[][]) {
   throw Error('NO PIVOTS (done)')
 }
 
-/** Backtracking algorithm to find optimal vector */
-function backtrack(tableau: number[][], ijTrack: { i: number, j: number }[], targ: number) {
+/** Backtracking algorithm to find solution vector */
+function backtrack(tableau: number[][], pivotRecord: Pivot[], targ: number) {
   let side = 1;  // 0 left, 1 right
-  ijTrack.forEach(({ i, j }) => {
+  pivotRecord.forEach(({ i, j }) => {
     if (side === 1 && j === targ) {
       targ = i
       side = 0

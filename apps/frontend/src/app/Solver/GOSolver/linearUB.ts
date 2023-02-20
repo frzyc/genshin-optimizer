@@ -3,7 +3,7 @@ import { cartesian } from "../../Util/Util";
 import { ArtifactsBySlot, MinMax, computeFullArtRange } from "../common";
 import { Linear } from "./BNBSplitWorker";
 import { polyUB } from "./polyUB";
-import { solveLP } from "./solveLP_simplex";
+import { solveLP } from "./solveLP";
 
 function weightedSum(...entries: readonly (readonly [number, Linear])[]): Linear {
   const result = { $c: 0 }
@@ -13,7 +13,7 @@ function weightedSum(...entries: readonly (readonly [number, Linear])[]): Linear
   return result
 }
 
-export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot) {
+export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
   const polys = polyUB(nodes, arts)
   const minMax = computeFullArtRange(arts)
 
@@ -40,7 +40,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot) {
  *    min_n <= xn <= max_n
  *
  * @param bounds List of min/max bounds for each xi
- * @returns A linear function L(x) = w•x + $c
+ * @returns A linear function L(x) = w . x + $c
  *            satisfying      L(x) - m(x) <= err
  */
 function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
@@ -54,17 +54,17 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
 
   // Setting up the linear program in terms of constraints.
   //   cartesian(bounds) loops 2^nVar times
-  const cons = cartesian(...bounds.map(({ min, max }) => [min, max])).flatMap((coords) => {
-    const prod = coords.reduce((prod, v) => prod * v, 1)
-    return [
-      [...coords.map(v => -v), 1, 0, -prod],
-      [...coords, -1, -1, prod],
-    ]
-  })
+  const cons = cartesian(...bounds.map(({ min, max }) => [min, max]))
+    .flatMap(coords => {
+      const prod = coords.reduce((prod, v) => prod * v, 1)
+      return [
+        [...coords.map(v => -v), 1, 0, -prod],
+        [...coords, -1, -1, prod],
+      ]
+    })
 
   const objective = [...bounds.map(_ => 0), 0, 1]
   try {
-    // TODO: verify solution
     const soln = solveLP(objective, cons)
     return {
       w: soln.slice(0, nVar).map((wi, i) => wi * scaleProd / boundScale[i]),
@@ -75,6 +75,7 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
   catch (e) {
     console.log('ERROR on bounds', bounds)
     console.log('Possibly numerical instability issue.')
+    console.log(e)
     throw e
   }
 }

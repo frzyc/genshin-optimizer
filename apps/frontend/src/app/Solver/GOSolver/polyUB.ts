@@ -6,6 +6,12 @@ import { assertUnreachable, cartesian } from "../../Util/Util";
 import { ArtifactsBySlot, MinMax, computeFullArtRange, computeNodeRange } from "../common";
 import { Linear } from "./BNBSplitWorker";
 
+/**
+ * With xi being the variables and pi(x1, x2, ...) being polynomials on xi
+ *    LinTerm  = $c + w1*x1 + w2*x2 + ...
+ *    PolyProd = $k * p1 * p2 * ...
+ *    PolySum  = $c + p1 + p2 + ...
+ */
 export type Polynomial = PolyProd | PolySum | LinTerm
 type LinTerm = { type: 'lin', lin: Linear }
 type PolyProd = { type: 'prod', terms: Polynomial[], $k: number }
@@ -51,14 +57,14 @@ function interpolate(x0: number, y0: number, x1: number, y1: number, poly: Polyn
   return slopePoint((y1 - y0) / (x1 - x0), x0, y0, poly)
 }
 
-export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot) {
+export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[] {
   const minMaxes = new Map<OptNode, MinMax>()
   forEachNodes(nodes, f => {
     const { operation } = f
     if (operation === "mul") minMaxes.set(f, { min: NaN, max: NaN })
     switch (operation) {
       case "mul": case "min": case "max": case "threshold": case "res": case "sum_frac":
-        f.operands.forEach(op => minMaxes.set(op, { min: NaN, max: NaN })); break
+        f.operands.forEach(op => minMaxes.set(op, { min: NaN, max: NaN }))
     }
   }, _ => _)
   const nodeRanges = computeNodeRange([...minMaxes.keys()], computeFullArtRange(arts))
