@@ -1,5 +1,5 @@
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { Box, Button, ButtonGroup, Popper, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, ButtonGroup, List, ListSubheader, Popper, useMediaQuery, useTheme } from '@mui/material';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { InputPremodKey } from '../Formula';
@@ -115,14 +115,12 @@ function StatFilterItem({ statKey, statKeyOptions = [], value = 0, delKey, setKe
       getOptionDisabled={getOptionDisabled}
       groupBy={(option) => inputPremodKeyToGroupMap[option.key]}
       renderGroup={(params) => (
-        <li key={params.key}>
-          <Box p={1}>
+        <List key={params.key} component={Box} sx={{ paddingTop: 0, marginTop: 0 }}>
+          <ListSubheader key={`${params.group}Header`} sx={{ top: "-1em" }}>
             <strong>{t(`statGroupKey.${params.group}`)}</strong>
-          </Box>
-          <Box>
-            {params.children}
-          </Box>
-        </li>
+          </ListSubheader>
+          {params.children}
+        </List>
       )}
       toImg={(sKey: InputPremodKey) => <StatIcon statKey={sKey} iconProps={{ color: KeyMap.getVariant(sKey) }} />}
       ListboxProps={{ style: { display: "grid", gridTemplateColumns: isOneCol ? "100%" : (isThreeCol ? "33% 33% 33%" : "50% 50%") } }}
