@@ -216,9 +216,9 @@ export default function TabTheorycraft() {
   const optimizeSubstats = useCallback((apply: boolean) => () => {
     if (!characterKey || !optimizationTarget) return
     if (!teamData) return
-    const workerData = teamData[characterKey]?.target.data[0]
+    let workerData = teamData[characterKey]?.target.data[0]
     if (!workerData) return
-    Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
+    workerData = { ...workerData, ...mergeData([workerData, dynamicData]) } // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     let unoptimizedNodes = [unoptimizedOptimizationTargetNode]
