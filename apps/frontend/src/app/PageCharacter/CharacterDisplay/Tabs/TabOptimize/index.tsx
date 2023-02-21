@@ -162,9 +162,9 @@ export default function TabBuild() {
 
     const teamData = getTeamData(database, characterKey, mainStatAssumptionLevel, [])
     if (!teamData) return
-    let workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
-    if (!workerData) return
-    workerData = { ...workerData, ...mergeData([workerData, dynamicData]) } // Mark art fields as dynamic
+    const maybeWorkerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
+    if (!maybeWorkerData) return
+    const workerData = mergeData([maybeWorkerData, dynamicData]) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
