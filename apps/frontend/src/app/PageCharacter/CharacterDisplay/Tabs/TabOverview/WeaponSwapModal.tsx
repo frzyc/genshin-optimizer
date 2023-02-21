@@ -1,4 +1,4 @@
-import { allRarities, Rarity, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allRarityKeys, RarityKey, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
 import { Add } from "@mui/icons-material"
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Button, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
@@ -21,7 +21,7 @@ import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../../../
 import { initialWeapon } from "../../../../Util/WeaponUtil"
 import CompareBuildButton from "./CompareBuildButton"
 
-const rarityHandler = handleMultiSelect([...allRarities])
+const rarityHandler = handleMultiSelect([...allRarityKeys])
 
 export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClose }: { onChangeId: (id: string) => void, weaponTypeKey: WeaponTypeKey, show: boolean, onClose: () => void }) {
   const { t } = useTranslation(["page_character", "page_weapon", "weaponNames_gen"])
@@ -41,7 +41,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(() => database.weapons.followAny(forceUpdate), [forceUpdate, database])
 
-  const [rarity, setRarity] = useState<Rarity[]>([5, 4, 3])
+  const [rarity, setRarity] = useState<RarityKey[]>([5, 4, 3])
   const [searchTerm, setSearchTerm] = useState("")
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
@@ -79,7 +79,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
         <Grid container spacing={1} >
           <Grid item>
             <SolidToggleButtonGroup sx={{ height: "100%" }} value={rarity} size="small">
-              {allRarities.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
+              {allRarityKeys.map(star => <ToggleButton key={star} value={star} onClick={() => setRarity(rarityHandler(rarity, star))}>
                 <Box display="flex"><strong>{star}</strong><StarRoundedIcon /></Box>
               </ToggleButton>)}
             </SolidToggleButtonGroup>

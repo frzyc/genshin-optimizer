@@ -1,4 +1,4 @@
-import { allElementsWithPhy, SlotKey } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Box, Typography } from '@mui/material';
 import Assets from '../../Assets/Assets';
@@ -9,7 +9,7 @@ import CardDark from '../Card/CardDark';
 import SqBadge from '../SqBadge';
 import ArtifactTooltip from './ArtifactTooltip';
 
-export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: SlotKey }) {
+export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { artifactObj: ICachedArtifact | undefined, slotKey: ArtifactSlotKey }) {
   // Blank artifact slot icon
   if (!art)
     return <CardDark sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
@@ -30,7 +30,7 @@ export default function ArtifactCardPico({ artifactObj: art, slotKey: key }: { a
 
   // Actual artifact icon + info
   const { mainStatKey, rarity, level } = art
-  const element = allElementsWithPhy.find(ele => art.mainStatKey.includes(ele))
+  const element = allElementWithPhyKeys.find(ele => art.mainStatKey.includes(ele))
   const color = element ?? "secondary"
 
   return <ArtifactTooltip art={art}><CardDark sx={{ display: "flex", flexDirection: "column", position: "relative" }}>

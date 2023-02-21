@@ -1,5 +1,5 @@
 import { KeyboardArrowDown } from "@mui/icons-material";
-import { Button, ButtonProps, Menu, Skeleton } from "@mui/material";
+import { Button, ButtonProps, ClickAwayListener, Grow, MenuList, Paper, Popper, Skeleton } from "@mui/material";
 import { Suspense, useCallback, useState } from "react";
 
 export type DropdownButtonProps = Omit<ButtonProps, "title"> & {
@@ -31,20 +31,45 @@ export default function DropdownButton({ title, children, id = "dropdownbtn", ..
     >
       {title}
     </Button>
-    <Menu
+    <Popper
       id="basic-menu"
       anchorEl={anchorEl}
       open={open}
-      onClose={handleClose}
-      MenuListProps={{
-        'aria-labelledby': id,
-      }}
+      placement="bottom-start"
+      transition
       onClick={handleClose}
+      sx={{ zIndex: 1500 }} // Appear above modals
     >
-      {/* set Skeleton to be really high so the taller dropdowns can still be placed properly... */}
-      <Suspense fallback={<Skeleton width="100%" height="1000" />}>
-        {children}
-      </Suspense>
-    </Menu>
+      {({ TransitionProps, placement }) => (
+        <Grow
+          {...TransitionProps}
+          style={{
+            transformOrigin:
+              placement === 'bottom-start' ? 'left top' : 'left bottom',
+          }}
+        >
+          {/* Replicating previous menu paper */}
+          <Paper sx={{
+            maxHeight: "50vh",
+            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12))",
+            boxShadow: "rgb(0 0 0 / 20%) 0px 5px 5px -3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px, rgb(0 0 0 / 12%) 0px 3px 14px 2px",
+            paddingTop: "1px",
+            paddingBottom: "1px",
+            overflow: "auto"
+          }}>
+            <ClickAwayListener onClickAway={handleClose}>
+              <div> {/* div needed for ClickAwayListener to function */}
+                {/* set Skeleton to be really high so the taller dropdowns can still be placed properly... */}
+                <Suspense fallback={<Skeleton width="100%" height="1000" />}>
+                  <MenuList aria-labelledby={id}>
+                    {children}
+                  </MenuList>
+                </Suspense>
+              </div>
+            </ClickAwayListener>
+          </Paper>
+        </Grow>
+      )}
+    </Popper>
   </Suspense>
 }

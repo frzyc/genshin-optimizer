@@ -1,4 +1,4 @@
-import { allSlotKeys, SlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { Settings, SwapHoriz } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
@@ -70,7 +70,7 @@ export default function EquipmentSection() {
         <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
           <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip extraButtons={<WeaponSwapButton weaponTypeKey={characterSheet.weaponTypeKey} />} />
         </Grid>
-        {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
+        {allArtifactSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} effFilter={deferredRvSet}
               extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
@@ -86,7 +86,7 @@ export default function EquipmentSection() {
     </Grid>
   </Box>
 }
-function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
+function ArtSwapCard({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
@@ -132,7 +132,7 @@ function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey
     <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: charKeyToLocCharKey(characterKey) })} show={show} onClose={onClose} />
   </>
 }
-function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
+function ArtifactSwapButton({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)

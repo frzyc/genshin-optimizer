@@ -1,4 +1,4 @@
-import { allRarities, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '@genshin-optimizer/consts';
+import { allRarityKeys, allArtifactSlotKeys, ArtifactSetKey, RarityKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import KeyMap, { cacheValueString } from '../../KeyMap';
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { ArtifactRarity, RollColorKey } from '../../Types/consts';
@@ -7,7 +7,17 @@ import ArtifactMainStatsData from './artifact_main_gen.json';
 import ArtifactSubstatsData from './artifact_sub_gen.json';
 import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
-const maxStar: Rarity = 5
+const maxStar: RarityKey = 5
+
+export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
+  const values = Object.keys(ArtifactSubstatLookupTable[rarity][key])
+  const low = parseFloat(values[0])
+  const high = parseFloat(values[values.length - 1])
+  return { low, high }
+}
+export function artifactSubRolls(rarity: ArtifactRarity, key: SubstatKey) {
+  return Object.keys(ArtifactSubstatLookupTable[rarity][key]).map(v => parseFloat(v))
+}
 
 export const maxArtifactLevel = {
   1: 4,
@@ -17,7 +27,7 @@ export const maxArtifactLevel = {
   5: 20
 } as const
 
-const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, numUpgrades: number }> = {
+const ArtifactSubstatRollData: StrictDict<RarityKey, { low: number, high: number, numUpgrades: number }> = {
   1: { low: 0, high: 0, numUpgrades: 1 },
   2: { low: 0, high: 1, numUpgrades: 2 },
   3: { low: 1, high: 2, numUpgrades: 3 },
@@ -46,25 +56,25 @@ export default class Artifact {
   constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
 
   //SLOT
-  static slotName = (slotKey: SlotKey): string =>
+  static slotName = (slotKey: ArtifactSlotKey): string =>
     ArtifactSlotsData[slotKey].name
-  static slotMainStats = (slotKey: SlotKey): readonly MainStatKey[] =>
+  static slotMainStats = (slotKey: ArtifactSlotKey): readonly MainStatKey[] =>
     ArtifactSlotsData[slotKey].stats
 
   static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]) =>
-    objectKeyMap(allSlotKeys, slotKey => databaseObj.filter(art => art.slotKey === slotKey))
+    objectKeyMap(allArtifactSlotKeys, slotKey => databaseObj.filter(art => art.slotKey === slotKey))
 
   //MAIN STATS
-  static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
+  static mainStatValues = (numStar: RarityKey, statKey: MainStatKey): readonly number[] => {
     if (statKey.endsWith('_')) // TODO: % CONVERSION
       return ArtifactMainStatsData[numStar][statKey].map(k => k * 100)
     return ArtifactMainStatsData[numStar][statKey]
   }
-  static mainStatValue = (key: MainStatKey, rarity: Rarity, level: number): number =>
+  static mainStatValue = (key: MainStatKey, rarity: RarityKey, level: number): number =>
     Artifact.mainStatValues(rarity, key)[level]
 
   //SUBSTATS
-  static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
+  static rollInfo = (rarity: RarityKey): { low: number, high: number, numUpgrades: number } =>
     ArtifactSubstatRollData[rarity]
 
   static substatValue = (substatKey: SubstatKey, rarity = maxStar, type: "max" | "min" | "mid" = "max"): number => {
@@ -75,16 +85,16 @@ export default class Artifact {
     return substatKey.endsWith("_") ? value * 100 : value
   }
 
-  static maxSubstatRollEfficiency = objectKeyMap(allRarities,
+  static maxSubstatRollEfficiency = objectKeyMap(allRarityKeys,
     rarity => 100 * Math.max(...allSubstatKeys.map(substat =>
       Artifact.substatValue(substat, rarity) /
       Artifact.substatValue(substat, maxStar))))
 
-  static totalPossibleRolls = (rarity: Rarity): number =>
+  static totalPossibleRolls = (rarity: RarityKey): number =>
     ArtifactSubstatRollData[rarity].high + ArtifactSubstatRollData[rarity].numUpgrades
-  static rollsRemaining = (level: number, rarity: Rarity) =>
+  static rollsRemaining = (level: number, rarity: RarityKey) =>
     Math.ceil((rarity * 4 - level) / 4)
-  static getSubstatRollData = (substatKey: SubstatKey, rarity: Rarity) => {
+  static getSubstatRollData = (substatKey: SubstatKey, rarity: RarityKey) => {
     if (substatKey.endsWith("_")) // TODO: % CONVERSION
       return ArtifactSubstatsData[rarity][substatKey].map(v => v * 100)
     return ArtifactSubstatsData[rarity][substatKey]
@@ -121,8 +131,8 @@ export default class Artifact {
   }
 
   //start with {slotKey:art} end with {setKey:[slotKey]}
-  static setToSlots = (artifacts: Dict<SlotKey, ICachedArtifact>): Dict<ArtifactSetKey, SlotKey[]> => {
-    const setToSlots: Dict<ArtifactSetKey, SlotKey[]> = {};
+  static setToSlots = (artifacts: Dict<ArtifactSlotKey, ICachedArtifact>): Dict<ArtifactSetKey, ArtifactSlotKey[]> => {
+    const setToSlots: Dict<ArtifactSetKey, ArtifactSlotKey[]> = {};
     Object.entries(artifacts).forEach(([key, art]) => {
       if (!art) return
       if (setToSlots[art.setKey]) setToSlots[art.setKey]!.push(key)

@@ -3,7 +3,7 @@ import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { getWeaponSheet } from "../../Data/Weapons";
 import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, locationCharacterKeys } from "../../Types/consts";
+import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "../../Types/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -48,7 +48,8 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (rawLevel > weaponMaxLevel[sheet.rarity]) return
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
-    if (location && !locationCharacterKeys.includes(location)) location = ""
+    if (location && !allLocationCharacterKeys.includes(location)) location = ""
+    if (location && (getCharSheet(this.database.chars.LocationToCharacterKey(location)).weaponTypeKey !== sheet.weaponType)) return
     lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }
@@ -59,7 +60,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (!newWeapon.location && oldWeapon?.location) return
 
     // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
-    const getWithInit = (lk): ICachedCharacter => {
+    const getWithInit = (lk: LocationCharacterKey): ICachedCharacter => {
       const cKey = this.database.chars.LocationToCharacterKey(lk)
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacter(cKey))
@@ -106,31 +107,42 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
     // Match weapons for counter, metadata, and locations.
     const weapons = good.weapons
-    if (Array.isArray(weapons) && weapons?.length) {
-      result.weapons.import = weapons.length
-      const idsToRemove = new Set(this.values.map(w => w.id))
-      const hasEquipment = weapons.some(w => w.location)
-      weapons.forEach(w => {
-        const weapon = this.validate(w)
-        if (!weapon) return result.weapons.invalid.push(w)
-        let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDup(weapon)
-        // Don't reuse dups/upgrades
-        duplicated = duplicated.filter(a => idsToRemove.has(a.id))
-        upgraded = upgraded.filter(a => idsToRemove.has(a.id))
 
-        if (duplicated[0] || upgraded[0]) {
-          const match = duplicated[0] || upgraded[0]
-          idsToRemove.delete(match.id)
-          if (duplicated[0]) result.weapons.unchanged.push(weapon)
-          else if (upgraded[0]) result.weapons.upgraded.push(weapon)
-          this.set(match.id, { ...weapon, location: hasEquipment ? weapon.location : match.location })
-        } else
-          this.new(weapon)
-      })
-      const idtoRemoveArr = Array.from(idsToRemove)
-      if (result.keepNotInImport || result.ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
-      else idtoRemoveArr.forEach(k => this.remove(k))
-    } else result.weapons.notInImport = this.values.length
+    if (!Array.isArray(weapons) || !weapons.length) {
+      result.weapons.notInImport = this.values.length
+      return
+    }
+
+    result.weapons.import = weapons.length
+    const idsToRemove = new Set(this.values.map(w => w.id))
+    const hasEquipment = weapons.some(w => w.location)
+    weapons.forEach(w => {
+      const weapon = this.validate(w)
+      if (!weapon) return result.weapons.invalid.push(w)
+
+      let importWeapon = weapon
+      let importKey: string | undefined = (w as ICachedWeapon).id
+
+      let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDup(weapon)
+      // Don't reuse dups/upgrades
+      duplicated = duplicated.filter(a => idsToRemove.has(a.id))
+      upgraded = upgraded.filter(a => idsToRemove.has(a.id))
+
+      if (duplicated[0] || upgraded[0]) {
+        // Favor upgrades with the same location, else use 1st dupe
+        const [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
+          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
+        idsToRemove.delete(match.id)
+        isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
+        importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
+        importKey = importKey ?? match.id
+      }
+      if (importKey) this.set(importKey, importWeapon)
+      else this.new(importWeapon)
+    })
+    const idtoRemoveArr = Array.from(idsToRemove)
+    if (result.keepNotInImport || result.ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
+    else idtoRemoveArr.forEach(k => this.remove(k))
   }
 
   findDup(weapon: IWeapon): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {
@@ -148,13 +160,13 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       level > candidate.level ||
       ascension > candidate.ascension ||
       refinement > candidate.refinement
-    )
+    ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     // Strictly duplicated weapons
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
       ascension === candidate.ascension &&
       refinement === candidate.refinement
-    )
+    ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     return { duplicated, upgraded }
   }
 }

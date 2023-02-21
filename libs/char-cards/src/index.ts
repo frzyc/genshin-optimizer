@@ -1,4 +1,4 @@
-import { CharacterKey, Gender } from "@genshin-optimizer/consts"
+import { CharacterKey, GenderKey } from "@genshin-optimizer/consts"
 import Albedo from "./Character_Albedo_Card.png"
 import Alhaitham from "./Character_Alhaitham_Card.jpg"
 import Aloy from "./Character_Aloy_Card.png"
@@ -131,7 +131,7 @@ const charCards = {
   Zhongli
 } as const
 
-export function charCard(charKey: CharacterKey, gender: Gender): string {
+export function charCard(charKey: CharacterKey, gender: GenderKey): string {
   switch (charKey) {
     case "TravelerAnemo":
     case "TravelerDendro":

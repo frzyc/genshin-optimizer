@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ElementKeyWithPhy } from "@genshin-optimizer/consts";
+import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
 import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material";
 import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from 'react';
@@ -29,7 +29,7 @@ export function EnemyExpandCard() {
   return <CardLight>
     <CardContent sx={{ display: "flex", gap: 1, alignItems: "center", flexWrap: "wrap" }}>
       <Chip size="small" color="success" label={<span>{eLvlNode.info.name} <strong>{eLvlNode.value}</strong></span>} />
-      {allElementsWithPhy.map(element => <Typography key={element} ><EnemyResText element={element} /></Typography>)}
+      {allElementWithPhyKeys.map(element => <Typography key={element} ><EnemyResText element={element} /></Typography>)}
       <Typography>DEF Red. {nodeVStr(eDefRed)}</Typography>
       <Typography>DEF Ignore {nodeVStr(eDefIgn)}</Typography>
       <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
@@ -54,7 +54,7 @@ export function EnemyExpandCard() {
   </CardLight>
 }
 
-export function EnemyResText({ element }: { element: ElementKeyWithPhy }) {
+export function EnemyResText({ element }: { element: ElementWithPhyKey }) {
   const { data } = useContext(DataContext)
   const node = data.get(input.enemy[`${element}_res_`])
   const immune = !isFinite(node.value)
@@ -89,7 +89,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
         onReset={() => characterDispatch({ type: "enemyOverride", statKey: "enemyLevel", value: undefined })}
       />
     </Grid>
-    {allElementsWithPhy.map(eleKey => {
+    {allElementWithPhyKeys.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
       const val = enemyOverride[statKey]
       const elementImmunity = val === Number.MAX_VALUE

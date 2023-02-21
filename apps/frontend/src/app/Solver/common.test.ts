@@ -1,6 +1,6 @@
-import { ArtSetExclusion } from "../../../../Database/DataManagers/BuildSettingData"
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "../../../../Types/consts"
-import { objectKeyMap } from "../../../../Util/Util"
+import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData"
+import { allSlotKeys, ArtifactSetKey, SlotKey } from "../Types/consts"
+import { objectKeyMap } from "../Util/Util"
 import { artSetPerm, exclusionToAllowed } from "./common"
 
 function* allCombinations(sets: StrictDict<SlotKey, ArtifactSetKey[]>): Iterable<StrictDict<SlotKey, ArtifactSetKey>> {

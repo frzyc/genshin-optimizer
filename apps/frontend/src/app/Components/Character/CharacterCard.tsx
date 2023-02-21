@@ -15,7 +15,7 @@ import useDBMeta from '../../ReactHooks/useDBMeta';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, CharacterKey, ElementKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
 import CardLight from '../Card/CardLight';
@@ -189,9 +189,9 @@ function HeaderContent() {
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
-  const autoBoost = data.get(input.bonus.auto).value
-  const skillBoost = data.get(input.bonus.skill).value
-  const burstBoost = data.get(input.bonus.burst).value
+  const autoBoost = data.get(input.total.autoBoost).value
+  const skillBoost = data.get(input.total.skillBoost).value
+  const burstBoost = data.get(input.total.burstBoost).value
 
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value
@@ -242,11 +242,11 @@ function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
-    [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
+    allArtifactSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
+    [data, database]) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
-    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
+    {artifacts.map(([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) =>
       <Grid item key={key} xs={1}>
         <ArtifactCardPico artifactObj={art} slotKey={key} />
       </Grid>

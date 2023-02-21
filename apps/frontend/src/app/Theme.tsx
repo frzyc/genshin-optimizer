@@ -195,6 +195,34 @@ declare module "@mui/material/InputBase" {
   }
 }
 
+declare module "@mui/material/SvgIcon" {
+  interface SvgIconPropsColorOverrides {
+    geo: true;
+    dendro: true;
+    pyro: true;
+    hydro: true;
+    cryo: true;
+    electro: true;
+    anemo: true;
+    physical: true;
+    vaporize: true;
+    melt: true;
+    spread: true;
+    aggravate: true;
+    overloaded: true;
+    superconduct: true;
+    electrocharged: true;
+    shattered: true;
+    swirl: true;
+    burning: true;
+    crystallize: true;
+    heal: true;
+    bloom: true;
+    burgeon: true;
+    hyperbloom: true;
+  }
+}
+
 const defaultTheme = createTheme({
   palette: {
     mode: `dark`,

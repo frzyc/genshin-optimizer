@@ -86,11 +86,9 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    burst: nodeC3,
-    skill: nodeC5,
-  },
   premod: {
+    burstBoost: nodeC3,
+    skillBoost: nodeC5,
     normal_dmg_: nodeC2NormalDmgInc,
     charged_dmg_: nodeC2ChargedDmgInc,
     incHeal_: nodeA1HealingBonus

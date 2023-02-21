@@ -89,7 +89,7 @@ export class ArtCharDatabase {
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
-    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charMeta] as const
+    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charTCs, this.charMeta] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayWeapon, this.displayArtifact, this.displayOptimize, this.displayCharacter, this.displayTool] as const
@@ -128,8 +128,14 @@ export class ArtCharDatabase {
   importGOOD(good: IGOOD & IGO, keepNotInImport: boolean, ignoreDups: boolean): ImportResult {
     good = migrateGOOD(good)
     const source = good.source ?? "Unknown"
+    // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
+    if (source !== "Genshin Optimizer") {
+      good.artifacts?.forEach(a => delete (a as unknown as { id?: string }).id)
+      good.weapons?.forEach(a => delete (a as unknown as { id?: string }).id)
+    }
     const result: ImportResult = newImportResult(source, keepNotInImport, ignoreDups);
 
+    // Follow updates from char/art/weapon to gather import results
     const unfollows = [
       this.chars.followAny((key, reason, value) => {
         const arr = result.characters[reason]
@@ -144,7 +150,7 @@ export class ArtCharDatabase {
     this.dataManagers.map(dm => dm.importGOOD(good, result));
     this.dataEntries.map(de => de.importGOOD(good, result))
 
-    unfollows.map(f => f())
+    unfollows.forEach(f => f())
 
     return result
   }
