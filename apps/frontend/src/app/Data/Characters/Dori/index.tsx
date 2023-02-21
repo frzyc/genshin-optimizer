@@ -141,9 +141,9 @@ const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, regionKey, data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC5,
-    burst: burstC3,
+  premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3,
   },
   infusion: {
     overridableSelf: c6AfterSkill_infusion // This might end up being non-overridable, though I doubt it

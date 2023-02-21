@@ -189,9 +189,9 @@ function HeaderContent() {
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
-  const autoBoost = data.get(input.bonus.auto).value
-  const skillBoost = data.get(input.bonus.skill).value
-  const burstBoost = data.get(input.bonus.burst).value
+  const autoBoost = data.get(input.total.autoBoost).value
+  const skillBoost = data.get(input.total.skillBoost).value
+  const burstBoost = data.get(input.total.burstBoost).value
 
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value

@@ -125,11 +125,9 @@ const c4BelowHP_def_ = greaterEq(input.constellation, 4,
   equal("c4BelowHP", condC4BelowHP, dm.constellation4.def_))
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     normal_dmg_,
     charged_dmg_,
     plunging_dmg_,

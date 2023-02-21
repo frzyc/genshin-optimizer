@@ -1,6 +1,6 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, lookup, min, naught, percent, prod, unequal } from '../../../Formula/utils'
+import { compareEq, constant, equal, equalStr, greaterEq, infoMut, lookup, min, naught, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
@@ -96,7 +96,7 @@ const a4_skill_dmg_ = greaterEq(input.asc, 4, min(
   prod(percent(dm.passive2.dmgInc), input.total.eleMas), // TODO: is this total or premod; test with nahida
   percent(dm.passive2.maxDmgInc)
 ))
-const a4_burst_dmg_ = {...a4_skill_dmg_}
+const a4_burst_dmg_ = { ...a4_skill_dmg_ }
 
 const [condWithMirrorsPath, condWithMirrors] = cond(key, "withMirrors")
 const withMirrorsInfusion = equalStr(condWithMirrors, "on", constant(elementKey))
@@ -121,11 +121,16 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(greaterEq(input.constellation, 4,
   )
 ), { ...KeyMap.info("eleMas"), isTeamBuff: true })
 const c4MirrorsConsumed_eleMas = unequal(input.activeCharKey, key, c4MirrorsConsumed_eleMasDisp)
-const c4MirrorsConsumed_dendro_dmg_ = greaterEq(input.constellation, 4,
-  lookup(
-    condMirrorsConsumed,
-    objectKeyMap(mirrorsConsumedArr, count => prod(3 - count, dm.constellation4.dendro_dmg_)),
-    naught
+const c4MirrorsGenerated_dendro_dmg_ = greaterEq(input.constellation, 4,
+  compareEq(input.constellation, 6,
+    prod(3, percent(dm.constellation4.dendro_dmg_)),
+    lookup(
+      condMirrorsConsumed,
+      objectKeyMap(mirrorsConsumedArr, count =>
+        prod(3 - count, percent(dm.constellation4.dendro_dmg_))
+      ),
+      naught
+    )
   )
 )
 
@@ -162,17 +167,15 @@ const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC3,
-    burst: burstC5,
-  },
   teamBuff: {
     premod: {
       eleMas: c4MirrorsConsumed_eleMas
     }
   },
   premod: {
-    dendro_dmg_: c4MirrorsConsumed_dendro_dmg_,
+    skillBoost: skillC3,
+    burstBoost: burstC5,
+    dendro_dmg_: c4MirrorsGenerated_dendro_dmg_,
     eleMas: c2DebateStacks_eleMas,
     critRate_: c6ExcessMirror_critRate_,
     critDMG_: c6ExcessMirror_critDMG_
@@ -202,7 +205,7 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.5`), multi: 2}),
+        node: infoMut(dmgFormulas.charged.dmg, { name: ct.chg(`auto.skillParams.5`), multi: 2 }),
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
@@ -284,7 +287,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: c4MirrorsConsumed_eleMasDisp
         }, {
-          node: c4MirrorsConsumed_dendro_dmg_
+          node: c4MirrorsGenerated_dendro_dmg_
         }, {
           text: stg("duration"),
           value: dm.constellation4.eleMasDuration,

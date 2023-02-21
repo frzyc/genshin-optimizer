@@ -122,14 +122,12 @@ const c6Electro_dmg_ = greaterEq(input.constellation, 6,
 )
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   infusion: {
     overridableSelf: afterRecastInfusion,
   },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     critRate_: afterBurstCritRate_,
     enerRech_: afterBurstEnerRech_,
     atk_: afterReactAtk_,

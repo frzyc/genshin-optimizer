@@ -15,6 +15,9 @@ export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
   const high = parseFloat(values[values.length - 1])
   return { low, high }
 }
+export function artifactSubRolls(rarity: ArtifactRarity, key: SubstatKey) {
+  return Object.keys(ArtifactSubstatLookupTable[rarity][key]).map(v => parseFloat(v))
+}
 
 export const maxArtifactLevel = {
   1: 4,

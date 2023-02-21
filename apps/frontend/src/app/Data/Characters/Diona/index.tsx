@@ -124,10 +124,9 @@ const nodeC6emDisp = greaterEq(input.constellation, 6, equal(condC6, "higher", d
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  }, premod: {
+  premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     skill_dmg_: nodeC2skillDmg_,
   }, teamBuff: {
     premod: {

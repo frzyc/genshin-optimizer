@@ -150,11 +150,9 @@ const dmgFormulas = {
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC3,
-    burst: burstC5,
-  },
   premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
     dendro_res_: adeptalLegacy_dendro_res_,
     moveSPD_: adeptalLegacy_moveSPD_
   },

@@ -1,8 +1,9 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, CharacterSheetKey, ElementKey } from '../../../Types/consts'
+import { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
@@ -77,9 +78,9 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   const skillC5 = greaterEq(input.constellation, 5, 3)
 
   const data = dataObjForCharacterSheet(charKey, elementKey, undefined, Traveler.data_gen, dmgFormulas, {
-    bonus: {
-      skill: skillC5,
-      burst: burstC3,
+    premod: {
+      skillBoost: skillC5,
+      burstBoost: burstC3,
     },
     teamBuff: {
       premod: {

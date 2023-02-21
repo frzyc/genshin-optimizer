@@ -32,6 +32,7 @@ const allNonModStats = [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
     `${x}_res_` as const]),
+  ...allTalents.map(x => `${x}Boost` as const),
   ...allMoves.flatMap(x => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
@@ -43,6 +44,7 @@ const allNonModStats = [
   "all_dmgInc" as const,
   ...allEleEnemyResKeys,
   "enemyDefRed_" as const,
+  "enemyDefIgn_" as const,
   ...allMisc,
   ...allBase,
 ] as const
@@ -100,7 +102,6 @@ const input = setReadNodeKeys(deepNodeClone({
   customBonus: withDefaultInfo({ prefix: "custom", pivot }, {
     ...allModStatNodes, ...allNonModStatNodes,
   }),
-  bonus: { ...talent },
   premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
   total: withDefaultInfo({ prefix: "total", pivot }, {
     ...talent, ...objectKeyValueMap(allTalents, talent => [`${talent}Index`, read()]),
@@ -144,16 +145,13 @@ const input = setReadNodeKeys(deepNodeClone({
   },
 }))
 
-const { base, bonus, customBonus, premod, total, art, hit, enemy } = input
+const { base, customBonus, premod, total, art, hit, enemy } = input
 
 // Adjust `info` for printing
 markAccu('add', {
-  bonus, customBonus, premod, art,
+  customBonus, premod, art,
   total: objectKeyMap(allModStats, stat => total[stat]),
 })
-bonus.auto.info = KeyMap.info("autoBoost")
-bonus.skill.info = KeyMap.info("skillBoost")
-bonus.burst.info = KeyMap.info("burstBoost")
 base.atk.info = { ...KeyMap.info("atk"), prefix: "base", pivot }
 delete total.critRate_.info!.pivot
 total.critRate_.info!.prefix = "uncapped"
@@ -169,7 +167,7 @@ const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
 const common: Data = {
   base: objectKeyMap(["atk", "def", "hp"], key => input.customBonus[`base_${key}`]),
   premod: {
-    ...objectKeyMap(allTalents, talent => bonus[talent]),
+    ...objectKeyMap(allTalents, talent => premod[`${talent}Boost`]),
     ...objectKeyMap(allNonModStats, key => {
       const operands: NumNode[] = []
 

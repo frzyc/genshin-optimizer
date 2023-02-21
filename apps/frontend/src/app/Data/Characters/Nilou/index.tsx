@@ -178,10 +178,6 @@ export const dmgFormulas = {
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC5,
-    burst: burstC3,
-  },
   teamBuff: {
     premod: {
       eleMas: a1AfterSkillAndHit_eleMas,
@@ -191,6 +187,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
     }
   },
   premod: {
+    skillBoost: skillC5,
+    burstBoost: burstC3,
     burst_dmg_: c4_burst_dmg_,
     critRate_: c6_critRate_,
     critDMG_: c6_critDMG_,

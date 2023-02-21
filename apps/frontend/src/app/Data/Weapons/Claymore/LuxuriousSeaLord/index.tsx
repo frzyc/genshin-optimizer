@@ -1,7 +1,7 @@
 import { WeaponKey } from '@genshin-optimizer/consts'
 import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import { constant, infoMut, prod, subscript } from '../../../../Formula/utils'
+import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
 import { IWeaponSheet } from '../../IWeaponSheet'
@@ -15,7 +15,7 @@ const data_gen = data_gen_json as WeaponData
 const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
 const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
 const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
-const dmg = customDmgNode(
+const dmg = equal(input.weapon.key, key, customDmgNode(
   prod(
     subscript(
       input.weapon.refineIndex, dmg_Src, { unit: "%" }),
@@ -23,7 +23,7 @@ const dmg = customDmgNode(
   ),
   "elemental",
   { hit: { ele: constant("physical") }}
-)
+))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

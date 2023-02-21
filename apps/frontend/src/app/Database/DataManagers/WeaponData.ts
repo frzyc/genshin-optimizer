@@ -131,7 +131,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       if (duplicated[0] || upgraded[0]) {
         // Favor upgrades with the same location, else use 1st dupe
         const [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
-          [upgraded[0], true] : ([duplicated[0], false] || [upgraded[0], true])
+          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
         idsToRemove.delete(match.id)
         isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
         importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }

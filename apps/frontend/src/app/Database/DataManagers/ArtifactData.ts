@@ -100,7 +100,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       if (duplicated[0] || upgraded[0]) {
         // Favor upgrades with the same location, else use 1st dupe
         const [match, isUpgrade] = (hasEquipment && art.location && upgraded[0]?.location === art.location) ?
-          [upgraded[0], true] : ([duplicated[0], false] || [upgraded[0], true])
+          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
         idsToRemove.delete(match.id)
         isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
         importArt = { ...art, location: hasEquipment ? art.location : match.location }
@@ -259,7 +259,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
   return { artifact: validated, errors }
 }
 
-export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
+export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArtifact | undefined {
   if (!obj || typeof obj !== "object") return
   const { setKey, rarity, slotKey } = obj as IArtifact
   let { level, mainStatKey, substats, location, exclude, lock, } = obj as IArtifact
@@ -276,7 +276,7 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return
 
-  substats = parseSubstats(substats, rarity)
+  substats = parseSubstats(substats, rarity, allowZeroSub)
   // substat cannot have same key as mainstat
   if (substats.find(sub => sub.key === mainStatKey)) return
   lock = !!lock
@@ -285,13 +285,13 @@ export function validateArtifact(obj: unknown = {}): IArtifact | undefined {
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
-  if (location && !allLocationCharacterKeys.includes(location)) location = ""
+  if (!location || !allLocationCharacterKeys.includes(location)) location = ""
   return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 function defSub(): ISubstat {
   return { key: "", value: 0 }
 }
-function parseSubstats(obj: unknown, rarity: ArtifactRarity): ISubstat[] {
+function parseSubstats(obj: unknown, rarity: ArtifactRarity, allowZeroSub = false): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => (defSub()))
   const substats = (obj as ISubstat[]).slice(0, 4).map(({ key = "", value = 0 }) => {
@@ -299,7 +299,7 @@ function parseSubstats(obj: unknown, rarity: ArtifactRarity): ISubstat[] {
     if (key) {
       value = key.endsWith("_") ? Math.round(value * 10) / 10 : Math.round(value)
       const { low, high } = artifactSubRange(rarity, key)
-      value = clamp(value, low, high)
+      value = clamp(value, allowZeroSub ? 0 : low, high)
     } else
       value = 0
     return { key, value }

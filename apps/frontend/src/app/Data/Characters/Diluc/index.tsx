@@ -131,11 +131,9 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     pyro_dmg_: nodeA4Bonus,
     atk_: nodeC2AtkBonus,
     atkSPD_: sum(nodeC6SpdBonus, nodeC2SpdBonus),
