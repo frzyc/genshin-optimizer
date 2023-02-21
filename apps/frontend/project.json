@@ -14,7 +14,6 @@
         "index": "apps/frontend/src/index.html",
         "baseHref": "/",
         "main": "apps/frontend/src/main.tsx",
-        "polyfills": "apps/frontend/src/polyfills.ts",
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "assets": [
           "apps/frontend/src/favicon.ico",
@@ -36,7 +35,8 @@
           }],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "isolatedConfig": true,
+        "webpackConfig": "apps/frontend/webpack.config.js"
       },
       "configurations": {
         "development": {
@@ -59,7 +59,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "baseHref": "/genshin-optimizer/"
+          "baseHref": "/genshin-optimizer-beta/"
         }
       },
       "dependsOn": ["^build", "^pipeline"]
@@ -83,7 +83,7 @@
       "dependsOn": ["^build", "^pipeline"]
     },
     "deploy":{
-      "command": "gh-pages -d dist/apps/frontend",
+      "command": "gh-pages -d dist/apps/frontend -r https://github.com/frzyc/genshin-optimizer-beta",
       "dependsOn": ["build"]
     },
     "lint": {
