@@ -155,8 +155,8 @@
   "enemyAffected": {
     "1or2": "Enemy is affected by {{one}} or {{two}}",
     "1": "Enemy is affected by {{one}}",
-    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
-    "frozenOrCryo": "Enemy is Frozen or affected by Cryo"
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or $t(coloredEle.pyro)",
+    "frozenOrCryo": "Enemy is Frozen or affected by $t(coloredEle.cryo)"
   },
   "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
   "coloredEle": {
