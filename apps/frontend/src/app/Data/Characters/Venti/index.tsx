@@ -1,17 +1,16 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
-import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 
@@ -270,7 +269,7 @@ const sheet: ICharacterSheet = {
       path: condBurstAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`), multi: dm.burst.absorbTicks }),
         }]
@@ -309,7 +308,7 @@ const sheet: ICharacterSheet = {
       teamBuff: true,
       canShow: equal(condC6, "takeDmg", unequal(input.activeCharKey, key, 1)),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`]
         }]

@@ -1,5 +1,5 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
-import ColorText from '../../../Components/ColoredText'
 import { input, target } from "../../../Formula/index"
 import { constant, equal, greaterEq, infoMut, percent, prod, sum, unequal } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
@@ -8,11 +8,10 @@ import { objectKeyMap } from '../../../Util/Util'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 const key: CharacterKey = "Sucrose"
@@ -195,7 +194,7 @@ const sheet: ICharacterSheet = {
         path: condAbsorptionPath,
         name: st("eleAbsor"),
         states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+          name: st(`coloredEle.${eleKey}`),
           fields: [{
             node: infoMut(dmgFormulas.burst[eleKey], { name: ct.chg(`burst.skillParams.1`) }),
           }]
@@ -207,7 +206,7 @@ const sheet: ICharacterSheet = {
         path: condAbsorptionPath,
         name: st("eleAbsor"),
         states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-          name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+          name: st(`coloredEle.${eleKey}`),
           fields: Object.values(c6Bonus).map(n => ({ node: n }))
         }]))
       }), ct.headerTem("constellation6", {

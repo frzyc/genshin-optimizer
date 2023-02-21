@@ -153,14 +153,19 @@
   "energy": "Energy",
   "triggerQuota": "Trigger Quota",
   "enemyAffected": {
-    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
-    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
-    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
-    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+    "1or2": "Enemy is affected by {{one}} or {{two}}",
+    "1": "Enemy is affected by {{one}}",
     "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
-    "electro": "Enemy is affected by Electro",
-    "cryo": "Enemy is affected by Cryo",
     "frozenOrCryo": "Enemy is Frozen or affected by Cryo"
   },
-  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle"
+  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
+  "coloredEle": {
+    "anemo": "<anemo>$t(sheet_gen:element.anemo)</anemo>",
+    "geo": "<geo>$t(sheet_gen:element.geo)</geo>",
+    "pyro": "<pyro>$t(sheet_gen:element.pyro)</pyro>",
+    "hydro": "<hydro>$t(sheet_gen:element.hydro)</hydro>",
+    "cryo": "<cryo>$t(sheet_gen:element.cryo)</cryo>",
+    "electro": "<electro>$t(sheet_gen:element.electro)</electro>",
+    "dendro": "<dendro>$t(sheet_gen:element.dendro)</dendro>"
+  }
 }

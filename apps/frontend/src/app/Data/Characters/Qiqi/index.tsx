@@ -197,7 +197,7 @@ const sheet: ICharacterSheet = {
     constellation2: ct.talentTem("constellation2", [ct.condTem("constellation2", {
       value: condC2,
       path: condC2Path,
-      name: st("enemyAffected.cryo"),
+      name: st("enemyAffected.1", { one: st("coloredEle.cryo") }),
       states: {
         on: {
           fields: [{
