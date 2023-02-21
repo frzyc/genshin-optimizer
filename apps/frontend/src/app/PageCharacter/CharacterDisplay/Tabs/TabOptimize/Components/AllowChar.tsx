@@ -59,7 +59,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} >
-          <Typography variant="h6" flexGrow={1}>{t`excludeChar.modal.title_sel`}</Typography>
+          <Typography variant="h6" flexGrow={1}>{t`excludeChar.modal.title`}</Typography>
           <CloseButton onClick={onClose} size="small" />
         </Box>
       </CardContent>

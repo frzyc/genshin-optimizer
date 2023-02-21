@@ -39,12 +39,11 @@
   "excludeChar": {
     "title": "Allow Equipped Artifacts",
     "modal": {
-      "title_sel": "Allow equipped artifacts",
+      "title": "Allow equipped artifacts",
       "allow_all": "Add all characters to the allow list",
       "disallow_All": "Remove all characters from the allow list"
     },
     "allowEquip": "Allow using artifacts from",
-    "excludeEquip": "Disallow using artifacts from",
     "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
     "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
   },

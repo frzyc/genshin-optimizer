@@ -140,7 +140,7 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
         {oldId && <Box display="flex" flexGrow={1} />}
         <Box minWidth={320} display="flex" flexDirection="column" gap={1} >
           <ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={newId} />} />
-          {newLoc && <ExcludeEquipButton locationKey={newLoc} />}
+          {(newLoc && newLoc !== charKeyToLocCharKey(characterKey)) && <ExcludeEquipButton locationKey={newLoc} />}
         </Box>
       </CardContent>
     </CardDark>
@@ -167,12 +167,12 @@ function ExcludeEquipButton({ locationKey }: { locationKey: LocationCharacterKey
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
-  const characterSheet =  getCharSheet(database.chars.LocationToCharacterKey(locationKey))
+  const characterSheet = getCharSheet(database.chars.LocationToCharacterKey(locationKey))
   const { buildSetting: { allowLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
   const excluded = !allowLocations.includes(locationKey)
   const toggle = useCallback(() => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, locationKey) }), [locationKey, allowLocations, buildSettingDispatch])
 
   return <Button onClick={toggle} color={excluded ? "error" : "success"} size="small" startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />} >
-    <span>{excluded ? t`excludeChar.excludeEquip` : t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong></span>
+    <span>{t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong></span>
   </Button>
 }
