@@ -1,4 +1,4 @@
-import { input, InputPremodKey } from "../Formula";
+import { InputPremodKey } from "../Formula";
 import { EleEnemyResKey } from "../KeyMap";
 import { MainStatKey, SubstatKey } from "./artifact";
 import { AdditiveReactionKey, AmpReactionKey, ArtifactRarity, ArtifactSetKey, Ascension, CharacterKey, HitModeKey, InfusionAuraElements, Refinement, SlotKey, SubstatType, WeaponKey } from "./consts";
@@ -33,7 +33,7 @@ export interface ICharacter {
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
   conditional: IConditionalValues
-  bonusStats: Partial<Record<keyof typeof input["customBonus"], number>>
+  bonusStats: Partial<Record<InputPremodKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: InfusionAuraElements | ""
   compareData: boolean
