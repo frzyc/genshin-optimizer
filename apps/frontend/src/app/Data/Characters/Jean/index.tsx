@@ -270,7 +270,7 @@ const sheet: ICharacterSheet = {
         value: condC2,
         path: condC2Path,
         teamBuff: true,
-        name: ct.ch("c2CondName"),
+        name: st("getElementalOrbParticle"),
         states: {
           on: {
             fields: [{

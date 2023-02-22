@@ -1,15 +1,14 @@
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cond, stg, trans } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "Instructor"
 const setHeader = setHeaderTemplate(key)
-const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "set4")
 
@@ -37,7 +36,7 @@ const sheet: IArtifactSheet = {
         teamBuff: true,
         value: condState,
         path: condStatePath,
-        name: trm("condName"),
+        name: st("afterReaction"),
         states: {
           on: {
             fields: [{
