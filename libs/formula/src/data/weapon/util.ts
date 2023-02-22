@@ -22,6 +22,7 @@ export function entriesForWeapon(gen: WeaponDataGen): RawTagMapEntries<AnyNode> 
   ]
 }
 
+// TODO: Probably refactor this to call a parent util function that is shared between weapon/arti/char util
 export function customHeal(name: string, wepKey: WeaponKey, base: NumNode): Data {
   usedNames.add(name)
 
