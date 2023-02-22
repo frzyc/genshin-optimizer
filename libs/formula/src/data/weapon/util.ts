@@ -1,6 +1,6 @@
 import { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import { AnyNode, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
-import { allCustoms, self, selfBuff, Stat } from '../util'
+import { AnyNode, NumNode, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
+import { allCustoms, convert, Data, self, selfBuff, selfTag, Stat, usedNames } from '../util'
 
 export type WeaponDataGen = {
   weaponKey: WeaponKey
@@ -19,5 +19,14 @@ export function entriesForWeapon(gen: WeaponDataGen): RawTagMapEntries<AnyNode> 
       selfBuff.base[key as Stat].add(subscript(ascension, values))),
     ...gen.refinementBonus.map(({ key, values }) =>
       selfBuff.premod[key as Stat].add(subscript(refinement, values))),
+  ]
+}
+
+export function customHeal(name: string, wepKey: WeaponKey, base: NumNode): Data {
+  usedNames.add(name)
+
+  const entry = convert(selfTag, { name, et: 'self', src: wepKey })
+  return [
+    entry.formula.base.add(base)
   ]
 }
