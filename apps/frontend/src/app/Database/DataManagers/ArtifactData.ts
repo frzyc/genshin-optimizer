@@ -1,13 +1,13 @@
-import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, artMaxLevel } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys, ArtifactSetKey, artMaxLevel, charKeyToLocCharKey } from "@genshin-optimizer/consts";
 import { getArtSheet } from "../../Data/Artifacts";
 import Artifact, { artifactSubRange } from "../../Data/Artifacts/Artifact";
 import KeyMap from "../../KeyMap";
 import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, ArtifactRarity, charKeyToLocCharKey, allLocationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities, ArtifactRarity } from "../../Types/consts";
+import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
-import { clamp } from "../../Util/Util"
 
 export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
   deletedArts = new Set<string>()
@@ -48,8 +48,8 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
     return newArt
   }
   deCache(artifact: ICachedArtifact): IArtifact {
-    const { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
-    return { setKey, rarity, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
+    const { setKey, rarity, level, slotKey, mainStatKey, substats, location, lock } = artifact
+    return { setKey, rarity, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, lock }
   }
 
   new(value: IArtifact): string {
@@ -169,14 +169,14 @@ function generateRandomArtID(keys: Set<string>, rejectedKeys: Set<string>): stri
 }
 
 export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: string[] } {
-  const { location, exclude, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
   const level = Math.round(Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4))
   const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
 
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0, accurateValue: substat.value }))
   // Carry over the probability, since its a cached value calculated outside of the artifact.
-  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal, probability: ((flex as any).probability) }
+  const validated: ICachedArtifact = { id, setKey, location, slotKey, lock, mainStatKey, rarity, level, substats, mainStatVal, probability: ((flex as any).probability) }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
@@ -262,7 +262,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
 export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArtifact | undefined {
   if (!obj || typeof obj !== "object") return
   const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, exclude, lock, } = obj as IArtifact
+  let { level, mainStatKey, substats, location, lock, } = obj as IArtifact
 
   if (!allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||
@@ -280,13 +280,12 @@ export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArti
   // substat cannot have same key as mainstat
   if (substats.find(sub => sub.key === mainStatKey)) return
   lock = !!lock
-  exclude = !!exclude
   const plausibleMainStats = Artifact.slotMainStats(slotKey)
   if (!plausibleMainStats.includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ""
-  return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
+  return { setKey, rarity, level, slotKey, mainStatKey, substats, location, lock }
 }
 function defSub(): ISubstat {
   return { key: "", value: 0 }

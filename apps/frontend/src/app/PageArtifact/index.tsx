@@ -152,7 +152,6 @@ export default function PageArtifact() {
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               editorProps={{}}
-              canExclude
               canEquip
             />
           </Grid>

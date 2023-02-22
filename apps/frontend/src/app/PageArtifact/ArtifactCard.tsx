@@ -41,13 +41,12 @@ type Data = {
   mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
   editorProps?: Partial<ArtifactEditorProps>,
-  canExclude?: boolean
   canEquip?: boolean,
   extraButtons?: JSX.Element
 }
 const allSubstatFilter = new Set(allSubstatKeys)
 
-export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canExclude = false, canEquip = false, extraButtons }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
@@ -75,7 +74,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
 
   if (!art) return null
 
-  const { id, lock, slotKey, setKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
+  const { id, lock, slotKey, setKey, rarity, level, mainStatKey, substats, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const mainStatUnit = KeyMap.unit(mainStatKey)
 
@@ -110,7 +109,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               {slotName && <Typography noWrap sx={{ textAlign: "center", backgroundColor: "rgba(100,100,100,0.35)", borderRadius: "1em", px: 1.5 }}><strong>{slotName}</strong></Typography>}
               {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip}
             </Box>
-            <Typography paddingBottom={1} color="text.secondary" variant="body2" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+            <Typography color="text.secondary" variant="body2" sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
               <SlotIcon iconProps={{ fontSize: "inherit" }} slotKey={slotKey} />
               {t(`slotName.${slotKey}`)}
             </Typography>
@@ -131,14 +130,14 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
               component="img"
               src={artifactAsset(setKey, slotKey)}
               width="auto"
-              height="100%"
-              sx={{ float: "right" }}
+              height="110%"
+              sx={{ float: "right", marginBottom: "-5%", marginTop: "-5%", marginRight: "-5%" }}
             />
           </Box>
         </Box>
-        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0, width: "100%" }}>
+        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: "0!important", width: "100%" }}>
           {substats.map((stat: ICachedSubstat) => !!stat.value && <SubstatDisplay key={stat.key} stat={stat} effFilter={effFilter} rarity={rarity} />)}
-          <Typography variant="caption" sx={{ display: "flex", gap: 1, my: 1 }}>
+          <Typography variant="caption" sx={{ display: "flex", gap: 1, alignItems: "center" }}>
             <ColorText color="secondary" sx={{ flexGrow: 1 }}>{t`artifact:editor.curSubEff`}</ColorText>
             <PercentBadge value={currentEfficiency} max={900} valid={artifactValid} />
             {currentEfficiency !== currentEfficiency_ && <span>/</span>}
@@ -161,29 +160,21 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             ? <LocationAutocomplete location={location} setLocation={setLocation} />
             : <LocationName location={location} />}
         </Box>
-        {editable && <ButtonGroup sx={{ height: "100%" }}>
-          {editorProps && <BootstrapTooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
-            <Button color="info" size="small" onClick={onShowEditor} sx={{ borderRadius: "4px 0px 0px 4px" }}>
+        <Box display="flex" gap={1} alignItems="stretch" height="100%" sx={{ "& .MuiButton-root": { minWidth: 0, height: "100%" } }}>
+          {editable && editorProps && <BootstrapTooltip title={<Typography>{t`artifact:edit`}</Typography>} placement="top" arrow>
+            <Button color="info" size="small" onClick={onShowEditor} >
               <EditIcon />
             </Button>
           </BootstrapTooltip>}
-          {canExclude && <BootstrapTooltip title={<Box>
-            <Typography>{t`artifact:excludeArtifactTip`}</Typography>
-            <Typography><ColorText color={exclude ? "error" : "success"}>{t(`artifact:${exclude ? "excluded" : "included"}`)}</ColorText></Typography>
-          </Box>} placement="top" arrow>
-            <Button onClick={() => database.arts.set(id, { exclude: !exclude })} color={exclude ? "error" : "success"} size="small" sx={{ borderRadius: "4px 0px 0px 4px" }}>
-              {exclude ? <BlockIcon /> : <ShowChartIcon />}
-            </Button>
-          </BootstrapTooltip>}
-          {!!onDelete && <BootstrapTooltip title={lock ? t("artifact:cantDeleteLock") : ""} placement="top">
+          {editable && !!onDelete && <BootstrapTooltip title={lock ? t("artifact:cantDeleteLock") : ""} placement="top">
             <span>
-              <Button color="error" size="small" sx={{ height: "100%", borderRadius: "0px 4px 4px 0px" }} onClick={() => onDelete(id)} disabled={lock}>
+              <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
                 <DeleteForeverIcon />
               </Button>
             </span>
           </BootstrapTooltip>}
           {extraButtons}
-        </ButtonGroup>}
+        </Box>
       </Box>
     </CardLight >
   </Suspense>

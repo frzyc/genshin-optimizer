@@ -1,7 +1,8 @@
 import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
-import { BusinessCenter, Lock, LockOpen, PersonSearch } from '@mui/icons-material';
-import BlockIcon from '@mui/icons-material/Block';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import LockIcon from '@mui/icons-material/Lock';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
 import { Suspense, useContext, useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -22,12 +23,10 @@ import LocationFilterMultiAutocomplete from "./LocationFilterMultiAutocomplete";
 import RVSlide from "./RVSlide";
 import SlotIcon from "./SlotIcon";
 
-const exclusionValues = ["excluded", "included"] as const
 const lockedValues = ["locked", "unlocked"] as const
 
 const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
 const slotHandler = handleMultiSelect([...allArtifactSlotKeys])
-const exclusionHandler = handleMultiSelect([...exclusionValues])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
 
@@ -43,14 +42,13 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
   const filteredIdMap = useMemo(() => objectKeyMap(filteredIds, _ => true), [filteredIds])
 
   const { artSetKeys = [], mainStatKeys = [], rarity = [], slotKeys = [], levelLow = 0, levelHigh = 20, substats = [],
-    locations, showEquipped, showInventory, exclusion = [...exclusionValues], locked = [...lockedValues], rvLow = 0, rvHigh = 900, lines = [] } = filterOption
+    locations, showEquipped, showInventory, locked = [...lockedValues], rvLow = 0, rvHigh = 900, lines = [] } = filterOption
 
   const { database } = useContext(DatabaseContext)
 
   const {
     rarityTotal,
     slotTotal,
-    excludedTotal,
     lockedTotal,
     linesTotal,
     equippedTotal,
@@ -62,7 +60,6 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     const catKeys = {
       rarityTotal: allArtifactRarityKeys,
       slotTotal: allArtifactSlotKeys,
-      excludedTotal: ["excluded", "included"],
       lockedTotal: ["locked", "unlocked"],
       linesTotal: [0, 1, 2, 3, 4],
       equippedTotal: ["equipped", "unequipped"],
@@ -74,13 +71,11 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
         const { rarity, slotKey, location, setKey, mainStatKey, substats } = art
-        const excluded = art.exclude ? "excluded": "included"
         const lock = art.lock ? "locked" : "unlocked"
         const lns = art.substats.filter(s => s.value).length
         const equipped = location ? "equipped" : "unequipped"
         ctMap.rarityTotal[rarity].total++
         ctMap.slotTotal[slotKey].total++
-        ctMap.excludedTotal[excluded].total++
         ctMap.lockedTotal[lock].total++
         ctMap.linesTotal[lns].total++
         ctMap.equippedTotal[equipped].total++
@@ -98,7 +93,6 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
         if (filteredIdMap[id]) {
           ctMap.rarityTotal[rarity].current++
           ctMap.slotTotal[slotKey].current++
-          ctMap.excludedTotal[excluded].current++
           ctMap.lockedTotal[lock].current++
           ctMap.linesTotal[lns].current++
           ctMap.equippedTotal[equipped].current++
@@ -123,18 +117,11 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
         {allArtifactSlotKeys.map(slotKey => <ToggleButton key={slotKey} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={slotKey} onClick={() => filterOptionDispatch({ slotKeys: slotHandler(slotKeys, slotKey) })}><SlotIcon slotKey={slotKey} /><Chip label={slotTotal[slotKey]} size="small" /></ToggleButton>)}
       </SolidToggleButtonGroup>
       {/* exclusion + locked */}
-      <Box display="flex" gap={1} flexWrap="wrap">
-        <SolidToggleButtonGroup fullWidth value={exclusion} size="small">
-          {exclusionValues.map((v, i) => <ToggleButton key={v} value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ exclusion: exclusionHandler(exclusion, v) })}>
-            {i ? <ShowChartIcon /> : <BlockIcon />}<Trans i18nKey={`exclusion.${v}`} t={t} /><Chip label={excludedTotal[i ? "included" : "excluded"]} size="small" />
-          </ToggleButton>)}
-        </SolidToggleButtonGroup>
-        <SolidToggleButtonGroup fullWidth value={locked} size="small">
-          {lockedValues.map((v, i) => <ToggleButton key={v} value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ locked: lockedHandler(locked, v) })}>
-            {i ? <LockOpen /> : <Lock />}<Trans i18nKey={`ui:${v}`} t={t} /><Chip label={lockedTotal[i ? "unlocked" : "locked"]} size="small" />
-          </ToggleButton>)}
-        </SolidToggleButtonGroup>
-      </Box>
+      <SolidToggleButtonGroup fullWidth value={locked} size="small">
+        {lockedValues.map((v, i) => <ToggleButton key={v} value={v} sx={{ display: "flex", gap: 1 }} onClick={() => filterOptionDispatch({ locked: lockedHandler(locked, v) })}>
+          {i ? <LockOpenIcon /> : <LockIcon />}<Trans i18nKey={`ui:${v}`} t={t} /><Chip label={lockedTotal[i ? "unlocked" : "locked"]} size="small" />
+        </ToggleButton>)}
+      </SolidToggleButtonGroup>
       {/* Lines */}
       <SolidToggleButtonGroup fullWidth value={lines} size="small">
         {[1, 2, 3, 4].map(line => <ToggleButton key={line} sx={{ display: "flex", gap: 1, flexWrap: "wrap" }} value={line} onClick={() => filterOptionDispatch({ lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4> })}>
@@ -142,8 +129,8 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
           <Chip label={linesTotal[line]} size="small" />
         </ToggleButton>)}
       </SolidToggleButtonGroup>
-      <Button startIcon={<PersonSearch />} color={showEquipped ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showEquipped: !showEquipped })}>{t`equippedArt`} <Chip sx={{ ml: 1 }} label={equippedTotal.equipped} size="small" /></Button>
-      <Button startIcon={<BusinessCenter />} color={showInventory ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showInventory: !showInventory })}>{t`artInInv`} <Chip sx={{ ml: 1 }} label={equippedTotal.unequipped} size="small" /></Button>
+      <Button startIcon={<PersonSearchIcon />} color={showEquipped ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showEquipped: !showEquipped })}>{t`equippedArt`} <Chip sx={{ ml: 1 }} label={equippedTotal.equipped} size="small" /></Button>
+      <Button startIcon={<BusinessCenterIcon />} color={showInventory ? "success" : "secondary"} onClick={() => filterOptionDispatch({ showInventory: !showInventory })}>{t`artInInv`} <Chip sx={{ ml: 1 }} label={equippedTotal.unequipped} size="small" /></Button>
       {/* Artiface level filter */}
       <ArtifactLevelSlider showLevelText levelLow={levelLow} levelHigh={levelHigh}
         setLow={levelLow => filterOptionDispatch({ levelLow })}
