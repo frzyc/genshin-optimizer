@@ -88,12 +88,20 @@ const atk = equal("on", condAfterlife, min(
 const infusion = equalStr("on", condAfterlife, elementKey)
 
 const [condA1Path, condA1] = cond(key, "FlutterBy")
-const critRateTeam_1 = equal("on", condA1, unequal(input.activeCharKey, input.charKey, percent(dm.passive1.critRateInc), KeyMap.info("critRate_")))
-const [condA2Path, condA2] = cond(key, "SanguineRouge")
-const pyro_dmg_ = equal("on", condA2, percent(dm.passive2.pyroDmgInc))
+const critRateTeam_1 = greaterEq(input.asc, 1,
+  equal("on", condA1,
+    unequal(input.activeCharKey, input.charKey, percent(dm.passive1.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true })
+  )
+)
+const [condA4Path, condA4] = cond(key, "SanguineRouge")
+const pyro_dmg_ = greaterEq(input.asc, 4, equal("on", condA4, percent(dm.passive2.pyroDmgInc)))
 
 const [condC4Path, condC4] = cond(key, "GardenOfEternalRest")
-const critRateTeam_2 = equal("on", condC4, unequal(input.activeCharKey, input.charKey, percent(dm.constellation4.critRateInc), KeyMap.info("critRate_")))
+const critRateTeam_2 = greaterEq(input.constellation, 4,
+  equal("on", condC4,
+    unequal(input.activeCharKey, input.charKey, percent(dm.constellation4.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true })
+  )
+)
 
 const [condC6Path, condC6] = cond(key, "ButterflysEmbrace")
 const critRate_ = equal("on", condC6, greaterEq(input.constellation, 6, percent(dm.constellation6.critRateInc)))
@@ -264,8 +272,8 @@ const sheet: ICharacterSheet = {
       }
     })]),
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
-      value: condA2,
-      path: condA2Path,
+      value: condA4,
+      path: condA4Path,
       name: st("lessEqPercentHP", { percent: dm.passive2.minHp * 100 }),
       states: {
         on: {

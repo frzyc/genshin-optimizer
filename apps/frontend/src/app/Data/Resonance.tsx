@@ -121,7 +121,7 @@ const shatteringIce: IResonance = {
     teamBuff: true,
     path: condSIPath,
     value: condSI,
-    name: trm("ShatteringIce.cond"),
+    name: st("enemyAffected.frozenOrCryo"),
     header: {
       title: tr("ShatteringIce.name"),
       icon: <CryoIcon />,

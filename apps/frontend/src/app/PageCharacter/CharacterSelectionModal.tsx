@@ -2,7 +2,7 @@ import { allCharacterKeys, allElementKeys, allWeaponTypeKeys, CharacterKey } fro
 import { characterAsset } from "@genshin-optimizer/g-assets";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
-import { ChangeEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
@@ -19,6 +19,7 @@ import { getCharSheet } from "../Data/Characters";
 import CharacterSheet from "../Data/Characters/CharacterSheet";
 import { ascensionMaxLevel } from "../Data/LevelData";
 import { DatabaseContext } from "../Database/Database";
+import useBoolState from "../ReactHooks/useBoolState";
 import useCharacter from "../ReactHooks/useCharacter";
 import useCharMeta from "../ReactHooks/useCharMeta";
 import useDBMeta from "../ReactHooks/useDBMeta";
@@ -128,9 +129,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
   const { favorite } = useCharMeta(characterKey)
   const { database } = useContext(DatabaseContext)
 
-  const [open, setOpen] = useState(false)
-  const handleClose = useCallback(() => setOpen(false), [])
-  const handleOpen = useCallback(() => setOpen(true), [])
+  const [open, onOpen, onClose] = useBoolState()
 
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
   return <CustomTooltip
@@ -139,8 +138,8 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
     arrow
     placement="bottom"
     open={open}
-    onClose={handleClose}
-    onOpen={handleOpen}
+    onClose={onClose}
+    onOpen={onOpen}
     title={
       <Box sx={{ width: 300 }}>
         <CharacterCard hideStats characterKey={characterKey} />
@@ -150,7 +149,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
     <Box>
       <CardLight sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <Box sx={{ position: "absolute", opacity: 0.7, zIndex: 2 }}>
-          <IconButton sx={{ p: 0.25 }} onClick={_ => { setOpen(false); database.charMeta.set(characterKey, { favorite: !favorite }) }}>
+          <IconButton sx={{ p: 0.25 }} onClick={_ => { onClose(); database.charMeta.set(characterKey, { favorite: !favorite }) }}>
             {favorite ? <Favorite /> : <FavoriteBorder />}
           </IconButton>
         </Box>

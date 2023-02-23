@@ -234,7 +234,7 @@ const sheet: ICharacterSheet = {
     }, ct.condTem("passive1", {
       value: condP1BarrierStacks,
       path: condP1BarrierStacksPath,
-      name: ct.ch("a1"),
+      name: ct.ch("refreshBarrier"),
       teamBuff: true,
       states: Object.fromEntries(range(1, dm.passive1.maxStacks).map(stacks => [
         stacks,
@@ -272,7 +272,7 @@ const sheet: ICharacterSheet = {
     }), ct.condTem("constellation6", {
       value: condC6AfterBarrier,
       path: condC6AfterBarrierPath,
-      name: ct.ch("c6"),
+      name: ct.ch("refreshBarrier"),
       teamBuff: true,
       states: {
         on: {

@@ -1,5 +1,5 @@
-import { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
-import { ArtifactRarity, LocationKey } from "./consts";
+import { ArtifactSetKey, ArtifactSlotKey, LocationCharacterKey } from "@genshin-optimizer/consts";
+import { ArtifactRarity } from "./consts";
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
@@ -7,12 +7,9 @@ export interface IArtifact {
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
-  location: LocationKey,
+  location: LocationCharacterKey | "",
   lock: boolean,
   substats: ISubstat[],
-
-  // GO-specific
-  exclude?: boolean,
 }
 export interface ICachedArtifact extends IArtifact {
   id: string,

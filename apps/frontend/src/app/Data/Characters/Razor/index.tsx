@@ -293,7 +293,7 @@ const sheet: ICharacterSheet = {
     constellation1: ct.talentTem("constellation1", [ct.condTem("constellation1", {
       value: condC1,
       path: condC1Path,
-      name: ct.ch("pickUpElementalOrbParticle"),
+      name: st("getElementalOrbParticle"),
       states: {
         "on": {
           fields: [{

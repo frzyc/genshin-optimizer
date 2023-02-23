@@ -232,7 +232,7 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA4,
       path: condA4Path,
-      name: ct.ch("a4CondName"),
+      name: st("hitOp.weakSpot"),
       states: {
         on: {
           fields: [{
