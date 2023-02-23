@@ -1,7 +1,6 @@
 {
-  "a1": "After Back Hit",
+  "a1": "After striking an opponent from behind",
   "a4": {
-    "name": "After using <strong>Rites of Termination</strong>",
-    "text": "Party CRIT Rate increase"
+    "name": "After using <strong>Rites of Termination</strong>"
   }
 }

@@ -39,8 +39,6 @@
   "button": {
     "unequipArtifacts": "ถอดอาร์ติแฟกต์",
     "deleteArtifacts": "ลบอาร์ติแฟกต์",
-    "excludeArtifacts": "ไม่รวมอาร์ติแฟกต์ชิ้นนี้",
-    "includeArtifacts": "รวมอาร์ติแฟกต์ชิ้นนี้",
     "lockArtifacts": "ล็อคอาร์ติแฟกต์",
     "unlockrtifacts": "ปลดล็อคอาร์ติแฟกต์"
   },
@@ -65,11 +63,6 @@
   "info": {
     "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
   },
-  "exclusion": {
-    "any": "Any",
-    "excluded": "ไม่รวมถึง",
-    "included": "รวมถึง"
-  },
   "sortMap": {
     "level": "Level",
     "efficiency": "Roll Value ปัจจุบัน",
@@ -78,6 +71,5 @@
   "efficiencyFilter": {
     "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
   },
-  "resetFilters": "รีเซ็๋ตตัวกรอง",
-  "excludeArtifactTip": "การละเว้นอาร์ติแฟกต์จะทำให้การจัด Build ไม่นำอาร์ติแฟกต์ชิ้นนี้ไปคำนวณ"
+  "resetFilters": "รีเซ็๋ตตัวกรอง"
 }

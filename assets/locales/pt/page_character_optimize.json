@@ -22,28 +22,6 @@
     "buildAlreadyInList": "A Build já está listada"
   },
   "levelFilter": "Filtro de Nível dos Artefatos",
-  "useExcluded": {
-    "title": "Usar Artefatos Bloqueados",
-    "usingNum_one": "Usando <1>{{count}}</1> artefato bloqueado",
-    "usingNum_other": "Usando <1>{{count}}</1> artefatos bloqueados"
-  },
-  "useEquipped": {
-    "title": "Usar Artefatos Equipados",
-    "modal": {
-      "title": "Prioridade do Personagem para Artefatos Equipados",
-      "desc1": "Ao gerar uma Build, o Otimizador apenas considerará os artefatos equipados por personagens com prioridade abaixo do personagem atual ou de fora da lista.",
-      "desc2": "Se o personagem atual não estiver na lista, o Otimizador apenas considerará os artefatos de personagens que também não estão na lista.",
-      "usingNum_one": "Usando artefatos de <1>{{count}}</1> personagem",
-      "usingNum_other": "Usando artefatos de <1>{{count}}</1> personagens",
-      "status": {
-        "use": "Usar os artefatos",
-        "dont": "Não usar os artefatos",
-        "curr": "Personagem Atual"
-      },
-      "add": "Adicionar Personagem à Lista",
-      "clearList": "Limpar Lista"
-    }
-  },
   "allowPartial": "Permitir Builds Parciais (<5 artefatos)",
   "constraintFilter": {
     "title": "Restrições de Build",

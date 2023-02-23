@@ -18,7 +18,8 @@
     "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 대상에게 명중",
     "crit": "치명타가 대상에게 명중",
     "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
-    "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중"
+    "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
+    "normalEle": "일반 공격으로 적에게 원소 피해를 가함"
   },
   "eleAbsor": "원소 전환",
   "absorDot": "원소 전환 도트 데미지",
@@ -142,5 +143,6 @@
     "normal": "일반 공격 피해량 계수",
     "charged": "강공격 피해량 계수",
     "skill": "스킬 피해량 계수"
-  }
+  },
+  "stamRestored": "스태미나 회복"
 }

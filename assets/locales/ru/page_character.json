@@ -7,9 +7,12 @@
     "optimize": "Оптимизировать",
     "theorycraft": "Теоретический урон"
   },
+  "formulas": "Формулы",
+  "calculations": "Расчеты",
   "selectCharacter": "Выберите персонажа",
   "removeCharacter": "Вы уверены что хотите удалить {{value}}?",
   "delete": "Удалить персонажа",
+  "teammates": "Команда",
   "showingNum_one": "Показано <1>{{count}}</1> из {{value}} персонажа",
   "showingNum_other": "Показано <1>{{count}}</1> из {{value}} персонажей",
   "hitmode": {
@@ -25,7 +28,18 @@
   },
   "characterName": "Имя Персонажа",
   "noReaction": "Без реакций",
+  "multiTarget": {
+    "addNewTarget": "Добавить одну ",
+    "addNewMTarget": "Доб. Новый Кастом Мультитаргет"
+  },
+  "addStats": {
+    "title": "Параметры Врага + Бонусы"
+  },
   "tabTheorycraft": {
+    "substatType": {
+      "min": "Исп. минимум сабстат роллы",
+      "max": "Исп. Максимум сабстат роллы"
+    },
     "maxTotalRolls": "\"Корректный\" билд может содержать максимум 45 Роллов.",
     "maxRolls": "Эта доп. хар-ка может содержать максимум 30 Роллов."
   },

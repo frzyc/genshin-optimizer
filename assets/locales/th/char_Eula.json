@@ -1,10 +1,6 @@
 {
   "skillC": {
-    "name": "Grimheart",
-    "consumed": "Grimheart Consumed",
-    "grimheart": {
-      "int": "เพิ่มความต้านทานต่อการหยุดชะงัก"
-    }
+    "name": "Grimheart"
   },
   "burstC": {
     "name": "Lightfall Sword",
@@ -18,7 +14,6 @@
   },
   "passive1": "Shattered Lightfall Sword DMG",
   "c4C": {
-    "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% ",
-    "desc": "Lightfall Sword สร้างความเสียหายเพิ่มขึ้น"
+    "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
   }
 }

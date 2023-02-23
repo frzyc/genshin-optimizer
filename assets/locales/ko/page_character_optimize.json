@@ -1,12 +1,12 @@
 {
   "mainStat": {
     "levelAssTooltip": {
-      "title": "레벨 가정",
+      "title": "주옵션 레벨 가정",
       "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
     },
     "assumptionLvl": {
-      "no": "레벨 변화 없음",
-      "lvl": "최소 {{lvl}} 레벨로"
+      "no": "주옵션 레벨 변화 없음",
+      "lvl": "주옵션을 최소 {{lvl}} 레벨로"
     }
   },
   "tcGraph": {
@@ -22,28 +22,6 @@
     "buildAlreadyInList": "이 빌드는 이미 리스트에 존재"
   },
   "levelFilter": "성유물 레벨 필터",
-  "useExcluded": {
-    "title": "제외된 성유물도 사용",
-    "usingNum_one": "<1>{{count}}</1>개의 제외된 성유물 사용",
-    "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용"
-  },
-  "useEquipped": {
-    "title": "착용중인 성유물 사용",
-    "modal": {
-      "title": "착용 성유물에 대한 캐릭터 우선순위",
-      "desc1": "조합을 만드는 동안, Optimizer는 현재 캐릭터보다 아래에 있거나 목록에 없는 캐릭터의 성유물만 사용합니다.",
-      "desc2": "현재 캐릭터가 목록에 없는 경우, 리스트에 없는 캐릭터의 성유물만 사용합니다.",
-      "usingNum_one": "<1>{{count}}</1> 캐릭터의 성유물 사용",
-      "usingNum_other": "목록에 없는 <1>{{count}}</1> 캐릭터의 성유물 사용",
-      "status": {
-        "use": "성유물 사용",
-        "dont": "성유물 사용 안함",
-        "curr": "현재 캐릭터"
-      },
-      "add": "캐릭터 추가",
-      "clearList": "목록 초기화"
-    }
-  },
   "allowPartial": "성유물 일부 착용 허용(5개 미만)",
   "constraintFilter": {
     "title": "제한 조건",

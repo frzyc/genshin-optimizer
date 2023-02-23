@@ -1,12 +1,4 @@
 {
-  "useExcluded": {
-    "title": "Benutze gesperrte Artefakte"
-  },
-  "useEquipped": {
-    "modal": {
-      "desc1": "Bei der Erstellung eines Builds berücksichtigt der Optimizer nur ausgerüstete Artefakte von Charakteren unterhalb des aktuellen Charakters oder solche, die nicht auf der Liste stehen."
-    }
-  },
   "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
   "constraintFilter": {
     "title": "Build-Beschränkungen",

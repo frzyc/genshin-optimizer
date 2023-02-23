@@ -1,10 +1,6 @@
 {
   "skillC": {
-    "name": "Cœur de glace",
-    "consumed": "Cœur de glace consommés",
-    "grimheart": {
-      "int": "Augmente la résistance à l'interruption"
-    }
+    "name": "Cœur de glace"
   },
   "burstC": {
     "name": "Lame de fond",

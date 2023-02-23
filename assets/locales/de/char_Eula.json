@@ -1,10 +1,6 @@
 {
   "skillC": {
-    "name": "Kaltes Herz",
-    "consumed": "Stapelungen verbraucht",
-    "grimheart": {
-      "int": "Erhöht Unterbrechungs-Wiederstand"
-    }
+    "name": "Kaltes Herz"
   },
   "burstC": {
     "name": "Schwert der Brandung",

@@ -5,6 +5,6 @@
     "maxStele": "Maximum number of Steles",
     "nearShield": "Enemy is near the <strong>Jade Shield</strong>"
   },
-  "p1cond": "The <strong>Jade Shield</strong> has taken DMG",
+  "p1cond": "After the <strong>Jade Shield</strong> has taken DMG",
   "c6heal": "Maximum Health Regen"
 }

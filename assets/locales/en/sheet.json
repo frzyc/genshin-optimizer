@@ -32,6 +32,7 @@
     "skill": "After hitting an opponent with an Elemental Skill",
     "burst": "After hitting an opponent with an Elemental Burst",
     "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
+    "ele": "After dealing Elemental DMG",
     "geo": "After dealing <geo>Geo DMG</geo>",
     "anemo": "After dealing <anemo>Anemo DMG</anemo>",
     "hydro": "After dealing <hydro>Hydro DMG</hydro>",
@@ -39,7 +40,8 @@
     "pyro": "After dealing <pyro>Pyro DMG</pyro>",
     "electro": "After dealing <electro>Electro DMG</electro>",
     "dendro": "After dealing <dendro>Dendro DMG</dendro>",
-    "crit": "After dealing CRIT DMG"
+    "crit": "After dealing CRIT DMG",
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",
@@ -66,7 +68,7 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
-  "activeCharField": "Active Character in field",
+  "activeCharField": "Character is inside the field",
   "opponentsField": "Opponents in field",
   "takeDmg": "After taking DMG",
   "infusion": {
@@ -149,5 +151,21 @@
     "skill": "Skill DMG Mult."
   },
   "energy": "Energy",
-  "triggerQuota": "Trigger Quota"
+  "triggerQuota": "Trigger Quota",
+  "enemyAffected": {
+    "1or2": "Enemy is affected by {{one}} or {{two}}",
+    "1": "Enemy is affected by {{one}}",
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or $t(coloredEle.pyro)",
+    "frozenOrCryo": "Enemy is Frozen or affected by $t(coloredEle.cryo)"
+  },
+  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
+  "coloredEle": {
+    "anemo": "<anemo>$t(sheet_gen:element.anemo)</anemo>",
+    "geo": "<geo>$t(sheet_gen:element.geo)</geo>",
+    "pyro": "<pyro>$t(sheet_gen:element.pyro)</pyro>",
+    "hydro": "<hydro>$t(sheet_gen:element.hydro)</hydro>",
+    "cryo": "<cryo>$t(sheet_gen:element.cryo)</cryo>",
+    "electro": "<electro>$t(sheet_gen:element.electro)</electro>",
+    "dendro": "<dendro>$t(sheet_gen:element.dendro)</dendro>"
+  }
 }

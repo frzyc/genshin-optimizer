@@ -6,13 +6,14 @@
   "burst": {
     "resolves": "Уровень решимости",
     "resolveInitial_": "<electro>Бонус увеличения урона Мусо но хитотати</electro",
-    "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>"
+    "resolveInfused_": "<electro>Бонус увеличения урона Мусо иссин</electro>",
+    "burstDmg": "Урон Мусо но Хитотачи"
   },
   "a4": {
     "enerRest": "Восстановление энергии от <strong>Мусо иссин</strong>",
     "eleDMG": "Бонус электро урона"
   },
   "c4": {
-    "expires": "Состояние <strong>Мусо Иссин</strong> наложенное <strong>Тайное искусство: Мусо синсэцу</strong> истекает"
+    "expires": "После окончания действия<strong>Мусо Иссин</strong> наложенное <strong>Тайное искусство: Мусо синсэцу</strong>"
   }
 }

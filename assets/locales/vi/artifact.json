@@ -40,8 +40,6 @@
   "button": {
     "unequipArtifacts": "Gỡ Thánh Di Vật",
     "deleteArtifacts": "Xóa Thánh Di Vật",
-    "excludeArtifacts": "Khóa Thánh Di Vật",
-    "includeArtifacts": "Mở khóa Thánh Di Vật",
     "lockArtifacts": "Khoá Thánh di vật",
     "unlockrtifacts": "Mở khoá Thánh di vật"
   },
@@ -69,11 +67,6 @@
     "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
     "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
   },
-  "exclusion": {
-    "any": "Bất kỳ",
-    "excluded": "Đã loại trừ",
-    "included": "Bao gồm"
-  },
   "sortMap": {
     "level": "Cấp",
     "efficiency": "Hiệu suất hiện tại.",
@@ -83,6 +76,5 @@
     "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
   },
   "resetFilters": "Cài lại bộ lọc",
-  "setEffectNum": "Bộ {{setNum}} món",
-  "excludeArtifactTip": "Loại trừ thánh di vật sẽ ngăn trình tạo builds chọn nó và builds."
+  "setEffectNum": "Bộ {{setNum}} món"
 }

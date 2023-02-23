@@ -4,7 +4,6 @@
   "upcurrentDuration": "Dauer der Luftströmung",
   "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
   "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
-  "c4": "Venti erhält Elementarkristalle oder Elementarteilchen",
   "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
   "c2": {
     "hit": "getroffene Gegner",

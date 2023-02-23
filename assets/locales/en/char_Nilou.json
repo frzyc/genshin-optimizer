@@ -10,13 +10,13 @@
   "passive1": {
     "underChaliceEffect": "Under Golden Chalice's Bounty",
     "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
-    "condName": "After being hit by a <dendro>Dendro attack</dendro> while under the effect of Golden Chalice's Bounty",
+    "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
     "bountifulCores": "Bloom reaction will create Bountiful Cores"
   },
   "c1": {
     "moon_dmg_": "Watery Moon DMG Bonus"
   },
   "c4": {
-    "condName": "After the third dance step of <strong>Dance of the Seven Realms'</strong> Pirouette hits opponents"
+    "condName": "After the third dance step of Pirouette hits opponents"
   }
 }

@@ -1,7 +1,6 @@
 {
   "electroSigil": "Electro Sigil",
   "electroSigilAbsorbed": "Energy Regenerated if Electro Sigils are Cleared",
-  "pickUpElementalOrbParticle": "After picking up an Elemental Orb or Particle",
-  "opHitWithClawAndThunder": "Opponent's been hit with <strong>Claw and Thunder</strong> (Press)",
+  "opHitWithClawAndThunder": "Opponent's been hit by <strong>Claw and Thunder</strong> (Press)",
   "electroSigilPerProc": "Electro Sigils per Proc"
 }

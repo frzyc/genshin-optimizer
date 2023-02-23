@@ -1,10 +1,6 @@
 {
   "skillC": {
-    "name": "Trái Tim Băng Giá",
-    "consumed": "Tiêu hao Trái Tim Băng Giá",
-    "grimheart": {
-      "int": "Tăng khả năng kháng gián đoạn"
-    }
+    "name": "Trái Tim Băng Giá"
   },
   "burstC": {
     "name": "Kiếm Ánh Sáng",

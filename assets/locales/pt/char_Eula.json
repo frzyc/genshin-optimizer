@@ -1,10 +1,6 @@
 {
   "skillC": {
-    "name": "Coração Impassível",
-    "consumed": "Após Coração Impassível ser consumido",
-    "grimheart": {
-      "int": "Aumenta a Resistência à Interrupção"
-    }
+    "name": "Coração Impassível"
   },
   "burstC": {
     "name": "Espada Luminosa",
@@ -18,7 +14,6 @@
   },
   "passive1": "Dano da Espada Luminosa Fragmentada",
   "c4C": {
-    "name": "Inimigos possuem menos de 50% de vida",
-    "desc": "A Espada Luminosa causa 25% mais Dano"
+    "name": "Inimigos possuem menos de 50% de vida"
   }
 }

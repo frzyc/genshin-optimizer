@@ -22,28 +22,6 @@
     "buildAlreadyInList": "配装已经在列表中"
   },
   "levelFilter": "圣遗物等级过滤器",
-  "useExcluded": {
-    "title": "使用被排除的圣遗物",
-    "usingNum_one": "使用<1>{{count}}</1>件已排除圣遗物",
-    "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物"
-  },
-  "useEquipped": {
-    "title": "使用已装备的圣遗物",
-    "modal": {
-      "title": "已装备圣遗物的角色的优先级顺序",
-      "desc1": "当生成配装时，优化器仅会使用列表中当前角色下方角色已装备的圣遗物，以及列表中未出现角色已装备的圣遗物。",
-      "desc2": "如果当前角色不在列表中，优化器仅会使用未在列表中的其他角色已装备的圣遗物。",
-      "usingNum_one": "使用<1>{{count}}</1>名角色的圣遗物",
-      "usingNum_other": "使用<1>{{count}}</1>名未在列表中的角色的圣遗物",
-      "status": {
-        "use": "使用圣遗物",
-        "dont": "不使用圣遗物",
-        "curr": "目前角色"
-      },
-      "add": "添加角色入列表",
-      "clearList": "清空列表"
-    }
-  },
   "allowPartial": "允许部分配装（少于5件圣遗物）",
   "constraintFilter": {
     "title": "配装限制条件",

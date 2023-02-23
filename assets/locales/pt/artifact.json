@@ -44,8 +44,6 @@
   "button": {
     "unequipArtifacts": "Desequipar Artefatos",
     "deleteArtifacts": "Excluir Artefatos",
-    "excludeArtifacts": "Bloquear Artefatos",
-    "includeArtifacts": "Desbloquear Artefatos",
     "lockArtifacts": "Trancar Artefatos",
     "unlockrtifacts": "Destrancar Artefatos"
   },
@@ -73,12 +71,6 @@
     "section2": "<0>Editor de Artefatos</0><1>Um editor de artefatos completo que aceita qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, é possível calcular os valores exatos dos Rolls  e a partir deles, sua eficiência. Ele também garante que você tenha inserido valores corretos no artefato de acordo com o nível e valida também outras informações.</1><2>Digitalize capturas de tela</2><3>Se você não quer realizar a inserção manual, é possível digitalizar artefatos a partir de capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO percebe se você insere um artefato <1>duplicado</1>, que já existe no seu inventário? Ele também pode detectar se o artefato sendo editado é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
     "section3": "<0>Inventário de Artefatos</0><1>Todos os artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais a visualização de seus artefatos. </1><2>Exemplo: Encontrando Artefatos para Descarte</2><3>Ao filtrar por Eficiência de Rolls, você pode encontrar rapidamente um item mal-otimizado para usar como experiência para outros artefatos.</3><4>Neste exemplo, os filtros estão definidos desta forma: </4><5><0><0>Nível de 0 a 8</0><1>Artefatos Desbloqueados no Inventário</1><2>Desconsiderando Vida, DEF e ATQ simples ao calcular a Eficiência</2><3>Ordenar de forma Crescente pela Eficiência Máxima de Rolls.</3></0></5><6>Isso filtrará o Inventário de artefatos, mostrando os artefatos com menor Eficiência e com os atributos escolhidos.</6>"
   },
-  "exclusion": {
-    "any": "Qualquer",
-    "excluded": "Bloqueados",
-    "included": "Desbloqueado",
-    "exclusion": "Omissão"
-  },
   "sortMap": {
     "level": "Nível",
     "efficiency": "Eficiência de Rolls Atual",
@@ -89,12 +81,9 @@
   },
   "resetFilters": "Limpar Filtros",
   "setEffectNum": "Conjunto de {{setNum}} Pç.",
-  "excludeArtifactTip": "Bloquear um artefato impedirá o Gerador de Builds de usá-lo numa Build.",
   "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
   "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
   "edit": "Editar Artefato",
-  "excluded": "Este artefato está bloqueado.",
-  "included": "Este artefato não está bloqueado.",
   "autocompleteLabels": {
     "sets": "Conjuntos de Artefatos",
     "mainStats": "Atributos Principais",
@@ -104,5 +93,9 @@
   "substat_one": "{{count}} atributo secundário",
   "substat_other": "{{count}} atributos secundários",
   "addNew": "Adicionar Artefato",
-  "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado"
+  "sub_one": "{{count}} Atributo",
+  "sub_other": "{{count}} Atributos",
+  "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
+  "equippedArt": "Artefatos Equipados",
+  "artInInv": "Artefatos no Inventário"
 }

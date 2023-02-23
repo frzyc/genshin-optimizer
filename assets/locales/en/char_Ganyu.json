@@ -4,7 +4,7 @@
     "critRateInc": "Frostflake CRIT Rate Increase"
   },
   "c1": {
-    "condName": "Opponent takes DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom"
+    "condName": "Opponent's taken DMG from a Frostflake Arrow or Frostflake Arrow Bloom"
   },
   "c4": {
     "lingerDuration": "Effect Linger Duration"

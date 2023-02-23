@@ -1,5 +1,6 @@
 {
-  "giftCondName": "Affected by <strong>The Wind's Secret Ways</strong>' Prayerful Wind's Benefit",
+  "giftCondName": "Affected by Prayerful Wind's Benefit",
+  "baleCondName": "Opponent is affected by Prayerful Wind's Bale",
   "a4CondName": "Under the Hurricane Guard effect",
   "c2DurationInc": "Dazzling Polyhedron duration increase",
   "c6Arrow": "Applies Pressurized Collapse upon dealing DMG"

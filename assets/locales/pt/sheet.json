@@ -18,7 +18,8 @@
     "skillOrBurst": "Após atingir o inimigo com a Habilidade Elemental ou o Supremo",
     "crit": "Após infligir Dano Crítico",
     "normalChargedOrPlunging": "Após um Ataque Normal, Carregado ou Imersivo atingir um inimigo",
-    "dendro": "Após infligir <dendro>Dano Dendro</dendro>"
+    "dendro": "Após infligir <dendro>Dano Dendro</dendro>",
+    "normalEle": "Após infligir Dano Elemental com um Ataque Normal"
   },
   "eleAbsor": "Absorção Elemental",
   "absorDot": "Dano Contínuo da Absorção Elemental",
@@ -146,5 +147,7 @@
     "normal": "Multipl. de Dano do Atq. Normal",
     "charged": "Multipl. de Dano do Atq. Carregado",
     "skill": "Multipl. de Dano da Habil. Elem."
-  }
+  },
+  "stamRestored": "Stamina Recuperada",
+  "triggerQuota": "Ativações"
 }

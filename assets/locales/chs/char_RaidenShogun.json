@@ -6,7 +6,8 @@
   "burst": {
     "resolves": "积攒愿力层数",
     "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",
-    "resolveInfused_": "<electro>梦想一心伤害加成</electro>"
+    "resolveInfused_": "<electro>梦想一心伤害加成</electro>",
+    "burstDmg": "梦想一刀伤害"
   },
   "a4": {
     "enerRest": "<strong>梦想一心</strong>恢复的元素能量",

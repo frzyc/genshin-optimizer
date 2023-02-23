@@ -44,8 +44,6 @@
   "button": {
     "unequipArtifacts": "Desequipar Artefactos",
     "deleteArtifacts": "Eliminar Artefactos",
-    "excludeArtifacts": "Excluir Artefactos",
-    "includeArtifacts": "Incluir Artefactos",
     "lockArtifacts": "Bloquear Artefactos",
     "unlockrtifacts": "Desbloquear Artefactos"
   },
@@ -73,11 +71,6 @@
     "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
     "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
   },
-  "exclusion": {
-    "any": "Cualquiera",
-    "excluded": "Excluído",
-    "included": "Incluído"
-  },
   "sortMap": {
     "level": "Nivel",
     "efficiency": "Valor de Tirada Actual",
@@ -88,12 +81,9 @@
   },
   "resetFilters": "Restablecer Filtros",
   "setEffectNum": "{{setNum}} Piezas",
-  "excludeArtifactTip": "Excluir un artefacto impedirá al generador de builds elegirlo para builds.",
   "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
   "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
   "edit": "Editar artefacto",
-  "excluded": "Este artefacto está excluido.",
-  "included": "Este artefacto no está excluido.",
   "autocompleteLabels": {
     "substats": "Sub-atributos",
     "set": "Set de artefacto"

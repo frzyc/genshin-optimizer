@@ -1,7 +1,6 @@
 {
   "electroSigil": "Эмблема Электро",
   "electroSigilAbsorbed": "Энергии восстановлено если Эмблема Электро потрачена",
-  "pickUpElementalOrbParticle": "Получает элементальную сферу/частицу",
   "opHitWithClawAndThunder": "Попадание быстрым нажатием <strong>Гром и Когти</strong>",
   "electroSigilPerProc": "Эмблема Электро за попадание"
 }

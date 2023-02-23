@@ -40,8 +40,6 @@
   "button": {
     "unequipArtifacts": "Lepaskan Artefak",
     "deleteArtifacts": "Hapus Artefak",
-    "excludeArtifacts": "Eksklusif Artefak",
-    "includeArtifacts": "Inklusif Artefak",
     "lockArtifacts": "Kunci Artefak",
     "unlockrtifacts": "Buka Kunci Artefak"
   },
@@ -69,11 +67,6 @@
     "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll dan efisiensi yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
     "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
   },
-  "exclusion": {
-    "any": "Semua",
-    "excluded": "Eksklusif",
-    "included": "Inklusif"
-  },
   "sortMap": {
     "level": "Level",
     "efficiency": "Eff. Substat Saat Ini",
@@ -83,6 +76,5 @@
     "title": "Substat yang dipakai dalam perhitungan efisiensi"
   },
   "resetFilters": "Reset Filter",
-  "setEffectNum": "{{setNum}}-Set",
-  "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
+  "setEffectNum": "{{setNum}}-Set"
 }

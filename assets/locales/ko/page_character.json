@@ -17,7 +17,7 @@
   "showingNum_other": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
   "hitmode": {
     "hit": "최소 피해(치명X)",
-    "avgHit": "평균 피해량",
+    "avgHit": "평균 피해",
     "critHit": "최대 피해(치명O)"
   },
   "tabEquip": {
