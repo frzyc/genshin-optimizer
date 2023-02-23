@@ -38,9 +38,7 @@
         },
         "button": {
             "unequipArtifacts": "Déséquiper les artéfacts",
-            "deleteArtifacts": "Supprimer les artéfacts",
-            "excludeArtifacts": "Verrouiller les artéfacts",
-            "includeArtifacts": "Déverrouiller les artéfacts"
+            "deleteArtifacts": "Supprimer les artéfacts"
         },
         "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
         "tipsOfTheDay": [
@@ -64,11 +62,6 @@
             "section1": "<0>Rolls des substats</0><1>Le <1>nombre de rolls</1> qu'une substat a est affiché à gauche de la substat. Au fur et à mesure que le nombre augmente, la substat est plus colorée :<3></3>.</1><2>Efficacité de la Substat</2><3>L'Efficacité d'une substat est un pourcentage de la valeur actuelle par rapport au potentiel maximum de la valeur 5<1></1>. D'après l'image, la valeur maximale d'un roll DGT CRIT est 7.8%. En efficacité : <3>5.4/7.8 = 69.2%.</3></3><4>Efficacité actuelle vs. Efficacité potentielle maximale</4><5>Quand un 5<1></1> a 9 (4+5) rolls au total, avec chacun des rolls ayant la valeur la plus élevée, c'est donc un artéfact efficace à 100%. Cependant, la plupart des artéfacts n'ont pas cette chance. L'<3>efficacité actuelle</3> d'un artéfact est son pourcentage par rapport à cet artéfact 100%. L'<5>efficacité maximale</5> est l'efficacité maximale possible qu'un artéfact peut atteindre, si les rolls d'artéfact restants ont les valeurs les plus élevées.</5><6>Verrouiller un artéfact</6><7>En verrouillant un artéfact <1></1>, cet artéfact ne sera pas récupéré par le générateur de build pour optimisation. Un artéfact équipé est verrouillé par défaut.</7>",
             "section2": "<0>Éditeur d'Artéfact</0><1>Un éditeur d'artéfact complet, qui accepte tout 3<1></1> to 5<3></3> Artéfact. Lorsqu'une substat est saisie, ça peut calculer la valeur exacte des rolls, et à partir de ça, son efficacité. Il s'assurera également que vous ayez le bon nombre de rolls dans l'artéfact en fonction du niveau, ainsi que d'autres métriques de validation.</1><2>Scan des captures d'écran</2><3>La saisie manuelle n'est pas votre tasse de thé ? Vous pouvez numériser vos artéfacts avec des captures d'écran ! Dans l'éditeur d'artéfact, cliquez sur le bouton <1>Montrez-moi Comment</1> pour en savoir plus.</3><4>Détecteur d'artéfacts en double / améliorés</4><5>Saviez-vous que Genshin Optimizer peut détecter si vous ajoutez un artéfact <1>dupliqué</1> qui existe dans le système ? Il peut également détecter si l'artéfact actuel dans l'éditeur est une <3>amélioration</3> d'un artéfact existant. Une fois qu'un doublon / un amélioré est détecté, un aperçu vous permettra de comparer les deux artéfacts en question (Voir Image).</5>",
             "section3": "<0>Inventaire d'Artéfacts</0><p>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </p><2>Exemple : Trouver des artéfacts à feed</2><p>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</p><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><p>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </p>"
-        },
-        "exclusion": {
-            "any": "N'importe quel",
-            "excluded": "Verrouillé",
-            "included": "Déverrouillé"
         },
         "sortMap": {
             "level": "Niveau",
@@ -125,11 +118,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Cœur de glace",
-            "consumed": "Cœur de glace consommés",
-            "grimheart": {
-                "int": "Augmente la résistance à l'interruption"
-            }
+            "name": "Cœur de glace"
         },
         "burstC": {
             "name": "Lame de fond",
@@ -152,7 +141,6 @@
         "upcurrentDuration": "Durée",
         "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
         "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
-        "c4": "Venti obtient une orbe ou une particule",
         "q": "Régénère 15 Énergies à chaque personnage <1>{{elementKey}}</1>.",
         "c2": {
             "hit": "Ennemi touché",
@@ -184,14 +172,11 @@
     "char_Rosaria": {
         "a1": "Après le coup dans le dos",
         "a4": {
-            "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>",
-            "text": "Tx CRIT de l'équipe augmente"
+            "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>"
         }
     },
     "char_KamisatoAyaka": {
-        "afterSkill": "Après l'utilisation de <strong>École Kamisato: Fleur de glace</strong>",
         "snowflakeDMG": "DGT Tourbillon givré",
-        "afterBurst": "Après avoir utilisé <strong>École Kamisato: Givre mortel</strong>",
         "c6Active": "Gracieuseté gelée active"
     },
     "char_KukiShinobu": {

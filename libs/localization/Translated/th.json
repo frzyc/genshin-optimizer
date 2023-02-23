@@ -40,8 +40,6 @@
         "button": {
             "unequipArtifacts": "ถอดอาร์ติแฟกต์",
             "deleteArtifacts": "ลบอาร์ติแฟกต์",
-            "excludeArtifacts": "ไม่รวมอาร์ติแฟกต์ชิ้นนี้",
-            "includeArtifacts": "รวมอาร์ติแฟกต์ชิ้นนี้",
             "lockArtifacts": "ล็อคอาร์ติแฟกต์",
             "unlockrtifacts": "ปลดล็อคอาร์ติแฟกต์"
         },
@@ -66,11 +64,6 @@
         "info": {
             "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
         },
-        "exclusion": {
-            "any": "Any",
-            "excluded": "ไม่รวมถึง",
-            "included": "รวมถึง"
-        },
         "sortMap": {
             "level": "Level",
             "efficiency": "Roll Value ปัจจุบัน",
@@ -79,8 +72,7 @@
         "efficiencyFilter": {
             "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
         },
-        "resetFilters": "รีเซ็๋ตตัวกรอง",
-        "excludeArtifactTip": "การละเว้นอาร์ติแฟกต์จะทำให้การจัด Build ไม่นำอาร์ติแฟกต์ชิ้นนี้ไปคำนวณ"
+        "resetFilters": "รีเซ็๋ตตัวกรอง"
     },
     "languages": {
         "chs": "ภาษาจีน (ตัวย่อ)",
@@ -161,11 +153,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Grimheart",
-            "consumed": "Grimheart Consumed",
-            "grimheart": {
-                "int": "เพิ่มความต้านทานต่อการหยุดชะงัก"
-            }
+            "name": "Grimheart"
         },
         "burstC": {
             "name": "Lightfall Sword",
@@ -179,8 +167,7 @@
         },
         "passive1": "Shattered Lightfall Sword DMG",
         "c4C": {
-            "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% ",
-            "desc": "Lightfall Sword สร้างความเสียหายเพิ่มขึ้น"
+            "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
         }
     },
     "char_Noelle": {
@@ -194,7 +181,6 @@
         "upcurrentDuration": "ระยะเวลากระแสลมพัดขึ้น",
         "regenEner": "ฟื้นฟูพลังงาน 15 หน่วยให้ Venti เมื่อสิ้นสุดระยะเวลา",
         "c6": "เป้าหมายที่ได้รับความเสียหายจาก <strong>Wind's Grand Ode</strong>",
-        "c4": "Venti รับลูกแก้วธาตุ หรืออณูธาตุ",
         "q": "ฟื้นฟูพลังงานธาตุ 15 หน่วย ให้แก่ตัวละครทั้งหมดในทีมที่มีธาตุตรงกับการ Absorb",
         "c2": {
             "hit": "ศัตรูโดน",
@@ -242,26 +228,21 @@
     "char_Rosaria": {
         "a1": "โจมตีศัตรูทางด้านหลัง",
         "a4": {
-            "name": "หลังจากใช้สกิล <strong>Rites of Termination</strong>",
-            "text": "อัตราคริของตัวละครทั้งหมดในทีมเพิ่มขึ้น"
+            "name": "หลังจากใช้สกิล <strong>Rites of Termination</strong>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "หลังจากการเคลื่อนที่แบบพิเศษ",
-        "afterSkill": "หลังจากใช้สกิล <strong>Kamisato Art: Hyouka</strong>",
         "afterSprintCryo": "แปะธาตุ <cryo> น้ำแข็ง </cryo> หลังการเคลื่อนที่แบบพิเศษ",
-        "staminaRestore": "ฟื้นฟูพลังกาย",
         "snowflakeDMG": "ความเสียหายการฟันขนาดเล็ก",
-        "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>",
-        "afterBurst": "หลังจากใช้ท่าไม้ตาย <strong>Kamisato Art: Soumetsu</strong>"
+        "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>"
     },
     "weapon_MistsplitterReforged": {
         "emblem": "Mistsplitter's Emblem"
     },
     "char_Yoimiya": {
         "c1": "กำจัดศัตรูที่มีผลของ <strong>Aurous Blaze</strong>",
-        "c2": "<pyro>ความเสียหายไฟ</pyro> ติดคริติคอล",
-        "p2p": "ใช้ <strong>Ryuukin Saxifrage</strong>"
+        "c2": "<pyro>ความเสียหายไฟ</pyro> ติดคริติคอล"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -306,18 +287,11 @@
     "artifact_ArchaicPetra": {
         "condName": "เก็บผลึก Crystallize"
     },
-    "artifact_Instructor": {
-        "condName": "ทำปฏิกิริยาธาตุ"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "สกิลธาตุโดนศัตรู"
     },
     "artifact_ViridescentVenerer": {
         "condName": "ธาตุที่ถูกกระจาย"
-    },
-    "char_Thoma": {
-        "a1": "ได้รับ/รีเฟรช <strong>Blazing Barrier</strong>",
-        "c6": "เมื่อได้รับหรือรีเฟรช <strong>Blazing Barrier</strong>"
     },
     "weapon_CinnabarSpindle": {
         "name": "ความเสียหายสกิลธาตุเพิ่มขึ้น"
@@ -342,17 +316,11 @@
     "artifact_HuskOfOpulentDreams": {
         "condName": "Curiosity"
     },
-    "artifact_Lavawalker": {
-        "condName": "ศัตรูที่ติดสถานะ <pyro>เผาไหม้</pyro> หรือติดธาตุ <pyro>ไฟ</pyro>"
-    },
     "artifact_OceanHuedClam": {
         "condName": "ความเสียหาย Sea-Dyed Foam สูงสุด"
     },
     "artifact_ShimenawasReminiscence": {
         "afterUseEnergy": "หลังจากดูดพลังงานธาตุ 15 หน่วย"
-    },
-    "artifact_Thundersoother": {
-        "condName": "ศัตรูที่ติดธาตุ <electro>ไฟฟ้า</electro>"
     },
     "artifact_TinyMiracle": {
         "condName": "ความเสียหายธาตุที่จะได้รับ"
@@ -369,7 +337,6 @@
         "critRateBonus": "โบนัสอัตราคริ <strong>Fiery Rain</strong>",
         "aoeRangeBonus": "ขยายพื้นที่ของ <strong>Fiery Rain</strong>",
         "manualDetonationDmg": "ความเสียหายจุดระเบิดด้วยการชาร์จโจมตี",
-        "a4CondName": "<strong>เล็งโจมตี</strong> โดนจุดอ่อน",
         "c6CondName": "หลังใช้งาน <strong>Fiery Rain</strong>"
     },
     "char_AratakiItto": {
@@ -474,8 +441,7 @@
     },
     "char_Jean": {
         "c1CondName": "กดค้างนานกว่า 1 วินาที",
-        "c1PullSpeed": "ความเร็วในการรวบเพิ่มขึ้น",
-        "c2CondName": "Jean ได้รับลูกแก้วธาตุ/อณูธาตุ"
+        "c1PullSpeed": "ความเร็วในการรวบเพิ่มขึ้น"
     },
     "char_Kaeya": {
         "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที"

@@ -41,8 +41,6 @@
         "button": {
             "unequipArtifacts": "Gỡ Thánh Di Vật",
             "deleteArtifacts": "Xóa Thánh Di Vật",
-            "excludeArtifacts": "Khóa Thánh Di Vật",
-            "includeArtifacts": "Mở khóa Thánh Di Vật",
             "lockArtifacts": "Khoá Thánh di vật",
             "unlockrtifacts": "Mở khoá Thánh di vật"
         },
@@ -70,11 +68,6 @@
             "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
             "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
         },
-        "exclusion": {
-            "any": "Bất kỳ",
-            "excluded": "Đã loại trừ",
-            "included": "Bao gồm"
-        },
         "sortMap": {
             "level": "Cấp",
             "efficiency": "Hiệu suất hiện tại.",
@@ -84,8 +77,7 @@
             "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
         },
         "resetFilters": "Cài lại bộ lọc",
-        "setEffectNum": "Bộ {{setNum}} món",
-        "excludeArtifactTip": "Loại trừ thánh di vật sẽ ngăn trình tạo builds chọn nó và builds."
+        "setEffectNum": "Bộ {{setNum}} món"
     },
     "languages": {
         "chs": "Tiếng Trung (giản thể)",
@@ -195,11 +187,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Trái Tim Băng Giá",
-            "consumed": "Tiêu hao Trái Tim Băng Giá",
-            "grimheart": {
-                "int": "Tăng khả năng kháng gián đoạn"
-            }
+            "name": "Trái Tim Băng Giá"
         },
         "burstC": {
             "name": "Kiếm Ánh Sáng",
@@ -223,7 +211,6 @@
         "upcurrentDuration": "Thời gian luồng gió duy trì",
         "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
         "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
-        "c4": "Venti nhận nguyên tố Tinh cầu hoặc nguyên tố Hạt nhân",
         "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
         "c2": {
             "hit": "Địch bị đánh trúng",
@@ -295,26 +282,21 @@
     "char_Rosaria": {
         "a1": "Sau khi tấn công từ phía sau",
         "a4": {
-            "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>",
-            "text": "Tăng tỉ lệ bạo kích của các nhân vật trong đội"
+            "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Sau khi lướt",
-        "afterSkill": "Sau khi thi truyển <strong>Trường phái Kamisato-Hyouka</strong>",
         "afterSprintCryo": "Nhận <cryo>Nguyên tố băng</cyro> sau khi lướt",
-        "staminaRestore": "Phục hồi 10 Thể lực",
         "snowflakeDMG": "Sát thương Cổng băng tuyết",
-        "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
-        "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>"
+        "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra"
     },
     "weapon_MistsplitterReforged": {
         "emblem": "Vết cắt sương mù"
     },
     "char_Yoimiya": {
         "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
-        "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>",
-        "p2p": "Sử dụng <strong>Cỏ Ryukin</strong>"
+        "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -393,18 +375,11 @@
     "artifact_ArchaicPetra": {
         "condName": "Nhận hạt kết tinh"
     },
-    "artifact_Instructor": {
-        "condName": "Kích hoạt phản ứng nguyên tố"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "Kỹ năng nguyên tố trúng kẻ địch"
     },
     "artifact_ViridescentVenerer": {
         "condName": "Khuếch tán nguyên tố"
-    },
-    "char_Thoma": {
-        "a1": "Nhận/Làm mới <strong>Khiên Lửa Hộ Mệnh</strong>",
-        "c6": "Khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>"
     },
     "weapon_CinnabarSpindle": {
         "name": "Tăng sát thương tấn công thường"
