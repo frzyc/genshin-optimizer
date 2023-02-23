@@ -102,10 +102,11 @@ export default function TabBuild() {
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const { filteredArts, numEquippedUsed } = useMemo(() => {
-    const { mainStatKeys, allowLocations: useEquipped, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
+    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
 
     let numEquippedUsed = 0
     const filteredArts = database.arts.values.filter(art => {
+      if (artExclusion.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -113,7 +114,7 @@ export default function TabBuild() {
 
       const locKey = charKeyToLocCharKey(characterKey)
       if (art.location && art.location !== locKey) {
-        if (!useEquipped.includes(art.location)) return false
+        if (!allowLocations.includes(art.location)) return false
         numEquippedUsed++
       }
 
