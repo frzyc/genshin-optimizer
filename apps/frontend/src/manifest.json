@@ -1,6 +1,7 @@
 {
   "short_name": "Genshin Optimizer",
   "name": "Artifact Optimizer for Genshin Impact",
+  "description": "The Ultimate Genshin Impact calculator, that allows you to min-max your characters according to how you play, using what you have.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/genshin-optimizer-beta/",
+  "scope": "/genshin-optimizer-beta/",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#1b263b"
