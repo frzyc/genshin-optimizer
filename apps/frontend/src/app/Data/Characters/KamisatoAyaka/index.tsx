@@ -1,14 +1,14 @@
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
-import { constant, equal, equalStr, greaterEq, infoMut, percent, prod, subscript, sum } from '../../../Formula/utils'
+import { equal, equalStr, greaterEq, infoMut, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
+import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { ICharacterSheet } from '../ICharacterSheet.d'
-import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -110,11 +110,12 @@ const dmgFormulas = {
     bloom: dmgNode("atk", dm.burst.bloomDmg, "burst"),
   },
   constellation2: {
-    dmg: greaterEq(input.constellation, 2, customDmgNode(prod(
-      subscript(input.total.burstIndex, dm.burst.cutDmg, { unit: "%" }),
-      percent(dm.constellation2.snowflake),
-      input.total.atk,
-    ), "burst", { hit: { ele: constant(elementKey) } })),
+    dmg: greaterEq(input.constellation, 2,
+      dmgNode("atk", dm.burst.cutDmg, "burst", undefined, percent(dm.constellation2.snowflake))
+    ),
+    bloom: greaterEq(input.constellation, 2,
+      dmgNode("atk", dm.burst.bloomDmg, "burst", undefined, percent(dm.constellation2.snowflake))
+    )
   }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -189,7 +190,7 @@ const sheet: ICharacterSheet = {
     }, ct.condTem("passive1", {
       value: condAfterSkillA1,
       path: condAfterSkillA1Path,
-      name: ct.ch("afterSkill"),
+      name: st("afterUse.skill"),
       states: {
         afterSkill: {
           fields: [{
@@ -222,7 +223,13 @@ const sheet: ICharacterSheet = {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
       }]
-    }, ct.condTem("constellation4", {
+    }, ct.headerTem("constellation2", {
+      fields: [{
+        node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.chg(`burst.skillParams.0`), multi: 38 }),
+      }, {
+        node: infoMut(dmgFormulas.constellation2.bloom, { name: ct.chg(`burst.skillParams.1`), multi: 2 }),
+      }]
+    }), ct.condTem("constellation4", {
       teamBuff: true,
       value: condAfterBurst,
       path: condAfterBurstPath,
@@ -251,7 +258,7 @@ const sheet: ICharacterSheet = {
     }, ct.condTem("sprint", {
       value: condAfterSprint,
       path: condAfterSprintPath,
-      name: ct.ch("afterSprint"),
+      name: st("afterSprint"),
       states: {
         afterSprint: {
           fields: [{
@@ -288,11 +295,7 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
-    constellation2: ct.talentTem("constellation2", [ct.fieldsTem("constellation2", {
-      fields: [{
-        node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.ch("snowflakeDMG"), multi: 19 }),
-      }]
-    })]),
+    constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),

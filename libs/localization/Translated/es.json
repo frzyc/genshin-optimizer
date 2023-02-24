@@ -45,8 +45,6 @@
         "button": {
             "unequipArtifacts": "Desequipar Artefactos",
             "deleteArtifacts": "Eliminar Artefactos",
-            "excludeArtifacts": "Excluir Artefactos",
-            "includeArtifacts": "Incluir Artefactos",
             "lockArtifacts": "Bloquear Artefactos",
             "unlockrtifacts": "Desbloquear Artefactos"
         },
@@ -74,11 +72,6 @@
             "section2": "<0>Editor de Artefactos</0><1>Un editor de artefactos completo, que puede aceptar cualquier artefacto de 3<1></1> a 5<3></3>. Cuando se introduce un substat, puede calcular los valores exactos de sus tiradas. También se asegurará de que tienes el número correcto de tiradas en el artefacto según su nivel, junto con otras métricas de validación.</1><2>Escanear capturas de pantalla</2><3>¿La introducción de datos manual no es lo tuyo? ¡Puedes escanear tus artefactos con capturas de pantalla! En el editor de artefactos, haga clic en el botón <1>?</1> para aprender cómo.</3><4>Escáner Automático de Artefactos</4><5>Si juegas Genshin en PC, puedes descargar una herramienta que escanee automáticamente todos tus artefactos, para después importar esos datos en <1></1> Base de datos. <3>Haz click aquí</3> para ver una lista de escáneres compatibles con GO.</5><6>Detección de artefactos duplicados/mejorados</6><7>¿Sabías que GO puede detectar si estás añadiendo un artefacto <1>duplicado</1> ya existente en el sistema? También puede detectar si el artefacto actualmente en el editor es una <3>mejora</3> de un artefacto ya existente. Una vez detectado un duplicado/mejora, la vista previa le permitirá comparar los dos artefactos en cuestión (Ver Imagen).</7>",
             "section3": "<0>Inventario de Artefactos</0><1>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí te permiten refinar aún más la vista de tus artefactos. </1><2>Ejemplo: Encontrar Artefactos de Relleno</2><3>Usando el filtro de artefactos y el VdT de los artefactos, puedes encontrar rápidamente artefactos para usar como experiencia.</3><4>En este ejemplo, los filtros se establecen así: </4><5><0><0>Nivel límite de 0-8.</0><1>Artefactos desbloqueados del Inventario.</1><2>Quitando la contribución de Vida plana, DEF plana y Recarga de Energía al cálculo de VdT.</2><3>Ordenado por Valor de Tirada Máximo Ascendente.</3></0></5><6>Así puedes filtar el inventario de artefactos para ver aquéllos artefactos con peor VdT, según substats.</6>"
         },
-        "exclusion": {
-            "any": "Cualquiera",
-            "excluded": "Excluído",
-            "included": "Incluído"
-        },
         "sortMap": {
             "level": "Nivel",
             "efficiency": "Valor de Tirada Actual",
@@ -89,12 +82,9 @@
         },
         "resetFilters": "Restablecer Filtros",
         "setEffectNum": "{{setNum}} Piezas",
-        "excludeArtifactTip": "Excluir un artefacto impedirá al generador de builds elegirlo para builds.",
         "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
         "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
         "edit": "Editar artefacto",
-        "excluded": "Este artefacto está excluido.",
-        "included": "Este artefacto no está excluido.",
         "autocompleteLabels": {
             "substats": "Sub-atributos",
             "set": "Set de artefacto"
@@ -207,11 +197,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Corazón impasible",
-            "consumed": "Corazón impasible consumido",
-            "grimheart": {
-                "int": "Aumenta la RES a interrupción"
-            }
+            "name": "Corazón impasible"
         },
         "burstC": {
             "name": "Espada luminosa",
@@ -225,8 +211,7 @@
         },
         "passive1": "Daño de fragmento de Espada luminosa",
         "c4C": {
-            "name": "Enemigos con menos de un 50% de Vida",
-            "desc": "Aumenta un 25% el Daño que infligen las Espadas luminosas"
+            "name": "Enemigos con menos de un 50% de Vida"
         }
     },
     "char_Noelle": {
@@ -242,7 +227,6 @@
         "upcurrentDuration": "Duración de corrientes de viento ascendentes",
         "regenEner": "Regenera 15 pts. de Energía a Venti cuando el efecto termina",
         "c6": "Objetivos que reciben daño por <strong>Gran Oda del Viento</strong>",
-        "c4": "Venti recoge un Orbe o Partícula Elemental",
         "q": "Restaura 15 pts. de Energía a todos los personajes con el elemento correspondiente en el equipo.",
         "c2": {
             "hit": "Enemigo golpeado",
@@ -375,18 +359,14 @@
     "char_Rosaria": {
         "a1": "Tras golpe por la espalda",
         "a4": {
-            "name": "Tras usar <strong>Extremaunción</strong>",
-            "text": "Aumento de Prob. CRIT del equipo"
+            "name": "Tras usar <strong>Extremaunción</strong>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Tras Esprintar",
-        "afterSkill": "Tras usar <strong>Estilo Kamisato: Flor del hielo</strong>",
         "afterSprintCryo": "Aplicando <cryo>Cryo</cryo> tras esprintar",
-        "staminaRestore": "Aguante Recuperado",
         "snowflakeDMG": "Daño de Ráfaga de ventisca",
         "dmgBySnowflake": "Enemigos reciben daño de Ráfaga de ventisca creada por <strong>Estilo Kamisato: Devastación Glacial</strong>",
-        "afterBurst": "Tras usar <strong>Estilo Kamisato: Devastación glacial</strong>",
         "c6Active": "Gracilidad del hielo activa"
     },
     "weapon_MistsplitterReforged": {
@@ -395,7 +375,6 @@
     "char_Yoimiya": {
         "c1": "Derrotar enemigo afectado por <strong>Ascua Dorada</strong>",
         "c2": "Golpe CRIT por <pyro>Daño Pyro</pyro>",
-        "p2p": "Usando <strong>Saxifraga de Oro</strong>",
         "normPyroInfus": "<pyro>Ata. Normal imbuído por Pyro</pyro>"
     },
     "char_RaidenShogun": {
@@ -490,22 +469,11 @@
     "artifact_ArchaicPetra": {
         "condName": "Obteniendo un Cristal de Cristalización"
     },
-    "artifact_Instructor": {
-        "condName": "Causando una Reacción Elemental"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "Habilidad Elemental golpea a un enemigo"
     },
     "artifact_ViridescentVenerer": {
         "condName": "Torbellino Elemental"
-    },
-    "char_Thoma": {
-        "a1": "Obtener/Reiniciar <strong>Escudo Llameante</strong>",
-        "c6": "Cuando un <strong>Escudo Llameante</strong> es obtenido o refrescado",
-        "a2": "Aumento de Daño de Estallido flamígero",
-        "c2": "Aumento de duración de <strong>Armadura calcinante</strong>",
-        "maxShield": "Absorción de Daño máximo",
-        "maxPyroShield": "Absorción de Daño Pyro máximo"
     },
     "weapon_CinnabarSpindle": {
         "name": "Aumento de Daño de Habilidad Elemental"
@@ -530,17 +498,11 @@
     "artifact_HuskOfOpulentDreams": {
         "condName": "Curiosidad"
     },
-    "artifact_Lavawalker": {
-        "condName": "Enemigos que se están <pyro>Quemando</pyro> o afectados por <pyro>Pyro</pyro>"
-    },
     "artifact_OceanHuedClam": {
         "condName": "Daño máximo de Burbuja Marina"
     },
     "artifact_ShimenawasReminiscence": {
         "afterUseEnergy": "Tras usar 15 pts. de energía"
-    },
-    "artifact_Thundersoother": {
-        "condName": "Enemigos que están afectados por <electro>Electro</electro>"
     },
     "artifact_TinyMiracle": {
         "condName": "Daño Elemental recibido"
@@ -557,7 +519,6 @@
         "critRateBonus": "Bono de Prob. CRIT de <strong>Lluvia ardiente</strong>",
         "aoeRangeBonus": "Bono de Rango AdE de <strong>Lluvia ardiente</strong>",
         "manualDetonationDmg": "Daño por Detonación manual",
-        "a4CondName": "<strong>Disparo Preciso</strong> golpea en puntos débiles",
         "c6CondName": "<strong>Lluvia ardiente</strong> usada"
     },
     "char_AratakiItto": {
@@ -662,8 +623,7 @@
     },
     "char_Jean": {
         "c1CondName": "Habilidad mantenida durante más de 1s",
-        "c1PullSpeed": "Aumento de velocidad de atracción",
-        "c2CondName": "Jean recoge un Orbe o Partícula Elemental"
+        "c1PullSpeed": "Aumento de velocidad de atracción"
     },
     "char_Kaeya": {
         "c2burstDuration": "Aumenta la duración en 2,5s por enemigo derrotado, hasta 15s",
@@ -705,26 +665,22 @@
         "c6bonus": "Jade estelar obtenido"
     },
     "char_Qiqi": {
-        "a1C": "Personaje bajo el efecto de <strong>Magia Adeptus: Heraldo de la escarcha</strong> causa una reacción elemental",
-        "c2C": "Enemigo afectado por Cryo"
+        "a1C": "Personaje bajo el efecto de <strong>Magia Adeptus: Heraldo de la escarcha</strong> causa una reacción elemental"
     },
     "char_Razor": {
         "electroSigil": "Insignia Electro",
         "electroSigilAbsorbed": "Energía regenerada si Insignia Electro es eliminada",
-        "pickUpElementalOrbParticle": "Se recoge un Orbe o Partícula Elemental",
         "opHitWithClawAndThunder": "Enemigos golpeados con <strong>Garra y trueno</strong> (Pulsar una vez)",
         "electroSigilPerProc": "Insignias Electro cada vez"
     },
     "char_Sayu": {
         "burstHits": "Número de activaciones de Tejón daruma",
-        "p1Swirl": "Sayu causa una reacción de Torbellino mientras está en combate",
         "p2Heal": "Curación de personaje cercano",
         "p2Aoe": "Aumenta el AdE del ataque",
         "c1Text": "Tejón daruma ignorará el límite de Vida y atacará a los enemigos cercanos y curará personajes",
         "c2KickPressDmg_": "Bono de Daño de Tornadopatada al pulsar una vez",
         "c2KickDmg_": "Bono de Daño de Tornadopatada",
         "c2Cond": "Tiempo usado en el estado <strong>Rueda de viento</strong>",
-        "c4Ener": "Energía recuperada al causar una reacción de Torbellino",
         "c6DarumaDmgInc": "Aum. de Daño de Tejón daruma",
         "c6DarumaHealInc": "Aum. de Curación de Tejón daruma"
     },
@@ -737,8 +693,11 @@
         "pressDuration": "Duración al pulsar una vez",
         "holdDuration": "Duración al mantener pulsado"
     },
-    "char_Sucrose": {
-        "asc4": "Cuando <strong>Creación del espíritu del viento: Experimento 6308 o Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong> golpea un enemigo"
+    "char_Thoma": {
+        "a2": "Aumento de Daño de Estallido flamígero",
+        "c2": "Aumento de duración de <strong>Armadura calcinante</strong>",
+        "maxShield": "Absorción de Daño máximo",
+        "maxPyroShield": "Absorción de Daño Pyro máximo"
     },
     "char_Xiangling": {
         "afterChili": "Tras recoger un chile",
@@ -847,11 +806,6 @@
         "p1cond": "Cuando el <strong>Escudo de jade</strong> recibe Daño",
         "c6heal": "Regeneración de Vida Máxima"
     },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": "Contra Enemigos que están Congelados o afectados por Cryo"
-        }
-    },
     "weapon_AlleyHunter": {
         "condName": "Duración mientras no esté en el Área"
     },
@@ -860,12 +814,6 @@
     },
     "weapon_BlackTassel": {
         "condName": "Contra Slimes"
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": "Contra Enemigos Afectados por <pyro>Pyro</pyro> / <electro>Electro</electro>"
-    },
-    "weapon_CoolSteel": {
-        "condName": "Contra Enemigos Afectados por <hydro>Hydro</hydro> / <cryo>Cryo</cryo>"
     },
     "weapon_CrescentPike": {
         "condName": "Tras recoger un Orbe o Partícula Elemental",
@@ -877,9 +825,6 @@
             "oneOrNone": "Menos de dos enemigos",
             "moreThanOne": "Al menos dos enemigos"
         }
-    },
-    "weapon_DragonsBane": {
-        "condName": "Contra Enemigos Afectados por Hydro / Pyro"
     },
     "weapon_DragonspineSpear": {
         "aoeDmg": "Daño de Carámbano",
@@ -899,36 +844,11 @@
     "weapon_Hamayumi": {
         "condName": "100% de Energía"
     },
-    "weapon_IronSting": {
-        "condName": "Al causar Daño Elemental"
-    },
-    "weapon_LionsRoar": {
-        "condName": "Contra Enemigos Afectados por <pyro>Pyro</pyro> / <electro>Electro</electro>"
-    },
-    "weapon_MagicGuide": {
-        "condName": "Contra Enemigos Afectados por <hydro>Hydro</hydro> / <electro>Electro</electro>"
-    },
-    "weapon_MappaMare": {
-        "condName": "Tras causar una Reacción Elemental"
-    },
     "weapon_MemoryOfDust": {
         "atkEffInc": "Efecto de aumento de ATQ"
     },
     "weapon_PolarStar": {
         "condName": "Estrella del Día Polar"
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": "Contra puntos débiles"
-    },
-    "weapon_Rainslasher": {
-        "condName": "Contra Enemigos Afectados por <hydro>Hydro</hydro> / <electro>Electro</electro>"
-    },
-    "weapon_RavenBow": {
-        "condName": "Contra Enemigos Afectados por Hydro / Pyro"
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "Aumento de Daño de ATQ Normal",
-        "nameCharged": "Aumento de Daño de ATQ Cargado"
     },
     "weapon_SerpentSpine": {
         "takeMoreDmg": "Recibe más Daño"
@@ -1015,25 +935,6 @@
     },
     "page_character_optimize": {
         "levelFilter": "Filtro de nivel de artefactos",
-        "useExcluded": {
-            "title": "Usar artefactos excluidos",
-            "usingNum_one": "Usando <1>{{count}}</1> artefacto excluido",
-            "usingNum_other": "Usando <1>{{count}}</1> artefactos excluidos"
-        },
-        "useEquipped": {
-            "title": "Usar artefactos equipados",
-            "modal": {
-                "usingNum_one": "Usando artefactos de <1>{{count}}</1> personaje",
-                "usingNum_other": "Usando artefactos de <1>{{count}}</1> personajes no listados",
-                "status": {
-                    "use": "Usar artefactos",
-                    "dont": "No usar artefactos",
-                    "curr": "Personaje actual"
-                },
-                "add": "Añadir personaje a la lista",
-                "clearList": "Limpiar lista"
-            }
-        },
         "artSetConfig": {
             "title": "Ajustes de sets de artefactos",
             "allowed": "Permitido(s)",

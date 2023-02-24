@@ -205,7 +205,7 @@ const sheet: ICharacterSheet = {
       teamBuff: true,
       path: condBurstHitPath,
       value: condBurstHit,
-      name: st("hitOp.burst"),
+      name: ct.ch("baleCondName"),
       states: {
         on: {
           fields: [{

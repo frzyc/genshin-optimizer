@@ -39,7 +39,5 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
       substat.value = parseFloat(artifactSubstatRollCorrection[rarity]?.[substat.key]?.[value] ?? value)
     }
 
-  return {
-    setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: base.location ?? "", lock: false, exclude: false,
-  }
+  return { setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: base.location ?? "", lock: false, }
 }

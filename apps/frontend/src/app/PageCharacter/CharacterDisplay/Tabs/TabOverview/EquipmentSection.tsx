@@ -48,7 +48,7 @@ export default function EquipmentSection() {
   const theme = useTheme();
   const breakpoint = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
+  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><Box p={1}><DocumentDisplay sections={weaponSheet.document} /></Box></CardLight>, [weaponSheet])
   const { rvFilter } = useCharMeta(characterKey)
   const deferredRvFilter = useDeferredValue(rvFilter)
   const deferredRvSet = useMemo(() => new Set(deferredRvFilter), [deferredRvFilter])
@@ -73,7 +73,7 @@ export default function EquipmentSection() {
         {allArtifactSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} effFilter={deferredRvSet}
-              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
+              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
@@ -192,7 +192,7 @@ function ArtifactSectionCard() {
 
   return <CardLight>
     {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>}
-    <CardContent >
+    <Box p={1} >
       <Stack spacing={1}>
         <CardDark >
           <Button fullWidth color="info" startIcon={<Settings />} sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} onClick={onShow}>RV Filter</Button>
@@ -215,6 +215,6 @@ function ArtifactSectionCard() {
           </CardDark>)
         )}
       </Stack>
-    </CardContent>
+    </Box>
   </CardLight>
 }

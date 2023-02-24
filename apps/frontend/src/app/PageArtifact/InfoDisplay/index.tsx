@@ -31,9 +31,6 @@ export default function ArtifactInfoDisplay() {
 
         <Typography variant="h5">Current Roll Value vs. Maximum Roll Value</Typography>
         <Typography gutterBottom>When a 5<StarRoundedIcon {...iconInlineProps} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 900% RV artifact. However, most of the artifacts are not this lucky. The <b>Current RV</b> of an artifact is a percentage over that 100% artifact. The <b>Maximum RV</b> is the maximum possible RV an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</Typography>
-
-        <Typography variant="h5">Excluding an artifact</Typography>
-        <Typography >By locking an artifact <BlockIcon {...iconInlineProps} />, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</Typography>
       </Trans>
     </Grid>
     <Grid item xs={12} lg={6} xl={7} >

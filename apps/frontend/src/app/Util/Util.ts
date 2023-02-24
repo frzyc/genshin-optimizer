@@ -153,6 +153,7 @@ export function toggleInArr<T>(arr: T[], value: T) {
   const ind = arr.indexOf(value)
   if (ind < 0) arr.push(value)
   else arr.splice(ind, 1)
+  return arr
 }
 
 export function toggleArr<T>(arr: T[], value: T) {

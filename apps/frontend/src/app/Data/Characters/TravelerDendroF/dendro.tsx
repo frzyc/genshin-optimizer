@@ -1,12 +1,11 @@
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { DisplaySub } from '../../../Formula/type'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { CharacterSheetKey } from '../../../Types/consts'
 import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { TalentSheet } from '../ICharacterSheet.d'
@@ -195,7 +194,7 @@ export default function dendro(key: CharacterSheetKey, charKey: CharacterKey, dm
       name: st("eleAbsor"),
       states: Object.fromEntries(Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
         ele, {
-          name: <ColorText color={ele}>{stg(`element.${ele}`)}</ColorText>,
+          name: st(`coloredEle.${ele}`),
           fields: [{ node: infoMut(node, { ...KeyMap.info(`${ele}_dmg_`), isTeamBuff: true }) }],
         }
       ]))

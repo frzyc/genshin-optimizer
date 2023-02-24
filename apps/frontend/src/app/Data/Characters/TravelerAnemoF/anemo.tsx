@@ -1,5 +1,4 @@
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { Data, DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
@@ -135,7 +134,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       path: condSkillAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: infoMut(dmgFormulas.skill.initial_ele_dmg, { name: ch("initialEleDmg") }),
         }, {
@@ -174,7 +173,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       path: condBurstAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`) }),
         }]
@@ -203,7 +202,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       teamBuff: true,
       canShow: equal(condC6, "on", unequal(input.activeCharKey, key, 1)),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: nodesC6[`${eleKey}_enemyRes_`]
         }]
