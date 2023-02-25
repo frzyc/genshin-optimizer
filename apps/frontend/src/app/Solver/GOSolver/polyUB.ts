@@ -22,7 +22,6 @@ type PolySum = { type: 'sum', terms: Polynomial[], $c: number }
 /** Convenience functions modify in-place if possible */
 function constP(n: number): LinTerm { return { type: 'lin', lin: { $c: n } } }
 function readP(k: string): LinTerm { return { type: 'lin', lin: { [k]: 1, $c: 0 } } }
-
 function sumP(...terms: (Polynomial | number)[]): PolySum {
   const c = (terms.filter(v => (typeof v) === 'number') as number[]).reduce((a, b) => a + b, 0)
   const poly = terms.filter(v => (typeof v) !== 'number') as Polynomial[]
@@ -33,33 +32,9 @@ function prodP(...terms: (Polynomial | number)[]): PolyProd {
   const poly = terms.filter(v => (typeof v) !== 'number') as Polynomial[]
   return { type: 'prod', terms: poly, $k: k }
 }
-function addP(n: number, poly: Polynomial): Polynomial {
-  switch (poly.type) {
-    case 'lin':
-      poly.lin.$c += n
-      return poly
-    case 'sum':
-      poly.$c += n
-      return poly
-    case 'prod':
-      return sumP(poly, n)
-  }
-}
-function mulP(n: number, poly: Polynomial): Polynomial {
-  switch (poly.type) {
-    case 'lin':
-      for (const [k, v] of Object.entries(poly.lin)) poly.lin[k] = n * v
-      return poly
-    case 'sum':
-      return { type: 'sum', $c: n * poly.$c, terms: poly.terms.map(p => mulP(n, p)) }
-    case 'prod':
-      poly.$k *= n
-      return poly
-  }
-}
 
 function slopePoint(slope: number, x0: number, y0: number, poly: Polynomial): Polynomial {
-  return addP(y0 - slope * x0, mulP(slope, poly))
+  return sumP(y0 - slope * x0, prodP(slope, poly))
 }
 function interpolate(x0: number, y0: number, x1: number, y1: number, poly: Polynomial, upper: boolean): Polynomial {
   if (Math.abs(x0 - x1) < 1e-10)
@@ -122,7 +97,7 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[
         const [xOp] = f.operands, { min, max } = minMaxes.get(xOp)!
         const x = map(xOp, oppositeContext)
         // Linear region 1 - base/2 or concave region with peak at base = 0
-        if (min < 0 && max < 1.75) return addP(1, mulP(-.5, x))
+        if (min < 0 && max < 1.75) return sumP(1, prodP(-.5, x))
         // Clamp `min` to guarantee upper bound
         else return interpolate(min, op([min]), max, op([max]), x, context === upper)
       }
