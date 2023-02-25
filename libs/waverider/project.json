@@ -46,10 +46,7 @@
       "options": {
         "jestConfig": "libs/waverider/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": [
-        "genfiles"
-      ]
+      }
     }
   },
   "tags": []

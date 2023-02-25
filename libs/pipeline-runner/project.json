@@ -19,8 +19,7 @@
       "options": {
         "buildTarget": "pipeline-runner:build",
         "watch": false
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
