@@ -23,7 +23,8 @@
       "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
-      "@genshin-optimizer/util": ["libs/util/src/index.ts"]
+      "@genshin-optimizer/util": ["libs/util/src/index.ts"],
+      "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
