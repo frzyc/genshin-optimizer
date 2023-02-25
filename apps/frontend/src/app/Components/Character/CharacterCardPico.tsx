@@ -52,6 +52,7 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
               maxWidth="100%"
               maxHeight="100%"
               sx={{ transform: "scale(1.4)", transformOrigin: "bottom" }}
+              draggable={false}
             />}
           </Box>
           <Typography sx={{ position: "absolute", fontSize: "0.75rem", lineHeight: 1, opacity: 0.85, pointerEvents: "none", top: 0, }}>

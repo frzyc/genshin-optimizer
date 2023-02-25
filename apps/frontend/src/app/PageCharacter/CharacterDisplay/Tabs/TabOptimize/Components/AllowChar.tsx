@@ -1,7 +1,7 @@
 import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
 import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility';
 import { Box, Button, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react";
+import { MouseEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import SlotIcon from "../../../../../Components/Artifact/SlotIcon";
 import CardDark from "../../../../../Components/Card/CardDark";
@@ -14,7 +14,6 @@ import { CharacterContext } from "../../../../../Context/CharacterContext";
 import { DatabaseContext } from "../../../../../Database/Database";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useForceUpdate from "../../../../../ReactHooks/useForceUpdate";
-import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
 export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
   const { t } = useTranslation("page_character_optimize")
@@ -27,6 +26,8 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
 
   useEffect(() => database.charMeta.followAny(s => forceUpdate()), [forceUpdate, database])
   useEffect(() => database.chars.followAny(s => forceUpdate()), [forceUpdate, database])
+
+  const [shouldClearList, setShouldClearList] = useState(false)
 
   const locList = useMemo(() => deferredDbDirty && Array.from(new Set(
     Object.entries(database.chars.data)
@@ -51,11 +52,18 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
   const allowAll = useCallback(() => buildSettingDispatch({ allowLocations: [...locList] }), [buildSettingDispatch, locList])
   const disallowAll = useCallback(() => buildSettingDispatch({ allowLocations: [] }), [buildSettingDispatch])
 
-  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, lk) }), [allowLocations, buildSettingDispatch])
+  const toggleList = useCallback((lkList: Set<LocationKey>) => {
+    const lkArray = [...lkList]
+    const newAllowLocations = lkArray
+      .filter(lk => !allowLocations.includes(lk))
+      .concat(allowLocations.filter(lk => !lkArray.includes(lk)))
+    buildSettingDispatch({ allowLocations: newAllowLocations })
+  }, [allowLocations, buildSettingDispatch])
 
   const total = locList.length
   const useTot = allowLocations.length
-  return <Box display="flex" gap={1}>
+
+  return <Box display="flex" gap={1} onMouseUp={() => setShouldClearList(true)} onTouchEnd={() => setShouldClearList(true)}>
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} >
@@ -75,13 +83,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
             <SqBadge sx={{ ml: 1 }}><strong>{`${total - useTot}/${total}`}</strong></SqBadge>
           </Button>
         </Box>
-        <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
-          {locList.map((lk, i) =>
-            <Grid item key={lk} xs={1}>
-              <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={allowLocations.includes(lk)} />
-            </Grid>
-          )}
-        </Grid>
+        <SelectItemGrid locList={locList} allowLocations={allowLocations} shouldClearList={shouldClearList} setShouldClearList={setShouldClearList} toggleList={toggleList} />
       </CardContent>
     </CardDark ></ModalWrapper>
     <Button sx={{ flexGrow: 1 }} color="info" onClick={onOpen} disabled={disabled} startIcon={<SettingsAccessibilityIcon />} >
@@ -93,19 +95,58 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
   </Box >
 }
 
-function SelectItem({ locKey, selected, onClick }: {
-  locKey: LocationCharacterKey,
-  onClick: () => void,
+function SelectItemGrid({ locList, allowLocations, shouldClearList, setShouldClearList, toggleList }: {
+  locList: LocationCharacterKey[]
+  allowLocations: LocationKey[]
+  shouldClearList: boolean
+  setShouldClearList: (v: boolean) => void
+  toggleList: (charList: Set<LocationCharacterKey>) => void
+}) {
+  const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
+  useEffect(() => {
+    if (shouldClearList) {
+      toggleList(charList)
+      setCharList(new Set<LocationCharacterKey>())
+      setShouldClearList(false)
+    }
+  }, [charList, setCharList, setShouldClearList, shouldClearList, toggleList])
+  return <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
+    {locList.map((lk) =>
+      <Grid item key={lk} xs={1}>
+        <SelectItem locKey={lk} charList={charList} setCharList={setCharList} selected={allowLocations.includes(lk)} />
+      </Grid>
+    )}
+  </Grid>
+}
+
+function SelectItem({ locKey, selected, charList, setCharList }: {
+  locKey: LocationCharacterKey
   selected: boolean
+  charList: Set<LocationCharacterKey>
+  setCharList: (list: Set<LocationCharacterKey>) => void
 }) {
   const { database } = useContext(DatabaseContext)
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
-  return <CardActionArea onClick={onClick} sx={{}}>
-    <CardLight sx={{ opacity: selected ? undefined : 0.6, borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)", borderWidth: "3px", borderStyle: "solid", borderRadius: "8px" }}  >
-      <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} />
-      <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
-        {allArtifactSlotKeys.map(s => <SlotIcon key={s} slotKey={s} iconProps={{ fontSize: "inherit", sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 } }} />)}
-      </Box>
+  const onMouseEnter = useCallback((e: MouseEvent) => e.buttons === 1 && setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const onMouseDown = useCallback(() => setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const sx = {
+    opacity: charList.has(locKey) ? 0.3 : (selected ? undefined : 0.6),
+    borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)",
+    borderWidth: "3px",
+    borderStyle: "solid",
+    borderRadius: "8px",
+  }
+  const content = useMemo(() => <>
+    <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} />
+    <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
+      {allArtifactSlotKeys.map(s => <SlotIcon key={s} slotKey={s} iconProps={{ fontSize: "inherit", sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 } }} />)}
+    </Box>
+  </>,
+    [char?.equippedArtifacts, database.chars, locKey]
+  )
+  return <CardActionArea onMouseEnter={onMouseEnter} onMouseDown={onMouseDown} >
+    <CardLight sx={sx}>
+      {content}
     </CardLight>
   </CardActionArea>
 }
