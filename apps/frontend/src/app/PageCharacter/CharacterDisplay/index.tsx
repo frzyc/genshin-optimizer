@@ -1,3 +1,4 @@
+import { CharacterKey } from '@genshin-optimizer/consts';
 import { BarChart, Calculate, FactCheck, Groups, Person, Science, TrendingUp } from '@mui/icons-material';
 import { Box, Button, CardContent, Skeleton, Tab, Tabs } from '@mui/material';
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
@@ -21,7 +22,7 @@ import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import useDBMeta from '../../ReactHooks/useDBMeta';
 import useTeamData from '../../ReactHooks/useTeamData';
 import useTitle from '../../ReactHooks/useTitle';
-import { CharacterKey, charKeyToCharName } from '../../Types/consts';
+import { charKeyToCharName } from '../../Types/consts';
 import { CustomMultiTargetButton } from '../CustomMultiTarget';
 import CharSelectButton from './CharSelectButton';
 import FormulaModal from './FormulaModal';

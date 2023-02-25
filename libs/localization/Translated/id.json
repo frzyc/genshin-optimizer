@@ -41,8 +41,6 @@
         "button": {
             "unequipArtifacts": "Lepaskan Artefak",
             "deleteArtifacts": "Hapus Artefak",
-            "excludeArtifacts": "Eksklusif Artefak",
-            "includeArtifacts": "Inklusif Artefak",
             "lockArtifacts": "Kunci Artefak",
             "unlockrtifacts": "Buka Kunci Artefak"
         },
@@ -70,11 +68,6 @@
             "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll dan efisiensi yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. <3>Tekan di sini</3> untuk melihat daftar pemindai yang kompatibel dengan GO.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
             "section3": "<0>Tas Artefak</0><1>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </1><2>Contoh: Menentukan Artefak Tumbal</2><3>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</3><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0><0>Batasi level hingga 0-8.</0><1>Pastikan artefak dalam tas tidak terkunci.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></0></5><6>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</6>"
         },
-        "exclusion": {
-            "any": "Semua",
-            "excluded": "Eksklusif",
-            "included": "Inklusif"
-        },
         "sortMap": {
             "level": "Level",
             "efficiency": "Eff. Substat Saat Ini",
@@ -84,8 +77,7 @@
             "title": "Substat yang dipakai dalam perhitungan efisiensi"
         },
         "resetFilters": "Reset Filter",
-        "setEffectNum": "{{setNum}}-Set",
-        "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
+        "setEffectNum": "{{setNum}}-Set"
     },
     "languages": {
         "chs": "Mandarin (Sederhana)",
@@ -175,11 +167,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Grimheart",
-            "consumed": "Grimheart Dikonsumsi",
-            "grimheart": {
-                "int": "Meningkatkan ketahanan terhadap interupsi"
-            }
+            "name": "Grimheart"
         },
         "burstC": {
             "name": "Lightfall Sword",
@@ -203,7 +191,6 @@
         "upcurrentDuration": "Durasi Arus Angin",
         "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
         "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
-        "c4": "Venti mengambil sebuah Elemental Orb atau Partikel",
         "q": "Memulihkan 15 Energy ke pada anggota party yang memiliki elemen tersebut.",
         "c2": {
             "hit": "Musuh di-Hit",
@@ -250,26 +237,21 @@
     "char_Rosaria": {
         "a1": "Setelah Hit dari Belakang",
         "a4": {
-            "name": "Setelah munggunakan <strong>Rites of Termination</strong>",
-            "text": "Peningkatan CRIT Rate party"
+            "name": "Setelah munggunakan <strong>Rites of Termination</strong>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Setelah Lari",
-        "afterSkill": "Setelah menggunakan <strong>Kamisato Art: Hyouka</strong>",
         "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Lari",
-        "staminaRestore": "Memulihkan 10 Stamina",
         "snowflakeDMG": "DMG Saat Mekar",
-        "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>",
-        "afterBurst": "Setelah menggunakan <strong>Kamisato Art: Soumetsu</strong>"
+        "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>"
     },
     "weapon_MistsplitterReforged": {
         "emblem": "Mistsplitter's Emblem"
     },
     "char_Yoimiya": {
         "c1": "Musuh terkena efek <strong>Aurous Blaze</strong> dikalahkan",
-        "c2": "Crit dari <pyro>Pyro DMG</pyro>",
-        "p2p": "Melancarkan <strong>Ryuukin Saxifrage</strong>"
+        "c2": "Crit dari <pyro>Pyro DMG</pyro>"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -318,18 +300,11 @@
     "artifact_ArchaicPetra": {
         "condName": "Memperoleh Elemental Shard"
     },
-    "artifact_Instructor": {
-        "condName": "Memicu Reaksi Elemental"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "Elemental Skill mengenai musuh"
     },
     "artifact_ViridescentVenerer": {
         "condName": "Elemen terkena Swirl"
-    },
-    "char_Thoma": {
-        "a1": "Menciptakan/Memperbarui <strong>Blazing Barrier</strong>",
-        "c6": "Saat menciptakan atau memperbarui <strong>Blazing Barrier</strong>"
     },
     "weapon_CinnabarSpindle": {
         "name": "Normal Attack DMG meningkat"

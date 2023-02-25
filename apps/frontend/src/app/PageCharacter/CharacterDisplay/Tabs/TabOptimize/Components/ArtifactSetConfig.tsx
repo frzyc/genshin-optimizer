@@ -1,6 +1,7 @@
 import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
-import { CheckBox, CheckBoxOutlineBlank, Replay, Settings } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
+import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
@@ -88,24 +89,20 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
   )
 
   return <>
-    <CardLight sx={{ display: "flex" }}>
-      <CardContent sx={{ flexGrow: 1 }} >
+    <Button onClick={onOpen} disabled={disabled} color="info" startIcon={<SettingsInputComponentIcon />}>
+      <Box sx={{ textAlign: "left", flexGrow: 1 }}>
         <Typography>
           <strong>{t`artSetConfig.title`}</strong>
         </Typography>
-        <Stack spacing={1}>
+        <Stack spacing={0.5}>
           <Typography>{t`artSetConfig.setEffCond`} <SqBadge color={artifactCondCount ? "success" : "warning"}>{artifactCondCount} {t("artSetConfig.enabled")}</SqBadge></Typography>
           <Typography>{t`sheet:2set`} <SqBadge color="success">{allow2} <ShowChartIcon {...iconInlineProps} /> {t("artSetConfig.allowed")}</SqBadge>{!!exclude2 && " / "}{!!exclude2 && <SqBadge color="secondary">{exclude2} <BlockIcon {...iconInlineProps} /> {t("artSetConfig.excluded")}</SqBadge>}</Typography>
           <Typography>{t`sheet:4set`} <SqBadge color="success">{allow4} <ShowChartIcon {...iconInlineProps} /> {t("artSetConfig.allowed")}</SqBadge>{!!exclude4 && " / "}{!!exclude4 && <SqBadge color="secondary">{exclude4} <BlockIcon {...iconInlineProps} /> {t("artSetConfig.excluded")}</SqBadge>}</Typography>
           <Typography>{t`artSetConfig.2rainbow`} <SqBadge color={allowRainbow2 ? "success" : "secondary"}>{allowRainbow2 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow2 ? t("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
           <Typography>{t`artSetConfig.4rainbow`} <SqBadge color={allowRainbow4 ? "success" : "secondary"}>{allowRainbow4 ? <ShowChartIcon  {...iconInlineProps} /> : <BlockIcon {...iconInlineProps} />} {allowRainbow4 ? t("artSetConfig.allowed") : "Excluded"}</SqBadge></Typography>
         </Stack>
-
-      </CardContent>
-      <Button onClick={onOpen} disabled={disabled} color="info" sx={{ borderRadius: 0 }}>
-        <Settings />
-      </Button>
-    </CardLight>
+      </Box>
+    </Button>
     <ModalWrapper open={open} onClose={onClose} ><CardDark>
       <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>
         <Typography variant="h6" >{t`artSetConfig.title`}</Typography>

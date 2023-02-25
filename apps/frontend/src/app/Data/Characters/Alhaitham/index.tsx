@@ -123,7 +123,7 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(greaterEq(input.constellation, 4,
 const c4MirrorsConsumed_eleMas = unequal(input.activeCharKey, key, c4MirrorsConsumed_eleMasDisp)
 const c4MirrorsGenerated_dendro_dmg_ = greaterEq(input.constellation, 4,
   compareEq(input.constellation, 6,
-    prod(3, percent(dm.constellation4.dendro_dmg_)),
+    unequal(condMirrorsConsumed, undefined, prod(3, percent(dm.constellation4.dendro_dmg_))),
     lookup(
       condMirrorsConsumed,
       objectKeyMap(mirrorsConsumedArr, count =>

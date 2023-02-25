@@ -1,6 +1,5 @@
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { CharacterData } from '@genshin-optimizer/pipeline'
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { constant, greaterEq, infoMut, lookup, min, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
@@ -233,7 +232,7 @@ const sheet: ICharacterSheet = {
       path: condSkillAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
+        name: st(`coloredEle.${eleKey}`),
         fields: [{
           node: infoMut(dmgFormulas.skill.eleWheelDmg, { name: ct.chg(`skill.skillParams.3`) })
         }, {
@@ -303,7 +302,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: burstC3 }] }]),
     constellation4: ct.talentTem("constellation4", [ct.fieldsTem("constellation4", {
       fields: [{
-        text: ct.ch("c4Ener"),
+        text: st("energyRegen"),
         value: dm.constellation4.ener,
         fixed: 1
       }, {

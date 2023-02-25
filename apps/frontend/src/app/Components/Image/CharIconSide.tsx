@@ -13,8 +13,8 @@ const CharIconSide = styled("img", {
   height: `${size}em`,
   marginTop: `${0.85 * (1 - size)}em`,
   marginBottom: `${0.15 * (1 - size)}em`,
-  marginLeft: sideMargin ? `${0.5 * (1 - size)}em` : undefined,
-  marginRight: sideMargin ? `${0.5 * (1 - size)}em` : undefined,
+  marginLeft: sideMargin ? undefined : `${0.3 * (1 - size)}em`,
+  marginRight: sideMargin ? undefined : `${0.3 * (1 - size)}em`,
   verticalAlign: "text-bottom"
 }))
 

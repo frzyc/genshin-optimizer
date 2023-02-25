@@ -7,8 +7,8 @@
                 "noSubstat": "无副词条",
                 "selectSub": "选择一个副词条",
                 "error": {
-                    "noCalc": "无法计算词条升级次数",
-                    "noOverRoll": "副词条无法进行超过{{value}} 次升级"
+                    "noCalc": "无法计算词条升级次数.",
+                    "noOverRoll": "副词条无法进行超过{{value}} 次升级."
                 },
                 "noRoll": "未升级",
                 "noStat": "无评分",
@@ -45,8 +45,6 @@
         "button": {
             "unequipArtifacts": "卸除圣遗物",
             "deleteArtifacts": "删除圣遗物",
-            "excludeArtifacts": "排除圣遗物",
-            "includeArtifacts": "包含圣遗物",
             "lockArtifacts": "锁定圣遗物",
             "unlockrtifacts": "解锁圣遗物"
         },
@@ -74,12 +72,6 @@
             "section2": "<0>圣遗物编辑器</0><1>支持任意3<1></1> 到 5<3></3>圣遗物的全功能编辑器。输入副词条后，能自动计算升级次数并评分。同时编辑器会确保你的升级次数与圣遗物等级匹配。</1><2>截图扫描</2><3>如果你不想手动输入圣遗物，可以通过截图扫描的方式识别输入圣遗物。在圣遗物编辑器界面，点击 <1>Show Me How!</1> 可见使用方法。</3><4>自动圣遗物扫描仪</4><5>如果你在PC上玩原神，你可以下载使用圣遗物扫描工具来为你扫描所有的圣遗物，并导入GO的 <1></1> 数据库内。<3>点此</3> 获取与 GO 兼容的扫描器列表。</5><6>重复/升级后圣遗物检测</6><7> GO可以检测出你导入的<1>重复</1> 圣遗物哦！原先拥有的圣遗物<3>升级后</3> 也会被检测出来。. 一旦检测到重复/升级的圣遗物，会出现预览界面允许你比较这些圣遗物（见图片）。</7>",
             "section3": "<0>圣遗物背包</0><1>所有被添加到GO的圣遗物会在此显示。筛选器可以帮助你更好浏览你拥有的圣遗物。 </1><2>例如：精确找狗粮</2><3>使用圣遗物筛选器及圣遗物评分，你可以快速地确定狗粮圣遗物。</3><4>例如，这样设置你的筛选：</4><5><0>限制圣遗物等级0-8.</0><1>未排除的圣遗物</1><2>移除小生命，小防御及元素充能对潜力的计算。</2><3>按升序最大潜能评分排序。</3></0></5><6>这样圣遗物背包就会按照需要的词条筛选出最低评分的圣遗物。</6>"
         },
-        "exclusion": {
-            "any": "任意",
-            "excluded": "已排除",
-            "included": "已包含",
-            "exclusion": "排除"
-        },
         "sortMap": {
             "level": "等级",
             "efficiency": "当前副词条评分",
@@ -90,12 +82,9 @@
         },
         "resetFilters": "重置过滤条件",
         "setEffectNum": "{{setNum}}件套",
-        "excludeArtifactTip": "排除圣遗物会使得配装计算器不使用它进行配装",
         "showingNum_one": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
         "showingNum_other": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
         "edit": "编辑圣遗物",
-        "excluded": "已排除该圣遗物。",
-        "included": "已包含该圣遗物。",
         "autocompleteLabels": {
             "sets": "圣遗物套装",
             "mainStats": "主词条",
@@ -104,10 +93,15 @@
         },
         "substat_one": "{{count}}项副词条",
         "substat_other": "{{count}}项副词条",
-        "addNew": "添加新圣遗物"
+        "addNew": "添加新圣遗物",
+        "sub_one": "{{count}}个副词条",
+        "sub_other": "{{count}}个副词条",
+        "cantDeleteLock": "无法删除，因为圣遗物已锁定",
+        "equippedArt": "已装备的圣遗物",
+        "artInInv": "背包中的圣遗物"
     },
     "languages": {
-        "chs": "简体中文",
+        "chs": "中文（简体）",
         "cht": "繁体中文",
         "de": "德语",
         "en": "英语",
@@ -237,11 +231,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "冷酷之心",
-            "consumed": "消耗的冷酷之心",
-            "grimheart": {
-                "int": "提高抗打断能力"
-            }
+            "name": "冷酷之心"
         },
         "burstC": {
             "name": "光降之剑",
@@ -255,8 +245,7 @@
         },
         "passive1": "残缺光降之剑伤害",
         "c4C": {
-            "name": "生命值低于50%的敌人",
-            "desc": "光降之剑造成的伤害提高25%"
+            "name": "生命值低于50%的敌人"
         }
     },
     "char_Noelle": {
@@ -272,7 +261,6 @@
         "upcurrentDuration": "上升气流持续时间",
         "regenEner": "效果结束后，为温迪回复15点元素能量",
         "c6": "受 <strong>风神之诗</strong>伤害的敌人",
-        "c4": "温迪获取元素晶球或元素微粒",
         "q": "为队伍中所有对应元素的角色恢复15点元素能量",
         "c2": {
             "hit": "被击中的敌人",
@@ -299,7 +287,8 @@
             "skillOrBurst": "元素战技或元素爆发命中敌人",
             "crit": "命中敌人并造成暴击",
             "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
-            "dendro": "<dendro>草元素伤害</dendro>击中敌人"
+            "dendro": "<dendro>草元素伤害</dendro>击中敌人",
+            "normalEle": "元素普攻命中敌人后"
         },
         "eleAbsor": "元素转化",
         "absorDot": "元素转化持续伤害",
@@ -427,7 +416,9 @@
             "normal": "普攻伤害倍率",
             "charged": "重击伤害倍率",
             "skill": "技能伤害倍率"
-        }
+        },
+        "stamRestored": "回复体力",
+        "triggerQuota": "生效次数"
     },
     "weapon_SongOfBrokenPines": {
         "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -444,18 +435,14 @@
     "char_Rosaria": {
         "a1": "背后攻击后",
         "a4": {
-            "name": "施放 <strong>终命的圣礼</strong>后",
-            "text": "队伍暴击率提高"
+            "name": "施放 <strong>终命的圣礼</strong>后"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "冲刺之后",
-        "afterSkill": "使用<strong>神里流-冰华</strong>后",
         "afterSprintCryo": "冲刺后对敌人施加<cryo>冰元素</cryo>附着",
-        "staminaRestore": "体力恢复量",
         "snowflakeDMG": "霜见雪关扉伤害",
         "dmgBySnowflake": "敌人受到<strong>神里流-霜灭</strong>的霜见雪关扉伤害后",
-        "afterBurst": "施放<strong>神里流:霜灭</strong>后",
         "c6Active": "「薄冰舞踏」激活"
     },
     "weapon_MistsplitterReforged": {
@@ -464,7 +451,6 @@
     "char_Yoimiya": {
         "c1": "攻击受 <strong>琉金火光</strong>影响的敌人",
         "c2": "<pyro>火元素伤害</pyro>造成暴击后",
-        "p2p": "使用<strong>琉金云间草</strong>",
         "normPyroInfus": "<pyro>普通攻击火元素附魔</pyro>",
         "c6Key_": "长野原龙势流星群倍率"
     },
@@ -476,7 +462,8 @@
         "burst": {
             "resolves": "积攒愿力层数",
             "resolveInitial_": "<electro>梦想一刀基础伤害加成</electro",
-            "resolveInfused_": "<electro>梦想一心伤害加成</electro>"
+            "resolveInfused_": "<electro>梦想一心伤害加成</electro>",
+            "burstDmg": "梦想一刀伤害"
         },
         "a4": {
             "enerRest": "<strong>梦想一心</strong>恢复的元素能量",
@@ -603,22 +590,11 @@
     "artifact_ArchaicPetra": {
         "condName": "获得结晶反应形成的晶片"
     },
-    "artifact_Instructor": {
-        "condName": "造成元素反应"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "元素战技命中敌人"
     },
     "artifact_ViridescentVenerer": {
         "condName": "扩散反应"
-    },
-    "char_Thoma": {
-        "a1": "获取或刷新 <strong>烈烧佑命护盾</strong>",
-        "c6": "获取或刷新 <strong>烈烧佑命护盾</strong>时",
-        "a2": "炽火崩破造成的伤害提高",
-        "c2": "<strong>真红炽火之大铠</strong>的持续时间延长",
-        "maxShield": "护盾吸收量上限",
-        "maxPyroShield": "护盾对火元素伤害的吸收量上限"
     },
     "weapon_CinnabarSpindle": {
         "name": "元素战技造成的伤害值提高"
@@ -643,17 +619,11 @@
     "artifact_HuskOfOpulentDreams": {
         "condName": "问答"
     },
-    "artifact_Lavawalker": {
-        "condName": "正在<pyro>燃烧</pyro> 或处于 <pyro>火元素</pyro>影响下的敌人"
-    },
     "artifact_OceanHuedClam": {
         "condName": "最高海染泡沫伤害"
     },
     "artifact_ShimenawasReminiscence": {
         "afterUseEnergy": "流失15点元素能量后"
-    },
-    "artifact_Thundersoother": {
-        "condName": "处于 <electro>雷元素</electro>影响下的敌人"
     },
     "artifact_TinyMiracle": {
         "condName": "受到某个元素类型的伤害后"
@@ -670,7 +640,6 @@
         "critRateBonus": "<strong>箭雨</strong>暴击率加成",
         "aoeRangeBonus": "<strong>箭雨</strong>的额外影响范围",
         "manualDetonationDmg": "主动引爆伤害",
-        "a4CondName": "<strong>瞄准射击</strong>命中弱点",
         "c6CondName": "使用<strong>箭雨</strong>"
     },
     "char_AratakiItto": {
@@ -777,8 +746,7 @@
     },
     "char_Jean": {
         "c1CondName": "风压剑长按超过1秒",
-        "c1PullSpeed": "提升牵引速度",
-        "c2CondName": "琴获得元素晶球或元素微粒"
+        "c1PullSpeed": "提升牵引速度"
     },
     "char_Kaeya": {
         "c2burstDuration": "持续时间内每击败一名敌人时，持续时间延长2.5秒，最多不会超过15秒",
@@ -820,26 +788,22 @@
         "c6bonus": "生成的星璇"
     },
     "char_Qiqi": {
-        "a1C": "处于<strong>仙法 • 寒病鬼差</strong>状态下的角色触发元素反应",
-        "c2C": "受到冰元素影响的敌人"
+        "a1C": "处于<strong>仙法 • 寒病鬼差</strong>状态下的角色触发元素反应"
     },
     "char_Razor": {
         "electroSigil": "雷之印",
         "electroSigilAbsorbed": "被清除的雷之印所转化的元素能量",
-        "pickUpElementalOrbParticle": "获取元素晶球或元素微粒",
         "opHitWithClawAndThunder": "被<strong>利爪与苍雷</strong>点按命中的敌人",
         "electroSigilPerProc": "每次触发的雷之印"
     },
     "char_Sayu": {
         "burstHits": "不倒貉貉行动次数",
-        "p1Swirl": "早柚在场上触发扩散反应",
         "p2Heal": "身边的其他场上角色生命值回复量",
         "p2Aoe": "造成伤害的范围扩大",
         "c1Text": "不倒貉貉的行动将忽视生命值限制，能同时攻击附近的敌人并为角色恢复生命值",
         "c2KickPressDmg_": "风风轮舞踢点按伤害加成",
         "c2KickDmg_": "风风轮舞踢长按伤害加成",
         "c2Cond": "<strong>风风轮</strong>状态持续时间",
-        "c4Ener": "触发扩散反应时恢复的元素能量",
         "c6DarumaDmgInc": "不倒貉貉攻击造成的伤害增加",
         "c6DarumaHealInc": "不倒貉貉回复量增加"
     },
@@ -852,8 +816,11 @@
         "pressDuration": "点按持续时间",
         "holdDuration": "长按持续时间"
     },
-    "char_Sucrose": {
-        "asc4": "<strong>风灵作成 • 陆叁零捌或禁 • 风灵作成 • 柒伍同构贰型</strong>命中敌人时"
+    "char_Thoma": {
+        "a2": "炽火崩破造成的伤害提高",
+        "c2": "<strong>真红炽火之大铠</strong>的持续时间延长",
+        "maxShield": "护盾吸收量上限",
+        "maxPyroShield": "护盾对火元素伤害的吸收量上限"
     },
     "char_Xiangling": {
         "afterChili": "拾取辣椒后",
@@ -962,15 +929,6 @@
         "p1cond": "<strong>玉璋护盾</strong>受到伤害时",
         "c6heal": "最大单次生命值回复量"
     },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": "对受到冰元素影响的敌人"
-        },
-        "SprawlingGreenery": {
-            "cond2ele": "触发燃烧、原激化、绽放反应后",
-            "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后"
-        }
-    },
     "weapon_AlleyHunter": {
         "condName": "处于队伍后台时间"
     },
@@ -979,12 +937,6 @@
     },
     "weapon_BlackTassel": {
         "condName": "对史莱姆类敌人"
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": "对处于<pyro>火元素</pyro>或<electro>雷元素</electro>影响下的敌人"
-    },
-    "weapon_CoolSteel": {
-        "condName": "对处于<hydro>水元素</hydro>或<cryo>冰元素</cryo>影响下的敌人"
     },
     "weapon_CrescentPike": {
         "condName": "获得元素微粒或元素晶球后",
@@ -996,9 +948,6 @@
             "oneOrNone": "少于2个敌人",
             "moreThanOne": "至少有2个敌人"
         }
-    },
-    "weapon_DragonsBane": {
-        "condName": "对于处于水元素或火元素影响下的敌人"
     },
     "weapon_DragonspineSpear": {
         "aoeDmg": "恒冰晶核伤害",
@@ -1018,36 +967,11 @@
     "weapon_Hamayumi": {
         "condName": "元素能量等于100%"
     },
-    "weapon_IronSting": {
-        "condName": "造成元素伤害后"
-    },
-    "weapon_LionsRoar": {
-        "condName": "对处于<pyro>火元素</pyro>或<electro>雷元素</electro>影响下的敌人"
-    },
-    "weapon_MagicGuide": {
-        "condName": "对处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下的敌人"
-    },
-    "weapon_MappaMare": {
-        "condName": "触发元素反应后"
-    },
     "weapon_MemoryOfDust": {
         "atkEffInc": "攻击力提升效果提高"
     },
     "weapon_PolarStar": {
         "condName": "「白夜极星」"
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": "命中要害"
-    },
-    "weapon_Rainslasher": {
-        "condName": "对处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下的敌人"
-    },
-    "weapon_RavenBow": {
-        "condName": "对处于火元素或水元素影响下的敌人"
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "普通攻击伤害提高",
-        "nameCharged": "重击伤害提高"
     },
     "weapon_SerpentSpine": {
         "takeMoreDmg": "受到的伤害增加"
@@ -1224,6 +1148,15 @@
         "c6DmgKey": "额外藏蕴花矢伤害",
         "c6WreathRed": "<strong>花筥箭</strong>蓄力时间减少"
     },
+    "elementalResonance": {
+        "SprawlingGreenery": {
+            "cond2ele": "触发燃烧、原激化、绽放反应后",
+            "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后"
+        },
+        "EnduringRock": {
+            "hitCond": "处于护盾保护下的角色对敌人造成伤害后"
+        }
+    },
     "page_character_optimize": {
         "mainStat": {
             "levelAssTooltip": {
@@ -1248,28 +1181,6 @@
             "buildAlreadyInList": "配装已经在列表中"
         },
         "levelFilter": "圣遗物等级过滤器",
-        "useExcluded": {
-            "title": "使用被排除的圣遗物",
-            "usingNum_one": "使用<1>{{count}}</1>件已排除圣遗物",
-            "usingNum_other": "使用<1>{{count}}</1>件已排除圣遗物"
-        },
-        "useEquipped": {
-            "title": "使用已装备的圣遗物",
-            "modal": {
-                "title": "已装备圣遗物的角色的优先级顺序",
-                "desc1": "当生成配装时，优化器仅会使用列表中当前角色下方角色已装备的圣遗物，以及列表中未出现角色已装备的圣遗物。",
-                "desc2": "如果当前角色不在列表中，优化器仅会使用未在列表中的其他角色已装备的圣遗物。",
-                "usingNum_one": "使用<1>{{count}}</1>名角色的圣遗物",
-                "usingNum_other": "使用<1>{{count}}</1>名未在列表中的角色的圣遗物",
-                "status": {
-                    "use": "使用圣遗物",
-                    "dont": "不使用圣遗物",
-                    "curr": "目前角色"
-                },
-                "add": "添加角色入列表",
-                "clearList": "清空列表"
-            }
-        },
         "allowPartial": "允许部分配装（少于5件圣遗物）",
         "constraintFilter": {
             "title": "配装限制条件",
@@ -1476,5 +1387,19 @@
     },
     "weapon_ToukabouShigure": {
         "condName": "敌人在纸伞作祟状态的影响"
+    },
+    "char_Alhaitham": {
+        "withMirrors": "持有琢光镜",
+        "debateStacks": "辩章层数",
+        "mirrorsConsumed": "<strong>殊境·显象缚结</strong>施放消耗的琢光镜数量",
+        "projectionAttack_dmg_": "光幕攻击伤害提升",
+        "excessMirror": "琢光镜数量已达到上限后，再产生琢光镜"
+    },
+    "char_Yaoyao": {
+        "a4Heal": "白玉萝卜炸裂治疗量",
+        "inExplosionAoE": "在<strong>白玉萝卜</strong>炸裂范围内",
+        "inLegacy": "处于桂子仙机状态",
+        "megaDmg": "超厉害·大萝卜伤害",
+        "megaHeal": "超厉害·大萝卜治疗量"
     }
 }

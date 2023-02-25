@@ -45,8 +45,6 @@
         "button": {
             "unequipArtifacts": "Desequipar Artefatos",
             "deleteArtifacts": "Excluir Artefatos",
-            "excludeArtifacts": "Bloquear Artefatos",
-            "includeArtifacts": "Desbloquear Artefatos",
             "lockArtifacts": "Trancar Artefatos",
             "unlockrtifacts": "Destrancar Artefatos"
         },
@@ -74,12 +72,6 @@
             "section2": "<0>Editor de Artefatos</0><1>Um editor de artefatos completo que aceita qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, é possível calcular os valores exatos dos Rolls  e a partir deles, sua eficiência. Ele também garante que você tenha inserido valores corretos no artefato de acordo com o nível e valida também outras informações.</1><2>Digitalize capturas de tela</2><3>Se você não quer realizar a inserção manual, é possível digitalizar artefatos a partir de capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO percebe se você insere um artefato <1>duplicado</1>, que já existe no seu inventário? Ele também pode detectar se o artefato sendo editado é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
             "section3": "<0>Inventário de Artefatos</0><1>Todos os artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais a visualização de seus artefatos. </1><2>Exemplo: Encontrando Artefatos para Descarte</2><3>Ao filtrar por Eficiência de Rolls, você pode encontrar rapidamente um item mal-otimizado para usar como experiência para outros artefatos.</3><4>Neste exemplo, os filtros estão definidos desta forma: </4><5><0><0>Nível de 0 a 8</0><1>Artefatos Desbloqueados no Inventário</1><2>Desconsiderando Vida, DEF e ATQ simples ao calcular a Eficiência</2><3>Ordenar de forma Crescente pela Eficiência Máxima de Rolls.</3></0></5><6>Isso filtrará o Inventário de artefatos, mostrando os artefatos com menor Eficiência e com os atributos escolhidos.</6>"
         },
-        "exclusion": {
-            "any": "Qualquer",
-            "excluded": "Bloqueados",
-            "included": "Desbloqueado",
-            "exclusion": "Omissão"
-        },
         "sortMap": {
             "level": "Nível",
             "efficiency": "Eficiência de Rolls Atual",
@@ -90,12 +82,9 @@
         },
         "resetFilters": "Limpar Filtros",
         "setEffectNum": "Conjunto de {{setNum}} Pç.",
-        "excludeArtifactTip": "Bloquear um artefato impedirá o Gerador de Builds de usá-lo numa Build.",
         "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
         "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
         "edit": "Editar Artefato",
-        "excluded": "Este artefato está bloqueado.",
-        "included": "Este artefato não está bloqueado.",
         "autocompleteLabels": {
             "sets": "Conjuntos de Artefatos",
             "mainStats": "Atributos Principais",
@@ -105,7 +94,11 @@
         "substat_one": "{{count}} atributo secundário",
         "substat_other": "{{count}} atributos secundários",
         "addNew": "Adicionar Artefato",
-        "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado"
+        "sub_one": "{{count}} Atributo",
+        "sub_other": "{{count}} Atributos",
+        "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
+        "equippedArt": "Artefatos Equipados",
+        "artInInv": "Artefatos no Inventário"
     },
     "languages": {
         "chs": "Chinês (Simplificado)",
@@ -238,11 +231,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Coração Impassível",
-            "consumed": "Após Coração Impassível ser consumido",
-            "grimheart": {
-                "int": "Aumenta a Resistência à Interrupção"
-            }
+            "name": "Coração Impassível"
         },
         "burstC": {
             "name": "Espada Luminosa",
@@ -256,8 +245,7 @@
         },
         "passive1": "Dano da Espada Luminosa Fragmentada",
         "c4C": {
-            "name": "Inimigos possuem menos de 50% de vida",
-            "desc": "A Espada Luminosa causa 25% mais Dano"
+            "name": "Inimigos possuem menos de 50% de vida"
         }
     },
     "char_Noelle": {
@@ -273,7 +261,6 @@
         "upcurrentDuration": "Duração da Corrente de Vento",
         "regenEner": "Regenera 15 de Energia ao Venti quando os efeitos acabam",
         "c6": "Inimigo levou Dano de <strong>Grande Ode do Vento</strong>",
-        "c4": "Após obter uma Partícula ou Orbe Elemental",
         "q": "Regenera 15 de Energia a todos os personagens na equipe do elemento absorvido",
         "c2": {
             "hit": "Inimigo atingido",
@@ -300,7 +287,8 @@
             "skillOrBurst": "Após atingir o inimigo com a Habilidade Elemental ou o Supremo",
             "crit": "Após infligir Dano Crítico",
             "normalChargedOrPlunging": "Após um Ataque Normal, Carregado ou Imersivo atingir um inimigo",
-            "dendro": "Após infligir <dendro>Dano Dendro</dendro>"
+            "dendro": "Após infligir <dendro>Dano Dendro</dendro>",
+            "normalEle": "Após infligir Dano Elemental com um Ataque Normal"
         },
         "eleAbsor": "Absorção Elemental",
         "absorDot": "Dano Contínuo da Absorção Elemental",
@@ -428,7 +416,9 @@
             "normal": "Multipl. de Dano do Atq. Normal",
             "charged": "Multipl. de Dano do Atq. Carregado",
             "skill": "Multipl. de Dano da Habil. Elem."
-        }
+        },
+        "stamRestored": "Stamina Recuperada",
+        "triggerQuota": "Ativações"
     },
     "weapon_SongOfBrokenPines": {
         "name": "Sob o efeito de Concerto Milenar: Música do Levantar da Bandeira"
@@ -445,18 +435,14 @@
     "char_Rosaria": {
         "a1": "Após Atacar por Trás",
         "a4": {
-            "name": "Após usar <strong>Ritos de Terminação</strong>",
-            "text": "Aumento de Taxa Crítica da Equipe"
+            "name": "Após usar <strong>Ritos de Terminação</strong>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Após Correr",
-        "afterSkill": "Após usar a <strong>Arte Kamisato: Hyouka</strong>",
         "afterSprintCryo": "Após aplicar <cryo>Cryo</cryo> Correndo",
-        "staminaRestore": "Stamina Recuperada",
         "snowflakeDMG": "Dano do Granizo",
         "dmgBySnowflake": "Inimigos foram atingidos pelo Granizo Seki no To da <strong>Arte Kamisato: Soumetsu</strong>",
-        "afterBurst": "Após usar <strong>Arte Kamisato: Soumetsu</strong>",
         "c6Active": "Usuhari Butou está ativo"
     },
     "weapon_MistsplitterReforged": {
@@ -465,7 +451,6 @@
     "char_Yoimiya": {
         "c1": "Derrotou inimigo afetado pela <strong>Flama Dourada</strong>",
         "c2": "Após infligir <pyro>Dano Pyro</pyro> Crítico",
-        "p2p": "Após usar a <strong>Saxifraga Ryuukin</strong>",
         "normPyroInfus": "<pyro>Infusão Pyro no Ataque Normal</pyro>",
         "c6Key_": "Multipl. da Flecha Ardente"
     },
@@ -605,22 +590,11 @@
     "artifact_ArchaicPetra": {
         "condName": "Obter um Fragmento Elemental"
     },
-    "artifact_Instructor": {
-        "condName": "Desencadear uma Reação Elemental"
-    },
     "artifact_TenacityOfTheMillelith": {
         "condName": "A Habilidade Elemental atinge um oponente"
     },
     "artifact_ViridescentVenerer": {
         "condName": "Elemento com o qual o Redemoinho foi fundido"
-    },
-    "char_Thoma": {
-        "a1": "Obter ou renovar a <strong>Barreira Flamejante</strong>",
-        "c6": "Quando uma <strong>Barreira Flamejante</strong>  é obtida ou renovada",
-        "a2": "Aumento de Dano do Colapso Ardente",
-        "c2": "Aumento da duração da <strong>Grande Armadura Flamejante</strong>",
-        "maxShield": "Absorção de Dano Máxima",
-        "maxPyroShield": "Absorção de Dano Pyro Máxima"
     },
     "weapon_CinnabarSpindle": {
         "name": "Aumento do Dano da Habilidade Elemental"
@@ -645,17 +619,11 @@
     "artifact_HuskOfOpulentDreams": {
         "condName": "Curiosidade"
     },
-    "artifact_Lavawalker": {
-        "condName": "Inimigos que estão <pyro>Queimando</pyro> ou afetados por <pyro>Pyro</pyro>"
-    },
     "artifact_OceanHuedClam": {
         "condName": "Dano Máx. da Bolha de Espuma do Mar"
     },
     "artifact_ShimenawasReminiscence": {
         "afterUseEnergy": "Após usar 15 de energia"
-    },
-    "artifact_Thundersoother": {
-        "condName": "Inimigos afetados por <electro>Electro</Electro>"
     },
     "artifact_TinyMiracle": {
         "condName": "Dano Elemental recebido"
@@ -672,7 +640,6 @@
         "critRateBonus": "Bônus de Taxa Crítica da <strong>Chuva Ardente</strong>",
         "aoeRangeBonus": "Bônus do Campo AdE da <strong>Chuva Ardente</strong>",
         "manualDetonationDmg": "Dano da Detonação Manual",
-        "a4CondName": "Após acertar <strong>Disparo com Mira</strong> em ponto fraco.",
         "c6CondName": "Após usar <strong>Chuva Ardente</strong>"
     },
     "char_AratakiItto": {
@@ -779,8 +746,7 @@
     },
     "char_Jean": {
         "c1CondName": "Manteve pressionado por mais de 1s",
-        "c1PullSpeed": "Aumento da velocidade de sucção",
-        "c2CondName": "Após a Jean pegar um Orbe/Partícula Elemental"
+        "c1PullSpeed": "Aumento da velocidade de sucção"
     },
     "char_Kaeya": {
         "c2burstDuration": "Aumenta a duração em 2,5s a cada inimigo derrotado durante ela, em até 15s",
@@ -822,26 +788,22 @@
         "c6bonus": "Jades Estelares ganhas"
     },
     "char_Qiqi": {
-        "a1C": "Após um personagem sob o efeito de <strong>Arte do Adeptus: Arauto da Floresta</strong> desencadear uma Reação Elemental",
-        "c2C": "Inimigo afetado por Cryo"
+        "a1C": "Após um personagem sob o efeito de <strong>Arte do Adeptus: Arauto da Floresta</strong> desencadear uma Reação Elemental"
     },
     "char_Razor": {
         "electroSigil": "Selos Electro",
         "electroSigilAbsorbed": "Energia regenerada ao converter os Selos Electro",
-        "pickUpElementalOrbParticle": "Após obter um Orbe ou Partícula Elemental",
         "opHitWithClawAndThunder": "Inimigos foram atingidos pela <strong>Garra e Trovão</strong> (Pressionada)",
         "electroSigilPerProc": "Selos Electro por Ativação"
     },
     "char_Sayu": {
         "burstHits": "Número de Ativações do Daruma Muji-Muji",
-        "p1Swirl": "Sayu desencadeia uma reação de Redemoinho",
         "p2Heal": "Cura aos Personagens Próximos",
         "p2Aoe": "AdE de Ataque Aumentada",
         "c1Text": "O Daruma Muji-Muji ignorará limites de Vida e pode simultaneamente curar personagens e atacar os inimigos próximos",
         "c2KickPressDmg_": "Bônus de Dano de Chute da Roda Fuufuu ao pressionar",
         "c2KickDmg_": "Bônus de Dano de Chute da Roda Fuufuu",
         "c2Cond": "Tempo no estado de <strong>Roda Fuufuu</strong>",
-        "c4Ener": "Energia recuperada ao desencadear um Redemoinho",
         "c6DarumaDmgInc": "Aumento do Dano do Daruma Muji-Muji",
         "c6DarumaHealInc": "Aumento da Cura do Daruma Muji-Muji"
     },
@@ -849,13 +811,16 @@
         "quill": "As Penas Geladas estão ativas",
         "c4": "Cargas de Firmamento Gelado",
         "c4Bonus_": "Bônus do Firmamento Gelado",
-        "pressQuota": "Quantidade de Activações ao Pressionar",
-        "holdQuota": "Quantidade de Ativações ao Manter Pressionado",
+        "pressQuota": "Ativações ao Pressionar",
+        "holdQuota": "Ativações ao Manter Pressionado",
         "pressDuration": "Duração ao Pressionar",
         "holdDuration": "Duração ao Manter Pressionado"
     },
-    "char_Sucrose": {
-        "asc4": "Após a <strong>Criação do Espírito do Vento: Experimento 6308 ou a Criação Proibida do Espírito do Vento: Isomórfico-75 Tipo II</strong> atingir um inimigo"
+    "char_Thoma": {
+        "a2": "Aumento de Dano do Colapso Ardente",
+        "c2": "Aumento da duração da <strong>Grande Armadura Flamejante</strong>",
+        "maxShield": "Absorção de Dano Máxima",
+        "maxPyroShield": "Absorção de Dano Pyro Máxima"
     },
     "char_Xiangling": {
         "afterChili": "Após pegar uma pimenta",
@@ -964,15 +929,6 @@
         "p1cond": "O <strong>Escudo de Jade</strong> recebeu Dano",
         "c6heal": "Regeneração Máxima de Vida"
     },
-    "elementalResonance": {
-        "ShatteringIce": {
-            "cond": "Contra inimigos Congelados ou afetados por Cryo"
-        },
-        "SprawlingGreenery": {
-            "cond2ele": "Após desencadear as reações de Queimadura, Aceleração ou Florescimento",
-            "cond3ele": "Após desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação"
-        }
-    },
     "weapon_AlleyHunter": {
         "condName": "Tempo fora de Campo"
     },
@@ -981,12 +937,6 @@
     },
     "weapon_BlackTassel": {
         "condName": "Contra Slimes"
-    },
-    "weapon_BloodtaintedGreatsword": {
-        "condName": "Contra inimigos afetados por <pyro>Pyro</pyro> ou <electro>Electro</electro>"
-    },
-    "weapon_CoolSteel": {
-        "condName": "Contra inimigos afetados por <hydro>Hydro</hydro> ou <cryo>Cryo</cryo> "
     },
     "weapon_CrescentPike": {
         "condName": "Após obter um Orbe/Partícula Elemental",
@@ -998,9 +948,6 @@
             "oneOrNone": "Menos de dois inimigos",
             "moreThanOne": "Pelo menos dois inimigos"
         }
-    },
-    "weapon_DragonsBane": {
-        "condName": "Contra inimigos afetados por Hydro ou Pyro"
     },
     "weapon_DragonspineSpear": {
         "aoeDmg": "Dano do Núcleo de Cristal Eterno",
@@ -1020,36 +967,11 @@
     "weapon_Hamayumi": {
         "condName": "Energia está em 100%"
     },
-    "weapon_IronSting": {
-        "condName": "Após infligir Dano Elemental"
-    },
-    "weapon_LionsRoar": {
-        "condName": "Contra inimigos afetados por <pyro>Pyro</pyro> ou <electro>Electro</electro>"
-    },
-    "weapon_MagicGuide": {
-        "condName": "Contra inimigos afetados por <hydro>Hydro</hydro> ou <electro>Electro</electro>"
-    },
-    "weapon_MappaMare": {
-        "condName": "Após desencadear uma Reação Elemental"
-    },
     "weapon_MemoryOfDust": {
         "atkEffInc": "Aumento do Bônus de ATQ"
     },
     "weapon_PolarStar": {
         "condName": "Acúmulos de Estrela Polar da Noite Branca"
-    },
-    "weapon_PrototypeCrescent": {
-        "condName": "Após atingir um Ponto Fraco com Ataque Carregado"
-    },
-    "weapon_Rainslasher": {
-        "condName": "Contra inimigos afetados por <hydro>Hydro</hydro> ou <electro>Electro</electro>"
-    },
-    "weapon_RavenBow": {
-        "condName": "Contra inimigos afetados por Hydro ou Pyro"
-    },
-    "weapon_RedhornStonethresher": {
-        "nameNormal": "Aumento de Dano do Ataque Normal",
-        "nameCharged": "Aumento de Dano do Ataque Carregado"
     },
     "weapon_SerpentSpine": {
         "takeMoreDmg": "Aumento do Dano Recebido"
@@ -1226,6 +1148,15 @@
         "c6DmgKey": "Dano Adicional das Flechas Florescentes",
         "c6WreathRed": "Redução do tempo de carga da <strong>Flecha Floral</strong>"
     },
+    "elementalResonance": {
+        "SprawlingGreenery": {
+            "cond2ele": "Após desencadear as reações de Queimadura, Aceleração ou Florescimento",
+            "cond3ele": "Após desencadear as reações de Intensificação, Propagação, Superflorescimento ou Germinação"
+        },
+        "EnduringRock": {
+            "hitCond": "Após infligir Dano ao inimigo enquanto protegido por um escudo"
+        }
+    },
     "page_character_optimize": {
         "mainStat": {
             "levelAssTooltip": {
@@ -1250,28 +1181,6 @@
             "buildAlreadyInList": "A Build já está listada"
         },
         "levelFilter": "Filtro de Nível dos Artefatos",
-        "useExcluded": {
-            "title": "Usar Artefatos Bloqueados",
-            "usingNum_one": "Usando <1>{{count}}</1> artefato bloqueado",
-            "usingNum_other": "Usando <1>{{count}}</1> artefatos bloqueados"
-        },
-        "useEquipped": {
-            "title": "Usar Artefatos Equipados",
-            "modal": {
-                "title": "Prioridade do Personagem para Artefatos Equipados",
-                "desc1": "Ao gerar uma Build, o Otimizador apenas considerará os artefatos equipados por personagens com prioridade abaixo do personagem atual ou de fora da lista.",
-                "desc2": "Se o personagem atual não estiver na lista, o Otimizador apenas considerará os artefatos de personagens que também não estão na lista.",
-                "usingNum_one": "Usando artefatos de <1>{{count}}</1> personagem",
-                "usingNum_other": "Usando artefatos de <1>{{count}}</1> personagens",
-                "status": {
-                    "use": "Usar os artefatos",
-                    "dont": "Não usar os artefatos",
-                    "curr": "Personagem Atual"
-                },
-                "add": "Adicionar Personagem à Lista",
-                "clearList": "Limpar Lista"
-            }
-        },
         "allowPartial": "Permitir Builds Parciais (<5 artefatos)",
         "constraintFilter": {
             "title": "Restrições de Build",
@@ -1478,5 +1387,19 @@
     },
     "weapon_ToukabouShigure": {
         "condName": "Inimigo sob o estado de Assombração do Guarda-Chuva"
+    },
+    "char_Alhaitham": {
+        "withMirrors": "Possui um Espelho Cortante",
+        "debateStacks": "Após gerar um Espelho Cortante",
+        "mirrorsConsumed": "Espelhos consumidos após usar <strong>Alienação: Restrição da Ilustração</strong>",
+        "projectionAttack_dmg_": "Bônus de Dano do Ataque da Cortina de Luz",
+        "excessMirror": "Após gerar um Espelho Cortante quando já estão no máximo"
+    },
+    "char_Yaoyao": {
+        "a4Heal": "Cura da Explosão do Rabanete de Jade Branca",
+        "inExplosionAoE": "Após estar dentro da AdE de Explosão do <strong>Rabanete de Jade Branca</strong>",
+        "inLegacy": "No estado Legado Adepti",
+        "megaDmg": "Dano do Super Incrível Grande Rabanete",
+        "megaHeal": "Cura do Super Incrível Grande Rabanete"
     }
 }

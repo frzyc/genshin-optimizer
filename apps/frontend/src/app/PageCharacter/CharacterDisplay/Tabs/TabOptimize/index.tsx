@@ -1,4 +1,4 @@
-import { CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from '@genshin-optimizer/consts';
+import { CharacterKey, charKeyToLocCharKey } from '@genshin-optimizer/consts';
 import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
@@ -42,11 +42,11 @@ import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
 import ChartCard from './Components/ChartCard';
+import ExcludeArt from './Components/ExcludeArt';
+import AllowChar from './Components/AllowChar';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
-import UseEquipped from './Components/UseEquipped';
-import UseExcluded from './Components/UseExcluded';
 import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
@@ -70,7 +70,7 @@ export default function TabBuild() {
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
-  const [{ equipmentPriority, threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
+  const [{ threads = defThreads }, setDisplayOptimize] = useState(database.displayOptimize.get())
   useEffect(() => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)), [database, setDisplayOptimize])
 
   const maxWorkers = threads > defThreads ? defThreads : threads
@@ -101,39 +101,28 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const { filteredArts, numExcludedUsed, numEquippedUsed } = useMemo(() => {
-    const { mainStatKeys, useExcludedArts, useEquippedArts, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
-    const cantTakeList: Set<LocationCharacterKey> = new Set()
-    if (useEquippedArts) {
-      const index = equipmentPriority.indexOf(characterKey)
-      if (index < 0) equipmentPriority.forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
-      else equipmentPriority.slice(0, index).forEach(ek => cantTakeList.add(charKeyToLocCharKey(ek)))
-    }
-    let numExcludedUsed = 0, numEquippedUsed = 0
+  const { filteredArts, numEquippedUsed } = useMemo(() => {
+    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh } = deferredArtsDirty && deferredBuildSetting
+
+    let numEquippedUsed = 0
     const filteredArts = database.arts.values.filter(art => {
+      if (artExclusion.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
-      // If its equipped on the selected character, bypass the check
       const locKey = charKeyToLocCharKey(characterKey)
-      if (art.location !== locKey) {
-        if (art.location && !useEquippedArts) return false
-        if (art.location && useEquippedArts && cantTakeList.has(art.location)) return false
+      if (art.location && art.location !== locKey) {
+        if (!allowLocations.includes(art.location)) return false
+        numEquippedUsed++
       }
 
-      if (art.exclude) {
-        numExcludedUsed++
-        if (!useExcludedArts) return false
-      }
-
-      if (art.location && art.location !== locKey) numEquippedUsed++
       return true
     })
 
-    return { filteredArts, numExcludedUsed, numEquippedUsed }
-  }, [database, characterKey, equipmentPriority, deferredArtsDirty, deferredBuildSetting])
+    return { filteredArts, numEquippedUsed }
+  }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
 
   const filteredArtIdMap = useMemo(() => objectKeyMap(filteredArts.map(({ id }) => id), _ => true), [filteredArts])
   const levelTotal = useMemo(() => {
@@ -321,23 +310,6 @@ export default function TabBuild() {
 
         {/* 3 */}
         <Grid item xs={12} sm={6} lg={5} display="flex" flexDirection="column" gap={1}>
-          <ArtifactSetConfig disabled={generatingBuilds} />
-
-          {/* use excluded */}
-          <UseExcluded disabled={generatingBuilds} numExcludedArt={numExcludedUsed} />
-
-          {/* use equipped */}
-          <UseEquipped disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
-
-          <Button
-            fullWidth
-            startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
-            color={allowPartial ? "success" : "secondary"}
-            onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
-            disabled={generatingBuilds}
-          >
-            {t`allowPartial`}
-          </Button>
           { /* Level Filter */}
           <CardLight>
             <CardContent>{t`levelFilter`} <SqBadge color="info">{levelTotal}</SqBadge></CardContent>
@@ -348,6 +320,25 @@ export default function TabBuild() {
               disabled={generatingBuilds}
             />
           </CardLight>
+
+          <ArtifactSetConfig disabled={generatingBuilds} />
+
+          {/* use excluded */}
+          <ExcludeArt disabled={generatingBuilds} />
+
+
+          <Button
+            fullWidth
+            startIcon={allowPartial ? <CheckBox /> : <CheckBoxOutlineBlank />}
+            color={allowPartial ? "success" : "secondary"}
+            onClick={() => buildSettingDispatch({ allowPartial: !allowPartial })}
+            disabled={generatingBuilds}
+          >
+            {t`allowPartial`}
+          </Button>
+
+          {/* use equipped */}
+          <AllowChar disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />

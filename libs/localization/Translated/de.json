@@ -39,9 +39,7 @@
         },
         "button": {
             "unequipArtifacts": "Artefakte ablegen",
-            "deleteArtifacts": "Artefakte löschen",
-            "excludeArtifacts": "Artefakte sperren",
-            "includeArtifacts": "Artefakt entsperren"
+            "deleteArtifacts": "Artefakte löschen"
         },
         "buttonHint": "Hinweis: Die oberen roten Buttons gelten nur für <1>gefilterte Artefakte</1>",
         "tipsOfTheDay": [
@@ -67,11 +65,6 @@
             "section2": "<0>Artefakt Editor</0><1>Ein vollwertiger Artefakt-Editor für 3<1></1> bis 5<3></3> Artefakte. Wenn Bonusattribute eingetragen werden, werden die Werte jeder einzelnen Aufwertung und die Effizienz berechnet und angezeigt. Zusätzlich wird das eingegebene Artefakt zahlreichen Prüfungen unterzogen, um Eingabefehler zu vermeiden.</1><2>Bildschirmfotos einscannen</2><3>Manuelle Eingabe liegt dir nicht? Artefakte können von einem Bild automatisiert erkannt werden! Ein Klick auf <1>Zeig mir wie!</1> gibt eine Einführung.</3><4>Erkennung von Duplikaten/Aufgewerteten Artefakten</4><5>Genshin Optimizer kann <1>Duplikate</1> unter den eingetragenen Artefakten zu erkennen. Außerdem wird erkannt, wenn das eingegebene Artefakt möglicherweise eine aufgewertete Variante eines bereits Vorhandenen ist. In einem solchen Fall zeigt eine Vorschau beide Artefakte zum Vergleich an (siehe Bild).</5>",
             "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
         },
-        "exclusion": {
-            "any": "Beides",
-            "excluded": "Gesperrt",
-            "included": "Entsperrt"
-        },
         "sortMap": {
             "level": "Level",
             "efficiency": "Aktuelle Bonusattributseffizienz",
@@ -81,10 +74,7 @@
             "title": "In Berechnung der Effizienz zu berücksichtigende Bonusattribute"
         },
         "resetFilters": "Filter zurücksetzen",
-        "setEffectNum": "Set mit {{setNum}} Teilen",
-        "excludeArtifactTip": "Das Sperren eines Artefakts verhindert, dass der Build-Generator es für Builds auswählt.",
-        "excluded": "Dieses Artefakt ist gesperrt.",
-        "included": "Diese Artefakt ist nicht gesperrt."
+        "setEffectNum": "Set mit {{setNum}} Teilen"
     },
     "languages": {
         "chs": "Chinesisch (Vereinfacht)",
@@ -160,11 +150,7 @@
     },
     "char_Eula": {
         "skillC": {
-            "name": "Kaltes Herz",
-            "consumed": "Stapelungen verbraucht",
-            "grimheart": {
-                "int": "Erhöht Unterbrechungs-Wiederstand"
-            }
+            "name": "Kaltes Herz"
         },
         "burstC": {
             "name": "Schwert der Brandung",
@@ -188,7 +174,6 @@
         "upcurrentDuration": "Dauer der Luftströmung",
         "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
         "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
-        "c4": "Venti erhält Elementarkristalle oder Elementarteilchen",
         "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
         "c2": {
             "hit": "getroffene Gegner",
@@ -230,22 +215,18 @@
     "char_Rosaria": {
         "a1": "Bei Angriffen von hinten",
         "a4": {
-            "name": "Bei Anwendung von <strong>Letzte Salbung<strong/>",
-            "text": "Erhöhung der KT aller Truppenmitglieder"
+            "name": "Bei Anwendung von <strong>Letzte Salbung<strong/>"
         }
     },
     "char_KamisatoAyaka": {
         "afterSprint": "Nach dem Sprinten",
-        "afterSkill": "Nach der Anwendung von <strong>Kamisato-Stil: Hyouka</strong>",
         "afterSprintCryo": "Erhält <cryo>Cryo</cryo> nach dem Sprint",
-        "staminaRestore": "Stellt 10 Punkte Ausdauer wieder her",
         "snowflakeDMG": "Eisblüte SCH",
         "dmgBySnowflake": "Getroffene Gegner von <strong> Kamisato-Stil: Soumetsu</strong>'s Frostflocke Seki no To "
     },
     "char_Yoimiya": {
         "c1": "Von <strong>Ryuukin-Lohe</strong> betroffener Gegner besiegt",
         "c2": "Kritischer Treffer durch <pyro>Pyro-Schaden</pyro>",
-        "p2p": "Verwendung von <strong>Ryuukin-Steinbrech</strong>",
         "normPyroInfus": "<pyro>Standardang. Pyro-Kraft</pyro>",
         "c6Key_": "Naganohara-Meteorstrom Multiplikator"
     },
@@ -301,14 +282,6 @@
         }
     },
     "page_character_optimize": {
-        "useExcluded": {
-            "title": "Benutze gesperrte Artefakte"
-        },
-        "useEquipped": {
-            "modal": {
-                "desc1": "Bei der Erstellung eines Builds berücksichtigt der Optimizer nur ausgerüstete Artefakte von Charakteren unterhalb des aktuellen Charakters oder solche, die nicht auf der Liste stehen."
-            }
-        },
         "allowPartial": "Erlaube Teil-Builds (<5 Artefakte)",
         "constraintFilter": {
             "title": "Build-Beschränkungen",

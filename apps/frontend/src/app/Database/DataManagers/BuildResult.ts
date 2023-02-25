@@ -1,4 +1,4 @@
-import { allCharacterKeys, CharacterKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, allCharacterKeys, CharacterKey } from "@genshin-optimizer/consts";
 import { deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
@@ -31,7 +31,10 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
     } else {
       builds = builds.map(build => {
         if (!Array.isArray(build)) return []
-        return build.filter(id => this.database.arts.get(id))
+        const filteredBuild = build.filter(id => this.database.arts.get(id))
+        // Check that builds has only 1 artifact of each slot
+        if (allArtifactSlotKeys.some(s => filteredBuild.filter(id => this.database.arts.get(id)?.slotKey === s).length > 1)) return []
+        return filteredBuild
       }).filter(x => x.length)
       if (!Number.isInteger(buildDate)) buildDate = 0
     }

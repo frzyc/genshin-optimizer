@@ -1,10 +1,9 @@
 import { allElementKeys, TravelerKey } from '@genshin-optimizer/consts';
 import { MenuItem } from '@mui/material';
 import { useContext } from 'react';
-import ColorText from '../../Components/ColoredText';
 import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
 import { CharacterContext } from '../../Context/CharacterContext';
-import { stg } from '../../Data/SheetUtil';
+import { st, stg } from '../../Data/SheetUtil';
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback';
 import { travelerElements, TravelerToElement } from '../../Types/consts';
 
@@ -20,6 +19,6 @@ export default function TravelerElementSelect() {
   return <DropdownButton color={elementKey} title={<strong>{stg(`element.${elementKey}`)}</strong>}>
     {travelerElements.map(eleKey =>
       <MenuItem key={eleKey} selected={elementKey === eleKey} disabled={elementKey === eleKey} onClick={() => setCharacter(TravelerToElement(key as TravelerKey, eleKey))}>
-        <strong><ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText></strong></MenuItem>)}
+        <strong>{st(`coloredEle.${eleKey}`)}</strong></MenuItem>)}
   </DropdownButton>
 }

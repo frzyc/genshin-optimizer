@@ -11,6 +11,6 @@ export default function LocationIcon({ characterKey }: { characterKey: Character
   const characterSheet = getCharSheet(characterKey, gender)
   if (!characterSheet) return null
   return <BootstrapTooltip placement="right-end" title={<Typography>{characterSheet.name}</Typography>}>
-    <CharIconSide src={characterAsset(characterKey, "iconSide", gender)} size={3} />
+    <CharIconSide src={characterAsset(characterKey, "iconSide", gender)} size={3} sideMargin/>
   </BootstrapTooltip>
 }

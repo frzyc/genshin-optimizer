@@ -154,10 +154,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
-    if (old) {
-      validated.artifact.location = old.location
-      validated.artifact.exclude = old.exclude
-    }
+    if (old) validated.artifact.location = old.location
     return validated
   }, [artifact, artifactIdToEdit, old])
 

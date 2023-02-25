@@ -4,9 +4,7 @@ export const allHitModes = ["hit", "avgHit", "critHit"] as const
 export const allAmpReactions = ["vaporize", "melt",] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
-/**
- * @deprecated
- */
+
 export const allArtifactRarities = [5, 4, 3] as const
 /**
  * @deprecated

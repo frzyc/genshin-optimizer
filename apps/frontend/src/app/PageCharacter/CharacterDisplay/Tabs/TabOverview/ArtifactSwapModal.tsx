@@ -1,3 +1,4 @@
+import { ArtifactSlotKey } from "@genshin-optimizer/consts"
 import { Box, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react"
 import { useTranslation } from "react-i18next"
@@ -11,15 +12,14 @@ import ArtifactCard from "../../../../PageArtifact/ArtifactCard"
 import { artifactFilterConfigs, FilterOption, initialFilterOption } from "../../../../PageArtifact/ArtifactSort"
 import useForceUpdate from "../../../../ReactHooks/useForceUpdate"
 import useMediaQueryUp from "../../../../ReactHooks/useMediaQueryUp"
-import { SlotKey } from "../../../../Types/consts"
 import { filterFunction } from "../../../../Util/SortByFilters"
 import CompareBuildButton from "./CompareBuildButton"
-const numToShowMap = { xs: 6, sm: 6, md: 9, lg: 12, xl: 12 }
 
+const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const ArtifactFilterDisplay = lazy(() => import('../../../../Components/Artifact/ArtifactFilterDisplay'))
 
 export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }:
-  { onChangeId: (id: string) => void, slotKey: SlotKey, show: boolean, onClose: () => void }) {
+  { onChangeId: (id: string) => void, slotKey: ArtifactSlotKey, show: boolean, onClose: () => void }) {
   const { t } = useTranslation("page_character")
   const { database } = useContext(DatabaseContext)
   const clickHandler = useCallback((id) => {
