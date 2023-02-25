@@ -23,8 +23,16 @@ type PolySum = { type: 'sum', terms: Polynomial[], $c: number }
 function constP(n: number): LinTerm { return { type: 'lin', lin: { $c: n } } }
 function readP(k: string): LinTerm { return { type: 'lin', lin: { [k]: 1, $c: 0 } } }
 
-function sumP(...poly: Polynomial[]): Polynomial { return { type: 'sum', terms: poly, $c: 0 } }
-function prodP(...poly: Polynomial[]): Polynomial { return { type: 'prod', terms: poly, $k: 1 } }
+function sumP(...terms: (Polynomial | number)[]): PolySum {
+  const c = (terms.filter(v => (typeof v) === 'number') as number[]).reduce((a, b) => a + b, 0)
+  const poly = terms.filter(v => (typeof v) !== 'number') as Polynomial[]
+  return { type: 'sum', terms: poly, $c: c }
+}
+function prodP(...terms: (Polynomial | number)[]): PolyProd {
+  const k = (terms.filter(v => (typeof v) === 'number') as number[]).reduce((a, b) => a * b, 1)
+  const poly = terms.filter(v => (typeof v) !== 'number') as Polynomial[]
+  return { type: 'prod', terms: poly, $k: k }
+}
 function addP(n: number, poly: Polynomial): Polynomial {
   switch (poly.type) {
     case 'lin':
@@ -34,7 +42,7 @@ function addP(n: number, poly: Polynomial): Polynomial {
       poly.$c += n
       return poly
     case 'prod':
-      return sumP(poly, constP(n))
+      return sumP(poly, n)
   }
 }
 function mulP(n: number, poly: Polynomial): Polynomial {
@@ -72,8 +80,8 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[
   const nodeRanges = computeNodeRange([...minMaxes.keys()], computeFullArtRange(arts))
   for (const [node, minMax] of nodeRanges.entries()) minMaxes.set(node, minMax)
 
-  const upper = "u", lower = "l", outward = "o"
-  type Context = typeof upper | typeof lower | typeof outward
+  const upper = "u", lower = "l"
+  type Context = typeof upper | typeof lower
   const poly = customMapFormula<Context, Polynomial, OptNode>(nodes, upper, (f, context, _map) => {
     const { operation } = f
     const map: (op: OptNode, c?: Context) => Polynomial = (op, c = context) => _map(op, c)
@@ -83,7 +91,19 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[
       case "const": return constP(f.value)
       case "read": return readP(f.path[1])
       case "add": return sumP(...f.operands.map(op => map(op)))
-      case "mul": return prodP(...f.operands.map(op => map(op)))
+      case "mul": {
+        f.operands.forEach(op => {
+          const {min, max} = minMaxes.get(op)!
+          if (op.operation !== "const" && min < 0) throw new PolyError("Unallowed negative argument", operation)
+        })
+
+        const op = allOperations[operation]
+        const k = op(f.operands.filter(op => op.operation === "const").map(c => (c as ConstantNode<number>).value))
+        const ctx = k >= 0 ? context : oppositeContext
+        const ops = f.operands.filter(op => op.operation !== "const").map(op => map(op, ctx))
+        const ret = prodP(k, ...ops)
+        return ret
+      }
       case "min": case "max": {
         const op = allOperations[operation]
         const xs = f.operands.filter(op => op.operation !== "const"), [xOp] = xs
@@ -111,12 +131,17 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[
         const [xOp, cOp] = f.operands
         if (cOp.operation !== "const") throw new PolyError("Non-constant node", operation)
         const x = map(xOp), c = cOp.value, { min, max } = minMaxes.get(xOp)!
+        if (min <= -c) throw new PolyError("Unallowed negative argument", operation)
         const loc = Math.sqrt((min + c) * (max + c))
-        if (min <= -c) throw new PolyError("Unsupported pattern", operation)
-        return slopePoint(c / (c + loc) / (c + loc), loc, loc / (loc + c), x)
+        return slopePoint(c / (loc + c) / (loc + c), loc, loc / (loc + c), x)
       }
       case "threshold": {
         const [vOp, tOp, pOp, fOp] = f.operands
+        if (tOp.operation !== "const") throw new PolyError("Non-constant node", operation)
+        const { min, max } = minMaxes.get(vOp)!
+        if (min >= tOp.value) return map(pOp)
+        if (max < tOp.value) return map(fOp)
+
         if (fOp.operation !== "const" || tOp.operation !== "const")
           throw new PolyError("Non-constant node", operation)
         if (pOp.operation !== "const") {
@@ -129,14 +154,17 @@ export function polyUB(nodes: OptNode[], arts: ArtifactsBySlot): SumOfMonomials[
           minMaxes.set(mulOp, { min: Math.min(min, 0), max: Math.max(max, 0) })
           return map(mulOp)
         }
-        const { min, max } = minMaxes.get(vOp)!
         const thresh = tOp.value, pass = pOp.value, fail = fOp.value
         const isFirstHalf = (pass > fail) === (context === upper)
 
-        const v = map(vOp, pass > fail ? context : oppositeContext)
-        const yThresh = isFirstHalf ? pass : fail
-        const slope = (pass - fail) / (isFirstHalf ? (thresh - min) : (max - thresh))
-        return slopePoint(slope, thresh, yThresh, v)
+        const v = map(vOp, isFirstHalf ? upper : lower)
+        if (isFirstHalf) {
+          const slope = (pass - fail) / (thresh - min)
+          return slopePoint(slope, thresh, pass, v)
+        }
+        // not first half -> return const(fail)
+        // Can interpolate slopePoint on 2nd half, but I choose not to
+        return constP(fail)
       }
       default: assertUnreachable(operation)
     }
