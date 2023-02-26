@@ -23,6 +23,10 @@ export function charData(data: {
     ascension.add(data.ascension),
     constellation.add(data.constellation),
     ...Object.entries(data.custom).map(([k, v]) => custom[k].add(v)),
+
+    // Default char
+    selfBuff.base.critRate_.add(0.05),
+    selfBuff.base.critDMG_.add(0.5),
   ]
 }
 
@@ -43,8 +47,8 @@ export function weaponData(data: {
 }
 
 export function artifactsData(data: {
-  set: ArtifactSetKey, stats: { key: Stat, value: number }[]
-}[], custom: Record<ArtifactSetKey, Record<string, number | string>>): Data {
+  set: ArtifactSetKey, stats: readonly { key: Stat, value: number }[]
+}[], custom: Partial<Record<ArtifactSetKey, Record<string, number | string>>>): Data {
   const { common: { count }, premod } = convert(selfTag, { src: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -71,7 +75,7 @@ export function artifactsData(data: {
   ]
 }
 
-export function teamData(active: Member[], members: Member[]): Data {
+export function teamData(active: readonly Member[], members: readonly Member[]): Data {
   const teamEntry = reader.withTag({ et: 'team' })
   const stack = {
     in: reader.withTag({ et: 'stackIn' }),
