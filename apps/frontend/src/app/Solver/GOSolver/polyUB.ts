@@ -20,7 +20,6 @@ type LinTerm = { type: 'lin', lin: Linear, min: number, max: number }
 type PolyProd = { type: 'prod', terms: PolynomialWithBounds[], $k: number, min: number, max: number }
 type PolySum = { type: 'sum', terms: PolynomialWithBounds[], $c: number, min: number, max: number }
 
-/** Convenience functions modify in-place if possible */
 function constP(n: number): LinTerm { return { type: 'lin', lin: { $c: n }, min: n, max: n } }
 function readP(k: string, minmax: MinMax): LinTerm { return { type: 'lin', lin: { [k]: 1, $c: 0 }, ...minmax } }
 function sumP(...terms:  (PolynomialWithBounds | number)[]): PolySum {
