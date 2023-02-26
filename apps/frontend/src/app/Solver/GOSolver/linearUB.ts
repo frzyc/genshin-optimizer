@@ -1,5 +1,5 @@
 import { OptNode } from "../../Formula/optimization";
-import { cartesian } from "../../Util/Util";
+import { assertUnreachable, cartesian } from "../../Util/Util";
 import { ArtifactsBySlot, DynStat, MinMax, computeFullArtRange } from "../common";
 import { polyUB } from "./polyUB";
 import { solveLP } from "./solveLP";
@@ -21,9 +21,9 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
   return polys.map(poly =>
     weightedSum(...poly.map(mon => {
       const bounds = mon.terms.map(key => minMax[key])
-      const { w, $c } = lub(bounds)
+      const { w, $c } = linbound(bounds, mon.$k >= 0 ? 'upper' : 'lower')
       const linboi: Linear = { $c }
-      mon.terms.forEach((key, i) => linboi[key] = w[i])
+      mon.terms.forEach((key, i) => linboi[key] = w[i] + (linboi[key] ?? 0))
       return [mon.$k, linboi] as readonly [number, Linear]
     }))
   )
@@ -44,7 +44,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
  * @returns A linear function L(x) = w . x + $c
  *            satisfying      m(x) <= L(x) <= m(x) + err
  */
-function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
+function linbound(bounds: MinMax[], direction: ("upper" | "lower") = "upper"): { w: number[], $c: number, err: number } {
   if (bounds.length === 0) return { w: [], $c: 1, err: 0 } // vacuous product is 0
   const nVar = bounds.length
 
@@ -58,10 +58,19 @@ function lub(bounds: MinMax[]): { w: number[], $c: number, err: number } {
   const cons = cartesian(...bounds.map(({ min, max }) => [min, max]))
     .flatMap(coords => {
       const prod = coords.reduce((prod, v) => prod * v, 1)
-      return [
-        [...coords.map(v => -v), 1, 0, -prod],
-        [...coords, -1, -1, prod],
-      ]
+      let lpRow: number[][];
+      if (direction === 'upper')
+        lpRow = [
+          [...coords.map(v => -v), 1, 0, -prod],
+          [...coords, -1, -1, prod],
+        ]
+      else if (direction === 'lower')
+        lpRow = [
+          [...coords, -1, 0, prod],
+          [...coords.map(v => -v), 1, -1, -prod],
+        ]
+      else assertUnreachable(direction)
+      return lpRow
     })
 
   const objective = [...bounds.map(_ => 0), 0, 1]

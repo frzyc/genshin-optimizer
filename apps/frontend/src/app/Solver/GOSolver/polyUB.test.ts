@@ -3,6 +3,7 @@ import { constant, customRead, max, min, prod, res, sum, threshold, frac } from 
 import { cartesian } from "../../Util/Util"
 import { ArtifactsBySlot } from "../common"
 import { DynStat } from "../common"
+import { Linear, linearUB } from "./linearUB"
 import { SumOfMonomials, polyUB } from "./polyUB"
 
 const zero = 1e-6
@@ -12,6 +13,11 @@ function evalPoly(polys: SumOfMonomials[], x: DynStat) {
       const trm = mon.$k * mon.terms.reduce((v, k) => v * (x[k] ?? 0), 1)
       return tot + trm
     }, 0)
+  )
+}
+function evalLinear(lins: Linear[], x: DynStat) {
+  return lins.map(lin =>
+    Object.entries(lin).reduce((tot, [k, v]) => tot + v * (x[k] ?? 0), lin.$c)
   )
 }
 
@@ -24,6 +30,7 @@ const crcd0 = sum(1, prod(max(sum(customRead(['dyn', 'critRate_']), -.3), 0), cu
 const dmg_ = sum(1, customRead(['dyn', 'hydroDmg_']), threshold(customRead(['dyn', 'HeartOfDepth']), 2, .2, 0), threshold(customRead(['dyn', 'HeartOfDepth']), 4, .35, 0))
 const er = customRead(['dyn', 'enerRech_'])
 const em = prod(2.78, frac(customRead(['dyn', 'eleMas']), 1400))
+const ohc = customRead(['dyn', 'OceanHuedClam'])
 const exampleArts: ArtifactsBySlot = {
   base: { 'hp': 13471, 'hp_': .496, 'atk': 842, 'def': 657, 'enerRech_': 1, 'hydroDmg_': .288, 'critDMG_': .5, 'critRate_': .05 },
   values: {
@@ -47,14 +54,17 @@ const exampleArts: ArtifactsBySlot = {
 
 function doTest(...nodes: OptNode[]) {
   const poly = polyUB(nodes, exampleArts)
+  const linear = linearUB(nodes, exampleArts)
   const abd = exampleArts.values
   const compute = precompute(nodes, exampleArts.base, f => f.path[1], 5)
   cartesian(abd.flower, abd.plume, abd.sands, abd.goblet, abd.circlet).forEach(arts => {
     const out = compute(arts)
     const stats = { ...exampleArts.base }
     arts.forEach(art => Object.entries(art.values).forEach(([k, v]) => stats[k] = v + (stats[k] ?? 0)))
-    const ubs = evalPoly(poly, stats)
-    ubs.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - zero))
+    const ubsPoly = evalPoly(poly, stats)
+    const ubsLin = evalLinear(linear, stats)
+    ubsPoly.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - zero))
+    ubsLin.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - zero))
   })
 }
 
@@ -74,31 +84,39 @@ describe("polyUB", () => {
   describe("simple", () => {
     test("constant", () => {
       const poly = polyUB([constant(5)], exampleArts)
+      const lin = linearUB([constant(5)], exampleArts)
       expect(evalPoly(poly, {})).toEqual([5])
+      expect(evalLinear(lin, {})).toEqual([5])
     })
     test("linear", () => {
       const poly = polyUB([customRead(['dyn', 'atk_'])], exampleArts)
+      const lin = linearUB([customRead(['dyn', 'atk_'])], exampleArts)
       expect(evalPoly(poly, { 'atk_': 5 })).toEqual([5])
       expect(evalPoly(poly, { 'atk_': 20.5 })).toEqual([20.5])
+      expect(evalLinear(lin, { 'atk_': 5 })).toEqual([5])
+      expect(evalLinear(lin, { 'atk_': 20.5 })).toEqual([20.5])
     })
     test("sum", () => doTest(hp, atk, def))
     test("mul", () => doTest(prod(hp, atk)))
     test("negative mul", () => doTest(prod(-1, hp, atk)))
     test("min", () => doTest(min(atk, 1400)))
     test("max", () => doTest(max(atk, 1400)))
-    test("res", () => doTest(res(sum(er, .1)), res(sum(er, -1.5)), res(sum(er, -2.2)))) // TODO: fix
+    test("res", () => doTest(res(sum(er, .1)), res(sum(er, -1.5)), res(sum(er, -2.2)))) // TODO: check better intervals
     test("sum_frac", () => doTest(em))
     test("threshold", () => {
-      /* Tests always-pass/always-fail and pass > fail, pass < fail for both upper & lower contexts */
-      doTest(threshold(customRead(['dyn', 'OceanHuedClam']), 0, 1, 0))
-      doTest(threshold(customRead(['dyn', 'OceanHuedClam']), 10, 1, 0))
+      doTest(
+        // test always pass/always fail
+        threshold(ohc, 0, 1, 0),
+        threshold(ohc, 10, 1, 0),
 
-      doTest(threshold(customRead(['dyn', 'OceanHuedClam']), 4, 1, 0))
-      doTest(threshold(customRead(['dyn', 'OceanHuedClam']), 4, 0, 1))
+        // test upper bound thresh
+        threshold(ohc, 4, 1, 0),
+        threshold(ohc, 4, 0, 1),
 
-      // Use `res` to flip context
-      doTest(res(threshold(customRead(['dyn', 'OceanHuedClam']), 4, -1, 0)))
-      doTest(res(threshold(customRead(['dyn', 'OceanHuedClam']), 4, 0, -1)))
+        // test lower bound thresh
+        prod(-1, threshold(ohc, 4, 1, 0)),
+        prod(-1, threshold(ohc, 4, 0, 1)),
+      )
     })
   })
   describe('composite', () => {
@@ -106,21 +124,28 @@ describe("polyUB", () => {
     test("koko vape auto", () => doTest(prod(atk, dmg_, crcd, em)))
     test("silliness", () => doTest(sum(prod(atk, dmg_, crcd, em), prod(def, hp, dmg_, em))))
     test("higher powers", () => doTest(prod(atk, atk), prod(em, em, em, crcd), prod(dmg_, dmg_, em)))
+  })
+
+  describe('wacky', () => {
+    /* These cases probably wont come up in normal use, but just to test the system. */
     test("prod context flip", () => {
       const n = res(sum(prod(min(1, customRead(['dyn', '0'])), min(1, customRead(['dyn', '1']))), -1))
       const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
       const p = polyUB([n], fakeArts)
+      const l = linearUB([n], fakeArts)
       const compute = precompute([n], {}, f => f.path[1], 1)
-      fakeArts.values.circlet.forEach(art =>
+      fakeArts.values.circlet.forEach(art => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0])
-      )
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0])
+      })
     })
     test("threshold nonlinear argument", () => {
       const n = prod(-1, sum(prod(min(1, customRead(['dyn', '0'])), min(1, customRead(['dyn', '1']))), 1))
       const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
 
-      const nodes = [n, threshold(n, -1.35, -1, 0), threshold(n, -1.35, 0, -1), res(threshold(n, -1.65, -1, 0)), res(threshold(n, -1.65, 0, -1))]
+      const nodes = [n, n, threshold(n, -1.35, -1, 0), threshold(n, -1.35, 0, -1), res(threshold(n, -1.65, -1, 0)), res(threshold(n, -1.65, 0, -1))]
       const p = polyUB(nodes, fakeArts)
+      const l = linearUB(nodes, fakeArts)
       const compute = precompute(nodes, {}, f => f.path[1], 1)
       fakeArts.values.circlet.forEach(art => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
@@ -128,12 +153,64 @@ describe("polyUB", () => {
         expect(evalPoly(p, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - zero)
         expect(evalPoly(p, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - zero)
         expect(evalPoly(p, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - zero)
+
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
+        expect(evalLinear(l, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - zero)
+        expect(evalLinear(l, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - zero)
+        expect(evalLinear(l, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - zero)
       })
     })
+    test("product of mixed signs", () => {
+      // Boundable, but not currently handled
+      const n = prod(sum(customRead(['dyn', '0']), -2), customRead(['dyn', '1']))
+      const n2 = prod(sum(customRead(['dyn', '0']), -2), min(1, customRead(['dyn', '1'])))
+      const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
+
+      const p = polyUB([n, n2], fakeArts)
+      const l = linearUB([n, n2], fakeArts)
+      const compute = precompute([n, n2], {}, f => f.path[1], 1)
+      fakeArts.values.circlet.forEach(art => {
+        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+        expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
+
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
+      })
+    })
+
   })
   describe('errors', () => {
-    test("zero crossing in product", () => {
-      const n = prod(sum(customRead(['dyn', '0']), -1), sum(customRead(['dyn', '1']), -1))
+    test("non-polynomial zero crossing in product", () => {
+      // Could be boundable, but involves polynomial factorization.
+      const n = prod(sum(customRead(['dyn', '0']), -1), min(customRead(['dyn', '1']), 1.5))
+      const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
+
+      expect(() => polyUB([n], fakeArts)).toThrow()
+    })
+    test("non-const threshold p/f", () => {
+      // Boundable, but not currently handled
+      const n = threshold(ohc, 3, atk, 2000)
+      expect(() => polyUB([n], exampleArts)).toThrow()
+    })
+  })
+  describe("fucky wucky products", () => {
+    test("small post-product zero crossing", () => {
+      const n = prod(-1, sum(min(.1, customRead(['dyn', '0'])), -1.5), sum(min(.1, customRead(['dyn', '1'])), -1.5))
+      const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
+
+      const p = polyUB([n], fakeArts)
+      const l = linearUB([n], fakeArts)
+      const compute = precompute([n], {}, f => f.path[1], 1)
+      fakeArts.values.circlet.forEach(art => {
+        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+      })
+    })
+    test("large post-product zero crossing", () => {
+      // Boundable, but not currently handled
+      const n = prod(-1, sum(min(.1, customRead(['dyn', '0'])), -.2), sum(min(.1, customRead(['dyn', '1'])), -.2))
       const fakeArts = toFakeArts([0, 0], [1, 1], [2, 2], [1, .5], [1.5, 1], [1, 0], [2, 1], [2, 0])
 
       expect(() => polyUB([n], fakeArts)).toThrow()

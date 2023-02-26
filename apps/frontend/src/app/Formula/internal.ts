@@ -88,7 +88,7 @@ export function customMapFormula<Context, Output, Input extends Base<Input>>(for
     const [visiting, mapping] = current
 
     const old = mapping.get(formula)
-    if (old) return { ...old }
+    if (old) return old
 
     if (visiting.has(formula))
       throw new Error("Found cyclical dependency during formula mapping")
