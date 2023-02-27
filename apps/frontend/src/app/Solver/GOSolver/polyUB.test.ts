@@ -6,7 +6,7 @@ import { DynStat } from "../common"
 import { Linear, linearUB } from "./linearUB"
 import { SumOfMonomials, polyUB } from "./polyUB"
 
-const zero = 1e-6
+const prettyMuchZero = 1e-6
 function evalPoly(polys: SumOfMonomials[], x: DynStat) {
   return polys.map(poly =>
     poly.reduce((tot, mon) => {
@@ -63,8 +63,8 @@ function doTest(...nodes: OptNode[]) {
     arts.forEach(art => Object.entries(art.values).forEach(([k, v]) => stats[k] = v + (stats[k] ?? 0)))
     const ubsPoly = evalPoly(poly, stats)
     const ubsLin = evalLinear(linear, stats)
-    ubsPoly.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - zero))
-    ubsLin.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - zero))
+    ubsPoly.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero))
+    ubsLin.forEach((ub, i) => expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero))
   })
 }
 
@@ -125,7 +125,6 @@ describe("polyUB", () => {
     test("silliness", () => doTest(sum(prod(atk, dmg_, crcd, em), prod(def, hp, dmg_, em))))
     test("higher powers", () => doTest(prod(atk, atk), prod(em, em, em, crcd), prod(dmg_, dmg_, em)))
   })
-
   describe('wacky', () => {
     /* These cases probably wont come up in normal use, but just to test the system. */
     test("prod context flip", () => {
@@ -148,17 +147,17 @@ describe("polyUB", () => {
       const l = linearUB(nodes, fakeArts)
       const compute = precompute(nodes, {}, f => f.path[1], 1)
       fakeArts.values.circlet.forEach(art => {
-        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
-        expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
-        expect(evalPoly(p, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - zero)
-        expect(evalPoly(p, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - zero)
-        expect(evalPoly(p, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - zero)
+        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
+        expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - prettyMuchZero)
+        expect(evalPoly(p, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - prettyMuchZero)
+        expect(evalPoly(p, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - prettyMuchZero)
+        expect(evalPoly(p, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - prettyMuchZero)
 
-        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
-        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
-        expect(evalLinear(l, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - zero)
-        expect(evalLinear(l, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - zero)
-        expect(evalLinear(l, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - zero)
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
+        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - prettyMuchZero)
+        expect(evalLinear(l, art.values)[2]).toBeGreaterThanOrEqual(compute([art])[2] - prettyMuchZero)
+        expect(evalLinear(l, art.values)[3]).toBeGreaterThanOrEqual(compute([art])[3] - prettyMuchZero)
+        expect(evalLinear(l, art.values)[4]).toBeGreaterThanOrEqual(compute([art])[4] - prettyMuchZero)
       })
     })
     test("product of mixed signs", () => {
@@ -171,14 +170,13 @@ describe("polyUB", () => {
       const l = linearUB([n, n2], fakeArts)
       const compute = precompute([n, n2], {}, f => f.path[1], 1)
       fakeArts.values.circlet.forEach(art => {
-        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
-        expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
+        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
+        expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - prettyMuchZero)
 
-        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
-        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - zero)
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
+        expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(compute([art])[1] - prettyMuchZero)
       })
     })
-
   })
   describe('errors', () => {
     test("non-polynomial zero crossing in product", () => {
@@ -203,9 +201,9 @@ describe("polyUB", () => {
       const l = linearUB([n], fakeArts)
       const compute = precompute([n], {}, f => f.path[1], 1)
       fakeArts.values.circlet.forEach(art => {
-        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+        expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
 
-        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - zero)
+        expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(compute([art])[0] - prettyMuchZero)
       })
     })
     test("large post-product zero crossing", () => {
