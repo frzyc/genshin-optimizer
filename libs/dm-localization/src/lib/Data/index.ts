@@ -49,11 +49,32 @@ export const mapHashData = {
       name: 1292621586,
       desc: 2900013027
     }
+  },
+  statKey: {
+    hp: 2404061249,
+    hp_: 2404061249,
+    atk: 638981362,
+    atk_: 638981362,
+    def: 527947494,
+    def_: 527947494,
+    eleMas: 382595279,
+    enerRech_: 1735465728,
+    critRate_: 1916797986,
+    critDMG_: 4137936461,
+    heal_: 3911103831,
+    physical_dmg_: 3763864883,
+    anemo_dmg_: 312842903,
+    geo_dmg_: 2557985416,
+    electro_dmg_: 3514877774,
+    hydro_dmg_: 3619239513,
+    pyro_dmg_: 999734248,
+    cryo_dmg_: 4054347456,
+    dendro_dmg_: 1824382851,
   }
 }
 export function mapHashDataOverride() {
-  (mapHashData.charNames as any).TravelerF = 3241049361;
-  (mapHashData.charNames as any).TravelerM = 2329553598;
+  (mapHashData.charNames as { TravelerF: number }).TravelerF = 3241049361;
+  (mapHashData.charNames as { TravelerM: number }).TravelerM = 2329553598;
   (mapHashData.char as any).TravelerF.name = 3241049361;
   (mapHashData.char as any).TravelerM.name = 2329553598;
 }

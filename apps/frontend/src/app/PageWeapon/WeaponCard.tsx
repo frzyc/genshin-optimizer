@@ -2,7 +2,7 @@ import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { Lock, LockOpen } from "@mui/icons-material";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
+import { Box, Button, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Assets from "../Assets/Assets";

@@ -2,6 +2,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Box, Button, ButtonGroup, List, ListSubheader, Popper, useMediaQuery, useTheme } from '@mui/material';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { artStatPercent } from '../Data/Artifacts/Artifact';
 import { InputPremodKey } from '../Formula';
 import KeyMap from '../KeyMap';
 import StatIcon from '../KeyMap/StatIcon';
@@ -12,17 +13,15 @@ import { GeneralAutocomplete, GeneralAutocompleteOption } from './GeneralAutocom
 export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
   statKeys: InputPremodKey[], statFilters: Dict<InputPremodKey, number>, setStatFilters: (statFilters: Dict<InputPremodKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
 }) {
+  const { t: tk } = useTranslation("statKey_gen")
   const statOptions = useMemo(() => statKeys.map((statKey: InputPremodKey): StatOption => ({
     key: statKey,
     grouper: inputPremodKeyToGroupMap[statKey],
-    label: ([...allMainStatKeys, ...allSubstatKeys] as string[]).includes(statKey) ? KeyMap.getArtStr(statKey as MainStatKey | SubstatKey) : (KeyMap.getStr(statKey) ?? "ERROR"),
+    label: ([...allMainStatKeys, ...allSubstatKeys] as string[]).includes(statKey) ? `${tk(statKey as MainStatKey | SubstatKey)}${artStatPercent(statKey as MainStatKey | SubstatKey)}` : (KeyMap.getStr(statKey) ?? "ERROR"),
     variant: KeyMap.getVariant(statKey)
-  }))
-    .sort((a, b) =>
-      allGroupKeys.indexOf(a.grouper as GroupKey) - allGroupKeys.indexOf(b.grouper as GroupKey)
-    ),
-    [statKeys]
-  )
+  })).sort((a, b) =>
+    allGroupKeys.indexOf(a.grouper as GroupKey) - allGroupKeys.indexOf(b.grouper as GroupKey)
+  ), [tk, statKeys])
 
   const getOptionDiabled = useCallback((option: StatOption) =>
     Object.keys(statFilters).includes(option.key),

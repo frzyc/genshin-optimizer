@@ -9,6 +9,11 @@ import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
 
 const maxStar: RarityKey = 5
 
+const showPercentKeys = ["hp_", "def_", "atk_"] as const
+export function artStatPercent(statkey: MainStatKey | SubstatKey) {
+  return showPercentKeys.includes(statkey as typeof showPercentKeys[number]) ? "%" : ""
+}
+
 export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
   const values = Object.keys(ArtifactSubstatLookupTable[rarity][key])
   const low = parseFloat(values[0])
