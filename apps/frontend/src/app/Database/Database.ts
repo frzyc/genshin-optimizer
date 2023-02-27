@@ -149,7 +149,7 @@ export class ArtCharDatabase {
 
     this.dataManagers.map(dm => dm.importGOOD(good, result));
     this.dataEntries.map(de => de.importGOOD(good, result))
-
+    this.weapons.ensureEquipments()
     unfollows.forEach(f => f())
 
     return result
