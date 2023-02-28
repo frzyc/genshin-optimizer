@@ -4,19 +4,6 @@
   "sourceRoot": "libs/formula/src",
   "projectType": "library",
   "targets": {
-    "genfiles": {
-      "command": "npx ts-node -r tsconfig-paths/register -P libs/formula/tsconfig.lib.json libs/formula/src/data.gen.ts",
-      "inputs": [
-        "production",
-        "^production"
-      ],
-      "outputs": [
-        "{projectRoot}/src/**/*.gen.json"
-      ],
-      "dependsOn": [
-        "^build"
-      ]
-    },
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": [
@@ -31,7 +18,6 @@
         ]
       },
       "dependsOn": [
-        "genfiles",
         "^pipeline"
       ],
       "inputs": [
