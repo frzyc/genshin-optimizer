@@ -95,18 +95,18 @@ export function teamData(active: readonly Member[], members: readonly Member[]):
       return members.map(src =>
         entry.reread(reader.withTag({ dst, member: src, src: 'agg', et: 'teamBuff' })))
     }),
+    // Stacking
+    ...members.map((member, i) => stack.int.add(cmpEq(stack.in.withTag({ member }).sum, 1, i + 1))),
+    ...members.map((member, i) => stack.out.withTag({ member }).add(cmpEq(stack.int.max, i + 1, 1))),
     // Total Team Stat
-
+    //
     // CAUTION:
-    // This formula only works for queries with default `undefined` or `sum` accumulators.
+    // This formula only works for queries with default `undefined` or `sum` accumulator.
     // Using this on queries with other accumulators, e.g., `ampMulti` may results in an
     // incorrect result. We cannot use `reread` here because the outer `team` query may
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     ...members.map(member => teamEntry.add(reader.withTag({ member, et: 'self' }).sum)),
-    // Stacking
-    ...members.map((member, i) => stack.int.add(cmpEq(stack.in.withTag({ member }).sum, 1, i + 1))),
-    ...members.map((member, i) => stack.out.withTag({ member }).add(cmpEq(stack.int.max, i + 1, 1))),
   ]
 }

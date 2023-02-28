@@ -1,8 +1,8 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
-import { allCustoms, percent, register, self, selfBuff, teamBuff } from '../../util'
-import { CharDataGen, customDmg, dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
+import { allCustoms, customDmg, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -82,7 +82,7 @@ export default register(info.key,
     teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))),
   teamBuff.reaction.infusionIndex.add(cmpEq(afterBurst, 'on', infusionPrio.team.hydro)),
 
-  // Dmg Formula
+  // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')),
   dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
@@ -92,7 +92,9 @@ export default register(info.key,
     dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}_dmg`], 'skill')),
   (['skill', 'wave'] as const).flatMap(k =>
     dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}_dmg`], 'burst')),
-  shield(`skill_shield`, info, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill'),
-  shield(`skill_hydroShield`, info, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill', { ele: 'hydro' }),
-  customDmg(`c6`, info, 'burst', prod(dm.constellation6.dmg, final.hp)) // TODO Guard this behind c6
+  shield(`skill_shield`, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill'),
+  shield(`skill_hydroShield`, 'hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill', { ele: 'hydro' }),
+  customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
+    cond: cmpGE(self.char.constellation, 6, 'dmg', '')
+  }),
 )

@@ -1,7 +1,7 @@
 import { compileTagMapValues } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, enemyDebuff, reader, selfBuff, selfTag, userBuff } from './data/util'
+import { convert, Data, enemyDebuff, reader, selfBuff, selfTag, team, userBuff } from './data/util'
 import { } from './debug'
 import { artifactsData, charData, teamData, weaponData, withMember } from './util'
 
@@ -53,7 +53,6 @@ describe('example', () => {
 
   const member0 = convert(selfTag, { member: 'member0', et: 'self' })
   const member1 = convert(selfTag, { member: 'member1', et: 'self' })
-  const team = convert(selfTag, { et: 'team' }) // `member` field will be ignored
 
   test('calculate stats', () => {
     expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)

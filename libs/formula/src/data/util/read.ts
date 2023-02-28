@@ -14,7 +14,8 @@ export const fixedTags = {
 export type Tag = {
   [key in keyof typeof fixedTags]?: typeof fixedTags[key][number] | null
 } & { name?: string | null, qt?: string | null, q?: string | null }
-export type AllTag = {
+
+type AllTag = {
   [key in keyof Tag]-?: Exclude<Tag[key], null>
 }
 
@@ -30,6 +31,9 @@ export class Read implements Base {
     this.accu = accu
   }
 
+  name(name: string): Read {
+    return usedNames.add(name), this.with('name', name)
+  }
   with<C extends keyof Tag>(cat: C, val: AllTag[C], accu?: Read['accu']): Read {
     return new Read({ ...this.tag, [cat]: val }, accu ?? this.accu)
   }
@@ -50,9 +54,7 @@ export class Read implements Base {
   get max() { return new Read(this.tag, 'max') }
   get min() { return new Read(this.tag, 'min') }
 
-  name(name: string): Read { return usedNames.add(name), this.with('name', name) }
-
-  // Additional Modifiers
+  // Optional Modifiers
 
   // Move
   get normal(): Read { return this.with('move', 'normal') }

@@ -1,7 +1,6 @@
 import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/waverider'
-import { convert, Data, enemy, percent, reader, selfBuff, selfTag } from '../util'
+import { Data, enemy, percent, reader, self, selfBuff } from '../util'
 
-const self = convert(selfTag, { et: 'self' })
 const { move, ele, amp, cata, trans } = self.prep
 
 const data: Data = [

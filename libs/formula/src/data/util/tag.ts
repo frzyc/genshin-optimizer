@@ -1,12 +1,11 @@
 import { constant, NumNode, tag } from '@genshin-optimizer/waverider'
-import { Data } from '.'
 import { Source, Stat } from './listing'
-import { AllTag, Read, Tag } from './read'
+import { Read, Tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { q: '_' })
 }
-export function priorityTable<T extends Record<string, Record<string, number>>>(entries: T, defaultValue = ''): string[] {
+export function priorityTable(entries: Record<string, Record<string, number>>, defaultValue = ''): string[] {
   const map = new Map(Object.values(entries).flatMap(entries => Object.entries(entries).map(([k, v]) => [v, k])))
   const max = Math.max(...map.keys()), table: string[] = []
   for (let i = 0; i < max; i++)
@@ -20,7 +19,7 @@ export function priorityTable<T extends Record<string, Record<string, number>>>(
  * *--------*-----------------------------------------------------*
  * |        |                      Affected By                    |
  * |  Type  *-----------*-----*----------*--------*------*--------*
- * |        | Team Buff | Art | Reaction | Weapon | Char | Preset |
+ * |        | Team Buff | Art | Reaction | Weapon | Char | Custom |
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
  * |  iso   |     -     |  -  |    -     |   -    | YES  |  YES   |
@@ -31,13 +30,13 @@ export function priorityTable<T extends Record<string, Record<string, number>>>(
  *
  * ```
  * <tag list> = {
- *   <qt>: {
- *     <q>: Desc
+ *   <query type>: {
+ *     <query>: Desc
  *   }
  * }
  */
 
-type Desc = { src: AllTag['src'], accu: Read['accu'] }
+type Desc = { src: Source, accu: Read['accu'] }
 const agg: Desc = { src: 'agg', accu: 'sum' }
 const iso: Desc = { src: 'iso', accu: undefined }
 const isoSum: Desc = { src: 'iso', accu: 'sum' }
@@ -91,15 +90,6 @@ export function convert<V extends Record<string, Record<string, Desc>>>(v: V, ta
 }
 
 export const queries = new Set([...Object.values(selfTag), ...Object.values(enemyTag)].flatMap(x => Object.keys(x)))
-
-export function register(src: Source, ...data: (Data[number] | Data)[]): Data {
-  function internal({ tag, value }: Data[number]): Data[number] {
-    if (tag.name) tag = { ...tag, nameSrc: src }
-    else tag = { ...tag, src }
-    return { tag, value }
-  }
-  return data.flatMap(data => Array.isArray(data) ? data.map(internal) : internal(data))
-}
 
 // Default queries
 export const self = convert(selfTag, { et: 'self' })

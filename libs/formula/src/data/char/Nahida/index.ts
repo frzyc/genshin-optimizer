@@ -1,6 +1,6 @@
 import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { activeCharBuff, allCustoms, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
-import { CharDataGen, customDmg, dataGenToCharInfo, dmg, entriesForChar } from '../util'
+import { activeCharBuff, allCustoms, customDmg, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
+import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -146,7 +146,7 @@ export default register(info.key,
   c2qsa_defRed_.add(cmpGE(constellation, 2, cmpEq(c2QSA, 'on', percent(dm.constellation2.defDec_)))),
   enemyDebuff.common.defRed_.reread(c2qsa_defRed_),
 
-  // DMG Formulas
+  // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')),
   dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
@@ -154,10 +154,12 @@ export default register(info.key,
     dmg(`plunging_${k}`, info, 'atk', v, 'plunging')),
   (['press', 'hold'] as const).flatMap(k =>
     dmg(`skill_${k}`, info, 'atk', dm.skill[`${k}Dmg`], 'skill')),
-  customDmg('karma_dmg', info, 'skill', sum(
-    prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
-    prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas),
-  )),
-  selfBuff.premod.dmg_.name('karma_dmg').add(sum(a4Karma_dmg_, burst_karma_dmg_)),
-  selfBuff.premod.critRate_.name('karma_dmg').add(a4Karma_critRate_),
+  customDmg('karma_dmg', info.ele, 'skill',
+    sum(
+      prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
+      prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas),
+    ), undefined,
+    selfBuff.premod.dmg_.add(sum(a4Karma_dmg_, burst_karma_dmg_)),
+    selfBuff.premod.critRate_.add(a4Karma_critRate_),
+  ),
 )

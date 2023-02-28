@@ -131,16 +131,17 @@ export default register(info.key,
   enemyDebuff.common.preRes.hydro.add(c2_hydro_enemyRes_),
   enemyDebuff.common.preRes.dendro.add(c2_dendro_enemyRes_),
 
-  // DMG Formulas
+  // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
     dmg(`normal_${i}`, info, 'atk', arr, 'normal')),
   ([1, 2] as const).flatMap(i =>
     dmg(`charged_${i}`, info, 'atk', dm.charged[`hit${i}`], 'charged')),
   Object.entries(dm.plunging).flatMap(([k, v]) =>
     dmg(`plunging_${k}`, info, 'atk', v, 'plunging')),
-  (['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'moon', 'wheel'] as const).flatMap(k =>
+  (['skill', 'dance1', 'dance2', 'whirl1', 'whirl2', 'wheel'] as const).flatMap(k =>
     dmg(`skill_${k}`, info, 'hp', dm.skill[`${k}Dmg`], 'skill')),
+  dmg(`skill_moon`, info, 'hp', dm.skill[`moonDmg`], 'skill', undefined,
+    selfBuff.premod.dmg_.add(c1_moon_dmg_)),
   (['skill', 'aeon'] as const).flatMap(k =>
     dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst')),
-  selfBuff.premod.dmg_.name('skillMoon').add(c1_moon_dmg_),
 )
