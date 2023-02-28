@@ -158,9 +158,9 @@
     "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
     "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
     "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
-    "electro": "Enemy is affected by Electro",
-    "cryo": "Enemy is affected by Cryo",
-    "frozenOrCryo": "Enemy is Frozen or affected by Cryo"
+    "electro": "Enemy is affected by <electro>Electro</electro>",
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>"
   },
   "getElementalOrbParticle": "After picking up an Elemental Orb or Particle"
 }
