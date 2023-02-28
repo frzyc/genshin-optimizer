@@ -1,4 +1,6 @@
 import { CharacterKey } from "@genshin-optimizer/consts"
+import { IArtifact } from "../Types/artifact"
+import { IWeapon } from "../Types/weapon"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"
@@ -260,6 +262,68 @@ describe("Database", () => {
     expect(database.chars.get("Dori")?.equippedWeapon).toBeTruthy()
   })
 
+  test("import with overlapping artifact ids", () => {
+
+    const old1 = randomizeArtifact({ slotKey: "plume" })
+    const old2 = randomizeArtifact({ slotKey: "flower" })
+    const new1 = randomizeArtifact({ slotKey: "goblet" })
+    const new2 = randomizeArtifact({ slotKey: "circlet" })
+
+    const oldId1 = database.arts.new(old1)
+    const oldId2 = database.arts.new(old2)
+
+    const good: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Genshin Optimizer",
+      artifacts: [
+        { ...new1, id: oldId1 } as IArtifact,
+        { ...new2, id: oldId2 } as IArtifact,
+      ]
+    }
+
+    const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+    expect(importResult.artifacts.notInImport).toEqual(2)
+    expect(database.arts.values.length).toEqual(4)
+    // Expect imports to overwrite the id of old
+    expect(database.arts.get(oldId1)?.slotKey).toEqual("goblet")
+    expect(database.arts.get(oldId2)?.slotKey).toEqual("circlet")
+    // Expect old artifacts to have new id
+    expect(database.arts.values.find(a => a.slotKey === "plume")?.id).not.toEqual(oldId1)
+    expect(database.arts.values.find(a => a.slotKey === "flower")?.id).not.toEqual(oldId2)
+  })
+
+  test("import with overlapping weapon ids", () => {
+
+    const old1 = initialWeapon("AmenomaKageuchi")
+    const old2 = initialWeapon("BlackcliffSlasher")
+    const new1 = initialWeapon("CalamityQueller")
+    const new2 = initialWeapon("Deathmatch")
+
+    const oldId1 = database.weapons.new(old1)
+    const oldId2 = database.weapons.new(old2)
+
+    const good: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Genshin Optimizer",
+      weapons: [
+        { ...new1, id: oldId1 } as IWeapon,
+        { ...new2, id: oldId2 } as IWeapon,
+      ]
+    }
+
+    const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+    expect(importResult.weapons.notInImport).toEqual(2)
+    expect(database.weapons.values.length).toEqual(4)
+    // Expect imports to overwrite the id of old
+    expect(database.weapons.get(oldId1)?.key).toEqual("CalamityQueller")
+    expect(database.weapons.get(oldId2)?.key).toEqual("Deathmatch")
+    // Expect old artifacts to have new id
+    expect(database.weapons.values.find(a => a.key === "AmenomaKageuchi")?.id).not.toEqual(oldId1)
+    expect(database.weapons.values.find(a => a.key === "BlackcliffSlasher")?.id).not.toEqual(oldId2)
+  })
+
   test("Test Traveler share equipment", async () => {
     database.chars.set("TravelerAnemo", initialCharacter("TravelerAnemo"))
     database.chars.set("TravelerGeo", initialCharacter("TravelerGeo"))
@@ -301,6 +365,7 @@ describe("Database", () => {
     expect(database.weapons.get(weapon2Id)!.location).toEqual("")
   })
 })
+
 test("Test invalid weapon location", async () => {
   // Add Character and Artifact
   const albedo = initialCharacter("Albedo")

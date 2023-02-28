@@ -3,7 +3,7 @@ import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { getWeaponSheet } from "../../Data/Weapons";
 import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "../../Types/consts";
+import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "@genshin-optimizer/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -111,6 +111,29 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     if (!Array.isArray(weapons) || !weapons.length) {
       result.weapons.notInImport = this.values.length
       return
+    }
+
+    if (weapons.some(a => (a as ICachedWeapon).id)) {
+      // If existing id that overlap import ids, migrate to a new id.
+      const takenIds = new Set(this.keys)
+      weapons.forEach(a => {
+        const id = (a as ICachedWeapon).id
+        if (!id) return
+        takenIds.add(id)
+      })
+
+      weapons.forEach(a => {
+        const id = (a as ICachedWeapon).id
+        if (!id) return
+        const old = this.get(id)
+        if (old) {
+          const newId = generateRandomWeaponID(takenIds)
+          takenIds.add(newId)
+          this.setCached(newId, { ...old, id: newId })
+          delete this.data[id]
+          this.removeStorageEntry(id)
+        }
+      })
     }
 
     result.weapons.import = weapons.length

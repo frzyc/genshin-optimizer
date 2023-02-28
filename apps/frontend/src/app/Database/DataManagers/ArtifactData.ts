@@ -10,7 +10,6 @@ import { DataManager } from "../DataManager";
 import { IGO, IGOOD, ImportResult } from "../exim";
 
 export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
-  deletedArts = new Set<string>()
   constructor(database: ArtCharDatabase) {
     super(database, "artifacts")
     for (const key of this.database.storage.keys)
@@ -53,7 +52,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
   }
 
   new(value: IArtifact): string {
-    const id = generateRandomArtID(new Set(this.keys), this.deletedArts)
+    const id = generateRandomArtID(new Set(this.keys))
     this.set(id, value)
     return id
   }
@@ -61,7 +60,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
     const art = this.get(key)
     if (!art) return
     art.location && this.database.chars.setEquippedArtifact(art.location, art.slotKey, "")
-    this.deletedArts.add(key)
     super.remove(key)
   }
   setProbability(id: string, probability?: number) {
@@ -70,7 +68,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
   }
   clear(): void {
     super.clear()
-    this.deletedArts = new Set<string>()
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.artifacts.beforeMerge = this.values.length
@@ -81,6 +78,29 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
     if (!Array.isArray(artifacts) || !artifacts.length) {
       result.artifacts.notInImport = this.values.length
       return
+    }
+
+    if (artifacts.some(a => (a as ICachedArtifact).id)) {
+      // If existing id that overlap import ids, migrate to a new id.
+      const takenIds = new Set(this.keys)
+      artifacts.forEach(a => {
+        const id = (a as ICachedArtifact).id
+        if (!id) return
+        takenIds.add(id)
+      })
+
+      artifacts.forEach(a => {
+        const id = (a as ICachedArtifact).id
+        if (!id) return
+        const old = this.get(id)
+        if (old) {
+          const newId = generateRandomArtID(takenIds)
+          takenIds.add(newId)
+          this.setCached(newId, { ...old, id: newId })
+          delete this.data[id]
+          this.removeStorageEntry(id)
+        }
+      })
     }
 
     result.artifacts.import = artifacts.length
@@ -112,7 +132,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
     const idtoRemoveArr = Array.from(idsToRemove)
     if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach(k => this.remove(k))
-
 
     this.database.weapons.ensureEquipments()
   }
@@ -159,12 +178,12 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
 }
 
 /// Get a random integer (converted to string) that is not in `keys`
-function generateRandomArtID(keys: Set<string>, rejectedKeys: Set<string>): string {
-  let ind = keys.size + rejectedKeys.size
+function generateRandomArtID(keys: Set<string>): string {
+  let ind = keys.size
   let candidate = ""
   do {
     candidate = `artifact_${ind++}`
-  } while (keys.has(candidate) || rejectedKeys.has(candidate))
+  } while (keys.has(candidate))
   return candidate
 }
 
