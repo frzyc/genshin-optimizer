@@ -129,6 +129,7 @@ function SelectItem({ locKey, selected, charList, setCharList }: {
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
   const onMouseEnter = useCallback((e: MouseEvent) => e.buttons === 1 && setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
   const onMouseDown = useCallback(() => setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const disableTooltip = useMemo(() => charList.size !== 0, [charList.size])
   const sx = {
     opacity: charList.has(locKey) ? 0.3 : (selected ? undefined : 0.6),
     borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)",
@@ -137,12 +138,12 @@ function SelectItem({ locKey, selected, charList, setCharList }: {
     borderRadius: "8px",
   }
   const content = useMemo(() => <>
-    <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} />
+    <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} disableTooltip={disableTooltip} />
     <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
       {allArtifactSlotKeys.map(s => <SlotIcon key={s} slotKey={s} iconProps={{ fontSize: "inherit", sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 } }} />)}
     </Box>
   </>,
-    [char?.equippedArtifacts, database.chars, locKey]
+    [char?.equippedArtifacts, database.chars, disableTooltip, locKey]
   )
   return <CardActionArea onMouseEnter={onMouseEnter} onMouseDown={onMouseDown} >
     <CardLight sx={sx}>

@@ -14,8 +14,8 @@ import ConditionalWrapper from '../ConditionalWrapper';
 import SqBadge from '../SqBadge';
 import CharacterCard from './CharacterCard';
 
-export default function CharacterCardPico({ characterKey = "", index = -1, onClick, simpleTooltip = false, }:
-  { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void, simpleTooltip?: boolean }) {
+export default function CharacterCardPico({ characterKey = "", index = -1, onClick, simpleTooltip = false, disableTooltip = false }:
+  { characterKey: CharacterKey | "", index?: number, onClick?: (characterKey: CharacterKey) => void, simpleTooltip?: boolean, disableTooltip?: boolean }) {
   const { gender } = useDBMeta()
   const characterSheet = characterKey ? getCharSheet(characterKey, gender) : undefined
   const character = useCharacter(characterKey)
@@ -26,21 +26,21 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
 
   const simpleTooltipWrapperFunc = useCallback((children: ReactNode) =>
     <BootstrapTooltip placement="top" enterNextDelay={500} enterTouchDelay={500} title={
-      characterSheet && <Suspense fallback={<Skeleton width={300} height={400} />}><Typography>{characterSheet.elementKey && <ElementIcon ele={characterSheet.elementKey} iconProps={{
+      characterSheet && !disableTooltip && <Suspense fallback={<Skeleton width={300} height={400} />}><Typography>{characterSheet.elementKey && <ElementIcon ele={characterSheet.elementKey} iconProps={{
         fontSize: "inherit",
         sx: { verticalAlign: "-10%", color: `${characterSheet.elementKey}.main` }
       }} />} {characterSheet.name}</Typography></Suspense>
     }>
       {children as JSX.Element}
-    </BootstrapTooltip>, [characterSheet])
+    </BootstrapTooltip>, [characterSheet, disableTooltip])
   const charCardTooltipWrapperFunc = useCallback((children: ReactNode) =>
     <BootstrapTooltip enterNextDelay={500} enterTouchDelay={500} placement="top" title={
-      <Box sx={{ width: 300, m: -1 }}>
+      !disableTooltip && <Box sx={{ width: 300, m: -1 }}>
         <CharacterCard hideStats characterKey={characterKey as CharacterKey} />
       </Box>
     }>
       {children as JSX.Element}
-    </BootstrapTooltip>, [characterKey])
+    </BootstrapTooltip>, [characterKey, disableTooltip])
   if (characterSheet && character && characterKey) {
     return <ConditionalWrapper condition={simpleTooltip} wrapper={simpleTooltipWrapperFunc} falseWrapper={charCardTooltipWrapperFunc}>
       <CardDark sx={{ maxWidth: 128, position: "relative", display: "flex", flexDirection: "column", }}>
