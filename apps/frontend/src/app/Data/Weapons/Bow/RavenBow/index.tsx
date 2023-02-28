@@ -26,7 +26,7 @@ const sheet: IWeaponSheet = {
   document: [{
     value: condPassive,
     path: condPassivePath,
-    name: st("enemyAffected.1or2", { one: st("coloredEle.hydro"), two: st("coloredEle.pyro") }),
+    name: st("enemyAffected.hydroOrPyro"),
     header: headerTemplate(key, st("conditional")),
     states: {
       on: {
