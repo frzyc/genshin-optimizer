@@ -2,11 +2,12 @@ import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
-import { cond, st, stg, trans } from '../../SheetUtil'
+import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import ColorText from '../../../Components/ColoredText'
 const key: ArtifactSetKey = "ArchaicPetra"
 const setHeader = setHeaderTemplate(key)
 const [, trm] = trans("artifact", key)
@@ -41,7 +42,7 @@ const sheet: IArtifactSheet = {
         teamBuff: true,
         name: trm("condName"),
         states: Object.fromEntries(absorbableEle.map(e => [e, {
-          name: st(`coloredEle.${e}`),
+          name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
           fields: [{
             node: set4Nodes[`${e}_dmg_`]
           }, {

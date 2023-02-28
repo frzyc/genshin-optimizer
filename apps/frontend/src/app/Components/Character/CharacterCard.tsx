@@ -25,7 +25,7 @@ import SqBadge from '../SqBadge';
 import { StarsDisplay } from '../StarDisplay';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
-import CharacterCardPico from './CharacterCardPico';
+import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -117,7 +117,13 @@ function ExistingCharacterCardContent({ characterContextObj, dataContextObj, cha
         <Grid item xs={1} height="100%">
           <WeaponCardPico weaponId={character.equippedWeapon} />
         </Grid>
-        {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico simpleTooltip={hideStats} characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
+        {range(0, 2).map(i =>
+          <Grid key={i} item xs={1} height="100%">
+            {character.team[i]
+              ? <CharacterCardPico simpleTooltip={hideStats} characterKey={character.team[i] as CharacterKey} onClick={!onClick ? onClickTeammate : undefined} />
+              : <BlankCharacterCardPico index={i} />}
+          </Grid>
+        )}
       </Grid>}
       {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
       {!isTeammateCard && !hideStats && <Stats />}
