@@ -1,6 +1,7 @@
-import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, SliderProps, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay';
 import CardLight from '../../../Components/Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../../Components/CustomNumberInput';
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
@@ -45,7 +46,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
       <ButtonGroup size="small" sx={{ width: "100%", display: "flex" }}>
         <DropdownButton
           startIcon={key ? <StatIcon statKey={key} /> : undefined}
-          title={key ? KeyMap.getArtStr(key) : t('editor.substat.substatFormat', { value: index + 1 })}
+          title={key ? <ArtifactStatWithUnit statKey={key} /> : t('editor.substat.substatFormat', { value: index + 1 })}
           disabled={!artifact}
           color={key ? "success" : "primary"}
           sx={{ whiteSpace: "nowrap" }}>
@@ -53,7 +54,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           {allSubstatKeys.filter(key => mainStatKey !== key)
             .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
               <ListItemIcon><StatIcon statKey={k} /></ListItemIcon>
-              <ListItemText>{KeyMap.getArtStr(k)}</ListItemText>
+              <ListItemText><ArtifactStatWithUnit statKey={k} /></ListItemText>
             </MenuItem>)}
         </DropdownButton>
         <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }} >

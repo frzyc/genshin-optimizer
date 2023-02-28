@@ -1,6 +1,6 @@
 import { characterAsset } from "@genshin-optimizer/g-assets";
-import { Box, Skeleton, Typography } from "@mui/material";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import { Box, Skeleton, Typography } from "@mui/material";
 import { Suspense, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { getArtSheet } from "../../Data/Artifacts";
@@ -33,6 +33,7 @@ export default function ArtifactTooltip({ art, children }: { art: ICachedArtifac
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
   const { t } = useTranslation(["ui", "charNames_gen"])
+  const { t: tk } = useTranslation("statKey_gen")
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const sheet = getArtSheet(art.setKey)
@@ -42,11 +43,11 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return <Box p={1}>
     <Typography variant='h6'><SlotIcon slotKey={slotKey} iconProps={iconInlineProps} /> {slotName}</Typography>
-    <Typography variant="subtitle1" color={`${mainVariant}.main`}><StatIcon statKey={mainStatKey} iconProps={iconInlineProps} /> {KeyMap.get(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
+    <Typography variant="subtitle1" color={`${mainVariant}.main`}><StatIcon statKey={mainStatKey} iconProps={iconInlineProps} /> {tk(mainStatKey)} {cacheValueString(Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0, KeyMap.unit(mainStatKey))}{mainStatUnit}</Typography>
     <Typography variant="subtitle2" sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} ><StarsDisplay stars={rarity} /><SqBadge color={Artifact.levelVariant(level)}>+{level}</SqBadge> </Typography>
     <Box py={1}>
       {substats.map((stat: ICachedSubstat) => !!stat.value && <Typography key={stat.key} color={`roll${clamp(stat.rolls.length, 1, 6)}.main`}>
-        <StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {KeyMap.getStr(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>
+        <StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {tk(stat.key)} <strong>{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${KeyMap.unit(stat.key)}`}</strong>
       </Typography>)}
     </Box>
 

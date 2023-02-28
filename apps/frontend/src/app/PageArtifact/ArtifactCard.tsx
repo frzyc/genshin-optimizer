@@ -1,10 +1,9 @@
+import { allElementWithPhyKeys, RarityKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Lock, LockOpen } from '@mui/icons-material';
-import BlockIcon from '@mui/icons-material/Block';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material';
+import { Box, Button, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip';
@@ -18,7 +17,6 @@ import ConditionalWrapper from '../Components/ConditionalWrapper';
 import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip';
 import PercentBadge from '../Components/PercentBadge';
 import { StarsDisplay } from '../Components/StarDisplay';
-
 import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
 import { DatabaseContext } from '../Database/Database';
@@ -27,10 +25,10 @@ import StatIcon from '../KeyMap/StatIcon';
 import useArtifact from '../ReactHooks/useArtifact';
 import { iconInlineProps } from '../SVGIcons';
 import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
-import { allElementWithPhyKeys, RarityKey } from '@genshin-optimizer/consts';
 import { LocationKey } from '../Types/consts';
 import { clamp, clamp01 } from '../Util/Util';
 import { ArtifactEditorProps } from './ArtifactEditor';
+
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
 type Data = {
@@ -48,6 +46,7 @@ const allSubstatFilter = new Set(allSubstatKeys)
 
 export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canEquip = false, extraButtons }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact", "ui"]);
+  const { t: tk } = useTranslation("statKey_gen");
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
@@ -115,7 +114,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
             </Typography>
             <Typography variant="h6" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <StatIcon statKey={mainStatKey} iconProps={{ sx: { color: `${ele}.main` } }} />
-              <span>{KeyMap.get(mainStatKey)}</span>
+              <span>{tk(mainStatKey)}</span>
             </Typography>
             <Typography variant="h5">
               <strong>
@@ -180,6 +179,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   </Suspense>
 }
 function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, effFilter: Set<SubstatKey>, rarity: RarityKey }) {
+  const { t:tk } = useTranslation("statKey_gen")
   const numRolls = stat.rolls?.length ?? 0
   const maxRoll = stat.key ? Artifact.substatValue(stat.key) : 0
   const rollData = useMemo(() => stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : [], [stat.key, rarity])
@@ -188,13 +188,12 @@ function SubstatDisplay({ stat, effFilter, rarity }: { stat: ICachedSubstat, eff
   const efficiency = stat.efficiency ?? 0
   const inFilter = stat.key && effFilter.has(stat.key)
   const effOpacity = clamp01(0.5 + (efficiency / (100 * 5)) * 0.5) //divide by 6 because an substat can have max 6 rolls
-  const statName = KeyMap.getStr(stat.key)
   const unit = KeyMap.unit(stat.key)
   const progresses = useMemo(() => <Box display="flex" gap={0.25} height="1.3em" sx={{ opacity: inFilter ? 1 : 0.3 }}>
     {[...stat.rolls].sort().map((v, i) => <SmolProgress key={`${i}${v}`} value={100 * v / maxRoll} color={`roll${clamp(rollOffset + rollData.indexOf(v), 1, 6)}.main`} />)}
   </Box>, [inFilter, stat.rolls, maxRoll, rollData, rollOffset])
   return (<Box display="flex" gap={1} alignContent="center">
-    <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span"><StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {statName}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
+    <Typography sx={{ flexGrow: 1 }} color={(numRolls ? `${rollColor}.main` : "error.main")} component="span"><StatIcon statKey={stat.key} iconProps={iconInlineProps} /> {tk(stat.key)}{`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}</Typography>
     {progresses}
     <Typography sx={{ opacity: effOpacity, minWidth: 40, textAlign: "right" }}>{efficiency.toFixed()}%</Typography>
   </Box>)

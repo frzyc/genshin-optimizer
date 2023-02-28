@@ -1,10 +1,10 @@
 import { Box, ToggleButton } from "@mui/material"
-import KeyMap from "../../KeyMap"
 import StatIcon from "../../KeyMap/StatIcon"
 import { iconInlineProps } from "../../SVGIcons"
 import { allSubstatKeys } from "../../Types/artifact"
 import { handleMultiSelect } from "../../Util/MultiSelect"
 import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
+import { ArtifactStatWithUnit } from "./ArtifactStatKeyDisplay"
 
 const rvfilterHandler = handleMultiSelect([...allSubstatKeys])
 const keys1 = allSubstatKeys.slice(0, 6)
@@ -17,7 +17,7 @@ export default function SubstatToggle({ selectedKeys, onChange }) {
       {keys1.map(key => <ToggleButton sx={{ flexGrow: 1 }} size="small" key={key} value={key} onClick={() => onChange(rvfilterHandler(selectedKeys, key))}>
         <Box display="flex" gap={1} alignItems="center">
           <StatIcon statKey={key} iconProps={iconInlineProps} />
-          {KeyMap.getArtStr(key)}
+          <ArtifactStatWithUnit statKey={key} />
         </Box>
       </ToggleButton>)}
     </SolidToggleButtonGroup>
@@ -25,7 +25,7 @@ export default function SubstatToggle({ selectedKeys, onChange }) {
       {keys2.map(key => <ToggleButton sx={{ flexGrow: 1 }} size="small" key={key} value={key} onClick={() => onChange(rvfilterHandler(selectedKeys, key))}>
         <Box display="flex" gap={1} alignItems="center">
           <StatIcon statKey={key} iconProps={iconInlineProps} />
-          {KeyMap.getArtStr(key)}
+          <ArtifactStatWithUnit statKey={key} />
         </Box>
       </ToggleButton>)}
     </SolidToggleButtonGroup>

@@ -20,7 +20,7 @@
         "buildTarget": "dm-localization:build",
         "watch": false
       },
-      "dependsOn": ["build"]
+      "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
