@@ -173,7 +173,7 @@ export default function loadTrans() {
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localiation namespaces
-      if (["sheet", "weaponKey", "elementalResonance", "material", "charNames", "weaponNames", "artifactNames"].includes(type))
+      if (["sheet", "weaponKey", "elementalResonance", "material", "charNames", "weaponNames", "artifactNames", "statKey"].includes(type))
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
       //weapons/characters/artifacts

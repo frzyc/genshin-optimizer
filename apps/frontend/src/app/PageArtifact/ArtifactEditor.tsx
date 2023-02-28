@@ -8,6 +8,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
 import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
+import { ArtifactColoredIconStatWithUnit, ArtifactStatWithUnit } from '../Components/Artifact/ArtifactStatKeyDisplay';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CloseButton from '../Components/CloseButton';
@@ -15,7 +16,6 @@ import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
-import { StatColoredWithUnit } from '../Components/StatDisplay';
 import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
 import { DatabaseContext } from '../Database/Database';
@@ -292,10 +292,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* main stat */}
             <Box component="div" display="flex">
               <DropdownButton startIcon={artifact?.mainStatKey ? <StatIcon statKey={artifact.mainStatKey} /> : undefined}
-                title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
+                title={<b>{artifact ? <ArtifactStatWithUnit statKey={artifact.mainStatKey} /> : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
-                    <StatColoredWithUnit statKey={mainStatK} />
+                    <ArtifactColoredIconStatWithUnit statKey={mainStatK} />
                   </MenuItem>)}
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>

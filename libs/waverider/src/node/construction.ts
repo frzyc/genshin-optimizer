@@ -18,20 +18,12 @@ function arithmetic<Op extends string>(op: Op, x: Num[]) {
 }
 /** x0 + x1 + ... */
 export const sum = (...x: Num[]): Sum => arithmetic('sum', x)
-/** x0 + x1 + ... */
-export const sumMeta = (x: Num[]): Sum => arithmetic('sum', x)
 /** x0 * x1 * ... */
 export const prod = (...x: Num[]): Prod => arithmetic('prod', x)
-/** x0 * x1 * ... */
-export const prodMeta = (x: Num[]): Prod => arithmetic('prod', x)
 /** min( x0, x1, ... ) */
 export const min = (...x: Num[]): Min => arithmetic('min', x)
-/** min( x0, x1, ... ) */
-export const minMeta = (x: Num[]): Min => arithmetic('min', x)
 /** max( x0, x1, ... ) */
 export const max = (...x: Num[]): Max => arithmetic('max', x)
-/** max( x0, x1, ... ) */
-export const maxMeta = (x: Num[]): Max => arithmetic('max', x)
 /** x / (x + c) */
 export const sumfrac = (x: Num, c: Num): SumFrac => arithmetic('sumfrac', [x, c])
 

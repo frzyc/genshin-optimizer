@@ -48,7 +48,7 @@ describe("Database", () => {
   })
 
   test("Does not crash from invalid storage", () => {
-    function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
+    function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => null) {
       localStorage.clear()
       setup(localStorage)
       new ArtCharDatabase(dbIndex, dbStorage)
@@ -237,6 +237,29 @@ describe("Database", () => {
     expect(database.arts.get(circletId)?.setKey).toEqual("Adventurer")
     expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("CinnabarSpindle")
   })
+  test("Import character without weapon should give default weapon", () => {
+    const good = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      characters: [{
+        "key": "Dori",
+        "level": 40,
+        "constellation": 0,
+        "ascension": 1,
+        "talent": {
+          "auto": 1,
+          "skill": 1,
+          "burst": 1
+        }
+      }],
+    }
+    const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
+    expect(importResult.weapons.new.length).toEqual(1)
+    expect(importResult.characters.new.length).toEqual(1)
+    expect(database.chars.get("Dori")?.equippedWeapon).toBeTruthy()
+  })
+
   test("Test Traveler share equipment", async () => {
     database.chars.set("TravelerAnemo", initialCharacter("TravelerAnemo"))
     database.chars.set("TravelerGeo", initialCharacter("TravelerGeo"))

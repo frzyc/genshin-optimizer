@@ -51,6 +51,7 @@ import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
+import { ICachedArtifact } from '../../../../Types/artifact';
 
 const audio = new Audio("notification.mp3")
 export default function TabBuild() {
@@ -501,9 +502,13 @@ function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
   // Update the build when the build artifacts are changed.
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.arts.followAny((id) => build.includes(id) && setDirty()), [database, build, setDirty])
-  const buildsArts = useMemo(() => dirty && build.map(i => database.arts.get(i)!), [dirty, build, database])
+  const buildsArts = useMemo(() => dirty && (build.map(i => database.arts.get(i)).filter(a => a) as ICachedArtifact[]), [dirty, build, database])
   const teamData = useTeamData(characterKey, mainStatAssumptionLevel, buildsArts)
-  const providerValue = useMemo(() => teamData && ({ data: teamData[characterKey]!.target, teamData, oldData }), [teamData, oldData, characterKey])
+  const providerValue = useMemo(() => {
+    const tdc = teamData?.[characterKey]
+    if (!tdc) return
+    return ({ data: tdc.target, teamData, oldData })
+  }, [teamData, oldData, characterKey])
   if (!providerValue) return null
   return <DataContext.Provider value={providerValue}>
     {children}
