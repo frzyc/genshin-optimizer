@@ -182,7 +182,6 @@ const subKeyMap: StrictDict<KeyMapPrefix, string> = {
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]
-const showPercentKeys = ["hp_", "def_", "atk_"]
 export default class KeyMap {
   //do not instantiate.
   constructor() {
@@ -194,9 +193,6 @@ export default class KeyMap {
   }
   static getStr(key = ""): string | undefined {
     return statMap[key]
-  }
-  static getArtStr(key: MainStatKey | SubstatKey): string {
-    return statMap[key] + (showPercentKeys.includes(key) ? "%" : "")
   }
   static get(key = "") {
     return KeyMap.getStr(key) ?? key
@@ -241,7 +237,7 @@ export function valueString(value: number, unit: Unit = "", fixed = -1): string 
 }
 
 export function cacheValueString(value: number, unit: Unit): string {
-  switch (unit as any) {
+  switch (unit) {
     case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
     default: return Math.round(value).toFixed(0)
   }
