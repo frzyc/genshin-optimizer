@@ -25,7 +25,7 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
     [onClickHandler])
 
   const simpleTooltipWrapperFunc = useCallback((children: ReactNode) =>
-    <BootstrapTooltip placement="top" title={
+    <BootstrapTooltip placement="top" enterNextDelay={500} enterTouchDelay={500} title={
       characterSheet && <Suspense fallback={<Skeleton width={300} height={400} />}><Typography>{characterSheet.elementKey && <ElementIcon ele={characterSheet.elementKey} iconProps={{
         fontSize: "inherit",
         sx: { verticalAlign: "-10%", color: `${characterSheet.elementKey}.main` }
@@ -34,7 +34,7 @@ export default function CharacterCardPico({ characterKey = "", index = -1, onCli
       {children as JSX.Element}
     </BootstrapTooltip>, [characterSheet])
   const charCardTooltipWrapperFunc = useCallback((children: ReactNode) =>
-    <BootstrapTooltip enterNextDelay={1000} enterTouchDelay={1000} placement="top" title={
+    <BootstrapTooltip enterNextDelay={500} enterTouchDelay={500} placement="top" title={
       <Box sx={{ width: 300, m: -1 }}>
         <CharacterCard hideStats characterKey={characterKey as CharacterKey} />
       </Box>
