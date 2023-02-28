@@ -1,4 +1,4 @@
-import { allElementWithPhyKeys, WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
 import { allCustoms, register, self, selfBuff } from '../../util'
 import { entriesForWeapon, WeaponDataGen } from '../util'
@@ -24,7 +24,7 @@ const atkInc = prod(
 
 export default register(name,
   entriesForWeapon(data_gen),
-  allElementWithPhyKeys.map(ele =>
+  allElementKeys.map(ele =>
     selfBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))),
   selfBuff.premod.atk_.add(atkInc)
 )
