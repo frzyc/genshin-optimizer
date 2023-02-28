@@ -270,7 +270,7 @@ const sheet: ICharacterSheet = {
       path: condBurstAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: st(`coloredEle.${eleKey}`),
+        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
           node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.2`) }),
         }]
@@ -307,7 +307,7 @@ const sheet: ICharacterSheet = {
       path: condSkillAbsorptionPath,
       name: st("eleAbsor"),
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: st(`coloredEle.${eleKey}`),
+        name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
           node: infoMut(dmgFormulas.passive1.absorb, { name: stg(`addEleDMG`) }),
         }]

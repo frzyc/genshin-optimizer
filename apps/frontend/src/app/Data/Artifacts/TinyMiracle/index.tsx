@@ -1,12 +1,13 @@
-import { allElementKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
+import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index"
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { cond, st, stg, trans } from '../../SheetUtil'
+import { allElementKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
+import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { dataObjForArtifactSheet } from '../dataUtil'
 import { IArtifactSheet } from '../IArtifactSheet'
+import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "TinyMiracle"
 const setHeader = setHeaderTemplate(key)
@@ -47,7 +48,7 @@ const sheet: IArtifactSheet = {
         teamBuff: true,
         name: trm("condName"),
         states: Object.fromEntries(allElementKeys.map(e => [e, {
-          name: st(`coloredEle.${e}`),
+          name: <ColorText color={e}>{stg(`element.${e}`)}</ColorText>,
           fields: [
             ...Object.values(set4Nodes).map(n => ({ node: n })),
             {
