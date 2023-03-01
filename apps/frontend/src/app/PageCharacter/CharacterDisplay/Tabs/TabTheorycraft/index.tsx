@@ -33,12 +33,12 @@ import { getWeaponSheet } from "../../../../Data/Weapons";
 import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
-import { computeUIData, dataObjForWeapon, mergeData } from "../../../../Formula/api";
+import { computeUIData, dataObjForWeapon, mergeData, uiDataForTeam } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import StatIcon from "../../../../KeyMap/StatIcon";
 import useBoolState from "../../../../ReactHooks/useBoolState";
-import useTeamData from "../../../../ReactHooks/useTeamData";
+import useTeamData, { getTeamData } from "../../../../ReactHooks/useTeamData";
 import { iconInlineProps } from "../../../../SVGIcons";
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
@@ -52,6 +52,7 @@ import { optimize, precompute } from "../../../../Formula/optimization";
 import { NumNode } from "../../../../Formula/type";
 import OptimizationTargetSelector from "../TabOptimize/Components/OptimizationTargetSelector";
 import { dynamicData } from "../TabOptimize/foreground";
+import useDBMeta from "../../../../ReactHooks/useDBMeta";
 const WeaponSelectionModal = React.lazy(() => import('../../../../Components/Weapon/WeaponSelectionModal'))
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
@@ -192,11 +193,11 @@ export default function TabTheorycraft() {
   }, [data, setData])
 
   const distributedSubstats = data.optimization.distributedSubstats
-  const setDistributedSubstats = (distributedSubstats: ICharTC["optimization"]["distributedSubstats"]) => {
+  const setDistributedSubstats = useCallback((distributedSubstats: ICharTC["optimization"]["distributedSubstats"]) => {
     const data_ = deepClone(data)
     data_.optimization.distributedSubstats = distributedSubstats
     setData(data_)
-  }
+  }, [data, setData])
   const maxSubstats = useMemo(() => {
     let result: Record<SubstatKey, number>
     const maxSubstats = data.optimization.maxSubstats;
@@ -209,16 +210,19 @@ export default function TabTheorycraft() {
     return result;
   }, [data.artifact.slots, data.optimization.maxSubstats])
 
+  const { gender } = useDBMeta()
+
   // This solves
   // $\argmax_{x\in N^k, \sum x <= n, x <= x_max} f(x)$ without assumptions on the properties of $f$
   // We brute force iterate over all substats in the graph and compute the maximum
   // n.b. some substat combinations may not be materializable into real artifacts
   const optimizeSubstats = useCallback((apply: boolean) => () => {
     if (!characterKey || !optimizationTarget) return
+    const teamData = getTeamData(database, characterKey)
     if (!teamData) return
-    let workerData = teamData[characterKey]?.target.data[0]
+    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
     if (!workerData) return
-    workerData = { ...workerData, ...mergeData([workerData, dynamicData]) } // Mark art fields as dynamic
+    Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const unoptimizedNodes = [unoptimizedOptimizationTargetNode]
@@ -284,8 +288,9 @@ export default function TabTheorycraft() {
       const data_ = deepClone(data)
       data_.artifact.substats.stats = objectMap(data.artifact.substats.stats, (v, k) => v + (maxBuffer![k] ?? 0) * comp(k))
       setData(data_)
+      setDistributedSubstats(0)
     }
-  }, [characterKey, data, distributedSubstats, maxSubstats, optimizationTarget, setData, teamData])
+  }, [characterKey, data, database, distributedSubstats, gender, maxSubstats, optimizationTarget, setData, setDistributedSubstats])
 
   return <Stack spacing={1}>
     <CardLight>
@@ -559,7 +564,7 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
         sx={{ borderRadius: 1, px: 1, width: "50%" }}
         inputProps={{ sx: { textAlign: "right", px: 1, width: "20%" }, min: 0 }}
       />
-      <CustomNumberInput
+      {/* <CustomNumberInput
         value={max}
         onChange={v => v !== undefined && setMax(v)}
         endAdornment={"Max"}
@@ -574,7 +579,7 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
         color={!disableMaxSubstats ? "error" : "success"}
         sx={{ borderRadius: 1, px: 1 }}
         inputProps={{ sx: { textAlign: "right", px: 1 }, min: 0 }}
-      />
+      /> */}
     </Box>
     <Stack spacing={1}>
       {Object.entries(substats).map(([k, v]) =>
