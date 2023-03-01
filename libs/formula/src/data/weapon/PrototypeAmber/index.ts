@@ -14,5 +14,5 @@ export default register(name,
   entriesForWeapon(data_gen),
 
   // Formulas
-  customHeal('heal', prod(target.final.hp, subscript(refinement, heal_arr)), { et: 'teamBuff' })
+  customHeal('heal', prod(target.final.hp, subscript(refinement, heal_arr)), { team: true })
 )

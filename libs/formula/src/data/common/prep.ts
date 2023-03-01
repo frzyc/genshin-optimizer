@@ -25,7 +25,7 @@ const data: Data = [
   ),
 
   /* `prep` computations have a stricter restriction as it is computed before many
-  * of the computations are ready. Most `stats`-related queries are not available,
+   * of the computations are ready. Most `stats`-related queries are not available,
    * and we are essentially limited to other preps and conditionals.
    *
    * Some are outside of this file as it has to be in a util function, but the

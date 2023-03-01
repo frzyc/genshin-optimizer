@@ -1,18 +1,21 @@
 import { CharacterKey, ElementKey, ElementWithPhyKey, MoveKey, WeaponKey } from '@genshin-optimizer/consts';
 import { NumNode, prod, StrNode, tag } from '@genshin-optimizer/waverider';
-import { convert, Data, reader, self, selfTag, usedNames } from '.';
+import { Data, reader, self, selfBuff, teamBuff, usedNames } from '.';
 
 export function register(src: CharacterKey | WeaponKey, ...data: (Data[number] | Data)[]): Data {
   const internal = ({ tag, value }: Data[number]) => ({ tag: { ...tag, src }, value })
   return data.flatMap(data => Array.isArray(data) ? data.map(internal) : internal(data))
 }
 
-export type FormulaArg = { et?: 'self' | 'teamBuff', cond?: string | StrNode }
+export type FormulaArg = {
+  team?: boolean // true if applies to every member, and false (default) if applies only to self
+  cond?: string | StrNode
+}
 
-export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefined, move: MoveKey, base: NumNode, { et = 'self', cond = 'dmg' }: FormulaArg = {}, ...extra: Data): Data {
+export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefined, move: MoveKey, base: NumNode, { team, cond = 'dmg' }: FormulaArg = {}, ...extra: Data): Data {
   usedNames.add(name)
 
-  const entry = convert(selfTag, { et })
+  const entry = team ? teamBuff : selfBuff
   return [
     entry.formula.listing.reread(entry.formula.prepType.name(name)),
     ...[
@@ -26,7 +29,7 @@ export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefin
   ]
 }
 
-export function customShield(name: string, ele: ElementKey | undefined, base: NumNode, { et = 'self', cond = 'shield' }: FormulaArg = {}, ...extra: Data): Data {
+export function customShield(name: string, ele: ElementKey | undefined, base: NumNode, { team, cond = 'shield' }: FormulaArg = {}, ...extra: Data): Data {
   usedNames.add(name)
 
   switch (ele) {
@@ -35,7 +38,7 @@ export function customShield(name: string, ele: ElementKey | undefined, base: Nu
     default: base = prod(tag(2.5, reader[ele].tag), base)
   }
 
-  const entry = convert(selfTag, { et })
+  const entry = team ? teamBuff : selfBuff
   return [
     entry.formula.listing.reread(entry.formula.prepType.name(name)),
     ...[
@@ -48,10 +51,10 @@ export function customShield(name: string, ele: ElementKey | undefined, base: Nu
   ]
 }
 
-export function customHeal(name: string, base: NumNode, { et = 'self', cond = 'heal' }: FormulaArg = {}, ...extra: Data): Data {
+export function customHeal(name: string, base: NumNode, { team, cond = 'heal' }: FormulaArg = {}, ...extra: Data): Data {
   usedNames.add(name)
 
-  const entry = convert(selfTag, { et })
+  const entry = team ? teamBuff : selfBuff
   return [
     entry.formula.listing.reread(entry.formula.prepType.name(name)),
     ...[

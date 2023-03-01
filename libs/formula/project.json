@@ -52,10 +52,7 @@
       "options": {
         "jestConfig": "libs/formula/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": [
-        "genfiles"
-      ]
+      }
     }
   },
   "tags": [],

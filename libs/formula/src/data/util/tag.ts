@@ -1,9 +1,9 @@
 import { constant, NumNode, tag } from '@genshin-optimizer/waverider'
 import { Source, Stat } from './listing'
-import { Read, Tag } from './read'
+import { Read, reader, Tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
-  return tag(typeof x === 'number' ? constant(x) : x, { q: '_' })
+  return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
 }
 export function priorityTable(entries: Record<string, Record<string, number>>, defaultValue = ''): string[] {
   const map = new Map(Object.values(entries).flatMap(entries => Object.entries(entries).map(([k, v]) => [v, k])))
@@ -18,11 +18,12 @@ export function priorityTable(entries: Record<string, Record<string, number>>, d
  *
  * *--------*-----------------------------------------------------*
  * |        |                      Affected By                    |
- * |  Type  *-----------*-----*----------*--------*------*--------*
+ * |  src:  *-----------*-----*----------*--------*------*--------*
  * |        | Team Buff | Art | Reaction | Weapon | Char | Custom |
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
  * |  iso   |     -     |  -  |    -     |   -    | YES  |  YES   |
+ * | static |     -     |  -  |    -     |   -    |  -   |   -    |
  * *--------*-----------*-----*----------*--------*------*--------*
  *
  * Entries below list queries in the following format:
@@ -45,7 +46,7 @@ const fixed: Desc = { src: 'static', accu: undefined }
 /** The calculation must have a matching `src:` */
 const fixed2: Desc = { src: undefined, accu: undefined }
 
-const stats: Record<Stat, typeof agg> = {
+const stats: Record<Stat, Desc> = {
   hp: agg, hp_: agg, atk: agg, atk_: agg, def: agg, def_: agg,
   eleMas: agg, enerRech_: agg, critRate_: agg, critDMG_: agg, dmg_: agg, heal_: agg
 } as const
@@ -78,14 +79,6 @@ export const enemyTag = {
   cond: { amp: fixed, cata: fixed },
 } as const
 
-export function customQueries(tag: Tag): Record<string, Read> {
-  return new Proxy(tag, {
-    get(tag, q: string) {
-      queries.add(q)
-      return new Read({ et: 'self', qt: 'misc', q, ...tag }, undefined)
-    }
-  }) as any
-}
 export function convert<V extends Record<string, Record<string, Desc>>>(v: V, tag: Omit<Tag, 'qt' | 'q'>): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
   return Object.fromEntries(Object.entries(v).map(([qt, v]) => [qt, Object.fromEntries(Object.entries(v).map(([q, { src, accu }]) =>
     src ? [q, new Read({ src, qt, q, ...tag }, accu)] : [q, new Read({ qt, q, ...tag }, accu)]
@@ -100,22 +93,27 @@ export const team = convert(selfTag, { et: 'team' })
 export const target = convert(selfTag, { et: 'target' })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
-export const allConditionals = (src: Source) => customQueries({ src, qt: 'cond' })
-export const allStatics = (src: Source) => customQueries({ src })
-export const allStacks = (src: Source): Record<string, { in: Read, out: Read }> => new Proxy(tag, {
-  get(tag, q: string) {
-    queries.add(q)
-    return {
-      in: new Read({ src, et: 'stackIn', qt: 'misc', q, ...tag }, undefined),
-      out: new Read({ src, et: 'stackOut', qt: 'misc', q, ...tag }, undefined),
-    }
-  }
-}) as any
-
-export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
+// Default tag DB keys
 export const selfBuff = convert(selfTag, { et: 'self' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const activeCharBuff = convert(selfTag, { et: 'active' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
+export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
+
+// Custom tags
+export const allConditionals = (src: Source) => allCustoms({ et: 'self', src, qt: 'cond' })
+export const allStatics = (src: Source) => allCustoms({ et: 'self', src, qt: 'misc' })
+export const allStacks = (src: Source): Record<string, { in: Read, out: Read }> => {
+  const i = allCustoms({ et: 'stackIn', src, qt: 'misc' })
+  const o = allCustoms({ et: 'stackOut', src, qt: 'misc' })
+  return new Proxy({}, {
+    get: (_, q: string) => ({ in: i[q], out: o[q] })
+  }) as any
+}
+function allCustoms(tag: Omit<Tag, 'q' | 'name'> & { qt: string }): Record<string, Read> {
+  return new Proxy(reader.withTag(tag)._withAll('q'), {
+    get: (dict, q: string) => (queries.add(q), dict[q])
+  })
+}
 
 export const queryTypes = [...new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'misc', 'cond'])]

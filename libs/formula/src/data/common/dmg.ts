@@ -2,9 +2,9 @@ import { cmpGE, lookup, prod, subscript, sum, sumfrac } from '@genshin-optimizer
 import { Data, enemy, enemyDebuff, percent, priorityTable, self, selfBuff } from '../util'
 
 export const infusionPrio = {
-  overridable: { hydro: 4, pyro: 5 },
-  team: { hydro: 2, pyro: 3 },
-  nonOverridable: { hydro: 0, pyro: 1 },
+  nonOverridable: { hydro: 5, pyro: 6 },
+  team: { hydro: 3, pyro: 4 },
+  overridable: { physical: 0, hydro: 1, pyro: 2 },
 }
 const infusionTable = priorityTable(infusionPrio), preRes = enemy.common.preRes
 
