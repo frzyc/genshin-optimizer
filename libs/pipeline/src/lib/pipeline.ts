@@ -171,6 +171,7 @@ export const weaponIdMap = {
   // 12506: "The Other Side",
   // 12508: "",
   12510: "RedhornStonethresher",
+  12511: "BeaconOfTheReedSea",
 
   //polearm
   13101: "BeginnersProtector",
