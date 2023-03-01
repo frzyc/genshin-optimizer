@@ -99,6 +99,7 @@
   "maxStacks": "Maximum stacks",
   "protectedByShield": "Protected by a shield",
   "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
+  "notProtectedByShield": "While not protected by a shield",
   "staminaDec_": "Stamina Consumption Decrease",
   "dmgAbsorption": {
     "pyro": "Pyro DMG Absorption",

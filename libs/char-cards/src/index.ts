@@ -11,6 +11,7 @@ import Candace from "./Character_Candace_Card.jpg"
 import Chongyun from "./Character_Chongyun_Card.jpg"
 import Collei from "./Character_Collei_Card.jpg"
 import Cyno from "./Character_Cyno_Card.jpg"
+import Dehya from "./Character_Dehya_Card.jpg"
 import Diluc from "./Character_Diluc_Card.jpg"
 import Diona from "./Character_Diona_Card.png"
 import Dori from "./Character_Dori_Card.jpg"
@@ -77,6 +78,7 @@ const charCards = {
   Chongyun,
   Collei,
   Cyno,
+  Dehya,
   Diluc,
   Diona,
   Dori,

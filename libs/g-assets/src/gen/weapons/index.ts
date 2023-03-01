@@ -62,6 +62,7 @@ import WolfsGravestone from "./WolfsGravestone"
 import SongOfBrokenPines from "./SongOfBrokenPines"
 import TheUnforged from "./TheUnforged"
 import RedhornStonethresher from "./RedhornStonethresher"
+import BeaconOfTheReedSea from "./BeaconOfTheReedSea"
 import BeginnersProtector from "./BeginnersProtector"
 import IronPoint from "./IronPoint"
 import WhiteTassel from "./WhiteTassel"
@@ -214,6 +215,7 @@ const data = {
   SongOfBrokenPines,
   TheUnforged,
   RedhornStonethresher,
+  BeaconOfTheReedSea,
   BeginnersProtector,
   IronPoint,
   WhiteTassel,
