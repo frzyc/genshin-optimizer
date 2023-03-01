@@ -3,9 +3,8 @@ import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimi
 import { entryTypes, members, preps, presets, srcs } from './listing'
 
 export const fixedTags = {
-  preset: presets,
+  preset: presets, prep: preps,
   member: members, dst: members,
-  nameSrc: srcs, prep: preps,
   et: entryTypes, src: srcs,
 
   region: allRegionKeys, ele: allElementWithPhyKeys, move: allMoveKeys,

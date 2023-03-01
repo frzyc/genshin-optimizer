@@ -3,8 +3,8 @@ import { allArtifactSetKeys, allCharacterKeys, allWeaponKeys } from '@genshin-op
 const stats = ['hp', 'hp_', 'atk', 'atk_', 'def', 'def_', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'dmg_', 'heal_'] as const
 
 export const presets = ['preset0', 'preset1', 'preset2', 'preset3', 'preset4', 'preset5', 'preset6', 'preset7', 'preset8', 'preset9'] as const
-export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'team', 'target', 'stackIn', 'stackInt', 'stackOut'] as const
-export const srcs = ['prep', 'agg', 'iso', 'static', ...allCharacterKeys, ...allWeaponKeys, ...allArtifactSetKeys, 'art', 'enemy', 'custom'] as const
+export const entryTypes = ['self', 'teamBuff', 'active', 'enemy', 'team', 'target', 'stackIn', 'stackInt', 'stackOut', 'prep'] as const
+export const srcs = ['agg', 'iso', 'static', ...allCharacterKeys, ...allWeaponKeys, ...allArtifactSetKeys, 'art', 'enemy', 'custom'] as const
 export const preps = ['dmg', 'shield', 'heal', 'trans'] as const
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 export const dsts = presets

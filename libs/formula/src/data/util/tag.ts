@@ -23,7 +23,6 @@ export function priorityTable(entries: Record<string, Record<string, number>>, d
  * *--------*-----------*-----*----------*--------*------*--------*
  * |  agg   |    YES    | YES |   YES    |  YES   | YES  |  YES   |
  * |  iso   |     -     |  -  |    -     |   -    | YES  |  YES   |
- * | static |     -     |  -  |    -     |   -    |  -   |   -    |
  * *--------*-----------*-----*----------*--------*------*--------*
  *
  * Entries below list queries in the following format:
@@ -36,11 +35,15 @@ export function priorityTable(entries: Record<string, Record<string, number>>, d
  * }
  */
 
-type Desc = { src: Source, accu: Read['accu'] }
+type Desc = { src: Source | undefined, accu: Read['accu'] }
+const aggStr: Desc = { src: 'agg', accu: undefined }
 const agg: Desc = { src: 'agg', accu: 'sum' }
 const iso: Desc = { src: 'iso', accu: undefined }
 const isoSum: Desc = { src: 'iso', accu: 'sum' }
+/** `src:`-agnostic calculation */
 const fixed: Desc = { src: 'static', accu: undefined }
+/** The calculation must have a matching `src:` */
+const fixed2: Desc = { src: undefined, accu: undefined }
 
 const stats: Record<Stat, typeof agg> = {
   hp: agg, hp_: agg, atk: agg, atk_: agg, def: agg, def_: agg,
@@ -67,8 +70,8 @@ export const selfTag = {
   },
   trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, basedCritMulti: fixed, critMulti: iso },
   dmg: { out: fixed, critMulti: fixed },
-  prep: { ele: fixed, move: fixed, amp: fixed, cata: fixed, trans: fixed },
-  formula: { preMulti: fixed, base: agg },
+  prep: { ele: fixed2, move: fixed2, amp: fixed2, cata: fixed2, trans: fixed2 },
+  formula: { base: agg, listing: aggStr, prepType: fixed2 },
 } as const
 export const enemyTag = {
   common: { lvl: fixed, inDmg: fixed, defRed_: agg, defIgn: agg, preRes: agg, postRes: fixed },
@@ -84,9 +87,9 @@ export function customQueries(tag: Tag): Record<string, Read> {
   }) as any
 }
 export function convert<V extends Record<string, Record<string, Desc>>>(v: V, tag: Omit<Tag, 'qt' | 'q'>): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return Object.fromEntries(Object.entries(v).map(([qt, v]) => [qt, Object.fromEntries(Object.entries(v).map(([q, { src, accu }]) => {
-    return [q, new Read({ src, qt, q, ...tag }, accu)]
-  }))])) as any
+  return Object.fromEntries(Object.entries(v).map(([qt, v]) => [qt, Object.fromEntries(Object.entries(v).map(([q, { src, accu }]) =>
+    src ? [q, new Read({ src, qt, q, ...tag }, accu)] : [q, new Read({ qt, q, ...tag }, accu)]
+  ))])) as any
 }
 
 export const queries = new Set([...Object.values(selfTag), ...Object.values(enemyTag)].flatMap(x => Object.keys(x)))

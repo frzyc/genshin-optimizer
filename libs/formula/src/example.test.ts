@@ -1,8 +1,9 @@
 import { compileTagMapValues } from '@genshin-optimizer/waverider'
+import { writeFileSync } from 'fs'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { convert, Data, enemyDebuff, reader, selfBuff, selfTag, team, userBuff } from './data/util'
-import { } from './debug'
+import { convert, Data, enemyDebuff, preps, reader, self, selfBuff, selfTag, team, userBuff } from './data/util'
+import { dependencyString } from './debug'
 import { artifactsData, charData, teamData, weaponData, withMember } from './util'
 
 // This test acts as an example usage. It's mostly sufficient to test that the code
@@ -78,15 +79,39 @@ describe('example', () => {
     expect(calc.compute(team.final.eleMas).val).toEqual(
       calc.compute(member0.final.eleMas).val + calc.compute(member1.final.eleMas).val)
   })
+  test('list optimization targets', () => {
+    const listing = calc.get(self.formula.listing.withTag({ member: 'member0' }).tag)
+    const tags = new Set(listing.map(x => x.meta.tag!))
+
+    expect(listing.length).toBe(11)
+    // Simple check that all formulas are from the same sheet
+    expect([...new Set(listing.map(x => x.val))]).toEqual(['dmg'])
+    expect([...new Set([...tags].map(t => t.src))]).toEqual(['Nahida'])
+    expect([...new Set([...tags].map(t => t.qt))]).toEqual(['formula'])
+    expect([...new Set([...tags].map(t => t.q))]).toEqual(['prepType'])
+    expect([...new Set([...tags].map(t => t.et))]).toEqual(['self'])
+    expect([...new Set([...tags].map(t => t.member))]).toEqual(['member0'])
+    expect([...tags].map(x => x.name).sort()).toEqual([
+      'charged', 'karma_dmg',
+      'normal_0', 'normal_1', 'normal_2', 'normal_3',
+      'plunging_dmg', 'plunging_high', 'plunging_low',
+      'skill_hold', 'skill_press'])
+  })
   test('calculate optimization targets', () => {
-    const normal_0 = reader.withTag({ member: 'member0', src: 'prep', prep: 'dmg', nameSrc: 'Nahida' }).name('normal_0')
-    const normal_1 = reader.withTag({ member: 'member0', src: 'prep', prep: 'dmg', nameSrc: 'Nahida' }).name('normal_1')
+    const { val, meta: { tag: formulaTag } } = calc.get(self.formula.listing.withTag({ member: 'member0' }).tag)[0]
+
+    // Clone and convert `formulaTag` to appropriate shape
+    const tag = { ...formulaTag }
+    delete tag.qt, tag.q
+    tag.et = 'prep'
+    tag.prep = val as typeof preps[number]
+
+    expect(val).toBeTruthy() // Falsy if the formula is not available
+    const normal_0 = reader.withTag(tag).name('normal_0') // `name` should come with the `tag`, but we override it for test convenience
+    const normal_1 = reader.withTag(tag).name('normal_1') // `name` should come with the `tag`, but we override it for test convenience
 
     expect(calc.compute(normal_0).val).toBeCloseTo(91.61, 2)
     expect(calc.compute(normal_1).val).toBeCloseTo(86.23, 2)
-  })
-  test('list optimization targets', () => {
-    throw new Error('Add test')
   })
   test('create optimization calculation', () => {
     throw new Error('Add test')
