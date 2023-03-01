@@ -163,7 +163,6 @@ export const weaponIdMap = {
   12415: "MakhairaAquamarine",
   12416: "Akuoumaru",
   12417: "ForestRegalia",
-  12418: "MailedFlower",
   12501: "SkywardPride",
   12502: "WolfsGravestone",
   12503: "SongOfBrokenPines",
