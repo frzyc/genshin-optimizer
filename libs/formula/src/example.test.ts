@@ -78,7 +78,7 @@ describe('example', () => {
     expect(calc.compute(team.final.eleMas).val).toEqual(
       calc.compute(member0.final.eleMas).val + calc.compute(member1.final.eleMas).val)
   })
-  describe('list final formulas', () => {
+  test('list final formulas', () => {
     // Every tag can be fed into `calc.compute`
     const listing = calc.listFormulas({ member: 'member0' })
 
