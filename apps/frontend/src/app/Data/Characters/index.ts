@@ -14,6 +14,7 @@ import Candace from './Candace'
 import Chongyun from './Chongyun'
 import Collei from './Collei'
 import Cyno from './Cyno'
+import Dehya from './Dehya'
 import Diluc from './Diluc'
 import Diona from './Diona'
 import Dori from './Dori'
@@ -86,6 +87,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Chongyun,
   Collei,
   Cyno,
+  Dehya,
   Diluc,
   Diona,
   Dori,
