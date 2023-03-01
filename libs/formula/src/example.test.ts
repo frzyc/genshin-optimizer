@@ -124,7 +124,7 @@ describe('example', () => {
     })
     // It is duplicated because this conditional affects two distinct
     // stats, `critRate_` and `critDMG_`. Deduplicating this requires
-    // deep equality, which may not be worth it.
+    // tag equality, which may not be worth it.
     expect(conds[1]).toEqual(conds[0])
   })
   test.skip('create optimization calculation', () => {

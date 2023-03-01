@@ -4,10 +4,10 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import PrototypeAmber from './PrototypeAmber'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 
-const data: Data = [
-  ...CalamityQueller,
-  ...KeyOfKhajNisut,
-  ...PrototypeAmber,
-  ...TulaytullahsRemembrance,
+const data: Data[] = [
+  CalamityQueller,
+  KeyOfKhajNisut,
+  PrototypeAmber,
+  TulaytullahsRemembrance,
 ]
-export default data
+export default data.flat()

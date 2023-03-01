@@ -1,8 +1,8 @@
-import { ElementKey, ElementWithPhyKey, MoveKey } from '@genshin-optimizer/consts';
+import { CharacterKey, ElementKey, ElementWithPhyKey, MoveKey, WeaponKey } from '@genshin-optimizer/consts';
 import { NumNode, prod, StrNode, tag } from '@genshin-optimizer/waverider';
-import { convert, Data, reader, self, selfTag, Source, usedNames } from '.';
+import { convert, Data, reader, self, selfTag, usedNames } from '.';
 
-export function register(src: Source, ...data: (Data[number] | Data)[]): Data {
+export function register(src: CharacterKey | WeaponKey, ...data: (Data[number] | Data)[]): Data {
   const internal = ({ tag, value }: Data[number]) => ({ tag: { ...tag, src }, value })
   return data.flatMap(data => Array.isArray(data) ? data.map(internal) : internal(data))
 }

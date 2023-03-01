@@ -94,6 +94,7 @@ export function subscript(index: NumNode, table: number[] | string[]): Subscript
 
 export function tag(v: Num, tag: Tag): TagOverride<NumNode>
 export function tag(v: Str, tag: Tag): TagOverride<StrNode>
+export function tag(v: Val, tag: Tag): TagOverride<AnyNode>
 export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
 }
