@@ -79,6 +79,7 @@ describe('example', () => {
       calc.compute(member0.final.eleMas).val + calc.compute(member1.final.eleMas).val)
   })
   describe('list optimization targets', () => {
+    // Every tag can be fed into `calc.compute`
     const listing = calc.listFormulas({ member: 'member0' })
 
     expect(listing.length).toBe(11)
@@ -96,11 +97,13 @@ describe('example', () => {
   test('calculate optimization targets', () => {
     const tag = calc.listFormulas({ member: 'member0' }).find(x => x.name === 'normal_0')!
     expect(tag).toBeTruthy()
+    expect(tag.prep).toEqual('dmg') // DMG formula
 
     // Compute formula
     const { val, meta } = calc.compute(reader.withTag(tag))
     const { amp, move, ele, cata } = meta.tag!
 
+    // Calculation result, reaction, element, etc
     expect(val).toBeCloseTo(91.61, 2)
     expect(amp).toEqual('')
     expect(move).toEqual('normal')
