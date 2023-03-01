@@ -28,12 +28,11 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     }
     return newWeapons
   }
-  ensureEquipment(charKey: CharacterKey, weaponIds?: Set<string>) {
+  ensureEquipment(charKey: CharacterKey, weaponIds: Set<string> = new Set(this.keys)) {
     const char = this.database.chars.get(charKey)
     if (char?.equippedWeapon) return
-    if (!weaponIds) weaponIds = new Set(this.keys)
     const weapon = defaultInitialWeapon(getCharSheet(charKey, "F").weaponTypeKey)
-    const weaponId = generateRandomWeaponID(weaponIds)
+    const weaponId = this.generateKey(weaponIds)
     weaponIds.add(weaponId)
     this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
     return weapon
@@ -92,15 +91,15 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
   }
 
   new(value: IWeapon): string {
-    const id = generateRandomWeaponID(new Set(this.keys))
+    const id = this.generateKey()
     this.set(id, value)
     return id
   }
-  remove(key: string) {
+  remove(key: string, notify = true) {
     const weapon = this.get(key)
     if (!weapon || weapon.location)
       return // Can't delete equipped weapon here
-    super.remove(key)
+    super.remove(key, notify)
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.weapons.beforeMerge = this.values.length
@@ -122,22 +121,6 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
     result.weapons.import = weapons.length
     const idsToRemove = new Set(this.values.map(w => w.id))
-
-    const swapId = (oldId: string, newId: string) => {
-      if (oldId === newId) return
-      const old = this.get(oldId)
-      if (!old) return
-      takenIds.add(newId)
-      this.setCached(newId, { ...old, id: newId })
-      delete this.data[oldId]
-      this.removeStorageEntry(oldId)
-
-      if (idsToRemove.has(oldId)) {
-        idsToRemove.delete(oldId)
-        idsToRemove.add(newId)
-      }
-    }
-
     const hasEquipment = weapons.some(w => w.location)
     weapons.forEach(w => {
       const weapon = this.validate(w)
@@ -161,26 +144,29 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
           }
           isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
           idsToRemove.delete(match.id)
-          if (importId) {
-            delete this.data[match.id]
-            this.removeStorageEntry(match.id)
-          } else importId = match.id
+          if (importId) super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
+          else importId = match.id
           importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
         }
       }
       if (importId) {
-        swapId(importId, generateRandomWeaponID(takenIds))
-        const oldLoc = this.get(importId)?.location
-        // Ensure valid equipment
-        if (!importWeapon.location && oldLoc)
-          importWeapon.location = oldLoc
+        if (this.get(importId)) { // swap existing to another id
+          const newId = this.generateKey(takenIds)
+          takenIds.add(newId)
+          this.swapId(importId, newId)
+
+          if (idsToRemove.has(importId)) {
+            idsToRemove.delete(importId)
+            idsToRemove.add(newId)
+          }
+        }
         this.set(importId, importWeapon)
       }
       else this.new(importWeapon)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
     if (result.keepNotInImport || result.ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
-    else idtoRemoveArr.forEach(k => super.remove(k))//bypass the location check in "this.remove()"
+    else idtoRemoveArr.forEach(k => this.remove(k))
 
     this.database.weapons.ensureEquipments()
   }
@@ -210,13 +196,4 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     return { duplicated, upgraded }
   }
-}
-/// Get a random integer (converted to string) that is not in `keys`
-function generateRandomWeaponID(keys: Set<string>): string {
-  let ind = keys.size
-  let candidate = ""
-  do {
-    candidate = `weapon_${ind++}`
-  } while (keys.has(candidate))
-  return candidate
 }

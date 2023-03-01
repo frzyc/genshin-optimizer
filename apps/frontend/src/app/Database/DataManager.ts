@@ -46,7 +46,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
   get values() { return Object.values(this.data) }
   get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
   getStorage(key: CacheKey): StorageValue { return this.database.storage.get(this.toStorageKey(key)) }
-  set(key: CacheKey, value: Partial<StorageValue>): boolean {
+  set(key: CacheKey, value: Partial<StorageValue>, notify = true): boolean {
     const old = this.getStorage(key)
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
@@ -58,7 +58,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
       this.trigger(key, "invalid", value)
       return false
     }
-    if (!old) this.trigger(key, "new", cached)
+    if (!old && notify) this.trigger(key, "new", cached)
     this.setCached(key, cached)
     return true
   }
@@ -73,14 +73,36 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     this.listeners[key]?.forEach(cb => cb(key, reason, object))
     this.anyListeners.forEach(cb => cb(key, reason, object))
   }
-  remove(key: CacheKey) {
+  remove(key: CacheKey, notify = true) {
     const rem = this.data[key]
     delete this.data[key]
     this.removeStorageEntry(key)
 
-    this.trigger(key, "remove", rem)
+    if (notify) this.trigger(key, "remove", rem)
     delete this.listeners[key]
   }
+  swapId(oldKey: CacheKey, newKey: CacheKey, notify = false): boolean {
+    if (oldKey === newKey) return false
+    const value = this.get(oldKey)
+    if (!value) return false
+    if (this.get(newKey)) return false
+    if (!this.set(newKey, value, notify)) return false
+    this.remove(oldKey, notify)
+    return true
+  }
+  get goKeySingle(){
+    if(this.goKey.endsWith("s"))
+    return this.goKey.slice(0,-1)
+  }
+  generateKey(keys: Set<string> = new Set(this.keys)): string {
+    let ind = keys.size
+    let candidate = ""
+    do {
+      candidate = `${this.goKeySingle}_${ind++}`
+    } while (keys.has(candidate))
+    return candidate
+  }
+
   clear() {
     for (const key in this.data) {
       this.remove(key)

@@ -52,15 +52,15 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
   }
 
   new(value: IArtifact): string {
-    const id = generateRandomArtID(new Set(this.keys))
+    const id = this.generateKey()
     this.set(id, value)
     return id
   }
-  remove(key: string) {
+  remove(key: string, notify = true) {
     const art = this.get(key)
     if (!art) return
     art.location && this.database.chars.setEquippedArtifact(art.location, art.slotKey, "")
-    super.remove(key)
+    super.remove(key, notify)
   }
   setProbability(id: string, probability?: number) {
     const art = this.get(id)
@@ -89,22 +89,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
 
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(this.values.map(a => a.id))
-
-    const swapId = (oldId: string, newId: string) => {
-      if (oldId === newId) return
-      const old = this.get(oldId)
-      if (!old) return
-      takenIds.add(newId)
-      this.setCached(newId, { ...old, id: newId })
-      delete this.data[oldId]
-      this.removeStorageEntry(oldId)
-
-      if (idsToRemove.has(oldId)) {
-        idsToRemove.delete(oldId)
-        idsToRemove.add(newId)
-      }
-    }
-
     const hasEquipment = artifacts.some(a => a.location)
     artifacts.forEach((a, i) => {
       const art = this.validate(a)
@@ -128,15 +112,22 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
           }
           isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
           idsToRemove.delete(match.id)
-          if (importId) {
-            delete this.data[match.id]
-            this.removeStorageEntry(match.id)
-          } else importId = match.id
+          if (importId) this.remove(match.id, false)// Do not notify, since this is a "replacement"
+          else importId = match.id
           importArt = { ...art, location: hasEquipment ? art.location : match.location }
         }
       }
       if (importId) {
-        swapId(importId, generateRandomArtID(takenIds))
+        if (this.get(importId)) { // swap existing to another id
+          const newId = this.generateKey(takenIds)
+          takenIds.add(newId)
+          this.swapId(importId, newId)
+
+          if (idsToRemove.has(importId)) {
+            idsToRemove.delete(importId)
+            idsToRemove.add(newId)
+          }
+        }
         this.set(importId, importArt)
       } else this.new(importArt)
     })
@@ -187,16 +178,6 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         ))).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     return { duplicated, upgraded }
   }
-}
-
-/// Get a random integer (converted to string) that is not in `keys`
-function generateRandomArtID(keys: Set<string>): string {
-  let ind = keys.size
-  let candidate = ""
-  do {
-    candidate = `artifact_${ind++}`
-  } while (keys.has(candidate))
-  return candidate
 }
 
 export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: string[] } {
