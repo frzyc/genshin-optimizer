@@ -1,6 +1,6 @@
 import { WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
-import { allCustoms, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { allConditionals, percent, register, self, selfBuff, teamBuff } from '../../util'
 import { entriesForWeapon, WeaponDataGen } from '../util'
 import dg from './data.gen.json'
 
@@ -10,7 +10,7 @@ const teamEmSrc = [NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 
 const name: WeaponKey = data_gen.weaponKey
 const { final, weapon: { refinement } } = self
-const { afterSkillStacks } = allCustoms(name)
+const { afterSkillStacks } = allConditionals(name)
 const selfElemas = prod(afterSkillStacks, percent(subscript(refinement, selfEmSrc)), final.hp_)
 const teamEleMas = cmpEq(afterSkillStacks, 3, prod(percent(subscript(refinement, teamEmSrc)), final.hp))
 

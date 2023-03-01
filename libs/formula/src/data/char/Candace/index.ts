@@ -1,7 +1,7 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
-import { allCustoms, customDmg, percent, register, self, selfBuff, teamBuff } from '../../util'
+import { allConditionals, customDmg, percent, register, self, selfBuff, teamBuff } from '../../util'
 import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -61,8 +61,7 @@ const dm = {
 
 const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { ascension, constellation } } = self
-// Conditional
-const { afterBurst, c2AfterSkillHit } = allCustoms(info.key)
+const { afterBurst, c2AfterSkillHit } = allConditionals(info.key)
 
 const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
 

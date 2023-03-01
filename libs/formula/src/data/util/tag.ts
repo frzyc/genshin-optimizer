@@ -100,7 +100,8 @@ export const team = convert(selfTag, { et: 'team' })
 export const target = convert(selfTag, { et: 'target' })
 export const enemy = convert(enemyTag, { et: 'enemy' })
 
-export const allCustoms = (src: Source) => customQueries({ src })
+export const allConditionals = (src: Source) => customQueries({ src, qt: 'cond' })
+export const allStatics = (src: Source) => customQueries({ src })
 export const allStacks = (src: Source): Record<string, { in: Read, out: Read }> => new Proxy(tag, {
   get(tag, q: string) {
     queries.add(q)
@@ -117,9 +118,4 @@ export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const activeCharBuff = convert(selfTag, { et: 'active' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 
-export const queryTypes = [...new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'misc'])]
-
-export type Self = typeof self
-export type Team = typeof team
-export type Enemy = typeof enemy
-export type Custom = typeof allCustoms
+export const queryTypes = [...new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'misc', 'cond'])]

@@ -1,6 +1,6 @@
 import { CharacterKey, ElementKey, ElementWithPhyKey, MoveKey, RegionKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { AnyNode, NumNode, prod, RawTagMapEntries, subscript, sum } from '@genshin-optimizer/waverider'
-import { allCustoms, customDmg, customShield, Data, FormulaArg, percent, self, selfBuff, Stat } from '../util'
+import { allStatics, customDmg, customShield, Data, FormulaArg, percent, self, selfBuff, Stat } from '../util'
 
 export interface CharInfo {
   key: CharacterKey /* Might need to change this to CharacterSheetKey */
@@ -72,7 +72,7 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as Stat].add(prod(base, allCustoms('static')[curve]))),
+      selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))),
     ...ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as Stat].add(subscript(ascension, values))),
 

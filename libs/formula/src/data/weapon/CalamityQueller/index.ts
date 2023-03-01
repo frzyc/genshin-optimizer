@@ -1,6 +1,6 @@
 import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
-import { allCustoms, register, self, selfBuff } from '../../util'
+import { allConditionals, register, self, selfBuff } from '../../util'
 import { entriesForWeapon, WeaponDataGen } from '../util'
 import dg from './data.gen.json'
 
@@ -10,8 +10,7 @@ const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const name: WeaponKey = data_gen.weaponKey
 const { common, weapon: { refinement } } = self
-// Conditional
-const { stack } = allCustoms(name)
+const { stack } = allConditionals(name)
 
 const atkInc = prod(
   cmpEq(common.isActive, 1,

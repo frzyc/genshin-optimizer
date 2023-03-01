@@ -1,6 +1,6 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { allCustoms, Data, percent, reader, self, selfBuff, team } from '../util'
+import { allStatics, Data, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
@@ -29,8 +29,8 @@ const data: Data = [
   selfBuff.common.count.add(0),
 
   // Char & weapon curves
-  ...Object.entries(charCurves).map(([k, v]) => allCustoms('static')[k].add(subscript(self.char.lvl, v))),
-  ...Object.entries(weaponCurves).map(([k, v]) => allCustoms('static')[k].add(subscript(self.weapon.lvl, v))),
+  ...Object.entries(charCurves).map(([k, v]) => allStatics('static')[k].add(subscript(self.char.lvl, v))),
+  ...Object.entries(weaponCurves).map(([k, v]) => allStatics('static')[k].add(subscript(self.weapon.lvl, v))),
 
   // Total element count; this is NOT a `team` stat
   selfBuff.common.eleCount.add(sum(...allElementKeys.map(ele => team.common.count[ele].max))),

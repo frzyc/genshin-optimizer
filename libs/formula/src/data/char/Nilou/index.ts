@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
-import { allCustoms, enemyDebuff, percent, register, self, selfBuff, team, teamBuff } from '../../util'
+import { allConditionals, enemyDebuff, percent, register, self, selfBuff, team, teamBuff } from '../../util'
 import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -76,8 +76,7 @@ export const dm = {
 
 const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { ascension, constellation } } = self
-// Conditional
-const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = allCustoms(info.key)
+const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } = allConditionals(info.key)
 
 const onlyDendroHydroTeam = cmpGE(team.common.count.dendro, 1, cmpEq(self.common.eleCount, 2, 1))
 const isGoldenChaliceBountyActive = cmpGE(ascension, 1, cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1)))

@@ -1,6 +1,6 @@
 import { ArtifactSetKey, CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq } from '@genshin-optimizer/waverider'
-import { allCustoms, convert, Data, Member, Preset, reader, selfBuff, selfTag, Stat } from './data/util'
+import { allConditionals, convert, Data, Member, Preset, reader, selfBuff, selfTag, Stat } from './data/util'
 
 export function withPreset(preset: Preset, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
@@ -11,9 +11,9 @@ export function withMember(member: Member, ...data: Data): Data {
 
 export function charData(data: {
   name: CharacterKey, lvl: number, ascension: number, constellation: number
-  custom: Record<string, number | string>
+  conds: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, constellation } = selfBuff.char, custom = allCustoms(data.name)
+  const { lvl, ascension, constellation } = selfBuff.char, conds = allConditionals(data.name)
 
   return [
     reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
@@ -22,7 +22,7 @@ export function charData(data: {
     lvl.add(data.lvl),
     ascension.add(data.ascension),
     constellation.add(data.constellation),
-    ...Object.entries(data.custom).map(([k, v]) => custom[k].add(v)),
+    ...Object.entries(data.conds).map(([k, v]) => conds[k].add(v)),
 
     // Default char
     selfBuff.base.critRate_.add(0.05),
@@ -32,9 +32,9 @@ export function charData(data: {
 
 export function weaponData(data: {
   name: WeaponKey, lvl: number, ascension: number, refinement: number
-  custom: Record<string, number | string>
+  conds: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, refinement } = selfBuff.weapon, custom = allCustoms(data.name)
+  const { lvl, ascension, refinement } = selfBuff.weapon, conds = allConditionals(data.name)
 
   return [
     reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
@@ -42,13 +42,13 @@ export function weaponData(data: {
     lvl.add(data.lvl),
     ascension.add(data.ascension),
     refinement.add(data.refinement),
-    ...Object.entries(data.custom).map(([k, v]) => custom[k].add(v)),
+    ...Object.entries(data.conds).map(([k, v]) => conds[k].add(v)),
   ]
 }
 
 export function artifactsData(data: {
   set: ArtifactSetKey, stats: readonly { key: Stat, value: number }[]
-}[], custom: Partial<Record<ArtifactSetKey, Record<string, number | string>>>): Data {
+}[], conds: Partial<Record<ArtifactSetKey, Record<string, number | string>>>): Data {
   const { common: { count }, premod } = convert(selfTag, { src: 'art', et: 'self' })
   const sets: Partial<Record<ArtifactSetKey, number>> = {}, stats: Partial<Record<Stat, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -67,10 +67,10 @@ export function artifactsData(data: {
 
     ...Object.entries(sets).map(([k, v]) => count.with('src', k as ArtifactSetKey).add(v)),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
-    ...Object.entries(custom).flatMap(([art, v]) => {
-      const custom = allCustoms(art as ArtifactSetKey)
+    ...Object.entries(conds).flatMap(([art, v]) => {
+      const conds = allConditionals(art as ArtifactSetKey)
       return Object.entries(v).map(([k, v]) =>
-        custom[k].add(v))
+        conds[k].add(v))
     })
   ]
 }

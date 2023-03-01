@@ -1,10 +1,10 @@
 import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE } from '@genshin-optimizer/waverider'
-import { allCustoms, allStacks, percent, register, selfBuff, teamBuff } from '../util'
+import { allConditionals, allStacks, percent, register, selfBuff, teamBuff } from '../util'
 import { artCount, entriesForArt } from './util'
 
 const name: ArtifactSetKey = 'NoblesseOblige', count = artCount(name)
-const { set4 } = allCustoms(name), { canNO4 } = allStacks(name)
+const { set4 } = allConditionals(name), { canNO4 } = allStacks(name)
 
 export default register(name,
   entriesForArt(name),

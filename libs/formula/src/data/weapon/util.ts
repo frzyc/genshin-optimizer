@@ -1,6 +1,6 @@
 import { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { AnyNode, prod, RawTagMapEntries, subscript } from '@genshin-optimizer/waverider'
-import { allCustoms, self, selfBuff, Stat } from '../util'
+import { allStatics, self, selfBuff, Stat } from '../util'
 
 export type WeaponDataGen = {
   weaponKey: WeaponKey
@@ -14,7 +14,7 @@ export function entriesForWeapon(gen: WeaponDataGen): RawTagMapEntries<AnyNode> 
   return [
     // Stats
     ...gen.lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as Stat].add(prod(base, allCustoms('static')[curve]))),
+      selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))),
     ...gen.ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as Stat].add(subscript(ascension, values))),
     ...gen.refinementBonus.map(({ key, values }) =>

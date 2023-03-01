@@ -1,6 +1,6 @@
 import { WeaponKey } from '@genshin-optimizer/consts'
 import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { allCustoms, percent, register, self, selfBuff } from '../../util'
+import { allConditionals, percent, register, self, selfBuff } from '../../util'
 import { entriesForWeapon, WeaponDataGen } from '../util'
 import dg from './data.gen.json'
 
@@ -14,7 +14,7 @@ const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const name: WeaponKey = 'TulaytullahsRemembrance'
 const { weapon: { refinement } } = self
-const { timePassive, hitPassive } = allCustoms(name)
+const { timePassive, hitPassive } = allConditionals(name)
 
 const time_normal_dmg_ = prod(timePassive, percent(subscript(refinement, time_normal_dmg_arr)))
 const hit_normal_dmg_ = prod(hitPassive, percent(subscript(refinement, hit_normal_dmg_arr)))

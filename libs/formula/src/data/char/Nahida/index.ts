@@ -1,5 +1,5 @@
 import { cmpEq, cmpGE, cmpNE, max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { activeCharBuff, allCustoms, customDmg, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
+import { activeCharBuff, allConditionals, allStatics, customDmg, enemyDebuff, percent, register, self, selfBuff, target, team, teamBuff } from '../../util'
 import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
@@ -74,10 +74,8 @@ const dm = {
 
 const info = dataGenToCharInfo(data_gen as CharDataGen)
 const { final, char: { skill, burst, ascension, constellation } } = self
-// Conditional
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allCustoms(info.key)
-// Intermediate
-const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allCustoms(info.key)
+const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } = allConditionals(info.key)
+const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
 const count = team.common.count
 
