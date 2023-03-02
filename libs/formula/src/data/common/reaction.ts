@@ -68,42 +68,36 @@ const data: Data = [
 
   // Trans listing
   ...allTransformativeReactionKeys.flatMap(trans => {
-    const { variants } = transInfo[trans]
-
-    let listing: string | StrNode
-    if (transTriggerByEle['physical'].has(trans)) {
-      listing = 'trans'
-    } else {
-      const available = allElementKeys.filter(ele => transTriggerByEle[ele].has(trans))
-      if (available.length === allElementKeys.length)
-        listing = 'trans'
-      else if (available.length === 1)
-        listing = cmpEq(self.char.ele, available[0], 'trans', '')
-      else if (available.length === allElementWithPhyKeys.length - 1)
-        listing = cmpNE(self.char.ele, available[0], 'trans', '')
-      else
-        listing = lookup(self.char.ele, Object.fromEntries(available.map(k => [k, 'trans'])), '')
-    }
-    return variants.map(ele =>
-      selfBuff.formula.listing.add(tag(listing, { trans, ele, src: 'static', name: 'trans' })))
+    let cond: string | StrNode
+    const available = allElementKeys.filter(ele => transTriggerByEle[ele].has(trans))
+    if (transTriggerByEle['physical'].has(trans) || available.length === allElementKeys.length)
+      cond = 'trans'
+    else if (available.length === 1)
+      cond = cmpEq(self.char.ele, available[0], 'trans', '')
+    else
+      cond = lookup(self.char.ele, Object.fromEntries(available.map(k => [k, 'trans'])), '')
+    return transInfo[trans].variants.map(ele =>
+      selfBuff.formula.listing.add(tag(cond, { trans, ele, src: 'static', name: 'trans' })))
   }),
 ]
+
 reader.name('trans') // Register `name:trans`
 const transFormulas = register('static', [
-  ...allTransformativeReactionKeys.flatMap(trans => {
-    const { multi, variants, canCrit } = transInfo[trans]
+  ...allTransformativeReactionKeys.map(trans => {
+    const { multi, canCrit } = transInfo[trans]
 
     if (trans === 'swirl')
-      return variants.map(ele => selfBuff.formula.trans[trans][ele].add(dynTag(
+      return selfBuff.formula.trans[trans].add(dynTag(
         prod(sum(prod(multi, self.reaction.transBase), self.reaction.cataAddi), enemy.common.postRes, self.reaction.ampMulti),
-        { cata: self.prep.cata, amp: self.prep.amp })
+        { cata: self.prep.cata, amp: self.prep.amp }
       ))
 
-    const components: (number | NumNode)[] = [multi, self.reaction.transBase]
+    const components = [multi, self.reaction.transBase]
     if (canCrit) components.push(self.trans.critMulti)
-    return variants.map(ele => selfBuff.formula.trans[trans][ele].add(prod(...components)))
+    return selfBuff.formula.trans[trans].add(prod(...components))
   }),
   ...allElementKeys.map(ele => selfBuff.prep.ele[ele].add(ele)),
   ...allTransformativeReactionKeys.map(trans => selfBuff.prep.trans[trans].add(trans))
 ]).map(({ tag, value }) => ({ tag: { ...tag, name: 'trans' }, value }))
+
 export default [...data, ...transFormulas]
