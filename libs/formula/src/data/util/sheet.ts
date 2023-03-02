@@ -14,52 +14,42 @@ export type FormulaArg = {
 }
 
 export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefined, move: MoveKey, base: NumNode, { team, cond = 'dmg' }: FormulaArg = {}, ...extra: Data): Data {
-  usedNames.add(name)
-
-  const entry = team ? teamBuff : selfBuff
-  return [
-    entry.formula.listing.add(tag(cond, { name })),
-    ...[
-      entry.formula.base.add(base),
-      entry.prep.ele.add(eleOverride ?? self.reaction.infusion),
-      entry.prep.move.add(move),
-
-      ...extra,
-    ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
-  ]
+  const buff = team ? teamBuff : selfBuff
+  return registerFormula(name, team, cond,
+    buff.formula.base.add(base),
+    buff.prep.ele.add(eleOverride ?? self.reaction.infusion),
+    buff.prep.move.add(move),
+    ...extra,
+  )
 }
 
 export function customShield(name: string, ele: ElementKey | undefined, base: NumNode, { team, cond = 'shield' }: FormulaArg = {}, ...extra: Data): Data {
-  usedNames.add(name)
-
   switch (ele) {
     case undefined: break
     case 'geo': base = prod(tag(1.5, reader.geo.tag), base); break
     default: base = prod(tag(2.5, reader[ele].tag), base)
   }
 
-  const entry = team ? teamBuff : selfBuff
-  return [
-    entry.formula.listing.add(tag(cond, { name })),
-    ...[
-      entry.prep.ele.add(ele ?? ''),
-      entry.formula.base.add(base),
-
-      ...extra,
-    ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
-  ]
+  const buff = team ? teamBuff : selfBuff
+  return registerFormula(name, team, cond,
+    buff.prep.ele.add(ele ?? ''),
+    buff.formula.base.add(base),
+    ...extra,
+  )
 }
 
 export function customHeal(name: string, base: NumNode, { team, cond = 'heal' }: FormulaArg = {}, ...extra: Data): Data {
+  const buff = team ? teamBuff : selfBuff
+  return registerFormula(name, team, cond,
+    buff.formula.base.add(base),
+    ...extra,
+  )
+}
+
+function registerFormula(name: string, team: boolean | undefined, cond: string | StrNode, ...extra: Data): Data {
   usedNames.add(name)
-
-  const entry = team ? teamBuff : selfBuff
   return [
-    entry.formula.listing.add(tag(cond, { name })),
-    ...[
-      entry.formula.base.add(base),
-
-      ...extra,
-    ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
+    (team ? teamBuff : selfBuff).formula.listing.add(tag(cond, { name })),
+    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value }))
   ]
 }
