@@ -3,6 +3,9 @@ import { ArtCharDatabase } from "./Database"
 import { IGO, IGOOD, ImportResult } from "./exim"
 export class DataManager<CacheKey extends string, GOKey extends string, CacheValue extends StorageValue, StorageValue> {
   database: ArtCharDatabase
+  /**
+   * The "list name" when an DataManager is exported to GO data
+   */
   goKey: GOKey
 
   constructor(database: ArtCharDatabase, goKey: GOKey) {
@@ -81,6 +84,18 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     if (notify) this.trigger(key, "remove", rem)
     delete this.listeners[key]
   }
+  /**
+   * Swaps the entry in `oldKey` to a `newKey`.
+   * Will fail if
+   *   oldKey == newKey
+   *   data[oldKey] doesnt exist
+   *   data[newKey] exists
+   *   setting data[newKey] fails.
+   * @param oldKey
+   * @param newKey
+   * @param notify
+   * @returns
+   */
   swapId(oldKey: CacheKey, newKey: CacheKey, notify = false): boolean {
     if (oldKey === newKey) return false
     const value = this.get(oldKey)
