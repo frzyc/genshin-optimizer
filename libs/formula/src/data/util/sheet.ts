@@ -15,12 +15,10 @@ export type FormulaArg = {
 
 export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefined, move: MoveKey, base: NumNode, { team, cond = 'dmg' }: FormulaArg = {}, ...extra: Data): Data {
   const buff = team ? teamBuff : selfBuff
-  return registerFormula(name, team, cond,
+  return registerFormula(name, team, tag(cond, { move }),
     buff.formula.base.add(base),
     buff.prep.ele.add(eleOverride ?? self.reaction.infusion),
-    buff.prep.move.add(move),
-    ...extra,
-  )
+    ...extra)
 }
 
 export function customShield(name: string, ele: ElementKey | undefined, base: NumNode, { team, cond = 'shield' }: FormulaArg = {}, ...extra: Data): Data {
@@ -31,25 +29,23 @@ export function customShield(name: string, ele: ElementKey | undefined, base: Nu
   }
 
   const buff = team ? teamBuff : selfBuff
-  return registerFormula(name, team, cond,
-    buff.prep.ele.add(ele ?? ''),
+  return registerFormula(name, team, ele ? tag(cond, { ele }) : cond,
     buff.formula.base.add(base),
-    ...extra,
-  )
+    ...extra)
 }
 
 export function customHeal(name: string, base: NumNode, { team, cond = 'heal' }: FormulaArg = {}, ...extra: Data): Data {
   const buff = team ? teamBuff : selfBuff
   return registerFormula(name, team, cond,
     buff.formula.base.add(base),
-    ...extra,
-  )
+    ...extra)
 }
 
 function registerFormula(name: string, team: boolean | undefined, cond: string | StrNode, ...extra: Data): Data {
   usedNames.add(name)
+  const buff = team ? teamBuff : selfBuff
   return [
-    (team ? teamBuff : selfBuff).formula.listing.add(tag(cond, { name })),
+    buff.formula.listing.add(tag(cond, { name })),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value }))
   ]
 }

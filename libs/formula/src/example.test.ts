@@ -96,9 +96,10 @@ describe('example', () => {
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
-    for (const { name, ...tag } of listing.filter(x => x.src === 'Nahida')) {
+    for (const { name, move, ...tag } of listing.filter(x => x.src === 'Nahida')) {
       names.push(name!)
       expect(name).toBeTruthy()
+      expect(move).toBeTruthy()
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           member: 'member0',

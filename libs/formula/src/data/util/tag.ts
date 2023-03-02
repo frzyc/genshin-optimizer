@@ -69,12 +69,13 @@ export const selfTag = {
     cataBase: iso, cataAddi: agg,
     bonus: agg,
   },
-  trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: fixed },
+  trans: { multi: fixed, out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: fixed },
   dmg: { out: fixed, critMulti: fixed },
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
   formula: {
     base: agg, listing: aggStr,
-    dmg: prep, trans: prep, shield: prep, heal: prep,
+    dmg: prep, shield: prep, heal: prep,
+    trans: prep, transCrit: prep, swirl: prep,
   },
 } as const
 export const enemyTag = {
