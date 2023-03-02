@@ -30,7 +30,7 @@ export interface BuildSetting {
   allowLocations: LocationKey[]
   allowLocationsState: AllowLocationsState
   artExclusion: string[]
-  enableArtExclusion: boolean
+  useExcludedArts: boolean
   optimizationTarget?: string[]
   mainStatAssumptionLevel: number
   allowPartial: boolean
@@ -54,7 +54,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return
     if (typeof obj !== "object") return
-    let { artSetExclusion, artExclusion, enableArtExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
+    let { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
 
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -82,10 +82,10 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
     if (!artSetExclusion) artSetExclusion = {}
-    if (enableArtExclusion === undefined) enableArtExclusion = false
+    if (useExcludedArts === undefined) useExcludedArts = false
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
-    return { artSetExclusion, artExclusion, enableArtExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+    return { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -95,7 +95,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
 const initialBuildSettings: BuildSetting = deepFreeze({
   artSetExclusion: {},
   artExclusion: [],
-  enableArtExclusion: false,
+  useExcludedArts: false,
   statFilters: {},
   mainStatKeys: { sands: [...Artifact.slotMainStats("sands")], goblet: [...Artifact.slotMainStats("goblet")], circlet: [...Artifact.slotMainStats("circlet")] },
   optimizationTarget: undefined,
