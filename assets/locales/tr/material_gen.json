@@ -207,6 +207,14 @@
     "name": "Cesaret Sınavı Bileti",
     "description": "Yashiro Heyetinin düzenlediği \"Cesaret Sınavı\" etkinliğinin özel mücadeleleri tamamlanarak elde edilen bir bilet. Katılımcıların cesaretleri ve çabalarının bir simgesidir.\\nBu biletleri \"Akitsu Kimodameshi\" etkinliği ödülleri ile takas edebilirsin."
   },
+  "FloralCoupon": {
+    "name": "Çiçek Kuponu",
+    "description": "Rüzgarçiçeği Festivali sırasında Çiçek Satrancı oynayarak bu ödül kuponlarını elde edebilirsin. Etkinlik boyunca kuponları ödüllerle takas edebilirsin."
+  },
+  "FestiveTicket": {
+    "name": "Şenlik Bileti",
+    "description": "Rüzgarçiçeği Festivali sırasında çeşitli şenliklere katılarak bu ödül biletlerini elde edebilirsin. Etkinlik boyunca biletleri ödüllerle takas edebilirsin."
+  },
   "Primogem": {
     "name": "Köken Taşı",
     "description": "Sıradan dünyanın ötesinde ezeli bir kristal mücevher. Bir zamanlar var olan evrenlerin yoğun umutları ve hayalleriyle parıldar."
@@ -541,7 +549,7 @@
   },
   "Nilou": {
     "name": "Nilou",
-    "description": "Zubary Tiyatrosunun yıldızı. Oldukça samimi ve saf olmakla birlikte dansı da hareketli ve zariftir."
+    "description": "Zubayr Tiyatrosunun yıldızı. Oldukça samimi ve saf olmakla birlikte dansı da hareketli ve zariftir."
   },
   "Cyno": {
     "name": "Cyno",
@@ -575,13 +583,21 @@
     "name": "Alhaitham",
     "description": "Sumeru Akademisinin şu anki katibi. Olağanüstü zekası ve yetenekleri olan, özgürlüğüne düşkün bir adam. Sıradan insanların meraklı gözlerinden uzakta başına buyruk bir şekilde yaşar."
   },
+  "Dehya": {
+    "name": "Dehya",
+    "description": "Sumeru'nun kumlarında dolaşan ve bir paralı asker örgütü olan Münzevilerin bir üyesi. Yiğit ve güçlü savaşçı yapısıyla, Münzevi arkadaşları arasında büyük bir şöhrete sahiptir."
+  },
+  "Mika": {
+    "name": "Mika",
+    "description": "Sıradan bir ailenin çocuğu olan genç bir şövalye. Bölüğünde Ön Saha Gözlemcisi olarak görev yapmaktadır. Alçak gönüllü ve temkinli bir karakterdir."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı",
-    "description": "Kamisato Ayaka'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kamisato Ayaka'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "JeansStellaFortuna": {
     "name": "Jean'in Yaşam Yıldızı",
-    "description": "Jean'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Jean'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "TravelerMalesStellaFortuna": {
     "name": "Erkek Gezginin Yaşam Yıldızı",
@@ -589,7 +605,7 @@
   },
   "LisasStellaFortuna": {
     "name": "Lisa'nın Yaşam Yıldızı",
-    "description": "Lisa'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Lisa'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "TravelerFemalesStellaFortuna": {
     "name": "Kadın Gezginin Yaşam Yıldızı",
@@ -597,223 +613,223 @@
   },
   "BarbarasStellaFortuna": {
     "name": "Barbara'nın Yaşam Yıldızı",
-    "description": "Barbara'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Barbara'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "KaeyasStellaFortuna": {
     "name": "Kaeya'nın Yaşam Yıldızı",
-    "description": "Kaeya'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kaeya'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "DilucsStellaFortuna": {
     "name": "Diluc'un Yaşam Yıldızı",
-    "description": "Diluc'un Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Diluc'un Takımyıldız Etkinleştirme Malzemesi"
   },
   "RazorsStellaFortuna": {
     "name": "Razor'ın Yaşam Yıldızı",
-    "description": "Razor'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Razor'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "AmbersStellaFortuna": {
     "name": "Amber'ın Yaşam Yıldızı",
-    "description": "Amber'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Amber'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "VentisStellaFortuna": {
     "name": "Venti'nin Yaşam Yıldızı",
-    "description": "Venti'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Venti'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "XianglingsStellaFortuna": {
     "name": "Xiangling'in Yaşam Yıldızı",
-    "description": "Xiangling'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Xiangling'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "BeidousStellaFortuna": {
     "name": "Beidou'nun Yaşam Yıldızı",
-    "description": "Beidou'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Beidou'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "XingqiusStellaFortuna": {
     "name": "Xingqiu'nun Yaşam Yıldızı",
-    "description": "Xingqiu'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Xingqiu'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "XiaosStellaFortuna": {
     "name": "Xiao'nun Yaşam Yıldızı",
-    "description": "Xiao'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Xiao'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "NingguangsStellaFortuna": {
     "name": "Ningguang'ın Yaşam Yıldızı",
-    "description": "Ningguang'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Ningguang'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "KleesStellaFortuna": {
     "name": "Klee'nin Yaşam Yıldızı",
-    "description": "Klee'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Klee'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "ZhonglisStellaFortuna": {
     "name": "Zhongli'nin Yaşam Yıldızı",
-    "description": "Zhongli'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Zhongli'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "FischlsStellaFortuna": {
     "name": "Fischl'ın Yaşam Yıldızı",
-    "description": "Fischl'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Fischl'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "BennettsStellaFortuna": {
     "name": "Bennett'in Yaşam Yıldızı",
-    "description": "Bennett'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Bennett'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "TartagliasStellaFortuna": {
     "name": "Tartaglia'nın Yaşam Yıldızı",
-    "description": "Tartaglia'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Tartaglia'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "NoellesStellaFortuna": {
     "name": "Noelle'in Yaşam Yıldızı",
-    "description": "Noelle'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Noelle'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "QiqisStellaFortuna": {
     "name": "Qiqi'nin Yaşam Yıldızı",
-    "description": "Qiqi'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Qiqi'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "ChongyunsStellaFortuna": {
     "name": "Chongyun'un Yaşam Yıldızı",
-    "description": "Chongyun'un Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Chongyun'un Takımyıldız Etkinleştirme Malzemesi"
   },
   "GanyusStellaFortuna": {
     "name": "Ganyu'nun Yaşam Yıldızı",
-    "description": "Ganyu'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Ganyu'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "AlbedosStellaFortuna": {
     "name": "Albedo'nun Yaşam Yıldızı",
-    "description": "Albedo'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Albedo'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "DionasStellaFortuna": {
     "name": "Diona'nın Yaşam Yıldızı",
-    "description": "Diona'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Diona'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "MonasStellaFortuna": {
     "name": "Mona'nın Yaşam Yıldızı",
-    "description": "Mona'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Mona'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "KeqingsStellaFortuna": {
     "name": "Keqing'in Yaşam Yıldızı",
-    "description": "Keqing'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Keqing'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "SucrosesStellaFortuna": {
     "name": "Sucrose'un Yaşam Yıldızı",
-    "description": "Sucrose'un Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Sucrose'un Takımyıldız Etkinleştirme Malzemesi"
   },
   "XinyansStellaFortuna": {
     "name": "Xinyan'ın Yaşam Yıldızı",
-    "description": "Xinyan'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Xinyan'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "RosariasStellaFortuna": {
     "name": "Rosaria'nın Yaşam Yıldızı",
-    "description": "Rosaria'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Rosaria'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "HuTaosStellaFortuna": {
     "name": "Hu Tao'nun Yaşam Yıldızı",
-    "description": "Hu Tao'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Hu Tao'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "KaedeharaKazuhasStellaFortuna": {
     "name": "Kaedehara Kazuha'nın Yaşam Yıldızı",
-    "description": "Kaedehara Kazuha'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kaedehara Kazuha'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "YanfeisStellaFortuna": {
     "name": "Yanfei'nin Yaşam Yıldızı",
-    "description": "Yanfei'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Yanfei'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "YoimiyasStellaFortuna": {
     "name": "Yoimiya'nın Yaşam Yıldızı",
-    "description": "Yoimiya'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Yoimiya'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "ThomasStellaFortuna": {
     "name": "Thoma'nın Yaşam Yıldızı",
-    "description": "Thoma'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Thoma'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "EulasStellaFortuna": {
     "name": "Eula'nın Yaşam Yıldızı",
-    "description": "Eula'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Eula'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "RaidenShogunsStellaFortuna": {
     "name": "Şogun Raiden'ın Yaşam Yıldızı",
-    "description": "Şogun Raiden'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Şogun Raiden'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "SayusStellaFortuna": {
     "name": "Sayu'nun Yaşam Yıldızı",
-    "description": "Sayu'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Sayu'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "SangonomiyaKokomisStellaFortuna": {
     "name": "Sangonomiya Kokomi'nin Yaşam Yıldızı",
-    "description": "Kokomi'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kokomi'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "GorousStellaFortuna": {
     "name": "Gorou'nun Yaşam Yıldızı",
-    "description": "Gorou'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Gorou'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "KujouSarasStellaFortuna": {
     "name": "Kujou Sara'nın Yaşam Yıldızı",
-    "description": "Kujou Sara'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kujou Sara'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "AratakiIttosStellaFortuna": {
     "name": "Arataki Itto'nun Yaşam Yıldızı",
-    "description": "Arataki Itto'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Arataki Itto'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "YaeMikosStellaFortuna": {
     "name": "Yae Miko'nun Yaşam Yıldızı",
-    "description": "Yae Miko'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Yae Miko'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "ShikanoinHeizousStellaFortuna": {
     "name": "Shikanoin Heizou'nun Yaşam Yıldızı",
-    "description": "Shikanoin Heizou'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Shikanoin Heizou'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "YelansStellaFortuna": {
     "name": "Yelan'ın Yaşam Yıldızı",
-    "description": "Yelan'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Yelan'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "AloysStellaFortuna": {
     "name": "Aloy'un Yaşam Yıldızı",
-    "description": "Aloy'un Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Aloy'un Takımyıldız Etkinleştirme Malzemesi"
   },
   "ShenhesStellaFortuna": {
     "name": "Shenhe'nin Yaşam Yıldızı",
-    "description": "Shenhe'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Shenhe'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "YunJinsStellaFortuna": {
     "name": "Yun Jin'in Yaşam Yıldızı",
-    "description": "Yun Jin'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Yun Jin'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "KukiShinobusStellaFortuna": {
     "name": "Kuki Shinobu'nun Yaşam Yıldızı",
-    "description": "Kuki Shinobu'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kuki Shinobu'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "KamisatoAyatosStellaFortuna": {
     "name": "Kamisato Ayato'nun Yaşam Yıldızı",
-    "description": "Kamisato Ayato'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Kamisato Ayato'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "ColleisStellaFortuna": {
     "name": "Collei'in Yaşam Yıldızı",
-    "description": "Collei'in Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Collei'in Takımyıldız Etkinleştirme Malzemesi"
   },
   "DorisStellaFortuna": {
     "name": "Dori'nin Yaşam Yıldızı",
-    "description": "Dori'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Dori'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "TighnarisStellaFortuna": {
     "name": "Tighnari'nin Yaşam Yıldızı",
-    "description": "Tighnari'nin Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Tighnari'nin Takımyıldız Etkinleştirme Malzemesi"
   },
   "NilousStellaFortuna": {
     "name": "Nilou'nun Yaşam Yıldızı",
-    "description": "Nilou'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Nilou'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "CynosStellaFortuna": {
     "name": "Cyno'nun Yaşam Yıldızı",
-    "description": "Cyno'nun Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Cyno'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "CandacesStellaFortuna": {
     "name": "Candace'ın Yaşam Yıldızı",
-    "description": "Candace'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Candace'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "NahidasStellaFortuna": {
     "name": "Nahida'nın Yaşam Yıldızı",
-    "description": "Nahida'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Nahida'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "LaylasStellaFortuna": {
     "name": "Layla'nın Yaşam Yıldızı",
-    "description": "Layla'nın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Layla'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "WanderersStellaFortuna": {
     "name": "Avare'nin Yaşam Yıldızı",
@@ -821,7 +837,7 @@
   },
   "FaruzansStellaFortuna": {
     "name": "Faruzan'ın Yaşam Yıldızı",
-    "description": "Faruzan'ın Takımyıldızı Etkinleştirme Malzemesi"
+    "description": "Faruzan'ın Takımyıldız Etkinleştirme Malzemesi"
   },
   "YaoyaosStellaFortuna": {
     "name": "Yaoyao'nun Yaşam Yıldızı",
@@ -830,6 +846,14 @@
   "AlhaithamsStellaFortuna": {
     "name": "Alhaitham'ın Yaşam Yıldızı",
     "description": "Alhaitham'ın Takımyıldız Etkinleştirme Malzemesi"
+  },
+  "DehyasStellaFortuna": {
+    "name": "Dehya'nın Yaşam Yıldızı",
+    "description": "Dehya'nın Takımyıldız Etkinleştirme Malzemesi"
+  },
+  "MikasStellaFortuna": {
+    "name": "Mika'nın Yaşam Yıldızı",
+    "description": "Mika'nın Takımyıldız Etkinleştirme Malzemesi"
   },
   "GnosticHymnOldNotes": {
     "name": "Aydınlanma Şarkısı - Eski Notalar",
@@ -1278,6 +1302,10 @@
   "MysteriousMeat": {
     "name": "Gizemli Et",
     "description": "Gizemli bir auraya sahipmiş gibi görünen bir parça et. Acaba tadı nasıldır?"
+  },
+  "CoffeeBeans": {
+    "name": "Kahve Çekirdekleri",
+    "description": "Teyvat'ta yaygın olan ve özel aromaya sahip bir meyve. Öğütüldükten sonra içecek yapımında kullanılabilir."
   },
   "JeansDocumentPackage": {
     "name": "Jean'in Belge Dosyası",
@@ -2613,7 +2641,7 @@
   },
   "ClerkZhaosInvoiceForNervousAn": {
     "name": "Katip Zhao'nun Asabi Ann'a Faturası",
-    "description": "Katip Zhao'nun Asabi Ann'e kestiği fatura. Birkaç sayfadan oluşuyor, sayfaların hepsi yazılarla dolu. Yazanlara göre Asabi Ann, limandaki gemilere ait istatistikleri toplamayı uzun zamandır erteliyormuş..."
+    "description": "Katip Zhao'nun Asabi Ann'a kestiği fatura. Birkaç sayfadan oluşuyor, sayfaların hepsi yazılarla dolu. Yazanlara göre Asabi Ann, limandaki gemilere ait istatistikleri toplamayı uzun zamandır erteliyormuş..."
   },
   "CuiersLetterToChaoxi": {
     "name": "Cui'er'in Chaoxi'ye Mektubu",
@@ -3181,7 +3209,7 @@
   },
   "TheCruxClashChampionMedal": {
     "name": "Güneyhaçı Yarışması Şampiyonluk Madalyası",
-    "description": "Güneyhaçı Yarışmasını düzenleyenler tarafından ödül olarak verilen madalya. Bu madalya yarışmanın tartışmasız galibi olduğunu gösteriyor. İleride bu günleri düşündüğünde aklına yaptığın düellolar değil, bir hikaye gelecek. Bir Önseziyle ve ideallerin peşinden koşmakla ilgili bir hikaye..."
+    "description": "Güneyhaçı Yarışmasını düzenleyenler tarafından ödül olarak verilen madalya. Bu madalya yarışmanın tartışmasız galibi olduğunu gösteriyor. İleride bugünleri düşündüğünde aklına yaptığın düellolar değil, bir hikaye gelecek. Bir Önseziyle ve ideallerin peşinden koşmakla ilgili bir hikaye..."
   },
   "WellPackagedGebratenesFleischMitSauerkraut": {
     "name": "Paketlenmiş Turşulu Et Kızartması",
@@ -3389,7 +3417,7 @@
   },
   "IllegibleFortuneSlip": {
     "name": "Okunaksız Fal Kağıdı",
-    "description": "Üzerindeki yazıların zar zor okunduğu bir fal kağıdı. Bu kadar yükseğe atıldığına göre pek de hayra alamet olmasa gerek..."
+    "description": "Üzerindeki yazıların zar zor okunduğu bir fal kağıdı. Bu kadar yükseğe atıldığına göre pek de iyiye işaret olmasa gerek..."
   },
   "DamagedNote": {
     "name": "Hasarlı Not",
@@ -5349,7 +5377,7 @@
   },
   "SarehsNote": {
     "name": "Sareh'in Notu",
-    "description": "Bu sefer Lale adında siyah ve beyaz kürklü bir kediyi arıyoruz. Eğer kedi dilinde Lale'nin dikkatini çekmek istersen düşük tonla başlayıp sonrasında yüksek tona geçip sonunda da daha yüksek bir tonla \"miyav, miyav miyav miyav\" diyebilirsin."
+    "description": "Bu sefer Lale adında siyah ve beyaz kürklü bir kediyi arıyoruz. Eğer kedi dilinde Lale'nin dikkatini çekmek istersen düşük tonla başlayıp sonrasında yüksek tona geçip sonunda da daha yüksek bir tonla \"miyav, miyav miyav miyav, miyav\" diyebilirsin."
   },
   "FreshNilotpalaLotus": {
     "name": "Taze Nilotpala Nilüferi",
@@ -7937,7 +7965,63 @@
   },
   "CrocodileJerky": {
     "name": "Timsah Pastırması",
-    "description": "Tanit kabilesinin özel tarifiyle hazırlanmış timsah eti. Çiğnemesi biraz zor olsa da muhafazasının kolay olması onu kabile avcıları için vazgeçilmez bir yiyecek haline getirmiş.\\nTadı kuş eti gibi olsa da timsah etinin diğer hayvanlarınkine göre sekiz kat daha besleyici olduğu söylenir..."
+    "description": "Tanit kabilesinin özel tarifiyle hazırlanmış timsah pastırması. Çiğnemesi biraz zor olsa da muhafazasının kolay olması onu kabile avcıları için vazgeçilmez bir yiyecek haline getirmiş.\\nTadı kuş eti gibi olsa da timsah etinin diğer hayvanlarınkine göre sekiz kat daha besleyici olduğu söylenir..."
+  },
+  "SuspiciousTulumba": {
+    "name": "Tulumba (Tuhaf)",
+    "description": "Yağda kızartılmış bir atıştırmalık. Tulumbalar yağ dolu tencereden zamanında alınmadığı için ısırdığın anda ağzın yağ doluyor. Ancak ardından hemen bir yudum kahve içersen bu yağlı tattan kurtulabilirsin."
+  },
+  "Tulumba": {
+    "name": "Tulumba",
+    "description": "Yağda kızartılmış bir atıştırmalık. Şekil verilen hamur iyice kızarana kadar derin yağda bekletilir, ardından hâlâ sıcakken şerbete batırılır. Bu atıştırmalık Sumeru'da pek çok kişi için vazgeçilmez bir yoldaştır."
+  },
+  "DeliciousTulumba": {
+    "name": "Tulumba (Lezzetli)",
+    "description": "Yağda kızartılmış bir atıştırmalık. Lezzetli şerbetle kaplanmış parlak altın tulumba tek lokmada çabucak biter. Hımm, tabakta hâlâ biraz şerbet var. Belki bu lezzet şölenini biraz daha devam ettirebilirsin..."
+  },
+  "SuspiciousGildedTajine": {
+    "name": "Yaldızlı Tajin (Tuhaf)",
+    "description": "Haşlanmış etle hazırlanan bir yemek. Yenilebilir gibi görünse de tek bir ısırıkla etin aşırı kuru, hatta bir dalı çiğniyormuş gibi olduğu hissediliyor. Kapakla ilgili ters giden bir şey mi oldu, yoksa güveç yanlış mı kullanıldı?"
+  },
+  "GildedTajine": {
+    "name": "Yaldızlı Tajin",
+    "description": "Haşlanmış etle hazırlanan bir yemek. Pişirme sırasında yemeğin nem kaybını azaltmaya yarayan külah şeklindeki kapak yalnızca çöl halkının bildiği bir mutfak sırrıdır. Yaldızlı Münzeviler, Sumeru'da gittikleri her yere bu lezzeti de taşıdılar. Bu şekilde hem adını hem de ününü kazandı."
+  },
+  "DeliciousGildedTajine": {
+    "name": "Yaldızlı Tajin (Lezzetli)",
+    "description": "Haşlanmış etle hazırlanan bir yemek. Yoğun kıvamlı çorbanın içindeki büyük et parçaları daha ağzına aldığın anda eriyip giderler. Eşsiz baharat karışımı etin ritmine uyum sağlar ve dilinin alkış tutmadan edemeyeceği bir çöl ezgisi damağında çalar."
+  },
+  "SuspiciousSuperMagnificentPizza": {
+    "name": "Süper Harika Pizza (Tuhaf)",
+    "description": "Fazlasıyla ihtişamlı bir pizza. Yağlı tadına aldırış edilmezse etler hâlâ yenilebilir ancak bayatlamış hamuru yutmak oldukça zorlayıcı olacaktır... O kadar sert ki onunla bir dağ yabanisini bile yere serebilirsin."
+  },
+  "SuperMagnificentPizza": {
+    "name": "Süper Harika Pizza",
+    "description": "Fazlasıyla ihtişamlı bir pizza. İlk olarak tabana jambon yerleştirilir ve ardından doğranmış etler eklenerek bu tatmin edici yemek hazırlanır. Pişirdikten sonra etteki ızgara tadı peynirin kremsi yapısıyla birleşerek eşsiz bir deneyim sunar."
+  },
+  "DeliciousSuperMagnificentPizza": {
+    "name": "Süper Harika Pizza (Lezzetli)",
+    "description": "Fazlasıyla ihtişamlı bir pizza. Fırından çıktığı anda yükselen dumanların arasında çıtır kenarından tutup çekersen bir peynir şelalesi seni karşılar, etin zengin aroması damağını tatmin eder ve tokluk hissi verir."
+  },
+  "SuspiciousMintyFruitTea": {
+    "name": "Naneli Meyve Çayı (Tuhaf)",
+    "description": "Ferahlatıcı bir içecek. Daha ilk yudumda ekşi tadı dişlerini sanki döküleceklermiş gibi sızlatır. Hafif tatlılığın yerini tamamen o acımasız buruk tat almış. Bu gerçekten meyve çayı mı?"
+  },
+  "MintyFruitTea": {
+    "name": "Naneli Meyve Çayı",
+    "description": "Ferahlatıcı bir içecek. Çayın canlandırıcılığı meyvenin tatlı ekşi tadıyla bir araya gelerek tat alıcılarını harekete geçirir ve sen daha farkına varamadan tüm bardağı bitirmiş olursun."
+  },
+  "DeliciousMintyFruitTea": {
+    "name": "Naneli Meyve Çayı (Lezzetli)",
+    "description": "Ferahlatıcı bir içecek. Çayın tatlı aroması, hafif çiçeksi tatlar ve meyve aromasıyla bir araya gelir ve ortaya çıkan lezzet ağzında bir şölene dönüşür. Bir dakika, neden bardakta yalnızca buz küpleri kaldı?"
+  },
+  "GoldflameTajine": {
+    "name": "Alevli Tajin",
+    "description": "Dehya'nın özel tarifi. Bu sıradan görünen güvecin kapağının altında seni bekleyen et öylesine yumuşaktır ki dudaklarına değdiği anda dokusuyla mest eder... Görünüşe göre Dehya mutfakta da kılıç savurmakta olduğu kadar iyi."
+  },
+  "SurveyorsBreakfastSandwich": {
+    "name": "Gözlemci Sandviçi",
+    "description": "Mika'nın özel tarifi. Önündeki zengin tabak bir malzeme yığınından oluşuyor ve sen her bir ısırık aldığında hepsinde ayrı lezzet olan katmanlar ağzında dağılıp sanki bir lezzet dağına tırmanıyormuşsun hissi veriyor. Bunlar, Şövalyelerle birlikteyken geliştirdiği mutfak becerileri mi?"
   },
   "RecipeItem": {
     "name": "Yemek Malzemesi",
@@ -8490,6 +8574,22 @@
   "RecipeScentedMeatBalls": {
     "name": "Tarif: İçli Köfte",
     "description": "İçli Köfte yapımını adım adım anlatan detaylı bir tarif."
+  },
+  "RecipeTulumba": {
+    "name": "Tarif: Tulumba",
+    "description": "Tulumba yapımını adım adım anlatan detaylı bir tarif."
+  },
+  "RecipeGildedTajine": {
+    "name": "Tarif: Yaldızlı Tajin",
+    "description": "Yaldızlı Tajin yapımını adım adım anlatan detaylı bir tarif."
+  },
+  "RecipeSuperMagnificentPizza": {
+    "name": "Tarif: Süper Harika Pizza",
+    "description": "Süper Harika Pizza yapımını adım adım anlatan detaylı bir tarif."
+  },
+  "RecipeMintyFruitTea": {
+    "name": "Tarif: Naneli Meyve Çayı",
+    "description": "Naneli Meyve Çayı yapımını adım adım anlatan detaylı bir tarif."
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler",
@@ -9528,7 +9628,7 @@
     "description": "Görünüşe göre gizli üsse bırakılan Macera El Kitabı çocukların macera hikayelerini ve çeşitli anılarını barındırıyor ama karalamalar, kitabı neredeyse okunmaz hale getirmiş..."
   },
   "LostEnergyBlock": {
-    "name": "Kayıp Enerji Bloğu",
+    "name": "Kayıp Enerji Bloku",
     "description": "Saf enerjiden çıkarılan bloklar. Görünüşe göre, bazı kadim yapıların kayıt cihazlarını etkinleştirmek için kullanabilirsin."
   },
   "StrangeParchment": {
@@ -9989,7 +10089,7 @@
   },
   "NoteRegardingAnExchangeOfGoods": {
     "name": "Bir Mal Değişimine Değinen Not",
-    "description": "Bir cevap mektubu, muhtemelen Fatui'den gelmiş. Aderfi ile olan anlaşmalarının belirli bölümlerini içeriyor."
+    "description": "Bir mektup, muhtemelen Fatui'den gelmiş. Aderfi ile olan anlaşmalarının belirli bölümlerini içeriyor."
   },
   "EventNotice": {
     "name": "Etkinlik Bildirisi",
@@ -10232,8 +10332,24 @@
     "description": "Kadim Vahalar Kayıtları: Bölüm X"
   },
   "EmploymentCodeOfConductTablet": {
-    "name": "Çalışan Yönetmeliği Tableti",
-    "description": "Çalışan Yönetmeliği Tableti"
+    "name": "Çalışan Davranış Kuralları Tableti",
+    "description": "Çalışan Davranış Kuralları Tableti"
+  },
+  "WineScentedLetter": {
+    "name": "Şarap Kokulu Mektup",
+    "description": "Mektupta hafif bir alkol kokusu var. Hangi koşullar altında yazıldığı tahmin edilebilir. Gönderen kişi de teslim edilebileceğinden pek umutlu değilmiş anlaşılan."
+  },
+  "StrangeMushroom": {
+    "name": "Tuhaf Mantar",
+    "description": "Mantarlar... Gerçekten böyle bir yerde büyüyebilir mi?"
+  },
+  "NamelessTabooMedicineOfTheRoyalCourt": {
+    "name": "Kraliyetin İsimsiz Yasaklı İlacı",
+    "description": "Kokusu burnunun direğini sızlatır ve kolayca geçmez. Kayıtlara göre bu ilaç, uyuyan bilinci uyandırmak için Bilgelik Tanrısı'nın gücüne ihtiyaç duyar. Belki de bu şekilde \"lanet\"e karşı koyulabilir."
+  },
+  "StrangeMushroomWateringWater": {
+    "name": "Tuhaf Mantar - Sulama Suyu",
+    "description": "Eide'ın talimatıyla bu suyu öğleden sonra ikide, Yedilerin Heykelinin yanındaki bir şelaleden aldın."
   },
   "TribeMerchantsLetter": {
     "name": "Kabile Tüccarının Mektubu",
@@ -10250,6 +10366,34 @@
   "WarriorsSpiritSwordfightingArenaTicket": {
     "name": "Savaşçı Ruhu Kılıç Ustalığı Arenası Bileti",
     "description": "Uluslar ve kimlikler ötesinde, burada yalnızca cesaret ve ihtişam ile bir araya geldik."
+  },
+  "VentisNote": {
+    "name": "Venti'nin Notu",
+    "description": "Üzerinde basit bir harita ve büyülü sözler gibi bir şey bulunan bir kağıt. Venti'ye göre kehaneti çözmek için gereken sırları içeriyor."
+  },
+  "ColleisWindblume": {
+    "name": "Collei'in Rüzgarçiçeği",
+    "description": "Collei'e göre Rüzgarçiçeği olabilecek, onun minnettarlığını ve iyi dileklerini yansıtabilecek tek çiçek Padisarahtır. Şimdi bu çiçeğin tohumlarını sana veriyor.\\nCollei, Mondstadt'a tekrar ziyaret ederek geleceğe yeni bir adım attı. Önündeki günler tıpkı elinde tuttuğu o küçük tohum gibi ışık ve umut dolu olsun."
+  },
+  "CaravanAccounts": {
+    "name": "Kervan Hesap Kayıtları",
+    "description": "Hedefindeki kervandan alınan hesap kayıtları. Bilgiler daha çok Dakan Al-Ahmar ile ilgili. Kaçırılan mallarla ilgili büyük miktarda veri ve bilgi bulunması haricinde, Dunyarzad'ın babasının adının da geçiyor olması endişe verici."
+  },
+  "MissiveFromSumeru": {
+    "name": "Sumeru'dan Gelen Mektup",
+    "description": "Bir mektup."
+  },
+  "InazumanMailFromAfar": {
+    "name": "Uzaklardan Gelen Mektup",
+    "description": "Bir mektup."
+  },
+  "FoodAndLodgingArrangements": {
+    "name": "Yemek ve Konaklama Düzenlemeleri",
+    "description": "？？？"
+  },
+  "HaniyyahsGiftOfMarvelousJellies": {
+    "name": "Haniyyah'ın Muhteşem Jöle Hediyesi",
+    "description": "Haniyyah tarafından verilen zarif bir hediye. İçinde Mantarların çok sevdiği Muhteşem Jölelerden var ve bunların arasında Mantarların kendi zevklerine göre beslenebileceği pek çok benzersiz lezzet bulunmakta.\\nMuhteşem Jöleler, daha önceki Çiçek Jölelerin işlenmiş halidir. Kristalimsi saydamlıkları ve esnek dokuları aynıdır; tehlikeli maddeler içermezler, bu nedenle de Mantarlar için ideal bir yiyecektir. Bununla birlikte, bu Jöleleri evde saklarken çocukların yanlışlıkla yememesine dikkat edilmelidir..."
   },
   "SilkFlowerSeed": {
     "name": "İpek Çiçeği Tohumu",
@@ -10507,9 +10651,77 @@
     "name": "Ormanın Kanatları",
     "description": "Sumeru'nun saygısını ve sevgisini kazandığın için sana hediye edilen kanat."
   },
+  "WingsOfTheStarlitFeast": {
+    "name": "Yıldız Işığı Kanatları",
+    "description": "Uzaklardaki bir dünyanın festivalini kutlayan bir hediye ile süslü bir kanat."
+  },
   "RadiantSpincrystal": {
     "name": "Parlak Burgu Kristal 1",
     "description": "Bu harikulade kristal, narin ipekten güzel bir örgü misali çok hoş bir melodi çalar. Bu eşyayı ana karanın farklı yerlerinden veya nadir nesne toplayan tüccarlardan bulabilirsin. Kristalin içinde çalan ezgiyi, Dinginçay Çaydanlığındaki \"Ebedi Ahenk: Dingin Yankılar\" veya \"Ebedi Ahenk: Rüzgarın Ezgileri\" eşyalarını kullanarak dinleyebilirsin. Bu Parlak Burgu Kristalde \"Dawn Winery Theme\" müziği vardır."
+  },
+  "FragrantSteak": {
+    "name": "Baharatlı Biftek",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantMondstadtGrilledFish": {
+    "name": "Baharatlı Mondstadt Usulü Izgara Balık",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantNorthernSmokedChicken": {
+    "name": "Baharatlı Kuzey Usulü Füme Tavuk",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantChickenMushroomSkewer": {
+    "name": "Baharatlı Tavuk Mantar Şiş",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantSatisfyingSalad": {
+    "name": "Baharatlı Doyurucu Salata",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantCrabHamVeggieBake": {
+    "name": "Baharatlı Karışık Yengeçli Güveç",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantStickyHoneyRoast": {
+    "name": "Baharatlı Karamelize Soslu Rosto",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantFishermansToast": {
+    "name": "Baharatlı Balıkçı Tostu",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantFriedRadishBalls": {
+    "name": "Baharatlı Kızarmış Turp Köftesi",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantTeaBreakPancake": {
+    "name": "Baharatlı Krep",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantRadishVeggieSoup": {
+    "name": "Baharatlı Turplu Sebze Çorbası",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantMushroomPizza": {
+    "name": "Baharatlı Mantarlı Pizza",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantColdCutPlatter": {
+    "name": "Baharatlı Şarküteri Tabağı",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantCallaLilySeafoodSoup": {
+    "name": "Baharatlı Gelin Çiçekli Yengeç Çorbası",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantMintJelly": {
+    "name": "Baharatlı Nane Jölesi",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
+  },
+  "FragrantSunshineSprat": {
+    "name": "Baharatlı Tereyağlı Izgara Balık",
+    "description": "Bol baharatlı leziz bir yemek! Çok hoş bir aroması vardır. Peki bu yemek kimin damak zevkine hitap edecek? Arkadaşlarını ve sevdiklerini çağır, bu yeni tarifle ziyafet çekin!"
   },
   "LanternFiber": {
     "name": "Fener Lifi",
@@ -10578,6 +10790,10 @@
   "ParasolTalcum": {
     "name": "Şemsiye Tozu",
     "description": "\"Toukabou Shigure\" için özel saflaştırma malzemesidir.\\nBambuyu bir şemsiyeye bağlamaya yarayan toz halinde bir madde.\\nMevsimler değişip geçmiş yok olup gitse bile hatıralar ve düşünceler, bir rüyaya dalıp bir şemsiyenin altında uyumak gibi daimi olacaktır."
+  },
+  "UnfadingSilkyGrace": {
+    "name": "Solmayan İpeksi Zarafet",
+    "description": "\"Zırhlı Çiçek\" için özel saflaştırma malzemesidir.\\nDekorasyonlar herhangi bir şeyi değerinin ve işlevinin çok ötesine taşıyabilir. Hiç solmayan çiçek, böyle zamanlarda bir silaha bile romantik bir hava katabilir."
   },
   "FalconsDance": {
     "name": "Şahin Dansı",
@@ -10777,7 +10993,7 @@
   },
   "TravelNotesCatchTheWind": {
     "name": "Gezi Notları: Rüzgarı Yakala",
-    "description": "İsim Kartı arka planı.\\nSeyahat günlüğü yazmanın en zor yanı nasıl başlayacağını bulmaktır."
+    "description": "İsim Kartı arka planı.\\nSeyahat günlüğü yazmanın en zor yanı nereden başlayacağını bulmaktır."
   },
   "AmberBunny": {
     "name": "Amber: Tavşancık",
@@ -10853,7 +11069,7 @@
   },
   "AchievementExplorer": {
     "name": "Başarım: Kaşif",
-    "description": "İsim Kartı arka planı.\\nDünyada o kadar yolculuğa çıktıktan sonra ilk yolculuğuna neden çıktığını unutma."
+    "description": "İsim Kartı arka planı.\\nDünyada yaptığın sayısız yolculuktan sonra, bu yola neden çıktığını unutma."
   },
   "AchievementVirtuoso": {
     "name": "Başarım: Virtüöz",
@@ -10913,7 +11129,7 @@
   },
   "ChongyunSpiritBlade": {
     "name": "Chongyun: Ruh Kılıcı",
-    "description": "İsim Kartı arka planı.\\nBu aslında buzdan yapılmış bir şeftali ağacı kılıcıydı. Ama yeterince büyük bir buz bloğu, şeftali ağacı kılıcından daha iyi bir kötü ruh kovma aleti yapar."
+    "description": "İsim Kartı arka planı.\\nBu aslında buzdan yapılmış bir şeftali ağacı kılıcıydı. Ama yeterince büyük bir buz bloku, şeftali ağacı kılıcından daha iyi bir kötü ruh kovma aleti yapar."
   },
   "AchievementChallengerII": {
     "name": "Başarım: Mücadeleci II",
@@ -11085,7 +11301,7 @@
   },
   "SayuMujiMujiDaruma": {
     "name": "Sayu: Muji-Muji Daruma",
-    "description": "İsim Kartı arka planı.\\nSayu'dan bile küçük olsa da yapmak istemediği şeyler konusunda yardım edebilir."
+    "description": "İsim Kartı arka planı.\\nSayu'dan küçük olmasına rağmen, Sayu'nun yapmak istemediği şeyler konusunda ona yardımcı olabilir."
   },
   "InazumaRaidenEmblem": {
     "name": "Inazuma: Raiden Amblemi",
@@ -11217,7 +11433,7 @@
   },
   "AchievementThunderclap": {
     "name": "Başarım: Yıldırım Darbesi",
-    "description": "İsim Kartı arka planı.\\nBulutlardan gelen sesi dinle. Bu ses, onların kırgınlıkla dolu öfkeleri ve küçük dilekleridir."
+    "description": "İsim Kartı arka planı.\\nBulutlardan gelen sesi dinle. Bu ses, onun kırgınlıkla dolu öfkesi ve küçük dileğidir."
   },
   "AchievementChasm": {
     "name": "Başarım: Kanyon",
@@ -11241,11 +11457,11 @@
   },
   "ShikanoinHeizouTemari": {
     "name": "Shikanoin Heizou: Temari",
-    "description": "İsim Kartı deseni.\\nRenkli iplerle örülü bir Temari. Bunu yapmak için büyük emek sarf edilmiş olsa gerek. Yine de Heizou, bunu birbirine bağlı ipleri çözmekten ibaret basit bir oyun olarak görüyor."
+    "description": "İsim Kartı arka planı.\\nRenkli iplerle örülü bir Temari. Bunu yapmak için büyük emek sarf edilmiş olsa gerek. Yine de Heizou, bunu birbirine bağlı ipleri çözmekten ibaret basit bir oyun olarak görüyor."
   },
   "TravelNotesAzureMain": {
     "name": "Gezi Notları: Okyanus Mavisi",
-    "description": "İsim Kartı deseni.\\nSanki yıllar sonra eski bir rüyadan uyanmışsın gibi. Hatıra deniz kabuklarının içinde, o eski yaz günlerinden kalma mavi okyanusun esintileri var."
+    "description": "İsim Kartı arka planı.\\nSanki yıllar sonra eski bir rüyadan uyanmışsın gibi. Hatıra deniz kabuklarının içinde, o eski yaz günlerinden kalma mavi okyanusun esintileri var."
   },
   "TighnariDewKissed": {
     "name": "Tighnari: Çiy Dokunuşu",
@@ -11352,12 +11568,24 @@
     "description": "İsim Kartı arka planı.\\nGece süzülen bulutlar, şafakta dağılırlar binbir dağa."
   },
   "TravelNotesRhythmAndRhyme": {
-    "name": "Gezi Notları: Kafiye",
+    "name": "Gezi Notları: Ritim ve Kafiye",
     "description": "İsim Kartı arka planı.\\nKudretli güneş ışıkları kara geceyi aydınlatırken çan orkestrası, geçmiş yılı kutlar. Yaldızlı saraylar boncuk perdelerle süslenir, tırabzanlar ay ışığı gibi gümüşe boyanır ve ziyafetlere şarkılarla danslar eşlik eder. Bu bir çiçek mi yoksa havai fişek mi? Birçok çalgı aynı anda uyumlu ve hoş bir şekilde çalar."
   },
-  "AchievementSandstorm": {
-    "name": "Başarım: Kum Fırtınası",
+  "SumeruSandstorm": {
+    "name": "Sumeru: Kum Fırtınası",
     "description": "İsim Kartı arka planı.\\nEbedi kum fırtınaları, kadim rüyaları gizler..."
+  },
+  "DehyaPurifyingFlame": {
+    "name": "Dehya: Arındırıcı Alev",
+    "description": "İsim Kartı arka planı.\\nYakılması gerekenler kül olup uçtuğunda asıl korunması gereken değerli şeyler ortaya çıkar."
+  },
+  "MikaIndex": {
+    "name": "Mika: Atlas",
+    "description": "İsim Kartı arka planı.\\nÇizdiği haritayı her eline aldığında bu dünyanın bir köşesini elinde tutuyormuş gibi hissediyor."
+  },
+  "TravelNotesArtfulIntent": {
+    "name": "Gezi Notları: Usta İşi",
+    "description": "İsim Kartı arka planı.\\nSöylenenlere göre, gerçek aşkı yaşamak hayalet görmek gibiymiş. Bu iki şey hakkında herkes sürekli konuşmasına rağmen çok az kişi bunlara denk gelmiştir. Artık hayaletler bile ortaya çıktığına göre, belki de gerçek aşk da hemen köşe başında bekliyordur."
   },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı",
@@ -11611,6 +11839,14 @@
     "name": "Vahşi Doğa Pusulası",
     "description": "Maceracılar Loncasından elde edilen özel bir pusula. Söylentilere göre ekstra şans verebilirmiş..."
   },
+  "WindblumeKamera": {
+    "name": "Rüzgarçiçeği Kamerası",
+    "description": "Fassben'den ödünç aldığın Kamera. Kullanırken dikkatli ol. Bozmak istemezsin..."
+  },
+  "FestiveDrum": {
+    "name": "Şenlik Davulu",
+    "description": "Gösterilerde kullanılan bir müzik enstrümanı.\\nBerrak sesi ve eşsiz tasarımı olan bir davul. Hassas bir işçilikle yapılmış hoş bir görünüme sahiptir. Performanslar sırasındaki ses kalitesi, tonlaması ve uzun süreli yıpranma payı göz önünde tutularak yüksek kaliteli malzemelerle yapılmış.\\nBu küçük davulun, Inazuma'nın geleneksel bir enstrümanı ve diğer ulusların davullarının birleşiminden ortaya çıktığı söylenir. Bazı şarkılar çalındığında insanlara şans bile getirebilir..."
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı",
     "description": "Rüzgar Özü Rezonans Taşı yapımını adım adım anlatan ayrıntılı talimatlar. Talimatları baştan sona anladığında seni Rüzgar Özlerine götüren bir alet yapabileceksin."
@@ -11817,475 +12053,495 @@
   },
   "RhodeiaOfLoch": {
     "name": "Lochlu Rhodeia",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "FatuiPyroAgent": {
     "name": "Fatui Ateş Tetikçisi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MaguuKenki": {
     "name": "Maguu Kenki",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "StonehideLawachurl": {
     "name": "Taş Sırtlı Dağ Reisi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MirrorMaiden": {
     "name": "Aynalı Rahibe",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "JadeplumeTerrorshroom": {
     "name": "Yeşimkuyruk Mantar Kuşu",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "UndividedHeart": {
     "name": "Tek Yürek",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ColdBloodedStrike": {
     "name": "Soğukkanlı Vuruş",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SteadyBreathing": {
     "name": "Nefes Tekniği",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "KantenSenmyouBlessing": {
     "name": "Kanten Senmyou Lütfu",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TheScentRemained": {
     "name": "Yağmur Kokusu",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ProphecyOfSubmersion": {
     "name": "Batışın Kehaneti",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "FlowingFlame": {
     "name": "Akan Alev",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Crossfire": {
     "name": "Çapraz Ateş",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "GrandExpectation": {
     "name": "Büyük Umutlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "NaganoharaMeteorSwarm": {
     "name": "Naganohara Meteor Yağmuru",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "StellarPredator": {
     "name": "Yıldız Yiyen Kuzgun",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Awakening": {
     "name": "Uyanış",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ThunderingPenance": {
     "name": "Yıldırım Cezası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ChaoticEntropy": {
     "name": "Entropi Yasası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LandsOfDandelion": {
     "name": "Karahindiba Toprakları",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "StrategicReserve": {
     "name": "Stratejik Rezerv",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "IGotYourBack": {
     "name": "Bana Güven",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "FloralSidewinder": {
     "name": "Yandan Uçan Yapraklar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "StreamingSurge": {
     "name": "Kesintisiz Dalgalar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "PaidInFull": {
     "name": "Ödenmiş Hesap",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TranscendentAutomaton": {
     "name": "Yüce Canavar Makinası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "StonehideReforged": {
     "name": "Yeniden Dövülmüş Taş Sırt",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ShakenNotPurred": {
     "name": "Buzul Mırlama",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "FeatherfallJudgment": {
     "name": "Tüy Yargısı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "GloriousSeason": {
     "name": "Muhteşem Sezon",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MirrorCage": {
     "name": "Aynalı Kafes",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ProliferatingSpores": {
     "name": "Çoğalan Sporlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "WellspringOfWarLust": {
+    "name": "Savaş Arzusu Dehlizi",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "TamanooyasCasket": {
+    "name": "Tamanooya'nın Sepeti",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "PoundingSurprise": {
     "name": "Ezici Sürpriz",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LightningStorm": {
     "name": "Şimşek Fırtınası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "SinOfPride": {
+    "name": "Kibir",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MagicGuide": {
     "name": "Büyü Rehberi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SacrificialFragments": {
     "name": "Kurban Kanunları",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SkywardAtlas": {
     "name": "Göklerin Atlası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "RavenBow": {
     "name": "Kuzgun Yayı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SacrificialBow": {
     "name": "Kurban Yayı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SkywardHarp": {
     "name": "Göklerin Liri",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WhiteIronGreatsword": {
     "name": "Beyaz Demirden Büyük Kılıç",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SacrificialGreatsword": {
     "name": "Kurban Büyük Kılıcı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WolfsGravestone": {
     "name": "Kurdun Mezar Taşı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WhiteTassel": {
     "name": "Beyaz Püskül",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LithicSpear": {
     "name": "Taş Mızrak",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SkywardSpine": {
     "name": "Göklerin Omurgası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TravelersHandySword": {
     "name": "Gezginin Mahir Kılıcı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SacrificialSword": {
     "name": "Kurban Kılıcı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "AquilaFavonia": {
     "name": "Favonia Kartalı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "AdventurersBandana": {
     "name": "Maceracının Bandanası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LuckyDogsSilverCirclet": {
     "name": "Bahtı Açığın Gümüş Tacı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TravelingDoctorsHandkerchief": {
     "name": "Gezgin Doktorun Mendili",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "GamblersEarrings": {
     "name": "Kumarbazın Küpeleri",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "InstructorsCap": {
     "name": "Eğitmenin Şapkası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ExilesCirclet": {
     "name": "Sürgünün Tacı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "BrokenRimesEcho": {
     "name": "Kırağının Yankısı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "BlizzardStrayer": {
     "name": "Kış Gezgini",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WineStainedTricorne": {
     "name": "Şarap Lekeli Denizci Şapkası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "HeartOfDepth": {
     "name": "Derinliğin Kalbi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WitchsScorchingHat": {
     "name": "Cadının Yakıcı Şapkası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "CrimsonWitchOfFlames": {
     "name": "Kızıl Alev Cadısı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ThunderSummonersCrown": {
     "name": "Yıldırım Sihirdarı Tacı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ThunderingFury": {
     "name": "Yıldırım Öfkesi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ViridescentVenerersDiadem": {
     "name": "Yeşil Gölge Tacı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ViridescentVenerer": {
     "name": "Yeşil Gölge",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MaskOfSolitudeBasalt": {
     "name": "Münzevi Bazalt Maskesi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ArchaicPetra": {
     "name": "Arkaik Taşlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LaurelCoronet": {
     "name": "Defne Tacı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "DeepwoodMemories": {
     "name": "Derin Orman Hatıraları",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "OrnateKabuto": {
+    "name": "İşlemeli Kabuto",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "GeneralsAncientHelm": {
+    "name": "Kadim General Miğferi",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "KnightsOfFavoniusLibrary": {
     "name": "Favonius Şövalyeleri Kütüphanesi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "JadeChamber": {
     "name": "Yeşim Konak",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "DawnWinery": {
     "name": "Şafak Şaraphanesi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WangshuInn": {
     "name": "Wangshu Hanı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "FavoniusCathedral": {
     "name": "Favonius Katedrali",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Paimon": {
     "name": "Paimon",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Katheryne": {
     "name": "Katheryne",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Timaeus": {
     "name": "Timaeus",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Wagner": {
     "name": "Wagner",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ChefMao": {
     "name": "Şef Mao",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Tubby": {
     "name": "Tombili",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Timmie": {
     "name": "Timmie",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Liben": {
     "name": "Liben",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ChangTheNinth": {
     "name": "Dokuzuncu Chang",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Ellin": {
     "name": "Ellin",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "IronTongueTian": {
     "name": "Demir Dil Tian",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LiuSu": {
     "name": "Liu Su",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "NRE": {
     "name": "Beslenme Çantası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceShatteringIce": {
     "name": "Element Rezonansı: Kırıcı Buz",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenWaters": {
     "name": "Element Rezonansı: Örülü Sular",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceSoothingWater": {
     "name": "Element Rezonansı: Yatıştırıcı Sular",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenFlames": {
     "name": "Element Rezonansı: Örülü Ateşler",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceFerventFlames": {
     "name": "Element Rezonansı: Tutkulu Alevler",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenThunder": {
     "name": "Element Rezonansı: Örülü Elektrikler",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceHighVoltage": {
     "name": "Element Rezonansı: Yüksek Gerilim",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenWinds": {
     "name": "Element Rezonansı: Örülü Rüzgarlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceImpetuousWinds": {
     "name": "Element Rezonansı: Coşkun Rüzgarlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenStone": {
     "name": "Element Rezonansı: Örülü Topraklar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceEnduringRock": {
     "name": "Element Rezonansı: Sağlam Kaya",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenWeeds": {
     "name": "Element Rezonansı: Örülü Doğalar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceSprawlingGreenery": {
     "name": "Element Rezonansı: Büyüyen Yeşillikler",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TheBestestTravelCompanion": {
     "name": "En İyi Seyahat Arkadaşı!",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ChangingShifts": {
     "name": "Nöbet Değişimi",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "TossUp": {
     "name": "Fırlatma",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Strategize": {
     "name": "Strateji Oluştur",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "IHaventLostYet": {
     "name": "Henüz Kaybetmedim!",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "LeaveItToMe": {
     "name": "Bana Bırak!",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "WhenTheCraneReturned": {
     "name": "Turna Geri Döndüğünde",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Starsigns": {
     "name": "Burçlar",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "CalxsArts": {
     "name": "Tebeşir Sanatı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MasterOfWeaponry": {
     "name": "Silah Ustası",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "BlessingOfTheDivineRelicsInstallation": {
     "name": "İlahi Yadigar Lütfu",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "QuickKnit": {
     "name": "Hızlı Örgü Sanatı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "SendOff": {
     "name": "Uğurlama",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "GuardiansOath": {
     "name": "Muhafızın Yemini",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "AbyssalSummons": {
     "name": "Hiçlik Çağrısı",
-    "description": "Dehanın Yakarışı masa oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "Origin": {
     "name": "Köken",
@@ -12315,9 +12571,9 @@
     "name": "Uzman",
     "description": "Dehanın Yakarışı Kart Oyununda alınıp değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
   },
-  "HydroCrystalChunk": {
-    "name": "Su Kristal Parçası",
-    "description": "Dehanın Yakarışı Kart Oyununda alınıp değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
+  "LazuriteSwirl": {
+    "name": "Lazurit Girdabı",
+    "description": "Dehanın Yakarışı Kart Oyunundan elde edilebilen ve değiştirilebilen bir kart deseni. Farklı tasarımlara sahip kart desenlerinin, yapılışlarında ve dokularında da ufak farklılıklar olduğu söylenir. Hatta bazı oyuncular, farklı tarzdaki kartları toplamayı da bir uğraş ve hobi haline getirmişlerdir."
   },
   "BeginnerPlayerBadge": {
     "name": "Acemi Oyuncu Rozeti",
@@ -12529,7 +12785,7 @@
   },
   "CottageKitchen": {
     "name": "Kır Evi Mutfağı",
-    "description": "Kır Evi Mutfağı yapımını adım adım anlatan detaylı bir taslak.\\nÖzenle hazırlanmış baharatlarla dolu bir dolabın olduğu dayalı döşeli bir mutfak.\\nMükemmeliyetçi şefler malzemeleri pazar yerinden her gün taze alır. Gerçek aşçılar ise sobalarında yaktıkları odunlara bile çok dikkat eder. Wanmin Restoranının genç aşçıbaşı bir keresinde Qingce Köyü'nün yöresel yemeklerinin nasıl yapıldığını paylaşmıştı. Öncelikle kurutulmuş bambu dallarını sobada yakmak ve ateşi dikkatle kontrol altında tutmak gerekiyormuş. Kurt Çengellerinin çevresindeki çalıları odun ateşine attıktan sonra içine Mondstadt zarafeti bile katılabilirmiş.\\nFarklı odun kullanıldığında yemeğin tadını büyük ölçüde değiştirir ve şeflerin çoğu bu konuda tam anlamıyla ustalaşamaz. Mesela Wanmin Restoranının bu teknikte hiçbir rakibi yoktur.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Tartaglia, Mona, Xiao, Xiangling, Razor ve Yaoyao bu Dekorasyon Setini tercih eder."
+    "description": "\"Kır Evi Mutfağı\" yapımını adım adım anlatan detaylı bir taslak.\\nÖzenle hazırlanmış baharatlarla dolu bir dolabın olduğu dayalı döşeli bir mutfak.\\nMükemmeliyetçi şefler malzemeleri pazar yerinden her gün taze alır. Gerçek aşçılar ise sobalarında yaktıkları odunlara bile çok dikkat eder. Wanmin Restoranının genç aşçıbaşısı bir keresinde Qingce Köyü'nün yöresel yemeklerinin nasıl yapıldığını paylaşmıştı. Öncelikle kurutulmuş bambu dallarını sobada yakmak ve ateşi dikkatle kontrol altında tutmak gerekiyormuş. Kurt Çengellerinin çevresindeki çalıları odun ateşine attıktan sonra içine Mondstadt zarafeti bile katılabilirmiş.\\nFarklı odun kullanıldığında yemeğin tadını büyük ölçüde değiştirir ve şeflerin çoğu bu konuda tam anlamıyla ustalaşamaz. Mesela Wanmin Restoranının bu teknikte hiçbir rakibi yoktur.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Tartaglia, Mona, Xiao, Xiangling, Razor Yaoyao ve Mika bu Dekorasyon Setini tercih eder."
   },
   "WeaponForgingStation": {
     "name": "Silah Dövme İstasyonu",
@@ -12561,7 +12817,7 @@
   },
   "IterAdAstraAbyssosque": {
     "name": "Yıldızların Ötesine Yolculuk",
-    "description": "Yıldızların Ötesine Yolculuk yapımını adım adım anlatan detaylı bir taslak.\\nDoğada sık sık karşına çıkabilecek bir maceracı kampı. En yeni ve en güzel çadır tasarımları kullanılır.\\nEskiden tecrübeli maceracıların hayatı oldukça zordu. Şiddetli fırtınalarda bile rahatça uyumak için hafif ve dayanaklı bir çadırla yetinmek zorunda kalırlardı. Ertesi gün de toparlanıp sonraki istikametlerine giderlerdi. Bu nedenle bunun gibi göz alıcı ve bütçeye uygun çadırların alıcısı hiçbir zaman eksik olmazdı.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Bennett, Qiqi, Chongyun, Fischl, Albedo ve Aloy bu Dekorasyon Setini tercih eder."
+    "description": "\"Yıldızların Ötesine Yolculuk\" yapımını adım adım anlatan detaylı bir taslak.\\nDoğada sık sık karşına çıkabilecek bir maceracı kampı. En yeni ve en güzel çadır tasarımları kullanılır.\\nEskiden tecrübeli maceracıların hayatı oldukça zordu. Şiddetli fırtınalarda bile rahatça uyumak için hafif ve dayanaklı bir çadırla yetinmek zorunda kalırlardı. Ertesi gün de toparlanıp sonraki istikametlerine giderlerdi. Bu nedenle bunun gibi göz alıcı ve bütçeye uygun çadırların alıcısı hiçbir zaman eksik olmazdı.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy ve Mika bu Dekorasyon Setini tercih eder."
   },
   "DawnOrchard": {
     "name": "Şafak Bağı",
@@ -12625,7 +12881,7 @@
   },
   "FervidAroma": {
     "name": "Ateşli Aroma",
-    "description": "Bu zarif bir şekilde dekore edilmiş restoran taslağı, Sumeru Şehri'ndeki ünlü bir handır... Elbette Dinginçay Çaydanlığı içinde kullanılmak üzere bazı değişiklikler yapılmıştır. Buhar ve baharat kokuları benzer şekilde havada süzülür ve her biri zaten var olan keyifli bir anı daha da artırır. Tam bu anda gereken tek şey birkaç arkadaş ve birkaç sürahi kaliteli şaraptır, bundan mükemmel bir yemek deneyimi olur.\\nSık sık birlikte seyahate çıkanlar için koltuk sayısı ve gereken yiyecek miktarı da düşünüldüğünde, mangal yerleri idealdir. Tek başına gezenlere gelince bu tür yerlerin boğuk atmosferi, gözlem, takip ve hatta kumpas kurmak için güvenli koşullar sağlamanın yanı sıra onların hareketlerini gizlemelerini de sağlar.\\nYoldaşların arasından Alhaitham bu Dekorasyon Setini tercih eder."
+    "description": "Bu zarif bir şekilde dekore edilmiş restoran taslağı, Sumeru Şehri'ndeki ünlü bir handır... Elbette Dinginçay Çaydanlığı içinde kullanılmak üzere bazı değişiklikler yapılmıştır. Buhar ve baharat kokuları benzer şekilde havada süzülür ve her biri zaten var olan keyifli bir anı daha da artırır. Tam bu anda gereken tek şey birkaç arkadaş ve birkaç sürahi kaliteli şaraptır, bundan mükemmel bir yemek deneyimi olur.\\nSık sık birlikte seyahate çıkanlar için koltuk sayısı ve gereken yiyecek miktarı da düşünüldüğünde, mangal yerleri idealdir. Tek başına gezenlere gelince bu tür yerlerin boğuk atmosferi, gözlem, takip ve hatta kumpas kurmak için güvenli koşullar sağlamanın yanı sıra onların hareketlerini gizlemelerini de sağlar.\\nYoldaşların arasından Alhaitham ve Dehya bu Dekorasyon Setini tercih eder."
   },
   "OfSettledThoughts": {
     "name": "Yerleşik Düşünceler",
@@ -12661,7 +12917,7 @@
   },
   "TheTravelingTroopsPomp": {
     "name": "Gezici Birliğin Görkemi",
-    "description": "Bu askeri tarzdaki kamp çeşitli eşyalarla doludur. Savunma takviyesi kurulmuş ve güzelce yerleştirilmiş olan kamp ateşleri gece operasyonlarına zemin hazırlamaktadır. En azından teoride, bu tür bir kamp yeri birçok düşmanın saldırısına karşı koyabilir ve hatta bu şekilde yapmak için yeterli insan gücü olması durumunda bir savunma hattının dayanak noktasını dahi oluşturabilir.\\nMalzemelerin kurulumu ve nakliyesi ne kadar zahmetli olursa olsun, rüzgarı veya yağmuru engelleyen çadırların olmaması ne kadar çok zorlu şartlara neden olursa olsun... Savaşlarda hayata karşı katılaşmış paralı askerlerin iyi bir uyku çekmesi için sadece bir saman yığını yeter. Yani bu tür küçük kusurlar hakkında fazla endişelenmeye gerek yoktur."
+    "description": "Bu askeri tarzdaki kamp çeşitli eşyalarla doludur. Savunma takviyesi kurulmuş ve güzelce yerleştirilmiş olan kamp ateşleri gece operasyonlarına zemin hazırlamaktadır. En azından teoride, bu tür bir kamp yeri birçok düşmanın saldırısına karşı koyabilir ve hatta bu şekilde yapmak için yeterli insan gücü olması durumunda bir savunma hattının dayanak noktasını dahi oluşturabilir.\\nMalzemelerin kurulumu ve nakliyesi ne kadar zahmetli olursa olsun, rüzgarı veya yağmuru engelleyen çadırların olmaması ne kadar çok zorlu şartlara neden olursa olsun... Savaşlarda hayata karşı katılaşmış paralı askerlerin iyi bir uyku çekmesi için sadece bir saman yığını yeter. Yani bu tür küçük kusurlar hakkında fazla endişelenmeye gerek yoktur.\\nYoldaşların arasından Dehya bu Dekorasyon Setini tercih eder."
   },
   "AmidstScentsAndSerenity": {
     "name": "Kokuların ve Huzurun Arasında",
@@ -12816,11 +13072,11 @@
     "description": "Parıldayan Aydınlatma yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "FlutteringLight": {
-    "name": "\"Titrek Işık\"",
+    "name": "Titrek Işık",
     "description": "\"Titrek Işık\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "LightOfSlumber": {
-    "name": "\"Gece Lambası\"",
+    "name": "Gece Lambası",
     "description": "\"Gece Lambası\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "EfflorescentIllumination": {
@@ -12868,12 +13124,12 @@
     "description": "Sarmal \"Canlandırıcı\" Komodin yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "AthelTripleDrawerCabinet": {
-    "name": "İki Çekmeceli Ilgın Dolap",
-    "description": "İki Çekmeceli Ilgın Dolap yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "name": "Üç Çekmeceli Ilgın Dolap",
+    "description": "Üç Çekmeceli Ilgın Dolap yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "AthelPotteryShelf": {
-    "name": "Ilgın Çömlek Rafları",
-    "description": "Ilgın Çömlek Rafları yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "name": "Ilgın Çömlek Rafı",
+    "description": "Ilgın Çömlek Rafı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "TwoTierLibraryBookshelf": {
     "name": "İki Raflı Kitaplık",
@@ -13312,14 +13568,14 @@
     "description": "Bilgelik Diyarı Işığı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "NightwatchersCandlelight": {
-    "name": "\"Gece Gözcüsünün Mum Işığı\"",
+    "name": "Gece Gözcüsünün Mum Işığı",
     "description": "\"Gece Gözcüsünün Mum Işığı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
-  "ListeningCandelight": {
-    "name": "\"Dinleyici Mum Işığı\"",
+  "ListeningCandlelight": {
+    "name": "Dinleyici Mum Işığı",
     "description": "\"Dinleyici Mum Işığı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
-  "TwowayIronLamp": {
+  "TwoWayIronLamp": {
     "name": "İki Yönlü Demir Lamba",
     "description": "İki Yönlü Demir Lamba yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
@@ -13484,11 +13740,11 @@
     "description": "\"Bilgelik Diyarı İdrakı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "RestorativeFragrance": {
-    "name": "\"Şifalı Koku\"",
+    "name": "Şifalı Koku",
     "description": "\"Şifalı Koku\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "TheArtOfRetainingWater": {
-    "name": "\"Su Depolama Sanatı\"",
+    "name": "Su Depolama Sanatı",
     "description": "Su Depolama Sanatı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "LandscapePaintingCountryHome": {
@@ -14100,12 +14356,20 @@
     "description": "Bilgelik Şehrindeki İşler yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "SilkyQuellerOfSeaMonsters": {
-    "name": "\"Deniz Canavarı Geçirmez Kumaş\"",
+    "name": "Deniz Canavarı Geçirmez Kumaş",
     "description": "\"Deniz Canavarı Geçirmez Kumaş\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "NightOfSerenityInTheSandyBreeze": {
     "name": "Rüzgarlı Bir Çöl Gecesindeki Sükunet",
     "description": "Rüzgarlı Bir Çöl Gecesindeki Sükunet yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "TeaFragranceInTheTranquilCourt": {
+    "name": "Dingin Kalıntılardaki Çay Kokusu",
+    "description": "\"Dingin Kalıntılardaki Çay Kokusu\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "SingingInTheTranquilCourt": {
+    "name": "Dingin Kalıntılardaki Şarkı",
+    "description": "\"Dingin Kalıntılardaki Şarkı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Kuş ve Çiçek Havuzu",
@@ -14195,6 +14459,10 @@
     "name": "Bilgelik Diyarı Berraklığı",
     "description": "Bilgelik Diyarı Berraklığı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
+  "FloralSwing": {
+    "name": "Çiçekli Salıncak",
+    "description": "Çiçekli Salıncak yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
   "PortOrmosGPCraneIII": {
     "name": "Çok Amaçlı Ormos Limanı Vinci III",
     "description": "Çok Amaçlı Ormos Limanı Vinci III yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
@@ -14208,8 +14476,8 @@
     "description": "Liman Nakliyesi Kompozit El Arabası yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "ThreeWheeledMountainHandCart": {
-    "name": "Dört Tekerli Dağ El Arabası",
-    "description": "Dört Tekerli Dağ El Arabası yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "name": "Üç Tekerli Dağ El Arabası",
+    "description": "Üç Tekerli Dağ El Arabası yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "AdeptusGate": {
     "name": "Adeptus Geçidi",
@@ -14362,6 +14630,30 @@
   "DomedWallTheBirdsSang": {
     "name": "Kubbe Duvar: Kuşların Korosu",
     "description": "Kubbe Duvar: Kuşların Korosu yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "VisionOfTheCityOfWisdom": {
+    "name": "Bilgelik Şehrinin Görüşü",
+    "description": "\"Bilgelik Şehrinin Görüşü\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PartitionOfTheCityOfWisdom": {
+    "name": "Bilgelik Şehri Duvarı",
+    "description": "\"Bilgelik Şehri Duvarı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "LightShieldOfTheCityOfWisdom": {
+    "name": "Bilgelik Şehrinin Işık Kalkanı",
+    "description": "\"Bilgelik Şehrinin Işık Kalkanı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PilasterOfTheCityOfWisdom": {
+    "name": "Bilgelik Şehri Sütunu",
+    "description": "\"Bilgelik Şehri Sütunu\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "CommonWoodenStairs": {
+    "name": "Sıradan Tahta Merdiven",
+    "description": "Sıradan Tahta Merdiven yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "TexturedWhitestoneStairs": {
+    "name": "Dokulu Beyaz Taştan Merdiven",
+    "description": "Dokulu Beyaz Taştan Merdiven yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Taş Zemin: Mutlu Zamanlar",
@@ -14568,7 +14860,7 @@
     "description": "\"Yay, Tüy, Eğri\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "IngenuityOfTheForestForager": {
-    "name": "\"Orman Avcısı Felsefesi\"",
+    "name": "Orman Avcısı Felsefesi",
     "description": "Orman Avcısı Felsefesi yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "ItJustMightWork": {
@@ -14578,6 +14870,14 @@
   "ColorationAndPrecipitation": {
     "name": "\"Boyama ve Tortu Çökmesi\"",
     "description": "\"Boyama ve Tortu Çökmesi\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "LeisureDeviceBouncyTubby": {
+    "name": "Eğlence Cihazı: Zıpzıp Tombili",
+    "description": "Eğlence Cihazı: Zıpzıp Tombili yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "LeisureDeviceBouncyChubby": {
+    "name": "Eğlence Cihazı: Zıpzıp Dombili",
+    "description": "Eğlence Cihazı: Zıpzıp Dombili yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik",
@@ -14604,8 +14904,8 @@
     "description": "Köknar Silah Rafı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "HardwoodWeaponRack": {
-    "name": "Masif Ahşap Silah Askısı",
-    "description": "Masif Ahşap Silah Askısı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "name": "Masif Ahşap Silah Rafı",
+    "description": "Masif Ahşap Silah Rafı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "SimpleCargoCart": {
     "name": "Basit Yük Arabası",
@@ -14842,6 +15142,18 @@
   "TrumpetAndFirewood": {
     "name": "\"Trompet ve Çıra\"",
     "description": "\"Trompet ve Çıra\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "ErsatzBalloonWhisperingBreeze": {
+    "name": "Yedek Balon: Rüzgarın Fısıltısı",
+    "description": "Yedek Balon: Rüzgarın Fısıltısı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "ErsatzBalloonSphericalSquall": {
+    "name": "Yedek Balon: Küresel Kasırga",
+    "description": "Yedek Balon: Küresel Kasırga yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "ErsatzBalloonBumperShroom": {
+    "name": "Yedek Balon: Mantar Çarpması",
+    "description": "Yedek Balon: Mantar Çarpması yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Ferforje Sokak Lambası",

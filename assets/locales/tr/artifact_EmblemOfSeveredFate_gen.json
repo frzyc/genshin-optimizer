@@ -2,7 +2,7 @@
   "setName": "Parçalanan Kader Amblemi",
   "setEffects": {
     "2": "+%20 Enerji Yüklemesi.",
-    "4": "Enerji Yüklemesinin Element Patlaması Hasarını %25 artırır. Bu yöntemle maksimum %75 Hasar bonusu elde edilebilir."
+    "4": "Element Patlaması Hasarı, Enerji Yüklemesinin %25'i kadar artar. Bu yöntemle maksimum %75 Hasar bonusu elde edilebilir."
   },
   "pieces": {
     "flower": {

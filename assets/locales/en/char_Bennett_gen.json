@@ -152,7 +152,7 @@
   "constellation4": {
     "name": "Unexpected Odyssey",
     "description": {
-      "0": "Using a Normal Attack when executing the second attack of <strong>Passion Overload</strong>'s Charge Level 1 allows an additional attack to be performed.",
+      "0": "Using a Normal Attack as the second attack of <strong>Passion Overload</strong>'s Charge Level 1 will perform a follow-up attack.",
       "1": "This additional attack does 135% of the second attack's DMG."
     }
   },

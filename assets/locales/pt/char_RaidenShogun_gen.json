@@ -51,7 +51,7 @@
       "4": "O Olho pode iniciar um Ataque Coordenado a cada 0.9s por cada equipe.",
       "5": "Ataques Coordenados gerados por personagens na equipe que não são controlados por você causam 20% do Dano normal.",
       "6": "<br/>",
-      "7": "<i>Seres de grande divindade podem afetar tudo que veem, e a Arconte Electro pode manipular as estrelas inauspiciosas para defender seus Retentores e trazer uma sentença trovejante a seus inimigos.</i>"
+      "7": "<i>Seres de grande divindade podem afetar tudo que veem, e a Arconte Electro pode manipular as estrelas não auspiciosas para defender seus Retentores e trazer uma sentença trovejante a seus inimigos.</i>"
     },
     "skillParams": {
       "0": "Dano de Habilidade",

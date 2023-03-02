@@ -41,17 +41,17 @@
   "skill": {
     "name": "Guhua Sword: Fatal Rainscreen",
     "description": {
-      "0": "Xingqiu mengayunkan pedangnya dua kali, mengakibatkan <hydro>Hydro DMG</hydro> kepada musuh di hadapannya. Pada saat bersamaan, skill ini akan menciptakan Rain Sword dalam jumlah maksimum yang akan mengitari karakter.",
+      "0": "Xingqiu mengayunkan pedangnya dua kali, mengakibatkan <hydro>Hydro DMG</hydro> terhadap musuh di hadapannya. Pada saat bersamaan, skill ini akan menciptakan Rain Sword dalam jumlah maksimum yang akan mengitari Karakter.",
       "1": "Rain Sword memiliki karakteristik berikut:",
       "2": [
-        "Saat karakter menerima DMG, Rain Sword akan hancur dan mengurangi DMG yang diterima;",
-        "Meningkatkan ketahanan karakter terhadap interupsi."
+        "Saat Karakter menerima DMG, Rain Sword akan hancur dan mengurangi DMG yang diterima;",
+        "Meningkatkan ketahanan Karakter terhadap interupsi."
       ],
       "3": "Sebanyak 20% dari <hydro>Hydro DMG Bonus</hydro> milik Xingqiu akan dikonversi menjadi DMG Reduction tambahan untuk Rain Sword.",
       "4": "<br/>",
       "5": "Jumlah maksimum DMG Reduction tambahan yang bisa didapatkan dengan cara ini adalah 24%.",
       "6": "Jumlah maksimum Rain Sword di awal adalah 3.",
-      "7": "Menggunakan skill ini akan mengenakan efek <hydro>Wet</hydro> pada karakter.",
+      "7": "Menggunakan skill ini akan mengenakan efek <hydro>Wet</hydro> pada Karakter.",
       "8": "<br/>",
       "9": "<i>\"Lebih mudah mengalahkan naga air daripada membelah air hujan.\"</i>"
     },
@@ -81,7 +81,7 @@
       "1": "<br/>",
       "2": "<strong>Rainbow Bladework</strong>",
       "3": [
-        "Normal Attack dari karakter yang sedang digunakan akan meluncurkan pedang air yang menyerang berturut-turut dan mengakibatkan <hydro>Hydro DMG</hydro>;",
+        "Normal Attack dari Karakter yang sedang digunakan akan meluncurkan pedang air yang bisa menyerang secara berturut-turut dan mengakibatkan <hydro>Hydro DMG</hydro>;",
         "Jumlah Rain Sword akan terus berada dalam jumlah maksimum selama durasi skill."
       ],
       "4": "<br/>",
@@ -109,7 +109,7 @@
   "passive1": {
     "name": "Hydropathic",
     "description": {
-      "0": "Saat sebuah Rain Sword hancur atau durasinya berakhir, memulihkan HP karakter saat ini sebesar 6% Max HP Xingqiu."
+      "0": "Saat sebuah Rain Sword hancur atau durasinya berakhir, memulihkan HP Karakter saat ini sebesar 6% Max HP Xingqiu."
     }
   },
   "passive2": {
@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Evilsoother",
     "description": {
-      "0": "Pada durasi <strong>Guhua Sword: Raincutter</strong>, DMG yang dihasilkan oleh <strong>Guhua Sword: Fatal Rainscreen</strong> meningkat 50%."
+      "0": "Selama durasi <strong>Guhua Sword: Raincutter</strong>, DMG yang dihasilkan oleh <strong>Guhua Sword: Fatal Rainscreen</strong> meningkat 50%."
     }
   },
   "constellation5": {
@@ -160,7 +160,7 @@
   "constellation6": {
     "name": "Hence, Call Them My Own Verses",
     "description": {
-      "0": "Mengaktifkan 2 dari <strong>Guhua Sword: Raincutter</strong> Sword Rain akan meningkatkan DMG ketiganya. Xingqiu akan mendapatkan 3 Energy saat Sword Rain mengenai musuh."
+      "0": "Untuk setiap 2 serangan Sword Rain dari <strong>Guhua Sword: Raincutter</strong> yang terpicu, DMG serangan Sword Rain yang ketiga kalinya akan meningkat drastis. Xingqiu juga akan mendapatkan 3 Energy saat Sword Rain mengenai musuh."
     }
   }
 }

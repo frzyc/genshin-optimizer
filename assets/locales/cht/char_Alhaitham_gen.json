@@ -139,7 +139,8 @@
   "constellation3": {
     "name": "遮詮",
     "description": {
-      "0": "<strong>共相·理式摹寫</strong>的技能等級提高3級。至多提升至15級。"
+      "0": "<strong>共相·理式摹寫</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
     }
   },
   "constellation4": {
@@ -157,7 +158,8 @@
   "constellation5": {
     "name": "智度",
     "description": {
-      "0": "<strong>殊境·顯象縛結</strong>的技能等級提高3級。至多提升至15級。"
+      "0": "<strong>殊境·顯象縛結</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
     }
   },
   "constellation6": {

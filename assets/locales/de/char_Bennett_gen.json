@@ -151,8 +151,8 @@
   "constellation4": {
     "name": "Unerschütterlichkeit",
     "description": {
-      "0": "Startet einen zusätzlichen Angriff, wenn nach Aufladephase 1 von <strong>Überschwänglichkeit</strong> bei Aufladephase 2 ein Standardangriff angewendet wird.",
-      "1": "Der Schaden dieses Angriffs entspricht 135 % ANG von Phase 2."
+      "0": "Startet einen zusätzlichen Angriff, wenn während des zweiten Angriffs der Aufladephase 1 von <strong>Überschwänglichkeit</strong> ein Standardangriff angewendet wird.",
+      "1": "Der Schaden dieses Angriffs entspricht 135 % ANG des zweiten Angriffs."
     }
   },
   "constellation5": {

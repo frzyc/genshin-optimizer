@@ -12,11 +12,11 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG area</hydro> setelah jeda singkat."
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <hydro>Hydro DMG Area</hydro> setelah jeda singkat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
-        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG area</hydro> saat mendarat."
+        "1": "Mengumpulkan kekuatan Hydro dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <hydro>Hydro DMG Area</hydro> saat mendarat."
       }
     },
     "skillParams": {
@@ -75,7 +75,7 @@
   "burst": {
     "name": "Shining Miracle♪",
     "description": {
-      "0": "Memulihkan HP karakter teman dan seluruh anggota party dalam jumlah besar, jumlah HP yang dipulihkan berdasarkan pada Max HP Barbara.",
+      "0": "Memulihkan HP Karakter teman dan seluruh anggota party dalam jumlah besar, jumlah HP yang dipulihkan berdasarkan pada Max HP Barbara.",
       "1": "<br/>",
       "2": "<i>Keinginan Barbara untuk menyembuhkan adalah dorongan baginya untuk terus bertarung dan bernyanyi.</i>"
     },
@@ -127,7 +127,7 @@
     "name": "Vitality Burst",
     "description": {
       "0": "Mengurangi 15% CD <strong>Let the Show Begin♪</strong>.",
-      "1": "Selama durasi skill, karakter saat ini akan mendapatkan 15% <hydro>Hydro DMG Bonus</hydro>."
+      "1": "Selama durasi skill, Karakter aktif akan mendapatkan 15% <hydro>Hydro DMG Bonus</hydro>."
     }
   },
   "constellation3": {
@@ -138,10 +138,10 @@
     }
   },
   "constellation4": {
-    "name": "Attentiveness be My Power",
+    "name": "Attentiveness Be My Power",
     "description": {
       "0": "Setiap kali Barbara menyerang musuh dengan Charged Attack akan memulihkan 1 Energy.",
-      "1": "Maksimum 5 energy dapat dipulihkan dengan cara ini menggunakan salah satu Charged Attack."
+      "1": "Paling banyak dapat memulihkan 5 Energy dengan cara ini setiap kalinya."
     }
   },
   "constellation5": {
@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Dedicating Everything to You",
     "description": {
-      "0": "Ketika Barbara berada di dalam party namun sedang tidak bertempur, dan salah seorang anggota party gugur:",
+      "0": "Ketika Barbara ada dalam party namun sedang tidak berada di medan pertempuran, dan salah seorang anggota party gugur:",
       "1": "Secara otomatis akan menghidupkan kembali Karakter gugur tersebut;",
       "2": [
         "Dan memulihkan HP Karakter tersebut hingga 100%."

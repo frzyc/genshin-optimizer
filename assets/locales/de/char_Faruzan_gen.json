@@ -136,7 +136,8 @@
   "constellation3": {
     "name": "Spaziergang durch den Garten des Gottes",
     "description": {
-      "0": "Erhöht die Stufe der Fähigkeit <strong>Windreich von Nasamjnin</strong> um 3. Höchststufe 15."
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Windreich von Nasamjnin</strong> um 3.",
+      "1": "Höchststufe 15."
     }
   },
   "constellation4": {
@@ -149,7 +150,8 @@
   "constellation5": {
     "name": "Wunderland des Nachdenkens",
     "description": {
-      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 3. Höchststufe 15."
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 3.",
+      "1": "Höchststufe 15."
     }
   },
   "constellation6": {

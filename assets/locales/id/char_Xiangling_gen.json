@@ -2,9 +2,9 @@
   "name": "Xiangling",
   "title": "Exquisite Delicacy",
   "description": "Seorang koki ternama dari Liyue. Memiliki cinta yang mendalam akan seni masak-memasak, sangat pandai memasak masakan andalannya dengan rasa yang pedas dan gurih.",
-  "constellationName": "Trulla",
+  "constellationName": "Ladle",
   "auto": {
-    "name": "Pastry Kung Fu",
+    "name": "Dough-Fu",
     "fields": {
       "normal": {
         "0": "<strong><strong>Normal Attack</strong>",
@@ -112,7 +112,7 @@
   "constellation1": {
     "name": "Crispy Outside, Tender Inside",
     "description": {
-      "0": "Saat Guoba Attack mengenai musuh, akan mengurangi 15% <pyro>Pyro RES</pyro> mereka selama 6 detik."
+      "0": "Saat serangan Guoba mengenai musuh, akan mengurangi 15% <pyro>Pyro RES</pyro> mereka selama 6 detik."
     }
   },
   "constellation2": {

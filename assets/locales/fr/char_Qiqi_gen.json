@@ -41,7 +41,7 @@
   "skill": {
     "name": "Arcane d'Adepte : Héraut de givre",
     "description": {
-      "0": "Utilise un talisman infusé de glace et de sang pour invoquer un Héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
+      "0": "Utilise un talisman infusé de glace et de sang pour invoquer un Héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis proches.",
       "1": "<br/>",
       "2": "<strong>Héraut de givre</strong>",
       "3": [
@@ -74,7 +74,7 @@
   "burst": {
     "name": "Arcane d'Adepte : Talisman sacré",
     "description": {
-      "0": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis d'un talisman qui leur inflige des <cryo>DGT Cryo</cryo>.",
+      "0": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis proches d'un talisman qui leur inflige des <cryo>DGT Cryo</cryo>.",
       "1": "<br/>",
       "2": "<strong>Talisman</strong>",
       "3": "Les personnages récupèrent des PV équivalant aux DGT subis par les ennemis marqués.",

@@ -81,7 +81,7 @@
   "burst": {
     "name": "Brisure d'orage",
     "description": {
-      "0": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des <electro>DGT Électro</electro> aux ennemis à proximité.",
+      "0": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des <electro>DGT Électro</electro> aux ennemis proches.",
       "1": "<br/>",
       "2": "<strong>Bouclier de foudre</strong>",
       "3": [

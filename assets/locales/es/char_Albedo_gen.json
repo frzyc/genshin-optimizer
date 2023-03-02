@@ -1,18 +1,18 @@
 {
   "name": "Albedo",
   "title": "El Príncipe de la Roca Caliza",
-  "description": "Alquimista Jefe de los Caballeros de Favonius y Capitán del equipo de investigación. Lo llaman el “Príncipe de la Roca Caliza”.",
+  "description": "Alquimista Jefe de los Caballeros de Favonius y Capitán de la Compañía de Investigación. Lo llaman el “Príncipe de la Roca Caliza”.",
   "constellationName": "Princeps Cretaceus",
   "auto": {
     "name": "Técnica de espada Favonius - Albor",
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 5 ataques rápidos."
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para lanzar un golpe de espada cruzado."
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",

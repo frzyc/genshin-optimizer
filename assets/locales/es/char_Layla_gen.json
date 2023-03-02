@@ -8,11 +8,11 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 3 ataques rápidos."
+        "1": "Realiza hasta 3 ataques consecutivos con espada."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para lanzar un golpe de espada cruzado."
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",

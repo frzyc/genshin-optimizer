@@ -138,7 +138,7 @@
   "constellation1": {
     "name": "Iscrizione sinistra",
     "description": {
-      "0": "<strong>Chakra Desiderata</strong> ottiene Risoluzione ancora più velocemente. Quando i personaggi di <electro>Electro</electro> usano i loro Tripudi elementali, le cariche di Risoluzione ottenute aumentano di un 80%. Quando i personaggi di altri tipi elementali usano i loro Tripudi elementali, le cariche di Risoluzione ottenute aumentano di un 20%."
+      "0": "<strong>Chakra Desiderata</strong> ottiene Risoluzione ancora più velocemente. Quando i personaggi di <electro>Electro</electro> usano i loro Tripudi elementali, gli accumuli di Risoluzione ottenuti aumentano di un 80%. Quando i personaggi di altri tipi elementali usano i loro Tripudi elementali, gli accumuli di Risoluzione ottenuti aumentano di un 20%."
     }
   },
   "constellation2": {

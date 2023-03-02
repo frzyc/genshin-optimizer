@@ -81,7 +81,7 @@
   "burst": {
     "name": "Coucher de lune de jade",
     "description": {
-      "0": "À la demande d'un certain Adepte, le plein potentiel des Yueguis peut être libéré en cas d'urgence, infligeant des <dendro>DGT Dendro</dendro> aux ennemis à proximité et faisant passer dans l'invincible (dans un certain sens) état Héritage adeptal.",
+      "0": "À la demande d'un certain Adepte, le plein potentiel des Yueguis peut être libéré en cas d'urgence, infligeant des <dendro>DGT Dendro</dendro> aux ennemis proches et faisant passer dans l'invincible (dans un certain sens) état Héritage adeptal.",
       "1": "<br/>",
       "2": "<strong>Héritage adeptal</strong>",
       "3": [
@@ -93,7 +93,7 @@
       "4": "<br/>",
       "5": "L'état Héritage adeptal prend fin lorsque Yaoyao quitte le champ de bataille, et tous les Yueguis sauteurs restants disparaissent à la fin de l'état.",
       "6": "<br/>",
-      "7": "<i>« Hein ? Lequel est le vrai Yuegui ? Eh bien, ce sont tous des Yueguis, pardi !{NON_BREAK_SPACE}»</i>"
+      "7": "<i>« Hein ? Lequel est le vrai Yuegui ? Eh bien, ce sont tous des Yueguis, pardi ! »</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -117,7 +117,7 @@
   "passive1": {
     "name": "Dispersion stellaire",
     "description": {
-      "0": "Pendant l'état Héritage adeptal de <strong>Coucher de lune de jade</strong>, Yaoyao lance constamment des radis de jade blanc sur les ennemis à proximité lorsqu'elle sprinte, saute ou court. Un radis de jade blanc peut être lancé une fois toutes les 0,6 s de cette manière."
+      "0": "Pendant l'état Héritage adeptal de <strong>Coucher de lune de jade</strong>, Yaoyao lance constamment des radis de jade blanc sur les ennemis proches lorsqu'elle sprinte, saute ou court. Un radis de jade blanc peut être lancé une fois toutes les 0,6 s de cette manière."
     }
   },
   "passive2": {

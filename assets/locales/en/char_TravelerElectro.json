@@ -1,7 +1,7 @@
 {
   "skill": {
     "amuletGenAmt": "Number of Abundance Amulets generated",
-    "absorb": "AAfter absorbing an Abundance Amulet"
+    "absorb": "After absorbing an Abundance Amulet"
   },
   "burst": {
     "3rd": "3rd Falling Thunder DMG",

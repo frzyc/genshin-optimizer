@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 3 ataques rápidos."
+        "1": "Realiza hasta 3 ataques consecutivos con espada."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",

@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Décorum",
     "description": {
-      "0": "Lorsque Tengu Juurai : Embuscade touche un ennemi, Sara restaure 1,2 pts d'énergie élémentaire à tous les personnages de l'équipe tous les 100 % de recharge d'énergie dont elle dispose. Cet effet peut être déclenché une fois toutes les 3 s."
+      "0": "Lorsque Tengu Juurai : Embuscade touche un ennemi, Sara restaure 1,2 pt d'énergie élémentaire à tous les personnages de l'équipe tous les 100 % de recharge d'énergie dont elle dispose. Cet effet peut être déclenché une fois toutes les 3 s."
     }
   },
   "passive3": {

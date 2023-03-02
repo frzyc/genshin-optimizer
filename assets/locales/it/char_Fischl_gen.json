@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Supplizio dei peccatori",
     "description": {
-      "0": "Se il tuo personaggio attivo innesca una <electro>reazione elementale di Electro</electro> quando Oz è in campo, l'avversario viene colpito da una Folgore del castigo, e subisce <electro>DAN da Electro</electro> pari a un 80% dell'ATT di Fischl."
+      "0": "Se il tuo personaggio attivo innesca una <electro>reazione elementale di Electro</electro> quando Oz è in campo, l'avversario viene colpito da una Folgore del castigo che infligge <electro>DAN da Electro</electro> pari a un 80% dell'ATT di Fischl."
     }
   },
   "passive3": {
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Occhio del corvo",
     "description": {
-      "0": "Anche quando Oz non è attivo in combattimento, può sempre tenere d'occhio Fischl grazie ai suoi occhi di corvo. Quando Fischl effettua un attacco normale contro un avversario, Oz sferra un attacco congiunto, infliggendo DAN pari a un 22% dell'ATT di Fischl."
+      "0": "Anche quando Oz non è attivo in combattimento, può sempre tenere d'occhio Fischl grazie ai suoi occhi di corvo. Quando Fischl effettua un attacco normale contro un avversario, Oz sferra un attacco coordinato, infliggendo DAN pari a un 22% dell'ATT di Fischl."
     }
   },
   "constellation2": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Corvo dell'Immernacht",
     "description": {
-      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, quando presente, Oz effettua un attacco congiunto con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
+      "0": "Estende di 2 s la durata della presenza di Oz sul campo. Inoltre, quando presente, Oz effettua un attacco coordinato con il tuo personaggio attivo, infliggendo <electro>DAN da Electro</electro> pari a un 30% dell'ATT di Fischl."
     }
   }
 }

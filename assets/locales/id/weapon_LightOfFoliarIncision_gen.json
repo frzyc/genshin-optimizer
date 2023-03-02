@@ -1,6 +1,6 @@
 {
   "name": "Light of Foliar Incision",
-  "description": "Pedang berburu berwarna emas yang dibuat dari cabang putih yang berharga, telah menebas jatuh begitu banyak racun kegelapan yang hendak memasuki hutan.",
+  "description": "Pedang berburu berlapis emas terbuat dari ranting putih yang berharga, telah menebas jatuh begitu banyak racun kegelapan yang hendak memasuki hutan.",
   "passiveName": "Whitemoon Bristle",
   "passiveDescription": {
     "0": "CRIT Rate meningkat <cryo>4%</cryo>; Setelah Normal Attack mengakibatkan Elemental DMG, akan mendapatkan efek Foliar Incision: DMG yang diakibatkan Normal Attack dan Elemental Skill meningkat sebesar <cryo>120%</cryo> Elemental Mastery. Efek ini akan hilang setelah terpicu 28 kali atau setelah 12 detik. Efek Foliar Incision maksimum didapatkan sekali setiap 12 detik.",

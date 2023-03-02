@@ -207,6 +207,14 @@
     "name": "Cupom Kimodameshi",
     "description": "Cupom ganho da exibição de coragem e engenhosidade de um participante ao concluir desafios especiais no evento do \"Teste de Coragem\" realizado pela Comissão Yashiro.\\nVocê pode trocar esses cupons por recompensas durante o evento \"Akitsu Kimodameshi\"."
   },
+  "FloralCoupon": {
+    "name": "Cupom Floral",
+    "description": "Um cupom de recompensa que pode ser obtido ao jogar Xadrez Floral no Festival da Brisa Florescente. É possível utilizá-lo para resgatar recompensas durante o festival."
+  },
+  "FestiveTicket": {
+    "name": "Cupom do Festival",
+    "description": "Participe nas atividades de celebração do Festival da Brisa Florescente para obter esses cupons e trocá-los na Loja do Evento por recompensas."
+  },
   "Primogem": {
     "name": "Gema Essencial",
     "description": "Uma gema cristalina primordial que vai além da compreensão mundana. Seu brilho está cheio de esperanças e sonhos do universo em que esteve."
@@ -575,6 +583,14 @@
     "name": "Alhaitham",
     "description": "O atual Escriba da Academia de Sumeru, um homem de grande inteligência e talento. Vive sua vida livre e despreocupado, sendo uma pessoa muito difícil de se encontrar."
   },
+  "Dehya": {
+    "name": "Dehya",
+    "description": "Membro dos \"Eremitas\", uma organização mercenária que vaga pelos desertos de Sumeru. Ela é corajosa, poderosa e tem uma excelente reputação entre os seus colegas Eremitas."
+  },
+  "Mika": {
+    "name": "Mika",
+    "description": "Um jovem cavaleiro nascido em uma família comum. Ele serve como Topógrafo da Linha de Frente na sua companhia. É tímido e cauteloso."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": "Material de Ativação da Stella Fortuna de Kamisato Ayaka"
@@ -830,6 +846,14 @@
   "AlhaithamsStellaFortuna": {
     "name": "Stella Fortuna de Alhaitham",
     "description": "Material de Ativação da Constelação de Alhaitham"
+  },
+  "DehyasStellaFortuna": {
+    "name": "Stella Fortuna de Dehya",
+    "description": "Material de Ativação da Constelação de Dehya"
+  },
+  "MikasStellaFortuna": {
+    "name": "Stella Fortuna de Mika",
+    "description": "Material de Ativação da Constelação de Mika"
   },
   "GnosticHymnOldNotes": {
     "name": "Canção do Gnóstico - Anotações Antigas",
@@ -1278,6 +1302,10 @@
   "MysteriousMeat": {
     "name": "Carne Misteriosa",
     "description": "Um pedaço de carne fresca que parece estar irradiando uma aura misteriosa. Qual será o seu gosto?"
+  },
+  "CoffeeBeans": {
+    "name": "Grão de Café",
+    "description": "Fruto de uma planta comum em Teyvat. Com um aroma especial, pode ser usado para fazer bebidas após triturado."
   },
   "JeansDocumentPackage": {
     "name": "Pacote de Documentos da Jean",
@@ -2649,7 +2677,7 @@
   },
   "TheFoxInTheDandelionSeaVIII": {
     "name": "A Raposa no Mar de Dandelion (VIII)",
-    "description": "\"Quando ele aprendar a língua dos humanos...\". A voz da raposa é gentilmente carregada pela brisa da noite, desaparecendo com as sementes de Dandelion...\\nAfinal, a raposa é uma criatura diferente dos humanos, e não compartilham as mesmas alegrias e tristezas... Fábulas infantis \"A Raposa do Mar de Dandelions\", oitavo volume."
+    "description": "\"Quando ele aprender a língua dos humanos...\". A voz da raposa é gentilmente carregada pela brisa da noite, desaparecendo com as sementes de Dandelion...\\nAfinal, a raposa é uma criatura diferente dos humanos, e não compartilham as mesmas alegrias e tristezas... Fábulas infantis \"A Raposa do Mar de Dandelions\", oitavo volume."
   },
   "TheFoxInTheDandelionSeaIX": {
     "name": "A Raposa no Mar de Dandelion (IX)",
@@ -2665,11 +2693,11 @@
   },
   "VerasMelancholyVI": {
     "name": "A Melancolia de Vera (VI)",
-    "description": "Uma vez, existia um grande acadêmico, que queria escrever um livro sobre os festivais do imperio.\\nFoi aqui que descobriu que todo dia no império tinha um festival tradicional! Ele escreveu por seis meses, até que correu.\\nMas eu, o autor, não decepcionarei a todos!"
+    "description": "Uma vez, existia um grande acadêmico, que queria escrever um livro sobre os festivais do império.\\nFoi aqui que descobriu que todo dia no império tinha um festival tradicional! Ele escreveu por seis meses, até que correu.\\nMas eu, o autor, não decepcionarei a todos!"
   },
   "VerasMelancholyVII": {
     "name": "A Melancolia de Vera (VII)",
-    "description": "Nos aglomerados estelares na fronteira do universo, vivem poucos planetas. Por essa razão, a região pertence a capitães estelares e piratas.\\nPor ser a fronteira do universo, não há estibordo ou bombordo. As direções aqui se decidem com base em qual estrela está se usando para navegar...\\nSe perca, junto com seu senso de direção, nesse próximo cpáitulo da viagem de Vera!"
+    "description": "Nos aglomerados estelares na fronteira do universo, vivem poucos planetas. Por essa razão, a região pertence a capitães estelares e piratas.\\nPor ser a fronteira do universo, não há estibordo ou bombordo. As direções aqui se decidem com base em qual estrela está se usando para navegar...\\nSe perca, junto com seu senso de direção, nesse próximo capitulo da viagem de Vera!"
   },
   "VerasMelancholyVIII": {
     "name": "A Melancolia de Vera (VIII)",
@@ -4065,7 +4093,7 @@
   },
   "TokiAlleyTalesPrologue": {
     "name": "Contos da Rua Toki (Prólogo)",
-    "description": "Dizem que no passado, quando os frágeis e pouco longevos mortais ainda haviam de cruzar o mar até essa terra, Inazuma era uma terra que pertencia aos Tanuki, e a história da humanidade era inicailmente o resultado da embriaguez de um Tanuki. Seja bem-vindo a Rua Toki, um local onda a história e contos selvagens se cruzam."
+    "description": "Dizem que no passado, quando os frágeis e pouco longevos mortais ainda haviam de cruzar o mar até essa terra, Inazuma era uma terra que pertencia aos Tanuki, e a história da humanidade era inicialmente o resultado da embriaguez de um Tanuki. Seja bem-vindo a Rua Toki, um local onda a história e contos selvagens se cruzam."
   },
   "TokiAlleyTalesI": {
     "name": "Contos da Rua Toki (I)",
@@ -5833,11 +5861,11 @@
   },
   "GuideToTransience": {
     "name": "Guia do Mundo Mortal",
-    "description": "Material de Elevação de Talento.\\nTransiência é o sonho da nação do trovão.\\nEncontramos as maiores alegrias na vida mortal em sonhos transientes, pois não é a vida ela mesma como a sombra do trovão? Persiga seus sonhos até as nuvens, e aproveite o silêncio inesperado das lanternas opacas da noite."
+    "description": "Material de Elevação de Talento.\\nTransitoriedade é o sonho da nação do trovão.\\nEncontramos as maiores alegrias na vida mortal em sonhos transientes, pois não é a vida ela mesma como a sombra do trovão? Persiga seus sonhos até as nuvens, e aproveite o silêncio inesperado das lanternas opacas da noite."
   },
   "PhilosophiesOfTransience": {
     "name": "Filosofia do Mundo Mortal",
-    "description": "Material de Elevação de Talento.\\nTransiência é o sonho da nação do trovão.\\nA natureza passageira desse mundo mortal é a essência da beleza, pois nossas vidas não são rápidas como o flash de um raio? Mas a grandeza do divino aparece repentinamente, e perante o rugido da eternidade, quem pode suportá-lo?"
+    "description": "Material de Elevação de Talento.\\nTransitoriedade é o sonho da nação do trovão.\\nA natureza passageira desse mundo mortal é a essência da beleza, pois nossas vidas não são rápidas como o flash de um raio? Mas a grandeza do divino aparece repentinamente, e perante o rugido da eternidade, quem pode suportá-lo?"
   },
   "TeachingsOfElegance": {
     "name": "Ensinamentos de Cultura",
@@ -6533,7 +6561,7 @@
   },
   "AllDelicacyParcels": {
     "name": "Iguarias do Interior",
-    "description": "A especialidade de Xingqiu. Este prato com aparência quase artesanal faz com que quase niguém tenha dó de comer. Mas uma vez que você a saboreia, seu sabor é fresco, com uma doçura no fundo que fica difícil parar de comer... Espere um momento. Por acaso você tirou as cenouras?"
+    "description": "A especialidade de Xingqiu. Este prato com aparência quase artesanal faz com que quase ninguém tenha dó de comer. Mas uma vez que você a saboreia, seu sabor é fresco, com uma doçura no fundo que fica difícil parar de comer... Espere um momento. Por acaso você tirou as cenouras?"
   },
   "SweetDream": {
     "name": "Sonhos Doces",
@@ -7939,6 +7967,62 @@
     "name": "Carne Seca de Crocodilo",
     "description": "Carne de crocodilo preparada usando uma receita especial da tribo Tanit. Embora seja um pouco difícil de mastigar, a facilidade de armazenamento dessa carne faz ela ser um deleite comumente consumido pelos caçadores tribais.\\nApesar de ter gosto de ave, diz-se que o valor nutricional da carne de crocodilo é oito vezes maior do que a da carne das bestas típicas..."
   },
+  "SuspiciousTulumba": {
+    "name": "Frutas ao Mel Estranha",
+    "description": "Um aperitivo frito em óleo. As frutas não foram retiradas do wok a tempo. Ao serem mordidas, sua boca transborda de gordura, um sabor que só pode ser retirado com uma rápida e forte xícara de café."
+  },
+  "Tulumba": {
+    "name": "Frutas ao Mel",
+    "description": "Um aperitivo fritado em óleo. Farinha modelada é inserida diretamente no wok para ser fritada até ficar dourada para então ser retirada e mergulhada em molho enquanto está fervendo. Essa iguaria é uma companheira inseparável para as pessoas de Sumeru."
+  },
+  "DeliciousTulumba": {
+    "name": "Frutas ao Mel Deliciosa",
+    "description": "Um aperitivo frito em óleo. As frutas radiantes douradas envolvidas em um caldo delicioso são devoradas rapidamente, mordida por mordida. Ainda há um pouco de mel no prato. Talvez essa doçura possa durar mais um segundo...?"
+  },
+  "SuspiciousGildedTajine": {
+    "name": "Caldeirada Dourada Estranha",
+    "description": "Um prato de carne cozida. Apesar de parecer comestível o suficiente, uma mordida é o suficiente para revelar que a carne está tão seca quanto um osso, é como se você estivesse mastigando um galho. Será que a tampa do wok estava quebrada? Ou será que foi o uso dela de uma maneira errada que resultou nisso?"
+  },
+  "GildedTajine": {
+    "name": "Caldeirada Dourada",
+    "description": "Um prazo cozido de carne. A forma única do wok reduz a quantidade de líquido perdido durante o cozimento, e esse é um segredo culinário que apenas alguns povos do deserto conhecem. Essa iguaria deliciosa acompanhou os Eremitas por toda Sumeru, ganhando dessa forma seu nome e reputação."
+  },
+  "DeliciousGildedTajine": {
+    "name": "Caldeirada Dourada Deliciosa",
+    "description": "Um prato de carne cozida. Os grandes pedaços de carne foram mergulhados em uma sopa grossa e derretem imediatamente ao tocarem seus lábios. A combinação única de especiarias dança com o ritmo dos aromas de carne e tocam uma melodia do deserto em suas papilas gustativas ao ponto de sua língua não ter opção a não ser aplaudir."
+  },
+  "SuspiciousSuperMagnificentPizza": {
+    "name": "Super Estimada Pizza Estranha",
+    "description": "Uma pizza rica. Se a gordura for ignorada por um momento, é possível engolir os pedaços de carne fria, mas ainda assim, a massa que foi deixada de lado por muito tempo é um desafio difícil... Ela está tão dura, será que serviria para bater em um Hilichurl?"
+  },
+  "SuperMagnificentPizza": {
+    "name": "Super Estimada Pizza",
+    "description": "Uma pizza rica. Primeiro se coloca uma camada de presunto que foi cortado em pequenos pedaços para um prato repleto de sensação de satisfação. Depois de assado, o aroma dos pedaços de presunto assado e o sabor cremoso do queijo se tornam uma combinação encantadora."
+  },
+  "DeliciousSuperMagnificentPizza": {
+    "name": "Super Estimada Pizza Deliciosa",
+    "description": "Uma rica pizza. Entre o vapor que sobe ao sair do forno, sua borda quebra ao puxá-la com a mão, deixando uma cachoeira de queijo jorrar envolvida em um denso aroma de carne que satisfaz seu paladar e lhe dá uma sensação maravilhosa de satisfação."
+  },
+  "SuspiciousMintyFruitTea": {
+    "name": "Chá de Menta com Frutas Estranho",
+    "description": "Uma bebida refrescante. O primeiro gole faz os seus dentes saírem voando pelo choque de sabor azedo. A doçura leve foi substituída por uma acidez tirânica, será que isso é mesmo um chá de frutas?"
+  },
+  "MintyFruitTea": {
+    "name": "Chá de Menta com Frutas",
+    "description": "Uma bebida refrescante. Esse chá revigorante e o gosto agridoce da fruta se misturam juntos para energizar suas papilas, quando você se dá conta, já bebeu todo o copo."
+  },
+  "DeliciousMintyFruitTea": {
+    "name": "Chá de Menta com Frutas Delicioso",
+    "description": "Uma bebida refrescante. O sabor doce do chá se combina com os toques florais leves e com o sabor de frutas, preenchendo sua boca com seu aroma. Hã? Como assim só sobraram os cubos de gelo no copo?"
+  },
+  "GoldflameTajine": {
+    "name": "Panelão Fervente",
+    "description": "Especialidade da Dehya. Ao abrir a tampa, a carne que está dentro é tão macia que é possível se inebriar com a sensação dela escorregando entre os lábios... Parece que Dehya sabe cozinhar tão bem quanto sabe lutar."
+  },
+  "SurveyorsBreakfastSandwich": {
+    "name": "Fortaleza do Topógrafo",
+    "description": "Especialidade de Mika. O prato rico em sua frente é composto de camadas de ingredientes, e à medida que você dá pequenas mordidas, cada camada claramente demarcada de sabor dispersa-se em sua boca, como se você tivesse escalado uma montanha de sabores. Seriam essas as habilidades culinárias que Mika refinou em seu tempo com os Cavaleiros de Favonius?"
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Desbloquear utensílios de cozinha"
@@ -8491,6 +8575,22 @@
     "name": "Receita: Enroladinho de Carne Perfumado",
     "description": "Uma receita passo a passo detalhada para fazer Enroladinho de Carne Perfumado."
   },
+  "RecipeTulumba": {
+    "name": "Receita: Frutas ao Mel",
+    "description": "Uma receita bem detalhada, passo-a-passo de como fazer Frutas ao Mel."
+  },
+  "RecipeGildedTajine": {
+    "name": "Receita: Caldeirada Dourada",
+    "description": "Uma receita passo a passo para fazer um Caldeirada Dourada."
+  },
+  "RecipeSuperMagnificentPizza": {
+    "name": "Receita: Super Estimada Pizza",
+    "description": "Receita passo a passo da Super Estimada Pizza."
+  },
+  "RecipeMintyFruitTea": {
+    "name": "Receita: Chá de Menta com Frutas",
+    "description": "Uma receita com o passo a passo detalhado de como fazer Chá de Menta com Frutas."
+  },
   "CraftedItems": {
     "name": "Produtos Combinados",
     "description": "Item criado com a combinação de materiais."
@@ -8833,7 +8933,7 @@
   },
   "ChaosOculus": {
     "name": "Olho do Caos",
-    "description": "Originário de uma máquina antiga das Ruínas.\\nA parte \"Ruína\" de seu nome vem das áreas em que são mais ativas. Mas na realidade, máquinas das Ruínas possuem pouco em comum com os detritos em que são comumente encontrados.\\nNo passado antigo, essas ruínas foram parte de uma civilização grande o suficiente para quase tocar o domo do firmamente, enquanto a \"ruína\" ainda aguarda nos cantos mais profundos da terra, esperando a ordem para erguer-se e pisar sobre todos os reinos."
+    "description": "Originário de uma máquina antiga das Ruínas.\\nA parte \"Ruína\" de seu nome vem das áreas em que são mais ativas. Mas na realidade, máquinas das Ruínas possuem pouco em comum com os detritos em que são comumente encontrados.\\nNo passado antigo, essas ruínas foram parte de uma civilização grande o suficiente para quase tocar o domo do firmamento, enquanto a \"ruína\" ainda aguarda nos cantos mais profundos da terra, esperando a ordem para erguer-se e pisar sobre todos os reinos."
   },
   "DismalPrism": {
     "name": "Prisma Sombrio",
@@ -8981,7 +9081,7 @@
   },
   "HoarfrostCore": {
     "name": "Núcleo de Geada",
-    "description": "O núcleo de uma Câmara de Cryo destruída. Elemento cryo puro pode ser encontrado dentro dela.\\nEnergia e pensamentos que se acumulam nas profundezas da terra irão eventualmente eclodir na superfície. Até mesmo a silênciosa e mortal geada irá se fixar nas criaturas ao chão, fazendo com que até mesmo as videiras e ramos de vegetação fiquem enormes e ameaçadores, atraindo o olhar do caçador."
+    "description": "O núcleo de uma Câmara de Cryo destruída. Elemento cryo puro pode ser encontrado dentro dela.\\nEnergia e pensamentos que se acumulam nas profundezas da terra irão eventualmente eclodir na superfície. Até mesmo a silenciosa e mortal geada irá se fixar nas criaturas ao chão, fazendo com que até mesmo as videiras e ramos de vegetação fiquem enormes e ameaçadores, atraindo o olhar do caçador."
   },
   "EverflameSeed": {
     "name": "Semente de Fogo Eterno",
@@ -9141,7 +9241,7 @@
   },
   "BorealWolfsCrackedTooth": {
     "name": "Dente Rachado do Lobo Boreal",
-    "description": "Material de Ascensão de Armas.\\nA vida do lobo nunca está livre de violência. Ossos e dentes quebrados são bastante comuns.\\nAndrius disse uma vez que a humanidade só traz decepcões, exceto os bebês inocentes. Se ambos, a alcateia de lobos, e a criança adotada se aceitarem, então eles se tornam um \"Lupical\", uma família pré-destinada."
+    "description": "Material de Ascensão de Armas.\\nA vida do lobo nunca está livre de violência. Ossos e dentes quebrados são bastante comuns.\\nAndrius disse uma vez que a humanidade só traz decepções, exceto os bebês inocentes. Se ambos, a alcateia de lobos, e a criança adotada se aceitarem, então eles se tornam um \"Lupical\", uma família pré-destinada."
   },
   "BorealWolfsBrokenFang": {
     "name": "Presa Quebrada do Lobo Boreal",
@@ -10235,6 +10335,22 @@
     "name": "Tabuleta com Regulamentos para Contratação",
     "description": "Tabuleta com Regulamentos para Contratação"
   },
+  "WineScentedLetter": {
+    "name": "Carta com Aroma de Vinho",
+    "description": "Essa carta tem um sutil odor de álcool. É possível especular as circunstâncias em que foi escrita. Seu portador provavelmente não esperava que ela fosse entregue."
+  },
+  "StrangeMushroom": {
+    "name": "Cogumelo Estranho",
+    "description": "É realmente possível cultivar cogumelos...?"
+  },
+  "NamelessTabooMedicineOfTheRoyalCourt": {
+    "name": "Remédio Proibido Sem Nome da Corte Real",
+    "description": "O cheiro disso perfura seu nariz e não vai se desvanecer tão facilmente. De acordo com os registros, é possível utilizar o poder da Deusa da Sabedoria para despertar a consciência adormecida. Talvez assim seja possível resistir à \"maldição\"."
+  },
+  "StrangeMushroomWateringWater": {
+    "name": "Água para Regar o Cogumelo Estranho",
+    "description": "Você tirou esta água às duas da tarde de uma cachoeira ao lado de uma Estátua dos Sete, exatamente como Eide instruiu."
+  },
   "TribeMerchantsLetter": {
     "name": "Carta de um Comerciante Andarilho",
     "description": "Carta de um Comerciante Andarilho"
@@ -10250,6 +10366,34 @@
   "WarriorsSpiritSwordfightingArenaTicket": {
     "name": "Ingresso para a Arena de Espírito do Guerreiro",
     "description": "O espírito do guerreiro ultrapassa nações e identidades, unidos por uma amizade marcial."
+  },
+  "VentisNote": {
+    "name": "Pedaço de Papel de Venti",
+    "description": "(Um papel com um mapa simples e algo como um encantamento nele. De acordo com Venti, contém os segredos para revelar a profecia.)"
+  },
+  "ColleisWindblume": {
+    "name": "Flor do Vento de Collei",
+    "description": "As Padisarahs são as Flores do Vento que, segundo Collei, melhor transmitem sua gratidão e bons votos, por isso ela deu essas sementes a você.\\nAo visitar Mondstadt, Collei deu um passo hesitante em direção ao futuro. Que seus próximos dias sejam como uma pequena semente na palma da mão, cheia de potencial de luz e esperança."
+  },
+  "CaravanAccounts": {
+    "name": "Registros de Caravana",
+    "description": "Contas obtidas da caravana alvo. As informações contidas nela se referem principalmente ao Dakan Al-Ahmar. Além da grande quantidade de informações sobre o fluxo de pilhagens, o nome do pai de Dunyarzad ter sido mencionado é preocupante."
+  },
+  "MissiveFromSumeru": {
+    "name": "Carta de Sumeru",
+    "description": "Uma Carta"
+  },
+  "InazumanMailFromAfar": {
+    "name": "Carta de Inazuma",
+    "description": "Uma Carta"
+  },
+  "FoodAndLodgingArrangements": {
+    "name": "Preparativos para Alojamento e Alimentação de Convidados",
+    "description": "？？？"
+  },
+  "HaniyyahsGiftOfMarvelousJellies": {
+    "name": "Geleia Maravilhosa presenteada por Haniyyah",
+    "description": "Um presente requintado enviado por Haniyyah. Contém Geleias Maravilhosas tão amadas pelos Cogumelos. As Geleias em si vêm em vários sabores únicos que podem ser dados aos Cogumelos baseado em seus gostos individuais.\\nAs Geleias Maravilhosas são uma versão refinada das Geleias Florais que as precederam e retém sua transparência cristalina e textura elástica, sem os ingredientes perigosos, as tornando o alimento ideal para os Cogumelos. Dito isso, deve-se ter cuidado para crianças não comerem-nas equivocadamente ao serem armazenadas em casa..."
   },
   "SilkFlowerSeed": {
     "name": "Semente de Flor de Seda",
@@ -10507,9 +10651,77 @@
     "name": "Asas da Floresta",
     "description": "Um modelo de Planador. Foi um presente pelo reconhecimento e aprovação de Sumeru."
   },
+  "WingsOfTheStarlitFeast": {
+    "name": "Asas da Festa das Estrelas",
+    "description": "Um modelo de Planador. Um presente por você ter testemunhado as celebrações das terras longínquas deste mundo."
+  },
   "RadiantSpincrystal": {
     "name": "Cristal Rodopiante Radiante 1",
     "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Dawn Winery Theme\"."
+  },
+  "FragrantSteak": {
+    "name": "Bife com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantMondstadtGrilledFish": {
+    "name": "Peixe Grelhado de Mondstadt com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantNorthernSmokedChicken": {
+    "name": "Frango Defumado do Norte com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantChickenMushroomSkewer": {
+    "name": "Espeto de Frango com Cogumelos com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantSatisfyingSalad": {
+    "name": "Salada Saudável com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantCrabHamVeggieBake": {
+    "name": "Siri, Presunto e Vegetais Assados com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantStickyHoneyRoast": {
+    "name": "Carne Frita com Cenoura e Mel com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantFishermansToast": {
+    "name": "Torrada do Pescador com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantFriedRadishBalls": {
+    "name": "Bolinhas de Rabanete Fritas com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantTeaBreakPancake": {
+    "name": "Panqueca do Chá da Tarde com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantRadishVeggieSoup": {
+    "name": "Sopa de Rabanete com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantMushroomPizza": {
+    "name": "Pizza de Cogumelos com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantColdCutPlatter": {
+    "name": "Prato de Carnes Frias com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantCallaLilySeafoodSoup": {
+    "name": "Lótus de Leite com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantMintJelly": {
+    "name": "Gelatina de Menta com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
+  },
+  "FragrantSunshineSprat": {
+    "name": "Peixe Frito na Manteiga com Cheiro Aromático",
+    "description": "Um prato delicioso com condimentos extras! Exala um aroma inebriante... Mas quem vai gostar deste tipo de prato? Convide seus amigos para experimentar esta nova especialidade!"
   },
   "LanternFiber": {
     "name": "Fibra de Lanterna",
@@ -10578,6 +10790,10 @@
   "ParasolTalcum": {
     "name": "Pó do Guarda-Chuva",
     "description": "Material de Refinamento para a Chuva Floral.\\nUm pó utilizado para colar bambu e a superfície de um guarda-chuva.\\nMesmo com o passar das estações e com a dispersa chuva tornando-se neblina, sempre haverão memórias a se pensar, como um guarda-chuva acompanhando-o em seus sonhos."
+  },
+  "UnfadingSilkyGrace": {
+    "name": "Graça Sedosa Imortal",
+    "description": "Item de refinamento exclusivo para a arma \"Flor de Aço\".\\nA decoração é a melhor forma de dar um toque especial ao valor e funcionalidade de qualquer coisa. Mesmo para uma arma, em um momento como este, decorá-la com flores que nunca murcham pode dar um certo charme."
   },
   "FalconsDance": {
     "name": "Dança do Falcão",
@@ -11355,9 +11571,21 @@
     "name": "Passe de Batalha: Eufonia",
     "description": "Estilo de Cartão de Visita.\\nCom a magnífica luz do sol na noite, cantos são orquestrados para celebrar o ano que se passou. Palácios dourados são decorados com cortinas peroladas, os corrimões prata sob o luar e o banquete repleto de cantoria e dança. Flores como fogos de artifício, um repertório de instrumentos toca em uníssono, harmoniosa e agradavelmente."
   },
-  "AchievementSandstorm": {
-    "name": "Conquista: Névoa de Areia",
+  "SumeruSandstorm": {
+    "name": "Sumeru: Névoa de Areia",
     "description": "Estilo de Cartão de Visita.\\nSonhos antigos escondem-se no interior da tempestade de areia eterna..."
+  },
+  "DehyaPurifyingFlame": {
+    "name": "Dehya - Chama Purificadora",
+    "description": "Estilo de Cartão de Visita.\\nAqueles que devem ser queimados serão reduzidos a cinzas, para que todas as coisas preciosas que deveriam ser preservadas possam ser reveladas."
+  },
+  "MikaIndex": {
+    "name": "Mika - Índice",
+    "description": "Estilo de Cartão de Visita.\\nCada vez que segurava o mapa desenhado na mão, o menino sentia estar segurando uma pequena parte do mundo."
+  },
+  "TravelNotesArtfulIntent": {
+    "name": "Passe de Batalha: Intenção Artesanal",
+    "description": "Estilo de Cartão de Visita.\\nDizem que o amor verdadeiro é como um fantasma. Muito se fala dele, mas pouco se vê. Mas como às vezes esse fantasma aparece, talvez o amor verdadeiro esteja aguardando no canto de uma rua."
   },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
@@ -11610,6 +11838,14 @@
   "WildernessCompass": {
     "name": "Bússola da Natureza",
     "description": "Uma bússola especial obtida na Guilda de Aventureiros, dizem que ela é capaz de trazer boa sorte...?"
+  },
+  "WindblumeKamera": {
+    "name": "Aparelho Fotográfico - Brisa Florescente",
+    "description": "Um Aparelho Fotográfico que você pegou emprestado com Fassben. Tenha cuidado ao usá-lo para não quebrá-lo..."
+  },
+  "FestiveDrum": {
+    "name": "Tambor Festivo",
+    "description": "Um instrumento que pode ser utilizado em performances.\\nÉ um tambor com som claro e estrutura única. Possui uma aparência refinada, feito com técnicas intrincadas. Materiais de alta qualidade foram utilizados em sua construção, pensando em sua qualidade durante apresentações, na sua entonação e uso e desgaste de longo prazo.\\nDizem que esse pequeno tambor combina um instrumento tradicional de Inazuma com algumas características de tambores de outras nações, e quando toca certas músicas, pode trazer sorte para as pessoas..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instruções: Pedra de Ressonância de Anemoculus",
@@ -11947,12 +12183,24 @@
     "name": "Crescimento de Esporos",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
+  "WellspringOfWarLust": {
+    "name": "Desejo de Lutar",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TamanooyasCasket": {
+    "name": "Caixão Haworthia",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
   "PoundingSurprise": {
     "name": "Presente Explosivo",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "LightningStorm": {
     "name": "Tormenta Elétrica",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SinOfPride": {
+    "name": "Meu Mundo",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "MagicGuide": {
@@ -12093,6 +12341,14 @@
   },
   "DeepwoodMemories": {
     "name": "Memórias da Floresta",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "OrnateKabuto": {
+    "name": "Capacete Ornamentado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "GeneralsAncientHelm": {
+    "name": "Capacete do Comandante",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "LiyueHarborWharf": {
@@ -12315,8 +12571,8 @@
     "name": "Proficiente",
     "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
   },
-  "HydroCrystalChunk": {
-    "name": "Pedaço de Cristal",
+  "LazuriteSwirl": {
+    "name": "Vórtice Lazuli",
     "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
   },
   "BeginnerPlayerBadge": {
@@ -12529,7 +12785,7 @@
   },
   "CottageKitchen": {
     "name": "Cozinha de Fumo de Lenha",
-    "description": "Um diagrama detalhado com o passo a passo para colocar \"Cozinha de Fumo de Lenha\".\\nUma cozinha totalmente equipada com um armário cheio de condimentos cuidadosamente preparados.\\nOs chefs que procuram a excelência comprarão diariamente ingredientes frescos do mercado, e os verdadeiros artistas culinários prestarão até mesmo muita atenção à lenha utilizada em seus fogões. A jovem chef do Restaurante Wanmin uma vez compartilhou que para fazer os pratos tradicionais da Vila Qingce, é preciso primeiro colocar lascas de bambu secas no fogão e controlar cuidadosamente a chama. Se alguém conseguir processar os arbustos perto dos Gancho do Lobo em lenha fina, pode até mesmo acrescentar um pouco de Mondstadt.\\nDiferentes tipos de lenha produzem efeitos muito diferentes, e a maioria dos chefs nunca os dominará verdadeiramente. Dessa forma, o Restaurante Wanmin tem o monopólio desta técnica em particular.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao."
+    "description": "Um diagrama detalhado com o passo a passo para colocar \"Cozinha de Fumo de Lenha\".\\nUma cozinha totalmente equipada com um armário cheio de condimentos cuidadosamente preparados.\\nOs chefs que procuram a excelência comprarão diariamente ingredientes frescos do mercado, e os verdadeiros artistas culinários prestarão até mesmo muita atenção à lenha utilizada em seus fogões. A jovem chef do Restaurante Wanmin uma vez compartilhou que para fazer os pratos tradicionais da Vila Qingce, é preciso primeiro colocar lascas de bambu secas no fogão e controlar cuidadosamente a chama. Se alguém conseguir processar os arbustos perto dos Gancho do Lobo em lenha fina, pode até mesmo acrescentar um pouco do ar de Mondstadt nele.\\nDiferentes tipos de lenha produzem efeitos muito diferentes, e a maioria dos chefs nunca os dominará verdadeiramente. Dessa forma, o Restaurante Wanmin tem o monopólio desta técnica em particular.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika."
   },
   "WeaponForgingStation": {
     "name": "Balcão de Forjamento de Armas",
@@ -12561,7 +12817,7 @@
   },
   "IterAdAstraAbyssosque": {
     "name": "Jornada das Estrelas e Abismo",
-    "description": "Um diagrama detalhado com o passo a passo para colocar \"Jornada das Estrelas e Abismo\".\\nUm acampamento de aventureiros que se pode encontrar com frequência na natureza. Ele usa o que há de mais moderno e melhor na moda das tendas.\\nAventureiros experientes estão acostumados a levar uma existência difícil e só precisam de uma tenda leve e durável para dormir tranquilamente mesmo na tempestade uivante, recuperando suas forças no dia seguinte para se deslocarem para seu próximo destino. Assim, esses tipos de tendas bonitas e acessíveis sempre tiveram compradores disponíveis.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy"
+    "description": "Um diagrama detalhado com o passo a passo para colocar \"Jornada das Estrelas e Abismo\".\\nUm acampamento de aventureiros que se pode encontrar com frequência na natureza. Ele usa o que há de mais moderno e melhor na moda das tendas.\\nAventureiros experientes estão acostumados a levar uma existência difícil e só precisam de uma tenda leve e durável para dormir tranquilamente mesmo na tempestade uivante, recuperando suas forças no dia seguinte para se deslocarem para seu próximo destino. Assim, esses tipos de tendas bonitas e acessíveis sempre tiveram compradores disponíveis.\\nApós usar este item, você pode visualizá-lo na Interface de Colocação.\\nOs personagens a seguir preferem este Conjunto de Decoração: Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy, Mika."
   },
   "DawnOrchard": {
     "name": "Pomar da Alvorada",
@@ -12625,7 +12881,7 @@
   },
   "FervidAroma": {
     "name": "Aroma Fervente",
-    "description": "Este luxuoso esquema de decoração imita o interior de um conhecido café da Cidade de Sumeru, mas incorpora as mudanças necessárias para torná-lo adequado para a residência do Paraíso Mágico do Bule. Tem uma decoração soberba perfeitamente organizada. No interior, misturam-se os vapores das cozinhas e o delicioso aroma das iguarias que são servidas, inundando o ambiente com uma sensação agradável. Basta uma boa companhia e uma garrafa de vinho para desfrutar da melhor experiência gastronômica possível.\\nAqueles que viajam frequentemente de um lugar para outro escolhem sempre com antecedência os restaurantes onde vão comer, tendo em conta a dimensão do estabelecimento e a quantidade de porções. Para esse tipo de pessoa, uma churrascaria é sempre a opção mais segura. Mesmo quem viaja sozinho pode aproveitar o ambiente animado deste café para manter em segredo o propósito da sua viagem ou sentir, observar e analisar a situação da segurança deste movimentado estabelecimento. \\nOs personagens a seguir preferem este Conjunto de Decoração: Alhaitham."
+    "description": "Este luxuoso esquema de decoração imita o interior de um conhecido café da Cidade de Sumeru, mas incorpora as mudanças necessárias para torná-lo adequado para a residência do Paraíso Mágico do Bule. Tem uma decoração soberba perfeitamente organizada. No interior, misturam-se os vapores das cozinhas e o delicioso aroma das iguarias que são servidas, inundando o ambiente com uma sensação agradável. Basta uma boa companhia e uma garrafa de vinho para desfrutar da melhor experiência gastronômica possível.\\nAqueles que viajam frequentemente de um lugar para outro escolhem sempre com antecedência os restaurantes onde vão comer, tendo em conta a dimensão do estabelecimento e a quantidade de porções. Para esse tipo de pessoa, uma churrascaria é sempre a opção mais segura. Mesmo quem viaja sozinho pode aproveitar o ambiente animado deste café para manter em segredo o propósito da sua viagem ou sentir, observar e analisar a situação da segurança deste movimentado estabelecimento. \\nOs personagens a seguir preferem este Conjunto de Decoração: Alhaitham, Dehya."
   },
   "OfSettledThoughts": {
     "name": "Pensamentos Enraizados",
@@ -12661,7 +12917,7 @@
   },
   "TheTravelingTroopsPomp": {
     "name": "Ostentação da Tropa Viajante",
-    "description": "Um acampamento de estilo militar equipado com todos os tipos de armas, materiais e mercadorias. Está rodeado por fortificações defensivas. Fogueiras devidamente organizadas são um requisito essencial para realizar operações noturnas. Em teoria, esses tipos de acampamentos podem lidar com um grande número de inimigos e, com o número necessário de soldados, podem até servir como um posto de apoio na frente de defesa.\\nNo entanto, mover e montá-los exige mais esforço e as barracas não são projetados para resistir ao frio e à chuva, por isso as condições do acampamento são geralmente adversas... Por isso é um acampamento muito popular entre os mercenários, lutadores habilidosos e capazes de dormir à noite ao ar livre sem sequer vacilar."
+    "description": "Um acampamento de estilo militar equipado com todos os tipos de armas, materiais e mercadorias. Está rodeado por fortificações defensivas. Fogueiras devidamente organizadas são um requisito essencial para realizar operações noturnas. Em teoria, esses tipos de acampamentos podem lidar com um grande número de inimigos e, com o número necessário de soldados, podem até servir como um posto de apoio na frente de defesa.\\nNo entanto, mover e montá-los exige mais esforço e as barracas não são projetados para resistir ao frio e à chuva, por isso as condições do acampamento são geralmente adversas... Por isso é um acampamento muito popular entre os mercenários, lutadores habilidosos e capazes de dormir à noite ao ar livre sem sequer vacilar.\\nOs personagens a seguir preferem este Conjunto de Decoração: Dehya."
   },
   "AmidstScentsAndSerenity": {
     "name": "Entre Cheiros e Serenidade",
@@ -13315,11 +13571,11 @@
     "name": "Chamas do Patrulhamento",
     "description": "Um diagrama que descreve passo a passo como fabricar Chamas do Patrulhamento.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
-  "ListeningCandelight": {
+  "ListeningCandlelight": {
     "name": "Chamas da Audição",
     "description": "Um diagrama que descreve passo a passo como fabricar Chamas da Audição.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
-  "TwowayIronLamp": {
+  "TwoWayIronLamp": {
     "name": "Lâmpada Dupla de Ferro",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Lâmpada Dupla de Ferro\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
@@ -14107,6 +14363,14 @@
     "name": "\"Areias ao Vento Tranquilas da Noite\"",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Areias ao Vento Tranquilas da Noite\".\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
+  "TeaFragranceInTheTranquilCourt": {
+    "name": "Chá do Jardim Tranquilo Palaciano",
+    "description": "Um diagrama que descreve passo a passo como fabricar Chá do Jardim Tranquilo Palaciano.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SingingInTheTranquilCourt": {
+    "name": "Canção do Jardim Tranquilo Palaciano",
+    "description": "Um diagrama que descreve passo a passo como fabricar Canção do Jardim Tranquilo Palaciano.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Fonte com Pássaros e Flores\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -14194,6 +14458,10 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "Claridade do Local da Sagacidade",
     "description": "Um diagrama que descreve passo a passo como fabricar Claridade do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "FloralSwing": {
+    "name": "Sombra das Flores Flutuantes",
+    "description": "Um diagrama que descreve passo a passo como fabricar \"Sombra das Flores Flutuantes\".\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
   "PortOrmosGPCraneIII": {
     "name": "Guindaste Comum de Porto Ormos",
@@ -14362,6 +14630,30 @@
   "DomedWallTheBirdsSang": {
     "name": "Parede do Jardim Cupulado — Uníssono dos Pássaros",
     "description": "Um diagrama que descreve passo a passo como fabricar Parede do Jardim Cupulado — Uníssono dos Pássaros.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "VisionOfTheCityOfWisdom": {
+    "name": "Vista da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Vista da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "PartitionOfTheCityOfWisdom": {
+    "name": "Portão da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Portão da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "LightShieldOfTheCityOfWisdom": {
+    "name": "Escudo da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Escudo da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "PilasterOfTheCityOfWisdom": {
+    "name": "Coluna da Cidade da Sabedoria",
+    "description": "Um diagrama que descreve passo a passo como fabricar Coluna da Cidade da Sabedoria.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "CommonWoodenStairs": {
+    "name": "Escadaria de Madeira de uma Árvore Frutífera",
+    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar Escadaria de Madeira de uma Árvore Frutífera.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "TexturedWhitestoneStairs": {
+    "name": "Escadaria de Pedra Branca Polida",
+    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar Escadaria de Pedra Branca Polida.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fundações de Pedra: Fortuna e Tranquilidade",
@@ -14578,6 +14870,14 @@
   "ColorationAndPrecipitation": {
     "name": "Cor e Precipitação",
     "description": "Um diagrama que descreve passo a passo como fabricar Cor e Precipitação.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "LeisureDeviceBouncyTubby": {
+    "name": "Dispositivo de Entretenimento - \"Pula-Pula Redondo\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Dispositivo de Entretenimento - \"Pula-Pula Redondo\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "LeisureDeviceBouncyChubby": {
+    "name": "Dispositivo de Entretenimento - \"Redondinho Saltitante\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Dispositivo de Entretenimento - \"Redondinho Saltitante\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
   "PottedPlantVerdantVastness": {
     "name": "Planta em Vaso: \"Vastidão Verdejante\"",
@@ -14842,6 +15142,18 @@
   "TrumpetAndFirewood": {
     "name": "Corneta e Lenha",
     "description": "Um diagrama que descreve passo a passo como fabricar Corneta e Lenha.\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "ErsatzBalloonWhisperingBreeze": {
+    "name": "Balão Ersatz - \"Pequena Voz\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Balão Ersatz - \"Pequena Voz\".\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "ErsatzBalloonSphericalSquall": {
+    "name": "Balão Ersatz - \"Rajada Anemo\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Balão Ersatz - \"Rajada Anemo\".\\nDepois de usar, você pode entrar na interface de produção para ver."
+  },
+  "ErsatzBalloonBumperShroom": {
+    "name": "Balão Ersatz - \"Colisão Cogumélica\"",
+    "description": "Um diagrama que descreve passo a passo como fabricar Balão Ersatz - \"Colisão Cogumélica\".\\nDepois de usar, você pode entrar na interface de produção para ver."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Poste de Rua Esculpido em Ferro Fundido",

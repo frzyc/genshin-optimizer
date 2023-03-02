@@ -136,7 +136,8 @@
   "constellation3": {
     "name": "Vagando pelo Jardim Espiritual",
     "description": {
-      "0": "Aumenta o nível de <strong>Reino do Vento de Nasamjnin</strong> em 3. O nível máximo de elevação é 15."
+      "0": "Aumenta o nível de <strong>Reino do Vento de Nasamjnin</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation4": {
@@ -149,7 +150,8 @@
   "constellation5": {
     "name": "Maravilhas da Contemplação",
     "description": {
-      "0": "Aumenta o nível de <strong>Caminhos Secretos do Vento</strong> em 3. O nível máximo de elevação é 15."
+      "0": "Aumenta o nível de <strong>Caminhos Secretos do Vento</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {

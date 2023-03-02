@@ -1,7 +1,7 @@
 {
   "name": "베넷",
   "title": "운명의 시금석",
-  "description": "몬드의 모험가 소년, 선량하지만 항상 운이 나쁘다",
+  "description": "몬드의 모험가 소년. 선량하지만 항상 운이 나쁘다",
   "constellationName": "험로자리",
   "auto": {
     "name": "행운의 검",
@@ -132,7 +132,7 @@
   "constellation1": {
     "name": "모험 동경",
     "description": {
-      "0": "<strong>아름다운 여정</strong>의 공격력 증가 효과는 더이상 HP의 제한을 받지 않고 공격력 수치에 베넷 기초 공격력의 20%가 추가된다"
+      "0": "<strong>아름다운 여정</strong>의 공격력 증가 효과는 더 이상 HP의 제한을 받지 않고 공격력 수치에 베넷 기초 공격력의 20%가 추가된다"
     }
   },
   "constellation2": {

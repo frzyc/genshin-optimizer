@@ -142,7 +142,7 @@
   "constellation2": {
     "name": "Masum",
     "description": {
-      "0": "Yaoyao, <strong>Ay Yeşiminin İnişi</strong> becerisinin neden olduğu Adeptus Mirası etkisindeyken, Beyaz Yeşim Turp patlaması düşmanlara hasar verirse 3 Enerji yeniler. Bu türden Enerji Yenilemesi her 0,8 saniyede bir tetiklenebilir."
+      "0": "Yaoyao, <strong>Ay Yeşiminin İnişi</strong> becerisinin neden olduğu Adeptus Mirası etkisindeyken, Beyaz Yeşim Turp patlaması düşmanlara isabet ederse 3 Enerji yeniler. Bu türden Enerji Yenilemesi her 0,8 saniyede bir tetiklenebilir."
     }
   },
   "constellation3": {

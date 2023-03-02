@@ -8,11 +8,11 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 5 ataques rápidos."
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para desatar un ataque que contiene fuerza Anemo.",
+        "1": "Consume una cierta cantidad de Aguante para desatar un ataque ascendente que contiene la fuerza del viento.",
         "2": "Poco después, los enemigos lanzados caerán lentamente al suelo."
       },
       "plunging": {

@@ -25,7 +25,7 @@
   },
   "StoryKey": {
     "name": "Clé des légendes",
-    "description": "Clé requise pour débloquer les Quêtes d'histoire.\\nS'obtient en terminant des missions quotidiennes."
+    "description": "Clé requise pour débloquer les quêtes d'histoire.\\nS'obtient en terminant des missions quotidiennes."
   },
   "FadingStarsMight": {
     "name": "Énergie supernova",
@@ -206,6 +206,14 @@
   "CourageTestTicket": {
     "name": "Coupon du test de bravoure",
     "description": "Un ticket obtenu à l'issue des défis spéciaux du test de bravoure organisé par la Commission culturelle en reconnaissance du courage et de l'audace des participants.\\nVous pouvez les échanger contre de précieuses ressources lors de l'événement « Kimodameshi d'Akitsu »."
+  },
+  "FloralCoupon": {
+    "name": "Coupon floral",
+    "description": "Coupon s'obtenant en jouant à des parties d'Échecs floraux pendant la Fête des alizées, échangeable pendant l'événement contre des récompenses."
+  },
+  "FestiveTicket": {
+    "name": "Ticket festif",
+    "description": "Coupon s'obtenant en participant aux diverses festivités pendant la Fête des alizées, échangeable pendant l'événement contre des récompenses."
   },
   "Primogem": {
     "name": "Primo-gemme",
@@ -575,6 +583,14 @@
     "name": "Alhaitham",
     "description": "L'actuel scribe de l'Académie de Sumeru, doté d'une intelligence et d'un talent extraordinaires. Son goût pour une vie libre de contraintes est tel qu'il est difficile pour la plupart de gens de savoir où le trouver."
   },
+  "Dehya": {
+    "name": "Dehya",
+    "description": "Une membre des Érémites, une bande de mercenaires qui agit dans le désert de Sumeru. Guerrière courageuse et puissante, elle possède une excellente réputation parmi ses compagnons érémites."
+  },
+  "Mika": {
+    "name": "Mika",
+    "description": "Jeune chevalier né dans une famille ordinaire, il occupe le poste d'arpenteur dans son unité. C'est un personnage au caractère discret et prudent."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka.",
     "description": "Matériau d'activation de la constellation d'Ayaka."
@@ -584,7 +600,7 @@
     "description": "Matériau d'activation de la constellation de Jean."
   },
   "TravelerMalesStellaFortuna": {
-    "name": "Stella Fortuna de Voyageur",
+    "name": "Stella Fortuna du Voyageur",
     "description": "Objet abandonné"
   },
   "LisasStellaFortuna": {
@@ -592,7 +608,7 @@
     "description": "Matériau d'activation de la constellation de Lisa."
   },
   "TravelerFemalesStellaFortuna": {
-    "name": "Stella Fortuna de Voyageuse",
+    "name": "Stella Fortuna de la Voyageuse",
     "description": "Objet abandonné"
   },
   "BarbarasStellaFortuna": {
@@ -830,6 +846,14 @@
   "AlhaithamsStellaFortuna": {
     "name": "Stella Fortuna d'Alhaitham",
     "description": "Matériau d'activation de la constellation d'Alhaitham."
+  },
+  "DehyasStellaFortuna": {
+    "name": "Stella Fortuna de Dehya",
+    "description": "Matériau d'activation de la constellation de Dehya."
+  },
+  "MikasStellaFortuna": {
+    "name": "Stella Fortuna de Mika",
+    "description": "Matériau d'activation de la constellation de Mika."
   },
   "GnosticHymnOldNotes": {
     "name": "Pass de bataille « Gnostique » - Ébauche",
@@ -1278,6 +1302,10 @@
   "MysteriousMeat": {
     "name": "Viande mystérieuse",
     "description": "Un morceau de viande fraîche qui émet une odeur mystérieuse. Quel goût peut-il bien avoir ?"
+  },
+  "CoffeeBeans": {
+    "name": "Grain de café",
+    "description": "Un fruit commun en Teyvat, dont l'arôme est particulier. Il peut être utilisé pour faire des boissons après avoir été moulu."
   },
   "JeansDocumentPackage": {
     "name": "Paquet de documents de Jean",
@@ -7939,6 +7967,62 @@
     "name": "Viande séchée de crocodile",
     "description": "De la viande de crocodile séchée préparée selon une recette spéciale de la tribu des Tanit. Bien qu'un peu difficile à mâcher, la facilité de conservation de la viande en fait un mets délicat couramment consommé par les chasseurs de la tribu.\\nMalgré son goût de volaille, la valeur nutritive de la viande de crocodile est réputée être huit fois supérieure à celle de la chair de bêtes plus typiques..."
   },
+  "SuspiciousTulumba": {
+    "name": "Tulumbas (suspects)",
+    "description": "Une collation frite dans l'huile. Les morceaux n'ont pas été sauvés de la marmite à temps, et lorsque vous y mordez, l'huile déborde pratiquement de votre bouche. Une situation pénible que seule une rapide gorgée de café pourra atténuer..."
+  },
+  "Tulumba": {
+    "name": "Tulumbas",
+    "description": "Une collation frite dans l'huile. La farine façonnée est abaissée directement dans une marmite pour être frite jusqu'à ce qu'elle soit dorée, avant d'être récupérée et trempée dans du sirop tout en étant très chaude. Cette friandise est une saveur inséparable pour beaucoup de Sumériens."
+  },
+  "DeliciousTulumba": {
+    "name": "Tulumbas (délicieux)",
+    "description": "Une collation frite dans l'huile. Les morceaux dorés enveloppés dans un sirop savoureux fondent très rapidement, une bouchée à la fois. Miam, il reste encore un peu de sirop dans l'assiette. Peut-être que cette douceur pourra encore durer une seconde de plus..."
+  },
+  "SuspiciousGildedTajine": {
+    "name": "Tajine érémite (suspect)",
+    "description": "Un plat de viande mijotée. Bien qu'elle semble comestible, une simple bouchée révèle que la viande est sèche comme un os, presque comme si vous mâchiez des branches. Le couvercle du pot était-il abîmé ? Ou l'application dudit couvercle était-elle fautive ?"
+  },
+  "GildedTajine": {
+    "name": "Tajine érémite",
+    "description": "Un plat de viande mijotée. Le couvercle unique en forme de chapeau de ce pot est capable de réduire les pertes d'humidité pendant le mijotage... Un secret culinaire connu uniquement des gens du désert. Ce délicieux mets a suivi les Érémites partout à Sumeru, et c'est ainsi qu'il a acquis son nom et sa renommée."
+  },
+  "DeliciousGildedTajine": {
+    "name": "Tajine érémite (délicieux)",
+    "description": "Un plat de viande mijotée. Les gros morceaux de viande ont été trempés dans la soupe épaisse et riche, et ils fondent à l'instant où ils touchent votre palais. L'unique mélange d'épices danse avec le rythme des arômes de viande, et un air du désert se joue sur vos papilles gustatives, avec votre langue ne pouvant s'empêcher d'applaudir."
+  },
+  "SuspiciousSuperMagnificentPizza": {
+    "name": "Super pizza suprême (suspecte)",
+    "description": "Une somptueuse pizza. Si l'on passe outre la graisse un instant, les morceaux de viande froide peuvent toujours être ingurgités, mais la pâte rassis pose tout de même un défi. Avec sa dureté, peut-être pourriez-vous assommer un Brutocollinus avec..."
+  },
+  "SuperMagnificentPizza": {
+    "name": "Super pizza suprême",
+    "description": "Une somptueuse pizza. Si vous étalez d'abord une base de jambon avant d'ajouter de la viande hachée en petits morceaux, vous obtenez un plat qui procure un sentiment de satisfaction inégalé. Après cuisson, le subtil goût carbonisé de la viande et la saveur crémeuse du fromage forment une combinaison vraiment alléchante."
+  },
+  "DeliciousSuperMagnificentPizza": {
+    "name": "Super pizza suprême (délicieuse)",
+    "description": "Une somptueuse pizza. Au milieu de la chaleur qui monte à la sortie du four, vous tirez doucement sur les bords croustillants... Une véritable cascade de fromage jaillit, enveloppée d'un arôme dense de viande qui satisfait les papilles et donne une merveilleuse sensation de plénitude."
+  },
+  "SuspiciousMintyFruitTea": {
+    "name": "Thé menthe aux fruits (suspect)",
+    "description": "Une boisson rafraîchissante. La toute première gorgée fait pratiquement fuir vos dents sous l'assaut de ce goût aigre. La douceur légère a été complètement usurpée par une astringence tyrannique. Est-ce vraiment du thé aux fruits..."
+  },
+  "MintyFruitTea": {
+    "name": "Thé menthe aux fruits",
+    "description": "Une boisson rafraîchissante. Le thé revigorant et le goût aigre-doux des fruits se mélangent et dynamisent vos papilles gustatives... Et avant que vous ne vous en rendiez compte, vous avez déjà vidé la tasse."
+  },
+  "DeliciousMintyFruitTea": {
+    "name": "Thé menthe aux fruits (délicieux)",
+    "description": "Une boisson rafraîchissante. La saveur sucrée du thé se combine avec des notes florales légères et s'emmêle avec une touche fruitée, remplissant votre bouche et votre gorge de leur arôme. Attendez un instant... Pourquoi n'y a-t-il que des glaçons dans la tasse..."
+  },
+  "GoldflameTajine": {
+    "name": "Tajine de flamme dorée",
+    "description": "Spécialité culinaire de Dehya. En ouvrant le couvercle sans prétention, la viande souple qui se présente à l'intérieur est si tendre qu'on pourrait s'enivrer rien qu'à l'idée de la glisser entre ses lèvres... Il semble que les mains de Dehya soient aussi douées en cuisine que sur le champ de bataille."
+  },
+  "SurveyorsBreakfastSandwich": {
+    "name": "Pain de l'arpenteur",
+    "description": "Spécialité culinaire de Mika. La luxueuse tartinade devant vous est un véritable monticule d'ingrédients... Et lorsque vous en prenez une petite bouchée, chaque couche clairement délimitée de saveur et d'épices savoureuses se répand dans votre bouche, comme si vous aviez gravi une montagne réservée aux gourmets. S'agit-il des compétences culinaires qu'il a perfectionnées avec l'Ordre ?"
+  },
   "RecipeItem": {
     "name": "Ingrédient",
     "description": "Objet pour débloquer des recettes"
@@ -8491,6 +8575,22 @@
     "name": "Recette : Boulettes aux épices",
     "description": "Étapes de préparation des boulettes aux épices."
   },
+  "RecipeTulumba": {
+    "name": "Recette : Tulumbas",
+    "description": "Étapes de préparation des tulumbas."
+  },
+  "RecipeGildedTajine": {
+    "name": "Recette : Tajine érémite",
+    "description": "Étapes de préparation du tajine érémite."
+  },
+  "RecipeSuperMagnificentPizza": {
+    "name": "Recette : Super pizza suprême",
+    "description": "Étapes de préparation de la super pizza suprême."
+  },
+  "RecipeMintyFruitTea": {
+    "name": "Recette : Thé menthe aux fruits",
+    "description": "Étapes de préparation du thé menthe aux fruits."
+  },
   "CraftedItems": {
     "name": "Produit synthétisé",
     "description": "Objet obtenu du système de synthèse"
@@ -8761,7 +8861,7 @@
   },
   "InspectorsSacrificialKnife": {
     "name": "Grande dague de l'Inspecteur",
-    "description": "Une arme qui a servi à « régler des comptes ». Personne n'a les yeux derrière la tête, alors cette dague et ses techniques de maniement ont spécifiquement été conçues pour pallier à cette faiblesse."
+    "description": "Une arme qui a servi à « régler des comptes ». Personne n'a les yeux derrière la tête, alors cette dague et ses techniques de maniement ont spécifiquement été conçues pour pallier cette faiblesse."
   },
   "RecruitsInsignia": {
     "name": "Insigne de nouvelle recrue",
@@ -9273,7 +9373,7 @@
   },
   "SilverTalismanOfTheForestDew": {
     "name": "Talisman en argent de la rosée",
-    "description": "Matériau d'élévation d'arme.\\nDans les innombrables histoires de la forêt existe un personnage portant une cape aux rayures rouges comme le feu ardent : il est le roi des labyrinthes et le maître des eaux où se reflète la lune.\\nCelui-ci inclina la tête pour officialiser son amitié avec la maîtresse des plantes, un acte qui fut scellé par le biais de pierres précieuses qui scintillaient comme l'eau et de l'argent qui brillait comme le clair de lune.\\nEn échange d'un tel geste, la maîtresse des plantes promit de garder les secrets du roi du labyrinthe et de protéger les beaux rêves de la forêt tropicale.\\nPersonne n'aurait pu prédire que le magnifique manoir des secrets et des rêves s'éteindrait plus tard dans le linceul de la flamme sombre de l'oubli, après quoi ses cendres retourneraient au sol et deviendraient des nutriments pour les forêts tropicales qui venaient de naître."
+    "description": "Matériau d'élévation d'arme.\\nDans les innombrables histoires de la forêt existe un personnage portant une cape aux rayures rouges comme le feu ardent : il est le roi des labyrinthes et le maître des eaux où se reflète la lune.\\nCelui-ci inclina la tête pour officialiser son amitié avec la maîtresse des plantes, un acte qui fut scellé par le biais de pierres précieuses qui scintillaient comme l'eau et de l'argent qui brillait comme le clair de lune.\\nEn échange d'un tel geste, la maîtresse des plantes promit de garder les secrets du seigneur du labyrinthe et de protéger les beaux rêves de la forêt tropicale.\\nPersonne n'aurait pu prédire que le magnifique manoir des secrets et des rêves s'éteindrait plus tard dans le linceul de la flamme sombre de l'oubli, après quoi ses cendres retourneraient au sol et deviendraient des nutriments pour les forêts tropicales qui venaient de naître."
   },
   "GoldenTalismanOfTheForestDew": {
     "name": "Talisman en or de la rosée",
@@ -10129,7 +10229,7 @@
   },
   "RedVulturesFeather": {
     "name": "Plume de Vautour rouge",
-    "description": "Un des plumes qui permettent au Vautour rouge de voler. Elles peuvent être utilisées pour créer des pigments éclatants... Ou encore des poisons mortels."
+    "description": "Une des plumes qui permettent au Vautour rouge de voler. Elles peuvent être utilisées pour créer des pigments éclatants... Ou encore des poisons mortels."
   },
   "ScorpionsSting": {
     "name": "Dard de Scorpion",
@@ -10235,6 +10335,22 @@
     "name": "Tablette de conduite des employeurs",
     "description": "Tablette de conduite des employeurs"
   },
+  "WineScentedLetter": {
+    "name": "Lettre sentant le vin",
+    "description": "Cette lettre a une légère odeur d'alcool. On peut spéculer sur les circonstances dans lesquelles elle a été écrite... L'expéditeur semblait avoir eu peu d'espoir qu'elle puisse être livrée."
+  },
+  "StrangeMushroom": {
+    "name": "Champignon étrange",
+    "description": "Les champignons peuvent-ils vraiment pousser dans des champs{NON_BREAK_SPACE}?"
+  },
+  "NamelessTabooMedicineOfTheRoyalCourt": {
+    "name": "Médicament tabou et anonyme de la cour royale",
+    "description": "Son odeur vous pique les narines et ne s'estompe pas facilement. Selon les archives, on peut utiliser le pouvoir de la divinité de la sagesse pour réveiller la santé mentale d'un esprit confus. Peut-être pourra-t-il ainsi résister à la malédiction..."
+  },
+  "StrangeMushroomWateringWater": {
+    "name": "Eau d'arrosage pour champignons étranges",
+    "description": "Vous avez récupéré cette eau à deux heures de l'après-midi près d'une chute d'eau à côté d'une Statue des Sept, exactement comme Eide vous l'a demandé."
+  },
   "TribeMerchantsLetter": {
     "name": "Lettre du marchand de clan",
     "description": "Lettre du marchand de clan"
@@ -10250,6 +10366,34 @@
   "WarriorsSpiritSwordfightingArenaTicket": {
     "name": "Ticket d'entrée « La voie du guerrier{NON_BREAK_SPACE}»",
     "description": "Au-delà des nations et des identités, unis par la voie du guerrier."
+  },
+  "VentisNote": {
+    "name": "Note de Venti",
+    "description": "Un papier avec une carte simple et quelque chose qui ressemble à une incantation dessus. Selon Venti, il contient les secrets pour révéler la prophétie."
+  },
+  "ColleisWindblume": {
+    "name": "Alizée de Collei",
+    "description": "Pour Collei, la seule fleur qui peut lui servir d'alizée et transmettre sa gratitude et ses vœux est la padisachidée, et elle vous en offre les graines.\\nEn visitant Mondstadt, Collei a fait un pas timide vers l'avenir. Que ses jours futurs soient comme une petite graine dans sa paume, remplie d'un potentiel de lumière et d'espoir."
+  },
+  "CaravanAccounts": {
+    "name": "Comptes de la caravane",
+    "description": "Les registres comptables obtenus dans la caravane que vous cibliez. Les informations à l'intérieur concernent principalement le Dakan Al-Ahmar. Outre la grande quantité de données et d'informations sur les flux de butin, le fait que le père de Dunyarzad y soit mentionné est également préoccupant."
+  },
+  "MissiveFromSumeru": {
+    "name": "Missive de Sumeru",
+    "description": "Une lettre."
+  },
+  "InazumanMailFromAfar": {
+    "name": "Missive d'Inazuma",
+    "description": "Une lettre."
+  },
+  "FoodAndLodgingArrangements": {
+    "name": "Arrangements pour les invités",
+    "description": "？？？"
+  },
+  "HaniyyahsGiftOfMarvelousJellies": {
+    "name": "Gelées merveilleuses offertes par Haniyyah",
+    "description": "Un cadeau exquis envoyé par Haniyyah. Il contient des gelées merveilleuses très appréciées des Fongus, ces dernières se déclinant même en de nombreuses saveurs uniques qui peuvent être données aux Fongus en fonction de leurs goûts individuels.\\nLes gelées merveilleuses sont une version raffinée de la gelée florale qui les a précédées et conservent leur translucidité cristalline et texture élastique, sans les ingrédients dangereux, ce qui en fait l'aliment idéal pour les Fongus. Cela dit, il faut veiller à ce que les enfants n'en mangent pas par erreur si vous les stockez à la maison..."
   },
   "SilkFlowerSeed": {
     "name": "Graine de fleur de soie",
@@ -10507,9 +10651,77 @@
     "name": "Ailes de la forêt",
     "description": "Un modèle de planeur, reçu en signe de reconnaissance de Sumeru."
   },
+  "WingsOfTheStarlitFeast": {
+    "name": "Ailes de festin étoilé",
+    "description": "Un modèle de planeur et un cadeau célébrant un festival vu dans un monde lointain."
+  },
   "RadiantSpincrystal": {
     "name": "Gyrocristal radiant 1",
     "description": "Ce cristal merveilleux contient une certaine mélodie, comme s'il s'agissait de quelque chose de magnifique tissé à partir de soie délicate. Ces objets peuvent être trouvés sur tout le continent ou chez les marchands qui collectionnent des bibelots. L'air contenu dans ce cristal peut être revivifié dans votre Sérénithéière en utilisant les euphonies célestes « Envolée » ou « Entrelacs ». La mélodie contenue dans ce gyrocristal radiant est « Dawn Winery Theme »."
+  },
+  "FragrantSteak": {
+    "name": "Steak (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantMondstadtGrilledFish": {
+    "name": "Poisson grillé mondstadtois (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantNorthernSmokedChicken": {
+    "name": "Poulet fumé nordique (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantChickenMushroomSkewer": {
+    "name": "Brochette de poulet et de champignons (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantSatisfyingSalad": {
+    "name": "Salade copieuse (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantCrabHamVeggieBake": {
+    "name": "Gratin de crabe, jambon et légumes (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantStickyHoneyRoast": {
+    "name": "Délice de viande et carottes au miel (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantFishermansToast": {
+    "name": "Toast du pêcheur (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantFriedRadishBalls": {
+    "name": "Boulettes de radis frites (parfumées)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantTeaBreakPancake": {
+    "name": "Pancakes (parfumés)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantRadishVeggieSoup": {
+    "name": "Soupe de radis (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantMushroomPizza": {
+    "name": "Pizza aux champignons (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantColdCutPlatter": {
+    "name": "Assortiment de charcuterie (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantCallaLilySeafoodSoup": {
+    "name": "Soupe au lys calla et aux fruits de mer (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantMintJelly": {
+    "name": "Gelée de menthe (parfumée)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
+  },
+  "FragrantSunshineSprat": {
+    "name": "Poisson grillé au beurre (parfumé)",
+    "description": "Un plat délicieux avec un peu d'assaisonnement en plus ! Il dégage un arôme titillant... Mais à qui ce plat conviendra-t-il ? Invitez vos amis et vos compagnons pour leur faire goûter ce nouveau plat !"
   },
   "LanternFiber": {
     "name": "Cellulose de lanterne",
@@ -10561,7 +10773,7 @@
   },
   "OintmentOfSight": {
     "name": "Baume de la vue",
-    "description": "Matériau de raffinement spécial pour l'Œil d'assermentation.\\nL'huile spéciale d'unagi abyssal, qui était autrefois utilisée pour entretenir les artéfacts sacrés d'Enkanomiya, a été soigneusement traitée dans le but de rendre cet œil brillant et lumineux."
+    "description": "Matériau de raffinement spécial pour l'Œil d'assermentation.\\nL'huile spéciale d'unagi abyssale, qui était autrefois utilisée pour entretenir les artéfacts sacrés d'Enkanomiya, a été soigneusement traitée dans le but de rendre cet œil brillant et lumineux."
   },
   "GlowingGem": {
     "name": "Gemme lumineuse",
@@ -10578,6 +10790,10 @@
   "ParasolTalcum": {
     "name": "Talc de parapluie",
     "description": "Matériau de raffinement spécial pour la Pluie florale.\\nUne substance poudreuse censée fixer du bambou à un parapluie.\\nMalgré le changement des saisons et le passage du temps, les souvenirs et les pensées restent toujours, comme endormis sous un parapluie au sein d'un songe."
+  },
+  "UnfadingSilkyGrace": {
+    "name": "Grâce soyeuse immuable",
+    "description": "Matériau de raffinement spécial pour la Fleur de mailles.\\nLa « décoration » peut certainement ajouter un petit plus qui permet à toute chose de transcender sa propre valeur et sa fonction première. Dans des moments comme ceux-ci, cette fleur qui ne se fane jamais peut donner une essence romantique même à une arme."
   },
   "FalconsDance": {
     "name": "Danse du faucon",
@@ -10605,7 +10821,7 @@
   },
   "Whirlpool": {
     "name": "Tourbillon",
-    "description": "Lorsqu'un personnage élimine un ennemi à l'aide d'une attaque chargée, il crée un champ de vide qui attire les ennemis à proximité et leur inflige des DGT équivalant à 500 % de son ATQ. Cet effet peut être déclenché une fois toutes les 2 s, et son TdR est partagé entre tous les personnages de l'équipe."
+    "description": "Lorsqu'un personnage élimine un ennemi à l'aide d'une attaque chargée, il crée un champ de vide qui attire les ennemis proches et leur inflige des DGT équivalant à 500 % de son ATQ. Cet effet peut être déclenché une fois toutes les 2 s, et son TdR est partagé entre tous les personnages de l'équipe."
   },
   "FierceStrike": {
     "name": "Frappe féroce",
@@ -10653,7 +10869,7 @@
   },
   "RefinedBurst": {
     "name": "Déchaînement amélioré",
-    "description": "Augmente le Niv. du déchaînement élémentaire de tous les personnages de l'équipe de 1.\\nNiv. maximum : 15"
+    "description": "Augmente le Niv. du déchaînement élémentaire de tous les personnages de l'équipe de 1.\\nNiv. max : 15"
   },
   "ChargeUp": {
     "name": "Restauration élémentaire",
@@ -10725,7 +10941,7 @@
   },
   "Challenger": {
     "name": "Duelliste acharné",
-    "description": "Au combat, lorsqu'il n'y a pas plus de 2 ennemis à proximité d'un personnage, son ATQ augmente de 20 % et sa DÉF de 20 %."
+    "description": "Au combat, lorsqu'il n'y a pas plus de 2 ennemis proches d'un personnage, son ATQ augmente de 20 % et sa DÉF de 20 %."
   },
   "FracturedFruitBit": {
     "name": "Morceau de fruit fracturé",
@@ -11355,9 +11571,21 @@
     "name": "PB - Rime",
     "description": "Thème.\\nSous de magnifiques rayons écarlates éclairant le ciel nocturne, des carillons sont orchestrés pour célébrer l'année écoulée. Les palais dorés sont ornés de rideaux de perles, les balustrades peintes en argent par le clair de lune et les fêtes sont remplies de chants et de danses joyeux. Dans les feux d'artifice, une richesse d'instruments joue à l'unisson, harmonieusement."
   },
-  "AchievementSandstorm": {
-    "name": "Succès - Tempête de sable",
+  "SumeruSandstorm": {
+    "name": "Sumeru - Tempête de sable",
     "description": "Thème.\\nDans l'interminable tempête de sable se cachent des rêves anciens..."
+  },
+  "DehyaPurifyingFlame": {
+    "name": "Dehya - Feu purifiant",
+    "description": "Thème.\\nCeux qui doivent être brûlés seront réduits en cendres dans le vent, afin que toutes les choses précieuses qui doivent être préservées puissent être révélées."
+  },
+  "MikaIndex": {
+    "name": "Mika - Index",
+    "description": "Thème.\\nChaque fois qu'il tient la carte qu'il a illustrée dans ses mains, le garçon a l'impression de tenir une petite reproduction de ce monde."
+  },
+  "TravelNotesArtfulIntent": {
+    "name": "PB - Débrouillardise",
+    "description": "Thème.\\nLa rumeur dit que le véritable amour est comme un fantôme, quelque chose dont tout le monde parle mais que peu ont vu. Cela dit, puisque même les fantômes peuvent apparaître ici, peut-être que le véritable amour attend aussi au prochain coin de rue..."
   },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus",
@@ -11610,6 +11838,14 @@
   "WildernessCompass": {
     "name": "Boussole sauvage",
     "description": "Une boussole spéciale que vous avez obtenue de la Guilde des aventuriers. Certaines rumeurs disent qu'elle porte chance..."
+  },
+  "WindblumeKamera": {
+    "name": "Daguerréotype des alizées",
+    "description": "Le Daguerréotype que vous avez emprunté à Fassben. Attention lorsque vous l'utilisez. Vous ne voudriez pas l'abîmer, hein..."
+  },
+  "FestiveDrum": {
+    "name": "Tambour festif",
+    "description": "Un instrument qui peut être utilisé pour jouer de la musique.\\nUn tambour avec un son clair et un design unique, dont l'extérieur exquis traduit d'un artisanat complexe. Des matériaux de haute qualité ont été utilisés dans sa construction, avec pour but une qualité sonore optimale lors des performances, la justesse de l'intonation et une faible usure à long terme.\\nIl est dit que ce petit tambour combine un instrument traditionnel inazumien avec quelques tambours plus étranges d'autres nations. Il paraît que certains airs joués dessus peuvent même porter chance..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus",
@@ -11947,12 +12183,24 @@
     "name": "Spores proliférantes",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
   },
+  "WellspringOfWarLust": {
+    "name": "Esprit belligérant",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "TamanooyasCasket": {
+    "name": "Coffret de Tamanooya",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
   "PoundingSurprise": {
     "name": "Cadeau explosif",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
   },
   "LightningStorm": {
     "name": "Tempête de coups de tonnerre",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "SinOfPride": {
+    "name": "Péché d'orgueil",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
   },
   "MagicGuide": {
@@ -12093,6 +12341,14 @@
   },
   "DeepwoodMemories": {
     "name": "Souvenir de forêt",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "OrnateKabuto": {
+    "name": "Kabuto orné",
+    "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
+  },
+  "GeneralsAncientHelm": {
+    "name": "Ancien heaume de Général",
     "description": "Une carte pour le jeu de table, l'Invocation des Sept. Elle est résistante et une méthode d'impression spéciale a été utilisée pour son illustration, ce qui lui donne une apparence vraiment exquise."
   },
   "LiyueHarborWharf": {
@@ -12315,8 +12571,8 @@
     "name": "Spécialiste",
     "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
   },
-  "HydroCrystalChunk": {
-    "name": "Morceau de cristal",
+  "LazuriteSwirl": {
+    "name": "Tourbillon lapis-lazuli",
     "description": "Un dos de carte d'Invocation des Sept que vous pouvez obtenir et changer. On dit que les dos de cartes avec des motifs différents ont également des différences minimes de fabrication et de texture. Certains joueurs font même de la collection de dos de cartes de différents styles leur mission et leur passe-temps..."
   },
   "BeginnerPlayerBadge": {
@@ -12529,7 +12785,7 @@
   },
   "CottageKitchen": {
     "name": "Maison de fumée de bois",
-    "description": "Étapes de mise en place de la maison de fumée de bois.\\nUne cuisine entièrement équipée dont l'armoire est remplie de condiments soigneusement préparés.\\nLes chefs à la recherche de l'excellence achèteront quotidiennement des ingrédients frais au marché et les vrais artistes culinaires porteront même une attention particulière au bois de chauffage utilisé dans leur cuisine. La jeune cheffe du Restaurant Wanmin a un jour partagé que pour préparer les plats traditionnels du Village de Qingce, il fallait d'abord placer des copeaux de bambou secs dans le poêle et en contrôler soigneusement la flamme. De plus, si l'on peut transformer les arbustes près des baies à crochet en minces bûchettes de chauffage, on peut même ajouter une touche d'arôme mondstadtois.\\nDifférents types de bois de chauffage produisent des effets très différents, et la plupart des chefs ne les maîtriseront jamais vraiment tous. En tant que tel, le Restaurant Wanmin a la mainmise sur cette technique particulière.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao."
+    "description": "Étapes de mise en place de la maison de fumée de bois.\\nUne cuisine entièrement équipée dont l'armoire est remplie de condiments soigneusement préparés.\\nLes chefs à la recherche de l'excellence achèteront quotidiennement des ingrédients frais au marché et les vrais artistes culinaires porteront même une attention particulière au bois de chauffage utilisé dans leur cuisine. La jeune cheffe du Restaurant Wanmin a un jour partagé que pour préparer les plats traditionnels du Village de Qingce, il fallait d'abord placer des copeaux de bambou secs dans le poêle et en contrôler soigneusement la flamme. De plus, si l'on peut transformer les arbustes près des baies à crochet en minces bûchettes de chauffage, on peut même ajouter une touche d'arôme mondstadtois.\\nDifférents types de bois de chauffage produisent des effets très différents, et la plupart des chefs ne les maîtriseront jamais vraiment tous. En tant que tel, le Restaurant Wanmin a la mainmise sur cette technique particulière.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika."
   },
   "WeaponForgingStation": {
     "name": "Station de forgeage d'armes",
@@ -12561,7 +12817,7 @@
   },
   "IterAdAstraAbyssosque": {
     "name": "« Périple vers les étoiles et au-delà »",
-    "description": "Étapes de mise en place du « Périple vers les étoiles et au-delà ».\\nUn camp d'aventurier que l'on peut souvent voir dans la nature. Il utilise des modèles de tente dernier cri et très en vogue.\\nLes aventuriers expérimentés sont habitués à mener une existence difficile et n'ont besoin que d'une tente légère et durable pour dormir profondément, même dans la tempête hurlante, reprenant ainsi leurs forces pour continuer vers leur prochaine destination le lendemain. Ainsi, ce type de tentes, jolies et abordables, a toujours eu beaucoup de facilités à trouver preneurs.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy."
+    "description": "Étapes de mise en place du « Périple vers les étoiles et au-delà ».\\nUn camp d'aventurier que l'on peut souvent voir dans la nature. Il utilise des modèles de tente dernier cri et très en vogue.\\nLes aventuriers expérimentés sont habitués à mener une existence difficile et n'ont besoin que d'une tente légère et durable pour dormir profondément, même dans la tempête hurlante, reprenant ainsi leurs forces pour continuer vers leur prochaine destination le lendemain. Ainsi, ce type de tentes, jolies et abordables, a toujours eu beaucoup de facilités à trouver preneur.\\nAprès utilisation, ce plan sera disponible dans l'interface de placement des décorations.\\nCompagnons préférant ce set : Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy, Mika."
   },
   "DawnOrchard": {
     "name": "Verger de l'Aurore",
@@ -12625,7 +12881,7 @@
   },
   "FervidAroma": {
     "name": "Arôme fervent",
-    "description": "Le modèle de ce restaurant au décor exquis est une célèbre taverne de la Ville de Sumeru... Modifié pour être utilisé dans la Sérénithéière, évidemment. La vapeur et les effluves des épices flottent dans l'air, enrichissant une expérience déjà joyeuse. Un peu de bon vin et de compagnie suffira pour un bon repas.\\nLes personnes qui voyagent souvent en groupe choisissent les restaurants où elles mangent en fonction du nombre de places et de la taille des plats. De ce fait, un restaurant de viande grillée constitue un choix optimal. Quant à celles qui voyagent seules, l'ambiance bruyante et animée de ce genre de lieux leur permet de dissimuler leurs gestes pour mieux observer, suivre et manigancer.\\nCompagnon préférant ce set : Alhaitham."
+    "description": "Le modèle de ce restaurant au décor exquis est une célèbre taverne de la Ville de Sumeru... Modifié pour être utilisé dans la Sérénithéière, évidemment. La vapeur et les effluves des épices flottent dans l'air, enrichissant une expérience déjà joyeuse. Un peu de bon vin et de compagnie suffira pour un bon repas.\\nLes personnes qui voyagent souvent en groupe choisissent les restaurants où elles mangent en fonction du nombre de places et de la taille des plats. De ce fait, une kebaberie constitue un choix optimal. Quant à celles qui voyagent seules, l'ambiance bruyante et animée de ce genre de lieux leur permet de dissimuler leurs gestes pour mieux observer, suivre et manigancer.\\nCompagnons préférant ce set : Alhaitham, Dehya."
   },
   "OfSettledThoughts": {
     "name": "Pensées arrêtées",
@@ -12661,7 +12917,7 @@
   },
   "TheTravelingTroopsPomp": {
     "name": "Faste de la troupe itinérante",
-    "description": "Un campement militaire qui abonde d'une diversité de marchandises. Des fortifications défensives ont été installées, ainsi que des feux de camp à des endroits stratégiques pour les opérations nocturnes. En théorie, ce camp peut résister à l'assaut de nombreux ennemis et même former le pivot d'une ligne défensive avec des ressources humaines suffisantes.\\nLe transport et la mise en place de ce campement peuvent s'avérer difficiles et l'absence de tentes pour s'abriter du vent et de la pluie créent des conditions de vie difficiles... Cependant, les mercenaires aguerris n'ont besoin que d'un lit de paille pour dormir et ne se soucient pas de ces petits désagréments."
+    "description": "Un campement militaire qui abonde d'une diversité de marchandises. Des fortifications défensives ont été installées, ainsi que des feux de camp à des endroits stratégiques pour les opérations nocturnes. En théorie, ce camp peut résister à l'assaut de nombreux ennemis et même former le pivot d'une ligne défensive avec des ressources humaines suffisantes.\\nLe transport et la mise en place de ce campement peuvent s'avérer difficiles et l'absence de tentes pour s'abriter du vent et de la pluie créent des conditions de vie difficiles... Cependant, les mercenaires aguerris n'ont besoin que d'un lit de paille pour dormir et ne se soucient pas de ces petits désagréments.\\nCompagnon préférant ce set : Dehya."
   },
   "AmidstScentsAndSerenity": {
     "name": "Entre senteurs et sérénité",
@@ -13315,11 +13571,11 @@
     "name": "Chandelle du veilleur de nuit",
     "description": "Étapes de fabrication de la chandelle du veilleur de nuit.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
-  "ListeningCandelight": {
+  "ListeningCandlelight": {
     "name": "Chandelle d'écoute",
     "description": "Étapes de fabrication de la chandelle d'écoute.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
-  "TwowayIronLamp": {
+  "TwoWayIronLamp": {
     "name": "Lampe double en fer",
     "description": "Étapes de fabrication de la lampe double en fer.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
@@ -14100,12 +14356,20 @@
     "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Commission de la cité de la sagesse{NON_BREAK_SPACE}».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "SilkyQuellerOfSeaMonsters": {
-    "name": "« Tissu protecteur des bêtes marines{NON_BREAK_SPACE}»",
+    "name": "« Tissu protecteur des bêtes marines »",
     "description": "Étapes de fabrication du « Tissu protecteur des bêtes marines ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "NightOfSerenityInTheSandyBreeze": {
     "name": "Nuit de sérénité dans la brise de sable",
     "description": "Étapes de fabrication de la nuit de sérénité dans la brise de sable.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TeaFragranceInTheTranquilCourt": {
+    "name": "« Parfum de thé sur la cour tranquille{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du « Parfum de thé sur la cour tranquille ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "SingingInTheTranquilCourt": {
+    "name": "« Fredonnement sur la cour tranquille{NON_BREAK_SPACE}»",
+    "description": "Étapes de fabrication du «{NON_BREAK_SPACE}Fredonnement sur la cour tranquille ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux",
@@ -14194,6 +14458,10 @@
   "ClarityFromTheLandOfWisdom": {
     "name": "« Clarté du pays de la sagesse »",
     "description": "Étapes de fabrication de la « Clarté du pays de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "FloralSwing": {
+    "name": "« Flottaison florale »",
+    "description": "Étapes de fabrication de la «{NON_BREAK_SPACE}Flottaison florale ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "PortOrmosGPCraneIII": {
     "name": "Élévateur type III du Port Ormos",
@@ -14362,6 +14630,30 @@
   "DomedWallTheBirdsSang": {
     "name": "Mur en dôme « Chant d'oiseau »",
     "description": "Étapes de fabrication du mur en dôme « Chant d'oiseau ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "VisionOfTheCityOfWisdom": {
+    "name": "« Aspiration de la cité de la sagesse »",
+    "description": "Étapes de fabrication de l'« Aspiration de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PartitionOfTheCityOfWisdom": {
+    "name": "« Partition de la cité de la sagesse »",
+    "description": "Étapes de fabrication de la « Partition de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LightShieldOfTheCityOfWisdom": {
+    "name": "« Bouclier léger de la cité de la sagesse »",
+    "description": "Étapes de fabrication du « Bouclier léger de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "PilasterOfTheCityOfWisdom": {
+    "name": "« Pilastre de la cité de la sagesse »",
+    "description": "Étapes de fabrication du « Pilastre de la cité de la sagesse ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "CommonWoodenStairs": {
+    "name": "Escalier polyvalent en bois fruitier",
+    "description": "Étapes de fabrication de l'escalier polyvalent en bois fruitier.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "TexturedWhitestoneStairs": {
+    "name": "Escalier en pierre blanche texturé",
+    "description": "Étapes de fabrication de l'escalier en pierre blanche texturé.\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fondations de pierre « Temps fortuné »",
@@ -14578,6 +14870,14 @@
   "ColorationAndPrecipitation": {
     "name": "« Coloration et précipitation »",
     "description": "Étapes de fabrication de « Coloration et précipitation ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LeisureDeviceBouncyTubby": {
+    "name": "Appareil de loisirs « Sauti-Taby »",
+    "description": "Étapes de fabrication de l'appareil de loisirs « Sauti-Taby ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "LeisureDeviceBouncyChubby": {
+    "name": "Appareil de loisirs « Sauti-Toby »",
+    "description": "Étapes de fabrication de l'appareil de loisirs « Sauti-Toby ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "PottedPlantVerdantVastness": {
     "name": "Plante en pot « Immensité verdoyante »",
@@ -14842,6 +15142,18 @@
   "TrumpetAndFirewood": {
     "name": "« Trompette et bois de chauffage »",
     "description": "Étapes de fabrication de « Trompette et bois de chauffage ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ErsatzBalloonWhisperingBreeze": {
+    "name": "Ballon ersatz « Faible murmure »",
+    "description": "Étapes de fabrication du ballon ersatz « Faible murmure ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ErsatzBalloonSphericalSquall": {
+    "name": "Ballon ersatz « Rafale sphérique »",
+    "description": "Étapes de fabrication du ballon ersatz « Rafale sphérique ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
+  },
+  "ErsatzBalloonBumperShroom": {
+    "name": "Ballon ersatz « Impact fongique »",
+    "description": "Étapes de fabrication du ballon ersatz « Impact fongique ».\\nAprès utilisation, ce plan sera disponible dans l'interface de fabrication des décorations."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Lampadaire en fer forgé",

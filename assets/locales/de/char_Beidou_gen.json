@@ -49,7 +49,7 @@
       "4": "<br/>",
       "5": "<strong>Gedrückt halten</strong>",
       "6": "Hebt die Waffe an, um sie als Schutzschild zu verwenden und Schaden basierend auf Beidous max. LP abzuhalten.",
-      "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <electro>Elektro-Schaden</electro>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Anwendungen den höchsten SCH-Bonus.",
+      "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <electro>Elektro-Schaden</electro>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Auslösungen des Effektes den höchsten SCH-Bonus.",
       "8": "Effekte des Schildes:",
       "9": [
         " Hält bei <electro>Elektro-Schaden</electro> 250 % ab.",

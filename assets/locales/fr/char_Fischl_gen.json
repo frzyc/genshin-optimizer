@@ -78,7 +78,7 @@
       "1": "Pendant la durée de la compétence :",
       "2": [
         " Fischl prend la forme d'Oz, ce qui lui permet d'augmenter sa VIT de déplacement.",
-        " Les ennemis à proximité sont frappés par la foudre et subissent des <electro>DGT Électro</electro>. Chaque ennemi ne peut être frappé qu'une fois."
+        " Les ennemis proches sont frappés par la foudre et subissent des <electro>DGT Électro</electro>. Chaque ennemi ne peut être frappé qu'une fois."
       ],
       "3": "Lorsque l'effet prend fin, Oz reste pour combattre les ennemis de sa maîtresse. Si Oz est déjà présent sur le terrain avant l'utilisation de cette compétence, son temps de présence sera remis à zéro.",
       "4": "<br/>",

@@ -44,8 +44,8 @@
       "0": "Memanggil Oz. Gagak malam yang tercipta dalam kegelapan dan halilintar turun ke bumi untuk mengakibatkan <electro>Electro DMG</electro> dalam area kecil.",
       "1": "Selama durasi skill, Oz akan terus menyerang musuh di sekitar dengan <electro>Freikugel</electro>.",
       "2": "<br/>",
-      "3": "Tahan untuk mengatur lokasi di mana Oz akan dipanggil.",
-      "4": "Tekan lagi sewaktu-waktu dalam durasi skill untuk memanggil Oz kembali ke sisi Fischl.",
+      "3": "Tahan tombol skill untuk mengatur lokasi di mana Oz akan dipanggil.",
+      "4": "Tekan skill lagi selama durasi skill untuk memanggil Oz kembali ke sisi Fischl.",
       "5": "<br/>",
       "6": "<i>\"Waktu kita terlalu berharga untuk dihabiskan bersama orang sepertimu... Pergilah, Oz, datangi mereka, dan lepaskan Rachsüchtig Blitz milikmu yang membelah malam terhadap mereka.\"</i>",
       "7": "<i>— Bunga untuk Putri Fischl (IV): Selamat Tinggal Frau Welt</i>"
@@ -75,9 +75,9 @@
       "0": "Memanggil Oz untuk membentangkan kedua sayap kegelapan dan melindungi Fischl.",
       "1": "Memiliki efek berikut selama durasi skill:",
       "2": [
-        "Fischl mengambil bentuk Oz, membuat kecepatan gerak dia meningkat drastis.",
-        "Menyerang musuh terdekat dengan menggunakan petir, menghasilkan <electro>Electro DMG</electro> kepada musuh yang menyentuhnya. Setiap musuh hanya dapat tersambar satu kali.",
-        "Saat efeknya berakhir, Oz akan tetap berada di medan tempur dan menyerang musuh Prinzessin. Jika Oz sudah berada di medan tempur, maka akan memutar ulang durasi kehadirannya."
+        "Fischl mengambil bentuk Oz, meningkatkan kecepatan geraknya secara drastis.",
+        "Menyambar musuh terdekat dengan menggunakan petir dan mengakibatkan <electro>Electro DMG</electro>. Setiap musuh hanya dapat tersambar satu kali.",
+        "Saat efeknya berakhir, Oz akan tetap berada di medan tempur dan menyerang musuh Prinzessin. Jika Oz sudah berada di medan tempur, maka durasi keberadaan Oz akan diperbarui."
       ],
       "3": "<br/>",
       "4": "<i>\"...dari segerombolan hewan buas yang mengikuti darah terkutuk, hanya Pangeran Nachtraben, yang telah menyaksikan kepunahan ribuan dunia, mengetahui kekuatannya yang sesungguhnya. Karena itu, sayap malam yang dia bentangkan adalah janji abadinya untuk selalu melindungi sang ratu.\"</i>",
@@ -105,13 +105,13 @@
   "passive1": {
     "name": "Stellar Predator",
     "description": {
-      "0": "Saat Fischl menembakkan Serangan Membidik yang telah di-Charge penuh ke arah Oz, Oz akan memanggil Thundering Retribution yang mengakibatkan <electro>Electro DMG area</electro> sebesar 152.7% DMG panah."
+      "0": "Saat Fischl mengenai Oz dengan Serangan Membidik yang telah di-Charge penuh, maka Oz akan memanggil Thundering Retribution yang mengakibatkan <electro>Electro DMG Area</electro> sebesar 152,7% DMG panah."
     }
   },
   "passive2": {
     "name": "Undone Be Thy Sinful Hex",
     "description": {
-      "0": "Jika karakter yang sedang digunakan memicu <electro>Reaksi Elemental yang berhubungan dengan elemen Electro</electro> pada saat Oz berada di medan tempur, musuh akan terkena Thundering Retribution yang mengakibatkan <electro>Electro DMG</electro> sebesar 80% ATK Fischl."
+      "0": "Jika Karakter aktif saat ini memicu <electro>Reaksi Elemental yang berhubungan dengan Electro</electro> saat Oz berada di medan pertempuran, musuh akan terkena Thundering Retribution yang mengakibatkan <electro>Electro DMG</electro> sebesar 80% ATK Fischl."
     }
   },
   "passive3": {
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Gaze of the Deep",
     "description": {
-      "0": "Saat Oz tidak di dalam medan pertarungan, dia masih tetap bisa melindungi Fischl melalui mata burung gagak. Saat Fischl menyerang musuh dengan Normal Attack, Oz melancarkan serangan melalui mata burung gagak yang mengakibatkan DMG sebesar 22% ATK."
+      "0": "Saat Oz tidak di dalam medan pertarungan, dia masih tetap bisa melindungi Fischl melalui mata burung gagaknya. Saat Fischl menyerang musuh dengan Normal Attack, Oz akan melancarkan serangan terkoordinasi melalui mata burung gagaknya dan mengakibatkan DMG sebesar 22% ATK."
     }
   },
   "constellation2": {
@@ -156,7 +156,7 @@
   "constellation6": {
     "name": "Evernight Raven",
     "description": {
-      "0": "Meningkatkan durasi pemanggilan Oz selama 2 detik, selama durasi, Oz menyerang bersama dengan karakter yang sedang bertarung, mengakibatkan 30% ATK Fischl sebagai <electro>Electro DMG</electro>."
+      "0": "Memperpanjang durasi keberadaan Oz selama 2 detik. Selama di medan pertempuran, Oz akan menyerang bersama Karakter aktif dan mengakibatkan <electro>Electro DMG</electro> sebesar 30% ATK Fischl."
     }
   }
 }

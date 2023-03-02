@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Yıldızlı Aydınlanma",
     "description": {
-      "0": "<strong>Odaklanma Gecesi</strong>, Kayan Yıldızları ateşlediğinde yakındaki grup üyelerine Şafak Yıldızı etkisi vererek Normal ve Yüklü Saldırı Hasarlarının Layla'nın Maks. Canına bağlı olarak %5 artmasını sağlar.",
+      "0": "<strong>Odaklanma Gecesi</strong>, Kayan Yıldızları ateşlediğinde yakındaki grup üyelerine Şafak Yıldızı etkisi vererek Normal ve Yüklü Saldırı Hasarlarının Layla'nın Maks. Canının %5'i oranında artmasını sağlar.",
       "1": "Şafak Yıldızı, maksimum 3 saniye sürer ve Normal veya Yüklü Saldırı Hasarı verdikten 0,05 saniye sonra kaldırılır."
     }
   },

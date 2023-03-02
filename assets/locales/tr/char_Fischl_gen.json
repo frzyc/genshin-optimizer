@@ -71,7 +71,7 @@
     }
   },
   "burst": {
-    "name": "Gece Gece Yanılsaması",
+    "name": "Gece Yanılsaması",
     "description": {
       "0": "Oz'u, alacakaranlık kanatlarını açıp Fischl'ı koruması için çağırır.",
       "1": "Beceri süresi boyunca şu özelliklere sahiptir:",
@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Gizemli Kuzgunun Gözü",
     "description": {
-      "0": "Oz savaşta olmasa bile kuzgun gözleriyle Fischl'a göz kulak olur. Fischl, bir düşmana Normal Saldırı yaptığında Oz da onunla beraber saldırır ve Fischl'ın Saldırısının %22'sine denk Hasar verir."
+      "0": "Oz savaşta olmasa bile kuzgun gözleriyle Fischl'a göz kulak olur. Fischl, bir düşmana Normal Saldırı yaptığında Oz da onunla ortak saldırır ve Fischl'ın Saldırısının %22'sine denk Hasar verir."
     }
   },
   "constellation2": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Ebedi Gece Kuzgunu",
     "description": {
-      "0": "Oz'un savaş alanında bulunduğu süreyi 2sn uzatır. Buna ek olarak Oz savaş alanındayken aktif karakter ile beraber saldırarak Fischl'ın Saldırısının %30'u kadar <electro>Elektrik Hasarı</electro> verir."
+      "0": "Oz'un savaş alanında bulunduğu süreyi 2sn uzatır. Buna ek olarak Oz savaş alanındayken aktif karakter ile ortak saldırarak Fischl'ın Saldırısının %30'u kadar <electro>Elektrik Hasarı</electro> verir."
     }
   }
 }

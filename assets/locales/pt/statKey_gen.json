@@ -1,0 +1,21 @@
+{
+  "hp": "Vida",
+  "hp_": "Vida",
+  "atk": "ATQ",
+  "atk_": "ATQ",
+  "def": "DEF",
+  "def_": "DEF",
+  "eleMas": "Proficiência Elemental",
+  "enerRech_": "Recarga de Energia",
+  "critRate_": "Taxa Crítica",
+  "critDMG_": "Dano Crítico",
+  "heal_": "Bônus de Cura",
+  "physical_dmg_": "Bônus de Dano Físico",
+  "anemo_dmg_": "Bônus de Dano Anemo",
+  "geo_dmg_": "Bônus de Dano Geo",
+  "electro_dmg_": "Bônus de Dano Electro",
+  "hydro_dmg_": "Bônus de Dano Hydro",
+  "pyro_dmg_": "Bônus de Dano Pyro",
+  "cryo_dmg_": "Bônus de Dano Cryo",
+  "dendro_dmg_": "Bônus de Dano Dendro"
+}

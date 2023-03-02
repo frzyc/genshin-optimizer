@@ -140,7 +140,7 @@
   "constellation2": {
     "name": "Alayı Gelsin",
     "description": {
-      "0": "<strong>Seçkin Zar</strong> koordine saldırı düzenlediği zaman, Yelan'ın Maks. Canının %14'ünü Su Hasarı olarak veren fazladan bir su oku fırlatır.",
+      "0": "<strong>Seçkin Zar</strong> ortak saldırı düzenlediği zaman, Yelan'ın Maks. Canının %14'ünü Su Hasarı olarak veren fazladan bir su oku fırlatır.",
       "1": "Bu etkinin 1,8 saniye bekleme süresi vardır."
     }
   },

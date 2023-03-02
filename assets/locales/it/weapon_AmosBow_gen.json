@@ -7,6 +7,6 @@
     "1": "Aumenta i DAN da attacco normale e caricato di un <cryo>15%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>10%</cryo> ogni 0,1{NON_BREAK_SPACE}s mentre la freccia è in aria. Cumulabile fino a 5 volte.",
     "2": "Aumenta i DAN da attacco normale e caricato di un <cryo>18%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>12%</cryo> ogni 0,1{NON_BREAK_SPACE}s mentre la freccia è in aria. Cumulabile fino a 5 volte.",
     "3": "Aumenta i DAN da attacco normale e caricato di un <cryo>21%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>14%</cryo> ogni 0,1{NON_BREAK_SPACE}s mentre la freccia è in aria. Cumulabile fino a 5 volte.",
-    "4": "Aumenta i DAN da attacco normale e caricato di un <cryo>24%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>16%</cryo> ogni 0,1 s mentre la freccia è in aria. Cumulabile fino a 5 volte."
+    "4": "Aumenta i DAN da attacco normale e caricato di un <cryo>24%</cryo>. Dopo che un attacco normale o caricato è stato sferrato, i DAN inflitti aumentano di un ulteriore <cryo>16%</cryo> ogni 0,1{NON_BREAK_SPACE}s mentre la freccia è in aria. Cumulabile fino a 5 volte."
   }
 }

@@ -69,7 +69,7 @@
     "name": "Sacrement mortel",
     "description": {
       "0": "Rosalia officie pour une prière pas comme les autres. Après avoir exécuté une attaque circulaire balayant les ennemis à proximité, Rosalia invoque une lance de glace qui frappe le sol. Les deux actions infligent des <cryo>DGT Cryo</cryo>.",
-      "1": "Tant que la lance de glace est active, elle émet de façon intermittente des ondes de froid, qui infligent des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
+      "1": "Tant que la lance de glace est active, elle émet de façon intermittente des ondes de froid, qui infligent des <cryo>DGT Cryo</cryo> aux ennemis proches.",
       "2": "<br/>",
       "3": "<i>Un procès est bien trop long, autant en arriver directement à la sentence et donner les derniers sacrements. Rosalia ne croyant pas à l'Archon Anémo, c'est d'autant plus accommodant.</i>"
     },

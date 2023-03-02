@@ -73,7 +73,7 @@
   "burst": {
     "name": "Fleur bombardier",
     "description": {
-      "0": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis, infligeant des <pyro>DGT Pyro de zone</pyro>.",
+      "0": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis proches, infligeant des <pyro>DGT Pyro de zone</pyro>.",
       "1": "<br/>",
       "2": "<i>Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee ; sinon, comment expliquer qu'elle ne se blesse jamais ?</i>"
     },

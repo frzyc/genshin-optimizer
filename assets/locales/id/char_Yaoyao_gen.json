@@ -86,8 +86,8 @@
       "2": "<strong>Adeptal Legacy</strong>",
       "3": [
         "White Jade Radish yang dihasilkan akan dikonversi menjadi DMG dan pemulihan berdasarkan status skill ini. Saat meledak, akan memulihkan HP seluruh anggota party di sekitar, <dendro>Dendro DMG</dendro> yang diakibatkan akan dianggap sebagai DMG Elemental Burst;",
-        "Akan memanggil Yuegui: Jumping Mode secara berkala hingga jumlahnya mencapai batas maksimum. Yuegui: Jumping Mode akan memiliki tindakan yang sama dengan Yuegui: Throwing Mode dari Elemental Skill Raphanus Sky Cluster. Maksimum 3 Yuegui: Jumping Mode yang bisa dipanggil di saat yang bersamaan.",
-        "Movement SPD Yaoyao meningkat 15%.",
+        "Akan memanggil Yuegui: Jumping Mode secara berkala hingga jumlahnya mencapai batas maksimum. Yuegui: Jumping Mode akan memiliki tindakan yang sama dengan Yuegui: Throwing Mode dari Elemental Skill Raphanus Sky Cluster. Maksimum 3 Yuegui: Jumping Mode yang bisa dipanggil di saat yang bersamaan;",
+        "Movement SPD Yaoyao meningkat 15%;",
         "Yaoyao mendapatkan peningkatan <dendro>Dendro RES</dendro>."
       ],
       "4": "<br/>",
@@ -136,13 +136,13 @@
   "constellation1": {
     "name": "Adeptus' Tutelage",
     "description": {
-      "0": "Saat <strong>White Jade Radish</strong> meledak, Karakter aktif yang berada di efek serangan area akan menerima 15% <dendro>Dendro DMG Bonus</dendro> selama 8 detik dan akan memulihkan 15 Stamina. Pemulihan Stamina yang bisa didapatkan dengan cara ini adalah setiap 5 detik sekali."
+      "0": "Saat <strong>White Jade Radish</strong> meledak, Karakter aktif yang berada di efek serangan area akan menerima 15% <dendro>Dendro DMG Bonus</dendro> selama 8 detik dan akan memulihkan 15 Stamina. Pemulihan Stamina yang bisa didapatkan dengan cara ini adalah sekali setiap 5 detik."
     }
   },
   "constellation2": {
     "name": "Innocent",
     "description": {
-      "0": "Saat berada dalam status Adeptal Legacy dari <strong>Moonjade Descent</strong>, jika DMG ledakan White Jade Radish mengenai musuh, maka Yaoyao akan memulihkan 3 poin Energy. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah setiap 0,8 detik sekali."
+      "0": "Saat berada dalam status Adeptal Legacy dari <strong>Moonjade Descent</strong>, jika DMG ledakan White Jade Radish mengenai musuh, maka Yaoyao akan memulihkan 3 poin Energy. Pemulihan Energy yang bisa didapatkan dengan cara ini adalah sekali setiap 0,8 detik."
     }
   },
   "constellation3": {

@@ -44,7 +44,7 @@
       "0": "Rüzgarların gücünü odaklayarak dünyevi zincirlerden kurtulur. Havaya yükselip Akım Harmonisi durumuna girmeden önce <anemo>Rüzgar Alan Hasarı</anemo> verir.",
       "1": "<br/>",
       "2": "<strong>Akım Harmonisi</strong>",
-      "3": "Avare, bu durumdayken Havadan Saldırı yapamaz. Normal ve Yüklü Saldırıları sırasıyla Kuugo: Fushoudan ve Kuugo: Toufukai olarak değişir, verdikleri Hasar ve Etki Alanları artar. Kuugo: Toufukai Dayanıklılık tüketmez.",
+      "3": "Avare, bu durumdayken Havadan Saldırı yapamaz. Normal ve Yüklü Saldırıları sırasıyla Kuugo: Fushoudan ve Kuugo: Toufukai olarak değişir, verdikleri Hasar ve Etki Alanları artar; ayrıca verilen Hasar sırasıyla Normal ve Yüklü Saldırı Hasarı olarak sayılır. Kuugo: Toufukai Dayanıklılık tüketmez.",
       "4": "Avare, bu durumdayken sürekli havada süzülür. Bu durum etkinken Avare'nin hareketleri şu özellikleri kazanır:",
       "5": [
         "Havada süzülmek için sürekli Kuugoryoku Puanı harcar.",

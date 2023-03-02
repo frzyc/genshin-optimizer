@@ -41,15 +41,15 @@
   "skill": {
     "name": "Espada de Guhua: Chuva Torrencial",
     "description": {
-      "0": "Xingqiu realiza ataques duplos com sua espada, causando <hydro>Dano Hydro</hydro>. Ao mesmo tempo, essa habilidade cria o número máximo de Espadas de Chuva, que orbitarão o seu próprio personagem.",
-      "1": "As Espadas de Chuva têm as seguintes propriedades:",
-      "2": "Quando um personagem recebe Dano, a Espada de Chuva se despedaça, reduzindo a quantidade de Dano recebido.",
+      "0": "Xingqiu realiza ataques duplos com sua espada, causando <hydro>Dano Hydro</hydro>. Ao mesmo tempo, essa habilidade cria o número máximo de Chuvas das Espadas, que orbitarão o seu próprio personagem.",
+      "1": "As Chuvas das Espadas têm as seguintes propriedades:",
+      "2": "Quando um personagem recebe Dano, a Chuvas das Espadas se despedaça, reduzindo a quantidade de Dano recebido.",
       "3": "Aumenta a resistência do personagem à interrupção.",
-      "4": "20% do <hydro>Dano Hydro Adicional</hydro> de Xingqiu será convertido em Redução de Dano adicional para as Espadas de Chuva.",
+      "4": "20% do <hydro>Dano Hydro Adicional</hydro> de Xingqiu será convertido em Redução de Dano adicional para as Chuvas das Espadas.",
       "5": "<br/>",
       "6": "A quantidade máxima de adicional da Redução de Dano que pode ser obtida é de 24%.",
-      "7": "O número máximo inicial de Espadas de Chuva é 3.",
-      "8": "O uso dessa habilidade aplica o estado de <hydro>Molhado</hydro> ao personagem.",
+      "7": "O número máximo inicial de Chuvas das Espadas é 3.",
+      "8": "O uso dessa habilidade aplica o estado <hydro>Molhado</hydro> ao personagem.",
       "9": "<br/>",
       "10": "<i>\"É Mais fácil matar um dragão da chuva do que cortar a chuva.\"</i>"
     },
@@ -75,13 +75,13 @@
   "burst": {
     "name": "Espada Guhua: Retalhador de Chuva",
     "description": {
-      "0": "Inicia o Trabalho com Lâminas do Arco-íris e luta usando uma chuva de espadas ilusórias, enquanto cria um número máximo de Chuvas de Espadas.",
+      "0": "Inicia o Trabalho com Lâminas do Arco-íris e luta usando uma chuva de espadas ilusórias, enquanto cria um número máximo de Chuvas das Espadas.",
       "1": "<br/>",
       "2": "<strong>Trabalho com Lâminas do Arco-íris</strong>",
       "3": [
-        "Os Ataques Normais do seu próprio personagem irão desencadear ataques consecutivos da chuva de espadas, infligindo <hydro>Dano Hydro</hydro>."
+        "Os Ataques Normais do seu próprio personagem irão desencadear ataques consecutivos da Chuva das Espadas, infligindo <hydro>Dano Hydro</hydro>."
       ],
-      "4": "Chuva de Espadas irá continuar no número máximo ao longo da duração da habilidade.",
+      "4": "Chuva das Espadas irá continuar no número máximo ao longo da duração da habilidade.",
       "5": "<br/>",
       "6": "<i>O \"Caminho do Cortador de Chuva\" é uma das técnicas esotéricas secretas da Seita Guhua.</i>"
     },
@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Hidropático",
     "description": {
-      "0": "Quando uma espada da Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu."
+      "0": "Quando uma espada da Chuva das Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu."
     }
   },
   "passive2": {
@@ -138,7 +138,7 @@
   "constellation3": {
     "name": "Tecedor de Versos",
     "description": {
-      "0": "Aumenta o Nível de <strong>Guhua: Retalhador de Chuva</strong> em 3.",
+      "0": "Aumenta o Nível de <strong>Espada de Guhua - Retalhador de Chuva</strong> em 3.",
       "1": "Pode ser elevado até Nv.15."
     }
   },

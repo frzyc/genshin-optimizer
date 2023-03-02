@@ -4,7 +4,7 @@
   "description": "Una reconocida chef de Liyue. Le apasiona la cocina y sobresale al hacer sus platos calientes y picantes.",
   "constellationName": "Trullae",
   "auto": {
-    "name": "Kung-Fu pasta",
+    "name": "Kung-fu pasta",
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",

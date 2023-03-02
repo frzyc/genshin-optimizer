@@ -136,7 +136,8 @@
   "constellation3": {
     "name": "漫行靈圃",
     "description": {
-      "0": "<strong>非想風天</strong>的技能等級提高3級。至多提升至15級。"
+      "0": "<strong>非想風天</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
     }
   },
   "constellation4": {
@@ -149,7 +150,8 @@
   "constellation5": {
     "name": "繁想奇境",
     "description": {
-      "0": "<strong>摶風秘道</strong>的技能等級提高3級。至多提升至15級。"
+      "0": "<strong>摶風秘道</strong>的技能等級提高3級。",
+      "1": "至多提升至15級。"
     }
   },
   "constellation6": {

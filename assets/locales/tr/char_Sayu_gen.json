@@ -180,7 +180,7 @@
     "description": {
       "0": "<strong>Yoohoo Sanatı: Mujina Karmaşası</strong> becerisinin oluşturduğu Muji-Muji Daruma, Sayu'nun Element Ustalığından yararlanmaya başlar. Sayu'nun her Element Ustalık puanı aşağıdaki etkileri sağlar:",
       "1": [
-        "Muji-Muji Daruma saldırısının verdiği Hasarı %0,2 Saldırı kadar artırır. Bu yöntem ile maksimum %400 Saldırı kazanılabilir.",
+        "Muji-Muji Daruma saldırısının verdiği Hasarı %0,2 Saldırı kadar artırır. Bu yöntem ile maksimum Hasar artışı olarak %400 Saldırı kazanılabilir.",
         "Muji-Muji Daruma'nın yenilediği Can miktarını 3 artırır. Bu şekilde maksimum 6.000 ek Can yenilenebilir."
       ]
     }

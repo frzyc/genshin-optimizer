@@ -42,7 +42,7 @@
   "skill": {
     "name": "Doğa Temizliği",
     "description": {
-      "0": "Önündeki düşmanlara isabet ettiğinde <dendro>Doğa Hasarı</dendro> veren 1 Yaprak Tacı fırlatır.",
+      "0": "Önündeki düşmanlara isabet ettiğinde 1 defa <dendro>Doğa Hasarı</dendro> veren bir Yaprak Tacı fırlatır.",
       "1": "Yaprak Tacı, belirli bir süre sonra geri döner ve yeniden <dendro>Doğa Hasarı</dendro> verir.",
       "2": "<br/>",
       "3": "<i>Bu, Collei'in vahşi hayvanlarla başa çıkmak için kullandığı bir aygıttır. Bu aletin birkaç darbesine maruz kalan vahşi hayvanların ve kötü yaratıkların davranışlarında iyileşme görülür.</i>"

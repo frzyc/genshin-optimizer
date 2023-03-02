@@ -136,7 +136,7 @@
   "constellation4": {
     "name": "Chamas Fluidas",
     "description": {
-      "0": "Lançar <strong>Investida Ardente</strong> de forma cadenciada aumenta drásticamente o dano causado.",
+      "0": "Lançar <strong>Investida Ardente</strong> de forma cadenciada aumenta drasticamente o dano causado.",
       "1": "Dentro de 2 segundos de uso da <strong>Investida Ardente</strong>, lançar a próxima Investida Ardente em um combo infligirá 40% de Dano adicional. Esse efeito dura pelos próximos 2 segundos."
     }
   },

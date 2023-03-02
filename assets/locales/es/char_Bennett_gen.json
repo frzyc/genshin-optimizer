@@ -8,11 +8,11 @@
     "fields": {
       "normal": {
         "0": "<strong><strong>Ataque Normal</strong>",
-        "1": "Realiza hasta 5 ataques rápidos."
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
-        "1": "Consume una cierta cantidad de Aguante para lanzar un golpe de espada cruzado."
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
@@ -43,16 +43,17 @@
     "description": {
       "0": "Bennett concentra el espíritu aventurero y la energía Pyro en su espada. Dependiendo del tiempo de carga, se producen diferentes efectos.",
       "1": "<br/>",
-      "2": "<strong>Pulsar una vez</strong>: Realiza un rápido y ardiente movimiento con su espada, infligiendo <pyro>Daño Pyro</pyro>.",
-      "3": "<br/>",
-      "4": "<strong>Mantener pulsado</strong>",
-      "5": "Dependiendo de la duración, lanza una habilidad distinta basada en el nivel de carga.",
-      "6": [
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Realiza un rápido y ardiente movimiento con la espada, infligiendo <pyro>Daño Pyro</pyro>.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Dependiendo de la duración, lanza una habilidad distinta basada en el nivel de carga.",
+      "7": [
         "Carga 1: asesta dos golpes, infligiendo <pyro>Daño Pyro</pyro> y lanzando a los enemigos por los aires.",
-        "Carga 2: lanza 3 ataques consecutivos que infligen una cantidad significativa de <pyro>Daño Pyro</pyro>. El último ataque causa una explosión que lanza tanto a los enemigos como a Bennett por los aires. Sin embargo, Bennett no resulta herido por esta explosión."
+        "Carga 2: asesta tres golpes consecutivos que infligen una cantidad significativa de <pyro>Daño Pyro</pyro>. El último ataque causa una explosión que lanza tanto a los enemigos como a Bennett por los aires. Sin embargo, Bennett no resulta herido por esta explosión."
       ],
-      "7": "<br/>",
-      "8": "<i>Un ataque que combina los sueños y la pasión de Bennett con el elemento Pyro. A veces se le va la mano con la pasión y la fuerza Pyro, por lo que termina explotando.</i>"
+      "8": "<br/>",
+      "9": "<i>Un ataque que combina los sueños y la pasión de Bennett con el elemento Pyro. A veces se le va la mano con la pasión y la fuerza Pyro, por lo que termina explotando.</i>"
     },
     "skillParams": {
       "0": "Daño al pulsar una vez",
@@ -76,9 +77,9 @@
   "burst": {
     "name": "Aventura maravillosa",
     "description": {
-      "0": "Bennett salta hacia el enemigo y crea una explosión, infligiendo <pyro>Daño Pyro</pyro> y creando un círculo de apoyo moral.",
+      "0": "Bennett salta y crea una explosión, infligiendo <pyro>Daño Pyro</pyro> y creando un círculo de apoyo moral.",
       "1": "<br/>",
-      "2": "<strong>Círculo de apoyo moral</strong>:",
+      "2": "<strong>Círculo de apoyo moral</strong>",
       "3": [
         "Si la Vida de un personaje dentro del círculo es igual o inferior al 70%, su vida se regenerará continuamente. La cantidad de vida regenerada aumenta en proporción a la Vida Máx. de Bennett.",
         "Si la Vida de un personaje dentro del círculo es superior al 70%, obtendrá un Bono de ATQ en proporción al ATQ Básico de Bennett.",
@@ -143,8 +144,8 @@
   "constellation3": {
     "name": "Pasión ardiente",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Sobrecarga de pasión</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "0": "Aumenta el nivel de habilidad de <strong>Sobrecarga de pasión</strong>{NON_BREAK_SPACE}+3.",
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
@@ -157,8 +158,8 @@
   "constellation5": {
     "name": "Explorador verdadero",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Aventura maravillosa</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "0": "Aumenta el nivel de habilidad de <strong>Aventura maravillosa</strong>{NON_BREAK_SPACE}+3.",
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

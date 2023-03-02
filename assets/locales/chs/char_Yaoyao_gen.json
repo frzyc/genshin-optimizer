@@ -148,7 +148,8 @@
   "constellation3": {
     "name": "墩墩善道",
     "description": {
-      "0": "<strong>云台团团降芦菔</strong>的技能等级提高3级。至多提升至15级。"
+      "0": "<strong>云台团团降芦菔</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
@@ -160,7 +161,8 @@
   "constellation5": {
     "name": "恻隐本义",
     "description": {
-      "0": "<strong>玉颗珊珊月中落</strong>的技能等级提高3级。至多提升至15级。"
+      "0": "<strong>玉颗珊珊月中落</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {

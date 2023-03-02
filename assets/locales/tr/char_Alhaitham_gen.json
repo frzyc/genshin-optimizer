@@ -81,17 +81,17 @@
     "name": "Bağlam Alanı: Görüntü Zinciri",
     "description": {
       "0": "Bir Özel Bağlam Alanı oluşturur ve birçok defa <dendro>Doğa Alan Hasarı</dendro> verir.",
-      "1": "Bu beceri kullanırken alanda Hafif Keski Ayna varsa bu Aynalar harcanır ve Hasar verme miktarını artırır.",
+      "1": "Bu beceri kullanılırken alanda Hafif Keski Ayna varsa bu Aynalar harcanır ve Hasar verme sayısını artırır.",
       "2": "Bu beceri kullanıldıktan 2 saniye sonra 0/1/2/3 Ayna harcanırsa Alhaitham 3/2/1/0 yeni Ayna oluşturur.",
       "3": "<br/>",
       "4": "<i>\"Bir araştırmacı, hedefini bilgelik olarak koyarsa okuduğu her bir kelimeye düşman olmaya hazır olmalıdır. Ancak bu şekilde ön yargılardan kaçınabilir.\"</i>"
     },
     "skillParams": {
       "0": "Tek Seferlik Hasar",
-      "1": "Temel Saldırı Adeti",
-      "2": "1 Ayna Saldırısı Adeti",
-      "3": "2 Ayna Saldırısı Adeti",
-      "4": "3 Ayna Saldırısı Adeti",
+      "1": "Temel Saldırı Sayısı",
+      "2": "1 Ayna Saldırısı Sayısı",
+      "3": "2 Ayna Saldırısı Sayısı",
+      "4": "3 Ayna Saldırısı Sayısı",
       "5": "BS",
       "6": "Enerji Maliyeti",
       "7": "",
@@ -114,8 +114,8 @@
   "passive2": {
     "name": "Gizemlerin Gözler Önüne Serilişi",
     "description": {
-      "0": "Alhaitham'ın sahip olduğu her bir Element Ustalığı puanı, Yansıma Saldırılarının ve <strong>Bağlam Alanı: Görüntü Zincirinin</strong> verdiği Hasarı %0,1 artırır.",
-      "1": "İki saldırının da bu şekilde elde edilebileceği maksimum Hasar artışı %100'dür."
+      "0": "Alhaitham'ın sahip olduğu her bir Element Ustalığı puanı, Yöneltme Saldırılarının ve <strong>Bağlam Alanı: Görüntü Zincirinin</strong> verdiği Hasarı %0,1 artırır.",
+      "1": "İki saldırının da bu şekilde elde edilebileceği maksimum Hasar Bonusu %100'dür."
     }
   },
   "passive3": {

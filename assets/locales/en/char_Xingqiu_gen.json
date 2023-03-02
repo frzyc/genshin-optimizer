@@ -47,13 +47,14 @@
         "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
         "Increases the character's resistance to interruption."
       ],
-      "3": "20% of Xingqiu's <hydro>Hydro DMG Bonus</hydro> will be converted to additional DMG Reduction for the Rain Swords.",
-      "4": "<br/>",
-      "5": "The maximum amount of additional DMG Reduction that can be gained this way is 24%.",
-      "6": "The initial maximum number of Rain Swords is 3.",
-      "7": "Using this ability applies the <hydro>Wet</hydro> status onto the character.",
-      "8": "<br/>",
-      "9": "<i>\"Easier to slay a rain dragon than to sever the rain.\"</i>"
+      "3": "<br/>",
+      "4": "20% of Xingqiu's <hydro>Hydro DMG Bonus</hydro> will be converted to additional DMG Reduction for the Rain Swords.",
+      "5": "<br/>",
+      "6": "The maximum amount of additional DMG Reduction that can be gained this way is 24%.",
+      "7": "The initial maximum number of Rain Swords is 3.",
+      "8": "Using this ability applies the <hydro>Wet</hydro> status onto the character.",
+      "9": "<br/>",
+      "10": "<i>\"Easier to slay a rain dragon than to sever the rain.\"</i>"
     },
     "skillParams": {
       "0": "Skill DMG",

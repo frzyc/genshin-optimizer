@@ -136,7 +136,8 @@
   "constellation3": {
     "name": "Dạo Bước Vườn Linh Hồn",
     "description": {
-      "0": "Cấp kỹ năng <strong>Phi Tưởng Phong Thiên</strong> +3. Tăng tối đa đến cấp 15."
+      "0": "Cấp kỹ năng <strong>Phi Tưởng Phong Thiên</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation4": {
@@ -149,7 +150,8 @@
   "constellation5": {
     "name": "Cảnh Đẹp Trong Tư Duy",
     "description": {
-      "0": "Cấp kỹ năng <strong>Lối Đi Riêng Của Gió</strong> +3. Tăng tối đa đến cấp 15."
+      "0": "Cấp kỹ năng <strong>Lối Đi Riêng Của Gió</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {

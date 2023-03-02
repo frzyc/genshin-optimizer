@@ -1,0 +1,21 @@
+{
+  "hp": "生命值",
+  "hp_": "生命值",
+  "atk": "攻击力",
+  "atk_": "攻击力",
+  "def": "防御力",
+  "def_": "防御力",
+  "eleMas": "元素精通",
+  "enerRech_": "元素充能效率",
+  "critRate_": "暴击率",
+  "critDMG_": "暴击伤害",
+  "heal_": "治疗加成",
+  "physical_dmg_": "物理伤害加成",
+  "anemo_dmg_": "风元素伤害加成",
+  "geo_dmg_": "岩元素伤害加成",
+  "electro_dmg_": "雷元素伤害加成",
+  "hydro_dmg_": "水元素伤害加成",
+  "pyro_dmg_": "火元素伤害加成",
+  "cryo_dmg_": "冰元素伤害加成",
+  "dendro_dmg_": "草元素伤害加成"
+}

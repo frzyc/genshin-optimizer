@@ -139,7 +139,8 @@
   "constellation3": {
     "name": "Antithese",
     "description": {
-      "0": "Erhöht die Stufe der Fähigkeit <strong>Universalität – Elaboration der Form</strong> um 3. Höchststufe 15."
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Universalität – Elaboration der Form</strong> um 3.",
+      "1": "Höchststufe 15."
     }
   },
   "constellation4": {
@@ -157,7 +158,8 @@
   "constellation5": {
     "name": "Scharfsinn",
     "description": {
-      "0": "Erhöht die Stufe der Fähigkeit <strong>Sonderfeld – Ketten der Erscheinung</strong> um 3. Höchststufe 15."
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Sonderfeld – Ketten der Erscheinung</strong> um 3.",
+      "1": "Höchststufe 15."
     }
   },
   "constellation6": {

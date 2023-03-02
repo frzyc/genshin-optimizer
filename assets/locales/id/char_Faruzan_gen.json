@@ -136,7 +136,8 @@
   "constellation3": {
     "name": "Spirit-Orchard Stroll",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Wind Realm of Nasamjnin</strong>. Maksimum: Lv. 15."
+      "0": "Meningkatkan 3 level <strong>Wind Realm of Nasamjnin</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -149,7 +150,8 @@
   "constellation5": {
     "name": "Wonderland of Rumination",
     "description": {
-      "0": "Meningkatkan 3 level <strong>The Wind's Secret Ways</strong>. Maksimum: Lv. 15."
+      "0": "Meningkatkan 3 level <strong>The Wind's Secret Ways</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
