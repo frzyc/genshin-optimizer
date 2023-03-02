@@ -3,6 +3,5 @@
   "field_dmg_": "Fiery Sanctum DMG Bonus",
   "initialHeal": "Initial Healing",
   "dotHeal": "Additional Healing",
-  "critHitDuringBurst": "Number of CRIT hits during a single use of <strong>The Lioness' Bite</strong>",
-  "onHitHeal": "On-hit Healing"
+  "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT hit"
 }

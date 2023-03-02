@@ -270,7 +270,7 @@ const sheet: ICharacterSheet = {
       }]
     }), ct.headerTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.heal, { name: ct.ch("onHitHeal")})
+        node: infoMut(dmgFormulas.constellation4.heal, { name: stg("healing")})
       }, {
         text: stg("cd"),
         value: dm.c4.cd,
