@@ -31,10 +31,10 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
   const numExcludedArt = artExclusion.length
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
   const onSelect = useCallback((id: string) => {
-    buildSettingDispatch({ artExclusion: [...artExclusion, id] })
+    buildSettingDispatch({ artExclusion: [...artExclusion, id], useExcludedArts: true })
   }, [buildSettingDispatch, artExclusion])
   const onDelSelect = useCallback((id: string) => {
-    buildSettingDispatch({ artExclusion: artExclusion.filter(i => i !== id) })
+    buildSettingDispatch({ artExclusion: artExclusion.filter(i => i !== id), useExcludedArts: true })
   }, [buildSettingDispatch, artExclusion])
   const toggleArtExclusion = useCallback(() =>
     buildSettingDispatch({ useExcludedArts: !useExcludedArts })
@@ -62,7 +62,7 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
             </Grid>)}
         </Grid>
       </CardContent>
-    </CardDark ></ModalWrapper>
+    </CardDark></ModalWrapper>
 
     {/* Button to open modal */}
     <ButtonGroup sx={{ display: "flex", width: "100%" }}>
