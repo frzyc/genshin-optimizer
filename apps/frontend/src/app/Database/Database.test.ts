@@ -446,12 +446,12 @@ describe("Database", () => {
     })
   })
 
-  describe('DataManager.swapId', () => {
-    test('should swapId for artifacts', () => {
+  describe('DataManager.changeId', () => {
+    test('should changeId for artifacts', () => {
       const art = randomizeArtifact({ location: "Albedo", slotKey: "flower" })
       const oldId = database.arts.new(art)
       const newId = "newTestId"
-      database.arts.swapId(oldId, newId)
+      database.arts.changeId(oldId, newId)
 
       expect(database.arts.get(oldId)).toBeUndefined()
 
@@ -460,12 +460,12 @@ describe("Database", () => {
       expect(cachArt?.location).toEqual("Albedo")
       expect(database.chars.get("Albedo")?.equippedArtifacts.flower).toEqual(newId)
     })
-    test('should swapId for weapons', () => {
+    test('should changeId for weapons', () => {
       const weapon = initialWeapon("AmenomaKageuchi")
       weapon.location = "Albedo"
       const oldId = database.weapons.new(weapon)
       const newId = "newTestId"
-      database.weapons.swapId(oldId, newId)
+      database.weapons.changeId(oldId, newId)
 
       expect(database.weapons.get(oldId)).toBeUndefined()
 

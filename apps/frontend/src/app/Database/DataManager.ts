@@ -85,7 +85,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     delete this.listeners[key]
   }
   /**
-   * Swaps the entry in `oldKey` to a `newKey`.
+   * change the id of the entry in `oldKey` to a `newKey`.
    * Will fail if
    *   oldKey == newKey
    *   data[oldKey] doesnt exist
@@ -96,7 +96,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
    * @param notify
    * @returns
    */
-  swapId(oldKey: CacheKey, newKey: CacheKey, notify = false): boolean {
+  changeId(oldKey: CacheKey, newKey: CacheKey, notify = false): boolean {
     if (oldKey === newKey) return false
     const value = this.get(oldKey)
     if (!value) return false

@@ -121,7 +121,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         if (this.get(importId)) { // swap existing to another id
           const newId = this.generateKey(takenIds)
           takenIds.add(newId)
-          this.swapId(importId, newId)
+          this.changeId(importId, newId)
 
           if (idsToRemove.has(importId)) {
             idsToRemove.delete(importId)
