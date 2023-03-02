@@ -1,4 +1,6 @@
 import { CharacterKey } from "@genshin-optimizer/consts"
+import { IArtifact } from "../Types/artifact"
+import { IWeapon } from "../Types/weapon"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { defaultInitialWeapon, initialWeapon } from "../Util/WeaponUtil"
 import { ArtCharDatabase } from "./Database"
@@ -16,7 +18,7 @@ describe("Database", () => {
     database = new ArtCharDatabase(dbIndex, dbStorage)
   })
 
-  test("Support roundtrip import-export", async () => {
+  test("Support roundtrip import-export", () => {
     const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
     const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
 
@@ -81,10 +83,10 @@ describe("Database", () => {
       expect(storage.getItem("artifact_x")).toBeNull()
     })
   })
-  test("Ensure Equipment", async () => {
+  test("Ensure Equipment", () => {
     const newKeys: CharacterKey[] = []
     const unfollow = database.chars.followAny((k, reason, value) => reason === "new" && newKeys.push(k))
-    database.arts.new({ ...await randomizeArtifact(), location: "Amber" })
+    database.arts.new({ ...randomizeArtifact(), location: "Amber" })
     expect(database.chars.get("Amber")).toBeTruthy()
     expect(database.weapons.get(database.chars.get("Amber")!.equippedWeapon)).toBeTruthy()
     expect(newKeys).toEqual(["Amber"])
@@ -96,15 +98,15 @@ describe("Database", () => {
     unfollow()
   })
 
-  test("Equip swap", async () => {
+  test("Equip swap", () => {
     database.chars.set("Albedo", initialCharacter("Albedo"))
     database.weapons.new({ ...defaultInitialWeapon("sword"), location: "Albedo" })
 
-    const art1 = await randomizeArtifact({ slotKey: "circlet" })
+    const art1 = randomizeArtifact({ slotKey: "circlet" })
     art1.location = "Albedo"
     const art1id = database.arts.new(art1)
     expect(database.chars.get("Albedo")!.equippedArtifacts.circlet).toEqual(art1id)
-    const art2 = await randomizeArtifact({ slotKey: "circlet" })
+    const art2 = randomizeArtifact({ slotKey: "circlet" })
     art2.location = "Albedo"
     const art2id = database.arts.new(art2)
     expect(database.chars.get("Albedo")!.equippedArtifacts.circlet).toEqual(art2id)
@@ -123,7 +125,7 @@ describe("Database", () => {
     expect(database.arts.get(art1id)!.location).toEqual("Albedo")
   })
 
-  test("cannot remove equipped weapon", async () => {
+  test("cannot remove equipped weapon", () => {
     database.chars.set("Albedo", initialCharacter("Albedo"))
     const sword1 = database.weapons.new({ ...defaultInitialWeapon("sword"), location: "Albedo" })
     database.weapons.remove(sword1)
@@ -136,9 +138,9 @@ describe("Database", () => {
     expect(database.chars.get("Albedo")!.equippedWeapon).toEqual(sword2)
   })
 
-  test("Remove artifact with equipment", async () => {
+  test("Remove artifact with equipment", () => {
     database.chars.set("Albedo", initialCharacter("Albedo"))
-    const art1id = database.arts.new({ ...await randomizeArtifact({ slotKey: "circlet" }), location: "Albedo" })
+    const art1id = database.arts.new({ ...randomizeArtifact({ slotKey: "circlet" }), location: "Albedo" })
     expect(database.chars.get("Albedo")!.equippedArtifacts.circlet).toEqual(art1id)
     expect(database.arts.get(art1id)?.location).toEqual("Albedo")
     database.arts.remove(art1id)
@@ -146,7 +148,7 @@ describe("Database", () => {
     expect(database.arts.get(art1id)).toBeUndefined()
   })
 
-  test("Test import with initials", async () => {
+  test("Test import with initials", () => {
     // When adding artifacts with equipment, expect character/weapons to be created
     const art1 = randomizeArtifact({ slotKey: "circlet", location: "Albedo" }),
       art2 = randomizeArtifact({ location: "Amber" })
@@ -174,7 +176,7 @@ describe("Database", () => {
 
   })
 
-  test("Test import with no equip", async () => {
+  test("Test import with no equip", () => {
     // When adding artifacts with equipment, expect character/weapons to be created
     const art1 = randomizeArtifact({ slotKey: "circlet", location: "Amber" })
 
@@ -197,7 +199,7 @@ describe("Database", () => {
     expect(database.chars.get("Amber")?.equippedArtifacts.circlet).toEqual(id)
   })
 
-  test("Test partial merge", async () => {
+  test("Test partial merge", () => {
     // Add Character and Artifact
     const albedo = initialCharacter("Albedo")
     const albedoWeapon = defaultInitialWeapon("sword")
@@ -259,71 +261,246 @@ describe("Database", () => {
     expect(importResult.characters.new.length).toEqual(1)
     expect(database.chars.get("Dori")?.equippedWeapon).toBeTruthy()
   })
+  describe('import again with overlapping ids', () => {
+    test("import again with overlapping artifact ids", () => {
+      const old1 = randomizeArtifact({ slotKey: "plume" })
+      const old2 = randomizeArtifact({ slotKey: "flower" })
+      const old3 = randomizeArtifact({ slotKey: "goblet" })
+      const old4 = randomizeArtifact({ slotKey: "circlet" })
 
-  test("Test Traveler share equipment", async () => {
-    database.chars.set("TravelerAnemo", initialCharacter("TravelerAnemo"))
-    database.chars.set("TravelerGeo", initialCharacter("TravelerGeo"))
-    const art1 = await randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate" })
-    const art1Id = database.arts.new({ ...art1, location: "Traveler" })
-    database.chars.set("TravelerElectro", initialCharacter("TravelerElectro"))
+      const oldId1 = database.arts.new(old1)
+      const oldId2 = database.arts.new(old2)
+      const oldId3 = database.arts.new(old3)
+      const oldId4 = database.arts.new(old4)
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(["artifact_0", "artifact_1", "artifact_2", "artifact_3"])
 
-    expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art1Id)
-    expect(database.chars.get("TravelerGeo")!.equippedArtifacts.circlet).toEqual(art1Id)
-    expect(database.chars.get("TravelerElectro")!.equippedArtifacts.circlet).toEqual(art1Id)
-    const weapon1Id = database.chars.get("TravelerAnemo")!.equippedWeapon
-    expect(database.chars.get("TravelerGeo")!.equippedWeapon).toEqual(weapon1Id)
-    expect(database.chars.get("TravelerElectro")!.equippedWeapon).toEqual(weapon1Id)
+      const good: IGOOD = {
+        format: "GOOD",
+        version: 1,
+        source: "Genshin Optimizer",
+        artifacts: [
+          { ...old1, id: oldId1 } as IArtifact,
+          { ...old2, id: oldId2 } as IArtifact,
 
-    const art2 = await randomizeArtifact({ slotKey: "circlet", setKey: "ArchaicPetra" })
-    const art2Id = database.arts.new({ ...art2, location: "Traveler" })
-    expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
-    expect(database.chars.get("TravelerGeo")!.equippedArtifacts.circlet).toEqual(art2Id)
-    expect(database.chars.get("TravelerElectro")!.equippedArtifacts.circlet).toEqual(art2Id)
+          //swap these two
+          { ...old4, id: oldId3 } as IArtifact,
+          { ...old3, id: oldId4 } as IArtifact,
+        ]
+      }
 
-    const weapon2Id = database.weapons.new({ ...initialWeapon("SkywardBlade"), location: "Traveler" })
-    expect(database.chars.get("TravelerAnemo")!.equippedWeapon).toEqual(weapon2Id)
-    expect(database.chars.get("TravelerGeo")!.equippedWeapon).toEqual(weapon2Id)
-    expect(database.chars.get("TravelerElectro")!.equippedWeapon).toEqual(weapon2Id)
+      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      expect(importResult.artifacts.notInImport).toEqual(0)
+      expect(importResult.artifacts.unchanged.length).toEqual(4)
+      expect(database.arts.values.length).toEqual(4)
+      // Expect imports to overwrite the id of old
+      expect(database.arts.get(oldId1)?.slotKey).toEqual("plume")
+      expect(database.arts.get(oldId2)?.slotKey).toEqual("flower")
+      expect(database.arts.get(oldId3)?.slotKey).toEqual("circlet")
+      expect(database.arts.get(oldId4)?.slotKey).toEqual("goblet")
+    })
 
-    // deletion dont remove equipment until all traveler is gone
-    database.chars.remove("TravelerElectro")
-    database.chars.remove("TravelerGeo")
+    test("import again with overlapping weapon ids", () => {
 
-    expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
-    expect(database.chars.get("TravelerAnemo")!.equippedWeapon).toEqual(weapon2Id)
-    expect(database.arts.get(art2Id)!.location).toEqual("Traveler")
-    expect(database.weapons.get(weapon2Id)!.location).toEqual("Traveler")
+      const old1 = initialWeapon("AmenomaKageuchi")
+      const old2 = initialWeapon("BlackcliffSlasher")
+      const old3 = initialWeapon("CalamityQueller")
+      const old4 = initialWeapon("Deathmatch")
 
-    // deletion of final traveler unequips
-    database.chars.remove("TravelerAnemo")
+      const oldId1 = database.weapons.new(old1)
+      const oldId2 = database.weapons.new(old2)
+      const oldId3 = database.weapons.new(old3)
+      const oldId4 = database.weapons.new(old4)
+      expect([oldId1, oldId2, oldId3, oldId4]).toEqual(["weapon_0", "weapon_1", "weapon_2", "weapon_3"])
 
-    expect(database.arts.get(art2Id)!.location).toEqual("")
-    expect(database.weapons.get(weapon2Id)!.location).toEqual("")
+      const good: IGOOD = {
+        format: "GOOD",
+        version: 1,
+        source: "Genshin Optimizer",
+        weapons: [
+          { ...old1, id: oldId1 } as IWeapon,
+          { ...old2, id: oldId2 } as IWeapon,
+
+          //swap these two
+          { ...old4, id: oldId3 } as IWeapon,
+          { ...old3, id: oldId4 } as IWeapon,
+        ]
+      }
+
+      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      expect(importResult.weapons.notInImport).toEqual(0)
+      expect(importResult.weapons.unchanged.length).toEqual(4)
+      expect(database.weapons.values.length).toEqual(4)
+      // Expect imports to overwrite the id of old
+      expect(database.weapons.get(oldId1)?.key).toEqual("AmenomaKageuchi")
+      expect(database.weapons.get(oldId2)?.key).toEqual("BlackcliffSlasher")
+      expect(database.weapons.get(oldId3)?.key).toEqual("Deathmatch")
+      expect(database.weapons.get(oldId4)?.key).toEqual("CalamityQueller")
+    })
   })
-})
-test("Test invalid weapon location", async () => {
-  // Add Character and Artifact
-  const albedo = initialCharacter("Albedo")
-  const albedoWeapon = defaultInitialWeapon("sword")
-  albedoWeapon.location = "Albedo"
+
+  describe('mutial exclusion import with ids', () => {
+    test("import with mutually-exclusive artifact ids", () => {
+      const old1 = randomizeArtifact({ slotKey: "plume" })
+      const old2 = randomizeArtifact({ slotKey: "flower" })
+      const new1 = randomizeArtifact({ slotKey: "goblet" })
+      const new2 = randomizeArtifact({ slotKey: "circlet" })
+
+      const oldId1 = database.arts.new(old1)
+      const oldId2 = database.arts.new(old2)
+      expect([oldId1, oldId2]).toEqual(["artifact_0", "artifact_1"])
+
+      const good: IGOOD = {
+        format: "GOOD",
+        version: 1,
+        source: "Genshin Optimizer",
+        artifacts: [
+          { ...new1, id: oldId1 } as IArtifact,
+          { ...new2, id: oldId2 } as IArtifact,
+        ]
+      }
+
+      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      expect(importResult.artifacts.notInImport).toEqual(2)
+      expect(database.arts.values.length).toEqual(4)
+      // Expect imports to overwrite the id of old
+      expect(database.arts.get(oldId1)?.slotKey).toEqual("goblet")
+      expect(database.arts.get(oldId2)?.slotKey).toEqual("circlet")
+      // Expect old artifacts to have new id
+      expect(database.arts.values.find(a => a.slotKey === "plume")?.id).not.toEqual(oldId1)
+      expect(database.arts.values.find(a => a.slotKey === "flower")?.id).not.toEqual(oldId2)
+    })
+
+    test("import with mutually exclusive weapon ids", () => {
+
+      const old1 = initialWeapon("AmenomaKageuchi")
+      const old2 = initialWeapon("BlackcliffSlasher")
+      const new1 = initialWeapon("CalamityQueller")
+      const new2 = initialWeapon("Deathmatch")
+
+      const oldId1 = database.weapons.new(old1)
+      const oldId2 = database.weapons.new(old2)
+      expect([oldId1, oldId2]).toEqual(["weapon_0", "weapon_1"])
+
+      const good: IGOOD = {
+        format: "GOOD",
+        version: 1,
+        source: "Genshin Optimizer",
+        weapons: [
+          { ...new1, id: oldId1 } as IWeapon,
+          { ...new2, id: oldId2 } as IWeapon,
+        ]
+      }
+
+      const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
+      expect(importResult.weapons.notInImport).toEqual(2)
+      expect(database.weapons.values.length).toEqual(4)
+      // Expect imports to overwrite the id of old
+      expect(database.weapons.get(oldId1)?.key).toEqual("CalamityQueller")
+      expect(database.weapons.get(oldId2)?.key).toEqual("Deathmatch")
+      // Expect old artifacts to have new id
+      expect(database.weapons.values.find(a => a.key === "AmenomaKageuchi")?.id).not.toEqual(oldId1)
+      expect(database.weapons.values.find(a => a.key === "BlackcliffSlasher")?.id).not.toEqual(oldId2)
+    })
+  })
+
+  describe("Traveler Handling", () => {
+    test("Test Traveler share equipment", () => {
+      database.chars.set("TravelerAnemo", initialCharacter("TravelerAnemo"))
+      database.chars.set("TravelerGeo", initialCharacter("TravelerGeo"))
+      const art1 = randomizeArtifact({ slotKey: "circlet", setKey: "EmblemOfSeveredFate" })
+      const art1Id = database.arts.new({ ...art1, location: "Traveler" })
+      database.chars.set("TravelerElectro", initialCharacter("TravelerElectro"))
+
+      expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art1Id)
+      expect(database.chars.get("TravelerGeo")!.equippedArtifacts.circlet).toEqual(art1Id)
+      expect(database.chars.get("TravelerElectro")!.equippedArtifacts.circlet).toEqual(art1Id)
+      const weapon1Id = database.chars.get("TravelerAnemo")!.equippedWeapon
+      expect(database.chars.get("TravelerGeo")!.equippedWeapon).toEqual(weapon1Id)
+      expect(database.chars.get("TravelerElectro")!.equippedWeapon).toEqual(weapon1Id)
+
+      const art2 = randomizeArtifact({ slotKey: "circlet", setKey: "ArchaicPetra" })
+      const art2Id = database.arts.new({ ...art2, location: "Traveler" })
+      expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
+      expect(database.chars.get("TravelerGeo")!.equippedArtifacts.circlet).toEqual(art2Id)
+      expect(database.chars.get("TravelerElectro")!.equippedArtifacts.circlet).toEqual(art2Id)
+
+      const weapon2Id = database.weapons.new({ ...initialWeapon("SkywardBlade"), location: "Traveler" })
+      expect(database.chars.get("TravelerAnemo")!.equippedWeapon).toEqual(weapon2Id)
+      expect(database.chars.get("TravelerGeo")!.equippedWeapon).toEqual(weapon2Id)
+      expect(database.chars.get("TravelerElectro")!.equippedWeapon).toEqual(weapon2Id)
+
+      // deletion dont remove equipment until all traveler is gone
+      database.chars.remove("TravelerElectro")
+      database.chars.remove("TravelerGeo")
+
+      expect(database.chars.get("TravelerAnemo")!.equippedArtifacts.circlet).toEqual(art2Id)
+      expect(database.chars.get("TravelerAnemo")!.equippedWeapon).toEqual(weapon2Id)
+      expect(database.arts.get(art2Id)!.location).toEqual("Traveler")
+      expect(database.weapons.get(weapon2Id)!.location).toEqual("Traveler")
+
+      // deletion of final traveler unequips
+      database.chars.remove("TravelerAnemo")
+
+      expect(database.arts.get(art2Id)!.location).toEqual("")
+      expect(database.weapons.get(weapon2Id)!.location).toEqual("")
+    })
+  })
+
+  describe('DataManager.changeId', () => {
+    test('should changeId for artifacts', () => {
+      const art = randomizeArtifact({ location: "Albedo", slotKey: "flower" })
+      const oldId = database.arts.new(art)
+      const newId = "newTestId"
+      database.arts.changeId(oldId, newId)
+
+      expect(database.arts.get(oldId)).toBeUndefined()
+
+      const cachArt = database.arts.get(newId)
+      expect(cachArt).toBeTruthy()
+      expect(cachArt?.location).toEqual("Albedo")
+      expect(database.chars.get("Albedo")?.equippedArtifacts.flower).toEqual(newId)
+    })
+    test('should changeId for weapons', () => {
+      const weapon = initialWeapon("AmenomaKageuchi")
+      weapon.location = "Albedo"
+      const oldId = database.weapons.new(weapon)
+      const newId = "newTestId"
+      database.weapons.changeId(oldId, newId)
+
+      expect(database.weapons.get(oldId)).toBeUndefined()
+
+      const cachWea = database.weapons.get(newId)
+      expect(cachWea).toBeTruthy()
+      expect(cachWea?.location).toEqual("Albedo")
+      expect(database.chars.get("Albedo")?.equippedWeapon).toEqual(newId)
+    })
+  })
+
+  test("Test invalid weapon location", () => {
+    // Add Character and Artifact
+    const albedo = initialCharacter("Albedo")
+    const albedoWeapon = defaultInitialWeapon("sword")
+    albedoWeapon.location = "Albedo"
 
 
-  database.chars.set(albedo.key, albedo)
-  const swordid = database.weapons.new(albedoWeapon)
-  database.weapons.set(swordid, albedoWeapon)
+    database.chars.set(albedo.key, albedo)
+    const swordid = database.weapons.new(albedoWeapon)
+    database.weapons.set(swordid, albedoWeapon)
 
-  expect(database.chars.get("Albedo")?.equippedWeapon).toEqual(swordid)
-  const good1: IGOOD = {
-    format: "GOOD",
-    version: 1,
-    source: "Scanner",
-    weapons: [
-      //invalid bow on sword char
-      { ...initialWeapon("AlleyHunter"), location: "Albedo" }
-    ]
-  }
-  const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
-  expect(importResult.weapons.invalid.length).toEqual(1)
-  expect(importResult.characters.new.length).toEqual(0)
-  expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("DullBlade")
+    expect(database.chars.get("Albedo")?.equippedWeapon).toEqual(swordid)
+    const good1: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      weapons: [
+        //invalid bow on sword char
+        { ...initialWeapon("AlleyHunter"), location: "Albedo" }
+      ]
+    }
+    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    expect(importResult.weapons.invalid.length).toEqual(1)
+    expect(importResult.characters.new.length).toEqual(0)
+    expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("DullBlade")
+  })
+
 })
