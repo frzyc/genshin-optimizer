@@ -4,18 +4,23 @@ import { Data, enemy, percent, self, selfBuff, tagVal } from '../util'
 const { ele, amp, cata } = self.prep
 
 const data: Data = [
+  // Formulas
+  // If any `prep` nodes are available, put them in `dynTag` or note them here
   selfBuff.formula.dmg.add(dynTag(
     prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg),
-    { ele, amp, cata } // `move:` is fixed
+    { ele, amp, cata /* `move` is fixed */ }
   )),
-  selfBuff.formula.shield.add(
-    // No `prep` needed for `q:shield`; `ele:` is fixed
-    prod(self.formula.base, sum(percent(1), self.base.shield_))
-  ),
-  selfBuff.formula.heal.add(
-    // No `prep` needed for `q:heal`
-    prod(self.formula.base, sum(percent(1), self.base.heal_))
-  ),
+  selfBuff.formula.shield.add(prod(self.formula.base, sum(percent(1), self.base.shield_))),
+  selfBuff.formula.heal.add(prod(self.formula.base, sum(percent(1), self.base.heal_))),
+
+  // Transformative reactions
+  // `prep.trans` and `prep.ele` are fixed on `trans`, `transCrit`, and `swirl`
+  selfBuff.formula.trans.add(prod(self.trans.multi, self.reaction.transBase)),
+  selfBuff.formula.transCrit.add(prod(self.trans.multi, self.reaction.transBase, self.trans.critMulti)),
+  selfBuff.formula.swirl.add(dynTag(
+    prod(sum(prod(self.trans.multi, self.reaction.transBase), self.reaction.cataAddi), enemy.common.postRes, self.reaction.ampMulti),
+    { cata: self.prep.cata, amp: self.prep.amp }
+  )),
 
   /* `prep:` formulas have a stricter restriction as it is computed before most
    * computations are ready. Most `stats`-related queries are not available, and
@@ -37,5 +42,7 @@ const data: Data = [
     dendro: cmpEq(enemy.cond.cata, 'spread', 'spread', ''),
     electro: cmpEq(enemy.cond.cata, 'aggravate', 'aggravate', ''),
   }, '')),
+
+  selfBuff.prep.ele.name('trans').add(tagVal('ele')), // Trans-only
 ]
 export default data

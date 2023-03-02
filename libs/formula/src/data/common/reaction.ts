@@ -65,6 +65,7 @@ const data: Data = [
     'nonCrit': 1,
     'avg': sum(1, prod(self.trans.cappedCritRate_, self.trans.critDMG_)),
   })),
+  ...allTransformativeReactionKeys.map(trans => selfBuff.trans.multi[trans].add(transInfo[trans].multi)),
 
   // Trans listing
   ...allTransformativeReactionKeys.flatMap(trans => {
@@ -80,16 +81,4 @@ const data: Data = [
   }),
 ]
 
-reader.name('trans') // Register `name:trans`
-const transFormulas = register('static', [
-  ...allTransformativeReactionKeys.map(trans => selfBuff.trans.multi[trans].add(transInfo[trans].multi)),
-  selfBuff.formula.trans.add(prod(self.trans.multi, self.reaction.transBase)),
-  selfBuff.formula.transCrit.add(prod(self.trans.multi, self.reaction.transBase, self.trans.critMulti)),
-  selfBuff.formula.swirl.add(dynTag(
-    prod(sum(prod(self.trans.multi, self.reaction.transBase), self.reaction.cataAddi), enemy.common.postRes, self.reaction.ampMulti),
-    { cata: self.prep.cata, amp: self.prep.amp }
-  )),
-  selfBuff.prep.ele.add(tagVal('ele')),
-]).map(({ tag, value }) => ({ tag: { ...tag, name: 'trans' }, value }))
-
-export default [...data, ...transFormulas]
+export default data
