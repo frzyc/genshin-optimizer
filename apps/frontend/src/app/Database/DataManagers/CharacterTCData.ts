@@ -109,8 +109,8 @@ function validateCharTcOptimization(optimization: any): ICharTC["optimization"] 
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC["optimization"]["maxSubstats"] {
   return {
-    ...objectKeyMap(allSubstatKeys, () => 0),
-    useMaxOff: true,
+    ...objectKeyMap(allSubstatKeys, () => 30),
+    useMaxOff: false,
     max: 10,
     offset: 2
   }

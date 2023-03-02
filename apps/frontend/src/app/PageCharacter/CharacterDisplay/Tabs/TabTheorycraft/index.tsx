@@ -287,10 +287,10 @@ export default function TabTheorycraft() {
     if (apply) {
       const data_ = deepClone(data)
       data_.artifact.substats.stats = objectMap(data.artifact.substats.stats, (v, k) => v + (maxBuffer![k] ?? 0) * comp(k))
+      data_.optimization.distributedSubstats = 0
       setData(data_)
-      setDistributedSubstats(0)
     }
-  }, [characterKey, data, database, distributedSubstats, gender, maxSubstats, optimizationTarget, setData, setDistributedSubstats])
+  }, [characterKey, data, database, distributedSubstats, gender, maxSubstats, optimizationTarget, setData])
 
   return <Stack spacing={1}>
     <CardLight>
@@ -347,17 +347,17 @@ export default function TabTheorycraft() {
         optimizationTarget={optimizationTarget}
         setTarget={target => setOptimizationTarget(target)}
       />
-      <Button
+      {process.env.NODE_ENV === "development" && <Button
         onClick={optimizeSubstats(false)}
         disabled={!optimizationTarget}
       >
-        Optimize Substats
-      </Button>
+        Log Optimized Substats
+      </Button>}
       <Button
         onClick={optimizeSubstats(true)}
         disabled={!optimizationTarget}
       >
-        Optimize & Apply Substats
+        Optimize Substats
       </Button>
     </DataContext.Provider> : <Skeleton variant='rectangular' width='100%' height={500} />}
     <CardLight sx={{ flexGrow: 1, p: 1 }}>
