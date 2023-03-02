@@ -1,22 +1,18 @@
 import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/waverider'
 import { Data, enemy, percent, self, selfBuff } from '../util'
 
-const { move, ele, amp, cata, trans } = self.prep
+const { move, ele, amp, cata } = self.prep
 
 const data: Data = [
-  self.formula.dmg.add(dynTag(
+  selfBuff.formula.dmg.add(dynTag(
     prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg),
     { move, ele, amp, cata }
   )),
-  self.formula.trans.add(dynTag(
-    prod(self.dmg.out, self.trans.critMulti, enemy.common.inDmg),
-    { ele, trans }
-  )),
-  self.formula.shield.add(dynTag(
+  selfBuff.formula.shield.add(dynTag(
     prod(self.formula.base, sum(percent(1), self.base.shield_)),
     { ele }
   )),
-  self.formula.heal.add(
+  selfBuff.formula.heal.add(
     // No `prep` needed for `q:heal`
     prod(self.formula.base, sum(percent(1), self.base.heal_))
   ),

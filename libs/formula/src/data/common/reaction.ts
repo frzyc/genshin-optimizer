@@ -1,6 +1,6 @@
-import { ElementWithPhyKey, TransformativeReactionKey } from '@genshin-optimizer/consts'
-import { lookup, NumNode, prod, subscript, sum, sumfrac } from '@genshin-optimizer/waverider'
-import { Data, percent, self, selfBuff } from '../util'
+import { allElementKeys, allElementWithPhyKeys, allTransformativeReactionKeys, ElementWithPhyKey, TransformativeReactionKey } from '@genshin-optimizer/consts'
+import { cmpEq, cmpNE, dynTag, lookup, NumNode, prod, StrNode, subscript, sum, sumfrac, tag } from '@genshin-optimizer/waverider'
+import { Data, enemy, percent, reader, register, self, selfBuff } from '../util'
 
 const transLvlMultis = [NaN, // lvl 0
   17.165606, 18.535048, 19.904854, 21.274902, 22.6454, 24.649612, 26.640642, 28.868587, 31.36768, 34.143345, 37.201, 40.66, 44.446667, 48.56352, 53.74848, 59.081898, 64.420044, 69.72446, 75.12314, 80.58478, 86.11203, 91.70374, 97.24463, 102.812645, 108.40956, 113.20169, 118.102905, 122.97932, 129.72733, 136.29291, 142.67085, 149.02902, 155.41699, 161.8255, 169.10631, 176.51808, 184.07274, 191.70952, 199.55692, 207.38205, 215.3989, 224.16566, 233.50217, 243.35057, 256.06308, 268.5435, 281.52606, 295.01364, 309.0672, 323.6016, 336.75754, 350.5303, 364.4827, 378.61917, 398.6004, 416.39825, 434.387, 452.95105, 472.60623, 492.8849, 513.56854, 539.1032, 565.51056, 592.53876, 624.4434, 651.47015, 679.4968, 707.79407, 736.67145, 765.64026, 794.7734, 824.67737, 851.1578, 877.74207, 914.2291, 946.74677, 979.4114, 1011.223, 1044.7917, 1077.4437, 1109.9976, 1142.9766, 1176.3695, 1210.1844, 1253.8357, 1288.9528, 1325.4841, 1363.4569, 1405.0974, 1446.8535]
@@ -16,18 +16,36 @@ function eleMasMulti(a: number, b: number): NumNode {
 
 const crystallizeHit = prod(subscript(lvl, cryLvlMultis), eleMasMulti(40 / 9, 1400),)
 
-type TransInfo = { multi: number, variants: ElementWithPhyKey[], resist: ElementWithPhyKey, canCrit: boolean }
-const transReactionInfo: Record<TransformativeReactionKey, TransInfo> = {
-  overloaded: { multi: 2, variants: ['pyro'], resist: 'pyro', canCrit: false },
-  shattered: { multi: 1.5, variants: ['physical'], resist: 'physical', canCrit: false },
-  electrocharged: { multi: 1.2, variants: ['electro'], resist: 'electro', canCrit: false },
-  superconduct: { multi: 0.5, variants: ['cryo'], resist: 'cryo', canCrit: false },
-  swirl: { multi: 0.6, variants: ['pyro', 'hydro', 'electro', 'cryo'], resist: 'pyro', canCrit: false },
+type TransInfo = { multi: number, canCrit: boolean, triggeredBy: ElementWithPhyKey[], variants: ElementWithPhyKey[] }
+const transInfo: Record<TransformativeReactionKey, TransInfo> = {
+  overloaded: { multi: 2, canCrit: false, triggeredBy: ['pyro'], variants: ['pyro'] },
+  shattered: { multi: 1.5, canCrit: false, triggeredBy: ['physical'], variants: ['physical'] },
+  electrocharged: { multi: 1.2, canCrit: false, triggeredBy: ['electro'], variants: ['electro'] },
+  superconduct: { multi: 0.5, canCrit: false, triggeredBy: ['cryo'], variants: ['cryo'] },
+  swirl: { multi: 0.6, canCrit: false, triggeredBy: ['anemo'], variants: ['pyro', 'hydro', 'electro', 'cryo'] },
+  burning: { multi: 0.25, canCrit: true, triggeredBy: ['pyro', 'dendro'], variants: ['pyro'] },
+  bloom: { multi: 2, canCrit: true, triggeredBy: ['dendro', 'hydro'], variants: ['dendro'] },
+  burgeon: { multi: 3, canCrit: true, triggeredBy: ['pyro'], variants: ['dendro'] },
+  hyperbloom: { multi: 3, canCrit: true, triggeredBy: ['electro'], variants: ['dendro'] }
+}
+const transTriggerByEle = Object.fromEntries(allElementWithPhyKeys.map(ele => [ele, new Set()])) as Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
+{
+  const immediateFromEle = Object.fromEntries(allElementWithPhyKeys.map(ele => [ele, new Set()])) as Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
+  for (const trans of allTransformativeReactionKeys)
+    for (const ele of transInfo[trans].triggeredBy)
+      immediateFromEle[ele].add(trans)
 
-  burning: { multi: 0.25, variants: ['pyro', 'dendro'], resist: 'pyro', canCrit: true },
-  bloom: { multi: 2, variants: ['dendro', 'hydro'], resist: 'dendro', canCrit: true },
-  burgeon: { multi: 3, variants: ['pyro'], resist: 'dendro', canCrit: true },
-  hyperbloom: { multi: 3, variants: ['electro'], resist: 'dendro', canCrit: true },
+  function trigger(ele: ElementWithPhyKey, trans: TransformativeReactionKey) {
+    if (transTriggerByEle[ele].has(trans)) return
+    transTriggerByEle[ele].add(trans)
+
+    for (const variant of transInfo[trans].variants)
+      for (const trans of immediateFromEle[variant])
+        trigger(ele, trans)
+  }
+  for (const ele of allElementWithPhyKeys)
+    for (const trans of immediateFromEle[ele])
+      trigger(ele, trans)
 }
 
 const data: Data = [
@@ -42,17 +60,50 @@ const data: Data = [
   selfBuff.reaction.cataAddi.aggravate.electro.add(prod(subscript(self.char.lvl, transLvlMultis), 1.15, cataBase)),
 
   selfBuff.reaction.transBase.add(prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000))),
-  selfBuff.trans.basedCritMulti.add(lookup(self.common.critMode, {
+  selfBuff.trans.critMulti.add(lookup(self.common.critMode, {
     'crit': sum(1, self.trans.cappedCritRate_),
     'nonCrit': 1,
     'avg': sum(1, prod(self.trans.cappedCritRate_, self.trans.critDMG_)),
   })),
 
-  ...Object.entries(transReactionInfo).flatMap(([k, { multi, variants, resist, canCrit }]) => {
-    const result: Data = [
-      // TODO: Add relevant `prep` entries and top-level formula
-    ]
-    return result
+  // Trans listing
+  ...allTransformativeReactionKeys.flatMap(trans => {
+    const { variants } = transInfo[trans]
+
+    let listing: string | StrNode
+    if (transTriggerByEle['physical'].has(trans)) {
+      listing = 'trans'
+    } else {
+      const available = allElementKeys.filter(ele => transTriggerByEle[ele].has(trans))
+      if (available.length === allElementKeys.length)
+        listing = 'trans'
+      else if (available.length === 1)
+        listing = cmpEq(self.char.ele, available[0], 'trans', '')
+      else if (available.length === allElementWithPhyKeys.length - 1)
+        listing = cmpNE(self.char.ele, available[0], 'trans', '')
+      else
+        listing = lookup(self.char.ele, Object.fromEntries(available.map(k => [k, 'trans'])), '')
+    }
+    return variants.map(ele =>
+      selfBuff.formula.listing.add(tag(listing, { trans, ele, src: 'static', name: 'trans' })))
   }),
 ]
-export default data
+reader.name('trans') // Register `name:trans`
+const transFormulas = register('static', [
+  ...allTransformativeReactionKeys.flatMap(trans => {
+    const { multi, variants, canCrit } = transInfo[trans]
+
+    if (trans === 'swirl')
+      return variants.map(ele => selfBuff.formula.trans[trans][ele].add(dynTag(
+        prod(sum(prod(multi, self.reaction.transBase), self.reaction.cataAddi), enemy.common.postRes, self.reaction.ampMulti),
+        { cata: self.prep.cata, amp: self.prep.amp })
+      ))
+
+    const components: (number | NumNode)[] = [multi, self.reaction.transBase]
+    if (canCrit) components.push(self.trans.critMulti)
+    return variants.map(ele => selfBuff.formula.trans[trans][ele].add(prod(...components)))
+  }),
+  ...allElementKeys.map(ele => selfBuff.prep.ele[ele].add(ele)),
+  ...allTransformativeReactionKeys.map(trans => selfBuff.prep.trans[trans].add(trans))
+]).map(({ tag, value }) => ({ tag: { ...tag, name: 'trans' }, value }))
+export default [...data, ...transFormulas]

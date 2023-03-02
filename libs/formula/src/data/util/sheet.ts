@@ -1,8 +1,9 @@
-import { CharacterKey, ElementKey, ElementWithPhyKey, MoveKey, WeaponKey } from '@genshin-optimizer/consts';
+import { ArtifactSetKey, ElementKey, ElementWithPhyKey, MoveKey } from '@genshin-optimizer/consts';
 import { NumNode, prod, StrNode, tag } from '@genshin-optimizer/waverider';
-import { Data, reader, self, selfBuff, teamBuff, usedNames } from '.';
+import { Data, reader, self, selfBuff, Source, teamBuff, usedNames } from '.';
 
-export function register(src: CharacterKey | WeaponKey, ...data: (Data[number] | Data)[]): Data {
+// Use `registerArt` for artifacts
+export function register(src: Exclude<Source, ArtifactSetKey>, ...data: (Data[number] | Data)[]): Data {
   const internal = ({ tag, value }: Data[number]) => ({ tag: { ...tag, src }, value })
   return data.flatMap(data => Array.isArray(data) ? data.map(internal) : internal(data))
 }

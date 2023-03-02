@@ -24,6 +24,7 @@ const data: Data = [
 
   // Capped CR = Max(Min(Final CR, 1), 0)
   selfBuff.common.cappedCritRate_.add(max(min(self.final.critRate_, percent(1)), percent(0))),
+  selfBuff.trans.cappedCritRate_.add(max(min(self.trans.critRate_, percent(1)), percent(0))),
 
   // Default all elemental `common.count`s to zero
   selfBuff.common.count.add(0),

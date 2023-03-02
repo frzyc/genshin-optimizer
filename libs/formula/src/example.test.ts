@@ -96,7 +96,7 @@ describe('example', () => {
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
-    for (const { name, ...tag } of listing) {
+    for (const { name, ...tag } of listing.filter(x => x.src === 'Nahida')) {
       names.push(name!)
       expect(name).toBeTruthy()
       test(`with name ${name}`, () => {
@@ -113,6 +113,7 @@ describe('example', () => {
       'plunging_dmg', 'plunging_high', 'plunging_low',
       'skill_hold', 'skill_press'
     ])
+    expect(listing.filter(x => x.src === 'static').length).toEqual(5)
   })
   test('calculate final formulas', () => {
     const tag = calc.listFormulas({ member: 'member0' }).find(x => x.name === 'normal_0')!

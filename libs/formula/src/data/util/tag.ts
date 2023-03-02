@@ -69,7 +69,7 @@ export const selfTag = {
     cataBase: iso, cataAddi: agg,
     bonus: agg,
   },
-  trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, basedCritMulti: fixed, critMulti: iso },
+  trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, critMulti: fixed },
   dmg: { out: fixed, critMulti: fixed },
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
   formula: {
