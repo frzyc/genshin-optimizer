@@ -1,7 +1,5 @@
 import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
 import { Info } from "../Formula/type";
-import { iconInlineProps } from "../SVGIcons";
-import { MainStatKey, SubstatKey } from "../Types/artifact";
 import elementalData from "./ElementalData";
 import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, crittableTransformativeReactions, CrittableTransformativeReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
 import StatIcon from "./StatIcon";
@@ -215,8 +213,9 @@ export default class KeyMap {
     const info = {} as Partial<Info>
     info.name = this.get(key)
     info.unit = this.unit(key)
-    info.variant = this.getVariant(key)
-    info.icon = <StatIcon statKey={key} iconProps={iconInlineProps}/>
+    const variant = this.getVariant(key)
+    info.variant = variant
+    info.icon = <StatIcon statKey={key} iconProps={{ fontSize: "inherit", color: variant }} />
     return info
   }
 }
