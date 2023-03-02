@@ -128,10 +128,11 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
       let importWeapon = weapon
       let importId: string | undefined = (w as ICachedWeapon).id
-
+      let foundDupOrUpgrade = false
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(weapon, Array.from(idsToRemove))
         if (duplicated[0] || upgraded[0]) {
+          foundDupOrUpgrade = true
           // Favor upgrades with the same location, else use 1st dupe
           let [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
             [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
@@ -144,10 +145,10 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
           }
           isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
           idsToRemove.delete(match.id)
-          if (importId)
-            //Imported weapon will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
-            super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
-          else importId = match.id
+
+          //Imported weapon will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
+          super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
+          if (!importId) importId = match.id // always resolve some id
           importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
         }
       }
@@ -163,9 +164,12 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
             }
           }
         }
-        this.set(importId, importWeapon)
+        this.set(importId, importWeapon, !foundDupOrUpgrade)
+      } else {
+        importId = this.generateKey(takenIds)
+        takenIds.add(importId)
       }
-      else this.new(importWeapon)
+      this.set(importId, importWeapon, !foundDupOrUpgrade)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
     if (result.keepNotInImport || result.ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
