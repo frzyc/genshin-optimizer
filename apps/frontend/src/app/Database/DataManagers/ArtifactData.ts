@@ -112,20 +112,23 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
           }
           isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
           idsToRemove.delete(match.id)
-          if (importId) this.remove(match.id, false)// Do not notify, since this is a "replacement"
+          if (importId)
+            //Imported artifact will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
+            this.remove(match.id, false)// Do not notify, since this is a "replacement"
           else importId = match.id
           importArt = { ...art, location: hasEquipment ? art.location : match.location }
         }
       }
       if (importId) {
-        if (this.get(importId)) { // swap existing to another id
+        if (this.get(importId)) { // `importid` already in use, get a new id
           const newId = this.generateKey(takenIds)
           takenIds.add(newId)
-          this.changeId(importId, newId)
-
-          if (idsToRemove.has(importId)) {
-            idsToRemove.delete(importId)
-            idsToRemove.add(newId)
+          if (this.changeId(importId, newId)) {
+            // Sync the id in `idsToRemove` due to the `changeId`
+            if (idsToRemove.has(importId)) {
+              idsToRemove.delete(importId)
+              idsToRemove.add(newId)
+            }
           }
         }
         this.set(importId, importArt)

@@ -144,20 +144,23 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
           }
           isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
           idsToRemove.delete(match.id)
-          if (importId) super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
+          if (importId)
+            //Imported weapon will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
+            super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
           else importId = match.id
           importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
         }
       }
       if (importId) {
-        if (this.get(importId)) { // swap existing to another id
+        if (this.get(importId)) { // `importid` already in use, get a new id
           const newId = this.generateKey(takenIds)
           takenIds.add(newId)
-          this.changeId(importId, newId)
-
-          if (idsToRemove.has(importId)) {
-            idsToRemove.delete(importId)
-            idsToRemove.add(newId)
+          if (this.changeId(importId, newId)) {
+            // Sync the id in `idsToRemove` due to the `changeId`
+            if (idsToRemove.has(importId)) {
+              idsToRemove.delete(importId)
+              idsToRemove.add(newId)
+            }
           }
         }
         this.set(importId, importWeapon)
