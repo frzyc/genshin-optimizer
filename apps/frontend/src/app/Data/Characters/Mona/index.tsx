@@ -189,7 +189,7 @@ const sheet: ICharacterSheet = {
       }]),
       burst: ct.talentTem("burst", [{
         fields: [{
-          text: ct.ch("bubbleDuration"),
+          text: stg("duration"),
           value: dm.burst.bubbleDuration,
           unit: "s",
         }, {
@@ -212,7 +212,7 @@ const sheet: ICharacterSheet = {
             fields: [{
               node: all_dmg_,
             }, {
-              text: ct.ch("omenDuration"),
+              text: stg("duration"),
               value: (data) => dm.burst.omenDuration[data.get(input.total.burstIndex).value],
               unit: "s",
             }]
