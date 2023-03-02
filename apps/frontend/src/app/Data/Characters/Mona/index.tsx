@@ -235,7 +235,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.passive1.dmg, { name: ct.chg(`skill.skillParams.1`) })
         }, {
-          text: ct.ch("phantomDuration"),
+          text: stg("duration"),
           value: dm.passive1.phantomDuration,
           unit: "s"
         }]
