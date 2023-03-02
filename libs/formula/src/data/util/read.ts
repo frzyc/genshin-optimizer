@@ -1,9 +1,9 @@
 import { allAmplifyingReactionKeys, allCatalyzeReactionKeys, allElementWithPhyKeys, allMoveKeys, allRegionKeys, allTransformativeReactionKeys } from '@genshin-optimizer/consts'
 import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
-import { entryTypes, members, preps, presets, srcs } from './listing'
+import { entryTypes, members, presets, srcs } from './listing'
 
 export const fixedTags = {
-  preset: presets, prep: preps,
+  preset: presets,
   member: members, dst: members,
   et: entryTypes, src: srcs,
 

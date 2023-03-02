@@ -1,5 +1,5 @@
 import { AnyOP, CalcResult, calculation, Calculator as Base } from '@genshin-optimizer/waverider'
-import { preps, self, Tag } from './data/util'
+import { self, Tag } from './data/util'
 
 const { arithmetic } = calculation
 
@@ -15,8 +15,11 @@ export class Calculator extends Base<Output> {
     function constOverride(): Output {
       return { tag, op: 'const', ops: [], conds: [] }
     }
-    const conds = [...x.flatMap(x => x?.meta.conds ?? []), ..._br.flatMap(br => br.meta.conds)]
-    if (tag?.qt === 'cond') conds.push(tag)
+    const preConds = [
+      tag?.qt === 'cond' ? [tag] : [],
+      ...[...x, ..._br].map(x => x?.meta.conds!),
+    ].filter(x => x && x.length)
+    const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 
     switch (op) {
       case 'sum': case 'prod': case 'min': case 'max': case 'sumfrac': {
@@ -37,14 +40,12 @@ export class Calculator extends Base<Output> {
     }
   }
 
-  listFormulas(tag: Omit<Tag, 'qt' | 'q'>): Tag[] {
+  listFormulas(tag: Omit<Tag, 'qt' | 'q'> & { member: string }): Tag[] {
     return this.get(self.formula.listing.withTag(tag).tag).map(listing => {
-      const { val: prep, meta: { tag: { ...tag } } } = listing
-      // Clone and convert `formulaTag` to appropriate shape
-      delete tag.qt, tag.q
-      tag.et = 'prep'
-      tag.prep = prep as typeof preps[number]
+      const { val, meta: { tag: { ...tag } } } = listing
+      // Clone and convert `tag` to appropriate shape
+      tag.q = val as string
       return tag
-    }).filter(x => x.prep)
+    }).filter(x => x.q)
   }
 }

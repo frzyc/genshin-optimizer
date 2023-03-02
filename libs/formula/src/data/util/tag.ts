@@ -44,7 +44,7 @@ const isoSum: Desc = { src: 'iso', accu: 'sum' }
 /** `src:`-agnostic calculation */
 const fixed: Desc = { src: 'static', accu: undefined }
 /** The calculation must have a matching `src:` */
-const fixed2: Desc = { src: undefined, accu: undefined }
+const prep: Desc = { src: undefined, accu: undefined }
 
 const stats: Record<Stat, Desc> = {
   hp: agg, hp_: agg, atk: agg, atk_: agg, def: agg, def_: agg,
@@ -71,8 +71,11 @@ export const selfTag = {
   },
   trans: { out: fixed, cappedCritRate_: fixed, critRate_: agg, critDMG_: agg, basedCritMulti: fixed, critMulti: iso },
   dmg: { out: fixed, critMulti: fixed },
-  prep: { ele: fixed2, move: fixed2, amp: fixed2, cata: fixed2, trans: fixed2 },
-  formula: { base: agg, listing: aggStr, prepType: fixed2 },
+  prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
+  formula: {
+    base: agg, listing: aggStr,
+    dmg: prep, trans: prep, shield: prep, heal: prep,
+  },
 } as const
 export const enemyTag = {
   common: { lvl: fixed, inDmg: fixed, defRed_: agg, defIgn: agg, preRes: agg, postRes: fixed },
@@ -85,7 +88,9 @@ export function convert<V extends Record<string, Record<string, Desc>>>(v: V, ta
   ))])) as any
 }
 
+// For tag key compilation
 export const queries = new Set([...Object.values(selfTag), ...Object.values(enemyTag)].flatMap(x => Object.keys(x)))
+export const queryTypes = new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'cond', 'misc', 'stackIn', 'stackInt', 'stackOut'])
 
 // Default queries
 export const self = convert(selfTag, { et: 'self' })
@@ -101,19 +106,17 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
-export const allConditionals = (src: Source) => allCustoms({ et: 'self', src, qt: 'cond' })
-export const allStatics = (src: Source) => allCustoms({ et: 'self', src, qt: 'misc' })
+export const allConditionals = (src: Source) => allCustoms(src, 'cond')
+export const allStatics = (src: Source) => allCustoms(src, 'misc')
 export const allStacks = (src: Source): Record<string, { in: Read, out: Read }> => {
-  const i = allCustoms({ et: 'stackIn', src, qt: 'misc' })
-  const o = allCustoms({ et: 'stackOut', src, qt: 'misc' })
+  const i = allCustoms(src, 'stackIn')
+  const o = allCustoms(src, 'stackOut')
   return new Proxy({}, {
     get: (_, q: string) => ({ in: i[q], out: o[q] })
   }) as any
 }
-function allCustoms(tag: Omit<Tag, 'q' | 'name'> & { qt: string }): Record<string, Read> {
-  return new Proxy(reader.withTag(tag)._withAll('q'), {
+function allCustoms(src: Source, qt: string, tag: Omit<Tag, 'src' | 'qt' | 'q' | 'name'> = {}): Record<string, Read> {
+  return new Proxy(reader.withTag({ et: 'self', src, qt, ...tag })._withAll('q'), {
     get: (dict, q: string) => (queries.add(q), dict[q])
   })
 }
-
-export const queryTypes = [...new Set([...Object.keys(selfTag), ...Object.keys(enemyTag), 'misc', 'cond'])]

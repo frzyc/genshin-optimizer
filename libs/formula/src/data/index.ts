@@ -7,7 +7,7 @@ import weapon from './weapon'
 
 const data: Data = [...common, ...artifact, ...character, ...weapon]
 const tags = [
-  { category: 'qt', values: queryTypes },
+  { category: 'qt', values: [...queryTypes] },
   { category: 'q', values: ['_', ...queries] },
   undefined,
   ...Object.entries(fixedTags).map(([k, v]) => ({ category: k, values: v })),

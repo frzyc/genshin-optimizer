@@ -17,12 +17,11 @@ export function customDmg(name: string, eleOverride: ElementWithPhyKey | undefin
 
   const entry = team ? teamBuff : selfBuff
   return [
-    entry.formula.listing.reread(entry.formula.prepType.name(name)),
+    entry.formula.listing.add(tag(cond, { name })),
     ...[
       entry.formula.base.add(base),
       entry.prep.ele.add(eleOverride ?? self.reaction.infusion),
       entry.prep.move.add(move),
-      entry.formula.prepType.add(cond),
 
       ...extra,
     ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
@@ -40,11 +39,10 @@ export function customShield(name: string, ele: ElementKey | undefined, base: Nu
 
   const entry = team ? teamBuff : selfBuff
   return [
-    entry.formula.listing.reread(entry.formula.prepType.name(name)),
+    entry.formula.listing.add(tag(cond, { name })),
     ...[
       entry.prep.ele.add(ele ?? ''),
       entry.formula.base.add(base),
-      entry.formula.prepType.add(cond),
 
       ...extra,
     ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
@@ -56,10 +54,9 @@ export function customHeal(name: string, base: NumNode, { team, cond = 'heal' }:
 
   const entry = team ? teamBuff : selfBuff
   return [
-    entry.formula.listing.reread(entry.formula.prepType.name(name)),
+    entry.formula.listing.add(tag(cond, { name })),
     ...[
       entry.formula.base.add(base),
-      entry.formula.prepType.add(cond),
 
       ...extra,
     ].map(({ tag, value }) => ({ tag: { ...tag, name }, value })),

@@ -1,32 +1,29 @@
-import { cmpEq, dynTag, lookup, prod, sum, tag } from '@genshin-optimizer/waverider'
-import { Data, enemy, percent, reader, self, selfBuff, Tag } from '../util'
+import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/waverider'
+import { Data, enemy, percent, self, selfBuff } from '../util'
 
 const { move, ele, amp, cata, trans } = self.prep
-const preparedTag: Tag = { prep: null }
 
 const data: Data = [
-  reader.withTag({ et: 'prep', prep: 'dmg' }).add(
-    dynTag(tag(prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg), preparedTag), {
-      move, ele, amp, cata
-    })),
-  reader.withTag({ et: 'prep', prep: 'trans' }).add(
-    dynTag(tag(prod(self.dmg.out, self.trans.critMulti, enemy.common.inDmg), preparedTag), {
-      ele, trans
-    })
-  ),
-  reader.withTag({ et: 'prep', prep: 'shield' }).add(
-    dynTag(tag(prod(self.formula.base, sum(percent(1), self.base.shield_)), preparedTag), {
-      ele
-    }),
-  ),
-  reader.withTag({ et: 'prep', prep: 'heal' }).add(
-    // No `prep` needed for `prep:heal`
-    tag(prod(self.formula.base, sum(percent(1), self.base.heal_)), preparedTag)
+  self.formula.dmg.add(dynTag(
+    prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg),
+    { move, ele, amp, cata }
+  )),
+  self.formula.trans.add(dynTag(
+    prod(self.dmg.out, self.trans.critMulti, enemy.common.inDmg),
+    { ele, trans }
+  )),
+  self.formula.shield.add(dynTag(
+    prod(self.formula.base, sum(percent(1), self.base.shield_)),
+    { ele }
+  )),
+  self.formula.heal.add(
+    // No `prep` needed for `q:heal`
+    prod(self.formula.base, sum(percent(1), self.base.heal_))
   ),
 
-  /* `prep` computations have a stricter restriction as it is computed before many
-   * of the computations are ready. Most `stats`-related queries are not available,
-   * and we are essentially limited to other preps and conditionals.
+  /* `prep:` formulas have a stricter restriction as it is computed before most
+   * computations are ready. Most `stats`-related queries are not available, and
+   * we are essentially limited to other preps and conditionals.
    *
    * Some are outside of this file as it has to be in a util function, but the
    * restriction nonetheless applies.

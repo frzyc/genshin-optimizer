@@ -78,29 +78,48 @@ describe('example', () => {
     expect(calc.compute(team.final.eleMas).val).toEqual(
       calc.compute(member0.final.eleMas).val + calc.compute(member1.final.eleMas).val)
   })
-  test('list final formulas', () => {
-    // Every tag can be fed into `calc.compute`
+  describe('list final formulas', () => {
+    /**
+     * Each entry in listing is a `Tag` in the shape of
+     * ```
+     * {
+     *   member: 'member'
+     *   et: 'self'
+     *   src: <sheet that defines the formula>
+     *   qt: 'formula'
+     *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
+     *   name: <formula name>
+     * }
+     * ```
+     */
     const listing = calc.listFormulas({ member: 'member0' })
 
-    expect(listing.length).toBe(11)
-    // Simple check that all formulas are from the same sheet
-
-    // All nodes in here are DMG nodes (valid values are dmg/trans/shield/heal)
-    expect([...new Set(listing.map(x => x.prep))]).toEqual(['dmg'])
-    // If the formula is from another team member, `src` would be different
-    expect([...new Set(listing.map(t => t.src))]).toEqual(['Nahida'])
-    expect([...new Set(listing.map(t => t.et))]).toEqual(['prep'])
-    expect([...new Set(listing.map(t => t.member))]).toEqual(['member0'])
-    expect(listing.map(x => x.name).sort()).toEqual([
+    // Simple check that all tags are in the correct format
+    const names: string[] = []
+    for (const { name, ...tag } of listing) {
+      names.push(name!)
+      expect(name).toBeTruthy()
+      test(`with name ${name}`, () => {
+        expect(tag).toEqual({
+          member: 'member0',
+          et: 'self', src: 'Nahida', qt: 'formula',
+          q: 'dmg' // DMG formula
+        })
+      })
+    }
+    expect(names.sort()).toEqual([
       'charged', 'karma_dmg',
       'normal_0', 'normal_1', 'normal_2', 'normal_3',
       'plunging_dmg', 'plunging_high', 'plunging_low',
-      'skill_hold', 'skill_press'])
+      'skill_hold', 'skill_press'
+    ])
   })
   test('calculate final formulas', () => {
     const tag = calc.listFormulas({ member: 'member0' }).find(x => x.name === 'normal_0')!
     expect(tag).toBeTruthy()
-    expect(tag.prep).toEqual('dmg') // DMG formula
+    expect(tag.src).toEqual('Nahida') // Formula from Nahida
+    expect(tag.q).toEqual('dmg') // DMG formula
+    expect(tag.name).toEqual('normal_0') // Formula name
 
     // Compute formula
     const { val, meta } = calc.compute(reader.withTag(tag))

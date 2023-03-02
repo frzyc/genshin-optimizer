@@ -45,7 +45,7 @@ const data: Data = [
   selfBuff.trans.basedCritMulti.add(lookup(self.common.critMode, {
     'crit': sum(1, self.trans.cappedCritRate_),
     'nonCrit': 1,
-    'avg': sum(1, prod(self.trans.cappedCritRate_, self.final.critDMG_)),
+    'avg': sum(1, prod(self.trans.cappedCritRate_, self.trans.critDMG_)),
   })),
 
   ...Object.entries(transReactionInfo).flatMap(([k, { multi, variants, resist, canCrit }]) => {

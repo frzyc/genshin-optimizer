@@ -78,9 +78,9 @@ export function artifactsData(data: {
 export function teamData(active: readonly Member[], members: readonly Member[]): Data {
   const teamEntry = reader.withTag({ et: 'team' })
   const stack = {
-    in: reader.withTag({ et: 'stackIn' }),
-    int: reader.withTag({ et: 'stackInt' }),
-    out: reader.withTag({ et: 'stackOut' }),
+    in: reader.withTag({ qt: 'stackIn' }),
+    int: reader.withTag({ qt: 'stackInt' }),
+    out: reader.withTag({ qt: 'stackOut' }),
   }
   return [
     // Active Member Buff
