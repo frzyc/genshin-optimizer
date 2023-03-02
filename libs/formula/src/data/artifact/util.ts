@@ -1,6 +1,6 @@
 import { ArtifactSetKey } from '@genshin-optimizer/consts';
-import { AnyNode, NumNode, RawTagMapEntries, ReRead, tag } from '@genshin-optimizer/waverider';
-import { Data, self } from "../util";
+import { AnyNode, NumNode, RawTagMapEntries, ReRead } from '@genshin-optimizer/waverider';
+import { Data, self, tag } from "../util";
 
 export function registerArt(src: ArtifactSetKey, ...data: (Data | Data[number])[]): Data {
   /* Unlike character and weapon, artifact buff is all-or-nothing, so we can register every

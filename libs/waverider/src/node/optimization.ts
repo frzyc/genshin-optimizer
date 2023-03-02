@@ -5,9 +5,9 @@ import { constant } from './construction'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, AnyOP, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
 
-type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag'>>
-type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag'>>
-type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag'>>
+type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
+type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
+type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 
 export function detach(n: NumNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): NumTagFree[]
 export function detach(n: StrNode[], calc: Calculator, dynTags: TagMapSubsetValues<Read>): StrTagFree[]
@@ -64,6 +64,7 @@ export function detach(n: AnyNode[], calc: Calculator, dynTags: TagMapSubsetValu
           return constant(n.ex[index.ex]!)
         return { ...n, br: [index] }
       }
+      case 'vtag': return constant(cache.tag[n.ex] ?? '')
       case 'tag': return map(n.x[0]!, cache.with(n.tag))
       case 'dtag': {
         const tags = n.br.map(br => map(br, cache)) as Const<string>[]

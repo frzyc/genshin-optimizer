@@ -1,5 +1,5 @@
 import { allAmplifyingReactionKeys, allCatalyzeReactionKeys, allElementWithPhyKeys, allMoveKeys, allRegionKeys, allTransformativeReactionKeys } from '@genshin-optimizer/consts'
-import { AnyNode, constant, Read as Base, reread, ReRead } from '@genshin-optimizer/waverider'
+import { AnyNode, constant, NumNode, Read as BaseRead, reread, ReRead, StrNode, tag as baseTag, tagVal as baseTagVal, TagOverride, TagValRead } from '@genshin-optimizer/waverider'
 import { entryTypes, members, presets, srcs } from './listing'
 
 export const fixedTags = {
@@ -18,12 +18,12 @@ type AllTag = {
   [key in keyof Tag]-?: Exclude<Tag[key], null>
 }
 
-export class Read implements Base {
+export class Read implements BaseRead {
   op = 'read' as const
   x = []
   br = []
   tag: Tag
-  accu: Base['accu']
+  accu: BaseRead['accu']
 
   constructor(tag: Tag, accu: Read['accu']) {
     this.tag = tag
@@ -97,6 +97,15 @@ export class Read implements Base {
   get natlan(): Read { return this.with('region', 'natlan') }
   get snezhnaya(): Read { return this.with('region', 'snezhnaya') }
   get khaenriah(): Read { return this.with('region', 'khaenriah') }
+}
+export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
+export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
+export function tag(v: number | string | AnyNode, tag: Tag): TagOverride<AnyNode>
+export function tag(v: number | string | AnyNode, tag: Tag): TagOverride<AnyNode> {
+  return baseTag(v, tag)
+}
+export function tagVal(cat: keyof Tag): TagValRead {
+  return baseTagVal(cat)
 }
 
 export const reader = new Read({}, undefined)

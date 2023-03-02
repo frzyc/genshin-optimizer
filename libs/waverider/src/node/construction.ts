@@ -1,5 +1,5 @@
 import type { Tag } from '../tag'
-import type { AnyNode, Const, DynamicTag, Lookup, Match, Max, Min, NumNode, Prod, Read, ReRead, StrNode, Subscript, Sum, SumFrac, TagOverride, Threshold } from './type'
+import type { AnyNode, Const, DynamicTag, Lookup, Match, Max, Min, NumNode, Prod, Read, ReRead, StrNode, Subscript, Sum, SumFrac, TagOverride, TagValRead, Threshold } from './type'
 
 type _value = number | string
 type Num = NumNode | number
@@ -100,8 +100,12 @@ export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
 }
 export function dynTag(v: Num, tag: Record<string, Str>): DynamicTag<NumNode>
 export function dynTag(v: Str, tag: Record<string, Str>): DynamicTag<StrNode>
+export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode>
 export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode> {
   return { op: 'dtag', x: [toV(v)], br: toVs(Object.values(tag)), ex: Object.keys(tag) }
+}
+export function tagVal(cat: string): TagValRead {
+  return { op: 'vtag', x: [], br: [], ex: cat }
 }
 
 export function read(tag: Tag, accu: Read['accu']): Read {

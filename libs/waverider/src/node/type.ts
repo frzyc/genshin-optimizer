@@ -2,7 +2,7 @@ import type { Tag } from '../tag'
 
 export type OP = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' |
   'subscript' | 'lookup' | 'thres' | 'match' |
-  'tag' | 'dtag' | 'read'
+  'tag' | 'dtag' | 'vtag' | 'read'
 interface Base<op extends OP, X, Br = never> {
   op: op    // Operation Name
   x: X[]    // Arguments
@@ -44,12 +44,18 @@ export interface Lookup<Output, PermitOP extends OP = OP> extends Base<'lookup' 
 
 // Tagging
 
+/** x0 with attached static tag */
 export interface TagOverride<Output, PermitOP extends OP = OP> extends Base<'tag' & PermitOP, Output> {
   ex?: never
   tag: Tag
 }
+/** x0 with attached dynamic tag { [ex[i]]: br[i] } */
 export interface DynamicTag<Output, PermitOP extends OP = OP> extends Base<'dtag' & PermitOP, Output, StrNode<PermitOP>> {
   ex: string[]
+}
+/** Tag value associated with a category, or '' of the value does not exist */
+export interface TagValRead<PermitOP extends OP = OP> extends Base<'vtag' & PermitOP, never> {
+  ex: string
 }
 export interface Read extends Base<'read', never> {
   ex?: never
@@ -66,10 +72,10 @@ export type NumNode<PermitOP extends OP = OP> = Const<number> | Sum<PermitOP> | 
   TagOverride<NumNode<PermitOP>, PermitOP> | DynamicTag<NumNode<PermitOP>, PermitOP> | Read
 export type StrNode<PermitOP extends OP = OP> = Const<string> |
   Threshold<StrNode<PermitOP>, PermitOP> | Match<StrNode<PermitOP>, PermitOP> | Lookup<StrNode<PermitOP>, PermitOP> | Subscript<string, PermitOP> |
-  TagOverride<StrNode<PermitOP>, PermitOP> | DynamicTag<StrNode<PermitOP>, PermitOP> | Read
+  TagOverride<StrNode<PermitOP>, PermitOP> | DynamicTag<StrNode<PermitOP>, PermitOP> | TagValRead<PermitOP> | Read
 export type AnyNode<PermitOP extends OP = OP> = Const<number | string> | Sum<PermitOP> | Prod<PermitOP> | Max<PermitOP> | Min<PermitOP> | SumFrac<PermitOP> |
   Threshold<AnyNode<PermitOP>, PermitOP> | Match<AnyNode<PermitOP>, PermitOP> | Lookup<AnyNode<PermitOP>, PermitOP> | Subscript<number | string, PermitOP> |
-  TagOverride<AnyNode<PermitOP>, PermitOP> | DynamicTag<AnyNode<PermitOP>, PermitOP> | Read
+  TagOverride<AnyNode<PermitOP>, PermitOP> | DynamicTag<AnyNode<PermitOP>, PermitOP> | TagValRead<PermitOP> | Read
 
 export type NumOP = NumNode['op']
 export type StrOP = StrNode['op']
