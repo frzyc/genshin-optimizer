@@ -33,12 +33,12 @@ import { getWeaponSheet } from "../../../../Data/Weapons";
 import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
-import { computeUIData, dataObjForWeapon, mergeData, uiDataForTeam } from "../../../../Formula/api";
+import { computeUIData, dataObjForWeapon, mergeData } from "../../../../Formula/api";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import StatIcon from "../../../../KeyMap/StatIcon";
 import useBoolState from "../../../../ReactHooks/useBoolState";
-import useTeamData, { getTeamData } from "../../../../ReactHooks/useTeamData";
+import useTeamData from "../../../../ReactHooks/useTeamData";
 import { iconInlineProps } from "../../../../SVGIcons";
 import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
@@ -218,11 +218,10 @@ export default function TabTheorycraft() {
   // n.b. some substat combinations may not be materializable into real artifacts
   const optimizeSubstats = useCallback((apply: boolean) => () => {
     if (!characterKey || !optimizationTarget) return
-    const teamData = getTeamData(database, characterKey)
     if (!teamData) return
-    const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[characterKey]?.target.data![0]
+    let workerData = teamData[characterKey]?.target.data[0]
     if (!workerData) return
-    Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
+    workerData = { ...workerData, ...mergeData([workerData, dynamicData]) } // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(workerData.display ?? {}, optimizationTarget) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const unoptimizedNodes = [unoptimizedOptimizationTargetNode]
