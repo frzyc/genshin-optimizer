@@ -42,7 +42,5 @@ const data: Data = [
     dendro: cmpEq(enemy.cond.cata, 'spread', 'spread', ''),
     electro: cmpEq(enemy.cond.cata, 'aggravate', 'aggravate', ''),
   }, '')),
-
-  selfBuff.prep.ele.name('trans').add(tagVal('ele')), // Trans-only
 ]
 export default data

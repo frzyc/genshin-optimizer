@@ -1,7 +1,7 @@
 import { compileTagMapValues } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
-import { keys, values } from './data'
-import { allStacks, Data, Member } from './data/util'
+import { data, keys, values } from './data'
+import { allStacks, Data, Member, Source, srcs } from './data/util'
 import { } from './debug'
 import { teamData } from './util'
 
@@ -56,6 +56,22 @@ describe('calculator', () => {
       expect(members.map(member => calc.compute(test3.out.withTag({ member })).val).sort()).toEqual([0, 0, 1])
       // Every member gets `0` if `stack.in` is `0`
       expect(members.map(member => calc.compute(test4.out.withTag({ member })).val).sort()).toEqual([0, 0, 0])
+    })
+    test('name uniqueness', () => {
+      const entries = Object.fromEntries(srcs.map(src => [src, new Set()])) as Record<Source, Set<string>>
+      for (const { tag, value } of data)
+        if (tag.qt === 'formula' && tag.q === 'listing') {
+          // `name` has a specific structure; it must be the top `tag` in the entry
+          const src = tag.src!, name = (value.op === 'tag' && value.tag['name']) || tag.name!
+
+          expect(src).toBeTruthy()
+          expect(name).toBeTruthy()
+
+          // Listing entry
+          if (entries[src].has(name))
+            throw new Error(`Duplicated formula names ${src}:${name}`)
+          entries[src].add(name)
+        }
     })
   })
 })

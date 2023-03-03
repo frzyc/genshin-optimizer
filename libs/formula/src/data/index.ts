@@ -16,4 +16,4 @@ const tags = [
 const keys = compileTagMapKeys(tags) // TODO: Find optimum tag order
 const values = compileTagMapValues(keys, data)
 
-export { keys, values }
+export { keys, values, data }
