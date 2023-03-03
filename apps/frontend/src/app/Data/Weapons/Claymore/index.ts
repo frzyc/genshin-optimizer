@@ -1,6 +1,7 @@
 import { WeaponClaymoreKey } from "@genshin-optimizer/consts"
 import WeaponSheet from "../WeaponSheet"
 import Akuoumaru from "./Akuoumaru"
+import BeaconOfTheReedSea from "./BeaconOfTheReedSea"
 import BlackcliffSlasher from "./BlackcliffSlasher"
 import BloodtaintedGreatsword from "./BloodtaintedGreatsword"
 import DebateClub from "./DebateClub"
@@ -30,6 +31,7 @@ import WhiteIronGreatsword from "./WhiteIronGreatsword"
 import WolfsGravestone from "./WolfsGravestone"
 const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   Akuoumaru,
+  BeaconOfTheReedSea,
   BlackcliffSlasher,
   BloodtaintedGreatsword,
   DebateClub,

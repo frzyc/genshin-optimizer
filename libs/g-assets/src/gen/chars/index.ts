@@ -63,6 +63,7 @@ import Wanderer from "./Wanderer"
 import Faruzan from "./Faruzan"
 import Yaoyao from "./Yaoyao"
 import Alhaitham from "./Alhaitham"
+import Dehya from "./Dehya"
 import TravelerAnemo from "./TravelerAnemo"
 import TravelerGeo from "./TravelerGeo"
 import TravelerElectro from "./TravelerElectro"
@@ -132,6 +133,7 @@ const data = {
   Faruzan,
   Yaoyao,
   Alhaitham,
+  Dehya,
   TravelerAnemo,
   TravelerGeo,
   TravelerElectro,

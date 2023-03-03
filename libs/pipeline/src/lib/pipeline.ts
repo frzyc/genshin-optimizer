@@ -80,6 +80,7 @@ export const characterIdMap = {
   10000076: "Faruzan",
   10000077: "Yaoyao",
   10000078: "Alhaitham",
+  10000079: "Dehya",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
@@ -170,6 +171,7 @@ export const weaponIdMap = {
   // 12506: "The Other Side",
   // 12508: "",
   12510: "RedhornStonethresher",
+  12511: "BeaconOfTheReedSea",
 
   //polearm
   13101: "BeginnersProtector",

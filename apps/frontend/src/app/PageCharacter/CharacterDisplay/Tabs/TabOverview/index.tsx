@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Assets from "../../../../Assets/Assets";
 import ArtifactCardNano from "../../../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../../../Components/Card/CardLight";
-import CharacterCardPico from "../../../../Components/Character/CharacterCardPico";
+import CharacterCardPico, { BlankCharacterCardPico } from "../../../../Components/Character/CharacterCardPico";
 import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent";
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import SqBadge from "../../../../Components/SqBadge";
@@ -22,7 +22,7 @@ import { ElementIcon } from "../../../../KeyMap/StatIcon";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import useDBMeta from "../../../../ReactHooks/useDBMeta";
-import { allArtifactSlotKeys, AscensionKey, ElementKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, AscensionKey, CharacterKey, ElementKey } from "@genshin-optimizer/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
 
@@ -152,7 +152,13 @@ function CharacterProfileCard() {
       </Grid>
       <CardActionArea sx={{ p: 1 }} onClick={() => navigate("teambuffs")}>
         <Grid container columns={3} spacing={1}>
-          {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={team[i]} index={i} /></Grid>)}
+        {range(0, 2).map(i =>
+          <Grid key={i} item xs={1} height="100%">
+            {team[i]
+              ? <CharacterCardPico characterKey={team[i] as CharacterKey} />
+              : <BlankCharacterCardPico index={i} />}
+          </Grid>
+        )}
         </Grid>
       </CardActionArea>
     </Box>
