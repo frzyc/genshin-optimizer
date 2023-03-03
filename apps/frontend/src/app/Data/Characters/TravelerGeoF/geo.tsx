@@ -160,7 +160,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       }
     }), ct.headerTem("constellation4", {
       fields: [{
-        text: st("energyRegen"),
+        text: ch("c4.energyRestore"),
         value: dm.constellation4.energyRestore,
       }]
     }), ct.headerTem("constellation6", {
