@@ -189,7 +189,7 @@ const sheet: ICharacterSheet = {
       }]),
       burst: ct.talentTem("burst", [{
         fields: [{
-          text: stg("duration"),
+          text: ct.ch("bubbleDuration"),
           value: dm.burst.bubbleDuration,
           unit: "s",
         }, {
