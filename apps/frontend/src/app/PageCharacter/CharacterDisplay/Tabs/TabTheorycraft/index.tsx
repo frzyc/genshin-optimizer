@@ -34,6 +34,9 @@ import { DatabaseContext } from "../../../../Database/Database";
 import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
 import { uiInput as input } from "../../../../Formula";
 import { computeUIData, dataObjForWeapon, mergeData } from "../../../../Formula/api";
+import { mapFormulas } from "../../../../Formula/internal";
+import { optimize, precompute } from "../../../../Formula/optimization";
+import { NumNode } from "../../../../Formula/type";
 import { constant, percent } from "../../../../Formula/utils";
 import KeyMap, { cacheValueString } from "../../../../KeyMap";
 import StatIcon from "../../../../KeyMap/StatIcon";
@@ -44,15 +47,11 @@ import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../../
 import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
 import { ArtifactRarity, SetNum, SubstatType, substatType } from "../../../../Types/consts";
 import { ICachedWeapon } from "../../../../Types/weapon";
-import { deepClone, objectKeyMap, objectMap, objPathValue } from "../../../../Util/Util";
+import { deepClone, objectMap, objPathValue } from "../../../../Util/Util";
 import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
-import useCharTC from "./useCharTC";
-import { mapFormulas } from "../../../../Formula/internal";
-import { optimize, precompute } from "../../../../Formula/optimization";
-import { NumNode } from "../../../../Formula/type";
 import OptimizationTargetSelector from "../TabOptimize/Components/OptimizationTargetSelector";
 import { dynamicData } from "../TabOptimize/foreground";
-import useDBMeta from "../../../../ReactHooks/useDBMeta";
+import useCharTC from "./useCharTC";
 const WeaponSelectionModal = React.lazy(() => import('../../../../Components/Weapon/WeaponSelectionModal'))
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
@@ -198,19 +197,7 @@ export default function TabTheorycraft() {
     data_.optimization.distributedSubstats = distributedSubstats
     setData(data_)
   }, [data, setData])
-  const maxSubstats = useMemo(() => {
-    let result: Record<SubstatKey, number>
-    const maxSubstats = data.optimization.maxSubstats;
-    if (maxSubstats.useMaxOff) {
-      const { max, offset } = maxSubstats;
-      result = objectKeyMap(allSubstatKeys, (k) => max - offset * Object.values(data.artifact.slots).reduce((p, s) => p + +(s.statKey === k), 0));
-    } else {
-      result = maxSubstats
-    }
-    return result;
-  }, [data.artifact.slots, data.optimization.maxSubstats])
-
-  const { gender } = useDBMeta()
+  const maxSubstats = data.optimization.maxSubstats
 
   // This solves
   // $\argmax_{x\in N^k, \sum x <= n, x <= x_max} f(x)$ without assumptions on the properties of $f$
@@ -289,7 +276,7 @@ export default function TabTheorycraft() {
       data_.optimization.distributedSubstats = 0
       setData(data_)
     }
-  }, [characterKey, data, database, distributedSubstats, gender, maxSubstats, optimizationTarget, setData])
+  }, [teamData, characterKey, data, distributedSubstats, maxSubstats, optimizationTarget, setData])
 
   return <Stack spacing={1}>
     <CardLight>
@@ -319,27 +306,9 @@ export default function TabTheorycraft() {
             maxSubstats={maxSubstats} setMaxSubstats={(k: SubstatKey) => (v: number) => {
               if (data.optimization.maxSubstats[k] === v) return
               const data_ = deepClone(data)
-              data_.optimization.maxSubstats.useMaxOff = false
               data_.optimization.maxSubstats[k] = v
               setData(data_)
-            }}
-            max={data.optimization.maxSubstats.max}
-            setMax={(v) => {
-              if (data.optimization.maxSubstats.max === v) return
-              const data_ = deepClone(data)
-              data_.optimization.maxSubstats.useMaxOff = true
-              data_.optimization.maxSubstats.max = v
-              setData(data_)
-            }}
-            offset={data.optimization.maxSubstats.offset}
-            setOffset={(v) => {
-              if (data.optimization.maxSubstats.offset === v) return
-              const data_ = deepClone(data)
-              data_.optimization.maxSubstats.useMaxOff = true
-              data_.optimization.maxSubstats.offset = v
-              setData(data_)
-            }}
-            disableMaxSubstats={data.optimization.maxSubstats.useMaxOff} />
+            }} />
         </Grid>
       </Grid >
       <OptimizationTargetSelector
@@ -531,15 +500,12 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     </Stack>}
   </CardLight>
 }
-function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType, mainStatKeys, distributedSubstats, setDistributedSubstats, maxSubstats, setMaxSubstats, disableMaxSubstats, max, setMax, offset, setOffset }: {
+function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType, mainStatKeys, distributedSubstats, setDistributedSubstats, maxSubstats, setMaxSubstats }: {
   substats: Record<SubstatKey, number>, setSubstats: (substats: Record<SubstatKey, number>) => void,
   substatsType: SubstatType, setSubstatsType: (t: SubstatType) => void,
   mainStatKeys: MainStatKey[],
   distributedSubstats: number, setDistributedSubstats: (f: number) => void,
   maxSubstats: Record<SubstatKey, number>, setMaxSubstats: (k: SubstatKey) => (v: number) => void,
-  max: number, setMax: (v: number) => void,
-  offset: number, setOffset: (v: number) => void,
-  disableMaxSubstats: boolean
 }) {
   const setValue = useCallback((key: SubstatKey) => (v: number) => setSubstats({ ...substats, [key]: v }), [substats, setSubstats])
   const { t } = useTranslation("page_character")
@@ -563,22 +529,6 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
         sx={{ borderRadius: 1, px: 1, width: "50%" }}
         inputProps={{ sx: { textAlign: "right", px: 1, width: "20%" }, min: 0 }}
       />
-      {/* <CustomNumberInput
-        value={max}
-        onChange={v => v !== undefined && setMax(v)}
-        endAdornment={"Max"}
-        color={!disableMaxSubstats ? "error" : "success"}
-        sx={{ borderRadius: 1, px: 1 }}
-        inputProps={{ sx: { textAlign: "right", px: 1 }, min: 0 }}
-      />
-      <CustomNumberInput
-        value={offset}
-        onChange={v => v !== undefined && setOffset(v)}
-        endAdornment={"Offset"}
-        color={!disableMaxSubstats ? "error" : "success"}
-        sx={{ borderRadius: 1, px: 1 }}
-        inputProps={{ sx: { textAlign: "right", px: 1 }, min: 0 }}
-      /> */}
     </Box>
     <Stack spacing={1}>
       {Object.entries(substats).map(([k, v]) =>
@@ -589,19 +539,17 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
           substatsType={substatsType}
           mainStatKeys={mainStatKeys}
           maxSubstat={maxSubstats[k]}
-          disableMaxSubstats={disableMaxSubstats}
           setMaxSubstat={setMaxSubstats(k)}
         />)}
     </Stack>
   </CardLight>
 }
-function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainStatKeys, maxSubstat, setMaxSubstat, disableMaxSubstats }: {
+function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainStatKeys, maxSubstat, setMaxSubstat }: {
   statKey: SubstatKey,
   value: number, setValue: (v: number) => void,
   substatsType: SubstatType,
   mainStatKeys: MainStatKey[],
   maxSubstat: number, setMaxSubstat: (v: number) => void,
-  disableMaxSubstats: boolean,
 }) {
   const { t } = useTranslation("page_character")
   const substatValue = Artifact.substatValue(statKey, 5, substatsType)
@@ -623,11 +571,11 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
       <CardDark sx={{ p: 0.5, minWidth: "11em", flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center" }}>
         <StatIcon statKey={statKey} iconProps={{ fontSize: "inherit" }} />{KeyMap.getStr(statKey)}{KeyMap.unit(statKey)}
       </CardDark>
-      <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top">
-        <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
-          <ColorText color={invalid ? "warning" : undefined}>RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
-        </CardDark>
-      </BootstrapTooltip>
+      {/* <BootstrapTooltip title={<Typography>{t(numMains ? `tabTheorycraft.maxRollsMain` : `tabTheorycraft.maxRolls`, { value: maxRolls })}</Typography>} placement="top"> */}
+      <CardDark sx={{ textAlign: "center", p: 0.5, minWidth: "8em" }}>
+        <ColorText color={invalid ? "warning" : undefined}>RV: <strong>{rv.toFixed(1)}%</strong></ColorText>
+      </CardDark>
+      {/* </BootstrapTooltip> */}
     </Box>
     <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
       <CustomNumberInput
@@ -662,7 +610,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
       <CustomNumberInput
         value={maxSubstat}
         onChange={v => v !== undefined && setMaxSubstat(v)}
-        color={disableMaxSubstats ? "error" : "success"}
+        color={maxSubstat > 30 ? "warning" : "success"}
         sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
         inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
     </Box>

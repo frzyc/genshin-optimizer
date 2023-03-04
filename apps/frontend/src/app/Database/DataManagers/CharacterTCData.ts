@@ -1,7 +1,8 @@
+import { allArtifactSlotKeys, allWeaponKeys, ArtifactSlotKey, CharacterKey, WeaponKey } from "@genshin-optimizer/consts";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { allSubstatKeys, MainStatKey } from "../../Types/artifact";
 import { ICharTC } from "../../Types/character";
-import { allSlotKeys, allWeaponKeys, ArtifactRarity, CharacterKey, substatType, WeaponKey } from "../../Types/consts";
+import { ArtifactRarity, substatType } from "../../Types/consts";
 import { objectKeyMap } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
@@ -14,15 +15,17 @@ export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs",
         database.storage.remove(key)
     }
   }
-  validate(obj: any): ICharTC | undefined {
+  validate(obj: unknown): ICharTC | undefined {
     if (typeof obj !== "object") return
-    const weapon = validateCharTCWeapon(obj.weapon)
-    if (!weapon) return
-    const artifact = validateCharTCArtifact(obj.artifact)
-    if (!artifact) return
-    const optimization = validateCharTcOptimization(obj.optimization)
-    if (!optimization) return
-    return { artifact, weapon, optimization }
+    const { weapon, artifact, optimization } = obj as ICharTC
+    const _weapon = validateCharTCWeapon(weapon)
+    if (!_weapon) return
+
+    const _artifact = validateCharTCArtifact(artifact)
+    if (!_artifact) return
+    const _optimization = validateCharTcOptimization(optimization)
+    if (!_optimization) return
+    return { artifact: _artifact, weapon: _weapon, optimization: _optimization }
   }
   toStorageKey(key: CharacterKey): string {
     return `charTC_${key}`
@@ -56,62 +59,58 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
     },
     optimization: {
       target: undefined,
-      distributedSubstats: 20,
+      distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats()
     }
   }
 }
 function initCharTCArtifactSlots() {
-  return objectKeyMap(allSlotKeys, s => ({
+  return objectKeyMap(allArtifactSlotKeys, s => ({
     level: 20,
     rarity: 5 as ArtifactRarity,
     statKey: (s === "flower" ? "hp" : s === "plume" ? "atk" : "atk_") as MainStatKey,
   }))
 }
 
-function validateCharTCWeapon(weapon: any): ICharTC["weapon"] | undefined {
+function validateCharTCWeapon(weapon: unknown): ICharTC["weapon"] | undefined {
   if (typeof weapon !== "object") return
-  let { key, level: rawLevel, ascension: rawAscension, refinement } = weapon
-  if (!allWeaponKeys.includes(weapon.key)) return
+  const { key, } = weapon as ICharTC["weapon"]
+  let { level, ascension, refinement } = weapon as ICharTC["weapon"]
+  if (!allWeaponKeys.includes(key)) return
   if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
-  const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
+  const { level: _level, ascension: _ascension } = validateLevelAsc(level, ascension);
+  [level, ascension] = [_level, _ascension]
   return { key, level, ascension, refinement }
 }
-function validateCharTCArtifact(artifact: any): ICharTC["artifact"] | undefined {
+function validateCharTCArtifact(artifact: unknown): ICharTC["artifact"] | undefined {
   if (typeof artifact !== "object") return
-  let { slots, substats: { type, stats }, sets } = artifact
-  slots = validateCharTCArtifactSlots(slots)
-  if (!slots) return
+  let { slots, substats: { type, stats }, sets } = artifact as ICharTC["artifact"]
+  const _slots = validateCharTCArtifactSlots(slots)
+  if (!_slots) return
+  slots = _slots
   if (!substatType.includes(type)) type = "max"
   if (typeof stats !== "object") stats = objectKeyMap(allSubstatKeys, () => 0)
   stats = objectKeyMap(allSubstatKeys, k => typeof stats[k] === "number" ? stats[k] : 0)
+
+  if (typeof sets !== "object") sets = {}
+  // TODO: validate sets
+
   return { slots, substats: { type, stats }, sets }
 }
-function validateCharTCArtifactSlots(slots: any): ICharTC["artifact"]["slots"] | undefined {
+function validateCharTCArtifactSlots(slots: unknown): ICharTC["artifact"]["slots"] | undefined {
   if (typeof slots !== "object") return initCharTCArtifactSlots()
-  if (Object.keys(slots).length !== allSlotKeys.length || Object.keys(slots).some(s => !allSlotKeys.includes(s as any))) return initCharTCArtifactSlots()
-  return slots
+  if (Object.keys(slots as ICharTC["artifact"]["slots"]).length !== allArtifactSlotKeys.length || Object.keys(slots as ICharTC["artifact"]["slots"]).some(s => !allArtifactSlotKeys.includes(s as ArtifactSlotKey))) return initCharTCArtifactSlots()
+  return slots as ICharTC["artifact"]["slots"]
 }
-function validateCharTcOptimization(optimization: any): ICharTC["optimization"] | undefined {
+function validateCharTcOptimization(optimization: unknown): ICharTC["optimization"] | undefined {
   if (typeof optimization !== "object") return
-  let { target, distributedSubstats, maxSubstats } = optimization
+  let { target, distributedSubstats, maxSubstats } = optimization as ICharTC["optimization"]
   if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== "number") distributedSubstats = 20
   if (typeof maxSubstats !== "object") maxSubstats = initCharTcOptimizationMaxSubstats()
-  maxSubstats = objectKeyMap([...allSubstatKeys, "useMaxOff", "max", "offset",],
-    k => {
-      if (k === "useMaxOff")
-        return typeof maxSubstats[k] === "boolean" ? maxSubstats[k] : true
-      else
-        return typeof maxSubstats[k] === "number" ? maxSubstats[k] : 0
-    })
+  maxSubstats = objectKeyMap([...allSubstatKeys], k => typeof maxSubstats[k] === "number" ? maxSubstats[k] : 0)
   return { target, distributedSubstats, maxSubstats }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC["optimization"]["maxSubstats"] {
-  return {
-    ...objectKeyMap(allSubstatKeys, () => 30),
-    useMaxOff: false,
-    max: 10,
-    offset: 2
-  }
+  return objectKeyMap(allSubstatKeys, () => 30)
 }

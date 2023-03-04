@@ -68,10 +68,6 @@ export type ICharTC = {
   optimization: {
     target?: string[]
     distributedSubstats: number
-    maxSubstats: Record<SubstatKey, number> & {
-      useMaxOff: boolean
-      max: number
-      offset: number
-    }
+    maxSubstats: Record<SubstatKey, number>
   }
 }
