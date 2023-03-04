@@ -1,0 +1,12 @@
+{
+  "name": "Flor de Aço",
+  "description": "Um Espadão com linhas finas e elegantes, adornada com laços festivos e flores.",
+  "passiveName": "Código do Vento e das Flores",
+  "passiveDescription": {
+    "0": "Nos 8s depois da Habilidade Elemental atingir um inimigo ou desencadear uma Reação Elemental, aumenta o ATQ em <cryo>12%</cryo> e a Proficiência Elemental em <cryo>48</cryo>.",
+    "1": "Nos 8s depois da Habilidade Elemental atingir um inimigo ou desencadear uma Reação Elemental, aumenta o ATQ em <cryo>15%</cryo> e a Proficiência Elemental em <cryo>60</cryo>.",
+    "2": "Nos 8s depois da Habilidade Elemental atingir um inimigo ou desencadear uma Reação Elemental, aumenta o ATQ em <cryo>18%</cryo> e a Proficiência Elemental em <cryo>72</cryo>.",
+    "3": "Nos 8s depois da Habilidade Elemental atingir um inimigo ou desencadear uma Reação Elemental, aumenta o ATQ em <cryo>21%</cryo> e a Proficiência Elemental em <cryo>84</cryo>.",
+    "4": "Nos 8s depois da Habilidade Elemental atingir um inimigo ou desencadear uma Reação Elemental, aumenta o ATQ em <cryo>24%</cryo> e a Proficiência Elemental em <cryo>96</cryo>."
+  }
+}
