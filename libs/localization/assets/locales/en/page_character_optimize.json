@@ -39,13 +39,22 @@
   },
   "excludeChar": {
     "title": "Allow Equipped Artifacts",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+    "buttonTitle": "Equipped Artifact Configuration",
     "modal": {
       "allow_all": "Add all characters to the allow list",
       "disallow_All": "Remove all characters from the allow list"
     },
     "allowEquip": "Allow using artifacts from",
     "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
-    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList" : "Custom List",
+      "all": "All Artifacts"
+    }
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {

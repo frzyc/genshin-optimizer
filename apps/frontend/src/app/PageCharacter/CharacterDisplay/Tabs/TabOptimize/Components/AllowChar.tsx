@@ -1,32 +1,38 @@
 import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
-import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility';
-import { Box, Button, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import SettingsIcon from '@mui/icons-material/Settings';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import { Box, Button, CardActionArea, CardContent, Divider, Grid, Stack, ToggleButton, Typography } from "@mui/material";
+import { MouseEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import SlotIcon from "../../../../../Components/Artifact/SlotIcon";
 import CardDark from "../../../../../Components/Card/CardDark";
 import CardLight from "../../../../../Components/Card/CardLight";
 import CharacterCardPico from "../../../../../Components/Character/CharacterCardPico";
 import CloseButton from "../../../../../Components/CloseButton";
+import InfoTooltip from "../../../../../Components/InfoTooltip";
 import ModalWrapper from "../../../../../Components/ModalWrapper";
+import SolidToggleButtonGroup from "../../../../../Components/SolidToggleButtonGroup";
 import SqBadge from "../../../../../Components/SqBadge";
 import { CharacterContext } from "../../../../../Context/CharacterContext";
 import { DatabaseContext } from "../../../../../Database/Database";
+import { allAllowLocationsState, AllowLocationsState } from "../../../../../Database/DataManagers/BuildSettingData";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useForceUpdate from "../../../../../ReactHooks/useForceUpdate";
+import { iconInlineProps } from "../../../../../SVGIcons";
 import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
+
 export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
-  const { buildSetting: { allowLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { buildSetting: { allowLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
   const deferredDbDirty = useDeferredValue(dbDirty)
 
-  useEffect(() => database.charMeta.followAny(s => forceUpdate()), [forceUpdate, database])
-  useEffect(() => database.chars.followAny(s => forceUpdate()), [forceUpdate, database])
+  useEffect(() => database.charMeta.followAny(_ => forceUpdate()), [forceUpdate, database])
+  useEffect(() => database.chars.followAny(_ => forceUpdate()), [forceUpdate, database])
 
   const locList = useMemo(() => deferredDbDirty && Array.from(new Set(
     Object.entries(database.chars.data)
@@ -53,17 +59,41 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
 
   const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, lk) }), [allowLocations, buildSettingDispatch])
 
+  const setState = useCallback((_e: MouseEvent, state: AllowLocationsState) => buildSettingDispatch({ allowLocationsState: state }), [buildSettingDispatch])
+
   const total = locList.length
   const useTot = allowLocations.length
   return <Box display="flex" gap={1}>
+    {/* Begin modal */}
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
-        <Box display="flex" gap={1} >
-          <Typography variant="h6" flexGrow={1}>{t`excludeChar.title`}</Typography>
+        <Box display="flex" gap={1} alignItems="center" >
+          <Typography variant="h6">{t`excludeChar.title`}</Typography>
+          <InfoTooltip title={
+            <Typography>
+              {t`excludeChar.tooltip`}
+            </Typography>
+          } />
+          <Box flexGrow={1} />
           <CloseButton onClick={onClose} size="small" />
         </Box>
       </CardContent>
       <Divider />
+      <CardContent sx={{ pb : 0 }}>
+        <SolidToggleButtonGroup
+          exclusive
+          baseColor="secondary"
+          size="small"
+          value={allowLocationsState}
+          onChange={setState}
+        >
+          {allAllowLocationsState.map(s =>
+            <ToggleButton key={s} value={s} disabled={allowLocationsState === s || disabled}>
+              {t(`excludeChar.states.${s}`)}
+            </ToggleButton>
+          )}
+        </SolidToggleButtonGroup>
+      </CardContent>
       <CardContent>
         <Box pb={1} display="flex" gap={1} flexWrap="wrap">
           <Button color="success" sx={{ flexGrow: 1 }} onClick={allowAll} >
@@ -76,20 +106,34 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
           </Button>
         </Box>
         <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
-          {locList.map((lk, i) =>
+          {locList.map((lk) =>
             <Grid item key={lk} xs={1}>
               <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={allowLocations.includes(lk)} />
             </Grid>
           )}
         </Grid>
       </CardContent>
-    </CardDark ></ModalWrapper>
-    <Button sx={{ flexGrow: 1 }} color="info" onClick={onOpen} disabled={disabled} startIcon={<SettingsAccessibilityIcon />} >
-      <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-        <span>{t`excludeChar.title`}</span>
-        <SqBadge sx={{ whiteSpace: "normal" }}><Trans t={t} i18nKey="excludeChar.usingNumTot" count={useTot} arts={numArtsEquippedUsed}>Using <strong>{{ arts: numArtsEquippedUsed } as TransObject}</strong> artifacts from <strong>{{ count: useTot } as TransObject}</strong> characters</Trans></SqBadge>
-      </Box>
-    </Button>
+    </CardDark></ModalWrapper>
+
+    {/* Button to open modal */}
+    <CardLight sx={{ display: "flex", width: "100%" }}>
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Stack spacing={1}>
+          <Typography>
+            <strong>{t("excludeChar.buttonTitle")}</strong>
+          </Typography>
+          <Typography>
+            {t("excludeChar.chars")} <SqBadge color="success">{useTot} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
+          </Typography>
+          <Typography>
+            {t("excludeChar.artis")} <SqBadge color="success">{numArtsEquippedUsed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
+          </Typography>
+        </Stack>
+      </CardContent>
+      <Button sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }} onClick={onOpen} disabled={disabled} color="info">
+        <SettingsIcon />
+      </Button>
+    </CardLight>
   </Box >
 }
 
@@ -100,7 +144,7 @@ function SelectItem({ locKey, selected, onClick }: {
 }) {
   const { database } = useContext(DatabaseContext)
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
-  return <CardActionArea onClick={onClick} sx={{}}>
+  return <CardActionArea onClick={onClick}>
     <CardLight sx={{ opacity: selected ? undefined : 0.6, borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)", borderWidth: "3px", borderStyle: "solid", borderRadius: "8px" }}  >
       <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} />
       <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
