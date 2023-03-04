@@ -11,6 +11,7 @@ import ForestRegalia from "./ForestRegalia"
 import KatsuragikiriNagamasa from "./KatsuragikiriNagamasa"
 import LithicBlade from "./LithicBlade"
 import LuxuriousSeaLord from "./LuxuriousSeaLord"
+import MailedFlower from "./MailedFlower"
 import MakhairaAquamarine from "./MakhairaAquamarine"
 import OldMercsPal from "./OldMercsPal"
 import PrototypeArchaic from "./PrototypeArchaic"
@@ -41,6 +42,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
+  MailedFlower,
   MakhairaAquamarine,
   OldMercsPal,
   PrototypeArchaic,
