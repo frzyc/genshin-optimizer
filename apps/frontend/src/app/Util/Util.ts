@@ -127,7 +127,7 @@ export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>> {
   return Object.fromEntries(Object.entries(obj).map(
     ([k, v], i) => [k, fn(v, k, i)]
-  )) as any
+  )) as Partial<Record<K, T>>
 }
 
 const rangeGen = function* (from: number, to: number): Iterable<number> {

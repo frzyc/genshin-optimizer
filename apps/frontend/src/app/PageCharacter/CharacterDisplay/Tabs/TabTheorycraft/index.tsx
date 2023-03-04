@@ -3,7 +3,7 @@ import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
-import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import React, { createContext, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete";
@@ -55,26 +55,34 @@ import useCharTC from "./useCharTC";
 const WeaponSelectionModal = React.lazy(() => import('../../../../Components/Weapon/WeaponSelectionModal'))
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
+type SetCharTCAction = Partial<ICharTC> | ((v: ICharTC) => Partial<ICharTC>)
+type CharTCContexObj = {
+  charTC: ICharTC,
+  setCharTC: (action: SetCharTCAction) => void
+}
+const CharTCContext = createContext({} as CharTCContexObj)
+
 export default function TabTheorycraft() {
   const { database } = useContext(DatabaseContext)
   const { data: oldData } = useContext(DataContext)
   const { character, character: { key: characterKey, compareData }, characterSheet, characterDispatch } = useContext(CharacterContext)
-  const data = useCharTC(characterKey, defaultInitialWeaponKey(characterSheet.weaponTypeKey))
-  const setData = useCallback((data: ICharTC) => database.charTCs.set(characterKey, data), [characterKey, database])
+  const charTC = useCharTC(characterKey, defaultInitialWeaponKey(characterSheet.weaponTypeKey))
+  const setCharTC = useCallback((data: SetCharTCAction) => { database.charTCs.set(characterKey, data) }, [characterKey, database])
+  const valueCharTCContext = useMemo(() => ({ charTC, setCharTC }), [charTC, setCharTC])
   const resetData = useCallback(() => {
-    setData(initCharTC(defaultInitialWeaponKey(characterSheet.weaponTypeKey)))
-  }, [setData, characterSheet])
+    setCharTC(initCharTC(defaultInitialWeaponKey(characterSheet.weaponTypeKey)))
+  }, [setCharTC, characterSheet])
   const setWeapon = useCallback(
     (action: Partial<ICharTC["weapon"]>) => {
-      setData({ ...data, weapon: { ...data.weapon, ...action } })
+      setCharTC({ ...charTC, weapon: { ...charTC.weapon, ...action } })
     },
-    [setData, data],
+    [setCharTC, charTC],
   )
 
   const copyFrom = useCallback(
     (eWeapon: ICachedWeapon, build: ICachedArtifact[]) => {
       const newData = initCharTC(eWeapon.key)
-      newData.artifact.substats.type = data.artifact.substats.type
+      newData.artifact.substats.type = charTC.artifact.substats.type
 
       newData.weapon.level = eWeapon.level
       newData.weapon.ascension = eWeapon.ascension
@@ -97,9 +105,9 @@ export default function TabTheorycraft() {
           value === 5 ? 4 :
             value === 1 && !(key as string).startsWith("PrayersFor") ? 0 : value
       ]).filter(([, value]) => value))
-      setData(newData)
+      setCharTC(newData)
     },
-    [data, setData],
+    [charTC, setCharTC],
   )
   const location = useLocation()
   const { build: locBuild } = (location.state as { build: string[] } | undefined) ?? { build: undefined }
@@ -121,31 +129,31 @@ export default function TabTheorycraft() {
 
   const weapon: ICachedWeapon = useMemo(() => {
     return {
-      ...data.weapon,
+      ...charTC.weapon,
       location: "",
       lock: false,
       id: ""
     }
-  }, [data])
+  }, [charTC])
   const setArtifact = useCallback((artifact: ICharTC["artifact"]) => {
-    const data_ = deepClone(data)
+    const data_ = deepClone(charTC)
     data_.artifact = artifact
-    setData(data_)
-  }, [data, setData])
+    setCharTC(data_)
+  }, [charTC, setCharTC])
 
   const setSubstatsType = useCallback((t: SubstatType) => {
-    const data_ = deepClone(data)
+    const data_ = deepClone(charTC)
     data_.artifact.substats.type = t
-    setData(data_)
-  }, [data, setData])
+    setCharTC(data_)
+  }, [charTC, setCharTC])
 
   const setSubstats = useCallback((setSubstats: Record<SubstatKey, number>) => {
-    const data_ = deepClone(data)
+    const data_ = deepClone(charTC)
     data_.artifact.substats.stats = setSubstats
-    setData(data_)
-  }, [data, setData])
+    setCharTC(data_)
+  }, [charTC, setCharTC])
 
-  const deferredData = useDeferredValue(data)
+  const deferredData = useDeferredValue(charTC)
   const overriderArtData = useMemo(() => {
     const stats = { ...deferredData.artifact.substats.stats }
     Object.values(deferredData.artifact.slots).forEach(({ statKey, rarity, level }) =>
@@ -159,12 +167,12 @@ export default function TabTheorycraft() {
   const overrideWeapon: ICachedWeapon = useMemo(() => ({
     id: "",
     location: "",
-    key: data.weapon.key,
-    level: data.weapon.level,
-    ascension: data.weapon.ascension,
-    refinement: data.weapon.refinement,
+    key: charTC.weapon.key,
+    level: charTC.weapon.level,
+    ascension: charTC.weapon.ascension,
+    refinement: charTC.weapon.refinement,
     lock: false
-  }), [data])
+  }), [charTC])
   const teamData = useTeamData(characterKey, 0, overriderArtData, overrideWeapon)
 
   const { target: charUIData } = teamData?.[characterKey] ?? {}
@@ -184,20 +192,20 @@ export default function TabTheorycraft() {
     }
   }, [dataContextValue, compareData, oldData])
 
-  const optimizationTarget = data.optimization.target
+  const optimizationTarget = charTC.optimization.target
   const setOptimizationTarget = useCallback((optimizationTarget: ICharTC["optimization"]["target"]) => {
-    const data_ = deepClone(data)
+    const data_ = deepClone(charTC)
     data_.optimization.target = optimizationTarget
-    setData(data_)
-  }, [data, setData])
+    setCharTC(data_)
+  }, [charTC, setCharTC])
 
-  const distributedSubstats = data.optimization.distributedSubstats
+  const distributedSubstats = charTC.optimization.distributedSubstats
   const setDistributedSubstats = useCallback((distributedSubstats: ICharTC["optimization"]["distributedSubstats"]) => {
-    const data_ = deepClone(data)
+    const data_ = deepClone(charTC)
     data_.optimization.distributedSubstats = distributedSubstats
-    setData(data_)
-  }, [data, setData])
-  const maxSubstats = data.optimization.maxSubstats
+    setCharTC(data_)
+  }, [charTC, setCharTC])
+  const maxSubstats = charTC.optimization.maxSubstats
 
   // This solves
   // $\argmax_{x\in N^k, \sum x <= n, x <= x_max} f(x)$ without assumptions on the properties of $f$
@@ -216,7 +224,7 @@ export default function TabTheorycraft() {
     // Const fold the artifact set
     nodes = mapFormulas(nodes, f => {
       if (f.operation === "read" && f.path[0] === "dyn") {
-        const a = data.artifact.sets[f.path[1]];
+        const a = charTC.artifact.sets[f.path[1]];
         if (a) {
           return constant(a)
         } else if (allArtifactSetKeys.includes(f.path[1] as any)) {
@@ -240,16 +248,16 @@ export default function TabTheorycraft() {
     let max = -Infinity
     const buffer = Object.fromEntries([...subs].map(x => [x, 0]))
     let maxBuffer: typeof buffer | undefined;
-    const bufferMain = Object.entries(data.artifact.slots).map((
+    const bufferMain = Object.entries(charTC.artifact.slots).map((
       [_, { statKey, rarity, level }]) => [statKey, Artifact.mainStatValue(statKey, rarity, level) / comp(statKey)] as const
     ).reduce<Partial<Record<MainStatKey, number>>>((acc, [k, v]) => ((acc[k] = (acc[k] ?? 0) + v, acc)), {})
-    const bufferSubs = objectMap(data.artifact.substats.stats, (v, k) => v / comp(k))
+    const bufferSubs = objectMap(charTC.artifact.substats.stats, (v, k) => v / comp(k))
     const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
       if (xs.length === 0) {
         if (distributedSubstats > maxSubstats[x])
           return
         if (x !== "__unused__")
-          buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * distributedSubstats;
+          buffer[x] = Artifact.substatValue(x as SubstatKey, 5, charTC.artifact.substats.type) / comp(x) * distributedSubstats;
         const [result] = compute([{ values: bufferMain }, { values: bufferSubs }, { values: buffer }]);
         if (result > max) {
           max = result
@@ -258,7 +266,7 @@ export default function TabTheorycraft() {
         return
       }
       for (let i = 0; i <= Math.min(maxSubstats[x], distributedSubstats); i++) {
-        buffer[x] = Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x) * i;
+        buffer[x] = Artifact.substatValue(x as SubstatKey, 5, charTC.artifact.substats.type) / comp(x) * i;
         permute(distributedSubstats - i, xs)
       }
     }
@@ -266,19 +274,19 @@ export default function TabTheorycraft() {
     console.log(maxBuffer)
     console.log(objectMap(maxBuffer!, (v, x) =>
       allSubstatKeys.includes(x as any) ?
-        v / (Artifact.substatValue(x as SubstatKey, 5, data.artifact.substats.type) / comp(x)) :
+        v / (Artifact.substatValue(x as SubstatKey, 5, charTC.artifact.substats.type) / comp(x)) :
         v
     ))
 
     if (apply) {
-      const data_ = deepClone(data)
-      data_.artifact.substats.stats = objectMap(data.artifact.substats.stats, (v, k) => v + (maxBuffer![k] ?? 0) * comp(k))
+      const data_ = deepClone(charTC)
+      data_.artifact.substats.stats = objectMap(charTC.artifact.substats.stats, (v, k) => v + (maxBuffer![k] ?? 0) * comp(k))
       data_.optimization.distributedSubstats = 0
-      setData(data_)
+      setCharTC(data_)
     }
-  }, [teamData, characterKey, data, distributedSubstats, maxSubstats, optimizationTarget, setData])
+  }, [teamData, characterKey, charTC, distributedSubstats, maxSubstats, optimizationTarget, setCharTC])
 
-  return <Stack spacing={1}>
+  return <CharTCContext.Provider value={valueCharTCContext}><Stack spacing={1}>
     <CardLight>
       <Box sx={{ display: "flex", gap: 1, p: 1 }}>
         <Box sx={{ flexGrow: 1, display: "flex", gap: 1 }}>
@@ -295,19 +303,19 @@ export default function TabTheorycraft() {
       <Grid container spacing={1} sx={{ justifyContent: "center" }}>
         <Grid item sx={{ flexGrow: -1 }}  >
           <WeaponEditorCard weapon={weapon} setWeapon={setWeapon} weaponTypeKey={characterSheet.weaponTypeKey} />
-          <ArtifactMainLevelCard artifactData={data.artifact} setArtifactData={setArtifact} />
+          <ArtifactMainLevelCard artifactData={charTC.artifact} setArtifactData={setArtifact} />
         </Grid>
         <Grid item sx={{ flexGrow: 1 }}>
           <ArtifactSubCard
-            substats={data.artifact.substats.stats} setSubstats={setSubstats}
-            substatsType={data.artifact.substats.type} setSubstatsType={setSubstatsType}
-            mainStatKeys={Object.values(data.artifact.slots).map(s => s.statKey)}
+            substats={charTC.artifact.substats.stats} setSubstats={setSubstats}
+            substatsType={charTC.artifact.substats.type} setSubstatsType={setSubstatsType}
+            mainStatKeys={Object.values(charTC.artifact.slots).map(s => s.statKey)}
             distributedSubstats={distributedSubstats} setDistributedSubstats={setDistributedSubstats}
             maxSubstats={maxSubstats} setMaxSubstats={(k: SubstatKey) => (v: number) => {
-              if (data.optimization.maxSubstats[k] === v) return
-              const data_ = deepClone(data)
+              if (charTC.optimization.maxSubstats[k] === v) return
+              const data_ = deepClone(charTC)
               data_.optimization.maxSubstats[k] = v
-              setData(data_)
+              setCharTC(data_)
             }} />
         </Grid>
       </Grid >
@@ -333,7 +341,7 @@ export default function TabTheorycraft() {
         <StatDisplayComponent />
       </DataContext.Provider> : <Skeleton variant='rectangular' width='100%' height={500} />}
     </CardLight>
-  </Stack>
+  </Stack></CharTCContext.Provider>
 }
 
 function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICachedWeapon, weaponTypeKey: WeaponTypeKey, setWeapon: (action: Partial<ICharTC["weapon"]>) => void }) {
@@ -531,6 +539,7 @@ function ArtifactSubCard({ substats, setSubstats, substatsType, setSubstatsType,
       />
     </Box>
     <Stack spacing={1}>
+      <ArtifactAllSubstatEditor />
       {Object.entries(substats).map(([k, v]) =>
         <ArtifactSubstatEditor
           key={k}
@@ -609,10 +618,79 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
       <CustomNumberInput
         value={maxSubstat}
+        startAdornment={"Max"}
         onChange={v => v !== undefined && setMaxSubstat(v)}
-        color={maxSubstat > 30 ? "warning" : "success"}
+        color={maxSubstat > maxRolls ? "warning" : "success"}
         sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
         inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
     </Box>
   </Stack>
+}
+
+function ArtifactAllSubstatEditor() {
+  const [rolls, setRolls] = useState(undefined as undefined | number)
+  const [maxSubstat, setMaxSubstat] = useState(undefined as undefined | number)
+  const { setCharTC } = useContext(CharTCContext)
+
+  const rollsDeferred = useDeferredValue(rolls)
+  useEffect(() => {
+    if (rollsDeferred === undefined) return
+    setCharTC(charTC => {
+      const stats = charTC.artifact.substats.stats
+      const substatsType = charTC.artifact.substats.type
+      charTC.artifact.substats.stats = objectMap(stats, (val, statKey) => {
+        const substatValue = Artifact.substatValue(statKey, 5, substatsType)
+        return substatValue * rollsDeferred
+      })
+      return charTC
+    })
+  }, [setCharTC, rollsDeferred])
+
+  const maxSubstatDeferred = useDeferredValue(maxSubstat)
+  useEffect(() => {
+    if (maxSubstatDeferred === undefined) return
+    setCharTC(charTC => {
+      charTC.optimization.maxSubstats = objectMap(charTC.optimization.maxSubstats, (val, statKey) => maxSubstatDeferred)
+      return charTC
+    })
+  }, [setCharTC, maxSubstatDeferred])
+
+  const maxRolls = 30
+  // 0.0001 to nudge float comparasion
+  const invalid = (rolls ?? 0 - 0.0001) > maxRolls
+
+
+  return <Box display="flex" gap={1} justifyContent="space-between" alignItems="center">
+    <CardDark sx={{ p: 0.5, minWidth: "11em", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      Change all Substats
+    </CardDark>
+    <CardDark sx={{ px: 2, flexGrow: 1, display: "flex", gap: 1, alignItems: "center", justifyContent: "center", overflow: "visible" }}>
+      <Slider
+        size="small"
+        value={rolls ?? 0}
+        max={maxRolls}
+        min={0}
+        step={1}
+        marks
+        valueLabelDisplay="auto"
+        onChange={(e, v) => setRolls(v as number)}
+        onChangeCommitted={(e, v) => setRolls(v as number)}
+      />
+    </CardDark>
+    <CustomNumberInput
+      color={rolls ? (invalid ? "warning" : "success") : "primary"}
+      float
+      startAdornment={<Box sx={{ whiteSpace: "nowrap" }}>All Rolls</Box>}
+      value={parseFloat((rolls ?? 0).toFixed(2))}
+      onChange={v => v !== undefined && setRolls(v)}
+      sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
+      inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
+    <CustomNumberInput
+      value={maxSubstat ?? 0}
+      startAdornment={<Box sx={{ whiteSpace: "nowrap" }}>All Max</Box>}
+      onChange={v => v !== undefined && setMaxSubstat(v)}
+      color={(maxSubstat ?? 0) > maxRolls ? "warning" : "success"}
+      sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
+      inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
+  </Box>
 }
