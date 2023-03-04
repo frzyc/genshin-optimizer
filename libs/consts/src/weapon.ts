@@ -54,6 +54,7 @@ export const allWeaponClaymoreKeys = [
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
+  'MailedFlower',
   'MakhairaAquamarine',
   'OldMercsPal',
   'PrototypeArchaic',
