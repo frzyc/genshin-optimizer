@@ -123,11 +123,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     charged_dmg_,
     hydro_dmg_: dmgFormulas.passive2.hydro_dmg_,
   },
@@ -214,7 +212,7 @@ const sheet: ICharacterSheet = {
             fields: [{
               node: all_dmg_,
             }, {
-              text: ct.ch("omenDuration"),
+              text: stg("duration"),
               value: (data) => dm.burst.omenDuration[data.get(input.total.burstIndex).value],
               unit: "s",
             }]
@@ -237,7 +235,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.passive1.dmg, { name: ct.chg(`skill.skillParams.1`) })
         }, {
-          text: ct.ch("phantomDuration"),
+          text: stg("duration"),
           value: dm.passive1.phantomDuration,
           unit: "s"
         }]

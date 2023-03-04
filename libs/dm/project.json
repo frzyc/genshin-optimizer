@@ -30,6 +30,7 @@
   "tags": [],
   "namedInputs": {
     "production":[
+      "{projectRoot}/version.hash",
       "{projectRoot}/src/**/*",
       "{projectRoot}/scripts/**/*",
       "sharedGlobals",

@@ -1,4 +1,4 @@
-import { allArtifactSets, allWeaponKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allLocationCharacterKeys, allWeaponKeys } from "@genshin-optimizer/consts";
 import { ArrowRightAlt } from "@mui/icons-material";
 import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
 import { Suspense, useContext } from "react";
@@ -8,11 +8,11 @@ import { Link, Route, Routes, useMatch } from "react-router-dom";
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
 import SqBadge from "../Components/SqBadge";
+import { artStatPercent } from "../Data/Artifacts/Artifact";
 import material from "../Data/Materials/Material";
 import { DatabaseContext } from "../Database/Database";
-import KeyMap from "../KeyMap";
 import useDBMeta from "../ReactHooks/useDBMeta";
-import { charKeyToCharName, locationCharacterKeys } from "../Types/consts";
+import { charKeyToCharName } from "../Types/consts";
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -163,24 +163,24 @@ function Overview() {
 }
 function KeyNamingPane() {
   return <CardDark>
-      <CardContent>
-        <Typography>Key Naming Convention</Typography>
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <Typography gutterBottom>The keys in the GOOD format, like Artifact sets, weapon keys, character keys, are all in <strong>PascalCase</strong>. This makes the name easy to derive from the in-game text, assuming no renames occur. If a rename is needed, then the standard will have to increment versions. (Last change was in 1.2 when the Prototype weapons were renamed)</Typography>
-        <Typography gutterBottom> To derive the PascalKey from a specific name, remove all symbols from the name, and Capitalize each word:</Typography>
-        <Typography><code>Gladiator's Finale</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>GladiatorsFinale</code></Typography>
-        <Typography><code>Spirit Locket of Boreas</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>SpiritLocketOfBoreas</code></Typography>
-        <Typography><code>"The Catch"</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>TheCatch</code></Typography>
-      </CardContent>
-    </CardDark>
+    <CardContent>
+      <Typography>Key Naming Convention</Typography>
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Typography gutterBottom>The keys in the GOOD format, like Artifact sets, weapon keys, character keys, are all in <strong>PascalCase</strong>. This makes the name easy to derive from the in-game text, assuming no renames occur. If a rename is needed, then the standard will have to increment versions. (Last change was in 1.2 when the Prototype weapons were renamed)</Typography>
+      <Typography gutterBottom> To derive the PascalKey from a specific name, remove all symbols from the name, and Capitalize each word:</Typography>
+      <Typography><code>Gladiator's Finale</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>GladiatorsFinale</code></Typography>
+      <Typography><code>Spirit Locket of Boreas</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>SpiritLocketOfBoreas</code></Typography>
+      <Typography><code>"The Catch"</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>TheCatch</code></Typography>
+    </CardContent>
+  </CardDark>
 }
 
 function StatKeyPane() {
-  // const { t } = useTranslation()
+  const { t: tk } = useTranslation("statKey_gen")
   const statKeys = ["hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_", "dendro_dmg_"] as const
-  const statKeysCode = `type StatKey\n  = ${statKeys.map(k => `"${k}" //${KeyMap.getArtStr(k)}`).join(`\n  | `)}`
+  const statKeysCode = `type StatKey\n  = ${statKeys.map(k => `"${k}" //${tk(k)}${artStatPercent(k)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">StatKey</Typography>
     <CardDark>
@@ -192,7 +192,7 @@ function StatKeyPane() {
 }
 function ArtifactSetKeyPane() {
   const { t } = useTranslation("artifactNames_gen")
-  const artSetKeysCode = `type ArtifactSetKey\n  = ${[...new Set(allArtifactSets)].sort().map(k => `"${k}" //${t(`artifactNames_gen:${k}`)}`).join(`\n  | `)}`
+  const artSetKeysCode = `type ArtifactSetKey\n  = ${[...new Set(allArtifactSetKeys)].sort().map(k => `"${k}" //${t(`artifactNames_gen:${k}`)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">ArtifactSetKey</Typography>
     <CardDark>
@@ -206,7 +206,7 @@ function CharacterKeyPane() {
   const { t } = useTranslation("charNames_gen")
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const charKeysCode = `type CharacterKey\n  = ${[...new Set(locationCharacterKeys)].sort().map(k => `"${k}" //${t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(k), gender)}`)}`).join(`\n  | `)}`
+  const charKeysCode = `type CharacterKey\n  = ${[...new Set(allLocationCharacterKeys)].sort().map(k => `"${k}" //${t(`charNames_gen:${charKeyToCharName(database.chars.LocationToCharacterKey(k), gender)}`)}`).join(`\n  | `)}`
   return <>
     <Typography gutterBottom variant="h4">CharacterKey</Typography>
     <CardDark>

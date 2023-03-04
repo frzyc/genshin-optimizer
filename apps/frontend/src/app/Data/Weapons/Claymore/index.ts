@@ -1,6 +1,7 @@
 import { WeaponClaymoreKey } from "@genshin-optimizer/consts"
 import WeaponSheet from "../WeaponSheet"
 import Akuoumaru from "./Akuoumaru"
+import BeaconOfTheReedSea from "./BeaconOfTheReedSea"
 import BlackcliffSlasher from "./BlackcliffSlasher"
 import BloodtaintedGreatsword from "./BloodtaintedGreatsword"
 import DebateClub from "./DebateClub"
@@ -10,6 +11,7 @@ import ForestRegalia from "./ForestRegalia"
 import KatsuragikiriNagamasa from "./KatsuragikiriNagamasa"
 import LithicBlade from "./LithicBlade"
 import LuxuriousSeaLord from "./LuxuriousSeaLord"
+import MailedFlower from "./MailedFlower"
 import MakhairaAquamarine from "./MakhairaAquamarine"
 import OldMercsPal from "./OldMercsPal"
 import PrototypeArchaic from "./PrototypeArchaic"
@@ -30,6 +32,7 @@ import WhiteIronGreatsword from "./WhiteIronGreatsword"
 import WolfsGravestone from "./WolfsGravestone"
 const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   Akuoumaru,
+  BeaconOfTheReedSea,
   BlackcliffSlasher,
   BloodtaintedGreatsword,
   DebateClub,
@@ -39,6 +42,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
+  MailedFlower,
   MakhairaAquamarine,
   OldMercsPal,
   PrototypeArchaic,

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Assets from "../../../../Assets/Assets";
 import ArtifactCardNano from "../../../../Components/Artifact/ArtifactCardNano";
 import CardLight from "../../../../Components/Card/CardLight";
-import CharacterCardPico from "../../../../Components/Character/CharacterCardPico";
+import CharacterCardPico, { BlankCharacterCardPico } from "../../../../Components/Character/CharacterCardPico";
 import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent";
 import ImgIcon from "../../../../Components/Image/ImgIcon";
 import SqBadge from "../../../../Components/SqBadge";
@@ -22,7 +22,7 @@ import { ElementIcon } from "../../../../KeyMap/StatIcon";
 import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
 import useCharMeta from "../../../../ReactHooks/useCharMeta";
 import useDBMeta from "../../../../ReactHooks/useDBMeta";
-import { allSlotKeys, Ascension, ElementKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, AscensionKey, CharacterKey, ElementKey } from "@genshin-optimizer/consts";
 import { range } from "../../../../Util/Util";
 import EquipmentSection from "./EquipmentSection";
 
@@ -55,7 +55,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
     <Grid item xs={1}>
       <WeaponCardNano weaponId={equippedWeapon} BGComponent={CardLight} onClick={onClick} />
     </Grid>
-    {allSlotKeys.map(slotKey =>
+    {allArtifactSlotKeys.map(slotKey =>
       <Grid item key={slotKey} xs={1} >
         <ArtifactCardNano artifactId={data.get(input.art[slotKey].id).value} slotKey={slotKey} BGComponent={CardLight} onClick={onClick} />
       </Grid>)}
@@ -72,7 +72,7 @@ function CharacterProfileCard() {
   const charEle = data.get(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
-  const ascension = data.get(input.asc).value as Ascension
+  const ascension = data.get(input.asc).value as AscensionKey
   const constellation = data.get(input.constellation).value
   const tlvl = {
     auto: data.get(input.total.auto).value,
@@ -80,9 +80,9 @@ function CharacterProfileCard() {
     burst: data.get(input.total.burst).value,
   }
   const tBoost = {
-    auto: data.get(input.bonus.auto).value,
-    skill: data.get(input.bonus.skill).value,
-    burst: data.get(input.bonus.burst).value,
+    auto: data.get(input.total.autoBoost).value,
+    skill: data.get(input.total.skillBoost).value,
+    burst: data.get(input.total.burstBoost).value,
   }
   const { favorite } = useCharMeta(characterKey)
   return <CardLight sx={{ height: "100%" }} >
@@ -152,7 +152,13 @@ function CharacterProfileCard() {
       </Grid>
       <CardActionArea sx={{ p: 1 }} onClick={() => navigate("teambuffs")}>
         <Grid container columns={3} spacing={1}>
-          {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={team[i]} index={i} /></Grid>)}
+        {range(0, 2).map(i =>
+          <Grid key={i} item xs={1} height="100%">
+            {team[i]
+              ? <CharacterCardPico characterKey={team[i] as CharacterKey} />
+              : <BlankCharacterCardPico index={i} />}
+          </Grid>
+        )}
         </Grid>
       </CardActionArea>
     </Box>

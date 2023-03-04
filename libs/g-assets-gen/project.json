@@ -19,8 +19,7 @@
       "options": {
         "buildTarget": "g-assets-gen:build",
         "watch": false
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

@@ -136,10 +136,6 @@ const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: skillC3,
-    burst: burstC5
-  },
   teamBuff: {
     premod: {
       physical_dmg_: p2Shield_physical_dmg_,
@@ -147,6 +143,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     }
   },
   premod: {
+    skillBoost: skillC3,
+    burstBoost: burstC5,
     atkSPD_: c1Crit_atkSPD_,
     staminaChargedDec_: c6_staminaChargedDec_,
     atk: c6_chargedAtkBonus

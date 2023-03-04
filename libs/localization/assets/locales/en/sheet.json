@@ -32,6 +32,7 @@
     "skill": "After hitting an opponent with an Elemental Skill",
     "burst": "After hitting an opponent with an Elemental Burst",
     "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
+    "ele": "After dealing Elemental DMG",
     "geo": "After dealing <geo>Geo DMG</geo>",
     "anemo": "After dealing <anemo>Anemo DMG</anemo>",
     "hydro": "After dealing <hydro>Hydro DMG</hydro>",
@@ -39,7 +40,8 @@
     "pyro": "After dealing <pyro>Pyro DMG</pyro>",
     "electro": "After dealing <electro>Electro DMG</electro>",
     "dendro": "After dealing <dendro>Dendro DMG</dendro>",
-    "crit": "After dealing CRIT DMG"
+    "crit": "After dealing CRIT DMG",
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",
@@ -66,7 +68,7 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
-  "activeCharField": "Active Character in field",
+  "activeCharField": "Character is inside the field",
   "opponentsField": "Opponents in field",
   "takeDmg": "After taking DMG",
   "infusion": {
@@ -97,6 +99,7 @@
   "maxStacks": "Maximum stacks",
   "protectedByShield": "Protected by a shield",
   "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
+  "notProtectedByShield": "While not protected by a shield",
   "staminaDec_": "Stamina Consumption Decrease",
   "dmgAbsorption": {
     "pyro": "Pyro DMG Absorption",
@@ -149,5 +152,16 @@
     "skill": "Skill DMG Mult."
   },
   "energy": "Energy",
-  "triggerQuota": "Trigger Quota"
+  "triggerQuota": "Trigger Quota",
+  "enemyAffected": {
+    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+    "electro": "Enemy is affected by <electro>Electro</electro>",
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>"
+  },
+  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle"
 }

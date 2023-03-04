@@ -1,12 +1,14 @@
-import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, Typography } from '@mui/material';
+import { useEffect, useMemo, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay';
 import CardLight from '../../../Components/Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../../Components/CustomNumberInput';
 import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
 import PercentBadge from '../../../Components/PercentBadge';
 import SqBadge from '../../../Components/SqBadge';
 import TextButton from '../../../Components/TextButton';
-import Artifact from '../../../Data/Artifacts/Artifact';
+import Artifact, { artifactSubRolls } from '../../../Data/Artifacts/Artifact';
 import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
 import KeyMap, { cacheValueString } from '../../../KeyMap';
 import StatIcon from '../../../KeyMap/StatIcon';
@@ -37,12 +39,14 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
   if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
   if (allowedRolls < 0) error = error || t("editor.substat.error.noOverRoll", { value: allowedRolls + rollNum })
 
+  const marks = useMemo(() => key ? [{ value: 0 }, ...artifactSubRolls(rarity, key).map(v => ({ value: v, }))] : [{ value: 0 }], [key, rarity])
+
   return <CardLight>
     <Box sx={{ display: "flex" }}>
       <ButtonGroup size="small" sx={{ width: "100%", display: "flex" }}>
         <DropdownButton
           startIcon={key ? <StatIcon statKey={key} /> : undefined}
-          title={key ? KeyMap.getArtStr(key) : t('editor.substat.substatFormat', { value: index + 1 })}
+          title={key ? <ArtifactStatWithUnit statKey={key} /> : t('editor.substat.substatFormat', { value: index + 1 })}
           disabled={!artifact}
           color={key ? "success" : "primary"}
           sx={{ whiteSpace: "nowrap" }}>
@@ -50,7 +54,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
           {allSubstatKeys.filter(key => mainStatKey !== key)
             .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
               <ListItemIcon><StatIcon statKey={k} /></ListItemIcon>
-              <ListItemText>{KeyMap.getArtStr(k)}</ListItemText>
+              <ListItemText><ArtifactStatWithUnit statKey={k} /></ListItemText>
             </MenuItem>)}
         </DropdownButton>
         <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }} >
@@ -77,7 +81,10 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
         })}
       </ButtonGroup>
     </Box>
-    <Box sx={{ p: 1, }}>
+    <Box px={2}>
+      <SliderWrapper value={value} marks={marks} setValue={v => setSubstat(index, { key, value: (v as number) ?? 0 })} disabled={!key} />
+    </Box>
+    <Box sx={{ px: 1, pb: 1 }}>
       {error ? <SqBadge color="error">{t`ui:error`}</SqBadge> : <Grid container>
         <Grid item>
           <SqBadge color={rollNum === 0 ? "secondary" : `roll${clamp(rollNum, 1, 6)}` as RollColorKey}>
@@ -99,4 +106,20 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
 
     </Box>
   </CardLight >
+}
+function SliderWrapper({ value, setValue, marks, disabled = false }:
+  { value: number, setValue: (v: number) => void, marks: Array<{ value: number }>, disabled: boolean }) {
+  const [innerValue, setinnerValue] = useState(value)
+  useEffect(() => setinnerValue(value), [value])
+  return <Slider
+    value={innerValue}
+    step={null}
+    disabled={disabled}
+    marks={marks}
+    min={0}
+    max={marks[marks.length - 1]?.value ?? 0}
+    onChange={(e, v) => setinnerValue(v as number)}
+    onChangeCommitted={(e, v) => setValue(v as number)}
+    valueLabelDisplay="auto"
+  />
 }

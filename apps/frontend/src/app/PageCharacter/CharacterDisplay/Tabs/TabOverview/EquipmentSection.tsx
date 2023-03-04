@@ -1,4 +1,4 @@
-import { allSlotKeys, SlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
 import { Settings, SwapHoriz } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
@@ -48,7 +48,7 @@ export default function EquipmentSection() {
   const theme = useTheme();
   const breakpoint = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><CardContent><DocumentDisplay sections={weaponSheet.document} /></CardContent></CardLight>, [weaponSheet])
+  const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><Box p={1}><DocumentDisplay sections={weaponSheet.document} /></Box></CardLight>, [weaponSheet])
   const { rvFilter } = useCharMeta(characterKey)
   const deferredRvFilter = useDeferredValue(rvFilter)
   const deferredRvSet = useMemo(() => new Set(deferredRvFilter), [deferredRvFilter])
@@ -70,10 +70,10 @@ export default function EquipmentSection() {
         <Grid item xs={12} sm={6} md={4} display="flex" flexDirection="column" gap={1}>
           <WeaponCard weaponId={equippedWeapon} onEdit={showWeapon} canEquip extraButtons={<WeaponSwapButton weaponTypeKey={characterSheet.weaponTypeKey} />} />
         </Grid>
-        {allSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
+        {allArtifactSlotKeys.map(slotKey => <Grid item xs={12} sm={6} md={4} key={slotKey} >
           {data.get(input.art[slotKey].id).value ?
             <ArtifactCard artifactId={data.get(input.art[slotKey].id).value} effFilter={deferredRvSet}
-              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canExclude canEquip /> :
+              extraButtons={<ArtifactSwapButton slotKey={slotKey} />} editorProps={{}} canEquip /> :
             <ArtSwapCard slotKey={slotKey} />}
         </Grid>)}
       </Grid>
@@ -86,7 +86,7 @@ export default function EquipmentSection() {
     </Grid>
   </Box>
 }
-function ArtSwapCard({ slotKey }: { slotKey: SlotKey }) {
+function ArtSwapCard({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState()
@@ -132,7 +132,7 @@ function LargeWeaponSwapButton({ weaponTypeKey }: { weaponTypeKey: WeaponTypeKey
     <WeaponSwapModal weaponTypeKey={weaponTypeKey} onChangeId={id => database.weapons.set(id, { location: charKeyToLocCharKey(characterKey) })} show={show} onClose={onClose} />
   </>
 }
-function ArtifactSwapButton({ slotKey }: { slotKey: SlotKey }) {
+function ArtifactSwapButton({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { t } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
@@ -192,7 +192,7 @@ function ArtifactSectionCard() {
 
   return <CardLight>
     {hasEquipped && <Button color="error" onClick={unequipArts} fullWidth sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}>{t`tabEquip.unequipArts`}</Button>}
-    <CardContent >
+    <Box p={1} >
       <Stack spacing={1}>
         <CardDark >
           <Button fullWidth color="info" startIcon={<Settings />} sx={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }} onClick={onShow}>RV Filter</Button>
@@ -215,6 +215,6 @@ function ArtifactSectionCard() {
           </CardDark>)
         )}
       </Stack>
-    </CardContent>
+    </Box>
   </CardLight>
 }

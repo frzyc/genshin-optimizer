@@ -86,9 +86,7 @@ export function NodeFieldDisplayText({ node }: { node: NodeDisplay }) {
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   return <Typography component="div" sx={{ display: "flex", gap: 1, alignItems: "center" }} >
     {!!node.info.isTeamBuff && <Groups />}
-    {!!node.info.icon && <ColorText color={node.info.variant}>
-      {node.info.icon}
-    </ColorText>}
+    {node.info.icon}
     <ColorText color={node.info.variant}>{node.info.name}{suffixDisplay}</ColorText>
   </Typography>
 }

@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ElementKey, TravelerKey } from "@genshin-optimizer/consts"
+import { CustomMultiTarget } from "../Types/character"
 import { travelerElements } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { IGO, IGOOD } from "./exim"
@@ -26,20 +28,22 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
   }
 
   // Default GOOD set version
-  migrateVersion(8, () => { })
+  migrateVersion(8, () => null)
 
   // 8.20.0 - 8.21.0
   migrateVersion(20, () => {
     // convert from "Traveler" to element specific "Traveler..."
-    if (!good.characters) return
+    const characters = good.characters
+    if (!characters) return
     const key = "Traveler"
-    const charInd = good.characters.findIndex(c => c.key === key)
+    const charInd = characters.findIndex(c => (c.key as string) === key)
     if (charInd === -1) return
-    const character = good.characters![charInd]!
-    good.characters.splice(charInd, 1)
+    const character = characters[charInd]
+    if (!character) return
+    characters.splice(charInd, 1)
     travelerElements.forEach(ele => {
-      const targets = character?.customMultiTargets?.[ele] ?? []
-      good.characters!.push({ ...character, customMultiTarget: targets, key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` })
+      const targets = (character as unknown as { customMultiTargets: Partial<Record<ElementKey, CustomMultiTarget[]>> })?.customMultiTargets?.[ele] ?? []
+      characters.push({ ...character, customMultiTarget: targets, key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey })
     })
   })
 
@@ -118,7 +122,7 @@ export function migrate(storage: DBStorage) {
     }
   }
 
-  migrateVersion(8, () => { })
+  migrateVersion(8, () => null)
 
   // 6.1.9 - 6.2.3
   migrateVersion(11, () => {

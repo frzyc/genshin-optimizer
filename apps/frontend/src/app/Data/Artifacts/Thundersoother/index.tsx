@@ -1,15 +1,14 @@
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cond, trans } from '../../SheetUtil'
+import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "Thundersoother"
 const setHeader = setHeaderTemplate(key)
-const [, trm] = trans("artifact", key)
 
 const [condStatePath, condState] = cond(key, "state")
 
@@ -32,7 +31,7 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         value: condState,
         path: condStatePath,
-        name: trm("condName"),
+        name: st("enemyAffected.electro"),
         states: {
           on: {
             fields: [{

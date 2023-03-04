@@ -30,7 +30,7 @@ export default function loadImages() {
     }
     fs.mkdirSync(path.dirname(dest), { recursive: true })
     fs.copyFile(src, dest, (err) => {
-      if (err) throw err;
+      if (err) console.error(err);
     });
   }
 

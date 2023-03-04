@@ -113,9 +113,9 @@ export const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
+  premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
   },
   teamBuff: {
     total: { eleMas: asc4 },
@@ -238,7 +238,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         value: condSkillHitOpponent,
         path: condSkillHitOpponentPath,
-        name: ct.ch("asc4"),
+        name: st("hitOp.skillOrBurst"),
         canShow: unequal(input.activeCharKey, key, 1),
         states: {
           hit: {

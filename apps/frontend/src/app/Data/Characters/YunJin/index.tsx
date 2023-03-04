@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../Formula'
 import { equal, greaterEq, infoMut, prod, subscript, sum, unequal } from '../../../Formula/utils'
-import { allElements, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -70,7 +70,7 @@ const dm = {
 } as const
 
 const nodeA4 = greaterEq(input.asc, 4,
-  subscript(sum(...allElements.map(ele => greaterEq(tally[ele], 1, 1))), [0, ...dm.passive2.dmgInc], { unit: "%" }))
+  subscript(sum(...allElementKeys.map(ele => greaterEq(tally[ele], 1, 1))), [0, ...dm.passive2.dmgInc], { unit: "%" }))
 
 const [condBurstPath, condBurst] = cond(key, "skill")
 const nodeSkill = equal("on", condBurst, sum(
@@ -106,16 +106,14 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
-  },
   premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
     def_: nodeC4,
-    atkSPD_: nodeC6,
   },
   teamBuff: {
     premod: {
+      atkSPD_: nodeC6,
       normal_dmgInc: nodeSkill,
       normal_dmg_: nodeC2,
     }

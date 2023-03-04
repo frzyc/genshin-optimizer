@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut } from '../../../Formula/utils'
 import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { ICharacterSheet } from '../ICharacterSheet.d'
@@ -86,11 +86,9 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    burst: nodeC3,
-    skill: nodeC5,
-  },
   premod: {
+    burstBoost: nodeC3,
+    skillBoost: nodeC5,
     normal_dmg_: nodeC2NormalDmgInc,
     charged_dmg_: nodeC2ChargedDmgInc,
     incHeal_: nodeA1HealingBonus
@@ -199,7 +197,7 @@ const sheet: ICharacterSheet = {
     constellation2: ct.talentTem("constellation2", [ct.condTem("constellation2", {
       value: condC2,
       path: condC2Path,
-      name: ct.ch("c2C"),
+      name: st("enemyAffected.cryo"),
       states: {
         on: {
           fields: [{

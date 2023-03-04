@@ -1,8 +1,7 @@
-import { allCharacterKeys, CharacterKey } from "../../Types/consts";
+import { allArtifactSlotKeys, allCharacterKeys, CharacterKey } from "@genshin-optimizer/consts";
 import { deepFreeze } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataManager } from "../DataManager";
-import { IGO, IGOOD, ImportResult } from "../exim";
 
 export interface IBuildResult {
   builds: string[][]
@@ -21,9 +20,10 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
   toStorageKey(key: string): string {
     return `buildResult_${key}`
   }
-  validate(obj: object, key: CharacterKey): IBuildResult | undefined {
+  validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
+    if (typeof obj !== "object") return
     if (!allCharacterKeys.includes(key)) return
-    let { builds, buildDate } = (obj as any) ?? {}
+    let { builds, buildDate } = obj as IBuildResult
 
     if (!Array.isArray(builds)) {
       builds = []
@@ -31,7 +31,10 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
     } else {
       builds = builds.map(build => {
         if (!Array.isArray(build)) return []
-        return build.filter(id => this.database.arts.get(id))
+        const filteredBuild = build.filter(id => this.database.arts.get(id))
+        // Check that builds has only 1 artifact of each slot
+        if (allArtifactSlotKeys.some(s => filteredBuild.filter(id => this.database.arts.get(id)?.slotKey === s).length > 1)) return []
+        return filteredBuild
       }).filter(x => x.length)
       if (!Number.isInteger(buildDate)) buildDate = 0
     }
@@ -40,23 +43,6 @@ export class BuildResultDataManager extends DataManager<CharacterKey, "buildResu
   }
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildResult
-  }
-
-  exportGOOD(good: Partial<IGOOD & IGO>) {
-    const artIDs = new Map<string, number>(Object.keys(this.database.arts.data).map((key, i) => [key, i]))
-    good[this.goKey] = Object.entries(this.data).map(([id, value]) =>
-      ({ ...value, id, builds: value.builds.map(b => b.map(x => artIDs.has(x) ? `artifact_${artIDs.get(x)}` : "")) }))
-  }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
-    const buildResults = good[this.goKey]
-    if (buildResults && Array.isArray(buildResults)) buildResults.forEach(b => {
-      const { id, ...rest } = b
-      if (!id || !allCharacterKeys.includes(id as CharacterKey)) return
-      if (rest.builds) // Preserve the old build ids
-        rest.builds = rest.builds.map(build => build.map(i => result.importArtIds.get(i) ?? ""))
-
-      this.set(id as CharacterKey, { ...rest })
-    })
   }
 }
 

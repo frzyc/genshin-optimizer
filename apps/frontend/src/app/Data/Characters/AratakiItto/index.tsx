@@ -2,7 +2,7 @@ import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, min, percent, prod, subscript, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElementsWithPhy, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -89,7 +89,7 @@ const [condC4Path, condC4] = cond(key, "constellation4")
 const nodeSkillHP = prod(subscript(input.total.skillIndex, dm.skill.hp, KeyMap.info("hp_")), input.total.hp)
 const nodeBurstAtk = equal(condBurst, "on", prod(subscript(input.total.burstIndex, dm.burst.defConv, KeyMap.info("def_")), input.total.def))
 const nodeBurstAtkSpd = equal(condBurst, "on", dm.burst.atkSpd, KeyMap.info("atkSPD_"))
-const allNodeBurstRes = Object.fromEntries(allElementsWithPhy.map(ele => [`${ele}_res_`, equal(condBurst, "on", -dm.burst.resDec)]))
+const allNodeBurstRes = Object.fromEntries(allElementWithPhyKeys.map(ele => [`${ele}_res_`, equal(condBurst, "on", -dm.burst.resDec)]))
 const nodeBurstInfusion = equalStr(condBurst, "on", "geo")
 const nodeA4Bonus = greaterEq(input.asc, 4, prod(percent(dm.passive2.def_), input.premod.def))
 const nodeP1AtkSpd = greaterEq(input.asc, 4, lookup(condP1, Object.fromEntries(range(1, dm.passive1.maxStacks).map(i => [i, constant(dm.passive1.atkSPD_ * i)])), 0, KeyMap.info("atkSPD_")))
@@ -121,10 +121,6 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   teamBuff: {
     premod: {
       atk_: nodeC4Atk,
@@ -132,6 +128,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
     }
   },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     charged_critDMG_: nodeC6CritDMG,
     atk: nodeBurstAtk,
     atkSPD_: sum(nodeBurstAtkSpd, nodeP1AtkSpd),

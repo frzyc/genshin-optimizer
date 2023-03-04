@@ -1,4 +1,4 @@
-import { allElementsWithPhy, ArtifactSetKey, SlotKey } from '@genshin-optimizer/consts';
+import { allElementWithPhyKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
 import { artifactAsset } from '@genshin-optimizer/g-assets';
 import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
 import HelpIcon from '@mui/icons-material/Help';
@@ -8,6 +8,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
 import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
+import { ArtifactColoredIconStatWithUnit, ArtifactStatWithUnit } from '../Components/Artifact/ArtifactStatKeyDisplay';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CloseButton from '../Components/CloseButton';
@@ -15,7 +16,6 @@ import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ImgIcon from '../Components/Image/ImgIcon';
 import ModalWrapper from '../Components/ModalWrapper';
-import { StatColoredWithUnit } from '../Components/StatDisplay';
 import { getArtSheet } from '../Data/Artifacts';
 import Artifact from '../Data/Artifacts/Artifact';
 import { DatabaseContext } from '../Database/Database';
@@ -43,7 +43,7 @@ type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
 interface IEditorArtifact {
   setKey: ArtifactSetKey,
-  slotKey: SlotKey,
+  slotKey: ArtifactSlotKey,
   level: number,
   rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
@@ -82,7 +82,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   useEffect(() => database.arts.followAny(setDirtyDatabase), [database, setDirtyDatabase])
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact), [editorArtifact])
+  const artifact = useMemo(() => editorArtifact && validateArtifact(editorArtifact, true), [editorArtifact])
 
   const [modalShow, setModalShow] = useState(false)
 
@@ -154,10 +154,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
-    if (old) {
-      validated.artifact.location = old.location
-      validated.artifact.exclude = old.exclude
-    }
+    if (old) validated.artifact.location = old.location
     return validated
   }, [artifact, artifactIdToEdit, old])
 
@@ -223,7 +220,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const theme = useTheme();
   const grmd = useMediaQuery(theme.breakpoints.up('md'));
 
-  const element = artifact ? allElementsWithPhy.find(ele => artifact.mainStatKey.includes(ele)) : undefined
+  const element = artifact ? allElementWithPhyKeys.find(ele => artifact.mainStatKey.includes(ele)) : undefined
   const color = artifact
     ? element ?? "success"
     : "primary"
@@ -295,10 +292,10 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
             {/* main stat */}
             <Box component="div" display="flex">
               <DropdownButton startIcon={artifact?.mainStatKey ? <StatIcon statKey={artifact.mainStatKey} /> : undefined}
-                title={<b>{artifact ? KeyMap.getArtStr(artifact.mainStatKey) : t`mainStat`}</b>} disabled={!sheet} color={color} >
+                title={<b>{artifact ? <ArtifactStatWithUnit statKey={artifact.mainStatKey} /> : t`mainStat`}</b>} disabled={!sheet} color={color} >
                 {Artifact.slotMainStats(slotKey).map(mainStatK =>
                   <MenuItem key={mainStatK} selected={artifact?.mainStatKey === mainStatK} disabled={artifact?.mainStatKey === mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
-                    <StatColoredWithUnit statKey={mainStatK} />
+                    <ArtifactColoredIconStatWithUnit statKey={mainStatK} />
                   </MenuItem>)}
               </DropdownButton>
               <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>

@@ -1,7 +1,7 @@
 import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import { allElements, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allElementKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -55,7 +55,7 @@ const [condC4Path, condC4] = cond(key, "Constellation4")
 
 const nodeA4GeoDmgBonus_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(dm.passive2.geoDmgBonus_)))
 
-const nodesC4 = Object.fromEntries(allElements.map(ele => [
+const nodesC4 = Object.fromEntries(allElementKeys.map(ele => [
   `${ele}_res_`,
   greaterEq(input.constellation, 4, equal(condC4, "on", percent(0.10)))
 ]))
@@ -82,9 +82,9 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC5,
-    burst: nodeC3,
+  premod: {
+    skillBoost: nodeC5,
+    burstBoost: nodeC3,
   }, teamBuff: {
     premod: {
       geo_dmg_: nodeA4GeoDmgBonus_,

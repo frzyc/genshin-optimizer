@@ -1,7 +1,7 @@
-import { allArtifactSets, allSlotKeys } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
 import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
 import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, locationCharacterKeys } from "../../Types/consts";
+import { allArtifactRarities } from "../../Types/consts";
 import { clamp } from "../../Util/Util";
 import { ArtCharDatabase } from "../Database";
 import { DataEntry } from "../DataEntry";
@@ -30,14 +30,14 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
   constructor(database: ArtCharDatabase) {
     super(database, "display_artifact", initialState, "display_artifact")
   }
-  validate(obj: any): IDisplayArtifact | undefined {
+  validate(obj: unknown): IDisplayArtifact | undefined {
     if (typeof obj !== "object") return
-    let { filterOption, ascending, sortType, effFilter, probabilityFilter } = obj
+    let { filterOption, ascending, sortType, effFilter, probabilityFilter } = obj as IDisplayArtifact
 
     if (typeof filterOption !== "object") filterOption = initialFilterOption()
     else {
-      let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } = filterOption
-      artSetKeys = validateArr(artSetKeys, allArtifactSets, [])
+      let { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, locked, rvLow, rvHigh, lines } = filterOption
+      artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
       rarity = validateArr(rarity, allArtifactRarities)
 
       if (typeof levelLow !== "number") levelLow = 0
@@ -45,13 +45,12 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
       if (typeof levelHigh !== "number") levelHigh = 0
       else levelHigh = clamp(levelHigh, 0, 20)
 
-      slotKeys = validateArr(slotKeys, allSlotKeys)
+      slotKeys = validateArr(slotKeys, allArtifactSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
       substats = validateArr(substats, allSubstatKeys, [])
-      locations = validateArr(locations, locationCharacterKeys, [])
+      locations = validateArr(locations, allLocationCharacterKeys, [])
       if (typeof showEquipped !== "boolean") showEquipped = true
       if (typeof showInventory !== "boolean") showInventory = true
-      exclusion = validateArr(exclusion, ["excluded", "included"])
       locked = validateArr(locked, ["locked", "unlocked"])
 
       if (typeof rvLow !== "number") rvLow = 0
@@ -59,7 +58,7 @@ export class DisplayArtifactEntry extends DataEntry<"display_artifact", "display
 
       lines = validateArr(lines, [1, 2, 3, 4])
 
-      filterOption = { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, exclusion, locked, rvLow, rvHigh, lines } as FilterOption
+      filterOption = { artSetKeys, rarity, levelLow, levelHigh, slotKeys, mainStatKeys, substats, locations, showEquipped, showInventory, locked, rvLow, rvHigh, lines } as FilterOption
     }
 
     if (typeof ascending !== "boolean") ascending = false

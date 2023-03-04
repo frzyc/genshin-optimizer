@@ -2,7 +2,7 @@ import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { Lock, LockOpen } from "@mui/icons-material";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
-import { Box, Button, ButtonGroup, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
+import { Box, Button, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
 import { Suspense, useCallback, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Assets from "../Assets/Assets";
@@ -87,17 +87,17 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             ? <LocationAutocomplete location={location} setLocation={setLocation} filter={filter} autoCompleteProps={{ getOptionDisabled: t => !t.key }} />
             : <LocationName location={location} />}
         </Box>
-        <ButtonGroup sx={{ height: "100%" }}>
+        <Box display="flex" gap={1} alignItems="stretch" height="100%" sx={{ "& .MuiButton-root": { minWidth: 0, height: "100%" } }}>
           {!!onEdit && <Tooltip title={<Typography>{t`page_weapon:edit`}</Typography>} placement="top" arrow>
-            <Button color="info" onClick={() => onEdit(id)} >
+            <Button color="info" size="small" onClick={() => onEdit(id)} >
               <EditIcon />
             </Button>
           </Tooltip>}
-          {!!onDelete && <Button color="error" onClick={() => onDelete(id)} disabled={!!location || lock} >
+          {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={!!location || lock} >
             <DeleteForeverIcon />
           </Button>}
           {extraButtons}
-        </ButtonGroup>
+        </Box>
       </Box>
     </CardLight>
   </Suspense>

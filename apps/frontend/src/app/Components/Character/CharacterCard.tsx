@@ -1,9 +1,10 @@
+import { allArtifactSlotKeys, ArtifactSlotKey, CharacterKey, ElementKey } from '@genshin-optimizer/consts';
 import { characterAsset } from '@genshin-optimizer/g-assets';
 import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
 import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
-import { DataContext, dataContextObj, TeamData } from '../../Context/DataContext';
+import { DataContext, dataContextObj } from '../../Context/DataContext';
 import { getCharSheet } from '../../Data/Characters';
 import { ascensionMaxLevel } from '../../Data/LevelData';
 import { DatabaseContext } from '../../Database/Database';
@@ -15,7 +16,6 @@ import useDBMeta from '../../ReactHooks/useDBMeta';
 import useTeamData from '../../ReactHooks/useTeamData';
 import { ICachedArtifact } from '../../Types/artifact';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, CharacterKey, ElementKey, SlotKey } from '@genshin-optimizer/consts';
 import { range } from '../../Util/Util';
 import ArtifactCardPico from '../Artifact/ArtifactCardPico';
 import CardLight from '../Card/CardLight';
@@ -25,7 +25,7 @@ import SqBadge from '../SqBadge';
 import { StarsDisplay } from '../StarDisplay';
 import WeaponCardPico from '../Weapon/WeaponCardPico';
 import WeaponFullCard from '../Weapon/WeaponFullCard';
-import CharacterCardPico from './CharacterCardPico';
+import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -41,8 +41,7 @@ type CharacterCardProps = {
 }
 export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, characterChildren, onClick, onClickHeader, onClickTeammate, footer, hideStats, isTeammateCard }: CharacterCardProps) {
   const { database } = useContext(DatabaseContext)
-  const { teamData: teamDataContext } = useContext(DataContext)
-  const teamData = useTeamData(teamDataContext ? "" : characterKey) ?? (teamDataContext as TeamData | undefined)
+  const teamData = useTeamData(characterKey)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
@@ -112,13 +111,19 @@ function ExistingCharacterCardContent({ characterContextObj, dataContextObj, cha
     <Header characterKey={characterKey} onClick={!onClick ? onClickHeader : undefined} >
       <HeaderContent />
     </Header>
-    <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
+    <CardContent sx={theme => ({ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1, padding: hideStats ? `${theme.spacing(1)}!important` : undefined })}>
       <Artifacts />
       {!isTeammateCard && <Grid container columns={4} spacing={0.75}>
         <Grid item xs={1} height="100%">
           <WeaponCardPico weaponId={character.equippedWeapon} />
         </Grid>
-        {range(0, 2).map(i => <Grid key={i} item xs={1} height="100%"><CharacterCardPico characterKey={character.team[i]} onClick={!onClick ? onClickTeammate : undefined} index={i} /></Grid>)}
+        {range(0, 2).map(i =>
+          <Grid key={i} item xs={1} height="100%">
+            {character.team[i]
+              ? <CharacterCardPico simpleTooltip={hideStats} characterKey={character.team[i] as CharacterKey} onClick={!onClick ? onClickTeammate : undefined} />
+              : <BlankCharacterCardPico index={i} />}
+          </Grid>
+        )}
       </Grid>}
       {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
       {!isTeammateCard && !hideStats && <Stats />}
@@ -189,9 +194,9 @@ function HeaderContent() {
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
-  const autoBoost = data.get(input.bonus.auto).value
-  const skillBoost = data.get(input.bonus.skill).value
-  const burstBoost = data.get(input.bonus.burst).value
+  const autoBoost = data.get(input.total.autoBoost).value
+  const skillBoost = data.get(input.total.skillBoost).value
+  const burstBoost = data.get(input.total.burstBoost).value
 
   const tAuto = data.get(input.total.auto).value
   const tSkill = data.get(input.total.skill).value
@@ -242,11 +247,11 @@ function Artifacts() {
   const { database } = useContext(DatabaseContext)
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
-    allSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
-    [data, database]) as Array<[SlotKey, ICachedArtifact | undefined]>;
+    allArtifactSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
+    [data, database]) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
-    {artifacts.map(([key, art]: [SlotKey, ICachedArtifact | undefined]) =>
+    {artifacts.map(([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) =>
       <Grid item key={key} xs={1}>
         <ArtifactCardPico artifactObj={art} slotKey={key} />
       </Grid>

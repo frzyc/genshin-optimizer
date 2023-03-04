@@ -1,4 +1,4 @@
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, SlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
 import { weaponAsset } from "@genshin-optimizer/g-assets";
 import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
@@ -232,7 +232,7 @@ export default function TabTheorycraft() {
         const a = data.artifact.sets[f.path[1]];
         if (a) {
           return constant(a)
-        } else if (allArtifactSets.includes(f.path[1] as any)) {
+        } else if (allArtifactSetKeys.includes(f.path[1] as any)) {
           return constant(0)
         }
       }
@@ -407,7 +407,7 @@ function WeaponEditorCard({ weapon, setWeapon, weaponTypeKey }: { weapon: ICache
 
 function ArtifactMainLevelCard({ artifactData, setArtifactData }:
   { artifactData: ICharTC["artifact"], setArtifactData: (a: ICharTC["artifact"]) => void }) {
-  const setSlot = useCallback((slotKey: SlotKey) => (slot: ICharTCArtifactSlot) => {
+  const setSlot = useCallback((slotKey: ArtifactSlotKey) => (slot: ICharTCArtifactSlot) => {
     const artifactData_ = deepClone(artifactData)
     artifactData_.slots[slotKey] = slot
     setArtifactData(artifactData_)
@@ -422,7 +422,7 @@ function ArtifactMainLevelCard({ artifactData, setArtifactData }:
   return <Stack spacing={1} >
     <CardLight sx={{ p: 1 }}>
       <Stack spacing={1}>
-        {allSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} slot={artifactData.slots[s]} setSlot={setSlot(s)} />)}
+        {allArtifactSlotKeys.map(s => <ArtifactMainLevelSlot key={s} slotKey={s} slot={artifactData.slots[s]} setSlot={setSlot(s)} />)}
       </Stack>
     </CardLight>
     <Suspense fallback={<Skeleton variant='rectangular' width='100%' height={200} />}>
@@ -430,7 +430,7 @@ function ArtifactMainLevelCard({ artifactData, setArtifactData }:
     </Suspense>
   </Stack>
 }
-function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKey: SlotKey, slot: ICharTCArtifactSlot, setSlot: (s: ICharTCArtifactSlot) => void }) {
+function ArtifactMainLevelSlot({ slotKey, slot, setSlot: setSlotProp }: { slotKey: ArtifactSlotKey, slot: ICharTCArtifactSlot, setSlot: (s: ICharTCArtifactSlot) => void }) {
   const { level, statKey, rarity } = slot
   const keys = Artifact.slotMainStats(slotKey)
   const setSlot = useCallback((action: Partial<ICharTCArtifactSlot>) => {

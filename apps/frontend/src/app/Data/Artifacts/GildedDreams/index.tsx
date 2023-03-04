@@ -2,7 +2,7 @@ import { input, tally } from '../../../Formula'
 import { Data } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, prod, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { allElements, ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allElementKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { IArtifactSheet } from '../IArtifactSheet'
@@ -16,14 +16,14 @@ const set2 = greaterEq(input.artSet.GildedDreams, 2, 80, KeyMap.info("eleMas"))
 const [condPassivePath, condPassive] = cond(key, "passive")
 const set4_atk_ = greaterEq(input.artSet.GildedDreams, 4,
   equal(condPassive, "on",
-    lookup(input.charEle, Object.fromEntries(allElements.map(ele => [
+    lookup(input.charEle, Object.fromEntries(allElementKeys.map(ele => [
       ele,
       greaterEq(tally[ele], 2, prod(sum(tally[ele], -1), percent(0.14))) // Do not include wielder (maybe)
     ])), naught)
   )
 )
 const totalNonEleParty = sum(
-  ...allElements.map(ele =>
+  ...allElementKeys.map(ele =>
     greaterEq(tally[ele], 1,
       unequal(ele, input.charEle,
         tally[ele]

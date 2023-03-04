@@ -1,5 +1,5 @@
 import { Favorite } from "@mui/icons-material"
-import { Autocomplete, AutocompleteProps, Chip, ChipProps, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, useTheme } from "@mui/material"
+import { Autocomplete, AutocompleteProps, Chip, ChipProps, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, TextFieldProps, useTheme } from "@mui/material"
 import { Suspense, useMemo } from "react"
 import { Variant } from "../Formula/type"
 import ColorText from "./ColoredText"
@@ -13,17 +13,18 @@ type GeneralAutocompletePropsBase<T extends string> = {
   toExItemLabel?: (v: T) => Displayable | undefined,
   toExLabel?: (v: T) => Displayable | undefined,
   chipProps?: Partial<ChipProps>
+  textFieldProps?: Partial<TextFieldProps>
 }
 export type GeneralAutocompleteProps<T extends string> = GeneralAutocompletePropsBase<T> & { valueKey: T | null, onChange: (v: T | null) => void, } &
   Omit<AutocompleteProps<GeneralAutocompleteOption<T>, false, false, false>, "renderInput" | "isOptionEqualToValue" | "renderOption" | "onChange" | "value">
-export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, ...acProps }: GeneralAutocompleteProps<T>) {
+export function GeneralAutocomplete<T extends string>({ options, valueKey: key, label, onChange, toImg, toExItemLabel, toExLabel, textFieldProps, ...acProps }: GeneralAutocompleteProps<T>) {
   const value = options.find(o => o.key === key) ?? null
   const theme = useTheme()
   return <Autocomplete
     autoHighlight
     options={options}
     value={value}
-    onChange={(event, newValue, reason) => onChange(newValue?.key ?? null)}
+    onChange={(_event, newValue, _reason) => onChange(newValue?.key ?? null)}
     isOptionEqualToValue={(option, value) => option.key === value?.key}
     renderInput={(params) => {
       const variant = value?.variant
@@ -31,6 +32,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
       const valueKey = value?.key
       return <TextField
         {...params}
+        {...textFieldProps}
         label={label}
         InputProps={{
           ...params.InputProps,
@@ -44,7 +46,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
         color={key ? "success" : "primary"}
       />
     }}
-    renderOption={(props, option) => <MenuItem value={option.key} {...props}>
+    renderOption={(props, option) => <MenuItem value={option.key} sx={{ whiteSpace: "normal" }} {...props}>
       <ListItemIcon>{toImg(option.key)}</ListItemIcon>
       <ListItemText color={option.variant}>
         <Suspense fallback={<Skeleton variant="text" width={100} />}>

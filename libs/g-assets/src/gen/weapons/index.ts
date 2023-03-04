@@ -57,11 +57,13 @@ import KatsuragikiriNagamasa from "./KatsuragikiriNagamasa"
 import MakhairaAquamarine from "./MakhairaAquamarine"
 import Akuoumaru from "./Akuoumaru"
 import ForestRegalia from "./ForestRegalia"
+import MailedFlower from "./MailedFlower"
 import SkywardPride from "./SkywardPride"
 import WolfsGravestone from "./WolfsGravestone"
 import SongOfBrokenPines from "./SongOfBrokenPines"
 import TheUnforged from "./TheUnforged"
 import RedhornStonethresher from "./RedhornStonethresher"
+import BeaconOfTheReedSea from "./BeaconOfTheReedSea"
 import BeginnersProtector from "./BeginnersProtector"
 import IronPoint from "./IronPoint"
 import WhiteTassel from "./WhiteTassel"
@@ -209,11 +211,13 @@ const data = {
   MakhairaAquamarine,
   Akuoumaru,
   ForestRegalia,
+  MailedFlower,
   SkywardPride,
   WolfsGravestone,
   SongOfBrokenPines,
   TheUnforged,
   RedhornStonethresher,
+  BeaconOfTheReedSea,
   BeginnersProtector,
   IronPoint,
   WhiteTassel,

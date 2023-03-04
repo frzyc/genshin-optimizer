@@ -127,7 +127,7 @@ export default function PageScanner() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ display: "flex", gap: 1, py: 1, flexWrap: "wrap" }}>
-              <SqBadge color="warning" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.0</SqBadge>
+              <SqBadge color="success" sx={{ display: "flex", alignItems: "center" }} ><Gamepad sx={{ pr: 0.5 }} />3.4</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Computer sx={{ pr: 0.5 }} />{t("tags.pc") as string}</SqBadge>
               <SqBadge sx={{ display: "flex", alignItems: "center" }} ><Backpack sx={{ pr: 0.5 }} />{t("tags.materials") as string}</SqBadge>
               <WarningWrapper>

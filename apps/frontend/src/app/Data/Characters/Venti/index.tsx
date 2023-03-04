@@ -149,11 +149,9 @@ const dmgFormulas = {
 }
 
 export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_gen, dmgFormulas, {
-  bonus: {
-    burst: nodeC3,
-    skill: nodeC5,
-  },
   premod: {
+    burstBoost: nodeC3,
+    skillBoost: nodeC5,
     anemo_dmg_: c4_anemo_dmg_,
     staminaGlidingDec_: p3_staminaGlidingDec_,
   },
@@ -328,7 +326,7 @@ const sheet: ICharacterSheet = {
       ct.condTem("constellation4", {
         value: condC4,
         path: condC4Path,
-        name: ct.ch("c4"),
+        name: st("getElementalOrbParticle"),
         states: {
           pickup: {
             fields: [{

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next"
 import { getCharSheet } from "../../Data/Characters"
 import { DatabaseContext } from "../../Database/Database"
 import useDBMeta from "../../ReactHooks/useDBMeta"
-import { charKeyToCharName, LocationCharacterKey, locationCharacterKeys, travelerKeys } from "../../Types/consts"
+import { charKeyToCharName, LocationCharacterKey, allLocationCharacterKeys, travelerKeys } from "../../Types/consts"
 import { GeneralAutocompleteMulti, GeneralAutocompleteOption } from "../GeneralAutocomplete"
 import CharIconSide from "../Image/CharIconSide"
 
@@ -32,7 +32,7 @@ export default function LocationFilterMultiAutocomplete({ locations, setLocation
   const toVariant = useCallback((key: LocationCharacterKey) => getCharSheet(database.chars.LocationToCharacterKey(key), gender).elementKey ?? undefined, [database, gender])
 
   const values: GeneralAutocompleteOption<LocationCharacterKey>[] = useMemo(() =>
-    locationCharacterKeys.filter(lck => database.chars.get(database.chars.LocationToCharacterKey(lck)))
+    allLocationCharacterKeys.filter(lck => database.chars.get(database.chars.LocationToCharacterKey(lck)))
       .map(v => ({ key: v, label: toText(v), favorite: isFavorite(v), variant: toVariant(v) }))
       .sort((a, b) => {
         if (a.favorite && !b.favorite) return -1

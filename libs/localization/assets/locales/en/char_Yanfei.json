@@ -16,7 +16,7 @@
     "4": "4-Seal DMG"
   },
   "burst": {
-    "grantMax": "Grant the maximum number of Scarlet Seals"
+    "grantMax": "Grants the maximum number of Scarlet Seals"
   },
   "passive1": {
     "sealsConsumed": "Seals consumed by using a Charged Attack"

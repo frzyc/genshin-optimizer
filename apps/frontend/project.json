@@ -14,7 +14,6 @@
         "index": "apps/frontend/src/index.html",
         "baseHref": "/",
         "main": "apps/frontend/src/main.tsx",
-        "polyfills": "apps/frontend/src/polyfills.ts",
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "assets": [
           "apps/frontend/src/favicon.ico",
@@ -36,7 +35,8 @@
           }],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "isolatedConfig": true,
+        "webpackConfig": "apps/frontend/webpack.config.js"
       },
       "configurations": {
         "development": {
@@ -103,5 +103,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["localization", "pipeline-runner","dm-localization"]
+  "implicitDependencies": ["localization", "pipeline-runner", "dm-localization"]
 }

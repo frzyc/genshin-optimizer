@@ -145,10 +145,6 @@ const dmgFormulas = {
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, dmgFormulas, {
-  bonus: {
-    skill: nodeC3,
-    burst: nodeC5,
-  },
   teamBuff: {
     premod: {
       staminaSprintDec_: passive,
@@ -169,6 +165,8 @@ export const data = dataObjForCharacterSheet(key, "anemo", "inazuma", data_gen, 
     plunging_dmg_: c6PlungingDmg_,
   },
   premod: {
+    skillBoost: nodeC3,
+    burstBoost: nodeC5,
     eleMas: c2EleMas,
   },
 })
