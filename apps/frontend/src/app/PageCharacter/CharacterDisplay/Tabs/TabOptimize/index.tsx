@@ -34,8 +34,10 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
 import { OptProblemInput } from '../../../../Solver';
 import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
+import { ICachedArtifact } from '../../../../Types/artifact';
 import { objectKeyMap, objPathValue, range } from '../../../../Util/Util';
 import { maxBuildsToShowList } from './Build';
+import AllowChar from './Components/AllowChar';
 import ArtifactSetConfig from './Components/ArtifactSetConfig';
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -43,7 +45,6 @@ import BuildAlert, { BuildStatus } from './Components/BuildAlert';
 import BuildDisplayItem from './Components/BuildDisplayItem';
 import ChartCard from './Components/ChartCard';
 import ExcludeArt from './Components/ExcludeArt';
-import AllowChar from './Components/AllowChar';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
@@ -51,7 +52,6 @@ import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
-import { ICachedArtifact } from '../../../../Types/artifact';
 
 const audio = new Audio("notification.mp3")
 export default function TabBuild() {
@@ -324,6 +324,9 @@ export default function TabBuild() {
 
           <ArtifactSetConfig disabled={generatingBuilds} />
 
+          {/* use equipped */}
+          <AllowChar disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
+
           {/* use excluded */}
           <ExcludeArt disabled={generatingBuilds} />
 
@@ -337,9 +340,6 @@ export default function TabBuild() {
           >
             {t`allowPartial`}
           </Button>
-
-          {/* use equipped */}
-          <AllowChar disabled={generatingBuilds} numArtsEquippedUsed={numEquippedUsed} />
 
           {/*Minimum Final Stat Filter */}
           <StatFilterCard disabled={generatingBuilds} />
