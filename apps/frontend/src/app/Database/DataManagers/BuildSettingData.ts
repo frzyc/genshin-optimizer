@@ -27,7 +27,7 @@ export interface BuildSetting {
     flower?: never
     plume?: never
   }
-  allowLocations: LocationKey[]
+  excludedLocations: LocationKey[]
   allowLocationsState: AllowLocationsState
   artExclusion: string[]
   useExcludedArts: boolean
@@ -54,7 +54,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
   validate(obj: object, key: string): BuildSetting | undefined {
     if (!allCharacterKeys.includes(key as CharacterKey)) return
     if (typeof obj !== "object") return
-    let { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
+    let { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, excludedLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = obj as BuildSetting
 
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -73,7 +73,12 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (!artExclusion || !Array.isArray(artExclusion)) artExclusion = []
     else artExclusion = [...(new Set(artExclusion))].filter(id => this.database.arts.keys.includes(id))
 
-    allowLocations = validateArr(allowLocations, allLocationCharacterKeys.filter(k => k !== key), []).filter(lk => this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)))
+    excludedLocations = validateArr(
+      excludedLocations,
+      allLocationCharacterKeys.filter(k => k !== key), [] // Remove self from list
+    ).filter(lk =>
+      this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
+    )
     if (!allowLocationsState) allowLocationsState = "unequippedOnly"
 
     if (!maxBuildsToShowList.includes(maxBuildsToShow as typeof maxBuildsToShowList[number])) maxBuildsToShow = maxBuildsToShowDefault
@@ -85,7 +90,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (useExcludedArts === undefined) useExcludedArts = false
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
-    return { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
+    return { artSetExclusion, artExclusion, useExcludedArts, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, excludedLocations, allowLocationsState, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
   get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
@@ -100,7 +105,7 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   mainStatKeys: { sands: [...Artifact.slotMainStats("sands")], goblet: [...Artifact.slotMainStats("goblet")], circlet: [...Artifact.slotMainStats("circlet")] },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
-  allowLocations: [],
+  excludedLocations: [],
   allowLocationsState: "unequippedOnly",
   allowPartial: false,
   maxBuildsToShow: 5,

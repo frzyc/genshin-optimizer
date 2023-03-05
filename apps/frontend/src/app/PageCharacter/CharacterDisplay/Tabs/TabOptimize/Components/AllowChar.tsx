@@ -33,7 +33,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
   const { t } = useTranslation("page_character_optimize")
   const { t: t_pc } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(CharacterContext)
-  const { buildSetting: { allowLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { buildSetting: { excludedLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const [show, onOpen, onClose] = useBoolState(false)
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -93,15 +93,15 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
   useEffect(() => database.chars.followAny(_ => forceUpdate()), [forceUpdate, database])
 
 
-  const allowAll = useCallback(() => buildSettingDispatch({ allowLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
-  const disallowAll = useCallback(() => buildSettingDispatch({ allowLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
+  const allowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
+  const disallowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
 
-  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, lk), allowLocationsState: "customList" }), [allowLocations, buildSettingDispatch])
+  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ excludedLocations: toggleArr(excludedLocations, lk), allowLocationsState: "customList" }), [excludedLocations, buildSettingDispatch])
 
   const setState = useCallback((_e: MouseEvent, state: AllowLocationsState) => buildSettingDispatch({ allowLocationsState: state }), [buildSettingDispatch])
 
   const total = locList.length
-  const useTot = allowLocations.length
+  const useTot = total - excludedLocations.length
   const charactersAllowed = allowLocationsState === "all"
     ? total
     : (allowLocationsState === "customList"
@@ -172,7 +172,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
         <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
           {locList.map((lk) =>
             <Grid item key={lk} xs={1}>
-              <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={allowLocations.includes(lk)} />
+              <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={!excludedLocations.includes(lk)} />
             </Grid>
           )}
         </Grid>

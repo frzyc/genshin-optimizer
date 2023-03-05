@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ElementKey, TravelerKey } from "@genshin-optimizer/consts"
+import { allLocationCharacterKeys, ElementKey, LocationCharacterKey, TravelerKey } from "@genshin-optimizer/consts"
 import { CustomMultiTarget } from "../Types/character"
 import { travelerElements } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
@@ -12,7 +12,7 @@ import { IGO, IGOOD } from "./exim"
 // 3. Update `currentDBVersion`
 // 4. Test on import, and also on version update
 
-export const currentDBVersion = 22
+export const currentDBVersion = 23
 
 export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
 
@@ -77,7 +77,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       good.buildSettings = buildSettings.map(b => ({ ...b, id: b.key }))
   })
 
-  // 8.28.0 - Present
+  // 8.28.0 - 9.5.2
   migrateVersion(22, () => {
     const buildSettings = (good as any).buildSettings
     if (buildSettings) {
@@ -94,6 +94,21 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           ]))
         )
         return { ...b, statFilters: newStatFilters }
+      })
+    }
+  })
+
+  // 9.5.3 - Present
+  migrateVersion(23, () => {
+    const buildSettings = (good as any).buildSettings
+    if (buildSettings) {
+      good.buildSettings = buildSettings.map(b => {
+        const allowLocations: LocationCharacterKey[] = b.allowLocations
+        // Invert the list; should be all location keys that are not in allowLocations
+        // We will remove extra keys later in validation code
+        const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
+        delete b.allowLocations
+        return { ...b, excludedLocations }
       })
     }
   })
@@ -181,7 +196,7 @@ export function migrate(storage: DBStorage) {
     swap("state_CharacterDisplay", "display_character")
   })
 
-  // 8.28.0 - Present
+  // 8.28.0 - 9.5.2
   migrateVersion(22, () => {
     for (const key of storage.keys) {
       if (key.startsWith("buildSetting_")) {
@@ -198,6 +213,21 @@ export function migrate(storage: DBStorage) {
           ]))
         )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
+      }
+    }
+  })
+
+  // 9.5.3 - Present
+  migrateVersion(23, () => {
+    for (const key of storage.keys) {
+      if (key.startsWith("buildSetting_")) {
+        const b = storage.get(key)
+        const allowLocations: LocationCharacterKey[] = b.allowLocations
+        // Invert the list; should be all location keys that are not in allowLocations
+        // We will remove extra keys later in validation code
+        const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
+        delete b.allowLocations
+        storage.set(key, { ...b, excludedLocations })
       }
     }
   })

@@ -168,9 +168,9 @@ function ExcludeEquipButton({ locationKey }: { locationKey: LocationCharacterKey
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const characterSheet = getCharSheet(database.chars.LocationToCharacterKey(locationKey))
-  const { buildSetting: { allowLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
-  const excluded = !allowLocations.includes(locationKey)
-  const toggle = useCallback(() => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, locationKey) }), [locationKey, allowLocations, buildSettingDispatch])
+  const { buildSetting: { excludedLocations }, buildSettingDispatch } = useBuildSetting(characterKey)
+  const excluded = excludedLocations.includes(locationKey)
+  const toggle = useCallback(() => buildSettingDispatch({ excludedLocations: toggleArr(excludedLocations, locationKey) }), [locationKey, excludedLocations, buildSettingDispatch])
 
   return <Button onClick={toggle} color={excluded ? "secondary" : "success"} size="small" startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />} >
     <span>{t`excludeChar.allowEquip`} <strong>{characterSheet.name}</strong></span>

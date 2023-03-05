@@ -104,7 +104,7 @@ export default function TabBuild() {
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
-    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh, allowLocationsState, useExcludedArts } = deferredArtsDirty && deferredBuildSetting
+    const { mainStatKeys, excludedLocations, artExclusion, levelLow, levelHigh, allowLocationsState, useExcludedArts } = deferredArtsDirty && deferredBuildSetting
 
     return database.arts.values.filter(art => {
       if (!useExcludedArts && artExclusion.includes(art.id)) return false
@@ -117,7 +117,7 @@ export default function TabBuild() {
       if (allowLocationsState === "unequippedOnly"
         || (allowLocationsState === "customList" && art.location
         && art.location !== locKey
-        && !allowLocations.includes(art.location)))
+        && excludedLocations.includes(art.location)))
         return false
 
       return true
@@ -130,14 +130,14 @@ export default function TabBuild() {
     return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
         const { level, location } = art
-        const { levelLow, levelHigh, allowLocations, allowLocationsState, artExclusion } = deferredArtsDirty && deferredBuildSetting
+        const { levelLow, levelHigh, excludedLocations, allowLocationsState, artExclusion } = deferredArtsDirty && deferredBuildSetting
         if (level >= levelLow && level <= levelHigh) {
           ctMap.levelTotal.in.total++
           if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
         }
         const locKey = charKeyToLocCharKey(characterKey)
         if (allowLocationsState === "all" && location && location !== locKey
-          || (allowLocationsState === "customList" && location && location !== locKey && allowLocations.includes(location))) {
+          || (allowLocationsState === "customList" && location && location !== locKey && !excludedLocations.includes(location))) {
           ctMap.allowListTotal.in.total++
           if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
         }
