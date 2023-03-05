@@ -67,7 +67,16 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
     reader.onload = () => setdata(reader.result as string)
     reader.readAsText(file)
   }
-  return <CardLight>
+  const onDrop = async e => {
+    e.preventDefault()
+    const file = e.dataTransfer.files[0]
+    e.target.value = null // reset the value so the same file can be uploaded again...
+    if (file) setfilename(file.name)
+    const reader = new FileReader()
+    reader.onload = () => setdata(reader.result as string)
+    reader.readAsText(file)
+  }
+  return <CardLight onDragOver={e => e.preventDefault()} onDrop={onDrop} sx={{ height: "100%" }}>
     <CardContent sx={{ py: 1 }}><Trans t={t} i18nKey="settings:uploadCard.title" /></CardContent>
     <CardContent>
       <Grid container spacing={2} sx={{ mb: 1 }}>
