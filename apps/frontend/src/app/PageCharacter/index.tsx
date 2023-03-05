@@ -61,8 +61,7 @@ export default function PageCharacter() {
 
   const { gender } = useDBMeta()
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
-    const chararcterSheet = await getCharSheet(cKey, gender)
-    let name = chararcterSheet?.name
+    let name = getCharSheet(cKey, gender).name
     // Use translated string
     if (typeof name === "object")
       name = t(`charNames_gen:${charKeyToCharName(cKey, gender)}`)
