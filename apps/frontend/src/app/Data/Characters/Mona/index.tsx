@@ -212,7 +212,7 @@ const sheet: ICharacterSheet = {
             fields: [{
               node: all_dmg_,
             }, {
-              text: ct.ch("omenDuration"),
+              text: stg("duration"),
               value: (data) => dm.burst.omenDuration[data.get(input.total.burstIndex).value],
               unit: "s",
             }]
@@ -235,7 +235,7 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(dmgFormulas.passive1.dmg, { name: ct.chg(`skill.skillParams.1`) })
         }, {
-          text: ct.ch("phantomDuration"),
+          text: stg("duration"),
           value: dm.passive1.phantomDuration,
           unit: "s"
         }]

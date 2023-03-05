@@ -57,6 +57,7 @@ import KatsuragikiriNagamasa from "./KatsuragikiriNagamasa"
 import MakhairaAquamarine from "./MakhairaAquamarine"
 import Akuoumaru from "./Akuoumaru"
 import ForestRegalia from "./ForestRegalia"
+import MailedFlower from "./MailedFlower"
 import SkywardPride from "./SkywardPride"
 import WolfsGravestone from "./WolfsGravestone"
 import SongOfBrokenPines from "./SongOfBrokenPines"
@@ -210,6 +211,7 @@ const data = {
   MakhairaAquamarine,
   Akuoumaru,
   ForestRegalia,
+  MailedFlower,
   SkywardPride,
   WolfsGravestone,
   SongOfBrokenPines,
