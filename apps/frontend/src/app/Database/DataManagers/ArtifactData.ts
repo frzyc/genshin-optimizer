@@ -96,10 +96,11 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
 
       let importArt = art
       let importId: string | undefined = (a as ICachedArtifact).id
-
+      let foundDupOrUpgrade = false
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(art, Array.from(idsToRemove))
         if (duplicated[0] || upgraded[0]) {
+          foundDupOrUpgrade = true
           // Favor upgrades with the same location, else use 1st dupe
           let [match, isUpgrade] = (hasEquipment && art.location && upgraded[0]?.location === art.location) ?
             [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
@@ -112,10 +113,10 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
           }
           isUpgrade ? result.artifacts.upgraded.push(art) : result.artifacts.unchanged.push(art)
           idsToRemove.delete(match.id)
-          if (importId)
-            //Imported artifact will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
-            this.remove(match.id, false)// Do not notify, since this is a "replacement"
-          else importId = match.id
+
+          //Imported artifact will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
+          this.remove(match.id, false)// Do not notify, since this is a "replacement"
+          if (!importId) importId = match.id // always resolve some id
           importArt = { ...art, location: hasEquipment ? art.location : match.location }
         }
       }
@@ -131,8 +132,11 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
             }
           }
         }
-        this.set(importId, importArt)
-      } else this.new(importArt)
+      } else {
+        importId = this.generateKey(takenIds)
+        takenIds.add(importId)
+      }
+      this.set(importId, importArt, !foundDupOrUpgrade)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
     if (result.keepNotInImport || result.ignoreDups) result.artifacts.notInImport = idtoRemoveArr.length

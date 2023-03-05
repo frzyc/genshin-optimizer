@@ -239,6 +239,88 @@ describe("Database", () => {
     expect(database.arts.get(circletId)?.setKey).toEqual("Adventurer")
     expect(database.weapons.get(database.chars.get("Albedo")?.equippedWeapon)?.key).toEqual("CinnabarSpindle")
   })
+
+  test('should merge scanner with dups for weapons', () => {
+    const a1 = initialWeapon("Akuoumaru")
+    const a2old = initialWeapon("BlackTassel")
+    const a2new= initialWeapon("BlackTassel")
+    a2new.level=20
+    const a3 = initialWeapon("CalamityQueller") // in db but not in import
+    const a4 = initialWeapon("Deathmatch") // in import but not in db
+
+    const dupId = database.weapons.new(a1)
+    const upgradeId = database.weapons.new(a2old)
+    database.weapons.new(a3)
+    const good1: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      weapons: [a1, a2new, a4],
+    }
+    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    expect(importResult.weapons.upgraded.length).toEqual(1)
+    expect(importResult.weapons.unchanged.length).toEqual(1)
+    expect(importResult.weapons.notInImport).toEqual(1)
+    expect(importResult.weapons.new.length).toEqual(1)
+    expect(database.weapons.values.length).toEqual(4)
+    const dbA1 = database.weapons.get(dupId)
+    expect(dbA1?.key).toEqual("Akuoumaru")
+    const dbA2 = database.weapons.get(upgradeId)
+    expect(dbA2?.key).toEqual("BlackTassel")
+    expect(dbA2?.level).toEqual(20)
+  })
+
+  test('should merge scanner with dups for artifacts', () => {
+    const a1 = randomizeArtifact({ slotKey: "flower" }) // dup
+    const a2old: IArtifact = { // before
+      level: 0,
+      location: "",
+      lock: false,
+      mainStatKey: "atk",
+      rarity: 3,
+      setKey: "Instructor",
+      slotKey: "plume",
+      substats: [
+        { key: "atk_", value: 5 }
+      ]
+    }
+    const a2new: IArtifact = { // upgrade
+      level: 4,
+      location: "",
+      lock: false,
+      mainStatKey: "atk",
+      rarity: 3,
+      setKey: "Instructor",
+      slotKey: "plume",
+      substats: [
+        { key: "atk_", value: 5 },
+        { key: "def_", value: 5 }
+      ]
+    }
+    const a3 = randomizeArtifact({ slotKey: "goblet" }) // in db but not in import
+    const a4 = randomizeArtifact({ slotKey: "circlet" }) // in import but not in db
+
+    const dupId = database.arts.new(a1)
+    const upgradeId = database.arts.new(a2old)
+    database.arts.new(a3)
+    const good1: IGOOD = {
+      format: "GOOD",
+      version: 1,
+      source: "Scanner",
+      artifacts: [a1, a2new, a4],
+    }
+    const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
+    expect(importResult.artifacts.upgraded.length).toEqual(1)
+    expect(importResult.artifacts.unchanged.length).toEqual(1)
+    expect(importResult.artifacts.notInImport).toEqual(1)
+    expect(importResult.artifacts.new.length).toEqual(1)
+    expect(database.arts.values.length).toEqual(4)
+    const dbA1 = database.arts.get(dupId)
+    expect(dbA1?.slotKey).toEqual("flower")
+    const dbA2 = database.arts.get(upgradeId)
+    expect(dbA2?.slotKey).toEqual("plume")
+    expect(dbA2?.level).toEqual(4)
+  })
   test("Import character without weapon should give default weapon", () => {
     const good = {
       format: "GOOD",
