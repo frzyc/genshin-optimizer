@@ -22,7 +22,7 @@ import { iconInlineProps } from "../../../../../SVGIcons";
 import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
 
-export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: string }) {
+export default function AllowChar({ disabled = false, allowListTotal }: { disabled?: boolean, allowListTotal: string }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { allowLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -132,7 +132,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
             {t("excludeChar.chars")} <SqBadge color="success">{charactersAllowed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
           </Typography>
           <Typography>
-            {t("excludeChar.artis")} <SqBadge color="success">{numArtsEquippedUsed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
+            {t("excludeChar.artis")} <SqBadge color="success">{allowListTotal} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
           </Typography>
         </Stack>
       </CardContent>

@@ -23,7 +23,7 @@ import useMediaQueryUp from "../../../../../ReactHooks/useMediaQueryUp";
 import { filterFunction } from "../../../../../Util/SortByFilters";
 import useBuildSetting from "../useBuildSetting";
 
-export default function ExcludeArt({ disabled = false }: { disabled?: boolean }) {
+export default function ExcludeArt({ disabled = false, excludedTotal }: { disabled?: boolean, excludedTotal: string }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { artExclusion, useExcludedArts }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -77,7 +77,7 @@ export default function ExcludeArt({ disabled = false }: { disabled?: boolean })
           <Box>{t("excludeArt.button_text")}</Box>
           <SqBadge sx={{ whiteSpace: "normal" }}>
             {useExcludedArts
-              ? <Trans t={t} i18nKey="excludeArt.usingNum" count={numExcludedArt}>Using {{ count: numExcludedArt } as TransObject} excluded artifacts</Trans>
+              ? <Trans t={t} i18nKey="excludeArt.usingNum">Using {{ totalStr: excludedTotal } as TransObject} excluded artifacts</Trans>
               : <Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>{{ count: numExcludedArt } as TransObject} artifacts are excluded</Trans>
             }
           </SqBadge>

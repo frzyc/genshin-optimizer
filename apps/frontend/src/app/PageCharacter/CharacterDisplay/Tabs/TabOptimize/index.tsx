@@ -104,10 +104,10 @@ export default function TabBuild() {
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
   const filteredArts = useMemo(() => {
-    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh, allowLocationsState } = deferredArtsDirty && deferredBuildSetting
+    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh, allowLocationsState, useExcludedArts } = deferredArtsDirty && deferredBuildSetting
 
     return database.arts.values.filter(art => {
-      if (artExclusion.includes(art.id)) return false
+      if (!useExcludedArts && artExclusion.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -125,12 +125,12 @@ export default function TabBuild() {
   }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
 
   const filteredArtIdMap = useMemo(() => objectKeyMap(filteredArts.map(({ id }) => id), _ => true), [filteredArts])
-  const { levelTotal, allowListTotal } = useMemo(() => {
-    const catKeys = { levelTotal: ["in"], allowListTotal: ["in"] } as const
+  const { levelTotal, allowListTotal, excludedTotal } = useMemo(() => {
+    const catKeys = { levelTotal: ["in"], allowListTotal: ["in"], excludedTotal: ["in"] } as const
     return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
         const { level, location } = art
-        const { levelLow, levelHigh, allowLocations, allowLocationsState } = deferredArtsDirty && deferredBuildSetting
+        const { levelLow, levelHigh, allowLocations, allowLocationsState, artExclusion } = deferredArtsDirty && deferredBuildSetting
         if (level >= levelLow && level <= levelHigh) {
           ctMap.levelTotal.in.total++
           if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
@@ -140,6 +140,10 @@ export default function TabBuild() {
           || (allowLocationsState === "customList" && location && location !== locKey && allowLocations.includes(location))) {
           ctMap.allowListTotal.in.total++
           if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
+        }
+        if (artExclusion.includes(id)) {
+          ctMap.excludedTotal.in.total++
+          if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
         }
       })
     )
@@ -332,10 +336,10 @@ export default function TabBuild() {
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use equipped */}
-          <AllowChar disabled={generatingBuilds} numArtsEquippedUsed={allowListTotal.in} />
+          <AllowChar disabled={generatingBuilds} allowListTotal={allowListTotal.in} />
 
           {/* use excluded */}
-          <ExcludeArt disabled={generatingBuilds} />
+          <ExcludeArt disabled={generatingBuilds} excludedTotal={excludedTotal.in} />
 
 
           <Button
