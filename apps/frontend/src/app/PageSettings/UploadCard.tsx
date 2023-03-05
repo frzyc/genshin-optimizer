@@ -82,7 +82,7 @@ export default function UploadCard({ index, onReplace }: { index: number, onRepl
       <Grid container spacing={2} sx={{ mb: 1 }}>
         <Grid item>
           <label htmlFor="icon-button-file">
-            <InvisInput accept=".json" id="icon-button-file" type="file" onChange={onUpload}/>
+            <InvisInput accept=".json" id="icon-button-file" type="file" onChange={onUpload} />
             <Button component="span" color="info" startIcon={<FileOpen />}>{t`uploadCard.buttons.open`}</Button>
           </label>
         </Grid>
