@@ -67,7 +67,6 @@ function PatchNotesCard() {
         const decoder = new TextDecoder("utf-8");
         const data = decoder.decode(buffer);
         const release = JSON.parse(data);
-        console.log(release.body);
         setState({ isLoaded: true, text: release.body })
       })
       .catch((err) => console.log("Error: " + err.message))
