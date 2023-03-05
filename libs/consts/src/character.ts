@@ -29,6 +29,7 @@ export const nonTravelerCharacterKeys = [
   'Chongyun',
   'Collei',
   'Cyno',
+  'Dehya',
   'Diluc',
   'Diona',
   'Dori',

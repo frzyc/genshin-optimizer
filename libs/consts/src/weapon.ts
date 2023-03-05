@@ -44,6 +44,7 @@ export type WeaponSwordKey = typeof allWeaponSwordKeys[number]
 
 export const allWeaponClaymoreKeys = [
   'Akuoumaru',
+  'BeaconOfTheReedSea',
   'BlackcliffSlasher',
   'BloodtaintedGreatsword',
   'DebateClub',
@@ -53,6 +54,7 @@ export const allWeaponClaymoreKeys = [
   'KatsuragikiriNagamasa',
   'LithicBlade',
   'LuxuriousSeaLord',
+  'MailedFlower',
   'MakhairaAquamarine',
   'OldMercsPal',
   'PrototypeArchaic',

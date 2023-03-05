@@ -3,7 +3,7 @@ import { getCharSheet } from "../../Data/Characters";
 import { validateLevelAsc } from "../../Data/LevelData";
 import { getWeaponSheet } from "../../Data/Weapons";
 import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "../../Types/consts";
+import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "@genshin-optimizer/consts";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { defaultInitialWeapon } from "../../Util/WeaponUtil";
 import { ArtCharDatabase } from "../Database";
@@ -24,16 +24,15 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
 
     for (const charKey of this.database.chars.keys) {
       const newWeapon = this.ensureEquipment(charKey, weaponIds)
-      if (newWeapon) newWeapons.push()
+      if (newWeapon) newWeapons.push(newWeapon)
     }
     return newWeapons
   }
-  ensureEquipment(charKey: CharacterKey, weaponIds?: Set<string>) {
+  ensureEquipment(charKey: CharacterKey, weaponIds: Set<string> = new Set(this.keys)) {
     const char = this.database.chars.get(charKey)
     if (char?.equippedWeapon) return
-    if (!weaponIds) weaponIds = new Set(this.keys)
     const weapon = defaultInitialWeapon(getCharSheet(charKey, "F").weaponTypeKey)
-    const weaponId = generateRandomWeaponID(weaponIds)
+    const weaponId = this.generateKey(weaponIds)
     weaponIds.add(weaponId)
     this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
     return weapon
@@ -92,15 +91,15 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
   }
 
   new(value: IWeapon): string {
-    const id = generateRandomWeaponID(new Set(this.keys))
+    const id = this.generateKey()
     this.set(id, value)
     return id
   }
-  remove(key: string) {
+  remove(key: string, notify = true) {
     const weapon = this.get(key)
     if (!weapon || weapon.location)
       return // Can't delete equipped weapon here
-    super.remove(key)
+    super.remove(key, notify)
   }
   importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.weapons.beforeMerge = this.values.length
@@ -113,6 +112,13 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       return
     }
 
+    const takenIds = new Set(this.keys)
+    weapons.forEach(a => {
+      const id = (a as ICachedWeapon).id
+      if (!id) return
+      takenIds.add(id)
+    })
+
     result.weapons.import = weapons.length
     const idsToRemove = new Set(this.values.map(w => w.id))
     const hasEquipment = weapons.some(w => w.location)
@@ -121,34 +127,62 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       if (!weapon) return result.weapons.invalid.push(w)
 
       let importWeapon = weapon
-      let importKey: string | undefined = (w as ICachedWeapon).id
+      let importId: string | undefined = (w as ICachedWeapon).id
+      let foundDupOrUpgrade = false
+      if (!result.ignoreDups) {
+        const { duplicated, upgraded } = this.findDups(weapon, Array.from(idsToRemove))
+        if (duplicated[0] || upgraded[0]) {
+          foundDupOrUpgrade = true
+          // Favor upgrades with the same location, else use 1st dupe
+          let [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
+            [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
+          if (importId) {
+            // favor exact id matches
+            const up = upgraded.find(w => w.id === importId)
+            if (up) [match, isUpgrade] = [up, true]
+            const dup = duplicated.find(w => w.id === importId)
+            if (dup) [match, isUpgrade] = [dup, false]
+          }
+          isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
+          idsToRemove.delete(match.id)
 
-      let { duplicated, upgraded } = result.ignoreDups ? { duplicated: [], upgraded: [] } : this.findDup(weapon)
-      // Don't reuse dups/upgrades
-      duplicated = duplicated.filter(a => idsToRemove.has(a.id))
-      upgraded = upgraded.filter(a => idsToRemove.has(a.id))
-
-      if (duplicated[0] || upgraded[0]) {
-        // Favor upgrades with the same location, else use 1st dupe
-        const [match, isUpgrade] = (hasEquipment && weapon.location && upgraded[0]?.location === weapon.location) ?
-          [upgraded[0], true] : (duplicated[0] ? [duplicated[0], false] : [upgraded[0], true])
-        idsToRemove.delete(match.id)
-        isUpgrade ? result.weapons.upgraded.push(weapon) : result.weapons.unchanged.push(weapon)
-        importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
-        importKey = importKey ?? match.id
+          //Imported weapon will be set to `importId` later, so remove the dup/upgrade now to avoid a duplicate
+          super.remove(match.id, false)// Do not notify, since this is a "replacement". Also use super to bypass the equipment check
+          if (!importId) importId = match.id // always resolve some id
+          importWeapon = { ...weapon, location: hasEquipment ? weapon.location : match.location }
+        }
       }
-      if (importKey) this.set(importKey, importWeapon)
-      else this.new(importWeapon)
+      if (importId) {
+        if (this.get(importId)) { // `importid` already in use, get a new id
+          const newId = this.generateKey(takenIds)
+          takenIds.add(newId)
+          if (this.changeId(importId, newId)) {
+            // Sync the id in `idsToRemove` due to the `changeId`
+            if (idsToRemove.has(importId)) {
+              idsToRemove.delete(importId)
+              idsToRemove.add(newId)
+            }
+          }
+        }
+        this.set(importId, importWeapon, !foundDupOrUpgrade)
+      } else {
+        importId = this.generateKey(takenIds)
+        takenIds.add(importId)
+      }
+      this.set(importId, importWeapon, !foundDupOrUpgrade)
     })
     const idtoRemoveArr = Array.from(idsToRemove)
     if (result.keepNotInImport || result.ignoreDups) result.weapons.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach(k => this.remove(k))
+
+    this.database.weapons.ensureEquipments()
   }
 
-  findDup(weapon: IWeapon): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {
+  findDups(weapon: IWeapon, idList = this.keys): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {
     const { key, level, ascension, refinement } = weapon
 
-    const candidates = this.values.filter(candidate =>
+    const weapons = idList.map(id => this.get(id)).filter(a => a) as ICachedWeapon[]
+    const candidates = weapons.filter(candidate =>
       key === candidate.key &&
       level >= candidate.level &&
       ascension >= candidate.ascension &&
@@ -169,13 +203,4 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
     ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     return { duplicated, upgraded }
   }
-}
-/// Get a random integer (converted to string) that is not in `keys`
-function generateRandomWeaponID(keys: Set<string>): string {
-  let ind = keys.size
-  let candidate = ""
-  do {
-    candidate = `weapon_${ind++}`
-  } while (keys.has(candidate))
-  return candidate
 }
