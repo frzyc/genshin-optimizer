@@ -1,8 +1,8 @@
-import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, allElementKeys, allWeaponTypeKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
 import SettingsIcon from '@mui/icons-material/Settings';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import { Box, Button, CardActionArea, CardContent, Divider, Grid, Stack, ToggleButton, Typography } from "@mui/material";
-import { MouseEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react";
+import { Box, Button, CardActionArea, CardContent, Divider, Grid, Stack, TextField, ToggleButton, Typography } from "@mui/material";
+import { ChangeEvent, MouseEvent, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import SlotIcon from "../../../../../Components/Artifact/SlotIcon";
 import CardDark from "../../../../../Components/Card/CardDark";
@@ -13,17 +13,25 @@ import InfoTooltip from "../../../../../Components/InfoTooltip";
 import ModalWrapper from "../../../../../Components/ModalWrapper";
 import SolidToggleButtonGroup from "../../../../../Components/SolidToggleButtonGroup";
 import SqBadge from "../../../../../Components/SqBadge";
+import ElementToggle from "../../../../../Components/ToggleButton/ElementToggle";
+import WeaponToggle from "../../../../../Components/ToggleButton/WeaponToggle";
 import { CharacterContext } from "../../../../../Context/CharacterContext";
+import { getCharSheet } from "../../../../../Data/Characters";
 import { DatabaseContext } from "../../../../../Database/Database";
 import { allAllowLocationsState, AllowLocationsState } from "../../../../../Database/DataManagers/BuildSettingData";
 import useBoolState from "../../../../../ReactHooks/useBoolState";
 import useForceUpdate from "../../../../../ReactHooks/useForceUpdate";
 import { iconInlineProps } from "../../../../../SVGIcons";
+import { ICachedCharacter } from "../../../../../Types/character";
+import { characterFilterConfigs } from "../../../../../Util/CharacterSort";
+import { filterFunction } from "../../../../../Util/SortByFilters";
+import { bulkCatTotal } from "../../../../../Util/totalUtils";
 import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
 
 export default function AllowChar({ disabled = false, allowListTotal }: { disabled?: boolean, allowListTotal: string }) {
   const { t } = useTranslation("page_character_optimize")
+  const { t: t_pc } = useTranslation("page_character")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { allowLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
@@ -31,28 +39,59 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
   const [dbDirty, forceUpdate] = useForceUpdate()
   const deferredDbDirty = useDeferredValue(dbDirty)
 
+  const [searchTerm, setSearchTerm] = useState("")
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const [elementKeys, setElementKeys] = useState([...allElementKeys])
+  const deferredElementKeys = useDeferredValue(elementKeys)
+  const [weaponTypeKeys, setWeaponTypeKeys] = useState([...allWeaponTypeKeys])
+  const deferredWeaponTypeKeys = useDeferredValue(weaponTypeKeys)
+
+  const charKeyMap: Dict<CharacterKey, ICachedCharacter> = useMemo(() =>
+    deferredDbDirty && Object.fromEntries(Array.from(new Set(
+      Object.entries(database.chars.data)
+        .filter(([ck]) => ck !== characterKey)
+        .filter(([ck]) => filterFunction({ element: deferredElementKeys, weaponType: deferredWeaponTypeKeys, name: deferredSearchTerm }, characterFilterConfigs(database))(ck))
+    ))),
+    [deferredDbDirty, database, deferredElementKeys, deferredWeaponTypeKeys, deferredSearchTerm, characterKey]
+  )
+
+  const locList = Object.entries(charKeyMap)
+    .sort(([ck1, c1], [ck2, c2]) => {
+      // sort characters by: star => more artifacts equipped
+      const [choosec1, choosec2] = [-1, 1]
+      const c1f = database.charMeta.get(ck1).favorite
+      const c2f = database.charMeta.get(ck2).favorite
+      if (c1f && !c2f) return choosec1
+      else if (c2f && !c1f) return choosec2
+
+      const art1 = Object.values(c1.equippedArtifacts).filter(id => id).length
+      const art2 = Object.values(c2.equippedArtifacts).filter(id => id).length
+      if (art1 > art2) return choosec1
+      else if (art2 > art1) return choosec2
+      return ck1.localeCompare(ck2)
+    })
+    .map(([ck]) => charKeyToLocCharKey(ck))
+
+  const { elementTotals, weaponTypeTotals } = useMemo(() => {
+    const catKeys = { elementTotals: [...allElementKeys], weaponTypeTotals: [...allWeaponTypeKeys] } as const
+    return bulkCatTotal(catKeys, ctMap =>
+      Object.entries(database.chars.data)
+        .forEach(([ck]) => {
+          const sheet = getCharSheet(ck, database.gender)
+          const eleKey = sheet.elementKey
+          ctMap.elementTotals[eleKey].total++
+          if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
+
+          const weaponTypeKey = sheet.weaponTypeKey
+          ctMap.weaponTypeTotals[weaponTypeKey].total++
+          if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
+        })
+    )
+  }, [charKeyMap, database.chars.data, database.gender])
+
   useEffect(() => database.charMeta.followAny(_ => forceUpdate()), [forceUpdate, database])
   useEffect(() => database.chars.followAny(_ => forceUpdate()), [forceUpdate, database])
 
-  const locList = useMemo(() => deferredDbDirty && Array.from(new Set(
-    Object.entries(database.chars.data)
-      .filter(([ck]) => ck !== characterKey)
-      .sort(([ck1, c1], [ck2, c2]) => {
-        // sort characters by: star => more artifacts equipped
-        const [choosec1, choosec2] = [-1, 1]
-        const c1f = database.charMeta.get(ck1).favorite
-        const c2f = database.charMeta.get(ck2).favorite
-        if (c1f && !c2f) return choosec1
-        else if (c2f && !c1f) return choosec2
-
-        const art1 = Object.values(c1.equippedArtifacts).filter(id => id).length
-        const art2 = Object.values(c2.equippedArtifacts).filter(id => id).length
-        if (art1 > art2) return choosec1
-        else if (art2 > art1) return choosec2
-        return ck1.localeCompare(ck2)
-
-      }).map(([k]) => charKeyToLocCharKey(k))))
-    , [deferredDbDirty, characterKey, database])
 
   const allowAll = useCallback(() => buildSettingDispatch({ allowLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
   const disallowAll = useCallback(() => buildSettingDispatch({ allowLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
@@ -73,7 +112,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
     {/* Begin modal */}
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
       <CardContent>
-        <Box display="flex" gap={1} alignItems="center" >
+        <Box display="flex" gap={1} alignItems="center">
           <Typography variant="h6">{t`excludeChar.title`}</Typography>
           <InfoTooltip title={
             <Typography>
@@ -85,20 +124,39 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
         </Box>
       </CardContent>
       <Divider />
-      <CardContent sx={{ pb : 0 }}>
-        <SolidToggleButtonGroup
-          exclusive
-          baseColor="secondary"
-          size="small"
-          value={allowLocationsState}
-          onChange={setState}
-        >
-          {allAllowLocationsState.map(s =>
-            <ToggleButton key={s} value={s} disabled={allowLocationsState === s || disabled}>
-              {t(`excludeChar.states.${s}`)}
-            </ToggleButton>
-          )}
-        </SolidToggleButtonGroup>
+      <CardContent sx={{ pb: 0 }}>
+        <Stack gap={1}>
+          <Box display="flex" gap={1} flexWrap="wrap">
+            <SolidToggleButtonGroup
+              exclusive
+              baseColor="secondary"
+              size="small"
+              value={allowLocationsState}
+              onChange={setState}
+            >
+              {allAllowLocationsState.map(s =>
+                <ToggleButton key={s} value={s} disabled={allowLocationsState === s || disabled}>
+                  {t(`excludeChar.states.${s}`)}
+                </ToggleButton>
+              )}
+            </SolidToggleButtonGroup>
+            <TextField
+              autoFocus
+              value={searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setSearchTerm(e.target.value)}
+              label={t_pc("characterName")}
+              size="small"
+              sx={{ height: "100%" }}
+              InputProps={{
+                sx: { height: "100%" }
+              }}
+            />
+          </Box>
+          <Box display="flex" gap={1} flexWrap="wrap">
+            <WeaponToggle sx={{ height: "100%" }} onChange={setWeaponTypeKeys} value={deferredWeaponTypeKeys} totals={weaponTypeTotals} size="small" />
+            <ElementToggle sx={{ height: "100%" }} onChange={setElementKeys} value={deferredElementKeys} totals={elementTotals} size="small" />
+          </Box>
+        </Stack>
       </CardContent>
       <CardContent sx={{ opacity: allowLocationsState === "customList" ? 1 : 0.6 }}>
         <Box pb={1} display="flex" gap={1} flexWrap="wrap">
