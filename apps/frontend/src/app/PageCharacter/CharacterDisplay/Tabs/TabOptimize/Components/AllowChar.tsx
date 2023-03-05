@@ -22,7 +22,7 @@ import { iconInlineProps } from "../../../../../SVGIcons";
 import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
 
-export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
+export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: string }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const { buildSetting: { allowLocations, allowLocationsState }, buildSettingDispatch } = useBuildSetting(characterKey)
@@ -54,15 +54,21 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
       }).map(([k]) => charKeyToLocCharKey(k))))
     , [deferredDbDirty, characterKey, database])
 
-  const allowAll = useCallback(() => buildSettingDispatch({ allowLocations: [...locList] }), [buildSettingDispatch, locList])
-  const disallowAll = useCallback(() => buildSettingDispatch({ allowLocations: [] }), [buildSettingDispatch])
+  const allowAll = useCallback(() => buildSettingDispatch({ allowLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
+  const disallowAll = useCallback(() => buildSettingDispatch({ allowLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
 
-  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, lk) }), [allowLocations, buildSettingDispatch])
+  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ allowLocations: toggleArr(allowLocations, lk), allowLocationsState: "customList" }), [allowLocations, buildSettingDispatch])
 
   const setState = useCallback((_e: MouseEvent, state: AllowLocationsState) => buildSettingDispatch({ allowLocationsState: state }), [buildSettingDispatch])
 
   const total = locList.length
   const useTot = allowLocations.length
+  const charactersAllowed = allowLocationsState === "all"
+    ? total
+    : (allowLocationsState === "customList"
+      ? `${useTot}/${total}`
+      : 0 // unequippedOnly
+    )
   return <Box display="flex" gap={1}>
     {/* Begin modal */}
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
@@ -123,7 +129,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
             <strong>{t("excludeChar.buttonTitle")}</strong>
           </Typography>
           <Typography>
-            {t("excludeChar.chars")} <SqBadge color="success">{useTot} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
+            {t("excludeChar.chars")} <SqBadge color="success">{charactersAllowed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
           </Typography>
           <Typography>
             {t("excludeChar.artis")} <SqBadge color="success">{numArtsEquippedUsed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
