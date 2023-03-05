@@ -46,7 +46,9 @@
   "afterUse": {
     "skill": "After using Elemental Skill",
     "burst": "After using Elemental Burst",
-    "skillOrBurst": "After using Ele. Skill or Ele. Burst"
+    "skillOrBurst": "After using Ele. Skill or Ele. Burst",
+    "skillPress": "$t(afterUse.skill) (Press)",
+    "skillHold": "$t(afterUse.skill) (Hold)"
   },
   "afterSprint": "After Sprint",
   "afterReaction": "After triggering an Elemental Reaction",

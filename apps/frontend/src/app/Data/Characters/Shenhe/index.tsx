@@ -107,8 +107,9 @@ const nodeAsc4 = greaterEq(input.asc, 1,
 )
 const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
 const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
+const [condAsc4HoldPath, condAsc4Hold] = cond(key, "asc4Hold")
 const nodeAsc4Hold = greaterEq(input.asc, 1,
-  equal(condAsc4, "hold",
+  equal(condAsc4Hold, "hold",
     dm.passive2.hold_dmg_
   )
 )
@@ -252,27 +253,36 @@ const sheet: ICharacterSheet = {
         }
       }
     }), ct.condTem("passive2", {
-      value: condAsc4,
-      path: condAsc4Path,
       teamBuff: true,
-      name: st("afterUse.skill"),
       states: {
         press: {
-          name: st("press"),
+          value: condAsc4,
+          path: condAsc4Path,
+          name: st("afterUse.skillPress"),
           fields: [{
             node: nodeAsc4Press_skill_dmg_
           }, {
             node: nodeAsc4Press_burst_dmg_
+          }, {
+            text: stg("duration"),
+            value: dm.passive2.durationPress,
+            unit: "s"
           }]
         },
         hold: {
-          name: st("hold"),
+          value: condAsc4Hold,
+          path: condAsc4HoldPath,
+          name: st("afterUse.skillHold"),
           fields: [{
             node: nodeAsc4Hold_normal_dmg_
           }, {
             node: nodeAsc4Hold_charged_dmg_
           }, {
             node: nodeAsc4Hold_plunging_dmg_
+          }, {
+            text: stg("duration"),
+            value: dm.passive2.durationHold,
+            unit: "s"
           }]
         }
       }
