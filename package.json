@@ -74,9 +74,11 @@
     "react-dom": "18.2.0",
     "react-ga4": "^1.4.1",
     "react-i18next": "^12.1.5",
+    "react-markdown": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "recharts": "^2.4.3",
     "regenerator-runtime": "0.13.11",
+    "remark-gfm": "^3.0.1",
     "terser-webpack-plugin": "^5.3.6",
     "tesseract.js": "^4.0.2",
     "tslib": "^2.5.0"
