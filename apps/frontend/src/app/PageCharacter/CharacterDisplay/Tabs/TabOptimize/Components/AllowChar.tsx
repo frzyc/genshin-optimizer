@@ -100,7 +100,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
           )}
         </SolidToggleButtonGroup>
       </CardContent>
-      <CardContent>
+      <CardContent sx={{ opacity: allowLocationsState === "customList" ? 1 : 0.6 }}>
         <Box pb={1} display="flex" gap={1} flexWrap="wrap">
           <Button color="success" sx={{ flexGrow: 1 }} onClick={allowAll} >
             {t`excludeChar.modal.allow_all`}
