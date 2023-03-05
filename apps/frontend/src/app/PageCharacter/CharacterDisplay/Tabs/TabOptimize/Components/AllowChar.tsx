@@ -64,7 +64,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
   const useTot = allowLocations.length
 
   return <Box display="flex" gap={1} onMouseUp={() => setShouldClearList(true)} onTouchEnd={() => setShouldClearList(true)}>
-    <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
+    <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} draggable={false}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} >
           <Typography variant="h6" flexGrow={1}>{t`excludeChar.title`}</Typography>
