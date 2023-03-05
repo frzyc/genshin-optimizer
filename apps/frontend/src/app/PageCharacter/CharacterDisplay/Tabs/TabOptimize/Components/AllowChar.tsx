@@ -126,7 +126,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
       <CardContent sx={{ flexGrow: 1 }}>
         <Stack spacing={1}>
           <Typography>
-            <strong>{t("excludeChar.buttonTitle")}</strong>
+            <strong>{t("excludeChar.title")}</strong>
           </Typography>
           <Typography>
             {t("excludeChar.chars")} <SqBadge color="success">{charactersAllowed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
