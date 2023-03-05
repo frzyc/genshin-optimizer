@@ -59,7 +59,6 @@ function IntroCard() {
 function PatchNotesCard() {
   const { t } = useTranslation("page_home")
   const [{ isLoaded, text }, setState] = useState({ isLoaded: false, text: "" })
-  console.log(process.env.NX_URL_GITHUB_API_GO_RELEASES)
   useEffect(() => {
     fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES ?? "")
       .then((res) => res.arrayBuffer())
