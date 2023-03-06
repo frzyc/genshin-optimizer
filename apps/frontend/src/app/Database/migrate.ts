@@ -104,11 +104,14 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
     if (buildSettings) {
       good.buildSettings = buildSettings.map(b => {
         const allowLocations: LocationCharacterKey[] = b.allowLocations
-        // Invert the list; should be all location keys that are not in allowLocations
-        // We will remove extra keys later in validation code
-        const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
-        delete b.allowLocations
-        return { ...b, excludedLocations }
+        if (allowLocations) {
+          // Invert the list; should be all location keys that are not in allowLocations
+          // We will remove extra keys later in validation code
+          const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
+          delete b.allowLocations
+          return { ...b, excludedLocations }
+        }
+        return b
       })
     }
   })
@@ -223,11 +226,13 @@ export function migrate(storage: DBStorage) {
       if (key.startsWith("buildSetting_")) {
         const b = storage.get(key)
         const allowLocations: LocationCharacterKey[] = b.allowLocations
-        // Invert the list; should be all location keys that are not in allowLocations
-        // We will remove extra keys later in validation code
-        const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
-        delete b.allowLocations
-        storage.set(key, { ...b, excludedLocations })
+        if (allowLocations) {
+          // Invert the list; should be all location keys that are not in allowLocations
+          // We will remove extra keys later in validation code
+          const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
+          delete b.allowLocations
+          storage.set(key, { ...b, excludedLocations })
+        }
       }
     }
   })
