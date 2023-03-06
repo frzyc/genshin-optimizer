@@ -189,7 +189,7 @@ export function CustomMultiTargetButton() {
               <Typography variant="h6">{t`multiTarget.title`}</Typography>
               <InfoTooltip
                 title={<Typography>
-                  <Trans t={t} i18nKey="multiTarget.info1">Note: Community created custom Multi-Optimization Targets can be found within the <a href={process.env.NX_URL_DISCORD_GO} target="_blank" rel="noreferrer" style={{ color: "white" }}>GO Discord</a> or <a href={process.env.NX_URL_KQM_MULTI_GUIDE} target="_blank" rel="noreferrer" style={{ color: "white" }}>KQM Multi-Opt Guide</a>, however the validity of such configurations cannot be guaranteed.</Trans>
+                  <Trans t={t} i18nKey="multiTarget.info1">Note: Community created custom Multi-Optimization Targets can be found within the <a href={process.env.NX_URL_DISCORD_GO} target="_blank" rel="noreferrer">GO Discord</a> or <a href={process.env.NX_URL_KQM_MULTI_GUIDE} target="_blank" rel="noreferrer">KQM Multi-Opt Guide</a>, however the validity of such configurations cannot be guaranteed.</Trans>
                   <br />
                   <br />
                   {t("multiTarget.info2")}
