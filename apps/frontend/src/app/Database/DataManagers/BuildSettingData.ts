@@ -1,4 +1,4 @@
-import { allCharacterKeys, allLocationCharacterKeys, ArtifactSetKey, CharacterKey, LocationKey } from "@genshin-optimizer/consts";
+import { allCharacterKeys, allLocationCharacterKeys, ArtifactSetKey, CharacterKey, LocationCharacterKey } from "@genshin-optimizer/consts";
 import Artifact from "../../Data/Artifacts/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
 import { MainStatKey } from "../../Types/artifact";
@@ -27,7 +27,7 @@ export interface BuildSetting {
     flower?: never
     plume?: never
   }
-  excludedLocations: LocationKey[]
+  excludedLocations: LocationCharacterKey[]
   allowLocationsState: AllowLocationsState
   artExclusion: string[]
   useExcludedArts: boolean
