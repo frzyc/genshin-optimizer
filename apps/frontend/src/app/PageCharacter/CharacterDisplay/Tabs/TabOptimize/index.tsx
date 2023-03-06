@@ -114,10 +114,14 @@ export default function TabBuild() {
       if (mainStats?.length && !mainStats.includes(art.mainStatKey)) return false
 
       const locKey = charKeyToLocCharKey(characterKey)
-      if (allowLocationsState === "unequippedOnly"
-        || (allowLocationsState === "customList" && art.location
+      const unequippedStateAndEquippedElsewhere = allowLocationsState === "unequippedOnly"
+        && art.location
         && art.location !== locKey
-        && excludedLocations.includes(art.location)))
+      const customListStateAndNotOnList = allowLocationsState === "customList"
+        && art.location
+        && art.location !== locKey
+        && excludedLocations.includes(art.location)
+      if (unequippedStateAndEquippedElsewhere || customListStateAndNotOnList)
         return false
 
       return true
@@ -136,8 +140,9 @@ export default function TabBuild() {
           if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
         }
         const locKey = charKeyToLocCharKey(characterKey)
-        if (allowLocationsState === "all" && location && location !== locKey
-          || (allowLocationsState === "customList" && location && location !== locKey && !excludedLocations.includes(location))) {
+        const allStateAndEquippedSomewhereElse = allowLocationsState === "all" && location && location !== locKey
+        const customListStateAndNotOnList = allowLocationsState === "customList" && location && location !== locKey && !excludedLocations.includes(location)
+        if (allStateAndEquippedSomewhereElse || customListStateAndNotOnList) {
           ctMap.allowListTotal.in.total++
           if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
         }
