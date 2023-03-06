@@ -20,6 +20,7 @@ import { CharacterContext } from '../../../../../Context/CharacterContext';
 import { DataContext } from '../../../../../Context/DataContext';
 import { getCharSheet } from '../../../../../Data/Characters';
 import { DatabaseContext } from '../../../../../Database/Database';
+import { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData';
 import { uiInput as input } from '../../../../../Formula';
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
 import { ICachedArtifact } from '../../../../../Types/artifact';
@@ -42,7 +43,7 @@ type BuildDisplayItemProps = {
 //for displaying each artifact build
 export default function BuildDisplayItem({ label, compareBuild, extraButtonsRight, extraButtonsLeft, disabled }: BuildDisplayItemProps) {
   const { character: { key: characterKey, equippedArtifacts } } = useContext(CharacterContext)
-  const { buildSetting: { mainStatAssumptionLevel } } = useBuildSetting(characterKey)
+  const { buildSetting: { mainStatAssumptionLevel, allowLocationsState } } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
 
@@ -97,7 +98,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
 
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      {newOld && <CompareArtifactModal newOld={newOld} mainStatAssumptionLevel={mainStatAssumptionLevel} onClose={close} />}
+      {newOld && <CompareArtifactModal newOld={newOld} mainStatAssumptionLevel={mainStatAssumptionLevel} onClose={close} allowLocationsState={allowLocationsState} />}
       <CardContent>
         <Box display="flex" gap={1} sx={{ pb: 1 }} flexWrap="wrap">
           {label !== undefined && <SqBadge color="info"><Typography><strong>{label}{currentlyEquipped ? " (Equipped)" : ""}</strong></Typography></SqBadge>}
@@ -122,7 +123,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
   </CardLight>
 }
 
-function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void }) {
+function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLevel, onClose, allowLocationsState }: { newOld: NewOld, mainStatAssumptionLevel: number, onClose: () => void, allowLocationsState: AllowLocationsState }) {
   const { database } = useContext(DatabaseContext)
   const { character: { key: characterKey } } = useContext(CharacterContext)
   const onEquip = useCallback(() => {
@@ -140,7 +141,7 @@ function CompareArtifactModal({ newOld: { newId, oldId }, mainStatAssumptionLeve
         {oldId && <Box display="flex" flexGrow={1} />}
         <Box minWidth={320} display="flex" flexDirection="column" gap={1} >
           <ArtifactCard artifactId={newId} mainStatAssumptionLevel={mainStatAssumptionLevel} canEquip editorProps={{ disableSet: true, disableSlot: true }} extraButtons={<ExcludeButton id={newId} />} />
-          {(newLoc && newLoc !== charKeyToLocCharKey(characterKey)) && <ExcludeEquipButton locationKey={newLoc} />}
+          {(newLoc && newLoc !== charKeyToLocCharKey(characterKey)) && allowLocationsState !== "all" && <ExcludeEquipButton locationKey={newLoc} />}
         </Box>
       </CardContent>
     </CardDark>
