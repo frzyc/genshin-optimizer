@@ -26,7 +26,6 @@ import { ICachedCharacter } from "../../../../../Types/character";
 import { characterFilterConfigs } from "../../../../../Util/CharacterSort";
 import { filterFunction } from "../../../../../Util/SortByFilters";
 import { bulkCatTotal } from "../../../../../Util/totalUtils";
-import { toggleArr } from "../../../../../Util/Util";
 import useBuildSetting from "../useBuildSetting";
 
 export default function AllowChar({ disabled = false, allowListTotal }: { disabled?: boolean, allowListTotal: string }) {
@@ -92,13 +91,20 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
   useEffect(() => database.charMeta.followAny(_ => forceUpdate()), [forceUpdate, database])
   useEffect(() => database.chars.followAny(_ => forceUpdate()), [forceUpdate, database])
 
+  const [shouldClearList, setShouldClearList] = useState(false)
 
   const allowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
   const disallowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
 
-  const toggle = useCallback((lk: LocationKey) => buildSettingDispatch({ excludedLocations: toggleArr(excludedLocations, lk), allowLocationsState: "customList" }), [excludedLocations, buildSettingDispatch])
-
   const setState = useCallback((_e: MouseEvent, state: AllowLocationsState) => buildSettingDispatch({ allowLocationsState: state }), [buildSettingDispatch])
+
+  const toggleList = useCallback((lkList: Set<LocationKey>) => {
+    const lkArray = [...lkList]
+    const newExcludedLocations = lkArray
+      .filter(lk => !excludedLocations.includes(lk))
+      .concat(excludedLocations.filter(lk => !lkArray.includes(lk)))
+    buildSettingDispatch({ excludedLocations: newExcludedLocations })
+  }, [excludedLocations, buildSettingDispatch])
 
   const total = locList.length
   const useTot = total - excludedLocations.length
@@ -108,9 +114,9 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
       ? `${useTot}/${total}`
       : 0 // unequippedOnly
     )
-  return <Box display="flex" gap={1}>
+  return <Box display="flex" gap={1} onMouseUp={() => setShouldClearList(true)} onTouchEnd={() => setShouldClearList(true)}>
     {/* Begin modal */}
-    <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }}><CardDark>
+    <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} draggable={false}><CardDark>
       <CardContent>
         <Box display="flex" gap={1} alignItems="center">
           <Typography variant="h6">{t`excludeChar.title`}</Typography>
@@ -169,13 +175,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
             <SqBadge sx={{ ml: 1 }}><strong>{`${total - useTot}/${total}`}</strong></SqBadge>
           </Button>
         </Box>
-        <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
-          {locList.map((lk) =>
-            <Grid item key={lk} xs={1}>
-              <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={!excludedLocations.includes(lk)} />
-            </Grid>
-          )}
-        </Grid>
+        <SelectItemGrid locList={locList} excludedLocations={excludedLocations} shouldClearList={shouldClearList} setShouldClearList={setShouldClearList} toggleList={toggleList} />
       </CardContent>
     </CardDark></ModalWrapper>
 
@@ -201,19 +201,59 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
   </Box >
 }
 
-function SelectItem({ locKey, selected, onClick }: {
-  locKey: LocationCharacterKey,
-  onClick: () => void,
+function SelectItemGrid({ locList, excludedLocations, shouldClearList, setShouldClearList, toggleList }: {
+  locList: LocationCharacterKey[]
+  excludedLocations: LocationKey[]
+  shouldClearList: boolean
+  setShouldClearList: (v: boolean) => void
+  toggleList: (charList: Set<LocationCharacterKey>) => void
+}) {
+  const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
+  useEffect(() => {
+    if (shouldClearList) {
+      toggleList(charList)
+      setCharList(new Set<LocationCharacterKey>())
+      setShouldClearList(false)
+    }
+  }, [charList, setCharList, setShouldClearList, shouldClearList, toggleList])
+  return <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
+    {locList.map((lk) =>
+      <Grid item key={lk} xs={1}>
+        <SelectItem locKey={lk} charList={charList} setCharList={setCharList} selected={!excludedLocations.includes(lk)} />
+      </Grid>
+    )}
+  </Grid>
+}
+
+function SelectItem({ locKey, selected, charList, setCharList }: {
+  locKey: LocationCharacterKey
   selected: boolean
+  charList: Set<LocationCharacterKey>
+  setCharList: (list: Set<LocationCharacterKey>) => void
 }) {
   const { database } = useContext(DatabaseContext)
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
-  return <CardActionArea onClick={onClick}>
-    <CardLight sx={{ opacity: selected ? undefined : 0.6, borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)", borderWidth: "3px", borderStyle: "solid", borderRadius: "8px" }}  >
-      <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} />
-      <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
-        {allArtifactSlotKeys.map(s => <SlotIcon key={s} slotKey={s} iconProps={{ fontSize: "inherit", sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 } }} />)}
-      </Box>
+  const onMouseEnter = useCallback((e: MouseEvent) => e.buttons === 1 && setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const onMouseDown = useCallback(() => setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const disableTooltip = useMemo(() => charList.size !== 0, [charList.size])
+  const sx = {
+    opacity: charList.has(locKey) ? 0.3 : (selected ? undefined : 0.6),
+    borderColor: selected ? "rgb(100,200,100)" : "rgb(200,100,100)",
+    borderWidth: "3px",
+    borderStyle: "solid",
+    borderRadius: "8px",
+  }
+  const content = useMemo(() => <>
+    <CharacterCardPico characterKey={database.chars.LocationToCharacterKey(locKey)} disableTooltip={disableTooltip} />
+    <Box fontSize="0.85em" display="flex" justifyContent="space-between" p={0.3} >
+      {allArtifactSlotKeys.map(s => <SlotIcon key={s} slotKey={s} iconProps={{ fontSize: "inherit", sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 } }} />)}
+    </Box>
+  </>,
+    [char?.equippedArtifacts, database.chars, disableTooltip, locKey]
+  )
+  return <CardActionArea onMouseEnter={onMouseEnter} onMouseDown={onMouseDown} >
+    <CardLight sx={sx}>
+      {content}
     </CardLight>
   </CardActionArea>
 }
