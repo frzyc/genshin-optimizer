@@ -21,7 +21,6 @@ function FooterContent() {
           Genshin Optimizer Version:
           <a
             href={`${process.env.NX_URL_GITHUB_GO}/releases`}
-            style={{ color: "white", fontFamily: "monospace" }}
             target="_blank"
             rel="noreferrer"
           >
