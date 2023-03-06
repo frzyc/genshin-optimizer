@@ -1,4 +1,4 @@
-import { allArtifactSlotKeys, allElementKeys, allWeaponTypeKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
+import { allArtifactSlotKeys, allElementKeys, allWeaponTypeKeys, CharacterKey, charKeyToLocCharKey, LocationCharacterKey } from "@genshin-optimizer/consts";
 import SettingsIcon from '@mui/icons-material/Settings';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { Box, Button, CardActionArea, CardContent, Divider, Grid, Stack, TextField, ToggleButton, Typography } from "@mui/material";
@@ -71,8 +71,12 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
     })
     .map(([ck]) => charKeyToLocCharKey(ck))
 
-  const { elementTotals, weaponTypeTotals } = useMemo(() => {
-    const catKeys = { elementTotals: [...allElementKeys], weaponTypeTotals: [...allWeaponTypeKeys] } as const
+  const { elementTotals, weaponTypeTotals, locListTotals } = useMemo(() => {
+    const catKeys = {
+      elementTotals: [...allElementKeys],
+      weaponTypeTotals: [...allWeaponTypeKeys],
+      locListTotals: ["allowed", "excluded"]
+    } as const
     return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.chars.data)
         .forEach(([ck]) => {
@@ -84,21 +88,30 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
           const weaponTypeKey = sheet.weaponTypeKey
           ctMap.weaponTypeTotals[weaponTypeKey].total++
           if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
+
+          const locKey = charKeyToLocCharKey(ck)
+          if (ck !== characterKey && locList.includes(locKey)) {
+            ctMap.locListTotals.allowed.total++
+            ctMap.locListTotals.excluded.total++
+            if (!excludedLocations.includes(locKey)) ctMap.locListTotals.allowed.current++
+            else ctMap.locListTotals.excluded.current++
+          }
+
         })
     )
-  }, [charKeyMap, database.chars.data, database.gender])
+  }, [charKeyMap, characterKey, database.chars.data, database.gender, excludedLocations, locList])
 
   useEffect(() => database.charMeta.followAny(_ => forceUpdate()), [forceUpdate, database])
   useEffect(() => database.chars.followAny(_ => forceUpdate()), [forceUpdate, database])
 
   const [shouldClearList, setShouldClearList] = useState(false)
 
-  const allowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [], allowLocationsState: "customList" }), [buildSettingDispatch])
-  const disallowAll = useCallback(() => buildSettingDispatch({ excludedLocations: [...locList], allowLocationsState: "customList" }), [buildSettingDispatch, locList])
+  const allowAll = useCallback(() => buildSettingDispatch({ excludedLocations: excludedLocations.filter(key => !locList.includes(key)), allowLocationsState: "customList" }), [buildSettingDispatch, excludedLocations, locList])
+  const disallowAll = useCallback(() => buildSettingDispatch({ excludedLocations: Array.from(new Set(excludedLocations.concat(locList))), allowLocationsState: "customList" }), [buildSettingDispatch, excludedLocations, locList])
 
   const setState = useCallback((_e: MouseEvent, state: AllowLocationsState) => buildSettingDispatch({ allowLocationsState: state }), [buildSettingDispatch])
 
-  const toggleList = useCallback((lkList: Set<LocationKey>) => {
+  const toggleList = useCallback((lkList: Set<LocationCharacterKey>) => {
     const lkArray = [...lkList]
     const newExcludedLocations = lkArray
       .filter(lk => !excludedLocations.includes(lk))
@@ -106,7 +119,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
     buildSettingDispatch({ excludedLocations: newExcludedLocations })
   }, [excludedLocations, buildSettingDispatch])
 
-  const total = locList.length
+  const total = database.chars.keys.length - 1
   const useTot = total - excludedLocations.length
   const charactersAllowed = allowLocationsState === "all"
     ? total
@@ -168,11 +181,11 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
         <Box pb={1} display="flex" gap={1} flexWrap="wrap">
           <Button color="success" sx={{ flexGrow: 1 }} onClick={allowAll} >
             {t`excludeChar.modal.allow_all`}
-            <SqBadge sx={{ ml: 1 }}><strong>{`${useTot}/${total}`}</strong></SqBadge>
+            <SqBadge sx={{ ml: 1 }}><strong>{locListTotals.allowed}</strong></SqBadge>
           </Button>
           <Button color="error" sx={{ flexGrow: 1 }} onClick={disallowAll} >
             {t`excludeChar.modal.disallow_All`}
-            <SqBadge sx={{ ml: 1 }}><strong>{`${total - useTot}/${total}`}</strong></SqBadge>
+            <SqBadge sx={{ ml: 1 }}><strong>{locListTotals.excluded}</strong></SqBadge>
           </Button>
         </Box>
         <SelectItemGrid locList={locList} excludedLocations={excludedLocations} shouldClearList={shouldClearList} setShouldClearList={setShouldClearList} toggleList={toggleList} />
@@ -206,7 +219,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
 
 function SelectItemGrid({ locList, excludedLocations, shouldClearList, setShouldClearList, toggleList }: {
   locList: LocationCharacterKey[]
-  excludedLocations: LocationKey[]
+  excludedLocations: LocationCharacterKey[]
   shouldClearList: boolean
   setShouldClearList: (v: boolean) => void
   toggleList: (charList: Set<LocationCharacterKey>) => void

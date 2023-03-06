@@ -109,7 +109,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           // We will remove extra keys later in validation code
           const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
           delete b.allowLocations
-          return { ...b, excludedLocations }
+          return { ...b, excludedLocations, allowLocationsState: "customList" }
         }
         return b
       })
@@ -231,7 +231,7 @@ export function migrate(storage: DBStorage) {
           // We will remove extra keys later in validation code
           const excludedLocations = allLocationCharacterKeys.filter(loc => !allowLocations.includes(loc))
           delete b.allowLocations
-          storage.set(key, { ...b, excludedLocations })
+          storage.set(key, { ...b, excludedLocations, allowLocationsState: "customList" })
         }
       }
     }
