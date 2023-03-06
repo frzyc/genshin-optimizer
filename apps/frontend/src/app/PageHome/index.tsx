@@ -1,12 +1,16 @@
-import { Box, CardContent, Grid, Link, Typography, useMediaQuery, useTheme } from "@mui/material"
+import DescriptionIcon from "@mui/icons-material/Description"
+import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography, useMediaQuery, useTheme } from "@mui/material"
+import { useEffect, useState } from "react"
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from "react-i18next"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from 'remark-gfm'
 import CardDark from "../Components/Card/CardDark"
 import InventoryCard from "./InventoryCard"
-import VidGuideCard from "./VidGuideCard"
 import QuickLinksCard from "./QuickLinksCard"
 import ResinCard from "./ResinCard"
 import TeamCard from "./TeamCard"
+import VidGuideCard from "./VidGuideCard"
 
 export default function PageHome() {
   // TODO: translations
@@ -23,6 +27,7 @@ export default function PageHome() {
       <IntroCard />
       <InventoryCard />
       <VidGuideCard />
+      <PatchNotesCard />
       <TeamCard />
     </Grid>
 
@@ -33,6 +38,7 @@ export default function PageHome() {
     <InventoryCard />
     <ResinCard />
     <VidGuideCard />
+    <PatchNotesCard />
     <TeamCard />
   </Box >
 }
@@ -46,6 +52,31 @@ function IntroCard() {
           The <strong>ultimate</strong> <Link href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><i>Genshin Impact</i></Link> calculator, GO will keep track of your artifact/weapon/character inventory, and help you create the best build based on how you play, with what you have.
         </Trans>
       </Typography>
+    </CardContent>
+  </CardDark>
+}
+
+function PatchNotesCard() {
+  const { t } = useTranslation("page_home")
+  const [{ isLoaded, text }, setState] = useState({ isLoaded: false, text: "" })
+  useEffect(() => {
+    fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES ?? "")
+      .then((res) => res.arrayBuffer())
+      .then((buffer) => {
+        const decoder = new TextDecoder("utf-8");
+        const data = decoder.decode(buffer);
+        const release = JSON.parse(data);
+        setState({ isLoaded: true, text: release.body })
+      })
+      .catch((err) => console.log("Error: " + err.message))
+    }, [])
+  return <CardDark>
+    <CardHeader title={<Typography variant="h5">{t`quickLinksCard.buttons.patchNotes.title`}</Typography>} avatar={<DescriptionIcon fontSize="large" />} />
+    <Divider />
+    <CardContent>
+      {isLoaded
+        ? <ReactMarkdown children={text} remarkPlugins={[remarkGfm]} />
+        : "Loading..."}
     </CardContent>
   </CardDark>
 }
