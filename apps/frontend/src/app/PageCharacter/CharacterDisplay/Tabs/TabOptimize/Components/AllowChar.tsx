@@ -187,6 +187,9 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
             <strong>{t("excludeChar.title")}</strong>
           </Typography>
           <Typography>
+            {t("excludeChar.usingState")} <SqBadge color="info">{t(`excludeChar.states.${allowLocationsState}`)}</SqBadge>
+          </Typography>
+          <Typography>
             {t("excludeChar.chars")} <SqBadge color="success">{charactersAllowed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
           </Typography>
           <Typography>
