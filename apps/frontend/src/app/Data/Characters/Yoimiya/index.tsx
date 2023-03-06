@@ -102,12 +102,22 @@ const normalEntries = dm.normal.hitArr.map((arr, i) => [
   dmgNode("atk", arr, "normal", { hit: { ele: compareEq(condSkill, "skill", elementKey, "physical") } }, normal_dmgMult)
 ])
 
-// This might just need to be a single dmgNode of her kindling arrow, with proper scaling applied.
-const kindlingEntries = dm.normal.hitArr.map((arr, i) => [i, greaterEq(input.constellation, 6,
+// Yoimiya C6 will only trigger per NA action. For multi-hits, it will combine the MVs
+// https://keqingmains.com/yoimiya/#Constellations
+const kindlingArrs = dm.normal.hitArr.map((arr, i) =>
+  i === 0 || i === 3
+    ? arr.map(val => val * 2)
+    : arr
+)
+const kindlingEntries = kindlingArrs.map((arr, i) => [i, greaterEq(input.constellation, 6,
   equal(condSkill, "skill",
     customDmgNode(
       prod(
-        subscript(input.total.autoIndex, arr, { unit: "%" }),
+        subscript(
+          input.total.autoIndex,
+          arr,
+          { unit: "%" }
+        ),
         constant(dm.constellation6.dmg_, { name: ct.ch("c6Key_"), unit: "%" }),
         input.total.atk,
         normal_dmgMult
@@ -144,8 +154,8 @@ export const dataObj = dataObjForCharacterSheet(key, elementKey, "inazuma", data
     }
   },
   premod: {
-    skill: const3TalentInc,
-    burst: const5TalentInc,
+    skillBoost: const3TalentInc,
+    burstBoost: const5TalentInc,
     atk_: c1atk_,
     pyro_dmg_: sum(pyro_dmg_, c2pyro_dmg_),
   }
@@ -238,7 +248,6 @@ const sheet: ICharacterSheet = {
       fields: dm.normal.hitArr.map((_, i): INodeFieldDisplay => ({
         node: infoMut(dmgFormulas.constellation6[i], {
           name: ct.chg(`auto.skillParams.${i}`),
-          multi: ([0, 3].includes(i)) ? 2 : undefined,
         }),
       }))
     })]),
