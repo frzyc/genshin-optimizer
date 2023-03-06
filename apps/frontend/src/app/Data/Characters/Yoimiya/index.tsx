@@ -102,15 +102,20 @@ const normalEntries = dm.normal.hitArr.map((arr, i) => [
   dmgNode("atk", arr, "normal", { hit: { ele: compareEq(condSkill, "skill", elementKey, "physical") } }, normal_dmgMult)
 ])
 
-const kindlingEntries = dm.normal.hitArr.map((arr, i) => [i, greaterEq(input.constellation, 6,
+// Yoimiya C6 will only trigger per NA action. For multi-hits, it will combine the MVs
+// https://keqingmains.com/yoimiya/#Constellations
+const kindlingArrs = dm.normal.hitArr.map((arr, i) =>
+  i === 0 || i === 3
+    ? arr.map(val => val * 2)
+    : arr
+)
+const kindlingEntries = kindlingArrs.map((arr, i) => [i, greaterEq(input.constellation, 6,
   equal(condSkill, "skill",
     customDmgNode(
       prod(
         subscript(
           input.total.autoIndex,
-          i === 0 || i === 3
-            ? arr.map(val => val * 2)
-            : arr,
+          arr,
           { unit: "%" }
         ),
         constant(dm.constellation6.dmg_, { name: ct.ch("c6Key_"), unit: "%" }),
