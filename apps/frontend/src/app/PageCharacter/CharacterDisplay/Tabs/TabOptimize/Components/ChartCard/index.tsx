@@ -76,30 +76,38 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
         enhancedDatum.current = y
         // Remove the Y-value so there are not 2 dots displayed for these builds
         enhancedDatum.y = undefined
-        return enhancedDatum
-      }
-
-      const generBuildIndex = generatedBuilds.findIndex(build =>
-        build.every(aId => datumBuildMap[aId])
-      )
-      if (generBuildIndex !== -1) {
-        enhancedDatum.highlighted = y
-        enhancedDatum.buildNumber = generBuildIndex + 1
-        enhancedDatum.highlightedType = "generated"
-        // Remove the Y-value so there are not 2 dots displayed for these builds
-        enhancedDatum.y = undefined
-        return enhancedDatum
+        // Don't return yet, still need to check if build is highlighted
+        console.log(enhancedDatum)
       }
 
       const graphBuildIndex = graphBuilds?.findIndex(build =>
         build.every(aId => datumBuildMap[aId])
       )
       if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
-        enhancedDatum.highlighted = y
-        enhancedDatum.buildNumber = graphBuildIndex + 1
-        enhancedDatum.highlightedType = "graph"
-        // Remove the Y-value so there are not 2 dots displayed for these builds
-        enhancedDatum.y = undefined
+        // Skip setting y-value if it has already been set.
+        if (isCurrentBuild) console.log(enhancedDatum)
+        if (enhancedDatum.trueY !== undefined) {
+          enhancedDatum.highlighted = y
+          // Remove the Y-value so there are not 2 dots displayed for these builds
+          enhancedDatum.y = undefined
+        }
+        enhancedDatum.graphBuildNumber = graphBuildIndex + 1
+        if (isCurrentBuild) console.log(enhancedDatum)
+      }
+
+      const generBuildIndex = generatedBuilds.findIndex(build =>
+        build.every(aId => datumBuildMap[aId])
+      )
+      if (generBuildIndex !== -1) {
+        // Skip setting y-value if it has already been set.
+        if (isCurrentBuild) console.log(enhancedDatum)
+        if (enhancedDatum.trueY !== undefined) {
+          enhancedDatum.highlighted = y
+          // Remove the Y-value so there are not 2 dots displayed for these builds
+          enhancedDatum.y = undefined
+        }
+        enhancedDatum.generBuildNumber = generBuildIndex + 1
+        if (isCurrentBuild) console.log(enhancedDatum)
       }
 
       return enhancedDatum
