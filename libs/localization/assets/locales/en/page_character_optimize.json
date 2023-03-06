@@ -52,7 +52,8 @@
       "unequippedOnly": "Unequipped Only",
       "customList" : "Custom List",
       "all": "All Artifacts"
-    }
+    },
+    "usingState": "Using"
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
