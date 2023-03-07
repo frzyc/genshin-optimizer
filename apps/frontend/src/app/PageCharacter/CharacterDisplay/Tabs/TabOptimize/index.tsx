@@ -47,7 +47,6 @@ import AllowChar from './Components/AllowChar';
 import MainStatSelectionCard from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
-import WorkerErr from './Components/WorkerErr';
 import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
@@ -60,7 +59,6 @@ export default function TabBuild() {
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
-  const { setError } = useContext(ErrorContext)
   const { gender } = useDBMeta()
 
   const [notification, setnotification] = useState(false)
