@@ -1,4 +1,4 @@
-import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from '@genshin-optimizer/consts';
+import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey } from '@genshin-optimizer/consts';
 import { Checkroom, ChevronRight } from '@mui/icons-material';
 import BlockIcon from '@mui/icons-material/Block';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';

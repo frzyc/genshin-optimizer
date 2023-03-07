@@ -6,7 +6,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
-import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
 import AmpReactionModeText from "../Components/AmpReactionModeText";
@@ -372,8 +372,8 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
   const setFilter = useCallback((bonusStats) => setCustomTarget({ ...customTarget, bonusStats }), [customTarget, setCustomTarget])
 
   const statEditorList = useMemo(() =>
-    <StatEditorList statKeys={keys} statFilters={customTarget.bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />,
-    [customTarget.bonusStats, setFilter]
+    <StatEditorList statKeys={keys} statFilters={bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />,
+    [bonusStats, setFilter]
   )
 
   const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
