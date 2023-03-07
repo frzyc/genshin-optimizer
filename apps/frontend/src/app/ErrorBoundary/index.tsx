@@ -3,7 +3,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
 import ErrorIcon from "@mui/icons-material/Error";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { StyledEngineProvider, CssBaseline, Box, CardContent, Typography, Divider, CardActions, Button, Stack } from "@mui/material";
-import { Component, ErrorInfo, ReactNode } from "react";
+import { Component, ErrorInfo, ReactNode, Suspense } from "react";
 import { Trans, withTranslation, WithTranslation } from "react-i18next";
 import CardLight from "../Components/Card/CardLight";
 import ReadOnlyTextArea from "../Components/ReadOnlyTextArea";
@@ -48,7 +48,8 @@ class ErrorBoundary extends Component<Props, State> {
         document.location.reload()
       }
 
-      return <StyledEngineProvider injectFirst>
+      return <Suspense>
+        <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Box display="flex" minWidth="100vw" minHeight="100vh" justifyContent="center" alignItems="center" p={2} >
@@ -129,6 +130,7 @@ class ErrorBoundary extends Component<Props, State> {
           </Box>
         </ThemeProvider>
       </StyledEngineProvider>
+        </Suspense>
     }
 
     return this.props.children

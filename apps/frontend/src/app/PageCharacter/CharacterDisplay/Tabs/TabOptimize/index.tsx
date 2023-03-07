@@ -52,6 +52,7 @@ import { compactArtifacts, dynamicData } from './foreground';
 import useBuildResult from './useBuildResult';
 import useBuildSetting from './useBuildSetting';
 import { ICachedArtifact } from '../../../../Types/artifact';
+import useGlobalError from '../../../../ReactHooks/useGlobalError';
 
 const audio = new Audio("notification.mp3")
 export default function TabBuild() {
@@ -59,6 +60,7 @@ export default function TabBuild() {
   const { character: { key: characterKey, compareData } } = useContext(CharacterContext)
   const { database } = useContext(DatabaseContext)
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
+  const { setError } = useContext(ErrorContext)
   const { gender } = useDBMeta()
 
   const [notification, setnotification] = useState(false)
@@ -154,7 +156,8 @@ export default function TabBuild() {
   const cancelToken = useRef(() => { })
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
-  const [workerErr, setWorkerErr] = useState(false)
+  const throwGlobalError = useGlobalError()
+
   const generateBuilds = useCallback(async () => {
     const { artSetExclusion, plotBase, statFilters, optimizationTarget, mainStatAssumptionLevel, allowPartial, maxBuildsToShow } = buildSetting
     if (!characterKey || !optimizationTarget) return
@@ -184,7 +187,6 @@ export default function TabBuild() {
     setChartData(undefined)
 
     const cancelled = new Promise<void>(r => cancelToken.current = r)
-    setWorkerErr(false)
 
     const unoptimizedNodes = [...valueFilter.map(x => x.value), unoptimizedOptimizationTargetNode]
     const minimum = [...valueFilter.map(x => x.minimum), -Infinity]
@@ -247,7 +249,7 @@ export default function TabBuild() {
       if (e !== cancellationError) {
         console.log('Failed to load worker')
         console.log(e)
-        setWorkerErr(true)
+        if (e instanceof Error) throwGlobalError(e)
       }
 
       cancelToken.current()
@@ -259,7 +261,7 @@ export default function TabBuild() {
       clearInterval(statusUpdateTimer)
       setBuildStatus({ type: "inactive", ...status, finishTime: performance.now() })
     }
-  }, [t, characterKey, filteredArts, database, buildResultDispatch, maxWorkers, buildSetting, notificationRef, setChartData, gender])
+  }, [buildSetting, characterKey, filteredArts, database, gender, setChartData, maxWorkers, buildResultDispatch, t, throwGlobalError])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -402,7 +404,6 @@ export default function TabBuild() {
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
-      {workerErr && <WorkerErr />}
       {!!characterKey && <BuildAlert {...{ status: buildStatus, characterName, maxBuildsToShow }} />}
       <Box >
         <ChartCard disabled={generatingBuilds || !optimizationTarget} plotBase={plotBase} setPlotBase={setPlotBase} showTooltip={!optimizationTarget} />
