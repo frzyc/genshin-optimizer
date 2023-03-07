@@ -90,6 +90,6 @@ const data = {
     quicken: 347446227,
     aggravate: 2961120579,
     spread: 2191579811, // or maybe it is 982642368
-  },
+  }
 } as const
 export default data

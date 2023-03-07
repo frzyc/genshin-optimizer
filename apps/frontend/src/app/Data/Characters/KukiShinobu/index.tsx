@@ -1,11 +1,11 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -23,7 +23,7 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ],
+    ]
   },
   charged: {
     dmg1: skillParam_gen.auto[a++],
@@ -42,7 +42,7 @@ const dm = {
     ringDmg: skillParam_gen.skill[s++],
     cost: skillParam_gen.skill[s++][0],
     duration: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0]
   },
   burst: {
     singleDmg: skillParam_gen.burst[b++],
@@ -51,11 +51,11 @@ const dm = {
     durationBase: skillParam_gen.burst[b++][0],
     durationExtend: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0]
   },
   passive1: {
     hpThresh_: skillParam_gen.passive1[p1++][0],
-    heal_: skillParam_gen.passive1[p1++][0],
+    heal_: skillParam_gen.passive1[p1++][0]
   },
   passive2: {
     emSkillHeal_: skillParam_gen.passive2[p2++][0],
@@ -100,7 +100,7 @@ const dmgFormulas = {
   skill: {
     pressDmg: dmgNode("atk", dm.skill.pressDmg, "skill"),
     ringHeal: healNodeTalent("hp", dm.skill.ringHealHP_, dm.skill.ringHealFlat, "skill",
-      { premod: { healInc: a4Skill_healInc } },
+      { premod: { healInc: a4Skill_healInc } }
     ),
     ringDmg: dmgNode("atk", dm.skill.ringDmg, "skill"),
   },
@@ -143,7 +143,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -154,7 +154,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.5"),
         value: dm.charged.stamina,
-      }],
+      }]
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -164,14 +164,14 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
         node: infoMut(dmgFormulas.skill.pressDmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.ringHeal, { name: ct.chg(`skill.skillParams.1`) }),
+        node: infoMut(dmgFormulas.skill.ringHeal, { name: ct.chg(`skill.skillParams.1`) })
       }, {
         node: infoMut(dmgFormulas.skill.ringDmg, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
@@ -187,28 +187,28 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }, ct.headerTem("passive2", {
       fields: [{
         node: infoMut(a4Skill_healInc, { name: ct.ch("a4.heal"), variant: "heal" }),
       }, {
-        node: a4Skill_dmgInc,
-      }],
+        node: a4Skill_dmgInc
+      }]
     }), ct.headerTem("constellation2", {
       fields: [{
         text: st("durationInc"),
         value: dm.constellation2.skillDurInc,
         unit: "s",
-      }],
+      }]
     }), ct.headerTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.markDmg, { name: ct.ch("c4.dmg") }),
+        node: infoMut(dmgFormulas.constellation4.markDmg, { name: ct.ch("c4.dmg") })
       }, {
         text: stg("cd"),
         value: dm.constellation4.cd,
         unit: "s",
-      }],
+      }]
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -223,11 +223,11 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: stg("energyCost"),
         value: dm.burst.cost,
-      }],
+      }]
     }, ct.condTem("burst", {
       name: st("lessEqPercentHP", { percent: dm.passive1.hpThresh_ * 100 }),
       value: condUnderHP,
@@ -239,15 +239,15 @@ const sheet: ICharacterSheet = {
             value: dm.burst.durationExtend - dm.burst.durationBase,
             fixed: 1,
             unit: "s",
-          }],
-        },
-      },
+          }]
+        }
+      }
     }), ct.headerTem("constellation1", {
       fields: [{
         text: st("aoeInc"),
         value: dm.constellation1.aoeInc * 100,
         unit: "%",
-      }],
+      }]
     })]),
 
     passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
@@ -257,10 +257,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: a1Heal_,
-          }],
-        },
-      },
+            node: a1Heal_
+          }]
+        }
+      }
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -285,9 +285,9 @@ const sheet: ICharacterSheet = {
             text: stg("cd"),
             value: dm.constellation6.cd,
             unit: "s",
-          }],
-        },
-      },
+          }]
+        }
+      }
     })]),
   },
 }

@@ -1,23 +1,20 @@
-import type { ElementKey } from "@genshin-optimizer/consts"
-import type { ToggleButtonGroupProps } from "@mui/material"
-import { MenuItem, ToggleButton } from "@mui/material"
-import { useContext } from 'react'
-import { useTranslation } from "react-i18next"
-import { CharacterContext } from "../Context/CharacterContext"
-import { DataContext } from "../Context/DataContext"
-import { infusionNode, uiInput as input } from "../Formula"
-import { iconInlineProps } from "../SVGIcons"
-import CryoIcon from "../SVGIcons/Element/CryoIcon"
-import HydroIcon from "../SVGIcons/Element/HydroIcon"
-import PyroIcon from "../SVGIcons/Element/PyroIcon"
-import type { AdditiveReactionKey, AmpReactionKey } from "../Types/consts"
-import { allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions } from "../Types/consts"
-import AdditiveReactionModeText from "./AdditiveReactionModeText"
-import AmpReactionModeText from "./AmpReactionModeText"
-import type { DropdownButtonProps } from "./DropdownMenu/DropdownButton"
-import DropdownButton from "./DropdownMenu/DropdownButton"
-import SolidToggleButtonGroup from "./SolidToggleButtonGroup"
-import SqBadge from "./SqBadge"
+import { ElementKey } from "@genshin-optimizer/consts";
+import { MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
+import { useContext } from 'react';
+import { useTranslation } from "react-i18next";
+import { CharacterContext } from "../Context/CharacterContext";
+import { DataContext } from "../Context/DataContext";
+import { infusionNode, uiInput as input } from "../Formula";
+import { iconInlineProps } from "../SVGIcons";
+import CryoIcon from "../SVGIcons/Element/CryoIcon";
+import HydroIcon from "../SVGIcons/Element/HydroIcon";
+import PyroIcon from "../SVGIcons/Element/PyroIcon";
+import { AdditiveReactionKey, allAmpReactions, allHitModes, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey } from "../Types/consts";
+import AdditiveReactionModeText from "./AdditiveReactionModeText";
+import AmpReactionModeText from "./AmpReactionModeText";
+import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
+import SolidToggleButtonGroup from "./SolidToggleButtonGroup";
+import SqBadge from "./SqBadge";
 
 export const infusionVals = {
   "": <span>No Team Melee Infusion</span>,

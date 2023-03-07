@@ -1,10 +1,10 @@
-import { Button, ButtonGroup, CardContent, Divider, Grid, InputBase, Typography } from '@mui/material'
-import { useContext, useEffect, useRef, useState } from 'react'
-import Assets from '../Assets/Assets'
-import CardDark from '../Components/Card/CardDark'
-import ImgIcon from '../Components/Image/ImgIcon'
-import { DatabaseContext } from '../Database/Database'
-import { MINUTE_MS, timeString } from '../Util/TimeUtil'
+import { Button, ButtonGroup, CardContent, Divider, Grid, InputBase, Typography } from '@mui/material';
+import { useContext, useEffect, useRef, useState } from 'react';
+import Assets from '../Assets/Assets';
+import CardDark from '../Components/Card/CardDark';
+import ImgIcon from '../Components/Image/ImgIcon';
+import { DatabaseContext } from '../Database/Database';
+import { MINUTE_MS, timeString } from '../Util/TimeUtil';
 
 export const RESIN_MAX = 160
 export const RESIN_RECH_MS = 8 * MINUTE_MS
@@ -20,7 +20,7 @@ export default function ResinCounter() {
       resinIncrement.current && clearTimeout(resinIncrement.current)
       resinIncrement.current = undefined
     } else
-      resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS)
+      resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS);
     database.displayTool.set({ resin: newResin, resinDate: new Date().getTime() })
   }
 
@@ -33,13 +33,13 @@ export default function ResinCounter() {
       const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
       database.displayTool.set({ resin: catchUpResin, resinDate: newDate })
       if (catchUpResin < RESIN_MAX)
-        resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate)
+        resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate);
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)
     // eslint-disable-next-line
   }, [])
 
-  const nextResinDateNum = resin >= RESIN_MAX ? resinDate : resinDate + RESIN_RECH_MS
+  const nextResinDateNum = resin >= RESIN_MAX ? resinDate : resinDate + RESIN_RECH_MS;
 
   const resinFullDateNum = resin >= RESIN_MAX ? resinDate : (resinDate + (RESIN_MAX - resin) * RESIN_RECH_MS)
   const resinFullDate = new Date(resinFullDateNum)

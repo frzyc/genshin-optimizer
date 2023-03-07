@@ -22,7 +22,7 @@ export default function ResinCard() {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
       return setTimeout(() => {
         interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      }, SECOND_MS - (Date.now() % SECOND_MS));
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)
@@ -35,7 +35,7 @@ export default function ResinCard() {
       resinIncrement.current && clearTimeout(resinIncrement.current)
       resinIncrement.current = undefined
     } else
-      resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS)
+      resinIncrement.current = setTimeout(() => console.log("set resin", newResin + 1), RESIN_RECH_MS);
     database.displayTool.set({ resin: newResin, resinDate: new Date().getTime() })
   }
 
@@ -48,7 +48,7 @@ export default function ResinCard() {
       const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
       database.displayTool.set({ resin: catchUpResin, resinDate: newDate })
       if (catchUpResin < RESIN_MAX)
-        resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate)
+        resinIncrement.current = setTimeout(() => setResin(catchUpResin + 1), now - newDate);
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)
     // eslint-disable-next-line

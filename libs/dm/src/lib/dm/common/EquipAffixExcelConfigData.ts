@@ -1,5 +1,4 @@
-import type { PropTypeKey, WeaponId } from "@genshin-optimizer/pipeline"
-import { dumpFile } from "@genshin-optimizer/pipeline"
+import { dumpFile, PropTypeKey, WeaponId } from "@genshin-optimizer/pipeline"
 import { layeredAssignment } from "@genshin-optimizer/util"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { readDMJSON } from "../../util"

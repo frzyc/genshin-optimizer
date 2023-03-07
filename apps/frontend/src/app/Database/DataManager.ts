@@ -1,6 +1,6 @@
 import { deepFreeze } from "../Util/Util"
-import type { ArtCharDatabase } from "./Database"
-import type { IGO, IGOOD, ImportResult } from "./exim"
+import { ArtCharDatabase } from "./Database"
+import { IGO, IGOOD, ImportResult } from "./exim"
 export class DataManager<CacheKey extends string, GOKey extends string, CacheValue extends StorageValue, StorageValue> {
   database: ArtCharDatabase
   /**

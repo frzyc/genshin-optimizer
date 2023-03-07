@@ -11,7 +11,7 @@ const char = {
     skill: {
       brandDMG: [3765549071, "skillParam"],
       grimheartDuration: [164817062, "skillParam"],
-    },
+    }
   },
   // Fischl,
   // Ganyu,
@@ -29,7 +29,7 @@ const char = {
     burst: {
       cutting: [373269062, "skillParam"],
       bloom: [2543020158, "skillParam"],
-    },
+    }
   },
   // KamisatoAyato
   // Keqing,
@@ -42,7 +42,7 @@ const char = {
       triggerChance: [3971383039, "skillParam"],
     },
     burst: {
-      atkBonus: [4151293863, "skillParam"],
+      atkBonus: [4151293863, "skillParam"]
     },
   },
   // Qiqi,
@@ -57,9 +57,9 @@ const char = {
         enerRechInc: [3328414367, "skillParam"],
       },
       burst: {
-        thunderDMG: [3560985918, "skillParam"],
-      },
-    },
+        thunderDMG: [3560985918, "skillParam"]
+      }
+    }
   },
   // Venti,
   // Xiao,
@@ -68,7 +68,7 @@ const char = {
   // Xinyan,
   // Yanfei,
   Zhongli: {
-    constellationName: 2721221067,
-  },
+    constellationName: 2721221067
+  }
 } as const
 export default char

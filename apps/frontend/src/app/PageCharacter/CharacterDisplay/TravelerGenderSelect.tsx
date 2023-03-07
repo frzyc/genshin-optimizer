@@ -1,10 +1,10 @@
-import { Female, Male } from '@mui/icons-material'
-import { Button } from '@mui/material'
-import { useCallback, useContext } from 'react'
-import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../../Context/CharacterContext'
-import { DatabaseContext } from '../../Database/Database'
-import useDBMeta from '../../ReactHooks/useDBMeta'
+import { Female, Male } from '@mui/icons-material';
+import { Button } from '@mui/material';
+import { useCallback, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { CharacterContext } from '../../Context/CharacterContext';
+import { DatabaseContext } from '../../Database/Database';
+import useDBMeta from '../../ReactHooks/useDBMeta';
 
 export default function TravelerGenderSelect() {
   const { t } = useTranslation("ui")

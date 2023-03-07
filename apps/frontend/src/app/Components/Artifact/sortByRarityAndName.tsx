@@ -1,5 +1,5 @@
 import i18n from "../../i18n"
-import type { ArtifactRarity, ArtifactSetKey } from "../../Types/consts"
+import { ArtifactRarity, ArtifactSetKey } from "../../Types/consts"
 
 export default function sortByRarityAndName(a: { key: ArtifactSetKey, grouper: ArtifactRarity }, b: { key: ArtifactSetKey, grouper: ArtifactRarity }) {
   if (a.grouper > b.grouper) {

@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -24,7 +24,7 @@ const all_dmg_stack = lookup(condPassive, {
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    all_dmg_: all_dmg_stack,
+    all_dmg_: all_dmg_stack
   },
 })
 
@@ -38,14 +38,14 @@ const sheet: IWeaponSheet = {
       ...objectKeyMap(range(1, 5), i => ({
         name: st("seconds", { count: i * 4 }),
         fields: [{
-          node: all_dmg_stack,
+          node: all_dmg_stack
         }, {
           text: trm("takeMoreDmg"),
           value: data => takeDMG_s[data.get(input.weapon.refineIndex).value] * i,
-          unit: "%",
-        }],
+          unit: "%"
+        }]
       })),
-    },
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

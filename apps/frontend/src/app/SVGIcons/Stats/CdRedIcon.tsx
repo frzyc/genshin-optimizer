@@ -1,4 +1,4 @@
-import { createSvgIcon } from "@mui/material"
+import { createSvgIcon } from "@mui/material";
 
 const CdRedIcon = createSvgIcon(<>
   <path d="M 9.140625 16.082031 L 5.117188 21.828125 C 0.777344 18.789062 -1.054688 13.261719 0.609375 8.230469 L 7.558594 9.738281 C 6.433594 11.953125 7.105469 14.65625 9.140625 16.082031 Z M 9.140625 16.082031 " opacity=".3" />

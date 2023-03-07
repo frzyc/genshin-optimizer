@@ -1,12 +1,11 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -22,7 +21,7 @@ const dm = {
   normal: {
     hitArr: [
       skillParam_gen.auto[a++],
-    ],
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -58,7 +57,7 @@ const nodeA4GeoDmgBonus_ = greaterEq(input.asc, 4, equal(condA4, "on", percent(d
 
 const nodesC4 = Object.fromEntries(allElementKeys.map(ele => [
   `${ele}_res_`,
-  greaterEq(input.constellation, 4, equal(condC4, "on", percent(0.10))),
+  greaterEq(input.constellation, 4, equal(condC4, "on", percent(0.10)))
 ]))
 
 const dmgFormulas = {
@@ -90,8 +89,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     premod: {
       geo_dmg_: nodeA4GeoDmgBonus_,
       ...nodesC4,
-    },
-  },
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -108,11 +107,11 @@ const sheet: ICharacterSheet = {
       text: ct.chg("auto.fields.normal"),
     }, {
       fields: [{
-        node: infoMut(dmgFormulas.normal[0], { name: ct.chg(`auto.skillParams.0`) }),
+        node: infoMut(dmgFormulas.normal[0], { name: ct.chg(`auto.skillParams.0`) })
       }, {
         canShow: data => data.get(input.constellation).value >= 1,
         text: ct.ch("aoeGems"),
-      }],
+      }]
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -128,7 +127,7 @@ const sheet: ICharacterSheet = {
         canShow: data => data.get(input.asc).value >= 1,
         text: ct.chg("auto.skillParams.3"),
         value: ct.ch("starJadeStaminaCost"),
-      }],
+      }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -138,7 +137,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -149,7 +148,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         canShow: data => data.get(input.constellation).value >= 2,
         text: ct.ch("skillReset"),
@@ -162,14 +161,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeA4GeoDmgBonus_,
+            node: nodeA4GeoDmgBonus_
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: "s",
-          }],
-        },
-      },
+            unit: "s"
+          }]
+        }
+      }
     }), ct.condTem("constellation4", {
       teamBuff: true,
       value: condC4,
@@ -177,9 +176,9 @@ const sheet: ICharacterSheet = {
       name: ct.ch("c4toggle"),
       states: {
         on: {
-          fields: Object.values(nodesC4).map(n => ({ node: n })),
-        },
-      },
+          fields: Object.values(nodesC4).map(n => ({ node: n }))
+        }
+      }
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -196,7 +195,7 @@ const sheet: ICharacterSheet = {
         canShow: data => data.get(input.constellation).value >= 6,
         text: ct.ch("c6bonus"),
         value: 7,
-      }],
+      }]
     }]),
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2"),
@@ -207,7 +206,7 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  },
+  }
 }
 
 export default new CharacterSheet(sheet, data)

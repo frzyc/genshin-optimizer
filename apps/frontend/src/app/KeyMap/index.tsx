@@ -1,10 +1,8 @@
-import type { ElementWithPhyKey } from "@genshin-optimizer/consts"
-import { allElementWithPhyKeys } from "@genshin-optimizer/consts"
-import type { Info } from "../Formula/type"
-import elementalData from "./ElementalData"
-import type { AdditiveReactionsKey, AmplifyingReactionsKey, CrittableTransformativeReactionsKey, HitMoveKey, TransformativeReactionsKey } from "./StatConstants"
-import { additiveReactions, amplifyingReactions, crittableTransformativeReactions, hitMoves, transformativeReactions } from "./StatConstants"
-import StatIcon from "./StatIcon"
+import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
+import { Info } from "../Formula/type";
+import elementalData from "./ElementalData";
+import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, crittableTransformativeReactions, CrittableTransformativeReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
+import StatIcon from "./StatIcon";
 
 const statMap = {
   hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
@@ -178,7 +176,7 @@ export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' 
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {
   default: "Default", base: "Base", total: "Total", uncapped: "Uncapped",
   custom: "Custom", char: "Char.", art: "Art.", weapon: "Weapon",
-  teamBuff: "Team",
+  teamBuff: "Team"
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]
@@ -186,7 +184,7 @@ export default class KeyMap {
   //do not instantiate.
   constructor() {
     if (this instanceof KeyMap)
-      throw Error('A static class cannot be instantiated.')
+      throw Error('A static class cannot be instantiated.');
   }
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]

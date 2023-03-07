@@ -1,16 +1,15 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
-import type { Data, DisplaySub } from '../../../Formula/type'
+import { Data, DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterSheetKey } from '../../../Types/consts'
-import { absorbableEle } from '../../../Types/consts'
+import { absorbableEle, CharacterSheetKey } from '../../../Types/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import type { TalentSheet } from '../ICharacterSheet'
+import { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -48,8 +47,8 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       enerRech_: 0.16,
     },
     constellation6: {
-      enemyRes_: -0.2,
-    },
+      enemyRes_: -0.2
+    }
   } as const
 
   const [condSkillAbsorptionPath, condSkillAbsorption] = cond(condCharKey, "skillAbsorption")
@@ -70,18 +69,18 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       initial_dmg: dmgNode("atk", dm.skill.initial_dmg, "skill"),
       initial_max: dmgNode("atk", dm.skill.initial_max, "skill"),
       initial_ele_dmg: unequal(condSkillAbsorption, undefined, dmgNode(
-        "atk", dm.skill.initial_dmg, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" }),
+        "atk", dm.skill.initial_dmg, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" })
       )),
       max_ele_dmg: unequal(condSkillAbsorption, undefined, dmgNode(
-        "atk", dm.skill.initial_max, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" }),
+        "atk", dm.skill.initial_max, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" })
       )),
       storm_dmg: dmgNode("atk", dm.skill.storm_dmg, "skill"),
       storm_max: dmgNode("atk", dm.skill.storm_max, "skill"),
       storm_ele_dmg: unequal(condSkillAbsorption, undefined, dmgNode(
-        "atk", dm.skill.storm_dmg, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" }),
+        "atk", dm.skill.storm_dmg, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" })
       )),
       storm_ele_max: unequal(condSkillAbsorption, undefined, dmgNode(
-        "atk", dm.skill.storm_max, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" }),
+        "atk", dm.skill.storm_max, "skill", absorptionData, constant(dm.skill.ele_dmg, { unit: "%" })
       )),
     },
     burst: {
@@ -93,7 +92,7 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
     },
     passive2: {
       heal: greaterEq(input.asc, 2, customHealNode(prod(percent(dm.passive2.heal_), input.total.hp))),
-    },
+    }
   } as const
 
   const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -108,8 +107,8 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       premod: {
         ...nodesC6,
         anemo_enemyRes_: nodeC6,
-      },
-    },
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -125,12 +124,12 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       }, {
         text: ct.chg("skill.skillParams.4"),
         value: dm.skill.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.maxCd,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }, ct.condTem("skill", {
       value: condSkillAbsorption,
       path: condSkillAbsorptionPath,
@@ -145,14 +144,14 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
           node: infoMut(dmgFormulas.skill.storm_ele_dmg, { name: ch("stormEleDmg") }),
         }, {
           node: infoMut(dmgFormulas.skill.storm_ele_max, { name: ch("stormEleMaxDmg") }),
-        }],
-      }])),
+        }]
+      }]))
     }), ct.headerTem("constellation4", {
       fields: [{
         text: ch("c4"),
         value: 10,
-        unit: "%",
-      }],
+        unit: "%"
+      }]
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -161,15 +160,15 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.duration,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.enerCost,
-      }],
+      }]
     }, ct.condTem("burst", {
       value: condBurstAbsorption,
       path: condBurstAbsorptionPath,
@@ -178,8 +177,8 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
           node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`) }),
-        }],
-      }])),
+        }]
+      }]))
     }), ct.condTem("constellation6", { // C6 anemo
       value: condC6,
       path: condC6Path,
@@ -188,15 +187,15 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       states: {
         on: {
           fields: [{
-            node: infoMut(nodeC6, KeyMap.info("anemo_enemyRes_")),
-          }],
-        },
-      },
+            node: infoMut(nodeC6, KeyMap.info("anemo_enemyRes_"))
+          }]
+        }
+      }
     }), ct.headerTem("constellation6", { // C6 elemental self-display
       canShow: unequal(condBurstAbsorption, undefined, equal(condC6, "on", equal(target.charKey, key, 1))),
       fields: absorbableEle.map(eleKey => (
         { node: nodesC6[`${eleKey}_enemyRes_`] }
-      )),
+      ))
     }), ct.condTem("constellation6", { // C6 elemental team-display
       value: condBurstAbsorption,
       path: condBurstAbsorptionPath,
@@ -206,19 +205,19 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: nodesC6[`${eleKey}_enemyRes_`],
-        }],
-      }])),
+          node: nodesC6[`${eleKey}_enemyRes_`]
+        }]
+      }]))
     })]),
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
-        node: infoMut(dmgFormulas.passive1.dmg, { name: ch("p1") }),
-      }],
+        node: infoMut(dmgFormulas.passive1.dmg, { name: ch("p1") })
+      }]
     })]),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) }),
-      }],
+        node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) })
+      }]
     })]),
     constellation1: ct.talentTem("constellation1"),
     constellation2: ct.talentTem("constellation2", [{ fields: [{ node: nodeC2 }] }]),
@@ -230,6 +229,6 @@ export default function anemo(key: CharacterSheetKey, charKey: CharacterKey, dmg
   return {
     talent,
     data,
-    elementKey,
+    elementKey
   }
 }

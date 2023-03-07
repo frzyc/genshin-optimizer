@@ -1,37 +1,33 @@
-import type { CharacterKey } from "@genshin-optimizer/consts"
-import { allCharacterKeys, allElementKeys, allWeaponTypeKeys } from "@genshin-optimizer/consts"
-import { characterAsset } from "@genshin-optimizer/g-assets"
-import { Favorite, FavoriteBorder } from "@mui/icons-material"
-import type { TooltipProps} from "@mui/material"
-import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, Typography } from "@mui/material"
-import type { ChangeEvent} from "react"
-import { useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
-import { useTranslation } from "react-i18next"
-import CardDark from "../Components/Card/CardDark"
-import CardLight from "../Components/Card/CardLight"
-import CharacterCard from "../Components/Character/CharacterCard"
-import CloseButton from "../Components/CloseButton"
-import ModalWrapper from "../Components/ModalWrapper"
-import SortByButton from "../Components/SortByButton"
-import SqBadge from "../Components/SqBadge"
-import { StarsDisplay } from "../Components/StarDisplay"
-import ElementToggle from "../Components/ToggleButton/ElementToggle"
-import WeaponToggle from "../Components/ToggleButton/WeaponToggle"
-import { DataContext } from "../Context/DataContext"
-import { getCharSheet } from "../Data/Characters"
-import type CharacterSheet from "../Data/Characters/CharacterSheet"
-import { ascensionMaxLevel } from "../Data/LevelData"
-import { DatabaseContext } from "../Database/Database"
-import useBoolState from "../ReactHooks/useBoolState"
-import useCharacter from "../ReactHooks/useCharacter"
-import useCharMeta from "../ReactHooks/useCharMeta"
-import useDBMeta from "../ReactHooks/useDBMeta"
-import useForceUpdate from "../ReactHooks/useForceUpdate"
-import type { ICachedCharacter } from "../Types/character"
-import type { CharacterSortKey} from "../Util/CharacterSort"
-import { characterFilterConfigs, characterSortConfigs, characterSortMap } from "../Util/CharacterSort"
-import { filterFunction, sortFunction } from "../Util/SortByFilters"
-import { catTotal } from "../Util/totalUtils"
+import { allCharacterKeys, allElementKeys, allWeaponTypeKeys, CharacterKey } from "@genshin-optimizer/consts";
+import { characterAsset } from "@genshin-optimizer/g-assets";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Box, CardActionArea, CardContent, Divider, Grid, IconButton, styled, TextField, Tooltip, tooltipClasses, TooltipProps, Typography } from "@mui/material";
+import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import CardDark from "../Components/Card/CardDark";
+import CardLight from "../Components/Card/CardLight";
+import CharacterCard from "../Components/Character/CharacterCard";
+import CloseButton from "../Components/CloseButton";
+import ModalWrapper from "../Components/ModalWrapper";
+import SortByButton from "../Components/SortByButton";
+import SqBadge from "../Components/SqBadge";
+import { StarsDisplay } from "../Components/StarDisplay";
+import ElementToggle from "../Components/ToggleButton/ElementToggle";
+import WeaponToggle from "../Components/ToggleButton/WeaponToggle";
+import { DataContext } from "../Context/DataContext";
+import { getCharSheet } from "../Data/Characters";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { ascensionMaxLevel } from "../Data/LevelData";
+import { DatabaseContext } from "../Database/Database";
+import useBoolState from "../ReactHooks/useBoolState";
+import useCharacter from "../ReactHooks/useCharacter";
+import useCharMeta from "../ReactHooks/useCharMeta";
+import useDBMeta from "../ReactHooks/useDBMeta";
+import useForceUpdate from "../ReactHooks/useForceUpdate";
+import { ICachedCharacter } from "../Types/character";
+import { characterFilterConfigs, characterSortConfigs, CharacterSortKey, characterSortMap } from "../Util/CharacterSort";
+import { filterFunction, sortFunction } from "../Util/SortByFilters";
+import { catTotal } from "../Util/totalUtils";
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
@@ -65,8 +61,8 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
     const sortByKeys = [...(newFirst ? ["new"] : []), ...(characterSortMap[sortType] ?? [])] as CharacterSortKey[]
     return deferredDbDirty && allCharacterKeys
       .filter(key => filter(database.chars.get(key), getCharSheet(key, gender)))
-      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database)))
-      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database), ["new", "favorite"]))
+      .filter(filterFunction({ element, weaponType, name: deferredSearchTerm }, characterFilterConfigs(database,)))
+      .sort(sortFunction(sortByKeys, ascending, characterSortConfigs(database,), ["new", "favorite"]))
   }, [database, newFirst, deferredState, deferredDbDirty, deferredSearchTerm, gender, filter])
 
   const weaponTotals = useMemo(() => catTotal(allWeaponTypeKeys, ct => allCharacterKeys.forEach(ck => {
@@ -97,7 +93,7 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
             size="small"
             sx={{ height: "100%" }}
             InputProps={{
-              sx: { height: "100%" },
+              sx: { height: "100%" }
             }}
           />
         </Box>
@@ -108,7 +104,7 @@ export default function CharacterSelectionModal({ show, onHide, onSelect, filter
       </CardContent>
       <Divider />
       <DataContext.Provider value={{ teamData: undefined } as any}>
-        <CardContent><Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
+        <CardContent><Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5, }}>
           {characterKeyList.map(characterKey => <Grid item key={characterKey} xs={1} >
             <SelectionCard characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />
           </Grid>)}
@@ -124,7 +120,7 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   [`& .${tooltipClasses.tooltip}`]: {
     padding: 0,
   },
-})
+});
 
 function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, onClick: () => void }) {
   const { gender } = useDBMeta()
@@ -169,7 +165,7 @@ function SelectionCard({ characterKey, onClick }: { characterKey: CharacterKey, 
                 width: "100%", height: "100%",
                 opacity: 0.5,
                 backgroundImage: `url(${characterAsset(characterKey, "banner", gender)})`, backgroundPosition: "center", backgroundSize: "cover",
-              },
+              }
             }}
             width="100%" >
             <Box flexShrink={1} sx={{ maxWidth: { xs: "33%", lg: "30%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>

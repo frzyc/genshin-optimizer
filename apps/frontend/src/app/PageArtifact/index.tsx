@@ -1,38 +1,38 @@
-import { Add } from '@mui/icons-material'
-import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material'
-import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
-import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
-import SubstatToggle from '../Components/Artifact/SubstatToggle'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
-import CardDark from '../Components/Card/CardDark'
-import InfoComponent from '../Components/InfoComponent'
-import SortByButton from '../Components/SortByButton'
-import { DatabaseContext } from '../Database/Database'
-import useBoolState from '../ReactHooks/useBoolState'
-import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp'
-import type { SubstatKey } from '../Types/artifact'
-import { filterFunction, sortFunction } from '../Util/SortByFilters'
-import { clamp } from '../Util/Util'
-import ArtifactCard from './ArtifactCard'
-import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
-import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortMap } from './ArtifactSort'
-import ProbabilityFilter from './ProbabilityFilter'
-import { probability } from './RollProbability'
+import { Add } from '@mui/icons-material';
+import { Alert, Box, Button, CardContent, Grid, Link, Pagination, Skeleton, Typography } from '@mui/material';
+import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import ReactGA from 'react-ga4';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
+import SubstatToggle from '../Components/Artifact/SubstatToggle';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
+import CardDark from '../Components/Card/CardDark';
+import InfoComponent from '../Components/InfoComponent';
+import SortByButton from '../Components/SortByButton';
+import { DatabaseContext } from '../Database/Database';
+import useBoolState from '../ReactHooks/useBoolState';
+import useDisplayArtifact from '../ReactHooks/useDisplayArtifact';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
+import { SubstatKey } from '../Types/artifact';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
+import { clamp } from '../Util/Util';
+import ArtifactCard from './ArtifactCard';
+import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter';
+import { artifactFilterConfigs, artifactSortConfigs, artifactSortKeys, artifactSortMap } from './ArtifactSort';
+import ProbabilityFilter from './ProbabilityFilter';
+import { probability } from './RollProbability';
 
 //lazy load the weapon display
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
 
-const InfoDisplay = React.lazy(() => import('./InfoDisplay'))
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export default function PageArtifact() {
-  const { t } = useTranslation(["artifact", "ui"])
+  const { t } = useTranslation(["artifact", "ui"]);
   const { database } = useContext(DatabaseContext)
   const artifactDisplayState = useDisplayArtifact()
 
@@ -56,7 +56,7 @@ export default function PageArtifact() {
     return database.arts.followAny(() => forceUpdate())
   }, [database, forceUpdate])
 
-  const setProbabilityFilter = useCallback(probabilityFilter => database.displayArtifact.set({ probabilityFilter }), [database])
+  const setProbabilityFilter = useCallback(probabilityFilter => database.displayArtifact.set({ probabilityFilter }), [database],)
 
   const noArtifact = useMemo(() => !database.arts.values.length, [database])
   const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
@@ -93,7 +93,7 @@ export default function PageArtifact() {
   const setPage = useCallback(
     (e, value) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      setpageIdex(value - 1)
+      setpageIdex(value - 1);
     },
     [setpageIdex, invScrollRef],
   )
@@ -154,7 +154,7 @@ export default function PageArtifact() {
               editorProps={{}}
               canEquip
             />
-          </Grid>,
+          </Grid>
         )}
       </Grid>
     </Suspense>

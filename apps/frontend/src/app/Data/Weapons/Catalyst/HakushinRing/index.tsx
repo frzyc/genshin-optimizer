@@ -1,12 +1,12 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../../Components/ColoredText'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -43,8 +43,8 @@ const data = dataObjForWeaponSheet(key, data_gen, {
       hydro_dmg_,
       pyro_dmg_,
       dendro_dmg_,
-    },
-  },
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -64,8 +64,8 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
+          unit: "s"
+        }]
       },
       cryo: {
         name: <ColorText color="superconduct">{stg("reaction.superconduct")}</ColorText>,
@@ -76,8 +76,8 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
+          unit: "s"
+        }]
       },
       geo: {
         name: <ColorText color="crystallize">{stg("reaction.crystallize")}</ColorText>,
@@ -88,8 +88,8 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
+          unit: "s"
+        }]
       },
       pyro: {
         name: <ColorText color="overloaded">{stg("reaction.overloaded")}</ColorText>,
@@ -100,8 +100,8 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
+          unit: "s"
+        }]
       },
       hydro: {
         name: <ColorText color="electrocharged">{stg("reaction.electrocharged")}</ColorText>,
@@ -112,8 +112,8 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
+          unit: "s"
+        }]
       },
       dendro: {
         name: <ColorText color="aggravate">{stg("reaction.aggravate")}</ColorText>,
@@ -124,10 +124,10 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

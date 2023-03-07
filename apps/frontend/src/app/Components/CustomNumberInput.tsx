@@ -1,5 +1,4 @@
-import type { ButtonProps, InputProps} from '@mui/material'
-import { Button, InputBase, styled } from '@mui/material'
+import { Button, ButtonProps, InputBase, InputProps, styled } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 export type CustomNumberInputProps = Omit<InputProps, "onChange"> & {
   value?: number | undefined,
@@ -65,7 +64,7 @@ export default function CustomNumberInput({ value = 0, onChange, disabled = fals
     if (inputProps.max !== undefined && newNum > inputProps.max) return
     setNumber(newNum)
   }, [setNumber, parseFunc, inputProps.min, inputProps.max])
-  const onKeyDown = useCallback(e => e.key === "Enter" && onBlur(), [onBlur])
+  const onKeyDown = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
 
   return <StyledInputBase
     value={(focused && !number) ? "" : number}

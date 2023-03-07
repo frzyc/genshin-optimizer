@@ -1,13 +1,11 @@
-import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts"
-import type { ArtifactSortKey, FilterOption} from "../../PageArtifact/ArtifactSort"
-import { artifactSortKeys, initialFilterOption } from "../../PageArtifact/ArtifactSort"
-import type { SubstatKey } from "../../Types/artifact"
-import { allSubstatKeys } from "../../Types/artifact"
-import { allArtifactRarities } from "../../Types/consts"
-import { clamp } from "../../Util/Util"
-import type { ArtCharDatabase } from "../Database"
-import { DataEntry } from "../DataEntry"
-import { validateArr, validateObject } from "../validationUtil"
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
+import { ArtifactSortKey, artifactSortKeys, FilterOption, initialFilterOption } from "../../PageArtifact/ArtifactSort";
+import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
+import { allArtifactRarities } from "../../Types/consts";
+import { clamp } from "../../Util/Util";
+import { ArtCharDatabase } from "../Database";
+import { DataEntry } from "../DataEntry";
+import { validateArr, validateObject } from "../validationUtil";
 
 
 export type IDisplayArtifact = {

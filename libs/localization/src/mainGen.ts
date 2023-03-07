@@ -9,9 +9,9 @@ fs.readdir(enDir, (err, files) => {
     const raw = fs.readFileSync(enDir + file).toString()
     const json = JSON.parse(raw)
     main[filename] = json
-  })
+  });
   const data = JSON.stringify(main, null, 2)
   const mainFile = `${__dirname}/../main_gen.json`
-  fs.writeFileSync(mainFile, data)
-  console.log("Generated MAIN JSON at ", mainFile)
-})
+  fs.writeFileSync(mainFile, data);
+  console.log("Generated MAIN JSON at ", mainFile);
+});

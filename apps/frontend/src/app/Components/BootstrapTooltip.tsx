@@ -1,5 +1,4 @@
-import type { TooltipProps } from "@mui/material"
-import { styled, Tooltip, tooltipClasses } from "@mui/material"
+import { styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/material";
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} arrow classes={{ popper: className }} />
@@ -11,5 +10,5 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
     backgroundColor: theme.palette.common.black,
     maxWidth: 500,
   },
-}))
+}));
 export default BootstrapTooltip

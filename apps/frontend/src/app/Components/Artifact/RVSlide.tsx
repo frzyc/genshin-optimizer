@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react"
 import { clamp } from "../../Util/Util"
 import CustomNumberInput from "../CustomNumberInput"
 
-export default function RVSlide({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false, disabled = false }: {
+export default function RVSlide({ levelLow, levelHigh, setLow, setHigh, setBoth, dark = false, disabled = false, }: {
   levelLow: number,
   levelHigh: number,
   setLow: (low: number) => void,

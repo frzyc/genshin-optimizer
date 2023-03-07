@@ -1,16 +1,15 @@
-import { Box, Button, Divider, Stack } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import ImgIcon from '../../../../../Components/Image/ImgIcon'
-import SqBadge from '../../../../../Components/SqBadge'
-import { DataContext } from '../../../../../Context/DataContext'
-import { DatabaseContext } from '../../../../../Database/Database'
-import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
-import type { NodeDisplay } from '../../../../../Formula/uiData'
-import useBoolState from '../../../../../ReactHooks/useBoolState'
-import { objPathValue } from '../../../../../Util/Util'
-import type { TargetSelectorModalProps } from './TargetSelectorModal'
-import { TargetSelectorModal } from './TargetSelectorModal'
+import { Box, Button, Divider, Stack } from '@mui/material';
+import { useCallback, useContext, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import ImgIcon from '../../../../../Components/Image/ImgIcon';
+import SqBadge from '../../../../../Components/SqBadge';
+import { DataContext } from '../../../../../Context/DataContext';
+import { DatabaseContext } from '../../../../../Database/Database';
+import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
+import { NodeDisplay } from '../../../../../Formula/uiData';
+import useBoolState from '../../../../../ReactHooks/useBoolState';
+import { objPathValue } from '../../../../../Util/Util';
+import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
 
 export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, showEmptyTargets = false, defaultText, targetSelectorModalProps = {} }: {
   optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, showEmptyTargets?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>

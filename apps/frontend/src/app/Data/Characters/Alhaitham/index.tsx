@@ -1,13 +1,13 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { compareEq, constant, equal, equalStr, greaterEq, infoMut, lookup, min, naught, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -27,7 +27,7 @@ const dm = {
       skillParam_gen.auto[++a], // 3x2
       skillParam_gen.auto[a += 2], // 4
       skillParam_gen.auto[++a], // 5
-    ],
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[++a], // x2
@@ -68,7 +68,7 @@ const dm = {
   },
   passive2: {
     dmgInc: skillParam_gen.passive2[0][0],
-    maxDmgInc: skillParam_gen.passive2[1][0],
+    maxDmgInc: skillParam_gen.passive2[1][0]
   },
   constellation1: {
     cdReduction: skillParam_gen.constellation1[0],
@@ -89,12 +89,12 @@ const dm = {
     critRate_: skillParam_gen.constellation6[0],
     critDMG_: skillParam_gen.constellation6[1],
     duration: skillParam_gen.constellation6[2],
-  },
+  }
 } as const
 
 const a4_skill_dmg_ = greaterEq(input.asc, 4, min(
   prod(percent(dm.passive2.dmgInc), input.total.eleMas), // TODO: is this total or premod; test with nahida
-  percent(dm.passive2.maxDmgInc),
+  percent(dm.passive2.maxDmgInc)
 ))
 const a4_burst_dmg_ = { ...a4_skill_dmg_ }
 
@@ -107,8 +107,8 @@ const c2DebateStacks_eleMas = greaterEq(input.constellation, 2,
   lookup(
     condDebateStacks,
     objectKeyMap(debateStacksArr, stack => prod(stack, dm.constellation2.eleMas)),
-    naught,
-  ),
+    naught
+  )
 )
 
 const mirrorsConsumedArr = range(0, 3)
@@ -117,8 +117,8 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(greaterEq(input.constellation, 4,
   lookup(
     condMirrorsConsumed,
     objectKeyMap(mirrorsConsumedArr, count => prod(count, dm.constellation4.eleMas)),
-    naught,
-  ),
+    naught
+  )
 ), { ...KeyMap.info("eleMas"), isTeamBuff: true })
 const c4MirrorsConsumed_eleMas = unequal(input.activeCharKey, key, c4MirrorsConsumed_eleMasDisp)
 const c4MirrorsGenerated_dendro_dmg_ = greaterEq(input.constellation, 4,
@@ -127,19 +127,19 @@ const c4MirrorsGenerated_dendro_dmg_ = greaterEq(input.constellation, 4,
     lookup(
       condMirrorsConsumed,
       objectKeyMap(mirrorsConsumedArr, count =>
-        prod(3 - count, percent(dm.constellation4.dendro_dmg_)),
+        prod(3 - count, percent(dm.constellation4.dendro_dmg_))
       ),
-      naught,
-    ),
-  ),
+      naught
+    )
+  )
 )
 
 const [condExcessMirrorPath, condExcessMirror] = cond(key, "excessMirror")
 const c6ExcessMirror_critRate_ = greaterEq(input.constellation, 6,
-  equal(condExcessMirror, "on", dm.constellation6.critRate_),
+  equal(condExcessMirror, "on", dm.constellation6.critRate_)
 )
 const c6ExcessMirror_critDMG_ = greaterEq(input.constellation, 6,
-  equal(condExcessMirror, "on", dm.constellation6.critDMG_),
+  equal(condExcessMirror, "on", dm.constellation6.critDMG_)
 )
 
 const dmgFormulas = {
@@ -160,7 +160,7 @@ const dmgFormulas = {
   passive2: {
     a4SkillDmgBonus: a4_skill_dmg_,
     a4BurstDmgBonus: a4_burst_dmg_,
-  },
+  }
 }
 
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -169,8 +169,8 @@ const burstC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFormulas, {
   teamBuff: {
     premod: {
-      eleMas: c4MirrorsConsumed_eleMas,
-    },
+      eleMas: c4MirrorsConsumed_eleMas
+    }
   },
   premod: {
     skillBoost: skillC3,
@@ -178,11 +178,11 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
     dendro_dmg_: c4MirrorsGenerated_dendro_dmg_,
     eleMas: c2DebateStacks_eleMas,
     critRate_: c6ExcessMirror_critRate_,
-    critDMG_: c6ExcessMirror_critDMG_,
+    critDMG_: c6ExcessMirror_critDMG_
   },
   infusion: {
-    nonOverridableSelf: withMirrorsInfusion,
-  },
+    nonOverridableSelf: withMirrorsInfusion
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -196,11 +196,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal"),
+      text: ct.chg("auto.fields.normal")
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 2 ? 2 : undefined }),
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -224,23 +224,23 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.rushDmg, { name: ct.chg(`skill.skillParams.0`) }),
+        node: infoMut(dmgFormulas.skill.rushDmg, { name: ct.chg(`skill.skillParams.0`) })
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: dm.skill.atkInterval,
         unit: "s",
-        fixed: 1,
+        fixed: 1
       }, {
-        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.ch(`projectionDmg`) }),
+        node: infoMut(dmgFormulas.skill.mirrorDmg1, { name: ct.ch(`projectionDmg`) })
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.mirrorRemovalInterval,
-        unit: "s",
+        unit: "s"
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }, ct.condTem("skill", {
       path: condWithMirrorsPath,
       value: condWithMirrors,
@@ -249,14 +249,14 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             text: st("infusion.dendro"),
-            variant: elementKey,
-          }],
-        },
-      },
+            variant: elementKey
+          }]
+        }
+      }
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4_skill_dmg_, { name: ct.ch("projectionAttack_dmg_"), unit: "%" }),
-      }],
+        node: infoMut(a4_skill_dmg_, { name: ct.ch("projectionAttack_dmg_"), unit: "%" })
+      }]
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -264,7 +264,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.burst.instanceDmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, ...dm.burst.attackInstances.map((instances, i) => ({
         text: ct.chg(`burst.skillParams.${i + 1}`),
-        value: instances,
+        value: instances
       })), {
         text: stg("cd"),
         value: dm.burst.cd,
@@ -272,11 +272,11 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }],
+      }]
     }, ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(a4_burst_dmg_, KeyMap.info("burst_dmg_")),
-      }],
+        node: infoMut(a4_burst_dmg_, KeyMap.info("burst_dmg_"))
+      }]
     }), ct.condTem("constellation4", {
       path: condMirrorsConsumedPath,
       value: condMirrorsConsumed,
@@ -285,15 +285,15 @@ const sheet: ICharacterSheet = {
       states: objectKeyMap(mirrorsConsumedArr, count => ({
         name: `${count}`,
         fields: [{
-          node: c4MirrorsConsumed_eleMasDisp,
+          node: c4MirrorsConsumed_eleMasDisp
         }, {
-          node: c4MirrorsGenerated_dendro_dmg_,
+          node: c4MirrorsGenerated_dendro_dmg_
         }, {
           text: stg("duration"),
           value: dm.constellation4.eleMasDuration,
-          unit: "s",
-        }],
-      })),
+          unit: "s"
+        }]
+      }))
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -307,8 +307,8 @@ const sheet: ICharacterSheet = {
       teamBuff: true, // For Nahida A1
       states: objectKeyMap(debateStacksArr, stack => ({
         name: st("stack", { count: stack }),
-        fields: [{ node: c2DebateStacks_eleMas }],
-      })),
+        fields: [{ node: c2DebateStacks_eleMas }]
+      }))
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: skillC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
@@ -320,18 +320,18 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: c6ExcessMirror_critRate_,
+            node: c6ExcessMirror_critRate_
           }, {
-            node: c6ExcessMirror_critDMG_,
+            node: c6ExcessMirror_critDMG_
           }, {
             text: stg("duration"),
             value: dm.constellation6.duration,
-            unit: "s",
-          }],
-        },
-      },
+            unit: "s"
+          }]
+        }
+      }
     })]),
-  },
+  }
 }
 
 export default new CharacterSheet(sheet, data)

@@ -1,23 +1,23 @@
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material'
-import { useContext, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
-import SqBadge from '../../../../../Components/SqBadge'
-import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
-import Artifact from '../../../../../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../../../../../Database/Database'
-import StatIcon from '../../../../../KeyMap/StatIcon'
-import { iconInlineProps } from '../../../../../SVGIcons'
-import FlowerIcon from '../../../../../SVGIcons/ArtifactSlot/FlowerIcon'
-import PlumeIcon from '../../../../../SVGIcons/ArtifactSlot/PlumeIcon'
-import AtkIcon from '../../../../../SVGIcons/Stats/AtkIcon'
-import HpIcon from '../../../../../SVGIcons/Stats/HpIcon'
-import { handleMultiSelect } from '../../../../../Util/MultiSelect'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
-import useBuildSetting from '../useBuildSetting'
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts';
+import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
+import { useContext, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import SlotIcon from '../../../../../Components/Artifact/SlotIcon';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
+import SqBadge from '../../../../../Components/SqBadge';
+import { StatColoredWithUnit } from '../../../../../Components/StatDisplay';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import Artifact from '../../../../../Data/Artifacts/Artifact';
+import { DatabaseContext } from '../../../../../Database/Database';
+import StatIcon from '../../../../../KeyMap/StatIcon';
+import { iconInlineProps } from '../../../../../SVGIcons';
+import FlowerIcon from '../../../../../SVGIcons/ArtifactSlot/FlowerIcon';
+import PlumeIcon from '../../../../../SVGIcons/ArtifactSlot/PlumeIcon';
+import AtkIcon from '../../../../../SVGIcons/Stats/AtkIcon';
+import HpIcon from '../../../../../SVGIcons/Stats/HpIcon';
+import { handleMultiSelect } from '../../../../../Util/MultiSelect';
+import { bulkCatTotal } from '../../../../../Util/totalUtils';
+import useBuildSetting from '../useBuildSetting';
 
 export const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
@@ -36,7 +36,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIdM
       sandsMainStatTots: Artifact.slotMainStats("sands"),
       gobletMainStatTots: Artifact.slotMainStats("goblet"),
       circletMainStatTots: Artifact.slotMainStats("circlet"),
-      slotTots: artifactsSlotsToSelectMainStats,
+      slotTots: artifactsSlotsToSelectMainStats
     } as const
     const catTotals = bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
@@ -47,7 +47,7 @@ export default function MainStatSelectionCard({ disabled = false, filteredArtIdM
         }
         ctMap[`${slotKey}MainStatTots`][mainStatKey].total++
         if (filteredArtIdMap[id]) ctMap[`${slotKey}MainStatTots`][mainStatKey].current++
-      }),
+      })
     )
     return { mainStatSlotTots: {
       flower: catTotals.flowerMainStatTots,

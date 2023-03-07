@@ -1,4 +1,4 @@
-import type { Count, FinalizeResult, Interim, OptProblemInput, Setup, WorkerCommand, WorkerResult } from ".."
+import { Count, FinalizeResult, Interim, OptProblemInput, Setup, WorkerCommand, WorkerResult } from ".."
 import { optimize } from "../../Formula/optimization"
 import { pruneAll, pruneExclusion } from "../common"
 import { WorkerCoordinator } from "../coordinator"

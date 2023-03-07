@@ -1,7 +1,7 @@
-import { useCallback, useContext, useEffect, useState } from "react"
-import { DatabaseContext } from "../../../../Database/Database"
-import type { IBuildResult } from "../../../../Database/DataManagers/BuildResult"
-import type { CharacterKey } from "../../../../Types/consts"
+import { useCallback, useContext, useEffect, useState } from "react";
+import { DatabaseContext } from "../../../../Database/Database";
+import { IBuildResult } from "../../../../Database/DataManagers/BuildResult";
+import { CharacterKey } from "../../../../Types/consts";
 
 export default function useBuildResult(characterKey: CharacterKey) {
   const { database } = useContext(DatabaseContext)
@@ -10,7 +10,7 @@ export default function useBuildResult(characterKey: CharacterKey) {
   useEffect(() =>
     database.buildResult.follow(characterKey, (k, r, v) => r === "update" && setBuildResult(v)),
     [characterKey, setBuildResult, database])
-  const buildResultDispatch = useCallback((action: Partial<IBuildResult>) => characterKey && database.buildResult.set(characterKey, action), [characterKey, database])
+  const buildResultDispatch = useCallback((action: Partial<IBuildResult>) => characterKey && database.buildResult.set(characterKey, action), [characterKey, database],)
 
   return { buildResult, buildResultDispatch }
 }

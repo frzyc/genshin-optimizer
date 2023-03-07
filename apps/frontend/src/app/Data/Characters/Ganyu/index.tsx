@@ -1,13 +1,13 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -29,7 +29,7 @@ const dm = {
       skillParam_gen.auto[a++], // 4
       skillParam_gen.auto[a++], // 5
       skillParam_gen.auto[a++], // 6
-    ],
+    ]
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
@@ -65,7 +65,7 @@ const dm = {
     opCryoRes: skillParam_gen.constellation1[0],
     duration: skillParam_gen.constellation1[1],
     enerRegen: skillParam_gen.constellation1[2],
-  },
+  }
 } as const
 
 const [condA1Path, condA1] = cond(key, "A1")
@@ -113,7 +113,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
       all_dmg_,
       cryo_enemyRes_,
     },
-  },
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -127,11 +127,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal"),
+      text: ct.chg("auto.fields.normal")
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -153,13 +153,13 @@ const sheet: ICharacterSheet = {
           fields: [{
             text: ct.ch("a1.critRateInc"),
             value: dm.passive1.critRateInc * 100,
-            unit: "%",
+            unit: "%"
           }, {
             text: stg("duration"),
             value: `${dm.passive1.duration}s`,
-          }],
-        },
-      },
+          }]
+        }
+      }
     }), ct.condTem("constellation1", {
       value: condC1,
       path: condC1Path,
@@ -168,13 +168,13 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: cryo_enemyRes_,
+            node: cryo_enemyRes_
           }, {
             text: stg("duration"),
             value: `${dm.constellation1.duration}s`,
-          }],
-        },
-      },
+          }]
+        }
+      }
     }), {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -202,7 +202,7 @@ const sheet: ICharacterSheet = {
         canShow: (data) => data.get(input.constellation).value >= 2,
         text: st("charges"),
         value: 2,
-      }],
+      }]
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -226,10 +226,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(cryo_dmg_disp, KeyMap.info("cryo_dmg_")),
-          }],
-        },
-      },
+            node: infoMut(cryo_dmg_disp, KeyMap.info("cryo_dmg_"))
+          }]
+        }
+      }
     }), ct.condTem("constellation4", {
       value: condC4,
       path: condC4Path,
@@ -237,8 +237,8 @@ const sheet: ICharacterSheet = {
       name: st("opponentsField"),
       states: Object.fromEntries(range(1, 5).map(i => [i, {
         name: st("seconds", { count: (i - 1) * 3 }),
-        fields: [{ node: all_dmg_ }, { text: ct.ch("c4.lingerDuration"), value: 3, unit: "s" }],
-      }])),
+        fields: [{ node: all_dmg_ }, { text: ct.ch("c4.lingerDuration"), value: 3, unit: "s" }]
+      }]))
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -253,4 +253,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data)
+export default new CharacterSheet(sheet, data);

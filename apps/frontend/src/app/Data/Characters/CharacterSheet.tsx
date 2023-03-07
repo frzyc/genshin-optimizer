@@ -1,12 +1,12 @@
-import type { Data } from "../../Formula/type"
-import type { CharacterKey, Gender } from "../../Types/consts"
-import { ascensionMaxLevel } from "../LevelData"
-import type { ICharacterSheet, TalentSheetElementKey } from "./ICharacterSheet"
+import { Data } from "../../Formula/type";
+import { CharacterKey, Gender } from "../../Types/consts";
+import { ascensionMaxLevel } from "../LevelData";
+import { ICharacterSheet, TalentSheetElementKey } from "./ICharacterSheet";
 
 export type AllCharacterSheets = (characterkey: CharacterKey, gender: Gender) => CharacterSheet
 export default class CharacterSheet {
-  sheet: ICharacterSheet
-  data: Data
+  sheet: ICharacterSheet;
+  data: Data;
   constructor(charSheet: ICharacterSheet, data: Data) {
     this.sheet = charSheet
     this.data = data

@@ -1,12 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { compareEq, constant, lookup, prod, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -47,8 +46,8 @@ const sheet: IWeaponSheet = {
     name: tr("passiveName"),
     states: Object.fromEntries(range(1, 6).map(i => [i, {
       name: st("stack", { count: i }),
-      fields: [{ node: atkInc }],
-    }])),
+      fields: [{ node: atkInc }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

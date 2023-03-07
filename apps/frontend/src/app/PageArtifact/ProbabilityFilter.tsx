@@ -3,8 +3,7 @@ import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import ColorText from "../Components/ColoredText"
 import StatEditorList from "../Components/StatEditorList"
-import type { SubstatKey } from "../Types/artifact"
-import { allSubstatKeys } from "../Types/artifact"
+import { allSubstatKeys, SubstatKey } from "../Types/artifact"
 const keys = [...allSubstatKeys]
 export default function ProbabilityFilter({ probabilityFilter: statFilters = {}, setProbabilityFilter: setStatFilters, disabled = false }: {
   probabilityFilter: Dict<SubstatKey, number>,

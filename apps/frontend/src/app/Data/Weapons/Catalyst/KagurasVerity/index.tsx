@@ -2,12 +2,11 @@ import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from "../../../../Formula/utils"
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -23,7 +22,7 @@ const ele_dmg_s = Object.fromEntries(allElementKeys.map(ele => [ele, equal(condN
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     skill_dmg_: sum(...skill_dmg_s),
-    ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, ele_dmg_s[ele]])),
+    ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, ele_dmg_s[ele]]))
   },
 })
 const sheet: IWeaponSheet = {
@@ -36,10 +35,10 @@ const sheet: IWeaponSheet = {
       Object.fromEntries(totems.map(i => [i, {
         name: st("stack", { count: i }),
         fields: [{
-          node: skill_dmg_s[i - 1],
+          node: skill_dmg_s[i - 1]
         },
-        ...allElementKeys.map(ele => ({ node: ele_dmg_s[ele] }))],
-      }])),
+        ...allElementKeys.map(ele => ({ node: ele_dmg_s[ele] }))]
+      }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,4 +1,4 @@
-import type { CharacterKey } from "@genshin-optimizer/consts"
+import { CharacterKey } from "@genshin-optimizer/consts"
 import { characterAsset } from "@genshin-optimizer/g-assets"
 import { Typography } from "@mui/material"
 import { getCharSheet } from "../../Data/Characters"

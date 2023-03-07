@@ -1,4 +1,4 @@
-import type { RarityKey } from './common'
+import { RarityKey } from './common'
 
 export const allArtifactSetKeys = [
   'Adventurer',

@@ -1,7 +1,7 @@
 
-import InfoIcon from '@mui/icons-material/Info'
-import type { TooltipProps } from "@mui/material"
-import BootstrapTooltip from "./BootstrapTooltip"
+import InfoIcon from '@mui/icons-material/Info';
+import { TooltipProps } from "@mui/material";
+import BootstrapTooltip from "./BootstrapTooltip";
 export default function InfoTooltip(props: Omit<TooltipProps, "children">) {
   return <BootstrapTooltip placement="top" {...props} >
     <InfoIcon sx={{ cursor: "help" }} />

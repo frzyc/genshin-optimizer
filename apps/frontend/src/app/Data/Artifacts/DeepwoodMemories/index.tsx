@@ -1,10 +1,10 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { equal, greaterEq } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "DeepwoodMemories"
@@ -22,8 +22,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
       dendro_enemyRes_: set4,
-    },
-  },
+    }
+  }
 })
 
 const sheet: IArtifactSheet = {
@@ -44,12 +44,12 @@ const sheet: IArtifactSheet = {
             }, {
               text: stg("duration"),
               value: 8,
-              unit: "s",
-            }],
-          },
-        },
-      }],
-    },
-  },
+              unit: "s"
+            }]
+          }
+        }
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

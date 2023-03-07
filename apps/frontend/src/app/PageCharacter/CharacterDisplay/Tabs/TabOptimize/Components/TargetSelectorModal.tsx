@@ -10,8 +10,8 @@ import SqBadge from "../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../Context/DataContext"
 import { DatabaseContext } from "../../../../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../../../../Formula/DisplayUtil"
-import type { DisplaySub } from "../../../../../Formula/type"
-import type { NodeDisplay } from "../../../../../Formula/uiData"
+import { DisplaySub } from "../../../../../Formula/type"
+import { NodeDisplay } from "../../../../../Formula/uiData"
 
 export interface TargetSelectorModalProps {
   show: boolean,

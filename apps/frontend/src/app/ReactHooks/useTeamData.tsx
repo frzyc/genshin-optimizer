@@ -1,24 +1,23 @@
-import { useContext, useDeferredValue, useEffect, useMemo } from "react"
-import type { TeamData } from "../Context/DataContext"
-import { allArtifactData } from "../Data/Artifacts"
-import { getCharSheet } from "../Data/Characters"
-import type CharacterSheet from "../Data/Characters/CharacterSheet"
-import { resonanceData } from "../Data/Resonance"
-import { getWeaponSheet } from "../Data/Weapons"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
-import type { ArtCharDatabase} from "../Database/Database"
-import { DatabaseContext } from "../Database/Database"
-import { common } from "../Formula"
-import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, mergeData, uiDataForTeam } from "../Formula/api"
-import type { Data } from "../Formula/type"
-import type { ICachedArtifact } from "../Types/artifact"
-import type { ICachedCharacter } from "../Types/character"
-import type { CharacterKey, Gender } from "../Types/consts"
-import type { ICachedWeapon } from "../Types/weapon"
-import { objectMap } from "../Util/Util"
-import { defaultInitialWeapon } from "../Util/WeaponUtil"
-import useDBMeta from "./useDBMeta"
-import useForceUpdate from "./useForceUpdate"
+import { useContext, useDeferredValue, useEffect, useMemo } from "react";
+import { TeamData } from "../Context/DataContext";
+import { allArtifactData } from "../Data/Artifacts";
+import { getCharSheet } from "../Data/Characters";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { resonanceData } from "../Data/Resonance";
+import { getWeaponSheet } from "../Data/Weapons";
+import WeaponSheet from "../Data/Weapons/WeaponSheet";
+import { ArtCharDatabase, DatabaseContext } from "../Database/Database";
+import { common } from "../Formula";
+import { dataObjForArtifact, dataObjForCharacter, dataObjForWeapon, mergeData, uiDataForTeam } from "../Formula/api";
+import { Data } from "../Formula/type";
+import { ICachedArtifact } from "../Types/artifact";
+import { ICachedCharacter } from "../Types/character";
+import { CharacterKey, Gender } from "../Types/consts";
+import { ICachedWeapon } from "../Types/weapon";
+import { objectMap } from "../Util/Util";
+import { defaultInitialWeapon } from "../Util/WeaponUtil";
+import useDBMeta from "./useDBMeta";
+import useForceUpdate from "./useForceUpdate";
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -71,7 +70,7 @@ export function getTeamData(database: ArtCharDatabase, characterKey: CharacterKe
   const char1DataBundle = getCharDataBundle(database, true, mainStatAssumptionLevel,
     character,
     overrideWeapon ? overrideWeapon : (database.weapons.get(character.equippedWeapon) ?? defaultInitialWeapon()),
-    (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a)).filter(a => a) as ICachedArtifact[]),
+    (overrideArt ?? Object.values(character.equippedArtifacts).map(a => database.arts.get(a)).filter(a => a) as ICachedArtifact[])
   )
   if (!char1DataBundle) return
   const teamBundle = { [characterKey]: char1DataBundle }

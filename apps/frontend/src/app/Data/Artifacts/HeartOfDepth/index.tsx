@@ -1,10 +1,10 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "HeartOfDepth"
@@ -40,11 +40,11 @@ const sheet: IArtifactSheet = {
               node: set4Norm,
             }, {
               node: set4Charged,
-            }],
-          },
-        },
-      }],
-    },
-  },
+            }]
+          }
+        }
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

@@ -1,4 +1,4 @@
-import type { IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact'
+import { IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact'
 import { layeredAssignment } from '../Util/Util'
 import Artifact from '../Data/Artifacts/Artifact'
 import ArtifactMainStatsData from '../Data/Artifacts/artifact_main_gen.json'
@@ -37,7 +37,7 @@ type Weight = typeof allWeights[number]
 const fWeight: StrictDict<SubstatKey, Weight> = {
   hp: 6, atk: 6, def: 6,
   hp_: 4, atk_: 4, def_: 4, eleMas: 4, enerRech_: 4,
-  critRate_: 3, critDMG_: 3,
+  critRate_: 3, critDMG_: 3
 }
 
 /**

@@ -1,23 +1,23 @@
-import { CardContent, CardHeader, Grid, ListItem, Stack, Typography, Box, Alert } from "@mui/material"
-import { useCallback, useContext, useMemo } from "react"
-import { Trans, useTranslation } from "react-i18next"
-import CardDark from "../../Components/Card/CardDark"
-import CardLight from "../../Components/Card/CardLight"
-import CloseButton from "../../Components/CloseButton"
-import ColorText from "../../Components/ColoredText"
-import { EnemyExpandCard } from "../../Components/EnemyEditor"
-import { FieldDisplayList, NodeFieldDisplay } from "../../Components/FieldDisplay"
-import ModalWrapper from "../../Components/ModalWrapper"
-import StatEditorList from "../../Components/StatEditorList"
-import { CharacterContext } from "../../Context/CharacterContext"
-import { DataContext } from "../../Context/DataContext"
-import { allInputPremodKeys, uiInput as input } from "../../Formula"
-import type { ReadNode } from "../../Formula/type"
-import { nodeVStr } from "../../Formula/uiData"
-import { allEleDmgKeys, allEleResKeys } from "../../KeyMap"
+import { CardContent, CardHeader, Grid, ListItem, Stack, Typography, Box, Alert } from "@mui/material";
+import { useCallback, useContext, useMemo } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import CardDark from "../../Components/Card/CardDark";
+import CardLight from "../../Components/Card/CardLight";
+import CloseButton from "../../Components/CloseButton";
+import ColorText from "../../Components/ColoredText";
+import { EnemyExpandCard } from "../../Components/EnemyEditor";
+import { FieldDisplayList, NodeFieldDisplay } from "../../Components/FieldDisplay";
+import ModalWrapper from "../../Components/ModalWrapper";
+import StatEditorList from "../../Components/StatEditorList";
+import { CharacterContext } from "../../Context/CharacterContext";
+import { DataContext } from "../../Context/DataContext";
+import { allInputPremodKeys, uiInput as input } from "../../Formula";
+import { ReadNode } from "../../Formula/type";
+import { nodeVStr } from "../../Formula/uiData";
+import { allEleDmgKeys, allEleResKeys } from "../../KeyMap";
 
 const cols = {
-  xs: 1, md: 2, lg: 3,
+  xs: 1, md: 2, lg: 3
 }
 
 export default function StatModal({ open, onClose }) {
@@ -39,7 +39,7 @@ const wrapperFunc = (e: JSX.Element, key?: string) => <Grid item key={key} xs={1
 function BonusStatsEditor() {
   const { t } = useTranslation("page_character")
   const { character: { bonusStats }, characterDispatch } = useContext(CharacterContext)
-  const setFilter = useCallback((bonusStats) => characterDispatch({ bonusStats }), [characterDispatch])
+  const setFilter = useCallback((bonusStats) => characterDispatch({ bonusStats }), [characterDispatch],)
   return <CardLight>
     <CardContent sx={{ display: "flex" }}>
       <Grid container columns={cols} sx={{ pt: 1 }} spacing={1}>
@@ -63,7 +63,7 @@ const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys]
 const otherStatKeys = [
   ...allEleDmgKeys,
   ...allEleResKeys,
-  "stamina", "incHeal_", "shield_", "cdRed_",
+  "stamina", "incHeal_", "shield_", "cdRed_"
 ] as const
 
 const miscStatkeys = allInputPremodKeys.filter(k => !(mainEditKeys as readonly string[]).includes(k) && !(otherStatKeys as readonly string[]).includes(k))

@@ -1,17 +1,13 @@
-import type { ArtifactSetKey, ArtifactSlotKey, RarityKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import type { RecognizeResult, Scheduler } from 'tesseract.js'
-import { createScheduler, createWorker } from 'tesseract.js'
-import ColorText from '../Components/ColoredText'
-import { getArtSheet } from '../Data/Artifacts'
-import Artifact from '../Data/Artifacts/Artifact'
-import KeyMap, { cacheValueString } from '../KeyMap'
-import type { IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
-import { allArtifactRarities } from '../Types/consts'
-import { clamp, hammingDistance, objectKeyMap } from '../Util/Util'
-import { BorrowManager } from './BorrowManager'
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey, RarityKey } from '@genshin-optimizer/consts';
+import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
+import ColorText from '../Components/ColoredText';
+import { getArtSheet } from '../Data/Artifacts';
+import Artifact from '../Data/Artifacts/Artifact';
+import KeyMap, { cacheValueString } from '../KeyMap';
+import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allArtifactRarities, ArtifactRarity } from '../Types/consts';
+import { clamp, hammingDistance, objectKeyMap } from '../Util/Util';
+import { BorrowManager } from './BorrowManager';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 const workerCount = 2
@@ -20,7 +16,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   const scheduler = createScheduler()
   const promises = Array(workerCount).fill(0).map(async _ => {
     const worker = await createWorker({
-      errorHandler: console.error,
+      errorHandler: console.error
     })
 
     await worker.load()
@@ -76,7 +72,7 @@ export function processEntry(entry: OutstandingEntry) {
       parseSlotKeys(ocrResult.whiteTexts),
       parseSubstats(ocrResult.substatTexts),
       parseMainStatKeys(ocrResult.whiteTexts),
-      parseMainStatValues(ocrResult.whiteTexts),
+      parseMainStatValues(ocrResult.whiteTexts)
     )
 
     return { file, result: { fileName, imageURL, artifact, texts } }
@@ -292,13 +288,13 @@ function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
 }
 function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<RarityKey> {
   const d = pixels
-  let lastRowNum = 0, rowsWithNumber = 0
+  let lastRowNum = 0, rowsWithNumber = 0;
   const results = new Set<RarityKey>([])
   for (let y = 0; y < height; y++) {
-    let star = 0, onStar = false
+    let star = 0, onStar = false;
     for (let x = 0; x < width; x++) {
       const i = (y * width + x) * 4
-      const r = d[i], g = d[i + 1], b = d[i + 2]
+      const r = d[i], g = d[i + 1], b = d[i + 2];
       if (colorCloseEnough({ r, g, b }, starColor)) {
         if (!onStar) {
           onStar = true
@@ -311,7 +307,7 @@ function parseRarities(pixels: Uint8ClampedArray, width: number, height: number)
 
     if (lastRowNum !== star) {
       lastRowNum = star
-      rowsWithNumber = 1
+      rowsWithNumber = 1;
     } else if (lastRowNum) {
       rowsWithNumber++
       if (rowsWithNumber >= 10) results.add(clamp(lastRowNum, 3, 5) as RarityKey)
@@ -382,7 +378,7 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
   const bw = mode === "bw", invert = mode === "invert"
   const halfInd = Math.floor(pixelData.width * (pixelData.height / 2) * 4)
   for (let i = 0; i < d.length; i += 4) {
-    const r = d[i], g = d[i + 1], b = d[i + 2]
+    const r = d[i], g = d[i + 1], b = d[i + 2];
     if ((all || (top && i < halfInd) || (bot && i > halfInd)) &&
       r >= color1[0] && r <= color2[0] &&
       g >= color1[1] && g <= color2[1] &&

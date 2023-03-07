@@ -1,9 +1,9 @@
-import { Alert, Box, CardContent, Divider, Grid, Typography } from '@mui/material'
-import CardDark from '../../../Components/Card/CardDark'
-import CloseButton from '../../../Components/CloseButton'
-import ModalWrapper from '../../../Components/ModalWrapper'
-import scan_art_main from "./imgs/scan_art_main.png"
-import Snippet from "./imgs/snippet.png"
+import { Alert, Box, CardContent, Divider, Grid, Typography } from '@mui/material';
+import CardDark from '../../../Components/Card/CardDark';
+import CloseButton from '../../../Components/CloseButton';
+import ModalWrapper from '../../../Components/ModalWrapper';
+import scan_art_main from "./imgs/scan_art_main.png";
+import Snippet from "./imgs/snippet.png";
 export default function UploadExplainationModal({ modalShow, hide }: { modalShow: boolean, hide: () => void }) {
   return <ModalWrapper open={modalShow} onClose={hide} >
     <CardDark>

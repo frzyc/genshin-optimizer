@@ -1,17 +1,15 @@
-import { ThemeProvider } from "@emotion/react"
+import { ThemeProvider } from "@emotion/react";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
-import ErrorIcon from "@mui/icons-material/Error"
-import RefreshIcon from "@mui/icons-material/Refresh"
-import { StyledEngineProvider, CssBaseline, Box, CardContent, Typography, Divider, CardActions, Button, Stack } from "@mui/material"
-import type { ErrorInfo, ReactNode } from "react"
-import { Component } from "react"
-import type { WithTranslation } from "react-i18next"
-import { Trans, withTranslation } from "react-i18next"
-import CardLight from "../Components/Card/CardLight"
-import ReadOnlyTextArea from "../Components/ReadOnlyTextArea"
-import DatabaseCard from "../PageSettings/DatabaseCard"
-import { theme } from "../Theme"
-import SpaghettiCode from "./SpaghettiCode.png"
+import ErrorIcon from "@mui/icons-material/Error";
+import RefreshIcon from "@mui/icons-material/Refresh";
+import { StyledEngineProvider, CssBaseline, Box, CardContent, Typography, Divider, CardActions, Button, Stack } from "@mui/material";
+import { Component, ErrorInfo, ReactNode } from "react";
+import { Trans, withTranslation, WithTranslation } from "react-i18next";
+import CardLight from "../Components/Card/CardLight";
+import ReadOnlyTextArea from "../Components/ReadOnlyTextArea";
+import DatabaseCard from "../PageSettings/DatabaseCard";
+import { theme } from "../Theme";
+import SpaghettiCode from "./SpaghettiCode.png";
 
 interface Props extends WithTranslation {
   children?: ReactNode
@@ -23,7 +21,7 @@ interface State {
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {
-    error: undefined,
+    error: undefined
   }
 
   public static getDerivedStateFromError(error: Error): State {

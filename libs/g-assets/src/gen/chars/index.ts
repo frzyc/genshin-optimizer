@@ -137,6 +137,6 @@ const data = {
   TravelerAnemo,
   TravelerGeo,
   TravelerElectro,
-  TravelerDendro,
+  TravelerDendro
 } as const
 export default data

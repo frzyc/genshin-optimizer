@@ -1,5 +1,4 @@
-import type { MainStatKey, PropTypeKey} from "@genshin-optimizer/pipeline"
-import { extrapolateFloat, MainPropMap, propTypeMap } from "@genshin-optimizer/pipeline"
+import { extrapolateFloat, MainPropMap, MainStatKey, PropTypeKey, propTypeMap } from "@genshin-optimizer/pipeline"
 import { layeredAssignment } from "@genshin-optimizer/util"
 import { readDMJSON } from "../../util"
 
@@ -24,7 +23,7 @@ const artifactMainstatData = {} as artifaceMainstatData
 Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
   Object.values(MainPropMap).forEach(element => {
     layeredAssignment(artifactMainstatData, [rank, element], [])
-  })
+  });
 })
 
 //populate the arrays from the data.
@@ -37,7 +36,7 @@ artifactMainstatDataSrc.forEach(({ rank = 0, level, addProps }) => {
     if (["FIGHT_PROP_FIRE_SUB_HURT", "FIGHT_PROP_DEFENSE"].includes(propType)) return
     if (Object.keys(MainPropMap).includes(propType))
       layeredAssignment(artifactMainstatData, [rank, propTypeMap[propType], level - 1], extrapolateFloat(value))
-    else console.warn(`MainPropMap.${propType} is not a valid key.`)
+    else console.warn(`MainPropMap.${propType} is not a valid key.`);
 
   })
 })

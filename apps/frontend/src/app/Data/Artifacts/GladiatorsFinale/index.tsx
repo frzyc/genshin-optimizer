@@ -1,9 +1,9 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "GladiatorsFinale"
@@ -15,8 +15,8 @@ const set4 = greaterEq(input.artSet.GladiatorsFinale, 4, lookup(input.weaponType
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    normal_dmg_: set4,
-  },
+    normal_dmg_: set4
+  }
 })
 
 const sheet: IArtifactSheet = {
@@ -28,9 +28,9 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         fields: [{
           node: set4,
-        }],
-      }],
-    },
-  },
+        }]
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

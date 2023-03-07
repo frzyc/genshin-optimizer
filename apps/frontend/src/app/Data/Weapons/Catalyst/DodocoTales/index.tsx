@@ -1,10 +1,10 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -22,8 +22,8 @@ const atk_ = equal("on", condCharged, subscript(input.weapon.refineIndex, atkInc
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     charged_dmg_,
-    atk_,
-  },
+    atk_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -35,14 +35,14 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: charged_dmg_,
+          node: charged_dmg_
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }, {
     value: condCharged,
     path: condChargedPath,
@@ -51,14 +51,14 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: atk_,
+          node: atk_
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -6,14 +6,12 @@ import reliquarySetExcelConfigData from "./artifact/ReliquarySetExcelConfigData"
 import avatarCurveExcelConfigData from "./character/AvatarCurveExcelConfigData"
 import avatarExcelConfigData from "./character/AvatarExcelConfigData"
 import ascensionData from "./character/AvatarPromoteExcelConfigData"
-import type { AvatarSkillDepotExcelConfigData } from "./character/AvatarSkillDepotExcelConfigData"
-import avatarSkillDepotExcelConfigData from "./character/AvatarSkillDepotExcelConfigData"
+import avatarSkillDepotExcelConfigData, { AvatarSkillDepotExcelConfigData } from "./character/AvatarSkillDepotExcelConfigData"
 import avatarSkillExcelConfigData from "./character/AvatarSkillExcelConfigData"
 import avatarTalentExcelConfigData from "./character/AvatarTalentExcelConfigData"
 import fetterCharacterCardExcelConfigData from "./character/FetterCharacterCardExcelConfigData"
 import fetterInfoExcelConfigData from "./character/FetterInfoExcelConfigData"
-import type { ProudSkillExcelConfigData } from "./character/ProudSkillExcelConfigData"
-import proudSkillExcelConfigData from "./character/ProudSkillExcelConfigData"
+import proudSkillExcelConfigData, { ProudSkillExcelConfigData } from "./character/ProudSkillExcelConfigData"
 import rewardExcelConfigData from "./character/RewardExcelConfigData"
 import equipAffixExcelConfigData from "./common/EquipAffixExcelConfigData"
 import cookRecipeExcelConfigData from "./food/CookRecipeExcelConfigData"
@@ -25,8 +23,7 @@ import weaponPromoteExcelConfigData from "./weapon/WeaponPromoteExcelConfigData"
 // Artifact dm
 export { artifactMainstatData, artifactSubstatData, artifactSubstatRollData, artifactSubstatRollCorrection, artifactPiecesData, reliquarySetExcelConfigData }
 // Character dm
-export type { AvatarSkillDepotExcelConfigData, ProudSkillExcelConfigData }
-export { avatarCurveExcelConfigData, avatarExcelConfigData, ascensionData, fetterInfoExcelConfigData, avatarTalentExcelConfigData, fetterCharacterCardExcelConfigData, proudSkillExcelConfigData, rewardExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData }
+export { avatarCurveExcelConfigData, avatarExcelConfigData, ascensionData, fetterInfoExcelConfigData, avatarTalentExcelConfigData, fetterCharacterCardExcelConfigData, proudSkillExcelConfigData, rewardExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, AvatarSkillDepotExcelConfigData, ProudSkillExcelConfigData }
 // Weapon
 export { weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData }
 // Common

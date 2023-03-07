@@ -1,12 +1,12 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -20,31 +20,31 @@ const stacksAttArr = [0.28, 0.35, 0.42, 0.49, 0.56]
 const stacksArr = range(1, 3)
 const baseAtk = equal(input.weapon.key, key, prod(
   subscript(input.weapon.refineIndex, baseAtkArr, { unit: "%" }),
-  input.premod.eleMas,
+  input.premod.eleMas
 ), KeyMap.info("atk"))
 const stacksAtk = lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
   stack,
   prod(
     stack,
     subscript(input.weapon.refineIndex, stacksAttArr, { unit: "%" }),
-    input.premod.eleMas,
-  ),
+    input.premod.eleMas
+  )
 ])), naught, KeyMap.info("atk"))
 const atk = equal(input.weapon.key, key, sum(baseAtk, stacksAtk))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   total: {
-    atk,
+    atk
   },
 }, {
-  atk,
+  atk
 })
 
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: baseAtk,
+      node: baseAtk
     }],
   }, {
     value: condStacks,
@@ -55,13 +55,13 @@ const sheet: IWeaponSheet = {
       [i, {
         name: st("hits", { count: i }),
         fields: [{
-          node: stacksAtk,
+          node: stacksAtk
         }, {
           text: stg("duration"),
           value: 10,
-          unit: "s",
-        }],
-      }],
+          unit: "s"
+        }]
+      }]
     )),
   }],
 }

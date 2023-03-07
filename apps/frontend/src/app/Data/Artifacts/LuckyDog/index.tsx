@@ -1,10 +1,10 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { greaterEq, infoMut } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "LuckyDog"
@@ -15,7 +15,7 @@ const heal = greaterEq(input.artSet.LuckyDog, 4, 300)
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    def: set2,
+    def: set2
   },
 }, {
   heal,
@@ -29,10 +29,10 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: infoMut(heal, { name: stg("healing"), variant: "heal" }),
-        }],
-      }],
-    },
-  },
+          node: infoMut(heal, { name: stg("healing"), variant: "heal" })
+        }]
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

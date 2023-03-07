@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { infoMut, equal, prod, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -22,10 +22,10 @@ const all_dmg_ = equal(condWithShield, "protected", subscript(input.weapon.refin
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    all_dmg_,
-  },
+    all_dmg_
+  }
 }, {
-  shield,
+  shield
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -36,14 +36,14 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: infoMut(shield, { name: stg(`dmgAbsorption`) }),
+          node: infoMut(shield, { name: stg(`dmgAbsorption`) })
         }, {
           text: stg("cd"),
           value: 45,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }, {
     value: condWithShield,
     path: condWithShieldPath,
@@ -52,10 +52,10 @@ const sheet: IWeaponSheet = {
     states: {
       protected: {
         fields: [{
-          node: all_dmg_,
-        }],
-      },
-    },
+          node: all_dmg_
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

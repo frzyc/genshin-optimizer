@@ -1,16 +1,16 @@
-export const getRandomElementFromArray = <T>(array: readonly T[]): T => array[Math.floor(Math.random() * array.length)]
+export const getRandomElementFromArray = <T>(array: readonly T[]): T => array[Math.floor(Math.random() * array.length)];
 export function getRandomInt(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min) + min) //The maximum is exclusive and the minimum is inclusive
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 export function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1) + min) //The maximum is inclusive and the minimum is inclusive
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 export function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min
+  return Math.random() * (max - min) + min;
 }
 
 /**
@@ -32,8 +32,8 @@ export function deepClone<T>(obj: T): T {
 }
 
 export const clamp = (val, low, high) => {
-  if (val < low) return low
-  if (val > high) return high
+  if (val < low) return low;
+  if (val > high) return high;
   return val
 }
 export const getArrLastElement = (arr) =>
@@ -44,14 +44,14 @@ export const clampPercent = (val) => clamp(val, 0, 100)
 
 //use to pretty print timestamps, or anything really.
 export function strPadLeft(string, pad, length) {
-  return (new Array(length + 1).join(pad) + string).slice(-length)
+  return (new Array(length + 1).join(pad) + string).slice(-length);
 }
 
 //fuzzy compare strings. longer the distance, the higher the mismatch.
 export function hammingDistance(str1, str2) {
-  let dist = 0
-  str1 = str1.toLowerCase()
-  str2 = str2.toLowerCase()
+  let dist = 0;
+  str1 = str1.toLowerCase();
+  str2 = str2.toLowerCase();
   for (let i = 0, j = Math.max(str1.length, str2.length); i < j; i++) {
     let match = true
     if (!str1[i] || !str2[i] || str1[i] !== str2[i])
@@ -60,7 +60,7 @@ export function hammingDistance(str1, str2) {
       match = true
     if (!match) dist++
   }
-  return dist
+  return dist;
 }
 
 //multiplies every numerical value in the obj by a multiplier.
@@ -84,7 +84,7 @@ export function layeredAssignment(obj, keys: readonly string[], value) {
 }
 //get the value in a nested object, giving array of path
 export function objPathValue(obj: object | undefined, keys: readonly string[]): any {
-  if (!obj || !keys) return undefined
+  if (!obj || !keys) return undefined;
   !Array.isArray(keys) && console.error(keys)
   return keys.reduce((a, k) => a?.[k], obj)
 }
@@ -93,14 +93,14 @@ export function deletePropPath(obj, path) {
   const tempPath = [...path]
   const lastKey = tempPath.pop()
   const objPathed = objPathValue(obj, tempPath)
-  delete objPathed?.[lastKey]
+  delete objPathed?.[lastKey];
 }
 
 export function objClearEmpties(o) {
   for (const k in o) {
     if (typeof o[k] !== "object") continue
     objClearEmpties(o[k])
-    if (!Object.keys(o[k]).length) delete o[k]
+    if (!Object.keys(o[k]).length) delete o[k];
   }
 }
 export function crawlObject(obj: any, keys: string[] = [], validate: (o: any, keys: string[]) => boolean, cb: (o: any, keys: string[]) => void) {
@@ -126,13 +126,13 @@ export function objectMap<K extends string, V, T>(obj: Record<K, Exclude<V, unde
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>>
 export function objectMap<K extends string, V, T>(obj: Partial<Record<K, V>>, fn: (value: V, key: `${K}`, index: number) => T): Partial<Record<K, T>> {
   return Object.fromEntries(Object.entries(obj).map(
-    ([k, v], i) => [k, fn(v, k, i)],
+    ([k, v], i) => [k, fn(v, k, i)]
   )) as any
 }
 
 const rangeGen = function* (from: number, to: number): Iterable<number> {
-  for (let i = from; i <= to; i++) yield i
-}
+  for (let i = from; i <= to; i++) yield i;
+};
 
 /** range of [from, to], inclusive */
 export function range(from: number, to: number): number[] {
@@ -165,6 +165,6 @@ export function deepFreeze<T>(obj: T, layers = 5): T {
 export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {
   if (newIndex < 0 || newIndex >= arr.length) return arr
   if (oldIndex < 0 || oldIndex >= arr.length) return arr
-  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0])
+  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
   return arr
 }

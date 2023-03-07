@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -24,13 +24,13 @@ const atkInc = subscript(input.weapon.refineIndex, atkSrc)
 const atkStacks = prod(
   sum(1, equal(condWithShield, "protected", 1)),
   lookup(condPassive, Object.fromEntries(range(1, 5).map(i =>
-    [i, prod(atkInc, i)])), naught),
+    [i, prod(atkInc, i)])), naught)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     shield_,
-    atk_: atkStacks,
+    atk_: atkStacks
   },
 })
 
@@ -38,7 +38,7 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: shield_,
+      node: shield_
     }],
   }, {
     value: condPassive,
@@ -50,13 +50,13 @@ const sheet: IWeaponSheet = {
       [i, {
         name: st("stack", { count: i }),
         fields: [{
-          node: atkStacks,
+          node: atkStacks
         }, {
           text: stg("duration"),
           value: 8,
-          unit: "s",
-        }],
-      }],
+          unit: "s"
+        }]
+      }]
     )),
   }, {
     value: condWithShield,
@@ -68,10 +68,10 @@ const sheet: IWeaponSheet = {
         fields: [{
           text: trm("atkEffInc"),
           value: 100,
-          unit: "%",
-        }],
-      },
-    },
+          unit: "%"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

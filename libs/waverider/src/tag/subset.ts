@@ -94,7 +94,7 @@ class InternalCache<V> {
   }
 
   child(id: number): InternalCache<V> {
-    const result = this.children.get(id)
+    let result = this.children.get(id)
     if (result) return result
 
     const entries = this.entries.flatMap(x => x.subset(id))

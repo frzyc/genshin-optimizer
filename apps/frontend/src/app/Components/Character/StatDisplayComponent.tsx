@@ -5,8 +5,8 @@ import { DataContext } from "../../Context/DataContext"
 import { OptimizationTargetContext } from "../../Context/OptimizationTargetContext"
 import { DatabaseContext } from "../../Database/Database"
 import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
-import type { DisplaySub } from "../../Formula/type"
-import type { NodeDisplay } from "../../Formula/uiData"
+import { DisplaySub } from "../../Formula/type"
+import { NodeDisplay } from "../../Formula/uiData"
 import { customRead } from "../../Formula/utils"
 import { objectMap } from "../../Util/Util"
 import CardDark from "../Card/CardDark"
@@ -33,7 +33,7 @@ function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>
   const { data, oldData } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
   const header = useMemo(() => getDisplayHeader(data, sectionKey, database), [database, data, sectionKey])
-  const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey])
+  const displayNsReads = useMemo(() => objectMap(displayNs, (n, nodeKey) => customRead(["display", sectionKey, nodeKey])), [displayNs, sectionKey]);
   if (!header) return <CardDark></CardDark>
 
   const { title, icon, action } = header

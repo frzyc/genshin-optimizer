@@ -1,11 +1,11 @@
-import { Button, ButtonGroup, MenuItem } from '@mui/material'
-import { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, ascensionMaxLevelLow, maxLevel, maxLevelLow, milestoneLevels, milestoneLevelsLow } from '../Data/LevelData'
-import type { Ascension } from '../Types/consts'
-import { clamp } from '../Util/Util'
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput'
-import DropdownButton from './DropdownMenu/DropdownButton'
+import { Button, ButtonGroup, MenuItem } from '@mui/material';
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ambiguousLevel, ambiguousLevelLow, ascensionMaxLevel, ascensionMaxLevelLow, maxLevel, maxLevelLow, milestoneLevels, milestoneLevelsLow } from '../Data/LevelData';
+import { Ascension } from '../Types/consts';
+import { clamp } from '../Util/Util';
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
+import DropdownButton from './DropdownMenu/DropdownButton';
 
 export default function LevelSelect({ level, ascension, setBoth, useLow = false }: { level: number, ascension: Ascension, setBoth: (action: { level?: number, ascension?: Ascension }) => void, useLow?: boolean }) {
   const { t } = useTranslation("ui")

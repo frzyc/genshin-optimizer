@@ -1,4 +1,4 @@
-import type { MainStatKey, SubstatKey } from "@genshin-optimizer/pipeline"
+import { MainStatKey, SubstatKey } from "@genshin-optimizer/pipeline"
 import { Box } from "@mui/material"
 import { useTranslation } from "react-i18next"
 import { artStatPercent } from "../../Data/Artifacts/Artifact"

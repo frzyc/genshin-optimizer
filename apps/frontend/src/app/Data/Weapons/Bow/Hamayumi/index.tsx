@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -26,17 +26,17 @@ const charged_passive = equal(condPassive, "on", subscript(input.weapon.refineIn
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     normal_dmg_: sum(normal_dmg, normal_passive),
-    charged_dmg_: sum(charged_dmg, charged_passive),
-  },
+    charged_dmg_: sum(charged_dmg, charged_passive)
+  }
 })
 
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: normal_dmg,
+      node: normal_dmg
     }, {
-      node: charged_dmg,
+      node: charged_dmg
     }],
   }, {
     value: condPassive,
@@ -46,13 +46,13 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: normal_passive,
+          node: normal_passive
         }, {
-          node: charged_passive,
-        }],
-      },
-    },
-  }],
+          node: charged_passive
+        }]
+      }
+    }
+  }]
 }
 
 export default new WeaponSheet(key, sheet, data_gen, data)

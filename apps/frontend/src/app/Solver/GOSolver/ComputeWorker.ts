@@ -1,8 +1,6 @@
-import type { Interim, Setup } from '..'
-import type { OptNode} from '../../Formula/optimization'
-import { optimize, precompute } from '../../Formula/optimization'
-import type { ArtifactBuildData, ArtifactsBySlot, Build, PlotData, RequestFilter } from '../common'
-import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
+import type { Interim, Setup } from '..';
+import { optimize, OptNode, precompute } from '../../Formula/optimization';
+import { ArtifactBuildData, ArtifactsBySlot, Build, countBuilds, filterArts, mergePlot, PlotData, pruneAll, RequestFilter } from '../common';
 
 export class ComputeWorker {
   builds: Build[] = []

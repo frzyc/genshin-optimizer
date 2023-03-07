@@ -1,6 +1,5 @@
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allElementWithPhyKeys, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, min, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
@@ -9,7 +8,7 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -30,7 +29,7 @@ const dm = {
       skillParam_gen.auto[a++], // 5.1
       skillParam_gen.auto[a++], // 5.2
       skillParam_gen.auto[a++], // 6
-    ],
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -91,8 +90,8 @@ const infusion = equalStr("on", condAfterlife, elementKey)
 const [condA1Path, condA1] = cond(key, "FlutterBy")
 const critRateTeam_1 = greaterEq(input.asc, 1,
   equal("on", condA1,
-    unequal(input.activeCharKey, input.charKey, percent(dm.passive1.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true }),
-  ),
+    unequal(input.activeCharKey, input.charKey, percent(dm.passive1.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true })
+  )
 )
 const [condA4Path, condA4] = cond(key, "SanguineRouge")
 const pyro_dmg_ = greaterEq(input.asc, 4, equal("on", condA4, percent(dm.passive2.pyroDmgInc)))
@@ -100,8 +99,8 @@ const pyro_dmg_ = greaterEq(input.asc, 4, equal("on", condA4, percent(dm.passive
 const [condC4Path, condC4] = cond(key, "GardenOfEternalRest")
 const critRateTeam_2 = greaterEq(input.constellation, 4,
   equal("on", condC4,
-    unequal(input.activeCharKey, input.charKey, percent(dm.constellation4.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true }),
-  ),
+    unequal(input.activeCharKey, input.charKey, percent(dm.constellation4.critRateInc), { ...KeyMap.info("critRate_"), isTeamBuff: true })
+  )
 )
 
 const [condC6Path, condC6] = cond(key, "ButterflysEmbrace")
@@ -127,7 +126,7 @@ const dmgFormulas = {
   },
   constellation2: {
     skill_dmgInc: greaterEq(input.constellation, 2, prod(input.total.hp, percent(dm.constellation2.bloodBlossomDmgInc))),
-  },
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -139,18 +138,18 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     pyro_dmg_,
     ...Object.fromEntries(allElementWithPhyKeys.map(ele => [`${ele}_res_`, ele_res_s[ele]])),
     critRate_,
-    skill_dmgInc: dmgFormulas.constellation2.skill_dmgInc,
+    skill_dmgInc: dmgFormulas.constellation2.skill_dmgInc
   },
   total: {
-    atk,
+    atk
   },
   teamBuff: {
     premod: {
-      critRate_: sum(critRateTeam_1, critRateTeam_2),
-    },
+      critRate_: sum(critRateTeam_1, critRateTeam_2)
+    }
   },
   infusion: {
-    nonOverridableSelf: infusion,
+    nonOverridableSelf: infusion
   },
 })
 
@@ -170,7 +169,7 @@ const sheet: ICharacterSheet = {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 5 ? 0 : -1)}`), textSuffix: i === 4 ? "(1)" : i === 5 ? "(2)" : "" }),
 
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -179,7 +178,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: dm.charged.stamina,
-      }],
+      }]
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -189,17 +188,17 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) }),
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) })
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: dm.skill.bloodBlossomDuration,
-        unit: 's',
-      }],
+        unit: 's'
+      }]
     }, ct.condTem("skill", {
       value: condAfterlife,
       path: condAfterlifePath,
@@ -209,49 +208,49 @@ const sheet: ICharacterSheet = {
           fields: [{
             text: ct.chg("skill.skillParams.0"),
             value: dm.skill.activationCost * 100, // Convert to percentage
-            unit: '% Current HP',
+            unit: '% Current HP'
           }, {
             node: atk,
           }, {
-            text: <ColorText color="pyro">Pyro Infusion</ColorText>,
+            text: <ColorText color="pyro">Pyro Infusion</ColorText>
           }, {
             text: ct.chg("skill.skillParams.4"),
             value: dm.skill.duration,
-            unit: 's',
+            unit: 's'
           }, {
             text: ct.chg("skill.skillParams.5"),
             value: dm.skill.cd,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     }), ct.headerTem("constellation2", {
       fields: [{
-        node: dmgFormulas.constellation2.skill_dmgInc,
-      }],
+        node: dmgFormulas.constellation2.skill_dmgInc
+      }]
     })]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) })
       }, {
-        node: infoMut(dmgFormulas.burst.lowHpDmg, { name: ct.chg(`burst.skillParams.1`) }),
+        node: infoMut(dmgFormulas.burst.lowHpDmg, { name: ct.chg(`burst.skillParams.1`) })
       }, {
-        node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.2`) }),
+        node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.2`) })
       }, {
-        node: infoMut(dmgFormulas.burst.lowHpRegen, { name: ct.chg(`burst.skillParams.3`) }),
+        node: infoMut(dmgFormulas.burst.lowHpRegen, { name: ct.chg(`burst.skillParams.3`) })
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.cd,
-        unit: 's',
+        unit: 's'
       }, {
         text: ct.chg("burst.skillParams.5"),
-        value: dm.burst.enerCost,
-      }],
+        value: dm.burst.enerCost
+      }]
     }, ct.headerTem("constellation2", {
       fields: [{
         text: ct.ch("constellation2.applyBloodBlossom"),
-      }],
+      }]
     })]),
 
     passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
@@ -267,10 +266,10 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA4,
@@ -280,9 +279,9 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             node: pyro_dmg_,
-          }],
-        },
-      },
+          }]
+        }
+      }
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -301,10 +300,10 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: dm.constellation4.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6", [ct.condTem("constellation6", {
@@ -318,14 +317,14 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: dm.constellation6.duration,
-            unit: 's',
+            unit: 's'
           }, {
             text: stg("cd"),
             value: 60,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
   },
 }

@@ -1,5 +1,4 @@
-import type { ContainerProps, ModalProps} from "@mui/material"
-import { CardContent, Container, Modal, Skeleton, styled } from "@mui/material"
+import { CardContent, Container, ContainerProps, Modal, ModalProps, Skeleton, styled } from "@mui/material"
 import { Suspense } from "react"
 import CardLight from "./Card/CardLight"
 
@@ -14,13 +13,13 @@ const ModalContainer = styled(Container)(({ theme }) => ({
   minHeight: "100%",
   display: "flex", flexDirection: "column", justifyContent: "center",
   ":focus": {
-    outline: "None",
+    outline: "None"
   },
   // Allow clicking on the Container to exit modal
   pointerEvents: "none",
   "& > *": {
-    pointerEvents: "auto",
-  },
+    pointerEvents: "auto"
+  }
 }))
 
 type ModalWrapperProps = ModalProps & {

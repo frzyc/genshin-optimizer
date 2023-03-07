@@ -15,8 +15,8 @@ import VidGuideCard from "./VidGuideCard"
 export default function PageHome() {
   // TODO: translations
   // const { t } = useTranslation("page_home")
-  const theme = useTheme()
-  const lg = useMediaQuery(theme.breakpoints.up('lg'))
+  const theme = useTheme();
+  const lg = useMediaQuery(theme.breakpoints.up('lg'));
   ReactGA.send({ hitType: "pageview", page: '/home' })
   if (lg) return <Grid container spacing={2} direction={"row-reverse"} sx={{ my: 2 }}>
     <Grid item xs={12} lg={5} xl={4} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -63,9 +63,9 @@ function PatchNotesCard() {
     fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES ?? "")
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
-        const decoder = new TextDecoder("utf-8")
-        const data = decoder.decode(buffer)
-        const release = JSON.parse(data)
+        const decoder = new TextDecoder("utf-8");
+        const data = decoder.decode(buffer);
+        const release = JSON.parse(data);
         setState({ isLoaded: true, text: release.body })
       })
       .catch((err) => console.log("Error: " + err.message))

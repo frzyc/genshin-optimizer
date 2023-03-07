@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import { ReactNode } from "react";
 
 type Prop = {
   condition: boolean,
@@ -8,5 +8,5 @@ type Prop = {
 }
 // Wrap children with element provided by wrapper func when condition is true.
 export default function ConditionalWrapper({ condition, wrapper, falseWrapper, children }: Prop) {
-  return (condition ? wrapper(children) : (falseWrapper ? falseWrapper(children) : children)) as JSX.Element
+  return (condition ? wrapper(children) : (falseWrapper ? falseWrapper(children) : children)) as JSX.Element;
 }

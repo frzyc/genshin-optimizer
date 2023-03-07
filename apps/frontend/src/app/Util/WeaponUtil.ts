@@ -1,5 +1,5 @@
-import type { WeaponKey, WeaponTypeKey } from "../Types/consts"
-import type { ICachedWeapon } from "../Types/weapon"
+import { WeaponKey, WeaponTypeKey } from "../Types/consts"
+import { ICachedWeapon } from "../Types/weapon"
 
 export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   switch (type) {

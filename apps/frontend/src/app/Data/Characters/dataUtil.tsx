@@ -1,15 +1,14 @@
-import type { SubstatKey } from "@genshin-optimizer/pipeline"
-import { infusionNode, input } from "../../Formula"
-import { inferInfoMut, mergeData } from "../../Formula/api"
-import { reactions } from "../../Formula/reaction"
-import type { Data, DisplaySub, NumNode } from "../../Formula/type"
-import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils"
-import KeyMap from "../../KeyMap"
-import type { MainStatKey } from "../../Types/artifact"
-import { allMainStatKeys } from "../../Types/artifact"
-import type { CharacterKey, ElementKey, RegionKey } from "@genshin-optimizer/consts"
-import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util"
-import _charCurves from "./expCurve_gen.json"
+import { SubstatKey } from "@genshin-optimizer/pipeline";
+import { infusionNode, input } from "../../Formula";
+import { inferInfoMut, mergeData } from "../../Formula/api";
+import { reactions } from "../../Formula/reaction";
+import { Data, DisplaySub, NumNode } from "../../Formula/type";
+import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
+import KeyMap from "../../KeyMap";
+import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
+import { CharacterKey, ElementKey, RegionKey } from "@genshin-optimizer/consts";
+import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
+import _charCurves from "./expCurve_gen.json";
 
 // TODO: Remove this conversion after changing the file format
 const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
@@ -24,14 +23,14 @@ const inferredHitEle = stringPrio(
     sword: infusionNode, claymore: infusionNode, polearm: infusionNode,
     catalyst: input.charEle,
   }, undefined),
-  "physical",
+  "physical"
 )
 
 function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
   switch (move) {
-    case "normal": case "charged": case "plunging": return "auto"
-    case "skill": return "skill"
-    case "burst": return "burst"
+    case "normal": case "charged": case "plunging": return "auto";
+    case "skill": return "skill";
+    case "burst": return "burst";
   }
 }
 
@@ -66,10 +65,10 @@ export function splitScaleDmgNode(bases: (MainStatKey | SubstatKey)[], lvlMultip
   const talentType = getTalentType(move)
   return customDmgNode(
     sum(...bases.map((base, i) =>
-      prod(subscript(input.total[`${talentType}Index`], lvlMultipliers[i], { unit: "%" }), input.total[base]),
+      prod(subscript(input.total[`${talentType}Index`], lvlMultipliers[i], { unit: "%" }), input.total[base])
     )),
     move,
-    additional,
+    additional
   )
 }
 /** Note: `additional` applies only to this formula */
@@ -86,7 +85,7 @@ export function shieldNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier:
   const talentIndex = input.total[`${talentType}Index`]
   return customShieldNode(sum(
     prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
-    subscript(talentIndex, flat),
+    subscript(talentIndex, flat)
   ), additional)
 }
 export function shieldElement(element: "electro" | "cryo" | "hydro" | "pyro" | "geo", shieldNode: NumNode) {
@@ -98,7 +97,7 @@ export function healNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: n
   const talentIndex = input.total[`${talentType}Index`]
   return customHealNode(sum(
     prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
-    subscript(talentIndex, flat),
+    subscript(talentIndex, flat)
   ), additional)
 }
 export function dataObjForCharacterSheet(

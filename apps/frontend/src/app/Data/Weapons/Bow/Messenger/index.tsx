@@ -1,11 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -22,9 +22,9 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: infoMut(dmg, { name: st("dmg") }),
-    }],
-  }],
+      node: infoMut(dmg, { name: st("dmg") })
+    }]
+  }]
 }
 
 export default new WeaponSheet(key, sheet, data_gen, data)

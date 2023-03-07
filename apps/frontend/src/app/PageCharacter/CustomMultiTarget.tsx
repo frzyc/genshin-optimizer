@@ -1,39 +1,35 @@
-import AddIcon from "@mui/icons-material/Add"
-import ContentCopyIcon from "@mui/icons-material/ContentCopy"
-import ContentPasteIcon from "@mui/icons-material/ContentPaste"
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
-import ExpandLessIcon from "@mui/icons-material/ExpandLess"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import SettingsIcon from "@mui/icons-material/Settings"
-import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material"
-import type { ChangeEvent, FocusEvent} from "react"
-import { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react"
-import { Trans, useTranslation } from "react-i18next"
-import AdditiveReactionModeText from "../Components/AdditiveReactionModeText"
-import AmpReactionModeText from "../Components/AmpReactionModeText"
-import CardDark from "../Components/Card/CardDark"
-import CloseButton from "../Components/CloseButton"
-import ColorText from "../Components/ColoredText"
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput"
-import DropdownButton from "../Components/DropdownMenu/DropdownButton"
-import { infusionVals } from "../Components/HitModeEditor"
-import InfoTooltip from "../Components/InfoTooltip"
-import ModalWrapper from "../Components/ModalWrapper"
-import StatEditorList from "../Components/StatEditorList"
-import { CharacterContext } from "../Context/CharacterContext"
-import { DataContext } from "../Context/DataContext"
-import type { InputPremodKey } from "../Formula"
-import { allInputPremodKeys } from "../Formula"
-import type { NodeDisplay} from "../Formula/uiData"
-import { UIData } from "../Formula/uiData"
-import useBoolState from "../ReactHooks/useBoolState"
-import useTimeout from "../ReactHooks/useTimeout"
-import type { CustomMultiTarget, CustomTarget } from "../Types/character"
-import type { AdditiveReactionKey, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts"
-import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions } from "../Types/consts"
-import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util"
-import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector"
-import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal"
+import AddIcon from "@mui/icons-material/Add";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import ContentPasteIcon from "@mui/icons-material/ContentPaste";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SettingsIcon from "@mui/icons-material/Settings";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, ButtonGroup, CardContent, Chip, Grid, MenuItem, Skeleton, styled, TextField, Tooltip, Typography } from "@mui/material";
+import { ChangeEvent, FocusEvent, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import AdditiveReactionModeText from "../Components/AdditiveReactionModeText";
+import AmpReactionModeText from "../Components/AmpReactionModeText";
+import CardDark from "../Components/Card/CardDark";
+import CloseButton from "../Components/CloseButton";
+import ColorText from "../Components/ColoredText";
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput";
+import DropdownButton from "../Components/DropdownMenu/DropdownButton";
+import { infusionVals } from "../Components/HitModeEditor";
+import InfoTooltip from "../Components/InfoTooltip";
+import ModalWrapper from "../Components/ModalWrapper";
+import StatEditorList from "../Components/StatEditorList";
+import { CharacterContext } from "../Context/CharacterContext";
+import { DataContext } from "../Context/DataContext";
+import { allInputPremodKeys, InputPremodKey } from "../Formula";
+import { NodeDisplay, UIData } from "../Formula/uiData";
+import useBoolState from "../ReactHooks/useBoolState";
+import useTimeout from "../ReactHooks/useTimeout";
+import { CustomMultiTarget, CustomTarget } from "../Types/character";
+import { AdditiveReactionKey, allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, allowedAdditiveReactions, allowedAmpReactions, AmpReactionKey, HitModeKey, InfusionAuraElements } from "../Types/consts";
+import { arrayMove, clamp, deepClone, objPathValue } from "../Util/Util";
+import OptimizationTargetSelector from "./CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector";
+import { TargetSelectorModal } from "./CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal";
 
 const MAX_NAME_LENGTH = 200
 const MAX_DESC_LENGTH = 2000
@@ -41,7 +37,7 @@ const MAX_DESC_TOOLTIP_LENGTH = 300
 function initCustomMultiTarget() {
   return {
     name: "New Custom Target",
-    targets: [],
+    targets: []
   }
 }
 function initCustomTarget(path: string[], multi = 1): CustomTarget {
@@ -49,7 +45,7 @@ function initCustomTarget(path: string[], multi = 1): CustomTarget {
     weight: multi,
     path,
     hitMode: "avgHit",
-    bonusStats: {},
+    bonusStats: {}
   }
 }
 function validateOptTarget(path: string[]): string[] {
@@ -81,7 +77,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     bonusStats = {}
 
   bonusStats = Object.fromEntries(Object.entries(bonusStats).filter(([key, value]) =>
-    allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number",
+    allInputPremodKeys.includes(key as InputPremodKey) && typeof value == "number"
   ))
 
   return { weight, path, hitMode, reaction, infusionAura, bonusStats }
@@ -112,7 +108,7 @@ export function CustomMultiTargetButton() {
   useEffect(() => setCustomTargets(character.customMultiTarget),
     [setCustomTargets, character.customMultiTarget])
 
-  const [expandedInd, setExpandedInd] = useState<number | false>(false)
+  const [expandedInd, setExpandedInd] = useState<number | false>(false);
 
   const addNewCustomMultiTarget = useCallback(() => {
     setCustomTargets([...customMultiTarget, initCustomMultiTarget()])
@@ -138,9 +134,9 @@ export function CustomMultiTargetButton() {
     toIndex = clamp(toIndex - 1, 0, customMultiTarget.length - 1)
     if (fromIndex === toIndex) return
     const arr = [...customMultiTarget]
-    const element = arr[fromIndex]
-    arr.splice(fromIndex, 1)
-    arr.splice(toIndex, 0, element)
+    const element = arr[fromIndex];
+    arr.splice(fromIndex, 1);
+    arr.splice(toIndex, 0, element);
     setCustomTargets(arr)
   }, [customMultiTarget, setCustomTargets])
   const onClose = useCallback(
@@ -162,7 +158,7 @@ export function CustomMultiTargetButton() {
     delete newData.infusion.team
     return {
       data: new UIData(newData, undefined),
-      teamData,
+      teamData
     }
   }, [origUIData, teamData])
 
@@ -180,7 +176,7 @@ export function CustomMultiTargetButton() {
       onOrder={setOrder(i)}
       nTargets={customMultiTarget.length}
     />),
-    [customMultiTarget, deleteCustomMultiTarget, dupCustomMultiTarget, expandedInd, onExpand, setCustomMultiTarget, setOrder],
+    [customMultiTarget, deleteCustomMultiTarget, dupCustomMultiTarget, expandedInd, onExpand, setCustomMultiTarget, setOrder]
   )
 
   return <Suspense fallback={<Skeleton variant="rectangular" height="100%" width={100} />}>
@@ -246,13 +242,13 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
 
   const dupCustomTarget = useCallback((index: number) => () => {
     const targets = [...target.targets]
-    targets.splice(index, 0, deepClone(targets[index]))
+    targets.splice(index, 0, deepClone(targets[index]));
     setTarget({ ...target, targets })
   }, [target, setTarget])
 
   const customTargetDisplays = useMemo(() =>
     target.targets.map((t, i) => <CustomTargetDisplay key={t.path.join() + i} customTarget={t} setCustomTarget={setCustomTarget(i)} deleteCustomTarget={deleteCustomTarget(i)} rank={i + 1} maxRank={target.targets.length} setTargetIndex={setTargetIndex(i)} onDup={dupCustomTarget(i)} />),
-    [deleteCustomTarget, dupCustomTarget, setCustomTarget, setTargetIndex, target.targets],
+    [deleteCustomTarget, dupCustomTarget, setCustomTarget, setTargetIndex, target.targets]
   )
 
   return <Accordion sx={{ bgcolor: "contentLight.main" }} expanded={expanded} >
@@ -267,11 +263,11 @@ function CustomMultiTargetDisplay({ index, target, setTarget, expanded, onExpand
         pointerEvents: "none",
         // Prevent rotation of the button, since we have two icons in the button
         '& .MuiAccordionSummary-expandIconWrapper': {
-          transform: "rotate(0)",
+          transform: "rotate(0)"
         },
         '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-          transform: "rotate(0)",
-        },
+          transform: "rotate(0)"
+        }
       }}
     >
       <Box gap={1} pr={1} display="flex" flexWrap="wrap" sx={{ pointerEvents: "auto", width: "100%", alignItems: "center" }}>
@@ -377,12 +373,12 @@ function CustomTargetDisplay({ customTarget, setCustomTarget, deleteCustomTarget
 
   const statEditorList = useMemo(() =>
     <StatEditorList statKeys={keys} statFilters={customTarget.bonusStats} setStatFilters={setFilter} wrapperFunc={wrapperFunc} />,
-    [customTarget.bonusStats, setFilter],
+    [customTarget.bonusStats, setFilter]
   )
 
   const isMeleeAuto = characterSheet?.isMelee() && (path[0] === "normal" || path[0] === "charged" || path[0] === "plunging")
   const isTransformativeReaction = path[0] === "reaction"
-  return <CardDark sx={{ display: "flex" }} >
+  return <CardDark sx={{ display: "flex", }} >
     <Box sx={{ p: 1, flexGrow: 1 }} >
       <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
         <CustomNumberInput float startAdornment="x" value={weight} onChange={setWeight} sx={{ borderRadius: 1, pl: 1 }} inputProps={{ sx: { pl: 0.5, width: "2em" }, min: 0 }} />
@@ -452,7 +448,7 @@ const TextArea = styled("textarea")({
   width: "100%",
   fontFamily: "monospace",
   resize: "vertical",
-  minHeight: "2em",
+  minHeight: "2em"
 })
 function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarget: CustomMultiTarget, setCustomMultiTarget: (t: CustomMultiTarget) => void }) {
   const [value, setValue] = useState(JSON.stringify(customMultiTarget))
@@ -485,9 +481,9 @@ function CopyArea({ customMultiTarget, setCustomMultiTarget }: { customMultiTarg
   return <Box>
     <Box display="flex" gap={1}>
       <TextArea value={value} sx={{ outlineColor: error ? "red" : undefined }} onClick={e => {
-        const target = e.target as HTMLTextAreaElement
-        target.selectionStart = 0
-        target.selectionEnd = target.value.length
+        const target = e.target as HTMLTextAreaElement;
+        target.selectionStart = 0;
+        target.selectionEnd = target.value.length;
       }} onChange={(e) => validate(e.target.value)} />
       <Button color="info" disabled={!!error} onClick={copyToClipboard}><ContentPasteIcon /></Button>
     </Box>

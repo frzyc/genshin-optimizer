@@ -31,7 +31,7 @@ export const languageMap = {
   ru: TextMapRU,
   th: TextMapTH,
   tr: TextMapTR,
-  vi: TextMapVI,
+  vi: TextMapVI
 } as const
 
 export function nameToKey(name: string) {

@@ -2,7 +2,7 @@ import { allArtifactSlotKeys } from "@genshin-optimizer/consts"
 import { Button, CardContent, ClickAwayListener, Grid, Skeleton, Stack, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
-import type { TooltipProps } from "recharts"
+import { TooltipProps } from "recharts"
 import ArtifactCardPico from "../../../../../../Components/Artifact/ArtifactCardPico"
 import BootstrapTooltip from "../../../../../../Components/BootstrapTooltip"
 import CardDark from "../../../../../../Components/Card/CardDark"
@@ -11,11 +11,10 @@ import SqBadge from "../../../../../../Components/SqBadge"
 import { DataContext } from "../../../../../../Context/DataContext"
 import { DatabaseContext } from "../../../../../../Database/Database"
 import { input } from "../../../../../../Formula"
-import type { Unit} from "../../../../../../KeyMap"
-import { valueString } from "../../../../../../KeyMap"
-import type { ICachedArtifact } from "../../../../../../Types/artifact"
+import { Unit, valueString } from "../../../../../../KeyMap"
+import { ICachedArtifact } from "../../../../../../Types/artifact"
 import { ArtifactSetBadges } from "../ArtifactSetBadges"
-import type EnhancedPoint from "./EnhancedPoint"
+import EnhancedPoint from "./EnhancedPoint"
 
 type CustomTooltipProps = TooltipProps<number, string> & {
   xLabel: Displayable
@@ -37,9 +36,9 @@ export default function CustomTooltip({ xLabel, xUnit, yLabel, yUnit, selectedPo
         const artiObj = database.arts.get(id)
         return [artiObj?.slotKey, artiObj]
       })
-      .filter(arti => arti),
+      .filter(arti => arti)
     ),
-    [database.arts, selectedPoint],
+    [database.arts, selectedPoint]
   )
   const clickAwayHandler = useCallback((e) => {
     if (!(e.target.id.includes("customShape") || e.target.id.includes("chartContainer"))) {
@@ -76,7 +75,7 @@ if (tooltipProps.active && selectedPoint) {
                 <Suspense fallback={<Skeleton width={75} height={75} />}>
                   <ArtifactCardPico artifactObj={artifactsBySlot[key]} slotKey={key} />
                 </Suspense>
-              </Grid>,
+              </Grid>
             )}
           </Grid>
           <Typography><strong>{xLabel}</strong>: {valueString(xUnit === "%" ? selectedPoint.x / 100 : selectedPoint.x, xUnit)}</Typography>

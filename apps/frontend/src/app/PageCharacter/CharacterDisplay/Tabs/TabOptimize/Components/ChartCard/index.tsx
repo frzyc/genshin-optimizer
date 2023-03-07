@@ -1,28 +1,27 @@
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material'
-import { Button, CardContent, Collapse, Divider, Grid, Slider, Typography } from '@mui/material'
-import type { TFunction } from 'i18next'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import type { LegendType} from 'recharts'
-import { CartesianGrid, ComposedChart, Label, Legend, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts'
-import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../../Components/Card/CardLight'
-import InfoTooltip from '../../../../../../Components/InfoTooltip'
-import ReadOnlyTextArea from '../../../../../../Components/ReadOnlyTextArea'
-import { CharacterContext } from '../../../../../../Context/CharacterContext'
-import { DataContext } from '../../../../../../Context/DataContext'
-import { GraphContext } from '../../../../../../Context/GraphContext'
-import { input } from '../../../../../../Formula'
-import type { NumNode } from '../../../../../../Formula/type'
-import { valueString } from '../../../../../../KeyMap'
-import { objectKeyMap, objPathValue } from '../../../../../../Util/Util'
-import useBuildResult from '../../useBuildResult'
-import OptimizationTargetSelector from '../OptimizationTargetSelector'
-import CustomDot from './CustomDot'
-import CustomTooltip from './CustomTooltip'
-import EnhancedPoint from './EnhancedPoint'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts';
+import { CheckBox, CheckBoxOutlineBlank, Download, Replay } from '@mui/icons-material';
+import { Button, CardContent, Collapse, Divider, Grid, Slider, Typography } from '@mui/material';
+import { TFunction } from 'i18next';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { CartesianGrid, ComposedChart, Label, Legend, LegendType, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis } from 'recharts';
+import BootstrapTooltip from '../../../../../../Components/BootstrapTooltip';
+import CardDark from '../../../../../../Components/Card/CardDark';
+import CardLight from '../../../../../../Components/Card/CardLight';
+import InfoTooltip from '../../../../../../Components/InfoTooltip';
+import ReadOnlyTextArea from '../../../../../../Components/ReadOnlyTextArea';
+import { CharacterContext } from '../../../../../../Context/CharacterContext';
+import { DataContext } from '../../../../../../Context/DataContext';
+import { GraphContext } from '../../../../../../Context/GraphContext';
+import { input } from '../../../../../../Formula';
+import { NumNode } from '../../../../../../Formula/type';
+import { valueString } from '../../../../../../KeyMap';
+import { objectKeyMap, objPathValue } from '../../../../../../Util/Util';
+import useBuildResult from '../../useBuildResult';
+import OptimizationTargetSelector from '../OptimizationTargetSelector';
+import CustomDot from './CustomDot';
+import CustomTooltip from './CustomTooltip';
+import EnhancedPoint from './EnhancedPoint';
 
 export type Point = {
   x: number
@@ -55,7 +54,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       setSliderLow(l)
       setSliderHigh(h)
     },
-    [setSliderLow, setSliderHigh],
+    [setSliderLow, setSliderHigh]
   )
   useEffect(() => { setSliderLow(-Infinity); setSliderHigh(Infinity) }, [chartData])
 
@@ -82,7 +81,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       }
 
       const graphBuildIndex = graphBuilds?.findIndex(build =>
-        build.every(aId => datumBuildMap[aId]),
+        build.every(aId => datumBuildMap[aId])
       )
       if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
         // Skip setting y-value if it has already been set.
@@ -97,7 +96,7 @@ export default function ChartCard({ plotBase, setPlotBase, disabled = false, sho
       }
 
       const generBuildIndex = generatedBuilds.findIndex(build =>
-        build.every(aId => datumBuildMap[aId]),
+        build.every(aId => datumBuildMap[aId])
       )
       if (generBuildIndex !== -1) {
         // Skip setting y-value if it has already been set.

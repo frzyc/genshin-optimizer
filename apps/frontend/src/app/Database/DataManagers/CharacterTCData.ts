@@ -1,12 +1,10 @@
-import { validateLevelAsc } from "../../Data/LevelData"
-import type { MainStatKey } from "../../Types/artifact"
-import { allSubstatKeys } from "../../Types/artifact"
-import type { ICharTC } from "../../Types/character"
-import type { ArtifactRarity, CharacterKey, WeaponKey } from "../../Types/consts"
-import { allSlotKeys, allWeaponKeys, substatType } from "../../Types/consts"
-import { objectKeyMap } from "../../Util/Util"
-import type { ArtCharDatabase } from "../Database"
-import { DataManager } from "../DataManager"
+import { validateLevelAsc } from "../../Data/LevelData";
+import { allSubstatKeys, MainStatKey } from "../../Types/artifact";
+import { ICharTC } from "../../Types/character";
+import { allSlotKeys, allWeaponKeys, ArtifactRarity, CharacterKey, substatType, WeaponKey } from "../../Types/consts";
+import { objectKeyMap } from "../../Util/Util";
+import { ArtCharDatabase } from "../Database";
+import { DataManager } from "../DataManager";
 
 export class CharacterTCDataManager extends DataManager<CharacterKey, "charTCs", ICharTC, ICharTC>{
   constructor(database: ArtCharDatabase) {
@@ -50,10 +48,10 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       slots: initCharTCArtifactSlots(),
       substats: {
         type: "max",
-        stats: objectKeyMap(allSubstatKeys, () => 0),
+        stats: objectKeyMap(allSubstatKeys, () => 0)
       },
-      sets: {},
-    },
+      sets: {}
+    }
   }
 }
 function initCharTCArtifactSlots() {

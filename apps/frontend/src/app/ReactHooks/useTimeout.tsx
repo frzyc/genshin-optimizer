@@ -7,6 +7,6 @@ export default function useTimeout() {
     timeout.current = setTimeout(() => {
       cb()
       timeout.current = undefined
-    }, time)
-  }, [])
+    }, time);
+  }, [],)
 }

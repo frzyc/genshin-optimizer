@@ -88,12 +88,12 @@ export function flatten(n: AnyTagFree[]): AnyTagFree[] {
     let x = n.x.map(map) as NumTagFree[]
     switch (op) {
       case 'sum': case 'prod': case 'min': case 'max': {
-        const constX = x.filter(x => x.op === 'const') as Const<number>[]
-        const sameX = x.filter(x => x.op === op)
+        let constX = x.filter(x => x.op === 'const') as Const<number>[]
+        let sameX = x.filter(x => x.op === op)
         const remaining = x.filter(x => x.op !== 'const' && x.op !== op)
         if (constX.length > 1 || sameX.length > 0) {
           // We can either flatten constant values or nested nodes, so we try both
-          const mergedConst = constX.length ? [constant(arithmetic[op](constX.map(n => n.ex), n.ex))] : []
+          let mergedConst = constX.length ? [constant(arithmetic[op](constX.map(n => n.ex), n.ex))] : []
           x = [...mergedConst, ...sameX.flatMap(x => x.x), ...remaining]
         }
       }
@@ -145,7 +145,7 @@ export function compile(n: NumTagFree[], dynTagCategory: string, slotCount: numb
 export function compile(n: StrTagFree[], dynTagCategory: string, slotCount: number, initial: Record<string, string>, defaultValue: string): (_: Record<string, string>[]) => string[]
 export function compile(n: AnyTagFree[], dynTagCategory: string, slotCount: number, initial: Record<string, any>, defaultValue: any): (_: Record<string, any>[]) => any[]
 export function compile(n: AnyTagFree[], dynTagCategory: string, slotCount: number, initial: Record<string, any>, defaultValue: any): (_: Record<string, any>[]) => any[] {
-  let i = 1, body = `'use strict'; const x0=0` // making sure `const` has at least one entry
+  let i = 1, body = `'use strict'; const x0=0`; // making sure `const` has at least one entry
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
     const name = `x${i++}`

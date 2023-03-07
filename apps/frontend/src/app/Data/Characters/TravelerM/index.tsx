@@ -10,5 +10,5 @@ export default {
     constellationName: chg("constellationName"),
     title: chg("title"),
   },
-  data_gen: Traveler.data_gen,
+  data_gen: Traveler.data_gen
 } as const

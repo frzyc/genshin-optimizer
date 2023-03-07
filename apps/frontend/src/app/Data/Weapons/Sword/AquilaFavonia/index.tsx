@@ -1,11 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -20,11 +20,11 @@ const dmg = equal(input.weapon.key, key,
   customDmgNode(
     prod(
       subscript(input.weapon.refineIndex, atkDealt, { unit: "%" }),
-      input.premod.atk,
+      input.premod.atk
     ),
     "elemental",
-    { hit: { ele: constant("physical") } },
-  ),
+    { hit: { ele: constant("physical") } }
+  )
 )
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
@@ -32,7 +32,7 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
     atk_,
   },
 }, {
-  heal, dmg,
+  heal, dmg
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -43,10 +43,10 @@ const sheet: IWeaponSheet = {
   }, {
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: infoMut(heal, { name: stg("healing"), variant: "heal" }),
+      node: infoMut(heal, { name: stg("healing"), variant: "heal" })
     }, {
-      node: infoMut(dmg, { name: st("dmg") }),
-    }],
+      node: infoMut(dmg, { name: st("dmg") })
+    }]
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

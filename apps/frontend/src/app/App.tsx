@@ -1,18 +1,18 @@
-import { KeyboardArrowUp } from '@mui/icons-material'
-import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material'
-import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { HashRouter, Route, Routes, useMatch } from "react-router-dom"
-import './App.scss'
-import './Database/Database'
-import { ArtCharDatabase, DatabaseContext } from './Database/Database'
-import { DBLocalStorage, SandboxStorage } from './Database/DBStorage'
-import ErrorBoundary from './ErrorBoundary'
-import Footer from './Footer'
-import Header from './Header'
-import './i18n'
-import useTitle from './ReactHooks/useTitle'
-import { theme } from './Theme'
+import { KeyboardArrowUp } from '@mui/icons-material';
+import { Box, Container, CssBaseline, Fab, Grid, Skeleton, StyledEngineProvider, ThemeProvider, useScrollTrigger, Zoom } from '@mui/material';
+import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { HashRouter, Route, Routes, useMatch } from "react-router-dom";
+import './App.scss';
+import './Database/Database';
+import { ArtCharDatabase, DatabaseContext } from './Database/Database';
+import { DBLocalStorage, SandboxStorage } from './Database/DBStorage';
+import ErrorBoundary from './ErrorBoundary';
+import Footer from './Footer';
+import Header from './Header';
+import './i18n';
+import useTitle from './ReactHooks/useTitle';
+import { theme } from './Theme';
 
 const PageHome = lazy(() => import('./PageHome'))
 const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -29,20 +29,20 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
     target: window,
     disableHysteresis: true,
     threshold: 100,
-  })
+  });
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor')
+    ).querySelector('#back-to-top-anchor');
 
     if (anchor) {
       anchor.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
-      })
+      });
     }
-  }
+  };
 
   return (
     <Zoom in={trigger}>
@@ -54,7 +54,7 @@ function ScrollTop({ children }: { children: React.ReactElement }) {
         {children}
       </Box>
     </Zoom>
-  )
+  );
 }
 
 function App() {
@@ -75,7 +75,7 @@ function App() {
     const dbs = [...databases]
     dbs[index] = db
     setDatabases(dbs)
-  }, [databases, setDatabases])
+  }, [databases, setDatabases],)
 
   const database = databases[dbIndex - 1]
   const dbContextObj = useMemo(() => ({ databases, setDatabases, database, setDatabase }), [databases, setDatabases, database, setDatabase])
@@ -135,4 +135,4 @@ function MatchTitle() {
   useTitle(useMemo(() => page && t(`tabs.${page}`), [page, t]))
   return null
 }
-export default App
+export default App;

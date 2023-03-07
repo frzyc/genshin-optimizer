@@ -1,12 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, prod, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -39,8 +38,8 @@ const sheet: IWeaponSheet = {
     name: st("activeCharField"),
     states: objectKeyMap(range(1, 4), i => ({
       name: st("seconds", { count: i * 4 }),
-      fields: allElementKeys.map(ele => ({ node: eleDmgStacks[ele] })),
-    })),
+      fields: allElementKeys.map(ele => ({ node: eleDmgStacks[ele] }))
+    }))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

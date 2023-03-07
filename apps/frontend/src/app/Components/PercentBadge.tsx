@@ -1,7 +1,7 @@
-import SqBadge from './SqBadge'
-import { clamp } from '../Util/Util'
-import type { ButtonProps } from '@mui/material'
-import type { RollColorKey } from '../Types/consts'
+import SqBadge from './SqBadge';
+import { clamp } from '../Util/Util';
+import { ButtonProps } from '@mui/material';
+import { RollColorKey } from '../Types/consts';
 
 export default function PercentBadge({ value, max = 1, valid }: {
   valid?: boolean,

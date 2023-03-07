@@ -1,17 +1,16 @@
-import type { SvgIconProps } from "@mui/material"
-import { SvgIcon } from "@mui/material"
-import React from "react"
+import { SvgIcon, SvgIconProps } from "@mui/material";
+import React from "react";
 
 type FontAwesomeSvgIconProps = {
   icon: any;
 } & SvgIconProps;
 const FontAwesomeSvgIcon = React.forwardRef<SVGSVGElement, FontAwesomeSvgIconProps>(
   (props, ref) => {
-    const { icon, ...restProps } = props
+    const { icon, ...restProps } = props;
 
     const {
       icon: [width, height, , , svgPathData],
-    } = icon
+    } = icon;
 
     return (
       <SvgIcon ref={ref} viewBox={`0 0 ${width} ${height}`} {...restProps} >
@@ -30,7 +29,7 @@ const FontAwesomeSvgIcon = React.forwardRef<SVGSVGElement, FontAwesomeSvgIconPro
           ))
         )}
       </SvgIcon>
-    )
+    );
   },
-)
+);
 export default FontAwesomeSvgIcon

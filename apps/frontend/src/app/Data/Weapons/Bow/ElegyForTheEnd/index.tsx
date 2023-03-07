@@ -2,10 +2,10 @@ import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from "../../../../Formula/utils"
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -22,7 +22,7 @@ const eleMas = subscript(input.weapon.refineIndex, eleMasInc, KeyMap.info("eleMa
 // solution, since then these nodes won't show in the team buff panel. And it's
 // a bit unlikely people will try to stack this buff
 const eleMas2 = equal(condNode, 'on', subscript(input.weapon.refineIndex, eleMasInc2, KeyMap.info("eleMas")))
-const atk_ = equal(condNode, 'on', subscript(input.weapon.refineIndex, atk_s))
+const atk_ = equal(condNode, 'on', subscript(input.weapon.refineIndex, atk_s,))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
@@ -31,9 +31,9 @@ export const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
     premod: {
       atk_,
-      eleMas: eleMas2,
-    },
-  },
+      eleMas: eleMas2
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -50,16 +50,16 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: eleMas2,
+          node: eleMas2
         }, {
-          node: atk_,
+          node: atk_
         }, {
           text: stg("duration"),
           value: 12,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,13 +1,13 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, one, percent, prod, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, shieldElement, shieldNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -24,7 +24,7 @@ const dm = {
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
-    ],
+    ]
   },
   charged: {
     dmg1: skillParam_gen.auto[a++],
@@ -42,13 +42,13 @@ const dm = {
     shieldHp_: skillParam_gen.skill[s++],
     shieldBase: skillParam_gen.skill[s++],
     shieldDuration: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0]
   },
   burst: {
     slugDmg: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    energyCost: skillParam_gen.burst[b++][0],
+    energyCost: skillParam_gen.burst[b++][0]
   },
   passive1: {
     shield_: skillParam_gen.passive1[0][0],
@@ -78,22 +78,22 @@ const a1StacksArr = range(1, dm.passive1.maxStacks)
 const a1Shield_disp = greaterEq(input.asc, 1, lookup(condA1Stacks, Object.fromEntries(
   a1StacksArr.map(stack => [
     stack,
-    prod(stack, dm.passive1.shield_),
-  ]),
+    prod(stack, dm.passive1.shield_)
+  ])
 ), naught), { ...KeyMap.info("shield_"), isTeamBuff: true })
 const a1Shield_ = equal(input.activeCharKey, target.charKey, a1Shield_disp)
 
 const a4_starDmgInc = greaterEq(input.asc, 4, prod(
   percent(dm.passive2.starHpDmgInc),
-  input.total.hp,
+  input.total.hp
 ), { name: ct.ch(`starDmgInc`) })
 
 const [condC4ActivePath, condC4Active] = cond(key, "c4Active")
 const c4_normal_dmgInc = greaterEq(input.constellation, 4, equal(condC4Active, "on",
   prod(
     percent(dm.constellation4.normalChargedDmgInc),
-    input.total.hp,
-  ),
+    input.total.hp
+  )
 ))
 const c4_charged_dmgInc = {...c4_normal_dmgInc}
 
@@ -105,10 +105,10 @@ const skillShield = prod(
   sum(
     one,
     greaterEq(input.constellation, 1,
-      dm.constellation1.shield_, { name: ct.ch(`c1ShieldBonusKey_`), unit: "%" },
+      dm.constellation1.shield_, { name: ct.ch(`c1ShieldBonusKey_`), unit: "%" }
     ),
   ),
-  shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldBase, "skill"),
+  shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldBase, "skill")
 )
 const skillCryoShield = shieldElement("cryo", skillShield)
 const dmgFormulas = {
@@ -124,7 +124,7 @@ const dmgFormulas = {
     skillDmg: dmgNode("atk", dm.skill.skillDmg, "skill"),
     starDmg: dmgNode("atk", dm.skill.starDmg, "skill", { premod: {
       skill_dmgInc: a4_starDmgInc,
-      skill_dmg_: c6_starDmg_,
+      skill_dmg_: c6_starDmg_
     } }),
     skillShield,
     skillCryoShield,
@@ -134,12 +134,12 @@ const dmgFormulas = {
   },
   constellation1: {
     partyShield: greaterEq(input.constellation, 1,
-      prod(percent(dm.constellation1.partyShield_), skillShield),
+      prod(percent(dm.constellation1.partyShield_), skillShield)
     ),
     partyCryoShield: greaterEq(input.constellation, 1,
-      prod(percent(dm.constellation1.partyShield_), skillCryoShield),
-    ),
-  },
+      prod(percent(dm.constellation1.partyShield_), skillCryoShield)
+    )
+  }
 }
 
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -153,9 +153,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
     premod: {
       shield_: a1Shield_,
       normal_dmgInc: c4_normal_dmgInc,
-      charged_dmgInc: c4_charged_dmgInc,
-    },
-  },
+      charged_dmgInc: c4_charged_dmgInc
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -172,7 +172,7 @@ const sheet: ICharacterSheet = {
       }, {
         fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-        })),
+        }))
       }, {
         text: ct.chg("auto.fields.charged"),
       }, {
@@ -183,7 +183,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("auto.skillParams.4"),
           value: dm.charged.stamina,
-        }],
+        }]
       }, {
         text: ct.chg("auto.fields.plunging"),
       }, {
@@ -193,7 +193,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
         }, {
           node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-        }],
+        }]
       }]),
 
       skill: ct.talentTem("skill", [{
@@ -208,12 +208,12 @@ const sheet: ICharacterSheet = {
         }, {
           text: stg("duration"),
           value: dm.skill.shieldDuration,
-          unit: 's',
+          unit: 's'
         }, {
           text: stg("cd"),
           value: dm.skill.cd,
-          unit: 's',
-        }],
+          unit: 's'
+        }]
       }, ct.condTem("passive1", {
         teamBuff: true,
         path: condA1StacksPath,
@@ -224,20 +224,20 @@ const sheet: ICharacterSheet = {
           {
             name: st("stack", { count: stack }),
             fields: [{
-              node: a1Shield_disp,
-            }],
-          },
-        ])),
+              node: a1Shield_disp
+            }]
+          }
+        ]))
       }), ct.headerTem("passive2", {
         fields: [{
-          node: a4_starDmgInc,
-        }],
+          node: a4_starDmgInc
+        }]
       }), ct.headerTem("constellation1", {
         fields: [{
-          node: infoMut(dmgFormulas.constellation1.partyShield, { name: stg("dmgAbsorption") }),
+          node: infoMut(dmgFormulas.constellation1.partyShield, { name: stg("dmgAbsorption") })
         }, {
-          node: infoMut(dmgFormulas.constellation1.partyCryoShield, { name: st(`dmgAbsorption.${elementKey}`), variant: elementKey }),
-        }],
+          node: infoMut(dmgFormulas.constellation1.partyCryoShield, { name: st(`dmgAbsorption.${elementKey}`), variant: elementKey })
+        }]
       }), ct.condTem("constellation4", {
         teamBuff: true,
         value: condC4Active,
@@ -248,22 +248,22 @@ const sheet: ICharacterSheet = {
             fields: [{
               node: c4_normal_dmgInc,
             }, {
-              node: c4_charged_dmgInc,
+              node: c4_charged_dmgInc
             }, {
               text: stg("duration"),
               value: dm.constellation4.effectDuration,
-              unit: "s",
-            }],
-          },
-        },
+              unit: "s"
+            }]
+          }
+        }
       }), ct.headerTem("constellation6", {
         fields: [{
-          node: infoMut(c6_starDmg_, { name: ct.ch(`starDmg_`) }),
+          node: infoMut(c6_starDmg_, { name: ct.ch(`starDmg_`) })
         }, {
           text: ct.ch("starInterval_"),
           value: -dm.constellation6.starIntervalDec_ * 100,
-          unit: "%",
-        }],
+          unit: "%"
+        }]
       })]),
 
       burst: ct.talentTem("burst", [{
@@ -272,19 +272,19 @@ const sheet: ICharacterSheet = {
         }, {
           text: stg("duration"),
           value: dm.burst.duration,
-          unit: "s",
+          unit: "s"
         }, {
           text: stg("cd"),
           value: dm.burst.cd,
-          unit: "s",
+          unit: "s"
         }, {
           text: stg("energyCost"),
           value: dm.burst.energyCost,
-        }],
+        }]
       }, ct.headerTem("constellation6", {
         fields: [{
-          node: infoMut(c6_slugDmg_, { name: ct.ch(`slugDmg_`) }),
-        }],
+          node: infoMut(c6_slugDmg_, { name: ct.ch(`slugDmg_`) })
+        }]
       })]),
 
       passive1: ct.talentTem("passive1"),

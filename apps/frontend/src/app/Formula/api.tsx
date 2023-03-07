@@ -1,16 +1,14 @@
-import Artifact from "../Data/Artifacts/Artifact"
-import type { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact"
-import type { ICachedCharacter } from "../Types/character"
-import type { ArtifactSetKey, CharacterKey, Gender } from "../Types/consts"
-import { allElementsWithPhy } from "../Types/consts"
-import type { ICachedWeapon } from "../Types/weapon"
-import { layeredAssignment, objectKeyMap, objectKeyValueMap, objectMap, objPathValue } from "../Util/Util"
-import { input, tally } from "./index"
-import { deepNodeClone } from "./internal"
-import type { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type"
-import type { NodeDisplay} from "./uiData"
-import { UIData } from "./uiData"
-import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils"
+import Artifact from "../Data/Artifacts/Artifact";
+import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { ICachedCharacter } from "../Types/character";
+import { allElementsWithPhy, ArtifactSetKey, CharacterKey, Gender } from "../Types/consts";
+import { ICachedWeapon } from "../Types/weapon";
+import { layeredAssignment, objectKeyMap, objectKeyValueMap, objectMap, objPathValue } from "../Util/Util";
+import { input, tally } from "./index";
+import { deepNodeClone } from "./internal";
+import { Data, DisplaySub, Info, Input, NumNode, ReadNode, StrNode } from "./type";
+import { NodeDisplay, UIData } from "./uiData";
+import { constant, customRead, data, infoMut, none, percent, prod, resetData, setReadNodeKeys, sum } from "./utils";
 import { crawlObject } from "@genshin-optimizer/util"
 const asConst = true as const, pivot = true as const
 
@@ -40,7 +38,7 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel = 0): 
       ...Object.fromEntries(stats.map(([key, value]) =>
         key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)])),
       [art.slotKey]: {
-        id: constant(art.id), set: constant(art.setKey),
+        id: constant(art.id), set: constant(art.setKey)
       },
     },
     artSet: {
@@ -103,8 +101,8 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
             },
             infusion: {
               team: infusionAura ? constant(infusionAura) : none,
-            },
-          }), { pivot: true }),
+            }
+          }), { pivot: true })
         )
       })
       // Make the variant "invalid" because its not easy to determine variants in multitarget
@@ -121,12 +119,12 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
       refinement: constant(weapon.refinement),
-      refineIndex: constant(weapon.refinement - 1),
+      refineIndex: constant(weapon.refinement - 1)
     },
   }
 }
 /** These read nodes are very context-specific, and cannot be used anywhere else outside of `uiDataForTeam` */
-const teamBuff = setReadNodeKeys(deepNodeClone(input), ["teamBuff"]) // Use ONLY by dataObjForTeam
+const teamBuff = setReadNodeKeys(deepNodeClone(input), ["teamBuff"]); // Use ONLY by dataObjForTeam
 function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, gender: Gender, activeCharKey?: CharacterKey): Dict<CharacterKey, { target: UIData, buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
   // enough to attempt for the understanding of this abomination.
@@ -187,7 +185,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, gender: Gender, act
           layeredAssignment(calc, x.path, resetData(readNode, data))
         })
       })
-    }),
+    })
   )
   mergedData.forEach(([targetKey, data]) => {
     delete data.teamBuff
@@ -208,7 +206,7 @@ function uiDataForTeam(teamData: Dict<CharacterKey, Data[]>, gender: Gender, act
     [key, {
       target: new UIData(value.targetRef, origin),
       buffs: Object.fromEntries(Object.entries(value.calcs).map(([key, value]) =>
-        [key, new UIData(value, origin)])),
+        [key, new UIData(value, origin)]))
     }]))
 }
 function mergeData(data: Data[]): Data {
@@ -262,7 +260,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       isEmpty: true,
       formulas: [],
       ...d1,
-      diff: (d2?.value ?? 0) - (d1?.value ?? 0),
+      diff: (d2?.value ?? 0) - (d1?.value ?? 0)
     }
     if (typeof d1?.value === "string" || typeof d2?.value === "string") {
       // In case `string` got involved, just use the other value
@@ -278,9 +276,9 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
   }
 }
 
-export type { NodeDisplay, UIData }
+export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
   mergeData, computeUIData, inferInfoMut,
-  uiDataForTeam, compareTeamBuffUIData, compareDisplayUIData,
-}
+  uiDataForTeam, compareTeamBuffUIData, compareDisplayUIData
+};

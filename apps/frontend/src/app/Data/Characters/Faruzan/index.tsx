@@ -1,11 +1,11 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -25,16 +25,16 @@ const datamine = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ],
+    ]
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
-    aimedCharged: skillParam_gen.auto[a++],
+    aimedCharged: skillParam_gen.auto[a++]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     skill_dmg: skillParam_gen.skill[s++],
@@ -65,7 +65,7 @@ const datamine = {
   constellation6: {
     anemo_critDMG_: skillParam_gen.constellation6[0],
     duration: skillParam_gen.constellation6[0],
-  },
+  }
 } as const
 
 const [condBurstBenefitPath, condBurstBenefit] = cond(key, "burstBenefit")
@@ -95,7 +95,7 @@ const dmgFormulas = {
     dmg: dmgNode("atk", datamine.burst.dmg, "burst"),
   },
   passive2: {
-    anemo_dmgInc: greaterEq(input.asc, 1, equal(condA4Active, "on", equal(condBurstBenefit, "on", prod(percent(datamine.passive2.gift_dmgInc), input.base.atk)))),
+    anemo_dmgInc: greaterEq(input.asc, 1, equal(condA4Active, "on", equal(condBurstBenefit, "on", prod(percent(datamine.passive2.gift_dmgInc), input.base.atk))))
   },
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -112,8 +112,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
       anemo_dmg_: burstBenefit_anemo_dmg_,
       anemo_enemyRes_: burstHit_anemo_enemyRes_,
       anemo_critDMG_: c6Benefit_anemo_critDMG_,
-    },
-  },
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -127,7 +127,7 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal"),
+      text: ct.chg("auto.fields.normal")
     }, {
       fields: datamine.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
@@ -139,7 +139,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.5`) }),
-      }],
+      },],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -160,12 +160,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: datamine.skill.galeDuration,
-        unit: "s",
+        unit: "s"
       }, {
         text: stg("cd"),
         value: datamine.skill.cd,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -176,15 +176,15 @@ const sheet: ICharacterSheet = {
         value: (data) => data.get(input.constellation).value >= 2
           ? `${datamine.burst.polyDuration}s + ${datamine.constellation2.durationInc}s = ${datamine.burst.polyDuration + datamine.constellation2.durationInc}`
           : datamine.burst.polyDuration,
-        unit: "s",
+        unit: "s"
       }, {
         text: stg("cd"),
         value: datamine.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: stg("energyCost"),
         value: datamine.burst.enerCost,
-      }],
+      }]
     }, ct.condTem("burst", {
       teamBuff: true,
       path: condBurstBenefitPath,
@@ -193,14 +193,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: burstBenefit_anemo_dmg_,
+            node: burstBenefit_anemo_dmg_
           }, {
             text: ct.chg("burst.skillParams.2"),
             value: datamine.burst.giftDuration,
-            unit: "s",
-          }],
-        },
-      },
+            unit: "s"
+          }]
+        }
+      }
     }), ct.condTem("burst", {
       teamBuff: true,
       path: condBurstHitPath,
@@ -209,14 +209,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: burstHit_anemo_enemyRes_,
+            node: burstHit_anemo_enemyRes_
           }, {
             text: ct.chg("burst.skillParams.4"),
             value: datamine.burst.riftDuration,
-            unit: "s",
-          }],
-        },
-      },
+            unit: "s"
+          }]
+        }
+      }
     }), ct.condTem("passive2", {
       canShow: equal(condBurstBenefit, "on", 1),
       teamBuff: true,
@@ -226,30 +226,30 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: dmgFormulas.passive2.anemo_dmgInc,
+            node: dmgFormulas.passive2.anemo_dmgInc
           }, {
             text: stg("cd"),
             value: datamine.passive2.cd,
             unit: "s",
-          }],
-        },
-      },
+          }]
+        }
+      }
     }), ct.headerTem("constellation2", {
       fields: [{
         text: ct.ch("c2DurationInc"),
         value: datamine.constellation2.durationInc,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }), ct.headerTem("constellation6", {
       canShow: equal(condBurstBenefit, "on", 1),
       teamBuff: true,
       fields: [{
-        node: c6Benefit_anemo_critDMG_,
+        node: c6Benefit_anemo_critDMG_
       }, {
         // Only show on Faruzan's page
         canShow: (data) => data.get(input.activeCharKey).value === key,
         text: ct.ch("c6Arrow"),
-      }],
+      }]
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -263,4 +263,4 @@ const sheet: ICharacterSheet = {
     constellation6: ct.talentTem("constellation6"),
   },
 }
-export default new CharacterSheet(sheet, data)
+export default new CharacterSheet(sheet, data);

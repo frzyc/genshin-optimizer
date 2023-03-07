@@ -1,6 +1,6 @@
-import artifactSubstatData from "./artifactSubstat"
+import artifactSubstatData from "./artifactSubstat";
 
-const rollsForRarity = { 3: 2, 4: 4, 5: 6 }
+const rollsForRarity = { 3: 2, 4: 4, 5: 6, }
 
 /** accurate value = artifactSubstatRollCorrection[rarity][key][fastValue] */
 export const artifactSubstatRollCorrection: Record<string, Record<string, Record<string, string>>> = {}
@@ -31,7 +31,7 @@ function getRolls(key: string, possibleRolls: number[], maxRolls: number, rarity
         : Math.round(fastValue).toFixed(0)
 
       const newEntry: RollValue = {
-        accurateValue, accurateString, fastValue, fastString, rolls: [...rolls, i], badChildCount: 0,
+        accurateValue, accurateString, fastValue, fastString, rolls: [...rolls, i], badChildCount: 0
       }
 
       current[i] = newEntry

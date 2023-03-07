@@ -1,14 +1,14 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterKey } from '@genshin-optimizer/consts'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum } from '../../../Formula/utils'
 import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
       skillParam_gen.auto[a++], // 5
-    ],
+    ]
   },
   charged: {
     spinningDmg: skillParam_gen.auto[a++],
@@ -87,7 +87,7 @@ const lightfallSwordBonusScaling = prod(
 
 const def_ = lookup(condGrimheartStacks,
   { "stack1": percent(dm.skill.defBonus), "stack2": percent(2 * dm.skill.defBonus) },
-  naught,
+  naught
 )
 const cryo_enemyRes_ = equal("on", condGrimheartConsumed, subscript(input.total.skillIndex, dm.skill.cryoResDecNegative))
 const physical_enemyRes_ = equal("on", condGrimheartConsumed, subscript(input.total.skillIndex, dm.skill.physResDecNegative))
@@ -96,7 +96,7 @@ const physical_dmg_ = greaterEq(input.constellation, 1, equal("on", condTidalIll
 const c4_sword_dmg_ = greaterEq(input.constellation, 4, equal(condC4, "on", constant(dm.constellation4.dmgInc)), { name: ct.ch("c4C.dmgBonus")})
 const lightSwordAdditional: Data = {
   premod: { burst_dmg_: c4_sword_dmg_ },
-  hit: { ele: constant("physical") },
+  hit: { ele: constant("physical") }
 }
 
 const dmgFormulas = {
@@ -121,14 +121,14 @@ const dmgFormulas = {
           subscript(input.total.burstIndex, dm.burst.lightfallDmg, { unit: "%" }),
           lightfallSwordBonusScaling,
         ),
-        input.total.atk,
+        input.total.atk
       ), "burst", lightSwordAdditional),
   },
   passive1: {
     shatteredLightfallSword: greaterEq(input.asc, 1, prod(
-      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional, percent(dm.passive1.percentage)),
-    )),
-  },
+      dmgNode("atk", dm.burst.lightfallDmg, "burst", lightSwordAdditional, percent(dm.passive1.percentage))
+    ))
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -141,8 +141,8 @@ export const data = dataObjForCharacterSheet(key, "cryo", "mondstadt", data_gen,
     def_,
     cryo_enemyRes_,
     physical_enemyRes_,
-    physical_dmg_,
-  },
+    physical_dmg_
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -161,7 +161,7 @@ const sheet: ICharacterSheet = {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 2 || i === 4) ? 2 : undefined }),
 
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -172,12 +172,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: dm.charged.stamina,
-        unit: '/s',
+        unit: '/s'
       }, {
         text: ct.chg("auto.skillParams.8"),
         value: dm.charged.duration,
-        unit: 's',
-      }],
+        unit: 's'
+      }]
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -187,7 +187,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -196,19 +196,19 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.8"),
         value: `${dm.skill.pressCd}`,
-        unit: 's',
+        unit: 's'
       }, {
         node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: st("holdCD"),
         value: `${dm.skill.holdCd}`,
-        unit: 's',
+        unit: 's'
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: 2,
       }, {
         node: infoMut(dmgFormulas.skill.icewhirl, { name: ct.chg(`skill.skillParams.2`) }),
-      }],
+      }]
     }, ct.condTem("skill", {
       value: condGrimheartStacks,
       path: condGrimheartStacksPath,
@@ -219,26 +219,26 @@ const sheet: ICharacterSheet = {
           fields: [{
             node: def_,
           }, {
-            text: st("incInterRes"),
+            text: st("incInterRes")
           }, {
             text: ct.chg("skill.skillParams.4"),
             value: dm.skill.grimheartDuration,
-            unit: 's',
-          }],
+            unit: 's'
+          }]
         },
         "stack2": {
           name: st("stack", { count: 2 }),
           fields: [{
             node: def_,
           }, {
-            text: st("incInterRes"),
+            text: st("incInterRes")
           }, {
             text: ct.chg("skill.skillParams.4"),
             value: dm.skill.grimheartDuration,
-            unit: 's',
-          }],
+            unit: 's'
+          }]
         },
-      },
+      }
     }), ct.condTem("skill", {
       value: condGrimheartConsumed,
       path: condGrimheartConsumedPath,
@@ -252,10 +252,10 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg('duration'),
             value: 7,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -266,15 +266,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: `${dm.burst.cd}`,
-        unit: 's',
+        unit: 's'
       }, {
         text: ct.chg("burst.skillParams.5"),
         value: `${dm.burst.enerCost}`,
       }, {
         text: stg("duration"),
         value: 7,
-        unit: 's',
-      }],
+        unit: 's'
+      }]
     }, ct.condTem("burst", {
       value: condLightfallSword,
       path: condLightfallSwordPath,
@@ -283,10 +283,10 @@ const sheet: ICharacterSheet = {
         ...objectKeyMap(lightfallSwordStacks, i => ({
           name: st("stack", { count: i }),
           fields: [{
-            node: infoMut(lightfallSwordBonusScaling, { name: ct.ch("burstC.bonusScaling"), unit: "%", variant: "physical" }),
-          }],
+            node: infoMut(lightfallSwordBonusScaling, { name: ct.ch("burstC.bonusScaling"), unit: "%", variant: "physical" })
+          }]
         })),
-      },
+      }
     }), ct.condTem("constellation4", {
       value: condC4,
       path: condC4Path,
@@ -294,22 +294,22 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(c4_sword_dmg_, { name: ct.ch("c4C.dmgBonus"), unit: "%", variant: "physical" }),
-          }],
-        },
-      },
+            node: infoMut(c4_sword_dmg_, { name: ct.ch("c4C.dmgBonus"), unit: "%", variant: "physical" })
+          }]
+        }
+      }
     }), ct.headerTem("constellation6", {
       fields: [{
         text: ct.ch("burstC.start5"),
       }, {
         text: ct.ch("burstC.addStacks"),
-      }],
+      }]
     })]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
         node: infoMut(dmgFormulas.passive1.shatteredLightfallSword, { name: ct.ch("passive1") }),
-      }],
+      }]
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -323,10 +323,10 @@ const sheet: ICharacterSheet = {
             node: physical_dmg_,
           }, {
             text: stg('duration'),
-            value: ct.ch('c1C.durationStack'),
-          }],
-        },
-      },
+            value: ct.ch('c1C.durationStack')
+          }]
+        }
+      }
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),

@@ -1,4 +1,4 @@
-import { crawlObject, layeredAssignment } from './util'
+import { crawlObject, layeredAssignment } from './util';
 
 test('crawlObject', () => {
   const obj = { a: { b: { c: "Test", c1: false }, b1: null }, a1: {} }

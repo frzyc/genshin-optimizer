@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { DatabaseContext } from "../Database/Database"
-import type { CharacterKey } from "../Types/consts"
+import { CharacterKey } from "../Types/consts"
 
 export default function useCharMeta(key: CharacterKey) {
   const { database } = useContext(DatabaseContext)

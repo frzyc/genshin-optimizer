@@ -1,25 +1,23 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allRarityKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
-import { Add } from '@mui/icons-material'
-import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material'
-import type { ChangeEvent} from 'react'
-import React, { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
-import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
-import CardDark from '../Components/Card/CardDark'
-import SortByButton from '../Components/SortByButton'
-import RarityToggle from '../Components/ToggleButton/RarityToggle'
-import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp'
-import { filterFunction, sortFunction } from '../Util/SortByFilters'
-import { catTotal } from '../Util/totalUtils'
-import { clamp } from '../Util/Util'
-import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort'
-import { initialWeapon } from '../Util/WeaponUtil'
-import WeaponCard from './WeaponCard'
+import { allRarityKeys, allWeaponTypeKeys, WeaponKey } from '@genshin-optimizer/consts';
+import { Add } from '@mui/icons-material';
+import { Box, Button, CardContent, Grid, Pagination, Skeleton, TextField, Typography } from '@mui/material';
+import React, { ChangeEvent, lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import ReactGA from 'react-ga4';
+import { Trans, useTranslation } from 'react-i18next';
+import CardDark from '../Components/Card/CardDark';
+import SortByButton from '../Components/SortByButton';
+import RarityToggle from '../Components/ToggleButton/RarityToggle';
+import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
+import { getWeaponSheet } from '../Data/Weapons';
+import { DatabaseContext } from '../Database/Database';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
+import { catTotal } from '../Util/totalUtils';
+import { clamp } from '../Util/Util';
+import { weaponFilterConfigs, weaponSortConfigs, weaponSortMap } from '../Util/WeaponSort';
+import { initialWeapon } from '../Util/WeaponUtil';
+import WeaponCard from './WeaponCard';
 const WeaponSelectionModal = React.lazy(() => import('../Components/Weapon/WeaponSelectionModal'))
 // Lazy load the weapon display
 const WeaponEditor = lazy(() => import('./WeaponEditor'))
@@ -91,9 +89,9 @@ export default function PageWeapon() {
   const setPage = useCallback(
     (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      setPageIndex(value - 1)
+      setPageIndex(value - 1);
     },
-    [setPageIndex, invScrollRef],
+    [setPageIndex, invScrollRef]
   )
 
   const resetEditWeapon = useCallback(() => database.displayWeapon.set({ editWeaponId: "" }), [database])
@@ -147,7 +145,7 @@ export default function PageWeapon() {
           label={t("weaponName")}
           sx={{ height: "100%" }}
           InputProps={{
-            sx: { height: "100%" },
+            sx: { height: "100%" }
           }}
         />
       </Box>

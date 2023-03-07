@@ -1,10 +1,10 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -18,7 +18,7 @@ const critRate_ = equal("on", condPassive, subscript(input.weapon.refineIndex, c
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     critRate_,
-  },
+  }
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -29,10 +29,10 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: critRate_,
-        }],
-      },
-    },
+          node: critRate_
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

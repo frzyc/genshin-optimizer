@@ -1,4 +1,4 @@
-import { createSvgIcon } from "@mui/material"
+import { createSvgIcon } from "@mui/material";
 
 const PatreonIcon = createSvgIcon(<>
   <path d="M 4.800781 0 L 0 0 L 0 24 L 4.800781 24 Z M 4.800781 0 " />

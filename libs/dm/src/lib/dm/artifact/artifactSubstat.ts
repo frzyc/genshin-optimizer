@@ -1,5 +1,4 @@
-import type { DSubstatKey, SubstatKey} from "@genshin-optimizer/pipeline"
-import { extrapolateFloat, SubStatPropTypeMap } from "@genshin-optimizer/pipeline"
+import { DSubstatKey, extrapolateFloat, SubstatKey, SubStatPropTypeMap } from "@genshin-optimizer/pipeline"
 import { layeredAssignment } from "@genshin-optimizer/util"
 import { readDMJSON } from "../../util"
 
@@ -22,7 +21,7 @@ const artifactSubstatData = {} as artifaceSubstatData
 Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
   Object.values(SubStatPropTypeMap).forEach(element => {
     layeredAssignment(artifactSubstatData, [rank, element], [])
-  })
+  });
 })
 
 artifactSubstatDataSrc.forEach(({ depotId, propType, propValue }) => {

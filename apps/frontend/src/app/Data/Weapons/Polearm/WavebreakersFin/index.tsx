@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, min, naught, prod, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -20,8 +20,8 @@ const max = [0.4, 0.5, 0.6, 0.7, 0.8]
 const burst_dmg_ = lookup(condPassive, Object.fromEntries(energyRange.map(i => [i, min(prod(subscript(input.weapon.refineIndex, ratio, { unit: "%" }), i), subscript(input.weapon.refineIndex, max, { unit: "%" }))])), naught)
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    burst_dmg_,
-  },
+    burst_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -32,8 +32,8 @@ const sheet: IWeaponSheet = {
     name: trm("party"),
     states: Object.fromEntries(energyRange.map(i => [i, {
       name: i.toString(),
-      fields: [{ node: burst_dmg_ }],
-    }])),
+      fields: [{ node: burst_dmg_ }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

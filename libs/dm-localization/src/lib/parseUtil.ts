@@ -1,5 +1,4 @@
-import type { ColorTag, Language} from "@genshin-optimizer/pipeline"
-import { tagColor } from "@genshin-optimizer/pipeline"
+import { ColorTag, Language, tagColor } from "@genshin-optimizer/pipeline"
 
 export function preprocess(string: string): string {
   { // color tags
@@ -51,13 +50,13 @@ function plungeUtil(lang, string, low) {
     case "cht":
     case "ja":
       string = string.replace(/((\S{2})\/(\S{2}))/, res)
-      break
+      break;
     case "th":
       string = string.replace(/((\S{3})\/(\S{3}))/, res)
-      break
+      break;
     default:
       string = string.replace(/((\S+)\/(\S+))/, res)
-      break
+      break;
   }
   return string
 }
@@ -117,5 +116,5 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
   },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
-  string: (lang, string) => string,
+  string: (lang, string) => string
 }

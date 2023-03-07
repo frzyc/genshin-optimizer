@@ -1,32 +1,31 @@
-import type { LocationCharacterKey} from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys, charKeyToLocCharKey, LocationKey } from '@genshin-optimizer/consts'
-import { Checkroom, ChevronRight } from '@mui/icons-material'
-import BlockIcon from '@mui/icons-material/Block'
-import CheckBoxIcon from '@mui/icons-material/CheckBox'
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
-import ShowChartIcon from '@mui/icons-material/ShowChart'
-import { Box, Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano'
-import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent'
-import ColorText from '../../../../../Components/ColoredText'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
-import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
-import { DataContext } from '../../../../../Context/DataContext'
-import { getCharSheet } from '../../../../../Data/Characters'
-import { DatabaseContext } from '../../../../../Database/Database'
-import { uiInput as input } from '../../../../../Formula'
-import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
-import type { ICachedArtifact } from '../../../../../Types/artifact'
-import { toggleArr } from '../../../../../Util/Util'
-import useBuildSetting from '../useBuildSetting'
-import { ArtifactSetBadges } from './ArtifactSetBadges'
+import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from '@genshin-optimizer/consts';
+import { Checkroom, ChevronRight } from '@mui/icons-material';
+import BlockIcon from '@mui/icons-material/Block';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import { Box, Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
+import { Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import ArtifactCardNano from '../../../../../Components/Artifact/ArtifactCardNano';
+import BootstrapTooltip from '../../../../../Components/BootstrapTooltip';
+import CardDark from '../../../../../Components/Card/CardDark';
+import CardLight from '../../../../../Components/Card/CardLight';
+import StatDisplayComponent from '../../../../../Components/Character/StatDisplayComponent';
+import ColorText from '../../../../../Components/ColoredText';
+import ModalWrapper from '../../../../../Components/ModalWrapper';
+import SqBadge from '../../../../../Components/SqBadge';
+import WeaponCardNano from '../../../../../Components/Weapon/WeaponCardNano';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { DataContext } from '../../../../../Context/DataContext';
+import { getCharSheet } from '../../../../../Data/Characters';
+import { DatabaseContext } from '../../../../../Database/Database';
+import { uiInput as input } from '../../../../../Formula';
+import ArtifactCard from '../../../../../PageArtifact/ArtifactCard';
+import { ICachedArtifact } from '../../../../../Types/artifact';
+import { toggleArr } from '../../../../../Util/Util';
+import useBuildSetting from '../useBuildSetting';
+import { ArtifactSetBadges } from './ArtifactSetBadges';
 
 type NewOld = {
   newId: string,
@@ -49,7 +48,7 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
 
   const { data, oldData } = dataContext
   const [newOld, setNewOld] = useState(undefined as NewOld | undefined)
-  const close = useCallback(() => setNewOld(undefined), [setNewOld])
+  const close = useCallback(() => setNewOld(undefined), [setNewOld],)
 
   const equipBuild = useCallback(() => {
     if (!window.confirm("Do you want to equip this build to this character?")) return
@@ -75,12 +74,12 @@ export default function BuildDisplayItem({ label, compareBuild, extraButtonsRigh
 
   const artifactIdsBySlot = useMemo(() => Object.fromEntries(allArtifactSlotKeys.map(slotKey => [
     slotKey,
-    data.get(input.art[slotKey].id).value,
+    data.get(input.art[slotKey].id).value
   ])), [data])
   const artifacts = useMemo(() => artifactIdsBySlot && Object.values(artifactIdsBySlot)
     .map((artiId: string) => database.arts.get(artiId))
     .filter(arti => arti) as ICachedArtifact[],
-    [artifactIdsBySlot, database.arts],
+    [artifactIdsBySlot, database.arts]
   )
 
   // Memoize Arts because of its dynamic onClick

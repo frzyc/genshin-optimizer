@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -31,7 +31,7 @@ const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     skill_dmg_,
     burst_dmg_,
-    atk_,
+    atk_
   },
 })
 
@@ -42,7 +42,7 @@ const sheet: IWeaponSheet = {
       node: skill_dmg_,
     }, {
       node: burst_dmg_,
-    }],
+    }]
   }, {
     value: condPassive,
     path: condPassivePath,
@@ -51,9 +51,9 @@ const sheet: IWeaponSheet = {
     states: objectKeyMap(range(1, 4), i => ({
       name: st("stack", { count: i }),
       fields: [{
-        node: atk_,
-      }],
-    })),
+        node: atk_
+      }]
+    }))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

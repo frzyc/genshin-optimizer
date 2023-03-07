@@ -1,6 +1,6 @@
-import type { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData"
-import type { OptNode } from "../Formula/optimization"
-import type { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./common"
+import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData";
+import { OptNode } from "../Formula/optimization";
+import { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./common";
 
 export type OptProblemInput = {
   arts: ArtifactsBySlot

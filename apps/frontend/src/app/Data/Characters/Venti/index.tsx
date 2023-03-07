@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
@@ -7,11 +7,11 @@ import { absorbableEle } from '../../../Types/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const data_gen = data_gen_src as CharacterData
 
@@ -29,7 +29,7 @@ const dm = {
       skillParam_gen.auto[a++], // 4x2
       skillParam_gen.auto[a++], // 5
       skillParam_gen.auto[a++], // 6
-    ],
+    ]
   },
   charged: {
     aimed: skillParam_gen.auto[a++], // Aimed
@@ -53,10 +53,10 @@ const dm = {
     absorbTicks: 15,
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    enerCost: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0]
   },
   passive1: {
-    duration: skillParam_gen.passive1[0][0],
+    duration: skillParam_gen.passive1[0][0]
   },
   // No real p3/constellation dm values :(
   passive3: {
@@ -76,7 +76,7 @@ const dm = {
   constellation6: {
     res_: -0.20,
     duration: 10, // From KQM
-  },
+  }
 } as const
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -89,10 +89,10 @@ const [condC2Path, condC2] = cond(key, "c2")
 const c2Hit_anemo_enemyRes_ = greaterEq(input.constellation, 2,
   lookup(condC2, {
     "hit": constant(dm.constellation2.res_),
-    "launched": prod(dm.constellation2.res_, 2),
+    "launched": prod(dm.constellation2.res_, 2)
   },
-    naught,
-  ),
+    naught
+  )
 )
 const c2Hit_phys_enemyRes__ = { ...c2Hit_anemo_enemyRes_ }
 
@@ -104,7 +104,7 @@ const [condC6Path, condC6] = cond(key, "c6")
 const c6_anemo_enemyRes_ = greaterEq(input.constellation, 6, equal(condC6, "takeDmg", dm.constellation6.res_))
 const c6_ele_enemyRes_arr = Object.fromEntries(absorbableEle.map(ele => [
   `${ele}_enemyRes_`,
-  greaterEq(input.constellation, 6, equal(condC6, "takeDmg", equal(ele, condBurstAbsorption, dm.constellation6.res_))),
+  greaterEq(input.constellation, 6, equal(condC6, "takeDmg", equal(ele, condBurstAbsorption, dm.constellation6.res_)))
 ]))
 
 const dmgFormulas = {
@@ -130,20 +130,20 @@ const dmgFormulas = {
         prod(
           percent(dm.constellation1.dmgRatio),
           subscript(input.total.autoIndex, dm.charged.aimed, { unit: "%" }),
-          input.total.atk,
+          input.total.atk
         ),
-        "charged",
-      ),
+        "charged"
+      )
     ),
     fully: greaterEq(input.constellation, 1,
       customDmgNode(
         prod(
           percent(dm.constellation1.dmgRatio),
           subscript(input.total.autoIndex, dm.charged.fully, { unit: "%" }),
-          input.total.atk,
+          input.total.atk
         ),
-        "charged", { hit: { ele: constant(elementKey) } },
-      ),
+        "charged", { hit: { ele: constant(elementKey) } }
+      )
     ),
   },
 }
@@ -160,8 +160,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       anemo_enemyRes_: sum(c2Hit_anemo_enemyRes_, c6_anemo_enemyRes_),
       physical_enemyRes_: c2Hit_phys_enemyRes__,
       ...c6_ele_enemyRes_arr,
-    },
-  },
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -175,23 +175,23 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal"),
+      text: ct.chg("auto.fields.normal")
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 0 || i === 3) ? 2 : undefined }),
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.aimed, { name: ct.ch("addAimed") }),
+        node: infoMut(dmgFormulas.constellation1.aimed, { name: ct.ch("addAimed") })
       }, {
         node: infoMut(dmgFormulas.charged.fully, { name: ct.chg(`auto.skillParams.7`) }),
       }, {
-        node: infoMut(dmgFormulas.constellation1.fully, { name: ct.ch("addFullAimed") }),
-      }],
+        node: infoMut(dmgFormulas.constellation1.fully, { name: ct.ch("addFullAimed") })
+      }]
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -201,29 +201,29 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
+        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) })
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: dm.skill.pressCD,
-        unit: "s",
+        unit: "s"
       }, {
-        node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.2`) }),
+        node: infoMut(dmgFormulas.skill.hold, { name: ct.chg(`skill.skillParams.2`) })
       }, {
         text: st("holdCD"),
         value: dm.skill.holdCD,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }, ct.headerTem("passive1", {
       fields: [{
         text: ct.ch("upcurrentDuration"),
         value: dm.passive1.duration,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }), ct.condTem("constellation2", {
       value: condC2,
       path: condC2Path,
@@ -233,20 +233,20 @@ const sheet: ICharacterSheet = {
         hit: {
           name: ct.ch("c2.hit"),
           fields: [{
-            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_")),
+            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_"))
           }, {
-            node: c2Hit_phys_enemyRes__,
-          }],
+            node: c2Hit_phys_enemyRes__
+          }]
         },
         launched: {
           name: ct.ch("c2.launched"),
           fields: [{
-            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_")),
+            node: infoMut(c2Hit_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_"))
           }, {
-            node: c2Hit_phys_enemyRes__,
-          }],
-        },
-      },
+            node: c2Hit_phys_enemyRes__
+          }]
+        }
+      }
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -256,15 +256,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.duration,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.enerCost,
-      }],
+      }]
     }, ct.condTem("burst", {
       value: condBurstAbsorption,
       path: condBurstAbsorptionPath,
@@ -273,14 +273,14 @@ const sheet: ICharacterSheet = {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
           node: infoMut(dmgFormulas.burst.absorb, { name: ct.chg(`burst.skillParams.1`), multi: dm.burst.absorbTicks }),
-        }],
-      }])),
+        }]
+      }]))
     }), ct.headerTem("passive2", {
       fields: [{
         text: ct.ch("regenEner"),
       }, {
         text: ct.ch("q"),
-      }],
+      }]
     }), ct.condTem("constellation6", { // C6 Anemo
       value: condC6,
       path: condC6Path,
@@ -289,18 +289,18 @@ const sheet: ICharacterSheet = {
       states: {
         takeDmg: {
           fields: [{
-            node: infoMut(c6_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_")),
-          }],
-        },
-      },
+            node: infoMut(c6_anemo_enemyRes_, KeyMap.info("anemo_enemyRes_"))
+          }]
+        }
+      }
     }), ct.headerTem("constellation6", { // C6 elemental self-display
       fields: absorbableEle.map(eleKey => (
         { node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`] }
       )),
       canShow: unequal(condBurstAbsorption, undefined,
         equal(condC6, "takeDmg",
-          equal(target.charKey, key, 1),
-        ),
+          equal(target.charKey, key, 1)
+        )
       ),
     }), ct.condTem("constellation6", { // C6 elemental team-display
       value: condBurstAbsorption,
@@ -311,9 +311,9 @@ const sheet: ICharacterSheet = {
       states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
         name: <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>,
         fields: [{
-          node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`],
-        }],
-      }])),
+          node: c6_ele_enemyRes_arr[`${eleKey}_enemyRes_`]
+        }]
+      }]))
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -331,14 +331,14 @@ const sheet: ICharacterSheet = {
           pickup: {
             fields: [{
               node: c4_anemo_dmg_,
-            }],
-          },
-        },
+            }]
+          }
+        }
       }),
     ]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  },
+  }
 }
 
 export default new CharacterSheet(sheet, data)

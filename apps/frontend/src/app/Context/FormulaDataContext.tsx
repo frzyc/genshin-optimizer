@@ -1,6 +1,6 @@
-import { createContext, useCallback, useState } from "react"
-import type { NodeDisplay, UIData } from "../Formula/uiData"
-import useBoolState from "../ReactHooks/useBoolState"
+import { createContext, useCallback, useState } from "react";
+import { NodeDisplay, UIData } from "../Formula/uiData";
+import useBoolState from "../ReactHooks/useBoolState";
 
 type FormulaDataContextObj = {
   data?: UIData,
@@ -10,7 +10,7 @@ type FormulaDataContextObj = {
   onModalClose: () => void,
   setFormulaData: (data?: UIData, node?: NodeDisplay) => void
 }
-export const FormulaDataContext = createContext({ setFormulaData: () => { }, onModalOpen: () => { }, onModalClose: () => { } } as FormulaDataContextObj)
+export const FormulaDataContext = createContext({ setFormulaData: () => { }, onModalOpen: () => { }, onModalClose: () => { } } as FormulaDataContextObj);
 
 export function FormulaDataWrapper({ children }: { children: JSX.Element }) {
   const [open, onOpen, onClose] = useBoolState()

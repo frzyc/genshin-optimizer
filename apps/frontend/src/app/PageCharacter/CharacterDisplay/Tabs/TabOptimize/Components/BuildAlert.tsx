@@ -1,6 +1,6 @@
-import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material'
-import type { ReactNode } from 'react'
-import { timeStringMs } from '../../../../../Util/TimeUtil'
+import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material';
+import { ReactNode } from 'react';
+import { timeStringMs } from '../../../../../Util/TimeUtil';
 
 export const warningBuildNumber = 10000000
 export type BuildStatus = {
@@ -14,13 +14,13 @@ export type BuildStatus = {
 }
 
 const Monospace = styled("strong")({
-  fontFamily: "monospace",
+  fontFamily: "monospace"
 })
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
   borderRadius: 5,
-}))
+}));
 export default function BuildAlert({ status: { type, tested, failed, skipped, total, startTime, finishTime }, characterName }: { status: BuildStatus, characterName: Displayable }) {
   const hasTotal = isFinite(total)
 
@@ -52,8 +52,8 @@ export default function BuildAlert({ status: { type, tested, failed, skipped, to
 
   return <Alert severity={color} variant="filled" sx={{
     "& .MuiAlert-message": {
-      flexGrow: 1,
-    },
+      flexGrow: 1
+    }
   }}>
     {title}
     {subtitle}

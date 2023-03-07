@@ -1,10 +1,10 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -22,7 +22,7 @@ const def_ = equal(condStack, "moreThanOne", subscript(input.weapon.refineIndex,
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    def_,
+    def_
   },
 })
 const sheet: IWeaponSheet = {
@@ -35,13 +35,13 @@ const sheet: IWeaponSheet = {
     states: {
       "oneOrNone": {
         name: trm("opponents.oneOrNone"),
-        fields: [{ node: atk_ }, { node: def_ }],
+        fields: [{ node: atk_ }, { node: def_ }]
       },
       "moreThanOne": {
         name: trm("opponents.moreThanOne"),
-        fields: [{ node: atk_ }, { node: def_ }],
+        fields: [{ node: atk_ }, { node: def_ }]
       },
-    },
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

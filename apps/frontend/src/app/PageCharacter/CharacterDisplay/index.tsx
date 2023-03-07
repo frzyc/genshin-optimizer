@@ -1,48 +1,45 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { BarChart, Calculate, FactCheck, Groups, Person, Science, TrendingUp } from '@mui/icons-material'
-import { Box, Button, CardContent, Skeleton, Tab, Tabs } from '@mui/material'
-import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom'
-import CardDark from '../../Components/Card/CardDark'
-import CardLight from '../../Components/Card/CardLight'
-import CloseButton from '../../Components/CloseButton'
-import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../../Components/HitModeEditor'
-import LevelSelect from '../../Components/LevelSelect'
-import SqBadge from '../../Components/SqBadge'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext'
-import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
-import { GraphContext } from '../../Context/GraphContext'
-import { getCharSheet } from '../../Data/Characters'
-import { DatabaseContext } from '../../Database/Database'
-import useBoolState from '../../ReactHooks/useBoolState'
-import useCharacter from '../../ReactHooks/useCharacter'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useDBMeta from '../../ReactHooks/useDBMeta'
-import useTeamData from '../../ReactHooks/useTeamData'
-import useTitle from '../../ReactHooks/useTitle'
-import { charKeyToCharName } from '../../Types/consts'
-import { CustomMultiTargetButton } from '../CustomMultiTarget'
-import CharSelectButton from './CharSelectButton'
-import FormulaModal from './FormulaModal'
-import StatModal from './StatModal'
-import TabBuild from './Tabs/TabOptimize'
-import TabOverview from './Tabs/TabOverview'
-import TabTalent from './Tabs/TabTalent'
-import TabTeambuffs from './Tabs/TabTeambuffs'
-import TabTheorycraft from './Tabs/TabTheorycraft'
-import TravelerElementSelect from './TravelerElementSelect'
-import TravelerGenderSelect from './TravelerGenderSelect'
+import { CharacterKey } from '@genshin-optimizer/consts';
+import { BarChart, Calculate, FactCheck, Groups, Person, Science, TrendingUp } from '@mui/icons-material';
+import { Box, Button, CardContent, Skeleton, Tab, Tabs } from '@mui/material';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink, Navigate, Route, Routes, useMatch, useNavigate, useParams } from 'react-router-dom';
+import CardDark from '../../Components/Card/CardDark';
+import CardLight from '../../Components/Card/CardLight';
+import CloseButton from '../../Components/CloseButton';
+import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../../Components/HitModeEditor';
+import LevelSelect from '../../Components/LevelSelect';
+import SqBadge from '../../Components/SqBadge';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
+import { DataContext, dataContextObj } from '../../Context/DataContext';
+import { FormulaDataContext, FormulaDataWrapper } from '../../Context/FormulaDataContext';
+import { ChartData, GraphContext, GraphContextObj } from '../../Context/GraphContext';
+import { getCharSheet } from '../../Data/Characters';
+import { DatabaseContext } from '../../Database/Database';
+import useBoolState from '../../ReactHooks/useBoolState';
+import useCharacter from '../../ReactHooks/useCharacter';
+import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useDBMeta from '../../ReactHooks/useDBMeta';
+import useTeamData from '../../ReactHooks/useTeamData';
+import useTitle from '../../ReactHooks/useTitle';
+import { charKeyToCharName } from '../../Types/consts';
+import { CustomMultiTargetButton } from '../CustomMultiTarget';
+import CharSelectButton from './CharSelectButton';
+import FormulaModal from './FormulaModal';
+import StatModal from './StatModal';
+import TabBuild from './Tabs/TabOptimize';
+import TabOverview from './Tabs/TabOverview';
+import TabTalent from './Tabs/TabTalent';
+import TabTeambuffs from './Tabs/TabTeambuffs';
+import TabTheorycraft from './Tabs/TabTheorycraft';
+import TravelerElementSelect from './TravelerElementSelect';
+import TravelerGenderSelect from './TravelerGenderSelect';
 
 export default function CharacterDisplay() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { database } = useContext(DatabaseContext)
   const onClose = useCallback(() => navigate("/characters"), [navigate])
-  const { characterKey } = useParams<{ characterKey?: CharacterKey }>()
+  const { characterKey } = useParams<{ characterKey?: CharacterKey }>();
   const invalidKey = !database.chars.keys.includes(characterKey as CharacterKey)
   if (invalidKey)
     return <Navigate to="/characters" />
@@ -85,7 +82,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
     return {
       character,
       characterSheet,
-      characterDispatch,
+      characterDispatch
     }
   }, [character, characterSheet, characterDispatch])
 
@@ -96,7 +93,7 @@ function CharacterDisplayCard({ characterKey, onClose }: CharacterDisplayCardPro
       chartData,
       setChartData,
       graphBuilds,
-      setGraphBuilds,
+      setGraphBuilds
     }
   }, [chartData, graphBuilds])
 
@@ -161,7 +158,7 @@ function TabNav({ tab }: { tab: string }) {
     sx={{
       "& .MuiTab-root:hover": {
         transition: "background-color 0.25s ease",
-        backgroundColor: "rgba(255,255,255,0.1)",
+        backgroundColor: "rgba(255,255,255,0.1)"
       },
     }}
   >

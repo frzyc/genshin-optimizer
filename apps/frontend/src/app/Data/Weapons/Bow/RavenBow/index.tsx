@@ -1,9 +1,9 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { cond, st } from '../../../SheetUtil'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
@@ -18,8 +18,8 @@ const all_dmg_ = equal(condPassive, "on", subscript(input.weapon.refineIndex, al
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    all_dmg_,
-  },
+    all_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -31,11 +31,11 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: all_dmg_,
-        }],
-      },
-    },
-  }],
+          node: all_dmg_
+        }]
+      }
+    }
+  }]
 }
 
 export default new WeaponSheet(key, sheet, data_gen, data)

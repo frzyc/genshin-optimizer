@@ -1,10 +1,10 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
@@ -19,18 +19,18 @@ const dmg = equal(input.weapon.key, key, customDmgNode(
   prod(
     subscript(
       input.weapon.refineIndex, dmg_Src, { unit: "%" }),
-    input.total.atk,
+    input.total.atk
   ),
   "elemental",
-  { hit: { ele: constant("physical") }},
+  { hit: { ele: constant("physical") }}
 ))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    burst_dmg_,
+    burst_dmg_
   },
 }, {
-  dmg,
+  dmg
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -39,12 +39,12 @@ const sheet: IWeaponSheet = {
   }, {
     header: headerTemplate(key, st("conditional")),
     fields: [{
-      node: infoMut(dmg, { name: st("dmg") }),
+      node: infoMut(dmg, { name: st("dmg") })
     }, {
       text: stg("cd"),
       value: 15,
-      unit: "s",
-    }],
+      unit: "s"
+    }]
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

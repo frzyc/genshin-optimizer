@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -25,15 +25,15 @@ const selfEleMas = equal(input.weapon.key, key,
     prod(
       stack,
       subscript(input.weapon.refineIndex, selfEmSrc, { unit: "%", fixed: 2 }),
-      input.total.hp,
-    ),
-  ])), naught),
+      input.total.hp
+    )
+  ])), naught)
 )
 const teamEleMas = equal(input.weapon.key, key,
   equal(condAfterSkillStacks, "3",
     prod(
       subscript(input.weapon.refineIndex, teamEmSrc, { unit: "%", fixed: 2 }),
-      input.total.hp,
+      input.total.hp
     )))
 
 const data = dataObjForWeaponSheet(key, data_gen, {
@@ -41,21 +41,21 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     hp_,
   },
   total: {
-    eleMas: selfEleMas,
+    eleMas: selfEleMas
   },
   teamBuff: {
     total: {
-      eleMas: teamEleMas,
-    },
-  },
+      eleMas: teamEleMas
+    }
+  }
 }, {
-  selfEleMas, teamEleMas,
+  selfEleMas, teamEleMas
 })
 
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
-    fields: [{ node: hp_ }],
+    fields: [{ node: hp_ }]
   }, {
     header: headerTemplate(key, st("stacks")),
     teamBuff: true,
@@ -67,25 +67,25 @@ const sheet: IWeaponSheet = {
       {
         name: st("stack", { count: stack }),
         fields: [{
-          node: selfEleMas,
+          node: selfEleMas
         }, {
           text: stg("duration"),
           value: 20,
-          unit: "s",
-        }],
-      },
-    ])),
+          unit: "s"
+        }]
+      }
+    ]))
   }, {
     header: headerTemplate(key, st("teamBuff")),
     canShow: equal(condAfterSkillStacks, "3", 1),
     teamBuff: true,
     fields: [{
-      node: teamEleMas,
+      node: teamEleMas
     }, {
       text: stg("duration"),
       value: 20,
-      unit: "s",
-    }],
+      unit: "s"
+    }]
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,12 +1,12 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from "../../../Formula/index"
 import { compareEq, constant, equal, greaterEq, infoMut, min, one, percent, prod, subscript, sum } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -27,12 +27,12 @@ const dm = {
       (skillParam_gen.auto[4]),//4
       (skillParam_gen.auto[5]),//5
       // (skillParam_gen.auto[6]),
-    ],
+    ]
   },
   charged: {
     hit1: (skillParam_gen.auto[7]),
     hit2: (skillParam_gen.auto[8]),
-    stamina: skillParam_gen.auto[9][0],
+    stamina: skillParam_gen.auto[9][0]
   },
   plunging: {
     dmg: (skillParam_gen.auto[10]),
@@ -53,14 +53,14 @@ const dm = {
     cost: skillParam_gen.burst[b++][0],
   },
   passive2: {
-    hydro_dmg_: 0.20,
+    hydro_dmg_: 0.20
   },
   constellation2: {
     hydro_enemyRes_: -0.15,
-    burst_duration: 3,
+    burst_duration: 3
   },
   constellation4: {
-    dmg_: 1.50,
+    dmg_: 1.50
   },
 } as const
 
@@ -76,7 +76,7 @@ const nodeC4 = compareEq(
   1,
   dm.constellation4.dmg_,
   one,
-  { name: st("dmgMult.skill"), unit: "%" },
+  { name: st("dmgMult.skill"), unit: "%" }
 )
 
 const nodeSkillDmgRed_ = sum(subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: "%" }), min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_)))
@@ -88,7 +88,7 @@ export const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     dmg1: dmgNode("atk", dm.charged.hit1, "charged"),
-    dmg2: dmgNode("atk", dm.charged.hit2, "charged"),
+    dmg2: dmgNode("atk", dm.charged.hit2, "charged")
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -98,11 +98,11 @@ export const dmgFormulas = {
     dmgRed_: nodeSkillDmgRed_,
   },
   passive1: {
-    healing: nodeA4Heal,
+    healing: nodeA4Heal
   },
   burst: {
     dmg: dmgNode("atk", dm.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
-  },
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -110,13 +110,13 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   teamBuff: {
     premod: {
       hydro_enemyRes_: nodeC2,
-    },
+    }
   },
   premod: {
     skillBoost: nodeC5,
     burstBoost: nodeC3,
     hydro_dmg_: nodeA4,
-  },
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -135,7 +135,7 @@ const sheet: ICharacterSheet = {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 2 || i === 4) ? 2 : undefined }),
 
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -146,7 +146,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-      }],
+      }]
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -156,7 +156,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -169,23 +169,23 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.duration,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: dm.skill.cd,
-        unit: "s",
-      }],
+        unit: "s"
+      }]
     }]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cost,
-      }],
+      }]
     }, ct.condTem("burst", {
       value: condBurst,
       path: condBurstPath,
@@ -199,23 +199,23 @@ const sheet: ICharacterSheet = {
             value: data => data.get(input.constellation).value >= 2
               ? `${dm.burst.duration}s + ${dm.constellation2.burst_duration}s = ${dm.burst.duration + dm.constellation2.burst_duration}`
               : `${dm.burst.duration}`,
-            unit: "s",
+            unit: "s"
           }, {
-            node: nodeC4,
-          }],
-        },
-      },
+            node: nodeC4
+          }]
+        }
+      }
     })]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
         node: infoMut(dmgFormulas.passive1.healing, { name: stg(`healing`) }),
-      }],
+      }]
     })]),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: nodeA4,
-      }],
+        node: nodeA4
+      }]
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -227,10 +227,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC2,
-          }],
-        },
-      },
+            node: nodeC2
+          }]
+        }
+      }
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
@@ -239,4 +239,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data)
+export default new CharacterSheet(sheet, data);

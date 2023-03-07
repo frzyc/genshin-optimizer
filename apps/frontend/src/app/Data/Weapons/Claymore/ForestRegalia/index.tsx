@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -21,9 +21,9 @@ const eleMas = equal(input.activeCharKey, target.charKey, eleMas_disp)
 const data = dataObjForWeaponSheet(key, data_gen, {
   teamBuff: {
     premod: {
-      eleMas,
-    },
-  },
+      eleMas
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -40,14 +40,14 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 12,
-          unit: "s",
+          unit: "s"
         }, {
           text: stg("cd"),
           value: 20,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

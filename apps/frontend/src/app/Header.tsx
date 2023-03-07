@@ -1,13 +1,13 @@
-import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material"
-import { AppBar, Box, Button, Chip, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material"
-import { Suspense, useContext, useEffect, useMemo, useState } from "react"
-import { Trans, useTranslation } from "react-i18next"
-import { Link as RouterLink, useMatch } from "react-router-dom"
-import Assets from "./Assets/Assets"
-import { DatabaseContext } from "./Database/Database"
-import useDBMeta from "./ReactHooks/useDBMeta"
-import useForceUpdate from "./ReactHooks/useForceUpdate"
-import FlowerIcon from "./SVGIcons/ArtifactSlot/FlowerIcon"
+import { Article, Construction, Menu as MenuIcon, People, Scanner, Settings } from "@mui/icons-material";
+import { AppBar, Box, Button, Chip, Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Skeleton, Tab, Tabs, Toolbar, Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Suspense, useContext, useEffect, useMemo, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { Link as RouterLink, useMatch } from "react-router-dom";
+import Assets from "./Assets/Assets";
+import { DatabaseContext } from "./Database/Database";
+import useDBMeta from "./ReactHooks/useDBMeta";
+import useForceUpdate from "./ReactHooks/useForceUpdate";
+import FlowerIcon from "./SVGIcons/ArtifactSlot/FlowerIcon";
 type ITab = {
   i18Key: string,
   icon: Displayable,
@@ -20,21 +20,21 @@ const artifacts: ITab = {
   icon: <FlowerIcon />,
   to: "/artifacts",
   value: "artifacts",
-  textSuffix: <ArtifactChip key="weaponAdd" />,
+  textSuffix: <ArtifactChip key="weaponAdd" />
 }
 const weapons: ITab = {
   i18Key: "tabs.weapons",
   icon: Assets.svg.anvil,
   to: "/weapons",
   value: "weapons",
-  textSuffix: <WeaponChip key="weaponAdd" />,
+  textSuffix: <WeaponChip key="weaponAdd" />
 }
 const characters: ITab = {
   i18Key: "tabs.characters",
   icon: <People />,
   to: "/characters",
   value: "characters",
-  textSuffix: <CharacterChip key="charAdd" />,
+  textSuffix: <CharacterChip key="charAdd" />
 }
 const tools: ITab = {
   i18Key: "tabs.tools",
@@ -59,7 +59,7 @@ const setting: ITab = {
   icon: <Settings />,
   to: "/setting",
   value: "setting",
-  textSuffix: <DBChip />,
+  textSuffix: <DBChip />
 }
 
 function DBChip() {
@@ -71,14 +71,14 @@ function ArtifactChip() {
   const { database } = useContext(DatabaseContext)
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.arts.followAny(() => setDirty()), [database, setDirty])
-  const total = useMemo(() => dirty && database.arts.keys.length, [dirty, database])
+  const total = useMemo(() => dirty && database.arts.keys.length, [dirty, database,])
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function CharacterChip() {
   const { database } = useContext(DatabaseContext)
   const [dirty, setDirty] = useForceUpdate()
   useEffect(() => database.chars.followAny(() => setDirty()), [database, setDirty])
-  const total = useMemo(() => dirty && database.chars.keys.length, [dirty, database])
+  const total = useMemo(() => dirty && database.chars.keys.length, [dirty, database,])
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 function WeaponChip() {
@@ -97,13 +97,13 @@ export default function Header(props) {
 
 const maincontent = [artifacts, weapons, characters, tools, scanner, doc, setting] as const
 function HeaderContent({ anchor }) {
-  const theme = useTheme()
-  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const theme = useTheme();
+  const isXL = useMediaQuery(theme.breakpoints.up('xl'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const { t } = useTranslation("ui")
 
-  const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } }
+  const { params: { currentTab } } = useMatch({ path: "/:currentTab", end: false }) ?? { params: { currentTab: "" } };
   if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
   return <Box>
     <AppBar position="static" sx={{ bgcolor: "#343a40" }} elevation={0} id={anchor} >
@@ -117,7 +117,7 @@ function HeaderContent({ anchor }) {
           },
           "& .MuiTab-root:hover": {
             transition: "background-color 0.5s ease",
-            backgroundColor: "rgba(255,255,255,0.1)",
+            backgroundColor: "rgba(255,255,255,0.1)"
           },
         }}
       >
@@ -138,11 +138,11 @@ function HeaderContent({ anchor }) {
 
 const mobileContent = [artifacts, weapons, characters, tools, scanner, doc, setting] as const
 function MobileHeader({ anchor, currentTab }) {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
+    setMobileOpen(!mobileOpen);
+  };
 
   const { t } = useTranslation("ui")
   return <>

@@ -1,4 +1,4 @@
-import type { AnyNode, Base, NodeData, NumNode, StrNode } from "./type"
+import { AnyNode, Base, NodeData, NumNode, StrNode } from "./type"
 import { constant } from "./utils"
 
 export function deepNodeClone<T extends NodeData<NumNode | StrNode | undefined>>(data: T): T {

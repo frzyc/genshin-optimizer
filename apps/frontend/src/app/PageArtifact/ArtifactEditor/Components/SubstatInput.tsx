@@ -1,21 +1,20 @@
-import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, Typography } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
-import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay'
-import CardLight from '../../../Components/Card/CardLight'
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../../Components/CustomNumberInput'
-import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
-import PercentBadge from '../../../Components/PercentBadge'
-import SqBadge from '../../../Components/SqBadge'
-import TextButton from '../../../Components/TextButton'
-import Artifact, { artifactSubRolls } from '../../../Data/Artifacts/Artifact'
-import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
-import KeyMap, { cacheValueString } from '../../../KeyMap'
-import StatIcon from '../../../KeyMap/StatIcon'
-import type { ICachedArtifact, ISubstat } from '../../../Types/artifact'
-import { allSubstatKeys } from '../../../Types/artifact'
-import type { RollColorKey } from '../../../Types/consts'
-import { clamp } from '../../../Util/Util'
+import { Box, Button, ButtonGroup, Grid, ListItemIcon, ListItemText, MenuItem, Slider, Typography } from '@mui/material';
+import { useEffect, useMemo, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import { ArtifactStatWithUnit } from '../../../Components/Artifact/ArtifactStatKeyDisplay';
+import CardLight from '../../../Components/Card/CardLight';
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../../Components/CustomNumberInput';
+import DropdownButton from '../../../Components/DropdownMenu/DropdownButton';
+import PercentBadge from '../../../Components/PercentBadge';
+import SqBadge from '../../../Components/SqBadge';
+import TextButton from '../../../Components/TextButton';
+import Artifact, { artifactSubRolls } from '../../../Data/Artifacts/Artifact';
+import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json';
+import KeyMap, { cacheValueString } from '../../../KeyMap';
+import StatIcon from '../../../KeyMap/StatIcon';
+import { allSubstatKeys, ICachedArtifact, ISubstat } from '../../../Types/artifact';
+import { RollColorKey } from '../../../Types/consts';
+import { clamp } from '../../../Util/Util';
 
 export default function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
   const { t } = useTranslation("artifact")
@@ -31,7 +30,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
     // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const rarity = artifact.rarity
     const { numUpgrades, high } = Artifact.rollInfo(rarity)
-    const maxRollNum = numUpgrades + high - 3
+    const maxRollNum = numUpgrades + high - 3;
     allowedRolls = maxRollNum - rollNum
     rollData = key ? Artifact.getSubstatRollData(key, rarity) : []
   }
@@ -40,7 +39,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
   if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
   if (allowedRolls < 0) error = error || t("editor.substat.error.noOverRoll", { value: allowedRolls + rollNum })
 
-  const marks = useMemo(() => key ? [{ value: 0 }, ...artifactSubRolls(rarity, key).map(v => ({ value: v }))] : [{ value: 0 }], [key, rarity])
+  const marks = useMemo(() => key ? [{ value: 0 }, ...artifactSubRolls(rarity, key).map(v => ({ value: v, }))] : [{ value: 0 }], [key, rarity])
 
   return <CardLight>
     <Box sx={{ display: "flex" }}>
@@ -70,7 +69,7 @@ export default function SubstatInput({ index, artifact, setSubstat }: { index: n
               px: 1,
             }}
             inputProps={{
-              sx: { textAlign: "right" },
+              sx: { textAlign: "right" }
             }}
           />
         </CustomNumberInputButtonGroupWrapper>

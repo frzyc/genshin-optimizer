@@ -1,34 +1,31 @@
-import type { ArtifactSlotKey, CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import { Favorite, FavoriteBorder } from '@mui/icons-material'
-import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo } from 'react'
-import type { CharacterContextObj } from '../../Context/CharacterContext'
-import { CharacterContext } from '../../Context/CharacterContext'
-import type { dataContextObj } from '../../Context/DataContext'
-import { DataContext } from '../../Context/DataContext'
-import { getCharSheet } from '../../Data/Characters'
-import { ascensionMaxLevel } from '../../Data/LevelData'
-import { DatabaseContext } from '../../Database/Database'
-import { uiInput as input } from '../../Formula'
-import useCharacter from '../../ReactHooks/useCharacter'
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
-import useCharMeta from '../../ReactHooks/useCharMeta'
-import useDBMeta from '../../ReactHooks/useDBMeta'
-import useTeamData from '../../ReactHooks/useTeamData'
-import type { ICachedArtifact } from '../../Types/artifact'
-import type { ICachedCharacter } from '../../Types/character'
-import { range } from '../../Util/Util'
-import ArtifactCardPico from '../Artifact/ArtifactCardPico'
-import CardLight from '../Card/CardLight'
-import ConditionalWrapper from '../ConditionalWrapper'
-import { NodeFieldDisplay } from '../FieldDisplay'
-import SqBadge from '../SqBadge'
-import { StarsDisplay } from '../StarDisplay'
-import WeaponCardPico from '../Weapon/WeaponCardPico'
-import WeaponFullCard from '../Weapon/WeaponFullCard'
-import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico'
+import { allArtifactSlotKeys, ArtifactSlotKey, CharacterKey, ElementKey } from '@genshin-optimizer/consts';
+import { characterAsset } from '@genshin-optimizer/g-assets';
+import { Favorite, FavoriteBorder } from '@mui/icons-material';
+import { Box, CardActionArea, CardContent, Chip, Grid, IconButton, Skeleton, Typography } from '@mui/material';
+import { Suspense, useCallback, useContext, useMemo } from 'react';
+import { CharacterContext, CharacterContextObj } from '../../Context/CharacterContext';
+import { DataContext, dataContextObj } from '../../Context/DataContext';
+import { getCharSheet } from '../../Data/Characters';
+import { ascensionMaxLevel } from '../../Data/LevelData';
+import { DatabaseContext } from '../../Database/Database';
+import { uiInput as input } from '../../Formula';
+import useCharacter from '../../ReactHooks/useCharacter';
+import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import useCharMeta from '../../ReactHooks/useCharMeta';
+import useDBMeta from '../../ReactHooks/useDBMeta';
+import useTeamData from '../../ReactHooks/useTeamData';
+import { ICachedArtifact } from '../../Types/artifact';
+import { ICachedCharacter } from '../../Types/character';
+import { range } from '../../Util/Util';
+import ArtifactCardPico from '../Artifact/ArtifactCardPico';
+import CardLight from '../Card/CardLight';
+import ConditionalWrapper from '../ConditionalWrapper';
+import { NodeFieldDisplay } from '../FieldDisplay';
+import SqBadge from '../SqBadge';
+import { StarsDisplay } from '../StarDisplay';
+import WeaponCardPico from '../Weapon/WeaponCardPico';
+import WeaponFullCard from '../Weapon/WeaponFullCard';
+import CharacterCardPico, { BlankCharacterCardPico } from './CharacterCardPico';
 
 type CharacterCardProps = {
   characterKey: CharacterKey,
@@ -57,7 +54,7 @@ export default function CharacterCard({ characterKey, artifactChildren, weaponCh
   )
 
   const characterContextObj: CharacterContextObj | undefined = useMemo(() => character && characterSheet && {
-    character, characterSheet, characterDispatch,
+    character, characterSheet, characterDispatch
   }, [character, characterSheet, characterDispatch])
   const dataContextObj: dataContextObj | undefined = useMemo(() => data && teamData && ({
     data,
@@ -125,7 +122,7 @@ function ExistingCharacterCardContent({ characterContextObj, dataContextObj, cha
             {character.team[i]
               ? <CharacterCardPico simpleTooltip={hideStats} characterKey={character.team[i] as CharacterKey} onClick={!onClick ? onClickTeammate : undefined} />
               : <BlankCharacterCardPico index={i} />}
-          </Grid>,
+          </Grid>
         )}
       </Grid>}
       {isTeammateCard && <WeaponFullCard weaponId={character.equippedWeapon} />}
@@ -170,7 +167,7 @@ function Header({ children, characterKey, onClick }: { children: JSX.Element, ch
           backgroundImage: `url(${characterAsset(characterKey, "banner", gender)})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
-        },
+        }
       }}
       width="100%" >
       <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
@@ -251,13 +248,13 @@ function Artifacts() {
   const { data } = useContext(DataContext)
   const artifacts = useMemo(() =>
     allArtifactSlotKeys.map(k => [k, database.arts.get(data.get(input.art[k].id).value ?? "")]),
-    [data, database]) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
+    [data, database]) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>;
 
   return <Grid direction="row" container spacing={0.75} columns={5}>
     {artifacts.map(([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) =>
       <Grid item key={key} xs={1}>
         <ArtifactCardPico artifactObj={art} slotKey={key} />
-      </Grid>,
+      </Grid>
     )}
   </Grid>
 }

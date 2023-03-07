@@ -1,16 +1,14 @@
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import { Box, Button, ButtonGroup, List, ListSubheader, Popper, useMediaQuery, useTheme } from '@mui/material'
-import { useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { artStatPercent } from '../Data/Artifacts/Artifact'
-import type { InputPremodKey } from '../Formula'
-import KeyMap from '../KeyMap'
-import StatIcon from '../KeyMap/StatIcon'
-import type { MainStatKey, SubstatKey } from '../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../Types/artifact'
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput'
-import type { GeneralAutocompleteOption } from './GeneralAutocomplete'
-import { GeneralAutocomplete } from './GeneralAutocomplete'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { Box, Button, ButtonGroup, List, ListSubheader, Popper, useMediaQuery, useTheme } from '@mui/material';
+import { useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { artStatPercent } from '../Data/Artifacts/Artifact';
+import { InputPremodKey } from '../Formula';
+import KeyMap from '../KeyMap';
+import StatIcon from '../KeyMap/StatIcon';
+import { allMainStatKeys, allSubstatKeys, MainStatKey, SubstatKey } from '../Types/artifact';
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from './CustomNumberInput';
+import { GeneralAutocomplete, GeneralAutocompleteOption } from './GeneralAutocomplete';
 
 export default function StatEditorList({ statKeys, statFilters, setStatFilters, disabled = false, wrapperFunc = (ele) => ele }: {
   statKeys: InputPremodKey[], statFilters: Dict<InputPremodKey, number>, setStatFilters: (statFilters: Dict<InputPremodKey, number>) => void, disabled?: boolean, wrapperFunc?: (ele: JSX.Element, key?: string) => JSX.Element
@@ -20,14 +18,14 @@ export default function StatEditorList({ statKeys, statFilters, setStatFilters, 
     key: statKey,
     grouper: inputPremodKeyToGroupMap[statKey],
     label: ([...allMainStatKeys, ...allSubstatKeys] as string[]).includes(statKey) ? `${tk(statKey as MainStatKey | SubstatKey)}${artStatPercent(statKey as MainStatKey | SubstatKey)}` : (KeyMap.getStr(statKey) ?? "ERROR"),
-    variant: KeyMap.getVariant(statKey),
+    variant: KeyMap.getVariant(statKey)
   })).sort((a, b) =>
-    allGroupKeys.indexOf(a.grouper as GroupKey) - allGroupKeys.indexOf(b.grouper as GroupKey),
+    allGroupKeys.indexOf(a.grouper as GroupKey) - allGroupKeys.indexOf(b.grouper as GroupKey)
   ), [tk, statKeys])
 
   const getOptionDiabled = useCallback((option: StatOption) =>
     Object.keys(statFilters).includes(option.key),
-    [statFilters],
+    [statFilters]
   )
 
   const setKey = useCallback(
@@ -65,7 +63,7 @@ export default function StatEditorList({ statKeys, statFilters, setStatFilters, 
         setKey={setKey}
         delKey={delKey}
         getOptionDisabled={getOptionDiabled}
-      />, statKey),
+      />, statKey)
     )}
     {wrapperFunc(<StatFilterItem
       key={Object.entries(statFilters).length}
@@ -137,7 +135,7 @@ function StatFilterItem({ statKey, statKeyOptions = [], value = 0, delKey, setKe
         value={value}
         placeholder="Stat Value"
         onChange={onValueChange}
-        sx={{ px: 1 }}
+        sx={{ px: 1, }}
         inputProps={{ sx: { textAlign: "right" } }}
         endAdornment={statKey ? KeyMap.unit(statKey) : undefined}
       />
@@ -285,5 +283,5 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   healInc: "misc",
   base_atk: "base_stat_mod",
   base_hp: "base_stat_mod",
-  base_def: "base_stat_mod",
+  base_def: "base_stat_mod"
 }

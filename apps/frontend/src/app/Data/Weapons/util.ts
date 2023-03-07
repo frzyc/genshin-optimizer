@@ -1,11 +1,11 @@
-import type { WeaponData } from "@genshin-optimizer/pipeline"
-import { inferInfoMut, mergeData } from "../../Formula/api"
-import type { WeaponKey } from "../../Types/consts"
-import _weaponCurves from "./expCurve_gen.json"
-import { input } from "../../Formula"
-import type { Data, DisplaySub } from "../../Formula/type"
-import { infoMut, prod, constant, subscript, sum } from "../../Formula/utils"
-import KeyMap from "../../KeyMap"
+import type { WeaponData } from "@genshin-optimizer/pipeline";
+import { inferInfoMut, mergeData } from "../../Formula/api";
+import { WeaponKey } from "../../Types/consts";
+import _weaponCurves from "./expCurve_gen.json";
+import { input } from "../../Formula";
+import { Data, DisplaySub } from "../../Formula/type";
+import { infoMut, prod, constant, subscript, sum } from "../../Formula/utils";
+import KeyMap from "../../KeyMap";
 
 // TODO: Remove this conversion after changing the file format
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
@@ -24,7 +24,7 @@ export function dataObjForWeaponSheet(
       key: constant(key), type: constant(gen.weaponType),
     },
     display: {
-      [`weapon:${key}`]: displayWeapon,
+      [`weapon:${key}`]: displayWeapon
     },
   }
 

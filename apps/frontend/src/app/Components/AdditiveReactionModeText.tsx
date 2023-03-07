@@ -1,12 +1,12 @@
-import { Box } from "@mui/material"
-import { useTranslation } from "react-i18next"
-import { ElementIcon } from "../KeyMap/StatIcon"
-import { iconInlineProps } from "../SVGIcons"
-import DendroIcon from "../SVGIcons/Element/DendroIcon"
-import ElectroIcon from "../SVGIcons/Element/ElectroIcon"
-import type { AdditiveReactionKey } from "../Types/consts"
-import ColorText from "./ColoredText"
-import SqBadge from "./SqBadge"
+import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { ElementIcon } from "../KeyMap/StatIcon";
+import { iconInlineProps } from "../SVGIcons";
+import DendroIcon from "../SVGIcons/Element/DendroIcon";
+import ElectroIcon from "../SVGIcons/Element/ElectroIcon";
+import { AdditiveReactionKey } from "../Types/consts";
+import ColorText from "./ColoredText";
+import SqBadge from "./SqBadge";
 
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export default function AdditiveReactionModeText({ reaction }: { reaction: AdditiveReactionKey }) {

@@ -1,12 +1,12 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, prod, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "FlowerOfParadiseLost"
@@ -23,7 +23,7 @@ const [condStacksPath, condStacks] = cond(key, "stacks")
 const stacksArr = range(1, 4)
 const stack_bloom_dmg_ = greaterEq(input.artSet.FlowerOfParadiseLost, 4, lookup(condStacks, Object.fromEntries(stacksArr.map(stack => [
   stack,
-  prod(stack, percent(0.1)),
+  prod(stack, percent(0.1))
 ])), naught, KeyMap.info("bloom_dmg_")))
 const stack_hyperbloom_dmg_ = { ...stack_bloom_dmg_, info: KeyMap.info("hyperbloom_dmg_") }
 const stack_burgeon_dmg_ = { ...stack_bloom_dmg_, info: KeyMap.info("burgeon_dmg_") }
@@ -45,12 +45,12 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: base_bloom_dmg_,
+          node: base_bloom_dmg_
         }, {
-          node: base_hyperbloom_dmg_,
+          node: base_hyperbloom_dmg_
         }, {
-          node: base_burgeon_dmg_,
-        }],
+          node: base_burgeon_dmg_
+        }]
       }, {
         header: setHeader(4),
         path: condStacksPath,
@@ -68,12 +68,12 @@ const sheet: IArtifactSheet = {
             }, {
               text: stg("duration"),
               value: 10,
-              unit: "s",
-            }],
-          },
-        ])),
-      }],
-    },
-  },
+              unit: "s"
+            }]
+          }
+        ]))
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

@@ -1,12 +1,12 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, min, percent, prod, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++], // 4
       skillParam_gen.auto[a++], // 5.1
       skillParam_gen.auto[a++], // 5.2
-    ],
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -40,7 +40,7 @@ const dm = {
   skill: {
     hit1: skillParam_gen.skill[s++],
     hit2: skillParam_gen.skill[s++],
-    cd: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0]
   },
   burst: {
     hit1: skillParam_gen.burst[b++],
@@ -48,16 +48,16 @@ const dm = {
     dotDmg: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0]
   },
   passive1: {
     crInc: skillParam_gen.passive1[p1++][0],
-    duration: skillParam_gen.passive1[p1++][0],
+    duration: skillParam_gen.passive1[p1++][0]
   },
   passive2: {
     crBonus: skillParam_gen.passive2[p2++][0],
     duration: skillParam_gen.passive2[p2++][0],
-    maxBonus: skillParam_gen.passive2[p2++][0],
+    maxBonus: skillParam_gen.passive2[p2++][0]
   },
   constellation1: {
     atkSpdInc: skillParam_gen.constellation1[c1i++],
@@ -79,9 +79,9 @@ const nodeA1CritInc = equal(condA1, "on", greaterEq(input.asc, 1, dm.passive1.cr
 const nodeA4OptTarget = infoMut(
   greaterEq(input.asc, 4, min(
     prod(percent(dm.passive2.crBonus), input.premod.critRate_),
-    percent(dm.passive2.maxBonus),
+    percent(dm.passive2.maxBonus)
   )),
-  { ...KeyMap.info("critRate_"), isTeamBuff: true },
+  { ...KeyMap.info("critRate_"), isTeamBuff: true }
 )
 const nodeA4CritBonusDisp = equal(condA4, "on", nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
@@ -108,8 +108,8 @@ const dmgFormulas = {
     dotDmg: dmgNode("atk", dm.burst.dotDmg, "burst"),
   },
   passive2: {
-    nodeA4OptTarget,
-  },
+    nodeA4OptTarget
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -124,12 +124,12 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
   },
   teamBuff: {
     premod: {
-      physical_enemyRes_: nodeC6PhysShred,
+      physical_enemyRes_: nodeC6PhysShred
     },
     total: {
-      critRate_: nodeA4CritBonus,
-    },
-  },
+      critRate_: nodeA4CritBonus
+    }
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
           textSuffix: i === 4 ? "(1)" : i === 5 ? "(2)" : "",
           multi: i === 2 ? 2 : undefined,
         }),
-      })),
+      }))
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -160,7 +160,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-      }],
+      }]
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -170,7 +170,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }],
+      }]
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -181,8 +181,8 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: dm.skill.cd,
-        unit: 's',
-      }],
+        unit: 's'
+      }]
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -191,15 +191,15 @@ const sheet: ICharacterSheet = {
       }, {
         node: infoMut(dmgFormulas.burst.hit2, { name: ct.chg(`burst.skillParams.0`), textSuffix: "(2)" }),
       }, {
-        node: infoMut(dmgFormulas.burst.dotDmg, { name: ct.chg(`burst.skillParams.1`) }),
+        node: infoMut(dmgFormulas.burst.dotDmg, { name: ct.chg(`burst.skillParams.1`) })
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cd,
-        unit: "s",
+        unit: "s"
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.cost,
-      }],
+      }]
     }, ct.condTem("constellation6", {
       value: condC6,
       path: condC6Path,
@@ -208,14 +208,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC6PhysShred,
+            node: nodeC6PhysShred
           }, {
             text: stg("duration"),
             value: dm.constellation6.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
 
     passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
@@ -225,14 +225,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeA1CritInc,
+            node: nodeA1CritInc
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       name: st("afterUse.burst"),
@@ -248,10 +248,10 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     }), ct.condTem("passive1", {
       // A1 conditional in teambuff, if A4 is active
       path: condA1Path,
@@ -262,17 +262,17 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeA1CritInc,
+            node: nodeA1CritInc
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     }), ct.fieldsTem("passive2", {
       canShow: equal(input.activeCharKey, key, 1),
-      fields: [{ node: dmgFormulas.passive2.nodeA4OptTarget }],
+      fields: [{ node: dmgFormulas.passive2.nodeA4OptTarget }]
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.condTem("constellation1", {
@@ -282,16 +282,16 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC1NormalInc,
+            node: nodeC1NormalInc
           }, {
             node: nodeC1AtkSpd,
           }, {
             text: stg("duration"),
             value: dm.constellation1.duration,
-            unit: 's',
-          }],
-        },
-      },
+            unit: 's'
+          }]
+        }
+      }
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),

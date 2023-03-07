@@ -305,6 +305,6 @@ const data = {
   PolarStar,
   AquaSimulacra,
   ThunderingPulse,
-  HuntersPath,
+  HuntersPath
 } as const
 export default data

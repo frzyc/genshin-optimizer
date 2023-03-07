@@ -1,5 +1,4 @@
-import type { ButtonProps, ToggleButtonProps} from "@mui/material"
-import { ToggleButton, styled } from "@mui/material"
+import { ButtonProps, ToggleButton, ToggleButtonProps, styled } from "@mui/material";
 
 type SolidColoredToggleButtonPartial = {
   baseColor?: ButtonProps["color"];
@@ -9,7 +8,7 @@ export type SolidColoredToggleButtonProps = SolidColoredToggleButtonPartial & To
 
 
 const SolidColoredToggleButton = styled(ToggleButton, {
-  shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor",
+  shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor"
 })<SolidColoredToggleButtonPartial>(({ theme, baseColor = "secondary", selectedColor = "success" }) => ({
   '&': {
     backgroundColor: theme.palette[baseColor].main,
@@ -31,6 +30,6 @@ const SolidColoredToggleButton = styled(ToggleButton, {
   '&.Mui-selected.Mui-disabled': {
     backgroundColor: theme.palette[selectedColor].dark,
   },
-}))
+}));
 
 export default SolidColoredToggleButton

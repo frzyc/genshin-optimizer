@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react"
-import { DatabaseContext } from "../Database/Database"
+import { useContext, useEffect, useState } from "react";
+import { DatabaseContext } from "../Database/Database";
 
 export default function useArtifact(artifactID: string | undefined = "") {
   const { database } = useContext(DatabaseContext)

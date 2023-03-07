@@ -1,6 +1,5 @@
-import type { ElementWithPhyKey } from "@genshin-optimizer/consts"
-import { allElementWithPhyKeys } from "@genshin-optimizer/consts"
-import type { SvgIconProps } from "@mui/material"
+import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts"
+import { SvgIconProps } from "@mui/material"
 import AnemoIcon from "../SVGIcons/Element/AnemoIcon"
 import CryoIcon from "../SVGIcons/Element/CryoIcon"
 import DendroIcon from "../SVGIcons/Element/DendroIcon"

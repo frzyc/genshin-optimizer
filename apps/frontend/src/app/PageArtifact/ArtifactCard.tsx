@@ -1,35 +1,33 @@
-import type { RarityKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/g-assets'
-import { Lock, LockOpen } from '@mui/icons-material'
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import EditIcon from '@mui/icons-material/Edit'
-import { Box, Button, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material'
-import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip'
-import SlotIcon from '../Components/Artifact/SlotIcon'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
-import CardLight from '../Components/Card/CardLight'
-import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
-import LocationName from '../Components/Character/LocationName'
-import ColorText from '../Components/ColoredText'
-import ConditionalWrapper from '../Components/ConditionalWrapper'
-import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip'
-import PercentBadge from '../Components/PercentBadge'
-import { StarsDisplay } from '../Components/StarDisplay'
-import { getArtSheet } from '../Data/Artifacts'
-import Artifact from '../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../Database/Database'
-import KeyMap, { cacheValueString } from '../KeyMap'
-import StatIcon from '../KeyMap/StatIcon'
-import useArtifact from '../ReactHooks/useArtifact'
-import { iconInlineProps } from '../SVGIcons'
-import type { ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact'
-import { allSubstatKeys } from '../Types/artifact'
-import type { LocationKey } from '../Types/consts'
-import { clamp, clamp01 } from '../Util/Util'
-import type { ArtifactEditorProps } from './ArtifactEditor'
+import { allElementWithPhyKeys, RarityKey } from '@genshin-optimizer/consts';
+import { artifactAsset } from '@genshin-optimizer/g-assets';
+import { Lock, LockOpen } from '@mui/icons-material';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import { Box, Button, CardActionArea, CardContent, Chip, IconButton, Skeleton, Typography } from '@mui/material';
+import { lazy, Suspense, useCallback, useContext, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ArtifactSetTooltipContent } from '../Components/Artifact/ArtifactSetTooltip';
+import SlotIcon from '../Components/Artifact/SlotIcon';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
+import CardLight from '../Components/Card/CardLight';
+import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete';
+import LocationName from '../Components/Character/LocationName';
+import ColorText from '../Components/ColoredText';
+import ConditionalWrapper from '../Components/ConditionalWrapper';
+import InfoTooltip, { InfoTooltipInline } from '../Components/InfoTooltip';
+import PercentBadge from '../Components/PercentBadge';
+import { StarsDisplay } from '../Components/StarDisplay';
+import { getArtSheet } from '../Data/Artifacts';
+import Artifact from '../Data/Artifacts/Artifact';
+import { DatabaseContext } from '../Database/Database';
+import KeyMap, { cacheValueString } from '../KeyMap';
+import StatIcon from '../KeyMap/StatIcon';
+import useArtifact from '../ReactHooks/useArtifact';
+import { iconInlineProps } from '../SVGIcons';
+import { allSubstatKeys, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
+import { LocationKey } from '../Types/consts';
+import { clamp, clamp01 } from '../Util/Util';
+import { ArtifactEditorProps } from './ArtifactEditor';
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
 
@@ -47,8 +45,8 @@ type Data = {
 const allSubstatFilter = new Set(allSubstatKeys)
 
 export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, editorProps, canEquip = false, extraButtons }: Data): JSX.Element | null {
-  const { t } = useTranslation(["artifact", "ui"])
-  const { t: tk } = useTranslation("statKey_gen")
+  const { t } = useTranslation(["artifact", "ui"]);
+  const { t: tk } = useTranslation("statKey_gen");
   const { database } = useContext(DatabaseContext)
   const databaseArtifact = useArtifact(artifactId)
   const artSetKey = (artifactObj ?? databaseArtifact)?.setKey
@@ -60,7 +58,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onClick, onDelet
   const onHideEditor = useCallback(() => setshowEditor(false), [setshowEditor])
   const onShowEditor = useCallback(() => editable && setshowEditor(true), [editable, setshowEditor])
 
-  const wrapperFunc = useCallback(children => <CardActionArea onClick={() => artifactId && onClick?.(artifactId)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</CardActionArea>, [onClick, artifactId])
+  const wrapperFunc = useCallback(children => <CardActionArea onClick={() => artifactId && onClick?.(artifactId)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</CardActionArea>, [onClick, artifactId],)
   const falseWrapperFunc = useCallback(children => <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }} >{children}</Box>, [])
 
   const art = artifactObj ?? databaseArtifact

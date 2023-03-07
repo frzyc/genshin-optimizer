@@ -1,11 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, subscript } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -21,13 +21,13 @@ const naStack3 = [0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, "RuleByThunder")
 const atk_ = subscript(input.weapon.refineIndex, atkSrc)
 const normal_dmg_ = lookup(condPassive, {
-  "1": subscript(input.weapon.refineIndex, naStack1), "2": subscript(input.weapon.refineIndex, naStack2), "3": subscript(input.weapon.refineIndex, naStack3),
+  "1": subscript(input.weapon.refineIndex, naStack1), "2": subscript(input.weapon.refineIndex, naStack2), "3": subscript(input.weapon.refineIndex, naStack3)
 }, naught)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    normal_dmg_,
+    normal_dmg_
   },
 })
 
@@ -36,7 +36,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, st("base")),
     fields: [{
       node: atk_,
-    }],
+    }]
   }, {
     value: condPassive,
     path: condPassivePath,
@@ -45,8 +45,8 @@ const sheet: IWeaponSheet = {
     states: objectKeyMap(range(1, 3), i => ({
       name: st("stack", { count: i }),
       fields: [{
-        node: normal_dmg_,
-      }],
+        node: normal_dmg_
+      }]
     })),
   }],
 }

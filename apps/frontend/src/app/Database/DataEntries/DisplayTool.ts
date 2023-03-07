@@ -1,8 +1,7 @@
-import { RESIN_MAX } from "../../PageTools/ResinCounter"
-import type { TimeZoneKey} from "../../PageTools/TeyvatTime"
-import { timeZones } from "../../PageTools/TeyvatTime"
-import type { ArtCharDatabase } from "../Database"
-import { DataEntry } from "../DataEntry"
+import { RESIN_MAX } from "../../PageTools/ResinCounter";
+import { TimeZoneKey, timeZones } from "../../PageTools/TeyvatTime";
+import { ArtCharDatabase } from "../Database";
+import { DataEntry } from "../DataEntry";
 
 interface IDisplayToolEntry {
   resin: number,

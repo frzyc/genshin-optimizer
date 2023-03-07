@@ -1,4 +1,4 @@
-import type { Ascension, LocationKey, Refinement, WeaponKey } from "./consts"
+import { Ascension, LocationKey, Refinement, WeaponKey } from "./consts";
 
 export interface IWeapon {
   key: WeaponKey // "CrescentPike"

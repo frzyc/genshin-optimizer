@@ -1,7 +1,7 @@
 import { Box, Skeleton, Stack, Typography } from "@mui/material"
 import { Suspense } from "react"
 import { useTranslation } from "react-i18next"
-import type { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
+import { ArtifactSheet } from "../../Data/Artifacts/ArtifactSheet"
 import BootstrapTooltip from "../BootstrapTooltip"
 import SqBadge from "../SqBadge"
 import { Translate } from "../Translate"
@@ -22,7 +22,7 @@ function SetToolTipTitle({ artifactSheet, numInSet = 5 }: { artifactSheet: Artif
     {Object.keys(artifactSheet.setEffects).map((setKey) => <Box key={setKey} sx={{ opacity: parseInt(setKey) <= numInSet ? 1 : 0.5 }}>
       <Typography><SqBadge color="success">{t(`${setKey}set`)}</SqBadge></Typography>
       <Typography><Translate ns={`artifact_${artifactSheet.key}_gen`} key18={`setEffects.${setKey}`} /></Typography>
-    </Box>,
+    </Box>
     )}
   </Stack>
 }

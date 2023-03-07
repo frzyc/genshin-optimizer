@@ -1,7 +1,7 @@
 import { deepFreeze } from "../Util/Util"
-import type { ArtCharDatabase } from "./Database"
-import type { TriggerString } from "./DataManager"
-import type { IGO, IGOOD, ImportResult } from "./exim"
+import { ArtCharDatabase } from "./Database"
+import { TriggerString } from "./DataManager"
+import { IGO, IGOOD, ImportResult } from "./exim"
 
 export class DataEntry<Key extends string, GOkey extends string, CacheValue, StorageValue>{
   database: ArtCharDatabase

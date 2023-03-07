@@ -1,9 +1,9 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, percent, subscript } from '../../../../Formula/utils'
 import { cond, st, stg } from '../../../SheetUtil'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
@@ -19,8 +19,8 @@ const moveSPD_ = equal(condPassive, "on", percent(.1))
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    moveSPD_,
-  },
+    moveSPD_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -32,16 +32,16 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: atk_,
+          node: atk_
         }, {
-          node: moveSPD_,
+          node: moveSPD_
         }, {
           text: stg("duration"),
           value: 10,
-          unit: 's',
-        }],
-      },
-    },
+          unit: 's'
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

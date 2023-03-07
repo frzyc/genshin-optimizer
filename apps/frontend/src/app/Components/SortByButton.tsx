@@ -1,8 +1,7 @@
-import SortIcon from '@mui/icons-material/Sort'
-import type { ButtonGroupProps} from "@mui/material"
-import { Box, Button, ButtonGroup, MenuItem } from "@mui/material"
-import { Trans, useTranslation } from "react-i18next"
-import DropdownButton from "./DropdownMenu/DropdownButton"
+import SortIcon from '@mui/icons-material/Sort';
+import { Box, Button, ButtonGroup, ButtonGroupProps, MenuItem } from "@mui/material";
+import { Trans, useTranslation } from "react-i18next";
+import DropdownButton from "./DropdownMenu/DropdownButton";
 
 // Assumes that all the sortKeys has corresponding translations in ui.json sortMap
 export default function SortByButton<Key extends string>({ sortKeys, value, onChange, ascending, onChangeAsc, ...props }: ButtonGroupProps & {

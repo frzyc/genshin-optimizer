@@ -1,37 +1,35 @@
-import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
-import BlockIcon from '@mui/icons-material/Block'
-import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent'
-import ShowChartIcon from '@mui/icons-material/ShowChart'
-import StarRoundedIcon from '@mui/icons-material/StarRounded'
-import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
-import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay'
-import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
-import CardDark from '../../../../../Components/Card/CardDark'
-import CardLight from '../../../../../Components/Card/CardLight'
-import CloseButton from '../../../../../Components/CloseButton'
-import ColorText from '../../../../../Components/ColoredText'
-import { InfoTooltipInline } from '../../../../../Components/InfoTooltip'
-import ModalWrapper from '../../../../../Components/ModalWrapper'
-import SqBadge from '../../../../../Components/SqBadge'
-import { Translate } from '../../../../../Components/Translate'
-import { CharacterContext } from '../../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../../Context/DataContext'
-import { DataContext } from '../../../../../Context/DataContext'
-import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
-import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { DatabaseContext } from '../../../../../Database/Database'
-import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData'
-import { UIData } from '../../../../../Formula/uiData'
-import { constant } from '../../../../../Formula/utils'
-import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
-import { iconInlineProps } from '../../../../../SVGIcons'
-import type { SetNum } from '../../../../../Types/consts'
-import { deepClone, objectKeyMap } from '../../../../../Util/Util'
-import useBuildSetting from '../useBuildSetting'
+import { allArtifactSetKeys, allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
+import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material';
+import BlockIcon from '@mui/icons-material/Block';
+import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import { Box, Button, ButtonGroup, CardContent, Divider, Grid, Stack, Typography } from '@mui/material';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import SetEffectDisplay from '../../../../../Components/Artifact/SetEffectDisplay';
+import SlotIcon from '../../../../../Components/Artifact/SlotIcon';
+import CardDark from '../../../../../Components/Card/CardDark';
+import CardLight from '../../../../../Components/Card/CardLight';
+import CloseButton from '../../../../../Components/CloseButton';
+import ColorText from '../../../../../Components/ColoredText';
+import { InfoTooltipInline } from '../../../../../Components/InfoTooltip';
+import ModalWrapper from '../../../../../Components/ModalWrapper';
+import SqBadge from '../../../../../Components/SqBadge';
+import { Translate } from '../../../../../Components/Translate';
+import { CharacterContext } from '../../../../../Context/CharacterContext';
+import { DataContext, dataContextObj } from '../../../../../Context/DataContext';
+import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts';
+import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet';
+import { DatabaseContext } from '../../../../../Database/Database';
+import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData';
+import { UIData } from '../../../../../Formula/uiData';
+import { constant } from '../../../../../Formula/utils';
+import useForceUpdate from '../../../../../ReactHooks/useForceUpdate';
+import { iconInlineProps } from '../../../../../SVGIcons';
+import { SetNum } from '../../../../../Types/consts';
+import { deepClone, objectKeyMap } from '../../../../../Util/Util';
+import useBuildSetting from '../useBuildSetting';
 
 export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, }) {
   const { t } = useTranslation(["page_character_optimize", "sheet"])
@@ -72,18 +70,18 @@ export default function ArtifactSetConfig({ disabled }: { disabled?: boolean, })
     , [conditional])
   const fakeDataContextObj = useMemo(() => ({
     ...dataContext,
-    data: new UIData({ ...dataContext.data.data[0], artSet: objectKeyMap(allArtifactSetKeys, _ => constant(4)) }, undefined),
+    data: new UIData({ ...dataContext.data.data[0], artSet: objectKeyMap(allArtifactSetKeys, _ => constant(4)) }, undefined)
   }), [dataContext])
   const resetArtConds = useCallback(() => {
     const tconditional = Object.fromEntries(Object.entries(conditional).filter(([k, v]) => !allArtifactSetKeys.includes(k as any)))
     characterDispatch({ conditional: tconditional })
-  }, [conditional, characterDispatch])
+  }, [conditional, characterDispatch]);
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
       const artSetExclusion_ = deepClone(artSetExclusion)
       artKeysByRarity.forEach(k => {
-        if (exclude) artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]
-        else if (artSetExclusion_[k]) artSetExclusion_[k] = artSetExclusion_[k].filter(n => n !== setnum)
+        if (exclude) artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum];
+        else if (artSetExclusion_[k]) artSetExclusion_[k] = artSetExclusion_[k].filter(n => n !== setnum);
       })
       buildSettingDispatch({ artSetExclusion: artSetExclusion_ })
     },
@@ -220,7 +218,7 @@ function ArtifactSetCard({ setKey, fakeDataContextObj, slotCount }: { setKey: Ar
       {!!set4CondNums.length && <DataContext.Provider value={fakeDataContextObj}>
         <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {set4CondNums.map(setNumKey =>
-            <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />,
+            <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />
           )}
         </CardContent>
       </DataContext.Provider>}

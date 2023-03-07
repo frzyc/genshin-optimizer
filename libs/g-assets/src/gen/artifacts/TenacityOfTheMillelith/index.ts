@@ -9,6 +9,6 @@ const data = {
   plume,
   sands,
   goblet,
-  circlet,
+  circlet
 } as const
 export default data

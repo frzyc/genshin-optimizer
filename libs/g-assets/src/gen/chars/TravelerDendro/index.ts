@@ -19,6 +19,6 @@ const data = {
   constellation3,
   constellation4,
   constellation5,
-  constellation6,
+  constellation6
 } as const
 export default data

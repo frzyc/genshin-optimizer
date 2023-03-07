@@ -1,25 +1,25 @@
-import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery, useTheme } from "@mui/material"
-import { useCallback, useContext, useMemo } from 'react'
-import CardDark from "../../../Components/Card/CardDark"
-import CardLight from "../../../Components/Card/CardLight"
-import ConditionalWrapper from "../../../Components/ConditionalWrapper"
-import DocumentDisplay from "../../../Components/DocumentDisplay"
-import DropdownButton from "../../../Components/DropdownMenu/DropdownButton"
-import { NodeFieldDisplay } from "../../../Components/FieldDisplay"
-import { CharacterContext } from "../../../Context/CharacterContext"
-import { DataContext } from '../../../Context/DataContext'
-import type { TalentSheetElementKey } from "../../../Data/Characters/ICharacterSheet"
-import { uiInput as input } from "../../../Formula"
-import type { NumNode } from "../../../Formula/type"
-import type { NodeDisplay } from '../../../Formula/uiData'
-import useCharacterReducer from "../../../ReactHooks/useCharacterReducer"
-import type { DocumentSection } from "../../../Types/sheet"
-import { range } from "../../../Util/Util"
+import { Box, CardActionArea, CardContent, Grid, MenuItem, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { useCallback, useContext, useMemo } from 'react';
+import CardDark from "../../../Components/Card/CardDark";
+import CardLight from "../../../Components/Card/CardLight";
+import ConditionalWrapper from "../../../Components/ConditionalWrapper";
+import DocumentDisplay from "../../../Components/DocumentDisplay";
+import DropdownButton from "../../../Components/DropdownMenu/DropdownButton";
+import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
+import { CharacterContext } from "../../../Context/CharacterContext";
+import { DataContext } from '../../../Context/DataContext';
+import { TalentSheetElementKey } from "../../../Data/Characters/ICharacterSheet";
+import { uiInput as input } from "../../../Formula";
+import { NumNode } from "../../../Formula/type";
+import { NodeDisplay } from '../../../Formula/uiData';
+import useCharacterReducer from "../../../ReactHooks/useCharacterReducer";
+import { DocumentSection } from "../../../Types/sheet";
+import { range } from "../../../Util/Util";
 
 const talentSpacing = {
   xs: 12,
   sm: 6,
-  md: 4,
+  md: 4
 }
 
 export default function CharacterTalentPane() {
@@ -31,8 +31,8 @@ export default function CharacterTalentPane() {
   const ascension = data.get(input.asc).value
   const constellation = data.get(input.constellation).value
 
-  const theme = useTheme()
-  const grlg = useMediaQuery(theme.breakpoints.up('lg'))
+  const theme = useTheme();
+  const grlg = useMediaQuery(theme.breakpoints.up('lg'));
   const constellationCards = useMemo(() => range(1, 6).map(i =>
     <SkillDisplayCard
       talentKey={`constellation${i}` as TalentSheetElementKey}
@@ -56,7 +56,7 @@ export default function CharacterTalentPane() {
               subtitle={tText}
             />
           </Grid>)}
-        {!!characterSheet.getTalentOfKey("sprint") && <Grid item {...talentSpacing} >
+        {!!characterSheet.getTalentOfKey("sprint",) && <Grid item {...talentSpacing} >
           <SkillDisplayCard
             talentKey="sprint"
             subtitle="Alternative Sprint"

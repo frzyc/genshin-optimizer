@@ -1,31 +1,29 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
-import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material'
-import AddIcon from '@mui/icons-material/Add'
-import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material'
-import type { ChangeEvent} from 'react'
-import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
-import ReactGA from 'react-ga4'
-import { Trans, useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
-import BootstrapTooltip from '../Components/BootstrapTooltip'
-import CardDark from '../Components/Card/CardDark'
-import CharacterCard from '../Components/Character/CharacterCard'
-import SortByButton from '../Components/SortByButton'
-import ElementToggle from '../Components/ToggleButton/ElementToggle'
-import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
-import { getCharSheet } from '../Data/Characters'
-import { getWeaponSheet } from '../Data/Weapons'
-import { DatabaseContext } from '../Database/Database'
-import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
-import useDBMeta from '../ReactHooks/useDBMeta'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp'
-import { charKeyToCharName } from '../Types/consts'
-import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort'
-import { filterFunction, sortFunction } from '../Util/SortByFilters'
-import { catTotal } from '../Util/totalUtils'
-import { clamp } from '../Util/Util'
+import { allElementKeys, allWeaponTypeKeys, CharacterKey } from '@genshin-optimizer/consts';
+import { DeleteForever, FactCheck, Groups, Science, TrendingUp } from '@mui/icons-material';
+import AddIcon from '@mui/icons-material/Add';
+import { Box, Button, CardContent, Divider, Grid, IconButton, Pagination, Skeleton, TextField, Typography } from '@mui/material';
+import React, { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import ReactGA from 'react-ga4';
+import { Trans, useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
+import CardDark from '../Components/Card/CardDark';
+import CharacterCard from '../Components/Character/CharacterCard';
+import SortByButton from '../Components/SortByButton';
+import ElementToggle from '../Components/ToggleButton/ElementToggle';
+import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
+import { getCharSheet } from '../Data/Characters';
+import { getWeaponSheet } from '../Data/Weapons';
+import { DatabaseContext } from '../Database/Database';
+import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
+import useDBMeta from '../ReactHooks/useDBMeta';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import useMediaQueryUp from '../ReactHooks/useMediaQueryUp';
+import { charKeyToCharName } from '../Types/consts';
+import { characterFilterConfigs, characterSortConfigs, characterSortMap } from '../Util/CharacterSort';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
+import { catTotal } from '../Util/totalUtils';
+import { clamp } from '../Util/Util';
 const CharacterSelectionModal = React.lazy(() => import('./CharacterSelectionModal'))
 const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }
 const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
@@ -42,9 +40,9 @@ export default function PageCharacter() {
   const setPage = useCallback(
     (_: ChangeEvent<unknown>, value: number) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
-      database.displayCharacter.set({ pageIndex: value - 1 })
+      database.displayCharacter.set({ pageIndex: value - 1 });
     },
-    [database, invScrollRef],
+    [database, invScrollRef]
   )
 
   const brPt = useMediaQueryUp()
@@ -138,7 +136,7 @@ export default function PageCharacter() {
             size="small"
             sx={{ height: "100%" }}
             InputProps={{
-              sx: { height: "100%" },
+              sx: { height: "100%" }
             }}
           />
         </Grid>

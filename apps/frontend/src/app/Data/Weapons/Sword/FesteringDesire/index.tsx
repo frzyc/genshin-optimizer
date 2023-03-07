@@ -1,10 +1,10 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -19,16 +19,16 @@ const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, { uni
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     skill_dmg_,
-    skill_critRate_,
-  },
+    skill_critRate_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: skill_dmg_,
+      node: skill_dmg_
     }, {
-      node: skill_critRate_,
+      node: skill_critRate_
     }],
   }],
 }

@@ -1,12 +1,12 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, min, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -24,24 +24,24 @@ const atkSPD_ = equal(input.weapon.key, key, subscript(input.weapon.refineIndex,
 const [condTimePassivePath, condTimePassive] = cond(key, "timePassive")
 const time_normal_dmg_ = equal(input.weapon.key, key, lookup(condTimePassive, Object.fromEntries(time_normal_dmg_stacksArr.map(time => [
   time,
-  prod(time, subscript(input.weapon.refineIndex, time_normal_dmg_arr, { unit: "%" })),
+  prod(time, subscript(input.weapon.refineIndex, time_normal_dmg_arr, { unit: "%" }))
 ])), naught, KeyMap.info("normal_dmg_")))
 
 const [condHitPassivePath, condHitPassive] = cond(key, "hitPassive")
 const hit_normal_dmg_ = equal(input.weapon.key, key, lookup(condHitPassive, Object.fromEntries(hit_normal_dmg_stacksArr.map(hit => [
   hit,
-  prod(hit, subscript(input.weapon.refineIndex, hit_normal_dmg_arr, { unit: "%" })),
+  prod(hit, subscript(input.weapon.refineIndex, hit_normal_dmg_arr, { unit: "%" }))
 ])), naught, KeyMap.info("normal_dmg_")))
 
 const finalNormal_dmg_ = min(
   subscript(input.weapon.refineIndex, max_normal_dmg_arr, { unit: "%" }),
-  sum(time_normal_dmg_, hit_normal_dmg_),
+  sum(time_normal_dmg_, hit_normal_dmg_)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atkSPD_,
-    normal_dmg_: finalNormal_dmg_,
+    normal_dmg_: finalNormal_dmg_
   },
 })
 
@@ -49,12 +49,12 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: atkSPD_,
+      node: atkSPD_
     }],
   }, {
     header: headerTemplate(key, st("conditional")),
     fields: [{
-      node: finalNormal_dmg_,
+      node: finalNormal_dmg_
     }],
   }, {
     value: condTimePassive,
@@ -69,9 +69,9 @@ const sheet: IWeaponSheet = {
         // }, {
           text: stg("duration"),
           value: 14,
-          unit: "s",
-        }],
-      }],
+          unit: "s"
+        }]
+      }]
     )),
   }, {
     value: condHitPassive,
@@ -87,10 +87,10 @@ const sheet: IWeaponSheet = {
           text: stg("cd"),
           value: 0.3,
           unit: "s",
-          fixed: 1,
-        }],
-      }],
-    )),
+          fixed: 1
+        }]
+      }]
+    ))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

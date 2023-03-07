@@ -1,13 +1,13 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
 import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
 import { condReadNode, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 
 const key: ArtifactSetKey = "ViridescentVenerer"
 const setHeader = setHeaderTemplate(key)
@@ -20,7 +20,7 @@ const condSwirls = objectKeyMap(absorbableEle, e => condReadNode(condSwirlPaths[
 
 const condSwirlNodes = objectKeyValueMap(absorbableEle, e => [`${e}_enemyRes_`,
 greaterEq(input.artSet.ViridescentVenerer, 4,
-  equal(e, condSwirls[e], percent(-0.4)),
+  equal(e, condSwirls[e], percent(-0.4))
 )])
 
 const data: Data = dataObjForArtifactSheet(key, {
@@ -30,9 +30,9 @@ const data: Data = dataObjForArtifactSheet(key, {
   },
   teamBuff: {
     premod: {
-      ...condSwirlNodes,
-    },
-  },
+      ...condSwirlNodes
+    }
+  }
 })
 
 const sheet: IArtifactSheet = {
@@ -41,8 +41,8 @@ const sheet: IArtifactSheet = {
     2: {
       document: [{
         header: setHeader(2),
-        fields: [{ node: anemo_dmg_ }],
-      }],
+        fields: [{ node: anemo_dmg_ }]
+      }]
     },
     4: {
       document: [{
@@ -56,15 +56,15 @@ const sheet: IArtifactSheet = {
           path: condSwirlPaths[eleKey],
           name: st(`swirlReaction.${eleKey}`),
           fields: [{
-            node: condSwirlNodes[`${eleKey}_enemyRes_`],
+            node: condSwirlNodes[`${eleKey}_enemyRes_`]
           }, {
             text: stg("duration"),
             value: 10,
-            unit: "s",
-          }],
-        }])),
-      }],
-    },
-  },
+            unit: "s"
+          }]
+        }]))
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

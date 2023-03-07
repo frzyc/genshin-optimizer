@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import CardLight from "../../../../../Components/Card/CardLight"
 import InfoTooltip from "../../../../../Components/InfoTooltip"
 import { CharacterContext } from "../../../../../Context/CharacterContext"
-import type { StatFilters } from "../../../../../Database/DataManagers/BuildSettingData"
+import { StatFilters } from "../../../../../Database/DataManagers/BuildSettingData"
 import useBuildSetting from "../useBuildSetting"
 import OptimizationTargetEditorList from "./OptimizationTargetEditorList"
 

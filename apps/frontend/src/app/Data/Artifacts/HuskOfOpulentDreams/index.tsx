@@ -1,12 +1,12 @@
 import { input } from '../../../Formula'
-import type { Data, Info } from '../../../Formula/type'
+import { Data, Info } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "HuskOfOpulentDreams"
@@ -21,15 +21,15 @@ const set4Def = greaterEq(input.artSet.HuskOfOpulentDreams, 4,
   lookup(
     condStack,
     Object.fromEntries(stackArr.map(i => [i, percent(0.06 * i)])),
-    naught,
+    naught
   ),
-  def_info,
+  def_info
 )
 const set4Geo = greaterEq(input.artSet.HuskOfOpulentDreams, 4,
   lookup(
     condStack,
-    Object.fromEntries(stackArr.map(i => [i, percent(0.06 * i)])), naught,
-  ),
+    Object.fromEntries(stackArr.map(i => [i, percent(0.06 * i)])), naught
+  )
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -53,11 +53,11 @@ const sheet: IArtifactSheet = {
         states: Object.fromEntries(stackArr.map(i => [i, {
           name: st("stack", { count: i }),
           fields: [{ node: set4Def }, {
-            node: set4Geo,
-          }],
-        }])),
-      }],
-    },
-  },
+            node: set4Geo
+          }]
+        }]))
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

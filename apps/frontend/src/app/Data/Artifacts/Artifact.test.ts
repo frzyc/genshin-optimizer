@@ -1,5 +1,5 @@
-import Artifact from "./Artifact"
-import artifactSubstatRoll from './artifact_sub_rolls_gen.json'
+import Artifact from "./Artifact";
+import artifactSubstatRoll from './artifact_sub_rolls_gen.json';
 
 describe('Substat Rolls/efficiency', () => {
   test('should have valid rolls in substat roll table', () => {
@@ -41,7 +41,7 @@ describe('Substat Rolls/efficiency', () => {
       expect(Artifact.getSubstatRolls("def_", 5.8, 4)).toEqual([expect.arrayContaining([5.83])])
     })
     test('should get multiple rolls', () => {
-      expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.83, 5.25]])
+      expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.83, 5.25,]])
     })
     test('should get multiple rolls with multiple options', () => {
       const rolls = Artifact.getSubstatRolls("critDMG_", 32.6, 5)

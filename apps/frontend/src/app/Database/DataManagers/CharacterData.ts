@@ -1,16 +1,12 @@
-import type { ArtifactSlotKey, CharacterKey, TravelerKey, LocationCharacterKey } from "@genshin-optimizer/consts"
-import { allArtifactSlotKeys, allCharacterKeys, charKeyToLocCharKey, allTravelerKeys } from "@genshin-optimizer/consts"
-import { validateLevelAsc } from "../../Data/LevelData"
-import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget"
-import type { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character"
-import type { InfusionAuraElements } from "../../Types/consts"
-import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements } from "../../Types/consts"
-import { clamp, deepClone, objectKeyMap } from "../../Util/Util"
-import type { ArtCharDatabase } from "../Database"
-import type { TriggerString } from "../DataManager"
-import { DataManager } from "../DataManager"
-import type { IGO, IGOOD, ImportResult } from "../exim"
-import { GOSource } from "../exim"
+import { allArtifactSlotKeys, allCharacterKeys, ArtifactSlotKey, CharacterKey, charKeyToLocCharKey, allTravelerKeys, TravelerKey, LocationCharacterKey } from "@genshin-optimizer/consts";
+import { validateLevelAsc } from "../../Data/LevelData";
+import { validateCustomMultiTarget } from "../../PageCharacter/CustomMultiTarget";
+import { CustomMultiTarget, ICachedCharacter, ICharacter } from "../../Types/character";
+import { allAdditiveReactions, allAmpReactions, allHitModes, allInfusionAuraElements, InfusionAuraElements } from "../../Types/consts";
+import { clamp, deepClone, objectKeyMap } from "../../Util/Util";
+import { ArtCharDatabase } from "../Database";
+import { DataManager, TriggerString } from "../DataManager";
+import { GOSource, IGO, IGOOD, ImportResult } from "../exim";
 
 export class CharacterDataManager extends DataManager<CharacterKey, "characters", ICachedCharacter, ICharacter>{
   constructor(database: ArtCharDatabase) {
@@ -28,7 +24,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     let {
       hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget,
+      compareData, customMultiTarget
     } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey))
@@ -68,7 +64,7 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     const char: ICharacter = {
       key: characterKey, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget,
+      compareData, customMultiTarget
     }
     return char
   }
@@ -84,12 +80,12 @@ export class CharacterDataManager extends DataManager<CharacterKey, "characters"
     const {
       key, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget,
+      compareData, customMultiTarget
     } = char
     const result: ICharacter = {
       key, level, ascension, hitMode, reaction, conditional,
       bonusStats, enemyOverride, talent, infusionAura, constellation, team, teamConditional,
-      compareData, customMultiTarget,
+      compareData, customMultiTarget
     }
     return result
   }
@@ -221,6 +217,6 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     team: ["", "", ""],
     teamConditional: {},
     compareData: false,
-    customMultiTarget: [],
+    customMultiTarget: []
   }
 }

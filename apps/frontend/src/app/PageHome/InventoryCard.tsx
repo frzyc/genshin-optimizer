@@ -50,8 +50,8 @@ export default function InventoryCard() {
     })
     return { artifactTally: tally, artifactTotal: arts.length }
   }, [database])
-  const theme = useTheme()
-  const smaller = !useMediaQuery(theme.breakpoints.up('md'))
+  const theme = useTheme();
+  const smaller = !useMediaQuery(theme.breakpoints.up('md'));
 
   return <CardDark>
     <CardHeader title={<Typography variant="h5">{t`inventoryCard.title`}</Typography>} avatar={<BusinessCenter fontSize="large" />} />

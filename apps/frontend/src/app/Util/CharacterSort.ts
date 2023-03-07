@@ -1,9 +1,8 @@
-import { getCharSheet } from "../Data/Characters"
-import type { ArtCharDatabase } from "../Database/Database"
-import i18n from "../i18n"
-import type { CharacterKey, ElementKey, WeaponTypeKey } from "../Types/consts"
-import { allElements, allWeaponTypeKeys, charKeyToCharName } from "../Types/consts"
-import type { FilterConfigs, SortConfigs } from "./SortByFilters"
+import { getCharSheet } from "../Data/Characters";
+import { ArtCharDatabase } from "../Database/Database";
+import i18n from "../i18n";
+import { allElements, allWeaponTypeKeys, CharacterKey, charKeyToCharName, ElementKey, WeaponTypeKey } from "../Types/consts";
+import { FilterConfigs, SortConfigs } from "./SortByFilters";
 export const characterSortKeys = ["new", "level", "rarity", "name", "favorite"] as const
 export type CharacterSortKey = typeof characterSortKeys[number]
 
@@ -16,7 +15,7 @@ export function characterSortConfigs(database: ArtCharDatabase): SortConfigs<Cha
       return char ? char.level * (char.ascension + 1) : 0
     },
     rarity: (ck) => getCharSheet(ck, database.gender).rarity ?? 0,
-    favorite: (ck) => (database.charMeta.get(ck).favorite ? 1 : 0),
+    favorite: (ck,) => (database.charMeta.get(ck).favorite ? 1 : 0),
   }
 }
 
@@ -36,7 +35,7 @@ export function characterFilterConfigs(database: ArtCharDatabase): CharacterFilt
 export const characterSortMap: Partial<Record<CharacterSortKey, CharacterSortKey[]>> = {
   name: ["favorite", "name"],
   level: ["favorite", "level", "rarity", "name"],
-  rarity: ["favorite", "rarity", "level", "name"],
+  rarity: ["favorite", "rarity", "level", "name"]
 }
 
 export const initialCharacterDisplayState = (): {
@@ -50,5 +49,5 @@ export const initialCharacterDisplayState = (): {
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
   element: [...allElements],
-  pageIndex: 0,
+  pageIndex: 0
 })

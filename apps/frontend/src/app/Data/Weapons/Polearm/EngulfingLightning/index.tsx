@@ -1,10 +1,10 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, min, percent, prod, subscript, sum } from '../../../../Formula/utils'
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -23,10 +23,10 @@ const enerRech_ = equal("on", condPassive, subscript(input.weapon.refineIndex, e
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    enerRech_,
+    enerRech_
   },
 }, {
-  atk_,
+  atk_
 })
 const sheet: IWeaponSheet = {
   document: [{
@@ -43,14 +43,14 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: enerRech_,
+          node: enerRech_
         }, {
           text: stg("duration"),
           value: 12,
-          unit: "s",
-        }],
-      },
-    },
+          unit: "s"
+        }]
+      }
+    }
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

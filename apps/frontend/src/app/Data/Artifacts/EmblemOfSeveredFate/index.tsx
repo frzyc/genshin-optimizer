@@ -1,9 +1,9 @@
 import { input } from '../../../Formula'
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { greaterEq, min, percent, prod } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "EmblemOfSeveredFate"
@@ -32,9 +32,9 @@ const sheet: IArtifactSheet = {
         header: setHeader(4),
         fields: [{
           node: burstBonus,
-        }],
-      }],
-    },
-  },
+        }]
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

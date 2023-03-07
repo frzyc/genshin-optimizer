@@ -1,11 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
-import type { WeaponKey } from '@genshin-optimizer/consts'
+import { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import type { IWeaponSheet } from '../../IWeaponSheet'
+import { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -18,7 +18,7 @@ const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(inp
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    atk_,
+    atk_
   },
 })
 const sheet: IWeaponSheet = {
@@ -30,13 +30,13 @@ const sheet: IWeaponSheet = {
     states: Object.fromEntries(range(1, 4).map(i => [i, {
       name: st("stack", { count: i }),
       fields: [{
-        node: atk_,
+        node: atk_
       }, {
         text: stg("duration"),
         value: 6,
-        unit: "s",
-      }],
-    }])),
+        unit: "s"
+      }]
+    }]))
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

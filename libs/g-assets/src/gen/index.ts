@@ -5,6 +5,6 @@ import chars from "./chars"
 const data = {
   weapons,
   artifacts,
-  chars,
+  chars
 } as const
 export default data

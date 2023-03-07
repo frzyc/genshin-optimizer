@@ -1,30 +1,30 @@
-import { weaponAsset } from "@genshin-optimizer/g-assets"
-import { Lock, LockOpen } from "@mui/icons-material"
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
-import EditIcon from '@mui/icons-material/Edit'
-import { Box, Button, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext, useMemo } from "react"
-import { useTranslation } from "react-i18next"
-import Assets from "../Assets/Assets"
-import CardLight from "../Components/Card/CardLight"
-import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete"
-import LocationName from "../Components/Character/LocationName"
-import ConditionalWrapper from "../Components/ConditionalWrapper"
-import ImgIcon from "../Components/Image/ImgIcon"
-import { StarsDisplay } from "../Components/StarDisplay"
-import type CharacterSheet from "../Data/Characters/CharacterSheet"
-import { ascensionMaxLevel } from "../Data/LevelData"
-import { getWeaponSheet } from "../Data/Weapons"
-import { DatabaseContext } from "../Database/Database"
-import { uiInput as input } from "../Formula"
-import { computeUIData, dataObjForWeapon } from "../Formula/api"
-import { nodeVStr } from "../Formula/uiData"
-import useWeapon from "../ReactHooks/useWeapon"
-import type { LocationKey } from "../Types/consts"
+import { weaponAsset } from "@genshin-optimizer/g-assets";
+import { Lock, LockOpen } from "@mui/icons-material";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import { Box, Button, CardActionArea, CardContent, IconButton, Skeleton, Tooltip, Typography } from "@mui/material";
+import { Suspense, useCallback, useContext, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import Assets from "../Assets/Assets";
+import CardLight from "../Components/Card/CardLight";
+import { LocationAutocomplete } from "../Components/Character/LocationAutocomplete";
+import LocationName from "../Components/Character/LocationName";
+import ConditionalWrapper from "../Components/ConditionalWrapper";
+import ImgIcon from "../Components/Image/ImgIcon";
+import { StarsDisplay } from "../Components/StarDisplay";
+import CharacterSheet from "../Data/Characters/CharacterSheet";
+import { ascensionMaxLevel } from "../Data/LevelData";
+import { getWeaponSheet } from "../Data/Weapons";
+import { DatabaseContext } from "../Database/Database";
+import { uiInput as input } from "../Formula";
+import { computeUIData, dataObjForWeapon } from "../Formula/api";
+import { nodeVStr } from "../Formula/uiData";
+import useWeapon from "../ReactHooks/useWeapon";
+import { LocationKey } from "../Types/consts";
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean, extraButtons?: JSX.Element }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false, extraButtons }: WeaponCardProps) {
-  const { t } = useTranslation(["page_weapon", "ui"])
+  const { t } = useTranslation(["page_weapon", "ui"]);
   const { database } = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
@@ -32,13 +32,13 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
 
   const filter = useCallback((cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType, [weaponSheet])
 
-  const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId])
+  const wrapperFunc = useCallback(children => <CardActionArea onClick={() => onClick?.(weaponId)} >{children}</CardActionArea>, [onClick, weaponId],)
   const falseWrapperFunc = useCallback(children => <Box >{children}</Box>, [])
   const setLocation = useCallback((k: LocationKey) => weaponId && database.weapons.set(weaponId, { location: k }), [database, weaponId])
 
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
 
-  if (!weapon || !weaponSheet || !UIData) return null
+  if (!weapon || !weaponSheet || !UIData) return null;
   const { level, ascension, refinement, id, location = "", lock } = weapon
   const weaponTypeKey = UIData.get(input.weapon.type).value!
   const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(x => UIData.get(x))
@@ -47,7 +47,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={wrapperFunc} falseWrapper={falseWrapperFunc}>
-        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", pt: 2, px: 2 }}>
+        <Box className={`grad-${weaponSheet.rarity}star`} sx={{ position: "relative", pt: 2, px: 2, }}>
           {!onClick && <IconButton color="primary" onClick={() => database.weapons.set(id, { lock: !lock })} sx={{ position: "absolute", right: 0, bottom: 0, zIndex: 2 }}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>}

@@ -1,18 +1,18 @@
-import { weaponAsset } from "@genshin-optimizer/g-assets"
-import { input } from "."
-import ColorText from "../Components/ColoredText"
-import { getArtSheet } from "../Data/Artifacts"
-import { artifactDefIcon } from "../Data/Artifacts/ArtifactSheet"
-import { getCharSheet } from "../Data/Characters"
-import { getWeaponSheet } from "../Data/Weapons"
-import type { ArtCharDatabase } from "../Database/Database"
-import type { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
-import { range } from "../Util/Util"
-import type { DisplaySub } from "./type"
-import type { NodeDisplay, UIData } from "./uiData"
+import { weaponAsset } from "@genshin-optimizer/g-assets";
+import { input } from ".";
+import ColorText from "../Components/ColoredText";
+import { getArtSheet } from "../Data/Artifacts";
+import { artifactDefIcon } from "../Data/Artifacts/ArtifactSheet";
+import { getCharSheet } from "../Data/Characters";
+import { getWeaponSheet } from "../Data/Weapons";
+import { ArtCharDatabase } from "../Database/Database";
+import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts";
+import { range } from "../Util/Util";
+import { DisplaySub } from "./type";
+import { NodeDisplay, UIData } from "./uiData";
 
 const errHeader = {
-  title: <ColorText color="warning">ERROR</ColorText>,
+  title: <ColorText color="warning">ERROR</ColorText>
 }
 
 const talentMap = {
@@ -25,7 +25,7 @@ const talentMap = {
   passive1: "1st Asc. Pass.",
   passive2: "4th Asc. Pass.",
   passive3: "Util. Pass.",
-  ...Object.fromEntries(range(1, 6).map(i => [`constellation${i}`, `Const. ${i}`])),
+  ...Object.fromEntries(range(1, 6).map(i => [`constellation${i}`, `Const. ${i}`]))
 }
 
 export function getDisplayHeader(data: UIData, sectionKey: string, database: ArtCharDatabase): {
@@ -44,7 +44,7 @@ export function getDisplayHeader(data: UIData, sectionKey: string, database: Art
       if (!sheet) return errHeader
       return {
         title: sheet.name,
-        icon: artifactDefIcon(key as ArtifactSetKey),
+        icon: artifactDefIcon(key as ArtifactSetKey)
       }
     } else if (namespace === "weapon") {
       const sheet = getWeaponSheet(key as WeaponKey)
@@ -52,7 +52,7 @@ export function getDisplayHeader(data: UIData, sectionKey: string, database: Art
       const asc = data.get(input.weapon.asc).value
       return {
         title: sheet.name,
-        icon: weaponAsset(key as WeaponKey, asc >= 2),
+        icon: weaponAsset(key as WeaponKey, asc >= 2)
       }
     }
   } else {
@@ -66,7 +66,7 @@ export function getDisplayHeader(data: UIData, sectionKey: string, database: Art
     return {
       icon: talent.img,
       title: talent.name,
-      action: actionText,
+      action: actionText
     }
   }
   return errHeader

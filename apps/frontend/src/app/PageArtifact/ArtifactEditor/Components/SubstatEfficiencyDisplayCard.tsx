@@ -1,9 +1,9 @@
-import { Grid, Typography } from '@mui/material'
-import React from 'react'
-import { Trans } from 'react-i18next'
-import CardLight from '../../../Components/Card/CardLight'
-import InfoTooltip from '../../../Components/InfoTooltip'
-import PercentBadge from '../../../Components/PercentBadge'
+import { Grid, Typography } from '@mui/material';
+import React from 'react';
+import { Trans } from 'react-i18next';
+import CardLight from '../../../Components/Card/CardLight';
+import InfoTooltip from '../../../Components/InfoTooltip';
+import PercentBadge from '../../../Components/PercentBadge';
 
 export default function SubstatEfficiencyDisplayCard({ efficiency, max = false, t, valid }) {
   const eff = max ? "maxSubEff" : "curSubEff"

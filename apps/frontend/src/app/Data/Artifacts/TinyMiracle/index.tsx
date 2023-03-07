@@ -1,13 +1,12 @@
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index"
-import type { Data } from '../../../Formula/type'
+import { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
+import { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "TinyMiracle"
@@ -17,19 +16,19 @@ const [condElePath, condEle] = cond(key, "element")
 
 const set2Nodes = Object.fromEntries(allElementKeys.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), KeyMap.info(`${ele}_res_`)),
+  greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), KeyMap.info(`${ele}_res_`))
 ]))
 
 const set4Nodes = Object.fromEntries(allElementKeys.map(ele => [
   ele,
-  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), KeyMap.info(`${ele}_res_`)),
+  greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), KeyMap.info(`${ele}_res_`))
 ]))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: Object.fromEntries(allElementKeys.map(ele => [
     `${ele}_res_`,
-    sum(set2Nodes[ele], set4Nodes[ele]),
-  ])),
+    sum(set2Nodes[ele], set4Nodes[ele])
+  ]))
 })
 
 const sheet: IArtifactSheet = {
@@ -38,8 +37,8 @@ const sheet: IArtifactSheet = {
     2: {
       document: [{
         header: setHeader(2),
-        fields: Object.values(set2Nodes).map(n => ({ node: n })),
-      }],
+        fields: Object.values(set2Nodes).map(n => ({ node: n }))
+      }]
     },
     4: {
       document: [{
@@ -55,12 +54,12 @@ const sheet: IArtifactSheet = {
             {
               text: stg("duration"),
               value: 10,
-              unit: "s",
-            },
-          ],
+              unit: "s"
+            }
+          ]
         }])),
-      }],
-    },
-  },
+      }]
+    }
+  }
 }
 export default new ArtifactSheet(key, sheet, data)

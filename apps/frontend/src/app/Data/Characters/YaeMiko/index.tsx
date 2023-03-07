@@ -1,11 +1,11 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, lessThan, percent, prod } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -23,7 +23,7 @@ const dm = {
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
-    ],
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -57,7 +57,7 @@ const dm = {
   },
   constellation6: {
     defIgn_: skillParam_gen.constellation6[0],
-  },
+  }
 
 } as const
 
@@ -85,24 +85,24 @@ const dmgFormulas = {
     tenkoDmg: dmgNode("atk", dm.burst.tenkoDmg, "burst"),
   },
   passive2: {
-    nodeAsc4: greaterEq(input.asc, 4, prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 }))),
-  },
+    nodeAsc4: greaterEq(input.asc, 4, prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 })))
+  }
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen, dmgFormulas, {
   premod: {
     skillBoost: nodeC3,
-    burstBoost: nodeC5,
+    burstBoost: nodeC5
   },
   total: {
     skill_dmg_: dmgFormulas.passive2.nodeAsc4,
   },
   teamBuff: {
     premod: {
-      electro_dmg_: nodeC4,
+      electro_dmg_: nodeC4
     },
-  },
+  }
 })
 
 const sheet: ICharacterSheet = {
@@ -119,7 +119,7 @@ const sheet: ICharacterSheet = {
       }, {
         fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-        })),
+        }))
       }, {
         text: ct.chg("auto.fields.charged"),
       }, {
@@ -128,7 +128,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("auto.skillParams.4"),
           value: dm.charged.stamina,
-        }],
+        }]
       }, {
         text: ct.chg(`auto.fields.plunging`),
       }, {
@@ -138,7 +138,7 @@ const sheet: ICharacterSheet = {
           node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
         }, {
           node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-        }],
+        }]
       }]),
 
       skill: ct.talentTem("skill", [{
@@ -153,7 +153,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("skill.skillParams.4"),
           value: dm.skill.duration,
-          unit: "s",
+          unit: "s"
         }, {
           text: ct.chg("skill.skillParams.5"),
           value: dm.skill.cd,
@@ -168,11 +168,11 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("burst.skillParams.2"),
           value: dm.burst.cd,
-          unit: "s",
+          unit: "s"
         }, {
           text: ct.chg("burst.skillParams.3"),
           value: dm.burst.enerCost,
-        }],
+        }]
       }]),
       passive1: ct.talentTem("passive1"),
       passive2: ct.talentTem("passive2", [{ fields: [{ node: dmgFormulas.passive2.nodeAsc4 }] }]),
@@ -192,13 +192,13 @@ const sheet: ICharacterSheet = {
             }, {
               text: stg("duration"),
               value: dm.constellation4.duration,
-              unit: "s",
-            }],
-          },
-        },
+              unit: "s"
+            }]
+          }
+        }
       })]),
       constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
       constellation6: ct.talentTem("constellation6"),
-    },
+    }
   }
 export default new CharacterSheet(sheet, data)

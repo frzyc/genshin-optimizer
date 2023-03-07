@@ -1,22 +1,21 @@
-import type { LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts"
-import { allArtifactSlotKeys, charKeyToLocCharKey } from "@genshin-optimizer/consts"
-import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility'
-import { Box, Button, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material"
-import { useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react"
-import { Trans, useTranslation } from "react-i18next"
-import SlotIcon from "../../../../../Components/Artifact/SlotIcon"
-import CardDark from "../../../../../Components/Card/CardDark"
-import CardLight from "../../../../../Components/Card/CardLight"
-import CharacterCardPico from "../../../../../Components/Character/CharacterCardPico"
-import CloseButton from "../../../../../Components/CloseButton"
-import ModalWrapper from "../../../../../Components/ModalWrapper"
-import SqBadge from "../../../../../Components/SqBadge"
-import { CharacterContext } from "../../../../../Context/CharacterContext"
-import { DatabaseContext } from "../../../../../Database/Database"
-import useBoolState from "../../../../../ReactHooks/useBoolState"
-import useForceUpdate from "../../../../../ReactHooks/useForceUpdate"
-import { toggleArr } from "../../../../../Util/Util"
-import useBuildSetting from "../useBuildSetting"
+import { allArtifactSlotKeys, charKeyToLocCharKey, LocationCharacterKey, LocationKey } from "@genshin-optimizer/consts";
+import SettingsAccessibilityIcon from '@mui/icons-material/SettingsAccessibility';
+import { Box, Button, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
+import { useCallback, useContext, useDeferredValue, useEffect, useMemo } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import SlotIcon from "../../../../../Components/Artifact/SlotIcon";
+import CardDark from "../../../../../Components/Card/CardDark";
+import CardLight from "../../../../../Components/Card/CardLight";
+import CharacterCardPico from "../../../../../Components/Character/CharacterCardPico";
+import CloseButton from "../../../../../Components/CloseButton";
+import ModalWrapper from "../../../../../Components/ModalWrapper";
+import SqBadge from "../../../../../Components/SqBadge";
+import { CharacterContext } from "../../../../../Context/CharacterContext";
+import { DatabaseContext } from "../../../../../Database/Database";
+import useBoolState from "../../../../../ReactHooks/useBoolState";
+import useForceUpdate from "../../../../../ReactHooks/useForceUpdate";
+import { toggleArr } from "../../../../../Util/Util";
+import useBuildSetting from "../useBuildSetting";
 export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { disabled?: boolean, numArtsEquippedUsed: number }) {
   const { t } = useTranslation("page_character_optimize")
   const { character: { key: characterKey } } = useContext(CharacterContext)
@@ -80,7 +79,7 @@ export default function AllowChar({ disabled = false, numArtsEquippedUsed }: { d
           {locList.map((lk, i) =>
             <Grid item key={lk} xs={1}>
               <SelectItem locKey={lk} onClick={() => toggle(lk)} selected={allowLocations.includes(lk)} />
-            </Grid>,
+            </Grid>
           )}
         </Grid>
       </CardContent>
