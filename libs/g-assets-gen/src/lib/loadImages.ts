@@ -1,4 +1,5 @@
-import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, proudSkillExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, weaponExcelConfigData } from '@genshin-optimizer/dm'
+import type { AvatarSkillDepotExcelConfigData} from '@genshin-optimizer/dm'
+import { artifactPiecesData, avatarExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, DM2D_PATH, fetterCharacterCardExcelConfigData, materialExcelConfigData, proudSkillExcelConfigData, reliquarySetExcelConfigData, rewardExcelConfigData, weaponExcelConfigData } from '@genshin-optimizer/dm'
 import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import fs = require('fs')
@@ -30,8 +31,8 @@ export default function loadImages() {
     }
     fs.mkdirSync(path.dirname(dest), { recursive: true })
     fs.copyFile(src, dest, (err) => {
-      if (err) console.error(err);
-    });
+      if (err) console.error(err)
+    })
   }
 
   // Get icons for each artifact piece
@@ -54,7 +55,7 @@ export default function loadImages() {
     const { icon, awakenIcon } = weaponData
     AssetData.weapons[weaponIdMap[weaponid]] = {
       icon,
-      awakenIcon
+      awakenIcon,
     }
   })
 
@@ -62,18 +63,18 @@ export default function loadImages() {
   Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const { iconName, sideIconName } = charData
 
-    let banner, bar;
+    let banner, bar
     if (fetterCharacterCardExcelConfigData[charid]) {
       const { rewardId } = fetterCharacterCardExcelConfigData[charid]
       const { rewardItemList } = rewardExcelConfigData[rewardId]
       const { itemId } = rewardItemList[0];
-      ({ picPath: [bar, banner] } = materialExcelConfigData[itemId]);
+      ({ picPath: [bar, banner] } = materialExcelConfigData[itemId])
     }
     const assets = banner ? {
       icon: iconName,
       iconSide: sideIconName,
       banner,
-      bar
+      bar,
     } : {
       icon: iconName,
       iconSide: sideIconName,
@@ -92,8 +93,8 @@ export default function loadImages() {
     if (fetterCharacterCardExcelConfigData[charid]) {
       const { rewardId } = fetterCharacterCardExcelConfigData[charid]
       const { rewardItemList } = rewardExcelConfigData[rewardId]
-      const { itemId } = rewardItemList[0];
-      const { picPath: [bar, banner] } = materialExcelConfigData[itemId];
+      const { itemId } = rewardItemList[0]
+      const { picPath: [bar, banner] } = materialExcelConfigData[itemId]
       bar && layeredAssignment(assetChar, [cKey, "bar"], bar)
       banner && layeredAssignment(assetChar, [cKey, "banner"], banner)
     }
@@ -142,7 +143,7 @@ export default function loadImages() {
 
   function crawlGen(obj, path) {
     const keys = Object.keys(obj)
-    const isImg = typeof Object.values(obj)[0] === "string";
+    const isImg = typeof Object.values(obj)[0] === "string"
     // generate a index.ts using keys
     const indexContent = `// This is a generated index file.
 ${Object.entries(obj).map(([k, v]) => `import ${k} from "./${isImg ? `${v}.png` : k}"`).join("\n")}

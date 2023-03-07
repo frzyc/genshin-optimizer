@@ -5,7 +5,7 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import SqBadge from '../Components/SqBadge'
 import { languageCodeList } from "../i18n"
 export default function LanguageCard() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       {t("settings:languageCard.selectLanguage")} <SqBadge color="warning">{t("ui:underConstruction")}</SqBadge>
@@ -32,12 +32,12 @@ const nativeLanguages = {
   "ru": "Русский язык",
   "th": "ภาษาไทย",
   "tr": "Türkçe",
-  "vi": "Tiếng Việt"
+  "vi": "Tiếng Việt",
 }
 export function LanguageDropdown() {
-  const { t, i18n } = useTranslation(["ui", "settings"]);
-  const onSetLanguage = (lang) => () => i18n.changeLanguage(lang);
-  const currentLang = i18n.languages[0];
+  const { t, i18n } = useTranslation(["ui", "settings"])
+  const onSetLanguage = (lang) => () => i18n.changeLanguage(lang)
+  const currentLang = i18n.languages[0]
   return <DropdownButton fullWidth title={t('settings:languageCard.languageFormat', { language: t(`languages:${currentLang}`) })}>
     {languageCodeList.map((lang) => <MenuItem key={lang} selected={currentLang === lang} disabled={currentLang === lang} onClick={onSetLanguage(lang)}>
       <Trans i18nKey={`languages:${lang}`} />

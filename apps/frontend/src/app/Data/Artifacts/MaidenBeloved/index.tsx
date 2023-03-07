@@ -1,10 +1,10 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "MaidenBeloved"
@@ -20,9 +20,9 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
   teamBuff: {
     premod: {
-      incHeal_: set4
-    }
-  }
+      incHeal_: set4,
+    },
+  },
 })
 
 const sheet: IArtifactSheet = {
@@ -40,11 +40,11 @@ const sheet: IArtifactSheet = {
           on: {
             fields: [{
               node: set4,
-            }]
+            }],
           },
-        }
-      }]
-    }
-  }
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

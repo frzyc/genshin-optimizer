@@ -1,11 +1,11 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import data_gen_json from './data_gen.json'
@@ -40,9 +40,9 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: normal_dmg_
+      node: normal_dmg_,
     }, {
-      node: charged_dmg_
+      node: charged_dmg_,
     }],
   }, {
     value: condPassive,
@@ -52,10 +52,10 @@ const sheet: IWeaponSheet = {
     states: objectKeyMap(range(1, 5), i => ({
       name: st("seconds", { count: i / 10 }),
       fields: [{
-        node: normal_dmg_arrow_
+        node: normal_dmg_arrow_,
       }, {
-        node: charged_dmg_arrow_
-      }]
+        node: charged_dmg_arrow_,
+      }],
     })),
   }],
 }

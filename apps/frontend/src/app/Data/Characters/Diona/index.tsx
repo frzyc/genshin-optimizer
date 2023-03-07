@@ -1,12 +1,12 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent, shieldElement, shieldNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
@@ -89,7 +89,7 @@ const holdSkillShieldStr_ = percent(1.75)
 // C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
 // 100% if not C2, 175% if C2 or higher
 const nodeC2shieldStr_ = sum(percent(1), greaterEq(input.constellation, 2, percent(dm.constellation2.icyPawShield_)))
-const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill",))
+const nodeSkillShieldPress = prod(nodeC2shieldStr_, shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill"))
 const nodeSkillShieldHold = prod(nodeC2shieldStr_, holdSkillShieldStr_, shieldNodeTalent("hp", dm.skill.shieldHp_, dm.skill.shieldFlat, "skill"))
 
 const dmgFormulas = {
@@ -134,8 +134,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       moveSPD_: nodeA1MoveSpeed,
       eleMas: nodeC6em,
       incHeal_: nodeC6healing_,
-    }
-  }
+    },
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -153,7 +153,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -161,7 +161,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.5`) }),
       }, {
         node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.6`) }),
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -171,7 +171,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -193,7 +193,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg(`skill.skillParams.3`),
         value: dm.skill.cdPress,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg(`skill.skillParams.4`),
         value: dm.skill.cdHold,
@@ -210,9 +210,9 @@ const sheet: ICharacterSheet = {
             node: nodeA1MoveSpeed,
           }, {
             node: nodeA1Stamina,
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -225,14 +225,14 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.cd,
       }, {
         text: ct.chg("burst.skillParams.5"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.condTem("constellation6", {
       teamBuff: true,
       value: condC6,
@@ -243,15 +243,15 @@ const sheet: ICharacterSheet = {
           name: st("lessEqPercentHP", { percent: 50 }),
           fields: [{
             node: infoMut(nodeC6healing_Disp, KeyMap.info("incHeal_")),
-          }]
+          }],
         },
         higher: {
           name: st("greaterPercentHP", { percent: 50 }),
           fields: [{
             node: infoMut(nodeC6emDisp, KeyMap.info("eleMas")),
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -263,7 +263,7 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

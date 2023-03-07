@@ -1,10 +1,11 @@
-import { ArtifactSetKey } from "@genshin-optimizer/consts"
-import { AutocompleteRenderGroupParams, Box, Chip, List, ListSubheader } from "@mui/material"
+import type { ArtifactSetKey } from "@genshin-optimizer/consts"
+import type { AutocompleteRenderGroupParams} from "@mui/material"
+import { Box, Chip, List, ListSubheader } from "@mui/material"
 import { useCallback, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { setKeysByRarities } from "../../Data/Artifacts"
 import { artifactDefIcon } from "../../Data/Artifacts/ArtifactSheet"
-import { ArtifactRarity } from "../../Types/consts"
+import type { ArtifactRarity } from "../../Types/consts"
 import { GeneralAutocompleteMulti } from "../GeneralAutocomplete"
 import ImgIcon from "../Image/ImgIcon"
 import { StarsDisplay } from "../StarDisplay"
@@ -18,8 +19,8 @@ export default function ArtifactSetMultiAutocomplete({ artSetKeys, setArtSetKeys
   const { t } = useTranslation(["artifact", "artifactNames_gen"])
 
   const toImg = useCallback((key: ArtifactSetKey) => <ImgIcon src={artifactDefIcon(key)} size={3} />, [])
-  const toExLabel = useCallback((key: ArtifactSetKey) => <strong>{totals[key]}</strong>, [totals],)
-  const toExItemLabel = useCallback((key: ArtifactSetKey) => <Chip size="small" label={totals[key]} />, [totals],)
+  const toExLabel = useCallback((key: ArtifactSetKey) => <strong>{totals[key]}</strong>, [totals])
+  const toExItemLabel = useCallback((key: ArtifactSetKey) => <Chip size="small" label={totals[key]} />, [totals])
 
   const allArtifactSetsAndRarities = useMemo(() => Object.entries(setKeysByRarities)
     .flatMap(([rarity, sets]) => sets.map(set => ({ key: set, grouper: +rarity as ArtifactRarity, label: t(`artifactNames_gen:${set}`) })))

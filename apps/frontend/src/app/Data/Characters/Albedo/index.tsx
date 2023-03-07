@@ -1,13 +1,13 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -27,7 +27,7 @@ const dm = {
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
       skillParam_gen.auto[a++], // 5
-    ]
+    ],
   },
   charged: {
     dmg1: skillParam_gen.auto[a++], // 1
@@ -59,7 +59,7 @@ const dm = {
   },
   passive2: {
     eleMasInc: skillParam_gen.passive2[0][0],
-    duration: skillParam_gen.passive2[1][0]
+    duration: skillParam_gen.passive2[1][0],
   },
   constellation1: {
     blossomEner: skillParam_gen.constellation1[0],
@@ -67,14 +67,14 @@ const dm = {
   constellation2: {
     blossomDmgInc: 0.30,
     maxStacks: 4,
-    stackDuration: 30
+    stackDuration: 30,
   },
   constellation4: {
     plunging_dmg_: 0.3,
   },
   constellation6: {
-    bonus_dmg_: 0.17
-  }
+    bonus_dmg_: 0.17,
+  },
 } as const
 
 const [condBurstBlossomPath, condBurstBlossom] = cond(key, "burstBlossom")
@@ -91,18 +91,18 @@ const c2_burst_dmgInc = greaterEq(input.constellation, 2,
       condC2Stacks,
       Object.fromEntries(range(1, dm.constellation2.maxStacks).map(i =>
         [i,
-          prod(i, dm.constellation2.blossomDmgInc)]
-      )
+          prod(i, dm.constellation2.blossomDmgInc)],
       ),
-      naught
+      ),
+      naught,
     ),
-    input.total.def
-  )
+    input.total.def,
+  ),
 )
 
 const [condSkillInFieldPath, condSkillInField] = cond(key, "skillInField")
 const c4_plunging_dmg_disp = greaterEq(input.constellation, 4,
-  equal(condSkillInField, "skillInField", dm.constellation4.plunging_dmg_)
+  equal(condSkillInField, "skillInField", dm.constellation4.plunging_dmg_),
 )
 const c4_plunging_dmg_ = equal(input.activeCharKey, target.charKey, c4_plunging_dmg_disp)
 
@@ -111,8 +111,8 @@ const c4_plunging_dmg_ = equal(input.activeCharKey, target.charKey, c4_plunging_
 const [condC6CrystallizePath, condC6Crystallize] = cond(key, "c6Crystallize")
 const c6_Crystal_all_dmg_disp = greaterEq(input.constellation, 6,
   equal(condSkillInField, "skillInField",
-    equal(condC6Crystallize, "c6Crystallize", dm.constellation6.bonus_dmg_)
-  )
+    equal(condC6Crystallize, "c6Crystallize", dm.constellation6.bonus_dmg_),
+  ),
 )
 const c6_Crystal_all_dmg_ = equal(input.activeCharKey, target.charKey, c6_Crystal_all_dmg_disp)
 
@@ -144,7 +144,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       eleMas: p2Burst_eleMas,
       plunging_dmg_: c4_plunging_dmg_,
       all_dmg_: c6_Crystal_all_dmg_,
-    }
+    },
   },
   premod: {
     skillBoost: skillC3,
@@ -164,11 +164,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal")
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -194,22 +194,22 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.blossom, { name: ct.chg(`skill.skillParams.1`) })
+        node: infoMut(dmgFormulas.skill.blossom, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
         text: ct.ch("blossomCD"),
         value: dm.skill.blossomCd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, ct.condTem("passive1", {
       value: condP1EnemyHp,
       path: condP1EnemyHpPath,
@@ -217,16 +217,16 @@ const sheet: ICharacterSheet = {
       states: {
         belowHp: {
           fields: [{
-            node: infoMut(p1_blossom_dmg_, { name: ct.ch("blossomDmg_"), unit: "%" })
-          }]
-        }
-      }
+            node: infoMut(p1_blossom_dmg_, { name: ct.ch("blossomDmg_"), unit: "%" }),
+          }],
+        },
+      },
     }), ct.headerTem("constellation1", {
       fields: [{
         text: ct.ch("enerPerBlossom"),
         value: dm.constellation1.blossomEner,
         fixed: 1,
-      }]
+      }],
     }), ct.condTem("constellation4", {
       value: condSkillInField,
       path: condSkillInFieldPath,
@@ -235,10 +235,10 @@ const sheet: ICharacterSheet = {
       states: {
         skillInField: {
           fields: [{
-            node: infoMut(c4_plunging_dmg_disp, KeyMap.info("plunging_dmg_"))
-          }]
-        }
-      }
+            node: infoMut(c4_plunging_dmg_disp, KeyMap.info("plunging_dmg_")),
+          }],
+        },
+      },
     }), ct.condTem("constellation6", {
       value: condC6Crystallize,
       path: condC6CrystallizePath,
@@ -249,9 +249,9 @@ const sheet: ICharacterSheet = {
         c6Crystallize: {
           fields: [{
             node: infoMut(c6_Crystal_all_dmg_disp, KeyMap.info("all_dmg_")),
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -264,7 +264,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.condTem("burst", {
       value: condBurstBlossom,
       path: condBurstBlossomPath,
@@ -276,9 +276,9 @@ const sheet: ICharacterSheet = {
               name: ct.chg(`burst.skillParams.1`),
               multi: dm.burst.blossomAmt,
             }),
-          }]
-        }
-      }
+          }],
+        },
+      },
     }), ct.condTem("passive2", {
       value: condBurstUsed,
       path: condBurstUsedPath,
@@ -287,14 +287,14 @@ const sheet: ICharacterSheet = {
       states: {
         burstUsed: {
           fields: [{
-            node: p2Burst_eleMas
+            node: p2Burst_eleMas,
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     }), ct.condTem("constellation2", {
       value: condC2Stacks,
       path: condC2StacksPath,
@@ -303,10 +303,10 @@ const sheet: ICharacterSheet = {
         [i, {
           name: st("stack", { count: i }),
           fields: [{
-            node: c2_burst_dmgInc
-          }]
-        }]
-      ))
+            node: c2_burst_dmgInc,
+          }],
+        }],
+      )),
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -318,7 +318,7 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: burstC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
 export default new CharacterSheet(sheet, data)

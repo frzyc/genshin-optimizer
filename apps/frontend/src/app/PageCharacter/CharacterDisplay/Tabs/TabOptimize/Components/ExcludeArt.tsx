@@ -1,25 +1,25 @@
-import AddIcon from '@mui/icons-material/Add';
-import BlockIcon from '@mui/icons-material/Block';
-import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material";
-import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react";
-import { Trans, useTranslation } from "react-i18next";
-import ArtifactCardNano from "../../../../../Components/Artifact/ArtifactCardNano";
-import ArtifactFilterDisplay from "../../../../../Components/Artifact/ArtifactFilterDisplay";
-import CardDark from "../../../../../Components/Card/CardDark";
-import CardLight from "../../../../../Components/Card/CardLight";
-import CloseButton from "../../../../../Components/CloseButton";
-import InfoTooltip from "../../../../../Components/InfoTooltip";
-import ModalWrapper from "../../../../../Components/ModalWrapper";
-import SqBadge from "../../../../../Components/SqBadge";
-import { CharacterContext } from "../../../../../Context/CharacterContext";
-import { DatabaseContext } from "../../../../../Database/Database";
-import ArtifactCard from "../../../../../PageArtifact/ArtifactCard";
-import { artifactFilterConfigs, initialFilterOption } from "../../../../../PageArtifact/ArtifactSort";
-import useBoolState from "../../../../../ReactHooks/useBoolState";
-import useForceUpdate from "../../../../../ReactHooks/useForceUpdate";
-import useMediaQueryUp from "../../../../../ReactHooks/useMediaQueryUp";
-import { filterFunction } from "../../../../../Util/SortByFilters";
-import useBuildSetting from "../useBuildSetting";
+import AddIcon from '@mui/icons-material/Add'
+import BlockIcon from '@mui/icons-material/Block'
+import { Box, Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
+import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react"
+import { Trans, useTranslation } from "react-i18next"
+import ArtifactCardNano from "../../../../../Components/Artifact/ArtifactCardNano"
+import ArtifactFilterDisplay from "../../../../../Components/Artifact/ArtifactFilterDisplay"
+import CardDark from "../../../../../Components/Card/CardDark"
+import CardLight from "../../../../../Components/Card/CardLight"
+import CloseButton from "../../../../../Components/CloseButton"
+import InfoTooltip from "../../../../../Components/InfoTooltip"
+import ModalWrapper from "../../../../../Components/ModalWrapper"
+import SqBadge from "../../../../../Components/SqBadge"
+import { CharacterContext } from "../../../../../Context/CharacterContext"
+import { DatabaseContext } from "../../../../../Database/Database"
+import ArtifactCard from "../../../../../PageArtifact/ArtifactCard"
+import { artifactFilterConfigs, initialFilterOption } from "../../../../../PageArtifact/ArtifactSort"
+import useBoolState from "../../../../../ReactHooks/useBoolState"
+import useForceUpdate from "../../../../../ReactHooks/useForceUpdate"
+import useMediaQueryUp from "../../../../../ReactHooks/useMediaQueryUp"
+import { filterFunction } from "../../../../../Util/SortByFilters"
+import useBuildSetting from "../useBuildSetting"
 
 export default function ExcludeArt({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation("page_character_optimize")

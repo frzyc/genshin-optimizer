@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next"
 import { getCharSheet } from "../../Data/Characters"
 import { DatabaseContext } from "../../Database/Database"
 import useDBMeta from "../../ReactHooks/useDBMeta"
-import { charKeyToCharName, LocationCharacterKey, allLocationCharacterKeys, travelerKeys } from "../../Types/consts"
-import { GeneralAutocompleteMulti, GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import type { LocationCharacterKey} from "../../Types/consts"
+import { charKeyToCharName, allLocationCharacterKeys, travelerKeys } from "../../Types/consts"
+import type { GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import { GeneralAutocompleteMulti } from "../GeneralAutocomplete"
 import CharIconSide from "../Image/CharIconSide"
 
 export default function LocationFilterMultiAutocomplete({ locations, setLocations, totals, disabled }: {
@@ -22,8 +24,8 @@ export default function LocationFilterMultiAutocomplete({ locations, setLocation
   const toImg = useCallback((key: LocationCharacterKey) => <CharIconSide src={characterAsset(database.chars.LocationToCharacterKey(key), "iconSide", gender)} size={3} />
     , [database, gender])
 
-  const toExLabel = useCallback((key: LocationCharacterKey) => <strong>{totals[key]}</strong>, [totals],)
-  const toExItemLabel = useCallback((key: LocationCharacterKey) => <Chip size="small" label={totals[key]} />, [totals],)
+  const toExLabel = useCallback((key: LocationCharacterKey) => <strong>{totals[key]}</strong>, [totals])
+  const toExItemLabel = useCallback((key: LocationCharacterKey) => <Chip size="small" label={totals[key]} />, [totals])
 
   const isFavorite = useCallback((key: LocationCharacterKey) => key === "Traveler" ?
     travelerKeys.some(key => database.charMeta.get(key).favorite) :

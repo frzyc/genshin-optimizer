@@ -29,7 +29,7 @@ export function compileTagMapKeys(tags: readonly ({ category: TagCategory, value
     data[tag.category] = {
       offset: byteOffset,
       mask: (1 << bitNeeded) - 1 << bitOffset,
-      ids: Object.fromEntries(tag.values.map((v, i) => [v, (i + 1) << bitOffset]))
+      ids: Object.fromEntries(tag.values.map((v, i) => [v, (i + 1) << bitOffset])),
     }
     bitOffset += bitNeeded
   }
@@ -61,7 +61,7 @@ export function mergeTagMapValues<V>(entries: CompiledTagMapValues<V>[]): Compil
   return Object.fromEntries([...keys].map(key => [
     key, key === ''
       ? entries.flatMap(e => e[key]!).filter(x => x) as any
-      : mergeTagMapValues(entries.map(e => e[key]!).filter(x => x))
+      : mergeTagMapValues(entries.map(e => e[key]!).filter(x => x)),
   ]))
 }
 

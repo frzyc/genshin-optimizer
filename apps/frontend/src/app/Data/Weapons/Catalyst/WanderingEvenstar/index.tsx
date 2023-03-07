@@ -1,11 +1,11 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, percent, prod, subscript, unequal } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -17,23 +17,23 @@ const [condPassivePath, condPassive] = cond(key, "passive")
 const atkArr = [0.24, 0.3, 0.36, 0.42, 0.48]
 const selfAtk = equal(input.weapon.key, key, equal("on", condPassive, prod(
   subscript(input.weapon.refineIndex, atkArr, { unit: "%" }),
-  input.premod.eleMas
+  input.premod.eleMas,
 )))
 const teamAtkDisp = equal(input.weapon.key, key, prod(percent(0.3), selfAtk))
 const teamAtk = unequal(input.activeCharKey, input.charKey, teamAtkDisp)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   total: {
-    atk: selfAtk
+    atk: selfAtk,
   },
   teamBuff: {
     total: {
-      atk: teamAtk
-    }
-  }
+      atk: teamAtk,
+    },
+  },
 }, {
   selfAtk,
-  teamAtkDisp
+  teamAtkDisp,
 })
 
 const sheet: IWeaponSheet = {
@@ -46,14 +46,14 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: selfAtk
+          node: selfAtk,
         }, {
           text: stg("duration"),
           value: 12,
-          unit: "s"
-        }]
-      }
-    }
+          unit: "s",
+        }],
+      },
+    },
   }, {
     header: headerTemplate(key, st("teamBuff")),
     teamBuff: true,
@@ -63,8 +63,8 @@ const sheet: IWeaponSheet = {
     }, {
       text: stg("duration"),
       value: 12,
-      unit: "s"
-    }]
+      unit: "s",
+    }],
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

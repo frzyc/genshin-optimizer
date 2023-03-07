@@ -12,8 +12,8 @@ import CardDark from "../Components/Card/CardDark"
 import SqBadge from "../Components/SqBadge"
 import { DatabaseContext } from "../Database/Database"
 import useDisplayArtifact from "../ReactHooks/useDisplayArtifact"
-import { ICachedArtifact } from "../Types/artifact"
-import { FilterOption } from "./ArtifactSort"
+import type { ICachedArtifact } from "../Types/artifact"
+import type { FilterOption } from "./ArtifactSort"
 const ArtifactFilterDisplay = lazy(() => import('../Components/Artifact/ArtifactFilterDisplay'))
 
 export default function ArtifactFilter({ numShowing, total, artifactIds }: { numShowing: number, total: number, artifactIds: string[] }) {
@@ -47,7 +47,7 @@ export default function ArtifactFilter({ numShowing, total, artifactIds }: { num
 }
 
 export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
-  const { t } = useTranslation(["artifact", "ui"]);
+  const { t } = useTranslation(["artifact", "ui"])
   const { database } = useContext(DatabaseContext)
   const { numDelete, numUnequip, numUnlock, numLock } = useMemo(() => {
     const artifacts = artifactIds.map(id => database.arts.get(id)) as ICachedArtifact[]

@@ -1,4 +1,5 @@
-import { PropTypeKey, propTypeMap } from "@genshin-optimizer/pipeline"
+import type { PropTypeKey} from "@genshin-optimizer/pipeline"
+import { propTypeMap } from "@genshin-optimizer/pipeline"
 import { readDMJSON } from "../../util"
 
 type AvatarPromoteExcelConfigData = {
@@ -62,8 +63,8 @@ ascensionSrc.forEach(asc => {
   if (!ascensionData[avatarPromoteId]) ascensionData[avatarPromoteId] = []
   ascensionData[avatarPromoteId][promoteLevel] = {
     props: Object.fromEntries(addProps.map(({ propType, value = 0 }) =>
-      [propTypeMap[propType], value]))
+      [propTypeMap[propType], value])),
   }
 })
 
-export default ascensionData;
+export default ascensionData

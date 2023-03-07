@@ -1,5 +1,5 @@
 
-import { PropTypeKey } from "@genshin-optimizer/pipeline"
+import type { PropTypeKey } from "@genshin-optimizer/pipeline"
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { readDMJSON } from "../../util"
 type WeaponPromoteExcelConfigData = {

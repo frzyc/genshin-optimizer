@@ -1,8 +1,9 @@
-import { ButtonProps, MenuItem } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { ArtifactRarity } from "../../Types/consts";
-import DropdownButton from "../DropdownMenu/DropdownButton";
-import { StarsDisplay } from "../StarDisplay";
+import type { ButtonProps} from "@mui/material"
+import { MenuItem } from "@mui/material"
+import { useTranslation } from "react-i18next"
+import type { ArtifactRarity } from "../../Types/consts"
+import DropdownButton from "../DropdownMenu/DropdownButton"
+import { StarsDisplay } from "../StarDisplay"
 
 type props = ButtonProps & {
   rarity?: ArtifactRarity

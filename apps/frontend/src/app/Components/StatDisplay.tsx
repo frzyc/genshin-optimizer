@@ -1,5 +1,6 @@
 import { Box } from "@mui/material"
-import KeyMap, { StatKey } from "../KeyMap"
+import type { StatKey } from "../KeyMap"
+import KeyMap from "../KeyMap"
 import StatIcon from "../KeyMap/StatIcon"
 import { iconInlineProps } from "../SVGIcons"
 import ColorText from "./ColoredText"

@@ -1,5 +1,5 @@
-import { CharacterKey } from '@genshin-optimizer/consts'
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, lookup, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import { objectKeyMap } from '../../../Util/Util'
@@ -7,7 +7,7 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++], // 4.1
       skillParam_gen.auto[a++], // 4.2
       skillParam_gen.auto[a++], // 5
-    ]
+    ],
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -87,7 +87,7 @@ const skillEye_ = equal("skillEye", condSkillEye,
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
   return dmgNode('atk', atkType, 'skill', {
-    enemy: { defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore) }
+    enemy: { defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore) },
   })
 }
 
@@ -103,11 +103,11 @@ const [condResolveStackPath, condResolveStack] = cond(key, "burstResolve")
 const resolveStackNode = lookup(condResolveStack, objectKeyMap(resolveStacks, i => constant(i)), 0, { name: ct.ch("burst.resolves") })
 const resolveInitialBonus_ = prod(
   subscript(input.total.burstIndex, dm.burst.resolveBonus1, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
-  resolveStackNode
+  resolveStackNode,
 )
 const resolveInfusedBonus_ = prod(
   subscript(input.total.burstIndex, dm.burst.resolveBonus2, { name: ct.ch("burst.resolveInfused_"), unit: "%" }),
-  resolveStackNode
+  resolveStackNode,
 )
 function burstResolve(mvArr: number[], initial = false) {
   const resolveBonus = initial ? resolveInitialBonus_ : resolveInfusedBonus_
@@ -116,25 +116,25 @@ function burstResolve(mvArr: number[], initial = false) {
     prod(
       sum(
         subscript(input.total.burstIndex, mvArr, { unit: "%" }),
-        resolveBonus
+        resolveBonus,
       ),
-      input.total.atk
+      input.total.atk,
     ),
     'burst',
     {
       hit: {
-        ele: constant('electro')
+        ele: constant('electro'),
       }, enemy: {
         // if Raiden is above or equal to C2, then account for DEF Ignore else not
-        defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore, { unit: "%" })
-      }
-    }
+        defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore, { unit: "%" }),
+      },
+    },
   )
 }
 
 const [condC4Path, condC4] = cond(key, "c4")
 const c4AtkBonus_ = greaterEq(input.constellation, 4,
-  equal("c4", condC4, unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus))
+  equal("c4", condC4, unequal(input.activeCharKey, input.charKey, dm.constellation4.atk_bonus)),
 )
 
 const dmgFormulas = {
@@ -148,7 +148,7 @@ const dmgFormulas = {
   skill: {
     dmg: skillDmg(dm.skill.skillDmg),
     coorDmg: skillDmg(dm.skill.coorDmg),
-    skillEye_
+    skillEye_,
   },
   burst: {
     dmg: burstResolve(dm.burst.dmg, true),
@@ -166,8 +166,8 @@ const dmgFormulas = {
   },
   passive2: {
     passive2ElecDmgBonus: greaterEq(input.asc, 4, prod(sum(input.premod.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.electroDmg_bonus), 100)),
-    energyRestore: infoMut(greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.energyGen), 100)), { name: ct.ch("a4.enerRest"), unit: "%" })
-  }
+    energyRestore: infoMut(greaterEq(input.asc, 4, prod(sum(input.total.enerRech_, percent(-dm.passive2.er)), percent(dm.passive2.energyGen), 100)), { name: ct.ch("a4.enerRest"), unit: "%" }),
+  },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -182,9 +182,9 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
   teamBuff: {
     premod: {
       atk_: c4AtkBonus_,
-      burst_dmg_: skillEyeTeamBurstDmgInc
-    }
-  }
+      burst_dmg_: skillEyeTeamBurstDmgInc,
+    },
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -202,7 +202,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 4 ? 0 : -1)}`), textSuffix: i === 3 ? "(1)" : i === 4 ? "(2)" : "" }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -211,7 +211,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -221,7 +221,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -243,10 +243,10 @@ const sheet: ICharacterSheet = {
       states: {
         skillEye: {
           fields: [{
-            node: skillEye_
-          }]
-        }
-      }
+            node: skillEye_,
+          }],
+        },
+      },
     },
     ), ct.condTem("skill", {
       value: condSkillEyeTeam,
@@ -258,8 +258,8 @@ const sheet: ICharacterSheet = {
         name: `${c}`,
         fields: [{
           node: skillEyeTeamBurstDmgInc,
-        }]
-      }]))
+        }],
+      }])),
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -312,18 +312,18 @@ const sheet: ICharacterSheet = {
         fields: [{
           node: infoMut(resolveInitialBonus_, { name: ct.ch("burst.resolveInitial_"), unit: "%" }),
         }, {
-          node: infoMut(resolveInfusedBonus_, { name: ct.ch("burst.resolveInfused_"), unit: "%" })
-        }]
-      }]))
+          node: infoMut(resolveInfusedBonus_, { name: ct.ch("burst.resolveInfused_"), unit: "%" }),
+        }],
+      }])),
     })]),
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: dmgFormulas.passive2.energyRestore
+        node: dmgFormulas.passive2.energyRestore,
       }, {
         node: dmgFormulas.passive2.passive2ElecDmgBonus,
-      }]
+      }],
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -341,14 +341,14 @@ const sheet: ICharacterSheet = {
             node: c4AtkBonus_,
           }, {
             text: ct.chg("skill.skillParams.2"),
-            value: `${dm.constellation4.duration}s`
-          }]
-        }
-      }
+            value: `${dm.constellation4.duration}s`,
+          }],
+        },
+      },
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
   },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

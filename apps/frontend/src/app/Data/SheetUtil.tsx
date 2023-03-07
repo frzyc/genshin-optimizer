@@ -1,8 +1,8 @@
-import { CharacterKey } from "@genshin-optimizer/consts"
+import type { CharacterKey } from "@genshin-optimizer/consts"
 import { Translate } from "../Components/Translate"
-import { ReadNode } from "../Formula/type"
+import type { ReadNode } from "../Formula/type"
 import { customStringRead } from "../Formula/utils"
-import { ArtifactSetKey, CharacterSheetKey, WeaponKey } from "../Types/consts"
+import type { ArtifactSetKey, CharacterSheetKey, WeaponKey } from "../Types/consts"
 
 export const st = (strKey: string, values?: object) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
@@ -22,6 +22,6 @@ export function trans(typeKey: "artifact", key: ArtifactSetKey): Translated
 export function trans(typeKey: "char" | "weapon" | "artifact", key: CharTransKey | WeaponKey | ArtifactSetKey): Translated {
   return [
     (strKey: string) => <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} />,
-    (strKey: string, values?: object) => <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
+    (strKey: string, values?: object) => <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />,
   ]
 }

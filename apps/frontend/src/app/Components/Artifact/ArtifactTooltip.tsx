@@ -1,23 +1,23 @@
-import { characterAsset } from "@genshin-optimizer/g-assets";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import { Box, Skeleton, Typography } from "@mui/material";
-import { Suspense, useContext } from "react";
-import { useTranslation } from "react-i18next";
-import { getArtSheet } from "../../Data/Artifacts";
-import Artifact from "../../Data/Artifacts/Artifact";
-import { DatabaseContext } from "../../Database/Database";
-import KeyMap, { cacheValueString } from "../../KeyMap";
-import StatIcon from "../../KeyMap/StatIcon";
-import useDBMeta from "../../ReactHooks/useDBMeta";
-import { iconInlineProps } from "../../SVGIcons";
-import { ICachedArtifact, ICachedSubstat } from "../../Types/artifact";
-import { charKeyToCharName } from "../../Types/consts";
-import { clamp } from "../../Util/Util";
-import BootstrapTooltip from "../BootstrapTooltip";
-import ThumbSide from "../Character/ThumbSide";
-import SqBadge from "../SqBadge";
-import { StarsDisplay } from "../StarDisplay";
-import SlotIcon from "./SlotIcon";
+import { characterAsset } from "@genshin-optimizer/g-assets"
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter"
+import { Box, Skeleton, Typography } from "@mui/material"
+import { Suspense, useContext } from "react"
+import { useTranslation } from "react-i18next"
+import { getArtSheet } from "../../Data/Artifacts"
+import Artifact from "../../Data/Artifacts/Artifact"
+import { DatabaseContext } from "../../Database/Database"
+import KeyMap, { cacheValueString } from "../../KeyMap"
+import StatIcon from "../../KeyMap/StatIcon"
+import useDBMeta from "../../ReactHooks/useDBMeta"
+import { iconInlineProps } from "../../SVGIcons"
+import type { ICachedArtifact, ICachedSubstat } from "../../Types/artifact"
+import { charKeyToCharName } from "../../Types/consts"
+import { clamp } from "../../Util/Util"
+import BootstrapTooltip from "../BootstrapTooltip"
+import ThumbSide from "../Character/ThumbSide"
+import SqBadge from "../SqBadge"
+import { StarsDisplay } from "../StarDisplay"
+import SlotIcon from "./SlotIcon"
 
 export default function ArtifactTooltip({ art, children }: { art: ICachedArtifact, children: JSX.Element }) {
   const fallback = <Box>

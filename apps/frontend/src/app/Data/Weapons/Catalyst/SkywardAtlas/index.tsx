@@ -1,11 +1,12 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
-import { allElementKeys, WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -18,12 +19,12 @@ const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
 
 const dmg = equal(input.weapon.key, key,
   customDmgNode(prod(subscript(input.weapon.refineIndex, dmgPerc, { unit: "%" }), input.total.atk), "elemental", {
-    hit: { ele: constant("physical") }
+    hit: { ele: constant("physical") },
   }))
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...Object.fromEntries(allElementKeys.map(ele => [`${ele}_dmg_`, eleBonus_[ele]])),
-  }
+  },
 }, { dmg })
 
 const sheet: IWeaponSheet = {
@@ -33,7 +34,7 @@ const sheet: IWeaponSheet = {
       ...allElementKeys.map(ele => ({ node: eleBonus_[ele] })),
       {
         node: infoMut(dmg, { name: st("dmg") }),
-      }]
+      }],
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

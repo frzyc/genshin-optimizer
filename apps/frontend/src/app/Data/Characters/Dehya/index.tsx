@@ -1,5 +1,5 @@
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, lookup, naught, percent, prod, subscript } from '../../../Formula/utils'
 import { objectKeyMap, range } from '../../../Util/Util'
@@ -7,7 +7,7 @@ import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { customHealNode, dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
-import { ICharacterSheet } from '../ICharacterSheet'
+import type { ICharacterSheet } from '../ICharacterSheet'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -25,7 +25,7 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ]
+    ],
   },
   charged: {
     spin: skillParam_gen.auto[a++],
@@ -85,27 +85,27 @@ const dm = {
     duration: skillParam_gen.constellation6[2],
     maxDuration: skillParam_gen.constellation6[3],
     maxBurst_critDMG_: skillParam_gen.constellation6[4],
-  }
+  },
 } as const
 
 const c1_hp_ = greaterEq(input.constellation, 1, dm.c1.hp_)
 const c1_skill_dmgInc = greaterEq(input.constellation, 1,
-  prod(percent(dm.c1.skill_dmgInc), input.total.hp)
+  prod(percent(dm.c1.skill_dmgInc), input.total.hp),
 )
 const c1_burst_dmgInc = greaterEq(input.constellation, 1,
-  prod(percent(dm.c1.burst_dmgInc), input.total.hp)
+  prod(percent(dm.c1.burst_dmgInc), input.total.hp),
 )
 
 const [condC2InFieldPath, condC2InField] = cond(key, "c2InField")
 const c2InField_field_dmg_ = greaterEq(input.constellation, 2,
-  equal(condC2InField, "on", dm.c2.field_dmg_)
+  equal(condC2InField, "on", dm.c2.field_dmg_),
 )
 
 const c6_burst_critRate_ = greaterEq(input.constellation, 6, dm.c6.burst_critRate_)
 const c6CritStacksArr = range(1, 4)
 const [condC6CritStacksPath, condC6CritStacks] = cond(key, "c6CritStacks")
 const c6CritStacks_burst_critDMG_ = greaterEq(input.constellation, 6,
-  lookup(condC6CritStacks, objectKeyMap(c6CritStacksArr, stack => prod(stack, percent(dm.c6.burst_critDMG_))), naught)
+  lookup(condC6CritStacks, objectKeyMap(c6CritStacksArr, stack => prod(stack, percent(dm.c6.burst_critDMG_))), naught),
 )
 
 const dmgFormulas = {
@@ -113,7 +113,7 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     spin: dmgNode("atk", dm.charged.spin, "charged"),
-    final: dmgNode("atk", dm.charged.final, "charged")
+    final: dmgNode("atk", dm.charged.final, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -121,7 +121,7 @@ const dmgFormulas = {
     indomitableDmg: dmgNode("atk", dm.skill.indomitableDmg, "skill"),
     rangingDmg: dmgNode("atk", dm.skill.rangingDmg, "skill"),
     fieldDmg: splitScaleDmgNode(["atk", "hp"], [dm.skill.fieldDmgAtk, dm.skill.fieldDmgHp], "skill", { premod: { skill_dmg_: c2InField_field_dmg_ } }),
-    redmaneMax: prod(percent(dm.skill.redmaneMax), input.total.hp)
+    redmaneMax: prod(percent(dm.skill.redmaneMax), input.total.hp),
   },
   burst: {
     fistDmg: splitScaleDmgNode(["atk", "hp"], [dm.burst.fistDmgAtk, dm.burst.fistDmgHp], "burst"),
@@ -131,29 +131,29 @@ const dmgFormulas = {
     initialHeal: greaterEq(input.asc, 4, customHealNode(
       prod(
         percent(dm.passive2.initialHeal),
-        input.total.hp
-      ))
+        input.total.hp,
+      )),
     ),
     dotHeal: greaterEq(input.asc, 4, customHealNode(
       prod(
         percent(dm.passive2.dotHeal),
-        input.total.hp
-      )
-    ))
+        input.total.hp,
+      ),
+    )),
   },
   constellation1: {
     c1_skill_dmgInc,
-    c1_burst_dmgInc
+    c1_burst_dmgInc,
   },
   constellation4: {
     heal: greaterEq(input.constellation, 4,
       customHealNode(
         prod(
           percent(dm.c4.heal),
-          input.total.hp
-        )
-      ))
-  }
+          input.total.hp,
+        ),
+      )),
+  },
 } as const
 
 const burstC3 = greaterEq(input.constellation, 3, 3)
@@ -167,8 +167,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
     skill_dmgInc: c1_skill_dmgInc,
     burst_dmgInc: c1_burst_dmgInc,
     burst_critRate_: c6_burst_critRate_,
-    burst_critDMG_: c6CritStacks_burst_critDMG_
-  }
+    burst_critDMG_: c6CritStacks_burst_critDMG_,
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -182,11 +182,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal")
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -207,7 +207,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -220,20 +220,20 @@ const sheet: ICharacterSheet = {
       }, {
         node: subscript(input.total.skillIndex, dm.skill.mitigation, { name: ct.chg("skill.skillParams.3"), unit: "%" }),
       }, {
-        node: infoMut(dmgFormulas.skill.redmaneMax, { name: ct.chg("skill.skillParams.4") })
+        node: infoMut(dmgFormulas.skill.redmaneMax, { name: ct.chg("skill.skillParams.4") }),
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.fieldDuration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, ct.headerTem("constellation1", {
       fields: [{
-        node: c1_skill_dmgInc
-      }]
+        node: c1_skill_dmgInc,
+      }],
     }), ct.condTem("constellation2", {
       path: condC2InFieldPath,
       value: condC2InField,
@@ -241,10 +241,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: infoMut(c2InField_field_dmg_, { name: ct.ch("field_dmg_"), unit: "%" })
-          }]
-        }
-      }
+            node: infoMut(c2InField_field_dmg_, { name: ct.ch("field_dmg_"), unit: "%" }),
+          }],
+        },
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -255,32 +255,32 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("duration"),
         value: dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.headerTem("constellation1", {
       fields: [{
-        node: c1_burst_dmgInc
-      }]
+        node: c1_burst_dmgInc,
+      }],
     }), ct.headerTem("constellation4", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation4.heal, { name: stg("healing")})
+        node: infoMut(dmgFormulas.constellation4.heal, { name: stg("healing")}),
       }, {
         text: stg("cd"),
         value: dm.c4.cd,
         unit: "s",
-        fixed: 1
-      }]
+        fixed: 1,
+      }],
     }), ct.headerTem("constellation6", {
       fields: [{
-        node: c6_burst_critRate_
-      }]
+        node: c6_burst_critRate_,
+      }],
     }), ct.condTem("constellation6", {
       path: condC6CritStacksPath,
       value: condC6CritStacks,
@@ -288,29 +288,29 @@ const sheet: ICharacterSheet = {
       states: objectKeyMap(c6CritStacksArr, stack => ({
         name: st("hits", { count: stack }),
         fields: [{
-          node: c6CritStacks_burst_critDMG_
-        }]
-      }))
+          node: c6CritStacks_burst_critDMG_,
+        }],
+      })),
     })]),
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.initialHeal, { name: ct.ch("initialHeal") })
+        node: infoMut(dmgFormulas.passive2.initialHeal, { name: ct.ch("initialHeal") }),
       }, {
-        node: infoMut(dmgFormulas.passive2.dotHeal, { name: ct.ch("dotHeal"), multi: 5 })
-      }]
+        node: infoMut(dmgFormulas.passive2.dotHeal, { name: ct.ch("dotHeal"), multi: 5 }),
+      }],
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.fieldsTem("constellation1", {
-      fields: [{ node: c1_hp_ }]
+      fields: [{ node: c1_hp_ }],
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: burstC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: skillC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
 export default new CharacterSheet(sheet, data)

@@ -1,5 +1,5 @@
-import { NumNode } from "../Formula/type";
-import { UIData } from "../Formula/uiData";
+import type { NumNode } from "../Formula/type"
+import type { UIData } from "../Formula/uiData"
 
 export interface IBasicFieldDisplay {
   canShow?: (data: UIData) => boolean;

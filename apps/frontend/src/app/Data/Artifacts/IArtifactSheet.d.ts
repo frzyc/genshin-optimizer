@@ -1,5 +1,5 @@
-import { ArtifactRarity, SetNum } from "../../Types/consts";
-import { DocumentSection } from "../../Types/sheet";
+import type { ArtifactRarity, SetNum } from "../../Types/consts"
+import type { DocumentSection } from "../../Types/sheet"
 export interface IArtifactSheet {
   name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
   rarity: readonly ArtifactRarity[],

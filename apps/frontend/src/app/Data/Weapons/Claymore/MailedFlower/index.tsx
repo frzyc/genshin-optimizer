@@ -1,9 +1,9 @@
-import { WeaponKey } from '@genshin-optimizer/consts'
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { cond, st, stg, trans } from '../../../SheetUtil'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
@@ -35,14 +35,14 @@ const sheet: IWeaponSheet = {
         fields: [{
           node: atk_,
         }, {
-          node: eleMas
+          node: eleMas,
         }, {
           text: stg("duration"),
           value: 8,
-          unit: "s"
-        }]
-      }
-    }
+          unit: "s",
+        }],
+      },
+    },
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

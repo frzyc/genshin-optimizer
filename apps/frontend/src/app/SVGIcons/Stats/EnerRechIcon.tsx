@@ -1,4 +1,4 @@
-import { createSvgIcon } from "@mui/material";
+import { createSvgIcon } from "@mui/material"
 
 const EnerRechIcon = createSvgIcon(<>
   <path d="M 6.105469 12.003906 C 6.097656 10.160156 6.824219 8.390625 8.128906 7.089844 C 9.429688 5.785156 11.199219 5.054688 13.039062 5.0625 L 13.039062 1.042969 C 7.011719 1.046875 2.085938 5.976562 2.085938 12.003906 Z M 6.105469 12.003906 " opacity=".3" />

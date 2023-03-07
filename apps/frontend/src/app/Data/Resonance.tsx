@@ -1,22 +1,22 @@
-import { allElementKeys, allElementWithPhyKeys } from "@genshin-optimizer/consts";
-import ElementCycle from "../Components/ElementCycle";
-import { Translate } from "../Components/Translate";
-import { input, tally } from "../Formula";
-import { inferInfoMut } from "../Formula/api";
-import { UIData } from "../Formula/uiData";
-import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils";
-import KeyMap from "../KeyMap";
-import { iconInlineProps } from "../SVGIcons";
-import AnemoIcon from "../SVGIcons/Element/AnemoIcon";
-import CryoIcon from "../SVGIcons/Element/CryoIcon";
-import DendroIcon from "../SVGIcons/Element/DendroIcon";
-import ElectroIcon from "../SVGIcons/Element/ElectroIcon";
-import GeoIcon from "../SVGIcons/Element/GeoIcon";
-import HydroIcon from "../SVGIcons/Element/HydroIcon";
-import PyroIcon from "../SVGIcons/Element/PyroIcon";
-import { DocumentSection } from "../Types/sheet";
-import { objectKeyValueMap } from "../Util/Util";
-import { condReadNode, st, stg } from "./SheetUtil";
+import { allElementKeys, allElementWithPhyKeys } from "@genshin-optimizer/consts"
+import ElementCycle from "../Components/ElementCycle"
+import { Translate } from "../Components/Translate"
+import { input, tally } from "../Formula"
+import { inferInfoMut } from "../Formula/api"
+import type { UIData } from "../Formula/uiData"
+import { equal, greaterEq, infoMut, percent, sum } from "../Formula/utils"
+import KeyMap from "../KeyMap"
+import { iconInlineProps } from "../SVGIcons"
+import AnemoIcon from "../SVGIcons/Element/AnemoIcon"
+import CryoIcon from "../SVGIcons/Element/CryoIcon"
+import DendroIcon from "../SVGIcons/Element/DendroIcon"
+import ElectroIcon from "../SVGIcons/Element/ElectroIcon"
+import GeoIcon from "../SVGIcons/Element/GeoIcon"
+import HydroIcon from "../SVGIcons/Element/HydroIcon"
+import PyroIcon from "../SVGIcons/Element/PyroIcon"
+import type { DocumentSection } from "../Types/sheet"
+import { objectKeyValueMap } from "../Util/Util"
+import { condReadNode, st, stg } from "./SheetUtil"
 const tr = (strKey: string) => <Translate ns="elementalResonance_gen" key18={strKey} />
 const trm = (strKey: string) => <Translate ns="elementalResonance" key18={strKey} />
 
@@ -34,8 +34,8 @@ const teamSize = sum(...allElementKeys.map(ele => tally[ele]))
 const pcNodes = objectKeyValueMap(allElementWithPhyKeys, e => [
   `${e}_res_`,
   equal(input.activeCharKey, input.charKey,
-    greaterEq(tally.ele, 4, percent(0.15))
-  )
+    greaterEq(tally.ele, 4, percent(0.15)),
+  ),
 ])
 
 const protectiveCanopy: IResonance = {
@@ -45,15 +45,15 @@ const protectiveCanopy: IResonance = {
   canShow: (data: UIData) => allElementKeys.filter(e => data.get(tally[e]).value >= 1).length === 4,
   sections: [{
     teamBuff: true,
-    fields: Object.values(pcNodes).map(node => ({ node }))
-  }]
+    fields: Object.values(pcNodes).map(node => ({ node })),
+  }],
 }
 
 // Fervent Flames
 const ffNode = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.pyro, 2, percent(0.25))
-  )
+    greaterEq(tally.pyro, 2, percent(0.25)),
+  ),
 )
 const ferventFlames: IResonance = {
   name: tr("FerventFlames.name"),
@@ -65,18 +65,18 @@ const ferventFlames: IResonance = {
     fields: [{
       text: st("effectDuration.cryo"),
       value: -40,
-      unit: "%"
+      unit: "%",
     }, {
-      node: ffNode
-    }]
-  }]
+      node: ffNode,
+    }],
+  }],
 }
 
 // Soothing Waters
 const swNode = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.hydro, 2, percent(0.25))
-  )
+    greaterEq(tally.hydro, 2, percent(0.25)),
+  ),
 )
 const soothingWaters: IResonance = {
   name: tr("SoothingWater.name"),
@@ -88,11 +88,11 @@ const soothingWaters: IResonance = {
     fields: [{
       text: st("effectDuration.pyro"),
       value: -40,
-      unit: "%"
+      unit: "%",
     }, {
-      node: swNode
-    }]
-  }]
+      node: swNode,
+    }],
+  }],
 }
 
 //ShatteringIce
@@ -101,9 +101,9 @@ const condSI = condReadNode(condSIPath)
 const siNode = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.cryo, 2,
-      equal(condSI, "on", percent(0.15))
-    )
-  )
+      equal(condSI, "on", percent(0.15)),
+    ),
+  ),
 )
 const shatteringIce: IResonance = {
   name: tr("ShatteringIce.name"),
@@ -115,8 +115,8 @@ const shatteringIce: IResonance = {
     fields: [{
       text: st("effectDuration.electro"),
       value: -40,
-      unit: "%"
-    }]
+      unit: "%",
+    }],
   }, {
     teamBuff: true,
     path: condSIPath,
@@ -129,11 +129,11 @@ const shatteringIce: IResonance = {
     states: {
       on: {
         fields: [{
-          node: siNode
-        }]
-      }
-    }
-  }]
+          node: siNode,
+        }],
+      },
+    },
+  }],
 }
 
 // High Voltage
@@ -147,26 +147,26 @@ const highVoltage: IResonance = {
     fields: [{
       text: st("effectDuration.hydro"),
       value: -40,
-      unit: "%"
-    }]
-  }]
+      unit: "%",
+    }],
+  }],
 }
 
 // Impetuous Winds
 const iwNodeStam = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.anemo, 2, percent(-0.15))
-  )
+    greaterEq(tally.anemo, 2, percent(-0.15)),
+  ),
 )
 const iwNodeMove = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.anemo, 2, percent(0.1))
-  )
+    greaterEq(tally.anemo, 2, percent(0.1)),
+  ),
 )
 const iwNodeCD = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.anemo, 2, percent(-0.05))
-  )
+    greaterEq(tally.anemo, 2, percent(-0.05)),
+  ),
 )
 const impetuousWinds: IResonance = {
   name: tr("ImpetuousWinds.name"),
@@ -176,13 +176,13 @@ const impetuousWinds: IResonance = {
   sections: [{
     teamBuff: true,
     fields: [{
-      node: iwNodeStam
+      node: iwNodeStam,
     }, {
-      node: iwNodeMove
+      node: iwNodeMove,
     }, {
-      node: iwNodeCD
-    }]
-  }]
+      node: iwNodeCD,
+    }],
+  }],
 }
 
 // Enduring Rock
@@ -192,22 +192,22 @@ const condERHitPath = ["resonance", "EnduringRockHit"]
 const condERHit = condReadNode(condERHitPath)
 const erNodeshield_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.geo, 2, percent(0.15))
-  )
+    greaterEq(tally.geo, 2, percent(0.15)),
+  ),
 )
 const erNodeDMG_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.geo, 2,
-      equal(condERShield, "on", percent(0.15))
-    )
-  )
+      equal(condERShield, "on", percent(0.15)),
+    ),
+  ),
 )
 const erNodeRes_ = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.geo, 2,
-      equal(condERHit, "on", percent(-0.2))
-    )
-  )
+      equal(condERHit, "on", percent(-0.2)),
+    ),
+  ),
 )
 const enduringRock: IResonance = {
   name: tr("EnduringRock.name"),
@@ -218,8 +218,8 @@ const enduringRock: IResonance = {
     teamBuff: true,
     text: tr("EnduringRock.desc"),
     fields: [{
-      node: erNodeshield_
-    }]
+      node: erNodeshield_,
+    }],
   }, {
     teamBuff: true,
     path: condERShieldPath,
@@ -232,10 +232,10 @@ const enduringRock: IResonance = {
     states: {
       on: {
         fields: [{
-          node: erNodeDMG_
-        }]
-      }
-    }
+          node: erNodeDMG_,
+        }],
+      },
+    },
   }, {
     teamBuff: true,
     path: condERHitPath,
@@ -248,15 +248,15 @@ const enduringRock: IResonance = {
     states: {
       on: {
         fields: [{
-          node: erNodeRes_
+          node: erNodeRes_,
         }, {
           text: stg("duration"),
           value: 15,
-          unit: "s"
-        }]
-      }
-    }
-  }]
+          unit: "s",
+        }],
+      },
+    },
+  }],
 }
 
 // Sprawling Greenery
@@ -266,22 +266,22 @@ const condSG3elePath = ["resonance", "SprawlingCanopy3ele"]
 const condSG3ele = condReadNode(condSG3elePath)
 const sgBase_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
-    greaterEq(tally.dendro, 2, 50, { ...KeyMap.info("eleMas"), isTeamBuff: true })
-  )
+    greaterEq(tally.dendro, 2, 50, { ...KeyMap.info("eleMas"), isTeamBuff: true }),
+  ),
 )
 const sg2ele_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.dendro, 2,
-      equal(condSG2ele, "on", 30, { ...KeyMap.info("eleMas"), isTeamBuff: true })
-    )
-  )
+      equal(condSG2ele, "on", 30, { ...KeyMap.info("eleMas"), isTeamBuff: true }),
+    ),
+  ),
 )
 const sg3ele_eleMas = equal(input.activeCharKey, input.charKey,
   greaterEq(teamSize, 4,
     greaterEq(tally.dendro, 2,
-      equal(condSG3ele, "on", 20, { ...KeyMap.info("eleMas"), isTeamBuff: true })
-    )
-  )
+      equal(condSG3ele, "on", 20, { ...KeyMap.info("eleMas"), isTeamBuff: true }),
+    ),
+  ),
 )
 const sprawlingGreenery: IResonance = {
   name: tr("SprawlingGreenery.name"),
@@ -291,7 +291,7 @@ const sprawlingGreenery: IResonance = {
   sections: [{
     teamBuff: true,
     text: tr("SprawlingGreenery.desc"),
-    fields: [{ node: sgBase_eleMas }]
+    fields: [{ node: sgBase_eleMas }],
   }, {
     teamBuff: true,
     path: condSG2elePath,
@@ -304,14 +304,14 @@ const sprawlingGreenery: IResonance = {
     states: {
       on: {
         fields: [{
-          node: sg2ele_eleMas
+          node: sg2ele_eleMas,
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s"
-        }]
-      }
-    }
+          unit: "s",
+        }],
+      },
+    },
   }, {
     teamBuff: true,
     path: condSG3elePath,
@@ -324,15 +324,15 @@ const sprawlingGreenery: IResonance = {
     states: {
       on: {
         fields: [{
-          node: sg3ele_eleMas
+          node: sg3ele_eleMas,
         }, {
           text: stg("duration"),
           value: 6,
-          unit: "s"
-        }]
-      }
-    }
-  }]
+          unit: "s",
+        }],
+      },
+    },
+  }],
 }
 
 
@@ -363,7 +363,7 @@ export const resonanceData = inferInfoMut({
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
-      critRate_: siNode
-    }
-  }
+      critRate_: siNode,
+    },
+  },
 })

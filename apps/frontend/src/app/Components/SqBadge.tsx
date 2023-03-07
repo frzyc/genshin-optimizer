@@ -1,5 +1,6 @@
-import { ButtonProps, styled } from "@mui/material";
-import { HTMLAttributes } from "react";
+import type { ButtonProps} from "@mui/material"
+import { styled } from "@mui/material"
+import type { HTMLAttributes } from "react"
 
 interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
   color?: ButtonProps['color'],
@@ -17,6 +18,6 @@ const SqBadge = styled("span", {
   verticalAlign: "baseline",
   borderRadius: ".25em",
   backgroundColor: theme.palette[color]?.main,
-  color: theme.palette[color]?.contrastText
+  color: theme.palette[color]?.contrastText,
 }))
 export default SqBadge

@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,16 +26,16 @@ const dm = {
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
       skillParam_gen.auto[a++], // 5
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
-    aimedCharged: skillParam_gen.auto[a++]
+    aimedCharged: skillParam_gen.auto[a++],
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++]
+    high: skillParam_gen.auto[a++],
   },
   skill: {
     inheritedHp: skillParam_gen.skill[s++],
@@ -48,7 +48,7 @@ const dm = {
     cd: skillParam_gen.burst[b++][0],
     enerCost: skillParam_gen.burst[b++][0],
     rainDmg: skillParam_gen.burst[b++],
-    duration: skillParam_gen.burst[b++][0]
+    duration: skillParam_gen.burst[b++][0],
   },
   passive1: {
     critRateInc: skillParam_gen.passive1[p1++][0],
@@ -67,8 +67,8 @@ const dm = {
   constellation6: {
     moveSpdInc: skillParam_gen.constellation6[0],
     atkInc: skillParam_gen.constellation6[1],
-    duration: skillParam_gen.constellation6[2]
-  }
+    duration: skillParam_gen.constellation6[2],
+  },
 } as const
 
 const burst_critRate_ = greaterEq(input.asc, 1, percent(dm.passive1.critRateInc))
@@ -101,7 +101,7 @@ const dmgFormulas = {
   },
   constellation2: {
     manualDetonationDmg: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill", { premod: { skill_dmg_: percent(dm.constellation2.manualDetionationDmg) } })),
-  }
+  },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -116,9 +116,9 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
   teamBuff: {
     premod: {
       moveSPD_,
-      atk_: teamAtk_
-    }
-  }
+      atk_: teamAtk_,
+    },
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -132,7 +132,7 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal")
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
@@ -148,7 +148,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         node: infoMut(dmgFormulas.charged.secondAimedCharged, { name: ct.chg(`auto.skillParams.6`), textSuffix: ct.ch("secondArrow") }),
-      },],
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -171,12 +171,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: (data) => data.get(input.constellation).value >= 4 ? dm.skill.cd - dm.skill.cd * 0.2 : dm.skill.cd,
-        unit: "s"
+        unit: "s",
       }, {
         canShow: (data) => data.get(input.constellation).value >= 4,
         text: st("charges"),
         value: 2,
-      }]
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -187,15 +187,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: `${dm.burst.enerCost}`,
-      }]
+      }],
     }, ct.condTem("constellation6", {
       value: condC6,
       path: condC6Path,
@@ -204,30 +204,30 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: teamAtk_
+            node: teamAtk_,
           }, {
-            node: moveSPD_
+            node: moveSPD_,
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
         text: ct.ch("critRateBonus"),
         value: dm.passive1.critRateInc * 100,
-        unit: "%"
+        unit: "%",
       }, {
         text: ct.ch("aoeRangeBonus"),
         value: dm.passive1.aoeInc * 100,
-        unit: "%"
+        unit: "%",
       }, {
-        node: burst_critRate_
-      }]
+        node: burst_critRate_,
+      }],
     })]),
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA4,
@@ -236,14 +236,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: atk_
+            node: atk_,
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -254,4 +254,4 @@ const sheet: ICharacterSheet = {
     constellation6: ct.talentTem("constellation6"),
   },
 }
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

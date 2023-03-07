@@ -1,4 +1,5 @@
-import { CompiledTagMapKeys, CompiledTagMapValues, mergeTagMapValues, Tag, TagMapExactValues, TagMapKeys, TagMapSubsetCache, TagMapSubsetValues } from '../tag'
+import type { CompiledTagMapKeys, CompiledTagMapValues, Tag, TagMapSubsetCache} from '../tag'
+import { mergeTagMapValues, TagMapExactValues, TagMapKeys, TagMapSubsetValues } from '../tag'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, AnyOP, NumNode, Read, ReRead, StrNode } from './type'
@@ -38,7 +39,7 @@ export class Calculator<M = undefined> {
     result.push({
       pre: cache.subset().flatMap(n =>
         n.op === 'reread' ? this._preread(cache.with(n.tag)).pre : [this._compute(n, cache)]),
-      computed: {}
+      computed: {},
     })
     return result[0]!
   }

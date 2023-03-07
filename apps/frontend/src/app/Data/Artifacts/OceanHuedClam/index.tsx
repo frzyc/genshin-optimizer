@@ -1,9 +1,9 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "OceanHuedClam"
@@ -13,13 +13,13 @@ const set2 = greaterEq(input.artSet.OceanHuedClam, 2, percent(0.15))
 const heal = greaterEq(input.artSet.OceanHuedClam, 4,
   prod(
     prod(percent(0.9), 30000),
-    input.enemy.physical_resMulti_
-  )
+    input.enemy.physical_resMulti_,
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    heal_: set2
+    heal_: set2,
   },
 }, {
   heal,
@@ -33,10 +33,10 @@ const sheet: IArtifactSheet = {
       document: [{
         header: setHeader(4),
         fields: [{
-          node: infoMut(heal, { name: ArtifactSheet.trm(key)("condName"), variant: "physical" })
-        }]
-      }]
-    }
-  }
+          node: infoMut(heal, { name: ArtifactSheet.trm(key)("condName"), variant: "physical" }),
+        }],
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

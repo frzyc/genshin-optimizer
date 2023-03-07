@@ -1,12 +1,14 @@
-import { Interim, Setup } from "..";
-import { customMapFormula, forEachNodes } from "../../Formula/internal";
-import { allOperations, OptNode } from "../../Formula/optimization";
-import { ConstantNode } from "../../Formula/type";
-import { prod, threshold } from "../../Formula/utils";
-import { SlotKey } from "../../Types/consts";
-import { assertUnreachable, objectKeyValueMap, objectMap } from "../../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "../common";
-import type { SplitWorker } from "./BackgroundWorker";
+import type { Interim, Setup } from ".."
+import { customMapFormula, forEachNodes } from "../../Formula/internal"
+import type { OptNode } from "../../Formula/optimization"
+import { allOperations } from "../../Formula/optimization"
+import type { ConstantNode } from "../../Formula/type"
+import { prod, threshold } from "../../Formula/utils"
+import type { SlotKey } from "../../Types/consts"
+import { assertUnreachable, objectKeyValueMap, objectMap } from "../../Util/Util"
+import type { ArtifactBuildData, ArtifactsBySlot, DynStat, MinMax, RequestFilter } from "../common"
+import { computeFullArtRange, computeNodeRange, countBuilds, filterArts, pruneAll } from "../common"
+import type { SplitWorker } from "./BackgroundWorker"
 
 type Approximation = {
   base: number,
@@ -110,7 +112,7 @@ export class BNBSplitWorker implements SplitWorker {
       const index = Math.max(1, remaining.findIndex(({ cont }) => (contCutoff -= cont - minCont) <= 0))
       const lowArts = remaining.splice(index).map(({ art }) => art), highArts = remaining.map(({ art }) => art)
       return {
-        high: { arts: highArts, maxConts: approxs.map(approx => maxContribution(highArts, approx)), },
+        high: { arts: highArts, maxConts: approxs.map(approx => maxContribution(highArts, approx)) },
         low: { arts: lowArts, maxConts: approxs.map(approx => maxContribution(lowArts, approx)) },
       }
     })
@@ -187,7 +189,7 @@ function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[]
   return linearUpperBound(nodes, arts).map(weight => ({
     base: dot(arts.base, weight, weight.$c),
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
-      data => [data.id, dot(data.values, weight, 0)])
+      data => [data.id, dot(data.values, weight, 0)]),
   }))
 }
 function dot(values: DynStat, lin: DynStat, c: number): number {
@@ -321,7 +323,7 @@ export function linearUpperBound(nodes: OptNode[], arts: ArtifactsBySlot): Linea
         while (operands.length) {
           const operand = operands.pop()!
           if (operand.operation === "mul") operands.push(...operand.operands)
-          else if (operand.operation === "const") coeff *= operand.value;
+          else if (operand.operation === "const") coeff *= operand.value
           else flattenedOperands.push(operand)
         }
         const lins = flattenedOperands.map(op => map(op, outward))

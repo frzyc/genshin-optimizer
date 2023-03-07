@@ -1,4 +1,5 @@
-import { ListItemIcon, ListItemText, MenuItem, Theme } from "@mui/material";
+import type { Theme } from "@mui/material"
+import { ListItemIcon, ListItemText, MenuItem } from "@mui/material"
 
 type MenuItemWithImageProps = {
   value: string

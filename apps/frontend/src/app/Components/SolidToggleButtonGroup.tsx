@@ -1,4 +1,5 @@
-import { ButtonProps, styled, ToggleButtonGroup, ToggleButtonGroupProps } from "@mui/material";
+import type { ButtonProps, ToggleButtonGroupProps } from "@mui/material"
+import { styled, ToggleButtonGroup } from "@mui/material"
 
 export type SolidToggleButtonGroupProps = SolidToggleButtonGroupPropsPartial & ToggleButtonGroupProps
 type SolidToggleButtonGroupPropsPartial = {
@@ -7,7 +8,7 @@ type SolidToggleButtonGroupPropsPartial = {
 }
 
 const SolidToggleButtonGroup = styled(ToggleButtonGroup, {
-  shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor"
+  shouldForwardProp: (prop) => prop !== "baseColor" && prop !== "selectedColor",
 })<SolidToggleButtonGroupPropsPartial>(({ theme, baseColor = "secondary", selectedColor = "success" }) => ({
   '& .MuiToggleButtonGroup-grouped': {
     '&': {
@@ -32,6 +33,6 @@ const SolidToggleButtonGroup = styled(ToggleButtonGroup, {
       backgroundColor: theme.palette[selectedColor].dark,
     },
   },
-}));
+}))
 
 export default SolidToggleButtonGroup

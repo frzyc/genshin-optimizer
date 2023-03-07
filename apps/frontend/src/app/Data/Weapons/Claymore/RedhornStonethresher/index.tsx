@@ -1,10 +1,10 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -25,7 +25,7 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     def_,
     normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
     charged_dmgInc, // TODO: technically should be in "total", but should be fine as premod
-  }
+  },
 }, {
   normal_dmgInc,
   charged_dmgInc,
@@ -34,12 +34,12 @@ const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: def_
+      node: def_,
     }, {
-      node: normal_dmgInc
+      node: normal_dmgInc,
     }, {
-      node: charged_dmgInc
-    }]
+      node: charged_dmgInc,
+    }],
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

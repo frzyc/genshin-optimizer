@@ -1,8 +1,10 @@
-import { allElements, allWeaponTypeKeys, ElementKey, WeaponTypeKey } from "../../Types/consts";
-import { CharacterSortKey, characterSortKeys } from "../../Util/CharacterSort";
-import { ArtCharDatabase } from "../Database";
-import { DataEntry } from "../DataEntry";
-import { validateArr } from "../validationUtil";
+import type { ElementKey, WeaponTypeKey } from "../../Types/consts"
+import { allElements, allWeaponTypeKeys } from "../../Types/consts"
+import type { CharacterSortKey} from "../../Util/CharacterSort"
+import { characterSortKeys } from "../../Util/CharacterSort"
+import type { ArtCharDatabase } from "../Database"
+import { DataEntry } from "../DataEntry"
+import { validateArr } from "../validationUtil"
 
 export interface IDisplayCharacterEntry {
   sortType: CharacterSortKey
@@ -17,12 +19,12 @@ const initialState = (): IDisplayCharacterEntry => ({
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
   element: [...allElements],
-  pageIndex: 0
+  pageIndex: 0,
 })
 
 export class DisplayCharacterEntry extends DataEntry<"display_character", "display_character", IDisplayCharacterEntry, IDisplayCharacterEntry>{
   constructor(database: ArtCharDatabase) {
-    super(database, "display_character", initialState, "display_character",)
+    super(database, "display_character", initialState, "display_character")
   }
   validate(obj: any): IDisplayCharacterEntry | undefined {
     if (typeof obj !== "object") return

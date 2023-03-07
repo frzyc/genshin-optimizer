@@ -4,8 +4,8 @@ import { useCallback, useContext } from "react"
 import { useTranslation } from "react-i18next"
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../../../../../Components/CustomNumberInput"
 import { DataContext } from "../../../../../Context/DataContext"
-import { StatFilters, StatFilterSetting } from "../../../../../Database/DataManagers/BuildSettingData"
-import { NodeDisplay } from "../../../../../Formula/uiData"
+import type { StatFilters, StatFilterSetting } from "../../../../../Database/DataManagers/BuildSettingData"
+import type { NodeDisplay } from "../../../../../Formula/uiData"
 import { objPathValue } from "../../../../../Util/Util"
 import OptimizationTargetSelector from "./OptimizationTargetSelector"
 
@@ -66,8 +66,8 @@ export default function OptimizationTargetEditorList({ statFilters, setStatFilte
   return <>
     {Object.entries(statFilters).flatMap(([pathStr, settings]) =>
       settings?.map((setting, index) =>
-        <OptimizationTargetEditorItem path={JSON.parse(pathStr)} setting={setting} index={index} setTarget={setTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} key={pathStr + index} />
-      )
+        <OptimizationTargetEditorItem path={JSON.parse(pathStr)} setting={setting} index={index} setTarget={setTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} key={pathStr + index} />,
+      ),
     )}
     <OptimizationTargetEditorItem setTarget={setTarget} delTarget={delTarget} setValue={setTargetValue} setDisabled={setTargetDisabled} disabled={disabled} />
   </>
@@ -104,7 +104,7 @@ function OptimizationTargetEditorItem({ path, setting, index, setTarget, delTarg
         value={setting?.value}
         placeholder="Stat Value"
         onChange={onChange}
-        sx={{ px: 1, }}
+        sx={{ px: 1 }}
         inputProps={{ sx: { textAlign: "right" } }}
         endAdornment={isPercent ? "%" : undefined}
       />

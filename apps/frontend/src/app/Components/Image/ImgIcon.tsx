@@ -9,7 +9,7 @@ interface ImgIconProps {
 const ImgIcon = styled("img", {
   name: 'ImgIcon',
   slot: 'Root',
-  shouldForwardProp: (pn) => !["size", "sideMargin"].includes(pn as "size" | "sideMargin")
+  shouldForwardProp: (pn) => !["size", "sideMargin"].includes(pn as "size" | "sideMargin"),
 })<ImgIconProps>(({ size = 1, sideMargin = false }) => ({
   display: "inline-block",
   width: `${size}em`,
@@ -18,7 +18,7 @@ const ImgIcon = styled("img", {
   marginBottom: `${0.5 * (1 - size)}em`,
   marginLeft: sideMargin ? `${0.5 * (1 - size)}em` : undefined,
   marginRight: sideMargin ? `${0.5 * (1 - size)}em` : undefined,
-  verticalAlign: "text-bottom"
+  verticalAlign: "text-bottom",
 }))
 
 export default ImgIcon

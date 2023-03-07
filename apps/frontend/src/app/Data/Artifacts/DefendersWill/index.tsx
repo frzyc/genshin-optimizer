@@ -1,10 +1,11 @@
 import { input, tally } from "../../../Formula/index"
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { greaterEq, percent } from '../../../Formula/utils'
-import { allElementKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
 import { objectKeyValueMap } from '../../../Util/Util'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "DefendersWill"
@@ -19,7 +20,7 @@ const res_ = objectKeyValueMap(allElementKeys, (ele) => [
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     def_: set2,
-    ...res_
+    ...res_,
   },
 })
 
@@ -30,9 +31,9 @@ const sheet: IArtifactSheet = {
     4: {
       document: [{
         header: setHeader(4),
-        fields: Object.values(res_).map(node => ({ node }))
-      }]
-    }
-  }
+        fields: Object.values(res_).map(node => ({ node })),
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

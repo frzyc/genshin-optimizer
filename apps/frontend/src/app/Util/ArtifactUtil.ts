@@ -3,7 +3,8 @@ import { getArtSheet } from "../Data/Artifacts"
 import Artifact from "../Data/Artifacts/Artifact"
 import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from "../KeyMap"
-import { allSubstatKeys, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
+import type { IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
+import { allSubstatKeys } from "../Types/artifact"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 
 // do not randomize Prayers since they don't have all slots
@@ -41,5 +42,5 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
       substat.value = parseFloat(artifactSubstatRollCorrection[rarity]?.[substat.key]?.[value] ?? value)
     }
 
-  return { setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: base.location ?? "", lock: false, }
+  return { setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: base.location ?? "", lock: false }
 }

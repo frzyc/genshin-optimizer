@@ -1,34 +1,34 @@
 
-import { Check } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material';
-import { useState } from 'react';
-import Assets from '../Assets/Assets';
-import CardDark from '../Components/Card/CardDark';
-import CardLight from '../Components/Card/CardLight';
-import ColorText from '../Components/ColoredText';
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Components/CustomNumberInput';
-import ImgFullwidth from '../Components/Image/ImgFullwidth';
-import ImgIcon from '../Components/Image/ImgIcon';
-import TextButton from '../Components/TextButton';
-import { clamp, objectMap } from "../Util/Util";
+import { Check } from '@mui/icons-material'
+import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Typography } from '@mui/material'
+import { useState } from 'react'
+import Assets from '../Assets/Assets'
+import CardDark from '../Components/Card/CardDark'
+import CardLight from '../Components/Card/CardLight'
+import ColorText from '../Components/ColoredText'
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Components/CustomNumberInput'
+import ImgFullwidth from '../Components/Image/ImgFullwidth'
+import ImgIcon from '../Components/Image/ImgIcon'
+import TextButton from '../Components/TextButton'
+import { clamp, objectMap } from "../Util/Util"
 const booksData = {
   advice: {
     name: "Wanderer's Advice",
     exp: 1000,
     cost: 200,
-    img: Assets.exp_books.advice
+    img: Assets.exp_books.advice,
   },
   experience: {
     name: "Adventurer's Experience",
     exp: 5000,
     cost: 1000,
-    img: Assets.exp_books.experience
+    img: Assets.exp_books.experience,
   },
   wit: {
     name: "Hero's Wit",
     exp: 20000,
     cost: 4000,
-    img: Assets.exp_books.wit
+    img: Assets.exp_books.wit,
   },
 }
 const levelExp = [0, 1000, 1325, 1700, 2150, 2625, 3150, 3725, 4350, 5000, 5700, 6450, 7225, 8050, 8925, 9825, 10750, 11725, 12725, 13775, 14875, 16800, 18000, 19250, 20550, 21875, 23250, 24650, 26100, 27575, 29100, 30650, 32250, 33875, 35550, 37250, 38975, 40750, 42575, 44425, 46300, 50625, 52700, 54775, 56900, 59075, 61275, 63525, 65800, 68125, 70475, 76500, 79050, 81650, 84275, 86950, 89650, 92400, 95175, 98000, 100875, 108950, 112050, 115175, 118325, 121525, 124775, 128075, 131400, 134775, 138175, 148700, 152375, 156075, 159825, 163600, 167425, 171300, 175225, 179175, 183175, 216225, 243025, 273100, 306800, 344600, 386950, 434425, 487625, 547200]
@@ -40,7 +40,7 @@ function initExpCalc() {
     level: 1,
     curExp: 0,
     goUnder: false,
-    books: { advice: 0, experience: 0, wit: 0 }
+    books: { advice: 0, experience: 0, wit: 0 },
   }
 }
 
@@ -62,7 +62,7 @@ export default function EXPCalc() {
   let finalLvl = level
   for (; finalLvl < Math.min(milestoneLvl, levelExp.length); finalLvl++) {
     if (levelExp[finalLvl] <= finalExp) finalExp -= levelExp[finalLvl]
-    else break;
+    else break
   }
   if (finalLvl === milestoneLvl) finalExp = 0
 
@@ -206,7 +206,7 @@ export default function EXPCalc() {
             level: finalLvl,
             curExp: finalExp,
             books: objectMap(bookResultObj, (val, bookKey) => books[bookKey] - val) as any,
-            mora: finalMora
+            mora: finalMora,
           })}
           color="success"
           startIcon={<Check />}

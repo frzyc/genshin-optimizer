@@ -1,13 +1,13 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally, target } from '../../../Formula'
 import { compareEq, constant, equal, greaterEq, infoMut, lookup, max, min, naught, percent, prod, subscript, sum, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode, splitScaleDmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ]
+    ],
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -75,7 +75,7 @@ const dm = {
     duration: skillParam_gen.constellation2[2],
   },
   constellation4: {
-    eleMas: [...skillParam_gen.constellation4]
+    eleMas: [...skillParam_gen.constellation4],
   },
   constellation6: {
     atkDmg: skillParam_gen.constellation6[0],
@@ -83,7 +83,7 @@ const dm = {
     cd: skillParam_gen.constellation6[2],
     duration: skillParam_gen.constellation6[3],
     triggers: skillParam_gen.constellation6[4],
-  }
+  },
 } as const
 
 const [condPartyInBurstPath, condPartyInBurst] = cond(key, "partyInBurst")
@@ -92,24 +92,24 @@ const pyroLevel = sum(tally.pyro, greaterEq(input.constellation, 1, 1))
 const burst_karma_dmg_ = equal(condPartyInBurst, "on", greaterEq(pyroLevel, 1,
   compareEq(pyroLevel, 1,
     subscript(input.total.burstIndex, dm.burst.dmg_1),
-    subscript(input.total.burstIndex, dm.burst.dmg_2)
-  )
+    subscript(input.total.burstIndex, dm.burst.dmg_2),
+  ),
 ), { unit: "%" })
 
 const electroLevel = sum(tally.electro, greaterEq(input.constellation, 1, 1))
 const burst_skillIntervalDec = equal(condPartyInBurst, "on", greaterEq(electroLevel, 1,
   compareEq(electroLevel, 1,
     subscript(input.total.burstIndex, dm.burst.intervalDec_1),
-    subscript(input.total.burstIndex, dm.burst.intervalDec_2)
-  )
+    subscript(input.total.burstIndex, dm.burst.intervalDec_2),
+  ),
 ), { unit: "%" })
 
 const hydroLevel = sum(tally.hydro, greaterEq(input.constellation, 1, 1))
 const burst_durationInc = equal(condPartyInBurst, "on", greaterEq(hydroLevel, 1,
   compareEq(hydroLevel, 1,
     subscript(input.total.burstIndex, dm.burst.durationInc1),
-    subscript(input.total.burstIndex, dm.burst.durationInc2)
-  )
+    subscript(input.total.burstIndex, dm.burst.durationInc2),
+  ),
 ), { unit: "%" })
 
 const [condA1ActiveInBurstPath, condA1ActiveInBurst] = cond(key, "condA1ActiveInBurst")
@@ -117,15 +117,15 @@ const a1InBurst_eleMasDisp = greaterEq(input.asc, 1,
   equal(condA1ActiveInBurst, "on",
     greaterEq(sum( // Either party is in burst, or this is a teammate
       equal(condPartyInBurst, "on", 1),
-      unequal(input.activeCharKey, key, 1)
+      unequal(input.activeCharKey, key, 1),
     ),
     1,
     min(
       prod(percent(dm.passive1.eleMas_), tally.maxEleMas),
-      dm.passive1.maxEleMas
-    )
+      dm.passive1.maxEleMas,
+    ),
   )),
-  { ...KeyMap.info("eleMas"), isTeamBuff: true }
+  { ...KeyMap.info("eleMas"), isTeamBuff: true },
 )
 const a1InBurst_eleMas = equal(input.activeCharKey, target.charKey, a1InBurst_eleMasDisp)
 
@@ -135,12 +135,12 @@ const a4Karma_dmg_ = infoMut(greaterEq(input.asc, 4,
       percent(dm.passive2.eleMas_dmg_),
       max(
         sum(input.total.eleMas, -dm.passive2.eleMas_min),
-        0
-      )
+        0,
+      ),
     ),
-    percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted)
+    percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted),
   )),
-  { unit: "%" }
+  { unit: "%" },
 )
 const a4Karma_critRate_ = infoMut(greaterEq(input.asc, 4,
   min(
@@ -148,30 +148,30 @@ const a4Karma_critRate_ = infoMut(greaterEq(input.asc, 4,
       percent(dm.passive2.eleMas_critRate_),
       max(
         sum(input.total.eleMas, -dm.passive2.eleMas_min),
-        0
-      )
+        0,
+      ),
     ),
-    percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted)
+    percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted),
   )),
-  { unit: "%" }
+  { unit: "%" },
 )
 
 const triKarmaAddl = {
   premod: {
     skill_dmg_: sum(a4Karma_dmg_, burst_karma_dmg_),
-    skill_critRate_: a4Karma_critRate_
-  }
+    skill_critRate_: a4Karma_critRate_,
+  },
 }
 
 const [condC2BloomPath, condC2Bloom] = cond(key, "c2Bloom")
 const c2Burning_critRate_ = greaterEq(input.constellation, 2,
-  equal(condC2Bloom, "on", percent(dm.constellation2.critRate_))
+  equal(condC2Bloom, "on", percent(dm.constellation2.critRate_)),
 )
 const c2Bloom_critRate_ = {...c2Burning_critRate_}
 const c2Hyperbloom_critRate_ = {...c2Burning_critRate_}
 const c2Burgeon_critRate_ = {...c2Burning_critRate_}
 const c2Burning_critDMG_ = greaterEq(input.constellation, 2,
-  equal(condC2Bloom, "on", percent(dm.constellation2.critDMG_))
+  equal(condC2Bloom, "on", percent(dm.constellation2.critDMG_)),
 )
 const c2Bloom_critDMG_ = {...c2Burning_critDMG_}
 const c2Hyperbloom_critDMG_ = {...c2Burning_critDMG_}
@@ -179,7 +179,7 @@ const c2Burgeon_critDMG_ = {...c2Burning_critDMG_}
 
 const [condC2QSAPath, condC2QSA] = cond(key, "c2QSA")
 const c2qsa_DefRed_ = greaterEq(input.constellation, 2,
-  equal(condC2QSA, "on", percent(dm.constellation2.defDec_))
+  equal(condC2QSA, "on", percent(dm.constellation2.defDec_)),
 )
 
 const [condC4CountPath, condC4Count] = cond(key, "c4Count")
@@ -187,8 +187,8 @@ const c4CountArr = range(1, 4)
 const c4_eleMas = greaterEq(input.constellation, 4,
   lookup(condC4Count, Object.fromEntries(c4CountArr.map(count => [
     count,
-    subscript(constant(count - 1), [...dm.constellation4.eleMas])
-  ])), naught)
+    subscript(constant(count - 1), [...dm.constellation4.eleMas]),
+  ])), naught),
 )
 
 const dmgFormulas = {
@@ -202,28 +202,28 @@ const dmgFormulas = {
   skill: {
     pressDmg: dmgNode("atk", dm.skill.pressDmg, "skill"),
     holdDmg: dmgNode("atk", dm.skill.holdDmg, "skill"),
-    karmaDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.karmaAtkDmg, dm.skill.karmaEleMasDmg], "skill", triKarmaAddl)
+    karmaDmg: splitScaleDmgNode(["atk", "eleMas"], [dm.skill.karmaAtkDmg, dm.skill.karmaEleMasDmg], "skill", triKarmaAddl),
   },
   passive2: {
     a4Karma_dmg_,
-    a4Karma_critRate_
+    a4Karma_critRate_,
   },
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
       sum(
         prod(
           percent(dm.constellation6.atkDmg),
-          input.total.atk
+          input.total.atk,
         ),
         prod(
           percent(dm.constellation6.eleMasDmg),
-          input.total.eleMas
+          input.total.eleMas,
         ),
       ),
       "skill",
-      triKarmaAddl
-    ))
-  }
+      triKarmaAddl,
+    )),
+  },
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
@@ -231,7 +231,7 @@ const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFo
   premod: {
     skillBoost: skillC3,
     burstBoost: burstC5,
-    eleMas: c4_eleMas
+    eleMas: c4_eleMas,
   },
   teamBuff: {
     premod: {
@@ -243,12 +243,12 @@ const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen, dmgFo
       bloom_critDMG_: c2Bloom_critDMG_,
       hyperbloom_critDMG_: c2Hyperbloom_critDMG_,
       burgeon_critDMG_: c2Burgeon_critDMG_,
-      enemyDefRed_: c2qsa_DefRed_
+      enemyDefRed_: c2qsa_DefRed_,
     },
     total: {
-      eleMas: a1InBurst_eleMas
+      eleMas: a1InBurst_eleMas,
     },
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -266,7 +266,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -275,7 +275,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.5"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -285,7 +285,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -304,37 +304,37 @@ const sheet: ICharacterSheet = {
             : dm.skill.triggerInterval
         },
         unit: "s",
-        fixed: 1
+        fixed: 1,
       }, {
         text: ct.chg("skill.skillParams.4"),
         value: dm.skill.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: st("pressCD"),
         value: dm.skill.pressCd,
-        unit: "s"
+        unit: "s",
       }, {
         text: st("holdCD"),
         value: dm.skill.holdCd,
-        unit: "s"
+        unit: "s",
       }],
     }, ct.headerTem("burst", {
       canShow: equal(condPartyInBurst, "on", sum(pyroLevel, electroLevel)),
       fields: [{
-        node: infoMut(burst_karma_dmg_, { name: ct.ch(`karmaDmg_`) })
+        node: infoMut(burst_karma_dmg_, { name: ct.ch(`karmaDmg_`) }),
       }, {
         text: ct.ch("karmaIntervalDec"),
         canShow: (data) => data.get(burst_skillIntervalDec).value > 0,
         value: (data) => data.get(burst_skillIntervalDec).value,
         unit: "s",
-        fixed: 2
-      }]
+        fixed: 2,
+      }],
     }), ct.headerTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, { name: ct.ch(`karmaDmg_`) })
+        node: infoMut(dmgFormulas.passive2.a4Karma_dmg_, { name: ct.ch(`karmaDmg_`) }),
       }, {
-        node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, { name: ct.ch(`karmaCritRate_`) })
-      }]
+        node: infoMut(dmgFormulas.passive2.a4Karma_critRate_, { name: ct.ch(`karmaCritRate_`) }),
+      }],
     }), ct.condTem("constellation2", {
       teamBuff: true,
       path: condC2BloomPath,
@@ -343,24 +343,24 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: c2Burning_critRate_
+            node: c2Burning_critRate_,
           }, {
-            node: c2Burning_critDMG_
+            node: c2Burning_critDMG_,
           }, {
-            node: c2Bloom_critRate_
+            node: c2Bloom_critRate_,
           }, {
-            node: c2Bloom_critDMG_
+            node: c2Bloom_critDMG_,
           }, {
-            node: c2Hyperbloom_critRate_
+            node: c2Hyperbloom_critRate_,
           }, {
-            node: c2Hyperbloom_critDMG_
+            node: c2Hyperbloom_critDMG_,
           }, {
-            node: c2Burgeon_critRate_
+            node: c2Burgeon_critRate_,
           }, {
-            node: c2Burgeon_critDMG_
-          }]
+            node: c2Burgeon_critDMG_,
+          }],
         },
-      }
+      },
     }), ct.condTem("constellation2", {
       teamBuff: true,
       path: condC2QSAPath,
@@ -369,10 +369,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: c2qsa_DefRed_
-          }]
-        }
-      }
+            node: c2qsa_DefRed_,
+          }],
+        },
+      },
     }), ct.condTem("constellation4", {
       path: condC4CountPath,
       value: condC4Count,
@@ -382,14 +382,14 @@ const sheet: ICharacterSheet = {
         {
           name: st("opponents", { count }),
           fields: [{
-            node: c4_eleMas
-          }]
-        }
-      ]))
+            node: c4_eleMas,
+          }],
+        },
+      ])),
     }), ct.headerTem("constellation6", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.ch("c6KarmicDmg") })
-      }]
+        node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.ch("c6KarmicDmg") }),
+      }],
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -406,11 +406,11 @@ const sheet: ICharacterSheet = {
         text: stg("cd"),
         value: dm.burst.cd,
         unit: "s",
-        fixed: 1
+        fixed: 1,
       }, {
         text: stg("energyCost"),
         value: dm.burst.energyCost,
-      }]
+      }],
     }, ct.condTem("burst", {
       path: condPartyInBurstPath,
       value: condPartyInBurst,
@@ -425,16 +425,16 @@ const sheet: ICharacterSheet = {
             text: st("durationInc"),
             value: (data) => data.get(burst_durationInc).value,
             unit: "s",
-            fixed: 2
-          }]
-        }
-      }
+            fixed: 2,
+          }],
+        },
+      },
     }), ct.condTem("passive1", {
       // Show for self only if party is in burst
       // Show for teammates always
       canShow: sum(
         equal(condPartyInBurst, "on", 1),
-        unequal(input.activeCharKey, key, 1)
+        unequal(input.activeCharKey, key, 1),
       ),
       teamBuff: true,
       path: condA1ActiveInBurstPath,
@@ -443,15 +443,15 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: a1InBurst_eleMasDisp
-          }]
-        }
-      }
+            node: a1InBurst_eleMasDisp,
+          }],
+        },
+      },
     }), ct.headerTem("constellation1", {
       fields: [{
         text: ct.ch("c1Key"),
-        value: 1
-      }]
+        value: 1,
+      }],
     }), ct.condTem("constellation4", {
       // C4 conditional that shows in teambuffs when A1 is activated
       // In case Nahida is the one with the most elemental mastery
@@ -465,10 +465,10 @@ const sheet: ICharacterSheet = {
         {
           name: st("opponents", { count }),
           fields: [{
-            node: c4_eleMas
-          }]
-        }
-      ]))
+            node: c4_eleMas,
+          }],
+        },
+      ])),
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -480,6 +480,6 @@ const sheet: ICharacterSheet = {
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: burstC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 export default new CharacterSheet(sheet, data)

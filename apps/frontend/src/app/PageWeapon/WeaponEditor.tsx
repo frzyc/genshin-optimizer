@@ -14,7 +14,7 @@ import RefinementDropdown from "../Components/RefinementDropdown"
 import { StarsDisplay } from "../Components/StarDisplay"
 import { DataContext } from "../Context/DataContext"
 import { getCharSheet } from "../Data/Characters"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
+import type CharacterSheet from "../Data/Characters/CharacterSheet"
 import { milestoneLevelsLow } from "../Data/LevelData"
 import { getWeaponSheet } from "../Data/Weapons"
 import { DatabaseContext } from "../Database/Database"
@@ -23,8 +23,8 @@ import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import useBoolState from "../ReactHooks/useBoolState"
 import useDBMeta from "../ReactHooks/useDBMeta"
 import useWeapon from "../ReactHooks/useWeapon"
-import { LocationKey } from "../Types/consts"
-import { ICachedWeapon } from "../Types/weapon"
+import type { LocationKey } from "../Types/consts"
+import type { ICachedWeapon } from "../Types/weapon"
 const WeaponSelectionModal = React.lazy(() => import('../Components/Weapon/WeaponSelectionModal'))
 type WeaponStatsEditorCardProps = {
   weaponId: string
@@ -36,7 +36,7 @@ export default function WeaponEditor({
   weaponId: propWeaponId,
   footer = false,
   onClose,
-  extraButtons
+  extraButtons,
 }: WeaponStatsEditorCardProps) {
   const { data } = useContext(DataContext)
 

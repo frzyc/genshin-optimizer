@@ -1,28 +1,32 @@
-import { CharacterKey } from "@genshin-optimizer/consts";
-import { characterAsset } from "@genshin-optimizer/g-assets";
-import { PersonAdd } from "@mui/icons-material";
-import { AutocompleteProps, Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material";
-import { Suspense, useCallback, useContext, useMemo } from 'react';
-import { useTranslation } from "react-i18next";
-import CardLight from "../../../Components/Card/CardLight";
-import CharacterCard from "../../../Components/Character/CharacterCard";
-import ThumbSide from "../../../Components/Character/ThumbSide";
-import ColorText from "../../../Components/ColoredText";
-import DocumentDisplay from "../../../Components/DocumentDisplay";
-import { NodeFieldDisplay } from "../../../Components/FieldDisplay";
-import { GeneralAutocomplete, GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete";
-import { InfoTooltipInline } from "../../../Components/InfoTooltip";
-import { CharacterContext, CharacterContextObj } from "../../../Context/CharacterContext";
-import { DataContext, dataContextObj } from "../../../Context/DataContext";
-import { dataSetEffects, getArtSheet } from "../../../Data/Artifacts";
-import { getCharSheet } from "../../../Data/Characters";
-import { resonanceSheets } from "../../../Data/Resonance";
-import { DatabaseContext } from "../../../Database/Database";
-import { NodeDisplay } from "../../../Formula/uiData";
-import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback";
-import useDBMeta from "../../../ReactHooks/useDBMeta";
-import { charKeyToCharName } from "../../../Types/consts";
-import { objPathValue, range } from "../../../Util/Util";
+import type { CharacterKey } from "@genshin-optimizer/consts"
+import { characterAsset } from "@genshin-optimizer/g-assets"
+import { PersonAdd } from "@mui/icons-material"
+import type { AutocompleteProps} from "@mui/material"
+import { Box, CardContent, CardHeader, Divider, Grid, Skeleton, Typography } from "@mui/material"
+import { Suspense, useCallback, useContext, useMemo } from 'react'
+import { useTranslation } from "react-i18next"
+import CardLight from "../../../Components/Card/CardLight"
+import CharacterCard from "../../../Components/Character/CharacterCard"
+import ThumbSide from "../../../Components/Character/ThumbSide"
+import ColorText from "../../../Components/ColoredText"
+import DocumentDisplay from "../../../Components/DocumentDisplay"
+import { NodeFieldDisplay } from "../../../Components/FieldDisplay"
+import type { GeneralAutocompleteOption } from "../../../Components/GeneralAutocomplete"
+import { GeneralAutocomplete } from "../../../Components/GeneralAutocomplete"
+import { InfoTooltipInline } from "../../../Components/InfoTooltip"
+import type { CharacterContextObj } from "../../../Context/CharacterContext"
+import { CharacterContext } from "../../../Context/CharacterContext"
+import type { dataContextObj } from "../../../Context/DataContext"
+import { DataContext } from "../../../Context/DataContext"
+import { dataSetEffects, getArtSheet } from "../../../Data/Artifacts"
+import { getCharSheet } from "../../../Data/Characters"
+import { resonanceSheets } from "../../../Data/Resonance"
+import { DatabaseContext } from "../../../Database/Database"
+import type { NodeDisplay } from "../../../Formula/uiData"
+import useCharSelectionCallback from "../../../ReactHooks/useCharSelectionCallback"
+import useDBMeta from "../../../ReactHooks/useDBMeta"
+import { charKeyToCharName } from "../../../Types/consts"
+import { objPathValue, range } from "../../../Util/Util"
 
 export default function TabTeambuffs() {
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
@@ -72,7 +76,7 @@ function ResonanceDisplay() {
       <CardHeader title={<span>{t("tabTeambuff.team_reso")} <strong><ColorText color={teamCount >= 4 ? "success" : "warning"}>({teamCount}/4)</ColorText></strong> <InfoTooltipInline title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>} /></span>}
         titleTypographyProps={{ variant: "subtitle2" }} />
     </CardLight>
-    {resonanceSheets.map((res, i) => <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5, }}>
+    {resonanceSheets.map((res, i) => <CardLight key={i} sx={{ opacity: res.canShow(data) ? 1 : 0.5 }}>
       <CardHeader
         title={<span>{res.name} <InfoTooltipInline title={<Typography>{res.desc}</Typography>} /></span>}
         action={res.icon} titleTypographyProps={{ variant: "subtitle2" }} />
@@ -102,7 +106,7 @@ function TeammateDisplay({ index }: { index: number }) {
       const { conditional } = state
       if (!conditional) return
       characterDispatch({ type: "teamConditional", teamMateKey: teamMateKey, conditional })
-    }
+    },
   }, [active, teamMateKey, dataBundle, characterDispatch])
   const teamMateDataContext: dataContextObj | undefined = useMemo(() => dataBundle && {
     data: dataBundle.target,
@@ -140,7 +144,7 @@ function TeammateDisplay({ index }: { index: number }) {
   </CardLight>
 }
 function CharArtifactCondDisplay() {
-  const { data, } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const sections = useMemo(() =>
     Object.entries(dataSetEffects(data))
       .flatMap(([setKey, setNums]) =>

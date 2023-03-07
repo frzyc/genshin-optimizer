@@ -1,33 +1,34 @@
-import { allArtifactSlotKeys, ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts';
-import { Settings, SwapHoriz } from '@mui/icons-material';
-import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay';
-import SlotIcon from '../../../../Components/Artifact/SlotIcon';
-import SubstatToggle from '../../../../Components/Artifact/SubstatToggle';
-import CardDark from '../../../../Components/Card/CardDark';
-import CardLight from '../../../../Components/Card/CardLight';
-import DocumentDisplay from "../../../../Components/DocumentDisplay";
-import { BasicFieldDisplay, FieldDisplayList } from '../../../../Components/FieldDisplay';
-import ModalWrapper from '../../../../Components/ModalWrapper';
-import PercentBadge from '../../../../Components/PercentBadge';
-import { CharacterContext } from '../../../../Context/CharacterContext';
-import { DataContext } from '../../../../Context/DataContext';
-import { dataSetEffects } from '../../../../Data/Artifacts';
-import Artifact from '../../../../Data/Artifacts/Artifact';
-import { DatabaseContext } from '../../../../Database/Database';
-import { uiInput as input } from '../../../../Formula';
-import ArtifactCard from '../../../../PageArtifact/ArtifactCard';
-import WeaponCard from '../../../../PageWeapon/WeaponCard';
-import useBoolState from '../../../../ReactHooks/useBoolState';
-import useCharMeta from '../../../../ReactHooks/useCharMeta';
-import { iconInlineProps } from '../../../../SVGIcons';
-import { allSubstatKeys } from '../../../../Types/artifact';
-import { charKeyToLocCharKey } from '../../../../Types/consts';
-import { IFieldDisplay } from '../../../../Types/fieldDisplay';
-import ArtifactSwapModal from './ArtifactSwapModal';
-import WeaponSwapModal from './WeaponSwapModal';
+import type { ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { Settings, SwapHoriz } from '@mui/icons-material'
+import { Box, Button, CardContent, Divider, Grid, ListItem, Stack, Tooltip, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { lazy, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import SetEffectDisplay from '../../../../Components/Artifact/SetEffectDisplay'
+import SlotIcon from '../../../../Components/Artifact/SlotIcon'
+import SubstatToggle from '../../../../Components/Artifact/SubstatToggle'
+import CardDark from '../../../../Components/Card/CardDark'
+import CardLight from '../../../../Components/Card/CardLight'
+import DocumentDisplay from "../../../../Components/DocumentDisplay"
+import { BasicFieldDisplay, FieldDisplayList } from '../../../../Components/FieldDisplay'
+import ModalWrapper from '../../../../Components/ModalWrapper'
+import PercentBadge from '../../../../Components/PercentBadge'
+import { CharacterContext } from '../../../../Context/CharacterContext'
+import { DataContext } from '../../../../Context/DataContext'
+import { dataSetEffects } from '../../../../Data/Artifacts'
+import Artifact from '../../../../Data/Artifacts/Artifact'
+import { DatabaseContext } from '../../../../Database/Database'
+import { uiInput as input } from '../../../../Formula'
+import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
+import WeaponCard from '../../../../PageWeapon/WeaponCard'
+import useBoolState from '../../../../ReactHooks/useBoolState'
+import useCharMeta from '../../../../ReactHooks/useCharMeta'
+import { iconInlineProps } from '../../../../SVGIcons'
+import { allSubstatKeys } from '../../../../Types/artifact'
+import { charKeyToLocCharKey } from '../../../../Types/consts'
+import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
+import ArtifactSwapModal from './ArtifactSwapModal'
+import WeaponSwapModal from './WeaponSwapModal'
 
 const WeaponEditor = lazy(() => import('../../../../PageWeapon/WeaponEditor'))
 
@@ -36,7 +37,7 @@ export default function EquipmentSection() {
   const { teamData, data } = useContext(DataContext)
   const weaponSheet = teamData[characterKey]?.weaponSheet
   const [weaponId, setweaponId] = useState("")
-  const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon],)
+  const showWeapon = useCallback(() => setweaponId(equippedWeapon), [equippedWeapon])
   const hideWeapon = useCallback(() => setweaponId(""), [])
 
   //triggers when character swap weapons
@@ -45,8 +46,8 @@ export default function EquipmentSection() {
       setweaponId(equippedWeapon)
   }, [weaponId, equippedWeapon])
 
-  const theme = useTheme();
-  const breakpoint = useMediaQuery(theme.breakpoints.up('lg'));
+  const theme = useTheme()
+  const breakpoint = useMediaQuery(theme.breakpoints.up('lg'))
 
   const weaponDoc = useMemo(() => weaponSheet && weaponSheet.document.length > 0 && <CardLight><Box p={1}><DocumentDisplay sections={weaponSheet.document} /></Box></CardLight>, [weaponSheet])
   const { rvFilter } = useCharMeta(characterKey)
@@ -100,11 +101,11 @@ function ArtSwapCard({ slotKey }: { slotKey: ArtifactSlotKey }) {
       flexGrow: 1,
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     }}
     >
       <ArtifactSwapModal slotKey={slotKey} show={show} onClose={onClose} onChangeId={id => database.arts.set(id, { location: charKeyToLocCharKey(characterKey) })} />
-      <Button onClick={onOpen} color="info" sx={{ borderRadius: "1em", }}>
+      <Button onClick={onOpen} color="info" sx={{ borderRadius: "1em" }}>
         <SwapHoriz sx={{ height: 100, width: 100 }} />
       </Button>
     </Box>
@@ -158,7 +159,7 @@ function ArtifactSectionCard() {
 
   const setEffects = useMemo(() => dataSetEffects(data), [data])
   const { rvFilter } = useCharMeta(characterKey)
-  const setRVFilter = useCallback(rvFilter => database.charMeta.set(characterKey, { rvFilter }), [database, characterKey],)
+  const setRVFilter = useCallback(rvFilter => database.charMeta.set(characterKey, { rvFilter }), [database, characterKey])
 
   const [show, onShow, onHide] = useBoolState()
   const deferredrvFilter = useDeferredValue(rvFilter)
@@ -179,13 +180,13 @@ function ArtifactSectionCard() {
     const rvField: IFieldDisplay = {
       text: t`artifact:editor.curSubEff`,
       value: !(currentEfficiency - currentEfficiency_) ? <PercentBadge value={currentEfficiency} max={4500} valid /> :
-        <span><PercentBadge value={currentEfficiency} max={4500} valid /> / <PercentBadge value={currentEfficiency_} max={4500} valid /></span>
+        <span><PercentBadge value={currentEfficiency} max={4500} valid /> / <PercentBadge value={currentEfficiency_} max={4500} valid /></span>,
     }
     const rvmField: IFieldDisplay = {
       text: t`artifact:editor.maxSubEff`,
       canShow: () => !!(currentEfficiency_ - maxEfficiency_),
       value: !(maxEfficiency - maxEfficiency_) ? <PercentBadge value={maxEfficiency} max={4500} valid /> :
-        <span><PercentBadge value={maxEfficiency} max={4500} valid /> / <PercentBadge value={maxEfficiency_} max={4500} valid /></span>
+        <span><PercentBadge value={maxEfficiency} max={4500} valid /> / <PercentBadge value={maxEfficiency_} max={4500} valid /></span>,
     }
     return { rvField, rvmField }
   }, [t, deferredrvFilter, equippedArtifacts, database])
@@ -212,7 +213,7 @@ function ArtifactSectionCard() {
         {setEffects && Object.entries(setEffects).flatMap(([setKey, setNumKeyArr]) =>
           setNumKeyArr.map(setNumKey => <CardDark key={setKey + setNumKey} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <SetEffectDisplay key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} />
-          </CardDark>)
+          </CardDark>),
         )}
       </Stack>
     </Box>

@@ -1,14 +1,15 @@
-import { characterAsset } from "@genshin-optimizer/g-assets";
-import Assets from "../../Assets/Assets";
-import ImgIcon from "../../Components/Image/ImgIcon";
-import SqBadge from "../../Components/SqBadge";
-import { input } from "../../Formula";
-import { NumNode } from "../../Formula/type";
-import { greaterEq } from "../../Formula/utils";
-import { CharacterKey, CharacterSheetKey, travelerFKeys, travelerMKeys, WeaponTypeKey } from "../../Types/consts";
-import { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet";
-import { st, trans } from "../SheetUtil";
-import { TalentSheetElement, TalentSheetElementKey } from "./ICharacterSheet.d";
+import { characterAsset } from "@genshin-optimizer/g-assets"
+import Assets from "../../Assets/Assets"
+import ImgIcon from "../../Components/Image/ImgIcon"
+import SqBadge from "../../Components/SqBadge"
+import { input } from "../../Formula"
+import type { NumNode } from "../../Formula/type"
+import { greaterEq } from "../../Formula/utils"
+import type { CharacterKey, CharacterSheetKey, WeaponTypeKey } from "../../Types/consts"
+import { travelerFKeys, travelerMKeys } from "../../Types/consts"
+import type { DocumentConditional, DocumentConditionalBase, DocumentSection, IDocumentFields, IDocumentHeader } from "../../Types/sheet"
+import { st, trans } from "../SheetUtil"
+import type { TalentSheetElement, TalentSheetElementKey } from "./ICharacterSheet.d"
 
 const canShowTalentsNodes: Partial<Record<TalentSheetElementKey, NumNode>> = {
   "passive1": greaterEq(input.asc, 1, 1),
@@ -44,7 +45,7 @@ export const charTemplates = (cKey: CharacterSheetKey, wKey: WeaponTypeKey): ICh
     talentTem: (talentKey: TalentSheetElementKey, docSections?: DocumentSection[]) => talentTemplate(talentKey, chg, img(talentKey), docSections),
     headerTem: (talentKey: TalentSheetElementKey, partialSection: DocumentSection) => headerTemplate(talentKey, chg, img(talentKey), partialSection),
     fieldsTem: (talentKey: TalentSheetElementKey, partialFields: IDocumentFields) => fieldsTemplate(talentKey, partialFields),
-    condTem: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey))
+    condTem: (talentKey: TalentSheetElementKey, partialCond: DocumentConditionalBase) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
   }
 }
 

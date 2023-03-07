@@ -1,14 +1,14 @@
-import { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { infoMut } from '../../../Formula/utils'
-import { CharacterSheetKey } from '../../../Types/consts'
+import type { CharacterSheetKey } from '../../../Types/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet, TalentSheetElement, TalentSheetElementKey } from '../ICharacterSheet.d'
+import type { ICharacterSheet, TalentSheetElement, TalentSheetElementKey } from '../ICharacterSheet.d'
 import { dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
-import { Data, DisplaySub } from '../../../Formula/type'
+import type { Data, DisplaySub } from '../../../Formula/type'
 const data_gen = data_gen_src as CharacterData
 
 type TravelerTalentFunc = (key: CharacterSheetKey, charKey: CharacterKey, dmgForms: { [key: string]: DisplaySub }) => {
@@ -25,7 +25,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
         skillParam_gen.auto[2] as number[],
         skillParam_gen.auto[3] as number[],
         skillParam_gen.auto[4] as number[],
-      ]
+      ],
     },
     charged: {
       hit1: skillParam_gen.auto[5] as number[],
@@ -44,7 +44,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
       [i, dmgNode("atk", arr, "normal")])),
     charged: {
       dmg1: dmgNode("atk", dm.charged.hit1, "charged"),
-      dmg2: dmgNode("atk", dm.charged.hit2, "charged")
+      dmg2: dmgNode("atk", dm.charged.hit2, "charged"),
     },
     plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
       [key, dmgNode("atk", value, "plunging")])),
@@ -55,11 +55,11 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
   const ct = charTemplates(key, data_gen.weaponTypeKey)
 
   talent.auto = ct.talentTem("auto", [{
-    text: ct.chg("auto.fields.normal")
+    text: ct.chg("auto.fields.normal"),
   }, {
     fields: dm.normal.hitArr.map((_, i) => ({
       node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-    }))
+    })),
   }, {
     text: ct.chg("auto.fields.charged"),
   }, {
@@ -70,7 +70,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
     }, {
       text: ct.chg("auto.skillParams.6"),
       value: dm.charged.stamina,
-    }]
+    }],
   }, {
     text: ct.chg("auto.fields.plunging"),
   }, {
@@ -80,7 +80,7 @@ export function travelerSheet(key: CharacterSheetKey, charKey: CharacterKey, tal
       node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
     }, {
       node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-    }]
+    }],
   }])
 
   const sheet = { ...baseTravelerSheet, talent, key: charKey, elementKey } as ICharacterSheet

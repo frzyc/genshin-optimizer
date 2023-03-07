@@ -1,7 +1,7 @@
 import type { ArtifactBuildData } from "../Solver/common"
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { customMapFormula, forEachNodes, mapFormulas } from "./internal"
-import { AnyNode, CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode, ThresholdNode } from "./type"
+import type { AnyNode, CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NumNode, Operation, ReadNode, StrNode, StrPrioNode, ThresholdNode } from "./type"
 import { constant } from "./utils"
 
 export type OptNode = ComputeNode<OptNode, OptNode> | ThresholdNode<OptNode, OptNode, OptNode> |
@@ -40,9 +40,9 @@ function res(res) {
   else if (res >= 0.75) return 1 / (res * 4 + 1)
   return 1 - res
 }
-const x0=0`; // making sure `const` has at least one entry
+const x0=0` // making sure `const` has at least one entry
 
-  let i = 1;
+  let i = 1
   const names = new Map<NumNode | StrNode, string>()
   forEachNodes(formulas, _ => { }, f => {
     const { operation, operands } = f, name = `x${i++}`, operandNames = operands.map((x: OptNode) => names.get(x)!)
@@ -105,8 +105,8 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
     common: {
       counts: new Map<OptNode, number>(),
       formulas: new Set<OptNode>(),
-      operation: "add" as Operation
-    }
+      operation: "add" as Operation,
+    },
   }
 
   while (true) {
@@ -178,7 +178,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
             next = {
               counts: commonCounts,
               formulas: new Set([formula, candidate]),
-              operation: formula.operation
+              operation: formula.operation,
             }
             candidatesByOperation.clear()
             break
@@ -362,5 +362,5 @@ export function constantFold(formulas: NumNode[], topLevelData: Data, shouldFold
 }
 
 export const testing = {
-  constantFold, flatten, deduplicate
+  constantFold, flatten, deduplicate,
 }

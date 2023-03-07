@@ -1,12 +1,12 @@
 import { input } from '../../../Formula'
-import { Data, Info } from '../../../Formula/type'
+import type { Data, Info } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "CrimsonWitchOfFlames"
@@ -63,10 +63,10 @@ const sheet: IArtifactSheet = {
         name: st("afterUse.skill"),
         states: Object.fromEntries(stackArr.map(i => [i, {
           name: st("stack", { count: i }),
-          fields: [{ node: set4Pyro_dmg_ }]
-        }]))
-      }]
-    }
-  }
+          fields: [{ node: set4Pyro_dmg_ }],
+        }])),
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

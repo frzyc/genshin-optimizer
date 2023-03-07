@@ -290,7 +290,7 @@ export const weaponMap = {
   WEAPON_CATALYST: "catalyst",
   WEAPON_CLAYMORE: "claymore",
   WEAPON_BOW: "bow",
-  WEAPON_POLE: "polearm"
+  WEAPON_POLE: "polearm",
 } as const
 export type DWeaponTypeKey = keyof typeof weaponMap
 export type WeaponTypeKey = typeof weaponMap[keyof typeof weaponMap]
@@ -346,7 +346,7 @@ export const artifactSlotMap = {
   EQUIP_BRACER: "flower",
   EQUIP_SHOES: "sands",
   EQUIP_RING: "goblet",
-  EQUIP_DRESS: "circlet"
+  EQUIP_DRESS: "circlet",
 } as const
 export type DArtifactSlotKey = keyof typeof artifactSlotMap
 
@@ -376,7 +376,7 @@ export const MainPropMap = {
   FIGHT_PROP_WATER_ADD_HURT: "hydro_dmg_",
   FIGHT_PROP_ICE_ADD_HURT: "cryo_dmg_",
   FIGHT_PROP_WIND_ADD_HURT: "anemo_dmg_",
-  FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
+  FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_",
   // FIGHT_PROP_FIRE_SUB_HURT:"" //
 } as const
 export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]

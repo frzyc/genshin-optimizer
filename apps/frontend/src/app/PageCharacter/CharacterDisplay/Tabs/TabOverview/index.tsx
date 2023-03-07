@@ -1,30 +1,31 @@
-import { charCard } from "@genshin-optimizer/char-cards";
-import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { Badge, Box, CardActionArea, Chip, Grid, IconButton, Stack, Typography } from "@mui/material";
-import { useCallback, useContext, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import Assets from "../../../../Assets/Assets";
-import ArtifactCardNano from "../../../../Components/Artifact/ArtifactCardNano";
-import CardLight from "../../../../Components/Card/CardLight";
-import CharacterCardPico, { BlankCharacterCardPico } from "../../../../Components/Character/CharacterCardPico";
-import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent";
-import ImgIcon from "../../../../Components/Image/ImgIcon";
-import SqBadge from "../../../../Components/SqBadge";
-import { StarsDisplay } from "../../../../Components/StarDisplay";
-import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano";
-import { CharacterContext } from "../../../../Context/CharacterContext";
-import { DataContext } from "../../../../Context/DataContext";
-import { TalentSheetElementKey } from "../../../../Data/Characters/ICharacterSheet";
-import { getLevelString } from "../../../../Data/LevelData";
-import { DatabaseContext } from "../../../../Database/Database";
-import { uiInput as input } from "../../../../Formula";
-import { ElementIcon } from "../../../../KeyMap/StatIcon";
-import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer";
-import useCharMeta from "../../../../ReactHooks/useCharMeta";
-import useDBMeta from "../../../../ReactHooks/useDBMeta";
-import { allArtifactSlotKeys, AscensionKey, CharacterKey, ElementKey } from "@genshin-optimizer/consts";
-import { range } from "../../../../Util/Util";
-import EquipmentSection from "./EquipmentSection";
+import { charCard } from "@genshin-optimizer/char-cards"
+import { Favorite, FavoriteBorder } from "@mui/icons-material"
+import { Badge, Box, CardActionArea, Chip, Grid, IconButton, Stack, Typography } from "@mui/material"
+import { useCallback, useContext, useRef } from "react"
+import { useNavigate } from "react-router-dom"
+import Assets from "../../../../Assets/Assets"
+import ArtifactCardNano from "../../../../Components/Artifact/ArtifactCardNano"
+import CardLight from "../../../../Components/Card/CardLight"
+import CharacterCardPico, { BlankCharacterCardPico } from "../../../../Components/Character/CharacterCardPico"
+import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent"
+import ImgIcon from "../../../../Components/Image/ImgIcon"
+import SqBadge from "../../../../Components/SqBadge"
+import { StarsDisplay } from "../../../../Components/StarDisplay"
+import WeaponCardNano from "../../../../Components/Weapon/WeaponCardNano"
+import { CharacterContext } from "../../../../Context/CharacterContext"
+import { DataContext } from "../../../../Context/DataContext"
+import type { TalentSheetElementKey } from "../../../../Data/Characters/ICharacterSheet"
+import { getLevelString } from "../../../../Data/LevelData"
+import { DatabaseContext } from "../../../../Database/Database"
+import { uiInput as input } from "../../../../Formula"
+import { ElementIcon } from "../../../../KeyMap/StatIcon"
+import useCharacterReducer from "../../../../ReactHooks/useCharacterReducer"
+import useCharMeta from "../../../../ReactHooks/useCharMeta"
+import useDBMeta from "../../../../ReactHooks/useDBMeta"
+import type { AscensionKey, CharacterKey, ElementKey } from "@genshin-optimizer/consts"
+import { allArtifactSlotKeys } from "@genshin-optimizer/consts"
+import { range } from "../../../../Util/Util"
+import EquipmentSection from "./EquipmentSection"
 
 export default function TabOverview() {
   const scrollRef = useRef<HTMLDivElement>()
@@ -49,7 +50,7 @@ export default function TabOverview() {
 }
 function EquipmentRow({ onClick }: { onClick: () => void }) {
   const { character: { equippedWeapon } } = useContext(CharacterContext)
-  const { data, } = useContext(DataContext)
+  const { data } = useContext(DataContext)
 
   return <Grid container spacing={1} columns={{ xs: 2, sm: 2, md: 3, lg: 6, xl: 6 }}>
     <Grid item xs={1}>
@@ -66,7 +67,7 @@ function CharacterProfileCard() {
   const { database } = useContext(DatabaseContext)
   const { characterSheet, character: { key: characterKey, team } } = useContext(CharacterContext)
   const { gender } = useDBMeta()
-  const { data, } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
   const charEle = data.get(input.charEle).value as ElementKey
@@ -129,8 +130,8 @@ function CharacterProfileCard() {
                     padding: ".25em .4em",
                     borderRadius: ".5em",
                     lineHeight: 1,
-                    height: "1.25em"
-                  }
+                    height: "1.25em",
+                  },
                 }}>
                 <Box component="img" src={characterSheet.getTalentOfKey(tKey)?.img} width="100%" height="auto" />
               </Badge>
@@ -144,7 +145,7 @@ function CharacterProfileCard() {
             <CardActionArea onClick={() => characterDispatch({ constellation: i === constellation ? i - 1 : i })}>
               <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i}` as TalentSheetElementKey)?.img}
                 sx={{
-                  ...(constellation >= i ? {} : { filter: "brightness(50%)" })
+                  ...(constellation >= i ? {} : { filter: "brightness(50%)" }),
                 }}
                 width="100%" height="auto" />
             </CardActionArea>
@@ -157,7 +158,7 @@ function CharacterProfileCard() {
             {team[i]
               ? <CharacterCardPico characterKey={team[i] as CharacterKey} />
               : <BlankCharacterCardPico index={i} />}
-          </Grid>
+          </Grid>,
         )}
         </Grid>
       </CardActionArea>

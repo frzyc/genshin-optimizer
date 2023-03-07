@@ -1,8 +1,10 @@
-import { allSubstatKeys, SubstatKey } from "../../Types/artifact";
-import { CharacterKey, LocationCharacterKey, travelerKeys } from "../../Types/consts";
-import { deepFreeze } from "../../Util/Util";
-import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
+import type { SubstatKey } from "../../Types/artifact"
+import { allSubstatKeys } from "../../Types/artifact"
+import type { CharacterKey, LocationCharacterKey} from "../../Types/consts"
+import { travelerKeys } from "../../Types/consts"
+import { deepFreeze } from "../../Util/Util"
+import type { ArtCharDatabase } from "../Database"
+import { DataManager } from "../DataManager"
 
 interface ICharMeta {
   rvFilter: SubstatKey[]
@@ -10,7 +12,7 @@ interface ICharMeta {
 }
 const initCharMeta: ICharMeta = deepFreeze({
   rvFilter: [...allSubstatKeys],
-  favorite: false
+  favorite: false,
 })
 const storageHash = "charMeta_"
 export class CharMetaDataManager extends DataManager<CharacterKey, "charMetas", ICharMeta, ICharMeta>{

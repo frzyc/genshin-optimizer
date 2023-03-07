@@ -1,6 +1,7 @@
-import { CharacterSheetKey } from '../../Types/consts'
-import CharacterSheet from './CharacterSheet'
-import { CharacterKey, GenderKey, TravelerKey, allTravelerKeys } from '@genshin-optimizer/consts'
+import type { CharacterSheetKey } from '../../Types/consts'
+import type CharacterSheet from './CharacterSheet'
+import type { CharacterKey, GenderKey, TravelerKey} from '@genshin-optimizer/consts'
+import { allTravelerKeys } from '@genshin-optimizer/consts'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
@@ -145,7 +146,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Yelan,
   Yoimiya,
   YunJin,
-  Zhongli
+  Zhongli,
 } as const
 export function getCharSheet(charKey: CharacterKey, gender: GenderKey = "F") {
   return characters[charKeyToCharSheetKey(charKey, gender)]

@@ -1,11 +1,11 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -25,19 +25,19 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     hp_,
   },
   total: {
-    atk: sum(atk1, atk2)
-  }
+    atk: sum(atk1, atk2),
+  },
 }, {
-  atk2_: atk2
+  atk2_: atk2,
 })
 
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("base")),
     fields: [{
-      node: hp_
+      node: hp_,
     }, {
-      node: infoMut(atk1, KeyMap.info("atk"))
+      node: infoMut(atk1, KeyMap.info("atk")),
     }],
   }, {
     value: condPassive,
@@ -49,9 +49,9 @@ const sheet: IWeaponSheet = {
       on: {
         fields: [{
           node: infoMut(atk2, KeyMap.info("atk")),
-        }]
-      }
-    }
+        }],
+      },
+    },
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

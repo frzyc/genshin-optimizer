@@ -1,7 +1,8 @@
-import { allArtifactSlotKeys, allCharacterKeys, CharacterKey } from "@genshin-optimizer/consts";
-import { deepFreeze } from "../../Util/Util";
-import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
+import type { CharacterKey } from "@genshin-optimizer/consts"
+import { allArtifactSlotKeys, allCharacterKeys } from "@genshin-optimizer/consts"
+import { deepFreeze } from "../../Util/Util"
+import type { ArtCharDatabase } from "../Database"
+import { DataManager } from "../DataManager"
 
 export interface IBuildResult {
   builds: string[][]

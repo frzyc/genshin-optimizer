@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, greaterEq, infoMut, prod, subscript } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -27,7 +27,7 @@ const dm = {
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
@@ -76,8 +76,8 @@ const dm = {
     auto_boost: 1,
   },
   constellation1: {
-    cdRed: 0.2
-  }
+    cdRed: 0.2,
+  },
 } as const
 
 const dmgFormulas = {
@@ -87,7 +87,7 @@ const dmgFormulas = {
     aimed: dmgNode("atk", dm.charged.aimed, "charged"),
     aimedCharged: dmgNode("atk", dm.charged.aimedCharged, "charged", { hit: { ele: constant('hydro') } }),
     flashDmg: dmgNode("atk", dm.riptide.flashDmg, "normal", { hit: { ele: constant('hydro') } }),
-    burstDmg: dmgNode("atk", dm.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } })
+    burstDmg: dmgNode("atk", dm.riptide.burstDmg, "normal", { hit: { ele: constant('hydro') } }),
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -102,13 +102,13 @@ const dmgFormulas = {
     normal62: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.normal62, { unit: "%" }), input.total.atk), "normal", { hit: { ele: constant('hydro') } }),
     charged1: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.charged1, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
     charged2: customDmgNode(prod(subscript(input.total.skillIndex, dm.skill.charged2, { unit: "%" }), input.total.atk), "charged", { hit: { ele: constant('hydro') } }),
-    riptideSlash: dmgNode("atk", dm.skill.riptideSlash, "skill")
+    riptideSlash: dmgNode("atk", dm.skill.riptideSlash, "skill"),
   },
   burst: {
     meleeDmg: dmgNode("atk", dm.burst.meleeDmg, "burst"),
     rangedDmg: dmgNode("atk", dm.burst.rangedDmg, "burst"),
-    riptideBlastDmg: dmgNode("atk", dm.burst.riptideBlastDmg, "burst")
-  }
+    riptideBlastDmg: dmgNode("atk", dm.burst.riptideBlastDmg, "burst"),
+  },
 }
 
 const nodePassive = constant(1)
@@ -124,8 +124,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
   teamBuff: {
     premod: {
       autoBoost: nodePassive,
-    }
-  }
+    },
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -143,7 +143,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -151,7 +151,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.6`) }),
       }, {
         node: infoMut(dmgFormulas.charged.aimedCharged, { name: ct.chg(`auto.skillParams.7`) }),
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.riptide"),
     }, {
@@ -167,8 +167,8 @@ const sheet: ICharacterSheet = {
         value: (data) => data.get(input.asc).value >= 1
           ? dm.passive1.durationExt + dm.riptideDuration
           : dm.riptideDuration,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -178,7 +178,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -209,21 +209,21 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.10"),
         value: dm.skill.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.11"),
         value: (data) => data.get(input.constellation).value >= 1
           ? `${dm.skill.preemptiveCd1 - (dm.skill.preemptiveCd1 * dm.constellation1.cdRed)}
             - ${dm.skill.preemptiveCd2 - (dm.skill.preemptiveCd2 * dm.constellation1.cdRed)}`
           : `${dm.skill.preemptiveCd1} - ${dm.skill.preemptiveCd2}`,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.12"),
         value: (data) => data.get(input.constellation).value >= 1
           ? `${dm.skill.maxCd - (dm.skill.maxCd * dm.constellation1.cdRed)}`
           : `${dm.skill.maxCd}`,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -236,20 +236,20 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: `${dm.burst.cd}`,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.5"),
         value: `${dm.burst.enerCost}`,
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: `${dm.burst.enerReturned}`,
-      }]
+      }],
     }]),
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3", [ct.headerTem("passive3", {
       teamBuff: true,
-      fields: [{ node: nodePassive }]
+      fields: [{ node: nodePassive }],
     })]),
     constellation1: ct.talentTem("constellation1"),
     constellation2: ct.talentTem("constellation2"),

@@ -1,12 +1,12 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut, min, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, customHealNode, dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -25,7 +25,7 @@ const dm = {
       skillParam_gen.auto[a++], // 3.1
       skillParam_gen.auto[a++], // 3.2
       skillParam_gen.auto[a++], // 4
-    ]
+    ],
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -53,7 +53,7 @@ const dm = {
     moveSPD_: 0.15,
     legacyDuration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0]
+    cost: skillParam_gen.burst[b++][0],
   },
   // passive1: {
   //   cd: skillParam_gen.passive1[0][0]
@@ -91,7 +91,7 @@ const adeptalLegacy_moveSPD_ = equal(condAdeptalLegacy, "on", dm.burst.moveSPD_)
 const [condC1ExplodePath, condC1Explode] = cond(key, "c1Explode")
 const c1Explode_dendro_dmg_disp = greaterEq(input.constellation, 1,
   equal(condC1Explode, "on", dm.constellation1.dendro_dmg_),
-  { ...KeyMap.info("dendro_dmg_"), isTeamBuff: true }
+  { ...KeyMap.info("dendro_dmg_"), isTeamBuff: true },
 )
 const c1Explode_dendro_dmg_ = equal(input.activeCharKey, target.charKey, c1Explode_dendro_dmg_disp)
 
@@ -100,9 +100,9 @@ const c4AfterSkillBurst_eleMas = greaterEq(input.constellation, 4,
   equal(condC4AfterSkillBurst, "on",
     min(
       prod(percent(dm.constellation4.eleMas_Hp), input.premod.hp),
-      dm.constellation4.maxEleMas
-    )
-  )
+      dm.constellation4.maxEleMas,
+    ),
+  ),
 )
 
 const dmgFormulas = {
@@ -125,26 +125,26 @@ const dmgFormulas = {
   passive2: {
     heal: greaterEq(input.asc, 4, customHealNode(prod(
       percent(dm.passive2.heal_hp),
-      input.total.hp
-    )))
+      input.total.hp,
+    ))),
   },
   constellation4: {
-    eleMas: c4AfterSkillBurst_eleMas
+    eleMas: c4AfterSkillBurst_eleMas,
   },
   constellation6: {
     dmg: greaterEq(input.constellation, 6, customDmgNode(
       prod(
         percent(dm.constellation6.dmg),
-        input.total.atk
-      ), "burst"
+        input.total.atk,
+      ), "burst",
     )),
     heal: greaterEq(input.constellation, 6, customHealNode(
       prod(
         percent(dm.constellation6.heal_hp),
-        input.total.hp
-      )
-    ))
-  }
+        input.total.hp,
+      ),
+    )),
+  },
 }
 
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -154,16 +154,16 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skillBoost: skillC3,
     burstBoost: burstC5,
     dendro_res_: adeptalLegacy_dendro_res_,
-    moveSPD_: adeptalLegacy_moveSPD_
+    moveSPD_: adeptalLegacy_moveSPD_,
   },
   total: {
-    eleMas: c4AfterSkillBurst_eleMas
+    eleMas: c4AfterSkillBurst_eleMas,
   },
   teamBuff: {
     premod: {
-      dendro_dmg_: c1Explode_dendro_dmg_
+      dendro_dmg_: c1Explode_dendro_dmg_,
     },
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -181,7 +181,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i < 3 ? 0 : -1)}`), textSuffix: i === 2 || i === 3 ? `(${i - 1})` : "" }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -190,7 +190,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.5"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -200,7 +200,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -211,33 +211,33 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.throwDuration,
-        unit: 's'
+        unit: 's',
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: dm.skill.radishDuration,
-        unit: 's'
+        unit: 's',
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: 's'
-      }]
+        unit: 's',
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
         node: infoMut(dmgFormulas.burst.skillDmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.radish, { name: ct.chg(`burst.skillParams.1`) })
+        node: infoMut(dmgFormulas.burst.radish, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.radishHeal, { name: ct.chg(`burst.skillParams.2`) })
+        node: infoMut(dmgFormulas.burst.radishHeal, { name: ct.chg(`burst.skillParams.2`) }),
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("energyCost"),
         value: dm.burst.cost,
-      }]
+      }],
     }, ct.condTem("burst", {
       path: condAdeptalLegacyPath,
       value: condAdeptalLegacy,
@@ -245,37 +245,37 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: adeptalLegacy_dendro_res_
+            node: adeptalLegacy_dendro_res_,
           }, {
-            node: adeptalLegacy_moveSPD_
+            node: adeptalLegacy_moveSPD_,
           }, {
             text: ct.chg("burst.skillParams.4"),
             value: dm.burst.legacyDuration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     }), ct.headerTem("constellation6", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.ch("megaDmg") })
+        node: infoMut(dmgFormulas.constellation6.dmg, { name: ct.ch("megaDmg") }),
       }, {
-        node: infoMut(dmgFormulas.constellation6.heal, { name: ct.ch("megaHeal") })
-      }]
+        node: infoMut(dmgFormulas.constellation6.heal, { name: ct.ch("megaHeal") }),
+      }],
     })]),
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.heal, { name: ct.ch("a4Heal") })
+        node: infoMut(dmgFormulas.passive2.heal, { name: ct.ch("a4Heal") }),
       }, {
         text: stg("cd"),
         value: dm.passive2.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("duration"),
         value: dm.passive2.duration,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.condTem("constellation1", {
@@ -286,21 +286,21 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: c1Explode_dendro_dmg_disp
+            node: c1Explode_dendro_dmg_disp,
           }, {
             text: stg("duration"),
             value: dm.constellation1.duration,
-            unit: "s"
+            unit: "s",
           }, {
             text: st("stamRestored"),
             value: dm.constellation1.staminaRestore,
           }, {
             text: stg("cd"),
             value: dm.constellation1.cd,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: skillC3 }] }]),
@@ -311,14 +311,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: c4AfterSkillBurst_eleMas
+            node: c4AfterSkillBurst_eleMas,
           }, {
             text: stg("duration"),
             value: dm.constellation4.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: burstC5 }] }]),
     constellation6: ct.talentTem("constellation6"),

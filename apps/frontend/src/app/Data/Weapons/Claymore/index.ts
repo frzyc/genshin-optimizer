@@ -1,5 +1,5 @@
-import { WeaponClaymoreKey } from "@genshin-optimizer/consts"
-import WeaponSheet from "../WeaponSheet"
+import type { WeaponClaymoreKey } from "@genshin-optimizer/consts"
+import type WeaponSheet from "../WeaponSheet"
 import Akuoumaru from "./Akuoumaru"
 import BeaconOfTheReedSea from "./BeaconOfTheReedSea"
 import BlackcliffSlasher from "./BlackcliffSlasher"

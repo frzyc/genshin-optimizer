@@ -1,22 +1,22 @@
-import { RarityKey, WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts';
-import { weaponAsset } from '@genshin-optimizer/g-assets';
-import type { WeaponData } from '@genshin-optimizer/pipeline';
-import { displayDataMap } from ".";
-import ImgIcon from '../../Components/Image/ImgIcon';
-import SqBadge from '../../Components/SqBadge';
-import { Translate } from '../../Components/Translate';
-import { input } from '../../Formula';
-import { Data } from '../../Formula/type';
-import { IDocumentHeader } from '../../Types/sheet';
-import { ICachedWeapon } from '../../Types/weapon';
-import { getLevelString } from '../LevelData';
-import { IWeaponSheet } from './IWeaponSheet';
+import type { RarityKey, WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import { weaponAsset } from '@genshin-optimizer/g-assets'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { displayDataMap } from "."
+import ImgIcon from '../../Components/Image/ImgIcon'
+import SqBadge from '../../Components/SqBadge'
+import { Translate } from '../../Components/Translate'
+import { input } from '../../Formula'
+import type { Data } from '../../Formula/type'
+import type { IDocumentHeader } from '../../Types/sheet'
+import type { ICachedWeapon } from '../../Types/weapon'
+import { getLevelString } from '../LevelData'
+import type { IWeaponSheet } from './IWeaponSheet'
 export default class WeaponSheet {
-  readonly key: WeaponKey;
-  readonly sheet: IWeaponSheet;
-  readonly data: Data;
-  readonly rarity: RarityKey;
-  readonly weaponType: WeaponTypeKey;
+  readonly key: WeaponKey
+  readonly sheet: IWeaponSheet
+  readonly data: Data
+  readonly rarity: RarityKey
+  readonly weaponType: WeaponTypeKey
   constructor(key: WeaponKey, weaponSheet: IWeaponSheet, weaponData: WeaponData, data: Data) {
     this.rarity = weaponData.rarity
     this.weaponType = weaponData.weaponType
@@ -43,6 +43,6 @@ export function headerTemplate(weaponKey: WeaponKey, action?: Displayable): IDoc
     title: tr(`passiveName`),
     icon: data => <ImgIcon size={2} src={weaponAsset(weaponKey, data.get(input.weapon.asc).value >= 2)} />,
     action: action && <SqBadge color="success">{action}</SqBadge>,
-    description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`)
+    description: data => tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
   }
 }

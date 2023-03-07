@@ -1,4 +1,4 @@
-import { createSvgIcon } from "@mui/material";
+import { createSvgIcon } from "@mui/material"
 
 const HpIcon = createSvgIcon(<>
   <path d="M 13.679688 13.765625 C 14.503906 12.828125 15.40625 11.960938 16.375 11.179688 C 17.351562 10.472656 17.988281 13.082031 17.988281 13.082031 C 16.675781 13.808594 15.152344 14.050781 13.679688 13.765625 Z M 13.679688 13.765625 " opacity=".3" />,

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ElementKey, TravelerKey } from "@genshin-optimizer/consts"
-import { CustomMultiTarget } from "../Types/character"
+import type { ElementKey, TravelerKey } from "@genshin-optimizer/consts"
+import type { CustomMultiTarget } from "../Types/character"
 import { travelerElements } from "../Types/consts"
-import { DBStorage } from "./DBStorage"
-import { IGO, IGOOD } from "./exim"
+import type { DBStorage } from "./DBStorage"
+import type { IGO, IGOOD } from "./exim"
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateVersion` calls
@@ -89,9 +89,9 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             `["basic","${statKey}"]`,
             [{
               "value": value,
-              "disabled": false
-            }]
-          ]))
+              "disabled": false,
+            }],
+          ])),
         )
         return { ...b, statFilters: newStatFilters }
       })
@@ -193,9 +193,9 @@ export function migrate(storage: DBStorage) {
             `["basic","${statKey}"]`,
             [{
               "value": value,
-              "disabled": false
-            }]
-          ]))
+              "disabled": false,
+            }],
+          ])),
         )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
       }

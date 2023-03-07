@@ -1,4 +1,4 @@
-import { RarityKey } from './common'
+import type { RarityKey } from './common'
 
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]

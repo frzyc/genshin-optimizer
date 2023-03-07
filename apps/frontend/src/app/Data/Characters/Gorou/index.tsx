@@ -1,12 +1,12 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, prod, subscript, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, healNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -25,7 +25,7 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++], // Aimed
@@ -41,7 +41,7 @@ const dm = {
     defInc: skillParam_gen.skill[s++],
     geo_dmg_: skillParam_gen.skill[s++][0],
     duration: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0]
+    cd: skillParam_gen.skill[s++][0],
   },
   burst: {
     dmg_def: skillParam_gen.burst[b++],
@@ -49,7 +49,7 @@ const dm = {
     crystalHits: 6,
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    enerCost: skillParam_gen.burst[b++][0]
+    enerCost: skillParam_gen.burst[b++][0],
   },
   passive1: {
     def_: skillParam_gen.passive1[0][0],
@@ -69,19 +69,19 @@ const dm = {
       skillParam_gen.constellation6[2],
       skillParam_gen.constellation6[2],
     ] as number[],
-    duration: skillParam_gen.constellation6[3]
-  }
+    duration: skillParam_gen.constellation6[3],
+  },
 } as const
 
 const [condInFieldPath, condInField] = cond(key, "inField")
 const skill1_defDisp = equal(condInField, "inField",
   greaterEq(tally["geo"], 1,
-    subscript(input.total.skillIndex, dm.skill.defInc)
-  )
+    subscript(input.total.skillIndex, dm.skill.defInc),
+  ),
 )
 const skill1_def = equal(input.activeCharKey, target.charKey, skill1_defDisp)
 const skill3_geo_dmg_Disp = equal(condInField, "inField",
-  greaterEq(tally["geo"], 3, dm.skill.geo_dmg_)
+  greaterEq(tally["geo"], 3, dm.skill.geo_dmg_),
 )
 const skill3_geo_dmg_ = equal(input.activeCharKey, target.charKey, skill3_geo_dmg_Disp)
 
@@ -94,8 +94,8 @@ const p2_burst_dmgInc = greaterEq(input.asc, 4, prod(input.total.def, dm.passive
 const [condAfterSkillBurstPath, condAfterSkillBurst] = cond(key, "afterSkillBurst")
 const c6_geo_critDMG_ = greaterEq(input.constellation, 6,
   equal(condAfterSkillBurst, "afterSkillBurst",
-    subscript(sum(tally["geo"], -1), dm.constellation6.geo_critDMG_)
-  )
+    subscript(sum(tally["geo"], -1), dm.constellation6.geo_critDMG_),
+  ),
 )
 
 const dmgFormulas = {
@@ -112,11 +112,11 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode("def", dm.burst.dmg_def, "burst"),
-    crystalCollapse: dmgNode("def", dm.burst.crystalDmg_def, "burst")
+    crystalCollapse: dmgNode("def", dm.burst.crystalDmg_def, "burst"),
   },
   constellation4: {
-    heal: greaterEq(input.constellation, 4, greaterEq(tally["geo"], 2, healNode("def", dm.constellation4.heal_def_, 0)))
-  }
+    heal: greaterEq(input.constellation, 4, greaterEq(tally["geo"], 2, healNode("def", dm.constellation4.heal_def_, 0))),
+  },
 }
 
 const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -129,14 +129,14 @@ export const data = dataObjForCharacterSheet(key, elementKey, "inazuma", data_ge
       geo_dmg_: skill3_geo_dmg_,
       def_: afterBurst_def_,
       geo_critDMG_: c6_geo_critDMG_,
-    }
+    },
   },
   premod: {
     burstBoost: burstC5,
     skillBoost: skillC3,
     skill_dmgInc: p2_skill_dmgInc,
     burst_dmgInc: p2_burst_dmgInc,
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -150,11 +150,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal")
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -162,7 +162,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.charged.aimed, { name: ct.chg(`auto.skillParams.4`) }),
       }, {
         node: infoMut(dmgFormulas.charged.fully, { name: ct.chg(`auto.skillParams.5`) }),
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -172,20 +172,20 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: stg("duration"),
         value: dm.skill.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s"
+        unit: "s",
       }],
     }, ct.condTem("skill", {
       value: condInField,
@@ -198,27 +198,27 @@ const sheet: ICharacterSheet = {
             node: infoMut(skill1_defDisp, KeyMap.info("def")),
           }, {
             canShow: data => data.get(tally["geo"]).value >= 2,
-            text: st("incInterRes")
+            text: st("incInterRes"),
           }, {
             node: infoMut(skill3_geo_dmg_Disp, KeyMap.info("geo_dmg_")),
-          }]
-        }
-      }
+          }],
+        },
+      },
     }), ct.headerTem("passive2", {
       fields: [{
-        node: p2_skill_dmgInc
-      }]
+        node: p2_skill_dmgInc,
+      }],
     }), ct.headerTem("constellation4", {
       teamBuff: true,
       canShow: greaterEq(tally.geo, 2, 1),
       fields: [{
         node: infoMut(dmgFormulas.constellation4.heal, { name: stg("healing") }),
-      }]
+      }],
     })]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) })
+        node: infoMut(dmgFormulas.burst.dmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         node: infoMut(dmgFormulas.burst.crystalCollapse, {
           name: ct.chg(`burst.skillParams.1`),
@@ -227,15 +227,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("duration"),
         value: dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("energyCost"),
-        value: dm.burst.enerCost
-      }]
+        value: dm.burst.enerCost,
+      }],
     }, ct.condTem("passive1", {
       value: condAfterBurst,
       path: condAfterBurstPath,
@@ -244,18 +244,18 @@ const sheet: ICharacterSheet = {
       states: {
         afterBurst: {
           fields: [{
-            node: afterBurst_def_
+            node: afterBurst_def_,
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     }), ct.headerTem("passive2", {
       fields: [{
-        node: p2_burst_dmgInc
-      }]
+        node: p2_burst_dmgInc,
+      }],
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -274,16 +274,16 @@ const sheet: ICharacterSheet = {
       states: {
         afterSkillBurst: {
           fields: [{
-            node: c6_geo_critDMG_
+            node: c6_geo_critDMG_,
           }, {
             text: stg("duration"),
             value: dm.constellation6.duration,
-            unit: "s"
-          }]
-        }
-      }
-    })])
-  }
+            unit: "s",
+          }],
+        },
+      },
+    })]),
+  },
 }
 
 export default new CharacterSheet(sheet, data)

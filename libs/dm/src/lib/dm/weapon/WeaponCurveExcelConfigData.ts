@@ -1,5 +1,6 @@
 //exp curve
-import { extrapolateFloat, WeaponGrowCurveKey } from "@genshin-optimizer/pipeline"
+import type { WeaponGrowCurveKey } from "@genshin-optimizer/pipeline"
+import { extrapolateFloat } from "@genshin-optimizer/pipeline"
 import { readDMJSON } from "../../util"
 
 type WeaponCurveExcelConfigData = {

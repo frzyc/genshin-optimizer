@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod, subscript } from '../../../Formula/utils'
-import { CharacterKey } from '@genshin-optimizer/consts'
+import type { CharacterKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -24,7 +24,7 @@ const dm = {
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
@@ -49,7 +49,7 @@ const dm = {
   },
   passive2: {
     energyGen: skillParam_gen.passive2[p2++][0],
-    er: skillParam_gen.passive2[p2++][0]
+    er: skillParam_gen.passive2[p2++][0],
   },
   constellation2: {
     crowfeatherDmg: skillParam_gen.constellation2[0],
@@ -62,7 +62,7 @@ const dm = {
 const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, "TenguJuuraiAmbush")
 const atkIncRatio = subscript(input.total.skillIndex, dm.skill.atkBonus.map(x => x), { unit: "%" })
 const skillTenguAmbush_disp = equal("TenguJuuraiAmbush", condSkillTenguAmbush,
-  prod(input.base.atk, atkIncRatio)
+  prod(input.base.atk, atkIncRatio),
 )
 const skillTenguAmbush_ = equal(input.activeCharKey, target.charKey, skillTenguAmbush_disp)
 
@@ -80,18 +80,18 @@ const dmgFormulas = {
     [key, dmgNode("atk", value, "plunging")])),
   skill: {
     dmg: dmgNode("atk", dm.skill.dmg, "skill"),
-    skillTenguAmbush_
+    skillTenguAmbush_,
   },
   burst: {
     titanbreaker: dmgNode("atk", dm.burst.titanBreakerDmg, "burst"),
     stormcluster: dmgNode("atk", dm.burst.stormClusterDmg, "burst"),
   },
   passive2: {
-    energyRegen: infoMut(greaterEq(input.asc, 4, prod(input.total.enerRech_, dm.passive2.energyGen)), { name: ct.ch("a4.enerRest"), fixed: 2 })
+    energyRegen: infoMut(greaterEq(input.asc, 4, prod(input.total.enerRech_, dm.passive2.energyGen)), { name: ct.ch("a4.enerRest"), fixed: 2 }),
   },
   constellation2: {
     dmg: greaterEq(input.constellation, 2, prod(dmgNode("atk", dm.skill.dmg, "skill"), percent(dm.constellation2.crowfeatherDmg))),
-  }
+  },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
@@ -103,12 +103,12 @@ export const data = dataObjForCharacterSheet(key, "electro", "inazuma", data_gen
   },
   teamBuff: {
     premod: {
-      electro_critDMG_: c6ElectroCritDmg_
+      electro_critDMG_: c6ElectroCritDmg_,
     },
     total: {
-      atk: skillTenguAmbush_
-    }
-  }
+      atk: skillTenguAmbush_,
+    },
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -124,8 +124,8 @@ const sheet: ICharacterSheet = {
         text: ct.chg("auto.fields.normal"),
       }, {
         fields: dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) })
-        }))
+          node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
+        })),
       }, {
         text: ct.chg("auto.fields.charged"),
       }, {
@@ -155,7 +155,7 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("skill.skillParams.3"),
           value: `${dm.skill.cd}s`,
-        }]
+        }],
       }, ct.condTem("skill", {
         value: condSkillTenguAmbush,
         path: condSkillTenguAmbushPath,
@@ -168,10 +168,10 @@ const sheet: ICharacterSheet = {
               value: data => data.get(atkIncRatio).value * 100,
               unit: "%",
             }, {
-              node: infoMut(skillTenguAmbush_disp, { name: st(`increase.atk`) })
-            }]
-          }
-        }
+              node: infoMut(skillTenguAmbush_disp, { name: st(`increase.atk`) }),
+            }],
+          },
+        },
       })]),
 
       burst: ct.talentTem("burst", [{
@@ -185,21 +185,21 @@ const sheet: ICharacterSheet = {
         }, {
           text: ct.chg("burst.skillParams.3"),
           value: `${dm.burst.enerCost}`,
-        }]
+        }],
       }]),
 
       passive1: ct.talentTem("passive1"),
       passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
         fields: [{
-          node: dmgFormulas.passive2.energyRegen
-        }]
+          node: dmgFormulas.passive2.energyRegen,
+        }],
       })]),
       passive3: ct.talentTem("passive3"),
       constellation1: ct.talentTem("constellation1"),
       constellation2: ct.talentTem("constellation2", [ct.fieldsTem("constellation2", {
         fields: [{
           node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.chg(`skill.skillParams.0`) }),
-        }]
+        }],
       })]),
       constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
       constellation4: ct.talentTem("constellation4"),
@@ -213,9 +213,9 @@ const sheet: ICharacterSheet = {
           c6: {
             fields: [{
               node: c6ElectroCritDmg_,
-            }]
-          }
-        }
+            }],
+          },
+        },
       })]),
     },
   }

@@ -1,9 +1,9 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "WanderersTroupe"
@@ -15,7 +15,7 @@ const set4 = greaterEq(input.artSet.WanderersTroupe, 4, lookup(input.weaponType,
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     eleMas: set2,
-    charged_dmg_: set4
+    charged_dmg_: set4,
   },
 })
 
@@ -23,7 +23,7 @@ const sheet: IArtifactSheet = {
   name: "Wanderer's Troupe", rarity: [4, 5],
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-    4: { document: [{ header: setHeader(4), fields: [{ node: set4 }] }] }
-  }
+    4: { document: [{ header: setHeader(4), fields: [{ node: set4 }] }] },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

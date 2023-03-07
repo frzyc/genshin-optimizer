@@ -1,44 +1,44 @@
-import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography } from "@mui/material";
-import CardDark from "../Components/Card/CardDark";
-import CardLight from "../Components/Card/CardLight";
+import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography } from "@mui/material"
+import CardDark from "../Components/Card/CardDark"
+import CardLight from "../Components/Card/CardLight"
 import frzyc from "./teamIcons/frzyc.png"
 import lantua from "./teamIcons/lantua.png"
 import van from "./teamIcons/van.png"
 import stain from "./teamIcons/stain.png"
 import sin from "./teamIcons/sin.png"
-import { Groups } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
+import { Groups } from "@mui/icons-material"
+import { useTranslation } from "react-i18next"
 const team = [{
   name: "frzyc",
   img: frzyc,
   title: t => t`teamCard.jobTitle.leadDev`,
   subtitle: "Insomniac in Chief",
-  url: process.env.NX_URL_GITHUB_FRZYC
+  url: process.env.NX_URL_GITHUB_FRZYC,
 }, {
   name: "Lantua",
   img: lantua,
   title: t => t`teamCard.jobTitle.dev`,
   subtitle: "Copium Calculator",
-  url: process.env.NX_URL_GITHUB_LANTUA
+  url: process.env.NX_URL_GITHUB_LANTUA,
 }, {
   name: "Van",
   img: van,
   title: t => t`teamCard.jobTitle.dev`,
   subtitle: "Waverider Stowaway",
-  url: process.env.NX_URL_GITHUB_VAN
+  url: process.env.NX_URL_GITHUB_VAN,
 }, {
   name: "✦ Sin ✦",
   img: sin,
   title: t => t`teamCard.jobTitle.mod`,
   subtitle: "Ohh, shiny.",
-  url: ""
+  url: "",
 }, {
   name: "Stain",
   img: stain,
   title: t => t`teamCard.jobTitle.mod`,
   subtitle: "Australia Man",
-  url: ""
-},] as const
+  url: "",
+}] as const
 
 export default function TeamCard() {
   const { t } = useTranslation(["page_home", "ui"])

@@ -1,13 +1,13 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { compareEq, constant, equal, greaterEq, infoMut, lookup, naught, percent, subscript, unequal } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -27,7 +27,7 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
       skillParam_gen.auto[a++], // 4
-    ]
+    ],
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
@@ -61,8 +61,8 @@ const dm = {
     duration: skillParam_gen.passive1[p1++][0],
   },
   passive2: {
-    cryoDmgBonus: skillParam_gen.passive2[p2++][0]
-  }
+    cryoDmgBonus: skillParam_gen.passive2[p2++][0],
+  },
 } as const
 
 const [condCoilPath, condCoil] = cond(key, "coil")
@@ -70,7 +70,7 @@ const normal_dmg_ = lookup(condCoil, {
   "coil1": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, { unit: "%" }),
   "coil2": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, { unit: "%" }),
   "coil3": subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, { unit: "%" }),
-  "rush": subscript(input.total.skillIndex, dm.skill.rushingNormalDmgBonus, { unit: "%" })
+  "rush": subscript(input.total.skillIndex, dm.skill.rushingNormalDmgBonus, { unit: "%" }),
 }, naught)
 const atk_ = greaterEq(input.asc, 1, unequal(condCoil, undefined, percent(dm.passive1.atkInc)))
 
@@ -86,8 +86,8 @@ const dmgFormulas = {
   normal: Object.fromEntries(dm.normal.hitArr.map((arr, i) =>
     [i, dmgNode("atk", arr, "normal", {
       hit: {
-        ele: compareEq("rush", condCoil, elementKey, "physical")
-      }
+        ele: compareEq("rush", condCoil, elementKey, "physical"),
+      },
     })])),
   charged: {
     aimed: dmgNode("atk", dm.charged.aimed, "charged"),
@@ -108,12 +108,12 @@ export const data = dataObjForCharacterSheet(key, elementKey, undefined, data_ge
   premod: {
     normal_dmg_,
     atk_,
-    cryo_dmg_
+    cryo_dmg_,
   },
   teamBuff: {
     premod: {
-      atk_: teamAtk_
-    }
+      atk_: teamAtk_,
+    },
   },
 })
 
@@ -128,11 +128,11 @@ const sheet: ICharacterSheet = {
   title: ct.chg("title"),
   talent: {
     auto: ct.talentTem("auto", [{
-      text: ct.chg("auto.fields.normal")
+      text: ct.chg("auto.fields.normal"),
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i + (i === 0 ? 0 : -1)}`), textSuffix: i === 0 ? "(1)" : i === 1 ? "(2)" : "" }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -163,12 +163,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: `${dm.skill.atkDecreaseDuration}`,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.7"),
         value: `${dm.skill.cd}`,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, ct.condTem("skill", {
       value: condCoil,
       path: condCoilPath,
@@ -177,34 +177,34 @@ const sheet: ICharacterSheet = {
         "coil1": {
           name: ct.ch("skill.coil1"),
           fields: [{
-            node: normal_dmg_
-          }]
+            node: normal_dmg_,
+          }],
         },
         "coil2": {
           name: ct.ch("skill.coil2"),
           fields: [{
-            node: normal_dmg_
-          }]
+            node: normal_dmg_,
+          }],
         },
         "coil3": {
           name: ct.ch("skill.coil3"),
           fields: [{
-            node: normal_dmg_
-          }]
+            node: normal_dmg_,
+          }],
         },
         "rush": {
           name: ct.ch("skill.rush"),
           fields: [{
-            node: normal_dmg_
+            node: normal_dmg_,
           }, {
             text: ct.ch("normCryoInfus"),
           }, {
             text: ct.chg("skill.skillParams.6"),
             value: dm.skill.rushingDuration,
-            unit: "s"
-          }]
+            unit: "s",
+          }],
         },
-      }
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -213,21 +213,21 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       fields: [{
-        node: atk_
+        node: atk_,
       }, {
         text: stg("duration"),
         value: dm.passive1.duration,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }), ct.condTem("passive1", {
       value: condA1,
       path: condA1Path,
@@ -237,14 +237,14 @@ const sheet: ICharacterSheet = {
       states: {
         "on": {
           fields: [{
-            node: infoMut(teamAtk_, KeyMap.info("atk_"))
+            node: infoMut(teamAtk_, KeyMap.info("atk_")),
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     passive2: ct.talentTem("passive2", [ct.condTem("passive2", {
       value: condA4,
@@ -253,8 +253,8 @@ const sheet: ICharacterSheet = {
       name: ct.ch("skill.rushState"),
       states: Object.fromEntries(range(1, 10).map(i => [i, {
         name: st("stack", { count: i }),
-        fields: [{ node: cryo_dmg_ }]
-      }]))
+        fields: [{ node: cryo_dmg_ }],
+      }])),
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -266,4 +266,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

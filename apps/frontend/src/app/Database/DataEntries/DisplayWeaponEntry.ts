@@ -1,7 +1,8 @@
-import { allRarityKeys, allWeaponTypeKeys, RarityKey, WeaponTypeKey } from "@genshin-optimizer/consts";
-import { weaponSortKeys } from "../../Util/WeaponSort";
-import { ArtCharDatabase } from "../Database";
-import { DataEntry } from "../DataEntry";
+import type { RarityKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allRarityKeys, allWeaponTypeKeys } from "@genshin-optimizer/consts"
+import { weaponSortKeys } from "../../Util/WeaponSort"
+import type { ArtCharDatabase } from "../Database"
+import { DataEntry } from "../DataEntry"
 
 export interface IDisplayWeapon {
   editWeaponId: string,

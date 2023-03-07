@@ -1,6 +1,7 @@
-import { WorkerCommand, WorkerResult } from '..'
+import type { WorkerCommand, WorkerResult } from '..'
 import { assertUnreachable } from '../../Util/Util'
-import { artSetPerm, countBuilds, filterArts, filterFeasiblePerm, RequestFilter } from "../common"
+import type { RequestFilter } from "../common"
+import { artSetPerm, countBuilds, filterArts, filterFeasiblePerm } from "../common"
 import { BNBSplitWorker } from "./BNBSplitWorker"
 import { ComputeWorker } from "./ComputeWorker"
 import { DefaultSplitWorker } from './DefaultSplitWorker'

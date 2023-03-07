@@ -1,18 +1,20 @@
-import { Groups } from "@mui/icons-material";
-import HelpIcon from '@mui/icons-material/Help';
-import { Box, Divider, List, ListItem, ListProps, Palette, PaletteColor, Skeleton, styled, Typography } from "@mui/material";
-import React, { Suspense, useCallback, useContext, useMemo } from 'react';
-import { DataContext } from "../Context/DataContext";
-import { FormulaDataContext } from "../Context/FormulaDataContext";
-import { NodeDisplay } from "../Formula/api";
-import { nodeVStr } from "../Formula/uiData";
-import { valueString } from "../KeyMap";
-import { allAmpReactions, AmpReactionKey } from "../Types/consts";
-import { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay";
-import { evalIfFunc } from "../Util/Util";
-import AmpReactionModeText from "./AmpReactionModeText";
-import BootstrapTooltip from "./BootstrapTooltip";
-import ColorText from "./ColoredText";
+import { Groups } from "@mui/icons-material"
+import HelpIcon from '@mui/icons-material/Help'
+import type { ListProps, Palette, PaletteColor} from "@mui/material"
+import { Box, Divider, List, ListItem, Skeleton, styled, Typography } from "@mui/material"
+import React, { Suspense, useCallback, useContext, useMemo } from 'react'
+import { DataContext } from "../Context/DataContext"
+import { FormulaDataContext } from "../Context/FormulaDataContext"
+import type { NodeDisplay } from "../Formula/api"
+import { nodeVStr } from "../Formula/uiData"
+import { valueString } from "../KeyMap"
+import type { AmpReactionKey } from "../Types/consts"
+import { allAmpReactions } from "../Types/consts"
+import type { IBasicFieldDisplay, IFieldDisplay } from "../Types/fieldDisplay"
+import { evalIfFunc } from "../Util/Util"
+import AmpReactionModeText from "./AmpReactionModeText"
+import BootstrapTooltip from "./BootstrapTooltip"
+import ColorText from "./ColoredText"
 
 export default function FieldsDisplay({ fields }: { fields: IFieldDisplay[] }) {
   return <FieldDisplayList sx={{ m: 0 }}>
@@ -100,9 +102,9 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(({ theme, li
   overflow: "hidden",
   margin: 0,
   '> .MuiListItem-root:nth-of-type(even)': {
-    backgroundColor: (theme.palette[light] as PaletteColor)[palletOption]
+    backgroundColor: (theme.palette[light] as PaletteColor)[palletOption],
   },
   '> .MuiListItem-root:nth-of-type(odd)': {
-    backgroundColor: (theme.palette[dark] as PaletteColor)[palletOption]
+    backgroundColor: (theme.palette[dark] as PaletteColor)[palletOption],
   },
-}));
+}))

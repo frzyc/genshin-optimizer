@@ -1,5 +1,5 @@
-import { CharacterKey, ElementKey, RarityKey, WeaponTypeKey } from "@genshin-optimizer/consts";
-import { DocumentSection } from "../../Types/sheet";
+import type { CharacterKey, ElementKey, RarityKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import type { DocumentSection } from "../../Types/sheet"
 
 export interface TalentSheetElement {
   name: Displayable //talentName

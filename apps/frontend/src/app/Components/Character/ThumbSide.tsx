@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { styled } from "@mui/material"
 
 const ThumbSide = styled("img")(({ theme }) => ({
   display: "inline-block",

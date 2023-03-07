@@ -1,5 +1,5 @@
 import { assertUnreachable } from "../Util/Util"
-import { NumNode, StrNode } from "./type"
+import type { NumNode, StrNode } from "./type"
 
 export function formulaString(formula: NumNode | StrNode): string {
   const { operation } = formula

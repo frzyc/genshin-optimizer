@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -24,7 +24,7 @@ const dm = {
       skillParam_gen.auto[a++], // 3x2
       skillParam_gen.auto[a++], // 4x2
       skillParam_gen.auto[a++], // 5
-    ]
+    ],
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
@@ -51,8 +51,8 @@ const dm = {
     dmg: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0]
-  }
+    cost: skillParam_gen.burst[b++][0],
+  },
 } as const
 
 const [condA1Path, condA1] = cond(key, "QiqiA1")
@@ -75,11 +75,11 @@ const dmgFormulas = {
     castDmg: dmgNode("atk", dm.skill.castDmg, "skill"),
     tickDmg: dmgNode("atk", dm.skill.tickDmg, "skill"),
     hitRegen: healNodeTalent("atk", dm.skill.hitRegenPercent, dm.skill.hitRegenFlat, "skill"),
-    contRegen: healNodeTalent("atk", dm.skill.contRegenPercent, dm.skill.contRegenFlat, "skill")
+    contRegen: healNodeTalent("atk", dm.skill.contRegenPercent, dm.skill.contRegenFlat, "skill"),
   },
   burst: {
     dmg: dmgNode("atk", dm.burst.dmg, "burst"),
-    heal: healNodeTalent("atk", dm.burst.healPercent, dm.burst.healFlat, "burst")
+    heal: healNodeTalent("atk", dm.burst.healPercent, dm.burst.healFlat, "burst"),
   },
 }
 
@@ -91,8 +91,8 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     skillBoost: nodeC5,
     normal_dmg_: nodeC2NormalDmgInc,
     charged_dmg_: nodeC2ChargedDmgInc,
-    incHeal_: nodeA1HealingBonus
-  }
+    incHeal_: nodeA1HealingBonus,
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -110,19 +110,19 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: (i === 2 || i === 3) ? 2 : undefined }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
         node: infoMut(dmgFormulas.charged.dmg, {
           name: ct.chg(`auto.skillParams.5`),
-          multi: 2
+          multi: 2,
         }),
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -132,27 +132,27 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.castDmg, { name: ct.chg(`skill.skillParams.0`) })
+        node: infoMut(dmgFormulas.skill.castDmg, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.hitRegen, { name: ct.chg(`skill.skillParams.1`) })
+        node: infoMut(dmgFormulas.skill.hitRegen, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.contRegen, { name: ct.chg(`skill.skillParams.2`) })
+        node: infoMut(dmgFormulas.skill.contRegen, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.tickDmg, { name: ct.chg(`skill.skillParams.3`) })
+        node: infoMut(dmgFormulas.skill.tickDmg, { name: ct.chg(`skill.skillParams.3`) }),
       }, {
         text: ct.chg("skill.skillParams.4"),
         value: dm.skill.duration,
-        unit: 's'
+        unit: 's',
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.cd,
-        unit: 's'
-      }]
+        unit: 's',
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -164,15 +164,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.skill.duration,
-        unit: 's'
+        unit: 's',
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.skill.cd,
-        unit: 's'
+        unit: 's',
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: dm.burst.cost,
-      }]
+      }],
     }]),
 
     passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
@@ -182,14 +182,14 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeA1HealingBonus
+            node: nodeA1HealingBonus,
           }, {
             text: stg("duration"),
             value: 8,
-            unit: 's'
-          }]
-        }
-      }
+            unit: 's',
+          }],
+        },
+      },
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -201,12 +201,12 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC2NormalDmgInc
+            node: nodeC2NormalDmgInc,
           }, {
-            node: nodeC2ChargedDmgInc
-          }]
-        }
-      }
+            node: nodeC2ChargedDmgInc,
+          }],
+        },
+      },
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4"),

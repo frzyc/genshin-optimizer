@@ -1,11 +1,12 @@
-import { allCharacterKeys, allLocationCharacterKeys, ArtifactSetKey, CharacterKey, LocationKey } from "@genshin-optimizer/consts";
-import Artifact from "../../Data/Artifacts/Artifact";
-import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build";
-import { MainStatKey } from "../../Types/artifact";
-import { deepClone, deepFreeze } from "../../Util/Util";
-import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
-import { validateArr } from "../validationUtil";
+import type { ArtifactSetKey, CharacterKey, LocationKey } from "@genshin-optimizer/consts"
+import { allCharacterKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts"
+import Artifact from "../../Data/Artifacts/Artifact"
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build"
+import type { MainStatKey } from "../../Types/artifact"
+import { deepClone, deepFreeze } from "../../Util/Util"
+import type { ArtCharDatabase } from "../Database"
+import { DataManager } from "../DataManager"
+import { validateArr } from "../validationUtil"
 
 export type ArtSetExclusion = Dict<Exclude<ArtifactSetKey, "PrayersForDestiny" | "PrayersForIllumination" | "PrayersForWisdom" | "PrayersToSpringtime"> | "rainbow", (2 | 4)[]>
 
@@ -75,7 +76,7 @@ export class BuildSettingDataManager extends DataManager<CharacterKey, "buildSet
     if (compareBuild === undefined) compareBuild = false
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
-    if (!artSetExclusion) artSetExclusion = {};
+    if (!artSetExclusion) artSetExclusion = {}
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(Object.entries(artSetExclusion as ArtSetExclusion).map(([k, a]) => [k, [...new Set(a)]]).filter(([_, a]) => a.length))
     return { artSetExclusion, artExclusion, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, allowLocations: allowLocations, allowPartial, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }

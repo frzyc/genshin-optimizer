@@ -1,10 +1,10 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "ShimenawasReminiscence"
@@ -24,8 +24,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     atk_: set2,
     normal_dmg_: set4Norm,
     charged_dmg_: set4Charged,
-    plunging_dmg_: set4Plunge
-  }
+    plunging_dmg_: set4Plunge,
+  },
 })
 
 const sheet: IArtifactSheet = {
@@ -46,11 +46,11 @@ const sheet: IArtifactSheet = {
               node: set4Charged,
             }, {
               node: set4Plunge,
-            }]
-          }
-        }
-      }]
-    }
-  }
+            }],
+          },
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

@@ -1,19 +1,20 @@
-import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material';
-import { Button, ButtonGroup, ButtonProps, Divider, MenuItem } from '@mui/material';
-import React, { useCallback, useContext } from 'react';
-import { CharacterContext } from '../../Context/CharacterContext';
-import { DataContext } from '../../Context/DataContext';
-import { DocumentConditional, IDocumentConditionalExclusive, IDocumentConditionalMultiple } from '../../Types/sheet';
-import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util';
-import DropdownButton from '../DropdownMenu/DropdownButton';
-import SqBadge from '../SqBadge';
-import { Translate } from '../Translate';
+import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
+import type { ButtonProps} from '@mui/material'
+import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
+import React, { useCallback, useContext } from 'react'
+import { CharacterContext } from '../../Context/CharacterContext'
+import { DataContext } from '../../Context/DataContext'
+import type { DocumentConditional, IDocumentConditionalExclusive, IDocumentConditionalMultiple } from '../../Types/sheet'
+import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util'
+import DropdownButton from '../DropdownMenu/DropdownButton'
+import SqBadge from '../SqBadge'
+import { Translate } from '../Translate'
 
 interface ConditionalSelectorProps {
   conditional: DocumentConditional,
   disabled?: boolean,
 }
-export default function ConditionalSelector({ conditional, disabled = false, }: ConditionalSelectorProps) {
+export default function ConditionalSelector({ conditional, disabled = false }: ConditionalSelectorProps) {
   if (Object.keys(conditional.states).length === 1 && "path" in conditional) {
     return <SimpleConditionalSelector conditional={conditional} disabled={disabled} />
   } else if ("path" in conditional) {

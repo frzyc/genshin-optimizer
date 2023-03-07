@@ -1,14 +1,14 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { compareEq, constant, equal, greaterEq, infoMut, lookup, one, percent, prod, subscript, sum, unequal } from "../../../Formula/utils"
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { INodeFieldDisplay } from '../../../Types/fieldDisplay'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { INodeFieldDisplay } from '../../../Types/fieldDisplay'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[2],
       skillParam_gen.auto[3], //x2
       skillParam_gen.auto[4],
-    ]
+    ],
   },
   charged: {
     hit: skillParam_gen.auto[5],
@@ -41,14 +41,14 @@ const dm = {
   skill: {
     dmg_: skillParam_gen.skill[3],
     duration: skillParam_gen.skill[1][0],
-    cd: skillParam_gen.skill[2][0]
+    cd: skillParam_gen.skill[2][0],
   },
   burst: {
     dmg: skillParam_gen.burst[0],
     exp: skillParam_gen.burst[1],
     duration: skillParam_gen.burst[3][0],
     cd: skillParam_gen.burst[4][0],
-    cost: skillParam_gen.burst[5][0]
+    cost: skillParam_gen.burst[5][0],
   },
   passive1: {
     pyro_dmg_: skillParam_gen.passive1[0][0],
@@ -63,7 +63,7 @@ const dm = {
   constellation1: {
     burst_durationInc: skillParam_gen.constellation1[0],
     atk_: skillParam_gen.constellation1[1],
-    duration: skillParam_gen.constellation1[2]
+    duration: skillParam_gen.constellation1[2],
   },
   constellation2: {
     pyro_dmg_: skillParam_gen.constellation2[0],
@@ -71,7 +71,7 @@ const dm = {
   },
   constellation3: {},
   constellation4: {
-    cdRed: skillParam_gen.constellation4[0]
+    cdRed: skillParam_gen.constellation4[0],
   },
   constellation5: {},
   constellation6: {
@@ -94,12 +94,12 @@ const atk_ = greaterEq(input.asc, 4, equal(condBurst, "on", unequal(input.active
   sum(percent(dm.passive2.fixed_atk_), prod(percent(dm.passive2.var_atk_), a1Stacks)))))
 const c1atk_ = equal(condC1, 'c1', percent(dm.constellation1.atk_))
 const c2pyro_dmg_ = greaterEq(input.constellation, 2,
-  equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), KeyMap.info("pyro_dmg_"))
+  equal(condC2, 'c2', percent(dm.constellation2.pyro_dmg_), KeyMap.info("pyro_dmg_")),
 )
 
 const normalEntries = dm.normal.hitArr.map((arr, i) => [
   i,
-  dmgNode("atk", arr, "normal", { hit: { ele: compareEq(condSkill, "skill", elementKey, "physical") } }, normal_dmgMult)
+  dmgNode("atk", arr, "normal", { hit: { ele: compareEq(condSkill, "skill", elementKey, "physical") } }, normal_dmgMult),
 ])
 
 // Yoimiya C6 will only trigger per NA action. For multi-hits, it will combine the MVs
@@ -107,7 +107,7 @@ const normalEntries = dm.normal.hitArr.map((arr, i) => [
 const kindlingArrs = dm.normal.hitArr.map((arr, i) =>
   i === 0 || i === 3
     ? arr.map(val => val * 2)
-    : arr
+    : arr,
 )
 const kindlingEntries = kindlingArrs.map((arr, i) => [i, greaterEq(input.constellation, 6,
   equal(condSkill, "skill",
@@ -116,18 +116,18 @@ const kindlingEntries = kindlingArrs.map((arr, i) => [i, greaterEq(input.constel
         subscript(
           input.total.autoIndex,
           arr,
-          { unit: "%" }
+          { unit: "%" },
         ),
         constant(dm.constellation6.dmg_, { name: ct.ch("c6Key_"), unit: "%" }),
         input.total.atk,
-        normal_dmgMult
+        normal_dmgMult,
       ),
       "normal", {
       hit: {
-        ele: compareEq(condSkill, "skill", elementKey, "physical")
-      }
-    })
-  )
+        ele: compareEq(condSkill, "skill", elementKey, "physical"),
+      },
+    }),
+  ),
 )])
 
 export const dmgFormulas = {
@@ -135,7 +135,7 @@ export const dmgFormulas = {
   charged: {
     hit: dmgNode("atk", dm.charged.hit, "charged"),
     full: dmgNode("atk", dm.charged.full, "charged", { hit: { ele: constant(elementKey) } }),
-    kindling: unequal(condSkill, "skill", dmgNode("atk", dm.charged.kindling, "charged", { hit: { ele: constant(elementKey) } }))
+    kindling: unequal(condSkill, "skill", dmgNode("atk", dm.charged.kindling, "charged", { hit: { ele: constant(elementKey) } })),
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -144,21 +144,21 @@ export const dmgFormulas = {
     dmg: dmgNode("atk", dm.burst.dmg, "burst", { hit: { ele: constant(elementKey) } }),
     exp: dmgNode("atk", dm.burst.exp, "burst", { hit: { ele: constant(elementKey) } }),
   },
-  constellation6: Object.fromEntries(kindlingEntries)
+  constellation6: Object.fromEntries(kindlingEntries),
 }
 
 export const dataObj = dataObjForCharacterSheet(key, elementKey, "inazuma", data_gen, dmgFormulas, {
   teamBuff: {
     premod: {
       atk_,
-    }
+    },
   },
   premod: {
     skillBoost: const3TalentInc,
     burstBoost: const5TalentInc,
     atk_: c1atk_,
     pyro_dmg_: sum(pyro_dmg_, c2pyro_dmg_),
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -179,7 +179,7 @@ const sheet: ICharacterSheet = {
           name: ct.chg(`auto.skillParams.${i}`),
           multi: [0, 3].includes(i) ? 2 : undefined,
         }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -206,8 +206,8 @@ const sheet: ICharacterSheet = {
       fields: [{
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.cd,
-        unit: 's'
-      }]
+        unit: 's',
+      }],
     }, ct.condTem("skill", {
       name: st("afterUse.skill"),
       path: condSkillPath,
@@ -215,16 +215,16 @@ const sheet: ICharacterSheet = {
       states: {
         skill: {
           fields: [{
-            node: normal_dmgMult
+            node: normal_dmgMult,
           }, {
             text: ct.ch("normPyroInfus"),
           }, {
             text: ct.chg("skill.skillParams.1"),
             value: dm.skill.duration,
-            unit: 's'
-          }]
-        }
-      }
+            unit: 's',
+          }],
+        },
+      },
     }), ct.condTem("passive1", {
       // Conditional for self display
       canShow: equal(condSkill, "skill", 1),
@@ -235,21 +235,21 @@ const sheet: ICharacterSheet = {
         [i, {
           name: `${i} stack`,
           fields: [{
-            node: pyro_dmg_
+            node: pyro_dmg_,
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: "s"
-          }]
-        }]
-      ))
+            unit: "s",
+          }],
+        }],
+      )),
     }), ct.headerTem("constellation6", {
       canShow: equal(condSkill, "skill", 1),
       fields: dm.normal.hitArr.map((_, i): INodeFieldDisplay => ({
         node: infoMut(dmgFormulas.constellation6[i], {
           name: ct.chg(`auto.skillParams.${i}`),
         }),
-      }))
+      })),
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -260,21 +260,21 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: uiData => dm.burst.duration + (uiData.get(input.constellation).value >= 1 ? dm.constellation1.burst_durationInc : 0),
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.4"),
         value: 60,
-      }]
+      }],
     }, ct.headerTem("constellation1", {
       fields: [{
         text: st("durationInc"),
         value: dm.constellation1.burst_durationInc,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }), ct.condTem("constellation1", {
       name: ct.ch("c1"),
       value: condC1,
@@ -282,14 +282,14 @@ const sheet: ICharacterSheet = {
       states: {
         c1: {
           fields: [{
-            node: constant(dm.constellation1.atk_, KeyMap.info("atk_"))
+            node: constant(dm.constellation1.atk_, KeyMap.info("atk_")),
           }, {
             text: stg("duration"),
             value: dm.constellation1.duration,
-            unit: 's'
-          }]
-        }
-      }
+            unit: 's',
+          }],
+        },
+      },
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -303,18 +303,18 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: atk_
+            node: atk_,
           }, {
             text: stg("duration"),
             value: dm.passive2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     }), ct.condTem("passive1", {
       // Conditional from P1 for team buff display when P2 is activated
       canShow: unequal(input.activeCharKey, key,
-        equal(condBurst, "on", greaterEq(input.asc, 4, 1))
+        equal(condBurst, "on", greaterEq(input.asc, 4, 1)),
       ),
       teamBuff: true,
       value: condA1,
@@ -324,14 +324,14 @@ const sheet: ICharacterSheet = {
         [i, {
           name: `${i} stack`,
           fields: [{
-            node: pyro_dmg_
+            node: pyro_dmg_,
           }, {
             text: stg("duration"),
             value: dm.passive1.duration,
-            unit: "s"
-          }]
-        }]
-      ))
+            unit: "s",
+          }],
+        }],
+      )),
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -342,19 +342,19 @@ const sheet: ICharacterSheet = {
       states: {
         c2: {
           fields: [{
-            node: c2pyro_dmg_
+            node: c2pyro_dmg_,
           }, {
             text: stg("duration"),
             value: dm.constellation2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: const3TalentInc }] }]),
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: const5TalentInc }] }]),
-    constellation6: ct.talentTem("constellation6")
+    constellation6: ct.talentTem("constellation6"),
   },
 }
 

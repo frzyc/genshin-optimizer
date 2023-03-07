@@ -1,57 +1,61 @@
-import { CharacterKey, charKeyToLocCharKey } from '@genshin-optimizer/consts';
-import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import NotificationsOffIcon from '@mui/icons-material/NotificationsOff';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
-import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider';
-import BootstrapTooltip from '../../../../Components/BootstrapTooltip';
-import CardLight from '../../../../Components/Card/CardLight';
-import CharacterCard from '../../../../Components/Character/CharacterCard';
-import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton';
-import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor';
-import InfoTooltip from '../../../../Components/InfoTooltip';
-import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup';
-import SqBadge from '../../../../Components/SqBadge';
-import { CharacterContext } from '../../../../Context/CharacterContext';
-import { DataContext, dataContextObj } from '../../../../Context/DataContext';
-import { GraphContext } from '../../../../Context/GraphContext';
-import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext';
-import { DatabaseContext } from '../../../../Database/Database';
-import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry';
-import { mergeData, uiDataForTeam } from '../../../../Formula/api';
-import { optimize } from '../../../../Formula/optimization';
-import { NumNode } from '../../../../Formula/type';
-import { UIData } from '../../../../Formula/uiData';
-import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer';
-import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback';
-import useDBMeta from '../../../../ReactHooks/useDBMeta';
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate';
-import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp';
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData';
-import { OptProblemInput } from '../../../../Solver';
-import { Build, mergeBuilds, mergePlot } from '../../../../Solver/common';
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver';
-import { objectKeyMap, objPathValue, range } from '../../../../Util/Util';
-import { maxBuildsToShowList } from './Build';
-import ArtifactSetConfig from './Components/ArtifactSetConfig';
-import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle';
-import BonusStatsCard from './Components/BonusStatsCard';
-import BuildAlert, { BuildStatus } from './Components/BuildAlert';
-import BuildDisplayItem from './Components/BuildDisplayItem';
-import ChartCard from './Components/ChartCard';
-import ExcludeArt from './Components/ExcludeArt';
-import AllowChar from './Components/AllowChar';
-import MainStatSelectionCard from './Components/MainStatSelectionCard';
-import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
-import StatFilterCard from './Components/StatFilterCard';
-import WorkerErr from './Components/WorkerErr';
-import { compactArtifacts, dynamicData } from './foreground';
-import useBuildResult from './useBuildResult';
-import useBuildSetting from './useBuildSetting';
-import { ICachedArtifact } from '../../../../Types/artifact';
+import type { CharacterKey} from '@genshin-optimizer/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/consts'
+import { CheckBox, CheckBoxOutlineBlank, Close, DeleteForever, Science, TrendingUp } from '@mui/icons-material'
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
+import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
+import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material'
+import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
+import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
+import CardLight from '../../../../Components/Card/CardLight'
+import CharacterCard from '../../../../Components/Character/CharacterCard'
+import DropdownButton from '../../../../Components/DropdownMenu/DropdownButton'
+import { HitModeToggle, ReactionToggle } from '../../../../Components/HitModeEditor'
+import InfoTooltip from '../../../../Components/InfoTooltip'
+import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
+import SqBadge from '../../../../Components/SqBadge'
+import { CharacterContext } from '../../../../Context/CharacterContext'
+import type { dataContextObj } from '../../../../Context/DataContext'
+import { DataContext } from '../../../../Context/DataContext'
+import { GraphContext } from '../../../../Context/GraphContext'
+import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
+import { DatabaseContext } from '../../../../Database/Database'
+import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry'
+import { mergeData, uiDataForTeam } from '../../../../Formula/api'
+import { optimize } from '../../../../Formula/optimization'
+import type { NumNode } from '../../../../Formula/type'
+import type { UIData } from '../../../../Formula/uiData'
+import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
+import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
+import useDBMeta from '../../../../ReactHooks/useDBMeta'
+import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
+import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
+import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import type { OptProblemInput } from '../../../../Solver'
+import type { Build} from '../../../../Solver/common'
+import { mergeBuilds, mergePlot } from '../../../../Solver/common'
+import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
+import { objectKeyMap, objPathValue, range } from '../../../../Util/Util'
+import { maxBuildsToShowList } from './Build'
+import ArtifactSetConfig from './Components/ArtifactSetConfig'
+import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
+import BonusStatsCard from './Components/BonusStatsCard'
+import type { BuildStatus } from './Components/BuildAlert'
+import BuildAlert from './Components/BuildAlert'
+import BuildDisplayItem from './Components/BuildDisplayItem'
+import ChartCard from './Components/ChartCard'
+import ExcludeArt from './Components/ExcludeArt'
+import AllowChar from './Components/AllowChar'
+import MainStatSelectionCard from './Components/MainStatSelectionCard'
+import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
+import StatFilterCard from './Components/StatFilterCard'
+import WorkerErr from './Components/WorkerErr'
+import { compactArtifacts, dynamicData } from './foreground'
+import useBuildResult from './useBuildResult'
+import useBuildSetting from './useBuildSetting'
+import type { ICachedArtifact } from '../../../../Types/artifact'
 
 const audio = new Audio("notification.mp3")
 export default function TabBuild() {
@@ -75,7 +79,7 @@ export default function TabBuild() {
   useEffect(() => database.displayOptimize.follow((_r, to) => setDisplayOptimize(to)), [database, setDisplayOptimize])
 
   const maxWorkers = threads > defThreads ? defThreads : threads
-  const setMaxWorkers = useCallback((threads: number) => database.displayOptimize.set({ threads }), [database],)
+  const setMaxWorkers = useCallback((threads: number) => database.displayOptimize.set({ threads }), [database])
 
   const characterDispatch = useCharacterReducer(characterKey)
   const onClickTeammate = useCharSelectionCallback()
@@ -177,7 +181,7 @@ export default function TabBuild() {
             const filterNode: NumNode = objPathValue(workerData.display ?? {}, JSON.parse(pathStr))
             const minimum = filterNode.info?.unit === "%" ? setting.value / 100 : setting.value // TODO: Conversion
             return { value: filterNode, minimum: minimum }
-          })
+          }),
       )
       .filter(x => x.value && x.minimum > -Infinity)
 
@@ -202,7 +206,7 @@ export default function TabBuild() {
       arts: split, optimizationTarget: optimizationTargetNode,
       exclusion: artSetExclusion, constraints: nodes.map((value, i) => ({ value, min: minimum[i] })),
 
-      topN: maxBuildsToShow, plotBase: plotBaseNode
+      topN: maxBuildsToShow, plotBase: plotBaseNode,
     }
     const status: Omit<BuildStatus, 'type'> = { tested: 0, failed: 0, skipped: 0, total: 0, startTime: performance.now() }
     const statusUpdateTimer = setInterval(() => setBuildStatus({ type: "active", ...status }), 100)
@@ -227,7 +231,7 @@ export default function TabBuild() {
         setChartData({
           valueNode: targetNode,
           plotNode: plotBaseNumNode,
-          data
+          data,
         })
       }
       const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
@@ -460,7 +464,7 @@ function BuildList({ builds, setBuilds, characterKey, data, compareData, disable
       oldData={data}
     >
       <BuildItemWrapper index={index} label={getLabel(index)} build={build} compareData={compareData} disabled={disabled} deleteBuild={setBuilds ? deleteBuild : undefined} />
-    </DataContextWrapper>
+    </DataContextWrapper>,
     )}
   </Suspense>, [builds, characterKey, data, compareData, disabled, getLabel, deleteBuild, setBuilds])
   return list

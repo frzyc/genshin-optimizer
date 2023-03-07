@@ -1,13 +1,13 @@
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { input, target } from '../../../Formula'
-import { DisplaySub } from '../../../Formula/type'
+import type { DisplaySub } from '../../../Formula/type'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterSheetKey } from '../../../Types/consts'
+import type { CharacterSheetKey } from '../../../Types/consts'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import { TalentSheet } from '../ICharacterSheet.d'
+import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
 import skillParam_gen from './skillParam_gen.json'
 
@@ -22,7 +22,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     skill: {
       dmg: skillParam_gen.skill[s++],
       duration: skillParam_gen.skill[s++][0],
-      cd: skillParam_gen.skill[s++][0]
+      cd: skillParam_gen.skill[s++][0],
     },
     burst: {
       dmg: skillParam_gen.burst[b++],
@@ -32,7 +32,7 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
       enerCost: skillParam_gen.burst[b++][0],
     },
     passive1: {
-      skill_cdRed: 2
+      skill_cdRed: 2,
     },
     passive2: {
       geoDmg: percent(0.6),
@@ -42,17 +42,17 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     },
     constellation4: {
       energyRestore: 5,
-      maxTriggers: 5
+      maxTriggers: 5,
     },
     constellation6: {
       burstDuration: 5,
-      skillDuration: 10
-    }
+      skillDuration: 10,
+    },
   } as const
 
   const [condC1BurstAreaPath, condC1BurstArea] = cond(condCharKey, `${elementKey}C1BurstArea`)
   const c1BurstArea_critRate_Disp = greaterEq(input.constellation, 1,
-    equal(condC1BurstArea, "on", dm.constellation1.critRate_)
+    equal(condC1BurstArea, "on", dm.constellation1.critRate_),
   )
   const c1BurstArea_critRate_ = equal(input.activeCharKey, target.charKey, c1BurstArea_critRate_Disp)
 
@@ -66,12 +66,12 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     },
     passive2: {
       dmg: customDmgNode(
-        prod(input.total.atk, dm.passive2.geoDmg), "elemental", { hit: { ele: constant("geo") } }
-      )
+        prod(input.total.atk, dm.passive2.geoDmg), "elemental", { hit: { ele: constant("geo") } },
+      ),
     },
     constellation2: {
       dmg: greaterEq(input.constellation, 2, dmgNode("atk", dm.skill.dmg, "skill")),
-    }
+    },
   } as const
 
   const burstC3 = greaterEq(input.constellation, 3, 3)
@@ -84,9 +84,9 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
     },
     teamBuff: {
       premod: {
-        critRate_: c1BurstArea_critRate_
-      }
-    }
+        critRate_: c1BurstArea_critRate_,
+      },
+    },
   })
 
   const talent: TalentSheet = {
@@ -105,23 +105,23 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
           ? `${dm.skill.cd}s - ${dm.passive1.skill_cdRed}s = ${dm.skill.cd - dm.passive1.skill_cdRed}`
           : dm.skill.cd,
         unit: "s",
-      }]
+      }],
     }, ct.headerTem("passive1", {
       fields: [{
         text: st("skillCDRed"),
         value: dm.passive1.skill_cdRed,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }), ct.headerTem("constellation2", {
       fields: [{
         node: infoMut(dmgFormulas.constellation2.dmg, { name: ch("c2.key") }),
-      }]
+      }],
     }), ct.headerTem("constellation6", {
       fields: [{
         text: st("durationInc"),
         value: dm.constellation6.skillDuration,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -135,15 +135,15 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
         value: data => data.get(input.constellation).value >= 6
           ? `${dm.burst.duration}s + ${dm.constellation6.burstDuration}s = ${dm.burst.duration + dm.constellation6.burstDuration}`
           : dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.condTem("constellation1", {
       value: condC1BurstArea,
       path: condC1BurstAreaPath,
@@ -155,27 +155,27 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
             node: infoMut(c1BurstArea_critRate_Disp, KeyMap.info("critRate_")),
           }, {
             text: st("incInterRes"),
-          }]
-        }
-      }
+          }],
+        },
+      },
     }), ct.headerTem("constellation4", {
       fields: [{
         text: ch("c4.energyRestore"),
         value: dm.constellation4.energyRestore,
-      }]
+      }],
     }), ct.headerTem("constellation6", {
       fields: [{
         text: st("durationInc"),
         value: dm.constellation6.burstDuration,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     })]),
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
-        node: infoMut(dmgFormulas.passive2.dmg, { name: ch("passive2.key") })
-      }]
+        node: infoMut(dmgFormulas.passive2.dmg, { name: ch("passive2.key") }),
+      }],
     })]),
     constellation1: ct.talentTem("constellation1"),
     constellation2: ct.talentTem("constellation2"),
@@ -187,6 +187,6 @@ export default function geo(key: CharacterSheetKey, charKey: CharacterKey, dmgFo
   return {
     talent,
     data,
-    elementKey
+    elementKey,
   }
 }

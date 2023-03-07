@@ -13,7 +13,7 @@ import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 
 export default function DatabaseCard({ readOnly = false }: { readOnly?: boolean }) {
-  const { t } = useTranslation(["settings"]);
+  const { t } = useTranslation(["settings"])
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography variant="subtitle1">
@@ -22,7 +22,7 @@ export default function DatabaseCard({ readOnly = false }: { readOnly?: boolean 
     </CardContent>
     <Divider />
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-      <Grid container spacing={2} columns={{ xs: 1, md: 2, }}>
+      <Grid container spacing={2} columns={{ xs: 1, md: 2 }}>
         {range(0, 3).map(i => <Grid key={i} item xs={1}>
           <DataCard index={i} readOnly={readOnly} />
         </Grid>)}
@@ -41,7 +41,7 @@ function DataCard({ index, readOnly }: { index: number, readOnly: boolean }) {
 
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
-  const { t } = useTranslation(["settings"]);
+  const { t } = useTranslation(["settings"])
   const numChar = database.chars.keys.length
   const numArt = database.arts.values.length
   const numWeapon = database.weapons.values.length
@@ -65,7 +65,7 @@ function DataCard({ index, readOnly }: { index: number, readOnly: boolean }) {
     const JSONStr = JSON.stringify(database.exportGOOD())
     const filename = `${name.trim().replaceAll(" ", "_")}_${dateStr}.json`
     const contentType = "application/json;charset=utf-8"
-    const a = document.createElement('a');
+    const a = document.createElement('a')
     a.download = filename
     a.href = `data:${contentType},${encodeURIComponent(JSONStr)}`
     a.target = "_blank"
@@ -88,7 +88,7 @@ function DataCard({ index, readOnly }: { index: number, readOnly: boolean }) {
     database.dbMeta.set({ name: tempName })
     database.toExtraLocalDB()
   }, [tempName, database])
-  const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
+  const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur])
 
   return <CardDark sx={{ height: "100%", boxShadow: current ? "0px 0px 0px 2px green inset" : undefined }}>
     <CardContent sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}>

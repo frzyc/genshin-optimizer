@@ -1,11 +1,11 @@
 
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
-import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material';
-import { useCallback, useContext, useEffect, useState } from 'react';
-import CardDark from '../Components/Card/CardDark';
-import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import { DatabaseContext } from '../Database/Database';
-import { DAY_MS, HOUR_MS, MINUTE_MS, SECOND_MS, timeString } from '../Util/TimeUtil';
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
+import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
+import { useCallback, useContext, useEffect, useState } from 'react'
+import CardDark from '../Components/Card/CardDark'
+import DropdownButton from '../Components/DropdownMenu/DropdownButton'
+import { DatabaseContext } from '../Database/Database'
+import { DAY_MS, HOUR_MS, MINUTE_MS, SECOND_MS, timeString } from '../Util/TimeUtil'
 export const timeZones = {
   "America": - 5 * HOUR_MS,
   "Europe": HOUR_MS,
@@ -30,7 +30,7 @@ export default function TeyvatTime() {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
       return setTimeout(() => {
         interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS));
+      }, SECOND_MS - (Date.now() % SECOND_MS))
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)

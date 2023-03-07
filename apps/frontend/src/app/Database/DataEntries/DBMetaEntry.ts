@@ -1,7 +1,8 @@
-import { Gender, genderKeys } from "../../Types/consts";
-import { ArtCharDatabase } from "../Database";
-import { DataEntry } from "../DataEntry";
-import { IGO, IGOOD, ImportResult } from "../exim";
+import type { Gender} from "../../Types/consts"
+import { genderKeys } from "../../Types/consts"
+import type { ArtCharDatabase } from "../Database"
+import { DataEntry } from "../DataEntry"
+import type { IGO, IGOOD, ImportResult } from "../exim"
 
 interface IDBMeta {
   name: string,
@@ -13,7 +14,7 @@ function dbMetaInit(database: ArtCharDatabase): IDBMeta {
   return {
     name: `Database ${database.storage.getDBIndex()}`,
     lastEdit: 0,
-    gender: "F"
+    gender: "F",
   }
 }
 

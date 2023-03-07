@@ -1,7 +1,7 @@
-import { CharacterKey } from "@genshin-optimizer/consts";
-import { useCallback, useContext } from "react";
-import { useMatch, useNavigate } from "react-router-dom";
-import { DatabaseContext } from "../Database/Database";
+import type { CharacterKey } from "@genshin-optimizer/consts"
+import { useCallback, useContext } from "react"
+import { useMatch, useNavigate } from "react-router-dom"
+import { DatabaseContext } from "../Database/Database"
 
 /**
  * Basically a history hook to go to the dedicated character page. Will create the character if it doesn't exist.

@@ -3,6 +3,6 @@ import icon from "./UI_EquipIcon_Bow_Troupe.png"
 import awakenIcon from "./UI_EquipIcon_Bow_Troupe_Awaken.png"
 const data = {
   icon,
-  awakenIcon
+  awakenIcon,
 } as const
 export default data

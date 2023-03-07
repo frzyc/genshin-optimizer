@@ -1,11 +1,11 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "Lavawalker"
 const setHeader = setHeaderTemplate(key)
@@ -17,7 +17,7 @@ const set4 = greaterEq(input.artSet.Lavawalker, 4, equal("on", condState, percen
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     pyro_res_: set2,
-    all_dmg_: set4
+    all_dmg_: set4,
   },
 })
 
@@ -35,11 +35,11 @@ const sheet: IArtifactSheet = {
           on: {
             fields: [{
               node: set4,
-            }]
+            }],
           },
-        }
-      }]
-    }
-  }
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

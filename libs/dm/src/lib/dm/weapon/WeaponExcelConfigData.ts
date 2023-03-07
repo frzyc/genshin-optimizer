@@ -1,5 +1,6 @@
 
-import { dumpFile, DWeaponTypeKey, WeaponId, weaponIdMap } from "@genshin-optimizer/pipeline"
+import type { DWeaponTypeKey, WeaponId} from "@genshin-optimizer/pipeline"
+import { dumpFile, weaponIdMap } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { readDMJSON } from "../../util"
 

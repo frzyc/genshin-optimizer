@@ -1,12 +1,12 @@
-import HelpIcon from '@mui/icons-material/Help';
-import { Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material";
-import { Suspense, useCallback, useState } from "react";
-import useBoolState from "../ReactHooks/useBoolState";
-import { getRandomElementFromArray } from "../Util/Util";
-import CardDark from "./Card/CardDark";
-import CloseButton from "./CloseButton";
-import ModalWrapper from "./ModalWrapper";
-import { Translate } from "./Translate";
+import HelpIcon from '@mui/icons-material/Help'
+import { Button, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
+import { Suspense, useCallback, useState } from "react"
+import useBoolState from "../ReactHooks/useBoolState"
+import { getRandomElementFromArray } from "../Util/Util"
+import CardDark from "./Card/CardDark"
+import CloseButton from "./CloseButton"
+import ModalWrapper from "./ModalWrapper"
+import { Translate } from "./Translate"
 export function initialInfoShownState() {
   return {
     artifactPage: true,
@@ -20,7 +20,7 @@ type InfoShownPageKey = keyof StateInfoShown
 export default function InfoComponent({ pageKey, text = "", modalTitle = "", children }: { pageKey: InfoShownPageKey, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
   const [show, onTrue, onFalse] = useBoolState(localStorage.getItem(`infoShown_${pageKey}`) !== "true")
 
-  const [displayText,] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
+  const [displayText] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
   const closeModal = useCallback(() => {
     onFalse()
     localStorage.setItem(`infoShown_${pageKey}`, "true")

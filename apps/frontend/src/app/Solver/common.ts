@@ -1,10 +1,12 @@
-import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData";
-import { forEachNodes, mapFormulas } from "../Formula/internal";
-import { allOperations, constantFold, OptNode } from "../Formula/optimization";
-import { ConstantNode } from "../Formula/type";
-import { constant, customRead, max, min, threshold } from "../Formula/utils";
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "../Types/consts";
-import { assertUnreachable, objectKeyMap, objectMap, range } from "../Util/Util";
+import type { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData"
+import { forEachNodes, mapFormulas } from "../Formula/internal"
+import type { OptNode } from "../Formula/optimization"
+import { allOperations, constantFold } from "../Formula/optimization"
+import type { ConstantNode } from "../Formula/type"
+import { constant, customRead, max, min, threshold } from "../Formula/utils"
+import type { ArtifactSetKey, SlotKey } from "../Types/consts"
+import { allSlotKeys } from "../Types/consts"
+import { assertUnreachable, objectKeyMap, objectMap, range } from "../Util/Util"
 
 type MicropassOperation = "reaffine" | "pruneArtRange" | "pruneNodeRange" | "pruneOrder"
 export function pruneAll(nodes: OptNode[], minimum: number[], arts: ArtifactsBySlot, numTop: number, exclusion: ArtSetExclusion, forced: Dict<MicropassOperation, boolean>): { nodes: OptNode[], arts: ArtifactsBySlot } {
@@ -14,7 +16,7 @@ export function pruneAll(nodes: OptNode[], minimum: number[], arts: ArtifactsByS
     pruneOrder: { pruneNodeRange: true },
     pruneArtRange: { pruneNodeRange: true },
     pruneNodeRange: { reaffine: true },
-    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true }
+    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true },
   }
   let count = 0
   while (Object.values(should).some(x => x) && count++ < 20) {
@@ -128,7 +130,7 @@ function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename = false):
 
   function reaffineArt(stat: DynStat): DynStat {
     const values = constantFold([...affineMap.keys()], {
-      dyn: objectMap(stat, (value) => constant(value))
+      dyn: objectMap(stat, (value) => constant(value)),
     } as any, _ => true)
     return Object.fromEntries([...affineMap.values()].map((v, i) => [v.path[1], (values[i] as ConstantNode<number>).value]))
   }
@@ -136,8 +138,8 @@ function reaffine(nodes: OptNode[], arts: ArtifactsBySlot, forceRename = false):
     nodes, arts: {
       base: reaffineArt(arts.base),
       values: objectKeyMap(allSlotKeys, slot =>
-        arts.values[slot].map(({ id, set, values }) => ({ id, set, values: reaffineArt(values) })))
-    }
+        arts.values[slot].map(({ id, set, values }) => ({ id, set, values: reaffineArt(values) }))),
+    },
   }
   const offsets = Object.entries(reaffineArt({}))
   for (const arts of Object.values(result.arts.values))
@@ -319,7 +321,7 @@ export function computeNodeRange(nodes: OptNode[], reads: DynMinMax): Map<OptNod
           // TODO: Check this
           current = computeMinMax([
             x.min / sum.min, x.min / sum.max,
-            x.max / sum.min, x.max / sum.max
+            x.max / sum.min, x.max / sum.max,
           ])
         break
       }
@@ -345,7 +347,7 @@ export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): Artif
         case "exclude": return arts.values[slot].filter(art => !filter.sets.has(art.set!))
         case "required": return arts.values[slot].filter(art => filter.sets.has(art.set!))
       }
-    })
+    }),
   }
 }
 

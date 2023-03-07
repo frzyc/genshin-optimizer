@@ -1,7 +1,8 @@
 import { allOperations } from "../../Formula/optimization"
 import { constant, customRead, frac, max, min, prod, res, sum, threshold } from "../../Formula/utils"
-import { Linear, linearUpperBound } from "./BNBSplitWorker"
-import { ArtifactsBySlot, DynStat } from "../common"
+import type { Linear} from "./BNBSplitWorker"
+import { linearUpperBound } from "./BNBSplitWorker"
+import type { ArtifactsBySlot, DynStat } from "../common"
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce((accu, [k, v]) => accu + v * (value[k] ?? 0), linear.$c)
@@ -17,7 +18,7 @@ describe("linearUpperBound can transform", () => {
       sands: [{ id: "-2", values: {} }, { id: "2", values: { x: 1 } }],
       goblet: [{ id: "-3", values: {} }, { id: "3", values: { x: 1 } }],
       plume: [{ id: "-4", values: {} }, { id: "4", values: { x: 1 } }],
-    }
+    },
   }
 
   test("constant nodes", () => {
@@ -108,7 +109,7 @@ describe("linearUpperBound can transform", () => {
         sands: [{ id: "-2", values: { y: 1 } }, { id: "2", values: { x: 1 } }],
         goblet: [{ id: "-3", values: { y: 1 } }, { id: "3", values: { x: 1 } }],
         plume: [{ id: "-4", values: { y: 1 } }, { id: "4", values: { x: 1 } }],
-      }
+      },
     }
 
     const bounds = linearUpperBound([prod(rx, ry)], arts)

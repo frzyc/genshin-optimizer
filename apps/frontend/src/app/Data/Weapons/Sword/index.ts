@@ -1,5 +1,5 @@
-import { WeaponSwordKey } from "@genshin-optimizer/consts"
-import WeaponSheet from "../WeaponSheet"
+import type { WeaponSwordKey } from "@genshin-optimizer/consts"
+import type WeaponSheet from "../WeaponSheet"
 import AmenomaKageuchi from "./AmenomaKageuchi"
 import AquilaFavonia from "./AquilaFavonia"
 import BlackcliffLongsword from "./BlackcliffLongsword"

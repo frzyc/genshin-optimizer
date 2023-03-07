@@ -1,13 +1,13 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import { equal, equalStr, greaterEq, infoMut, lookup, naught, prod, subscript, unequal } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -28,7 +28,7 @@ const dm = {
       skillParam_gen.auto[4], // 4
       skillParam_gen.auto[6], // 5
       skillParam_gen.auto[7], // 6
-    ]
+    ],
   },
   charged: {
     dmg1: skillParam_gen.auto[8], // 1
@@ -69,8 +69,8 @@ const dm = {
     def_: skillParam_gen.constellation4[1],
   },
   constellation6: {
-    duration: skillParam_gen.constellation6[0]
-  }
+    duration: skillParam_gen.constellation6[0],
+  },
 } as const
 
 const dmgFormulas = {
@@ -102,8 +102,8 @@ const a1BurstStackArr = range(0, 4)
 const all_dmg_ = greaterEq(input.asc, 1, equal("inBurst", condInBurst,
   lookup(condA1BurstStack,
     Object.fromEntries(a1BurstStackArr.map(i => [i, prod(dm.passive1.dmgBonus, i + 1)])),
-    naught
-  )
+    naught,
+  ),
 ))
 
 const [condA4SkillStackPath, condA4SkillStack] = cond(key, "a4SkillStack")
@@ -111,12 +111,12 @@ const a4SkillStackArr = range(1, dm.passive2.maxStacks)
 const skill_dmg_ = greaterEq(input.asc, 4,
   lookup(condA4SkillStack,
     Object.fromEntries(a4SkillStackArr.map(i => [i, prod(dm.passive2.skillDmgBonus, i)])),
-    naught
-  )
+    naught,
+  ),
 )
 
 const c2Inactive = greaterEq(input.constellation, 2,
-  unequal(input.activeCharKey, key, 1)
+  unequal(input.activeCharKey, key, 1),
 )
 const c2Inactive_enerRech_ = equal(c2Inactive, 1, dm.constellation2.enerRech_)
 
@@ -137,7 +137,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
     def_: c4BelowHP_def_,
   },
   infusion: {
-    nonOverridableSelf: infusion
+    nonOverridableSelf: infusion,
   },
 })
 
@@ -156,7 +156,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`), multi: i === 0 ? 2 : undefined }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -165,7 +165,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -175,7 +175,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -188,15 +188,15 @@ const sheet: ICharacterSheet = {
       }, {
         text: st("charges"),
         value: data => data.get(input.constellation).value >= 1 ? 3 : 2,
-      }]
+      }],
     }, ct.condTem("passive2", { // A4
       path: condA4SkillStackPath,
       value: condA4SkillStack,
       name: ct.ch("skillStack"),
       states: Object.fromEntries(a4SkillStackArr.map(i => [i, {
         name: st("uses", { count: i }),
-        fields: [{ node: skill_dmg_ }]
-      }]))
+        fields: [{ node: skill_dmg_ }],
+      }])),
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -215,7 +215,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.condTem("burst", {
       path: condInBurstPath,
       value: condInBurst,
@@ -234,10 +234,10 @@ const sheet: ICharacterSheet = {
             text: ct.ch("burst.incAtkAoe"),
           }, {
             canShow: data => data.get(infusion).value === elementKey,
-            text: <ColorText color="anemo">{st("infusion.anemo")}</ColorText>
-          }]
-        }
-      }
+            text: <ColorText color="anemo">{st("infusion.anemo")}</ColorText>,
+          }],
+        },
+      },
     }), ct.condTem("passive1", { // A1
       path: condA1BurstStackPath,
       value: condA1BurstStack,
@@ -245,8 +245,8 @@ const sheet: ICharacterSheet = {
       canShow: equal("inBurst", condInBurst, 1),
       states: Object.fromEntries(a1BurstStackArr.map(i => [i, {
         name: st("seconds", { count: i * 3 }),
-        fields: [{ node: all_dmg_ }]
-      }]))
+        fields: [{ node: all_dmg_ }],
+      }])),
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -265,13 +265,13 @@ const sheet: ICharacterSheet = {
       name: st("lessPercentHP", { percent: dm.constellation4.hpThresh * 100 }),
       states: {
         c4BelowHP: {
-          fields: [{ node: c4BelowHP_def_ }]
-        }
-      }
+          fields: [{ node: c4BelowHP_def_ }],
+        },
+      },
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

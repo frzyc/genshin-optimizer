@@ -1,10 +1,10 @@
 import { createContext } from "react"
-import CharacterSheet from "../Data/Characters/CharacterSheet"
-import WeaponSheet from "../Data/Weapons/WeaponSheet"
-import { UIData } from "../Formula/uiData"
-import { ICachedCharacter } from "../Types/character"
-import { CharacterKey } from "../Types/consts"
-import { ICachedWeapon } from "../Types/weapon"
+import type CharacterSheet from "../Data/Characters/CharacterSheet"
+import type WeaponSheet from "../Data/Weapons/WeaponSheet"
+import type { UIData } from "../Formula/uiData"
+import type { ICachedCharacter } from "../Types/character"
+import type { CharacterKey } from "../Types/consts"
+import type { ICachedWeapon } from "../Types/weapon"
 export type TeamData = Partial<Record<CharacterKey, {
   target: UIData
   buffs: Dict<CharacterKey, UIData>

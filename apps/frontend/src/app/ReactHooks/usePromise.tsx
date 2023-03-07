@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 /**
  *
  * @param promiseFunc
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  * @returns
  */
 export default function usePromise<T>(promiseFunc: () => Promise<T> | undefined, dependencies: any[], useOld = true): T | undefined {
-  const [res, setRes] = useState<[T] | undefined>(undefined);
+  const [res, setRes] = useState<[T] | undefined>(undefined)
   useEffect(() => {
     let pending = true
     //encapsulate `res` in an array `[res]`, because res can sometimes be a function, that can interfere with the `useState` api.

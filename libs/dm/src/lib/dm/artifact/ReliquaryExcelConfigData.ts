@@ -1,4 +1,5 @@
-import { DArtifactSlotKey, dumpFile } from "@genshin-optimizer/pipeline"
+import type { DArtifactSlotKey} from "@genshin-optimizer/pipeline"
+import { dumpFile } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { readDMJSON } from "../../util"
 

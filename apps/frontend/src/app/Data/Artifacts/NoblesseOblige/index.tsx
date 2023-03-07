@@ -1,11 +1,11 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "NoblesseOblige"
 const setHeader = setHeaderTemplate(key)
@@ -22,8 +22,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
       atk_: set4,
-    }
-  }
+    },
+  },
 })
 
 const sheet: IArtifactSheet = {
@@ -40,16 +40,16 @@ const sheet: IArtifactSheet = {
         states: {
           on: {
             fields: [{
-              node: set4
+              node: set4,
             }, {
               text: stg("duration"),
               value: 12,
-              unit: "s"
-            }]
-          }
-        }
-      }]
-    }
-  }
+              unit: "s",
+            }],
+          },
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

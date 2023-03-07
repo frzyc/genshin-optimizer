@@ -1,12 +1,13 @@
-import Artifact from "../../../../Data/Artifacts/Artifact";
-import { input } from "../../../../Formula";
-import { computeUIData } from "../../../../Formula/api";
-import { formulaString } from "../../../../Formula/debug";
-import { Data, NumNode } from "../../../../Formula/type";
-import { constant, setReadNodeKeys } from "../../../../Formula/utils";
-import { allMainStatKeys, allSubstatKeys, ICachedArtifact } from "../../../../Types/artifact";
-import { deepClone, objectKeyMap, objectMap } from "../../../../Util/Util";
-import type { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../../../../Solver/common";
+import Artifact from "../../../../Data/Artifacts/Artifact"
+import { input } from "../../../../Formula"
+import { computeUIData } from "../../../../Formula/api"
+import { formulaString } from "../../../../Formula/debug"
+import type { Data, NumNode } from "../../../../Formula/type"
+import { constant, setReadNodeKeys } from "../../../../Formula/utils"
+import type { ICachedArtifact } from "../../../../Types/artifact"
+import { allMainStatKeys, allSubstatKeys } from "../../../../Types/artifact"
+import { deepClone, objectKeyMap, objectMap } from "../../../../Util/Util"
+import type { ArtifactBuildData, ArtifactsBySlot, DynStat } from "../../../../Solver/common"
 
 const dynamic = setReadNodeKeys(deepClone({ dyn: { ...input.art, ...input.artSet } }))
 export const dynamicData = {
@@ -17,7 +18,7 @@ export const dynamicData = {
 export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLevel: number, allowPartial: boolean): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
     base: {},
-    values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
+    values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] },
   }
   const keys = new Set<string>()
 
@@ -30,7 +31,7 @@ export function compactArtifacts(arts: ICachedArtifact[], mainStatAssumptionLeve
         [art.setKey]: 1,
         [art.mainStatKey]: art.mainStatKey.endsWith('_') ? mainStatVal / 100 : mainStatVal,
         ...Object.fromEntries(art.substats.map(substat =>
-          [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue]))
+          [substat.key, substat.key.endsWith('_') ? substat.accurateValue / 100 : substat.accurateValue])),
       },
     }
     delete data.values[""]

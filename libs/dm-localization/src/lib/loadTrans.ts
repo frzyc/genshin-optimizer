@@ -1,5 +1,7 @@
-import { artifactPiecesData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, languageMap, materialExcelConfigData, nameToKey, proudSkillExcelConfigData, reliquarySetExcelConfigData, TextMapEN, weaponExcelConfigData } from "@genshin-optimizer/dm"
-import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, Language, weaponIdMap } from "@genshin-optimizer/pipeline"
+import type { AvatarSkillDepotExcelConfigData} from "@genshin-optimizer/dm"
+import { artifactPiecesData, avatarExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, languageMap, materialExcelConfigData, nameToKey, proudSkillExcelConfigData, reliquarySetExcelConfigData, TextMapEN, weaponExcelConfigData } from "@genshin-optimizer/dm"
+import type { Language} from "@genshin-optimizer/pipeline"
+import { artifactIdMap, artifactSlotMap, characterIdMap, dumpFile, weaponIdMap } from "@genshin-optimizer/pipeline"
 import { crawlObject, layeredAssignment } from "@genshin-optimizer/util"
 import { existsSync, mkdirSync } from "fs"
 import { mapHashData, mapHashDataOverride } from "./Data"
@@ -90,7 +92,7 @@ export default function loadTrans() {
       const { equipType, nameTextMapHash, descTextMapHash } = pieceData
       return [artifactSlotMap[equipType], {
         name: nameTextMapHash,
-        desc: descTextMapHash
+        desc: descTextMapHash,
       }]
     }))
 
@@ -100,14 +102,14 @@ export default function loadTrans() {
     mapHashData.artifact[artifactIdMap[setId]] = {
       setName,
       setEffects,
-      pieces
+      pieces,
     }
   })
 
   //generate the MapHashes for localization for weapons
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { nameTextMapHash, descTextMapHash, skillAffix } = weaponData
-    const [ascensionDataId,] = skillAffix
+    const [ascensionDataId] = skillAffix
     const ascData = ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
 
     mapHashData.weaponNames[weaponIdMap[weaponid]] = nameTextMapHash
@@ -147,7 +149,7 @@ export default function loadTrans() {
       //manually fix bad strings that breaks pipeline, seem to be only in russian translations
       if (processing === "autoFields" && lang === "ru" && rawString.split("\\n\\n").length === 2) {
         const ind = rawString.indexOf("n<color=#FFD780FF>") + 1
-        rawString = rawString.slice(0, ind) + ("\\n") + rawString.slice(ind);
+        rawString = rawString.slice(0, ind) + ("\\n") + rawString.slice(ind)
       }
       const string = parsingFunctions[processing](lang as Language, preprocess(rawString), keys)
       if (string === undefined) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)

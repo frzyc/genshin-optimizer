@@ -1,4 +1,5 @@
-import { TextField, TextFieldProps } from '@mui/material'
+import type { TextFieldProps } from '@mui/material'
+import { TextField } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 type props = TextFieldProps & {
   value?: number | undefined,

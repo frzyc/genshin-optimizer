@@ -1,10 +1,10 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, st("base")),
     fields: [{
       node: base_hp_,
-    }]
+    }],
   }, {
     value: condPassive,
     path: condPassivePath,
@@ -41,10 +41,10 @@ const sheet: IWeaponSheet = {
     states: {
       on: {
         fields: [{
-          node: cond_dmg_
-        }]
-      }
-    }
+          node: cond_dmg_,
+        }],
+      },
+    },
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

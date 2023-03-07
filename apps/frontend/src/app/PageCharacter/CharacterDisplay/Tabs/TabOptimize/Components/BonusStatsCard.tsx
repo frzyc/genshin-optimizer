@@ -1,11 +1,11 @@
-import { CardContent, Divider, Typography } from '@mui/material';
-import { useContext } from 'react';
-import { CharacterContext } from '../../../../../Context/CharacterContext';
-import CardLight from '../../../../../Components/Card/CardLight';
-import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay';
-import { DataContext } from '../../../../../Context/DataContext';
-import { uiInput as input } from '../../../../../Formula';
-import { NumNode } from '../../../../../Formula/type';
+import { CardContent, Divider, Typography } from '@mui/material'
+import { useContext } from 'react'
+import { CharacterContext } from '../../../../../Context/CharacterContext'
+import CardLight from '../../../../../Components/Card/CardLight'
+import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay'
+import { DataContext } from '../../../../../Context/DataContext'
+import { uiInput as input } from '../../../../../Formula'
+import type { NumNode } from '../../../../../Formula/type'
 export default function BonusStatsCard() {
   const { character: { bonusStats } } = useContext(CharacterContext)
   const { data } = useContext(DataContext)

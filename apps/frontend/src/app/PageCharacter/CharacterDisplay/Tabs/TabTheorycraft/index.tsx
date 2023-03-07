@@ -1,52 +1,55 @@
-import { allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey, WeaponTypeKey } from "@genshin-optimizer/consts";
-import { weaponAsset } from "@genshin-optimizer/g-assets";
-import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material";
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material";
-import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
-import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete";
-import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip";
-import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay";
-import SlotIcon from "../../../../Components/Artifact/SlotIcon";
-import BootstrapTooltip from "../../../../Components/BootstrapTooltip";
-import CardDark from "../../../../Components/Card/CardDark";
-import CardLight from "../../../../Components/Card/CardLight";
-import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent";
-import ColorText from "../../../../Components/ColoredText";
-import CustomNumberInput from "../../../../Components/CustomNumberInput";
-import DocumentDisplay from "../../../../Components/DocumentDisplay";
-import DropdownButton from "../../../../Components/DropdownMenu/DropdownButton";
-import { FieldDisplayList, NodeFieldDisplay } from "../../../../Components/FieldDisplay";
-import ImgIcon from "../../../../Components/Image/ImgIcon";
-import LevelSelect from "../../../../Components/LevelSelect";
-import RefinementDropdown from "../../../../Components/RefinementDropdown";
-import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup";
-import { StatColoredWithUnit, StatWithUnit } from "../../../../Components/StatDisplay";
-import { CharacterContext } from "../../../../Context/CharacterContext";
-import { DataContext, dataContextObj } from "../../../../Context/DataContext";
-import { getArtSheet } from "../../../../Data/Artifacts";
-import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact";
-import { artifactDefIcon } from "../../../../Data/Artifacts/ArtifactSheet";
-import { getWeaponSheet } from "../../../../Data/Weapons";
-import { DatabaseContext } from "../../../../Database/Database";
-import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData";
-import { uiInput as input } from "../../../../Formula";
-import { computeUIData, dataObjForWeapon } from "../../../../Formula/api";
-import { constant, percent } from "../../../../Formula/utils";
-import KeyMap, { cacheValueString } from "../../../../KeyMap";
-import StatIcon from "../../../../KeyMap/StatIcon";
-import useBoolState from "../../../../ReactHooks/useBoolState";
-import useTeamData from "../../../../ReactHooks/useTeamData";
-import { iconInlineProps } from "../../../../SVGIcons";
-import { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact";
-import { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character";
-import { ArtifactRarity, SetNum, SubstatType, substatType } from "../../../../Types/consts";
-import { ICachedWeapon } from "../../../../Types/weapon";
-import { deepClone, objectMap } from "../../../../Util/Util";
-import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil";
-import useCharTC from "./useCharTC";
+import type { ArtifactSetKey, ArtifactSlotKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allArtifactSlotKeys } from "@genshin-optimizer/consts"
+import { weaponAsset } from "@genshin-optimizer/g-assets"
+import { CopyAll, DeleteForever, Info, Refresh } from "@mui/icons-material"
+import StarRoundedIcon from '@mui/icons-material/StarRounded'
+import { Box, Button, ButtonGroup, CardHeader, Divider, Grid, ListItem, MenuItem, Skeleton, Slider, Stack, ToggleButton, Typography } from "@mui/material"
+import React, { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
+import { useLocation } from "react-router-dom"
+import ArtifactSetAutocomplete from "../../../../Components/Artifact/ArtifactSetAutocomplete"
+import ArtifactSetTooltip from "../../../../Components/Artifact/ArtifactSetTooltip"
+import SetEffectDisplay from "../../../../Components/Artifact/SetEffectDisplay"
+import SlotIcon from "../../../../Components/Artifact/SlotIcon"
+import BootstrapTooltip from "../../../../Components/BootstrapTooltip"
+import CardDark from "../../../../Components/Card/CardDark"
+import CardLight from "../../../../Components/Card/CardLight"
+import StatDisplayComponent from "../../../../Components/Character/StatDisplayComponent"
+import ColorText from "../../../../Components/ColoredText"
+import CustomNumberInput from "../../../../Components/CustomNumberInput"
+import DocumentDisplay from "../../../../Components/DocumentDisplay"
+import DropdownButton from "../../../../Components/DropdownMenu/DropdownButton"
+import { FieldDisplayList, NodeFieldDisplay } from "../../../../Components/FieldDisplay"
+import ImgIcon from "../../../../Components/Image/ImgIcon"
+import LevelSelect from "../../../../Components/LevelSelect"
+import RefinementDropdown from "../../../../Components/RefinementDropdown"
+import SolidToggleButtonGroup from "../../../../Components/SolidToggleButtonGroup"
+import { StatColoredWithUnit, StatWithUnit } from "../../../../Components/StatDisplay"
+import { CharacterContext } from "../../../../Context/CharacterContext"
+import type { dataContextObj } from "../../../../Context/DataContext"
+import { DataContext } from "../../../../Context/DataContext"
+import { getArtSheet } from "../../../../Data/Artifacts"
+import Artifact, { maxArtifactLevel } from "../../../../Data/Artifacts/Artifact"
+import { artifactDefIcon } from "../../../../Data/Artifacts/ArtifactSheet"
+import { getWeaponSheet } from "../../../../Data/Weapons"
+import { DatabaseContext } from "../../../../Database/Database"
+import { initCharTC } from "../../../../Database/DataManagers/CharacterTCData"
+import { uiInput as input } from "../../../../Formula"
+import { computeUIData, dataObjForWeapon } from "../../../../Formula/api"
+import { constant, percent } from "../../../../Formula/utils"
+import KeyMap, { cacheValueString } from "../../../../KeyMap"
+import StatIcon from "../../../../KeyMap/StatIcon"
+import useBoolState from "../../../../ReactHooks/useBoolState"
+import useTeamData from "../../../../ReactHooks/useTeamData"
+import { iconInlineProps } from "../../../../SVGIcons"
+import type { ICachedArtifact, MainStatKey, SubstatKey } from "../../../../Types/artifact"
+import type { ICharTC, ICharTCArtifactSlot } from "../../../../Types/character"
+import type { ArtifactRarity, SetNum, SubstatType} from "../../../../Types/consts"
+import { substatType } from "../../../../Types/consts"
+import type { ICachedWeapon } from "../../../../Types/weapon"
+import { deepClone, objectMap } from "../../../../Util/Util"
+import { defaultInitialWeaponKey } from "../../../../Util/WeaponUtil"
+import useCharTC from "./useCharTC"
 const WeaponSelectionModal = React.lazy(() => import('../../../../Components/Weapon/WeaponSelectionModal'))
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
@@ -90,7 +93,7 @@ export default function TabTheorycraft() {
       newData.artifact.sets = Object.fromEntries(Object.entries(sets).map(([key, value]) => [key,
         value === 3 ? 2 :
           value === 5 ? 4 :
-            value === 1 && !(key as string).startsWith("PrayersFor") ? 0 : value
+            value === 1 && !(key as string).startsWith("PrayersFor") ? 0 : value,
       ]).filter(([key, value]) => value))
       setData(newData)
     },
@@ -119,7 +122,7 @@ export default function TabTheorycraft() {
       ...data.weapon,
       location: "",
       lock: false,
-      id: ""
+      id: "",
     }
   }, [data])
   const setArtifact = useCallback((artifact: ICharTC["artifact"]) => {
@@ -158,7 +161,7 @@ export default function TabTheorycraft() {
     level: data.weapon.level,
     ascension: data.weapon.ascension,
     refinement: data.weapon.refinement,
-    lock: false
+    lock: false,
   }), [data])
   const teamData = useTeamData(characterKey, 0, overriderArtData, overrideWeapon)
 
@@ -316,7 +319,7 @@ function ArtifactSetsEditor({ artSet, setArtSet }: { artSet: ISet, setArtSet(art
   const setSet = useCallback((setKey: ArtifactSetKey | "") => {
     if (!setKey) return
     setArtSet({ ...artSet, [setKey]: parseInt(Object.keys(getArtSheet(setKey).setEffects)[0]) })
-  }, [artSet, setArtSet,])
+  }, [artSet, setArtSet])
 
   const setValue = useCallback((setKey: ArtifactSetKey) => (value: 1 | 2 | 4) => setArtSet({ ...artSet, [setKey]: value }), [artSet, setArtSet])
   const deleteValue = useCallback((setKey: ArtifactSetKey) => () => {
@@ -360,7 +363,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
       <ButtonGroup>
         <DropdownButton size="small" title={<Box whiteSpace="nowrap">{value}-set</Box>}>
           {Object.keys(artifactSheet.setEffects).map(setKey => parseInt(setKey)).map(setKey =>
-            <MenuItem key={setKey} disabled={value === setKey || setKey > (remaining + value)} onClick={() => setValue(setKey as 1 | 2 | 4)}>{setKey}-set</MenuItem>
+            <MenuItem key={setKey} disabled={value === setKey || setKey > (remaining + value)} onClick={() => setValue(setKey as 1 | 2 | 4)}>{setKey}-set</MenuItem>,
           )}
         </DropdownButton>
         <Button color="error" size="small" onClick={deleteValue}>
@@ -370,7 +373,7 @@ function ArtifactSetEditor({ setKey, value, setValue, deleteValue, remaining }: 
     </Box>
     {!!set4CondNums.length && <Stack spacing={1} sx={{ p: 1 }}>
       {set4CondNums.map(setNumKey =>
-        <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />
+        <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} hideHeader conditionalsOnly />,
       )}
     </Stack>}
   </CardLight>
@@ -453,7 +456,7 @@ function ArtifactSubstatEditor({ statKey, value, setValue, substatsType, mainSta
         value={parseFloat(rolls.toFixed(2))}
         onChange={v => v !== undefined && setValue(v * substatValue)}
         sx={{ borderRadius: 1, px: 1, my: 0, height: "100%", width: "7em" }}
-        inputProps={{ sx: { textAlign: "right", pr: 0.5, }, min: 0, step: 1 }} />
+        inputProps={{ sx: { textAlign: "right", pr: 0.5 }, min: 0, step: 1 }} />
     </Box>
   </Stack>
 }

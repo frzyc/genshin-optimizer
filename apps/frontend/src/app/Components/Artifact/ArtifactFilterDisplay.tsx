@@ -1,27 +1,27 @@
-import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts";
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import LockIcon from '@mui/icons-material/Lock';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
-import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material";
-import { Suspense, useContext, useMemo } from "react";
-import { Trans, useTranslation } from "react-i18next";
-import { DatabaseContext } from "../../Database/Database";
-import { FilterOption } from "../../PageArtifact/ArtifactSort";
-import { allArtifactRarityKeys, allMainStatKeys, allSubstatKeys } from "../../Types/artifact";
-import { handleMultiSelect } from "../../Util/MultiSelect";
-import { bulkCatTotal } from "../../Util/totalUtils";
-import { objectKeyMap } from "../../Util/Util";
-import BootstrapTooltip from "../BootstrapTooltip";
-import SolidToggleButtonGroup from "../SolidToggleButtonGroup";
-import { StarsDisplay } from "../StarDisplay";
-import ArtifactLevelSlider from "./ArtifactLevelSlider";
-import ArtifactMainStatMultiAutocomplete from "./ArtifactMainStatMultiAutocomplete";
-import ArtifactSetMultiAutocomplete from "./ArtifactSetMultiAutocomplete";
-import ArtifactSubstatMultiAutocomplete from "./ArtifactSubstatMultiAutocomplete";
-import LocationFilterMultiAutocomplete from "./LocationFilterMultiAutocomplete";
-import RVSlide from "./RVSlide";
-import SlotIcon from "./SlotIcon";
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys } from "@genshin-optimizer/consts"
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
+import PersonSearchIcon from '@mui/icons-material/PersonSearch'
+import { Box, Button, Chip, Grid, ToggleButton } from "@mui/material"
+import { Suspense, useContext, useMemo } from "react"
+import { Trans, useTranslation } from "react-i18next"
+import { DatabaseContext } from "../../Database/Database"
+import type { FilterOption } from "../../PageArtifact/ArtifactSort"
+import { allArtifactRarityKeys, allMainStatKeys, allSubstatKeys } from "../../Types/artifact"
+import { handleMultiSelect } from "../../Util/MultiSelect"
+import { bulkCatTotal } from "../../Util/totalUtils"
+import { objectKeyMap } from "../../Util/Util"
+import BootstrapTooltip from "../BootstrapTooltip"
+import SolidToggleButtonGroup from "../SolidToggleButtonGroup"
+import { StarsDisplay } from "../StarDisplay"
+import ArtifactLevelSlider from "./ArtifactLevelSlider"
+import ArtifactMainStatMultiAutocomplete from "./ArtifactMainStatMultiAutocomplete"
+import ArtifactSetMultiAutocomplete from "./ArtifactSetMultiAutocomplete"
+import ArtifactSubstatMultiAutocomplete from "./ArtifactSubstatMultiAutocomplete"
+import LocationFilterMultiAutocomplete from "./LocationFilterMultiAutocomplete"
+import RVSlide from "./RVSlide"
+import SlotIcon from "./SlotIcon"
 
 const lockedValues = ["locked", "unlocked"] as const
 
@@ -37,7 +37,7 @@ interface ArtifactFilterDisplayProps {
   filteredIds: string[]
 }
 export default function ArtifactFilterDisplay({ filterOption, filterOptionDispatch, filteredIds, disableSlotFilter = false }: ArtifactFilterDisplayProps) {
-  const { t } = useTranslation(["artifact", "ui"]);
+  const { t } = useTranslation(["artifact", "ui"])
 
   const filteredIdMap = useMemo(() => objectKeyMap(filteredIds, _ => true), [filteredIds])
 
@@ -55,7 +55,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
     setTotal,
     mainStatTotal,
     subStatTotal,
-    locationTotal
+    locationTotal,
   } = useMemo(() => {
     const catKeys = {
       rarityTotal: allArtifactRarityKeys,
@@ -66,7 +66,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
       setTotal: allArtifactSetKeys,
       mainStatTotal: allMainStatKeys,
       subStatTotal: allSubstatKeys,
-      locationTotal: [...allLocationCharacterKeys, ""]
+      locationTotal: [...allLocationCharacterKeys, ""],
     } as const
     return bulkCatTotal(catKeys, ctMap =>
       Object.entries(database.arts.data).forEach(([id, art]) => {
@@ -101,7 +101,7 @@ export default function ArtifactFilterDisplay({ filterOption, filterOptionDispat
           // substats handled above
           ctMap.locationTotal[location].current++
         }
-      })
+      }),
     )
   }, [database, filteredIdMap])
 

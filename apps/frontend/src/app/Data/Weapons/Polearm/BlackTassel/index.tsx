@@ -1,10 +1,10 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -17,8 +17,8 @@ const [condPassivePath, condPassive] = cond(key, "PressTheAdvantage")
 const all_dmg_ = equal("on", condPassive, subscript(input.weapon.refineIndex, dmgInc))
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    all_dmg_
-  }
+    all_dmg_,
+  },
 })
 
 const sheet: IWeaponSheet = {
@@ -31,9 +31,9 @@ const sheet: IWeaponSheet = {
       on: {
         fields: [{
           node: all_dmg_,
-        }]
-      }
-    }
+        }],
+      },
+    },
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

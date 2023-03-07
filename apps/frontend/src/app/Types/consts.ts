@@ -1,7 +1,8 @@
-import { allArtifactSetKeys, allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
+import type { allArtifactSetKeys, WeaponBowKey, WeaponCatalystKey, WeaponClaymoreKey, WeaponPoleArmKey, WeaponSwordKey } from "@genshin-optimizer/consts"
+import { allWeaponBowKeys, allWeaponCatalystKeys, allWeaponClaymoreKeys, allWeaponPolearmKeys, allWeaponSwordKeys, nonTravelerCharacterKeys } from "@genshin-optimizer/consts"
 
 export const allHitModes = ["hit", "avgHit", "critHit"] as const
-export const allAmpReactions = ["vaporize", "melt",] as const
+export const allAmpReactions = ["vaporize", "melt"] as const
 export const allAdditiveReactions = ["spread", "aggravate"] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 
@@ -44,7 +45,7 @@ export const travelerElements = [
   "anemo",
   "geo",
   "electro",
-  "dendro"
+  "dendro",
 ] as const
 export const travelerFKeys = [
   "TravelerAnemoF",
@@ -72,7 +73,7 @@ export const travelerKeys = [
  */
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
-  ...travelerKeys
+  ...travelerKeys,
 ] as const
 
 export const allCharacterSheetKeys = [

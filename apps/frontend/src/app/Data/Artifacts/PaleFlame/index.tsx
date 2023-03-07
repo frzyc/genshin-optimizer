@@ -1,12 +1,12 @@
 import { input } from '../../../Formula'
-import { Data, Info } from '../../../Formula/type'
+import type { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "PaleFlame"
@@ -30,8 +30,8 @@ const set4Phys = greaterEq(input.artSet.PaleFlame, 4,
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     physical_dmg_: sum(set2, set4Phys),
-    atk_: set4Atk
-  }
+    atk_: set4Atk,
+  },
 })
 
 const sheet: IArtifactSheet = {
@@ -48,15 +48,15 @@ const sheet: IArtifactSheet = {
         states: Object.fromEntries(stackArr.map(i => [i, {
           name: i.toString(),
           fields: [{ node: set4Atk }, {
-            node: set4Phys
+            node: set4Phys,
           }, {
             text: stg("duration"),
             value: 7,
-            unit: "s"
-          }]
-        }]))
+            unit: "s",
+          }],
+        }])),
       }],
-    }
-  }
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

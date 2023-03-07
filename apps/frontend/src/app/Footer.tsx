@@ -1,8 +1,8 @@
-import { AppBar, Box, Skeleton, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import { Suspense } from "react";
-import { Trans, useTranslation } from "react-i18next";
-import packageInfo from '../../../../package.json';
+import { AppBar, Box, Skeleton, Typography } from "@mui/material"
+import { grey } from "@mui/material/colors"
+import { Suspense } from "react"
+import { Trans, useTranslation } from "react-i18next"
+import packageInfo from '../../../../package.json'
 
 export default function Footer() {
   return <Suspense fallback={<Skeleton variant="rectangular" height={64} />}>

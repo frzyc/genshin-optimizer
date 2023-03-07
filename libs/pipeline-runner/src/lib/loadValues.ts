@@ -1,6 +1,8 @@
-import { CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
-import { artifactMainstatData, artifactSubstatData, artifactSubstatRollCorrection, artifactSubstatRollData, ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, AvatarSkillDepotExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, materialExcelConfigData, nameToKey, ProudSkillExcelConfigData, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
-import { CharacterData, CharacterId, characterIdMap, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, WeaponData, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
+import type { CharacterKey, WeaponKey } from '@genshin-optimizer/consts'
+import type { AvatarSkillDepotExcelConfigData, ProudSkillExcelConfigData} from '@genshin-optimizer/dm'
+import { artifactMainstatData, artifactSubstatData, artifactSubstatRollCorrection, artifactSubstatRollData, ascensionData, avatarCurveExcelConfigData, avatarExcelConfigData, avatarSkillDepotExcelConfigData, avatarSkillExcelConfigData, avatarTalentExcelConfigData, equipAffixExcelConfigData, fetterInfoExcelConfigData, materialExcelConfigData, nameToKey, proudSkillExcelConfigData, TextMapEN, weaponCurveExcelConfigData, weaponExcelConfigData, weaponPromoteExcelConfigData } from '@genshin-optimizer/dm'
+import type { CharacterData, CharacterId, WeaponData} from '@genshin-optimizer/pipeline'
+import { characterIdMap, dumpFile, extrapolateFloat, propTypeMap, QualityTypeMap, weaponIdMap, weaponMap } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
 import { FRONTEND_PATH } from './Util'
 
@@ -10,14 +12,14 @@ export default function loadValues() {
   const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).map(([charid, charData]) => {
     const { weaponType, qualityType, avatarPromoteId, hpBase, attackBase, defenseBase, propGrowCurves } = charData
     const curves = Object.fromEntries(propGrowCurves.map(({ type, growCurve }) => [propTypeMap[type], growCurve])) as CharacterData["curves"]
-    const { infoBirthDay, infoBirthMonth, } = fetterInfoExcelConfigData[charid]
+    const { infoBirthDay, infoBirthMonth } = fetterInfoExcelConfigData[charid]
     const result: CharacterData = {
       weaponTypeKey: weaponMap[weaponType],
       base: { hp: hpBase, atk: attackBase, def: defenseBase },
       curves,
       birthday: { month: infoBirthMonth, day: infoBirthDay },
       star: QualityTypeMap[qualityType] ?? 5,
-      ascensions: ascensionData[avatarPromoteId]
+      ascensions: ascensionData[avatarPromoteId],
     }
     const charKey = characterIdMap[charid as unknown as CharacterId]
     return [charKey.startsWith("Traveler") ? "Traveler" : charKey, result]
@@ -90,7 +92,7 @@ export default function loadValues() {
   const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).map(([weaponid, weaponData]) => {
     const { weaponType, rankLevel, weaponProp, skillAffix, weaponPromoteId } = weaponData
     const [main, sub] = weaponProp
-    const [refinementDataId,] = skillAffix
+    const [refinementDataId] = skillAffix
     const refData = refinementDataId && equipAffixExcelConfigData[refinementDataId]
 
     const ascData = weaponPromoteExcelConfigData[weaponPromoteId]
@@ -101,24 +103,24 @@ export default function loadValues() {
       mainStat: {
         type: propTypeMap[main.propType],
         base: extrapolateFloat(main.initValue),
-        curve: main.type
+        curve: main.type,
       },
       subStat: sub.propType ? {
         type: propTypeMap[sub.propType],
         base: extrapolateFloat(sub.initValue),
-        curve: sub.type
+        curve: sub.type,
       } : undefined,
       addProps: refData ? refData.map(asc =>
         Object.fromEntries(asc.addProps.filter(ap => "value" in ap).map((ap) =>
-          [propTypeMap[ap.propType] ?? ap.propType, extrapolateFloat(ap.value)]))
+          [propTypeMap[ap.propType] ?? ap.propType, extrapolateFloat(ap.value)])),
       ) : [],
       ascension: ascData.map(asd => {
         if (!asd) return { addStats: {} }
         return {
           addStats: Object.fromEntries(asd.addProps.filter(a => a.value && a.propType).map(a =>
-            [propTypeMap[a.propType], extrapolateFloat(a.value)]))
+            [propTypeMap[a.propType], extrapolateFloat(a.value)])),
         }
-      }) as any
+      }) as any,
     }
     return [weaponIdMap[weaponid], result]
   })) as Record<WeaponKey, WeaponData>
@@ -143,7 +145,7 @@ export default function loadValues() {
     const { nameTextMapHash, materialType } = material
     const key = nameToKey(TextMapEN[nameTextMapHash])
     materialData[key] = {
-      type: materialType
+      type: materialType,
     }
   })
   dumpFile(`${FRONTEND_PATH}/app/Data/Materials/material_gen.json`, materialData)

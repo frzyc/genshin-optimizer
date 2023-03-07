@@ -6,7 +6,7 @@ import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'
 
 export default function PageSettings() {
-  const { t } = useTranslation(["settings"]);
+  const { t } = useTranslation(["settings"])
   ReactGA.send({ hitType: "pageview", page: '/setting' })
 
   return <CardDark sx={{ my: 1 }}>

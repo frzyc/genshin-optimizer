@@ -1,11 +1,11 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "MartialArtist"
@@ -43,12 +43,12 @@ const sheet: IArtifactSheet = {
             }, {
               text: stg('duration'),
               value: 8,
-              unit: 's'
-            }]
+              unit: 's',
+            }],
           },
-        }
-      }]
-    }
-  }
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

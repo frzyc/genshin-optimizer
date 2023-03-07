@@ -1,4 +1,5 @@
-import { CharacterGrowCurveKey, CharacterId, characterIdMap, DQualityKey, dumpFile, DWeaponTypeKey } from "@genshin-optimizer/pipeline"
+import type { CharacterGrowCurveKey, CharacterId, DQualityKey, DWeaponTypeKey } from "@genshin-optimizer/pipeline"
+import { characterIdMap, dumpFile } from "@genshin-optimizer/pipeline"
 import { nameToKey, TextMapEN } from "../../TextMapUtil"
 import { readDMJSON } from "../../util"
 

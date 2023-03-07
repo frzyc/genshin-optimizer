@@ -1,10 +1,10 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, tally } from '../../../../Formula'
 import { prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -18,13 +18,13 @@ const critRate_ = prod(subscript(input.weapon.refineIndex, critInc, { unit: "%" 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    critRate_
+    critRate_,
   },
 })
 const sheet: IWeaponSheet = {
   document: [{
     header: headerTemplate(key, st("stacks")),
-    fields: [{ node: atk_ }, { node: critRate_ }]
+    fields: [{ node: atk_ }, { node: critRate_ }],
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

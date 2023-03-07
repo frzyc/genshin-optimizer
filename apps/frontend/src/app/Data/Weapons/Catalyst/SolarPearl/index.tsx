@@ -1,10 +1,10 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -25,7 +25,7 @@ const data = dataObjForWeaponSheet(key, data_gen, {
     skill_dmg_,
     burst_dmg_,
     normal_dmg_,
-  }
+  },
 })
 
 const sheet: IWeaponSheet = {
@@ -37,12 +37,12 @@ const sheet: IWeaponSheet = {
     states: {
       normal: {
         fields: [{
-          node: skill_dmg_
+          node: skill_dmg_,
         }, {
-          node: burst_dmg_
-        }]
-      }
-    }
+          node: burst_dmg_,
+        }],
+      },
+    },
   }, {
     value: condSkillBurst,
     path: condSkillBurstPath,
@@ -51,10 +51,10 @@ const sheet: IWeaponSheet = {
     states: {
       skillBurst: {
         fields: [{
-          node: normal_dmg_
-        }]
+          node: normal_dmg_,
+        }],
       },
-    }
+    },
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

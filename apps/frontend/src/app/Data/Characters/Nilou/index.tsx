@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, tally } from "../../../Formula/index"
 import { equal, greaterEq, infoMut, max, min, percent, prod, sum, unequal } from "../../../Formula/utils"
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -22,12 +22,12 @@ export const dm = {
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
-    ]
+    ],
   },
   charged: {
     hit1: skillParam_gen.auto[a++],
     hit2: skillParam_gen.auto[a++],
-    stamina: skillParam_gen.auto[a++][0]
+    stamina: skillParam_gen.auto[a++][0],
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
@@ -82,7 +82,7 @@ export const dm = {
     critDmg_: skillParam_gen.constellation6[1],
     maxCritRate_: skillParam_gen.constellation6[2],
     maxCritDmg_: skillParam_gen.constellation6[3],
-  }
+  },
 } as const
 
 const [condA1AfterSkillPath, condA1AfterSkill] = cond(key, "a1AfterSkill")
@@ -98,12 +98,12 @@ const bountifulBloom_dmg_ = greaterEq(input.asc, 4,
         percent(dm.passive2.dmg_),
         prod(
           max(sum(input.total.hp, dm.passive2.minHp), 0),
-          1 / 1000
-        )
+          1 / 1000,
+        ),
       ),
-      percent(dm.passive2.maxDmg_)
-    )
-  )
+      percent(dm.passive2.maxDmg_),
+    ),
+  ),
 )
 
 const c1_moon_dmg_ = greaterEq(input.constellation, 1, percent(dm.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) }))
@@ -112,13 +112,13 @@ const [condC2HydroPath, condC2Hydro] = cond(key, "c2Hydro")
 const [condC2DendroPath, condC2Dendro] = cond(key, "c2Dendro")
 const c2_hydro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(isGoldenChaliceBountyActive, 1,
-    equal(condC2Hydro, "hydro", percent(dm.constellation2.hydro_enemyRes_))
-  )
+    equal(condC2Hydro, "hydro", percent(dm.constellation2.hydro_enemyRes_)),
+  ),
 )
 const c2_dendro_enemyRes_ = greaterEq(input.constellation, 2,
   equal(isGoldenChaliceBountyActive, 1,
-    equal(condC2Dendro, "dendro", percent(dm.constellation2.dendro_enemyRes_))
-  )
+    equal(condC2Dendro, "dendro", percent(dm.constellation2.dendro_enemyRes_)),
+  ),
 )
 
 const [condC4AfterPirHitPath, condC4AfterPirHit] = cond(key, "c4AfterPirHit")
@@ -129,20 +129,20 @@ const c6_critRate_ = greaterEq(input.constellation, 6,
     prod(
       percent(dm.constellation6.critRate_),
       input.total.hp,
-      1 / 1000
+      1 / 1000,
     ),
-    percent(dm.constellation6.maxCritRate_)
-  )
+    percent(dm.constellation6.maxCritRate_),
+  ),
 )
 const c6_critDMG_ = greaterEq(input.constellation, 6,
   min(
     prod(
       percent(dm.constellation6.critDmg_),
       input.total.hp,
-      1 / 1000
+      1 / 1000,
     ),
-    percent(dm.constellation6.maxCritDmg_)
-  )
+    percent(dm.constellation6.maxCritDmg_),
+  ),
 )
 
 export const dmgFormulas = {
@@ -150,7 +150,7 @@ export const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     dmg1: dmgNode("atk", dm.charged.hit1, "charged"),
-    dmg2: dmgNode("atk", dm.charged.hit2, "charged")
+    dmg2: dmgNode("atk", dm.charged.hit2, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -168,12 +168,12 @@ export const dmgFormulas = {
     aeonDmg: dmgNode("hp", dm.burst.aeonDmg, "burst"),
   },
   passive2: {
-    bountifulBloom_dmg_
+    bountifulBloom_dmg_,
   },
   constellation6: {
     c6_critRate_,
     c6_critDMG_,
-  }
+  },
 }
 const burstC3 = greaterEq(input.constellation, 3, 3)
 const skillC5 = greaterEq(input.constellation, 5, 3)
@@ -184,7 +184,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
       bloom_dmg_: bountifulBloom_dmg_,
       hydro_enemyRes_: c2_hydro_enemyRes_,
       dendro_enemyRes_: c2_dendro_enemyRes_,
-    }
+    },
   },
   premod: {
     skillBoost: skillC5,
@@ -192,7 +192,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "sumeru", data_gen
     burst_dmg_: c4_burst_dmg_,
     critRate_: c6_critRate_,
     critDMG_: c6_critDMG_,
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -210,20 +210,20 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
       fields: [{
         node: infoMut(dmgFormulas.charged.dmg1, { name: ct.chg(`auto.skillParams.3`) }),
-        textSuffix: "(1)"
+        textSuffix: "(1)",
       }, {
         node: infoMut(dmgFormulas.charged.dmg2, { name: ct.chg(`auto.skillParams.3`) }),
-        textSuffix: "(2)"
+        textSuffix: "(2)",
       }, {
         text: ct.chg("auto.skillParams.4"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -254,22 +254,22 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.4"),
         value: dm.skill.pirouetteDuration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.5"),
         value: dm.skill.lunarPrayerDuration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.6"),
         value: (data) => data.get(input.constellation).value >= 1
           ? `${dm.skill.tranquilityAuraDuration}s + ${dm.constellation1.durationInc}s = ${dm.skill.tranquilityAuraDuration + dm.constellation1.durationInc}`
           : dm.skill.tranquilityAuraDuration,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("cd"),
         value: dm.skill.cd,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, ct.condTem("constellation4", {
       path: condC4AfterPirHitPath,
       value: condC4AfterPirHit,
@@ -280,37 +280,37 @@ const sheet: ICharacterSheet = {
             text: st("energyRegen"),
             value: dm.constellation4.energyRegen,
           }, {
-            node: c4_burst_dmg_
+            node: c4_burst_dmg_,
           }, {
             text: stg("duration"),
             value: dm.constellation4.duration,
             unit: "s",
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.skillDmg, { name: ct.chg(`burst.skillParams.0`) })
+        node: infoMut(dmgFormulas.burst.skillDmg, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.aeonDmg, { name: ct.chg(`burst.skillParams.1`) })
+        node: infoMut(dmgFormulas.burst.aeonDmg, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
         text: stg("cd"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: stg("energyCost"),
         value: dm.burst.cost,
-      }]
+      }],
     }]),
 
     passive1: ct.talentTem("passive1", [ct.fieldsTem("passive1", {
       teamBuff: true,
       canShow: unequal(onlyDendroHydroTeam, 1, 1),
       fields: [{
-        text: ct.ch("passive1.notDendroHydroTeam")
-      }]
+        text: ct.ch("passive1.notDendroHydroTeam"),
+      }],
     }), ct.condTem("passive1", {
       path: condA1AfterSkillPath,
       value: condA1AfterSkill,
@@ -320,10 +320,10 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            text: ct.ch("passive1.bountifulCores")
-          }]
-        }
-      }
+            text: ct.ch("passive1.bountifulCores"),
+          }],
+        },
+      },
     }), ct.condTem("passive1", {
       path: condA1AfterHitPath,
       value: condA1AfterHit,
@@ -333,20 +333,20 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: a1AfterSkillAndHit_eleMas
+            node: a1AfterSkillAndHit_eleMas,
           }, {
             text: stg("duration"),
             value: dm.passive1.buffDuration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     }), ct.headerTem("passive2", {
       canShow: isGoldenChaliceBountyActive,
       teamBuff: true,
       fields: [{
-        node: bountifulBloom_dmg_
-      }]
+        node: bountifulBloom_dmg_,
+      }],
     }), ct.condTem("constellation2", {
       teamBuff: true,
       canShow: isGoldenChaliceBountyActive,
@@ -360,22 +360,22 @@ const sheet: ICharacterSheet = {
           }, {
             text: stg("duration"),
             value: dm.constellation2.duration,
-            unit: "s"
-          }]
+            unit: "s",
+          }],
         },
         dendro: {
           path: condC2DendroPath,
           value: condC2Dendro,
           name: st("hitOp.dendro"),
           fields: [{
-            node: c2_dendro_enemyRes_
+            node: c2_dendro_enemyRes_,
           }, {
             text: stg("duration"),
             value: dm.constellation2.duration,
-            unit: "s"
-          }]
-        }
-      }
+            unit: "s",
+          }],
+        },
+      },
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -386,12 +386,12 @@ const sheet: ICharacterSheet = {
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: skillC5 }] }]),
     constellation6: ct.talentTem("constellation6", [{
       fields: [{
-        node: c6_critRate_
+        node: c6_critRate_,
       }, {
-        node: c6_critDMG_
-      }]
+        node: c6_critDMG_,
+      }],
     }]),
   },
-};
+}
 
 export default new CharacterSheet(sheet, data)

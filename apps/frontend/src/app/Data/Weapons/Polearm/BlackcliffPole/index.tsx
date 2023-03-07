@@ -1,11 +1,11 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { constant, lookup, prod, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 const key: WeaponKey = "BlackcliffPole"
@@ -19,8 +19,8 @@ const atk_ = prod(lookup(condPassive, objectKeyMap(opponentsDefeated, i => const
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
-    atk_: atk_
-  }
+    atk_: atk_,
+  },
 })
 
 const sheet: IWeaponSheet = {
@@ -38,9 +38,9 @@ const sheet: IWeaponSheet = {
         }, {
           text: stg("duration"),
           value: 30,
-          unit: "s"
-        }]
-      }]))
+          unit: "s",
+        }],
+      }])),
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

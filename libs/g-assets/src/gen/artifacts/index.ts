@@ -85,6 +85,6 @@ const data = {
   DeepwoodMemories,
   GildedDreams,
   DesertPavilionChronicle,
-  FlowerOfParadiseLost
+  FlowerOfParadiseLost,
 } as const
 export default data

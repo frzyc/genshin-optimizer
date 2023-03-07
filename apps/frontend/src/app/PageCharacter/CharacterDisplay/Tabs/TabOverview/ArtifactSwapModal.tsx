@@ -1,4 +1,4 @@
-import { ArtifactSlotKey } from "@genshin-optimizer/consts"
+import type { ArtifactSlotKey } from "@genshin-optimizer/consts"
 import { Box, CardContent, Divider, Grid, Skeleton, Typography } from "@mui/material"
 import { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer } from "react"
 import { useTranslation } from "react-i18next"
@@ -9,7 +9,8 @@ import ImgIcon from "../../../../Components/Image/ImgIcon"
 import ModalWrapper from "../../../../Components/ModalWrapper"
 import { DatabaseContext } from "../../../../Database/Database"
 import ArtifactCard from "../../../../PageArtifact/ArtifactCard"
-import { artifactFilterConfigs, FilterOption, initialFilterOption } from "../../../../PageArtifact/ArtifactSort"
+import type { FilterOption} from "../../../../PageArtifact/ArtifactSort"
+import { artifactFilterConfigs, initialFilterOption } from "../../../../PageArtifact/ArtifactSort"
 import useForceUpdate from "../../../../ReactHooks/useForceUpdate"
 import useMediaQueryUp from "../../../../ReactHooks/useMediaQueryUp"
 import { filterFunction } from "../../../../Util/SortByFilters"
@@ -26,7 +27,7 @@ export default function ArtifactSwapModal({ onChangeId, slotKey, show, onClose }
     onChangeId(id)
     onClose()
   }, [onChangeId, onClose])
-  const filterOptionReducer = useCallback((state, action) => ({ ...state, ...action, slotKeys: [slotKey] }), [slotKey],)
+  const filterOptionReducer = useCallback((state, action) => ({ ...state, ...action, slotKeys: [slotKey] }), [slotKey])
 
   const [filterOption, filterOptionDispatch]: [FilterOption, (action: any) => void] = useReducer(filterOptionReducer, { ...initialFilterOption(), slotKeys: [slotKey] })
 

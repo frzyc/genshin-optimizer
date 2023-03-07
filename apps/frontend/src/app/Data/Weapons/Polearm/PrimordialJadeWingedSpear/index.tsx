@@ -1,11 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
 import data_gen_json from './data_gen.json'
 
@@ -20,7 +20,7 @@ const all_dmg_ = equal(condStack, "7", subscript(input.weapon.refineIndex, allDm
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    all_dmg_
+    all_dmg_,
   },
 })
 const sheet: IWeaponSheet = {
@@ -32,8 +32,8 @@ const sheet: IWeaponSheet = {
     name: st("hitOp.none"),
     states: Object.fromEntries(range(1, 7).map(i => [i, {
       name: st("hits", { count: i }),
-      fields: [{ node: atk_ }, { node: all_dmg_ }]
-    }]))
+      fields: [{ node: atk_ }, { node: all_dmg_ }],
+    }])),
   }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

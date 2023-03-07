@@ -1,6 +1,8 @@
-import { allArtifactSlotKeys, ArtifactSlotKey } from "@genshin-optimizer/consts"
+import type { ArtifactSlotKey } from "@genshin-optimizer/consts"
+import { allArtifactSlotKeys } from "@genshin-optimizer/consts"
 import { Replay } from "@mui/icons-material"
-import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem } from "@mui/material"
+import type { ButtonProps} from "@mui/material"
+import { Divider, ListItemIcon, ListItemText, MenuItem } from "@mui/material"
 import { useTranslation } from "react-i18next"
 import DropdownButton from "../DropdownMenu/DropdownButton"
 import SlotIcon from "./SlotIcon"
@@ -12,7 +14,7 @@ type ArtifactSlotDropdownProps = ButtonProps & {
 }
 
 export default function ArtifactSlotDropdown({ slotKey = "", onChange, hasUnselect = false, ...props }: ArtifactSlotDropdownProps) {
-  const { t } = useTranslation(["artifact", "ui"]);
+  const { t } = useTranslation(["artifact", "ui"])
   return <DropdownButton
     title={slotKey ? t(`artifact:slotName:${slotKey}`) : t('artifact:slot')}
     color={slotKey ? "success" : "primary"}

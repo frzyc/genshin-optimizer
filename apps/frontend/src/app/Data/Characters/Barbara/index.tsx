@@ -1,12 +1,12 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { equal, greaterEq, infoMut } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -60,8 +60,8 @@ const dm = {
   },
   constellation2: {
     cdDec: 0.15,
-    hydro_dmg_: 0.15
-  }
+    hydro_dmg_: 0.15,
+  },
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -89,7 +89,7 @@ const dmgFormulas = {
   },
   burst: {
     regen: healNodeTalent("hp", dm.burst.hp_, dm.burst.hp, "burst"),
-  }
+  },
 }
 
 
@@ -102,7 +102,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "mondstadt", data_
       staminaDec_: nodeA1,
       hydro_dmg_: nodeC2,
     },
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -120,7 +120,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -144,11 +144,11 @@ const sheet: ICharacterSheet = {
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.regen, { name: ct.chg(`skill.skillParams.0`) })
+        node: infoMut(dmgFormulas.skill.regen, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.cregen, { name: ct.chg(`skill.skillParams.1`) })
+        node: infoMut(dmgFormulas.skill.cregen, { name: ct.chg(`skill.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) })
+        node: infoMut(dmgFormulas.skill.dmg, { name: ct.chg(`skill.skillParams.2`) }),
       }, {
         text: ct.chg(`skill.skillParams.3`),
         value: dm.skill.duration,
@@ -156,19 +156,19 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg(`skill.skillParams.4`),
         value: data => data.get(input.constellation).value >= 2 ? `${dm.skill.cd}s - ${dm.constellation2.cdDec * 100}%` : `${dm.skill.cd}s`,
-      }]
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.0`) })
+        node: infoMut(dmgFormulas.burst.regen, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: dm.burst.cd,
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }]),
 
     passive1: ct.talentTem("passive1", [ct.condTem("passive1", {
@@ -180,9 +180,9 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             node: infoMut(nodeA1Display, KeyMap.info("staminaDec_")),
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -196,9 +196,9 @@ const sheet: ICharacterSheet = {
         on: {
           fields: [{
             node: infoMut(nodeC2Display, KeyMap.info("hydro_dmg_")),
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
@@ -207,4 +207,4 @@ const sheet: ICharacterSheet = {
   },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

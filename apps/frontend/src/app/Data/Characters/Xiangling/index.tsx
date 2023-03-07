@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { constant, equal, greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
-import { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -25,7 +25,7 @@ const dm = {
       skillParam_gen.auto[a++], // 3x2
       skillParam_gen.auto[a++], // 4x4
       skillParam_gen.auto[a++], // 5
-    ]
+    ],
   },
   charged: {
     dmg1: skillParam_gen.auto[a++], // 1
@@ -67,7 +67,7 @@ const dm = {
   },
   constellation6: {
     pyroDmg: skillParam_gen.constellation6[0],
-  }
+  },
 } as const
 
 // A4
@@ -83,7 +83,7 @@ const afterGuobaHit = greaterEq(input.constellation, 1,
 // C6
 const [condDuringPyronadoPath, condDuringPyronado] = cond(key, "afterPyronado")
 const duringPyronado = greaterEq(input.constellation, 6,
-  equal("duringPyronado", condDuringPyronado, percent(dm.constellation6.pyroDmg))
+  equal("duringPyronado", condDuringPyronado, percent(dm.constellation6.pyroDmg)),
 )
 const antiC6 = prod(duringPyronado, -1)
 
@@ -106,8 +106,8 @@ const dmgFormulas = {
   },
   constellation2: {
     dmg: greaterEq(input.constellation, 2, customDmgNode(prod(input.total.atk, percent(dm.constellation2.dmg)), "elemental",
-      { hit: { ele: constant(elementKey) } }))
-  }
+      { hit: { ele: constant(elementKey) } })),
+  },
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -122,7 +122,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
       atk_: afterChili,
       pyro_dmg_: duringPyronado,
       pyro_enemyRes_: afterGuobaHit,
-    }
+    },
   },
 })
 
@@ -144,7 +144,7 @@ const sheet: ICharacterSheet = {
           name: ct.chg(`auto.skillParams.${i}`),
           multi: i === 2 ? 2 : i === 3 ? 4 : undefined,
         }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -153,7 +153,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg("auto.fields.plunging"),
     }, {
@@ -163,17 +163,17 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
       fields: [{
-        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) },)
+        node: infoMut(dmgFormulas.skill.press, { name: ct.chg(`skill.skillParams.0`) }),
       }, {
         text: ct.chg("skill.skillParams.1"),
         value: dm.skill.cd,
         unit: "s",
-      }]
+      }],
     }, ct.condTem("constellation1", {
       value: condAfterGuobaHit,
       path: condAfterGuobaHitPath,
@@ -182,25 +182,25 @@ const sheet: ICharacterSheet = {
       states: {
         afterGuobaHit: {
           fields: [{
-            node: afterGuobaHit
+            node: afterGuobaHit,
           }, {
             text: stg("duration"),
             value: dm.constellation1.duration,
             unit: "s",
           }],
-        }
-      }
+        },
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
       fields: [{
-        node: infoMut(dmgFormulas.burst.dmg1, { name: ct.chg(`burst.skillParams.0`) })
+        node: infoMut(dmgFormulas.burst.dmg1, { name: ct.chg(`burst.skillParams.0`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.dmg2, { name: ct.chg(`burst.skillParams.1`) },)
+        node: infoMut(dmgFormulas.burst.dmg2, { name: ct.chg(`burst.skillParams.1`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.dmg3, { name: ct.chg(`burst.skillParams.2`) },)
+        node: infoMut(dmgFormulas.burst.dmg3, { name: ct.chg(`burst.skillParams.2`) }),
       }, {
-        node: infoMut(dmgFormulas.burst.dmgNado, { name: ct.chg(`burst.skillParams.3`) },)
+        node: infoMut(dmgFormulas.burst.dmgNado, { name: ct.chg(`burst.skillParams.3`) }),
       }, {
         text: stg("duration"),
         value: (data) => data.get(input.constellation).value >= 4
@@ -214,13 +214,13 @@ const sheet: ICharacterSheet = {
       }, {
         text: stg("energyCost"),
         value: dm.burst.enerCost,
-      }]
+      }],
     }, ct.headerTem("constellation4", {
       fields: [{
         text: st("durationInc"),
         value: dm.burst.duration * dm.constellation4.durationInc,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }), ct.condTem("constellation6", {
       value: condDuringPyronado,
       path: condDuringPyronadoPath,
@@ -231,16 +231,16 @@ const sheet: ICharacterSheet = {
           fields: [{
             text: ct.ch("c6Exception"),
             canShow: data => data.get(input.constellation).value >= 6
-              && data.get(condDuringPyronado).value === "duringPyronado"
+              && data.get(condDuringPyronado).value === "duringPyronado",
           }, {
-            node: duringPyronado
+            node: duringPyronado,
           }, {
             text: stg("duration"),
             value: dm.constellation1.duration,
             unit: "s",
           }],
-        }
-      }
+        },
+      },
     })]),
 
     passive1: ct.talentTem("passive1"),
@@ -257,9 +257,9 @@ const sheet: ICharacterSheet = {
             text: stg("duration"),
             value: dm.passive2.duration,
             unit: "s",
-          }]
-        }
-      }
+          }],
+        },
+      },
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1"),
@@ -267,13 +267,13 @@ const sheet: ICharacterSheet = {
       fields: [{
         value: dm.constellation2.dmg,
         node: infoMut(dmgFormulas.constellation2.dmg, { name: ct.ch("explosionDMG") }),
-      }]
+      }],
     })]),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
     constellation4: ct.talentTem("constellation4"),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
 export default new CharacterSheet(sheet, data)

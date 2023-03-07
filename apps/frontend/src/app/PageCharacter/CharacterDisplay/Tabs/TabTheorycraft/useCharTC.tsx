@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { DatabaseContext } from "../../../../Database/Database"
-import { CharacterKey, WeaponKey } from "../../../../Types/consts"
+import type { CharacterKey, WeaponKey } from "../../../../Types/consts"
 
 export default function useCharTC(characterKey: CharacterKey, defWeapon: WeaponKey) {
   const { database } = useContext(DatabaseContext)

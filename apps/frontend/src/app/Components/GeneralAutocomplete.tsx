@@ -1,7 +1,8 @@
 import { Favorite } from "@mui/icons-material"
-import { Autocomplete, AutocompleteProps, Chip, ChipProps, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, TextFieldProps, useTheme } from "@mui/material"
+import type { AutocompleteProps, ChipProps, TextFieldProps} from "@mui/material"
+import { Autocomplete, Chip, ListItemIcon, ListItemText, MenuItem, Skeleton, TextField, useTheme } from "@mui/material"
 import { Suspense, useMemo } from "react"
-import { Variant } from "../Formula/type"
+import type { Variant } from "../Formula/type"
 import ColorText from "./ColoredText"
 /**
  * NOTE: the rationale behind toImg/toExlabel/toExItemLabel, is because `options` needs to be serializable, and having JSX in there will disrupt seralizability.
@@ -41,7 +42,7 @@ export function GeneralAutocomplete<T extends string>({ options, valueKey: key, 
         inputProps={{
           ...params.inputProps,
           autoComplete: 'new-password', // disable autocomplete and autofill
-          style: { color }
+          style: { color },
         }}
         color={key ? "success" : "primary"}
       />
@@ -98,7 +99,7 @@ export function GeneralAutocompleteMulti<T extends string>({ options, valueKeys:
       {!!option.favorite && <Favorite />}
     </MenuItem>}
     renderTags={(selected, getTagProps) => selected.map(({ key, label, variant }, index) =>
-      <Chip {...chipProps} {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />
+      <Chip {...chipProps} {...getTagProps({ index })} key={`${index}${key}${label}`} icon={toImg(key)} label={toExLabel ? <span>{label} {toExLabel(key)}</span> : label} color={variant} />,
     )}
     {...acProps}
   />

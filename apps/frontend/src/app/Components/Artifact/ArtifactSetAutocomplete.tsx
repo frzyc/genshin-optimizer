@@ -1,14 +1,16 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts';
-import { AutocompleteRenderGroupParams, Box, List, ListSubheader } from '@mui/material';
-import { useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { setKeysByRarities } from '../../Data/Artifacts';
-import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet';
-import { ArtifactRarity } from '../../Types/consts';
-import { GeneralAutocomplete, GeneralAutocompleteProps } from '../GeneralAutocomplete';
-import ImgIcon from '../Image/ImgIcon';
-import { StarsDisplay } from '../StarDisplay';
-import sortByRarityAndName from './sortByRarityAndName';
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { AutocompleteRenderGroupParams} from '@mui/material'
+import { Box, List, ListSubheader } from '@mui/material'
+import { useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { setKeysByRarities } from '../../Data/Artifacts'
+import { artifactDefIcon } from '../../Data/Artifacts/ArtifactSheet'
+import type { ArtifactRarity } from '../../Types/consts'
+import type { GeneralAutocompleteProps } from '../GeneralAutocomplete'
+import { GeneralAutocomplete } from '../GeneralAutocomplete'
+import ImgIcon from '../Image/ImgIcon'
+import { StarsDisplay } from '../StarDisplay'
+import sortByRarityAndName from './sortByRarityAndName'
 
 export default function ArtifactSetAutocomplete({ artSetKey, setArtSetKey, label = "", ...props }: {
   artSetKey: ArtifactSetKey | ""

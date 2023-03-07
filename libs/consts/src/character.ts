@@ -93,13 +93,13 @@ export type TravelerKey = typeof allTravelerKeys[number]
 export const locationGenderedCharacterKeys = [
   ...nonTravelerCharacterKeys,
   'TravelerF',
-  'TravelerM'
+  'TravelerM',
 ] as const
 export type LocationGenderedCharacterKey = typeof locationGenderedCharacterKeys[number]
 
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
-  ...allTravelerKeys
+  ...allTravelerKeys,
 ] as const
 export type CharacterKey = typeof allCharacterKeys[number]
 

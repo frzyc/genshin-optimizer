@@ -1,11 +1,11 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
+import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
@@ -26,9 +26,9 @@ const sheet: IWeaponSheet = {
     header: headerTemplate(key, st("conditional")),
     states: {
       on: {
-        fields: [{ node: infoMut(heal, { name: stg("healing"), variant: "heal" }) }]
-      }
-    }
-  }]
+        fields: [{ node: infoMut(heal, { name: stg("healing"), variant: "heal" }) }],
+      },
+    },
+  }],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

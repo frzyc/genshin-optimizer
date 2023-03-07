@@ -1,14 +1,17 @@
 import { characterAsset } from "@genshin-optimizer/g-assets"
 import { BusinessCenter } from "@mui/icons-material"
-import { AutocompleteProps, Skeleton } from "@mui/material"
+import type { AutocompleteProps} from "@mui/material"
+import { Skeleton } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { getCharSheet } from "../../Data/Characters"
-import CharacterSheet from "../../Data/Characters/CharacterSheet"
+import type CharacterSheet from "../../Data/Characters/CharacterSheet"
 import { DatabaseContext } from "../../Database/Database"
 import useDBMeta from "../../ReactHooks/useDBMeta"
-import { charKeyToCharName, charKeyToLocCharKey, LocationCharacterKey, LocationKey, travelerKeys } from "../../Types/consts"
-import { GeneralAutocomplete, GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import type { LocationCharacterKey, LocationKey} from "../../Types/consts"
+import { charKeyToCharName, charKeyToLocCharKey, travelerKeys } from "../../Types/consts"
+import type { GeneralAutocompleteOption } from "../GeneralAutocomplete"
+import { GeneralAutocomplete } from "../GeneralAutocomplete"
 import ThumbSide from "./ThumbSide"
 type LocationAutocompleteProps = {
   location: LocationKey,
@@ -38,7 +41,7 @@ export function LocationAutocomplete({ location, setLocation, filter = () => tru
       if (a.favorite && !b.favorite) return -1
       if (!a.favorite && b.favorite) return 1
       return a.label.localeCompare(b.label)
-    })
+    }),
   ], [t, toText, isFavorite, database, filter, gender])
   return <Suspense fallback={<Skeleton variant="text" width={100} />}>
     <GeneralAutocomplete size="small" options={values} valueKey={location} onChange={(k => setLocation(k ?? ""))} toImg={toImg} {...autoCompleteProps} />

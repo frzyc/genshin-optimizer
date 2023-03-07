@@ -1,11 +1,11 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
-import { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey, RegionKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode, healNode, shieldElement, shieldNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -26,7 +26,7 @@ const dm = {
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
       skillParam_gen.auto[a++],
-    ]
+    ],
   },
   charged: {
     dmg1: skillParam_gen.auto[a++],
@@ -66,7 +66,7 @@ const dmgFormulas = {
     [i, dmgNode("atk", arr, "normal")])),
   charged: {
     dmg1: dmgNode("atk", dm.charged.dmg1, "charged"),
-    dmg2: dmgNode("atk", dm.charged.dmg2, "charged")
+    dmg2: dmgNode("atk", dm.charged.dmg2, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(dm.plunging).map(([key, value]) =>
     [key, dmgNode("atk", value, "plunging")])),
@@ -82,7 +82,7 @@ const dmgFormulas = {
   constellation4: {
     shield: greaterEq(input.constellation, 4, shieldNode("hp", percent(dm.constellation4.shieldHp_), 0)),
     cryoShield: greaterEq(input.constellation, 4, shieldElement("cryo", shieldNode("hp", percent(dm.constellation4.shieldHp_), 0))),
-  }
+  },
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -99,7 +99,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, region, data_gen, 
     burstBoost: nodeC5,
     normal_critRate_: nodeC1NormalCritRate,
     charged_critRate_: nodeC1ChargeCritRate,
-  }
+  },
 })
 
 const sheet: ICharacterSheet = {
@@ -117,7 +117,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -128,7 +128,7 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: dm.charged.stamina,
-      }]
+      }],
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -138,7 +138,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -148,7 +148,7 @@ const sheet: ICharacterSheet = {
         text: ct.chg("skill.skillParams.1"),
         value: dm.skill.cd,
         unit: "s",
-      }]
+      }],
     }]),
 
     burst: ct.talentTem("burst", [{
@@ -157,11 +157,11 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.3"),
         value: dm.burst.enerCost,
@@ -174,7 +174,7 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem("passive1", [ct.headerTem("passive1", {
       fields: [{
         node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch("p1heal") }),
-      }]
+      }],
     })]),
     passive2: ct.talentTem("passive2"),
     passive3: ct.talentTem("passive3"),
@@ -185,12 +185,12 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC1NormalCritRate
+            node: nodeC1NormalCritRate,
           }, {
-            node: nodeC1ChargeCritRate
-          }]
-        }
-      }
+            node: nodeC1ChargeCritRate,
+          }],
+        },
+      },
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
@@ -202,16 +202,16 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.constellation4.duration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: dm.constellation4.cooldown,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     })]),
     constellation5: ct.talentTem("constellation5", [{ fields: [{ node: nodeC5 }] }]),
     constellation6: ct.talentTem("constellation6"),
-  }
+  },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

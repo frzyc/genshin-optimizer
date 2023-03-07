@@ -1,38 +1,42 @@
-import { allElementWithPhyKeys, ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
-import { artifactAsset } from '@genshin-optimizer/g-assets';
-import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
-import HelpIcon from '@mui/icons-material/Help';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ChangeEvent, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
-import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
-import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete';
-import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
-import { ArtifactColoredIconStatWithUnit, ArtifactStatWithUnit } from '../Components/Artifact/ArtifactStatKeyDisplay';
-import CardDark from '../Components/Card/CardDark';
-import CardLight from '../Components/Card/CardLight';
-import CloseButton from '../Components/CloseButton';
-import CustomNumberTextField from '../Components/CustomNumberTextField';
-import DropdownButton from '../Components/DropdownMenu/DropdownButton';
-import ImgIcon from '../Components/Image/ImgIcon';
-import ModalWrapper from '../Components/ModalWrapper';
-import { getArtSheet } from '../Data/Artifacts';
-import Artifact from '../Data/Artifacts/Artifact';
-import { DatabaseContext } from '../Database/Database';
-import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData';
-import KeyMap, { cacheValueString } from '../KeyMap';
-import StatIcon from '../KeyMap/StatIcon';
-import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
-import { allSubstatKeys, IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact';
-import { ArtifactRarity } from '../Types/consts';
-import { randomizeArtifact } from '../Util/ArtifactUtil';
-import { clamp, deepClone } from '../Util/Util';
-import ArtifactCard from './ArtifactCard';
-import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard';
-import SubstatInput from './ArtifactEditor/Components/SubstatInput';
-import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal';
-import { OutstandingEntry, ProcessedEntry, processEntry, queueReducer } from './ScanningUtil';
+import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import { artifactAsset } from '@genshin-optimizer/g-assets'
+import { Add, ChevronRight, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material'
+import HelpIcon from '@mui/icons-material/Help'
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Grid, MenuItem, Skeleton, styled, Typography, useMediaQuery, useTheme } from '@mui/material'
+import type { ChangeEvent} from 'react'
+import { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
+import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown'
+import ArtifactSetAutocomplete from '../Components/Artifact/ArtifactSetAutocomplete'
+import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown'
+import { ArtifactColoredIconStatWithUnit, ArtifactStatWithUnit } from '../Components/Artifact/ArtifactStatKeyDisplay'
+import CardDark from '../Components/Card/CardDark'
+import CardLight from '../Components/Card/CardLight'
+import CloseButton from '../Components/CloseButton'
+import CustomNumberTextField from '../Components/CustomNumberTextField'
+import DropdownButton from '../Components/DropdownMenu/DropdownButton'
+import ImgIcon from '../Components/Image/ImgIcon'
+import ModalWrapper from '../Components/ModalWrapper'
+import { getArtSheet } from '../Data/Artifacts'
+import Artifact from '../Data/Artifacts/Artifact'
+import { DatabaseContext } from '../Database/Database'
+import { cachedArtifact, validateArtifact } from '../Database/DataManagers/ArtifactData'
+import KeyMap, { cacheValueString } from '../KeyMap'
+import StatIcon from '../KeyMap/StatIcon'
+import useForceUpdate from '../ReactHooks/useForceUpdate'
+import usePromise from '../ReactHooks/usePromise'
+import type { IArtifact, ICachedArtifact, ISubstat, MainStatKey } from '../Types/artifact'
+import { allSubstatKeys } from '../Types/artifact'
+import type { ArtifactRarity } from '../Types/consts'
+import { randomizeArtifact } from '../Util/ArtifactUtil'
+import { clamp, deepClone } from '../Util/Util'
+import ArtifactCard from './ArtifactCard'
+import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
+import SubstatInput from './ArtifactEditor/Components/SubstatInput'
+import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal'
+import type { OutstandingEntry, ProcessedEntry} from './ScanningUtil'
+import { processEntry, queueReducer } from './ScanningUtil'
 
 const maxProcessingCount = 3, maxProcessedCount = 16
 const allSubstatFilter = new Set(allSubstatKeys)
@@ -69,7 +73,7 @@ function artifactReducer(state: IEditorArtifact | undefined, action: Message): I
 
 const InputInvis = styled('input')({
   display: 'none',
-});
+})
 export type ArtifactEditorProps = { artifactIdToEdit?: string, cancelEdit: () => void, allowUpload?: boolean, allowEmpty?: boolean, disableSet?: boolean, disableSlot?: boolean }
 export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allowUpload = false, allowEmpty = false, disableSet = false, disableSlot = false }: ArtifactEditorProps) {
   const { t } = useTranslation("artifact")
@@ -128,7 +132,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
   useEffect(() => {
     const pasteFunc = (e: Event) => uploadFiles((e as ClipboardEvent).clipboardData?.files)
-    allowUpload && window.addEventListener('paste', pasteFunc);
+    allowUpload && window.addEventListener('paste', pasteFunc)
     return () => {
       if (allowUpload) window.removeEventListener('paste', pasteFunc)
     }
@@ -137,7 +141,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
   const onUpload = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       if (!e.target) return
-      uploadFiles(e.target.files);
+      uploadFiles(e.target.files)
       e.target.value = "" // reset the value so the same file can be uploaded again...
     },
     [uploadFiles],
@@ -174,7 +178,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
 
   const sheet = artifact ? getArtSheet(artifact.setKey) : undefined
   const reset = useCallback(() => {
-    cancelEdit?.();
+    cancelEdit?.()
     dispatchQueue({ type: "pop" })
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
@@ -217,15 +221,15 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
       cancelEdit()
     }, [preventClosing, setShow, cancelEdit])
 
-  const theme = useTheme();
-  const grmd = useMediaQuery(theme.breakpoints.up('md'));
+  const theme = useTheme()
+  const grmd = useMediaQuery(theme.breakpoints.up('md'))
 
   const element = artifact ? allElementWithPhyKeys.find(ele => artifact.mainStatKey.includes(ele)) : undefined
   const color = artifact
     ? element ?? "success"
     : "primary"
 
-  const updateSetKey = useCallback((setKey: ArtifactSetKey | "") => update({ setKey: setKey as ArtifactSetKey }), [update],)
+  const updateSetKey = useCallback((setKey: ArtifactSetKey | "") => update({ setKey: setKey as ArtifactSetKey }), [update])
   const setACDisable = useCallback((key: ArtifactSetKey | "") => {
     if (key === "") return true
     //Disable being able to select any of the prayer set unless the current slotkey is circlet
@@ -390,7 +394,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
           <Grid item>
             {oldType === "edit" ?
               <Button startIcon={<Add />} onClick={() => {
-                database.arts.set(old!.id, editorArtifact!);
+                database.arts.set(old!.id, editorArtifact!)
                 if (allowEmpty) reset()
                 else {
                   setShow(false)
@@ -400,7 +404,7 @@ export default function ArtifactEditor({ artifactIdToEdit = "", cancelEdit, allo
                 {t`editor.btnSave`}
               </Button> :
               <Button startIcon={<Add />} onClick={() => {
-                database.arts.new(artifact!);
+                database.arts.new(artifact!)
                 if (allowEmpty) reset()
                 else {
                   setShow(false)

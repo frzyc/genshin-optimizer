@@ -1,5 +1,5 @@
-import { DotProps } from "recharts"
-import EnhancedPoint from "./EnhancedPoint"
+import type { DotProps } from "recharts"
+import type EnhancedPoint from "./EnhancedPoint"
 
 type CustomShapeType = "circle" | "diamond" | "square"
 type CustomDotProps = DotProps & {

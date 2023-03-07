@@ -1,11 +1,13 @@
-import { allRarityKeys, allArtifactSlotKeys, ArtifactSetKey, RarityKey, ArtifactSlotKey } from '@genshin-optimizer/consts';
-import KeyMap, { cacheValueString } from '../../KeyMap';
-import { allSubstatKeys, ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { ArtifactRarity, RollColorKey } from '../../Types/consts';
-import { clampPercent, objectKeyMap } from '../../Util/Util';
-import ArtifactMainStatsData from './artifact_main_gen.json';
-import ArtifactSubstatsData from './artifact_sub_gen.json';
-import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json';
+import type { ArtifactSetKey, RarityKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { allRarityKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import KeyMap, { cacheValueString } from '../../KeyMap'
+import type { ICachedArtifact, MainStatKey, SubstatKey } from '../../Types/artifact'
+import { allSubstatKeys } from '../../Types/artifact'
+import type { ArtifactRarity, RollColorKey } from '../../Types/consts'
+import { clampPercent, objectKeyMap } from '../../Util/Util'
+import ArtifactMainStatsData from './artifact_main_gen.json'
+import ArtifactSubstatsData from './artifact_sub_gen.json'
+import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json'
 
 const maxStar: RarityKey = 5
 
@@ -29,7 +31,7 @@ export const maxArtifactLevel = {
   2: 4,
   3: 12,
   4: 16,
-  5: 20
+  5: 20,
 } as const
 
 const ArtifactSubstatRollData: StrictDict<RarityKey, { low: number, high: number, numUpgrades: number }> = {
@@ -37,8 +39,8 @@ const ArtifactSubstatRollData: StrictDict<RarityKey, { low: number, high: number
   2: { low: 0, high: 1, numUpgrades: 2 },
   3: { low: 1, high: 2, numUpgrades: 3 },
   4: { low: 2, high: 3, numUpgrades: 4 },
-  5: { low: 3, high: 4, numUpgrades: 5 }
-};
+  5: { low: 3, high: 4, numUpgrades: 5 },
+}
 export const artifactSandsStatKeys = ["hp_", "def_", "atk_", "eleMas", "enerRech_"] as const
 export type ArtifactSandsStatKey = typeof artifactSandsStatKeys[number]
 
@@ -58,7 +60,7 @@ const ArtifactSlotsData = {
 
 export default class Artifact {
   //do not instantiate.
-  constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
+  constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.') }
 
   //SLOT
   static slotName = (slotKey: ArtifactSlotKey): string =>
@@ -123,7 +125,7 @@ export default class Artifact {
     // Relative to max star, so comparison between different * makes sense.
     const currentEfficiency = substats.filter(({ key }) => key && filter.has(key)).reduce((sum, { efficiency }) => sum + (efficiency ?? 0), 0)
 
-    const rollsRemaining = Artifact.rollsRemaining(level, rarity);
+    const rollsRemaining = Artifact.rollsRemaining(level, rarity)
     const emptySlotCount = substats.filter(s => !s.key).length
     const matchedSlotCount = substats.filter(s => s.key && filter.has(s.key)).length
     const unusedFilterCount = filter.size - matchedSlotCount - (filter.has(artifact.mainStatKey as any) ? 1 : 0)
@@ -137,7 +139,7 @@ export default class Artifact {
 
   //start with {slotKey:art} end with {setKey:[slotKey]}
   static setToSlots = (artifacts: Dict<ArtifactSlotKey, ICachedArtifact>): Dict<ArtifactSetKey, ArtifactSlotKey[]> => {
-    const setToSlots: Dict<ArtifactSetKey, ArtifactSlotKey[]> = {};
+    const setToSlots: Dict<ArtifactSetKey, ArtifactSlotKey[]> = {}
     Object.entries(artifacts).forEach(([key, art]) => {
       if (!art) return
       if (setToSlots[art.setKey]) setToSlots[art.setKey]!.push(key)

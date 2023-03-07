@@ -1,6 +1,7 @@
 import { MenuItem } from "@mui/material"
 import { useTranslation } from "react-i18next"
-import { allRefinement, Refinement } from "../Types/consts"
+import type { Refinement } from "../Types/consts"
+import { allRefinement } from "../Types/consts"
 import DropdownButton from "./DropdownMenu/DropdownButton"
 
 export default function RefinementDropdown({ refinement, setRefinement }: { refinement: Refinement, setRefinement: (r: Refinement) => void }) {

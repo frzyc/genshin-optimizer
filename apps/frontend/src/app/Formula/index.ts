@@ -5,7 +5,7 @@ import { artifactTr } from "../names"
 import { allArtifactSetKeys, allElementWithPhyKeys, allRegionKeys, allArtifactSlotKeys } from "@genshin-optimizer/consts"
 import { objectKeyMap, objectKeyValueMap } from "../Util/Util"
 import { deepNodeClone } from "./internal"
-import { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
+import type { Data, Info, NodeData, NumNode, ReadNode, StrNode } from "./type"
 import { constant, equal, frac, infoMut, lookup, max, min, naught, none, one, percent, prod, read, res, setReadNodeKeys, stringPrio, stringRead, subscript, sum, unequal, unequalStr } from "./utils"
 
 const asConst = true as const, pivot = true as const
@@ -19,7 +19,7 @@ const allAmplifying = ["vaporize", "melt"] as const
 const allAdditive = ["spread", "aggravate"] as const
 const allMisc = [
   "stamina", "staminaDec_", "staminaSprintDec_", "staminaGlidingDec_", "staminaChargedDec_",
-  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc"
+  "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_", "dmgRed_", "healInc",
 ] as const
 const allBase = ["base_atk", "base_hp", "base_def"] as const
 
@@ -77,7 +77,7 @@ allModStatNodes.heal_.info!.variant = "heal"
 
 function withDefaultInfo<T extends NodeData<NumNode | StrNode>>(info: Info, value: T): T {
   value = deepNodeClone(value)
-  crawlObject(value, [], (x: any) => x.operation, (x: NumNode | StrNode) => x.info = { ...info, ...x.info, })
+  crawlObject(value, [], (x: any) => x.operation, (x: NumNode | StrNode) => x.info = { ...info, ...x.info })
   return value
 }
 function markAccu<T>(accu: ReadNode<number>["accu"], value: T): void {
@@ -216,7 +216,7 @@ const common: Data = {
       total.all_dmg_,
       lookup(hit.move, objectKeyMap(allMoves, move => total[`${move}_dmg_`]), naught),
       lookup(hit.ele, objectKeyMap(allElements, ele => total[`${ele}_dmg_`]), naught),
-      equal(hit.move, "normal", unequal(hit.ele, "physical", total.normalEle_dmg_))
+      equal(hit.move, "normal", unequal(hit.ele, "physical", total.normalEle_dmg_)),
     ),
     dmgInc: sum(
       infoMut(sum(
@@ -271,7 +271,7 @@ const _tally = setReadNodeKeys({
 const tally = {
   ..._tally,
   // Special handling since it's not a `ReadNode`
-  ele: sum(...allElements.map(ele => min(_tally[ele], 1)))
+  ele: sum(...allElements.map(ele => min(_tally[ele], 1))),
 }
 
 /**
@@ -293,5 +293,5 @@ export const infusionNode = stringPrio(
 export {
   input, uiInput, common, customBonus,
 
-  target, tally
+  target, tally,
 }

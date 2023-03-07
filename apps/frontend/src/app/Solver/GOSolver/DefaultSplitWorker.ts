@@ -1,8 +1,9 @@
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts';
-import { Interim, Setup } from '..';
-import { assertUnreachable } from '../../Util/Util';
-import { ArtifactsBySlot, countBuilds, filterArts, RequestFilter } from '../common';
-import type { SplitWorker } from './BackgroundWorker';
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import type { Interim, Setup } from '..'
+import { assertUnreachable } from '../../Util/Util'
+import type { ArtifactsBySlot, RequestFilter } from '../common'
+import { countBuilds, filterArts } from '../common'
+import type { SplitWorker } from './BackgroundWorker'
 
 export class DefaultSplitWorker implements SplitWorker {
   arts: ArtifactsBySlot

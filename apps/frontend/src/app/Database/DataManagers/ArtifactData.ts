@@ -1,13 +1,16 @@
-import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys, ArtifactSetKey, artMaxLevel, charKeyToLocCharKey } from "@genshin-optimizer/consts";
-import { getArtSheet } from "../../Data/Artifacts";
-import Artifact, { artifactSubRange } from "../../Data/Artifacts/Artifact";
-import KeyMap from "../../KeyMap";
-import { allMainStatKeys, allSubstatKeys, IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact";
-import { allArtifactRarities, ArtifactRarity } from "../../Types/consts";
-import { clamp } from "../../Util/Util";
-import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
-import { IGO, IGOOD, ImportResult } from "../exim";
+import type { ArtifactSetKey} from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allArtifactSlotKeys, allLocationCharacterKeys, artMaxLevel, charKeyToLocCharKey } from "@genshin-optimizer/consts"
+import { getArtSheet } from "../../Data/Artifacts"
+import Artifact, { artifactSubRange } from "../../Data/Artifacts/Artifact"
+import KeyMap from "../../KeyMap"
+import type { IArtifact, ICachedArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../../Types/artifact"
+import { allMainStatKeys, allSubstatKeys } from "../../Types/artifact"
+import type { ArtifactRarity } from "../../Types/consts"
+import { allArtifactRarities } from "../../Types/consts"
+import { clamp } from "../../Util/Util"
+import type { ArtCharDatabase } from "../Database"
+import { DataManager } from "../DataManager"
+import type { IGO, IGOOD, ImportResult } from "../exim"
 
 export class ArtifactDataManager extends DataManager<string, "artifacts", ICachedArtifact, IArtifact>{
   constructor(database: ArtCharDatabase) {
@@ -157,8 +160,8 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
       substats.every((substat, i) =>
         !candidate.substats[i].key || // Candidate doesn't have anything on this slot
         (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-          substat.value >= candidate.substats[i].value)
-      )
+          substat.value >= candidate.substats[i].value),
+      ),
     )
 
     // Strictly upgraded artifact
@@ -170,9 +173,9 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         substats.some((substat, i) => // Has extra rolls
           candidate.substats[i].key ?
             substat.value > candidate.substats[i].value : // Extra roll to existing substat
-            substat.key // Extra roll to new substat
+            substat.key, // Extra roll to new substat
         )
-      )
+      ),
     ).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     // Strictly duplicated artifact
     const duplicated = candidates.filter(candidate =>
@@ -181,7 +184,7 @@ export class ArtifactDataManager extends DataManager<string, "artifacts", ICache
         !substat.key ||  // Empty slot
         candidate.substats.some(candidateSubstat =>
           substat.key === candidateSubstat.key && // Or same slot
-          substat.value === candidateSubstat.value
+          substat.value === candidateSubstat.value,
         ))).sort(candidates => candidates.location === editorArt.location ? -1 : 1)
     return { duplicated, upgraded }
   }
@@ -281,7 +284,7 @@ export function cachedArtifact(flex: IArtifact, id: string): { artifact: ICached
 export function validateArtifact(obj: unknown = {}, allowZeroSub = false): IArtifact | undefined {
   if (!obj || typeof obj !== "object") return
   const { setKey, rarity, slotKey } = obj as IArtifact
-  let { level, mainStatKey, substats, location, lock, } = obj as IArtifact
+  let { level, mainStatKey, substats, location, lock } = obj as IArtifact
 
   if (!allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||

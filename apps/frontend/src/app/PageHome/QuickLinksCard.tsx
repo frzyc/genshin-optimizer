@@ -91,7 +91,7 @@ export default function QuickLinksCard() {
     <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
       {buttons.map((btnProps, i) => {
         const { title, icon, tooltip, color } = btnProps
-        let button;
+        let button
         if ("to" in btnProps)
           button = <Button fullWidth key={i} color={color} component={RouterLink} to={btnProps.to} startIcon={icon}>{title(t)}</Button>
         if ("url" in btnProps)

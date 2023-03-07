@@ -1,15 +1,16 @@
-import { allWeaponKeys, CharacterKey, weaponMaxLevel } from "@genshin-optimizer/consts";
-import { getCharSheet } from "../../Data/Characters";
-import { validateLevelAsc } from "../../Data/LevelData";
-import { getWeaponSheet } from "../../Data/Weapons";
-import { ICachedCharacter } from "../../Types/character";
-import { charKeyToLocCharKey, LocationCharacterKey, allLocationCharacterKeys } from "@genshin-optimizer/consts";
-import { ICachedWeapon, IWeapon } from "../../Types/weapon";
-import { defaultInitialWeapon } from "../../Util/WeaponUtil";
-import { ArtCharDatabase } from "../Database";
-import { DataManager } from "../DataManager";
-import { IGO, IGOOD, ImportResult } from "../exim";
-import { initialCharacter } from "./CharacterData";
+import type { CharacterKey, LocationCharacterKey} from "@genshin-optimizer/consts"
+import { allWeaponKeys, weaponMaxLevel } from "@genshin-optimizer/consts"
+import { getCharSheet } from "../../Data/Characters"
+import { validateLevelAsc } from "../../Data/LevelData"
+import { getWeaponSheet } from "../../Data/Weapons"
+import type { ICachedCharacter } from "../../Types/character"
+import { charKeyToLocCharKey, allLocationCharacterKeys } from "@genshin-optimizer/consts"
+import type { ICachedWeapon, IWeapon } from "../../Types/weapon"
+import { defaultInitialWeapon } from "../../Util/WeaponUtil"
+import type { ArtCharDatabase } from "../Database"
+import { DataManager } from "../DataManager"
+import type { IGO, IGOOD, ImportResult } from "../exim"
+import { initialCharacter } from "./CharacterData"
 
 export class WeaponDataManager extends DataManager<string, "weapons", ICachedWeapon, IWeapon>{
   constructor(database: ArtCharDatabase) {
@@ -39,7 +40,7 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
   }
   validate(obj: unknown): IWeapon | undefined {
     if (typeof obj !== "object") return
-    const { key, level: rawLevel, ascension: rawAscension, } = obj as IWeapon
+    const { key, level: rawLevel, ascension: rawAscension } = obj as IWeapon
     let { refinement, location, lock } = obj as IWeapon
 
     if (!allWeaponKeys.includes(key)) return
@@ -186,20 +187,20 @@ export class WeaponDataManager extends DataManager<string, "weapons", ICachedWea
       key === candidate.key &&
       level >= candidate.level &&
       ascension >= candidate.ascension &&
-      refinement >= candidate.refinement
+      refinement >= candidate.refinement,
     )
 
     // Strictly upgraded weapons
     const upgraded = candidates.filter(candidate =>
       level > candidate.level ||
       ascension > candidate.ascension ||
-      refinement > candidate.refinement
+      refinement > candidate.refinement,
     ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     // Strictly duplicated weapons
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
       ascension === candidate.ascension &&
-      refinement === candidate.refinement
+      refinement === candidate.refinement,
     ).sort(candidates => candidates.location === weapon.location ? -1 : 1)
     return { duplicated, upgraded }
   }

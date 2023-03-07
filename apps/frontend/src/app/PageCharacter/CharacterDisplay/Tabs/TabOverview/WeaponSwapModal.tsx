@@ -1,8 +1,10 @@
-import { allRarityKeys, RarityKey, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import type { RarityKey, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allRarityKeys } from "@genshin-optimizer/consts"
 import { Add } from "@mui/icons-material"
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, Button, CardContent, Divider, Grid, TextField, ToggleButton, Typography } from "@mui/material"
-import { ChangeEvent, Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
+import type { ChangeEvent} from "react"
+import { Suspense, useCallback, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../../../Assets/Assets"
 import CardDark from "../../../../Components/Card/CardDark"
@@ -93,7 +95,7 @@ export default function WeaponSwapModal({ onChangeId, weaponTypeKey, show, onClo
               label={t("page_weapon:weaponName")}
               sx={{ height: "100%" }}
               InputProps={{
-                sx: { height: "100%" }
+                sx: { height: "100%" },
               }}
             />
           </Grid>

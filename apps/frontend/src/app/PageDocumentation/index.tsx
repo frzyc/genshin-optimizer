@@ -1,18 +1,18 @@
-import { allArtifactSetKeys, allLocationCharacterKeys, allWeaponKeys } from "@genshin-optimizer/consts";
-import { ArrowRightAlt } from "@mui/icons-material";
-import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
-import { Suspense, useContext } from "react";
-import ReactGA from 'react-ga4';
-import { useTranslation } from 'react-i18next';
-import { Link, Route, Routes, useMatch } from "react-router-dom";
-import CardDark from "../Components/Card/CardDark";
-import CardLight from "../Components/Card/CardLight";
-import SqBadge from "../Components/SqBadge";
-import { artStatPercent } from "../Data/Artifacts/Artifact";
-import material from "../Data/Materials/Material";
-import { DatabaseContext } from "../Database/Database";
-import useDBMeta from "../ReactHooks/useDBMeta";
-import { charKeyToCharName } from "../Types/consts";
+import { allArtifactSetKeys, allLocationCharacterKeys, allWeaponKeys } from "@genshin-optimizer/consts"
+import { ArrowRightAlt } from "@mui/icons-material"
+import { Box, CardContent, Divider, Grid, Link as MuiLink, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material"
+import { Suspense, useContext } from "react"
+import ReactGA from 'react-ga4'
+import { useTranslation } from 'react-i18next'
+import { Link, Route, Routes, useMatch } from "react-router-dom"
+import CardDark from "../Components/Card/CardDark"
+import CardLight from "../Components/Card/CardLight"
+import SqBadge from "../Components/SqBadge"
+import { artStatPercent } from "../Data/Artifacts/Artifact"
+import material from "../Data/Materials/Material"
+import { DatabaseContext } from "../Database/Database"
+import useDBMeta from "../ReactHooks/useDBMeta"
+import { charKeyToCharName } from "../Types/consts"
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -276,13 +276,13 @@ type LineNumberProps = {
 const LineNumber = styled("textarea")<LineNumberProps>(({ theme, digits = 2 }) => ({
   width: `${digits}em`, overflow: "hidden", userSelect: "none", color: theme.palette.text.secondary, resize: "none", border: "none", whiteSpace: "pre", fontFamily: "monospace", lineHeight: 1,
   "&:disabled": {
-    backgroundColor: "transparent"
-  }
+    backgroundColor: "transparent",
+  },
 }))
 
 const CodeArea = styled("textarea")(({ theme }) => ({
   "&:disabled": {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
   },
   lineHeight: 1,
   width: "100%",
@@ -294,7 +294,7 @@ const CodeArea = styled("textarea")(({ theme }) => ({
   whiteSpace: "pre",
   backgroundColor: "transparent",
   resize: "none",
-  color: theme.palette.info.light
+  color: theme.palette.info.light,
 }))
 function CodeBlock({ text }) {
   const lines = text.split(/\r\n|\r|\n/).length + 1

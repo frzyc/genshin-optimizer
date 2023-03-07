@@ -1,6 +1,7 @@
 import { forEachNodes } from "./internal"
-import { OptNode, precompute, testing } from "./optimization"
-import { AnyNode, ConstantNode, Data, Info } from "./type"
+import type { OptNode} from "./optimization"
+import { precompute, testing } from "./optimization"
+import type { AnyNode, ConstantNode, Data, Info } from "./type"
 import { constant, customRead, data, infoMut, max, min, prod, read, resetData, setReadNodeKeys, sum } from "./utils"
 
 const { constantFold } = testing

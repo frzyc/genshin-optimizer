@@ -1,16 +1,17 @@
-import { allArtifactSlotKeys, ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts";
-import { artifactAsset } from "@genshin-optimizer/g-assets";
-import artifactSheets from ".";
-import ImgIcon from "../../Components/Image/ImgIcon";
-import SqBadge from "../../Components/SqBadge";
-import { Translate } from "../../Components/Translate";
-import { input } from "../../Formula";
-import { Data } from "../../Formula/type";
-import { UIData } from "../../Formula/uiData";
-import { ArtifactRarity, SetNum, } from "../../Types/consts";
-import { IDocumentHeader } from "../../Types/sheet";
-import { st } from "../SheetUtil";
-import { IArtifactSheet, SetEffectEntry } from "./IArtifactSheet";
+import type { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts"
+import { allArtifactSlotKeys } from "@genshin-optimizer/consts"
+import { artifactAsset } from "@genshin-optimizer/g-assets"
+import artifactSheets from "."
+import ImgIcon from "../../Components/Image/ImgIcon"
+import SqBadge from "../../Components/SqBadge"
+import { Translate } from "../../Components/Translate"
+import { input } from "../../Formula"
+import type { Data } from "../../Formula/type"
+import type { UIData } from "../../Formula/uiData"
+import type { ArtifactRarity, SetNum } from "../../Types/consts"
+import type { IDocumentHeader } from "../../Types/sheet"
+import { st } from "../SheetUtil"
+import type { IArtifactSheet, SetEffectEntry } from "./IArtifactSheet"
 
 export class ArtifactSheet {
   readonly sheet: IArtifactSheet
@@ -56,7 +57,7 @@ export const setHeaderTemplate = (setKey: ArtifactSetKey): ((setNum: SetNum) => 
     title: tr("setName"),
     icon: <ImgIcon size={2} src={artifactDefIcon(setKey)} />,
     action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
-    description: tr(`setEffects.${setNum}`)
+    description: tr(`setEffects.${setNum}`),
   })
 }
 export function artifactDefIcon(setKey: ArtifactSetKey) {

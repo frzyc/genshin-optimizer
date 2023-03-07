@@ -1,5 +1,6 @@
-import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData"
-import { allSlotKeys, ArtifactSetKey, SlotKey } from "../Types/consts"
+import type { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData"
+import type { ArtifactSetKey, SlotKey } from "../Types/consts"
+import { allSlotKeys } from "../Types/consts"
 import { objectKeyMap } from "../Util/Util"
 import { artSetPerm, exclusionToAllowed } from "./common"
 

@@ -1,12 +1,12 @@
-import { CharacterData } from '@genshin-optimizer/pipeline'
+import type { CharacterData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../Formula'
 import { constant, equal, equalStr, greaterEq, infoMut, lookup, percent, prod, subscript } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import type { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
-import { ICharacterSheet } from '../ICharacterSheet.d'
+import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import data_gen_src from './data_gen.json'
 import skillParam_gen from './skillParam_gen.json'
@@ -25,7 +25,7 @@ const dm = {
       skillParam_gen.auto[1], // 2
       skillParam_gen.auto[2], // 3
       skillParam_gen.auto[3], // 4
-    ]
+    ],
   },
   charged: {
     spin_dmg: skillParam_gen.auto[4],
@@ -69,7 +69,7 @@ const dm = {
   },
   constellation6: {
     burst_dmg_: skillParam_gen.constellation6[0],
-  }
+  },
 } as const
 
 const [condAsc4Path, condAsc4] = cond(key, "asc4")
@@ -97,14 +97,14 @@ const dmgFormulas = {
     dmg: greaterEq(input.asc, 4, skillDmg),
   },
   constellation1: {
-    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(percent(dm.constellation1.dmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } }))
-  }
+    dmg: greaterEq(input.constellation, 1, customDmgNode(prod(percent(dm.constellation1.dmg), input.total.atk), "elemental", { hit: { ele: constant(elementKey) } })),
+  },
 }
 
 const nodeAsc4 = greaterEq(input.asc, 4,
   equal(condAsc4, "hit",
-    -0.10
-  )
+    -0.10,
+  ),
 )
 const activeInArea = equal("activeInArea", condSkill, equal(input.activeCharKey, target.charKey, 1))
 
@@ -113,7 +113,7 @@ const nodeAsc1 = equal(activeInArea, 1, nodeAsc1Disp)
 
 const correctWep =
   lookup(target.weaponType,
-    { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0));
+    { "sword": constant(1), "claymore": constant(1), "polearm": constant(1) }, constant(0))
 
 const activeInAreaInfusion = equalStr(correctWep, 1, equalStr(activeInArea, 1, elementKey))
 
@@ -131,7 +131,7 @@ export const data = dataObjForCharacterSheet(key, elementKey, "liyue", data_gen,
   teamBuff: {
     premod: {
       cryo_enemyRes_: nodeAsc4,
-      atkSPD_: nodeAsc1
+      atkSPD_: nodeAsc1,
     },
     infusion: {
       team: activeInAreaInfusion,
@@ -154,7 +154,7 @@ const sheet: ICharacterSheet = {
     }, {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], { name: ct.chg(`auto.skillParams.${i}`) }),
-      }))
+      })),
     }, {
       text: ct.chg("auto.fields.charged"),
     }, {
@@ -165,12 +165,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("auto.skillParams.6"),
         value: dm.charged.stamina,
-        unit: '/s'
+        unit: '/s',
       }, {
         text: ct.chg("auto.skillParams.7"),
         value: dm.charged.duration,
-        unit: 's'
-      }]
+        unit: 's',
+      }],
     }, {
       text: ct.chg(`auto.fields.plunging`),
     }, {
@@ -180,7 +180,7 @@ const sheet: ICharacterSheet = {
         node: infoMut(dmgFormulas.plunging.low, { name: stg("plunging.low") }),
       }, {
         node: infoMut(dmgFormulas.plunging.high, { name: stg("plunging.high") }),
-      }]
+      }],
     }]),
 
     skill: ct.talentTem("skill", [{
@@ -189,12 +189,12 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("skill.skillParams.2"),
         value: dm.skill.fieldDuration,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("skill.skillParams.3"),
         value: dm.skill.cd,
-        unit: "s"
-      }]
+        unit: "s",
+      }],
     }, ct.condTem("skill", {
       teamBuff: true,
       value: condSkill,
@@ -204,17 +204,17 @@ const sheet: ICharacterSheet = {
         activeInArea: {
           fields: [{
             text: ct.ch("infusion"),
-            variant: elementKey
+            variant: elementKey,
           }, {
             text: ct.chg("skill.skillParams.1"),
             value: (data) => data.get(subscript(input.total.skillIndex, dm.skill.infusionDuration)).value,
             unit: "s",
-            fixed: 1
+            fixed: 1,
           }, {
-            node: infoMut(nodeAsc1Disp, KeyMap.info("atkSPD_"))
-          }]
+            node: infoMut(nodeAsc1Disp, KeyMap.info("atkSPD_")),
+          }],
         },
-      }
+      },
     })]),
 
     burst: ct.talentTem("burst", [{
@@ -223,21 +223,21 @@ const sheet: ICharacterSheet = {
       }, {
         text: ct.chg("burst.skillParams.1"),
         value: dm.burst.cd,
-        unit: "s"
+        unit: "s",
       }, {
         text: ct.chg("burst.skillParams.2"),
         value: dm.burst.enerCost,
       }, {
         text: ct.ch("blades"),
-        value: data => data.get(input.constellation).value < 6 ? 3 : 4
-      }]
+        value: data => data.get(input.constellation).value < 6 ? 3 : 4,
+      }],
     }]),
 
     passive1: ct.talentTem("passive1"),
     passive2: ct.talentTem("passive2", [ct.fieldsTem("passive2", {
       fields: [{
         node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch("passive2") }),
-      }]
+      }],
     }), ct.condTem("passive2", {
       teamBuff: true,
       value: condAsc4,
@@ -246,16 +246,16 @@ const sheet: ICharacterSheet = {
       states: {
         hit: {
           fields: [{
-            node: nodeAsc4
-          }]
+            node: nodeAsc4,
+          }],
         },
-      }
+      },
     })]),
     passive3: ct.talentTem("passive3"),
     constellation1: ct.talentTem("constellation1", [ct.fieldsTem("constellation1", {
       fields: [{
-        node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.ch("constellation1") })
-      }]
+        node: infoMut(dmgFormulas.constellation1.dmg, { name: ct.ch("constellation1") }),
+      }],
     })]),
     constellation2: ct.talentTem("constellation2"),
     constellation3: ct.talentTem("constellation3", [{ fields: [{ node: nodeC3 }] }]),
@@ -268,12 +268,12 @@ const sheet: ICharacterSheet = {
       states: {
         on: {
           fields: [{
-            node: nodeC6
-          }]
-        }
-      }
+            node: nodeC6,
+          }],
+        },
+      },
     })]),
   },
 }
 
-export default new CharacterSheet(sheet, data);
+export default new CharacterSheet(sheet, data)

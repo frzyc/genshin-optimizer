@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
 import { getArtSheet } from "../../Data/Artifacts"
-import { ArtifactSetKey, SetNum } from "../../Types/consts"
+import type { ArtifactSetKey, SetNum } from "../../Types/consts"
 import DocumentDisplay from "../DocumentDisplay"
 
 type Data = {

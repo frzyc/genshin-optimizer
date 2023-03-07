@@ -1,7 +1,7 @@
-import i18n from 'i18next';
-import Backend from 'i18next-http-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import i18n from 'i18next'
+import Backend from 'i18next-http-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
 
 // Probably a way to auto-populate this.
 export const languageCodeList = [
@@ -19,8 +19,8 @@ export const languageCodeList = [
   "ru",
   "th",
   "tr",
-  "vi"
-];
+  "vi",
+]
 
 /**
  * @see: https://www.i18next.com/translation-function/essentials
@@ -64,7 +64,7 @@ i18n
     },
     interpolation: {
       escapeValue: false,//react does interlopation already
-    }
-  });
+    },
+  })
 
-export default i18n;
+export default i18n

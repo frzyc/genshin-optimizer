@@ -1,22 +1,26 @@
-import { ExpandMore } from '@mui/icons-material';
-import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Divider, Skeleton, Typography } from '@mui/material';
-import { MutableRefObject, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import AmpReactionModeText from '../../Components/AmpReactionModeText';
-import CardDark from '../../Components/Card/CardDark';
-import CardHeaderCustom from '../../Components/Card/CardHeaderCustom';
-import CardLight from '../../Components/Card/CardLight';
-import CloseButton from '../../Components/CloseButton';
-import ColorText from '../../Components/ColoredText';
-import ImgIcon from '../../Components/Image/ImgIcon';
-import ModalWrapper from "../../Components/ModalWrapper";
-import SqBadge from '../../Components/SqBadge';
-import { DataContext } from '../../Context/DataContext';
-import { FormulaDataContext } from '../../Context/FormulaDataContext';
-import { DatabaseContext } from '../../Database/Database';
-import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
-import { DisplaySub, Variant } from '../../Formula/type';
-import { NodeDisplay, nodeVStr } from '../../Formula/uiData';
-import { allAmpReactions, AmpReactionKey } from '../../Types/consts';
+import { ExpandMore } from '@mui/icons-material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Divider, Skeleton, Typography } from '@mui/material'
+import type { MutableRefObject} from 'react'
+import { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
+import AmpReactionModeText from '../../Components/AmpReactionModeText'
+import CardDark from '../../Components/Card/CardDark'
+import CardHeaderCustom from '../../Components/Card/CardHeaderCustom'
+import CardLight from '../../Components/Card/CardLight'
+import CloseButton from '../../Components/CloseButton'
+import ColorText from '../../Components/ColoredText'
+import ImgIcon from '../../Components/Image/ImgIcon'
+import ModalWrapper from "../../Components/ModalWrapper"
+import SqBadge from '../../Components/SqBadge'
+import { DataContext } from '../../Context/DataContext'
+import { FormulaDataContext } from '../../Context/FormulaDataContext'
+import { DatabaseContext } from '../../Database/Database'
+import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
+import type { DisplaySub} from '../../Formula/type'
+import { Variant } from '../../Formula/type'
+import type { NodeDisplay} from '../../Formula/uiData'
+import { nodeVStr } from '../../Formula/uiData'
+import type { AmpReactionKey } from '../../Types/consts'
+import { allAmpReactions } from '../../Types/consts'
 
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
@@ -61,7 +65,7 @@ function FormulaCalc({ sectionKey, displayNs }: { displayNs: DisplaySub<NodeDisp
 }
 function FormulaAccordian({ node }: { node: NodeDisplay }) {
   const { node: contextNode } = useContext(FormulaDataContext)
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false)
   const handleChange = useCallback((e: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded), [])
   const scrollRef = useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement | null>
 

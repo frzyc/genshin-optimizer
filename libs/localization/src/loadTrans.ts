@@ -14,7 +14,7 @@ fs.readdir(transDir, (err, files) => {
       const fileDir = `${localeDir}${lang}`
       const fileName = `${fileDir}/${ns}.json`
       if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
-      fs.writeFile(fileName, content, () => logging && console.log("Generated JSON at", fileName));
+      fs.writeFile(fileName, content, () => logging && console.log("Generated JSON at", fileName))
     })
-  });
-});
+  })
+})

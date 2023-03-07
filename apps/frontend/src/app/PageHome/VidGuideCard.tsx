@@ -1,7 +1,7 @@
-import { YouTube } from "@mui/icons-material";
-import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
-import CardDark from "../Components/Card/CardDark";
+import { YouTube } from "@mui/icons-material"
+import { Box, CardContent, CardHeader, Divider, Grid, Link, Typography } from "@mui/material"
+import { useTranslation } from "react-i18next"
+import CardDark from "../Components/Card/CardDark"
 
 const embeds = JSON.parse(process.env.NX_URLS_GUIDES ?? "[]") as string[]
 
@@ -28,7 +28,7 @@ export default function VidGuideCard() {
               left: 0,
               width: "100%",
               height: "100%",
-            }
+            },
           }}>
             <iframe width="560" height="349" title="Genshin Optimizer Guide" src={`https://www.youtube-nocookie.com/embed/${embed}`} frameBorder={0} allowFullScreen />
           </Box>

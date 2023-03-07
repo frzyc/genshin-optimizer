@@ -1,4 +1,4 @@
-import { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts"
+import type { ArtifactSetKey, ArtifactSlotKey } from "@genshin-optimizer/consts"
 import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
 import ArtifactSetTooltip from "../../../../../Components/Artifact/ArtifactSetTooltip"
@@ -6,7 +6,7 @@ import SlotIcon from "../../../../../Components/Artifact/SlotIcon"
 import SqBadge from "../../../../../Components/SqBadge"
 import { getArtSheet } from "../../../../../Data/Artifacts"
 import { iconInlineProps } from "../../../../../SVGIcons"
-import { ICachedArtifact } from "../../../../../Types/artifact"
+import type { ICachedArtifact } from "../../../../../Types/artifact"
 
 type ArtifactSetBadgesProps = {
   artifacts: ICachedArtifact[],
@@ -19,12 +19,12 @@ export function ArtifactSetBadges({ artifacts, currentlyEquipped = false }: Arti
       acc[curr.setKey] ? acc[curr.setKey].push(curr.slotKey) : acc[curr.setKey] = [curr.slotKey]
       return acc
     }, {}),
-    [artifacts]
+    [artifacts],
   )
   return <>{Object.entries(setToSlots)
     .sort(([_k1, slotarr1], [_k2, slotarr2]) => slotarr2.length - slotarr1.length)
     .map(([key, slotarr]) =>
-      <ArtifactSetBadge key={key} setKey={key} currentlyEquipped={currentlyEquipped} slotarr={slotarr} />
+      <ArtifactSetBadge key={key} setKey={key} currentlyEquipped={currentlyEquipped} slotarr={slotarr} />,
     )
   }</>
 

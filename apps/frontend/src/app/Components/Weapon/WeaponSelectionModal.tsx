@@ -1,11 +1,13 @@
-import { allRarityKeys, allWeaponKeys, allWeaponTypeKeys, WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import type { WeaponKey, WeaponTypeKey } from "@genshin-optimizer/consts"
+import { allRarityKeys, allWeaponKeys, allWeaponTypeKeys } from "@genshin-optimizer/consts"
 import { weaponAsset } from "@genshin-optimizer/g-assets"
 import { Box, CardActionArea, CardContent, Divider, Grid, TextField, Typography } from "@mui/material"
-import { ChangeEvent, useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
+import type { ChangeEvent} from "react"
+import { useContext, useDeferredValue, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Assets from "../../Assets/Assets"
 import { getWeaponSheet } from "../../Data/Weapons"
-import WeaponSheet from "../../Data/Weapons/WeaponSheet"
+import type WeaponSheet from "../../Data/Weapons/WeaponSheet"
 import { DatabaseContext } from "../../Database/Database"
 import { catTotal } from "../../Util/totalUtils"
 import CardDark from "../Card/CardDark"
@@ -81,7 +83,7 @@ export default function WeaponSelectionModal({ show, ascension = 0, onHide, onSe
               label={t("weaponName")}
               sx={{ height: "100%" }}
               InputProps={{
-                sx: { height: "100%" }
+                sx: { height: "100%" },
               }}
             />
           </Grid>

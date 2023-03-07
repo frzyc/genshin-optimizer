@@ -1,11 +1,11 @@
 import { input } from '../../../Formula'
-import { Data, Info } from '../../../Formula/type'
+import type { Data, Info } from '../../../Formula/type'
 import { equal, greaterEq, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = "Berserker"
@@ -38,11 +38,11 @@ const sheet: IArtifactSheet = {
           70: {
             fields: [{
               node: set4,
-            }]
-          }
-        }
-      }]
-    }
-  }
+            }],
+          },
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

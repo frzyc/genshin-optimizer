@@ -1,11 +1,11 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = "Thundersoother"
 const setHeader = setHeaderTemplate(key)
@@ -18,7 +18,7 @@ const set4 = greaterEq(input.artSet.Thundersoother, 4, equal("on", condState, pe
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     electro_res_: set2,
-    all_dmg_: set4
+    all_dmg_: set4,
   },
 })
 
@@ -36,11 +36,11 @@ const sheet: IArtifactSheet = {
           on: {
             fields: [{
               node: set4,
-            }]
+            }],
           },
-        }
-      }]
-    }
-  }
+        },
+      }],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)

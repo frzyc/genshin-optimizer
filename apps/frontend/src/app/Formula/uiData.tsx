@@ -1,13 +1,15 @@
-import { allArtifactSetKeys, allWeaponKeys, ArtifactSetKey, WeaponKey } from "@genshin-optimizer/consts"
+import type { ArtifactSetKey, WeaponKey } from "@genshin-optimizer/consts"
+import { allArtifactSetKeys, allWeaponKeys } from "@genshin-optimizer/consts"
 import { crawlObject } from "@genshin-optimizer/util"
 import { uiInput } from "."
 import ColorText from "../Components/ColoredText"
 import { Translate } from "../Components/Translate"
 import KeyMap, { valueString } from "../KeyMap"
-import { allCharacterSheetKeys, CharacterSheetKey } from "../Types/consts"
+import type { CharacterSheetKey } from "../Types/consts"
+import { allCharacterSheetKeys } from "../Types/consts"
 import { assertUnreachable, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
+import type { ComputeNode, Data, DataNode, DisplaySub, Info, LookupNode, MatchNode, NumNode, ReadNode, StrNode, SubscriptNode, ThresholdNode, UIInput } from "./type"
 const shouldWrap = true
 
 export function nodeVStr(n: NodeDisplay) {
@@ -323,7 +325,7 @@ function accumulateInfo<V>(operands: ContextNodeDisplay<V>[]): Info {
     }
   }
   const variants = new Set(operands.flatMap(x => [x.info.variant!, x.info.subVariant!]))
-  variants.delete(undefined!);
+  variants.delete(undefined!)
   const sorted = [...variants].sort((a, b) => score(a) - score(b)), result: Info = {}
   if (sorted.length) result.variant = sorted.pop()
   if (sorted.length) result.subVariant = sorted.pop()
@@ -337,7 +339,7 @@ function computeNodeDisplay<V>(node: ContextNodeDisplay<V>): NodeDisplay<V> {
     info,
     value,
     isEmpty: empty,
-    formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
+    formula, formulas: [...(assignment ? [assignment] : []), ...dependencies],
   }
 }
 
@@ -401,20 +403,20 @@ const illformed: ContextNodeDisplay = {
   value: NaN,
   empty: false,
   dependencies: new Set(),
-  mayNeedWrapping: false
+  mayNeedWrapping: false,
 }
 const illformedStr: ContextNodeDisplay<string | undefined> = {
   info: { pivot: true },
   value: undefined,
   empty: false,
   dependencies: new Set(),
-  mayNeedWrapping: false
+  mayNeedWrapping: false,
 }
 function makeEmpty(emptyValue: number): ContextNodeDisplay<number>
 function makeEmpty(emptyValue: string | undefined): ContextNodeDisplay<string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined>
 function makeEmpty(emptyValue: number | string | undefined): ContextNodeDisplay<number | string | undefined> {
   return {
-    info: {}, value: emptyValue, empty: true, dependencies: new Set(), mayNeedWrapping: false
+    info: {}, value: emptyValue, empty: true, dependencies: new Set(), mayNeedWrapping: false,
   }
 }

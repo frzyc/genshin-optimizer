@@ -1,19 +1,20 @@
-import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
-import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material";
-import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material";
-import { useCallback, useContext, useState } from 'react';
-import { useTranslation } from "react-i18next";
-import { CharacterContext } from "../Context/CharacterContext";
-import { DataContext } from "../Context/DataContext";
-import { uiInput as input } from "../Formula";
-import { nodeVStr } from "../Formula/uiData";
-import KeyMap from '../KeyMap';
-import { ElementIcon } from "../KeyMap/StatIcon";
-import { iconInlineProps } from "../SVGIcons";
-import CardLight from "./Card/CardLight";
-import ColorText from "./ColoredText";
-import ExpandButton from "./ExpandButton";
-import StatInput from "./StatInput";
+import type { ElementWithPhyKey } from "@genshin-optimizer/consts"
+import { allElementWithPhyKeys } from "@genshin-optimizer/consts"
+import { CheckBox, CheckBoxOutlineBlank, ExpandMore, Replay } from "@mui/icons-material"
+import { Box, Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/material"
+import { useCallback, useContext, useState } from 'react'
+import { useTranslation } from "react-i18next"
+import { CharacterContext } from "../Context/CharacterContext"
+import { DataContext } from "../Context/DataContext"
+import { uiInput as input } from "../Formula"
+import { nodeVStr } from "../Formula/uiData"
+import KeyMap from '../KeyMap'
+import { ElementIcon } from "../KeyMap/StatIcon"
+import { iconInlineProps } from "../SVGIcons"
+import CardLight from "./Card/CardLight"
+import ColorText from "./ColoredText"
+import ExpandButton from "./ExpandButton"
+import StatInput from "./StatInput"
 
 export function EnemyExpandCard() {
   const { t } = useTranslation("ui")

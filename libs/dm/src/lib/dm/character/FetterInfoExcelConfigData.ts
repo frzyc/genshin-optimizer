@@ -1,4 +1,4 @@
-import { CharacterId } from "@genshin-optimizer/pipeline"
+import type { CharacterId } from "@genshin-optimizer/pipeline"
 import { readDMJSON } from "../../util"
 
 type FetterInfoExcelConfigData = {

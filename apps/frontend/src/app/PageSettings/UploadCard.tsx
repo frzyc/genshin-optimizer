@@ -9,16 +9,16 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { SandboxStorage } from '../Database/DBStorage'
-import { ImportResult, ImportResultCounter } from '../Database/exim'
+import type { ImportResult, ImportResultCounter } from '../Database/exim'
 import { iconInlineProps } from '../SVGIcons'
 const InvisInput = styled('input')({
   display: 'none',
-});
+})
 
 export default function UploadCard({ index, onReplace }: { index: number, onReplace: () => void }) {
   const { databases } = useContext(DatabaseContext)
   const database = databases[index]
-  const { t } = useTranslation("settings");
+  const { t } = useTranslation("settings")
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
   const [errorMsg, setErrorMsg] = useState("") // TODO localize error msg

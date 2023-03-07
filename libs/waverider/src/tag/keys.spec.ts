@@ -5,7 +5,7 @@ describe('TagMapKeys', () => {
   describe('compileTagMapKeys', () => {
     it('can encode 32 bits in one word', () => {
       const keys = compileTagMapKeys([...Array(8)].map((_, i) =>
-        ({ category: `cat${i}`, values: [...Array(15)].map((_, i) => `val${i}`) })
+        ({ category: `cat${i}`, values: [...Array(15)].map((_, i) => `val${i}`) }),
       ))
       // Each of the eights categories requires 4 bit, requiring exactly 32-bit in total
       expect(keys.tagLen).toEqual(1)
@@ -13,8 +13,8 @@ describe('TagMapKeys', () => {
     describe('can encode multiple words', () => {
       test('automatically', () => {
         const keys = compileTagMapKeys([...[...Array(7)].map((_, i) =>
-          ({ category: `cat${i}`, values: [...Array(8)].map((_, i) => `val${i}`) })
-        ), ({ category: `cat8`, values: [...Array(16)].map((_, i) => `val${i}`) })
+          ({ category: `cat${i}`, values: [...Array(8)].map((_, i) => `val${i}`) }),
+        ), ({ category: `cat8`, values: [...Array(16)].map((_, i) => `val${i}`) }),
         ])
         // Each of the first seven categories requires 4 bit, and the last category requires 5 bits
         expect(keys.tagLen).toEqual(2)
