@@ -99,7 +99,8 @@
       "options": {
         "jestConfig": "apps/frontend/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["^build", "^pipeline"]
     }
   },
   "tags": [],
