@@ -4,8 +4,5 @@
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "typescript.preferences.importModuleSpecifier": "project-relative",
-  "eslint.rules.customizations": [
-    { "rule": "*", "severity": "warn" }
-  ]
+  "typescript.preferences.importModuleSpecifier": "project-relative"
 }

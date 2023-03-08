@@ -32,9 +32,9 @@ module.exports = {
       "rules": {
         "@typescript-eslint/consistent-type-exports": "warn",
         "@typescript-eslint/consistent-type-imports": "warn",
-        "@typescript-eslint/explicit-module-boundary-types": ["warn", { "allowArgumentsExplicitlyTypedAsAny": true }],
+        // "@typescript-eslint/explicit-module-boundary-types": ["warn", { "allowArgumentsExplicitlyTypedAsAny": true }],
         "@typescript-eslint/no-duplicate-imports": "warn",
-        // "@typescript-eslint/no-unnecessary-condition": "warn", // this will require a lot of fixes to typings
+        // "@typescript-eslint/no-unnecessary-condition": "warn",
 
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
@@ -55,12 +55,7 @@ module.exports = {
     },
     {
       "files": ["*"],
-      "rules": {
-        "comma-dangle": ["warn", "always-multiline"],
-        "max-len": ["warn", { "code": 120, "ignorePattern": "^import " }],
-        "semi": ["warn", "never", { "beforeStatementContinuationChars": "never" }],
-        "linebreak-style": ["warn", (require("os").EOL === "\r\n" ? "windows" : "unix")]
-      }
+      "rules": {}
     }
   ]
 }

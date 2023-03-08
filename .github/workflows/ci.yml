@@ -1,12 +1,12 @@
-name: Lint and Test
+name: CI
 
 on:
   push:
     branches:
-    - master
+      - master
   pull_request:
     branches:
-    - master
+      - master
 
 jobs:
   lint:
@@ -45,3 +45,21 @@ jobs:
       - name: Run Tests
         run: |
           yarn run nx run-many --target=test
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache --check-cache
+      - name: Run Tests
+        run: |
+          yarn run nx format:check
