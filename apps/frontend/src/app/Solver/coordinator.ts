@@ -60,7 +60,7 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
     }
   }
 
-  onError(e: ErrorEvent) {
+  onError(e: { message: string }) {
     this.cancel(new Error(`Worker Error: ${e.message}`))
   }
   onMessage(msg: Command | Response, worker: Worker) {

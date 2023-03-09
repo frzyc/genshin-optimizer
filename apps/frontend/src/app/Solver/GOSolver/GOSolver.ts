@@ -18,6 +18,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         case 'interim': this.interim(r, w); break
         case 'finalize': this.finalizedResults.push(r); break
         case 'count': this.status.total = r.count; break
+        case 'err': this.onError(r); break
       }
     })
     const { exclusion, topN } = problem

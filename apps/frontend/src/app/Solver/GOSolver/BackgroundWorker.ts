@@ -9,7 +9,7 @@ declare function postMessage(command: WorkerCommand | WorkerResult): void
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
 
-onmessage = async (e: MessageEvent<WorkerCommand>) => {
+async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
   const { data } = e, { command } = data
   switch (command) {
     case "split":
@@ -54,6 +54,13 @@ onmessage = async (e: MessageEvent<WorkerCommand>) => {
     default: assertUnreachable(command)
   }
   postMessage({ resultType: 'done' })
+}
+onmessage = async (e: MessageEvent<WorkerCommand>) => {
+  try {
+    await handleEvent(e)
+  } catch (e) {
+    postMessage({ resultType: 'err', message: (e as any).message })
+  }
 }
 
 export interface SplitWorker {
