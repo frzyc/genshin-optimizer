@@ -1,12 +1,10 @@
 import { Interim, Setup } from "..";
-import { customMapFormula, forEachNodes } from "../../Formula/internal";
-import { allOperations, OptNode } from "../../Formula/optimization";
-import { ConstantNode } from "../../Formula/type";
-import { prod, threshold } from "../../Formula/utils";
-import { SlotKey } from "../../Types/consts";
-import { assertUnreachable, objectKeyValueMap, objectMap } from "../../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot, computeFullArtRange, computeNodeRange, countBuilds, DynStat, filterArts, MinMax, pruneAll, RequestFilter } from "../common";
+import { OptNode } from "../../Formula/optimization";
+import { ArtifactSlotKey } from "@genshin-optimizer/consts";
+import { objectKeyValueMap, objectMap } from "../../Util/Util";
+import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, pruneAll, RequestFilter } from "../common";
 import type { SplitWorker } from "./BackgroundWorker";
+import { linearUB } from "./linearUB";
 
 type Approximation = {
   base: number,
@@ -19,7 +17,7 @@ type Filter = {
    * The contribution of each artifact to the optimization target. The (over)estimated
    * optimization target value is the sum of contributions of all artifacts in the build.
    */
-  approxs: Approximation[], maxConts: Record<SlotKey, number>[]
+  approxs: Approximation[], maxConts: Record<ArtifactSlotKey, number>[]
   /** How many times has this filter been splitted */
   age: number
   /** Total number of builds in this filter */
@@ -52,7 +50,7 @@ export class BNBSplitWorker implements SplitWorker {
     this.topN = topN
 
     // make sure we can approximate it
-    linearUpperBound(this.nodes, arts)
+    linearUB(this.nodes, arts)
   }
 
   addFilter(filter: RequestFilter): void {
@@ -115,8 +113,8 @@ export class BNBSplitWorker implements SplitWorker {
       }
     })
     const remaining = Object.keys(splitted), { filters } = this
-    const current: StrictDict<SlotKey, ArtifactBuildData[]> = {} as any
-    const currentCont: StrictDict<SlotKey, number[]> = {} as any
+    const current: StrictDict<ArtifactSlotKey, ArtifactBuildData[]> = {} as any
+    const currentCont: StrictDict<ArtifactSlotKey, number[]> = {} as any
     function partialSplit(count: number) {
       if (!remaining.length) {
         const maxConts = approxs.map((_, i) => objectMap(currentCont, val => val[i]))
@@ -184,7 +182,7 @@ function maxContribution(arts: ArtifactBuildData[], approximation: Approximation
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
 function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[] {
-  return linearUpperBound(nodes, arts).map(weight => ({
+  return linearUB(nodes, arts).map(weight => ({
     base: dot(arts.base, weight, weight.$c),
     conts: objectKeyValueMap(Object.values(arts.values).flat(),
       data => [data.id, dot(data.values, weight, 0)])
@@ -192,154 +190,4 @@ function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[]
 }
 function dot(values: DynStat, lin: DynStat, c: number): number {
   return Object.entries(values).reduce((accu, [k, v]) => accu + (lin[k] ?? 0) * v, c)
-}
-
-function weightedSum(...entries: readonly (readonly [number, Linear])[]): Linear
-function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynStat
-function weightedSum(...entries: readonly (readonly [number, DynStat])[]): DynStat {
-  const result = {}
-  for (const [weight, entry] of entries)
-    for (const [k, v] of Object.entries(entry))
-      result[k] = (result[k] ?? 0) + weight * v
-  return result
-}
-export type Linear = DynStat & { $c: number }
-/** Compute a linear upper bound of `nodes` */
-export function linearUpperBound(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
-  const cents = weightedSum([1, arts.base], ...Object.values(arts.values).map(arts =>
-    [1 / arts.length, weightedSum(...arts.map(art => [1, art.values] as const))] as const))
-  const getCent = (lin: Linear) => dot(cents, lin, lin.$c)
-
-  const minMaxes = new Map<OptNode, MinMax>()
-  forEachNodes(nodes, f => {
-    const { operation } = f
-    if (operation === "mul") minMaxes.set(f, { min: NaN, max: NaN })
-    switch (operation) {
-      case "mul": case "min": case "max": case "threshold": case "res": case "sum_frac":
-        f.operands.forEach(op => minMaxes.set(op, { min: NaN, max: NaN })); break
-    }
-  }, _ => _)
-  const nodeRanges = computeNodeRange([...minMaxes.keys()], computeFullArtRange(arts))
-  for (const [node, minMax] of nodeRanges.entries()) minMaxes.set(node, minMax)
-
-  function slopePoint(slope: number, x0: number, y0: number, lin: Linear): Linear {
-    return weightedSum([1, { $c: y0 - slope * x0 }], [slope, lin])
-  }
-  function interpolate(x0: number, y0: number, x1: number, y1: number, lin: Linear, upper: boolean): Linear {
-    if (Math.abs(x0 - x1) < 1e-10)
-      return { $c: upper ? Math.max(y0, y1) : Math.min(y0, y1) }
-    return slopePoint((y1 - y0) / (x1 - x0), x0, y0, lin)
-  }
-
-  const upper = "u", lower = "l", outward = "o"
-  type Context = typeof upper | typeof lower | typeof outward
-  return customMapFormula<Context, Linear, OptNode>(nodes, upper, (f, context, _map) => {
-    const { operation } = f
-    const map: (op: OptNode, c?: Context) => Linear = (op, c = context) => _map(op, c)
-    const oppositeContext = context === upper ? lower : upper
-
-    if (context === outward) {
-      const { min, max } = minMaxes.get(f)!
-      if (min < 0 && max > 0)
-        // TODO: We can bypass this restriction by converting `f`
-        // to `min(f, 0)` or `max(f, 0)` as appropriate
-        throw new PolyError("Zero-crossing", operation)
-      return map(f, max <= 0 ? lower : upper)
-    }
-
-    switch (operation) {
-      case "const": return { $c: f.value }
-      case "read": return { $c: 0, [f.path[1]]: 1 }
-      case "add": return weightedSum(...f.operands.map(op => [1, map(op)] as const))
-      case "min": case "max": {
-        const op = allOperations[operation]
-        const xs = f.operands.filter(op => op.operation !== "const"), [xOp] = xs
-        if (xs.length !== 1) throw new PolyError("Multivariate", operation)
-
-        const x = map(xOp), c = op(f.operands.filter(op => op.operation === "const")
-          .map(c => (c as ConstantNode<number>).value))
-        if ((operation === "max" && context === lower) || (operation === "min" && context === upper))
-          return x
-        const { min, max } = minMaxes.get(xOp)!, yMin = op([min, c]), yMax = op([max, c])
-        return interpolate(min, yMin, max, yMax, x, context === upper)
-      }
-      case "res": {
-        if (context !== upper) throw new PolyError("Unsupported direction", operation)
-        const op = allOperations[operation]
-        const [xOp] = f.operands, { min, max } = minMaxes.get(xOp)!
-        const x = map(xOp, oppositeContext)
-        // Linear region 1 - base/2 or concave region with peak at base = 0
-        if (min < 0 && max < 1.75) return weightedSum([1, { $c: 1 }], [-0.5, x])
-        // Clamp `min` to guarantee upper bound
-        else return interpolate(min, op([min]), max, op([max]), x, context === upper)
-      }
-      case "sum_frac": {
-        if (context !== upper) throw new PolyError("Unsupported direction", operation)
-        const [xOp, cOp] = f.operands
-        if (cOp.operation !== "const") throw new PolyError("Non-constant node", operation)
-        const x = map(xOp), c = cOp.value, { min, max } = minMaxes.get(xOp)!
-        const loc = Math.sqrt((min + c) * (max + c))
-        if (min <= -c) throw new PolyError("Unsupported pattern", operation)
-        return slopePoint(c / (c + loc) / (c + loc), loc, loc / (loc + c), x)
-      }
-      case "threshold": {
-        const [vOp, tOp, pOp, fOp] = f.operands
-        if (fOp.operation !== "const" || tOp.operation !== "const")
-          throw new PolyError("Non-constant node", operation)
-        if (pOp.operation !== "const") {
-          if (fOp.value !== 0) throw new PolyError("Unsupported pattern", operation)
-
-          const threshOp = threshold(vOp, tOp, 1, fOp), mulOp = prod(threshOp, pOp)
-          // Populate `minMaxes` to ensure consistency
-          const { min, max } = minMaxes.get(pOp)!
-          minMaxes.set(threshOp, { min: 0, max: 1 })
-          minMaxes.set(mulOp, { min: Math.min(min, 0), max: Math.max(max, 0) })
-          return map(mulOp)
-        }
-        const { min, max } = minMaxes.get(vOp)!
-        const thresh = tOp.value, pass = pOp.value, fail = fOp.value
-        const isFirstHalf = (pass > fail) === (context === upper)
-
-        const v = map(vOp, pass > fail ? context : oppositeContext)
-        const yThresh = isFirstHalf ? pass : fail
-        const slope = (pass - fail) / (isFirstHalf ? (thresh - min) : (max - thresh))
-        return slopePoint(slope, thresh, yThresh, v)
-      }
-      case "mul": {
-        const { min, max } = minMaxes.get(f)!
-        if (min < 0 && max > 0) throw new PolyError("Zero-crossing", operation)
-        if ((min < 0 && context !== lower) || (max > 0 && context !== upper))
-          throw new PolyError("Unsupported direction", operation)
-
-        // For x/a >= 0, sum{x/a} <= n, and k > 0, it follows that
-        //
-        //   k prod{x} <= k/n prod{a} sum{x/a}
-        //
-        // This follows from AM-GM; prod{x/a} <= (sum{x/a}/n)^n <= sum{x/a}/n
-        const operands = [...f.operands], flattenedOperands: OptNode[] = []
-        let coeff = 1
-        while (operands.length) {
-          const operand = operands.pop()!
-          if (operand.operation === "mul") operands.push(...operand.operands)
-          else if (operand.operation === "const") coeff *= operand.value;
-          else flattenedOperands.push(operand)
-        }
-        const lins = flattenedOperands.map(op => map(op, outward))
-        const ranges = flattenedOperands.map(op => minMaxes.get(op)!)
-
-        // Set `a` to the centroid of `x`, normalizing so that `sum{x/a} = n`
-        const cents = lins.map(getCent)
-        const factor = cents.reduce((accu, cent, i) => accu + (cent >= 0 ? ranges[i].max : ranges[i].min) / cent, 0)
-        const prod = cents.reduce((a, b) => a * factor * b / lins.length, coeff / factor)
-        return weightedSum(...lins.map((op, i) => [prod / cents[i], op] as const))
-      }
-
-      default: assertUnreachable(operation)
-    }
-  })
-}
-class PolyError extends Error {
-  constructor(cause: string, operation: string) {
-    super(`Found ${cause} in ${operation} node when generating polynomial upper bound`)
-  }
 }
