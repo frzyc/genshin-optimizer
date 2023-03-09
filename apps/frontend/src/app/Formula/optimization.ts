@@ -41,7 +41,7 @@ export function optimize(formulas: NumNode[], topLevelData: Data, shouldFold = (
  * @param slotCount the number of slots in the build (usually 5)
  * @returns
  */
-export function precompute(formulas: OptNode[], initial: DynStat, binding: (readNode: ReadNode<number>) => string, slotCount: number): (_: { values: DynStat }[]) => number[] {
+export function precompute<C extends number>(formulas: OptNode[], initial: DynStat, binding: (readNode: ReadNode<number>) => string, slotCount: C): (_: readonly { readonly values: Readonly<DynStat> }[] & { length: C }) => number[] {
   // res copied from the code above
   let body = `
 "use strict";
