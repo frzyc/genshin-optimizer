@@ -1,6 +1,5 @@
-import { existsSync, readFileSync } from "fs"
-import { DM_PATH } from "./consts"
-
+import { existsSync, readFileSync } from 'fs'
+import { DM_PATH } from './consts'
 
 export function readDMJSON(path: string) {
   const fullPath = `${DM_PATH}/${path}`

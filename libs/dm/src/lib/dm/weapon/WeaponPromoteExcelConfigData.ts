@@ -1,13 +1,12 @@
-
-import { PropTypeKey } from "@genshin-optimizer/pipeline"
+import type { PropTypeKey } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
-import { readDMJSON } from "../../util"
+import { readDMJSON } from '../../util'
 type WeaponPromoteExcelConfigData = {
-  "weaponPromoteId": number//12406,
-  "promoteLevel": number//6,
-  "costItems": {
-    "id": number,
-    "count": number
+  weaponPromoteId: number //12406,
+  promoteLevel: number //6,
+  costItems: {
+    id: number
+    count: number
   }[]
   // [
   //   {
@@ -23,10 +22,10 @@ type WeaponPromoteExcelConfigData = {
   //     "count": 12
   //   }
   // ],
-  "coinCost": number,
-  "addProps": {
-    "propType": PropTypeKey
-    "value": number
+  coinCost: number
+  addProps: {
+    propType: PropTypeKey
+    value: number
   }[]
   // [
   //   {
@@ -46,20 +45,29 @@ type WeaponPromoteExcelConfigData = {
   //     "propType": "FIGHT_PROP_ELEMENT_MASTERY"
   //   }
   // ],
-  "unlockMaxLevel": number//90,
-  "requiredPlayerLevel": number//50
+  unlockMaxLevel: number //90,
+  requiredPlayerLevel: number //50
 }
-const weaponPromoteExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/WeaponPromoteExcelConfigData.json")) as WeaponPromoteExcelConfigData[]
+const weaponPromoteExcelConfigDataSrc = JSON.parse(
+  readDMJSON('ExcelBinOutput/WeaponPromoteExcelConfigData.json')
+) as WeaponPromoteExcelConfigData[]
 
-const weaponPromoteExcelConfigData = {} as Record<number, Array<WeaponPromoteExcelConfigData | null>>
+const weaponPromoteExcelConfigData = {} as Record<
+  number,
+  Array<WeaponPromoteExcelConfigData | null>
+>
 
-weaponPromoteExcelConfigDataSrc.forEach(data => {
-
+weaponPromoteExcelConfigDataSrc.forEach((data) => {
   const { weaponPromoteId = 0, promoteLevel = 0 } = data
   if (!weaponPromoteId || !promoteLevel) return
 
-  if (!weaponPromoteExcelConfigData[weaponPromoteId]) weaponPromoteExcelConfigData[weaponPromoteId] = [null]//fill in first item, to help with processing
-  layeredAssignment(weaponPromoteExcelConfigData, [weaponPromoteId, promoteLevel], data)
+  if (!weaponPromoteExcelConfigData[weaponPromoteId])
+    weaponPromoteExcelConfigData[weaponPromoteId] = [null] //fill in first item, to help with processing
+  layeredAssignment(
+    weaponPromoteExcelConfigData,
+    [weaponPromoteId, promoteLevel],
+    data
+  )
 })
 
 export default weaponPromoteExcelConfigData

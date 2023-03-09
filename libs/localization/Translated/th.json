@@ -1,449 +1,449 @@
 {
-    "artifact": {
-        "editor": {
-            "title": "ตัวจัดการอาร์ติแฟกต์",
-            "substat": {
-                "substatFormat": "Substat {{value}}",
-                "noSubstat": "ไม่มี Substat",
-                "selectSub": "เลือก Substat",
-                "error": {
-                    "noCalc": "ไม่สามารถคำนวณค่าของ Substat ได้",
-                    "noOverRoll": "Substat ไม่สามารถสุ่มได้มากกว่า {{value}} ครั้ง"
-                },
-                "noRoll": "ไม่มีการสุ่ม",
-                "noStat": "ไม่มีมูลค่า",
-                "eff": "RV: <1></1>"
-            },
-            "rarity": "ความหายาก",
-            "level": "เลเวล",
-            "unknownPieceName": "ไม่ทราบชื่อ",
-            "curSubEff": "Roll Value ปัจจุบัน",
-            "curSubEffDesc": "ทุกๆครั้งที่ 4 ของการอัปเกรดอาร์ติแฟกต์ คุณจะได้รับ substat โดย <strong>Roll Value</strong> จะคำนวณว่า substat นั้นทบเป็นเปอร์เซ็นต์สูงเพียงใด",
-            "maxSubEff": "Roll Value สูงสุด",
-            "maxSubEffDesc": "ค่า <strong>Roll Value สูงสุดของ Substats</strong> ของอาร์ติแฟคต์จะคำนวณ RV หากการอัปเกรดที่เหลือสุ่มได้มูลค่าสูงสุดของพวกเขา",
-            "preview": "ดูตัวอย่างอาร์ติแฟกต์",
-            "dupArt": "ตรวจพบอาร์ติแฟกต์ที่ซ้ำกัน",
-            "upArt": "ตรวจพบอาร์ติแฟกต์ที่อัปเกรด",
-            "beforeEdit": "ก่อนการแก้ไข",
-            "btnSave": "บันทึกอาร์ติแฟกต์",
-            "btnAdd": "เพิ่มอาร์ติแฟกต์",
-            "btnClear": "ล้าง",
-            "btnRandom": "สุ่ม",
-            "btnUpdate": "อัปเดตอาร์ติแฟกต์",
-            "clearPrompt": "มีอาร์ติแฟกต์อยู่ในการแก้ไข แน่ใจไหมว่าต้องการล้างการแก้ไขนี้?"
+  "artifact": {
+    "editor": {
+      "title": "ตัวจัดการอาร์ติแฟกต์",
+      "substat": {
+        "substatFormat": "Substat {{value}}",
+        "noSubstat": "ไม่มี Substat",
+        "selectSub": "เลือก Substat",
+        "error": {
+          "noCalc": "ไม่สามารถคำนวณค่าของ Substat ได้",
+          "noOverRoll": "Substat ไม่สามารถสุ่มได้มากกว่า {{value}} ครั้ง"
         },
-        "artifactFilter": "ตัวกรองอาร์ติแฟกต์",
-        "filterLocation": {
-            "inventory": "ช่องเก็บของ",
-            "currentlyEquipped": "กำลังสวมใส่"
-        },
-        "button": {
-            "unequipArtifacts": "ถอดอาร์ติแฟกต์",
-            "deleteArtifacts": "ลบอาร์ติแฟกต์",
-            "lockArtifacts": "ล็อคอาร์ติแฟกต์",
-            "unlockrtifacts": "ปลดล็อคอาร์ติแฟกต์"
-        },
-        "buttonHint": "หมายเหตุ: ปุ่มสีแดงด้านบนใช้กับ <1>อาร์ติแฟกต์ที่กรองแล้ว</1> เท่านั้น",
-        "tipsOfTheDay": [
-            "ค่า RV สูงสุดของอาร์ติแฟกต์ระดับ 4 ดาวอยู่ที่ประมาณ 540%",
-            "ค่า RV สูงสุดของอาร์ติแฟกต์จะลดลงเมื่อคุณอัปเกรดมันเสมอ ดังนั้นอย่าตกใจไป!",
-            "*ออฟรองที่มีเพียง\"หน่วยเดียว\"เป็นการสแกนที่ยากที่สุดจากภาพหน้าจอ",
-            "ถ้าออฟรองทั้งหมด(6)ของคุณเป็นหน่วยเดียว มันจะเป็นสีม่วง!*",
-            "คลิกที่ \"รายละเอียด\" เมื่อคุณอัปเกรดอาร์ติแฟกต์ในเกมเพื่ออัปเดตข้อมูล",
-            "ตอนนี้คุณสามารถอัปโหลดภาพหน้าจออาร์ติแฟกต์หลายรายการในการสแกนครั้งเดียวได้แล้ว!"
-        ],
-        "mainStat": "Main Stat",
-        "slot": "ช่อง",
-        "slotName": {
-            "flower": "Flower of Life",
-            "plume": "Plume of Death",
-            "sands": "Sands of Eon",
-            "goblet": "Goblet of Eonothem",
-            "circlet": "Circlet of Logos"
-        },
-        "info": {
-            "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
-        },
-        "sortMap": {
-            "level": "Level",
-            "efficiency": "Roll Value ปัจจุบัน",
-            "mefficiency": "Roll Value สูงสุด"
-        },
-        "efficiencyFilter": {
-            "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
-        },
-        "resetFilters": "รีเซ็๋ตตัวกรอง"
+        "noRoll": "ไม่มีการสุ่ม",
+        "noStat": "ไม่มีมูลค่า",
+        "eff": "RV: <1></1>"
+      },
+      "rarity": "ความหายาก",
+      "level": "เลเวล",
+      "unknownPieceName": "ไม่ทราบชื่อ",
+      "curSubEff": "Roll Value ปัจจุบัน",
+      "curSubEffDesc": "ทุกๆครั้งที่ 4 ของการอัปเกรดอาร์ติแฟกต์ คุณจะได้รับ substat โดย <strong>Roll Value</strong> จะคำนวณว่า substat นั้นทบเป็นเปอร์เซ็นต์สูงเพียงใด",
+      "maxSubEff": "Roll Value สูงสุด",
+      "maxSubEffDesc": "ค่า <strong>Roll Value สูงสุดของ Substats</strong> ของอาร์ติแฟคต์จะคำนวณ RV หากการอัปเกรดที่เหลือสุ่มได้มูลค่าสูงสุดของพวกเขา",
+      "preview": "ดูตัวอย่างอาร์ติแฟกต์",
+      "dupArt": "ตรวจพบอาร์ติแฟกต์ที่ซ้ำกัน",
+      "upArt": "ตรวจพบอาร์ติแฟกต์ที่อัปเกรด",
+      "beforeEdit": "ก่อนการแก้ไข",
+      "btnSave": "บันทึกอาร์ติแฟกต์",
+      "btnAdd": "เพิ่มอาร์ติแฟกต์",
+      "btnClear": "ล้าง",
+      "btnRandom": "สุ่ม",
+      "btnUpdate": "อัปเดตอาร์ติแฟกต์",
+      "clearPrompt": "มีอาร์ติแฟกต์อยู่ในการแก้ไข แน่ใจไหมว่าต้องการล้างการแก้ไขนี้?"
     },
-    "languages": {
-        "chs": "ภาษาจีน (ตัวย่อ)",
-        "cht": "ภาษาจีน (ดั้งเดิม)",
-        "de": "ภาษาเยอรมัน",
-        "en": "ภาษาอังกฤษ",
-        "es": "ภาษาสเปน",
-        "fr": "ภาษาฝรั่งเศส",
-        "id": "ภาษาอินโดนีเซีย",
-        "ja": "ภาษาญี่ปุ่น",
-        "ko": "ภาษาเกาหลี",
-        "pt": "ภาษาโปรตุเกส",
-        "ru": "ภาษารัสเซีย",
-        "th": "ภาษาไทย",
-        "vi": "ภาษาเวียดนาม"
+    "artifactFilter": "ตัวกรองอาร์ติแฟกต์",
+    "filterLocation": {
+      "inventory": "ช่องเก็บของ",
+      "currentlyEquipped": "กำลังสวมใส่"
     },
-    "settings": {
-        "title": "ตั้งค่า",
-        "languageCard": {
-            "selectLanguage": "เลือกภาษา",
-            "languageFormat": "ภาษา: {{language}}"
-        },
-        "uploadCard": {
-            "title": "อัปโหลดฐานข้อมูล",
-            "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",
-            "hint": "อัปโหลดไฟล์ JSON ของคุณที่นี่...",
-            "hintPaste": "...หรือวางข้อมูลของคุณด้านล่าง",
-            "dbSource": "แหล่งข้อมูล:",
-            "goodUpload": {
-                "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
-            }
-        },
-        "count": {
-            "chars": "ตัวละคร:",
-            "arts": "อาร์ติแฟกต์:",
-            "weapons": "อาวุธ:",
-            "total": "ทั้งหมด:",
-            "new": "มาใหม่:",
-            "updated": "อัพเดต:",
-            "removed": "ลบออก:",
-            "unchanged": ":ไม่เปลี่ยนแปลง",
-            "invalid": ":ไม่ถูกต้อง"
-        }
+    "button": {
+      "unequipArtifacts": "ถอดอาร์ติแฟกต์",
+      "deleteArtifacts": "ลบอาร์ติแฟกต์",
+      "lockArtifacts": "ล็อคอาร์ติแฟกต์",
+      "unlockrtifacts": "ปลดล็อคอาร์ติแฟกต์"
     },
-    "ui": {
-        "pageTitle": "Genshin Optimizer",
-        "tabs": {
-            "artifacts": "อาร์ติแฟกต์",
-            "characters": "ตัวละคร",
-            "tools": "อุปกรณ์",
-            "weapons": "อาวุธ",
-            "doc": "เอกสาร"
-        },
-        "social": {
-            "paypal": "Paypal",
-            "patreon": "Patreon",
-            "discord": "Discord"
-        },
-        "unselect": "ยกเลิกการเลือก",
-        "ascending": "จากน้อยไปมาก",
-        "descending": "จากมากไปน้อย",
-        "loading": "กำลังโหลด...",
-        "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
-        "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
-        "underConstruction": "อยู่ระหว่างการปรับปรุง",
-        "error": "ผิดพลาด",
-        "reset": "รีเซ็ต",
-        "inventory": "คลัง",
-        "close": "ปิด",
-        "sortMap": {
-            "new": "ใหม่",
-            "name": "ชื่อ",
-            "level": "เลเวล",
-            "rarity": "จำนวนดาว",
-            "artsetkey": "เซ็ตอาร์ติแฟกต์",
-            "probability": "ความน่าจะเป็นของโรล"
-        }
+    "buttonHint": "หมายเหตุ: ปุ่มสีแดงด้านบนใช้กับ <1>อาร์ติแฟกต์ที่กรองแล้ว</1> เท่านั้น",
+    "tipsOfTheDay": [
+      "ค่า RV สูงสุดของอาร์ติแฟกต์ระดับ 4 ดาวอยู่ที่ประมาณ 540%",
+      "ค่า RV สูงสุดของอาร์ติแฟกต์จะลดลงเมื่อคุณอัปเกรดมันเสมอ ดังนั้นอย่าตกใจไป!",
+      "*ออฟรองที่มีเพียง\"หน่วยเดียว\"เป็นการสแกนที่ยากที่สุดจากภาพหน้าจอ",
+      "ถ้าออฟรองทั้งหมด(6)ของคุณเป็นหน่วยเดียว มันจะเป็นสีม่วง!*",
+      "คลิกที่ \"รายละเอียด\" เมื่อคุณอัปเกรดอาร์ติแฟกต์ในเกมเพื่ออัปเดตข้อมูล",
+      "ตอนนี้คุณสามารถอัปโหลดภาพหน้าจออาร์ติแฟกต์หลายรายการในการสแกนครั้งเดียวได้แล้ว!"
+    ],
+    "mainStat": "Main Stat",
+    "slot": "ช่อง",
+    "slotName": {
+      "flower": "Flower of Life",
+      "plume": "Plume of Death",
+      "sands": "Sands of Eon",
+      "goblet": "Goblet of Eonothem",
+      "circlet": "Circlet of Logos"
     },
-    "char_Eula": {
-        "skillC": {
-            "name": "Grimheart"
-        },
-        "burstC": {
-            "name": "Lightfall Sword",
-            "start5": "เริ่มต้นที่ 5 stacks",
-            "addStacks": "โอกาส 50% ที่จะได้รับ stacks เพิ่มเติมจากสกิลธาตุ และท่าไม้ตาย",
-            "dmg": "ความเสียหายการระเบิดของ Lightfall Sword"
-        },
-        "c1C": {
-            "name": "Consume <strong>Grimheart</strong> stacks",
-            "durationStack": "6 วินาที + 6 วินาที ต่อ stack สูงสุด 18 วินาที"
-        },
-        "passive1": "Shattered Lightfall Sword DMG",
-        "c4C": {
-            "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
-        }
+    "info": {
+      "title": "แก้ไขอาร์ติแฟกต์/คู่มือการจัดการ"
     },
-    "char_Noelle": {
-        "p4cd": "24 วินาที, -1 วินาที ทุก ๆ การโจมตี 4 ครั้ง",
-        "c6duration": "15 วินาที, +1 วินาทีต่อการฆ่า สูงสุด 10 วินาที",
-        "qlarger": "ขอบเขตการโจมตีกว้างขึ้น"
+    "sortMap": {
+      "level": "Level",
+      "efficiency": "Roll Value ปัจจุบัน",
+      "mefficiency": "Roll Value สูงสุด"
     },
-    "char_Venti": {
-        "addAimed": "ความเสียหายการเล็งโจมตีเพิ่มเติม",
-        "addFullAimed": "ความเสียหายการเล็งโจมตีเมื่อชาร์จเต็มเพิ่มเติม",
-        "upcurrentDuration": "ระยะเวลากระแสลมพัดขึ้น",
-        "regenEner": "ฟื้นฟูพลังงาน 15 หน่วยให้ Venti เมื่อสิ้นสุดระยะเวลา",
-        "c6": "เป้าหมายที่ได้รับความเสียหายจาก <strong>Wind's Grand Ode</strong>",
-        "q": "ฟื้นฟูพลังงานธาตุ 15 หน่วย ให้แก่ตัวละครทั้งหมดในทีมที่มีธาตุตรงกับการ Absorb",
-        "c2": {
-            "hit": "ศัตรูโดน",
-            "launched": "ศัตรูลอยขึ้นจากพื้น"
-        }
+    "efficiencyFilter": {
+      "title": "Substat ที่ใช้ในการคำนวณ Roll Value"
     },
-    "sheet": {
-        "dmg": "ความเสียหาย",
-        "lessPercentHP": "HP ต่ำกว่า {{percent}}%",
-        "hitOp": {
-            "normal": "การโจมตีปกติโดนศัตรู",
-            "charged": "การชาร์จโจมตีโดนศัตรู",
-            "plunging": "การโจมตีพุ่งลงจากอากาศโดนศัตรู",
-            "skill": "สกิลธาตุโดนศัตรู",
-            "burst": "ท่าไม้ตายโดนศัตรู",
-            "geo": "ความเสียหายหินถูกศัตรู",
-            "anemo": "ความเสียหายลมถูกศัตรู",
-            "hydro": "ความเสียหายน้ำถูกศัตรู",
-            "cryo": "ความเสียหายน้ำแข็งถูกศัตรู",
-            "pyro": "ความเสียหายไฟถูกศัตรู",
-            "electro": "ความเสียหายไฟฟ้าถูกศัตรู"
-        },
-        "eleAbsor": "การดูดซับธาตุ",
-        "absorDot": "ความเสียหายต่อเนื่องของการดูดซับ",
-        "afterUse": {
-            "skill": "หลังจากใช้งานสกิลธาตุ",
-            "burst": "หลังจากใช้งานท่าไม้ตาย"
-        },
-        "increase": {
-            "atk": "พลังโจมตีเพิ่มขึ้น"
-        }
+    "resetFilters": "รีเซ็๋ตตัวกรอง"
+  },
+  "languages": {
+    "chs": "ภาษาจีน (ตัวย่อ)",
+    "cht": "ภาษาจีน (ดั้งเดิม)",
+    "de": "ภาษาเยอรมัน",
+    "en": "ภาษาอังกฤษ",
+    "es": "ภาษาสเปน",
+    "fr": "ภาษาฝรั่งเศส",
+    "id": "ภาษาอินโดนีเซีย",
+    "ja": "ภาษาญี่ปุ่น",
+    "ko": "ภาษาเกาหลี",
+    "pt": "ภาษาโปรตุเกส",
+    "ru": "ภาษารัสเซีย",
+    "th": "ภาษาไทย",
+    "vi": "ภาษาเวียดนาม"
+  },
+  "settings": {
+    "title": "ตั้งค่า",
+    "languageCard": {
+      "selectLanguage": "เลือกภาษา",
+      "languageFormat": "ภาษา: {{language}}"
     },
-    "weapon_SongOfBrokenPines": {
-        "name": "ได้รับสถานะ Millennial Movement: Banner-Hymn"
+    "uploadCard": {
+      "title": "อัปโหลดฐานข้อมูล",
+      "replaceDatabase": "แทนที่ฐานข้อมูลเก่า",
+      "hint": "อัปโหลดไฟล์ JSON ของคุณที่นี่...",
+      "hintPaste": "...หรือวางข้อมูลของคุณด้านล่าง",
+      "dbSource": "แหล่งข้อมูล:",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+      }
     },
-    "char_KaedeharaKazuha": {
-        "c1": "เมื่อใช้สกิล <strong>Kazuha Slash</strong> จะรีเซ็ตระยะเวลาของสกิลธาตุ",
-        "c2": "อยู่ในพื้นที่ของ Autumn Whirlwind",
-        "c6": {
-            "after": "หลังจากใช้งาน <strong>Chihayaburu</strong> หรือ <strong>Kazuha Slash</strong>",
-            "bonus": "โบนัสความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ"
-        },
-        "skillPlunge": "Midare Ranzan"
-    },
-    "char_Rosaria": {
-        "a1": "โจมตีศัตรูทางด้านหลัง",
-        "a4": {
-            "name": "หลังจากใช้สกิล <strong>Rites of Termination</strong>"
-        }
-    },
-    "char_KamisatoAyaka": {
-        "afterSprint": "หลังจากการเคลื่อนที่แบบพิเศษ",
-        "afterSprintCryo": "แปะธาตุ <cryo> น้ำแข็ง </cryo> หลังการเคลื่อนที่แบบพิเศษ",
-        "snowflakeDMG": "ความเสียหายการฟันขนาดเล็ก",
-        "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>"
-    },
-    "weapon_MistsplitterReforged": {
-        "emblem": "Mistsplitter's Emblem"
-    },
-    "char_Yoimiya": {
-        "c1": "กำจัดศัตรูที่มีผลของ <strong>Aurous Blaze</strong>",
-        "c2": "<pyro>ความเสียหายไฟ</pyro> ติดคริติคอล"
-    },
-    "char_RaidenShogun": {
-        "skill": {
-            "eye": "Eye of Stormy Judgement",
-            "partyCost": "พลังงานที่ใช้"
-        },
-        "burst": {
-            "resolves": "Resolve Stacks"
-        },
-        "a4": {
-            "enerRest": "การฟื้นฟูพลังงานจาก <strong>Musou Isshin</strong>",
-            "eleDMG": "โบนัสความเสียหายไฟฟ้า"
-        },
-        "c4": {
-            "expires": "สถานะ <strong>Musou Isshin</strong> ที่เกิดจาก <strong>Secret Art: Musou Shinsetsu</strong> หมดเวลา"
-        }
-    },
-    "char_Aloy": {
-        "skill": {
-            "coil": "Coil",
-            "coil1": "Coil 1 สแต็ค",
-            "coil2": "Coil 2 สแต็ค",
-            "coil3": "Coil 3 สแต็ค",
-            "rush": "สถานะ Rushing Ice",
-            "rushState": "ระหว่างสถานะ Rushing Ice (1 สแต็คต่อวินาที)"
-        },
-        "a1CondName": "เมื่อ Aloy ได้รับสถานะ Coil จากสกิล <strong>Frozen Wilds</strong>"
-    },
-    "char_KujouSara": {
-        "skill": {
-            "ambush": "Tengu Juurai: Ambush"
-        }
-    },
-    "char_SangonomiyaKokomi": {
-        "burst": "Ceremonial Garment",
-        "c2": "ตัวละครที่มีพลังชีวิตต่ำกว่าหรือเท่ากับ 50%",
-        "c6": "หลังจากการโจมตีปกติหรือการชาร์จโจมตีได้รักษาตัวละครที่มีพลังชีวิตตั้งแต่ 80% ขึ้นไป"
-    },
-    "weapon_Akuoumaru": {
-        "party": "ผลรวมพลังงานธาตุของทั้งทีม"
-    },
-    "artifact_ArchaicPetra": {
-        "condName": "เก็บผลึก Crystallize"
-    },
-    "artifact_TenacityOfTheMillelith": {
-        "condName": "สกิลธาตุโดนศัตรู"
-    },
-    "artifact_ViridescentVenerer": {
-        "condName": "ธาตุที่ถูกกระจาย"
-    },
-    "weapon_CinnabarSpindle": {
-        "name": "ความเสียหายสกิลธาตุเพิ่มขึ้น"
-    },
-    "weapon_ElegyForTheEnd": {
-        "condName": "ได้รับสถานะ Millennial Movement: Farewell Song"
-    },
-    "weapon_MouunsMoon": {
-        "party": "ผลรวมพลังงานธาตุของทั้งทีม"
-    },
-    "weapon_ThrillingTalesOfDragonSlayers": {
-        "condName": "สลับตัวละคร"
-    },
-    "weapon_WavebreakersFin": {
-        "party": "ผลรวมพลังงานธาตุของทั้งทีม"
-    },
-    "artifact_BlizzardStrayer": {
-        "condName": "โจมตีศัตรู",
-        "condCryo": "ได้รับผลจากธาตุน้ำแข็ง",
-        "condFrozen": "แช่แข็ง"
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": "Curiosity"
-    },
-    "artifact_OceanHuedClam": {
-        "condName": "ความเสียหาย Sea-Dyed Foam สูงสุด"
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": "หลังจากดูดพลังงานธาตุ 15 หน่วย"
-    },
-    "artifact_TinyMiracle": {
-        "condName": "ความเสียหายธาตุที่จะได้รับ"
-    },
-    "char_Albedo": {
-        "blossomCD": "คูลดาวน์ Transient Blossom",
-        "blossomDmg_": "โบนัสความเสียหาย Transient Blossom",
-        "isotomaOnField": "มี Solar Isotoma บนสนาม",
-        "enerPerBlossom": "พลังงานธาตุที่ได้รับเมื่อเกิด Transient Blossom",
-        "c2Stacks": "ใช้งานสแต็ค Fatal Reckoning"
-    },
-    "char_Amber": {
-        "secondArrow": "(ธนูลูกที่ 2)",
-        "critRateBonus": "โบนัสอัตราคริ <strong>Fiery Rain</strong>",
-        "aoeRangeBonus": "ขยายพื้นที่ของ <strong>Fiery Rain</strong>",
-        "manualDetonationDmg": "ความเสียหายจุดระเบิดด้วยการชาร์จโจมตี",
-        "c6CondName": "หลังใช้งาน <strong>Fiery Rain</strong>"
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": "เมื่อ Arataki Itto ใช้ Arataki Kesagiri อย่างต่อเนื่อง"
-        },
-        "a4": {
-            "dmgInc": "ความเสียหาย Arataki Kesagiri เพิ่มขึ้น"
-        },
-        "c1": {
-            "initialGain": "ได้รับสแต็ค Superlative Superstrength",
-            "timedGain": "หลังจาก 1 วินาทีผ่านไป, จะได้สแต็ค Superlative Superstrength อีกทุกๆ 0.5 วินาทีเป็นเวลา 1.5 วินาที"
-        },
-        "c4": {
-            "name": "หลังจากสถานะ Raging Oni King ที่เกิดจาก <strong>Royal Descent: Behold, Itto the Evil!</strong> สิ้นสุดลง"
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": "อยู่ภายใต้สถานะ <strong>Let the Show Begin♪</strong>"
-        },
-        "constellation2": {
-            "cond": "อยู่ภายใต้สถานะ <strong>Let the Show Begin♪</strong>"
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "ความเสียหายเมื่อโดนโจมตี 1 ครั้ง",
-        "skillTwoHit": "ความเสียหายเมื่อโดนโจมตี 2 ครั้ง",
-        "duringBurst": "ในระยะเวลาการทำงานของ Stormbreaker",
-        "tidecallerMaxDmg": "ปลดปล่อย Tidecaller ที่ความเสียหายขั้นสูงสุด",
-        "a4charge": "เวลาที่ต้องใช้ก่อนเริ่มชาร์จโจมตีลดลง",
-        "c4dmg": "ความเสียหายธาตุไฟฟ้า",
-        "burstDmgRed_": "ลดความเสียหายที่ได้รับ"
-    },
-    "char_Bennett": {
-        "skill": {
-            "pressDMG": "ความเสียหายการกดธรรมดา",
-            "lvl1_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 1",
-            "lvl1_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 1",
-            "lvl2_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 2",
-            "lvl2_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 2",
-            "explDMG": "ความเสียหายระเบิดครั้งสุดท้ายของการชาร์จระดับ 2",
-            "lvl1CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 1",
-            "lvl2CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 2"
-        },
-        "additionalATK": "พลังโจมตีเพิ่มขึ้น",
-        "additionalATKRatio_": "ได้รับอัตราส่วนโบนัสโจมตีเพิ่มขึ้น",
-        "c4DMG": "ความเสียหายท่า Unexpected Odyssey",
-        "c6PyroInfusion": "<pyro>ดาบ, ดาบใหญ่ และหอกได้รับการเคลือบธาตุไฟ"
-    },
-    "char_Chongyun": {
-        "infusion": "ดาบ, ดาบใหญ่ และหอกได้รับการเคลือบธาตุน้ำแข็ง",
-        "passive2": "ความเสียหาย Rimechaser Blade",
-        "asc4Cond": "ศัตรูถูกโจมตีด้วย Rimechaser Blade",
-        "constellation1": "ความเสียหายมีดน้ำแข็ง",
-        "constellation6": "ศัตรูเหลือเปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun"
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "ความเสียหายขั้น 2 (เพิ่มพลัง C4)",
-            "1": "ความเสียหายขั้น 3 (เพิ่มพลัง C4)"
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "ระยะเวลาโล่ต่อ Icy Paw ที่โดนศัตรู",
-        "holdShield": "การดูดซับความเสียหายแบบกดค้าง",
-        "a1shielded": "ตัวละครภายใต้การป้องกันของ <strong>Icy Paws</strong>"
-    },
-    "char_Fischl": {
-        "a1Name": "เล็งโจมตีเมื่อชาร์จเต็มไปที่ Oz - ความเสียหายสายฟ้าศักดิ์สิทธิ์",
-        "a2Name": "ความเสียหายสายฟ้าศักดิ์สิทธิ์",
-        "c1Name": "ความเสียหายการร่วมโจมตี",
-        "c4AoeDmg": "ความเสียหายโดยรอบเพิ่มเติม",
-        "c6OzDmg": "ความเสียหายการร่วมโจมตีกับตัวละครยืนสนาม"
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "หลังจากยิง Frostflake Arrow",
-            "critRateInc": "Frostflake Arrow และ Bloom มีอัตราคริเพิ่มขึ้น"
-        },
-        "c1": {
-            "condName": "ศัตรูได้รับความเสียหายจาก Frostflake Arrow หรือ Bloom จากการชาร์จระดับ 2"
-        },
-        "c4": {
-            "lingerDuration": "ระยะเวลาเอฟเฟกต์คงอยู่ต่อไป"
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "เข้าสู่สภาวะ Paramita Papilio",
-            "end": "หลังจากสภาวะ Paramita Papilio ที่เกิดขึ้นโดย Guide to Afterlife สิ้นสุดลง"
-        },
-        "constellation2": {
-            "applyBloodBlossom": "แปะสถานะ Blood Blossom ที่ศัตรู (C2)"
-        },
-        "constellation4": {
-            "condName": "เมื่อเอาชนะศัตรูที่ได้รับผลกระทบของ Blood Blossom ได้"
-        },
-        "constellation6": {
-            "condName": "พลังชีวิตลดต่ำกว่า 25% หรือได้รับความเสียหายจากการโจมตีที่รุนแรงพอที่จะทำให้หมดสติ"
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "กดค้างนานกว่า 1 วินาที",
-        "c1PullSpeed": "ความเร็วในการรวบเพิ่มขึ้น"
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที"
+    "count": {
+      "chars": "ตัวละคร:",
+      "arts": "อาร์ติแฟกต์:",
+      "weapons": "อาวุธ:",
+      "total": "ทั้งหมด:",
+      "new": "มาใหม่:",
+      "updated": "อัพเดต:",
+      "removed": "ลบออก:",
+      "unchanged": ":ไม่เปลี่ยนแปลง",
+      "invalid": ":ไม่ถูกต้อง"
     }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "อาร์ติแฟกต์",
+      "characters": "ตัวละคร",
+      "tools": "อุปกรณ์",
+      "weapons": "อาวุธ",
+      "doc": "เอกสาร"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "ยกเลิกการเลือก",
+    "ascending": "จากน้อยไปมาก",
+    "descending": "จากมากไปน้อย",
+    "loading": "กำลังโหลด...",
+    "rightsDisclaimer": "Genshin Optimizer ไม่มีส่วนเกี่ยวข้องหรือรับรองโดย miHoYo",
+    "appVersion": "$t(pageTitle) เวอร์ชั่น: <1>{{version}}</1>",
+    "underConstruction": "อยู่ระหว่างการปรับปรุง",
+    "error": "ผิดพลาด",
+    "reset": "รีเซ็ต",
+    "inventory": "คลัง",
+    "close": "ปิด",
+    "sortMap": {
+      "new": "ใหม่",
+      "name": "ชื่อ",
+      "level": "เลเวล",
+      "rarity": "จำนวนดาว",
+      "artsetkey": "เซ็ตอาร์ติแฟกต์",
+      "probability": "ความน่าจะเป็นของโรล"
+    }
+  },
+  "char_Eula": {
+    "skillC": {
+      "name": "Grimheart"
+    },
+    "burstC": {
+      "name": "Lightfall Sword",
+      "start5": "เริ่มต้นที่ 5 stacks",
+      "addStacks": "โอกาส 50% ที่จะได้รับ stacks เพิ่มเติมจากสกิลธาตุ และท่าไม้ตาย",
+      "dmg": "ความเสียหายการระเบิดของ Lightfall Sword"
+    },
+    "c1C": {
+      "name": "Consume <strong>Grimheart</strong> stacks",
+      "durationStack": "6 วินาที + 6 วินาที ต่อ stack สูงสุด 18 วินาที"
+    },
+    "passive1": "Shattered Lightfall Sword DMG",
+    "c4C": {
+      "name": "ศัตรูมีพลังชีวิตต่ำกว่า 50% "
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24 วินาที, -1 วินาที ทุก ๆ การโจมตี 4 ครั้ง",
+    "c6duration": "15 วินาที, +1 วินาทีต่อการฆ่า สูงสุด 10 วินาที",
+    "qlarger": "ขอบเขตการโจมตีกว้างขึ้น"
+  },
+  "char_Venti": {
+    "addAimed": "ความเสียหายการเล็งโจมตีเพิ่มเติม",
+    "addFullAimed": "ความเสียหายการเล็งโจมตีเมื่อชาร์จเต็มเพิ่มเติม",
+    "upcurrentDuration": "ระยะเวลากระแสลมพัดขึ้น",
+    "regenEner": "ฟื้นฟูพลังงาน 15 หน่วยให้ Venti เมื่อสิ้นสุดระยะเวลา",
+    "c6": "เป้าหมายที่ได้รับความเสียหายจาก <strong>Wind's Grand Ode</strong>",
+    "q": "ฟื้นฟูพลังงานธาตุ 15 หน่วย ให้แก่ตัวละครทั้งหมดในทีมที่มีธาตุตรงกับการ Absorb",
+    "c2": {
+      "hit": "ศัตรูโดน",
+      "launched": "ศัตรูลอยขึ้นจากพื้น"
+    }
+  },
+  "sheet": {
+    "dmg": "ความเสียหาย",
+    "lessPercentHP": "HP ต่ำกว่า {{percent}}%",
+    "hitOp": {
+      "normal": "การโจมตีปกติโดนศัตรู",
+      "charged": "การชาร์จโจมตีโดนศัตรู",
+      "plunging": "การโจมตีพุ่งลงจากอากาศโดนศัตรู",
+      "skill": "สกิลธาตุโดนศัตรู",
+      "burst": "ท่าไม้ตายโดนศัตรู",
+      "geo": "ความเสียหายหินถูกศัตรู",
+      "anemo": "ความเสียหายลมถูกศัตรู",
+      "hydro": "ความเสียหายน้ำถูกศัตรู",
+      "cryo": "ความเสียหายน้ำแข็งถูกศัตรู",
+      "pyro": "ความเสียหายไฟถูกศัตรู",
+      "electro": "ความเสียหายไฟฟ้าถูกศัตรู"
+    },
+    "eleAbsor": "การดูดซับธาตุ",
+    "absorDot": "ความเสียหายต่อเนื่องของการดูดซับ",
+    "afterUse": {
+      "skill": "หลังจากใช้งานสกิลธาตุ",
+      "burst": "หลังจากใช้งานท่าไม้ตาย"
+    },
+    "increase": {
+      "atk": "พลังโจมตีเพิ่มขึ้น"
+    }
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "ได้รับสถานะ Millennial Movement: Banner-Hymn"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "เมื่อใช้สกิล <strong>Kazuha Slash</strong> จะรีเซ็ตระยะเวลาของสกิลธาตุ",
+    "c2": "อยู่ในพื้นที่ของ Autumn Whirlwind",
+    "c6": {
+      "after": "หลังจากใช้งาน <strong>Chihayaburu</strong> หรือ <strong>Kazuha Slash</strong>",
+      "bonus": "โบนัสความเสียหายจากการโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ"
+    },
+    "skillPlunge": "Midare Ranzan"
+  },
+  "char_Rosaria": {
+    "a1": "โจมตีศัตรูทางด้านหลัง",
+    "a4": {
+      "name": "หลังจากใช้สกิล <strong>Rites of Termination</strong>"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprint": "หลังจากการเคลื่อนที่แบบพิเศษ",
+    "afterSprintCryo": "แปะธาตุ <cryo> น้ำแข็ง </cryo> หลังการเคลื่อนที่แบบพิเศษ",
+    "snowflakeDMG": "ความเสียหายการฟันขนาดเล็ก",
+    "dmgBySnowflake": "ศัตรูได้รับความเสียหายจาก <strong>Kamisato Art: Soumetsu</strong>"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "Mistsplitter's Emblem"
+  },
+  "char_Yoimiya": {
+    "c1": "กำจัดศัตรูที่มีผลของ <strong>Aurous Blaze</strong>",
+    "c2": "<pyro>ความเสียหายไฟ</pyro> ติดคริติคอล"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "Eye of Stormy Judgement",
+      "partyCost": "พลังงานที่ใช้"
+    },
+    "burst": {
+      "resolves": "Resolve Stacks"
+    },
+    "a4": {
+      "enerRest": "การฟื้นฟูพลังงานจาก <strong>Musou Isshin</strong>",
+      "eleDMG": "โบนัสความเสียหายไฟฟ้า"
+    },
+    "c4": {
+      "expires": "สถานะ <strong>Musou Isshin</strong> ที่เกิดจาก <strong>Secret Art: Musou Shinsetsu</strong> หมดเวลา"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "Coil",
+      "coil1": "Coil 1 สแต็ค",
+      "coil2": "Coil 2 สแต็ค",
+      "coil3": "Coil 3 สแต็ค",
+      "rush": "สถานะ Rushing Ice",
+      "rushState": "ระหว่างสถานะ Rushing Ice (1 สแต็คต่อวินาที)"
+    },
+    "a1CondName": "เมื่อ Aloy ได้รับสถานะ Coil จากสกิล <strong>Frozen Wilds</strong>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "Tengu Juurai: Ambush"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "Ceremonial Garment",
+    "c2": "ตัวละครที่มีพลังชีวิตต่ำกว่าหรือเท่ากับ 50%",
+    "c6": "หลังจากการโจมตีปกติหรือการชาร์จโจมตีได้รักษาตัวละครที่มีพลังชีวิตตั้งแต่ 80% ขึ้นไป"
+  },
+  "weapon_Akuoumaru": {
+    "party": "ผลรวมพลังงานธาตุของทั้งทีม"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "เก็บผลึก Crystallize"
+  },
+  "artifact_TenacityOfTheMillelith": {
+    "condName": "สกิลธาตุโดนศัตรู"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "ธาตุที่ถูกกระจาย"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "ความเสียหายสกิลธาตุเพิ่มขึ้น"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "ได้รับสถานะ Millennial Movement: Farewell Song"
+  },
+  "weapon_MouunsMoon": {
+    "party": "ผลรวมพลังงานธาตุของทั้งทีม"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "สลับตัวละคร"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "ผลรวมพลังงานธาตุของทั้งทีม"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "โจมตีศัตรู",
+    "condCryo": "ได้รับผลจากธาตุน้ำแข็ง",
+    "condFrozen": "แช่แข็ง"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "Curiosity"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "ความเสียหาย Sea-Dyed Foam สูงสุด"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "หลังจากดูดพลังงานธาตุ 15 หน่วย"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "ความเสียหายธาตุที่จะได้รับ"
+  },
+  "char_Albedo": {
+    "blossomCD": "คูลดาวน์ Transient Blossom",
+    "blossomDmg_": "โบนัสความเสียหาย Transient Blossom",
+    "isotomaOnField": "มี Solar Isotoma บนสนาม",
+    "enerPerBlossom": "พลังงานธาตุที่ได้รับเมื่อเกิด Transient Blossom",
+    "c2Stacks": "ใช้งานสแต็ค Fatal Reckoning"
+  },
+  "char_Amber": {
+    "secondArrow": "(ธนูลูกที่ 2)",
+    "critRateBonus": "โบนัสอัตราคริ <strong>Fiery Rain</strong>",
+    "aoeRangeBonus": "ขยายพื้นที่ของ <strong>Fiery Rain</strong>",
+    "manualDetonationDmg": "ความเสียหายจุดระเบิดด้วยการชาร์จโจมตี",
+    "c6CondName": "หลังใช้งาน <strong>Fiery Rain</strong>"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "เมื่อ Arataki Itto ใช้ Arataki Kesagiri อย่างต่อเนื่อง"
+    },
+    "a4": {
+      "dmgInc": "ความเสียหาย Arataki Kesagiri เพิ่มขึ้น"
+    },
+    "c1": {
+      "initialGain": "ได้รับสแต็ค Superlative Superstrength",
+      "timedGain": "หลังจาก 1 วินาทีผ่านไป, จะได้สแต็ค Superlative Superstrength อีกทุกๆ 0.5 วินาทีเป็นเวลา 1.5 วินาที"
+    },
+    "c4": {
+      "name": "หลังจากสถานะ Raging Oni King ที่เกิดจาก <strong>Royal Descent: Behold, Itto the Evil!</strong> สิ้นสุดลง"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "อยู่ภายใต้สถานะ <strong>Let the Show Begin♪</strong>"
+    },
+    "constellation2": {
+      "cond": "อยู่ภายใต้สถานะ <strong>Let the Show Begin♪</strong>"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "ความเสียหายเมื่อโดนโจมตี 1 ครั้ง",
+    "skillTwoHit": "ความเสียหายเมื่อโดนโจมตี 2 ครั้ง",
+    "duringBurst": "ในระยะเวลาการทำงานของ Stormbreaker",
+    "tidecallerMaxDmg": "ปลดปล่อย Tidecaller ที่ความเสียหายขั้นสูงสุด",
+    "a4charge": "เวลาที่ต้องใช้ก่อนเริ่มชาร์จโจมตีลดลง",
+    "c4dmg": "ความเสียหายธาตุไฟฟ้า",
+    "burstDmgRed_": "ลดความเสียหายที่ได้รับ"
+  },
+  "char_Bennett": {
+    "skill": {
+      "pressDMG": "ความเสียหายการกดธรรมดา",
+      "lvl1_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 1",
+      "lvl1_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 1",
+      "lvl2_1DMG": "ความเสียหายครั้งที่ 1 ของการชาร์จระดับ 2",
+      "lvl2_2DMG": "ความเสียหายครั้งที่ 2 ของการชาร์จระดับ 2",
+      "explDMG": "ความเสียหายระเบิดครั้งสุดท้ายของการชาร์จระดับ 2",
+      "lvl1CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 1",
+      "lvl2CD": "เวลาคูลดาวน์เมื่อชาร์จระดับ 2"
+    },
+    "additionalATK": "พลังโจมตีเพิ่มขึ้น",
+    "additionalATKRatio_": "ได้รับอัตราส่วนโบนัสโจมตีเพิ่มขึ้น",
+    "c4DMG": "ความเสียหายท่า Unexpected Odyssey",
+    "c6PyroInfusion": "<pyro>ดาบ, ดาบใหญ่ และหอกได้รับการเคลือบธาตุไฟ"
+  },
+  "char_Chongyun": {
+    "infusion": "ดาบ, ดาบใหญ่ และหอกได้รับการเคลือบธาตุน้ำแข็ง",
+    "passive2": "ความเสียหาย Rimechaser Blade",
+    "asc4Cond": "ศัตรูถูกโจมตีด้วย Rimechaser Blade",
+    "constellation1": "ความเสียหายมีดน้ำแข็ง",
+    "constellation6": "ศัตรูเหลือเปอร์เซ็นต์พลังชีวิตต่ำกว่า Chongyun"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "ความเสียหายขั้น 2 (เพิ่มพลัง C4)",
+      "1": "ความเสียหายขั้น 3 (เพิ่มพลัง C4)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "ระยะเวลาโล่ต่อ Icy Paw ที่โดนศัตรู",
+    "holdShield": "การดูดซับความเสียหายแบบกดค้าง",
+    "a1shielded": "ตัวละครภายใต้การป้องกันของ <strong>Icy Paws</strong>"
+  },
+  "char_Fischl": {
+    "a1Name": "เล็งโจมตีเมื่อชาร์จเต็มไปที่ Oz - ความเสียหายสายฟ้าศักดิ์สิทธิ์",
+    "a2Name": "ความเสียหายสายฟ้าศักดิ์สิทธิ์",
+    "c1Name": "ความเสียหายการร่วมโจมตี",
+    "c4AoeDmg": "ความเสียหายโดยรอบเพิ่มเติม",
+    "c6OzDmg": "ความเสียหายการร่วมโจมตีกับตัวละครยืนสนาม"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "หลังจากยิง Frostflake Arrow",
+      "critRateInc": "Frostflake Arrow และ Bloom มีอัตราคริเพิ่มขึ้น"
+    },
+    "c1": {
+      "condName": "ศัตรูได้รับความเสียหายจาก Frostflake Arrow หรือ Bloom จากการชาร์จระดับ 2"
+    },
+    "c4": {
+      "lingerDuration": "ระยะเวลาเอฟเฟกต์คงอยู่ต่อไป"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "เข้าสู่สภาวะ Paramita Papilio",
+      "end": "หลังจากสภาวะ Paramita Papilio ที่เกิดขึ้นโดย Guide to Afterlife สิ้นสุดลง"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "แปะสถานะ Blood Blossom ที่ศัตรู (C2)"
+    },
+    "constellation4": {
+      "condName": "เมื่อเอาชนะศัตรูที่ได้รับผลกระทบของ Blood Blossom ได้"
+    },
+    "constellation6": {
+      "condName": "พลังชีวิตลดต่ำกว่า 25% หรือได้รับความเสียหายจากการโจมตีที่รุนแรงพอที่จะทำให้หมดสติ"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "กดค้างนานกว่า 1 วินาที",
+    "c1PullSpeed": "ความเร็วในการรวบเพิ่มขึ้น"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "เพิ่มระยะเวลา 2.5 วินาทีต่อศัตรูที่กำจัดได้, เพิ่มได้สูงสุด 15 วินาที"
+  }
 }

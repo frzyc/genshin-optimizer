@@ -1,14 +1,15 @@
-import { PropTypeKey, propTypeMap } from "@genshin-optimizer/pipeline"
-import { readDMJSON } from "../../util"
+import type { PropTypeKey } from '@genshin-optimizer/pipeline'
+import { propTypeMap } from '@genshin-optimizer/pipeline'
+import { readDMJSON } from '../../util'
 
 type AvatarPromoteExcelConfigData = {
-  "avatarPromoteId": number//2,
-  "promoteAudio": string//"",
-  "promoteLevel": number//1,
-  "scoinCost"?: number//20000,
-  "costItems": Array<{
-    "id": number//104161,
-    "count": number//1
+  avatarPromoteId: number //2,
+  promoteAudio: string //"",
+  promoteLevel: number //1,
+  scoinCost?: number //20000,
+  costItems: Array<{
+    id: number //104161,
+    count: number //1
   }>
   // [
   //   {
@@ -25,10 +26,10 @@ type AvatarPromoteExcelConfigData = {
   //     "count": number//3
   //   }
   // ],
-  "unlockMaxLevel": number//40,
-  "addProps": Array<{
-    "propType": PropTypeKey// "FIGHT_PROP_BASE_HP",
-    "value": number//858.2550048828125
+  unlockMaxLevel: number //40,
+  addProps: Array<{
+    propType: PropTypeKey // "FIGHT_PROP_BASE_HP",
+    value: number //858.2550048828125
   }>
   // [
   //   {
@@ -48,22 +49,25 @@ type AvatarPromoteExcelConfigData = {
   //     "Value": number
   //   }
   // ],
-  "requiredPlayerLevel": number// 15
+  requiredPlayerLevel: number // 15
 }
-const ascensionSrc = JSON.parse(readDMJSON("ExcelBinOutput/AvatarPromoteExcelConfigData.json")) as AvatarPromoteExcelConfigData[]
+const ascensionSrc = JSON.parse(
+  readDMJSON('ExcelBinOutput/AvatarPromoteExcelConfigData.json')
+) as AvatarPromoteExcelConfigData[]
 export type AscensionData = {
   [AvatarPromoteId: number]: {
     props: { [key: string]: number }
   }[]
 }
 const ascensionData = {} as AscensionData
-ascensionSrc.forEach(asc => {
+ascensionSrc.forEach((asc) => {
   const { avatarPromoteId, promoteLevel = 0, addProps } = asc
   if (!ascensionData[avatarPromoteId]) ascensionData[avatarPromoteId] = []
   ascensionData[avatarPromoteId][promoteLevel] = {
-    props: Object.fromEntries(addProps.map(({ propType, value = 0 }) =>
-      [propTypeMap[propType], value]))
+    props: Object.fromEntries(
+      addProps.map(({ propType, value = 0 }) => [propTypeMap[propType], value])
+    ),
   }
 })
 
-export default ascensionData;
+export default ascensionData

@@ -1,8 +1,8 @@
-import { SvgIconProps } from "@mui/material";
+import type { SvgIconProps } from '@mui/material'
 
 export const iconInlineProps: SvgIconProps = {
-  fontSize: "inherit",
+  fontSize: 'inherit',
   sx: {
-    verticalAlign: "-10%"
-  }
+    verticalAlign: '-10%',
+  },
 } as const

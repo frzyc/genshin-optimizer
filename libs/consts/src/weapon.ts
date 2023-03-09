@@ -1,7 +1,13 @@
-import { RarityKey } from './common'
+import type { RarityKey } from './common'
 
-export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
-export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
+export const allWeaponTypeKeys = [
+  'sword',
+  'claymore',
+  'polearm',
+  'bow',
+  'catalyst',
+] as const
+export type WeaponTypeKey = (typeof allWeaponTypeKeys)[number]
 
 export const allWeaponSwordKeys = [
   'AmenomaKageuchi',
@@ -40,7 +46,7 @@ export const allWeaponSwordKeys = [
   'TravelersHandySword',
   'XiphosMoonlight',
 ] as const
-export type WeaponSwordKey = typeof allWeaponSwordKeys[number]
+export type WeaponSwordKey = (typeof allWeaponSwordKeys)[number]
 
 export const allWeaponClaymoreKeys = [
   'Akuoumaru',
@@ -74,7 +80,7 @@ export const allWeaponClaymoreKeys = [
   'WhiteIronGreatsword',
   'WolfsGravestone',
 ] as const
-export type WeaponClaymoreKey = typeof allWeaponClaymoreKeys[number]
+export type WeaponClaymoreKey = (typeof allWeaponClaymoreKeys)[number]
 
 export const allWeaponPolearmKeys = [
   'BeginnersProtector',
@@ -104,7 +110,7 @@ export const allWeaponPolearmKeys = [
   'WavebreakersFin',
   'WhiteTassel',
 ] as const
-export type WeaponPoleArmKey = typeof allWeaponPolearmKeys[number]
+export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
 export const allWeaponBowKeys = [
   'AlleyHunter',
@@ -140,7 +146,7 @@ export const allWeaponBowKeys = [
   'ThunderingPulse',
   'WindblumeOde',
 ] as const
-export type WeaponBowKey = typeof allWeaponBowKeys[number]
+export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
 export const allWeaponCatalystKeys = [
   'ApprenticesNotes',
@@ -174,7 +180,7 @@ export const allWeaponCatalystKeys = [
   'WanderingEvenstar',
   'WineAndSong',
 ] as const
-export type WeaponCatalystKey = typeof allWeaponCatalystKeys[number]
+export type WeaponCatalystKey = (typeof allWeaponCatalystKeys)[number]
 
 export const allWeaponKeys = [
   ...allWeaponSwordKeys,
@@ -183,7 +189,12 @@ export const allWeaponKeys = [
   ...allWeaponBowKeys,
   ...allWeaponCatalystKeys,
 ] as const
-export type WeaponKey = WeaponSwordKey | WeaponClaymoreKey | WeaponPoleArmKey | WeaponBowKey | WeaponCatalystKey
+export type WeaponKey =
+  | WeaponSwordKey
+  | WeaponClaymoreKey
+  | WeaponPoleArmKey
+  | WeaponBowKey
+  | WeaponCatalystKey
 
 export const weaponMaxLevel: Record<RarityKey, number> = {
   1: 70,

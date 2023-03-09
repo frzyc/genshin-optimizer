@@ -6,16 +6,12 @@
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/waverider",
         "main": "libs/waverider/src/index.ts",
         "tsConfig": "libs/waverider/tsconfig.lib.json",
-        "assets": [
-          "libs/waverider/*.md"
-        ]
+        "assets": ["libs/waverider/*.md"]
       }
     },
     "publish": {
@@ -23,26 +19,18 @@
       "options": {
         "command": "node tools/scripts/publish.mjs waverider {args.ver} {args.tag}"
       },
-      "dependsOn": [
-        "build"
-      ]
+      "dependsOn": ["build"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/waverider/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/waverider/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/waverider/jest.config.ts",
         "passWithNoTests": true

@@ -1,35 +1,44 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import { subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '@genshin-optimizer/consts'
+import { subscript } from '../../../../Formula/utils'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
-import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
+import type { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
-const key: WeaponKey = "FesteringDesire"
+const key: WeaponKey = 'FesteringDesire'
 const data_gen = data_gen_json as WeaponData
 
 const skill_dmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
 const skill_critInc = [0.06, 0.075, 0.09, 0.105, 0.12]
-const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, { unit: "%" })
-const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, { unit: "%" })
+const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmgInc, {
+  unit: '%',
+})
+const skill_critRate_ = subscript(input.weapon.refineIndex, skill_critInc, {
+  unit: '%',
+})
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     skill_dmg_,
-    skill_critRate_
-  }
+    skill_critRate_,
+  },
 })
 const sheet: IWeaponSheet = {
-  document: [{
-    header: headerTemplate(key, st("base")),
-    fields: [{
-      node: skill_dmg_
-    }, {
-      node: skill_critRate_
-    }],
-  }],
+  document: [
+    {
+      header: headerTemplate(key, st('base')),
+      fields: [
+        {
+          node: skill_dmg_,
+        },
+        {
+          node: skill_critRate_,
+        },
+      ],
+    },
+  ],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

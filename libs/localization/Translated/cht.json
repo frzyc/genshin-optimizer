@@ -1,359 +1,359 @@
 {
-    "artifact": {
-        "editor": {
-            "title": "聖遺物編輯器",
-            "substat": {
-                "substatFormat": "副詞條 {{value}}",
-                "noSubstat": "無副詞條",
-                "selectSub": "選擇一個副詞條",
-                "error": {
-                    "noCalc": "無法計算詞條數",
-                    "noOverRoll": "副詞條不可超過 {{value}} 個"
-                },
-                "noRoll": "沒有詞條",
-                "noStat": "沒有數值",
-                "eff": "估值：<1></1>",
-                "nextRolls": "下次提升：",
-                "RollCount_other": "提升 {{count}} 次"
-            },
-            "rarity": "稀有度",
-            "level": "等級",
-            "unknownPieceName": "未知的道具名稱",
-            "curSubEff": "目前估值",
-            "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
-            "maxSubEff": "最高估值",
-            "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
-            "preview": "聖遺物預覽",
-            "dupArt": "偵測到重複的聖遺物",
-            "upArt": "偵測到已升級的聖遺物",
-            "beforeEdit": "編輯前",
-            "btnSave": "鋤存聖遺物",
-            "btnAdd": "新增聖遺物",
-            "btnClear": "清除",
-            "btnRandom": "隨機化",
-            "btnUpdate": "更新聖遺物",
-            "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？",
-            "unknownSetName": "未知的套裝名稱"
+  "artifact": {
+    "editor": {
+      "title": "聖遺物編輯器",
+      "substat": {
+        "substatFormat": "副詞條 {{value}}",
+        "noSubstat": "無副詞條",
+        "selectSub": "選擇一個副詞條",
+        "error": {
+          "noCalc": "無法計算詞條數",
+          "noOverRoll": "副詞條不可超過 {{value}} 個"
         },
-        "artifactFilter": "聖遺物篩選",
-        "filterLocation": {
-            "inventory": "背包",
-            "currentlyEquipped": "當前裝備",
-            "location": "位置"
-        },
-        "button": {
-            "unequipArtifacts": "卸除聖遺物",
-            "deleteArtifacts": "刪除聖遺物"
-        },
-        "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
-        "tipsOfTheDay": [
-            "4 星聖遺物的最高估值為 60% 左右。",
-            "聖遺物的最高估值一般隨著你對它的升級而降低。這很正常！",
-            "含有「1」的副詞條較難通過截圖掃描識別。",
-            "如果你的 6 次副詞條升級，強化了同一個副詞條，它會呈現紫色！",
-            "點選「詳情」以了解如何添加在遊戲內升級後的聖遺物。",
-            "現在您可以上傳多張聖遺物截圖進行識別！"
-        ],
-        "mainStat": "主詞條",
-        "slot": "欄位",
-        "slotName": {
-            "flower": "生之花",
-            "plume": "死之羽",
-            "sands": "時之沙",
-            "goblet": "空之杯",
-            "circlet": "理之冠"
-        },
-        "info": {
-            "title": "聖遺物編輯／管理指南",
-            "section1": "<0>副詞條升級次數</0><1> <1>副詞條升級次數</1>顯示在副詞條左側. 次數越多，副詞條顏色越深:<3></3>. </1><2>副詞條評分</2><3>副詞條評分指副詞條當前數值佔5<1></1>最高數值的比例. 如圖所示, 暴擊傷害最高升級值一次爲7.8%，在評分中： <3>5.8/7.8 = 69.2%.</3></3><4>當前評分 vs. 最高期望評分</4><5>當一個五<1></1>聖遺物經過 9 (4+5) 次總升級，且每次升級都是最大數值升級，此時被認爲是100%評分的聖遺物. 然而，大部分聖遺物沒有這麼幸運. 3>當前副詞條評分</3> 是該聖遺物與100%評分聖遺物相較的結果. <5>最高副詞條評分</5> 是一個聖遺物接下來的升級都獲得最高數值時，能獲得的評分. </5><6>鎖定聖遺物</6><7>通過鎖定聖遺物 <1></1>，該聖遺物不會被配裝生成器選入計算中. 同樣，已經被裝備的聖遺物是默認被排除的. </7>",
-            "section2": "<0>聖遺物編輯器</0><1>支持任意3<1></1> 到 5<3></3>聖遺物的全功能編輯器. 輸入副詞條後，能自動計算升級次數並評分. 同時編輯器會確保你的升級次數與聖遺物等級匹配. </1><2>截圖掃描</2><3>如果你不想手動輸入聖遺物，可以通過截圖掃描的方式識別輸入聖遺物. 在聖遺物編輯器界面，點擊 <1>Show Me How!</1> 可見使用方法. </3><4>自動聖遺物掃描儀</4><5>如果你在PC上玩原神，你可以下載使用聖遺物掃描工具來爲你掃描所有的聖遺物，並導入GO的 <1></1> 數據庫內. <3>點此</3> 獲取與 GO 兼容的掃描器列表.</5><6>重複/升級後聖遺物檢測</6><7> GO可以檢測出你導入的<1>重複</1> 聖遺物哦！原先擁有的聖遺物<3>升級後</3> 也會被檢測出來. 一旦檢測到重複/升級的聖遺物，會出現預覽界面允許你比較這些聖遺物 (見圖片).</7>",
-            "section3": "<0>聖遺物背包</0><1>這裡會顯示所有被加到 GO 的聖遺物。篩選器可以協助您更精簡地瀏覽目前擁有的聖遺物。</1><2>例如：尋找可消耗的聖遺物。</2><3>利用聖遺物篩選器及估值，您可以快速找到可以消耗的聖遺物。</3><4>在這個例子中，篩選器可以這樣設定：</4><5><0>限制聖遺物等級為 0-8 等。</0><1>背包內未鎖定的聖遺物。</1><2>固定生命值、固定防禦力及元素充能效率不納入估值計算當中。</2><3>依照最大估值進行升序排列。</3></0></5><6>這樣，聖遺物背包就能依照指定的詞條，由低到高篩出最低估值的聖遺物。</6>"
-        },
-        "sortMap": {
-            "level": "等級",
-            "efficiency": "目前估值",
-            "mefficiency": "最高估值"
-        },
-        "efficiencyFilter": {
-            "title": "用於估值計算的副詞條"
-        },
-        "resetFilters": "重設過濾器",
-        "setEffectNum": "{{setNum}} 件套裝",
-        "edit": "編輯聖遺物",
-        "autocompleteLabels": {
-            "sets": "聖遺物套裝",
-            "mainStats": "主詞條",
-            "substats": "副詞條",
-            "set": "聖遺物套裝"
-        },
-        "substat_one": "{{count}} 個副詞條",
-        "substat_other": "{{count}} 個副詞條",
-        "addNew": "新增新的聖遺物",
-        "sub_one": "{{count}} 副詞條",
-        "sub_other": "{{count}} 副詞條"
+        "noRoll": "沒有詞條",
+        "noStat": "沒有數值",
+        "eff": "估值：<1></1>",
+        "nextRolls": "下次提升：",
+        "RollCount_other": "提升 {{count}} 次"
+      },
+      "rarity": "稀有度",
+      "level": "等級",
+      "unknownPieceName": "未知的道具名稱",
+      "curSubEff": "目前估值",
+      "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
+      "maxSubEff": "最高估值",
+      "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
+      "preview": "聖遺物預覽",
+      "dupArt": "偵測到重複的聖遺物",
+      "upArt": "偵測到已升級的聖遺物",
+      "beforeEdit": "編輯前",
+      "btnSave": "鋤存聖遺物",
+      "btnAdd": "新增聖遺物",
+      "btnClear": "清除",
+      "btnRandom": "隨機化",
+      "btnUpdate": "更新聖遺物",
+      "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？",
+      "unknownSetName": "未知的套裝名稱"
     },
-    "languages": {
-        "chs": "簡體中文",
-        "cht": "繁體中文",
-        "de": "德語",
-        "en": "英語",
-        "es": "西班牙語",
-        "fr": "法語",
-        "id": "印尼語",
-        "ja": "日語",
-        "ko": "韓語",
-        "pt": "西班牙語",
-        "ru": "俄語",
-        "th": "泰語",
-        "vi": "越南語"
+    "artifactFilter": "聖遺物篩選",
+    "filterLocation": {
+      "inventory": "背包",
+      "currentlyEquipped": "當前裝備",
+      "location": "位置"
     },
-    "settings": {
-        "title": "設定",
-        "languageCard": {
-            "selectLanguage": "選擇語言",
-            "languageFormat": "語言：{{language}}"
-        },
-        "uploadCard": {
-            "title": "上傳資料檔",
-            "replaceDatabase": "更新資料檔",
-            "hint": "在此上傳 JSON 檔案...",
-            "hintPaste": "...或在底下貼上你的資料",
-            "error": {
-                "jsonParse": "無法解析 JSON 檔案。",
-                "unknown": "未知的檔案格式。",
-                "goInvalid": "無效的 GO 備份檔案格式。"
-            },
-            "dbSource": "資料來源：",
-            "goodUpload": {
-                "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
-            },
-            "buttons": {
-                "open": "開啟"
-            }
-        },
-        "count": {
-            "chars": "角色:",
-            "arts": "聖遺物：",
-            "weapons": "武器：",
-            "total": "總計：",
-            "new": "已新增：",
-            "updated": "已更新：",
-            "removed": "已移除：",
-            "unchanged": "未更動：",
-            "invalid": "無效："
-        },
-        "DatabaseCard": {
-            "title": "資料庫",
-            "button": {
-                "download": "下載",
-                "copy": "剪貼簿",
-                "delete": "刪除",
-                "upload": "上傳",
-                "swap": "轉移"
-            },
-            "currentDB": "目前資料庫"
-        }
+    "button": {
+      "unequipArtifacts": "卸除聖遺物",
+      "deleteArtifacts": "刪除聖遺物"
     },
-    "ui": {
-        "pageTitle": "原神最佳化工具",
-        "tabs": {
-            "artifacts": "聖遺物",
-            "characters": "角色",
-            "tools": "工具",
-            "weapons": "武器",
-            "doc": "文件",
-            "setting": "設定",
-            "scanner": "掃描器"
-        },
-        "social": {
-            "paypal": "Paypal",
-            "patreon": "Patreon",
-            "discord": "Discord"
-        },
-        "unselect": "取消選取",
-        "ascending": "升序",
-        "descending": "降序",
-        "loading": "載入中...",
-        "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
-        "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
-        "underConstruction": "建設中",
-        "error": "錯誤",
-        "reset": "重設",
-        "info": "資訊",
-        "inventory": "庫存",
-        "close": "關閉",
-        "sortMap": {
-            "name": "名稱",
-            "level": "等級",
-            "rarity": "稀有度",
-            "efficiency": "目前估值",
-            "mefficiency": "最高估值",
-            "artsetkey": "聖遺物套裝"
-        },
-        "link": {
-            "download": "下載連結",
-            "discord": "Discord 邀請連結"
-        },
-        "sortBy": "排列方式: ",
+    "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
+    "tipsOfTheDay": [
+      "4 星聖遺物的最高估值為 60% 左右。",
+      "聖遺物的最高估值一般隨著你對它的升級而降低。這很正常！",
+      "含有「1」的副詞條較難通過截圖掃描識別。",
+      "如果你的 6 次副詞條升級，強化了同一個副詞條，它會呈現紫色！",
+      "點選「詳情」以了解如何添加在遊戲內升級後的聖遺物。",
+      "現在您可以上傳多張聖遺物截圖進行識別！"
+    ],
+    "mainStat": "主詞條",
+    "slot": "欄位",
+    "slotName": {
+      "flower": "生之花",
+      "plume": "死之羽",
+      "sands": "時之沙",
+      "goblet": "空之杯",
+      "circlet": "理之冠"
+    },
+    "info": {
+      "title": "聖遺物編輯／管理指南",
+      "section1": "<0>副詞條升級次數</0><1> <1>副詞條升級次數</1>顯示在副詞條左側. 次數越多，副詞條顏色越深:<3></3>. </1><2>副詞條評分</2><3>副詞條評分指副詞條當前數值佔5<1></1>最高數值的比例. 如圖所示, 暴擊傷害最高升級值一次爲7.8%，在評分中： <3>5.8/7.8 = 69.2%.</3></3><4>當前評分 vs. 最高期望評分</4><5>當一個五<1></1>聖遺物經過 9 (4+5) 次總升級，且每次升級都是最大數值升級，此時被認爲是100%評分的聖遺物. 然而，大部分聖遺物沒有這麼幸運. 3>當前副詞條評分</3> 是該聖遺物與100%評分聖遺物相較的結果. <5>最高副詞條評分</5> 是一個聖遺物接下來的升級都獲得最高數值時，能獲得的評分. </5><6>鎖定聖遺物</6><7>通過鎖定聖遺物 <1></1>，該聖遺物不會被配裝生成器選入計算中. 同樣，已經被裝備的聖遺物是默認被排除的. </7>",
+      "section2": "<0>聖遺物編輯器</0><1>支持任意3<1></1> 到 5<3></3>聖遺物的全功能編輯器. 輸入副詞條後，能自動計算升級次數並評分. 同時編輯器會確保你的升級次數與聖遺物等級匹配. </1><2>截圖掃描</2><3>如果你不想手動輸入聖遺物，可以通過截圖掃描的方式識別輸入聖遺物. 在聖遺物編輯器界面，點擊 <1>Show Me How!</1> 可見使用方法. </3><4>自動聖遺物掃描儀</4><5>如果你在PC上玩原神，你可以下載使用聖遺物掃描工具來爲你掃描所有的聖遺物，並導入GO的 <1></1> 數據庫內. <3>點此</3> 獲取與 GO 兼容的掃描器列表.</5><6>重複/升級後聖遺物檢測</6><7> GO可以檢測出你導入的<1>重複</1> 聖遺物哦！原先擁有的聖遺物<3>升級後</3> 也會被檢測出來. 一旦檢測到重複/升級的聖遺物，會出現預覽界面允許你比較這些聖遺物 (見圖片).</7>",
+      "section3": "<0>聖遺物背包</0><1>這裡會顯示所有被加到 GO 的聖遺物。篩選器可以協助您更精簡地瀏覽目前擁有的聖遺物。</1><2>例如：尋找可消耗的聖遺物。</2><3>利用聖遺物篩選器及估值，您可以快速找到可以消耗的聖遺物。</3><4>在這個例子中，篩選器可以這樣設定：</4><5><0>限制聖遺物等級為 0-8 等。</0><1>背包內未鎖定的聖遺物。</1><2>固定生命值、固定防禦力及元素充能效率不納入估值計算當中。</2><3>依照最大估值進行升序排列。</3></0></5><6>這樣，聖遺物背包就能依照指定的詞條，由低到高篩出最低估值的聖遺物。</6>"
+    },
+    "sortMap": {
+      "level": "等級",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值"
+    },
+    "efficiencyFilter": {
+      "title": "用於估值計算的副詞條"
+    },
+    "resetFilters": "重設過濾器",
+    "setEffectNum": "{{setNum}} 件套裝",
+    "edit": "編輯聖遺物",
+    "autocompleteLabels": {
+      "sets": "聖遺物套裝",
+      "mainStats": "主詞條",
+      "substats": "副詞條",
+      "set": "聖遺物套裝"
+    },
+    "substat_one": "{{count}} 個副詞條",
+    "substat_other": "{{count}} 個副詞條",
+    "addNew": "新增新的聖遺物",
+    "sub_one": "{{count}} 副詞條",
+    "sub_other": "{{count}} 副詞條"
+  },
+  "languages": {
+    "chs": "簡體中文",
+    "cht": "繁體中文",
+    "de": "德語",
+    "en": "英語",
+    "es": "西班牙語",
+    "fr": "法語",
+    "id": "印尼語",
+    "ja": "日語",
+    "ko": "韓語",
+    "pt": "西班牙語",
+    "ru": "俄語",
+    "th": "泰語",
+    "vi": "越南語"
+  },
+  "settings": {
+    "title": "設定",
+    "languageCard": {
+      "selectLanguage": "選擇語言",
+      "languageFormat": "語言：{{language}}"
+    },
+    "uploadCard": {
+      "title": "上傳資料檔",
+      "replaceDatabase": "更新資料檔",
+      "hint": "在此上傳 JSON 檔案...",
+      "hintPaste": "...或在底下貼上你的資料",
+      "error": {
+        "jsonParse": "無法解析 JSON 檔案。",
+        "unknown": "未知的檔案格式。",
+        "goInvalid": "無效的 GO 備份檔案格式。"
+      },
+      "dbSource": "資料來源：",
+      "goodUpload": {
+        "title": "<strong>原神開放物件描述</strong> (GOOD) 格式"
+      },
+      "buttons": {
+        "open": "開啟"
+      }
+    },
+    "count": {
+      "chars": "角色:",
+      "arts": "聖遺物：",
+      "weapons": "武器：",
+      "total": "總計：",
+      "new": "已新增：",
+      "updated": "已更新：",
+      "removed": "已移除：",
+      "unchanged": "未更動：",
+      "invalid": "無效："
+    },
+    "DatabaseCard": {
+      "title": "資料庫",
+      "button": {
+        "download": "下載",
+        "copy": "剪貼簿",
         "delete": "刪除",
-        "locked": "已上鎖",
-        "unlocked": "未上鎖",
-        "refinement": "精鍊 {{value}}",
-        "gender": {
-            "F": "女",
-            "M": "男"
-        }
-    },
-    "char_Eula": {
-        "skillC": {
-            "name": "冷酷之心"
-        },
-        "burstC": {
-            "name": "光降之劍",
-            "start5": "立即獲得 5 層能量"
-        }
-    },
-    "sheet": {
-        "dmg": "傷害",
-        "lessPercentHP": "血量低於 {{percent}} %",
-        "increase": {
-            "atk": "攻擊力上升"
-        },
-        "1set": "1 件套裝",
-        "2set": "2 件套裝",
-        "4set": "4 件套裝",
-        "talents": {
-            "auto": "自動",
-            "constellation1": "一命",
-            "constellation2": "二命",
-            "constellation3": "三命",
-            "constellation4": "四命",
-            "constellation5": "五命",
-            "constellation6": "六命"
-        }
-    },
-    "char_KaedeharaKazuha": {
-        "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間"
-    },
-    "page_scanner": {
-        "am": {
-            "title": "「天目」"
-        },
-        "tags": {
-            "pc": "桌機",
-            "ps": "PlayStation",
-            "characters": "角色"
-        },
-        "nb": {
-            "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。"
-        }
-    },
-    "page_character": {
-        "addNew": "新增角色",
-        "tabs": {
-            "overview": "總覽",
-            "talent": "天賦",
-            "theorycraft": "理論分析"
-        },
-        "selectCharacter": "選擇一個角色",
-        "delete": "刪除角色",
-        "hitmode": {
-            "hit": "無暴擊傷害",
-            "avgHit": "平均傷害",
-            "critHit": "暴擊傷害"
-        },
-        "tabEquip": {
-            "swapWeapon": "替換武器",
-            "swapArt": "替換聖遺物",
-            "unequipArts": "卸下所有聖遺物"
-        },
-        "characterName": "角色名稱",
-        "teammate": "隊友 {{count}}",
-        "tabTeambuff": {
-            "team_reso": "元素共鳴",
-            "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
-        }
-    },
-    "page_home": {
-        "quickLinksCard": {
-            "title": "快速連結",
-            "buttons": {
-                "tyGuide": {
-                    "tooltip": "了解如何使用原神最佳化工具"
-                },
-                "scanners": {
-                    "title": "自動掃描器",
-                    "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
-                },
-                "devDiscord": {
-                    "title": "原神開發者 Discord",
-                    "tooltip": "原神開發者社群"
-                },
-                "good": {
-                    "title": "GOOD 文件"
-                },
-                "patchNotes": {
-                    "title": "原神最佳化工具更新日誌"
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": "GO 庫存"
-        }
-    },
-    "page_weapon": {
-        "edit": "編輯武器",
-        "weaponName": "武器名稱",
-        "removeWeapon": "您確定要移除 {{value}} 嗎？",
-        "addWeapon": "新增武器"
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "主詞條等級強化",
-                "desc": "改變主詞條等級到可提升副詞條的最低特定等級。不能改變副詞條。"
-            },
-            "assumptionLvl": {
-                "no": "假設主詞條不提升等級",
-                "lvl": "假設主詞條至少為 {{lvl}} 級"
-            }
-        },
-        "tcGraph": {
-            "downloadData": "下載資料"
-        },
-        "levelFilter": "聖遺物等級過濾器",
-        "artSetConfig": {
-            "title": "聖遺物套裝偏好設定",
-            "excluded": "已排除",
-            "selected": "已選擇",
-            "allowAll2set": "允許所有兩件套裝",
-            "excludeAll2set": "排除所有兩件套裝",
-            "allowAll4set": "允許所有四件套裝",
-            "excludeAll4set": "排除所有四件套裝",
-            "modal": {
-                "setCond": {
-                    "reset": "重設條件"
-                }
-            }
-        },
-        "generateButton": {
-            "cancel": "取消"
-        }
-    },
-    "page_newTab": {
-        "title": "🛑 偵測到新的 Optimizer 分頁 🛑",
-        "p1": "你似乎在其他分頁開啟了原神最佳化工具 💞。本工具沒有針對多分頁進行設計📵，這可能會導致：",
-        "symptom": {
-            "1": "不同分頁的資料不會同步🙃。",
-            "2": "資料庫損壞 💔。",
-            "3": "胃部不適🤰，並且讓原神最佳化工具的開發者們感到沮喪 😡。",
-            "4": "在極少數的情況下還會掛掉☠️。"
-        },
-        "p2": "我們透過這段訊息來阻止這些事情發生 📝，你有以下選擇：",
-        "choice": {
-            "1": "關閉目前的分頁 🔪，然後在新分頁繼續使用🆕。",
-            "2": "關閉新的分頁 ↩️，並確保目前的分頁是唯一的 GO 網頁 🔂，重新整理此分頁 🔄。"
-        },
-        "refresh": "重新整理頁面"
+        "upload": "上傳",
+        "swap": "轉移"
+      },
+      "currentDB": "目前資料庫"
     }
+  },
+  "ui": {
+    "pageTitle": "原神最佳化工具",
+    "tabs": {
+      "artifacts": "聖遺物",
+      "characters": "角色",
+      "tools": "工具",
+      "weapons": "武器",
+      "doc": "文件",
+      "setting": "設定",
+      "scanner": "掃描器"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "取消選取",
+    "ascending": "升序",
+    "descending": "降序",
+    "loading": "載入中...",
+    "rightsDisclaimer": "原神最佳化工具不屬於 Hoyoverse，也未受該公司的認可。",
+    "appVersion": "$t(pageTitle) 版本：<1>{{version}}</1>",
+    "underConstruction": "建設中",
+    "error": "錯誤",
+    "reset": "重設",
+    "info": "資訊",
+    "inventory": "庫存",
+    "close": "關閉",
+    "sortMap": {
+      "name": "名稱",
+      "level": "等級",
+      "rarity": "稀有度",
+      "efficiency": "目前估值",
+      "mefficiency": "最高估值",
+      "artsetkey": "聖遺物套裝"
+    },
+    "link": {
+      "download": "下載連結",
+      "discord": "Discord 邀請連結"
+    },
+    "sortBy": "排列方式: ",
+    "delete": "刪除",
+    "locked": "已上鎖",
+    "unlocked": "未上鎖",
+    "refinement": "精鍊 {{value}}",
+    "gender": {
+      "F": "女",
+      "M": "男"
+    }
+  },
+  "char_Eula": {
+    "skillC": {
+      "name": "冷酷之心"
+    },
+    "burstC": {
+      "name": "光降之劍",
+      "start5": "立即獲得 5 層能量"
+    }
+  },
+  "sheet": {
+    "dmg": "傷害",
+    "lessPercentHP": "血量低於 {{percent}} %",
+    "increase": {
+      "atk": "攻擊力上升"
+    },
+    "1set": "1 件套裝",
+    "2set": "2 件套裝",
+    "4set": "4 件套裝",
+    "talents": {
+      "auto": "自動",
+      "constellation1": "一命",
+      "constellation2": "二命",
+      "constellation3": "三命",
+      "constellation4": "四命",
+      "constellation5": "五命",
+      "constellation6": "六命"
+    }
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "使用<strong>萬葉之一刀</strong>重設冷卻時間"
+  },
+  "page_scanner": {
+    "am": {
+      "title": "「天目」"
+    },
+    "tags": {
+      "pc": "桌機",
+      "ps": "PlayStation",
+      "characters": "角色"
+    },
+    "nb": {
+      "p1": "這個基於網頁的掃描工具能夠擷取到你的遊戲視窗，並從螢幕截圖或影片中掃描。"
+    }
+  },
+  "page_character": {
+    "addNew": "新增角色",
+    "tabs": {
+      "overview": "總覽",
+      "talent": "天賦",
+      "theorycraft": "理論分析"
+    },
+    "selectCharacter": "選擇一個角色",
+    "delete": "刪除角色",
+    "hitmode": {
+      "hit": "無暴擊傷害",
+      "avgHit": "平均傷害",
+      "critHit": "暴擊傷害"
+    },
+    "tabEquip": {
+      "swapWeapon": "替換武器",
+      "swapArt": "替換聖遺物",
+      "unequipArts": "卸下所有聖遺物"
+    },
+    "characterName": "角色名稱",
+    "teammate": "隊友 {{count}}",
+    "tabTeambuff": {
+      "team_reso": "元素共鳴",
+      "resonance_tip": "隊伍中需要有 4 位角色才能觸發元素共鳴。"
+    }
+  },
+  "page_home": {
+    "quickLinksCard": {
+      "title": "快速連結",
+      "buttons": {
+        "tyGuide": {
+          "tooltip": "了解如何使用原神最佳化工具"
+        },
+        "scanners": {
+          "title": "自動掃描器",
+          "tooltip": "自動掃描遊戲中聖遺物的第三方程式"
+        },
+        "devDiscord": {
+          "title": "原神開發者 Discord",
+          "tooltip": "原神開發者社群"
+        },
+        "good": {
+          "title": "GOOD 文件"
+        },
+        "patchNotes": {
+          "title": "原神最佳化工具更新日誌"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO 庫存"
+    }
+  },
+  "page_weapon": {
+    "edit": "編輯武器",
+    "weaponName": "武器名稱",
+    "removeWeapon": "您確定要移除 {{value}} 嗎？",
+    "addWeapon": "新增武器"
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "主詞條等級強化",
+        "desc": "改變主詞條等級到可提升副詞條的最低特定等級。不能改變副詞條。"
+      },
+      "assumptionLvl": {
+        "no": "假設主詞條不提升等級",
+        "lvl": "假設主詞條至少為 {{lvl}} 級"
+      }
+    },
+    "tcGraph": {
+      "downloadData": "下載資料"
+    },
+    "levelFilter": "聖遺物等級過濾器",
+    "artSetConfig": {
+      "title": "聖遺物套裝偏好設定",
+      "excluded": "已排除",
+      "selected": "已選擇",
+      "allowAll2set": "允許所有兩件套裝",
+      "excludeAll2set": "排除所有兩件套裝",
+      "allowAll4set": "允許所有四件套裝",
+      "excludeAll4set": "排除所有四件套裝",
+      "modal": {
+        "setCond": {
+          "reset": "重設條件"
+        }
+      }
+    },
+    "generateButton": {
+      "cancel": "取消"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑 偵測到新的 Optimizer 分頁 🛑",
+    "p1": "你似乎在其他分頁開啟了原神最佳化工具 💞。本工具沒有針對多分頁進行設計📵，這可能會導致：",
+    "symptom": {
+      "1": "不同分頁的資料不會同步🙃。",
+      "2": "資料庫損壞 💔。",
+      "3": "胃部不適🤰，並且讓原神最佳化工具的開發者們感到沮喪 😡。",
+      "4": "在極少數的情況下還會掛掉☠️。"
+    },
+    "p2": "我們透過這段訊息來阻止這些事情發生 📝，你有以下選擇：",
+    "choice": {
+      "1": "關閉目前的分頁 🔪，然後在新分頁繼續使用🆕。",
+      "2": "關閉新的分頁 ↩️，並確保目前的分頁是唯一的 GO 網頁 🔂，重新整理此分頁 🔄。"
+    },
+    "refresh": "重新整理頁面"
+  }
 }

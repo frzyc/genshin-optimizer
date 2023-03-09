@@ -1,26 +1,27 @@
-import { dumpFile } from "@genshin-optimizer/pipeline"
-import { nameToKey, TextMapEN } from "../../TextMapUtil"
-import { readDMJSON } from "../../util"
+import { dumpFile } from '@genshin-optimizer/pipeline'
+import { nameToKey, TextMapEN } from '../../TextMapUtil'
+import { readDMJSON } from '../../util'
 
-type CookRecipeExcelConfigData = {//Adeptus' Temptation
-  "id": number// 5101,
-  "nameTextMapHash": number//2535717720,
-  "rankLevel": number//5,
-  "icon": string// "UI_ItemIcon_108123",
-  "descTextMapHash": number//3785660866,
-  "effectDesc": number[]
+type CookRecipeExcelConfigData = {
+  //Adeptus' Temptation
+  id: number // 5101,
+  nameTextMapHash: number //2535717720,
+  rankLevel: number //5,
+  icon: string // "UI_ItemIcon_108123",
+  descTextMapHash: number //3785660866,
+  effectDesc: number[]
   // [
   //   1022833117,
   //   3090219849,
   //   3779451422,
   //   4255144839
   // ],
-  "foodType": "COOK_FOOD_ATTACK",
-  "cookMethod": "COOK_METHOD_BOIL",
-  "maxProficiency": number//25,
-  "qualityOutputVec": {
-    "id": number//108122,
-    "count": number//1
+  foodType: 'COOK_FOOD_ATTACK'
+  cookMethod: 'COOK_METHOD_BOIL'
+  maxProficiency: number //25,
+  qualityOutputVec: {
+    id: number //108122,
+    count: number //1
   }[]
   // [
   //   {
@@ -36,9 +37,9 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
   //     "count": 1
   //   }
   // ],
-  "inputVec": {
-    "id": number//108122,
-    "count": number//1
+  inputVec: {
+    id: number //108122,
+    count: number //1
   }[]
   // [
   //   {
@@ -59,8 +60,8 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
   //   },
   //   {}
   // ],
-  "qteParam": string// "0.63,0.17",
-  "qteQualityWeightVec": number[]
+  qteParam: string // "0.63,0.17",
+  qteQualityWeightVec: number[]
   // [
   //   0,
   //   0,
@@ -68,12 +69,22 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
   // ]
 }
 
-const cookRecipeExcelConfigDataSrc = JSON.parse(readDMJSON("ExcelBinOutput/CookRecipeExcelConfigData.json")) as CookRecipeExcelConfigData[]
+const cookRecipeExcelConfigDataSrc = JSON.parse(
+  readDMJSON('ExcelBinOutput/CookRecipeExcelConfigData.json')
+) as CookRecipeExcelConfigData[]
 //character data
-const cookRecipeExcelConfigData = Object.fromEntries(cookRecipeExcelConfigDataSrc.map(data =>
-  [data.id, data])) as { [AvatarId: number]: CookRecipeExcelConfigData }
+const cookRecipeExcelConfigData = Object.fromEntries(
+  cookRecipeExcelConfigDataSrc.map((data) => [data.id, data])
+) as { [AvatarId: number]: CookRecipeExcelConfigData }
 
-dumpFile(`${__dirname}/CookRecipeExcelConfigData_idmap_gen.json`,
-  Object.fromEntries(cookRecipeExcelConfigDataSrc.map(data => [data.id, nameToKey(TextMapEN[data.nameTextMapHash])])))
+dumpFile(
+  `${__dirname}/CookRecipeExcelConfigData_idmap_gen.json`,
+  Object.fromEntries(
+    cookRecipeExcelConfigDataSrc.map((data) => [
+      data.id,
+      nameToKey(TextMapEN[data.nameTextMapHash]),
+    ])
+  )
+)
 
 export default cookRecipeExcelConfigData

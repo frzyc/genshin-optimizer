@@ -1,4 +1,7 @@
-export class WorkerCoordinator<Command extends { command: string, resultType?: never }, Response extends { command?: never, resultType: string }> {
+export class WorkerCoordinator<
+  Command extends { command: string; resultType?: never },
+  Response extends { command?: never; resultType: string }
+> {
   prio: Map<Command['command'], number>
   commands: FIFO<Command>[]
   workers: Promise<Worker>[]
@@ -10,20 +13,24 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
   callback: (_: Response, w: Worker) => void
   notifyNonEmpty: (() => void) | undefined
 
-  constructor(workers: Worker[], prio: Command['command'][], callback: (_: Response, w: Worker) => void) {
-    this.commands = prio.map(_ => new FIFO())
+  constructor(
+    workers: Worker[],
+    prio: Command['command'][],
+    callback: (_: Response, w: Worker) => void
+  ) {
+    this.commands = prio.map((_) => new FIFO())
     this.prio = new Map(prio.map((p, i) => [p, i]))
     this.callback = callback
 
-    workers.forEach(worker => {
-      worker.onmessage = x => this.onMessage(x.data, worker)
-      worker.onerror = e => this.onError(e)
+    workers.forEach((worker) => {
+      worker.onmessage = (x) => this.onMessage(x.data, worker)
+      worker.onerror = (e) => this.onError(e)
     })
     this._workers = workers
-    this.workers = workers.map(w => Promise.resolve(w))
-    this.cancel = () => { }
-    this.cancelled = new Promise<never>((_, rej) => this.cancel = rej)
-    this.cancelled.catch(_ => workers.forEach(w => w.terminate()))
+    this.workers = workers.map((w) => Promise.resolve(w))
+    this.cancel = () => {}
+    this.cancelled = new Promise<never>((_, rej) => (this.cancel = rej))
+    this.cancelled.catch((_) => workers.forEach((w) => w.terminate()))
   }
 
   /**
@@ -36,16 +43,17 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
    */
   async execute(commands: Iterable<Command> | AsyncIterable<Command>) {
     const processingInput = (async () => {
-      for await (const command of commands)
-        this.add(command)
+      for await (const command of commands) this.add(command)
     })()
 
     while (true) {
-      const command = this.commands.find(x => x.length)?.dequeue()
+      const command = this.commands.find((x) => x.length)?.dequeue()
       if (command === undefined) {
         const hasCommand = await Promise.race([
-          new Promise<boolean>(res => this.notifyNonEmpty = () => res(true)),
-          Promise.all([...this.workers, processingInput]).then(_ => false),
+          new Promise<boolean>(
+            (res) => (this.notifyNonEmpty = () => res(true))
+          ),
+          Promise.all([...this.workers, processingInput]).then((_) => false),
           this.cancelled,
         ])
 
@@ -54,8 +62,11 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
         break
       }
 
-      const { i, w } = await Promise.race([...this.workers.map((w, i) => w.then(w => ({ i, w }))), this.cancelled])
-      this.workers[i] = new Promise(res => this.workDone.set(w, () => res(w)))
+      const { i, w } = await Promise.race([
+        ...this.workers.map((w, i) => w.then((w) => ({ i, w }))),
+        this.cancelled,
+      ])
+      this.workers[i] = new Promise((res) => this.workDone.set(w, () => res(w)))
       w.postMessage(command)
     }
   }
@@ -76,15 +87,19 @@ export class WorkerCoordinator<Command extends { command: string, resultType?: n
   }
   /** May be ignored after `execute` ends */
   broadcast(command: Command) {
-    this._workers.forEach(w => w.postMessage(command))
+    this._workers.forEach((w) => w.postMessage(command))
   }
   /** MUST be followed by `execute` and cannot be called while `execute` is running */
   notifiedBroadcast(command: Command) {
-    this.workers = this.workers.map(worker =>
-      worker.then(w => new Promise(res => {
-        this.workDone.set(w, () => res(w))
-      })))
-    this._workers.forEach(w => w.postMessage(command))
+    this.workers = this.workers.map((worker) =>
+      worker.then(
+        (w) =>
+          new Promise((res) => {
+            this.workDone.set(w, () => res(w))
+          })
+      )
+    )
+    this._workers.forEach((w) => w.postMessage(command))
   }
 }
 
@@ -93,8 +108,12 @@ class FIFO<T> {
   head: T[] = []
   tail: T[] = []
 
-  get length(): number { return this.head.length + this.tail.length }
-  enqueue(t: T): void { this.tail.push(t) }
+  get length(): number {
+    return this.head.length + this.tail.length
+  }
+  enqueue(t: T): void {
+    this.tail.push(t)
+  }
   dequeue(): T | undefined {
     if (!this.head.length && this.tail.length)
       [this.head, this.tail] = [this.tail.reverse(), this.head]

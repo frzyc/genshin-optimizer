@@ -1,26 +1,26 @@
-import i18n from 'i18next';
-import Backend from 'i18next-http-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import i18n from 'i18next'
+import Backend from 'i18next-http-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
 
 // Probably a way to auto-populate this.
 export const languageCodeList = [
-  "chs",
-  "cht",
-  "de",
-  "en",
-  "es",
-  "fr",
-  "id",
-  "it",
-  "ja",
-  "ko",
-  "pt",
-  "ru",
-  "th",
-  "tr",
-  "vi"
-];
+  'chs',
+  'cht',
+  'de',
+  'en',
+  'es',
+  'fr',
+  'id',
+  'it',
+  'ja',
+  'ko',
+  'pt',
+  'ru',
+  'th',
+  'tr',
+  'vi',
+]
 
 /**
  * @see: https://www.i18next.com/translation-function/essentials
@@ -45,12 +45,9 @@ i18n
     // fallbackLng: 'dev', // Switch to this to force the fallback value on missing strings.
 
     // List all translation namespaces.
-    ns: [
-      "languages",
-      "ui",
-    ],
+    ns: ['languages', 'ui'],
     // Specify the default namespace.
-    defaultNS: "ui",
+    defaultNS: 'ui',
 
     // Only use the language code, skipping the region code.
     // For example, en-US becomes simply en.
@@ -63,8 +60,8 @@ i18n
       loadPath: 'assets/locales/{{lng}}/{{ns}}.json',
     },
     interpolation: {
-      escapeValue: false,//react does interlopation already
-    }
-  });
+      escapeValue: false, //react does interlopation already
+    },
+  })
 
-export default i18n;
+export default i18n

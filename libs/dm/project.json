@@ -29,7 +29,7 @@
   },
   "tags": [],
   "namedInputs": {
-    "production":[
+    "production": [
       "{projectRoot}/version.hash",
       "{projectRoot}/src/**/*",
       "{projectRoot}/scripts/**/*",

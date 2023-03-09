@@ -1,7 +1,10 @@
-import { allArtifactSetKeys, ArtifactSetKey } from '@genshin-optimizer/consts'
-import { mergeData, UIData } from '../../Formula/api'
-import { allArtifactRarities, ArtifactRarity, SetNum } from '../../Types/consts'
-import { ArtifactSheet } from './ArtifactSheet'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import type { UIData } from '../../Formula/api'
+import { mergeData } from '../../Formula/api'
+import type { ArtifactRarity, SetNum } from '../../Types/consts'
+import { allArtifactRarities } from '../../Types/consts'
+import type { ArtifactSheet } from './ArtifactSheet'
 
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
@@ -97,19 +100,25 @@ export function getArtSheet(sKey: ArtifactSetKey) {
   return artifacts[sKey]
 }
 
-export const setKeysByRarities = Object.fromEntries(allArtifactRarities.map(r => [r, ([] as ArtifactSetKey[])])) as Record<ArtifactRarity, ArtifactSetKey[]>
-allArtifactSetKeys.forEach(setKey => {
+export const setKeysByRarities = Object.fromEntries(
+  allArtifactRarities.map((r) => [r, [] as ArtifactSetKey[]])
+) as Record<ArtifactRarity, ArtifactSetKey[]>
+allArtifactSetKeys.forEach((setKey) => {
   const sheet = getArtSheet(setKey)
   const rarity = Math.max(...sheet.rarity) as ArtifactRarity
   setKeysByRarities[rarity].push(setKey)
 })
 
-export const allArtifactData = mergeData(Object.values(artifacts).map(s => s.data))
+export const allArtifactData = mergeData(
+  Object.values(artifacts).map((s) => s.data)
+)
 export function dataSetEffects(data: UIData) {
   const artifactSetEffect: Partial<Record<ArtifactSetKey, SetNum[]>> = {}
-  allArtifactSetKeys.forEach(setKey => {
+  allArtifactSetKeys.forEach((setKey) => {
     const sheet = getArtSheet(setKey)
-    const setNums = (Object.keys(sheet.setEffects).map(k => parseInt(k)) as SetNum[]).filter(sn => sheet.hasEnough(sn, data))
+    const setNums = (
+      Object.keys(sheet.setEffects).map((k) => parseInt(k)) as SetNum[]
+    ).filter((sn) => sheet.hasEnough(sn, data))
     if (setNums.length) artifactSetEffect[setKey] = setNums
   })
   return artifactSetEffect

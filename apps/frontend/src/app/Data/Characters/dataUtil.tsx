@@ -1,44 +1,98 @@
-import { SubstatKey } from "@genshin-optimizer/pipeline";
-import { infusionNode, input } from "../../Formula";
-import { inferInfoMut, mergeData } from "../../Formula/api";
-import { reactions } from "../../Formula/reaction";
-import { Data, DisplaySub, NumNode } from "../../Formula/type";
-import { constant, data, infoMut, lookup, one, percent, prod, stringPrio, subscript, sum } from "../../Formula/utils";
-import KeyMap from "../../KeyMap";
-import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
-import { CharacterKey, ElementKey, RegionKey } from "@genshin-optimizer/consts";
-import { layeredAssignment, objectKeyMap, objectMap } from "../../Util/Util";
-import _charCurves from "./expCurve_gen.json";
+import type { SubstatKey } from '@genshin-optimizer/pipeline'
+import { infusionNode, input } from '../../Formula'
+import { inferInfoMut, mergeData } from '../../Formula/api'
+import { reactions } from '../../Formula/reaction'
+import type { Data, DisplaySub, NumNode } from '../../Formula/type'
+import {
+  constant,
+  data,
+  infoMut,
+  lookup,
+  one,
+  percent,
+  prod,
+  stringPrio,
+  subscript,
+  sum,
+} from '../../Formula/utils'
+import KeyMap from '../../KeyMap'
+import type { MainStatKey } from '../../Types/artifact'
+import { allMainStatKeys } from '../../Types/artifact'
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey,
+} from '@genshin-optimizer/consts'
+import { layeredAssignment, objectKeyMap, objectMap } from '../../Util/Util'
+import _charCurves from './expCurve_gen.json'
 
 // TODO: Remove this conversion after changing the file format
-const charCurves = objectMap(_charCurves, value => [0, ...Object.values(value)])
+const charCurves = objectMap(_charCurves, (value) => [
+  0,
+  ...Object.values(value),
+])
 
-const commonBasic = objectKeyMap(["hp", "atk", "def", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_"], key => input.total[key])
-
-const inferredHitEle = stringPrio(
-  lookup(input.hit.move, {
-    "skill": input.charEle, "burst": input.charEle,
-  }, undefined),
-  lookup(input.weaponType, {
-    sword: infusionNode, claymore: infusionNode, polearm: infusionNode,
-    catalyst: input.charEle,
-  }, undefined),
-  "physical"
+const commonBasic = objectKeyMap(
+  ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
+  (key) => input.total[key]
 )
 
-function getTalentType(move: "normal" | "charged" | "plunging" | "skill" | "burst") {
+const inferredHitEle = stringPrio(
+  lookup(
+    input.hit.move,
+    {
+      skill: input.charEle,
+      burst: input.charEle,
+    },
+    undefined
+  ),
+  lookup(
+    input.weaponType,
+    {
+      sword: infusionNode,
+      claymore: infusionNode,
+      polearm: infusionNode,
+      catalyst: input.charEle,
+    },
+    undefined
+  ),
+  'physical'
+)
+
+function getTalentType(
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst'
+) {
   switch (move) {
-    case "normal": case "charged": case "plunging": return "auto";
-    case "skill": return "skill";
-    case "burst": return "burst";
+    case 'normal':
+    case 'charged':
+    case 'plunging':
+      return 'auto'
+    case 'skill':
+      return 'skill'
+    case 'burst':
+      return 'burst'
   }
 }
 
 /** Note: `additional` applies only to this formula */
-export function customDmgNode(base: NumNode, move: "normal" | "charged" | "plunging" | "skill" | "burst" | "elemental", additional: Data = {}): NumNode {
-  return data(input.hit.dmg, mergeData([{
-    hit: { base, move: constant(move), ele: additional?.hit?.ele ? undefined : inferredHitEle },
-  }, additional]))
+export function customDmgNode(
+  base: NumNode,
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst' | 'elemental',
+  additional: Data = {}
+): NumNode {
+  return data(
+    input.hit.dmg,
+    mergeData([
+      {
+        hit: {
+          base,
+          move: constant(move),
+          ele: additional?.hit?.ele ? undefined : inferredHitEle,
+        },
+      },
+      additional,
+    ])
+  )
 }
 /** Note: `additional` applies only to this formula */
 export function customShieldNode(base: NumNode, additional?: Data): NumNode {
@@ -48,70 +102,147 @@ export function customShieldNode(base: NumNode, additional?: Data): NumNode {
 /** Note: `additional` applies only to this formula */
 export function customHealNode(base: NumNode, additional?: Data): NumNode {
   const healInc = input.total.healInc
-  const healNode = prod(sum(base, healInc), sum(one, input.total.heal_, input.total.incHeal_))
+  const healNode = prod(
+    sum(base, healInc),
+    sum(one, input.total.heal_, input.total.incHeal_)
+  )
 
   return additional ? data(healNode, additional) : healNode
 }
 /** Note: `additional` applies only to this formula */
-export function dmgNode(base: MainStatKey | SubstatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}, specialMultiplier?: NumNode): NumNode {
-  const talentType = getTalentType(move)
-  return customDmgNode(specialMultiplier
-    ? prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base], specialMultiplier)
-    : prod(subscript(input.total[`${talentType}Index`], lvlMultiplier, { unit: "%" }), input.total[base]),
-  move, additional)
-}
-/** Note: `additional` applies only to this formula */
-export function splitScaleDmgNode(bases: (MainStatKey | SubstatKey)[], lvlMultipliers: number[][], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): NumNode {
+export function dmgNode(
+  base: MainStatKey | SubstatKey,
+  lvlMultiplier: number[],
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  additional: Data = {},
+  specialMultiplier?: NumNode
+): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(
-    sum(...bases.map((base, i) =>
-      prod(subscript(input.total[`${talentType}Index`], lvlMultipliers[i], { unit: "%" }), input.total[base])
-    )),
+    specialMultiplier
+      ? prod(
+          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
+            unit: '%',
+          }),
+          input.total[base],
+          specialMultiplier
+        )
+      : prod(
+          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
+            unit: '%',
+          }),
+          input.total[base]
+        ),
     move,
     additional
   )
 }
 /** Note: `additional` applies only to this formula */
-export function shieldNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
-  return customShieldNode(sum(prod(percent, input.total[base]), flat), additional)
+export function splitScaleDmgNode(
+  bases: (MainStatKey | SubstatKey)[],
+  lvlMultipliers: number[][],
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  additional: Data = {}
+): NumNode {
+  const talentType = getTalentType(move)
+  return customDmgNode(
+    sum(
+      ...bases.map((base, i) =>
+        prod(
+          subscript(input.total[`${talentType}Index`], lvlMultipliers[i], {
+            unit: '%',
+          }),
+          input.total[base]
+        )
+      )
+    ),
+    move,
+    additional
+  )
 }
 /** Note: `additional` applies only to this formula */
-export function healNode(base: MainStatKey | SubstatKey, percent: NumNode | number, flat: NumNode | number, additional?: Data): NumNode {
+export function shieldNode(
+  base: MainStatKey | SubstatKey,
+  percent: NumNode | number,
+  flat: NumNode | number,
+  additional?: Data
+): NumNode {
+  return customShieldNode(
+    sum(prod(percent, input.total[base]), flat),
+    additional
+  )
+}
+/** Note: `additional` applies only to this formula */
+export function healNode(
+  base: MainStatKey | SubstatKey,
+  percent: NumNode | number,
+  flat: NumNode | number,
+  additional?: Data
+): NumNode {
   return customHealNode(sum(prod(percent, input.total[base]), flat), additional)
 }
 /** Note: `additional` applies only to this formula */
-export function shieldNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+export function shieldNodeTalent(
+  base: MainStatKey | SubstatKey,
+  baseMultiplier: number[],
+  flat: number[],
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  additional?: Data
+): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
-  return customShieldNode(sum(
-    prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
-    subscript(talentIndex, flat)
-  ), additional)
+  return customShieldNode(
+    sum(
+      prod(
+        subscript(talentIndex, baseMultiplier, { unit: '%' }),
+        input.total[base]
+      ),
+      subscript(talentIndex, flat)
+    ),
+    additional
+  )
 }
-export function shieldElement(element: "electro" | "cryo" | "hydro" | "pyro" | "geo", shieldNode: NumNode) {
-  return infoMut(prod(percent(element === "geo" ? 1.5 : 2.5), shieldNode), { variant: element })
+export function shieldElement(
+  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo',
+  shieldNode: NumNode
+) {
+  return infoMut(prod(percent(element === 'geo' ? 1.5 : 2.5), shieldNode), {
+    variant: element,
+  })
 }
 /** Note: `additional` applies only to this formula */
-export function healNodeTalent(base: MainStatKey | SubstatKey, baseMultiplier: number[], flat: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional?: Data): NumNode {
+export function healNodeTalent(
+  base: MainStatKey | SubstatKey,
+  baseMultiplier: number[],
+  flat: number[],
+  move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
+  additional?: Data
+): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
-  return customHealNode(sum(
-    prod(subscript(talentIndex, baseMultiplier, { unit: "%" }), input.total[base]),
-    subscript(talentIndex, flat)
-  ), additional)
+  return customHealNode(
+    sum(
+      prod(
+        subscript(talentIndex, baseMultiplier, { unit: '%' }),
+        input.total[base]
+      ),
+      subscript(talentIndex, flat)
+    ),
+    additional
+  )
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKey | undefined,
   region: RegionKey | undefined,
   gen: {
-    weaponTypeKey: string,
-    base: { hp: number, atk: number, def: number },
-    curves: { [key in string]?: string },
+    weaponTypeKey: string
+    base: { hp: number; atk: number; def: number }
+    curves: { [key in string]?: string }
     ascensions: { props: { [key in string]?: number } }[]
   },
   display: { [key: string]: DisplaySub },
-  additional: Data = {},
+  additional: Data = {}
 ): Data {
   function curve(base: number, lvlCurve: string): NumNode {
     return prod(base, subscript<number>(input.lvl, charCurves[lvlCurve]))
@@ -131,30 +262,42 @@ export function dataObjForCharacterSheet(
     data.display!.reaction = reactions[element]
   }
   if (region)
-    layeredAssignment(data, ["teamBuff", "tally", region], constant(1))
-  layeredAssignment(data, ["teamBuff", "tally", "maxEleMas"], input.premod.eleMas)
-  if (gen.weaponTypeKey !== "catalyst") {
+    layeredAssignment(data, ['teamBuff', 'tally', region], constant(1))
+  layeredAssignment(
+    data,
+    ['teamBuff', 'tally', 'maxEleMas'],
+    input.premod.eleMas
+  )
+  if (gen.weaponTypeKey !== 'catalyst') {
     if (!data.display!.basic) data.display!.basic = {}
     data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
   }
 
   let foundSpecial: boolean | undefined
-  for (const stat of [...allMainStatKeys, "def" as const]) {
+  for (const stat of [...allMainStatKeys, 'def' as const]) {
     const list: NumNode[] = []
-    if (gen.curves[stat])
-      list.push(curve(gen.base[stat], gen.curves[stat]!))
-    const asc = gen.ascensions.some(x => x.props[stat])
+    if (gen.curves[stat]) list.push(curve(gen.base[stat], gen.curves[stat]!))
+    const asc = gen.ascensions.some((x) => x.props[stat])
     if (asc)
-      list.push(subscript(input.asc, gen.ascensions.map(x => x.props[stat] ?? NaN)))
+      list.push(
+        subscript(
+          input.asc,
+          gen.ascensions.map((x) => x.props[stat] ?? NaN)
+        )
+      )
 
     if (!list.length) continue
 
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { ...KeyMap.info(stat), prefix: "char", asConst: true })
-    if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
-    if (stat === "atk" || stat === "def" || stat === "hp")
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), {
+      ...KeyMap.info(stat),
+      prefix: 'char',
+      asConst: true,
+    })
+    if (stat.endsWith('_dmg_')) result.info!.variant = stat.slice(0, -5) as any
+    if (stat === 'atk' || stat === 'def' || stat === 'hp')
       data.base![stat] = result
     else {
-      if (foundSpecial) throw new Error("Duplicated Char Special")
+      if (foundSpecial) throw new Error('Duplicated Char Special')
       foundSpecial = true
       data.special = result
       data.premod![stat] = input.special

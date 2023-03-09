@@ -1,16 +1,16 @@
-import { WeaponBowKey } from '@genshin-optimizer/consts'
-import WeaponSheet from '../WeaponSheet'
+import type { WeaponBowKey } from '@genshin-optimizer/consts'
+import type WeaponSheet from '../WeaponSheet'
 
 import AlleyHunter from './AlleyHunter'
-import AmosBow from "./AmosBow"
-import AquaSimulacra from "./AquaSimulacra"
+import AmosBow from './AmosBow'
+import AquaSimulacra from './AquaSimulacra'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import CompoundBow from './CompoundBow'
-import ElegyForTheEnd from "./ElegyForTheEnd"
-import FadingTwilight from "./FadingTwilight"
+import ElegyForTheEnd from './ElegyForTheEnd'
+import FadingTwilight from './FadingTwilight'
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
-import HuntersBow from "./HuntersBow"
+import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
 import KingsSquire from './KingsSquire'
 import Messenger from './Messenger'
@@ -23,7 +23,7 @@ import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RoyalBow from './RoyalBow'
 import Rust from './Rust'
-import SacrificialBow from "./SacrificialBow"
+import SacrificialBow from './SacrificialBow'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SharpshootersOath from './SharpshootersOath'
 import SkywardHarp from './SkywardHarp'
