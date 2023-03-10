@@ -38,7 +38,7 @@ export class DBMetaEntry extends DataEntry<
 
     return { name, lastEdit, gender } as IDBMeta
   }
-  importGOOD(go: IGO & IGOOD, result: ImportResult): void {
+  importGOOD(go: IGO & IGOOD, _result: ImportResult): void {
     const data = go[this.goKey]
     if (data) {
       // Don't copy over lastEdit data

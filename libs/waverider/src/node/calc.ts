@@ -71,6 +71,7 @@ export class Calculator<M = undefined> {
   _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
   _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this,
       result = internal(n)
     switch (n.op) {
@@ -120,9 +121,10 @@ export class Calculator<M = undefined> {
           x[branchID] = result
           return meta(op, undefined, result.val, x, br, n.ex)
         }
-        case 'subscript':
+        case 'subscript': {
           const index = internal(n.br[0]!)
           return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
+        }
         case 'tag': {
           const newCache = cache.with(n.tag)
           const result = self._compute(n.x[0]!, newCache)
@@ -160,11 +162,12 @@ export class Calculator<M = undefined> {
                 pre,
                 []
               )
-            default:
+            default: {
               if (computed[accu]) return computed[accu]!
               const val = arithmetic[accu](getV(pre) as number[], undefined)
               computed[accu] = meta(accu, newCache.tag, val, pre, [])
               return computed[accu]!
+            }
           }
         }
         default:

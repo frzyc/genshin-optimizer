@@ -29,7 +29,6 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -640,8 +639,7 @@ function CustomTargetDisplay({
   const { t } = useTranslation('page_character')
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const { path, weight, hitMode, reaction, bonusStats, infusionAura } =
-    customTarget
+  const { path, weight, hitMode, reaction, infusionAura } = customTarget
   const setWeight = useCallback(
     (weight) => setCustomTarget({ ...customTarget, weight }),
     [customTarget, setCustomTarget]

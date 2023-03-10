@@ -163,9 +163,7 @@ function imageDataToCanvas(imageData: ImageData) {
   return canvas // produces a PNG file
 }
 
-async function ocr(
-  imageURL: string
-): Promise<{
+async function ocr(imageURL: string): Promise<{
   artifactSetTexts: string[]
   substatTexts: string[]
   whiteTexts: string[]

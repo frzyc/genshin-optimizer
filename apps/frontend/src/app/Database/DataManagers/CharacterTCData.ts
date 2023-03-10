@@ -82,8 +82,9 @@ function initCharTCArtifactSlots() {
 
 function validateCharTCWeapon(weapon: any): ICharTC['weapon'] | undefined {
   if (typeof weapon !== 'object') return
-  let { key, level: rawLevel, ascension: rawAscension, refinement } = weapon
-  if (!allWeaponKeys.includes(weapon.key)) return
+  const { key, level: rawLevel, ascension: rawAscension } = weapon
+  let { refinement } = weapon
+  if (!allWeaponKeys.includes(key)) return
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
   const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
@@ -96,8 +97,8 @@ function validateCharTCArtifact(
   let {
     slots,
     substats: { type, stats },
-    sets,
   } = artifact
+  const { sets } = artifact
   slots = validateCharTCArtifactSlots(slots)
   if (!slots) return
   if (!substatType.includes(type)) type = 'max'

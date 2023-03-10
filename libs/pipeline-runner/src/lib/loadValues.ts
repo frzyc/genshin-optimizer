@@ -311,7 +311,7 @@ export default function loadValues() {
 
   //generate the MapHashes for localization for materials
   const materialData = {}
-  Object.entries(materialExcelConfigData).forEach(([id, material]) => {
+  Object.entries(materialExcelConfigData).forEach(([_id, material]) => {
     const { nameTextMapHash, materialType } = material
     const key = nameToKey(TextMapEN[nameTextMapHash])
     materialData[key] = {

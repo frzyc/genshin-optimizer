@@ -97,7 +97,7 @@ export default function PageCharacter() {
 
   // character favorite updater
   useEffect(
-    () => database.charMeta.followAny((s) => forceUpdate()),
+    () => database.charMeta.followAny(() => forceUpdate()),
     [forceUpdate, database]
   )
 

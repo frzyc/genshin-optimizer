@@ -225,13 +225,14 @@ export default class Artifact {
     if (emptySlotCount && unusedFilterCount)
       maxEfficiency =
         currentEfficiency +
-        Artifact.maxSubstatRollEfficiency[rarity] *
-          rollsRemaining // Rolls into good empty slot
+        Artifact.maxSubstatRollEfficiency[rarity] * rollsRemaining
+    // Rolls into good empty slot
     else if (matchedSlotCount)
       maxEfficiency =
         currentEfficiency +
         Artifact.maxSubstatRollEfficiency[rarity] *
-          (rollsRemaining - emptySlotCount) // Rolls into existing matched slot
+          (rollsRemaining - emptySlotCount)
+    // Rolls into existing matched slot
     else maxEfficiency = currentEfficiency // No possible roll
 
     return { currentEfficiency, maxEfficiency }

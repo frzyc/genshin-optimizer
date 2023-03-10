@@ -44,8 +44,7 @@ export class ComputeWorker {
     if (this.threshold > newThreshold) this.threshold = newThreshold
   }
   compute(filter: RequestFilter) {
-    const { min } = this,
-      self = this // `this` in nested functions means different things
+    const { min } = this
     let preArts = filterArts(this.arts, filter)
     const totalCount = countBuilds(preArts),
       oldMaxBuildCount = this.builds.length
@@ -79,14 +78,14 @@ export class ComputeWorker {
       skipped: totalCount - countBuilds(preArts),
     }
 
-    function permute(i: number) {
+    const permute = (i: number) => {
       if (i < 0) {
         const result = compute(buffer)
         if (min.every((m, i) => m <= result[i])) {
           const value = result[min.length],
-            { builds, plotData } = self
+            { builds, plotData } = this
           let build: Build | undefined
-          if (value >= self.threshold) {
+          if (value >= this.threshold) {
             build = {
               value,
               artifactIds: buffer.map((x) => x.id).filter((id) => id),
@@ -114,7 +113,7 @@ export class ComputeWorker {
       })
       if (i === 0) {
         count.tested += arts[0].length
-        if (count.tested > 1 << 16) self.interimReport(count)
+        if (count.tested > 1 << 16) this.interimReport(count)
       }
     }
 

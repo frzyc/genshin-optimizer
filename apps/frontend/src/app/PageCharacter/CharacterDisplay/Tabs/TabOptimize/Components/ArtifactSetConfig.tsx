@@ -131,7 +131,7 @@ export default function ArtifactSetConfig({
   const resetArtConds = useCallback(() => {
     const tconditional = Object.fromEntries(
       Object.entries(conditional).filter(
-        ([k, v]) => !allArtifactSetKeys.includes(k as any)
+        ([k]) => !allArtifactSetKeys.includes(k as any)
       )
     )
     characterDispatch({ conditional: tconditional })

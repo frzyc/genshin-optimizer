@@ -355,7 +355,7 @@ export class UIData {
       case 'add':
       case 'mul':
       case 'min':
-      case 'max':
+      case 'max': {
         const identity = allOperations[operation]([])
         if (process.env.NODE_ENV !== 'development')
           operands = operands.filter((operand) => operand.value !== identity)
@@ -363,6 +363,7 @@ export class UIData {
           return Object.values(info).some((x) => x)
             ? { ...this._constant(identity), info }
             : this._constant(identity)
+      }
     }
 
     let formula: { display: Displayable; dependencies: Displayable[] }
@@ -548,7 +549,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   )
   if (name) {
     const prefixDisplay =
-      prefix && !source ? <>{KeyMap.getPrefixStr(prefix)} </> : <></>
+      prefix && !source ? <>{KeyMap.getPrefixStr(prefix)} </> : null
     const sourceText =
       source &&
       ((allArtifactSetKeys.includes(source as ArtifactSetKey) && (

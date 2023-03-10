@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { forEachNodes } from './internal'
 import type { OptNode } from './optimization'
 import { precompute, testing } from './optimization'

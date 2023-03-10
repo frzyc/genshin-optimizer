@@ -111,8 +111,7 @@ export default function ArtifactFilterDisplay({
         ctMap.equippedTotal[equipped].total++
         ctMap.setTotal[setKey].total++
         ctMap.mainStatTotal[mainStatKey].total++
-        Object.values(substats).forEach((sub) => {
-          if (typeof sub !== 'object') return
+        substats.forEach((sub) => {
           const subKey = sub.key
           if (!subKey) return
           ctMap.subStatTotal[subKey].total++

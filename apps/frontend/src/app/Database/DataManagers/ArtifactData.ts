@@ -152,7 +152,7 @@ export class ArtifactDataManager extends DataManager<
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(this.values.map((a) => a.id))
     const hasEquipment = artifacts.some((a) => a.location)
-    artifacts.forEach((a, i) => {
+    artifacts.forEach((a) => {
       const art = this.validate(a)
       if (!art) return result.artifacts.invalid.push(a)
 

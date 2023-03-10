@@ -93,7 +93,7 @@ export default function CharacterSelectionModal({
 
   // character favorite updater
   useEffect(
-    () => database.charMeta.followAny((s) => forceUpdate()),
+    () => database.charMeta.followAny(() => forceUpdate()),
     [forceUpdate, database]
   )
 

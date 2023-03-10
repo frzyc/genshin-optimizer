@@ -158,7 +158,7 @@ export default function TabTheorycraft() {
               ? 0
               : value,
           ])
-          .filter(([key, value]) => value)
+          .filter(([, value]) => value)
       )
       setData(newData)
     },
@@ -426,7 +426,7 @@ function WeaponEditorCard({
           {weaponUIData && (
             <FieldDisplayList>
               {[input.weapon.main, input.weapon.sub, input.weapon.sub2].map(
-                (node, i) => {
+                (node) => {
                   const n = weaponUIData.get(node)
                   if (n.isEmpty || !n.value) return null
                   return (

@@ -218,8 +218,8 @@ function probability(
   //  `target` = ceil(T / alpha)
   //  `numUpgradeRolls` = Nu
 
-  let result = { [numUpgradeRolls]: 1 },
-    additionalUpgradeRolls = numUpgradeRolls - minTotalUpgrades
+  let result = { [numUpgradeRolls]: 1 }
+  const additionalUpgradeRolls = numUpgradeRolls - minTotalUpgrades
 
   // Keep applying `target` from first to last.
   // At each step i in the loop, `result[n]` = g(i, n)

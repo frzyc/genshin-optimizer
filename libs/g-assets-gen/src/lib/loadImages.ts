@@ -21,8 +21,8 @@ import {
   weaponIdMap,
 } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
-import fs = require('fs')
-import path = require('path')
+import * as fs from 'fs'
+import * as path from 'path'
 
 export const PROJ_PATH =
   `${__dirname}/../../../../../libs/g-assets/src` as const
@@ -133,7 +133,7 @@ export default function loadImages() {
     function genTalentHash(ck: string, depot: AvatarSkillDepotExcelConfigData) {
       const {
         energySkill: burst,
-        skills: [normal, skill, sprint],
+        skills: [_normal, skill, sprint],
         talents,
         inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
       } = depot

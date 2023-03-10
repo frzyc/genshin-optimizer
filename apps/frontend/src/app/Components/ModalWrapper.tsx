@@ -8,7 +8,7 @@ const ScrollModal = styled(Modal)(({ theme }) => ({
   paddingTop: theme.spacing(2),
   paddingBottom: theme.spacing(2),
 }))
-const ModalContainer = styled(Container)(({ theme }) => ({
+const ModalContainer = styled(Container)(() => ({
   padding: 0,
   minHeight: '100%',
   display: 'flex',

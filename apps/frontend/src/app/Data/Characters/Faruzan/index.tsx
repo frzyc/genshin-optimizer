@@ -14,7 +14,7 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/consts'
-import { cond, st, stg } from '../../SheetUtil'
+import { cond, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'

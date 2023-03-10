@@ -58,11 +58,11 @@ export default function AllowChar({
   const deferredDbDirty = useDeferredValue(dbDirty)
 
   useEffect(
-    () => database.charMeta.followAny((s) => forceUpdate()),
+    () => database.charMeta.followAny(() => forceUpdate()),
     [forceUpdate, database]
   )
   useEffect(
-    () => database.chars.followAny((s) => forceUpdate()),
+    () => database.chars.followAny(() => forceUpdate()),
     [forceUpdate, database]
   )
 
@@ -152,7 +152,7 @@ export default function AllowChar({
               spacing={1}
               columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}
             >
-              {locList.map((lk, i) => (
+              {locList.map((lk) => (
                 <Grid item key={lk} xs={1}>
                   <SelectItem
                     locKey={lk}

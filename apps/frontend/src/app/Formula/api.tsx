@@ -11,7 +11,6 @@ import type { ICachedWeapon } from '../Types/weapon'
 import {
   layeredAssignment,
   objectKeyMap,
-  objectKeyValueMap,
   objectMap,
   objPathValue,
 } from '../Util/Util'
@@ -356,6 +355,7 @@ function mergeData(data: Data[]): Data {
     if (data[0].operation) {
       if (path[0] === 'teamBuff') path = path.slice(1)
       const base = path[0] === 'tally' ? ((path = path.slice(1)), tally) : input
+      /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
         (objPathValue(base, path) as ReadNode<number | string> | undefined) ??
         {}

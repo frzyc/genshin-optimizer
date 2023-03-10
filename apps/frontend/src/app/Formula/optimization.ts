@@ -316,7 +316,7 @@ export function constantFold(
         case 'add':
         case 'mul':
         case 'max':
-        case 'min':
+        case 'min': {
           const f = allOperations[operation]
           const numericOperands: number[] = []
           const formulaOperands: OptNode[] = formula.operands
@@ -362,6 +362,7 @@ export function constantFold(
             result = formulaOperands[0] ?? constant(f([]))
           else result = { operation, operands: formulaOperands }
           break
+        }
         case 'res':
         case 'sum_frac': {
           const operands = formula.operands.map((x) => fold(x, context))

@@ -350,7 +350,7 @@ function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
         case 'min': {
           const newOperands = f.operands.filter((_, i) => {
             const op1 = operandRanges[i]
-            return operandRanges.every((op2, j) => op1.min <= op2.max)
+            return operandRanges.every((op2) => op1.min <= op2.max)
           })
           if (newOperands.length < operandRanges.length)
             return min(...newOperands)
@@ -528,8 +528,8 @@ export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
     .slice(0, maxNum)
 }
 export function mergePlot(plots: PlotData[]): PlotData {
-  let scale = 0.01,
-    reductionScaling = 2,
+  let scale = 0.01
+  const reductionScaling = 2,
     maxCount = 1500
   let keys = new Set(
     plots.flatMap((x) =>
@@ -674,9 +674,9 @@ export function* artSetPerm(
   const allowedCounts = objectMap(exclusion, exclusionToAllowed)
 
   function* check(shape: number[]) {
-    const used: Set<ArtifactSetKey> = new Set()
-    let groupped: number[][] = [],
+    const used: Set<ArtifactSetKey> = new Set(),
       rainbows: number[] = []
+    let groupped: number[][] = []
     for (const i of shape) {
       groupped.push([])
       if (i === 5) rainbows.push(groupped.length - 1)

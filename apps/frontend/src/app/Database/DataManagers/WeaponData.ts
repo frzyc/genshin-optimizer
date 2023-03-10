@@ -1,11 +1,14 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
-import { allWeaponKeys, weaponMaxLevel } from '@genshin-optimizer/consts'
 import { getCharSheet } from '../../Data/Characters'
 import { validateLevelAsc } from '../../Data/LevelData'
 import { getWeaponSheet } from '../../Data/Weapons'
 import type { ICachedCharacter } from '../../Types/character'
-import type { LocationCharacterKey } from '@genshin-optimizer/consts'
+import type {
+  CharacterKey,
+  LocationCharacterKey,
+} from '@genshin-optimizer/consts'
 import {
+  allWeaponKeys,
+  weaponMaxLevel,
   charKeyToLocCharKey,
   allLocationCharacterKeys,
 } from '@genshin-optimizer/consts'

@@ -25,7 +25,7 @@ export class DataManager<
   toStorageKey(key: CacheKey): string {
     return `${key}`
   }
-  validate(obj: unknown, key: CacheKey): StorageValue | undefined {
+  validate(obj: unknown, _key: CacheKey): StorageValue | undefined {
     return obj as StorageValue
   }
   toCache(storageObj: StorageValue, id: CacheKey): CacheValue | undefined {
@@ -155,7 +155,7 @@ export class DataManager<
       id,
     }))
   }
-  importGOOD(go: IGOOD & IGO, result: ImportResult) {
+  importGOOD(go: IGOOD & IGO, _result: ImportResult) {
     const entries = go[this.goKey]
     if (entries && Array.isArray(entries))
       entries.forEach((ele) => ele.id && this.set(ele.id, ele))

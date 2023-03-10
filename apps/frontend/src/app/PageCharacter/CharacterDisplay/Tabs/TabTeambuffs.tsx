@@ -340,7 +340,7 @@ function TeammateAutocomplete({
     ({ key }: { key: CharacterKey | '' }) =>
       team.filter((t) => t && t !== characterKey).includes(key) ||
       (key.startsWith('Traveler') &&
-        team.some((t, i) => t.startsWith('Traveler'))),
+        team.some((t) => t.startsWith('Traveler'))),
     [team, characterKey]
   )
   const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(

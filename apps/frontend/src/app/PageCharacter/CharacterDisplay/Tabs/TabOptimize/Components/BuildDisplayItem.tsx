@@ -2,7 +2,6 @@ import type { LocationCharacterKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
-  LocationKey,
 } from '@genshin-optimizer/consts'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'

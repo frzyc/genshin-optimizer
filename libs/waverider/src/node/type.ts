@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import type { Tag } from '../tag'
 
 export type OP =
@@ -28,30 +29,20 @@ export interface Const<V> extends Base<'const', never> {
 // Arithmetics
 
 /** x0 + x1 + ... */
-export type Sum<PermitOP extends OP = OP> = Base<
-  'sum' & PermitOP,
-  NumNode<PermitOP>
->
+export interface Sum<PermitOP extends OP = OP>
+  extends Base<'sum' & PermitOP, NumNode<PermitOP>> {}
 /** x0 * x1 * ... */
-export type Prod<PermitOP extends OP = OP> = Base<
-  'prod' & PermitOP,
-  NumNode<PermitOP>
->
+export interface Prod<PermitOP extends OP = OP>
+  extends Base<'prod' & PermitOP, NumNode<PermitOP>> {}
 /** min( x0, x1, ... ) */
-export type Min<PermitOP extends OP = OP> = Base<
-  'min' & PermitOP,
-  NumNode<PermitOP>
->
+export interface Min<PermitOP extends OP = OP>
+  extends Base<'min' & PermitOP, NumNode<PermitOP>> {}
 /** max( x0, x1, ... ) */
-export type Max<PermitOP extends OP = OP> = Base<
-  'max' & PermitOP,
-  NumNode<PermitOP>
->
+export interface Max<PermitOP extends OP = OP>
+  extends Base<'max' & PermitOP, NumNode<PermitOP>> {}
 /** x0 / ( x0 + x1 ) */
-export type SumFrac<PermitOP extends OP = OP> = Base<
-  'sumfrac' & PermitOP,
-  NumNode<PermitOP>
->
+export interface SumFrac<PermitOP extends OP = OP>
+  extends Base<'sumfrac' & PermitOP, NumNode<PermitOP>> {}
 /** ex[x0] */
 export interface Subscript<
   Type extends number | string,
@@ -63,17 +54,11 @@ export interface Subscript<
 // Branching
 
 /** br0 >= br1 ? x0 : x1 */
-export type Threshold<Output, PermitOP extends OP = OP> = Base<
-  'thres' & PermitOP,
-  Output,
-  NumNode<PermitOP>
->
+export interface Threshold<Output, PermitOP extends OP = OP>
+  extends Base<'thres' & PermitOP, Output, NumNode<PermitOP>> {}
 /** br0 == br1 ? x0 : x1 */
-export type Match<Output, PermitOP extends OP = OP> = Base<
-  'match' & PermitOP,
-  Output,
-  AnyNode<PermitOP>
->
+export interface Match<Output, PermitOP extends OP = OP>
+  extends Base<'match' & PermitOP, Output, AnyNode<PermitOP>> {}
 /** x[ex[br0]] ?? x0 */
 export interface Lookup<Output, PermitOP extends OP = OP>
   extends Base<'lookup' & PermitOP, Output, StrNode<PermitOP>> {

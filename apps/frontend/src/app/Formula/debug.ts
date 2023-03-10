@@ -20,12 +20,14 @@ export function formulaString(formula: NumNode | StrNode): string {
       return `( ${formula.operands.map(formulaString).join(' + ')} )`
     case 'mul':
       return `( ${formula.operands.map(formulaString).join(' * ')} )`
-    case 'sum_frac':
+    case 'sum_frac': {
       const [x, c] = formula.operands.map(formulaString)
       return `( ${x} / ( ${x} + ${c} ) )`
-    case 'threshold':
+    }
+    case 'threshold': {
       const [value, threshold, pass, fail] = formula.operands.map(formulaString)
       return `( ${value} >= ${threshold} ? ${pass} : ${fail} )`
+    }
     case 'res':
       return `Res(${formulaString(formula.operands[0])})`
     case 'match':

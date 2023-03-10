@@ -114,7 +114,7 @@ describe('Database', () => {
   test('Ensure Equipment', () => {
     const newKeys: CharacterKey[] = []
     const unfollow = database.chars.followAny(
-      (k, reason, value) => reason === 'new' && newKeys.push(k)
+      (k, reason, _value) => reason === 'new' && newKeys.push(k)
     )
     database.arts.new({ ...randomizeArtifact(), location: 'Amber' })
     expect(database.chars.get('Amber')).toBeTruthy()

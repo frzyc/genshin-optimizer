@@ -31,7 +31,8 @@ export class DisplayWeaponEntry extends DataEntry<
   }
   validate(obj: any): IDisplayWeapon | undefined {
     if (typeof obj !== 'object') return
-    let { editWeaponId, sortType, ascending, rarity, weaponType } = obj
+    let { sortType, ascending, rarity, weaponType } = obj
+    const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
     if (
       typeof sortType !== 'string' ||

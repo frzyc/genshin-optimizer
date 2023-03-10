@@ -209,15 +209,8 @@ export class BNBSplitWorker implements SplitWorker {
   }
   /** Update calculate on filter at index `i` if not done so already */
   calculateFilter(i: number): void {
-    let {
-      nodes,
-      arts,
-      maxConts,
-      approxs,
-      age,
-      count: oldCount,
-      calculated,
-    } = this.filters[i]
+    let { nodes, arts, maxConts, approxs } = this.filters[i]
+    const { age, count: oldCount, calculated } = this.filters[i]
     if (calculated) return
     if (age < 3 || age % 5 === 2) {
       // Make sure the condition includes initial filter `age === 0`

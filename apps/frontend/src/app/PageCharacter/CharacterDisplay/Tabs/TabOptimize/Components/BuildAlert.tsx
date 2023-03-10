@@ -17,12 +17,12 @@ const Monospace = styled('strong')({
   fontFamily: 'monospace',
 })
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 10,
   borderRadius: 5,
 }))
 export default function BuildAlert({
-  status: { type, tested, failed, skipped, total, startTime, finishTime },
+  status: { type, tested, failed: _, skipped, total, startTime, finishTime },
   characterName,
 }: {
   status: BuildStatus

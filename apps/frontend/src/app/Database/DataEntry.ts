@@ -93,7 +93,7 @@ export class DataEntry<
   exportGOOD(go: Partial<IGO & IGOOD>) {
     go[this.goKey as any] = this.data
   }
-  importGOOD(go: IGO & IGOOD, result: ImportResult) {
+  importGOOD(go: IGO & IGOOD, _result: ImportResult) {
     const data = go[this.goKey as any]
     if (data) this.set(data)
   }

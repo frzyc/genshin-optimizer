@@ -17,7 +17,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   const mainStatKey =
     base.mainStatKey ?? getRandomElementFromArray(Artifact.slotMainStats(slot))
   const level = base.level ?? getRandomIntInclusive(0, rarity * 4)
-  const substats: ISubstat[] = [0, 1, 2, 3].map((i) => ({ key: '', value: 0 }))
+  const substats: ISubstat[] = [0, 1, 2, 3].map(() => ({ key: '', value: 0 }))
 
   const { low, high } = Artifact.rollInfo(rarity)
   const totRolls = Math.floor(level / 4) + getRandomIntInclusive(low, high)

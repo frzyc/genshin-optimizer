@@ -32,8 +32,8 @@ export class TagMapSubsetValues<V> {
   }
 
   cache(keys: TagMapKeys): Cache<V> {
-    let tagLen = keys.tagLen,
-      last = new InternalCache(undefined as any, [this.internal])
+    const tagLen = keys.tagLen
+    let last = new InternalCache(undefined as any, [this.internal])
     for (let i = 0; i < tagLen; i++) last = last.child(0)
     return new Cache<V>(new Int32Array(tagLen).fill(0), {}, keys, last)
   }

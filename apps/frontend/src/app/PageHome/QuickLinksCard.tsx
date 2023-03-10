@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-unused-vars: [ "warn", { "argsIgnorePattern": "^_|^t$" } ] */
 import {
   Article,
   Description,

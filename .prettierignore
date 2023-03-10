@@ -3,7 +3,6 @@
 /dist
 /coverage
 /.yarn
-.eslintrc.js
 
 /libs/dm/GenshinData
 *_gen.json
