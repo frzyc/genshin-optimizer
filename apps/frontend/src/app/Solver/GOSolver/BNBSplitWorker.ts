@@ -1,10 +1,16 @@
-import { Interim, Setup } from "..";
-import { OptNode } from "../../Formula/optimization";
-import { ArtifactSlotKey } from "@genshin-optimizer/consts";
-import { objectKeyValueMap, objectMap } from "../../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot, countBuilds, DynStat, filterArts, pruneAll, RequestFilter } from "../common";
-import type { SplitWorker } from "./BackgroundWorker";
-import { linearUB } from "./linearUB";
+import type { Interim, Setup } from '..'
+import type { OptNode } from '../../Formula/optimization'
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { objectKeyValueMap, objectMap } from '../../Util/Util'
+import type {
+  ArtifactBuildData,
+  ArtifactsBySlot,
+  DynStat,
+  RequestFilter,
+} from '../common'
+import { countBuilds, filterArts, pruneAll } from '../common'
+import type { SplitWorker } from './BackgroundWorker'
+import { linearUB } from './linearUB'
 
 type Approximation = {
   base: number
@@ -18,7 +24,8 @@ type Filter = {
    * The contribution of each artifact to the optimization target. The (over)estimated
    * optimization target value is the sum of contributions of all artifacts in the build.
    */
-  approxs: Approximation[], maxConts: Record<ArtifactSlotKey, number>[]
+  approxs: Approximation[]
+  maxConts: Record<ArtifactSlotKey, number>[]
   /** How many times has this filter been splitted */
   age: number
   /** Total number of builds in this filter */
@@ -142,7 +149,8 @@ export class BNBSplitWorker implements SplitWorker {
         },
       }
     })
-    const remaining = Object.keys(splitted), { filters } = this
+    const remaining = Object.keys(splitted),
+      { filters } = this
     const current: StrictDict<ArtifactSlotKey, ArtifactBuildData[]> = {} as any
     const currentCont: StrictDict<ArtifactSlotKey, number[]> = {} as any
     function partialSplit(count: number) {
@@ -256,8 +264,11 @@ function maxContribution(
 ): number {
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
-function approximation(nodes: OptNode[], arts: ArtifactsBySlot): Approximation[] {
-  return linearUB(nodes, arts).map(weight => ({
+function approximation(
+  nodes: OptNode[],
+  arts: ArtifactsBySlot
+): Approximation[] {
+  return linearUB(nodes, arts).map((weight) => ({
     base: dot(arts.base, weight, weight.$c),
     conts: objectKeyValueMap(Object.values(arts.values).flat(), (data) => [
       data.id,

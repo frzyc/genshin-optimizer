@@ -1,12 +1,12 @@
 // Matrix convention is row-major, indexed A_{ij} = A[i][j]
-type Pivot = { i: number, j: number }
-const zero = 1e-8  // Small number equivalent to 0 for numerical instability
+type Pivot = { i: number; j: number }
+const zero = 1e-8 // Small number equivalent to 0 for numerical instability
 
 /** Checks that all constraints are satisfied (Ax <= b) */
 export function isFeasible(Ab: number[][], x: number[]): boolean {
   const b = x.length
-  return Ab.every(row =>
-    x.reduce((tot, xi, i) => tot + xi * row[i], 0) <= row[b] + zero
+  return Ab.every(
+    (row) => x.reduce((tot, xi, i) => tot + xi * row[i], 0) <= row[b] + zero
   )
 }
 
@@ -31,11 +31,13 @@ export function solveLP(c: number[], Ab: number[][]) {
   const rows = Ab.length + 1
   const cols = Ab[0].length
 
-  const tableau = Array(rows).fill(0).map(_ => Array(cols).fill(0))
-  Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => tableau[i][j] = Aij))
-  c.forEach((cj, j) => tableau[rows - 1][j] = cj)
+  const tableau = Array(rows)
+    .fill(0)
+    .map((_) => Array(cols).fill(0))
+  Ab.forEach((Ai, i) => Ai.forEach((Aij, j) => (tableau[i][j] = Aij)))
+  c.forEach((cj, j) => (tableau[rows - 1][j] = cj))
 
-  const pivotHistory: Pivot[] = []  // Keep track of all chosen pivots for backtracking later
+  const pivotHistory: Pivot[] = [] // Keep track of all chosen pivots for backtracking later
 
   while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
     const piv = findPiv2(tableau)
@@ -61,7 +63,7 @@ function pivotInplace(A: number[][], { i, j }: Pivot) {
     if (h === i) continue
     for (let k = 0; k < A[0].length; k++) {
       if (k === j) continue
-      A[h][k] -= A[i][k] * A[h][j] / Aij
+      A[h][k] -= (A[i][k] * A[h][j]) / Aij
     }
   }
   for (let h = 0; h < A.length; h++) {
@@ -77,7 +79,8 @@ function pivotInplace(A: number[][], { i, j }: Pivot) {
 
 /** Find a pivot according to Case 1 (Ferguson p23) */
 function findPiv1(A: number[][]) {
-  const r = A.length, c = A[0].length
+  const r = A.length,
+    c = A[0].length
   let minloc = { i: -1, j: -1, cmp: Infinity }
   for (let j = 0; j < c - 1; j++) {
     if (A[r - 1][j] >= 0) continue
@@ -96,7 +99,8 @@ function findPiv1(A: number[][]) {
 
 /** Find a pivot according to Case 2 (Ferguson p24) */
 function findPiv2(A: number[][]) {
-  const r = A.length, c = A[0].length
+  const r = A.length,
+    c = A[0].length
   let minloc = { i: -1, j: -1, cmp: Infinity }
   for (let i = 0; i < r - 1; i++) {
     if (A[i][c - 1] >= 0) continue
@@ -115,13 +119,12 @@ function findPiv2(A: number[][]) {
 
 /** Backtracking algorithm to find solution vector */
 function backtrack(tableau: number[][], pivotHistory: Pivot[], targ: number) {
-  let side = 1;  // 0 left, 1 right
+  let side = 1 // 0 left, 1 right
   pivotHistory.forEach(({ i, j }) => {
     if (side === 1 && j === targ) {
       targ = i
       side = 0
-    }
-    else if (side === 0 && i === targ) {
+    } else if (side === 0 && i === targ) {
       targ = j
       side = 1
     }

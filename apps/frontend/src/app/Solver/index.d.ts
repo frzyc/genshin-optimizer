@@ -12,7 +12,13 @@ export type OptProblemInput = {
   plotBase?: OptNode
 }
 
-export type WorkerCommand = Setup | Split | Iterate | Threshold | Finalize | Count
+export type WorkerCommand =
+  | Setup
+  | Split
+  | Iterate
+  | Threshold
+  | Finalize
+  | Count
 export type WorkerResult = Interim | CountResult | FinalizeResult | Done | Error
 
 export interface Setup {
