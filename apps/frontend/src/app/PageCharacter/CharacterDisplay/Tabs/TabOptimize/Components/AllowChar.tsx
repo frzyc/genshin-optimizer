@@ -121,10 +121,11 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
 
   const total = database.chars.keys.length - 1
   const useTot = total - excludedLocations.length
+  const totalStr = useTot === total ? useTot : `${useTot}/${total}`
   const charactersAllowed = allowLocationsState === "all"
     ? total
     : (allowLocationsState === "customList"
-      ? `${useTot}/${total}`
+      ? totalStr
       : 0 // unequippedOnly
     )
   return <Box display="flex" gap={1} onMouseUp={() => setShouldClearList(true)} onTouchEnd={() => setShouldClearList(true)}>
