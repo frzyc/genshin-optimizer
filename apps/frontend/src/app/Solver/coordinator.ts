@@ -71,7 +71,7 @@ export class WorkerCoordinator<
     }
   }
 
-  onError(e: ErrorEvent) {
+  onError(e: { message: string }) {
     this.cancel(new Error(`Worker Error: ${e.message}`))
   }
   onMessage(msg: Command | Response, worker: Worker) {

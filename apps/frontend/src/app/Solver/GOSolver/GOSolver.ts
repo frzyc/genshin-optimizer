@@ -29,15 +29,10 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       .map((_) => new Worker(new URL('./BackgroundWorker.ts', import.meta.url)))
     super(workers, ['iterate', 'split', 'count'], (r, w) => {
       switch (r.resultType) {
-        case 'interim':
-          this.interim(r, w)
-          break
-        case 'finalize':
-          this.finalizedResults.push(r)
-          break
-        case 'count':
-          this.status.total = r.count
-          break
+        case 'interim': this.interim(r, w); break
+        case 'finalize': this.finalizedResults.push(r); break
+        case 'count': this.status.total = r.count; break
+        case 'err': this.onError(r); break
       }
     })
     const { exclusion, topN } = problem

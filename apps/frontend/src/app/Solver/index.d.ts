@@ -12,14 +12,8 @@ export type OptProblemInput = {
   plotBase?: OptNode
 }
 
-export type WorkerCommand =
-  | Setup
-  | Split
-  | Iterate
-  | Threshold
-  | Finalize
-  | Count
-export type WorkerResult = Interim | CountResult | FinalizeResult | Done
+export type WorkerCommand = Setup | Split | Iterate | Threshold | Finalize | Count
+export type WorkerResult = Interim | CountResult | FinalizeResult | Done | Error
 
 export interface Setup {
   command: 'setup'
@@ -54,6 +48,10 @@ export interface Count {
 }
 export interface Done {
   resultType: 'done'
+}
+export interface Error {
+  resultType: 'err'
+  message: string
 }
 export interface CountResult {
   resultType: 'count'
