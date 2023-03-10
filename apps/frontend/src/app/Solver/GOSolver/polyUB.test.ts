@@ -12,8 +12,7 @@ import {
   frac,
 } from '../../Formula/utils'
 import { cartesian } from '../../Util/Util'
-import type { ArtifactsBySlot } from '../common'
-import type { DynStat } from '../common'
+import type { ArtifactsBySlot, DynStat } from '../common'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
 import type { SumOfMonomials } from './polyUB'

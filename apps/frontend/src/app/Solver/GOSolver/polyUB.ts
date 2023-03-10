@@ -355,7 +355,7 @@ function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
     switch (n.type) {
       case 'lin':
         return Object.entries(n.lin)
-          .filter(([k, v]) => v !== 0)
+          .filter(([_, v]) => v !== 0)
           .map(([k, v]) => {
             if (k === '$c') return constM(v)
             return weightedReadM(k, v)
