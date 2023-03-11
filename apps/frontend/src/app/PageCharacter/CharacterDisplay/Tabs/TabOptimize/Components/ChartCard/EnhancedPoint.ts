@@ -5,8 +5,8 @@ export default class EnhancedPoint {
   public min?: number
   public current?: number
   public highlighted?: number
-  public buildNumber?: number
-  public highlightedType?: "generated" | "graph"
+  public generBuildNumber?: number
+  public graphBuildNumber?: number
 
   public constructor(x: number, y: number, artifactIds: string[]) {
     this.x = x

@@ -1,4 +1,3 @@
-
 //https://coolors.co/171738-2e1760-3423a6-7180b9-dff3e4
 $darkbg: #0c0c1d;
 $contentbg: #1b263b;
@@ -16,7 +15,6 @@ $star1Color: #808080;
   font-size: 50%;
 }
 
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -25,7 +23,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -49,7 +47,7 @@ div#formula {
   padding-left: 2em;
   text-indent: -2em;
 }
-div#formula>* {
+div#formula > * {
   padding-left: 0;
   text-indent: 0;
 }

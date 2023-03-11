@@ -1,15 +1,25 @@
-import { deepFreeze } from "../Util/Util"
-import { ArtCharDatabase } from "./Database"
-import { TriggerString } from "./DataManager"
-import { IGO, IGOOD, ImportResult } from "./exim"
+import { deepFreeze } from '../Util/Util'
+import type { ArtCharDatabase } from './Database'
+import type { TriggerString } from './DataManager'
+import type { IGO, IGOOD, ImportResult } from './exim'
 
-export class DataEntry<Key extends string, GOkey extends string, CacheValue, StorageValue>{
+export class DataEntry<
+  Key extends string,
+  GOkey extends string,
+  CacheValue,
+  StorageValue
+> {
   database: ArtCharDatabase
   init: (database: ArtCharDatabase) => StorageValue
   data: CacheValue
   key: Key
   goKey: GOkey
-  constructor(database: ArtCharDatabase, key: Key, init: (database: ArtCharDatabase) => StorageValue, goKey: GOkey) {
+  constructor(
+    database: ArtCharDatabase,
+    key: Key,
+    init: (database: ArtCharDatabase) => StorageValue,
+    goKey: GOkey
+  ) {
     this.database = database
     this.key = key
     this.init = init
@@ -24,7 +34,9 @@ export class DataEntry<Key extends string, GOkey extends string, CacheValue, Sto
   }
 
   listeners: Callback<CacheValue>[] = []
-  get() { return this.data }
+  get() {
+    return this.data
+  }
   validate(obj: any): StorageValue | undefined {
     return obj as StorageValue | undefined
   }
@@ -39,15 +51,15 @@ export class DataEntry<Key extends string, GOkey extends string, CacheValue, Sto
     const old = this.data
     const validated = this.validate({ ...old, ...value })
     if (!validated) {
-      this.trigger("invalid", value)
+      this.trigger('invalid', value)
       return false
     }
     const cached = this.toCache(validated)
     if (!cached) {
-      this.trigger("invalid", value)
+      this.trigger('invalid', value)
       return false
     }
-    if (!old) this.trigger("new", cached)
+    if (!old) this.trigger('new', cached)
     this.setCached(cached)
     return true
   }
@@ -55,7 +67,7 @@ export class DataEntry<Key extends string, GOkey extends string, CacheValue, Sto
     deepFreeze(cached)
     this.data = cached
     this.database.storage.set(this.key, this.deCache(cached))
-    this.trigger("update", cached)
+    this.trigger('update', cached)
   }
   clear() {
     this.data = this.toCache(this.init(this.database))!
@@ -70,18 +82,18 @@ export class DataEntry<Key extends string, GOkey extends string, CacheValue, Sto
   }
 
   trigger(reason: TriggerString, object?: any) {
-    this.listeners.forEach(cb => cb(reason, object))
+    this.listeners.forEach((cb) => cb(reason, object))
   }
   follow(callback: Callback<CacheValue>) {
     this.listeners.push(callback)
     return () => {
-      this.listeners = this.listeners.filter(cb => cb !== callback)
+      this.listeners = this.listeners.filter((cb) => cb !== callback)
     }
   }
   exportGOOD(go: Partial<IGO & IGOOD>) {
     go[this.goKey as any] = this.data
   }
-  importGOOD(go: IGO & IGOOD, result: ImportResult) {
+  importGOOD(go: IGO & IGOOD, _result: ImportResult) {
     const data = go[this.goKey as any]
     if (data) this.set(data)
   }

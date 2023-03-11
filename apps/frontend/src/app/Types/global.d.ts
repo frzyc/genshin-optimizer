@@ -9,10 +9,14 @@ declare global {
     export keys<K, V>(o: StrictDict<K, V>): `${K}`[]
     export keys<K, V>(o: Dict<K, V> | Record<string, never>): `${K}`[]
     export values<K, V>(o: Dict<K, V> | Record<string, never>): V[]
-    export values<K, V>(o: StrictDict<K, Exclude<V, undefined>>): Exclude<V, undefined>[]
-    export entries<K, V>(o: StrictDict<K, Exclude<V, undefined>>): [`${K}`, Exclude<V, undefined>][]
+    export values<K, V>(
+      o: StrictDict<K, Exclude<V, undefined>>
+    ): Exclude<V, undefined>[]
+    export entries<K, V>(
+      o: StrictDict<K, Exclude<V, undefined>>
+    ): [`${K}`, Exclude<V, undefined>][]
     export entries<K, V>(o: Dict<K, V> | Record<string, never>): [`${K}`, V][]
   }
 }
 
-export { }
+export {}

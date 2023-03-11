@@ -1,8 +1,13 @@
-import { IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact'
+import type {
+  IArtifact,
+  ISubstat,
+  MainStatKey,
+  SubstatKey,
+} from '../Types/artifact'
 import { layeredAssignment } from '../Util/Util'
 import Artifact from '../Data/Artifacts/Artifact'
 import ArtifactMainStatsData from '../Data/Artifacts/artifact_main_gen.json'
-import { crawlObject } from "@genshin-optimizer/util"
+import { crawlObject } from '@genshin-optimizer/util'
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,
 // and "upgrade rolls" that occurs when all 4 substats are added. They have different
@@ -28,16 +33,23 @@ import { crawlObject } from "@genshin-optimizer/util"
 // i = atk, E(atk) = 16 + 18, T(atk) = 30 - 14, Nf(atk) = 0 roll, Nu(atk) = 2 rolls
 
 const allWeights = [3, 4, 6] as const
-type Weight = typeof allWeights[number]
+type Weight = (typeof allWeights)[number]
 
 /**
  * Weight used when rolling a filler roll. Each roll will choose from available
  * substats (excluding main stat and existing substats) with these weights.
  */
 const fWeight: StrictDict<SubstatKey, Weight> = {
-  hp: 6, atk: 6, def: 6,
-  hp_: 4, atk_: 4, def_: 4, eleMas: 4, enerRech_: 4,
-  critRate_: 3, critDMG_: 3
+  hp: 6,
+  atk: 6,
+  def: 6,
+  hp_: 4,
+  atk_: 4,
+  def_: 4,
+  eleMas: 4,
+  enerRech_: 4,
+  critRate_: 3,
+  critDMG_: 3,
 }
 
 /**
@@ -45,8 +57,16 @@ const fWeight: StrictDict<SubstatKey, Weight> = {
  *
  * pFillerSeq[w0][w1][w2][...] = Pr [ fWeight[main stat] = w0, fWeight[substat1] = w1, fWeight[substat2] = w2, ... ]
  */
-const pFillerSeq: Dict<0 | Weight, Dict<Weight, Dict<Weight, Dict<Weight, Dict<Weight, number>>>>> = {}
-function populatePFillerSeq(prefix: (0 | Weight)[], prob: { [key in Weight]: number }, sumProb: number, current: number) {
+const pFillerSeq: Dict<
+  0 | Weight,
+  Dict<Weight, Dict<Weight, Dict<Weight, Dict<Weight, number>>>>
+> = {}
+function populatePFillerSeq(
+  prefix: (0 | Weight)[],
+  prob: { [key in Weight]: number },
+  sumProb: number,
+  current: number
+) {
   if (prefix.length === 5) {
     layeredAssignment(pFillerSeq, prefix as any, current)
     return
@@ -54,7 +74,12 @@ function populatePFillerSeq(prefix: (0 | Weight)[], prob: { [key in Weight]: num
 
   for (const i of allWeights)
     if (prob[i] > 0)
-      populatePFillerSeq([...prefix, i], { ...prob, [i]: prob[i] - i }, sumProb - i, current * prob[i] / sumProb)
+      populatePFillerSeq(
+        [...prefix, i],
+        { ...prob, [i]: prob[i] - i },
+        sumProb - i,
+        (current * prob[i]) / sumProb
+      )
 }
 populatePFillerSeq([0], { 3: 6, 4: 20, 6: 18 }, 44, 1)
 
@@ -67,17 +92,20 @@ populatePFillerSeq([6], { 3: 6, 4: 20, 6: 12 }, 38, 1)
  *
  * 0 <= n <= 5; 0 <= r <= n
  */
-const cnr = Array(6).fill(0).map((_, n) => {
-  const result = [1]
-  let r = 0, value = 1
-  while (++r <= n) {
-    value *= n - r + 1
-    value /= r
-    result.push(value)
-  }
+const cnr = Array(6)
+  .fill(0)
+  .map((_, n) => {
+    const result = [1]
+    let r = 0,
+      value = 1
+    while (++r <= n) {
+      value *= n - r + 1
+      value /= r
+      result.push(value)
+    }
 
-  return result
-})
+    return result
+  })
 
 /**
  * pNExtra[n][i] = Pr[ E(k) >= (i - 7n) * alpha(i) | N(k) = n ]
@@ -95,7 +123,7 @@ while (pNExtra.length < 6) {
     }
   })
 
-  pNExtra.push(next.map(x => x / 4))
+  pNExtra.push(next.map((x) => x / 4))
 }
 for (const array of pNExtra) {
   let accu = array.reduce((a, b) => a + b)
@@ -106,14 +134,18 @@ for (const array of pNExtra) {
 }
 
 /** Probability that `artifact` will have at least `target` stats at max level */
-function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: number }): number {
+function probability(
+  artifact: IArtifact,
+  _target: { [key in SubstatKey]?: number }
+): number {
   if (artifact.rarity <= 2) return NaN // Doesn't work with 1* and 2* should we decide to add them
 
   const { rarity, level, substats } = artifact
 
   // `target = target - mainstat - substat` to find the extra substats we need
   // Also count filler rolls (4 - # of substats) while we're at it
-  const target = { ..._target }, required = new Set(Object.keys(target))
+  const target = { ..._target },
+    required = new Set(Object.keys(target))
   let numFillerSlots = 0
   {
     const key = artifact.mainStatKey
@@ -130,8 +162,7 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
     if (key) {
       if (required.has(key)) {
         required.delete(key)
-        if (target[key]! > value)
-          target[key]! -= value
+        if (target[key]! > value) target[key]! -= value
         else delete target[key] // Requirement already met
       }
     } else numFillerSlots += 1
@@ -140,19 +171,25 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
 
   if (required.size > numFillerSlots || Object.keys(target).length > 4) return 0 // Not enough filler rolls
 
-  const numUpgradeRolls = Artifact.rollsRemaining(level, rarity) - numFillerSlots
+  const numUpgradeRolls =
+    Artifact.rollsRemaining(level, rarity) - numFillerSlots
 
   // normalize `target`
   for (const [key, value] of Object.entries(target))
-    target[key] = Math.max(Math.ceil(10 * value / Artifact.substatValue(key, rarity)), 1)
+    target[key] = Math.max(
+      Math.ceil((10 * value) / Artifact.substatValue(key, rarity)),
+      1
+    )
 
   let minTotalUpgrades = 0
-  const targetEntries = Object.entries(target).map(([key, target]) => {
-    const filler = required.has(key) ? 1 : 0 // Nf(i)
-    const minUpgrade = Math.ceil(target / 10) - filler // Minimum # of upgrade rolls to ensure E(i) > T(i)
-    minTotalUpgrades += minUpgrade
-    return { target, filler, minUpgrade }
-  }).reverse()
+  const targetEntries = Object.entries(target)
+    .map(([key, target]) => {
+      const filler = required.has(key) ? 1 : 0 // Nf(i)
+      const minUpgrade = Math.ceil(target / 10) - filler // Minimum # of upgrade rolls to ensure E(i) > T(i)
+      minTotalUpgrades += minUpgrade
+      return { target, filler, minUpgrade }
+    })
+    .reverse()
 
   if (minTotalUpgrades > numUpgradeRolls) return 0 // Not enough upgrade rolls
 
@@ -181,21 +218,26 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
   //  `target` = ceil(T / alpha)
   //  `numUpgradeRolls` = Nu
 
-  let result = { [numUpgradeRolls]: 1 }, additionalUpgradeRolls = numUpgradeRolls - minTotalUpgrades
+  let result = { [numUpgradeRolls]: 1 }
+  const additionalUpgradeRolls = numUpgradeRolls - minTotalUpgrades
 
   // Keep applying `target` from first to last.
   // At each step i in the loop, `result[n]` = g(i, n)
   targetEntries.forEach(({ target, filler, minUpgrade }, targetIndex) => {
     const next: typeof result = {}
 
-    for (let rolls = minUpgrade; rolls <= minUpgrade + additionalUpgradeRolls; rolls++) {
+    for (
+      let rolls = minUpgrade;
+      rolls <= minUpgrade + additionalUpgradeRolls;
+      rolls++
+    ) {
       // rolls = m; extra = T(i) / alpha - 7n
 
       // Extra substat (mutiple of alpha) required from upgrade & filler rolls
       const extra = target - 7 * (rolls + filler)
       // pExtra = Pr[ Has at least `extra` * alpha from `rolls` upgrade or filler rolls into `key` ]
       //        = f(m + Nf(i), T(i))
-      const pExtra = (extra > 0 ? pNExtra[rolls + filler][extra] : 1)
+      const pExtra = extra > 0 ? pNExtra[rolls + filler][extra] : 1
 
       for (const [_remaining, probability] of Object.entries(result)) {
         const remaining = parseInt(_remaining)
@@ -219,7 +261,10 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
 
   // At this point, `result[i]` = g(|K|, i)
 
-  return calculatePFillerRolls(artifact.mainStatKey, substats, required) * Object.values(result).reduce((a, b) => a + b)
+  return (
+    calculatePFillerRolls(artifact.mainStatKey, substats, required) *
+    Object.values(result).reduce((a, b) => a + b)
+  )
 }
 
 /**
@@ -228,11 +273,15 @@ function probability(artifact: IArtifact, _target: { [key in SubstatKey]?: numbe
  * 0 <= n <= N <= 5; 0 <= M <= 4
  */
 function pRollInto(m: number, n: number, M: number) {
-  return cnr[m][n] * Math.pow(M - 1, m - n) / Math.pow(M, m)
+  return (cnr[m][n] * Math.pow(M - 1, m - n)) / Math.pow(M, m)
 }
 
 // Given a list of substat (in that order), calculate the probability that filler rolls will have all `required` substats in any order
-function calculatePFillerRolls(mainStat: MainStatKey, substats: ISubstat[], required: Set<SubstatKey>) {
+function calculatePFillerRolls(
+  mainStat: MainStatKey,
+  substats: ISubstat[],
+  required: Set<SubstatKey>
+) {
   // Instead of picking substats in a particular order [critDMG_, atk_, ...],
   // We pick substat weights first [3, 4, 3, ...], then assign proper substats
   // that corresponds to that weight: 3 => critDMG_ | critRate_ ; 4 => atk_, etc.
@@ -256,20 +305,26 @@ function calculatePFillerRolls(mainStat: MainStatKey, substats: ISubstat[], requ
   for (const key of required) requiredCount[fWeight[key]] += 1
 
   let total = 0
-  crawlObject(pSuffixFillerSeq, [], obj => typeof obj === "number", (prob: number, path: string[]) => {
-    total += prob
-    const currentCount = { 3: 0, 4: 0, 6: 0 }
-    for (const key of path) currentCount[key] += 1
+  crawlObject(
+    pSuffixFillerSeq,
+    [],
+    (obj) => typeof obj === 'number',
+    (prob: number, path: string[]) => {
+      total += prob
+      const currentCount = { 3: 0, 4: 0, 6: 0 }
+      for (const key of path) currentCount[key] += 1
 
-    let sum = prob
-    for (const i of allWeights) {
-      const current = currentCount[i], required = requiredCount[i]
-      if (current < required) return
-      sum *= cnr[current][required]
+      let sum = prob
+      for (const i of allWeights) {
+        const current = currentCount[i],
+          required = requiredCount[i]
+        if (current < required) return
+        sum *= cnr[current][required]
+      }
+
+      pFillerRolls += sum
     }
-
-    pFillerRolls += sum
-  })
+  )
 
   for (const i of allWeights)
     pFillerRolls /= cnr[numUnusedSubstats[i]][requiredCount[i]]

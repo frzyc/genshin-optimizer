@@ -20,7 +20,7 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
   toStorageKey(key: CacheKey): string {
     return `${key}`
   }
-  validate(obj: unknown, key: CacheKey): StorageValue | undefined {
+  validate(obj: unknown, _key: CacheKey): StorageValue | undefined {
     return obj as StorageValue
   }
   toCache(storageObj: StorageValue, id: CacheKey): CacheValue | undefined {
@@ -33,14 +33,14 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
   followAny(callback: Callback<CacheKey>): () => void {
     this.anyListeners.push(callback)
     return () => {
-      this.anyListeners = this.anyListeners.filter(cb => cb !== callback)
+      this.anyListeners = this.anyListeners.filter((cb) => cb !== callback)
     }
   }
   follow(key: CacheKey, callback: Callback<CacheKey>) {
     if (this.listeners[key]) this.listeners[key]?.push(callback)
     else this.listeners[key] = [callback]
     return () => {
-      this.listeners[key] = this.listeners[key]?.filter(cb => cb !== callback)
+      this.listeners[key] = this.listeners[key]?.filter((cb) => cb !== callback)
       if (!this.listeners[key]?.length) delete this.listeners[key]
     }
   }
@@ -54,15 +54,15 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     if (typeof value === "function") value = value(deepClone(old))
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
-      this.trigger(key, "invalid", value)
+      this.trigger(key, 'invalid', value)
       return false
     }
     const cached = this.toCache(validated, key)
     if (!cached) {
-      this.trigger(key, "invalid", value)
+      this.trigger(key, 'invalid', value)
       return false
     }
-    if (!old && notify) this.trigger(key, "new", cached)
+    if (!old && notify) this.trigger(key, 'new', cached)
     this.setCached(key, cached)
     return true
   }
@@ -70,19 +70,19 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     deepFreeze(cached)
     this.data[key] = cached
     this.saveStorageEntry(key, cached)
-    this.trigger(key, "update", cached)
+    this.trigger(key, 'update', cached)
   }
   /** Trigger update event */
   trigger(key: CacheKey, reason: TriggerString, object?: any) {
-    this.listeners[key]?.forEach(cb => cb(key, reason, object))
-    this.anyListeners.forEach(cb => cb(key, reason, object))
+    this.listeners[key]?.forEach((cb) => cb(key, reason, object))
+    this.anyListeners.forEach((cb) => cb(key, reason, object))
   }
   remove(key: CacheKey, notify = true) {
     const rem = this.data[key]
     delete this.data[key]
     this.removeStorageEntry(key)
 
-    if (notify) this.trigger(key, "remove", rem)
+    if (notify) this.trigger(key, 'remove', rem)
     delete this.listeners[key]
   }
   /**
@@ -106,13 +106,12 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     this.remove(oldKey, notify)
     return true
   }
-  get goKeySingle(){
-    if(this.goKey.endsWith("s"))
-    return this.goKey.slice(0,-1)
+  get goKeySingle() {
+    if (this.goKey.endsWith('s')) return this.goKey.slice(0, -1)
   }
   generateKey(keys: Set<string> = new Set(this.keys)): string {
     let ind = keys.size
-    let candidate = ""
+    let candidate = ''
     do {
       candidate = `${this.goKeySingle}_${ind++}`
     } while (keys.has(candidate))
@@ -134,15 +133,21 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     for (const key in this.data) this.removeStorageEntry(key)
   }
   saveStorage() {
-    Object.entries(this.data).forEach(([k, v]) => this.saveStorageEntry(k as CacheKey, v))
+    Object.entries(this.data).forEach(([k, v]) =>
+      this.saveStorageEntry(k as CacheKey, v)
+    )
   }
   exportGOOD(go: Partial<IGOOD & IGO>) {
-    go[this.goKey] = Object.entries(this.data).map(([id, value]) => ({ ...this.deCache(value), id }))
+    go[this.goKey] = Object.entries(this.data).map(([id, value]) => ({
+      ...this.deCache(value),
+      id,
+    }))
   }
-  importGOOD(go: IGOOD & IGO, result: ImportResult) {
+  importGOOD(go: IGOOD & IGO, _result: ImportResult) {
     const entries = go[this.goKey]
-    if (entries && Array.isArray(entries)) entries.forEach(ele => ele.id && this.set(ele.id, ele))
+    if (entries && Array.isArray(entries))
+      entries.forEach((ele) => ele.id && this.set(ele.id, ele))
   }
 }
-export type TriggerString = "update" | "remove" | "new" | "invalid"
+export type TriggerString = 'update' | 'remove' | 'new' | 'invalid'
 type Callback<Arg> = (key: Arg, reason: TriggerString, object: any) => void

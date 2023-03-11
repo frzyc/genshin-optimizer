@@ -1,6 +1,11 @@
-import { CharacterSheetKey } from '../../Types/consts'
-import CharacterSheet from './CharacterSheet'
-import { CharacterKey, GenderKey, TravelerKey, allTravelerKeys } from '@genshin-optimizer/consts'
+import type { CharacterSheetKey } from '../../Types/consts'
+import type CharacterSheet from './CharacterSheet'
+import type {
+  CharacterKey,
+  GenderKey,
+  TravelerKey,
+} from '@genshin-optimizer/consts'
+import { allTravelerKeys } from '@genshin-optimizer/consts'
 
 import Albedo from './Albedo'
 import Alhaitham from './Alhaitham'
@@ -46,9 +51,9 @@ import Razor from './Razor'
 import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
-import Shenhe from "./Shenhe"
-import ShikanoinHeizou from "./ShikanoinHeizou"
-import Sucrose from "./Sucrose"
+import Shenhe from './Shenhe'
+import ShikanoinHeizou from './ShikanoinHeizou'
+import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
 import Wanderer from './Wanderer'
 import Thoma from './Thoma'
@@ -145,14 +150,18 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Yelan,
   Yoimiya,
   YunJin,
-  Zhongli
+  Zhongli,
 } as const
-export function getCharSheet(charKey: CharacterKey, gender: GenderKey = "F") {
+export function getCharSheet(charKey: CharacterKey, gender: GenderKey = 'F') {
   return characters[charKeyToCharSheetKey(charKey, gender)]
 }
 
-function charKeyToCharSheetKey(charKey: CharacterKey, gender: GenderKey): CharacterSheetKey {
-  if (allTravelerKeys.includes(charKey as TravelerKey)) return `${charKey}${gender}` as CharacterSheetKey
+function charKeyToCharSheetKey(
+  charKey: CharacterKey,
+  gender: GenderKey
+): CharacterSheetKey {
+  if (allTravelerKeys.includes(charKey as TravelerKey))
+    return `${charKey}${gender}` as CharacterSheetKey
   else return charKey as CharacterSheetKey
 }
 

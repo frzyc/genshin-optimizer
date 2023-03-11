@@ -1,95 +1,126 @@
-import { allElementWithPhyKeys, ElementWithPhyKey } from "@genshin-optimizer/consts";
-import { Info } from "../Formula/type";
-import elementalData from "./ElementalData";
-import { additiveReactions, AdditiveReactionsKey, amplifyingReactions, AmplifyingReactionsKey, crittableTransformativeReactions, CrittableTransformativeReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
-import StatIcon from "./StatIcon";
+import type { ElementWithPhyKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import type { Info } from '../Formula/type'
+import elementalData from './ElementalData'
+import type {
+  AdditiveReactionsKey,
+  AmplifyingReactionsKey,
+  CrittableTransformativeReactionsKey,
+  HitMoveKey,
+  TransformativeReactionsKey,
+} from './StatConstants'
+import {
+  additiveReactions,
+  amplifyingReactions,
+  crittableTransformativeReactions,
+  hitMoves,
+  transformativeReactions,
+} from './StatConstants'
+import StatIcon from './StatIcon'
 
 const statMap = {
-  hp: "HP", hp_: "HP", atk: "ATK", atk_: "ATK", def: "DEF", def_: "DEF",
-  eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
-  critRate_: "Crit Rate", critDMG_: "Crit DMG",
-  heal_: "Healing Bonus",
+  hp: 'HP',
+  hp_: 'HP',
+  atk: 'ATK',
+  atk_: 'ATK',
+  def: 'DEF',
+  def_: 'DEF',
+  eleMas: 'Elemental Mastery',
+  enerRech_: 'Energy Recharge',
+  critRate_: 'Crit Rate',
+  critDMG_: 'Crit DMG',
+  heal_: 'Healing Bonus',
 
   // Misc. Stats
-  base: "Base DMG",
-  dmg_: "Total DMG Bonus",
-  dmgInc: "Total DMG Increase",
-  all_dmg_: "Common DMG Bonus",
-  all_dmgInc: "Common DMG Increase",
-  weakspotDMG_: "Weakspot DMG",
-  incHeal_: "Incoming Healing Bonus",
-  shield_: "Shield Strength",
-  cdRed_: "CD Reduction",
-  skillCDRed_: "Ele. Skill CD Red.",
-  burstCDRed_: "Ele. Burst CD Red.",
-  moveSPD_: "Movement SPD",
-  atkSPD_: "ATK SPD",
-  stamina: "Stamina",
-  staminaDec_: "Stamina Consumption Dec.",
-  staminaSprintDec_: "Sprinting Stamina Consumption Dec.",
-  staminaGlidingDec_: "Gliding Stamina Consumption Dec.",
-  staminaChargedDec_: "Charged Attack Stamina Consumption Dec.",
-  dmgRed_: "Damage Reduction",
-  normalEle_dmg_: "Normal Att. Ele. DMG Bonus",
+  base: 'Base DMG',
+  dmg_: 'Total DMG Bonus',
+  dmgInc: 'Total DMG Increase',
+  all_dmg_: 'Common DMG Bonus',
+  all_dmgInc: 'Common DMG Increase',
+  weakspotDMG_: 'Weakspot DMG',
+  incHeal_: 'Incoming Healing Bonus',
+  shield_: 'Shield Strength',
+  cdRed_: 'CD Reduction',
+  skillCDRed_: 'Ele. Skill CD Red.',
+  burstCDRed_: 'Ele. Burst CD Red.',
+  moveSPD_: 'Movement SPD',
+  atkSPD_: 'ATK SPD',
+  stamina: 'Stamina',
+  staminaDec_: 'Stamina Consumption Dec.',
+  staminaSprintDec_: 'Sprinting Stamina Consumption Dec.',
+  staminaGlidingDec_: 'Gliding Stamina Consumption Dec.',
+  staminaChargedDec_: 'Charged Attack Stamina Consumption Dec.',
+  dmgRed_: 'Damage Reduction',
+  normalEle_dmg_: 'Normal Att. Ele. DMG Bonus',
 
-  heal_multi: "Heal multiplier",
-  healInc: "Heal Increase",
+  heal_multi: 'Heal multiplier',
+  healInc: 'Heal Increase',
 
   // Reaction
-  transformative_level_multi: "Transformative Reaction Level Multiplier",
-  crystallize_level_multi_: "Crystallize Reaction Level Multiplier",
-  amplificative_dmg_: "Amplificative Reaction DMG Bonus",
-  transformative_dmg_: "Transformative Reaction DMG Bonus",
-  crystallize_dmg_: "Crystallize Bonus",
+  transformative_level_multi: 'Transformative Reaction Level Multiplier',
+  crystallize_level_multi_: 'Crystallize Reaction Level Multiplier',
+  amplificative_dmg_: 'Amplificative Reaction DMG Bonus',
+  transformative_dmg_: 'Transformative Reaction DMG Bonus',
+  crystallize_dmg_: 'Crystallize Bonus',
   crystallize: `Crystallize`, // for displaying general crystallize
-  base_amplifying_multi_: "Base Amplifying Multiplier",
-  base_transformative_multi_: "Base Transformative Multiplier",
-  base_crystallize_multi_: "Base Crystallize Multiplier",
+  base_amplifying_multi_: 'Base Amplifying Multiplier',
+  base_transformative_multi_: 'Base Transformative Multiplier',
+  base_crystallize_multi_: 'Base Crystallize Multiplier',
 
   // Enemy
-  enemyLevel: "Enemy Level",
-  enemyLevel_multi_: "Enemy Level RES Multiplier",
-  enemyDef_multi_: "Enemy DEF Multiplier",
-  enemyDefRed_: "Enemy DEF Reduction",
-  enemyDefIgn_: "Enemy DEF Ignore",
+  enemyLevel: 'Enemy Level',
+  enemyLevel_multi_: 'Enemy Level RES Multiplier',
+  enemyDef_multi_: 'Enemy DEF Multiplier',
+  enemyDefRed_: 'Enemy DEF Reduction',
+  enemyDefIgn_: 'Enemy DEF Ignore',
 
   //infusion
-  infusionSelf: "Elemental Infusion",
-  infusionAura: "Elemental Infusion Aura",
+  infusionSelf: 'Elemental Infusion',
+  infusionAura: 'Elemental Infusion Aura',
 
   //talentBoost
-  autoBoost: "Normal Attack Level Boost",
-  skillBoost: "Ele. Skill Level Boost",
-  burstBoost: "Ele. Burst Level Boost",
+  autoBoost: 'Normal Attack Level Boost',
+  skillBoost: 'Ele. Skill Level Boost',
+  burstBoost: 'Ele. Burst Level Boost',
 
   // Modifiable base stats
-  base_atk: "Base ATK",
-  base_hp: "Base HP",
-  base_def: "Base DEF",
+  base_atk: 'Base ATK',
+  base_hp: 'Base HP',
+  base_def: 'Base DEF',
 
-  level: "Level",
+  level: 'Level',
 } as const
 
-export type Unit = "" | "%" | "s"
+export type Unit = '' | '%' | 's'
 
 export type BaseKeys = keyof typeof statMap
 
 /* Elemental extension keys */
 
 export type EleDmgKey = `${ElementWithPhyKey}_dmg_`
-export const allEleDmgKeys = allElementWithPhyKeys.map(e => `${e}_dmg_`) as EleDmgKey[]
+export const allEleDmgKeys = allElementWithPhyKeys.map(
+  (e) => `${e}_dmg_`
+) as EleDmgKey[]
 
 export type EleResKey = `${ElementWithPhyKey}_res_`
-export const allEleResKeys = allElementWithPhyKeys.map(e => `${e}_res_`) as EleResKey[]
+export const allEleResKeys = allElementWithPhyKeys.map(
+  (e) => `${e}_res_`
+) as EleResKey[]
 
 export type EleDmgIncKey = `${ElementWithPhyKey}_dmgInc`
-export const allEleDmgIncKeys = allElementWithPhyKeys.map(ele => `${ele}_dmgInc` as const) as EleDmgIncKey[]
+export const allEleDmgIncKeys = allElementWithPhyKeys.map(
+  (ele) => `${ele}_dmgInc` as const
+) as EleDmgIncKey[]
 
 export type EleEnemyResKey = `${ElementWithPhyKey}_enemyRes_`
-export const allEleEnemyResKeys = allElementWithPhyKeys.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
+export const allEleEnemyResKeys = allElementWithPhyKeys.map(
+  (e) => `${e}_enemyRes_`
+) as EleEnemyResKey[]
 
 export type EleECritDmgKey = `${ElementWithPhyKey}_critDMG_`
-export const allEleECritDmgKeys = allElementWithPhyKeys.map(e => `${e}_enemyRes_`) as EleEnemyResKey[]
+export const allEleECritDmgKeys = allElementWithPhyKeys.map(
+  (e) => `${e}_enemyRes_`
+) as EleEnemyResKey[]
 
 Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_dmg_`] = `${name} DMG Bonus`
@@ -100,20 +131,33 @@ Object.entries(elementalData).forEach(([e, { name }]) => {
   statMap[`${e}_critDMG_`] = `${name} CRIT DMG Bonus`
 })
 
-type ElementExtKey = EleDmgKey | EleResKey | EleEnemyResKey | EleDmgIncKey | EleECritDmgKey
+type ElementExtKey =
+  | EleDmgKey
+  | EleResKey
+  | EleEnemyResKey
+  | EleDmgIncKey
+  | EleECritDmgKey
 
 /* Hit move extension keys */
 export type HitMoveDmgKey = `${HitMoveKey}_dmg_`
-export const allHitMoveDmgKeys = Object.keys(hitMoves).map(h => `${h}_dmg_`) as HitMoveDmgKey[]
+export const allHitMoveDmgKeys = Object.keys(hitMoves).map(
+  (h) => `${h}_dmg_`
+) as HitMoveDmgKey[]
 
 export type HitMoveDmgIncKey = `${HitMoveKey}_dmgInc`
-export const allHitMoveDmgIncKeys = Object.keys(hitMoves).map(ele => `${ele}_dmgInc` as const) as HitMoveDmgIncKey[]
+export const allHitMoveDmgIncKeys = Object.keys(hitMoves).map(
+  (ele) => `${ele}_dmgInc` as const
+) as HitMoveDmgIncKey[]
 
 export type HitMoveCritRateKey = `${HitMoveKey}_critRate_`
-export const allHitMoveCritRateKeys = Object.keys(hitMoves).map(h => `${h}_critRate_`) as HitMoveCritRateKey[]
+export const allHitMoveCritRateKeys = Object.keys(hitMoves).map(
+  (h) => `${h}_critRate_`
+) as HitMoveCritRateKey[]
 
 export type HitMoveCritDmgKey = `${HitMoveKey}_critDMG_`
-export const allHitMoveCritDmgKeys = Object.keys(hitMoves).map(h => `${h}_critDMG_`) as HitMoveCritRateKey[]
+export const allHitMoveCritDmgKeys = Object.keys(hitMoves).map(
+  (h) => `${h}_critDMG_`
+) as HitMoveCritRateKey[]
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
   statMap[`${move}_dmgInc`] = `${moveName} DMG Increase`
@@ -121,40 +165,56 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   statMap[`${move}_critRate_`] = `${moveName} CRIT Rate Bonus`
   statMap[`${move}_critDMG_`] = `${moveName} CRIT DMG Bonus`
 })
-type MoveExtKey = HitMoveDmgKey | HitMoveDmgIncKey | HitMoveCritRateKey | HitMoveCritDmgKey
+type MoveExtKey =
+  | HitMoveDmgKey
+  | HitMoveDmgIncKey
+  | HitMoveCritRateKey
+  | HitMoveCritDmgKey
 
 /* Transformation extension keys */
 export type TransformativeReactionsDmgKey = `${TransformativeReactionsKey}_dmg_`
-export const allTransformativeReactionsDmgKeys = Object.keys(transformativeReactions).map(e => `${e}_dmg_`) as TransformativeReactionsDmgKey[]
+export const allTransformativeReactionsDmgKeys = Object.keys(
+  transformativeReactions
+).map((e) => `${e}_dmg_`) as TransformativeReactionsDmgKey[]
 
 Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
 })
 
-Object.entries(transformativeReactions).forEach(([reaction, { name, variants }]) => {
-  if (reaction === "swirl") variants.forEach(v => {
-    statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
-  })
-  else statMap[`${reaction}_hit`] = `${name} DMG`
-  statMap[`${reaction}_multi_`] = `${name} Multiplier`
+Object.entries(transformativeReactions).forEach(
+  ([reaction, { name, variants }]) => {
+    if (reaction === 'swirl')
+      variants.forEach((v) => {
+        statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
+      })
+    else statMap[`${reaction}_hit`] = `${name} DMG`
+    statMap[`${reaction}_multi_`] = `${name} Multiplier`
+  }
+)
+
+export type TransformativeReactionsCritRateKey =
+  `${CrittableTransformativeReactionsKey}_critRate_`
+export type TransformativeReactionsCritDMGKey =
+  `${CrittableTransformativeReactionsKey}_critDMG_`
+
+crittableTransformativeReactions.forEach((reaction) => {
+  statMap[
+    `${reaction}_critRate_`
+  ] = `${transformativeReactions[reaction].name} Crit Rate`
+  statMap[
+    `${reaction}_critDMG_`
+  ] = `${transformativeReactions[reaction].name} Crit DMG`
 })
 
-export type TransformativeReactionsCritRateKey = `${CrittableTransformativeReactionsKey}_critRate_`
-export type TransformativeReactionsCritDMGKey = `${CrittableTransformativeReactionsKey}_critDMG_`
-
-crittableTransformativeReactions.forEach(reaction => {
-  statMap[`${reaction}_critRate_`] = `${transformativeReactions[reaction].name} Crit Rate`
-  statMap[`${reaction}_critDMG_`] = `${transformativeReactions[reaction].name} Crit DMG`
-});
-
 //Crystallize
-(["cryo", "hydro", "pyro", "electro"]).forEach(e => {
+;['cryo', 'hydro', 'pyro', 'electro'].forEach((e) => {
   statMap[`${e}_crystallize`] = `${elementalData[e].name} Crystallize`
 })
 
-
 export type AmplifyingReactionsDmgKey = `${AmplifyingReactionsKey}_dmg_`
-export const allAmplifyingReactionsDmgKey = Object.keys(amplifyingReactions).map(e => `${e}_dmg_`) as AmplifyingReactionsDmgKey[]
+export const allAmplifyingReactionsDmgKey = Object.keys(
+  amplifyingReactions
+).map((e) => `${e}_dmg_`) as AmplifyingReactionsDmgKey[]
 
 Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
@@ -162,7 +222,9 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
 })
 
 export type AdditiveReactionsDmgKey = `${AdditiveReactionsKey}_dmg_`
-export const allAdditiveReactionsDmgKey = Object.keys(additiveReactions).map(e => `${e}_dmg_`) as AdditiveReactionsDmgKey[]
+export const allAdditiveReactionsDmgKey = Object.keys(additiveReactions).map(
+  (e) => `${e}_dmg_`
+) as AdditiveReactionsDmgKey[]
 
 Object.entries(additiveReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
@@ -170,13 +232,36 @@ Object.entries(additiveReactions).forEach(([reaction, { name }]) => {
 })
 
 /* EVERY stat key */
-export type StatKey = BaseKeys | ElementExtKey | MoveExtKey | TransformativeReactionsDmgKey | TransformativeReactionsCritRateKey | TransformativeReactionsCritDMGKey | AmplifyingReactionsDmgKey | AdditiveReactionsDmgKey
+export type StatKey =
+  | BaseKeys
+  | ElementExtKey
+  | MoveExtKey
+  | TransformativeReactionsDmgKey
+  | TransformativeReactionsCritRateKey
+  | TransformativeReactionsCritDMGKey
+  | AmplifyingReactionsDmgKey
+  | AdditiveReactionsDmgKey
 
-export type KeyMapPrefix = 'default' | 'base' | 'total' | 'uncapped' | 'custom' | 'char' | 'art' | 'weapon' | 'teamBuff'
+export type KeyMapPrefix =
+  | 'default'
+  | 'base'
+  | 'total'
+  | 'uncapped'
+  | 'custom'
+  | 'char'
+  | 'art'
+  | 'weapon'
+  | 'teamBuff'
 const subKeyMap: StrictDict<KeyMapPrefix, string> = {
-  default: "Default", base: "Base", total: "Total", uncapped: "Uncapped",
-  custom: "Custom", char: "Char.", art: "Art.", weapon: "Weapon",
-  teamBuff: "Team"
+  default: 'Default',
+  base: 'Base',
+  total: 'Total',
+  uncapped: 'Uncapped',
+  custom: 'Custom',
+  char: 'Char.',
+  art: 'Art.',
+  weapon: 'Weapon',
+  teamBuff: 'Team',
 }
 
 export const allStatKeys = Object.keys(statMap) as StatKey[]
@@ -184,30 +269,40 @@ export default class KeyMap {
   //do not instantiate.
   constructor() {
     if (this instanceof KeyMap)
-      throw Error('A static class cannot be instantiated.');
+      throw Error('A static class cannot be instantiated.')
   }
   static getPrefixStr(prefix: KeyMapPrefix): string {
     return subKeyMap[prefix]
   }
-  static getStr(key = ""): string | undefined {
+  static getStr(key = ''): string | undefined {
     return statMap[key]
   }
-  static get(key = "") {
+  static get(key = '') {
     return KeyMap.getStr(key) ?? key
   }
-  static getVariant(key = ""): ElementWithPhyKey | TransformativeReactionsKey | AmplifyingReactionsKey | AdditiveReactionsKey | "heal" | undefined {
-    const trans = Object.keys(transformativeReactions).find(e => key.startsWith(e))
+  static getVariant(
+    key = ''
+  ):
+    | ElementWithPhyKey
+    | TransformativeReactionsKey
+    | AmplifyingReactionsKey
+    | AdditiveReactionsKey
+    | 'heal'
+    | undefined {
+    const trans = Object.keys(transformativeReactions).find((e) =>
+      key.startsWith(e)
+    )
     if (trans) return trans
-    const amp = Object.keys(amplifyingReactions).find(e => key.startsWith(e))
+    const amp = Object.keys(amplifyingReactions).find((e) => key.startsWith(e))
     if (amp) return amp
-    const add = Object.keys(additiveReactions).find(e => key.startsWith(e))
+    const add = Object.keys(additiveReactions).find((e) => key.startsWith(e))
     if (add) return add
-    if (key.includes("heal")) return "heal"
-    return allElementWithPhyKeys.find(e => key.startsWith(e))
+    if (key.includes('heal')) return 'heal'
+    return allElementWithPhyKeys.find((e) => key.startsWith(e))
   }
-  static unit(key = ""): Unit {
-    if (key.endsWith("_")) return "%"
-    return ""
+  static unit(key = ''): Unit {
+    if (key.endsWith('_')) return '%'
+    return ''
   }
   static info(key: string): Partial<Info> {
     const info = {} as Partial<Info>
@@ -215,29 +310,48 @@ export default class KeyMap {
     info.unit = this.unit(key)
     const variant = this.getVariant(key)
     info.variant = variant
-    info.icon = <StatIcon statKey={key} iconProps={{ fontSize: "inherit", color: variant }} />
+    info.icon = (
+      <StatIcon
+        statKey={key}
+        iconProps={{ fontSize: 'inherit', color: variant }}
+      />
+    )
     return info
   }
 }
 
-export function valueString(value: number, unit: Unit = "", fixed = -1): string {
+export function valueString(
+  value: number,
+  unit: Unit = '',
+  fixed = -1
+): string {
   if (!isFinite(value)) {
     if (value > 0) return `\u221E`
     if (value < 0) return `-\u221E`
     return 'NaN'
   }
-  if (unit === "%") value *= 100
+  if (unit === '%') value *= 100
   if (Number.isInteger(value)) fixed = 0
   else if (fixed === -1) {
-    if (unit === "%") fixed = 1
-    else fixed = Math.abs(value) < 10 ? 3 : Math.abs(value) < 1000 ? 2 : Math.abs(value) < 10000 ? 1 : 0
+    if (unit === '%') fixed = 1
+    else
+      fixed =
+        Math.abs(value) < 10
+          ? 3
+          : Math.abs(value) < 1000
+          ? 2
+          : Math.abs(value) < 10000
+          ? 1
+          : 0
   }
   return `${value.toFixed(fixed)}${unit}`
 }
 
 export function cacheValueString(value: number, unit: Unit): string {
   switch (unit) {
-    case "%": return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
-    default: return Math.round(value).toFixed(0)
+    case '%':
+      return (Math.round(value * 10) / 10).toFixed(1) // TODO: % conversion
+    default:
+      return Math.round(value).toFixed(0)
   }
 }

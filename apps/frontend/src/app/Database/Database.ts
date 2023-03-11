@@ -1,22 +1,24 @@
-import { createContext } from "react";
-import { TeamData } from "../Context/DataContext";
-import { CharacterKey, Gender } from "../Types/consts";
-import { DBMetaEntry } from "./DataEntries/DBMetaEntry";
-import { DisplayArtifactEntry } from "./DataEntries/DisplayArtifactEntry";
-import { DisplayCharacterEntry } from "./DataEntries/DisplayCharacterEntry";
-import { DisplayOptimizeEntry } from "./DataEntries/DisplayOptimizeEntry";
-import { DisplayToolEntry } from "./DataEntries/DisplayTool";
-import { DisplayWeaponEntry } from "./DataEntries/DisplayWeaponEntry";
-import { ArtifactDataManager } from "./DataManagers/ArtifactData";
-import { BuildResultDataManager } from "./DataManagers/BuildResult";
-import { BuildSettingDataManager } from "./DataManagers/BuildSettingData";
-import { CharacterDataManager } from "./DataManagers/CharacterData";
-import { CharacterTCDataManager } from "./DataManagers/CharacterTCData";
-import { CharMetaDataManager } from "./DataManagers/CharMetaData";
-import { WeaponDataManager } from "./DataManagers/WeaponData";
-import { DBStorage, SandboxStorage } from "./DBStorage";
-import { GOSource, IGO, IGOOD, ImportResult, newImportResult } from "./exim";
-import { currentDBVersion, migrate, migrateGOOD } from "./migrate";
+import { createContext } from 'react'
+import type { TeamData } from '../Context/DataContext'
+import type { CharacterKey, Gender } from '../Types/consts'
+import { DBMetaEntry } from './DataEntries/DBMetaEntry'
+import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
+import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
+import { DisplayOptimizeEntry } from './DataEntries/DisplayOptimizeEntry'
+import { DisplayToolEntry } from './DataEntries/DisplayTool'
+import { DisplayWeaponEntry } from './DataEntries/DisplayWeaponEntry'
+import { ArtifactDataManager } from './DataManagers/ArtifactData'
+import { BuildResultDataManager } from './DataManagers/BuildResult'
+import { BuildSettingDataManager } from './DataManagers/BuildSettingData'
+import { CharacterDataManager } from './DataManagers/CharacterData'
+import { CharacterTCDataManager } from './DataManagers/CharacterTCData'
+import { CharMetaDataManager } from './DataManagers/CharMetaData'
+import { WeaponDataManager } from './DataManagers/WeaponData'
+import type { DBStorage } from './DBStorage'
+import { SandboxStorage } from './DBStorage'
+import type { IGO, IGOOD, ImportResult } from './exim'
+import { GOSource, newImportResult } from './exim'
+import { currentDBVersion, migrate, migrateGOOD } from './migrate'
 
 export class ArtCharDatabase {
   storage: DBStorage
@@ -89,10 +91,25 @@ export class ArtCharDatabase {
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, weapon, arts in order, to respect import order
-    return [this.chars, this.weapons, this.arts, this.buildSettings, this.buildResult, this.charTCs, this.charMeta] as const
+    return [
+      this.chars,
+      this.weapons,
+      this.arts,
+      this.buildSettings,
+      this.buildResult,
+      this.charTCs,
+      this.charMeta,
+    ] as const
   }
   get dataEntries() {
-    return [this.dbMeta, this.displayWeapon, this.displayArtifact, this.displayOptimize, this.displayCharacter, this.displayTool] as const
+    return [
+      this.dbMeta,
+      this.displayWeapon,
+      this.displayArtifact,
+      this.displayOptimize,
+      this.displayCharacter,
+      this.displayTool,
+    ] as const
   }
 
   _getTeamData(key: CharacterKey) {
@@ -101,66 +118,82 @@ export class ArtCharDatabase {
   cacheTeamData(key: CharacterKey, data: TeamData) {
     this.teamData[key] = data
   }
-  invalidateTeamData(key: CharacterKey | "") {
+  invalidateTeamData(key: CharacterKey | '') {
     delete this.teamData[key]
-    Object.entries(this.teamData).forEach(([k, teamData]) => teamData[key] && delete this.teamData[k])
+    Object.entries(this.teamData).forEach(
+      ([k, teamData]) => teamData[key] && delete this.teamData[k]
+    )
   }
   clear() {
-    this.dataManagers.map(dm => dm.clear())
-    this.teamData = {};
-    this.dataEntries.map(de => de.clear())
+    this.dataManagers.map((dm) => dm.clear())
+    this.teamData = {}
+    this.dataEntries.map((de) => de.clear())
   }
   get gender() {
-    const gender: Gender = this.dbMeta.get().gender ?? "F"
+    const gender: Gender = this.dbMeta.get().gender ?? 'F'
     return gender
   }
   exportGOOD() {
     const good: Partial<IGO & IGOOD> = {
-      format: "GOOD",
+      format: 'GOOD',
       dbVersion: currentDBVersion,
       source: GOSource,
       version: 1,
     }
-    this.dataManagers.map(dm => dm.exportGOOD(good));
-    this.dataEntries.map(de => de.exportGOOD(good))
+    this.dataManagers.map((dm) => dm.exportGOOD(good))
+    this.dataEntries.map((de) => de.exportGOOD(good))
     return good as IGO & IGOOD
   }
-  importGOOD(good: IGOOD & IGO, keepNotInImport: boolean, ignoreDups: boolean): ImportResult {
+  importGOOD(
+    good: IGOOD & IGO,
+    keepNotInImport: boolean,
+    ignoreDups: boolean
+  ): ImportResult {
     good = migrateGOOD(good)
-    const source = good.source ?? "Unknown"
+    const source = good.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
-    if (source !== "Genshin Optimizer") {
-      good.artifacts?.forEach(a => delete (a as unknown as { id?: string }).id)
-      good.weapons?.forEach(a => delete (a as unknown as { id?: string }).id)
+    if (source !== 'Genshin Optimizer') {
+      good.artifacts?.forEach(
+        (a) => delete (a as unknown as { id?: string }).id
+      )
+      good.weapons?.forEach((a) => delete (a as unknown as { id?: string }).id)
     }
-    const result: ImportResult = newImportResult(source, keepNotInImport, ignoreDups);
+    const result: ImportResult = newImportResult(
+      source,
+      keepNotInImport,
+      ignoreDups
+    )
 
     // Follow updates from char/art/weapon to gather import results
     const unfollows = [
       this.chars.followAny((key, reason, value) => {
         const arr = result.characters[reason]
-        const ind = arr.findIndex(c => c?.key === key)
+        const ind = arr.findIndex((c) => c?.key === key)
         if (ind < 0) arr.push(value)
         else arr[ind] = value
       }),
-      this.arts.followAny((key, reason, value) => result.artifacts[reason].push(value)),
-      this.weapons.followAny((key, reason, value) => result.weapons[reason].push(value)),
+      this.arts.followAny((key, reason, value) =>
+        result.artifacts[reason].push(value)
+      ),
+      this.weapons.followAny((key, reason, value) =>
+        result.weapons[reason].push(value)
+      ),
     ]
 
-    this.dataManagers.map(dm => dm.importGOOD(good, result));
-    this.dataEntries.map(de => de.importGOOD(good, result))
+    this.dataManagers.map((dm) => dm.importGOOD(good, result))
+    this.dataEntries.map((de) => de.importGOOD(good, result))
     this.weapons.ensureEquipments()
-    unfollows.forEach(f => f())
+    unfollows.forEach((f) => f())
 
     return result
   }
   clearStorage() {
-    this.dataManagers.map(dm => dm.clearStorage());
-    this.dataEntries.map(de => de.clearStorage());
+    this.dataManagers.map((dm) => dm.clearStorage())
+    this.dataEntries.map((de) => de.clearStorage())
   }
   saveStorage() {
-    this.dataManagers.map(dm => dm.saveStorage());
-    this.dataEntries.map(de => de.saveStorage());
+    this.dataManagers.map((dm) => dm.saveStorage())
+    this.dataEntries.map((de) => de.saveStorage())
     this.storage.setDBVersion(this.dbVer)
     this.storage.setDBIndex(this.dbIndex)
   }
@@ -184,11 +217,10 @@ export class ArtCharDatabase {
     this.storage = oldstorage
     localStorage.setItem(key, JSON.stringify(Object.fromEntries(other.entries)))
   }
-
 }
 export type DatabaseContextObj = {
-  databases: ArtCharDatabase[],
-  setDatabase: (index: number, db: ArtCharDatabase) => void,
+  databases: ArtCharDatabase[]
+  setDatabase: (index: number, db: ArtCharDatabase) => void
   database: ArtCharDatabase
 }
 export const DatabaseContext = createContext({} as DatabaseContextObj)

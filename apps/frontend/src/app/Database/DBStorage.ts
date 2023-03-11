@@ -66,8 +66,7 @@ export class DBLocalStorage implements DBStorage {
   }
   removeForKeys(shouldRemove: (key: string) => boolean) {
     for (const key in this.storage) {
-      if (shouldRemove(key))
-        this.storage.removeItem(key)
+      if (shouldRemove(key)) this.storage.removeItem(key)
     }
   }
   getDBVersion(): number {
@@ -131,7 +130,9 @@ export class SandboxStorage implements DBStorage {
     this.storage = {}
   }
   removeForKeys(shouldRemove: (key: string) => boolean) {
-    this.storage = Object.fromEntries(Object.entries(this.storage).filter(([key]) => !shouldRemove(key)))
+    this.storage = Object.fromEntries(
+      Object.entries(this.storage).filter(([key]) => !shouldRemove(key))
+    )
   }
   getDBVersion(): number {
     return parseInt(this.getString('db_ver') ?? '0')
