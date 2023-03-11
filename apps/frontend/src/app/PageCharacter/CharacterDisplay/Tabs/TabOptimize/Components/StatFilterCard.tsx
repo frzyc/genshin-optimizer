@@ -23,11 +23,9 @@ export default function StatFilterCard({ disabled = false }: { disabled?: boolea
         </Box>
       </CardContent>
       <Divider />
-      <CardContent>
-        <Box display="flex" flexDirection="column" gap={0.5}>
-          <OptimizationTargetEditorList statFilters={statFilters} setStatFilters={setStatFilters} disabled={disabled} />
-        </Box>
-      </CardContent>
+      <Box display="flex" flexDirection="column" gap={0.5}>
+        <OptimizationTargetEditorList statFilters={statFilters} setStatFilters={setStatFilters} disabled={disabled} />
+      </Box>
     </CardLight>
   </Box>
 }
