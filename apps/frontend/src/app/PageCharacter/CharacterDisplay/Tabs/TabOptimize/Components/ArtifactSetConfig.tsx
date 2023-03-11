@@ -1,9 +1,7 @@
-import type {
-  ArtifactSetKey,
-  ArtifactSlotKey} from '@genshin-optimizer/consts';
+import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSetKeys,
-  allArtifactSlotKeys
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
@@ -33,7 +31,7 @@ import ModalWrapper from '../../../../../Components/ModalWrapper'
 import SqBadge from '../../../../../Components/SqBadge'
 import { Translate } from '../../../../../Components/Translate'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../../Context/DataContext';
+import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'

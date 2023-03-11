@@ -1,11 +1,12 @@
 import type {
   CharacterKey,
-  LocationCharacterKey} from '@genshin-optimizer/consts';
+  LocationCharacterKey,
+} from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  charKeyToLocCharKey
+  charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -21,9 +22,7 @@ import {
   ToggleButton,
   Typography,
 } from '@mui/material'
-import type {
-  ChangeEvent,
-  MouseEvent} from 'react';
+import type { ChangeEvent, MouseEvent } from 'react'
 import {
   useCallback,
   useContext,
@@ -47,11 +46,8 @@ import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
-import type {
-  AllowLocationsState} from '../../../../../Database/DataManagers/BuildSettingData';
-import {
-  allAllowLocationsState
-} from '../../../../../Database/DataManagers/BuildSettingData'
+import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
+import { allAllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
 import useBoolState from '../../../../../ReactHooks/useBoolState'
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
 import { iconInlineProps } from '../../../../../SVGIcons'

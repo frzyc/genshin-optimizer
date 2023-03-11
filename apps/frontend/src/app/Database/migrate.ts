@@ -2,10 +2,9 @@
 import type {
   ElementKey,
   LocationCharacterKey,
-  TravelerKey} from '@genshin-optimizer/consts';
-import {
-  allLocationCharacterKeys
+  TravelerKey,
 } from '@genshin-optimizer/consts'
+import { allLocationCharacterKeys } from '@genshin-optimizer/consts'
 import type { CustomMultiTarget } from '../Types/character'
 import { travelerElements } from '../Types/consts'
 import type { DBStorage } from './DBStorage'

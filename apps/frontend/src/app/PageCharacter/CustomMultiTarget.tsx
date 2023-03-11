@@ -22,9 +22,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import type {
-  ChangeEvent,
-  FocusEvent} from 'react';
+import type { ChangeEvent, FocusEvent } from 'react'
 import {
   Suspense,
   useCallback,
@@ -49,9 +47,9 @@ import ModalWrapper from '../Components/ModalWrapper'
 import StatEditorList from '../Components/StatEditorList'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext } from '../Context/DataContext'
-import type { InputPremodKey } from '../Formula';
+import type { InputPremodKey } from '../Formula'
 import { allInputPremodKeys } from '../Formula'
-import type { NodeDisplay} from '../Formula/uiData';
+import type { NodeDisplay } from '../Formula/uiData'
 import { UIData } from '../Formula/uiData'
 import useBoolState from '../ReactHooks/useBoolState'
 import useTimeout from '../ReactHooks/useTimeout'
@@ -60,14 +58,15 @@ import type {
   AdditiveReactionKey,
   AmpReactionKey,
   HitModeKey,
-  InfusionAuraElements} from '../Types/consts';
+  InfusionAuraElements,
+} from '../Types/consts'
 import {
   allAdditiveReactions,
   allAmpReactions,
   allHitModes,
   allInfusionAuraElements,
   allowedAdditiveReactions,
-  allowedAmpReactions
+  allowedAmpReactions,
 } from '../Types/consts'
 import { arrayMove, clamp, deepClone, objPathValue } from '../Util/Util'
 import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'

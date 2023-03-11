@@ -1,10 +1,11 @@
 import type {
   ArtifactSetKey,
   CharacterKey,
-  LocationCharacterKey} from '@genshin-optimizer/consts';
+  LocationCharacterKey,
+} from '@genshin-optimizer/consts'
 import {
   allCharacterKeys,
-  allLocationCharacterKeys
+  allLocationCharacterKeys,
 } from '@genshin-optimizer/consts'
 import Artifact from '../../Data/Artifacts/Artifact'
 import {

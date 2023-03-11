@@ -1,4 +1,4 @@
-import type { CharacterKey} from '@genshin-optimizer/consts';
+import type { CharacterKey } from '@genshin-optimizer/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/consts'
 import {
   CheckBox,
@@ -49,7 +49,7 @@ import InfoTooltip from '../../../../Components/InfoTooltip'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../Context/DataContext';
+import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
@@ -66,7 +66,7 @@ import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
-import type { Build} from '../../../../Solver/common';
+import type { Build } from '../../../../Solver/common'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import type { ICachedArtifact } from '../../../../Types/artifact'
@@ -77,7 +77,7 @@ import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
-import type { BuildStatus } from './Components/BuildAlert';
+import type { BuildStatus } from './Components/BuildAlert'
 import BuildAlert from './Components/BuildAlert'
 import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
