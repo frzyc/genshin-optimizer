@@ -1,20 +1,33 @@
-import { Box, Button, Divider, Stack } from '@mui/material';
-import { useCallback, useContext, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import ImgIcon from '../../../../../Components/Image/ImgIcon';
-import SqBadge from '../../../../../Components/SqBadge';
-import { DataContext } from '../../../../../Context/DataContext';
-import { DatabaseContext } from '../../../../../Database/Database';
-import { getDisplayHeader } from '../../../../../Formula/DisplayUtil';
-import { NodeDisplay } from '../../../../../Formula/uiData';
-import useBoolState from '../../../../../ReactHooks/useBoolState';
-import { objPathValue } from '../../../../../Util/Util';
-import { TargetSelectorModal, TargetSelectorModalProps } from './TargetSelectorModal';
+import { Box, Button, Divider, Stack } from '@mui/material'
+import { useCallback, useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import ImgIcon from '../../../../../Components/Image/ImgIcon'
+import SqBadge from '../../../../../Components/SqBadge'
+import { DataContext } from '../../../../../Context/DataContext'
+import { DatabaseContext } from '../../../../../Database/Database'
+import { getDisplayHeader } from '../../../../../Formula/DisplayUtil'
+import type { NodeDisplay } from '../../../../../Formula/uiData'
+import useBoolState from '../../../../../ReactHooks/useBoolState'
+import { objPathValue } from '../../../../../Util/Util'
+import type { TargetSelectorModalProps } from './TargetSelectorModal'
+import { TargetSelectorModal } from './TargetSelectorModal'
 
-export default function OptimizationTargetSelector({ optimizationTarget, setTarget, disabled = false, showEmptyTargets = false, defaultText, targetSelectorModalProps = {} }: {
-  optimizationTarget?: string[], setTarget: (target: string[]) => void, disabled?: boolean, showEmptyTargets?: boolean, defaultText?: string, targetSelectorModalProps?: Partial<TargetSelectorModalProps>
+export default function OptimizationTargetSelector({
+  optimizationTarget,
+  setTarget,
+  disabled = false,
+  showEmptyTargets = false,
+  defaultText,
+  targetSelectorModalProps = {},
+}: {
+  optimizationTarget?: string[]
+  setTarget: (target: string[]) => void
+  disabled?: boolean
+  showEmptyTargets?: boolean
+  defaultText?: string
+  targetSelectorModalProps?: Partial<TargetSelectorModalProps>
 }) {
-  const { t } = useTranslation("page_character_optimize")
+  const { t } = useTranslation('page_character_optimize')
   const [show, onShow, onClose] = useBoolState(false)
 
   const setTargetHandler = useCallback(
@@ -22,40 +35,78 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
       onClose()
       setTarget(target)
     },
-    [onClose, setTarget],
+    [onClose, setTarget]
   )
   const { data } = useContext(DataContext)
   const { database } = useContext(DatabaseContext)
-  const displayHeader = useMemo(() => optimizationTarget && getDisplayHeader(data, optimizationTarget[0], database), [data, optimizationTarget, database])
+  const displayHeader = useMemo(
+    () =>
+      optimizationTarget &&
+      getDisplayHeader(data, optimizationTarget[0], database),
+    [data, optimizationTarget, database]
+  )
 
-  if (!defaultText) defaultText = t("targetSelector.selectOptTarget")
+  if (!defaultText) defaultText = t('targetSelector.selectOptTarget')
 
   const { title, icon, action } = displayHeader ?? {}
-  const node: NodeDisplay | undefined = optimizationTarget && objPathValue(data.getDisplay(), optimizationTarget) as any
+  const node: NodeDisplay | undefined =
+    optimizationTarget &&
+    (objPathValue(data.getDisplay(), optimizationTarget) as any)
 
-  const invalidTarget = !optimizationTarget || !displayHeader || !node
+  const invalidTarget =
+    !optimizationTarget ||
+    !displayHeader ||
+    !node ||
     // Make sure the opt target is valid, if we are not in multi-target
-    || (!showEmptyTargets && node.isEmpty)
+    (!showEmptyTargets && node.isEmpty)
 
-  const prevariant = invalidTarget ? "secondary" : node.info.variant
-  const variant = prevariant === "invalid" ? undefined : prevariant
+  const prevariant = invalidTarget ? 'secondary' : node.info.variant
+  const variant = prevariant === 'invalid' ? undefined : prevariant
 
   const { textSuffix } = node?.info ?? {}
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>
   const iconDisplay = icon ? <ImgIcon src={icon} size={2} /> : node?.info.icon
-  return <>
-    <Button color="info" onClick={onShow} disabled={disabled} sx={{ flexGrow: 1 }} >
-      {invalidTarget ? <strong>{defaultText}</strong> : <Stack direction="row" divider={<Divider orientation='vertical' flexItem />} spacing={1}>
-        <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-          {iconDisplay}
-          <span>{title}</span>
-          {!!action && <SqBadge color='success' sx={{ whiteSpace: "normal" }}>{action}</SqBadge>}
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <SqBadge color={variant} sx={{ whiteSpace: "normal" }}><strong>{node.info.name}</strong>{suffixDisplay}</SqBadge>
-        </Box>
-      </Stack>}
-    </Button>
-    <TargetSelectorModal show={show} onClose={onClose} setTarget={setTargetHandler} showEmptyTargets={showEmptyTargets} {...targetSelectorModalProps} />
-  </>
+  return (
+    <>
+      <Button
+        color="info"
+        onClick={onShow}
+        disabled={disabled}
+        sx={{ flexGrow: 1 }}
+      >
+        {invalidTarget ? (
+          <strong>{defaultText}</strong>
+        ) : (
+          <Stack
+            direction="row"
+            divider={<Divider orientation="vertical" flexItem />}
+            spacing={1}
+          >
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              {iconDisplay}
+              <span>{title}</span>
+              {!!action && (
+                <SqBadge color="success" sx={{ whiteSpace: 'normal' }}>
+                  {action}
+                </SqBadge>
+              )}
+            </Box>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <SqBadge color={variant} sx={{ whiteSpace: 'normal' }}>
+                <strong>{node.info.name}</strong>
+                {suffixDisplay}
+              </SqBadge>
+            </Box>
+          </Stack>
+        )}
+      </Button>
+      <TargetSelectorModal
+        show={show}
+        onClose={onClose}
+        setTarget={setTargetHandler}
+        showEmptyTargets={showEmptyTargets}
+        {...targetSelectorModalProps}
+      />
+    </>
+  )
 }

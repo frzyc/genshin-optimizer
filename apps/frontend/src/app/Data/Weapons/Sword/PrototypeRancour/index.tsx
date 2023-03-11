@@ -1,46 +1,69 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import { lookup, naught, prod, subscript } from "../../../../Formula/utils"
-import { WeaponKey } from '@genshin-optimizer/consts'
+import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
-import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
+import type { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
-const key: WeaponKey = "PrototypeRancour"
+const key: WeaponKey = 'PrototypeRancour'
 const data_gen = data_gen_json as WeaponData
 
-const [condStackPath, condStack] = cond(key, "stack")
+const [condStackPath, condStack] = cond(key, 'stack')
 const bonusInc = [0.04, 0.05, 0.06, 0.07, 0.08]
-const atk_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { unit: "%" }), i)), naught)
-const def_ = lookup(condStack, objectKeyMap(range(1, 4), i => prod(subscript(input.weapon.refineIndex, bonusInc, { unit: "%" }), i)), naught)
+const atk_ = lookup(
+  condStack,
+  objectKeyMap(range(1, 4), (i) =>
+    prod(subscript(input.weapon.refineIndex, bonusInc, { unit: '%' }), i)
+  ),
+  naught
+)
+const def_ = lookup(
+  condStack,
+  objectKeyMap(range(1, 4), (i) =>
+    prod(subscript(input.weapon.refineIndex, bonusInc, { unit: '%' }), i)
+  ),
+  naught
+)
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     atk_,
-    def_
+    def_,
   },
 })
 const sheet: IWeaponSheet = {
-  document: [{
-    value: condStack,
-    path: condStackPath,
-    header: headerTemplate(key, st("stacks")),
-    name: st("hitOp.none"),
-    states: Object.fromEntries(range(1, 4).map(i => [i, {
-      name: st("stack", { count: i }),
-      fields: [{
-        node: atk_
-      }, {
-        node: def_
-      }, {
-        text: stg("duration"),
-        value: 6,
-        unit: "s"
-      }]
-    }]))
-  }],
+  document: [
+    {
+      value: condStack,
+      path: condStackPath,
+      header: headerTemplate(key, st('stacks')),
+      name: st('hitOp.none'),
+      states: Object.fromEntries(
+        range(1, 4).map((i) => [
+          i,
+          {
+            name: st('stack', { count: i }),
+            fields: [
+              {
+                node: atk_,
+              },
+              {
+                node: def_,
+              },
+              {
+                text: stg('duration'),
+                value: 6,
+                unit: 's',
+              },
+            ],
+          },
+        ])
+      ),
+    },
+  ],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

@@ -1,6 +1,6 @@
 // This is a generated index file.
-import circlet from "./UI_RelicIcon_15009_3.png"
+import circlet from './UI_RelicIcon_15009_3.png'
 const data = {
-  circlet
+  circlet,
 } as const
 export default data

@@ -1,5 +1,5 @@
-import { WeaponCatalystKey } from '@genshin-optimizer/consts'
-import WeaponSheet from '../WeaponSheet'
+import type { WeaponCatalystKey } from '@genshin-optimizer/consts'
+import type WeaponSheet from '../WeaponSheet'
 import ApprenticesNotes from './ApprenticesNotes'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BlackcliffAgate from './BlackcliffAgate'

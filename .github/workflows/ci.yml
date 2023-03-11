@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Run lint
+        run: |
+          yarn run nx run-many --target=lint --max-warnings=0
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Run Tests
+        run: |
+          yarn run nx run-many --target=test
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
+      - name: Yarn Install
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Check Formatting
+        run: |
+          yarn run nx format:check

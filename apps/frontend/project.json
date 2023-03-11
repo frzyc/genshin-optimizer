@@ -32,7 +32,8 @@
             "input": "dist/libs/dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
-          }],
+          }
+        ],
         "styles": [],
         "scripts": [],
         "isolatedConfig": true,
@@ -44,7 +45,7 @@
           "optimization": false,
           "sourceMap": true,
           "vendorChunk": true,
-          "statsJson":true
+          "statsJson": true
         },
         "production": {
           "fileReplacements": [
@@ -82,7 +83,7 @@
       },
       "dependsOn": ["^build", "^pipeline"]
     },
-    "deploy":{
+    "deploy": {
       "command": "gh-pages -d dist/apps/frontend",
       "dependsOn": ["build"]
     },
@@ -99,7 +100,8 @@
       "options": {
         "jestConfig": "apps/frontend/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["^build", "^pipeline"]
     }
   },
   "tags": [],

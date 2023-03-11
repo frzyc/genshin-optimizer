@@ -1,8 +1,8 @@
 // This is a generated index file.
-import icon from "./UI_EquipIcon_Sword_Traveler.png"
-import awakenIcon from "./UI_EquipIcon_Sword_Traveler_Awaken.png"
+import icon from './UI_EquipIcon_Sword_Traveler.png'
+import awakenIcon from './UI_EquipIcon_Sword_Traveler_Awaken.png'
 const data = {
   icon,
-  awakenIcon
+  awakenIcon,
 } as const
 export default data

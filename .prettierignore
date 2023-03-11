@@ -2,3 +2,7 @@
 
 /dist
 /coverage
+/.yarn
+
+/libs/dm/GenshinData
+*_gen.json

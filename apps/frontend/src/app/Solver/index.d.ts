@@ -1,6 +1,6 @@
-import { ArtSetExclusion } from "../Database/DataManagers/BuildSettingData";
-import { OptNode } from "../Formula/optimization";
-import { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./common";
+import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
+import type { OptNode } from '../Formula/optimization'
+import type { ArtifactsBySlot, Build, PlotData, RequestFilter } from './common'
 
 export type OptProblemInput = {
   arts: ArtifactsBySlot
@@ -12,26 +12,32 @@ export type OptProblemInput = {
   plotBase?: OptNode
 }
 
-export type WorkerCommand = Setup | Split | Iterate | Threshold | Finalize | Count
+export type WorkerCommand =
+  | Setup
+  | Split
+  | Iterate
+  | Threshold
+  | Finalize
+  | Count
 export type WorkerResult = Interim | CountResult | FinalizeResult | Done | Error
 
 export interface Setup {
-  command: "setup"
+  command: 'setup'
 
   arts: ArtifactsBySlot
 
   optTarget: OptNode
-  constraints: { value: OptNode, min: number }[]
-  plotBase: OptNode | undefined,
+  constraints: { value: OptNode; min: number }[]
+  plotBase: OptNode | undefined
   topN: number
 }
 export interface Split {
-  command: "split"
+  command: 'split'
   filter: RequestFilter
   maxIterateSize: number
 }
 export interface Iterate {
-  command: "iterate"
+  command: 'iterate'
   filter: RequestFilter
 }
 export interface Threshold {
@@ -39,10 +45,10 @@ export interface Threshold {
   threshold: number
 }
 export interface Finalize {
-  command: "finalize"
+  command: 'finalize'
 }
 export interface Count {
-  command: "count"
+  command: 'count'
   exclusion: ArtSetExclusion
   maxIterateSize: number
 }
@@ -54,16 +60,16 @@ export interface Error {
   message: string
 }
 export interface CountResult {
-  resultType: "count"
+  resultType: 'count'
   count: number
 }
 export interface FinalizeResult {
-  resultType: "finalize"
+  resultType: 'finalize'
   builds: Build[]
   plotData?: PlotData
 }
 export interface Interim {
-  resultType: "interim"
+  resultType: 'interim'
   buildValues: number[] | undefined
   /** The number of builds since last report, including failed builds */
   tested: number

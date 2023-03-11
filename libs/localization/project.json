@@ -4,11 +4,11 @@
   "sourceRoot": "libs/localization/src",
   "projectType": "library",
   "targets": {
-    "pipeline":{
+    "pipeline": {
       "command": "ts-node libs/localization/src/loadTrans.ts",
       "inputs": ["production"]
     },
-    "mainGen":{
+    "mainGen": {
       "command": "ts-node libs/localization/src/mainGen.ts",
       "inputs": ["production"]
     },
