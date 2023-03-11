@@ -51,7 +51,7 @@
     "artis": "Artifacts",
     "states": {
       "unequippedOnly": "Unequipped Only",
-      "customList" : "Custom List",
+      "customList": "Custom List",
       "all": "All Artifacts"
     },
     "usingState": "Using"
