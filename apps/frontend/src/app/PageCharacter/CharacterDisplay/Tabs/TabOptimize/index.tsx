@@ -309,8 +309,29 @@ export default function TabBuild() {
 
         {/* 2 */}
         <Grid item xs={12} sm={6} lg={4} display="flex" flexDirection="column" gap={1}>
+          { /* Level Filter */}
           <CardLight>
-            <CardContent  >
+            <CardContent sx={{ display: "flex", gap: 1 }}>
+              <Typography sx={{ fontWeight: "bold" }}>{t`levelFilter`}</Typography>
+              <SqBadge color="info">{levelTotal.in}</SqBadge></CardContent>
+            <Divider />
+            <CardContent>
+              <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
+                setLow={levelLow => buildSettingDispatch({ levelLow })}
+                setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
+                setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
+                disabled={generatingBuilds}
+              />
+            </CardContent>
+          </CardLight>
+
+          {/* Main Stat Filters */}
+          <CardLight>
+            <CardContent>
+              <Typography sx={{ fontWeight: "bold" }}>{t`mainStat.title`}</Typography>
+            </CardContent>
+            <Divider />
+            <CardContent>
               <Box display="flex" alignItems="center" gap={1}>
                 <AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={(mainStatAssumptionLevel: number) => buildSettingDispatch({ mainStatAssumptionLevel })} disabled={generatingBuilds} />
                 <InfoTooltip title={<Box>
@@ -327,17 +348,6 @@ export default function TabBuild() {
 
         {/* 3 */}
         <Grid item xs={12} sm={6} lg={5} display="flex" flexDirection="column" gap={1}>
-          { /* Level Filter */}
-          <CardLight>
-            <CardContent>{t`levelFilter`} <SqBadge color="info">{levelTotal.in}</SqBadge></CardContent>
-            <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
-              setLow={levelLow => buildSettingDispatch({ levelLow })}
-              setHigh={levelHigh => buildSettingDispatch({ levelHigh })}
-              setBoth={(levelLow, levelHigh) => buildSettingDispatch({ levelLow, levelHigh })}
-              disabled={generatingBuilds}
-            />
-          </CardLight>
-
           <ArtifactSetConfig disabled={generatingBuilds} />
 
           {/* use equipped */}
