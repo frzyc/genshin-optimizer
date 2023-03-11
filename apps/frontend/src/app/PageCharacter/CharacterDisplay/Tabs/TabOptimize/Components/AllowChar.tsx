@@ -28,6 +28,11 @@ import { filterFunction } from "../../../../../Util/SortByFilters";
 import { bulkCatTotal } from "../../../../../Util/totalUtils";
 import useBuildSetting from "../useBuildSetting";
 
+enum CharListMode {
+  ToggleToAllow,
+  ToggleToExclude
+}
+
 export default function AllowChar({ disabled = false, allowListTotal }: { disabled?: boolean, allowListTotal: string }) {
   const { t } = useTranslation("page_character_optimize")
   const { t: t_pc } = useTranslation("page_character")
@@ -116,7 +121,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
     const newExcludedLocations = lkArray
       .filter(lk => !excludedLocations.includes(lk))
       .concat(excludedLocations.filter(lk => !lkArray.includes(lk)))
-    buildSettingDispatch({ excludedLocations: newExcludedLocations })
+    buildSettingDispatch({ excludedLocations: newExcludedLocations, allowLocationsState: "customList" })
   }, [excludedLocations, buildSettingDispatch])
 
   const total = database.chars.keys.length - 1
@@ -233,32 +238,50 @@ function SelectItemGrid({ locList, excludedLocations, shouldClearList, setShould
   toggleList: (charList: Set<LocationCharacterKey>) => void
 }) {
   const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
+  const [charListMode, setCharListMode] = useState<CharListMode>()
   useEffect(() => {
     if (shouldClearList) {
       toggleList(charList)
       setCharList(new Set<LocationCharacterKey>())
+      setCharListMode(undefined)
       setShouldClearList(false)
     }
   }, [charList, setCharList, setShouldClearList, shouldClearList, toggleList])
   return <Grid container spacing={1} columns={{ xs: 6, sm: 7, md: 10, lg: 12, xl: 16 }}>
     {locList.map((lk) =>
       <Grid item key={lk} xs={1}>
-        <SelectItem locKey={lk} charList={charList} setCharList={setCharList} selected={!excludedLocations.includes(lk)} />
+        <SelectItem locKey={lk} charList={charList} charListMode={charListMode} setCharList={setCharList} setCharListMode={setCharListMode} selected={!excludedLocations.includes(lk)} />
       </Grid>
     )}
   </Grid>
 }
 
-function SelectItem({ locKey, selected, charList, setCharList }: {
+function SelectItem({ locKey, selected, charList, charListMode, setCharList, setCharListMode }: {
   locKey: LocationCharacterKey
   selected: boolean
   charList: Set<LocationCharacterKey>
+  charListMode?: CharListMode
   setCharList: (list: Set<LocationCharacterKey>) => void
+  setCharListMode: (mode?: CharListMode) => void
 }) {
   const { database } = useContext(DatabaseContext)
   const char = database.chars.get(database.chars.LocationToCharacterKey(locKey))
-  const onMouseEnter = useCallback((e: MouseEvent) => e.buttons === 1 && setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
-  const onMouseDown = useCallback(() => setCharList((new Set([...charList])).add(locKey)), [charList, setCharList, locKey])
+  const onMouseEnter = useCallback((e: MouseEvent) =>
+    // Mouse 1 being held down
+    e.buttons === 1
+    // Only select characters with the same exclusion state as the rest of the list
+    && (
+      (charListMode === CharListMode.ToggleToAllow && !selected)
+      || (charListMode === CharListMode.ToggleToExclude && selected)
+    )
+    && setCharList((new Set([...charList])).add(locKey)),
+    [charListMode, selected, setCharList, charList, locKey]
+  )
+  const onMouseDown = useCallback(() => {
+    const mode = selected ? CharListMode.ToggleToExclude : CharListMode.ToggleToAllow
+    setCharListMode(mode)
+    setCharList((new Set([...charList])).add(locKey))
+  }, [selected, setCharListMode, setCharList, charList, locKey])
   const disableTooltip = useMemo(() => charList.size !== 0, [charList.size])
   const sx = {
     opacity: charList.has(locKey) ? 0.3 : (selected ? undefined : 0.6),
