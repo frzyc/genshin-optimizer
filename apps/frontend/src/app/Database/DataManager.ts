@@ -1,7 +1,12 @@
-import { deepClone, deepFreeze } from "../Util/Util"
-import { ArtCharDatabase } from "./Database"
-import { IGO, IGOOD, ImportResult } from "./exim"
-export class DataManager<CacheKey extends string, GOKey extends string, CacheValue extends StorageValue, StorageValue> {
+import { deepClone, deepFreeze } from '../Util/Util'
+import type { ArtCharDatabase } from './Database'
+import type { IGO, IGOOD, ImportResult } from './exim'
+export class DataManager<
+  CacheKey extends string,
+  GOKey extends string,
+  CacheValue extends StorageValue,
+  StorageValue
+> {
   database: ArtCharDatabase
   /**
    * The "list name" when an DataManager is exported to GO data
@@ -45,13 +50,25 @@ export class DataManager<CacheKey extends string, GOKey extends string, CacheVal
     }
   }
 
-  get keys() { return Object.keys(this.data) }
-  get values() { return Object.values(this.data) }
-  get(key: CacheKey | "" | undefined): CacheValue | undefined { return key ? this.data[key] : undefined }
-  getStorage(key: CacheKey): StorageValue { return this.database.storage.get(this.toStorageKey(key)) }
-  set(key: CacheKey, value: Partial<StorageValue> | ((v: StorageValue) => Partial<StorageValue>), notify = true): boolean {
+  get keys() {
+    return Object.keys(this.data)
+  }
+  get values() {
+    return Object.values(this.data)
+  }
+  get(key: CacheKey | '' | undefined): CacheValue | undefined {
+    return key ? this.data[key] : undefined
+  }
+  getStorage(key: CacheKey): StorageValue {
+    return this.database.storage.get(this.toStorageKey(key))
+  }
+  set(
+    key: CacheKey,
+    value: Partial<StorageValue> | ((v: StorageValue) => Partial<StorageValue>),
+    notify = true
+  ): boolean {
     const old = this.getStorage(key)
-    if (typeof value === "function") value = value(deepClone(old))
+    if (typeof value === 'function') value = value(deepClone(old))
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
       this.trigger(key, 'invalid', value)
