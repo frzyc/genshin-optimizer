@@ -1,11 +1,11 @@
-import { styled } from "@mui/material";
+import { styled } from '@mui/material'
 
-const ThumbSide = styled("img")(({ theme }) => ({
-  display: "inline-block",
-  width: "auto",
+const ThumbSide = styled('img')(({ theme }) => ({
+  display: 'inline-block',
+  width: 'auto',
   height: `2.3em`,
   lineHeight: 1,
-  verticalAlign: "text-bottom",
+  verticalAlign: 'text-bottom',
   marginTop: theme.spacing(-3),
   marginLeft: theme.spacing(-1.25),
   marginRight: theme.spacing(-1),

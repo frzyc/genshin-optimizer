@@ -1,30 +1,60 @@
-import { allOperations } from "../../Formula/optimization"
-import { constant, customRead, frac, max, min, prod, res, sum, threshold } from "../../Formula/utils"
-import { Linear, linearUpperBound } from "./BNBSplitWorker"
-import { ArtifactsBySlot, DynStat } from "../common"
+import { allOperations } from '../../Formula/optimization'
+import {
+  constant,
+  customRead,
+  frac,
+  max,
+  min,
+  prod,
+  res,
+  sum,
+  threshold,
+} from '../../Formula/utils'
+import type { Linear } from './linearUB'
+import { linearUB as linearUpperBound } from './linearUB'
+import type { ArtifactsBySlot, DynStat } from '../common'
 
 function apply(value: DynStat, linear: Linear): number {
-  return Object.entries(linear).reduce((accu, [k, v]) => accu + v * (value[k] ?? 0), linear.$c)
+  return Object.entries(linear).reduce(
+    (accu, [k, v]) => accu + v * (value[k] ?? 0),
+    linear.$c
+  )
 }
 
-describe("linearUpperBound can transform", () => {
+describe('linearUpperBound can transform', () => {
   // `x` ranges from 0 - 5
-  const rx = customRead(["dyn", "x"]), arts: ArtifactsBySlot = {
-    base: { x: 0 },
-    values: {
-      flower: [{ id: "-0", values: {} }, { id: "0", values: { x: 1 } }],
-      circlet: [{ id: "-1", values: {} }, { id: "1", values: { x: 1 } }],
-      sands: [{ id: "-2", values: {} }, { id: "2", values: { x: 1 } }],
-      goblet: [{ id: "-3", values: {} }, { id: "3", values: { x: 1 } }],
-      plume: [{ id: "-4", values: {} }, { id: "4", values: { x: 1 } }],
+  const rx = customRead(['dyn', 'x']),
+    arts: ArtifactsBySlot = {
+      base: { x: 0 },
+      values: {
+        flower: [
+          { id: '-0', values: {} },
+          { id: '0', values: { x: 1 } },
+        ],
+        circlet: [
+          { id: '-1', values: {} },
+          { id: '1', values: { x: 1 } },
+        ],
+        sands: [
+          { id: '-2', values: {} },
+          { id: '2', values: { x: 1 } },
+        ],
+        goblet: [
+          { id: '-3', values: {} },
+          { id: '3', values: { x: 1 } },
+        ],
+        plume: [
+          { id: '-4', values: {} },
+          { id: '4', values: { x: 1 } },
+        ],
+      },
     }
-  }
 
-  test("constant nodes", () => {
+  test('constant nodes', () => {
     const bounds = linearUpperBound([constant(88)], arts)
     expect(bounds[0]).toEqual({ $c: 88 })
   })
-  test("read nodes", () => {
+  test('read nodes', () => {
     const bounds = linearUpperBound([rx], arts)
     expect(bounds[0]).toEqual({ x: 1, $c: 0 })
   })
@@ -34,7 +64,7 @@ describe("linearUpperBound can transform", () => {
    * are `toEqual` or `toBeCloseTo` because bounds at those points should be sharp on
    * all optimal bounds.
    */
-  test("min/max nodes", () => {
+  test('min/max nodes', () => {
     const bounds = linearUpperBound([min(rx, 3), max(rx, 3)], arts)
 
     // Checking min/c/max
@@ -46,10 +76,12 @@ describe("linearUpperBound can transform", () => {
     expect(apply({ x: 3 }, bounds[1])).toBeGreaterThanOrEqual(Math.max(3, 3))
     expect(apply({ x: 5 }, bounds[1])).toEqual(Math.max(5, 3))
   })
-  test("res nodes", () => {
-    const op = allOperations.res, bounds = linearUpperBound([
-      res(rx), res(sum(rx, -4)), res(sum(rx, 20)), res(sum(rx, -20)),
-    ], arts)
+  test('res nodes', () => {
+    const op = allOperations.res,
+      bounds = linearUpperBound(
+        [res(rx), res(sum(rx, -4)), res(sum(rx, 20)), res(sum(rx, -20))],
+        arts
+      )
     // Checking min/max
     expect(apply({ x: 0 }, bounds[0])).toBeCloseTo(op([0]), 8)
     expect(apply({ x: 5 }, bounds[0])).toBeCloseTo(op([5]), 8)
@@ -64,8 +96,10 @@ describe("linearUpperBound can transform", () => {
     expect(apply({ x: 0 }, bounds[3])).toBeCloseTo(op([0 - 20]), 8)
     expect(apply({ x: 5 }, bounds[3])).toBeCloseTo(op([5 - 20]), 8)
   })
-  test("sum_frac nodes", () => {
-    const op = allOperations.sum_frac, c = 4, loc = Math.sqrt((0 + c) * (5 + c))
+  test('sum_frac nodes', () => {
+    const op = allOperations.sum_frac,
+      c = 4,
+      loc = Math.sqrt((0 + c) * (5 + c))
     const bounds = linearUpperBound([frac(rx, c)], arts)
 
     // Checking min/loc/max
@@ -73,14 +107,17 @@ describe("linearUpperBound can transform", () => {
     expect(apply({ x: loc }, bounds[0])).toEqual(op([loc, c]))
     expect(apply({ x: 5 }, bounds[0])).toBeGreaterThan(op([5, c]))
   })
-  test("threshold nodes", () => {
+  test('threshold nodes', () => {
     // All pass >= fail, pass <= fail and upper/lower bounds combinations
-    const bounds = linearUpperBound([
-      threshold(rx, 4, 5, 10),
-      threshold(rx, 4, 10, 5),
-      prod(-1, threshold(rx, 4, -5, -10)),
-      prod(-1, threshold(rx, 4, -10, -5)),
-    ], arts)
+    const bounds = linearUpperBound(
+      [
+        threshold(rx, 4, 5, 10),
+        threshold(rx, 4, 10, 5),
+        prod(-1, threshold(rx, 4, -5, -10)),
+        prod(-1, threshold(rx, 4, -10, -5)),
+      ],
+      arts
+    )
 
     // Checking min/thresh/max
     expect(apply({ x: 0 }, bounds[0])).toBeGreaterThanOrEqual(10)
@@ -99,17 +136,33 @@ describe("linearUpperBound can transform", () => {
     expect(apply({ x: 4 }, bounds[3])).toEqual(Math.max(5, 10))
     expect(apply({ x: 5 }, bounds[3])).toBeGreaterThanOrEqual(10)
   })
-  test("mul nodes", () => {
-    const ry = customRead(["dyn", "y"]), arts: ArtifactsBySlot = {
-      base: { x: 0, y: 0 },
-      values: {
-        flower: [{ id: "-0", values: { y: 1 } }, { id: "0", values: { x: 1 } }],
-        circlet: [{ id: "-1", values: { y: 1 } }, { id: "1", values: { x: 1 } }],
-        sands: [{ id: "-2", values: { y: 1 } }, { id: "2", values: { x: 1 } }],
-        goblet: [{ id: "-3", values: { y: 1 } }, { id: "3", values: { x: 1 } }],
-        plume: [{ id: "-4", values: { y: 1 } }, { id: "4", values: { x: 1 } }],
+  test('mul nodes', () => {
+    const ry = customRead(['dyn', 'y']),
+      arts: ArtifactsBySlot = {
+        base: { x: 0, y: 0 },
+        values: {
+          flower: [
+            { id: '-0', values: { y: 1 } },
+            { id: '0', values: { x: 1 } },
+          ],
+          circlet: [
+            { id: '-1', values: { y: 1 } },
+            { id: '1', values: { x: 1 } },
+          ],
+          sands: [
+            { id: '-2', values: { y: 1 } },
+            { id: '2', values: { x: 1 } },
+          ],
+          goblet: [
+            { id: '-3', values: { y: 1 } },
+            { id: '3', values: { x: 1 } },
+          ],
+          plume: [
+            { id: '-4', values: { y: 1 } },
+            { id: '4', values: { x: 1 } },
+          ],
+        },
       }
-    }
 
     const bounds = linearUpperBound([prod(rx, ry)], arts)
 

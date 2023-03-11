@@ -1,1399 +1,1393 @@
 {
-    "artifact": {
-        "editor": {
-            "title": "성유물 편집기",
-            "substat": {
-                "substatFormat": "부옵션 {{value}}",
-                "noSubstat": "부옵션 없음",
-                "selectSub": "부옵션 선택",
-                "error": {
-                    "noCalc": "추가옵션을 계산할 수 없습니다.",
-                    "noOverRoll": "추가옵션은 {{value}}회를 넘을 수 없습니다."
-                },
-                "noRoll": "추가옵션 없음",
-                "noStat": "값 없음",
-                "eff": "효율: <1></1>",
-                "nextRolls": "다음 강화:",
-                "RollCount_one": "{{count}}회",
-                "RollCount_other": "{{count}}회"
-            },
-            "rarity": "등급",
-            "level": "레벨",
-            "unknownPieceName": "성유물 이름 미지정",
-            "curSubEff": "현재 부옵션 효율",
-            "curSubEffDesc": "성유물 강화 시 4레벨마다 부옵션이 추가됩니다. <strong>부옵션 효율</strong>은 얼마나 높은 수치로 옵션이 추가되었는지 계산되어 표시됩니다.",
-            "maxSubEff": "최대 부옵션 효율",
-            "maxSubEffDesc": "성유물의 <strong>부옵션 최대 효율</strong>은 남은 강화 추가옵션을 최대값으로 가정하여 계산됩니다.",
-            "preview": "성유물 미리보기",
-            "dupArt": "중복된 성유물이 있습니다.",
-            "upArt": "강화된 성유물이 있습니다.",
-            "beforeEdit": "편집 전",
-            "btnSave": "성유물 저장",
-            "btnAdd": "성유물 추가",
-            "btnClear": "초기화",
-            "btnRandom": "무작위",
-            "btnUpdate": "성유물 업데이트",
-            "clearPrompt": "성유물 편집기에 내용이 있습니다. 정말 편집기의 내용을 비우시겠습니까?",
-            "unknownSetName": "성유물 세트 미지정"
-        },
-        "artifactFilter": "성유물 필터",
-        "filterLocation": {
-            "inventory": "보관함",
-            "currentlyEquipped": "현재 장비중",
-            "location": "위치"
-        },
-        "button": {
-            "unequipArtifacts": "미착용 성유물",
-            "deleteArtifacts": "성유물 삭제",
-            "lockArtifacts": "성유물 잠금",
-            "unlockrtifacts": "성유물 잠금 해제"
-        },
-        "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
-        "tipsOfTheDay": [
-            "4성 성유물의 최대 효율은 약 540%입니다.",
-            "보통 성유물의 최대 효율은 업그레이드할 때 감소합니다. 이는 평범한 현상입니다!",
-            "스크린샷 부옵션에 숫자 \"1\"이 있다면 스캔이 잘 되지 않습니다.",
-            "만약 부옵션 하나에 모든 추가옵션(6)이 붙는다면, 보라색이 될 겁니다!",
-            "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
-            "이제 여러 장의 스크린샷을 한번에 업로드하여 스캔하실 수 있습니다!"
-        ],
-        "mainStat": "주 옵션",
-        "slot": "부위",
-        "slotName": {
-            "flower": "생명의 꽃",
-            "plume": "죽음의 깃털",
-            "sands": "시간의 모래",
-            "goblet": "공간의 성배",
-            "circlet": "이성의 왕관"
-        },
-        "info": {
-            "title": "성유물 편집/관리 가이드",
-            "section1": "<0>부옵션의 추가옵션</0><1>부옵션의 <1>추가옵션 횟수</1>는 부옵션의 왼쪽에 표시됩니다. 횟수가 높을수록 부옵션의 색은 더 화려해집니다:<3></3>.</1><2>부옵션 효율</2><3>부옵션의 효율(RV)은 5<1></1>값의 최대 잠재력에 대한 현재 값의 백분율을 나타냅니다. 이미지를 보면, 체력의 추가되는 최대값은 5.8%로서 현재 효율은: <3>5.3/5.8 = 90%</3>가 됩니다.</3><4>현재 효율 vs. 효율 최대 잠재력</4><5>5<1></1> 성유물의 9번의 추가옵션(기본4+강화5)이 모두 최대값으로 붙었다면 이는 100% 효율의 성유물이 됩니다. 하지만, 대부분의 성유물은 이렇게 운이 좋을 수 없습니다. 성유물의 <3>현재 효율</3>은 해당 성유물의 100% 효율에 대한 백분율입니다. <5>최대 효율</5>은 남은 강화가 최대값으로 붙었을 때 달성 할 수 있는 값입니다.<6>성유물 제외</6><7>성유물을 제외시키면<1></1>, 해당 성유물은 최적화 조합 생성 시 사용되지 않습니다. 다른 캐릭이 착용중인 성유물도 기본적으로 사용되지 않습니다.</7>",
-            "section2": "<0>성유물 편집기</0><1>3<1></1>성에서 5<3></3>성 사이의 어떤 성유물이라도 입력할 수 있는 완벽한 기능의 성유물 편집기입니다. 성유물의 부옵션이 입력되면 자동으로 몇 번의 추가옵션이 붙었는지 자동으로 계산되어 효율을 알려줍니다. 또한 여러분이 레벨에 따라 성유물에 올바른 값의 부옵션을 입력했는지 확인해줍니다.</1><2>스크린샷 스캔</2><3>하나하나 입력하는 건 여러분이 취향이 아닌가요? 그렇다면 여러분은 스크린샷 스캔을 통해 성유물을 입력하실 수 있습니다! 성유물 편집기에서 <1>Show Me How!</1> 버튼을 누르시면 자세하게 확인하실 수 있습니다.</3><4>중복/강화 성유물 체크</4><5>혹시 <1>중복된</1> 성유물을 체크하는 기능이 있다는 걸 알고 계시나요? 게다가 만약 새로 등록하려는 성유물이 기존에 등록된 성유물의 <3>강화된</3> 성유물이라 판단되면 이 또한 알려줍니다. 일단 중복/강화 성유물이 체크되면 두 가지 성유물의 비교 화면을 통해 확인하실 수 있습니다. (이미지를 참고하세요)</5>",
-            "section3": "<0>성유물 보관함</0><p>여러분이 추가한 모든 성유물이 이 곳에 표시됩니다. 여기에 있는 필터를 활용하여 성유물을 세부적으로 확인할 수 있습니다.</p><2>예시: 강화 재료로 쓸 성유물 찾기</2><p>성유물 필터와 성유물 효율 계산을 통해 강화 재료로 사용할 성유물을 빠르게 찾을 수 있습니다.</p><4>이 예시에서는 다음과 같이 설정합니다: </4><5><0>0에서 8레벨로 제한.</0><1>보호되지 않은 보관함 내 성유물.</1><2>효율 계산에서 %가 아닌 체력, 방어력, 원소 충전 효율 제거.</2><3>최대 효율로 오름차순 정렬.</3></5><p>이렇게 하면 효율성이 가장 낮은 성유물을 기준으로 성유물 보관함을 필터링합니다.</p>"
-        },
-        "sortMap": {
-            "level": "레벨",
-            "efficiency": "현재 부옵션 효율.",
-            "mefficiency": "최대 부옵션 효율."
-        },
-        "efficiencyFilter": {
-            "title": "효율 계산에 사용할 부옵션"
-        },
-        "resetFilters": "필터 초기화",
-        "setEffectNum": "{{setNum}}-셋",
-        "showingNum_one": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
-        "showingNum_other": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
-        "edit": "성유물 편집",
-        "autocompleteLabels": {
-            "sets": "성유물 세트",
-            "mainStats": "주옵션",
-            "substats": "부옵션",
-            "set": "성유물 세트"
-        },
-        "substat_one": "부옵션 {{count}}줄",
-        "substat_other": "부옵션 {{count}}줄",
-        "addNew": "새 성유물 추가",
-        "sub_one": "부옵 {{count}}",
-        "sub_other": "부옵 {{count}}",
-        "cantDeleteLock": "보호된 성유물은 삭제할 수 없습니다",
-        "equippedArt": "착용 중인 성유물",
-        "artInInv": "보관함의 성유물"
-    },
-    "languages": {
-        "chs": "중국어 (간체)",
-        "cht": "중국어 (번체)",
-        "de": "독일어",
-        "en": "영어",
-        "es": "스페인어",
-        "fr": "프랑스어",
-        "id": "인도네시아어",
-        "ja": "일본어",
-        "ko": "한국어",
-        "pt": "포르투갈어",
-        "ru": "러시아어",
-        "th": "태국어",
-        "vi": "베트남어",
-        "it": "이탈리아어",
-        "tr": "튀르키예어"
-    },
-    "settings": {
-        "title": "설정",
-        "languageCard": {
-            "selectLanguage": "언어 선택",
-            "languageFormat": "언어: {{language}}"
-        },
-        "uploadCard": {
-            "title": "데이터베이스 업로드",
-            "replaceDatabase": "데이터베이스 덮어쓰기",
-            "hint": "JSON 파일 불러오기...",
-            "hintPaste": "...아니면 내용을 아래에 붙여넣기.",
-            "error": {
-                "jsonParse": "JSON 파일을 해석 할 수 없습니다.",
-                "unknown": "알 수 없는 파일 형식입니다.",
-                "monaInvalid": "잘못된 Mona-Uranai 파일 형식",
-                "goInvalid": "잘못된 GO 백업 파일 형식"
-            },
-            "dbSource": "데이터 출처:",
-            "goodUpload": {
-                "title": "<strong>Genshin Open Object Description</strong> (GOOD) 형식"
-            },
-            "buttons": {
-                "open": "파일열기",
-                "detectDups": "변경 및 중복 확인",
-                "delNotInImport": "가져오기에 포함되지 않은 아이템 삭제"
-            },
-            "tooltip": {
-                "detectdup": "GO 보관함과 가져오는 내용중에 업그레이드나 중복을 찾습니다.",
-                "ignoreDup": "업그레이드나 중복을 찾기 않습니다. 가져오기한 것들은 GO 보관함의 상단에 추가됩니다.",
-                "delNotInImport": "가져오기의 내용이 보관함 전체의 내용이라고 가정합니다. 가져오기에 포함되지 않은 것들은 삭제됩니다.",
-                "keepNotInImport": "가져오기의 내용이 보관함의 일부라고 가정합니다. 아무것도 삭제되지 않습니다."
-            }
-        },
-        "count": {
-            "chars": "캐릭터:",
-            "arts": "성유물:",
-            "weapons": "무기:",
-            "total": "총:",
-            "new": "신규:",
-            "updated": "변경:",
-            "removed": "제거:",
-            "unchanged": "유지:",
-            "invalid": "비정상:",
-            "upgraded": "변경됨:",
-            "dbTotal": "총 개수:",
-            "notInImport": "가져오기에 미포함:"
-        },
-        "DatabaseCard": {
-            "title": "데이터베이스",
-            "button": {
-                "download": "다운로드",
-                "copy": "클립보드로 복사",
-                "delete": "삭제",
-                "upload": "업로드",
-                "swap": "선택"
-            },
-            "currentDB": "현재 데이터베이스"
-        }
-    },
-    "ui": {
-        "pageTitle": "Genshin Optimizer",
-        "tabs": {
-            "artifacts": "성유물",
-            "characters": "캐릭터",
-            "tools": "기타 기능",
-            "weapons": "무기",
-            "doc": "문서",
-            "setting": "설정",
-            "scanner": "스캐너"
-        },
-        "social": {
-            "paypal": "Paypal",
-            "patreon": "Patreon",
-            "discord": "Discord"
-        },
-        "unselect": "선택해제",
-        "ascending": "오름차순",
-        "descending": "내림차순",
-        "loading": "불러오는중...",
-        "rightsDisclaimer": "Genshin Optimizer는 미호요와 관계가 없으며 승인되지 않았습니다.",
-        "appVersion": "$t(pageTitle) 버전: {{version}}",
-        "underConstruction": "개발중",
-        "error": "오류",
-        "reset": "초기화",
-        "info": "정보",
-        "inventory": "보관함",
-        "close": "닫기",
-        "sortMap": {
-            "new": "신규",
-            "name": "이름",
-            "level": "레벨",
-            "rarity": "희귀도",
-            "efficiency": "현재 효율",
-            "mefficiency": "최대 효율",
-            "artsetkey": "성유물 세트",
-            "probability": "강화 가능"
-        },
-        "link": {
-            "download": "다운로드 링크",
-            "discord": "디스코드 초대 링크"
-        },
-        "sortBy": "다음으로 정렬: ",
-        "locked": "보호됨",
-        "unlocked": "보호되지않음",
-        "refinement": "{{value}}재련",
-        "selectlevel": "레벨 선택",
-        "gender": {
-            "F": "여성",
-            "M": "남성"
-        }
-    },
-    "char_Eula": {
-        "skillC": {
-            "name": "냉혹한 마음"
-        },
-        "burstC": {
-            "name": "빛의 검",
-            "start5": "5스택부터 시작",
-            "addStacks": "50% 확률로 일반 공격, 원소 전투 스킬, 원소 폭발 사용 시 추가 스택을 얻음",
-            "dmg": "빛의 검 폭발 피해"
-        },
-        "c1C": {
-            "name": "<strong>냉혹한 마음</strong> 스택 소모",
-            "durationStack": "6초 + 스택당 6초 증가, 최대 18초"
-        },
-        "passive1": "부서진 빛의 검 데미지",
-        "c4C": {
-            "name": "적의 체력이 50% 미만"
-        }
-    },
-    "char_Noelle": {
-        "p4cd": "24초, 매 4회 타격시 -1초",
-        "c6duration": "15초, 적 처치 시 +1초, 최대 10초",
-        "qlarger": "노엘의 공격 범위가 증가한다",
-        "c4dmg": "호심경 파괴 피해",
-        "skillHeal_": "회복 효과 발동 확률"
-    },
-    "char_Venti": {
-        "addAimed": "분열된 화살 데미지",
-        "addFullAimed": "풀차지의 분열된 화살 데미지",
-        "upcurrentDuration": "상승 기류 지속시간",
-        "regenEner": "효과 종료 후 벤티의 원소 에너지 15 회복",
-        "c6": "<strong>바람신의 시</strong>에 피격된 적",
-        "q": "원소 전환 발생시 해당 원소와 대응하는 파티 내 모든 캐릭터의 원소 에너지 15pt 회복.",
-        "c2": {
-            "hit": "피격된 적",
-            "launched": "공중에 띄워진 적"
-        }
-    },
-    "sheet": {
-        "dmg": "피해",
-        "lessPercentHP": "체력이 {{percent}}% 미만",
-        "hitOp": {
-            "normal": "일반 공격이 대상에게 명중",
-            "charged": "강공격이 대상에게 명중",
-            "plunging": "낙하 공격이 대상에게 명중",
-            "skill": "원소 전투 스킬이 대상에게 명중",
-            "burst": "원소 폭발이 대상에게 명중",
-            "geo": "<geo>바위 원소 피해</geo>가 대상에게 명중",
-            "anemo": "<anemo>바람 원소 피해</anemo>가 대상에게 명중",
-            "hydro": "<hydro>물 원소 피해</hydro>가 대상에게 명중",
-            "cryo": "<cryo>얼음 원소 피해</cryo>가 대상에게 명중",
-            "pyro": "<pyro>불 원소 피해</pyro>가 대상에게 명중",
-            "electro": "<electro>번개 원소 피해</electro>가 대상에게 명중",
-            "none": "적에게 명중",
-            "normalOrCharged": "일반/강공격이 대상에게 명중",
-            "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 대상에게 명중",
-            "crit": "치명타가 대상에게 명중",
-            "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
-            "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
-            "normalEle": "일반 공격으로 적에게 원소 피해를 가함"
-        },
-        "eleAbsor": "원소 전환",
-        "absorDot": "원소 전환 도트 데미지",
-        "afterUse": {
-            "skill": "원소 전투 스킬 사용 후",
-            "burst": "원소 폭발 사용 후",
-            "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
-        },
-        "increase": {
-            "atk": "공격력 증가"
-        },
-        "hits_one": "{{count}}회 명중",
-        "hits_other": "{{count}}회 명중",
-        "lessEqPercentHP": "체력이 {{percent}}% 이하",
-        "greaterPercentHP": "체력이 {{percent}}% 초과",
-        "greaterEqPercentHP": "체력이 {{percent}}% 이상",
-        "lessPercentEnergy": "원소 에너지가 {{percent}}% 미만",
-        "enemyLessPercentHP": "적의 체력이 {{percent}}% 미만",
-        "enemyLessEqPercentHP": "적의 체력이 {{percent}}% 이하",
-        "enemyGreaterPercentHP": "적의 체력이 {{percent}}% 초과",
-        "enemyGreaterEqPercentHP": "적의 체력이 {{percent}}% 이상",
-        "stack_one": "{{count}} 스택",
-        "stack_other": "{{count}} 스택",
-        "seconds_one": "{{count}}초",
-        "seconds_other": "{{count}}초",
-        "afterDefeatEnemy": "적 처치 후",
-        "afterSprint": "대시 후",
-        "skillCDRed": "원소 전투 스킬 재사용 대시시간 감소",
-        "burstCDRed": "원소 폭발 재사용 대기시간 감소",
-        "pressCD": "짧은 터치 재사용 대기시간",
-        "holdCD": "홀드 재사용 대기시간",
-        "triggerCD": "발동 최소 간격",
-        "eleSwirled": "확산된 원소",
-        "incInterRes": "경직 저항력 상승",
-        "charges": "사용 횟수",
-        "cooldown": "재사용 대기시간",
-        "addlCharges": "추가 사용 횟수",
-        "activeCharField": "필드 위 캐릭터가 영역내 존재",
-        "opponentsField": "영역에 적 존재",
-        "takeDmg": "피해를 받음",
-        "infusion": {
-            "pyro": "불 원소 부여",
-            "cryo": "얼음 원소 부여",
-            "anemo": "바람 원소 부여",
-            "hydro": "물 원소 부여",
-            "electro": "번개 원소 부여",
-            "dendro": "풀 원소 부여",
-            "geo": "바위 원소 부여"
-        },
-        "energyRegen": "원소 에너지 재생",
-        "effectDuration": {
-            "pyro": "불 원소 부착 시간",
-            "cryo": "얼음 원소 부착 시간",
-            "anemo": "바람 원소 부착 시간",
-            "hydro": "물 원소 부착 시간",
-            "electro": "번개 원소 부착 시간",
-            "dendro": "풀 원소 부착 시간",
-            "geo": "바위 원소 부착 시간"
-        },
-        "durationInc": "지속시간 증가",
-        "base": "기본",
-        "stacks": "스택",
-        "protectedByShield": "보호막 존재",
-        "protectedByShieldCrystal": "결정화로 생성된 보호막 존재",
-        "staminaDec_": "스태미나 소모 감소",
-        "dmgAbsorption": {
-            "pyro": "불원소 피해 흡수량",
-            "cryo": "얼음원소 피해 흡수량",
-            "anemo": "바람원소 피해 흡수량",
-            "hydro": "물원소 피해 흡수량",
-            "electro": "번개원소 피해 흡수량",
-            "dendro": "풀원소 피해 흡수량",
-            "geo": "바위원소 피해 흡수량",
-            "none": "피해 흡수량"
-        },
-        "opponentsDamaged": "대상이 피해를 받음",
-        "press": "짧은 터치",
-        "hold": "홀드",
-        "addlCharge": "사용 가능 횟수 증가",
-        "conditional": "조건부",
-        "maxStacks": "최대 스택",
-        "1set": "1세트",
-        "2set": "2세트",
-        "4set": "4세트",
-        "activationStam": "발동 시 소모 스태미나",
-        "stamDrain": "지속 스태미나 소모",
-        "talents": {
-            "skill": "스킬",
-            "burst": "원폭",
-            "passive": "패시브",
-            "passive1": "고유특성1",
-            "passive2": "고유특성4",
-            "passive3": "패시브",
-            "sprint": "대시",
-            "constellation1": "1돌",
-            "constellation2": "2돌",
-            "constellation3": "3돌",
-            "constellation4": "4돌",
-            "constellation5": "5돌",
-            "constellation6": "6돌"
-        },
-        "swirlReaction": {
-            "hydro": "<hydro>물</hydro> 원소 확산 발동",
-            "pyro": "<pyro>불</pyro> 원소 확산 발동",
-            "electro": "<electro>번개</electro> 원소 확산 발동",
-            "cryo": "<cryo>얼음</cryo> 원소 확산 발동"
-        },
-        "afterReaction": "원소 반응 발동",
-        "aoeInc": "영향 범위 증가",
-        "elementalReaction": {
-            "hydro": "<hydro>물 관련</hydro> 원소 반응 발동",
-            "electro": "<electro>번개 관련</electro> 원소 반응 발동"
-        },
-        "bonusScaling": {
-            "skill_": "원소 전투 스킬 피해 증가량"
-        },
-        "teamBuff": "파티 버프",
-        "opponents_one": "{{count}} 마리",
-        "opponents_other": "{{count}} 마리",
-        "dmgMult": {
-            "normal": "일반 공격 피해량 계수",
-            "charged": "강공격 피해량 계수",
-            "skill": "스킬 피해량 계수"
-        },
-        "stamRestored": "스태미나 회복"
-    },
-    "weapon_SongOfBrokenPines": {
-        "name": "천년의 대악장: 깃발의 노래"
-    },
-    "char_KaedeharaKazuha": {
-        "c1": "<strong>카즈하의 일도</strong> 재사용 대기시간 초기화",
-        "c2": "바람 부는 가을 들판",
-        "c6": {
-            "after": "<strong>치하야부루</strong> 혹은 <strong>카즈하의 일도</strong> 발동",
-            "bonus": "일반 공격, 강공격, 낙하 공격 가하는 피해 증가"
-        },
-        "skillPlunge": "폭풍 베기"
-    },
-    "char_Rosaria": {
-        "a1": "뒤에서 공격 시",
-        "a4": {
-            "name": "<strong>죽음의 성례</strong> 발동 시"
-        }
-    },
-    "char_KamisatoAyaka": {
-        "afterSprint": "대시 후",
-        "afterSprintCryo": "대시 후 <cryo>얼음 원소</cryo> 부착",
-        "snowflakeDMG": "서리의 관문 피해",
-        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
-        "c6Active": "살얼음의 춤 상태 획득"
-    },
-    "weapon_MistsplitterReforged": {
-        "emblem": "무절(霧切)의 문장"
-    },
-    "char_Yoimiya": {
-        "c1": "<strong>유금화광</string> 상태의 적을 처치",
-        "c2": "<pyro>불 원소 피해</pyro>가 치명타를 입힘",
-        "normPyroInfus": "<pyro>일반 공격이 불 원소 피해로 전환</pyro>",
-        "c6Key_": "염초 화살 피해 계수"
-    },
-    "char_RaidenShogun": {
-        "skill": {
-            "eye": "뇌벌 악요의 눈",
-            "partyCost": "원소 에너지"
-        },
-        "burst": {
-            "resolves": "원력 스택",
-            "resolveInitial_": "<electro>백안지륜에 쌓은 원력 기반 피해 증가량</electro>",
-            "resolveInfused_": "<electro>몽상의 일심 피해 증가량</electro>",
-            "burstDmg": "몽상의 일태도 피해"
-        },
-        "a4": {
-            "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
-            "eleDMG": "번개 원소 피해 증가"
-        },
-        "c4": {
-            "expires": "<strong>몽상의 일심</strong>상태가 끝난 후"
-        }
-    },
-    "char_Aloy": {
-        "skill": {
-            "coil": "코일",
-            "coil1": "코일 1스택",
-            "coil2": "코일 2스택",
-            "coil3": "코일 3스택",
-            "rush": "얼음 질주",
-            "rushState": "얼음 질주 상태인 기간(초당 1스택)"
-        },
-        "a1CondName": "에일오리가 <strong>빙결의 설야</strong>의 코일 효과 획득시",
-        "normCryoInfus": "<cryo>일반 공격이 얼음 원소 피해로 전환</cryo>"
-    },
-    "char_KujouSara": {
-        "skill": {
-            "ambush": "텐구 주뢰·매복"
-        },
-        "a4": {
-            "enerRest": "텐구 주뢰·매복의 에너지 회복양"
-        },
-        "c6": {
-            "electroCritDmg": "텐구 주뢰의 공격력 증가 효과를 받는 캐릭터"
-        }
-    },
-    "char_SangonomiyaKokomi": {
-        "burst": "의식의 날개옷",
-        "c2": "체력 50% 이하의 캐릭터",
-        "c6": "일반 혹은 강공격이 체력 80% 이상인 캐릭터 치유",
-        "c2SkillHeal": "<strong>해파리의 서약</strong> 치유 증가량",
-        "c2BurstHeal": "<strong>해인화우(海人化羽)</strong> 치유 증가량"
-    },
-    "page_home": {
-        "intro": "<strong>월등한</strong> <3><i>원신</i></3> 계산기 GO에 당신의 성유물/무기/캐릭터를 저장하시면, 당신이 가지고 있고 당신이 사용하는 것들로 최고의 구성을 만드는데 도움이 될것입니다.",
-        "quickLinksCard": {
-            "title": "링크들",
-            "buttons": {
-                "tyGuide": {
-                    "title": "유투브 설명 동영상 리스트",
-                    "tooltip": "Genshin Optimizer의 사용법을 알아봅시다"
-                },
-                "scanners": {
-                    "title": "자동 스캐너",
-                    "tooltip": "게임내 성유물을 자동으로 읽어주는 스캐너들입니다"
-                },
-                "kqm": {
-                    "title": "KeqingMains",
-                    "tooltip": "이론을 연구하고 가이드를 제공하는 커뮤니티"
-                },
-                "devDiscord": {
-                    "title": "Genshin Dev 디스코드",
-                    "tooltip": "원신과 관련된 개발을 하는 사람들의 커뮤니티"
-                },
-                "good": {
-                    "title": "GOOD 설명문서",
-                    "tooltip": "Genshin Open Object Descriptor 설명문서"
-                },
-                "patchNotes": {
-                    "title": "Genshin Optimizer 패치 노트",
-                    "tooltip": "GO의 패치 노트가 모여 있습니다"
-                }
-            }
-        },
-        "inventoryCard": {
-            "title": "GO 보관함"
-        },
-        "vidGuideCard": {
-            "title": "가이드 동영상"
-        },
-        "teamCard": {
-            "title": "팀원 소개",
-            "jobTitle": {
-                "leadDev": "개발팀장",
-                "dev": "개발자",
-                "mod": "모더레이터"
-            }
-        }
-    },
-    "page_scanner": {
-        "intro": "<0>스캐너</0><1>스캐너는 스크린샷이나 게임에서 직접 데이터를 읽어 자동으로 저장해 주는 도구입니다.</1><2>아래에 있는 스캐너들은 GO와 동작하는 것을 확인하였습니다.</2><3>생성된 파일을 업로드 하시려면 <1>설정</1> 페이지로 가셔서 <strong>데이터베이스 업로드</strong> 항목을 이용하시면 됩니다.</3>",
-        "ik": {
-            "title": "Inventory Kamera",
-            "p1": "이 가벼운 앱은 보관함 내의 캐릭터, 무기, 성유물을 스캔합니다. 이 앱을 설정하기 위해서는 사용법을 따라하세요.",
-            "p2": "이 스캐너의 결과물은 <1>seelie.me</1>에서도 사용가능합니다.",
-            "p3": "이 스캐너는 영어만 인식하고, 기본값으로 GOOD 형식으로 데이터를 내보냅니다."
-        },
-        "am": {
-            "title": "「天目」-- Amenoma",
-            "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 윈도우를 캡쳐하고 스캔하기 위해선 사용법을 따라해 주세요. 중국어와 영어버전이 제공됩니다(영어를 위해선 <1>_EN.exe</1>버전을 사용). <5>GOOD</5> 형식만 GO에서 사용 가능합니다.",
-            "p2": "이 스캐너의 결과물은 <1>seelie.me</1>에서도 사용가능합니다."
-        },
-        "as": {
-            "title": "AdeptiScanner",
-            "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 수동 스캔 모드도 지원합니다.",
-            "p2": "이 스캐너는 업데이트 없이도 새 성유물을 인식할 수 있게 설정 가능합니다."
-        },
-        "goodeng": "이 스캐너는 영어만 인식하고, GOOD 형식으로 데이터를 내보냅니다.",
-        "tosWarn": "게임과 간접적으로 상호 작용하는 모든 도구와 마찬가지로, 이것들의 실제 동작을 사실상 감지할 수 없습니다. <1>따라서 이것들을 사용하는 것은 여전히 위험합니다.</1> 사용상의 주의를 요합니다.",
-        "tags": {
-            "pc": "PC",
-            "mobile": "모바일",
-            "ps": "PlayStation",
-            "gameMani": "게임 조작",
-            "materials": "재료",
-            "characters": "캐릭터"
-        },
-        "nb": {
-            "title": "Artiscan",
-            "p1": "이 웹 기반의 스캐너는 게임 화면, 게임 스크린샷, 게임 비디오를 캡춰 할 수 있습니다.",
-            "p2": "스크린샷이나 동영상 캡춰를 전체 화면으로 할 수 있습니다. 자를(Crop) 필요가 없습니다.",
-            "p3": "모바일/PlayStation은 스크릿샷이나 동영상을 통해서만 스캔할 수 있습니다."
-        }
-    },
-    "weapon_Akuoumaru": {
-        "party": "파티 내 원소 에너지 총합"
-    },
-    "artifact_ArchaicPetra": {
-        "condName": "결정 반응으로 만들어진 결정 획득시"
-    },
-    "artifact_TenacityOfTheMillelith": {
-        "condName": "원소 전투 스킬이 적 명중"
-    },
-    "artifact_ViridescentVenerer": {
-        "condName": "원소 확산"
-    },
-    "weapon_CinnabarSpindle": {
-        "name": "원소 전투 스킬 피해량 증가"
-    },
-    "weapon_ElegyForTheEnd": {
-        "condName": "천년의 대악장: 이별의 노래"
-    },
-    "weapon_MouunsMoon": {
-        "party": "파티 내 원소 에너지 총합"
-    },
-    "weapon_ThrillingTalesOfDragonSlayers": {
-        "condName": "캐릭터 교체"
-    },
-    "weapon_WavebreakersFin": {
-        "party": "파티 내 원소 에너지 총합"
-    },
-    "artifact_BlizzardStrayer": {
-        "condName": "공격받은 적",
-        "condCryo": "얼음 원소의 영향을 받음",
-        "condFrozen": "빙결상태"
-    },
-    "artifact_HuskOfOpulentDreams": {
-        "condName": "문답효과"
-    },
-    "artifact_OceanHuedClam": {
-        "condName": "바다에 물든 거품 최대 피해"
-    },
-    "artifact_ShimenawasReminiscence": {
-        "afterUseEnergy": "원소 에너지 15 사용 후"
-    },
-    "artifact_TinyMiracle": {
-        "condName": "받은 원소 피해"
-    },
-    "char_Albedo": {
-        "blossomCD": "찰나의 꽃 재사용 대기시간",
-        "blossomDmg_": "찰나의 꽃 피해 증가",
-        "isotomaOnField": "태양꽃이 필드에 존재시",
-        "enerPerBlossom": "찰나의 꽃이 피어날때 원소에너지 회복양",
-        "c2Stacks": "소모한 생멸 카운트"
-    },
-    "char_Amber": {
-        "secondArrow": "(두번째 화살)",
-        "critRateBonus": "<strong>화살비</strong> 치명타 확률 증가",
-        "aoeRangeBonus": "<strong>화살비</strong> 영향 범위 증가",
-        "manualDetonationDmg": "수동 복발 피해",
-        "c6CondName": "<strong>화살비</strong> 사용후"
-    },
-    "char_AratakiItto": {
-        "a1": {
-            "name": "아라타키 케사기리 연속 발동 시"
-        },
-        "a4": {
-            "dmgInc": "아라타키 케사기리 피해량 증가"
-        },
-        "c1": {
-            "initialGain": "난신의 괴력 효과 획득 스택",
-            "timedGain": "1초 후 0.5초마다 난신의 괴력 효과 획득 스택"
-        },
-        "c4": {
-            "name": "<strong>최흉의 귀왕·이토 강림!!</strong>으로 부여된 「분노의 귀왕」 상태가 종료"
-        }
-    },
-    "char_Barbara": {
-        "passive1": {
-            "cond": "<strong>공련, 시작♪</strong>의 노래의 고리안에 있을시"
-        },
-        "constellation2": {
-            "cond": "<strong>공련, 시작♪</strong> 지속중"
-        }
-    },
-    "char_Beidou": {
-        "skillOneHit": "1회 피격시",
-        "skillTwoHit": "2회 피격시",
-        "duringBurst": "작뢰가 지속되는 동안",
-        "tidecallerMaxDmg": "최대 피해 보너스를 가진 파도잡이 발동",
-        "a4charge": "강공격에 필요한 준비 시간 감소",
-        "c4dmg": "추가 번개 원소 피해",
-        "burstDmgRed_": "피해 감면"
-    },
-    "char_Bennett": {
-        "skill": {
-            "pressDMG": "짧은 터치 피해",
-            "lvl1_1DMG": "1단 차지 처음 피해",
-            "lvl1_2DMG": "1단 차지 두번째 피해",
-            "lvl2_1DMG": "2단 차지 처음 피해",
-            "lvl2_2DMG": "2단 차지 두번째 피해",
-            "explDMG": "폭발 피해",
-            "lvl1CD": "1단 차지 재사용 대기시간",
-            "lvl2CD": "2단 차지 재사용 대기시간"
-        },
-        "additionalATK": "추가 공격력 증가",
-        "additionalATKRatio_": "추가 공격력 증가 비율",
-        "c4DMG": "열정 과부화 피해",
-        "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 캐릭터에 불 원소 부여 효과"
-    },
-    "char_Chongyun": {
-        "infusion": "한손검, 양손검, 장병기 캐릭터에 얼음 원소 부여 효과",
-        "passive2": "영도 피해",
-        "asc4Cond": "영도에 피격된 적",
-        "constellation1": "얼음 칼날 피해",
-        "constellation6": "적의 체력 백분율이 중운보다 낮음",
-        "blades": "영도 소환 개수"
-    },
-    "char_Diluc": {
-        "skillB": {
-            "0": "2단 공격 피해(증가시)",
-            "1": "3단 공격 피해(증가시)"
-        }
-    },
-    "char_Diona": {
-        "skillDuration": "꽁꽁젤리마다 지속시간",
-        "holdShield": "홀드시 피해 흡수량",
-        "a1shielded": "<strong>꽁꽁젤리</strong> 보호막으로 보호받는 캐릭터",
-        "holdCryoShield": "홀드시 얼음원소 피해 흡수량"
-    },
-    "char_Fischl": {
-        "a1Name": "차지 완료된 화살로 오즈 명중시 번개 원소 범위 피해",
-        "a2Name": "번개 원소 범위 피해",
-        "c1Name": "협공 피해",
-        "c4AoeDmg": "발동 시 주변의 적에게 주는 피해",
-        "c6OzDmg": "필드 위에 있는 자신의 캐릭터와의 협공 피해"
-    },
-    "char_Ganyu": {
-        "a1": {
-            "condName": "서리꽃 화살 발사 후",
-            "critRateInc": "서리꽃 치명확률 증가"
-        },
-        "c1": {
-            "condName": "적이 2단 차지 강공격의 서리꽃 화살 혹은 피어난 서리꽃에 명중"
-        },
-        "c4": {
-            "lingerDuration": "영역 이탈 시 지속시간"
-        }
-    },
-    "char_HuTao": {
-        "paramita": {
-            "enter": "피안접무 상태 진입",
-            "end": "나비의 서가 부여하는 피안접무 상태 종료"
-        },
-        "constellation2": {
-            "applyBloodBlossom": "혈매향 효과 적용(2돌)"
-        },
-        "constellation4": {
-            "condName": "호두가 부여한 혈매향 효과 상태의 적 처치시"
-        },
-        "constellation6": {
-            "condName": "체력이 25% 이하로 떨어지거나 전투 불능이 될 정도의 피해를 입음"
-        }
-    },
-    "char_Jean": {
-        "c1CondName": "1초 이상 홀드",
-        "c1PullSpeed": "끌어 당기는 속도 증가"
-    },
-    "char_Kaeya": {
-        "c2burstDuration": "적 처치시 지속시간 2.5초 증가, 최대 15초",
-        "p1heal": "회복양",
-        "c1cond": "얼음 원소의 영향을 받은 적"
-    },
-    "char_Keqing": {
-        "c1DMG": "계뢰 피해",
-        "recast": "<strong>성신 회귀</strong> 재사용시",
-        "effectTriggers": "적용된 효과"
-    },
-    "char_Klee": {
-        "a1CondName": "폭렬 불꽃 획득",
-        "a1CondName2": "다음 강공격이 스태미나를 소모하지 않음",
-        "c2CondName": "<strong>통통폭탄</strong>의 부비트랩에 적이 명중",
-        "c6CondName": "쾅쾅 불꽃 발동"
-    },
-    "char_Lisa": {
-        "a4C": "적이 <strong>장미의 뇌광</strong>에 피격",
-        "c2C": "<strong>창뢰</strong> 홀드"
-    },
-    "char_Mona": {
-        "omen": "포영 상태의 적에게 피해를 줌",
-        "omenDuration": "성이 지속 시간",
-        "bubbleDuration": "포영 지속 시간",
-        "phantomDuration": "허영 지속 시간",
-        "hitOp": {
-            "affectedByOmen": "포영 상태의 적에게 피해를 줌"
-        },
-        "frozenDuration": "<cryo>빙결</cryo> 반응 지속 시간 증가",
-        "uponSprint": "흐르는 허와 실 상태 진입후"
-    },
-    "char_Ningguang": {
-        "aoeGems": "보석은 바위 원소 피해",
-        "starJadeStaminaCost": "50; 별 보유시: 0",
-        "skillReset": "6초마다 최대 1회, 선기 병풍 파열시 재사용 대기시간 초기화",
-        "a4toggle": "선기 병풍 통과",
-        "c4toggle": "선기 병풍 주변 캐릭터",
-        "c6bonus": "생성되는 별"
-    },
-    "char_Qiqi": {
-        "a1C": "<strong>선법·한병의 귀차</strong> 상태의 캐릭터가 원소 반응 발동"
-    },
-    "char_Razor": {
-        "electroSigil": "번개의 인장",
-        "electroSigilAbsorbed": "번개의 인장이 지워지면 원소 에너지 증가",
-        "opHitWithClawAndThunder": "<strong>날카로운 발톱과 창뢰</strong>(짧은 터치)에 적이 명중",
-        "electroSigilPerProc": "낙뢰당 번개의 인장 획득 수"
-    },
-    "char_Sayu": {
-        "burstHits": "너구리 오뚝이 활성 횟수",
-        "p2Heal": "주변의 캐릭터 치유",
-        "p2Aoe": "피해를 가하는 범위 증가",
-        "c1Text": "너구리 오뚝이는 체력 제한을 받지 않고 주변의 적을 공격하면서 캐릭터의 체력을 회복한다",
-        "c2KickPressDmg_": "유후류·풍은 돌진 홀드 피해량 보너스",
-        "c2KickDmg_": "유후류·풍은 돌진 피해량 보너스",
-        "c2Cond": "<strong>유후류·풍은 돌진</strong> 상태 지속 시간",
-        "c6DarumaDmgInc": "너구리 오뚝이 피해량 증가",
-        "c6DarumaHealInc": "너구리 오뚝이 치유량 증가"
-    },
-    "char_Shenhe": {
-        "quill": "얼음의 깃 활성",
-        "c4": "서리의 주문 스택",
-        "c4Bonus_": "서리의 주문 보너스",
-        "pressQuota": "짧은 터치 발동 횟수",
-        "holdQuota": "홀드 발동 횟수",
-        "pressDuration": "짧은 터치 지속 시간",
-        "holdDuration": "홀드 지속 시간"
-    },
-    "char_Thoma": {
-        "a2": "열화의 붕괴 피해량 증가",
-        "c2": "<strong>열화의 오오요로이</strong> 지속시간 증가",
-        "maxShield": "최대 피해 흡수량",
-        "maxPyroShield": "최대 불원소 피해 흡수량"
-    },
-    "char_Xiangling": {
-        "afterChili": "고추를 주운 후",
-        "explosionDMG": "폭발 피해",
-        "afterGuobaHit": "누룽지의 공격에 피격된 적",
-        "duringPyronado": "화륜 지속 상태",
-        "c6Exception": "이것은 <pyro>1단 공격 피해</pyro>, <pyro>2단 공격 피해</pyro>, <pyro>화륜피해</pyro>에는 미적용"
-    },
-    "char_Xiao": {
-        "burst": {
-            "autoAtkDmgBonus_": "일반/강/낙하 공격 피해 증가",
-            "lifeDrain_": "체력 유실",
-            "currentHPPerSec": "(초당 현재 체력 대비)",
-            "incJump": "점프력 대폭 상승",
-            "incAtkAoe": "공격 범위 증가",
-            "inBurst": "<strong>나자의 춤</strong> 상태인 동안",
-            "stack": "<strong>나자의 춤</strong> 상태인 시간"
-        },
-        "skillStack": "<strong>풍륜양립</strong> 사용 횟수:"
-    },
-    "char_Xingqiu": {
-        "skillCond": "우렴검 생성시",
-        "burstCond": "홍검세를 펼침",
-        "c2Cond": "우렴검에 피격된 적"
-    },
-    "char_Xinyan": {
-        "skill": {
-            "pyroShield": {
-                "1": "1급 보호막 불원소 피해 흡수량",
-                "2": "2급 보호막 불원소 피해 흡수량",
-                "3": "3급 보호막 불원소 피해 흡수량"
-            },
-            "shieldLevel": "보호막 급수",
-            "shieldLevels": {
-                "1": "1급: 변칙 리듬",
-                "2": "2급: 선창 리듬",
-                "3": "3급: 댄스 리듬"
-            }
-        },
-        "p1": {
-            "desc": "<strong>정열의 연주</strong>의 보호막에 필요한 적 명중 수량 1 감소"
-        },
-        "p2": {
-            "activeShield": "필드위의 캐릭터가 <strong>정열의 연주</strong> 보호막의 보호를 받는중"
-        },
-        "c2": {
-            "key_": "<strong>반항의 피치카토</strong>로 가하는 물리 피해 치명타 확률 보너스",
-            "shield": "발동시 3급: 댄스리듬 생성"
-        },
-        "c4": {
-            "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중"
-        },
-        "c6": {
-            "duringCharge": "강공격시"
-        }
-    },
-    "char_YaeMiko": {
-        "c4": "<strong>살생앵</strong>의 낙뢰가 적을 명중"
-    },
-    "char_Yanfei": {
-        "seals": [
-            "0스택",
-            "1스택",
-            "2스택",
-            "3스택",
-            "4스택"
-        ],
-        "perSeal": "(스택당)",
-        "maxSeals": "단화인 최대 수량",
-        "charged": {
-            "0": "단화인 0스택 피해",
-            "1": "단화인 1스택 피해",
-            "2": "단화인 2스택 피해",
-            "3": "단화인 3스택 피해",
-            "4": "단화인 4스택 피해"
-        },
-        "burst": {
-            "grantMax": "최대 수량의 단화인 부여"
-        },
-        "passive1": {
-            "sealsConsumed": "강공격으로 소모한 단화인 개수"
-        },
-        "passive2": {
-            "chargedCrit": "강공격이 치명타 발생",
-            "key": "법수의 눈 피해"
-        },
-        "c1": {
-            "sealChargedStam_": "강공격의 스태미나 소모 감소"
-        },
-        "c6": {
-            "maxSealInc": "단화인 최대 수량 증가"
-        }
-    },
-    "char_YunJin": {
-        "burst": "비운의 깃발 효과 적용시",
-        "a4Inc_": "파티내 원소 타입 가짓수에 따른 증가",
-        "c4": "운근이 결정 반응 발동"
-    },
-    "char_Zhongli": {
-        "skill": {
-            "stele": "암주 피해",
-            "resonance": "공명 피해",
-            "maxStele": "최대 암주 개수",
-            "nearShield": "<strong>옥홀 방패</strong> 근처에 있는 적"
-        },
-        "p1cond": "<strong>옥홀 방패</strong>가 피해를 받은 경우",
-        "c6heal": "최대 체력 회복량"
-    },
-    "weapon_AlleyHunter": {
-        "condName": "대기상태 시간"
-    },
-    "weapon_AmosBow": {
-        "condName": "화살 체공 시간"
-    },
-    "weapon_BlackTassel": {
-        "condName": "슬라임 공격시"
-    },
-    "weapon_CrescentPike": {
-        "condName": "원소 입자 또는 원소 구슬 획득 후",
-        "hitName": "일반 혹은 강공격시 추가 피해"
-    },
-    "weapon_Deathmatch": {
-        "condName": "주변의 적 수",
-        "opponents": {
-            "oneOrNone": "2기 미만",
-            "moreThanOne": "2기 이상"
-        }
-    },
-    "weapon_DragonspineSpear": {
-        "aoeDmg": "영원의 얼음결정 피해",
-        "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받는 적에게 주는 피해"
-    },
-    "weapon_FerrousShadow": {
-        "condName": "체력 조건 만족시",
-        "resistance": "강공격 발동 시 경직 저항"
-    },
-    "weapon_FreedomSworn": {
-        "sigilsConsumed": "투쟁의 부적 소모"
-    },
-    "weapon_Frostbearer": {
-        "aoeDmg": "영원의 얼음 결정 피해",
-        "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받은 적에게 주는 피해"
-    },
-    "weapon_Hamayumi": {
-        "condName": "장착 캐릭터의 원소 에너지가 100%"
-    },
-    "weapon_MemoryOfDust": {
-        "atkEffInc": "공격력 증가효과 증가"
-    },
-    "weapon_PolarStar": {
-        "condName": "백야의 극성"
-    },
-    "weapon_SerpentSpine": {
-        "takeMoreDmg": "받는 피해 증가"
-    },
-    "weapon_Slingshot": {
-        "condName": "0.3초 이내에 일반/강공격이 명중"
-    },
-    "weapon_SnowTombedStarsilver": {
-        "aoeDmg": "영원의 얼음 결정 피해",
-        "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받은 적에게 가하는 피해"
-    },
-    "weapon_SummitShaper": {
-        "atkEffInc": "공격력 증가효과 증가"
-    },
-    "weapon_TheAlleyFlash": {
-        "condName": "피해를 받지 않음"
-    },
-    "weapon_TheUnforged": {
-        "atkEffInc": "공격력 증가효과 증가"
-    },
-    "weapon_TheWidsith": {
-        "aria": "영탄곡",
-        "interlude": "간주곡",
-        "recitative": "서창"
-    },
-    "weapon_ThunderingPulse": {
-        "condName": "비뢰의 문장"
-    },
-    "weapon_VortexVanquisher": {
-        "atkEffInc": "공격력 증가효과 증가"
-    },
-    "artifact_EchoesOfAnOffering": {
-        "mode": "발동 모드",
-        "avg": "평균",
-        "always": "항상"
-    },
-    "char_KamisatoAyato": {
-        "skill": {
-            "unableToAuto": "강공격 및 낙하공격 사용 불가",
-            "namisenStacks": "번쩍이는 파도 중첩",
-            "shun_dmgInc": "<hydro>순수검 피해량 증가</hydro>"
-        },
-        "passive1": {
-            "afterUse": "스킬 사용 후 획득하는 번쩍이는 파도 스택",
-            "afterExplode": "물의 잔영이 파괴된 후 획득하는 번쩍이는 파도 스택"
-        },
-        "c1": {
-            "shun_dmg_": "<hydro>순수검 피해 증가</hydro>"
-        },
-        "c2": {
-            "addlStacks": "번쩍이는 파도의 최대 스택 증가"
-        },
-        "c6": {
-            "dmg": "끝없는 기원 피해"
-        }
-    },
-    "char_KukiShinobu": {
-        "skill": {
-            "cost": "% 현재 체력"
-        },
-        "a4": {
-            "heal": "원소 전투 스킬 치유량 증가"
-        },
-        "c4": {
-            "dmg": "번개풀 피해"
-        }
-    },
-    "char_Yelan": {
-        "c2": {
-            "dmg": "올가미에 걸린 적 피해"
-        },
-        "c4": {
-            "condName": "생명의 실에 포시된 적의 수"
-        },
-        "c6": {
-            "condName": "전략 설계 상태시",
-            "dmg": "타파의 화살 피해"
-        }
-    },
-    "page_character": {
-        "addNew": "새 캐릭터 추가",
-        "tabs": {
-            "overview": "기본정보",
-            "talent": "특성 및 돌파",
-            "teambuffs": "파티 버프",
-            "optimize": "최적화",
-            "theorycraft": "이론 연구실"
-        },
-        "formulas": "식",
-        "calculations": "계산",
-        "selectCharacter": "캐릭터 선택",
-        "removeCharacter": "{{value}}을/를 정말 지우시겠습니까?",
-        "delete": "캐릭터 삭제",
-        "teammates": "파티원",
-        "showingNum_one": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
-        "showingNum_other": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
-        "hitmode": {
-            "hit": "최소 피해(치명X)",
-            "avgHit": "평균 피해",
-            "critHit": "최대 피해(치명O)"
-        },
-        "tabEquip": {
-            "swapWeapon": "무기 교환",
-            "swapArt": "성유물 교환",
-            "compare": "현재 조합과 비교",
-            "unequipArts": "성유물 모두 해제"
-        },
-        "characterName": "캐릭터 이름",
-        "teammate": "파티원 {{count}}",
-        "noReaction": "원소 반응 없음",
-        "multiTarget": {
-            "title": "다중 최적화 목표 설정",
-            "addNewTarget": "새로운 타겟 추가",
-            "addNewMTarget": "새로운 다중 최적화 목표 추가"
-        },
-        "addStats": {
-            "title": "적 설정 및 스탯 조정"
-        },
-        "tabTheorycraft": {
-            "substatType": {
-                "min": "부옵션 최소값 사용",
-                "max": "부옵션 최대값 사용",
-                "mid": "부옵션 중간값 사용"
-            },
-            "maxTotalRolls": "\"정상적인\" 조합은 최대 45회 강화만 가질 수 있습니다.",
-            "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
-            "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다."
-        },
-        "tabTeambuff": {
-            "team_reso": "파티 원소 공명",
-            "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
-        }
-    },
-    "page_weapon": {
-        "showingNum_one": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
-        "showingNum_other": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
-        "edit": "무기 편집",
-        "weaponName": "무기 이름",
-        "removeWeapon": "{{value}}을/를 정말 삭제하시겠습니까?",
-        "addWeapon": "새 무기 추가"
-    },
-    "weapon_AquaSimulacra": {
-        "condName": "주변에 적 존재"
-    },
-    "weapon_FadingTwilight": {
-        "states": {
-            "evengleam": "석양",
-            "afterglow": "유하",
-            "dawnblaze": "조휘"
-        },
-        "condName": "현재 상태"
-    },
-    "weapon_HaranGeppakuFutsu": {
-        "consumed": "소모한 하스이 스택"
-    },
-    "char_Collei": {
-        "sproutDmg": "신엽 효과 피해",
-        "miniAnbarDmg": "미니 콜린엔바 피해"
-    },
-    "char_Dori": {
-        "c2MultiplierKey_": "프랜차이즈 경영 계수",
-        "c2DmgKey": "프랜차이즈 경영 피해",
-        "c4ConnectedBelowHp": "램프의 정령과 연결된 케릭터의 HP가 50% 이하",
-        "c4ConnectedBelowEner": "램프의 정령과 연결된 케릭터의 원소 에너지가 50% 이하",
-        "c6Heal": "일반 공격 명중시 치유량"
-    },
-    "char_ShikanoinHeizou": {
-        "declensionStacks": "변격 스택",
-        "takingField": "필드에 등장"
-    },
-    "char_Tighnari": {
-        "p1Cond": "<strong>화엽의 화살</strong> 발사 후",
-        "c4ReactCond": "<dendro>풀 기반</dendro> 원소 반응 발동",
-        "c6DmgKey": "꽃을 품은 화살 피해",
-        "c6WreathRed": "<strong>화엽의 화살</strong> 차지 시간 감소"
-    },
-    "elementalResonance": {
-        "SprawlingGreenery": {
-            "cond2ele": "연소, 활성, 개화 반응 발동",
-            "cond3ele": "촉진, 발산, 만개, 발화 반응 발동"
-        },
-        "EnduringRock": {
-            "hitCond": "보호막이 존재하는 동안 적에게 피해를 가함"
-        }
-    },
-    "page_character_optimize": {
-        "mainStat": {
-            "levelAssTooltip": {
-                "title": "주옵션 레벨 가정",
-                "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
-            },
-            "assumptionLvl": {
-                "no": "주옵션 레벨 변화 없음",
-                "lvl": "주옵션을 최소 {{lvl}} 레벨로"
-            }
-        },
-        "tcGraph": {
-            "vs": "최적화 대상과 다음 값을 도식화 :",
-            "notSel": "선택되지 않음",
-            "downloadData": "데이터 다운로드",
-            "desc": "조합기의 데이터를 사용, 최적화 대상과 선택된 도식화 대상의 관계를 그래프로 표시해 줍니다. 그래프는 선택된 도식화 대상의 0.01 단위로 최적화 대상의 최대값을 보여줍니다. 이 옵션을 켜게 되면 조합 생성 시간이 늘어나게 될 것입니다",
-            "showStatThr": "옵션의 임계선 표시",
-            "generatedBuilds": "생성된 조합",
-            "statReqThr": "옵션의 임계선",
-            "currentBuild": "현재 조합",
-            "highlightedBuilds": "표시된 조합",
-            "buildAlreadyInList": "이 빌드는 이미 리스트에 존재"
-        },
-        "levelFilter": "성유물 레벨 필터",
-        "allowPartial": "성유물 일부 착용 허용(5개 미만)",
-        "constraintFilter": {
-            "title": "제한 조건",
-            "tooltip": "조합 생성시 만족해야 하는 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
-        },
-        "artSetConfig": {
-            "title": "성유물 세트 설정",
-            "setEffCond": "성유물 효과 적용 조건",
-            "enabled": "활성화",
-            "allowed": "허용",
-            "excluded": "제외됨",
-            "selected": "선택됨",
-            "2rainbow": "3-Rainbow",
-            "4rainbow": "5-Rainbow",
-            "allowAll2set": "모든 2셋 허용",
-            "excludeAll2set": "모든 2셋 제외",
-            "allowAll4set": "모든 4셋 허용",
-            "excludeAll4set": "모든 4셋 제외",
-            "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow 구성",
-            "modal": {
-                "setCond": {
-                    "title": "조건부 성유물 세트 효과 적용",
-                    "reset": "조건 초기화",
-                    "text": "일부 성유물은 조건에 따라 효과가 적용됩니다. 이 창에서 조건들을 선택하게 되면 해당 효과는 최적화 과정중에 같이 계산됩니다."
-                },
-                "ArtSetFilter": {
-                    "title": "성유물 세트 <1>포함됨<1></1></1> / <3>제외됨<1></1></3>",
-                    "intro": "성유물 세트 조합을 허용하거나 제외시킬 수 있습니다. 다음 예제에서 A는 세트헤 해당하는 성유물이고 R은 해당되지 않는 성유물(rainbow)을 의미합니다.",
-                    "2set": "<0><0>Excluding<1></1> 2-Set</0></0>은 2셋 구성을 제외합니다: <2><0>AA</0>RRR</2> 혹은 <4><0>AAA</0>RR</4>.",
-                    "4set": "<0><0>Excluding<1></1> 4-Set</0></0>은 4셋 구성을 제외합니다.: <2><0>AAAA</0>R</2> 혹은 <4><0>AAAAA</0></4>.",
-                    "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0>은 2셋 + 3-Rainbow 구성을 제외합니다: <2>AA<1>RRR</1></2> 혹은 <4>AAA<1>RR</1></4>.",
-                    "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0>은 5-Rainbow 구성을 제외합니다: <2><0>RRRRR</0></2>."
-                }
-            }
-        },
-        "buildDropdownDesc": "최종 생성 조합 가짓수를 줄이면 조합 계산 시간을 줄일 수 있습니다.",
-        "threadDropdownDesc": "쓰레드 개수를 늘리면 조합 생성 시간은 줄어들지만 CPU 파워를 좀 더 사용할 것입니다.",
-        "noArtis": "웁스! GO에 성유물을 하나도 추가하지 않으셨습니다! <1>성유물</1> 페이지로 가셔서 성유물을 추가하셔야 합니다!",
-        "build_one": "<0>{{count}}</0> 조합",
-        "build_other": "<0>{{count}}</0> 조합",
-        "thread_one": "<0>{{count}}</0> 쓰레드",
-        "thread_other": "<0>{{count}}</0> 쓰레드",
-        "targetSelector": {
-            "selectOptTarget": "최적화 대상 선택",
-            "selectGraphTarget": "도식화 대상 선택",
-            "invalidTarget": "잘못된 대상",
-            "selectBuildTarget": "제한 조건 대상 선택"
-        },
-        "selectTargetFirst": "최적화 대상을 먼저 선택하세요",
-        "generateButton": {
-            "cancel": "취소",
-            "generateBuilds": "조합 생성"
-        },
-        "removeBuildButton": "조합 삭제",
-        "theorycraftButton": "이론 연구실",
-        "currentlyEquippedBuild": "현재 사용중",
-        "addBuildToList": "리스트에 빌드 추가",
-        "graphBuildLabel": "그래프 #<1>{{count}}</1>",
-        "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요"
-    },
-    "weapon_CalamityQueller": {
-        "inactiveKey": "대기 상태 보너스"
-    },
-    "weapon_ForestRegalia": {
-        "condName": "유식의 잎사귀를 습득"
-    },
-    "weapon_FruitOfFulfillment": {
-        "stackName": "영결 효과"
-    },
-    "weapon_Moonpiercer": {
-        "condName": "소생의 잎사귀를 습득"
-    },
-    "weapon_SapwoodBlade": {
-        "condName": "유식의 잎사귀를 습득"
-    },
-    "char_TravelerAnemo": {
-        "p1": "바람의 칼날 피해",
-        "c6": "<strong>격동의 바람</strong>에 피격된 적",
-        "c4": "시전하는 동안 피해 감소량",
-        "initialEleDmg": "획득된 원소의 초기 절단 피해",
-        "maxEleDmg": "획득된 원소의 최대 절단 피해"
-    },
-    "char_TravelerElectro": {
-        "skill": {
-            "amuletGenAmt": "풍요의 곡옥 생성 수",
-            "absorb": "현재 캐릭터가 풍요의 곡옥을 흡수"
-        },
-        "burst": {
-            "3rd": "3번째 위광의 낙뢰 피해",
-            "thunderCd": "위광의 낙뢰 재생성 시간"
-        },
-        "passive2": {
-            "enerRech_": "풍요의 곡옥이 제공하는 원소 충전 효율 증가"
-        },
-        "c2": {
-            "thunderHit": "<strong>위광의 낙뢰</strong>가 적응 명중"
-        }
-    },
-    "char_TravelerGeo": {
-        "passive2": {
-            "key": "광란의 붕암 피해"
-        },
-        "c2": {
-            "key": "불안정한 용암 피해"
-        }
-    },
-    "page_newTab": {
-        "title": "🛑새 Optimizer 탭이 감지되었습니다🛑",
-        "p1": "다른 탭에 Genshin Optimizer가 이미 열려 있는 것 같습니다💞. GO는 여러탭을 지원하지 않습니다📵, 이런경우 다음과 같은 현상이 발생할 수 있습니다:",
-        "symptom": {
-            "1": "탭들끼리 데이터가 동기화 되지 않습니다🙃.",
-            "2": "데이터베이스가 깨졌습니다💔.",
-            "3": "배가 뒤틀리고🤰 Genshin Optimizer 개발팀이 쓰러집니다😡.",
-            "4": "드물게, 죽습니다☠️."
-        },
-        "p2": "이것을 막기 위해 메세지를 보여드립니다📝. 다음 중에 선택하세요:",
-        "choice": {
-            "1": "이 탭을 닫고🔪, 새 탭을 사용하세요🆕.",
-            "2": "새 탭을 닫고↩️, 이 탭만 열려 있는지 반드시 확인 한 후🔂, 이 탭을 새로고침 하세요🔄."
-        },
-        "refresh": "새로고침"
-    },
-    "char_Candace": {
-        "hydroInfusion": "<hydro>한손검, 양손검, 장병기 캐릭터에 물 원소 부여 효과</hydro>"
-    },
-    "char_Cyno": {
-        "p1Dmg": "기근의 번개 피해",
-        "judication": "「판정」 효과를 발동시",
-        "burstNormalDmgInc": "길을 여는 사자 상태에서의 일반 공격 증가",
-        "boltDmgInc": "기근의 번개 피해 증가"
-    },
-    "char_Nilou": {
-        "skill": {
-            "dance1": "검의 춤 1단 피해",
-            "dance2": "검의 춤 2단 피해",
-            "whirl1": "선회의 춤 1단 피해",
-            "whirl2": "선회의 춤 2단 피해",
-            "moon": "물의 달 피해",
-            "wheel": "수륜 피해"
-        },
-        "passive1": {
-            "underChaliceEffect": "황금잔의 선물 효과 부여",
-            "notDendroHydroTeam": "힌트: 부가적인 조건과 효과를 보려면 파티를 풀과 물 캐릭터로만 구성하세요",
-            "condName": "황금잔의 선물 효과를 부여받은 캐릭터가 <dendro>풀 원소 공격</dendro>을 받음",
-            "bountifulCores": "개화 반응 발동시 풍요의 핵 생성"
-        },
-        "c1": {
-            "moon_dmg_": "물의 달 피해 증가"
-        },
-        "c4": {
-            "condName": "<strong>칠역의 춤</strong>의 사뿐한 회전 상태에서 세 번째 춤이 적을 명중"
-        }
-    },
-    "weapon_MakhairaAquamarine": {
-        "condName": "효과 발동"
-    },
-    "weapon_WanderingEvenstar": {
-        "condName": "효과 발동"
-    },
-    "weapon_XiphosMoonlight": {
-        "condName": "효과 발동"
-    },
-    "char_Nahida": {
-        "karmaDmg_": "삼업의 정화 패햐 증가",
-        "karmaCritRate_": "삼업의 정화 치명타 확률 증가",
-        "karmaIntervalDec": "삼업의 정화 발동 간격 감소",
-        "noBurstEffect": "힌트: 원소 폭발 효과가 전혀 적용되지 않고 있습니다. 1돌을 하거나 <pyro>불</pyro>, <electro>번개</electro>, 또는 <hydro>물</hydro> 원소 파티원을 추가하세요.",
-        "partyInBurst": "필드 내 파티",
-        "c1Key": "<strong>마야의 전당</strong> 효과 보너스에 적용되는 추가 <pyro>불</pyro>, <electro>번개</electro>, <hydro>물</hydro> 파티 캐릭터",
-        "c2": {
-            "bloomCondName": "대상에 <strong>스칸다 씨앗</strong>이 새겨짐",
-            "qasCondName": "<strong>스칸다 씨앗</strong> 상태의 적이 활성, 촉진, 발산 반응의 영향을 받음"
-        },
-        "c4CondName": "근처의 적에게 <strong>스칸다 씨앗</strong>이 새겨짐",
-        "c6KarmicDmg": "업의 사면 피해"
-    },
-    "artifact_FlowerOfParadiseLost": {
-        "condName": "개화, 만개, 발화 발동시"
-    },
-    "char_Faruzan": {
-        "giftCondName": "<strong>바람의 비밀 통로</strong>의 바람의 선물 효과 적용",
-        "a4CondName": "바람의 보호 효과 생성시",
-        "c2DurationInc": "빛나는 다방면체 지속시간 연장",
-        "c6Arrow": "피해를 가할 시, 대상을 향해 풍압의 붕괴 발동"
-    },
-    "char_Layla": {
-        "starDmgInc": "유성이 가하는 피해 증가",
-        "c1ShieldBonusKey_": "단잠을 위한 울타리 보너스",
-        "c4CondKey": "샛별 효과",
-        "starDmg_": "유성 피해량 증가",
-        "slugDmg_": "별빛탄 피해량 증가",
-        "starInterval_": "저녁별 생성 시간 간격"
-    },
-    "char_Wanderer": {
-        "windfavoredState": "<strong>바람의 자태</strong> 상태일때",
-        "p1": {
-            "pyroCondName": "<strong>우화·바람이 전하는 노래</strong>가 <pyro>불</pyro>을 접촉",
-            "cryoCondName": "<strong>우화·바람이 전하는 노래</strong>가 <cyro>얼음</cyro>을 접촉"
-        },
-        "p2Dmg": "바람 화살 피해",
-        "c1BonusKey": "바람 화살 추가 피해량",
-        "c2CondName": "최대 부유력과 현재 부유력의 차이값",
-        "c6Key": "축언·안개막을 흔드는 솔바람 피해량 계수"
-    },
-    "weapon_ToukabouShigure": {
-        "condName": "우산의 장난 상태의 적"
-    },
-    "char_Alhaitham": {
-        "withMirrors": "빛조각을 보유한 경우",
-        "debateStacks": "중첩 스택",
-        "mirrorsConsumed": "<strong>특수 영역·현상의 족쇄</strong> 발동 시 소모된 빛조각의 수",
-        "projectionAttack_dmg_": "투사 공격 피해량 증가",
-        "excessMirror": "빛조각의 수가 이미 상한에 도달한 후 추가 생성"
-    },
-    "char_Yaoyao": {
-        "a4Heal": "하얀 무 폭발 치유량",
-        "inExplosionAoE": "<strong>하얀 무</strong> 폭발의 영향 범위 안에 존재 후",
-        "inLegacy": "선인의 슬기 상태",
-        "megaDmg": "초특대·짱짱무 피해",
-        "megaHeal": "초특대·짱짱무 치유량"
+  "artifact": {
+    "editor": {
+      "title": "성유물 편집기",
+      "substat": {
+        "substatFormat": "부옵션 {{value}}",
+        "noSubstat": "부옵션 없음",
+        "selectSub": "부옵션 선택",
+        "error": {
+          "noCalc": "추가옵션을 계산할 수 없습니다.",
+          "noOverRoll": "추가옵션은 {{value}}회를 넘을 수 없습니다."
+        },
+        "noRoll": "추가옵션 없음",
+        "noStat": "값 없음",
+        "eff": "효율: <1></1>",
+        "nextRolls": "다음 강화:",
+        "RollCount_one": "{{count}}회",
+        "RollCount_other": "{{count}}회"
+      },
+      "rarity": "등급",
+      "level": "레벨",
+      "unknownPieceName": "성유물 이름 미지정",
+      "curSubEff": "현재 부옵션 효율",
+      "curSubEffDesc": "성유물 강화 시 4레벨마다 부옵션이 추가됩니다. <strong>부옵션 효율</strong>은 얼마나 높은 수치로 옵션이 추가되었는지 계산되어 표시됩니다.",
+      "maxSubEff": "최대 부옵션 효율",
+      "maxSubEffDesc": "성유물의 <strong>부옵션 최대 효율</strong>은 남은 강화 추가옵션을 최대값으로 가정하여 계산됩니다.",
+      "preview": "성유물 미리보기",
+      "dupArt": "중복된 성유물이 있습니다.",
+      "upArt": "강화된 성유물이 있습니다.",
+      "beforeEdit": "편집 전",
+      "btnSave": "성유물 저장",
+      "btnAdd": "성유물 추가",
+      "btnClear": "초기화",
+      "btnRandom": "무작위",
+      "btnUpdate": "성유물 업데이트",
+      "clearPrompt": "성유물 편집기에 내용이 있습니다. 정말 편집기의 내용을 비우시겠습니까?",
+      "unknownSetName": "성유물 세트 미지정"
+    },
+    "artifactFilter": "성유물 필터",
+    "filterLocation": {
+      "inventory": "보관함",
+      "currentlyEquipped": "현재 장비중",
+      "location": "위치"
+    },
+    "button": {
+      "unequipArtifacts": "미착용 성유물",
+      "deleteArtifacts": "성유물 삭제",
+      "lockArtifacts": "성유물 잠금",
+      "unlockrtifacts": "성유물 잠금 해제"
+    },
+    "buttonHint": "주의: 위 빨간 버튼들은 <1>필터링된 성유물</1>에만 적용됩니다",
+    "tipsOfTheDay": [
+      "4성 성유물의 최대 효율은 약 540%입니다.",
+      "보통 성유물의 최대 효율은 업그레이드할 때 감소합니다. 이는 평범한 현상입니다!",
+      "스크린샷 부옵션에 숫자 \"1\"이 있다면 스캔이 잘 되지 않습니다.",
+      "만약 부옵션 하나에 모든 추가옵션(6)이 붙는다면, 보라색이 될 겁니다!",
+      "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
+      "이제 여러 장의 스크린샷을 한번에 업로드하여 스캔하실 수 있습니다!"
+    ],
+    "mainStat": "주 옵션",
+    "slot": "부위",
+    "slotName": {
+      "flower": "생명의 꽃",
+      "plume": "죽음의 깃털",
+      "sands": "시간의 모래",
+      "goblet": "공간의 성배",
+      "circlet": "이성의 왕관"
+    },
+    "info": {
+      "title": "성유물 편집/관리 가이드",
+      "section1": "<0>부옵션의 추가옵션</0><1>부옵션의 <1>추가옵션 횟수</1>는 부옵션의 왼쪽에 표시됩니다. 횟수가 높을수록 부옵션의 색은 더 화려해집니다:<3></3>.</1><2>부옵션 효율</2><3>부옵션의 효율(RV)은 5<1></1>값의 최대 잠재력에 대한 현재 값의 백분율을 나타냅니다. 이미지를 보면, 체력의 추가되는 최대값은 5.8%로서 현재 효율은: <3>5.3/5.8 = 90%</3>가 됩니다.</3><4>현재 효율 vs. 효율 최대 잠재력</4><5>5<1></1> 성유물의 9번의 추가옵션(기본4+강화5)이 모두 최대값으로 붙었다면 이는 100% 효율의 성유물이 됩니다. 하지만, 대부분의 성유물은 이렇게 운이 좋을 수 없습니다. 성유물의 <3>현재 효율</3>은 해당 성유물의 100% 효율에 대한 백분율입니다. <5>최대 효율</5>은 남은 강화가 최대값으로 붙었을 때 달성 할 수 있는 값입니다.<6>성유물 제외</6><7>성유물을 제외시키면<1></1>, 해당 성유물은 최적화 조합 생성 시 사용되지 않습니다. 다른 캐릭이 착용중인 성유물도 기본적으로 사용되지 않습니다.</7>",
+      "section2": "<0>성유물 편집기</0><1>3<1></1>성에서 5<3></3>성 사이의 어떤 성유물이라도 입력할 수 있는 완벽한 기능의 성유물 편집기입니다. 성유물의 부옵션이 입력되면 자동으로 몇 번의 추가옵션이 붙었는지 자동으로 계산되어 효율을 알려줍니다. 또한 여러분이 레벨에 따라 성유물에 올바른 값의 부옵션을 입력했는지 확인해줍니다.</1><2>스크린샷 스캔</2><3>하나하나 입력하는 건 여러분이 취향이 아닌가요? 그렇다면 여러분은 스크린샷 스캔을 통해 성유물을 입력하실 수 있습니다! 성유물 편집기에서 <1>Show Me How!</1> 버튼을 누르시면 자세하게 확인하실 수 있습니다.</3><4>중복/강화 성유물 체크</4><5>혹시 <1>중복된</1> 성유물을 체크하는 기능이 있다는 걸 알고 계시나요? 게다가 만약 새로 등록하려는 성유물이 기존에 등록된 성유물의 <3>강화된</3> 성유물이라 판단되면 이 또한 알려줍니다. 일단 중복/강화 성유물이 체크되면 두 가지 성유물의 비교 화면을 통해 확인하실 수 있습니다. (이미지를 참고하세요)</5>",
+      "section3": "<0>성유물 보관함</0><p>여러분이 추가한 모든 성유물이 이 곳에 표시됩니다. 여기에 있는 필터를 활용하여 성유물을 세부적으로 확인할 수 있습니다.</p><2>예시: 강화 재료로 쓸 성유물 찾기</2><p>성유물 필터와 성유물 효율 계산을 통해 강화 재료로 사용할 성유물을 빠르게 찾을 수 있습니다.</p><4>이 예시에서는 다음과 같이 설정합니다: </4><5><0>0에서 8레벨로 제한.</0><1>보호되지 않은 보관함 내 성유물.</1><2>효율 계산에서 %가 아닌 체력, 방어력, 원소 충전 효율 제거.</2><3>최대 효율로 오름차순 정렬.</3></5><p>이렇게 하면 효율성이 가장 낮은 성유물을 기준으로 성유물 보관함을 필터링합니다.</p>"
+    },
+    "sortMap": {
+      "level": "레벨",
+      "efficiency": "현재 부옵션 효율.",
+      "mefficiency": "최대 부옵션 효율."
+    },
+    "efficiencyFilter": {
+      "title": "효율 계산에 사용할 부옵션"
+    },
+    "resetFilters": "필터 초기화",
+    "setEffectNum": "{{setNum}}-셋",
+    "showingNum_one": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
+    "showingNum_other": "<1>{{count}}</1>개의 성유물을 표시중입니다. 총 {{value}}개",
+    "edit": "성유물 편집",
+    "autocompleteLabels": {
+      "sets": "성유물 세트",
+      "mainStats": "주옵션",
+      "substats": "부옵션",
+      "set": "성유물 세트"
+    },
+    "substat_one": "부옵션 {{count}}줄",
+    "substat_other": "부옵션 {{count}}줄",
+    "addNew": "새 성유물 추가",
+    "sub_one": "부옵 {{count}}",
+    "sub_other": "부옵 {{count}}",
+    "cantDeleteLock": "보호된 성유물은 삭제할 수 없습니다",
+    "equippedArt": "착용 중인 성유물",
+    "artInInv": "보관함의 성유물"
+  },
+  "languages": {
+    "chs": "중국어 (간체)",
+    "cht": "중국어 (번체)",
+    "de": "독일어",
+    "en": "영어",
+    "es": "스페인어",
+    "fr": "프랑스어",
+    "id": "인도네시아어",
+    "ja": "일본어",
+    "ko": "한국어",
+    "pt": "포르투갈어",
+    "ru": "러시아어",
+    "th": "태국어",
+    "vi": "베트남어",
+    "it": "이탈리아어",
+    "tr": "튀르키예어"
+  },
+  "settings": {
+    "title": "설정",
+    "languageCard": {
+      "selectLanguage": "언어 선택",
+      "languageFormat": "언어: {{language}}"
+    },
+    "uploadCard": {
+      "title": "데이터베이스 업로드",
+      "replaceDatabase": "데이터베이스 덮어쓰기",
+      "hint": "JSON 파일 불러오기...",
+      "hintPaste": "...아니면 내용을 아래에 붙여넣기.",
+      "error": {
+        "jsonParse": "JSON 파일을 해석 할 수 없습니다.",
+        "unknown": "알 수 없는 파일 형식입니다.",
+        "monaInvalid": "잘못된 Mona-Uranai 파일 형식",
+        "goInvalid": "잘못된 GO 백업 파일 형식"
+      },
+      "dbSource": "데이터 출처:",
+      "goodUpload": {
+        "title": "<strong>Genshin Open Object Description</strong> (GOOD) 형식"
+      },
+      "buttons": {
+        "open": "파일열기",
+        "detectDups": "변경 및 중복 확인",
+        "delNotInImport": "가져오기에 포함되지 않은 아이템 삭제"
+      },
+      "tooltip": {
+        "detectdup": "GO 보관함과 가져오는 내용중에 업그레이드나 중복을 찾습니다.",
+        "ignoreDup": "업그레이드나 중복을 찾기 않습니다. 가져오기한 것들은 GO 보관함의 상단에 추가됩니다.",
+        "delNotInImport": "가져오기의 내용이 보관함 전체의 내용이라고 가정합니다. 가져오기에 포함되지 않은 것들은 삭제됩니다.",
+        "keepNotInImport": "가져오기의 내용이 보관함의 일부라고 가정합니다. 아무것도 삭제되지 않습니다."
+      }
+    },
+    "count": {
+      "chars": "캐릭터:",
+      "arts": "성유물:",
+      "weapons": "무기:",
+      "total": "총:",
+      "new": "신규:",
+      "updated": "변경:",
+      "removed": "제거:",
+      "unchanged": "유지:",
+      "invalid": "비정상:",
+      "upgraded": "변경됨:",
+      "dbTotal": "총 개수:",
+      "notInImport": "가져오기에 미포함:"
+    },
+    "DatabaseCard": {
+      "title": "데이터베이스",
+      "button": {
+        "download": "다운로드",
+        "copy": "클립보드로 복사",
+        "delete": "삭제",
+        "upload": "업로드",
+        "swap": "선택"
+      },
+      "currentDB": "현재 데이터베이스"
     }
+  },
+  "ui": {
+    "pageTitle": "Genshin Optimizer",
+    "tabs": {
+      "artifacts": "성유물",
+      "characters": "캐릭터",
+      "tools": "기타 기능",
+      "weapons": "무기",
+      "doc": "문서",
+      "setting": "설정",
+      "scanner": "스캐너"
+    },
+    "social": {
+      "paypal": "Paypal",
+      "patreon": "Patreon",
+      "discord": "Discord"
+    },
+    "unselect": "선택해제",
+    "ascending": "오름차순",
+    "descending": "내림차순",
+    "loading": "불러오는중...",
+    "rightsDisclaimer": "Genshin Optimizer는 미호요와 관계가 없으며 승인되지 않았습니다.",
+    "appVersion": "$t(pageTitle) 버전: {{version}}",
+    "underConstruction": "개발중",
+    "error": "오류",
+    "reset": "초기화",
+    "info": "정보",
+    "inventory": "보관함",
+    "close": "닫기",
+    "sortMap": {
+      "new": "신규",
+      "name": "이름",
+      "level": "레벨",
+      "rarity": "희귀도",
+      "efficiency": "현재 효율",
+      "mefficiency": "최대 효율",
+      "artsetkey": "성유물 세트",
+      "probability": "강화 가능"
+    },
+    "link": {
+      "download": "다운로드 링크",
+      "discord": "디스코드 초대 링크"
+    },
+    "sortBy": "다음으로 정렬: ",
+    "locked": "보호됨",
+    "unlocked": "보호되지않음",
+    "refinement": "{{value}}재련",
+    "selectlevel": "레벨 선택",
+    "gender": {
+      "F": "여성",
+      "M": "남성"
+    }
+  },
+  "char_Eula": {
+    "skillC": {
+      "name": "냉혹한 마음"
+    },
+    "burstC": {
+      "name": "빛의 검",
+      "start5": "5스택부터 시작",
+      "addStacks": "50% 확률로 일반 공격, 원소 전투 스킬, 원소 폭발 사용 시 추가 스택을 얻음",
+      "dmg": "빛의 검 폭발 피해"
+    },
+    "c1C": {
+      "name": "<strong>냉혹한 마음</strong> 스택 소모",
+      "durationStack": "6초 + 스택당 6초 증가, 최대 18초"
+    },
+    "passive1": "부서진 빛의 검 데미지",
+    "c4C": {
+      "name": "적의 체력이 50% 미만"
+    }
+  },
+  "char_Noelle": {
+    "p4cd": "24초, 매 4회 타격시 -1초",
+    "c6duration": "15초, 적 처치 시 +1초, 최대 10초",
+    "qlarger": "노엘의 공격 범위가 증가한다",
+    "c4dmg": "호심경 파괴 피해",
+    "skillHeal_": "회복 효과 발동 확률"
+  },
+  "char_Venti": {
+    "addAimed": "분열된 화살 데미지",
+    "addFullAimed": "풀차지의 분열된 화살 데미지",
+    "upcurrentDuration": "상승 기류 지속시간",
+    "regenEner": "효과 종료 후 벤티의 원소 에너지 15 회복",
+    "c6": "<strong>바람신의 시</strong>에 피격된 적",
+    "q": "원소 전환 발생시 해당 원소와 대응하는 파티 내 모든 캐릭터의 원소 에너지 15pt 회복.",
+    "c2": {
+      "hit": "피격된 적",
+      "launched": "공중에 띄워진 적"
+    }
+  },
+  "sheet": {
+    "dmg": "피해",
+    "lessPercentHP": "체력이 {{percent}}% 미만",
+    "hitOp": {
+      "normal": "일반 공격이 대상에게 명중",
+      "charged": "강공격이 대상에게 명중",
+      "plunging": "낙하 공격이 대상에게 명중",
+      "skill": "원소 전투 스킬이 대상에게 명중",
+      "burst": "원소 폭발이 대상에게 명중",
+      "geo": "<geo>바위 원소 피해</geo>가 대상에게 명중",
+      "anemo": "<anemo>바람 원소 피해</anemo>가 대상에게 명중",
+      "hydro": "<hydro>물 원소 피해</hydro>가 대상에게 명중",
+      "cryo": "<cryo>얼음 원소 피해</cryo>가 대상에게 명중",
+      "pyro": "<pyro>불 원소 피해</pyro>가 대상에게 명중",
+      "electro": "<electro>번개 원소 피해</electro>가 대상에게 명중",
+      "none": "적에게 명중",
+      "normalOrCharged": "일반/강공격이 대상에게 명중",
+      "skillOrBurst": "원소 전투 스킬 혹은 원소 폭발이 대상에게 명중",
+      "crit": "치명타가 대상에게 명중",
+      "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
+      "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
+      "normalEle": "일반 공격으로 적에게 원소 피해를 가함"
+    },
+    "eleAbsor": "원소 전환",
+    "absorDot": "원소 전환 도트 데미지",
+    "afterUse": {
+      "skill": "원소 전투 스킬 사용 후",
+      "burst": "원소 폭발 사용 후",
+      "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
+    },
+    "increase": {
+      "atk": "공격력 증가"
+    },
+    "hits_one": "{{count}}회 명중",
+    "hits_other": "{{count}}회 명중",
+    "lessEqPercentHP": "체력이 {{percent}}% 이하",
+    "greaterPercentHP": "체력이 {{percent}}% 초과",
+    "greaterEqPercentHP": "체력이 {{percent}}% 이상",
+    "lessPercentEnergy": "원소 에너지가 {{percent}}% 미만",
+    "enemyLessPercentHP": "적의 체력이 {{percent}}% 미만",
+    "enemyLessEqPercentHP": "적의 체력이 {{percent}}% 이하",
+    "enemyGreaterPercentHP": "적의 체력이 {{percent}}% 초과",
+    "enemyGreaterEqPercentHP": "적의 체력이 {{percent}}% 이상",
+    "stack_one": "{{count}} 스택",
+    "stack_other": "{{count}} 스택",
+    "seconds_one": "{{count}}초",
+    "seconds_other": "{{count}}초",
+    "afterDefeatEnemy": "적 처치 후",
+    "afterSprint": "대시 후",
+    "skillCDRed": "원소 전투 스킬 재사용 대시시간 감소",
+    "burstCDRed": "원소 폭발 재사용 대기시간 감소",
+    "pressCD": "짧은 터치 재사용 대기시간",
+    "holdCD": "홀드 재사용 대기시간",
+    "triggerCD": "발동 최소 간격",
+    "eleSwirled": "확산된 원소",
+    "incInterRes": "경직 저항력 상승",
+    "charges": "사용 횟수",
+    "cooldown": "재사용 대기시간",
+    "addlCharges": "추가 사용 횟수",
+    "activeCharField": "필드 위 캐릭터가 영역내 존재",
+    "opponentsField": "영역에 적 존재",
+    "takeDmg": "피해를 받음",
+    "infusion": {
+      "pyro": "불 원소 부여",
+      "cryo": "얼음 원소 부여",
+      "anemo": "바람 원소 부여",
+      "hydro": "물 원소 부여",
+      "electro": "번개 원소 부여",
+      "dendro": "풀 원소 부여",
+      "geo": "바위 원소 부여"
+    },
+    "energyRegen": "원소 에너지 재생",
+    "effectDuration": {
+      "pyro": "불 원소 부착 시간",
+      "cryo": "얼음 원소 부착 시간",
+      "anemo": "바람 원소 부착 시간",
+      "hydro": "물 원소 부착 시간",
+      "electro": "번개 원소 부착 시간",
+      "dendro": "풀 원소 부착 시간",
+      "geo": "바위 원소 부착 시간"
+    },
+    "durationInc": "지속시간 증가",
+    "base": "기본",
+    "stacks": "스택",
+    "protectedByShield": "보호막 존재",
+    "protectedByShieldCrystal": "결정화로 생성된 보호막 존재",
+    "staminaDec_": "스태미나 소모 감소",
+    "dmgAbsorption": {
+      "pyro": "불원소 피해 흡수량",
+      "cryo": "얼음원소 피해 흡수량",
+      "anemo": "바람원소 피해 흡수량",
+      "hydro": "물원소 피해 흡수량",
+      "electro": "번개원소 피해 흡수량",
+      "dendro": "풀원소 피해 흡수량",
+      "geo": "바위원소 피해 흡수량",
+      "none": "피해 흡수량"
+    },
+    "opponentsDamaged": "대상이 피해를 받음",
+    "press": "짧은 터치",
+    "hold": "홀드",
+    "addlCharge": "사용 가능 횟수 증가",
+    "conditional": "조건부",
+    "maxStacks": "최대 스택",
+    "1set": "1세트",
+    "2set": "2세트",
+    "4set": "4세트",
+    "activationStam": "발동 시 소모 스태미나",
+    "stamDrain": "지속 스태미나 소모",
+    "talents": {
+      "skill": "스킬",
+      "burst": "원폭",
+      "passive": "패시브",
+      "passive1": "고유특성1",
+      "passive2": "고유특성4",
+      "passive3": "패시브",
+      "sprint": "대시",
+      "constellation1": "1돌",
+      "constellation2": "2돌",
+      "constellation3": "3돌",
+      "constellation4": "4돌",
+      "constellation5": "5돌",
+      "constellation6": "6돌"
+    },
+    "swirlReaction": {
+      "hydro": "<hydro>물</hydro> 원소 확산 발동",
+      "pyro": "<pyro>불</pyro> 원소 확산 발동",
+      "electro": "<electro>번개</electro> 원소 확산 발동",
+      "cryo": "<cryo>얼음</cryo> 원소 확산 발동"
+    },
+    "afterReaction": "원소 반응 발동",
+    "aoeInc": "영향 범위 증가",
+    "elementalReaction": {
+      "hydro": "<hydro>물 관련</hydro> 원소 반응 발동",
+      "electro": "<electro>번개 관련</electro> 원소 반응 발동"
+    },
+    "bonusScaling": {
+      "skill_": "원소 전투 스킬 피해 증가량"
+    },
+    "teamBuff": "파티 버프",
+    "opponents_one": "{{count}} 마리",
+    "opponents_other": "{{count}} 마리",
+    "dmgMult": {
+      "normal": "일반 공격 피해량 계수",
+      "charged": "강공격 피해량 계수",
+      "skill": "스킬 피해량 계수"
+    },
+    "stamRestored": "스태미나 회복"
+  },
+  "weapon_SongOfBrokenPines": {
+    "name": "천년의 대악장: 깃발의 노래"
+  },
+  "char_KaedeharaKazuha": {
+    "c1": "<strong>카즈하의 일도</strong> 재사용 대기시간 초기화",
+    "c2": "바람 부는 가을 들판",
+    "c6": {
+      "after": "<strong>치하야부루</strong> 혹은 <strong>카즈하의 일도</strong> 발동",
+      "bonus": "일반 공격, 강공격, 낙하 공격 가하는 피해 증가"
+    },
+    "skillPlunge": "폭풍 베기"
+  },
+  "char_Rosaria": {
+    "a1": "뒤에서 공격 시",
+    "a4": {
+      "name": "<strong>죽음의 성례</strong> 발동 시"
+    }
+  },
+  "char_KamisatoAyaka": {
+    "afterSprint": "대시 후",
+    "afterSprintCryo": "대시 후 <cryo>얼음 원소</cryo> 부착",
+    "snowflakeDMG": "서리의 관문 피해",
+    "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
+    "c6Active": "살얼음의 춤 상태 획득"
+  },
+  "weapon_MistsplitterReforged": {
+    "emblem": "무절(霧切)의 문장"
+  },
+  "char_Yoimiya": {
+    "c1": "<strong>유금화광</string> 상태의 적을 처치",
+    "c2": "<pyro>불 원소 피해</pyro>가 치명타를 입힘",
+    "normPyroInfus": "<pyro>일반 공격이 불 원소 피해로 전환</pyro>",
+    "c6Key_": "염초 화살 피해 계수"
+  },
+  "char_RaidenShogun": {
+    "skill": {
+      "eye": "뇌벌 악요의 눈",
+      "partyCost": "원소 에너지"
+    },
+    "burst": {
+      "resolves": "원력 스택",
+      "resolveInitial_": "<electro>백안지륜에 쌓은 원력 기반 피해 증가량</electro>",
+      "resolveInfused_": "<electro>몽상의 일심 피해 증가량</electro>",
+      "burstDmg": "몽상의 일태도 피해"
+    },
+    "a4": {
+      "enerRest": "<strong>몽상의 일심</strong> 상태에서 원소 에너지 회복",
+      "eleDMG": "번개 원소 피해 증가"
+    },
+    "c4": {
+      "expires": "<strong>몽상의 일심</strong>상태가 끝난 후"
+    }
+  },
+  "char_Aloy": {
+    "skill": {
+      "coil": "코일",
+      "coil1": "코일 1스택",
+      "coil2": "코일 2스택",
+      "coil3": "코일 3스택",
+      "rush": "얼음 질주",
+      "rushState": "얼음 질주 상태인 기간(초당 1스택)"
+    },
+    "a1CondName": "에일오리가 <strong>빙결의 설야</strong>의 코일 효과 획득시",
+    "normCryoInfus": "<cryo>일반 공격이 얼음 원소 피해로 전환</cryo>"
+  },
+  "char_KujouSara": {
+    "skill": {
+      "ambush": "텐구 주뢰·매복"
+    },
+    "a4": {
+      "enerRest": "텐구 주뢰·매복의 에너지 회복양"
+    },
+    "c6": {
+      "electroCritDmg": "텐구 주뢰의 공격력 증가 효과를 받는 캐릭터"
+    }
+  },
+  "char_SangonomiyaKokomi": {
+    "burst": "의식의 날개옷",
+    "c2": "체력 50% 이하의 캐릭터",
+    "c6": "일반 혹은 강공격이 체력 80% 이상인 캐릭터 치유",
+    "c2SkillHeal": "<strong>해파리의 서약</strong> 치유 증가량",
+    "c2BurstHeal": "<strong>해인화우(海人化羽)</strong> 치유 증가량"
+  },
+  "page_home": {
+    "intro": "<strong>월등한</strong> <3><i>원신</i></3> 계산기 GO에 당신의 성유물/무기/캐릭터를 저장하시면, 당신이 가지고 있고 당신이 사용하는 것들로 최고의 구성을 만드는데 도움이 될것입니다.",
+    "quickLinksCard": {
+      "title": "링크들",
+      "buttons": {
+        "tyGuide": {
+          "title": "유투브 설명 동영상 리스트",
+          "tooltip": "Genshin Optimizer의 사용법을 알아봅시다"
+        },
+        "scanners": {
+          "title": "자동 스캐너",
+          "tooltip": "게임내 성유물을 자동으로 읽어주는 스캐너들입니다"
+        },
+        "kqm": {
+          "title": "KeqingMains",
+          "tooltip": "이론을 연구하고 가이드를 제공하는 커뮤니티"
+        },
+        "devDiscord": {
+          "title": "Genshin Dev 디스코드",
+          "tooltip": "원신과 관련된 개발을 하는 사람들의 커뮤니티"
+        },
+        "good": {
+          "title": "GOOD 설명문서",
+          "tooltip": "Genshin Open Object Descriptor 설명문서"
+        },
+        "patchNotes": {
+          "title": "Genshin Optimizer 패치 노트",
+          "tooltip": "GO의 패치 노트가 모여 있습니다"
+        }
+      }
+    },
+    "inventoryCard": {
+      "title": "GO 보관함"
+    },
+    "vidGuideCard": {
+      "title": "가이드 동영상"
+    },
+    "teamCard": {
+      "title": "팀원 소개",
+      "jobTitle": {
+        "leadDev": "개발팀장",
+        "dev": "개발자",
+        "mod": "모더레이터"
+      }
+    }
+  },
+  "page_scanner": {
+    "intro": "<0>스캐너</0><1>스캐너는 스크린샷이나 게임에서 직접 데이터를 읽어 자동으로 저장해 주는 도구입니다.</1><2>아래에 있는 스캐너들은 GO와 동작하는 것을 확인하였습니다.</2><3>생성된 파일을 업로드 하시려면 <1>설정</1> 페이지로 가셔서 <strong>데이터베이스 업로드</strong> 항목을 이용하시면 됩니다.</3>",
+    "ik": {
+      "title": "Inventory Kamera",
+      "p1": "이 가벼운 앱은 보관함 내의 캐릭터, 무기, 성유물을 스캔합니다. 이 앱을 설정하기 위해서는 사용법을 따라하세요.",
+      "p2": "이 스캐너의 결과물은 <1>seelie.me</1>에서도 사용가능합니다.",
+      "p3": "이 스캐너는 영어만 인식하고, 기본값으로 GOOD 형식으로 데이터를 내보냅니다."
+    },
+    "am": {
+      "title": "「天目」-- Amenoma",
+      "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 윈도우를 캡쳐하고 스캔하기 위해선 사용법을 따라해 주세요. 중국어와 영어버전이 제공됩니다(영어를 위해선 <1>_EN.exe</1>버전을 사용). <5>GOOD</5> 형식만 GO에서 사용 가능합니다.",
+      "p2": "이 스캐너의 결과물은 <1>seelie.me</1>에서도 사용가능합니다."
+    },
+    "as": {
+      "title": "AdeptiScanner",
+      "p1": "보관함의 모든 성유물을 스캔 할 수 있습니다. 수동 스캔 모드도 지원합니다.",
+      "p2": "이 스캐너는 업데이트 없이도 새 성유물을 인식할 수 있게 설정 가능합니다."
+    },
+    "goodeng": "이 스캐너는 영어만 인식하고, GOOD 형식으로 데이터를 내보냅니다.",
+    "tosWarn": "게임과 간접적으로 상호 작용하는 모든 도구와 마찬가지로, 이것들의 실제 동작을 사실상 감지할 수 없습니다. <1>따라서 이것들을 사용하는 것은 여전히 위험합니다.</1> 사용상의 주의를 요합니다.",
+    "tags": {
+      "pc": "PC",
+      "mobile": "모바일",
+      "ps": "PlayStation",
+      "gameMani": "게임 조작",
+      "materials": "재료",
+      "characters": "캐릭터"
+    },
+    "nb": {
+      "title": "Artiscan",
+      "p1": "이 웹 기반의 스캐너는 게임 화면, 게임 스크린샷, 게임 비디오를 캡춰 할 수 있습니다.",
+      "p2": "스크린샷이나 동영상 캡춰를 전체 화면으로 할 수 있습니다. 자를(Crop) 필요가 없습니다.",
+      "p3": "모바일/PlayStation은 스크릿샷이나 동영상을 통해서만 스캔할 수 있습니다."
+    }
+  },
+  "weapon_Akuoumaru": {
+    "party": "파티 내 원소 에너지 총합"
+  },
+  "artifact_ArchaicPetra": {
+    "condName": "결정 반응으로 만들어진 결정 획득시"
+  },
+  "artifact_TenacityOfTheMillelith": {
+    "condName": "원소 전투 스킬이 적 명중"
+  },
+  "artifact_ViridescentVenerer": {
+    "condName": "원소 확산"
+  },
+  "weapon_CinnabarSpindle": {
+    "name": "원소 전투 스킬 피해량 증가"
+  },
+  "weapon_ElegyForTheEnd": {
+    "condName": "천년의 대악장: 이별의 노래"
+  },
+  "weapon_MouunsMoon": {
+    "party": "파티 내 원소 에너지 총합"
+  },
+  "weapon_ThrillingTalesOfDragonSlayers": {
+    "condName": "캐릭터 교체"
+  },
+  "weapon_WavebreakersFin": {
+    "party": "파티 내 원소 에너지 총합"
+  },
+  "artifact_BlizzardStrayer": {
+    "condName": "공격받은 적",
+    "condCryo": "얼음 원소의 영향을 받음",
+    "condFrozen": "빙결상태"
+  },
+  "artifact_HuskOfOpulentDreams": {
+    "condName": "문답효과"
+  },
+  "artifact_OceanHuedClam": {
+    "condName": "바다에 물든 거품 최대 피해"
+  },
+  "artifact_ShimenawasReminiscence": {
+    "afterUseEnergy": "원소 에너지 15 사용 후"
+  },
+  "artifact_TinyMiracle": {
+    "condName": "받은 원소 피해"
+  },
+  "char_Albedo": {
+    "blossomCD": "찰나의 꽃 재사용 대기시간",
+    "blossomDmg_": "찰나의 꽃 피해 증가",
+    "isotomaOnField": "태양꽃이 필드에 존재시",
+    "enerPerBlossom": "찰나의 꽃이 피어날때 원소에너지 회복양",
+    "c2Stacks": "소모한 생멸 카운트"
+  },
+  "char_Amber": {
+    "secondArrow": "(두번째 화살)",
+    "critRateBonus": "<strong>화살비</strong> 치명타 확률 증가",
+    "aoeRangeBonus": "<strong>화살비</strong> 영향 범위 증가",
+    "manualDetonationDmg": "수동 복발 피해",
+    "c6CondName": "<strong>화살비</strong> 사용후"
+  },
+  "char_AratakiItto": {
+    "a1": {
+      "name": "아라타키 케사기리 연속 발동 시"
+    },
+    "a4": {
+      "dmgInc": "아라타키 케사기리 피해량 증가"
+    },
+    "c1": {
+      "initialGain": "난신의 괴력 효과 획득 스택",
+      "timedGain": "1초 후 0.5초마다 난신의 괴력 효과 획득 스택"
+    },
+    "c4": {
+      "name": "<strong>최흉의 귀왕·이토 강림!!</strong>으로 부여된 「분노의 귀왕」 상태가 종료"
+    }
+  },
+  "char_Barbara": {
+    "passive1": {
+      "cond": "<strong>공련, 시작♪</strong>의 노래의 고리안에 있을시"
+    },
+    "constellation2": {
+      "cond": "<strong>공련, 시작♪</strong> 지속중"
+    }
+  },
+  "char_Beidou": {
+    "skillOneHit": "1회 피격시",
+    "skillTwoHit": "2회 피격시",
+    "duringBurst": "작뢰가 지속되는 동안",
+    "tidecallerMaxDmg": "최대 피해 보너스를 가진 파도잡이 발동",
+    "a4charge": "강공격에 필요한 준비 시간 감소",
+    "c4dmg": "추가 번개 원소 피해",
+    "burstDmgRed_": "피해 감면"
+  },
+  "char_Bennett": {
+    "skill": {
+      "pressDMG": "짧은 터치 피해",
+      "lvl1_1DMG": "1단 차지 처음 피해",
+      "lvl1_2DMG": "1단 차지 두번째 피해",
+      "lvl2_1DMG": "2단 차지 처음 피해",
+      "lvl2_2DMG": "2단 차지 두번째 피해",
+      "explDMG": "폭발 피해",
+      "lvl1CD": "1단 차지 재사용 대기시간",
+      "lvl2CD": "2단 차지 재사용 대기시간"
+    },
+    "additionalATK": "추가 공격력 증가",
+    "additionalATKRatio_": "추가 공격력 증가 비율",
+    "c4DMG": "열정 과부화 피해",
+    "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 캐릭터에 불 원소 부여 효과"
+  },
+  "char_Chongyun": {
+    "infusion": "한손검, 양손검, 장병기 캐릭터에 얼음 원소 부여 효과",
+    "passive2": "영도 피해",
+    "asc4Cond": "영도에 피격된 적",
+    "constellation1": "얼음 칼날 피해",
+    "constellation6": "적의 체력 백분율이 중운보다 낮음",
+    "blades": "영도 소환 개수"
+  },
+  "char_Diluc": {
+    "skillB": {
+      "0": "2단 공격 피해(증가시)",
+      "1": "3단 공격 피해(증가시)"
+    }
+  },
+  "char_Diona": {
+    "skillDuration": "꽁꽁젤리마다 지속시간",
+    "holdShield": "홀드시 피해 흡수량",
+    "a1shielded": "<strong>꽁꽁젤리</strong> 보호막으로 보호받는 캐릭터",
+    "holdCryoShield": "홀드시 얼음원소 피해 흡수량"
+  },
+  "char_Fischl": {
+    "a1Name": "차지 완료된 화살로 오즈 명중시 번개 원소 범위 피해",
+    "a2Name": "번개 원소 범위 피해",
+    "c1Name": "협공 피해",
+    "c4AoeDmg": "발동 시 주변의 적에게 주는 피해",
+    "c6OzDmg": "필드 위에 있는 자신의 캐릭터와의 협공 피해"
+  },
+  "char_Ganyu": {
+    "a1": {
+      "condName": "서리꽃 화살 발사 후",
+      "critRateInc": "서리꽃 치명확률 증가"
+    },
+    "c1": {
+      "condName": "적이 2단 차지 강공격의 서리꽃 화살 혹은 피어난 서리꽃에 명중"
+    },
+    "c4": {
+      "lingerDuration": "영역 이탈 시 지속시간"
+    }
+  },
+  "char_HuTao": {
+    "paramita": {
+      "enter": "피안접무 상태 진입",
+      "end": "나비의 서가 부여하는 피안접무 상태 종료"
+    },
+    "constellation2": {
+      "applyBloodBlossom": "혈매향 효과 적용(2돌)"
+    },
+    "constellation4": {
+      "condName": "호두가 부여한 혈매향 효과 상태의 적 처치시"
+    },
+    "constellation6": {
+      "condName": "체력이 25% 이하로 떨어지거나 전투 불능이 될 정도의 피해를 입음"
+    }
+  },
+  "char_Jean": {
+    "c1CondName": "1초 이상 홀드",
+    "c1PullSpeed": "끌어 당기는 속도 증가"
+  },
+  "char_Kaeya": {
+    "c2burstDuration": "적 처치시 지속시간 2.5초 증가, 최대 15초",
+    "p1heal": "회복양",
+    "c1cond": "얼음 원소의 영향을 받은 적"
+  },
+  "char_Keqing": {
+    "c1DMG": "계뢰 피해",
+    "recast": "<strong>성신 회귀</strong> 재사용시",
+    "effectTriggers": "적용된 효과"
+  },
+  "char_Klee": {
+    "a1CondName": "폭렬 불꽃 획득",
+    "a1CondName2": "다음 강공격이 스태미나를 소모하지 않음",
+    "c2CondName": "<strong>통통폭탄</strong>의 부비트랩에 적이 명중",
+    "c6CondName": "쾅쾅 불꽃 발동"
+  },
+  "char_Lisa": {
+    "a4C": "적이 <strong>장미의 뇌광</strong>에 피격",
+    "c2C": "<strong>창뢰</strong> 홀드"
+  },
+  "char_Mona": {
+    "omen": "포영 상태의 적에게 피해를 줌",
+    "omenDuration": "성이 지속 시간",
+    "bubbleDuration": "포영 지속 시간",
+    "phantomDuration": "허영 지속 시간",
+    "hitOp": {
+      "affectedByOmen": "포영 상태의 적에게 피해를 줌"
+    },
+    "frozenDuration": "<cryo>빙결</cryo> 반응 지속 시간 증가",
+    "uponSprint": "흐르는 허와 실 상태 진입후"
+  },
+  "char_Ningguang": {
+    "aoeGems": "보석은 바위 원소 피해",
+    "starJadeStaminaCost": "50; 별 보유시: 0",
+    "skillReset": "6초마다 최대 1회, 선기 병풍 파열시 재사용 대기시간 초기화",
+    "a4toggle": "선기 병풍 통과",
+    "c4toggle": "선기 병풍 주변 캐릭터",
+    "c6bonus": "생성되는 별"
+  },
+  "char_Qiqi": {
+    "a1C": "<strong>선법·한병의 귀차</strong> 상태의 캐릭터가 원소 반응 발동"
+  },
+  "char_Razor": {
+    "electroSigil": "번개의 인장",
+    "electroSigilAbsorbed": "번개의 인장이 지워지면 원소 에너지 증가",
+    "opHitWithClawAndThunder": "<strong>날카로운 발톱과 창뢰</strong>(짧은 터치)에 적이 명중",
+    "electroSigilPerProc": "낙뢰당 번개의 인장 획득 수"
+  },
+  "char_Sayu": {
+    "burstHits": "너구리 오뚝이 활성 횟수",
+    "p2Heal": "주변의 캐릭터 치유",
+    "p2Aoe": "피해를 가하는 범위 증가",
+    "c1Text": "너구리 오뚝이는 체력 제한을 받지 않고 주변의 적을 공격하면서 캐릭터의 체력을 회복한다",
+    "c2KickPressDmg_": "유후류·풍은 돌진 홀드 피해량 보너스",
+    "c2KickDmg_": "유후류·풍은 돌진 피해량 보너스",
+    "c2Cond": "<strong>유후류·풍은 돌진</strong> 상태 지속 시간",
+    "c6DarumaDmgInc": "너구리 오뚝이 피해량 증가",
+    "c6DarumaHealInc": "너구리 오뚝이 치유량 증가"
+  },
+  "char_Shenhe": {
+    "quill": "얼음의 깃 활성",
+    "c4": "서리의 주문 스택",
+    "c4Bonus_": "서리의 주문 보너스",
+    "pressQuota": "짧은 터치 발동 횟수",
+    "holdQuota": "홀드 발동 횟수",
+    "pressDuration": "짧은 터치 지속 시간",
+    "holdDuration": "홀드 지속 시간"
+  },
+  "char_Thoma": {
+    "a2": "열화의 붕괴 피해량 증가",
+    "c2": "<strong>열화의 오오요로이</strong> 지속시간 증가",
+    "maxShield": "최대 피해 흡수량",
+    "maxPyroShield": "최대 불원소 피해 흡수량"
+  },
+  "char_Xiangling": {
+    "afterChili": "고추를 주운 후",
+    "explosionDMG": "폭발 피해",
+    "afterGuobaHit": "누룽지의 공격에 피격된 적",
+    "duringPyronado": "화륜 지속 상태",
+    "c6Exception": "이것은 <pyro>1단 공격 피해</pyro>, <pyro>2단 공격 피해</pyro>, <pyro>화륜피해</pyro>에는 미적용"
+  },
+  "char_Xiao": {
+    "burst": {
+      "autoAtkDmgBonus_": "일반/강/낙하 공격 피해 증가",
+      "lifeDrain_": "체력 유실",
+      "currentHPPerSec": "(초당 현재 체력 대비)",
+      "incJump": "점프력 대폭 상승",
+      "incAtkAoe": "공격 범위 증가",
+      "inBurst": "<strong>나자의 춤</strong> 상태인 동안",
+      "stack": "<strong>나자의 춤</strong> 상태인 시간"
+    },
+    "skillStack": "<strong>풍륜양립</strong> 사용 횟수:"
+  },
+  "char_Xingqiu": {
+    "skillCond": "우렴검 생성시",
+    "burstCond": "홍검세를 펼침",
+    "c2Cond": "우렴검에 피격된 적"
+  },
+  "char_Xinyan": {
+    "skill": {
+      "pyroShield": {
+        "1": "1급 보호막 불원소 피해 흡수량",
+        "2": "2급 보호막 불원소 피해 흡수량",
+        "3": "3급 보호막 불원소 피해 흡수량"
+      },
+      "shieldLevel": "보호막 급수",
+      "shieldLevels": {
+        "1": "1급: 변칙 리듬",
+        "2": "2급: 선창 리듬",
+        "3": "3급: 댄스 리듬"
+      }
+    },
+    "p1": {
+      "desc": "<strong>정열의 연주</strong>의 보호막에 필요한 적 명중 수량 1 감소"
+    },
+    "p2": {
+      "activeShield": "필드위의 캐릭터가 <strong>정열의 연주</strong> 보호막의 보호를 받는중"
+    },
+    "c2": {
+      "key_": "<strong>반항의 피치카토</strong>로 가하는 물리 피해 치명타 확률 보너스",
+      "shield": "발동시 3급: 댄스리듬 생성"
+    },
+    "c4": {
+      "swingHit": "<pyro>휘두르기 피해</pyro>가 대상에게 명중"
+    },
+    "c6": {
+      "duringCharge": "강공격시"
+    }
+  },
+  "char_YaeMiko": {
+    "c4": "<strong>살생앵</strong>의 낙뢰가 적을 명중"
+  },
+  "char_Yanfei": {
+    "seals": ["0스택", "1스택", "2스택", "3스택", "4스택"],
+    "perSeal": "(스택당)",
+    "maxSeals": "단화인 최대 수량",
+    "charged": {
+      "0": "단화인 0스택 피해",
+      "1": "단화인 1스택 피해",
+      "2": "단화인 2스택 피해",
+      "3": "단화인 3스택 피해",
+      "4": "단화인 4스택 피해"
+    },
+    "burst": {
+      "grantMax": "최대 수량의 단화인 부여"
+    },
+    "passive1": {
+      "sealsConsumed": "강공격으로 소모한 단화인 개수"
+    },
+    "passive2": {
+      "chargedCrit": "강공격이 치명타 발생",
+      "key": "법수의 눈 피해"
+    },
+    "c1": {
+      "sealChargedStam_": "강공격의 스태미나 소모 감소"
+    },
+    "c6": {
+      "maxSealInc": "단화인 최대 수량 증가"
+    }
+  },
+  "char_YunJin": {
+    "burst": "비운의 깃발 효과 적용시",
+    "a4Inc_": "파티내 원소 타입 가짓수에 따른 증가",
+    "c4": "운근이 결정 반응 발동"
+  },
+  "char_Zhongli": {
+    "skill": {
+      "stele": "암주 피해",
+      "resonance": "공명 피해",
+      "maxStele": "최대 암주 개수",
+      "nearShield": "<strong>옥홀 방패</strong> 근처에 있는 적"
+    },
+    "p1cond": "<strong>옥홀 방패</strong>가 피해를 받은 경우",
+    "c6heal": "최대 체력 회복량"
+  },
+  "weapon_AlleyHunter": {
+    "condName": "대기상태 시간"
+  },
+  "weapon_AmosBow": {
+    "condName": "화살 체공 시간"
+  },
+  "weapon_BlackTassel": {
+    "condName": "슬라임 공격시"
+  },
+  "weapon_CrescentPike": {
+    "condName": "원소 입자 또는 원소 구슬 획득 후",
+    "hitName": "일반 혹은 강공격시 추가 피해"
+  },
+  "weapon_Deathmatch": {
+    "condName": "주변의 적 수",
+    "opponents": {
+      "oneOrNone": "2기 미만",
+      "moreThanOne": "2기 이상"
+    }
+  },
+  "weapon_DragonspineSpear": {
+    "aoeDmg": "영원의 얼음결정 피해",
+    "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받는 적에게 주는 피해"
+  },
+  "weapon_FerrousShadow": {
+    "condName": "체력 조건 만족시",
+    "resistance": "강공격 발동 시 경직 저항"
+  },
+  "weapon_FreedomSworn": {
+    "sigilsConsumed": "투쟁의 부적 소모"
+  },
+  "weapon_Frostbearer": {
+    "aoeDmg": "영원의 얼음 결정 피해",
+    "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받은 적에게 주는 피해"
+  },
+  "weapon_Hamayumi": {
+    "condName": "장착 캐릭터의 원소 에너지가 100%"
+  },
+  "weapon_MemoryOfDust": {
+    "atkEffInc": "공격력 증가효과 증가"
+  },
+  "weapon_PolarStar": {
+    "condName": "백야의 극성"
+  },
+  "weapon_SerpentSpine": {
+    "takeMoreDmg": "받는 피해 증가"
+  },
+  "weapon_Slingshot": {
+    "condName": "0.3초 이내에 일반/강공격이 명중"
+  },
+  "weapon_SnowTombedStarsilver": {
+    "aoeDmg": "영원의 얼음 결정 피해",
+    "cryoAffectedDmg": "<cryo>얼음</cryo> 원소의 영향을 받은 적에게 가하는 피해"
+  },
+  "weapon_SummitShaper": {
+    "atkEffInc": "공격력 증가효과 증가"
+  },
+  "weapon_TheAlleyFlash": {
+    "condName": "피해를 받지 않음"
+  },
+  "weapon_TheUnforged": {
+    "atkEffInc": "공격력 증가효과 증가"
+  },
+  "weapon_TheWidsith": {
+    "aria": "영탄곡",
+    "interlude": "간주곡",
+    "recitative": "서창"
+  },
+  "weapon_ThunderingPulse": {
+    "condName": "비뢰의 문장"
+  },
+  "weapon_VortexVanquisher": {
+    "atkEffInc": "공격력 증가효과 증가"
+  },
+  "artifact_EchoesOfAnOffering": {
+    "mode": "발동 모드",
+    "avg": "평균",
+    "always": "항상"
+  },
+  "char_KamisatoAyato": {
+    "skill": {
+      "unableToAuto": "강공격 및 낙하공격 사용 불가",
+      "namisenStacks": "번쩍이는 파도 중첩",
+      "shun_dmgInc": "<hydro>순수검 피해량 증가</hydro>"
+    },
+    "passive1": {
+      "afterUse": "스킬 사용 후 획득하는 번쩍이는 파도 스택",
+      "afterExplode": "물의 잔영이 파괴된 후 획득하는 번쩍이는 파도 스택"
+    },
+    "c1": {
+      "shun_dmg_": "<hydro>순수검 피해 증가</hydro>"
+    },
+    "c2": {
+      "addlStacks": "번쩍이는 파도의 최대 스택 증가"
+    },
+    "c6": {
+      "dmg": "끝없는 기원 피해"
+    }
+  },
+  "char_KukiShinobu": {
+    "skill": {
+      "cost": "% 현재 체력"
+    },
+    "a4": {
+      "heal": "원소 전투 스킬 치유량 증가"
+    },
+    "c4": {
+      "dmg": "번개풀 피해"
+    }
+  },
+  "char_Yelan": {
+    "c2": {
+      "dmg": "올가미에 걸린 적 피해"
+    },
+    "c4": {
+      "condName": "생명의 실에 포시된 적의 수"
+    },
+    "c6": {
+      "condName": "전략 설계 상태시",
+      "dmg": "타파의 화살 피해"
+    }
+  },
+  "page_character": {
+    "addNew": "새 캐릭터 추가",
+    "tabs": {
+      "overview": "기본정보",
+      "talent": "특성 및 돌파",
+      "teambuffs": "파티 버프",
+      "optimize": "최적화",
+      "theorycraft": "이론 연구실"
+    },
+    "formulas": "식",
+    "calculations": "계산",
+    "selectCharacter": "캐릭터 선택",
+    "removeCharacter": "{{value}}을/를 정말 지우시겠습니까?",
+    "delete": "캐릭터 삭제",
+    "teammates": "파티원",
+    "showingNum_one": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
+    "showingNum_other": "<1>{{count}}</1> 캐릭터 표시중 (총 {{value}})",
+    "hitmode": {
+      "hit": "최소 피해(치명X)",
+      "avgHit": "평균 피해",
+      "critHit": "최대 피해(치명O)"
+    },
+    "tabEquip": {
+      "swapWeapon": "무기 교환",
+      "swapArt": "성유물 교환",
+      "compare": "현재 조합과 비교",
+      "unequipArts": "성유물 모두 해제"
+    },
+    "characterName": "캐릭터 이름",
+    "teammate": "파티원 {{count}}",
+    "noReaction": "원소 반응 없음",
+    "multiTarget": {
+      "title": "다중 최적화 목표 설정",
+      "addNewTarget": "새로운 타겟 추가",
+      "addNewMTarget": "새로운 다중 최적화 목표 추가"
+    },
+    "addStats": {
+      "title": "적 설정 및 스탯 조정"
+    },
+    "tabTheorycraft": {
+      "substatType": {
+        "min": "부옵션 최소값 사용",
+        "max": "부옵션 최대값 사용",
+        "mid": "부옵션 중간값 사용"
+      },
+      "maxTotalRolls": "\"정상적인\" 조합은 최대 45회 강화만 가질 수 있습니다.",
+      "maxRolls": "부옵션은 최대 30회 붙을 수 있습니다.",
+      "maxRollsMain": "하나 이상의 주옵션이 같은 항목을 가지기 때문에, 이 부옵션은 최대 {{value}}회만 가능합니다."
+    },
+    "tabTeambuff": {
+      "team_reso": "파티 원소 공명",
+      "resonance_tip": "원소 공명을 받기 위해선 파티가 4명으로 가득 차야 합니다."
+    }
+  },
+  "page_weapon": {
+    "showingNum_one": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+    "showingNum_other": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+    "edit": "무기 편집",
+    "weaponName": "무기 이름",
+    "removeWeapon": "{{value}}을/를 정말 삭제하시겠습니까?",
+    "addWeapon": "새 무기 추가"
+  },
+  "weapon_AquaSimulacra": {
+    "condName": "주변에 적 존재"
+  },
+  "weapon_FadingTwilight": {
+    "states": {
+      "evengleam": "석양",
+      "afterglow": "유하",
+      "dawnblaze": "조휘"
+    },
+    "condName": "현재 상태"
+  },
+  "weapon_HaranGeppakuFutsu": {
+    "consumed": "소모한 하스이 스택"
+  },
+  "char_Collei": {
+    "sproutDmg": "신엽 효과 피해",
+    "miniAnbarDmg": "미니 콜린엔바 피해"
+  },
+  "char_Dori": {
+    "c2MultiplierKey_": "프랜차이즈 경영 계수",
+    "c2DmgKey": "프랜차이즈 경영 피해",
+    "c4ConnectedBelowHp": "램프의 정령과 연결된 케릭터의 HP가 50% 이하",
+    "c4ConnectedBelowEner": "램프의 정령과 연결된 케릭터의 원소 에너지가 50% 이하",
+    "c6Heal": "일반 공격 명중시 치유량"
+  },
+  "char_ShikanoinHeizou": {
+    "declensionStacks": "변격 스택",
+    "takingField": "필드에 등장"
+  },
+  "char_Tighnari": {
+    "p1Cond": "<strong>화엽의 화살</strong> 발사 후",
+    "c4ReactCond": "<dendro>풀 기반</dendro> 원소 반응 발동",
+    "c6DmgKey": "꽃을 품은 화살 피해",
+    "c6WreathRed": "<strong>화엽의 화살</strong> 차지 시간 감소"
+  },
+  "elementalResonance": {
+    "SprawlingGreenery": {
+      "cond2ele": "연소, 활성, 개화 반응 발동",
+      "cond3ele": "촉진, 발산, 만개, 발화 반응 발동"
+    },
+    "EnduringRock": {
+      "hitCond": "보호막이 존재하는 동안 적에게 피해를 가함"
+    }
+  },
+  "page_character_optimize": {
+    "mainStat": {
+      "levelAssTooltip": {
+        "title": "주옵션 레벨 가정",
+        "desc": "주옵션 값을 지정된 레벨로 변경. 부옵션 값은 변하지 않습니다."
+      },
+      "assumptionLvl": {
+        "no": "주옵션 레벨 변화 없음",
+        "lvl": "주옵션을 최소 {{lvl}} 레벨로"
+      }
+    },
+    "tcGraph": {
+      "vs": "최적화 대상과 다음 값을 도식화 :",
+      "notSel": "선택되지 않음",
+      "downloadData": "데이터 다운로드",
+      "desc": "조합기의 데이터를 사용, 최적화 대상과 선택된 도식화 대상의 관계를 그래프로 표시해 줍니다. 그래프는 선택된 도식화 대상의 0.01 단위로 최적화 대상의 최대값을 보여줍니다. 이 옵션을 켜게 되면 조합 생성 시간이 늘어나게 될 것입니다",
+      "showStatThr": "옵션의 임계선 표시",
+      "generatedBuilds": "생성된 조합",
+      "statReqThr": "옵션의 임계선",
+      "currentBuild": "현재 조합",
+      "highlightedBuilds": "표시된 조합",
+      "buildAlreadyInList": "이 빌드는 이미 리스트에 존재"
+    },
+    "levelFilter": "성유물 레벨 필터",
+    "allowPartial": "성유물 일부 착용 허용(5개 미만)",
+    "constraintFilter": {
+      "title": "제한 조건",
+      "tooltip": "조합 생성시 만족해야 하는 조건을 지정할 수 있습니다. 예제: 원충 140% 이상"
+    },
+    "artSetConfig": {
+      "title": "성유물 세트 설정",
+      "setEffCond": "성유물 효과 적용 조건",
+      "enabled": "활성화",
+      "allowed": "허용",
+      "excluded": "제외됨",
+      "selected": "선택됨",
+      "2rainbow": "3-Rainbow",
+      "4rainbow": "5-Rainbow",
+      "allowAll2set": "모든 2셋 허용",
+      "excludeAll2set": "모든 2셋 제외",
+      "allowAll4set": "모든 4셋 허용",
+      "excludeAll4set": "모든 4셋 제외",
+      "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow 구성",
+      "modal": {
+        "setCond": {
+          "title": "조건부 성유물 세트 효과 적용",
+          "reset": "조건 초기화",
+          "text": "일부 성유물은 조건에 따라 효과가 적용됩니다. 이 창에서 조건들을 선택하게 되면 해당 효과는 최적화 과정중에 같이 계산됩니다."
+        },
+        "ArtSetFilter": {
+          "title": "성유물 세트 <1>포함됨<1></1></1> / <3>제외됨<1></1></3>",
+          "intro": "성유물 세트 조합을 허용하거나 제외시킬 수 있습니다. 다음 예제에서 A는 세트헤 해당하는 성유물이고 R은 해당되지 않는 성유물(rainbow)을 의미합니다.",
+          "2set": "<0><0>Excluding<1></1> 2-Set</0></0>은 2셋 구성을 제외합니다: <2><0>AA</0>RRR</2> 혹은 <4><0>AAA</0>RR</4>.",
+          "4set": "<0><0>Excluding<1></1> 4-Set</0></0>은 4셋 구성을 제외합니다.: <2><0>AAAA</0>R</2> 혹은 <4><0>AAAAA</0></4>.",
+          "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0>은 2셋 + 3-Rainbow 구성을 제외합니다: <2>AA<1>RRR</1></2> 혹은 <4>AAA<1>RR</1></4>.",
+          "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0>은 5-Rainbow 구성을 제외합니다: <2><0>RRRRR</0></2>."
+        }
+      }
+    },
+    "buildDropdownDesc": "최종 생성 조합 가짓수를 줄이면 조합 계산 시간을 줄일 수 있습니다.",
+    "threadDropdownDesc": "쓰레드 개수를 늘리면 조합 생성 시간은 줄어들지만 CPU 파워를 좀 더 사용할 것입니다.",
+    "noArtis": "웁스! GO에 성유물을 하나도 추가하지 않으셨습니다! <1>성유물</1> 페이지로 가셔서 성유물을 추가하셔야 합니다!",
+    "build_one": "<0>{{count}}</0> 조합",
+    "build_other": "<0>{{count}}</0> 조합",
+    "thread_one": "<0>{{count}}</0> 쓰레드",
+    "thread_other": "<0>{{count}}</0> 쓰레드",
+    "targetSelector": {
+      "selectOptTarget": "최적화 대상 선택",
+      "selectGraphTarget": "도식화 대상 선택",
+      "invalidTarget": "잘못된 대상",
+      "selectBuildTarget": "제한 조건 대상 선택"
+    },
+    "selectTargetFirst": "최적화 대상을 먼저 선택하세요",
+    "generateButton": {
+      "cancel": "취소",
+      "generateBuilds": "조합 생성"
+    },
+    "removeBuildButton": "조합 삭제",
+    "theorycraftButton": "이론 연구실",
+    "currentlyEquippedBuild": "현재 사용중",
+    "addBuildToList": "리스트에 빌드 추가",
+    "graphBuildLabel": "그래프 #<1>{{count}}</1>",
+    "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요"
+  },
+  "weapon_CalamityQueller": {
+    "inactiveKey": "대기 상태 보너스"
+  },
+  "weapon_ForestRegalia": {
+    "condName": "유식의 잎사귀를 습득"
+  },
+  "weapon_FruitOfFulfillment": {
+    "stackName": "영결 효과"
+  },
+  "weapon_Moonpiercer": {
+    "condName": "소생의 잎사귀를 습득"
+  },
+  "weapon_SapwoodBlade": {
+    "condName": "유식의 잎사귀를 습득"
+  },
+  "char_TravelerAnemo": {
+    "p1": "바람의 칼날 피해",
+    "c6": "<strong>격동의 바람</strong>에 피격된 적",
+    "c4": "시전하는 동안 피해 감소량",
+    "initialEleDmg": "획득된 원소의 초기 절단 피해",
+    "maxEleDmg": "획득된 원소의 최대 절단 피해"
+  },
+  "char_TravelerElectro": {
+    "skill": {
+      "amuletGenAmt": "풍요의 곡옥 생성 수",
+      "absorb": "현재 캐릭터가 풍요의 곡옥을 흡수"
+    },
+    "burst": {
+      "3rd": "3번째 위광의 낙뢰 피해",
+      "thunderCd": "위광의 낙뢰 재생성 시간"
+    },
+    "passive2": {
+      "enerRech_": "풍요의 곡옥이 제공하는 원소 충전 효율 증가"
+    },
+    "c2": {
+      "thunderHit": "<strong>위광의 낙뢰</strong>가 적응 명중"
+    }
+  },
+  "char_TravelerGeo": {
+    "passive2": {
+      "key": "광란의 붕암 피해"
+    },
+    "c2": {
+      "key": "불안정한 용암 피해"
+    }
+  },
+  "page_newTab": {
+    "title": "🛑새 Optimizer 탭이 감지되었습니다🛑",
+    "p1": "다른 탭에 Genshin Optimizer가 이미 열려 있는 것 같습니다💞. GO는 여러탭을 지원하지 않습니다📵, 이런경우 다음과 같은 현상이 발생할 수 있습니다:",
+    "symptom": {
+      "1": "탭들끼리 데이터가 동기화 되지 않습니다🙃.",
+      "2": "데이터베이스가 깨졌습니다💔.",
+      "3": "배가 뒤틀리고🤰 Genshin Optimizer 개발팀이 쓰러집니다😡.",
+      "4": "드물게, 죽습니다☠️."
+    },
+    "p2": "이것을 막기 위해 메세지를 보여드립니다📝. 다음 중에 선택하세요:",
+    "choice": {
+      "1": "이 탭을 닫고🔪, 새 탭을 사용하세요🆕.",
+      "2": "새 탭을 닫고↩️, 이 탭만 열려 있는지 반드시 확인 한 후🔂, 이 탭을 새로고침 하세요🔄."
+    },
+    "refresh": "새로고침"
+  },
+  "char_Candace": {
+    "hydroInfusion": "<hydro>한손검, 양손검, 장병기 캐릭터에 물 원소 부여 효과</hydro>"
+  },
+  "char_Cyno": {
+    "p1Dmg": "기근의 번개 피해",
+    "judication": "「판정」 효과를 발동시",
+    "burstNormalDmgInc": "길을 여는 사자 상태에서의 일반 공격 증가",
+    "boltDmgInc": "기근의 번개 피해 증가"
+  },
+  "char_Nilou": {
+    "skill": {
+      "dance1": "검의 춤 1단 피해",
+      "dance2": "검의 춤 2단 피해",
+      "whirl1": "선회의 춤 1단 피해",
+      "whirl2": "선회의 춤 2단 피해",
+      "moon": "물의 달 피해",
+      "wheel": "수륜 피해"
+    },
+    "passive1": {
+      "underChaliceEffect": "황금잔의 선물 효과 부여",
+      "notDendroHydroTeam": "힌트: 부가적인 조건과 효과를 보려면 파티를 풀과 물 캐릭터로만 구성하세요",
+      "condName": "황금잔의 선물 효과를 부여받은 캐릭터가 <dendro>풀 원소 공격</dendro>을 받음",
+      "bountifulCores": "개화 반응 발동시 풍요의 핵 생성"
+    },
+    "c1": {
+      "moon_dmg_": "물의 달 피해 증가"
+    },
+    "c4": {
+      "condName": "<strong>칠역의 춤</strong>의 사뿐한 회전 상태에서 세 번째 춤이 적을 명중"
+    }
+  },
+  "weapon_MakhairaAquamarine": {
+    "condName": "효과 발동"
+  },
+  "weapon_WanderingEvenstar": {
+    "condName": "효과 발동"
+  },
+  "weapon_XiphosMoonlight": {
+    "condName": "효과 발동"
+  },
+  "char_Nahida": {
+    "karmaDmg_": "삼업의 정화 패햐 증가",
+    "karmaCritRate_": "삼업의 정화 치명타 확률 증가",
+    "karmaIntervalDec": "삼업의 정화 발동 간격 감소",
+    "noBurstEffect": "힌트: 원소 폭발 효과가 전혀 적용되지 않고 있습니다. 1돌을 하거나 <pyro>불</pyro>, <electro>번개</electro>, 또는 <hydro>물</hydro> 원소 파티원을 추가하세요.",
+    "partyInBurst": "필드 내 파티",
+    "c1Key": "<strong>마야의 전당</strong> 효과 보너스에 적용되는 추가 <pyro>불</pyro>, <electro>번개</electro>, <hydro>물</hydro> 파티 캐릭터",
+    "c2": {
+      "bloomCondName": "대상에 <strong>스칸다 씨앗</strong>이 새겨짐",
+      "qasCondName": "<strong>스칸다 씨앗</strong> 상태의 적이 활성, 촉진, 발산 반응의 영향을 받음"
+    },
+    "c4CondName": "근처의 적에게 <strong>스칸다 씨앗</strong>이 새겨짐",
+    "c6KarmicDmg": "업의 사면 피해"
+  },
+  "artifact_FlowerOfParadiseLost": {
+    "condName": "개화, 만개, 발화 발동시"
+  },
+  "char_Faruzan": {
+    "giftCondName": "<strong>바람의 비밀 통로</strong>의 바람의 선물 효과 적용",
+    "a4CondName": "바람의 보호 효과 생성시",
+    "c2DurationInc": "빛나는 다방면체 지속시간 연장",
+    "c6Arrow": "피해를 가할 시, 대상을 향해 풍압의 붕괴 발동"
+  },
+  "char_Layla": {
+    "starDmgInc": "유성이 가하는 피해 증가",
+    "c1ShieldBonusKey_": "단잠을 위한 울타리 보너스",
+    "c4CondKey": "샛별 효과",
+    "starDmg_": "유성 피해량 증가",
+    "slugDmg_": "별빛탄 피해량 증가",
+    "starInterval_": "저녁별 생성 시간 간격"
+  },
+  "char_Wanderer": {
+    "windfavoredState": "<strong>바람의 자태</strong> 상태일때",
+    "p1": {
+      "pyroCondName": "<strong>우화·바람이 전하는 노래</strong>가 <pyro>불</pyro>을 접촉",
+      "cryoCondName": "<strong>우화·바람이 전하는 노래</strong>가 <cyro>얼음</cyro>을 접촉"
+    },
+    "p2Dmg": "바람 화살 피해",
+    "c1BonusKey": "바람 화살 추가 피해량",
+    "c2CondName": "최대 부유력과 현재 부유력의 차이값",
+    "c6Key": "축언·안개막을 흔드는 솔바람 피해량 계수"
+  },
+  "weapon_ToukabouShigure": {
+    "condName": "우산의 장난 상태의 적"
+  },
+  "char_Alhaitham": {
+    "withMirrors": "빛조각을 보유한 경우",
+    "debateStacks": "중첩 스택",
+    "mirrorsConsumed": "<strong>특수 영역·현상의 족쇄</strong> 발동 시 소모된 빛조각의 수",
+    "projectionAttack_dmg_": "투사 공격 피해량 증가",
+    "excessMirror": "빛조각의 수가 이미 상한에 도달한 후 추가 생성"
+  },
+  "char_Yaoyao": {
+    "a4Heal": "하얀 무 폭발 치유량",
+    "inExplosionAoE": "<strong>하얀 무</strong> 폭발의 영향 범위 안에 존재 후",
+    "inLegacy": "선인의 슬기 상태",
+    "megaDmg": "초특대·짱짱무 피해",
+    "megaHeal": "초특대·짱짱무 치유량"
+  }
 }

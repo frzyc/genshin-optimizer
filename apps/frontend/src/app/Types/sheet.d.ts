@@ -1,7 +1,7 @@
-import { NumNode, ReadNode } from "../Formula/type";
-import { UIData } from "../Formula/uiData";
-import { ArtifactSetKey, CharacterKey, WeaponKey } from "./consts";
-import { IFieldDisplay } from "./fieldDisplay";
+import type { NumNode, ReadNode } from '../Formula/type'
+import type { UIData } from '../Formula/uiData'
+import type { ArtifactSetKey, CharacterKey, WeaponKey } from './consts'
+import type { IFieldDisplay } from './fieldDisplay'
 
 interface IDocumentBase {
   canShow?: NumNode
@@ -41,20 +41,31 @@ interface IDocumentConditionalMultipleBase extends IDocumentBase {
     }
   }
 }
-export type DocumentConditionalBase = IDocumentConditionalExclusiveBase | IDocumentConditionalMultipleBase
-export interface IDocumentConditionalExclusive extends IDocumentConditionalExclusiveBase {
+export type DocumentConditionalBase =
+  | IDocumentConditionalExclusiveBase
+  | IDocumentConditionalMultipleBase
+export interface IDocumentConditionalExclusive
+  extends IDocumentConditionalExclusiveBase {
   header: IDocumentHeader
 }
-export interface IDocumentConditionalMultiple extends IDocumentConditionalMultipleBase {
+export interface IDocumentConditionalMultiple
+  extends IDocumentConditionalMultipleBase {
   header: IDocumentHeader
 }
-export type DocumentConditional = IDocumentConditionalExclusive | IDocumentConditionalMultiple
+export type DocumentConditional =
+  | IDocumentConditionalExclusive
+  | IDocumentConditionalMultiple
 type Keys = CharacterKey | ArtifactSetKey | WeaponKey
-export type IConditionalValues = Partial<Record<Keys, { [key: string]: string }>>
+export type IConditionalValues = Partial<
+  Record<Keys, { [key: string]: string }>
+>
 // export type ConditionalStateType = "exclusive" | "multiple"
 
 export interface IDocumentFields extends IDocumentText {
   fields: IFieldDisplay[]
 }
 
-export type DocumentSection = IDocumentText | DocumentConditional | IDocumentFields
+export type DocumentSection =
+  | IDocumentText
+  | DocumentConditional
+  | IDocumentFields

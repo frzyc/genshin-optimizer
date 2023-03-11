@@ -13,24 +13,27 @@ export class TagMapSubsetValues<V> {
   }
 
   allValues(): V[] {
-    const result: V[] = [], tagLen = this.tagLen
+    const result: V[] = [],
+      tagLen = this.tagLen
     function crawl(v: Internal<V>, offset: number): void {
       if (offset === tagLen) result.push(...v.values)
-      else v.children.forEach(v => v.forEach(v => crawl(v, offset + 1)))
+      else v.children.forEach((v) => v.forEach((v) => crawl(v, offset + 1)))
     }
     return crawl(this.internal, 0), result
   }
   subset(id: TagID): V[] {
-    const result: V[] = [], tagLen = this.tagLen
+    const result: V[] = [],
+      tagLen = this.tagLen
     function crawl(v: Internal<V>, offset: number): void {
       if (offset === tagLen) result.push(...v.values)
-      else v.subset(id[offset]!).forEach(v => crawl(v, offset + 1))
+      else v.subset(id[offset]!).forEach((v) => crawl(v, offset + 1))
     }
     return crawl(this.internal, 0), result
   }
 
   cache(keys: TagMapKeys): Cache<V> {
-    let tagLen = keys.tagLen, last = new InternalCache(undefined as any, [this.internal])
+    const tagLen = keys.tagLen
+    let last = new InternalCache(undefined as any, [this.internal])
     for (let i = 0; i < tagLen; i++) last = last.child(0)
     return new Cache<V>(new Int32Array(tagLen).fill(0), {}, keys, last)
   }
@@ -54,7 +57,9 @@ class Internal<V> {
   }
 
   subset(id: number): Internal<V>[] {
-    return [...this.children].map(([mask, mapping]) => mapping.get(id & mask)!).filter(x => x)
+    return [...this.children]
+      .map(([mask, mapping]) => mapping.get(id & mask)!)
+      .filter((x) => x)
   }
 }
 
@@ -65,7 +70,12 @@ class Cache<V> {
   tagLen: number
   internal: InternalCache<V>
 
-  constructor(id: TagID, tag: Tag, keys: TagMapKeys, internal: InternalCache<V>) {
+  constructor(
+    id: TagID,
+    tag: Tag,
+    keys: TagMapKeys,
+    internal: InternalCache<V>
+  ) {
     this.id = id
     this.tag = tag
     this.keys = keys
@@ -73,9 +83,12 @@ class Cache<V> {
     this.internal = internal
   }
 
-  subset(): V[] { return this.internal.entries.flatMap(x => x.values) }
+  subset(): V[] {
+    return this.internal.entries.flatMap((x) => x.values)
+  }
   with(tag: Tag): Cache<V> {
-    const { tagLen } = this.keys, { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
+    const { tagLen } = this.keys,
+      { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
 
     let current = this.internal
     for (let i = first; i < tagLen; i++) current = current.parent
@@ -94,10 +107,10 @@ class InternalCache<V> {
   }
 
   child(id: number): InternalCache<V> {
-    let result = this.children.get(id)
+    const result = this.children.get(id)
     if (result) return result
 
-    const entries = this.entries.flatMap(x => x.subset(id))
+    const entries = this.entries.flatMap((x) => x.subset(id))
     const cache = new InternalCache(this, entries)
     this.children.set(id, cache)
     return cache

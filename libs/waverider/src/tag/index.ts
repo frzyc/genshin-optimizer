@@ -18,6 +18,10 @@ export class TagMapSubset<V> {
     this.values = new TagMapSubsetValues(keys.tagLen, values)
   }
 
-  subset(tag: Tag): V[] { return this.values.subset(this.keys.get(tag)) }
-  cache() { return this.values.cache(this.keys) }
+  subset(tag: Tag): V[] {
+    return this.values.subset(this.keys.get(tag))
+  }
+  cache() {
+    return this.values.cache(this.keys)
+  }
 }

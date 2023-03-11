@@ -1,20 +1,24 @@
 import { input } from '../../../Formula'
-import { Data } from '../../../Formula/type'
+import type { Data } from '../../../Formula/type'
 import { greaterEq, lookup, naught, percent } from '../../../Formula/utils'
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import { IArtifactSheet } from '../IArtifactSheet'
+import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
-const key: ArtifactSetKey = "BlizzardStrayer"
+const key: ArtifactSetKey = 'BlizzardStrayer'
 const setHeader = setHeaderTemplate(key)
-const [, trm] = trans("artifact", key)
+const [, trm] = trans('artifact', key)
 
-const [condStatePath, condState] = cond(key, "state")
+const [condStatePath, condState] = cond(key, 'state')
 
 const set2 = greaterEq(input.artSet.BlizzardStrayer, 2, percent(0.15))
-const set4 = greaterEq(input.artSet.BlizzardStrayer, 4, lookup(condState, { "cryo": percent(0.20), "frozen": percent(0.40) }, naught))
+const set4 = greaterEq(
+  input.artSet.BlizzardStrayer,
+  4,
+  lookup(condState, { cryo: percent(0.2), frozen: percent(0.4) }, naught)
+)
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -22,32 +26,35 @@ export const data: Data = dataObjForArtifactSheet(key, {
   },
   total: {
     // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
-    critRate_: set4
-  }
+    critRate_: set4,
+  },
 })
 
 const sheet: IArtifactSheet = {
-  name: "Blizzard Strayer", rarity: [4, 5],
+  name: 'Blizzard Strayer',
+  rarity: [4, 5],
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
     4: {
-      document: [{
-        header: setHeader(4),
-        value: condState,
-        path: condStatePath,
-        name: trm("condName"),
-        states: {
-          cryo: {
-            name: trm("condCryo"),
-            fields: [{ node: set4 }]
+      document: [
+        {
+          header: setHeader(4),
+          value: condState,
+          path: condStatePath,
+          name: trm('condName'),
+          states: {
+            cryo: {
+              name: trm('condCryo'),
+              fields: [{ node: set4 }],
+            },
+            frozen: {
+              name: trm('condFrozen'),
+              fields: [{ node: set4 }],
+            },
           },
-          frozen: {
-            name: trm("condFrozen"),
-            fields: [{ node: set4 }]
-          }
-        }
-      }],
-    }
-  }
+        },
+      ],
+    },
+  },
 }
 export default new ArtifactSheet(key, sheet, data)
