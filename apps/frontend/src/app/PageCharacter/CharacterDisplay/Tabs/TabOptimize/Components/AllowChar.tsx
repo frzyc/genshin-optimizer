@@ -128,6 +128,13 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
       ? totalStr
       : 0 // unequippedOnly
     )
+  const stateBadgeColor = allowLocationsState === "all"
+    ? "success"
+    : (allowLocationsState === "customList"
+      ? "info"
+      : "secondary" // unequippedOnly
+    )
+
   return <Box display="flex" gap={1} onMouseUp={() => setShouldClearList(true)} onTouchEnd={() => setShouldClearList(true)}>
     {/* Begin modal */}
     <ModalWrapper open={show} onClose={onClose} containerProps={{ maxWidth: "xl" }} draggable={false}><CardDark>
@@ -201,7 +208,7 @@ export default function AllowChar({ disabled = false, allowListTotal }: { disabl
             <strong>{t("excludeChar.title")}</strong>
           </Typography>
           <Typography>
-            {t("excludeChar.usingState")} <SqBadge color="info">{t(`excludeChar.states.${allowLocationsState}`)}</SqBadge>
+            {t("excludeChar.usingState")} <SqBadge color={stateBadgeColor}>{t(`excludeChar.states.${allowLocationsState}`)}</SqBadge>
           </Typography>
           <Typography>
             {t("excludeChar.chars")} <SqBadge color="success">{charactersAllowed} <ShowChartIcon {...iconInlineProps} />{t("artSetConfig.allowed")}</SqBadge>
