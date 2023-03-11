@@ -226,6 +226,8 @@ export default function AllowChar({
     [excludedLocations, buildSettingDispatch]
   )
 
+  const onMouseUp = useCallback(() => setShouldClearList(true), [])
+
   const total = database.chars.keys.length - 1
   const useTot = total - excludedLocations.length
   const totalStr = useTot === total ? useTot : `${useTot}/${total}`
@@ -243,18 +245,14 @@ export default function AllowChar({
       : 'secondary' // unequippedOnly
 
   return (
-    <Box
-      display="flex"
-      gap={1}
-      onMouseUp={() => setShouldClearList(true)}
-      onTouchEnd={() => setShouldClearList(true)}
-    >
+    <Box display="flex" gap={1}>
       {/* Begin modal */}
       <ModalWrapper
         open={show}
         onClose={onClose}
         containerProps={{ maxWidth: 'xl' }}
         draggable={false}
+        onMouseUp={onMouseUp}
       >
         <CardDark>
           <CardContent>
@@ -406,7 +404,7 @@ function SelectItemGrid({
   const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
   const [charListMode, setCharListMode] = useState<CharListMode>()
   useEffect(() => {
-    if (shouldClearList) {
+    if (shouldClearList && charList.size > 0) {
       toggleList(charList)
       setCharList(new Set<LocationCharacterKey>())
       setCharListMode(undefined)

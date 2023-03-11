@@ -618,24 +618,6 @@ export default function TabBuild() {
               flexDirection="column"
               gap={1}
             >
-              {/* Level Filter */}
-              <CardLight>
-                <CardContent>
-                  {t`levelFilter`}{' '}
-                  <SqBadge color="info">{levelTotal.in}</SqBadge>
-                </CardContent>
-                <ArtifactLevelSlider
-                  levelLow={levelLow}
-                  levelHigh={levelHigh}
-                  setLow={(levelLow) => buildSettingDispatch({ levelLow })}
-                  setHigh={(levelHigh) => buildSettingDispatch({ levelHigh })}
-                  setBoth={(levelLow, levelHigh) =>
-                    buildSettingDispatch({ levelLow, levelHigh })
-                  }
-                  disabled={generatingBuilds}
-                />
-              </CardLight>
-
               <ArtifactSetConfig disabled={generatingBuilds} />
 
               {/* use excluded */}
