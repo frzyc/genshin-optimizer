@@ -6,7 +6,10 @@ import { NodeFieldDisplay } from '../../../../../Components/FieldDisplay'
 import { DataContext } from '../../../../../Context/DataContext'
 import { uiInput as input } from '../../../../../Formula'
 import type { NumNode } from '../../../../../Formula/type'
+import { useTranslation } from 'react-i18next'
+
 export default function BonusStatsCard() {
+  const { t } = useTranslation('page_character_optimize')
   const {
     character: { bonusStats },
   } = useContext(CharacterContext)
@@ -19,7 +22,9 @@ export default function BonusStatsCard() {
   return (
     <CardLight>
       <CardContent>
-        <Typography>Bonus Stats</Typography>
+        <Typography
+          sx={{ fontWeight: 'bold' }}
+        >{t`bonusStats.title`}</Typography>
       </CardContent>
       <Divider />
       <CardContent>

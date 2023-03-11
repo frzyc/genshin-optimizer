@@ -91,6 +91,9 @@
       }
     }
   },
+  "bonusStats": {
+    "title": "Bonus Stats"
+  },
   "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
   "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
   "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
