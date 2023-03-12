@@ -183,7 +183,7 @@ export default function AllowChar({
     [forceUpdate, database]
   )
 
-  const [shouldClearList, setShouldClearList] = useState(false)
+  const [mouseUpDetected, setMouseUpDetected] = useState(false)
 
   const allowAll = useCallback(
     () =>
@@ -226,7 +226,7 @@ export default function AllowChar({
     [excludedLocations, buildSettingDispatch]
   )
 
-  const onMouseUp = useCallback(() => setShouldClearList(true), [])
+  const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
 
   const total = database.chars.keys.length - 1
   const useTot = total - excludedLocations.length
@@ -338,8 +338,8 @@ export default function AllowChar({
             <SelectItemGrid
               locList={locList}
               excludedLocations={excludedLocations}
-              shouldClearList={shouldClearList}
-              setShouldClearList={setShouldClearList}
+              mouseUpDetected={mouseUpDetected}
+              setMouseUpDetected={setMouseUpDetected}
               toggleList={toggleList}
             />
           </CardContent>
@@ -391,26 +391,28 @@ export default function AllowChar({
 function SelectItemGrid({
   locList,
   excludedLocations,
-  shouldClearList,
-  setShouldClearList,
+  mouseUpDetected,
+  setMouseUpDetected,
   toggleList,
 }: {
   locList: LocationCharacterKey[]
   excludedLocations: LocationCharacterKey[]
-  shouldClearList: boolean
-  setShouldClearList: (v: boolean) => void
+  mouseUpDetected: boolean
+  setMouseUpDetected: (v: boolean) => void
   toggleList: (charList: Set<LocationCharacterKey>) => void
 }) {
   const [charList, setCharList] = useState(new Set<LocationCharacterKey>())
   const [charListMode, setCharListMode] = useState<CharListMode>()
   useEffect(() => {
-    if (shouldClearList && charList.size > 0) {
-      toggleList(charList)
-      setCharList(new Set<LocationCharacterKey>())
-      setCharListMode(undefined)
-      setShouldClearList(false)
+    if (mouseUpDetected) {
+      setMouseUpDetected(false)
+      if (charList.size > 0) {
+        toggleList(charList)
+        setCharList(new Set<LocationCharacterKey>())
+        setCharListMode(undefined)
+      }
     }
-  }, [charList, setCharList, setShouldClearList, shouldClearList, toggleList])
+  }, [charList, setCharList, setMouseUpDetected, mouseUpDetected, toggleList])
   return (
     <Grid
       container
