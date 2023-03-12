@@ -325,7 +325,7 @@ export default function AllowChar({
           <CardContent
             sx={{ opacity: allowLocationsState === 'customList' ? 1 : 0.6 }}
           >
-            <Grid container pb={1} gap={1}>
+            <Grid container pb={1} gap={1} flexWrap="nowrap">
               <Grid item xs={6}>
                 <Button color="success" fullWidth onClick={allowAll}>
                   {t`excludeChar.modal.allow_all`}
