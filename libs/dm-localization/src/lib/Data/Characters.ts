@@ -9,9 +9,9 @@ const char = {
   // Diona,
   Eula: {
     skill: {
-      brandDMG: [3765549071, "skillParam"],
-      grimheartDuration: [164817062, "skillParam"],
-    }
+      brandDMG: [3765549071, 'skillParam'],
+      grimheartDuration: [164817062, 'skillParam'],
+    },
   },
   // Fischl,
   // Ganyu,
@@ -20,16 +20,16 @@ const char = {
   KaedeharaKazuha: {
     burst: {
       name: 2015878197,
-      description: [1543060392, "paragraph"],
-      slashdmg: [439659606, "skillParam"],
+      description: [1543060392, 'paragraph'],
+      slashdmg: [439659606, 'skillParam'],
     },
   },
   // Kaeya,
   KamisatoAyaka: {
     burst: {
-      cutting: [373269062, "skillParam"],
-      bloom: [2543020158, "skillParam"],
-    }
+      cutting: [373269062, 'skillParam'],
+      bloom: [2543020158, 'skillParam'],
+    },
   },
   // KamisatoAyato
   // Keqing,
@@ -39,10 +39,10 @@ const char = {
   // Ningguang,
   Noelle: {
     skill: {
-      triggerChance: [3971383039, "skillParam"],
+      triggerChance: [3971383039, 'skillParam'],
     },
     burst: {
-      atkBonus: [4151293863, "skillParam"]
+      atkBonus: [4151293863, 'skillParam'],
     },
   },
   // Qiqi,
@@ -53,13 +53,13 @@ const char = {
   Traveler: {
     electro: {
       skill: {
-        enerRegen: [2165261751, "skillParam"],
-        enerRechInc: [3328414367, "skillParam"],
+        enerRegen: [2165261751, 'skillParam'],
+        enerRechInc: [3328414367, 'skillParam'],
       },
       burst: {
-        thunderDMG: [3560985918, "skillParam"]
-      }
-    }
+        thunderDMG: [3560985918, 'skillParam'],
+      },
+    },
   },
   // Venti,
   // Xiao,
@@ -68,7 +68,7 @@ const char = {
   // Xinyan,
   // Yanfei,
   Zhongli: {
-    constellationName: 2721221067
-  }
+    constellationName: 2721221067,
+  },
 } as const
 export default char

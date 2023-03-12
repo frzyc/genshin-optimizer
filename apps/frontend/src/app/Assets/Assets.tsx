@@ -8,9 +8,9 @@ import fragile from './Item_Fragile_Resin.png'
 import condensed from './Item_Condensed_Resin.png'
 
 //EXP BOOKS
-import advice from './Item_Wanderer\'s_Advice.png'
-import wit from './Item_Hero\'s_Wit.png'
-import experience from './Item_Adventurer\'s_Experience.png'
+import advice from "./Item_Wanderer's_Advice.png"
+import wit from "./Item_Hero's_Wit.png"
+import experience from "./Item_Adventurer's_Experience.png"
 
 import team1 from './icon_team_1.png'
 import team2 from './icon_team_2.png'
@@ -35,7 +35,7 @@ const Assets = {
   },
   resin: {
     fragile,
-    condensed
+    condensed,
   },
   exp_books: {
     advice,
@@ -49,9 +49,14 @@ const Assets = {
     team4,
   },
   svg: {
-    anvil: <SvgIcon>
-      <path fill="currentColor" d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5H9M2 6c.81 2.13 2.42 3.5 5 4V6H2Z" />
-    </SvgIcon>
-  }
-} as const;
-export default Assets;
+    anvil: (
+      <SvgIcon>
+        <path
+          fill="currentColor"
+          d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5H9M2 6c.81 2.13 2.42 3.5 5 4V6H2Z"
+        />
+      </SvgIcon>
+    ),
+  },
+} as const
+export default Assets

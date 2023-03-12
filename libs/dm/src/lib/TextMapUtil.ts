@@ -1,4 +1,4 @@
-import { readDMJSON } from "./util"
+import { readDMJSON } from './util'
 
 export const TextMapCHS = JSON.parse(readDMJSON('TextMap/TextMapCHS.json'))
 export const TextMapCHT = JSON.parse(readDMJSON('TextMap/TextMapCHT.json'))
@@ -31,10 +31,14 @@ export const languageMap = {
   ru: TextMapRU,
   th: TextMapTH,
   tr: TextMapTR,
-  vi: TextMapVI
+  vi: TextMapVI,
 } as const
 
 export function nameToKey(name: string) {
-  if (!name) name = ""
-  return name.replace(/[^a-zA-Z ]/g, '').split(" ").map(str => str.charAt(0).toUpperCase() + str.slice(1)).join('')
+  if (!name) name = ''
+  return name
+    .replace(/[^a-zA-Z ]/g, '')
+    .split(' ')
+    .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
+    .join('')
 }

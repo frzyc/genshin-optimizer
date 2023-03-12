@@ -4,7 +4,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-duplicate-imports": "off"
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],

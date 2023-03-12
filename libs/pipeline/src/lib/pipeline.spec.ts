@@ -1,7 +1,7 @@
-import { MainPropMap } from './pipeline';
+import { MainPropMap } from './pipeline'
 
 describe('pipeline', () => {
   it('should work', () => {
-    expect(MainPropMap).toBeTruthy();
-  });
-});
+    expect(MainPropMap).toBeTruthy()
+  })
+})

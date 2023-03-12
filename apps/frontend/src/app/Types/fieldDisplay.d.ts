@@ -1,19 +1,19 @@
-import { NumNode } from "../Formula/type";
-import { UIData } from "../Formula/uiData";
+import type { NumNode } from '../Formula/type'
+import type { UIData } from '../Formula/uiData'
 
 export interface IBasicFieldDisplay {
-  canShow?: (data: UIData) => boolean;
-  text: Displayable;
-  value?: number | Displayable | ((data: UIData) => number | Displayable);
-  fixed?: number;
-  variant?: string | ((data: UIData) => string);
+  canShow?: (data: UIData) => boolean
+  text: Displayable
+  value?: number | Displayable | ((data: UIData) => number | Displayable)
+  fixed?: number
+  variant?: string | ((data: UIData) => string)
   unit?: Displayable
-  textSuffix?: Displayable,
+  textSuffix?: Displayable
 }
 
 export interface INodeFieldDisplay {
-  canShow?: (data: UIData) => boolean;
-  node: NumNode;
+  canShow?: (data: UIData) => boolean
+  node: NumNode
 }
 
 export type IFieldDisplay = INodeFieldDisplay | IBasicFieldDisplay

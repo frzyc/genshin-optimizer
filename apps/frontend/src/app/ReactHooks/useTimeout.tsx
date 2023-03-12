@@ -1,4 +1,4 @@
-import { useCallback, useRef } from "react"
+import { useCallback, useRef } from 'react'
 
 export default function useTimeout() {
   const timeout = useRef(undefined as undefined | ReturnType<typeof setTimeout>)
@@ -7,6 +7,6 @@ export default function useTimeout() {
     timeout.current = setTimeout(() => {
       cb()
       timeout.current = undefined
-    }, time);
-  }, [],)
+    }, time)
+  }, [])
 }

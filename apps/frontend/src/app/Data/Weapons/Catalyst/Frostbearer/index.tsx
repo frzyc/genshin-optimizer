@@ -1,40 +1,73 @@
-import { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import { constant, equal, infoMut, prod, subscript } from '../../../../Formula/utils'
-import { WeaponKey } from '@genshin-optimizer/consts'
+import {
+  constant,
+  equal,
+  infoMut,
+  prod,
+  subscript,
+} from '../../../../Formula/utils'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
-import { IWeaponSheet } from '../../IWeaponSheet'
-import WeaponSheet, { headerTemplate } from "../../WeaponSheet"
+import type { IWeaponSheet } from '../../IWeaponSheet'
+import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import data_gen_json from './data_gen.json'
 
-const key: WeaponKey = "Frostbearer"
+const key: WeaponKey = 'Frostbearer'
 const data_gen = data_gen_json as WeaponData
 
 const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
 const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
-const dmgAoe = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgAoePerc, { unit: "%" }), input.total.atk), "elemental", {
-    hit: { ele: constant("physical") }
-  }))
-const dmgOnCryoOp = equal(input.weapon.key, key,
-  customDmgNode(prod(subscript(input.weapon.refineIndex, dmgCryoPerc, { unit: "%" }), input.total.atk), "elemental", {
-    hit: { ele: constant("physical") }
-  }))
+const dmgAoe = equal(
+  input.weapon.key,
+  key,
+  customDmgNode(
+    prod(
+      subscript(input.weapon.refineIndex, dmgAoePerc, { unit: '%' }),
+      input.total.atk
+    ),
+    'elemental',
+    {
+      hit: { ele: constant('physical') },
+    }
+  )
+)
+const dmgOnCryoOp = equal(
+  input.weapon.key,
+  key,
+  customDmgNode(
+    prod(
+      subscript(input.weapon.refineIndex, dmgCryoPerc, { unit: '%' }),
+      input.total.atk
+    ),
+    'elemental',
+    {
+      hit: { ele: constant('physical') },
+    }
+  )
+)
 
 const data = dataObjForWeaponSheet(key, data_gen, undefined, {
   dmgAoe,
-  dmgOnCryoOp
+  dmgOnCryoOp,
 })
 const sheet: IWeaponSheet = {
-  document: [{
-    header: headerTemplate(key, st("base")),
-    fields: [{
-      node: infoMut(dmgAoe, { name: WeaponSheet.trm(key)("aoeDmg") }),
-    }, {
-      node: infoMut(dmgOnCryoOp, { name: WeaponSheet.trm(key)("cryoAffectedDmg") }),
-    }]
-  }],
+  document: [
+    {
+      header: headerTemplate(key, st('base')),
+      fields: [
+        {
+          node: infoMut(dmgAoe, { name: WeaponSheet.trm(key)('aoeDmg') }),
+        },
+        {
+          node: infoMut(dmgOnCryoOp, {
+            name: WeaponSheet.trm(key)('cryoAffectedDmg'),
+          }),
+        },
+      ],
+    },
+  ],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)
