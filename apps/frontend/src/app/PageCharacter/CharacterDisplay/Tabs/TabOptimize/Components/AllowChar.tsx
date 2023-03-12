@@ -495,40 +495,35 @@ function SelectItem({
   }
   const content = useMemo(
     () => (
-      <>
-        <CharacterCardPico
-          characterKey={database.chars.LocationToCharacterKey(locKey)}
-          onMouseDown={onMouseDown}
-          onMouseEnter={onMouseEnter}
-          disableTooltip={disableTooltip}
-        />
-        <Box
-          fontSize="0.85em"
-          display="flex"
-          justifyContent="space-between"
-          p={0.3}
-        >
-          {allArtifactSlotKeys.map((s) => (
-            <SlotIcon
-              key={s}
-              slotKey={s}
-              iconProps={{
-                fontSize: 'inherit',
-                sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 },
-              }}
-            />
-          ))}
-        </Box>
-      </>
+      <Box
+        fontSize="0.85em"
+        display="flex"
+        justifyContent="space-between"
+        p={0.3}
+      >
+        {allArtifactSlotKeys.map((s) => (
+          <SlotIcon
+            key={s}
+            slotKey={s}
+            iconProps={{
+              fontSize: 'inherit',
+              sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 },
+            }}
+          />
+        ))}
+      </Box>
     ),
-    [
-      char?.equippedArtifacts,
-      database.chars,
-      disableTooltip,
-      locKey,
-      onMouseDown,
-      onMouseEnter,
-    ]
+    [char?.equippedArtifacts]
   )
-  return <CardLight sx={sx}>{content}</CardLight>
+  return (
+    <CardLight sx={sx}>
+      <CharacterCardPico
+        characterKey={database.chars.LocationToCharacterKey(locKey)}
+        onMouseDown={onMouseDown}
+        onMouseEnter={onMouseEnter}
+        disableTooltip={disableTooltip}
+      />
+      {content}
+    </CardLight>
+  )
 }
