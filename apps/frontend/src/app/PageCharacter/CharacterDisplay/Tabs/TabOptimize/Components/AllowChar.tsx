@@ -254,6 +254,7 @@ export default function AllowChar({
         onMouseUp={onMouseUp}
       >
         <CardDark>
+          {/* Header */}
           <CardContent>
             <Box display="flex" gap={1} alignItems="center">
               <Typography variant="h6">{t`excludeChar.title`}</Typography>
@@ -265,8 +266,10 @@ export default function AllowChar({
             </Box>
           </CardContent>
           <Divider />
+          {/* Content */}
           <CardContent sx={{ pb: 0 }}>
             <Stack gap={1}>
+              {/* State + Search box */}
               <Box display="flex" gap={1} flexWrap="wrap">
                 <SolidToggleButtonGroup
                   exclusive
@@ -299,6 +302,7 @@ export default function AllowChar({
                   }}
                 />
               </Box>
+              {/* Filter toggles */}
               <Box display="flex" gap={1} flexWrap="wrap">
                 <WeaponToggle
                   sx={{ height: '100%' }}
@@ -317,23 +321,28 @@ export default function AllowChar({
               </Box>
             </Stack>
           </CardContent>
+          {/* Allow/Disallow + grid */}
           <CardContent
             sx={{ opacity: allowLocationsState === 'customList' ? 1 : 0.6 }}
           >
-            <Box pb={1} display="flex" gap={1} flexWrap="wrap">
-              <Button color="success" sx={{ flexGrow: 1 }} onClick={allowAll}>
-                {t`excludeChar.modal.allow_all`}
-                <SqBadge sx={{ ml: 1 }}>
-                  <strong>{locListTotals.allowed}</strong>
-                </SqBadge>
-              </Button>
-              <Button color="error" sx={{ flexGrow: 1 }} onClick={disallowAll}>
-                {t`excludeChar.modal.disallow_All`}
-                <SqBadge sx={{ ml: 1 }}>
-                  <strong>{locListTotals.excluded}</strong>
-                </SqBadge>
-              </Button>
-            </Box>
+            <Grid container pb={1} gap={1}>
+              <Grid item xs={6}>
+                <Button color="success" fullWidth onClick={allowAll}>
+                  {t`excludeChar.modal.allow_all`}
+                  <SqBadge sx={{ ml: 1 }}>
+                    <strong>{locListTotals.allowed}</strong>
+                  </SqBadge>
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <Button fullWidth color="error" onClick={disallowAll}>
+                  {t`excludeChar.modal.disallow_All`}
+                  <SqBadge sx={{ ml: 1 }}>
+                    <strong>{locListTotals.excluded}</strong>
+                  </SqBadge>
+                </Button>
+              </Grid>
+            </Grid>
             <SelectItemGrid
               locList={locList}
               excludedLocations={excludedLocations}
