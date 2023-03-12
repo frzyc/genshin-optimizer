@@ -470,9 +470,17 @@ function SelectItem({
     setCharList(new Set([...charList]).add(locKey))
   }, [selected, setCharListMode, setCharList, charList, locKey])
   const disableTooltip = useMemo(() => charList.size !== 0, [charList.size])
+  const allowed =
+    // Character is already allowed, and not selected to be excluded
+    (selected &&
+      !(
+        charListMode === CharListMode.ToggleToExclude && charList.has(locKey)
+      )) ||
+    // Or character is selected to be allowed
+    (charListMode === CharListMode.ToggleToAllow && charList.has(locKey))
   const sx = {
-    opacity: charList.has(locKey) ? 0.3 : selected ? undefined : 0.6,
-    borderColor: selected ? 'rgb(100,200,100)' : 'rgb(200,100,100)',
+    opacity: allowed ? undefined : 0.6,
+    borderColor: allowed ? 'rgb(100,200,100)' : 'rgb(200,100,100)',
     borderWidth: '3px',
     borderStyle: 'solid',
     borderRadius: '8px',
