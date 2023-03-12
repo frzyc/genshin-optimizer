@@ -4,7 +4,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
-import { Suspense, useCallback } from 'react'
+import { Suspense, useCallback, useEffect, useState } from 'react'
 import Assets from '../../Assets/Assets'
 import { getCharSheet } from '../../Data/Characters'
 import { ascensionMaxLevel } from '../../Data/LevelData'
@@ -53,37 +53,54 @@ export default function CharacterCardPico({
     ),
     [onClickHandler, onMouseDown, onMouseEnter]
   )
+  const [open, setOpen] = useState(false)
+  const onTooltipOpen = useCallback(
+    () => !disableTooltip && setOpen(true),
+    [disableTooltip]
+  )
+  const onTooltipClose = useCallback(() => setOpen(false), [])
+  useEffect(() => {
+    disableTooltip && setOpen(false)
+  }, [disableTooltip])
 
   const simpleTooltipWrapperFunc = useCallback(
     (children: ReactNode) => (
       <BootstrapTooltip
         placement="top"
+        open={open && !disableTooltip}
+        onClose={onTooltipClose}
+        onOpen={onTooltipOpen}
         title={
-          !disableTooltip && (
-            <Suspense fallback={<Skeleton width={300} height={400} />}>
-              <Typography>
-                {characterSheet.elementKey && (
-                  <ElementIcon
-                    ele={characterSheet.elementKey}
-                    iconProps={{
-                      fontSize: 'inherit',
-                      sx: {
-                        verticalAlign: '-10%',
-                        color: `${characterSheet.elementKey}.main`,
-                      },
-                    }}
-                  />
-                )}{' '}
-                {characterSheet.name}
-              </Typography>
-            </Suspense>
-          )
+          <Suspense fallback={<Skeleton width={300} height={400} />}>
+            <Typography>
+              {characterSheet.elementKey && (
+                <ElementIcon
+                  ele={characterSheet.elementKey}
+                  iconProps={{
+                    fontSize: 'inherit',
+                    sx: {
+                      verticalAlign: '-10%',
+                      color: `${characterSheet.elementKey}.main`,
+                    },
+                  }}
+                />
+              )}{' '}
+              {characterSheet.name}
+            </Typography>
+          </Suspense>
         }
       >
         {children as JSX.Element}
       </BootstrapTooltip>
     ),
-    [characterSheet, disableTooltip]
+    [
+      characterSheet.elementKey,
+      characterSheet.name,
+      disableTooltip,
+      onTooltipClose,
+      onTooltipOpen,
+      open,
+    ]
   )
   const charCardTooltipWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -91,20 +108,19 @@ export default function CharacterCardPico({
         enterNextDelay={500}
         enterTouchDelay={500}
         placement="top"
+        open={open && !disableTooltip}
+        onClose={onTooltipClose}
+        onOpen={onTooltipOpen}
         title={
-          !disableTooltip ? (
-            <Box sx={{ width: 300, m: -1 }}>
-              <CharacterCard hideStats characterKey={characterKey} />
-            </Box>
-          ) : (
-            ''
-          )
+          <Box sx={{ width: 300, m: -1 }}>
+            <CharacterCard hideStats characterKey={characterKey} />
+          </Box>
         }
       >
         {children as JSX.Element}
       </BootstrapTooltip>
     ),
-    [characterKey, disableTooltip]
+    [characterKey, disableTooltip, onTooltipClose, onTooltipOpen, open]
   )
 
   return (
