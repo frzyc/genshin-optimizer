@@ -62,8 +62,22 @@ export class DataManager<
   getStorage(key: CacheKey): StorageValue {
     return this.database.storage.get(this.toStorageKey(key))
   }
-  set(key: CacheKey, value: Partial<StorageValue>, notify = true): boolean {
+  set(
+    key: CacheKey,
+    value:
+      | Partial<StorageValue>
+      | ((v: StorageValue) => Partial<StorageValue> | void),
+    notify = true
+  ): boolean {
     const old = this.getStorage(key)
+    if (typeof value === 'function') {
+      if (!old) {
+        this.trigger(key, 'invalid', value)
+        return false
+      }
+      const temp = value(old)
+      value = temp ? temp : old
+    }
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
       this.trigger(key, 'invalid', value)
