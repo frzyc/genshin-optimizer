@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react'
 
 /* Hook to get a callback function for throwing
 synchronous error from asynchronous code
@@ -13,6 +13,8 @@ async function foo() { throwError(new Error()) }
 export default function useGlobalError(): (e: Error) => void {
   const [, setError] = useState()
   return useCallback((e: Error) => {
-    setError(() => { throw e })
+    setError(() => {
+      throw e
+    })
   }, [])
 }

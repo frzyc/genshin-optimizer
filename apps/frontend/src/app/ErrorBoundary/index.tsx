@@ -3,11 +3,19 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ErrorIcon from '@mui/icons-material/Error'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import {
-  Box, Button, CardActions, CardContent, CssBaseline, Divider, Stack, StyledEngineProvider, Typography
+  Box,
+  Button,
+  CardActions,
+  CardContent,
+  CssBaseline,
+  Divider,
+  Stack,
+  StyledEngineProvider,
+  Typography,
 } from '@mui/material'
-import type { ErrorInfo, ReactNode} from 'react';
+import type { ErrorInfo, ReactNode } from 'react'
 import { Component, Suspense } from 'react'
-import type { WithTranslation } from 'react-i18next';
+import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
 import ReadOnlyTextArea from '../Components/ReadOnlyTextArea'
