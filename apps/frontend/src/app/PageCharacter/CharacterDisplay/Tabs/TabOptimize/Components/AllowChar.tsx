@@ -13,7 +13,6 @@ import ShowChartIcon from '@mui/icons-material/ShowChart'
 import {
   Box,
   Button,
-  CardActionArea,
   CardContent,
   Divider,
   Grid,
@@ -490,6 +489,8 @@ function SelectItem({
       <>
         <CharacterCardPico
           characterKey={database.chars.LocationToCharacterKey(locKey)}
+          onMouseDown={onMouseDown}
+          onMouseEnter={onMouseEnter}
           disableTooltip={disableTooltip}
         />
         <Box
@@ -511,11 +512,14 @@ function SelectItem({
         </Box>
       </>
     ),
-    [char?.equippedArtifacts, database.chars, disableTooltip, locKey]
+    [
+      char?.equippedArtifacts,
+      database.chars,
+      disableTooltip,
+      locKey,
+      onMouseDown,
+      onMouseEnter,
+    ]
   )
-  return (
-    <CardActionArea onMouseEnter={onMouseEnter} onMouseDown={onMouseDown}>
-      <CardLight sx={sx}>{content}</CardLight>
-    </CardActionArea>
-  )
+  return <CardLight sx={sx}>{content}</CardLight>
 }

@@ -3,7 +3,7 @@ import { characterAsset } from '@genshin-optimizer/g-assets'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
-import type { ReactNode } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
 import Assets from '../../Assets/Assets'
 import { getCharSheet } from '../../Data/Characters'
@@ -21,11 +21,15 @@ import CharacterCard from './CharacterCard'
 export default function CharacterCardPico({
   characterKey,
   onClick,
+  onMouseDown,
+  onMouseEnter,
   simpleTooltip = false,
   disableTooltip = false,
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
+  onMouseDown?: (e: MouseEvent) => void
+  onMouseEnter?: (e: MouseEvent) => void
   simpleTooltip?: boolean
   disableTooltip?: boolean
 }) {
@@ -39,9 +43,15 @@ export default function CharacterCardPico({
   )
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={onClickHandler}>{children}</CardActionArea>
+      <CardActionArea
+        onClick={onClickHandler}
+        onMouseDown={onMouseDown}
+        onMouseEnter={onMouseEnter}
+      >
+        {children}
+      </CardActionArea>
     ),
-    [onClickHandler]
+    [onClickHandler, onMouseDown, onMouseEnter]
   )
 
   const simpleTooltipWrapperFunc = useCallback(
@@ -82,10 +92,12 @@ export default function CharacterCardPico({
         enterTouchDelay={500}
         placement="top"
         title={
-          !disableTooltip && (
+          !disableTooltip ? (
             <Box sx={{ width: 300, m: -1 }}>
               <CharacterCard hideStats characterKey={characterKey} />
             </Box>
+          ) : (
+            ''
           )
         }
       >
@@ -109,7 +121,10 @@ export default function CharacterCardPico({
           flexDirection: 'column',
         }}
       >
-        <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <ConditionalWrapper
+          condition={!!onClick || !!onMouseDown || !!onMouseEnter}
+          wrapper={actionWrapperFunc}
+        >
           <Box display="flex" className={`grad-${characterSheet.rarity}star`}>
             <Box
               component="img"
