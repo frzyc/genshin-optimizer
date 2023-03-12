@@ -144,25 +144,27 @@ export default function AllowChar({
       locListTotals: ['allowed', 'excluded'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
-      Object.entries(database.chars.data).forEach(([ck]) => {
-        const sheet = getCharSheet(ck, database.gender)
-        const eleKey = sheet.elementKey
-        ctMap.elementTotals[eleKey].total++
-        if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
+      Object.entries(database.chars.data)
+        .filter(([ck]) => ck !== characterKey)
+        .forEach(([ck]) => {
+          const sheet = getCharSheet(ck, database.gender)
+          const eleKey = sheet.elementKey
+          ctMap.elementTotals[eleKey].total++
+          if (charKeyMap[ck]) ctMap.elementTotals[eleKey].current++
 
-        const weaponTypeKey = sheet.weaponTypeKey
-        ctMap.weaponTypeTotals[weaponTypeKey].total++
-        if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
+          const weaponTypeKey = sheet.weaponTypeKey
+          ctMap.weaponTypeTotals[weaponTypeKey].total++
+          if (charKeyMap[ck]) ctMap.weaponTypeTotals[weaponTypeKey].current++
 
-        const locKey = charKeyToLocCharKey(ck)
-        if (ck !== characterKey && locList.includes(locKey)) {
-          ctMap.locListTotals.allowed.total++
-          ctMap.locListTotals.excluded.total++
-          if (!excludedLocations.includes(locKey))
-            ctMap.locListTotals.allowed.current++
-          else ctMap.locListTotals.excluded.current++
-        }
-      })
+          const locKey = charKeyToLocCharKey(ck)
+          if (locList.includes(locKey)) {
+            ctMap.locListTotals.allowed.total++
+            ctMap.locListTotals.excluded.total++
+            if (!excludedLocations.includes(locKey))
+              ctMap.locListTotals.allowed.current++
+            else ctMap.locListTotals.excluded.current++
+          }
+        })
     )
   }, [
     charKeyMap,
