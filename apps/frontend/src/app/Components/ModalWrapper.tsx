@@ -1,36 +1,52 @@
-import { CardContent, Container, ContainerProps, Modal, ModalProps, Skeleton, styled } from "@mui/material"
-import { Suspense } from "react"
-import CardLight from "./Card/CardLight"
+import type { ContainerProps, ModalProps } from '@mui/material'
+import { CardContent, Container, Modal, Skeleton, styled } from '@mui/material'
+import { Suspense } from 'react'
+import CardLight from './Card/CardLight'
 
 const ScrollModal = styled(Modal)(({ theme }) => ({
-  overflow: "scroll",
+  overflow: 'scroll',
   paddingTop: theme.spacing(2),
   paddingBottom: theme.spacing(2),
-
 }))
-const ModalContainer = styled(Container)(({ theme }) => ({
+const ModalContainer = styled(Container)(() => ({
   padding: 0,
-  minHeight: "100%",
-  display: "flex", flexDirection: "column", justifyContent: "center",
-  ":focus": {
-    outline: "None"
+  minHeight: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  ':focus': {
+    outline: 'None',
   },
   // Allow clicking on the Container to exit modal
-  pointerEvents: "none",
-  "& > *": {
-    pointerEvents: "auto"
-  }
+  pointerEvents: 'none',
+  '& > *': {
+    pointerEvents: 'auto',
+  },
 }))
 
 type ModalWrapperProps = ModalProps & {
   containerProps?: ContainerProps
 }
-export default function ModalWrapper({ children, containerProps, ...props }: ModalWrapperProps) {
-  return <ScrollModal {...props}>
-    <ModalContainer {...containerProps}>
-      <Suspense fallback={<CardLight><CardContent><Skeleton variant="rectangular" width="100%" height={300} /></CardContent></CardLight>}>
-        {children}
-      </Suspense>
-    </ModalContainer>
-  </ScrollModal>
+export default function ModalWrapper({
+  children,
+  containerProps,
+  ...props
+}: ModalWrapperProps) {
+  return (
+    <ScrollModal {...props}>
+      <ModalContainer {...containerProps}>
+        <Suspense
+          fallback={
+            <CardLight>
+              <CardContent>
+                <Skeleton variant="rectangular" width="100%" height={300} />
+              </CardContent>
+            </CardLight>
+          }
+        >
+          {children}
+        </Suspense>
+      </ModalContainer>
+    </ScrollModal>
+  )
 }

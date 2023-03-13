@@ -1,9 +1,12 @@
 export class BorrowManager<T> {
-  data: Dict<string, { value: T, refCount: number }> = {}
+  data: Dict<string, { value: T; refCount: number }> = {}
   init: (key: string) => T
   deinit: (key: string, value: T) => void
 
-  constructor(init: (key: string) => T, deinit: (key: string, value: T) => void) {
+  constructor(
+    init: (key: string) => T,
+    deinit: (key: string, value: T) => void
+  ) {
     this.init = init
     this.deinit = deinit
   }

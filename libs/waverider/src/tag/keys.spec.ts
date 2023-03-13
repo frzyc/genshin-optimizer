@@ -4,35 +4,48 @@ import { TagMapKeys } from './keys'
 describe('TagMapKeys', () => {
   describe('compileTagMapKeys', () => {
     it('can encode 32 bits in one word', () => {
-      const keys = compileTagMapKeys([...Array(8)].map((_, i) =>
-        ({ category: `cat${i}`, values: [...Array(15)].map((_, i) => `val${i}`) })
-      ))
+      const keys = compileTagMapKeys(
+        [...Array(8)].map((_, i) => ({
+          category: `cat${i}`,
+          values: [...Array(15)].map((_, i) => `val${i}`),
+        }))
+      )
       // Each of the eights categories requires 4 bit, requiring exactly 32-bit in total
       expect(keys.tagLen).toEqual(1)
     })
     describe('can encode multiple words', () => {
       test('automatically', () => {
-        const keys = compileTagMapKeys([...[...Array(7)].map((_, i) =>
-          ({ category: `cat${i}`, values: [...Array(8)].map((_, i) => `val${i}`) })
-        ), ({ category: `cat8`, values: [...Array(16)].map((_, i) => `val${i}`) })
+        const keys = compileTagMapKeys([
+          ...[...Array(7)].map((_, i) => ({
+            category: `cat${i}`,
+            values: [...Array(8)].map((_, i) => `val${i}`),
+          })),
+          { category: `cat8`, values: [...Array(16)].map((_, i) => `val${i}`) },
         ])
         // Each of the first seven categories requires 4 bit, and the last category requires 5 bits
         expect(keys.tagLen).toEqual(2)
       })
       test('explicitly', () => {
         const keys = compileTagMapKeys([
-          ({ category: 'cat1', values: [...Array(8)].map((_, i) => `val${i}`) }),
+          { category: 'cat1', values: [...Array(8)].map((_, i) => `val${i}`) },
           undefined, // Jump to the next byte
-          ({ category: 'cat2', values: [...Array(16)].map((_, i) => `val${i}`) }),
+          { category: 'cat2', values: [...Array(16)].map((_, i) => `val${i}`) },
         ])
         expect(keys.tagLen).toEqual(2)
       })
     })
     it('can support full tag list', () => {
       const compiled = compileTagMapKeys([
-        { category: 'cat1', values: [...new Array(15)].map((_, i) => `val${i}`) },
-        { category: 'cat2', values: [...new Array(15)].map((_, i) => `val${i}`) },
-      ]), keys = new TagMapKeys(compiled)
+          {
+            category: 'cat1',
+            values: [...new Array(15)].map((_, i) => `val${i}`),
+          },
+          {
+            category: 'cat2',
+            values: [...new Array(15)].map((_, i) => `val${i}`),
+          },
+        ]),
+        keys = new TagMapKeys(compiled)
 
       // Each category occupies exactly four bits and supports up to fifteen entries, meaning that all
       // entries use every possible bit patterns. If the allocation of both categories overlap, we would
@@ -54,9 +67,10 @@ describe('TagMapKeys', () => {
 
   describe('combine', () => {
     const compiled = compileTagMapKeys([
-      { category: 'cat1', values: ['val1', 'val2', 'val3'] },
-      { category: 'cat2', values: ['val1', 'val2', 'val3'] },
-    ]), keys = new TagMapKeys(compiled)
+        { category: 'cat1', values: ['val1', 'val2', 'val3'] },
+        { category: 'cat2', values: ['val1', 'val2', 'val3'] },
+      ]),
+      keys = new TagMapKeys(compiled)
     it('can combine simple tags', () => {
       const id1 = keys.get({ cat1: 'val1', cat2: 'val2' })
       const id2 = keys.combine(id1, { cat1: 'val3' }).id

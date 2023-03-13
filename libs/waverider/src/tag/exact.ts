@@ -11,7 +11,8 @@ export class TagMapExactValues<V> {
   }
 
   refExact(id: TagID): V[] {
-    let current = this.internal, tagLen = this.tagLen
+    let current = this.internal
+    const tagLen = this.tagLen
     for (let i = 0; i < tagLen; i++) current = current.exact(id[i]!)
     return current.values
   }

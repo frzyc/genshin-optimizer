@@ -1,4 +1,4 @@
-import { strPadLeft } from "./Util"
+import { strPadLeft } from './Util'
 
 export const SECOND_MS = 1000
 export const MINUTE_MS = 60 * SECOND_MS
@@ -9,20 +9,32 @@ export function msToUnits(ms: number) {
   const milliseconds = ms % 1000
   const seconds = Math.floor((ms / 1000) % 60)
   const minutes = Math.floor((ms / (1000 * 60)) % 60)
-  const hours = Math.floor((ms / (1000 * 60 * 60)))
+  const hours = Math.floor(ms / (1000 * 60 * 60))
   return { hours, minutes, seconds, milliseconds }
 }
 export function timeString(ms: number) {
   //shows only in terms of hours/minutes. there are better calculations for days using Date functions.
   const { hours, minutes, seconds } = msToUnits(ms)
-  let timeText = "Minutes"
-  if (hours) timeText = "Hours"
-  return `${hours ? `${hours}:` : ""}${strPadLeft(minutes, '0', 2)}:${strPadLeft(seconds, '0', 2)} ${timeText}`;
+  let timeText = 'Minutes'
+  if (hours) timeText = 'Hours'
+  return `${hours ? `${hours}:` : ''}${strPadLeft(
+    minutes,
+    '0',
+    2
+  )}:${strPadLeft(seconds, '0', 2)} ${timeText}`
 }
 export function timeStringMs(ms: number) {
   //shows only in terms of hours/minutes. there are better calculations for days using Date functions.
   const { hours, minutes, seconds, milliseconds } = msToUnits(ms)
-  let timeText = "Minutes"
-  if (hours) timeText = "Hours"
-  return `${hours ? `${hours}:` : ""}${strPadLeft(minutes, '0', 2)}:${strPadLeft(seconds, '0', 2)}.${strPadLeft(milliseconds, '0', 3)} ${timeText}`;
+  let timeText = 'Minutes'
+  if (hours) timeText = 'Hours'
+  return `${hours ? `${hours}:` : ''}${strPadLeft(
+    minutes,
+    '0',
+    2
+  )}:${strPadLeft(seconds, '0', 2)}.${strPadLeft(
+    milliseconds,
+    '0',
+    3
+  )} ${timeText}`
 }

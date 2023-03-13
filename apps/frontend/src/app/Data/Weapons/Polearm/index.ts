@@ -1,5 +1,5 @@
-import { WeaponPoleArmKey } from '@genshin-optimizer/consts'
-import WeaponSheet from '../WeaponSheet'
+import type { WeaponPoleArmKey } from '@genshin-optimizer/consts'
+import type WeaponSheet from '../WeaponSheet'
 import BeginnersProtector from './BeginnersProtector'
 import BlackcliffPole from './BlackcliffPole'
 import BlackTassel from './BlackTassel'

@@ -1,26 +1,42 @@
 export const tagColor = {
-  'FFD780FF': 'strong',
+  FFD780FF: 'strong',
   '80FFD7FF': 'anemo',
-  'FFE699FF': 'geo',
+  FFE699FF: 'geo',
   '99FFFFFF': 'cryo',
   '80C0FFFF': 'hydro',
-  'FF9999FF': 'pyro',
-  'FFACFFFF': 'electro',
+  FF9999FF: 'pyro',
+  FFACFFFF: 'electro',
   '99FF88FF': 'dendro',
 } as const
-export type ColorTag = typeof tagColor[keyof typeof tagColor]
+export type ColorTag = (typeof tagColor)[keyof typeof tagColor]
 
-export const langKeys = ['chs', 'cht', 'de', 'en', 'es', 'fr', 'id', 'it', 'ja', 'ko', 'pt', 'ru', 'th', 'tr', 'vi'] as const
-export type Language = typeof langKeys[number]
+export const langKeys = [
+  'chs',
+  'cht',
+  'de',
+  'en',
+  'es',
+  'fr',
+  'id',
+  'it',
+  'ja',
+  'ko',
+  'pt',
+  'ru',
+  'th',
+  'tr',
+  'vi',
+] as const
+export type Language = (typeof langKeys)[number]
 
 export const characterIdMap = {
   //10000000: Kate
   //10000001: Kate
   10000002: 'KamisatoAyaka',
   10000003: 'Jean',
-  10000005: 'TravelerM',// traveler_male
+  10000005: 'TravelerM', // traveler_male
   10000006: 'Lisa',
-  10000007: 'TravelerF',// Traveler_female
+  10000007: 'TravelerF', // Traveler_female
   10000014: 'Barbara',
   10000015: 'Kaeya',
   10000016: 'Diluc',
@@ -80,15 +96,16 @@ export const characterIdMap = {
   10000076: 'Faruzan',
   10000077: 'Yaoyao',
   10000078: 'Alhaitham',
-  // 11000008: 'TEMPLATE',
-  // 11000009: 'TEMPLATE',
-  // 11000010: 'TEMPLATE',
-  // 11000011: 'TEMPLATE',
-  // 11000025: 'TEMPLATE', Akuliya
-  // 11000026: 'TEMPLATE', Yaoyao
-  // 11000028: 'TEMPLATE', Shiro Maiden
-  // 11000030: 'TEMPLATE', Greatsword Maiden
-  // 11000035: 'TEMPLATE', Lance Warrioress
+  10000079: 'Dehya',
+  // 11000008: "TEMPLATE",
+  // 11000009: "TEMPLATE",
+  // 11000010: "TEMPLATE",
+  // 11000011: "TEMPLATE",
+  // 11000025: "TEMPLATE", Akuliya
+  // 11000026: "TEMPLATE", Yaoyao
+  // 11000028: "TEMPLATE", Shiro Maiden
+  // 11000030: "TEMPLATE", Greatsword Maiden
+  // 11000035: "TEMPLATE", Lance Warrioress
 } as const
 export type CharacterId = keyof typeof characterIdMap
 
@@ -112,7 +129,7 @@ export const weaponIdMap = {
   11408: 'BlackcliffLongsword',
   11409: 'TheBlackSword',
   11410: 'TheAlleyFlash',
-  // 11411: '',
+  // 11411: "",
   11412: 'SwordOfDescension',
   11413: 'FesteringDesire',
   11414: 'AmenomaKageuchi',
@@ -120,18 +137,18 @@ export const weaponIdMap = {
   11416: 'KagotsurubeIsshin',
   11417: 'SapwoodBlade',
   11418: 'XiphosMoonlight',
-  // 11419: '',
-  // 11420: '',
-  // 11421: '',
+  // 11419: "",
+  // 11420: "",
+  // 11421: "",
   11422: 'ToukabouShigure',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
   11503: 'FreedomSworn',
   11504: 'SummitShaper',
   11505: 'PrimordialJadeCutter',
-  // 11506: 'PrimordialJadeCutter',
-  // 11507: 'One Side',//new weapon?
-  // 11508: '',
+  // 11506: "PrimordialJadeCutter",
+  // 11507: "One Side",//new weapon?
+  // 11508: "",
   11509: 'MistsplitterReforged',
   11510: 'HaranGeppakuFutsu',
   11511: 'KeyOfKhajNisut',
@@ -143,7 +160,7 @@ export const weaponIdMap = {
   12301: 'FerrousShadow',
   12302: 'BloodtaintedGreatsword',
   12303: 'WhiteIronGreatsword',
-  // 12304: 'Quartz',
+  // 12304: "Quartz",
   12305: 'DebateClub',
   12306: 'SkyriderGreatsword',
   12401: 'FavoniusGreatsword',
@@ -162,14 +179,16 @@ export const weaponIdMap = {
   12415: 'MakhairaAquamarine',
   12416: 'Akuoumaru',
   12417: 'ForestRegalia',
+  12418: 'MailedFlower',
   12501: 'SkywardPride',
   12502: 'WolfsGravestone',
   12503: 'SongOfBrokenPines',
   12504: 'TheUnforged',
-  // 12505: 'Primordial Jade Greatsword',
-  // 12506: 'The Other Side',
-  // 12508: '',
+  // 12505: "Primordial Jade Greatsword",
+  // 12506: "The Other Side",
+  // 12508: "",
   12510: 'RedhornStonethresher',
+  12511: 'BeaconOfTheReedSea',
 
   //polearm
   13101: 'BeginnersProtector',
@@ -177,7 +196,7 @@ export const weaponIdMap = {
   13301: 'WhiteTassel',
   13302: 'Halberd',
   13303: 'BlackTassel',
-  // 13304: 'The Flagstaff',
+  // 13304: "The Flagstaff",
   13401: 'DragonsBane',
   13402: 'PrototypeStarglitter',
   13403: 'CrescentPike',
@@ -194,10 +213,10 @@ export const weaponIdMap = {
   13419: 'MissiveWindspear',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',
-  // 13503: '',
+  // 13503: "",
   13504: 'VortexVanquisher',
   13505: 'PrimordialJadeWingedSpear',
-  // 13506: 'Deicide',
+  // 13506: "Deicide",
   13507: 'CalamityQueller',
   13509: 'EngulfingLightning',
   13511: 'StaffOfTheScarletSands',
@@ -210,7 +229,7 @@ export const weaponIdMap = {
   14303: 'OtherworldlyStory',
   14304: 'EmeraldOrb',
   14305: 'TwinNephrite',
-  // 14306: 'Amber Bead',
+  // 14306: "Amber Bead",
   14401: 'FavoniusCodex',
   14402: 'TheWidsith',
   14403: 'SacrificialFragments',
@@ -221,7 +240,7 @@ export const weaponIdMap = {
   14408: 'BlackcliffAgate',
   14409: 'EyeOfPerception',
   14410: 'WineAndSong',
-  // 14411: '',
+  // 14411: "",
   14412: 'Frostbearer',
   14413: 'DodocoTales',
   14414: 'HakushinRing',
@@ -230,14 +249,14 @@ export const weaponIdMap = {
   14417: 'FruitOfFulfillment',
   14501: 'SkywardAtlas',
   14502: 'LostPrayerToTheSacredWinds',
-  // 14503: 'Lost Ballade',
+  // 14503: "Lost Ballade",
   14504: 'MemoryOfDust',
   14506: 'EverlastingMoonglow',
-  // 14505: 'Primordial Jade Regalia',
-  // 14506: 'Diamond Visage',
-  // 14508: '',
+  // 14505: "Primordial Jade Regalia",
+  // 14506: "Diamond Visage",
+  // 14508: "",
   14509: 'KagurasVerity',
-  // 14510: '',
+  // 14510: "",
   14511: 'AThousandFloatingDreams',
   14512: 'TulaytullahsRemembrance',
 
@@ -249,7 +268,7 @@ export const weaponIdMap = {
   15303: 'RecurveBow',
   15304: 'Slingshot',
   15305: 'Messenger',
-  // 15306: 'EbonyBow',
+  // 15306: "EbonyBow",
   15401: 'FavoniusWarbow',
   15402: 'TheStringless',
   15403: 'SacrificialBow',
@@ -271,14 +290,13 @@ export const weaponIdMap = {
   15501: 'SkywardHarp',
   15502: 'AmosBow',
   15503: 'ElegyForTheEnd',
-  // 15504: 'Kunwu's Wyrmbane',
-  // 15505: 'Primordial Jade Vista',
-  // 15506: 'Mirror Breaker',
+  // 15504: "Kunwu's Wyrmbane",
+  // 15505: "Primordial Jade Vista",
+  // 15506: "Mirror Breaker",
   15507: 'PolarStar',
   15508: 'AquaSimulacra',
   15509: 'ThunderingPulse',
   15511: 'HuntersPath',
-
 } as const
 export type WeaponId = keyof typeof weaponIdMap
 
@@ -287,10 +305,10 @@ export const weaponMap = {
   WEAPON_CATALYST: 'catalyst',
   WEAPON_CLAYMORE: 'claymore',
   WEAPON_BOW: 'bow',
-  WEAPON_POLE: 'polearm'
+  WEAPON_POLE: 'polearm',
 } as const
 export type DWeaponTypeKey = keyof typeof weaponMap
-export type WeaponTypeKey = typeof weaponMap[keyof typeof weaponMap]
+export type WeaponTypeKey = (typeof weaponMap)[keyof typeof weaponMap]
 
 export const artifactIdMap = {
   10001: 'ResolutionOfSojourner',
@@ -343,7 +361,7 @@ export const artifactSlotMap = {
   EQUIP_BRACER: 'flower',
   EQUIP_SHOES: 'sands',
   EQUIP_RING: 'goblet',
-  EQUIP_DRESS: 'circlet'
+  EQUIP_DRESS: 'circlet',
 } as const
 export type DArtifactSlotKey = keyof typeof artifactSlotMap
 
@@ -360,9 +378,10 @@ export const SubStatPropTypeMap = {
   FIGHT_PROP_CHARGE_EFFICIENCY: 'enerRech_',
 } as const
 export type DSubstatKey = keyof typeof SubStatPropTypeMap
-export type SubstatKey = typeof SubStatPropTypeMap[keyof typeof SubStatPropTypeMap]
+export type SubstatKey =
+  (typeof SubStatPropTypeMap)[keyof typeof SubStatPropTypeMap]
 
-const { FIGHT_PROP_DEFENSE, ...mainPart } = SubStatPropTypeMap//subtract flat def
+const { FIGHT_PROP_DEFENSE, ...mainPart } = SubStatPropTypeMap //subtract flat def
 export const MainPropMap = {
   ...mainPart,
   FIGHT_PROP_HEAL_ADD: 'heal_',
@@ -373,10 +392,10 @@ export const MainPropMap = {
   FIGHT_PROP_WATER_ADD_HURT: 'hydro_dmg_',
   FIGHT_PROP_ICE_ADD_HURT: 'cryo_dmg_',
   FIGHT_PROP_WIND_ADD_HURT: 'anemo_dmg_',
-  FIGHT_PROP_GRASS_ADD_HURT: 'dendro_dmg_'
-  // FIGHT_PROP_FIRE_SUB_HURT:'' //
+  FIGHT_PROP_GRASS_ADD_HURT: 'dendro_dmg_',
+  // FIGHT_PROP_FIRE_SUB_HURT:"" //
 } as const
-export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]
+export type MainStatKey = (typeof MainPropMap)[keyof typeof MainPropMap]
 
 export const propTypeMap = {
   ...SubStatPropTypeMap,
@@ -385,10 +404,9 @@ export const propTypeMap = {
   FIGHT_PROP_BASE_HP: 'hp',
   FIGHT_PROP_BASE_ATTACK: 'atk',
   FIGHT_PROP_BASE_DEFENSE: 'def',
-
 } as const
 export type PropTypeKey = keyof typeof propTypeMap
-export type StatKey = typeof propTypeMap[keyof typeof propTypeMap]
+export type StatKey = (typeof propTypeMap)[keyof typeof propTypeMap]
 
 export const QualityTypeMap = {
   QUALITY_ORANGE: 5,
@@ -398,40 +416,57 @@ export const QualityTypeMap = {
 } as const
 export type DQualityKey = keyof typeof QualityTypeMap
 
-
 // CharacterData that gets exported from dm
-export type CharacterGrowCurveKey = 'GROW_CURVE_HP_S4' | 'GROW_CURVE_ATTACK_S4' | 'GROW_CURVE_HP_S5' | 'GROW_CURVE_ATTACK_S5'
+export type CharacterGrowCurveKey =
+  | 'GROW_CURVE_HP_S4'
+  | 'GROW_CURVE_ATTACK_S4'
+  | 'GROW_CURVE_HP_S5'
+  | 'GROW_CURVE_ATTACK_S5'
 export type CharacterData = {
   weaponTypeKey: WeaponTypeKey
   base: {
-    hp: number,
-    atk: number,
-    def: number,
-  },
+    hp: number
+    atk: number
+    def: number
+  }
   curves: {
-    hp: CharacterGrowCurveKey,
-    atk: CharacterGrowCurveKey,
-    def: CharacterGrowCurveKey,
-  },
-  star: 1 | 2 | 3 | 4 | 5,
+    hp: CharacterGrowCurveKey
+    atk: CharacterGrowCurveKey
+    def: CharacterGrowCurveKey
+  }
+  star: 1 | 2 | 3 | 4 | 5
   ascensions: {
     props: { [key: string]: number }
-  }[],
+  }[]
   birthday: {
-    month?: number,
+    month?: number
     day?: number
   }
 }
 
-
 // WeaponData that gets exported from dm
-export type WeaponGrowCurveKey = 'GROW_CURVE_ATTACK_101' | 'GROW_CURVE_ATTACK_102' | 'GROW_CURVE_ATTACK_103' | 'GROW_CURVE_ATTACK_104' |
-  'GROW_CURVE_ATTACK_105' | 'GROW_CURVE_CRITICAL_101' | 'GROW_CURVE_ATTACK_201' | 'GROW_CURVE_ATTACK_202' | 'GROW_CURVE_ATTACK_203' |
-  'GROW_CURVE_ATTACK_204' | 'GROW_CURVE_ATTACK_205' | 'GROW_CURVE_CRITICAL_201' | 'GROW_CURVE_ATTACK_301' | 'GROW_CURVE_ATTACK_302' |
-  'GROW_CURVE_ATTACK_303' | 'GROW_CURVE_ATTACK_304' | 'GROW_CURVE_ATTACK_305' | 'GROW_CURVE_CRITICAL_301'
+export type WeaponGrowCurveKey =
+  | 'GROW_CURVE_ATTACK_101'
+  | 'GROW_CURVE_ATTACK_102'
+  | 'GROW_CURVE_ATTACK_103'
+  | 'GROW_CURVE_ATTACK_104'
+  | 'GROW_CURVE_ATTACK_105'
+  | 'GROW_CURVE_CRITICAL_101'
+  | 'GROW_CURVE_ATTACK_201'
+  | 'GROW_CURVE_ATTACK_202'
+  | 'GROW_CURVE_ATTACK_203'
+  | 'GROW_CURVE_ATTACK_204'
+  | 'GROW_CURVE_ATTACK_205'
+  | 'GROW_CURVE_CRITICAL_201'
+  | 'GROW_CURVE_ATTACK_301'
+  | 'GROW_CURVE_ATTACK_302'
+  | 'GROW_CURVE_ATTACK_303'
+  | 'GROW_CURVE_ATTACK_304'
+  | 'GROW_CURVE_ATTACK_305'
+  | 'GROW_CURVE_CRITICAL_301'
 type WeaponProp = {
-  type: StatKey,
-  base: number,
+  type: StatKey
+  base: number
   curve: WeaponGrowCurveKey
 }
 export type WeaponData = {
@@ -443,8 +478,22 @@ export type WeaponData = {
   ascension: { addStats: Partial<Record<StatKey, number>> }[]
 }
 
-export type InternalElement = 'Fire' | 'Grass' | 'Electric' | 'Wind' | 'Ice' | 'Water' | 'Rock'
-type ElementKey = 'pyro' | 'dendro' | 'electro' | 'anemo' | 'cryo' | 'hydro' | 'geo'
+export type InternalElement =
+  | 'Fire'
+  | 'Grass'
+  | 'Electric'
+  | 'Wind'
+  | 'Ice'
+  | 'Water'
+  | 'Rock'
+type ElementKey =
+  | 'pyro'
+  | 'dendro'
+  | 'electro'
+  | 'anemo'
+  | 'cryo'
+  | 'hydro'
+  | 'geo'
 export const elementMap: Record<InternalElement, ElementKey> = {
   Fire: 'pyro',
   Grass: 'dendro',
@@ -452,11 +501,29 @@ export const elementMap: Record<InternalElement, ElementKey> = {
   Wind: 'anemo',
   Ice: 'cryo',
   Water: 'hydro',
-  Rock: 'geo'
+  Rock: 'geo',
 }
 
-export type AvatarAssocType = 'ASSOC_TYPE_MONDSTADT' | 'ASSOC_TYPE_LIYUE' | 'ASSOC_TYPE_INAZUMA' | 'ASSOC_TYPE_SUMERU' | 'ASSOC_TYPE_FONTAINE' | 'ASSOC_TYPE_NATLAN' | 'ASSOC_TYPE_FATUI' | 'ASSOC_TYPE_KHAENRIAH' | 'ASSOC_TYPE_MAINACTOR' | 'ASSOC_TYPE_RANGER'
-type Regionkey = 'mondstadt' | 'liyue' | 'inazuma' | 'sumeru' | 'fontaine' | 'natlan' | 'snezhnaya' | 'khaenriah'
+export type AvatarAssocType =
+  | 'ASSOC_TYPE_MONDSTADT'
+  | 'ASSOC_TYPE_LIYUE'
+  | 'ASSOC_TYPE_INAZUMA'
+  | 'ASSOC_TYPE_SUMERU'
+  | 'ASSOC_TYPE_FONTAINE'
+  | 'ASSOC_TYPE_NATLAN'
+  | 'ASSOC_TYPE_FATUI'
+  | 'ASSOC_TYPE_KHAENRIAH'
+  | 'ASSOC_TYPE_MAINACTOR'
+  | 'ASSOC_TYPE_RANGER'
+type Regionkey =
+  | 'mondstadt'
+  | 'liyue'
+  | 'inazuma'
+  | 'sumeru'
+  | 'fontaine'
+  | 'natlan'
+  | 'snezhnaya'
+  | 'khaenriah'
 export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
   ASSOC_TYPE_MONDSTADT: 'mondstadt',
   ASSOC_TYPE_LIYUE: 'liyue',
