@@ -6,6 +6,7 @@
   "scripts": {
     "frontend": "nx serve frontend",
     "deploy": "nx deploy frontend",
+    "format-write": "nx format:write --base=master",
     "buildall": "nx run-many --target=build"
   },
   "devDependencies": {
