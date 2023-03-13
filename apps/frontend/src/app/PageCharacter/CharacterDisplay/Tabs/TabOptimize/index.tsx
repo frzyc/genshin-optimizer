@@ -63,6 +63,7 @@ import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
+import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
@@ -85,7 +86,6 @@ import ExcludeArt from './Components/ExcludeArt'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
-import WorkerErr from './Components/WorkerErr'
 import { compactArtifacts, dynamicData } from './foreground'
 import useBuildResult from './useBuildResult'
 import useBuildSetting from './useBuildSetting'
@@ -282,7 +282,8 @@ export default function TabBuild() {
   const cancelToken = useRef(() => {})
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
-  const [workerErr, setWorkerErr] = useState(false)
+  const throwGlobalError = useGlobalError()
+
   const generateBuilds = useCallback(async () => {
     const {
       artSetExclusion,
@@ -342,7 +343,6 @@ export default function TabBuild() {
     setChartData(undefined)
 
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
-    setWorkerErr(false)
 
     const unoptimizedNodes = [
       ...valueFilter.map((x) => x.value),
@@ -441,7 +441,7 @@ export default function TabBuild() {
       if (e !== cancellationError) {
         console.log('Failed to load worker')
         console.log(e)
-        setWorkerErr(true)
+        if (e instanceof Error) throwGlobalError(e)
       }
 
       cancelToken.current()
@@ -458,16 +458,16 @@ export default function TabBuild() {
       })
     }
   }, [
-    t,
+    buildSetting,
     characterKey,
     filteredArts,
     database,
-    buildResultDispatch,
-    maxWorkers,
-    buildSetting,
-    notificationRef,
-    setChartData,
     gender,
+    setChartData,
+    maxWorkers,
+    buildResultDispatch,
+    t,
+    throwGlobalError,
   ])
 
   const characterName = characterSheet?.name ?? 'Character Name'
@@ -745,7 +745,6 @@ export default function TabBuild() {
               </span>
             </BootstrapTooltip>
           </ButtonGroup>
-          {workerErr && <WorkerErr />}
           {!!characterKey && (
             <BuildAlert
               {...{ status: buildStatus, characterName, maxBuildsToShow }}
