@@ -24,11 +24,9 @@ export class DataEntry<
     this.key = key
     this.init = init
     this.goKey = goKey
-    this.set(
-      this.database.storage.keys.includes(key)
-        ? this.getStorage()
-        : init(this.database)
-    )
+    const storageVal = this.getStorage()
+    if (storageVal) this.set(storageVal)
+    else this.set(init(this.database))
     this.data = this.get() //initializer
   }
 
@@ -50,19 +48,17 @@ export class DataEntry<
     return this.database.storage.get(this.key)
   }
   set(
-    value:
+    valueOrFunc:
       | Partial<StorageValue>
       | ((v: StorageValue) => Partial<StorageValue> | void)
   ): boolean {
     const old = this.getStorage()
-    if (typeof value === 'function') {
-      if (!old) {
-        this.trigger('invalid', value)
-        return false
-      }
-      const temp = value(old)
-      value = temp ? temp : old
+    if (typeof valueOrFunc === 'function' && !old) {
+      this.trigger('invalid', valueOrFunc)
+      return false
     }
+    const value =
+      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
     const validated = this.validate({ ...old, ...value })
     if (!validated) {
       this.trigger('invalid', value)
