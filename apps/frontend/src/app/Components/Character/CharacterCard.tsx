@@ -113,7 +113,13 @@ export default function CharacterCard({
   const { favorite } = useCharMeta(characterKey)
   return (
     <Suspense
-      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
+      fallback={
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={hideStats ? 300 : 600}
+        />
+      }
     >
       <CardLight
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}

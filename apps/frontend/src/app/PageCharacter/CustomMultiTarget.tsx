@@ -639,7 +639,8 @@ function CustomTargetDisplay({
   const { t } = useTranslation('page_character')
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const { path, weight, hitMode, reaction, infusionAura } = customTarget
+  const { path, weight, hitMode, reaction, infusionAura, bonusStats } =
+    customTarget
   const setWeight = useCallback(
     (weight) => setCustomTarget({ ...customTarget, weight }),
     [customTarget, setCustomTarget]
@@ -654,12 +655,12 @@ function CustomTargetDisplay({
     () => (
       <StatEditorList
         statKeys={keys}
-        statFilters={customTarget.bonusStats}
+        statFilters={bonusStats}
         setStatFilters={setFilter}
         wrapperFunc={wrapperFunc}
       />
     ),
-    [customTarget.bonusStats, setFilter]
+    [bonusStats, setFilter]
   )
 
   const isMeleeAuto =

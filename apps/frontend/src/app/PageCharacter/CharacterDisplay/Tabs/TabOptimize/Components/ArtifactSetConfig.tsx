@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/consts'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
-import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent'
+import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -42,6 +42,7 @@ import { constant } from '../../../../../Formula/utils'
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
 import { iconInlineProps } from '../../../../../SVGIcons'
 import type { SetNum } from '../../../../../Types/consts'
+import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import { deepClone, objectKeyMap } from '../../../../../Util/Util'
 import useBuildSetting from '../useBuildSetting'
 
@@ -95,17 +96,21 @@ export default function ArtifactSetConfig({
   const allowRainbow2 = !artSetExclusion.rainbow?.includes(2)
   const allowRainbow4 = !artSetExclusion.rainbow?.includes(4)
 
-  const { allow2, allow4 } = useMemo(
-    () => ({
-      allow2: artKeysByRarity.filter((k) => !artSetExclusion[k]?.includes(2))
-        .length,
-      allow4: artKeysByRarity.filter((k) => !artSetExclusion[k]?.includes(4))
-        .length,
-    }),
-    [artKeysByRarity, artSetExclusion]
-  )
-  const exclude2 = artKeysByRarity.length - allow2,
-    exclude4 = artKeysByRarity.length - allow4
+  const { allowTotals } = useMemo(() => {
+    const catKeys = { allowTotals: ['2', '4'] }
+    return bulkCatTotal(catKeys, (ctMap) =>
+      artKeysByRarity.forEach((setKey) => {
+        ctMap.allowTotals['2'].total++
+        if (!artSetExclusion[setKey]?.includes(2)) {
+          ctMap.allowTotals['2'].current++
+        }
+        ctMap.allowTotals['4'].total++
+        if (!artSetExclusion[setKey]?.includes(4)) {
+          ctMap.allowTotals['4'].current++
+        }
+      })
+    )
+  }, [artKeysByRarity, artSetExclusion])
   const artifactCondCount = useMemo(
     () =>
       Object.keys(conditional).filter(
@@ -152,17 +157,13 @@ export default function ArtifactSetConfig({
 
   return (
     <>
-      <Button
-        onClick={onOpen}
-        disabled={disabled}
-        color="info"
-        startIcon={<SettingsInputComponentIcon />}
-      >
-        <Box sx={{ textAlign: 'left', flexGrow: 1 }}>
+      {/* Button to open modal */}
+      <CardLight sx={{ display: 'flex', width: '100%' }}>
+        <CardContent sx={{ flexGrow: 1 }}>
           <Typography>
             <strong>{t`artSetConfig.title`}</strong>
           </Typography>
-          <Stack spacing={0.5}>
+          <Stack spacing={1}>
             <Typography>
               {t`artSetConfig.setEffCond`}{' '}
               <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
@@ -172,30 +173,16 @@ export default function ArtifactSetConfig({
             <Typography>
               {t`sheet:2set`}{' '}
               <SqBadge color="success">
-                {allow2} <ShowChartIcon {...iconInlineProps} />{' '}
+                {allowTotals['2']} <ShowChartIcon {...iconInlineProps} />{' '}
                 {t('artSetConfig.allowed')}
               </SqBadge>
-              {!!exclude2 && ' / '}
-              {!!exclude2 && (
-                <SqBadge color="secondary">
-                  {exclude2} <BlockIcon {...iconInlineProps} />{' '}
-                  {t('artSetConfig.excluded')}
-                </SqBadge>
-              )}
             </Typography>
             <Typography>
               {t`sheet:4set`}{' '}
               <SqBadge color="success">
-                {allow4} <ShowChartIcon {...iconInlineProps} />{' '}
+                {allowTotals['4']} <ShowChartIcon {...iconInlineProps} />{' '}
                 {t('artSetConfig.allowed')}
               </SqBadge>
-              {!!exclude4 && ' / '}
-              {!!exclude4 && (
-                <SqBadge color="secondary">
-                  {exclude4} <BlockIcon {...iconInlineProps} />{' '}
-                  {t('artSetConfig.excluded')}
-                </SqBadge>
-              )}
             </Typography>
             <Typography>
               {t`artSetConfig.2rainbow`}{' '}
@@ -220,8 +207,18 @@ export default function ArtifactSetConfig({
               </SqBadge>
             </Typography>
           </Stack>
-        </Box>
-      </Button>
+        </CardContent>
+        <Button
+          onClick={onOpen}
+          disabled={disabled}
+          color="info"
+          sx={{ borderRadius: 0, flexShrink: 1, minWidth: 40 }}
+        >
+          <SettingsIcon />
+        </Button>
+      </CardLight>
+
+      {/* Begin modal */}
       <ModalWrapper open={open} onClose={onClose}>
         <CardDark>
           <CardContent
@@ -382,17 +379,15 @@ export default function ArtifactSetConfig({
             >
               <Grid item xs={1}>
                 <AllSetAllowExcludeCard
+                  allowTotal={allowTotals['2']}
                   setNum={2}
-                  numAllow={allow2}
-                  numExclude={exclude2}
                   setAllExclusion={setAllExclusion}
                 />
               </Grid>
               <Grid item xs={1}>
                 <AllSetAllowExcludeCard
+                  allowTotal={allowTotals['4']}
                   setNum={4}
-                  numAllow={allow4}
-                  numExclude={exclude4}
                   setAllExclusion={setAllExclusion}
                 />
               </Grid>
@@ -488,13 +483,11 @@ export default function ArtifactSetConfig({
   )
 }
 function AllSetAllowExcludeCard({
-  numAllow,
-  numExclude,
+  allowTotal,
   setNum,
   setAllExclusion,
 }: {
-  numAllow: number
-  numExclude: number
+  allowTotal: string
   setNum: 2 | 4
   setAllExclusion: (setNum: 2 | 4, exclude?: boolean) => void
 }) {
@@ -505,21 +498,16 @@ function AllSetAllowExcludeCard({
         <Typography gutterBottom>
           <strong>{t(`sheet:${setNum}set`)}</strong>{' '}
           <SqBadge color="success">
-            {numAllow} <ShowChartIcon {...iconInlineProps} />{' '}
+            {allowTotal} <ShowChartIcon {...iconInlineProps} />{' '}
             {t('artSetConfig.allowed')}
           </SqBadge>
-          {!!numExclude && ' / '}
-          {!!numExclude && (
-            <SqBadge color="secondary">
-              {numExclude} <BlockIcon {...iconInlineProps} />{' '}
-              {t('artSetConfig.excluded')}
-            </SqBadge>
-          )}
         </Typography>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Button
             fullWidth
-            disabled={!numExclude}
+            disabled={
+              allowTotal.charAt(0) !== '0' && allowTotal.indexOf('/') === -1
+            }
             onClick={() => setAllExclusion(setNum, false)}
             color="success"
             startIcon={<ShowChartIcon />}
@@ -528,7 +516,7 @@ function AllSetAllowExcludeCard({
           </Button>
           <Button
             fullWidth
-            disabled={!numAllow}
+            disabled={allowTotal.charAt(0) === '0'}
             onClick={() => setAllExclusion(setNum, true)}
             color="secondary"
             startIcon={<BlockIcon />}
