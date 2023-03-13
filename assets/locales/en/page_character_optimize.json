@@ -7,7 +7,8 @@
     "assumptionLvl": {
       "no": "No Main Stat Lv. Assumption",
       "lvl": "Assume Main Stat at least Lv. {{lvl}}"
-    }
+    },
+    "title": "Main Stat Filter/Configuration"
   },
   "tcGraph": {
     "vs": "Graph Optimization Target vs.",
@@ -23,12 +24,12 @@
   },
   "levelFilter": "Artifact Level Filter",
   "excludeArt": {
-    "title_exclude": "Exclude Artifacts",
+    "title_exclude": "Excluded Artifacts",
     "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
-    "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
-    "excNum_one": "<1>{{count}}</1> artifact is excluded",
-    "excNum_other": "<1>{{count}}</1> artifacts are excluded",
+    "button_text": "Use Excluded Artifacts",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+    "excNum_one": "<0>{{count}}</0> artifact is excluded",
+    "excNum_other": "<0>{{count}}</0> artifacts are excluded",
     "addExc": "Add artifact to this character's exclusion list",
     "selExc": "Select artifact to add to this character's exclusion list",
     "deSelectExc": "Click on an artifact to remove it from the exclusion list",
@@ -37,14 +38,23 @@
     "included": "This artifact is not excluded."
   },
   "excludeChar": {
-    "title": "Allow Equipped Artifacts",
+    "title": "Equipped Artifact Configuration",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
     "modal": {
-      "allow_all": "Add all characters to the allow list",
-      "disallow_All": "Remove all characters from the allow list"
+      "allow_all": "Add all shown characters to the allow list",
+      "disallow_All": "Remove all shown characters from the allow list"
     },
     "allowEquip": "Allow using artifacts from",
     "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
-    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters"
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList": "Custom List",
+      "all": "All Artifacts"
+    },
+    "usingState": "Using"
   },
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
@@ -81,6 +91,9 @@
       }
     }
   },
+  "bonusStats": {
+    "title": "Bonus Stats"
+  },
   "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
   "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
   "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
@@ -104,7 +117,6 @@
   "currentlyEquippedBuild": "Currently Equipped",
   "addBuildToList": "Add build to list",
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
-  "workerLoadFailed": "Worker failed to load. Click here to reload the page and try again",
   "buildCompleted": "Build Completed",
   "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out."
 }
