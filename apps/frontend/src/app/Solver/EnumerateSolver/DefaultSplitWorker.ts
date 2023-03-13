@@ -3,7 +3,7 @@ import type { Interim, Setup } from '..'
 import { assertUnreachable } from '../../Util/Util'
 import type { ArtifactsBySlot, RequestFilter } from '../common'
 import { countBuilds, filterArts } from '../common'
-import type { SplitWorker } from './BackgroundWorker'
+import type { SplitWorker } from '../BNBSolver/BackgroundWorker'
 
 export class DefaultSplitWorker implements SplitWorker {
   arts: ArtifactsBySlot

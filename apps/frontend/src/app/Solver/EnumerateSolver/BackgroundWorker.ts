@@ -7,9 +7,8 @@ import {
   filterArts,
   filterFeasiblePerm,
 } from '../common'
-import { BNBSplitWorker } from './BNBSplitWorker'
-import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
+import { ComputeWorker } from './ComputeWorker'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 
@@ -62,11 +61,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       break
     }
     case 'setup':
-      try {
-        splitWorker = new BNBSplitWorker(data, (x) => postMessage(x))
-      } catch {
-        splitWorker = new DefaultSplitWorker(data, (x) => postMessage(x))
-      }
+      splitWorker = new DefaultSplitWorker(data, (x) => postMessage(x))
       computeWorker = new ComputeWorker(data, (x) => postMessage(x))
       break
     default:

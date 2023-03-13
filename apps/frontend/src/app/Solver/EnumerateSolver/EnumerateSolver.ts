@@ -9,9 +9,10 @@ import type {
 } from '..'
 import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
+import type { Solver} from '../coordinator';
 import { WorkerCoordinator } from '../coordinator'
 
-export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
+export class EnumerateSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> implements Solver {
   private maxIterateSize = 16_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
@@ -21,7 +22,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
   constructor(
     problem: OptProblemInput,
-    status: GOSolver['status'],
+    status: Record<'tested' | 'failed' | 'skipped' | 'total', number>,
     numWorker: number
   ) {
     const workers = Array(numWorker)
@@ -80,12 +81,12 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
 
     nodes = pruneExclusion(nodes, exclusion)
-    ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
-      reaffine: true,
-      pruneArtRange: true,
-      pruneNodeRange: true,
-      pruneOrder: true,
-    }))
+      ; ({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
+        reaffine: true,
+        pruneArtRange: true,
+        pruneNodeRange: true,
+        pruneOrder: true,
+      }))
     nodes = optimize(nodes, {}, (_) => false)
 
     if (plotBase) plotBase = nodes.pop()

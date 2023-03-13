@@ -10,8 +10,8 @@ import {
   sum,
   threshold,
 } from '../../Formula/utils'
-import type { Linear } from './linearUB'
-import { linearUB as linearUpperBound } from './linearUB'
+import type { Linear } from '../utils/linearUB'
+import { linearUB as linearUpperBound } from '../utils/linearUB'
 import type { ArtifactsBySlot, DynStat } from '../common'
 
 function apply(value: DynStat, linear: Linear): number {

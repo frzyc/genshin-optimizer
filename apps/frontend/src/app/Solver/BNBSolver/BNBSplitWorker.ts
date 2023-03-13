@@ -10,7 +10,7 @@ import type {
 } from '../common'
 import { countBuilds, filterArts, pruneAll } from '../common'
 import type { SplitWorker } from './BackgroundWorker'
-import { linearUB } from './linearUB'
+import { linearUB } from '../utils/linearUB'
 
 type Approximation = {
   base: number

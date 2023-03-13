@@ -69,7 +69,7 @@ import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import type { Build } from '../../../../Solver/common'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
-import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
+import { BNBSolver } from '../../../../Solver/BNBSolver/BNBSolver'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import { objectKeyMap, objPathValue, range } from '../../../../Util/Util'
 import { maxBuildsToShowList } from './Build'
@@ -88,6 +88,8 @@ import StatFilterCard from './Components/StatFilterCard'
 import { compactArtifacts, dynamicData } from './foreground'
 import useBuildResult from './useBuildResult'
 import useBuildSetting from './useBuildSetting'
+import type { Solver } from '../../../../Solver/coordinator'
+import { EnumerateSolver } from '../../../../Solver/EnumerateSolver/EnumerateSolver'
 
 const audio = new Audio('notification.mp3')
 export default function TabBuild() {
@@ -341,8 +343,17 @@ export default function TabBuild() {
     )
 
     const cancellationError = new Error()
+    let solver: Solver
     try {
-      const solver = new GOSolver(problem, status, maxWorkers)
+      solver = new BNBSolver(problem, status, maxWorkers)
+      await (solver as BNBSolver).execute([]) // Ensure SplitWorker initialization goes through.
+    } catch (e) {
+      console.error(
+        'Something went wrong with Solver. Defaulting to enumeration-based solver.'
+      )
+      solver = new EnumerateSolver(problem, status, maxWorkers)
+    }
+    try {
       cancelled.then(() => solver.cancel(cancellationError))
 
       const results = await solver.solve()

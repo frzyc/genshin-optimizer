@@ -1,3 +1,10 @@
+import type { FinalizeResult } from '.'
+
+export interface Solver {
+  solve(): Promise<FinalizeResult[]>
+  cancel: (e?: Error) => void
+}
+
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },
   Response extends { command?: never; resultType: string }
