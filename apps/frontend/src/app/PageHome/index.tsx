@@ -97,7 +97,9 @@ function PatchNotesCard() {
   const { t } = useTranslation('page_home')
   const [{ isLoaded, text }, setState] = useState({ isLoaded: false, text: '' })
   useEffect(() => {
-    fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES + package_json.version ?? '')
+    fetch(
+      process.env.NX_URL_GITHUB_API_GO_RELEASES + package_json.version ?? ''
+    )
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const decoder = new TextDecoder('utf-8')
