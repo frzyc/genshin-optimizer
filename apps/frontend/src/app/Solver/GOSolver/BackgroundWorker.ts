@@ -25,7 +25,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
         data.maxIterateSize
       )) {
         postMessage({ command: 'iterate', filter })
-        await Promise.resolve() // in case a `threshold` is sent over
+        await new Promise((r) => setTimeout(r)) // in case a `threshold` is sent over
       }
       break
     case 'iterate':
