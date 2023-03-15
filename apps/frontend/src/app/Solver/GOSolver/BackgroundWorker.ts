@@ -29,8 +29,8 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
         //
         // Make sure to use task-based mechanisms such as `setTimeout` so that
         // this function suspends until the next event loop. If we instead use
-        // micro-task-based mechanisms such as `Promise.resolved`, the
-        // suspension will not be long enough.
+        // microtask-based ones such as `Promise.resolved`, the suspension will
+        // not be long enough.
         await new Promise((r) => setTimeout(r))
       }
       break
