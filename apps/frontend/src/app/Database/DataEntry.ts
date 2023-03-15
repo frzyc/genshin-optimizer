@@ -24,31 +24,41 @@ export class DataEntry<
     this.key = key
     this.init = init
     this.goKey = goKey
-    if (this.database.storage.keys.includes(key)) {
-      this.data = this.toCache(init(this.database))!
-      this.set(this.database.storage.get(key))
-    } else {
-      this.data = this.toCache(init(this.database))!
-      this.setCached(this.data)
-    }
+    const storageVal = this.getStorage()
+    if (storageVal) this.set(storageVal)
+    else this.set(init(this.database))
+    this.data = this.get() //initializer
   }
 
   listeners: Callback<CacheValue>[] = []
   get() {
     return this.data
   }
-  validate(obj: any): StorageValue | undefined {
+  validate(obj: unknown): StorageValue | undefined {
     return obj as StorageValue | undefined
   }
   toCache(storageObj: StorageValue): CacheValue | undefined {
-    return { ...storageObj } as any as CacheValue
+    return { ...storageObj } as unknown as CacheValue
   }
   deCache(cacheObj: CacheValue): StorageValue {
-    const { ...storageObj } = cacheObj as any
-    return storageObj as any as StorageValue
+    const { ...storageObj } = cacheObj
+    return storageObj as unknown as StorageValue
   }
-  set(value: Partial<StorageValue>): boolean {
-    const old = this.data
+  getStorage(): StorageValue {
+    return this.database.storage.get(this.key)
+  }
+  set(
+    valueOrFunc:
+      | Partial<StorageValue>
+      | ((v: StorageValue) => Partial<StorageValue> | void)
+  ): boolean {
+    const old = this.getStorage()
+    if (typeof valueOrFunc === 'function' && !old) {
+      this.trigger('invalid', valueOrFunc)
+      return false
+    }
+    const value =
+      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
     const validated = this.validate({ ...old, ...value })
     if (!validated) {
       this.trigger('invalid', value)
@@ -70,7 +80,9 @@ export class DataEntry<
     this.trigger('update', cached)
   }
   clear() {
-    this.data = this.toCache(this.init(this.database))!
+    const data = this.toCache(this.init(this.database))
+    if (!data) return
+    this.data = data
     this.setCached(this.data)
     this.listeners = []
   }
@@ -81,8 +93,8 @@ export class DataEntry<
     this.database.storage.set(this.key, this.deCache(this.data))
   }
 
-  trigger(reason: TriggerString, object?: any) {
-    this.listeners.forEach((cb) => cb(reason, object))
+  trigger(reason: TriggerString, object?: unknown) {
+    this.listeners.forEach((cb) => cb(reason, object as CacheValue))
   }
   follow(callback: Callback<CacheValue>) {
     this.listeners.push(callback)
@@ -91,10 +103,10 @@ export class DataEntry<
     }
   }
   exportGOOD(go: Partial<IGO & IGOOD>) {
-    go[this.goKey as any] = this.data
+    go[this.goKey] = this.data
   }
   importGOOD(go: IGO & IGOOD, _result: ImportResult) {
-    const data = go[this.goKey as any]
+    const data = go[this.goKey]
     if (data) this.set(data)
   }
 }

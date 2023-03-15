@@ -76,6 +76,10 @@ const exampleArts: ArtifactsBySlot = {
     hydroDmg_: 0.288,
     critDMG_: 0.5,
     critRate_: 0.05,
+    zc1: -1,
+    zc2: -10,
+    zc3: -0.44,
+    zc4: -1,
   },
   values: {
     flower: [
@@ -89,6 +93,7 @@ const exampleArts: ArtifactsBySlot = {
           atk: 31,
           enerRech_: 0.227,
           OceanHuedClam: 1,
+          zc1: 1,
         },
       },
       {
@@ -101,6 +106,7 @@ const exampleArts: ArtifactsBySlot = {
           atk: 32,
           enerRech_: 0.207,
           OceanHuedClam: 1,
+          zc2: 10,
         },
       },
       {
@@ -113,6 +119,7 @@ const exampleArts: ArtifactsBySlot = {
           critRate_: 0.031,
           def_: 0.066,
           HeartOfDepth: 1,
+          zc3: 2,
         },
       },
     ],
@@ -127,6 +134,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 37,
           hp: 568,
           OceanHuedClam: 1,
+          zc4: -0.002,
         },
       },
       {
@@ -139,6 +147,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 39,
           hp: 508,
           OceanHuedClam: 1,
+          zc4: -0.0005,
         },
       },
       {
@@ -151,6 +160,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 40,
           atk_: 0.262,
           HeartOfDepth: 1,
+          zc4: 0.002,
         },
       },
     ],
@@ -165,6 +175,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 56,
           hp_: 0.105,
           OceanHuedClam: 1,
+          zc2: 22,
         },
       },
       {
@@ -177,6 +188,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 52,
           hp_: 0.115,
           OceanHuedClam: 1,
+          zc2: 21.95,
         },
       },
       {
@@ -251,6 +263,7 @@ const exampleArts: ArtifactsBySlot = {
           hp_: 0.178,
           atk: 15,
           eleMas: 18,
+          zc1: 2,
         },
       },
       {
@@ -262,6 +275,7 @@ const exampleArts: ArtifactsBySlot = {
           critDMG_: 0.155,
           atk_: 0.105,
           eleMas: 56,
+          zc1: 2,
         },
       },
     ],
@@ -500,6 +514,20 @@ describe('polyUB', () => {
           compute([art])[1] - prettyMuchZero
         )
       })
+    })
+    test('zero-crossing bounds', () => {
+      const z1 = customRead(['dyn', 'zc1']),
+        z2 = customRead(['dyn', 'zc2']),
+        z3 = customRead(['dyn', 'zc3']),
+        z4 = customRead(['dyn', 'zc4'])
+      doTest(
+        z1,
+        z2,
+        z3,
+        z4,
+        prod(z1, z2, z3, z4),
+        sum(prod(z1, z2), prod(-0.3, z3, z4), z2)
+      )
     })
   })
   describe('errors', () => {
