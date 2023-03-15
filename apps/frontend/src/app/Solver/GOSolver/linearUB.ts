@@ -35,7 +35,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
 }
 
 /**
- * Constructs a linear upper bound for a monomial on a bounded domain using an LP.
+ * Constructs a linear upper/lower bound for a monomial on a bounded domain using an LP.
  *
  * Monomial is assumed to be
  *    m(x) = x1 * x2 * ... * xn
@@ -45,9 +45,9 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
  *    ...
  *    min_n <= xn <= max_n
  *
- * @param bounds List of min/max bounds for each xi
+ * @param bounds List of min & max bounds for each xi
  * @returns A linear function L(x) = w . x + $c
- *            satisfying      m(x) <= L(x) <= m(x) + err
+ *            satisfying      m(x) <= L(x) <= m(x) + err (resp. m(x) - err <= L(x) <= m(x))
  */
 function linbound(
   bounds: MinMax[],
@@ -57,38 +57,57 @@ function linbound(
   const nVar = bounds.length
 
   // Re-scale bounds to [0, 1] for numerical stability.
-  const boundScale = bounds.map(({ max }) => max)
+  const boundScale = bounds.map(({ min, max }) => Math.max(-min, max))
   const scaleProd = boundScale.reduce((prod, v) => prod * v, 1)
-  bounds = bounds.map(({ min, max }) => ({ min: min / max, max: 1 }))
-
+  bounds = bounds.map(({ min, max }, i) => ({
+    min: min / boundScale[i],
+    max: max / boundScale[i],
+  }))
   // Setting up the linear program in terms of constraints.
   //   cartesian(bounds) loops 2^nVar times
   const cons = cartesian(...bounds.map(({ min, max }) => [min, max])).flatMap(
     (coords) => {
       const prod = coords.reduce((prod, v) => prod * v, 1)
-      let lpRow: number[][]
-      if (direction === 'upper')
-        lpRow = [
-          [...coords.map((v) => -v), 1, 0, -prod],
-          [...coords, -1, -1, prod],
-        ]
-      else if (direction === 'lower')
-        lpRow = [
-          [...coords, -1, 0, prod],
-          [...coords.map((v) => -v), 1, -1, -prod],
-        ]
-      else assertUnreachable(direction)
-      return lpRow
+      const sum = coords.reduce((sum, v) => sum + v, 0)
+      switch (direction) {
+        case 'upper':
+          return [
+            [...coords, -1, 0, sum - prod - nVar],
+            [...coords.map((v) => -v), 1, -1, nVar + prod - sum],
+          ]
+        case 'lower':
+          return [
+            [...coords.map((v) => -v), -1, 0, prod - sum - nVar],
+            [...coords, 1, -1, nVar + sum - prod],
+          ]
+        default:
+          assertUnreachable(direction)
+      }
     }
   )
 
   const objective = [...bounds.map((_) => 0), 0, 1]
   try {
     const soln = solveLP(objective, cons)
-    return {
-      w: soln.slice(0, nVar).map((wi, i) => (wi * scaleProd) / boundScale[i]),
-      $c: -scaleProd * soln[nVar],
-      err: scaleProd * soln[nVar + 1],
+    switch (direction) {
+      case 'upper':
+        return {
+          w: soln
+            .slice(0, nVar)
+            .map((wi, i) => ((1 - wi) * scaleProd) / boundScale[i]),
+          $c: scaleProd * (soln[nVar] - nVar),
+          err: scaleProd * soln[nVar + 1],
+        }
+      case 'lower':
+        return {
+          w: soln
+            .slice(0, nVar)
+            .map((wi, i) => ((1 - wi) * scaleProd) / boundScale[i]),
+          $c: scaleProd * (nVar - soln[nVar]),
+          err: scaleProd * soln[nVar + 1],
+        }
+      default:
+        assertUnreachable(direction)
     }
   } catch (e) {
     console.log('ERROR on bounds', bounds)
