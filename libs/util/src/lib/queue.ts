@@ -1,7 +1,7 @@
 export class MaxPrio<V> {
   // Fibonacci Heap
   list: (PrioNode<V> | undefined)[] = []
-  pivot: number = -1
+  pivot = -1
 
   insert(key: number, value: V) {
     const oldMaxKey = this.list[this.pivot]?.key
