@@ -217,7 +217,7 @@ export default function SubstatInput({
                   i18nKey="editor.substat.eff"
                   color="text.secondary"
                 >
-                  Efficiency:{' '}
+                  {'Efficiency: '}
                   <PercentBadge
                     valid={true}
                     max={rollNum * 100}
