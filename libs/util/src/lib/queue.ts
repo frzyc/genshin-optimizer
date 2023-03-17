@@ -23,7 +23,6 @@ export class MaxPrio<V> {
     return value
   }
 
-  /** Returns the degree of the tree that `node` resides in */
   private addNode(node: PrioNode<V>, degree: number): void {
     let other: PrioNode<V> | undefined
     while ((other = this.popNode(degree))) {
