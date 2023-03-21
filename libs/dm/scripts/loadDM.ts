@@ -24,7 +24,7 @@ if (fs.existsSync(`${projectDir}/GenshinData`)) {
 } else {
   console.log(`${projectDir}/GenshinData doesn't exist, cloning repo...`)
   execSync(
-    `git clone https://gitlab.com/Dimbreath/gamedata.git --depth 1 GenshinData`,
+    `git clone https://gitlab.com/Dimbreath/AnimeGameData.git --depth 1 GenshinData`,
     { cwd: projectDir }
   )
 }
