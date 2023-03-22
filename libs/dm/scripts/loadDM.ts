@@ -5,9 +5,9 @@ import * as path from 'path'
 const projectDir = path.resolve(__dirname, '..')
 const hashFilePath = `${projectDir}/version.hash`
 
-if (fs.existsSync(`${projectDir}/GenshinData`)) {
+if (fs.existsSync(`${projectDir}/AnimeGameData`)) {
   console.log(`${projectDir} exists. Fetching...`)
-  execSync(`git fetch`, { cwd: `${projectDir}/GenshinData` })
+  execSync(`git fetch`, { cwd: `${projectDir}/AnimeGameData` })
   const curVersion =
     execSync(`git rev-parse origin/master`)?.toString() ?? 'ERR'
   const fileHash =
@@ -15,16 +15,16 @@ if (fs.existsSync(`${projectDir}/GenshinData`)) {
       fs.readFileSync(hashFilePath)?.toString()) ||
     ''
   if (!fileHash || curVersion !== fileHash) {
-    console.log(`Resetting GenshinData to new version...`)
+    console.log(`Resetting AnimeGameData to new version...`)
     fs.writeFileSync(hashFilePath, curVersion)
     execSync(`git reset --hard origin/master`, {
-      cwd: `${projectDir}/GenshinData`,
+      cwd: `${projectDir}/AnimeGamenData`,
     })
   }
 } else {
-  console.log(`${projectDir}/GenshinData doesn't exist, cloning repo...`)
+  console.log(`${projectDir}/AnimeGameData doesn't exist, cloning repo...`)
   execSync(
-    `git clone https://gitlab.com/Dimbreath/AnimeGameData.git --depth 1 GenshinData`,
+    `git clone https://gitlab.com/Dimbreath/AnimeGameData.git --depth 1 AnimeGameData`,
     { cwd: projectDir }
   )
 }
