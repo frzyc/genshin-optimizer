@@ -9,6 +9,7 @@ import {
   SportsEsports,
   Warning,
   YouTube,
+  EmojiEvents,
 } from '@mui/icons-material'
 import {
   Box,
@@ -31,7 +32,6 @@ import AdScanner from './AdeptiScanner.png'
 import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
-
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
@@ -96,7 +96,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.4
+                  3.5
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -155,7 +155,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.4
+                  3.5
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -181,14 +181,13 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="ik.p1">
-                  This light-weight app will scan all your characters + weapons
-                  + artifacts in your inventory. Follow the instrutions in the
-                  app to set it up.
+                  This light-weight app will scan all the characters, weapons and artifacts
+                  in your inventory. Follow the instructions in the app to set it up.
                 </Trans>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ik.p2">
-                  This scanner can also scan materials for{' '}
+                <Trans t={t} i18nKey="seelieme">
+                  This app can also scan materials for {' '}
                   <Link
                     href="https://seelie.me/"
                     target="_blank"
@@ -200,7 +199,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This scanner only scans in english, and exports to GOOD
+                  This scanner only scans in English and exports to GOOD
                   format.
                 </Trans>
               </Typography>
@@ -239,7 +238,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.4
+                  3.5
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -269,7 +268,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This scanner only scans in english, and exports to GOOD
+                  This scanner only scans in English and exports to GOOD
                   format.
                 </Trans>
               </Typography>
@@ -314,7 +313,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.4
+                  3.5
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
