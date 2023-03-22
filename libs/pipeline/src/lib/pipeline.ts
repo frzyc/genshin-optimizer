@@ -97,6 +97,7 @@ export const characterIdMap = {
   10000077: 'Yaoyao',
   10000078: 'Alhaitham',
   10000079: 'Dehya',
+  10000080: 'Mika',
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

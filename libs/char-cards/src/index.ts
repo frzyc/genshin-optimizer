@@ -32,6 +32,7 @@ import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
+import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
 import Nilou from './Character_Nilou_Card.jpg'
@@ -99,6 +100,7 @@ const charCards = {
   KukiShinobu,
   Layla,
   Lisa,
+  Mika,
   Mona,
   Nahida,
   Nilou,

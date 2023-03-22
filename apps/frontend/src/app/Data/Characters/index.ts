@@ -40,6 +40,7 @@ import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
 import Layla from './Layla'
 import Lisa from './Lisa'
+import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
 import Nilou from './Nilou'
@@ -113,6 +114,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   KukiShinobu,
   Layla,
   Lisa,
+  Mika,
   Mona,
   Nahida,
   Nilou,
