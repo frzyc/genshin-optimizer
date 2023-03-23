@@ -33,7 +33,7 @@ import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
 import AkashaScanner from './AkashaScanner.png'
-import SvgIcon from '@mui/material/SvgIcon';
+import SvgIcon from '@mui/material/SvgIcon'
 const Weapons = () => (
   <SvgIcon>
     <path
@@ -50,7 +50,9 @@ export default function PageScanner() {
       <CardDark>
         <CardContent>
           <Trans t={t} i18nKey="intro">
-            <Typography gutterBottom variant="h5">Scanners</Typography>
+            <Typography gutterBottom variant="h5">
+              Scanners
+            </Typography>
             <Typography>
               Scanners are Genshin tools that can automatically scan game data
               from screenshots or directly from the game.
@@ -63,7 +65,8 @@ export default function PageScanner() {
               <Link component={RouterLink} to="/setting">
                 Settings
               </Link>
-              page, and upload your file in the {'<strong>Database Upload</strong>'}
+              page, and upload your file in the{' '}
+              {'<strong>Database Upload</strong>'}
               section.
             </Typography>
           </Trans>
@@ -174,7 +177,9 @@ export default function PageScanner() {
                   <PersonSearch sx={{ pr: 0.5 }} />
                   {t('tags.characters') as string}
                 </SqBadge>
-                <SqBadge sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <SqBadge
+                  sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                >
                   <Weapons />
                   {t('tags.weapons') as string}
                 </SqBadge>
@@ -193,8 +198,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ik.p1">
-                </Trans>
+                <Trans t={t} i18nKey="ik.p1"></Trans>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">
@@ -210,7 +214,8 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This app only scans in English and exports to <code>GOOD</code>
+                  This app only scans in English and exports to{' '}
+                  <code>GOOD</code>
                   format.
                 </Trans>
               </Typography>
@@ -279,7 +284,8 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This app only scans in English and exports to <code>GOOD</code>
+                  This app only scans in English and exports to{' '}
+                  <code>GOOD</code>
                   format.
                 </Trans>
               </Typography>
@@ -349,7 +355,8 @@ export default function PageScanner() {
                   Scans all the artifacts in your inventory. Follow the
                   instructions to capture the window and scan. Has both Chinese
                   and English versions (download the <code>_EN.exe</code>
-                  version to scan in English). GO only accepts the <code>GOOD</code> format.
+                  version to scan in English). GO only accepts the{' '}
+                  <code>GOOD</code> format.
                 </Trans>
               </Typography>
               <Typography gutterBottom>
@@ -409,7 +416,9 @@ export default function PageScanner() {
                   <PersonSearch sx={{ pr: 0.5 }} />
                   {t('tags.characters') as string}
                 </SqBadge>
-                <SqBadge sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                <SqBadge
+                  sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                >
                   <Weapons />
                   {t('tags.weapons') as string}
                 </SqBadge>
@@ -428,8 +437,7 @@ export default function PageScanner() {
                 </WarningWrapper>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="ak.p1">
-                </Trans>
+                <Trans t={t} i18nKey="ak.p1"></Trans>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="ak.p2">
