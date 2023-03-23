@@ -316,6 +316,7 @@ const sheet: ICharacterSheet = {
         })),
       }),
       ct.headerTem('constellation6', {
+        teamBuff: true,
         fields: [
           {
             node: c6InSoulwind_physical_critDMG_disp,
