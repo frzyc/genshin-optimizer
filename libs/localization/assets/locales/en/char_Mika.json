@@ -1,5 +1,5 @@
 {
-  "inSoulwind": "Character in the Soulwind state",
-  "numDetectorStacks": "Number of Detector stacks",
-  "incDetectorStacks": "Maximum number of Detector stacks increase"
+  "inSoulwind": "In the Soulwind state",
+  "numDetectorStacks": "Detector",
+  "incDetectorStacks": "Max. Detector stacks Inc."
 }
