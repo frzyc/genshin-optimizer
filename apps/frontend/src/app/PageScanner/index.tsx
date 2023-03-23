@@ -32,6 +32,16 @@ import AdScanner from './AdeptiScanner.png'
 import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
+import AkashaScanner from './AkashaScanner.png'
+import SvgIcon from '@mui/material/SvgIcon';
+const Weapons = () => (
+  <SvgIcon>
+    <path
+      fill="currentColor"
+      d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5H9M2 6c.81 2.13 2.42 3.5 5 4V6H2Z"
+    />
+  </SvgIcon>
+)
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
@@ -40,8 +50,8 @@ export default function PageScanner() {
       <CardDark>
         <CardContent>
           <Trans t={t} i18nKey="intro">
-            <Typography variant="h5">Scanners</Typography>
-            <Typography gutterBottom>
+            <Typography gutterBottom variant="h5">Scanners</Typography>
+            <Typography>
               Scanners are Genshin tools that can automatically scan game data
               from screenshots or directly from the game.
             </Typography>
@@ -49,11 +59,11 @@ export default function PageScanner() {
               Below are several scanners that have been tested with GO.
             </Typography>
             <Typography variant="subtitle2">
-              To upload the exported file, go to{' '}
+              To upload the exported file, go to {'the '}
               <Link component={RouterLink} to="/setting">
                 Settings
-              </Link>{' '}
-              page, and upload your file in the <strong>Database Upload</strong>{' '}
+              </Link>
+              page, and upload your file in the {'<strong>Database Upload</strong>'}
               section.
             </Typography>
           </Trans>
@@ -113,7 +123,6 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>{t('nb.p1') as string}</Typography>
               <Typography gutterBottom>{t('nb.p2') as string}</Typography>
-              <Typography gutterBottom>{t('nb.p3') as string}</Typography>
             </CardContent>
           </CardDark>
         </Grid>
@@ -162,12 +171,16 @@ export default function PageScanner() {
                   {t('tags.pc') as string}
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Backpack sx={{ pr: 0.5 }} />
-                  {t('tags.materials') as string}
-                </SqBadge>
-                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <PersonSearch sx={{ pr: 0.5 }} />
                   {t('tags.characters') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <Weapons />
+                  {t('tags.weapons') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Backpack sx={{ pr: 0.5 }} />
+                  {t('tags.materials') as string}
                 </SqBadge>
                 <WarningWrapper>
                   <SqBadge
@@ -181,13 +194,11 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="ik.p1">
-                  This light-weight app will scan all the characters, weapons and artifacts
-                  in your inventory. Follow the instructions in the app to set it up.
                 </Trans>
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="seelieme">
-                  This app can also scan materials for {' '}
+                  This app can also scan materials for
                   <Link
                     href="https://seelie.me/"
                     target="_blank"
@@ -199,7 +210,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This scanner only scans in English and exports to GOOD
+                  This app only scans in English and exports to <code>GOOD</code>
                   format.
                 </Trans>
               </Typography>
@@ -268,7 +279,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This scanner only scans in English and exports to GOOD
+                  This app only scans in English and exports to <code>GOOD</code>
                   format.
                 </Trans>
               </Typography>
@@ -335,16 +346,15 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="am.p1">
-                  Scans all you artifacts in your inventory. Follow the
-                  instruction to capture the window and scan. Has both Chinese
-                  and English versions. (Download the <code>_EN.exe</code>{' '}
-                  version to scan in english). Only the<code>GOOD</code> format
-                  is accepted in GO.
+                  Scans all the artifacts in your inventory. Follow the
+                  instructions to capture the window and scan. Has both Chinese
+                  and English versions (download the <code>_EN.exe</code>
+                  version to scan in English). GO only accepts the <code>GOOD</code> format.
                 </Trans>
               </Typography>
               <Typography gutterBottom>
-                <Trans t={t} i18nKey="am.p2">
-                  This scanner can also scan materials for{' '}
+                <Trans t={t} i18nKey="seelieme">
+                  This app can also scan materials for
                   <Link
                     href="https://seelie.me/"
                     target="_blank"
@@ -352,6 +362,94 @@ export default function PageScanner() {
                   >
                     Seelie.me
                   </Link>
+                </Trans>
+              </Typography>
+            </CardContent>
+          </CardDark>
+        </Grid>
+        <Grid item xs={1}>
+          <CardDark sx={{ height: '100%' }}>
+            <CardActionArea
+              href="https://github.com/xenesty/AkashaScanner"
+              target="_blank"
+            >
+              <CardMedia component="img" image={AkashaScanner} />
+            </CardActionArea>
+            <CardContent>
+              <Box display="flex" gap={1} alignItems="center">
+                <Typography variant="h5" flexGrow={1}>
+                  <Trans t={t} i18nKey="ak.title">
+                    Akasha Scanner
+                  </Trans>
+                </Typography>
+                <IconButton
+                  href="https://github.com/xenesty/AkashaScanner"
+                  target="_blank"
+                >
+                  <Download />
+                </IconButton>
+              </Box>
+
+              <Typography
+                variant="subtitle2"
+                sx={{ display: 'flex', gap: 1, py: 1, flexWrap: 'wrap' }}
+              >
+                <SqBadge
+                  color="success"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Gamepad sx={{ pr: 0.5 }} />
+                  3.5
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Computer sx={{ pr: 0.5 }} />
+                  {t('tags.pc') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <PersonSearch sx={{ pr: 0.5 }} />
+                  {t('tags.characters') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                  <Weapons />
+                  {t('tags.weapons') as string}
+                </SqBadge>
+                <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
+                  <EmojiEvents sx={{ pr: 0.5 }} />
+                  {t('tags.achievements') as string}
+                </SqBadge>
+                <WarningWrapper>
+                  <SqBadge
+                    color="warning"
+                    sx={{ display: 'flex', alignItems: 'center' }}
+                  >
+                    <Warning sx={{ pr: 0.5 }} />
+                    {t('tags.gameMani') as string}
+                  </SqBadge>
+                </WarningWrapper>
+              </Typography>
+              <Typography gutterBottom>
+                <Trans t={t} i18nKey="ak.p1">
+                </Trans>
+              </Typography>
+              <Typography gutterBottom>
+                <Trans t={t} i18nKey="ak.p2">
+                  This app is also able to scan achievements for
+                  <Link
+                    href="https://paimon.moe"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Paimon.moe
+                  </Link>
+                  and
+                  <Link
+                    href="https://seelie.me/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Seelie.me
+                  </Link>
+                  .
                 </Trans>
               </Typography>
             </CardContent>
@@ -371,7 +469,7 @@ function WarningWrapper({ children }: { children: JSX.Element }) {
         <Typography>
           <Trans t={t} i18nKey="tosWarn">
             As any tools that indirectly interact with the game, although their
-            usage is virtually undetectable,{' '}
+            usage is virtually undetectable,
             <Link
               color="inherit"
               href="https://genshin.mihoyo.com/en/news/detail/5763"
@@ -379,7 +477,7 @@ function WarningWrapper({ children }: { children: JSX.Element }) {
               rel="noreferrer"
             >
               there could still be risk with using them.
-            </Link>{' '}
+            </Link>
             Users discretion is advised.
           </Trans>
         </Typography>
