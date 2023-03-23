@@ -99,7 +99,7 @@ const [condA1DetectorStacksPath, condA1DetectorStacks] = cond(
   key,
   'a1DetectorStacks'
 )
-const detectorStacksArr = range(1, 4)
+const detectorStacksArr = range(1, 5)
 const a1DetectorStacks_physical_dmg_disp = greaterEq(
   input.asc,
   1,
