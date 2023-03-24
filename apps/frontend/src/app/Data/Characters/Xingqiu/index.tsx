@@ -86,6 +86,8 @@ const nodeC2 = greaterEq(
   equal(condC2, 'on', dm.constellation2.hydro_enemyRes_)
 )
 
+const [condSkillPath, condSkill] = cond(key, 'skill')
+
 const [condBurstPath, condBurst] = cond(key, 'burst')
 const nodeC4 = compareEq(
   greaterEq(input.constellation, 4, equal(condBurst, 'on', 1)),
@@ -95,9 +97,13 @@ const nodeC4 = compareEq(
   { name: st('dmgMult.skill'), unit: '%' }
 )
 
-const nodeSkillDmgRed_ = sum(
-  subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: '%' }),
-  min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))
+const nodeSkillDmgRed_ = equal(
+  condSkill,
+  'on',
+  sum(
+    subscript(input.total.skillIndex, dm.skill.dmgRed_, { unit: '%' }),
+    min(percent(0.24), prod(percent(0.2), input.premod.hydro_dmg_))
+  )
 )
 
 const nodeA4Heal = customHealNode(
@@ -141,15 +147,16 @@ export const data = dataObjForCharacterSheet(
   data_gen,
   dmgFormulas,
   {
-    teamBuff: {
-      premod: {
-        hydro_enemyRes_: nodeC2,
-      },
-    },
     premod: {
       skillBoost: nodeC5,
       burstBoost: nodeC3,
       hydro_dmg_: nodeA4,
+    },
+    teamBuff: {
+      premod: {
+        hydro_enemyRes_: nodeC2,
+        dmgRed_: infoMut(nodeSkillDmgRed_, KeyMap.info('dmgRed_')),
+      },
     },
   }
 )
@@ -239,9 +246,6 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.skill.dmgRed_, KeyMap.info('dmgRed_')),
-          },
-          {
             text: ct.chg('skill.skillParams.2'),
             value: dm.skill.duration,
             unit: 's',
@@ -253,6 +257,21 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.condTem('skill', {
+        teamBuff: true,
+        value: condSkill,
+        path: condSkillPath,
+        name: ct.ch('skillCond'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: dmgFormulas.skill.dmgRed_,
+              },
+            ],
+          },
+        },
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
