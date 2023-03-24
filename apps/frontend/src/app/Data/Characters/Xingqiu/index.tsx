@@ -150,7 +150,7 @@ export const data = dataObjForCharacterSheet(
     premod: {
       skillBoost: nodeC5,
       burstBoost: nodeC3,
-      hydro_dmg_: nodeA4
+      hydro_dmg_: nodeA4,
     },
     teamBuff: {
       premod: {
