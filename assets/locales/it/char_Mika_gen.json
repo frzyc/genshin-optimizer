@@ -1,0 +1,169 @@
+{
+  "name": "Mika",
+  "title": "Coordinate del gelo solare",
+  "description": "Un giovane cavaliere di umili natali. Svolge l'incarico di topografo di prima linea all'interno della sua compagnia. Ha un carattere cauto e discreto.",
+  "constellationName": "Palumbus",
+  "auto": {
+    "name": "Lancia di Favonius - Perforazione pungente",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi di lancia e balestra consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti, infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Turbine Gelastrale",
+    "description": {
+      "0": "Mika usa la sua balestra per attaccare, garantendo a tutti i personaggi vicini nel tuo gruppo lo stato di Ventanimo, che ne aumenta la VEL d'ATT quando sono in campo.",
+      "1": "È possibile produrre effetti diversi in base alla durata della pressione.",
+      "2": "<br/>",
+      "3": "<strong>Pressione</strong>",
+      "4": "Scaglia una Freccia Geloflusso che trafigge gli avversari infliggendo <cryo>DAN da Cryo</cryo>.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Entra in modalità di mira, aggancia un avversario e lancia un Razzo Gelostella che infligge <cryo>DAN da Cryo</cryo>. Quando il Razzo Gelostella colpisce, sale verso l'alto per poi esplodere, scagliando frammenti di Gelostella contro un massimo di 3 avversari, infliggendo <cryo>DAN da Cryo</cryo>.",
+      "8": "<br/>",
+      "9": "<i>Le stelle esplodono sotto cieli algidi.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Freccia Geloflusso",
+      "1": "DAN Razzo Gelostella",
+      "2": "DAN da frammento di Gelostella",
+      "3": "Bonus VEL d'ATT",
+      "4": "Durata Ventanimo",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Canzone Piumaceleste",
+    "description": {
+      "0": "Ottiene l'abilità d'incoraggiare i suoi compagni di squadra grazie alle preghiere recitate dell'ordine cavalleresco, rigenerando i PS di tutti i membri del gruppo vicini. La guarigione varia in base ai PS max di Mika e conferisce ai personaggi lo stato di Piumaquila.",
+      "1": "<br/>",
+      "2": "<strong>Piumaquila</strong>",
+      "3": "Quando i personaggi attivi nello stato di Piumaquila colpiscono un avversario con i loro attacchi normali, Mika li aiuta a rigenerare PS in base ai suoi PS max.",
+      "4": "I personaggi in questo stato possono recuperare i PS in tale modo solo una volta per ogni breve intervallo.",
+      "5": "<br/>",
+      "6": "<i>\"Abbi speranza in circostanze disperate, e sii vigile in tempi di pace... Poiché quella pura piuma bianca guiderà i viandanti perduti.\"</i>"
+    },
+    "skillParams": {
+      "0": "Guarigione al lancio",
+      "1": "Guarigione di Piumaquila",
+      "2": "Intervallo di guarigione di Piumaquila",
+      "3": "Durata Piumaquila",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ostruzione oppressiva",
+    "description": {
+      "0": "Lo stato di Ventanimo causato da <strong>Turbine Gelastrale</strong> conferisce ai personaggi l'effetto Rilevatore, aumentando i loro DAN fisici di un 10% quando sono in campo. Questo effetto si verifica sotto le seguenti circostanze e nei seguenti modi:",
+      "1": [
+        " se la Freccia Geloflusso colpisce più di un avversario, per ogni ulteriore avversario colpito ottiene 1 accumulo di Rilevatore;",
+        " quando un frammento di Gelostella colpisce un avversario, genera 1 accumulo di Rilevatore. Ogni frammento di Gelostella può attivare l'effetto 1 volta."
+      ],
+      "2": "<br/>",
+      "3": "Lo stato di Ventanimo può raggiungere un massimo di 3 accumuli di Rilevatore e, se Turbine Gelastrale viene attivato di nuovo mentre è ancora attivo, lo stato di Ventanimo preesistente e tutti i suoi accumuli di Rilevatore vengono rimossi."
+    }
+  },
+  "passive2": {
+    "name": "Mappatura topografica",
+    "description": {
+      "0": "Quando un personaggio attivo che si trova sotto l'effetto di Piumaquila di <strong>Canzone Piumaceleste</strong> e Ventanimo di <strong>Turbine Gelastrale</strong> mette a segno un colpo CRIT con i suoi attacchi, Ventanimo gli conferisce 1 accumulo di Rilevatore da Ostruzione oppressiva. Una singola iterazione di Ventanimo permette di ottenere in questo modo 1 accumulo di Rilevatore.",
+      "1": "Inoltre, il numero massimo di accumuli che è possibile ottenere da Ventanimo aumenta di 1.",
+      "2": "Richiede lo sblocco di Ostruzione oppressiva."
+    }
+  },
+  "passive3": {
+    "name": "Demarcazione",
+    "description": {
+      "0": "Mostra sulla minimappa la posizione delle <strong>risorse uniche di Mondstadt</strong>."
+    }
+  },
+  "constellation1": {
+    "name": "Confluenza di fattori",
+    "description": {
+      "0": "Lo stato di Ventanimo di <strong>Turbine Gelastrale</strong> può ridurre l'intervallo tra le guarigioni fornite dallo stato di Piumaquila di <strong>Canzone Piumaceleste</strong>. La percentuale di riduzione è pari all'aumento della VEL d'ATT ottenuto tramite Ventanimo."
+    }
+  },
+  "constellation2": {
+    "name": "Chi trova un amico",
+    "description": {
+      "0": "Quando la Freccia Geloflusso di <strong>Turbine Gelastrale</strong> colpisce un avversario, o se il suo Razzo Gelostella colpisce gli avversari, viene generato 1 accumulo di Rilevatore del talento passivo Ostruzione oppressiva.",
+      "1": "Devi prima sbloccare il talento passivo Ostruzione oppressiva."
+    }
+  },
+  "constellation3": {
+    "name": "Esperienza ricognitiva",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Canzone Piumaceleste</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Encomio del gelo solare",
+    "description": {
+      "0": "Quando lo stato di Piumaquila di <strong>Canzone Piumaceleste</strong> guarisce membri del gruppo, Mika recupera 3 di energia. Questa forma di recupero dell'energia può avvenire 5 volte durante lo stato di Piumaquila generato da 1 singolo utilizzo di Canzone Piumaceleste."
+    }
+  },
+  "constellation5": {
+    "name": "Freccia segnalatrice",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Turbine Gelastrale</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Consiglio del compagno",
+    "description": {
+      "0": "Il numero massimo di accumuli di Rilevatore che lo stato di Ventanimo generato da <strong>Turbine Gelastrale</strong> può ottenere aumenta di 1. Devi prima sbloccare il talento passivo Ostruzione oppressiva. Inoltre, i personaggi attivi sotto l'effetto di Ventanimo infliggono un 60% di DAN da CRIT fisici in più."
+    }
+  }
+}
