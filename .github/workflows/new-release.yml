@@ -6,7 +6,6 @@ on:
       version:
         description: 'Version'
         type: string
-        required: true
 
 jobs:
   deploy:
@@ -28,12 +27,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Change version
+        if: steps.get-version.outputs.version != ''
         run: |
           TEMP_FILE=$(mktemp)
           jq --arg v "${{ steps.get-version.outputs.version }}" '.version = $v' package.json > $TEMP_FILE
           cp $TEMP_FILE package.json
           git add .
           git commit -m "${{ steps.get-version.outputs.version }}"
+      - name: Get commit msg
+        id: get-commit-msg
+        run: |
+          if [[ -z "${{ steps.get-version.outputs.version }}" ]]; then
+            echo "msg=deploy: $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          else
+            echo "msg=deploy: version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          fi
       - name: Yarn install
         run: |
           yarn install --immutable --immutable-cache
@@ -53,13 +61,14 @@ jobs:
           cp -rT dist/apps/frontend ../gh-pages
           cd ../gh-pages
           git add --all .
-          git commit -m "deploy: version ${{ steps.get-version.outputs.version }} $(git rev-parse HEAD)"
+          git commit -m "${{ steps.get-commit-msg.outputs.msg }}"
           git push
       - name: Push
         run: |
           git status
           git push
       - name: Make release
+        if: steps.get-version.outputs.version != ''
         run: |
           gh release create ${{ steps.get-version.outputs.version }} --generate-notes --target $(git rev-parse HEAD)
         env:
