@@ -82,7 +82,11 @@ export default function CharacterDisplay() {
         fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}
       >
         {characterKey && (
-          <CharacterDisplayCard key={characterKey} characterKey={characterKey} onClose={onClose} />
+          <CharacterDisplayCard
+            key={characterKey}
+            characterKey={characterKey}
+            onClose={onClose}
+          />
         )}
       </Suspense>
     </Box>
