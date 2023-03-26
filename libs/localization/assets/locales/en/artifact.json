@@ -30,6 +30,9 @@
     "beforeEdit": "Before Edit",
     "btnSave": "Save Artifact",
     "btnAdd": "Add Artifact",
+    "btnClear": "Clear",
+    "btnRandom": "Randomize",
+    "btnUpdate": "Update Artifact",
     "clearPrompt": "There is an artifact being edited. Are you sure you want to clear the editor?"
   },
   "slot": "Slot",
