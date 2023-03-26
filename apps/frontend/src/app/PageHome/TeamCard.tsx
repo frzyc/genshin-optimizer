@@ -14,12 +14,12 @@ import lantua from './teamIcons/lantua.png'
 import van from './teamIcons/van.webp'
 import stain from './teamIcons/stain.png'
 import sin from './teamIcons/sin.png'
-import polomo from "./teamIcons/polomo.png"
-import qbe from "./teamIcons/qbe.png"
-import reens from "./teamIcons/reens.png"
-import toofless from "./teamIcons/toofless.png"
-import yae from "./teamIcons/yae.png"
-import d1 from "./teamIcons/d1.png"
+import polomo from './teamIcons/polomo.png'
+import qbe from './teamIcons/qbe.png'
+import reens from './teamIcons/reens.png'
+import toofless from './teamIcons/toofless.png'
+import yae from './teamIcons/yae.png'
+import d1 from './teamIcons/d1.png'
 
 import { Groups } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
@@ -77,14 +77,14 @@ const team = [
     name: 'Qbe',
     img: qbe,
     title: (t) => t`teamCard.jobTitle.dev`,
-    subtitle: 'Burger Fanatic',
+    subtitle: 'Irminsul Debugger',
     url: '',
   },
   {
     name: 'Polomo',
     img: polomo,
     title: (t) => t`teamCard.jobTitle.translator`,
-    subtitle: 'Scholar of Hilichurlian Linguistics',
+    subtitle: 'Director of Text',
     url: '',
   },
   {
@@ -101,7 +101,6 @@ const team = [
     subtitle: 'Scanner Spy',
     url: '',
   },
-
 ] as const
 
 export default function TeamCard() {
@@ -114,9 +113,9 @@ export default function TeamCard() {
       />
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Grid container columns={{ xs: 6, md: 5 }} spacing={1}>
+        <Grid container columns={{ xs: 6, md: 12 }} spacing={1}>
           {team.map(({ name, img, title, subtitle, url }, i) => (
-            <Grid item key={name} xs={i < 2 ? 3 : 2} md={1}>
+            <Grid item key={name} xs={i < 2 ? 3 : 2} md={i <= 2 ? 4 : 3}>
               <CardLight sx={{ height: '100%' }}>
                 <CardContent>
                   <Box
