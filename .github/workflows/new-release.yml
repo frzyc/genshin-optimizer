@@ -47,7 +47,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Setup .env
         run: |
-          echo $ENVFILE > apps/frontend/.env.local
+          printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Build genshin-optimizer
