@@ -40,7 +40,10 @@
     "jobTitle": {
       "leadDev": "Lead Developer",
       "dev": "Developer",
-      "mod": "Moderator"
+      "admin": "Admin",
+      "mod": "Moderator",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
     }
   }
 }
