@@ -43,6 +43,7 @@ import Lisa from './Lisa'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
+import Nekara from './Nekara'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -117,6 +118,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Mika,
   Mona,
   Nahida,
+  Nekara,
   Nilou,
   Ningguang,
   Noelle,

@@ -152,6 +152,7 @@ import PolarStar from './PolarStar'
 import AquaSimulacra from './AquaSimulacra'
 import ThunderingPulse from './ThunderingPulse'
 import HuntersPath from './HuntersPath'
+import QuantumCatalyst from './QuantumCatalyst'
 const data = {
   DullBlade,
   SilverSword,
@@ -306,5 +307,6 @@ const data = {
   AquaSimulacra,
   ThunderingPulse,
   HuntersPath,
+  QuantumCatalyst,
 } as const
 export default data

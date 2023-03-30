@@ -35,6 +35,7 @@ import Lisa from './Character_Lisa_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
+import Nekara from './Character_Nekara_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -103,6 +104,7 @@ const charCards = {
   Mika,
   Mona,
   Nahida,
+  Nekara,
   Nilou,
   Ningguang,
   Noelle,

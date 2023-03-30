@@ -1,0 +1,12 @@
+{
+  "c1Key": "Normal and Charged Att. DMG Mult.",
+  "superpositionCond": "Under the Schrödinger Superposition effect",
+  "cycloneActiveCond": "Celestial Cyclone is active",
+  "multCond": "In Multiplication mode",
+  "subCond": "In Subtraction mode",
+  "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
+  "c1Cond": "Decimal Point trigger frequency",
+  "average": "Average",
+  "always": "Always",
+  "c2Cond": "Attack is a prime trigger number"
+}
