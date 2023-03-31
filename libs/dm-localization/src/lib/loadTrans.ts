@@ -459,13 +459,13 @@ export default function loadTrans() {
         '2': '<br/>',
         '3': '<strong>Schrödinger Superposition</strong>',
         '4': "DMG dealt by Nekara's Normal and Charged Attacks is increased based on her Elemental Mastery.",
-        '5': "Schrödinger Superposition expires after Self-Containing Sigil's duration ends, when Nekara leaves the field, or after having its effects triggered a certain number of times.",
+        '5': "Schrödinger Superposition expires after Self-Containing Sigil's duration ends, or when Nekara leaves the field.",
       },
       skillParams: {
         '0': 'Skill DMG',
         '1': 'Duration',
-        '2': 'Trigger Quota',
-        '3': 'CD',
+        '2': 'CD',
+        '3': '',
         '4': '',
         '5': '',
         '6': '',
@@ -540,7 +540,8 @@ export default function loadTrans() {
     constellation2: {
       name: 'Prime Number',
       description: {
-        '0': 'When Nekara is under the Schrödinger Superposition effect, Prime counts of attacks triggering its effects receive twice the DMG increase from Schrödinger Superposition.',
+        '0': 'When Nekara is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Nekara a stack of Prime Number. When the number of Prime Number stacks is prime, Nekara\'s next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition.',
+        '1': 'Stacks of Prime Number will reset to 0 upon reaching 13.'
       },
     },
     constellation3: {

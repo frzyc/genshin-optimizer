@@ -58,7 +58,6 @@ const dm = {
   skill: {
     dmg: skillParam_gen.skill[s++],
     norm_charged_dmgInc: skillParam_gen.skill[s++],
-    triggerAmt: skillParam_gen.skill[s++][0],
     duration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
   },
@@ -430,10 +429,6 @@ const sheet: ICharacterSheet = {
             text: stg('duration'),
             value: dm.skill.duration,
             unit: 's',
-          },
-          {
-            text: st('triggerQuota'),
-            value: dm.skill.triggerAmt,
           },
           {
             text: stg('cd'),
