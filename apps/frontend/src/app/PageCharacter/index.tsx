@@ -64,7 +64,11 @@ const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
-  const { t } = useTranslation(['page_character', 'sillyWisher_charNames'])
+  const { t } = useTranslation([
+    'page_character',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(

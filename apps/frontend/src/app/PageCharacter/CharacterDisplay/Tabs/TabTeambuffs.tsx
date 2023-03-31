@@ -313,16 +313,26 @@ function TeammateAutocomplete({
     'sillyWisher_charNames',
     'page_character',
     'sheet_gen',
+    'charNames_gen',
   ])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const toText = useCallback(
+  const toTextSilly = useCallback(
     (key: CharacterKey): string =>
       key.startsWith('Traveler')
         ? `${t(`sillyWisher_charNames:${charKeyToCharName(key, gender)}`)} (${t(
             `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
           )})`
         : t(`sillyWisher_charNames:${key}`),
+    [t, gender]
+  )
+  const toText = useCallback(
+    (key: CharacterKey): string =>
+      key.startsWith('Traveler')
+        ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(
+            `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
+          )})`
+        : t(`charNames_gen:${key}`),
     [t, gender]
   )
   const toImg = useCallback(
@@ -348,16 +358,23 @@ function TeammateAutocomplete({
         team.some((t) => t.startsWith('Traveler'))),
     [team, characterKey]
   )
-  const values: GeneralAutocompleteOption<CharacterKey>[] = useMemo(
+  const values = useMemo(
     () =>
       database.chars.keys
-        .map((v) => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
+        .map(
+          (v): GeneralAutocompleteOption<CharacterKey> => ({
+            key: v,
+            label: toTextSilly(v),
+            favorite: isFavorite(v),
+            alternateNames: [toText(v)],
+          })
+        )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [toText, isFavorite, database]
+    [database.chars.keys, toTextSilly, isFavorite, toText]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

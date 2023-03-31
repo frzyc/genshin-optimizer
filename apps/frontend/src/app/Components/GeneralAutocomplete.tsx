@@ -26,6 +26,7 @@ export type GeneralAutocompleteOption<T extends string> = {
   grouper?: string | number
   variant?: Variant
   favorite?: boolean
+  alternateNames?: string[]
 }
 type GeneralAutocompletePropsBase<T extends string> = {
   label?: string
@@ -110,6 +111,15 @@ export function GeneralAutocomplete<T extends string>({
           {!!option.favorite && <Favorite />}
         </MenuItem>
       )}
+      filterOptions={(options, { inputValue }) =>
+        options.filter(
+          (opt) =>
+            opt.label.toLowerCase().includes(inputValue.toLowerCase()) ||
+            opt.alternateNames?.some((name) =>
+              name.toLowerCase().includes(inputValue.toLowerCase())
+            )
+        )
+      }
       {...acProps}
     />
   )

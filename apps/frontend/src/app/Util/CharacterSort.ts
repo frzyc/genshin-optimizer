@@ -60,6 +60,10 @@ export function characterFilterConfigs(
       i18n
         .t(`sillyWisher_charNames:${charKeyToCharName(ck, database.gender)}`)
         .toLowerCase()
+        .includes(filter.toLowerCase()) ||
+      i18n
+        .t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`)
+        .toLowerCase()
         .includes(filter.toLowerCase()),
     new: (ck, filter) =>
       filter === undefined ||

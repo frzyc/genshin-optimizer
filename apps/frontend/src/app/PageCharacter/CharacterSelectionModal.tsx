@@ -80,7 +80,11 @@ export default function CharacterSelectionModal({
   filter = () => true,
   newFirst = false,
 }: CharacterSelectionModalProps) {
-  const { t } = useTranslation(['page_character', 'sillyWisher_charNames'])
+  const { t } = useTranslation([
+    'page_character',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
