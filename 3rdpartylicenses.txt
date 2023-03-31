@@ -333,6 +333,8 @@ MIT
 
 @genshin-optimizer/g-assets
 
+@genshin-optimizer/silly-wisher
+
 @genshin-optimizer/util
 
 @mui/base
