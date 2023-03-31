@@ -47,7 +47,7 @@ export const infusionVals = {
   ),
   electro: (
     <span>
-      <ElectroIcon {...iconInlineProps} /> <SqBadge>Nekara Burst</SqBadge>{' '}
+      <ElectroIcon {...iconInlineProps} /> <SqBadge>Somnia Burst</SqBadge>{' '}
       Parallax Paws
     </span>
   ),

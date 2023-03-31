@@ -30,7 +30,7 @@ import skillParam_gen from './skillParam_gen.json'
 
 const data_gen = data_gen_src as CharacterData
 
-const key: CharacterKey = 'Nekara'
+const key: CharacterKey = 'Somnia'
 const elementKey: ElementKey = 'electro'
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
@@ -553,7 +553,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('burst', {
         value: condSubtraction,
         path: condSubtractionPath,
-        // Only show for Nekara
+        // Only show for Somnia
         canShow: equal(
           condCycloneActive,
           'on',
@@ -583,7 +583,7 @@ const sheet: ICharacterSheet = {
         value: condMultiplication,
         path: condMultiplicationPath,
         teamBuff: true,
-        // Only show for Nekara's teammates
+        // Only show for Somnia's teammates
         canShow: equal(
           condCycloneActive,
           'on',

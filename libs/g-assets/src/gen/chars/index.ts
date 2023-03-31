@@ -69,7 +69,7 @@ import TravelerAnemo from './TravelerAnemo'
 import TravelerGeo from './TravelerGeo'
 import TravelerElectro from './TravelerElectro'
 import TravelerDendro from './TravelerDendro'
-import Nekara from './Nekara'
+import Somnia from './Somnia'
 const data = {
   KamisatoAyaka,
   Jean,
@@ -141,6 +141,6 @@ const data = {
   TravelerGeo,
   TravelerElectro,
   TravelerDendro,
-  Nekara,
+  Somnia,
 } as const
 export default data

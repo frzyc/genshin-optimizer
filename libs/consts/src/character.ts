@@ -77,7 +77,7 @@ export const nonTravelerCharacterKeys = [
   'Mika',
   'Mona',
   'Nahida',
-  'Nekara',
+  'Somnia',
   'Nilou',
   'Ningguang',
   'Noelle',

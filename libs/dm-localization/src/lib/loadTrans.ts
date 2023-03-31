@@ -408,9 +408,9 @@ export default function loadTrans() {
     })
   })
 
-  // Dump Nekara
-  const nekara = {
-    name: 'Nekara',
+  // Dump Somnia
+  const Somnia = {
+    name: 'Somnia',
     title: 'Creation of Simulated Cognition',
     description:
       'A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?',
@@ -425,7 +425,7 @@ export default function loadTrans() {
         charged: {
           '0': '<strong>Charged Attack</strong>',
           '1': 'Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s',
-          '2': 'Nekara gains resistance to interruption and is free to move while using her Charged Attack.',
+          '2': 'Somnia gains resistance to interruption and is free to move while using her Charged Attack.',
         },
         plunging: {
           '0': '<strong>Plunging Attack</strong>',
@@ -454,12 +454,12 @@ export default function loadTrans() {
     skill: {
       name: 'Cosmic Calculator',
       description: {
-        '0': 'Nekara condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.',
+        '0': 'Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.',
         '1': 'The Self-Containing Sigil grants her the Schrödinger Superposition effect.',
         '2': '<br/>',
         '3': '<strong>Schrödinger Superposition</strong>',
-        '4': "DMG dealt by Nekara's Normal and Charged Attacks is increased based on her Elemental Mastery.",
-        '5': "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Nekara leaves the field.",
+        '4': "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
+        '5': "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field.",
       },
       skillParams: {
         '0': 'Skill DMG',
@@ -483,15 +483,15 @@ export default function loadTrans() {
     burst: {
       name: 'Parallax Paws',
       description: {
-        '0': 'Nekara summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.',
-        '1': "While Celestial Cyclone is active, Nekara's Elemental Mastery will be increased multiplicatively.",
-        '2': 'Additionally, while Celestial Cyclone is active, Nekara gains Stellar Statistics. While in this state, Nekara can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simulatenously.',
+        '0': 'Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.',
+        '1': "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
+        '2': 'Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simulatenously.',
         '3': '<br/>',
         '4': '<strong>Stellar Statistics</strong>',
         '5': [
-          "<strong>Multiplication</strong>: Within Nekara's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Nekara's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
-          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Nekara's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
-          '<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the "Less Than Three" effect to enemies within it. "Less Than Three" reduces enemy Elemental and Physical RES based on Nekara\'s Elemental Mastery. Additionally, Nekara\'s Normal and Charged Attacks deal increased DMG based on her Elemental Mastery.',
+          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
+          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
+          '<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the "Less Than Three" effect to enemies within it. "Less Than Three" reduces enemy Elemental and Physical RES based on Somnia\'s Elemental Mastery. Additionally, Somnia\'s Normal and Charged Attacks deal increased DMG based on her Elemental Mastery.',
         ],
       },
       skillParams: {
@@ -516,13 +516,13 @@ export default function loadTrans() {
     passive1: {
       name: 'Quick Calculation',
       description: {
-        '0': "Nekara's Charged Attacks consume 20% less Stamina and charge up 20% faster",
+        '0': "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster",
       },
     },
     passive2: {
       name: 'Math Whiz',
       description: {
-        '0': "For the duration of Celestial Cyclone, Nekara's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%.",
+        '0': "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%.",
       },
     },
     passive3: {
@@ -534,13 +534,13 @@ export default function loadTrans() {
     constellation1: {
       name: 'Decimal Point',
       description: {
-        '0': "Nekara's Normal and Charged Attacks have a 25% chance to deal twice the DMG",
+        '0': "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG",
       },
     },
     constellation2: {
       name: 'Prime Number',
       description: {
-        '0': 'When Nekara is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Nekara a stack of Natural Number. When the amount of Natural Number stacks is prime, Nekara\'s next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition.',
+        '0': 'When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia\'s next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition.',
       },
     },
     constellation3: {
@@ -553,7 +553,7 @@ export default function loadTrans() {
     constellation4: {
       name: 'Perfect Square',
       description: {
-        '0': 'When Nekara triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.',
+        '0': 'When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.',
         '1': 'This effect can trigger once every 4s.',
       },
     },
@@ -571,7 +571,7 @@ export default function loadTrans() {
       },
     },
   }
-  dumpFile(`${__dirname}/../../assets/locales/en/char_Nekara_gen.json`, nekara)
+  dumpFile(`${__dirname}/../../assets/locales/en/char_Somnia_gen.json`, Somnia)
 
   // Dump Quantum Cat-alyst
   const quant = {
