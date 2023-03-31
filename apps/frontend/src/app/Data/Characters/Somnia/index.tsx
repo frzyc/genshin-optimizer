@@ -2,7 +2,7 @@ import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
 import type { CharacterData } from '@genshin-optimizer/pipeline'
 import ColorText from '../../../Components/ColoredText'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -130,7 +130,7 @@ const multiplication_infusion = equalStr(
     'on',
     equalStr(
       lookup(
-        input.weaponType,
+        target.weaponType,
         { sword: one, claymore: one, polearm: one },
         naught
       ),
