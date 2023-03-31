@@ -424,7 +424,7 @@ export default function loadTrans() {
         },
         charged: {
           '0': '<strong>Charged Attack</strong>',
-          '1': 'Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.2s',
+          '1': 'Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s',
           '2': 'Nekara gains resistance to interruption and is free to move while using her Charged Attack.',
         },
         plunging: {
