@@ -540,7 +540,7 @@ export default function loadTrans() {
     constellation2: {
       name: 'Prime Number',
       description: {
-        '0': 'When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia\'s next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition.',
+        '0': "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition.",
       },
     },
     constellation3: {
