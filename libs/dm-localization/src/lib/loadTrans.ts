@@ -534,7 +534,7 @@ export default function loadTrans() {
     constellation1: {
       name: 'Decimal Point',
       description: {
-        '0': "Nekara's Normal and Charged Attacks have a 25% chance to deal twice the DMg",
+        '0': "Nekara's Normal and Charged Attacks have a 25% chance to deal twice the DMG",
       },
     },
     constellation2: {
