@@ -258,6 +258,18 @@ export default function ArtifactEditor({
     if (artifact === undefined) return { old: undefined, oldType: '' }
     const { duplicated, upgraded } =
       dirtyDatabase && database.arts.findDups(artifact)
+    const manyUpdates = JSON.parse(JSON.stringify(database.arts.findDups(artifact)))
+    const updateAmount = Object.keys(manyUpdates).length
+    console.log("many?", manyUpdates.upgraded)
+    console.log("how many?", manyUpdates.upgraded)
+
+    switch (updateAmount > 1) {
+      case true:
+        console.log("too many!")
+        break;
+      case false:
+        console.log("not many")
+    }
     return {
       old: duplicated[0] ?? upgraded[0],
       oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
@@ -470,16 +482,16 @@ export default function ArtifactEditor({
                     </Button>
                     {rarity
                       ? [...Array(rarity + 1).keys()]
-                          .map((i) => 4 * i)
-                          .map((i) => (
-                            <Button
-                              key={i}
-                              onClick={() => update({ level: i })}
-                              disabled={!sheet || level === i}
-                            >
-                              {i}
-                            </Button>
-                          ))
+                        .map((i) => 4 * i)
+                        .map((i) => (
+                          <Button
+                            key={i}
+                            onClick={() => update({ level: i })}
+                            disabled={!sheet || level === i}
+                          >
+                            {i}
+                          </Button>
+                        ))
                       : null}
                     <Button
                       onClick={() => update({ level: level + 1 })}
@@ -556,13 +568,13 @@ export default function ArtifactEditor({
                     <Typography color="text.secondary">
                       {artifact
                         ? `${cacheValueString(
-                            Artifact.mainStatValue(
-                              artifact.mainStatKey,
-                              rarity,
-                              level
-                            ),
-                            KeyMap.unit(artifact.mainStatKey)
-                          )}${KeyMap.unit(artifact.mainStatKey)}`
+                          Artifact.mainStatValue(
+                            artifact.mainStatKey,
+                            rarity,
+                            level
+                          ),
+                          KeyMap.unit(artifact.mainStatKey)
+                        )}${KeyMap.unit(artifact.mainStatKey)}`
                         : t`mainStat`}
                     </Typography>
                   </CardLight>
