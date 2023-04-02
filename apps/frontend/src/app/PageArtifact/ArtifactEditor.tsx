@@ -275,7 +275,7 @@ export default function ArtifactEditor({
     const validated = cachedArtifact(artifact, artifactIdToEdit)
     switch (listContent.length > 1) {
       case true:
-        return { artifact: undefined, errors: ["You have more than one artifacts that can be upgraded, please update it manually."] as Displayable[] }
+        return { artifact: undefined, errors: ["You have more than one artifact that can be upgraded, please update it manually."] as Displayable[] }
       case false:
         if (old) validated.artifact.location = old.location
         return validated
