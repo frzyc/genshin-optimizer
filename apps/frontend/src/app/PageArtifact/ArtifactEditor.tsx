@@ -248,40 +248,42 @@ export default function ArtifactEditor({
   const {
     old,
     oldType,
+    list,
+    listContent
   }: {
     old: ICachedArtifact | undefined
     oldType: 'edit' | 'duplicate' | 'upgrade' | ''
+    list: number
+    listContent: Array<ICachedArtifact> | undefined
   } = useMemo(() => {
     const databaseArtifact =
       dirtyDatabase && artifactIdToEdit && database.arts.get(artifactIdToEdit)
-    if (databaseArtifact) return { old: databaseArtifact, oldType: 'edit' }
-    if (artifact === undefined) return { old: undefined, oldType: '' }
+
+    if (databaseArtifact) return { old: databaseArtifact, oldType: 'edit', list: 0, listContent: undefined }
+    if (artifact === undefined) return { old: undefined, oldType: '', list: 0, listContent: undefined }
+
     const { duplicated, upgraded } =
       dirtyDatabase && database.arts.findDups(artifact)
-    const manyUpdates = JSON.parse(JSON.stringify(database.arts.findDups(artifact)))
-    const updateAmount = Object.keys(manyUpdates).length
-    console.log("many?", manyUpdates.upgraded)
-    console.log("how many?", manyUpdates.upgraded)
 
-    switch (updateAmount > 1) {
-      case true:
-        console.log("too many!")
-        break;
-      case false:
-        console.log("not many")
-    }
+    // console.log(database.arts.findDups(artifact).upgraded)
+
     return {
       old: duplicated[0] ?? upgraded[0],
       oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+      list: upgraded.length,
+      listContent: upgraded
     }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
+
 
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
+    if (list) console.log(list)
+    if (listContent) console.log(listContent)
     if (old) validated.artifact.location = old.location
     return validated
-  }, [artifact, artifactIdToEdit, old])
+  }, [artifact, artifactIdToEdit, old, list, listContent])
 
   // Overwriting using a different function from `databaseArtifact` because `useMemo` does not
   // guarantee to trigger *only when* dependencies change, which is necessary in this case.
