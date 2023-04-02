@@ -707,7 +707,7 @@ export default function ArtifactEditor({
             </Grid>
 
             {/* Duplicate/Updated/Edit UI */}
-            {old && (
+            {old && listContent.length < 1 && (
               <Grid
                 container
                 sx={{ justifyContent: 'space-around' }}
