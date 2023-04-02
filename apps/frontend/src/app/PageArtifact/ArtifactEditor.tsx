@@ -78,6 +78,7 @@ import SubstatInput from './ArtifactEditor/Components/SubstatInput'
 import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal'
 import type { OutstandingEntry, ProcessedEntry } from './ScanningUtil'
 import { processEntry, queueReducer } from './ScanningUtil'
+import { error } from 'console'
 
 const maxProcessingCount = 3,
   maxProcessedCount = 16
@@ -248,29 +249,22 @@ export default function ArtifactEditor({
   const {
     old,
     oldType,
-    list,
     listContent
   }: {
     old: ICachedArtifact | undefined
     oldType: 'edit' | 'duplicate' | 'upgrade' | ''
-    list: number
     listContent: Array<ICachedArtifact> | undefined
   } = useMemo(() => {
     const databaseArtifact =
       dirtyDatabase && artifactIdToEdit && database.arts.get(artifactIdToEdit)
-
-    if (databaseArtifact) return { old: databaseArtifact, oldType: 'edit', list: 0, listContent: undefined }
-    if (artifact === undefined) return { old: undefined, oldType: '', list: 0, listContent: undefined }
-
+    if (databaseArtifact) return { old: databaseArtifact, oldType: 'edit', listContent: [] }
+    if (artifact === undefined) return { old: undefined, oldType: '', listContent: [] }
     const { duplicated, upgraded } =
       dirtyDatabase && database.arts.findDups(artifact)
-
-    // console.log(database.arts.findDups(artifact).upgraded)
 
     return {
       old: duplicated[0] ?? upgraded[0],
       oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
-      list: upgraded.length,
       listContent: upgraded
     }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
@@ -279,11 +273,14 @@ export default function ArtifactEditor({
   const { artifact: cArtifact, errors } = useMemo(() => {
     if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
     const validated = cachedArtifact(artifact, artifactIdToEdit)
-    if (list) console.log(list)
-    if (listContent) console.log(listContent)
-    if (old) validated.artifact.location = old.location
-    return validated
-  }, [artifact, artifactIdToEdit, old, list, listContent])
+    switch (listContent.length > 1) {
+      case true:
+        return { artifact: undefined, errors: ["You have more than one artifacts that can be upgraded, please update it manually."] as Displayable[] }
+      case false:
+        if (old) validated.artifact.location = old.location
+        return validated
+    }
+  }, [artifact, artifactIdToEdit, old, listContent])
 
   // Overwriting using a different function from `databaseArtifact` because `useMemo` does not
   // guarantee to trigger *only when* dependencies change, which is necessary in this case.
