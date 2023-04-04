@@ -1,4 +1,5 @@
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense, useContext } from 'react'
@@ -44,7 +45,7 @@ export default function ArtifactTooltip({
   )
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
-  const { t } = useTranslation(['ui', 'charNames_gen'])
+  const { t } = useTranslation(['ui', 'sillyWisher_charNames'])
   const { t: tk } = useTranslation('statKey_gen')
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
@@ -104,15 +105,21 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
           sx={{ display: 'flex', alignItems: 'center' }}
         >
           <ThumbSide
-            src={characterAsset(
-              database.chars.LocationToCharacterKey(art.location),
-              'iconSide',
-              gender
-            )}
+            src={
+              portrait(
+                database.chars.LocationToCharacterKey(art.location),
+                gender
+              ) ||
+              characterAsset(
+                database.chars.LocationToCharacterKey(art.location),
+                'iconSide',
+                gender
+              )
+            }
             sx={{ pr: 1 }}
           />
           {t(
-            `charNames_gen:${charKeyToCharName(
+            `sillyWisher_charNames:${charKeyToCharName(
               database.chars.LocationToCharacterKey(art.location),
               gender
             )}`

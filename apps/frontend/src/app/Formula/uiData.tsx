@@ -559,7 +559,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
           <Translate ns="weaponNames_gen" key18={source} />
         )) ||
         (allCharacterSheetKeys.includes(source as CharacterSheetKey) && (
-          <Translate ns="charNames_gen" key18={source} />
+          <Translate ns="sillyWisher_charNames" key18={source} />
         )))
     const sourceDisplay = sourceText ? (
       <ColorText color="secondary"> ({sourceText})</ColorText>

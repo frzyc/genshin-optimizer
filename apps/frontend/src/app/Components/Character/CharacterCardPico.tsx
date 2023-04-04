@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
@@ -144,10 +145,12 @@ export default function CharacterCardPico({
           <Box display="flex" className={`grad-${characterSheet.rarity}star`}>
             <Box
               component="img"
-              src={characterAsset(characterKey, 'iconSide', gender)}
+              src={
+                portrait(characterKey, gender) ||
+                characterAsset(characterKey, 'iconSide', gender)
+              }
               maxWidth="100%"
               maxHeight="100%"
-              sx={{ transform: 'scale(1.4)', transformOrigin: 'bottom' }}
               draggable={false}
             />
           </Box>

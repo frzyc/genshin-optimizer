@@ -6,8 +6,8 @@ const ThumbSide = styled('img')(({ theme }) => ({
   height: `2.3em`,
   lineHeight: 1,
   verticalAlign: 'text-bottom',
-  marginTop: theme.spacing(-3),
-  marginLeft: theme.spacing(-1.25),
+  marginTop: theme.spacing(-2),
+  marginLeft: theme.spacing(-1),
   marginRight: theme.spacing(-1),
   marginBottom: theme.spacing(-1),
 }))

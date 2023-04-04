@@ -54,3 +54,6 @@ export function trans(
     ),
   ]
 }
+export function sillyNameTrans(strKey: CharTransKey): Displayable {
+  return <Translate ns={`sillyWisher_charNames`} key18={strKey} />
+}

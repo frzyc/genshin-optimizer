@@ -1,4 +1,11 @@
 import { charCard } from '@genshin-optimizer/char-cards'
+import type {
+  AscensionKey,
+  CharacterKey,
+  ElementKey,
+} from '@genshin-optimizer/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { splash } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Badge,
@@ -33,12 +40,6 @@ import { ElementIcon } from '../../../../KeyMap/StatIcon'
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
 import useCharMeta from '../../../../ReactHooks/useCharMeta'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
-import type {
-  AscensionKey,
-  CharacterKey,
-  ElementKey,
-} from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { range } from '../../../../Util/Util'
 import EquipmentSection from './EquipmentSection'
 
@@ -133,27 +134,15 @@ function CharacterProfileCard() {
   return (
     <CardLight sx={{ height: '100%' }}>
       <Box sx={{ position: 'relative' }}>
-        <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
-          <Typography
-            variant="h6"
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              left: '50%',
-              bottom: 0,
-              transform: 'translate(-50%, -50%)',
-              opacity: 0.75,
-              textAlign: 'center',
-            }}
-          >
-            <StarsDisplay stars={characterSheet.rarity} colored />
-          </Typography>
+        <Box
+          src={splash(characterKey, gender) || charCard(characterKey, gender)}
+          component="img"
+          width="100%"
+          height="auto"
+        />
+        <Box sx={{ width: '100%', height: '100%' }}>
           <Box
             sx={{
-              position: 'absolute',
-              left: '50%',
-              bottom: '7%',
-              transform: 'translate(-50%, -50%)',
               opacity: 0.85,
               width: '100%',
               display: 'flex',
@@ -178,6 +167,16 @@ function CharacterProfileCard() {
               }
             />
           </Box>
+          <Typography
+            variant="h6"
+            sx={{
+              width: '100%',
+              opacity: 0.75,
+              textAlign: 'center',
+            }}
+          >
+            <StarsDisplay stars={characterSheet.rarity} colored />
+          </Typography>
           <Box sx={{ position: 'absolute', left: 0, top: 0 }}>
             <IconButton
               sx={{ p: 1 }}
@@ -195,12 +194,6 @@ function CharacterProfileCard() {
             <SqBadge>{getLevelString(level, ascension)}</SqBadge>
           </Typography>
         </Box>
-        <Box
-          src={charCard(characterKey, gender)}
-          component="img"
-          width="100%"
-          height="auto"
-        />
       </Box>
       <Box>
         <CardActionArea sx={{ p: 1 }} onClick={() => navigate('talent')}>

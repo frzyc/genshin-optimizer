@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -308,23 +309,27 @@ function TeammateAutocomplete({
     'renderInput' | 'onChange' | 'options'
   >
 }) {
-  const { t } = useTranslation(['charNames_gen', 'page_character', 'sheet_gen'])
+  const { t } = useTranslation([
+    'sillyWisher_charNames',
+    'page_character',
+    'sheet_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const toText = useCallback(
     (key: CharacterKey): string =>
       key.startsWith('Traveler')
-        ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(
+        ? `${t(`sillyWisher_charNames:${charKeyToCharName(key, gender)}`)} (${t(
             `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
           )})`
-        : t(`charNames_gen:${key}`),
+        : t(`sillyWisher_charNames:${key}`),
     [t, gender]
   )
   const toImg = useCallback(
     (key: CharacterKey | '') =>
       key ? (
         <ThumbSide
-          src={characterAsset(key, 'iconSide', gender)}
+          src={portrait(key, gender) || characterAsset(key, 'iconSide', gender)}
           sx={{ pr: 1 }}
         />
       ) : (

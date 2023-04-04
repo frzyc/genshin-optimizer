@@ -1,4 +1,5 @@
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -7,8 +8,8 @@ import { DatabaseContext } from '../../Database/Database'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import type { LocationCharacterKey } from '../../Types/consts'
 import {
-  charKeyToCharName,
   allLocationCharacterKeys,
+  charKeyToCharName,
   travelerKeys,
 } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
@@ -26,13 +27,13 @@ export default function LocationFilterMultiAutocomplete({
   totals: Record<LocationCharacterKey, string>
   disabled?: boolean
 }) {
-  const { t } = useTranslation(['ui', 'artifact', 'charNames_gen'])
+  const { t } = useTranslation(['ui', 'artifact', 'sillyWisher_charNames'])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const toText = useCallback(
     (key: LocationCharacterKey): string =>
       t(
-        `charNames_gen:${charKeyToCharName(
+        `sillyWisher_charNames:${charKeyToCharName(
           database.chars.LocationToCharacterKey(key),
           gender
         )}`
@@ -42,12 +43,15 @@ export default function LocationFilterMultiAutocomplete({
   const toImg = useCallback(
     (key: LocationCharacterKey) => (
       <CharIconSide
-        src={characterAsset(
-          database.chars.LocationToCharacterKey(key),
-          'iconSide',
-          gender
-        )}
-        size={3}
+        src={
+          portrait(database.chars.LocationToCharacterKey(key), gender) ||
+          characterAsset(
+            database.chars.LocationToCharacterKey(key),
+            'iconSide',
+            gender
+          )
+        }
+        size={2}
       />
     ),
     [database, gender]

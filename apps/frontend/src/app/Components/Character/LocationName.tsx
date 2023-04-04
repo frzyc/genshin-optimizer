@@ -1,5 +1,6 @@
 import type { LocationKey } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { BusinessCenter } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material'
 import { useContext, useMemo } from 'react'
@@ -25,12 +26,18 @@ export default function LocationName({ location }: { location: LocationKey }) {
       {location && characterSheet?.name ? (
         <Box>
           <CharIconSide
-            src={characterAsset(
-              database.chars.LocationToCharacterKey(location),
-              'iconSide',
-              gender
-            )}
-            size={3}
+            src={
+              portrait(
+                database.chars.LocationToCharacterKey(location),
+                gender
+              ) ||
+              characterAsset(
+                database.chars.LocationToCharacterKey(location),
+                'iconSide',
+                gender
+              )
+            }
+            size={2}
             sideMargin
           />
           <Box sx={{ pr: 1 }} component="span">

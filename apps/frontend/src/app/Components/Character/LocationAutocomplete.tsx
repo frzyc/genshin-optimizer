@@ -1,4 +1,5 @@
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
@@ -37,13 +38,13 @@ export function LocationAutocomplete({
   filter = () => true,
   autoCompleteProps = {},
 }: LocationAutocompleteProps) {
-  const { t } = useTranslation(['ui', 'artifact', 'charNames_gen'])
+  const { t } = useTranslation(['ui', 'artifact', 'sillyWisher_charNames'])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const toText = useCallback(
     (key: LocationCharacterKey): string =>
       t(
-        `charNames_gen:${charKeyToCharName(
+        `sillyWisher_charNames:${charKeyToCharName(
           database.chars.LocationToCharacterKey(key),
           gender
         )}`
@@ -56,11 +57,14 @@ export function LocationAutocomplete({
         <BusinessCenter />
       ) : (
         <ThumbSide
-          src={characterAsset(
-            database.chars.LocationToCharacterKey(key),
-            'iconSide',
-            gender
-          )}
+          src={
+            portrait(database.chars.LocationToCharacterKey(key), gender) ||
+            characterAsset(
+              database.chars.LocationToCharacterKey(key),
+              'iconSide',
+              gender
+            )
+          }
           sx={{ pr: 1 }}
         />
       ),

@@ -1,11 +1,11 @@
-import { trans } from '../../SheetUtil'
+import { sillyNameTrans, trans } from '../../SheetUtil'
 import Traveler from '../Traveler'
 const [chg] = trans('char', 'TravelerM')
 
 export default {
   sheet: {
     ...Traveler.sheet,
-    name: chg('name'),
+    name: sillyNameTrans('TravelerM'),
     gender: 'M',
     constellationName: chg('constellationName'),
     title: chg('title'),

@@ -5,6 +5,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,
@@ -333,7 +334,10 @@ function Header({
         >
           <Box
             component="img"
-            src={characterAsset(characterKey, 'icon', gender)}
+            src={
+              portrait(characterKey, gender) ||
+              characterAsset(characterKey, 'icon', gender)
+            }
             width="100%"
             height="auto"
             maxWidth={256}

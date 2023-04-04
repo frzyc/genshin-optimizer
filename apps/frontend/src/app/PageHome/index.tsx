@@ -22,6 +22,7 @@ import ResinCard from './ResinCard'
 import TeamCard from './TeamCard'
 import VidGuideCard from './VidGuideCard'
 import package_json from 'package.json'
+import SillyCard from './SillyCard'
 
 export default function PageHome() {
   const theme = useTheme()
@@ -37,6 +38,7 @@ export default function PageHome() {
           xl={4}
           sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
         >
+          <SillyCard />
           <QuickLinksCard />
           <ResinCard />
         </Grid>
@@ -58,6 +60,7 @@ export default function PageHome() {
   return (
     <Box my={1} display="flex" flexDirection="column" gap={1}>
       <IntroCard />
+      <SillyCard />
       <QuickLinksCard />
       <InventoryCard />
       <ResinCard />

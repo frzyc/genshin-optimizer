@@ -5,6 +5,7 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
 import {
@@ -79,7 +80,7 @@ export default function CharacterSelectionModal({
   filter = () => true,
   newFirst = false,
 }: CharacterSelectionModalProps) {
-  const { t } = useTranslation(['page_character', 'charNames_gen'])
+  const { t } = useTranslation(['page_character', 'sillyWisher_charNames'])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -338,7 +339,10 @@ function SelectionCard({
               >
                 <Box
                   component="img"
-                  src={characterAsset(characterKey, 'icon', gender)}
+                  src={
+                    portrait(characterKey, gender) ||
+                    characterAsset(characterKey, 'icon', gender)
+                  }
                   width="100%"
                   height="auto"
                   maxWidth={256}

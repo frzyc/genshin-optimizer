@@ -6,6 +6,7 @@ import ThumbSide from '../../Components/Character/ThumbSide'
 import { CharacterContext } from '../../Context/CharacterContext'
 import useCharSelectionCallback from '../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../ReactHooks/useDBMeta'
+import { portrait } from '@genshin-optimizer/silly-wisher'
 
 const CharacterSelectionModal = React.lazy(
   () => import('../CharacterSelectionModal')
@@ -33,7 +34,12 @@ export default function CharSelectButton() {
         color="info"
         onClick={() => setshowModal(true)}
         startIcon={
-          <ThumbSide src={characterAsset(characterKey, 'iconSide', gender)} />
+          <ThumbSide
+            src={
+              portrait(characterKey, gender) ||
+              characterAsset(characterKey, 'iconSide', gender)
+            }
+          />
         }
       >
         {characterSheet?.name ?? t('selectCharacter')}
