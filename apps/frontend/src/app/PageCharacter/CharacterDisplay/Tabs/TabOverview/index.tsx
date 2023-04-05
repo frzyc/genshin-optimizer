@@ -230,7 +230,7 @@ function SillyCoverArea({ src, level, ascension }) {
   const { characterSheet } = useContext(CharacterContext)
 
   return (
-    <Box>
+    <Box sx={{ position: 'relative' }}>
       <Box src={src} component="img" width="100%" height="auto" />
       <Box sx={{ width: '100%', height: '100%' }}>
         <Box
