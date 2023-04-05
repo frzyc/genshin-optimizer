@@ -5,7 +5,6 @@ import {
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
-import { portrait } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import type { TooltipProps } from '@mui/material'
 import {

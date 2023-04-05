@@ -2,7 +2,6 @@ import { charCard } from '@genshin-optimizer/char-cards'
 import type {
   AscensionKey,
   CharacterKey,
-  ElementKey,
 } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { splash } from '@genshin-optimizer/silly-wisher'
