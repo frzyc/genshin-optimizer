@@ -5,7 +5,7 @@
     "languageFormat": "Language: {{language}}"
   },
   "sillyCard": {
-    "desc": "We <1>stole</1> borrowed(with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
     "toggle": {
       "enabled": "Silly Optimizer Enabled",
       "disabled": "Silly Optimizer Disabled"

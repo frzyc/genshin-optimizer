@@ -28,7 +28,7 @@ export default function SillyCard() {
       <CardContent>
         <Typography>
           <Trans t={t} i18nKey="settings:sillyCard.desc">
-            We <s>stole</s> borrowed(with permission) all the character assets
+            We <s>stole</s> borrowed (with permission) all the character assets
             from <strong>Silly Wisher</strong> and gene splice it into Genshin
             Optimizer.
           </Trans>
