@@ -1,18 +1,18 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import { portrait } from '@genshin-optimizer/silly-wisher'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
-import { Suspense, useCallback, useEffect, useState } from 'react'
+import { Suspense, useCallback, useContext, useEffect, useState } from 'react'
 import Assets from '../../Assets/Assets'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { ascensionMaxLevel } from '../../Data/LevelData'
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import useCharacter from '../../ReactHooks/useCharacter'
 import useCharMeta from '../../ReactHooks/useCharMeta'
 import useDBMeta from '../../ReactHooks/useDBMeta'
+import { iconAsset } from '../../Util/AssetUtil'
 import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import ConditionalWrapper from '../ConditionalWrapper'
@@ -37,6 +37,7 @@ export default function CharacterCardPico({
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const { gender } = useDBMeta()
+  const { silly } = useContext(SillyContext)
   const characterSheet = getCharSheet(characterKey, gender)
   const onClickHandler = useCallback(
     () => onClick?.(characterKey),
@@ -145,10 +146,7 @@ export default function CharacterCardPico({
           <Box display="flex" className={`grad-${characterSheet.rarity}star`}>
             <Box
               component="img"
-              src={
-                portrait(characterKey, gender) ||
-                characterAsset(characterKey, 'iconSide', gender)
-              }
+              src={iconAsset(characterKey, gender, silly)}
               maxWidth="100%"
               maxHeight="100%"
               draggable={false}

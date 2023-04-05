@@ -32,6 +32,7 @@ import { StarsDisplay } from '../../../../Components/StarDisplay'
 import WeaponCardNano from '../../../../Components/Weapon/WeaponCardNano'
 import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
+import { SillyContext } from '../../../../Context/SillyContext'
 import type { TalentSheetElementKey } from '../../../../Data/Characters/ICharacterSheet'
 import { getLevelString } from '../../../../Data/LevelData'
 import { DatabaseContext } from '../../../../Database/Database'
@@ -106,7 +107,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
 }
 /* Image card with star and name and level */
 function CharacterProfileCard() {
-  const { database } = useContext(DatabaseContext)
+  const { silly } = useContext(SillyContext)
   const {
     characterSheet,
     character: { key: characterKey, team },
@@ -115,8 +116,6 @@ function CharacterProfileCard() {
   const { data } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const navigate = useNavigate()
-  const charEle = data.get(input.charEle).value as ElementKey
-  const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
   const ascension = data.get(input.asc).value as AscensionKey
   const constellation = data.get(input.constellation).value
@@ -130,71 +129,16 @@ function CharacterProfileCard() {
     skill: data.get(input.total.skillBoost).value,
     burst: data.get(input.total.burstBoost).value,
   }
-  const { favorite } = useCharMeta(characterKey)
+  const sillySplash = splash(characterKey, gender)
+  const card = charCard(characterKey, gender)
+
   return (
     <CardLight sx={{ height: '100%' }}>
-      <Box sx={{ position: 'relative' }}>
-        <Box
-          src={splash(characterKey, gender) || charCard(characterKey, gender)}
-          component="img"
-          width="100%"
-          height="auto"
-        />
-        <Box sx={{ width: '100%', height: '100%' }}>
-          <Box
-            sx={{
-              opacity: 0.85,
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              px: 1,
-            }}
-          >
-            <Chip
-              color={charEle}
-              sx={{ height: 'auto' }}
-              label={
-                <Typography
-                  variant="h6"
-                  sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
-                >
-                  <ElementIcon ele={charEle} />
-                  <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
-                    {characterSheet.name}
-                  </Box>
-                  <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} />
-                </Typography>
-              }
-            />
-          </Box>
-          <Typography
-            variant="h6"
-            sx={{
-              width: '100%',
-              opacity: 0.75,
-              textAlign: 'center',
-            }}
-          >
-            <StarsDisplay stars={characterSheet.rarity} colored />
-          </Typography>
-          <Box sx={{ position: 'absolute', left: 0, top: 0 }}>
-            <IconButton
-              sx={{ p: 1 }}
-              color="error"
-              onClick={() =>
-                database.charMeta.set(characterKey, { favorite: !favorite })
-              }
-            >
-              {favorite ? <Favorite /> : <FavoriteBorder />}
-            </IconButton>
-          </Box>
-          <Typography
-            sx={{ p: 1, position: 'absolute', right: 0, top: 0, opacity: 0.8 }}
-          >
-            <SqBadge>{getLevelString(level, ascension)}</SqBadge>
-          </Typography>
-        </Box>
-      </Box>
+      {silly && sillySplash ? (
+        <SillyCoverArea src={sillySplash} level={level} ascension={ascension} />
+      ) : (
+        <CoverArea src={card} level={level} ascension={ascension} />
+      )}
       <Box>
         <CardActionArea sx={{ p: 1 }} onClick={() => navigate('talent')}>
           <Grid container spacing={1} mt={-1}>
@@ -280,5 +224,140 @@ function CharacterProfileCard() {
         </CardActionArea>
       </Box>
     </CardLight>
+  )
+}
+function SillyCoverArea({ src, level, ascension }) {
+  const { characterSheet } = useContext(CharacterContext)
+
+  return (
+    <Box>
+      <Box src={src} component="img" width="100%" height="auto" />
+      <Box sx={{ width: '100%', height: '100%' }}>
+        <Box
+          sx={{
+            opacity: 0.85,
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            px: 1,
+          }}
+        >
+          <CharChip />
+        </Box>
+        <Typography
+          variant="h6"
+          sx={{
+            width: '100%',
+            opacity: 0.75,
+            textAlign: 'center',
+          }}
+        >
+          <StarsDisplay stars={characterSheet.rarity} colored />
+        </Typography>
+        <FavoriteButton />
+        <LevelBadge level={level} ascension={ascension} />
+      </Box>
+    </Box>
+  )
+}
+
+function CoverArea({ src, level, ascension }) {
+  const { characterSheet } = useContext(CharacterContext)
+
+  return (
+    <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'absolute', width: '100%', height: '100%' }}>
+        <Typography
+          variant="h6"
+          sx={{
+            position: 'absolute',
+            width: '100%',
+            left: '50%',
+            bottom: 0,
+            transform: 'translate(-50%, -50%)',
+            opacity: 0.75,
+            textAlign: 'center',
+          }}
+        >
+          <StarsDisplay stars={characterSheet.rarity} colored />
+        </Typography>
+        <Box
+          sx={{
+            position: 'absolute',
+            left: '50%',
+            bottom: '7%',
+            transform: 'translate(-50%, -50%)',
+            opacity: 0.85,
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            px: 1,
+          }}
+        >
+          <CharChip />
+        </Box>
+        <FavoriteButton />
+        <LevelBadge level={level} ascension={ascension} />
+      </Box>
+      <Box src={src} component="img" width="100%" height="auto"></Box>
+    </Box>
+  )
+}
+
+function CharChip() {
+  const { characterSheet } = useContext(CharacterContext)
+  const charEle = characterSheet.elementKey
+  return (
+    <Chip
+      color={charEle}
+      sx={{ height: 'auto' }}
+      label={
+        <Typography
+          variant="h6"
+          sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+        >
+          <ElementIcon ele={charEle} />
+          <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
+            {characterSheet.name}
+          </Box>
+          <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />
+        </Typography>
+      }
+    />
+  )
+}
+function LevelBadge({
+  level,
+  ascension,
+}: {
+  level: number
+  ascension: AscensionKey
+}) {
+  return (
+    <Typography
+      sx={{ p: 1, position: 'absolute', right: 0, top: 0, opacity: 0.8 }}
+    >
+      <SqBadge>{getLevelString(level, ascension)}</SqBadge>
+    </Typography>
+  )
+}
+function FavoriteButton() {
+  const {
+    character: { key: characterKey },
+  } = useContext(CharacterContext)
+  const { database } = useContext(DatabaseContext)
+  const { favorite } = useCharMeta(characterKey)
+  return (
+    <Box sx={{ position: 'absolute', left: 0, top: 0 }}>
+      <IconButton
+        sx={{ p: 1 }}
+        color="error"
+        onClick={() =>
+          database.charMeta.set(characterKey, { favorite: !favorite })
+        }
+      >
+        {favorite ? <Favorite /> : <FavoriteBorder />}
+      </IconButton>
+    </Box>
   )
 }

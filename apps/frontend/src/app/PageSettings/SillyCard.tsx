@@ -7,23 +7,42 @@ import {
   Divider,
   Typography,
 } from '@mui/material'
-import CardDark from '../Components/Card/CardDark'
+import { useContext } from 'react'
+import CardLight from '../Components/Card/CardLight'
+import { SillyContext } from '../Context/SillyContext'
 import silly_icon from '../silly_icon.png'
 import DiscordIcon from '../SVGIcons/DiscordIcon'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import { Trans, useTranslation } from 'react-i18next'
 export default function SillyCard() {
+  const { silly, setSilly } = useContext(SillyContext)
+  const { t } = useTranslation(['ui', 'settings'])
   return (
-    <CardDark>
+    <CardLight>
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Avatar src={silly_icon} />
-        <Typography variant="h5"> Silly Wisher has taken over GO!</Typography>
+        <Typography variant="h5"> {t`sillyPageTitle`}</Typography>
       </CardContent>
       <Divider />
       <CardContent>
         <Typography>
-          We <s>stole</s> borrowed(with permission) all the character assets
-          from <strong>Silly Wisher</strong> for the day.
+          <Trans t={t} i18nKey="settings:sillyCard.desc">
+            We <s>stole</s> borrowed(with permission) all the character assets
+            from <strong>Silly Wisher</strong> and gene splice it into Genshin
+            Optimizer.
+          </Trans>
         </Typography>
         <Box display="flex" gap={2} pt={2}>
+          <Button
+            onClick={() => setSilly(!silly)}
+            startIcon={silly ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
+            color={silly ? 'success' : 'secondary'}
+          >
+            {silly
+              ? t`settings:sillyCard.toggle.enabled`
+              : t`settings:sillyCard.toggle.disabled`}
+          </Button>
           <Button
             startIcon={<DiscordIcon />}
             color="discord"
@@ -44,10 +63,10 @@ export default function SillyCard() {
             href="https://play.google.com/store/apps/details?id=com.sketchi.sillywisher"
             target="_blank"
           >
-            Play Store
+            Google Play
           </Button>
         </Box>
       </CardContent>
-    </CardDark>
+    </CardLight>
   )
 }

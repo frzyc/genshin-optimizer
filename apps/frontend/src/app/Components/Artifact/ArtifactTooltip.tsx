@@ -1,21 +1,15 @@
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import { portrait } from '@genshin-optimizer/silly-wisher'
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, Skeleton, Typography } from '@mui/material'
-import { Suspense, useContext } from 'react'
+import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getArtSheet } from '../../Data/Artifacts'
 import Artifact from '../../Data/Artifacts/Artifact'
-import { DatabaseContext } from '../../Database/Database'
 import KeyMap, { cacheValueString } from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
-import useDBMeta from '../../ReactHooks/useDBMeta'
 import { iconInlineProps } from '../../SVGIcons'
 import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
-import { charKeyToCharName } from '../../Types/consts'
 import { clamp } from '../../Util/Util'
 import BootstrapTooltip from '../BootstrapTooltip'
-import ThumbSide from '../Character/ThumbSide'
+import LocationName from '../Character/LocationName'
 import SqBadge from '../SqBadge'
 import { StarsDisplay } from '../StarDisplay'
 import SlotIcon from './SlotIcon'
@@ -45,10 +39,7 @@ export default function ArtifactTooltip({
   )
 }
 function ArtifactData({ art }: { art: ICachedArtifact }) {
-  const { t } = useTranslation(['ui', 'sillyWisher_charNames'])
   const { t: tk } = useTranslation('statKey_gen')
-  const { database } = useContext(DatabaseContext)
-  const { gender } = useDBMeta()
   const sheet = getArtSheet(art.setKey)
   const { slotKey, level, rarity, mainStatKey, substats } = art
   const slotName = sheet.getSlotName(slotKey)
@@ -99,41 +90,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
       </Box>
 
       <Typography color="success.main">{sheet.name}</Typography>
-      {art.location ? (
-        <Typography
-          color="secondary.main"
-          sx={{ display: 'flex', alignItems: 'center' }}
-        >
-          <ThumbSide
-            src={
-              portrait(
-                database.chars.LocationToCharacterKey(art.location),
-                gender
-              ) ||
-              characterAsset(
-                database.chars.LocationToCharacterKey(art.location),
-                'iconSide',
-                gender
-              )
-            }
-            sx={{ pr: 1 }}
-          />
-          {t(
-            `sillyWisher_charNames:${charKeyToCharName(
-              database.chars.LocationToCharacterKey(art.location),
-              gender
-            )}`
-          )}
-        </Typography>
-      ) : (
-        <Typography
-          color="secondary.main"
-          sx={{ display: 'flex', alignItems: 'center' }}
-        >
-          <BusinessCenterIcon />
-          {t('ui:inventory')}
-        </Typography>
-      )}
+      <LocationName color="secondary.main" location={art.location} />
     </Box>
   )
 }

@@ -1,6 +1,4 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import { portrait } from '@genshin-optimizer/silly-wisher'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -16,17 +14,18 @@ import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../Components/Card/CardLight'
 import CharacterCard from '../../../Components/Character/CharacterCard'
-import ThumbSide from '../../../Components/Character/ThumbSide'
 import ColorText from '../../../Components/ColoredText'
 import DocumentDisplay from '../../../Components/DocumentDisplay'
 import { NodeFieldDisplay } from '../../../Components/FieldDisplay'
 import type { GeneralAutocompleteOption } from '../../../Components/GeneralAutocomplete'
 import { GeneralAutocomplete } from '../../../Components/GeneralAutocomplete'
+import CharIconSide from '../../../Components/Image/CharIconSide'
 import { InfoTooltipInline } from '../../../Components/InfoTooltip'
 import type { CharacterContextObj } from '../../../Context/CharacterContext'
 import { CharacterContext } from '../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../Context/DataContext'
 import { DataContext } from '../../../Context/DataContext'
+import { SillyContext } from '../../../Context/SillyContext'
 import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
 import { getCharSheet } from '../../../Data/Characters'
 import { resonanceSheets } from '../../../Data/Resonance'
@@ -317,35 +316,25 @@ function TeammateAutocomplete({
   ])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const toTextSilly = useCallback(
-    (key: CharacterKey): string =>
+  const { silly } = useContext(SillyContext)
+  const namesCB = useCallback(
+    (key: CharacterKey, silly: boolean): string =>
       key.startsWith('Traveler')
-        ? `${t(`sillyWisher_charNames:${charKeyToCharName(key, gender)}`)} (${t(
+        ? `${t(
+            `${
+              silly ? 'sillyWisher_charNames' : 'charNames_gen'
+            }:${charKeyToCharName(key, gender)}`
+          )} (${t(
             `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
           )})`
-        : t(`sillyWisher_charNames:${key}`),
+        : t(`${silly ? 'sillyWisher_charNames' : 'charNames_gen'}:${key}`),
     [t, gender]
   )
-  const toText = useCallback(
-    (key: CharacterKey): string =>
-      key.startsWith('Traveler')
-        ? `${t(`charNames_gen:${charKeyToCharName(key, gender)}`)} (${t(
-            `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
-          )})`
-        : t(`charNames_gen:${key}`),
-    [t, gender]
-  )
+
   const toImg = useCallback(
     (key: CharacterKey | '') =>
-      key ? (
-        <ThumbSide
-          src={portrait(key, gender) || characterAsset(key, 'iconSide', gender)}
-          sx={{ pr: 1 }}
-        />
-      ) : (
-        <PersonAdd />
-      ),
-    [gender]
+      key ? <CharIconSide characterKey={key} /> : <PersonAdd />,
+    []
   ) //
   const isFavorite = useCallback(
     (key: CharacterKey) => database.charMeta.get(key).favorite,
@@ -364,9 +353,9 @@ function TeammateAutocomplete({
         .map(
           (v): GeneralAutocompleteOption<CharacterKey> => ({
             key: v,
-            label: toTextSilly(v),
+            label: namesCB(v, silly),
             favorite: isFavorite(v),
-            alternateNames: [toText(v)],
+            alternateNames: [namesCB(v, false)],
           })
         )
         .sort((a, b) => {
@@ -374,7 +363,7 @@ function TeammateAutocomplete({
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [database.chars.keys, toTextSilly, isFavorite, toText]
+    [database.chars.keys, namesCB, isFavorite, silly]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

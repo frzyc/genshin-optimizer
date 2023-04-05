@@ -218,6 +218,15 @@ export function GeneralAutocompleteMulti<T extends string>({
           />
         ))
       }
+      filterOptions={(options, { inputValue }) =>
+        options.filter(
+          (opt) =>
+            opt.label.toLowerCase().includes(inputValue.toLowerCase()) ||
+            opt.alternateNames?.some((name) =>
+              name.toLowerCase().includes(inputValue.toLowerCase())
+            )
+        )
+      }
       {...acProps}
     />
   )

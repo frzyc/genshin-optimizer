@@ -3,8 +3,6 @@ import type {
   LocationKey,
 } from '@genshin-optimizer/consts'
 import { allTravelerKeys, charKeyToLocCharKey } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import { portrait } from '@genshin-optimizer/silly-wisher'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
@@ -17,7 +15,7 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import { charKeyToCharName } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocomplete } from '../GeneralAutocomplete'
-import ThumbSide from './ThumbSide'
+import CharIconSide from '../Image/CharIconSide'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void
@@ -71,19 +69,11 @@ export function LocationAutocomplete({
       key === '' ? (
         <BusinessCenter />
       ) : (
-        <ThumbSide
-          src={
-            portrait(database.chars.LocationToCharacterKey(key), gender) ||
-            characterAsset(
-              database.chars.LocationToCharacterKey(key),
-              'iconSide',
-              gender
-            )
-          }
-          sx={{ pr: 1 }}
+        <CharIconSide
+          characterKey={database.chars.LocationToCharacterKey(key)}
         />
       ),
-    [database, gender]
+    [database]
   )
   const isFavorite = useCallback(
     (key: LocationCharacterKey) =>

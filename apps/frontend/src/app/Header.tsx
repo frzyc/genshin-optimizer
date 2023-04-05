@@ -31,6 +31,7 @@ import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import Assets from './Assets/Assets'
+import { SillyContext } from './Context/SillyContext'
 import { DatabaseContext } from './Database/Database'
 import useDBMeta from './ReactHooks/useDBMeta'
 import useForceUpdate from './ReactHooks/useForceUpdate'
@@ -158,7 +159,7 @@ function HeaderContent({ anchor }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const { t } = useTranslation('ui')
-
+  const { silly } = useContext(SillyContext)
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -192,12 +193,18 @@ function HeaderContent({ anchor }) {
             component={RouterLink}
             to="/"
             label={
-              <Box display="flex" alignItems="center">
-                <Avatar src={silly_icon} />
+              silly ? (
+                <Box display="flex" alignItems="center">
+                  <Avatar src={silly_icon} />
+                  <Typography variant="h6" sx={{ px: 1 }}>
+                    {t('sillyPageTitle')}
+                  </Typography>
+                </Box>
+              ) : (
                 <Typography variant="h6" sx={{ px: 1 }}>
-                  Silly Optimizer
+                  {t('pageTitle')}
                 </Typography>
-              </Box>
+              )
             }
           />
           {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
@@ -251,6 +258,7 @@ function MobileHeader({ anchor, currentTab }) {
   }
 
   const { t } = useTranslation('ui')
+  const { silly } = useContext(SillyContext)
   return (
     <>
       <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
@@ -272,7 +280,9 @@ function MobileHeader({ anchor, currentTab }) {
               disabled={currentTab === ''}
               onClick={handleDrawerToggle}
             >
-              <ListItemText>Silly Optimizer</ListItemText>
+              <ListItemText>
+                {silly ? t('sillyPageTitle') : t('pageTitle')}
+              </ListItemText>
             </ListItemButton>
             {mobileContent.map(
               ({ i18Key, value, to, icon, textSuffix: extra }) => (
@@ -305,7 +315,7 @@ function MobileHeader({ anchor, currentTab }) {
             startIcon={<Avatar src={silly_icon} />}
           >
             <Typography variant="h6" noWrap component="div">
-              Silly Optimizer
+              {silly ? t('sillyPageTitle') : t('pageTitle')}
             </Typography>
           </Button>
           <Box flexGrow={1} />
