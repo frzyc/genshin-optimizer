@@ -119,10 +119,11 @@ lines.forEach((line) => {
     id, // indonesian
     pt, // Portuguese(Brazil)
     ru, // Russian
-    ,
-    // Polish
+    _po, // Polish
     vi, // Vietnamese
-    tr, // Turkish // Arabic, Filipino / Tagalog
+    tr, // Turkish
+    _ar, // Arabic,
+    _fi, // Filipino / Tagalog
   ] = line.split(',')
   const characterKey = swKeyMap[skey as keyof typeof swKeyMap]
   if (!characterKey) return

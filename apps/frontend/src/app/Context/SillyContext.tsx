@@ -18,5 +18,5 @@ export function useSilly(): SillyContextObj {
     if (silly) localStorage.setItem(lsKey, 'on')
     else localStorage.removeItem(lsKey)
   }, [silly])
-  return useMemo(() => ({ silly, setSilly }), [silly, setSilly])
+  return useMemo(() => ({ silly, setSilly }), [silly])
 }
