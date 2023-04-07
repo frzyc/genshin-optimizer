@@ -314,7 +314,7 @@ function Header({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.7,
+            opacity: 0.5,
             backgroundImage: `url(${characterAsset(
               characterKey,
               'banner',
@@ -328,27 +328,21 @@ function Header({
       >
         <Box
           flexShrink={1}
-          sx={{ maxWidth: { xs: '40%', lg: '40%' } }}
+          component="img"
+          src={iconAsset(characterKey, gender, silly)}
+          sx={{ maxWidth: '40%' }}
           alignSelf="flex-end"
           display="flex"
           flexDirection="column"
           zIndex={1}
-        >
-          <Box
-            component="img"
-            src={iconAsset(characterKey, gender, silly)}
-            width="100%"
-            height="auto"
-            maxWidth={256}
-            sx={{ mt: 'auto' }}
-          />
-        </Box>
+        />
         <Box
           flexGrow={1}
           sx={{ py: 1, pr: 1 }}
           display="flex"
           flexDirection="column"
           zIndex={1}
+          justifyContent="space-between"
         >
           {children}
         </Box>
@@ -382,43 +376,43 @@ function HeaderContent() {
         color={characterEle}
         sx={{ opacity: 0.85 }}
       />
-      <Grid container spacing={1} flexWrap="nowrap">
-        <Grid item sx={{ textShadow: '0 0 5px gray' }}>
+      <Box display="flex" gap={1} sx={{ textShadow: '0 0 5px gray' }}>
+        <Box>
           <Typography component="span" variant="h6" whiteSpace="nowrap">
             Lv. {characterLevel}
           </Typography>
           <Typography component="span" variant="h6" color="text.secondary">
             /{ascensionMaxLevel[ascension]}
           </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h6">
-            <SqBadge>C{constellation}</SqBadge>
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container spacing={1} flexWrap="nowrap">
-        <Grid item>
-          <Chip
-            color={autoBoost ? 'info' : 'secondary'}
-            label={<strong>{tAuto}</strong>}
-          />
-        </Grid>
-        <Grid item>
-          <Chip
-            color={skillBoost ? 'info' : 'secondary'}
-            label={<strong>{tSkill}</strong>}
-          />
-        </Grid>
-        <Grid item>
-          <Chip
-            color={burstBoost ? 'info' : 'secondary'}
-            label={<strong>{tBurst}</strong>}
-          />
-        </Grid>
-      </Grid>
-      <Typography mt={1}>
-        <StarsDisplay stars={characterSheet.rarity} colored />
+        </Box>
+        <Typography
+          component="span"
+          variant="h6"
+          whiteSpace="nowrap"
+          color={`roll${constellation < 3 ? 3 : constellation}.main`}
+        >
+          C{constellation}
+        </Typography>
+      </Box>
+      <Box display="flex" gap={1}>
+        <Chip
+          size="small"
+          color={autoBoost ? 'info' : 'secondary'}
+          label={<strong>{tAuto}</strong>}
+        />
+        <Chip
+          size="small"
+          color={skillBoost ? 'info' : 'secondary'}
+          label={<strong>{tSkill}</strong>}
+        />
+        <Chip
+          size="small"
+          color={burstBoost ? 'info' : 'secondary'}
+          label={<strong>{tBurst}</strong>}
+        />
+      </Box>
+      <Typography variant="h6" lineHeight={1}>
+        <StarsDisplay stars={characterSheet.rarity} colored inline />
       </Typography>
     </>
   )
