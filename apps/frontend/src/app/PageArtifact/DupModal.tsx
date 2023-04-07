@@ -82,7 +82,9 @@ function DupContent() {
           </CardContent>
         </CardDark>
       ))}
-      {!dupList.length && <Alert severity="success">{t`noDupAlert`}</Alert>}
+      {!dupList.length && (
+        <Alert variant="filled" severity="success">{t`noDupAlert`}</Alert>
+      )}
     </Stack>
   )
 }
