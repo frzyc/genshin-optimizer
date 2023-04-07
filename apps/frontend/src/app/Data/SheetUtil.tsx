@@ -1,14 +1,14 @@
-import type { CharacterKey } from '@genshin-optimizer/consts'
 import { useContext } from 'react'
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
 import type { ReadNode } from '../Formula/type'
 import { customStringRead } from '../Formula/utils'
-import type {
-  ArtifactSetKey,
-  CharacterSheetKey,
-  WeaponKey,
-} from '../Types/consts'
+import type { CharacterSheetKey } from '../Types/consts'
 
 export const st = (strKey: string, values?: object) => (
   <Translate ns="sheet" key18={strKey} values={values} />
@@ -47,9 +47,15 @@ export function trans(
   typeKey: 'char' | 'weapon' | 'artifact',
   key: CharTransKey | WeaponKey | ArtifactSetKey
 ): Translated {
+  const nogen =
+    (typeKey === 'char' && key === 'Somnia') ||
+    (typeKey === 'weapon' && key === 'QuantumCatalyst')
   return [
     (strKey: string) => (
-      <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} />
+      <Translate
+        ns={nogen ? `${typeKey}_${key}` : `${typeKey}_${key}_gen`}
+        key18={strKey}
+      />
     ),
     (strKey: string, values?: object) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
