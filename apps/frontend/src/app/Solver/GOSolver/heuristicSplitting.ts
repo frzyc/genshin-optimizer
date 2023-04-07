@@ -38,7 +38,8 @@ export function splitOnSetKey(
  *
  * The splitting problem can be efficiently solved because it is has a unique maximum. Solve by starting with any feasible
  *   split, then doing pairwise coordinate ascent until convergence. From numerical experiments, pairwise ascent converges
- *   in 1 iteration, so there is no loop in this code and takes `O(n^2)` steps overall, where `n` is the number of artifacts.
+ *   in 1 iteration, so there is no loop in this code and takes `O(u^2)` steps overall, where `u` is the number of
+ *   unique artifact values. (around ~10-15 on 1200-artifact database)
  */
 export function splitOnStatValue(
   stat: string,
@@ -93,9 +94,6 @@ export function splitOnStatValue(
     return glb <= splitVal + 1e-6 && splitVal <= lub + 1e-6 // Numerical stability
   }
   function scoreSplit(split: number[]) {
-    // TODO: fix this its broken
-    // return split.reduce((ltot, sp) => ltot * sp, 1) + split.reduce((rtot, sp, i) => rtot * (artVals[i].length - sp), 1)
-
     const counts = allArtifactSlotKeys.map((slot, i) => {
       const cnt = artVals[i]
         .slice(split[i])
