@@ -1,4 +1,3 @@
-// This is a generated index file.
 import icon from './UI_AvatarIcon_Somnia.png'
 import iconSide from './UI_AvatarIcon_Side_Somnia.png'
 import banner from './UI_NameCardPic_Somnia_P.png'

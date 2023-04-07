@@ -1,4 +1,3 @@
-// This is a generated index file.
 import icon from './UI_EquipIcon_Catalyst_Dvalin.png'
 import awakenIcon from './UI_EquipIcon_Catalyst_Dvalin_Awaken.png'
 const data = {
