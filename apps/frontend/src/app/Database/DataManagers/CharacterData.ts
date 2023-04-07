@@ -334,7 +334,7 @@ export class CharacterDataManager extends DataManager<
       })
 
       // Somnia shouldn't be removed on import.
-      idsToRemove.delete("Somnia")
+      idsToRemove.delete('Somnia')
 
       const idtoRemoveArr = Array.from(idsToRemove)
       if (result.keepNotInImport || result.ignoreDups)
