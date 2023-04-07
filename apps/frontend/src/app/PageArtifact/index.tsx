@@ -46,6 +46,8 @@ import {
 } from './ArtifactSort'
 import ProbabilityFilter from './ProbabilityFilter'
 import { probability } from './RollProbability'
+import DifferenceIcon from '@mui/icons-material/Difference'
+import DupModal from './DupModal'
 
 //lazy load the weapon display
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
@@ -61,6 +63,8 @@ export default function PageArtifact() {
   const artifactDisplayState = useDisplayArtifact()
 
   const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
+
+  const [showDup, onShowDup, onHideDup] = useBoolState(false)
 
   const brPt = useMediaQueryUp()
   const maxNumArtifactsToDisplay = numToShowMap[brPt]
@@ -181,6 +185,9 @@ export default function PageArtifact() {
           allowEmpty
         />
       </Suspense>
+      <Suspense fallback={false}>
+        <DupModal show={showDup} onHide={onHideDup} />
+      </Suspense>
       <InfoComponent
         pageKey="artifactPage"
         modalTitle={t`info.title`}
@@ -264,12 +271,24 @@ export default function PageArtifact() {
           setProbabilityFilter={setProbabilityFilter}
         />
       )}
-      <Button
-        fullWidth
-        onClick={onShowEditor}
-        color="info"
-        startIcon={<Add />}
-      >{t`addNew`}</Button>
+      <Grid container columns={columns} spacing={1}>
+        <Grid item xs>
+          <Button
+            fullWidth
+            onClick={onShowEditor}
+            color="info"
+            startIcon={<Add />}
+          >{t`addNew`}</Button>
+        </Grid>
+        <Grid item xs={1}>
+          <Button
+            fullWidth
+            onClick={onShowDup}
+            color="info"
+            startIcon={<DifferenceIcon />}
+          >{t`showDup`}</Button>
+        </Grid>
+      </Grid>
       <Suspense
         fallback={
           <Skeleton
