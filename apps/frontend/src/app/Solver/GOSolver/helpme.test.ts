@@ -1,9 +1,18 @@
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import {
+  ArtifactSetKey,
+  allArtifactSetKeys,
+  allArtifactSlotKeys,
+} from '@genshin-optimizer/consts'
 import type { Setup } from '..'
-import { countBuilds, type RequestFilter } from '../common'
+import { ArtifactsBySlot, countBuilds, type RequestFilter } from '../common'
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { objectKeyMap } from '../../Util/Util'
-import { splitOnSetKey, splitOnStatValue } from './heuristicSplitting'
+import {
+  pickSplitKey,
+  splitOnSetKey,
+  splitOnStatValue,
+} from './heuristicSplitting'
+import { Linear, linearUB } from './linearUB'
 
 const setupcmd: Setup = {
   command: 'setup',
@@ -28925,6 +28934,37 @@ const setupcmd: Setup = {
   ],
 }
 
+function maximizeLinear(arts: ArtifactsBySlot, lins: Linear[]) {
+  const baseVals = lins.map((lin) =>
+    Object.entries(lin).reduce(
+      (accu, [stat, w]) => accu + w * (arts.base[stat] ?? 0),
+      lin.$c
+    )
+  )
+
+  const slotVals = objectKeyMap(allArtifactSlotKeys, (slot) =>
+    lins.map((lin) => {
+      const dot = arts.values[slot].map((art) =>
+        Object.entries(lin).reduce(
+          (accu, [stat, w]) => accu + w * (art.values[stat] ?? 0),
+          0
+        )
+      )
+      return Math.max(...dot)
+    })
+  )
+
+  return lins.map(
+    (_, i) =>
+      baseVals[i] +
+      slotVals.flower[i] +
+      slotVals.plume[i] +
+      slotVals.sands[i] +
+      slotVals.goblet[i] +
+      slotVals.circlet[i]
+  )
+}
+
 describe('debug', () => {
   const splitWorker = new BNBSplitWorker(setupcmd, (_) => {})
   const universalFilter: RequestFilter = objectKeyMap(
@@ -28941,20 +28981,41 @@ describe('debug', () => {
   splitWorker.addFilter(universalFilter)
   const filter = splitWorker.filters[0]
   test('splitSetKey', () => {
-    const splitted = splitWorker.splitOnSetKey('GildedDreams', filter)
-    expect(splitted.reduce((cnt, filt) => cnt + filt.count, 0)).toEqual(
+    const splitted = splitOnSetKey('GildedDreams', filter.arts)
+    expect(splitted.reduce((cnt, arts) => cnt + countBuilds(arts), 0)).toEqual(
       filter.count
     )
   })
   test('splitStatValue', () => {
     const splitted = splitOnStatValue('eleMas', 200, filter.arts)
 
-    // const a = splitted[0]
-    // const b = splitted[splitted.length - 1]
-    // console.log(countBuilds(a) + countBuilds(b))
-
     expect(splitted.reduce((cnt, arts) => cnt + countBuilds(arts), 0)).toEqual(
       filter.count
     )
+  })
+  test('debug', () => {
+    const lub = linearUB(filter.nodes, filter.arts)
+    console.log('Initial: ', maximizeLinear(filter.arts, lub))
+    // const { splitOn, splitVal } = pickSplitKey(lub, filter.arts)
+    const splitOn = 'atk_'
+    const splitVal = .82435
+
+    let nextArts: ArtifactsBySlot[] = []
+    if ((allArtifactSetKeys as readonly string[]).includes(splitOn)) {
+      nextArts = splitOnSetKey(splitOn as ArtifactSetKey, filter.arts)
+    } else {
+      nextArts = splitOnStatValue(splitOn, splitVal, filter.arts)
+    }
+    const score = lub.map((_) => 0)
+    nextArts.forEach((arts, i) => {
+      const lub2 = linearUB(filter.nodes, arts)
+
+      const v1 = maximizeLinear(arts, lub)
+      const v2 = maximizeLinear(arts, lub2)
+
+      v1.forEach((v, i) => (score[i] += (1 - v2[i] / v) / nextArts.length))
+      console.log(i, v1, 'to', v2)
+    })
+    console.log({ splitOn, splitVal }, score)
   })
 })

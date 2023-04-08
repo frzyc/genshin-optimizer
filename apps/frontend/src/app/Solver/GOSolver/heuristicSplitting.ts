@@ -1,7 +1,73 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import type { ArtifactsBySlot } from '../common'
+import { computeFullArtRange, type ArtifactsBySlot } from '../common'
 import { cartesian, objectKeyMap, range } from '../../Util/Util'
+import type { Linear } from './linearUB'
+
+/**
+ * Heuristically picks splitting key based on minimizing the approximation error.
+ *
+ * Computing approximation error is difficult, so we use this scuffed guesstimate is:
+ *   \sqrt[ \sum ((u_i - l_i) * w_i)^2 ]
+ */
+export function pickSplitKey(
+  appxs: Linear[],
+  arts: ArtifactsBySlot
+): { splitOn: string; splitVal: number } {
+  const minMax = computeFullArtRange(arts)
+
+  const allKeys = [
+    ...new Set(
+      appxs.flatMap((appx) => Object.keys(appx).filter((k) => k !== '$c'))
+    ),
+  ]
+
+  const { bestKey } = allKeys.reduce(
+    ({ bestKey, minHeur }, stat) => {
+      const { min, max } = minMax[stat]
+      const oldHeur = appxs.reduce(
+        (h, lin) => h + ((max - min) * (lin[stat] ?? 0)) ** 2,
+        0
+      )
+
+      const { lowerRange, upperRange } = allArtifactSlotKeys.reduce(
+        ({ lowerRange, upperRange }, slot) => {
+          const vals = arts.values[slot].map((art) => art.values[stat])
+          const minv = Math.min(...vals),
+            maxv = Math.max(...vals),
+            mid = (minv + maxv) / 2,
+            glb = Math.max(...vals.filter((v) => v <= mid)),
+            lub = Math.min(...vals.filter((v) => v >= mid))
+          // Method could be improved by tracking lowerRange & upperRange for all stats.
+          return {
+            lowerRange: lowerRange + (glb - minv),
+            upperRange: upperRange + (maxv - lub),
+          }
+        },
+        { lowerRange: 0, upperRange: 0 }
+      )
+      const newHeur =
+        appxs.reduce(
+          (h, lin) =>
+            h +
+            (lowerRange * (lin[stat] ?? 0)) ** 2 +
+            (upperRange * (lin[stat] ?? 0)) ** 2,
+          0
+        ) / 2
+
+      const heur = newHeur - oldHeur
+      if (heur < minHeur) return { bestKey: stat, minHeur: heur }
+      return { bestKey, minHeur }
+    },
+    { bestKey: '', minHeur: Infinity }
+  )
+
+  // Pick key that gives minimum heur (maximum reduction old -> new)
+  return {
+    splitOn: bestKey,
+    splitVal: (minMax[bestKey].min + minMax[bestKey].max) / 2,
+  }
+}
 
 /** Splits a filter based on the set key into 32 chunks. */
 export function splitOnSetKey(
@@ -13,7 +79,7 @@ export function splitOnSetKey(
     return [
       slotArts.filter((art) => art.set === setKey),
       slotArts.filter((art) => art.set !== setKey),
-    ]
+    ].filter((aa) => aa.length > 0)
   })
 
   const splitArts: ArtifactsBySlot[] = cartesian(
@@ -150,7 +216,7 @@ export function splitOnStatValue(
     return [
       arts.values[slot].filter((_, i) => upperIxs.has(i)),
       arts.values[slot].filter((_, i) => !upperIxs.has(i)),
-    ]
+    ].filter((aa) => aa.length > 0)
   })
 
   const splitArts: ArtifactsBySlot[] = cartesian(
