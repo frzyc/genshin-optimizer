@@ -38,7 +38,7 @@ export function pickSplitKey(
             mid = (minv + maxv) / 2,
             glb = Math.max(...vals.filter((v) => v <= mid)),
             lub = Math.min(...vals.filter((v) => v >= mid))
-          // Method could be improved by tracking lowerRange & upperRange for all stats.
+          // Heuristic could be improved by tracking lowerRange & upperRange for all stats.
           return {
             lowerRange: lowerRange + (glb - minv),
             upperRange: upperRange + (maxv - lub),
@@ -194,7 +194,7 @@ export function splitOnStatValue(
   let score = scoreSplit(feas0)
   pairs.forEach(([c1, c2]) => {
     const spl12 = [...feas0]
-    // Can be improved by searching only the boundary values rather than all (i, j).
+    // Speed can be improved by searching only the boundary values rather than all (i, j).
     range(0, artVals[c1].length).forEach((i) =>
       range(0, artVals[c2].length).forEach((j) => {
         spl12[c1] = i

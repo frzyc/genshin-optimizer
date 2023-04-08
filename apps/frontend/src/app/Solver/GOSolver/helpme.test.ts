@@ -1,10 +1,11 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import {
-  ArtifactSetKey,
   allArtifactSetKeys,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
 import type { Setup } from '..'
-import { ArtifactsBySlot, countBuilds, type RequestFilter } from '../common'
+import type { ArtifactsBySlot } from '../common'
+import { countBuilds, type RequestFilter } from '../common'
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { objectKeyMap } from '../../Util/Util'
 import {
@@ -12,7 +13,8 @@ import {
   splitOnSetKey,
   splitOnStatValue,
 } from './heuristicSplitting'
-import { Linear, linearUB } from './linearUB'
+import type { Linear } from './linearUB'
+import { linearUB } from './linearUB'
 
 const setupcmd: Setup = {
   command: 'setup',
@@ -28996,9 +28998,10 @@ describe('debug', () => {
   test('debug', () => {
     const lub = linearUB(filter.nodes, filter.arts)
     console.log('Initial: ', maximizeLinear(filter.arts, lub))
+    const totbuilds = countBuilds(filter.arts)
     // const { splitOn, splitVal } = pickSplitKey(lub, filter.arts)
-    const splitOn = 'atk_'
-    const splitVal = .82435
+    const splitOn = 'atk'
+    const splitVal = 420
 
     let nextArts: ArtifactsBySlot[] = []
     if ((allArtifactSetKeys as readonly string[]).includes(splitOn)) {
@@ -29013,8 +29016,11 @@ describe('debug', () => {
       const v1 = maximizeLinear(arts, lub)
       const v2 = maximizeLinear(arts, lub2)
 
-      v1.forEach((v, i) => (score[i] += (1 - v2[i] / v) / nextArts.length))
-      console.log(i, v1, 'to', v2)
+      v1.forEach(
+        (v, i) =>
+          (score[i] += ((1 - v2[i] / v) * countBuilds(arts)) / totbuilds)
+      )
+      // console.log(i, v1, 'to', v2)
     })
     console.log({ splitOn, splitVal }, score)
   })
