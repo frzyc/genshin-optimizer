@@ -40,6 +40,7 @@ import { StarsDisplay } from '../Components/StarDisplay'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
 import { DataContext } from '../Context/DataContext'
+import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
 import { ascensionMaxLevel } from '../Data/LevelData'
@@ -50,6 +51,7 @@ import useCharMeta from '../ReactHooks/useCharMeta'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import useForceUpdate from '../ReactHooks/useForceUpdate'
 import type { ICachedCharacter } from '../Types/character'
+import { iconAsset } from '../Util/AssetUtil'
 import type { CharacterSortKey } from '../Util/CharacterSort'
 import {
   characterFilterConfigs,
@@ -79,7 +81,11 @@ export default function CharacterSelectionModal({
   filter = () => true,
   newFirst = false,
 }: CharacterSelectionModalProps) {
-  const { t } = useTranslation(['page_character', 'charNames_gen'])
+  const { t } = useTranslation([
+    'page_character',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -268,6 +274,7 @@ function SelectionCard({
   const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const { database } = useContext(DatabaseContext)
+  const { silly } = useContext(SillyContext)
 
   const [open, onOpen, onClose] = useBoolState()
 
@@ -338,7 +345,7 @@ function SelectionCard({
               >
                 <Box
                   component="img"
-                  src={characterAsset(characterKey, 'icon', gender)}
+                  src={iconAsset(characterKey, gender, silly)}
                   width="100%"
                   height="auto"
                   maxWidth={256}

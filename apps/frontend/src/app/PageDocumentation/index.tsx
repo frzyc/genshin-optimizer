@@ -346,7 +346,7 @@ function ArtifactSetKeyPane() {
   )
 }
 function CharacterKeyPane() {
-  const { t } = useTranslation('charNames_gen')
+  const { t } = useTranslation('sillyWisher_charNames')
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const charKeysCode = `type CharacterKey\n  = ${[
@@ -356,7 +356,7 @@ function CharacterKeyPane() {
     .map(
       (k) =>
         `"${k}" //${t(
-          `charNames_gen:${charKeyToCharName(
+          `sillyWisher_charNames:${charKeyToCharName(
             database.chars.LocationToCharacterKey(k),
             gender
           )}`

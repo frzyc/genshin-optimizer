@@ -64,7 +64,11 @@ const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
-  const { t } = useTranslation(['page_character', 'charNames_gen'])
+  const { t } = useTranslation([
+    'page_character',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -107,7 +111,7 @@ export default function PageCharacter() {
       let name = getCharSheet(cKey, gender).name
       // Use translated string
       if (typeof name === 'object')
-        name = t(`charNames_gen:${charKeyToCharName(cKey, gender)}`)
+        name = t(`sillyWisher_charNames:${charKeyToCharName(cKey, gender)}`)
 
       if (!window.confirm(t('removeCharacter', { value: name }))) return
       database.chars.remove(cKey)

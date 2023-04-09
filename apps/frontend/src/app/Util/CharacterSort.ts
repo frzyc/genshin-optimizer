@@ -24,7 +24,7 @@ export function characterSortConfigs(
     new: (ck) => (database.chars.get(ck as CharacterKey) ? 0 : 1),
     name: (ck) =>
       i18n
-        .t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`)
+        .t(`sillyWisher_charNames:${charKeyToCharName(ck, database.gender)}`)
         .toString(),
     level: (ck) => {
       const char = database.chars.get(ck as CharacterKey)
@@ -57,6 +57,10 @@ export function characterFilterConfigs(
       filter.includes(getCharSheet(ck, database.gender).weaponTypeKey),
     name: (ck, filter) =>
       filter === undefined ||
+      i18n
+        .t(`sillyWisher_charNames:${charKeyToCharName(ck, database.gender)}`)
+        .toLowerCase()
+        .includes(filter.toLowerCase()) ||
       i18n
         .t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`)
         .toLowerCase()

@@ -4,6 +4,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import CardDark from '../Components/Card/CardDark'
 import DatabaseCard from './DatabaseCard'
 import LanguageCard from './LanguageCard'
+import SillyCard from './SillyCard'
 
 export default function PageSettings() {
   const { t } = useTranslation(['settings'])
@@ -19,6 +20,7 @@ export default function PageSettings() {
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <LanguageCard />
+        <SillyCard />
         <DatabaseCard />
       </CardContent>
     </CardDark>
