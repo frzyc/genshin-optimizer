@@ -42,6 +42,8 @@ import DeepwoodMemories from './DeepwoodMemories'
 import GildedDreams from './GildedDreams'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
+import NymphsDream from './NymphsDream'
+import DewflowersGlow from './DewflowersGlow'
 const data = {
   ResolutionOfSojourner,
   BraveHeart,
@@ -86,5 +88,7 @@ const data = {
   GildedDreams,
   DesertPavilionChronicle,
   FlowerOfParadiseLost,
+  NymphsDream,
+  DewflowersGlow,
 } as const
 export default data
