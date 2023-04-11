@@ -40,6 +40,7 @@ import CharacterCard from '../Components/Character/CharacterCard'
 import SortByButton from '../Components/SortByButton'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
+import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
@@ -66,9 +67,11 @@ const sortKeys = Object.keys(characterSortMap)
 export default function PageCharacter() {
   const { t } = useTranslation([
     'page_character',
+    // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
     'charNames_gen',
   ])
+  const { silly } = useContext(SillyContext)
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -133,19 +136,19 @@ export default function PageCharacter() {
       .filter(
         filterFunction(
           { element, weaponType, name: deferredSearchTerm },
-          characterFilterConfigs(database)
+          characterFilterConfigs(database, silly)
         )
       )
       .sort(
         sortFunction(
           characterSortMap[sortType] ?? [],
           ascending,
-          characterSortConfigs(database),
+          characterSortConfigs(database, silly),
           ['new', 'favorite']
         )
       )
     return deferredDbDirty && { charKeyList, totalCharNum }
-  }, [deferredDbDirty, database, deferredState, deferredSearchTerm])
+  }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
 
   const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
 

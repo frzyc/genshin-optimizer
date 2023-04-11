@@ -47,6 +47,7 @@ import {
 } from '../../Context/FormulaDataContext'
 import type { ChartData, GraphContextObj } from '../../Context/GraphContext'
 import { GraphContext } from '../../Context/GraphContext'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { DatabaseContext } from '../../Database/Database'
 import useBoolState from '../../ReactHooks/useBoolState'
@@ -101,6 +102,7 @@ function CharacterDisplayCard({
   characterKey,
   onClose,
 }: CharacterDisplayCardProps) {
+  const { silly } = useContext(SillyContext)
   const character = useCharacter(characterKey)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
@@ -111,15 +113,17 @@ function CharacterDisplayCard({
   } = useMatch({ path: '/characters/:charKey/:tab', end: false }) ?? {
     params: { tab: 'overview' },
   }
-  const { t } = useTranslation(['sillyWisher_charNames', 'page_character'])
+  const { t } = useTranslation(['sillyWisher_charNames', 'charNames_gen', 'page_character'])
 
   useTitle(
     useMemo(
       () =>
         `${t(
-          `sillyWisher_charNames:${charKeyToCharName(characterKey, gender)}`
+          `${
+            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          }:${charKeyToCharName(characterKey, gender)}`
         )} - ${t(`page_character:tabs.${tab}`)}`,
-      [t, characterKey, gender, tab]
+      [t, silly, characterKey, gender, tab]
     )
   )
 

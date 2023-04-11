@@ -1,9 +1,11 @@
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/consts'
 import { crawlObject } from '@genshin-optimizer/util'
+import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'
 import { Translate } from '../Components/Translate'
+import { SillyContext } from '../Context/SillyContext'
 import KeyMap, { valueString } from '../KeyMap'
 import type { CharacterSheetKey } from '../Types/consts'
 import { allCharacterSheetKeys } from '../Types/consts'
@@ -559,7 +561,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
           <Translate ns="weaponNames_gen" key18={source} />
         )) ||
         (allCharacterSheetKeys.includes(source as CharacterSheetKey) && (
-          <Translate ns="sillyWisher_charNames" key18={source} />
+          <Translate ns="charNames_gen" key18={source} /> // todo: add silly support
         )))
     const sourceDisplay = sourceText ? (
       <ColorText color="secondary"> ({sourceText})</ColorText>

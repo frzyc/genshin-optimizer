@@ -83,9 +83,11 @@ export default function CharacterSelectionModal({
 }: CharacterSelectionModalProps) {
   const { t } = useTranslation([
     'page_character',
+    // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
     'charNames_gen',
   ])
+  const { silly } = useContext(SillyContext)
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -122,24 +124,27 @@ export default function CharacterSelectionModal({
         .filter(
           filterFunction(
             { element, weaponType, name: deferredSearchTerm },
-            characterFilterConfigs(database)
+            characterFilterConfigs(database, silly)
           )
         )
         .sort(
-          sortFunction(sortByKeys, ascending, characterSortConfigs(database), [
-            'new',
-            'favorite',
-          ])
+          sortFunction(
+            sortByKeys,
+            ascending,
+            characterSortConfigs(database, silly),
+            ['new', 'favorite']
+          )
         )
     )
   }, [
-    database,
-    newFirst,
     deferredState,
+    newFirst,
     deferredDbDirty,
     deferredSearchTerm,
-    gender,
+    database,
+    silly,
     filter,
+    gender,
   ])
 
   const weaponTotals = useMemo(
