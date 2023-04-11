@@ -23,6 +23,7 @@
       "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
+      "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
       "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"],
       "@genshin-optimizer/formula": ["libs/formula/src/index.ts"]

@@ -39,13 +39,13 @@ export function solveLP(c: number[], Ab: number[][]) {
 
   const pivotHistory: Pivot[] = [] // Keep track of all chosen pivots for backtracking later
 
-  while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < 0)) {
+  while (tableau.some((t, i) => i < rows - 1 && t[cols - 1] < -zero)) {
     const piv = findPiv2(tableau)
     pivotHistory.push(piv)
     pivotInplace(tableau, piv)
   }
 
-  while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < 0)) {
+  while (tableau[rows - 1].some((t, j) => j < cols - 1 && t < -zero)) {
     const piv = findPiv1(tableau)
     pivotHistory.push(piv)
     pivotInplace(tableau, piv)
@@ -83,7 +83,7 @@ function findPiv1(A: number[][]) {
     c = A[0].length
   let minloc = { i: -1, j: -1, cmp: Infinity }
   for (let j = 0; j < c - 1; j++) {
-    if (A[r - 1][j] >= 0) continue
+    if (A[r - 1][j] >= -zero) continue
     for (let i = 0; i < r - 1; i++) {
       if (A[i][j] > zero) {
         const cmp = A[i][c - 1] / A[i][j]
@@ -103,7 +103,7 @@ function findPiv2(A: number[][]) {
     c = A[0].length
   let minloc = { i: -1, j: -1, cmp: Infinity }
   for (let i = 0; i < r - 1; i++) {
-    if (A[i][c - 1] >= 0) continue
+    if (A[i][c - 1] >= -zero) continue
     for (let j = 0; j < c - 1; j++) {
       if (A[i][j] < -zero) {
         const cmp = A[i][c - 1] / A[i][j]

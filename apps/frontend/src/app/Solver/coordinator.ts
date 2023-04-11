@@ -1,3 +1,5 @@
+import { FIFO } from '@genshin-optimizer/util'
+
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },
   Response extends { command?: never; resultType: string }
@@ -47,7 +49,7 @@ export class WorkerCoordinator<
     })()
 
     while (true) {
-      const command = this.commands.find((x) => x.length)?.dequeue()
+      const command = this.commands.find((x) => x.length)?.pop()
       if (command === undefined) {
         const hasCommand = await Promise.race([
           new Promise<boolean>(
@@ -82,7 +84,7 @@ export class WorkerCoordinator<
   /** May be ignored after `execute` ends */
   add(command: Command) {
     const prio = this.prio.get(command.command)!
-    this.commands[prio].enqueue(command)
+    this.commands[prio].push(command)
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
@@ -100,23 +102,5 @@ export class WorkerCoordinator<
       )
     )
     this._workers.forEach((w) => w.postMessage(command))
-  }
-}
-
-// Simple two-stack FIFO implementation
-class FIFO<T> {
-  head: T[] = []
-  tail: T[] = []
-
-  get length(): number {
-    return this.head.length + this.tail.length
-  }
-  enqueue(t: T): void {
-    this.tail.push(t)
-  }
-  dequeue(): T | undefined {
-    if (!this.head.length && this.tail.length)
-      [this.head, this.tail] = [this.tail.reverse(), this.head]
-    return this.head.pop()
   }
 }

@@ -31,6 +31,7 @@ import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
+import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
 import type { ICachedArtifact } from '../../../../../Types/artifact'
@@ -62,7 +63,7 @@ export default function BuildDisplayItem({
     character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)
   const {
-    buildSetting: { mainStatAssumptionLevel },
+    buildSetting: { mainStatAssumptionLevel, allowLocationsState },
   } = useBuildSetting(characterKey)
   const { database } = useContext(DatabaseContext)
   const dataContext = useContext(DataContext)
@@ -156,6 +157,7 @@ export default function BuildDisplayItem({
             newOld={newOld}
             mainStatAssumptionLevel={mainStatAssumptionLevel}
             onClose={close}
+            allowLocationsState={allowLocationsState}
           />
         )}
         <CardContent>
@@ -176,7 +178,7 @@ export default function BuildDisplayItem({
             />
             <Box
               sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}
-            ></Box>
+            />
             {extraButtonsLeft}
             <Button
               size="small"
@@ -216,10 +218,12 @@ function CompareArtifactModal({
   newOld: { newId, oldId },
   mainStatAssumptionLevel,
   onClose,
+  allowLocationsState,
 }: {
   newOld: NewOld
   mainStatAssumptionLevel: number
   onClose: () => void
+  allowLocationsState: AllowLocationsState
 }) {
   const { database } = useContext(DatabaseContext)
   const {
@@ -277,9 +281,11 @@ function CompareArtifactModal({
               editorProps={{ disableSet: true, disableSlot: true }}
               extraButtons={<ExcludeButton id={newId} />}
             />
-            {newLoc && newLoc !== charKeyToLocCharKey(characterKey) && (
-              <ExcludeEquipButton locationKey={newLoc} />
-            )}
+            {newLoc &&
+              newLoc !== charKeyToLocCharKey(characterKey) &&
+              allowLocationsState !== 'all' && (
+                <ExcludeEquipButton locationKey={newLoc} />
+              )}
           </Box>
         </CardContent>
       </CardDark>
@@ -340,16 +346,16 @@ function ExcludeEquipButton({
     database.chars.LocationToCharacterKey(locationKey)
   )
   const {
-    buildSetting: { allowLocations },
+    buildSetting: { excludedLocations },
     buildSettingDispatch,
   } = useBuildSetting(characterKey)
-  const excluded = !allowLocations.includes(locationKey)
+  const excluded = excludedLocations.includes(locationKey)
   const toggle = useCallback(
     () =>
       buildSettingDispatch({
-        allowLocations: toggleArr(allowLocations, locationKey),
+        excludedLocations: toggleArr(excludedLocations, locationKey),
       }),
-    [locationKey, allowLocations, buildSettingDispatch]
+    [locationKey, excludedLocations, buildSettingDispatch]
   )
 
   return (

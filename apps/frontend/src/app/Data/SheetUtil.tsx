@@ -1,5 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
+import { useContext } from 'react'
 import { Translate } from '../Components/Translate'
+import { SillyContext } from '../Context/SillyContext'
 import type { ReadNode } from '../Formula/type'
 import { customStringRead } from '../Formula/utils'
 import type {
@@ -53,4 +55,21 @@ export function trans(
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
     ),
   ]
+}
+export function nameTrans(
+  cKey: CharTransKey,
+  chg: (i18key: string) => Displayable
+): Displayable {
+  return <NameTrans cKey={cKey} chg={chg} />
+}
+function NameTrans({
+  cKey,
+  chg,
+}: {
+  cKey: string
+  chg: (i18key: string) => Displayable
+}) {
+  const { silly } = useContext(SillyContext)
+  if (silly) return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
+  else return chg('name') as JSX.Element
 }

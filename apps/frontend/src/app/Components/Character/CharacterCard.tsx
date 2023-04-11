@@ -21,6 +21,7 @@ import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { ascensionMaxLevel } from '../../Data/LevelData'
 import { DatabaseContext } from '../../Database/Database'
@@ -32,6 +33,7 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { ICachedCharacter } from '../../Types/character'
+import { iconAsset } from '../../Util/AssetUtil'
 import { range } from '../../Util/Util'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
 import CardLight from '../Card/CardLight'
@@ -113,7 +115,13 @@ export default function CharacterCard({
   const { favorite } = useCharMeta(characterKey)
   return (
     <Suspense
-      fallback={<Skeleton variant="rectangular" width="100%" height={600} />}
+      fallback={
+        <Skeleton
+          variant="rectangular"
+          width="100%"
+          height={hideStats ? 300 : 600}
+        />
+      }
     >
       <CardLight
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -276,6 +284,7 @@ function Header({
   onClick?: (characterKey: CharacterKey) => void
 }) {
   const { gender } = useDBMeta()
+  const { silly } = useContext(SillyContext)
   const characterSheet = getCharSheet(characterKey, gender)
 
   const actionWrapperFunc = useCallback(
@@ -327,7 +336,7 @@ function Header({
         >
           <Box
             component="img"
-            src={characterAsset(characterKey, 'icon', gender)}
+            src={iconAsset(characterKey, gender, silly)}
             width="100%"
             height="auto"
             maxWidth={256}

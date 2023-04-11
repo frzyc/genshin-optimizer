@@ -1,8 +1,11 @@
 import AddIcon from '@mui/icons-material/Add'
-import BlockIcon from '@mui/icons-material/Block'
+import CheckBoxIcon from '@mui/icons-material/CheckBox'
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import SettingsIcon from '@mui/icons-material/Settings'
 import {
   Box,
   Button,
+  ButtonGroup,
   CardContent,
   Divider,
   Grid,
@@ -41,15 +44,17 @@ import useBuildSetting from '../useBuildSetting'
 
 export default function ExcludeArt({
   disabled = false,
+  excludedTotal,
 }: {
   disabled?: boolean
+  excludedTotal: string
 }) {
   const { t } = useTranslation('page_character_optimize')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
   const {
-    buildSetting: { artExclusion },
+    buildSetting: { artExclusion, useExcludedArts },
     buildSettingDispatch,
   } = useBuildSetting(characterKey)
   const [show, onOpen, onClose] = useBoolState(false)
@@ -57,7 +62,10 @@ export default function ExcludeArt({
   const [showSel, onOpenSel, onCloseSel] = useBoolState(false)
   const onSelect = useCallback(
     (id: string) => {
-      buildSettingDispatch({ artExclusion: [...artExclusion, id] })
+      buildSettingDispatch({
+        artExclusion: [...artExclusion, id],
+        useExcludedArts: true,
+      })
     },
     [buildSettingDispatch, artExclusion]
   )
@@ -65,12 +73,18 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: artExclusion.filter((i) => i !== id),
+        useExcludedArts: true,
       })
     },
     [buildSettingDispatch, artExclusion]
   )
+  const toggleArtExclusion = useCallback(
+    () => buildSettingDispatch({ useExcludedArts: !useExcludedArts }),
+    [buildSettingDispatch, useExcludedArts]
+  )
   return (
     <>
+      {/* Begin modal */}
       <ModalWrapper
         open={show}
         onClose={onClose}
@@ -127,24 +141,44 @@ export default function ExcludeArt({
           </CardContent>
         </CardDark>
       </ModalWrapper>
-      <Button
-        fullWidth
-        onClick={onOpen}
-        disabled={disabled}
-        startIcon={<BlockIcon />}
-        color="info"
-      >
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <Box>{t('excludeArt.title_exclude')}</Box>
-          <SqBadge>
-            <Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>
-              Excluded{' '}
-              <strong>{{ count: numExcludedArt } as TransObject}</strong>{' '}
-              artifacts
-            </Trans>
-          </SqBadge>
-        </Box>
-      </Button>
+
+      {/* Button to open modal */}
+      <ButtonGroup sx={{ display: 'flex', width: '100%' }}>
+        <Button
+          onClick={toggleArtExclusion}
+          disabled={disabled}
+          startIcon={
+            useExcludedArts ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+          }
+          color={useExcludedArts ? 'success' : 'secondary'}
+          sx={{ flexGrow: 1 }}
+        >
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <Box>{t('excludeArt.button_text')}</Box>
+            <SqBadge sx={{ whiteSpace: 'normal' }}>
+              {useExcludedArts ? (
+                <Trans t={t} i18nKey="excludeArt.usingNum">
+                  Using {{ totalStr: excludedTotal } as TransObject} excluded
+                  artifacts
+                </Trans>
+              ) : (
+                <Trans t={t} i18nKey="excludeArt.excNum" count={numExcludedArt}>
+                  {{ count: numExcludedArt } as TransObject} artifacts are
+                  excluded
+                </Trans>
+              )}
+            </SqBadge>
+          </Box>
+        </Button>
+        <Button
+          color="info"
+          onClick={onOpen}
+          disabled={disabled}
+          sx={{ flexShrink: 1 }}
+        >
+          <SettingsIcon />
+        </Button>
+      </ButtonGroup>
     </>
   )
 }

@@ -25,7 +25,13 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
         data.maxIterateSize
       )) {
         postMessage({ command: 'iterate', filter })
-        await Promise.resolve() // in case a `threshold` is sent over
+        // Suspend here in case a `threshold` is sent over
+        //
+        // Make sure to use task-based mechanisms such as `setTimeout` so that
+        // this function suspends until the next event loop. If we instead use
+        // microtask-based ones such as `Promise.resolved`, the suspension will
+        // not be long enough.
+        await new Promise((r) => setTimeout(r))
       }
       break
     case 'iterate':

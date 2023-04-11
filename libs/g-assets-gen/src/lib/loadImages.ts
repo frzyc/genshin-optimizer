@@ -225,12 +225,15 @@ export default function loadImages() {
     const keys = Object.keys(obj)
     const isImg = typeof Object.values(obj)[0] === 'string'
     // generate a index.ts using keys
+    const imports = Object.entries(obj)
+      .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
+      .join('\n')
+    const dataContent = keys.map((k) => `  ${k},`).join('\n')
+
     const indexContent = `// This is a generated index file.
-${Object.entries(obj)
-  .map(([k, v]) => `import ${k} from "./${isImg ? `${v}.png` : k}"`)
-  .join('\n')}
+${imports}
 const data = {
-  ${keys.join(',\n  ')}
+${dataContent}
 } as const
 export default data
 `

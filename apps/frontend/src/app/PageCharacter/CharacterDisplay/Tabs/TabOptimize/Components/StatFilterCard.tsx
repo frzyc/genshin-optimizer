@@ -1,4 +1,4 @@
-import { Box, CardContent, Typography } from '@mui/material'
+import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import CardLight from '../../../../../Components/Card/CardLight'
@@ -30,21 +30,31 @@ export default function StatFilterCard({
     <Box>
       <CardLight>
         <CardContent
-          sx={{ display: 'flex', gap: 1, justifyContent: 'space-between' }}
+          sx={{
+            display: 'flex',
+            gap: 1,
+            justifyContent: 'space-between',
+            flexDirection: 'column',
+          }}
         >
-          <Typography>{t`constraintFilter.title`}</Typography>
-          <InfoTooltip
-            title={<Typography>{t`constraintFilter.tooltip`}</Typography>}
-          />
+          <Box display="flex" justifyContent="space-between">
+            <Typography
+              sx={{ fontWeight: 'bold' }}
+            >{t`constraintFilter.title`}</Typography>
+            <InfoTooltip
+              title={<Typography>{t`constraintFilter.tooltip`}</Typography>}
+            />
+          </Box>
         </CardContent>
+        <Divider />
+        <Box display="flex" flexDirection="column" gap={0.5}>
+          <OptimizationTargetEditorList
+            statFilters={statFilters}
+            setStatFilters={setStatFilters}
+            disabled={disabled}
+          />
+        </Box>
       </CardLight>
-      <Box display="flex" flexDirection="column" gap={0.5}>
-        <OptimizationTargetEditorList
-          statFilters={statFilters}
-          setStatFilters={setStatFilters}
-          disabled={disabled}
-        />
-      </Box>
     </Box>
   )
 }
