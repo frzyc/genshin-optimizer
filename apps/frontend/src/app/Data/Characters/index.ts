@@ -43,7 +43,6 @@ import Lisa from './Lisa'
 import Mika from './Mika'
 import Mona from './Mona'
 import Nahida from './Nahida'
-import Somnia from './Somnia'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
@@ -55,6 +54,7 @@ import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
+import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
 import Wanderer from './Wanderer'
@@ -118,7 +118,6 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Mika,
   Mona,
   Nahida,
-  Somnia,
   Nilou,
   Ningguang,
   Noelle,
@@ -130,6 +129,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Sayu,
   Shenhe,
   ShikanoinHeizou,
+  Somnia,
   Sucrose,
   Tartaglia,
   Wanderer,

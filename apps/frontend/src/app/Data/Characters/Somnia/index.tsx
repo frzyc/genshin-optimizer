@@ -293,7 +293,7 @@ const skillC5 = greaterEq(input.constellation, 5, 3)
 const data = dataObjForCharacterSheet(
   key,
   elementKey,
-  'fontaine',
+  'mondstadt',
   data_gen,
   dmgFormulas,
   {

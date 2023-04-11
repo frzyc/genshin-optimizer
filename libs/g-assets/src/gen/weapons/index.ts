@@ -1,312 +1,313 @@
 // This is a generated index file.
-import DullBlade from './DullBlade'
-import SilverSword from './SilverSword'
-import CoolSteel from './CoolSteel'
-import HarbingerOfDawn from './HarbingerOfDawn'
-import TravelersHandySword from './TravelersHandySword'
-import DarkIronSword from './DarkIronSword'
-import FilletBlade from './FilletBlade'
-import SkyriderSword from './SkyriderSword'
-import FavoniusSword from './FavoniusSword'
-import TheFlute from './TheFlute'
-import SacrificialSword from './SacrificialSword'
-import RoyalLongsword from './RoyalLongsword'
-import LionsRoar from './LionsRoar'
-import PrototypeRancour from './PrototypeRancour'
-import IronSting from './IronSting'
-import BlackcliffLongsword from './BlackcliffLongsword'
-import TheBlackSword from './TheBlackSword'
-import TheAlleyFlash from './TheAlleyFlash'
-import SwordOfDescension from './SwordOfDescension'
-import FesteringDesire from './FesteringDesire'
-import AmenomaKageuchi from './AmenomaKageuchi'
-import CinnabarSpindle from './CinnabarSpindle'
-import KagotsurubeIsshin from './KagotsurubeIsshin'
-import SapwoodBlade from './SapwoodBlade'
-import XiphosMoonlight from './XiphosMoonlight'
-import ToukabouShigure from './ToukabouShigure'
-import AquilaFavonia from './AquilaFavonia'
-import SkywardBlade from './SkywardBlade'
-import FreedomSworn from './FreedomSworn'
-import SummitShaper from './SummitShaper'
-import PrimordialJadeCutter from './PrimordialJadeCutter'
-import MistsplitterReforged from './MistsplitterReforged'
-import HaranGeppakuFutsu from './HaranGeppakuFutsu'
-import KeyOfKhajNisut from './KeyOfKhajNisut'
-import LightOfFoliarIncision from './LightOfFoliarIncision'
-import WasterGreatsword from './WasterGreatsword'
-import OldMercsPal from './OldMercsPal'
-import FerrousShadow from './FerrousShadow'
-import BloodtaintedGreatsword from './BloodtaintedGreatsword'
-import WhiteIronGreatsword from './WhiteIronGreatsword'
-import DebateClub from './DebateClub'
-import SkyriderGreatsword from './SkyriderGreatsword'
-import FavoniusGreatsword from './FavoniusGreatsword'
-import TheBell from './TheBell'
-import SacrificialGreatsword from './SacrificialGreatsword'
-import RoyalGreatsword from './RoyalGreatsword'
-import Rainslasher from './Rainslasher'
-import PrototypeArchaic from './PrototypeArchaic'
-import Whiteblind from './Whiteblind'
-import BlackcliffSlasher from './BlackcliffSlasher'
-import SerpentSpine from './SerpentSpine'
-import LithicBlade from './LithicBlade'
-import SnowTombedStarsilver from './SnowTombedStarsilver'
-import LuxuriousSeaLord from './LuxuriousSeaLord'
-import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
-import MakhairaAquamarine from './MakhairaAquamarine'
 import Akuoumaru from './Akuoumaru'
-import ForestRegalia from './ForestRegalia'
-import MailedFlower from './MailedFlower'
-import SkywardPride from './SkywardPride'
-import WolfsGravestone from './WolfsGravestone'
-import SongOfBrokenPines from './SongOfBrokenPines'
-import TheUnforged from './TheUnforged'
-import RedhornStonethresher from './RedhornStonethresher'
+import AlleyHunter from './AlleyHunter'
+import AmenomaKageuchi from './AmenomaKageuchi'
+import AmosBow from './AmosBow'
+import ApprenticesNotes from './ApprenticesNotes'
+import AquaSimulacra from './AquaSimulacra'
+import AquilaFavonia from './AquilaFavonia'
+import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BeginnersProtector from './BeginnersProtector'
-import IronPoint from './IronPoint'
-import WhiteTassel from './WhiteTassel'
-import Halberd from './Halberd'
-import BlackTassel from './BlackTassel'
-import DragonsBane from './DragonsBane'
-import PrototypeStarglitter from './PrototypeStarglitter'
-import CrescentPike from './CrescentPike'
-import BlackcliffPole from './BlackcliffPole'
-import Deathmatch from './Deathmatch'
-import LithicSpear from './LithicSpear'
-import FavoniusLance from './FavoniusLance'
-import RoyalSpear from './RoyalSpear'
-import DragonspineSpear from './DragonspineSpear'
-import KitainCrossSpear from './KitainCrossSpear'
-import TheCatch from './TheCatch'
-import WavebreakersFin from './WavebreakersFin'
-import Moonpiercer from './Moonpiercer'
-import MissiveWindspear from './MissiveWindspear'
-import StaffOfHoma from './StaffOfHoma'
-import SkywardSpine from './SkywardSpine'
-import VortexVanquisher from './VortexVanquisher'
-import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
-import CalamityQueller from './CalamityQueller'
-import EngulfingLightning from './EngulfingLightning'
-import StaffOfTheScarletSands from './StaffOfTheScarletSands'
-import ApprenticesNotes from './ApprenticesNotes'
-import PocketGrimoire from './PocketGrimoire'
-import MagicGuide from './MagicGuide'
-import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
-import OtherworldlyStory from './OtherworldlyStory'
-import EmeraldOrb from './EmeraldOrb'
-import TwinNephrite from './TwinNephrite'
-import FavoniusCodex from './FavoniusCodex'
-import TheWidsith from './TheWidsith'
-import SacrificialFragments from './SacrificialFragments'
-import RoyalGrimoire from './RoyalGrimoire'
-import SolarPearl from './SolarPearl'
-import PrototypeAmber from './PrototypeAmber'
-import MappaMare from './MappaMare'
 import BlackcliffAgate from './BlackcliffAgate'
-import EyeOfPerception from './EyeOfPerception'
-import WineAndSong from './WineAndSong'
-import Frostbearer from './Frostbearer'
-import DodocoTales from './DodocoTales'
-import HakushinRing from './HakushinRing'
-import OathswornEye from './OathswornEye'
-import WanderingEvenstar from './WanderingEvenstar'
-import FruitOfFulfillment from './FruitOfFulfillment'
-import SkywardAtlas from './SkywardAtlas'
-import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
-import MemoryOfDust from './MemoryOfDust'
-import EverlastingMoonglow from './EverlastingMoonglow'
-import KagurasVerity from './KagurasVerity'
-import AThousandFloatingDreams from './AThousandFloatingDreams'
-import TulaytullahsRemembrance from './TulaytullahsRemembrance'
-import HuntersBow from './HuntersBow'
-import SeasonedHuntersBow from './SeasonedHuntersBow'
-import RavenBow from './RavenBow'
-import SharpshootersOath from './SharpshootersOath'
-import RecurveBow from './RecurveBow'
-import Slingshot from './Slingshot'
-import Messenger from './Messenger'
-import FavoniusWarbow from './FavoniusWarbow'
-import TheStringless from './TheStringless'
-import SacrificialBow from './SacrificialBow'
-import RoyalBow from './RoyalBow'
-import Rust from './Rust'
-import PrototypeCrescent from './PrototypeCrescent'
-import CompoundBow from './CompoundBow'
+import BlackcliffLongsword from './BlackcliffLongsword'
+import BlackcliffPole from './BlackcliffPole'
+import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
-import TheViridescentHunt from './TheViridescentHunt'
-import AlleyHunter from './AlleyHunter'
-import FadingTwilight from './FadingTwilight'
-import MitternachtsWaltz from './MitternachtsWaltz'
-import WindblumeOde from './WindblumeOde'
-import Hamayumi from './Hamayumi'
-import Predator from './Predator'
-import MouunsMoon from './MouunsMoon'
-import KingsSquire from './KingsSquire'
-import EndOfTheLine from './EndOfTheLine'
-import SkywardHarp from './SkywardHarp'
-import AmosBow from './AmosBow'
+import BlackTassel from './BlackTassel'
+import BloodtaintedGreatsword from './BloodtaintedGreatsword'
+import CalamityQueller from './CalamityQueller'
+import CinnabarSpindle from './CinnabarSpindle'
+import CompoundBow from './CompoundBow'
+import CoolSteel from './CoolSteel'
+import CrescentPike from './CrescentPike'
+import DarkIronSword from './DarkIronSword'
+import Deathmatch from './Deathmatch'
+import DebateClub from './DebateClub'
+import DodocoTales from './DodocoTales'
+import DragonsBane from './DragonsBane'
+import DragonspineSpear from './DragonspineSpear'
+import DullBlade from './DullBlade'
 import ElegyForTheEnd from './ElegyForTheEnd'
-import PolarStar from './PolarStar'
-import AquaSimulacra from './AquaSimulacra'
-import ThunderingPulse from './ThunderingPulse'
+import EmeraldOrb from './EmeraldOrb'
+import EndOfTheLine from './EndOfTheLine'
+import EngulfingLightning from './EngulfingLightning'
+import EverlastingMoonglow from './EverlastingMoonglow'
+import EyeOfPerception from './EyeOfPerception'
+import FadingTwilight from './FadingTwilight'
+import FavoniusCodex from './FavoniusCodex'
+import FavoniusGreatsword from './FavoniusGreatsword'
+import FavoniusLance from './FavoniusLance'
+import FavoniusSword from './FavoniusSword'
+import FavoniusWarbow from './FavoniusWarbow'
+import FerrousShadow from './FerrousShadow'
+import FesteringDesire from './FesteringDesire'
+import FilletBlade from './FilletBlade'
+import ForestRegalia from './ForestRegalia'
+import FreedomSworn from './FreedomSworn'
+import Frostbearer from './Frostbearer'
+import FruitOfFulfillment from './FruitOfFulfillment'
+import HakushinRing from './HakushinRing'
+import Halberd from './Halberd'
+import Hamayumi from './Hamayumi'
+import HaranGeppakuFutsu from './HaranGeppakuFutsu'
+import HarbingerOfDawn from './HarbingerOfDawn'
+import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
+import IronPoint from './IronPoint'
+import IronSting from './IronSting'
+import KagotsurubeIsshin from './KagotsurubeIsshin'
+import KagurasVerity from './KagurasVerity'
+import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
+import KeyOfKhajNisut from './KeyOfKhajNisut'
+import KingsSquire from './KingsSquire'
+import KitainCrossSpear from './KitainCrossSpear'
+import LightOfFoliarIncision from './LightOfFoliarIncision'
+import LionsRoar from './LionsRoar'
+import LithicBlade from './LithicBlade'
+import LithicSpear from './LithicSpear'
+import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
+import LuxuriousSeaLord from './LuxuriousSeaLord'
+import MagicGuide from './MagicGuide'
+import MailedFlower from './MailedFlower'
+import MakhairaAquamarine from './MakhairaAquamarine'
+import MappaMare from './MappaMare'
+import MemoryOfDust from './MemoryOfDust'
+import Messenger from './Messenger'
+import MissiveWindspear from './MissiveWindspear'
+import MistsplitterReforged from './MistsplitterReforged'
+import MitternachtsWaltz from './MitternachtsWaltz'
+import Moonpiercer from './Moonpiercer'
+import MouunsMoon from './MouunsMoon'
+import OathswornEye from './OathswornEye'
+import OldMercsPal from './OldMercsPal'
+import OtherworldlyStory from './OtherworldlyStory'
+import PocketGrimoire from './PocketGrimoire'
+import PolarStar from './PolarStar'
+import Predator from './Predator'
+import PrimordialJadeCutter from './PrimordialJadeCutter'
+import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
+import PrototypeAmber from './PrototypeAmber'
+import PrototypeArchaic from './PrototypeArchaic'
+import PrototypeCrescent from './PrototypeCrescent'
+import PrototypeRancour from './PrototypeRancour'
+import PrototypeStarglitter from './PrototypeStarglitter'
 import QuantumCatalyst from './QuantumCatalyst'
+import Rainslasher from './Rainslasher'
+import RavenBow from './RavenBow'
+import RecurveBow from './RecurveBow'
+import RedhornStonethresher from './RedhornStonethresher'
+import RoyalBow from './RoyalBow'
+import RoyalGreatsword from './RoyalGreatsword'
+import RoyalGrimoire from './RoyalGrimoire'
+import RoyalLongsword from './RoyalLongsword'
+import RoyalSpear from './RoyalSpear'
+import Rust from './Rust'
+import SacrificialBow from './SacrificialBow'
+import SacrificialFragments from './SacrificialFragments'
+import SacrificialGreatsword from './SacrificialGreatsword'
+import SacrificialSword from './SacrificialSword'
+import SapwoodBlade from './SapwoodBlade'
+import SeasonedHuntersBow from './SeasonedHuntersBow'
+import SerpentSpine from './SerpentSpine'
+import SharpshootersOath from './SharpshootersOath'
+import SilverSword from './SilverSword'
+import SkyriderGreatsword from './SkyriderGreatsword'
+import SkyriderSword from './SkyriderSword'
+import SkywardAtlas from './SkywardAtlas'
+import SkywardBlade from './SkywardBlade'
+import SkywardHarp from './SkywardHarp'
+import SkywardPride from './SkywardPride'
+import SkywardSpine from './SkywardSpine'
+import Slingshot from './Slingshot'
+import SnowTombedStarsilver from './SnowTombedStarsilver'
+import SolarPearl from './SolarPearl'
+import SongOfBrokenPines from './SongOfBrokenPines'
+import StaffOfHoma from './StaffOfHoma'
+import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import SummitShaper from './SummitShaper'
+import SwordOfDescension from './SwordOfDescension'
+import TheAlleyFlash from './TheAlleyFlash'
+import TheBell from './TheBell'
+import TheBlackSword from './TheBlackSword'
+import TheCatch from './TheCatch'
+import TheFlute from './TheFlute'
+import TheStringless from './TheStringless'
+import TheUnforged from './TheUnforged'
+import TheViridescentHunt from './TheViridescentHunt'
+import TheWidsith from './TheWidsith'
+import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
+import ThunderingPulse from './ThunderingPulse'
+import ToukabouShigure from './ToukabouShigure'
+import TravelersHandySword from './TravelersHandySword'
+import TulaytullahsRemembrance from './TulaytullahsRemembrance'
+import TwinNephrite from './TwinNephrite'
+import VortexVanquisher from './VortexVanquisher'
+import WanderingEvenstar from './WanderingEvenstar'
+import WasterGreatsword from './WasterGreatsword'
+import WavebreakersFin from './WavebreakersFin'
+import Whiteblind from './Whiteblind'
+import WhiteIronGreatsword from './WhiteIronGreatsword'
+import WhiteTassel from './WhiteTassel'
+import WindblumeOde from './WindblumeOde'
+import WineAndSong from './WineAndSong'
+import WolfsGravestone from './WolfsGravestone'
+import XiphosMoonlight from './XiphosMoonlight'
+
 const data = {
-  DullBlade,
-  SilverSword,
-  CoolSteel,
-  HarbingerOfDawn,
-  TravelersHandySword,
-  DarkIronSword,
-  FilletBlade,
-  SkyriderSword,
-  FavoniusSword,
-  TheFlute,
-  SacrificialSword,
-  RoyalLongsword,
-  LionsRoar,
-  PrototypeRancour,
-  IronSting,
-  BlackcliffLongsword,
-  TheBlackSword,
-  TheAlleyFlash,
-  SwordOfDescension,
-  FesteringDesire,
-  AmenomaKageuchi,
-  CinnabarSpindle,
-  KagotsurubeIsshin,
-  SapwoodBlade,
-  XiphosMoonlight,
-  ToukabouShigure,
-  AquilaFavonia,
-  SkywardBlade,
-  FreedomSworn,
-  SummitShaper,
-  PrimordialJadeCutter,
-  MistsplitterReforged,
-  HaranGeppakuFutsu,
-  KeyOfKhajNisut,
-  LightOfFoliarIncision,
-  WasterGreatsword,
-  OldMercsPal,
-  FerrousShadow,
-  BloodtaintedGreatsword,
-  WhiteIronGreatsword,
-  DebateClub,
-  SkyriderGreatsword,
-  FavoniusGreatsword,
-  TheBell,
-  SacrificialGreatsword,
-  RoyalGreatsword,
-  Rainslasher,
-  PrototypeArchaic,
-  Whiteblind,
-  BlackcliffSlasher,
-  SerpentSpine,
-  LithicBlade,
-  SnowTombedStarsilver,
-  LuxuriousSeaLord,
-  KatsuragikiriNagamasa,
-  MakhairaAquamarine,
+  AThousandFloatingDreams,
   Akuoumaru,
-  ForestRegalia,
-  MailedFlower,
-  SkywardPride,
-  WolfsGravestone,
-  SongOfBrokenPines,
-  TheUnforged,
-  RedhornStonethresher,
+  AlleyHunter,
+  AmenomaKageuchi,
+  AmosBow,
+  ApprenticesNotes,
+  AquaSimulacra,
+  AquilaFavonia,
   BeaconOfTheReedSea,
   BeginnersProtector,
-  IronPoint,
-  WhiteTassel,
-  Halberd,
   BlackTassel,
-  DragonsBane,
-  PrototypeStarglitter,
-  CrescentPike,
-  BlackcliffPole,
-  Deathmatch,
-  LithicSpear,
-  FavoniusLance,
-  RoyalSpear,
-  DragonspineSpear,
-  KitainCrossSpear,
-  TheCatch,
-  WavebreakersFin,
-  Moonpiercer,
-  MissiveWindspear,
-  StaffOfHoma,
-  SkywardSpine,
-  VortexVanquisher,
-  PrimordialJadeWingedSpear,
-  CalamityQueller,
-  EngulfingLightning,
-  StaffOfTheScarletSands,
-  ApprenticesNotes,
-  PocketGrimoire,
-  MagicGuide,
-  ThrillingTalesOfDragonSlayers,
-  OtherworldlyStory,
-  EmeraldOrb,
-  TwinNephrite,
-  FavoniusCodex,
-  TheWidsith,
-  SacrificialFragments,
-  RoyalGrimoire,
-  SolarPearl,
-  PrototypeAmber,
-  MappaMare,
   BlackcliffAgate,
-  EyeOfPerception,
-  WineAndSong,
-  Frostbearer,
-  DodocoTales,
-  HakushinRing,
-  OathswornEye,
-  WanderingEvenstar,
-  FruitOfFulfillment,
-  SkywardAtlas,
-  LostPrayerToTheSacredWinds,
-  MemoryOfDust,
-  EverlastingMoonglow,
-  KagurasVerity,
-  AThousandFloatingDreams,
-  TulaytullahsRemembrance,
-  HuntersBow,
-  SeasonedHuntersBow,
-  RavenBow,
-  SharpshootersOath,
-  RecurveBow,
-  Slingshot,
-  Messenger,
-  FavoniusWarbow,
-  TheStringless,
-  SacrificialBow,
-  RoyalBow,
-  Rust,
-  PrototypeCrescent,
-  CompoundBow,
+  BlackcliffLongsword,
+  BlackcliffPole,
+  BlackcliffSlasher,
   BlackcliffWarbow,
-  TheViridescentHunt,
-  AlleyHunter,
-  FadingTwilight,
-  MitternachtsWaltz,
-  WindblumeOde,
-  Hamayumi,
-  Predator,
-  MouunsMoon,
-  KingsSquire,
-  EndOfTheLine,
-  SkywardHarp,
-  AmosBow,
+  BloodtaintedGreatsword,
+  CalamityQueller,
+  CinnabarSpindle,
+  CompoundBow,
+  CoolSteel,
+  CrescentPike,
+  DarkIronSword,
+  Deathmatch,
+  DebateClub,
+  DodocoTales,
+  DragonsBane,
+  DragonspineSpear,
+  DullBlade,
   ElegyForTheEnd,
-  PolarStar,
-  AquaSimulacra,
-  ThunderingPulse,
+  EmeraldOrb,
+  EndOfTheLine,
+  EngulfingLightning,
+  EverlastingMoonglow,
+  EyeOfPerception,
+  FadingTwilight,
+  FavoniusCodex,
+  FavoniusGreatsword,
+  FavoniusLance,
+  FavoniusSword,
+  FavoniusWarbow,
+  FerrousShadow,
+  FesteringDesire,
+  FilletBlade,
+  ForestRegalia,
+  FreedomSworn,
+  Frostbearer,
+  FruitOfFulfillment,
+  HakushinRing,
+  Halberd,
+  Hamayumi,
+  HaranGeppakuFutsu,
+  HarbingerOfDawn,
+  HuntersBow,
   HuntersPath,
+  IronPoint,
+  IronSting,
+  KagotsurubeIsshin,
+  KagurasVerity,
+  KatsuragikiriNagamasa,
+  KeyOfKhajNisut,
+  KingsSquire,
+  KitainCrossSpear,
+  LightOfFoliarIncision,
+  LionsRoar,
+  LithicBlade,
+  LithicSpear,
+  LostPrayerToTheSacredWinds,
+  LuxuriousSeaLord,
+  MagicGuide,
+  MailedFlower,
+  MakhairaAquamarine,
+  MappaMare,
+  MemoryOfDust,
+  Messenger,
+  MissiveWindspear,
+  MistsplitterReforged,
+  MitternachtsWaltz,
+  Moonpiercer,
+  MouunsMoon,
+  OathswornEye,
+  OldMercsPal,
+  OtherworldlyStory,
+  PocketGrimoire,
+  PolarStar,
+  Predator,
+  PrimordialJadeCutter,
+  PrimordialJadeWingedSpear,
+  PrototypeAmber,
+  PrototypeArchaic,
+  PrototypeCrescent,
+  PrototypeRancour,
+  PrototypeStarglitter,
   QuantumCatalyst,
+  Rainslasher,
+  RavenBow,
+  RecurveBow,
+  RedhornStonethresher,
+  RoyalBow,
+  RoyalGreatsword,
+  RoyalGrimoire,
+  RoyalLongsword,
+  RoyalSpear,
+  Rust,
+  SacrificialBow,
+  SacrificialFragments,
+  SacrificialGreatsword,
+  SacrificialSword,
+  SapwoodBlade,
+  SeasonedHuntersBow,
+  SerpentSpine,
+  SharpshootersOath,
+  SilverSword,
+  SkyriderGreatsword,
+  SkyriderSword,
+  SkywardAtlas,
+  SkywardBlade,
+  SkywardHarp,
+  SkywardPride,
+  SkywardSpine,
+  Slingshot,
+  SnowTombedStarsilver,
+  SolarPearl,
+  SongOfBrokenPines,
+  StaffOfHoma,
+  StaffOfTheScarletSands,
+  SummitShaper,
+  SwordOfDescension,
+  TheAlleyFlash,
+  TheBell,
+  TheBlackSword,
+  TheCatch,
+  TheFlute,
+  TheStringless,
+  TheUnforged,
+  TheViridescentHunt,
+  TheWidsith,
+  ThrillingTalesOfDragonSlayers,
+  ThunderingPulse,
+  ToukabouShigure,
+  TravelersHandySword,
+  TulaytullahsRemembrance,
+  TwinNephrite,
+  VortexVanquisher,
+  WanderingEvenstar,
+  WasterGreatsword,
+  WavebreakersFin,
+  WhiteIronGreatsword,
+  WhiteTassel,
+  Whiteblind,
+  WindblumeOde,
+  WineAndSong,
+  WolfsGravestone,
+  XiphosMoonlight,
 } as const
 export default data

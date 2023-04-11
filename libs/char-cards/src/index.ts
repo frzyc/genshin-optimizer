@@ -35,7 +35,6 @@ import Lisa from './Character_Lisa_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
-import Somnia from './Character_Somnia_Card.png'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
@@ -47,6 +46,7 @@ import SangonomiyaKokomi from './Character_Sangonomiya_Kokomi_Card.jpg'
 import Sayu from './Character_Sayu_Card.png'
 import Shenhe from './Character_Shenhe_Card.jpg'
 import ShikanoinHeizou from './Character_Shikanoin_Heizou_Card.png'
+import Somnia from './Character_Somnia_Card.png'
 import Sucrose from './Character_Sucrose_Card.jpg'
 import Tartaglia from './Character_Tartaglia_Card.png'
 import Thoma from './Character_Thoma_Card.jpg'
@@ -104,7 +104,6 @@ const charCards = {
   Mika,
   Mona,
   Nahida,
-  Somnia,
   Nilou,
   Ningguang,
   Noelle,
@@ -116,6 +115,7 @@ const charCards = {
   Sayu,
   Shenhe,
   ShikanoinHeizou,
+  Somnia,
   Sucrose,
   Tartaglia,
   Thoma,
