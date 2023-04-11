@@ -113,7 +113,11 @@ function CharacterDisplayCard({
   } = useMatch({ path: '/characters/:charKey/:tab', end: false }) ?? {
     params: { tab: 'overview' },
   }
-  const { t } = useTranslation(['sillyWisher_charNames', 'charNames_gen', 'page_character'])
+  const { t } = useTranslation([
+    'sillyWisher_charNames',
+    'charNames_gen',
+    'page_character',
+  ])
 
   useTitle(
     useMemo(
