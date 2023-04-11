@@ -34,9 +34,11 @@ import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { ICachedCharacter } from '../../Types/character'
 import { iconAsset } from '../../Util/AssetUtil'
+import type { RollColorKey } from '../../Types/consts'
 import { range } from '../../Util/Util'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
 import CardLight from '../Card/CardLight'
+import ColorText from '../ColoredText'
 import ConditionalWrapper from '../ConditionalWrapper'
 import { NodeFieldDisplay } from '../FieldDisplay'
 import SqBadge from '../SqBadge'
@@ -376,7 +378,12 @@ function HeaderContent() {
         color={characterEle}
         sx={{ opacity: 0.85 }}
       />
-      <Box display="flex" gap={1} sx={{ textShadow: '0 0 5px gray' }}>
+      <Box
+        display="flex"
+        gap={1}
+        sx={{ textShadow: '0 0 5px gray' }}
+        alignItems="center"
+      >
         <Box>
           <Typography component="span" variant="h6" whiteSpace="nowrap">
             Lv. {characterLevel}
@@ -385,16 +392,19 @@ function HeaderContent() {
             /{ascensionMaxLevel[ascension]}
           </Typography>
         </Box>
-        <Typography
-          component="span"
-          variant="h6"
-          whiteSpace="nowrap"
-          color={`roll${constellation < 3 ? 3 : constellation}.main`}
-        >
-          C{constellation}
+        <Typography component="span" whiteSpace="nowrap" sx={{ opacity: 0.85 }}>
+          <SqBadge
+            color={
+              `roll${constellation < 3 ? 3 : constellation}` as RollColorKey
+            }
+          >
+            <ColorText color="white">
+              <strong>C{constellation}</strong>
+            </ColorText>
+          </SqBadge>
         </Typography>
       </Box>
-      <Box display="flex" gap={1}>
+      <Box display="flex" gap={1} sx={{ opacity: 0.85 }}>
         <Chip
           size="small"
           color={autoBoost ? 'info' : 'secondary'}
