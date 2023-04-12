@@ -356,7 +356,7 @@ export const artifactIdMap = {
   15027: 'DesertPavilionChronicle',
   15028: 'FlowerOfParadiseLost',
   15029: 'NymphsDream',
-  15030: 'DewflowersGlow',
+  15030: 'VourukashasGlow',
 } as const
 
 export const artifactSlotMap = {
