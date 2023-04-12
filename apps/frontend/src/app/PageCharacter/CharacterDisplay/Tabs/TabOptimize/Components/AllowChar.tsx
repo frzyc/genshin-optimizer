@@ -43,6 +43,7 @@ import SqBadge from '../../../../../Components/SqBadge'
 import ElementToggle from '../../../../../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../../../../../Components/ToggleButton/WeaponToggle'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
+import { SillyContext } from '../../../../../Context/SillyContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
 import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
@@ -73,6 +74,7 @@ export default function AllowChar({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
+  const { silly } = useContext(SillyContext)
   const {
     buildSetting: { excludedLocations, allowLocationsState },
     buildSettingDispatch,
@@ -104,7 +106,7 @@ export default function AllowChar({
                     weaponType: deferredWeaponTypeKeys,
                     name: deferredSearchTerm,
                   },
-                  characterFilterConfigs(database)
+                  characterFilterConfigs(database, silly)
                 )(ck)
               )
           )
@@ -113,10 +115,11 @@ export default function AllowChar({
     [
       deferredDbDirty,
       database,
+      characterKey,
       deferredElementKeys,
       deferredWeaponTypeKeys,
       deferredSearchTerm,
-      characterKey,
+      silly,
     ]
   )
 

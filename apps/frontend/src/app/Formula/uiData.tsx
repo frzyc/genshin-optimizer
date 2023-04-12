@@ -1,9 +1,11 @@
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/consts'
 import { crawlObject } from '@genshin-optimizer/util'
+import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'
 import { Translate } from '../Components/Translate'
+import { SillyContext } from '../Context/SillyContext'
 import KeyMap, { valueString } from '../KeyMap'
 import type { CharacterSheetKey } from '../Types/consts'
 import { allCharacterSheetKeys } from '../Types/consts'
@@ -550,20 +552,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   if (name) {
     const prefixDisplay =
       prefix && !source ? <>{KeyMap.getPrefixStr(prefix)} </> : null
-    const sourceText =
-      source &&
-      ((allArtifactSetKeys.includes(source as ArtifactSetKey) && (
-        <Translate ns="artifactNames_gen" key18={source} />
-      )) ||
-        (allWeaponKeys.includes(source as WeaponKey) && (
-          <Translate ns="weaponNames_gen" key18={source} />
-        )) ||
-        (allCharacterSheetKeys.includes(source as CharacterSheetKey) && (
-          <Translate ns="sillyWisher_charNames" key18={source} />
-        )))
-    const sourceDisplay = sourceText ? (
-      <ColorText color="secondary"> ({sourceText})</ColorText>
-    ) : null
+    const sourceDisplay = <SourceDisplay source={source} />
     node.name = (
       <>
         <ColorText color={variant}>
@@ -582,6 +571,38 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
       )
   }
 }
+function SourceDisplay({ source }: { source: string | undefined }) {
+  const { silly } = useContext(SillyContext)
+  if (!source) return null
+  if (allArtifactSetKeys.includes(source as ArtifactSetKey))
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (<Translate ns="artifactNames_gen" key18={source} />)
+      </ColorText>
+    )
+  if (allWeaponKeys.includes(source as WeaponKey))
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (<Translate ns="weaponNames_gen" key18={source} />)
+      </ColorText>
+    )
+  if (allCharacterSheetKeys.includes(source as CharacterSheetKey))
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (
+        <Translate
+          ns={silly ? 'sillyWisher_charNames' : 'charNames_gen'}
+          key18={source}
+        />
+        )
+      </ColorText>
+    )
+  return null
+}
+
 function createFormulaComponent(node: ContextNodeDisplay): Displayable {
   const { name, valueDisplay } = node
   //TODO: change formula size in the formula display element instead

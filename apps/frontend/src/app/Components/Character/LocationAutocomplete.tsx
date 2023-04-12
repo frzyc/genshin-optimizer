@@ -8,6 +8,7 @@ import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { DatabaseContext } from '../../Database/Database'
@@ -42,26 +43,20 @@ export function LocationAutocomplete({
     'sillyWisher_charNames',
     'charNames_gen',
   ])
+  const { silly } = useContext(SillyContext)
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const toTextSilly = useCallback(
-    (key: LocationCharacterKey): string =>
-      t(
-        `sillyWisher_charNames:${charKeyToCharName(
-          database.chars.LocationToCharacterKey(key),
-          gender
-        )}`
-      ),
-    [database, gender, t]
-  )
   const toText = useCallback(
-    (key: LocationCharacterKey): string =>
-      t(
-        `charNames_gen:${charKeyToCharName(
-          database.chars.LocationToCharacterKey(key),
-          gender
-        )}`
-      ),
+    (silly: boolean) =>
+      (key: LocationCharacterKey): string =>
+        t(
+          `${
+            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          }:${charKeyToCharName(
+            database.chars.LocationToCharacterKey(key),
+            gender
+          )}`
+        ),
     [database, gender, t]
   )
   const toImg = useCallback(
@@ -103,9 +98,9 @@ export function LocationAutocomplete({
         .map(
           (v): GeneralAutocompleteOption<LocationKey> => ({
             key: v,
-            label: toTextSilly(v),
+            label: toText(silly)(v),
             favorite: isFavorite(v),
-            alternateNames: [toText(v)],
+            alternateNames: silly ? [toText(!silly)(v)] : undefined,
           })
         )
         .sort((a, b) => {
@@ -114,7 +109,7 @@ export function LocationAutocomplete({
           return a.label.localeCompare(b.label)
         }),
     ],
-    [t, database.chars.keys, gender, filter, toTextSilly, isFavorite, toText]
+    [t, database.chars.keys, gender, filter, toText, silly, isFavorite]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

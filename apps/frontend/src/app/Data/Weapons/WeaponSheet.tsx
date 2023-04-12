@@ -38,7 +38,10 @@ export default class WeaponSheet {
   }
   static tr(key: string) {
     return (strKey: string) => (
-      <Translate ns={`weapon_${key}_gen`} key18={strKey} />
+      <Translate
+        ns={key === 'QuantumCatalyst' ? `weapon_${key}` : `weapon_${key}_gen`}
+        key18={strKey}
+      />
     )
   }
   static getAllDataOfType(weaponType: WeaponTypeKey) {
@@ -81,7 +84,14 @@ export function headerTemplate(
   action?: Displayable
 ): IDocumentHeader {
   const tr = (strKey: string) => (
-    <Translate ns={`weapon_${weaponKey}_gen`} key18={strKey} />
+    <Translate
+      ns={
+        weaponKey === 'QuantumCatalyst'
+          ? `weapon_${weaponKey}`
+          : `weapon_${weaponKey}_gen`
+      }
+      key18={strKey}
+    />
   )
   return {
     title: tr(`passiveName`),
