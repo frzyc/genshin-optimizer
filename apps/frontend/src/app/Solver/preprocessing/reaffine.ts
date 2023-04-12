@@ -1,8 +1,9 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { ArtifactSetKey, allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import type { OptNode } from '../../Formula/optimization'
 import { constant, customRead, prod, sum, threshold } from '../../Formula/utils'
-import type { ArtifactsBySlot } from '../common'
-import { mapFormulas } from '../../Formula/internal'
+import type { ArtifactsBySlot, DynStat } from '../common'
+import { forEachNodes, mapFormulas } from '../../Formula/internal'
+import { objectKeyMap } from '../../Util/Util'
 
 /**
  * Smart product between nodes, where constants and nestings are automatically merged.
@@ -72,6 +73,14 @@ export function foldSum(...nodes: readonly OptNode[]): OptNode {
   return sum(...nodes, constant(constVal))
 }
 
+function deleteKey(a: ArtifactsBySlot, key: string) {
+  delete a.base[key]
+  a.values.flower.forEach((art) => delete art.values[key])
+  a.values.plume.forEach((art) => delete art.values[key])
+  a.values.sands.forEach((art) => delete art.values[key])
+  a.values.goblet.forEach((art) => delete art.values[key])
+  a.values.circlet.forEach((art) => delete art.values[key])
+}
 function canDistribute({ operation, operands }: OptNode): boolean {
   return (
     operation === 'const' ||
@@ -81,7 +90,12 @@ function canDistribute({ operation, operands }: OptNode): boolean {
   )
 }
 
-export function reaffine2(nodes: OptNode[], arts: ArtifactsBySlot) {
+/**
+ * More powerful, but slower reaffine function. Modifies `arts` in-place, so use with caution.
+ *
+ * Brings `800*atk_` => `atk_2` or `atk + 800*atk_` => `atk_3`
+ */
+export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
   const allKeys = Object.keys(arts.base)
   const addedRegisters = {} as {
     [key: string]: { base: number; coeff: number; sumKeys: string[] }
@@ -118,37 +132,74 @@ export function reaffine2(nodes: OptNode[], arts: ArtifactsBySlot) {
         return foldProd(n, constant(v))
       }
       default:
-        return prod(n, constant(v))
+        return foldProd(n, constant(v))
     }
   }
 
-  console.log('Original:', JSON.stringify(nodes[0]))
-  console.log('This should be bottom-up')
   const hmm = mapFormulas(
     nodes,
     (_) => _,
     (f) => {
       switch (f.operation) {
         case 'mul': {
+          f = foldProd(...f.operands)
+          if (f.operation !== 'mul') return f
           if (f.operands.every((ni) => ni.operation !== 'const')) return f
           const coeff = f.operands.reduce(
-            (coeff, ni) =>
-              ni.operation === 'const' ? coeff * ni.value : coeff,
+            (pv, ni) => (ni.operation === 'const' ? pv * ni.value : pv),
             1
           )
-          const todistrib = f.operands
-            .filter((n) => n.operation !== 'const')
-            .map((n) => distributeConst(n, coeff))
-          if (todistrib.length === 1) return todistrib[0]
-          return prod(...todistrib)
+          const nonConst = f.operands.filter((n) => n.operation !== 'const')
+          const retting = distributeConst(prod(...nonConst), coeff)
+          return retting
         }
-        case 'add': {
-          return f
-        }
+        // case 'add': {
+        //   const terms = foldSum(...f.operands)
+        //   if (terms.operation !== 'add') return terms
+        //   const reads = terms.operands.filter((n) => n.operation === 'read')
+        //   const constVal = terms.operands.reduce(
+        //     (pv, n) => (n.operation === 'const' ? pv + n.value : pv),
+        //     0
+        //   )
+        //   const remaining = terms.operands.filter(
+        //     ({ operation }) => operation !== 'add' && operation !== 'const'
+        //   )
+        //   return f
+        // }
       }
       return f
     }
   )
 
-  console.log(JSON.stringify(hmm[0]))
+  // 2. Resolve all the `addedRegisters`
+  const instKeys = new Set(Object.keys(arts.base))
+  const resolveQueue = Object.entries(addedRegisters)
+  while (resolveQueue.length > 0) {
+    const [s, { base, coeff, sumKeys }] = resolveQueue.shift()!
+    if (!sumKeys.every((k) => instKeys.has(k))) {
+      resolveQueue.push([s, { base, coeff, sumKeys }])
+      continue
+    }
+
+    const getV = (stats: DynStat) =>
+      coeff * sumKeys.reduce((v, key) => v + stats[key], 0)
+
+    arts.base[s] = base + getV(arts.base)
+    objectKeyMap(allArtifactSlotKeys, (slot) =>
+      arts.values[slot].forEach((art) => (art.values[s] = getV(art.values)))
+    )
+    instKeys.add(s)
+  }
+
+  // 3. Remove all unused keys
+  const unusedKeys = new Set<string>(instKeys)
+  forEachNodes(
+    hmm,
+    (_) => {},
+    (n) => {
+      if (n.operation === 'read') unusedKeys.delete(n.path[1])
+    }
+  )
+  unusedKeys.forEach((k) => deleteKey(arts, k))
+  return { arts, nodes: hmm }
 }

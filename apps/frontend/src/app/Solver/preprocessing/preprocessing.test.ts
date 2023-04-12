@@ -1,6 +1,7 @@
-import { foldProd, foldSum, reaffine2 } from './reaffine'
+import { foldProd, foldSum, slowReaffine } from './reaffine'
 import { constant, customRead, prod, sum } from '../../Formula/utils'
 import type { ArtifactsBySlot } from '../common'
+import { precompute } from '../../Formula/optimization'
 
 const exampleArts: ArtifactsBySlot = {
   base: {
@@ -264,13 +265,29 @@ describe('test', () => {
     expect(foldSum(sum(), sum(), sum(sum(sum())))).toEqual(constant(0))
     expect(foldSum(sum(), sum(4), sum(-4, sum(sum(x3))))).toEqual(x3)
   })
-  test('prods', () => {
-    const n = [prod(1, prod(2, prod(3, prod(hp, prod(atk, 4)))))]
-    console.log('Initial:', n[0])
-    reaffine2(n, exampleArts)
+  test('distributeProds', () => {
+    const artsTest: ArtifactsBySlot = {
+      base: { hp: 12, atk: 200 },
+      values: {
+        flower: [{ id: '', values: { hp: 22, atk: 100 } }],
+        plume: [{ id: '', values: { hp: 22, atk: 100 } }],
+        sands: [{ id: '', values: { hp: 22, atk: 100 } }],
+        goblet: [{ id: '', values: { hp: 22, atk: 100 } }],
+        circlet: [{ id: '', values: { hp: 22, atk: 100 } }],
+      },
+    }
+    const hp0 = customRead(['dyn', 'hp'])
+    const atk0 = customRead(['dyn', 'atk'])
+    const n = [prod(1, prod(2, prod(3, prod(hp0, prod(atk0, 4)))))]
+    const compute1 = precompute(n, artsTest.base, (n) => n.path[1], 1)
+    const truth = compute1(artsTest.values.flower)
+
+    const { arts: arts2, nodes: n2 } = slowReaffine(n, artsTest)
+    const compute2 = precompute(n2, arts2.base, (n) => n.path[1], 1)
+    expect(compute2(arts2.values.flower)).toEqual(truth)
   })
   test('test', () => {
     const n = [prod(sum(prod(0.08, hp), atk), crcd)]
-    reaffine2(n, exampleArts)
+    slowReaffine(n, exampleArts)
   })
 })
