@@ -1,9 +1,9 @@
-import { ArtifactSetKey, allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import type { OptNode } from '../../Formula/optimization'
 import { constant, customRead, prod, sum, threshold } from '../../Formula/utils'
-import type { ArtifactsBySlot, DynStat } from '../common'
 import { forEachNodes, mapFormulas } from '../../Formula/internal'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { objectKeyMap } from '../../Util/Util'
+import type { ArtifactsBySlot, DynStat } from '../common'
+import type { OptNode } from '../../Formula/optimization'
 
 /**
  * Smart product between nodes, where constants and nestings are automatically merged.
@@ -91,14 +91,27 @@ function canDistribute({ operation, operands }: OptNode): boolean {
 }
 
 /**
- * More powerful, but slower reaffine function. Modifies `arts` in-place, so use with caution.
+ * More powerful, but slower reaffine function. Modifies `arts` in-place, so use with moderate caution.
+ * Added variables are prefixed with `~r`.
  *
- * Brings `800*atk_` => `atk_2` or `atk + 800*atk_` => `atk_3`
+ * Brings `800*atk_` => `~r1` or `atk + 800*atk_` => `~r2`
  */
 export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
-  const allKeys = Object.keys(arts.base)
+  const allKeys = new Set(Object.keys(arts.base))
   const addedRegisters = {} as {
     [key: string]: { base: number; coeff: number; sumKeys: string[] }
+  }
+  let nextRegNum = 0
+  function addRegister(entry: {
+    base: number
+    coeff: number
+    sumKeys: string[]
+  }): OptNode {
+    let name = `~r${nextRegNum++}`
+    while (allKeys.has(name) || name in addedRegisters)
+      name = `~r${nextRegNum++}`
+    addedRegisters[name] = entry
+    return customRead(['dyn', name])
   }
 
   function distributeConst(n: OptNode, v: number): OptNode {
@@ -118,9 +131,7 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
       case 'add':
         return sum(...n.operands.map((ni) => distributeConst(ni, v)))
       case 'read': {
-        const newID = n.path[1] + '*'
-        addedRegisters[newID] = { base: 0, coeff: v, sumKeys: [n.path[1]] }
-        return customRead(['dyn', newID])
+        return addRegister({ base: 0, coeff: v, sumKeys: [n.path[1]] })
       }
       case 'mul': {
         const distrInto = n.operands.findIndex((n) => canDistribute(n))
@@ -136,7 +147,7 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
     }
   }
 
-  const hmm = mapFormulas(
+  const reaffinedNodes = mapFormulas(
     nodes,
     (_) => _,
     (f) => {
@@ -153,19 +164,26 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
           const retting = distributeConst(prod(...nonConst), coeff)
           return retting
         }
-        // case 'add': {
-        //   const terms = foldSum(...f.operands)
-        //   if (terms.operation !== 'add') return terms
-        //   const reads = terms.operands.filter((n) => n.operation === 'read')
-        //   const constVal = terms.operands.reduce(
-        //     (pv, n) => (n.operation === 'const' ? pv + n.value : pv),
-        //     0
-        //   )
-        //   const remaining = terms.operands.filter(
-        //     ({ operation }) => operation !== 'add' && operation !== 'const'
-        //   )
-        //   return f
-        // }
+        case 'add': {
+          f = foldSum(...f.operands)
+          if (f.operation !== 'add') return f
+          const reads = f.operands.filter((n) => n.operation === 'read')
+          const names = reads.map((n) =>
+            n.operation === 'read' ? n.path[1] : ''
+          )
+          const constVal = f.operands.reduce(
+            (pv, n) => (n.operation === 'const' ? pv + n.value : pv),
+            0
+          )
+          if (names.length === 0) return f
+
+          const reg = addRegister({ base: constVal, coeff: 1, sumKeys: names })
+          const remaining = f.operands.filter(
+            ({ operation }) => operation !== 'read' && operation !== 'const'
+          )
+          if (remaining.length === 0) return reg
+          return foldSum(...remaining, reg)
+        }
       }
       return f
     }
@@ -177,16 +195,18 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
   while (resolveQueue.length > 0) {
     const [s, { base, coeff, sumKeys }] = resolveQueue.shift()!
     if (!sumKeys.every((k) => instKeys.has(k))) {
-      resolveQueue.push([s, { base, coeff, sumKeys }])
+      resolveQueue.push([s, { base, coeff: coeff, sumKeys: sumKeys }])
       continue
     }
-
     const getV = (stats: DynStat) =>
-      coeff * sumKeys.reduce((v, key) => v + stats[key], 0)
+      coeff * sumKeys.reduce((v, key) => v + (stats[key] ?? 0), 0)
 
     arts.base[s] = base + getV(arts.base)
     objectKeyMap(allArtifactSlotKeys, (slot) =>
-      arts.values[slot].forEach((art) => (art.values[s] = getV(art.values)))
+      arts.values[slot].forEach((art) => {
+        const val = getV(art.values)
+        if (val !== 0) art.values[s] = val
+      })
     )
     instKeys.add(s)
   }
@@ -194,12 +214,12 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
   // 3. Remove all unused keys
   const unusedKeys = new Set<string>(instKeys)
   forEachNodes(
-    hmm,
+    reaffinedNodes,
     (_) => {},
     (n) => {
       if (n.operation === 'read') unusedKeys.delete(n.path[1])
     }
   )
   unusedKeys.forEach((k) => deleteKey(arts, k))
-  return { arts, nodes: hmm }
+  return { arts, nodes: reaffinedNodes }
 }

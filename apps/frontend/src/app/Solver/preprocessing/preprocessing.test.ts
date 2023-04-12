@@ -8,6 +8,7 @@ const exampleArts: ArtifactsBySlot = {
     hp: 13471,
     hp_: 0.496,
     atk: 842,
+    atk_: 0,
     def: 657,
     enerRech_: 1,
     hydroDmg_: 0.288,
@@ -28,6 +29,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 44,
           hp_: 0.058,
           atk: 31,
+          atk_: 0.1,
           enerRech_: 0.227,
           OceanHuedClam: 1,
           zc1: 1,
@@ -41,6 +43,7 @@ const exampleArts: ArtifactsBySlot = {
           eleMas: 43,
           hp_: 0.06,
           atk: 32,
+          atk_: 0.1,
           enerRech_: 0.207,
           OceanHuedClam: 1,
           zc2: 10,
@@ -265,7 +268,7 @@ describe('test', () => {
     expect(foldSum(sum(), sum(), sum(sum(sum())))).toEqual(constant(0))
     expect(foldSum(sum(), sum(4), sum(-4, sum(sum(x3))))).toEqual(x3)
   })
-  test('distributeProds', () => {
+  test('Eliminates Products', () => {
     const artsTest: ArtifactsBySlot = {
       base: { hp: 12, atk: 200 },
       values: {
@@ -286,8 +289,30 @@ describe('test', () => {
     const compute2 = precompute(n2, arts2.base, (n) => n.path[1], 1)
     expect(compute2(arts2.values.flower)).toEqual(truth)
   })
-  test('test', () => {
-    const n = [prod(sum(prod(0.08, hp), atk), crcd)]
-    slowReaffine(n, exampleArts)
+  test('Eliminates Sums', () => {
+    const artsTest: ArtifactsBySlot = {
+      base: {
+        hp: 12,
+        hp_: 0.25,
+        atk: 200,
+        atk_: 0.125,
+        critRate_: 0.05,
+        critDMG_: 0.5,
+      },
+      values: {
+        flower: [{ id: '', values: { atk: 100 } }],
+        plume: [],
+        sands: [],
+        goblet: [],
+        circlet: [],
+      },
+    }
+    const n = [prod(sum(prod(0.08, hp), atk), crcd, prod(sum(12, sum(hp))))]
+    const compute1 = precompute(n, artsTest.base, (n) => n.path[1], 1)
+    const truth = compute1(artsTest.values.flower)
+
+    const { arts: arts2, nodes: n2 } = slowReaffine(n, artsTest)
+    const compute2 = precompute(n2, arts2.base, (n) => n.path[1], 1)
+    expect(compute2(arts2.values.flower)).toEqual(truth)
   })
 })
