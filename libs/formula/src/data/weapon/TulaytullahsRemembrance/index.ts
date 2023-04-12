@@ -13,18 +13,27 @@ const hit_normal_dmg_arr = [0.096, 0.12, 0.144, 0.168, 0.192]
 const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const name: WeaponKey = 'TulaytullahsRemembrance'
-const { weapon: { refinement } } = self
+const {
+  weapon: { refinement },
+} = self
 const { timePassive, hitPassive } = allConditionals(name)
 
-const time_normal_dmg_ = prod(timePassive, percent(subscript(refinement, time_normal_dmg_arr)))
-const hit_normal_dmg_ = prod(hitPassive, percent(subscript(refinement, hit_normal_dmg_arr)))
+const time_normal_dmg_ = prod(
+  timePassive,
+  percent(subscript(refinement, time_normal_dmg_arr))
+)
+const hit_normal_dmg_ = prod(
+  hitPassive,
+  percent(subscript(refinement, hit_normal_dmg_arr))
+)
 
 const normal_dmg_ = min(
   percent(subscript(refinement, max_normal_dmg_arr)),
   sum(time_normal_dmg_, hit_normal_dmg_)
 )
 
-export default register(name,
+export default register(
+  name,
   entriesForWeapon(data_gen),
-  selfBuff.premod.dmg_.normal.add(normal_dmg_),
+  selfBuff.premod.dmg_.normal.add(normal_dmg_)
 )

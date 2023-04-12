@@ -124,6 +124,7 @@ export class Calculator<M = undefined> {
         case 'subscript': {
           const index = internal(n.br[0]!)
           return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
+        }
         case 'vtag':
           return meta(op, undefined, cache.tag[n.ex] ?? '', [], [], n.ex)
         case 'tag': {

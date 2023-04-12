@@ -1,4 +1,7 @@
-import { compileTagMapKeys, compileTagMapValues } from '@genshin-optimizer/waverider'
+import {
+  compileTagMapKeys,
+  compileTagMapValues,
+} from '@genshin-optimizer/waverider'
 import artifact from './artifact'
 import character from './char'
 import common from './common'
