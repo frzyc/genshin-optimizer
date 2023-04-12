@@ -36,7 +36,8 @@
       "options": {
         "jestConfig": "libs/formula/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["^pipeline"]
     }
   },
   "tags": [],
