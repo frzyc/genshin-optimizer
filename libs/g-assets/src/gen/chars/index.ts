@@ -1,144 +1,147 @@
 // This is a generated index file.
-import KamisatoAyaka from './KamisatoAyaka'
-import Jean from './Jean'
-import TravelerM from './TravelerM'
-import Lisa from './Lisa'
-import TravelerF from './TravelerF'
-import Barbara from './Barbara'
-import Kaeya from './Kaeya'
-import Diluc from './Diluc'
-import Razor from './Razor'
+import Albedo from './Albedo'
+import Alhaitham from './Alhaitham'
+import Aloy from './Aloy'
 import Amber from './Amber'
-import Venti from './Venti'
-import Xiangling from './Xiangling'
+import AratakiItto from './AratakiItto'
+import Barbara from './Barbara'
 import Beidou from './Beidou'
-import Xingqiu from './Xingqiu'
-import Xiao from './Xiao'
-import Ningguang from './Ningguang'
-import Klee from './Klee'
-import Zhongli from './Zhongli'
-import Fischl from './Fischl'
 import Bennett from './Bennett'
-import Tartaglia from './Tartaglia'
+import Candace from './Candace'
+import Chongyun from './Chongyun'
+import Collei from './Collei'
+import Cyno from './Cyno'
+import Dehya from './Dehya'
+import Diluc from './Diluc'
+import Diona from './Diona'
+import Dori from './Dori'
+import Eula from './Eula'
+import Faruzan from './Faruzan'
+import Fischl from './Fischl'
+import Ganyu from './Ganyu'
+import Gorou from './Gorou'
+import HuTao from './HuTao'
+import Jean from './Jean'
+import KaedeharaKazuha from './KaedeharaKazuha'
+import Kaeya from './Kaeya'
+import KamisatoAyaka from './KamisatoAyaka'
+import KamisatoAyato from './KamisatoAyato'
+import Keqing from './Keqing'
+import Klee from './Klee'
+import KujouSara from './KujouSara'
+import KukiShinobu from './KukiShinobu'
+import Layla from './Layla'
+import Lisa from './Lisa'
+import Mika from './Mika'
+import Mona from './Mona'
+import Nahida from './Nahida'
+import Nilou from './Nilou'
+import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Qiqi from './Qiqi'
-import Chongyun from './Chongyun'
-import Ganyu from './Ganyu'
-import Albedo from './Albedo'
-import Diona from './Diona'
-import Mona from './Mona'
-import Keqing from './Keqing'
-import Sucrose from './Sucrose'
-import Xinyan from './Xinyan'
-import Rosaria from './Rosaria'
-import HuTao from './HuTao'
-import KaedeharaKazuha from './KaedeharaKazuha'
-import Yanfei from './Yanfei'
-import Yoimiya from './Yoimiya'
-import Thoma from './Thoma'
-import Eula from './Eula'
 import RaidenShogun from './RaidenShogun'
-import Sayu from './Sayu'
+import Razor from './Razor'
+import Rosaria from './Rosaria'
 import SangonomiyaKokomi from './SangonomiyaKokomi'
-import Gorou from './Gorou'
-import KujouSara from './KujouSara'
-import AratakiItto from './AratakiItto'
-import YaeMiko from './YaeMiko'
-import ShikanoinHeizou from './ShikanoinHeizou'
-import Yelan from './Yelan'
-import Aloy from './Aloy'
+import Sayu from './Sayu'
 import Shenhe from './Shenhe'
-import YunJin from './YunJin'
-import KukiShinobu from './KukiShinobu'
-import KamisatoAyato from './KamisatoAyato'
-import Collei from './Collei'
-import Dori from './Dori'
+import ShikanoinHeizou from './ShikanoinHeizou'
+import Somnia from './Somnia'
+import Sucrose from './Sucrose'
+import Tartaglia from './Tartaglia'
+import Thoma from './Thoma'
 import Tighnari from './Tighnari'
-import Nilou from './Nilou'
-import Cyno from './Cyno'
-import Candace from './Candace'
-import Nahida from './Nahida'
-import Layla from './Layla'
-import Wanderer from './Wanderer'
-import Faruzan from './Faruzan'
-import Yaoyao from './Yaoyao'
-import Alhaitham from './Alhaitham'
-import Dehya from './Dehya'
-import Mika from './Mika'
 import TravelerAnemo from './TravelerAnemo'
-import TravelerGeo from './TravelerGeo'
-import TravelerElectro from './TravelerElectro'
 import TravelerDendro from './TravelerDendro'
+import TravelerElectro from './TravelerElectro'
+import TravelerF from './TravelerF'
+import TravelerGeo from './TravelerGeo'
+import TravelerM from './TravelerM'
+import Venti from './Venti'
+import Wanderer from './Wanderer'
+import Xiangling from './Xiangling'
+import Xiao from './Xiao'
+import Xingqiu from './Xingqiu'
+import Xinyan from './Xinyan'
+import YaeMiko from './YaeMiko'
+import Yanfei from './Yanfei'
+import Yaoyao from './Yaoyao'
+import Yelan from './Yelan'
+import Yoimiya from './Yoimiya'
+import YunJin from './YunJin'
+import Zhongli from './Zhongli'
+
 const data = {
-  KamisatoAyaka,
-  Jean,
-  TravelerM,
-  Lisa,
-  TravelerF,
-  Barbara,
-  Kaeya,
-  Diluc,
-  Razor,
+  Albedo,
+  Alhaitham,
+  Aloy,
   Amber,
-  Venti,
-  Xiangling,
+  AratakiItto,
+  Barbara,
   Beidou,
-  Xingqiu,
-  Xiao,
-  Ningguang,
-  Klee,
-  Zhongli,
-  Fischl,
   Bennett,
-  Tartaglia,
+  Candace,
+  Chongyun,
+  Collei,
+  Cyno,
+  Dehya,
+  Diluc,
+  Diona,
+  Dori,
+  Eula,
+  Faruzan,
+  Fischl,
+  Ganyu,
+  Gorou,
+  HuTao,
+  Jean,
+  KaedeharaKazuha,
+  Kaeya,
+  KamisatoAyaka,
+  KamisatoAyato,
+  Keqing,
+  Klee,
+  KujouSara,
+  KukiShinobu,
+  Layla,
+  Lisa,
+  Mika,
+  Mona,
+  Nahida,
+  Nilou,
+  Ningguang,
   Noelle,
   Qiqi,
-  Chongyun,
-  Ganyu,
-  Albedo,
-  Diona,
-  Mona,
-  Keqing,
-  Sucrose,
-  Xinyan,
-  Rosaria,
-  HuTao,
-  KaedeharaKazuha,
-  Yanfei,
-  Yoimiya,
-  Thoma,
-  Eula,
   RaidenShogun,
-  Sayu,
+  Razor,
+  Rosaria,
   SangonomiyaKokomi,
-  Gorou,
-  KujouSara,
-  AratakiItto,
-  YaeMiko,
-  ShikanoinHeizou,
-  Yelan,
-  Aloy,
+  Sayu,
   Shenhe,
-  YunJin,
-  KukiShinobu,
-  KamisatoAyato,
-  Collei,
-  Dori,
+  ShikanoinHeizou,
+  Somnia,
+  Sucrose,
+  Tartaglia,
+  Thoma,
   Tighnari,
-  Nilou,
-  Cyno,
-  Candace,
-  Nahida,
-  Layla,
-  Wanderer,
-  Faruzan,
-  Yaoyao,
-  Alhaitham,
-  Dehya,
-  Mika,
   TravelerAnemo,
-  TravelerGeo,
-  TravelerElectro,
   TravelerDendro,
+  TravelerElectro,
+  TravelerF,
+  TravelerGeo,
+  TravelerM,
+  Venti,
+  Wanderer,
+  Xiangling,
+  Xiao,
+  Xingqiu,
+  Xinyan,
+  YaeMiko,
+  Yanfei,
+  Yaoyao,
+  Yelan,
+  Yoimiya,
+  YunJin,
+  Zhongli,
 } as const
 export default data
