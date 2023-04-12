@@ -8,8 +8,8 @@ import BraveHeart from './BraveHeart'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
-import DewflowersGlow from './DewflowersGlow'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DewflowersGlow from './DewflowersGlow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
@@ -55,8 +55,8 @@ const data = {
   CrimsonWitchOfFlames,
   DeepwoodMemories,
   DefendersWill,
-  DewflowersGlow,
   DesertPavilionChronicle,
+  DewflowersGlow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,
