@@ -54,7 +54,7 @@ export interface ICharacterTemplate {
     talentKey: TalentSheetElementKey,
     partialCond: DocumentConditionalBase
   ) => DocumentConditional
-  swn: Displayable
+  name: Displayable
 }
 export const charTemplates = (
   cKey: CharacterSheetKey,
@@ -86,7 +86,7 @@ export const charTemplates = (
       talentKey: TalentSheetElementKey,
       partialCond: DocumentConditionalBase
     ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
-    swn: nameTrans(cKey, chg),
+    name: nameTrans(cKey, chg),
   }
 }
 
