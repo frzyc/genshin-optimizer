@@ -16,7 +16,6 @@ import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
-import VourukashasGlow from './VourukashasGlow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
@@ -50,6 +49,7 @@ import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
 import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
+import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
@@ -63,7 +63,6 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
-  VourukashasGlow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,
@@ -97,6 +96,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   TravelingDoctor,
   VermillionHereafter,
   ViridescentVenerer,
+  VourukashasGlow,
   WanderersTroupe,
 } as const
 
