@@ -11,7 +11,6 @@ export const allArtifactSetKeys = [
   'DeepwoodMemories',
   'DefendersWill',
   'DesertPavilionChronicle',
-  'DewflowersGlow',
   'EchoesOfAnOffering',
   'EmblemOfSeveredFate',
   'FlowerOfParadiseLost',
@@ -45,6 +44,7 @@ export const allArtifactSetKeys = [
   'TravelingDoctor',
   'VermillionHereafter',
   'ViridescentVenerer',
+  'VourukashasGlow',
   'WanderersTroupe',
 ] as const
 export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]
