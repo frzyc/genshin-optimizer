@@ -16,7 +16,7 @@ import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
-import DewflowersGlow from './DewflowersGlow'
+import VourukashasGlow from './VourukashasGlow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
@@ -63,7 +63,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
-  DewflowersGlow,
+  VourukashasGlow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,

@@ -11,7 +11,7 @@ export const allArtifactSetKeys = [
   'DeepwoodMemories',
   'DefendersWill',
   'DesertPavilionChronicle',
-  'DewflowersGlow',
+  'VourukashasGlow',
   'EchoesOfAnOffering',
   'EmblemOfSeveredFate',
   'FlowerOfParadiseLost',

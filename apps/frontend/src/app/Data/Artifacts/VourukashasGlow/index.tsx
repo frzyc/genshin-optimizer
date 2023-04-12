@@ -14,15 +14,15 @@ import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import type { IArtifactSheet } from '../IArtifactSheet'
 
-const key: ArtifactSetKey = 'DewflowersGlow'
+const key: ArtifactSetKey = 'VourukashasGlow'
 const setHeader = setHeaderTemplate(key)
 
-const set2 = greaterEq(input.artSet.DewflowersGlow, 2, 0.2)
+const set2 = greaterEq(input.artSet.VourukashasGlow, 2, 0.2)
 
 const [condSet4Path, condSet4] = cond(key, 'set4')
 const stacksArr = range(1, 5)
 const set4_skill_dmg_ = greaterEq(
-  input.artSet.DewflowersGlow,
+  input.artSet.VourukashasGlow,
   4,
   sum(
     0.1,
@@ -44,7 +44,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
 })
 
 const sheet: IArtifactSheet = {
-  name: "Dewflower's Glow",
+  name: "Vourukasha's Glow",
   rarity: [4, 5],
   setEffects: {
     2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
