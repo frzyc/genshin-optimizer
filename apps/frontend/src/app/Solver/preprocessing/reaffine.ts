@@ -4,16 +4,8 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { objectKeyMap } from '../../Util/Util'
 import type { ArtifactsBySlot, DynStat } from '../common'
 import type { OptNode } from '../../Formula/optimization'
-import { foldProd, foldSum } from './util'
+import { deleteKey, foldProd, foldSum } from './util'
 
-function deleteKey(a: ArtifactsBySlot, key: string) {
-  delete a.base[key]
-  a.values.flower.forEach((art) => delete art.values[key])
-  a.values.plume.forEach((art) => delete art.values[key])
-  a.values.sands.forEach((art) => delete art.values[key])
-  a.values.goblet.forEach((art) => delete art.values[key])
-  a.values.circlet.forEach((art) => delete art.values[key])
-}
 function canDistribute({ operation, operands }: OptNode): boolean {
   return (
     operation === 'const' ||
@@ -73,10 +65,10 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
           newOps[distrInto] = distributeConst(n.operands[distrInto], v)
           return foldProd(...newOps)
         }
-        return foldProd(n, constant(v))
+        return foldProd(n, v)
       }
       default:
-        return foldProd(n, constant(v))
+        return foldProd(n, v)
     }
   }
 

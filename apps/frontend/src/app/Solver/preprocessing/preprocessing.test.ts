@@ -3,6 +3,7 @@ import { constant, customRead, prod, sum } from '../../Formula/utils'
 import type { ArtifactsBySlot } from '../common'
 import { precompute } from '../../Formula/optimization'
 import { foldProd, foldSum } from './util'
+import { makeLinearIndependent, zeroLowerBounds } from './linearIndependence'
 
 const hp = sum(
   customRead(['dyn', 'hp']),
@@ -17,7 +18,7 @@ const crcd = sum(
   prod(customRead(['dyn', 'critRate_']), customRead(['dyn', 'critDMG_']))
 )
 
-describe('test', () => {
+describe('preprocessing', () => {
   test('foldProd', () => {
     const x1 = customRead(['dyn', 'x1']),
       x2 = customRead(['dyn', 'x2']),
@@ -92,5 +93,57 @@ describe('test', () => {
     const { arts: arts2, nodes: n2 } = slowReaffine(n, artsTest)
     const compute2 = precompute(n2, arts2.base, (n) => n.path[1], 1)
     expect(compute2(arts2.values.flower)).toEqual(truth)
+  })
+  test('Eliminate Linear Dependencies', () => {
+    const artsTest: ArtifactsBySlot = {
+      base: {
+        a: 1,
+        '2a': 2,
+        b: 2,
+        c: 3,
+        'a+b': 3,
+      },
+      values: {
+        flower: [{ id: '', values: { a: 4, '2a': 8, 'a+b': 4 } }],
+        plume: [{ id: '', values: { b: 1, 'a+b': 1 } }],
+        sands: [{ id: '', values: { a: 1, b: 1, '2a': 2, 'a+b': 2 } }],
+        goblet: [{ id: '', values: { c: 10 } }],
+        circlet: [{ id: '', values: { a: 1, '2a': 2, 'a+b': 1, c: 4 } }],
+      },
+    }
+    const { arts } = makeLinearIndependent([], artsTest)
+    expect(arts.base.a).toEqual(1)
+    expect(arts.base.b).toEqual(2)
+    expect(arts.base.c).toEqual(3)
+
+    expect(arts.base['2a']).toEqual(undefined)
+    expect(arts.base['a+b']).toEqual(undefined)
+  })
+  test('Constants in Base', () => {
+    const artsTest: ArtifactsBySlot = {
+      base: {
+        a: 0,
+        b: 1,
+      },
+      values: {
+        flower: [
+          { id: '', values: { a: 3, b: 2 } },
+          { id: '', values: { a: 3, b: 3 } },
+          { id: '', values: { a: 3, b: 4 } },
+        ],
+        plume: [
+          { id: '', values: { b: -3 } },
+          { id: '', values: { b: -2 } },
+          { id: '', values: { b: -3, a: 1 } },
+        ],
+        sands: [],
+        goblet: [],
+        circlet: [],
+      },
+    }
+
+    zeroLowerBounds(artsTest)
+    expect(artsTest.base.a).toEqual(3)
+    expect(artsTest.base.b).toEqual(0)
   })
 })
