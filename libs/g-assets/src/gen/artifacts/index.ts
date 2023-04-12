@@ -9,6 +9,7 @@ import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
+import DewflowersGlow from './DewflowersGlow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
@@ -23,6 +24,7 @@ import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
+import NymphsDream from './NymphsDream'
 import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
 import PrayersForDestiny from './PrayersForDestiny'
@@ -54,6 +56,7 @@ const data = {
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
+  DewflowersGlow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,
@@ -68,6 +71,7 @@ const data = {
   MaidenBeloved,
   MartialArtist,
   NoblesseOblige,
+  NymphsDream,
   OceanHuedClam,
   PaleFlame,
   PrayersForDestiny,
