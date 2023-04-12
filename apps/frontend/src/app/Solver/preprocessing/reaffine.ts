@@ -16,7 +16,8 @@ function canDistribute({ operation, operands }: OptNode): boolean {
 }
 
 /**
- * More powerful, but slower reaffine function. Modifies `arts` in-place, so use with moderate caution.
+ * More powerful, but slower reaffine function that combines linear combinations of variables
+ * into one variable. Modifies `arts` in-place, so use with moderate caution.
  * Added variables are prefixed with `~r`.
  *
  * Brings `800*atk_` => `~r1` or `atk + 800*atk_` => `~r2`
