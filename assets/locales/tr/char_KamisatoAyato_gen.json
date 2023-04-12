@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "Çiçeklerin Seyri",
     "description": {
-      "0": "<strong>Kamisato Sanatı: Kyouka</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kamisato Sanatı: Kyouka</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Bansui Ichiro",
     "description": {
-      "0": "<strong>Kamisato Sanatı: Suiyuu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kamisato Sanatı: Suiyuu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

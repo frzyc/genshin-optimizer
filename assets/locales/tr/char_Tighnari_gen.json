@@ -132,7 +132,7 @@
   "constellation3": {
     "name": "Dallar Arasında Bakılan Fallar",
     "description": {
-      "0": "<strong>Serseri Sarmaşık Ok</strong> seviyesini 3 artırır.",
+      "0": "<strong>Serseri Sarmaşık Ok</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -145,7 +145,7 @@
   "constellation5": {
     "name": "Çiçeklerdeki Anlayış",
     "description": {
-      "0": "<strong>Vijnana-Phala Mayını</strong> seviyesini 3 artırır.",
+      "0": "<strong>Vijnana-Phala Mayını</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

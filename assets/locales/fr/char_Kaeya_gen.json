@@ -1,7 +1,7 @@
 {
   "name": "Kaeya",
   "title": "Chevalier du froid",
-  "description": "Un épéiste accompli et un stratège de génie de l'Ordre de Favonius ; il est originaire, selon les rumeurs, d'une terre bien au-delà des frontières de Mondstadt.",
+  "description": "Un épéiste accompli et un stratège de génie de l'Ordre de Favonius. Il est originaire, selon les rumeurs, d'une terre bien au-delà des frontières de Mondstadt.",
   "constellationName": "Pavo Ocellus",
   "auto": {
     "name": "Passe d'armes",
@@ -107,7 +107,7 @@
   "passive3": {
     "name": "Force cachée",
     "description": {
-      "0": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
+      "0": "Diminue la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

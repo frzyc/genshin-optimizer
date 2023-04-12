@@ -157,7 +157,7 @@
   "constellation3": {
     "name": "Merak Etme, Bunshin Halleder",
     "description": {
-      "0": "<strong>Yoohoo Sanatı: Mujina Karmaşası</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yoohoo Sanatı: Mujina Karmaşası</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -171,7 +171,7 @@
   "constellation5": {
     "name": "Ne Kadar Hızlı, O kadar İyi",
     "description": {
-      "0": "<strong>Yoohoo Sanatı: Fuuin Koşusu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yoohoo Sanatı: Fuuin Koşusu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

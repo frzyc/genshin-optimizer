@@ -147,7 +147,7 @@
   "constellation3": {
     "name": "Sahtekarın Zarına Dikkat",
     "description": {
-      "0": "<strong>Berrak Zar</strong> seviyesini 3 artırır.",
+      "0": "<strong>Berrak Zar</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -160,7 +160,7 @@
   "constellation5": {
     "name": "Krupiyenin El Çabukluğu",
     "description": {
-      "0": "<strong>Uzun Yaşam Hattı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Uzun Yaşam Hattı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

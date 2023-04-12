@@ -158,7 +158,7 @@
   "constellation3": {
     "name": "Çekilin, Boğa Geliyor!",
     "description": {
-      "0": "<strong>Masatsu Zetsugi: Akaushi Patlaması!</strong> seviyesini 3 artırır.",
+      "0": "<strong>Masatsu Zetsugi: Akaushi Patlaması!</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -171,7 +171,7 @@
   "constellation5": {
     "name": "10 Yıllık Hanamizaka Şöhreti",
     "description": {
-      "0": "<strong>Belalı Oni Kral: Itto, Dünyaya Karşı!</strong> seviyesini 3 artırır.",
+      "0": "<strong>Belalı Oni Kral: Itto, Dünyaya Karşı!</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

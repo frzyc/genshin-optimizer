@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Proviso",
     "description": {
-      "0": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's <pyro>Pyro DMG Bonus</pyro> by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect."
+      "0": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's <pyro>Pyro DMG Bonus</pyro> by 5%. This effect lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect."
     }
   },
   "passive2": {

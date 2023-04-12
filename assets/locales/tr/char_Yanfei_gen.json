@@ -135,7 +135,7 @@
   "constellation3": {
     "name": "Gerçeğin Alevli Mührü",
     "description": {
-      "0": "<strong>Kızıl Ferman</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kızıl Ferman</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -150,7 +150,7 @@
   "constellation5": {
     "name": "Ebedi Beyanname",
     "description": {
-      "0": "<strong>Son Karar</strong> seviyesini 3 artırır.",
+      "0": "<strong>Son Karar</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

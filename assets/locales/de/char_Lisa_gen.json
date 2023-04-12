@@ -1,7 +1,7 @@
 {
   "name": "Lisa",
   "title": "Rosenhexe",
-  "description": "Die faule, aber wissbegierige Bibliothekarin, die als Absolventin der Sumeru-Akademie mit dem größten Talent der letzten zweihundert Jahre angesehen wird.",
+  "description": "Eine faule, aber gelehrte Bibliothekarin, die als Absolventin der Sumeru-Akademie mit dem größten Talent der letzten zweihundert Jahre angesehen wird.",
   "constellationName": "Tempus Fugit",
   "auto": {
     "name": "Elektrisierende Berührung",
@@ -41,7 +41,7 @@
   "skill": {
     "name": "Lila Lichtbogen",
     "description": {
-      "0": "Bündelt die Elektro-Kraft, um der Unordnung ein Ende zu bereiten.",
+      "0": "Bündelt die Elektro-Kraft, um lästige Dinge wegzufegen.",
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
       "3": "Erschafft einen Kugelblitz, der automatisch nach Gegnern sucht.",
@@ -108,7 +108,7 @@
   "passive2": {
     "name": "Elektrostatisches Feld",
     "description": {
-      "0": "Verringert VTD von Gegnern, die mit <strong>Rosenblitz</strong> angegriffen werden, 10 s lang um 15 %."
+      "0": "Verringert die VTD von den Gegnern, die von <strong>Rosenblitz</strong> angegriffen werden, 10 s lang um 15 %."
     }
   },
   "passive3": {
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Plasmaregen",
     "description": {
-      "0": "Erschafft beim Angriff mit <strong>Rosenblitz</strong> nun 1 bis 3 Kettenblitze."
+      "0": "<strong>Rosenblitz</strong> entfesselt nun 1 bis 3 Kettenblitze beim Angriff."
     }
   },
   "constellation5": {

@@ -135,7 +135,7 @@
   "constellation3": {
     "name": "Yedi Dönüşüm",
     "description": {
-      "0": "<strong>Yako Çağrısı: Ölümcül Kiraz Çiçeği</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yako Çağrısı: Ölümcül Kiraz Çiçeği</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -148,7 +148,7 @@
   "constellation5": {
     "name": "Sonsuz Muziplik",
     "description": {
-      "0": "<strong>Gizli Ulvi Büyü: Tenko Kenshin</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gizli Ulvi Büyü: Tenko Kenshin</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

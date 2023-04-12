@@ -134,7 +134,7 @@
   "constellation3": {
     "name": "İlginç Bulmaca Kitabı",
     "description": {
-      "0": "<strong>Nabız Kesen Vuruş</strong> seviyesini 3 artırır.",
+      "0": "<strong>Nabız Kesen Vuruş</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -148,7 +148,7 @@
   "constellation5": {
     "name": "Gizli Arşiv",
     "description": {
-      "0": "<strong>Yelkapan Tekmesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yelkapan Tekmesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

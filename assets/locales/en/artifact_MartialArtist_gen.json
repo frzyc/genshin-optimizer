@@ -1,7 +1,7 @@
 {
   "setName": "Martial Artist",
   "setEffects": {
-    "2": "Increases Normal Attack and Charged Attack DMG by 15%.",
+    "2": "Normal and Charged Attack DMG +15%",
     "4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
   },
   "pieces": {

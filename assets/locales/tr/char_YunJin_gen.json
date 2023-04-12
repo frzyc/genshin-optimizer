@@ -138,7 +138,7 @@
   "constellation3": {
     "name": "Denizleri Aşan General",
     "description": {
-      "0": "<strong>Uçurum Yaran Sancak</strong> seviyesini 3 artırır.",
+      "0": "<strong>Uçurum Yaran Sancak</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -151,7 +151,7 @@
   "constellation5": {
     "name": "Meşhur Bir Oyuncu",
     "description": {
-      "0": "<strong>Gösterişli Açılış</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gösterişli Açılış</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

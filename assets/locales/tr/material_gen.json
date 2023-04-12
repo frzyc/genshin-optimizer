@@ -157,7 +157,7 @@
   },
   "IridescentFlotsam": {
     "name": "Işıltılı Kabuk",
-    "description": "Altın Elma Takımadaları'na dağılmış, sert dokulu bir deniz canlısının kabuğu. Bir güç tarafından etkilenmiş ve kabuğunun tüm dokusunu kaybederek ışıltılı bir hal almış gibi.\\n\"Bir Yaz Günü\" etkinliği sırasında hazine ile takas edilebilir."
+    "description": "Altın Elma Takımadaları'na dağılmış, sert dokulu bir deniz canlısının kabuğu. Bir güç tarafından etkilenmiş ve kabuğunun tüm dokusunu kaybederek ışıltılı bir hal almış gibi.\\n\"Bir Yaz Yolculuğu\" etkinliği sırasında hazine ile takas edilebilir."
   },
   "StratagemShard": {
     "name": "Stratejik Parça",
@@ -210,6 +210,10 @@
   "FloralCoupon": {
     "name": "Çiçek Kuponu",
     "description": "Rüzgarçiçeği Festivali sırasında Çiçek Satrancı oynayarak bu ödül kuponlarını elde edebilirsin. Etkinlik boyunca kuponları ödüllerle takas edebilirsin."
+  },
+  "GalaExcitement": {
+    "name": "Şenlik Heyecanı",
+    "description": "Bilgelik Şenliği Heyecanı"
   },
   "FestiveTicket": {
     "name": "Şenlik Bileti",
@@ -581,7 +585,7 @@
   },
   "Alhaitham": {
     "name": "Alhaitham",
-    "description": "Sumeru Akademisinin şu anki katibi. Olağanüstü zekası ve yetenekleri olan, özgürlüğüne düşkün bir adam. Sıradan insanların meraklı gözlerinden uzakta başına buyruk bir şekilde yaşar."
+    "description": "Sumeru Akademisinin şu anki katibi. Olağanüstü zekası ve yetenekleri olan, özgürlüğüne düşkün bir adam. Sıradan insanların meraklı gözlerinden uzakta, başına buyruk bir şekilde yaşar."
   },
   "Dehya": {
     "name": "Dehya",
@@ -590,6 +594,14 @@
   "Mika": {
     "name": "Mika",
     "description": "Sıradan bir ailenin çocuğu olan genç bir şövalye. Bölüğünde Ön Saha Gözlemcisi olarak görev yapmaktadır. Alçak gönüllü ve temkinli bir karakterdir."
+  },
+  "Kaveh": {
+    "name": "Kaveh",
+    "description": "Bazen birçok konuyu gereğinden fazla önemseyen, Sumerulu ünlü bir mimar. Gerçek hayatın dertlerinde boğulan bir estetik sevdalısı."
+  },
+  "Baizhu": {
+    "name": "Baizhu",
+    "description": "Bubu Eczanesinin sahibi. Genelde Changsheng adında beyaz bir yılanla beraber dolaşır. Tıp bilgisi engin, planları üstü kapalıdır."
   },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka'nın Yaşam Yıldızı",
@@ -854,6 +866,14 @@
   "MikasStellaFortuna": {
     "name": "Mika'nın Yaşam Yıldızı",
     "description": "Mika'nın Takımyıldız Etkinleştirme Malzemesi"
+  },
+  "KavehsStellaFortuna": {
+    "name": "Kaveh'nin Yaşam Yıldızı",
+    "description": "Kaveh'nin Takımyıldız Etkinleştirme Malzemesi"
+  },
+  "BaizhusStellaFortuna": {
+    "name": "Baizhu'nun Yaşam Yıldızı",
+    "description": "Baizhu'nun Takımyıldız Etkinleştirme Malzemesi"
   },
   "GnosticHymnOldNotes": {
     "name": "Aydınlanma Şarkısı - Eski Notalar",
@@ -1293,10 +1313,10 @@
   },
   "EelMeat": {
     "name": "Yılan Balığı Eti",
-    "description": "Müren/Yılan balığının taze eti. Taze ve güzel yemekler yapmak için kullanılabilir."
+    "description": "Müren/Yılan Balığının taze eti. Taze ve güzel yemekler yapmak için kullanılabilir."
   },
   "GlabrousBeans": {
-    "name": "Tüysüz Fasulye",
+    "name": "Kabuksuz Nohut",
     "description": "Teyvat'ta yaygın olan hafif aromalı bir baklagildir. Çeşitli şekillerde hazırlanabilir ve bu nedenle dünyanın her yerindeki insanlar tarafından geniş çapta kabul görmektedir."
   },
   "MysteriousMeat": {
@@ -2113,7 +2133,7 @@
   },
   "LegendOfTheShatteredHalberdIV": {
     "name": "Parçalanmış Baltalı Mızrak Efsanesi (IV)",
-    "description": "\"Sakin ol oğlum. Bak Mir, ben senin gerçek baban değilim...\"\\n\"Hayır!\"\\nBir zamanlar İmparatorluk Şölenleri Bakanı olan kişi aslında Jotunheim'dan gelen Khan adlı Asuraydı. Başkentten ayrılmasının asıl sebebi Törenler Bakanı ve Yüce Sekreterle birlikte Göklerin İmparatoru'nun kızını korumaktı.\\n\"Bir zamanlar Göklerin İmparatoru olan Shenxiao, şimdinin Contra Mundi'si çok sevdiğim bir arkadaşımdı. Ancak İmparatorun kızını çağırmayı başardığına göre tüm dileklerim gerçekleşmiş oldu.\""
+    "description": "\"Sakin ol oğlum. Bak Mir, ben senin gerçek baban değilim...\"\\n\"Hayır!\"\\nBir zamanlar İmparatorluk Şölenleri Bakanı olan kişi aslında Jotunheim'dan gelen Asura Khan'dı. Başkentten ayrılmasının asıl sebebi Törenler Bakanı ve Yüce Sekreterle birlikte Göklerin İmparatoru'nun kızını korumaktı.\\n\"Bir zamanlar Göklerin İmparatoru olan Shenxiao, şimdinin Contra Mundi'si çok sevdiğim bir arkadaşımdı. Ancak İmparatorun kızını çağırmayı başardığına göre tüm dileklerim gerçekleşmiş oldu.\""
   },
   "LegendOfTheShatteredHalberdV": {
     "name": "Parçalanmış Baltalı Mızrak Efsanesi (V)",
@@ -3561,7 +3581,7 @@
   },
   "BathysmalVishapExperimentalRecords": {
     "name": "Su Ejderi Deney Notları",
-    "description": "Su Ejderlerine ait Deney Notları. Bu notların yazımı sırasında hiçbir deniz ejderi öldürülmemiştir."
+    "description": "Su Ejderlerine ait Deney Notları. Bu notların yazımı sırasında hiçbir su ejderi öldürülmemiştir."
   },
   "BeforeSunAndMoon": {
     "name": "Güneşten ve Aydan Önce",
@@ -3581,7 +3601,7 @@
   },
   "BloodbranchCoral": {
     "name": "Kanlı Ağaç Mercanı",
-    "description": "Watatsumi Omikami'nin yaşam gücünü taşıyan bir mercan. Watatsumi Goryou Töreninin önemli bir parçasıdır."
+    "description": "Watatsumi Omikami'nin yaşam enerjisini taşıyan bir mercan. Watatsumi Goryou Töreninin önemli bir parçasıdır."
   },
   "DivineBridle": {
     "name": "Kutsal Dizgin",
@@ -3970,6 +3990,14 @@
   "SandGreasePupa": {
     "name": "Kum Yağı Pupası",
     "description": "Bu türden kabukları yalnızca çölün derinliklerinde bulunan Bataklık Yılan Balıklarının ürediği yerlerde bulabilirsin. Sert kabuklu olmalarının sebebi, Bataklık Yılan Balıklarının larvamsı bedenlerini kuru çöle hazır olana kadar korumalarıdır."
+  },
+  "MourningFlower": {
+    "name": "Yas Çiçeği",
+    "description": "Kadim savaş alanlarında ya da çölün derinliklerinde bile açan kırmızı çiçekler. Aşağı doğru sarkan çiçekleri, geçmişteki kahramanlar için yas tutuyor gibi görünür."
+  },
+  "Trishiraite": {
+    "name": "Kan Kızılı Taşı",
+    "description": "Çorak dağların derinliklerinde bulunan ve görünüşe göre element enerjisinin katılaşması sonucu oluşmuş olan parlak bir taş."
   },
   "Scarab": {
     "name": "Firavun Böceği",
@@ -4693,7 +4721,7 @@
   },
   "DreamSakura": {
     "name": "Hayali Kiraz Çiçeği",
-    "description": "Sen Makoto Raiden'ın zihin diyarından çıkarken elinde tek bir kiraz çiçeği yaprağı vardı.\\nNasıl var olduğunu bilmiyorsun. Sıradan kiraz çiçeği yapraklarıyla aynı görünüyor. O da diğer eşyalar gibi sakladığın yerde sessizce duruyor ama artık dokunamıyorsun. Ne ağırlığını ne sıcaklığını hissedebiliyorsun. Bir nesne normalde sahip olacağı düşünülen özellikleri yitirdiğinde \"varlığı\" nasıl kanıtlanabilir?\\nGeçmişte yaprağın şahitlik etmiş olabileceği olayları düşününce insanın aklında bir tahmin beliriyor. Bu kiraz çiçeği yaprağının varlığını sürdürmesini sağlayan, birinin iradesi olmalı ama bunun kim olduğunu ve yaprağın varlığını bilerek mi yoksa habersizce mi sürdürdüğünü bilmek imkansız. Bu iradenin özlemden mi, güvenden mi yoksa şükrandan mı kaynaklandığını bilmek de mümkün değil.\\nBelki o kişinin iradesi değiştiğinde bu kiraz çiçeği yaprağı da kaybolur.\\nNe olur ne olmaz, en iyisi ara sıra kaybolmuş mu diye bakmak muhtemelen."
+    "description": "Sen Makoto Raiden'ın zihin diyarından çıkarken elinde tek bir kiraz çiçeği yaprağı vardı.\\nNasıl var olduğunu bilmiyorsun. Sıradan kiraz çiçeği yapraklarıyla aynı görünüyor. O da diğer eşyalar gibi sakladığın yerde sessizce duruyor ama artık dokunamıyorsun. Ne ağırlığını ne de sıcaklığını hissedebiliyorsun. Bir nesne normalde sahip olacağı düşünülen özellikleri yitirdiğinde \"varlığı\" nasıl kanıtlanabilir?\\nGeçmişte yaprağın şahitlik etmiş olabileceği olayları düşününce insanın aklında bir tahmin beliriyor. Bu kiraz çiçeği yaprağının varlığını sürdürmesini sağlayan, birinin iradesi olmalı ama bunun kim olduğunu ve yaprağın varlığını bilerek mi yoksa habersizce mi sürdürdüğünü bilmek imkansız. Bu iradenin özlemden mi, güvenden mi yoksa şükrandan mı kaynaklandığını bilmek de mümkün değil.\\nBelki o kişinin iradesi değiştiğinde bu kiraz çiçeği yaprağı da kaybolur.\\nNe olur ne olmaz, en iyisi ara sıra kaybolmuş mu diye bakmak muhtemelen."
   },
   "AphotiumOre": {
     "name": "Derin Deniz Cevheri",
@@ -5277,7 +5305,7 @@
   },
   "SpecialBirdEgg": {
     "name": "Özel Kuş Yumurtası",
-    "description": "Balıkçı Kayvan'ın özel yeminde kullandığı bir kuş yumurtası. Bu yumurta özel gözükmese de özel bir ağaçtan toplandı."
+    "description": "Balıkçı Kayvan'ın özel yeminde kullandığı bir kuş yumurtası. Bu yumurta özel görünmese de özel bir ağaçtan toplandı."
   },
   "SpecialMushroom": {
     "name": "Özel Mantar",
@@ -5297,7 +5325,7 @@
   },
   "BoxLunchFromTighnari": {
     "name": "Tighnari'nin Öğle Yemeği Kutusu",
-    "description": "Tighnari'nin Haypasia için hazırladığı acil durum yiyeceği. Paimon kutuya bir göz atarak içinde leziz gözüken geleneksel Sumeru yemeklerini keşfetti."
+    "description": "Tighnari'nin Haypasia için hazırladığı acil durum yiyeceği. Paimon kutuya bir göz atarak içinde leziz görünen geleneksel Sumeru yemeklerini keşfetti."
   },
   "LetterToHaypasia": {
     "name": "Haypasia'ya Mektup",
@@ -5365,7 +5393,7 @@
   },
   "TheBestWater": {
     "name": "\"En İyi Su\"",
-    "description": "Vanarana'dan gelen berrak, soğuk ve ferahlatıcı su. Üzerine bir yaprak düşse adeta havada süzülüyormuş gibi gözükür. Bu, olağanüstü kalitede şeffaf bir sudur."
+    "description": "Vanarana'dan gelen berrak, soğuk ve ferahlatıcı su. Üzerine bir yaprak düşse adeta havada süzülüyormuş gibi görünür. Bu, olağanüstü kalitede şeffaf bir sudur."
   },
   "SilverPocketWatch": {
     "name": "Gümüş Cep Saati",
@@ -5377,7 +5405,7 @@
   },
   "SarehsNote": {
     "name": "Sareh'in Notu",
-    "description": "Bu sefer Lale adında siyah ve beyaz kürklü bir kediyi arıyoruz. Eğer kedi dilinde Lale'nin dikkatini çekmek istersen düşük tonla başlayıp sonrasında yüksek tona geçip sonunda da daha yüksek bir tonla \"miyav, miyav miyav miyav, miyav\" diyebilirsin."
+    "description": "Bu sefer Lale adında siyah beyaz bir kediyi arıyoruz. Eğer kedi dilinde Lale'nin dikkatini çekmek istersen düşük tonla başlayıp sonrasında yüksek tona geçip sonunda da daha yüksek bir tonla \"miyav, miyav miyav miyav, miyav\" diyebilirsin."
   },
   "FreshNilotpalaLotus": {
     "name": "Taze Nilotpala Nilüferi",
@@ -5985,11 +6013,11 @@
   },
   "CrimsonAgate": {
     "name": "Kızıl Akik",
-    "description": "Yoğunlaştırılmış hayat gücünün Ejdersırtı'na özgü bir enerjiyle birleşmesinden doğan bir tür kristal. Buztutan Ağacının büyümesi için en iyi besin kaynağıdır."
+    "description": "Yoğunlaştırılmış yaşam enerjisinin Ejdersırtı'na özgü bir enerjiyle birleşmesinden doğan bir tür kristal. Buztutan Ağacının büyümesi için en iyi besin kaynağıdır."
   },
   "CrimsonAgateDisplay": {
     "name": "Kızıl Akik (Görüntü)",
-    "description": "Yoğunlaştırılmış hayat gücünün Ejdersırtı'na özgü bir enerjiyle birleşmesinden doğan bir tür kristal. Buztutan Ağacının büyümesi için en iyi besin kaynağıdır."
+    "description": "Yoğunlaştırılmış yaşam enerjisinin Ejdersırtı'na özgü bir enerjiyle birleşmesinden doğan bir tür kristal. Buztutan Ağacının büyümesi için en iyi besin kaynağıdır."
   },
   "TransientResin": {
     "name": "Geçici Reçine",
@@ -6030,6 +6058,10 @@
   "LuckyCoin": {
     "name": "Şans Parası",
     "description": "Dehanın Yakarışı Kart Oyunu Oyuncular Birliği tarafından tanınan ve kullanılan para birimi. Dehanın Yakarışı Kart Oyunuyla ilgili çeşitli eşyalar satın almak için kullanılabilir. İlk başta, taşıyana şans getirsin diye böyle bir isim verildiği söylenir. Belki de ona sahip olabilenler zaten yeterince şanslı olanlardır..."
+  },
+  "PlumeOfPurifyingLight": {
+    "name": "Arındıran Işık Tüyü",
+    "description": "Khvarena'nın bıraktığı parça. Geçmiş anıları taşır."
   },
   "Dish": {
     "name": "Yemek",
@@ -8023,6 +8055,38 @@
     "name": "Gözlemci Sandviçi",
     "description": "Mika'nın özel tarifi. Önündeki zengin tabak bir malzeme yığınından oluşuyor ve sen her bir ısırık aldığında hepsinde ayrı lezzet olan katmanlar ağzında dağılıp sanki bir lezzet dağına tırmanıyormuşsun hissi veriyor. Bunlar, Şövalyelerle birlikteyken geliştirdiği mutfak becerileri mi?"
   },
+  "SuspiciousFatteh": {
+    "name": "Nohutlu Fette (Tuhaf)",
+    "description": "Eski bir Sumeru yemeği. Tam pişmemiş Kabuksuz Nohutlar ve yanmış lavaş parçaları ayıklanırken sabırlı olunursa kalan yoğurt sosu da bir tatlı niyetine yenilebilir..."
+  },
+  "Fatteh": {
+    "name": "Nohutlu Fette",
+    "description": "Eski bir Sumeru yemeği. Kıtır lavaş parçaları, haşlanmış Kabuksuz Nohut ezmesi ve önceden hazırlanan yoğurt sosuyla karıştırılıp servis edilir. Bu tarif çok uzun yıllardan beri kullanılır, hatta zamanla farklı yapılış şekilleri de ortaya çıkmıştır. Hepsinin ortak yanı ise basit ve lezzetli olmalarıdır."
+  },
+  "DeliciousFatteh": {
+    "name": "Nohutlu Fette (Lezzetli)",
+    "description": "Eski bir Sumeru yemeği. Yoğurt sosunun ipeksi pürüzsüzlüğüyle kaplanmış Kabuksuz Nohutların yumuşak dokusunu ağzında hissettiğin an, tatlı düşlere dalıp gidersin ve kendine geldikten sonra da lavaşın ağız dolduran tadını damağında hissedersin."
+  },
+  "SuspiciousJadeFruitSoup": {
+    "name": "Güneriği Hoşafı (Tuhaf)",
+    "description": "Geleneksel bir Liyue tatlısı. Tüm malzemeleri dikkatsizce tencerede karıştırınca ortaya Yoğun Bodurlop Özü gibi bir tat çıktı... Yani, lezzetli olmayabilir ama malzemeleri hâlâ sağlığa yararlı..."
+  },
+  "JadeFruitSoup": {
+    "name": "Güneriği Hoşafı",
+    "description": "Geleneksel bir Liyue tatlısı. Su kaynatılır, çeşitli malzemeler eklenir ve bir süre daha kaynatılır. Ardından akide şekeri eklenir ve yoğun bir kıvam alıp berraklaşana kadar kaynamaya bırakılır. Uzun süre kaynattıktan sonra ağızda eriyip giden yumuşak dokulu bir çorba kıvamında olur ve bu da onu yediden yetmişe herkes için mükemmel bir tatlı yapar."
+  },
+  "DeliciousJadeFruitSoup": {
+    "name": "Güneriği Hoşafı (Lezzetli)",
+    "description": "Geleneksel bir Liyue tatlısı. Hoşafın içindeki büyük meyve parçaları, akan suda tek başına giden bir tekneyi andırır ve ferahlatıcı tadı, aniden esen bir rüzgar gibi kendini hissettirir."
+  },
+  "TheEndeavor": {
+    "name": "Gayret",
+    "description": "Kaveh'nin özel tarifi. Alkazar Sarayı'nı andıracak şekilde dizilmiş altın kabuklu çörekler, bembeyaz yoğurt sosu havuzundan bir kule gibi yükselir. Yemeği yapan her ne kadar yapım aşamasında büyük emek vermiş olsa da yemeği yerken tüm çöreklerin kırılması gerektiğini unutmuş gibi görünüyor."
+  },
+  "HeatQuellingSoup": {
+    "name": "Ateş Düşürücü Hoşaf",
+    "description": "Baizhu'nun özel tarifi. \"Bu aslında bir ilaç değil, sadece kuruluğu gidermeye yarıyor.\" Baizhu'nun düşünceli sesi kulaklarında yankılanırken bir kase parlak meyveli hoşaf önünde beliriverir. \"Bu tatlıda aslında şeker kullanılmaz ama senin acı tada alışkın olmayacağını düşünerek biraz ekledi.\" diye ekler Changsheng."
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi",
     "description": "Tariflerin kilidini açmak için kullanılan eşya."
@@ -8591,6 +8655,14 @@
     "name": "Tarif: Naneli Meyve Çayı",
     "description": "Naneli Meyve Çayı yapımını adım adım anlatan detaylı bir tarif."
   },
+  "RecipeFatteh": {
+    "name": "Tarif: Nohutlu Fette",
+    "description": "Nohutlu Fette yapımını adım adım anlatan detaylı bir tarif."
+  },
+  "RecipeJadeFruitSoup": {
+    "name": "Tarif: Güneriği Hoşafı",
+    "description": "Güneriği Hoşafı yapımını adım adım anlatan detaylı bir tarif."
+  },
   "CraftedItems": {
     "name": "Üretilen Malzemeler",
     "description": "Üretim Sistemi ile üretilen eşyalar."
@@ -8789,7 +8861,7 @@
   },
   "WeatheredArrowhead": {
     "name": "Eski Ok Başı",
-    "description": "Kanla kaplı eski bir ok başı. Uzun zaman önce köreldiği için artık silah olarak kullanılamaz.\\nAncak avcının gururunu tasvir ettiği için kolye ucu veya madalyon olarak da kullanılabilir."
+    "description": "Kanla kaplı eski bir ok başı. Uzun zaman önce köreldiği için artık silah olarak kullanılamaz.\\nAncak avcının gururunu tasvir ettiği için tılsım veya madalyon olarak da kullanılabilir."
   },
   "HeavyHorn": {
     "name": "Ağır Boynuz",
@@ -9043,6 +9115,18 @@
     "name": "İşaretli Kabuk",
     "description": "Üzerine kadim yazılar kazınmış olan işaretli bir Kutsanmış Canavar kabuğu.\\nKabuğun solgun hatlarına geçmişin pişmanlıkları işlenmiş. Bir gün bu canavarın kemikleri, rüzgarda toz olup uçacak ve ardından yüce ölüler en sonunda huzur içinde yatacaklar..."
   },
+  "AFlowerYetToBloom": {
+    "name": "Henüz Açmamış Çiçek",
+    "description": "Henüz açmadan koparılmış, bir Dağ Zebanisi için değerli olan bir yaban çiçeği.\\nDağ zebanisi, vahşi doğada dolanırken yanına bu çiçek dışında hiçbir şey almaz."
+  },
+  "TreasuredFlower": {
+    "name": "Değerli Çiçek",
+    "description": "Bir Dağ Zebanisi için değerli olan ancak herhangi bir özelliği bulunmayan yabani bir çiçek.\\nÇiçekler, birçok kültürde kişilerin duygularını ifade etmeleri için hediye ya da adak olarak verilir."
+  },
+  "WanderersBloomingFlower": {
+    "name": "Avare'nin Açan Çiçeği",
+    "description": "Bir Dağ Zebanisi için değerli olan ancak herhangi bir özelliği bulunmayan açmış bir yabani çiçek.\\nEbedi yabancı herhangi bir ödül istemez, yalnızca yaptığı şeylerin meyve verdiğini görmek ister..."
+  },
   "HurricaneSeed": {
     "name": "Kasırga Tohumu",
     "description": "Rüzgar Hipostazının yenildikten sonra kopan parçası.\\nRüzgar enerjisi özü içerir.\\nNarin görünümlü vücudunda kasırga yaratma gücü barındırdığı söylenir. Saf Rüzgar enerjisinden oluşmuş bu kelebek, tekrar fırtına çıkarabileceği günü dört gözle bekliyor."
@@ -9218,6 +9302,22 @@
   "PseudoStamens": {
     "name": "Sahte Tomurcuklar",
     "description": "Solucanın kuyruğunda saklı olan soluk kanat kınları, bir çiçeğin tomurcuğu kadar incedir.\\nGeçmişte, hatta zamanın da öncesinde çayırların ve ormanın altındaki nemli topraklarda, gökte uçan kuşlar ve suda yüzen balıklar gibi gezdikleri söylenir. Çiçekleri taklit etmelerinin sebebinin ise kum fırtınasında kaybolmuş avları kendilerine çekmek için olduğuna inanılır. Diğer bir teori ise sergiledikleri açan çiçeğin, çağlar önce çöl rüzgarları ile kaybolmuş kadim bir çiçeğe benzediğini öne sürer."
+  },
+  "EvergloomRing": {
+    "name": "Karanlık Halka",
+    "description": "Karanlık havadislerin Dört Kollu Elçisini yenerek elde edilen gizemli bir silah.\\nHalkalar bir geçit şeklindedir. Bu nedenle, gizemli etkilerle ilgili sırları açığa çıkaran her türlü oluşum genelde çemberlerden oluşur. Bu halkalar belki de evrenin akışına rehberlik edebilecek geçitlerdir."
+  },
+  "WorldspanFern": {
+    "name": "Dünyaya Yayılmış Eğrelti Otu",
+    "description": "Apep'in bedeninin olduğu vahadan alınan bir eğrelti otu.\\nDünya, çok uzun zaman önce ejderlerindi. Apep'in sarayının yeşil dünyasında ilk filizlenen bitkiler eğrelti otları oldu.\\nÜzerinden geçen yüzyılların ardından eğrelti otları ağaçlara, sarmaşıklara, köklere ve yapraklara dönüşüp tüm dünyayı sardı. Apep ise, özgürce filizlenip gökyüzüne doğru serpilen ve duyulamayacak kadar alçak bir ses çıkaran eğrelti otunu hâlâ hatırlıyor."
+  },
+  "PrimordialGreenbloom": {
+    "name": "İlkel Formlu Yeşil Çiçek",
+    "description": "Apep'in olduğu vahadan alınan ve ilkel halini koruyan bir çiçek.\\nYıllar geçtikçe bu çiçeklerin sayısız rengi, kokusu olmuş ve gece gökyüzündeki yıldızlar kadar isim kazanmıştı.\\nAncak bu ilk çiçeğin hiçbir zaman adı olmadı. Geçmiş zamanın ejderlerine göre bir çiçeğin ismi olmasa bile kokusundan hiçbir şey kaybetmezdi. İsimler, küçük varlıkların dünyayı algılamak için kullandıkları araçlardı. Hayat, tanımlara bağlı kalmaz, her daim değişir ve gelişir."
+  },
+  "Everamber": {
+    "name": "Ezeli Kehribar",
+    "description": "Apep'in olduğu vahadan alınan bir kehribar parçası. Kehribarın içinde küçük, soyu uzun zaman önce tükenmiş ve donarak kalmış bir böcek vardır.\\nBu kadar küçük bir canlının ağacın kehribarıyla sarmalanmış olması tesadüf, varlığının devam etmesi ise kaderin bir lütfudur.\\nGöklerden gelen felaket sonrası ağaçlar, sarmaşıklar, kökler ve her türlü bitki kuruyup toza döndü. Birçok yaşam formu yok oldu.\\nAncak kehribarın durgunluğu içinde kalan isimsiz bir böcek pek çoklarının göremediği geleceğe tanık oldu."
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi",
@@ -9699,8 +9799,8 @@
     "name": "Akıcı Şarkının Parşömeni (III)",
     "description": "Çöl kalıntılarında keşfedilen ve Akademideki Vahumana araştırmacıları tarafından gün yüzüne çıkarılan bir yırtık sayfa. Bu sayfanın yazarı henüz bilinmiyor."
   },
-  "AnOdeToSoulLight": {
-    "name": "Ruhun Işığına Bir Kaside",
+  "AnOdeToKhvarena": {
+    "name": "Khvarena'ya Bir Kaside",
     "description": "Hikayelerin çöldeki kayıp bir dini grupla nesilden nesile geçtiği söyleniyor. Birileri de onu yazıya dökmüş."
   },
   "TransparentRuinsRecordII": {
@@ -10307,6 +10407,22 @@
     "name": "Kadim Taş Anahtar",
     "description": "Tanit kabilesinin Liderine ait olan gizemli bir anahtar. Bir yerde bir kapıyı açması lazım..."
   },
+  "PlumpHarraFruit": {
+    "name": "İri Harra Meyvesi",
+    "description": "Genellikle sıcak ve nemli yağmur ormanında yetişen, özel baharatlı bir aromaya sahip olan bir meyve. Diğer meyvelerle harmanlandığında daha lezzetli tatlar elde edilebilir."
+  },
+  "JuicyZaytunPeach": {
+    "name": "Sulu Zaytun Şeftalisi",
+    "description": "Bir orman çalısı meyvesi. Etli kısmı sert ve tatlıdır. Zihni yatıştırıcı bir etkisi olduğu söylenir, yani şu anda Layla için çok uygun."
+  },
+  "FreshApple": {
+    "name": "Taze Elma",
+    "description": "Kıtır ve taze. Çiğ olarak yenilip bir içeceği mayalamak için kullanılmasının yanı sıra kavrulduğunda da kendine özgü bir tat ortaya çıkar."
+  },
+  "DryFirewood": {
+    "name": "Kuru Odun",
+    "description": "Birinin boş zamanında topladığı yakacak odun. Kamp ateşi için uygun boyutta ve kuruluktadır. Bunu kullanarak yemek pişirmek doğal bir is tadı verir. Layla'nın biraz olsun sakinleşmesi için işe yarayabilir."
+  },
   "CrumpledNamelist": {
     "name": "Buruşuk İsim Listesi",
     "description": "Buruşuk İsim Listesi"
@@ -10375,6 +10491,70 @@
     "name": "Collei'in Rüzgarçiçeği",
     "description": "Collei'e göre Rüzgarçiçeği olabilecek, onun minnettarlığını ve iyi dileklerini yansıtabilecek tek çiçek Padisarahtır. Şimdi bu çiçeğin tohumlarını sana veriyor.\\nCollei, Mondstadt'a tekrar ziyaret ederek geleceğe yeni bir adım attı. Önündeki günler tıpkı elinde tuttuğu o küçük tohum gibi ışık ve umut dolu olsun."
   },
+  "GreatSongOfKhvarena": {
+    "name": "Khvarena'nın Ulu Şarkısı",
+    "description": "Khvarena'nın Ulu Şarkılarında büyük bir güç yatar ancak yalnızca Pariler Khvarena'nın onayını alıp özel ayinlerle onların potansiyelini açığa çıkarabilirler..."
+  },
+  "SchematicClippedInsideNotes": {
+    "name": "Notlar Arasındaki Tasarım",
+    "description": "Gizemli araştırma notlarından elde edilen taslaklar görünüşe göre harabeye dönen yer altı sınama alanının yapısal tasarımını ve Khvarena'nın Ulu Şarkısının yerini gösteriyor..."
+  },
+  "RenesInvestigationNotes": {
+    "name": "Rene'nin Araştırma Notları",
+    "description": "Söylenene göre bu notları \"ölümsüzlüğe ulaşmak\" için can atan büyük bir araştırmacı bırakmış ve notlarda harabeleri keşfetme deneyimleriyle bu süreçte öğrendiği bilgileri yer alıyormuş..."
+  },
+  "NotesLeftBySomeone": {
+    "name": "İsimsiz Notlar",
+    "description": "Kuşkucular Cemiyetinden bir üyenin bıraktığı notlar gibi görünüyor. Kayıp Kori Davulları ve geleneksel kullanım şekilleriyle ilgili bilgileri içeriyor."
+  },
+  "AncientVolume": {
+    "name": "Eski Belge",
+    "description": "Kuşkucuların önceki nesillerinden kalan eski bir belge. Kullanılan gizemli dil, içeriğin anlaşılmasını zorlaştırıyor."
+  },
+  "UdumbaraPistil": {
+    "name": "Udumbara Taçları",
+    "description": "Çiçek açan Udumbaradan alınan bir taç. Görünüşe göre Pariler için özel bir anlamı var..."
+  },
+  "KhvarenaInscriptionFragment": {
+    "name": "Khvarena Yazıtının Parçası",
+    "description": "Kayıp abide yazıtının bir parçası. Bu parçanın neden kaybolduğu bilinmiyor."
+  },
+  "KorybantesVedana": {
+    "name": "Koribant: Vedana",
+    "description": "Gizemli bir davul. Üzerinde Buz simgesi var."
+  },
+  "KorybantesRupa": {
+    "name": "Koribant: Rupa",
+    "description": "Kayıp Kori Davullarından biri. Üzerinde Doğa simgesi var."
+  },
+  "KorybantesSamjna": {
+    "name": "Koribant: Samjna",
+    "description": "Kayıp Kori Davullarından biri. Üzerinde Su simgesi var."
+  },
+  "KorybantesSankhara": {
+    "name": "Koribant: Sankhara",
+    "description": "Kayıp Kori Davullarından biri. Üzerinde Elektrik simgesi var."
+  },
+  "KorybantesVijnana": {
+    "name": "Koribant: Vijnana",
+    "description": "Kayıp Kori Davullarından biri. Üzerinde Ateş simgesi var."
+  },
+  "MysteriousEnergyBlock": {
+    "name": "Gizemli Enerji Bloku",
+    "description": "Azositten arındırılıp element enerjisiyle yoğunlaştırılan bir enerji bloku. Bu bloklar, büyük ölçekli güç sistemlerinde enerji kaynağı olarak kullanılabilir gibi görünüyor."
+  },
+  "JuliensLuggage": {
+    "name": "Julien'ın Valizi",
+    "description": "Sudan çıkarılmış bir valiz. Özenle paketlenmiş ancak içindekilerin ıslanıp ıslanmadığı belli değil."
+  },
+  "JuliensSketch": {
+    "name": "Julien'ın Çizimi",
+    "description": "Tuhaf bir renk paleti olan bir çizim."
+  },
+  "PictureLeftByTheWisdomSeelie": {
+    "name": "Bilgelik Perisinin Bıraktığı Fotoğraf",
+    "description": "Bilgelik Perisinin bıraktığı ipuçları. Umarım bu seferki arayış boşa olmaz..."
+  },
   "CaravanAccounts": {
     "name": "Kervan Hesap Kayıtları",
     "description": "Hedefindeki kervandan alınan hesap kayıtları. Bilgiler daha çok Dakan Al-Ahmar ile ilgili. Kaçırılan mallarla ilgili büyük miktarda veri ve bilgi bulunması haricinde, Dunyarzad'ın babasının adının da geçiyor olması endişe verici."
@@ -10391,9 +10571,173 @@
     "name": "Yemek ve Konaklama Düzenlemeleri",
     "description": "？？？"
   },
+  "RelicReplicaContainerI": {
+    "name": "Yadigar Kopyası Kabı (I)",
+    "description": "Bir yadigar kopyası içeren bir kap. Özel olarak mor rengine boyanmış."
+  },
+  "RelicReplicaContainerII": {
+    "name": "Yadigar Kopyası Kabı (II)",
+    "description": "Bir yadigar kopyası içeren bir kap. Özel olarak maviye boyanmış."
+  },
+  "RelicReplicaContainerIII": {
+    "name": "Yadigar Kopyası Kabı (III)",
+    "description": "Bir yadigar kopyası içeren bir kap. Özel olarak kırmızıya boyanmış."
+  },
+  "KorybantesScoreVijnana": {
+    "name": "Koribant Notaları: Vijnana",
+    "description": "Koribant: Vijnana'ya karşılık gelen davul notaları."
+  },
+  "KorybantesScoreSamjna": {
+    "name": "Koribant Notaları: Samjna",
+    "description": "Koribant: Samjna'ya karşılık gelen davul notaları."
+  },
+  "KorybantesScoreRupa": {
+    "name": "Koribant Notaları: Rupa",
+    "description": "Koribant: Rupa'ya karşılık gelen davul notaları."
+  },
+  "KorybantesScoreSankhara": {
+    "name": "Koribant Notaları: Sankhara",
+    "description": "Koribant: Sankhara'ya karşılık gelen davul notaları."
+  },
+  "KorybantesScoreVedana": {
+    "name": "Koribant Notaları: Vedana",
+    "description": "Koribant: Vedana'ya karşılık gelen davul notaları."
+  },
+  "JuliensDrawingBoard": {
+    "name": "Julien'ın Çizim Tahtası",
+    "description": "Daha önce kullanıldığına dair izler olan ancak şu anda üzerinde tek bir fırça darbesi bile bulunmayan bir çizim tahtası."
+  },
+  "InPursuitOfTheLostInscription": {
+    "name": "Kayıp Yazıtın Peşinde",
+    "description": "Sosi'den aldığın bir not. İçinde kayıp abide parçalarıyla ilgili ipuçları olabilir."
+  },
   "HaniyyahsGiftOfMarvelousJellies": {
     "name": "Haniyyah'ın Muhteşem Jöle Hediyesi",
     "description": "Haniyyah tarafından verilen zarif bir hediye. İçinde Mantarların çok sevdiği Muhteşem Jölelerden var ve bunların arasında Mantarların kendi zevklerine göre beslenebileceği pek çok benzersiz lezzet bulunmakta.\\nMuhteşem Jöleler, daha önceki Çiçek Jölelerin işlenmiş halidir. Kristalimsi saydamlıkları ve esnek dokuları aynıdır; tehlikeli maddeler içermezler, bu nedenle de Mantarlar için ideal bir yiyecektir. Bununla birlikte, bu Jöleleri evde saklarken çocukların yanlışlıkla yememesine dikkat edilmelidir..."
+  },
+  "BoxOfSpecialPotions": {
+    "name": "Özel İksir Kutusu",
+    "description": "Bahador'dan elde edilen bir kutu. İçinde bazı özel iksirler var. Söylediğine göre bu iksirler belli bir Zindanı keşfetmeye yardımcı olabilirmiş..."
+  },
+  "SomeonesJournal": {
+    "name": "Birinin Günlüğü",
+    "description": "Birinin Günlüğü"
+  },
+  "SomeonesMemo": {
+    "name": "Birinin Bıraktığı Not",
+    "description": "Birinin Bıraktığı Not"
+  },
+  "Locator": {
+    "name": "Bulucu",
+    "description": "Bir Kshahrewar icadı. Yarışmacılar bu takip cihazlarını taşıdıklarında bulucu, bulundukları yeri gösterir. Ayrıca yarışmacılar görevlerini başarıyla tamamladıklarında bulucu ses çıkarır."
+  },
+  "FoodSeeds": {
+    "name": "Yiyecek Tohumları",
+    "description": "Bu tohumları sana Uçan Rüzgar Mantarı olarak bilinen element yaşam formu verdi. Mantarların yemeyi sevdiği yiyecekleri yetiştirmek için bu tohumları tarlaya ek. Peki ileride tarlaların nasıl sürüleceğini hatırlayan Mantarlar kalacak mı?"
+  },
+  "NamelessAdventurersNotes": {
+    "name": "İsimsiz Maceracının Notları",
+    "description": "Bir maceracının elinden çıkmış görünen, çölde bırakılmış kayıp notlar."
+  },
+  "AncientEngineeringNotes": {
+    "name": "Kadim Mühendislik Notları",
+    "description": "Kadim Mühendislik Notları"
+  },
+  "RaggedEngineeringNotes": {
+    "name": "Yıpranmış Mühendislik Notları",
+    "description": "Yıpranmış Mühendislik Notları"
+  },
+  "SomeonesAbandonedLetter": {
+    "name": "Birisinin Terk Edilmiş Mektubu",
+    "description": "Birisinin Terk Edilmiş Mektubu"
+  },
+  "AkademiyaInvestigationTeamsLogsIII": {
+    "name": "Akademi Soruşturma Ekibi Kayıtları (III)",
+    "description": "Akademi Soruşturma Ekibi Kayıtları (III)"
+  },
+  "AkademiyaInvestigationTeamsLogsIV": {
+    "name": "Akademi Soruşturma Ekibi Kayıtları (IV)",
+    "description": "Akademi Soruşturma Ekibi Kayıtları (IV)"
+  },
+  "BarelyLegibleBulletin": {
+    "name": "Zar Zor Okunan İlan",
+    "description": "Zar Zor Okunan İlan"
+  },
+  "AncientJournal": {
+    "name": "Kadim Günlük",
+    "description": "Kadim Günlük"
+  },
+  "RecordsOfUnknownAttributionII": {
+    "name": "Sahipsiz Kayıtlar (II)",
+    "description": "Sahipsiz Kayıtlar (II)"
+  },
+  "AkademiyaInvestigationTeamsLogsI": {
+    "name": "Akademi Soruşturma Ekibi Kayıtları (I)",
+    "description": "Akademi Soruşturma Ekibi Kayıtları (I)"
+  },
+  "AkademiyaInvestigationTeamsLogsII": {
+    "name": "Akademi Soruşturma Ekibi Kayıtları (II)",
+    "description": "Akademi Soruşturma Ekibi Kayıtları (II)"
+  },
+  "SoiledOrders": {
+    "name": "Kirlenmiş Emirler",
+    "description": "Kirlenmiş Emirler"
+  },
+  "RecordsOfUnknownAttributionI": {
+    "name": "Sahipsiz Kayıtlar (I)",
+    "description": "Sahipsiz Kayıtlar (I)"
+  },
+  "PagesFromSomeLostNotesI": {
+    "name": "Bazı Kayıp Notlardan Sayfalar (I)",
+    "description": "Bazı Kayıp Notlardan Sayfalar (I)"
+  },
+  "PagesFromSomeLostNotesII": {
+    "name": "Bazı Kayıp Notlardan Sayfalar (II)",
+    "description": "Bazı Kayıp Notlardan Sayfalar (II)"
+  },
+  "BizarreTranscript": {
+    "name": "Garip Metin",
+    "description": "Garip Metin"
+  },
+  "TeachingsOfTheSkeptics": {
+    "name": "Kuşkucuların Öğretileri",
+    "description": "Kuşkucuların Öğretileri"
+  },
+  "NamelessResearchersNotesI": {
+    "name": "İsimsiz Araştırmacının Notları (I)",
+    "description": "İsimsiz Araştırmacının Notları (I)"
+  },
+  "NamelessResearchersNotesII": {
+    "name": "İsimsiz Araştırmacının Notları (II)",
+    "description": "İsimsiz Araştırmacının Notları (II)"
+  },
+  "NamelessResearchersNotesIII": {
+    "name": "İsimsiz Araştırmacının Notları (III)",
+    "description": "İsimsiz Araştırmacının Notları (III)"
+  },
+  "NamelessResearchersNotesIV": {
+    "name": "İsimsiz Araştırmacının Notları (IV)",
+    "description": "İsimsiz Araştırmacının Notları (IV)"
+  },
+  "MercenarysAgedNotesI": {
+    "name": "Paralı Askerin Eski Notları (I)",
+    "description": "Paralı Askerin Eski Notları (I)"
+  },
+  "MercenarysAgedNotesII": {
+    "name": "Paralı Askerin Eski Notları (II)",
+    "description": "Paralı Askerin Eski Notları (II)"
+  },
+  "MercenarysAgedNotesIII": {
+    "name": "Paralı Askerin Eski Notları (III)",
+    "description": "Paralı Askerin Eski Notları (III)"
+  },
+  "MercenarysAgedNotesIV": {
+    "name": "Paralı Askerin Eski Notları (IV)",
+    "description": "Paralı Askerin Eski Notları (IV)"
+  },
+  "KhvarenaMonumentInscription": {
+    "name": "Khvarena Abidesi Yazıtı",
+    "description": "Khvarena Abidesi Yazıtı"
   },
   "SilkFlowerSeed": {
     "name": "İpek Çiçeği Tohumu",
@@ -10653,7 +10997,7 @@
   },
   "WingsOfTheStarlitFeast": {
     "name": "Yıldız Işığı Kanatları",
-    "description": "Uzaklardaki bir dünyanın festivalini kutlayan bir hediye ile süslü bir kanat."
+    "description": "Uzak dünyaların birinde kutlanan festival için özel olarak tasarlanmış hediye bir kanat."
   },
   "RadiantSpincrystal": {
     "name": "Parlak Burgu Kristal 1",
@@ -11061,7 +11405,7 @@
   },
   "QiqiColdStorage": {
     "name": "Qiqi: Soğuk Depo",
-    "description": "İsim Kartı arka planı.\\nHangisi buzdolabında kalmalı? Dr. Baizhu'nun şifalı bitkileri mi, Hindistan cevizi sütü mü... yoksa Hu Tao mu?"
+    "description": "İsim Kartı arka planı.\\nHangisi buzdolabında kalmalı? Doktor Baizhu'nun şifalı bitkileri mi, Hindistan cevizi sütü mü... yoksa Hu Tao mu?"
   },
   "KeqingLightningStiletto": {
     "name": "Keqing: Yıldırım Hançeri",
@@ -11201,7 +11545,7 @@
   },
   "XiaoMask": {
     "name": "Xiao: Maske",
-    "description": "İsim Kartı arka planı.\\nMaskeyi takıp dans edeceği günü dört gözle bekliyor. İblisleri yenmek için değil, flüt melodisi eşliğinde çiçekler denizinin ortasında dans etmek için."
+    "description": "İsim Kartı arka planı.\\nMaskeyi takıp dans edeceği günü dört gözle bekliyor. İblisleri yenmek için değil, flüt melodisi eşliğinde çiçek denizinin ortasında dans etmek için."
   },
   "HuTaoSpiritSoother": {
     "name": "Hu Tao: Ruh Terbiyecisi",
@@ -11587,6 +11931,34 @@
     "name": "Gezi Notları: Usta İşi",
     "description": "İsim Kartı arka planı.\\nSöylenenlere göre, gerçek aşkı yaşamak hayalet görmek gibiymiş. Bu iki şey hakkında herkes sürekli konuşmasına rağmen çok az kişi bunlara denk gelmiştir. Artık hayaletler bile ortaya çıktığına göre, belki de gerçek aşk da hemen köşe başında bekliyordur."
   },
+  "BaizhuRelief": {
+    "name": "Baizhu: Rahatlama",
+    "description": "İsim Kartı arka planı.\\nİçtenlik ömrü uzatır."
+  },
+  "KavehDomedCourt": {
+    "name": "Kaveh: Kubbeli Saray",
+    "description": "İsim Kartı arka planı.\\n\"Mimari bir tasarım yaparken inşa ettiğimiz binanın göğü aşıp yıldızlardan daha ebedi olacağını hayal etmek son derece normaldir.\""
+  },
+  "AchievementInfinitum": {
+    "name": "Başarım: Sonsuz",
+    "description": "İsim Kartı arka planı.\\n\"Ey Khvarena, sonsuz formunla tehlike altındaki bu toprakları koru. Bu dünyadaki karmaşa da ihtişam da, var olan tohumların yanılsamasından ibarettir.\""
+  },
+  "AchievementTransientTwilight": {
+    "name": "Başarım: Gelip Geçici Alacakaranlık",
+    "description": "İsim Kartı arka planı.\\n\"Geçmişin çiçekleri, gün ışığı ve yağmuru benden silinip gidecek. Doğmakta olan bu dünyada benim yerime bunları yaşatıp o kayıp rüyaya tutunmanı istiyorum.\""
+  },
+  "SumeruTheGreatDream": {
+    "name": "Sumeru: Büyük Rüya",
+    "description": "İsim Kartı arka planı.\\n\"Çiçeklenme zamanı daha gelip çatmadı. Beni çimenlerin ve uzun ağaçların arasına sakla. Bırak o rüyalar aleminde dolaşayım.\""
+  },
+  "SumeruAmrita": {
+    "name": "Sumeru: Amrita",
+    "description": "İsim Kartı arka planı.\\nKadim Amrita Göleti geçmişin hatıralarıyla dolup taşar. Belki geleceği yaratacak güç de onda saklıdır."
+  },
+  "TravelNotesCrownOfGlory": {
+    "name": "Gezi Notları: İhtişam Tacı",
+    "description": "İsim Kartı arka planı.\\n\"Bilgi, zamanın tacıdır ve anılar birlikte geçirdiğimiz zamana olan bağdır.\""
+  },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı",
     "description": "Mondstadt'ta yakınlardaki Rüzgar Özlerini bulmak için kullanılabilen bir taş.\\nBu beşeri taş levha, Yedilerin Rüzgar Heykellerine benzer bir özelliğe sahiptir. Rüzgar Özleriyle etkileşime geçme gücü verir.\\nÖz Rezonans Taşları, kadimler tarafından yapılan Yediler Heykellerinin kabaca yapılmış taklitleridir. Tam da bu kabalık yüzünden element özlerinin gücünü arzularlar. Dindarlara ve maceracılara öz toplamak için mükemmel fırsat sunarlar."
@@ -11839,6 +12211,10 @@
     "name": "Vahşi Doğa Pusulası",
     "description": "Maceracılar Loncasından elde edilen özel bir pusula. Söylentilere göre ekstra şans verebilirmiş..."
   },
+  "Sorush": {
+    "name": "Sorush",
+    "description": "Diyarın koruyucuları Parilerden biri olan Sorush, felaketi bastıran bir Çiçek Muhafızı olmayı arzuluyor.\\nGüvendiği biriyle bağ kurduktan sonra Sorush, Yasnapatisiyle birlikte kirlenmiş dünyayı geziyor..."
+  },
   "WindblumeKamera": {
     "name": "Rüzgarçiçeği Kamerası",
     "description": "Fassben'den ödünç aldığın Kamera. Kullanırken dikkatli ol. Bozmak istemezsin..."
@@ -11846,6 +12222,10 @@
   "FestiveDrum": {
     "name": "Şenlik Davulu",
     "description": "Gösterilerde kullanılan bir müzik enstrümanı.\\nBerrak sesi ve eşsiz tasarımı olan bir davul. Hassas bir işçilikle yapılmış hoş bir görünüme sahiptir. Performanslar sırasındaki ses kalitesi, tonlaması ve uzun süreli yıpranma payı göz önünde tutularak yüksek kaliteli malzemelerle yapılmış.\\nBu küçük davulun, Inazuma'nın geleneksel bir enstrümanı ve diğer ulusların davullarının birleşiminden ortaya çıktığı söylenir. Bazı şarkılar çalındığında insanlara şans bile getirebilir..."
+  },
+  "SearchCompass": {
+    "name": "Arayıcı Pusula",
+    "description": "Yadigar kopyalarını bulmak için yapılmış bir \"Arayıcı Pusula\". Bu cihaz, bir zamanlar element enerjilerini saptamak için kullanılan bir cihazdan uyarlandığı için yadigar kopyalarını ararken mevcut elementlerden de etkilenebilir..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Talimatlar: Rüzgar Özü Rezonans Taşı",
@@ -12199,8 +12579,20 @@
     "name": "Şimşek Fırtınası",
     "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
+  "KeenSight": {
+    "name": "Keskin Görüş",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
   "SinOfPride": {
     "name": "Kibir",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "KyoukaFuushi": {
+    "name": "Kyouka Fuushi",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "AratakiIchiban": {
+    "name": "Arataki Ichiban",
     "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "MagicGuide": {
@@ -12351,6 +12743,10 @@
     "name": "Kadim General Miğferi",
     "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
+  "FavoniusSword": {
+    "name": "Favonius Kılıcı",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı",
     "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
@@ -12425,6 +12821,10 @@
   },
   "NRE": {
     "name": "Beslenme Çantası",
+    "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
+  },
+  "GrandNarukamiShrine": {
+    "name": "Büyük Narukami Tapınağı",
     "description": "Dehanın Yakarışı Kart Oyunundan sert bir kart. Kartın üzerindeki çizim için özel baskı yöntemleri kullanılmış ve enfes bir görünüm ortaya çıkmıştır."
   },
   "ElementalResonanceWovenIce": {
@@ -12637,7 +13037,7 @@
   },
   "SpringbloomMissive": {
     "name": "Bahar Çiçeği Mektubu",
-    "description": "Ayaka'nın gezi giysisi. Tasarımı, resimli romanlarda tasvir edilen Fontaine giysilerinden gelmektedir ve görünüşe göre o ülkede yaşayan terbiyeli hanımların yaşam tarzını yansıtmaktadır."
+    "description": "Ayaka'nın gezi giysisi. Tasarımı, resimli romanlarda tasvir edilen Fontaine giysilerinden gelir ve o ülkede yaşayan zarif hanımların yaşam tarzını yansıtır."
   },
   "ASobriquetUnderShade": {
     "name": "Yaprakların Gölgesindeki Bilgelik",
@@ -12773,7 +13173,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Feiyun Çalışma Odası",
-    "description": "Feiyun Çalışma Odası yapımını adım adım anlatan detaylı bir taslak.\\nLiyue'de çalışma odası döşemenin birçok yolu vardır ancak bilginlere göre \"maneviyat\" ve \"zarafet\" daha ön planda olduğu için lüks, tercihe bağlıdır. Buradaki süs bitkisi odanın nemini dengelerken, masa ve raflar odanın basit yerleşim düzenine uyan hafif bir ahşap kokusu yayar. Lambaların gün batımı ışıltısı da yazarlara dahiyane fikirler verir.\\nYıllar önce Feiyun Yamacı'ndaki misafirlerden birisinin bu çalışma odası fikrini ortaya attığı, Wanwen Kitabevinin bir önceki patronunun da odayı bu fikirden yola çıkarak tasarladığı söylenir. O günden beri Feiyun Çalışma Odası olarak Liyue'nin dört bir yanında ün salmaya başladı.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Xingqiu, Zhongli, Ningguang ve Yun Jin bu Dekorasyon Setini tercih eder."
+    "description": "\"Feiyun Çalışma Odası\" yapımını adım adım anlatan detaylı bir taslak.\\nLiyue'de çalışma odası döşemenin birçok yolu vardır ancak bilginlere göre \"maneviyat\" ve \"zarafet\" daha ön planda olduğu için lüks, tercihe bağlıdır. Buradaki süs bitkisi odanın nemini dengelerken, masa ve raflar odanın basit yerleşim düzenine uyan hafif bir ahşap kokusu yayar. Lambaların gün batımı ışıltısı da yazarlara dahiyane fikirler verir.\\nYıllar önce Feiyun Yamacı'ndaki misafirlerden birisinin bu çalışma odası fikrini ortaya attığı, Wanwen Kitabevinin bir önceki patronunun da odayı bu fikirden yola çıkarak tasarladığı söylenir. O günden beri Feiyun Çalışma Odası olarak Liyue'nin dört bir yanında ün salmaya başladı.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Xingqiu, Zhongli, Ningguang, Yun Jin ve Baizhu bu Dekorasyon Setini tercih eder."
   },
   "CloudyHazeDreamCourt": {
     "name": "Sisli Rüyalar Köşkü",
@@ -12785,7 +13185,7 @@
   },
   "CottageKitchen": {
     "name": "Kır Evi Mutfağı",
-    "description": "\"Kır Evi Mutfağı\" yapımını adım adım anlatan detaylı bir taslak.\\nÖzenle hazırlanmış baharatlarla dolu bir dolabın olduğu dayalı döşeli bir mutfak.\\nMükemmeliyetçi şefler malzemeleri pazar yerinden her gün taze alır. Gerçek aşçılar ise sobalarında yaktıkları odunlara bile çok dikkat eder. Wanmin Restoranının genç aşçıbaşısı bir keresinde Qingce Köyü'nün yöresel yemeklerinin nasıl yapıldığını paylaşmıştı. Öncelikle kurutulmuş bambu dallarını sobada yakmak ve ateşi dikkatle kontrol altında tutmak gerekiyormuş. Kurt Çengellerinin çevresindeki çalıları odun ateşine attıktan sonra içine Mondstadt zarafeti bile katılabilirmiş.\\nFarklı odun kullanıldığında yemeğin tadını büyük ölçüde değiştirir ve şeflerin çoğu bu konuda tam anlamıyla ustalaşamaz. Mesela Wanmin Restoranının bu teknikte hiçbir rakibi yoktur.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Tartaglia, Mona, Xiao, Xiangling, Razor Yaoyao ve Mika bu Dekorasyon Setini tercih eder."
+    "description": "\"Kır Evi Mutfağı\" yapımını adım adım anlatan detaylı bir taslak.\\nÖzenle hazırlanmış baharatlarla dolu bir dolabın olduğu dayalı döşeli bir mutfak.\\nMükemmeliyetçi şefler malzemeleri pazar yerinden her gün taze alır. Gerçek aşçılar ise sobalarında yaktıkları odunlara bile çok dikkat eder. Wanmin Restoranının genç aşçıbaşısı bir keresinde Qingce Köyü'nün yöresel yemeklerinin nasıl yapıldığını paylaşmıştı. Öncelikle kurutulmuş bambu dallarını sobada yakmak ve ateşi dikkatle kontrol altında tutmak gerekiyormuş. Kurt Çengellerinin çevresindeki çalıları odun ateşine attıktan sonra içine Mondstadt zarafeti bile katılabilirmiş.\\nFarklı odun kullanıldığında yemeğin tadını büyük ölçüde değiştirir ve şeflerin çoğu bu konuda tam anlamıyla ustalaşamaz. Mesela Wanmin Restoranının bu teknikte hiçbir rakibi yoktur.\\nBu eşyayı kullandıktan sonra Yerleştirme Ekranında görüntüleyebilirsin.\\nYoldaşların arasından Tartaglia, Mona, Xiao, Xiangling, Razor Yaoyao, Mika ve Baizhu bu Dekorasyon Setini tercih eder."
   },
   "WeaponForgingStation": {
     "name": "Silah Dövme İstasyonu",
@@ -12905,7 +13305,7 @@
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Özgür Dans Hareketleri",
-    "description": "Büyük ve hoş bir tiyatro. Görkemli sahne, fışkıran çeşmeden gelen sisler ve Alt Uzay Yaratma sayesinde hayata dönen birçok değerli çiçek... Burası birçok şeyde Zubayr Tiyatrosunun şenlik atmosferinden ilham almış.\\nBazı gösterilerin en çok geceleri çok beğenildiğini söylüyorlar. Tiyatro lambalarının düzeni, her izleyicinin dansçıları görebileceği netliği en üst düzeye çıkaracak şekilde dikkatli bir çalışma sonucunda yapılmış gibi görünüyor. Ayrıca izleyicilerin oturdukları veya ayakta durdukları açı nasıl olursa olsun, lambaların aydınlatması ve parıltısı da sahnenin parlaklığını en üst düzeye çıkarmak için ayarlanmış.\\nYoldaşların arasından Nilou bu Dekorasyon Setini tercih eder."
+    "description": "Büyük ve hoş bir tiyatro. Görkemli sahne, fışkıran çeşmeden gelen sisler ve Alt Uzay Yaratma sayesinde hayata dönen birçok değerli çiçek... Burası birçok şeyde Zubayr Tiyatrosunun şenlik atmosferinden ilham almış.\\nBazı gösterilerin en çok geceleri çok beğenildiğini söylüyorlar. Tiyatro lambalarının düzeni, her izleyicinin dansçıları görebileceği netliği en üst düzeye çıkaracak şekilde dikkatli bir çalışma sonucunda yapılmış gibi görünüyor. Ayrıca izleyicilerin oturdukları veya ayakta durdukları açı nasıl olursa olsun, lambaların aydınlatması ve parıltısı da sahnenin parlaklığını en üst düzeye çıkarmak için ayarlanmış.\\nYoldaşların arasından Nilou ve Kaveh bu Dekorasyon Setini tercih eder."
   },
   "QuietTimesByTheRiverbank": {
     "name": "Nehir Kenarındaki Sessiz Zamanlar",
@@ -12921,7 +13321,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Kokuların ve Huzurun Arasında",
-    "description": "Razan Bahçesi ve Pardis Dhyai'den esinlenerek çizilmiş çardakların kullanıldığı zarif ve sakin bir bahçe. Bu yer, bambaşka mimari tarzların mutlak birliği ile daha az ilgilenir ve daha çok genel bir huzur havası yaratmaya odaklanır.\\nHoş çiçekler burada huzur içinde uyur ve dik duran lambalar çeşmeyi aydınlatır... Gece saatleri yaklaştığında bu bahçede yapacağınız bir yürüyüş, kafanızdaki gürültülü düşüncelerin ipince bulutlar gibi dağılıp gitmesini sağlayabilir. Belki de normalde bulmakta zorlanacağınız ilhamı bile burada bulabilirsiniz...\\nYoldaşların arasından Nahida bu Dekorasyon Setini tercih eder."
+    "description": "Razan Bahçesi ve Pardis Dhyai'den esinlenerek çizilmiş çardakların kullanıldığı zarif ve sakin bir bahçe. Bu yer, bambaşka mimari tarzların mutlak birliği ile daha az ilgilenir ve daha çok genel bir huzur havası yaratmaya odaklanır.\\nHoş çiçekler burada huzur içinde uyur ve dik duran lambalar çeşmeyi aydınlatır... Gece saatleri yaklaştığında bu bahçede yapacağın bir yürüyüş, kafandaki gürültülü düşüncelerin ipince bulutlar gibi dağılıp gitmesini sağlayabilir. Belki de normalde bulmakta zorlandığın ilhamı bile burada bulabilirsin...\\nYoldaşların arasından Nahida ve Kaveh bu Dekorasyon Setini tercih eder."
   },
   "ChorusOfDesertAndWood": {
     "name": "Çöl ve Orman Topluluğu",
@@ -13078,6 +13478,14 @@
   "LightOfSlumber": {
     "name": "Gece Lambası",
     "description": "\"Gece Lambası\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "SweetLuster": {
+    "name": "\"Tatlı Işıltı\"",
+    "description": "\"Tatlı Işıltı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "LightsConstancy": {
+    "name": "\"Işığın Değişmezliği\"",
+    "description": "\"Işığın Değişmezliği\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "EfflorescentIllumination": {
     "name": "Gelişen Aydınlatma",
@@ -13266,6 +13674,10 @@
   "LongAdhigamaChamferTable": {
     "name": "Uzun Eğimli Adhigama Masa",
     "description": "Uzun Eğimli Adhigama Masa yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "AthelWoodCompactDesk": {
+    "name": "Ilgın Kompakt Masa",
+    "description": "Ilgın Kompakt Masa yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "BreezeBlessedBed": {
     "name": "Zarif Esinti Yatağı",
@@ -13494,6 +13906,22 @@
   "HuedVaseMoltenSand": {
     "name": "Renkli Vazo: Erimiş Kum",
     "description": "Renkli Vazo: Erimiş Kum yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "WarmthAndColdOverlaid": {
+    "name": "\"Sıcak ve Soğuk Bir Arada\"",
+    "description": "\"Sıcak ve Soğuk Bir Arada\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "HuedVaseAjilenakh": {
+    "name": "Renkli Vazo: Ajilenakh",
+    "description": "Renkli Vazo: Ajilenakh yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "HuedVaseCrimsonSands": {
+    "name": "Renkli Vazo: Kızıl Kumlar",
+    "description": "Renkli Vazo: Kızıl Kumlar yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PureHeat": {
+    "name": "\"Saf Sıcaklık\"",
+    "description": "\"Saf Sıcaklık\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Halısı: Kızıl Coşku",
@@ -13735,6 +14163,26 @@
     "name": "Çok Amaçlı Yıldız Şişe",
     "description": "Çok Amaçlı Yıldız Şişe yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
+  "HuedVaseEventide": {
+    "name": "Renkli Vazo: Akşam Vakti",
+    "description": "Renkli Vazo: Akşam Vakti yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "SaltyAndMeatyPaintedPlate": {
+    "name": "\"Tuzlu ve Etli\" Resimli Tabak",
+    "description": "\"Tuzlu ve Etli\" Resimli Tabak yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "SweetAndFruityPaintedPlate": {
+    "name": "\"Tatlı ve Meyveli\" Resimli Tabak",
+    "description": "\"Tatlı ve Meyveli\" Resimli Tabak yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "InDrinksClarity": {
+    "name": "\"Kadeh Duruluğu\"",
+    "description": "\"Kadeh Duruluğu\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "TheDustDifferential": {
+    "name": "\"Toz Tanesi Farkı\"",
+    "description": "\"Toz Tanesi Farkı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\"",
     "description": "\"Bilgelik Diyarı İdrakı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
@@ -13745,7 +14193,7 @@
   },
   "TheArtOfRetainingWater": {
     "name": "Su Depolama Sanatı",
-    "description": "Su Depolama Sanatı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "description": "\"Su Depolama Sanatı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "LandscapePaintingCountryHome": {
     "name": "Peyzaj: Taşra Evi",
@@ -14042,6 +14490,14 @@
   "DeliberationOfChoice": {
     "name": "Çok Amaçlı Tezgah",
     "description": "Çok Amaçlı Tezgah yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "KarmaphalaWoodBulkGoodsBerth": {
+    "name": "Karmaphala Kütüğü Dökme Yük Rıhtımı",
+    "description": "Karmaphala Kütüğü Dökme Yük Rıhtımı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "AdhigamaWoodOpenAirFoodStall": {
+    "name": "Adhigama Kütüğü Açık Hava Yemek Tezgahı",
+    "description": "Adhigama Kütüğü Açık Hava Yemek Tezgahı yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "HilichurlOutpostHut": {
     "name": "Dağ Yabanisi Karakolu",
@@ -14370,6 +14826,10 @@
   "SingingInTheTranquilCourt": {
     "name": "Dingin Kalıntılardaki Şarkı",
     "description": "\"Dingin Kalıntılardaki Şarkı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "FineSandInWarmWeather": {
+    "name": "\"Sıcak Havada İnce Kum Taneleri\"",
+    "description": "\"Sıcak Havada İnce Kum Taneleri\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Kuş ve Çiçek Havuzu",
@@ -14861,7 +15321,7 @@
   },
   "IngenuityOfTheForestForager": {
     "name": "Orman Avcısı Felsefesi",
-    "description": "Orman Avcısı Felsefesi yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+    "description": "\"Orman Avcısı Felsefesi\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "ItJustMightWork": {
     "name": "\"İşe Yarayabilir!\"",
@@ -14878,6 +15338,26 @@
   "LeisureDeviceBouncyChubby": {
     "name": "Eğlence Cihazı: Zıpzıp Dombili",
     "description": "Eğlence Cihazı: Zıpzıp Dombili yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "CaravanRibatTypeIIILandTransportPallet": {
+    "name": "Ribat Kervanı Tür III Kara Nakliye Paleti",
+    "description": "Ribat Kervanı Tür III Kara Nakliye Paleti yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PlainVaseDrinksForAHundred": {
+    "name": "Sade Vazo: Yüz Kişilik İçki",
+    "description": "Sade Vazo: Yüz Kişilik İçki yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PlainVaseStuporForTen": {
+    "name": "Sade Vazo: Bir Şarap On Sarhoş",
+    "description": "Sade Vazo: Bir Şarap On Sarhoş yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "BrightwoodSelfTighteningWineBuckets": {
+    "name": "Kendinden Sıkmalı Sarmal Şarap Kovaları",
+    "description": "Kendinden Sıkmalı Sarmal Şarap Kovası yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "BrightwoodFabricBoxPlatform": {
+    "name": "Sarmal Kumaş Kutusu Platformu",
+    "description": "Sarmal Kumaş Kutusu Platformu yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "PottedPlantVerdantVastness": {
     "name": "Saksı Bitkisi: Sonsuz Yeşillik",
@@ -15154,6 +15634,46 @@
   "ErsatzBalloonBumperShroom": {
     "name": "Yedek Balon: Mantar Çarpması",
     "description": "Yedek Balon: Mantar Çarpması yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "PetaledShade": {
+    "name": "\"Çiçek Gölgesi\"",
+    "description": "\"Çiçek Gölgesi\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "TeamSpirit": {
+    "name": "\"Takım Ruhu\"",
+    "description": "\"Takım Ruhu\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "ScentOfTheBlazingSun": {
+    "name": "\"Yakıcı Güneşin Kokusu\"",
+    "description": "\"Yakıcı Güneşin Kokusu\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "AthelWoodLightCargoBoxes": {
+    "name": "Ilgın Hafif Sevkiyat Kutuları",
+    "description": "Ilgın Hafif Sevkiyat Kutusu yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "VahumanaFlag": {
+    "name": "\"Vahumana Bayrağı\"",
+    "description": "\"Vahumana Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "SpantamadFlag": {
+    "name": "\"Spantamad Bayrağı\"",
+    "description": "\"Spantamad Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "HaravatatFlag": {
+    "name": "\"Haravatat Bayrağı\"",
+    "description": "\"Haravatat Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "AmurtaFlag": {
+    "name": "\"Amurta Bayrağı\"",
+    "description": "\"Amurta Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "RtawahistFlag": {
+    "name": "\"Rtawahist Bayrağı\"",
+    "description": "\"Rtawahist Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
+  },
+  "KshahrewarFlag": {
+    "name": "\"Kshahrewar Bayrağı\"",
+    "description": "\"Kshahrewar Bayrağı\" yapımını adım adım anlatan detaylı bir taslak.\\nEşyayı kullandıktan sonra Üretim Ekranında görüntüleyebilirsin."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Ferforje Sokak Lambası",

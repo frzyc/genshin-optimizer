@@ -134,7 +134,7 @@
   "constellation3": {
     "name": "İç Çatışma",
     "description": {
-      "0": "<strong>Fetih: Koukou Sendou</strong> seviyesini 3 artırır.",
+      "0": "<strong>Fetih: Koukou Sendou</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -147,7 +147,7 @@
   "constellation5": {
     "name": "Büyülü Şarkı",
     "description": {
-      "0": "<strong>Fırtına Habercisi Tengu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Fırtına Habercisi Tengu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

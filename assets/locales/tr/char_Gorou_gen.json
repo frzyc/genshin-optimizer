@@ -154,7 +154,7 @@
   "constellation3": {
     "name": "Hırçın Tazı: Ateş Gibi Vahşi",
     "description": {
-      "0": "<strong>Inuzaka Savunma Çemberi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Inuzaka Savunma Çemberi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -167,7 +167,7 @@
   "constellation5": {
     "name": "Güçlü Tazı: Yıldırım Gibi Şiddetli",
     "description": {
-      "0": "<strong>Juuga: Zafere Doğru</strong> seviyesini 3 artırır.",
+      "0": "<strong>Juuga: Zafere Doğru</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

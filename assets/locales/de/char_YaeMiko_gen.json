@@ -48,11 +48,11 @@
       "4": "Merkmale:",
       "5": [
         " Schlägt in gewissen zeitlichen Abständen einen Gegner in der Umgebung mit einem Blitz und fügt ihm <electro>Elektro-Schaden</electro> zu.",
-        " Erhöht bei Anwesenheit weiterer Sesshou-Sakura in der Nähe die Stufe und erhöht damit den mit dem oben beschriebenen Angriff verursachten Schaden."
+        " Geht bei Anwesenheit weiterer Sesshou-Sakura in der Nähe in eine höhere Phase und erhöht damit den mit dem oben beschriebenen Angriff verursachten Schaden."
       ],
       "6": "<br/>",
       "7": "Diese Fähigkeit kann 3-mal eingesetzt werden.",
-      "8": "Zu einem Zeitpunkt können bis zu 3 Sesshou-Sakura existieren. Die anfängliche Stufe für Sesshou-Sakura ist 1, während die anfängliche Höchststufe 3 beträgt. Sollte sich eine neu erzeugte Sesshou-Sakura zu nah an einer vorhandenen befinden, wird die Letztere zerstört.",
+      "8": "Zu einem Zeitpunkt können bis zu 3 Sesshou-Sakura existieren. Die anfängliche Phase für Sesshou-Sakura ist 1, während die anfängliche Höchstphase 3 beträgt. Sollte sich eine neu erzeugte Sesshou-Sakura zu nah an einer vorhandenen befinden, wird die Letztere zerstört.",
       "9": "<br/>",
       "10": "<i>„Die Kitsune-Geister, die in den Zweigen versiegelt sind, sind allesamt Yakan, die sich auf die Jagd nach Menschen begeben haben. Die Yakan stehen zwei Stufen niedriger als wir Himmelsfüchse und daher sehe ich kaum ein Problem darin, sie zu bitten, meine Befehle auszuführen. Das heißt aber nicht, dass ihr Menschen von unserer Einteilung lernen solltet. Und was die Frage angeht, wer von uns, Kitsune oder Mensch, auf der höheren Stufe steht ... Tja, das würdest du gern wissen.“</i>"
     },
@@ -129,7 +129,7 @@
   "constellation2": {
     "name": "Mondgesang der Kitsune",
     "description": {
-      "0": "<strong>Sesshou-Sakura</strong> haben bei der Entstehung anfänglich Stufe 2 und können höchstens Stufe 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht."
+      "0": "<strong>Sesshou-Sakura</strong> sind bei der Entstehung anfänglich in Phase 2 und können höchstens Phase 4 erreichen. Außerdem wird ihr Angriffsradius um 60 % erhöht."
     }
   },
   "constellation3": {

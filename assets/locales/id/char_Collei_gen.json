@@ -110,8 +110,8 @@
   "passive3": {
     "name": "Gliding Champion of Sumeru",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat meluncur.",
-      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama persis."
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat meluncur.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
   "constellation1": {

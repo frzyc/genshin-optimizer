@@ -1,7 +1,7 @@
 {
   "setName": "Võ Nhân",
   "setEffects": {
-    "2": "Tăng 15% sát thương tấn công thường và trọng kích tạo thành;",
+    "2": "Tăng 15% sát thương tấn công thường và trọng kích.",
     "4": "Trong 8s sau khi sử dụng kỹ năng Nguyên Tố, tấn công thường và trọng kích tăng 25% sát thương."
   },
   "pieces": {

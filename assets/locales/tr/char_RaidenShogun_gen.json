@@ -150,7 +150,7 @@
   "constellation3": {
     "name": "Gerçek Gölgenin Geçmişi",
     "description": {
-      "0": "<strong>Gizli Büyü: Musou Shinsetsu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gizli Büyü: Musou Shinsetsu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -163,7 +163,7 @@
   "constellation5": {
     "name": "Şogun'un Tecellisi",
     "description": {
-      "0": "<strong>Bilinç Ötesi: Uğursuzluk Alameti</strong> seviyesini 3 artırır.",
+      "0": "<strong>Bilinç Ötesi: Uğursuzluk Alameti</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

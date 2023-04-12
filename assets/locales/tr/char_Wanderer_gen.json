@@ -147,7 +147,7 @@
   "constellation3": {
     "name": "Sanban: Kasım Çiçeği Kusemai",
     "description": {
-      "0": "<strong>Kyougen: Beşli Merasim Oyunu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kyougen: Beşli Merasim Oyunu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -161,7 +161,7 @@
   "constellation5": {
     "name": "Matsuban: Uzaklardaki Kadim Işık",
     "description": {
-      "0": "<strong>Hanega: Rüzgar Şarkısı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Hanega: Rüzgar Şarkısı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

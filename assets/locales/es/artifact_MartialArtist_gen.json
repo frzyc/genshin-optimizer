@@ -1,7 +1,7 @@
 {
   "setName": "Artista Marcial",
   "setEffects": {
-    "2": "Daño de Ataque Normal y Ataque Cargado +15%.",
+    "2": "Daño de ATQ Normal y ATQ Cargado +15%.",
     "4": "Tras usar la Habilidad Elemental, aumenta el daño de Ataque Normal y Ataque Cargado en un 25% durante 8 s."
   },
   "pieces": {

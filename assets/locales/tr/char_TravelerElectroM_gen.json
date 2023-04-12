@@ -37,14 +37,14 @@
   "skill": {
     "name": "Yıldırım Kılıcı",
     "description": {
-      "0": "Düşmanlara <electro>Elektrik Hasarı</electro> veren ve bir düşmana vurunca Bolluk Kolyesi oluşturan üç hızlı yıldırım gölgesi gönderir.",
-      "1": "Başta 2 Bolluk Kolyesi oluşturulabilir. Bu beceri kullanıldığında önceden oluşturulan Bolluk Kolyeleri sıfırlanır.",
+      "0": "Düşmanlara <electro>Elektrik Hasarı</electro> veren ve bir düşmana vurunca Bolluk Tılsımı oluşturan üç hızlı yıldırım gölgesi gönderir.",
+      "1": "Başta 2 Bolluk Tılsımı oluşturulabilir. Bu beceri kullanıldığında önceden oluşturulan Bolluk Tılsımları sıfırlanır.",
       "2": "<br/>",
-      "3": "<strong>Bolluk Kolyesi</strong>",
-      "4": "Bir karakterin yakınında Bolluk Kolyesi olduğunda karakter bunu alır ve aşağıdaki etkileri elde eder:",
+      "3": "<strong>Bolluk Tılsımı</strong>",
+      "4": "Bir karakterin yakınında Bolluk Tılsımı olduğunda karakter bunu alır ve aşağıdaki etkileri elde eder:",
       "5": [
         "Element Enerjisi yenilenir.",
-        "Bolluk Kolyesi süresince Enerji Yüklemesini artırır."
+        "Bolluk Tılsımı süresince Enerji Yüklemesini artırır."
       ],
       "6": "<br/>",
       "7": "<i>Paimon'la elektriğin nerelerden geçebileceğini konuşuyorsun.</i>"
@@ -54,7 +54,7 @@
       "1": "Enerji Yenilenmesi",
       "2": "Enerji Yüklemesi Artışı",
       "3": "Süre",
-      "4": "Bolluk Kolyesi Süresi",
+      "4": "Bolluk Tılsımı Süresi",
       "5": "BS",
       "6": "",
       "7": "",
@@ -102,19 +102,19 @@
   "passive1": {
     "name": "Yıldırım Parlaması",
     "description": {
-      "0": "Gruptan yakındaki bir karakter <strong>Yıldırım Kılıcının</strong> oluşturduğu bir Bolluk Kolyesini aldığında <strong>Yıldırım Kılıcının</strong> Bekleme Süresini 1,5 saniye kısaltır."
+      "0": "Gruptan yakındaki bir karakter <strong>Yıldırım Kılıcının</strong> oluşturduğu bir Bolluk Tılsımını aldığında <strong>Yıldırım Kılıcının</strong> Bekleme Süresini 1,5 saniye kısaltır."
     }
   },
   "passive2": {
     "name": "Yankılanan Kükreme",
     "description": {
-      "0": "<strong>Yıldırım Kılıcı</strong> becerisinden Bolluk Kolyesinin sağladığı Enerji Yüklemesi etkisini Gezginin Enerji Yüklemesinin %10'u kadar artırır."
+      "0": "<strong>Yıldırım Kılıcı</strong> becerisinden Bolluk Tılsımının sağladığı Enerji Yüklemesi etkisini Gezginin Enerji Yüklemesinin %10'u kadar artırır."
     }
   },
   "constellation1": {
     "name": "Bahar Bereketinin Yıldırımı",
     "description": {
-      "0": "<strong>Yıldırım Kılıcı</strong> kullanıldığında kazanılan Bolluk Kolyesi sayısı 3'e çıkar."
+      "0": "<strong>Yıldırım Kılıcı</strong> kullanıldığında kazanılan Bolluk Tılsımı sayısı 3'e çıkar."
     }
   },
   "constellation2": {
@@ -133,7 +133,7 @@
   "constellation4": {
     "name": "Ani Şimşek",
     "description": {
-      "0": "<strong>Yıldırım Kılıcı</strong> becerisinin yarattığı Bolluk Kolyelerini elde eden karakterin Enerjisi %35'den düşükse Bolluk Kolyelerinin yenilediği Enerji %100 artar."
+      "0": "<strong>Yıldırım Kılıcı</strong> becerisinin yarattığı Bolluk Tılsımlarını elde eden karakterin Enerjisi %35'den düşükse Bolluk Tılsımlarının yenilediği Enerji %100 artar."
     }
   },
   "constellation5": {

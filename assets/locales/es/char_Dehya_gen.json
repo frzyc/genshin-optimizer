@@ -88,7 +88,7 @@
       "0": "Dehya desata su furia abrasadora y prescinde del engorroso mandoble para entrar en el estado de “Leona fogosa”, durante el cual aumenta su RES a interrupción.",
       "1": "En este estado, asesta puñetazos leoninos de forma automática y continua, los cuales infligen <pyro>Daño Pyro</pyro> en función del ATQ y la Vida Máx. de Dehya. Al terminar su duración, lanza una patada incineradora que inflige <pyro>Daño Pyro en el AdE</pyro> en función de su ATQ y Vida Máx.",
       "2": "Al usar esta Habilidad Definitiva, si en el campo de batalla ya existe un cerco ígneo creado por la propia Dehya con su Habilidad Elemental, Fundición infernal, lo retirará del combate y creará otro en una nueva ubicación cuando termine el estado de Leona fogosa. El nuevo cerco ígneo heredará la duración del que fue retirado.",
-      "3": "En este estado, Dehya no puede lanzar su Habilidad Elemental ni ejecutar Ataques Normales, Cargados o Descendentes. No obstante, su Ataque Normal: Sacudida áurea y su Habilidad Elemental: Fundición infernal, se sustituyen por “andanada rugiente”.",
+      "3": "En este estado, Dehya no puede lanzar su Habilidad Elemental ni ejecutar Ataques Normales, Cargados o Descendentes. No obstante, su Ataque Normal: Sacudida áurea y su Habilidad Elemental: Fundición infernal se sustituyen por “andanada rugiente”.",
       "4": "<br/>",
       "5": "<strong>Andanada rugiente</strong>",
       "6": "Si liberas la andanada rugiente 0.4{NON_BREAK_SPACE}s después de asestar un puñetazo leonino, asestarás el siguiente puñetazo más rápidamente.",
@@ -118,7 +118,7 @@
     "name": "Auxilio abnegado",
     "description": {
       "0": "Tras retirar un cerco ígneo mediante la <strong>acometida ardiente de Fundición infernal</strong> o <strong>Dentellada ignívoma de la Leona</strong>, el daño que recibe Dehya al soportarlo mediante sangre de la Leona escarlata se reduce en un 60% durante 6{NON_BREAK_SPACE}s. Este efecto puede activarse una vez cada 2{NON_BREAK_SPACE}s.",
-      "1": "Además, tras usar la <strong>acometida ardiente de Fundición infernal</strong>, Dehya otorga a todos los miembros del equipo el estado de “forja áurea” durante 9{NON_BREAK_SPACE}s. Cuando un personaje bajo los efectos de este estado se encuentra dentro del cerco ígneo, su RES a interrupción aumenta de forma adicional. El estado de forja áurea solo se puede crear una vez cada 18{NON_BREAK_SPACE}s."
+      "1": "Además, tras usar la <strong>llama indómita de Fundición infernal</strong>, Dehya otorga a todos los miembros del equipo el estado de “forja áurea” durante 9{NON_BREAK_SPACE}s. Cuando un personaje bajo los efectos de este estado se encuentra dentro del cerco ígneo, su RES a interrupción aumenta de forma adicional. El estado de forja áurea solo se puede crear una vez cada 18{NON_BREAK_SPACE}s."
     }
   },
   "passive2": {

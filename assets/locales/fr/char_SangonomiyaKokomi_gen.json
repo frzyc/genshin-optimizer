@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage dont les PV sont supérieurs à 80 % grâce à son attaque normale ou chargée."
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage dont les PV sont supérieurs ou égaux à 80 % grâce à son attaque normale ou chargée."
     }
   }
 }

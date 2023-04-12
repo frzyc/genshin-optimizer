@@ -156,7 +156,7 @@
   "constellation4": {
     "name": "Pegureiro Bebedor: Quente como a água",
     "description": {
-      "0": "Quando <strong>Glória do General</strong> está nos estados de \"Robusto\" ou \"Inquebrável\", ela também curará o personagem ativo dentro de sua AdE a cada 1,5s por 50% da DEF de Gorou."
+      "0": "Quando <strong>Glória do General</strong> está nos estados de \"Inquebrável\" ou \"Destruidor\", ela também curará o personagem ativo dentro de sua AdE a cada 1,5s por 50% da DEF de Gorou."
     }
   },
   "constellation5": {

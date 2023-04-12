@@ -152,8 +152,8 @@
   "constellation4": {
     "name": "Odissea inaspettata",
     "description": {
-      "0": "Usare un attacco normale quando viene effettuato il secondo attacco del livello di carica 1 di <strong>Sovraccarico di passione</strong> consentirà di effettuare un attacco aggiuntivo.",
-      "1": "L'attacco aggiuntivo infligge un 135% dei DAN del secondo attacco."
+      "0": "Usare un attacco normale come secondo attacco del livello di carica 1 di <strong>Sovraccarico di passione</strong> permette di effettuare un attacco aggiuntivo.",
+      "1": "Questo attacco infligge un 135% dei DAN del secondo attacco."
     }
   },
   "constellation5": {

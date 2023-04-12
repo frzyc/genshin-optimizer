@@ -143,7 +143,7 @@
   "constellation3": {
     "name": "Lawrence Soyu",
     "description": {
-      "0": "<strong>Buzul Aydınlık</strong> seviyesini 3 artırır.",
+      "0": "<strong>Buzul Aydınlık</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -156,7 +156,7 @@
   "constellation5": {
     "name": "Şövalyelik Vasfı",
     "description": {
-      "0": "<strong>Buz Dalgası Girdabı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Buz Dalgası Girdabı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

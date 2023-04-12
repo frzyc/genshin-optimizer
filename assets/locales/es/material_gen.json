@@ -211,6 +211,10 @@
     "name": "Cupón floral",
     "description": "Un cupón obtenido al participar en el juego “Ajedrez floral” del Festival de las Flores de Viento. Se puede canjear por otras recompensas en la tienda del evento."
   },
+  "GalaExcitement": {
+    "name": "Fiebre académica",
+    "description": "Fiebre académica de la Feria"
+  },
   "FestiveTicket": {
     "name": "Cupón festivo",
     "description": "Participa en las actividades de celebración del Festival de las Flores de Viento para obtener estos cupones y canjearlos por recompensas en la tienda del evento."
@@ -591,6 +595,14 @@
     "name": "Mika",
     "description": "Un joven caballero procedente de una familia normal. Es el tímido y precavido topógrafo de avanzada de la Compañía de Reconocimiento."
   },
+  "Kaveh": {
+    "name": "Kaveh",
+    "description": "Un célebre arquitecto de Sumeru que se preocupa demasiado por las cosas. Es un fanático de la estética, pero está atrapado por la realidad."
+  },
+  "Baizhu": {
+    "name": "Baizhu",
+    "description": "El dueño de la Farmacia Bubu, siempre con una serpiente blanca llamada Changsheng colgándole del cuello. Gran conocedor de la medicina, sus auténticas intenciones son un verdadero misterio."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna de Kamisato Ayaka",
     "description": "Material de activación de constelación de Kamisato Ayaka"
@@ -854,6 +866,14 @@
   "MikasStellaFortuna": {
     "name": "Stella Fortuna de Mika",
     "description": "Material de activación de constelación de Mika."
+  },
+  "KavehsStellaFortuna": {
+    "name": "Stella Fortuna de Kaveh",
+    "description": "Material de activación de constelación de Kaveh."
+  },
+  "BaizhusStellaFortuna": {
+    "name": "Stella Fortuna de Baizhu",
+    "description": "Material de activación de constelación de Baizhu."
   },
   "GnosticHymnOldNotes": {
     "name": "Pase de Batalla del Gnóstico - Borrador",
@@ -3971,6 +3991,14 @@
     "name": "Crisálida arenosa",
     "description": "Una cáscara seca que solo se encuentra en los criaderos de anguilas del desierto situados en lo más profundo del mar de arena. Esta resistente capa exterior protege los débiles cuerpos de las crías de anguila hasta que finalmente se aclimatan a las condiciones ambientales desérticas."
   },
+  "MourningFlower": {
+    "name": "Flor funeraria",
+    "description": "Una flor de un intenso color rojo capaz de florecer en antiguos campos de batalla y en los más áridos desiertos. Los pétalos marchitos que se desprenden parecen entonar un pesaroso cántico en honor a los caídos."
+  },
+  "Trishiraite": {
+    "name": "Trishiraíta",
+    "description": "Una lustrosa y singular piedra que puede encontrarse en las profundidades de yermas montañas. Parece ser el resultado de la solidificación de Energía Elemental."
+  },
   "Scarab": {
     "name": "Escarabajo dorado",
     "description": "Un tenaz escarabajo que habita en el vasto mar de arena del desierto. Los patrones dorados de su caparazón parecen tener cierta conexión con las antiguas ruinas distribuidas por todo el desierto."
@@ -6031,6 +6059,10 @@
     "name": "Moneda de la suerte",
     "description": "La divisa reconocida y utilizada por la Asociación de Jugadores. Puede utilizarse para comprar toda clase de accesorios de Invocación de los Sabios. Dicen que en un principio la llamaron “Moneda de la suerte” para desearle a sus poseedores la capacidad de cambiar su suerte para bien. ¿O quizás se refiere a que solo los bienaventurados pueden usarla?"
   },
+  "PlumeOfPurifyingLight": {
+    "name": "Pluma lumiprístina",
+    "description": "Un fragmento de la jvarena que contiene recuerdos de antaño."
+  },
   "Dish": {
     "name": "Plato",
     "description": "Objetos creados al cocinar"
@@ -8023,164 +8055,196 @@
     "name": "Fortaleza del topógrafo",
     "description": "La especialidad de Mika. Los abundantes ingredientes se acumulan por capas. Con solo un pequeño bocado, se puede diferenciar claramente cada uno de los sabores, y la mezcla de dulce y salado se extiende rápidamente por la boca, como si estuvieras escalando una montaña de sabores. ¿Es este el tipo de habilidades culinarias que ha aprendido con los Caballeros de Favonius?"
   },
+  "SuspiciousFatteh": {
+    "name": "Fatteh extraño",
+    "description": "Una antigua receta de Sumeru. Si se tiene la paciencia de quitar las legumbres peladas a medio cocer y el pan chamuscado, la crema de leche restante es apenas apetecible como postre."
+  },
+  "Fatteh": {
+    "name": "Fatteh",
+    "description": "Una antigua receta de Sumeru. Primero se hornea el pan y luego se añade una pasta cocida de legumbres peladas y crema de leche fermentada ya procesada. El resultado es un plato que se puede consumir directamente. Esta receta se ha ido modificando a lo largo de los años, pero lo que no cambia nunca es la facilidad de su preparación y el delicioso sabor de siempre."
+  },
+  "DeliciousFatteh": {
+    "name": "Fatteh delicioso",
+    "description": "Una antigua receta de Sumeru. Las legumbres peladas cubiertas por la espesa crema de leche, te transportan a un sueño de nubes. Y cuando despiertas, el regusto a trigo del pan pita sigue en el paladar."
+  },
+  "SuspiciousJadeFruitSoup": {
+    "name": "Sopa de frutos de jade extraña",
+    "description": "Un dulce tradicional de Sumeru. Los ingredientes culinarios se echaron apresuradamente en la sartén, dando como resultado un plato con sabor a Esencia de slime. Aunque su sabor es poco apetitoso, los ingredientes utilizados siguen siendo nutritivos."
+  },
+  "JadeFruitSoup": {
+    "name": "Sopa de frutos de jade",
+    "description": "Un postre tradicional de Sumeru. Una vez que el agua rompe a hervir, se añaden todo tipo de ingredientes y se cuecen durante cierto tiempo. A continuación, se añade la cantidad adecuada de terrones de azúcar y se deja reposar a fuego bajo hasta que el líquido adquiere un tono brillante y una densa consistencia. Esta sopa dulce de larga cocción tiene un sabor y un regusto muy suaves, por lo que es perfecta tanto para niños como para mayores."
+  },
+  "DeliciousJadeFruitSoup": {
+    "name": "Sopa de frutos de jade deliciosa",
+    "description": "Un postre tradicional de Sumeru. Los grandes trozos de fruta flotan en la aromática sopa, como un barco que navega por el río, dejan en el paladar una refrescante brisa frutal."
+  },
+  "TheEndeavor": {
+    "name": "Un soplo de arrojo",
+    "description": "La especialidad de Kaveh. Panecillos dulces de aspecto dorado con una bonita presentación en forma del Palacio Alcazarzaray, colocados sobre una base de salsa de yogur. Su creador se tomó mucho tiempo creando esta obra de arte, pero olvidó que para degustarla, hay que romper los panecillos de un golpe."
+  },
+  "HeatQuellingSoup": {
+    "name": "Sopa regulatemperaturas",
+    "description": "La especialidad de Baizhu. “Aunque no es una medicina, sí sirve para reducir la sequedad”, te dice Baizhu con una voz seria, tras lo que frente a tus ojos aparece un cuenco de sopa brillante y cristalina. “*Sss*, antes la hacía sin azúcar, pero esta vez le añadió un poco porque temía que no fueras a tolerar bien el amargor”, sisea Changsheng."
+  },
   "RecipeItem": {
     "name": "Ingredientes",
     "description": "Utensilios de cocina desbloqueados"
   },
   "RecipeChickenMushroomSkewer": {
-    "name": "Receta: Brocheta de champiñones y pollo",
+    "name": "Receta: brocheta de champiñones y pollo",
     "description": "Receta paso a paso para hacer una brocheta de champiñones y pollo"
   },
   "RecipeFishermansToast": {
-    "name": "Receta: Tostada del pescador",
+    "name": "Receta: tostada del pescador",
     "description": "Receta paso a paso para hacer una tostada del pescador."
   },
   "RecipeFlamingRedBolognese": {
-    "name": "Receta: Pasta a la boloñesa",
+    "name": "Receta: pasta a la boloñesa",
     "description": "Receta paso a paso para hacer una pasta a la boloñesa."
   },
   "RecipeSweetMadame": {
-    "name": "Receta: Pollo asado con miel",
+    "name": "Receta: pollo asado con miel",
     "description": "Receta paso a paso para hacer un pollo asado con miel."
   },
   "RecipeCallaLilySeafoodSoup": {
-    "name": "Receta: Sopa de marisco",
+    "name": "Receta: sopa de marisco",
     "description": "Receta paso a paso para hacer una sopa de marisco."
   },
   "RecipeSautedMatsutake": {
-    "name": "Receta: Matsutakes salteados",
+    "name": "Receta: matsutakes salteados",
     "description": "Receta paso a paso para hacer matsutakes salteados."
   },
   "RecipeTeyvatFriedEgg": {
-    "name": "Receta: Huevo frito de Teyvat",
+    "name": "Receta: huevo frito de Teyvat",
     "description": "Receta paso a paso para hacer un huevo frito de Teyvat."
   },
   "RecipeNorthernSmokedChicken": {
-    "name": "Receta: Pollo ahumado del Norte",
+    "name": "Receta: pollo ahumado del Norte",
     "description": "Receta paso a paso para hacer un pollo ahumado del Norte."
   },
   "RecipeCreamStew": {
-    "name": "Receta: Guisado de temporada",
+    "name": "Receta: guisado de temporada",
     "description": "Receta paso a paso para hacer un guisado de temporada."
   },
   "RecipeColdCutPlatter": {
-    "name": "Receta: Plato de carnes frías",
+    "name": "Receta: plato de carnes frías",
     "description": "Receta paso a paso para hacer un plato de carnes frías."
   },
   "RecipeStickyHoneyRoast": {
-    "name": "Receta: Asado a la miel",
+    "name": "Receta: asado a la miel",
     "description": "Receta paso a paso para hacer un asado a la miel."
   },
   "RecipeCrabHamVeggieBake": {
-    "name": "Receta: Asado mar y montaña",
+    "name": "Receta: asado mar y montaña",
     "description": "Receta paso a paso para hacer un asado mar y montaña."
   },
   "RecipeMushroomPizza": {
-    "name": "Receta: Pizza de champiñones",
+    "name": "Receta: pizza de champiñones",
     "description": "Receta paso a paso para hacer una pizza de champiñones."
   },
   "RecipeSteak": {
-    "name": "Receta: Filete a la barbacoa",
+    "name": "Receta: filete a la barbacoa",
     "description": "Receta paso a paso para hacer un Filete a la barbacoa."
   },
   "RecipeRadishVeggieSoup": {
-    "name": "Receta: Sopa vegetariana de rábano",
+    "name": "Receta: sopa vegetariana de rábano",
     "description": "Receta paso a paso para hacer una sopa vegetariana de rábano."
   },
   "RecipeMondstadtHashBrown": {
-    "name": "Receta: Tortilla de papas de Mondstadt",
+    "name": "Receta: tortilla de papas de Mondstadt",
     "description": "Receta paso a paso para hacer una tortilla de papas de Mondstadt."
   },
   "RecipePileEmUp": {
-    "name": "Receta: Torre de Ludi",
+    "name": "Receta: torre de Ludi",
     "description": "Receta paso a paso para hacer una torre de Ludi."
   },
   "RecipeTeaBreakPancake": {
-    "name": "Receta: Panqueques",
+    "name": "Receta: panqueques",
     "description": "Receta paso a paso para hacer panqueques."
   },
   "RecipeFriedRadishBalls": {
-    "name": "Receta: Albóndigas de rábano fritas",
+    "name": "Receta: albóndigas de rábano fritas",
     "description": "Receta paso a paso para hacer albóndigas de rábano fritas"
   },
   "RecipeSatisfyingSalad": {
-    "name": "Receta: Ensalada saludable",
+    "name": "Receta: ensalada saludable",
     "description": "Receta paso a paso para hacer una ensalada saludable"
   },
   "RecipeJadeParcels": {
-    "name": "Receta: Rollitos de jade",
+    "name": "Receta: rollitos de jade",
     "description": "Receta paso a paso para hacer unos rollitos de jade"
   },
   "RecipeMondstadtGrilledFish": {
-    "name": "Receta: Pescado a la parrilla de Mondstadt",
+    "name": "Receta: pescado a la parrilla de Mondstadt",
     "description": "Receta paso a paso para hacer un pescado a la parrilla de Mondstadt."
   },
   "RecipeMoraMeat": {
-    "name": "Receta: Carne de Mora",
+    "name": "Receta: carne de Mora",
     "description": "Receta paso a paso para hacer una carne de Mora."
   },
   "RecipeStirFriedFilet": {
-    "name": "Receta: Carne frita",
+    "name": "Receta: carne frita",
     "description": "Receta paso a paso para hacer una carne frita."
   },
   "RecipeAlmondTofu": {
-    "name": "Receta: Tofu de almendras",
+    "name": "Receta: tofu de almendras",
     "description": "Receta paso a paso para hacer un tofu de almendras."
   },
   "RecipeJueyunChiliChicken": {
-    "name": "Receta: Pollo al chile Jueyun",
+    "name": "Receta: pollo al chile Jueyun",
     "description": "Receta paso a paso para hacer un pollo al chile Jueyun."
   },
   "RecipeJewelrySoup": {
-    "name": "Receta: Estofado de gemas",
+    "name": "Receta: estofado de gemas",
     "description": "Receta paso a paso para hacer un estofado de gemas."
   },
   "RecipeMatsutakeMeatRolls": {
-    "name": "Receta: Rollos de carne con matsutake",
+    "name": "Receta: rollos de carne con matsutake",
     "description": "Receta paso a paso para hacer unos rollos de carne con matsutake."
   },
   "RecipeZhongyuanChopSuey": {
-    "name": "Receta: Chop suey de Zhongyuan",
+    "name": "Receta: chop suey de Zhongyuan",
     "description": "Receta paso a paso para hacer chop suey de Zhongyuan."
   },
   "RecipeBlackBackPerchStew": {
-    "name": "Receta: Estofado de perca de lomo negro",
+    "name": "Receta: estofado de perca de lomo negro",
     "description": "Receta paso a paso para hacer un estofado de perca de lomo negro."
   },
   "RecipeSquirrelFish": {
-    "name": "Receta: Pescado mandarín agridulce",
+    "name": "Receta: pescado mandarín agridulce",
     "description": "Receta paso a paso para hacer un pescado mandarín agridulce."
   },
   "RecipeGoldenCrab": {
-    "name": "Receta: Cangrejo dorado",
+    "name": "Receta: cangrejo dorado",
     "description": "Receta paso a paso para hacer un cangrejo dorado."
   },
   "RecipeCrystalShrimp": {
-    "name": "Receta: Camarones de cristal",
+    "name": "Receta: camarones de cristal",
     "description": "Receta paso a paso para hacer unos camarones de cristal."
   },
   "RecipeGrilledTigerFish": {
-    "name": "Receta: Pez tigre a la parrilla",
+    "name": "Receta: pez tigre a la parrilla",
     "description": "Receta paso a paso para hacer un pez tigre a la parrilla."
   },
   "RecipeBarbatosRatatouille": {
-    "name": "Receta: Puchero de Barbatos",
+    "name": "Receta: puchero de Barbatos",
     "description": "Receta paso a paso para hacer un puchero de Barbatos."
   },
   "RecipeLotusSeedAndBirdEggSoup": {
-    "name": "Receta: Sopa de loto y huevo",
+    "name": "Receta: sopa de loto y huevo",
     "description": "Receta paso a paso para hacer una sopa de loto y huevo."
   },
   "RecipeAdeptusTemptation": {
-    "name": "Receta: Tentación de Adeptus",
+    "name": "Receta: tentación de Adeptus",
     "description": "Receta paso a paso para hacer una tentación de Adeptus"
   },
   "RecipeGoldenShrimpBalls": {
-    "name": "Receta: Albóndigas de camarón dorado",
+    "name": "Receta: albóndigas de camarón dorado",
     "description": "Receta paso a paso para hacer albóndigas de camarón dorado."
   },
   "RecipeQingceStirFry": {
-    "name": "Receta: Salteado de Chingtsé",
+    "name": "Receta: salteado de Chingtsé",
     "description": "Receta paso a paso para hacer un salteado de Chingtsé."
   },
   "RecipeComeAndGetIt": {
@@ -8188,71 +8252,71 @@
     "description": "Receta paso a paso para hacer un ¡Ven por ello!"
   },
   "RecipeNoodlesWithMountainDelicacies": {
-    "name": "Receta: Fideos con delicias de montaña",
+    "name": "Receta: fideos con delicias de montaña",
     "description": "Receta paso a paso para hacer unos fideos con delicias de montaña."
   },
   "RecipeBambooShootSoup": {
-    "name": "Receta: Sopa de brotes de bambú",
+    "name": "Receta: sopa de brotes de bambú",
     "description": "Receta paso a paso para hacer una sopa de brotes de bambú."
   },
   "RecipeTripleLayeredConsomm": {
-    "name": "Receta: Tiras de tres sabores",
+    "name": "Receta: tiras de tres sabores",
     "description": "Receta paso a paso para hacer tiras de tres sabores."
   },
   "RecipeTianshuMeat": {
-    "name": "Receta: Carne estilo Eje Celestial",
+    "name": "Receta: carne estilo Eje Celestial",
     "description": "Receta paso a paso para hacer carne estilo Eje Celestial."
   },
   "RecipeLotusFlowerCrisp": {
-    "name": "Receta: Estrellitas de loto",
+    "name": "Receta: estrellitas de loto",
     "description": "Receta paso a paso para hacer unas estrellitas de loto."
   },
   "RecipeMoonPie": {
-    "name": "Receta: Pastelillo de luna",
+    "name": "Receta: pastelillo de luna",
     "description": "Receta paso a paso para hacer un pastelillo de luna."
   },
   "RecipeAdventurersBreakfastSandwich": {
-    "name": "Receta: Sándwich del aventurero",
+    "name": "Receta: sándwich del aventurero",
     "description": "Receta paso a paso para hacer un sándwich del aventurero."
   },
   "RecipeNorthernAppleStew": {
-    "name": "Receta: Estofado de carne y manzana del Norte",
+    "name": "Receta: estofado de carne y manzana del Norte",
     "description": "Receta paso a paso para hacer un estofado de carne y manzana del Norte."
   },
   "RecipeCrabRoeTofu": {
-    "name": "Receta: Tofu con huevas de cangrejo",
+    "name": "Receta: tofu con huevas de cangrejo",
     "description": "Receta paso a paso para hacer tofu con huevas de cangrejo."
   },
   "RecipeFullmoonEgg": {
-    "name": "Receta: Rollitos de luna llena",
+    "name": "Receta: rollitos de luna llena",
     "description": "Receta paso a paso para hacer unos rollitos de luna llena."
   },
   "RecipeCuredPorkDryHotpot": {
-    "name": "Receta: Carne curada con matsutake",
+    "name": "Receta: carne curada con matsutake",
     "description": "Receta paso a paso para hacer carne curada con matsutake."
   },
   "RecipeStirFriedFishNoodles": {
-    "name": "Receta: Tallarines fritos con pescado",
+    "name": "Receta: tallarines fritos con pescado",
     "description": "Receta paso a paso para hacer tallarines fritos con pescado."
   },
   "RecipeVegetarianAbalone": {
-    "name": "Receta: Abulón vegetariano",
+    "name": "Receta: abulón vegetariano",
     "description": "Receta paso a paso para hacer un abulón vegetariano."
   },
   "RecipeStoneHarborDelicacies": {
-    "name": "Receta: Delicias del Puerto de Piedra",
+    "name": "Receta: delicias del Puerto de Piedra",
     "description": "Receta paso a paso para hacer unas delicias del Puerto de Piedra."
   },
   "RecipeStirFriedShrimp": {
-    "name": "Receta: Salteado de camarones",
+    "name": "Receta: salteado de camarones",
     "description": "Receta paso a paso para hacer un salteado de camarones"
   },
   "RecipeRiceBuns": {
-    "name": "Receta: Bolitas de harina de arroz",
+    "name": "Receta: bolitas de harina de arroz",
     "description": "Receta paso a paso para hacer unas bolitas de harina de arroz."
   },
   "RecipeGoulash": {
-    "name": "Receta: Carne a la jardinera",
+    "name": "Receta: carne a la jardinera",
     "description": "Receta paso a paso para hacer carne a la jardinera."
   },
   "RecipeSunshineSprat": {
@@ -8260,7 +8324,7 @@
     "description": "Receta paso a paso para hacer pescado salteado con mantequilla."
   },
   "RecipeUniversalPeace": {
-    "name": "Receta: Paz universal",
+    "name": "Receta: paz universal",
     "description": "Receta paso a paso para hacer paz universal."
   },
   "RecipeJueyunGuoba": {
@@ -8268,43 +8332,43 @@
     "description": "Receta paso a paso para hacer guoba de Jueyun."
   },
   "RecipeCrispyPotatoShrimpPlatter": {
-    "name": "Receta: Cóctel de camarones sobre papas fritas",
+    "name": "Receta: cóctel de camarones sobre papas fritas",
     "description": "Receta paso a paso para hacer un cóctel de camarones sobre papas fritas."
   },
   "RecipeMintJelly": {
-    "name": "Receta: Gelatina de menta",
+    "name": "Receta: gelatina de menta",
     "description": "Receta paso a paso para hacer gelatina de menta."
   },
   "RecipeMintSalad": {
-    "name": "Receta: Ensalada de menta",
+    "name": "Receta: ensalada de menta",
     "description": "Receta paso a paso para hacer una ensalada de menta."
   },
   "RecipeMintyMeatRolls": {
-    "name": "Receta: Rollitos de carne y menta",
+    "name": "Receta: rollitos de carne y menta",
     "description": "Receta paso a paso para hacer unos rollitos de carne y menta."
   },
   "RecipeGoldenFriedChicken": {
-    "name": "Receta: Pollo frito",
+    "name": "Receta: pollo frito",
     "description": "Receta paso a paso para hacer pollo frito."
   },
   "RecipeGoldenChickenBurger": {
-    "name": "Receta: Hamburguesa de pollo crujiente",
+    "name": "Receta: hamburguesa de pollo crujiente",
     "description": "Receta paso a paso para hacer una hamburguesa de pollo crujiente."
   },
   "RecipeFragrantMashedPotatoes": {
-    "name": "Receta: Puré de papas",
+    "name": "Receta: puré de papas",
     "description": "Receta paso a paso para hacer puré de papas."
   },
   "RecipeChickenTofuPudding": {
-    "name": "Receta: Pollo con textura de tofu",
+    "name": "Receta: pollo con textura de tofu",
     "description": "Receta paso a paso para hacer un pollo con textura de tofu."
   },
   "RecipeTunaSushi": {
-    "name": "Receta: Sushi de atún",
+    "name": "Receta: sushi de atún",
     "description": "Receta paso a paso para hacer sushi de atún."
   },
   "RecipeTricolorDango": {
-    "name": "Receta: Dango tricolor",
+    "name": "Receta: dango tricolor",
     "description": "Receta paso a paso para hacer dango tricolor."
   },
   "RecipeOnigiri": {
@@ -8312,267 +8376,267 @@
     "description": "Receta paso a paso para hacer onigiri."
   },
   "RecipeSashimiPlatter": {
-    "name": "Receta: Surtido de sashimi",
+    "name": "Receta: surtido de sashimi",
     "description": "Receta paso a paso para hacer surtido de sashimi."
   },
   "RecipeTonkotsuRamen": {
-    "name": "Receta: Ramen de carne",
+    "name": "Receta: ramen de carne",
     "description": "Receta paso a paso para hacer ramen de carne."
   },
   "RecipeEggRoll": {
-    "name": "Receta: Rollitos de huevo",
+    "name": "Receta: rollitos de huevo",
     "description": "Receta paso a paso para hacer rollitos de huevo."
   },
   "RecipeDryBraisedSaltedFish": {
-    "name": "Receta: Pescado seco estofado",
+    "name": "Receta: pescado seco estofado",
     "description": "Receta paso a paso para hacer pescado seco estofado."
   },
   "RecipeButterCrab": {
-    "name": "Receta: Cangrejo mantequilla",
+    "name": "Receta: cangrejo mantequilla",
     "description": "Receta paso a paso para hacer un cangrejo mantequilla."
   },
   "RecipeTriFlavoredSkewer": {
-    "name": "Receta: Brochetas de tres sabores",
+    "name": "Receta: brochetas de tres sabores",
     "description": "Receta paso a paso para hacer brochetas de tres sabores."
   },
   "RecipeMisoSoup": {
-    "name": "Receta: Sopa de miso",
+    "name": "Receta: sopa de miso",
     "description": "Receta paso a paso para hacer sopa de miso."
   },
   "RecipeImportedPoultry": {
-    "name": "Receta: Carne de ave importada",
+    "name": "Receta: carne de ave importada",
     "description": "Receta paso a paso para hacer carne de ave importada."
   },
   "RecipeSakuraMochi": {
-    "name": "Receta: Mochis de cerezo",
+    "name": "Receta: mochis de cerezo",
     "description": "Receta paso a paso para hacer mochis de cerezo."
   },
   "RecipeKondaCuisine": {
-    "name": "Receta: Estofado de Konda",
+    "name": "Receta: estofado de Konda",
     "description": "Receta paso a paso para hacer estofado de Konda."
   },
   "RecipeRiceCakeSoup": {
-    "name": "Receta: Sopa de pastel de arroz",
+    "name": "Receta: sopa de pastel de arroz",
     "description": "Receta paso a paso para hacer sopa de pastel de arroz."
   },
   "RecipeMixedYakisoba": {
-    "name": "Receta: Yakisoba con verdura",
+    "name": "Receta: yakisoba con verdura",
     "description": "Receta paso a paso para hacer yakisoba con verdura."
   },
   "RecipeCrabRoeKourayaki": {
-    "name": "Receta: Caparazón de cangrejo con huevas",
+    "name": "Receta: caparazón de cangrejo con huevas",
     "description": "Receta paso a paso para hacer un caparazón de cangrejo con huevas."
   },
   "RecipeSakuraTempura": {
-    "name": "Receta: Tempura de cerezo",
+    "name": "Receta: tempura de cerezo",
     "description": "Receta paso a paso para hacer tempura de cerezo."
   },
   "RecipeRicePudding": {
-    "name": "Receta: Pudín de arroz",
+    "name": "Receta: pudín de arroz",
     "description": "Receta paso a paso para hacer un pudín de arroz."
   },
   "RecipeBraisedMeat": {
-    "name": "Receta: Carne estofada",
+    "name": "Receta: carne estofada",
     "description": "Receta paso a paso para hacer carne estofada."
   },
   "RecipeOncidiumTofu": {
-    "name": "Receta: Tofu oncidium",
+    "name": "Receta: tofu oncidium",
     "description": "Receta paso a paso para hacer tofu oncidium."
   },
   "RecipeChiliMinceCornbreadBuns": {
-    "name": "Receta: Panecillos de maíz con carne picante",
+    "name": "Receta: panecillos de maíz con carne picante",
     "description": "Receta paso a paso para hacer unos panecillos de maíz con carne picante."
   },
   "RecipeInvigoratingKittyMeal": {
-    "name": "Receta: Comida felina revitalizante",
+    "name": "Receta: comida felina revitalizante",
     "description": "Receta paso a paso para hacer comida felina revitalizante."
   },
   "RecipeSweetShrimpSushi": {
-    "name": "Receta: Sushi de camarón",
+    "name": "Receta: sushi de camarón",
     "description": "Receta paso a paso para hacer sushi de camarón."
   },
   "RecipeBirdEggSushi": {
-    "name": "Receta: Sushi de huevo",
+    "name": "Receta: sushi de huevo",
     "description": "Receta paso a paso para hacer sushi de huevo."
   },
   "RecipeOmeletteRice": {
-    "name": "Receta: Tortilla con arroz",
+    "name": "Receta: tortilla con arroz",
     "description": "Receta paso a paso para hacer una tortilla con arroz."
   },
   "RecipeTaiyaki": {
-    "name": "Receta: Taiyaki",
+    "name": "Receta: taiyaki",
     "description": "Receta paso a paso para hacer taiyaki."
   },
   "RecipeMoreandMore": {
-    "name": "Receta: Más y más",
+    "name": "Receta: más y más",
     "description": "Receta paso a paso para hacer un “más y más”."
   },
   "RecipeGrilledUnagiFillet": {
-    "name": "Receta: Anguila a la parrilla",
+    "name": "Receta: anguila a la parrilla",
     "description": "Receta paso a paso para hacer anguila a la parrilla."
   },
   "RecipeRadishAndFishStew": {
-    "name": "Receta: Guiso de pescado y rábano",
+    "name": "Receta: guiso de pescado y rábano",
     "description": "Receta paso a paso para hacer un guiso de pescado y rábano."
   },
   "RecipeWakatakeni": {
-    "name": "Receta: Brotes de bambú hervidos",
+    "name": "Receta: brotes de bambú hervidos",
     "description": "Receta paso a paso para hacer brotes de bambú hervidos."
   },
   "RecipeBerryMizuManjuu": {
-    "name": "Receta: Pastelillos de bayas acuosos",
+    "name": "Receta: pastelillos de bayas acuosos",
     "description": "Receta paso a paso para hacer unos pastelillos de bayas acuosos."
   },
   "RecipeSobaNoodles": {
-    "name": "Receta: Fideos soba",
+    "name": "Receta: fideos soba",
     "description": "Receta paso a paso para hacer fideos soba."
   },
   "RecipeUnagiChazuke": {
-    "name": "Receta: Arroz con anguila bañado en té",
+    "name": "Receta: arroz con anguila bañado en té",
     "description": "Receta paso a paso para hacer arroz con anguila bañado en té."
   },
   "RecipeFivePickledTreasures": {
-    "name": "Receta: Cinco tesoros marinados",
+    "name": "Receta: cinco tesoros marinados",
     "description": "Receta paso a paso para hacer cinco tesoros marinados."
   },
   "RecipeSakuraShrimpCrackers": {
-    "name": "Receta: Galletas de camarón y cerezo",
+    "name": "Receta: galletas de camarón y cerezo",
     "description": "Receta paso a paso para hacer galletas de camarón y cerezo."
   },
   "RecipeBountifulYear": {
-    "name": "Receta: Pescado de la abundancia",
+    "name": "Receta: pescado de la abundancia",
     "description": "Receta paso a paso para hacer pescado de la abundancia."
   },
   "RecipeDragonBeardNoodles": {
-    "name": "Receta: Fideos barba de dragón",
+    "name": "Receta: fideos barba de dragón",
     "description": "Receta paso a paso para hacer fideos barba de dragón."
   },
   "RecipeSangayaki": {
-    "name": "Receta: Sangayaki",
+    "name": "Receta: sangayaki",
     "description": "Receta paso a paso para hacer Sangayaki."
   },
   "RecipeUdonNoodles": {
-    "name": "Receta: Udon",
+    "name": "Receta: udon",
     "description": "Receta paso a paso para hacer udon."
   },
   "RecipeKatsuSandwich": {
-    "name": "Receta: Sándwich de milanesa",
+    "name": "Receta: sándwich de milanesa",
     "description": "Receta paso a paso para hacer un sándwich de milanesa."
   },
   "RecipeRainbowAster": {
-    "name": "Receta: Margarita arcoíris",
+    "name": "Receta: margarita arcoíris",
     "description": "Receta paso a paso para hacer una margarita arcoíris."
   },
   "RecipeButterChicken": {
-    "name": "Receta: Pollo con mantequilla",
+    "name": "Receta: pollo con mantequilla",
     "description": "Receta paso a paso para hacer pollo con mantequilla."
   },
   "RecipeShawarmaWrap": {
-    "name": "Receta: Rollos de shawarma",
+    "name": "Receta: rollos de shawarma",
     "description": "Receta paso a paso para hacer unos rollos de shawarma."
   },
   "RecipeSelvaSalad": {
-    "name": "Receta: Ensalada tropical",
+    "name": "Receta: ensalada tropical",
     "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer una ensalada tropical."
   },
   "RecipeMasalaCheeseBalls": {
-    "name": "Receta: Bolitas de queso con masala",
+    "name": "Receta: bolitas de queso con masala",
     "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer unas bolitas de queso con masala."
   },
   "RecipeMushroomHodgepodge": {
-    "name": "Receta: Surtido de champiñones",
+    "name": "Receta: surtido de champiñones",
     "description": "Una receta paso a paso que obtuviste durante tu aventura y mejorada por la chef Paimon para hacer un surtido de champiñones."
   },
   "RecipePitaPocket": {
-    "name": "Receta: Döner kebab",
+    "name": "Receta: döner kebab",
     "description": "Una detallada receta escrita a mano para hacer döner kebab. La caligrafía empleada muestra que la autora no es muy buena escribiendo, ya que algunas de las letras están un poco borrosas, lo cual puede que se deba a alguna enfermedad. Sin embargo, escribió cada letra con mucho cuidado.\\nSi la aprendes, la próxima vez que visites la Villa Gandharva podrás compartir con ella este delicioso manjar."
   },
   "RecipePanipuri": {
-    "name": "Receta: Panipuri",
+    "name": "Receta: panipuri",
     "description": "Receta paso a paso para hacer panipuri."
   },
   "RecipeMintyBeanSoup": {
-    "name": "Receta: Sopa de menta y frijoles",
+    "name": "Receta: sopa de menta y frijoles",
     "description": "Receta paso a paso para hacer una sopa de menta y frijoles."
   },
   "RecipeBiryani": {
-    "name": "Receta: Biryani",
+    "name": "Receta: biryani",
     "description": "Receta paso a paso para hacer biryani."
   },
   "RecipeTahchin": {
-    "name": "Receta: Tahchín",
+    "name": "Receta: tahchín",
     "description": "Receta paso a paso para hacer tahchín."
   },
   "RecipeLambadFishRoll": {
-    "name": "Receta: Rollo de pescado de Lambad",
+    "name": "Receta: rollo de pescado de Lambad",
     "description": "Receta paso a paso para hacer un rollo de pescado de Lambad."
   },
   "RecipeCurryShrimp": {
-    "name": "Receta: Camarones al curri",
+    "name": "Receta: camarones al curri",
     "description": "Receta paso a paso para hacer unos camarones al curri."
   },
   "RecipeTandooriRoastChicken": {
-    "name": "Receta: Pollo tandoori",
+    "name": "Receta: pollo tandoori",
     "description": "Receta paso a paso para hacer pollo tandoori."
   },
   "RecipePotatoBoat": {
-    "name": "Receta: Barco de papa",
+    "name": "Receta: barco de papa",
     "description": "Receta paso a paso para hacer un barco de papa."
   },
   "RecipeFishWithCreamSauce": {
-    "name": "Receta: Pescado a la crema",
+    "name": "Receta: pescado a la crema",
     "description": "Receta paso a paso para hacer un pescado a la crema."
   },
   "RecipeMeatLoversMushroomPizza": {
-    "name": "Receta: Pizza de carne y champiñones",
+    "name": "Receta: pizza de carne y champiñones",
     "description": "Receta paso a paso para hacer una pizza de carne y champiñones."
   },
   "RecipeSunsetBerryTea": {
-    "name": "Receta: Té de bayas crepusculares",
+    "name": "Receta: té de bayas crepusculares",
     "description": "Receta paso a paso para hacer un té de bayas crepusculares."
   },
   "RecipeMilkyMushroomCrispTower": {
-    "name": "Receta: Tostadas crujientes de champiñones y queso",
+    "name": "Receta: tostadas crujientes de champiñones y queso",
     "description": "Receta paso a paso para hacer unas tostadas crujientes de champiñones y queso."
   },
   "RecipeCharcoalBakedAjilenakhCake": {
-    "name": "Receta: Panecillos de dátil carbonizados",
+    "name": "Receta: panecillos de dátil carbonizados",
     "description": "Receta paso a paso para hacer panecillos de dátil carbonizados."
   },
   "RecipeBaklava": {
-    "name": "Receta: Baklava",
+    "name": "Receta: baklava",
     "description": "Receta paso a paso para hacer baklava."
   },
   "RecipeCandiedAjilenakhNut": {
-    "name": "Receta: Dátiles caramelizados",
+    "name": "Receta: dátiles caramelizados",
     "description": "Receta paso a paso para hacer dátiles caramelizados."
   },
   "RecipePadisarahPudding": {
-    "name": "Receta: Pudín de orquídea padishá",
+    "name": "Receta: pudín de orquídea padishá",
     "description": "Receta paso a paso para hacer pudín de orquídea padishá."
   },
   "RecipeAaruMixedRice": {
-    "name": "Receta: Arroz de Aaru",
+    "name": "Receta: arroz de Aaru",
     "description": "Receta paso a paso para hacer arroz de Aaru."
   },
   "RecipeFruitsOfTheFestival": {
-    "name": "Receta: Jugo festivo",
+    "name": "Receta: jugo festivo",
     "description": "Receta paso a paso para hacer un jugo festivo."
   },
   "RecipeRoseCustard": {
-    "name": "Receta: Natillas de rosa",
+    "name": "Receta: natillas de rosa",
     "description": "Receta paso a paso para hacer unas natillas de rosa."
   },
   "RecipeSamosa": {
-    "name": "Receta: Samosas",
+    "name": "Receta: samosas",
     "description": "Receta paso a paso para hacer samosas."
   },
   "RecipeSabzMeatStew": {
-    "name": "Receta: Estofado de carne de Sabz",
+    "name": "Receta: estofado de carne de Sabz",
     "description": "Receta paso a paso para hacer un estofado de carne de Sabz."
   },
   "RecipeScentedMeatBalls": {
-    "name": "Receta: Albóndigas especiadas",
+    "name": "Receta: albóndigas especiadas",
     "description": "Receta paso a paso para hacer unas albóndigas especiadas."
   },
   "RecipeTulumba": {
@@ -8590,6 +8654,14 @@
   "RecipeMintyFruitTea": {
     "name": "Receta: Té de menta afrutado",
     "description": "Receta paso a paso para hacer té de menta afrutado."
+  },
+  "RecipeFatteh": {
+    "name": "Receta: fatteh",
+    "description": "Receta paso a paso para hacer fatteh."
+  },
+  "RecipeJadeFruitSoup": {
+    "name": "Receta: sopa de frutos de jade",
+    "description": "Receta paso a paso para hacer una sopa de frutos de jade."
   },
   "CraftedItems": {
     "name": "Objeto sintetizado",
@@ -9043,6 +9115,18 @@
     "name": "Caparazón grabado",
     "description": "El caparazón de una Bestia Sacrósea grabado con inscripciones antiguas.\\nSobre el pálido caparazón persisten tenuemente los pesares de una época remota. Llegará el día en que los huesos de las bestias se conviertan en polvo blanco esparcido al viento, y solo entonces los nobles seres caídos en el pasado conocerán por fin el reposo eterno."
   },
+  "AFlowerYetToBloom": {
+    "name": "Flor encapullada de origen desconocido",
+    "description": "Una flor silvestre que custodiaba un Hilichurl Errabundo y que había arrancado antes de que pudiese florecer.\\nEl Hilichurl se limita a vagar por la naturaleza desorientado, sin ninguna otra posesión salvo esta flor aún en capullo."
+  },
+  "TreasuredFlower": {
+    "name": "Flor velada",
+    "description": "Una simple flor que custodiaba un Hilichurl Errabundo.\\nLas flores son en muchas naciones un regalo perfecto para trasmitir los verdaderos sentimientos de una persona."
+  },
+  "WanderersBloomingFlower": {
+    "name": "Flor floreciente del trashumante",
+    "description": "Una flor en todo su esplendor que custodiaba un Hilichurl Errabundo.\\nLos extraños de la eternidad no esperan recompensa alguna, todo cuanto hacen es con el mero objetivo de ser testigos del fruto de lo acaecido..."
+  },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
     "description": "La forma condensada del Hipóstasis Anemo después de ser derrotado. En su interior contiene poder Anemo puro.\\nSe dice que una mariposa frágil y débil contiene el poder para generar un huracán. Esta mariposa hecha de viento puro, sin duda, espera el día para volver a invocar la tormenta."
@@ -9219,6 +9303,22 @@
     "name": "Pseudoestambre",
     "description": "Un élitro de color verdoso oculto en la parte trasera de un gusano de arena, fino y esbelto como un estambre.\\nCuenta la leyenda que, en una época anterior a la existencia del tiempo, estos gusanos se desplazaban a través de la húmeda tierra de praderas y bosques ciclópeos con la misma desenvoltura que las aves surcan el cielo o los peces nadan en el agua. La opinión generalizada es que este mimetismo floral tiene la finalidad de atraer posibles presas extraviadas en las tormentas de arena. Pero hay quien dice que este aspecto de flor exuberante es el reflejo de una era remota en la que, en vez de dorada arena, la tierra estaba cubierta de un frondoso manto de plantas y flores."
   },
+  "EvergloomRing": {
+    "name": "Aro sombrioeterno",
+    "description": "Un catalizador circular obtenido tras derrotar a un emisario de cuatro brazos que susurraba cánticos oscuros.\\nEste aro tiene la forma de un camino, lo cual se debe a que los círculos son los patrones que se usan normalmente para crear sellos con efectos místicos. Quizá estos catalizadores circulares sean puertas que conducen al universo."
+  },
+  "WorldspanFern": {
+    "name": "Helecho del paraíso exuberante",
+    "description": "Un helecho extraído del interior del Oasis de Apep.\\nEn una época anterior a la existencia del tiempo, el mundo estaba gobernado por dragones. En el jardín del palacio de Apep, un paraíso para la proliferación de la vegetación, lo primero en brotar fueron los helechos.\\nCon el paso de los años, estas plantas se convirtieron en árboles, enredaderas, raíces y hojas que se extendían por todas partes. Sin embargo, Apep aún recuerda el sonido casi inaudible que emitió el primer helecho al retorcerse para alcanzar el vasto cielo."
+  },
+  "PrimordialGreenbloom": {
+    "name": "Floración primigenia del oasis",
+    "description": "Una flor extraída del interior del Oasis de Apep que conserva su forma primigenia.\\nCon el paso del tiempo, las flores adquirieron una infinita variedad de colores y fragancias, y tantos nombres como estrellas hay en el firmamento.\\nCuando esta flor empezó a abrirse, no tenía ningún nombre. Sin embargo, como decían los antiguos dragones, aunque una flor haya perdido su nombre, nunca perderá su innata fragancia. Por tanto, las definiciones son solo una herramienta que utilizan las especies cortas de miras y efímeras para comprender el mundo que las rodea. Pero la vida no está limitada por las palabras, sino que permanece en constante evolución."
+  },
+  "Everamber": {
+    "name": "Instante del mar arbóreo",
+    "description": "Un ámbar extraído del interior del Oasis de Apep capaz de aprisionar insectos diminutos que ya están extintos.\\nPara los árboles, es casualidad que el ámbar encierre a esos diminutos seres, pero para esos seres, es cuestión del destino.\\nCon la catástrofe que cayó del cielo, árboles, enredaderas, raíces y hojas se secaron y se convirtieron en polvo, y gran parte de la vida desapareció.\\nSolo los desconocidos insectos que permanecen silenciosos en el ámbar del oasis inexistente han conocido el futuro que nadie más de su época pudo conocer."
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de azulejo de Decarabian",
     "description": "Material de ascensión de arma.\\nEn el pasado, el lugar actualmente conocido como la Guarida de Stormterror fue la capital construida por Decarabian, el Arconte de la Tempestad. Dado que este próspero sueño fue creado por su poder, las piezas rotas que quedaron cuando el sueño se hizo añicos todavía poseen un gran poder."
@@ -9389,7 +9489,7 @@
   },
   "OasisGardensMourning": {
     "name": "Lamento del oasis exuberante",
-    "description": "Material de ascensión de arma.\\nEn el pasado, la Reina de las Flores era buena amiga de los genios.\\nElla, maestra de las flores y los oasis, unió esfuerzos con el Rey del Desierto y construyó para los genios Ai Janum, la Ciudad de los Anfiteatros. En la antigua lengua de estos genios, “Ai Janum” significaba “Ciudad de la Dama Luna”.\\nSin embargo, más tarde, la Reina de las Flores murió a causa de la maldad del sol abrasador y del desierto, y las violáceas orquídeas padishá nunca más volvieron a florecer.\\nCuando ella cayó, el desierto y los genios lloraron su pérdida, la redonda gema que brillaba como la luna perdió su función de esparcir felicidad y comenzó a emitir un brillo aciago."
+    "description": "Material de ascensión de arma.\\nEn el pasado, la Reina de las Flores era buena amiga de las genios.\\nElla, maestra de las flores y los oasis, unió esfuerzos con el Rey del Desierto y construyó para las genios Ai Janum, la Ciudad de los Anfiteatros. En la antigua lengua de estas genios, “Ai Janum” significaba “Ciudad de la Dama Luna”.\\nSin embargo, más tarde, la Reina de las Flores murió a causa de la maldad del sol abrasador y del desierto, y las violáceas orquídeas padishá nunca más volvieron a florecer.\\nCuando ella cayó, el desierto y las genios lloraron su pérdida, la redonda gema que brillaba como la luna perdió su función de esparcir felicidad y comenzó a emitir un brillo aciago."
   },
   "OasisGardensTruth": {
     "name": "Esencia del oasis exuberante",
@@ -9699,8 +9799,8 @@
     "name": "Canción del fluir (III)",
     "description": "Un antiguo manuscrito que un erudito de la Escuela de Etiología desenterró en el desierto. Se desconoce su autoría."
   },
-  "AnOdeToSoulLight": {
-    "name": "Stotra de la luz de los espíritus",
+  "AnOdeToKhvarena": {
+    "name": "Stotra de las jvarena",
     "description": "Según se dice, una comunidad religiosa del desierto, ahora inexistente, transmitió esta canción de generación en generación de manera oral. Sin embargo, no se sabe quién la transcribió."
   },
   "TransparentRuinsRecordII": {
@@ -10307,6 +10407,22 @@
     "name": "Llave de piedra antigua",
     "description": "Una misteriosa llave que la matriarca de la tribu de los Tanit solía llevar consigo. Parece que podría utilizarse para abrir una puerta..."
   },
+  "PlumpHarraFruit": {
+    "name": "Fruto harra carnoso",
+    "description": "Este fruto que crece en las zonas más húmedas y calurosas de la selva se caracteriza por un aroma muy fragante y especiado. Seguro que su sabor resulta aún más delicioso si se combina con otros frutos."
+  },
+  "JuicyZaytunPeach": {
+    "name": "Duraznoliva jugosa",
+    "description": "Un fruto que crece en los arbustos del bosque, muy dulce y carnoso. Dicen que comerlo calma el cuerpo y la mente. Es perfecto para la Laila de ahora."
+  },
+  "FreshApple": {
+    "name": "Manzana fresca",
+    "description": "Crujiente y aromática. No solo se puede comer cruda o usarse para hacer vino, también resulta deliciosa cuando se asa."
+  },
+  "DryFirewood": {
+    "name": "Madera seca",
+    "description": "Madera convenientemente recogida. Tiene el tamaño y el grosor perfecto para usarse para encender un fuego. Si se usa para cocinar, seguro que le aporta un agradable aroma natural a las ascuas. Esperemos que sirva para animar un poco a Laila."
+  },
   "CrumpledNamelist": {
     "name": "Lista de nombres arrugada",
     "description": "Una lista de nombres arrugada."
@@ -10375,6 +10491,70 @@
     "name": "Flor de viento de Collei",
     "description": "Las orquídeas padishá son las flores de viento que, según Collei, mejor transmiten su agradecimiento y buenos deseos, de ahí que te haya regalado estas semillas.\\nAl volver a Mondstadt, la guardabosques ha dado un nuevo paso hacia su futuro. Ojalá que en su porvenir solo le deparen luz y esperanza, igual que a estas minúsculas semillas que te entregó."
   },
+  "GreatSongOfKhvarena": {
+    "name": "Himno de la jvarena",
+    "description": "Los himnos de la jvarena contienen una formidable cantidad de energía jvarena, pero solo las pari reconocidas por la jvarena pueden liberar su poder mediante un ritual específico."
+  },
+  "SchematicClippedInsideNotes": {
+    "name": "Boceto adjuntado a unas notas",
+    "description": "Boceto extraído de unas misteriosas notas de investigación. Parece describir en detalle la estructura de las ruinas de un campo de pruebas subterráneo y la ubicación de un himno de la jvarena."
+  },
+  "RenesInvestigationNotes": {
+    "name": "Notas de investigación de René",
+    "description": "Al parecer son las notas dejadas por un gran erudito que intentó “trascender la mortalidad”. En ellas detalla sus experiencias mientras exploraba las ruinas subterráneas y todos los conocimientos que adquirió en el proceso."
+  },
+  "NotesLeftBySomeone": {
+    "name": "Notas de alguien",
+    "description": "Parecen ser notas dejadas por un miembro de la Orden de los Escépticos. En ellas hay información relacionada con los tambores kory perdidos y sus ceremonias."
+  },
+  "AncientVolume": {
+    "name": "Documento antiguo",
+    "description": "Parece tratarse de un documento pasado de generación en generación dentro de la Orden de los Escépticos. El críptico y arcaico lenguaje usado dificulta descifrar su contenido."
+  },
+  "UdumbaraPistil": {
+    "name": "Pistilo de udumbara",
+    "description": "Un pistilo extraído de una udumbara en flor. Parece que tiene un significado especial para las pari..."
+  },
+  "KhvarenaInscriptionFragment": {
+    "name": "Fragmento de inscripción de la jvarena",
+    "description": "Fragmento de inscripción perdido. Un fragmento que se ha dispersado del resto por motivos desconocidos."
+  },
+  "KorybantesVedana": {
+    "name": "Coribante: vedana",
+    "description": "Un misterioso tambor con una marca Cryo grabada en él."
+  },
+  "KorybantesRupa": {
+    "name": "Coribante: rupa",
+    "description": "Uno de los tambores kory desaparecidos. Lleva la marca Dendro."
+  },
+  "KorybantesSamjna": {
+    "name": "Coribante: samjña",
+    "description": "Uno de los tambores kory desaparecidos. Lleva la marca Hydro."
+  },
+  "KorybantesSankhara": {
+    "name": "Coribante: sankhara",
+    "description": "Uno de los tambores kory desaparecidos. Lleva la marca Electro."
+  },
+  "KorybantesVijnana": {
+    "name": "Coribante: vijñana",
+    "description": "Uno de los tambores kory desaparecidos. Lleva la marca Pyro."
+  },
+  "MysteriousEnergyBlock": {
+    "name": "Bloque de energía misterioso",
+    "description": "Un bloque de energía condensado a partir de la azosita extraída de Energía Elemental pura. Parece servir como fuente de alimentación para grandes sistemas de energía."
+  },
+  "JuliensLuggage": {
+    "name": "Equipaje de Julien",
+    "description": "Un equipaje que acabó empapado. Parece ser que su contenido fue cuidadosamente guardado. Se desconoce si habrá sido capaz de resistir a los efectos del agua."
+  },
+  "JuliensSketch": {
+    "name": "Boceto de Julien",
+    "description": "Un bosquejo en el que se ha utilizado una curiosa combinación de colores."
+  },
+  "PictureLeftByTheWisdomSeelie": {
+    "name": "Imagen que dejó el Seelie de la Sabiduría",
+    "description": "Una pista que dejó el Seelie de la Sabiduría. Con suerte, esta aventura no será tan poco fructífera como antes..."
+  },
   "CaravanAccounts": {
     "name": "Registros de la caravana",
     "description": "Unos registros obtenidos de la caravana que buscabas. La información que poseen está mayormente relacionada con Las Barbas de al-Ahmar. Al margen de la gran cantidad de datos e información sobre bienes robados, resulta alarmante encontrar el nombre del padre de Dunyarzad."
@@ -10391,9 +10571,173 @@
     "name": "Alojamiento y manutención para invitados",
     "description": "？？？"
   },
+  "RelicReplicaContainerI": {
+    "name": "Réplica de reliquia (I)",
+    "description": "Un recipiente pintado de púrpura para una réplica de reliquia."
+  },
+  "RelicReplicaContainerII": {
+    "name": "Réplica de reliquia (II)",
+    "description": "Un recipiente pintado de azul para una réplica de reliquia."
+  },
+  "RelicReplicaContainerIII": {
+    "name": "Réplica de reliquia (III)",
+    "description": "Un recipiente pintado de rojo para una réplica de reliquia."
+  },
+  "KorybantesScoreVijnana": {
+    "name": "Partitura para coribante: vijñana",
+    "description": "Una partitura de percusión para el coribante: vijñana."
+  },
+  "KorybantesScoreSamjna": {
+    "name": "Partitura para coribante: samjña",
+    "description": "Una partitura de percusión para el coribante: samjña."
+  },
+  "KorybantesScoreRupa": {
+    "name": "Partitura para coribante: rupa",
+    "description": "Una partitura de percusión para el coribante: rupa."
+  },
+  "KorybantesScoreSankhara": {
+    "name": "Partitura para coribante: sankhara",
+    "description": "Una partitura de percusión para el coribante: sankhara."
+  },
+  "KorybantesScoreVedana": {
+    "name": "Partitura para coribante: vedana",
+    "description": "Una partitura de percusión para el coribante: vedana."
+  },
+  "JuliensDrawingBoard": {
+    "name": "Caballete de Julien",
+    "description": "Un caballete que parece haber sido usado, aunque ahora mismo no hay ningún dibujo que dé fe de ello."
+  },
+  "InPursuitOfTheLostInscription": {
+    "name": "Notas sobre inscripciones perdidas",
+    "description": "Notas de Sosi. Registran pistas sobre la posible ubicación de los fragmentos dispersos de inscripciones."
+  },
   "HaniyyahsGiftOfMarvelousJellies": {
     "name": "Agar mirífico regalado por Haniyyah",
     "description": "Una bella caja que te regaló Haniyyah y que contiene el agar mirífico que tanto les gusta a los Hongos. Los agares están divididos según el sabor para poder alimentar a los Hongos según sus gustos particulares.\\nEl agar mirífico es una versión mejorada de su predecesor, el agar floral. Conserva el brillo y la elasticidad que lo caracterizan y le han quitado los componentes que eran dañinos, por lo que es el alimento ideal para los Hongos. Eso sí, hay que tener cuidado al guardarlo en casa para que no se los zampen los niños glotones y no tengan una indigestión."
+  },
+  "BoxOfSpecialPotions": {
+    "name": "Caja de pociones especiales",
+    "description": "Una caja que conseguiste de Bahador y que contiene una serie de pociones especiales. Según él, te podrían resultar muy útiles para explorar cierto dominio..."
+  },
+  "SomeonesJournal": {
+    "name": "Diario de alguien",
+    "description": "El diario de alguien."
+  },
+  "SomeonesMemo": {
+    "name": "Memorias de alguien",
+    "description": "Las memorias de alguien."
+  },
+  "Locator": {
+    "name": "Localizador",
+    "description": "Un invento de la Escuela de Tecnología. El localizador mostrará la ubicación general de los participantes que lleven un rastreador encima. Además, emitirá un sonido cuando cada participante complete un objetivo de la competición."
+  },
+  "FoodSeeds": {
+    "name": "Semillas de alimentos",
+    "description": "Unas semillas que te dio el ser elemental Flotihongo Anemo. Si las plantas, podrás cultivar los alimentos que a los Hongos tanto les gusta comer. ¿Sabrán los Hongos cómo cuidar de los cultivos ellos solos?"
+  },
+  "NamelessAdventurersNotes": {
+    "name": "Registro de aventuras anónimo",
+    "description": "Unas breves notas perdidas en el desierto que parecen haber sido dejadas por algún aventurero."
+  },
+  "AncientEngineeringNotes": {
+    "name": "Libro de obra antiguo",
+    "description": "Un registro antiguo con los hechos importantes de una obra."
+  },
+  "RaggedEngineeringNotes": {
+    "name": "Libro de obra deteriorado",
+    "description": "Un libro de obra que vio mejores días."
+  },
+  "SomeonesAbandonedLetter": {
+    "name": "Carta de alguien",
+    "description": "Una carta dejada por a saber quién."
+  },
+  "AkademiyaInvestigationTeamsLogsIII": {
+    "name": "Diario del equipo de investigación de la Academia de Sumeru (III)",
+    "description": "La tercera parte del diario del equipo de investigación enviado por la Academia de Sumeru."
+  },
+  "AkademiyaInvestigationTeamsLogsIV": {
+    "name": "Diario del equipo de investigación de la Academia de Sumeru (IV)",
+    "description": "La cuarta parte del diario del equipo de investigación enviado por la Academia de Sumeru."
+  },
+  "BarelyLegibleBulletin": {
+    "name": "Anuncio apenas reconocible",
+    "description": "Un anuncio difícil de leer."
+  },
+  "AncientJournal": {
+    "name": "Diario antiguo",
+    "description": "Un diario que no es nada nuevo."
+  },
+  "RecordsOfUnknownAttributionII": {
+    "name": "Registro de alguien (II)",
+    "description": "La segunda parte de un registro dejado por una persona totalmente desconocida."
+  },
+  "AkademiyaInvestigationTeamsLogsI": {
+    "name": "Diario del equipo de investigación de la Academia de Sumeru (I)",
+    "description": "Diario del equipo de investigación de la Academia de Sumeru (I)"
+  },
+  "AkademiyaInvestigationTeamsLogsII": {
+    "name": "Diario del equipo de investigación de la Academia de Sumeru (II)",
+    "description": "Diario del equipo de investigación de la Academia de Sumeru (II)"
+  },
+  "SoiledOrders": {
+    "name": "Comunicado con órdenes manchado",
+    "description": "Comunicado con órdenes manchado"
+  },
+  "RecordsOfUnknownAttributionI": {
+    "name": "Registro de alguien (I)",
+    "description": "Registro de alguien (I)"
+  },
+  "PagesFromSomeLostNotesI": {
+    "name": "Página dañada de unos apuntes perdidos (I)",
+    "description": "Página dañada de unos apuntes perdidos (I)"
+  },
+  "PagesFromSomeLostNotesII": {
+    "name": "Página dañada de unos apuntes perdidos (II)",
+    "description": "Página dañada de unos apuntes perdidos (II)"
+  },
+  "BizarreTranscript": {
+    "name": "Transcripción extraña",
+    "description": "Transcripción extraña"
+  },
+  "TeachingsOfTheSkeptics": {
+    "name": "Enseñanzas de la Orden de los Escépticos",
+    "description": "Enseñanzas de la Orden de los Escépticos"
+  },
+  "NamelessResearchersNotesI": {
+    "name": "Anotaciones de un erudito desconocido (I)",
+    "description": "Anotaciones de un erudito desconocido (I)"
+  },
+  "NamelessResearchersNotesII": {
+    "name": "Anotaciones de un erudito desconocido (II)",
+    "description": "Anotaciones de un erudito desconocido (II)"
+  },
+  "NamelessResearchersNotesIII": {
+    "name": "Anotaciones de un erudito desconocido (III)",
+    "description": "Anotaciones de un erudito desconocido (III)"
+  },
+  "NamelessResearchersNotesIV": {
+    "name": "Anotaciones de un erudito desconocido (IV)",
+    "description": "Anotaciones de un erudito desconocido (IV)"
+  },
+  "MercenarysAgedNotesI": {
+    "name": "Notas antiguas de un mercenario (I)",
+    "description": "Notas antiguas de un mercenario (I)"
+  },
+  "MercenarysAgedNotesII": {
+    "name": "Notas antiguas de un mercenario (II)",
+    "description": "Notas antiguas de un mercenario (II)"
+  },
+  "MercenarysAgedNotesIII": {
+    "name": "Notas antiguas de un mercenario (III)",
+    "description": "Notas antiguas de un mercenario (III)"
+  },
+  "MercenarysAgedNotesIV": {
+    "name": "Notas antiguas de un mercenario (IV)",
+    "description": "Notas antiguas de un mercenario (IV)"
+  },
+  "KhvarenaMonumentInscription": {
+    "name": "Monumento de la jvarena",
+    "description": "Monumento de la jvarena"
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -10613,11 +10957,11 @@
   },
   "WingsOfFirstFlight": {
     "name": "Alas de principiante",
-    "description": "Un planeador estilizado con el que se puede sentir la pasión de un Caballero Explorador."
+    "description": "Un modelo de planeador con el que se puede sentir la pasión de un Caballero Explorador."
   },
   "WingsOfCompanionship": {
     "name": "Alas Protectoras",
-    "description": "Un planeador estilizado que porta el deseo de volar junto a otra persona."
+    "description": "Un modelo de planeador que porta el deseo de volar junto a otra persona."
   },
   "WingsOfDescension": {
     "name": "Alas del Descenso",
@@ -10645,7 +10989,7 @@
   },
   "WingsOfShimmeringGalaxy": {
     "name": "Alas del Brillo Galáctico",
-    "description": "Un planeador estilizado. Un regalo que conmemora la sinfonía que resuena en el mar de estrellas."
+    "description": "Un modelo de planeador. Un regalo que conmemora la sinfonía que resuena en el mar de estrellas."
   },
   "WingsOfTheForest": {
     "name": "Alas de la Exuberancia",
@@ -11587,6 +11931,34 @@
     "name": "PB - Pretensión artesanal",
     "description": "Diseño de tarjeta de presentación.\\nMuchos dicen que el amor es como un fantasma, todos hablan de él, pero muy pocos han logrado verlo con sus propios ojos. Mas si los fantasmas realmente se aparecen de vez en cuando, tal vez el amor también esté esperando a la vuelta de la esquina."
   },
+  "BaizhuRelief": {
+    "name": "Baizhu - Mitigación",
+    "description": "Diseño de tarjeta de presentación.\\n“La honestidad es el mejor remedio para la vejez”."
+  },
+  "KavehDomedCourt": {
+    "name": "Kaveh - Alcázar abovedado",
+    "description": "Diseño de tarjeta de presentación.\\n“Al diseñar un proyecto arquitectónico, no hay nada de malo en imaginar que las edificaciones que construimos superan los confines del cielo y la eternidad de las estrellas”."
+  },
+  "AchievementInfinitum": {
+    "name": "Logro - Semillas infinitas",
+    "description": "Diseño de tarjeta de presentación.\\n“La jvarena, en su infinita multiplicidad, protege la tierra eterna. La decadencia y el esplendor temporales en este mundo no son sino ilusiones de las semillas existentes”."
+  },
+  "AchievementTransientTwilight": {
+    "name": "Logro - Atardecer efímero",
+    "description": "Diseño de tarjeta de presentación.\\n“Acabaré olvidando la prosperidad, la calidez del sol y las tempestades de tiempos pasados. Ojalá que aquellos sueños que ya no existen en el nuevo mundo se mantengan vivos en tu memoria”."
+  },
+  "SumeruTheGreatDream": {
+    "name": "Sumeru - Grandes quimeras",
+    "description": "Diseño de tarjeta de presentación.\\n“Escóndeme donde perviven los sueños de las plantas, que los tiempos prometedores aún están por llegar”."
+  },
+  "SumeruAmrita": {
+    "name": "Sumeru - Maná",
+    "description": "Diseño de tarjeta de presentación.\\nLos estanques de maná están llenos de recuerdos del pasado, pero quizá también tengan el poder de construir el futuro."
+  },
+  "TravelNotesCrownOfGlory": {
+    "name": "PB - Corona de la eminencia",
+    "description": "Diseño de tarjeta de presentación.\\n“La sabiduría es la corona que recibimos con el paso de los años, así como nuestra añoranza es el tiempo que juntos pasamos”."
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
     "description": "Puede utilizarse en Mondstadt para encontrar anemóculus en las cercanías.\\nUn disco de piedra con características similares a las Estatuas de Los Siete que emite un sonido cuando hay anemóculus en los alrededores.\\nEstos discos son una burda imitación de las Estatuas de Los Siete diseminadas por todo el continente. Como falsificaciones que son, desean el poder de los óculus y ofrecen a devotos y aventureros la oportunidad de encontrarlos."
@@ -11839,6 +12211,10 @@
     "name": "Brújula indómita",
     "description": "Una brújula muy especial que te dieron en el Gremio de Aventureros. Dicen que trae buena suerte."
   },
+  "Sorush": {
+    "name": "Sorush",
+    "description": "Como pari protectora de la tierra, Sorush aspira a convertirse en la guardiana floral que pacifique el desastre.\\nTras establecer una conexión con alguien de su confianza, recorrerá la tierra emponzoñada junto a su Yasnapati."
+  },
   "WindblumeKamera": {
     "name": "Daguerrotipo vientofloral",
     "description": "Un Daguerrotipo que tomaste prestado de Fassben. Será mejor usarlo con cuidado, no vaya a ser que se rompa..."
@@ -11846,6 +12222,10 @@
   "FestiveDrum": {
     "name": "Tambor del festín",
     "description": "Un instrumento para utilizar durante las actuaciones musicales.\\nLa estructura de este tambor, capaz de producir un sonido nítido, es de lo más particular. Cuenta con un diseño refinado y un magistral trabajo de artesanía. Para su construcción, se han elegido materiales de gran calidad y tenido en cuenta la calidad del sonido, su reverberación y la resistencia al paso del tiempo.\\nCuenta con las características de los instrumentos tradicionales de Inazuma y de los tambores de otras naciones, y se dice que tocar música con él trae buena fortuna."
+  },
+  "SearchCompass": {
+    "name": "Brújula arqueológica",
+    "description": "Brújula arqueológica utilizada para encontrar réplicas de reliquia. Al ser un dispositivo creado originalmente para detectar elementos, parece que al detectar la ubicación de réplicas de reliquia aún puede verse afectada por los elementos presentes..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instrucciones: Roca de resonancia de anemóculus",
@@ -11944,23 +12324,23 @@
     "description": "Planos detallados para fabricar una Brújula buscatesoros Electro. Puede utilizarse para encontrar fácilmente tesoros en Inazuma."
   },
   "FormulaFruitPasteBait": {
-    "name": "Receta: Cebo afrutado",
+    "name": "Receta: cebo afrutado",
     "description": "Receta paso a paso para hacer un cebo afrutado."
   },
   "FormulaRedrotBait": {
-    "name": "Receta: Cebo de sangre",
+    "name": "Receta: cebo de sangre",
     "description": "Receta paso a paso para hacer un cebo de sangre."
   },
   "FormulaFalseWormBait": {
-    "name": "Receta: Cebo de lombriz falsa",
+    "name": "Receta: cebo de lombriz falsa",
     "description": "Receta paso a paso para hacer un cebo de lombriz falsa."
   },
   "FormulaFakeFlyBait": {
-    "name": "Receta: Cebo de mosca falsa",
+    "name": "Receta: cebo de mosca falsa",
     "description": "Receta paso a paso para hacer un cebo de mosca falsa."
   },
   "FormulaSugardewBait": {
-    "name": "Receta: Cebo maná",
+    "name": "Receta: cebo maná",
     "description": "Receta paso a paso para hacer un cebo maná."
   },
   "InstructionsDendroculusResonanceStone": {
@@ -12056,7 +12436,7 @@
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "FatuiPyroAgent": {
-    "name": "Recaudador Pyro",
+    "name": "Soldado Fatui - Recaudador Pyro",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "MaguuKenki": {
@@ -12068,7 +12448,7 @@
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "MirrorMaiden": {
-    "name": "Doncella del Espejo",
+    "name": "Soldado Fatui - Doncella del Espejo",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "JadeplumeTerrorshroom": {
@@ -12199,8 +12579,20 @@
     "name": "Tormenta eléctrica",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "KeenSight": {
+    "name": "Visión aguda",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "SinOfPride": {
     "name": "Pecado del orgullo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "KyoukaFuushi": {
+    "name": "Reflejo grácil",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AratakiIchiban": {
+    "name": "Itto, el ónico e inimitable",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "MagicGuide": {
@@ -12351,6 +12743,10 @@
     "name": "Yelmo Vetusto del General",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "FavoniusSword": {
+    "name": "Espada de Favonius",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "LiyueHarborWharf": {
     "name": "Puerto de Liyue",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
@@ -12425,6 +12821,10 @@
   },
   "NRE": {
     "name": "Bolsita nutritiva",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "GrandNarukamiShrine": {
+    "name": "Gran Santuario Narukami",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "ElementalResonanceWovenIce": {
@@ -12773,7 +13173,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Estudio Feiyun",
-    "description": "Plano detallado para colocar Estudio Feiyun.\\nEn Liyue hay estudios de muchos estilos distintos, pero el lujo solo es un elemento opcional, ya que los estudiosos dan más importancia al ambiente y a la elegancia. Una planta equilibra el nivel de humedad de la habitación, y la mesa y las estanterías emiten una sutil fragancia a madera que combina con el diseño sencillo y el brillo anaranjado de las luces para proporcionar inspiración al escribir.\\nSe dice que, hace muchos años, alguien que se alojaba en la Pendiente Feiyun decoró su estudio de esta forma, y el anterior dueño de la Casa de Libros Wanwen adoptó el diseño y lo popularizó. Por eso, este tipo de estudio llamado Feiyun es conocido en toda Liyue.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xingchiu, Zhongli, Ninguang, Yun Jin."
+    "description": "Plano detallado para colocar Estudio Feiyun.\\nEn Liyue hay estudios de muchos estilos distintos, pero el lujo solo es un elemento opcional, ya que los estudiosos dan más importancia al ambiente y a la elegancia. Una planta equilibra el nivel de humedad de la habitación, y la mesa y las estanterías emiten una sutil fragancia a madera que combina con el diseño sencillo y el brillo anaranjado de las luces para proporcionar inspiración al escribir.\\nSe dice que, hace muchos años, alguien que se alojaba en la Pendiente Feiyun decoró su estudio de esta forma, y el anterior dueño de la Casa de Libros Wanwen adoptó el diseño y lo popularizó. Por eso, este tipo de estudio llamado Feiyun es conocido en toda Liyue.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Xingchiu, Zhongli, Ninguang, Yun Jin y Baizhu."
   },
   "CloudyHazeDreamCourt": {
     "name": "Pabellón de los sueños",
@@ -12785,7 +13185,7 @@
   },
   "CottageKitchen": {
     "name": "Leña y ahumados",
-    "description": "Plano detallado para colocar Leña y ahumados.\\nUna cocina completamente equipada y con un armario lleno de condimentos preparados cuidadosamente.\\nLos chefs que aspiran a la excelencia compran los ingredientes más frescos del día en el mercado, y los artistas de los fogones prestan incluso más atención a la leña usada en su fuego. Una vez, la joven cocinera del Restaurante Wanmin compartió sus conocimientos con sus colegas del gremio: para preparar los platos tradicionales de la Aldea Chingtsé, se debe hacer el fuego con trozos secos de bambú y controlar constantemente las llamas. Si se consigue madera de los arbustos que rodean a los ganchos de lobo, incluso se puede agregar una nota de sabor típica de Mondstadt.\\nLos distintos tipos de leña producen efectos muy diferentes y la mayoría de los cocineros nunca logran dominar esta técnica, así que puede decirse que el Restaurante Wanmin tiene el monopolio sobre ella.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao y Mika."
+    "description": "Plano detallado para colocar Leña y ahumados.\\nUna cocina completamente equipada y con un armario lleno de condimentos preparados cuidadosamente.\\nLos chefs que aspiran a la excelencia compran los ingredientes más frescos del día en el mercado, y los artistas de los fogones prestan incluso más atención a la leña usada en su fuego. Una vez, la joven cocinera del Restaurante Wanmin compartió sus conocimientos con sus colegas del gremio: para preparar los platos tradicionales de la Aldea Chingtsé, se debe hacer el fuego con trozos secos de bambú y controlar constantemente las llamas. Si se consigue madera de los arbustos que rodean a los ganchos de lobo, incluso se puede agregar una nota de sabor típica de Mondstadt.\\nLos distintos tipos de leña producen efectos muy diferentes y la mayoría de los cocineros nunca logran dominar esta técnica, así que puede decirse que el Restaurante Wanmin tiene el monopolio sobre ella.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika y Baizhu."
   },
   "WeaponForgingStation": {
     "name": "Forja de espadas",
@@ -12905,7 +13305,7 @@
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Danza de las sombras",
-    "description": "Un mayestático y hermoso teatro. En este diseño no solo se incluye el gran escenario, sino también una refinada fuente, todo ello adornado con las más hermosas de las flores replicadas por la creación dimensional. Este teatro es un fiel reflejo de la majestuosidad y belleza del Teatro Zubayr.\\nSe rumorea que algunas actuaciones es mejor verlas de noche, pues la disposición de las lámparas del teatro no deja indiferente al público, y permite que todos los asistentes disfruten de una vista clara de todos los bailarines desde cualquier ángulo.\\nLos siguientes acompañantes prefieren este conjunto: Nilou."
+    "description": "Un mayestático y hermoso teatro. En este diseño no solo se incluye el gran escenario, sino también una refinada fuente, todo ello adornado con las más hermosas de las flores replicadas por la creación dimensional. Este teatro es un fiel reflejo de la majestuosidad y belleza del Teatro Zubayr.\\nSe rumorea que algunas actuaciones es mejor verlas de noche, pues la disposición de las lámparas del teatro no deja indiferente al público, y permite que todos los asistentes disfruten de una vista clara de todos los bailarines desde cualquier ángulo.\\nLos siguientes acompañantes prefieren este conjunto: Nilou y Kaveh."
   },
   "QuietTimesByTheRiverbank": {
     "name": "Momentos de sosiego junto al río",
@@ -12921,7 +13321,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Mente en calma",
-    "description": "Un refinado y sosegado jardín que imita la estética de los pabellones del Jardín Razan y del Jardín Dhyai. Este espacio ignora la disparidad estética entre los distintos estilos arquitectónicos y se centra en crear un ambiente de relajación.\\nCapullos de flores jóvenes brotan en completa serenidad, y las lámparas iluminan la superficie del agua de la fuente con sus destellos dorados... A la caída de la noche, pasear por este sinuoso jardín será capaz de acallar todas las vanas preocupaciones que tan tozudamente se aferran a la mente durante el día...\\nLos siguientes acompañantes prefieren este conjunto: Nahida."
+    "description": "Un refinado y sosegado jardín que imita la estética de los pabellones del Jardín Razan y del Jardín Dhyai. Este espacio ignora la disparidad estética entre los distintos estilos arquitectónicos y se centra en crear un ambiente de relajación.\\nCapullos de flores jóvenes brotan en completa serenidad, y las lámparas iluminan la superficie del agua de la fuente con sus destellos dorados... A la caída de la noche, pasear por este sinuoso jardín será capaz de acallar todas las vanas preocupaciones que tan tozudamente se aferran a la mente durante el día...\\nLos siguientes acompañantes prefieren este conjunto: Nahida y Kaveh."
   },
   "ChorusOfDesertAndWood": {
     "name": "Beneplácito del desierto y el bosque",
@@ -13078,6 +13478,14 @@
   "LightOfSlumber": {
     "name": "Halo aletargado",
     "description": "Plano detallado para fabricar “Halo aletargado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SweetLuster": {
+    "name": "Resplandor de dulzura",
+    "description": "Plano detallado para fabricar “Resplandor de dulzura”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "LightsConstancy": {
+    "name": "Luz en el camino",
+    "description": "Plano detallado para fabricar “Luz en el camino”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "EfflorescentIllumination": {
     "name": "Luminiscencia floral",
@@ -13266,6 +13674,10 @@
   "LongAdhigamaChamferTable": {
     "name": "Mesa angulada de madera de bodhi",
     "description": "Plano detallado para fabricar una Mesa angulada de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelWoodCompactDesk": {
+    "name": "Mesa de madera de tamarisco compactada",
+    "description": "Plano detallado para fabricar una Mesa de madera de tamarisco compactada.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa",
@@ -13494,6 +13906,22 @@
   "HuedVaseMoltenSand": {
     "name": "Vasija pigmentada: Arenisca",
     "description": "Plano detallado para fabricar una Vasija pigmentada: Arenisca.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "WarmthAndColdOverlaid": {
+    "name": "Acrecencia de bienestar",
+    "description": "Plano detallado para fabricar “Acrecencia de bienestar”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseAjilenakh": {
+    "name": "Vasija pigmentada: Hojas de datilera",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Hojas de datilera.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseCrimsonSands": {
+    "name": "Vasija pigmentada: Arena escarlata",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Arena escarlata.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PureHeat": {
+    "name": "Entusiasmo puro",
+    "description": "Plano detallado para fabricar “Entusiasmo puro”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
@@ -13734,6 +14162,26 @@
   "StarShapedMultipurposeBottle": {
     "name": "Jarrón multiusos estrellado",
     "description": "Plano detallado para fabricar un Jarrón multiusos estrellado.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HuedVaseEventide": {
+    "name": "Vasija pigmentada: Relente nocturno",
+    "description": "Plano detallado para fabricar una Vasija pigmentada: Relente nocturno.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SaltyAndMeatyPaintedPlate": {
+    "name": "Plato de cerámica multicolor: Aroma a carne fresca",
+    "description": "Plano detallado para fabricar un Plato de cerámica multicolor: Aroma a carne fresca.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SweetAndFruityPaintedPlate": {
+    "name": "Plato de cerámica multicolor: Sensación frutal",
+    "description": "Plano detallado para fabricar un Plato de cerámica multicolor: Sensación frutal.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "InDrinksClarity": {
+    "name": "Frescura alcoholizada",
+    "description": "Plano detallado para fabricar “Frescura alcoholizada”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TheDustDifferential": {
+    "name": "Entre la polvareda",
+    "description": "Plano detallado para fabricar “Entre la polvareda”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Desvelo del emplazamiento del saber",
@@ -14043,6 +14491,14 @@
     "name": "Elección deliberada",
     "description": "Plano detallado para fabricar “Elección deliberada”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "KarmaphalaWoodBulkGoodsBerth": {
+    "name": "Estante expositor de madera kármica",
+    "description": "Plano detallado para fabricar un Estante expositor de madera kármica.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AdhigamaWoodOpenAirFoodStall": {
+    "name": "Puesto de comida para exteriores de madera de bodhi",
+    "description": "Plano detallado para fabricar un Puesto de comida para exteriores de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "HilichurlOutpostHut": {
     "name": "Cabaña de avanzadilla Hilichurl",
     "description": "Plano detallado para fabricar una Cabaña de avanzadilla Hilichurl.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -14325,7 +14781,7 @@
   },
   "LightInTheTranquilCourt": {
     "name": "Imperturbabilidad del jardín acristalado",
-    "description": "Plano detallado para fabricar “Imperturbabilidad del jardín abovedado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Imperturbabilidad del jardín acristalado”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "FabricOfTheCityOfWisdom": {
     "name": "Modestia de la ciudad de la sabiduría",
@@ -14370,6 +14826,10 @@
   "SingingInTheTranquilCourt": {
     "name": "Imperturbabilidad del jardín melódico",
     "description": "Plano detallado para fabricar “Imperturbabilidad del jardín melódico”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FineSandInWarmWeather": {
+    "name": "Arena fina de estaciones cálidas",
+    "description": "Plano detallado para fabricar “Arena fina de estaciones cálidas”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Fuente con flores y pájaros",
@@ -14879,6 +15339,26 @@
     "name": "Dispositivo de entretenimiento: Dodoboing",
     "description": "Plano detallado para fabricar un Dispositivo de entretenimiento - Dodoboing.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "CaravanRibatTypeIIILandTransportPallet": {
+    "name": "Palé para transporte terrestre del Caravasar Ribat",
+    "description": "Plano detallado para fabricar un Palé para transporte terrestre del Caravasar Ribat.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseDrinksForAHundred": {
+    "name": "Jarrón simple: Brebajes infinitos",
+    "description": "Plano detallado para fabricar “Brebajes infinitos”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PlainVaseStuporForTen": {
+    "name": "Jarrón simple: Embriaguez",
+    "description": "Plano detallado para fabricar un Jarrón simple: Embriaguez.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BrightwoodSelfTighteningWineBuckets": {
+    "name": "Tonel compacto de madera radiante",
+    "description": "Plano detallado para fabricar un Tonel compacto de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BrightwoodFabricBoxPlatform": {
+    "name": "Caja de madera radiante",
+    "description": "Plano detallado para fabricar una Caja de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante",
     "description": "Plano detallado para fabricar una Maceta: Verdor abundante.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -15154,6 +15634,46 @@
   "ErsatzBalloonBumperShroom": {
     "name": "Globo emulador: Setador",
     "description": "Plano detallado para fabricar un Globo emulador: Setador.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PetaledShade": {
+    "name": "Frescor de la sombra",
+    "description": "Plano detallado para fabricar “Frescor de la sombra”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TeamSpirit": {
+    "name": "Heroicidad de mercenario",
+    "description": "Plano detallado para fabricar “Heroicidad de mercenario”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "ScentOfTheBlazingSun": {
+    "name": "Convección abrasadora",
+    "description": "Plano detallado para fabricar “Convección abrasadora”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AthelWoodLightCargoBoxes": {
+    "name": "Cajas de madera de tamarisco ligera",
+    "description": "Plano detallado para fabricar unas Cajas de madera de tamarisco ligera.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "VahumanaFlag": {
+    "name": "Bandera de Vahumana",
+    "description": "Plano detallado para fabricar una Bandera de Vahumana.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SpantamadFlag": {
+    "name": "Bandera de Spantamad",
+    "description": "Plano detallado para fabricar una Bandera de Spantamad.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "HaravatatFlag": {
+    "name": "Bandera de Haravatat",
+    "description": "Plano detallado para fabricar una Bandera de Haravatat.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AmurtaFlag": {
+    "name": "Bandera de Amurta",
+    "description": "Plano detallado para fabricar una Bandera de Amurta.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "RtawahistFlag": {
+    "name": "Bandera de Rtawahist",
+    "description": "Plano detallado para fabricar una Bandera de Rtawahist.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "KshahrewarFlag": {
+    "name": "Bandera de Kshahrewar",
+    "description": "Plano detallado para fabricar una Bandera de Kshahrewar.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Farola de hierro con adornos",

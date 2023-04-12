@@ -120,8 +120,8 @@
   "passive3": {
     "name": "Transcension: Gravity Defier",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina saat memanjat untuk anggota party sendiri.",
-      "1": "Tidak dapat ditumpuk dengan Talenta Pasif dengan efek yang sama."
+      "0": "Mengurangi 20% konsumsi Stamina Karakter party sendiri saat memanjat.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
   "constellation1": {

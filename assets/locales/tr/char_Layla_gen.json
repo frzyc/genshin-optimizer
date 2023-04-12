@@ -1,6 +1,6 @@
 {
   "name": "Layla",
-  "title": "İnanılmaz Akşam Yıldızı",
+  "title": "Bir Akşam Yıldızı Rüyası",
   "description": "Teorik Astrolojide uzmanlaşmış bir Rtawahist öğrencisi. Uyurgezerlikten muzdarip ve uyku eksikliği ile sürekli savaş halindedir. İyi bir uyku, onun için büyük bir sorundur.",
   "constellationName": "Bülbül",
   "auto": {
@@ -137,7 +137,7 @@
   "constellation3": {
     "name": "Gecenin Sırları",
     "description": {
-      "0": "<strong>Odaklanma Gecesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Odaklanma Gecesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -151,7 +151,7 @@
   "constellation5": {
     "name": "Bilinç Akışı",
     "description": {
-      "0": "<strong>Dağılan Yıldız Akışı Rüyası</strong> seviyesini 3 artırır.",
+      "0": "<strong>Dağılan Yıldız Akışı Rüyası</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

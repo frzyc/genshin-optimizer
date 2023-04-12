@@ -139,7 +139,7 @@
   "constellation3": {
     "name": "Avcının Duası",
     "description": {
-      "0": "<strong>Kutsal Ayin: Kuyruksallayan Dalgası</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kutsal Ayin: Kuyruksallayan Dalgası</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -152,7 +152,7 @@
   "constellation5": {
     "name": "Alacalı Bakış",
     "description": {
-      "0": "<strong>Kutsal Ayin: Balıkçıl Kalkanı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kutsal Ayin: Balıkçıl Kalkanı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

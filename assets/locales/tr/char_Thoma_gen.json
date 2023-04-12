@@ -147,7 +147,7 @@
   "constellation3": {
     "name": "Sağlam İrade",
     "description": {
-      "0": "<strong>Alevli Lütuf</strong> seviyesini 3 artırır.",
+      "0": "<strong>Alevli Lütuf</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -160,7 +160,7 @@
   "constellation5": {
     "name": "Öfkeli Yangın",
     "description": {
-      "0": "<strong>Kızıl Ooyoroi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kızıl Ooyoroi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

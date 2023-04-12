@@ -87,7 +87,7 @@
       "2": "<strong>Dé exquis</strong>",
       "3": "Suit le personnage et déclenche une attaque coordonnée dans les circonstances suivantes, infligeant des <hydro>DGT Hydro</hydro> selon les PV max de Yelan :",
       "4": [
-        " Chaque fois qu'un personnage déployé utilise une attaque normale, cet effet pouvant être déclenché une fois toutes les secondes.",
+        " Chaque fois que votre personnage déployé utilise une attaque normale, cet effet pouvant être déclenché une fois toutes les secondes.",
         " Chaque fois que la ligne vitale de Yelan explose et touche des ennemis."
       ],
       "5": "<br/>",
@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Adaptation aisée",
     "description": {
-      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par le personnage déployé augmentent de 1 %, puis de 3,5{NON_BREAK_SPACE}% supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
+      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par votre personnage déployé augmentent de 1 %, puis de 3,5{NON_BREAK_SPACE}% supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
       "1": "Utiliser à nouveau Dé exquis des profondeurs pendant la durée de l'effet décrit ci-dessus dissipera ce dernier."
     }
   },

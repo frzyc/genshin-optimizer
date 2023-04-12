@@ -152,8 +152,8 @@
   "constellation4": {
     "name": "Beklenmedik Seyahat",
     "description": {
-      "0": "1. Seviye Yüklü <strong>Tutku Patlaması</strong> becerisinin ikinci saldırısını gerçekleştirirken Normal Saldırı kullanıldığında fazladan bir saldırı yapılabilir.",
-      "1": "Bu ek saldırı, ikinci saldırının %135'i kadar hasar verir."
+      "0": "1. Seviye Yüklü <strong>Tutku Patlaması</strong> becerisinin ikinci saldırısını gerçekleştirirken Normal Saldırı kullanıldığında ek bir saldırı daha yapılır.",
+      "1": "Bu ek saldırı, ikinci saldırının %135'i kadar Hasar verir."
     }
   },
   "constellation5": {

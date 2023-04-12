@@ -127,7 +127,7 @@
     "name": "Baile de escarcha",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Golpe de escarcha</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation4": {
@@ -135,8 +135,8 @@
     "description": {
       "0": "Cuando la Vida de Kaeya cae por debajo del 20%:",
       "1": [
-        "Genera un escudo que absorbe daño igual al 30% de su Vida Máx. durante 20 s.",
-        "El escudo tiene un efecto de absorción de 250% de <cryo>Daño Cryo</cryo>."
+        "Crea un escudo que absorbe daño en una cantidad equivalente al 30% de su Vida Máx. durante 20 s.",
+        "El escudo tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>."
       ],
       "2": "Solo puede ocurrir una vez cada 60 s."
     }
@@ -145,7 +145,7 @@
     "name": "Abrazo helado",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Vals gélido</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv. 15."
+      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
     }
   },
   "constellation6": {

@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "Hokkabazın Alevi",
     "description": {
-      "0": "<strong>Niwabi Ateş Dansı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Niwabi Ateş Dansı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Yaz Festivali Arifesi",
     "description": {
-      "0": "<strong>Taşkıran Ryuukin</strong> seviyesini 3 artırır.",
+      "0": "<strong>Taşkıran Ryuukin</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

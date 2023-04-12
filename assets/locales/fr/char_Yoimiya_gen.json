@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Rentabilisation maximum",
     "description": {
-      "0": "Lors de la fabrication de décorations, d'aménagements ou de décorations de paysage, une partie des matériaux est récupérée."
+      "0": "Lors de la fabrication de décorations de type aménagement, ornement ou paysage, une partie des matériaux est récupérée."
     }
   },
   "constellation1": {

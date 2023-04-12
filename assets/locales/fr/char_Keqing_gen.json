@@ -158,7 +158,7 @@
     "name": "Étoile tenace",
     "description": {
       "0": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élémentaires de Keqing lui confèrent un <electro>bonus de DGT Électro</electro> de 6 % pendant 8 s.",
-      "1": "Les effets des attaques normales et chargées et des compétences et déchaînements élémentaires sont comptabilisés indépendamment les uns des autres."
+      "1": "Les effets des attaques normales et chargées et des compétences et déchaînements élémentaires existent indépendamment les uns des autres."
     }
   }
 }

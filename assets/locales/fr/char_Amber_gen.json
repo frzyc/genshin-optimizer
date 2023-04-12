@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Championne de planage",
     "description": {
-      "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -144,7 +144,7 @@
   "constellation4": {
     "name": "Ce n'est pas n'importe quelle poupée...",
     "description": {
-      "0": "Réduit le TdR de <strong>Poupée explosive</strong> de 20 % et permet de l'utiliser 1 fois supplémentaire."
+      "0": "Diminue le TdR de <strong>Poupée explosive</strong> de 20 % et permet de l'utiliser 1 fois supplémentaire."
     }
   },
   "constellation5": {

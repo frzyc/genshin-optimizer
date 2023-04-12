@@ -109,7 +109,7 @@
     "name": "Night Walk",
     "description": {
       "0": "Saat malam hari (18:00 — 6:00), meningkatkan 10% Movement SPD anggota party sendiri.",
-      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama."
+      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
   "constellation1": {

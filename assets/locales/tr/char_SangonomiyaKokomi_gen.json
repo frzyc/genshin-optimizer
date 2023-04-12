@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Denizler Üzerindeki Ay Gemisi",
     "description": {
-      "0": "<strong>Nereid'in Yükselişi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Nereid'in Yükselişi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -162,7 +162,7 @@
   "constellation5": {
     "name": "Tüm Dereler Denize Çıkar",
     "description": {
-      "0": "<strong>Kurage Yemini</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kurage Yemini</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

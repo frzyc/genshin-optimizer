@@ -1,6 +1,6 @@
 {
   "name": "Nahida",
-  "title": "Saflık İlacı",
+  "title": "Saflık Abidesi",
   "description": "Surasthana Mabedi içinde hapsedilmiş ve dış dünyayı yalnızca rüyalarında görebilen bir kuş.",
   "constellationName": "Hürmüz'ün Bilgeliği",
   "auto": {
@@ -166,7 +166,7 @@
   "constellation5": {
     "name": "Aydınlatıcı Sözlerin Yaprakları",
     "description": {
-      "0": "<strong>Hayali Kalp</strong> seviyesini 3 artırır.",
+      "0": "<strong>Hayali Kalp</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

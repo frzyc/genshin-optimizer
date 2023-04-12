@@ -47,13 +47,14 @@
         "Bir karakter Hasar aldığında Yağmur Kılıcı kırılır ve alınan Hasarı azaltır.",
         "Karakterin müdahaleye karşı direnci artar."
       ],
-      "3": "Xingqiu'nun <hydro>Su Hasarı Bonusunun</hydro> %20'si Yağmur Kılıçları için ek Hasar Azaltmaya dönüştürülür.",
-      "4": "<br/>",
-      "5": "Karakterin bu şekilde elde edebileceği maksimum ek Hasar Azaltma oranı %24'tür.",
-      "6": "Maksimum Yağmur Kılıcı sayısı başlangıçta 3'tür.",
-      "7": "Bu beceriyi kullandığında karakter <hydro>Islanır</hydro>.",
-      "8": "<br/>",
-      "9": "<i>\"Yağmuru durdurmak, bir yağmur ejderhasını öldürmekten daha zordur.\"</i>"
+      "3": "<br/>",
+      "4": "Xingqiu'nun <hydro>Su Hasarı Bonusunun</hydro> %20'si Yağmur Kılıçları için ek Hasar Azaltmaya dönüştürülür.",
+      "5": "<br/>",
+      "6": "Karakterin bu şekilde elde edebileceği maksimum ek Hasar Azaltma oranı %24'tür.",
+      "7": "Maksimum Yağmur Kılıcı sayısı başlangıçta 3'tür.",
+      "8": "Bu beceriyi kullandığında karakter <hydro>Islanır</hydro>.",
+      "9": "<br/>",
+      "10": "<i>\"Yağmuru durdurmak, bir yağmur ejderhasını öldürmekten daha zordur.\"</i>"
     },
     "skillParams": {
       "0": "Beceri Hasarı",
@@ -85,7 +86,7 @@
         "Yağmur Kılıçları, beceri süresi boyunca maksimum sayıda kalır."
       ],
       "4": "<br/>",
-      "5": "<i>\"Gökkuşağı Kılıcı Tekniği\", Guhua Cemiyetinin en özel ve en gizli tekniklerinden biridir.</i>"
+      "5": "<i>\"Yağmur Kesen Yöntemi\", Guhua Cemiyetinin en özel ve en gizli tekniklerinden biridir.</i>"
     },
     "skillParams": {
       "0": "Kılıç Yağmuru Hasarı",

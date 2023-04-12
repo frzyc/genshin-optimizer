@@ -211,6 +211,10 @@
     "name": "Floral Coupon",
     "description": "You can obtain these reward coupons by playing games of Floral Chess during the Windblume Festival. During the event, you can exchange them for rewards."
   },
+  "GalaExcitement": {
+    "name": "Gala Excitement",
+    "description": "Wisdom Gala Excitement"
+  },
   "FestiveTicket": {
     "name": "Festive Ticket",
     "description": "You can obtain these reward tickets by taking part in the various festivities during the Windblume Festival. During the event, you can exchange them for rewards."
@@ -591,6 +595,14 @@
     "name": "Mika",
     "description": "A young knight born to an ordinary family. He serves as a Front-Line Surveyor in his Company. He is a low-key and cautious character."
   },
+  "Kaveh": {
+    "name": "Kaveh",
+    "description": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality."
+  },
+  "Baizhu": {
+    "name": "Baizhu",
+    "description": "The owner of Bubu Pharmacy, who is rarely seen without the white snake named Changsheng. His medicinal knowledge is encyclopedic, and his personal intrigues subtle."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Kamisato Ayaka's Stella Fortuna",
     "description": "Kamisato Ayaka's Constellation Activation Material"
@@ -854,6 +866,14 @@
   "MikasStellaFortuna": {
     "name": "Mika's Stella Fortuna",
     "description": "Mika's Constellation Activation Material"
+  },
+  "KavehsStellaFortuna": {
+    "name": "Kaveh's Stella Fortuna",
+    "description": "Kaveh's Constellation Activation Material"
+  },
+  "BaizhusStellaFortuna": {
+    "name": "Baizhu's Stella Fortuna",
+    "description": "Baizhu's Constellation Activation Material"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostic Hymn - Old Notes",
@@ -2397,7 +2417,7 @@
   },
   "StoneOfRemembrance": {
     "name": "Stone of Remembrance",
-    "description": "An unusual gemstone capable of removing a seal somewhere.\\nYou can feel the turbulent thoughts racing relentless within when you hold it in your hand. Somewhere in this world are buried the memories of an ancient war.\\n\"For a future without the pain of savage slaughter, for a future without lives lived in vain, for a future where every day is filled with peace...\""
+    "description": "An unusual gemstone capable of removing a seal somewhere.\\nYou can feel the turbulent thoughts racing relentlessly within when you hold it in your hand. Somewhere in this world are buried the memories of an ancient war.\\n\"For a future without the pain of savage slaughter, for a future without lives lived in vain, for a future where every day is filled with peace...\""
   },
   "DullRing": {
     "name": "Dull Ring",
@@ -3970,6 +3990,14 @@
   "SandGreasePupa": {
     "name": "Sand Grease Pupa",
     "description": "You can only find such husks deep in the desert where the Quicksand Eels breed. The hardened shell is meant to protect the Quicksand Eels' larval bodies until they finally acclimate to the conditions of the dry desert."
+  },
+  "MourningFlower": {
+    "name": "Mourning Flower",
+    "description": "Crimson flowers that bloom on ancient battlefields. They can even flourish in the depths of the desert. Their drooping flowers seem to be in mourning for heroes long past."
+  },
+  "Trishiraite": {
+    "name": "Trishiraite",
+    "description": "A splendorous stone that can be found in the depths of desolate mountains, seemingly formed from congealed elemental energy."
   },
   "Scarab": {
     "name": "Scarab",
@@ -6031,6 +6059,10 @@
     "name": "Lucky Coin",
     "description": "Currency verified and used by the Genius Invokation TCG Society. Can be used to purchase various items related to Genius Invokation TCG. It is said that these coins were initially named as such in the hopes that they would bring those carrying them luck. However, perhaps it is those who are sufficiently lucky who are able to possess them..."
   },
+  "PlumeOfPurifyingLight": {
+    "name": "Plume of Purifying Light",
+    "description": "Fragment left by Khvarena. Carrier of past memories."
+  },
   "Dish": {
     "name": "Dish",
     "description": "Items created by cooking"
@@ -7365,7 +7397,7 @@
   },
   "DeliciousGrilledUnagiFillet": {
     "name": "Delicious Grilled Unagi Fillet",
-    "description": "A grilled dish. The fat oils sizzle all across the meat's surface like a flowery prelude. The baptism of charcoal fire and moistening sauce has imparted a delicate softness to the unagi's mouthfeel. If you paired this was rice, you'd be liable to leave not even a single drop of sauce behind."
+    "description": "A grilled dish. The fat oils sizzle all across the meat's surface like a flowery prelude. The baptism of charcoal fire and moistening sauce has imparted a delicate softness to the unagi's mouthfeel. If you paired this with rice, you'd be liable to leave not even a single drop of sauce behind."
   },
   "SatietyGel": {
     "name": "Satiety Gel",
@@ -7925,7 +7957,7 @@
   },
   "TraditionallyMadeCharcoalBakedAjilenakhCake": {
     "name": "Traditionally-Made Charcoal-Baked Ajilenakh Cake",
-    "description": "Faruzan's specialty. The dark and sweet cake, lying as it does atop a minty-green sauce bed, almost looks like some enigmatic mechanism. Your hesitation must have somehow reached Faruzan, for she then straightened up to assertively reassure you that this was a traditional dish in Sumeru and that its flavor is guaranteed. But you can't help wondering... Is it really a 'traditional' dish that catered to the tastes of Sumeru people a hundred year ago?"
+    "description": "Faruzan's specialty. The dark and sweet cake, lying as it does atop a minty-green sauce bed, almost looks like some enigmatic mechanism. Your hesitation must have somehow reached Faruzan, for she then straightened up to assertively reassure you that this was a traditional dish in Sumeru and that its flavor is guaranteed. But you can't help wondering... Is it really a 'traditional' dish that catered to the tastes of Sumeru people a hundred years ago?"
   },
   "ShimiChazuke": {
     "name": "Shimi Chazuke",
@@ -8022,6 +8054,38 @@
   "SurveyorsBreakfastSandwich": {
     "name": "Surveyor's Breakfast Sandwich",
     "description": "Mika's specialty. The luxurious spread before you is a veritable hillock of ingredients, and as you take a small bite, each clearly-demarcated layer of flavor and savory spice spreads throughout your mouth, as if you have climbed some mountain of gourmet. Are these the culinary skills he has honed while with the Knights?"
+  },
+  "SuspiciousFatteh": {
+    "name": "Suspicious Fatteh",
+    "description": "A dish from ancient Sumeru. Should one have the patience to remove the half-cooked Glabrous Beans and the brittle bits of scorched bread, the yogurt sauce that remains could pass for a dessert..."
+  },
+  "Fatteh": {
+    "name": "Fatteh",
+    "description": "An ancient Sumeru dish. The baked bread is crumbled and mixed with boiled Glabrous Beans and preprepared yogurt sauce, and then it is ready to be served. This recipe has been passed down for a long time and has many variants, but they all share one thing in common — being simple and delicious."
+  },
+  "DeliciousFatteh": {
+    "name": "Delicious Fatteh",
+    "description": "A dish from ancient Sumeru. With the Glabrous Beans coated in the silken smoothness of the yogurt sauce, the smooth texture greets your tongue like a blissful dream. And even after you have awoken, you might still taste the filling fragrance of baked flatbread between your teeth."
+  },
+  "SuspiciousJadeFruitSoup": {
+    "name": "Suspicious Jade Fruit Soup",
+    "description": "A traditional Liyue dessert dish. Carelessly dumping all the ingredients into the pot will result in something akin to a Slime Concentrate in taste... Um, although the texture might affect one's enjoyment of this dish, the ingredients themselves should still be good for your health..."
+  },
+  "JadeFruitSoup": {
+    "name": "Jade Fruit Soup",
+    "description": "A traditional Liyue dessert. The water is brought to boil, various ingredients are added in, and then it is simmered for some time before rock sugar is added. The liquid mixture is then simmered until clear and thick. The lengthy simmering creates a soup with a gentle mouthfeel, causing the ingredients to melt with just a light sip. Suitable for all ages."
+  },
+  "DeliciousJadeFruitSoup": {
+    "name": "Delicious Jade Fruit Soup",
+    "description": "A traditional Liyue dessert dish. The large chunk of fruit soaked in the soup seems like unto a lonesome boat drifting down a flowing river, and the fresh taste of the dish assails like a sudden breeze."
+  },
+  "TheEndeavor": {
+    "name": "The Endeavor",
+    "description": "Kaveh's specialty. The golden crust of the biscuit is arranged to resemble the Palace of Alcazarzaray, and the meal rises like a tower from a pure-white pond of yogurt sauce. Though the creator of the dish has placed a monumental amount of effort into its creation, he seems to have missed the fact that all the biscuits must be broken during the process of consumption."
+  },
+  "HeatQuellingSoup": {
+    "name": "Heat-Quelling Soup",
+    "description": "Baizhu's specialty. \"This isn't actually medicine, merely something that can alleviate dryness.\" As Baizhu's concerned voice echoes in your ears, a bowl of lustrous fruit soup greets your gaze. \"This dish didn't use to have sugar, but he was worried that you wouldn't be used to the bitter taste, so he added some to it,\" added Changsheng."
   },
   "RecipeItem": {
     "name": "Recipe Item",
@@ -8591,6 +8655,14 @@
     "name": "Recipe: Minty Fruit Tea",
     "description": "A detailed step-by-step recipe for making Minty Fruit Tea."
   },
+  "RecipeFatteh": {
+    "name": "Recipe: Fatteh",
+    "description": "A detailed step-by-step recipe for making Fatteh."
+  },
+  "RecipeJadeFruitSoup": {
+    "name": "Recipe: Jade Fruit Soup",
+    "description": "A detailed step-by-step recipe for making Jade Fruit Soup."
+  },
   "CraftedItems": {
     "name": "Crafted Items",
     "description": "Items produced through the Crafting System."
@@ -9043,6 +9115,18 @@
     "name": "Marked Shell",
     "description": "The marked shell of a Consecrated Beast inscribed with ancient script.\\nOn the pallid contours of the shell, the regrets of a time long past have been inlaid. One day, the bones of the beast will scatter like dust in the wind, and then, finally, may the exalted deceased greet their final rest..."
   },
+  "AFlowerYetToBloom": {
+    "name": "A Flower Yet to Bloom",
+    "description": "A wild flower that a Hilichurl Rogue treasured. It was plucked before it could bloom.\\nThe hilichurl takes nothing with it in its sojourn across the wilderness save this flower."
+  },
+  "TreasuredFlower": {
+    "name": "Treasured Flower",
+    "description": "A wild flower that a Hilichurl Rogue treasured, bereft of any special qualities.\\nFlowers can be used as gifts or offerings to express one's feelings in many cultures."
+  },
+  "WanderersBloomingFlower": {
+    "name": "Wanderer's Blooming Flower",
+    "description": "A blooming wild flower that a Hilichurl Rogue treasured, bereft of any special qualities.\\nThe eternal outlander asks not for reward, but only to see their deeds come to fruition..."
+  },
   "HurricaneSeed": {
     "name": "Hurricane Seed",
     "description": "The imploded form of an Anemo Hypostasis upon its defeat.\\nContains the essence of Anemo energy.\\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
@@ -9218,6 +9302,22 @@
   "PseudoStamens": {
     "name": "Pseudo-Stamens",
     "description": "The pale wing-sheathes hiding in a Wenut's tail are as thin as the blooming stamens of a flower.\\nIt is said that in the past, even before the beginning of time, they used to travel through the moist land under meadows and forests, similar to birds flying across the sky and fish swimming in the water. It is generally believed that their mimicry of flowers is to lure lost prey caught by sandstorms. There is also a theory, however, that their imitation of a blooming flower was inspired by the splendid blossoms countless epochs ago, which have long gone the way of the desert winds."
+  },
+  "EvergloomRing": {
+    "name": "Evergloom Ring",
+    "description": "A mystical weapon obtained after defeating the Four-Armed Envoy of dark tidings.\\nRings are shaped like passageways, which is why arcane formations that are meant to produce some mystical effect are often ring-shaped. Such rings are perhaps gateways intended to guide the universe itself."
+  },
+  "WorldspanFern": {
+    "name": "Worldspan Fern",
+    "description": "A fern taken from the oasis within Apep's body.\\nAt the dawn of time, the world belonged to the dragons. There, the ferns were the first to sprout in the lush verdant world of Apep's court.\\nIn the ages after, these ferns would become trees, vines, roots, and leaves, blanketing the world with their touch. But Apep still remembers the first frond as it stretched freely toward the sky, making a sound so delicate as to go unheard."
+  },
+  "PrimordialGreenbloom": {
+    "name": "Primordial Greenbloom",
+    "description": "A primordial flower procured from the oasis within Apep.\\nWith the passing of eons, flowers grew in fragrance and volume, and they gained a collection of titles as numerous as the stars in the night sky.\\nHowever, this first flower to bloom never bore any name. For the dragons of old, even if a rose lost its name, it would not lose its scent. Naming things is but how lesser, ephemeral beings understand the world. Life is not constrained by words, and will always grow and evolve."
+  },
+  "Everamber": {
+    "name": "Everamber",
+    "description": "A piece of amber taken from the oasis within Apep. Inside the amber, a small, long-extinct insect remains frozen in time.\\nTo the tree, it was circumstance that led this little life to be wreathed within its amber. But for said life, this was fate.\\nFollowing the heaven-sent disaster, wood, vines, roots, and all manner of flora withered and turned to dust. A great many life forms disappeared.\\nBut in the stillness of amber, a nameless insect endures in this otherworldly oasis, reaching a future that no others of its kind could."
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower",
@@ -9699,8 +9799,8 @@
     "name": "Scroll of Streaming Song (III)",
     "description": "A torn page discovered in the desert ruins and retrieved by researchers from the Vahumana school of the Akademiya. The author of this page has yet to be confirmed."
   },
-  "AnOdeToSoulLight": {
-    "name": "An Ode to Soul-Light",
+  "AnOdeToKhvarena": {
+    "name": "An Ode to Khvarena",
     "description": "Lore reportedly passed down within a lost religious group in the desert. Someone has transcribed it into a script."
   },
   "TransparentRuinsRecordII": {
@@ -10053,7 +10153,7 @@
   },
   "InternalWithdrawalDocument": {
     "name": "Internal Withdrawal Document",
-    "description": "An official order left cast aside within the barracks."
+    "description": "An official order cast aside within the barracks."
   },
   "PreliminaryTestOnExperimentalSubject": {
     "name": "Preliminary Test on Experimental Subject",
@@ -10289,7 +10389,7 @@
   },
   "UnattributedRamenVoucher": {
     "name": "Unattributed Ramen Voucher",
-    "description": "A thank-you gift for assisting \"Bona-Fide Beetle Battle King\" Arataki Itto in competing against Grandmaster Hanakado in the Almighty Arataki Extraordinary and Exhilarating Extreme Beetle Brawl. And it also serves as proof of the rapid rising of two beetle-fighting stars \"Oni King's Right Hand\" and \"Skycleaving White-Iron Lavender Melon.\"\\n\"Bona-Fide Beetle Battle King\" claims that as long as you show this voucher to the stall, you can \"enjoy a free bowl of ramen for two months straight!\" But... which stall is \"the stall\" exactly?"
+    "description": "A thank-you gift for assisting \"Bona-Fide Beetle Battle King\" Arataki Itto in competing against Grandmaster Hanakado in the Almighty Arataki Extraordinary and Exhilarating Extreme Beetle Brawl. And it also serves as proof of the rapid rising of two beetle-fighting stars, \"Oni King's Right Hand\" and \"Skycleaving White-Iron Lavender Melon.\"\\nThe \"Bona-Fide Beetle Battle King\" claims that as long as you show this voucher to the stall, you can \"enjoy a free bowl of ramen for two months straight!\" But... which stall is \"the stall\" exactly?"
   },
   "NeatNote": {
     "name": "Neat Note",
@@ -10306,6 +10406,22 @@
   "AncientStoneKey": {
     "name": "Ancient Stone Key",
     "description": "A mysterious key held by the Matriarch of the Tanit tribe. It should be able to open a certain door somewhere..."
+  },
+  "PlumpHarraFruit": {
+    "name": "Plump Harra Fruit",
+    "description": "Commonly grown in the hot and humid rainforest, this fruit has with a special spicy aroma. When paired with other fruits, a greater layering of flavors can be achieved."
+  },
+  "JuicyZaytunPeach": {
+    "name": "Juicy Zaytun Peach",
+    "description": "The fruit of a forest shrub. Its flesh is firm and sweet. It is said to have a calming effect on the mind, which presently makes it very suited for Layla."
+  },
+  "FreshApple": {
+    "name": "Fresh Apple",
+    "description": "Crisp and fragrant. Aside from being eaten raw or used to ferment a beverage, roasting apples also brings forth a distinctive flavor."
+  },
+  "DryFirewood": {
+    "name": "Dry Firewood",
+    "description": "Firewood collected at one's leisure. The wood is of appropriate size and dryness for campfire. Food cooked using this will have the natural scent of charcoal. Hopefully, they will grant Layla a bit more vigor."
   },
   "CrumpledNamelist": {
     "name": "Crumpled Namelist",
@@ -10375,6 +10491,70 @@
     "name": "Collei's Windblume",
     "description": "To Collei, the only flower that can serve as her Windblume and convey her gratitude and well-wishes is the Padisarah. She now offers their seeds to you.\\nIn visiting Mondstadt again, Collei has taken a tentative step toward the future. May her coming days be as a small seed held within her palm, filled deep with the potential for light and hope."
   },
+  "GreatSongOfKhvarena": {
+    "name": "Great Song of Khvarena",
+    "description": "The Great Songs of Khvarena contain immense power, but only the Pari can obtain the Khvarena's approval and unleash its potential through a special ritual..."
+  },
+  "SchematicClippedInsideNotes": {
+    "name": "Schematic Clipped Inside Notes",
+    "description": "The sketches taken from the mysterious investigative notes seem to list the structural layout of the ruined underground proving grounds and the location of the Great Song of Khvarena..."
+  },
+  "RenesInvestigationNotes": {
+    "name": "Rene's Investigation Notes",
+    "description": "Supposedly, these notes were left by a great researcher who yearned to \"surpass mortality,\" and its contents detail his experiences exploring ruins, along with the knowledge he gained in the process..."
+  },
+  "NotesLeftBySomeone": {
+    "name": "Notes Left by Someone",
+    "description": "This appears to be notes left by a member of the Order of Skeptics. It has information on the lost Kory Drums and their traditional usage."
+  },
+  "AncientVolume": {
+    "name": "Ancient Volume",
+    "description": "An ancient document passed down from prior generations of Skeptics. The arcane language makes the contents hard to decipher."
+  },
+  "UdumbaraPistil": {
+    "name": "Udumbara Pistil",
+    "description": "A pistil taken from a blooming Udumbara. It seems to bear some special significance to the Pari..."
+  },
+  "KhvarenaInscriptionFragment": {
+    "name": "Khvarena Inscription Fragment",
+    "description": "A fragment of a lost monument inscription. It is not known why this piece was lost."
+  },
+  "KorybantesVedana": {
+    "name": "Korybantes: Vedana",
+    "description": "A mysterious drum. This one has a Cryo marking on it."
+  },
+  "KorybantesRupa": {
+    "name": "Korybantes: Rupa",
+    "description": "One of the missing Kory Drums. This one has a Dendro marking on it."
+  },
+  "KorybantesSamjna": {
+    "name": "Korybantes: Samjna",
+    "description": "One of the missing Kory Drums. This one has a Hydro marking on it."
+  },
+  "KorybantesSankhara": {
+    "name": "Korybantes: Sankhara",
+    "description": "One of the missing Kory Drums. This one has an Electro marking on it."
+  },
+  "KorybantesVijnana": {
+    "name": "Korybantes: Vijnana",
+    "description": "One of the missing Kory Drums. This one has a Pyro marking on it."
+  },
+  "MysteriousEnergyBlock": {
+    "name": "Mysterious Energy Block",
+    "description": "An energy block of refined Azosite formed via the condensation of pure elemental energy. It seems that they can be used as an energy source for large-scale power systems."
+  },
+  "JuliensLuggage": {
+    "name": "Julien's Luggage",
+    "description": "Waterlogged luggage. Supposedly packed with care. It is uncertain if the contents inside have suffered water damage from being soaked."
+  },
+  "JuliensSketch": {
+    "name": "Julien's Sketch",
+    "description": "A sketch bearing a strange mix of colors."
+  },
+  "PictureLeftByTheWisdomSeelie": {
+    "name": "Picture Left by the Wisdom Seelie",
+    "description": "Hints left by the Wisdom Seelie. Hopefully this venture isn't as futile as before..."
+  },
   "CaravanAccounts": {
     "name": "Caravan Accounts",
     "description": "Accounts obtained from your target caravan. The information on it mostly relates to Dakan Al-Ahmar. Apart from the large amount of data and information on the movement of loot, the fact that Dunyarzad's father was named is quite concerning."
@@ -10391,9 +10571,173 @@
     "name": "Food and Lodging Arrangements",
     "description": "？？？"
   },
+  "RelicReplicaContainerI": {
+    "name": "Relic Replica Container (I)",
+    "description": "A container holding a relic replica. It has been deliberately painted purple."
+  },
+  "RelicReplicaContainerII": {
+    "name": "Relic Replica Container (II)",
+    "description": "A container holding a relic replica. It has been deliberately painted blue."
+  },
+  "RelicReplicaContainerIII": {
+    "name": "Relic Replica Container (III)",
+    "description": "A container holding a relic replica. It has been deliberately painted red."
+  },
+  "KorybantesScoreVijnana": {
+    "name": "Korybantes Score: Vijnana",
+    "description": "A drum score corresponding to Korybantes: Vijnana."
+  },
+  "KorybantesScoreSamjna": {
+    "name": "Korybantes Score: Samjna",
+    "description": "A drum score corresponding to Korybantes: Samjna."
+  },
+  "KorybantesScoreRupa": {
+    "name": "Korybantes Score: Rupa",
+    "description": "A drum score corresponding to Korybantes: Rupa."
+  },
+  "KorybantesScoreSankhara": {
+    "name": "Korybantes Score: Sankhara",
+    "description": "A drum score corresponding to Korybantes: Sankhara."
+  },
+  "KorybantesScoreVedana": {
+    "name": "Korybantes Score: Vedana",
+    "description": "A drum score corresponding to Korybantes: Vedana."
+  },
+  "JuliensDrawingBoard": {
+    "name": "Julien's Drawing Board",
+    "description": "A drawing board that shows signs of use but is presently devoid of any brushstrokes."
+  },
+  "InPursuitOfTheLostInscription": {
+    "name": "In Pursuit of the Lost Inscription",
+    "description": "A note obtained from Sosi. It might contain clues about the lost monument fragments."
+  },
   "HaniyyahsGiftOfMarvelousJellies": {
     "name": "Haniyyah's Gift of Marvelous Jellies",
     "description": "An exquisite gift offered by Haniyyah. It contains Marvelous Jellies much loved by the Fungi, and the Jellies themselves come in many unique flavors that can be fed to the Fungi based on their individual preferences.\\nThe Marvelous Jellies are a refined version of the Floral Jellies that preceded them and retain their crystalline translucence and springy texture, sans the dangerous ingredients, thus making them the ideal feed for Fungi. That said, one should probably take care that the children don't eat it by mistake when storing it at home..."
+  },
+  "BoxOfSpecialPotions": {
+    "name": "Box of Special Potions",
+    "description": "A box obtained from Bahador. Within it are some special potions. According to what he said, these potions might be of aid to exploring a certain Domain..."
+  },
+  "SomeonesJournal": {
+    "name": "Someone's Journal",
+    "description": "Someone's Journal"
+  },
+  "SomeonesMemo": {
+    "name": "Someone's Memo",
+    "description": "Someone's Memo"
+  },
+  "Locator": {
+    "name": "Locator",
+    "description": "A Kshahrewar invention. When contestants carry these tracking devices, the locator can display their general locations. Additionally, should the contestants successfully complete their tasks, the locator will also sound."
+  },
+  "FoodSeeds": {
+    "name": "Food Seeds",
+    "description": "The elemental life form known as the Floating Anemo Fungus gave you these seeds. Plant them in a field to grow food that the Fungi enjoy eating. But will there be any Fungi who remember how to till the fields in the future?"
+  },
+  "NamelessAdventurersNotes": {
+    "name": "Nameless Adventurer's Notes",
+    "description": "Lost notes left in the desert. They seem to have been left by some adventurer."
+  },
+  "AncientEngineeringNotes": {
+    "name": "Ancient Engineering Notes",
+    "description": "Ancient Engineering Notes"
+  },
+  "RaggedEngineeringNotes": {
+    "name": "Ragged Engineering Notes",
+    "description": "Ragged Engineering Notes"
+  },
+  "SomeonesAbandonedLetter": {
+    "name": "Someone's Abandoned Letter",
+    "description": "Someone's Abandoned Letter"
+  },
+  "AkademiyaInvestigationTeamsLogsIII": {
+    "name": "Akademiya Investigation Team's Logs (III)",
+    "description": "Akademiya Investigation Team's Logs (III)"
+  },
+  "AkademiyaInvestigationTeamsLogsIV": {
+    "name": "Akademiya Investigation Team's Logs (IV)",
+    "description": "Akademiya Investigation Team's Logs (IV)"
+  },
+  "BarelyLegibleBulletin": {
+    "name": "Barely-Legible Bulletin",
+    "description": "Barely-Legible Bulletin"
+  },
+  "AncientJournal": {
+    "name": "Ancient Journal",
+    "description": "Ancient Journal"
+  },
+  "RecordsOfUnknownAttributionII": {
+    "name": "Records of Unknown Attribution (II)",
+    "description": "Records of Unknown Attribution (II)"
+  },
+  "AkademiyaInvestigationTeamsLogsI": {
+    "name": "Akademiya Investigation Team's Logs (I)",
+    "description": "Akademiya Investigation Team's Logs (I)"
+  },
+  "AkademiyaInvestigationTeamsLogsII": {
+    "name": "Akademiya Investigation Team's Logs (II)",
+    "description": "Akademiya Investigation Team's Logs (II)"
+  },
+  "SoiledOrders": {
+    "name": "Soiled Orders",
+    "description": "Soiled Orders"
+  },
+  "RecordsOfUnknownAttributionI": {
+    "name": "Records of Unknown Attribution (I)",
+    "description": "Records of Unknown Attribution (I)"
+  },
+  "PagesFromSomeLostNotesI": {
+    "name": "Pages From Some Lost Notes (I)",
+    "description": "Pages From Some Lost Notes (I)"
+  },
+  "PagesFromSomeLostNotesII": {
+    "name": "Pages From Some Lost Notes (II)",
+    "description": "Pages From Some Lost Notes (II)"
+  },
+  "BizarreTranscript": {
+    "name": "Bizarre Transcript",
+    "description": "Bizarre Transcript"
+  },
+  "TeachingsOfTheSkeptics": {
+    "name": "Teachings of the Skeptics",
+    "description": "Teachings of the Skeptics"
+  },
+  "NamelessResearchersNotesI": {
+    "name": "Nameless Researcher's Notes (I)",
+    "description": "Nameless Researcher's Notes (I)"
+  },
+  "NamelessResearchersNotesII": {
+    "name": "Nameless Researcher's Notes (II)",
+    "description": "Nameless Researcher's Notes (II)"
+  },
+  "NamelessResearchersNotesIII": {
+    "name": "Nameless Researcher's Notes (III)",
+    "description": "Nameless Researcher's Notes (III)"
+  },
+  "NamelessResearchersNotesIV": {
+    "name": "Nameless Researcher's Notes (IV)",
+    "description": "Nameless Researcher's Notes (IV)"
+  },
+  "MercenarysAgedNotesI": {
+    "name": "Mercenary's Aged Notes (I)",
+    "description": "Mercenary's Aged Notes (I)"
+  },
+  "MercenarysAgedNotesII": {
+    "name": "Mercenary's Aged Notes (II)",
+    "description": "Mercenary's Aged Notes (II)"
+  },
+  "MercenarysAgedNotesIII": {
+    "name": "Mercenary's Aged Notes (III)",
+    "description": "Mercenary's Aged Notes (III)"
+  },
+  "MercenarysAgedNotesIV": {
+    "name": "Mercenary's Aged Notes (IV)",
+    "description": "Mercenary's Aged Notes (IV)"
+  },
+  "KhvarenaMonumentInscription": {
+    "name": "Khvarena Monument Inscription",
+    "description": "Khvarena Monument Inscription"
   },
   "SilkFlowerSeed": {
     "name": "Silk Flower Seed",
@@ -11587,6 +11931,34 @@
     "name": "Travel Notes: Artful Intent",
     "description": "Namecard style.\\nIt is said that experiencing true love is like seeing a ghost. Most folks speak of both as hearsay, but true witnesses remain few and far between. That said, since even ghosts can manifest here, perhaps true love is also waiting right around the next corner."
   },
+  "BaizhuRelief": {
+    "name": "Baizhu: Relief",
+    "description": "Namecard style.\\nSincerity begets longevity."
+  },
+  "KavehDomedCourt": {
+    "name": "Kaveh: Domed Court",
+    "description": "Namecard style.\\n\"When conceptualizing architecture, there is nothing wrong with imagining that the structure we build will surmount the firmament and outlast the stars.\""
+  },
+  "AchievementInfinitum": {
+    "name": "Achievement: Infinitum",
+    "description": "Namecard style.\\n\"Oh, Khvarena in your endless forms, protect this imperiled land. The blights and glories of the earthly realm are naught but the illusion of existing seeds.\""
+  },
+  "AchievementTransientTwilight": {
+    "name": "Achievement: Transient Twilight",
+    "description": "Namecard style.\\n\"I will forget the flowers of yesteryear, the daylight, the rain. I ask that you remember in my stead, in this nascent world, and hold to that lost dream.\""
+  },
+  "SumeruTheGreatDream": {
+    "name": "Sumeru: The Great Dream",
+    "description": "Namecard style.\\n\"The time to flourish has yet to come. Hide me with care between the blades of grass and beneath the tallness of trees. Let me linger in that place of dreams.\""
+  },
+  "SumeruAmrita": {
+    "name": "Sumeru: Amrita",
+    "description": "Namecard style.\\nThe ancient Amrita Pool is suffused with recollections of times past. Perhaps it also contains the power that will create the future."
+  },
+  "TravelNotesCrownOfGlory": {
+    "name": "Travel Notes: Crown of Glory",
+    "description": "Namecard style.\\n\"Knowledge serves as the crown of time, and reminiscence is bound to the time we shared as one.\""
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "A stone that can be used in Mondstadt to search for nearby Anemoculi.\\nThis man-made stone plate possesses a certain characteristic similar to that of the Anemo Statues of The Seven, giving it the power to resonate with Anemoculi.\\nOculus Resonance Stones are crude imitations of the Statues of The Seven constructed by the ancients. But it is precisely this crudeness that makes them crave the power of elemental oculi, thus providing devout worshippers and adventurers alike a prime opportunity to collect oculi."
@@ -11839,6 +12211,10 @@
     "name": "Wilderness Compass",
     "description": "A special compass obtained from the Adventurers' Guild. According to certain rumors, it might just offer you a sprinkle of extra luck..."
   },
+  "Sorush": {
+    "name": "Sorush",
+    "description": "As one of the Pari, the defenders of the land, Sorush aspires to become a Bloomguard who shall quell calamity.\\nHaving formed a connection with one whom she trusts, Sorush now traverses the defiled land alongside her Yasnapati..."
+  },
   "WindblumeKamera": {
     "name": "Windblume Kamera",
     "description": "The Kamera you borrowed from Fassben. Be careful when using it. You don't want to break it, now..."
@@ -11847,13 +12223,17 @@
     "name": "Festive Drum",
     "description": "A musical instrument that can be used in performances.\\nA drum with a clear sound and unique design. It has an exquisite exterior and features intricate craftsmanship. High-quality materials have been used in its construction, with a view toward sound quality during performances, intonation and long-term wear and tear.\\nIt is said that this small drum combines an Inazuman traditional instrument with some quirks of drums from other nations. When it plays certain tunes, it can even bring people good luck..."
   },
+  "SearchCompass": {
+    "name": "Search Compass",
+    "description": "A \"Search Compass\" made to find relic replicas. As this device was adapted from one used to survey elemental energies, the localized elements present might disrupt its attempts to scan for those replicas..."
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions: Anemoculus Resonance Stone",
-    "description": "Detailed step-by-step instructions for making an Anemoculus Resonance Stone. Master them and you will be able to create a tool to guide you to towards Anemoculi."
+    "description": "Detailed step-by-step instructions for making an Anemoculus Resonance Stone. Master them and you will be able to create a tool to guide you to Anemoculi."
   },
   "InstructionsGeoculusResonanceStone": {
     "name": "Instructions: Geoculus Resonance Stone",
-    "description": "Detailed step-by-step instructions for making a Geoculus Resonance Stone. Master them and you will be able to create a tool to guide you to towards Geoculi."
+    "description": "Detailed step-by-step instructions for making a Geoculus Resonance Stone. Master them and you will be able to create a tool to guide you to Geoculi."
   },
   "DiagramGeoTreasureCompass": {
     "name": "Diagram: Geo Treasure Compass",
@@ -12199,8 +12579,20 @@
     "name": "Lightning Storm",
     "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
   },
+  "KeenSight": {
+    "name": "Keen Sight",
+    "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+  },
   "SinOfPride": {
     "name": "Sin of Pride",
+    "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+  },
+  "KyoukaFuushi": {
+    "name": "Kyouka Fuushi",
+    "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+  },
+  "AratakiIchiban": {
+    "name": "Arataki Ichiban",
     "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
   },
   "MagicGuide": {
@@ -12351,6 +12743,10 @@
     "name": "General's Ancient Helm",
     "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
   },
+  "FavoniusSword": {
+    "name": "Favonius Sword",
+    "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
     "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
@@ -12425,6 +12821,10 @@
   },
   "NRE": {
     "name": "NRE",
+    "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
+  },
+  "GrandNarukamiShrine": {
+    "name": "Grand Narukami Shrine",
     "description": "A card for the tabletop game, Genius Invokation TCG. It is built tough, and some special printing method has been used for the illustration on the card's face, resulting in a truly exquisite appearance."
   },
   "ElementalResonanceWovenIce": {
@@ -12773,7 +13173,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Feiyun Study Room",
-    "description": "A detailed step-by-step blueprint for making a \"Feiyun Study Room.\"\\nThere are many ways to fashion a study in Liyue, but luxury is optional, for the learned prefer \"spirit\" and \"elegance.\" A potted plant here balances out the moisture in the room, and the table and shelves exude a light woody fragrance that combines with the plain layout and the sunset glow of the lamps to inspire genius and elevate writing.\\nThey say that many years ago, a certain guest at Feiyun Slope laid just such a study out, and this design was taken up by the previous boss of Wanwen Bookhouse. Thus, it was ever after known as the Feiyun Study Room and became recognized throughout Liyue.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Xingqiu, Zhongli, Ningguang, Yun Jin"
+    "description": "A detailed step-by-step blueprint for making a \"Feiyun Study Room.\"\\nThere are many ways to fashion a study in Liyue, but luxury is optional, for the learned prefer \"spirit\" and \"elegance.\" A potted plant here balances out the moisture in the room, and the table and shelves exude a light woody fragrance that combines with the plain layout and the sunset glow of the lamps to inspire genius and elevate writing.\\nThey say that many years ago, a certain guest at Feiyun Slope laid just such a study out, and this design was taken up by the previous boss of Wanwen Bookhouse. Thus, it was ever after known as the Feiyun Study Room and became recognized throughout Liyue.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Xingqiu, Zhongli, Ningguang, Yun Jin, Baizhu"
   },
   "CloudyHazeDreamCourt": {
     "name": "Cloudy Haze Dream-Court",
@@ -12785,7 +13185,7 @@
   },
   "CottageKitchen": {
     "name": "Cottage Kitchen",
-    "description": "A detailed step-by-step blueprint for making a \"Cottage Kitchen.\"\\nA fully equipped kitchen with a cabinet full of carefully prepared seasonings.\\nChefs seeking excellence will buy fresh ingredients from the market daily, and true culinary artists will even pay close attention to the firewood used in their stoves. The young head chef of Wanmin Restaurant once shared that to make the traditional dishes of Qingce Village, one must first place dry bamboo chips into the stove and carefully control the flame. If one can process the shrubbery near Wolfhooks into thin firewood, one can even add a little Mondstadt flair in.\\nDifferent kinds of firewood produce vastly different effects, and most chefs will never truly master them. As such, Wanmin Restaurant has a monopoly on this particular technique.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika"
+    "description": "A detailed step-by-step blueprint for making a \"Cottage Kitchen.\"\\nA fully equipped kitchen with a cabinet full of carefully prepared seasonings.\\nChefs seeking excellence will buy fresh ingredients from the market daily, and true culinary artists will even pay close attention to the firewood used in their stoves. The young head chef of Wanmin Restaurant once shared that to make the traditional dishes of Qingce Village, one must first place dry bamboo chips into the stove and carefully control the flame. If one can process the shrubbery near Wolfhooks into thin firewood, one can even add a little Mondstadt flair in.\\nDifferent kinds of firewood produce vastly different effects, and most chefs will never truly master them. As such, Wanmin Restaurant has a monopoly on this particular technique.\\nAfter using this item, you can view it in the Placement Screen.\\nThis Furnishing Set is favored by the following companions: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika, Baizhu"
   },
   "WeaponForgingStation": {
     "name": "Weapon Forging Station",
@@ -12905,7 +13305,7 @@
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Of Twirling Dances Unfettered",
-    "description": "A grand and lovely theater. In many things — the magnificent stage, the mists of the spouting fountain, and the many precious flowers brought to life by Sub-Space Creation — this place imitates the festive atmosphere of Zubayr Theater.\\nThey say that some shows are best appreciated at night. The placement of the theater lamps seems to be the result of careful study that aims to maximize the clarity with which each audience member can see the dancers, no matter the angle they are sitting or standing at, while the illumination and glow of the lamps are also adjusted just right to maximize the brightness of the scene.\\nThis Furnishing Set is favored by the following companion: Nilou"
+    "description": "A grand and lovely theater. In many things — the magnificent stage, the mists of the spouting fountain, and the many precious flowers brought to life by Sub-Space Creation — this place imitates the festive atmosphere of Zubayr Theater.\\nThey say that some shows are best appreciated at night. The placement of the theater lamps seems to be the result of careful study that aims to maximize the clarity with which each audience member can see the dancers, no matter the angle they are sitting or standing at, while the illumination and glow of the lamps are also adjusted just right to maximize the brightness of the scene.\\nThis Furnishing Set is favored by the following companions: Nilou, Kaveh"
   },
   "QuietTimesByTheRiverbank": {
     "name": "Quiet Times by the Riverbank",
@@ -12921,7 +13321,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Amidst Scents and Serenity",
-    "description": "An elegant and serene garden that utilizes gazebos drawn from Razan Garden and Pardis Dhyai. This place is less concerned with the absolute unity of the disparate architectural styles, but is more focused on creating an overall air of tranquility.\\nThe lovely blossoms slumber here in peace, and the standing lamps set the fountain aglow... Once the night hours approach, a walk through this garden can cause the noisy thoughts in your head to dissipate like wispy clouds. Perhaps you might even gain inspiration that you would normally struggle to find...\\nThis Furnishing Set is favored by the following companion: Nahida"
+    "description": "An elegant and serene garden that utilizes gazebos drawn from Razan Garden and Pardis Dhyai. This place is less concerned with the absolute unity of the disparate architectural styles, but is more focused on creating an overall air of tranquility.\\nThe lovely blossoms slumber here in peace, and the standing lamps set the fountain aglow... Once the night hours approach, a walk through this garden can cause the noisy thoughts in your head to dissipate like wispy clouds. Perhaps you might even gain inspiration that you would normally struggle to find...\\nThis Furnishing Set is favored by the following companions: Nahida, Kaveh"
   },
   "ChorusOfDesertAndWood": {
     "name": "Chorus of Desert and Wood",
@@ -13078,6 +13478,14 @@
   "LightOfSlumber": {
     "name": "Light of Slumber",
     "description": "A detailed step-by-step blueprint for making a \"Light of Slumber.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "SweetLuster": {
+    "name": "\"Sweet Luster\"",
+    "description": "A detailed step-by-step blueprint for making \"Sweet Luster.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "LightsConstancy": {
+    "name": "\"Light's Constancy\"",
+    "description": "A detailed step-by-step blueprint for making \"Light's Constancy.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "EfflorescentIllumination": {
     "name": "Efflorescent Illumination",
@@ -13266,6 +13674,10 @@
   "LongAdhigamaChamferTable": {
     "name": "Long Adhigama Chamfer Table",
     "description": "A detailed step-by-step blueprint for making a Long Adhigama Chamfer Table.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "AthelWoodCompactDesk": {
+    "name": "Athel Wood Compact Desk",
+    "description": "A detailed step-by-step blueprint for making an Athel Wood Compact Desk.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "BreezeBlessedBed": {
     "name": "Breeze-Blessed Bed",
@@ -13494,6 +13906,22 @@
   "HuedVaseMoltenSand": {
     "name": "Hued Vase: Molten Sand",
     "description": "A detailed step-by-step blueprint for making a Hued Vase: Molten Sand.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "WarmthAndColdOverlaid": {
+    "name": "\"Warmth and Cold Overlaid\"",
+    "description": "A detailed step-by-step blueprint for making \"Warmth and Cold Overlaid.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "HuedVaseAjilenakh": {
+    "name": "Hued Vase: Ajilenakh",
+    "description": "A detailed step-by-step blueprint for making a Hued Vase: Ajilenakh.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "HuedVaseCrimsonSands": {
+    "name": "Hued Vase: Crimson Sands",
+    "description": "A detailed step-by-step blueprint for making a Hued Vase: Crimson Sands.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "PureHeat": {
+    "name": "\"Pure Heat\"",
+    "description": "A detailed step-by-step blueprint for making \"Pure Heat.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Rug: Crimson Ardor",
@@ -13734,6 +14162,26 @@
   "StarShapedMultipurposeBottle": {
     "name": "Star-Shaped Multipurpose Bottle",
     "description": "A detailed step-by-step blueprint for making a Star-Shaped Multipurpose Bottle.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "HuedVaseEventide": {
+    "name": "Hued Vase: Eventide",
+    "description": "A detailed step-by-step blueprint for making a Hued Vase: Eventide.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "SaltyAndMeatyPaintedPlate": {
+    "name": "\"Salty and Meaty\" Painted Plate",
+    "description": "A detailed step-by-step blueprint for making a \"Salty and Meaty\" Painted Plate.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "SweetAndFruityPaintedPlate": {
+    "name": "\"Sweet and Fruity\" Painted Plate",
+    "description": "A detailed step-by-step blueprint for making a \"Sweet and Fruity\" Painted Plate.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "InDrinksClarity": {
+    "name": "\"In Drink's Clarity\"",
+    "description": "A detailed step-by-step blueprint for making \"In Drink's Clarity.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "TheDustDifferential": {
+    "name": "\"The Dust Differential\"",
+    "description": "A detailed step-by-step blueprint for making \"The Dust Differential.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Realizations from the Land of Wisdom\"",
@@ -14042,6 +14490,14 @@
   "DeliberationOfChoice": {
     "name": "Deliberation of Choice",
     "description": "A detailed step-by-step blueprint for making a Deliberation of Choice.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "KarmaphalaWoodBulkGoodsBerth": {
+    "name": "Karmaphala Wood Bulk Goods Berth",
+    "description": "A detailed step-by-step blueprint for making a Karmaphala Wood Bulk Goods Berth.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "AdhigamaWoodOpenAirFoodStall": {
+    "name": "Adhigama Wood Open-Air Food Stall",
+    "description": "A detailed step-by-step blueprint for making an Adhigama Wood Open-Air Food Stall.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "HilichurlOutpostHut": {
     "name": "Hilichurl Outpost Hut",
@@ -14370,6 +14826,10 @@
   "SingingInTheTranquilCourt": {
     "name": "Singing in the Tranquil Court",
     "description": "A detailed step-by-step blueprint for making a \"Singing in the Tranquil Court.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "FineSandInWarmWeather": {
+    "name": "\"Fine Sand in Warm Weather\"",
+    "description": "A detailed step-by-step blueprint for making \"Fine Sand in Warm Weather.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Bird and Blossom Design Fountain",
@@ -14864,7 +15324,7 @@
     "description": "A detailed step-by-step blueprint for making an \"Ingenuity of the Forest Forager.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "ItJustMightWork": {
-    "name": "\"It just might work!\"",
+    "name": "\"It Just Might Work!\"",
     "description": "A detailed step-by-step blueprint for making an \"It just might work!\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "ColorationAndPrecipitation": {
@@ -14878,6 +15338,26 @@
   "LeisureDeviceBouncyChubby": {
     "name": "Leisure Device: Bouncy Chubby",
     "description": "A detailed step-by-step blueprint for making a Leisure Device: Bouncy Chubby.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "CaravanRibatTypeIIILandTransportPallet": {
+    "name": "Caravan Ribat Type III Land Transport Pallet",
+    "description": "A detailed step-by-step blueprint for making a Caravan Ribat Type III Land Transport Pallet.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "PlainVaseDrinksForAHundred": {
+    "name": "Plain Vase: Drinks for a Hundred",
+    "description": "A detailed step-by-step blueprint for making a Plain Vase: Drinks for a Hundred.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "PlainVaseStuporForTen": {
+    "name": "Plain Vase: Stupor for Ten",
+    "description": "A detailed step-by-step blueprint for making a Plain Vase: Stupor for Ten.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "BrightwoodSelfTighteningWineBuckets": {
+    "name": "Brightwood Self-Tightening Wine Buckets",
+    "description": "A detailed step-by-step blueprint for making Brightwood Self-Tightening Wine Buckets.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "BrightwoodFabricBoxPlatform": {
+    "name": "Brightwood Fabric Box Platform",
+    "description": "A detailed step-by-step blueprint for making a Brightwood Fabric Box Platform.\\nAfter using this item, you can view it in the Creation Screen."
   },
   "PottedPlantVerdantVastness": {
     "name": "Potted Plant: Verdant Vastness",
@@ -15154,6 +15634,46 @@
   "ErsatzBalloonBumperShroom": {
     "name": "Ersatz Balloon: Bumper Shroom",
     "description": "A detailed step-by-step blueprint for making an Ersatz Balloon: Bumper Shroom.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "PetaledShade": {
+    "name": "\"Petaled Shade\"",
+    "description": "A detailed step-by-step blueprint for making a \"Petaled Shade.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "TeamSpirit": {
+    "name": "\"Team Spirit\"",
+    "description": "A detailed step-by-step blueprint for making \"Team Spirit.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "ScentOfTheBlazingSun": {
+    "name": "\"Scent of the Blazing Sun\"",
+    "description": "A detailed step-by-step blueprint for making \"Scent of the Blazing Sun.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "AthelWoodLightCargoBoxes": {
+    "name": "Athel Wood Light Cargo Boxes",
+    "description": "A detailed step-by-step blueprint for making Athel Wood Light Cargo Boxes.\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "VahumanaFlag": {
+    "name": "\"Vahumana Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Vahumana Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "SpantamadFlag": {
+    "name": "\"Spantamad Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Spantamad Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "HaravatatFlag": {
+    "name": "\"Haravatat Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Haravatat Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "AmurtaFlag": {
+    "name": "\"Amurta Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Amurta Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "RtawahistFlag": {
+    "name": "\"Rtawahist Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Rtawahist Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
+  },
+  "KshahrewarFlag": {
+    "name": "\"Kshahrewar Flag\"",
+    "description": "A detailed step-by-step blueprint for making \"Kshahrewar Flag.\"\\nAfter using this item, you can view it in the Creation Screen."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Wrought Iron Carved Street Light",

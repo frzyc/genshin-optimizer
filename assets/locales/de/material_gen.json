@@ -211,6 +211,10 @@
     "name": "Blütenjagd-Ticket",
     "description": "Ticket, das du beim „Blumenschach“ während des Windblumenfestes gewinnen kannst. Tausche die Tickets während des Aktionszeitraums beim Aktionshändler gegen Belohnungen ein."
   },
+  "GalaExcitement": {
+    "name": "Beliebtheit der Messe",
+    "description": "Beliebtheit der Akademiemesse"
+  },
   "FestiveTicket": {
     "name": "Festticket",
     "description": "Ticket, das du bei den verschiedenen festlichen Aktionen des Windblumenfestes gewinnen kannst. Tausche die Tickets während des Aktionszeitraums beim Aktionshändler gegen Belohnungen ein."
@@ -591,6 +595,14 @@
     "name": "Mika",
     "description": "Ein junger Ritter aus einer gewöhnlichen Familie. In der Truppe dient er als „Frontlinien-Feldmesser“. Er ist immer ruhig und behutsam."
   },
+  "Kaveh": {
+    "name": "Kaveh",
+    "description": "Ein renommierter Architekt aus Sumeru, der sich über viele Dinge übermäßig besorgt zeigt. Ein Ästhet, der von der Realität verwirrt wird."
+  },
+  "Baizhu": {
+    "name": "Baizhu",
+    "description": "Der Besitzer der „Bubu-Hütte“. Er trägt eine weiße Schlange namens Changsheng auf seiner Schulter. Ein äußerst geschickter Mediziner, der allerdings als Person schwer zu durchschauen ist."
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka",
     "description": "Material zum Aktivieren von Kamisato Ayakas Sternbild"
@@ -854,6 +866,14 @@
   "MikasStellaFortuna": {
     "name": "Stella Fortuna von Mika",
     "description": "Material zum Aktivieren von Mikas Sternbild"
+  },
+  "KavehsStellaFortuna": {
+    "name": "Stella Fortuna von Kaveh",
+    "description": "Material zum Aktivieren von Kavehs Sternbild"
+  },
+  "BaizhusStellaFortuna": {
+    "name": "Stella Fortuna von Baizhu",
+    "description": "Material zum Aktivieren von Baizhus Sternbild"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen",
@@ -3971,6 +3991,14 @@
     "name": "Sandfettpuppe",
     "description": "Eine trockene Hülle, die man im Fortpflanzungsgebiet der Treibsandaale in der Wüste finden kann. Diese harte Außenhülle dient dem Schutz der Larven der Treibsandaale, bis sie in der Lage sind, sich an die sengend heiße und trockene Wüstenumgebung anzupassen und dort zu überleben."
   },
+  "MourningFlower": {
+    "name": "Trauerblume",
+    "description": "Diese leuchtend rote Blume, erblüht auf alten Schlachtfeldern, gedeiht und wächst hartnäckig, selbst in der Wüste. Mit ihren herabhängenden Blüten scheint sie die Geister der hier Gefallenen zu betrauern."
+  },
+  "Trishiraite": {
+    "name": "Trishirait",
+    "description": "Tief in den Bergen der Wildnis verstreut, erstrahlen diese einzigartigen schimmernden Steine in den merkwürdigsten Farben. Sie scheinen aus dem Gemisch elementarer Energien geronnen und entstanden zu sein."
+  },
   "Scarab": {
     "name": "Skarabäus",
     "description": "Ein in den Weiten des Sandmeeres lebender, hartnäckiger Käfer. Die goldenen Muster auf seinem Panzer scheinen auf eine enge Verbindung mit den überall in der Wüste verstreuten uralten Ruinen hinzudeuten."
@@ -6031,6 +6059,10 @@
     "name": "Glücksmünze",
     "description": "Eine innerhalb der Kartenbeschwörervereinigung anerkannte und weithin verwendete Währung, mit der Objekte, die mit „Geniale Beschwörung“ zu tun haben, erworben werden können. Es heißt, dass der Name Glücksmünze ursprünglich in der Hoffnung gewählt wurde, dass sie ihren Besitzern Glück bringen würde. Aber möglicherweise können sie nur diejenigen bekommen, die bereits das Glück haben ..."
   },
+  "PlumeOfPurifyingLight": {
+    "name": "Feder reinigenden Lichts",
+    "description": "Bruchstücke geronnener Erinnerungen, zurückgelassen von unzähligen Khvarena."
+  },
   "Dish": {
     "name": "Gerichte",
     "description": "Zubereitete Gerichte"
@@ -7548,7 +7580,7 @@
     "description": "Eine ausgewogene und nahrhafte Mahlzeit. Das duftende und fluffige Brot macht dich richtig satt, während das zarte und saftige Schnitzel die Sinne kitzelt. Ein einziger Bissen reicht aus, um dich von der Zunge bis zum Bauch mit Zufriedenheit zu erfüllen. Also, wer hat sich diese geniale Kombination als Erster einfallen lassen?"
   },
   "SuspiciousRainbowAster": {
-    "name": "Musslungene Lila Wolken",
+    "name": "Misslungene Lila Wolken",
     "description": "Ein Getränk mit Pfiff. Es sieht auf jeden Fall gut aus und würde auch gut schmecken, wenn du die Adstringenz ignorierst, die durch den unsachgemäßen Umgang mit den Lavendelmelonen entsteht ..."
   },
   "RainbowAster": {
@@ -8022,6 +8054,38 @@
   "SurveyorsBreakfastSandwich": {
     "name": "Verlorene Eier nach Feldmesserart",
     "description": "Mikas Spezialzubereitung. Die reichhaltigen Zutaten sind schichtweise aufgebaut. Schon bei einem kleinen Bissen kann man die einzelnen Geschmacksrichtungen deutlich unterscheiden. Die süßen und herzhaften Aromen breiten sich so schnell im Mund aus, als würde man einen Berg von Aromen erklimmen. Ist das die Kochkunst, die Mika bei Expeditionen des Ordo Favonius verfeinert hat?"
+  },
+  "SuspiciousFatteh": {
+    "name": "Misslungenes knuspriges Fatteh",
+    "description": "Ein altes Gericht aus Sumeru. Wenn man die Geduld aufbringt, die halbgaren Bohnen und das verkohlte Brot herauszupicken, kann die restliche Joghurtsauce gerade noch so als Dessert durchgehen ..."
+  },
+  "Fatteh": {
+    "name": "Knuspriges Fatteh",
+    "description": "Ein altes Gericht aus Sumeru. Das Gebäck wird zerbröselt und mit den gekochten Bohnen und einer vorbereiteten Joghurtsauce serviert. Es gibt zahlreiche Zubereitungsarten, aber eins haben sie gemein: Sie sind einfach und lecker."
+  },
+  "DeliciousFatteh": {
+    "name": "Leckeres knuspriges Fatteh",
+    "description": "Ein altes Gericht aus Sumeru. Die weiche Joghurtsoße, welche die klebrigen Bohnen umschließt, scheint einen in einen seidigen Traum zu entführen. Und beim Erwachen aus diesem erwartet einen dann das vollmundige Weizenaroma des Gebäcks."
+  },
+  "SuspiciousJadeFruitSoup": {
+    "name": "Misslungene Jadefrucht-Suppe",
+    "description": "Eine traditionelle Leckerei aus Liyue. Die kulinarischen Zutaten wurden hastig in den Wok geworfen, was zu einem Ergebnis führte, das wie Schleimkonzentrat schmeckt. Auch wenn der Geschmack unappetitlich ist, sind die verwendeten Zutaten dennoch nahrhaft, oder?"
+  },
+  "JadeFruitSoup": {
+    "name": "Jadefrucht-Suppe",
+    "description": "Eine traditionelle Leckerei aus Liyue. Wasser wird zum Kochen gebracht, die verschiedenen Zutaten hinzugefügt und eine Weile geköchelt, dann Puderzucker dazu und auf kleiner Flamme weiter kochen, bis die Suppe leicht eingedickt und klar ist. Durch die lange Kochzeit entsteht eine weiche Textur, die im Mund zu schmelzen scheint. Ein Genuss für Jung und Alt."
+  },
+  "DeliciousJadeFruitSoup": {
+    "name": "Leckere Jadefrucht-Suppe",
+    "description": "Eine traditionelle Leckerei aus Liyue. Die großen Fruchtstücke, die auf einem Fluss in der aromatischen Suppe schwimmen, hinterlassen eine erfrischende fruchtige Brise am Gaumen."
+  },
+  "TheEndeavor": {
+    "name": "Ein Hauch von Ambition",
+    "description": "Kavehs Spezialzubereitung. Goldene Fladen in der Form des Palasts Alcazarzaray, der auf einem Jogurtsahneboden steht. Der Hersteller hat sich viel Zeit gelassen, um dieses Kunstwerk zu schaffen, und dabei offenbar vergessen, dass die Fladen beim Verzehr in Stücke geschlagen werden."
+  },
+  "HeatQuellingSoup": {
+    "name": "Entzündungshemmende Suppe",
+    "description": "Baizhus Spezialzubereitung. „Es ist keine echte Medizin, sondern nur ein Mittel gegen Trockenheit und Durst.“ Während Baizhus besorgte Stimme in deinen Ohren widerhallt, erscheint eine Schale mit kristalliner Fruchtsuppe. „Normalerweise bereiten wir sie ohne Zucker zu, aber er hatte Angst, dass du die Bitterkeit nicht vertragen könntest, also hat er etwas Zucker hinzugefügt“, ergänzt Changsheng."
   },
   "RecipeItem": {
     "name": "Objekt für Rezepte",
@@ -8591,6 +8655,14 @@
     "name": "Rezept: Fruchtiger Minz-Tee",
     "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Fruchtiger Minz-Tee“."
   },
+  "RecipeFatteh": {
+    "name": "Rezept: Knuspriges Fatteh",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Knuspriges Fatteh“."
+  },
+  "RecipeJadeFruitSoup": {
+    "name": "Rezept: Jadefrucht-Suppe",
+    "description": "Rezept mit detaillierten Schritten zur Zubereitung von „Jadefrucht-Suppe“."
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt",
     "description": "Selbst aus verschiedenen Stoffen hergestellte Produkte"
@@ -9043,6 +9115,18 @@
     "name": "Rückgrat mit gemeißeltem Muster",
     "description": "Knochen vom Rücken einer Bestie heiliger Knochen, in die uralte Wappen eingemeißelt wurden.\\nAuf den Knochen so hart und rein wie Jadeblüten weilt noch das ewige Bedauern einer längst untergegangenen Welt. Eines Tages werden die Knochen dieser Bestie vom Wind als weißer Staub verstreut werden und auch jener gefallene Edle wird schließlich den Tag des friedvollen Schlafes begrüßen können ..."
   },
+  "AFlowerYetToBloom": {
+    "name": "Ungeblühte Blume unbekannter Herkunft",
+    "description": "Eine Wildblume, die ein Hilichurl-Läufer einst hegte und pflegte. Sie wurde gepflückt, bevor sie blühen konnte.\\nDieser Hilichurl-Läufer streift durch die Wälder, ohne sich mit Gegenständen zu belasten, abgesehen von dieser nicht aufgeblühten Blume."
+  },
+  "TreasuredFlower": {
+    "name": "Jemandes geschätzte Blume",
+    "description": "Eine Wildblume, die ein Hilichurl-Läufer einst hegte und pflegte. Sie besitzt jedoch keine besonderen Eigenschaften.\\nIn vielen Kulturen sind Blumen ein schönes Geschenk, um Gefühle auszudrücken."
+  },
+  "WanderersBloomingFlower": {
+    "name": "Blühende Blume eines Nomaden",
+    "description": "Eine blühende Wildblume, die ein Hilichurl-Läufer einst hegte und pflegte. Sie besitzt jedoch keine besonderen Eigenschaften.\\nDer Fremde der Ewigkeit erwartet keine Belohnung. Alles, was er tut, wird schließlich Früchte tragen ..."
+  },
   "HurricaneSeed": {
     "name": "Orkansamen",
     "description": "Die konzentrierte Form einer Anemo-Hypostase, nachdem sie besiegt worden ist. In ihr steckt pure Anemo-Kraft.\\nMan sagt, dass der Flügelschlag eines Schmetterlings die Kraft birgt, einen ganzen Orkan auszulösen. Dieser Schmetterling, der aus reiner Anemo-Kraft besteht, wartet gewiss auf den Tag, an dem er erneut einen Sturm entfachen kann."
@@ -9218,6 +9302,22 @@
   "PseudoStamens": {
     "name": "Smaragdstaubgefäß",
     "description": "Getarnt im Schwanz des Wenut gefundene smaragdfarbene Deckflügel. Dünn und zerbrechlich wie die Staubgefäße einer taufrischen Blume.\\nDer Legende nach durchdrangen sie in prähistorischen Zeiten den feuchten Untergrund unter Wiesen und Wäldern wie die Vögel den Himmel und die Fische das Wasser. Im Allgemeinen nimmt man an, dass die Imitation der Form einer Blume zum Anlocken von Beute dient. Manche aber meinen, dass das, was dieses Objekt in Form einer üppig blühenden Blume imitiert, tatsächlich das von der Wüste geraubte, vor Äonen existierende Zeitalter ist, in dem noch alles von duftenden Gräsern und blühenden Blumen bedeckt war."
+  },
+  "EvergloomRing": {
+    "name": "Ring der ewigen Finsternis",
+    "description": "Ein ringförmiger Katalysator, den man erhält, nachdem man einen vierarmigen Abgesandten besiegt hat, der dunkle Evangelien flüstert.\\nRinge, die Durchgängen ähneln, sind die arkanen Muster, die Formationen mit mystischer Wirkung schaffen können. Vielleicht ist diese Art Katalysator sogar das Instrument, um den Fluss des Universums zu lenken."
+  },
+  "WorldspanFern": {
+    "name": "Farn aus der Oase",
+    "description": "Ein Farn aus der Apeps Oase.\\nBevor es überhaupt Zeit gab, wurde die Welt von Drachen beherrscht. In Apeps Palastgarten, einem Paradies für die Vermehrung der Vegetation, sprossen als erstes Farne.\\nIm Laufe der Jahre wuchsen die Farne sogar zu Bäumen, Ranken, Wurzeln und Blättern heran, die sich weit und breit ausbreiteten. Doch Apep erinnert sich noch immer an das fast unhörbare Geräusch, das der erste Farn von sich gab, als er sich drehte und dehnte, um den weiten Himmel zu erreichen."
+  },
+  "PrimordialGreenbloom": {
+    "name": "Urblüte der ersten Oase",
+    "description": "Eine Blüte aus der Apeps Oase, die ihre ursprüngliche Form bewahrt hat.\\nIm Laufe der Zeit haben die Blüten eine unendliche Vielfalt an Farben und Düften angenommen und so viele Namen erhalten, wie es Sterne am Firmament gibt.\\nDiese erste Blüte der Oase trug allerdings nie einen Namen. Doch selbst wenn eine Blume ihren Namen verloren hat, wird sie für die alten Drachen niemals ihren angeborenen Duft verlieren. Definitionen sind daher nur ein Werkzeug, das von kurzsichtigen und vergänglichen Arten benutzt wird, um die Welt um sie herum zu verstehen. Doch das Leben ist nicht durch Worte begrenzt – Es befindet sich in ständiger Entwicklung."
+  },
+  "Everamber": {
+    "name": "Permabernstein",
+    "description": "Bernstein aus Apeps Oase. In ihm ist ein winziges, mittlerweile längst ausgestorbenes, fliegendes Insekt eingeschlossen.\\nDer dieses winzige Lebewesen umhüllende Bernstein mag für die Bäume ein Zufall sein, für das Lebewesen in seinem Inneren stellt er jedoch ein Schicksal dar.\\nMit der großen Katastrophe, die vom Himmel fiel, verdorrten Bäume, Ranken, Wurzeln und Blumen und wurden zu Staub und zahllose Lebewesen wurden vom Angesicht der Erde getilgt.\\nDen namenlosen fliegenden Insekten jedoch, nun im Bernstein ruhend und in der Oase bewahrt, eigentlich vom Antlitz der Welt verschwunden, wurde so eine Zukunft gewährt, die ihren Artgenossen verwehrt blieb."
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabians zerbrochener Ziegel",
@@ -9699,8 +9799,8 @@
     "name": "Liederbuch zum Blumengarten – Band III",
     "description": "Eine zerrissene Seite, die in den Wüstenruinen entdeckt und von Forschern der Ursachenlehre an der Akademie geborgen wurde. Der Autor dieser Seite muss noch bestätigt werden."
   },
-  "AnOdeToSoulLight": {
-    "name": "Ode an das Seelenlicht",
+  "AnOdeToKhvarena": {
+    "name": "Ode an die Khvarena",
     "description": "Eine Ballade, die angeblich von einer verlorenen religiösen Gruppe in der Wüste weitergegeben wurde. Jemand hat sie in einem Skript aufgezeichnet."
   },
   "TransparentRuinsRecordII": {
@@ -10289,7 +10389,7 @@
   },
   "UnattributedRamenVoucher": {
     "name": "Gutschein für Ramen ungeklärter Herkunft",
-    "description": "Ein Dankesgeschenk dafür, dass du dem „Großen Oni-König des Käferkampfes“ Arataki Itto beim „Außergewöhnlichen Käferduell des allmächtigen Arataki“ gegen „Marschall Hanakado“ geholfen hast, das gleichzeitig auch den rasanten Aufstieg der beiden neuen Sterne am Himmel des Käferkämpfs „Treue rechte Hand des Oni-Königs“ und „Silbermelone die Himmelsbrecherin“ bezeugt.\\nDer „Große Oni-König des Käferkampfes“ behauptet, dass man beim Geschäft lediglich diesen Gutschein vorzeigen müsse und dann „zwei Monate lang täglich eine Schüssel Ramen kostenlos essen könne“. Eine Frage aber bleibt ... Bei welchem Ramenladen kann man diesen Gutschein einlösen?"
+    "description": "Ein Dankesgeschenk dafür, dass du dem „Großen Oni-König des Käferkampfes“ Arataki Itto beim „Außergewöhnlichen Käferduell des allmächtigen Arataki“ gegen „Marschall Hanakado“ geholfen hast, das gleichzeitig auch den rasanten Aufstieg der beiden neuen Sterne am Himmel des Käferkampfes „Treue rechte Hand des Oni-Königs“ und „Silbermelone die Himmelsbrecherin“ bezeugt.\\nDer „Große Oni-König des Käferkampfes“ behauptet, dass man beim Geschäft lediglich diesen Gutschein vorzeigen müsse und dann „zwei Monate lang täglich eine Schüssel Ramen kostenlos essen könne“. Eine Frage aber bleibt ... Bei welchem Ramenladen kann man diesen Gutschein einlösen?"
   },
   "NeatNote": {
     "name": "Ordentlich geschriebene Notiz",
@@ -10306,6 +10406,22 @@
   "AncientStoneKey": {
     "name": "Antiker Steinschlüssel",
     "description": "Ein einst von der Matriarchin des Stamms Tanit getragener mystischer Schlüssel, wahrscheinlich kann man damit irgendein großes Tor öffnen ..."
+  },
+  "PlumpHarraFruit": {
+    "name": "Vollmundige Harra-Frucht",
+    "description": "Diese Frucht wächst inmitten des feucht-heißen Regenwaldes. Sie hat ein besonderes, scharfes Aroma. In Kombination mit anderen Früchten kann man sicher eine reichhaltigere Überlagerung von Geschmäckern erzielen."
+  },
+  "JuicyZaytunPeach": {
+    "name": "Saftiger Zaytun-Pfirsich",
+    "description": "Die Frucht eines Waldstrauchs. Das Fruchtfleisch ist fest, der Geschmack süß. Ihr wird nachgesagt, nach dem Verzehr den Geist zu besänftigen. Sehr gut für die jetzige Layla geeignet."
+  },
+  "FreshApple": {
+    "name": "Frischer Apfel",
+    "description": "Diese knackige, säuerliche Frucht kann roh, zu Wein verarbeitet oder auch geröstet genossen werden."
+  },
+  "DryFirewood": {
+    "name": "Trockenes Brennholz",
+    "description": "Nebenbei aufgelesenes Holz, von mittlerer Dicke und knochentrocken. Es eignet sich perfekt dazu, Feuer zu entfachen. Beim Grillen hinterlässt es beim Essen ein natürliches Holzkohlenaroma. Hoffentlich lässt sich damit Laylas Stimmung etwas anheben."
   },
   "CrumpledNamelist": {
     "name": "Zerknitterte Namensliste",
@@ -10375,6 +10491,70 @@
     "name": "„Windblume“ von Collei",
     "description": "Für Collei sind Padisarah die Windblumen, die ihre Dankbarkeit und ihre guten Wünsche am besten zum Ausdruck bringen, weshalb sie dir diese Samen geschenkt hat.\\nMit ihrem Besuch in Mondstadt hat Collei einen zaghaften Schritt in Richtung Zukunft getan. Möge ihre Zukunft nur Licht und Hoffnung für sie bereithalten, genau wie diese winzigen Samen, die sie dir geschenkt hat."
   },
+  "GreatSongOfKhvarena": {
+    "name": "Hymne des Khvarena",
+    "description": "Die Hymne des Khvarena enthält die mächtige Kraft der Khvarena, doch nur die von den Khvarena geduldeten Pari können diese Kraft durch ein spezielles Ritual freisetzen ..."
+  },
+  "SchematicClippedInsideNotes": {
+    "name": "Schema innerhalb der Notizen",
+    "description": "Ein Schema aus den mysteriösen Untersuchungsnotizen. Scheint ausführlich die Struktur eines unterirdischen Ruinen-Testgeländes und den Standort der „Hymne des Khvarena“ zu zeigen ..."
+  },
+  "RenesInvestigationNotes": {
+    "name": "Renés Untersuchungsnotizen",
+    "description": "Es soll sich um die Aufzeichnungen eines großen Gelehrten handeln, der beabsichtigte, „das Sterbliche zu überwinden“. Sie beschreiben detailliert seine Erforschung der unterirdischen Ruinen und die daraus gewonnenen Erkenntnisse ..."
+  },
+  "NotesLeftBySomeone": {
+    "name": "Von jemandem zurückgelassene Notizen",
+    "description": "Es scheint sich um Notizen zu handeln, die von einem Mitglied des Skeptikerordens hinterlassen wurden und Informationen über die Kory-Trommeln und das Ritual enthalten."
+  },
+  "AncientVolume": {
+    "name": "Antike Schriftrolle",
+    "description": "Es scheint sich um ein uraltes Dokument zu handeln, das vom Skeptikerorden von Generation zu Generation weitergegeben wurde und in einer archaischen Schrift verfasst ist, die es kaum möglich macht, den darin festgehaltenen Inhalt zu entziffern."
+  },
+  "UdumbaraPistil": {
+    "name": "Staubblatt der „Udumbara“",
+    "description": "Ein Staubblatt, erhalten von der gedeihenden Udumbara. Scheint für die Pari eine besondere Bedeutung zu haben ..."
+  },
+  "KhvarenaInscriptionFragment": {
+    "name": "Khvarena-Inschriftfragment",
+    "description": "Das Fragment einer verloren gegangenen Inschrift. Es ist nicht bekannt, wie es abhandenkommen konnte."
+  },
+  "KorybantesVedana": {
+    "name": "Korybantes – Vedana",
+    "description": "Eine mysteriöse Trommel. Sie weist eine Kryo-Markierung auf."
+  },
+  "KorybantesRupa": {
+    "name": "Korybantes – Rupa",
+    "description": "Eine der verloren gegangenen Kory-Trommeln. Diese Trommel hat eine Dendro-Markierung."
+  },
+  "KorybantesSamjna": {
+    "name": "Korybantes – Samjna",
+    "description": "Eine der verloren gegangenen Kory-Trommeln. Diese Trommel hat eine Hydro-Markierung."
+  },
+  "KorybantesSankhara": {
+    "name": "Korybantes – Sankhara",
+    "description": "Eine der verloren gegangenen Kory-Trommeln. Diese Trommel hat eine Elektro-Markierung."
+  },
+  "KorybantesVijnana": {
+    "name": "Korybantes – Vijnana",
+    "description": "Eine der verloren gegangenen Kory-Trommeln. Diese Trommel hat eine Pyro-Markierung."
+  },
+  "MysteriousEnergyBlock": {
+    "name": "Geheimnisvoller Energieblock",
+    "description": "Ein aus „Azosit“, der aus reiner Elementarenergie gewonnen wird, kondensierter Energieblock. Es scheint, als könne dieser Energieblock als Energiequelle für große Energieapparate dienen."
+  },
+  "JuliensLuggage": {
+    "name": "Juliens Gepäck",
+    "description": "Ein Gepäck, das klatschnass geworden ist. Sein Inhalt scheint sorgfältig verpackt worden zu sein. Man weiß aber nicht, ob er den Auswirkungen des Wassers standhalten konnte."
+  },
+  "JuliensSketch": {
+    "name": "Juliens Skizze",
+    "description": "Eine Skizze mit einer seltsamen Farbkomposition."
+  },
+  "PictureLeftByTheWisdomSeelie": {
+    "name": "Von „Weisheits-Seelie“ zurückgelassenes Bild",
+    "description": "Ein Hinweis, den die „Weisheits-Seelie“ hinterlassen hat. Hoffentlich wird dieses Abenteuer nicht so erfolglos sein wie das vorherige ..."
+  },
   "CaravanAccounts": {
     "name": "Bilanzunterlagen der Karawane",
     "description": "Von der Ziel-Karawane abgefangene Bilanzunterlagen. Die Informationen in ihnen beziehen sich hauptsächlich auf „Dakan Al-Ahmar“. Abgesehen von der Fülle an Daten und Informationen über gestohlene Waren ist es überraschend, den Namen von Dunyarzads Vater darin zu finden."
@@ -10391,9 +10571,173 @@
     "name": "Verpflegungs- und Unterkunftsplan",
     "description": "？？？"
   },
+  "RelicReplicaContainerI": {
+    "name": "Replika-Relikt I",
+    "description": "Ein Behälter mit einem Replika-Relikt. Er wurde absichtlich violett gestrichen."
+  },
+  "RelicReplicaContainerII": {
+    "name": "Replika-Relikt II",
+    "description": "Ein Behälter mit einem Replika-Relikt. Er wurde absichtlich blau gestrichen."
+  },
+  "RelicReplicaContainerIII": {
+    "name": "Replika-Relikt III",
+    "description": "Ein Behälter mit einem Replika-Relikt. Er wurde absichtlich rot gestrichen."
+  },
+  "KorybantesScoreVijnana": {
+    "name": "Trommelpartitur des Korybantes – Vijnana",
+    "description": "Eine Trommelpartitur, die Korybantes – Vijnana entspricht."
+  },
+  "KorybantesScoreSamjna": {
+    "name": "Trommelpartitur des Korybantes – Samjna",
+    "description": "Eine Trommelpartitur, die Korybantes – Samjna entspricht."
+  },
+  "KorybantesScoreRupa": {
+    "name": "Trommelpartitur des Korybantes – Rupa",
+    "description": "Eine Trommelpartitur, die Korybantes – Rupa entspricht."
+  },
+  "KorybantesScoreSankhara": {
+    "name": "Trommelpartitur des Korybantes – Sankhara",
+    "description": "Eine Trommelpartitur, die Korybantes – Sankhara entspricht."
+  },
+  "KorybantesScoreVedana": {
+    "name": "Trommelpartitur des Korybantes – Vedana",
+    "description": "Eine Trommelpartitur, die Korybantes – Vedana entspricht."
+  },
+  "JuliensDrawingBoard": {
+    "name": "Juliens Zeichenbrett",
+    "description": "Ein Zeichenbrett, das Gebrauchsspuren aufweist, aber derzeit keine Pinselstriche darauf."
+  },
+  "InPursuitOfTheLostInscription": {
+    "name": "Auf der Jagd nach der verlorenen Inschrift",
+    "description": "Eine Notiz, die du von Sosi erhalten hast. Sie könnte Hinweise auf die Fragmente der verlorenen Inschrift enthalten."
+  },
   "HaniyyahsGiftOfMarvelousJellies": {
     "name": "Haniyyahs „Wundergelee“-Geschenk",
     "description": "Ein exquisites Geschenkpaket von Haniyyah. Es enthält „Wundergelees“ in den Lieblingssorten der Pilzbestien. Die verschiedenen Geschmacksrichtungen können je nach Vorliebe der einzelnen Pilbestien gefüttert werden.\\n„Wundergelee“ basiert auf „Blumengelee“ und behält dessen kristallklare, elastische Textur bei. Alle gefährlichen Inhaltsstoffe wurden entfernt, was es zum idealen Futtermittel für Pilzbestien macht. Allerdings ... sollte man es zu Hause wohl auch besonders sorgfältig verstauen, um zu verhindern, dass es versehentlich in die Hände gefräßiger Kinder gerät."
+  },
+  "BoxOfSpecialPotions": {
+    "name": "Eine Schachtel mit speziellen Tränken",
+    "description": "Eine Schachtel, die du von Bahador erhalten hast. Sie enthält eine Reihe von speziellen Tränken. Bahador zufolge könnten sie sich als sehr nützlich erweisen, wenn du eine bestimmte Sphäre erkundest ..."
+  },
+  "SomeonesJournal": {
+    "name": "Jemandes Tagebuch",
+    "description": "Jemandes Tagebuch"
+  },
+  "SomeonesMemo": {
+    "name": "Jemandes Notiz",
+    "description": "Jemandes Notiz"
+  },
+  "Locator": {
+    "name": "Anzeigegerät",
+    "description": "Ein Forschungsergebnis der Baulehre. Es kann die ungefähren Standorte der mit einem spezifischen Ortungsgerät ausgestatteten Teilnehmer anzeigen. Es gibt auch einen Ton ab, wenn ein Teilnehmer den Wettkampf erfolgreich abgeschlossen hat."
+  },
+  "FoodSeeds": {
+    "name": "Nahrungssamen",
+    "description": "Samen, die euch ein Elementarwesen in Form einer schwebenden Anemo-Pilzbestie gegeben hat. Wenn man sie einpflanzt, kann man die Nahrung anbauen, die die Pilzbestien so gerne essen. Aber wird es in Zukunft überhaupt noch Pilzbestien geben, die wissen, wie man die Felder bestellt?"
+  },
+  "NamelessAdventurersNotes": {
+    "name": "Notizen eines unbekannten Abenteurers",
+    "description": "In der Wüste verschollene Notizen, die anscheinend einem Abenteurer gehörten."
+  },
+  "AncientEngineeringNotes": {
+    "name": "Antike Arbeitsaufzeichnung",
+    "description": "Antike Arbeitsaufzeichnung"
+  },
+  "RaggedEngineeringNotes": {
+    "name": "Zerrissene Arbeitsaufzeichnung",
+    "description": "Zerrissene Arbeitsaufzeichnung"
+  },
+  "SomeonesAbandonedLetter": {
+    "name": "Jemandes zurückgelassener Brief",
+    "description": "Jemandes zurückgelassener Brief"
+  },
+  "AkademiyaInvestigationTeamsLogsIII": {
+    "name": "Tagebucheintrag des Untersuchungstrupps der Akademie III",
+    "description": "Tagebucheintrag des Untersuchungstrupps der Akademie III"
+  },
+  "AkademiyaInvestigationTeamsLogsIV": {
+    "name": "Tagebucheintrag des Untersuchungstrupps der Akademie IV",
+    "description": "Tagebucheintrag des Untersuchungstrupps der Akademie IV"
+  },
+  "BarelyLegibleBulletin": {
+    "name": "Schwer zu entziffernde Bekanntmachung",
+    "description": "Schwer zu entziffernde Bekanntmachung"
+  },
+  "AncientJournal": {
+    "name": "Uraltes Tagebuch",
+    "description": "Uraltes Tagebuch"
+  },
+  "RecordsOfUnknownAttributionII": {
+    "name": "Aufzeichnungen eines Unbekannten II",
+    "description": "Aufzeichnungen eines Unbekannten II"
+  },
+  "AkademiyaInvestigationTeamsLogsI": {
+    "name": "Tagebucheintrag des Untersuchungstrupps der Akademie I",
+    "description": "Tagebucheintrag des Untersuchungstrupps der Akademie I"
+  },
+  "AkademiyaInvestigationTeamsLogsII": {
+    "name": "Tagebucheintrag des Untersuchungstrupps der Akademie II",
+    "description": "Tagebucheintrag des Untersuchungstrupps der Akademie II"
+  },
+  "SoiledOrders": {
+    "name": "Unleserliche Befehlsschrift",
+    "description": "Unleserliche Befehlsschrift"
+  },
+  "RecordsOfUnknownAttributionI": {
+    "name": "Aufzeichnungen eines Unbekannten I",
+    "description": "Aufzeichnungen eines Unbekannten I"
+  },
+  "PagesFromSomeLostNotesI": {
+    "name": "Zerrissene Notizenseite I",
+    "description": "Zerrissene Notizenseite I"
+  },
+  "PagesFromSomeLostNotesII": {
+    "name": "Zerrissene Notizenseite II",
+    "description": "Zerrissene Notizenseite II"
+  },
+  "BizarreTranscript": {
+    "name": "Seltsame Abschrift",
+    "description": "Seltsame Abschrift"
+  },
+  "TeachingsOfTheSkeptics": {
+    "name": "Lehren des Skeptikerordens",
+    "description": "Lehren des Skeptikerordens"
+  },
+  "NamelessResearchersNotesI": {
+    "name": "Aufzeichnungen eines unbekannten Gelehrten I",
+    "description": "Aufzeichnungen eines unbekannten Gelehrten I"
+  },
+  "NamelessResearchersNotesII": {
+    "name": "Aufzeichnungen eines unbekannten Gelehrten II",
+    "description": "Aufzeichnungen eines unbekannten Gelehrten II"
+  },
+  "NamelessResearchersNotesIII": {
+    "name": "Aufzeichnungen eines unbekannten Gelehrten III",
+    "description": "Aufzeichnungen eines unbekannten Gelehrten III"
+  },
+  "NamelessResearchersNotesIV": {
+    "name": "Aufzeichnungen eines unbekannten Gelehrten IV",
+    "description": "Aufzeichnungen eines unbekannten Gelehrten IV"
+  },
+  "MercenarysAgedNotesI": {
+    "name": "Alte Notizen eines Söldners I",
+    "description": "Alte Notizen eines Söldners I"
+  },
+  "MercenarysAgedNotesII": {
+    "name": "Alte Notizen eines Söldners II",
+    "description": "Alte Notizen eines Söldners II"
+  },
+  "MercenarysAgedNotesIII": {
+    "name": "Alte Notizen eines Söldners III",
+    "description": "Alte Notizen eines Söldners III"
+  },
+  "MercenarysAgedNotesIV": {
+    "name": "Alte Notizen eines Söldners IV",
+    "description": "Alte Notizen eines Söldners IV"
+  },
+  "KhvarenaMonumentInscription": {
+    "name": "Khvarena-Steininschrift",
+    "description": "Khvarena-Steininschrift"
   },
   "SilkFlowerSeed": {
     "name": "Seidenblumensamen",
@@ -11061,7 +11405,7 @@
   },
   "QiqiColdStorage": {
     "name": "Qiqi – Kühlung",
-    "description": "Ein Motiv für Namenskärtchen.\\nWas muss kaltgestellt werden? Baizhus Arznei, Kokosmilch ... und Hu Tao."
+    "description": "Ein Motiv für Namenskärtchen.\\nWas muss kaltgestellt werden? Herrn Bais Arznei, Kokosmilch ... und Hu Tao."
   },
   "KeqingLightningStiletto": {
     "name": "Keqing – Donnerkeil",
@@ -11201,7 +11545,7 @@
   },
   "XiaoMask": {
     "name": "Xiao – Maske",
-    "description": "Ein Motiv für Namenskärtchen.\\nEr sehnt sich nach dem Tag, an dem er die Maske tragen und tanzen wird – nicht, um Dämonen zu besiegen, sondern zur Melodie dieser Flöte inmitten eines Blumenmeeres."
+    "description": "Ein Motiv für Namenskärtchen.\\nEr sehnt sich nach dem Tag, an dem er die Maske tragen und tanzen wird – nicht, um Dämonen zu besiegen, sondern zur Melodie dieser Flöte inmitten des Dihua-Moors."
   },
   "HuTaoSpiritSoother": {
     "name": "Hu Tao – Besänftigung",
@@ -11587,6 +11931,34 @@
     "name": "Erlebnispass – Zuneigung",
     "description": "Ein Motiv für Namenskärtchen.\\nViele sagen, die Liebe sei wie ein Gespenst – alle reden davon, aber nur wenige haben sie mit eigenen Augen gesehen. Aber wenn die Gespenster wirklich von Zeit zu Zeit auftauchen, dann wartet vielleicht auch die Liebe hinter der nächsten Ecke."
   },
+  "BaizhuRelief": {
+    "name": "Baizhu – Vorbeugung",
+    "description": "Ein Motiv für Namenskärtchen.\\n„Folgt Ihr genau den Gesetzen der Natur, dann habt Ihr ein langes Leben und eine gute Statur.“"
+  },
+  "KavehDomedCourt": {
+    "name": "Kaveh – Firmament",
+    "description": "Ein Motiv für Namenskärtchen.\\n„Wenn wir ein architektonisches Projekt entwerfen, ist es nicht verkehrt, sich vorzustellen, dass die Gebäude, die wir bauen, das Firmament und die Sterne überdauern werden.“"
+  },
+  "AchievementInfinitum": {
+    "name": "Errungenschaft – Unendliche Samen",
+    "description": "Ein Motiv für Namenskärtchen.\\n„O Khvarena der unendlichen Samen, sie beschützen die gefährdete Erde. Vorübergehend sind Verfall und Glanz in dieser Welt, all das nur eine Illusion aus diesen Samen.“"
+  },
+  "AchievementTransientTwilight": {
+    "name": "Errungenschaft – Vergänglichkeit",
+    "description": "Ein Motiv für Namenskärtchen.\\n„Am Ende werde ich die Blumen, den Sonnenschein und all die Regentropfen vergessen. Ich bitte dich, an meiner Stelle diesen verlorenen Traum, der in der neu geborenen Welt nicht mehr existiert, in Erinnerung zu bewahren.“"
+  },
+  "SumeruTheGreatDream": {
+    "name": "Sumeru – Großer Traum",
+    "description": "Ein Motiv für Namenskärtchen.\\n„Die Zeit des Gedeihens ist noch nicht gekommen. Verbirg mich mit Sorgfalt dort, wo die Träume der Pflanzen auch verweilen.“"
+  },
+  "SumeruAmrita": {
+    "name": "Sumeru – Amrita",
+    "description": "Ein Motiv für Namenskärtchen.\\nDer uralte Amrita-Tümpel strotzt vor Erinnerungen an die Vergangenheit. Aber vielleicht hat er auch die Kraft, die Zukunft zu gestalten."
+  },
+  "TravelNotesCrownOfGlory": {
+    "name": "Erlebnispass – Blumenkranz",
+    "description": "Ein Motiv für Namenskärtchen.\\n„Die Weisheit ist die Krone, die wir im Laufe der Jahre erhalten, so wie unsere Sehnsucht an die Zeit, die wir miteinander verbracht haben.“"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein",
     "description": "Im Gebiet von Mondstadt angewendet kannst du hiermit verlorene Anemoculi in der Nähe aufspüren.\\nDiese künstliche Steinplatte besitzt eine gewisse Charakteristik, die der der Anemo-Statuen der Sieben ähnelt und ihr die Kraft verleiht, mit den Anemoculi zu interagieren.\\nOculus-Resonanzsteine sind grobe Imitationen der Statuen der Sieben, die von den Menschen des Altertums gebaut wurden. Gerade die Rohheit solcher Steine ist es, was sie dazu bringt, nach der Kraft der Oculi zu verlangen, um Anhängern der Götter und Abenteurern die Möglichkeit zu geben, Oculi zu finden."
@@ -11839,6 +12211,10 @@
     "name": "Spurensucherkompass",
     "description": "Ein ganz besonderer Kompass, den du von der Abenteurergilde erhalten hast. Es heißt, er bringe Glück ..."
   },
+  "Sorush": {
+    "name": "Sorush",
+    "description": "Als eine der Pari, die das Land beschützen, strebt Sorush danach, die Tapfere zu werden, die alle Katastrophen besänftigen kann.\\nNachdem sie eine Verbindung zu jemandem hergestellt hat, dem sie vertraut, wird Sorush ihn als ihren Yasnapati ansehen und gemeinsam mit ihm das von der Unreinheit verseuchte Land durchqueren ..."
+  },
   "WindblumeKamera": {
     "name": "Fotoapparat – Windblume",
     "description": "Ein Fotoapparat, den du dir von Fassben geliehen hast. Geh vorsichtig damit um, damit er nicht kaputtgeht ..."
@@ -11846,6 +12222,10 @@
   "FestiveDrum": {
     "name": "Festtrommel",
     "description": "Ein Musikinstrument, das bei Aufführungen verwendet werden kann.\\nDiese Trommel hat eine einzigartige Struktur, die ihr einen klaren Klang verleiht. Für die Konstruktion werden hochwertige Materialien ausgewählt, die die Klangqualität und die Widerstandsfähigkeit im Laufe der Zeit sehr gut garantieren.\\nEs heißt, dass diese kleine Trommel ein traditionelles Instrument aus Inazuma mit einigen Eigenheiten von Trommeln fremder Kulturen kombiniert hat. Wenn man bestimmte Melodien mit dieser Trommel spielt, soll dies einem Glück bescheren ..."
+  },
+  "SearchCompass": {
+    "name": "Suchkompass",
+    "description": "Ein Kompass, der entwickelt wurde, um Replika-Relikte zu finden. Da er von einem Apparat adaptiert wurde, der einst Elementarenergien aufspüren konnte, könnte er von Elementarobjekten an der Ausgrabungsstätte beeinflusst werden ..."
   },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein",
@@ -12056,7 +12436,7 @@
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "FatuiPyroAgent": {
-    "name": "Pyro-Schuldeneintreiber",
+    "name": "Fatui – Pyro-Schuldeneintreiber",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "MaguuKenki": {
@@ -12068,7 +12448,7 @@
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "MirrorMaiden": {
-    "name": "Spiegeljungfrau",
+    "name": "Fatui – Spiegeljungfrau",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "JadeplumeTerrorshroom": {
@@ -12199,8 +12579,20 @@
     "name": "Donnern am Firmament",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
+  "KeenSight": {
+    "name": "Scharfblick",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
   "SinOfPride": {
     "name": "Sünde des Stolzes",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "KyoukaFuushi": {
+    "name": "Kyouka Fuushi",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "AratakiIchiban": {
+    "name": "Arataki Ichiban",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "MagicGuide": {
@@ -12351,6 +12743,10 @@
     "name": "Generalshelm",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
+  "FavoniusSword": {
+    "name": "Favonius-Schwert",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
@@ -12425,6 +12821,10 @@
   },
   "NRE": {
     "name": "Praktischer Nahrungsbeutel",
+    "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
+  },
+  "GrandNarukamiShrine": {
+    "name": "Großer Narukami-Schrein",
     "description": "Eine sehr feste Karte aus dem Kartenspiel „Geniale Beschwörung“. Die Illustration auf der Bildseite hat dank eines speziellen Druckverfahrens ein sehr feines Aussehen."
   },
   "ElementalResonanceWovenIce": {
@@ -12773,7 +13173,7 @@
   },
   "FeiyunStudyRoom": {
     "name": "Feiyun-Arbeitszimmer",
-    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Feiyun-Arbeitszimmer“.\\nEs gibt viele Möglichkeiten, ein Arbeitszimmer in Liyue einzurichten, Luxus ist optional, denn die Gelehrten bevorzugen „Geist“ und „Eleganz“. Eine Topfpflanze hier balanciert die Luftfeuchtigkeit aus und der Tisch und die Regale geben einen leicht holzigen Duft ab, der mit dem schlichten Layout und dem dämmrigen Licht der Lampen das Genie inspiriert und zum Schreiben anregt.\\nEs heißt, dass ein bestimmter Gast am Feiyun-Hang vor vielen Jahren ein genau solches Arbeitszimmer einrichtete und die Gestaltung wurde dann vom vorherigen Leiter der Buchhandlung Wanwen übernommen. So war es dann seither als Feiyun-Arbeitszimmer bekannt und erlangte in ganz Liyue Bekanntheit.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Xingqiu, Zhongli, Ningguang und Yun Jin."
+    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Feiyun-Arbeitszimmer“.\\nEs gibt viele Möglichkeiten, ein Arbeitszimmer in Liyue einzurichten, Luxus ist optional, denn die Gelehrten bevorzugen „Geist“ und „Eleganz“. Eine Topfpflanze hier balanciert die Luftfeuchtigkeit aus. Der Tisch und die Regale geben einen leicht holzigen Duft ab, der mit dem schlichten Layout und dem dämmrigen Licht der Lampen das Genie inspiriert und zum Schreiben anregt.\\nEs heißt, dass ein bestimmter Gast am Feiyun-Hang vor vielen Jahren ein genau solches Arbeitszimmer einrichtete und die Gestaltung wurde dann vom vorherigen Leiter der Buchhandlung Wanwen übernommen. So war es dann seither als Feiyun-Arbeitszimmer bekannt und erlangte in ganz Liyue Bekanntheit.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Xingqiu, Zhongli, Ningguang, Yun Jin und Baizhu."
   },
   "CloudyHazeDreamCourt": {
     "name": "Wolkendunst-Traumzimmer",
@@ -12785,7 +13185,7 @@
   },
   "CottageKitchen": {
     "name": "Landhausküche",
-    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Landhausküche“.\\nEine voll ausgestattete Küche mit einem Schrank voller sorgfältig vorbereiteter Gewürze.\\nKöche, die Perfektion anstreben, kaufen ihre Zutaten täglich auf dem Markt, und wahre Künstler der Kulinarik widmen sogar dem Feuerholz in ihrem Ofen besondere Aufmerksamkeit. Die junge Küchenchefin des Restaurants Wanmin teilte einst dieses Wissen, um das traditionelle Gericht des Qingce-Dorfs zuzubereiten: Man muss trockene Bambus-Schnipsel in den Ofen geben und die Flamme behutsam kontrollieren. Hat man die Gelegenheit, Büsche in der Nähe von Wolfshaken zum feinen Brennholz zu verarbeiten, kann man dem Ganzen einen Hauch Mondstadt-Flair verleihen.\\nUnterschiedliche Arten von Feuerholz haben sehr unterschiedliche Effekte und die meisten Köche werden dies niemals wirklich meistern. Das Restaurant Wanmin hat deshalb, was diese spezielle Technik angeht, eine Monopolstellung inne.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao und Mika."
+    "description": "Bauplan mit detaillierten Schritten zur Platzierung von „Landhausküche“.\\nEine voll ausgestattete Küche mit einem Schrank voller sorgfältig vorbereiteter Gewürze.\\nKöche, die Perfektion anstreben, kaufen ihre Zutaten täglich auf dem Markt, und wahre Künstler der Kulinarik widmen sogar dem Feuerholz in ihrem Ofen besondere Aufmerksamkeit. Die junge Küchenchefin des Restaurants Wanmin teilte einst dieses Wissen, um das traditionelle Gericht des Qingce-Dorfs zuzubereiten: Man muss trockene Bambus-Schnipsel in den Ofen geben und die Flamme behutsam kontrollieren. Hat man die Gelegenheit, Büsche in der Nähe von Wolfshaken zum feinen Brennholz zu verarbeiten, kann man dem Ganzen einen Hauch Mondstadt-Flair verleihen.\\nUnterschiedliche Arten von Feuerholz haben sehr unterschiedliche Effekte und die meisten Köche werden dies niemals wirklich meistern. Das Restaurant Wanmin hat deshalb, was diese spezielle Technik angeht, eine Monopolstellung inne.\\nNach der Anwendung im Platzierungsmenü zu finden.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Tartaglia, Mona, Xiao, Xiangling, Razor, Yaoyao, Mika und Baizhu."
   },
   "WeaponForgingStation": {
     "name": "Waffenschmiede",
@@ -12905,7 +13305,7 @@
   },
   "OfTwirlingDancesUnfettered": {
     "name": "Schatten der Tänzer",
-    "description": "Ein großes und prächtiges Theater. Neben der prächtigen Bühne, dem sprudelnden Brunnen wurden noch viele kostbaren Blumen eingerichtet, die von der Raumschaffung zum Leben erweckt wurden. Damit imitiert dieser Ort die festliche Atmosphäre vom Theater Zubayr.\\nMan sagt, dass manche Aufführungen am besten in der Nacht zu sehen sind. Die Platzierung der Theaterlampen ist offensichtlich auch das Ergebnis einer sorgfältigen Studie, die darauf abzielt, dass jeder Zuschauer die Tänzer sehen kann, unabhängig davon, in welchem Winkel er sitzt oder steht. Und die richtig eingestellte Beleuchtung und Farbton ermöglichen es dem Publikum, die Aufführung der Tänzer besser zu genießen.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nilou"
+    "description": "Ein großes und prächtiges Theater. Neben der prächtigen Bühne und dem sprudelnden Brunnen wurden noch viele kostbaren Blumen eingerichtet, die von der Raumschaffung zum Leben erweckt wurden. Damit imitiert dieser Ort die festliche Atmosphäre vom Theater Zubayr.\\nMan sagt, dass manche Aufführungen am besten in der Nacht zu sehen sind. Die Platzierung der Theaterlampen ist offensichtlich auch das Ergebnis einer sorgfältigen Studie, die darauf abzielt, dass jeder Zuschauer die Tänzer sehen kann, unabhängig davon, in welchem Winkel er sitzt oder steht. Und die richtig eingestellte Beleuchtung und Farbton ermöglichen es dem Publikum, die Aufführung der Tänzer besser zu genießen.\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nilou und Kaveh."
   },
   "QuietTimesByTheRiverbank": {
     "name": "Stille Zeiten am Flussufer",
@@ -12921,7 +13321,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "In Wohlgeruch und Stille",
-    "description": "Ein eleganter und ruhiger Garten, der den Stil von Razan-Garten und Pardis Dhyai annimmt. Aber es geht an diesem Ort nicht um eine absolute Einheit der verschiedenen architektonischen Stille, sondern vielmehr um die Schaffung einer ruhigen Atmosphäre.\\nDie schönen Blüten schlummern hier in Frieden und die Stehlampen lassen den Brunnen erstrahlen ... Sobald sich die Nachtstunden nähern, kann ein Spaziergang durch diesen Garten dazu führen, dass sich die lärmenden Gedanken in deinem Kopf wie Wolkenfetzen auflösen. Vielleicht fällt dir sogar eine Inspiration ein, die du normalerweise schwer finden würdest ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nahida"
+    "description": "Ein eleganter und ruhiger Garten, der den Stil von Razan-Garten und Pardis Dhyai annimmt. Aber es geht an diesem Ort nicht um eine absolute Einheit der verschiedenen architektonischen Stille, sondern vielmehr um die Schaffung einer ruhigen Atmosphäre.\\nDie schönen Blüten schlummern hier in Frieden und die Stehlampen lassen den Brunnen erstrahlen ... Sobald sich die Nachtstunden nähern, kann ein Spaziergang durch diesen Garten dazu führen, dass sich die lärmenden Gedanken in deinem Kopf wie Wolkenfetzen auflösen. Vielleicht fällt dir sogar eine Inspiration ein, die du normalerweise schwer finden würdest ...\\nDieses Set wird von den folgenden Kameraden bevorzugt: Nahida und Kaveh."
   },
   "ChorusOfDesertAndWood": {
     "name": "Wüsten- und Waldchor",
@@ -13078,6 +13478,14 @@
   "LightOfSlumber": {
     "name": "„Ruhendes Licht“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Ruhendes Licht“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "SweetLuster": {
+    "name": "„Schimmer der Süße“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schimmer der Süße“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "LightsConstancy": {
+    "name": "„Schimmer des Alltags“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schimmer des Alltags“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“",
@@ -13266,6 +13674,10 @@
   "LongAdhigamaChamferTable": {
     "name": "Langer Tisch mit benutzerfreundlichen Tischkanten aus Adhigama-Holz",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Langer Tisch mit benutzerfreundlichen Tischkanten aus Adhigama-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AthelWoodCompactDesk": {
+    "name": "Kompakter Tisch aus Athel-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Kompakter Tisch aus Athel-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "BreezeBlessedBed": {
     "name": "Brisenbelüftetes Bett",
@@ -13494,6 +13906,22 @@
   "HuedVaseMoltenSand": {
     "name": "Gefärbte Vase – „Geschmolzene Sande“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Geschmolzene Sande“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "WarmthAndColdOverlaid": {
+    "name": "„Eine Kombination von Wärme und Kälte“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Eine Kombination von Wärme und Kälte“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "HuedVaseAjilenakh": {
+    "name": "Gefärbte Vase – „Dattelblatt“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Dattelblatt“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "HuedVaseCrimsonSands": {
+    "name": "Gefärbte Vase – „Roter Sand“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Roter Sand“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "PureHeat": {
+    "name": "„Pure Hitze“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Pure Hitze“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "MondstadtRugCrimsonArdor": {
     "name": "Teppich (Mondstadt) – „Rotglühende Begeisterung“",
@@ -13734,6 +14162,26 @@
   "StarShapedMultipurposeBottle": {
     "name": "Sternenförmige Mehrzweckflasche",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Sternenförmige Mehrzweckflasche“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "HuedVaseEventide": {
+    "name": "Gefärbte Vase – „Abendwelle“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gefärbte Vase – Abendwelle“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "SaltyAndMeatyPaintedPlate": {
+    "name": "Glasierter Teller – „Aroma des Fleisches“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Glasierter Teller – Aroma des Fleisches“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "SweetAndFruityPaintedPlate": {
+    "name": "Glasierter Teller – „Aroma des Obstes“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Glasierter Teller – Aroma des Obstes“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "InDrinksClarity": {
+    "name": "„Im erfrischenden Wein“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Im erfrischenden Wein“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TheDustDifferential": {
+    "name": "„Gewicht des Staubkorns“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Gewicht des Staubkorns“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "„Erhabenheit am Ort der Gelehrsamkeit“",
@@ -14043,6 +14491,14 @@
     "name": "„Freimütige Entscheidung“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Freimütige Entscheidung“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "KarmaphalaWoodBulkGoodsBerth": {
+    "name": "Verkaufsstand aus Karmaphala-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Verkaufsstand aus Karmaphala-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AdhigamaWoodOpenAirFoodStall": {
+    "name": "Offener Essensstand aus Adhigama-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Offener Essensstand aus Adhigama-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "HilichurlOutpostHut": {
     "name": "Hütte des Hilichurl-Vorpostens",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Hütte des Hilichurl-Vorpostens“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -14068,8 +14524,8 @@
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Einfaches Einpersonenzelt“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "OtogiWoodRiceCakeSoupStand": {
-    "name": "Otogi-Sand für Klebreissuppe",
-    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Otogi-Sand für Klebreissuppe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+    "name": "Otogi-Stand für Klebreissuppe",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Otogi-Stand für Klebreissuppe“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "OtogiWoodGranaryCart": {
     "name": "Nahrungs-Schiebewagen aus Otogi-Holz",
@@ -14370,6 +14826,10 @@
   "SingingInTheTranquilCourt": {
     "name": "„Arie des stillen Schlossgartens“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Arie des stillen Schlossgartens“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "FineSandInWarmWeather": {
+    "name": "„Feinsand der warmen Monate“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Feinsand der warmen Monate“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster",
@@ -14879,6 +15339,26 @@
     "name": "Freizeitvorrichtung – Bummelpummel",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Freizeitvorrichtung – ‚Bummelpummel‘“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
+  "CaravanRibatTypeIIILandTransportPallet": {
+    "name": "Landtransportpalette Typ III vom Karawanen-Ribat",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Landtransportpalette Typ III vom Karawanen-Ribat“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "PlainVaseDrinksForAHundred": {
+    "name": "Reine Vase – „Saufgelage“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Reine Vase – Saufgelage“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "PlainVaseStuporForTen": {
+    "name": "Reine Vase – „Berauschtheit“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Reine Vase – Berauschtheit“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "BrightwoodSelfTighteningWineBuckets": {
+    "name": "Selbstspannende Fässer aus Hellholz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Selbstspannende Fässer aus Hellholz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "BrightwoodFabricBoxPlatform": {
+    "name": "Truhe für Textilien aus Hellholz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Truhe für Textilien aus Hellholz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Topfpflanze – Kleine Oase“.\\nNach der Anwendung im Herstellungsmenü zu finden."
@@ -15154,6 +15634,46 @@
   "ErsatzBalloonBumperShroom": {
     "name": "Simulacrumballon – „Pilz-Prall“",
     "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Simulacrumballon – ‚Pilz-Prall‘“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "PetaledShade": {
+    "name": "„Schatten einzelner Blüten“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schatten einzelner Blüten“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "TeamSpirit": {
+    "name": "„Schwung der Brigaden“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Schwung der Brigaden“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "ScentOfTheBlazingSun": {
+    "name": "„Sonnige Leidenschaft“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Sonnige Leidenschaft“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AthelWoodLightCargoBoxes": {
+    "name": "Einfache Kisten aus Athel-Holz",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Einfache Kisten aus Athel-Holz“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "VahumanaFlag": {
+    "name": "„Flagge von Vahumana“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Vahumana“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "SpantamadFlag": {
+    "name": "„Flagge von Spantamad“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Spantamad“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "HaravatatFlag": {
+    "name": "„Flagge von Haravatat“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Haravatat“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "AmurtaFlag": {
+    "name": "„Flagge von Amurta“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Amurta“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "RtawahistFlag": {
+    "name": "„Flagge von Rtawahist“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Rtawahist“.\\nNach der Anwendung im Herstellungsmenü zu finden."
+  },
+  "KshahrewarFlag": {
+    "name": "„Flagge von Kshahrewar“",
+    "description": "Bauplan mit detaillierten Schritten zur Herstellung von „Flagge von Kshahrewar“.\\nNach der Anwendung im Herstellungsmenü zu finden."
   },
   "WroughtIronCarvedStreetLight": {
     "name": "Eiserne Straßenlaterne mit Gravur",

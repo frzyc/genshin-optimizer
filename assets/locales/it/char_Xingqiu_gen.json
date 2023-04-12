@@ -47,13 +47,14 @@
         " quando un personaggio subisce DAN, la Spada di pioggia si frantuma, riducendo la quantità di DAN subiti;",
         " aumenta la resistenza all'interruzione del personaggio."
       ],
-      "3": "Un 20% del <hydro>bonus DAN da Hydro</hydro> di Xingqiu sarà trasformato in Riduzione DAN aggiuntiva per le Spade della pioggia.",
-      "4": "<br/>",
-      "5": "La percentuale massima di Riduzione DAN aggiuntiva che si può ottenere in questo modo è di un 24%.",
-      "6": "Il numero massimo iniziale di Spade della pioggia è 3.",
-      "7": "Usare quest'abilità applica lo stato di <hydro>Umidità</hydro> al personaggio.",
-      "8": "<br/>",
-      "9": "<i>\"È più semplice uccidere un drago della pioggia piuttosto che recidere la pioggia.\"</i>"
+      "3": "<br/>",
+      "4": "Un 20% del <hydro>bonus DAN da Hydro</hydro> di Xingqiu sarà trasformato in Riduzione DAN aggiuntiva per le Spade della pioggia.",
+      "5": "<br/>",
+      "6": "La percentuale massima di Riduzione DAN aggiuntiva che si può ottenere in questo modo è di un 24%.",
+      "7": "Il numero massimo iniziale di Spade della pioggia è 3.",
+      "8": "Usare quest'abilità applica lo stato di <hydro>Umidità</hydro> al personaggio.",
+      "9": "<br/>",
+      "10": "<i>\"È più semplice uccidere un drago della pioggia piuttosto che recidere la pioggia.\"</i>"
     },
     "skillParams": {
       "0": "DAN da abilità",

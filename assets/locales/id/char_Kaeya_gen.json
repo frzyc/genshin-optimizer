@@ -107,8 +107,8 @@
   "passive3": {
     "name": "Hidden Strength",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berlari.",
-      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
+      "0": "Mengurangi 20% konsumsi Stamina semua Karakter di party sendiri saat berlari.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
   "constellation1": {
@@ -135,7 +135,7 @@
     "description": {
       "0": "Terpicu secara otomatis saat HP Kaeya kurang dari 20%:",
       "1": "Membuat perisai yang menahan DMG setara dengan 30% Max HP Kaeya. Berlangsung selama 20 detik.",
-      "2": "Perisai ini menahan <cryo>Cryo DMG</cryo> dengan efisiensi 250%.",
+      "2": "Perisai ini memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>.",
       "3": "Terpicu setiap 60 detik."
     }
   },

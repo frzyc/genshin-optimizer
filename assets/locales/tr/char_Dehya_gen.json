@@ -117,7 +117,7 @@
     "name": "Sınırsız Yardım",
     "description": {
       "0": "Dehya, <strong>Ateşten Kafes: Alevli Kılıç</strong> veya <strong>Aslan Isırığı</strong> ile Yakıcı Sığınak alanını geri aldıktan sonra 6 saniyeliğine Kızıl Yele Kanından %60 daha az Hasar alır. Bu etki her 2 saniyede bir tetiklenebilir.",
-      "1": "Ayrıca Dehya, <strong>Ateşten Kafes: Yenilmez Alev</strong> kullandıktan sonra 9 saniyeliğine tüm grup üyelerine Altınla Dövülmüş Form durumu verir. Bu duruma sahip karakterlerin Müdaheleye karşı dirençleri Yakıcı Sığınak içindeyken daha da artar. Altınla Dövülmüş Form her 18 saniyede bir tetiklenebilir."
+      "1": "Ayrıca Dehya, <strong>Ateşten Kafes: Yenilmez Alev</strong> kullandıktan sonra 9 saniyeliğine tüm grup üyelerine Altınla Dövülmüş Form durumu verir. Bu duruma sahip karakterlerin müdahaleye karşı dirençleri Yakıcı Sığınak içindeyken daha da artar. Altınla Dövülmüş Form her 18 saniyede bir tetiklenebilir."
     }
   },
   "passive2": {

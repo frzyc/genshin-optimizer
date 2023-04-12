@@ -1,5 +1,5 @@
 {
-  "setName": "Reminescência Nostálgica",
+  "setName": "Reminiscência Nostálgica",
   "setEffects": {
     "2": "ATQ +18%.",
     "4": "Ao lançar sua Habilidade Elemental, se a Energia Elemental do Personagem for maior ou igual a 15, ele perderá 15 pontos de Energia Elemental e nos próximos 10s, seus Ataques Normais, Ataques Carregados, Ataques Imersivos terão um aumento de 50% de Dano. Esse efeito só pode ser desencadeado uma vez dentro desse intervalo de tempo."

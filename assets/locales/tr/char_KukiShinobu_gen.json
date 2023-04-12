@@ -133,7 +133,7 @@
   "constellation3": {
     "name": "Kederi Göm",
     "description": {
-      "0": "<strong>Kutsal Çember</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kutsal Çember</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -147,7 +147,7 @@
   "constellation5": {
     "name": "Nezaketi Bitir",
     "description": {
-      "0": "<strong>Gyoei Narukami Kariyama Ayini</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gyoei Narukami Kariyama Ayini</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -138,7 +138,7 @@
   "constellation3": {
     "name": "Mucizeler Hiç Bitmez",
     "description": {
-      "0": "<strong>Alkazar'ın Kusursuzluğu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Alkazar'ın Kusursuzluğu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -155,7 +155,7 @@
   "constellation5": {
     "name": "Moranın Değeri",
     "description": {
-      "0": "<strong>Ruh Koruma Lambası: Sorun Giderici Top</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ruh Koruma Lambası: Sorun Giderici Top</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

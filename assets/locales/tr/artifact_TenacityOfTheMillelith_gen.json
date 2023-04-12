@@ -1,7 +1,7 @@
 {
   "setName": "Taşordu'nun Azmi",
   "setEffects": {
-    "2": "Can %20 artar.",
+    "2": "+%20 Can.",
     "4": "Bir Element Becerisi bir düşmana isabet ettiğinde, 3 saniye boyunca çevredeki tüm grup üyelerinin Saldırısı %20 ve Kalkan Güçleri %30 artar. Bu etki 0,5 saniyede bir uygulanabilir. Bu yadigar setini kuşanan karakter savaş alanında olmasa bile bu etki tetiklenir."
   },
   "pieces": {

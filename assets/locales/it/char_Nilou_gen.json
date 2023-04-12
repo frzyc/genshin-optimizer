@@ -47,7 +47,7 @@
       "3": "Quando assume tali pose, il terzo passo di danza di Nilou pone fine allo stato Piroetta e genera gli effetti di seguito elencati in base al passo di danza in questione.",
       "4": [
         " Danza della spada: sprigiona un'Illusione luminosa che infligge <hydro>DAN da Hydro</hydro> a tutti gli avversari che tocca, fornendo a Nilou l'effetto Preghiera lunare. Tale effetto converte i suoi attacchi normali in tecniche di Danza della spada, e il suo colpo finale sprigiona un'Illusione luminosa.",
-        " Passi vorticosi: Nilou scatena una Ruota acquatica che turbina tra i nemici infliggendo <hydro>DAN da Hydro ad area</hydro> e creando un'aura di Placidità che segue il personaggio attivo e infligge lo stato di <hydro>Umidità</hydro> agli avversari nella sua area d'effetto."
+        " Passi vorticosi: Nilou scatena una Ruota acquatica turbinante infliggendo <hydro>DAN da Hydro ad area</hydro> e creando un'Aura di Placidità che segue il personaggio attivo e infligge lo stato di <hydro>Umidità</hydro> agli avversari nella sua area d'effetto."
       ],
       "5": "<br/>",
       "6": "Quando è sotto gli effetti di Piroetta o Preghiera lunare, Nilou non può sferrare attacchi caricati. Gli effetti si annullano quando Nilou esce dal campo.",
@@ -61,7 +61,7 @@
       "3": "DAN da Illusione luminosa/Ruota acquatica",
       "4": "Durata Piroetta",
       "5": "Durata Preghiera lunare",
-      "6": "Durata aura Placidità",
+      "6": "Durata Aura di Placidità",
       "7": "TdR",
       "8": "",
       "9": "",

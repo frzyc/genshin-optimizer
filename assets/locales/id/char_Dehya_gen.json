@@ -1,7 +1,7 @@
 {
   "name": "Dehya",
   "title": "Flame-Mane",
-  "description": "Seorang anggota Eremite, sebuah organisasi tentara bayaran di Sumeru. Dia berani, kuat, dan sudah sangat terkenal di kalangan Eremite.",
+  "description": "Seorang anggota Eremite - sebuah organisasi tentara bayaran di padang pasir Sumeru. Dia berani, kuat, dan sudah sangat terkenal di kalangan Eremite.",
   "constellationName": "Mantichora",
   "auto": {
     "name": "Sandstorm Assault",
@@ -45,11 +45,11 @@
       "0": "Dehya melancarkan teknik bertempur ciptaannya sendiri sesuai dengan situasi pertempuran.",
       "1": "<br/>",
       "2": "<strong>Indomitable Flame</strong>",
-      "3": "Akan dilancarkan saat tidak ada medan Fiery Sanctum yang diciptakan oleh Dehya di medan pertempuran.",
+      "3": "Akan dilancarkan saat tidak ada medan Fiery Sanctum yang diciptakan oleh Dehya sendiri di medan pertempuran.",
       "4": "Mengakibatkan <pyro>Pyro DMG Area</pyro> dan menghasilkan sebuah medan yang disebut Fiery Sanctum.",
       "5": "<br/>",
       "6": "<strong>Ranging Flame</strong>",
-      "7": "Akan dilancarkan saat sudah ada medan Fiery Sanctum yang diciptakan oleh Dehya di medan pertempuran.",
+      "7": "Akan dilancarkan saat sudah ada medan Fiery Sanctum yang diciptakan oleh Dehya sendiri di medan pertempuran.",
       "8": "Melancarkan serangan melompat dan mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan kembali medan Fiery Sanctum di posisi Dehya yang baru.",
       "9": "Medan Fiery Sanctum yang diciptakan dengan cara ini akan mewarisi durasi awal dari medan Fiery Sanctum sebelumnya.",
       "10": "<br/>",
@@ -60,7 +60,7 @@
       "15": "Saat berada di medan ini, ketahanan Karakter aktif terhadap interupsi akan meningkat. Saat Karakter aktif ini menerima DMG, sebagian DMG-nya akan tertahan dan dialirkan ke dalam Redmane's Blood. Kemudian Dehya akan menanggung DMG ini dalam rentang waktu 10 detik.",
       "16": "Redmane's Blood tidak akan bisa menahan DMG lagi setelah nilai DMG yang tertahan telah mencapai atau melebihi persentase tertentu dari Max HP Dehya.",
       "17": "<br/>",
-      "18": "Hanya 1 medan Fiery Sanctum yang bisa diciptakan oleh Dehya pada saat bersamaan.",
+      "18": "Hanya 1 medan Fiery Sanctum yang bisa diciptakan oleh Dehya sendiri pada saat bersamaan.",
       "19": "<br/>",
       "20": "<i>Jalani siksaan yang berapi-api ini denganku, bersihkan semua kekotoran, sama seperti hewan api yang harus turun dalam bara.</i>"
     },
@@ -88,7 +88,7 @@
     "description": {
       "0": "Dehya meluapkan seluruh kemarahan membaranya, melepaskan pedang besarnya kemudian memasuki status Blazing Lioness dan meningkatkan ketahanannya terhadap interupsi.",
       "1": "Dalam status ini, Dehya akan otomatis melancarkan Flame-Mane's Fist terus-menerus dan mengakibatkan <pyro>Pyro DMG</pyro> yang didasarkan pada ATK dan Max HP Dehya, serta akan melancarkan tendangan Incineration Drive yang mengakibatkan <pyro>Pyro DMG Area</pyro> yang didasarkan pada ATK dan Max HP Dehya saat durasinya berakhir.",
-      "2": "Saat melancarkan skill ini, jika ada medan Fiery Sanctum yang diciptakan dari Elemental Skill \"Molten Inferno\" milik Dehya di medan pertempuran, maka Dehya akan menarik medan Fiery Sanctum-nya dan menciptakan medan Fiery Sanctum yang baru di posisi Dehya setelah durasi Blazing Lioness berakhir. Medan Fiery Sanctum yang diciptakan kembali ini akan mewarisi durasi medan Fiery Sanctum awal yang ditarik olehnya.",
+      "2": "Saat melancarkan skill ini, jika ada medan Fiery Sanctum yang diciptakan dari Elemental Skill \"Molten Inferno\" milik Dehya sendiri di medan pertempuran, maka Dehya akan menarik medan Fiery Sanctum-nya dan menciptakan medan Fiery Sanctum yang baru di posisi Dehya setelah durasi Blazing Lioness berakhir. Medan Fiery Sanctum yang diciptakan kembali ini akan mewarisi durasi medan Fiery Sanctum awal yang ditarik olehnya.",
       "3": "Dalam status ini, Dehya tidak bisa melancarkan Elemental Skill, melakukan Normal Attack, Charged Attack, atau Plunging Attack. Normal Attack \"Sandstorm Assault\" dan Elemental Skill \"Molten Inferno\" Dehya akan berubah menjadi \"Roaring Barrage\".",
       "4": "<br/>",
       "5": "<strong>Roaring Barrage</strong>",
@@ -132,7 +132,7 @@
     "name": "The Sunlit Way",
     "description": {
       "0": "Saat pagi sampai sore hari (6:00{NON_BREAK_SPACE}-{NON_BREAK_SPACE}18:00), meningkatkan 10% Movement SPD anggota party sendiri.",
-      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama."
+      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },
   "constellation1": {

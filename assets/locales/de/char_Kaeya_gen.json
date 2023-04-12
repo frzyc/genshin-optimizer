@@ -1,7 +1,7 @@
 {
   "name": "Kaeya",
   "title": "Eiskalter Schwertkämpfer",
-  "description": "Ein exzellenter Schwertkämpfer und Denker des Ordo Favonius.",
+  "description": "Ein geschickter Schwertkämpfer und strategischer Denker des Ordo Favonius, weit über die Grenzen von Mondstadt hinaus bekannt.",
   "constellationName": "Pavo Ocellus",
   "auto": {
     "name": "Rituelle Schwertkunst",
@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Endlose Vorführung",
     "description": {
-      "0": "Verlängert die Dauer von <strong>Kreis aus Eis</strong> beim Besiegen von Gegnern während der Wirkungsdauer dieser Fähigkeit um 2,5 s und insgesamt um bis zu 15 s."
+      "0": "Verlängert die Dauer von <strong>Kreis aus Eis</strong> beim Besiegen von einem Gegner während der Wirkungsdauer dieser Fähigkeit um 2,5 s und insgesamt um bis zu 15 s."
     }
   },
   "constellation3": {

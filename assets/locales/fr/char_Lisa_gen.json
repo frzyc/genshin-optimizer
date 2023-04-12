@@ -109,7 +109,7 @@
   "passive2": {
     "name": "Champ électrostatique",
     "description": {
-      "0": "<strong>Rose de foudre</strong> réduit la DÉF des ennemis qu'elle touche de 15 % pendant 10 s."
+      "0": "<strong>Rose de foudre</strong> diminue la DÉF des ennemis qu'elle touche de 15 % pendant 10 s."
     }
   },
   "passive3": {
@@ -159,7 +159,7 @@
     "name": "Sorcière de pulse",
     "description": {
       "0": "Lisa inflige 3 cumuls de l'effet Conductivité d'<strong>Arc fulminant</strong> aux ennemis proches lorsqu'elle est déployée au combat.",
-      "1": "cet effet peut être déclenché une fois toutes les 5 s."
+      "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   }
 }

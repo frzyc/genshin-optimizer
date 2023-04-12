@@ -1,7 +1,7 @@
 {
   "name": "Mensageiro",
   "description": "Um arco básico de madeira. Dizem que ele foi usado para comunicações de longa distância.",
-  "passiveName": "Messagem da Flecha Voadora",
+  "passiveName": "Mensagem da Flecha Voadora",
   "passiveDescription": {
     "0": "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de <cryo>100%</cryo> de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
     "1": "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de <cryo>125%</cryo> de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
