@@ -21,6 +21,7 @@ import type { CharacterContextObj } from '../../Context/CharacterContext'
 import { CharacterContext } from '../../Context/CharacterContext'
 import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { ascensionMaxLevel } from '../../Data/LevelData'
 import { DatabaseContext } from '../../Database/Database'
@@ -32,9 +33,12 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { ICachedCharacter } from '../../Types/character'
+import { iconAsset } from '../../Util/AssetUtil'
+import type { RollColorKey } from '../../Types/consts'
 import { range } from '../../Util/Util'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
 import CardLight from '../Card/CardLight'
+import ColorText from '../ColoredText'
 import ConditionalWrapper from '../ConditionalWrapper'
 import { NodeFieldDisplay } from '../FieldDisplay'
 import SqBadge from '../SqBadge'
@@ -282,6 +286,7 @@ function Header({
   onClick?: (characterKey: CharacterKey) => void
 }) {
   const { gender } = useDBMeta()
+  const { silly } = useContext(SillyContext)
   const characterSheet = getCharSheet(characterKey, gender)
 
   const actionWrapperFunc = useCallback(
@@ -311,7 +316,7 @@ function Header({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.7,
+            opacity: 0.5,
             backgroundImage: `url(${characterAsset(
               characterKey,
               'banner',
@@ -325,27 +330,21 @@ function Header({
       >
         <Box
           flexShrink={1}
-          sx={{ maxWidth: { xs: '40%', lg: '40%' } }}
+          component="img"
+          src={iconAsset(characterKey, gender, silly)}
+          sx={{ maxWidth: '40%' }}
           alignSelf="flex-end"
           display="flex"
           flexDirection="column"
           zIndex={1}
-        >
-          <Box
-            component="img"
-            src={characterAsset(characterKey, 'icon', gender)}
-            width="100%"
-            height="auto"
-            maxWidth={256}
-            sx={{ mt: 'auto' }}
-          />
-        </Box>
+        />
         <Box
           flexGrow={1}
           sx={{ py: 1, pr: 1 }}
           display="flex"
           flexDirection="column"
           zIndex={1}
+          justifyContent="space-between"
         >
           {children}
         </Box>
@@ -379,43 +378,51 @@ function HeaderContent() {
         color={characterEle}
         sx={{ opacity: 0.85 }}
       />
-      <Grid container spacing={1} flexWrap="nowrap">
-        <Grid item sx={{ textShadow: '0 0 5px gray' }}>
+      <Box
+        display="flex"
+        gap={1}
+        sx={{ textShadow: '0 0 5px gray' }}
+        alignItems="center"
+      >
+        <Box>
           <Typography component="span" variant="h6" whiteSpace="nowrap">
             Lv. {characterLevel}
           </Typography>
           <Typography component="span" variant="h6" color="text.secondary">
             /{ascensionMaxLevel[ascension]}
           </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant="h6">
-            <SqBadge>C{constellation}</SqBadge>
-          </Typography>
-        </Grid>
-      </Grid>
-      <Grid container spacing={1} flexWrap="nowrap">
-        <Grid item>
-          <Chip
-            color={autoBoost ? 'info' : 'secondary'}
-            label={<strong>{tAuto}</strong>}
-          />
-        </Grid>
-        <Grid item>
-          <Chip
-            color={skillBoost ? 'info' : 'secondary'}
-            label={<strong>{tSkill}</strong>}
-          />
-        </Grid>
-        <Grid item>
-          <Chip
-            color={burstBoost ? 'info' : 'secondary'}
-            label={<strong>{tBurst}</strong>}
-          />
-        </Grid>
-      </Grid>
-      <Typography mt={1}>
-        <StarsDisplay stars={characterSheet.rarity} colored />
+        </Box>
+        <Typography component="span" whiteSpace="nowrap" sx={{ opacity: 0.85 }}>
+          <SqBadge
+            color={
+              `roll${constellation < 3 ? 3 : constellation}` as RollColorKey
+            }
+          >
+            <ColorText color="white">
+              <strong>C{constellation}</strong>
+            </ColorText>
+          </SqBadge>
+        </Typography>
+      </Box>
+      <Box display="flex" gap={1} sx={{ opacity: 0.85 }}>
+        <Chip
+          size="small"
+          color={autoBoost ? 'info' : 'secondary'}
+          label={<strong>{tAuto}</strong>}
+        />
+        <Chip
+          size="small"
+          color={skillBoost ? 'info' : 'secondary'}
+          label={<strong>{tSkill}</strong>}
+        />
+        <Chip
+          size="small"
+          color={burstBoost ? 'info' : 'secondary'}
+          label={<strong>{tBurst}</strong>}
+        />
+      </Box>
+      <Typography variant="h6" lineHeight={1}>
+        <StarsDisplay stars={characterSheet.rarity} colored inline />
       </Typography>
     </>
   )

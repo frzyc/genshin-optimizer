@@ -47,7 +47,12 @@ export const allElements = [
  * @deprecated
  */
 export const allElementsWithPhy = ['physical', ...allElements] as const
-export const allInfusionAuraElements = ['pyro', 'cryo', 'hydro'] as const
+export const allInfusionAuraElements = [
+  'pyro',
+  'cryo',
+  'hydro',
+  'electro',
+] as const
 /**
  * @deprecated
  */

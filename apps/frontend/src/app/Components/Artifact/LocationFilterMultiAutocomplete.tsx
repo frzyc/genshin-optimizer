@@ -1,16 +1,16 @@
-import { characterAsset } from '@genshin-optimizer/g-assets'
+import type { LocationCharacterKey } from '@genshin-optimizer/consts'
+import {
+  allLocationCharacterKeys,
+  allTravelerKeys,
+} from '@genshin-optimizer/consts'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { DatabaseContext } from '../../Database/Database'
 import useDBMeta from '../../ReactHooks/useDBMeta'
-import type { LocationCharacterKey } from '../../Types/consts'
-import {
-  charKeyToCharName,
-  allLocationCharacterKeys,
-  travelerKeys,
-} from '../../Types/consts'
+import { charKeyToCharName } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'
@@ -26,31 +26,32 @@ export default function LocationFilterMultiAutocomplete({
   totals: Record<LocationCharacterKey, string>
   disabled?: boolean
 }) {
-  const { t } = useTranslation(['ui', 'artifact', 'charNames_gen'])
+  const { t } = useTranslation([
+    'artifact',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
-  const toText = useCallback(
-    (key: LocationCharacterKey): string =>
+  const { silly } = useContext(SillyContext)
+  const namesCB = useCallback(
+    (key: LocationCharacterKey, silly: boolean): string =>
       t(
-        `charNames_gen:${charKeyToCharName(
+        `${
+          silly ? 'sillyWisher_charNames' : 'charNames_gen'
+        }:${charKeyToCharName(
           database.chars.LocationToCharacterKey(key),
           gender
         )}`
       ),
     [database, gender, t]
   )
+
   const toImg = useCallback(
     (key: LocationCharacterKey) => (
-      <CharIconSide
-        src={characterAsset(
-          database.chars.LocationToCharacterKey(key),
-          'iconSide',
-          gender
-        )}
-        size={3}
-      />
+      <CharIconSide characterKey={database.chars.LocationToCharacterKey(key)} />
     ),
-    [database, gender]
+    [database]
   )
 
   const toExLabel = useCallback(
@@ -65,7 +66,7 @@ export default function LocationFilterMultiAutocomplete({
   const isFavorite = useCallback(
     (key: LocationCharacterKey) =>
       key === 'Traveler'
-        ? travelerKeys.some((key) => database.charMeta.get(key).favorite)
+        ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
         ? database.charMeta.get(key).favorite
         : false,
@@ -79,24 +80,27 @@ export default function LocationFilterMultiAutocomplete({
     [database, gender]
   )
 
-  const values: GeneralAutocompleteOption<LocationCharacterKey>[] = useMemo(
+  const values = useMemo(
     () =>
       allLocationCharacterKeys
         .filter((lck) =>
           database.chars.get(database.chars.LocationToCharacterKey(lck))
         )
-        .map((v) => ({
-          key: v,
-          label: toText(v),
-          favorite: isFavorite(v),
-          variant: toVariant(v),
-        }))
+        .map(
+          (v): GeneralAutocompleteOption<LocationCharacterKey> => ({
+            key: v,
+            label: namesCB(v, silly),
+            favorite: isFavorite(v),
+            variant: toVariant(v),
+            alternateNames: [namesCB(v, false)],
+          })
+        )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [toText, isFavorite, toVariant, database]
+    [database.chars, isFavorite, toVariant, silly, namesCB]
   )
 
   return (

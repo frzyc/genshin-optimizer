@@ -218,7 +218,7 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
+  name: ct.name,
   rarity: data_gen.star,
   elementKey: 'geo',
   weaponTypeKey: data_gen.weaponTypeKey,

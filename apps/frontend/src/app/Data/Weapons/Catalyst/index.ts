@@ -20,6 +20,7 @@ import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
+import QuantumCatalyst from './QuantumCatalyst'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
 import SkywardAtlas from './SkywardAtlas'
@@ -51,6 +52,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   OtherworldlyStory,
   PocketGrimoire,
   PrototypeAmber,
+  QuantumCatalyst,
   RoyalGrimoire,
   SacrificialFragments,
   SkywardAtlas,

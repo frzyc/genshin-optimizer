@@ -1,5 +1,4 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
 import { Typography } from '@mui/material'
 import { getCharSheet } from '../../Data/Characters'
 import useDBMeta from '../../ReactHooks/useDBMeta'
@@ -19,11 +18,7 @@ export default function LocationIcon({
       placement="right-end"
       title={<Typography>{characterSheet.name}</Typography>}
     >
-      <CharIconSide
-        src={characterAsset(characterKey, 'iconSide', gender)}
-        size={3}
-        sideMargin
-      />
+      <CharIconSide characterKey={characterKey} sideMargin />
     </BootstrapTooltip>
   )
 }

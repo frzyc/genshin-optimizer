@@ -223,7 +223,11 @@ export class WeaponDataManager extends DataManager<
       }
       this.set(importId, importWeapon, !foundDupOrUpgrade)
     })
-    const idtoRemoveArr = Array.from(idsToRemove)
+
+    // Shouldn't remove Somnia's signature
+    const idtoRemoveArr = Array.from(idsToRemove).filter(
+      (id) => this.get(id)?.key !== 'QuantumCatalyst'
+    )
     if (result.keepNotInImport || result.ignoreDups)
       result.weapons.notInImport = idtoRemoveArr.length
     else idtoRemoveArr.forEach((k) => this.remove(k))

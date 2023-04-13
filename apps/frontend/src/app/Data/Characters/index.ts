@@ -54,6 +54,7 @@ import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Shenhe from './Shenhe'
 import ShikanoinHeizou from './ShikanoinHeizou'
+import Somnia from './Somnia'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
 import Wanderer from './Wanderer'
@@ -128,6 +129,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Sayu,
   Shenhe,
   ShikanoinHeizou,
+  Somnia,
   Sucrose,
   Tartaglia,
   Wanderer,

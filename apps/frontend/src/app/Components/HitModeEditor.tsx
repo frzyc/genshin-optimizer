@@ -8,6 +8,7 @@ import { DataContext } from '../Context/DataContext'
 import { infusionNode, uiInput as input } from '../Formula'
 import { iconInlineProps } from '../SVGIcons'
 import CryoIcon from '../SVGIcons/Element/CryoIcon'
+import ElectroIcon from '../SVGIcons/Element/ElectroIcon'
 import HydroIcon from '../SVGIcons/Element/HydroIcon'
 import PyroIcon from '../SVGIcons/Element/PyroIcon'
 import type { AdditiveReactionKey, AmpReactionKey } from '../Types/consts'
@@ -42,6 +43,12 @@ export const infusionVals = {
     <span>
       <HydroIcon {...iconInlineProps} /> <SqBadge>Candace Burst</SqBadge> Sacred
       Rite: Wagtail's Tide
+    </span>
+  ),
+  electro: (
+    <span>
+      <ElectroIcon {...iconInlineProps} /> <SqBadge>Somnia Burst</SqBadge>{' '}
+      Parallax Paws
     </span>
   ),
 }
