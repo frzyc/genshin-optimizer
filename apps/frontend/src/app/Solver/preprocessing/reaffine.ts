@@ -1,4 +1,12 @@
-import { constant, customRead, prod, sum, threshold } from '../../Formula/utils'
+import {
+  constant,
+  customRead,
+  max,
+  min,
+  prod,
+  sum,
+  threshold,
+} from '../../Formula/utils'
 import { forEachNodes, mapFormulas } from '../../Formula/internal'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { objectKeyMap } from '../../Util/Util'
@@ -11,7 +19,9 @@ function canDistribute({ operation, operands }: OptNode): boolean {
     operation === 'const' ||
     operation === 'read' ||
     operation === 'threshold' ||
-    (operation === 'add' && operands.every((n) => canDistribute(n)))
+    ((operation === 'add' || operation === 'min' || operation === 'max') &&
+      operands.every((n) => canDistribute(n))) ||
+    (operation === 'mul' && operands.some((n) => canDistribute(n)))
   )
 }
 
@@ -56,6 +66,10 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
         return constant(n.value * v)
       case 'add':
         return sum(...n.operands.map((ni) => distributeConst(ni, v)))
+      case 'max':
+        return max(...n.operands.map((ni) => distributeConst(ni, v)))
+      case 'min':
+        return min(...n.operands.map((ni) => distributeConst(ni, v)))
       case 'read': {
         return addRegister({ base: 0, coeff: v, sumKeys: [n.path[1]] })
       }
