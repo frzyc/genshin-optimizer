@@ -84,14 +84,18 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       minimums.push(-Infinity)
     }
 
+    nodes = optimize(nodes, {}, (_) => false)
+    console.log(nodes)
     nodes = pruneExclusion(nodes, exclusion)
-    ;({ nodes, arts } = slowReaffine(nodes, arts))
+    // ;({ nodes, arts } = slowReaffine(nodes, arts))
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
       reaffine: true,
       pruneArtRange: true,
       pruneNodeRange: true,
       pruneOrder: true,
     }))
+
+    console.log(nodes)
     ;({ nodes, arts } = makeLinearIndependent(nodes, arts))
     zeroLowerBounds(arts)
     nodes = optimize(nodes, {}, (_) => false)

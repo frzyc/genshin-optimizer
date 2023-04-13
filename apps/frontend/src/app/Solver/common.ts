@@ -118,7 +118,7 @@ function reaffine(
   const dynKeys = new Set<string>()
 
   forEachNodes(
-    nodes,
+    [min(...nodes)] as OptNode[],
     (_) => {},
     (f) => {
       const { operation } = f
