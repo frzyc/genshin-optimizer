@@ -64,7 +64,9 @@ export function makeLinearIndependent(nodes: OptNode[], arts: ArtifactsBySlot) {
       .filter(({ w }) => Math.abs(w) > 1e-8)
 
     const replaceWith = foldSum(
-      ...depOn.map(({ w, key }) => foldProd(w, customRead(['dyn', key])))
+      ...depOn.map(({ w, key }) =>
+        foldProd(w, { ...customRead(['dyn', key]), accu: 'add' })
+      )
     )
     nodes = mapFormulas(
       nodes,

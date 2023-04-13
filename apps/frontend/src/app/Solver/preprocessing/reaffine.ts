@@ -47,7 +47,7 @@ export function slowReaffine(nodes: OptNode[], arts: ArtifactsBySlot) {
     while (allKeys.has(name) || name in addedRegisters)
       name = `~r${nextRegNum++}`
     addedRegisters[name] = entry
-    return customRead(['dyn', name])
+    return { ...customRead(['dyn', name]), accu: 'add' }
   }
 
   function distributeConst(n: OptNode, v: number): OptNode {

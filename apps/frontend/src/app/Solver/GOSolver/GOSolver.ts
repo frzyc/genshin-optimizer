@@ -10,6 +10,11 @@ import type {
 import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
 import { WorkerCoordinator } from '../coordinator'
+import {
+  makeLinearIndependent,
+  zeroLowerBounds,
+} from '../preprocessing/linearIndependence'
+import { slowReaffine } from '../preprocessing/reaffine'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 16_000_000
@@ -80,12 +85,15 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
 
     nodes = pruneExclusion(nodes, exclusion)
+    ;({ nodes, arts } = slowReaffine(nodes, arts))
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
       reaffine: true,
       pruneArtRange: true,
       pruneNodeRange: true,
       pruneOrder: true,
     }))
+    ;({ nodes, arts } = makeLinearIndependent(nodes, arts))
+    zeroLowerBounds(arts)
     nodes = optimize(nodes, {}, (_) => false)
 
     if (plotBase) plotBase = nodes.pop()
