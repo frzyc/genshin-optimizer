@@ -58,7 +58,7 @@ export function optimize(
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
   opts = constantFold(opts, {})
-  return mergeDuplicateNodes(opts)
+  return deduplicate(opts)
 }
 export function precompute(
   formulas: OptNode[],
@@ -196,10 +196,10 @@ function arrayCompare<T>(
  *      frac/thresh/res:   compare operands sequentially
  *  ```
  *
- * Sorting is efficient (not recursive) because sorting by ascending height lets us
- * determine the ordering of all the children and find a bijection with the natual numbers.
+ * Sorting is efficient because sorting by ascending height first lets us memoize the
+ * ordering of all the children and find a bijection with the natual numbers.
  */
-function mergeDuplicateNodes(formulas: OptNode[]): OptNode[] {
+function deduplicate(formulas: OptNode[]): OptNode[] {
   const nodeHeightMap = new Map<OptNode, number>()
   const layers = [[]] as OptNode[][]
   forEachNodes(
@@ -295,10 +295,7 @@ function mergeDuplicateNodes(formulas: OptNode[]): OptNode[] {
 
   return mapFormulas(
     formulas,
-    (f) => {
-      const out = sortedNodes[nodeSortMap.get(f)!]
-      return out
-    },
+    (f) => sortedNodes[nodeSortMap.get(f)!],
     (_) => _
   )
 }
@@ -378,7 +375,7 @@ export function constantFold(
 
           if (numericValue !== f([]))
             // Skip vacuous values
-            formulaOperands.unshift(constant(numericValue))
+            formulaOperands.push(constant(numericValue))
           if (formulaOperands.length <= 1)
             result = formulaOperands[0] ?? constant(f([]))
           else result = { operation, operands: formulaOperands }
@@ -524,5 +521,5 @@ export function constantFold(
 export const testing = {
   constantFold,
   flatten,
-  mergeDuplicateNodes,
+  deduplicate,
 }
