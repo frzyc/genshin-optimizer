@@ -57,8 +57,8 @@ export function optimize(
 ): OptNode[] {
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
-  opts = toSortedForm(opts)
-  return deduplicate(opts)
+  opts = constantFold(opts, {})
+  return toSortedForm(opts)
 }
 export function precompute(
   formulas: OptNode[],
@@ -503,7 +503,7 @@ export function constantFold(
 
           if (numericValue !== f([]))
             // Skip vacuous values
-            formulaOperands.push(constant(numericValue))
+            formulaOperands.unshift(constant(numericValue))
           if (formulaOperands.length <= 1)
             result = formulaOperands[0] ?? constant(f([]))
           else result = { operation, operands: formulaOperands }
@@ -650,5 +650,5 @@ export const testing = {
   constantFold,
   flatten,
   deduplicate,
-  deduplicateNodes: toSortedForm,
+  toSortedForm,
 }

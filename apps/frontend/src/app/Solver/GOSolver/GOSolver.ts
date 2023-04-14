@@ -80,6 +80,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
 
     nodes = pruneExclusion(nodes, exclusion)
+    nodes = optimize(nodes, {}, (_) => false)
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
       reaffine: true,
       pruneArtRange: true,

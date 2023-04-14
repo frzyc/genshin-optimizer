@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { forEachNodes } from './internal'
 import type { OptNode } from './optimization'
-import { precompute, testing } from './optimization'
+import { optimize, precompute, testing } from './optimization'
 import type { AnyNode, ConstantNode, Data, Info } from './type'
 import {
   constant,
@@ -17,9 +17,9 @@ import {
 } from './utils'
 
 const { constantFold } = testing
-const deduplicate = testing.deduplicate as any as (nodes: AnyNode[]) => AnyNode
-const deduplicateNodes = testing.deduplicateNodes
-const flatten = testing.flatten as any as (nodes: AnyNode[]) => AnyNode
+const deduplicate = testing.deduplicate
+const toSortedForm = testing.toSortedForm
+const flatten = testing.flatten
 
 const inputs = [...Array(6).keys()].map((i) => dynRead(`${i}`))
 
@@ -64,6 +64,22 @@ describe('optimization', () => {
       sum(r3, r4),
     ])
   })
+  test('complex formula invariant', () => {
+    // Raiden N3C1DD or something idk
+    // prettier-ignore
+    const f: OptNode = {"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":1.8612790000000001},{"operation":"mul","operands":[{"operation":"add","operands":[{"operation":"const","operands":[],"type":"number","value":0.27},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","NoblesseOblige"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","EmblemOfSeveredFate"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":4},{"operation":"min","operands":[{"operation":"const","operands":[],"type":"number","value":0.75},{"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":0.25},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","0"],"accu":"add","type":"number"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","EmblemOfSeveredFate"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","TheExile"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"}]}]}]},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","1"],"accu":"add","type":"number"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","ThunderingFury"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.15},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":0.4},{"operation":"add","operands":[{"operation":"const","operands":[],"type":"number","value":-1},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","0"],"accu":"add","type":"number"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","EmblemOfSeveredFate"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","TheExile"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"}]}]}]}]}]},{"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":0.8214285714285714},{"operation":"add","operands":[{"operation":"const","operands":[],"type":"number","value":1},{"operation":"mul","operands":[{"operation":"read","operands":[],"path":["dyn","2"],"accu":"add","type":"number"},{"operation":"read","operands":[],"path":["dyn","3"],"accu":"add","type":"number"}]}]},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","5"],"accu":"add","type":"number"},{"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":945.3161116309998},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","4"],"accu":"add","type":"number"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","GladiatorsFinale"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.18},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","ShimenawasReminiscence"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.18},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"min","operands":[{"operation":"const","operands":[],"type":"number","value":0.8},{"operation":"mul","operands":[{"operation":"const","operands":[],"type":"number","value":0.28},{"operation":"add","operands":[{"operation":"const","operands":[],"type":"number","value":-1},{"operation":"add","operands":[{"operation":"read","operands":[],"path":["dyn","0"],"accu":"add","type":"number"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","EmblemOfSeveredFate"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"},{"operation":"threshold","operands":[{"operation":"read","operands":[],"path":["dyn","TheExile"],"accu":"add","type":"number"},{"operation":"const","operands":[],"type":"number","value":2},{"operation":"const","operands":[],"type":"number","value":0.2},{"operation":"const","operands":[],"type":"number","value":0}],"emptyOn":"l"}]}]}]}]}]}]}]}]}]}]}
+
+    const cf = (ns: OptNode[]) => constantFold(ns, {})
+    const seq1 = [cf, flatten, cf, toSortedForm]
+    const seq2 = [toSortedForm, cf, flatten, toSortedForm, cf]
+
+    let nodes = optimize([f], {})
+    for (let j = 0; j < seq2.length; j++) {
+      const nxt = seq2[j](nodes)
+      expect(nxt).toEqual(nodes)
+      nodes = nxt
+    }
+  })
   test('normal form & deduplicate identical terms', () => {
     const r0 = inputs[0],
       r1 = inputs[1],
@@ -76,7 +92,7 @@ describe('optimization', () => {
     const f1 = prod(sum(prod(r1, r0), 1), r2, r3)
     const f2 = prod(v3, v2, sum(prod(v1, v0), 1))
 
-    const dedup = deduplicateNodes([sum(f1, f2)])[0]
+    const dedup = toSortedForm([sum(f1, f2)])[0]
     expect(dedup.operands[0] === dedup.operands[1])
     expect(dedup).toEqual(
       sum(
