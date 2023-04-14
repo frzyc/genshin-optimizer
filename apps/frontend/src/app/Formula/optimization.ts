@@ -58,7 +58,7 @@ export function optimize(
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
   opts = constantFold(opts, {})
-  return toSortedForm(opts)
+  return mergeDuplicateNodes(opts)
 }
 export function precompute(
   formulas: OptNode[],
@@ -199,7 +199,7 @@ function arrayCompare<T>(
  * Sorting is efficient (not recursive) because sorting by ascending height lets us
  * determine the ordering of all the children and find a bijection with the natual numbers.
  */
-function toSortedForm(formulas: OptNode[]): OptNode[] {
+function mergeDuplicateNodes(formulas: OptNode[]): OptNode[] {
   const nodeHeightMap = new Map<OptNode, number>()
   const layers = [[]] as OptNode[][]
   forEachNodes(
@@ -524,5 +524,5 @@ export function constantFold(
 export const testing = {
   constantFold,
   flatten,
-  toSortedForm,
+  mergeDuplicateNodes,
 }
