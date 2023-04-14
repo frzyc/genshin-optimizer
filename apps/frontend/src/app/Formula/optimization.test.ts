@@ -17,7 +17,6 @@ import {
 } from './utils'
 
 const { constantFold } = testing
-const deduplicate = testing.deduplicate
 const toSortedForm = testing.toSortedForm
 const flatten = testing.flatten
 
@@ -47,22 +46,6 @@ describe('optimization', () => {
       const f = sum(r1, sum(r2, sum(r3, sum(r4, sum(r5, r6)))))
       expect(flatten([f])).toEqual([sum(r1, r2, r3, r4, r5, r6)])
     })
-  })
-  test('deduplicate common terms', () => {
-    const r1 = inputs[0],
-      r2 = inputs[1],
-      r3 = inputs[2]
-    const r4 = inputs[3],
-      r5 = inputs[4],
-      r6 = inputs[5]
-
-    const f1 = sum(r1, r2, r3, r4, r5, r6),
-      f2 = sum(r3, r4)
-    // TODO: Factoring process may reorder the term ( r3 + r4 ). May need to update the checking
-    expect(deduplicate([f1, f2])).toEqual([
-      sum(r1, r2, r5, r6, sum(r3, r4)),
-      sum(r3, r4),
-    ])
   })
   test('complex formula invariant', () => {
     // Raiden N3C1DD or something idk
