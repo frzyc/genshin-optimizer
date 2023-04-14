@@ -282,6 +282,151 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
   return formulas
 }
 
+const opOrder: StrictDict<OptNode['operation'], number> = {
+  const: 0,
+  read: 1,
+  add: 2,
+  mul: 3,
+  min: 4,
+  max: 5,
+  sum_frac: 6,
+  threshold: 7,
+  res: 8,
+}
+function arrayCompare<T>(
+  a: readonly T[],
+  b: readonly T[],
+  cmp: (a: T, b: T) => number
+): number {
+  if (a.length !== b.length) return a.length - b.length
+  for (let i = 0; i < a.length; i++) {
+    const cc = cmp(a[i], b[i])
+    if (cc !== 0) return cc
+  }
+  return 0
+}
+/**
+ * Converts `formulas` to a unique normal form via sorting. Commutative operations are
+ * also sorted to enforce unique operand ordering. As a consequence, duplicated nodes
+ * become easy to find, so we combine identical nodes into the same reference. The
+ * sort follows the below fields sequentially:
+ *  ```
+ *    node height  - height of subtree; distance to furthest leaf.
+ *    node type    - Ordering is [const, read, add, mul, min, max, sum_frac, threshold, res]
+ *    When types are same:
+ *      const:             n.value
+ *      read:              alphabetical on path
+ *      add/mul/min/max:   sort the operands, then compare sequentially
+ *      frac/thresh/res:   compare operands sequentially
+ *  ```
+ *
+ * Sorting is efficient (not recursive) because sorting by ascending height lets us
+ * determine the ordering of all the children and find a bijection with the natual numbers.
+ */
+function toSortedForm(formulas: OptNode[]): OptNode[] {
+  const nodeHeightMap = new Map<OptNode, number>()
+  const layers = [[]] as OptNode[][]
+  forEachNodes(
+    formulas,
+    (_) => {},
+    (n) => {
+      switch (n.operation) {
+        case 'const':
+        case 'read':
+          layers[0].push(n)
+          nodeHeightMap.set(n, 0)
+          break
+        default: {
+          const h =
+            Math.max(...n.operands.map((op) => nodeHeightMap.get(op)!)) + 1
+          if (layers.length <= h) layers.push([])
+          layers[h].push(n)
+          nodeHeightMap.set(n, h)
+          break
+        }
+      }
+    }
+  )
+
+  function cmpNode(n1: OptNode, n2: OptNode): number {
+    const h1 = nodeHeightMap.get(n1)!,
+      h2 = nodeHeightMap.get(n2)!
+    if (h1 !== h2) return h1 - h2
+    const op1 = n1.operation,
+      op2 = n2.operation
+    if (op1 !== op2) return opOrder[op1] - opOrder[op2]
+
+    switch (op1) {
+      case 'const':
+        if (op1 !== op2) throw Error('ily jslint')
+        return n1.value - n2.value
+      case 'read':
+        if (op1 !== op2) throw Error('ily jslint')
+        return arrayCompare(n1.path, n2.path, (s1, s2) => s1.localeCompare(s2))
+      case 'res':
+      case 'threshold':
+      case 'sum_frac': {
+        if (op1 !== op2) throw Error('ily jslint')
+        const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
+          s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
+        return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
+      }
+      case 'add':
+      case 'mul':
+      case 'min':
+      case 'max': {
+        if (op1 !== op2) throw Error('ily jslint')
+        const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
+          s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
+        s1.sort((a, b) => a - b)
+        s2.sort((a, b) => a - b)
+        return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
+      }
+    }
+  }
+
+  let ix = 0
+  const nodeSortMap = new Map<OptNode, number>()
+  const sortedNodes = [] as OptNode[]
+  layers.forEach((layer) => {
+    layer.sort(cmpNode)
+    sortedNodes.push(layer[0])
+    nodeSortMap.set(layer[0], ix++)
+    for (let i = 1; i < layer.length; i++) {
+      if (cmpNode(layer[i - 1], layer[i]) === 0)
+        nodeSortMap.set(layer[i], nodeSortMap.get(layer[i - 1])!)
+      else {
+        sortedNodes.push(layer[i])
+        nodeSortMap.set(layer[i], ix++)
+      }
+    }
+  })
+
+  sortedNodes.forEach((n, i) => {
+    switch (n.operation) {
+      case 'add':
+      case 'mul':
+      case 'min':
+      case 'max':
+        sortedNodes[i] = {
+          ...n,
+          operands: [...n.operands].sort(
+            (a, b) => nodeSortMap.get(a)! - nodeSortMap.get(b)!
+          ),
+        }
+    }
+  })
+
+  return mapFormulas(
+    formulas,
+    (f) => {
+      const out = sortedNodes[nodeSortMap.get(f)!]
+      return out
+    },
+    (_) => _
+  )
+}
+
 /**
  * Replace nodes with known values with appropriate constants,
  * avoiding removal of any nodes that pass `isFixed` predicate
@@ -504,4 +649,5 @@ export const testing = {
   constantFold,
   flatten,
   deduplicate,
+  deduplicateNodes: toSortedForm,
 }

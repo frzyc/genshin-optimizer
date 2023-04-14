@@ -7,23 +7,24 @@ import {
   constant,
   customRead,
   data,
+  dynRead,
   infoMut,
   max,
   min,
   prod,
-  read,
   resetData,
-  setReadNodeKeys,
   sum,
 } from './utils'
 
 const { constantFold } = testing
 const deduplicate = testing.deduplicate as any as (nodes: AnyNode[]) => AnyNode
+const deduplicateNodes = testing.deduplicateNodes
 const flatten = testing.flatten as any as (nodes: AnyNode[]) => AnyNode
 
-const inputs = setReadNodeKeys(
-  Object.fromEntries([...Array(6).keys()].map((i) => [i, read('add')]))
-)
+const inputs = [...Array(6).keys()].map((i) => dynRead(`${i}`))
+// setReadNodeKeys(
+//   Object.fromEntries([...Array(6).keys()].map((i) => [i, dynRead(`${i}`)]))
+// )
 
 describe('optimization', () => {
   describe('flatten', () => {
@@ -65,6 +66,27 @@ describe('optimization', () => {
       sum(r1, r2, r5, r6, sum(r3, r4)),
       sum(r3, r4),
     ])
+  })
+  test('normal form & deduplicate identical terms', () => {
+    const r0 = inputs[0],
+      r1 = inputs[1],
+      r2 = inputs[2],
+      r3 = inputs[3]
+    const v0 = dynRead('0'),
+      v1 = dynRead('1'),
+      v2 = dynRead('2'),
+      v3 = dynRead('3')
+    const f1 = prod(sum(prod(r1, r0), 1), r2, r3)
+    const f2 = prod(v3, v2, sum(prod(v1, v0), 1))
+
+    const dedup = deduplicateNodes([sum(f1, f2)])[0]
+    expect(dedup.operands[0] === dedup.operands[1])
+    expect(dedup).toEqual(
+      sum(
+        prod(r2, r3, sum(1, prod(r0, r1))),
+        prod(r2, r3, sum(1, prod(r0, r1)))
+      )
+    )
   })
   test('constant folding', () => {
     const r1 = inputs[0],
@@ -133,7 +155,7 @@ describe('optimization', () => {
       const compute = precompute(
         [output1] as OptNode[],
         {},
-        (x) => x.path[0],
+        (x) => x.path[1],
         1
       )
       expect([
@@ -148,7 +170,7 @@ describe('optimization', () => {
         output2 = prod(r2, r3),
         output3 = sum(output1, output2)
 
-      const compute = precompute([r1], {}, (x) => x.path[0], 1)
+      const compute = precompute([r1], {}, (x) => x.path[1], 1)
       expect([...compute([{ id: '', values: { 0: 32 } }]).slice(0, 1)]).toEqual(
         [32]
       )
@@ -161,7 +183,7 @@ describe('optimization', () => {
         output2 = prod(r2, r3),
         output3 = sum(output1, output2)
 
-      const compute = precompute([constant(35)], {}, (x) => x.path[0], 0)
+      const compute = precompute([constant(35)], {}, (x) => x.path[1], 0)
       expect([...compute([]).slice(0, 1)]).toEqual([35])
     })
     test('Output is duplicated', () => {
@@ -175,7 +197,7 @@ describe('optimization', () => {
       const compute = precompute(
         [output3, output3] as OptNode[],
         {},
-        (x) => x.path[0],
+        (x) => x.path[1],
         1
       )
       expect([
