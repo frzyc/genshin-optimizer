@@ -57,6 +57,7 @@ export function optimize(
 ): OptNode[] {
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
+  opts = toSortedForm(opts)
   return deduplicate(opts)
 }
 export function precompute(

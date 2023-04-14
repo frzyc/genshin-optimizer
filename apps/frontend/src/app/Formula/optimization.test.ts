@@ -22,9 +22,6 @@ const deduplicateNodes = testing.deduplicateNodes
 const flatten = testing.flatten as any as (nodes: AnyNode[]) => AnyNode
 
 const inputs = [...Array(6).keys()].map((i) => dynRead(`${i}`))
-// setReadNodeKeys(
-//   Object.fromEntries([...Array(6).keys()].map((i) => [i, dynRead(`${i}`)]))
-// )
 
 describe('optimization', () => {
   describe('flatten', () => {
