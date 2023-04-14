@@ -3,14 +3,7 @@ import { forEachNodes, mapFormulas } from '../Formula/internal'
 import type { OptNode } from '../Formula/optimization'
 import { allOperations, constantFold } from '../Formula/optimization'
 import type { ConstantNode } from '../Formula/type'
-import {
-  constant,
-  dynRead,
-  max,
-  min,
-  sum,
-  threshold,
-} from '../Formula/utils'
+import { constant, dynRead, max, min, sum, threshold } from '../Formula/utils'
 import type { ArtifactSetKey, SlotKey } from '../Types/consts'
 import { allSlotKeys } from '../Types/consts'
 import { assertUnreachable, objectKeyMap, objectMap, range } from '../Util/Util'
