@@ -107,12 +107,13 @@ function reaffine(
   const affineNodes = new Set<OptNode>(),
     topLevelAffine = new Set<OptNode>()
 
-  function visit(node: OptNode, isAffine: boolean) {
+  function visit(node: OptNode, isAffine: boolean): OptNode {
     if (isAffine) affineNodes.add(node)
     else
       node.operands.forEach(
         (op) => affineNodes.has(op) && topLevelAffine.add(op)
       )
+    return node
   }
 
   const dynKeys = new Set<string>()
@@ -125,44 +126,31 @@ function reaffine(
       switch (operation) {
         case 'read':
           dynKeys.add(f.path[1])
-          visit(f, true)
-          return f
+          return visit(f, true)
         case 'add': {
-          const aff_ = f.operands.filter((op) => affineNodes.has(op))
-          const nonAff_ = f.operands.filter((op) => !affineNodes.has(op))
-          if (nonAff_.length === 0) {
-            visit(f, true)
-            return f
-          }
-          if (aff_.length <= 1) {
-            visit(f, false)
-            return f
-          }
-          const aff = sum(...aff_)
-          visit(aff, true)
-          const f2 = sum(aff, ...nonAff_)
-          visit(f2, false)
-          return f2
+          const affineOps = f.operands.filter((op) => affineNodes.has(op))
+          const nonAffineOps = f.operands.filter((op) => !affineNodes.has(op))
+          if (nonAffineOps.length === 0) return visit(f, true)
+          if (affineOps.length <= 1) return visit(f, false)
+          const affine = visit(sum(...affineOps), true)
+          return visit(sum(affine, ...nonAffineOps), false)
         }
         case 'mul': {
           const nonConst = f.operands.filter((op) => op.operation !== 'const')
-          visit(
+          return visit(
             f,
             nonConst.length === 0 ||
               (nonConst.length === 1 && affineNodes.has(nonConst[0]))
           )
-          return f
         }
         case 'const':
-          visit(f, true)
-          return f
+          return visit(f, true)
         case 'res':
         case 'threshold':
         case 'sum_frac':
         case 'max':
         case 'min':
-          visit(f, false)
-          return f
+          return visit(f, false)
         default:
           assertUnreachable(operation)
       }
