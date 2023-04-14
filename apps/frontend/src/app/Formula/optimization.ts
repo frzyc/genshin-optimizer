@@ -158,17 +158,6 @@ function flatten(formulas: OptNode[]): OptNode[] {
   )
 }
 
-const opOrder: StrictDict<OptNode['operation'], number> = {
-  const: 0,
-  read: 1,
-  add: 2,
-  mul: 3,
-  min: 4,
-  max: 5,
-  sum_frac: 6,
-  threshold: 7,
-  res: 8,
-}
 function arrayCompare<T>(
   a: readonly T[],
   b: readonly T[],
@@ -230,7 +219,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
     if (h1 !== h2) return h1 - h2
     const op1 = n1.operation,
       op2 = n2.operation
-    if (op1 !== op2) return opOrder[op1] - opOrder[op2]
+    if (op1 !== op2) return op1.localeCompare(op2)
 
     switch (op1) {
       case 'const':
