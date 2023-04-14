@@ -5,7 +5,7 @@ import { allOperations, constantFold } from '../Formula/optimization'
 import type { ConstantNode } from '../Formula/type'
 import {
   constant,
-  customRead,
+  dynRead,
   max,
   min,
   sum,
@@ -199,7 +199,7 @@ function reaffine(
       node,
       !forceRename && node.operation === 'read' && node.path[0] === 'dyn'
         ? node
-        : { ...customRead(['dyn', `${nextDynKey()}`]), accu: 'add' as const },
+        : dynRead(nextDynKey()),
     ])
   )
   nodes = mapFormulas(
