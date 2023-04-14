@@ -3,7 +3,14 @@ import { forEachNodes, mapFormulas } from '../Formula/internal'
 import type { OptNode } from '../Formula/optimization'
 import { allOperations, constantFold } from '../Formula/optimization'
 import type { ConstantNode } from '../Formula/type'
-import { constant, customRead, max, min, threshold } from '../Formula/utils'
+import {
+  constant,
+  customRead,
+  max,
+  min,
+  sum,
+  threshold,
+} from '../Formula/utils'
 import type { ArtifactSetKey, SlotKey } from '../Types/consts'
 import { allSlotKeys } from '../Types/consts'
 import { assertUnreachable, objectKeyMap, objectMap, range } from '../Util/Util'
@@ -117,22 +124,33 @@ function reaffine(
 
   const dynKeys = new Set<string>()
 
-  forEachNodes(
+  nodes = mapFormulas(
     nodes,
-    (_) => {},
+    (_) => _,
     (f) => {
       const { operation } = f
       switch (operation) {
         case 'read':
           dynKeys.add(f.path[1])
           visit(f, true)
-          break
-        case 'add':
-          visit(
-            f,
-            f.operands.every((op) => affineNodes.has(op))
-          )
-          break
+          return f
+        case 'add': {
+          const aff_ = f.operands.filter((op) => affineNodes.has(op))
+          const nonAff_ = f.operands.filter((op) => !affineNodes.has(op))
+          if (nonAff_.length === 0) {
+            visit(f, true)
+            return f
+          }
+          if (aff_.length <= 1) {
+            visit(f, false)
+            return f
+          }
+          const aff = sum(...aff_)
+          visit(aff, true)
+          const f2 = sum(aff, ...nonAff_)
+          visit(f2, false)
+          return f2
+        }
         case 'mul': {
           const nonConst = f.operands.filter((op) => op.operation !== 'const')
           visit(
@@ -140,24 +158,27 @@ function reaffine(
             nonConst.length === 0 ||
               (nonConst.length === 1 && affineNodes.has(nonConst[0]))
           )
-          break
+          return f
         }
         case 'const':
           visit(f, true)
-          break
+          return f
         case 'res':
         case 'threshold':
         case 'sum_frac':
         case 'max':
         case 'min':
           visit(f, false)
-          break
+          return f
         default:
           assertUnreachable(operation)
       }
     }
   )
 
+  nodes
+    .filter((node) => affineNodes.has(node))
+    .forEach((node) => topLevelAffine.add(node))
   if (
     [...topLevelAffine].every(
       ({ operation }) => operation === 'read' || operation === 'const'
@@ -172,7 +193,6 @@ function reaffine(
     return `${current}`
   }
 
-  nodes.forEach((node) => affineNodes.has(node) && topLevelAffine.add(node))
   const affine = [...topLevelAffine].filter((f) => f.operation !== 'const')
   const affineMap = new Map(
     affine.map((node) => [
