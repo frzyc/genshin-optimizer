@@ -91,6 +91,7 @@ const trans = {
           },
           NaN
         ),
+        input.enemy.transDef,
         input.enemy[`${resist}_resMulti_`]
       ),
       KeyMap.info(`${reaction}_hit`)
