@@ -129,8 +129,6 @@ const p1_pyro_dmg_ = greaterEq(
   )
 )
 
-const [condP2ChargedCritPath, condP2ChargedCrit] = cond(key, 'p2ChargedCrit')
-
 const [condC2EnemyHpPath, condC2EnemyHp] = cond(key, 'c2EnemyHp')
 const c2EnemyHp_critRate_ = greaterEq(
   input.constellation,
@@ -166,11 +164,7 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.asc,
       4,
-      equal(
-        condP2ChargedCrit,
-        'on',
-        customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged')
-      )
+      customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged')
     ),
   },
   constellation4: {
@@ -293,21 +287,14 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
-      ct.condTem('passive2', {
-        value: condP2ChargedCrit,
-        path: condP2ChargedCritPath,
-        name: ct.ch('passive2.chargedCrit'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: infoMut(dmgFormulas.passive2.dmg, {
-                  name: ct.ch('passive2.key'),
-                }),
-              },
-            ],
+      ct.headerTem('passive2', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive2.dmg, {
+              name: ct.ch('passive2.key'),
+            }),
           },
-        },
+        ],
       }),
       ct.headerTem('constellation1', {
         fields: [
