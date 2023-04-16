@@ -409,6 +409,20 @@ export function resetData(
   return { operation: 'data', operands: [base], data, reset: true, info }
 }
 
+export function dynRead(
+  name: string,
+  accu: ReadNode<number>['accu'] = 'add',
+  info?: Info
+): ReadNode<number> {
+  return {
+    operation: 'read',
+    operands: [],
+    path: ['dyn', name],
+    accu,
+    type: 'number',
+    info,
+  }
+}
 export function customRead(
   path: readonly string[],
   info?: Info
