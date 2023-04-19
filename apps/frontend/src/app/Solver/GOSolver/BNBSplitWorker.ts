@@ -101,8 +101,6 @@ export class BNBSplitWorker implements SplitWorker {
       const filter = this.getApproxFilter(),
         { arts, count } = filter
 
-      console.log('filter size', this.filters.length, 'threshold val', [...this.min])
-
       if (count <= minCount) {
         if (!count) continue
         if (this.firstUncalculated < this.filters.length)
