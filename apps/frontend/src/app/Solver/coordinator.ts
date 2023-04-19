@@ -1,5 +1,15 @@
 import { FIFO } from '@genshin-optimizer/util'
-import type { WorkerRecvMessage, WorkerSendMessage } from '.'
+
+export interface WorkerRecvMessage<T = any> {
+  command: 'workerRecvMessage'
+  from: number
+  data: T
+}
+export interface WorkerSendMessage<T = any> {
+  messageType: 'send'
+  to?: number | 'all'
+  data: T
+}
 
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never; messageType?: never },

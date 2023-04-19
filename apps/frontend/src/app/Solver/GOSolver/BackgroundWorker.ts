@@ -1,10 +1,5 @@
-import type {
-  MessageData,
-  WorkerCommand,
-  WorkerRecvMessage,
-  WorkerResult,
-  WorkerSendMessage,
-} from '..'
+import type { MessageData, WorkerCommand, WorkerResult } from '..'
+import type { WorkerRecvMessage, WorkerSendMessage } from '../coordinator'
 import { assertUnreachable } from '../../Util/Util'
 import type { RequestFilter } from '../common'
 import {
