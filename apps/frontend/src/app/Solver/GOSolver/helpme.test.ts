@@ -28996,32 +28996,10 @@ describe('debug', () => {
     )
   })
   test('debug', () => {
-    const lub = linearUB(filter.nodes, filter.arts)
-    console.log('Initial: ', maximizeLinear(filter.arts, lub))
-    const totbuilds = countBuilds(filter.arts)
-    // const { splitOn, splitVal } = pickSplitKey(lub, filter.arts)
-    const splitOn = 'atk'
-    const splitVal = 420
-
-    let nextArts: ArtifactsBySlot[] = []
-    if ((allArtifactSetKeys as readonly string[]).includes(splitOn)) {
-      nextArts = splitOnSetKey(splitOn as ArtifactSetKey, filter.arts)
-    } else {
-      nextArts = splitOnStatValue(splitOn, splitVal, filter.arts)
-    }
-    const score = lub.map((_) => 0)
-    nextArts.forEach((arts, i) => {
-      const lub2 = linearUB(filter.nodes, arts)
-
-      const v1 = maximizeLinear(arts, lub)
-      const v2 = maximizeLinear(arts, lub2)
-
-      v1.forEach(
-        (v, i) =>
-          (score[i] += ((1 - v2[i] / v) * countBuilds(arts)) / totbuilds)
-      )
-      // console.log(i, v1, 'to', v2)
-    })
-    console.log({ splitOn, splitVal }, score)
+    console.log([...splitWorker.filters])
+    splitWorker.calculateFilter(0)
+    const filt = splitWorker.getApproxFilter()
+    splitWorker.splitOldFilter(filt)
+    console.log(splitWorker.filters.length)
   })
 })

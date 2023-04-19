@@ -1,6 +1,10 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { computeFullArtRange, type ArtifactsBySlot } from '../common'
+import {
+  computeFullArtRange,
+  type ArtifactsBySlot,
+  countBuilds,
+} from '../common'
 import { cartesian, objectKeyMap, range } from '../../Util/Util'
 import type { Linear } from './linearUB'
 
@@ -65,7 +69,8 @@ export function pickSplitKey(
   // Pick key that gives minimum heur (maximum reduction old -> new)
   return {
     splitOn: bestKey,
-    splitVal: (minMax[bestKey].min + minMax[bestKey].max) / 2,
+    splitVal:
+      bestKey === '' ? NaN : (minMax[bestKey].min + minMax[bestKey].max) / 2,
   }
 }
 
@@ -88,10 +93,12 @@ export function splitOnSetKey(
     partitions.sands,
     partitions.goblet,
     partitions.circlet
-  ).map(([flower, plume, sands, goblet, circlet]) => ({
-    base: arts.base,
-    values: { flower, plume, sands, goblet, circlet },
-  }))
+  )
+    .map(([flower, plume, sands, goblet, circlet]) => ({
+      base: arts.base,
+      values: { flower, plume, sands, goblet, circlet },
+    }))
+    .sort((a, b) => countBuilds(b) - countBuilds(a))
 
   return splitArts
 }
@@ -225,10 +232,12 @@ export function splitOnStatValue(
     partitions.sands,
     partitions.goblet,
     partitions.circlet
-  ).map(([flower, plume, sands, goblet, circlet]) => ({
-    base: arts.base,
-    values: { flower, plume, sands, goblet, circlet },
-  }))
+  )
+    .map(([flower, plume, sands, goblet, circlet]) => ({
+      base: arts.base,
+      values: { flower, plume, sands, goblet, circlet },
+    }))
+    .sort((a, b) => countBuilds(b) - countBuilds(a))
 
   return splitArts
 }
