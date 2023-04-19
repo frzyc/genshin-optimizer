@@ -120,7 +120,11 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
       const threshold = this.buildValues[topN - 1].val ?? -Infinity
       if (oldThreshold !== threshold)
-        this.broadcast({ command: 'threshold', threshold })
+        this.broadcast({
+          command: 'workerRecvMessage',
+          from: NaN,
+          data: { dataType: 'threshold', threshold },
+        })
     }
   }
 }

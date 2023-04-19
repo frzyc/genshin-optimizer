@@ -12,13 +12,7 @@ export type OptProblemInput = {
   plotBase?: OptNode
 }
 
-export type WorkerCommand =
-  | Setup
-  | Split
-  | Iterate
-  | Threshold
-  | Finalize
-  | Count
+export type WorkerCommand = Setup | Split | Iterate | Finalize | Count
 export type WorkerResult = Interim | CountResult | FinalizeResult | Done | Error
 
 export interface Setup {
@@ -39,10 +33,6 @@ export interface Split {
 export interface Iterate {
   command: 'iterate'
   filter: RequestFilter
-}
-export interface Threshold {
-  command: 'threshold'
-  threshold: number
 }
 export interface Finalize {
   command: 'finalize'
@@ -87,4 +77,10 @@ export interface WorkerSendMessage<T = any> {
   messageType: 'send'
   to?: number | 'all'
   data: T
+}
+
+export type MessageData = Threshold
+export interface Threshold {
+  dataType: 'threshold'
+  threshold: number
 }

@@ -1,4 +1,5 @@
 import type {
+  MessageData,
   WorkerCommand,
   WorkerRecvMessage,
   WorkerResult,
@@ -22,10 +23,17 @@ declare function postMessage(
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
 
-async function handleMessage(msg: WorkerRecvMessage): Promise<void> {
-  /* do something */
-  const { from, data } = msg
-  console.log('Received data', { data }, `from ${from}.`)
+async function handleMessage(
+  msg: WorkerRecvMessage<MessageData>
+): Promise<void> {
+  const { data } = msg
+
+  switch (data.dataType) {
+    case 'threshold': {
+      splitWorker.setThreshold(data.threshold)
+      computeWorker.setThreshold(data.threshold)
+    }
+  }
 }
 async function handleEvent(data: WorkerCommand): Promise<void> {
   const { command } = data
@@ -48,11 +56,6 @@ async function handleEvent(data: WorkerCommand): Promise<void> {
     case 'iterate':
       computeWorker.compute(data.filter)
       break
-    case 'threshold': {
-      splitWorker.setThreshold(data.threshold)
-      computeWorker.setThreshold(data.threshold)
-      return // This is a fire-and-forget command
-    }
     case 'finalize': {
       computeWorker.refresh(true)
       const { builds, plotData } = computeWorker
@@ -91,7 +94,9 @@ async function handleEvent(data: WorkerCommand): Promise<void> {
   }
   postMessage({ resultType: 'done' })
 }
-onmessage = async (e: MessageEvent<WorkerCommand | WorkerRecvMessage>) => {
+onmessage = async (
+  e: MessageEvent<WorkerCommand | WorkerRecvMessage<MessageData>>
+) => {
   try {
     if (e.data.command === 'workerRecvMessage') {
       await handleMessage(e.data)
