@@ -114,7 +114,7 @@ export class WorkerCoordinator<
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
-  broadcast(command: Command) {
+  broadcast(command: Command | WorkerRecvMessage) {
     this._workers.forEach((w) => w.postMessage(command))
   }
   /** MUST be followed by `execute` and cannot be called while `execute` is running */
