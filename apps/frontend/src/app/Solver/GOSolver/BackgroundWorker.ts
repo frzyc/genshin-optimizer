@@ -1,4 +1,9 @@
-import type { WorkerCommand, WorkerResult } from '..'
+import type {
+  WorkerCommand,
+  WorkerRecvMessage,
+  WorkerResult,
+  WorkerSendMessage,
+} from '..'
 import { assertUnreachable } from '../../Util/Util'
 import type { RequestFilter } from '../common'
 import {
@@ -11,13 +16,19 @@ import { BNBSplitWorker } from './BNBSplitWorker'
 import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
 
-declare function postMessage(command: WorkerCommand | WorkerResult): void
+declare function postMessage(
+  command: WorkerCommand | WorkerResult | WorkerSendMessage
+): void
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
 
-async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
-  const { data } = e,
-    { command } = data
+async function handleMessage(msg: WorkerRecvMessage): Promise<void> {
+  /* do something */
+  const { from, data } = msg
+  console.log('Received data', { data }, `from ${from}.`)
+}
+async function handleEvent(data: WorkerCommand): Promise<void> {
+  const { command } = data
   switch (command) {
     case 'split':
       for (const filter of splitWorker.split(
@@ -80,9 +91,14 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
   }
   postMessage({ resultType: 'done' })
 }
-onmessage = async (e: MessageEvent<WorkerCommand>) => {
+onmessage = async (e: MessageEvent<WorkerCommand | WorkerRecvMessage>) => {
   try {
-    await handleEvent(e)
+    if (e.data.command === 'workerRecvMessage') {
+      await handleMessage(e.data)
+      return
+    }
+
+    await handleEvent(e.data)
   } catch (e) {
     postMessage({ resultType: 'err', message: (e as any).message })
   }

@@ -77,3 +77,14 @@ export interface Interim {
   failed: number
   skipped: number
 }
+
+export interface WorkerRecvMessage {
+  command: 'workerRecvMessage'
+  from: number
+  data: any
+}
+export interface WorkerSendMessage {
+  messageType: 'send'
+  to?: number | 'all'
+  data: any
+}

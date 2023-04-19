@@ -1,8 +1,9 @@
 import { FIFO } from '@genshin-optimizer/util'
+import type { WorkerRecvMessage, WorkerSendMessage } from '.'
 
 export class WorkerCoordinator<
-  Command extends { command: string; resultType?: never },
-  Response extends { command?: never; resultType: string }
+  Command extends { command: string; resultType?: never; messageType?: never },
+  Response extends { command?: never; resultType: string; messageType?: never }
 > {
   prio: Map<Command['command'], number>
   commands: FIFO<Command>[]
@@ -24,8 +25,8 @@ export class WorkerCoordinator<
     this.prio = new Map(prio.map((p, i) => [p, i]))
     this.callback = callback
 
-    workers.forEach((worker) => {
-      worker.onmessage = (x) => this.onMessage(x.data, worker)
+    workers.forEach((worker, i) => {
+      worker.onmessage = (x) => this.onMessage(x.data, worker, i)
       worker.onerror = (e) => this.onError(e)
     })
     this._workers = workers
@@ -76,10 +77,20 @@ export class WorkerCoordinator<
   onError(e: { message: string }) {
     this.cancel(new Error(`Worker Error: ${e.message}`))
   }
-  onMessage(msg: Command | Response, worker: Worker) {
-    if (msg.command !== undefined) this.add(msg)
+  onMessage(
+    msg: Command | Response | WorkerSendMessage,
+    worker: Worker,
+    workerIx: number
+  ) {
+    if (msg.messageType !== undefined) this.handleWorkerMessage(msg, workerIx)
+    else if (msg.command !== undefined) this.add(msg)
     else if (msg.resultType === 'done') this.workDone.get(worker)!()
     else this.callback(msg, worker)
+  }
+  handleWorkerMessage(msg: WorkerSendMessage, from: number) {
+    const out: WorkerRecvMessage = { command: 'workerRecvMessage', from, data: msg.data }
+    if (msg.to === undefined || msg.to === 'all') this.broadcast(out)
+    else this._workers[msg.to].postMessage(msg)
   }
   /** May be ignored after `execute` ends */
   add(command: Command) {
@@ -88,7 +99,7 @@ export class WorkerCoordinator<
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
-  broadcast(command: Command) {
+  broadcast(command: Command | WorkerRecvMessage) {
     this._workers.forEach((w) => w.postMessage(command))
   }
   /** MUST be followed by `execute` and cannot be called while `execute` is running */
