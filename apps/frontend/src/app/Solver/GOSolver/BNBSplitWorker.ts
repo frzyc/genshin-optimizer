@@ -1,5 +1,5 @@
 import type { Interim, Setup } from '..'
-import type { OptNode } from '../../Formula/optimization'
+import { optimize, type OptNode } from '../../Formula/optimization'
 import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import { objectKeyValueMap, objectMap } from '../../Util/Util'
@@ -247,6 +247,7 @@ export class BNBSplitWorker implements SplitWorker {
       {},
       { pruneNodeRange: true }
     ))
+    nodes = optimize(nodes, {}, _ => false)
     if (Object.values(arts.values).every((x) => x.length)) {
       ;({ lins, approxs } = approximation(nodes, arts))
       maxConts = approxs.map((approx) =>
