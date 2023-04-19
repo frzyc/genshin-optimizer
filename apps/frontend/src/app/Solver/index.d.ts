@@ -78,13 +78,13 @@ export interface Interim {
   skipped: number
 }
 
-export interface WorkerRecvMessage {
+export interface WorkerRecvMessage<T = any> {
   command: 'workerRecvMessage'
   from: number
-  data: any
+  data: T
 }
-export interface WorkerSendMessage {
+export interface WorkerSendMessage<T = any> {
   messageType: 'send'
   to?: number | 'all'
-  data: any
+  data: T
 }
