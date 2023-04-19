@@ -18,9 +18,7 @@ declare function postMessage(
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
 
-async function handleMessage(
-  msg: WorkerRecvMessage<MessageData>
-): Promise<void> {
+function handleMessage(msg: WorkerRecvMessage<MessageData>) {
   const { data } = msg
 
   switch (data.dataType) {
@@ -94,7 +92,7 @@ onmessage = async (
 ) => {
   try {
     if (e.data.command === 'workerRecvMessage') {
-      await handleMessage(e.data)
+      handleMessage(e.data)
       return
     }
 
