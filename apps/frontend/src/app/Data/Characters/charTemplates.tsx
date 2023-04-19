@@ -18,7 +18,7 @@ import type {
   IDocumentFields,
   IDocumentHeader,
 } from '../../Types/sheet'
-import { st, trans } from '../SheetUtil'
+import { nameTrans, st, trans } from '../SheetUtil'
 import type {
   TalentSheetElement,
   TalentSheetElementKey,
@@ -54,6 +54,7 @@ export interface ICharacterTemplate {
     talentKey: TalentSheetElementKey,
     partialCond: DocumentConditionalBase
   ) => DocumentConditional
+  name: Displayable
 }
 export const charTemplates = (
   cKey: CharacterSheetKey,
@@ -85,6 +86,7 @@ export const charTemplates = (
       talentKey: TalentSheetElementKey,
       partialCond: DocumentConditionalBase
     ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
+    name: nameTrans(cKey, chg),
   }
 }
 

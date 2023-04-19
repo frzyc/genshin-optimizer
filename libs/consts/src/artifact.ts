@@ -25,6 +25,7 @@ export const allArtifactSetKeys = [
   'MaidenBeloved',
   'MartialArtist',
   'NoblesseOblige',
+  'NymphsDream',
   'OceanHuedClam',
   'PaleFlame',
   'PrayersForDestiny',
@@ -43,6 +44,7 @@ export const allArtifactSetKeys = [
   'TravelingDoctor',
   'VermillionHereafter',
   'ViridescentVenerer',
+  'VourukashasGlow',
   'WanderersTroupe',
 ] as const
 export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]

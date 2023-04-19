@@ -1,0 +1,20 @@
+{
+  "name": "silly-wisher-names",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/silly-wisher-names/src",
+  "projectType": "library",
+  "targets": {
+    "pipeline": {
+      "command": "ts-node libs/silly-wisher-names/src/loadTrans.ts",
+      "inputs": ["production"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/silly-wisher-names/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

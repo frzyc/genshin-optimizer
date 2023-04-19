@@ -378,6 +378,10 @@ export default function loadTrans() {
         )
       })
     })
+
+    // Add the Somnia and QuantumCatalyst
+    languageData[lang].charNames['Somnia'] = 'Somnia'
+    languageData[lang].weaponNames['QuantumCatalyst'] = 'Quantum Cat-alyst'
   })
 
   //dump the language data to files
@@ -386,7 +390,7 @@ export default function loadTrans() {
     if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
 
     Object.entries(data).forEach(([type, typeData]) => {
-      //general manual localiation namespaces
+      //general manual localization namespaces
       if (
         [
           'sheet',

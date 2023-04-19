@@ -221,17 +221,27 @@ export default function loadImages() {
     }
   )
 
+  // Add in manually added assets that can't be datamined
+  AssetData.chars['Somnia'] = {} as CharacterIcon
+  AssetData.weapons['QuantumCatalyst'] = {}
+
   function crawlGen(obj, path) {
     const keys = Object.keys(obj)
+    if (!keys.length) return
     const isImg = typeof Object.values(obj)[0] === 'string'
     // generate a index.ts using keys
     const imports = Object.entries(obj)
+      .sort(([a], [b]) => a.localeCompare(b))
       .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
       .join('\n')
-    const dataContent = keys.map((k) => `  ${k},`).join('\n')
+    const dataContent = keys
+      .sort()
+      .map((k) => `  ${k},`)
+      .join('\n')
 
     const indexContent = `// This is a generated index file.
 ${imports}
+
 const data = {
 ${dataContent}
 } as const
