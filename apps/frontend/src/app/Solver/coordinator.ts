@@ -103,8 +103,9 @@ export class WorkerCoordinator<
       from,
       data: msg.data,
     }
-    if (msg.to === undefined || msg.to === 'all') this.broadcast(out)
-    else this._workers[msg.to].postMessage(msg)
+    if (msg.to === undefined || msg.to === 'all')
+      this._workers.forEach((w, i) => i !== from && w.postMessage(out))
+    else this._workers[msg.to].postMessage(out)
   }
   /** May be ignored after `execute` ends */
   add(command: Command) {
@@ -113,7 +114,7 @@ export class WorkerCoordinator<
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
-  broadcast(command: Command | WorkerRecvMessage) {
+  broadcast(command: Command) {
     this._workers.forEach((w) => w.postMessage(command))
   }
   /** MUST be followed by `execute` and cannot be called while `execute` is running */
