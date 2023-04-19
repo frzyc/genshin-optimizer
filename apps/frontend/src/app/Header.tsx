@@ -312,7 +312,7 @@ function MobileHeader({ anchor, currentTab }) {
             sx={{ color: 'white' }}
             component={RouterLink}
             to="/"
-            startIcon={<Avatar src={silly_icon} />}
+            startIcon={silly ? <Avatar src={silly_icon} /> : undefined}
           >
             <Typography variant="h6" noWrap component="div">
               {silly ? t('sillyPageTitle') : t('pageTitle')}
