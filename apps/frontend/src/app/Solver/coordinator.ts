@@ -98,7 +98,11 @@ export class WorkerCoordinator<
     else this.callback(msg, worker)
   }
   handleWorkerMessage(msg: WorkerSendMessage, from: number) {
-    const out: WorkerRecvMessage = { command: 'workerRecvMessage', from, data: msg.data }
+    const out: WorkerRecvMessage = {
+      command: 'workerRecvMessage',
+      from,
+      data: msg.data,
+    }
     if (msg.to === undefined || msg.to === 'all') this.broadcast(out)
     else this._workers[msg.to].postMessage(msg)
   }
