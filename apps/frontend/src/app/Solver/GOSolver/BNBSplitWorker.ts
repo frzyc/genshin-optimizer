@@ -126,6 +126,8 @@ export class BNBSplitWorker implements SplitWorker {
 
   heuristicSplitFilter(filter: Filter) {
     const { nodes, arts, lins, age } = filter
+    if (countBuilds(arts) === 0) return
+
     const { splitOn, splitVal } = pickSplitKey(lins, arts)
     if (splitOn === '') {
       this.splitOldFilter(filter)
