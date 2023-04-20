@@ -94,7 +94,7 @@ export class BNBSplitWorker implements SplitWorker {
       const filter = this.getApproxFilter(),
         { arts, count } = filter
 
-      if (count <= minCount) {
+      if (count <= minCount || Object.keys(arts.base).length === 0) {
         if (!count) continue
         if (this.firstUncalculated < this.filters.length)
           this.calculateFilter(this.firstUncalculated++) // Amortize the filter calculation to 1-per-split
@@ -104,7 +104,7 @@ export class BNBSplitWorker implements SplitWorker {
           kind: 'id' as const,
           ids: new Set(arts.map((art) => art.id)),
         }))
-      } else this.heuristicSplitFilter(filter)
+      } else this.splitOldFilter(filter)
     }
 
     this.reportInterim(true)
@@ -117,102 +117,26 @@ export class BNBSplitWorker implements SplitWorker {
     }
   }
 
-  heuristicSplitFilter(filter: Filter) {
+  splitOldFilter(filter: Filter) {
     const { nodes, arts, lins } = filter
     if (countBuilds(arts) === 0) return
 
     const { splitOn, splitVal } = pickSplitKey(lins, arts)
-    if (splitOn === '') {
-      this.splitOldFilter(filter)
-    } else {
-      const newArts = allArtifactSetKeys.includes(splitOn as any)
-        ? splitOnSet(splitOn as ArtifactSetKey, arts)
-        : splitAtValue(splitOn, splitVal, arts)
+    const newFilters = allArtifactSetKeys.includes(splitOn as any)
+      ? splitOnSet(splitOn as ArtifactSetKey, arts)
+      : splitAtValue(splitOn, splitVal, arts)
 
-      const { filters } = this
-      newArts.forEach((arts) => {
-        const count = countBuilds(arts)
-        filters.push({
-          nodes,
-          arts,
-          maxConts: [],
-          lins: [],
-          approxs: [],
-          count,
-        })
+    for (const arts of newFilters) {
+      const count = countBuilds(arts)
+      this.filters.push({
+        nodes,
+        arts,
+        maxConts: [],
+        lins: [],
+        approxs: [],
+        count,
       })
     }
-  }
-
-  splitOldFilter({ nodes, arts, lins, approxs }: Filter) {
-    /**
-     * Split the artifacts in each slot into high/low main (index 0) contribution along 1/3 of the
-     * contribution range. If the main contribution of a slot is in range 500-2000, the the high-
-     * contibution artifact has contribution of at least 1500, and the rest are low-contribution.
-     */
-    const splitted = objectMap(arts.values, (arts) => {
-      const remaining = arts
-        .map((art) => ({ art, cont: approxs[0].conts[art.id] }))
-        .sort(({ cont: c1 }, { cont: c2 }) => c2 - c1)
-      const minCont = remaining[remaining.length - 1]?.cont ?? 0
-      let contCutoff =
-        remaining.reduce(
-          (accu, { cont }) => accu + cont,
-          -minCont * remaining.length
-        ) / 3
-
-      const index = Math.max(
-        1,
-        remaining.findIndex(({ cont }) => (contCutoff -= cont - minCont) <= 0)
-      )
-      const lowArts = remaining.splice(index).map(({ art }) => art),
-        highArts = remaining.map(({ art }) => art)
-      return {
-        high: {
-          arts: highArts,
-          maxConts: approxs.map((approx) => maxContribution(highArts, approx)),
-        },
-        low: {
-          arts: lowArts,
-          maxConts: approxs.map((approx) => maxContribution(lowArts, approx)),
-        },
-      }
-    })
-    const remaining = Object.keys(splitted),
-      { filters } = this
-    const current: StrictDict<ArtifactSlotKey, ArtifactBuildData[]> = {} as any
-    const currentCont: StrictDict<ArtifactSlotKey, number[]> = {} as any
-    function partialSplit(count: number) {
-      if (!remaining.length) {
-        const maxConts = approxs.map((_, i) =>
-          objectMap(currentCont, (val) => val[i])
-        )
-        const currentArts = { base: arts.base, values: { ...current } }
-        filters.push({
-          nodes,
-          arts: currentArts,
-          maxConts,
-          lins,
-          approxs,
-          count,
-        })
-        return
-      }
-      const slot = remaining.pop()!,
-        { high, low } = splitted[slot]
-      if (low.arts.length) {
-        current[slot] = low.arts
-        currentCont[slot] = low.maxConts
-        partialSplit(count * low.arts.length)
-      }
-      if (high.arts.length) {
-        current[slot] = high.arts
-        currentCont[slot] = high.maxConts
-        partialSplit(count * high.arts.length)
-      }
-      remaining.push(slot)
-    }
-    partialSplit(1)
   }
 
   /** *Precondition*: `this.filters` must not be empty */

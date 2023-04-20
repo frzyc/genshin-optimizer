@@ -70,8 +70,7 @@ export function pickSplitKey(
   // Pick key that gives minimum heur (maximum reduction old -> new)
   return {
     splitOn: bestKey,
-    splitVal:
-      bestKey === '' ? NaN : (minMax[bestKey].min + minMax[bestKey].max) / 2,
+    splitVal: (minMax[bestKey].min + minMax[bestKey].max) / 2,
   }
 }
 
