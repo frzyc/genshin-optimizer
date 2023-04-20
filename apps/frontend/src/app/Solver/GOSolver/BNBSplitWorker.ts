@@ -30,8 +30,6 @@ type Filter = {
    */
   approxs: Approximation[]
   maxConts: Record<ArtifactSlotKey, number>[]
-  /** How many times has this filter been splitted */
-  age: number
   /** Total number of builds in this filter */
   count: number
   /** Whether or not this filter is in a valid (calculated) state */
@@ -78,7 +76,6 @@ export class BNBSplitWorker implements SplitWorker {
         maxConts: [],
         lins: [],
         approxs: [],
-        age: 0,
         count,
       })
   }
@@ -121,7 +118,7 @@ export class BNBSplitWorker implements SplitWorker {
   }
 
   heuristicSplitFilter(filter: Filter) {
-    const { nodes, arts, lins, age } = filter
+    const { nodes, arts, lins } = filter
     if (countBuilds(arts) === 0) return
 
     const { splitOn, splitVal } = pickSplitKey(lins, arts)
@@ -141,14 +138,13 @@ export class BNBSplitWorker implements SplitWorker {
           maxConts: [],
           lins: [],
           approxs: [],
-          age: age + 1,
           count,
         })
       })
     }
   }
 
-  splitOldFilter({ nodes, arts, lins, approxs, age }: Filter) {
+  splitOldFilter({ nodes, arts, lins, approxs }: Filter) {
     /**
      * Split the artifacts in each slot into high/low main (index 0) contribution along 1/3 of the
      * contribution range. If the main contribution of a slot is in range 500-2000, the the high-
@@ -198,7 +194,6 @@ export class BNBSplitWorker implements SplitWorker {
           maxConts,
           lins,
           approxs,
-          age: age + 1,
           count,
         })
         return
@@ -230,11 +225,8 @@ export class BNBSplitWorker implements SplitWorker {
   /** Update calculate on filter at index `i` if not done so already */
   calculateFilter(i: number): void {
     let { nodes, arts, maxConts, lins, approxs } = this.filters[i]
-    const { age, count: oldCount, calculated } = this.filters[i]
-    if (calculated)
-      return // Make sure the condition includes initial filter `age === 0`
-      // Either the filter is so early that we can get a good cutoff, or the problem has
-      // gotten small enough that the old approximation becomes inaccurate
+    const { count: oldCount, calculated } = this.filters[i]
+    if (calculated) return
     ;({ nodes, arts } = pruneAll(
       nodes,
       this.min,
@@ -285,7 +277,6 @@ export class BNBSplitWorker implements SplitWorker {
       maxConts,
       lins,
       approxs,
-      age,
       count: newCount,
       calculated: true,
     }
