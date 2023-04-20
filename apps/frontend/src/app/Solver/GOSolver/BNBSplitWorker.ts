@@ -13,11 +13,7 @@ import { countBuilds, filterArts, pruneAll } from '../common'
 import type { SplitWorker } from './BackgroundWorker'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
-import {
-  pickSplitKey,
-  splitOnSetKey,
-  splitOnStatValue,
-} from './heuristicSplitting'
+import { pickSplitKey, splitOnSet, splitAtValue } from './heuristicSplitting'
 
 type Approximation = {
   base: number
@@ -133,8 +129,8 @@ export class BNBSplitWorker implements SplitWorker {
       this.splitOldFilter(filter)
     } else {
       const newArts = allArtifactSetKeys.includes(splitOn as any)
-        ? splitOnSetKey(splitOn as ArtifactSetKey, arts)
-        : splitOnStatValue(splitOn, splitVal, arts)
+        ? splitOnSet(splitOn as ArtifactSetKey, arts)
+        : splitAtValue(splitOn, splitVal, arts)
 
       const { filters } = this
       newArts.forEach((arts) => {
@@ -247,7 +243,7 @@ export class BNBSplitWorker implements SplitWorker {
       {},
       { pruneNodeRange: true }
     ))
-    nodes = optimize(nodes, {}, _ => false)
+    nodes = optimize(nodes, {}, (_) => false)
     if (Object.values(arts.values).every((x) => x.length)) {
       ;({ lins, approxs } = approximation(nodes, arts))
       maxConts = approxs.map((approx) =>
