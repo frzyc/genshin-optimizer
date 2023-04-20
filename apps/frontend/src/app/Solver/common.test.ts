@@ -1,16 +1,19 @@
+import {
+  ArtifactSlotKey,
+  ArtifactSetKey,
+  allArtifactSlotKeys,
+} from '@genshin-optimizer/consts'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
 import type { OptNode } from '../Formula/optimization'
 import { precompute } from '../Formula/optimization'
 import { dynRead, prod, sum, threshold } from '../Formula/utils'
-import type { ArtifactSetKey, SlotKey } from '../Types/consts'
-import { allSlotKeys } from '../Types/consts'
 import { cartesian, objectKeyMap } from '../Util/Util'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: StrictDict<SlotKey, ArtifactSetKey[]>
-): Iterable<StrictDict<SlotKey, ArtifactSetKey>> {
+  sets: StrictDict<ArtifactSlotKey, ArtifactSetKey[]>
+): Iterable<StrictDict<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
       for (const goblet of sets.goblet)
@@ -37,7 +40,7 @@ describe('common.ts', () => {
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
     for (const combination of allCombinations(
-      objectKeyMap(allSlotKeys, (_) => artSets)
+      objectKeyMap(allArtifactSlotKeys, (_) => artSets)
     )) {
       let shouldMatch = true,
         rainbowCount = 0
@@ -52,7 +55,7 @@ describe('common.ts', () => {
       }
       if (!allowedRainbows.has(rainbowCount)) shouldMatch = false
       const matchCount = perm.filter((filters) =>
-        allSlotKeys.every((slot) => {
+        allArtifactSlotKeys.every((slot) => {
           const art = combination[slot]
           const filter = filters[slot]
           switch (filter.kind) {
@@ -79,10 +82,10 @@ describe('common.ts', () => {
     const compute1 = precompute(f1.nodes, f1.arts.base, (f) => f.path[1], 5)
     const compute2 = precompute(f2.nodes, f2.arts.base, (f) => f.path[1], 5)
     const truth = cartesian(
-      ...allSlotKeys.map((slot) => f1.arts.values[slot])
+      ...allArtifactSlotKeys.map((slot) => f1.arts.values[slot])
     ).map((aa) => compute1(aa))
     const test = cartesian(
-      ...allSlotKeys.map((slot) => f2.arts.values[slot])
+      ...allArtifactSlotKeys.map((slot) => f2.arts.values[slot])
     ).map((aa) => compute2(aa))
 
     truth.forEach((trut, i) =>
@@ -94,7 +97,7 @@ describe('common.ts', () => {
     const arts: ArtifactsBySlot = {
       base: { atk: 10, atk_: 0.01, glad: 0, clam: 0 },
       values: objectKeyMap(
-        allSlotKeys,
+        allArtifactSlotKeys,
         () =>
           [
             { id: '', values: { atk: 1, glad: 1 } },
