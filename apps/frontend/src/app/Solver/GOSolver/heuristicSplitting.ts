@@ -85,7 +85,7 @@ export function splitOnSet(
 
 /**
  * Splits `arts` into 32 chunks such that the total `stat` of min split is below `threshold`, and that the max
- * split is above. If multiple solutions exist, maximize the total number of builds in min and max splits.
+ * split is above.
  */
 export function splitAtValue(
   stat: string,
