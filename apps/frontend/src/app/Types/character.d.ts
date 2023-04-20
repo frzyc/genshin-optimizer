@@ -1,4 +1,4 @@
-import { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
 import type { MainStatKey, SubstatKey } from './artifact'

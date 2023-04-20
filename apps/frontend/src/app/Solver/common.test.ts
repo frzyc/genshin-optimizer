@@ -1,6 +1,6 @@
 import {
-  ArtifactSlotKey,
-  ArtifactSetKey,
+  type ArtifactSlotKey,
+  type ArtifactSetKey,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
