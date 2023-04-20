@@ -1,6 +1,7 @@
 import type { Interim, Setup } from '..'
-import type { OptNode } from '../../Formula/optimization'
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { optimize, type OptNode } from '../../Formula/optimization'
+import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import { objectKeyValueMap, objectMap } from '../../Util/Util'
 import type {
   ArtifactBuildData,
@@ -10,7 +11,9 @@ import type {
 } from '../common'
 import { countBuilds, filterArts, pruneAll } from '../common'
 import type { SplitWorker } from './BackgroundWorker'
+import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
+import { pickSplitKey, splitOnSet, splitAtValue } from './heuristicSplitting'
 
 type Approximation = {
   base: number
@@ -19,6 +22,7 @@ type Approximation = {
 }
 type Filter = {
   nodes: OptNode[]
+  lins: Linear[]
   arts: ArtifactsBySlot
   /**
    * The contribution of each artifact to the optimization target. The (over)estimated
@@ -26,8 +30,6 @@ type Filter = {
    */
   approxs: Approximation[]
   maxConts: Record<ArtifactSlotKey, number>[]
-  /** How many times has this filter been splitted */
-  age: number
   /** Total number of builds in this filter */
   count: number
   /** Whether or not this filter is in a valid (calculated) state */
@@ -72,8 +74,8 @@ export class BNBSplitWorker implements SplitWorker {
         nodes: this.nodes,
         arts,
         maxConts: [],
+        lins: [],
         approxs: [],
-        age: 0,
         count,
       })
   }
@@ -92,7 +94,7 @@ export class BNBSplitWorker implements SplitWorker {
       const filter = this.getApproxFilter(),
         { arts, count } = filter
 
-      if (count <= minCount) {
+      if (count <= minCount || Object.keys(arts.base).length === 0) {
         if (!count) continue
         if (this.firstUncalculated < this.filters.length)
           this.calculateFilter(this.firstUncalculated++) // Amortize the filter calculation to 1-per-split
@@ -115,75 +117,26 @@ export class BNBSplitWorker implements SplitWorker {
     }
   }
 
-  splitOldFilter({ nodes, arts, approxs, age }: Filter) {
-    /**
-     * Split the artifacts in each slot into high/low main (index 0) contribution along 1/3 of the
-     * contribution range. If the main contribution of a slot is in range 500-2000, the the high-
-     * contibution artifact has contribution of at least 1500, and the rest are low-contribution.
-     */
-    const splitted = objectMap(arts.values, (arts) => {
-      const remaining = arts
-        .map((art) => ({ art, cont: approxs[0].conts[art.id] }))
-        .sort(({ cont: c1 }, { cont: c2 }) => c2 - c1)
-      const minCont = remaining[remaining.length - 1]?.cont ?? 0
-      let contCutoff =
-        remaining.reduce(
-          (accu, { cont }) => accu + cont,
-          -minCont * remaining.length
-        ) / 3
+  splitOldFilter(filter: Filter) {
+    const { nodes, arts, lins } = filter
+    if (countBuilds(arts) === 0) return
 
-      const index = Math.max(
-        1,
-        remaining.findIndex(({ cont }) => (contCutoff -= cont - minCont) <= 0)
-      )
-      const lowArts = remaining.splice(index).map(({ art }) => art),
-        highArts = remaining.map(({ art }) => art)
-      return {
-        high: {
-          arts: highArts,
-          maxConts: approxs.map((approx) => maxContribution(highArts, approx)),
-        },
-        low: {
-          arts: lowArts,
-          maxConts: approxs.map((approx) => maxContribution(lowArts, approx)),
-        },
-      }
-    })
-    const remaining = Object.keys(splitted),
-      { filters } = this
-    const current: StrictDict<ArtifactSlotKey, ArtifactBuildData[]> = {} as any
-    const currentCont: StrictDict<ArtifactSlotKey, number[]> = {} as any
-    function partialSplit(count: number) {
-      if (!remaining.length) {
-        const maxConts = approxs.map((_, i) =>
-          objectMap(currentCont, (val) => val[i])
-        )
-        const currentArts = { base: arts.base, values: { ...current } }
-        filters.push({
-          nodes,
-          arts: currentArts,
-          maxConts,
-          approxs,
-          age: age + 1,
-          count,
-        })
-        return
-      }
-      const slot = remaining.pop()!,
-        { high, low } = splitted[slot]
-      if (low.arts.length) {
-        current[slot] = low.arts
-        currentCont[slot] = low.maxConts
-        partialSplit(count * low.arts.length)
-      }
-      if (high.arts.length) {
-        current[slot] = high.arts
-        currentCont[slot] = high.maxConts
-        partialSplit(count * high.arts.length)
-      }
-      remaining.push(slot)
+    const { splitOn, splitVal } = pickSplitKey(lins, arts)
+    const newFilters = allArtifactSetKeys.includes(splitOn as any)
+      ? splitOnSet(splitOn as ArtifactSetKey, arts)
+      : splitAtValue(splitOn, splitVal, arts)
+
+    for (const arts of newFilters) {
+      const count = countBuilds(arts)
+      this.filters.push({
+        nodes,
+        arts,
+        maxConts: [],
+        lins: [],
+        approxs: [],
+        count,
+      })
     }
-    partialSplit(1)
   }
 
   /** *Precondition*: `this.filters` must not be empty */
@@ -195,27 +148,23 @@ export class BNBSplitWorker implements SplitWorker {
   }
   /** Update calculate on filter at index `i` if not done so already */
   calculateFilter(i: number): void {
-    let { nodes, arts, maxConts, approxs } = this.filters[i]
-    const { age, count: oldCount, calculated } = this.filters[i]
+    let { nodes, arts, maxConts, lins, approxs } = this.filters[i]
+    const { count: oldCount, calculated } = this.filters[i]
     if (calculated) return
-    if (age < 3 || age % 5 === 2) {
-      // Make sure the condition includes initial filter `age === 0`
-      // Either the filter is so early that we can get a good cutoff, or the problem has
-      // gotten small enough that the old approximation becomes inaccurate
-      ;({ nodes, arts } = pruneAll(
-        nodes,
-        this.min,
-        arts,
-        this.topN,
-        {},
-        { pruneNodeRange: true }
-      ))
-      if (Object.values(arts.values).every((x) => x.length)) {
-        approxs = approximation(nodes, arts)
-        maxConts = approxs.map((approx) =>
-          objectMap(arts.values, (val) => maxContribution(val, approx))
-        )
-      }
+    ;({ nodes, arts } = pruneAll(
+      nodes,
+      this.min,
+      arts,
+      this.topN,
+      {},
+      { pruneNodeRange: true }
+    ))
+    nodes = optimize(nodes, {}, (_) => false)
+    if (Object.values(arts.values).every((x) => x.length)) {
+      ;({ lins, approxs } = approximation(nodes, arts))
+      maxConts = approxs.map((approx) =>
+        objectMap(arts.values, (val) => maxContribution(val, approx))
+      )
     }
     // Removing artifacts that doesn't meet the required opt target contributions.
     //
@@ -250,8 +199,8 @@ export class BNBSplitWorker implements SplitWorker {
       nodes,
       arts,
       maxConts,
+      lins,
       approxs,
-      age,
       count: newCount,
       calculated: true,
     }
@@ -267,14 +216,18 @@ function maxContribution(
 function approximation(
   nodes: OptNode[],
   arts: ArtifactsBySlot
-): Approximation[] {
-  return linearUB(nodes, arts).map((weight) => ({
-    base: dot(arts.base, weight, weight.$c),
-    conts: objectKeyValueMap(Object.values(arts.values).flat(), (data) => [
-      data.id,
-      dot(data.values, weight, 0),
-    ]),
-  }))
+): { lins: Linear[]; approxs: Approximation[] } {
+  const lins = linearUB(nodes, arts)
+  return {
+    lins,
+    approxs: lins.map((weight) => ({
+      base: dot(arts.base, weight, weight.$c),
+      conts: objectKeyValueMap(Object.values(arts.values).flat(), (data) => [
+        data.id,
+        dot(data.values, weight, 0),
+      ]),
+    })),
+  }
 }
 function dot(values: DynStat, lin: DynStat, c: number): number {
   return Object.entries(values).reduce(
