@@ -59,7 +59,7 @@ function linbound(
   // Re-scale bounds to [-1, 1] for numerical stability.
   const boundScale = bounds.map(({ min, max }) => Math.max(-min, max))
   if (boundScale.some((bnd) => bnd === 0)) {
-    return { w: bounds.map(_ => 0), $c: 0, err: 0 }
+    return { w: bounds.map((_) => 0), $c: 0, err: 0 }
   }
   const scaleProd = boundScale.reduce((prod, v) => prod * v, 1)
   bounds = bounds.map(({ min, max }, i) => ({
