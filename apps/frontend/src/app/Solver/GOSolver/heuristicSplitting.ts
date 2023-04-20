@@ -4,7 +4,7 @@ import {
   computeFullArtRange,
   type ArtifactsBySlot,
   countBuilds,
-  ArtifactBuildData,
+  type ArtifactBuildData,
 } from '../common'
 import { cartesian, objectKeyMap } from '../../Util/Util'
 import type { Linear } from './linearUB'
@@ -109,17 +109,17 @@ export function splitAtValue(
     const splitVal = mins[slot] + cutoff * ranges[slot]
     let start = 0,
       end = arts.length
-    while (start != end) {
+    while (start !== end) {
       const mid = Math.floor((start + end) / 2)
       if (splitVal > arts[mid].val) start = mid + 1
       else end = mid
     }
-    let lowerSplit = start
+    const lowerSplit = start
     start = lowerSplit
     end = arts.length
-    while (start != end) {
+    while (start !== end) {
       const mid = Math.floor((start + end) / 2)
-      if (splitVal == arts[mid].val) start = mid + 1
+      if (splitVal === arts[mid].val) start = mid + 1
       else end = mid
     }
     return lowerSplit === start ? [start] : [lowerSplit, start]
