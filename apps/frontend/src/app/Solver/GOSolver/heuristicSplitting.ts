@@ -105,7 +105,7 @@ export function splitAtValue(
   const totalRange = ranges.reduce((a, b) => a + b)
   const cutoff =
     (threshold - mins.reduce((a, b) => a + b)) / Math.max(totalRange, 1e-9)
-  const splitIndices = valsBySlot.map((arts, slot) => {
+  const split = valsBySlot.map((arts, slot) => {
     const splitVal = mins[slot] + cutoff * ranges[slot]
     let start = 0,
       end = arts.length
@@ -114,32 +114,11 @@ export function splitAtValue(
       if (splitVal > arts[mid].val) start = mid + 1
       else end = mid
     }
-    const lowerSplit = start
-    start = lowerSplit
-    end = arts.length
-    while (start !== end) {
-      const mid = Math.floor((start + end) / 2)
-      if (splitVal === arts[mid].val) start = mid + 1
-      else end = mid
-    }
-    return lowerSplit === start ? [start] : [lowerSplit, start]
+    return end
   })
-  let bestScore = -1
-  let bestSplit: number[] = []
-  for (const split of cartesian(...splitIndices)) {
-    const lowerCount = split.reduce((accu, i) => accu * i, 1)
-    const upperCount = split.reduce(
-      (accu, i, slot) => accu * (valsBySlot[slot].length - i),
-      1
-    )
-    const score = lowerCount + upperCount
-    if (bestScore < score) {
-      bestSplit = split
-      bestScore = score
-    }
-  }
+
   return splitArts(arts, (arts, si) => {
-    const upper = new Set(valsBySlot[si].slice(bestSplit[si]).map((a) => a.art))
+    const upper = new Set(valsBySlot[si].slice(split[si]).map((a) => a.art))
     return arts.map((art) => upper.has(art))
   })
 }
