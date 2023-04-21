@@ -1,16 +1,16 @@
-import type { Interim, Setup } from '..'
-import { optimize, type OptNode } from '../../Formula/optimization'
+import type { Interim, Setup } from '../..'
+import { optimize, type OptNode } from '../../../Formula/optimization'
 import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
-import { objectKeyValueMap, objectMap } from '../../Util/Util'
+import { objectKeyValueMap, objectMap } from '../../../Util/Util'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
   DynStat,
   RequestFilter,
-} from '../common'
-import { countBuilds, filterArts, pruneAll } from '../common'
-import type { SplitWorker } from './BackgroundWorker'
+} from '../../common'
+import { countBuilds, filterArts, pruneAll } from '../../common'
+import type { SplitWorker } from '../BackgroundWorker'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
 import { pickSplitKey, splitOnSet, splitAtValue } from './heuristicSplitting'

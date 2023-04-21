@@ -1,5 +1,5 @@
-import type { OptNode } from '../../Formula/optimization'
-import { precompute } from '../../Formula/optimization'
+import type { OptNode } from '../../../Formula/optimization'
+import { precompute } from '../../../Formula/optimization'
 import {
   constant,
   customRead,
@@ -10,9 +10,9 @@ import {
   sum,
   threshold,
   frac,
-} from '../../Formula/utils'
-import { cartesian } from '../../Util/Util'
-import type { ArtifactsBySlot, DynStat } from '../common'
+} from '../../../Formula/utils'
+import { cartesian } from '../../../Util/Util'
+import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
 import { linearUB } from './linearUB'
 import type { SumOfMonomials } from './polyUB'
