@@ -172,7 +172,7 @@ const infusionReactions = {
   hyperbloom: infoMut(
     equal(infusionNode, 'electro', trans.hyperbloom),
     KeyMap.info('hyperbloom_hit')
-  )
+  ),
 }
 export const reactions = {
   anemo: {
