@@ -64,7 +64,6 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: [...artExclusion, id],
-        useExcludedArts: true,
       })
     },
     [buildSettingDispatch, artExclusion]
@@ -73,7 +72,6 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: artExclusion.filter((i) => i !== id),
-        useExcludedArts: true,
       })
     },
     [buildSettingDispatch, artExclusion]
