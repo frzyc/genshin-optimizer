@@ -5,8 +5,8 @@ import {
   type ArtifactsBySlot,
   countBuilds,
   type ArtifactBuildData,
-} from '../common'
-import { cartesian, objectKeyMap } from '../../Util/Util'
+} from '../../common'
+import { cartesian, objectKeyMap } from '../../../Util/Util'
 import type { Linear } from './linearUB'
 
 /**

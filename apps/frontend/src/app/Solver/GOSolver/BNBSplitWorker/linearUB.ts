@@ -1,7 +1,7 @@
-import type { OptNode } from '../../Formula/optimization'
-import { assertUnreachable, cartesian } from '../../Util/Util'
-import type { ArtifactsBySlot, DynStat, MinMax } from '../common'
-import { computeFullArtRange } from '../common'
+import type { OptNode } from '../../../Formula/optimization'
+import { assertUnreachable, cartesian } from '../../../Util/Util'
+import type { ArtifactsBySlot, DynStat, MinMax } from '../../common'
+import { computeFullArtRange } from '../../common'
 import { polyUB } from './polyUB'
 import { solveLP } from './solveLP'
 

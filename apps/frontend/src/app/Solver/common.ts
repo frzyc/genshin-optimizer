@@ -1,11 +1,14 @@
+import {
+  type ArtifactSetKey,
+  type ArtifactSlotKey,
+  allArtifactSlotKeys,
+} from '@genshin-optimizer/consts'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
 import { forEachNodes, mapFormulas } from '../Formula/internal'
 import type { OptNode } from '../Formula/optimization'
 import { allOperations, constantFold } from '../Formula/optimization'
 import type { ConstantNode } from '../Formula/type'
 import { constant, dynRead, max, min, sum, threshold } from '../Formula/utils'
-import type { ArtifactSetKey, SlotKey } from '../Types/consts'
-import { allSlotKeys } from '../Types/consts'
 import { assertUnreachable, objectKeyMap, objectMap, range } from '../Util/Util'
 
 type MicropassOperation =
@@ -208,7 +211,7 @@ function reaffine(
     nodes,
     arts: {
       base: reaffineArt(arts.base),
-      values: objectKeyMap(allSlotKeys, (slot) =>
+      values: objectKeyMap(allArtifactSlotKeys, (slot) =>
         arts.values[slot].map(({ id, set, values }) => ({
           id,
           set,
@@ -249,7 +252,7 @@ function pruneOrder(
       .filter(([_, v]) => v.includes(2) && !v.includes(4))
       .map(([k]) => k) as ArtifactSetKey[]
   )
-  const values = objectKeyMap(allSlotKeys, (slot) => {
+  const values = objectKeyMap(allArtifactSlotKeys, (slot) => {
     const list = arts.values[slot]
     const newList = list.filter((art) => {
       let count = 0
@@ -287,10 +290,10 @@ function pruneArtRange(
   )
   const wrap = { arts }
   while (true) {
-    const artRanges = objectKeyMap(allSlotKeys, (slot) =>
+    const artRanges = objectKeyMap(allArtifactSlotKeys, (slot) =>
       computeArtRange(wrap.arts.values[slot])
     )
-    const otherArtRanges = objectKeyMap(allSlotKeys, (key) =>
+    const otherArtRanges = objectKeyMap(allArtifactSlotKeys, (key) =>
       addArtRange(
         Object.entries(artRanges)
           .map((a) => (a[0] === key ? baseRange : a[1]))
@@ -299,7 +302,7 @@ function pruneArtRange(
     )
 
     let progress = false
-    const values = objectKeyMap(allSlotKeys, (slot) => {
+    const values = objectKeyMap(allArtifactSlotKeys, (slot) => {
       const result = wrap.arts.values[slot].filter((art) => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
@@ -508,7 +511,7 @@ export function filterArts(
 ): ArtifactsBySlot {
   return {
     base: arts.base,
-    values: objectKeyMap(allSlotKeys, (slot) => {
+    values: objectKeyMap(allArtifactSlotKeys, (slot) => {
       const filter = filters[slot]
       switch (filter.kind) {
         case 'id':
@@ -551,7 +554,7 @@ export function mergePlot(plots: PlotData[]): PlotData {
 }
 
 export function countBuilds(arts: ArtifactsBySlot): number {
-  return allSlotKeys.reduce(
+  return allArtifactSlotKeys.reduce(
     (_count, slot) => _count * arts.values[slot].length,
     1
   )
@@ -666,7 +669,10 @@ export function* artSetPerm(
   // Shapes are now calculated and merged, proceed to fill in the sets
 
   const noFilter = { kind: 'exclude' as const, sets: new Set<ArtifactSetKey>() }
-  const result: RequestFilter = objectKeyMap(allSlotKeys, (_) => noFilter)
+  const result: RequestFilter = objectKeyMap(
+    allArtifactSlotKeys,
+    (_) => noFilter
+  )
 
   const counts = {
     ...objectMap(exclusion, (_) => 0),
@@ -709,7 +715,7 @@ export function* artSetPerm(
         counts[set] = groupped[i].length
         groupped[i].forEach(
           (j) =>
-            (result[allSlotKeys[j]] = {
+            (result[allArtifactSlotKeys[j]] = {
               kind: 'required',
               sets: new Set([set]),
             })
@@ -751,7 +757,7 @@ export function* artSetPerm(
       if (required === remaining) {
         for (const set of missing) {
           counts[set]++
-          result[allSlotKeys[rainbows[i]]] = {
+          result[allArtifactSlotKeys[rainbows[i]]] = {
             kind: 'required',
             sets: new Set([set]),
           }
@@ -762,14 +768,14 @@ export function* artSetPerm(
       }
       for (const set of [...isolated, ...missing]) {
         counts[set]++
-        result[allSlotKeys[rainbows[i]]] = {
+        result[allArtifactSlotKeys[rainbows[i]]] = {
           kind: 'required',
           sets: new Set([set]),
         }
         yield* check_free(i + 1)
         counts[set]--
       }
-      result[allSlotKeys[rainbows[i]]] = {
+      result[allArtifactSlotKeys[rainbows[i]]] = {
         kind: 'exclude',
         sets: new Set([...missing, ...rejected, ...isolated]),
       }
@@ -781,7 +787,7 @@ export function* artSetPerm(
 }
 
 export type RequestFilter = StrictDict<
-  SlotKey,
+  ArtifactSlotKey,
   | { kind: 'required'; sets: Set<ArtifactSetKey> }
   | { kind: 'exclude'; sets: Set<ArtifactSetKey> }
   | { kind: 'id'; ids: Set<string> }
@@ -795,7 +801,7 @@ export type ArtifactBuildData = {
 }
 export type ArtifactsBySlot = {
   base: DynStat
-  values: StrictDict<SlotKey, ArtifactBuildData[]>
+  values: StrictDict<ArtifactSlotKey, ArtifactBuildData[]>
 }
 
 export type PlotData = Dict<number, Build>

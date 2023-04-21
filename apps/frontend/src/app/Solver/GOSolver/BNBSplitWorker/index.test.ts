@@ -1,4 +1,4 @@
-import { allOperations } from '../../Formula/optimization'
+import { allOperations } from '../../../Formula/optimization'
 import {
   constant,
   customRead,
@@ -9,10 +9,10 @@ import {
   res,
   sum,
   threshold,
-} from '../../Formula/utils'
+} from '../../../Formula/utils'
 import type { Linear } from './linearUB'
 import { linearUB as linearUpperBound } from './linearUB'
-import type { ArtifactsBySlot, DynStat } from '../common'
+import type { ArtifactsBySlot, DynStat } from '../../common'
 
 function apply(value: DynStat, linear: Linear): number {
   return Object.entries(linear).reduce(
