@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import { customMapFormula, forEachNodes } from '../../../Formula/internal'
 import type { OptNode } from '../../../Formula/optimization'
 import { allOperations } from '../../../Formula/optimization'
 import type { ConstantNode } from '../../../Formula/type'
 import { prod, threshold } from '../../../Formula/utils'
 import { assertUnreachable, cartesian } from '../../../Util/Util'
-import type { ArtifactsBySlot, MinMax } from '../../common'
+import type { ArtifactsBySlot, DynStat, MinMax } from '../../common'
 import { computeFullArtRange, computeNodeRange } from '../../common'
-import type { Linear } from './linearUB'
 
 /**
  * With xi being the variables and pi(x1, x2, ...) being polynomials on xi
@@ -17,8 +17,19 @@ import type { Linear } from './linearUB'
  *
  * $c is used as additive constant, $k is used as multiplicative constant.
  */
-export type PolynomialWithBounds = PolyProd | PolySum | LinTerm
-type LinTerm = { type: 'lin'; lin: Linear; min: number; max: number }
+export type PolynomialWithBounds = PolyProd | PolySum | Term | Const
+// type LinTerm = { type: 'lin'; lin: Linear; min: number; max: number }
+type Term = {
+  type: 'term'
+  key: string
+  min: number
+  max: number
+  artSet?: {
+    key: ArtifactSetKey
+    thr: number
+  }
+}
+type Const = { type: 'const'; $c: number; min: number; max: number }
 type PolyProd = {
   type: 'prod'
   terms: PolynomialWithBounds[]
@@ -34,11 +45,11 @@ type PolySum = {
   max: number
 }
 
-function constP(n: number): LinTerm {
-  return { type: 'lin', lin: { $c: n }, min: n, max: n }
+function constP(n: number): Const {
+  return { type: 'const', $c: n, min: n, max: n }
 }
-function readP(k: string, minmax: MinMax): LinTerm {
-  return { type: 'lin', lin: { [k]: 1, $c: 0 }, ...minmax }
+function readP(k: string, minmax: MinMax): Term {
+  return { type: 'term', key: k, ...minmax }
 }
 function sumP(...terms: (PolynomialWithBounds | number)[]): PolySum {
   const c = (terms.filter((v) => typeof v === 'number') as number[]).reduce(
@@ -282,6 +293,15 @@ export function polyUB(
           const isFirstHalf = pass > fail === (context === upper)
 
           const v = map(vOp, isFirstHalf ? upper : lower)
+          if (
+            vOp.operation === 'read' &&
+            (allArtifactSetKeys as readonly string[]).includes(vOp.path[1])
+          ) {
+            ;(v as Term).artSet = {
+              key: vOp.path[1] as ArtifactSetKey,
+              thr: thresh,
+            }
+          }
           if (isFirstHalf) {
             const slope = (pass - fail) / (thresh - min)
             return slopePoint(slope, thresh, pass, v)
@@ -303,27 +323,41 @@ export type SumOfMonomials = Monomial[]
 type Monomial = {
   $k: number
   terms: string[]
+  setUsage: DynStat
 }
 function constM(v: number): Monomial {
-  return { $k: v, terms: [] }
+  return { $k: v, terms: [], setUsage: {} }
 }
-function weightedReadM(key: string, v: number): Monomial {
-  return { $k: v, terms: [key] }
+function termM(term: Term): Monomial {
+  const setUsage = term.artSet ? { [term.artSet.key]: term.artSet.thr } : {}
+  return { $k: 1, terms: [term.key], setUsage }
 }
 function sumM(...monomials: Monomial[][]): Monomial[] {
   return monomials.flat()
 }
 function prodM(...monomials: Monomial[][]): Monomial[] {
-  return cartesian(...monomials).map((monos) =>
-    monos.reduce(
-      (ret, nxt) => {
-        ret.$k *= nxt.$k
-        ret.terms.push(...nxt.terms)
-        return ret
-      },
-      { $k: 1, terms: [] }
+  return cartesian(...monomials)
+    .map((monos) =>
+      monos.reduce(
+        (ret, nxt) => {
+          ret.$k *= nxt.$k
+          ret.terms.push(...nxt.terms)
+          if (nxt.setUsage)
+            Object.keys(nxt.setUsage).forEach(
+              (k) =>
+                (ret.setUsage![k] = Math.max(
+                  ret.setUsage![k] ?? 0,
+                  nxt.setUsage![k]
+                ))
+            )
+          return ret
+        },
+        { $k: 1, terms: [], setUsage: {} }
+      )
     )
-  )
+    .filter(
+      ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) < 5
+    )
 }
 function foldLikeTerms(mon: Monomial[]): Monomial[] {
   mon.forEach((m) => m.terms.sort())
@@ -353,17 +387,14 @@ function foldLikeTerms(mon: Monomial[]): Monomial[] {
 function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
   function toExpandedPoly(n: PolynomialWithBounds): Monomial[] {
     switch (n.type) {
-      case 'lin':
-        return Object.entries(n.lin)
-          .filter(([_, v]) => v !== 0)
-          .map(([k, v]) => {
-            if (k === '$c') return constM(v)
-            return weightedReadM(k, v)
-          })
+      case 'term':
+        return [termM(n)]
+      case 'const':
+        return [constM(n.$c)]
       case 'sum':
-        return sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)])
+        return foldLikeTerms(sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)]))
       case 'prod':
-        return prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)])
+        return foldLikeTerms(prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)]))
     }
   }
 
