@@ -64,6 +64,7 @@ function DupContent() {
     }
     return dups
   }, [database, dbDirty])
+  const editorProps = useMemo(() => ({}), [])
   return (
     <Stack spacing={2}>
       {dupList.map((dups) => (
@@ -75,7 +76,7 @@ function DupContent() {
                   artifactId={dup}
                   canEquip
                   onDelete={() => database.arts.remove(dup)}
-                  editorProps={{ cancelEdit: () => {} }}
+                  editorProps={editorProps}
                 />
               </Box>
             ))}
