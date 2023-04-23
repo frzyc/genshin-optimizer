@@ -9,7 +9,6 @@ import CrimsonWitchOfFlames from './CrimsonWitchOfFlames'
 import DeepwoodMemories from './DeepwoodMemories'
 import DefendersWill from './DefendersWill'
 import DesertPavilionChronicle from './DesertPavilionChronicle'
-import DewflowersGlow from './DewflowersGlow'
 import EchoesOfAnOffering from './EchoesOfAnOffering'
 import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import FlowerOfParadiseLost from './FlowerOfParadiseLost'
@@ -43,6 +42,7 @@ import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
 import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
+import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 const data = {
@@ -56,7 +56,6 @@ const data = {
   DeepwoodMemories,
   DefendersWill,
   DesertPavilionChronicle,
-  DewflowersGlow,
   EchoesOfAnOffering,
   EmblemOfSeveredFate,
   FlowerOfParadiseLost,
@@ -90,6 +89,7 @@ const data = {
   TravelingDoctor,
   VermillionHereafter,
   ViridescentVenerer,
+  VourukashasGlow,
   WanderersTroupe,
 } as const
 export default data

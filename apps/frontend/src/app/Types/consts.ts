@@ -170,10 +170,6 @@ export type ArtifactRarity = (typeof allArtifactRarities)[number]
 /**
  * @deprecated
  */
-export type SlotKey = (typeof allSlotKeys)[number]
-/**
- * @deprecated
- */
 export type ElementKey = (typeof allElements)[number]
 /**
  * @deprecated
