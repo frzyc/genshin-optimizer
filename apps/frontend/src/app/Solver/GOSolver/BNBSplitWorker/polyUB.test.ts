@@ -57,15 +57,16 @@ const crcd0 = sum(
     customRead(['dyn', 'critDMG_'])
   )
 )
+const ohc = customRead(['dyn', 'OceanHuedClam'])
+const hod = customRead(['dyn', 'HeartOfDepth'])
 const dmg_ = sum(
   1,
   customRead(['dyn', 'hydroDmg_']),
-  threshold(customRead(['dyn', 'HeartOfDepth']), 2, 0.2, 0),
-  threshold(customRead(['dyn', 'HeartOfDepth']), 4, 0.35, 0)
+  threshold(hod, 2, 0.2, 0),
+  threshold(hod, 4, 0.35, 0)
 )
 const er = customRead(['dyn', 'enerRech_'])
 const em = prod(2.78, frac(customRead(['dyn', 'eleMas']), 1400))
-const ohc = customRead(['dyn', 'OceanHuedClam'])
 const exampleArts: ArtifactsBySlot = {
   base: {
     hp: 13471,
@@ -606,6 +607,24 @@ describe('polyUB', () => {
       )
 
       expect(() => polyUB([n], fakeArts)).toThrow()
+    })
+    test('artSet cross-terms', () => {
+      const ohc4 = threshold(ohc, 4, 1, 0),
+        ohc2 = threshold(ohc, 2, 1, 0),
+        hod4 = threshold(hod, 4, 1, 0),
+        hod2 = threshold(hod, 2, 1, 0)
+      const n = [
+        prod(ohc4, hod2),
+        prod(ohc2, hod2),
+        prod(ohc2, sum(hod4, hod2)),
+        prod(sum(ohc4, ohc2), sum(hod2, hod4)),
+      ]
+      const p = polyUB(n, exampleArts)
+
+      expect(p[0]).toEqual([])
+      expect(p[1].length).toBeGreaterThanOrEqual(1)
+      expect(p[2]).toEqual(p[1])
+      expect(p[3]).toEqual(p[1])
     })
   })
 })

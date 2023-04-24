@@ -1,5 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import { allArtifactSetKeys, isArtifactSetKey } from '@genshin-optimizer/consts'
 import { customMapFormula, forEachNodes } from '../../../Formula/internal'
 import type { OptNode } from '../../../Formula/optimization'
 import { allOperations } from '../../../Formula/optimization'
@@ -26,7 +26,7 @@ type Term = {
   max: number
   artSet?: {
     key: ArtifactSetKey
-    thr: number
+    thresh: number
   }
 }
 type Const = { type: 'const'; $c: number; min: number; max: number }
@@ -292,16 +292,13 @@ export function polyUB(
             fail = fOp.value
           const isFirstHalf = pass > fail === (context === upper)
 
-          const v = map(vOp, isFirstHalf ? upper : lower)
+          let v = map(vOp, isFirstHalf ? upper : lower)
           if (
+            v.type === 'term' &&
             vOp.operation === 'read' &&
-            (allArtifactSetKeys as readonly string[]).includes(vOp.path[1])
-          ) {
-            ;(v as Term).artSet = {
-              key: vOp.path[1] as ArtifactSetKey,
-              thr: thresh,
-            }
-          }
+            isArtifactSetKey(vOp.path[1])
+          )
+            v = { ...v, artSet: { key: vOp.path[1], thresh } }
           if (isFirstHalf) {
             const slope = (pass - fail) / (thresh - min)
             return slopePoint(slope, thresh, pass, v)
@@ -329,7 +326,7 @@ function constM(v: number): Monomial {
   return { $k: v, terms: [], setUsage: {} }
 }
 function termM(term: Term): Monomial {
-  const setUsage = term.artSet ? { [term.artSet.key]: term.artSet.thr } : {}
+  const setUsage = term.artSet ? { [term.artSet.key]: term.artSet.thresh } : {}
   return { $k: 1, terms: [term.key], setUsage }
 }
 function sumM(...monomials: Monomial[][]): Monomial[] {
@@ -342,14 +339,13 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
         (ret, nxt) => {
           ret.$k *= nxt.$k
           ret.terms.push(...nxt.terms)
-          if (nxt.setUsage)
-            Object.keys(nxt.setUsage).forEach(
-              (k) =>
-                (ret.setUsage![k] = Math.max(
-                  ret.setUsage![k] ?? 0,
-                  nxt.setUsage![k]
-                ))
-            )
+          Object.keys(nxt.setUsage).forEach(
+            (k) =>
+              (ret.setUsage[k] = Math.max(
+                ret.setUsage[k] ?? 0,
+                nxt.setUsage[k]
+              ))
+          )
           return ret
         },
         { $k: 1, terms: [], setUsage: {} }
@@ -359,30 +355,32 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
       ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) < 5
     )
 }
+function monomialCmp(
+  { terms: t1, setUsage: s1 }: Monomial,
+  { terms: t2, setUsage: s2 }: Monomial
+): number {
+  // Assumes all terms are sorted.
+  if (t1.length !== t2.length) return t1.length - t2.length
+  for (let i = 0; i < t1.length; i++)
+    if (t1[i] !== t2[i]) return t1[i].localeCompare(t2[i]) ? -1 : +1
+
+  return JSON.stringify(s1).localeCompare(JSON.stringify(s2))
+}
 function foldLikeTerms(mon: Monomial[]): Monomial[] {
   mon.forEach((m) => m.terms.sort())
-  mon.sort(({ terms: termsA }, { terms: termsB }) => {
-    if (termsA.length !== termsB.length) return termsA.length - termsB.length
-    for (let i = 0; i < termsA.length; i++) {
-      if (termsA[i] !== termsB[i]) return termsA[i] < termsB[i] ? -1 : +1
-    }
-    return 0
-  })
+  mon.sort(monomialCmp)
 
   for (let i = mon.length - 2; i >= 0; i--) {
     if (mon[i].$k === 0) {
       mon.splice(i, 1)
       continue
     }
-    const a = mon[i].terms
-    const b = mon[i + 1].terms
-    if (a.length !== b.length) continue
-    if (a.every((ai, i) => ai === b[i])) {
+    if (monomialCmp(mon[i], mon[i + 1]) === 0) {
       mon[i].$k = mon[i].$k + mon[i + 1].$k
       mon.splice(i + 1, 1)
     }
   }
-  return mon
+  return mon.filter(({ $k }) => $k !== 0)
 }
 function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
   function toExpandedPoly(n: PolynomialWithBounds): Monomial[] {
@@ -392,13 +390,19 @@ function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
       case 'const':
         return [constM(n.$c)]
       case 'sum':
-        return foldLikeTerms(sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)]))
+        return foldLikeTerms(
+          sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)])
+        )
       case 'prod':
-        return foldLikeTerms(prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)]))
+        return foldLikeTerms(
+          prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)])
+        )
     }
   }
 
-  return foldLikeTerms(toExpandedPoly(node))
+  const expanded = toExpandedPoly(node)
+  expanded.forEach((mon) => (mon.setUsage = {}))
+  return foldLikeTerms(expanded)
 }
 
 class PolyError extends Error {

@@ -49,6 +49,12 @@ export const allArtifactSetKeys = [
 ] as const
 export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]
 
+export function isArtifactSetKey(
+  maybeSetKey: string
+): maybeSetKey is ArtifactSetKey {
+  return (allArtifactSetKeys as readonly string[]).includes(maybeSetKey)
+}
+
 export const allArtifactSlotKeys = [
   'flower',
   'plume',
