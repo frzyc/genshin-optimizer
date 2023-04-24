@@ -1,5 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys, isArtifactSetKey } from '@genshin-optimizer/consts'
+import { isArtifactSetKey } from '@genshin-optimizer/consts'
 import { customMapFormula, forEachNodes } from '../../../Formula/internal'
 import type { OptNode } from '../../../Formula/optimization'
 import { allOperations } from '../../../Formula/optimization'
@@ -18,7 +18,6 @@ import { computeFullArtRange, computeNodeRange } from '../../common'
  * $c is used as additive constant, $k is used as multiplicative constant.
  */
 export type PolynomialWithBounds = PolyProd | PolySum | Term | Const
-// type LinTerm = { type: 'lin'; lin: Linear; min: number; max: number }
 type Term = {
   type: 'term'
   key: string
