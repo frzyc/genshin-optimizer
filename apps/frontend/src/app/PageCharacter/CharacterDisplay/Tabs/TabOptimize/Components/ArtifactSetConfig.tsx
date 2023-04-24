@@ -259,10 +259,12 @@ export default function ArtifactSetConfig({
                       i18nKey="artSetConfig.modal.ArtSetFilter.title"
                     >
                       <ColorText color="success">
-                        Allowed<ShowChartIcon {...iconInlineProps} />
+                        Allowed
+                        <ShowChartIcon {...iconInlineProps} />
                       </ColorText>{' '}
                       <ColorText color="secondary" variant="light">
-                        Excluded<BlockIcon {...iconInlineProps} />
+                        Excluded
+                        <BlockIcon {...iconInlineProps} />
                       </ColorText>{' '}
                     </Trans>
                   </strong>
@@ -394,10 +396,12 @@ export default function ArtifactSetConfig({
                       <strong>
                         <Trans t={t} i18nKey="artSetConfig.alExRainbow">
                           <ColorText color="success">
-                            Allow<ShowChartIcon {...iconInlineProps} />
+                            Allow
+                            <ShowChartIcon {...iconInlineProps} />
                           </ColorText>{' '}
                           <ColorText color="secondary" variant="light">
-                            Exclude<BlockIcon {...iconInlineProps} />
+                            Exclude
+                            <BlockIcon {...iconInlineProps} />
                           </ColorText>{' '}
                         </Trans>
                       </strong>
