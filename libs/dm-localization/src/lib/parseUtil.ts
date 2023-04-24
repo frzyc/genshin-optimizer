@@ -77,6 +77,16 @@ const paragraph = (string) => {
   while (parsed[parsed.length - 1] === '<br/>') parsed.pop()
   return { ...parseBulletPoints(parsed) }
 }
+
+/**
+ * Substitutes escaped newlines ('\\n') with linebreaks ('<br/>')
+ * @param string the string to parse
+ * @returns the resulting string
+ */
+const paragraph2 = (string: string) => {
+  return string.replace(/\\n/g, '<br/>')
+}
+
 const autoFields = (string) => {
   const strings = string
     .split('\\n\\n<strong>')
@@ -126,6 +136,7 @@ export const parsingFunctions: {
     throw `parsing fields error[${keys}](${lang}): ${string}`
   },
   paragraph: (lang, string) => paragraph(string),
+  paragraph2: (lang, string) => paragraph2(string),
   skillParam: (lang, string) => {
     if (!string) string = ''
     string = string.split('|')[0]

@@ -299,15 +299,32 @@ export default function loadTrans() {
     const [ascensionDataId] = skillAffix
     const ascData =
       ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
+    const weaponKey = weaponIdMap[weaponid]
 
-    mapHashData.weaponNames[weaponIdMap[weaponid]] = nameTextMapHash
-    mapHashData.weapon[weaponIdMap[weaponid]] = {
+    mapHashData.weaponNames[weaponKey] = nameTextMapHash
+    mapHashData.weapon[weaponKey] = {
       name: nameTextMapHash,
       description: descTextMapHash,
       passiveName: ascData ? ascData[0].nameTextMapHash : 0,
       passiveDescription: ascData
         ? ascData.map((asc) => asc.descTextMapHash)
         : [0, 0, 0, 0, 0],
+    }
+
+    layeredAssignment(
+      mapHashData,
+      ['weapon', weaponKey, 'description'],
+      [descTextMapHash, 'paragraph2']
+    )
+
+    if (ascData) {
+      ascData.forEach((asc, i) => {
+        layeredAssignment(
+          mapHashData,
+          ['weapon', weaponKey, 'passiveDescription', i],
+          [asc.descTextMapHash, 'paragraph2']
+        )
+      })
     }
   })
 
@@ -321,6 +338,12 @@ export default function loadTrans() {
       name: nameTextMapHash,
       description: descTextMapHash,
     }
+
+    layeredAssignment(
+      mapHashData,
+      ['material', key, 'description'],
+      [descTextMapHash, 'paragraph2']
+    )
   })
 
   // Override
