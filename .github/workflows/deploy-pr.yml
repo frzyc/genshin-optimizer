@@ -13,7 +13,7 @@ jobs:
       - uses: github/branch-deploy@v5.2.1
         id: branch-deploy
         with:
-          trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
+          trigger: '.deploy' # the trigger phrase to look for in the comment on the pull request
       - name: Checkout
         uses: actions/checkout@v3
         if: ${{ steps.branch-deploy.output.continute == 'true' }}
