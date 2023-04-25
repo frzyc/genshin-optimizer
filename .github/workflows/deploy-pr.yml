@@ -1,0 +1,70 @@
+name: IssueOps Deploy PR
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  deploy:
+  if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: github/branch-deploy@v5.2.1
+        id: branch-deploy
+        with:
+          trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
+      - name: Checkout
+        uses: actions/checkout@v3
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+      - uses: actions/setup-node@v3
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        with:
+          node-version: 18
+          cache: 'yarn'
+      - name: Get PR number
+        id: get-pr-number
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          echo "pr=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') >> $GITHUB_OUTPUT
+      - name: Set git config
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Yarn install
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          yarn install --immutable --immutable-cache
+      - name: Setup .env
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          printf '%s' "$ENVFILE" > apps/frontend/.env.local
+        env:
+          ENVFILE: ${{ secrets.ENVFILE }}
+      - name: Build genshin-optimizer
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
+          yarn run nx run frontend:build:production --base-href="${{ steps.get-pr-number.output.pr }}"
+      - name: Checkout gh-pages
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Move to gh-pages
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          mkdir --parents "gh-pages/${{ steps.get-pr-number.output.pr }}"
+          rm -rfv "gh-pages/${{ steps.get-pr-number.output.pr }}" || true
+          mv "dist/apps/frontend" "gh-pages/${{ steps.get-pr-number.output.pr }}"
+      - name: Make commit to deploy
+        if: ${{ steps.branch-deploy.output.continute == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ./${{ steps.get-pr-number.output.pr }}
+          git commit -m "${{ steps.get-pr-number.output.pr }} build"
+          git push origin gh-pages
+        working-directory: gh-pages
