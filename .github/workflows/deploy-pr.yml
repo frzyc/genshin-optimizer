@@ -13,6 +13,7 @@ jobs:
       - uses: github/branch-deploy@v5.2.1
         id: branch-deploy
         with:
+          skip_ci: "production"
           trigger: '.deploy' # the trigger phrase to look for in the comment on the pull request
       - name: Checkout
         uses: actions/checkout@v3
@@ -22,11 +23,6 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-      - name: Get PR number
-        id: get-pr-number
-        if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
-        run: |
-          echo 'pr=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH)' >> $GITHUB_OUTPUT
       - name: Set git config
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
@@ -46,7 +42,7 @@ jobs:
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
-          yarn run nx run frontend:build:production --base-href="${{ steps.get-pr-number.outputs.pr }}"
+          yarn run nx run frontend:build:production --base-href="${{ github.event.issue.number }}"
       - name: Checkout gh-pages
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         uses: actions/checkout@v3
@@ -56,15 +52,19 @@ jobs:
       - name: Move to gh-pages
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
-          mkdir --parents "gh-pages/${{ steps.get-pr-number.outputs.pr }}"
-          rm -rfv "gh-pages/${{ steps.get-pr-number.outputs.pr }}" || true
-          mv "dist/apps/frontend" "gh-pages/${{ steps.get-pr-number.outputs.pr }}"
+          mkdir --parents "gh-pages/${{ github.event.issue.number }}"
+          rm -rfv "gh-pages/${{ github.event.issue.number }}" || true
+          mv "dist/apps/frontend" "gh-pages/${{ github.event.issue.number }}"
       - name: Make commit to deploy
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ./${{ steps.get-pr-number.outputs.pr }}
-          git commit -m "${{ steps.get-pr-number.outputs.pr }} build"
+          git add ./${{ github.event.issue.number }}
+          git commit -m "${{ github.event.issue.number }} build"
           git push origin gh-pages
         working-directory: gh-pages
+      - name: Update deployment message
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
+        run: |
+          echo 'DEPLOY_MESSAGE=Deployed to https://frzyc.github.io/genshin-optimizer/${{ github.event.issue.number }}' >> $GITHUB_ENV
