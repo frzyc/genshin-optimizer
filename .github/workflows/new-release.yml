@@ -57,7 +57,9 @@ jobs:
       - name: Deploy to Github Pages
         run: |
           git fetch origin gh-pages --depth=1
-          git worktree add ../gh-pages gh-pages --no-checkout
+          git worktree add ../gh-pages gh-pages
+          rm ../gh-pages/* || true
+          rm ../gh-pages/assets -r
           cp -rT dist/apps/frontend ../gh-pages
           cd ../gh-pages
           git add --all .
