@@ -276,7 +276,7 @@ const sheet: ICharacterSheet = {
             value: (data) => (data.get(input.constellation).value >= 1 ? 2 : 1),
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.pressCD,
             unit: 's',
           },
@@ -286,7 +286,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.holdCD,
             unit: 's',
           },

@@ -295,7 +295,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.trigger,
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.cd,
             unit: 's',
           },
@@ -314,7 +314,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.triggerHold,
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.cdHold,
             unit: 's',
           },

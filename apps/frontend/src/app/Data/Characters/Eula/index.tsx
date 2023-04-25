@@ -311,7 +311,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: `${dm.skill.holdCd}`,
             unit: 's',
           },

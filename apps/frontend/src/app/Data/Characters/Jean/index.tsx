@@ -399,7 +399,7 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('passive2', {
         fields: [
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: dm.passive2.energyRegen,
           },
         ],

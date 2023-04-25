@@ -445,12 +445,12 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.pressCd,
             unit: 's',
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.holdCd,
             unit: 's',
           },

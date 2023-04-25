@@ -41,12 +41,16 @@ const data = {
   dmgAbsorption: [1998234222, 'skillParam'],
   //Healing
   healing: [1082735766, 'skillParam'],
+  //Continuous Healing
+  contHealing: [3331608342, 'skillParam'],
   //Duration
   duration: [1150944327, 'skillParam'],
   //CD
   cd: [2052795463, 'skillParam'],
   //Energy Cost
   energyCost: [3073197810, 'skillParam'],
+  //Energy Regeneration
+  energyRegen: [2165261751,'skillParam'],
   //Base DMG
   baseDMG: [430832806, 'skillParam'],
   //DoT

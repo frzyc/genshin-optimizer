@@ -421,7 +421,7 @@ const sheet: ICharacterSheet = {
             fixed: 1,
           },
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: (data) => data.get(nodeC2EnergyRegen).value,
           },
         ],

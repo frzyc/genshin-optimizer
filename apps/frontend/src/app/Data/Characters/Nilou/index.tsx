@@ -386,7 +386,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                text: st('energyRegen'),
+                text: stg('energyRegen'),
                 value: dm.constellation4.energyRegen,
               },
               {

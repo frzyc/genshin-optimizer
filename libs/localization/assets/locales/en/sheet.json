@@ -57,8 +57,6 @@
   },
   "skillCDRed": "Ele. Skill CD Reduction",
   "burstCDRed": "Ele. Burst CD Reduction",
-  "pressCD": "Press CD",
-  "holdCD": "Hold CD",
   "triggerCD": "Trigger CD",
   "press": "Press",
   "hold": "Hold",
@@ -82,7 +80,6 @@
     "dendro": "Dendro Infusion",
     "geo": "Geo Infusion"
   },
-  "energyRegen": "Energy Regeneration",
   "effectDuration": {
     "pyro": "Pyro effect duration",
     "cryo": "Cryo effect duration",

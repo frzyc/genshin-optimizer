@@ -346,7 +346,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: (data) =>
               data.get(input.constellation).value >= 1
                 ? `${dm.skill.cdHold} - 10% = ${dm.skill.cdHold * (1 - 0.1)}`

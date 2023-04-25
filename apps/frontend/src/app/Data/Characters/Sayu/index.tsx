@@ -503,7 +503,7 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('constellation4', {
         fields: [
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: dm.constellation4.ener,
             fixed: 1,
           },
