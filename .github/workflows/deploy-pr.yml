@@ -15,6 +15,7 @@ jobs:
         with:
           skip_ci: 'production'
           trigger: '.deploy' # the trigger phrase to look for in the comment on the pull request
+          update_branch: 'disabled'
       - name: Checkout
         uses: actions/checkout@v3
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
