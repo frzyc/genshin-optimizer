@@ -74,6 +74,7 @@ function IntroCard() {
     <CardDark>
       <CardContent>
         <Typography variant="subtitle1">
+          teajshtjashtjk
           <Trans t={t} i18nKey="intro">
             The <strong>ultimate</strong>{' '}
             <Link
