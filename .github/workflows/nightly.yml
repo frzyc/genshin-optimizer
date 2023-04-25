@@ -1,4 +1,4 @@
-name: New Release
+name: Deploy Nightly
 
 on:
   workflow_dispatch
@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir --parents "gh-pages/genshin-optimizer/nightly"
           rm -rfv "gh-pages/genshin-optimizer/nightly" || true
-          mv "genshin-optimizer/dist/apps/frontend" "gh-pages/genshin-optimizer/nightly"
+          mv "dist/apps/frontend" "gh-pages/genshin-optimizer/nightly"
       - name: Make commit to deploy
         run: |
           git config user.name "github-actions[bot]"
