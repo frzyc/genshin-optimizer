@@ -1,0 +1,29 @@
+name: Clean PR Deployment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deploy:
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout gh-pages
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - name: Remove from gh-pages
+        run: |
+          rm -rfv "gh-pages/pr${{ github.event.issue.number }}" || true
+      - name: Make commit to deploy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ./pr${{ github.event.issue.number }}
+          git commit -m "pr${{ github.event.issue.number }} build"
+          git push origin gh-pages
+        working-directory: gh-pages
