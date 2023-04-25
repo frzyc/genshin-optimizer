@@ -3,7 +3,7 @@ name: Deploy Nightly
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '8 20 * * *'
 
 jobs:
   deploy:
