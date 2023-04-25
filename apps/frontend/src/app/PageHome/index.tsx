@@ -87,6 +87,7 @@ function IntroCard() {
             inventory, and help you create the best build based on how you play,
             with what you have.
           </Trans>
+          shektfhgjksd
         </Typography>
       </CardContent>
     </CardDark>
