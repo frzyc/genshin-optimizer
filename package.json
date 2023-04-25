@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "9.8.0",
+  "version": "9.8.2",
   "license": "MIT",
   "private": true,
   "scripts": {
