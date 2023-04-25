@@ -1,7 +1,8 @@
 name: Deploy Nightly
 
 on:
-  workflow_dispatch
+  schedule:
+    - cron: "0 19 54 * *"
 
 jobs:
   deploy:
