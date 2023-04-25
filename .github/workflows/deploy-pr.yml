@@ -26,7 +26,7 @@ jobs:
         id: get-pr-number
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
-          echo "pr=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH) >> $GITHUB_OUTPUT
+          echo 'pr=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH)' >> $GITHUB_OUTPUT
       - name: Set git config
         if: ${{ steps.branch-deploy.outputs.continue == 'true' }}
         run: |
