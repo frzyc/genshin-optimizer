@@ -50,7 +50,7 @@ export const dm = {
     skillDmg: skillParam_gen.skill[s++],
     whirl1Dmg: skillParam_gen.skill[s++],
     whirl2Dmg: skillParam_gen.skill[s++],
-    moonDmg: skillParam_gen.skill[s++],
+    illusionDmg: skillParam_gen.skill[s++],
     wheelDmg: skillParam_gen.skill[s++],
     dance1Dmg: skillParam_gen.skill[s++],
     dance2Dmg: skillParam_gen.skill[s++],
@@ -76,7 +76,7 @@ export const dm = {
     maxDmg_: skillParam_gen.passive2[2][0],
   },
   constellation1: {
-    moon_dmg_: skillParam_gen.constellation1[0],
+    illusion_dmg_: skillParam_gen.constellation1[0],
     durationInc: skillParam_gen.constellation1[1],
   },
   constellation2: {
@@ -127,10 +127,10 @@ const bountifulBloom_dmg_ = greaterEq(
   )
 )
 
-const c1_moon_dmg_ = greaterEq(
+const c1_illusion_dmg_ = greaterEq(
   input.constellation,
   1,
-  percent(dm.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) })
+  percent(dm.constellation1.illusion_dmg_, { name: ct.ch(`c1.illusion_dmg_`) })
 )
 
 const [condC2HydroPath, condC2Hydro] = cond(key, 'c2Hydro')
@@ -198,8 +198,8 @@ export const dmgFormulas = {
     dance2Dmg: dmgNode('hp', dm.skill.dance2Dmg, 'skill'),
     whirl1Dmg: dmgNode('hp', dm.skill.whirl1Dmg, 'skill'),
     whirl2Dmg: dmgNode('hp', dm.skill.whirl2Dmg, 'skill'),
-    moonDmg: dmgNode('hp', dm.skill.moonDmg, 'skill', {
-      premod: { skill_dmg_: c1_moon_dmg_ },
+    illusionDmg: dmgNode('hp', dm.skill.illusionDmg, 'skill', {
+      premod: { skill_dmg_: c1_illusion_dmg_ },
     }),
     wheelDmg: dmgNode('hp', dm.skill.wheelDmg, 'skill'),
   },
@@ -339,8 +339,8 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.skill.moonDmg, {
-              name: ct.ch(`skill.moon`),
+            node: infoMut(dmgFormulas.skill.illusionDmg, {
+              name: ct.ch(`skill.illusion`),
             }),
           },
           {
