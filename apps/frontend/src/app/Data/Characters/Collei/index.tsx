@@ -90,12 +90,6 @@ const dm = {
   },
 } as const
 
-const c1_enerRech_ = greaterEq(
-  input.constellation,
-  1,
-  dm.constellation1.enerRech_
-)
-
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const c4AfterBurst_eleMasDisp = greaterEq(
   input.constellation,
@@ -106,6 +100,12 @@ const c4AfterBurst_eleMas = unequal(
   target.charKey,
   key,
   c4AfterBurst_eleMasDisp
+)
+const [condC1OffFieldPath, condC1OffField] = cond(key, 'offField')
+const c1_enerRech_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1OffField, 'on', dm.constellation1.enerRech_)
 )
 
 const dmgFormulas = {
@@ -326,7 +326,22 @@ const sheet: ICharacterSheet = {
     ]),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.condTem('constellation1', {
+        value: condC1OffField,
+        path: condC1OffFieldPath,
+        name: st('charOffField'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c1_enerRech_
+              }
+            ]
+          }
+        }
+      })
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },

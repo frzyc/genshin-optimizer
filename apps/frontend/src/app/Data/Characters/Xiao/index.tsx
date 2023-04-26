@@ -10,7 +10,6 @@ import {
   naught,
   prod,
   subscript,
-  unequal,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
@@ -146,13 +145,12 @@ const skill_dmg_ = greaterEq(
     naught
   )
 )
-
-const c2Inactive = greaterEq(
+const [condC2OffFieldPath, condC2OffField] = cond(key, 'offField')
+const c2_enerRech_ = greaterEq(
   input.constellation,
   2,
-  unequal(input.activeCharKey, key, 1)
+  equal(condC2OffField, 'on', dm.constellation2.enerRech_)
 )
-const c2Inactive_enerRech_ = equal(c2Inactive, 1, dm.constellation2.enerRech_)
 
 const [condC4BelowHPPath, condC4BelowHP] = cond(key, 'c4BelowHP')
 const c4BelowHP_def_ = greaterEq(
@@ -176,7 +174,7 @@ export const data = dataObjForCharacterSheet(
       plunging_dmg_,
       all_dmg_,
       skill_dmg_,
-      enerRech_: c2Inactive_enerRech_,
+      enerRech_: c2_enerRech_,
       def_: c4BelowHP_def_,
     },
     infusion: {
@@ -287,24 +285,6 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
-            node: infoMut(auto_dmg_, {
-              name: ct.ch('burst.autoAtkDmgBonus_'),
-              unit: '%',
-            }),
-          },
-          {
-            node: infoMut(lifeDrain, {
-              name: ct.ch('burst.lifeDrain_'),
-              textSuffix: ct.ch('burst.currentHPPerSec'),
-              unit: '%',
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.burst.duration,
-            unit: 's',
-          },
-          {
             text: stg('cd'),
             value: dm.burst.cd,
             unit: 's',
@@ -343,6 +323,18 @@ const sheet: ICharacterSheet = {
                   <ColorText color="anemo">{st('infusion.anemo')}</ColorText>
                 ),
               },
+              {
+                node: infoMut(lifeDrain, {
+                  name: ct.ch('burst.lifeDrain_'),
+                  textSuffix: ct.ch('burst.currentHPPerSec'),
+                  unit: '%',
+                }),
+              },
+              {
+                text: stg('duration'),
+                value: dm.burst.duration,
+                unit: 's',
+              },
             ],
           },
         },
@@ -370,11 +362,20 @@ const sheet: ICharacterSheet = {
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
-      ct.fieldsTem('constellation2', {
-        canShow: equal(c2Inactive, 1, 1),
-        teamBuff: true,
-        fields: [{ node: c2Inactive_enerRech_ }],
-      }),
+      ct.condTem('constellation2', {
+        value: condC2OffField,
+        path: condC2OffFieldPath,
+        name: st('charOffField'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c2_enerRech_
+              }
+            ]
+          }
+        }
+      })
     ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

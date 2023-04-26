@@ -68,8 +68,9 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
-  "activeCharField": "Character is inside the field",
-  "opponentsField": "Opponents in field",
+  "charOffField": "Character is off-field",
+  "activeCharField": "Character is inside the ability's field",
+  "opponentsField": "Opponent is inside the ability's field",
   "takeDmg": "After taking DMG",
   "infusion": {
     "pyro": "Pyro Infusion",
