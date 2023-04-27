@@ -1,12 +1,6 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import {
-  compareEq,
-  constant,
-  lookup,
-  prod,
-  subscript,
-} from '../../../../Formula/utils'
+import { constant, lookup, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
@@ -19,10 +13,10 @@ import data_gen_json from './data_gen.json'
 const key: WeaponKey = 'CalamityQueller'
 const data_gen = data_gen_json as WeaponData
 
-const [tr, trm] = trans('weapon', key)
+const [tr] = trans('weapon', key)
 
-const [condStackPath, condStack] = cond(key, 'stack')
-// const [condActivePath, condActive] = cond(key, "active")
+const [condStacksPath, condStacks] = cond(key, 'stack')
+const [condOffFieldPath, condOffField] = cond(key, 'offField')
 
 const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
@@ -34,16 +28,9 @@ const dmg_Nodes = Object.fromEntries(
   ])
 )
 const atkInc = prod(
-  compareEq(
-    input.activeCharKey,
-    input.charKey,
-    constant(1, {
-      /* TODO: Add key for active char */
-    }),
-    constant(2, { name: trm('inactiveKey') })
-  ),
+  constant(1, {}),
   lookup(
-    condStack,
+    condStacks,
     objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
     0
   ),
@@ -62,8 +49,8 @@ const sheet: IWeaponSheet = {
       fields: Object.values(dmg_Nodes).map((node) => ({ node })),
     },
     {
-      value: condStack,
-      path: condStackPath,
+      value: condStacks,
+      path: condStacksPath,
       teamBuff: true,
       header: headerTemplate(key, st('stacks')),
       name: tr('passiveName'),
@@ -72,10 +59,29 @@ const sheet: IWeaponSheet = {
           i,
           {
             name: st('stack', { count: i }),
-            fields: [{ node: atkInc }],
+            fields: [
+              {
+                node: atkInc,
+              },
+            ],
           },
         ])
       ),
+    },
+    {
+      value: condOffField,
+      path: condOffFieldPath,
+      header: headerTemplate(key, st('conditional')),
+      name: st('charOffField'),
+      states: {
+        on: {
+          fields: [
+            {
+              node: atkInc,
+            },
+          ],
+        },
+      },
     },
   ],
 }
