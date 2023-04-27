@@ -7,6 +7,7 @@ import {
   greaterEq,
   infoMut,
   lookup,
+  one,
   percent,
   prod,
   subscript,
@@ -240,7 +241,7 @@ const dmgFormulas = {
     plungeHigh: burstResolve(dm.burst.plungeHigh),
     energyGen: prod(
       subscript(input.total.burstIndex, dm.burst.enerGen),
-      sum(1, a4EnergyRestore_)
+      sum(one, a4EnergyRestore_)
     ),
   },
   passive2: {
