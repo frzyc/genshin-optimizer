@@ -1,4 +1,4 @@
-import type { RarityKey } from '@genshin-optimizer/consts'
+import type { LocationKey, RarityKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/g-assets'
 import { Lock, LockOpen } from '@mui/icons-material'
@@ -47,7 +47,6 @@ import type {
   SubstatKey,
 } from '../Types/artifact'
 import { allSubstatKeys } from '../Types/artifact'
-import type { LocationKey } from '../Types/consts'
 import { clamp, clamp01 } from '../Util/Util'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
