@@ -2,6 +2,8 @@
   "c1": "Utiliser <strong>Coupure de mille feuilles</strong> réinitialise le TdR",
   "c2": "Dans Vent d'automne",
   "c6": {
-    "after": "Après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>"
-  }
+    "after": "Après avoir utilisé <strong>Véhémence divine</strong> ou <strong>Coupure de mille feuilles</strong>",
+    "bonus": "Normal, Charged and Plunging DMG Bonus"
+  },
+  "skillPlunge": "Midare Ranzan"
 }

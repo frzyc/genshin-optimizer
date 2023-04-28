@@ -1,4 +1,6 @@
 {
   "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
-  "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>"
+  "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>",
+  "normPyroInfus": "<pyro>Normal Att. Pyro Infusion</pyro>",
+  "c6Key_": "Blazing Arrow Mult."
 }

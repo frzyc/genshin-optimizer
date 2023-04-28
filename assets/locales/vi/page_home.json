@@ -4,18 +4,28 @@
     "title": "Danh sách liên kết",
     "buttons": {
       "tyGuide": {
+        "title": "Youtube Guide Playlist",
         "tooltip": "Cách dùng công cụ tối ưu hóa Genshin"
       },
       "scanners": {
         "title": "Tự động nhập dữ liệu",
         "tooltip": "Phần mềm từ phía thứ 3 cho phép thực hiện lấy dữ liệu tdv tự động"
       },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & guides community"
+      },
       "devDiscord": {
         "title": "Discord của nhà phát triển Genshin ",
         "tooltip": "Cộng đồng các nhà phát triển dành cho Genshin"
       },
       "good": {
-        "title": "Tài liệu về \"GOOD\""
+        "title": "Tài liệu về \"GOOD\"",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer Patch Notes",
+        "tooltip": "All patch notes for GO"
       }
     }
   },
@@ -30,7 +40,10 @@
     "jobTitle": {
       "leadDev": "Trưởng nhóm phát triển",
       "dev": "Nhà phát triển",
-      "mod": "Quản trị viên"
+      "mod": "Quản trị viên",
+      "admin": "Admin",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
     }
   }
 }

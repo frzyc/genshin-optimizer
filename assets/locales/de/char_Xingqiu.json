@@ -1,3 +1,5 @@
 {
-  "burstCond": "Regenbogentechnik"
+  "skillCond": "Protected by Rain Swords",
+  "burstCond": "Regenbogentechnik",
+  "c2Cond": "Opponent's been hit by Sword Rain"
 }

@@ -5,11 +5,17 @@
   "burstC": {
     "name": "Kiếm Ánh Sáng",
     "start5": "Bắt đầu ở 5 tầng",
-    "addStacks": "50% cơ hội nhận thêm mỗi tầng"
+    "addStacks": "50% cơ hội nhận thêm mỗi tầng",
+    "dmg": "Lightfall Sword Explosion DMG",
+    "bonusScaling": "Lightfall Sword Bonus Scaling"
   },
   "c1C": {
     "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
     "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
   },
-  "passive1": "Sát thương Kiếm Ánh Sáng"
+  "passive1": "Sát thương Kiếm Ánh Sáng",
+  "c4C": {
+    "name": "Opponents have less than 50% HP",
+    "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "skill": {
+    "coil": "Coil",
+    "coil1": "Coil Stack 1",
+    "coil2": "Coil Stack 2",
+    "coil3": "Coil Stack 3",
+    "rush": "Rushing Ice",
+    "rushState": "During Rushing Ice state (1 stack / s)"
+  },
+  "a1CondName": "When Aloy receives the Coil effect from <strong>Frozen Wilds</strong>",
+  "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
+}

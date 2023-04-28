@@ -1,0 +1,36 @@
+{
+  "title": "성유물 편집기",
+  "rarity": "등급",
+  "level": "레벨",
+  "unknownPieceName": "성유물 이름 미지정",
+  "unknownSetName": "성유물 세트 미지정",
+  "curSubEff": "현재 부옵션 효율",
+  "curSubEffDesc": "성유물 강화 시 4레벨마다 부옵션이 추가됩니다. <strong>부옵션 효율</strong>은 얼마나 높은 수치로 옵션이 추가되었는지 계산되어 표시됩니다.",
+  "maxSubEff": "최대 부옵션 효율",
+  "maxSubEffDesc": "성유물의 <strong>부옵션 최대 효율</strong>은 남은 강화 추가옵션을 최대값으로 가정하여 계산됩니다.",
+  "substat": {
+    "selectSub": "부옵션 선택",
+    "error": {
+      "noCalc": "추가옵션을 계산할 수 없습니다.",
+      "noOverRoll": "추가옵션은 {{value}}회를 넘을 수 없습니다."
+    },
+    "noRoll": "추가옵션 없음",
+    "RollCount_one": "{{count}}회",
+    "RollCount_other": "{{count}}회",
+    "noStat": "값 없음",
+    "eff": "효율: <1></1>",
+    "noSubstat": "부옵션 없음",
+    "substatFormat": "부옵션 {{value}}",
+    "nextRolls": "다음 강화:"
+  },
+  "preview": "성유물 미리보기",
+  "dupArt": "중복된 성유물이 있습니다.",
+  "upArt": "강화된 성유물이 있습니다.",
+  "beforeEdit": "편집 전",
+  "btnSave": "성유물 저장",
+  "btnAdd": "성유물 추가",
+  "btnClear": "초기화",
+  "btnRandom": "무작위",
+  "btnUpdate": "성유물 업데이트",
+  "clearPrompt": "성유물 편집기에 내용이 있습니다. 정말 편집기의 내용을 비우시겠습니까?"
+}

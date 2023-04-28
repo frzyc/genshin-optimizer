@@ -19,14 +19,18 @@
     "crit": "Após infligir Dano Crítico",
     "normalChargedOrPlunging": "Após um Ataque Normal, Carregado ou Imersivo atingir um inimigo",
     "dendro": "Após infligir <dendro>Dano Dendro</dendro>",
-    "normalEle": "Após infligir Dano Elemental com um Ataque Normal"
+    "normalEle": "Após infligir Dano Elemental com um Ataque Normal",
+    "ele": "Após infligir Dano Elemental",
+    "weakSpot": "Após atingir um Ponto Fraco inimigo através de um Tiro com Mira."
   },
   "eleAbsor": "Absorção Elemental",
   "absorDot": "Dano Contínuo da Absorção Elemental",
   "afterUse": {
     "skill": "Após usar a Habilidade Elemental",
     "burst": "Após usar o Supremo",
-    "skillOrBurst": "Após usar a Habilidade Elemental ou o Supremo"
+    "skillOrBurst": "Após usar a Habilidade Elemental ou o Supremo",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "Aumento de ATQ"
@@ -149,5 +153,17 @@
     "skill": "Multipl. de Dano da Habil. Elem."
   },
   "stamRestored": "Stamina Recuperada",
-  "triggerQuota": "Ativações"
+  "triggerQuota": "Ativações",
+  "enemyAffected": {
+    "burningOrPyro": "Inimigo está <pyro> Queimando</pyro> ou afetado por <pyro>Pyro</pyro>",
+    "frozenOrCryo": "Inimigo está Congelado ou afetado por <cryo>Cryo</cryo>",
+    "pyroOrElectro": "Inimigo está afetado por <pyro>Pyro</pyro> ou <electro>Electro</electro>",
+    "hydroOrCryo": "Inimigo está afetado por <hydro>Hydro</hydro> ou <cryo>Cryo</cryo>",
+    "hydroOrPyro": "Inimigo está afetado por <hydro>Hydro</hydro> ou <pyro>Pyro</pyro>",
+    "hydroOrElectro": "Inimigo está afetado por <hydro>Hydro</hydro> ou <electro>Electro</electro>",
+    "electro": "Inimigo está afetado por <electro>Electro</electro>",
+    "cryo": "Inimigo está afetado por <cryo>Cryo</cryo>"
+  },
+  "getElementalOrbParticle": "Após obter uma Partícula ou Orbe Elemental",
+  "notProtectedByShield": "Não-protegido por escudo"
 }

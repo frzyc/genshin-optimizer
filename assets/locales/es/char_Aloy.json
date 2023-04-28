@@ -7,5 +7,6 @@
     "rush": "Hielo Galopante",
     "rushState": "Durante el estado de Hielo Galopante (1 carga / s)"
   },
-  "a1CondName": "Cuando Aloy recibe el efecto de Inducción por <strong>Campo Gélido</strong>"
+  "a1CondName": "Cuando Aloy recibe el efecto de Inducción por <strong>Campo Gélido</strong>",
+  "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
 }

@@ -1,8 +1,6 @@
 {
   "omen": "Omen",
-  "omenDuration": "Длительность Omen",
   "bubbleDuration": "Длительность Теневого Пузыря",
-  "phantomDuration": "Длительность Фантома",
   "hitOp": {
     "affectedByOmen": "Любой участник команды ударил врага под Omen"
   },

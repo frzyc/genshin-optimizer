@@ -97,5 +97,6 @@
   "sub_other": "{{count}} стат",
   "cantDeleteLock": "Чтобы удалить артефакт, разблокируйте его",
   "equippedArt": "Надетые артефакты",
-  "artInInv": "Артефакты в инвентаре"
+  "artInInv": "Артефакты в инвентаре",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

@@ -25,8 +25,8 @@
       "delNotInImport": "가져오기에 포함되지 않은 아이템 삭제"
     },
     "tooltip": {
-      "detectdup": "GO 보관함과 가져오는 내용중에 업그레이드나 중복을 찾습니다.",
-      "ignoreDup": "업그레이드나 중복을 찾기 않습니다. 가져오기한 것들은 GO 보관함의 상단에 추가됩니다.",
+      "detectdup": "GO 보관함과 가져오는 내용중에 강화되었거나 중복된 것들을 찾습니다.",
+      "ignoreDup": "강화되거나 중복된 것들을 찾지 않습니다. 가져오기한 것들은 GO 보관함의 상단에 추가됩니다.",
       "delNotInImport": "가져오기의 내용이 보관함 전체의 내용이라고 가정합니다. 가져오기에 포함되지 않은 것들은 삭제됩니다.",
       "keepNotInImport": "가져오기의 내용이 보관함의 일부라고 가정합니다. 아무것도 삭제되지 않습니다."
     }
@@ -37,11 +37,11 @@
     "weapons": "무기:",
     "total": "총:",
     "new": "신규:",
-    "updated": "변경:",
-    "removed": "제거:",
-    "unchanged": "유지:",
+    "updated": "변경됨:",
+    "removed": "제거됨:",
+    "unchanged": "유지됨:",
     "invalid": "비정상:",
-    "upgraded": "변경됨:",
+    "upgraded": "강화됨:",
     "dbTotal": "총 개수:",
     "notInImport": "가져오기에 미포함:"
   },
@@ -55,5 +55,12 @@
       "swap": "선택"
     },
     "currentDB": "현재 데이터베이스"
+  },
+  "sillyCard": {
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Enabled",
+      "disabled": "Silly Optimizer Disabled"
+    }
   }
 }

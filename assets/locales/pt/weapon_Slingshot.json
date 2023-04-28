@@ -1,3 +1,5 @@
 {
-  "condName": "O Ataque Normal ou Carregado atingiu dentro de 0,3s"
+  "condName": "Ataque Normal ou Carregado atingiu",
+  "less": "Dentro de 0.3s após atirar",
+  "more": "Mais de 0.3s após atirar"
 }

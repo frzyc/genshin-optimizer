@@ -5,6 +5,6 @@
     "maxStele": "최대 암주 개수",
     "nearShield": "<strong>옥홀 방패</strong> 근처에 있는 적"
   },
-  "p1cond": "<strong>옥홀 방패</strong>가 피해를 받은 경우",
-  "c6heal": "최대 체력 회복량"
+  "p1cond": "<strong>옥홀 방패</strong>가 피해를 받은 후",
+  "c6heal": "최대 회복량"
 }

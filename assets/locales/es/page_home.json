@@ -1,16 +1,49 @@
 {
   "intro": "<0>¿Qué es Genshin Optimizer?</0><1>Genshin Optimizer (GO) es una página web de código libre hecha por fans del juego RPG de acción gacha <1><strong>Genshin Impact</strong></1>. Está principalmente dirigido a ayudar a los jugadores con un aspecto complejo del juego: la Optimización de Artefactos. Ya que los artefactos son elementos altamente aleatorizados que contribuyen directamente a cómo de efectivos son tus personajes en el juego, GO tratará de encontrar los mejores artefactos para tus personajes basado en tu inventario de artefactos actual.</1><2>GO puede realizar un seguimiento de tus artefactos, permitiendo filtrar/comparar artefactos con más facilidad, sirviendo como herramienta para ayudar a los usuarios a encontrar buenos artefactos en su inventario para subir de nivel, y malos artefactos para usar como relleno.</2><3>Como GO puede replicar las estadísticas exactas de cualquier personaje, junto con los cálculos de todas sus cifras de daño hasta un 1% de precisión, también puede servir como calculadora de Daño, y como herramienta para teorizar.</3>",
   "quickLinksCard": {
+    "title": "Quick Links",
     "buttons": {
+      "tyGuide": {
+        "title": "Youtube Guide Playlist",
+        "tooltip": "Learn how to use Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "Automatic Scanners",
+        "tooltip": "3rd Party programs that automatically scans artifacts from the game"
+      },
       "kqm": {
-        "title": "KeqingMains"
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & guides community"
+      },
+      "devDiscord": {
+        "title": "Genshin Dev Discord",
+        "tooltip": "Community of developers for Genshin"
+      },
+      "good": {
+        "title": "GOOD documentation",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer Patch Notes",
+        "tooltip": "All patch notes for GO"
       }
     }
   },
+  "inventoryCard": {
+    "title": "GO Inventory"
+  },
+  "vidGuideCard": {
+    "title": "Video Guides"
+  },
   "teamCard": {
+    "title": "Meet the Team",
     "jobTitle": {
+      "leadDev": "Lead Developer",
       "dev": "Desarrollador",
-      "mod": "Moderador"
+      "mod": "Moderador",
+      "admin": "Admin",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
     }
   }
 }

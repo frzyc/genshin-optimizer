@@ -11,7 +11,10 @@
       },
       "noRoll": "Keine zufälligen Aufwertungen",
       "noStat": "Kein Wert",
-      "eff": "Effizenz: <1></1>"
+      "eff": "Effizenz: <1></1>",
+      "nextRolls": "Next rolls:",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Qualität",
     "level": "Level",
@@ -29,16 +32,20 @@
     "btnClear": "Eingaben löschen",
     "btnRandom": "Zufällig ausfüllen",
     "btnUpdate": "Artefakt aktualisieren",
-    "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?"
+    "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?",
+    "unknownSetName": "Unknown Set Name"
   },
   "artifactFilter": "Artefakt Filter",
   "filterLocation": {
     "inventory": "Inventar",
-    "currentlyEquipped": "Aktuell ausgerüstet"
+    "currentlyEquipped": "Aktuell ausgerüstet",
+    "location": "Characters"
   },
   "button": {
     "unequipArtifacts": "Artefakte ablegen",
-    "deleteArtifacts": "Artefakte löschen"
+    "deleteArtifacts": "Artefakte löschen",
+    "lockArtifacts": "Lock Artifacts",
+    "unlockrtifacts": "Unlock Artifacts"
   },
   "buttonHint": "Hinweis: Die oberen roten Buttons gelten nur für <1>gefilterte Artefakte</1>",
   "tipsOfTheDay": [
@@ -73,5 +80,23 @@
     "title": "In Berechnung der Effizienz zu berücksichtigende Bonusattribute"
   },
   "resetFilters": "Filter zurücksetzen",
-  "setEffectNum": "Set mit {{setNum}} Teilen"
+  "setEffectNum": "Set mit {{setNum}} Teilen",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+  "edit": "Edit Artifact",
+  "autocompleteLabels": {
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Artifact Set"
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

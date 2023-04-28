@@ -7,25 +7,36 @@
     "assumptionLvl": {
       "no": "Нет присвоения уровней",
       "lvl": "Присвоить как минимум Ур. {{lvl}}"
-    }
+    },
+    "title": "Main Stat Filter/Configuration"
   },
   "tcGraph": {
+    "vs": "Graph Optimization Target vs.",
     "notSel": "Не Выбран",
     "downloadData": "Скачать Данные",
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
+    "showStatThr": "Show Stat Threshold Line",
     "generatedBuilds": "Сгенерированные Билды",
-    "currentBuild": "Текущий Билд"
+    "statReqThr": "Stat Requirement Threshold Line",
+    "currentBuild": "Текущий Билд",
+    "highlightedBuilds": "Highlighted Builds",
+    "buildAlreadyInList": "Build is already in the list"
   },
   "levelFilter": "Фильтровать Артефакты по Lvl.",
   "allowPartial": "Позволить частичные билды (<5 артефактов)",
   "constraintFilter": {
-    "title": "Постоянное Значение"
+    "title": "Постоянное Значение",
+    "tooltip": "Set certain minimum requirements that generated builds must conform to. e.g. Generated builds must have at least 140% Energy Recharge."
   },
   "artSetConfig": {
     "title": "Конфигурация сета артефактов",
+    "setEffCond": "Set Effect Conditionals",
     "enabled": "Включен",
     "allowed": "Разрешен",
     "excluded": "Исключить",
     "selected": "Выбран",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
     "allowAll2set": "Разрешить Все 2-Сета",
     "excludeAll2set": "Исключить все сеты из 2",
     "allowAll4set": "Разрешить Все 4-Сета",
@@ -33,18 +44,32 @@
     "alExRainbow": "<0>Разрешить<1></1></0> / <2>Исключить<1></1></2> Радужные Билды",
     "modal": {
       "setCond": {
+        "title": "Artifact Set Conditional Effects",
+        "reset": "Reset Conditionals",
         "text": "Некоторые эффекты набора артефактов предоставляют условную статистику. Это окно позволяет вам выбрать эти эффекты, чтобы они могли вносить свой вклад в статистику, когда во время оптимизации вычисляется сборка, удовлетворяющая заданному эффекту."
       },
       "ArtSetFilter": {
         "title": "Наборы артефактов <1>Разрешенные<1></1></1> / <3>Исключенные<1></1></3>",
-        "intro": "Вы можете разрешить/исключить какие наборы хотите рассматривать в билде. В следующих примерах <strong>A</strong> относится к набору, и <strong>R</strong> – радуга (не относится к набору)"
+        "intro": "Вы можете разрешить/исключить какие наборы хотите рассматривать в билде. В следующих примерах <strong>A</strong> относится к набору, и <strong>R</strong> – радуга (не относится к набору)",
+        "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
       }
     }
   },
+  "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+  "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
   "noArtis": "Упс! Видимо, вы ещё не добавили ни одного артефакта на GO! Вы должны перейти на страничку <1>Artifacts</1> и добавить несколько!",
+  "build_one": "<0>{{count}}</0> Build",
+  "build_other": "<0>{{count}}</0> Builds",
+  "thread_one": "<0>{{count}}</0> Thread",
+  "thread_other": "<0>{{count}}</0> Threads",
   "targetSelector": {
     "selectOptTarget": "Выберете Цель Оптимизации",
-    "selectGraphTarget": "Выберете График Цели"
+    "selectGraphTarget": "Выберете График Цели",
+    "invalidTarget": "INVALID TARGET",
+    "selectBuildTarget": "Select a Build Constraint Target"
   },
   "selectTargetFirst": "Сначала Выберете Цель Оптимизации",
   "generateButton": {
@@ -56,5 +81,45 @@
   "currentlyEquippedBuild": "Надето",
   "addBuildToList": "Добавить билд в лист",
   "graphBuildLabel": "Графа #<1>{{count}}</1>",
-  "workerLoadFailed": "Не удалось загрузить. Нажмите здесь чтобы перезагрузить страницу и попробуйте снова"
+  "workerLoadFailed": "Не удалось загрузить. Нажмите здесь чтобы перезагрузить страницу и попробуйте снова",
+  "excludeArt": {
+    "title_exclude": "Excluded Artifacts",
+    "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
+    "usingNum_one": "Using <1>{{count}}</1> excluded artifacts",
+    "usingNum_other": "Using <1>{{count}}</1> excluded artifacts",
+    "excNum_one": "<0>{{count}}</0> artifact is excluded",
+    "excNum_other": "<0>{{count}}</0> artifacts are excluded",
+    "addExc": "Add artifact to this character's exclusion list",
+    "selExc": "Select artifact to add to this character's exclusion list",
+    "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+    "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
+    "excluded": "This artifact is excluded.",
+    "included": "This artifact is not excluded.",
+    "button_txt": "Exclude Artifacts",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+  },
+  "excludeChar": {
+    "title": "Equipped Artifact Configuration",
+    "modal": {
+      "allow_all": "Add all shown characters to the allow list",
+      "disallow_All": "Remove all shown characters from the allow list"
+    },
+    "allowEquip": "Allow using artifacts from",
+    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList": "Custom List",
+      "all": "All Artifacts"
+    },
+    "usingState": "Using"
+  },
+  "buildCompleted": "Build Completed",
+  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out.",
+  "bonusStats": {
+    "title": "Bonus Stats"
+  }
 }

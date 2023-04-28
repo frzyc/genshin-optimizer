@@ -2,9 +2,13 @@
   "karmaDmg_": "Бонусный Урон Очищения Трикармы",
   "karmaCritRate_": "Бонусный Крит Урон Очищения Трикармы",
   "karmaIntervalDec": "Уменьшение интервала времени Очищения Трикармы",
+  "noBurstEffect": "Hint: No burst effects active. Enable C1 and/or add <pyro>Pyro</pyro>, <electro>Electro</electro>, and/or <hydro>Hydro</hydro> teammates",
+  "partyInBurst": "Party in field",
+  "c1Key": "Additional <pyro>Pyro</pyro>, <electro>Electro</electro>, and <hydro>Hydro</hydro> members for <strong>Shrine of Maya</strong>'s bonus",
   "c2": {
     "bloomCondName": "Враги, помеченные <strong>Семенем Скандхии</strong>",
     "qasCondName": "Враги под действием Горения, Вегетации или Бутонизации после того, как были помечены <strong > Семенами Скандхии</strong"
   },
+  "c4CondName": "Nearby opponents affected by <strong>All Schemes To Know</strong>'s Seeds of Skandha",
   "c6KarmicDmg": "Урон Очищения Трикармы"
 }

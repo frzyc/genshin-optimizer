@@ -4,10 +4,10 @@
     "substat": {
       "substatFormat": "Atributo {{value}}",
       "noSubstat": "Vazio",
-      "selectSub": "Selecione um Atributo",
+      "selectSub": "Selecione o Valor",
       "error": {
         "noCalc": "Não foi possível calcular os Rolls dos Atributos.",
-        "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
+        "noOverRoll": "Atributos secundários não podem ser obtidos mais que {{value}} vezes."
       },
       "noRoll": "Sem Rolls",
       "noStat": "Sem Valor",
@@ -32,14 +32,14 @@
     "btnClear": "Redefinir",
     "btnRandom": "Aleatório",
     "btnUpdate": "Atualizar Artefato",
-    "clearPrompt": "Você está editando um artefato. Tem certeza de que quer resetá-lo?",
+    "clearPrompt": "Você está editando um artefato. Tem certeza de que limpar o editor?",
     "unknownSetName": "Conjunto Desconhecido"
   },
   "artifactFilter": "Filtrar Artefatos",
   "filterLocation": {
     "inventory": "Inventário",
     "currentlyEquipped": "Atualmente Equipado",
-    "location": "Localização"
+    "location": "Personagens"
   },
   "button": {
     "unequipArtifacts": "Desequipar Artefatos",
@@ -97,5 +97,6 @@
   "sub_other": "{{count}} Atributos",
   "cantDeleteLock": "Não é possível excluir o artefato pois ele está Trancado",
   "equippedArt": "Artefatos Equipados",
-  "artInInv": "Artefatos no Inventário"
+  "artInInv": "Artefatos no Inventário",
+  "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens"
 }

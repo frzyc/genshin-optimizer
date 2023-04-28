@@ -6,7 +6,7 @@
   },
   "uploadCard": {
     "title": "Unggah Database",
-    "replaceDatabase": "Ganti Database",
+    "replaceDatabase": "Perbarui Database",
     "hint": "Unggah file JSON di sini...",
     "hintPaste": "...atau tempel datamu di bawah.",
     "error": {
@@ -18,6 +18,17 @@
     "dbSource": "Sumber data:",
     "goodUpload": {
       "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+    },
+    "buttons": {
+      "open": "Buka",
+      "detectDups": "Deteksi Update/Duplikat",
+      "delNotInImport": "Hapus item yang tidak di impor"
+    },
+    "tooltip": {
+      "detectdup": "Temukan upgrade/duplikat di inventaris GO dan gabungkan impor ke dalam GO.",
+      "ignoreDup": "Jangan deteksi Upgrade/duplikat, impor ditambahkan di atas inventaris GO yang ada.",
+      "delNotInImport": "Asumsikan impor menjadi inventaris penuh.  Item dalam Inventaris GO yang tidak ada dalam impor akan dihapus.",
+      "keepNotInImport": "Asumsikan impor adalah inventaris parsial.  Tidak ada yang akan dihapus."
     }
   },
   "count": {
@@ -29,6 +40,27 @@
     "updated": "Terupdate:",
     "removed": "Dihilangkan:",
     "unchanged": "Tidak berubah:",
-    "invalid": "Invalid:"
+    "invalid": "Invalid:",
+    "upgraded": "Ditingkatkan:",
+    "dbTotal": "Jumlah Penggabungan:",
+    "notInImport": "Tidak di Impor:"
+  },
+  "DatabaseCard": {
+    "title": "Database",
+    "button": {
+      "download": "Download",
+      "copy": "Clipboard",
+      "delete": "Hapus",
+      "upload": "Unggah",
+      "swap": "Tukar"
+    },
+    "currentDB": "Database Saat ini"
+  },
+  "sillyCard": {
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Enabled",
+      "disabled": "Silly Optimizer Disabled"
+    }
   }
 }

@@ -2,5 +2,6 @@
   "a2": "Aumento de Daño de Estallido flamígero",
   "c2": "Aumento de duración de <strong>Armadura calcinante</strong>",
   "maxShield": "Absorción de Daño máximo",
-  "maxPyroShield": "Absorción de Daño Pyro máximo"
+  "maxPyroShield": "Absorción de Daño Pyro máximo",
+  "refreshBarrier": "After obtaining or refreshing a <strong>Blazing Barrier</strong>"
 }

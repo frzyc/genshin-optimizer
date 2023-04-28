@@ -1,11 +1,19 @@
 {
   "skill": {
-    "eye": "das unheilvolle Auge der Blitzstrafe"
+    "eye": "das unheilvolle Auge der Blitzstrafe",
+    "partyCost": "Energy Cost"
   },
   "burst": {
-    "resolves": "Stapelungen von Entschlusskraft"
+    "resolves": "Stapelungen von Entschlusskraft",
+    "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+    "burstDmg": "Musou no Hitotachi DMG"
   },
   "a4": {
+    "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
     "eleDMG": "Elektro-SCH-Bonus"
+  },
+  "c4": {
+    "expires": "After the <strong>Musou Isshin</strong> state expires"
   }
 }

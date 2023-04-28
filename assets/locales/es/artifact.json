@@ -85,7 +85,18 @@
   "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
   "edit": "Editar artefacto",
   "autocompleteLabels": {
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
     "substats": "Sub-atributos",
     "set": "Set de artefacto"
-  }
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

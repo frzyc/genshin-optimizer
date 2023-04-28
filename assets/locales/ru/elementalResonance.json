@@ -1,4 +1,8 @@
 {
+  "SprawlingGreenery": {
+    "cond2ele": "After triggering Burn, Catalyze, or Bloom reactions",
+    "cond3ele": "After triggering Aggravate, Spread, Hyperbloom, or Burgeon reactions"
+  },
   "EnduringRock": {
     "hitCond": "После нанесения урона противникам, будучи под щитом"
   }

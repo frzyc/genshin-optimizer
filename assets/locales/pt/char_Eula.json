@@ -3,10 +3,11 @@
     "name": "Coração Impassível"
   },
   "burstC": {
-    "name": "Espada Luminosa",
+    "name": "Acúmulos de Energia da Espada Luminosa",
     "start5": "Começa com 5 acúmulos",
-    "addStacks": "50% de chance de conseguir acúmulos adicionais com Ataques Normais, Habilidades Elementais e Supremos.",
-    "dmg": "Dano da Explosão da Espada Luminosa"
+    "addStacks": "50% de chance de conseguir acúmulos adicionais através de Ataques Normais, Habilidades Elementais e Supremos.",
+    "dmg": "Dano da Explosão da Espada Luminosa",
+    "bonusScaling": "Bônus de Multiplicador da Espada Luminosa"
   },
   "c1C": {
     "name": "Após consumir acúmulos de <strong>Coração Impassível</strong>",
@@ -14,6 +15,7 @@
   },
   "passive1": "Dano da Espada Luminosa Fragmentada",
   "c4C": {
-    "name": "Inimigos possuem menos de 50% de vida"
+    "name": "Inimigos possuem menos de 50% de vida",
+    "dmgBonus": "Bônus de Dano de Explosão da Espada Luminosa"
   }
 }

@@ -4,6 +4,9 @@
     "coil1": "1 Tầng Dây Móc",
     "coil2": "2 Tầng Dây Móc",
     "coil3": "3 Tầng Dây Móc",
-    "rush": "Hồ Băng"
-  }
+    "rush": "Hồ Băng",
+    "rushState": "During Rushing Ice state (1 stack / s)"
+  },
+  "a1CondName": "When Aloy receives the Coil effect from <strong>Frozen Wilds</strong>",
+  "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
 }

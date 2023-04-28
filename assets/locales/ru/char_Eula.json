@@ -6,7 +6,8 @@
     "name": "Меч света",
     "start5": "Начинается с 5 уровней",
     "addStacks": "50% шанс получить дополнительные уровни от Элементальных Навыков и Взрывов Стихий",
-    "dmg": "Урон Меча света"
+    "dmg": "Урон Меча света",
+    "bonusScaling": "Lightfall Sword Bonus Scaling"
   },
   "c1C": {
     "name": "Поглотить уровни <strong>Холодного сердца</strong>",
@@ -14,6 +15,7 @@
   },
   "passive1": "Урон сломанного Меча света",
   "c4C": {
-    "name": "У врагов HP ниже 50%"
+    "name": "У врагов HP ниже 50%",
+    "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
   }
 }

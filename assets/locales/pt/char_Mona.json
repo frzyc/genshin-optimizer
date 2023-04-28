@@ -1,11 +1,9 @@
 {
-  "omen": "Inimigo afetado pelo Presságio",
-  "omenDuration": "Duração do Presságio",
+  "omen": "Inimigo está afetado pelo Presságio",
   "bubbleDuration": "Duração da Bolha Ilusória",
-  "phantomDuration": "Duração do Fantasma",
   "hitOp": {
-    "affectedByOmen": "Atingiu um inimigo afetado pelo Presságio"
+    "affectedByOmen": "Após atingir um inimigo afetado pelo Presságio"
   },
-  "frozenDuration": "Duração do <cryo>Congelamento</cryo> estendida por",
+  "frozenDuration": "Duração de <cryo>Congelamento</cryo>",
   "uponSprint": "Após estar em Vicissitude"
 }

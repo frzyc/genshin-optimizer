@@ -1,6 +1,7 @@
 {
-  "afterSprint": "Setelah Lari",
-  "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Lari",
-  "snowflakeDMG": "DMG Saat Mekar",
-  "dmgBySnowflake": "Musuh terkena Frostflake Seki no To dari <strong>Kamisato Art: Soumetsu</strong>"
+  "afterSprint": "Setelah Berlari",
+  "afterSprintCryo": "Mengakibatkan <cryo>Cryo</cryo> Setelah Berlari",
+  "snowflakeDMG": "DMG Snowflake",
+  "dmgBySnowflake": "Musuh terkena Frostflake Seki no To",
+  "c6Active": "Di bawah efek Usurahi Butou"
 }

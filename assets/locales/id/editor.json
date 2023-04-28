@@ -1,0 +1,36 @@
+{
+  "title": "Editor Artefak",
+  "rarity": "Kualitas",
+  "level": "Level",
+  "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
+  "unknownSetName": "Unknown Set Name",
+  "curSubEff": "Efisiensi Substat Saat Ini",
+  "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
+  "maxSubEff": "Efisiensi Substat Maksimum",
+  "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
+  "substat": {
+    "selectSub": "Pilih Substat",
+    "error": {
+      "noCalc": "Tidak dapat menghitung roll stat.",
+      "noOverRoll": "Substat tidak dapat diroll lebih dari {{value}} kali."
+    },
+    "noRoll": "Tanpa Roll",
+    "RollCount_one": "{{count}} Roll",
+    "RollCount_other": "{{count}} Rolls",
+    "noStat": "Tanpa Nilai",
+    "eff": "Efisiensi: <1></1>",
+    "noSubstat": "Tanpa Substat",
+    "substatFormat": "Substat {{value}}",
+    "nextRolls": "Roll berikutnya"
+  },
+  "preview": "Pratinjau Artefak",
+  "dupArt": "Artefak duplikat terdeteksi.",
+  "upArt": "Artefak terupgrade terdeteksi.",
+  "beforeEdit": "Sebelum Edit",
+  "btnSave": "Simpan Artefak",
+  "btnAdd": "Tambah Artefak",
+  "btnClear": "Bersihkan",
+  "btnRandom": "Acak",
+  "btnUpdate": "Perbarui Artefak",
+  "clearPrompt": "Ada artefak di editor. Apa kamu yakin mau membersihkan editor?"
+}

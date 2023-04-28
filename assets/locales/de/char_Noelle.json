@@ -1,5 +1,7 @@
 {
   "p4cd": "24s, -1s pro 4 Treffer",
   "c6duration": "15s, +1s pro besiegtem Gegner, bis zu 10s",
-  "qlarger": "Erhöhte Angriffsreichweite"
+  "qlarger": "Erhöhte Angriffsreichweite",
+  "c4dmg": "Breastplate Shatter DMG",
+  "skillHeal_": "Healing Triggering Chance"
 }

@@ -1,6 +1,6 @@
 {
   "p1Cond": "Após disparar uma <strong>Flecha Floral</strong>",
-  "c4ReactCond": "Desencadeia uma Reação <dendro>baseada em Dendro</dendro>",
+  "c4ReactCond": "Após a Explosão Elemental desencadear uma <dendro>Reação Dendro</dendro>",
   "c6DmgKey": "Dano Adicional das Flechas Florescentes",
   "c6WreathRed": "Redução do tempo de carga da <strong>Flecha Floral</strong>"
 }

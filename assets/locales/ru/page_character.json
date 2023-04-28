@@ -27,21 +27,32 @@
     "unequipArts": "Снять все артефакты"
   },
   "characterName": "Имя Персонажа",
+  "teammate": "Teammate {{count}}",
   "noReaction": "Без реакций",
   "multiTarget": {
+    "title": "Multi-Optimization Target Config",
     "addNewTarget": "Добавить одну ",
-    "addNewMTarget": "Доб. Новый Кастом Мультитаргет"
+    "addNewMTarget": "Доб. Новый Кастом Мультитаргет",
+    "info1": "Note: Community created custom Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM Multi-Opt Guide</3>, however the validity of such configurations cannot be guaranteed.",
+    "info2": "It is the responsibility of the user to confirm the accuracy for their own use case.",
+    "description": "Description",
+    "duplicate": "Duplicate",
+    "target_one": "<0>{{count}}</0> Target",
+    "target_other": "<0>{{count}}</0> Targets"
   },
   "addStats": {
-    "title": "Параметры Врага + Бонусы"
+    "title": "Параметры Врага + Бонусы",
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, abyss cards, or Superconduct. Please refer to the <1>Genshin Impact wiki</1> for specific values."
   },
   "tabTheorycraft": {
     "substatType": {
       "min": "Исп. минимум сабстат роллы",
-      "max": "Исп. Максимум сабстат роллы"
+      "max": "Исп. Максимум сабстат роллы",
+      "mid": "Use median substat rolls"
     },
     "maxTotalRolls": "\"Корректный\" билд может содержать максимум 45 Роллов.",
-    "maxRolls": "Эта доп. хар-ка может содержать максимум 30 Роллов."
+    "maxRolls": "Эта доп. хар-ка может содержать максимум 30 Роллов.",
+    "maxRollsMain": "Because at least one mainstat has the same stat, this substat can have a maximum of {{value}} rolls."
   },
   "tabTeambuff": {
     "team_reso": "Элементальный резонанс",

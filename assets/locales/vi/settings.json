@@ -18,6 +18,17 @@
     "dbSource": "Nguồn dữ liệu:",
     "goodUpload": {
       "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+    },
+    "buttons": {
+      "open": "Open",
+      "detectDups": "Detect Updates/Dupes",
+      "delNotInImport": "Delete items not in import"
+    },
+    "tooltip": {
+      "detectdup": "Find upgrade/duplicates in the GO inventory and merge the import into GO.",
+      "ignoreDup": "Do not detect upgrades/duplicates, the import is added on top of existing GO inventory.",
+      "delNotInImport": "Assume the import to be the full inventory. Items in GO Inventory that doesn't exist in the import are deleted.",
+      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
     }
   },
   "count": {
@@ -29,7 +40,10 @@
     "updated": "Đã cập nhật:",
     "removed": "Đã loại bỏ:",
     "unchanged": "Không thay đổi:",
-    "invalid": "Không hợp lệ:"
+    "invalid": "Không hợp lệ:",
+    "upgraded": "Upgraded:",
+    "dbTotal": "Merged Total:",
+    "notInImport": "Not in Import:"
   },
   "DatabaseCard": {
     "title": "Cơ sở dữ liệu",
@@ -41,5 +55,12 @@
       "swap": "Đổi"
     },
     "currentDB": "Cơ sở dữ liệu đã chọn"
+  },
+  "sillyCard": {
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Enabled",
+      "disabled": "Silly Optimizer Disabled"
+    }
   }
 }

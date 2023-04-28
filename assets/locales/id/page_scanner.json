@@ -1,3 +1,39 @@
 {
-  "intro": "<0>Pemindai Otomatis</0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual,<1> risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><2> Aspek yang paling penting dalam menggunakan pemindai dengan GO adalah format outputnya:</2><3><0><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1>v6.0.0</1>, GO bisa mengimpor data ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></0></3><4>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </4><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam <strong>\"Database Upload\"</strong>.</5>"
+  "intro": "<0>Scanner</0><1>Scanner adalah alat Genshin yang dapat secara otomatis memindai data game dari screenshot atau langsung dari game.</1><2>Berikut adalah beberapa scanner yang telah diuji dengan GO.</2 ><3>Untuk mengunggah file yang diekspor, buka laman <1>Pengaturan</1>, dan unggah file kamu di bagian <strong>Unggah Database</strong>.</3>",
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "Aplikasi ringan ini akan memindai semua karakter + senjata + artefak kamu di inventarismu.  Ikuti instruksi di aplikasi untuk menyiapkannya."
+  },
+  "am": {
+    "title": "「天目」-- Amenoma",
+    "p1": "Scan semua artefak di inventarismu.  Ikuti instruksi untuk menangkap jendela dan scan. Memiliki versi Cina dan Inggris. (Download the <1>_EN.exe</1> version to scan in english). Hanya format <5>GOOD</5> yang diterima di GO."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scan semua artefak di inventorimu. Memiliki mode scanning manual.",
+    "p2": "Scanner ini juga dapat dikonfigurasi untuk artefak baru di versi game baru tanpa perlu pembaruan."
+  },
+  "goodeng": "Scanner ini hanya memindai bahasa Inggris, dan mengekspor ke format GOOD.",
+  "tosWarn": "Karena alat apapun yang secara tidak langsung berinteraksi dengan game, meskipun penggunaannya hampir tidak terdeteksi, <1>masih ada risiko saat menggunakannya.</1> Kebijaksanaan pengguna disarankan.",
+  "tags": {
+    "pc": "PC",
+    "mobile": "Mobile",
+    "ps": "PlayStation",
+    "gameMani": "Game Manipulation",
+    "materials": "Material",
+    "characters": "Karakter",
+    "weapons": "Weapons",
+    "achievements": "Achievements"
+  },
+  "nb": {
+    "title": "Artiscan",
+    "p1": "Scanner berbasis web ini dapat menangkap layar gamemu, memindai dari screenshot, atau memindai dari video.",
+    "p2": "Tangkapan layar/pengambilan video bisa full screen, dan tidak perlu di-crop."
+  },
+  "ak": {
+    "title": "Akasha Scanner",
+    "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
+    "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+  },
+  "seelieme": "Scanner ini juga dapat memindai material untuk <1>Seelie.me</1>."
 }

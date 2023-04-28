@@ -16,14 +16,21 @@
     "none": "Golpes sobre enemigos",
     "normalOrCharged": "Ataque Normal / Cargado golpea a enemigos",
     "skillOrBurst": "Habilidad Elemental o Definitiva golpea a enemigos",
-    "crit": "Golpe CRIT golpea a enemigos"
+    "crit": "Golpe CRIT golpea a enemigos",
+    "normalChargedOrPlunging": "After hitting an opponent with a Normal/Charged/Plunging Attack",
+    "dendro": "After dealing <dendro>Dendro DMG</dendro>",
+    "normalEle": "After dealing Elemental DMG through a Normal Attack",
+    "ele": "After dealing Elemental DMG",
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
   },
   "eleAbsor": "Absorción Elemental",
   "absorDot": "DoT de Absorción",
   "afterUse": {
     "skill": "Tras usar Habilidad Elemental",
     "burst": "Tras usar Habilidad Definitiva",
-    "skillOrBurst": "Tras usar Hab. Elemental o Hab. Definitiva"
+    "skillOrBurst": "Tras usar Hab. Elemental o Hab. Definitiva",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "Aumento de ATQ"
@@ -91,21 +98,72 @@
     "hydro": "Absorción de Daño Hydro",
     "electro": "Absorción de Daño Electro",
     "dendro": "Absorción de Daño Dendro",
-    "geo": "Absorción de Daño Geo"
+    "geo": "Absorción de Daño Geo",
+    "none": "DMG Absorption"
   },
   "opponentsDamaged": "Oponentes dañados",
+  "press": "Press",
+  "hold": "Hold",
   "addlCharge": "Carga adicional",
+  "conditional": "Conditional",
+  "maxStacks": "Maximum stacks",
   "1set": "1-set",
   "2set": "2-set",
   "4set": "4-set",
+  "activationStam": "Activation Stamina Consumption",
+  "stamDrain": "Stamina Drain",
   "talents": {
+    "auto": "Auto",
+    "skill": "Skill",
+    "burst": "Burst",
+    "passive": "Passive",
     "passive1": "Ascensión 1",
     "passive2": "Ascensión 4",
+    "passive3": "Passive",
+    "sprint": "Sprint",
     "constellation1": "C1",
     "constellation2": "C2",
     "constellation3": "C3",
     "constellation4": "C4",
     "constellation5": "C5",
     "constellation6": "C6"
-  }
+  },
+  "swirlReaction": {
+    "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
+    "pyro": "After triggering a <pyro>Pyro</pyro> Swirl reaction",
+    "electro": "After triggering an <electro>Electro</electro> Swirl reaction",
+    "cryo": "After triggering a <cryo>Cryo</cryo> Swirl reaction"
+  },
+  "afterReaction": "After triggering an Elemental Reaction",
+  "aoeInc": "AoE increase",
+  "elementalReaction": {
+    "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+  },
+  "bonusScaling": {
+    "skill_": "Ele. Skill Bonus Scaling"
+  },
+  "energy": "Energy",
+  "teamBuff": "Team Buff",
+  "opponents_one": "{{count}} Opponent",
+  "opponents_other": "{{count}} Opponents",
+  "dmgMult": {
+    "normal": "Normal Att. DMG Mult.",
+    "charged": "Charged Att. DMG Mult.",
+    "skill": "Skill DMG Mult."
+  },
+  "stamRestored": "Stamina Restored",
+  "triggerQuota": "Trigger Quota",
+  "enemyAffected": {
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+    "electro": "Enemy is affected by <electro>Electro</electro>",
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
+  },
+  "getElementalOrbParticle": "Tras recoger un Orbe o Partícula Elemental",
+  "notProtectedByShield": "While not protected by a shield"
 }

@@ -1,0 +1,36 @@
+{
+  "title": "Editar Artefato",
+  "rarity": "Raridade",
+  "level": "Nível",
+  "unknownPieceName": "Nome da Peça Desconhecido",
+  "unknownSetName": "Conjunto Desconhecido",
+  "curSubEff": "Eficiência de Rolls Atual",
+  "curSubEffDesc": "A cada 4 aumentos de nível do artefato, será realizado um Roll de Atributo Secundário. A <strong>Eficiência de Rolls</strong>  do atributo calcula como uma porcentagem o quão alto foi o Roll.",
+  "maxSubEff": "Eficiência de Rolls Máxima",
+  "maxSubEffDesc": "A <strong>Eficiência Máxima de Rolls</strong> de um artefato calcula a Eficiência se os Rolls restantes forem todos do valor máximo.",
+  "substat": {
+    "selectSub": "Selecione um Atributo",
+    "error": {
+      "noCalc": "Não foi possível calcular os Rolls dos Atributos.",
+      "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
+    },
+    "noRoll": "Sem Rolls",
+    "RollCount_one": "{{count}} Roll",
+    "RollCount_other": "{{count}} Rolls",
+    "noStat": "Sem Valor",
+    "eff": "Eficiência: <1></1>",
+    "noSubstat": "Vazio",
+    "substatFormat": "Atributo {{value}}",
+    "nextRolls": "Próximos rolls:"
+  },
+  "preview": "Visualização do Artefato",
+  "dupArt": "Artefato duplicado detectado",
+  "upArt": "Artefato atualizado detectado",
+  "beforeEdit": "Antes de Editar",
+  "btnSave": "Salvar Artefato",
+  "btnAdd": "Adicionar Artefato",
+  "btnClear": "Redefinir",
+  "btnRandom": "Aleatório",
+  "btnUpdate": "Atualizar Artefato",
+  "clearPrompt": "Você está editando um artefato. Tem certeza de que quer resetá-lo?"
+}

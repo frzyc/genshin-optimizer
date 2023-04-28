@@ -2,6 +2,7 @@
   "editor": {
     "title": "Éditeur d'artéfact",
     "substat": {
+      "substatFormat": "Substat {{value}}",
       "noSubstat": "Pas de Substat",
       "selectSub": "Sélectionner une Substat",
       "error": {
@@ -10,7 +11,10 @@
       },
       "noRoll": "Aucun Roll",
       "noStat": "Pas de valeur",
-      "eff": "Efficacité: <1></1>"
+      "eff": "Efficacité: <1></1>",
+      "nextRolls": "Next rolls:",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Rareté",
     "level": "Niveau",
@@ -28,16 +32,20 @@
     "btnClear": "Effacer",
     "btnRandom": "Randomiser",
     "btnUpdate": "Mettre à jour l'artéfact",
-    "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
+    "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?",
+    "unknownSetName": "Unknown Set Name"
   },
   "artifactFilter": "Filtre d'artéfact",
   "filterLocation": {
     "inventory": "Inventaire",
-    "currentlyEquipped": "Actuellement équipé"
+    "currentlyEquipped": "Actuellement équipé",
+    "location": "Characters"
   },
   "button": {
     "unequipArtifacts": "Déséquiper les artéfacts",
-    "deleteArtifacts": "Supprimer les artéfacts"
+    "deleteArtifacts": "Supprimer les artéfacts",
+    "lockArtifacts": "Lock Artifacts",
+    "unlockrtifacts": "Unlock Artifacts"
   },
   "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
   "tipsOfTheDay": [
@@ -48,6 +56,7 @@
     "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
     "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
   ],
+  "mainStat": "Main Stat",
   "slot": "Emplacement",
   "slotName": {
     "flower": "Fleur de la Vie",
@@ -70,5 +79,24 @@
   "efficiencyFilter": {
     "title": "Substats à utiliser dans le calcul de l'efficacité"
   },
-  "resetFilters": "Réinitialiser les filtres"
+  "resetFilters": "Réinitialiser les filtres",
+  "setEffectNum": "{{setNum}}-Set",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+  "edit": "Edit Artifact",
+  "autocompleteLabels": {
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Artifact Set"
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

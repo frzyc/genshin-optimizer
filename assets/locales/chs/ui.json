@@ -49,5 +49,23 @@
   "gender": {
     "F": "女",
     "M": "男"
-  }
+  },
+  "statGroupKey": {
+    "basic_stats": "基本属性",
+    "elem_dmg_bonus": "元素伤害加成",
+    "enemy_debuffs": "敌人的debuff",
+    "self_res": "自身抗性",
+    "reaction_dmg_bonus": "反应伤害加成",
+    "reaction_crit": "反应暴击加成",
+    "elem_dmgInc": "元素伤害提升",
+    "talent_dmgInc": "天赋伤害提升",
+    "elem_crit": "元素暴击加成",
+    "talent_dmg_bonus": "天赋伤害加成",
+    "talent_crit": "天赋暴击加成",
+    "talent_level_boost": "天赋等级加成",
+    "base_stat_mod": "基本属性修正",
+    "stamina_buffs": "体力buff",
+    "misc": "杂项属性"
+  },
+  "sillyPageTitle": "Silly Optimizer"
 }

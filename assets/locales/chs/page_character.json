@@ -32,10 +32,17 @@
   "multiTarget": {
     "title": "多重优化目标配置",
     "addNewTarget": "添加新的自定义目标",
-    "addNewMTarget": "添加新的自定义多重目标"
+    "addNewMTarget": "添加新的自定义多重目标",
+    "info1": "说明：社区创建的自定义多重优化目标可以在<1>GO Discord</1>或者<3>KQM多重优化指南</3>找到，不过我们不保证这些配置的有效性。",
+    "info2": "用户有责任自行判断其准确性。",
+    "description": "描述",
+    "duplicate": "复制",
+    "target_one": "<0>{{count}}</0>个目标",
+    "target_other": "<0>{{count}}</0>个目标"
   },
   "addStats": {
-    "title": "怪物配置与增益状态"
+    "title": "怪物配置与增益状态",
+    "info": "你可以使用这些选项来添加GO没有直接支持的buff/debuff，比如食物buff，深渊卡片，或者超导，具体数值请参考<1>原神wiki</1>。"
   },
   "tabTheorycraft": {
     "substatType": {

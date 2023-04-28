@@ -1,3 +1,49 @@
 {
-  "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise."
+  "intro": "Der <strong>ultimative</strong> <3><i>Genshin Impact</i></3>-Rechner, GO behält den Überblick über dein Artefakt-/Waffen-/Charakterinventar und hilft dir, mit was du hast den besten Build zu erstellen, basierend auf deiner Spielweise.",
+  "quickLinksCard": {
+    "title": "Quick Links",
+    "buttons": {
+      "tyGuide": {
+        "title": "Youtube Guide Playlist",
+        "tooltip": "Learn how to use Genshin Optimizer"
+      },
+      "scanners": {
+        "title": "Automatic Scanners",
+        "tooltip": "3rd Party programs that automatically scans artifacts from the game"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "Theorycrafting & guides community"
+      },
+      "devDiscord": {
+        "title": "Genshin Dev Discord",
+        "tooltip": "Community of developers for Genshin"
+      },
+      "good": {
+        "title": "GOOD documentation",
+        "tooltip": "Genshin Open Object Descriptor Documentation"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer Patch Notes",
+        "tooltip": "All patch notes for GO"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO Inventory"
+  },
+  "vidGuideCard": {
+    "title": "Video Guides"
+  },
+  "teamCard": {
+    "title": "Meet the Team",
+    "jobTitle": {
+      "leadDev": "Lead Developer",
+      "dev": "Developer",
+      "mod": "Moderator",
+      "admin": "Admin",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
+    }
+  }
 }

@@ -5,11 +5,17 @@
   "burstC": {
     "name": "Schwert der Brandung",
     "start5": "Beginnt bei 5 Stapelungen",
-    "addStacks": "50% Wahrscheinlichkeit auf neue Stapelung"
+    "addStacks": "50% Wahrscheinlichkeit auf neue Stapelung",
+    "dmg": "Lightfall Sword Explosion DMG",
+    "bonusScaling": "Lightfall Sword Bonus Scaling"
   },
   "c1C": {
     "name": "Verbraucht Stapelungen von <strong>Kaltes Herz</strong>",
     "durationStack": "6s + 6s pro Stapelung, bis zu 18s"
   },
-  "passive1": "Schaden von fragmentarischem Schwert des Lichtfalls"
+  "passive1": "Schaden von fragmentarischem Schwert des Lichtfalls",
+  "c4C": {
+    "name": "Opponents have less than 50% HP",
+    "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
+  }
 }

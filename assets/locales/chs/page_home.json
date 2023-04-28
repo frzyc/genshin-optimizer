@@ -40,7 +40,10 @@
     "jobTitle": {
       "leadDev": "开发负责人",
       "dev": "开发者",
-      "mod": "管理员"
+      "mod": "管理员",
+      "admin": "Admin",
+      "translator": "Translations Manager",
+      "TC": "TC Correspondant"
     }
   }
 }

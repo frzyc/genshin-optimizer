@@ -1,5 +1,6 @@
 {
   "p1Cond": "Après avoir tiré une <strong>Flèche florale</strong>",
+  "c4ReactCond": "After <strong>Tanglevine Shaft</strong> triggers a <dendro>Dendro-based</dendro> reaction",
   "c6DmgKey": "DGT de flèche fleuronnée supplémentaire",
   "c6WreathRed": "Diminution du temps de charge de <strong>Flèche florale</strong>"
 }

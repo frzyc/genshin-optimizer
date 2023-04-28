@@ -1,0 +1,36 @@
+{
+  "title": "标题",
+  "rarity": "稀有度",
+  "level": "等级",
+  "unknownPieceName": "未知圣遗物名称",
+  "unknownSetName": "未知套装",
+  "curSubEff": "当前副词条评分",
+  "curSubEffDesc": "圣遗物每升四级，随机升级一次副词条。<strong>副词条评分</strong> 计算了副词条升级值占最大升级值的比例。",
+  "maxSubEff": "最高副词条评分",
+  "maxSubEffDesc": "<strong>最高副词条评分</strong>计算了剩余副词条升级均为最大升级值时，圣遗物的评分。",
+  "substat": {
+    "selectSub": "选择一个副词条",
+    "error": {
+      "noCalc": "无法计算词条升级次数.",
+      "noOverRoll": "副词条无法进行超过{{value}} 次升级."
+    },
+    "noRoll": "未升级",
+    "RollCount_one": "{{count}} 升级次数",
+    "RollCount_other": "{{count}} 升级次数",
+    "noStat": "无评分",
+    "eff": "评分： <1></1>",
+    "noSubstat": "无副词条",
+    "substatFormat": "副词条 {{value}}",
+    "nextRolls": "下次升级："
+  },
+  "preview": "圣遗物预览",
+  "dupArt": "重复圣遗物检测",
+  "upArt": "升级圣遗物检测",
+  "beforeEdit": "编辑前",
+  "btnSave": "保存圣遗物",
+  "btnAdd": "添加圣遗物",
+  "btnClear": "清除",
+  "btnRandom": "随机化",
+  "btnUpdate": "更新圣遗物",
+  "clearPrompt": "仍有圣遗物正在编辑，确定要清空编辑器吗？"
+}

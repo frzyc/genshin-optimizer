@@ -1,6 +1,7 @@
 {
-  "giftCondName": "Sob o efeito da Bênção da Ventania de <strong>Caminhos Secretos do Vento</strong>",
-  "a4CondName": "Sob o efeito Proteção do Vento Feroz",
+  "giftCondName": "Sob o efeito de Bênção da Ventania",
+  "a4CondName": "Sob o efeito de Proteção do Vento Feroz",
   "c2DurationInc": "Aumento da duração do Poliedro Fantástico",
-  "c6Arrow": "Lança uma Armadilha do Vento ao infligir Dano"
+  "c6Arrow": "Lança uma Armadilha do Vento ao infligir Dano",
+  "baleCondName": "Inimigo está sob a Calamidade da Ventania"
 }

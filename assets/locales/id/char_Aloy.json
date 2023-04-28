@@ -4,6 +4,9 @@
     "coil1": "Lapisan Coil 1",
     "coil2": "Lapisan Coil 2",
     "coil3": "Lapisan Coil 3",
-    "rush": "Rushing Ice"
-  }
+    "rush": "Rushing Ice",
+    "rushState": "Selama kondisi Rushing Ice (1 lapis / dtk)"
+  },
+  "a1CondName": "Saat Aloy menerima efek Coil dari <strong>Frozen Wilds</strong>",
+  "normCryoInfus": "<cryo>Normal Atk. Cryo Infusion</cryo>"
 }

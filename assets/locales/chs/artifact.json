@@ -97,5 +97,6 @@
   "sub_other": "{{count}}个副词条",
   "cantDeleteLock": "无法删除，因为圣遗物已锁定",
   "equippedArt": "已装备的圣遗物",
-  "artInInv": "背包中的圣遗物"
+  "artInInv": "背包中的圣遗物",
+  "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器"
 }

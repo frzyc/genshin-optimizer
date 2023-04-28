@@ -1,5 +1,7 @@
 {
   "burst": "Manto Ceremonial",
   "c2": "Personajes con un 50% de Vida o menos",
-  "c6": "Tras realizar ataques Normales y Cargados que curan un personaje con un 80% o más de Vida"
+  "c6": "Tras realizar ataques Normales y Cargados que curan un personaje con un 80% o más de Vida",
+  "c2SkillHeal": "<strong>Kurage's Oath</strong> Healing Bonus",
+  "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
 }

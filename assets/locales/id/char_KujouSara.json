@@ -1,5 +1,11 @@
 {
   "skill": {
-    "ambush": "Tengu Juurai: Ambush"
+    "ambush": "Di bawah pengaruh Tengu Juurai: Ambush"
+  },
+  "a4": {
+    "enerRest": "Energi dipulihkan dari Tengu Juurai: Ambush"
+  },
+  "c6": {
+    "electroCritDmg": "ATK karakter yang ditingkatkan oleh Tengu Juurai"
   }
 }

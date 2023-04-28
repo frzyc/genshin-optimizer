@@ -1,0 +1,15 @@
+{
+  "a1": {
+    "name": "Menggunakan Arataki Kesagiri Berturut-turut"
+  },
+  "a4": {
+    "dmgInc": "Peningkatan DMG Arataki Kesagiri"
+  },
+  "c1": {
+    "initialGain": "Perolehan lapisan Superlative Superstrength",
+    "timedGain": "Setelah 1dtk, lapisan Superlative Superstrength bertambah setiap 0.5dtk selama 1.5dtk"
+  },
+  "c4": {
+    "name": "Setelah kondisi Raging Oni King berakhir"
+  }
+}

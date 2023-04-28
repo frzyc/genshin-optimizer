@@ -1,6 +1,6 @@
 {
   "dmg": "피해",
-  "lessPercentHP": "체력이 {{percent}}% 미만",
+  "lessPercentHP": "HP가 {{percent}}% 미만",
   "hitOp": {
     "normal": "일반 공격이 대상에게 명중",
     "charged": "강공격이 대상에게 명중",
@@ -19,32 +19,38 @@
     "crit": "치명타가 대상에게 명중",
     "normalChargedOrPlunging": "일반/강/낙하 공격이 대상에게 명중",
     "dendro": "<dendro>풀 원소 피해</dendro>가 대상에게 명중",
-    "normalEle": "일반 공격으로 적에게 원소 피해를 가함"
+    "normalEle": "일반 공격으로 적에게 원소 피해를 가함",
+    "ele": "적에게 원소 피해를 가함",
+    "weakSpot": "조준 사격이 약점에 명중"
   },
   "eleAbsor": "원소 전환",
   "absorDot": "원소 전환 도트 데미지",
   "afterUse": {
     "skill": "원소 전투 스킬 사용 후",
     "burst": "원소 폭발 사용 후",
-    "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후"
+    "skillOrBurst": "원소전투스킬 혹은 원소폭발 사용 이후",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "공격력 증가"
   },
   "hits_one": "{{count}}회 명중",
   "hits_other": "{{count}}회 명중",
-  "lessEqPercentHP": "체력이 {{percent}}% 이하",
-  "greaterPercentHP": "체력이 {{percent}}% 초과",
-  "greaterEqPercentHP": "체력이 {{percent}}% 이상",
+  "lessEqPercentHP": "HP가 {{percent}}% 이하",
+  "greaterPercentHP": "HP가 {{percent}}% 초과",
+  "greaterEqPercentHP": "HP가 {{percent}}% 이상",
   "lessPercentEnergy": "원소 에너지가 {{percent}}% 미만",
-  "enemyLessPercentHP": "적의 체력이 {{percent}}% 미만",
-  "enemyLessEqPercentHP": "적의 체력이 {{percent}}% 이하",
-  "enemyGreaterPercentHP": "적의 체력이 {{percent}}% 초과",
-  "enemyGreaterEqPercentHP": "적의 체력이 {{percent}}% 이상",
+  "enemyLessPercentHP": "적의 HP가 {{percent}}% 미만",
+  "enemyLessEqPercentHP": "적의 HP가 {{percent}}% 이하",
+  "enemyGreaterPercentHP": "적의 HP가 {{percent}}% 초과",
+  "enemyGreaterEqPercentHP": "적의 HP가 {{percent}}% 이상",
   "stack_one": "{{count}} 스택",
   "stack_other": "{{count}} 스택",
   "seconds_one": "{{count}}초",
   "seconds_other": "{{count}}초",
+  "uses_one": "{{count}} Use",
+  "uses_other": "{{count}} Uses",
   "afterDefeatEnemy": "적 처치 후",
   "afterSprint": "대시 후",
   "skillCDRed": "원소 전투 스킬 재사용 대시시간 감소",
@@ -57,7 +63,7 @@
   "charges": "사용 횟수",
   "cooldown": "재사용 대기시간",
   "addlCharges": "추가 사용 횟수",
-  "activeCharField": "필드 위 캐릭터가 영역내 존재",
+  "activeCharField": "캐릭터가 영역내 존재",
   "opponentsField": "영역에 적 존재",
   "takeDmg": "피해를 받음",
   "infusion": {
@@ -107,19 +113,20 @@
   "activationStam": "발동 시 소모 스태미나",
   "stamDrain": "지속 스태미나 소모",
   "talents": {
-    "skill": "스킬",
-    "burst": "원폭",
+    "auto": "Auto",
+    "skill": "전투스킬",
+    "burst": "폭발",
     "passive": "패시브",
     "passive1": "고유특성1",
     "passive2": "고유특성4",
-    "passive3": "패시브",
+    "passive3": "탐색특성",
     "sprint": "대시",
-    "constellation1": "1돌",
-    "constellation2": "2돌",
-    "constellation3": "3돌",
-    "constellation4": "4돌",
-    "constellation5": "5돌",
-    "constellation6": "6돌"
+    "constellation1": "별자리1",
+    "constellation2": "별자리2",
+    "constellation3": "별자리3",
+    "constellation4": "별자리4",
+    "constellation5": "별자리5",
+    "constellation6": "별자리6"
   },
   "swirlReaction": {
     "hydro": "<hydro>물</hydro> 원소 확산 발동",
@@ -136,6 +143,7 @@
   "bonusScaling": {
     "skill_": "원소 전투 스킬 피해 증가량"
   },
+  "energy": "Energy",
   "teamBuff": "파티 버프",
   "opponents_one": "{{count}} 마리",
   "opponents_other": "{{count}} 마리",
@@ -144,5 +152,18 @@
     "charged": "강공격 피해량 계수",
     "skill": "스킬 피해량 계수"
   },
-  "stamRestored": "스태미나 회복"
+  "stamRestored": "스태미나 회복",
+  "triggerQuota": "최대 발동 횟수",
+  "enemyAffected": {
+    "burningOrPyro": "적이 <pyro>연소</pyro> 또는<pyro>불</pyro> 원소의 영향을 받음",
+    "frozenOrCryo": "적이 <cryo>빙결상태</cryo>이거나 <cryo>얼음</cryo> 원소의 영향을 받음",
+    "pyroOrElectro": "적이 <pyro>불</pyro> 또는 <electro>번개</electro> 원소의 영향을 받음",
+    "hydroOrCryo": "적이 <hydro>물</hydro> 또는 <cryo>얼음</cryo> 원소의 영향을 받음",
+    "hydroOrPyro": "적이 <hydro>물</hydro> 또는 <pyro>불</pyro> 원소의 영향을 받음",
+    "hydroOrElectro": "적이 <hydro>물</hydro> 또는 <electro>번개</electro> 원소의 영향을 받음",
+    "electro": "적이 <electro>번개</electro> 원소의 영향을 받음",
+    "cryo": "적이 <cryo>얼음</cryo> 원소의 영향을 받음"
+  },
+  "getElementalOrbParticle": "원소 구슬 혹은 원소 입자 획득 시",
+  "notProtectedByShield": "보호막의 보호를 받지 않을 시"
 }

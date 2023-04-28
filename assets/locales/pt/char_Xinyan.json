@@ -23,7 +23,7 @@
     "shield": "Cria um Escudo Nível 3: Rave ao usar"
   },
   "c4": {
-    "swingHit": "Inimigos foram atingidos pelo <pyro>Dano de Balanço</pyro>"
+    "swingHit": "Inimig foi atingido pelo <pyro>Dano de Balanço</pyro>"
   },
   "c6": {
     "duringCharge": "Enquanto usa um Ataque Carregado"

@@ -7,7 +7,8 @@
     "assumptionLvl": {
       "no": "주옵션 레벨 변화 없음",
       "lvl": "주옵션을 최소 {{lvl}} 레벨로"
-    }
+    },
+    "title": "주옵션 필터/설정"
   },
   "tcGraph": {
     "vs": "최적화 대상과 다음 값을 도식화 :",
@@ -75,10 +76,50 @@
     "cancel": "취소",
     "generateBuilds": "조합 생성"
   },
-  "removeBuildButton": "조합 삭제",
+  "removeBuildButton": "조합 제거",
   "theorycraftButton": "이론 연구실",
   "currentlyEquippedBuild": "현재 사용중",
   "addBuildToList": "리스트에 빌드 추가",
   "graphBuildLabel": "그래프 #<1>{{count}}</1>",
-  "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요"
+  "workerLoadFailed": "처리기가 로딩에 실패했습니다. 다시 시도하시려면 여기를 누르세요",
+  "excludeArt": {
+    "title_exclude": "재외된 성유물",
+    "title_tooltip": "이 캐릭터의 제외 리스트에 성유물을 추가합니다. 이 리스트 내의 성유물은 조합 생성 시 고려되지 않습니다.",
+    "usingNum_one": "<1>{{count}}</1>개의 제외된 성유물 사용",
+    "usingNum_other": "<1>{{count}}</1>개의 제외된 성유물 사용",
+    "excNum_one": "<0>{{count}}</0>개의 성유물 제외됨",
+    "excNum_other": "<0>{{count}}</0>개의 성유물 제외됨",
+    "addExc": "이 캐릭터의 제외 리스트에 성유물 추가",
+    "selExc": "이 캐릭터의 제외 리스트에 추가할 성유물 선택",
+    "deSelectExc": "제외 리스트에서 제거하기 위해선 해당 성유물을 클릭하세요",
+    "excludeArtifactTip": "성유물을 제외시키면 이 캐릭터의 조합 생성에 포함되지 않습니다.",
+    "excluded": "이 성유물은 제외되었습니다.",
+    "included": "이 성유물은 제외되지 않았습니다.",
+    "button_txt": "Exclude Artifacts",
+    "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중"
+  },
+  "excludeChar": {
+    "title": "착용 중인 성유물 설정",
+    "modal": {
+      "allow_all": "모든 캐릭터를 허용 리스트에 추가",
+      "disallow_All": "모든 캐릭터를 허용 리스트에서 제거"
+    },
+    "allowEquip": "이 캐릭터의 성유물을 사용:",
+    "usingNumTot_one": "<3>{{count}}</3> 캐릭터의 <1>{{arts}}</1>개 성유물 사용",
+    "usingNumTot_other": "<3>{{count}}</3> 캐릭터의 <1>{{arts}}</1>개 성유물 사용",
+    "tooltip": "캐릭터들을 허용 리스트에 추가합니다. 이 허용 리스트의 캐릭터들은 조합 생성에 사용됩니다. 또한 미착용 성유물만 사용하거나 사용자 정의 리스트, 그리고 모든 착용 및 미착용 성유물을 사용하도록 선택할 수 있습니다.",
+    "chars": "캐릭터",
+    "artis": "성유물",
+    "states": {
+      "unequippedOnly": "미착용만 사용",
+      "customList": "사용자 정의 리스트",
+      "all": "모든 성유물"
+    },
+    "usingState": "선택된 방식"
+  },
+  "buildCompleted": "생성 완료",
+  "notifyTooltip": "생성이 완료되면 소리로 알려줍니다. 또한 탭을 전환한 경우 경고창도 표시합니다.",
+  "bonusStats": {
+    "title": "Bonus Stats"
+  }
 }

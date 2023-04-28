@@ -1,0 +1,20 @@
+{
+  "skill": {
+    "unableToAuto": "Tidak dapat menggunakan Charged atau Plunging attack",
+    "namisenStacks": "Lapisan Namisen",
+    "shun_dmgInc": "<hydro>Peningkatan DMG Shunsuiken</hydro>"
+  },
+  "passive1": {
+    "afterUse": "Lapisan Namisen diperoleh setelah penggunaan skill",
+    "afterExplode": "Lapisan Namisen diperoleh setelah ilusi air meledak"
+  },
+  "c1": {
+    "shun_dmg_": "<hydro>Bonus DMG Shunsuiken</hydro"
+  },
+  "c2": {
+    "addlStacks": "Peningkatan Lapisan Namisen Maks"
+  },
+  "c6": {
+    "dmg": "DMG Boundless Origin"
+  }
+}

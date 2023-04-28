@@ -7,7 +7,8 @@
     "assumptionLvl": {
       "no": "Não Assumir Nível",
       "lvl": "Assumir ao menos Nív. {{lvl}}"
-    }
+    },
+    "title": "C"
   },
   "tcGraph": {
     "vs": "Gráfico do Objetivo Otimizado vs.",
@@ -80,5 +81,45 @@
   "currentlyEquippedBuild": "Atualmente Equipada",
   "addBuildToList": "Adicionar Build à lista",
   "graphBuildLabel": "N.º <1>{{count}}</1> do Gráfico",
-  "workerLoadFailed": "O Worker não carregou. Clique aqui para recarregar a página e tentar novamente."
+  "workerLoadFailed": "O Worker não carregou. Clique aqui para recarregar a página e tentar novamente.",
+  "excludeArt": {
+    "title_exclude": "Bloquear Artefatos",
+    "title_tooltip": "Acrescente artefatos à lista de bloqueios deste personagem.  Artefatos na lista de bloqueios não serão considerados ao gerar Builds.",
+    "usingNum_one": "Usando <1>{{count}}</1> artefato bloqueado",
+    "usingNum_other": "Usando <1>{{count}}</1> artefatos bloqueados",
+    "excNum_one": "<1>{{count}}</1> artefato está bloqueado",
+    "excNum_other": "<1>{{count}}</1> artefatos estão bloqueados",
+    "addExc": "Adicionar artefato à lista de bloqueios deste personagem",
+    "selExc": "Selecione o artefato para adicionar à lista de bloqueios",
+    "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
+    "excludeArtifactTip": "Bloquear um artefato impedirá o gerador de Builds de usá-lo para este personagem.",
+    "excluded": "Este artefato está bloqueado.",
+    "included": "Este artefato não está bloqueado.",
+    "button_txt": "Exclude Artifacts",
+    "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)"
+  },
+  "excludeChar": {
+    "title": "Configuração de Artefatos Equipados",
+    "modal": {
+      "allow_all": "Adicionar personagens visíveis à lista de permissão",
+      "disallow_All": "Tirar personagens visíveis da lista de permissão"
+    },
+    "allowEquip": "Permitir o uso de artefatos de",
+    "usingNumTot_one": "Usando <1>{{arts}}</1> artefato de <3>{{count}}</3> personagem",
+    "usingNumTot_other": "Usando <1>{{arts}}</1> artefato de <3>{{count}}</3> personagens",
+    "tooltip": "Adicione personagens à lista de permissões deste personagem. Personagens na lista de permissões terão seus artefatos considerados na geração de builds. Também é possível alterar entre usar apenas artefatos desequipados, usar os de sua lista personalizada ou usar todos os artefatos equipados e desequipados.",
+    "chars": "Personagens",
+    "artis": "Artefatos",
+    "states": {
+      "unequippedOnly": "Somente Não-Equipados",
+      "customList": "Lista Personalizada",
+      "all": "Todos os Artefatos"
+    },
+    "usingState": "Usando"
+  },
+  "buildCompleted": "Build Concluída",
+  "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
+  "bonusStats": {
+    "title": "Atributos Bônus"
+  }
 }

@@ -7,7 +7,8 @@
     "assumptionLvl": {
       "no": "无等级假设",
       "lvl": "假设等级为{{lvl}}级"
-    }
+    },
+    "title": "Main Stat Filter/Configuration"
   },
   "tcGraph": {
     "vs": "绘制与优化目标的关系图",
@@ -80,5 +81,45 @@
   "currentlyEquippedBuild": "当前已装备的",
   "addBuildToList": "将配装加入列表",
   "graphBuildLabel": "图表 #<1>{{count}}</1>",
-  "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试"
+  "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试",
+  "excludeArt": {
+    "title_exclude": "排除的圣遗物",
+    "title_tooltip": "添加圣遗物到该角色的排除列表，排除列表里的圣遗物在配装时将不会考虑。",
+    "usingNum_one": "使用<1>{{count}}</1>件排除的圣遗物",
+    "usingNum_other": "使用<1>{{count}}</1>件排除的圣遗物",
+    "excNum_one": "<0>{{count}}</0>件圣遗物已排除",
+    "excNum_other": "<0>{{count}}</0>件圣遗物已排除",
+    "addExc": "添加圣遗物到该角色的排除列表",
+    "selExc": "选择圣遗物以添加到该角色的排除列表",
+    "deSelectExc": "点击圣遗物以从该角色的排除列表中移除",
+    "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
+    "excluded": "这件圣遗物已排除。",
+    "included": "这件圣遗物未排除。",
+    "button_txt": "Exclude Artifacts",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+  },
+  "excludeChar": {
+    "title": "可装备的圣遗物配置",
+    "modal": {
+      "allow_all": "添加以下所有角色到允许列表",
+      "disallow_All": "将以下所有角色从允许列表中移除"
+    },
+    "allowEquip": "允许使用来自这些的圣遗物",
+    "usingNumTot_one": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
+    "usingNumTot_other": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList": "Custom List",
+      "all": "All Artifacts"
+    },
+    "usingState": "Using"
+  },
+  "buildCompleted": "配装完成",
+  "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
+  "bonusStats": {
+    "title": "Bonus Stats"
+  }
 }

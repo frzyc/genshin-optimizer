@@ -12,7 +12,9 @@
       "noRoll": "Không có roll",
       "noStat": "Không có giá trị",
       "eff": "Hiệu suất: <1></1>",
-      "nextRolls": "Rolls kế tiếp:"
+      "nextRolls": "Rolls kế tiếp:",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Phẩm chất",
     "level": "Cấp độ",
@@ -30,12 +32,14 @@
     "btnClear": "Xóa",
     "btnRandom": "Ngẫu nhiên",
     "btnUpdate": "Nâng cấp thánh di vật",
-    "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
+    "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?",
+    "unknownSetName": "Unknown Set Name"
   },
   "artifactFilter": "Bộ lọc Thánh Di Vật",
   "filterLocation": {
     "inventory": "Túi",
-    "currentlyEquipped": "Đang trang bị"
+    "currentlyEquipped": "Đang trang bị",
+    "location": "Characters"
   },
   "button": {
     "unequipArtifacts": "Gỡ Thánh Di Vật",
@@ -76,5 +80,23 @@
     "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
   },
   "resetFilters": "Cài lại bộ lọc",
-  "setEffectNum": "Bộ {{setNum}} món"
+  "setEffectNum": "Bộ {{setNum}} món",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
+  "edit": "Edit Artifact",
+  "autocompleteLabels": {
+    "sets": "Artifact Sets",
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Artifact Set"
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "addNew": "Add New Artifact",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

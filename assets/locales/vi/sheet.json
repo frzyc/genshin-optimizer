@@ -12,25 +12,105 @@
     "hydro": "Sát thương nguyên tố Thuỷ khi đánh trúng đối thủ",
     "cryo": "Sát thương nguyên tố Băng khi đánh trúng đối thủ",
     "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
-    "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
+    "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ",
+    "none": "After hitting an opponent",
+    "normalOrCharged": "After hitting an opponent with a Normal/Charged Attack",
+    "skillOrBurst": "After hitting an opponent with an Elemental Skill/Burst",
+    "crit": "After dealing CRIT DMG",
+    "normalChargedOrPlunging": "After hitting an opponent with a Normal/Charged/Plunging Attack",
+    "dendro": "After dealing <dendro>Dendro DMG</dendro>",
+    "normalEle": "After dealing Elemental DMG through a Normal Attack",
+    "ele": "After dealing Elemental DMG",
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
   },
   "eleAbsor": "Chuyển hóa nguyên tố",
   "absorDot": "Sát thương chuyển hóa theo thời gian",
   "afterUse": {
     "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
-    "burst": "Sau khi sử dụng Kỹ năng Nộ"
+    "burst": "Sau khi sử dụng Kỹ năng Nộ",
+    "skillOrBurst": "After using Ele. Skill or Ele. Burst",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "Tăng tấn công"
   },
+  "hits_one": "{{count}} Hit",
+  "hits_other": "{{count}} Hits",
+  "lessEqPercentHP": "HP less than or equal to {{percent}}%",
+  "greaterPercentHP": "HP greater than {{percent}}%",
+  "greaterEqPercentHP": "HP greater than or equal to {{percent}}%",
+  "lessPercentEnergy": "Energy less than {{percent}}%",
+  "enemyLessPercentHP": "Enemy HP less than {{percent}}%",
+  "enemyLessEqPercentHP": "Enemy HP less than or equal to {{percent}}%",
+  "enemyGreaterPercentHP": "Enemy HP greater than {{percent}}%",
+  "enemyGreaterEqPercentHP": "Enemy HP greater than or equal to {{percent}}%",
+  "stack_one": "{{count}} Stack",
+  "stack_other": "{{count}} Stacks",
+  "seconds_one": "{{count}} Second",
+  "seconds_other": "{{count}} Seconds",
+  "uses_one": "{{count}} Use",
+  "uses_other": "{{count}} Uses",
+  "afterDefeatEnemy": "After defeating an opponent",
+  "afterSprint": "After Sprint",
+  "skillCDRed": "Ele. Skill CD Reduction",
+  "burstCDRed": "Ele. Burst CD Reduction",
+  "pressCD": "Press CD",
+  "holdCD": "Hold CD",
+  "triggerCD": "Trigger CD",
+  "eleSwirled": "Swirled Element",
+  "incInterRes": "Increased resistance to interruption",
+  "charges": "Charges",
+  "cooldown": "Cooldown",
+  "addlCharges": "Additional charges",
+  "activeCharField": "Character is inside the field",
+  "opponentsField": "Opponents in field",
+  "takeDmg": "After taking DMG",
+  "infusion": {
+    "pyro": "Pyro Infusion",
+    "cryo": "Cryo Infusion",
+    "anemo": "Anemo Infusion",
+    "hydro": "Hydro Infusion",
+    "electro": "Electro Infusion",
+    "dendro": "Dendro Infusion",
+    "geo": "Geo Infusion"
+  },
+  "energyRegen": "Energy Regeneration",
+  "effectDuration": {
+    "pyro": "Pyro effect duration",
+    "cryo": "Cryo effect duration",
+    "anemo": "Anemo effect duration",
+    "hydro": "Hydro effect duration",
+    "electro": "Electro effect duration",
+    "dendro": "Dendro effect duration",
+    "geo": "Geo effect duration"
+  },
+  "durationInc": "Duration increase",
+  "base": "Base",
+  "stacks": "Stacks",
+  "protectedByShield": "Protected by a shield",
+  "protectedByShieldCrystal": "Protected by a shield created by Crystallize",
+  "staminaDec_": "Stamina Consumption Decrease",
+  "dmgAbsorption": {
+    "pyro": "Pyro DMG Absorption",
+    "cryo": "Cryo DMG Absorption",
+    "anemo": "Anemo DMG Absorption",
+    "hydro": "Hydro DMG Absorption",
+    "electro": "Electro DMG Absorption",
+    "dendro": "Dendro DMG Absorption",
+    "geo": "Geo DMG Absorption",
+    "none": "DMG Absorption"
+  },
   "opponentsDamaged": "Kẻ địch đã bị gây sát thương",
   "press": "Nhấn",
   "hold": "Nhấn giữ",
+  "addlCharge": "Additional charge",
   "conditional": "Điều kiện",
   "maxStacks": "Tầng hiệu ứng tối đa",
   "1set": "Bộ lẻ",
   "2set": "Bộ hai",
   "4set": "Bộ bốn",
+  "activationStam": "Activation Stamina Consumption",
   "stamDrain": "Thể lực tiêu hao",
   "talents": {
     "auto": "Tự động",
@@ -47,5 +127,43 @@
     "constellation4": "C4",
     "constellation5": "C5",
     "constellation6": "C6"
-  }
+  },
+  "swirlReaction": {
+    "hydro": "After triggering a <hydro>Hydro</hydro> Swirl reaction",
+    "pyro": "After triggering a <pyro>Pyro</pyro> Swirl reaction",
+    "electro": "After triggering an <electro>Electro</electro> Swirl reaction",
+    "cryo": "After triggering a <cryo>Cryo</cryo> Swirl reaction"
+  },
+  "afterReaction": "After triggering an Elemental Reaction",
+  "aoeInc": "AoE increase",
+  "elementalReaction": {
+    "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+  },
+  "bonusScaling": {
+    "skill_": "Ele. Skill Bonus Scaling"
+  },
+  "energy": "Energy",
+  "teamBuff": "Team Buff",
+  "opponents_one": "{{count}} Opponent",
+  "opponents_other": "{{count}} Opponents",
+  "dmgMult": {
+    "normal": "Normal Att. DMG Mult.",
+    "charged": "Charged Att. DMG Mult.",
+    "skill": "Skill DMG Mult."
+  },
+  "stamRestored": "Stamina Restored",
+  "triggerQuota": "Trigger Quota",
+  "enemyAffected": {
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+    "electro": "Enemy is affected by <electro>Electro</electro>",
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
+  },
+  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
+  "notProtectedByShield": "While not protected by a shield"
 }

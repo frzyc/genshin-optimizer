@@ -1,4 +1,7 @@
 {
+  "afterSprint": "After Sprinting",
+  "afterSprintCryo": "After applying <cryo>Cryo</cryo> by Sprinting",
   "snowflakeDMG": "DGT Tourbillon givré",
+  "dmgBySnowflake": "Enemy's been hit by Frostflake Seki no To",
   "c6Active": "Gracieuseté gelée active"
 }

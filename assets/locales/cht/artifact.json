@@ -13,6 +13,7 @@
       "noStat": "沒有數值",
       "eff": "估值：<1></1>",
       "nextRolls": "下次提升：",
+      "RollCount_one": "{{count}} Roll",
       "RollCount_other": "提升 {{count}} 次"
     },
     "rarity": "稀有度",
@@ -42,7 +43,9 @@
   },
   "button": {
     "unequipArtifacts": "卸除聖遺物",
-    "deleteArtifacts": "刪除聖遺物"
+    "deleteArtifacts": "刪除聖遺物",
+    "lockArtifacts": "Lock Artifacts",
+    "unlockrtifacts": "Unlock Artifacts"
   },
   "buttonHint": "注意：紅色選項僅用於<1>篩選後的聖遺物</1>",
   "tipsOfTheDay": [
@@ -78,6 +81,8 @@
   },
   "resetFilters": "重設過濾器",
   "setEffectNum": "{{setNum}} 件套裝",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Artifact",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "edit": "編輯聖遺物",
   "autocompleteLabels": {
     "sets": "聖遺物套裝",
@@ -89,5 +94,9 @@
   "substat_other": "{{count}} 個副詞條",
   "addNew": "新增新的聖遺物",
   "sub_one": "{{count}} 副詞條",
-  "sub_other": "{{count}} 副詞條"
+  "sub_other": "{{count}} 副詞條",
+  "cantDeleteLock": "Cannot delete artifact because it is locked",
+  "equippedArt": "All Equipped Artifacts",
+  "artInInv": "All Unequipped Artifacts",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters"
 }

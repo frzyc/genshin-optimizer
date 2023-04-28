@@ -1,5 +1,7 @@
 {
   "burst": "Lễ phục nghi thức",
   "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
-  "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên"
+  "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên",
+  "c2SkillHeal": "<strong>Kurage's Oath</strong> Healing Bonus",
+  "c2BurstHeal": "<strong>Nereid's Ascension</strong> Healing Bonus"
 }

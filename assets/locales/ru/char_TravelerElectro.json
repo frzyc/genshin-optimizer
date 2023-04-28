@@ -1,7 +1,14 @@
 {
+  "skill": {
+    "amuletGenAmt": "Number of Abundance Amulets generated",
+    "absorb": "After absorbing an Abundance Amulet"
+  },
   "burst": {
     "3rd": "Урон 3-го Нисходящего Грома",
     "thunderCd": "КД Нисходящего Грома"
+  },
+  "passive2": {
+    "enerRech_": "Abundance Amulet Energy Recharge Effect Inc."
   },
   "c2": {
     "thunderHit": "<strong>Нисходящий Гром</strong> Попадает по врагу"

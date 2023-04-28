@@ -4,7 +4,10 @@
     "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
   },
   "burst": {
-    "resolves": "Ý lực"
+    "resolves": "Ý lực",
+    "resolveInitial_": "<electro>Musou no Hitotachi DMG Bonus Scaling</electro",
+    "resolveInfused_": "<electro>Musou Isshin DMG Bonus Scaling</electro>",
+    "burstDmg": "Musou no Hitotachi DMG"
   },
   "a4": {
     "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",

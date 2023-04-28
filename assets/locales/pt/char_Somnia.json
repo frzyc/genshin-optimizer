@@ -1,0 +1,141 @@
+{
+  "name": "Somnia",
+  "title": "Criação de Cognição Simulada",
+  "description": "Uma combinação de um arranjo de conceitos. Ela existe em vários estados e formas. Será que ela é mesmo real?",
+  "constellationName": "Mathematica Felina",
+  "auto": {
+    "name": "Ábaco Astral",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes rápidos, lançando orbes que infligem <electro>Dano Electro</electro> do seu Ábaco Astral"
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir um fluxo contínuo de orbes Electro, infligindo <electro>Dano Electro</electro> a até 4 inimigos a cada 0.3s.",
+        "2": "Somnia tem Resistência a Interupção aumentada e pode se movimentar livremente enquanto usa seu Ataque Carregado."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara orbes Electro ao chão, infligindo <electro>Dano Electro em AdE</electro> durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1º Golpe",
+      "1": "Dano do 2º Golpe",
+      "2": "Dano do 3º Golpe",
+      "3": "Dano do 4º Golpe",
+      "4": "Dano do Fluxo do Ataque Carregado",
+      "5": "Consumo de Stamina do Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude"
+    }
+  },
+  "skill": {
+    "name": "Calculadora Cósmica",
+    "description": {
+      "0": "Somnia condensa energia intensa usando seu Ábaco Astral, criando uma explosão que inflige <electro>Dano Electro AdE</electro> e um Selo Auto-Contido com conteúdo indefinido acima de sua cabeça.",
+      "1": "O Selo Auto-Contido concede a ela o efeito Superposição Schrödinger.",
+      "2": "<br/>",
+      "3": "<strong>Superposição Schrödinger</strong>",
+      "4": "O Dano dos Ataques Normais e Carregados de Somnia é aumentado com base em sua Proficiência Elemental.",
+      "5": "Superposição Schrödinger expira após a duração do Selo Auto-Contido acabar ou quando Somnia deixa o campo."
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração",
+      "2": "Tempo de Recarga"
+    }
+  },
+  "burst": {
+    "name": "Patas Paralaxe",
+    "description": {
+      "0": "Somnia cria um Ciclone Celestial em formato de estrela ao seu redor, desencadeando uma explosão de <electro>Dano Electro</electro> ao expandir. O campo permanecerá e causará <electro>Dano Electro em AdE</electro> contínuo a inimigos dentro dele a cada 1s.",
+      "1": "Enquanto o Ciclone Celestial está ativo, a Proficiência Elemental de Somnia aumentará de maneira multiplicativa.",
+      "2": "Além disso, ao longo da duração de Ciclone Celestial, Somnia ganhará Estatísticas Estelares. Enquanto sob este estado, Somnia pode configurar o seu Ábaco Astral para os modos de Multiplicação, Adição ou Subtração, cada um concedendo a ela benefícios diferentes aos seus ataques e ao Ciclone Celestial. Somente um modo de Ábaco de Estatísticas Estelares pode estar ativo ao mesmo tempo.",
+      "3": "<br/>",
+      "4": "<strong>Modos de Ábaco</strong>",
+      "5": [
+        "<strong>Multiplicação</strong>: Dentro do Ciclone Celestial de Somnia, todos os personagens que usam Espada, Espadão ou Lança ganharão um <electro>encantamento Electro</electro>. Acertos de Ataque Normal ou Carregado no campo causarão Rompimento Estelar, que causa <electro>Dano Electro em AdE</electro> de acordo com a Proficiência Elemental de Somnia. Rompimento Estelar pode ser desencadeado a cada 1,5s.",
+        "<strong>Addição</strong>: A AdE e Dano do Ciclone Celestial são aumentados. Ao atingir um inimigo, os Ataques Normais e Carregados de Somnia desencaderão uma Supernova que inflige <electro>Dano Electro em AdE</electro> de acordo com a Proficiência Elemental de Somnia. Este pode ser desencadeado a cada 0,75s.",
+        "<strong>Subtração</strong>: O Ciclone Celestial tem sua AdE e Dano reduzidos, mas aplica o efeito \"Menor Que Três\" a inimigos dentro de seu campo. \"Menor Que Três\" reduz a Resistência Elemental e Física de inimigos de acordo com a Proficiência Elemental de Somnia. Além disso, os Ataques Normais e Carregados de Somnia têm seu Dano aumentado com base em sua Proficiência Elemental."
+      ]
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Proficiência Elemental",
+      "2": "Dano Contínuo de Ciclone Celestial (Multiplicação)",
+      "3": "Dano de Rompimento Estelar",
+      "4": "Dano Contínuo de Ciclone Celestial (Adição)",
+      "5": "Dano de Supernova",
+      "6": "Dano Contínuo de Ciclone Celestial (Subtração)"
+    }
+  },
+  "passive1": {
+    "name": "Cálculo Rápido",
+    "description": {
+      "0": "Os Ataques Carregados de Somnia consumem 20% menos Stamina e iniciam 20% mais rapidamente."
+    }
+  },
+  "passive2": {
+    "name": "Prodígio Matemático",
+    "description": {
+      "0": "Pela duração de Ciclone Celestial, a Proficiência Elemental de Somnia aumenta em 5% cada vez que o  Ciclone Celestial, Rompimento Estelar e Supernova atingem um inimigo, até um máximo de 25%."
+    }
+  },
+  "passive3": {
+    "name": "Iteração de Insônie",
+    "description": {
+      "0": "À noite (18:00 - 06:00), aumenta a velocidade do seu tempo de build no Genshin Optimizer em 10%."
+    }
+  },
+  "constellation1": {
+    "name": "Ponto Decimal",
+    "description": {
+      "0": "Os Ataques Normais e Carregados de Somnia possuem 25% de chance de infligir o dobro de Dano."
+    }
+  },
+  "constellation2": {
+    "name": "Número Primo",
+    "description": {
+      "0": "Quando Somnia está sob o efeito de Superposição Schrödinger, Somnia obtém 1 acúmulo de Número Natural quando seus Ataques Normais ou Carregados atingem um inimigo. Quando o número de acúmulos de Número Natural possuídos é primo, o próximo Ataque Normal ou Carregado de Somnia receberá o dobro do aumento de Dano de Superposição Schrödinger."
+    }
+  },
+  "constellation3": {
+    "name": "Série Infinita",
+    "description": {
+      "0": "Aumenta o nível de <strong>Patas Paralaxe</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Quadrado Perfeito",
+    "description": {
+      "0": "Quando Somnia desencadeia uma Reação Elemental Electro, ela e membros da equipe próximos de elementos envolvidos na reação têm 4 de Energia Elemental regenerada.",
+      "1": "Este efeito pode ocorrer uma vez a cada 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Coeficiente Erva de Gato",
+    "description": {
+      "0": "Aumenta o nível de <strong>Calculadora Cósmica</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Razão Áurea",
+    "description": {
+      "0": "Quando o Ataque Carregado de Somnia inflige Dano, a Taxa Crítica e Dano Crítico de Somnia aumentam em 3% e 5%, respectivamente. Este efeito pode ser desencadeado uma vez a cada 0,2s e pode acumular em até 8 vezes. Todos os acúmulos de Razão Áurea são perdidos 13s após ter obtido o primeiro acúmulo."
+    }
+  },
+  "c1Key": "Mult. do Dano de Atqs. Normais e Carregados",
+  "superpositionCond": "Sob o efeito Superposição Schrödinger",
+  "cycloneActiveCond": "Ciclone Celestial está ativo",
+  "multCond": "No modo de Multiplicação",
+  "subCond": "No modo de Subtração",
+  "lessThan3Cond": "Inimigo está sob efeito de \"Menor Que Três\"",
+  "c1Cond": "Frequência de ativação de Ponto Decimal",
+  "average": "Média",
+  "always": "Sempre",
+  "c2Cond": "Possui uma quantidade prima de acúmulos de Número Natural"
+}

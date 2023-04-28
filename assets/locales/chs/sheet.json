@@ -19,14 +19,18 @@
     "crit": "命中敌人并造成暴击",
     "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
     "dendro": "<dendro>草元素伤害</dendro>击中敌人",
-    "normalEle": "元素普攻命中敌人后"
+    "normalEle": "元素普攻命中敌人后",
+    "ele": "造成元素伤害后",
+    "weakSpot": "重击命中敌人弱点后"
   },
   "eleAbsor": "元素转化",
   "absorDot": "元素转化持续伤害",
   "afterUse": {
     "skill": "使用元素战技后",
     "burst": "使用元素爆发后",
-    "skillOrBurst": "释放元素战技或元素爆发后"
+    "skillOrBurst": "释放元素战技或元素爆发后",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "攻击加成"
@@ -149,5 +153,17 @@
     "skill": "技能伤害倍率"
   },
   "stamRestored": "回复体力",
-  "triggerQuota": "生效次数"
+  "triggerQuota": "生效次数",
+  "enemyAffected": {
+    "burningOrPyro": "敌人受到<pyro>燃烧</pyro>或<pyro>火元素</pyro>影响",
+    "frozenOrCryo": "敌人处于<cryo>冻结</cryo>状态或受到<cryo>冰元素</cryo>影响",
+    "pyroOrElectro": "敌人处于<pyro>火元素</pyro>或<electro>雷元素</electro>影响下",
+    "hydroOrCryo": "敌人处于<hydro>水元素</hydro>或<cryo>冰元素</cryo>影响下",
+    "hydroOrPyro": "敌人处于<hydro>水元素</hydro>或<pyro>火元素</pyro>影响下",
+    "hydroOrElectro": "敌人处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下",
+    "electro": "敌人处于<electro>雷元素</electro>影响下",
+    "cryo": "敌人处于<cryo>冰元素</cryo>影响下"
+  },
+  "getElementalOrbParticle": "获得元素晶球或元素微粒",
+  "notProtectedByShield": "不处于护盾庇护下"
 }

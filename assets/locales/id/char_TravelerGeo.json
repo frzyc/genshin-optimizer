@@ -1,0 +1,11 @@
+{
+  "passive2": {
+    "key": "DMG Frenzied Rockslide"
+  },
+  "c2": {
+    "key": "DMG Rockcore Meltdown"
+  },
+  "c4": {
+    "energyRestore": "Energi dipulihkan per serangan shockwave"
+  }
+}

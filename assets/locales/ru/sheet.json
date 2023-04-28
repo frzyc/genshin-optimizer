@@ -18,14 +18,19 @@
     "skillOrBurst": "Элементальный навык или Элементальный взрыв попадает по противникам",
     "crit": "Крит. попадание по противнику",
     "normalChargedOrPlunging": "Обычные / Заряженные / Атаки в падении попали по врагу",
-    "dendro": "<dendro>Дендро-удар</dendro> попал по врагу"
+    "dendro": "<dendro>Дендро-удар</dendro> попал по врагу",
+    "normalEle": "After dealing Elemental DMG through a Normal Attack",
+    "ele": "After dealing Elemental DMG",
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
   },
   "eleAbsor": "Поглощение стихий",
   "absorDot": "Доп. элементальный урон",
   "afterUse": {
     "skill": "После использования Элементального навыка",
     "burst": "После использования Взрыва стихии",
-    "skillOrBurst": "После применения Элементального навыка или взрыва"
+    "skillOrBurst": "После применения Элементального навыка или взрыва",
+    "skillPress": "$t(afterUse.skill) ($t(press))",
+    "skillHold": "$t(afterUse.skill) ($t(hold))"
   },
   "increase": {
     "atk": "Увеличение атаки"
@@ -52,9 +57,12 @@
   "burstCDRed": "Уменьшение времени отката Элe. Взрыва",
   "pressCD": "Откат быстрого нажатия",
   "holdCD": "Откат долгого нажатия",
+  "triggerCD": "Trigger CD",
   "eleSwirled": "Поглощенный Элемент",
   "incInterRes": "Повышается сопротивление к прерыванию",
+  "charges": "Charges",
   "cooldown": "Откат",
+  "addlCharges": "Additional charges",
   "activeCharField": "Активный персонаж на поле",
   "opponentsField": "Противники на поле",
   "takeDmg": "После получения урона",
@@ -96,14 +104,18 @@
   "opponentsDamaged": "Противников повреждено",
   "press": "Быстрое нажатие",
   "hold": "Долгое нажатие",
+  "addlCharge": "Additional charge",
+  "conditional": "Conditional",
   "maxStacks": "Максимум стаков",
   "1set": "1-Сет",
   "2set": "2-Сет",
   "4set": "4-Сет",
+  "activationStam": "Activation Stamina Consumption",
   "stamDrain": "Расход Стамины",
   "talents": {
     "auto": "Авто",
     "skill": "Навык",
+    "burst": "Burst",
     "passive": "Пассивно",
     "passive1": "Возвышение 1",
     "passive2": "Возвышение 4",
@@ -124,6 +136,10 @@
   },
   "afterReaction": "После воздействия с Элементальной Реакцией",
   "aoeInc": "Увеличивает АоЕ",
+  "elementalReaction": {
+    "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+  },
   "bonusScaling": {
     "skill_": "Увел. Бонуса Элем. Навыка"
   },
@@ -132,7 +148,22 @@
   "opponents_one": "{{count}} Оппонент",
   "opponents_other": "{{count}} Оппоненты",
   "dmgMult": {
+    "normal": "Normal Att. DMG Mult.",
+    "charged": "Charged Att. DMG Mult.",
     "skill": "Навык"
   },
-  "stamRestored": "Смола Восстановилась"
+  "stamRestored": "Смола Восстановилась",
+  "triggerQuota": "Trigger Quota",
+  "enemyAffected": {
+    "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+    "pyroOrElectro": "Enemy is affected by <pyro>Pyro</pyro> or <electro>Electro</electro>",
+    "hydroOrCryo": "Enemy is affected by <hydro>Hydro</hydro> or <cryo>Cryo</cryo>",
+    "hydroOrPyro": "Enemy is affected by <hydro>Hydro</hydro> or <pyro>Pyro</pyro>",
+    "hydroOrElectro": "Enemy is affected by <hydro>Hydro</hydro> or <electro>Electro</electro>",
+    "electro": "Enemy is affected by <electro>Electro</electro>",
+    "cryo": "Enemy is affected by <cryo>Cryo</cryo>"
+  },
+  "getElementalOrbParticle": "После получения элементальной сферы/частицы",
+  "notProtectedByShield": "While not protected by a shield"
 }

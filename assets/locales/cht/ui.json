@@ -27,12 +27,14 @@
   "inventory": "庫存",
   "close": "關閉",
   "sortMap": {
+    "new": "New",
     "name": "名稱",
     "level": "等級",
     "rarity": "稀有度",
     "efficiency": "目前估值",
     "mefficiency": "最高估值",
-    "artsetkey": "聖遺物套裝"
+    "artsetkey": "聖遺物套裝",
+    "probability": "Roll Probability"
   },
   "link": {
     "download": "下載連結",
@@ -43,8 +45,27 @@
   "locked": "已上鎖",
   "unlocked": "未上鎖",
   "refinement": "精鍊 {{value}}",
+  "selectlevel": "Select Level",
   "gender": {
     "F": "女",
     "M": "男"
-  }
+  },
+  "statGroupKey": {
+    "basic_stats": "Basic Stats",
+    "elem_dmg_bonus": "Elemental DMG Bonuses",
+    "enemy_debuffs": "Enemy Debuffs",
+    "self_res": "Self Resistances",
+    "reaction_dmg_bonus": "Reaction DMG Bonuses",
+    "reaction_crit": "Reaction CRIT Bonuses",
+    "elem_dmgInc": "Elemental Damage Increases",
+    "talent_dmgInc": "Talent Damage Increases",
+    "elem_crit": "Elemental CRIT Bonuses",
+    "talent_dmg_bonus": "Talent DMG Bonuses",
+    "talent_crit": "Talent CRIT Bonuses",
+    "talent_level_boost": "Talent Level Boosts",
+    "base_stat_mod": "Base Stat Modifications",
+    "stamina_buffs": "Stamina Buffs",
+    "misc": "Misc. Stats"
+  },
+  "sillyPageTitle": "Silly Optimizer"
 }
