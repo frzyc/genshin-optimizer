@@ -306,8 +306,7 @@ const sheet: ICharacterSheet = {
               {
                 text: stg('duration'),
                 value: dm.c1.duration,
-                unit: 's',
-                fixed: 1,
+                unit: 's'
               },
             ],
           },
@@ -375,20 +374,6 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
-      ct.headerTem('constellation6', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.dmg, {
-              name: ct.ch('c6Dmg'),
-            }),
-          },
-          {
-            text: stg('cd'),
-            value: dm.c6.cd,
-            unit: 's',
-          },
-        ],
-      }),
       ct.headerTem('constellation2', {
         canShow: equal(condAfterBurst, 'on', 1),
         fields: [
@@ -403,7 +388,7 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('passive1', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch('p1Heal') }),
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
           },
           {
             text: stg('cd'),
@@ -427,8 +412,24 @@ const sheet: ICharacterSheet = {
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: skillC5 }] },
     ]),
-    constellation6: ct.talentTem('constellation6'),
-  },
+    constellation6: ct.talentTem('constellation6', [
+      ct.fieldsTem('constellation6', {
+        canShow: equal(condAfterBurst, 'on', 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation6.dmg, {
+              name: ct.ch('c6Dmg'),
+            }),
+          },
+          {
+            text: stg('cd'),
+            value: dm.c6.cd,
+            unit: 's',
+          },
+        ],
+      }),
+    ])
+  }
 }
 
 export default new CharacterSheet(sheet, data)

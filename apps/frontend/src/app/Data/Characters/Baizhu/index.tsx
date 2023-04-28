@@ -474,7 +474,7 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive3.heal, { name: ct.ch('p3Heal') }),
+            node: infoMut(dmgFormulas.passive3.heal, { name: stg('healing') }),
           },
         ],
       },
