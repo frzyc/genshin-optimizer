@@ -1,11 +1,8 @@
-import { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import {
-  AnyNode,
-  prod,
-  RawTagMapEntries,
-  subscript,
-} from '@genshin-optimizer/waverider'
-import { allStatics, self, selfBuff, Stat } from '../util'
+import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import type { AnyNode, RawTagMapEntries } from '@genshin-optimizer/waverider'
+import { prod, subscript } from '@genshin-optimizer/waverider'
+import type { Stat } from '../util'
+import { allStatics, self, selfBuff } from '../util'
 
 export type WeaponDataGen = {
   weaponKey: WeaponKey

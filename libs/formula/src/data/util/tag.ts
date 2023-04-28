@@ -1,6 +1,8 @@
-import { constant, NumNode } from '@genshin-optimizer/waverider'
-import { Source, Stat } from './listing'
-import { Read, reader, tag, Tag } from './read'
+import type { NumNode } from '@genshin-optimizer/waverider'
+import { constant } from '@genshin-optimizer/waverider'
+import type { Source, Stat } from './listing'
+import type { Tag } from './read'
+import { Read, reader, tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })

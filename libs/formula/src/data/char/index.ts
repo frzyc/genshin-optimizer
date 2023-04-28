@@ -1,4 +1,4 @@
-import { Data } from '../util'
+import type { Data } from '../util'
 import Candace from './Candace'
 import Nahida from './Nahida'
 import Nilou from './Nilou'

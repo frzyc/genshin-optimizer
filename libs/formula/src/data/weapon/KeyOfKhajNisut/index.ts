@@ -1,4 +1,4 @@
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
 import {
   allConditionals,
@@ -8,7 +8,8 @@ import {
   selfBuff,
   teamBuff,
 } from '../../util'
-import { entriesForWeapon, WeaponDataGen } from '../util'
+import type { WeaponDataGen } from '../util'
+import { entriesForWeapon } from '../util'
 import dg from './data.gen.json'
 
 const data_gen = dg as WeaponDataGen

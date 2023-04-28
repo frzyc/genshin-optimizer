@@ -1,7 +1,8 @@
 import { compileTagMapValues } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
-import { allStacks, Data, Member, Source, srcs } from './data/util'
+import type { Data, Member, Source } from './data/util'
+import { allStacks, srcs } from './data/util'
 import {} from './debug'
 import { teamData } from './util'
 

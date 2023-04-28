@@ -1,19 +1,16 @@
-import {
+import type {
   ArtifactSetKey,
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import { cmpEq } from '@genshin-optimizer/waverider'
+import type { Data, Member, Preset, Stat } from './data/util'
 import {
   allConditionals,
   convert,
-  Data,
-  Member,
-  Preset,
   reader,
   selfBuff,
   selfTag,
-  Stat,
 } from './data/util'
 
 export function withPreset(preset: Preset, ...data: Data): Data {

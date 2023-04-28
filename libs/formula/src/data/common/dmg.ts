@@ -6,8 +6,8 @@ import {
   sum,
   sumfrac,
 } from '@genshin-optimizer/waverider'
+import type { Data } from '../util'
 import {
-  Data,
   enemy,
   enemyDebuff,
   percent,

@@ -1,4 +1,4 @@
-import { allElementKeys } from '@genshin-optimizer/consts'
+import type { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
 import {

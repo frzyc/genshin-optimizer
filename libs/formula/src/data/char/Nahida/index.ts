@@ -22,7 +22,8 @@ import {
   team,
   teamBuff,
 } from '../../util'
-import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
+import type { CharDataGen } from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 
@@ -126,7 +127,7 @@ const burst_karma_dmg_ = cmpEq(
 )
 
 const electroLevel = sum(count.electro, cmpGE(constellation, 1, 1))
-const burst_skillIntervalDec = cmpEq(
+const _burst_skillIntervalDec = cmpEq(
   partyInBurst,
   'on',
   percent(
@@ -144,7 +145,7 @@ const burst_skillIntervalDec = cmpEq(
 )
 
 const hydroLevel = sum(count.hydro, cmpGE(constellation, 1, 1))
-const burst_durationInc = cmpEq(
+const _burst_durationInc = cmpEq(
   partyInBurst,
   'on',
   percent(

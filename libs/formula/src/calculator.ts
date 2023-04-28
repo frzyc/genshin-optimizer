@@ -1,10 +1,7 @@
-import {
-  AnyOP,
-  CalcResult,
-  calculation,
-  Calculator as Base,
-} from '@genshin-optimizer/waverider'
-import { self, Tag } from './data/util'
+import type { AnyOP, CalcResult } from '@genshin-optimizer/waverider'
+import { calculation, Calculator as Base } from '@genshin-optimizer/waverider'
+import type { Tag } from './data/util'
+import { self } from './data/util'
 
 const { arithmetic } = calculation
 

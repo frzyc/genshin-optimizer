@@ -1,9 +1,5 @@
-import {
-  AnyNode,
-  compileTagMapValues,
-  constant,
-  RawTagMapEntries,
-} from '@genshin-optimizer/waverider'
+import type { AnyNode, RawTagMapEntries } from '@genshin-optimizer/waverider'
+import { compileTagMapValues, constant } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export * from './formulaText'

@@ -1,5 +1,5 @@
-import { CalcResult } from '@genshin-optimizer/waverider'
-import { Tag } from './data/util'
+import type { CalcResult } from '@genshin-optimizer/waverider'
+import type { Tag } from './data/util'
 
 type Output = {
   tag: Tag | undefined

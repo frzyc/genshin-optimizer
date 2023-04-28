@@ -6,18 +6,20 @@ import {
   allRegionKeys,
   allTransformativeReactionKeys,
 } from '@genshin-optimizer/consts'
-import {
+import type {
   AnyNode,
-  constant,
   NumNode,
   Read as BaseRead,
-  reread,
   ReRead,
   StrNode,
-  tag as baseTag,
-  tagVal as baseTagVal,
   TagOverride,
   TagValRead,
+} from '@genshin-optimizer/waverider'
+import {
+  constant,
+  reread,
+  tag as baseTag,
+  tagVal as baseTagVal,
 } from '@genshin-optimizer/waverider'
 import { entryTypes, members, presets, srcs } from './listing'
 

@@ -1,4 +1,4 @@
-import {
+import type {
   CharacterKey,
   ElementKey,
   ElementWithPhyKey,
@@ -6,24 +6,21 @@ import {
   RegionKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
+import type { AnyNode, NumNode } from '@genshin-optimizer/waverider'
 import {
-  AnyNode,
-  NumNode,
-  prod,
   RawTagMapEntries,
+  prod,
   subscript,
   sum,
 } from '@genshin-optimizer/waverider'
+import type { Data, FormulaArg, Stat } from '../util'
 import {
   allStatics,
   customDmg,
   customShield,
-  Data,
-  FormulaArg,
   percent,
   self,
   selfBuff,
-  Stat,
 } from '../util'
 
 export interface CharInfo {

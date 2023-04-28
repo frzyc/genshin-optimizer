@@ -1,4 +1,4 @@
-import { Data } from '../util'
+import type { Data } from '../util'
 import CalamityQueller from './CalamityQueller'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import PrototypeAmber from './PrototypeAmber'

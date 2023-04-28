@@ -1,11 +1,12 @@
-import { ArtifactSetKey } from '@genshin-optimizer/consts'
-import {
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type {
   AnyNode,
   NumNode,
   RawTagMapEntries,
-  ReRead,
+  ReRead
 } from '@genshin-optimizer/waverider'
-import { Data, self, tag } from '../util'
+import type { Data } from '../util'
+import { self, tag } from '../util'
 
 export function registerArt(
   src: ArtifactSetKey,

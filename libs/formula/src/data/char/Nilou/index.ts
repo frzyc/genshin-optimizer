@@ -7,9 +7,10 @@ import {
   self,
   selfBuff,
   team,
-  teamBuff,
+  teamBuff
 } from '../../util'
-import { CharDataGen, dataGenToCharInfo, dmg, entriesForChar } from '../util'
+import type { CharDataGen } from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 

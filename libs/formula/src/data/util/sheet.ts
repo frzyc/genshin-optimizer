@@ -1,20 +1,13 @@
-import {
+import type {
   ArtifactSetKey,
   ElementKey,
   ElementWithPhyKey,
   MoveKey,
 } from '@genshin-optimizer/consts'
-import { NumNode, prod, StrNode } from '@genshin-optimizer/waverider'
-import {
-  Data,
-  reader,
-  self,
-  selfBuff,
-  Source,
-  tag,
-  teamBuff,
-  usedNames,
-} from '.'
+import type { NumNode, StrNode } from '@genshin-optimizer/waverider'
+import { prod } from '@genshin-optimizer/waverider'
+import type { Data, Source } from '.'
+import { reader, self, selfBuff, tag, teamBuff, usedNames } from '.'
 
 // Use `registerArt` for artifacts
 export function register(

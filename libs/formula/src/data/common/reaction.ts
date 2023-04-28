@@ -1,21 +1,23 @@
-import {
-  allElementKeys,
-  allElementWithPhyKeys,
-  allTransformativeReactionKeys,
+import type {
   ElementWithPhyKey,
   TransformativeReactionKey,
 } from '@genshin-optimizer/consts'
 import {
+  allElementKeys,
+  allElementWithPhyKeys,
+  allTransformativeReactionKeys,
+} from '@genshin-optimizer/consts'
+import type { NumNode, StrNode } from '@genshin-optimizer/waverider'
+import {
   cmpEq,
   lookup,
-  NumNode,
   prod,
-  StrNode,
   subscript,
   sum,
   sumfrac,
 } from '@genshin-optimizer/waverider'
-import { Data, percent, self, selfBuff, tag } from '../util'
+import type { Data } from '../util'
+import { percent, self, selfBuff, tag } from '../util'
 
 const transLvlMultis = [
   NaN, // lvl 0
@@ -208,14 +210,14 @@ const cryLvlMultis = [
 const {
   final: { eleMas },
   char: { lvl },
-  reaction: { ampBase, transBase, cataBase, bonus },
+  reaction: { ampBase, cataBase, bonus },
 } = self
 
 function eleMasMulti(a: number, b: number): NumNode {
   return sum(percent(1), prod(a, sumfrac(eleMas, b)), bonus)
 }
 
-const crystallizeHit = prod(
+const _crystallizeHit = prod(
   subscript(lvl, cryLvlMultis),
   eleMasMulti(40 / 9, 1400)
 )
@@ -285,6 +287,17 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
 const transTriggerByEle = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [ele, new Set()])
 ) as Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
+function trigger(
+  ele: ElementWithPhyKey,
+  trans: TransformativeReactionKey,
+  immediateFromEle: Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
+) {
+  if (transTriggerByEle[ele].has(trans)) return
+  transTriggerByEle[ele].add(trans)
+
+  for (const variant of transInfo[trans].variants)
+    for (const trans of immediateFromEle[variant]) trigger(ele, trans, immediateFromEle)
+}
 {
   const immediateFromEle = Object.fromEntries(
     allElementWithPhyKeys.map((ele) => [ele, new Set()])
@@ -293,15 +306,8 @@ const transTriggerByEle = Object.fromEntries(
     for (const ele of transInfo[trans].triggeredBy)
       immediateFromEle[ele].add(trans)
 
-  function trigger(ele: ElementWithPhyKey, trans: TransformativeReactionKey) {
-    if (transTriggerByEle[ele].has(trans)) return
-    transTriggerByEle[ele].add(trans)
-
-    for (const variant of transInfo[trans].variants)
-      for (const trans of immediateFromEle[variant]) trigger(ele, trans)
-  }
   for (const ele of allElementWithPhyKeys)
-    for (const trans of immediateFromEle[ele]) trigger(ele, trans)
+    for (const trans of immediateFromEle[ele]) trigger(ele, trans, immediateFromEle)
 }
 
 const data: Data = [

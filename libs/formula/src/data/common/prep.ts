@@ -1,5 +1,6 @@
 import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/waverider'
-import { Data, enemy, percent, self, selfBuff, tagVal } from '../util'
+import type { Data } from '../util'
+import { enemy, percent, self, selfBuff, tagVal } from '../util'
 
 const { ele, amp, cata } = self.prep
 

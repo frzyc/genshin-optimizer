@@ -1,7 +1,8 @@
-import { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponKey } from '@genshin-optimizer/consts'
 import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
 import { allConditionals, percent, register, self, selfBuff } from '../../util'
-import { entriesForWeapon, WeaponDataGen } from '../util'
+import type { WeaponDataGen } from '../util'
+import { entriesForWeapon } from '../util'
 import dg from './data.gen.json'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]

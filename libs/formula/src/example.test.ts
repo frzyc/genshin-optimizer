@@ -1,9 +1,9 @@
 import { compileTagMapValues } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
+import type { Data } from './data/util'
 import {
   convert,
-  Data,
   enemyDebuff,
   reader,
   selfBuff,
