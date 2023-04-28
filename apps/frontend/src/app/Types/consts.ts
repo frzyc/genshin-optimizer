@@ -1,5 +1,6 @@
 import type {
   allArtifactSetKeys,
+  LocationCharacterKey,
   WeaponBowKey,
   WeaponCatalystKey,
   WeaponClaymoreKey,
@@ -185,10 +186,7 @@ export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]
  */
 export type CharacterKey = (typeof allCharacterKeys)[number]
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
-/**
- * @deprecated
- */
-export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
+
 /**
  * @deprecated
  */
