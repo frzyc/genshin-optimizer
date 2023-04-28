@@ -3,7 +3,7 @@ import type {
   AnyNode,
   NumNode,
   RawTagMapEntries,
-  ReRead
+  ReRead,
 } from '@genshin-optimizer/waverider'
 import type { Data } from '../util'
 import { self, tag } from '../util'

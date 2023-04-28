@@ -7,7 +7,7 @@ import {
   self,
   selfBuff,
   team,
-  teamBuff
+  teamBuff,
 } from '../../util'
 import type { CharDataGen } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from '../util'

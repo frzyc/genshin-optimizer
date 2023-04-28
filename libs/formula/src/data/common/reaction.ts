@@ -296,7 +296,8 @@ function trigger(
   transTriggerByEle[ele].add(trans)
 
   for (const variant of transInfo[trans].variants)
-    for (const trans of immediateFromEle[variant]) trigger(ele, trans, immediateFromEle)
+    for (const trans of immediateFromEle[variant])
+      trigger(ele, trans, immediateFromEle)
 }
 {
   const immediateFromEle = Object.fromEntries(
@@ -307,7 +308,8 @@ function trigger(
       immediateFromEle[ele].add(trans)
 
   for (const ele of allElementWithPhyKeys)
-    for (const trans of immediateFromEle[ele]) trigger(ele, trans, immediateFromEle)
+    for (const trans of immediateFromEle[ele])
+      trigger(ele, trans, immediateFromEle)
 }
 
 const data: Data = [
