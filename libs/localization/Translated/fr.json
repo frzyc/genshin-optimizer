@@ -1249,7 +1249,7 @@
       "excludeAll2set": "Exclude All 2-Set",
       "allowAll4set": "Allow All 4-Set",
       "excludeAll4set": "Exclude All 4-Set",
-      "alExRainbow": "<0>Allow<1></1></0> / <2>Exclude<1></1></2> Rainbow Builds",
+      "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {
           "title": "Artifact Set Conditional Effects",
@@ -1257,7 +1257,7 @@
           "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
         },
         "ArtSetFilter": {
-          "title": "Artifact Sets <0>Allowed<1></1></0> / <2>Excluded<1></1></2>",
+          "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
           "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
           "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
           "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",

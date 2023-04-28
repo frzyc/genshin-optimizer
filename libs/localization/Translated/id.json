@@ -1249,7 +1249,7 @@
       "excludeAll2set": "Kecualikan Semua 2-Set",
       "allowAll4set": "Izinkan Semua 4-Set",
       "excludeAll4set": "Kecualikan Semua 4-Set",
-      "alExRainbow": "<0>Izinkan<1></1></0> / <2>Kecualikan<1></1></2> Rainbow Builds",
+      "alExRainbow": "<0>Izinkan <1></1></0> / <2>Kecualikan <1></1></2> Rainbow Builds",
       "modal": {
         "setCond": {
           "title": "Efek Kondisional Set Artefak",
@@ -1257,7 +1257,7 @@
           "text": "Beberapa efek artefak memberikan statistik kondisional. Jendela ini memungkinkanmu untuk memilih efek tersebut, sehingga dapat menyumbangkan statistik saat build yang memenuhi set efek dihitung selama pengoptimalan."
         },
         "ArtSetFilter": {
-          "title": "Set Artefak <0>Diizinkan<1></1></0> / <2>Dikecualikan<1></1></2>",
+          "title": "Set Artefak <1>Diizinkan<1></1></1> / <3>Dikecualikan<1></1></3>",
           "intro": "Kamu dapat mengizinkan/mengecualikan set mana yang ingin dipertimbangkan oleh pembuat. Dalam contoh berikut, <strong>A</strong> sudah on-set, dan <strong>R</strong> adalah rainbow (off-set)",
           "2set": "<0><0>Mengecualikan<1></1> 2-Set</0></0> akan mengecualikan build 2-Set: <2><0>AA</0>RRR</2> dan < 4><0>AAA</0>RR</4>.",
           "4set": "<0><0>Mengecualikan<1></1> 4-Set</0></0> akan mengecualikan build 4-Set: <2><0>AAAA</0>R</2> dan < 4><0>AAAAA</0></4>.",
