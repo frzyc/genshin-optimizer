@@ -414,7 +414,6 @@ const sheet: ICharacterSheet = {
     ]),
     constellation6: ct.talentTem('constellation6', [
       ct.fieldsTem('constellation6', {
-        canShow: equal(condAfterBurst, 'on', 1),
         fields: [
           {
             node: infoMut(dmgFormulas.constellation6.dmg, {
