@@ -6,13 +6,12 @@ import type {
   RegionKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import type { AnyNode, NumNode } from '@genshin-optimizer/waverider'
-import {
+import type {
+  AnyNode,
+  NumNode,
   RawTagMapEntries,
-  prod,
-  subscript,
-  sum,
 } from '@genshin-optimizer/waverider'
+import { prod, subscript, sum } from '@genshin-optimizer/waverider'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
   allStatics,

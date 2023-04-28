@@ -1,4 +1,4 @@
-import type { allElementKeys } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
 import {
@@ -10,13 +10,8 @@ import {
   selfBuff,
   teamBuff,
 } from '../../util'
-import {
-  CharDataGen,
-  dataGenToCharInfo,
-  dmg,
-  entriesForChar,
-  shield,
-} from '../util'
+import type { CharDataGen } from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
 import data_gen from './data.gen.json'
 import skillParam_gen from './skillParam.gen.json'
 

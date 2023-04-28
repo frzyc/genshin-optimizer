@@ -1,14 +1,7 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import {
-  allStatics,
-  Data,
-  percent,
-  reader,
-  self,
-  selfBuff,
-  team,
-} from '../util'
+import type { Data } from '../util'
+import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
