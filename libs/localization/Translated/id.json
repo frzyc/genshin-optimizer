@@ -1303,7 +1303,7 @@
       "excludeArtifactTip": "Mengecualikan artefak akan mencegah generator build menggunakannya untuk karakter ini.",
       "excluded": "Artefak ini dikecualikan.",
       "included": "Artefak ini tidak dikecualikan.",
-      "button_text": "Use Excluded Artifacts",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
     },
     "excludeChar": {

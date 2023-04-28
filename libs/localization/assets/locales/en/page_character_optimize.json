@@ -26,7 +26,7 @@
   "excludeArt": {
     "title_exclude": "Excluded Artifacts",
     "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
-    "button_text": "Use Excluded Artifacts",
+    "button_txt": "Exclude Artifacts",
     "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
     "excNum_one": "<0>{{count}}</0> artifact is excluded",
     "excNum_other": "<0>{{count}}</0> artifacts are excluded",

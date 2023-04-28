@@ -1309,7 +1309,7 @@
       "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
       "excluded": "这件圣遗物已排除。",
       "included": "这件圣遗物未排除。",
-      "button_text": "Use Excluded Artifacts",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
     },
     "excludeChar": {
