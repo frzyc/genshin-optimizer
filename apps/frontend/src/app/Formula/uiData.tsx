@@ -552,10 +552,7 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
   if (name) {
     const prefixDisplay =
       prefix && !source ? <>{KeyMap.getPrefixStr(prefix)} </> : null
-    const sourceText = <SourceText source={source} />
-    const sourceDisplay = sourceText ? (
-      <ColorText color="secondary"> ({sourceText})</ColorText>
-    ) : null
+    const sourceDisplay = <SourceDisplay source={source} />
     node.name = (
       <>
         <ColorText color={variant}>
@@ -574,18 +571,34 @@ function createDisplay(node: ContextNodeDisplay<number | string | undefined>) {
       )
   }
 }
-function SourceText({ source }: { source: string | undefined }) {
+function SourceDisplay({ source }: { source: string | undefined }) {
   const { silly } = useContext(SillyContext)
   if (!source) return null
   if (allArtifactSetKeys.includes(source as ArtifactSetKey))
-    return <Translate ns="artifactNames_gen" key18={source} />
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (<Translate ns="artifactNames_gen" key18={source} />)
+      </ColorText>
+    )
   if (allWeaponKeys.includes(source as WeaponKey))
-    return <Translate ns="weaponNames_gen" key18={source} />
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (<Translate ns="weaponNames_gen" key18={source} />)
+      </ColorText>
+    )
   if (allCharacterSheetKeys.includes(source as CharacterSheetKey))
-    return silly ? (
-      <Translate ns="sillyWisher_charNames" key18={source} />
-    ) : (
-      <Translate ns="charNames_gen" key18={source} />
+    return (
+      <ColorText color="secondary">
+        {' '}
+        (
+        <Translate
+          ns={silly ? 'sillyWisher_charNames' : 'charNames_gen'}
+          key18={source}
+        />
+        )
+      </ColorText>
     )
   return null
 }

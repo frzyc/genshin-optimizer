@@ -169,6 +169,7 @@ export const allWeaponCatalystKeys = [
   'OtherworldlyStory',
   'PocketGrimoire',
   'PrototypeAmber',
+  'QuantumCatalyst',
   'RoyalGrimoire',
   'SacrificialFragments',
   'SkywardAtlas',

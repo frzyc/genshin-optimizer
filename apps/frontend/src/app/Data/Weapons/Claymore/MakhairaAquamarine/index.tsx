@@ -10,7 +10,7 @@ import {
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { cond, stg, st, trans } from '../../../SheetUtil'
+import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -18,86 +18,60 @@ import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'MakhairaAquamarine'
 const data_gen = data_gen_json as WeaponData
-const [, trm] = trans('weapon', key)
 
-const [condPassivePath, condPassive] = cond(key, 'passive')
-
-const atk_arr = [0.24, 0.3, 0.36, 0.42, 0.48]
-const atkSelf = equal(
+const atkArr = [0.24, 0.3, 0.36, 0.42, 0.48]
+const selfAtk = equal(
   input.weapon.key,
   key,
-  equal(
-    condPassive,
-    'on',
-    prod(
-      subscript(input.weapon.refineIndex, atk_arr, { unit: '%' }),
-      input.premod.eleMas
-    )
+  prod(
+    subscript(input.weapon.refineIndex, atkArr, { unit: '%' }),
+    input.premod.eleMas
   )
 )
-const atkTeamDisp = equal(input.weapon.key, key, prod(percent(0.3), atkSelf))
-const atkTeam = unequal(input.activeCharKey, input.charKey, atkTeamDisp)
+const teamAtkDisp = equal(input.weapon.key, key, prod(percent(0.3), selfAtk))
+const teamAtk = unequal(input.activeCharKey, input.charKey, teamAtkDisp)
 
 const data = dataObjForWeaponSheet(
   key,
   data_gen,
   {
     total: {
-      atk: atkSelf,
+      atk: selfAtk,
     },
     teamBuff: {
       total: {
-        atk: atkTeam,
+        atk: teamAtk,
       },
     },
   },
   {
-    atkSelf,
-    atkTeamDisp,
+    selfAtk,
+    teamAtkDisp,
   }
 )
+
 const sheet: IWeaponSheet = {
   document: [
     {
-      header: headerTemplate(key, st('conditional')),
-      path: condPassivePath,
-      value: condPassive,
-      teamBuff: true,
-      name: trm('condName'),
-      states: {
-        on: {
-          fields: [
-            {
-              node: atkSelf,
-            },
-            {
-              text: stg('duration'),
-              value: 12,
-              unit: 's',
-            },
-          ],
+      header: headerTemplate(key, st('base')),
+      fields: [
+        {
+          node: selfAtk,
         },
-      },
+      ],
     },
     {
       header: headerTemplate(key, st('teamBuff')),
       teamBuff: true,
-      canShow: equal(condPassive, 'on', 1),
       fields: [
         {
-          node: infoMut(atkTeamDisp, {
+          node: infoMut(teamAtkDisp, {
             ...KeyMap.info('atk'),
             isTeamBuff: true,
           }),
-        },
-        {
-          text: stg('duration'),
-          value: 12,
-          unit: 's',
         },
       ],
     },
   ],
 }
-
 export default new WeaponSheet(key, sheet, data_gen, data)

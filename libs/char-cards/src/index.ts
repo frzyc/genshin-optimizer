@@ -19,8 +19,8 @@ import Eula from './Character_Eula_Card.png'
 import Faruzan from './Character_Faruzan_Card.jpg'
 import Fischl from './Character_Fischl_Card.jpg'
 import Ganyu from './Character_Ganyu_Card.png'
-import Gorou from './Character_Gorou_Card.jpg'
-import HuTao from './Character_Hu_Tao_Card.jpg'
+import Gorou from './Character_Gorou_Card.png'
+import HuTao from './Character_Hu_Tao_Card.png'
 import Jean from './Character_Jean_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
 import KamisatoAyaka from './Character_Kamisato_Ayaka_Card.png'
@@ -46,6 +46,7 @@ import SangonomiyaKokomi from './Character_Sangonomiya_Kokomi_Card.jpg'
 import Sayu from './Character_Sayu_Card.png'
 import Shenhe from './Character_Shenhe_Card.jpg'
 import ShikanoinHeizou from './Character_Shikanoin_Heizou_Card.png'
+import Somnia from './Character_Somnia_Card.png'
 import Sucrose from './Character_Sucrose_Card.jpg'
 import Tartaglia from './Character_Tartaglia_Card.png'
 import Thoma from './Character_Thoma_Card.jpg'
@@ -114,6 +115,7 @@ const charCards = {
   Sayu,
   Shenhe,
   ShikanoinHeizou,
+  Somnia,
   Sucrose,
   Tartaglia,
   Thoma,

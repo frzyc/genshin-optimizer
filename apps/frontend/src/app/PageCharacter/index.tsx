@@ -114,12 +114,16 @@ export default function PageCharacter() {
       let name = getCharSheet(cKey, gender).name
       // Use translated string
       if (typeof name === 'object')
-        name = t(`sillyWisher_charNames:${charKeyToCharName(cKey, gender)}`)
+        name = t(
+          `${
+            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          }:${charKeyToCharName(cKey, gender)}`
+        )
 
       if (!window.confirm(t('removeCharacter', { value: name }))) return
       database.chars.remove(cKey)
     },
-    [database, gender, t]
+    [database.chars, gender, silly, t]
   )
 
   const editCharacter = useCharSelectionCallback()
