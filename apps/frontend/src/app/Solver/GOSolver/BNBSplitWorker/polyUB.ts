@@ -351,7 +351,7 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
       )
     )
     .filter(
-      ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) < 5
+      ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) <= 5
     )
 }
 function monomialCmp(
