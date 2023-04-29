@@ -64,7 +64,7 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: [...artExclusion, id],
-        useExcludedArts: true,
+        useExcludedArts: false,
       })
     },
     [buildSettingDispatch, artExclusion]
@@ -73,7 +73,7 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: artExclusion.filter((i) => i !== id),
-        useExcludedArts: true,
+        useExcludedArts: false,
       })
     },
     [buildSettingDispatch, artExclusion]
@@ -146,16 +146,25 @@ export default function ExcludeArt({
       <ButtonGroup sx={{ display: 'flex', width: '100%' }}>
         <Button
           onClick={toggleArtExclusion}
-          disabled={disabled}
+          disabled={disabled || !numExcludedArt}
           startIcon={
-            useExcludedArts ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+            useExcludedArts ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />
           }
-          color={useExcludedArts ? 'success' : 'secondary'}
+          color={useExcludedArts ? 'secondary' : 'success'}
           sx={{ flexGrow: 1 }}
         >
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <Box>{t('excludeArt.button_text')}</Box>
-            <SqBadge sx={{ whiteSpace: 'normal' }}>
+            <Box>{t('excludeArt.button_txt')}</Box>
+            <SqBadge
+              sx={{ whiteSpace: 'normal' }}
+              color={
+                !numExcludedArt
+                  ? 'secondary'
+                  : useExcludedArts
+                  ? 'warning'
+                  : 'primary'
+              }
+            >
               {useExcludedArts ? (
                 <Trans t={t} i18nKey="excludeArt.usingNum">
                   Using {{ totalStr: excludedTotal } as TransObject} excluded
