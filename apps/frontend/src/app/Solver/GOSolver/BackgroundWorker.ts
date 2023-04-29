@@ -13,6 +13,7 @@ import { DefaultSplitWorker } from './DefaultSplitWorker'
 
 declare function postMessage(command: WorkerCommand | WorkerResult): void
 
+const maxIterateSize = 32_000_000
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
 
 async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
@@ -20,11 +21,13 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     { command } = data
   switch (command) {
     case 'split':
-      for (const filter of splitWorker.split(
-        data.filter,
-        data.maxIterateSize
-      )) {
-        postMessage({ command: 'iterate', filter })
+      const splitSize = Math.max(maxIterateSize, data.count / 100)
+      for (const filter of splitWorker.split(data.filter, splitSize)) {
+        if (splitSize > maxIterateSize) {
+          const count = countBuilds(filterArts(computeWorker.arts, filter))
+          postMessage({ command: 'split', filter, count })
+        } else postMessage({ command: 'iterate', filter })
+
         // Suspend here in case a `threshold` is sent over
         //
         // Make sure to use task-based mechanisms such as `setTimeout` so that
@@ -49,10 +52,9 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       break
     }
     case 'count': {
-      const { exclusion, maxIterateSize } = data,
-        arts = computeWorker.arts
+      const arts = computeWorker.arts
       const perms = filterFeasiblePerm(
-        artSetPerm(exclusion, [
+        artSetPerm(data.exclusion, [
           ...new Set(
             Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
           ),
@@ -61,8 +63,9 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       )
       let count = 0
       for (const filter of perms) {
-        postMessage({ command: 'split', filter, maxIterateSize })
-        count += countBuilds(filterArts(arts, filter))
+        const new_count = countBuilds(filterArts(arts, filter))
+        postMessage({ command: 'split', filter, count: new_count })
+        count += new_count
       }
       postMessage({ resultType: 'count', count })
       break

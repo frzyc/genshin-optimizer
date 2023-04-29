@@ -34,7 +34,7 @@ export interface Setup {
 export interface Split {
   command: 'split'
   filter: RequestFilter
-  maxIterateSize: number
+  count: number
 }
 export interface Iterate {
   command: 'iterate'
@@ -50,7 +50,6 @@ export interface Finalize {
 export interface Count {
   command: 'count'
   exclusion: ArtSetExclusion
-  maxIterateSize: number
 }
 export interface Done {
   resultType: 'done'

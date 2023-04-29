@@ -65,3 +65,17 @@ export class FIFO<T> {
     return this.head.pop()
   }
 }
+
+export class LIFO<T> {
+  stack: T[] = []
+
+  get length(): number {
+    return this.stack.length
+  }
+  push(t: T): void {
+    this.stack.push(t)
+  }
+  pop(): T | undefined {
+    return this.stack.pop()
+  }
+}

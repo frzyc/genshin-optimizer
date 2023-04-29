@@ -1,11 +1,11 @@
-import { FIFO } from '@genshin-optimizer/util'
+import { FIFO, LIFO } from '@genshin-optimizer/util'
 
 export class WorkerCoordinator<
   Command extends { command: string; resultType?: never },
   Response extends { command?: never; resultType: string }
 > {
   prio: Map<Command['command'], number>
-  commands: FIFO<Command>[]
+  commands: (FIFO<Command> | LIFO<Command>)[]
   workers: Promise<Worker>[]
   workDone: Map<Worker, () => void> = new Map()
   _workers: Worker[]
@@ -17,11 +17,18 @@ export class WorkerCoordinator<
 
   constructor(
     workers: Worker[],
-    prio: Command['command'][],
+    prio: Map<Command['command'], 'FIFO' | 'LIFO'>,
     callback: (_: Response, w: Worker) => void
   ) {
-    this.commands = prio.map((_) => new FIFO())
-    this.prio = new Map(prio.map((p, i) => [p, i]))
+    this.commands = [...prio.values()].map((q) => {
+      switch (q) {
+        case 'FIFO':
+          return new FIFO()
+        case 'LIFO':
+          return new LIFO()
+      }
+    })
+    this.prio = new Map([...prio.keys()].map((p, i) => [p, i]))
     this.callback = callback
 
     workers.forEach((worker) => {
