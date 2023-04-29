@@ -154,7 +154,7 @@ export default function ExcludeArt({
           sx={{ flexGrow: 1 }}
         >
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <Box>{t('excludeArt.button_text')}</Box>
+            <Box>{t('excludeArt.button_txt')}</Box>
             <SqBadge
               sx={{ whiteSpace: 'normal' }}
               color={
