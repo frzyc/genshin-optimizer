@@ -12,7 +12,7 @@ import { pruneAll, pruneExclusion } from '../common'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
-  private maxIterateSize = 4_000_000
+  private maxIterateSize = 32_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
   private topN: number
