@@ -314,7 +314,7 @@ export default function loadTrans() {
     layeredAssignment(
       mapHashData,
       ['weapon', weaponKey, 'description'],
-      [descTextMapHash, 'paragraph2']
+      [descTextMapHash, 'paragraph']
     )
 
     if (ascData) {
@@ -322,7 +322,7 @@ export default function loadTrans() {
         layeredAssignment(
           mapHashData,
           ['weapon', weaponKey, 'passiveDescription', i],
-          [asc.descTextMapHash, 'paragraph2']
+          [asc.descTextMapHash, 'paragraph']
         )
       })
     }
@@ -342,7 +342,7 @@ export default function loadTrans() {
     layeredAssignment(
       mapHashData,
       ['material', key, 'description'],
-      [descTextMapHash, 'paragraph2']
+      [descTextMapHash, 'paragraph']
     )
   })
 
