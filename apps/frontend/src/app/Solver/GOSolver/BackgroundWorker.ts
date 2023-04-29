@@ -20,7 +20,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
   const { data } = e,
     { command } = data
   switch (command) {
-    case 'split':
+    case 'split': {
       const splitSize = Math.max(maxIterateSize, data.count / 100)
       for (const filter of splitWorker.split(data.filter, splitSize)) {
         if (splitSize > maxIterateSize) {
@@ -37,6 +37,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
         await new Promise((r) => setTimeout(r))
       }
       break
+    }
     case 'iterate':
       computeWorker.compute(data.filter)
       break
