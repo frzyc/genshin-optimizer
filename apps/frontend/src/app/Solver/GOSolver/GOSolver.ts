@@ -2,6 +2,7 @@ import type {
   Count,
   FinalizeResult,
   Interim,
+  MessageData,
   OptProblemInput,
   Setup,
   WorkerCommand,
@@ -9,10 +10,11 @@ import type {
 } from '..'
 import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
+import type { WorkerSendMessage } from '../coordinator'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
-  private maxIterateSize = 4_000_000
+  private maxIterateSize = 32_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
   private topN: number
@@ -54,12 +56,24 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   }
 
   async solve() {
+    await this.execute([])
+    new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
+      this.shareOnIdle()
+    )
+
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []
     await this.execute([{ command: 'count', exclusion, maxIterateSize }])
     this.notifiedBroadcast({ command: 'finalize' })
     await this.execute([])
     return this.finalizedResults
+  }
+
+  shareOnIdle() {
+    console.log(`Idle workers: ${this.numIdleWorkers()}`)
+    new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
+      this.shareOnIdle()
+    )
   }
 
   preprocess({
@@ -122,9 +136,15 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       if (oldThreshold !== threshold)
         this.broadcast({
           command: 'workerRecvMessage',
-          from: NaN,
+          from: 'master',
           data: { dataType: 'threshold', threshold },
         })
+    }
+  }
+
+  handleWorkerRecvMessage = ({ data }: WorkerSendMessage<MessageData>) => {
+    if (data.dataType === 'iterate2') {
+      console.log('Hey we got a pre-empted iterate done! woohoo!')
     }
   }
 }

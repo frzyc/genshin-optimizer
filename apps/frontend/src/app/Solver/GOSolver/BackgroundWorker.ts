@@ -13,7 +13,7 @@ import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
 
 declare function postMessage(
-  command: WorkerCommand | WorkerResult | WorkerSendMessage
+  command: WorkerCommand | WorkerResult | WorkerSendMessage<MessageData>
 ): void
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
@@ -22,10 +22,14 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
   const { data } = msg
 
   switch (data.dataType) {
-    case 'threshold': {
+    case 'threshold':
       splitWorker.setThreshold(data.threshold)
       computeWorker.setThreshold(data.threshold)
-    }
+      break
+    case 'iterate2':
+      computeWorker.compute(data.filter)
+      postMessage({ messageType: 'send', to: 'master', data })
+      break
   }
 }
 async function handleEvent(data: WorkerCommand): Promise<void> {

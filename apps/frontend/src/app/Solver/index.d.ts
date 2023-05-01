@@ -68,8 +68,16 @@ export interface Interim {
   skipped: number
 }
 
-export type MessageData = Threshold
+export type MessageData = Threshold | PreemptedIterate
 export interface Threshold {
   dataType: 'threshold'
   threshold: number
+}
+export interface PreemptedIterate {
+  dataType: 'iterate2'
+  filter: RequestFilter
+}
+export interface ShareRequest {
+  dataType: 'share'
+  numIdle: number
 }

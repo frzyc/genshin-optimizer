@@ -2,16 +2,16 @@ import { FIFO } from '@genshin-optimizer/util'
 
 export interface WorkerRecvMessage<T = any> {
   command: 'workerRecvMessage'
-  from: number
+  from: number | 'master'
   data: T
 }
 export interface WorkerSendMessage<T = any> {
   messageType: 'send'
-  to?: number | 'all'
+  to?: number | 'all' | 'master'
   data: T
 }
 
-export class WorkerCoordinator<
+export abstract class WorkerCoordinator<
   Command extends { command: string; resultType?: never; messageType?: never },
   Response extends { command?: never; resultType: string; messageType?: never }
 > {
@@ -21,10 +21,18 @@ export class WorkerCoordinator<
   workDone: Map<Worker, () => void> = new Map()
   _workers: Worker[]
 
+  commandsSent = 0
+  commandsFinished = 0
+  numIdleWorkers() {
+    return this.workers.length - this.commandsSent + this.commandsFinished
+  }
+
   cancel: (e?: Error) => void
   cancelled: Promise<never>
   callback: (_: Response, w: Worker) => void
   notifyNonEmpty: (() => void) | undefined
+  notifyEmpty: (() => void) | undefined
+  handleWorkerRecvMessage: ((msg: WorkerSendMessage) => void) | undefined
 
   constructor(
     workers: Worker[],
@@ -51,10 +59,14 @@ export class WorkerCoordinator<
    * that command is further sent to an available worker (may be the same worker).
    * If a worker sends back a `Response`, `this.callback` is invoked.
    *
+   * Always await execute(), or at least avoid calling it twice while the first one is still running.
+   *
    * Note that `{ resultType: 'done' }` is a special type that the worker is
    * expected to send back when completing its `command`.
    */
   async execute(commands: Iterable<Command> | AsyncIterable<Command>) {
+    this.commandsSent = 0
+    this.commandsFinished = 0
     const processingInput = (async () => {
       for await (const command of commands) this.add(command)
     })()
@@ -62,6 +74,7 @@ export class WorkerCoordinator<
     while (true) {
       const command = this.commands.find((x) => x.length)?.pop()
       if (command === undefined) {
+        this.notifyEmpty?.()
         const hasCommand = await Promise.race([
           new Promise<boolean>(
             (res) => (this.notifyNonEmpty = () => res(true))
@@ -80,6 +93,7 @@ export class WorkerCoordinator<
         this.cancelled,
       ])
       this.workers[i] = new Promise((res) => this.workDone.set(w, () => res(w)))
+      this.commandsSent += 1
       w.postMessage(command)
     }
   }
@@ -94,8 +108,10 @@ export class WorkerCoordinator<
   ) {
     if (msg.messageType !== undefined) this.handleWorkerMessage(msg, workerIx)
     else if (msg.command !== undefined) this.add(msg)
-    else if (msg.resultType === 'done') this.workDone.get(worker)!()
-    else this.callback(msg, worker)
+    else if (msg.resultType === 'done') {
+      this.commandsFinished += 1
+      this.workDone.get(worker)!()
+    } else this.callback(msg, worker)
   }
   handleWorkerMessage(msg: WorkerSendMessage, from: number) {
     const out: WorkerRecvMessage = {
@@ -105,6 +121,7 @@ export class WorkerCoordinator<
     }
     if (msg.to === undefined || msg.to === 'all')
       this._workers.forEach((w, i) => i !== from && w.postMessage(out))
+    else if (msg.to === 'master') this.handleWorkerRecvMessage?.(msg)
     else this._workers[msg.to].postMessage(out)
   }
   /** May be ignored after `execute` ends */
