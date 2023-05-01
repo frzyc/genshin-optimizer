@@ -32,6 +32,7 @@ export abstract class WorkerCoordinator<
   callback: (_: Response, w: Worker) => void
   notifyNonEmpty: (() => void) | undefined
   notifyEmpty: (() => void) | undefined
+  notifyCommandOverflow: (() => void) | undefined
   handleWorkerRecvMessage: ((msg: WorkerSendMessage) => void) | undefined
 
   constructor(
@@ -75,6 +76,7 @@ export abstract class WorkerCoordinator<
       const command = this.commands.find((x) => x.length)?.pop()
       if (command === undefined) {
         this.notifyEmpty?.()
+        this.notifyEmpty = undefined
         const hasCommand = await Promise.race([
           new Promise<boolean>(
             (res) => (this.notifyNonEmpty = () => res(true))
@@ -96,6 +98,8 @@ export abstract class WorkerCoordinator<
       this.commandsSent += 1
       w.postMessage(command)
     }
+
+    this.notifyEmpty = undefined
   }
 
   onError(e: { message: string }) {
@@ -126,8 +130,15 @@ export abstract class WorkerCoordinator<
   }
   /** May be ignored after `execute` ends */
   add(command: Command) {
+    console.log(`add ${command.command}`)
     const prio = this.prio.get(command.command)!
     this.commands[prio].push(command)
+    if (this.commands[prio].length > this.workers.length ** 2) {
+      this.notifyCommandOverflow?.()
+      console.warn(
+        `Too many commands in queue in queue ${prio} (${command.command}), elem ${this.commands[prio].length}`
+      )
+    }
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */

@@ -30,6 +30,18 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
       computeWorker.compute(data.filter)
       postMessage({ messageType: 'send', to: 'master', data })
       break
+    case 'share': {
+      const outt = splitWorker.popFilters(data.numIdle)
+      console.log('Sharing ', { req: data.numIdle, sent: outt.length })
+      outt.forEach((filter) =>
+        postMessage({
+          command: 'split',
+          filter,
+          maxIterateSize: data.maxIterateSize,
+        })
+      )
+      break
+    }
   }
 }
 async function handleEvent(data: WorkerCommand): Promise<void> {
@@ -107,6 +119,7 @@ onmessage = async (
 }
 
 export interface SplitWorker {
+  popFilters(n: number): RequestFilter[]
   split(filter: RequestFilter, minCount: number): Iterable<RequestFilter>
   setThreshold(newThreshold: number): void
 }

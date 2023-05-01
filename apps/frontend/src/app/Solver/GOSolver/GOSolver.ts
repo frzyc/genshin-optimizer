@@ -14,7 +14,7 @@ import type { WorkerSendMessage } from '../coordinator'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
-  private maxIterateSize = 32_000_000
+  private maxIterateSize = 64_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
   private topN: number
@@ -57,9 +57,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
   async solve() {
     await this.execute([])
-    new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
-      this.shareOnIdle()
-    )
+    this.listenEmpty()
 
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []
@@ -70,7 +68,22 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   }
 
   shareOnIdle() {
-    console.log(`Idle workers: ${this.numIdleWorkers()}`)
+    const numIdle = this.numIdleWorkers()
+    if (numIdle > 0) {
+      this.broadcast({
+        command: 'workerRecvMessage',
+        from: 'master',
+        data: {
+          dataType: 'share',
+          numIdle,
+          maxIterateSize: this.maxIterateSize,
+        },
+      })
+    }
+    setTimeout(() => this.listenEmpty(), 1000)
+  }
+  listenEmpty() {
+    console.log('Making listener.')
     new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
       this.shareOnIdle()
     )

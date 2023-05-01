@@ -79,6 +79,15 @@ export class BNBSplitWorker implements SplitWorker {
         count,
       })
   }
+  popFilters(n = 1) {
+    n = Math.min(n, this.filters.length - 2)
+    return this.filters.splice(0, n).map(({ arts }) =>
+      objectMap(arts.values, (arts) => ({
+        kind: 'id' as const,
+        ids: new Set(arts.map(({ id }) => id)),
+      }))
+    )
+  }
   setThreshold(newThreshold: number): void {
     if (newThreshold > this.min[0]) {
       this.min[0] = newThreshold

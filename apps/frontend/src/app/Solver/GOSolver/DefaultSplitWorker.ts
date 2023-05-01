@@ -14,6 +14,10 @@ export class DefaultSplitWorker implements SplitWorker {
     this.arts = arts
   }
 
+  popFilters(_: number): RequestFilter[] {
+    return []
+  }
+
   setThreshold(_newThreshold: number): void {}
   add(
     filter: RequestFilter,
