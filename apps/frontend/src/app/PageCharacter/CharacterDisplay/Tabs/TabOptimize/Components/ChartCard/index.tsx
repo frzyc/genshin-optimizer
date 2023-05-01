@@ -121,7 +121,6 @@ export default function ChartCard({
           // Remove the Y-value so there are not 2 dots displayed for these builds
           enhancedDatum.y = undefined
           // Don't return yet, still need to check if build is highlighted
-          console.log(enhancedDatum)
         }
 
         const graphBuildIndex = graphBuilds?.findIndex((build) =>
@@ -129,14 +128,12 @@ export default function ChartCard({
         )
         if (graphBuildIndex !== undefined && graphBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
-          if (isCurrentBuild) console.log(enhancedDatum)
           if (enhancedDatum.trueY !== undefined) {
             enhancedDatum.highlighted = y
             // Remove the Y-value so there are not 2 dots displayed for these builds
             enhancedDatum.y = undefined
           }
           enhancedDatum.graphBuildNumber = graphBuildIndex + 1
-          if (isCurrentBuild) console.log(enhancedDatum)
         }
 
         const generBuildIndex = generatedBuilds.findIndex((build) =>
@@ -144,14 +141,12 @@ export default function ChartCard({
         )
         if (generBuildIndex !== -1) {
           // Skip setting y-value if it has already been set.
-          if (isCurrentBuild) console.log(enhancedDatum)
           if (enhancedDatum.trueY !== undefined) {
             enhancedDatum.highlighted = y
             // Remove the Y-value so there are not 2 dots displayed for these builds
             enhancedDatum.y = undefined
           }
           enhancedDatum.generBuildNumber = generBuildIndex + 1
-          if (isCurrentBuild) console.log(enhancedDatum)
         }
 
         return enhancedDatum
@@ -272,7 +267,7 @@ export default function ChartCard({
         </Grid>
       </CardContent>
       {displayData && displayData.length && <Divider />}
-      {chartData && displayData && displayData.length && (
+      {chartData && displayData && !!displayData.length && (
         <CardContent>
           <Collapse in={!!downloadData && showDownload}>
             <CardDark sx={{ mb: 2 }}>

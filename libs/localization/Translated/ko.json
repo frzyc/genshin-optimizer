@@ -1303,7 +1303,7 @@
       "excludeArtifactTip": "성유물을 제외시키면 이 캐릭터의 조합 생성에 포함되지 않습니다.",
       "excluded": "이 성유물은 제외되었습니다.",
       "included": "이 성유물은 제외되지 않았습니다.",
-      "button_text": "제외된 성유물 사용",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "<1>{{totalStr}}</1>개의 제외된 성유물 사용중"
     },
     "excludeChar": {

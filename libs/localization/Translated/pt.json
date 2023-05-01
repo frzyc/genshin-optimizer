@@ -1309,7 +1309,7 @@
       "excludeArtifactTip": "Bloquear um artefato impedirá o gerador de Builds de usá-lo para este personagem.",
       "excluded": "Este artefato está bloqueado.",
       "included": "Este artefato não está bloqueado.",
-      "button_text": "Usar Artefatos Bloqueados",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)"
     },
     "excludeChar": {
