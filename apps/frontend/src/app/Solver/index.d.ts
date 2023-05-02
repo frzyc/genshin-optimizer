@@ -68,7 +68,7 @@ export interface Interim {
   skipped: number
 }
 
-export type MessageData = Threshold | PreemptedCommand | ShareRequest
+export type MessageData = Threshold | ShareRequest
 export interface Threshold {
   dataType: 'threshold'
   threshold: number

@@ -100,7 +100,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         this._workers.forEach((w, i) => {
           const command = this.commands[0].pop()
           if (command === undefined) return
-
           this.sendCommand(command, i)
         })
 
