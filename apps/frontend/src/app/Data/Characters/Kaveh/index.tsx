@@ -306,7 +306,7 @@ const sheet: ICharacterSheet = {
               {
                 text: stg('duration'),
                 value: dm.c1.duration,
-                unit: 's'
+                unit: 's',
               },
             ],
           },
@@ -427,8 +427,8 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-    ])
-  }
+    ]),
+  },
 }
 
 export default new CharacterSheet(sheet, data)
