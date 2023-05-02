@@ -43,14 +43,16 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
 async function executeCommand(data: WorkerCommand): Promise<void> {
   const { command } = data
   switch (command) {
-    case 'split': {
-      const iter = splitWorker.split(data.filter, data.maxIterateSize)
-      await queueCommand({ type: 'split', iter })
-      break
-    }
+    case 'split':
+      queueCommand({
+        type: 'split',
+        iter: splitWorker.split(data.filter, data.maxIterateSize),
+      })
+      return
+
     case 'iterate':
-      await queueCommand({ type: 'iterate', filter: data.filter })
-      break
+      queueCommand({ type: 'iterate', filter: data.filter })
+      return
     case 'finalize': {
       computeWorker.refresh(true)
       const { builds, plotData } = computeWorker
@@ -94,14 +96,13 @@ type ManagedInstr = IterateInstr | SplitInstr
 type IterateInstr = { type: 'iterate'; filter: RequestFilter }
 type SplitInstr = { type: 'split'; iter: Generator<RequestFilter> }
 function queueCommand(instr: ManagedInstr) {
-  const prom = new Promise((res) => {
+  new Promise((res) => {
     manualEventLoop.push({ ...instr, done: () => res(true) })
     if (!looping) {
       looping = true
       uwu()
     }
-  })
-  return prom
+  }).then(() => postMessage({ resultType: 'done' }))
 }
 let looping = false
 const manualEventLoop = new FIFO<ManagedInstr & { done: () => void }>()
