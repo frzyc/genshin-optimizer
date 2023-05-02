@@ -89,7 +89,7 @@ export abstract class WorkerCoordinator<
       }
 
       const i = await Promise.race([
-        ...this.workers.map((w, i) => w.then((w) => i)),
+        ...this.workers.map((w, i) => w.then(() => i)),
         this.cancelled,
       ])
       this.sendCommand(command, i)
