@@ -33,7 +33,7 @@ export abstract class WorkerCoordinator<
   notifyNonEmpty: (() => void) | undefined
   notifyEmpty: (() => void) | undefined
   notifyCommandOverflow: (() => void) | undefined
-  handleWorkerRecvMessage: ((msg: WorkerSendMessage) => void) | undefined
+  handleWorkerRecvMessage: ((msg: WorkerRecvMessage) => void) | undefined
 
   constructor(
     workers: Worker[],
@@ -125,7 +125,7 @@ export abstract class WorkerCoordinator<
     }
     if (msg.to === undefined || msg.to === 'all')
       this._workers.forEach((w, i) => i !== from && w.postMessage(out))
-    else if (msg.to === 'master') this.handleWorkerRecvMessage?.(msg)
+    else if (msg.to === 'master') this.handleWorkerRecvMessage?.(out)
     else this._workers[msg.to].postMessage(out)
   }
   /** May be ignored after `execute` ends */
@@ -133,11 +133,9 @@ export abstract class WorkerCoordinator<
     console.log(`add ${command.command}`)
     const prio = this.prio.get(command.command)!
     this.commands[prio].push(command)
-    if (this.commands[prio].length > this.workers.length ** 2) {
+    if (this.commands[prio].length > this.workers.length * 2) {
       this.notifyCommandOverflow?.()
-      console.warn(
-        `Too many commands in queue in queue ${prio} (${command.command}), elem ${this.commands[prio].length}`
-      )
+      this.notifyCommandOverflow = undefined
     }
     this.notifyNonEmpty?.()
   }

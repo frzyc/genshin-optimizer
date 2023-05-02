@@ -68,14 +68,14 @@ export interface Interim {
   skipped: number
 }
 
-export type MessageData = Threshold | PreemptedIterate | ShareRequest
+export type MessageData = Threshold | PreemptedCommand | ShareRequest
 export interface Threshold {
   dataType: 'threshold'
   threshold: number
 }
-export interface PreemptedIterate {
-  dataType: 'iterate2'
-  filter: RequestFilter
+export interface PreemptedCommand {
+  dataType: 'command'
+  command: WorkerCommand
 }
 export interface ShareRequest {
   dataType: 'share'

@@ -10,11 +10,11 @@ import type {
 } from '..'
 import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
-import type { WorkerSendMessage } from '../coordinator'
+import type { WorkerRecvMessage } from '../coordinator'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
-  private maxIterateSize = 64_000_000
+  private maxIterateSize = 32_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
   private topN: number
@@ -58,6 +58,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   async solve() {
     await this.execute([])
     this.listenEmpty()
+    this.listenCommandOverflow()
 
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []
@@ -83,9 +84,35 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     setTimeout(() => this.listenEmpty(), 1000)
   }
   listenEmpty() {
-    console.log('Making listener.')
     new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
       this.shareOnIdle()
+    )
+  }
+  listenCommandOverflow() {
+    console.log('Making listener.')
+    new Promise((res) => (this.notifyCommandOverflow = () => res(true))).then(
+      () => {
+        // commands[0] is iterate()
+        if (this.commands[0].length === 0) {
+          this.listenCommandOverflow()
+          return
+        }
+
+        console.log('Posting Messages!')
+        this._workers.forEach((w) => {
+          const command = this.commands[0].pop()
+          if (command === undefined) return
+
+          w.postMessage({
+            command: 'workerRecvMessage',
+            from: 'master',
+            data: {
+              dataType: 'command',
+              command,
+            },
+          })
+        })
+      }
     )
   }
 
@@ -155,9 +182,22 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
   }
 
-  handleWorkerRecvMessage = ({ data }: WorkerSendMessage<MessageData>) => {
-    if (data.dataType === 'iterate2') {
-      console.log('Hey we got a pre-empted iterate done! woohoo!')
+  handleWorkerRecvMessage = ({ from, data }: WorkerRecvMessage<MessageData>) => {
+    if (data.dataType === 'command') {
+      const command = this.commands[0].pop()
+      if (command === undefined) {
+        this.listenCommandOverflow()
+        return
+      }
+
+      this._workers[from].postMessage({
+        command: 'workerRecvMessage',
+        from: 'master',
+        data: {
+          dataType: 'command',
+          command,
+        },
+      })
     }
   }
 }

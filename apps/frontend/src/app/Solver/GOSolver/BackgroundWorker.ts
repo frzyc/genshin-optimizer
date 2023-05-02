@@ -26,9 +26,10 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
       splitWorker.setThreshold(data.threshold)
       computeWorker.setThreshold(data.threshold)
       break
-    case 'iterate2':
-      computeWorker.compute(data.filter)
-      postMessage({ messageType: 'send', to: 'master', data })
+    case 'command':
+      executeCommand(data.command).then(() => {
+        postMessage({ messageType: 'send', to: 'master', data })
+      })
       break
     case 'share': {
       const outt = splitWorker.popFilters(data.numIdle)
@@ -45,6 +46,10 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
   }
 }
 async function handleEvent(data: WorkerCommand): Promise<void> {
+  await executeCommand(data)
+  postMessage({ resultType: 'done' })
+}
+async function executeCommand(data: WorkerCommand) {
   const { command } = data
   switch (command) {
     case 'split':
@@ -101,14 +106,13 @@ async function handleEvent(data: WorkerCommand): Promise<void> {
     default:
       assertUnreachable(command)
   }
-  postMessage({ resultType: 'done' })
 }
 onmessage = async (
   e: MessageEvent<WorkerCommand | WorkerRecvMessage<MessageData>>
 ) => {
   try {
     if (e.data.command === 'workerRecvMessage') {
-      handleMessage(e.data)
+      await handleMessage(e.data)
       return
     }
 
