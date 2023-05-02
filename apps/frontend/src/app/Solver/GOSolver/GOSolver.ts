@@ -56,7 +56,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   async solve() {
     await this.execute([])
     this.listenEmpty()
-    // this.listenCommandOverflow()
+    this.listenCommandOverflow()
 
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []

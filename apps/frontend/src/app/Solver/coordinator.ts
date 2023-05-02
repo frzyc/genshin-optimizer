@@ -136,6 +136,7 @@ export abstract class WorkerCoordinator<
     }
     this.commandsSent += 1
     this.workerTracker.get(w)!.tasks += 1
+    console.log(`Worker ${to}: tasks = ${this.workerTracker.get(w)!.tasks}`)
     w.postMessage(command)
   }
   /** May be ignored after `execute` ends */
