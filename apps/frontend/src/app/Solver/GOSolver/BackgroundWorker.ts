@@ -17,6 +17,8 @@ declare function postMessage(
 ): void
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
+let commandQueue: Promise<void>[] = []
+let overrideCommand: (() => void) | undefined
 
 function handleMessage(msg: WorkerRecvMessage<MessageData>) {
   const { data } = msg
@@ -48,6 +50,19 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
 async function handleEvent(data: WorkerCommand): Promise<void> {
   await executeCommand(data)
   postMessage({ resultType: 'done' })
+}
+function queueCommand(command: WorkerCommand) {
+  const promise = executeCommand(command)
+  commandQueue.push(promise)
+
+  overrideCommand?.()
+  Promise.race([
+    Promise.all(commandQueue),
+    new Promise((res, rej) => (overrideCommand = () => rej('override'))),
+  ]).then(() => {
+    commandQueue = []
+    postMessage({ resultType: 'done' })
+  })
 }
 async function executeCommand(data: WorkerCommand) {
   const { command } = data

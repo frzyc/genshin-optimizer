@@ -88,15 +88,27 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       this.shareOnIdle()
     )
   }
+
+  overflowWorkers = [] as (() => void)[]
   listenCommandOverflow() {
     console.log('Making listener.')
     new Promise((res) => (this.notifyCommandOverflow = () => res(true))).then(
       () => {
         // commands[0] is iterate()
-        if (this.commands[0].length === 0) {
+        if (this.commands[0].length < this.workers.length) {
           this.listenCommandOverflow()
           return
         }
+
+        Promise.all(
+          this._workers.map(
+            (_, i) =>
+              new Promise((res) => (this.overflowWorkers[i] = () => res(true)))
+          )
+        ).then(() => {
+          console.log('No longer overflowing :)')
+          this.listenCommandOverflow()
+        })
 
         console.log('Posting Messages!')
         this._workers.forEach((w) => {
@@ -112,8 +124,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
             },
           })
         })
-
-        setTimeout(() => this.listenCommandOverflow(), 1000)
       }
     )
   }
@@ -191,6 +201,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     if (data.dataType === 'command') {
       const command = this.commands[0].pop()
       if (command === undefined) {
+        console.log('Worker finished overflow: ', from)
+        this.overflowWorkers[from]()
         return
       }
 
