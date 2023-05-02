@@ -112,6 +112,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
             },
           })
         })
+
+        setTimeout(() => this.listenCommandOverflow(), 1000)
       }
     )
   }
@@ -182,11 +184,13 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
   }
 
-  handleWorkerRecvMessage = ({ from, data }: WorkerRecvMessage<MessageData>) => {
+  handleWorkerRecvMessage = ({
+    from,
+    data,
+  }: WorkerRecvMessage<MessageData>) => {
     if (data.dataType === 'command') {
       const command = this.commands[0].pop()
       if (command === undefined) {
-        this.listenCommandOverflow()
         return
       }
 
