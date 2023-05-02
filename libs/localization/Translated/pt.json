@@ -1255,7 +1255,7 @@
       "excludeAll2set": "Omitir Conjuntos de 2 pç.",
       "allowAll4set": "Permitir todos de 4 peças",
       "excludeAll4set": "Omitir Conjuntos de 4 pç.",
-      "alExRainbow": "<0>Permitir<1></1></0> / <2>Omitir<1></1></2> Builds sem Conjunto",
+      "alExRainbow": "<0>Permitir <1></1></0> / <2>Omitir<1</1></2> Builds sem Conjunto",
       "modal": {
         "setCond": {
           "title": "Efeitos Condicionais dos Conjuntos de Artefato",
@@ -1263,7 +1263,7 @@
           "text": "Alguns Conjuntos de Artefato possuem efeitos condicionais. Essa janela te permite selecionar esses efeitos, para que eles possam ser levados em conta  ao Otimizar uma build que satisfaz a condição."
         },
         "ArtSetFilter": {
-          "title": "Conjuntos de Artefato <0>Permitidos<1></1></0> / <2>Omitidos<1></1></2>",
+          "title": "Conjuntos de Artefato <1>Permitidos<1></1></1> / <3>Omitidos<1></1></3>",
           "intro": "Você pode permitir ou impedir que o Gerador de Builds utilize certos tipos de Build. Nos exemplos a seguir, <strong>D</strong> é um artefato dentro de um conjunto e <strong>F</strong> é um artefato fora do conjunto",
           "2set": "<0><0>Omitir<1></1> Conjuntos de 2 pç.</0></0> bloqueará Builds que possuem conjuntos de 2 peças: <2><0>DD</0>FFF</2> e <4><0>DDD</0>FF</4>.",
           "4set": "<0><0>Bloquear<1></1> Conjuntos de 4 pç.</0></0> omitirá Builds que possuem conjuntos de 4 peças: <2><0>DD</0>FFF</2> e <4><0>DDD</0>FF</4>.",
@@ -1309,7 +1309,7 @@
       "excludeArtifactTip": "Bloquear um artefato impedirá o gerador de Builds de usá-lo para este personagem.",
       "excluded": "Este artefato está bloqueado.",
       "included": "Este artefato não está bloqueado.",
-      "button_text": "Usar Artefatos Bloqueados",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)"
     },
     "excludeChar": {
