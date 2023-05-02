@@ -87,7 +87,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     )
   }
 
-  overflowWorkers = [] as (() => void)[]
   listenCommandOverflow() {
     new Promise((res) => (this.notifyCommandOverflow = () => res(true))).then(
       () => {
@@ -102,7 +101,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
           if (command === undefined) return
           this.sendCommand(command, i)
         })
-
         this.listenCommandOverflow()
       }
     )
