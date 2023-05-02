@@ -7,6 +7,7 @@ import {
   greaterEq,
   infoMut,
   lookup,
+  one,
   percent,
   prod,
   subscript,
@@ -186,6 +187,16 @@ function burstResolve(mvArr: number[], initial = false) {
   )
 }
 
+const a4EnergyRestore_ = greaterEq(
+  input.asc,
+  4,
+  prod(
+    sum(input.total.enerRech_, percent(-dm.passive2.er)),
+    percent(dm.passive2.energyGen),
+    100
+  )
+)
+
 const [condC4Path, condC4] = cond(key, 'c4')
 const c4AtkBonus_ = greaterEq(
   input.constellation,
@@ -228,6 +239,10 @@ const dmgFormulas = {
     plunge: burstResolve(dm.burst.plunge),
     plungeLow: burstResolve(dm.burst.plungeLow),
     plungeHigh: burstResolve(dm.burst.plungeHigh),
+    energyGen: prod(
+      subscript(input.total.burstIndex, dm.burst.enerGen),
+      sum(one, a4EnergyRestore_)
+    ),
   },
   passive2: {
     passive2ElecDmgBonus: greaterEq(
@@ -239,18 +254,10 @@ const dmgFormulas = {
         100
       )
     ),
-    energyRestore: infoMut(
-      greaterEq(
-        input.asc,
-        4,
-        prod(
-          sum(input.total.enerRech_, percent(-dm.passive2.er)),
-          percent(dm.passive2.energyGen),
-          100
-        )
-      ),
-      { name: ct.ch('a4.enerRest'), unit: '%' }
-    ),
+    energyRestore: infoMut(a4EnergyRestore_, {
+      name: ct.ch('a4.enerRest'),
+      unit: '%',
+    }),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -471,9 +478,9 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: ct.chg('burst.skillParams.12'),
-            value: (data) =>
-              `${dm.burst.enerGen[data.get(input.total.burstIndex).value]}`,
+            node: infoMut(dmgFormulas.burst.energyGen, {
+              name: ct.chg('burst.skillParams.12'),
+            }),
           },
           {
             text: ct.chg('burst.skillParams.13'),

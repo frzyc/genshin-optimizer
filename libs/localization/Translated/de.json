@@ -510,7 +510,7 @@
       "burstDmg": "Musou no Hitotachi DMG"
     },
     "a4": {
-      "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
+      "enerRest": "Bonus energy restoration from <strong>Musou Isshin</strong>",
       "eleDMG": "Elektro-SCH-Bonus"
     },
     "c4": {
@@ -1303,7 +1303,7 @@
       "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
       "excluded": "This artifact is excluded.",
       "included": "This artifact is not excluded.",
-      "button_text": "Use Excluded Artifacts",
+      "button_txt": "Exclude Artifacts",
       "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
     },
     "excludeChar": {
