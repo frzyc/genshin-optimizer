@@ -74,7 +74,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
         from: 'master',
         data: {
           dataType: 'share',
-          numIdle,
+          numShare: 1,
           maxIterateSize: this.maxIterateSize,
         },
       })
@@ -89,7 +89,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
   overflowWorkers = [] as (() => void)[]
   listenCommandOverflow() {
-    console.log('Making listener.')
     new Promise((res) => (this.notifyCommandOverflow = () => res(true))).then(
       () => {
         // commands[0] is iterate()
@@ -98,7 +97,6 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
           return
         }
 
-        console.log('Posting Messages!')
         this._workers.forEach((w, i) => {
           const command = this.commands[0].pop()
           if (command === undefined) return

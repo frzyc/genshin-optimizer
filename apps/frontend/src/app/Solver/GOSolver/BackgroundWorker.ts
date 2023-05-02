@@ -11,6 +11,7 @@ import {
 import { BNBSplitWorker } from './BNBSplitWorker'
 import { ComputeWorker } from './ComputeWorker'
 import { DefaultSplitWorker } from './DefaultSplitWorker'
+import { FIFO } from '@genshin-optimizer/util'
 
 declare function postMessage(
   command: WorkerCommand | WorkerResult | WorkerSendMessage<MessageData>
@@ -27,8 +28,7 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
       computeWorker.setThreshold(data.threshold)
       break
     case 'share': {
-      const filters = splitWorker.popFilters(data.numIdle)
-      console.log('Sharing ', { req: data.numIdle, sent: filters.length })
+      const filters = splitWorker.popFilters(data.numShare)
       filters.forEach((filter) =>
         postMessage({
           command: 'split',
@@ -43,23 +43,13 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
 async function executeCommand(data: WorkerCommand): Promise<void> {
   const { command } = data
   switch (command) {
-    case 'split':
-      for (const filter of splitWorker.split(
-        data.filter,
-        data.maxIterateSize
-      )) {
-        postMessage({ command: 'iterate', filter })
-        // Suspend here in case a `threshold` is sent over
-        //
-        // Make sure to use task-based mechanisms such as `setTimeout` so that
-        // this function suspends until the next event loop. If we instead use
-        // microtask-based ones such as `Promise.resolved`, the suspension will
-        // not be long enough.
-        await new Promise((r) => setTimeout(r))
-      }
+    case 'split': {
+      const iter = splitWorker.split(data.filter, data.maxIterateSize)
+      await queueCommand({ type: 'split', iter })
       break
+    }
     case 'iterate':
-      computeWorker.compute(data.filter)
+      await queueCommand({ type: 'iterate', filter: data.filter })
       break
     case 'finalize': {
       computeWorker.refresh(true)
@@ -99,6 +89,53 @@ async function executeCommand(data: WorkerCommand): Promise<void> {
   }
   postMessage({ resultType: 'done' })
 }
+
+type ManagedInstr = IterateInstr | SplitInstr
+type IterateInstr = { type: 'iterate'; filter: RequestFilter }
+type SplitInstr = { type: 'split'; iter: Generator<RequestFilter> }
+function queueCommand(instr: ManagedInstr) {
+  const prom = new Promise((res) => {
+    manualEventLoop.push({ ...instr, done: () => res(true) })
+    if (!looping) {
+      looping = true
+      uwu()
+    }
+  })
+  return prom
+}
+let looping = false
+const manualEventLoop = new FIFO<ManagedInstr & { done: () => void }>()
+async function uwu() {
+  while (manualEventLoop.length > 0) {
+    const instr = manualEventLoop.pop()!
+    switch (instr.type) {
+      case 'iterate':
+        computeWorker.compute(instr.filter)
+        instr.done()
+        break
+      case 'split': {
+        const { value, done } = instr.iter.next()
+        if (done) {
+          instr.done()
+          break
+        }
+        postMessage({ command: 'iterate', filter: value })
+        manualEventLoop.push(instr)
+        break
+      }
+    }
+
+    // Suspend here in case a `message` is sent over
+    //
+    // Make sure to use task-based mechanisms such as `setTimeout` so that
+    // this function suspends until the next event loop. If we instead use
+    // microtask-based ones such as `Promise.resolved`, the suspension will
+    // not be long enough.
+    await new Promise((r) => setTimeout(r))
+  }
+  looping = false
+}
+
 onmessage = async (
   e: MessageEvent<WorkerCommand | WorkerRecvMessage<MessageData>>
 ) => {
@@ -116,6 +153,6 @@ onmessage = async (
 
 export interface SplitWorker {
   popFilters(n: number): RequestFilter[]
-  split(filter: RequestFilter, minCount: number): Iterable<RequestFilter>
+  split(filter: RequestFilter, minCount: number): Generator<RequestFilter>
   setThreshold(newThreshold: number): void
 }

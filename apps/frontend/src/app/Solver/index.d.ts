@@ -79,6 +79,6 @@ export interface PreemptedCommand {
 }
 export interface ShareRequest {
   dataType: 'share'
-  numIdle: number
+  numShare: number
   maxIterateSize: number
 }
