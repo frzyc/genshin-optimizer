@@ -18,7 +18,7 @@ export abstract class WorkerCoordinator<
   prio: Map<Command['command'], number>
   commands: FIFO<Command>[]
   workers: Promise<Worker>[]
-  workDone: Map<Worker, () => void> = new Map()
+  workerTracker: Map<Worker, { done: () => void; tasks: number }> = new Map()
   _workers: Worker[]
 
   commandsSent = 0
@@ -66,8 +66,6 @@ export abstract class WorkerCoordinator<
    * expected to send back when completing its `command`.
    */
   async execute(commands: Iterable<Command> | AsyncIterable<Command>) {
-    this.commandsSent = 0
-    this.commandsFinished = 0
     const processingInput = (async () => {
       for await (const command of commands) this.add(command)
     })()
@@ -90,13 +88,11 @@ export abstract class WorkerCoordinator<
         break
       }
 
-      const { i, w } = await Promise.race([
-        ...this.workers.map((w, i) => w.then((w) => ({ i, w }))),
+      const i = await Promise.race([
+        ...this.workers.map((w, i) => w.then((w) => i)),
         this.cancelled,
       ])
-      this.workers[i] = new Promise((res) => this.workDone.set(w, () => res(w)))
-      this.commandsSent += 1
-      w.postMessage(command)
+      this.sendCommand(command, i)
     }
 
     this.notifyEmpty = undefined
@@ -110,27 +106,40 @@ export abstract class WorkerCoordinator<
     worker: Worker,
     workerIx: number
   ) {
-    if (msg.messageType !== undefined) this.handleWorkerMessage(msg, workerIx)
+    if (msg.messageType !== undefined) this.onWorkerMessage(msg, workerIx)
     else if (msg.command !== undefined) this.add(msg)
     else if (msg.resultType === 'done') {
       this.commandsFinished += 1
-      this.workDone.get(worker)!()
+      const tracker = this.workerTracker.get(worker)!
+      tracker.tasks -= 1
+      if (tracker.tasks === 0) tracker.done()
     } else this.callback(msg, worker)
   }
-  handleWorkerMessage(msg: WorkerSendMessage, from: number) {
+  onWorkerMessage(msg: WorkerSendMessage, from: number) {
     const out: WorkerRecvMessage = {
       command: 'workerRecvMessage',
       from,
       data: msg.data,
     }
-    if (msg.to === undefined || msg.to === 'all')
-      this._workers.forEach((w, i) => i !== from && w.postMessage(out))
+    if (msg.to === undefined || msg.to === 'all') this.broadcastMessage(out)
     else if (msg.to === 'master') this.handleWorkerRecvMessage?.(out)
     else this._workers[msg.to].postMessage(out)
   }
+  sendCommand(command: Command, to: number) {
+    const w = this._workers[to]
+    const track = this.workerTracker.get(w)
+
+    if (!track || track.tasks === 0) {
+      this.workers[to] = new Promise((res) =>
+        this.workerTracker.set(w, { done: () => res(w), tasks: 0 })
+      )
+    }
+    this.commandsSent += 1
+    this.workerTracker.get(w)!.tasks += 1
+    w.postMessage(command)
+  }
   /** May be ignored after `execute` ends */
   add(command: Command) {
-    console.log(`add ${command.command}`)
     const prio = this.prio.get(command.command)!
     this.commands[prio].push(command)
     if (this.commands[prio].length > this.workers.length * 2) {
@@ -140,16 +149,16 @@ export abstract class WorkerCoordinator<
     this.notifyNonEmpty?.()
   }
   /** May be ignored after `execute` ends */
-  broadcast(command: Command | WorkerRecvMessage) {
-    this._workers.forEach((w) => w.postMessage(command))
+  broadcastMessage(msg: WorkerRecvMessage) {
+    this._workers.forEach((w, i) => i !== msg.from && w.postMessage(msg))
   }
   /** MUST be followed by `execute` and cannot be called while `execute` is running */
-  notifiedBroadcast(command: Command) {
+  broadcastCommand(command: Command) {
     this.workers = this.workers.map((worker) =>
       worker.then(
         (w) =>
           new Promise((res) => {
-            this.workDone.set(w, () => res(w))
+            this.workerTracker.set(w, { done: () => res(w), tasks: 1 })
           })
       )
     )

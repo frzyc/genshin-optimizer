@@ -2,7 +2,6 @@ import type {
   Count,
   FinalizeResult,
   Interim,
-  MessageData,
   OptProblemInput,
   Setup,
   WorkerCommand,
@@ -10,7 +9,6 @@ import type {
 } from '..'
 import { optimize } from '../../Formula/optimization'
 import { pruneAll, pruneExclusion } from '../common'
-import type { WorkerRecvMessage } from '../coordinator'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
@@ -52,18 +50,18 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.status.total = NaN
     this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
 
-    this.notifiedBroadcast(this.preprocess(problem))
+    this.broadcastCommand(this.preprocess(problem))
   }
 
   async solve() {
     await this.execute([])
     this.listenEmpty()
-    this.listenCommandOverflow()
+    // this.listenCommandOverflow()
 
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []
     await this.execute([{ command: 'count', exclusion, maxIterateSize }])
-    this.notifiedBroadcast({ command: 'finalize' })
+    this.broadcastCommand({ command: 'finalize' })
     await this.execute([])
     return this.finalizedResults
   }
@@ -71,7 +69,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   shareOnIdle() {
     const numIdle = this.numIdleWorkers()
     if (numIdle > 0) {
-      this.broadcast({
+      this.broadcastMessage({
         command: 'workerRecvMessage',
         from: 'master',
         data: {
@@ -100,30 +98,15 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
           return
         }
 
-        Promise.all(
-          this._workers.map(
-            (_, i) =>
-              new Promise((res) => (this.overflowWorkers[i] = () => res(true)))
-          )
-        ).then(() => {
-          console.log('No longer overflowing :)')
-          this.listenCommandOverflow()
-        })
-
         console.log('Posting Messages!')
-        this._workers.forEach((w) => {
+        this._workers.forEach((w, i) => {
           const command = this.commands[0].pop()
           if (command === undefined) return
 
-          w.postMessage({
-            command: 'workerRecvMessage',
-            from: 'master',
-            data: {
-              dataType: 'command',
-              command,
-            },
-          })
+          this.sendCommand(command, i)
         })
+
+        this.listenCommandOverflow()
       }
     )
   }
@@ -186,34 +169,11 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
 
       const threshold = this.buildValues[topN - 1].val ?? -Infinity
       if (oldThreshold !== threshold)
-        this.broadcast({
+        this.broadcastMessage({
           command: 'workerRecvMessage',
           from: 'master',
           data: { dataType: 'threshold', threshold },
         })
-    }
-  }
-
-  handleWorkerRecvMessage = ({
-    from,
-    data,
-  }: WorkerRecvMessage<MessageData>) => {
-    if (data.dataType === 'command') {
-      const command = this.commands[0].pop()
-      if (command === undefined) {
-        console.log('Worker finished overflow: ', from)
-        this.overflowWorkers[from]()
-        return
-      }
-
-      this._workers[from].postMessage({
-        command: 'workerRecvMessage',
-        from: 'master',
-        data: {
-          dataType: 'command',
-          command,
-        },
-      })
     }
   }
 }

@@ -17,8 +17,6 @@ declare function postMessage(
 ): void
 
 let splitWorker: SplitWorker, computeWorker: ComputeWorker
-let commandQueue: Promise<void>[] = []
-let overrideCommand: (() => void) | undefined
 
 function handleMessage(msg: WorkerRecvMessage<MessageData>) {
   const { data } = msg
@@ -28,15 +26,10 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
       splitWorker.setThreshold(data.threshold)
       computeWorker.setThreshold(data.threshold)
       break
-    case 'command':
-      executeCommand(data.command).then(() => {
-        postMessage({ messageType: 'send', to: 'master', data })
-      })
-      break
     case 'share': {
-      const outt = splitWorker.popFilters(data.numIdle)
-      console.log('Sharing ', { req: data.numIdle, sent: outt.length })
-      outt.forEach((filter) =>
+      const filters = splitWorker.popFilters(data.numIdle)
+      console.log('Sharing ', { req: data.numIdle, sent: filters.length })
+      filters.forEach((filter) =>
         postMessage({
           command: 'split',
           filter,
@@ -47,24 +40,7 @@ function handleMessage(msg: WorkerRecvMessage<MessageData>) {
     }
   }
 }
-async function handleEvent(data: WorkerCommand): Promise<void> {
-  await executeCommand(data)
-  postMessage({ resultType: 'done' })
-}
-function queueCommand(command: WorkerCommand) {
-  const promise = executeCommand(command)
-  commandQueue.push(promise)
-
-  overrideCommand?.()
-  Promise.race([
-    Promise.all(commandQueue),
-    new Promise((res, rej) => (overrideCommand = () => rej('override'))),
-  ]).then(() => {
-    commandQueue = []
-    postMessage({ resultType: 'done' })
-  })
-}
-async function executeCommand(data: WorkerCommand) {
+async function executeCommand(data: WorkerCommand): Promise<void> {
   const { command } = data
   switch (command) {
     case 'split':
@@ -121,17 +97,18 @@ async function executeCommand(data: WorkerCommand) {
     default:
       assertUnreachable(command)
   }
+  postMessage({ resultType: 'done' })
 }
 onmessage = async (
   e: MessageEvent<WorkerCommand | WorkerRecvMessage<MessageData>>
 ) => {
   try {
     if (e.data.command === 'workerRecvMessage') {
-      await handleMessage(e.data)
+      handleMessage(e.data)
       return
     }
 
-    await handleEvent(e.data)
+    await executeCommand(e.data)
   } catch (e) {
     postMessage({ resultType: 'err', message: (e as any).message })
   }
