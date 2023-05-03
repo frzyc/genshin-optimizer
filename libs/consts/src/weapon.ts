@@ -160,6 +160,7 @@ export const allWeaponCatalystKeys = [
   'Frostbearer',
   'FruitOfFulfillment',
   'HakushinRing',
+  'JadefallsSplendor',
   'KagurasVerity',
   'LostPrayerToTheSacredWinds',
   'MagicGuide',

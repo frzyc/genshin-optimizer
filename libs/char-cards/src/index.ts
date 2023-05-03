@@ -4,6 +4,7 @@ import Alhaitham from './Character_Alhaitham_Card.jpg'
 import Aloy from './Character_Aloy_Card.png'
 import Amber from './Character_Amber_Card.jpg'
 import AratakiItto from './Character_Arataki_Itto_Card.jpg'
+import Baizhu from './Character_Baizhu_Card.jpg'
 import Barbara from './Character_Barbara_Card.jpg'
 import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
@@ -23,6 +24,7 @@ import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Jean from './Character_Jean_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
+import Kaveh from './Character_Kaveh_Card.jpg'
 import KamisatoAyaka from './Character_Kamisato_Ayaka_Card.png'
 import KamisatoAyato from './Character_Kamisato_Ayato_Card.png'
 import KaedeharaKazuha from './Character_Kazuha_Card.png'
@@ -73,6 +75,7 @@ const charCards = {
   Aloy,
   Amber,
   AratakiItto,
+  Baizhu,
   Barbara,
   Beidou,
   Bennett,
@@ -95,6 +98,7 @@ const charCards = {
   Kaeya,
   KamisatoAyaka,
   KamisatoAyato,
+  Kaveh,
   Keqing,
   Klee,
   KujouSara,

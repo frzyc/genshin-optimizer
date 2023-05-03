@@ -70,6 +70,7 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",
   "addlCharges": "Additional charges",
+  "activeChar": "Active character",
   "activeCharField": "Character is inside the field",
   "opponentsField": "Opponents in field",
   "takeDmg": "After taking DMG",

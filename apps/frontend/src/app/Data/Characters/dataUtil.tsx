@@ -203,7 +203,7 @@ export function shieldNodeTalent(
   )
 }
 export function shieldElement(
-  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo',
+  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo' | 'dendro',
   shieldNode: NumNode
 ) {
   return infoMut(prod(percent(element === 'geo' ? 1.5 : 2.5), shieldNode), {
