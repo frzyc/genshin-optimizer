@@ -362,23 +362,17 @@ const sheet: ICharacterSheet = {
             fixed: 1,
           },
           {
-            text: ct.chg('burst.skillParams.2'),
-            value: dm.burst.shieldInterval,
-            unit: 's',
-            fixed: 1,
-          },
-          {
             node: infoMut(dmgFormulas.burst.heal, {
-              name: ct.chg(`burst.skillParams.3`),
+              name: ct.chg(`burst.skillParams.2`),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.4`),
+              name: ct.chg(`burst.skillParams.3`),
             }),
           },
           {
-            text: ct.chg('burst.skillParams.5'),
+            text: ct.chg('burst.skillParams.4'),
             value: dm.burst.duration,
             unit: 's',
           },
