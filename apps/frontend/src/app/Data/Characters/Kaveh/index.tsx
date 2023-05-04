@@ -100,8 +100,6 @@ const afterBurst_bloom_dmg_ = equal(
   'on',
   subscript(input.total.burstIndex, dm.burst.bloom_dmg_)
 )
-const afterBurst_hyperbloom_dmg_ = { ...afterBurst_bloom_dmg_ }
-const afterBurst_burgeon_dmg_ = { ...afterBurst_bloom_dmg_ }
 
 const [condA4StacksPath, condA4Stacks] = cond(key, 'a4Stacks')
 const a4StacksArr = range(1, dm.passive2.maxStacks)
@@ -199,8 +197,6 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         bloom_dmg_: afterBurst_bloom_dmg_,
-        hyperbloom_dmg_: afterBurst_hyperbloom_dmg_,
-        burgeon_dmg_: afterBurst_burgeon_dmg_,
       },
     },
     infusion: {
