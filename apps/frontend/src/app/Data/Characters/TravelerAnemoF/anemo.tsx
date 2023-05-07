@@ -1,6 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
+import { input } from '../../../Formula'
 import type { Data, DisplaySub } from '../../../Formula/type'
 import {
   constant,
@@ -351,28 +351,22 @@ export default function anemo(
               {
                 node: infoMut(nodeC6, KeyMap.info('anemo_enemyRes_')),
               },
+              {
+                text: stg('duration'),
+                value: 10,
+                unit: 's'
+              }
             ],
           },
         },
       }),
-      ct.headerTem('constellation6', {
-        // C6 elemental self-display
-        canShow: unequal(
-          condBurstAbsorption,
-          undefined,
-          equal(condC6, 'on', equal(target.charKey, key, 1))
-        ),
-        fields: absorbableEle.map((eleKey) => ({
-          node: nodesC6[`${eleKey}_enemyRes_`],
-        })),
-      }),
       ct.condTem('constellation6', {
-        // C6 elemental team-display
+        // C6 elemental
         value: condBurstAbsorption,
         path: condBurstAbsorptionPath,
         name: st('eleAbsor'),
         teamBuff: true,
-        canShow: equal(condC6, 'on', unequal(input.activeCharKey, key, 1)),
+        canShow: equal(condC6, 'on', 1),
         states: Object.fromEntries(
           absorbableEle.map((eleKey) => [
             eleKey,
@@ -384,6 +378,11 @@ export default function anemo(
                 {
                   node: nodesC6[`${eleKey}_enemyRes_`],
                 },
+                {
+                  text: stg('duration'),
+                  value: 10,
+                  unit: 's'
+                }
               ],
             },
           ])
