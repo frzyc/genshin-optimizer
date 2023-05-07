@@ -239,11 +239,17 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            canShow: (data) => data.get(input.constellation).value < 2,
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.duration,
             unit: 's',
           },
           {
+            canShow: (data) => data.get(input.constellation).value >= 2,
+            text: ct.ch('c2burstDuration'),
+          },
+          {
+
             text: ct.chg('burst.skillParams.1'),
             value: dm.burst.cd,
             unit: 's',
@@ -251,10 +257,6 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.enerCost,
-          },
-          {
-            canShow: (data) => data.get(input.constellation).value >= 2,
-            text: ct.ch('c2burstDuration'),
           },
         ],
       },
@@ -264,7 +266,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive1', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch('p1heal') }),
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
           },
         ],
       }),
