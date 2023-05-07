@@ -84,13 +84,13 @@ const [condCoilPath, condCoil] = cond(key, 'coil')
 const normal_dmg_ = lookup(
   condCoil,
   {
-    coil1: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, {
+    1: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, {
       unit: '%',
     }),
-    coil2: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, {
+    2: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, {
       unit: '%',
     }),
-    coil3: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, {
+    3: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, {
       unit: '%',
     }),
     rush: subscript(input.total.skillIndex, dm.skill.rushingNormalDmgBonus, {
@@ -99,13 +99,17 @@ const normal_dmg_ = lookup(
   },
   naught
 )
+
+const [condA1Path, condA1] = cond(key, 'A1')
 const atk_ = greaterEq(
   input.asc,
   1,
-  unequal(condCoil, undefined, percent(dm.passive1.atkInc))
+  equal(
+    condA1,
+    'on',
+    equal(input.activeCharKey, key, percent(dm.passive1.atkInc))
+  )
 )
-
-const [condA1Path, condA1] = cond(key, 'A1')
 const teamAtk_ = greaterEq(
   input.asc,
   1,
@@ -280,43 +284,24 @@ const sheet: ICharacterSheet = {
         path: condCoilPath,
         name: ct.ch('skill.coil'),
         states: {
-          coil1: {
-            name: ct.ch('skill.coil1'),
-            fields: [
+          ...Object.fromEntries(
+            range(1, 3).map((i) => [
+              i,
               {
-                node: normal_dmg_,
+                name: st('stack', { count: i }),
+                fields: [
+                  {
+                    node: normal_dmg_,
+                  },
+                ],
               },
-            ],
-          },
-          coil2: {
-            name: ct.ch('skill.coil2'),
-            fields: [
-              {
-                node: normal_dmg_,
-              },
-            ],
-          },
-          coil3: {
-            name: ct.ch('skill.coil3'),
-            fields: [
-              {
-                node: normal_dmg_,
-              },
-            ],
-          },
+            ])
+          ),
           rush: {
             name: ct.ch('skill.rush'),
             fields: [
               {
                 node: normal_dmg_,
-              },
-              {
-                text: ct.ch('normCryoInfus'),
-              },
-              {
-                text: ct.chg('skill.skillParams.6'),
-                value: dm.skill.rushingDuration,
-                unit: 's',
               },
             ],
           },
@@ -346,22 +331,9 @@ const sheet: ICharacterSheet = {
     ]),
 
     passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: atk_,
-          },
-          {
-            text: stg('duration'),
-            value: dm.passive1.duration,
-            unit: 's',
-          },
-        ],
-      }),
       ct.condTem('passive1', {
         value: condA1,
         path: condA1Path,
-        canShow: unequal(input.activeCharKey, key, 1),
         teamBuff: true,
         name: ct.ch('a1CondName'),
         states: {
@@ -369,6 +341,9 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(teamAtk_, KeyMap.info('atk_')),
+              },
+              {
+                node: infoMut(atk_, KeyMap.info('atk_')),
               },
               {
                 text: stg('duration'),
@@ -390,7 +365,7 @@ const sheet: ICharacterSheet = {
           range(1, 10).map((i) => [
             i,
             {
-              name: st('stack', { count: i }),
+              name: st('seconds', { count: i }),
               fields: [{ node: cryo_dmg_ }],
             },
           ])
