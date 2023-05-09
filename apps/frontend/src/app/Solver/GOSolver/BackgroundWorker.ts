@@ -100,13 +100,13 @@ function queueCommand(instr: ManagedInstr) {
     manualEventLoop.push({ ...instr, done: () => res(true) })
     if (!looping) {
       looping = true
-      uwu()
+      runCommandLoop()
     }
   }).then(() => postMessage({ resultType: 'done' }))
 }
 let looping = false
 const manualEventLoop = new FIFO<ManagedInstr & { done: () => void }>()
-async function uwu() {
+async function runCommandLoop() {
   while (manualEventLoop.length > 0) {
     const instr = manualEventLoop.pop()!
     switch (instr.type) {
