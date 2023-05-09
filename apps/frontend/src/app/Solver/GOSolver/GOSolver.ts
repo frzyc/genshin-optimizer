@@ -96,12 +96,20 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
           return
         }
 
-        this._workers.forEach((w, i) => {
+        while (this.commands[0].length > this._workers.length) {
+          const { ix } = this._workers.reduce(
+            (prev, w, ix) => {
+              const tasks = this.workerTracker.get(w)!.tasks
+              return tasks < prev.tasks ? { ix, tasks } : prev
+            },
+            { ix: NaN, tasks: Infinity }
+          )
+
           const command = this.commands[0].pop()
-          if (command === undefined) return
-          this.sendCommand(command, i)
-        })
-        this.listenCommandOverflow()
+          if (command === undefined) break
+          this.sendCommand(command, ix)
+        }
+        setTimeout(() => this.listenCommandOverflow(), 0)
       }
     )
   }
