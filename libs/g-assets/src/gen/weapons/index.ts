@@ -56,6 +56,7 @@ import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
 import IronPoint from './IronPoint'
 import IronSting from './IronSting'
+import JadefallsSplendor from './JadefallsSplendor'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KagurasVerity from './KagurasVerity'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
@@ -212,6 +213,7 @@ const data = {
   HuntersPath,
   IronPoint,
   IronSting,
+  JadefallsSplendor,
   KagotsurubeIsshin,
   KagurasVerity,
   KatsuragikiriNagamasa,
