@@ -66,25 +66,22 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     return this.finalizedResults
   }
 
-  shareOnIdle() {
-    const numIdle = this.numIdleWorkers()
-    if (numIdle > 0) {
-      this.broadcastMessage({
-        command: 'workerRecvMessage',
-        from: 'master',
-        data: {
-          dataType: 'share',
-          numShare: 1,
-          maxIterateSize: this.maxIterateSize,
-        },
-      })
-    }
-    setTimeout(() => this.listenEmpty(), 1000)
-  }
   listenEmpty() {
-    new Promise((res) => (this.notifyEmpty = () => res(true))).then(() =>
-      this.shareOnIdle()
-    )
+    new Promise((res) => (this.notifyEmpty = () => res(true))).then(() => {
+      const numIdle = this.numIdleWorkers()
+      if (numIdle > 0) {
+        this.broadcastMessage({
+          command: 'workerRecvMessage',
+          from: 'master',
+          data: {
+            dataType: 'share',
+            numShare: 1,
+            maxIterateSize: this.maxIterateSize,
+          },
+        })
+      }
+      setTimeout(() => this.listenEmpty(), 1000)
+    })
   }
 
   listenCommandOverflow() {
@@ -105,8 +102,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
             { ix: NaN, tasks: Infinity }
           )
 
-          const command = this.commands[0].pop()
-          if (command === undefined) break
+          const command = this.commands[0].pop()!
           this.sendCommand(command, ix)
         }
         setTimeout(() => this.listenCommandOverflow(), 0)

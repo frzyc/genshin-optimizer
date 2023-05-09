@@ -73,10 +73,6 @@ export interface Threshold {
   dataType: 'threshold'
   threshold: number
 }
-export interface PreemptedCommand {
-  dataType: 'command'
-  command: WorkerCommand
-}
 export interface ShareRequest {
   dataType: 'share'
   numShare: number

@@ -152,7 +152,7 @@ export abstract class WorkerCoordinator<
   broadcastMessage(msg: WorkerRecvMessage) {
     this._workers.forEach((w, i) => i !== msg.from && w.postMessage(msg))
   }
-  /** MUST be followed by `execute` and cannot be called while `execute` is running */
+  /** MUST be followed by or during `execute` */
   broadcastCommand(command: Command) {
     this.workers = this.workers.map((worker) =>
       worker.then(
