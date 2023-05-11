@@ -303,6 +303,14 @@ const sheet: ICharacterSheet = {
               {
                 node: normal_dmg_,
               },
+              {
+                text: ct.ch('normCryoInfus'),
+              },
+              {
+                text: ct.chg('skill.skillParams.6'),
+                value: dm.skill.rushingDuration,
+                unit: 's',
+              },
             ],
           },
         },
