@@ -48,7 +48,6 @@ async function executeCommand(data: WorkerCommand): Promise<void> {
         data.maxIterateSize
       )) {
         postMessage({ command: 'iterate', filter })
-
         // Suspend here in case a `message` is sent over
         //
         // Make sure to use task-based mechanisms such as `setTimeout` so that
@@ -60,7 +59,6 @@ async function executeCommand(data: WorkerCommand): Promise<void> {
       break
     case 'iterate':
       computeWorker.compute(data.filter)
-      // await queueCommand({ type: 'iterate', filter: data.filter })
       break
     case 'finalize': {
       computeWorker.refresh(true)
