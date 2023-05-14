@@ -223,7 +223,7 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
-      ct.fieldsTem('constellation6', {
+      ct.headerTem('constellation6', {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation6.barbDmg, {
