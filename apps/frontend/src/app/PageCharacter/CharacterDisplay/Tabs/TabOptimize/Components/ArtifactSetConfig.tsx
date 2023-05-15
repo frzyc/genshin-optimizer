@@ -285,15 +285,15 @@ export default function ArtifactSetConfig({
                         Excluding
                         <BlockIcon {...iconInlineProps} /> 2-Set
                       </ColorText>
-                    </strong>{' '}
-                    would exclude 2-Set builds:{' '}
+                    </strong>
+                    would exclude 2-Set builds:
                     <strong>
                       <ColorText color="secondary" variant="light">
                         AA
                       </ColorText>
                       RRR
-                    </strong>{' '}
-                    and{' '}
+                    </strong>
+                    and
                     <strong>
                       <ColorText color="secondary" variant="light">
                         AAA
@@ -310,15 +310,15 @@ export default function ArtifactSetConfig({
                         Excluding
                         <BlockIcon {...iconInlineProps} /> 4-Set
                       </ColorText>
-                    </strong>{' '}
-                    would exclude 4-Set builds:{' '}
+                    </strong>
+                    would exclude 4-Set builds:
                     <strong>
                       <ColorText color="secondary" variant="light">
                         AAAA
                       </ColorText>
                       R
-                    </strong>{' '}
-                    and{' '}
+                    </strong>
+                    and
                     <strong>
                       <ColorText color="secondary" variant="light">
                         AAAAA
@@ -334,15 +334,15 @@ export default function ArtifactSetConfig({
                         Excluding
                         <BlockIcon {...iconInlineProps} /> 3-Rainbow
                       </ColorText>
-                    </strong>{' '}
-                    would exclude 2-Set + 3-Rainbow builds:{' '}
+                    </strong>
+                    would exclude 2-Set + 3-Rainbow builds:
                     <strong>
                       AA
                       <ColorText color="secondary" variant="light">
                         RRR
                       </ColorText>
-                    </strong>{' '}
-                    and{' '}
+                    </strong>
+                    and
                     <strong>
                       AAA
                       <ColorText color="secondary" variant="light">
@@ -359,8 +359,8 @@ export default function ArtifactSetConfig({
                         Excluding
                         <BlockIcon {...iconInlineProps} /> 5-Rainbow
                       </ColorText>
-                    </strong>{' '}
-                    would exclude full 5-Rainbow builds:{' '}
+                    </strong>
+                    would exclude full 5-Rainbow builds:
                     <strong>
                       <ColorText color="secondary" variant="light">
                         RRRRR
@@ -399,11 +399,11 @@ export default function ArtifactSetConfig({
                         <Trans t={t} i18nKey="artSetConfig.alExRainbow">
                           <ColorText color="success">
                             Allow <ShowChartIcon {...iconInlineProps} />
-                          </ColorText>{' '}
-                          /{' '}
+                          </ColorText>
+                          /
                           <ColorText color="secondary" variant="light">
                             Exclude <BlockIcon {...iconInlineProps} />
-                          </ColorText>{' '}
+                          </ColorText>
                           Rainbow Builds
                         </Trans>
                       </strong>
