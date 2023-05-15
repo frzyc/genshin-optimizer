@@ -43,7 +43,7 @@ export default function ArtifactInfoDisplay() {
           <Typography variant="h5">Substat Roll Value</Typography>
           <Typography gutterBottom>
             The Roll Value(RV) of an subtat is a percentage of the current value
-            over the highest potential 5<StarRoundedIcon {...iconInlineProps} />{' '}
+            over the highest potential 5<StarRoundedIcon {...iconInlineProps} />
             value. From the Image, the maximum roll value of CRIT DMG is 7.8%.
             In RV: <b>5.8/7.8 = 69.2%.</b>
           </Typography>
@@ -77,7 +77,7 @@ export default function ArtifactInfoDisplay() {
           <Typography variant="h5">Scan screenshots</Typography>
           <Typography gutterBottom>
             Manual input is not your cup of tea? You can scan in your artifacts
-            with screenshots! On the Artifact Editor, click the{' '}
+            with screenshots! On the Artifact Editor, click the
             <SqBadge color="info">Show Me How!</SqBadge> button to learn more.
           </Typography>
 
@@ -85,10 +85,10 @@ export default function ArtifactInfoDisplay() {
           <Typography gutterBottom>
             If you are playing Genshin on PC, you can download a tool that
             automatically scans all your artifacts for you, and you can then
-            import that data in <SettingsIcon {...iconInlineProps} /> Database.{' '}
+            import that data in <SettingsIcon {...iconInlineProps} /> Database.
             <Link component={RouterLink} to="/scanner">
               Click here
-            </Link>{' '}
+            </Link>
             for a list of scanners that are compatible with GO.
           </Typography>
 
@@ -96,7 +96,7 @@ export default function ArtifactInfoDisplay() {
             Duplicate/Upgrade artifact detection
           </Typography>
           <Typography>
-            Did you know GO can detect if you are adding a <b>duplicate</b>{' '}
+            Did you know GO can detect if you are adding a <b>duplicate</b>
             artifact that exists in the system? It can also detect if the
             current artifact in editor is an <b>upgrade</b> of an existing
             artifact as well. Once a duplicate/upgrade is detected, a preview
@@ -114,7 +114,7 @@ export default function ArtifactInfoDisplay() {
         <Trans t={t} i18nKey="info.section3">
           <Typography variant="h5">Artifact Inventory</Typography>
           <Typography gutterBottom>
-            All your artifacts that you've added to GO is displayed here. The
+            All your artifacts that you've added to GO are displayed here. The
             filters here allow you to further refine your view of your
             artifacts.{' '}
           </Typography>

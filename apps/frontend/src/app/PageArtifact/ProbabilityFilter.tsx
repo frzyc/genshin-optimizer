@@ -27,7 +27,7 @@ export default function ProbabilityFilter({
             <CardLight>
               <CardContent>
                 <Typography>
-                  This UI only pops up when "Sort by"{' '}
+                  This UI only pops up when "Sort by"
                   <strong>Probability</strong>. In conjunction with the Artifact
                   Filters above, this UI allows you to set a criteria for
                   substats values, and it will sort the artifacts by those with

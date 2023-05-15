@@ -294,15 +294,15 @@ export function CustomMultiTargetButton() {
                     <Typography>
                       <Trans t={t} i18nKey="multiTarget.info1">
                         Note: Community created custom Multi-Optimization
-                        Targets can be found within the{' '}
+                        Targets can be found within the
                         <a
                           href={process.env.NX_URL_DISCORD_GO}
                           target="_blank"
                           rel="noreferrer"
                         >
                           GO Discord
-                        </a>{' '}
-                        or{' '}
+                        </a>
+                        or
                         <a
                           href={process.env.NX_URL_KQM_MULTI_GUIDE}
                           target="_blank"

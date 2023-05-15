@@ -191,10 +191,10 @@ export default function PageArtifact() {
 
       {noArtifact && (
         <Alert severity="info" variant="filled">
-          Looks like you haven't added any artifacts yet. If you want, there are{' '}
+          Looks like you haven't added any artifacts yet. If you want, there are
           <Link color="warning.main" component={RouterLink} to="/scanner">
             automatic scanners
-          </Link>{' '}
+          </Link>
           that can speed up the import process!
         </Alert>
       )}
