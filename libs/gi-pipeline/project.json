@@ -20,7 +20,8 @@
         "buildTarget": "gi-pipeline:build",
         "watch": false,
         "inspect": false
-      }
+      },
+      "inputs": ["default", "^production", "gi-stats"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -30,5 +31,11 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "namedInputs": {
+    "gi-stats": [
+      "{workspaceRoot}/lib/gi-stats/Data/**/*.json",
+      "{workspaceRoot}/lib/gi-stats/src/allStat_gen.json"
+    ]
+  }
 }
