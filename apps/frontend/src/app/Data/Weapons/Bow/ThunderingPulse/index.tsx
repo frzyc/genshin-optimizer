@@ -1,16 +1,15 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'ThunderingPulse'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const atkSrc = [0.2, 0.25, 0.3, 0.35, 0.4]

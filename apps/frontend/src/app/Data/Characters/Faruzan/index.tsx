@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -19,14 +19,12 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Faruzan'
 const elementKey: ElementKey = 'anemo'
 const region: RegionKey = 'sumeru'
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0,

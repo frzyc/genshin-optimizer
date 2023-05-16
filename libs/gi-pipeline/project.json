@@ -1,0 +1,34 @@
+{
+  "name": "gi-pipeline",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-pipeline/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gi-pipeline",
+        "main": "libs/gi-pipeline/src/index.ts",
+        "tsConfig": "libs/gi-pipeline/tsconfig.lib.json",
+        "assets": ["libs/gi-pipeline/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "gi-pipeline:build",
+        "watch": false,
+        "inspect": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi-pipeline/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

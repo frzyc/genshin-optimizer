@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
@@ -8,10 +8,9 @@ import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'Slingshot'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const dmg_arr = [0.36, 0.42, 0.48, 0.54, 0.6]

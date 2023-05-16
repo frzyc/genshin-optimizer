@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -9,15 +8,15 @@ import {
   sum,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { range } from '../../../../Util/Util'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'SummitShaper'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'GoldenMajesty')
