@@ -26,7 +26,6 @@ import {
 } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
 
-
 const key: CharacterKey = 'Baizhu'
 const elementKey: ElementKey = 'dendro'
 

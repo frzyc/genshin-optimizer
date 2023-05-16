@@ -58,10 +58,7 @@ dumpFile(`${path}/Characters/expCurve.json`, avatarCurveExcelConfigData)
 //dump artifact data
 dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
 dumpFile(`${path}/Artifacts/artifact_main.json`, artifactMainstatData)
-dumpFile(
-  `${path}/Artifacts/artifact_sub_rolls.json`,
-  artifactSubstatRollData
-)
+dumpFile(`${path}/Artifacts/artifact_sub_rolls.json`, artifactSubstatRollData)
 dumpFile(
   `${path}/Artifacts/artifact_sub_rolls_correction.json`,
   artifactSubstatRollCorrection
