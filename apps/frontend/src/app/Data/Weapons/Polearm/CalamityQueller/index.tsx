@@ -1,6 +1,6 @@
 import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
-import { lessThan, constant, lookup, prod, subscript } from '../../../../Formula/utils'
+import { unequal, constant, lookup, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { objectKeyMap, range } from '../../../../Util/Util'
@@ -69,9 +69,10 @@ const sheet: IWeaponSheet = {
       ),
     },
     {
-      canShow: lessThan(-atkInc, 0, 1),
+      canShow: unequal(condStacks, undefined, 1),
       value: condOffField,
       path: condOffFieldPath,
+      teamBuff: true,
       header: headerTemplate(key, st('conditional')),
       name: st('charOffField'),
       states: {
