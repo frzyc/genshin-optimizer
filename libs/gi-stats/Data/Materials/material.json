@@ -613,19 +613,19 @@
   "CharacterCardDraw": {
     "type": "MATERIAL_CHEST"
   },
-  "KamisatoAyakaForCB": {
+  "KamisatoAyakaForCB1": {
     "type": "MATERIAL_AVATAR"
   },
-  "XianglingForCB": {
+  "XianglingForCB1": {
     "type": "MATERIAL_AVATAR"
   },
-  "JeanForCB": {
+  "JeanForCB1": {
     "type": "MATERIAL_AVATAR"
   },
-  "DilucForCB": {
+  "DilucForCB1": {
     "type": "MATERIAL_AVATAR"
   },
-  "VentiForCB": {
+  "VentiForCB1": {
     "type": "MATERIAL_AVATAR"
   },
   "KamisatoAyakaTestPackage": {
@@ -655,10 +655,10 @@
   "BarbaraTestPackage": {
     "type": "MATERIAL_CHEST"
   },
-  "BarbaraForCB": {
+  "BarbaraForCB1": {
     "type": "MATERIAL_AVATAR"
   },
-  "RazorForCB": {
+  "RazorForCB1": {
     "type": "MATERIAL_AVATAR"
   },
   "RazorTestPackage": {
@@ -883,7 +883,10 @@
   "ExtremeEscape": {
     "type": "MATERIAL_QUEST"
   },
-  "IncompleteScorePart": {
+  "IncompleteScorePart1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "IncompleteScorePart2": {
     "type": "MATERIAL_QUEST"
   },
   "PrivateLetterFromLisaToJean": {
@@ -901,7 +904,13 @@
   "BarbarasTreatment": {
     "type": "MATERIAL_QUEST"
   },
-  "IncompletePoemPart": {
+  "IncompletePoemPart1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "IncompletePoemPart2": {
+    "type": "MATERIAL_QUEST"
+  },
+  "IncompletePoemPart3": {
     "type": "MATERIAL_QUEST"
   },
   "InscriptionRubbing": {
@@ -943,10 +952,40 @@
   "CrimsonCrystal": {
     "type": "MATERIAL_QUEST"
   },
-  "SealClue": {
+  "SealClue101": {
     "type": "MATERIAL_QUEST"
   },
-  "BreakSeal": {
+  "SealClue102": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue103": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue201": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue202": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue203": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue301": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue302": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SealClue303": {
+    "type": "MATERIAL_QUEST"
+  },
+  "BreakSeal1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "BreakSeal2": {
+    "type": "MATERIAL_QUEST"
+  },
+  "BreakSeal3": {
     "type": "MATERIAL_QUEST"
   },
   "InvestigateTheSealOfStormterrorsLair": {
@@ -958,7 +997,13 @@
   "FragmentedMemoryWind": {
     "type": "MATERIAL_QUEST"
   },
-  "SwordCemeterySeal": {
+  "SwordCemeterySeal1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SwordCemeterySeal2": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SwordCemeterySeal3": {
     "type": "MATERIAL_QUEST"
   },
   "TeardropCrystal": {
@@ -1123,7 +1168,7 @@
   "ThePalePrincessAndTheSixPygmiesVII": {
     "type": "MATERIAL_QUEST"
   },
-  "YearsOfLoneliness": {
+  "1000YearsOfLoneliness": {
     "type": "MATERIAL_QUEST"
   },
   "TeyvatTravelGuideMondstadt": {
@@ -1282,7 +1327,55 @@
   "PlainLiquor": {
     "type": "MATERIAL_QUEST"
   },
-  "TESTCocktail": {
+  "TESTCocktail16": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail17": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail18": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail19": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail20": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail21": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail22": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail23": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail24": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail25": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail26": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail27": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail28": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail29": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail30": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail31": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TESTCocktail32": {
     "type": "MATERIAL_QUEST"
   },
   "GodwinsLetter": {
@@ -1777,7 +1870,7 @@
   "RaggedNotebook": {
     "type": "MATERIAL_QUEST"
   },
-  "KnightsOfFavoniusHandbookThEdition": {
+  "KnightsOfFavoniusHandbook5thEdition": {
     "type": "MATERIAL_QUEST"
   },
   "TalesFromTheWavesRisingTide": {
@@ -3099,7 +3192,7 @@
   "PrincessMinaOfTheFallenNationVI": {
     "type": "MATERIAL_QUEST"
   },
-  "FlowersForPrincessFischl": {
+  "FlowersForPrincessFischl0": {
     "type": "MATERIAL_QUEST"
   },
   "TeyvatTravelGuideInazuma": {
@@ -3234,7 +3327,10 @@
   "TreasureHoardersTreasureMap": {
     "type": "MATERIAL_QUEST"
   },
-  "StorehouseSecurityKeyNo": {
+  "StorehouseSecurityKeyNo1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "StorehouseSecurityKeyNo2": {
     "type": "MATERIAL_QUEST"
   },
   "ASetOfCannonballs": {
@@ -3585,7 +3681,16 @@
   "LetsGoDodoco": {
     "type": "MATERIAL_QUEST"
   },
-  "AkosTreasureLocation": {
+  "AkosTreasureLocation1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AkosTreasureLocation2": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AkosTreasureLocation3": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AkosTreasureLocation4": {
     "type": "MATERIAL_QUEST"
   },
   "YajnaGrass": {
@@ -3768,7 +3873,64 @@
   "ANote": {
     "type": "MATERIAL_QUEST"
   },
-  "RedemptionVoucher": {
+  "RedemptionVoucher1": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher2": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher3": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher4": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher5": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher6": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher7": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher8": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher9": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher10": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher11": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher12": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher13": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher14": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher15": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher16": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher17": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher18": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher19": {
+    "type": "MATERIAL_ACTIVITY_ROBOT"
+  },
+  "RedemptionVoucher20": {
     "type": "MATERIAL_ACTIVITY_ROBOT"
   },
   "PartBreeze": {
@@ -3894,7 +4056,13 @@
   "InformantCodeChart": {
     "type": "MATERIAL_QUEST"
   },
-  "MisplacedConch": {
+  "MisplacedConch1": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MisplacedConch2": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MisplacedConch3": {
     "type": "MATERIAL_QUEST"
   },
   "PrescriptionMedicationFromBimarstanForGurgen": {
@@ -4845,7 +5013,7 @@
   "SurvivalGrilledFish": {
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
-  "NutritiousMealV": {
+  "NutritiousMealV593": {
     "type": "MATERIAL_FOOD"
   },
   "HolyWater": {
@@ -5316,7 +5484,7 @@
   "SummerFestivalFish": {
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
-  "DizzinessBeGoneNoJutsuVersion": {
+  "DizzinessBeGoneNoJutsuVersion20": {
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
   "SpecialMushroomPizza": {
@@ -7098,7 +7266,7 @@
   "BPBounty": {
     "type": "MATERIAL_SELECTABLE_CHEST"
   },
-  "BPPickOfTestBundle": {
+  "BPPick1Of3TestBundle": {
     "type": "MATERIAL_SELECTABLE_CHEST"
   },
   "GuidanceOfTheLandOfWind": {
@@ -8121,7 +8289,298 @@
   "WingsOfTheStarlitFeast": {
     "type": "MATERIAL_FLYCLOAK"
   },
-  "RadiantSpincrystal": {
+  "RadiantSpincrystal1": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal2": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal3": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal4": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal5": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal6": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal7": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal8": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal9": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal10": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal11": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal12": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal13": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal14": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal15": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal16": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal17": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal18": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal19": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal20": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal21": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal22": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal23": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal24": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal25": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal26": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal27": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal28": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal29": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal30": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal31": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal32": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal33": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal34": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal35": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal36": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal37": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal38": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal39": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal40": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal41": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal42": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal43": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal44": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal45": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal46": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal47": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal48": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal49": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal50": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal51": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal52": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal53": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal54": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal55": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal56": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal57": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal58": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal59": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal60": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal61": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal62": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal63": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal64": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal65": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal66": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal67": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal68": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal69": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal70": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal71": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal72": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal73": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal74": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal75": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal76": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal77": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal78": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal79": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal80": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal81": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal82": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal83": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal84": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal85": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal86": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal87": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal88": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal89": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal90": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal91": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal92": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal93": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal94": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal95": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal96": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal97": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal98": {
     "type": "MATERIAL_BGM"
   },
   "FragrantSteak": {
@@ -8862,7 +9321,7 @@
   "CondensedResin": {
     "type": "MATERIAL_CONSUME"
   },
-  "NREMenu": {
+  "NREMenu30": {
     "type": "MATERIAL_WIDGET"
   },
   "AnemoTreasureCompass": {
@@ -9063,7 +9522,7 @@
   "InstructionsCondensedResin": {
     "type": "MATERIAL_CONSUME"
   },
-  "DiagramNREMenu": {
+  "DiagramNREMenu30": {
     "type": "MATERIAL_CONSUME"
   },
   "DiagramAnemoTreasureCompass": {
@@ -9639,7 +10098,7 @@
   "GunnhildrsLegacy": {
     "type": "MATERIAL_COSTUME"
   },
-  "Outrider": {
+  "100Outrider": {
     "type": "MATERIAL_COSTUME"
   },
   "PactOfStarsAndMoon": {
