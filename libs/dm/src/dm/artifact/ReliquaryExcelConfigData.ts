@@ -1,6 +1,6 @@
-import { dumpFile } from '@genshin-optimizer/pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import type { DArtifactSlotKey } from '../../mapping'
-import { nameToKey, TextMapEN } from '../../TextMapUtil'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 
 type ReliquaryExcelConfigData = {

@@ -1,7 +1,7 @@
-import { dumpFile } from '@genshin-optimizer/pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import type { CharacterId, DQualityKey, DWeaponTypeKey } from '../../mapping'
 import { characterIdMap } from '../../mapping'
-import { nameToKey, TextMapEN } from '../../TextMapUtil'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { CharacterGrowCurveKey } from './AvatarCurveExcelConfigData'
 

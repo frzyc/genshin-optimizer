@@ -10,3 +10,12 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
     () => print && console.log('Generated JSON at', filename)
   )
 }
+
+export function nameToKey(name: string) {
+  if (!name) name = ''
+  return name
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .split(' ')
+    .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
+    .join('')
+}

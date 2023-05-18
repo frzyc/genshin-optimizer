@@ -1,8 +1,5 @@
-import {
-  materialExcelConfigData,
-  nameToKey,
-  TextMapEN,
-} from '@genshin-optimizer/dm'
+import { materialExcelConfigData, TextMapEN } from '@genshin-optimizer/dm'
+import { nameToKey } from '@genshin-optimizer/pipeline'
 
 export default function materialData() {
   const materialData = {}

@@ -1,5 +1,5 @@
-import { dumpFile } from '@genshin-optimizer/pipeline'
-import { nameToKey, TextMapEN } from '../../TextMapUtil'
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 
 export type MaterialTypeKey =
