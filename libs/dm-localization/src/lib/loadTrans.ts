@@ -12,7 +12,6 @@ import {
   fetterInfoExcelConfigData,
   languageMap,
   materialExcelConfigData,
-  nameToKey,
   proudSkillExcelConfigData,
   reliquarySetExcelConfigData,
   TextMapEN,
@@ -20,7 +19,7 @@ import {
   weaponIdMap,
 } from '@genshin-optimizer/dm'
 import type { Language } from '@genshin-optimizer/pipeline'
-import { dumpFile } from '@genshin-optimizer/pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import { mapHashData, mapHashDataOverride } from './Data'
 import { parsingFunctions, preprocess } from './parseUtil'
