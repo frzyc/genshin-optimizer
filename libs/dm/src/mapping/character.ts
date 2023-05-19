@@ -1,7 +1,7 @@
 import type { NonTravelerCharacterKey } from '@genshin-optimizer/consts'
 
 export const characterIdMap: Record<
-  number,
+  string,
   NonTravelerCharacterKey | 'TravelerM' | 'TravelerF'
 > = {
   //10000000: Kate

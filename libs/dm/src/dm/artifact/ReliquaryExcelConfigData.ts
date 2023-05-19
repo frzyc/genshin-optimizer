@@ -1,4 +1,5 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
+import { PROJROOT_PATH } from '../../consts'
 import type { DArtifactSlotKey } from '../../mapping'
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
@@ -48,7 +49,7 @@ const artifactPiecesData = Object.fromEntries(
 ) as Record<number, ReliquaryExcelConfigData>
 
 dumpFile(
-  `${__dirname}/ReliquaryExcelConfigData_idmap_gen.json`,
+  `${PROJROOT_PATH}/src/dm/artifact/ReliquaryExcelConfigData_idmap_gen.json`,
   Object.fromEntries(
     artifactPiecesDataSrc.map((data) => [
       data.id,
