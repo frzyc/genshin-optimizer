@@ -109,6 +109,7 @@ export const nonTravelerCharacterKeys = [
   'YunJin',
   'Zhongli',
 ] as const
+export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
 export const allTravelerKeys = [
   'TravelerAnemo',

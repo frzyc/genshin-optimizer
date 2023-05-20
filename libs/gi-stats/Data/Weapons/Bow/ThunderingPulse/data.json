@@ -1,0 +1,66 @@
+{
+  "weaponType": "bow",
+  "rarity": 5,
+  "mainStat": {
+    "type": "atk",
+    "base": 45.9364,
+    "curve": "GROW_CURVE_ATTACK_301"
+  },
+  "subStat": {
+    "type": "critDMG_",
+    "base": 0.144,
+    "curve": "GROW_CURVE_CRITICAL_301"
+  },
+  "addProps": [
+    {
+      "atk_": 0.2
+    },
+    {
+      "atk_": 0.25
+    },
+    {
+      "atk_": 0.3
+    },
+    {
+      "atk_": 0.35
+    },
+    {
+      "atk_": 0.4
+    }
+  ],
+  "ascension": [
+    {
+      "addStats": {}
+    },
+    {
+      "addStats": {
+        "atk": 31.1
+      }
+    },
+    {
+      "addStats": {
+        "atk": 62.2
+      }
+    },
+    {
+      "addStats": {
+        "atk": 93.4
+      }
+    },
+    {
+      "addStats": {
+        "atk": 124.5
+      }
+    },
+    {
+      "addStats": {
+        "atk": 155.6
+      }
+    },
+    {
+      "addStats": {
+        "atk": 186.7
+      }
+    }
+  ]
+}

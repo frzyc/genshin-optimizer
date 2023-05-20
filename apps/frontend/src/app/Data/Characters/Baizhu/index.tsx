@@ -1,5 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -25,13 +25,12 @@ import {
   shieldNodeTalent,
 } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Baizhu'
 const elementKey: ElementKey = 'dendro'
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = -1,
@@ -85,7 +84,7 @@ const dm = {
     maxHp: skillParam_gen.passive2[3][0],
   },
   passive3: {
-    heal: skillParam_gen.passive3[0][0],
+    heal: skillParam_gen?.passive3?.[0]?.[0] ?? 0,
   },
   constellation2: {
     atkAmount: skillParam_gen.constellation2[0],

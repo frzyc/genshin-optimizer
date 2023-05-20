@@ -1,4 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import type { DisplaySub } from '../../../Formula/type'
@@ -19,7 +20,6 @@ import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
-import skillParam_gen from './skillParam_gen.json'
 
 export default function dendro(
   key: CharacterSheetKey,
@@ -30,6 +30,7 @@ export default function dendro(
   const condCharKey = 'TravelerDendro'
   const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
 
+  const skillParam_gen = allStats.char.skillParam.TravelerDendroF
   let s = 0,
     b = 0
   const dm = {
