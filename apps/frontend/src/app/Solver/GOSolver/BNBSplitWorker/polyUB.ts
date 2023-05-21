@@ -331,27 +331,24 @@ function sumM(...monomials: Monomial[][]): Monomial[] {
   return monomials.flat()
 }
 function prodM(...monomials: Monomial[][]): Monomial[] {
-  return cartesian(...monomials)
-    .map((monos) =>
-      monos.reduce(
-        (ret, nxt) => {
-          ret.$k *= nxt.$k
-          ret.terms.push(...nxt.terms)
-          Object.keys(nxt.setUsage).forEach(
-            (k) =>
-              (ret.setUsage[k] = Math.max(
-                ret.setUsage[k] ?? 0,
-                nxt.setUsage[k]
-              ))
-          )
-          return ret
-        },
-        { $k: 1, terms: [], setUsage: {} }
-      )
+  monomials = monomials.map((mono) => foldLikeTerms(mono))
+  const out = cartesian(...monomials).map((monos) =>
+    monos.reduce(
+      (ret, nxt) => {
+        ret.$k *= nxt.$k
+        ret.terms.push(...nxt.terms)
+        Object.keys(nxt.setUsage).forEach(
+          (k) =>
+            (ret.setUsage[k] = Math.max(ret.setUsage[k] ?? 0, nxt.setUsage[k]))
+        )
+        return ret
+      },
+      { $k: 1, terms: [], setUsage: {} }
     )
-    .filter(
-      ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) <= 5
-    )
+  )
+  return out.filter(
+    ({ setUsage }) => Object.values(setUsage).reduce((a, b) => a + b, 0) <= 5
+  )
 }
 function monomialCmp(
   { terms: t1, setUsage: s1 }: Monomial,
