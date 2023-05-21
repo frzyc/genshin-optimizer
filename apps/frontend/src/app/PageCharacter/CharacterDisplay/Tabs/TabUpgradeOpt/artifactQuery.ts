@@ -2,7 +2,7 @@ import type { ICachedArtifact } from '../../../../Types/artifact'
 import { allSubstatKeys } from '../../../../Types/artifact'
 import Artifact from '../../../../Data/Artifacts/Artifact'
 import type { DynStat } from '../../../../Solver/common'
-import type { Data, NumNode } from '../../../../Formula/type'
+import type { NumNode } from '../../../../Formula/type'
 import type { OptNode } from '../../../../Formula/optimization'
 import { precompute, optimize } from '../../../../Formula/optimization'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
@@ -23,8 +23,7 @@ function toStats(build: QueryBuild): DynStat {
 export function querySetup(
   formulas: OptNode[],
   thresholds: number[],
-  curBuild: QueryBuild,
-  data: Data = {}
+  curBuild: QueryBuild
 ): Query {
   const toEval: OptNode[] = []
   formulas.forEach((f) => {
@@ -33,9 +32,7 @@ export function querySetup(
       ...allSubstatKeys.map((sub) => ddx(f, (fo) => fo.path[1], sub))
     )
   })
-  // Opt loop a couple times to ensure all constants folded?
-  let evalOpt = optimize(toEval, data, ({ path: [p] }) => p !== 'dyn')
-  evalOpt = optimize(evalOpt, data, ({ path: [p] }) => p !== 'dyn')
+  const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
   const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 1)
   const stats = toStats(curBuild)
