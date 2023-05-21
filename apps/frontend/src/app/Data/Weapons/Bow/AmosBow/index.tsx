@@ -1,17 +1,16 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { objectKeyMap, range } from '../../../../Util/Util'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'AmosBow'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 const autoDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const arrowDmgInc = [0.08, 0.1, 0.12, 0.14, 0.16]

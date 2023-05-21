@@ -46,6 +46,7 @@ export const nonTravelerCharacterKeys = [
   'Aloy',
   'Amber',
   'AratakiItto',
+  'Baizhu',
   'Barbara',
   'Beidou',
   'Bennett',
@@ -68,6 +69,7 @@ export const nonTravelerCharacterKeys = [
   'Kaeya',
   'KamisatoAyaka',
   'KamisatoAyato',
+  'Kaveh',
   'Keqing',
   'Klee',
   'KujouSara',
@@ -107,6 +109,7 @@ export const nonTravelerCharacterKeys = [
   'YunJin',
   'Zhongli',
 ] as const
+export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
 export const allTravelerKeys = [
   'TravelerAnemo',

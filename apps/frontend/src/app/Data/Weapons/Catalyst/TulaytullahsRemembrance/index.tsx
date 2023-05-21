@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -11,15 +10,15 @@ import {
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'TulaytullahsRemembrance'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
 const time_normal_dmg_arr = [0.048, 0.06, 0.072, 0.084, 0.096]
 const time_normal_dmg_stacksArr = range(1, 12)

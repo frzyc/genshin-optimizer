@@ -1,4 +1,3 @@
-import type { SubstatKey } from '@genshin-optimizer/pipeline'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'
@@ -16,7 +15,7 @@ import {
   sum,
 } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
-import type { MainStatKey } from '../../Types/artifact'
+import type { MainStatKey, SubstatKey } from '../../Types/artifact'
 import { allMainStatKeys } from '../../Types/artifact'
 import type {
   CharacterKey,
@@ -24,10 +23,9 @@ import type {
   RegionKey,
 } from '@genshin-optimizer/consts'
 import { layeredAssignment, objectKeyMap, objectMap } from '../../Util/Util'
-import _charCurves from './expCurve_gen.json'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
-// TODO: Remove this conversion after changing the file format
-const charCurves = objectMap(_charCurves, (value) => [
+const charCurves = objectMap(allStats.char.expCurve, (value) => [
   0,
   ...Object.values(value),
 ])
@@ -203,7 +201,7 @@ export function shieldNodeTalent(
   )
 }
 export function shieldElement(
-  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo',
+  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo' | 'dendro',
   shieldNode: NumNode
 ) {
   return infoMut(prod(percent(element === 'geo' ? 1.5 : 2.5), shieldNode), {

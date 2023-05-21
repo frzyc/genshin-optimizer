@@ -1,5 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
   equal,
@@ -18,12 +18,12 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Mika'
 const elementKey: ElementKey = 'cryo'
-const data_gen = data_gen_src as CharacterData
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = -1,
