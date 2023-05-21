@@ -32,7 +32,7 @@ const sheet: IWeaponSheet = {
     {
       value: condStack,
       path: condStackPath,
-      name: st('opponentsDamaged'),
+      name: st('stacks'),
       header: headerTemplate(key, st('stacks')),
       states: Object.fromEntries(
         range(1, 5).map((i) => [

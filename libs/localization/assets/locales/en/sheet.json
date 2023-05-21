@@ -20,7 +20,6 @@
   "opponents_one": "{{count}} Opponent",
   "opponents_other": "{{count}} Opponents",
   "afterDefeatEnemy": "After defeating an opponent",
-  "opponentsDamaged": "Opponents damaged",
   "hitOp": {
     "none": "After hitting an opponent",
     "normal": "After hitting an opponent with a Normal Attack",
