@@ -74,7 +74,7 @@ const sheet: IArtifactSheet = {
                     node: condSwirlNodes[`${eleKey}_enemyRes_`],
                   },
                   {
-                    text: stg('duration'),
+                    text: st(`effectDuration${eleKey}`),
                     value: 10,
                     unit: 's',
                   },

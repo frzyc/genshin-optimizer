@@ -81,13 +81,13 @@
     "geo": "Geo Infusion"
   },
   "effectDuration": {
-    "pyro": "Pyro effect duration",
-    "cryo": "Cryo effect duration",
-    "anemo": "Anemo effect duration",
-    "hydro": "Hydro effect duration",
-    "electro": "Electro effect duration",
-    "dendro": "Dendro effect duration",
-    "geo": "Geo effect duration"
+    "pyro": "Pyro Effect Duration",
+    "cryo": "Cryo Effect Duration",
+    "anemo": "Anemo Effect Duration",
+    "hydro": "Hydro Effect Duration",
+    "electro": "Electro Effect Duration",
+    "dendro": "Dendro Effect Duration",
+    "geo": "Geo Effect Duration"
   },
   "durationInc": "Duration increase",
   "aoeInc": "AoE increase",

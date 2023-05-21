@@ -346,7 +346,7 @@ const sheet: ICharacterSheet = {
               node: infoMut(asc1Disp, KeyMap.info('eleMas')),
             },
             {
-              text: stg('duration'),
+              text: st(`effectDuration.${ele}`),
               value: dm.passive1.duration,
               unit: 's',
             },

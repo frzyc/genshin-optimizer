@@ -519,7 +519,7 @@ const sheet: ICharacterSheet = {
                   node: asc4[`${ele}_dmg_`],
                 },
                 {
-                  text: stg('duration'),
+                  text: st(`effectDuration.${ele}`),
                   value: dm.passive2.duration,
                   unit: 's',
                 },
