@@ -388,13 +388,9 @@ function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
       case 'const':
         return [constM(n.$c)]
       case 'sum':
-        return foldLikeTerms(
-          sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)])
-        )
+        return sumM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$c)])
       case 'prod':
-        return foldLikeTerms(
-          prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)])
-        )
+        return prodM(...n.terms.map((t) => toExpandedPoly(t)), [constM(n.$k)])
     }
   }
 
