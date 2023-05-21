@@ -4,7 +4,7 @@ import { customMapFormula, forEachNodes } from '../../../Formula/internal'
 import type { OptNode } from '../../../Formula/optimization'
 import { allOperations } from '../../../Formula/optimization'
 import type { ConstantNode } from '../../../Formula/type'
-import { constant, dynRead, prod, threshold } from '../../../Formula/utils'
+import { prod, threshold } from '../../../Formula/utils'
 import { assertUnreachable, cartesian } from '../../../Util/Util'
 import type { ArtifactsBySlot, DynStat, MinMax } from '../../common'
 import { computeFullArtRange, computeNodeRange } from '../../common'
@@ -311,71 +311,7 @@ export function polyUB(
       }
     }
   )
-
-  const [zz] = poly.map((p) => expandPoly2(p))
-  console.log(zz.map(({ degrees }) => degrees))
   return poly.map((p) => expandPoly(p))
-}
-
-type PolyFactor = {
-  degrees: string[]
-  poly: OptNode
-}
-function mergePolyFactors(...factors: PolyFactor[]): PolyFactor[] {
-  factors.sort(({ degrees: d1 }, { degrees: d2 }) => {
-    if (d1.length !== d2.length) return d2.length - d1.length
-    for (let i = 0; i < d1.length; i++)
-      if (d1[i] !== d2[i]) return d1[i].localeCompare(d2[i])
-    return 0
-  })
-
-  console.log(
-    'sorted?',
-    factors.map(({ degrees }) => degrees)
-  )
-
-  // throw Error('not implemented')
-  return factors
-}
-function expandPoly2(polynomial: PolynomialWithBounds): PolyFactor[] {
-  function toPolyFactor(poly: PolynomialWithBounds): PolyFactor[] {
-    switch (poly.type) {
-      case 'const':
-        return [{ degrees: [], poly: constant(poly.$c) }]
-      case 'term':
-        return [{ degrees: [poly.key], poly: dynRead(poly.key) }]
-      case 'sum': {
-        const factors = poly.terms.map((p) => toPolyFactor(p)).flat()
-        // console.log('sum', poly)
-        return mergePolyFactors(...factors)
-      }
-      case 'prod': {
-        const factors = poly.terms.map((p) => toPolyFactor(p))
-        // const out = factors.pop()!
-
-        // console.log('mul', poly)
-        // console.log('factors', factors)
-        // factors.forEach((factor) => {
-        //   console.log(factor)
-        //   throw Error('not implemented.')
-        // })
-
-        // TODO: do this sequentially.
-        const out = cartesian(...factors).map((facts) => {
-          const degrees: string[] = []
-          facts.forEach(({ degrees: deg }) => degrees.push(...deg))
-          degrees.sort((a, b) => a.localeCompare(b))
-          return { degrees, poly: prod(...facts.map(({ poly }) => poly)) }
-        })
-
-        return mergePolyFactors(...out)
-      }
-      default:
-        assertUnreachable(poly)
-    }
-  }
-
-  return toPolyFactor(polynomial)
 }
 
 export type SumOfMonomials = Monomial[]
