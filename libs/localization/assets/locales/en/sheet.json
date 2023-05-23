@@ -62,6 +62,8 @@
   "eleAbsor": "Elemental Absorption",
   "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
+  "healingPerHit": "Healing per Hit",
+  "enerRegenPerHit": "Energy Regeneration per Hit",
   "incInterRes": "Increased resistance to interruption",
   "charges": "Charges",
   "cooldown": "Cooldown",

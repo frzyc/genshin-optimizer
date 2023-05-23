@@ -237,7 +237,7 @@ export default function geo(
       ct.headerTem('constellation4', {
         fields: [
           {
-            text: ch('c4.energyRestore'),
+            text: st('enerRegenPerHit'),
             value: dm.constellation4.energyRestore,
           },
         ],
