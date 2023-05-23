@@ -9,10 +9,10 @@
       },
       "scanners": {
         "title": "Automatic Scanners",
-        "tooltip": "3rd Party programs that automatically scans artifacts from the game"
+        "tooltip": "3rd party programs that automatically scan artifacts from the game"
       },
       "kqm": {
-        "title": "KeqingMains",
+        "title": "Keqing Mains",
         "tooltip": "Theorycrafting & guides community"
       },
       "devDiscord": {
@@ -20,7 +20,7 @@
         "tooltip": "Community of developers for Genshin"
       },
       "good": {
-        "title": "GOOD documentation",
+        "title": "GOOD Documentation",
         "tooltip": "Genshin Open Object Descriptor Documentation"
       },
       "patchNotes": {
