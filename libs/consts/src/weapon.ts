@@ -125,6 +125,7 @@ export const allWeaponBowKeys = [
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',
+  'IbisPiercer',
   'KingsSquire',
   'Messenger',
   'MitternachtsWaltz',
