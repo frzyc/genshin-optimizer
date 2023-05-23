@@ -58,6 +58,7 @@
   "FloralCoupon": {},
   "GalaExcitement": {},
   "FestiveTicket": {},
+  "InvokationCoupons": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -158,10 +159,10 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Amber": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Venti": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Xiangling": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -173,7 +174,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Xiao": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Ningguang": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -182,7 +183,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Zhongli": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Fischl": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -191,7 +192,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Tartaglia": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Noelle": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -227,7 +228,7 @@
     "type": "MATERIAL_AVATAR"
   },
   "HuTao": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "KaedeharaKazuha": {
     "type": "MATERIAL_AVATAR"
@@ -245,7 +246,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "RaidenShogun": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Sayu": {
     "type": "MATERIAL_AVATAR"
@@ -263,7 +264,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "YaeMiko": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ShikanoinHeizou": {
     "type": "MATERIAL_AVATAR"
@@ -271,11 +272,14 @@
   "Yelan": {
     "type": "MATERIAL_AVATAR"
   },
+  "Kirara": {
+    "type": "MATERIAL_AVATAR"
+  },
   "Aloy": {
     "type": "MATERIAL_AVATAR"
   },
   "Shenhe": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "YunJin": {
     "type": "MATERIAL_AVATAR"
@@ -305,7 +309,7 @@
     "type": "MATERIAL_AVATAR"
   },
   "Nahida": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Layla": {
     "type": "MATERIAL_AVATAR"
@@ -473,6 +477,9 @@
     "type": "MATERIAL_TALENT"
   },
   "YelansStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "KirarasStellaFortuna": {
     "type": "MATERIAL_TALENT"
   },
   "AloysStellaFortuna": {
@@ -4603,7 +4610,7 @@
     "type": "MATERIAL_FOOD"
   },
   "TeyvatFriedEgg": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousTeyvatFriedEgg": {
     "type": "MATERIAL_FOOD"
@@ -5353,7 +5360,7 @@
     "type": "MATERIAL_FOOD"
   },
   "SashimiPlatter": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousSashimiPlatter": {
     "type": "MATERIAL_FOOD"
@@ -5389,7 +5396,7 @@
     "type": "MATERIAL_FOOD"
   },
   "ButterCrab": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousButterCrab": {
     "type": "MATERIAL_FOOD"
@@ -5857,7 +5864,7 @@
     "type": "MATERIAL_FOOD"
   },
   "TandooriRoastChicken": {
-    "type": "MATERIAL_FOOD"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousTandooriRoastChicken": {
     "type": "MATERIAL_FOOD"
@@ -6104,6 +6111,9 @@
   },
   "HeatQuellingSoup": {
     "type": "MATERIAL_FOOD"
+  },
+  "EnergizingBento": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
   },
   "RecipeItem": {
     "type": "MATERIAL_CONSUME"
@@ -8016,6 +8026,9 @@
   "FoodSeeds": {
     "type": "MATERIAL_QUEST"
   },
+  "KingOfInvokations": {
+    "type": "MATERIAL_QUEST"
+  },
   "NamelessAdventurersNotes": {
     "type": "MATERIAL_QUEST"
   },
@@ -8041,6 +8054,9 @@
     "type": "MATERIAL_QUEST"
   },
   "RecordsOfUnknownAttributionII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "EmberglowLeaf": {
     "type": "MATERIAL_QUEST"
   },
   "AkademiyaInvestigationTeamsLogsI": {
@@ -8685,6 +8701,9 @@
   "UnfadingSilkyGrace": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "CongealedPupaWax": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "FalconsDance": {
     "type": "MATERIAL_CHANNELLER_SLAB_BUFF"
   },
@@ -9219,7 +9238,7 @@
   "CynoSilence": {
     "type": "MATERIAL_NAMECARD"
   },
-  "CandaceGreyHeron": {
+  "CandaceGrayHeron": {
     "type": "MATERIAL_NAMECARD"
   },
   "NilouLotusDance": {
@@ -9300,6 +9319,12 @@
   "TravelNotesCrownOfGlory": {
     "type": "MATERIAL_NAMECARD"
   },
+  "KiraraNekoBox": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesSecrets": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "AnemoculusResonanceStone": {
     "type": "MATERIAL_WIDGET"
   },
@@ -9328,7 +9353,7 @@
     "type": "MATERIAL_WIDGET"
   },
   "TreasureSeekingSeelie": {
-    "type": "MATERIAL_WIDGET"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MiniSeelieDayflower": {
     "type": "MATERIAL_WIDGET"
@@ -9394,7 +9419,7 @@
     "type": "MATERIAL_WIDGET"
   },
   "RedFeatherFan": {
-    "type": "MATERIAL_WIDGET"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MementoLens": {
     "type": "MATERIAL_WIDGET"
@@ -9672,6 +9697,15 @@
   "JadeplumeTerrorshroom": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "FatuiCryoCicinMage": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "AbyssLectorFathomlessFlames": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElectroHypostasis": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "UndividedHeart": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -9697,6 +9731,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "GrandExpectation": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "BunnyTriggered": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "NaganoharaMeteorSwarm": {
@@ -9756,7 +9793,7 @@
   "WellspringOfWarLust": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
-  "TamanooyasCasket": {
+  "TamakushiCasket": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "PoundingSurprise": {
@@ -9765,7 +9802,19 @@
   "LightningStorm": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "EmbraceOfWinds": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ConquerorOfEvilGuardianYaksha": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "DominanceOfEarth": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "KeenSight": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "AbsorbingPrism": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "SinOfPride": {
@@ -9775,6 +9824,30 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "AratakiIchiban": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "MysticalAbandon": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "AbyssalMayhemHydrospout": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "SanguineRouge": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "WishesUnnumbered": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "TheShrinesSacredShade": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "TheSeedOfStoredKnowledge": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "CicinsColdGlare": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "EmbersRekindled": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MagicGuide": {
@@ -9888,7 +9961,49 @@
   "GeneralsAncientHelm": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "AmosBow": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "AThousandFloatingDreams": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ElegyForTheEnd": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "SkywardPride": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "TheBell": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "VortexVanquisher": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "EngulfingLightning": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "SkywardBlade": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "FavoniusSword": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "EmblemOfSeveredFate": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "TenacityOfTheMillelith": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ThunderingPoise": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "VermillionHereafter": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "CapriciousVisage": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ShimenawasReminiscence": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "LiyueHarborWharf": {
@@ -9949,6 +10064,36 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "GrandNarukamiShrine": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Tenshukaku": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "SangonomiyaShrine": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "SumeruCity": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Vanarana": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ChinjuForest": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Hanachirusato": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "KidKujirai": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Xudong": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Dunyarzad": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Rana": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalResonanceWovenIce": {
@@ -10038,6 +10183,33 @@
   "AbyssalSummons": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "WindAndFreedom": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "StoneAndContracts": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ThunderAndEternity": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "NatureAndWisdom": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "FatuiConspiracy": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "PlungingStrike": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "HeavyStrike": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "TheLegendOfVennessa": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "FriendshipEternal": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -10060,6 +10232,9 @@
     "type": "MATERIAL_GCG_CARD_BACK"
   },
   "LazuriteSwirl": {
+    "type": "MATERIAL_GCG_CARD_BACK"
+  },
+  "TreasuresOfTheDeck": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
   "BeginnerPlayerBadge": {
@@ -10524,6 +10699,9 @@
   "ScrollsFromTheLandOfWisdom": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "TavernBookcaseEssentialKnowledge": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "SturdyLibraryTable": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -10590,6 +10768,9 @@
   "AthelWoodCompactDesk": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "RoundTavernTableLeapsAndBounds": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BreezeBlessedBed": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -10603,6 +10784,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "AdhigamaWoodComfortBed": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AdhigamaWoodReposeCouch": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PineReceptionCounter": {
@@ -10654,6 +10838,18 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "AdhigamaVineBackedChair": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SnekusThicket": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FinnicksCranberrySea": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TavernDiningChairFlavorsMultiplicity": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TavernDiningChairAcceleratedSobriety": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "NorthernStoneHearth": {
@@ -10773,6 +10969,21 @@
   "PureHeat": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "LittleRosesMangroveHouse": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "NightPilotsWatchtower": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "BaobabsGoldenCradle": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DionasMiniSofa": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TavernDiningCartASnackBetweenDishes": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "MondstadtRugCrimsonArdor": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -10801,6 +11012,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PureLikeWheatSprouts": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TavernCarpetPassionOfPlay": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TavernCarpetDuelistsWisdom": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "TrustyPortableLamp": {
@@ -10966,6 +11183,15 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "TheDustDifferential": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DeskComboMiddlelakeIsle": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DeskComboVerdantTotem": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PrincesWeepingFish": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "RealizationsFromTheLandOfWisdom": {
@@ -11848,6 +12074,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "BrightwoodFabricBoxPlatform": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "LeisureDevicePuffyTubby": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PottedPlantVerdantVastness": {
