@@ -254,6 +254,20 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('passive1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive1.dmg, {
+              name: ct.ch('sproutDmg'),
+            }),
+          },
+          {
+            text: stg('duration'),
+            value: dm.passive1.duration,
+            unit: 's',
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -308,22 +322,7 @@ const sheet: ICharacterSheet = {
       }),
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive1.dmg, {
-              name: ct.ch('sproutDmg'),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.passive1.duration,
-            unit: 's',
-          },
-        ],
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1', [
