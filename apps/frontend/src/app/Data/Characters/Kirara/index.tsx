@@ -332,7 +332,7 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.shield, {
-              name: stg('dmgAbsorption'),
+              name: ct.chg(`skill.skillParams.1`),
             }),
           },
           {
@@ -342,12 +342,12 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.maxShield, {
-              name: ct.ch('maxShield'),
+              name: ct.chg(`skill.skillParams.2`),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.maxDendroShield, {
-              name: ct.ch('maxDendroShield'),
+              name: st(`dmgAbsorption.max.${elementKey}`),
             }),
           },
           {

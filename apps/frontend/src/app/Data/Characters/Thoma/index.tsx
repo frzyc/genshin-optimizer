@@ -282,7 +282,7 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.minShield, {
-              name: stg('dmgAbsorption'),
+              name: ct.chg(`skill.skillParams.1`),
             }),
           },
           {
@@ -293,12 +293,12 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.maxShield, {
-              name: ct.ch('maxShield'),
+              name: ct.chg(`skill.skillParams.3`),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.maxPyroShield, {
-              name: ct.ch('maxPyroShield'),
+              name: st(`dmgAbsorption.max.${elementKey}`),
               variant: elementKey,
             }),
           },
@@ -325,8 +325,13 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.collapseDmg, {
+              name: ct.chg(`burst.skillParams.1`),
+            }),
+          },
+          {
             node: infoMut(dmgFormulas.burst.shield, {
-              name: stg('dmgAbsorption'),
+              name: ct.chg(`burst.skillParams.2`),
             }),
           },
           {
@@ -339,11 +344,6 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.shieldDuration,
             unit: 's',
-          },
-          {
-            node: infoMut(dmgFormulas.burst.collapseDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
           },
           {
             text: ct.chg('burst.skillParams.4'),
