@@ -65,6 +65,7 @@
   "healingPerHit": "Healing per Hit",
   "enerRegenPerHit": "Energy Regeneration per Hit",
   "incInterRes": "Increased resistance to interruption",
+  "immuneToElectroCharged": "Immunity to <electrocharged>Electro-Charged</electrocharged>",
   "charges": "Charges",
   "cooldown": "Cooldown",
   "addlCharge": "Additional charge",

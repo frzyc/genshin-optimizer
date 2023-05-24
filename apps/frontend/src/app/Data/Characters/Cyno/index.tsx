@@ -130,10 +130,11 @@ const a4_bolt_dmgInc = greaterEq(
   prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas)
 )
 
+const [condC1Path, condC1] = cond(key, 'c1')
 const c1_atkSPD_ = greaterEq(
   input.constellation,
   1,
-  greaterEq(input.asc, 1, dm.constellation1.normal_atkSpd_)
+  equal(condC1, 'on', dm.constellation1.normal_atkSpd_)
 )
 
 const c2NormHitStacksArr = range(1, dm.constellation2.maxStacks)
@@ -342,6 +343,38 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('passive1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive1.boltDmg, {
+              name: ct.ch('p1Dmg'),
+            }),
+          },
+        ],
+      }),
+      ct.condTem('passive1', {
+        path: condA1JudicationPath,
+        value: condA1Judication,
+        name: ct.ch('judication'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: a1Judication_skill_dmg_,
+              },
+            ],
+          },
+        },
+      }),
+      ct.headerTem('passive2', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive2.boltDmgInc, {
+              name: ct.ch('boltDmgInc'),
+            }),
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -373,7 +406,7 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: stg('cd'),
+            text: ct.chg(`burst.skillParams.10`),
             value: dm.burst.cd,
             unit: 's',
           },
@@ -386,68 +419,50 @@ const sheet: ICharacterSheet = {
       ct.condTem('burst', {
         path: condAfterBurstPath,
         value: condAfterBurst,
-        name: st('afterUse.burst'),
+        name: ct.ch('duringBurst'),
         states: {
           on: {
             fields: [
               {
                 node: afterBurst_eleMas,
               },
+              {
+                text: st(`infusion.${elementKey}`),
+                variant: elementKey,
+              },
+              {
+                text: st('incInterRes'),
+              },
+              {
+                text: st('immuneToElectroCharged'),
+              },
             ],
           },
         },
       }),
-      ct.headerTem('constellation1', {
-        canShow: greaterEq(input.asc, 1, 1),
-        fields: [
-          {
-            node: c1_atkSPD_,
-          },
-        ],
-      }),
-    ]),
-
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive1.boltDmg, {
-              name: ct.ch('p1Dmg'),
-            }),
-          },
-        ],
-      }),
-      ct.condTem('passive1', {
-        path: condA1JudicationPath,
-        value: condA1Judication,
-        name: ct.ch('judication'),
+      ct.condTem('constellation1', {
+        path: condC1Path,
+        value: condC1,
+        name: ct.ch('afterBurstOrJudication'),
         states: {
           on: {
             fields: [
               {
-                node: a1Judication_skill_dmg_,
+                node: c1_atkSPD_,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation1.duration,
+                unit: 's',
               },
             ],
           },
         },
       }),
     ]),
-    passive2: ct.talentTem('passive2', [
-      ct.fieldsTem('passive2', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive2.burstNormalDmgInc, {
-              name: ct.ch('burstNormalDmgInc'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.passive2.boltDmgInc, {
-              name: ct.ch('boltDmgInc'),
-            }),
-          },
-        ],
-      }),
-    ]),
+
+    passive1: ct.talentTem('passive1'),
+    passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
