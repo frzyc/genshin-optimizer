@@ -35,7 +35,7 @@ const sheet: IWeaponSheet = {
       value: condPassiveStacks,
       path: condPassiveStacksPath,
       header: headerTemplate(key, st('stacks')),
-      name: st('afterDefeatEnemy'),
+      name: st('hitOp.charged'),
       states: Object.fromEntries(
         stacksArr.map((stack) => [
           stack,
