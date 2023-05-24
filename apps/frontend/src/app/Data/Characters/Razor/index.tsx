@@ -389,32 +389,23 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg1, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.0'),
+              name: ct.ch('soulCompanion.1'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg2, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.1'),
+              name: ct.ch('soulCompanion.2'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg3, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.2'),
+              name: ct.ch('soulCompanion.3'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg4, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.3'),
+              name: ct.ch('soulCompanion.4'),
             }),
-          },
-          {
-            text: ct.chg('burst.skillParams.4'),
-            value: dm.burst.duration,
-            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.5'),
@@ -431,18 +422,29 @@ const sheet: ICharacterSheet = {
         // The Wolf Within
         value: condTheWolfWithin,
         path: condTheWolfWithinPath,
-        name: ct.chg('burst.description.3'),
+        name: st('afterUse.burst'),
         states: {
           on: {
             fields: [
               {
-                node: electro_res_,
+                text: ct.chg('burst.description.3')
               },
               {
                 node: atkSPD_,
               },
               {
+                node: electro_res_,
+              },
+              {
                 text: st('incInterRes'),
+              },
+              {
+                text: st('immuneToElectroCharged'),
+              },
+              {
+                text: ct.chg('burst.skillParams.4'),
+                value: dm.burst.duration,
+                unit: 's',
               },
             ],
           },
