@@ -1,0 +1,28 @@
+{
+  "name": "sr-stats",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-stats/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sr-stats",
+        "main": "libs/sr-stats/src/index.ts",
+        "tsConfig": "libs/sr-stats/tsconfig.lib.json",
+        "assets": ["libs/sr-stats/*.md"]
+      },
+      "dependsOn": ["^build", "^pipeline"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr-stats/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["sr-pipeline"]
+}

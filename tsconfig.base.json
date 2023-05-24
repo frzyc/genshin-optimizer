@@ -25,6 +25,10 @@
       "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
+      "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
+      "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
+      "@genshin-optimizer/sr-pipeline": ["libs/sr-pipeline/src/index.ts"],
+      "@genshin-optimizer/sr-stats": ["libs/sr-stats/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
       "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"]
     }

@@ -1,0 +1,41 @@
+{
+  "name": "sr-pipeline",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-pipeline/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sr-pipeline",
+        "main": "libs/sr-pipeline/src/index.ts",
+        "tsConfig": "libs/sr-pipeline/tsconfig.lib.json",
+        "assets": ["libs/sr-pipeline/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "sr-pipeline:build",
+        "watch": false,
+        "inspect": false
+      },
+      "inputs": ["default", "^production", "gi-stats"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr-pipeline/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "namedInputs": {
+    "gi-stats": [
+      "{workspaceRoot}/lib/gi-stats/Data/**/*.json",
+      "{workspaceRoot}/lib/gi-stats/src/allStat_gen.json"
+    ]
+  }
+}
