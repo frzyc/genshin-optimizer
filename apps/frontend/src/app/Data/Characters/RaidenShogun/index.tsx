@@ -106,12 +106,12 @@ const skillEye_ = equal(
     })
   )
 )
-
+const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
   return dmgNode('atk', atkType, 'skill', {
     enemy: {
-      defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore),
+      defIgn: greaterEq(input.constellation, 2, equal(condInBurst, 'on', dm.constellation2.def_ignore)),
     },
   })
 }
@@ -516,6 +516,27 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
+      ct.condTem('burst', {
+        value: condInBurst,
+        path: condInBurstPath,
+        name: ct.ch('burst.active'),
+        states: {
+          on: {
+            fields: [
+              {
+                text: st('infusion.electro'),
+                variant: 'electro'
+              },
+              {
+                text: st('incInterRes')
+              },
+              {
+                text: st('immuneToElectroCharged')
+              }
+            ]
+          }
+        }
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
