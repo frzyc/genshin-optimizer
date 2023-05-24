@@ -292,7 +292,7 @@ const sheet: ICharacterSheet = {
           {
             // Press
             node: infoMut(dmgFormulas.skill.press, {
-              name: ct.ch('skill.pressDMG'),
+              name: ct.chg(`skill.skillParams.0`),
             }),
           },
           {
@@ -303,12 +303,14 @@ const sheet: ICharacterSheet = {
           {
             // Lvl 1
             node: infoMut(dmgFormulas.skill.hold1_1, {
-              name: ct.ch('skill.lvl1_1DMG'),
+              name: ct.chg(`skill.skillParams.1`),
+              textSuffix: '(1)'
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold1_2, {
-              name: ct.ch('skill.lvl1_2DMG'),
+              name: ct.chg(`skill.skillParams.1`),
+              textSuffix: '(2)'
             }),
           },
           {
@@ -319,17 +321,19 @@ const sheet: ICharacterSheet = {
           {
             // Lvl 2
             node: infoMut(dmgFormulas.skill.hold2_1, {
-              name: ct.ch('skill.lvl2_1DMG'),
+              name: ct.chg(`skill.skillParams.2`),
+              textSuffix: '(1)'
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold2_2, {
-              name: ct.ch('skill.lvl2_2DMG'),
+              name: ct.chg(`skill.skillParams.2`),
+              textSuffix: '(2)'
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.explosion, {
-              name: ct.ch('skill.explDMG'),
+              name: ct.chg(`skill.skillParams.3`),
             }),
           },
           {
@@ -386,12 +390,6 @@ const sheet: ICharacterSheet = {
           activeInArea: {
             fields: [
               {
-                text: ct.chg('burst.skillParams.2'),
-                value: (data) => data.get(burstAtkRatio).value * 100,
-                unit: '%',
-                fixed: 1,
-              },
-              {
                 node: infoMut(burstAddlAtk, { name: st(`increase.atk`) }),
               },
             ],
@@ -408,10 +406,6 @@ const sheet: ICharacterSheet = {
       }),
       ct.headerTem('constellation1', {
         fields: [
-          {
-            text: ct.ch('additionalATKRatio'),
-            node: c1AtkRatio,
-          },
           {
             node: infoMut(c1AddlAtk, { name: ct.ch('additionalATK') }),
           },
