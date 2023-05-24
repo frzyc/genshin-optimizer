@@ -11,6 +11,17 @@ const textComponents = {
   pyro: <ColorText color="pyro" />,
   electro: <ColorText color="electro" />,
   dendro: <ColorText color="dendro" />,
+  heal: <ColorText color="heal" />,
+  vaporize: <ColorText color="vaporize" />,
+  spread: <ColorText color="spread" />,
+  aggravate: <ColorText color="aggravate" />,
+  overloaded: <ColorText color="overloaded" />,
+  superconduct: <ColorText color="superconduct" />,
+  electrocharged: <ColorText color="electrocharged" />,
+  shattered: <ColorText color="shattered" />,
+  bloom: <ColorText color="bloom" />,
+  burgeon: <ColorText color="burgeon" />,
+  hyperbloom: <ColorText color="hyperbloom" />
 }
 const badgeComponents = {
   anemo: <SqBadge color="anemo" />,
