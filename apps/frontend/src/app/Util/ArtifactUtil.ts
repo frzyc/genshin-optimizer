@@ -1,7 +1,7 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
-import artifactSubstatRollCorrection from '../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from '../KeyMap'
 import type { IArtifact, ISubstat, SubstatKey } from '../Types/artifact'
 import { allSubstatKeys } from '../Types/artifact'
@@ -41,7 +41,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
     if (substat.key) {
       const value = cacheValueString(substat.value, KeyMap.unit(substat.key))
       substat.value = parseFloat(
-        artifactSubstatRollCorrection[rarity]?.[substat.key]?.[value] ?? value
+        allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
       )
     }
 

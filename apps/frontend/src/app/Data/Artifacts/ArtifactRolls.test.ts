@@ -1,7 +1,6 @@
-import artifactSubstatBaseRoll from './artifact_sub_gen.json'
-import artifactSubstatRoll from './artifact_sub_rolls_gen.json'
 import type { SubstatKey } from '../../Types/artifact'
 import { extrapolateFloat } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 /**
  * Known rarity-5 rolls
@@ -577,7 +576,7 @@ function somePerm(
 
 describe.skip('Artifact Roll Model', () => {
   for (const [key, entries] of Object.entries(rolls)) {
-    const rolls = artifactSubstatBaseRoll['5'][key]
+    const rolls = allStats.art.sub['5'][key]
 
     type Model = (indices: number[]) => string
 
@@ -612,7 +611,7 @@ describe.skip('Artifact Roll Model', () => {
     for (const [string, ...values] of entries) {
       const v = values.map((i) => rolls[i])
       test(`Current system should validate ${string} ${key}`, () => {
-        expect(Object.keys(artifactSubstatRoll[5][key])).toContain(string)
+        expect(Object.keys(allStats.art.subRoll[5][key])).toContain(string)
       })
       it(`should support ${string} ${key} with rolls [${v}] (sum to ${v.reduce(
         (a, b) => a + b

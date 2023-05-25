@@ -1,7 +1,7 @@
-import { MainPropMap } from './pipeline'
+import { langKeys } from './pipeline'
 
 describe('pipeline', () => {
   it('should work', () => {
-    expect(MainPropMap).toBeTruthy()
+    expect(langKeys).toBeTruthy()
   })
 })

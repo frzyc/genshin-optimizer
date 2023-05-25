@@ -12,6 +12,7 @@ import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
+import IbisPiercer from './IbisPiercer'
 import KingsSquire from './KingsSquire'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
@@ -46,6 +47,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   Hamayumi,
   HuntersBow,
   HuntersPath,
+  IbisPiercer,
   KingsSquire,
   Messenger,
   MitternachtsWaltz,

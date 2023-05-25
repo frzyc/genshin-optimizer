@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -21,13 +21,11 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Thoma'
 const elementKey: ElementKey = 'pyro'
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0,
@@ -284,7 +282,7 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.minShield, {
-              name: stg('dmgAbsorption'),
+              name: ct.chg(`skill.skillParams.1`),
             }),
           },
           {
@@ -295,12 +293,12 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.maxShield, {
-              name: ct.ch('maxShield'),
+              name: ct.chg(`skill.skillParams.3`),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.maxPyroShield, {
-              name: ct.ch('maxPyroShield'),
+              name: st(`dmgAbsorption.max.${elementKey}`),
               variant: elementKey,
             }),
           },
@@ -327,8 +325,13 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.collapseDmg, {
+              name: ct.chg(`burst.skillParams.1`),
+            }),
+          },
+          {
             node: infoMut(dmgFormulas.burst.shield, {
-              name: stg('dmgAbsorption'),
+              name: ct.chg(`burst.skillParams.2`),
             }),
           },
           {
@@ -341,11 +344,6 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.shieldDuration,
             unit: 's',
-          },
-          {
-            node: infoMut(dmgFormulas.burst.collapseDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
           },
           {
             text: ct.chg('burst.skillParams.4'),

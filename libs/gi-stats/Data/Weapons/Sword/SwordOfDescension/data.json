@@ -1,0 +1,52 @@
+{
+  "weaponType": "sword",
+  "rarity": 4,
+  "mainStat": {
+    "type": "atk",
+    "base": 38.7413,
+    "curve": "GROW_CURVE_ATTACK_101"
+  },
+  "subStat": {
+    "type": "atk_",
+    "base": 0.0766,
+    "curve": "GROW_CURVE_CRITICAL_101"
+  },
+  "addProps": [
+    {}
+  ],
+  "ascension": [
+    {
+      "addStats": {}
+    },
+    {
+      "addStats": {
+        "atk": 25.9
+      }
+    },
+    {
+      "addStats": {
+        "atk": 51.9
+      }
+    },
+    {
+      "addStats": {
+        "atk": 77.8
+      }
+    },
+    {
+      "addStats": {
+        "atk": 103.7
+      }
+    },
+    {
+      "addStats": {
+        "atk": 129.7
+      }
+    },
+    {
+      "addStats": {
+        "atk": 155.6
+      }
+    }
+  ]
+}

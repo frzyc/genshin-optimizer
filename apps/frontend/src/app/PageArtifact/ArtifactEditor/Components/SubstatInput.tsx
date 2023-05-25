@@ -1,3 +1,4 @@
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   Box,
   Button,
@@ -21,7 +22,6 @@ import PercentBadge from '../../../Components/PercentBadge'
 import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
 import Artifact, { artifactSubRolls } from '../../../Data/Artifacts/Artifact'
-import artifactSubstatRollCorrection from '../../../Data/Artifacts/artifact_sub_rolls_correction_gen.json'
 import KeyMap, { cacheValueString } from '../../../KeyMap'
 import StatIcon from '../../../KeyMap/StatIcon'
 import type { ICachedArtifact, ISubstat } from '../../../Types/artifact'
@@ -148,7 +148,7 @@ export default function SubstatInput({
           {rollData.map((v, i) => {
             let newValue = cacheValueString(accurateValue + v, unit)
             newValue =
-              artifactSubstatRollCorrection[rarity]?.[key]?.[newValue] ??
+              allStats.art.subRollCorrection[rarity]?.[key]?.[newValue] ??
               newValue
             return (
               <Button

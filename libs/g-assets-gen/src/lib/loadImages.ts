@@ -1,10 +1,13 @@
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
 import {
+  artifactIdMap,
   artifactPiecesData,
+  artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
+  characterIdMap,
   DM2D_PATH,
   fetterCharacterCardExcelConfigData,
   materialExcelConfigData,
@@ -12,14 +15,9 @@ import {
   reliquarySetExcelConfigData,
   rewardExcelConfigData,
   weaponExcelConfigData,
-} from '@genshin-optimizer/dm'
-import {
-  artifactIdMap,
-  artifactSlotMap,
-  characterIdMap,
-  dumpFile,
   weaponIdMap,
-} from '@genshin-optimizer/pipeline'
+} from '@genshin-optimizer/dm'
+import { dumpFile } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import * as fs from 'fs'
 import * as path from 'path'

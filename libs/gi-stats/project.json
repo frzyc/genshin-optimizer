@@ -1,0 +1,28 @@
+{
+  "name": "gi-stats",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-stats/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gi-stats",
+        "main": "libs/gi-stats/src/index.ts",
+        "tsConfig": "libs/gi-stats/tsconfig.lib.json",
+        "assets": ["libs/gi-stats/*.md"]
+      },
+      "dependsOn": ["^build", "^pipeline"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi-stats/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["gi-pipeline"]
+}
