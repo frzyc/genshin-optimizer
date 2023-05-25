@@ -47,10 +47,10 @@
     "skill": "After using Elemental Skill",
     "burst": "After using Elemental Burst",
     "skillOrBurst": "After using Ele. Skill or Ele. Burst",
-    "skillPress": "$t(afterUse.skill) ($t(press))",
-    "skillHold": "$t(afterUse.skill) ($t(hold))"
+    "skillPress": "After using Elemental Skill (Press)",
+    "skillHold": "After using Elemental Skill (Hold)"
   },
-  "afterSprint": "After Sprint",
+  "afterSprint": "After Sprinting",
   "afterReaction": "After triggering an Elemental Reaction",
   "increase": {
     "atk": "ATK Increase"
@@ -58,10 +58,7 @@
   "skillCDRed": "Ele. Skill CD Reduction",
   "burstCDRed": "Ele. Burst CD Reduction",
   "triggerCD": "Trigger CD",
-  "press": "Press",
-  "hold": "Hold",
   "eleAbsor": "Elemental Absorption",
-  "eleSwirled": "Swirled Element",
   "absorDot": "Absorption DoT",
   "healingPerHit": "Healing per Hit",
   "enerRegenPerHit": "Energy Regeneration per Hit",
