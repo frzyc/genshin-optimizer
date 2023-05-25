@@ -4,7 +4,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
 import { displayDataMap } from '.'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'

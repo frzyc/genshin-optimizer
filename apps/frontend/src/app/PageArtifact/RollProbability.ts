@@ -6,8 +6,8 @@ import type {
 } from '../Types/artifact'
 import { layeredAssignment } from '../Util/Util'
 import Artifact from '../Data/Artifacts/Artifact'
-import ArtifactMainStatsData from '../Data/Artifacts/artifact_main_gen.json'
 import { crawlObject } from '@genshin-optimizer/util'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,
 // and "upgrade rolls" that occurs when all 4 substats are added. They have different
@@ -151,7 +151,7 @@ function probability(
     const key = artifact.mainStatKey
     if (key in target) {
       const maxLevel = rarity * 4 // Note: this formula doesn't work with 1* and 2* artifacts
-      const maxLevelMainStat = ArtifactMainStatsData[rarity][key][maxLevel]
+      const maxLevelMainStat = allStats.art.main[rarity][key][maxLevel]
       if (maxLevelMainStat < target[key]!) return 0 // Main stat won't meet the target
 
       delete target[key]

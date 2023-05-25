@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula/index'
 import {
   compareEq,
@@ -20,12 +20,12 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Xingqiu'
 const elementKey: ElementKey = 'hydro'
-const data_gen = data_gen_src as CharacterData
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let s = 0,

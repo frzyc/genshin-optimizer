@@ -1,0 +1,35 @@
+{
+  "weaponType": "bow",
+  "rarity": 2,
+  "mainStat": {
+    "type": "atk",
+    "base": 32.93,
+    "curve": "GROW_CURVE_ATTACK_101"
+  },
+  "addProps": [],
+  "ascension": [
+    {
+      "addStats": {}
+    },
+    {
+      "addStats": {
+        "atk": 11.7
+      }
+    },
+    {
+      "addStats": {
+        "atk": 23.3
+      }
+    },
+    {
+      "addStats": {
+        "atk": 35
+      }
+    },
+    {
+      "addStats": {
+        "atk": 46.7
+      }
+    }
+  ]
+}

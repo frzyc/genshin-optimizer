@@ -112,7 +112,6 @@
   "tags": [],
   "implicitDependencies": [
     "localization",
-    "pipeline-runner",
     "dm-localization",
     "silly-wisher-names"
   ]

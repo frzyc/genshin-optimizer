@@ -40,7 +40,7 @@ const swKeyMap = {
   aloy: 'Aloy',
   amber: 'Amber',
   itto: 'AratakiItto',
-  // 'baizhu':'Baizhu',
+  baizhu: 'Baizhu',
   barbara: 'Barbara',
   beidou: 'Beidou',
   bennett: 'Bennett',
