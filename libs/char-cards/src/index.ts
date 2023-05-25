@@ -29,6 +29,7 @@ import KamisatoAyaka from './Character_Kamisato_Ayaka_Card.png'
 import KamisatoAyato from './Character_Kamisato_Ayato_Card.png'
 import KaedeharaKazuha from './Character_Kazuha_Card.png'
 import Keqing from './Character_Keqing_Card.jpg'
+import Kirara from './Character_Kirara_Card.jpg'
 import Klee from './Character_Klee_Card.jpg'
 import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
@@ -100,6 +101,7 @@ const charCards = {
   KamisatoAyato,
   Kaveh,
   Keqing,
+  Kirara,
   Klee,
   KujouSara,
   KukiShinobu,

@@ -29,6 +29,7 @@ import KamisatoAyaka from './KamisatoAyaka'
 import KamisatoAyato from './KamisatoAyato'
 import Kaveh from './Kaveh'
 import Keqing from './Keqing'
+import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
@@ -104,6 +105,7 @@ const data = {
   KamisatoAyato,
   Kaveh,
   Keqing,
+  Kirara,
   Klee,
   KujouSara,
   KukiShinobu,

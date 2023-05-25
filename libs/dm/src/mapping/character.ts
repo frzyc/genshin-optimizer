@@ -53,6 +53,7 @@ export const characterIdMap: Record<
   10000058: 'YaeMiko',
   10000059: 'ShikanoinHeizou',
   10000060: 'Yelan',
+  10000061: 'Kirara',
   10000062: 'Aloy',
   10000063: 'Shenhe',
   10000064: 'YunJin',

@@ -117,20 +117,13 @@ export function dmgNode(
 ): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(
-    specialMultiplier
-      ? prod(
-          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
-            unit: '%',
-          }),
-          input.total[base],
-          specialMultiplier
-        )
-      : prod(
-          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
-            unit: '%',
-          }),
-          input.total[base]
-        ),
+    prod(
+      subscript(input.total[`${talentType}Index`], lvlMultiplier, {
+        unit: '%',
+      }),
+      input.total[base],
+      ...(specialMultiplier ? [specialMultiplier] : [])
+    ),
     move,
     additional
   )
@@ -185,7 +178,8 @@ export function shieldNodeTalent(
   baseMultiplier: number[],
   flat: number[],
   move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
-  additional?: Data
+  additional?: Data,
+  multiplier?: NumNode | number
 ): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
@@ -193,7 +187,8 @@ export function shieldNodeTalent(
     sum(
       prod(
         subscript(talentIndex, baseMultiplier, { unit: '%' }),
-        input.total[base]
+        input.total[base],
+        ...(multiplier ? [multiplier] : [])
       ),
       subscript(talentIndex, flat)
     ),
