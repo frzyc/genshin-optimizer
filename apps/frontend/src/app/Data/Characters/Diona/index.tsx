@@ -271,13 +271,18 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            node: infoMut(dmgFormulas.skill.skillDmg, {
+              name: ct.chg(`skill.skillParams.0`),
+            }),
+          },
+          {
             node: infoMut(dmgFormulas.skill.pressShield, {
-              name: st(`dmgAbsorption.none`),
+              name: ct.ch('pressShield'),
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.pressCryoShield, {
-              name: st(`dmgAbsorption.cryo`),
+              name: ct.ch('pressCryoShield'),
             }),
           },
           {
@@ -288,11 +293,6 @@ const sheet: ICharacterSheet = {
           {
             node: infoMut(dmgFormulas.skill.holdCryoShield, {
               name: ct.ch('holdCryoShield'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.skill.skillDmg, {
-              name: ct.chg(`skill.skillParams.0`),
             }),
           },
           {
