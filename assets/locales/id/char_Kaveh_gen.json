@@ -76,7 +76,7 @@
       ],
       "2": "Efek-efek ini akan hilang saat Kaveh meninggalkan medan pertempuran.",
       "3": "<br/>",
-      "4": "<i>\"Setiap gaya bangunan mencerminkan pandangan dunia arsiteknya yang unik. Dari sudut pandang ini, bisa dibilang kalau bangunan itu sendiri merupakan gabungan dari ingatan manusia.\"</i>"
+      "4": "<i>\"Setiap gaya bangunan mencerminkan pandangan arsiteknya yang unik terhadap dunia. Dari sudut pandang ini, bisa dibilang kalau bangunan itu sendiri merupakan gabungan dari ingatan manusia.\"</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -113,19 +113,19 @@
   "passive3": {
     "name": "The Art of Budgeting",
     "description": {
-      "0": "Saat membuat Perabotan jenis Pemandangan, Bangunan, dan Taman, Kaveh memiliki 100% kemungkinan untuk mendapatkan kembali sebagian materialnya."
+      "0": "Saat membuat Perabotan jenis Hiasan, Bangunan, dan Taman, Kaveh memiliki 100% kemungkinan untuk mendapatkan kembali sebagian materialnya."
     }
   },
   "constellation1": {
     "name": "Sublime Salutations",
     "description": {
-      "0": "Setelah melancarkan <strong>Artistic Ingenuity</strong>, <dendro>Dendro RES</dendro> Kaveh akan meningkat 50% dan Bonus Pemulihan yang diterima Kaveh meningkat 25% selama 3 detik."
+      "0": "Selama 3 detik setelah melancarkan <strong>Artistic Ingenuity</strong>, <dendro>Dendro RES</dendro> Kaveh akan meningkat 50% dan Bonus Pemulihan yang diterima Kaveh meningkat 25%."
     }
   },
   "constellation2": {
     "name": "Grace of Royal Roads",
     "description": {
-      "0": "Selama <strong>Painted Dome</strong> berlangsung, ATK SPD Normal Attack Kaveh meningkat 15%."
+      "0": "Selama <strong>Painted Dome</strong> berlangsung, Normal ATK SPD Kaveh meningkat 15%."
     }
   },
   "constellation3": {

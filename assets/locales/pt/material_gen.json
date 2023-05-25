@@ -219,6 +219,10 @@
     "name": "Cupom do Festival",
     "description": "Participe nas atividades de celebração do Festival da Brisa Florescente para obter esses cupons e trocá-los na Loja do Evento por recompensas."
   },
+  "InvokationCoupons": {
+    "name": "Cupons Sagrados",
+    "description": "Você pode obter esses cupons após participar de vários eventos do Grande Torneio do Rei do Chamado Sagrado dos Sete. Durante o evento, é possível utilizá-los para resgatar recompensas."
+  },
   "Primogem": {
     "name": "Gema Essencial",
     "description": "Uma gema cristalina primordial que vai além da compreensão mundana. Seu brilho está cheio de esperanças e sonhos do universo em que esteve."
@@ -519,6 +523,10 @@
     "name": "Yelan",
     "description": "Uma pessoa misteriosa que afirma trabalhar para o Ministério dos Assuntos Civis, mas \"não existe\" nos registros deles."
   },
+  "Kirara": {
+    "name": "Kirara",
+    "description": "Uma entregadora do Komaniya Express, empresa de entregas em Inazuma. Uma Nekomata que ama seu trabalho e a sociedade humana."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Era uma pária, agora uma caçadora de uma avidez inigualável. Pronta para fazer a coisa certa com seu arco, a qualquer momento."
@@ -791,6 +799,10 @@
     "name": "Stella Fortuna de Yelan",
     "description": "Material de Ativação da Constelação de Yelan"
   },
+  "KirarasStellaFortuna": {
+    "name": "Stella Fortuna de Kirara",
+    "description": "Material de Ativação da Constelação de Kirara"
+  },
   "AloysStellaFortuna": {
     "name": "Stella Fortuna de Alloy",
     "description": "Material de Ativação da Constelação de Aloy"
@@ -975,23 +987,23 @@
     "name": "",
     "description": ""
   },
-  "KamisatoAyakaForCB": {
+  "KamisatoAyakaForCB1": {
     "name": "Kamisato Ayaka",
     "description": "Obteve Kamisato Ayaka Nv.15"
   },
-  "XianglingForCB": {
+  "XianglingForCB1": {
     "name": "Xiangling",
     "description": "Obteve Xiangling Nv.15"
   },
-  "JeanForCB": {
+  "JeanForCB1": {
     "name": "Jean",
     "description": "Obteve Jean Nv.15"
   },
-  "DilucForCB": {
+  "DilucForCB1": {
     "name": "Diluc",
     "description": "Obteve Diluc Nv.15"
   },
-  "VentiForCB": {
+  "VentiForCB1": {
     "name": "Venti",
     "description": "Obteve Venti Nv.15"
   },
@@ -1031,11 +1043,11 @@
     "name": "",
     "description": ""
   },
-  "BarbaraForCB": {
+  "BarbaraForCB1": {
     "name": "Barbara",
     "description": "Obteve Barbara Nv.15"
   },
-  "RazorForCB": {
+  "RazorForCB1": {
     "name": "Razor",
     "description": "Obteve Razor Nv.15"
   },
@@ -1335,9 +1347,13 @@
     "name": "Fuga Extrema",
     "description": "Registros da Viagem de Marcus. Nestas anotações sobre Marcus Reef, tem uma linha que diz:\"Apenas dá para chegar aqui com a brisa matinal do Promontório dos Amantes...\""
   },
-  "IncompleteScorePart": {
+  "IncompleteScorePart1": {
     "name": "Partitura Incompleta (Parte 1)",
     "description": "A primeira parte da partitura da música \"Yellow\". com \"S to J\" escrito no canto inferior direito."
+  },
+  "IncompleteScorePart2": {
+    "name": "Partitura Incompleta (Parte 2)",
+    "description": "A segunda parte da partitura da música \"Amarelo\"."
   },
   "PrivateLetterFromLisaToJean": {
     "name": "Carta Privada de Lisa para Jean",
@@ -1359,9 +1375,17 @@
     "name": "Tratamento de Barbara",
     "description": "A Lisa pediu para você entregar isso a Barbara."
   },
-  "IncompletePoemPart": {
+  "IncompletePoemPart1": {
     "name": "Poema Incompleto (Parte 1)",
     "description": "O poema que Venti estava procurando, embora seja só a primeira parte."
+  },
+  "IncompletePoemPart2": {
+    "name": "Poema Incompleto (Parte 2)",
+    "description": "O poema que Venti pediu para você procurar, embora pareça que ainda haja mais partes."
+  },
+  "IncompletePoemPart3": {
+    "name": "Poema Incompleto (Parte 3)",
+    "description": "O poema que Venti pediu para você procurar, junte as três páginas para revelar um versículo de amor."
   },
   "InscriptionRubbing": {
     "name": "Esfregue a inscrição",
@@ -1415,12 +1439,52 @@
     "name": "Cristal Carmesim",
     "description": "Um cristal de lágrima no qual flui uma luminescência vermelha sombria. Parece ter sido deixado pelo dragão. Talvez aquela pessoa que estava falando com o dragão saiba de mais algo, mas aonde ele foi?"
   },
-  "SealClue": {
+  "SealClue101": {
     "name": "Pista do Selo 101",
     "description": "Pista do Selo"
   },
-  "BreakSeal": {
+  "SealClue102": {
+    "name": "Pista do Selo 102",
+    "description": "Pista do Selo"
+  },
+  "SealClue103": {
+    "name": "Pista do Selo 103",
+    "description": "Pista do Selo"
+  },
+  "SealClue201": {
+    "name": "Pista do Selo 201",
+    "description": "Pista do Selo"
+  },
+  "SealClue202": {
+    "name": "Pista do Selo 202",
+    "description": "Pista do Selo"
+  },
+  "SealClue203": {
+    "name": "Pista do Selo 203",
+    "description": "Pista do Selo"
+  },
+  "SealClue301": {
+    "name": "Pista do Selo 301",
+    "description": "Pista do Selo"
+  },
+  "SealClue302": {
+    "name": "Pista do Selo 302",
+    "description": "Pista do Selo"
+  },
+  "SealClue303": {
+    "name": "Pista do Selo 303",
+    "description": "Pista do Selo"
+  },
+  "BreakSeal1": {
     "name": "Quebrar o Selo 1",
+    "description": "Quebrar o Selo"
+  },
+  "BreakSeal2": {
+    "name": "Quebrar o Selo 2",
+    "description": "Quebrar o Selo"
+  },
+  "BreakSeal3": {
+    "name": "Quebrar o Selo 3",
     "description": "Quebrar o Selo"
   },
   "InvestigateTheSealOfStormterrorsLair": {
@@ -1435,8 +1499,16 @@
     "name": "Memória Fragmentada (Anemo)",
     "description": "Pode-se escutar alguns sussurros perto do ouvido, mas incapaz de compreender tudo totalmente (Indisponível)"
   },
-  "SwordCemeterySeal": {
+  "SwordCemeterySeal1": {
     "name": "Selo do Cemitério de Espadas 1",
+    "description": "Quebrar o Selo"
+  },
+  "SwordCemeterySeal2": {
+    "name": "Selo do Cemitério de Espadas 2",
+    "description": "Quebrar o Selo"
+  },
+  "SwordCemeterySeal3": {
+    "name": "Selo do Cemitério de Espadas 3",
     "description": "Quebrar o Selo"
   },
   "TeardropCrystal": {
@@ -1655,7 +1727,7 @@
     "name": "A Branca de Neve e os 6 Anões (VII)",
     "description": "Um conto muito conhecido em Teyvat. Este volume conta o final da história e a sobre a profecia da Mãe da Noite."
   },
-  "YearsOfLoneliness": {
+  "1000YearsOfLoneliness": {
     "name": "Mil Anos de Solidão",
     "description": "O início da trágica jornada de fantasia do caçador do Vale Termal. Onde o infortúnio lhe ocorreu primeiro? O que marca o início e o fim da jornada de 1000 anos de solidão? Deixe este primeiro volume de 1000 Anos de Solidão ser seu guia através do nevoeiro fantástico que é a vida de Gothson."
   },
@@ -1867,8 +1939,72 @@
     "name": "Licor Bastante Comum",
     "description": "Uma bebida alcoólica disponível em qualquer lugar."
   },
-  "TESTCocktail": {
+  "TESTCocktail16": {
     "name": "(TESTE) Vinho 16",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail17": {
+    "name": "(TESTE) Vinho 17",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail18": {
+    "name": "(TESTE) Vinho 18",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail19": {
+    "name": "(TESTE) Vinho 19",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail20": {
+    "name": "(TESTE) Vinho 20",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail21": {
+    "name": "(TESTE) Vinho 21",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail22": {
+    "name": "(TESTE) Vinho 22",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail23": {
+    "name": "(TESTE) Vinho 23",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail24": {
+    "name": "(TESTE) Vinho 24",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail25": {
+    "name": "(TESTE) Vinho 25",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail26": {
+    "name": "(TESTE) Vinho 26",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail27": {
+    "name": "(TESTE) Vinho 27",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail28": {
+    "name": "(TESTE) Vinho 28",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail29": {
+    "name": "(TESTE) Vinho 29",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail30": {
+    "name": "(TESTE) Vinho 30",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail31": {
+    "name": "(TESTE) Vinho 31",
+    "description": "(TESTE) O mais novo coquetel de Mond."
+  },
+  "TESTCocktail32": {
+    "name": "(TESTE) Vinho 32",
     "description": "(TESTE) O mais novo coquetel de Mond."
   },
   "GodwinsLetter": {
@@ -2527,7 +2663,7 @@
     "name": "Diário Rasgado",
     "description": "Um diário de uma certa pessoa. O conteúdo carregado parece ter a ver com este lugar..."
   },
-  "KnightsOfFavoniusHandbookThEdition": {
+  "KnightsOfFavoniusHandbook5thEdition": {
     "name": "Manual dos Cavaleiros de Favonius - 5ª Edição",
     "description": "Regras de conduta para os Cavaleiros de Favonius, editadas pessoalmente pela Jean. Um cavaleiro qualificado deve seguir essas diretrizes rigorosamente."
   },
@@ -4303,7 +4439,7 @@
     "name": "Princesa Mina da Nação Caída (VI)",
     "description": "A verdade do mundo é revelada - e que piada terrível! Mesmo quando separados, os dois não podem escapar das correntes do destino.\\nEste pode ser o volume final de \"Princesa Mina da Nação Caída\", mas nossa história ainda não acabou!"
   },
-  "FlowersForPrincessFischl": {
+  "FlowersForPrincessFischl0": {
     "name": "Flores para a Princesa Fischl (0)",
     "description": "O volume preliminar da série \"Flores para a Princesa Fischl\".\\nEsta obra veio originalmente em uma caixa de madeira violeta e preta como um presente de edição limitada, mas muitos fãs fanáticos da série que queriam colecionar toda a saga ficaram enfurecidos com a grande quantidade de conteúdo em comparação com o pequeno número de cópias impressas.\\nDevido a isso, a Editora Yae nomearia este livro como \"Volume 0\" e o venderia separadamente. Eventualmente, o trabalho original, a edição de colecionador e o Volume 0 passariam a ser considerados como padrão pelos fãs."
   },
@@ -4483,9 +4619,13 @@
     "name": "Mapa do Tesouro dos Ladrões de Tesouro",
     "description": "Um Mapa do Tesouro escondido rasgado em dois pelos Ladrões de Tesouro que agora está intacto novamente.\\nSerá que o que está marcado nele levará a descoberta de algum tesouro?"
   },
-  "StorehouseSecurityKeyNo": {
+  "StorehouseSecurityKeyNo1": {
     "name": "Chave de Segurança do Depósito — I",
     "description": "A chave de um armazém. Ela estava escondida em um lugar muito exposto, mas ainda assim não foi encontrada pelos Ladrões de Tesouro. Seu profissionalismo deixa muito a desejar."
+  },
+  "StorehouseSecurityKeyNo2": {
+    "name": "Chave de Segurança do Depósito — II",
+    "description": "A outra chave do armazém, e estava escondida em um lugar extremamente exposto, mas ainda assim não foi encontrada. Os Ladrões de Tesouro precisam treinar muito suas habilidades."
   },
   "ASetOfCannonballs": {
     "name": "Conjunto de Bolas de Canhão",
@@ -4951,9 +5091,21 @@
     "name": "Vamos, Dodoco!",
     "description": "Mensagem do editor: \"Vamos, Dodoco!\" é o trabalho conjunto de uma garota e uma menininha. Cada capítulo contém sua gentileza e desejos, tornando o livro um verdadeiro presente para os leitores. Espero que este livro, apesar de seu pequeno tamanho, possa lhe trazer alegria após um longo dia de trabalho."
   },
-  "AkosTreasureLocation": {
+  "AkosTreasureLocation1": {
     "name": "Tesouro de Ako - I",
     "description": "Antes de partir, a gangue de Ako Domeki escondeu um tesouro e concordou em desenterrá-lo quando se encontrassem novamente no arquipélago. Eles então dividiram as pistas para a localização do tesouro em quatro, esta é a primeira parte dessas pistas."
+  },
+  "AkosTreasureLocation2": {
+    "name": "Tesouro de Ako - II",
+    "description": "Antes de partir, a gangue de Ako Domeki escondeu um tesouro e concordou em desenterrá-lo quando se encontrassem novamente no arquipélago. Eles então dividiram as pistas para a localização do tesouro em quatro, esta é a segunda parte dessas pistas."
+  },
+  "AkosTreasureLocation3": {
+    "name": "Tesouro de Ako - III",
+    "description": "Antes de partir, a gangue de Ako Domeki escondeu um tesouro e concordou em desenterrá-lo quando se encontrassem novamente no arquipélago. Eles então dividiram as pistas para a localização do tesouro em quatro, esta é a terceira parte dessas pistas."
+  },
+  "AkosTreasureLocation4": {
+    "name": "Tesouro de Ako - IV",
+    "description": "Antes de partir, a gangue de Ako Domeki escondeu um tesouro e concordou em desenterrá-lo quando se encontrassem novamente no arquipélago. Eles então dividiram as pistas para a localização do tesouro em quatro, esta é a quarta parte dessas pistas."
   },
   "YajnaGrass": {
     "name": "Erva Yajna",
@@ -5195,9 +5347,85 @@
     "name": "Uma Nota",
     "description": "Uma nota amassada com escrita torta."
   },
-  "RedemptionVoucher": {
+  "RedemptionVoucher1": {
     "name": "Cupom de Troca 1",
     "description": "Cupom usado para resgatar Coruja do Lago dos Espelhos: Rodopio"
+  },
+  "RedemptionVoucher2": {
+    "name": "Cupom de Troca 2",
+    "description": "Cupom usado para resgatar Coruja do Lago dos Espelhos: Baile"
+  },
+  "RedemptionVoucher3": {
+    "name": "Cupom de Troca 3",
+    "description": "Cupom usado para resgatar Coruja do Lago dos Espelhos: Aéreo"
+  },
+  "RedemptionVoucher4": {
+    "name": "Cupom de Troca 4",
+    "description": "Cupom usado para resgatar Coruja Trovejante: Rodopio"
+  },
+  "RedemptionVoucher5": {
+    "name": "Cupom de Troca 5",
+    "description": "Cupom usado para resgatar Coruja Trovejante: Baile"
+  },
+  "RedemptionVoucher6": {
+    "name": "Cupom de Troca 6",
+    "description": "Cupom usado para resgatar Coruja Trovejante: Aéreo"
+  },
+  "RedemptionVoucher7": {
+    "name": "Cupom de Troca 7",
+    "description": "Cupom usado para resgatar Coruja Flamejante: Rodopio"
+  },
+  "RedemptionVoucher8": {
+    "name": "Cupom de Troca 8",
+    "description": "Cupom usado para resgatar Coruja Flamejante: Baile"
+  },
+  "RedemptionVoucher9": {
+    "name": "Cupom de Troca 9",
+    "description": "Cupom usado para resgatar Coruja Flamejante: Aéreo"
+  },
+  "RedemptionVoucher10": {
+    "name": "Cupom de Troca 10",
+    "description": "Cupom usado para resgatar Coruja Viajante"
+  },
+  "RedemptionVoucher11": {
+    "name": "Cupom de Troca 11",
+    "description": "Cupom usado para resgatar Trípode do Lago dos Espelhos: Salto"
+  },
+  "RedemptionVoucher12": {
+    "name": "Cupom de Troca 12",
+    "description": "Cupom usado para resgatar Trípode do Lago dos Espelhos: Dança"
+  },
+  "RedemptionVoucher13": {
+    "name": "Cupom de Troca 13",
+    "description": "Cupom usado para resgatar Trípode do Lago dos Espelhos: Assentado"
+  },
+  "RedemptionVoucher14": {
+    "name": "Cupom de Troca 14",
+    "description": "Cupom usado para resgatar Trípode Trovejante: Salto"
+  },
+  "RedemptionVoucher15": {
+    "name": "Cupom de Troca 15",
+    "description": "Cupom usado para resgatar Trípode Trovejante: Dança"
+  },
+  "RedemptionVoucher16": {
+    "name": "Cupom de Troca 16",
+    "description": "Cupom usado para resgatar Trípode Trovejante: Assentado"
+  },
+  "RedemptionVoucher17": {
+    "name": "Cupom de Troca 17",
+    "description": "Cupom usado para resgatar Trípode Flamejante: Salto"
+  },
+  "RedemptionVoucher18": {
+    "name": "Cupom de Troca 18",
+    "description": "Cupom usado para resgatar Trípode Flamejante: Dança"
+  },
+  "RedemptionVoucher19": {
+    "name": "Cupom de Troca 19",
+    "description": "Cupom usado para resgatar Trípode Flamejante: Assentado"
+  },
+  "RedemptionVoucher20": {
+    "name": "Cupom de Troca 20",
+    "description": "Cupom usado para resgatar Trípode Viajante"
   },
   "PartBreeze": {
     "name": "Componente: Brisa",
@@ -5363,8 +5591,16 @@
     "name": "Lista de Códigos Secretos dos Informantes",
     "description": "Lista de códigos secretos dos informantes fornecida por Alhaitham. Dizem que se você quiser trocar por mercadorias especiais com Alhaitham, precisa passar primeiro deste \"teste\".\\nPortanto, é melhor verificar a lista antes de ir procurar um informante de Dori."
   },
-  "MisplacedConch": {
+  "MisplacedConch1": {
     "name": "Concha Deslocada 1",
+    "description": "Uma Concha de Miragem que deveria estar noutro lugar. Alguém a tirou daqui e ela está reproduzindo uma imagem que aconteceu em outro local. Coloque-a de volta na sua posição original para uma nova cena..."
+  },
+  "MisplacedConch2": {
+    "name": "Concha Deslocada 2",
+    "description": "Uma Concha de Miragem que deveria estar noutro lugar. Alguém a tirou daqui e ela está reproduzindo uma imagem que aconteceu em outro local. Coloque-a de volta na sua posição original para uma nova cena..."
+  },
+  "MisplacedConch3": {
+    "name": "Concha Deslocada 3",
     "description": "Uma Concha de Miragem que deveria estar noutro lugar. Alguém a tirou daqui e ela está reproduzindo uma imagem que aconteceu em outro local. Coloque-a de volta na sua posição original para uma nova cena..."
   },
   "PrescriptionMedicationFromBimarstanForGurgen": {
@@ -6631,7 +6867,7 @@
     "name": "Peixe Grelhado de Sobrevivência",
     "description": "A gastronomia da Keqing. Este prato não foi grelhado em fogo, mas foi frito por dentro através da delicada aplicação do Electro. Uma mordida suave revela peixes perfumados sob a pele levemente crocante, bem como o seu sabor perfeitamente equilibrado. Então, é assim que ela sobrevive na natureza? Você realmente não pode avaliar um livro pela capa."
   },
-  "NutritiousMealV": {
+  "NutritiousMealV593": {
     "name": "Refeição Nutritiva (V.593)",
     "description": "As comidas especiais da Sucrose. Ao primeiro olhar, parecem ser algo de alquimia, mas a Sucrose sempre afirma que são refeições nutritivas após vários experimentos. A cor verde vem do suco natural de legumes, que é bem saudável."
   },
@@ -7259,7 +7495,7 @@
     "name": "Peixe do Festival de Verão",
     "description": "A especialidade de Yoimiya. Ver os fogos de artifício, suas mãos cheias de lanches que Yoimiya deu a você, sua risada despreocupada e infantil ao seu ouvido enquanto a pirotecnia explode no céu... Em meio a essa sinfonia única de sons, o peixinho dourado em sua mão parece que vai começar a nadar a qualquer momento..."
   },
-  "DizzinessBeGoneNoJutsuVersion": {
+  "DizzinessBeGoneNoJutsuVersion20": {
     "name": "Técnica Arrematadora da Tontura 2.0",
     "description": "Especialidade de Sayu. O Onigiri foi amassado por Sayu numa forma fofa, mas lembre-se, é um Mujina, não um Tanuki. E agora que você mencionou, isso deve ser como Sayu consegue dormir por um dia inteiro depois de comer, não é?"
   },
@@ -8086,6 +8322,10 @@
   "HeatQuellingSoup": {
     "name": "Sopa Extintora",
     "description": "Especialidade de Baizhu. \"Isso, na verdade, não é remédio, apenas algo que pode aliviar a boca seca.\" Conforme a voz preocupada de Baizhu ecoa em seus ouvidos, uma tigela com uma lustrosa sopa de fruta aparece em sua vista. \"Esse prato normalmente não usava açúcar, mas eu estava preocupada de que você não estivesse acostumad{M#o}{F#a} com o amargor, então adicionei um pouco de doçura\", disse Changsheng."
+  },
+  "EnergizingBento": {
+    "name": "Refeição Energizante",
+    "description": "Especialidade de Kirara. Um prato adequado para humanos que Kirara se esforçou muito para preparar. Observando as preferências das mulheres humanas, ela criou essa combinação de acompanhamentos bem equilibrados e adoráveis bolinhos de arroz em forma de gatinho. E tudo em um pacote cuidadosamente embrulhado... Você poderia ganhar um desses todos os dias e, mesmo assim, nunca se cansaria!"
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -9635,7 +9875,7 @@
     "name": "Pacote de PB",
     "description": "\"Quando você viaja por terras impregnadas de trevas, precisa de tais armas de luz ardente. Elas ficam dentro deste recipiente, aguardando a hora em que precisam atravessar as sombras invasoras\"."
   },
-  "BPPickOfTestBundle": {
+  "BPPick1Of3TestBundle": {
     "name": "PB Escolha 1 dos 3 Pacotes de Teste",
     "description": ""
   },
@@ -10635,6 +10875,10 @@
     "name": "Semente de Alimento",
     "description": "Uma semente que a Forma de Vida Elemental: Cogumelo Flutuante Anemo deu para vocês. Se plantada, crescerá em um alimento que os cogumelos adoram. Mas será que assim haverá Cogumelos no futuro que se lembrem como cultivar o campo?"
   },
+  "KingOfInvokations": {
+    "name": "Rei do Chamado Sagrado dos Sete",
+    "description": "Uma Light Novel baseada no jogo de cartas mais popular de Teyvat — O Chamado Sagrado dos Sete. Os personagens são únicos e a história é emocionante e cheia de reviravoltas. Se tornou uma das novidades mais populares do mercado."
+  },
   "NamelessAdventurersNotes": {
     "name": "Anotações Anônimas de um Aventureiro",
     "description": "Algumas breves notas perdidas no deserto que parecem ter sido deixadas por algum Aventureiro."
@@ -10670,6 +10914,10 @@
   "RecordsOfUnknownAttributionII": {
     "name": "Registros de Autoria Desconhecida II",
     "description": "Registros de Autoria Desconhecida II"
+  },
+  "EmberglowLeaf": {
+    "name": "Folha da Luz",
+    "description": "Uma folha que você conseguiu com Nahida. Ela pode ser usada para contatar os aranaras. Se você usar ela como um apito, um aranara responderá ao seu chamado. O aranara só virá porque confia em Nahida. Isso quer dizer que soprar em qualquer folha que encontrar não funcionará."
   },
   "AkademiyaInvestigationTeamsLogsI": {
     "name": "Diário de Investigação da Academia I",
@@ -10999,9 +11247,397 @@
     "name": "Asas da Festa das Estrelas",
     "description": "Um modelo de Planador. Um presente por você ter testemunhado as celebrações das terras longínquas deste mundo."
   },
-  "RadiantSpincrystal": {
+  "RadiantSpincrystal1": {
     "name": "Cristal Rodopiante Radiante 1",
     "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Dawn Winery Theme\"."
+  },
+  "RadiantSpincrystal2": {
+    "name": "Cristal Rodopiante Radiante 2",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Sweet Smile\"."
+  },
+  "RadiantSpincrystal3": {
+    "name": "Cristal Rodopiante Radiante 3",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Lone Sojourner\"."
+  },
+  "RadiantSpincrystal4": {
+    "name": "Cristal Rodopiante Radiante 4",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Day in Mondstadt\"."
+  },
+  "RadiantSpincrystal5": {
+    "name": "Cristal Rodopiante Radiante 5",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"The Edge of the Prairie\"."
+  },
+  "RadiantSpincrystal6": {
+    "name": "Cristal Rodopiante Radiante 6",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Tale of Two Dragons\"."
+  },
+  "RadiantSpincrystal7": {
+    "name": "Cristal Rodopiante Radiante 7",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Happy Journey\"."
+  },
+  "RadiantSpincrystal8": {
+    "name": "Cristal Rodopiante Radiante 8",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Legend of the Wind\"."
+  },
+  "RadiantSpincrystal9": {
+    "name": "Cristal Rodopiante Radiante 9",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Bustling Afternoon in Mondstadt\"."
+  },
+  "RadiantSpincrystal10": {
+    "name": "Cristal Rodopiante Radiante 10",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Dusk in Mondstadt\"."
+  },
+  "RadiantSpincrystal11": {
+    "name": "Cristal Rodopiante Radiante 11",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Mondstadt Starlit\"."
+  },
+  "RadiantSpincrystal12": {
+    "name": "Cristal Rodopiante Radiante 12",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Moonlight in Mondstadt\"."
+  },
+  "RadiantSpincrystal13": {
+    "name": "Cristal Rodopiante Radiante 13",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Another Day in Mondstadt\"."
+  },
+  "RadiantSpincrystal14": {
+    "name": "Cristal Rodopiante Radiante 14",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Windborne Hymn\"."
+  },
+  "RadiantSpincrystal15": {
+    "name": "Cristal Rodopiante Radiante 15",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Knights of Favonius\"."
+  },
+  "RadiantSpincrystal16": {
+    "name": "Cristal Rodopiante Radiante 16",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Angel's Share\"."
+  },
+  "RadiantSpincrystal17": {
+    "name": "Cristal Rodopiante Radiante 17",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Happy Day\"."
+  },
+  "RadiantSpincrystal18": {
+    "name": "Cristal Rodopiante Radiante 18",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Tender Strength\"."
+  },
+  "RadiantSpincrystal19": {
+    "name": "Cristal Rodopiante Radiante 19",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Before Dawn, at the Winery\"."
+  },
+  "RadiantSpincrystal20": {
+    "name": "Cristal Rodopiante Radiante 20",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Whispering Plain\"."
+  },
+  "RadiantSpincrystal21": {
+    "name": "Cristal Rodopiante Radiante 21",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A New Day With Hope\"."
+  },
+  "RadiantSpincrystal22": {
+    "name": "Cristal Rodopiante Radiante 22",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Eternal Anamnesis\"."
+  },
+  "RadiantSpincrystal23": {
+    "name": "Cristal Rodopiante Radiante 23",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Journey of Hope\"."
+  },
+  "RadiantSpincrystal24": {
+    "name": "Cristal Rodopiante Radiante 24",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Sun Rises in Liyue\"."
+  },
+  "RadiantSpincrystal25": {
+    "name": "Cristal Rodopiante Radiante 25",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Good Night, Liyue\"."
+  },
+  "RadiantSpincrystal26": {
+    "name": "Cristal Rodopiante Radiante 26",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Call It a Day in Liyue\"."
+  },
+  "RadiantSpincrystal27": {
+    "name": "Cristal Rodopiante Radiante 27",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Clear Sky Over Liyue\"."
+  },
+  "RadiantSpincrystal28": {
+    "name": "Cristal Rodopiante Radiante 28",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Cozy Leisure Time\"."
+  },
+  "RadiantSpincrystal29": {
+    "name": "Cristal Rodopiante Radiante 29",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Winding River\"."
+  },
+  "RadiantSpincrystal30": {
+    "name": "Cristal Rodopiante Radiante 30",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Mild Waves\"."
+  },
+  "RadiantSpincrystal31": {
+    "name": "Cristal Rodopiante Radiante 31",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Rhythm Amidst the Reeds\"."
+  },
+  "RadiantSpincrystal32": {
+    "name": "Cristal Rodopiante Radiante 32",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Flows of Jade-Like Water\"."
+  },
+  "RadiantSpincrystal33": {
+    "name": "Cristal Rodopiante Radiante 33",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Flow of Mildness\"."
+  },
+  "RadiantSpincrystal34": {
+    "name": "Cristal Rodopiante Radiante 34",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Vague Whispers\"."
+  },
+  "RadiantSpincrystal35": {
+    "name": "Cristal Rodopiante Radiante 35",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Legends Swept Away\"."
+  },
+  "RadiantSpincrystal36": {
+    "name": "Cristal Rodopiante Radiante 36",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Plain of Nostalgia\"."
+  },
+  "RadiantSpincrystal37": {
+    "name": "Cristal Rodopiante Radiante 37",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Rhythms From the Conch\"."
+  },
+  "RadiantSpincrystal38": {
+    "name": "Cristal Rodopiante Radiante 38",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Peaceful Hike\"."
+  },
+  "RadiantSpincrystal39": {
+    "name": "Cristal Rodopiante Radiante 39",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"The Fading Stories\"."
+  },
+  "RadiantSpincrystal40": {
+    "name": "Cristal Rodopiante Radiante 40",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Above the Sea of Clouds\"."
+  },
+  "RadiantSpincrystal41": {
+    "name": "Cristal Rodopiante Radiante 41",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Rainbow at Summit\"."
+  },
+  "RadiantSpincrystal42": {
+    "name": "Cristal Rodopiante Radiante 42",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Red Leaf on the Chessboard\"."
+  },
+  "RadiantSpincrystal43": {
+    "name": "Cristal Rodopiante Radiante 43",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Slumbering Lore\"."
+  },
+  "RadiantSpincrystal44": {
+    "name": "Cristal Rodopiante Radiante 44",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Lost Expectation\"."
+  },
+  "RadiantSpincrystal45": {
+    "name": "Cristal Rodopiante Radiante 45",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"The Realm Within\"."
+  },
+  "RadiantSpincrystal46": {
+    "name": "Cristal Rodopiante Radiante 46",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Sojourner's Sweet Dream\"."
+  },
+  "RadiantSpincrystal47": {
+    "name": "Cristal Rodopiante Radiante 47",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Miko's Night\"."
+  },
+  "RadiantSpincrystal48": {
+    "name": "Cristal Rodopiante Radiante 48",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Streets of Elegance\"."
+  },
+  "RadiantSpincrystal49": {
+    "name": "Cristal Rodopiante Radiante 49",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"The Land of Her Serenity\"."
+  },
+  "RadiantSpincrystal50": {
+    "name": "Cristal Rodopiante Radiante 50",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"The Mysterious Islands\"."
+  },
+  "RadiantSpincrystal51": {
+    "name": "Cristal Rodopiante Radiante 51",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Everlasting Devotion\"."
+  },
+  "RadiantSpincrystal52": {
+    "name": "Cristal Rodopiante Radiante 52",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Kitsune's Mask\"."
+  },
+  "RadiantSpincrystal53": {
+    "name": "Cristal Rodopiante Radiante 53",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Hanachirusato\"."
+  },
+  "RadiantSpincrystal54": {
+    "name": "Cristal Rodopiante Radiante 54",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Time to Say Farewell\"."
+  },
+  "RadiantSpincrystal55": {
+    "name": "Cristal Rodopiante Radiante 55",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Flickering Sakura\"."
+  },
+  "RadiantSpincrystal56": {
+    "name": "Cristal Rodopiante Radiante 56",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Murmuring Creek\"."
+  },
+  "RadiantSpincrystal57": {
+    "name": "Cristal Rodopiante Radiante 57",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Scarred Island\"."
+  },
+  "RadiantSpincrystal58": {
+    "name": "Cristal Rodopiante Radiante 58",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Silent Testimony\"."
+  },
+  "RadiantSpincrystal59": {
+    "name": "Cristal Rodopiante Radiante 59",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Island of Hanabi\"."
+  },
+  "RadiantSpincrystal60": {
+    "name": "Cristal Rodopiante Radiante 60",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Preparation of Matsuri\"."
+  },
+  "RadiantSpincrystal61": {
+    "name": "Cristal Rodopiante Radiante 61",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Illuminated Coral Palace\"."
+  },
+  "RadiantSpincrystal62": {
+    "name": "Cristal Rodopiante Radiante 62",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Tranquil Town\"."
+  },
+  "RadiantSpincrystal63": {
+    "name": "Cristal Rodopiante Radiante 63",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"In a Harmonious Atmosphere\"."
+  },
+  "RadiantSpincrystal64": {
+    "name": "Cristal Rodopiante Radiante 64",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Island of Crystal and Pearl\"."
+  },
+  "RadiantSpincrystal65": {
+    "name": "Cristal Rodopiante Radiante 65",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Misty Truth\"."
+  },
+  "RadiantSpincrystal66": {
+    "name": "Cristal Rodopiante Radiante 66",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Sorrows of Strays\"."
+  },
+  "RadiantSpincrystal67": {
+    "name": "Cristal Rodopiante Radiante 67",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Ruu's Melody\"."
+  },
+  "RadiantSpincrystal68": {
+    "name": "Cristal Rodopiante Radiante 68",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Roaming in Silence\"."
+  },
+  "RadiantSpincrystal69": {
+    "name": "Cristal Rodopiante Radiante 69",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Echoes of Solitude\"."
+  },
+  "RadiantSpincrystal70": {
+    "name": "Cristal Rodopiante Radiante 70",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Dirge of the Soundless\"."
+  },
+  "RadiantSpincrystal71": {
+    "name": "Cristal Rodopiante Radiante 71",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Nothing but Ivy\"."
+  },
+  "RadiantSpincrystal72": {
+    "name": "Cristal Rodopiante Radiante 72",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Forgotten Epic\"."
+  },
+  "RadiantSpincrystal73": {
+    "name": "Cristal Rodopiante Radiante 73",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Beyond Klesha\"."
+  },
+  "RadiantSpincrystal74": {
+    "name": "Cristal Rodopiante Radiante 74",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Melody of Hidden Seeds\"."
+  },
+  "RadiantSpincrystal75": {
+    "name": "Cristal Rodopiante Radiante 75",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Varuna's Mercy\"."
+  },
+  "RadiantSpincrystal76": {
+    "name": "Cristal Rodopiante Radiante 76",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Vestige of Dahri\"."
+  },
+  "RadiantSpincrystal77": {
+    "name": "Cristal Rodopiante Radiante 77",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Chatter Between Roots\"."
+  },
+  "RadiantSpincrystal78": {
+    "name": "Cristal Rodopiante Radiante 78",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Whirling of Leaves and Petals\"."
+  },
+  "RadiantSpincrystal79": {
+    "name": "Cristal Rodopiante Radiante 79",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Hustle and Bustle of Ormos\"."
+  },
+  "RadiantSpincrystal80": {
+    "name": "Cristal Rodopiante Radiante 80",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Halcyon Times\"."
+  },
+  "RadiantSpincrystal81": {
+    "name": "Cristal Rodopiante Radiante 81",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"A Puff of Cool Breeze\"."
+  },
+  "RadiantSpincrystal82": {
+    "name": "Cristal Rodopiante Radiante 82",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"On the Barren Sands\"."
+  },
+  "RadiantSpincrystal83": {
+    "name": "Cristal Rodopiante Radiante 83",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Arid Canyon\"."
+  },
+  "RadiantSpincrystal84": {
+    "name": "Cristal Rodopiante Radiante 84",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Settlement for Exiles\"."
+  },
+  "RadiantSpincrystal85": {
+    "name": "Cristal Rodopiante Radiante 85",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Ruins of Scorching Might\"."
+  },
+  "RadiantSpincrystal86": {
+    "name": "Cristal Rodopiante Radiante 86",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou de comerciantes que coletam mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Eye of Deshret\"."
+  },
+  "RadiantSpincrystal87": {
+    "name": "Cristal Rodopiante Radiante 87",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados na terra ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é \"Emerald in the Desert\"."
+  },
+  "RadiantSpincrystal88": {
+    "name": "Cristal Rodopiante Radiante 88",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal89": {
+    "name": "Cristal Rodopiante Radiante 89",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal90": {
+    "name": "Cristal Rodopiante Radiante 90",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal91": {
+    "name": "Cristal Rodopiante Radiante 91",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal92": {
+    "name": "Cristal Rodopiante Radiante 92",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal93": {
+    "name": "Cristal Rodopiante Radiante 93",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal94": {
+    "name": "Cristal Rodopiante Radiante 94",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal95": {
+    "name": "Cristal Rodopiante Radiante 95",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal96": {
+    "name": "Cristal Rodopiante Radiante 96",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal97": {
+    "name": "Cristal Rodopiante Radiante 97",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
+  },
+  "RadiantSpincrystal98": {
+    "name": "Cristal Rodopiante Radiante 98",
+    "description": "Esse cristal maravilhoso contém uma certa melodia, como um tecido belo criado de seda delicada. Esses itens podem ser encontrados por todo Teyvat ou com comerciantes de mercadorias raras. A melodia deste cristal pode ser revivida em seu Bule de Relachá usando \"Eufonia Infinita: Música no Ar\" ou \"Eufonia Infinita: Sons Rodopiantes\". A melodia contida neste Cristal Rodopiante Radiante é uma misteriosa canção de Sumeru."
   },
   "FragrantSteak": {
     "name": "Bife com Cheiro Aromático",
@@ -11138,6 +11774,10 @@
   "UnfadingSilkyGrace": {
     "name": "Graça Sedosa Imortal",
     "description": "Item de refinamento exclusivo para a arma \"Flor de Aço\".\\nA decoração é a melhor forma de dar um toque especial ao valor e funcionalidade de qualquer coisa. Mesmo para uma arma, em um momento como este, decorá-la com flores que nunca murcham pode dar um certo charme."
+  },
+  "CongealedPupaWax": {
+    "name": "Cera de Pupa Solidificada",
+    "description": "Material de refinamento especializado para o Bico de Íbis.\\nNo Grande Mar de Areias Escarlates, o jovem que veio a se tornar o Rei do Chamado Sagrado dos Sete passou alguns dias formulando cera de corda da Gordura de Pupa da Areia, encarregado de o fazer pelos descendentes do Rei Íbis. Entretanto, o arco lendário desapareceu com o Rei Íbis e apenas a receita para a fabricação da cera de pupa foi passada de geração a geração. Talvez ainda esteja aguardando pelo dia em que possa ser usada novamente."
   },
   "FalconsDance": {
     "name": "Dança do Falcão",
@@ -11851,7 +12491,7 @@
     "name": "Cyno — Serenidade",
     "description": "Estilo de Cartão de Visita.\\nQuando Cyno está serenamente silencioso, ele deve estar pensando em algum julgamento severo... Ou talvez esteja apenas pensando em algo engraçado."
   },
-  "CandaceGreyHeron": {
+  "CandaceGrayHeron": {
     "name": "Candace — Garça Cinza",
     "description": "Estilo de Cartão de Visita.\\nOs ventos flamejantes do passado tremulam as penas da garça, mas o pássaro tem apenas olhos para a estrela da alvorada no seu primeiro raio matinal."
   },
@@ -11959,6 +12599,14 @@
     "name": "Passe de Batalha: Coroa Gloriosa",
     "description": "Estilo de Cartão de Visita.\\n\"O conhecimento serve como a coroa do tempo, e as reminiscências estão atreladas ao tempo que passamos juntos.\""
   },
+  "KiraraNekoBox": {
+    "name": "Kirara - Caixa para Gatos",
+    "description": "Estilo de Cartão de Visita.\\n\"Para Kirara, os sorrisos nos rostos dos clientes são as melhores recompensas.\""
+  },
+  "TravelNotesSecrets": {
+    "name": "Passe de Batalha: Segredo do Invocador",
+    "description": "Estilo de Cartão de Visita.\\nNunca se esqueça dos momentos em que você passou com jogos e bons amigos. Nunca se esqueça da sensação que é não ter preocupações quanto ao futuro."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus",
     "description": "Pode usar em Mondstadt para buscar 'Anemoculus Perdidos' nos arredores.\\nEssa pedra tem características similares às Estátuas Anemo das Estátuas dos Sete e gera ressonância com Anemoculus.\\nAs Pedras de Ressonância de Oculus são imitações brutas das Estátuas dos Sete construídas pelos antigos. Mas é exatamente devido a essa rudeza que desejam a força de oculus elemental e oferecendo uma boa oportunidade a devotos e aventureiros para encontrar oculus."
@@ -11987,7 +12635,7 @@
     "name": "Resina Condensada",
     "description": "Só pode ter no máximo 5 ao mesmo tempo.\\nResina de árvore condensada que pode ser usada em vez da resina original para revitalizar árvores petrificadas e flores da Linha Ley para receber maiores recompensas.\\nCristal cheio de imensa energia.\\nAs antigas árvores e flores brancas prateadas estão conectadas às Linhas Ley que se tornaram bloqueadas com o tempo. A energia contida na resina das árvores pode purificar a substância obstrutiva."
   },
-  "NREMenu": {
+  "NREMenu30": {
     "name": "Bolsa Nutritiva (V. 30)",
     "description": "Esta bolsa prática pode transformar a maioria dos alimentos em matéria absorvível nutritiva imediatamente. Apesar da sua capacidade de aumentar enormemente a eficiência da ingestão nutricional, a maioria dos cavaleiros não estão muito interessados em colocar seus alimentos nela..."
   },
@@ -12255,7 +12903,7 @@
     "name": "Instruções: Resina Condensada",
     "description": "Instruções detalhadas de como preparar Resina Condensada. Ao usar a resina nesta forma condensada para ativar certas Flores de Linha Ley e Árvores Petrificadas aumentam a sua eficiência. Só pode ter no máximo 5 Resinas Concentradas ao mesmo tempo."
   },
-  "DiagramNREMenu": {
+  "DiagramNREMenu30": {
     "name": "Diagrama: Bolsa Nutritiva (V. 30)",
     "description": "Um diagrama detalhado passo a passo de como fazer uma Bolsa Nutritiva (V.30). Com ele, você poderá fazer um item que permite comer comida muito mais rapidamente."
   },
@@ -12455,6 +13103,18 @@
     "name": "Terrorgumelo Emplumado",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
+  "FatuiCryoCicinMage": {
+    "name": "Fatui - Feiticeira Cicin Cryo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AbyssLectorFathomlessFlames": {
+    "name": "Bardo do Abismo - Chamas Abismais",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElectroHypostasis": {
+    "name": "Hypostasis Electro",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
   "UndividedHeart": {
     "name": "Com Todo Coração",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
@@ -12489,6 +13149,10 @@
   },
   "GrandExpectation": {
     "name": "Grande Expectativa",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "BunnyTriggered": {
+    "name": "Coelho Ativado",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "NaganoharaMeteorSwarm": {
@@ -12567,7 +13231,7 @@
     "name": "Desejo de Lutar",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
-  "TamanooyasCasket": {
+  "TamakushiCasket": {
     "name": "Caixão Haworthia",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
@@ -12579,8 +13243,24 @@
     "name": "Tormenta Elétrica",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
+  "EmbraceOfWinds": {
+    "name": "Abrace os Ventos",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ConquerorOfEvilGuardianYaksha": {
+    "name": "Conquistador do Mal - Guardião Yaksha",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "DominanceOfEarth": {
+    "name": "Domínio da Terra",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
   "KeenSight": {
     "name": "Visão Aguçada",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AbsorbingPrism": {
+    "name": "Prisma Absorvente",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "SinOfPride": {
@@ -12593,6 +13273,38 @@
   },
   "AratakiIchiban": {
     "name": "Arataki Ichiban",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "MysticalAbandon": {
+    "name": "Abandono Místico",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AbyssalMayhemHydrospout": {
+    "name": "Caos Abissal - Hydroexplosão",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SanguineRouge": {
+    "name": "Sangue Fervendo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "WishesUnnumbered": {
+    "name": "Desejos Incontados",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheShrinesSacredShade": {
+    "name": "Sombra Sagrada",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheSeedOfStoredKnowledge": {
+    "name": "Semente do Conhecimento",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "CicinsColdGlare": {
+    "name": "Olhar Gelado Cicin",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "EmbersRekindled": {
+    "name": "Âmbar Reaceso",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "MagicGuide": {
@@ -12743,8 +13455,64 @@
     "name": "Capacete do Comandante",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
+  "AmosBow": {
+    "name": "Arco de Amos",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "AThousandFloatingDreams": {
+    "name": "Sonhos Flutuantes das Mil Noites",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ElegyForTheEnd": {
+    "name": "Elegia do Suspiro Final",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SkywardPride": {
+    "name": "Orgulho Celestial",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheBell": {
+    "name": "O Sino",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "VortexVanquisher": {
+    "name": "Perfuradora Prismática",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "EngulfingLightning": {
+    "name": "Luz do Cortador de Grama",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SkywardBlade": {
+    "name": "Espada Celestial",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
   "FavoniusSword": {
     "name": "Espada de Favonius",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "EmblemOfSeveredFate": {
+    "name": "Selo da Insulação",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TenacityOfTheMillelith": {
+    "name": "Millelith Firmes",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ThunderingPoise": {
+    "name": "Postura Eletrizante",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "VermillionHereafter": {
+    "name": "Além-Vida Cinábrio",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "CapriciousVisage": {
+    "name": "Máscara das Mutações",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ShimenawasReminiscence": {
+    "name": "Reminiscência Nostálgica",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "LiyueHarborWharf": {
@@ -12825,6 +13593,46 @@
   },
   "GrandNarukamiShrine": {
     "name": "Grande Santuário Narukami",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Tenshukaku": {
+    "name": "Tenshukaku",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SangonomiyaShrine": {
+    "name": "Sangonomiya",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "SumeruCity": {
+    "name": "Cidade de Sumeru",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Vanarana": {
+    "name": "Vanarana",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ChinjuForest": {
+    "name": "Floresta Chinju",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Hanachirusato": {
+    "name": "Hanachirusato",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "KidKujirai": {
+    "name": "Garoto Kujirai",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Xudong": {
+    "name": "Xudong",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Dunyarzad": {
+    "name": "Dunyarzad",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "Rana": {
+    "name": "Rana",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
   "ElementalResonanceWovenIce": {
@@ -12943,6 +13751,42 @@
     "name": "Chamado do Abismo",
     "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
   },
+  "WindAndFreedom": {
+    "name": "Vento e Liberdade",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "StoneAndContracts": {
+    "name": "Rocha e Contrato",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "ThunderAndEternity": {
+    "name": "Trovão e Eternidade",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "NatureAndWisdom": {
+    "name": "Planta e Sabedoria",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FatuiConspiracy": {
+    "name": "Conspiração Fatui",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "PlungingStrike": {
+    "name": "Ataque Imersivo",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "HeavyStrike": {
+    "name": "Ataque Carregado",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "TheLegendOfVennessa": {
+    "name": "A Lenda de Vennessa",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
+  "FriendshipEternal": {
+    "name": "Amizade Eterna",
+    "description": "Uma carta do jogo de mesa \"Chamado Sagrado dos Sete\" com uma textura resistente. Não se sabe qual foi a técnica de impressão utilizada para fazer a ilustração na carta, mas pode-se ver que é muito requintada."
+  },
   "Origin": {
     "name": "Primordial",
     "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
@@ -12973,6 +13817,10 @@
   },
   "LazuriteSwirl": {
     "name": "Vórtice Lazuli",
+    "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
+  },
+  "TreasuresOfTheDeck": {
+    "name": "Tesouros das Cartas",
     "description": "Um Verso de Carta que pode ser obtido e trocado em o Chamado Sagrado dos Sete. Dizem que Versos de Carta feitos de maneiras diferente possuem qualidades e texturas distintas, e que há jogadores que têm como passatempo colecionar esses Versos de Carta diferentes."
   },
   "BeginnerPlayerBadge": {
@@ -13023,7 +13871,7 @@
     "name": "Legado de Gunnhildr",
     "description": "Vestuário de Jean. Esse clássico vestuário cerimonial de cavaleiros é adequado para todas as ocasiões."
   },
-  "Outrider": {
+  "100Outrider": {
     "name": "100% Aventureira",
     "description": "Vestuário de Amber. É uma versão mais formal do uniforme de Aventureira!"
   },
@@ -13253,7 +14101,7 @@
   },
   "SakuraHuedStreet": {
     "name": "Rua de Cor Sakura",
-    "description": "Um diagrama detalhado passo a passo para fazer Rua de Cor Sakura.\\nUma cópia perfeita do distrito comercial cuidadosamente planejado da cidade de Inazuma.\\nNão importa o que aconteça, o povo de Inazuma vive em uma atmosfera calma e pacífica. As ruas que podem ser percorridas a pé refletem as condições de vida dos moradores, que é a representação mais verdadeira da cidade. Se seguir Thoma, um habitante local que conhece Inazuma por dentro e por fora, e for vendo os vários negócios e lojas, poderá realmente compreender e apreciar os costumes locais.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Yoimiya, Thoma, Kuki Shinobu"
+    "description": "Um diagrama detalhado passo a passo para fazer Rua de Cor Sakura.\\nUma cópia perfeita do distrito comercial cuidadosamente planejado da cidade de Inazuma.\\nNão importa o que aconteça, o povo de Inazuma vive em uma atmosfera calma e pacífica. As ruas que podem ser percorridas a pé refletem as condições de vida dos moradores, que é a representação mais verdadeira da cidade. Se seguir Thoma, um habitante local que conhece Inazuma por dentro e por fora, e for vendo os vários negócios e lojas, poderá realmente compreender e apreciar os costumes locais.\\nDepois de usar, você pode entrar na interface de colocação para vê-la.\\nCompanheiros que preferem este conjunto: Yoimiya, Thoma, Kuki Shinobu, Kirara"
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Domínio dos Sonhos Transitórios",
@@ -13321,7 +14169,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Entre Cheiros e Serenidade",
-    "description": "Um elegante e sereno jardim que utiliza gazebos trazidos do Jardim Razan de Pardis Dhyai. Este lugar é menos preocupado com a absoluta unidade dos estilos diferentes, mas é mais focado em criar um ar geral de tranquilidade.\\nAs adoráveis flores dormem aqui em paz e os abajures de pé acendem a fonte... Quando as horas noturnas se aproximam, uma caminhada por este jardim pode fazer com que os pensamentos barulhentos em sua cabeça se dissipem como nuvens finas. Talvez você até ganhe inspiração que normalmente teria dificuldade de encontrar...\\nOs seguintes companheiros preferem este conjunto: Nahida, Kaveh"
+    "description": "Um elegante e sereno jardim que utiliza gazebos trazidos do Jardim Razan de Pardis Dhyai. Este lugar é menos preocupado com a absoluta unidade dos estilos diferentes, mas é mais focado em criar um ar geral de tranquilidade.\\nAs adoráveis flores dormem aqui em paz e os abajures de pé acendem a fonte... Quando as horas noturnas se aproximam, uma caminhada por este jardim pode fazer com que os pensamentos barulhentos em sua cabeça se dissipem como nuvens finas. Talvez você até ganhe inspiração que normalmente teria dificuldade de encontrar...\\nOs seguintes companheiros preferem este conjunto: Nahida, Kaveh, Kirara"
   },
   "ChorusOfDesertAndWood": {
     "name": "Coro do Deserto e da Floresta",
@@ -13591,6 +14439,10 @@
     "name": "Pergaminho do Local da Sagacidade",
     "description": "Um diagrama que descreve passo a passo como fabricar Pergaminho do Local da Sagacidade.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "TavernBookcaseEssentialKnowledge": {
+    "name": "Estante de Livros da Taverna - Conhecimento Essencial",
+    "description": "Um diagrama que descreve passo a passo como fabricar Estante de Livros da Taverna - Conhecimento Essencial.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
   "SturdyLibraryTable": {
     "name": "Mesa Grande e Pesada da Biblioteca",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Mesa Grande e Pesada da Biblioteca\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -13679,6 +14531,10 @@
     "name": "Mesa Compacta de Madeira de Tamarisco",
     "description": "Um diagrama que descreve passo a passo como fabricar Mesa Compacta de Madeira de Tamarisco.\\nDepois de usar, você pode entrar na interface de colocação para ver."
   },
+  "RoundTavernTableLeapsAndBounds": {
+    "name": "Mesa Redonda da Taverna — A Passos Largos",
+    "description": "Um diagrama que descreve passo a passo como fabricar A Passos Largos.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Cama Suave Como a Brisa\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -13698,6 +14554,10 @@
   "AdhigamaWoodComfortBed": {
     "name": "Cama de Madeira da Adhigama \"Tranquilidade\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Cama de Madeira da Adhigama \"Tranquilidade\".\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "AdhigamaWoodReposeCouch": {
+    "name": "Sofá de Madeira da Adhigama Repouso",
+    "description": "Um diagrama que descreve passo a passo como fabricar Sofá de Madeira da Adhigama Repouso.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
   "PineReceptionCounter": {
     "name": "Balcão de Pinheiro",
@@ -13766,6 +14626,22 @@
   "AdhigamaVineBackedChair": {
     "name": "Cadeira com encosto de vinha de Madeira da Adhigama",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Cadeira com encosto de vinha de Madeira da Adhigama\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "SnekusThicket": {
+    "name": "Bosque de Sneku",
+    "description": "Um diagrama que descreve passo a passo como fabricar Bosque de Sneku.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "FinnicksCranberrySea": {
+    "name": "Mar de Airela de Finnick",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mar de Airela de Finnick.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "TavernDiningChairFlavorsMultiplicity": {
+    "name": "Cadeira de Jantar da Taverna - Multiplicidade de Sabor",
+    "description": "Um diagrama que descreve passo a passo como fabricar Cadeira de Jantar da Taverna - Multiplicidade de Sabor.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "TavernDiningChairAcceleratedSobriety": {
+    "name": "Cadeira de Jantar da Taverna - Sobriedade Acelerada",
+    "description": "Um diagrama que descreve passo a passo como fabricar Cadeira de Jantar da Taverna - Sobriedade Acelerada.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
   },
   "NorthernStoneHearth": {
     "name": "Lareira de Pedra do Norte",
@@ -13923,6 +14799,26 @@
     "name": "Calor Puro",
     "description": "Um diagrama que descreve passo a passo como fabricar Calor Puro.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
   },
+  "LittleRosesMangroveHouse": {
+    "name": "Casa no Mangue da Pequena Rosa",
+    "description": "Um diagrama que descreve passo a passo como fabricar Casa no Mangue da Pequena Rosa\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "NightPilotsWatchtower": {
+    "name": "Torre de Vigia Noturna do Piloto",
+    "description": "Um diagrama que descreve passo a passo como fabricar Torre de Vigia Noturna do Piloto.\\nDepois de usar, você pode entrar na interface de colocação para vê-la."
+  },
+  "BaobabsGoldenCradle": {
+    "name": "Berço Dourado de Baobab",
+    "description": "Um diagrama que descreve passo a passo como fabricar Berço Dourado de Baobab.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "DionasMiniSofa": {
+    "name": "Mini Sofá de Diona",
+    "description": "Um diagrama que descreve passo a passo como fabricar Mini Sofá de Diona.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "TavernDiningCartASnackBetweenDishes": {
+    "name": "Carrinho de Comida da Taverna - Um Lanche Entre Pratos",
+    "description": "Um diagrama que descreve passo a passo como fabricar Carrinho de Comida da Taverna - Um Lance Entre Pratos.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapete de Mondstadt: \"Paixão Escarlate\"",
     "description": "Um diagrama que descreve passo a passo como fabricar Tapete de Mondstadt: \"Paixão Escarlate\"\\nDepois de usar, você pode entrar na interface de colocação para ver."
@@ -13962,6 +14858,14 @@
   "PureLikeWheatSprouts": {
     "name": "Padrão Puro do Trigo",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Santuário da Purificação\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "TavernCarpetPassionOfPlay": {
+    "name": "Tapete da Taverna: Paixão Duelista",
+    "description": "Um diagrama que descreve passo a passo como fabricar Tapete da Taverna: Paixão Duelista.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
+  },
+  "TavernCarpetDuelistsWisdom": {
+    "name": "Tapete da Taverna: Sabedoria Duelista",
+    "description": "Um diagrama que descreve passo a passo como fabricar Tapete da Taverna: Sabedoria Duelista.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
   "TrustyPortableLamp": {
     "name": "Lâmpada Portátil Que Não Se Apaga",
@@ -14182,6 +15086,18 @@
   "TheDustDifferential": {
     "name": "Entre a Poeira",
     "description": "Um diagrama que descreve passo a passo como fabricar a \"Entre a Poeira\".\\nDepois de usar, você pode entrar na interface de colocação para ver."
+  },
+  "DeskComboMiddlelakeIsle": {
+    "name": "Conjunto de Mesa - Ilhota do Lago",
+    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar Conjunto de Mesa - Ilhota do Lago.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "DeskComboVerdantTotem": {
+    "name": "Conjunto de Mesa - Totem Verdejante",
+    "description": "Um diagrama que descreve passo a passo detalhadamente como fabricar Conjunto de Mesa - Totem Verdejante.\\nDepois de usar, você pode entrar na interface de produção para vê-lo."
+  },
+  "PrincesWeepingFish": {
+    "name": "Peixe Chorão do Príncipe",
+    "description": "Um diagrama que descreve passo a passo como fabricar Peixe Chorão do Príncipe.\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Despertar do Local da Sagacidade",
@@ -15358,6 +16274,10 @@
   "BrightwoodFabricBoxPlatform": {
     "name": "Plataforma de Caixas de Madeira Radiante",
     "description": "Um diagrama que descreve passo a passo como fabricar \"Plataforma de Caixas de Madeira Radiante\".\\nDepois de usar, você pode entrar na interface de produção para vê-la."
+  },
+  "LeisureDevicePuffyTubby": {
+    "name": "Dispositivo de Entretenimento - Tubby Fofinha",
+    "description": "Um diagrama que descreve passo a passo como fabricar Dispositivo de Entretenimento - Tubby Fofinha\\nDepois de usar, você pode entrar na interface de colocação para vê-lo."
   },
   "PottedPlantVerdantVastness": {
     "name": "Planta em Vaso: \"Vastidão Verdejante\"",

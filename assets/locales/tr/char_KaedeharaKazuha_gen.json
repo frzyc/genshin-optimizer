@@ -145,8 +145,8 @@
     "description": {
       "0": "<strong>Bin Yaprak Darbesi</strong> ile oluşan Güz Kasırgası alanı aşağıdaki etkilere sahiptir:",
       "1": [
-        " Süre boyunca Kaedehara Kazuha'nın kendi Element Ustalığını 200 artırır.",
-        " Alanın içindeki karakterlerin Element Ustalığını 200 artırır."
+        "Süre boyunca Kaedehara Kazuha'nın kendi Element Ustalığını 200 artırır.",
+        "Alanın içindeki karakterlerin Element Ustalığını 200 artırır."
       ],
       "2": "<br/>",
       "3": "Bu Takımyıldızın Element Ustalığı artırıcı etkileri birikmez."
@@ -155,7 +155,7 @@
   "constellation3": {
     "name": "Akçaağaç Efsanesi",
     "description": {
-      "0": "<strong>Chihayaburu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Chihayaburu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -172,7 +172,7 @@
   "constellation5": {
     "name": "Kadim Bilgelik",
     "description": {
-      "0": "<strong>Bin Yaprak Darbesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Bin Yaprak Darbesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -148,7 +148,7 @@
   "constellation6": {
     "name": "Im Namen der Götter",
     "description": {
-      "0": "Verringert mit den Angriffen von <strong>Letzte Salbung</strong> den physischen WDS von Gegnern 10 s lang um 20 %."
+      "0": "Verringert mit den Angriffen von <strong>Letzte Salbung</strong> den physischen WDS von Gegnern 10 s lang um 20{NON_BREAK_SPACE}%."
     }
   }
 }

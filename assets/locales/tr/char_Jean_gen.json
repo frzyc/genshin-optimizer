@@ -136,7 +136,7 @@
   "constellation3": {
     "name": "Batı Rüzgarı Estiğinde",
     "description": {
-      "0": "<strong>Karahindiba Yeli</strong> seviyesini 3 artırır.",
+      "0": "<strong>Karahindiba Yeli</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -149,7 +149,7 @@
   "constellation5": {
     "name": "Ani Rüzgar Patlaması",
     "description": {
-      "0": "<strong>Bora Kılıcı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Bora Kılıcı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

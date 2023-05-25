@@ -114,8 +114,8 @@
   "passive2": {
     "name": "Gizemlerin Gözler Önüne Serilişi",
     "description": {
-      "0": "Alhaitham'ın sahip olduğu her bir Element Ustalığı puanı, Yöneltme Saldırılarının ve <strong>Bağlam Alanı: Görüntü Zincirinin</strong> verdiği Hasarı %0,1 artırır.",
-      "1": "İki saldırının da bu şekilde elde edilebileceği maksimum Hasar Bonusu %100'dür."
+      "0": "Alhaitham'ın sahip olduğu her bir Element Ustalığı puanı, Yansıma Saldırılarının ve <strong>Bağlam Alanı: Görüntü Zincirinin</strong> verdiği Hasarı %0,1 artırır.",
+      "1": "İki saldırının da bu şekilde elde edebileceği maksimum Hasar Bonusu %100'dür."
     }
   },
   "passive3": {
@@ -139,7 +139,7 @@
   "constellation3": {
     "name": "İnkar",
     "description": {
-      "0": "<strong>Evrensellik: Ayna Teorisi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Evrensellik: Ayna Teorisi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -158,7 +158,7 @@
   "constellation5": {
     "name": "Bilgelik",
     "description": {
-      "0": "<strong>Bağlam Alanı: Görüntü Zinciri</strong> seviyesini 3 artırır.",
+      "0": "<strong>Bağlam Alanı: Görüntü Zinciri</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -136,7 +136,7 @@
   "constellation3": {
     "name": "Kabus Kanatları",
     "description": {
-      "0": "<strong>Gecekuşu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gecekuşu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -150,7 +150,7 @@
   "constellation5": {
     "name": "Kıyamet Gecesi",
     "description": {
-      "0": "<strong>Gece Yanılsaması</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gece Yanılsaması</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

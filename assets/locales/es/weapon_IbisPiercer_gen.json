@@ -1,0 +1,12 @@
+{
+  "name": "Perforaibis",
+  "description": "Un arco dorado forjado a partir de la descripción de una historia. Si se utiliza como un arma normal, será como un fragmento de ficción que ha escapado de las páginas de un libro para materializarse en el mundo.",
+  "passiveName": "Gracia del ojo de la sabiduría",
+  "passiveDescription": {
+    "0": "Tras golpear a un enemigo con un Ataque Cargado, la Maestría Elemental del personaje aumenta en <cryo>40</cryo>{NON_BREAK_SPACE}pts. durante 6{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 2 veces y solo puede activarse una vez cada 0.5{NON_BREAK_SPACE}s.",
+    "1": "Tras golpear a un enemigo con un Ataque Cargado, la Maestría Elemental del personaje aumenta en <cryo>50</cryo>{NON_BREAK_SPACE}pts. durante 6{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 2 veces y solo puede activarse una vez cada 0.5{NON_BREAK_SPACE}s.",
+    "2": "Tras golpear a un enemigo con un Ataque Cargado, la Maestría Elemental del personaje aumenta en <cryo>60</cryo>{NON_BREAK_SPACE}pts. durante 6{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 2 veces y solo puede activarse una vez cada 0.5{NON_BREAK_SPACE}s.",
+    "3": "Tras golpear a un enemigo con un Ataque Cargado, la Maestría Elemental del personaje aumenta en <cryo>70</cryo>{NON_BREAK_SPACE}pts. durante 6{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 2 veces y solo puede activarse una vez cada 0.5{NON_BREAK_SPACE}s.",
+    "4": "Tras golpear a un enemigo con un Ataque Cargado, la Maestría Elemental del personaje aumenta en <cryo>80</cryo>{NON_BREAK_SPACE}pts. durante 6{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 2 veces y solo puede activarse una vez cada 0.5{NON_BREAK_SPACE}s."
+  }
+}

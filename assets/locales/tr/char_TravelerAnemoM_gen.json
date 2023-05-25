@@ -126,7 +126,7 @@
   "constellation3": {
     "name": "Süpürücü Ani Rüzgar",
     "description": {
-      "0": "<strong>Ani Rüzgar Dalgası</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ani Rüzgar Dalgası</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -139,7 +139,7 @@
   "constellation5": {
     "name": "Yıldız Girdabı",
     "description": {
-      "0": "<strong>Avuç Girdabı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Avuç Girdabı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

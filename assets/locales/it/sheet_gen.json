@@ -33,7 +33,7 @@
   "dot": "DAN nel tempo",
   "addEleDMG": "DAN elementali aggiuntivi",
   "press": {
-    "dmg": "DAN da pressione",
+    "dmg": "DAN variante a pressione",
     "cd": "TdR pressione"
   },
   "hold": {

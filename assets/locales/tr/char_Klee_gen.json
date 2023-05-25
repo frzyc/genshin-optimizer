@@ -130,7 +130,7 @@
   "constellation3": {
     "name": "Muhteşem Bileşim",
     "description": {
-      "0": "<strong>Zıpzıp Bodur</strong> seviyesini 3 artırır.",
+      "0": "<strong>Zıpzıp Bodur</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -143,7 +143,7 @@
   "constellation5": {
     "name": "Yıldız Patlaması",
     "description": {
-      "0": "<strong>Kıvılcımlar ve Patlama</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kıvılcımlar ve Patlama</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

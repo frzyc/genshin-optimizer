@@ -120,8 +120,8 @@
   "passive2": {
     "name": "Brise der Träumerei",
     "description": {
-      "0": "Erhält beim Treffen von Gegnern mit Kuugo – Fushoudan oder Kuugo – Toufukai des Wanderers im Zustand <strong>„Haltung des eleganten Windes“</strong> mit einer Wahrscheinlichkeit von 16 % den Effekt „Anmut des Windes“: Beschleunigt der Wanderer im diesmaligen Zustand „Haltung des eleganten Windes“ in der Luft, wird dieser Effekt entfernt, sodass diese Beschleunigung in der Luft kein Kuugoryoku verbraucht und 4 Windpfeile abgeschossen werden, die jeweils <anemo>Anemo-Schaden</anemo> in Höhe von 35 % ANG verursachen.",
-      "1": "Erzeugt ein Kuugo – Fushoudan oder Kuugo – Toufukai nicht den Effekt „Anmut des Windes“, wird die Wahrscheinlichkeit des Auslösens beim nächsten Treffer um 12 % erhöht. 0,1 s Abklingzeit für die Beurteilung der Effekterzeugung."
+      "0": "Erhält beim Treffen von Gegnern mit Kuugo – Fushoudan oder Kuugo – Toufukai des Wanderers im Zustand <strong>„Haltung des eleganten Windes“</strong> mit einer Wahrscheinlichkeit von 16{NON_BREAK_SPACE}% den Effekt „Anmut des Windes“: Beschleunigt der Wanderer im diesmaligen Zustand „Haltung des eleganten Windes“ in der Luft, wird dieser Effekt entfernt, sodass diese Beschleunigung in der Luft kein Kuugoryoku verbraucht und 4 Windpfeile abgeschossen werden, die jeweils <anemo>Anemo-Schaden</anemo> in Höhe von 35{NON_BREAK_SPACE}% ANG verursachen.",
+      "1": "Erzeugt ein Kuugo – Fushoudan oder Kuugo – Toufukai nicht den Effekt „Anmut des Windes“, wird die Wahrscheinlichkeit des Auslösens beim nächsten Treffer um 12{NON_BREAK_SPACE}% erhöht. 0,1 s Abklingzeit für die Beurteilung der Effekterzeugung."
     }
   },
   "passive3": {

@@ -60,7 +60,7 @@
       "3": "1 Kademeli İletken Basılı Tutma Hasarı",
       "4": "2 Kademeli İletken Basılı Tutma Hasarı",
       "5": "3 Kademeli İletken Basılı Tutma Hasarı",
-      "6": "Basılı Tutma BS",
+      "6": "BS (Basılı Tutma)",
       "7": "",
       "8": "",
       "9": "",
@@ -137,7 +137,7 @@
   "constellation3": {
     "name": "Yankılanan Yıldırım",
     "description": {
-      "0": "<strong>Şimşek Gülü</strong> seviyesini 3 artırır.",
+      "0": "<strong>Şimşek Gülü</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -150,7 +150,7 @@
   "constellation5": {
     "name": "Elektrikle İnfaz",
     "description": {
-      "0": "<strong>Mor Akım</strong> seviyesini 3 artırır.",
+      "0": "<strong>Mor Akım</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

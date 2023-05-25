@@ -45,7 +45,7 @@
       "1": "<br/>",
       "2": "<strong>Héraut de givre</strong>",
       "3": [
-        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
+        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages dans l'équipe ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
         " Régénère les PV du personnage déployé à intervalles réguliers.",
         " Le héraut suit le personnage déployé et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route."
       ],

@@ -166,7 +166,7 @@
   "constellation3": {
     "name": "Sonsuz Devrim",
     "description": {
-      "0": "<strong>Kaderin Yıldızı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kaderin Yıldızı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -179,7 +179,7 @@
   "constellation5": {
     "name": "Alaycı Kader",
     "description": {
-      "0": "<strong>Kıyamet Yansıması</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kıyamet Yansıması</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

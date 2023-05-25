@@ -2,7 +2,7 @@
   "setName": "Kumarbaz",
   "setEffects": {
     "2": "Element Becerisi Hasarını %20 artırır.",
-    "4": "Bir düşman ortadan kaldırıldığında %100 ihtimalle Element Becerisi Bekleme Süresi sıfırlanır. 15 saniyede bir uygulanabilir."
+    "4": "Bir düşman yendiğinde %100 ihtimalle Element Becerisi Bekleme Süresi sıfırlanır. 15 saniyede bir uygulanabilir."
   },
   "pieces": {
     "flower": {

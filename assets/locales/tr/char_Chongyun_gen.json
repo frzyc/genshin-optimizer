@@ -126,7 +126,7 @@
   "constellation3": {
     "name": "Bulut Patlaması",
     "description": {
-      "0": "<strong>Ruh Kılıcı: Bulut Yaran Yıldız</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ruh Kılıcı: Bulut Yaran Yıldız</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -140,7 +140,7 @@
   "constellation5": {
     "name": "Doğru Yol",
     "description": {
-      "0": "<strong>Ruh Kılıcı: Chonghua Buz Katmanı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ruh Kılıcı: Chonghua Buz Katmanı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -47,9 +47,9 @@
       "2": "<strong>Generalin Savaş Sancağı</strong>",
       "3": "Kullanıldığı anda gruptaki <geo>Toprak</geo> karakterlerin sayısına göre becerinin etki alanındaki aktif karakterlere en fazla 3 güçlendirme verir:",
       "4": [
-        " 1 Toprak karakteri: \"Teslim Olmayan\" güçlendirmesi verir. - Savunma Bonusu.",
-        " 2 Toprak karakteri: \"Yenilmez\" güçlendirmesi verir. - Müdahale direnci artar.",
-        " 3 Toprak karakteri: \"Ezip Geçen\" güçlendirmesi verir. - <geo>Toprak Hasarı Bonusu</geo>."
+        "1 Toprak karakteri: \"Teslim Olmayan\" güçlendirmesi verir. - Savunma Bonusu.",
+        "2 Toprak karakteri: \"Yenilmez\" güçlendirmesi verir. - Müdahale direnci artar.",
+        "3 Toprak karakteri: \"Ezip Geçen\" güçlendirmesi verir. - <geo>Toprak Hasarı Bonusu</geo>."
       ],
       "5": "<br/>",
       "6": "Gorou, alana tek seferde en fazla 1 Generalin Savaş Sancağı dikebilir. Karakterler tek seferde en fazla 1 Generalin Savaş Sancağından faydalanabilir. Bir grup üyesi alandan ayrılınca aktif güçlendirme 2sn sonra kaybolur.",
@@ -86,9 +86,9 @@
       "2": "<strong>Generalin Görkemi</strong>",
       "3": "Bu alan aşağıdaki özelliklere sahiptir:",
       "4": [
-        " Inuzaka Savunma Çemberinin oluşturduğu Generalin Savaş Sancağı gibi gruptaki <geo>Toprak</geo> karakterlerinin sayısına göre becerinin etki alanındaki aktif karakterlere güçlendirme verir. Ayrıca bu alan, aktif karakterinle birlikte hareket eder.",
-        " 1,5 saniyede bir, becerinin etki alanındaki 1 düşmana <geo>Toprak Alan Hasarı</geo> veren 1 Kristal Çöküş etkisi uygular.",
-        " 1,5 saniyede bir, becerinin etki alanındaki 1 element parçasını aktif karakterinin bulunduğu yere çeker (element parçaları Kristalleşme tepkimeleriyle oluşur)."
+        "Inuzaka Savunma Çemberinin oluşturduğu Generalin Savaş Sancağı gibi gruptaki <geo>Toprak</geo> karakterlerinin sayısına göre becerinin etki alanındaki aktif karakterlere güçlendirme verir. Ayrıca bu alan, aktif karakterinle birlikte hareket eder.",
+        "1,5 saniyede bir, becerinin etki alanındaki 1 düşmana <geo>Toprak Alan Hasarı</geo> veren 1 Kristal Çöküş etkisi uygular.",
+        "1,5 saniyede bir, becerinin etki alanındaki 1 element parçasını aktif karakterinin bulunduğu yere çeker (element parçaları Kristalleşme tepkimeleriyle oluşur)."
       ],
       "5": "<br/>",
       "6": "Bu beceri kullanıldığında Gorou, alana Generalin Savaş Sancağını dikmişse bu Sancak yok olur. Ayrıca Generalin Görkemi etkisi süresince Gorou'nun Element Becerisi \"Inuzaka Savunma Çemberi\" ile Generalin Savaş Sancağı dikilemez.",
@@ -126,8 +126,8 @@
     "description": {
       "0": "Gorou saldırdığında sahip olduğu Savunmaya göre aşağıdaki Hasar Bonuslarını kazanır:",
       "1": [
-        " <strong>Inuzaka Savunma Çemberi</strong> Beceri Hasarı, Savunmanın %156'sı kadar artar.",
-        " <strong>Juuga: Zafere Doğru</strong> Beceri Hasarı ve Kristal Çöküş Hasarı, Savunmanın %15,6'sı kadar artar."
+        "<strong>Inuzaka Savunma Çemberi</strong> Beceri Hasarı, Savunmanın %156'sı kadar artar.",
+        "<strong>Juuga: Zafere Doğru</strong> Beceri Hasarı ve Kristal Çöküş Hasarı, Savunmanın %15,6'sı kadar artar."
       ]
     }
   },
@@ -176,9 +176,9 @@
     "description": {
       "0": "<strong>Inuzaka Savunma Çemberi</strong> veya <strong>Juuga: Zafere Doğru</strong> becerisini kullandıktan sonraki 12 saniye boyunca yakındaki tüm grup üyelerinin <geo>Toprak</geo> Kritik Hasarını artırır. Bu artış, beceri alanının o andaki güçlendirme seviyesine göre değişir:",
       "1": [
-        " \"Teslim Olmayan\": +%10",
-        " \"Yenilmez\": +%20",
-        " \"Ezip Geçen\": +%40"
+        "\"Teslim Olmayan\": +%10",
+        "\"Yenilmez\": +%20",
+        "\"Ezip Geçen\": +%40"
       ],
       "2": "<br/>",
       "3": "Bu etkiler üst üste birikmez, yalnızca son tetiklenen etki devreye girer."

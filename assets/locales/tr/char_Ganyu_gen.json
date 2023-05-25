@@ -137,7 +137,7 @@
   "constellation3": {
     "name": "Bulut Hareketi",
     "description": {
-      "0": "<strong>Göklerin Görkemi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Göklerin Görkemi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -152,7 +152,7 @@
   "constellation5": {
     "name": "Merhametli",
     "description": {
-      "0": "<strong>Qilin'in İzi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Qilin'in İzi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

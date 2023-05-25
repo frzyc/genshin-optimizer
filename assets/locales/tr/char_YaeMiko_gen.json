@@ -1,6 +1,6 @@
 {
   "name": "Yae Miko",
-  "title": "Akıl Eğlencesi",
+  "title": "Akıl Oyunları",
   "description": "Büyük Narukami Tapınağının Leydi Guuji'si aynı zamanda Yae Yayınevinde genel yayın yönetmenidir. Güzelliğinin altında akla hayale sığmayacak bir zeka ve kurnazlık saklıdır.",
   "constellationName": "Kutsal Tilkiler",
   "auto": {
@@ -47,8 +47,8 @@
       "3": "<strong>Ölümcül Kiraz Çiçeği</strong>",
       "4": "Aşağıdaki özelliklere sahiptir:",
       "5": [
-        " Belirli aralıklarla yakındaki düşmanlardan birine yıldırımla saldırır ve <electro>Elektrik Hasarı</electro> verir.",
-        " Yakında başka Ölümcül Kiraz Çiçekleri de mevcutken hepsinin seviyesi yükselir ve yıldırım darbelerinin verdiği Hasar artar."
+        "Belirli aralıklarla yakındaki düşmanlardan birine yıldırımla saldırır ve <electro>Elektrik Hasarı</electro> verir.",
+        "Yakında başka Ölümcül Kiraz Çiçekleri de mevcutken hepsinin seviyesi yükselir ve yıldırım darbelerinin verdiği Hasar artar."
       ],
       "6": "<br/>",
       "7": "Bu becerinin 3 yükü vardır.",

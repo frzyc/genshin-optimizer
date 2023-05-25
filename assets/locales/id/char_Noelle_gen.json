@@ -74,7 +74,8 @@
     "name": "Favonius Bladework - Maid",
     "fields": {
       "normal": {
-        "0": "<strong><strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",

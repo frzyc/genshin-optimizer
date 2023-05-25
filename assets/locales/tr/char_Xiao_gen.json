@@ -82,7 +82,7 @@
       "5": "Xiao, bu etki altındayken sürekli Can kaybeder.",
       "6": "Bu becerinin etkisi Xiao alandan ayrılınca kaybolur.",
       "7": "<br/>",
-      "8": "<i>Xiao, Yaksha Maskesini takarak Bekçi Yakşa'nın iblisleri korkutan haline bürünür ama bu büyük güç aynı zamanda ona çok acı çektirir. Bazıları ona \"Tüm Şerlerin Laneti\" der.</i>"
+      "8": "<i>Xiao, Yaksha Maskesini takarak Bekçi Yaksha'nın iblisleri korkutan haline bürünür ama bu büyük güç aynı zamanda ona çok acı çektirir. Bazıları ona \"Tüm Şerlerin Laneti\" der.</i>"
     },
     "skillParams": {
       "0": "Normal/Yüklü/Havadan Saldırı Hasar Bonusu",
@@ -139,7 +139,7 @@
   "constellation3": {
     "name": "Şer Fatihi: Gazap İlahı",
     "description": {
-      "0": "<strong>Sonsuz Rüzgar Türbini</strong> seviyesini 3 artırır.",
+      "0": "<strong>Sonsuz Rüzgar Türbini</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -152,7 +152,7 @@
   "constellation5": {
     "name": "Ebedi Evrim: Cehaletin Kökeni",
     "description": {
-      "0": "<strong>Tüm Şerlerin Laneti</strong> seviyesini 3 artırır.",
+      "0": "<strong>Tüm Şerlerin Laneti</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

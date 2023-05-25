@@ -125,7 +125,7 @@
   "constellation3": {
     "name": "Dönen Otlar",
     "description": {
-      "0": "<strong>Yaprak Kılıcı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yaprak Kılıcı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -139,7 +139,7 @@
   "constellation5": {
     "name": "Yeşilin Geçiciliği",
     "description": {
-      "0": "<strong>Bitkilerden Yükselen Işık</strong> seviyesini 3 artırır.",
+      "0": "<strong>Bitkilerden Yükselen Işık</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

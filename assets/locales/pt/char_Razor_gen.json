@@ -47,10 +47,10 @@
       "2": "<strong>Pressionar</strong>",
       "3": "Balança suas Garras de Lobo do Trovão, causando <electro>Dano Electro</electro> nos inimigos em frente do Razor.",
       "4": "Ao atacar um inimigo, Razor ganha um Selo Electro que aumenta sua taxa de Recarga de Energia.",
-      "5": "Razor pode ter até 3 Selos Electro simultaneamente, e ganhando um novo Selo Electro recarrega sua duração.",
+      "5": "Razor pode ter até 3 Selos Electro simultaneamente, e ganhar um novo Selo Electro recarrega sua duração.",
       "6": "<br/>",
       "7": "<strong>Manter pressionado</strong>",
-      "8": "Reúne energia Electro para desencadear uma tempestade de raios em uma pequena AdE, causando <electro>Dano Electro</electro> massivo, e removendo todos os Selos Electro de Razor.",
+      "8": "Reúne energia Electro para desencadear uma tempestade de raios em uma pequena AdE, causando <electro>Dano Electro</electro> massivo e removendo todos os Selos Electro de Razor.",
       "9": "Cada Selo Electro removido dessa maneira será convertido em Energia para o Razor.",
       "10": "<br/>",
       "11": "<i>É quando relâmpagos caem que às vezes você pode ver de relance o olhar de um predador, analisando sua presa profundamente dentro dos olhos do Razor.</i>"
@@ -112,7 +112,7 @@
   "passive1": {
     "name": "Despertamento",
     "description": {
-      "0": "Diminui a Recarga das <strong>Garra e Trovão</strong> em 18%. Usar as <strong>Dente de Relâmpago</strong> redefinem a Recarga da <strong>Garra e Trovão</strong>."
+      "0": "Diminui a Recarga da <strong>Garra e Trovão</strong> em 18%. Usar <strong>Dente de Relâmpago</strong> redefine a Recarga da <strong>Garra e Trovão</strong>."
     }
   },
   "passive2": {

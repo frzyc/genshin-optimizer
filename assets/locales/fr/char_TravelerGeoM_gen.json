@@ -112,7 +112,7 @@
     }
   },
   "constellation2": {
-    "name": "Enfondrement de lave",
+    "name": "Effondrement de lave",
     "description": {
       "0": "La météorite d'<strong>Épée d'étoile déchue</strong> explose lorsqu'elle est détruite, et inflige un bonus de <geo>DGT Géo de zone</geo> équivalant aux DGT d'Épée d'étoile déchue."
     }

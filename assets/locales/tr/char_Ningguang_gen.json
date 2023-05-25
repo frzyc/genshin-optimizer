@@ -135,7 +135,7 @@
   "constellation3": {
     "name": "Yıldızların Görkemli Dizilişi",
     "description": {
-      "0": "<strong>Yıldız Kıran</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yıldız Kıran</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -148,7 +148,7 @@
   "constellation5": {
     "name": "Yeşim Tabletin Yenilmezliği",
     "description": {
-      "0": "<strong>Yeşim Tablet</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yeşim Tablet</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

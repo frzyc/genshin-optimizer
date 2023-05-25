@@ -61,7 +61,7 @@
       "1": "Kalkan Temel Hasar Emilimi",
       "2": "Süre",
       "3": "Basma BS",
-      "4": "Basılı Tutma BS",
+      "4": "BS (Basılı Tutma)",
       "5": "",
       "6": "",
       "7": "",
@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "N-Ne Demek Bir Tane Daha?",
     "description": {
-      "0": "<strong>Özel Karışım</strong> seviyesini 3 artırır.",
+      "0": "<strong>Özel Karışım</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Buzunu Bol Koy",
     "description": {
-      "0": "<strong>Buz Patisi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Buz Patisi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

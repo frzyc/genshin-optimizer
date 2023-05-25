@@ -138,7 +138,7 @@
   "passive3": {
     "name": "Maîtrise de l'armement",
     "description": {
-      "0": "Augmente le niveau des <strong>attaques normales</strong> des personnages de votre équipe de 1."
+      "0": "Augmente le niveau des <strong>attaques normales</strong> de vos personnages dans l'équipe de 1."
     }
   },
   "constellation1": {

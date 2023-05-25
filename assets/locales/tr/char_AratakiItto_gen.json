@@ -50,10 +50,10 @@
       "1": "<br/>",
       "2": "Ushi alanda kalır ve aşağıdaki etkilerle destek verir:",
       "3": [
-        " Etraftaki düşmanları kışkırtarak saldırılarını üstüne çeker.",
-        " Arataki Itto'nun Maks. Canının bir kısmına bağlı olarak Can devralır.",
-        " Ushi, Hasar aldığında Arataki Itto 1 Doğaüstü Güç kademesi elde eder. Bu şekilde her 2 saniyede sadece 1 kademe elde edilebilir.",
-        " Ushi, Canı tükendiğinde veya süresi bittiğinde kaçar. Alandan ayrıldığında Arataki Itto'ya 1 Doğaüstü Güç kademesi verir."
+        "Etraftaki düşmanları kışkırtarak saldırılarını üstüne çeker.",
+        "Arataki Itto'nun Maks. Canının bir kısmına bağlı olarak Can devralır.",
+        "Ushi, Hasar aldığında Arataki Itto 1 Doğaüstü Güç kademesi elde eder. Bu şekilde her 2 saniyede sadece 1 kademe elde edilebilir.",
+        "Ushi, Canı tükendiğinde veya süresi bittiğinde kaçar. Alandan ayrıldığında Arataki Itto'ya 1 Doğaüstü Güç kademesi verir."
       ],
       "4": "<br/>",
       "5": "<strong>Basılı Tut</strong>",
@@ -88,10 +88,10 @@
       "0": "Onlara Arataki Çetesinin gücünü gösterme vakti geldi! Itto bir süreliğine içindeki Kızgın Oni Kralı dışa vurur ve Oni Kralın Sopasıyla savaşır.",
       "1": "Bu durum etkisi aşağıdaki özelliklere sahiptir:",
       "2": [
-        " Itto'nun Normal, Yüklü ve Havadan Saldırılarını <geo>Toprak Hasarına</geo> çevirir. Bu sonradan değiştirilemez.",
-        " Itto'nun Normal Saldırı Hızını artırır ve Savunmasına göre de Saldırısını artırır.",
-        " İsabet ettiğinde saldırı kombosunun birinci ve üçüncü darbeleri Arataki Itto'ya 1 Doğaüstü Güç kademesi verir.",
-        " Itto'nun Element Direncini ve Fiziksel Direncini %20 azaltır."
+        "Itto'nun Normal, Yüklü ve Havadan Saldırılarını <geo>Toprak Hasarına</geo> çevirir. Bu sonradan değiştirilemez.",
+        "Itto'nun Normal Saldırı Hızını artırır ve Savunmasına göre de Saldırısını artırır.",
+        "İsabet ettiğinde saldırı kombosunun birinci ve üçüncü darbeleri Arataki Itto'ya 1 Doğaüstü Güç kademesi verir.",
+        "Itto'nun Element Direncini ve Fiziksel Direncini %20 azaltır."
       ],
       "3": "<br/>",
       "4": "Kızgın Oni Kralı durum etkisi, Itto savaş alanından ayrıldığında kaybolur.",
@@ -123,8 +123,8 @@
     "description": {
       "0": "Arataki Itto, Arataki Kesagiri darbelerini art arda vurduğunda şu etkileri kazanır:",
       "1": [
-        " Her darbe, bir sonraki darbenin Saldırı Hızını %10 artırır. Maksimum Saldırı Hızı Artışı %30'dur.",
-        " Müdahaleye direnci artar."
+        "Her darbe, bir sonraki darbenin Saldırı Hızını %10 artırır. Maksimum Saldırı Hızı Artışı %30'dur.",
+        "Müdahaleye direnci artar."
       ],
       "2": "<br/>",
       "3": "Bu etkiler Itto, ardışık darbeleri vurmayı bıraktığında kaybolur."
@@ -178,7 +178,7 @@
   "constellation6": {
     "name": "Karşınızda Arataki Itto!",
     "description": {
-      "0": "Arataki Itto'nun Yüklü Saldırıları +%70 Kritik Hasar verir. Buna ek olarak Arataki Kesagiri becerisini kullandığında Doğaüstü Güç kademelerini %50 ihtimalle tüketmez."
+      "0": "Arataki Itto'nun Yüklü Saldırıları +%70 Kritik Hasar verir. Buna ek olarak Arataki Kesagiri saldırıları kullandığında Doğaüstü Güç kademelerini %50 ihtimalle tüketmez."
     }
   }
 }

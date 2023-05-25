@@ -42,7 +42,7 @@
   "skill": {
     "name": "Ingegno artistico",
     "description": {
-      "0": "Usa le abilità di mappatura di Mehrak a scopo offensivo, dando via a una scansione radiale che infligge <dendro>DAN da Dendro ad area</dendro>. Scansiona anche tutti i nuclei di Dendro nell'area d'effetto, causandone l'immediata esplosione.",
+      "0": "Usa le abilità di mappatura di Mehrak a scopo offensivo, dando il via a una scansione radiale che infligge <dendro>DAN da Dendro ad area</dendro>. Scansiona anche tutti i nuclei di Dendro nell'area d'effetto, causandone l'immediata esplosione.",
       "1": "<br/>",
       "2": "<i>Mehrak è stato creato modificando tecnologie antiche e potrebbe avere altre funzionalità oltre alla creazione di mappe...</i>"
     },

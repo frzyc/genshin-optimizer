@@ -57,7 +57,7 @@
       "12": "<br/>",
       "13": "<strong>Prisão Flamejante</strong>",
       "14": "Quando os inimigos dentro desse campo sofrem Dano, a Prisão Flamejante realizará um Ataque Coordenado baseado no ATQ e Vida Máxima de Dehya, causando <pyro>Dano Pyro em AdE</pyro>. Esse efeito pode ser desencadeado uma vez a cada 2.5s.",
-      "15": "Aumenta a Resistência contra Interrupção dos personagens ativos dentro do campo, e quando esses personagens sofrem Dano, mitiga parte desse Dano, convertendo-o em \"Sangue da Leoa Vermelha\", com Dehya sofrendo esse Dano por 10s. Quando o Dano armazenado alcançar ou ultrapassar uma certa proporção da Vida Máxima de Dehya, parará de absorvê-lo.",
+      "15": "Aumenta a Resistência contra Interrupção dos personagens ativos dentro do campo, e quando esses personagens sofrem Dano, mitiga parte desse Dano, convertendo-o em \"Sangue da Leoa Vermelha\", com Dehya sofrendo esse Dano por 10s. Quando o Dano armazenado alcançar ou ultrapassar uma certa proporção da Vida Máxima de Dehya, o dano deixará de ser mitigado.",
       "16": "<br/>",
       "17": "Só é possível existir uma Prisão Flamejante criada por Dehya simultaneamente.",
       "18": "<br/>",

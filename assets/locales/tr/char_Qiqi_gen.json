@@ -134,7 +134,7 @@
   "constellation3": {
     "name": "Göklere Övgü",
     "description": {
-      "0": "<strong>Adeptus Büyüsü: Nazar</strong> seviyesini 3 artırır.",
+      "0": "<strong>Adeptus Büyüsü: Nazar</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -147,7 +147,7 @@
   "constellation5": {
     "name": "Kızıl Nilüfer Çiçeği",
     "description": {
-      "0": "<strong>Adeptus Büyüsü: Ayazın Habercisi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Adeptus Büyüsü: Ayazın Habercisi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

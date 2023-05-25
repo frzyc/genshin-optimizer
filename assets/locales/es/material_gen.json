@@ -219,6 +219,10 @@
     "name": "Cupón festivo",
     "description": "Participa en las actividades de celebración del Festival de las Flores de Viento para obtener estos cupones y canjearlos por recompensas en la tienda del evento."
   },
+  "InvokationCoupons": {
+    "name": "Supercupón ingenioso",
+    "description": "Participa en los distintos desafíos del Torneo del Rey de los Invocadores para obtener estos cupones de recompensa. Canjéalos por recompensas durante el evento."
+  },
   "Primogem": {
     "name": "Protogema",
     "description": "Una gema cristalina que va más allá del mundo terrenal. Brilla con esperanzas y sueños condensados de universos que existieron alguna vez."
@@ -519,6 +523,10 @@
     "name": "Yelan",
     "description": "Una misteriosa persona que dice trabajar para el Ministerio de Asuntos Civiles, pero que “no existe” según los registros del propio Ministerio."
   },
+  "Kirara": {
+    "name": "Kirara",
+    "description": "Una repartidora de Komaniya Exprés, una empresa de envíos de Inazuma. Es una nekomata a la que le encanta su trabajo y la sociedad humana."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Antes era una paria, pero hoy en día es una cazadora excepcionalmente ágil. Siempre está preparada para hacer uso de su arco y sus flechas cuando es necesario."
@@ -791,6 +799,10 @@
     "name": "Stella Fortuna de Yelan",
     "description": "Material de activación de constelación de Yelan."
   },
+  "KirarasStellaFortuna": {
+    "name": "Stella Fortuna de Kirara",
+    "description": "Material de activación de constelación de Kirara."
+  },
   "AloysStellaFortuna": {
     "name": "Stella Fortuna de Aloy",
     "description": "Material de activación de constelación de Aloy."
@@ -975,23 +987,23 @@
     "name": "",
     "description": ""
   },
-  "KamisatoAyakaForCB": {
+  "KamisatoAyakaForCB1": {
     "name": "Kamisato Ayaka- Para cb1",
     "description": "Obtén a Kamisato Ayaka Niv. 15"
   },
-  "XianglingForCB": {
+  "XianglingForCB1": {
     "name": "Xiangling-Para cb1",
     "description": "Obtén a Xiangling Niv. 15"
   },
-  "JeanForCB": {
+  "JeanForCB1": {
     "name": "Jean-Para cb1",
     "description": "Obtén a Jean Niv. 15"
   },
-  "DilucForCB": {
+  "DilucForCB1": {
     "name": "Diluc-Para cb1",
     "description": "Obtén a Diluc Niv. 15"
   },
-  "VentiForCB": {
+  "VentiForCB1": {
     "name": "Venti-Para cb1",
     "description": "Obtén a Venti Niv. 15"
   },
@@ -1031,11 +1043,11 @@
     "name": "",
     "description": ""
   },
-  "BarbaraForCB": {
+  "BarbaraForCB1": {
     "name": "Bárbara-Para cb1",
     "description": "Obtén a Bárbara Niv. 15"
   },
-  "RazorForCB": {
+  "RazorForCB1": {
     "name": "Razor-Para cb1",
     "description": "Obtén a Razor Niv. 15"
   },
@@ -1335,9 +1347,13 @@
     "name": "«Salvación extrema»",
     "description": "El diario de viaje de Musk. En las notas sobre el Arrecife de Musk hay una línea que dice: “Solo con la brisa matutina del mar se puede volar hasta aquí desde el Cabo del Amante...”."
   },
-  "IncompleteScorePart": {
+  "IncompleteScorePart1": {
     "name": "Partitura incompleta (Parte 1)",
     "description": "La primera mitad de la partitura de «Yellow». “S a J” está escrito en la esquina inferior derecha."
+  },
+  "IncompleteScorePart2": {
+    "name": "Partitura incompleta (Parte 2)",
+    "description": "La segunda mitad de la partitura de «Yellow»."
   },
   "PrivateLetterFromLisaToJean": {
     "name": "Carta de Lisa para Jean",
@@ -1359,9 +1375,17 @@
     "name": "Remedio de Bárbara",
     "description": "Lisa te ha pedido que le entregues esto a Bárbara."
   },
-  "IncompletePoemPart": {
+  "IncompletePoemPart1": {
     "name": "Poema incompleto (Parte 1)",
     "description": "El poema que Venti te pidió que buscaras, aunque solamente es la primera parte."
+  },
+  "IncompletePoemPart2": {
+    "name": "Poema incompleto (Parte 2)",
+    "description": "El poema que Venti te pidió que buscaras. Parece que hay una parte más."
+  },
+  "IncompletePoemPart3": {
+    "name": "Poema incompleto (Parte 3)",
+    "description": "El poema que Venti te pidió que buscaras. Une las tres páginas para componer un pequeño poema de amor."
   },
   "InscriptionRubbing": {
     "name": "Copia de inscripción",
@@ -1415,12 +1439,52 @@
     "name": "Cristal carmesí",
     "description": "Un cristal en forma de lágrima en el que fluyen sombríos destellos rojos. Parece haber sido dejado por el dragón. Tal vez la persona que estaba hablando con el dragón sabe más al respecto, pero ¿a dónde fue?"
   },
-  "SealClue": {
+  "SealClue101": {
     "name": "Pista del sello 101",
     "description": "Pista del sello"
   },
-  "BreakSeal": {
+  "SealClue102": {
+    "name": "Pista del sello 102",
+    "description": "Pista del sello"
+  },
+  "SealClue103": {
+    "name": "Pista del sello 103",
+    "description": "Pista del sello"
+  },
+  "SealClue201": {
+    "name": "Pista del sello 201",
+    "description": "Pista del sello"
+  },
+  "SealClue202": {
+    "name": "Pista del sello 202",
+    "description": "Pista del sello"
+  },
+  "SealClue203": {
+    "name": "Pista del sello 203",
+    "description": "Pista del sello"
+  },
+  "SealClue301": {
+    "name": "Pista del sello 301",
+    "description": "Pista del sello"
+  },
+  "SealClue302": {
+    "name": "Pista del sello 302",
+    "description": "Pista del sello"
+  },
+  "SealClue303": {
+    "name": "Pista del sello 303",
+    "description": "Pista del sello"
+  },
+  "BreakSeal1": {
     "name": "Romper el sello 1",
+    "description": "Romper el Sello"
+  },
+  "BreakSeal2": {
+    "name": "Romper el sello 2",
+    "description": "Romper el Sello"
+  },
+  "BreakSeal3": {
+    "name": "Romper el sello 3",
     "description": "Romper el Sello"
   },
   "InvestigateTheSealOfStormterrorsLair": {
@@ -1435,8 +1499,16 @@
     "name": "Recuerdo fragmentado (Anemo)",
     "description": "Acércala a tu oído y parecerá que puedes escuchar un sonido débil, pero imposible de distinguir. (No disponible)"
   },
-  "SwordCemeterySeal": {
+  "SwordCemeterySeal1": {
     "name": "Sello del Cementerio de Espadas 1",
+    "description": "Romper el Sello"
+  },
+  "SwordCemeterySeal2": {
+    "name": "Sello del Cementerio de Espadas 2",
+    "description": "Romper el Sello"
+  },
+  "SwordCemeterySeal3": {
+    "name": "Sello del Cementerio de Espadas 3",
     "description": "Romper el Sello"
   },
   "TeardropCrystal": {
@@ -1655,7 +1727,7 @@
     "name": "La Princesa de las Nieves y los seis enanos (VII)",
     "description": "Un cuento muy conocido en Teyvat. Este volumen cuenta el final de la historia y la profecía de la Madre de la Noche."
   },
-  "YearsOfLoneliness": {
+  "1000YearsOfLoneliness": {
     "name": "Mil años de soledad",
     "description": "El comienzo del trágico viaje fantástico del cazador de Aguaclara. ¿Dónde ocurrió su primera desgracia? ¿Qué marca el inicio y el final del viaje de «Mil años de soledad»? En esta primera parte de «Mil años de soledad», se explican los difusos sueños de la vida del Sr. Goldson."
   },
@@ -1867,8 +1939,72 @@
     "name": "Licor común",
     "description": "Una bebida alcohólica común disponible en cualquier lugar."
   },
-  "TESTCocktail": {
+  "TESTCocktail16": {
     "name": "(TEST) Coctel 16",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail17": {
+    "name": "(TEST) Coctel 17",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail18": {
+    "name": "(TEST) Coctel 18",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail19": {
+    "name": "(TEST) Coctel 19",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail20": {
+    "name": "(TEST) Coctel 20",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail21": {
+    "name": "(TEST) Coctel 21",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail22": {
+    "name": "(TEST) Coctel 22",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail23": {
+    "name": "(TEST) Coctel 23",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail24": {
+    "name": "(TEST) Coctel 24",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail25": {
+    "name": "(TEST) Coctel 25",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail26": {
+    "name": "(TEST) Coctel 26",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail27": {
+    "name": "(TEST) Coctel 27",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail28": {
+    "name": "(TEST) Coctel 28",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail29": {
+    "name": "(TEST) Coctel 29",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail30": {
+    "name": "(TEST) Coctel 30",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail31": {
+    "name": "(TEST) Coctel 31",
+    "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
+  },
+  "TESTCocktail32": {
+    "name": "(TEST) Coctel 32",
     "description": "(TEST) La última creación del nuevo camarero en Mondstadt"
   },
   "GodwinsLetter": {
@@ -2037,7 +2173,7 @@
   },
   "VersesOfEquilibrium": {
     "name": "Versos de Equilibrium",
-    "description": "Dice la leyenda que es una antigua encantación para conmemorar a Rex Lapis y al Adeptus Yaksha. A la vez, es un texto antiguo de la fe del Arconte Geo."
+    "description": "Dice la leyenda que es un antiguo encantamiento para conmemorar a Rex Lapis y al Adeptus Yaksha. A la vez, es un texto antiguo de la fe del Arconte Geo."
   },
   "RecordsOfTheGallantTheHermit": {
     "name": "Registros del gallardo: El ermitaño",
@@ -2527,7 +2663,7 @@
     "name": "Notas viejas y rasgadas",
     "description": "Notas escritas por alguien anónimo. Describen un lugar que no está muy lejos de aquí."
   },
-  "KnightsOfFavoniusHandbookThEdition": {
+  "KnightsOfFavoniusHandbook5thEdition": {
     "name": "Manual de los Caballeros (V)",
     "description": "Un código de conducta sobre el uso del lenguaje y las normas de comportamiento de los Caballeros de Favonius de Mondstadt, editado personalmente por la Gran Maestra Intendente Jean. Se espera que todos los caballeros se atengan estrictamente a estas normas, y hablen y actúen en consecuencia."
   },
@@ -3840,7 +3976,7 @@
     "description": "Un preciado mineral formado gracias a la geografía, el entorno y las líneas ley especiales de Espinadragón."
   },
   "AmethystLump": {
-    "name": "Trozo de amatista",
+    "name": "Pedazo de amatista",
     "description": "Cristal mineral bruto. Obtenible únicamente en las islas de Inazuma. Solo un profesional podrá sacar su auténtico valor."
   },
   "NorthlanderSwordBillet": {
@@ -4303,7 +4439,7 @@
     "name": "Mina, la princesa de la nación caída (VI)",
     "description": "Por fin se desvela la verdad sobre el mundo, que más bien parece una gran y maligna ironía. Incluso tras separarse, nuestros dos protagonistas no pueden huir de su destino.\\n¡El último volumen de «Mina, la princesa de la nación caída»! Pero no desesperen, ¡esta historia no termina aquí!"
   },
-  "FlowersForPrincessFischl": {
+  "FlowersForPrincessFischl0": {
     "name": "Flores para la princesa Fischl (0)",
     "description": "El tomo preliminar de la saga «Flores para la princesa Fischl».\\nOriginalmente, la obra era una caja de madera violeta oscura que se entregaba como regalo de edición limitada. Sin embargo, debido a lo extenso que era el libro, se imprimió muy pocas veces, lo que enojó a aquellas personas aficionadas a comprar sagas completas.\\nA raíz de ello, la Editorial Yae decidió que este libro sería el volumen 0 y lo vendió por separado. Más tarde, los admiradores más acérrimos tomaron la obra original, la edición en caja de madera y el volumen 0 como las de mayor referencia de esta saga."
   },
@@ -4483,9 +4619,13 @@
     "name": "Mapa del tesoro de los Ladrones de Tesoros",
     "description": "Un mapa del tesoro escondido que los Ladrones de tesoros rasgaron en dos partes, ahora ya volvieron a unirse para conformar un mapa completo.\\nSi sigues las marcas del mapa, quizás te conduzcan hasta un magnífico tesoro."
   },
-  "StorehouseSecurityKeyNo": {
+  "StorehouseSecurityKeyNo1": {
     "name": "Primera llave de seguridad del almacén",
     "description": "Una llave del almacén escondida en un lugar fácil de encontrar. No obstante, los Ladrones de Tesoros no dieron con su paradero, lo que significa que su profesionalidad deja mucho que desear."
+  },
+  "StorehouseSecurityKeyNo2": {
+    "name": "Segunda llave de seguridad del almacén",
+    "description": "Otra de las llaves del almacén escondida en un lugar fácil de encontrar. No obstante, los Ladrones de Tesoros no dieron con su paradero, quizás no les vendría mal asistir a un curso de robos."
   },
   "ASetOfCannonballs": {
     "name": "Bolas de cañón",
@@ -4951,9 +5091,21 @@
     "name": "¡Vamos, Dodoco!",
     "description": "Nota del editor: «¡Vamos, Dodoco!» es una historia escrita por una muchacha y una niña. En ella han plasmado toda su ternura y buenos deseos a modo de regalo para el público. Ojalá que este pequeño librito sirva para traer algo de alegría a la vida de los ocupados lectores."
   },
-  "AkosTreasureLocation": {
+  "AkosTreasureLocation1": {
     "name": "El escondite del tesoro secreto de Ako (I)",
     "description": "Antes de marcharse, Ako Domeki y los cuarenta piratas escondieron un tesoro y acordaron llevárselo la próxima vez que se reunieran aquí. Luego dividieron en cuatro las pistas sobre la ubicación del tesoro. Esta es la primera."
+  },
+  "AkosTreasureLocation2": {
+    "name": "El escondite del tesoro secreto de Ako (II)",
+    "description": "Antes de marcharse, Ako Domeki y los cuarenta piratas escondieron un tesoro y acordaron llevárselo la próxima vez que se reunieran aquí. Luego dividieron en cuatro las pistas sobre la ubicación del tesoro. Esta es la segunda."
+  },
+  "AkosTreasureLocation3": {
+    "name": "El escondite del tesoro secreto de Ako (III)",
+    "description": "Antes de marcharse, Ako Domeki y los cuarenta piratas escondieron un tesoro y acordaron llevárselo la próxima vez que se reunieran aquí. Luego dividieron en cuatro las pistas sobre la ubicación del tesoro. Esta es la tercera."
+  },
+  "AkosTreasureLocation4": {
+    "name": "El escondite del tesoro secreto de Ako (IV)",
+    "description": "Antes de marcharse, Ako Domeki y los cuarenta piratas escondieron un tesoro y acordaron llevárselo la próxima vez que se reunieran aquí. Luego dividieron en cuatro las pistas sobre la ubicación del tesoro. Esta es la cuarta."
   },
   "YajnaGrass": {
     "name": "Hierba yajña",
@@ -5195,9 +5347,85 @@
     "name": "Nota",
     "description": "Una nota arrugada escrita con una caligrafía muy torcida."
   },
-  "RedemptionVoucher": {
+  "RedemptionVoucher1": {
     "name": "Cupón de canje n.º 1",
     "description": "Cupón de canje para obtener un Búho estanquespejo: Giro."
+  },
+  "RedemptionVoucher2": {
+    "name": "Cupón de canje n.º 2",
+    "description": "Cupón de canje para obtener un Búho estanquespejo: Danza."
+  },
+  "RedemptionVoucher3": {
+    "name": "Cupón de canje n.º 3",
+    "description": "Cupón de canje para obtener un Búho estanquespejo: Suspensión."
+  },
+  "RedemptionVoucher4": {
+    "name": "Cupón de canje n.º 4",
+    "description": "Cupón de canje para obtener un Búho de la tempestad: Giro."
+  },
+  "RedemptionVoucher5": {
+    "name": "Cupón de canje n.º 5",
+    "description": "Cupón de canje para obtener un Búho de la tempestad: Danza."
+  },
+  "RedemptionVoucher6": {
+    "name": "Cupón de canje n.º 6",
+    "description": "Cupón de canje para obtener un Búho de la tempestad: Suspensión."
+  },
+  "RedemptionVoucher7": {
+    "name": "Cupón de canje n.º 7",
+    "description": "Cupón de canje para obtener un Búho llameante: Giro."
+  },
+  "RedemptionVoucher8": {
+    "name": "Cupón de canje n.º 8",
+    "description": "Cupón de canje para obtener un Búho llameante: Danza."
+  },
+  "RedemptionVoucher9": {
+    "name": "Cupón de canje n.º 9",
+    "description": "Cupón de canje para obtener un Búho llameante: Suspensión."
+  },
+  "RedemptionVoucher10": {
+    "name": "Cupón de canje n.º 10",
+    "description": "Cupón de canje para obtener un Búho del periplo."
+  },
+  "RedemptionVoucher11": {
+    "name": "Cupón de canje n.º 11",
+    "description": "Cupón de canje para obtener un Trípode estanquespejo: Cúspide."
+  },
+  "RedemptionVoucher12": {
+    "name": "Cupón de canje n.º 12",
+    "description": "Cupón de canje para obtener un Trípode estanquespejo: Danza."
+  },
+  "RedemptionVoucher13": {
+    "name": "Cupón de canje n.º 13",
+    "description": "Cupón de canje para obtener un Trípode estanquespejo: Pedestal."
+  },
+  "RedemptionVoucher14": {
+    "name": "Cupón de canje n.º 14",
+    "description": "Cupón de canje para obtener un Trípode de la tempestad: Cúspide."
+  },
+  "RedemptionVoucher15": {
+    "name": "Cupón de canje n.º 15",
+    "description": "Cupón de canje para obtener un Trípode de la tempestad: Danza."
+  },
+  "RedemptionVoucher16": {
+    "name": "Cupón de canje n.º 16",
+    "description": "Cupón de canje para obtener un Trípode de la tempestad: Pedestal."
+  },
+  "RedemptionVoucher17": {
+    "name": "Cupón de canje n.º 17",
+    "description": "Cupón de canje para obtener un Trípode llameante: Cúspide."
+  },
+  "RedemptionVoucher18": {
+    "name": "Cupón de canje n.º 18",
+    "description": "Cupón de canje para obtener un Trípode llameante: Danza."
+  },
+  "RedemptionVoucher19": {
+    "name": "Cupón de canje n.º 19",
+    "description": "Cupón de canje para obtener un Trípode llameante: Pedestal."
+  },
+  "RedemptionVoucher20": {
+    "name": "Cupón de canje n.º 20",
+    "description": "Cupón de canje para obtener un Trípode del periplo."
   },
   "PartBreeze": {
     "name": "Componente: Sobre el viento",
@@ -5363,8 +5591,16 @@
     "name": "Lista de contraseñas del informante",
     "description": "Un código que te entregó Alhacén. Al parecer, para comprar los “productos especiales” de Dori, primero hay que decir la contraseña correcta.\\nAsegúrate de revisar bien las contraseñas antes de reunirte con el contacto de Dori."
   },
-  "MisplacedConch": {
+  "MisplacedConch1": {
     "name": "Caracola desplazada (1)",
+    "description": "Una caracola que debería estar en otro lugar. Alguien la tiró aquí y está reproduciendo una imagen que tuvo lugar en otro sitio. Colócala en el lugar en el que debería estar y podrás ver una nueva escena."
+  },
+  "MisplacedConch2": {
+    "name": "Caracola desplazada (2)",
+    "description": "Una caracola que debería estar en otro lugar. Alguien la tiró aquí y está reproduciendo una imagen que tuvo lugar en otro sitio. Colócala en el lugar en el que debería estar y podrás ver una nueva escena."
+  },
+  "MisplacedConch3": {
+    "name": "Caracola desplazada (3)",
     "description": "Una caracola que debería estar en otro lugar. Alguien la tiró aquí y está reproduciendo una imagen que tuvo lugar en otro sitio. Colócala en el lugar en el que debería estar y podrás ver una nueva escena."
   },
   "PrescriptionMedicationFromBimarstanForGurgen": {
@@ -6631,7 +6867,7 @@
     "name": "Pescado a la parrilla del superviviente",
     "description": "La especialidad de Keching. Este plato no fue cocinado con fuego, sino que se cocinó desde el interior a través de un delicado uso del elemento Electro. Al comerlo, se puede sentir la tierna textura del pescado, fragante y con la piel ligeramente carbonizada. Su sabor está perfectamente equilibrado. ¿Es así como sobrevive Keching en la naturaleza? ¿Con sus habilidades culinarias? Verdaderamente, las apariencias engañan..."
   },
-  "NutritiousMealV": {
+  "NutritiousMealV593": {
     "name": "Comida nutritiva (versión n.º 593)",
     "description": "La especialidad de Sacarosa. Al principio parece un producto alquímico extraño, pero Sacarosa insiste en que es un alimento saludable y nutritivo, producto de muchos experimentos y mejoras minuciosas. Su color verde saludable proviene de una mezcla de crema y jugos de vegetales naturales... Espera, ¿jugos de vegetales?"
   },
@@ -7259,7 +7495,7 @@
     "name": "Pescado de la Noche de Verano",
     "description": "La especialidad de Yoimiya. Viendo los fuegos artificiales con las manos rebosantes de las golosinas que te dio Yoimiya, su aire despreocupado, la risa infantil en tu oído junto con los fuegos artificiales estallando en el cielo... En medio de esta sinfonía de sonidos únicos, la carpa dorada que sostienes en la mano parece como si fuera a aletear en cualquier momento..."
   },
-  "DizzinessBeGoneNoJutsuVersion": {
+  "DizzinessBeGoneNoJutsuVersion20": {
     "name": "Técnica ninja antisopor 2.0",
     "description": "La especialidad de Sayu. La bola de arroz ha sido amasada por Sayu hasta lograr una adorable forma de tejón, NO de tanuki, ¿entendido? Por cierto, este plato debe ser la razón por la que Sayu puede dormir un día entero después de comer, ¿no?"
   },
@@ -7657,7 +7893,7 @@
   },
   "SuspiciousMushroomHodgepodge": {
     "name": "Surtido de champiñones extraño",
-    "description": "Unos champiñones típicos aranara que Paimon ha refinado minuciosamente, pero que en realidad se pueden encontrar en el mercado con más condimentos. Se podría decir que tiene cierto sabor silvestre, aunque más bien... lleno de olor a tierra sin lavar. Un regalo de la naturaleza con el que solo un jabalí del bosque podría ser feliz."
+    "description": "Unos champiñones típicos aranara que Paimon ha refinado minuciosamente, pero que en realidad se pueden encontrar en el mercado con más condimentos. Se podría decir que tiene cierto sabor silvestre, aunque más bien... desprende un olor a tierra sin lavar. Un regalo de la naturaleza con el que solo un jabalí del bosque podría ser feliz."
   },
   "MushroomHodgepodge": {
     "name": "Surtido de champiñones",
@@ -8077,7 +8313,7 @@
   },
   "DeliciousJadeFruitSoup": {
     "name": "Sopa de frutos de jade deliciosa",
-    "description": "Un postre tradicional de Sumeru. Los grandes trozos de fruta flotan en la aromática sopa, como un barco que navega por el río, dejan en el paladar una refrescante brisa frutal."
+    "description": "Un postre tradicional de Liyue. Los grandes trozos de fruta flotan en la aromática sopa, como un barco que navega por el río, dejan en el paladar una refrescante brisa frutal."
   },
   "TheEndeavor": {
     "name": "Un soplo de arrojo",
@@ -8086,6 +8322,10 @@
   "HeatQuellingSoup": {
     "name": "Sopa regulatemperaturas",
     "description": "La especialidad de Baizhu. “Aunque no es una medicina, sí sirve para reducir la sequedad”, te dice Baizhu con una voz seria, tras lo que frente a tus ojos aparece un cuenco de sopa brillante y cristalina. “*Sss*, antes la hacía sin azúcar, pero esta vez le añadió un poco porque temía que no fueras a tolerar bien el amargor”, sisea Changsheng."
+  },
+  "EnergizingBento": {
+    "name": "Bento energizante",
+    "description": "La especialidad de Kirara. Un bento que Kirara preparó con mucho empeño imitando el popular estilo entre las jóvenes de ahora. Además de un buen equilibrio entre los nutrientes, también tiene forma de gatitos. Es como un paquete que te envían con todo el cariño el mundo. ¡Podrías recibir uno todos los días y no cansarte nunca!"
   },
   "RecipeItem": {
     "name": "Ingredientes",
@@ -9125,7 +9365,7 @@
   },
   "WanderersBloomingFlower": {
     "name": "Flor floreciente del trashumante",
-    "description": "Una flor en todo su esplendor que custodiaba un Hilichurl Errabundo.\\nLos extraños de la eternidad no esperan recompensa alguna, todo cuanto hacen es con el mero objetivo de ser testigos del fruto de lo acaecido..."
+    "description": "Una flor en todo su esplendor que custodiaba un Hilichurl Errabundo.\\nUn forastero eterno no espera recompensa alguna, ya que todo lo que hace acabará floreciendo y dando frutos."
   },
   "HurricaneSeed": {
     "name": "Semilla de huracán",
@@ -9635,7 +9875,7 @@
     "name": "Cofre PB",
     "description": "“Al viajar por tierras inmersas en la oscuridad, se necesitarán las armas más brillantes. Estas se encuentran dentro de este cofre, esperando la hora en la que deban atravesar la sombra de sus enemigos”."
   },
-  "BPPickOfTestBundle": {
+  "BPPick1Of3TestBundle": {
     "name": "Paquete regalo de prueba de PB. Escoger 1 de 3",
     "description": ""
   },
@@ -9800,7 +10040,7 @@
     "description": "Un antiguo manuscrito que un erudito de la Escuela de Etiología desenterró en el desierto. Se desconoce su autoría."
   },
   "AnOdeToKhvarena": {
-    "name": "Stotra de las jvarena",
+    "name": "Stotra de la jvarena",
     "description": "Según se dice, una comunidad religiosa del desierto, ahora inexistente, transmitió esta canción de generación en generación de manera oral. Sin embargo, no se sabe quién la transcribió."
   },
   "TransparentRuinsRecordII": {
@@ -10635,6 +10875,10 @@
     "name": "Semillas de alimentos",
     "description": "Unas semillas que te dio el ser elemental Flotihongo Anemo. Si las plantas, podrás cultivar los alimentos que a los Hongos tanto les gusta comer. ¿Sabrán los Hongos cómo cuidar de los cultivos ellos solos?"
   },
+  "KingOfInvokations": {
+    "name": "El rey invocador",
+    "description": "Una novela ligera basada en Invocación de los Sabios, el juego de cartas más popular de todo Teyvat. Sus singulares personajes y los entresijos de la historia principal la han convertido en una de las novelas más populares del mercado."
+  },
   "NamelessAdventurersNotes": {
     "name": "Registro de aventuras anónimo",
     "description": "Unas breves notas perdidas en el desierto que parecen haber sido dejadas por algún aventurero."
@@ -10670,6 +10914,10 @@
   "RecordsOfUnknownAttributionII": {
     "name": "Registro de alguien (II)",
     "description": "La segunda parte de un registro dejado por una persona totalmente desconocida."
+  },
+  "EmberglowLeaf": {
+    "name": "Hoja irisada",
+    "description": "Una hoja que Nahida te dio para que puedas ponerte en contacto con los aranara. Sopla sobre ella como si de una armónica se tratara para invocar a un pequeño aranara. Los aranara solo acudirán porque confían en Nahida, por lo que si se sopla en condiciones normales, no surtirá efecto alguno."
   },
   "AkademiyaInvestigationTeamsLogsI": {
     "name": "Diario del equipo de investigación de la Academia de Sumeru (I)",
@@ -10737,7 +10985,7 @@
   },
   "KhvarenaMonumentInscription": {
     "name": "Monumento de la jvarena",
-    "description": "Monumento de la jvarena"
+    "description": "La inscripción en el monumento de la jvarena."
   },
   "SilkFlowerSeed": {
     "name": "Semilla de flor de seda",
@@ -10999,9 +11247,397 @@
     "name": "Alas del tapiz estrellado",
     "description": "Un modelo de planeador. Un regalo obtenido por presenciar un festival en tierras lejanas."
   },
-  "RadiantSpincrystal": {
+  "RadiantSpincrystal1": {
     "name": "Girocristal radiante (1)",
     "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Dawn Winery Theme»."
+  },
+  "RadiantSpincrystal2": {
+    "name": "Girocristal radiante (2)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Sweet Smile»."
+  },
+  "RadiantSpincrystal3": {
+    "name": "Girocristal radiante (3)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Lone Sojourner»."
+  },
+  "RadiantSpincrystal4": {
+    "name": "Girocristal radiante (4)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Day in Mondstadt»."
+  },
+  "RadiantSpincrystal5": {
+    "name": "Girocristal radiante (5)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «The Edge of the Prairie»."
+  },
+  "RadiantSpincrystal6": {
+    "name": "Girocristal radiante (6)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Tale of Two Dragons»."
+  },
+  "RadiantSpincrystal7": {
+    "name": "Girocristal radiante (7)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Happy Journey»."
+  },
+  "RadiantSpincrystal8": {
+    "name": "Girocristal radiante (8)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Legend of the Wind»."
+  },
+  "RadiantSpincrystal9": {
+    "name": "Girocristal radiante (9)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Bustling Afternoon in Mondstadt»."
+  },
+  "RadiantSpincrystal10": {
+    "name": "Girocristal radiante (10)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Dusk in Mondstadt»."
+  },
+  "RadiantSpincrystal11": {
+    "name": "Girocristal radiante (11)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Mondstadt Starlit»."
+  },
+  "RadiantSpincrystal12": {
+    "name": "Girocristal radiante (12)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Moonlight in Mondstadt»."
+  },
+  "RadiantSpincrystal13": {
+    "name": "Girocristal radiante (13)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Another Day in Mondstadt»."
+  },
+  "RadiantSpincrystal14": {
+    "name": "Girocristal radiante (14)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Windborne Hymn»."
+  },
+  "RadiantSpincrystal15": {
+    "name": "Girocristal radiante (15)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Knights of Favonius»."
+  },
+  "RadiantSpincrystal16": {
+    "name": "Girocristal radiante (16)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Angel's Share»."
+  },
+  "RadiantSpincrystal17": {
+    "name": "Girocristal radiante (17)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Happy Day»."
+  },
+  "RadiantSpincrystal18": {
+    "name": "Girocristal radiante (18)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Tender Strength»."
+  },
+  "RadiantSpincrystal19": {
+    "name": "Girocristal radiante (19)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Before Dawn, at the Winery»."
+  },
+  "RadiantSpincrystal20": {
+    "name": "Girocristal radiante (20)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Whispering Plain»."
+  },
+  "RadiantSpincrystal21": {
+    "name": "Girocristal radiante (21)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A New Day With Hope»."
+  },
+  "RadiantSpincrystal22": {
+    "name": "Girocristal radiante (22)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Eternal Anamnesis»."
+  },
+  "RadiantSpincrystal23": {
+    "name": "Girocristal radiante (23)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Journey of Hope»."
+  },
+  "RadiantSpincrystal24": {
+    "name": "Girocristal radiante (24)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Sun Rises in Liyue»."
+  },
+  "RadiantSpincrystal25": {
+    "name": "Girocristal radiante (25)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Good Night, Liyue»."
+  },
+  "RadiantSpincrystal26": {
+    "name": "Girocristal radiante (26)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Call It a Day in Liyue»."
+  },
+  "RadiantSpincrystal27": {
+    "name": "Girocristal radiante (27)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Clear Sky Over Liyue»."
+  },
+  "RadiantSpincrystal28": {
+    "name": "Girocristal radiante (28)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Cozy Leisure Time»."
+  },
+  "RadiantSpincrystal29": {
+    "name": "Girocristal radiante (29)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Winding River»."
+  },
+  "RadiantSpincrystal30": {
+    "name": "Girocristal radiante (30)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Mild Waves»."
+  },
+  "RadiantSpincrystal31": {
+    "name": "Girocristal radiante (31)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Rhythm Amidst the Reeds»."
+  },
+  "RadiantSpincrystal32": {
+    "name": "Girocristal radiante (32)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Flows of Jade-Like Water»."
+  },
+  "RadiantSpincrystal33": {
+    "name": "Girocristal radiante (33)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Flow of Mildness»."
+  },
+  "RadiantSpincrystal34": {
+    "name": "Girocristal radiante (34)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Vague Whispers»."
+  },
+  "RadiantSpincrystal35": {
+    "name": "Girocristal radiante (35)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Legends Swept Away»."
+  },
+  "RadiantSpincrystal36": {
+    "name": "Girocristal radiante (36)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Plain of Nostalgia»."
+  },
+  "RadiantSpincrystal37": {
+    "name": "Girocristal radiante (37)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Rhythms From the Conch»."
+  },
+  "RadiantSpincrystal38": {
+    "name": "Girocristal radiante (38)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Peaceful Hike»."
+  },
+  "RadiantSpincrystal39": {
+    "name": "Girocristal radiante (39)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «The Fading Stories»."
+  },
+  "RadiantSpincrystal40": {
+    "name": "Girocristal radiante (40)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Above the Sea of Clouds»."
+  },
+  "RadiantSpincrystal41": {
+    "name": "Girocristal radiante (41)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Rainbow at Summit»."
+  },
+  "RadiantSpincrystal42": {
+    "name": "Girocristal radiante (42)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Red Leaf on the Chessboard»."
+  },
+  "RadiantSpincrystal43": {
+    "name": "Girocristal radiante (43)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Slumbering Lore»."
+  },
+  "RadiantSpincrystal44": {
+    "name": "Girocristal radiante (44)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Lost Expectation»."
+  },
+  "RadiantSpincrystal45": {
+    "name": "Girocristal radiante (45)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «The Realm Within»."
+  },
+  "RadiantSpincrystal46": {
+    "name": "Girocristal radiante (46)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Sojourner's Sweet Dream»."
+  },
+  "RadiantSpincrystal47": {
+    "name": "Girocristal radiante (47)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Miko's Night»."
+  },
+  "RadiantSpincrystal48": {
+    "name": "Girocristal radiante (48)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Streets of Elegance»."
+  },
+  "RadiantSpincrystal49": {
+    "name": "Girocristal radiante (49)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «The Land of Her Serenity»."
+  },
+  "RadiantSpincrystal50": {
+    "name": "Girocristal radiante (50)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «The Mysterious Islands»."
+  },
+  "RadiantSpincrystal51": {
+    "name": "Girocristal radiante (51)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Everlasting Devotion»."
+  },
+  "RadiantSpincrystal52": {
+    "name": "Girocristal radiante (52)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Kitsune's Mask»."
+  },
+  "RadiantSpincrystal53": {
+    "name": "Girocristal radiante (53)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Hanachirusato»."
+  },
+  "RadiantSpincrystal54": {
+    "name": "Girocristal radiante (54)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Time to Say Farewell»."
+  },
+  "RadiantSpincrystal55": {
+    "name": "Girocristal radiante (55)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Flickering Sakura»."
+  },
+  "RadiantSpincrystal56": {
+    "name": "Girocristal radiante (56)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Murmuring Creek»."
+  },
+  "RadiantSpincrystal57": {
+    "name": "Girocristal radiante (57)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Scarred Island»."
+  },
+  "RadiantSpincrystal58": {
+    "name": "Girocristal radiante (58)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Silent Testimony»."
+  },
+  "RadiantSpincrystal59": {
+    "name": "Girocristal radiante (59)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Island of Hanabi»."
+  },
+  "RadiantSpincrystal60": {
+    "name": "Girocristal radiante (60)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Preparation of Matsuri»."
+  },
+  "RadiantSpincrystal61": {
+    "name": "Girocristal radiante (61)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Illuminated Coral Palace»."
+  },
+  "RadiantSpincrystal62": {
+    "name": "Girocristal radiante (62)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Tranquil Town»."
+  },
+  "RadiantSpincrystal63": {
+    "name": "Girocristal radiante (63)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «In a Harmonious Atmosphere»."
+  },
+  "RadiantSpincrystal64": {
+    "name": "Girocristal radiante (64)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Island of Crystal and Pearl»."
+  },
+  "RadiantSpincrystal65": {
+    "name": "Girocristal radiante (65)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Misty Truth»."
+  },
+  "RadiantSpincrystal66": {
+    "name": "Girocristal radiante (66)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Sorrows of Strays»."
+  },
+  "RadiantSpincrystal67": {
+    "name": "Girocristal radiante (67)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Ruu's Melody»."
+  },
+  "RadiantSpincrystal68": {
+    "name": "Girocristal radiante (68)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Roaming in Silence»."
+  },
+  "RadiantSpincrystal69": {
+    "name": "Girocristal radiante (69)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Echoes of Solitude»."
+  },
+  "RadiantSpincrystal70": {
+    "name": "Girocristal radiante (70)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Dirge of the Soundless»."
+  },
+  "RadiantSpincrystal71": {
+    "name": "Girocristal radiante (71)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Nothing but Ivy»."
+  },
+  "RadiantSpincrystal72": {
+    "name": "Girocristal radiante (72)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Forgotten Epic»."
+  },
+  "RadiantSpincrystal73": {
+    "name": "Girocristal radiante (73)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Beyond Klesha»."
+  },
+  "RadiantSpincrystal74": {
+    "name": "Girocristal radiante (74)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Melody of Hidden Seeds»."
+  },
+  "RadiantSpincrystal75": {
+    "name": "Girocristal radiante (75)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Varuna's Mercy»."
+  },
+  "RadiantSpincrystal76": {
+    "name": "Girocristal radiante (76)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Vestige of Dahri»."
+  },
+  "RadiantSpincrystal77": {
+    "name": "Girocristal radiante (77)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Chatter Between Roots»."
+  },
+  "RadiantSpincrystal78": {
+    "name": "Girocristal radiante (78)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Whirling of Leaves and Petals»."
+  },
+  "RadiantSpincrystal79": {
+    "name": "Girocristal radiante (79)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Hustle and Bustle of Ormos»."
+  },
+  "RadiantSpincrystal80": {
+    "name": "Girocristal radiante (80)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Halcyon Times»."
+  },
+  "RadiantSpincrystal81": {
+    "name": "Girocristal radiante (81)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «A Puff of Cool Breeze»."
+  },
+  "RadiantSpincrystal82": {
+    "name": "Girocristal radiante (82)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «On the Barren Sands»."
+  },
+  "RadiantSpincrystal83": {
+    "name": "Girocristal radiante (83)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Arid Canyon»."
+  },
+  "RadiantSpincrystal84": {
+    "name": "Girocristal radiante (84)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Settlement for Exiles»."
+  },
+  "RadiantSpincrystal85": {
+    "name": "Girocristal radiante (85)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Ruins of Scorching Might»."
+  },
+  "RadiantSpincrystal86": {
+    "name": "Girocristal radiante (86)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Eye of Deshret»."
+  },
+  "RadiantSpincrystal87": {
+    "name": "Girocristal radiante (87)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. La canción que contiene este Girocristal radiante es «Emerald in the Desert»."
+  },
+  "RadiantSpincrystal88": {
+    "name": "Girocristal radiante (88)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal89": {
+    "name": "Girocristal radiante (89)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal90": {
+    "name": "Girocristal radiante (90)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal91": {
+    "name": "Girocristal radiante (91)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal92": {
+    "name": "Girocristal radiante (92)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal93": {
+    "name": "Girocristal radiante (93)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal94": {
+    "name": "Girocristal radiante (94)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal95": {
+    "name": "Girocristal radiante (95)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal96": {
+    "name": "Girocristal radiante (96)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal97": {
+    "name": "Girocristal radiante (97)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
+  },
+  "RadiantSpincrystal98": {
+    "name": "Girocristal radiante (98)",
+    "description": "Un maravilloso cristal que contiene cierta melodía. Es como un hermoso objeto confeccionado con una delicada seda. Estos objetos están distribuidos por todo Teyvat o en manos de comerciantes de rarezas. Puedes restaurar la música que contienen usando las decoraciones “Melodías del mundo: Música en el aire” o “Melodías del mundo: Sonidos entrelazados” de tu Relajatetera. Este Girocristal radiante contiene una misteriosa canción de Sumeru."
   },
   "FragrantSteak": {
     "name": "Filete a la barbacoa aromático",
@@ -11139,6 +11775,10 @@
     "name": "Seda inmarcesible",
     "description": "Objeto de refinamiento exclusivo para el arma “Fierro Floriorlado”.\\nLa decoración es la mejor forma de darle un toque especial al valor y la funcionalidad de cualquier cosa. Incluso tratándose de un arma, en una época como esta, decorarla con flores que nunca se marchitan la puede dotar de cierto encanto."
   },
+  "CongealedPupaWax": {
+    "name": "Grasa de pupa solidificada",
+    "description": "Objeto de refinamiento exclusivo para el arma “Perforaibis”.\\nCuenta la leyenda que aquel que más tarde se convertiría en el rey invocador pasó buena parte de su juventud en el Gran Desierto Escarlata fabricando cuerdas de arco con la grasa de los gusanos de arena por encargo de los descendientes del rey ibis. Por desgracia, este gran arco desapareció junto a dicho rey, y solo la receta de la fabricación de grasa de pupa ha logrado perdurar hasta la actualidad. Tal vez sea porque aún ansía el momento en que vuelva a ser usado..."
+  },
   "FalconsDance": {
     "name": "Danza del halcón",
     "description": "Cuando un personaje realiza un Ataque Descendente, genera una onda de choque que inflige Daño en el AdE. Cada personaje solo puede generar una onda de choque cada 8 s."
@@ -11173,7 +11813,7 @@
   },
   "Featherweight": {
     "name": "Ligereza",
-    "description": "Disminuye el coste de Aguante de todos los miembros del equipo en un 50%."
+    "description": "Disminuye el Coste de Aguante de todos los miembros del equipo en un 50%."
   },
   "BladeDance": {
     "name": "Danza de espadas",
@@ -11851,7 +12491,7 @@
     "name": "Cyno - Taciturno",
     "description": "Diseño de tarjeta de presentación.\\nCuando Cyno se encuentra sumergido en un profundo silencio, puede significar que esté reflexionando sobre algún veredicto importante... O que simplemente esté pensando en un chiste."
   },
-  "CandaceGreyHeron": {
+  "CandaceGrayHeron": {
     "name": "Candace - Garza real",
     "description": "Diseño de tarjeta de presentación.\\nLos vientos abrasadores del pasado erizaron las plumas de la garza real. Pero el ave solo tiene ojos para la estrella del alba."
   },
@@ -11959,6 +12599,14 @@
     "name": "PB - Corona de la eminencia",
     "description": "Diseño de tarjeta de presentación.\\n“La sabiduría es la corona que recibimos con el paso de los años, así como nuestra añoranza es el tiempo que juntos pasamos”."
   },
+  "KiraraNekoBox": {
+    "name": "Kirara - Paquete minino",
+    "description": "Diseño de tarjeta de presentación.\\n“La felicidad en el rostro de los destinatarios es la mejor recompensa que Kirara podría esperar”."
+  },
+  "TravelNotesSecrets": {
+    "name": "PB{NON_BREAK_SPACE}-{NON_BREAK_SPACE}As de la invocación",
+    "description": "Diseño de tarjeta de presentación.\\nNo olvides nunca los momentos que pasaste jugando con tus amigos. Nunca olvides lo que es vivir sin preocupación alguna."
+  },
   "AnemoculusResonanceStone": {
     "name": "Roca de resonancia de anemóculus",
     "description": "Puede utilizarse en Mondstadt para encontrar anemóculus en las cercanías.\\nUn disco de piedra con características similares a las Estatuas de Los Siete que emite un sonido cuando hay anemóculus en los alrededores.\\nEstos discos son una burda imitación de las Estatuas de Los Siete diseminadas por todo el continente. Como falsificaciones que son, desean el poder de los óculus y ofrecen a devotos y aventureros la oportunidad de encontrarlos."
@@ -11987,7 +12635,7 @@
     "name": "Resina concentrada",
     "description": "Solo se puede tener un máximo de 5 al mismo tiempo.\\nSustituye a la Resina original al revitalizar un Árbol Petrificado o una Flor ley y otorga mejores recompensas.\\nContiene cristales repletos de energía.\\nLas raíces y flores de los árboles Irminsul están conectadas con las líneas ley, y la energía que contiene la Resina desobstruye los canales de las líneas ley y extrae las sustancias estancadas en su interior."
   },
-  "NREMenu": {
+  "NREMenu30": {
     "name": "Bolsita nutritiva (Versión n.º 30)",
     "description": "Transforma la mayoría de los alimentos en nutrientes que se pueden ingerir inmediatamente. Aunque aumenta notablemente la eficiencia nutricional, no muchos están dispuestos a probarlo..."
   },
@@ -12255,7 +12903,7 @@
     "name": "Instrucciones: Resina concentrada",
     "description": "Instrucciones detalladas para fabricar Resina concentrada. Utiliza esta resina al activar Flores ley y Árboles Petrificados para aumentar su eficiencia. Solo se puede tener un máximo de 5 al mismo tiempo."
   },
-  "DiagramNREMenu": {
+  "DiagramNREMenu30": {
     "name": "Plano: Bolsita nutritiva (Versión n.º 30)",
     "description": "Planos detallados para fabricar una Bolsita nutritiva (Versión n.º 30). Apréndelos para crear un objeto con el que comer más rápido."
   },
@@ -12455,6 +13103,18 @@
     "name": "Espantohongo Plumaverde",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "FatuiCryoCicinMage": {
+    "name": "Soldado Fatui - Maga de Cicin Cryo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AbyssLectorFathomlessFlames": {
+    "name": "Bardo del Abismo - Llamas abismales",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElectroHypostasis": {
+    "name": "Hipóstasis Electro",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "UndividedHeart": {
     "name": "Corazón indiviso",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
@@ -12489,6 +13149,10 @@
   },
   "GrandExpectation": {
     "name": "Visión de aventura",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "BunnyTriggered": {
+    "name": "Lanzamiento de Barón Bunny",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "NaganoharaMeteorSwarm": {
@@ -12567,8 +13231,8 @@
     "name": "Ansia de guerra",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
-  "TamanooyasCasket": {
-    "name": "Bendición de Tamanooya",
+  "TamakushiCasket": {
+    "name": "Bendición de Tamakushi",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "PoundingSurprise": {
@@ -12579,8 +13243,24 @@
     "name": "Tormenta eléctrica",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "EmbraceOfWinds": {
+    "name": "Abraza los vientos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ConquerorOfEvilGuardianYaksha": {
+    "name": "Conquista del mal: Guardián Yaksha",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "DominanceOfEarth": {
+    "name": "Dominio de la Tierra",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "KeenSight": {
     "name": "Visión aguda",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AbsorbingPrism": {
+    "name": "Prisma embebedor",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "SinOfPride": {
@@ -12593,6 +13273,38 @@
   },
   "AratakiIchiban": {
     "name": "Itto, el ónico e inimitable",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "MysticalAbandon": {
+    "name": "Abandono místico",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AbyssalMayhemHydrospout": {
+    "name": "Calamidad del Abismo: Hidrocontención",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SanguineRouge": {
+    "name": "Baño de sangre",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "WishesUnnumbered": {
+    "name": "Aspiración infinita",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheShrinesSacredShade": {
+    "name": "Sombra sagrada",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheSeedOfStoredKnowledge": {
+    "name": "Semillas del conocimiento",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "CicinsColdGlare": {
+    "name": "Mirada helada de Cicin",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "EmbersRekindled": {
+    "name": "Ascuas reavivadas",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "MagicGuide": {
@@ -12743,8 +13455,64 @@
     "name": "Yelmo Vetusto del General",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "AmosBow": {
+    "name": "Arco de Amos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "AThousandFloatingDreams": {
+    "name": "Sueños de las Mil Noches",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ElegyForTheEnd": {
+    "name": "Elegía del Fin",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SkywardPride": {
+    "name": "Orgullo Celestial",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheBell": {
+    "name": "Espada del Tiempo",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "VortexVanquisher": {
+    "name": "Lanza Perforanubes",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "EngulfingLightning": {
+    "name": "Luz del Segador",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SkywardBlade": {
+    "name": "Hoja Afilada Celestial",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "FavoniusSword": {
     "name": "Espada de Favonius",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "EmblemOfSeveredFate": {
+    "name": "Emblema del Destino",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TenacityOfTheMillelith": {
+    "name": "Tenacidad de la Geoarmada",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ThunderingPoise": {
+    "name": "Máscara Atronadora",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "VermillionHereafter": {
+    "name": "Deceso del Cinabrio",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "CapriciousVisage": {
+    "name": "Máscara de la Mutabilidad",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ShimenawasReminiscence": {
+    "name": "Reminiscencia de la Purificación",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "LiyueHarborWharf": {
@@ -12825,6 +13593,46 @@
   },
   "GrandNarukamiShrine": {
     "name": "Gran Santuario Narukami",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Tenshukaku": {
+    "name": "Tenshukaku",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SangonomiyaShrine": {
+    "name": "Santuario Sangonomiya",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "SumeruCity": {
+    "name": "Ciudad de Sumeru",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Vanarana": {
+    "name": "Vanarana",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ChinjuForest": {
+    "name": "Bosque Chinju",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Hanachirusato": {
+    "name": "Hanachirusato",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "KidKujirai": {
+    "name": "Pequeño Kujirai",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Xudong": {
+    "name": "Xudong",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Dunyarzad": {
+    "name": "Dunyarzad",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "Rana": {
+    "name": "Rhana",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
   "ElementalResonanceWovenIce": {
@@ -12943,6 +13751,42 @@
     "name": "Llamado del abismo",
     "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
   },
+  "WindAndFreedom": {
+    "name": "Viento y libertad",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "StoneAndContracts": {
+    "name": "Piedra y contratos",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "ThunderAndEternity": {
+    "name": "Trueno y eternidad",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "NatureAndWisdom": {
+    "name": "Plantas y saber",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FatuiConspiracy": {
+    "name": "Conspiración Fatui",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "PlungingStrike": {
+    "name": "Corte Descendente",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "HeavyStrike": {
+    "name": "Ataque Cargado",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "TheLegendOfVennessa": {
+    "name": "La leyenda de Vennessa",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
+  "FriendshipEternal": {
+    "name": "Amistad sempiterna",
+    "description": "Una carta muy resistente del juego de mesa “Invocación de los Sabios”. La ilustración de la cubierta tiene un aspecto muy distinguido gracias a la utilización de un método de impresión especial."
+  },
   "Origin": {
     "name": "Origen",
     "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
@@ -12973,6 +13817,10 @@
   },
   "LazuriteSwirl": {
     "name": "Vórtice azurita",
+    "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
+  },
+  "TreasuresOfTheDeck": {
+    "name": "Tesoro entre las cartas",
     "description": "Un dorso intercambiable de Invocación de los Sabios. Dicen que los diversos dorsos están hechos con diferentes materiales cuyo tacto también es ligeramente distinto. No faltan los jugadores que tienen como afición coleccionar estos dorsos."
   },
   "BeginnerPlayerBadge": {
@@ -13023,7 +13871,7 @@
     "name": "Heredera de los Gunnhildr",
     "description": "Modelo de vestimenta de Jean. Unas elegantes ropas que denotan su experiencia como caballera, perfectas para todo tipo de ocasiones."
   },
-  "Outrider": {
+  "100Outrider": {
     "name": "Exploradora al 100%",
     "description": "Modelo de vestimenta de Amber. ¡Con esta ropa, se ve como una Caballera Exploradora aún más formal y heroica!"
   },
@@ -13253,7 +14101,7 @@
   },
   "SakuraHuedStreet": {
     "name": "Calle de la arboleda",
-    "description": "Plano detallado para colocar una Calle de la arboleda.\\nUn perfecto modelo de la cuidadosamente planificada Calle comercial de la ciudad de Inazuma.\\nSin importar lo que suceda en el mundo exterior, en Inazuma se vive mayormente una atmósfera de paz y tranquilidad. Sus calles son un fiel reflejo de la gente que vive, come y trabaja en ella. Basta con seguir a un conocedor de la zona como Thoma, y visitar los distintos negocios, para poder disfrutar de las fascinantes costumbres locales.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Yoimiya, Thoma, Kuki Shinobu."
+    "description": "Plano detallado para colocar una Calle de la arboleda.\\nUn perfecto modelo de la cuidadosamente planificada Calle comercial de la ciudad de Inazuma.\\nSin importar lo que suceda en el mundo exterior, en Inazuma se vive mayormente una atmósfera de paz y tranquilidad. Sus calles son un fiel reflejo de la gente que vive, come y trabaja en ella. Basta con seguir a un conocedor de la zona como Thoma, y visitar los distintos negocios, para poder disfrutar de las fascinantes costumbres locales.\\nTras usarlo, entra en el menú de colocación para verlo.\\nLos siguientes acompañantes prefieren este conjunto: Yoimiya, Thoma, Kuki Shinobu, y Kirara."
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Habitación de los sueños transitorios",
@@ -13321,7 +14169,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Mente en calma",
-    "description": "Un refinado y sosegado jardín que imita la estética de los pabellones del Jardín Razan y del Jardín Dhyai. Este espacio ignora la disparidad estética entre los distintos estilos arquitectónicos y se centra en crear un ambiente de relajación.\\nCapullos de flores jóvenes brotan en completa serenidad, y las lámparas iluminan la superficie del agua de la fuente con sus destellos dorados... A la caída de la noche, pasear por este sinuoso jardín será capaz de acallar todas las vanas preocupaciones que tan tozudamente se aferran a la mente durante el día...\\nLos siguientes acompañantes prefieren este conjunto: Nahida y Kaveh."
+    "description": "Un refinado y sosegado jardín que imita la estética de los pabellones del Jardín Razan y del Jardín Dhyai. Este espacio ignora la disparidad estética entre los distintos estilos arquitectónicos y se centra en crear un ambiente de relajación.\\nCapullos de flores jóvenes brotan en completa serenidad, y las lámparas iluminan la superficie del agua de la fuente con sus destellos dorados... A la caída de la noche, pasear por este sinuoso jardín será capaz de acallar todas las vanas preocupaciones que tan tozudamente se aferran a la mente durante el día...\\nLos siguientes acompañantes prefieren este conjunto: Nahida, Kaveh y Kirara."
   },
   "ChorusOfDesertAndWood": {
     "name": "Beneplácito del desierto y el bosque",
@@ -13453,7 +14301,7 @@
   },
   "DrippingVerdantLight": {
     "name": "Haz de rocío de verdor",
-    "description": "Plano detallado para fabricar “Haz de gotas de verdor”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+    "description": "Plano detallado para fabricar “Haz de rocío de verdor”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "DeepwoodIllumination": {
     "name": "Luminiscencia arbórea",
@@ -13591,6 +14439,10 @@
     "name": "La estantería interminable (II)",
     "description": "Plano detallado para fabricar “La estantería interminable (II)”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "TavernBookcaseEssentialKnowledge": {
+    "name": "Estantería de taberna: Conocimientos básicos",
+    "description": "Plano detallado para fabricar una Estantería de taberna: Conocimientos básicos.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "SturdyLibraryTable": {
     "name": "Mesa voluminosa de biblioteca",
     "description": "Plano detallado para fabricar una Mesa voluminosa de biblioteca.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -13679,6 +14531,10 @@
     "name": "Mesa de madera de tamarisco compactada",
     "description": "Plano detallado para fabricar una Mesa de madera de tamarisco compactada.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "RoundTavernTableLeapsAndBounds": {
+    "name": "Mesa redonda de taberna: A pasos agigantados",
+    "description": "Plano detallado para fabricar una Mesa redonda de taberna: A pasos agigantados.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "BreezeBlessedBed": {
     "name": "Cama baja suave como la brisa",
     "description": "Plano detallado para fabricar una Cama baja suave como la brisa.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -13698,6 +14554,10 @@
   "AdhigamaWoodComfortBed": {
     "name": "Cama de madera de bodhi: Confort",
     "description": "Plano detallado para fabricar una Cama de madera de bodhi: Confort.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "AdhigamaWoodReposeCouch": {
+    "name": "Diván de madera de bodhi: Asueto",
+    "description": "Plano detallado para fabricar un Diván de madera de bodhi: Asueto.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PineReceptionCounter": {
     "name": "Mostrador de recepción de pino",
@@ -13766,6 +14626,22 @@
   "AdhigamaVineBackedChair": {
     "name": "Silla hojuda de madera de bodhi",
     "description": "Plano detallado para fabricar una Silla hojuda de madera de bodhi.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "SnekusThicket": {
+    "name": "Seto privado de Sneku",
+    "description": "Plano detallado para fabricar un Seto privado de Sneku.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "FinnicksCranberrySea": {
+    "name": "Ponto salmonado de Finnick",
+    "description": "Plano detallado para fabricar Ponto salmonado de Finnick.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TavernDiningChairFlavorsMultiplicity": {
+    "name": "Silla de taberna: Olfato miaugudo",
+    "description": "Plano detallado para fabricar una Silla de taberna: Olfato miaugudo.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TavernDiningChairAcceleratedSobriety": {
+    "name": "Silla de taberna: ¡Arriba, cojín de pelo!",
+    "description": "Plano detallado para fabricar una Silla de taberna: ¡Arriba, cojín de pelo!\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "NorthernStoneHearth": {
     "name": "Chimenea de piedra del norte",
@@ -13923,6 +14799,26 @@
     "name": "Entusiasmo puro",
     "description": "Plano detallado para fabricar “Entusiasmo puro”.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
+  "LittleRosesMangroveHouse": {
+    "name": "Lar corinto del árbol de Rosita",
+    "description": "Plano detallado para fabricar un Lar corinto del árbol de Rosita.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "NightPilotsWatchtower": {
+    "name": "Atalaya de Capitán",
+    "description": "Plano detallado para fabricar una Atalaya de Capitán.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "BaobabsGoldenCradle": {
+    "name": "Moisés gualdo de Baobab",
+    "description": "Plano detallado para fabricar un Moisés gualdo de Baobab.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DionasMiniSofa": {
+    "name": "Minisofá de Diona",
+    "description": "Plano detallado para fabricar un Minisofá de Diona.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TavernDiningCartASnackBetweenDishes": {
+    "name": "Mesa supletoria de taberna: Menaje del merendero",
+    "description": "Plano detallado para fabricar una Mesa supletoria de taberna: Menaje del merendero.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Alfombra de Mondstadt: Ardor carmesí",
     "description": "Plano detallado para fabricar una Alfombra de Mondstadt: Ardor carmesí.\\nTras usarlo, entra en el menú de fabricación para verlo."
@@ -13962,6 +14858,14 @@
   "PureLikeWheatSprouts": {
     "name": "Glauca remembranza de pulcritud",
     "description": "Plano detallado para fabricar “Glauca remembranza de pulcritud”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TavernCarpetPassionOfPlay": {
+    "name": "Alfombra de taberna: Duelo vibrante",
+    "description": "Plano detallado para fabricar una Alfombra de taberna: Duelo vibrante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "TavernCarpetDuelistsWisdom": {
+    "name": "Alfombra de taberna: Duelo de intelectos",
+    "description": "Plano detallado para fabricar una Alfombra de taberna: Duelo de intelectos.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "TrustyPortableLamp": {
     "name": "Lámpara portátil inapagable",
@@ -14182,6 +15086,18 @@
   "TheDustDifferential": {
     "name": "Entre la polvareda",
     "description": "Plano detallado para fabricar “Entre la polvareda”.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeskComboMiddlelakeIsle": {
+    "name": "Ajuar de mesa: Isleta de la laguna",
+    "description": "Plano detallado para fabricar un Ajuar de mesa: Isleta de la laguna.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "DeskComboVerdantTotem": {
+    "name": "Ajuar de mesa: Efigie del verdor",
+    "description": "Plano detallado para fabricar un Ajuar de mesa: Efigie del verdor.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "PrincesWeepingFish": {
+    "name": "Pez plañidero de Príncipe",
+    "description": "Plano detallado para fabricar un Pez plañidero de Príncipe.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Desvelo del emplazamiento del saber",
@@ -15358,6 +16274,10 @@
   "BrightwoodFabricBoxPlatform": {
     "name": "Caja de madera radiante",
     "description": "Plano detallado para fabricar una Caja de madera radiante.\\nTras usarlo, entra en el menú de fabricación para verlo."
+  },
+  "LeisureDevicePuffyTubby": {
+    "name": "Dispositivo de entretenimiento: Fiufiunógrafo",
+    "description": "Plano detallado para fabricar un Dispositivo de entretenimiento: Fiufiunógrafo.\\nTras usarlo, entra en el menú de fabricación para verlo."
   },
   "PottedPlantVerdantVastness": {
     "name": "Maceta: Verdor abundante",

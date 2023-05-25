@@ -94,8 +94,8 @@
       "9": "<i>Peut-être que tout ce qui habite sous les berceaux des arbres n'est qu'un rêve éphémère inversé aux yeux de la divinité de la sagesse...</i>"
     },
     "skillParams": {
-      "0": "(Pyro) Bonus ATQ",
-      "1": "(Pyro) Bonus ATQ",
+      "0": "(Pyro) Bonus DGT",
+      "1": "(Pyro) Bonus DGT",
       "2": "(Électro) Diminution d'intervalle",
       "3": "(Électro) Diminution d'intervalle",
       "4": "(Hydro) Prolongation de durée",
@@ -123,7 +123,7 @@
   "passive2": {
     "name": "Éveil élucidé",
     "description": {
-      "0": "Pour chaque pt de maîtrise élémentaire que Nahida possède au-delà de 200 pts, les DGT infligés par la purification trikarmique d'<strong>Omniscience des plans</strong> augmentent de 0,1 % et son taux CRIT de 0,03 %.",
+      "0": "Pour chaque point de maîtrise élémentaire que Nahida possède au-delà de 200 pts, les DGT infligés par la purification trikarmique d'<strong>Omniscience des plans</strong> augmentent de 0,1 % et son taux CRIT de 0,03 %.",
       "1": "Les DGT de la purification trikarmique peuvent être augmentés d'un maximum de 80 % et son taux CRIT d'un maximum de 24 % de cette manière."
     }
   },

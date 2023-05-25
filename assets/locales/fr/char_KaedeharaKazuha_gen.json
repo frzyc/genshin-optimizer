@@ -6,7 +6,7 @@
       "1": "Le trajet de la lame laissera derrière lui un champ appelé « Vent d'automne » qui inflige des <anemo>DGT Anémo</anemo> de façon intermittente aux ennemis à l'intérieur.",
       "2": "<br/>",
       "3": "<strong>Absorption élémentaire</strong>",
-      "4": "Le Vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "4": "Le vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
       "5": "Un seul élément peut être absorbé à la fois.",
       "6": "<br/>",
       "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
@@ -127,7 +127,7 @@
   "passive3": {
     "name": "Vent d'aube",
     "description": {
-      "0": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
@@ -141,7 +141,7 @@
   "constellation2": {
     "name": "Zanshin des montagnes cruelles",
     "description": {
-      "0": "Le champ de Vent d'automne créé par <strong>Coupure de mille feuilles</strong> a les effets suivants :",
+      "0": "Le champ de vent d'automne créé par <strong>Coupure de mille feuilles</strong> a les effets suivants :",
       "1": [
         " Tant qu'il est actif, la maîtrise élémentaire de Kazuha est augmentée de 200 pts.",
         " La maîtrise élémentaire des personnages déployés dans le champ est augmentée de 200 pts."

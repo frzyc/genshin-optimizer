@@ -38,7 +38,7 @@
   },
   "hold": {
     "dmg": "Hold DMG",
-    "cd": "CD (hold)"
+    "cd": "Hold CD"
   },
   "element": {
     "anemo": "Anemo",

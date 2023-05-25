@@ -1,7 +1,7 @@
 {
   "setName": "Hanımın Sevdiceği",
   "setEffects": {
-    "2": "+%15 Karakter İyileştirme verimi.",
+    "2": "+%15 Karakter İyileştirme Verimi.",
     "4": "Bir Element Becerisi veya Patlaması kullanıldığında 10 saniyeliğine tüm grup üyelerinin aldığı iyileştirme %20 artar."
   },
   "pieces": {

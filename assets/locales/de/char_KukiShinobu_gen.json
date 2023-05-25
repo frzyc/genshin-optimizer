@@ -41,10 +41,10 @@
   "skill": {
     "name": "Grasring der Reinigung",
     "description": {
-      "0": "Flechtet auf Kosten eines Teils der eigenen LP einen Grasring, der Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zufügt.",
+      "0": "Flicht auf Kosten eines Teils der eigenen LP einen Grasring, der Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zufügt.",
       "1": "<br/>",
       "2": "<strong>Grasring</strong>",
-      "3": "Folgt der aktuellen Figur, fügt Gegnern in der Umgebung alle 1,5 s <electro>Elektro-Schaden</electro> zu und stellt basierend auf Kuki Shinobus max. LP den aktuellen Figuren LP wieder her.",
+      "3": "Folgt der aktuellen Figur, fügt Gegnern in der Umgebung alle 1,5 s <electro>Elektro-Schaden</electro> zu und stellt basierend auf Kuki Shinobus max. LP den aktuellen Figuren in der Reichweite LP wieder her.",
       "4": "<br/>",
       "5": "Verringert Kuki Shinobus LP beim Auslösen dieser Fähigkeit höchstens auf 20 %.",
       "6": "<br/>",

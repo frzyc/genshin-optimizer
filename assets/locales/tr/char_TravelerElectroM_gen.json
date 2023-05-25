@@ -71,7 +71,7 @@
   "burst": {
     "name": "Gürleyen Yıldırım",
     "description": {
-      "0": "Yıldırımı seni koruması için çağırırsın. Böylece düşmanlar geri itilir ve <electro>Elektrik Hasarı</electro> alır.",
+      "0": "Yıldırımı seni koruması için çağırarak düşmanları geri iter ve <electro>Elektrik Hasarı</electro> verirsin.",
       "1": "<br/>",
       "2": "<strong>Yıldırım Örtüsü</strong>",
       "3": "Aktif karakterinin Normal veya Yüklü Saldırıları düşmanlara isabet ettiğinde <electro>Elektrik Hasarı</electro> veren Çarpan Yıldırım etkisi uygular.",
@@ -126,7 +126,7 @@
   "constellation3": {
     "name": "Uzaklardan Çakan Şimşek",
     "description": {
-      "0": "<strong>Gürleyen Yıldırım</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gürleyen Yıldırım</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -139,7 +139,7 @@
   "constellation5": {
     "name": "Doğanın Çığlığı",
     "description": {
-      "0": "<strong>Yıldırım Kılıcı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yıldırım Kılıcı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

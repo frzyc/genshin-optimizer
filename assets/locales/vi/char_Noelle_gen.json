@@ -131,9 +131,9 @@
     }
   },
   "constellation1": {
-    "name": "Chi viện cứ giao cho tôi",
+    "name": "Chi Viện Cứ Giao Cho Tôi",
     "description": {
-      "0": "Khi cùng ở trạng thái <strong>Quét Sạch</strong> và <strong>Giáp Hộ Tâm</strong>, kích hoạt hiệu quả hồi HP của Giáp Hộ Tâm tăng lên 100%."
+      "0": "Khi cùng lúc ở trong trạng thái <strong>Quét Sạch</strong> và <strong>Giáp Hộ Tâm</strong>, tỷ lệ kích hoạt hiệu quả hồi HP của Giáp Hộ Tâm tăng đến 100%."
     }
   },
   "constellation2": {
@@ -152,7 +152,7 @@
   "constellation4": {
     "name": "Sẽ Dọn Dẹp Sạch Sẽ",
     "description": {
-      "0": "Khi hiệu quả <strong>Giáp Hộ Tâm</strong> kết thúc hoặc do sát thương đánh vỡ, sẽ tạo thành <geo>sát thương Nguyên Tố Nham</geo> với lực tấn công 400% cho kẻ địch xung quanh."
+      "0": "Khi hiệu quả <strong>Giáp Hộ Tâm</strong> kết thúc hoặc do sát thương đánh vỡ, sẽ gây ra <geo>sát thương nguyên tố Nham</geo> tương đương 400% tấn công cho kẻ địch xung quanh."
     }
   },
   "constellation5": {
@@ -166,7 +166,7 @@
     "name": "Phải Sạch Bong Kin Kít",
     "description": {
       "0": "<strong>Quét Sạch</strong> tăng thêm sức tấn công tương đương 50% phòng ngự của Noelle.",
-      "1": "Ngoài ra, trong thời gian duy trì mỗi lần đánh bại 1 kẻ địch, thời gian sẽ kéo dài thêm 1s, tối đa 10s."
+      "1": "Ngoài ra, trong thời gian duy trì kỹ năng, mỗi lần đánh bại 1 kẻ địch, thời gian sẽ kéo dài thêm 1s, tối đa 10s."
     }
   }
 }

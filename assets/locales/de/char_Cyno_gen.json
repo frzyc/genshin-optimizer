@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Gnade der Stille",
     "description": {
-      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25 % mehr Belohnungen."
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25{NON_BREAK_SPACE}% mehr Belohnungen."
     }
   },
   "constellation1": {

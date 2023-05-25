@@ -54,7 +54,7 @@
       "5": "<br/>",
       "6": "Becerinin yerini belirlemek için <strong>basılı tut</strong>.",
       "7": "<br/>",
-      "8": "<i>Bu Toprak çiçeğinin simya için kullanışlı tuhaf bir özelliği var. Topraktan çıkıp göğe yükseliyor ve güneşe dönüşüyor.</i>"
+      "8": "<i>Bu Toprak çiçeğinin özellikleri simyanın hedefleriyle paralellik gösterir: Topraktan çıkmak, göğe yükselmek ve güneşe dönüşmek...</i>"
     },
     "skillParams": {
       "0": "Beceri Hasarı",
@@ -81,7 +81,7 @@
       "0": "Albedo'nun emriyle Toprak kristalleri yerden çıkar ve Albedo'nun önündeki düşmanlara <geo>Toprak Alan Hasarı</geo> verir.",
       "1": "Alanda Albedo'nun bizzat oluşturduğu bir Güneş Çiçeği varsa Güneş Çiçeği alanında 7 Ölümcül Çiçek oluşur. Bu çiçekler şiddetle patlayarak çiçek açar ve <geo>Toprak Alan Hasarı</geo> verir.",
       "2": "<br/>",
-      "3": "Yer Dalgası Hasarı ve Ölümcül Çiçek Hasarı verildiğinde Fani Çiçek oluşmaz.",
+      "3": "Tektonik Dalga Hasarı ve Ölümcül Çiçek Hasarı verildiğinde Fani Çiçek oluşmaz.",
       "4": "<br/>",
       "5": "<i>Kreideprinz'in emriyle varoluşun kendisi yeri sarsar.</i>"
     },
@@ -133,7 +133,7 @@
     "description": {
       "0": "<strong>Yaratılış: Güneş Çiçeği</strong> becerisinin oluşturduğu Fani Çiçekler Albedo'ya 30 saniyeliğine Ölümcül Hesaplaşma uygular.",
       "1": [
-        "<strong>Varoluş Ayini: Tektonik Dalga</strong> becerisini kullanmak Ölümcül Hesaplaşma etkisinin tüm kademelerini tüketir. Tüketilen her bir Ölümcül Hesaplaşma kademesi, Ölümcül Çiçekler etkisinin verdiği Hasarı ve Varoluş Ayini: Tektonik Dalgası patlama Hasarını Albedo'nun Savunmasının %30'u kadar artırır.",
+        "<strong>Varoluş Ayini: Tektonik Dalga</strong> becerisini kullanmak Ölümcül Hesaplaşma etkisinin tüm kademelerini tüketir. Tüketilen her bir Ölümcül Hesaplaşma kademesi, Ölümcül Çiçeklerin verdiği Hasarı ve Varoluş Ayini: Tektonik Dalga Patlama Hasarını Albedo'nun Savunmasının %30'u kadar artırır.",
         "Bu etki 4 kademeye kadar birikebilir."
       ]
     }
@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "Helios'un Lütfu",
     "description": {
-      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yaratılış: Güneş Çiçeği</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Hadean Dalgası",
     "description": {
-      "0": "<strong>Varoluş Ayini: Tektonik Dalga</strong> seviyesini 3 artırır.",
+      "0": "<strong>Varoluş Ayini: Tektonik Dalga</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

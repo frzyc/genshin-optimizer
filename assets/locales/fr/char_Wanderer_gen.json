@@ -120,7 +120,7 @@
   "passive2": {
     "name": "Rafales de rêverie",
     "description": {
-      "0": "Lorsque le Nomade touche un ennemi avec Kuugo : Fushoudan ou Kuugo{NON_BREAK_SPACE}: Toufukai pendant l'état <strong>Bienfait venteux</strong>, il a 16 % de chances d'obtenir l'effet Descente : la prochaine fois qu'il accélère dans les airs pendant cet état Bienfait venteux, l'effet est annulé, l'accélération ne consomme aucun pt de Kuugoryoku et il tire 4 flèches de vent qui infligent chacune des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 35 % de son ATQ.",
+      "0": "Lorsque le Nomade touche un ennemi avec Kuugo : Fushoudan ou Kuugo{NON_BREAK_SPACE}: Toufukai pendant l'état <strong>Bienfait venteux</strong>, il a 16 % de chances d'obtenir l'effet Descente : la prochaine fois qu'il accélère dans les airs pendant cet état Bienfait venteux, l'effet est annulé, l'accélération ne consomme aucun point de Kuugoryoku et il tire 4 flèches de vent qui infligent chacune des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 35 % de son ATQ.",
       "1": "Si Kuugo : Fushoudan ou Kuugo{NON_BREAK_SPACE}: Toufukai ne déclenche pas l'effet Descente, les chances de le déclencher la fois suivante augmentent de 12 %. Le calcul du déclenchement de l'effet se fait une fois toutes les 0,1 s."
     }
   },
@@ -140,7 +140,7 @@
   "constellation2": {
     "name": "Niban : Île dans les vagues blanches",
     "description": {
-      "0": "Pendant l'état <strong>Bienfait venteux</strong>, les DGT infligés par <strong>Kyougen : Gobandate en cinq actes</strong> augmentent de 4 % pour chaque pt de différence entre la quantité actuelle et maximale de Kuugoryoku.",
+      "0": "Pendant l'état <strong>Bienfait venteux</strong>, les DGT infligés par <strong>Kyougen : Gobandate en cinq actes</strong> augmentent de 4 % pour chaque point de différence entre la quantité actuelle et maximale de Kuugoryoku.",
       "1": "Les DGT infligés par Kyougen : Gobandate en cinq actes peuvent être augmentés d'un maximum de 200 % de cette manière."
     }
   },
@@ -171,7 +171,7 @@
       "0": "Lorsque le Nomade touche un ennemi en utilisant Kuugo : Fushoudan pendant l'état <strong>Bienfait venteux</strong>, les effets suivants se produisent :",
       "1": [
         " Il déclenche Kuugo : Fushoudan une fois de plus à l'emplacement touché, infligeant 40 % des DGT d'origine, ces DGT étant considérés comme des DGT d'attaque normale.",
-        " Si son Kuugoryoku est inférieur à 40 pts, il restaure 4 pts. Les pts de Kuugoryoku peuvent être restaurés une fois toutes les 0,2 s de cette manière, et un maximum de 5 fois pour chaque durée de l'état Bienfait venteux."
+        " Si son Kuugoryoku est inférieur à 40 pts, il restaure 4 pts. Les points de Kuugoryoku peuvent être restaurés une fois toutes les 0,2 s de cette manière, et un maximum de 5 fois pour chaque durée de l'état Bienfait venteux."
       ]
     }
   }

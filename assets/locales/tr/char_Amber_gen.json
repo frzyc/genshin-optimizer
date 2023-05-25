@@ -137,7 +137,7 @@
   "constellation3": {
     "name": "Yakıcıdır!",
     "description": {
-      "0": "<strong>Ateş Yağmuru</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ateş Yağmuru</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -150,7 +150,7 @@
   "constellation5": {
     "name": "Baron Tavşan Bu!",
     "description": {
-      "0": "<strong>Patlayıcı Kukla</strong> seviyesini 3 artırır.",
+      "0": "<strong>Patlayıcı Kukla</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

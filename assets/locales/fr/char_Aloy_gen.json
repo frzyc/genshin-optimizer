@@ -43,7 +43,7 @@
     "name": "Frozen Wilds",
     "description": {
       "0": "Aloy lance une bombe à gel qui explose à l'impact dans la direction ciblée, infligeant des <cryo>DGT Cryo</cryo>. Après avoir explosé, la bombe à gel se divise en de nombreuses petites bombes glacées qui explosent au contact des ennemis ou après un court délai, infligeant des <cryo>DGT Cryo</cryo>.",
-      "1": "Lorsqu'une bombe à gel ou une petite bombe glacée touche un ennemi, l'ATQ de ce dernier est réduite et Aloy obtient 1 cumul de bobine.",
+      "1": "Lorsqu'une bombe à gel ou une petite bombe glacée a touché un ennemi, l'ATQ de ce dernier est réduite et Aloy obtient 1 cumul de bobine.",
       "2": "Un cumul de bobine peut être obtenu une fois toutes les 0,1 s.",
       "3": "<br/>",
       "4": "<strong>Bobine</strong>",
@@ -117,7 +117,7 @@
   "passive3": {
     "name": "Doucement mais sûrement",
     "description": {
-      "0": "Quand Aloy fait partie de l'équipe, vos personnages n'effraient pas les petits animaux en s'approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée."
+      "0": "Quand Aloy fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas les petits animaux en s'approchant, et peuvent ainsi obtenir de la volaille, de la viande crue et de la viande congelée."
     }
   },
   "constellation1": {

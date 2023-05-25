@@ -129,7 +129,7 @@
   "passive3": {
     "name": "Sur la pointe des pieds",
     "description": {
-      "0": "Quand Yaoyao fait partie de l'équipe, vos personnages n'effraient pas certains animaux, tels que le papillon cristallin.",
+      "0": "Quand Yaoyao fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains animaux, tels que le papillon cristallin.",
       "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet «{NON_BREAK_SPACE}Divers{NON_BREAK_SPACE}» dans la section « Faune » du Bestiaire des Archives."
     }
   },

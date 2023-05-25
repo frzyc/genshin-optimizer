@@ -140,7 +140,7 @@
   "constellation3": {
     "name": "Bin Rüzgar Kasidesi",
     "description": {
-      "0": "<strong>Rüzgarın Büyük Kasidesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Rüzgarın Büyük Kasidesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -153,7 +153,7 @@
   "constellation5": {
     "name": "Göklerin Konçertosu",
     "description": {
-      "0": "<strong>Göklerin Sonesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Göklerin Sonesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

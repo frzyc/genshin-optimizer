@@ -150,7 +150,7 @@
   "constellation4": {
     "name": "To Be Cleaned",
     "description": {
-      "0": "When <strong>Breastplate</strong>'s duration expires or it is destroyed by DMG, it will deal 400% ATK of <geo>Geo DMG</geo> to surrounding opponents."
+      "0": "When <strong>Breastplate</strong>'s duration expires or it is destroyed by DMG, it will deal 400% of Noelle's ATK as <geo>Geo DMG</geo> to surrounding opponents."
     }
   },
   "constellation5": {

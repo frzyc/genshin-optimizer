@@ -136,7 +136,7 @@
   "constellation3": {
     "name": "Ruhani Bostan Yolculuğu",
     "description": {
-      "0": "<strong>Nasamjnin Rüzgar Diyarı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Nasamjnin Rüzgar Diyarı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -150,7 +150,7 @@
   "constellation5": {
     "name": "Düşünce Çokluğu Diyarı",
     "description": {
-      "0": "<strong>Rüzgarın Gizli Yolları</strong> seviyesini 3 artırır.",
+      "0": "<strong>Rüzgarın Gizli Yolları</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -219,6 +219,10 @@
     "name": "Buono festivo",
     "description": "Puoi ottenere questi buoni prendendo parte alle diverse attività durante il Festival del Florvento. Durante l'evento, li potrai scambiare con varie ricompense."
   },
+  "InvokationCoupons": {
+    "name": "Coupon d'Invokazione",
+    "description": "Puoi ottenere questi buoni prendendo parte alle varie manifestazioni del Gran Premio Re delle Invokazioni. Nel corso dell'evento, potrai scambiarli con varie ricompense."
+  },
   "Primogem": {
     "name": "Primogemma",
     "description": "Una gemma cristallina primordiale di origini ultramondane. Risplende delle speranze e dei sogni di universi che furono."
@@ -519,6 +523,10 @@
     "name": "Yelan",
     "description": "Una persona misteriosa che sostiene di lavorare per il Ministero degli Affari Civili, ma che risulta \"inesistente\" nella lista dello stesso Ministero."
   },
+  "Kirara": {
+    "name": "Kirara",
+    "description": "Una fattorina della Komaniya Express, una compagnia di spedizione di Inazuma. Una nekomata che adora il suo lavoro e la società umana."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Prima una reietta, ora una cacciatrice dalle abilità senza pari. Pronta a fare la cosa giusta in qualsiasi momento."
@@ -791,6 +799,10 @@
     "name": "Stella Fortuna di Yelan",
     "description": "Materiale per l'attivazione della costellazione di Yelan"
   },
+  "KirarasStellaFortuna": {
+    "name": "Stella Fortuna di Kirara",
+    "description": "Materiale per l'attivazione della costellazione di Kirara"
+  },
   "AloysStellaFortuna": {
     "name": "Stella Fortuna di Aloy",
     "description": "Materiale per l'attivazione della costellazione di Aloy"
@@ -975,23 +987,23 @@
     "name": "",
     "description": ""
   },
-  "KamisatoAyakaForCB": {
+  "KamisatoAyakaForCB1": {
     "name": "",
     "description": ""
   },
-  "XianglingForCB": {
+  "XianglingForCB1": {
     "name": "",
     "description": ""
   },
-  "JeanForCB": {
+  "JeanForCB1": {
     "name": "",
     "description": ""
   },
-  "DilucForCB": {
+  "DilucForCB1": {
     "name": "",
     "description": ""
   },
-  "VentiForCB": {
+  "VentiForCB1": {
     "name": "",
     "description": ""
   },
@@ -1031,11 +1043,11 @@
     "name": "",
     "description": ""
   },
-  "BarbaraForCB": {
+  "BarbaraForCB1": {
     "name": "",
     "description": ""
   },
-  "RazorForCB": {
+  "RazorForCB1": {
     "name": "",
     "description": ""
   },
@@ -1335,9 +1347,13 @@
     "name": "Fuga estrema",
     "description": "Diario di viaggio di Musk. Tra gli appunti riguardanti lo Scoglio di Musk spicca una nota che recita: \"Solo una brezza mattutina può condurti da qui al Promontorio degli amanti...\""
   },
-  "IncompleteScorePart": {
+  "IncompleteScorePart1": {
     "name": "Punteggio incompleto (Parte 1)",
     "description": "La prima metà della partitura musicale per \"Yellow\". In basso a destra c'è scritto: \"Da S per J\"."
+  },
+  "IncompleteScorePart2": {
+    "name": "Punteggio incompleto (Parte 2)",
+    "description": "La seconda metà della partitura musicale per \"Yellow\"."
   },
   "PrivateLetterFromLisaToJean": {
     "name": "Lettera personale di Lisa per Jean",
@@ -1359,9 +1375,17 @@
     "name": "Rimedio di Barbara",
     "description": "Lisa ti ha chiesto di portare quest'oggetto a Barbara."
   },
-  "IncompletePoemPart": {
+  "IncompletePoemPart1": {
     "name": "Poesia incompleta (Parte 1)",
     "description": "La poesia che Venti ti ha chiesto di cercare, anche se solo la prima parte."
+  },
+  "IncompletePoemPart2": {
+    "name": "Poesia incompleta (Parte 2)",
+    "description": "La poesia che Venti ti ha chiesto di cercare, anche se sembra incompleta."
+  },
+  "IncompletePoemPart3": {
+    "name": "Poesia incompleta (Parte 3)",
+    "description": "La poesia che Venti ti ha chiesto di cercare. Unisci le tre pagine per rivelare un verso d'amore."
   },
   "InscriptionRubbing": {
     "name": "Copia dell'iscrizione",
@@ -1415,12 +1439,52 @@
     "name": "Cristallo cremisi",
     "description": "Una lacrima di cristallo che brilla di una luce rossastra. Probabilmente lasciata qui dal drago. La persona che stava parlando con lui potrebbe avere più informazioni al riguardo, ma... dove sarà andato?"
   },
-  "SealClue": {
+  "SealClue101": {
     "name": "Indizio del sigillo 101",
     "description": "Indizio del sigillo"
   },
-  "BreakSeal": {
+  "SealClue102": {
+    "name": "Indizio del sigillo 102",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue103": {
+    "name": "Indizio del sigillo 103",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue201": {
+    "name": "Indizio del sigillo 201",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue202": {
+    "name": "Indizio del sigillo 202",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue203": {
+    "name": "Indizio del sigillo 203",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue301": {
+    "name": "Indizio del sigillo 301",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue302": {
+    "name": "Indizio del sigillo 302",
+    "description": "Indizio del sigillo"
+  },
+  "SealClue303": {
+    "name": "Indizio del sigillo 303",
+    "description": "Indizio del sigillo"
+  },
+  "BreakSeal1": {
     "name": "Rompi il sigillo 1",
+    "description": "Rompi il sigillo"
+  },
+  "BreakSeal2": {
+    "name": "Rompi il sigillo 2",
+    "description": "Rompi il sigillo"
+  },
+  "BreakSeal3": {
+    "name": "Rompi il sigillo 3",
     "description": "Rompi il sigillo"
   },
   "InvestigateTheSealOfStormterrorsLair": {
@@ -1435,8 +1499,16 @@
     "name": "Memoria frammentata (Anemo)",
     "description": "Avvicinala al tuo orecchio e ti sembrerà di sentire dei deboli sussurri, ma senza comprendere le parole. (Non disponibile)."
   },
-  "SwordCemeterySeal": {
+  "SwordCemeterySeal1": {
     "name": "Sigillo del Cimitero delle spade 1",
+    "description": "Rompi il sigillo"
+  },
+  "SwordCemeterySeal2": {
+    "name": "Sigillo del Cimitero delle spade 2",
+    "description": "Rompi il sigillo"
+  },
+  "SwordCemeterySeal3": {
+    "name": "Sigillo del Cimitero delle spade 3",
     "description": "Rompi il sigillo"
   },
   "TeardropCrystal": {
@@ -1655,7 +1727,7 @@
     "name": "La principessa delle nevi e i sei nani (VII)",
     "description": "Una favola tramandata a Teyvat per secoli. La parte finale conclude la storia, e include la profezia della Madre della notte."
   },
-  "YearsOfLoneliness": {
+  "1000YearsOfLoneliness": {
     "name": "Mille anni di solitudine",
     "description": "L'inizio del viaggio \"fantasti-tragico\" di un cacciatore del Villaggio Acquachiara. Quand'è che venne colpito dalla sfortuna? Cosa scandiscono i mille anni del suo viaggio solitario? Lascia che Mille anni di solitudine sia la tua guida nella nebbia fantastica che avvolge la vita di Gothson."
   },
@@ -1867,7 +1939,71 @@
     "name": "Liquore di base",
     "description": "Una comune bevanda alcolica facile da reperire."
   },
-  "TESTCocktail": {
+  "TESTCocktail16": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail17": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail18": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail19": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail20": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail21": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail22": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail23": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail24": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail25": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail26": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail27": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail28": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail29": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail30": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail31": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail32": {
     "name": "",
     "description": ""
   },
@@ -2180,7 +2316,7 @@
     "description": "Frittelle di patate di Mondstadt ripiene di funghi anemofili. Molto più saporite e nutrienti delle frittelle di patate normali.\\nSi dice che un padre che ne era ghiotto le preparò al suo futuro figlio."
   },
   "DendroProcessedBerry": {
-    "name": "Bacca rigurgitata melmosa di Dendro",
+    "name": "Bacca rigurgitata da un Melmoso di Dendro",
     "description": "Una bacca digerita da un Melmoso di Dendro. Dall'esterno sembra una bacca qualsiasi. Usarla nella fitomedicina avrà davvero qualche effetto?"
   },
   "ThickHydroSlimeCondensate": {
@@ -2527,7 +2663,7 @@
     "name": "Taccuino rovinato",
     "description": "Degli appunti anonimi. Descrivono un posto che non sembra essere troppo lontano da qui."
   },
-  "KnightsOfFavoniusHandbookThEdition": {
+  "KnightsOfFavoniusHandbook5thEdition": {
     "name": "Manuale dei Cavalieri di Favonius, 5ª edizione",
     "description": "Un codice di condotta sul linguaggio e sulle norme comportamentali che devono seguire i Cavalieri di Favonius di Mondstadt, a cura della Gran Maestra Reggente Jean. Tutti i cavalieri sono tenuti a seguirlo rigorosamente, comportandosi e parlando di conseguenza."
   },
@@ -4303,7 +4439,7 @@
     "name": "La principessa Mina della nazione caduta (VI)",
     "description": "La verità del mondo viene rivelata... e sembra veramente essere un brutto scherzo! Anche se sono separati, i due non possono sfuggire alle catene del destino.\\nAnche se questo è il volume conclusivo de La principessa Mina della nazione caduta, la nostra storia non finisce qui!"
   },
-  "FlowersForPrincessFischl": {
+  "FlowersForPrincessFischl0": {
     "name": "Fiori per la principessa Fischl (0)",
     "description": "Il primo volume della serie Fiori per la principessa Fischl.\\nInizialmente questo libro era distribuito in una scatola di legno nera e viola come edizione limitata regalo, ma molti fan sfegatati della serie, che volevano possedere l'intera saga, s'infuriarono per la gran quantità di contenuti inserita nelle poche copie stampate di questa edizione.\\nPer questo motivo, la Casa editrice Yae ha chiamato questo libro \"Volume 0\" e lo vende separatamente. Da quel momento, l'opera originale, ossia l'edizione in scatola, e il volume 0 vennero considerati dai fan una parte standard della storia."
   },
@@ -4483,9 +4619,13 @@
     "name": "Mappa del tesoro dei Cacciatori di tesori",
     "description": "Questa mappa del tesoro, una volta strappata in due e nascosta dai Cacciatori di tesori in luoghi separati, è di nuovo completa.\\nSe segui il simbolo sopra di essa, potresti scoprire un tesoro speciale."
   },
-  "StorehouseSecurityKeyNo": {
+  "StorehouseSecurityKeyNo1": {
     "name": "Chiave del magazzino 1",
     "description": "La chiave di un magazzino nascosta in un posto molto evidente, ma che non è stata mai trovata dai Cacciatori di tesori. A quanto pare non sono abili come pensano nel loro lavoro, eh?"
+  },
+  "StorehouseSecurityKeyNo2": {
+    "name": "Chiave del magazzino 2",
+    "description": "La chiave di un magazzino nascosta in un posto incredibilmente evidente, ma che non è stata mai trovata dai Cacciatori di tesori. Farebbero meglio a tornare alla scuola dei Cacciatori."
   },
   "ASetOfCannonballs": {
     "name": "Set di palle di cannone",
@@ -4951,9 +5091,21 @@
     "name": "Andiamo, Dodoco!",
     "description": "Messaggio dall'editore: \"Andiamo, Dodoco!\" è l'opera a quattro mani di una ragazza più grande e una più piccola. Ogni capitolo trabocca di delicatezza e buoni auguri, e la storia vuol essere un regalo per i nostri lettori. Spero che questo libriccino possa arrecare una semplice gioia dopo una lunga giornata di lavoro."
   },
-  "AkosTreasureLocation": {
+  "AkosTreasureLocation1": {
     "name": "Il tesoro di Ako: posizione 1",
     "description": "Prima di andarsene, Ako Domeki e la sua compagnia nascosero un tesoro nell'arcipelago, giurando di disseppellirlo una volta che si fossero ritrovati in quel luogo. Il segreto di dov'è nascosto il tesoro fu diviso in quattro parti, questa è la prima."
+  },
+  "AkosTreasureLocation2": {
+    "name": "Il tesoro di Ako: posizione 2",
+    "description": "Prima di andarsene, Ako Domeki e la sua compagnia nascosero un tesoro nell'arcipelago, giurando di disseppellirlo una volta che si fossero ritrovati in quel luogo. Il segreto di dov'è nascosto il tesoro fu diviso in quattro parti, questa è la seconda."
+  },
+  "AkosTreasureLocation3": {
+    "name": "Il tesoro di Ako: posizione 3",
+    "description": "Prima di andarsene, Ako Domeki e la sua compagnia nascosero un tesoro nell'arcipelago, giurando di disseppellirlo una volta che si fossero ritrovati in quel luogo. Il segreto di dov'è nascosto il tesoro fu diviso in quattro parti, questa è la terza."
+  },
+  "AkosTreasureLocation4": {
+    "name": "Il tesoro di Ako: posizione 4",
+    "description": "Prima di andarsene, Ako Domeki e la sua compagnia nascosero un tesoro nell'arcipelago, giurando di disseppellirlo una volta che si fossero ritrovati in quel luogo. Il segreto di dov'è nascosto il tesoro fu diviso in quattro parti, questa è la quarta."
   },
   "YajnaGrass": {
     "name": "Erba di Yajna",
@@ -5195,9 +5347,85 @@
     "name": "Un appunto",
     "description": "Una nota stropicciata con un'orribile grafia inclinata."
   },
-  "RedemptionVoucher": {
+  "RedemptionVoucher1": {
     "name": "Voucher di scambio 1",
     "description": "Usato per riscattare assiolo dello specchio d'acqua Volteggio"
+  },
+  "RedemptionVoucher2": {
+    "name": "Voucher di scambio 2",
+    "description": "Usato per riscattare assiolo dello specchio d'acqua Danza"
+  },
+  "RedemptionVoucher3": {
+    "name": "Voucher di scambio 3",
+    "description": "Usato per riscattare assiolo dello specchio d'acqua Svolazzo"
+  },
+  "RedemptionVoucher4": {
+    "name": "Voucher di scambio 4",
+    "description": "Usato per riscattare assiolo del tuono Volteggio"
+  },
+  "RedemptionVoucher5": {
+    "name": "Voucher di scambio 5",
+    "description": "Usato per riscattare assiolo del tuono Danza"
+  },
+  "RedemptionVoucher6": {
+    "name": "Voucher di scambio 6",
+    "description": "Usato per riscattare assiolo del tuono Svolazzo"
+  },
+  "RedemptionVoucher7": {
+    "name": "Voucher di scambio 7",
+    "description": "Usato per riscattare assiolo delle fiamme Volteggio"
+  },
+  "RedemptionVoucher8": {
+    "name": "Voucher di scambio 8",
+    "description": "Usato per riscattare assiolo delle fiamme Danza"
+  },
+  "RedemptionVoucher9": {
+    "name": "Voucher di scambio 9",
+    "description": "Usato per riscattare assiolo delle fiamme Svolazzo"
+  },
+  "RedemptionVoucher10": {
+    "name": "Voucher di scambio 10",
+    "description": "Usato per riscattare assiolo viaggiatore"
+  },
+  "RedemptionVoucher11": {
+    "name": "Voucher di scambio 11",
+    "description": "Usato per riscattare tripode dello specchio d'acqua Saluto"
+  },
+  "RedemptionVoucher12": {
+    "name": "Voucher di scambio 12",
+    "description": "Usato per riscattare tripode dello specchio d'acqua Tre salti"
+  },
+  "RedemptionVoucher13": {
+    "name": "Voucher di scambio 13",
+    "description": "Usato per riscattare tripode dello specchio d'acqua Ritirata"
+  },
+  "RedemptionVoucher14": {
+    "name": "Voucher di scambio 14",
+    "description": "Usato per riscattare tripode del tuono Saluto"
+  },
+  "RedemptionVoucher15": {
+    "name": "Voucher di scambio 15",
+    "description": "Usato per riscattare tripode del tuono Tre salti"
+  },
+  "RedemptionVoucher16": {
+    "name": "Voucher di scambio 16",
+    "description": "Usato per riscattare tripode del tuono Ritirata"
+  },
+  "RedemptionVoucher17": {
+    "name": "Voucher di scambio 17",
+    "description": "Usato per riscattare tripode delle fiamme Saluto"
+  },
+  "RedemptionVoucher18": {
+    "name": "Voucher di scambio 18",
+    "description": "Usato per riscattare tripode delle fiamme Ballo"
+  },
+  "RedemptionVoucher19": {
+    "name": "Voucher di scambio 19",
+    "description": "Usato per riscattare tripode delle fiamme Ritirata"
+  },
+  "RedemptionVoucher20": {
+    "name": "Voucher di scambio 20",
+    "description": "Usato per riscattare tripode viaggiatore"
   },
   "PartBreeze": {
     "name": "Parte: brezza",
@@ -5363,8 +5591,16 @@
     "name": "Tabella codici dell'informatore",
     "description": "Una tabella dei codici che ti ha dato Alhaitham. A quanto pare, chiunque voglia acquistare \"merci speciali\" da Dori deve prima fornire il codice esatto.\\nPer sicurezza, consulta questa tabella dei codici prima di recarti dal contatto di Dori."
   },
-  "MisplacedConch": {
+  "MisplacedConch1": {
     "name": "Conchiglia mal riposta 1",
+    "description": "Questa conchiglia fotosensibile si sarebbe dovuta trovare da un'altra parte ma è stata abbandonata qui da qualcuno, il che l'ha portata a proiettare delle immagini in un ordine diverso da quello previsto. Rimettila al posto giusto e forse scoprirai qualcosa di speciale..."
+  },
+  "MisplacedConch2": {
+    "name": "Conchiglia mal riposta 2",
+    "description": "Questa conchiglia fotosensibile si sarebbe dovuta trovare da un'altra parte ma è stata abbandonata qui da qualcuno, il che l'ha portata a proiettare delle immagini in un ordine diverso da quello previsto. Rimettila al posto giusto e forse scoprirai qualcosa di speciale..."
+  },
+  "MisplacedConch3": {
+    "name": "Conchiglia mal riposta 3",
     "description": "Questa conchiglia fotosensibile si sarebbe dovuta trovare da un'altra parte ma è stata abbandonata qui da qualcuno, il che l'ha portata a proiettare delle immagini in un ordine diverso da quello previsto. Rimettila al posto giusto e forse scoprirai qualcosa di speciale..."
   },
   "PrescriptionMedicationFromBimarstanForGurgen": {
@@ -5405,7 +5641,7 @@
   },
   "SarehsNote": {
     "name": "Appunti di Sareh",
-    "description": "Questa volta siamo alla ricerca di un gattino dal pelo nero e bianco chiamato Lale. Se desideri richiamare l'attenzione di Lale nella lingua felina, devi dire: \"Miao, miao miao miao, miao...\" Questo viene pronunciato usando un tono prima discendente e poi ascendente, terminando infine con una nota altissima."
+    "description": "Questa volta siamo alla ricerca di un gattino dal pelo nero e bianco chiamato Lale. Se desideri richiamare l'attenzione di Lale nella lingua felina, devi dire: \"Miao, miao miao miao, miaaaao...\" Questo viene pronunciato usando un tono prima discendente e poi ascendente, terminando infine con una nota altissima."
   },
   "FreshNilotpalaLotus": {
     "name": "Loto Nilotpala fresco",
@@ -6631,7 +6867,7 @@
     "name": "Pesce alla griglia del sopravvissuto",
     "description": "La specialità di Keqing. Il piatto non è stato grigliato. In realtà, è stato fritto dall'interno tramite un uso controllato dell'energia di Electro. Basta un morso delicato per capire che sotto la pelle abbrustolita c'è del pesce fragrante e gustoso che ha un sapore perfettamente bilanciato. Quindi è così che Keqing sopravvive nella natura? Non si deve mai giudicare un libro dalla copertina."
   },
-  "NutritiousMealV": {
+  "NutritiousMealV593": {
     "name": "Pasto nutriente (ver. 593)",
     "description": "La specialità di Sucrose. A prima vista sembra uno strano prodotto alchemico, ma Sucrose insiste che è un pasto sano e nutriente, risultato di una lunga e accurata sperimentazione. Il suo colore verde deriva dalla combinazione della panna con i succhi naturali delle verdure... Aspetta, succhi di verdura?"
   },
@@ -7259,7 +7495,7 @@
     "name": "Pesce del Festival d'estate",
     "description": "La specialità di Yoimiya. Guardare i fuochi d'artificio, avere le mani piene di snack che ti ha dato Yoimiya, sentire la sua risata spensierata e infantile mentre i fuochi d'artificio scoppiano in cielo... Nel mezzo di questa sinfonia unica di suoni, il grassoccio pesce dorato nelle tue mani sembra quasi potersi mettere a nuotare da un momento all'altro..."
   },
-  "DizzinessBeGoneNoJutsuVersion": {
+  "DizzinessBeGoneNoJutsuVersion20": {
     "name": "Tecnica anti-vertigini 2.0",
     "description": "La specialità di Sayu. L'onigiri è stato arrotolato da Sayu in una forma carina... Ma ricorda, è una mujina, non una tanuki, chiaro? E ora che mi ci fai pensare, è questo il motivo per cui Sayu può dormire un giorno intero dopo aver mangiato, giusto?"
   },
@@ -8087,6 +8323,10 @@
     "name": "Zuppa rinfrescante",
     "description": "La specialità di Baizhu. \"Questa non è proprio medicina, è semplicemente qualcosa che può alleviare la secchezza\". Mentre la voce apprensiva di Baizhu riecheggia nelle tue orecchie, una sfavillante zuppa di frutta incontra i tuoi occhi. \"Questo piatto è solitamente senza zucchero, ma lui era preoccupato che non ti piacesse il gusto amaro, quindi ne ha aggiunto un po'\", ha aggiunto Changsheng."
   },
+  "EnergizingBento": {
+    "name": "Bento rinvigorente",
+    "description": "La specialità di Kirara. Un bento per umani che Kirara ha preparato con cura certosina. Osservando le preferenze delle ragazze umane, ha concepito questa combinazione di contorni bilanciati e onigiri a forma di gatto assolutamente adorabili. Sembra proprio un pacchettino incartato con cura... Non stuferebbe mai nemmeno ricevendone uno al giorno!"
+  },
   "RecipeItem": {
     "name": "Ingrediente",
     "description": "Oggetto per sbloccare le ricette"
@@ -8912,16 +9152,16 @@
     "description": "Proviene da antiche strutture scomparse. Il nucleo che una volta guidava una bestia meccanica. Se dovessi capire il suo funzionamento e riprodurlo, forse potresti cambiare il mondo."
   },
   "MistGrassPollen": {
-    "name": "Polline d'erba nebulosa",
-    "description": "Delle strane spore create dall'Erba nebulosa negli spazi chiusi. Sono il cibo preferito delle Cicin."
+    "name": "Polline d'Erbafosca",
+    "description": "Delle strane spore create dall'Erbafosca negli spazi chiusi. Sono il cibo preferito delle Cicin."
   },
   "MistGrass": {
-    "name": "Erba nebulosa",
-    "description": "Dell'Erba nebulosa ben conservata. Qualcuno potrebbe approfittarsi dell'amore che le Cicin nutrono per questa sostanza per controllarle."
+    "name": "Erbafosca",
+    "description": "Dell'Erbafosca ben conservata. Qualcuno potrebbe approfittarsi dell'amore che le Cicin nutrono per questa sostanza per controllarle."
   },
   "MistGrassWick": {
-    "name": "Ciuffi d'erba nebulosa",
-    "description": "Un raro fascio d'Erba nebulosa che emana un tenue bagliore. Coloro che la trasportano attirano sia le Cicin che la sventura."
+    "name": "Ciuffi d'Erbafosca",
+    "description": "Un raro fascio d'Erbafosca che emana un tenue bagliore. Coloro che la trasportano attirano sia le Cicin che la sventura."
   },
   "HuntersSacrificialKnife": {
     "name": "Coltello sacrificale del cacciatore",
@@ -9465,7 +9705,7 @@
   },
   "CopperTalismanOfTheForestDew": {
     "name": "Talismano di rame della rugiada silvestre",
-    "description": "Materiale d'ascensione delle armi.\\Seguendo le istruzioni del Primo Saggio, gli antenati del popolo della foresta realizzarono questi talismani utilizzando alberi appassiti per commemorare la Signora della flora. La forma del talismano è stata ispirata dalla rugiada della foresta. Simboleggia la permeazione della saggezza nelle menti dei mortali."
+    "description": "Materiale d'ascensione delle armi.\\nSeguendo le istruzioni del Primo Saggio, gli antenati del popolo della foresta realizzarono questi talismani utilizzando alberi appassiti per commemorare la Signora della flora. La forma del talismano è stata ispirata dalla rugiada della foresta. Simboleggia la permeazione della saggezza nelle menti dei mortali."
   },
   "IronTalismanOfTheForestDew": {
     "name": "Talismano di ferro della rugiada silvestre",
@@ -9635,7 +9875,7 @@
     "name": "Bottino PB",
     "description": "\"Quando attraversi terre immerse nell'oscurità, hai bisogno di un'arma dalla luce abbagliante. Esse si trovano in questo forziere, in attesa del momento in cui dovranno nuovamente squarciare le tenebre opprimenti.\""
   },
-  "BPPickOfTestBundle": {
+  "BPPick1Of3TestBundle": {
     "name": "Scegli 1 dei 3 Bundle PB di prova",
     "description": ""
   },
@@ -10635,6 +10875,10 @@
     "name": "Semi nutrienti",
     "description": "La forma di vita elementale conosciuta come Miconoide fluttuante di Anemo ti ha dato questi semi. Piantali in un campo per coltivare cibo amato dai Miconoidi. Ma in futuro i Miconoidi si ricorderanno di arare e dissodare i campi?"
   },
+  "KingOfInvokations": {
+    "name": "Re delle Invokazioni",
+    "description": "Una light novel incentrata su Invokazione del genio, il gioco di carte collezionabili più popolare di Teyvat. I personaggi sono unici e la storia è emozionante e piena di colpi di scena, il che la rende una delle opere più in voga in circolazione."
+  },
   "NamelessAdventurersNotes": {
     "name": "Appunti dell'avventuriere senza nome",
     "description": "Appunti smarriti lasciati nel deserto. Sembrano essere stati scritti e abbandonati da un qualche avventuriere."
@@ -10670,6 +10914,10 @@
   "RecordsOfUnknownAttributionII": {
     "name": "Registri di origini sconosciute (2)",
     "description": "Registri di origini sconosciute (2)"
+  },
+  "EmberglowLeaf": {
+    "name": "Foglia di Bracefulgida",
+    "description": "Una foglia che hai ricevuto da Nahida, utile per mettersi in contatto con gli Aranara. Adoperala come un fischietto e un Aranara ti raggiungerà immediatamente. Gli Aranara sono disposti a tanto solo grazie alla loro fede in Nahida. In altre parole, non aspettarti risposta se ti metti a soffiare su una foglia qualsiasi."
   },
   "AkademiyaInvestigationTeamsLogsI": {
     "name": "Diari della squadra investigativa dell'Akademiya (1)",
@@ -10999,9 +11247,397 @@
     "name": "Ali del banchetto stellato",
     "description": "Un aliante decorato, nonché un regalo che celebra un festival tenutosi in un mondo lontano."
   },
-  "RadiantSpincrystal": {
+  "RadiantSpincrystal1": {
     "name": "Voltacristallo radioso 1",
     "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Dawn Winery Theme."
+  },
+  "RadiantSpincrystal2": {
+    "name": "Voltacristallo radioso 2",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Sweet Smile."
+  },
+  "RadiantSpincrystal3": {
+    "name": "Voltacristallo radioso 3",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Lone Sojourner."
+  },
+  "RadiantSpincrystal4": {
+    "name": "Voltacristallo radioso 4",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Day in Mondstadt."
+  },
+  "RadiantSpincrystal5": {
+    "name": "Voltacristallo radioso 5",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è The Edge of the Prairie."
+  },
+  "RadiantSpincrystal6": {
+    "name": "Voltacristallo radioso 6",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Tale of Two Dragons."
+  },
+  "RadiantSpincrystal7": {
+    "name": "Voltacristallo radioso 7",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Happy Journey."
+  },
+  "RadiantSpincrystal8": {
+    "name": "Voltacristallo radioso 8",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Legend of the Wind."
+  },
+  "RadiantSpincrystal9": {
+    "name": "Voltacristallo radioso 9",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero: Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Bustling Afternoon in Mondstadt."
+  },
+  "RadiantSpincrystal10": {
+    "name": "Voltacristallo radioso 10",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Dusk in Mondstadt."
+  },
+  "RadiantSpincrystal11": {
+    "name": "Voltacristallo radioso 11",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Mondstadt Starlit."
+  },
+  "RadiantSpincrystal12": {
+    "name": "Voltacristallo radioso 12",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Moonlight in Mondstadt."
+  },
+  "RadiantSpincrystal13": {
+    "name": "Voltacristallo radioso 13",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Another Day in Mondstadt."
+  },
+  "RadiantSpincrystal14": {
+    "name": "Voltacristallo radioso 14",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Windborne Hymn."
+  },
+  "RadiantSpincrystal15": {
+    "name": "Voltacristallo radioso 15",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Knights of Favonius."
+  },
+  "RadiantSpincrystal16": {
+    "name": "Voltacristallo radioso 16",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Angel's Share."
+  },
+  "RadiantSpincrystal17": {
+    "name": "Voltacristallo radioso 17",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Happy Day."
+  },
+  "RadiantSpincrystal18": {
+    "name": "Voltacristallo radioso 18",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Tender Strength."
+  },
+  "RadiantSpincrystal19": {
+    "name": "Voltacristallo radioso 19",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Before Dawn, at the Winery."
+  },
+  "RadiantSpincrystal20": {
+    "name": "Voltacristallo radioso 20",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Whispering Plain."
+  },
+  "RadiantSpincrystal21": {
+    "name": "Voltacristallo radioso 21",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A New Day With Hope."
+  },
+  "RadiantSpincrystal22": {
+    "name": "Voltacristallo radioso 22",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Eternal Anamnesis."
+  },
+  "RadiantSpincrystal23": {
+    "name": "Voltacristallo radioso 23",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Journey of Hope."
+  },
+  "RadiantSpincrystal24": {
+    "name": "Voltacristallo radioso 24",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Sun Rises in Liyue."
+  },
+  "RadiantSpincrystal25": {
+    "name": "Voltacristallo radioso 25",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Good Night, Liyue."
+  },
+  "RadiantSpincrystal26": {
+    "name": "Voltacristallo radioso 26",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Call It a Day in Liyue."
+  },
+  "RadiantSpincrystal27": {
+    "name": "Voltacristallo radioso 27",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Clear Sky Over Liyue."
+  },
+  "RadiantSpincrystal28": {
+    "name": "Voltacristallo radioso 28",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Cozy Leisure Time."
+  },
+  "RadiantSpincrystal29": {
+    "name": "Voltacristallo radioso 29",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Winding River."
+  },
+  "RadiantSpincrystal30": {
+    "name": "Voltacristallo radioso 30",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Mild Waves."
+  },
+  "RadiantSpincrystal31": {
+    "name": "Voltacristallo radioso 31",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Rhythm Amidst the Reeds."
+  },
+  "RadiantSpincrystal32": {
+    "name": "Voltacristallo radioso 32",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Flows of Jade-Like Water."
+  },
+  "RadiantSpincrystal33": {
+    "name": "Voltacristallo radioso 33",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Flow of Mildness."
+  },
+  "RadiantSpincrystal34": {
+    "name": "Voltacristallo radioso 34",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Vague Whispers."
+  },
+  "RadiantSpincrystal35": {
+    "name": "Voltacristallo radioso 35",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Legends Swept Away."
+  },
+  "RadiantSpincrystal36": {
+    "name": "Voltacristallo radioso 36",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Plain of Nostalgia."
+  },
+  "RadiantSpincrystal37": {
+    "name": "Voltacristallo radioso 37",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Rhythms From the Conch."
+  },
+  "RadiantSpincrystal38": {
+    "name": "Voltacristallo radioso 38",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Peaceful Hike."
+  },
+  "RadiantSpincrystal39": {
+    "name": "Voltacristallo radioso 39",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è The Fading Stories."
+  },
+  "RadiantSpincrystal40": {
+    "name": "Voltacristallo radioso 40",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Above the Sea of Clouds."
+  },
+  "RadiantSpincrystal41": {
+    "name": "Voltacristallo radioso 41",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Rainbow at Summit."
+  },
+  "RadiantSpincrystal42": {
+    "name": "Voltacristallo radioso 42",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Red Leaf on the Chessboard."
+  },
+  "RadiantSpincrystal43": {
+    "name": "Voltacristallo radioso 43",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Slumbering Lore."
+  },
+  "RadiantSpincrystal44": {
+    "name": "Voltacristallo radioso 44",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Lost Expectation."
+  },
+  "RadiantSpincrystal45": {
+    "name": "Voltacristallo radioso 45",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è The Realm Within."
+  },
+  "RadiantSpincrystal46": {
+    "name": "Voltacristallo radioso 46",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Sojourner's Sweet Dream."
+  },
+  "RadiantSpincrystal47": {
+    "name": "Voltacristallo radioso 47",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Miko's Night."
+  },
+  "RadiantSpincrystal48": {
+    "name": "Voltacristallo radioso 48",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Streets of Elegance."
+  },
+  "RadiantSpincrystal49": {
+    "name": "Voltacristallo radioso 49",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è The Land of Her Serenity."
+  },
+  "RadiantSpincrystal50": {
+    "name": "Voltacristallo radioso 50",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è The Mysterious Islands."
+  },
+  "RadiantSpincrystal51": {
+    "name": "Voltacristallo radioso 51",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Everlasting Devotion."
+  },
+  "RadiantSpincrystal52": {
+    "name": "Voltacristallo radioso 52",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Kitsune's Mask."
+  },
+  "RadiantSpincrystal53": {
+    "name": "Voltacristallo radioso 53",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Hanachirusato."
+  },
+  "RadiantSpincrystal54": {
+    "name": "Voltacristallo radioso 54",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Time to Say Farewell."
+  },
+  "RadiantSpincrystal55": {
+    "name": "Voltacristallo radioso 55",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Flickering Sakura."
+  },
+  "RadiantSpincrystal56": {
+    "name": "Voltacristallo radioso 56",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Murmuring Creek."
+  },
+  "RadiantSpincrystal57": {
+    "name": "Voltacristallo radioso 57",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Scarred Island."
+  },
+  "RadiantSpincrystal58": {
+    "name": "Voltacristallo radioso 58",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Silent Testimony."
+  },
+  "RadiantSpincrystal59": {
+    "name": "Voltacristallo radioso 59",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Island of Hanabi."
+  },
+  "RadiantSpincrystal60": {
+    "name": "Voltacristallo radioso 60",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Preparation of Matsuri."
+  },
+  "RadiantSpincrystal61": {
+    "name": "Voltacristallo radioso 61",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Illuminated Coral Palace."
+  },
+  "RadiantSpincrystal62": {
+    "name": "Voltacristallo radioso 62",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Tranquil Town."
+  },
+  "RadiantSpincrystal63": {
+    "name": "Voltacristallo radioso 63",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è In a Harmonious Atmosphere."
+  },
+  "RadiantSpincrystal64": {
+    "name": "Voltacristallo radioso 64",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Island of Crystal and Pearl."
+  },
+  "RadiantSpincrystal65": {
+    "name": "Voltacristallo radioso 65",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Misty Truth."
+  },
+  "RadiantSpincrystal66": {
+    "name": "Voltacristallo radioso 66",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Sorrows of Strays."
+  },
+  "RadiantSpincrystal67": {
+    "name": "Voltacristallo radioso 67",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Ruu's Melody."
+  },
+  "RadiantSpincrystal68": {
+    "name": "Voltacristallo radioso 68",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Roaming in Silence."
+  },
+  "RadiantSpincrystal69": {
+    "name": "Voltacristallo radioso 69",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Echoes of Solitude."
+  },
+  "RadiantSpincrystal70": {
+    "name": "Voltacristallo radioso 70",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Dirge of the Soundless."
+  },
+  "RadiantSpincrystal71": {
+    "name": "Voltacristallo radioso 71",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Nothing but Ivy."
+  },
+  "RadiantSpincrystal72": {
+    "name": "Voltacristallo radioso 72",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Forgotten Epic."
+  },
+  "RadiantSpincrystal73": {
+    "name": "Voltacristallo radioso 73",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Beyond Klesha."
+  },
+  "RadiantSpincrystal74": {
+    "name": "Voltacristallo radioso 74",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Melody of Hidden Seeds."
+  },
+  "RadiantSpincrystal75": {
+    "name": "Voltacristallo radioso 75",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Varuna's Mercy."
+  },
+  "RadiantSpincrystal76": {
+    "name": "Voltacristallo radioso 76",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Vestige of Dahri."
+  },
+  "RadiantSpincrystal77": {
+    "name": "Voltacristallo radioso 77",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Chatter Between Roots."
+  },
+  "RadiantSpincrystal78": {
+    "name": "Voltacristallo radioso 78",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Whirling of Leaves and Petals."
+  },
+  "RadiantSpincrystal79": {
+    "name": "Voltacristallo radioso 79",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Hustle and Bustle of Ormos."
+  },
+  "RadiantSpincrystal80": {
+    "name": "Voltacristallo radioso 80",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Halcyon Times."
+  },
+  "RadiantSpincrystal81": {
+    "name": "Voltacristallo radioso 81",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è A Puff of Cool Breeze."
+  },
+  "RadiantSpincrystal82": {
+    "name": "Voltacristallo radioso 82",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è On the Barren Sands."
+  },
+  "RadiantSpincrystal83": {
+    "name": "Voltacristallo radioso 83",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Arid Canyon."
+  },
+  "RadiantSpincrystal84": {
+    "name": "Voltacristallo radioso 84",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Settlement for Exiles."
+  },
+  "RadiantSpincrystal85": {
+    "name": "Voltacristallo radioso 85",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Ruins of Scorching Might."
+  },
+  "RadiantSpincrystal86": {
+    "name": "Voltacristallo radioso 86",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Eye of Deshret."
+  },
+  "RadiantSpincrystal87": {
+    "name": "Voltacristallo radioso 87",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è Emerald in the Desert."
+  },
+  "RadiantSpincrystal88": {
+    "name": "Voltacristallo radioso 88",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal89": {
+    "name": "Voltacristallo radioso 89",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal90": {
+    "name": "Voltacristallo radioso 90",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal91": {
+    "name": "Voltacristallo radioso 91",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal92": {
+    "name": "Voltacristallo radioso 92",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal93": {
+    "name": "Voltacristallo radioso 93",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno del cristallo può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru."
+  },
+  "RadiantSpincrystal94": {
+    "name": "Voltacristallo radioso 94",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru, e può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo."
+  },
+  "RadiantSpincrystal95": {
+    "name": "Voltacristallo radioso 95",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru, e può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo."
+  },
+  "RadiantSpincrystal96": {
+    "name": "Voltacristallo radioso 96",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru, e può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo."
+  },
+  "RadiantSpincrystal97": {
+    "name": "Voltacristallo radioso 97",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru, e può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo."
+  },
+  "RadiantSpincrystal98": {
+    "name": "Voltacristallo radioso 98",
+    "description": "Questo meraviglioso cristallo contiene un certo ritmo, come una meraviglia intessuta con della seta delicata. Questi oggetti sono sparsi per tutto il continente o si possono reperire dai mercanti che collezionano rarità. La melodia contenuta all'interno di questo Voltacristallo radioso è una melodia misteriosa proveniente da Sumeru, e può essere ravvivata nella Serenteiera usando Eufonio libero Sinuosità o Eufonio libero Crescendo."
   },
   "FragrantSteak": {
     "name": "Bistecca fragrante",
@@ -11138,6 +11774,10 @@
   "UnfadingSilkyGrace": {
     "name": "Grazia velata immarcescibile",
     "description": "Materiale di rifinitura specializzato per il Fiore corazzato.\\nLe decorazioni aggiungono sempre un certo non so che al valore e alla funzione di un oggetto. In periodi come questo, un fiore che non appassisce mai può conferire un'essenza romantica perfino a un'arma."
+  },
+  "CongealedPupaWax": {
+    "name": "Cera di crisalide solidificata",
+    "description": "Materiale di miglioramento specifico per Becco d'ibis.\\nNella Grande Sabbia Rossa, su richiesta dei discendenti del Re Ibis, il giovane che divenne in seguito il Re delle Invokazioni trascorse giorni su giorni tentando di creare della cera per corde d'arco partendo dalle crisalidi arenose. L'arco leggendario però sparì assieme al Re Ibis, e a essere tramandata di generazione in generazione fu solo la formula per creare la cera di crisalide. Che stia aspettando il giorno in cui qualcuno la userà di nuovo?"
   },
   "FalconsDance": {
     "name": "Danza del falco",
@@ -11851,7 +12491,7 @@
     "name": "Cyno: Silenzio",
     "description": "Stile per la carta giocatore.\\nOgni volta che Cyno resta in silenzio, sta pensando a qualche giudizio da infliggere... O a una delle sue solite battutacce."
   },
-  "CandaceGreyHeron": {
+  "CandaceGrayHeron": {
     "name": "Candace: Airone grigio",
     "description": "Stile per la carta giocatore.\\nI venti infuocati del passato arruffano le piume dell'airone, ma l'uccello ha occhi solo per la stella del mattino alle prime luci dell'alba."
   },
@@ -11959,6 +12599,14 @@
     "name": "Appunti di viaggio: Corona gloriosa",
     "description": "Stile per la carta giocatore.\\n\"La conoscenza è la corona del tempo, e la reminiscenza è legata al tempo che abbiamo condiviso come unica entità.\""
   },
+  "KiraraNekoBox": {
+    "name": "Kirara: Nekoscatola",
+    "description": "Stile per la carta giocatore.\\n\"Per Kirara, il sorriso sul volto dei suoi clienti è la migliore ricompensa che esista.\""
+  },
+  "TravelNotesSecrets": {
+    "name": "Appunti di viaggio: Segreti",
+    "description": "Stile per la carta giocatore.\\nNon dimenticare mai i momenti dedicati al gioco e ai buoni amici. Non dimenticare mai cosa vuol dire non avere pensieri per il futuro."
+  },
   "AnemoculusResonanceStone": {
     "name": "Pietra di risonanza per Anemoculi",
     "description": "Una pietra che si può usare a Mondstadt per cercare Anemoculi nelle vicinanze.\\nQuesta lastra di pietra artificiale possiede una caratteristica simile a quelle delle Statue dei Sette di Anemo, che le permette di risuonare con gli Anemoculi.\\nLe pietre di risonanza per Oculi sono imitazioni grezze delle Statue dei Sette costruite dagli antichi, ma è proprio la loro grossolanità che le attira verso il potere degli Oculi elementali, fornendo così tanto ai devoti quanto agli avventurieri un'ottima opportunità per procurarseli."
@@ -11987,7 +12635,7 @@
     "name": "Resina condensata",
     "description": "Non puoi trasportarne più di 5 alla volta.\\nResina d'albero condensata che può essere impiegata per rivitalizzare Alberi pietrificati e Fiori geomantici al posto della Resina primordiale e ricavarne ricompense maggiori.\\nUn cristallo colmo di un'energia immensa.\\nGli alberi e i fiori argentei di Irminsul sono connessi alle linee geomantiche che si sono ostruite nel corso del tempo. L'energia contenuta all'interno della resina dell'albero è in grado di purificare la sostanza ostruente."
   },
-  "NREMenu": {
+  "NREMenu30": {
     "name": "Sacca di nutrienti (ver. 30)",
     "description": "Una pratica sacca che può trasformare gran parte del cibo in una sostanza nutriente ad assorbimento istantaneo. Nonostante aumenti notevolmente l'efficienza dell'apporto nutrizionale, la maggior parte dei cavalieri non è molto propensa a inserirvi il proprio cibo..."
   },
@@ -12180,8 +12828,8 @@
     "description": "Uno stabilizzatore autoadattabile, installabile su una canna da pesca per rendere più semplice la pesca. Il dispositivo può rilevare e registrare automaticamente la resistenza dei vari pesci. Più dati raccoglie, meglio funziona.\\n\\nIl prototipo di questo dispositivo è stato l'inutile trovata di un inventore di Fontaine, e che non attirò molto interesse fin quando l'Associazione di pesca di Fontaine non lo scoprì e lo modificò nello stabilizzatore da pesca che si usa oggi. Quando il dispositivo fu introdotto per la prima volta, i membri dell'Associazione di pesca lo accolsero con entusiasmo, fino a diffondersi in altre regioni.\\nÈ un prodotto molto popolare sul mercato di Snezhnaya. Si narra che i Messaggeri lo apprezzino particolarmente, il che ne spiega il grande successo."
   },
   "VintageLyre": {
-    "name": "Lira vintage",
-    "description": "Usa questo strumento tradizionale di Mondstadt per suonare della musica. Potrebbe funzionare a meraviglia nelle foreste di Sumeru.\\nUna lira vintage data in prestito ad Amadhiah nel Villaggio di Vimara.\\nMondstadt vanta una lunga tradizione di poesia e canto. I bardi del luogo si riferiscono ai loro strumenti con parole come \"amico\" o \"compagno\". Pertanto, l'aver affidato lo strumento ad Amadhiah da parte di uno di loro non è altro che un gesto d'affetto e fiducia."
+    "name": "Lira antica",
+    "description": "Usa questo strumento tradizionale di Mondstadt per suonare della musica. Potrebbe funzionare a meraviglia nelle foreste di Sumeru.\\nUna lira antica data in prestito ad Amadhiah nel Villaggio di Vimara.\\nMondstadt vanta una lunga tradizione di poesia e canto. I bardi del luogo si riferiscono ai loro strumenti con parole come \"amico\" o \"compagno\". Pertanto, l'aver affidato lo strumento ad Amadhiah da parte di uno di loro non è altro che un gesto d'affetto e fiducia."
   },
   "JumpyDumptyPartyPopper": {
     "name": "Sparacoriandoli di Coniglio Bumbum",
@@ -12255,7 +12903,7 @@
     "name": "Istruzioni: Resina condensata",
     "description": "Delle istruzioni passo dopo passo per realizzare della Resina condensata. Attivando alcuni Fiori geomantici e Alberi pietrificati usando la resina in questa forma condensata, la tua efficienza aumenterà. Non puoi trasportare più di 5 Resine condensate alla volta."
   },
-  "DiagramNREMenu": {
+  "DiagramNREMenu30": {
     "name": "Diagramma: sacca di nutrienti (ver. 30)",
     "description": "Un diagramma con istruzioni passo dopo passo per realizzare una sacca di nutrienti tascabile. Studialo a fondo e potrai creare uno strumento che renderà l'assunzione di cibo molto più veloce."
   },
@@ -12455,6 +13103,18 @@
     "name": "Fungostro Cresta di giada",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
+  "FatuiCryoCicinMage": {
+    "name": "Maga Cicin di Cryo dei Fatui",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "AbyssLectorFathomlessFlames": {
+    "name": "Cantore dell'Abisso Fiamme imperscrutabili",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ElectroHypostasis": {
+    "name": "Ipostasi di Electro",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
   "UndividedHeart": {
     "name": "Cuore indivisibile",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
@@ -12489,6 +13149,10 @@
   },
   "GrandExpectation": {
     "name": "Desiderio di avventura",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "BunnyTriggered": {
+    "name": "Situazione esplosiva",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "NaganoharaMeteorSwarm": {
@@ -12565,11 +13229,11 @@
   },
   "WellspringOfWarLust": {
     "name": "Spirito belligerante",
-    "description": "Una carta per il GCC Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
-  "TamanooyasCasket": {
-    "name": "Scrigno di Tamanooya",
-    "description": "Una carta per il GCC Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  "TamakushiCasket": {
+    "name": "Scrigno di Tamakushi",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "PoundingSurprise": {
     "name": "Batosta a sorpresa",
@@ -12579,13 +13243,29 @@
     "name": "Tempesta di fulmini",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
+  "EmbraceOfWinds": {
+    "name": "Venti avvolgenti",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ConquerorOfEvilGuardianYaksha": {
+    "name": "Conquistatore del male: Guardiano Yaksha",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "DominanceOfEarth": {
+    "name": "Dominio della terra",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
   "KeenSight": {
     "name": "Vista acuta",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
+  "AbsorbingPrism": {
+    "name": "Prisma assimilante",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
   "SinOfPride": {
     "name": "Peccato d'orgoglio",
-    "description": "Una carta per il GCC Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "KyoukaFuushi": {
     "name": "Kyouka Fuushi",
@@ -12593,6 +13273,38 @@
   },
   "AratakiIchiban": {
     "name": "Arataki Ichiban",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "MysticalAbandon": {
+    "name": "Abbandono mistico",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "AbyssalMayhemHydrospout": {
+    "name": "Caos abissale: Hydrogetto",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "SanguineRouge": {
+    "name": "Rosso sangue",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "WishesUnnumbered": {
+    "name": "Aspirazione infinita",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "TheShrinesSacredShade": {
+    "name": "L'ombra sacra del santuario",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "TheSeedOfStoredKnowledge": {
+    "name": "Seme della conoscenza custodita",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "CicinsColdGlare": {
+    "name": "Sguardo gelido della Cicin",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "EmbersRekindled": {
+    "name": "Soffio sulle braci",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "MagicGuide": {
@@ -12737,14 +13449,70 @@
   },
   "OrnateKabuto": {
     "name": "Kabuto decorato",
-    "description": "Una carta per il GCC Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "GeneralsAncientHelm": {
     "name": "Elmetto antico del generale",
-    "description": "Una carta per il GCC Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "AmosBow": {
+    "name": "Arco di Amos",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "AThousandFloatingDreams": {
+    "name": "Mille sogni fluttuanti",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ElegyForTheEnd": {
+    "name": "Elegia finale",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "SkywardPride": {
+    "name": "Orgoglio celeste",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "TheBell": {
+    "name": "Spadone del tempo",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "VortexVanquisher": {
+    "name": "Squarciavortice",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "EngulfingLightning": {
+    "name": "Fulmine fagocitante",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "SkywardBlade": {
+    "name": "Lama celeste",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "FavoniusSword": {
     "name": "Spada di Favonius",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "EmblemOfSeveredFate": {
+    "name": "Emblema del fato spezzato",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "TenacityOfTheMillelith": {
+    "name": "Perseveranza dei Milleliti",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ThunderingPoise": {
+    "name": "Portamento tonante",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "VermillionHereafter": {
+    "name": "Aldilà vermiglio",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "CapriciousVisage": {
+    "name": "Maschera capricciosa",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ShimenawasReminiscence": {
+    "name": "Reminiscenza di Shimenawa",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "LiyueHarborWharf": {
@@ -12825,6 +13593,46 @@
   },
   "GrandNarukamiShrine": {
     "name": "Gran Santuario di Narukami",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Tenshukaku": {
+    "name": "Tenshukaku",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "SangonomiyaShrine": {
+    "name": "Santuario dei Sangonomiya",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "SumeruCity": {
+    "name": "Città di Sumeru",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Vanarana": {
+    "name": "Vanarana",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ChinjuForest": {
+    "name": "Foresta di Chinju",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Hanachirusato": {
+    "name": "Hanachirusato",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "KidKujirai": {
+    "name": "Piccolo Kujirai",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Xudong": {
+    "name": "Xudong",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Dunyarzad": {
+    "name": "Dunyarzad",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "Rana": {
+    "name": "Rana",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
   "ElementalResonanceWovenIce": {
@@ -12943,6 +13751,42 @@
     "name": "Chiamata abissale",
     "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
   },
+  "WindAndFreedom": {
+    "name": "Vento e libertà",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "StoneAndContracts": {
+    "name": "Roccia e contratti",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "ThunderAndEternity": {
+    "name": "Fulmine ed eternità",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "NatureAndWisdom": {
+    "name": "Natura e saggezza",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "FatuiConspiracy": {
+    "name": "Cospirazione dei Fatui",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "PlungingStrike": {
+    "name": "Colpo in picchiata",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "HeavyStrike": {
+    "name": "Colpo pesante",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "TheLegendOfVennessa": {
+    "name": "La leggenda di Vennessa",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
+  "FriendshipEternal": {
+    "name": "Amicizia eterna",
+    "description": "Una carta per il gioco da tavolo Invokazione del genio. È fatta di materiale resistente, e l'illustrazione sulla parte frontale è realizzata con un metodo di stampa speciale che le dona un aspetto assolutamente impeccabile."
+  },
   "Origin": {
     "name": "Origine",
     "description": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
@@ -12968,11 +13812,15 @@
     "description": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
   },
   "Adept": {
-    "name": "Adepto",
+    "name": "Esperto",
     "description": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
   },
   "LazuriteSwirl": {
     "name": "Turbinio di lazurite",
+    "description": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
+  },
+  "TreasuresOfTheDeck": {
+    "name": "Tesori del mazzo",
     "description": "Il dorso di una carta di Invokazione del genio che puoi ottenere e scambiare. Si dice che i dorsi delle carte con design diversi differiscano leggermente anche in termini di fattura e consistenza. Alcuni giocatori collezionano i dorsi delle carte di stili diversi come hobby."
   },
   "BeginnerPlayerBadge": {
@@ -13023,7 +13871,7 @@
     "name": "Eredità di Gunnhildr",
     "description": "Il completo di Jean. Questo classico abito cerimoniale da cavaliere è adatto a ogni occasione."
   },
-  "Outrider": {
+  "100Outrider": {
     "name": "100% Vigilante",
     "description": "Il completo di Amber. Una versione più formale, ma non meno alla moda, dell'uniforme da Vigilante!"
   },
@@ -13165,11 +14013,11 @@
   },
   "AmidstPoeticPondering": {
     "name": "Riflessioni poetiche",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Riflessioni poetiche.\\nUno studio sobriamente arredato, in gran parte ispirato all'ufficio dei Cavalieri di Favonius. Si dice che ogni angolo di questo studio segua meticolose regole di arredamento per permettere alle luci e alle ombre delle candele di mescolarsi in modo perfetto, creando un'illuminazione unica nel suo genere. I lettori e gli scrittori amanti della letteratura troveranno qui una rigogliosa sorgente d'ispirazione, mentre i più indaffarati potranno concentrarsi in silenzio, con basse probabilità di essere disturbati.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Jean, Lisa, Fischl, Mona, Eula"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Riflessioni poetiche.\\nUno studio sobriamente arredato, in gran parte ispirato all'ufficio dei Cavalieri di Favonius. Si dice che ogni angolo di questo studio segua meticolose regole di arredamento per permettere alle luci e alle ombre delle candele di mescolarsi in modo perfetto, creando un'illuminazione unica nel suo genere. I lettori e gli scrittori amanti della letteratura troveranno qui una rigogliosa sorgente d'ispirazione, mentre i più indaffarati potranno concentrarsi in silenzio, con basse probabilità di essere disturbati.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Jean, Lisa, Fischl, Mona ed Eula."
   },
   "AmidstWhisperingWinds": {
     "name": "Venti sussurranti",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Venti sussurranti.\\nUna camera da letto che rappresenta concretamente la nozione di premura. Per chi è sempre trafelato, una stanza da letto è semplicemente un luogo dove schiacciare un pisolino e che non richiede troppe cure; ma per quelli che hanno occhio per i dettagli, è giusto dedicare tempo e cura a ogni spazio abitabile.\\nAnche i venti della libertà e della resistenza hanno inizio come la più lieve delle brezze. Chi viaggia lontano deve prendersi cura di sé stesso, e se si vive circondati dal tepore e dal conforto, la stanchezza scivola via passando inosservata.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Barbara, Eula, Noelle"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Venti sussurranti.\\nUna camera da letto che rappresenta concretamente la nozione di premura. Per chi è sempre trafelato, una stanza da letto è semplicemente un luogo dove schiacciare un pisolino e che non richiede troppe cure; ma per quelli che hanno occhio per i dettagli, è giusto dedicare tempo e cura a ogni spazio abitabile.\\nAnche i venti della libertà e della resistenza hanno inizio come la più lieve delle brezze. Chi viaggia lontano deve prendersi cura di sé stesso, e se si vive circondati dal tepore e dal conforto, la stanchezza scivola via passando inosservata.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Barbara, Eula, e Noelle."
   },
   "FeiyunStudyRoom": {
     "name": "Studio di Feiyun",
@@ -13177,11 +14025,11 @@
   },
   "CloudyHazeDreamCourt": {
     "name": "Padiglione dei sogni nebulosi",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Padiglione dei sogni nebulosi.\\n\"Di lievi sogni nebulosi.\"\\nUna camera da letto umile e senza pretese, simile per tanti aspetti a una delle stanze della Locanda Wangshu. Il mistero di questa stanza da letto è difficile da spiegare a parole. A volte evoca ricordi in coloro che vi mettono piede, come la luce del sole che trafigge le nubi vorticose, ma rimuove da essi il dolore lasciando solo le impronte degli avvenimenti passati.\\nSiamo tutti di passaggio in questa vita mortale, e solo ricordando chi siamo possiamo continuare a seguire con sicurezza il nostro percorso. I pensieri sono più chiari nell'interstizio tra il sonno e la veglia. Non c'è da stupirsi se chi visita la Locanda Wangshu per una notte si ritrova con un'energia cento volte superiore, raggiante e pronto a riprendere il cammino.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Hu Tao, Yanfei, Ganyu, Keqing, Chongyun"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Padiglione dei sogni nebulosi.\\n\"Di lievi sogni nebulosi.\"\\nUna camera da letto umile e senza pretese, simile per tanti aspetti a una delle stanze della Locanda Wangshu. Il mistero di questa stanza da letto è difficile da spiegare a parole. A volte evoca ricordi in coloro che vi mettono piede, come la luce del sole che trafigge le nubi vorticose, ma rimuove da essi il dolore lasciando solo le impronte degli avvenimenti passati.\\nSiamo tutti di passaggio in questa vita mortale, e solo ricordando chi siamo possiamo continuare a seguire con sicurezza il nostro percorso. I pensieri sono più chiari nell'interstizio tra il sonno e la veglia. Non c'è da stupirsi se chi visita la Locanda Wangshu per una notte si ritrova con un'energia cento volte superiore, raggiante e pronto a riprendere il cammino.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Hu Tao, Yanfei, Ganyu, Keqing e Chongyun."
   },
   "SecretResearchLab": {
     "name": "Laboratorio di ricerca segreto",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Laboratorio di ricerca segreto.\\nUn semplice e vecchio laboratorio di alchimia. Ignorando i marchingegni intricati e specializzati sembra uno studio come tanti altri, tranne che per la quantità di libri sugli scaffali, i reagenti nei loro contenitori e i vari campioni sperimentali con l'etichetta \"Non aprire\", di cui gli inesperti possono solo vagamente immaginare l'uso. Basterebbe probabilmente un gatto poco propenso a rispettare tale istruzione a causare un incidente.\\nDopo che dei veri gatti sono entrati per caso nel laboratorio, causando due di questi incidenti con le pozioni alchemiche, la squadra investigativa dei Cavalieri di Favonius ha imposto delle regole ferree sull'entrata e uscita dai laboratori di alchimia all'interno della città. In quello stesso periodo, molte strambe dicerie sull'alchimia hanno iniziato a diffondersi, causando altrettanti grattacapi ai ricercatori che desideravano solo concentrarsi sul proprio lavoro.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Klee, Sucrose, Albedo e Lisa"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Laboratorio di ricerca segreto.\\nUn semplice e vecchio laboratorio di alchimia. Ignorando i marchingegni intricati e specializzati sembra uno studio come tanti altri, tranne che per la quantità di libri sugli scaffali, i reagenti nei loro contenitori e i vari campioni sperimentali con l'etichetta \"Non aprire\", di cui gli inesperti possono solo vagamente immaginare l'uso. Basterebbe probabilmente un gatto poco propenso a rispettare tale istruzione a causare un incidente.\\nDopo che dei veri gatti sono entrati per caso nel laboratorio, causando due di questi incidenti con le pozioni alchemiche, la squadra investigativa dei Cavalieri di Favonius ha imposto delle regole ferree sull'entrata e uscita dai laboratori di alchimia all'interno della città. In quello stesso periodo, molte strambe dicerie sull'alchimia hanno iniziato a diffondersi, causando altrettanti grattacapi ai ricercatori che desideravano solo concentrarsi sul proprio lavoro.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Klee, Sucrose, Albedo e Lisa."
   },
   "CottageKitchen": {
     "name": "Cucina fumo e legna",
@@ -13189,87 +14037,87 @@
   },
   "WeaponForgingStation": {
     "name": "Fucina di armi",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Forgia per armi.\\nUna fucina ben attrezzata che può ospitare tanti fabbri contemporaneamente per produrre il massimo numero di armi di alta qualità o riparare con efficienza pezzi danneggiati.\\nFinché i mostri esisteranno su questo continente e i passi peregrini degli avventurieri non si arresteranno, ci sarà sempre richiesta di armi ed equipaggiamenti. Per far fronte a una tale domanda, i fabbri devono seguire un apprendistato per tantissimi anni e, dato che durante tale periodo non mancano gli errori, tutto questo può costituire una grossa spesa. I fabbri sono talvolta a corto di denaro, e pertanto, in simili occasioni, i Cavalieri di Favonius cercano di garantire loro degli ordini per aiutarli a mantenere il loro tenore di vita. Si dice che, in passato, anche il lungimirante proprietario di un certo vigneto abbia fornito periodici apporti di capitale.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Noelle, Bennett, Diluc e Diona"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Forgia per armi.\\nUna fucina ben attrezzata che può ospitare tanti fabbri contemporaneamente per produrre il massimo numero di armi di alta qualità o riparare con efficienza pezzi danneggiati.\\nFinché i mostri esisteranno su questo continente e i passi peregrini degli avventurieri non si arresteranno, ci sarà sempre richiesta di armi ed equipaggiamenti. Per far fronte a una tale domanda, i fabbri devono seguire un apprendistato per tantissimi anni e, dato che durante tale periodo non mancano gli errori, tutto questo può costituire una grossa spesa. I fabbri sono talvolta a corto di denaro, e pertanto, in simili occasioni, i Cavalieri di Favonius cercano di garantire loro degli ordini per aiutarli a mantenere il loro tenore di vita. Si dice che, in passato, anche il lungimirante proprietario di un certo vigneto abbia fornito periodici apporti di capitale.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Noelle, Bennett, Diluc e Diona."
   },
   "IdyllicTown": {
     "name": "Cittadina idilliaca",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Cittadina idilliaca.\\nUn angolo di una città rurale che riprende lo stile del Villaggio Acquachiara.\\nTra le molte lodi che i visitatori tessono del Villaggio Acquachiara, quelle che spiccano di più sono \"un ambiente rilassante\" e \"uno stile di vita confortevole\". Naturalmente, questi turisti permangono nel Villaggio Acquachiara per brevi periodi, ma vivere a lungo in un luogo simile presuppone abilità come la caccia e la pesca. Solo padroneggiando tali abilità si può restare al passo con lo stile di vita della gente del posto, apprezzare i doni della natura e godersi la brezza e l'idillio del Villaggio Acquachiara.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Diona, Amber, Razor"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Cittadina idilliaca.\\nUn angolo di una città rurale che riprende lo stile del Villaggio Acquachiara.\\nTra le molte lodi che i visitatori tessono del Villaggio Acquachiara, quelle che spiccano di più sono \"un ambiente rilassante\" e \"uno stile di vita confortevole\". Naturalmente, questi turisti permangono nel Villaggio Acquachiara per brevi periodi, ma vivere a lungo in un luogo simile presuppone abilità come la caccia e la pesca. Solo padroneggiando tali abilità si può restare al passo con lo stile di vita della gente del posto, apprezzare i doni della natura e godersi la brezza e l'idillio del Villaggio Acquachiara.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Diona, Amber e Razor."
   },
   "BirdAndBlossomPark": {
     "name": "Parco di fiori e uccelli",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Parco di fiori e uccelli.\\nUn parco nello stile di Mondstadt, percorso da file di siepi verdeggianti e robusti alberi che circondano una fontana. Una brezza fugace trasporta i deliziosi aromi preferiti da farfalle e uccellini.\\nAgli occhi di alcuni poeti, gli uccelli e i fiori sono un simbolo di bontà e natura, ed è per questo che i bardi cantano talvolta nei pressi delle fontane, spesso attirando l'attenzione dei passanti... e dei loro animali da compagnia.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Venti, Rosaria, Barbara, Jean, Kaeya"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Parco di fiori e uccelli.\\nUn parco nello stile di Mondstadt, percorso da file di siepi verdeggianti e robusti alberi che circondano una fontana. Una brezza fugace trasporta i deliziosi aromi preferiti da farfalle e uccellini.\\nAgli occhi di alcuni poeti, gli uccelli e i fiori sono un simbolo di bontà e natura, ed è per questo che i bardi cantano talvolta nei pressi delle fontane, spesso attirando l'attenzione dei passanti... e dei loro animali da compagnia.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Venti, Rosaria, Barbara, Jean e Kaeya."
   },
   "GatheringOfGourmets": {
     "name": "Via delle prelibatezze",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Via delle prelibatezze.\\nUna via gastronomica con strutture all'esterno che replica la vivacità della Rocca di Chihu.\\nDefinirla una \"via delle prelibatezze\" non le rende giustizia, e nonostante possa sembrare che non ci siano abbastanza utensili da cucina in giro, sono più che sufficienti per preparare tutte le specialità conosciute della regione di Liyue. Dopotutto, i cuochi più abili sanno cucinare pietanze deliziose anche con l'utensile più semplice, complice il fatto che alcuni dei piatti più famosi sono preparati usando ingredienti che non richiedono una preparazione complessa.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Beidou, Xiangling, Ganyu, Xinyan, Tartaglia, Yelan"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Via delle prelibatezze.\\nUna via gastronomica con strutture all'esterno che replica la vivacità della Rocca di Chihu.\\nDefinirla una \"via delle prelibatezze\" non le rende giustizia, e nonostante possa sembrare che non ci siano abbastanza utensili da cucina in giro, sono più che sufficienti per preparare tutte le specialità conosciute della regione di Liyue. Dopotutto, i cuochi più abili sanno cucinare pietanze deliziose anche con l'utensile più semplice, complice il fatto che alcuni dei piatti più famosi sono preparati usando ingredienti che non richiedono una preparazione complessa.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Beidou, Xiangling, Ganyu, Xinyan, Tartaglia e Yelan."
   },
   "GlitteringStreet": {
     "name": "Strada luminosa",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Strada luminosa.\\nUn'area urbana ricolma di merci e prodotti, da strani e preziosi tesori a oggetti quotidiani, che ricrea la vivacità dei mercati di Liyue.\\n\"Luminosa\" non è un eufemismo: Liyue è il luogo dove tutte le navi approdano e ogni scorta abbonda. Ecco perché la stragrande maggioranza dei cittadini non cerca beni di prima necessità. Tuttavia, se manca qualcosa, puoi aspettare la fine del mese per riferirlo alla giovane donna dai capelli viola che si aggira spesso per i mercati in quel periodo. La sua vera identità non è chiara, ma si sa che la maggior parte delle merci segnalatele non tarda a ricomparire nei mercati.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Ningguang, Keqing, Yanfei, Xingqiu, Zhongli, Yun Jin, Shenhe"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Strada luminosa.\\nUn'area urbana ricolma di merci e prodotti, da strani e preziosi tesori a oggetti quotidiani, che ricrea la vivacità dei mercati di Liyue.\\n\"Luminosa\" non è un eufemismo: Liyue è il luogo dove tutte le navi approdano e ogni scorta abbonda. Ecco perché la stragrande maggioranza dei cittadini non cerca beni di prima necessità. Tuttavia, se manca qualcosa, puoi aspettare la fine del mese per riferirlo alla giovane donna dai capelli viola che si aggira spesso per i mercati in quel periodo. La sua vera identità non è chiara, ma si sa che la maggior parte delle merci segnalatele non tarda a ricomparire nei mercati.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Ningguang, Keqing, Yanfei, Xingqiu, Zhongli, Yun Jin e Shenhe."
   },
   "QingceCloudResidence": {
     "name": "Residenza delle nuvole di Qingce",
-    "description": "Un progetto con istruzioni passo dopo passo per realizzare un set Residenza delle nuvole di Qingce.\\nUn borgo di montagna sul modello del Villaggio di Qingce. Si dice che la sua atmosfera amichevole sia contagiosa, e che i visitatori che vi entrano si sentano più calmi e capaci di apprezzare le semplici gioie che forse avevano dimenticato.\\nPartire per inseguire i propri ideali e dedicare anni al solo inseguimento di una carriera è senza dubbio degno di lode; ma, dopo aver impiegato tanto tempo dietro a tali fatiche, può sopraggiungere la stanchezza. Quando ciò accade, una vita tranquilla e serena in campagna rimane una buona scelta. Il Villaggio di Qingce ha sempre accettato le partenze dei giovani in cerca di fortuna, ed è pronto a dare loro un caldo bentornato in qualsiasi momento.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan e Yaoyao"
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un set Residenza delle nuvole di Qingce.\\nUn borgo di montagna sul modello del Villaggio di Qingce. Si dice che la sua atmosfera amichevole sia contagiosa, e che i visitatori che vi entrano si sentano più calmi e capaci di apprezzare le semplici gioie che forse avevano dimenticato.\\nPartire per inseguire i propri ideali e dedicare anni al solo inseguimento di una carriera è senza dubbio degno di lode; ma, dopo aver impiegato tanto tempo dietro a tali fatiche, può sopraggiungere la stanchezza. Quando ciò accade, una vita tranquilla e serena in campagna rimane una buona scelta. Il Villaggio di Qingce ha sempre accettato le partenze dei giovani in cerca di fortuna, ed è pronto a dare loro un caldo bentornato in qualsiasi momento.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Xinyan, Xiao, Hu Tao, Qiqi, Shenhe, Yelan e Yaoyao."
   },
   "OfHuntingAndDancing": {
     "name": "Campo da caccia",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Campo da caccia.\\nUn accampamento abilmente predisposto che, basandosi sulle famose ricerche di Musk, ricrea una dimora di Hilichurl utile per studiare il loro habitat.\\nSi dice che, in passato, i Cavalieri di Favonius preparassero tali accampamenti e ne pianificassero ogni dettaglio, guidati dai Vigilanti, prima delle spedizioni contro i mostri. Anche la flotta della Crux tende a preparare dei modelli tattici in modo simile, attingendo da varie fonti d'informazioni per simulare gli approdi sulle isole allo scopo di liberarle dai mostri.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Amber, Sucrose, Klee, Beidou, Aloy"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Campo da caccia.\\nUn accampamento abilmente predisposto che, basandosi sulle famose ricerche di Musk, ricrea una dimora di Hilichurl utile per studiare il loro habitat.\\nSi dice che, in passato, i Cavalieri di Favonius preparassero tali accampamenti e ne pianificassero ogni dettaglio, guidati dai Vigilanti, prima delle spedizioni contro i mostri. Anche la flotta della Crux tende a preparare dei modelli tattici in modo simile, attingendo da varie fonti d'informazioni per simulare gli approdi sulle isole allo scopo di liberarle dai mostri.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Amber, Sucrose, Klee, Beidou e Aloy."
   },
   "IterAdAstraAbyssosque": {
     "name": "Iter ad astra abyssosque",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Iter Ad astra abyssosque.\\nUn accampamento per avventurieri che si vede spesso in mezzo alla natura e che sfrutta gli ultimi ritrovati in materia di progettazione delle tende.\\nGli avventurieri esperti sono abituati a condurre una vita spartana: anche in mezzo alle tempeste, gli basta una tenda leggera e resistente per dormire bene, recuperare le forze e raggiungere la meta successiva. Ecco perché tende economiche e appetibili come queste vanno sempre a ruba.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy e Mika"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Iter Ad astra abyssosque.\\nUn accampamento per avventurieri che si vede spesso in mezzo alla natura e che sfrutta gli ultimi ritrovati in materia di progettazione delle tende.\\nGli avventurieri esperti sono abituati a condurre una vita spartana: anche in mezzo alle tempeste, gli basta una tenda leggera e resistente per dormire bene, recuperare le forze e raggiungere la meta successiva. Ecco perché tende economiche e appetibili come queste vanno sempre a ruba.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Bennett, Qiqi, Chongyun, Fischl, Albedo, Aloy e Mika."
   },
   "DawnOrchard": {
     "name": "Frutteto Prima Luce",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Frutteto Prima Luce.\\nI frutteti del Vigneto Prima Luce sono molto rinomati. Si dice che alcuni rappresentanti dall'industria vinicola di un'altra nazione abbia visitato il Vigneto Prima Luce anni fa, per studiarlo e acquisire esperienza nella gestione dei frutteti. Le industrie vinicole di varie altre nazioni hanno fatto a gara per seguire il risultante modello del Frutteto Prima Luce.\\nPurtroppo, l'eccellenza degli ingredienti base è solo uno dei fattori, nella produzione di vino di qualità, e l'elemento cruciale che ha portato il Vigneto Prima Luce all'apice del settore è proprio la sua l'abilità nella vinificazione. Incapaci di competere, alcuni rivali hanno dovuto convertire parte della propria produzione in succo di frutta per riequilibrare i bilanci.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Diluc, Kaeya, Venti, Rosaria"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Frutteto Prima Luce.\\nI frutteti del Vigneto Prima Luce sono molto rinomati. Si dice che alcuni rappresentanti dall'industria vinicola di un'altra nazione abbia visitato il Vigneto Prima Luce anni fa, per studiarlo e acquisire esperienza nella gestione dei frutteti. Le industrie vinicole di varie altre nazioni hanno fatto a gara per seguire il risultante modello del Frutteto Prima Luce.\\nPurtroppo, l'eccellenza degli ingredienti base è solo uno dei fattori, nella produzione di vino di qualità, e l'elemento cruciale che ha portato il Vigneto Prima Luce all'apice del settore è proprio la sua l'abilità nella vinificazione. Incapaci di competere, alcuni rivali hanno dovuto convertire parte della propria produzione in succo di frutta per riequilibrare i bilanci.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Diluc, Kaeya, Venti e Rosaria."
   },
   "CourtOfTheUpright": {
     "name": "Cortile della giustizia",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Cortile della giustizia.\\nQuesta maestosa struttura unisce efficacemente gli edifici della Commissione trilaterale e della stazione di polizia. Possiede sia lo stile di un palazzo signorile sia l'aria professionale e specializzata di un organo esecutivo, mantenendo comunque un'estetica ottimizzata. \"Appropriata\" è l'aggettivo che più le si addice.\\nLe persone cresciute in ambienti distinti e dall'indole onesta approveranno di certo la configurazione di questo cortile. Si dice infatti che un certo generale della Commissione Tenryou, una volta, abbia suggerito di permettere agli ufficiali di stare vicini agli edifici della Commissione, per permettere loro arrivare più rapidamente sul luogo di lavoro e contribuire in maniera più efficace al raggiungimento dell'eternità sognato dalla Shogun onnipotente.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dalla seguente compagna: Kujou Sara, Kamisato Ayato"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Cortile della giustizia.\\nQuesta maestosa struttura unisce efficacemente gli edifici della Commissione trilaterale e della stazione di polizia. Possiede sia lo stile di un palazzo signorile sia l'aria professionale e specializzata di un organo esecutivo, mantenendo comunque un'estetica ottimizzata. \"Appropriata\" è l'aggettivo che più le si addice.\\nLe persone cresciute in ambienti distinti e dall'indole onesta approveranno di certo la configurazione di questo cortile. Si dice infatti che un certo generale della Commissione Tenryou, una volta, abbia suggerito di permettere agli ufficiali di stare vicini agli edifici della Commissione, per permettere loro arrivare più rapidamente sul luogo di lavoro e contribuire in maniera più efficace al raggiungimento dell'eternità sognato dalla Shogun onnipotente.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Kujou Sara e Kamisato Ayato."
   },
   "WakefulSpring": {
     "name": "Sorgente rivitalizzante",
-    "description": "Un progetto con istruzioni passo dopo passo per realizzare una Sorgente rivitalizzante.\\nUna sorgente calda all'aria aperta completa di tutto. I minerali e gli elementi presenti forse non saranno gli stessi delle Terme Aisa, ma le sorgenti calde di questo genere sono le migliori in termini di atmosfera rilassata e informale e della relativa mancanza di regole.\\nBasta un semplice bagno di mezz'ora perché la fatica accumulata dal lavoro svanisca, sostituita da un rinnovato vigore. E, se avanza tempo, puoi adagiarti su una vicina pietra bianca e gustarti del tè e delle chiacchiere con gli amici.\\nNaturalmente, ricorda le regole basilari dettate dall'etichetta: non c'è nulla di male nel godersi la sorgente calda con gli amici, ma non rimanervi troppo a lungo. Se passi troppo tempo in acqua con persone loquaci come la Regina del Festival d'estate, potrebbe girarti la testa.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Yoimiya, Gorou, Yae Miko, Shikanoin Heizou"
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una Sorgente rivitalizzante.\\nUna sorgente calda all'aria aperta completa di tutto. I minerali e gli elementi presenti forse non saranno gli stessi delle Terme Aisa, ma le sorgenti calde di questo genere sono le migliori in termini di atmosfera rilassata e informale e della relativa mancanza di regole.\\nBasta un semplice bagno di mezz'ora perché la fatica accumulata dal lavoro svanisca, sostituita da un rinnovato vigore. E, se avanza tempo, puoi adagiarti su una vicina pietra bianca e gustarti del tè e delle chiacchiere con gli amici.\\nNaturalmente, ricorda le regole basilari dettate dall'etichetta: non c'è nulla di male nel godersi la sorgente calda con gli amici, ma non rimanervi troppo a lungo. Se passi troppo tempo in acqua con persone loquaci come la Regina del Festival d'estate, potrebbe girarti la testa.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Yoimiya, Gorou, Yae Miko e Shikanoin Heizou."
   },
   "RuralConcealment": {
     "name": "Rifugio rurale",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Rifugio rurale.\\nQuesto villaggio di Inazuma evoca piuttosto bene il paesaggio del Villaggio di Konda. Gli edifici hanno già una certa età, ma sono tutt'altro che fatiscenti. Al contrario, emanano un senso di pura tranquillità. Non c'è un edificio che spicchi in modo particolare, e tutti danno l'impressione che in pochi anni si amalgameranno alle montagne vicine... Questi sono i chiari segni di un nascondiglio perfetto, e una certa ninja sonnolenta della Shuumatsuban avrà di sicuro approfittato di un luogo del genere, in un villaggio assonnato quanto lei, per oziare e schiacciare un pisolino.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Sayu, Gorou"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Rifugio rurale.\\nQuesto villaggio di Inazuma evoca piuttosto bene il paesaggio del Villaggio di Konda. Gli edifici hanno già una certa età, ma sono tutt'altro che fatiscenti. Al contrario, emanano un senso di pura tranquillità. Non c'è un edificio che spicchi in modo particolare, e tutti danno l'impressione che in pochi anni si amalgameranno alle montagne vicine... Questi sono i chiari segni di un nascondiglio perfetto, e una certa ninja sonnolenta della Shuumatsuban avrà di sicuro approfittato di un luogo del genere, in un villaggio assonnato quanto lei, per oziare e schiacciare un pisolino.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Sayu e Gorou."
   },
   "AncientBranchShrine": {
     "name": "Santuario del ramo antico",
-    "description": "Un progetto con istruzioni passo dopo passo per realizzare un Santuario del ramo antico.\\nL'architettura, la vernice rosso brillante e l'aspetto generale dello splendido e sereno santuario riprendono lo stile del Gran Santuario di Narukami. Funge da luogo di meditazione per i mortali, ma per Sua Eccellenza la Shogun, la sua sola visione era sufficiente per evocare un ricordo caliginoso ma vivido di un'era passata...\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Shogun Raiden, Yae Miko"
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un Santuario del ramo antico.\\nL'architettura, la vernice rosso brillante e l'aspetto generale dello splendido e sereno santuario riprendono lo stile del Gran Santuario di Narukami. Funge da luogo di meditazione per i mortali, ma per Sua Eccellenza la Shogun, la sua sola visione era sufficiente per evocare un ricordo caliginoso ma vivido di un'era passata...\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Shogun Raiden e Yae Miko."
   },
   "MilitaryExerciseGrounds": {
     "name": "Campo d'addestramento militare",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Campo d'addestramento militare.\\nTrae ispirazione dalla disposizione degli edifici militari e dell'arredamento dell'Accampamento dei Kujou.\\nDurante il conflitto tra l'esercito della Shogun e la Resistenza, entrambe le fazioni hanno cercato vari modi per migliorare la qualità delle nuove reclute entrate nei rispettivi eserciti. In confronto ai luoghi tradizionali, questo tipo di campo d'addestramento non solo fornisce attrezzature di ogni tipo, ma può anche simulare le difficoltà del trovarsi in prima linea, offrendo un'esperienza molto simile alla realtà. Questo garantisce alle nuove reclute un addestramento sufficiente.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dalla seguente compagna: Kujou Sara"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Campo d'addestramento militare.\\nTrae ispirazione dalla disposizione degli edifici militari e dell'arredamento dell'Accampamento dei Kujou.\\nDurante il conflitto tra l'esercito della Shogun e la Resistenza, entrambe le fazioni hanno cercato vari modi per migliorare la qualità delle nuove reclute entrate nei rispettivi eserciti. In confronto ai luoghi tradizionali, questo tipo di campo d'addestramento non solo fornisce attrezzature di ogni tipo, ma può anche simulare le difficoltà del trovarsi in prima linea, offrendo un'esperienza molto simile alla realtà. Questo garantisce alle nuove reclute un addestramento sufficiente.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Kujou Sara."
   },
   "JadeWilds": {
     "name": "Ritrovo naturale",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Ritrovo naturale.\\nUn ambiente tranquillo e sereno alla periferia di Inazuma. Un santuario di legno Otogi torreggia tra sakura, aceri e fiori colorati. La luce delle candele tremola mescolandosi a un senso intangibile di maestosità e stabilità. Ovunque, i petali cadenti sembrano sfiorati dalla spiritualità.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Kaedehara Kazuha, Arataki Itto"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Ritrovo naturale.\\nUn ambiente tranquillo e sereno alla periferia di Inazuma. Un santuario di legno Otogi torreggia tra sakura, aceri e fiori colorati. La luce delle candele tremola mescolandosi a un senso intangibile di maestosità e stabilità. Ovunque, i petali cadenti sembrano sfiorati dalla spiritualità.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Kaedehara Kazuha e Arataki Itto."
   },
   "SummerNightsRecollection": {
     "name": "Ricordi di una notte d'estate",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Ricordi di una notte d'estate.\\nQuesto ambiente ricrea perfettamente l'atmosfera vivace propria dei festival di Inazuma.\\nLa Città d'Inazuma organizza vari festival ogni anno, ma il più grande e memorabile cade spesso nel mezzo dell'estate. Le bancarelle gastronomiche, i giochi e i fuochi d'artificio nel cielo notturno convincono i visitatori a trattenersi un po' più a lungo. Le bancarelle scompaiono dopo l'ultimo giorno, ma i bei momenti trascorsi in compagnia durano per sempre.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Kamisato Ayaka, Arataki Itto, Kamisato Ayato"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Ricordi di una notte d'estate.\\nQuesto ambiente ricrea perfettamente l'atmosfera vivace propria dei festival di Inazuma.\\nLa Città d'Inazuma organizza vari festival ogni anno, ma il più grande e memorabile cade spesso nel mezzo dell'estate. Le bancarelle gastronomiche, i giochi e i fuochi d'artificio nel cielo notturno convincono i visitatori a trattenersi un po' più a lungo. Le bancarelle scompaiono dopo l'ultimo giorno, ma i bei momenti trascorsi in compagnia durano per sempre.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Kamisato Ayaka, Arataki Itto e Kamisato Ayato."
   },
   "SakuraHuedStreet": {
     "name": "Viale color sakura",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Viale color sakura.\\nUna perfetta riproduzione del distretto commerciale della Città d'Inazuma, pianificato nei minimi particolari.\\nA prescindere da ogni cosa, la gente di Inazuma vive la propria vita in un'atmosfera calma e pacifica. Le strade percorribili a piedi riflettono il tenore di vita dei residenti, che è la rappresentazione più reale della città. Seguendo Thoma, un abitante del posto che conosce Inazuma come le sue tasche, e visitando le varie attività e negozi, si possono davvero comprendere e apprezzare gli usi e costumi locali.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Yoimiya, Thoma, Kuki Shinobu"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Viale color sakura.\\nUna perfetta riproduzione del distretto commerciale della Città d'Inazuma, pianificato nei minimi particolari.\\nA prescindere da ogni cosa, la gente di Inazuma vive la propria vita in un'atmosfera calma e pacifica. Le strade percorribili a piedi riflettono il tenore di vita dei residenti, che è la rappresentazione più reale della città. Seguendo Thoma, maggiordomo del clan Kamisato che conosce Inazuma come le sue tasche, e visitando le varie attività e i negozi, si possono davvero comprendere e apprezzare gli usi e costumi locali.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Yoimiya, Thoma, Kuki Shinobu e Kirara."
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Dominio eterno dei sogni effimeri",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Dominio eterno dei sogni effimeri.\\nQuesta camera da letto si basa sull'estetica di Inazuma, ma riprende liberamente anche idee di altre nazioni, trovando un ottimo compromesso fra tradizione e praticità. La progettazione ha tenuto in considerazione, tra le altre cose, la percezione dei visitatori, e la stanza è stata concepita affinché questi possano rilassarsi a sufficienza, sentendosi pienamente rigenerati anche dopo un riposo di breve durata. Il kotatsu disposto con cura invoglia il visitatore a non lasciare più la stanza.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Sayu, Sangonomiya Kokomi, Shikanoin Heizou"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Dominio eterno dei sogni effimeri.\\nQuesta camera da letto si basa sull'estetica di Inazuma, ma riprende liberamente anche idee di altre nazioni, trovando un ottimo compromesso fra tradizione e praticità. La progettazione ha tenuto in considerazione, tra le altre cose, la percezione dei visitatori, e la stanza è stata concepita affinché questi possano rilassarsi a sufficienza, sentendosi pienamente rigenerati anche dopo un riposo di breve durata. Il kotatsu disposto con cura invoglia il visitatore a non lasciare più la stanza.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Sayu, Sangonomiya Kokomi e Shikanoin Heizou."
   },
   "AThousandSwings": {
     "name": "Forte devozione",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Forte devozione.\\nUn luogo dove forgiare la vera abilità con la spada. Molte delle lame ereditarie del clan sono conservate in questo posto, e una solenne armatura in posizione eretta genera un'atmosfera austera. Gli archi distruttori del male e la racchetta cacciaspiriti ornamentali hanno lo scopo rituale di purificare dai pensieri malevoli sia l'ambiente circostante che il cuore di coloro che si addestrano in questo luogo.\\nLa maggior parte dei marzialisti di Inazuma crede che per raggiungere l'apogeo della propria arte, oltre a sferrare mille attacchi con la spada, basti mantenere alta la volontà di affinare le proprie abilità e dare sempre il massimo.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Shogun Raiden, Kamisato Ayaka"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Forte devozione.\\nUn luogo dove forgiare la vera abilità con la spada. Molte delle lame ereditarie del clan sono conservate in questo posto, e una solenne armatura in posizione eretta genera un'atmosfera austera. Gli archi distruttori del male e la racchetta cacciaspiriti ornamentali hanno lo scopo rituale di purificare dai pensieri malevoli sia l'ambiente circostante che il cuore di coloro che si addestrano in questo luogo.\\nLa maggior parte dei marzialisti di Inazuma crede che per raggiungere l'apogeo della propria arte, oltre a sferrare mille attacchi con la spada, basti mantenere alta la volontà di affinare le proprie abilità e dare sempre il massimo.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Shogun Raiden e Kamisato Ayaka."
   },
   "ScholarlyTrove": {
     "name": "Tesoro dell'erudito",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Tesoro dell'erudito.\\nIn questo luogo è conservata una vasta raccolta di testi, all'interno di una libreria apprezzata da tutte le divisioni della Commissione trilaterale. È in grado di contenere almeno un centinaio di libri, ma per alcuni abitanti di Inazuma non è la quantità ciò che conta, ma la \"precisione\" e la \"precipitazione\": è importante conservare nel proprio cuore ogni parola di ciascun buon libro letto. Pertanto, è sufficiente ordinare i libri in base al valore che ognuno gli attribuisce. Si possono prestare o addirittura vendere, se lo si desidera, i libri letti molto tempo prima e già impressi nella memoria. Si dice che la Sacerdotessa divina dell'Isola di Watatsumi abbia proprio quest'abitudine.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dalle seguenti compagne: Sangonomiya Kokomi, Kuki Shinobu"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Tesoro dell'erudito.\\nIn questo luogo è conservata una vasta raccolta di testi, all'interno di una libreria apprezzata da tutte le divisioni della Commissione trilaterale. È in grado di contenere almeno un centinaio di libri, ma per alcuni abitanti di Inazuma non è la quantità ciò che conta, ma la \"precisione\" e la \"precipitazione\": è importante conservare nel proprio cuore ogni parola di ciascun buon libro letto. Pertanto, è sufficiente ordinare i libri in base al valore che ognuno gli attribuisce. Si possono prestare o addirittura vendere, se lo si desidera, i libri letti molto tempo prima e già impressi nella memoria. Si dice che la Sacerdotessa divina dell'Isola di Watatsumi abbia proprio quest'abitudine.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Sangonomiya Kokomi e Kuki Shinobu."
   },
   "OfMapleAndTeaScentsEntwined": {
     "name": "Profumo d'acero e tè",
-    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Profumo d'acero e tè.\\nL'organizzazione di questa sala da tè tradizionale di Inazuma trae ispirazione dalla Sala da tè Komore: usando tavoli di legno d'acero e oggetti per la cerimonia del tè simili, riesce a evocarne la stessa atmosfera elegante ma non troppo severa, socievole ma non arbitraria.\\nLa leggenda vuole che l'ispirazione, nelle sue varie forme, si sprigioni in coloro che siedono in una sala da tè pervasa della fragranza del legno d'acero e del tè. Ecco perché alcuni poeti tendono a scrivere le loro composizioni sorseggiando del tè, e il vagabondo dai capelli bianchi che ha scelto eleganti soprannomi per molte piante è incluso tra questi.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo è particolarmente apprezzato dai seguenti compagni: Thoma, Kaedehara Kazuha"
+    "description": "Un progetto con istruzioni passo dopo passo per allestire un set Profumo d'acero e tè.\\nL'organizzazione di questa sala da tè tradizionale di Inazuma trae ispirazione dalla Sala da tè Komore: usando tavoli di legno d'acero e oggetti per la cerimonia del tè simili, riesce a evocarne la stessa atmosfera elegante ma non troppo severa, socievole ma non arbitraria.\\nLa leggenda vuole che l'ispirazione, nelle sue varie forme, si sprigioni in coloro che siedono in una sala da tè pervasa della fragranza del legno d'acero e del tè. Ecco perché alcuni poeti tendono a scrivere le loro composizioni sorseggiando del tè, e il vagabondo dai capelli bianchi che ha scelto eleganti soprannomi per molte piante è incluso tra questi.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di posizionamento.\\nQuesto set decorativo piace particolarmente a Thoma e Kaedehara Kazuha."
   },
   "ForestPatrolAnecdotes": {
     "name": "Aneddoti pattuglia forestale",
@@ -13321,11 +14169,11 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Tra aromi e serenità",
-    "description": "Un elegante giardino pacifico che utilizza gazebo tratti dal Giardino di Razan e dal Pardis Dhyai. Questo non spicca certo per la coerenza stilistica dei suoi edifici, ma crea un'atmosfera generale di tranquillità.\\nI magnifici boccioli dormono qui serenamente, e i lampioni illuminano la fontana... Quando cala la notte, una passeggiata attraverso questo giardino può fugare i rumorosi pensieri che affollano la tua mente. Potresti perfino trovare l'ispirazione che tanto fatichi a scovare...\\nQuesto set decorativo piace particolarmente a Nahida e a Kaveh."
+    "description": "Un giardino placido ed elegante con gazebo ispirati al Giardino di Razan e al Pardis Dhyai. L'obiettivo di questo luogo non è tanto quello di creare una coesione totale tra i vari stili architettonici, bensì creare una generale atmosfera di quiete.\\nI bellissimi fiori dormono tranquilli, mentre le lanterne rendono la fontana raggiante di luce... Quando arrivano le ore notturne, una passeggiata in questo giardino aiuta a diradare i pensieri chiassosi come soffici nuvole al vento. Chissà, potresti anche trovarvi l'ispirazione che normalmente ti manca...\\nQuesto set decorativo piace particolarmente a Nahida, Kaveh e Kirara."
   },
   "ChorusOfDesertAndWood": {
     "name": "Ritornello di legno e deserto",
-    "description": "In questo luogo meraviglioso cresce una grande varietà di piante grazie alla capacità della Creazione di Mondi alternativi, in grado di armonizzare le varie peculiarità possedute da questi organismi vegetali. In questo modo, perfino piante provenienti dal deserto e dalla foresta sono in grado di coesistere fianco a fianco, orchestrando un magnifico coro di fiori, alberi ed erba selvatica.\\nQueste splendide aree forestali sono vere e proprie miniere d'oro per le ricerche degli studiosi che amano le piante, ma sono allo stesso modo in grado di catturare l'interesse dei comuni passanti.\\nQuesto set decorativo piace particolarmente a Tighnari e {REALNAME[ID(1)|HOSTONLY(true)]}"
+    "description": "In questo luogo meraviglioso cresce una grande varietà di piante grazie alla capacità della Creazione di Mondi alternativi, in grado di armonizzare le varie peculiarità possedute da questi organismi vegetali. In questo modo, perfino piante provenienti dal deserto e dalla foresta sono in grado di coesistere fianco a fianco, orchestrando un magnifico coro di fiori, alberi ed erba selvatica.\\nQueste splendide aree forestali sono vere e proprie miniere d'oro per le ricerche degli studiosi che amano le piante, ma sono allo stesso modo in grado di catturare l'interesse dei comuni passanti.\\nQuesto set decorativo piace particolarmente a Tighnari e {REALNAME[ID(1)|HOSTONLY(true)]}."
   },
   "TimberWallWithJadeEaves": {
     "name": "Parete di legno con grondaia di giada",
@@ -13591,6 +14439,10 @@
     "name": "Pergamene della Terra della Saggezza",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare Pergamene della Terra della Saggezza.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
+  "TavernBookcaseEssentialKnowledge": {
+    "name": "Libreria da taverna Conoscenza essenziale",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una libreria da taverna Conoscenza essenziale.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
   "SturdyLibraryTable": {
     "name": "Tavolo da studio robusto",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare un tavolo da studio robusto.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
@@ -13679,6 +14531,10 @@
     "name": "Scrivania compatta in legno di athel",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare una scrivania compatta in legno di athel.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
+  "RoundTavernTableLeapsAndBounds": {
+    "name": "Tavolo da taverna rotondo Passi da gigante",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un tavolo da taverna rotondo Passi da gigante.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
   "BreezeBlessedBed": {
     "name": "Letto Dolce brezza",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare un letto Dolce brezza.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
@@ -13698,6 +14554,10 @@
   "AdhigamaWoodComfortBed": {
     "name": "Letto in legno di Adhigama Comfort",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare un letto in legno di Adhigama Comfort.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "AdhigamaWoodReposeCouch": {
+    "name": "Divano in legno di Adhigama Riposo",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un divano in legno di Adhigama Riposo.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "PineReceptionCounter": {
     "name": "Banco da reception in pino",
@@ -13766,6 +14626,22 @@
   "AdhigamaVineBackedChair": {
     "name": "Sedia in Adhigama con schienale in fogliame",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare una sedia in Adhigama con schienale in fogliame.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "SnekusThicket": {
+    "name": "Boschetto di Sneku",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un boschetto di Sneku.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "FinnicksCranberrySea": {
+    "name": "Mare di mirtilli rossi di Finnick",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare il Mare di mirtilli rossi di Finnick.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "TavernDiningChairFlavorsMultiplicity": {
+    "name": "Sedia da taverna Varietà di sapori",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una sedia da taverna Varietà di sapori.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "TavernDiningChairAcceleratedSobriety": {
+    "name": "Sedia da taverna Sobrietà sollecita",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una sedia da taverna Sobrietà sollecita.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "NorthernStoneHearth": {
     "name": "Camino in pietra del Nord",
@@ -13923,6 +14799,26 @@
     "name": "Calore puro",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare Calore puro.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
+  "LittleRosesMangroveHouse": {
+    "name": "Casa delle mangrovie della Piccola Rose",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una casa delle mangrovie della Piccola Rose.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "NightPilotsWatchtower": {
+    "name": "Torre di controllo di Pilota notturno",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una torre di controllo di Pilota notturno.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "BaobabsGoldenCradle": {
+    "name": "Culla dorata di Baobab",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una culla dorata di Baobab.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "DionasMiniSofa": {
+    "name": "Divanetto di Diona",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un divanetto di Diona.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "TavernDiningCartASnackBetweenDishes": {
+    "name": "Carrello da taverna Spuntino spezzafame",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un carrello da taverna Spuntino spezzafame.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tappeto di Mondstadt Ardore cremisi",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto di Mondstadt Ardore cremisi.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
@@ -13962,6 +14858,14 @@
   "PureLikeWheatSprouts": {
     "name": "Puro come i germogli del grano",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare Puro come i germogli del grano.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "TavernCarpetPassionOfPlay": {
+    "name": "Tappeto da taverna Passione di gioco",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto da taverna Passione di gioco.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "TavernCarpetDuelistsWisdom": {
+    "name": "Tappeto da taverna Saggezza del duellante",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un tappeto da taverna Saggezza del duellante.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "TrustyPortableLamp": {
     "name": "Lampada perpetua portatile",
@@ -14182,6 +15086,18 @@
   "TheDustDifferential": {
     "name": "Il differenziale della polvere",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare Il differenziale della polvere.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "DeskComboMiddlelakeIsle": {
+    "name": "Tavola da gioco Isola in mezzo al lago",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una tavola da gioco Isola in mezzo al lago.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "DeskComboVerdantTotem": {
+    "name": "Tavola da gioco Totem verdeggiante",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare una tavola da gioco Totem verdeggiante.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "PrincesWeepingFish": {
+    "name": "Pesce in lacrime di Prince",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un pesce in lacrime di Prince.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Zelo della Terra della Saggezza",
@@ -15320,8 +16236,8 @@
     "description": "Un progetto con istruzioni passo dopo passo per realizzare Corde, penne e traiettorie.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "IngenuityOfTheForestForager": {
-    "name": "Ingenuità del foraggiatore della foresta",
-    "description": "Un progetto con istruzioni passo dopo passo per realizzare Ingenuità del foraggiatore della foresta.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+    "name": "Ingegnosità del foraggiatore della foresta",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare Ingegnosità del foraggiatore della foresta.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "ItJustMightWork": {
     "name": "Potrebbe funzionare!",
@@ -15358,6 +16274,10 @@
   "BrightwoodFabricBoxPlatform": {
     "name": "Piattaforma per scatole di stoffe in Legno dello splendore",
     "description": "Un progetto con istruzioni passo dopo passo per realizzare una piattaforma per scatole di stoffe in Legno dello splendore.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
+  },
+  "LeisureDevicePuffyTubby": {
+    "name": "Dispositivo ricreativo Tonda paffutella",
+    "description": "Un progetto con istruzioni passo dopo passo per realizzare un dispositivo ricreativo Tonda paffutella.\\nDopo aver usato quest'oggetto, potrai visualizzarlo nella Schermata di creazione."
   },
   "PottedPlantVerdantVastness": {
     "name": "Vaso con pianta Immensità verdeggiante",

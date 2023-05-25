@@ -133,7 +133,7 @@
   "constellation3": {
     "name": "Yarının Yıldızı",
     "description": {
-      "0": "<strong>Parlayan Mucize♪</strong> seviyesini 3 artırır.",
+      "0": "<strong>Parlayan Mucize♪</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -147,7 +147,7 @@
   "constellation5": {
     "name": "Gerçek Yoldaşlık",
     "description": {
-      "0": "<strong>Gösteri Başlasın♪</strong> seviyesini 3 artırır.",
+      "0": "<strong>Gösteri Başlasın♪</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

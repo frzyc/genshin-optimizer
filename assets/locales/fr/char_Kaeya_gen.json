@@ -107,7 +107,7 @@
   "passive3": {
     "name": "Force cachée",
     "description": {
-      "0": "Diminue la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
+      "0": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint.",
       "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },

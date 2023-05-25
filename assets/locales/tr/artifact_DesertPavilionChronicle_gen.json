@@ -1,8 +1,8 @@
 {
   "setName": "Çöl Konağı Günlükleri",
   "setEffects": {
-    "2": "Rüzgar Hasarı Bonusunu %15 artırır.",
-    "4": "Yüklü Saldırı düşmanına isabet ettiğinde 15 saniyeliğine bunu kuşanan karakterin Normal Saldırı Hızı %10 artarken Normal, Yüklü ve Havadan Saldırı Hasarı %40 artar."
+    "2": "+%15 Rüzgar Hasarı Bonusu.",
+    "4": "Yüklü Saldırı bir düşmana isabet ettiğinde 15 saniyeliğine bunu kuşanan karakterin Normal Saldırı Hızı %10 artarken Normal, Yüklü ve Havadan Saldırı Hasarı %40 artar."
   },
   "pieces": {
     "flower": {

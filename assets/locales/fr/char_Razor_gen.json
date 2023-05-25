@@ -46,8 +46,8 @@
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
       "3": "D'un coup de griffe du loup de tonnerre, il inflige des <electro>DGT Électro</electro> aux ennemis en face.",
-      "4": "Razor obtient un sceau Électro lorsque cette attaque touche un ennemi ; chaque sceau lui confère un bonus de recharge d'énergie.",
-      "5": "Razor peut cumuler jusqu'à 3 sceaux Électro ; chaque nouveau sceau réinitialise leur durée.",
+      "4": "Razor obtient un sceau Électro lorsque cette attaque touche un ennemi, chaque sceau lui conférant un bonus de recharge d'énergie.",
+      "5": "Razor peut cumuler jusqu'à 3 sceaux Électro, chaque nouveau sceau réinitialisant leur durée.",
       "6": "<br/>",
       "7": "<strong>Appui long</strong>",
       "8": "Amassant la puissance du tonnerre, Razor libère une explosion électrique, infligeant d'importants <electro>DGT Électro</electro> aux ennemis proches, et supprimant tous les sceaux Électro.",
@@ -77,13 +77,13 @@
   "burst": {
     "name": "Croc éclair",
     "description": {
-      "0": "Le loup de tonnerre qui sommeille se réveille et vient à la rescousse, infligeant des <electro>DGT Électro</electro> aux ennemis proches ; ceci supprime également tous les sceaux Électro, qui sont convertis en énergie élémentaire.",
+      "0": "Le loup de tonnerre qui sommeille se réveille et vient à la rescousse, infligeant des <electro>DGT Électro</electro> aux ennemis proches. Ceci supprime également tous les sceaux Électro, qui sont convertis en énergie élémentaire.",
       "1": "Le loup de tonnerre combat aux côtés de Razor tant qu'il est actif.",
       "2": "<br/>",
       "3": "<strong>Loup de tonnerre</strong>",
       "4": [
-        " Attaque lorsque Razor effectue une attaque normale, et inflige des <electro>DGT Électro</electro> ;",
-        " Augmente la VIT d'attaque ainsi que la <electro>RÉS Électro</electro> de Razor ;",
+        " Attaque lorsque Razor effectue une attaque normale, et inflige des <electro>DGT Électro</electro>.",
+        " Augmente la VIT d'attaque ainsi que la <electro>RÉS Électro</electro> de Razor.",
         " Razor est immunisé aux DGT d'<electro>Électrocution</electro>.",
         " Attaque chargée impossible.",
         " Augmente la RÉS à l'interruption de Razor."

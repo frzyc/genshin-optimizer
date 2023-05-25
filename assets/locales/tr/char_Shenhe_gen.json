@@ -64,8 +64,8 @@
       "2": "Hasar Bonusu",
       "3": "Basma/Basılı Tutma Süresi",
       "4": "Basma/Basılı Tutma Tetiklenme Sınırı",
-      "5": "Tıklama BS",
-      "6": "Basılı Tutma BS",
+      "5": "Basma BS",
+      "6": "BS (Basılı Tutma)",
       "7": "",
       "8": "",
       "9": "",
@@ -115,8 +115,8 @@
     "description": {
       "0": "Shenhe, <strong>Ruha Çağrı</strong> becerisini kullandığında yakındaki tüm grup üyelerine aşağıdaki etkileri verir:",
       "1": [
-        " Bas: 10 saniyeliğine Element Becerisi ve Element Patlaması Hasarı %15 artar.",
-        " Basılı Tut: 15 saniyeliğine Normal, Yüklü ve Havadan Saldırı Hasarı %15 artar."
+        "Bas: 10 saniyeliğine Element Becerisi ve Element Patlaması Hasarı %15 artar.",
+        "Basılı Tut: 15 saniyeliğine Normal, Yüklü ve Havadan Saldırı Hasarı %15 artar."
       ]
     }
   },
@@ -150,8 +150,8 @@
     "description": {
       "0": "Shenhe'nin <strong>Buzdan Tüy</strong> becerisinin etkisi altında olan karakterler becerinin Hasar Bonusunu tetiklediğinde Shenhe bir Buzul Mantra kademesi kazanır.",
       "1": [
-        " Shenhe, <strong>Ruha Çağrı</strong> becerisini kullandığında Buzul Mantra'nın tüm kademeleri tükenir. Tükenen her kademe ile Ruha Çağrı becerisinin verdiği Hasar %5 artar.",
-        " 50 kademeye kadar birikir. Kademeler 60 saniye sürer."
+        "Shenhe, <strong>Ruha Çağrı</strong> becerisini kullandığında Buzul Mantra'nın tüm kademeleri tükenir. Tükenen her kademe ile Ruha Çağrı becerisinin verdiği Hasar %5 artar.",
+        "50 kademeye kadar birikir. Kademeler 60 saniye sürer."
       ]
     }
   },

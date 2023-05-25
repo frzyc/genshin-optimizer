@@ -8,7 +8,7 @@
       "1": "<br/>",
       "2": "<strong>Bas</strong>",
       "3": "Kılıcı hızla savurarak <cryo>Buz Hasarı</cryo> verir.",
-      "4": "Eula, bir düşmana vurduğunda en fazla 2 defa birikebilen bir Buz Yürek kademesi kazanır. Bu kademeler yalnızca 0,3 saniyede bir kazanılabilir.",
+      "4": "Eula, bir düşmana vurduğunda en fazla 2 kademe birikebilen bir Buz Yürek kademesi kazanır. Bu kademeler yalnızca 0,3 saniyede bir kazanılabilir.",
       "5": "<br/>",
       "6": "<strong>Buz Yürek</strong>",
       "7": "Eula'nın müdahaleye karşı direncini ve Savunmasını artırır.",
@@ -150,7 +150,7 @@
   "constellation4": {
     "name": "Çömezlerin İnadı",
     "description": {
-      "0": "Işıksaçan Kılıçlar, Can oranı %50'nin altında olan düşmanlara %25 daha fazla hasar verirler."
+      "0": "Işıksaçan Kılıçları, Can oranı %50'nin altında olan düşmanlara %25 daha fazla hasar verirler."
     }
   },
   "constellation5": {
@@ -163,7 +163,7 @@
   "constellation6": {
     "name": "Soylu Bir Vazife",
     "description": {
-      "0": "<strong>Buzul Aydınlık</strong> becerisinin oluşturduğu Işıksaçan Kılıçların başlangıçta 5 enerji kademesi olur. Normal Saldırılar, Element Becerileri ve Element Patlamaları %50 ihtimalle Işıksaçan Kılıcına ek enerji kademesi verir."
+      "0": "<strong>Buzul Aydınlık</strong> becerisinin oluşturduğu Işıksaçan Kılıçlarının başlangıçta 5 enerji kademesi olur. Normal Saldırılar, Element Becerileri ve Element Patlamaları %50 ihtimalle Işıksaçan Kılıcına ek enerji kademesi verir."
     }
   }
 }

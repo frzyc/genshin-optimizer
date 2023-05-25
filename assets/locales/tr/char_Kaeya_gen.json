@@ -126,7 +126,7 @@
   "constellation3": {
     "name": "Buzul Dansı",
     "description": {
-      "0": "<strong>Buzul Isırığı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Buzul Isırığı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -142,7 +142,7 @@
   "constellation5": {
     "name": "Ayazın Kucaklaması",
     "description": {
-      "0": "<strong>Buzul Valsi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Buzul Valsi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

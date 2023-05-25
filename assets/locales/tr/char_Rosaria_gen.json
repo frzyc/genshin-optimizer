@@ -66,7 +66,7 @@
     }
   },
   "burst": {
-    "name": "Ölüm Ayini",
+    "name": "Son Ayin",
     "description": {
       "0": "Rosaria, bu eşsiz dua ayininde önce silahını savurarak etrafındaki düşmanlara saldırır. Sonra yere dondurucu bir Buz Mızrağı indirir. İki saldırı da <cryo>Buz Hasarı</cryo> verir.",
       "1": "Buz Mızrağı etkinken soğuk hava dalgaları yayarak etrafındaki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
@@ -101,7 +101,7 @@
   "passive2": {
     "name": "Gölgelerin Merhameti",
     "description": {
-      "0": "<strong>Ölüm Ayini</strong> becerisi kullanıldığında 10 saniyeliğine yakındaki tüm grup üyelerinin (Rosaria hariç) Kritik Oranı, Rosaria'nın Kritik Oranının %15'i kadar artar.",
+      "0": "<strong>Son Ayin</strong> becerisi kullanıldığında 10 saniyeliğine yakındaki tüm grup üyelerinin (Rosaria hariç) Kritik Oranı, Rosaria'nın Kritik Oranının %15'i kadar artar.",
       "1": "Bu şekilde kazanılan Kritik Oran Bonusu %15'i geçemez."
     }
   },
@@ -121,13 +121,13 @@
   "constellation2": {
     "name": "Umutsuz Topraklar",
     "description": {
-      "0": "<strong>Ölüm Ayini</strong> becerisinin oluşturduğu Buz Mızrağının süresi 4 saniye artar."
+      "0": "<strong>Son Ayin</strong> becerisinin oluşturduğu Buz Mızrağının süresi 4 saniye artar."
     }
   },
   "constellation3": {
     "name": "Günahın Bedeli",
     "description": {
-      "0": "<strong>Hiddetli İtiraf</strong> seviyesini 3 artırır.",
+      "0": "<strong>Hiddetli İtiraf</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -141,14 +141,14 @@
   "constellation5": {
     "name": "Son Dua",
     "description": {
-      "0": "<strong>Ölüm Ayini</strong> seviyesini 3 artırır.",
+      "0": "<strong>Son Ayin</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation6": {
     "name": "İlahi Ceza",
     "description": {
-      "0": "<strong>Ölüm Ayini</strong> saldırısı, 10 saniyeliğine düşmanların Fiziksel Direncini %20 azaltır."
+      "0": "<strong>Son Ayin</strong> saldırısı, 10 saniyeliğine düşmanların Fiziksel Direncini %20 azaltır."
     }
   }
 }

@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Devoção",
     "description": {
-      "0": "Quando Noelle não estiver em combate, e a Vida do personagem selecionado cair para menos de 30%, o seguinte efeito acontecerá automaticamente:",
+      "0": "Quando Noelle não estiver em combate e a Vida do personagem selecionado cair para menos de 30%, o seguinte efeito acontecerá automaticamente:",
       "1": "A Vida do Personagem em uso receberá imediatamente um escudo de duração de 20s que absorve um dano equivalente a 400% da DEF de Noelle.",
       "2": [
         "O escudo tem 150% de eficiência contra Dano de todos os Elementos e Dano Físico."
@@ -118,7 +118,7 @@
   "passive2": {
     "name": "Limpo e Eficaz",
     "description": {
-      "0": "Quando o Ataque Normal e Carregado de Noelle atingir o inimigo cumulativamente 4 vezes, o tempo de Recarga do<strong> Guardião do Coração </strong>serão reduzido em 1s",
+      "0": "Quando o Ataque Normal e Carregado de Noelle atingir o inimigo cumulativamente 4 vezes, o tempo de Recarga do<strong> Guardião do Coração </strong>será reduzido em 1s",
       "1": "É possível acumular uma vez a cada 0.1s."
     }
   },

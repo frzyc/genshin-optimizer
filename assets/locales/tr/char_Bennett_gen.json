@@ -145,7 +145,7 @@
   "constellation3": {
     "name": "Durmak Bilmeyen Coşku",
     "description": {
-      "0": "<strong>Tutku Patlaması</strong> seviyesini 3 artırır.",
+      "0": "<strong>Tutku Patlaması</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -159,7 +159,7 @@
   "constellation5": {
     "name": "Gerçek Bir Kaşif",
     "description": {
-      "0": "<strong>Unutulmaz Serüven</strong> seviyesini 3 artırır.",
+      "0": "<strong>Unutulmaz Serüven</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -74,7 +74,7 @@
     }
   },
   "burst": {
-    "name": "Gizli Büyü: Musou Shinsetsu",
+    "name": "Gizli Sanat: Musou Shinsetsu",
     "description": {
       "0": "Şogun Raiden, sayısız gerçeği ve dileği toplayarak Musou no Hitotachi'yi ortaya çıkarır ve <electro>Elektrik Alan Hasarı</electro> verir. Sonrasında belirli bir süre Musou Isshin'i savaşta kullanır. Musou no Hitotachi ve Musou Isshin saldırılarının verdiği Hasar, bu beceri kullanıldığında tüketilen Çakra Desiderata'nın Kararlılık birikimine bağlı olarak artar.",
       "1": "<br/>",
@@ -144,20 +144,20 @@
   "constellation2": {
     "name": "Çelikkıran",
     "description": {
-      "0": "Musou no Hitotachi kullanıldığında ve <strong>Gizli Büyü: Musou Shinsetsu</strong> tarafından uygulanan Musou Isshin durumundayken Şogun Raiden'ın saldırıları düşmanların Savunmasının %60'ını yok sayar."
+      "0": "Musou no Hitotachi kullanıldığında ve <strong>Gizli Sanat: Musou Shinsetsu</strong> tarafından uygulanan Musou Isshin durumundayken Şogun Raiden'ın saldırıları düşmanların Savunmasının %60'ını yok sayar."
     }
   },
   "constellation3": {
     "name": "Gerçek Gölgenin Geçmişi",
     "description": {
-      "0": "<strong>Gizli Büyü: Musou Shinsetsu</strong> Seviyesini 3 artırır.",
+      "0": "<strong>Gizli Sanat: Musou Shinsetsu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Doğruluk Yemini",
     "description": {
-      "0": "<strong>Gizli Büyü: Musou Shinsetsu</strong> tarafından uygulanan <strong>Musou Isshin</strong> durumu sona erdiğinde yakındaki tüm grup üyeleri (Şogun Raiden hariç) 10 saniyeliğine %30 Bonus Saldırı kazanır."
+      "0": "<strong>Gizli Sanat: Musou Shinsetsu</strong> tarafından uygulanan <strong>Musou Isshin</strong> durumu sona erdiğinde yakındaki tüm grup üyeleri (Şogun Raiden hariç) 10 saniyeliğine %30 Bonus Saldırı kazanır."
     }
   },
   "constellation5": {
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Dilek Taşıyan",
     "description": {
-      "0": "<strong>Gizli Büyü: Musou Shinsetsu</strong> tarafından uygulanan <strong>Musou Isshin</strong> durumundayken Şogun Raiden'ın Element Patlamasının bir parçası sayılmayan saldırıları, düşmana vuran tüm grup üyelerinin (Şogun Raiden hariç) Element Patlaması Bekleme Süresini 1 saniye azaltır.",
+      "0": "<strong>Gizli Sanat: Musou Shinsetsu</strong> tarafından uygulanan <strong>Musou Isshin</strong> durumundayken Şogun Raiden'ın Element Patlamasının bir parçası sayılmayan saldırıları, düşmana vuran tüm grup üyelerinin (Şogun Raiden hariç) Element Patlaması Bekleme Süresini 1 saniye azaltır.",
       "1": "Bu etki 1 saniyede bir ve Musou Isshin süresince toplam 5 defa tetiklenebilir."
     }
   }

@@ -139,7 +139,7 @@
   "passive3": {
     "name": "Silah Ustası",
     "description": {
-      "0": "Kendi grup üyelerinin <strong>Normal Saldırı</strong> seviyesini 1 artırır."
+      "0": "Kendi grup üyelerinin <strong>Normal Saldırı</strong> Seviyesini 1 artırır."
     }
   },
   "constellation1": {
@@ -157,7 +157,7 @@
   "constellation3": {
     "name": "Hiçlik Felaketi: Kargaşa Girdabı",
     "description": {
-      "0": "<strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kötülüğün Mirası: Dalgaların Öfkesi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -171,7 +171,7 @@
   "constellation5": {
     "name": "Yıkım: Akışkan Kılıç",
     "description": {
-      "0": "<strong>Yıkım: Yok Etme</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yıkım: Yok Etme</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

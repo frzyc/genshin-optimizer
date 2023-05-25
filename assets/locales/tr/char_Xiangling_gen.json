@@ -124,7 +124,7 @@
   "constellation3": {
     "name": "Yağda Kızartma",
     "description": {
-      "0": "<strong>Ateş Çarkı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ateş Çarkı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -137,7 +137,7 @@
   "constellation5": {
     "name": "Çılgın Guoba",
     "description": {
-      "0": "<strong>Guoba Saldırısı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Guoba Saldırısı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

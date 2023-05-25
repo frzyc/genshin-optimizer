@@ -128,7 +128,7 @@
   "constellation3": {
     "name": "Kusursuz Simyager",
     "description": {
-      "0": "<strong>Dengesiz Rüzgar Hipostazı - Denek 6308</strong> seviyesini 3 artırır.",
+      "0": "<strong>Dengesiz Rüzgar Hipostazı - Denek 6308</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -142,7 +142,7 @@
   "constellation5": {
     "name": "Deney Tüpüne Dikkat",
     "description": {
-      "0": "<strong>Yasaklı İcat - İzomer 75 / Tip II</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yasaklı İcat - İzomer 75 / Tip II</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

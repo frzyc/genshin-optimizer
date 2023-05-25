@@ -151,20 +151,20 @@
   "constellation3": {
     "name": "Ayaz Çiçeklerinin Yağmuru",
     "description": {
-      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
   "constellation4": {
     "name": "Metcezir",
     "description": {
-      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> becerisinin oluşturduğu Buzdan Seki no To'dan Hasar alan düşmanların Savunması %30 azalır ve 6sn sürer."
+      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> becerisinin oluşturduğu Buzdan Seki no To'dan Hasar alan düşmanların 6 saniyeliğine Savunması %30 azalır."
     }
   },
   "constellation5": {
     "name": "Çiçek Bulutu Irutsuki",
     "description": {
-      "0": "<strong>Kamisato Sanatı: Hyouka</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kamisato Sanatı: Hyouka</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

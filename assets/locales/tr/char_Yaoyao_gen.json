@@ -148,7 +148,7 @@
   "constellation3": {
     "name": "Sadık ve Kibar",
     "description": {
-      "0": "<strong>Kızıl Gök Turpu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kızıl Gök Turpu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -161,7 +161,7 @@
   "constellation5": {
     "name": "Şefkatli",
     "description": {
-      "0": "<strong>Ay Yeşiminin İnişi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ay Yeşiminin İnişi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

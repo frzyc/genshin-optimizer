@@ -142,7 +142,7 @@
   "constellation3": {
     "name": "Çift Stop",
     "description": {
-      "0": "<strong>Ver Coşkuyu</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ver Coşkuyu</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -155,7 +155,7 @@
   "constellation5": {
     "name": "Bir Daha!",
     "description": {
-      "0": "<strong>Melodi Devrimi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Melodi Devrimi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

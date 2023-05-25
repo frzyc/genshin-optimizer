@@ -100,7 +100,7 @@
     "name": "Regalo explosivo",
     "description": {
       "0": "Cuando se inflige daño con <strong>Bomba saltarina</strong> y Ataque Normal, hay una probabilidad del 50% de que Klee obtenga una flor explosiva.",
-      "1": "El siguiente Ataque Cargado consumirá esta flor explosiva sin ningún coste de Aguante y tendrá un aumento de daño del 50%."
+      "1": "El siguiente Ataque Cargado consumirá esta flor explosiva sin ningún Coste de Aguante y tendrá un aumento de daño del 50%."
     }
   },
   "passive2": {

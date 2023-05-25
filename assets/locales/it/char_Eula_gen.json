@@ -21,7 +21,7 @@
       "14": "<i>\"E così, le onde si ritirarono, inghiottendo la corona dei nobili. Da allora, ogni goccia tra le onde di ghiaccio riflette una corona d'oro, e ciascuna brilla della sua luce.\"</i>"
     },
     "skillParams": {
-      "0": "DAN da pressione",
+      "0": "DAN variante a pressione",
       "1": "DAN da pressione prolungata",
       "2": "DAN da Marchio geloturbine",
       "3": "Bonus DIF",
@@ -30,7 +30,7 @@
       "6": "Riduzione RES a Cryo",
       "7": "Durata riduzione RES",
       "8": "TdR pressione",
-      "9": "TdR (pressione prolungata)",
+      "9": "TdR pressione prolungata",
       "10": "",
       "11": "",
       "12": "",

@@ -46,12 +46,12 @@
       "1": "<br/>",
       "2": "<strong>Drücken</strong>",
       "3": "Fügt den Gegnern vor ihm mit den Klauen des Blitzwolfs <electro>Elektro-Schaden</electro> zu.",
-      "4": "Sammelt beim Treffen Gegnern ein Elektro-Siegel, das Razors Aufladerate erhöht.",
+      "4": "Sammelt beim Treffen von Gegnern ein Elektro-Siegel, das Razors Aufladerate erhöht.",
       "5": "Bis zu 3 Elektro-Siegel sammelbar. Aktualisiert bei weiteren Elektro-Siegeln die Dauer.",
       "6": "<br/>",
       "7": "<strong>Gedrückt halten</strong>",
-      "8": "Konzentriert die Kraft des Blitzes zu einer Explosion mit geringer Reichweite, verursacht hohen <electro>Elektro-Schaden </electro> und entfernt vorhandene Elektro-Siegel.",
-      "9": "Erhöht Razors Elementarenergie für jedes entfernte Elektro-Siegel.",
+      "8": "Konzentriert die Kraft des Blitzes zu einer Explosion mit geringer Reichweite, verursacht hohen <electro>Elektro-Schaden</electro> und entfernt vorhandene Elektro-Siegel.",
+      "9": "Verleiht Razor zusätzliche Elementarenergie für jedes entfernte Elektro-Siegel.",
       "10": "<br/>",
       "11": "<i>Siehst du gerade in Razors Augen, während der Blitzschlag eintrifft, erhaschst du vielleicht einen Blick auf den Wolf in seinem Innern, der auf die Jagd geht.</i>"
     },
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Biss",
     "description": {
-      "0": "Verringert die VTD getroffener Gegner bei Anwendung von <strong>Klauen und Donner</strong> 7 s lang um 15 %."
+      "0": "Verringert die VTD getroffener Gegner bei Drücken von <strong>Klauen und Donner</strong> 7 s lang um 15 %."
     }
   },
   "constellation5": {
@@ -169,7 +169,7 @@
     "name": "Lupus Fulguris",
     "description": {
       "0": "Razors Großschwert lädt sich alle 10 s auf, elektrisiert den nächsten Standardangriff und verursacht damit <electro>Elektro-Schaden</electro> in Höhe von 100 % ANG.",
-      "1": "Sammelt ohne den Zustand <strong>Blitzklauen</strong> bei einem Treffer mit dem elektrisierten Angriff ein Elektro-Siegel für Razors <strong>Klauen und Donner</strong>."
+      "1": "Wenn Razor sich nicht im Zustand <strong>Blitzklauen</strong> befindet und einen Gegner mit dem elektrifizierten Angriff trifft, erhält er ein Elektro-Siegel der Fähigkeit <strong>Klauen und Donner</strong>."
     }
   }
 }

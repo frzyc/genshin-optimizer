@@ -143,7 +143,7 @@
   "constellation3": {
     "name": "Keşif Tecrübesi",
     "description": {
-      "0": "<strong>Göktüyü Şarkısı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Göktüyü Şarkısı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -156,7 +156,7 @@
   "constellation5": {
     "name": "İşaret Oku",
     "description": {
-      "0": "<strong>Kırağı Girdabı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Kırağı Girdabı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -123,7 +123,7 @@
   "passive2": {
     "name": "Đói Khát",
     "description": {
-      "0": "Khi năng lượng Nguyên Tố của Razor dưới 50%, hiệu quả nạp Nguyên Tố tăng 30%."
+      "0": "Khi Năng Lượng Nguyên Tố của Razor dưới 50%, hiệu quả nạp nguyên tố tăng 30%."
     }
   },
   "passive3": {
@@ -136,13 +136,13 @@
   "constellation1": {
     "name": "Bản Chất Của Sói",
     "description": {
-      "0": "8s sau khi Razor nhận được Nguyên Tố tinh cầu hoặc Nguyên Tố hạt nhân, sát thương tạo thành sẽ tăng 10%."
+      "0": "Trong 8s sau khi Razor nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, sát thương tạo thành sẽ tăng 10%."
     }
   },
   "constellation2": {
     "name": "Áp Chế",
     "description": {
-      "0": "Khi Razor tấn công địch có HP dưới 30%, tỷ lệ bạo kích tăng 10%."
+      "0": "Khi Razor tấn công kẻ địch có HP dưới 30%, tỷ lệ bạo kích tăng 10%."
     }
   },
   "constellation3": {
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Cắn Xé",
     "description": {
-      "0": "Khi nhấn <strong>Vuốt Và Sấm</strong>, làm cho phòng ngự của địch bị đánh trúng giảm 15%, kéo dài 7s."
+      "0": "Khi nhấn <strong>Vuốt Và Sấm</strong>, làm cho kẻ địch bị đánh trúng giảm 15% phòng ngự, duy trì 7s."
     }
   },
   "constellation5": {
@@ -168,7 +168,8 @@
   "constellation6": {
     "name": "Thiên Lang",
     "description": {
-      "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp, tấn công thường sau đó sẽ gây ra sấm sét, tạo ra 100% tấn công <electro>sát thương Nguyên Tố Lôi</electro>. Khi không ở trong trạng thái <strong>Răng Sét</strong>, nếu sét đánh trúng địch, sẽ tích luỹ cho Razor 1 Ấn Lôi <strong>Vuốt Và Sấm</strong>."
+      "0": "Mỗi 10s, kiếm của Razor sẽ tự động nạp năng lượng, khiến cho tấn công thường lần sau sẽ kích hoạt sấm sét gây ra <electro>sát thương nguyên tố Lôi</electro> bằng 100% tấn công.",
+      "1": "Khi không ở trong trạng thái <strong>Răng Sét</strong>, nếu sét đánh trúng kẻ địch, sẽ tích luỹ cho Razor 1 Ấn Lôi của <strong>Vuốt Và Sấm</strong>."
     }
   }
 }

@@ -141,7 +141,7 @@
   "constellation3": {
     "name": "Kan Ayini",
     "description": {
-      "0": "<strong>Öbür Dünya Rehberi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Öbür Dünya Rehberi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -154,7 +154,7 @@
   "constellation5": {
     "name": "Çiçek Kokulu Tütsü",
     "description": {
-      "0": "<strong>Ruh Terbiyecisi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Ruh Terbiyecisi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

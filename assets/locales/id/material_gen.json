@@ -219,6 +219,10 @@
     "name": "Festive Ticket",
     "description": "Ikut sertalah dalam berbagai hiburan perayaan yang terdapat selama Festival Windblume berlangsung untuk mendapatkan tiket ini dan menukarnya di toko event dengan berbagai hadiah."
   },
+  "InvokationCoupons": {
+    "name": "Invokation Coupon",
+    "description": "Kupon yang dapat diperoleh setelah berpartisipasi dalam berbagai permainan di Turnamen \"Kejuaraan Raja Invokation\". Dapat ditukarkan dengan berbagai hadiah di toko event selama event berlangsung."
+  },
   "Primogem": {
     "name": "Primogem",
     "description": "Sebuah batu mutiara dari zaman purbakala. Bersinar terang dengan penuh harapan dan impian alam semesta dari masa lampau."
@@ -519,6 +523,10 @@
     "name": "Yelan",
     "description": "Orang misterius yang mengaku bekerja di Bagian Urusan Sipil, tetapi \"tidak terdaftar\" di data Bagian Urusan Sipil."
   },
+  "Kirara": {
+    "name": "Kirara",
+    "description": "Seorang kurir di Komaniya Express, sebuah perusahaan jasa ekspedisi yang ada di Inazuma. Seekor Nekomata yang mencintai pekerjaannya dan juga komunitas manusia."
+  },
   "Aloy": {
     "name": "Aloy",
     "description": "Dulunya dikucilkan oleh sukunya, kini menjadi pemburu dengan kemampuan tak tertandingi. Selalu siap membela yang benar dengan busurnya."
@@ -791,6 +799,10 @@
     "name": "Stella Fortuna Yelan",
     "description": "Material aktivasi untuk Konstelasi Yelan"
   },
+  "KirarasStellaFortuna": {
+    "name": "Kirara's Stella Fortuna",
+    "description": "Material aktivasi untuk konstelasi Kirara."
+  },
   "AloysStellaFortuna": {
     "name": "Aloy's Stella Fortuna",
     "description": "Material aktivasi untuk konstelasi Aloy"
@@ -975,23 +987,23 @@
     "name": "",
     "description": ""
   },
-  "KamisatoAyakaForCB": {
+  "KamisatoAyakaForCB1": {
     "name": "Kamisato Ayaka",
     "description": "Mendapatkan Kamisato Ayaka Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
-  "XianglingForCB": {
+  "XianglingForCB1": {
     "name": "Xiangling",
     "description": "Mendapatkan Xiangling Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
-  "JeanForCB": {
+  "JeanForCB1": {
     "name": "Jean",
     "description": "Mendapatkan Jean Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
-  "DilucForCB": {
+  "DilucForCB1": {
     "name": "Diluc",
     "description": "Mendapatkan Diluc Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
-  "VentiForCB": {
+  "VentiForCB1": {
     "name": "Venti",
     "description": "Mendapatkan Venti Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
@@ -1031,11 +1043,11 @@
     "name": "",
     "description": ""
   },
-  "BarbaraForCB": {
+  "BarbaraForCB1": {
     "name": "Barbara",
     "description": "Mendapatkan Barbara Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
-  "RazorForCB": {
+  "RazorForCB1": {
     "name": "Razor",
     "description": "Mendapatkan Razor Lv. 15. (Item berlebih dapat dikonversi menjadi 4 Starglitter yang dapat digunakan untuk Talent karakter)"
   },
@@ -1335,9 +1347,13 @@
     "name": "Penyelamatan Diri yang Esktrem",
     "description": "Catatan perjalanan Musk, di bagian catatan mengenai Musk Reef, terdapat sebuah kalimat yang bertuliskan: \"Hanya dengan mengikuti angin dini hari yang menatap lautan, tempat ini dapat dicapai dari Lover's Cape...\""
   },
-  "IncompleteScorePart": {
+  "IncompleteScorePart1": {
     "name": "Partitur yang Tidak Lengkap (Bagian Awal)",
     "description": "Lembaran musik bagian awal untuk lagu berjudul \"Yellow\". Terdapat inisial \"S to J\" di pojok kanan bawah."
+  },
+  "IncompleteScorePart2": {
+    "name": "Partitur yang Tidak Lengkap (Bagian Akhir)",
+    "description": "Bagian akhir dari lembaran musik lagu \"Yellow\"."
   },
   "PrivateLetterFromLisaToJean": {
     "name": "Surat Pribadi dari Lisa untuk Jean",
@@ -1359,9 +1375,17 @@
     "name": "Obat Barbara",
     "description": "Lisa memintamu untuk memberikan ini pada Barbara"
   },
-  "IncompletePoemPart": {
+  "IncompletePoemPart1": {
     "name": "Robekan Puisi (Awal)",
     "description": "Puisi yang dicari Venti, walau ini hanyalah bagian pertamanya saja."
+  },
+  "IncompletePoemPart2": {
+    "name": "Robekan Puisi (Tengah)",
+    "description": "Puisi yang dicari Venti, sepertinya masih ada bagian lainnya."
+  },
+  "IncompletePoemPart3": {
+    "name": "Robekan Puisi (Akhir)",
+    "description": "Puisi yang dicari Venti, gabungkan ketiga halamannya agar menjadi sebuah puisi cinta."
   },
   "InscriptionRubbing": {
     "name": "Arsiran Teks Kuno",
@@ -1415,12 +1439,52 @@
     "name": "Kristal Merah",
     "description": "Kristal berbentuk tetesan air yang memancarkan cahaya merah tua. Sepertinya dijatuhkan oleh naga itu, mungkin orang yang berbicara dengan naga tadi mengetahui sesuatu. Tapi, ke mana dia pergi?"
   },
-  "SealClue": {
+  "SealClue101": {
     "name": "Petunjuk Segel 101",
     "description": "Petunjuk Segel"
   },
-  "BreakSeal": {
+  "SealClue102": {
+    "name": "Petunjuk Segel 102",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue103": {
+    "name": "Petunjuk Segel 103",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue201": {
+    "name": "Petunjuk Segel 201",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue202": {
+    "name": "Petunjuk Segel 202",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue203": {
+    "name": "Petunjuk Segel 203",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue301": {
+    "name": "Petunjuk Segel 301",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue302": {
+    "name": "Petunjuk Segel 302",
+    "description": "Petunjuk Segel"
+  },
+  "SealClue303": {
+    "name": "Petunjuk Segel 303",
+    "description": "Petunjuk Segel"
+  },
+  "BreakSeal1": {
     "name": "Buka Segel 1",
+    "description": "Buka Segel"
+  },
+  "BreakSeal2": {
+    "name": "Buka Segel 2",
+    "description": "Buka Segel"
+  },
+  "BreakSeal3": {
+    "name": "Buka Segel 3",
     "description": "Buka Segel"
   },
   "InvestigateTheSealOfStormterrorsLair": {
@@ -1435,8 +1499,16 @@
     "name": "Serpihan Memori (Anemo)",
     "description": "Saat didekatkan ke telinga, terdengar suara sayup-sayup, tetapi tidak dapat terdengar jelas. (Sementara tidak terbuka)"
   },
-  "SwordCemeterySeal": {
+  "SwordCemeterySeal1": {
     "name": "Segel Sword Cemetery 1",
+    "description": "Buka Segel"
+  },
+  "SwordCemeterySeal2": {
+    "name": "Segel Sword Cemetery 2",
+    "description": "Buka Segel"
+  },
+  "SwordCemeterySeal3": {
+    "name": "Segel Sword Cemetery 3",
     "description": "Buka Segel"
   },
   "TeardropCrystal": {
@@ -1655,7 +1727,7 @@
     "name": "Putri Putih dan Enam Kurcaci (VII)",
     "description": "Dongeng yang terkenal di seluruh Teyvat sejak zaman dahulu. Seri terakhir ini membawa kesimpulan kepada ceritanya dan termasuk ralaman dari Night Mother."
   },
-  "YearsOfLoneliness": {
+  "1000YearsOfLoneliness": {
     "name": "Kesepian 1.000 Tahun",
     "description": "Awal dari perjalanan tragis seorang pemburu Springvale. Di manakah kemalangan pertama kali menimpanya? Apa yang menandai awal mula dan akhir dari perjalanan 1.000 tahun seorang diri itu? Bagian pertama dari Kesepian 1.000 Tahun akan menjadi panduanmu dalam mengungkap kabut mimpi kehidupan Gothson."
   },
@@ -1867,7 +1939,71 @@
     "name": "Anggur Biasa Saja",
     "description": "Minuman beralkohol umum yang tersedia di mana-mana."
   },
-  "TESTCocktail": {
+  "TESTCocktail16": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail17": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail18": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail19": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail20": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail21": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail22": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail23": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail24": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail25": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail26": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail27": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail28": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail29": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail30": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail31": {
+    "name": "",
+    "description": ""
+  },
+  "TESTCocktail32": {
     "name": "",
     "description": ""
   },
@@ -2527,7 +2663,7 @@
     "name": "Catatan yang Terkoyak",
     "description": "Sebuah catatan yang tidak diketahui siapa penulisnya. Sepertinya menuliskan tentang suatu tempat yang letaknya tidak jauh dari sini."
   },
-  "KnightsOfFavoniusHandbookThEdition": {
+  "KnightsOfFavoniusHandbook5thEdition": {
     "name": "Panduan Knights of Favonius - Edisi 5",
     "description": "Buku pedoman yang berisi peraturan dan petunjuk untuk sikap teladan seorang Knights of Favonius, disunting langsung oleh Grand Master Jean. Semua Knight diwajibkan untuk mematuhi ketentuan-ketentuan, serta memperhatikan perilaku dan ucapan-ucapan mereka sesuai dengan yang tertera di buku ini."
   },
@@ -4303,7 +4439,7 @@
     "name": "Putri Mina dan Bangsa yang Hancur (VI)",
     "description": "Kebenaran dunia kini terungkap — betapa mengerikannya ironi ini! Bahkan setelah terpisah pun, keduanya tidak bisa lepas dari belenggu takdir.\\nIni merupakan jilid terakhir dari \"Putri Mina dan Bangsa yang Hancur\", tapi kisah kita — belumlah berakhir!"
   },
-  "FlowersForPrincessFischl": {
+  "FlowersForPrincessFischl0": {
     "name": "Bunga untuk Tuan Putri Fischl (0)",
     "description": "Volume awal dari seri novel \"Bunga untuk Tuan Putri Fischl\".\\nKarya ini awalnya datang dalam kotak kayu ungu dan hitam sebagai hadiah edisi terbatas, tetapi karena kontennya sangat beragam, produksi salinan yang sedikit membuat banyak penggemar berat yang ingin mengumpulkan seluruh seri mengamuk.\\nOleh karena itu, Yae Publishing House menamakan buku ini sebagai \"Volume 0\" dan menjualnya secara terpisah. Sejak itu, karya asli, edisi koleksian yang berkotak, dan Volume 0 dianggap sebagai standar pengukur penggemar."
   },
@@ -4483,9 +4619,13 @@
     "name": "Peta Harta Karun Treasure Hoarders",
     "description": "Peta harta karun yang pernah tersobek menjadi dua bagian dan disembunyikan di tempat yang berbeda oleh Treasure Hoarder ini, kini sudah menjadi utuh kembali.\\nIkuti simbol di atasnya, barangkali kamu bisa menemukan harta karun spesial!"
   },
-  "StorehouseSecurityKeyNo": {
+  "StorehouseSecurityKeyNo1": {
     "name": "Kunci Keamanan Gudang No. 1",
     "description": "Kunci gudang tertentu yang tersembunyi di tempat yang mencolok, tapi tidak kunjung ditemukan oleh Treasure Hoarder. Sepertinya kemampuan mereka patut diragukan, ya?"
+  },
+  "StorehouseSecurityKeyNo2": {
+    "name": "Kunci Keamanan Gudang No. 2",
+    "description": "Kunci gudang tertentu lainnya yang tersembunyi di tempat yang sangat mencolok, tapi tidak kunjung ditemukan oleh Treasure Hoarder. Sepertinya mereka harus menempa pelatihan dasar sebagai Treasure Hoarder lagi, ya?"
   },
   "ASetOfCannonballs": {
     "name": "Satu Set Amunisi",
@@ -4951,9 +5091,21 @@
     "name": "Ayo, Dodoco!",
     "description": "Catatan editor: \"Ayo, Dodoco!\" adalah cerita yang penulisannya diselesaikan secara bersama-sama oleh seorang wanita dewasa dan seorang gadis cilik, semua potongan kecil dalam cerita mengandung kelembutan dan berkah, sekaligus merupakan hadiah untuk para pembacanya. Mudah-mudahan, buku kecil yang tipis ini dapat melimpahkan sedikit kegembiraan kepada para pembacanya di tengah sibuknya jadwal mereka."
   },
-  "AkosTreasureLocation": {
+  "AkosTreasureLocation1": {
     "name": "Harta Karun Ako: Lokasi 1",
     "description": "Sebelum Ako Domeki dan kawan-kawannya pergi, mereka menyembunyikan harta karun di sini dan mereka setuju untuk menggalinya lagi saat bertemu kembali di kepulauan ini. Rahasia lokasi harta tersebut terbagi menjadi empat bagian, dan ini bagian pertamanya."
+  },
+  "AkosTreasureLocation2": {
+    "name": "Harta Karun Ako: Lokasi 2",
+    "description": "Sebelum Ako Domeki dan kawan-kawannya pergi, mereka menyembunyikan harta karun di sini dan mereka setuju untuk menggalinya lagi saat bertemu kembali di kepulauan ini. Rahasia lokasi harta tersebut terbagi menjadi empat bagian, dan ini bagian keduanya."
+  },
+  "AkosTreasureLocation3": {
+    "name": "Harta Karun Ako: Lokasi 3",
+    "description": "Sebelum Ako Domeki dan kawan-kawannya pergi, mereka menyembunyikan harta karun di sini dan mereka setuju untuk menggalinya lagi saat bertemu kembali di kepulauan ini. Rahasia lokasi harta tersebut terbagi menjadi empat bagian, dan ini bagian ketiganya."
+  },
+  "AkosTreasureLocation4": {
+    "name": "Harta Karun Ako: Lokasi 4",
+    "description": "Sebelum Ako Domeki dan kawan-kawannya pergi, mereka menyembunyikan harta karun di sini dan mereka setuju untuk menggalinya lagi saat bertemu kembali di kepulauan ini. Rahasia lokasi harta tersebut terbagi menjadi empat bagian, dan ini bagian keempatnya."
   },
   "YajnaGrass": {
     "name": "Rumput Yajna",
@@ -5195,9 +5347,85 @@
     "name": "Selembar Catatan",
     "description": "Catatan yang tulisannya amburadul."
   },
-  "RedemptionVoucher": {
+  "RedemptionVoucher1": {
     "name": "Kupon Penukaran 1",
     "description": "Dapat ditukarkan dengan Burung Hantu Air: Muter"
+  },
+  "RedemptionVoucher2": {
+    "name": "Kupon Penukaran 2",
+    "description": "Dapat ditukarkan dengan Burung Hantu Air: Joget"
+  },
+  "RedemptionVoucher3": {
+    "name": "Kupon Penukaran 3",
+    "description": "Dapat ditukarkan dengan Burung Hantu Air: Layang"
+  },
+  "RedemptionVoucher4": {
+    "name": "Kupon Penukaran 4",
+    "description": "Dapat ditukarkan dengan Burung Hantu Geledek: Muter"
+  },
+  "RedemptionVoucher5": {
+    "name": "Kupon Penukaran 5",
+    "description": "Dapat ditukarkan dengan Burung Hantu Geledek: Joget"
+  },
+  "RedemptionVoucher6": {
+    "name": "Kupon Penukaran 6",
+    "description": "Dapat ditukarkan dengan Burung Hantu Geledek: Layang"
+  },
+  "RedemptionVoucher7": {
+    "name": "Kupon Penukaran 7",
+    "description": "Dapat ditukarkan dengan Burung Hantu Berkobar: Muter"
+  },
+  "RedemptionVoucher8": {
+    "name": "Kupon Penukaran 8",
+    "description": "Dapat ditukarkan dengan Burung Hantu Berkobar: Joget"
+  },
+  "RedemptionVoucher9": {
+    "name": "Kupon Penukaran 9",
+    "description": "Dapat ditukarkan dengan Burung Hantu Berkobar: Layang"
+  },
+  "RedemptionVoucher10": {
+    "name": "Kupon Penukaran 10",
+    "description": "Dapat ditukarkan dengan Burung Hantu Berkelana"
+  },
+  "RedemptionVoucher11": {
+    "name": "Kupon Penukaran 11",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perairan: Lempar Topi"
+  },
+  "RedemptionVoucher12": {
+    "name": "Kupon Penukaran 12",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perairan: Sa-tu-Du-a-!"
+  },
+  "RedemptionVoucher13": {
+    "name": "Kupon Penukaran 13",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perairan: Duduk Manis"
+  },
+  "RedemptionVoucher14": {
+    "name": "Kupon Penukaran 14",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perkilatan: Lempar Topi"
+  },
+  "RedemptionVoucher15": {
+    "name": "Kupon Penukaran 15",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perkilatan: Sa-tu-Du-a-!"
+  },
+  "RedemptionVoucher16": {
+    "name": "Kupon Penukaran 16",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Perkilatan: Duduk Manis"
+  },
+  "RedemptionVoucher17": {
+    "name": "Kupon Penukaran 17",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Menyala: Lempar Topi"
+  },
+  "RedemptionVoucher18": {
+    "name": "Kupon Penukaran 18",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Menyala: Sa-tu-Du-a-!"
+  },
+  "RedemptionVoucher19": {
+    "name": "Kupon Penukaran 19",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Menyala: Duduk Manis"
+  },
+  "RedemptionVoucher20": {
+    "name": "Kupon Penukaran 20",
+    "description": "Dapat ditukarkan dengan Kaki Tiga Jalan-Jalan"
   },
   "PartBreeze": {
     "name": "Komponen: Angin",
@@ -5363,8 +5591,16 @@
     "name": "Daftar Kode Informan",
     "description": "Bagan kode yang diberikan oleh Alhaitham. Sepertinya siapa pun yang ingin membeli \"komoditas khusus\" dari Dori harus memberikan kode yang benar terlebih dahulu.\\nPeriksa bagan kode ini sebelum mengunjungi Dori."
   },
-  "MisplacedConch": {
+  "MisplacedConch1": {
     "name": "Keong yang Salah Tempat 1",
+    "description": "Keong Proyeksi ini harusnya disimpan di tempat lain, namun ditinggalkan di sini oleh seseorang. Akibatnya, ia mengeluarkan rekaman proyeksi yang tidak berurutan. Kembalikan keong ini ke tempat yang seharusnya, dan lihatlah apa yang akan kamu ketahui darinya ...."
+  },
+  "MisplacedConch2": {
+    "name": "Keong yang Salah Tempat 2",
+    "description": "Keong Proyeksi ini harusnya disimpan di tempat lain, namun ditinggalkan di sini oleh seseorang. Akibatnya, ia mengeluarkan rekaman proyeksi yang tidak berurutan. Kembalikan keong ini ke tempat yang seharusnya, dan lihatlah apa yang akan kamu ketahui darinya ...."
+  },
+  "MisplacedConch3": {
+    "name": "Keong yang Salah Tempat 3",
     "description": "Keong Proyeksi ini harusnya disimpan di tempat lain, namun ditinggalkan di sini oleh seseorang. Akibatnya, ia mengeluarkan rekaman proyeksi yang tidak berurutan. Kembalikan keong ini ke tempat yang seharusnya, dan lihatlah apa yang akan kamu ketahui darinya ...."
   },
   "PrescriptionMedicationFromBimarstanForGurgen": {
@@ -5977,7 +6213,7 @@
   },
   "Anemoculus": {
     "name": "Anemoculus",
-    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Anemo yang kuat. Persembahkan ke patung Anemo untuk memulihkan kekuatannya yang telah lama hilang."
+    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Anemo yang kuat. Berikan ke patung Anemo untuk memulihkan kekuatannya yang telah lama hilang."
   },
   "ElementalDust": {
     "name": "Elemental Dust",
@@ -6029,7 +6265,7 @@
   },
   "Electroculus": {
     "name": "Electroculus",
-    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Electro yang kuat. Persembahkan ke patung Electro untuk memulihkan kekuatannya yang telah lama hilang."
+    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Electro yang kuat. Berikan ke patung Electro untuk memulihkan kekuatannya yang telah lama hilang."
   },
   "MoonchaseCharm": {
     "name": "Moonchase Charm",
@@ -6041,7 +6277,7 @@
   },
   "Dendroculus": {
     "name": "Dendroculus",
-    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Dendro yang kuat. Persembahkan ke patung Dendro untuk memulihkan kekuatannya yang telah lama hilang."
+    "description": "Sebuah benda yang di dalamnya tersimpan kekuatan Dendro yang kuat. Berikan ke patung Dendro untuk memulihkan kekuatannya yang telah lama hilang."
   },
   "SumeruShrineOfDepthsKey": {
     "name": "Sumeru Shrine of Depths Key",
@@ -6631,7 +6867,7 @@
     "name": "Survival Grilled Fish",
     "description": "Spesialisasi Keqing. Ikan ini bukan dipanggang dengan api, melainkan dimasak dengan kekuatan elemen Electro. Daging ikannya dimasak matang seperti sudah digoreng. Saat menggigit daging ikan renyah yang dibaluti kulit ikan kecoklatan, kelezatannya sangat sempurna. Jadi apakah begini cara dia bertahan hidup di alam liar? Kita memang tidak bisa menebak orang dari penampilan luar saja."
   },
-  "NutritiousMealV": {
+  "NutritiousMealV593": {
     "name": "Nutritious Meal (V. 593)",
     "description": "Spesialisasi Sucrose. Saat dilihat, bentuknya seperti barang kimiawi aneh, tapi Sucrose menegaskan bahwa ini adalah makanan bernutrisi hasil dari banyak eksperimennya. Warna hijaunya yang \"sehat\" berasal dari campuran krim dan jus sayur alami... Hah, jus sayuran?"
   },
@@ -7259,7 +7495,7 @@
     "name": "Summer Festival Fish",
     "description": "Spesialisasi Yoimiya. Menonton kembang api, tanganmu penuh dengan camilan yang diberikan oleh Yoimiya, terdengar tawanya yang bebas dan seperti anak kecil di telingamu saat kembang api meledak di atas kepalamu... Di tengah simfoni suara yang unik ini, ikan mas gemuk yang ada di tanganmu seolah mengibaskan ekornya seperti akan berenang..."
   },
-  "DizzinessBeGoneNoJutsuVersion": {
+  "DizzinessBeGoneNoJutsuVersion20": {
     "name": "Dizziness-Be-Gone no Jutsu Version 2.0",
     "description": "Spesialisasi Sayu. Onigiri ini sudah dibentuk oleh Sayu menjadi bentuk yang sangat lucu — tapi ingat, ini adalah mujina, bukan tanuki, oke? Hm, ini pasti rahasia bagaimana Sayu bisa tidur sepanjang hari setelah makan."
   },
@@ -8086,6 +8322,10 @@
   "HeatQuellingSoup": {
     "name": "Heatquelling Soup",
     "description": "Masakan andalan Baizhu. \"Sebenarnya ini bukan obat, tapi hanya sesuatu yang bisa menghilangkan rasa kering saja\". Bersamaan dengan suara khawatir Baizhu yang terdengar di telingamu, semangkuk sup buah yang berkilauan hadir di hadapanmu. \"Harusnya makanan ini tidak pakai gula, tapi dia khawatir kamu tidak terbiasa dengan rasa pahitnya, jadi dia tambahkan gula,\" ucap Changsheng."
+  },
+  "EnergizingBento": {
+    "name": "Energizing Bento",
+    "description": "Masakan andalan Kirara. Nasi kotak yang dibuat Kirara dengan susah payah, meniru gaya nasi kotak yang disukai manusia. Dengan mengobservasi kesukaan para gadis muda, dia menciptakan kombinasi yang seimbang antara makanan sehat dengan nasi dengan bentuk kucing imut. Seperti sebuah paket yang datang ke rumahmu, kamu pasti tidak akan pernah bosan meskipun menerimanya setiap hari!"
   },
   "RecipeItem": {
     "name": "Bahan Resep",
@@ -9635,7 +9875,7 @@
     "name": "BP Bounty",
     "description": "\"Ketika kamu melakukan perjalanan melalui kegelapan, kamu membutuhkan senjata seperti cahaya yang menyala. Mereka ada di dalam sini, menunggu saat ketika mereka harus menembus bayangan yang kelam.\""
   },
-  "BPPickOfTestBundle": {
+  "BPPick1Of3TestBundle": {
     "name": "BP Pilih 1 dari 3 Test Bundle",
     "description": ""
   },
@@ -10635,6 +10875,10 @@
     "name": "Benih Makanan",
     "description": "Sebuah benih yang diberikan padamu oleh makhluk elemen yang disebut Floating Anemo Fungus. Tanamkan benih ini di sebuah ladang untuk menghasilkan makanan yang disukai para Fungi. Tapi apakah di masa depan akan ada Fungi yang bisa membajak tanah?"
   },
+  "KingOfInvokations": {
+    "name": "Sang Raja Invokation",
+    "description": "Sebuah novel ringan dengan alur cerita yang berpusat pada permainan kartu terpopuler di Teyvat — Genius Invokation TCG. Pelataran Karakter yang unik dan cerita yang menarik dan penuh kejutan membuatnya mampu meraih popularitas dalam waktu singkat."
+  },
   "NamelessAdventurersNotes": {
     "name": "Catatan Petualang Tanpa Nama",
     "description": "Tulisan yang tertinggal di tengah padang pasir, sepertinya dulu dimiliki oleh seseorang petualang."
@@ -10670,6 +10914,10 @@
   "RecordsOfUnknownAttributionII": {
     "name": "Catatan Orang Tak Dikenal: II",
     "description": "Catatan Orang Tak Dikenal: II"
+  },
+  "EmberglowLeaf": {
+    "name": "Emberglow Leaf",
+    "description": "Daun yang diperoleh dari Nahida dan bisa digunakan untuk menghubungi Aranara. Jika ditiup seperti peluit, pasti akan ada Aranara yang datang. Aranara bersedia menjawab suara seperti ini karena kepercayaannya terhadap Nahida. Dengan kata lain, kamu tidak akan mendapat balasan apa-apa kalau meniup sembarang daun."
   },
   "AkademiyaInvestigationTeamsLogsI": {
     "name": "Jurnal Tim Investigasi Akademiya: I",
@@ -10999,9 +11247,397 @@
     "name": "Wings of the Starlit Feast",
     "description": "Model Wind Glider. Hadiah bagi kalian yang telah menyaksikan perayaan dunia nan jauh di sana."
   },
-  "RadiantSpincrystal": {
+  "RadiantSpincrystal1": {
     "name": "Radiant Spincrystal 1",
     "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Dawn Winery Theme\"."
+  },
+  "RadiantSpincrystal2": {
+    "name": "Radiant Spincrystal 2",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Sweet Smile\"."
+  },
+  "RadiantSpincrystal3": {
+    "name": "Radiant Spincrystal 3",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Lone Sojourner\"."
+  },
+  "RadiantSpincrystal4": {
+    "name": "Radiant Spincrystal 4",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Day in Mondstadt\"."
+  },
+  "RadiantSpincrystal5": {
+    "name": "Radiant Spincrystal 5",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"The Edge of the Prairie\"."
+  },
+  "RadiantSpincrystal6": {
+    "name": "Radiant Spincrystal 6",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Tale of Two Dragons\"."
+  },
+  "RadiantSpincrystal7": {
+    "name": "Radiant Spincrystal 7",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Happy Journey\"."
+  },
+  "RadiantSpincrystal8": {
+    "name": "Radiant Spincrystal 8",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Legend of the Wind\"."
+  },
+  "RadiantSpincrystal9": {
+    "name": "Radiant Spincrystal 9",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Bustling Afternoon in Mondstadt\"."
+  },
+  "RadiantSpincrystal10": {
+    "name": "Radiant Spincrystal 10",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Dusk in Mondstadt\"."
+  },
+  "RadiantSpincrystal11": {
+    "name": "Radiant Spincrystal 11",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Mondstadt Starlit\"."
+  },
+  "RadiantSpincrystal12": {
+    "name": "Radiant Spincrystal 12",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Moonlight in Mondstadt\"."
+  },
+  "RadiantSpincrystal13": {
+    "name": "Radiant Spincrystal 13",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Another Day in Mondstadt\"."
+  },
+  "RadiantSpincrystal14": {
+    "name": "Radiant Spincrystal 14",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Windborne Hymn\"."
+  },
+  "RadiantSpincrystal15": {
+    "name": "Radiant Spincrystal 15",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Knights of Favonius\"."
+  },
+  "RadiantSpincrystal16": {
+    "name": "Radiant Spincrystal 16",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Angel's Share\"."
+  },
+  "RadiantSpincrystal17": {
+    "name": "Radiant Spincrystal 17",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Happy Day\"."
+  },
+  "RadiantSpincrystal18": {
+    "name": "Radiant Spincrystal 18",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Tender Strength\"."
+  },
+  "RadiantSpincrystal19": {
+    "name": "Radiant Spincrystal 19",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Before Dawn, at the Winery\"."
+  },
+  "RadiantSpincrystal20": {
+    "name": "Radiant Spincrystal 20",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Whispering Plain\"."
+  },
+  "RadiantSpincrystal21": {
+    "name": "Radiant Spincrystal 21",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A New Day With Hope\"."
+  },
+  "RadiantSpincrystal22": {
+    "name": "Radiant Spincrystal 22",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Eternal Anamnesis\"."
+  },
+  "RadiantSpincrystal23": {
+    "name": "Radiant Spincrystal 23",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Journey of Hope\"."
+  },
+  "RadiantSpincrystal24": {
+    "name": "Radiant Spincrystal 24",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Sun Rises in Liyue\"."
+  },
+  "RadiantSpincrystal25": {
+    "name": "Radiant Spincrystal 25",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Good Night, Liyue\"."
+  },
+  "RadiantSpincrystal26": {
+    "name": "Radiant Spincrystal 26",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Call It a Day in Liyue\"."
+  },
+  "RadiantSpincrystal27": {
+    "name": "Radiant Spincrystal 27",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Clear Sky Over Liyue\"."
+  },
+  "RadiantSpincrystal28": {
+    "name": "Radiant Spincrystal 28",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Cozy Leisure Time\"."
+  },
+  "RadiantSpincrystal29": {
+    "name": "Radiant Spincrystal 29",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Winding River\"."
+  },
+  "RadiantSpincrystal30": {
+    "name": "Radiant Spincrystal 30",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Mild Waves\"."
+  },
+  "RadiantSpincrystal31": {
+    "name": "Radiant Spincrystal 31",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Rhythm Amidst the Reeds\"."
+  },
+  "RadiantSpincrystal32": {
+    "name": "Radiant Spincrystal 32",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Flows of Jade-Like Water\"."
+  },
+  "RadiantSpincrystal33": {
+    "name": "Radiant Spincrystal 33",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Flow of Mildness\"."
+  },
+  "RadiantSpincrystal34": {
+    "name": "Radiant Spincrystal 34",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Vague Whispers\"."
+  },
+  "RadiantSpincrystal35": {
+    "name": "Radiant Spincrystal 35",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Legends Swept Away\"."
+  },
+  "RadiantSpincrystal36": {
+    "name": "Radiant Spincrystal 36",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Plain of Nostalgia\"."
+  },
+  "RadiantSpincrystal37": {
+    "name": "Radiant Spincrystal 37",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Rhythms From the Conch\"."
+  },
+  "RadiantSpincrystal38": {
+    "name": "Radiant Spincrystal 38",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Peaceful Hike\"."
+  },
+  "RadiantSpincrystal39": {
+    "name": "Radiant Spincrystal 39",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"The Fading Stories\"."
+  },
+  "RadiantSpincrystal40": {
+    "name": "Radiant Spincrystal 40",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Above the Sea of Clouds\"."
+  },
+  "RadiantSpincrystal41": {
+    "name": "Radiant Spincrystal 41",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Rainbow at Summit\"."
+  },
+  "RadiantSpincrystal42": {
+    "name": "Radiant Spincrystal 42",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Red Leaf on the Chessboard\"."
+  },
+  "RadiantSpincrystal43": {
+    "name": "Radiant Spincrystal 43",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Slumbering Lore\"."
+  },
+  "RadiantSpincrystal44": {
+    "name": "Radiant Spincrystal 44",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Lost Expectation\"."
+  },
+  "RadiantSpincrystal45": {
+    "name": "Radiant Spincrystal 45",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"The Realm Within\"."
+  },
+  "RadiantSpincrystal46": {
+    "name": "Radiant Spincrystal 46",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Sojourner's Sweet Dream\"."
+  },
+  "RadiantSpincrystal47": {
+    "name": "Radiant Spincrystal 47",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Miko's Night\"."
+  },
+  "RadiantSpincrystal48": {
+    "name": "Radiant Spincrystal 48",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Streets of Elegance\"."
+  },
+  "RadiantSpincrystal49": {
+    "name": "Radiant Spincrystal 49",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"The Land of Her Serenity\"."
+  },
+  "RadiantSpincrystal50": {
+    "name": "Radiant Spincrystal 50",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"The Mysterious Islands\"."
+  },
+  "RadiantSpincrystal51": {
+    "name": "Radiant Spincrystal 51",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Everlasting Devotion\"."
+  },
+  "RadiantSpincrystal52": {
+    "name": "Radiant Spincrystal 52",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Kitsune's Mask\"."
+  },
+  "RadiantSpincrystal53": {
+    "name": "Radiant Spincrystal 53",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Hanachirusato\"."
+  },
+  "RadiantSpincrystal54": {
+    "name": "Radiant Spincrystal 54",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Time to Say Farewell\"."
+  },
+  "RadiantSpincrystal55": {
+    "name": "Radiant Spincrystal 55",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Flickering Sakura\"."
+  },
+  "RadiantSpincrystal56": {
+    "name": "Radiant Spincrystal 56",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Murmuring Creek\"."
+  },
+  "RadiantSpincrystal57": {
+    "name": "Radiant Spincrystal 57",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Scarred Island\"."
+  },
+  "RadiantSpincrystal58": {
+    "name": "Radiant Spincrystal 58",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Silent Testimony\"."
+  },
+  "RadiantSpincrystal59": {
+    "name": "Radiant Spincrystal 59",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Island of Hanabi\"."
+  },
+  "RadiantSpincrystal60": {
+    "name": "Radiant Spincrystal 60",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Preparation of Matsuri\"."
+  },
+  "RadiantSpincrystal61": {
+    "name": "Radiant Spincrystal 61",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Illuminated Coral Palace\"."
+  },
+  "RadiantSpincrystal62": {
+    "name": "Radiant Spincrystal 62",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Tranquil Town\"."
+  },
+  "RadiantSpincrystal63": {
+    "name": "Radiant Spincrystal 63",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"In a Harmonious Atmosphere\"."
+  },
+  "RadiantSpincrystal64": {
+    "name": "Radiant Spincrystal 64",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Island of Crystal and Pearl\"."
+  },
+  "RadiantSpincrystal65": {
+    "name": "Radiant Spincrystal 65",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Misty Truth\"."
+  },
+  "RadiantSpincrystal66": {
+    "name": "Radiant Spincrystal 66",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Sorrows of Strays\"."
+  },
+  "RadiantSpincrystal67": {
+    "name": "Radiant Spincrystal 67",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Ruu's Melody\"."
+  },
+  "RadiantSpincrystal68": {
+    "name": "Radiant Spincrystal 68",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Roaming in Silence\"."
+  },
+  "RadiantSpincrystal69": {
+    "name": "Radiant Spincrystal 69",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Echoes of Solitude\"."
+  },
+  "RadiantSpincrystal70": {
+    "name": "Radiant Spincrystal 70",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Dirge of the Soundless\"."
+  },
+  "RadiantSpincrystal71": {
+    "name": "Radiant Spincrystal 71",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Nothing but Ivy\"."
+  },
+  "RadiantSpincrystal72": {
+    "name": "Radiant Spincrystal 72",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Forgotten Epic\"."
+  },
+  "RadiantSpincrystal73": {
+    "name": "Radiant Spincrystal 73",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Beyond Klesha\"."
+  },
+  "RadiantSpincrystal74": {
+    "name": "Radiant Spincrystal 74",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Melody of Hidden Seeds\"."
+  },
+  "RadiantSpincrystal75": {
+    "name": "Radiant Spincrystal 75",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Varuna's Mercy\"."
+  },
+  "RadiantSpincrystal76": {
+    "name": "Radiant Spincrystal 76",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Vestige of Dahri\"."
+  },
+  "RadiantSpincrystal77": {
+    "name": "Radiant Spincrystal 77",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Chatter Between Roots\"."
+  },
+  "RadiantSpincrystal78": {
+    "name": "Radiant Spincrystal 78",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Whirling of Leaves and Petals\"."
+  },
+  "RadiantSpincrystal79": {
+    "name": "Radiant Spincrystal 79",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Hustle and Bustle of Ormos\"."
+  },
+  "RadiantSpincrystal80": {
+    "name": "Radiant Spincrystal 80",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Halcyon Times\"."
+  },
+  "RadiantSpincrystal81": {
+    "name": "Radiant Spincrystal 81",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"A Puff of Cool Breeze\"."
+  },
+  "RadiantSpincrystal82": {
+    "name": "Radiant Spincrystal 82",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"On the Barren Sands\"."
+  },
+  "RadiantSpincrystal83": {
+    "name": "Radiant Spincrystal 83",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Arid Canyon\"."
+  },
+  "RadiantSpincrystal84": {
+    "name": "Radiant Spincrystal 84",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Settlement for Exiles\"."
+  },
+  "RadiantSpincrystal85": {
+    "name": "Radiant Spincrystal 85",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Ruins of Scorching Might\"."
+  },
+  "RadiantSpincrystal86": {
+    "name": "Radiant Spincrystal 86",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Eye of Deshret\"."
+  },
+  "RadiantSpincrystal87": {
+    "name": "Radiant Spincrystal 87",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah \"Emerald in the Desert\"."
+  },
+  "RadiantSpincrystal88": {
+    "name": "Radiant Spincrystal 88",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal89": {
+    "name": "Radiant Spincrystal 89",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal90": {
+    "name": "Radiant Spincrystal 90",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal91": {
+    "name": "Radiant Spincrystal 91",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal92": {
+    "name": "Radiant Spincrystal 92",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal93": {
+    "name": "Radiant Spincrystal 93",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal94": {
+    "name": "Radiant Spincrystal 94",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal95": {
+    "name": "Radiant Spincrystal 95",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal96": {
+    "name": "Radiant Spincrystal 96",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal97": {
+    "name": "Radiant Spincrystal 97",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
+  },
+  "RadiantSpincrystal98": {
+    "name": "Radiant Spincrystal 98",
+    "description": "Kristal yang menakjubkan ini mengandung ritme tertentu, seperti batu giok indah yang ditenun dari sutra halus. Pecahan ini dapat ditemukan di seluruh daratan atau didapatkan dari para pedagang yang suka mengumpulkan barang antik. Melodi yang terkandung di dalam kristal ini dapat dihidupkan kembali di Serenitea Pot milikmu menggunakan \"Paduan Suara Celestial: Anggun Mengangkasa\" atau \"Paduan Suara Celestial: Indah Mengalun\". Melodi yang terkandung dalam Radiant Spincrystal ini adalah melodi misterius dari Sumeru."
   },
   "FragrantSteak": {
     "name": "Fragrant Steak",
@@ -11138,6 +11774,10 @@
   "UnfadingSilkyGrace": {
     "name": "Unfading Silky Grace",
     "description": "Material refinement khusus untuk \"Mailed Flower\".\\nSebuah \"hiasan\" bisa membuat sesuatu menjadi lebih dari harga dan fungsinya semata. Di zaman seperti ini, bunga yang tak pernah layu ini bahkan bisa memberikan kesan romantis pada senjata seperti ini."
+  },
+  "CongealedPupaWax": {
+    "name": "Congealed Pupa Wax",
+    "description": "Material refinement khusus untuk Ibis Piercer.\\nKonon, anak muda yang nantinya akan menjadi Raja Invokation pernah diminta oleh keturunan Raja Ibis meracik lilin poles senar busur dari Sand Grease Pupa selama berhari-hari. Tapi busur legendaris ini hilang bersama dengan Raja Ibis, dan formula untuk membuat lilin poles ini masih diturunkan dari generasi ke generasi. Mungkin, ia masih menunggu saat-saat ia bisa digunakan lagi."
   },
   "FalconsDance": {
     "name": "Falcon's Dance",
@@ -11851,7 +12491,7 @@
     "name": "Cyno: Serenity",
     "description": "Style kartu nama.\\nSetiap kali Cyno terhening dalam diam, dia pasti sedang mempertimbangkan suatu keputusan yang berat ... Atau mungkin dia hanya sekedar memikirkan sesuatu yang lucu saja."
   },
-  "CandaceGreyHeron": {
+  "CandaceGrayHeron": {
     "name": "Candace: Grey Heron",
     "description": "Style kartu nama.\\nAngin masa lalu yang membakar mengibaskan bulu-bulu ekor bangau, namun hanya bintang pagi di awal fajarlah yang hendak sang burung pandang."
   },
@@ -11959,6 +12599,14 @@
     "name": "Catatan Perjalanan: Mahkota Kemuliaan",
     "description": "Style Kartu Nama.\\n\"Pengetahuan adalah mahkota yang dikenakan oleh sang waktu, sama seperti kerinduan melekat di waktu yang kita lalui bersama.\""
   },
+  "KiraraNekoBox": {
+    "name": "Kirara: Neko Box",
+    "description": "Style Kartu Nama.\\n\"Bagi Kirara, senyum tulus dari pelanggannya adalah hadiah terindah yang bisa dia dapatkan.\""
+  },
+  "TravelNotesSecrets": {
+    "name": "Catatan Perjalanan: Rahasia Pemanggil",
+    "description": "Style Kartu Nama.\\nJangan pernah lupakan masa-masa saat kamu bermain game bersama teman terdekat. Jangan pernah lupakan rasanya tidak perlu memikirkan masa depan."
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone",
     "description": "Dapat mencari Anemoculus terdekat saat digunakan di wilayah Mondstadt.\\nPiringan batu buatan manusia yang memiliki beberapa kemiripan dengan Patung The Seven Anemo. Batu ini dapat beresonansi dengan Anemoculus.\\n Merupakan tiruan kasar dari Patung The Seven yang sudah ada di dunia sejak dahulu kala. Batu ini memberikan kesempatan kepada para penjelajah dan petualang untuk mencari Anemoculus yang hilang."
@@ -11987,7 +12635,7 @@
     "name": "Condensed Resin",
     "description": "Kamu bisa memiliki maksimal 5 buah dalam satu waktu.\\nDapat digunakan sebagai pengganti Original Resin untuk mendapatkan lebih banyak hadiah dari Petrified Tree dan Ley Line Blossom.\\nKristal yang mengandung banyak energi.\\nPohon dan bunga yang berwarna perak ini terhubung ke Ley Line dengan menggunakan energi di dalam Resin, dan memurnikan endapan yang ada di dalamnya."
   },
-  "NREMenu": {
+  "NREMenu30": {
     "name": "NRE (Menu 30)",
     "description": "Dapat mengubah sebagian besar jenis makanan menjadi \"nutrisi\" yang dapat langsung diserap. Meskipun benda ini dapat meningkatkan efisiensi suplemen nutrisi, tidak banyak Knight yang mau menggunakannya..."
   },
@@ -12255,7 +12903,7 @@
     "name": "Panduan: Condensed Resin",
     "description": "Penjelasan terperinci tentang proses pembuatan \"Condensed Resin\". Menggunakan resin pekat ini untuk mengaktifkan Ley Line Blossom dan Petrified Tree dapat meningkatkan kualitas hadiah yang didapatkan. Kamu hanya bisa membawa 5 Condensed Resin dalam waktu bersamaan."
   },
-  "DiagramNREMenu": {
+  "DiagramNREMenu30": {
     "name": "Diagram: NRE (Menu 30)",
     "description": "Penjelasan terperinci tentang proses pembuatan makanan instan \"Nutrition, Ready-to-Eat (NRE)\". Setelah menguasainya, kamu bisa menciptakan alat yang bisa membuat makanan diserap lebih cepat."
   },
@@ -12433,515 +13081,711 @@
   },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FatuiPyroAgent": {
     "name": "Fatui Pyro Agent",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MaguuKenki": {
     "name": "Maguu Kenki",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "StonehideLawachurl": {
     "name": "Stonehide Lawachurl",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MirrorMaiden": {
     "name": "Mirror Maiden",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "JadeplumeTerrorshroom": {
     "name": "Jadeplume Terrorshroom",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FatuiCryoCicinMage": {
+    "name": "Fatui Cryo Cicin Mage",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AbyssLectorFathomlessFlames": {
+    "name": "Abyss Lector - Fathomless Flames",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElectroHypostasis": {
+    "name": "Electro Hypostasis",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "UndividedHeart": {
     "name": "Undivided Heart",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ColdBloodedStrike": {
     "name": "Cold-Blooded Strike",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SteadyBreathing": {
     "name": "Steady Breathing",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "KantenSenmyouBlessing": {
     "name": "Kanten Senmyou Blessing",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TheScentRemained": {
     "name": "The Scent Remained",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ProphecyOfSubmersion": {
     "name": "Prophecy of Submersion",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FlowingFlame": {
     "name": "Flowing Flame",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Crossfire": {
     "name": "Crossfire",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GrandExpectation": {
     "name": "Grand Expectation",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "BunnyTriggered": {
+    "name": "Bunny Triggered",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "NaganoharaMeteorSwarm": {
     "name": "Naganohara Meteor Swarm",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "StellarPredator": {
     "name": "Stellar Predator",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Awakening": {
     "name": "Awakening",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ThunderingPenance": {
     "name": "Thundering Penance",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ChaoticEntropy": {
     "name": "Chaotic Entropy",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LandsOfDandelion": {
     "name": "Lands of Dandelion",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "StrategicReserve": {
     "name": "Strategic Reserve",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "IGotYourBack": {
     "name": "I Got Your Back",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FloralSidewinder": {
     "name": "Floral Sidewinder",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "StreamingSurge": {
     "name": "Streaming Surge",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "PaidInFull": {
     "name": "Paid in Full",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TranscendentAutomaton": {
     "name": "Transcendent Automaton",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "StonehideReforged": {
     "name": "Stonehide Reforged",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ShakenNotPurred": {
     "name": "Shaken, Not Purred",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FeatherfallJudgment": {
     "name": "Featherfall Judgment",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GloriousSeason": {
     "name": "Glorious Season",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MirrorCage": {
     "name": "Mirror Cage",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ProliferatingSpores": {
     "name": "Proliferating Spores",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WellspringOfWarLust": {
     "name": "Wellspring of War-Lust",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
-  "TamanooyasCasket": {
-    "name": "Tamanooya's Casket",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  "TamakushiCasket": {
+    "name": "Tamakushi Casket",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "PoundingSurprise": {
     "name": "Pounding Surprise",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LightningStorm": {
     "name": "Lightning Storm",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "EmbraceOfWinds": {
+    "name": "Embrace of Winds",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ConquerorOfEvilGuardianYaksha": {
+    "name": "Conqueror of Evil: Guardian Yaksha",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "DominanceOfEarth": {
+    "name": "Dominance of Earth",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "KeenSight": {
     "name": "Keen Sight",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AbsorbingPrism": {
+    "name": "Absorbing Prism",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SinOfPride": {
     "name": "Sin of Pride",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "KyoukaFuushi": {
     "name": "Kyouka Fuushi",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "AratakiIchiban": {
     "name": "Arataki Ichiban",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "MysticalAbandon": {
+    "name": "Mystical Abandon",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AbyssalMayhemHydrospout": {
+    "name": "Abyssal Mayhem: Hydrospout",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SanguineRouge": {
+    "name": "Sanguine Rouge",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WishesUnnumbered": {
+    "name": "Wishes Unnumbered",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheShrinesSacredShade": {
+    "name": "The Shrine's Sacred Shade",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheSeedOfStoredKnowledge": {
+    "name": "The Seed of Stored Knowledge",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "CicinsColdGlare": {
+    "name": "Cicin's Cold Glare",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "EmbersRekindled": {
+    "name": "Embers Rekindled",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MagicGuide": {
     "name": "Magic Guide",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SacrificialFragments": {
     "name": "Sacrificial Fragments",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SkywardAtlas": {
     "name": "Skyward Atlas",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "RavenBow": {
     "name": "Raven Bow",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SacrificialBow": {
     "name": "Sacrificial Bow",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SkywardHarp": {
     "name": "Skyward Harp",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WhiteIronGreatsword": {
     "name": "White Iron Greatsword",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SacrificialGreatsword": {
     "name": "Sacrificial Greatsword",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WolfsGravestone": {
     "name": "Wolf's Gravestone",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WhiteTassel": {
     "name": "White Tassel",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LithicSpear": {
     "name": "Lithic Spear",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SkywardSpine": {
     "name": "Skyward Spine",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TravelersHandySword": {
     "name": "Traveler's Handy Sword",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SacrificialSword": {
     "name": "Sacrificial Sword",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "AquilaFavonia": {
     "name": "Aquila Favonia",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "AdventurersBandana": {
     "name": "Adventurer's Bandana",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LuckyDogsSilverCirclet": {
     "name": "Lucky Dog's Silver Circlet",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TravelingDoctorsHandkerchief": {
     "name": "Traveling Doctor's Handkerchief",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GamblersEarrings": {
     "name": "Gambler's Earrings",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "InstructorsCap": {
     "name": "Instructor's Cap",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ExilesCirclet": {
     "name": "Exile's Circlet",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "BrokenRimesEcho": {
     "name": "Broken Rime's Echo",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "BlizzardStrayer": {
     "name": "Blizzard Strayer",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WineStainedTricorne": {
     "name": "Wine-Stained Tricorne",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "HeartOfDepth": {
     "name": "Heart of Depth",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WitchsScorchingHat": {
     "name": "Witch's Scorching Hat",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "CrimsonWitchOfFlames": {
     "name": "Crimson Witch of Flames",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ThunderSummonersCrown": {
     "name": "Thunder Summoner's Crown",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ThunderingFury": {
     "name": "Thundering Fury",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ViridescentVenerersDiadem": {
     "name": "Viridescent Venerer's Diadem",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ViridescentVenerer": {
     "name": "Viridescent Venerer",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MaskOfSolitudeBasalt": {
     "name": "Mask of Solitude Basalt",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ArchaicPetra": {
     "name": "Archaic Petra",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LaurelCoronet": {
     "name": "Laurel Coronet",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "DeepwoodMemories": {
     "name": "Deepwood Memories",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "OrnateKabuto": {
     "name": "Ornate Kabuto",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GeneralsAncientHelm": {
     "name": "General's Ancient Helm",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AmosBow": {
+    "name": "Amos' Bow",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "AThousandFloatingDreams": {
+    "name": "A Thousand Floating Dreams",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ElegyForTheEnd": {
+    "name": "Elegy for the End",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SkywardPride": {
+    "name": "Skyward Pride",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheBell": {
+    "name": "The Bell",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "VortexVanquisher": {
+    "name": "Vortex Vanquisher",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "EngulfingLightning": {
+    "name": "Engulfing Lightning",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SkywardBlade": {
+    "name": "Skyward Blade",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FavoniusSword": {
     "name": "Favonius Sword",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "EmblemOfSeveredFate": {
+    "name": "Emblem of Severed Fate",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TenacityOfTheMillelith": {
+    "name": "Tenacity of the Millelith",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ThunderingPoise": {
+    "name": "Thundering Poise",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "VermillionHereafter": {
+    "name": "Vermillion Hereafter",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "CapriciousVisage": {
+    "name": "Capricious Visage",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ShimenawasReminiscence": {
+    "name": "Shimenawa's Reminiscence",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "KnightsOfFavoniusLibrary": {
     "name": "Knights of Favonius Library",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "JadeChamber": {
     "name": "Jade Chamber",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "DawnWinery": {
     "name": "Dawn Winery",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WangshuInn": {
     "name": "Wangshu Inn",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "FavoniusCathedral": {
     "name": "Katedral Favonius",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Paimon": {
     "name": "Paimon",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Katheryne": {
     "name": "Katheryne",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Timaeus": {
     "name": "Timaeus",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Wagner": {
     "name": "Wagner",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ChefMao": {
     "name": "Koki Mao",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Tubby": {
     "name": "Tubby",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Timmie": {
     "name": "Timmie",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Liben": {
     "name": "Liben",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ChangTheNinth": {
     "name": "Chang the Ninth",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Ellin": {
     "name": "Ellin",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "IronTongueTian": {
     "name": "Iron Tongue Tian",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LiuSu": {
     "name": "Liu Su",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "NRE": {
     "name": "NRE",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GrandNarukamiShrine": {
     "name": "Grand Narukami Shrine",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Tenshukaku": {
+    "name": "Tenshukaku",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SangonomiyaShrine": {
+    "name": "Sangonomiya Shrine",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "SumeruCity": {
+    "name": "Sumeru City",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Vanarana": {
+    "name": "Vanarana",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ChinjuForest": {
+    "name": "Chinju Forest",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Hanachirusato": {
+    "name": "Hanachirusato",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "KidKujirai": {
+    "name": "Kid Kujirai",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Xudong": {
+    "name": "Xudong",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Dunyarzad": {
+    "name": "Dunyarzad",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "Rana": {
+    "name": "Rana",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceShatteringIce": {
     "name": "Resonansi Elemental: Shattering Ice",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenWaters": {
     "name": "Resonansi Elemental: Woven Waters",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceSoothingWater": {
     "name": "Resonansi Elemental: Soothing Water",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenFlames": {
     "name": "Resonansi Elemental: Woven Flames",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceFerventFlames": {
     "name": "Resonansi Elemental: Fervent Flames",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenThunder": {
     "name": "Resonansi Elemental: Woven Thunder",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceHighVoltage": {
     "name": "Resonansi Elemental: High Voltage",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenWinds": {
     "name": "Resonansi Elemental: Woven Winds",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceImpetuousWinds": {
     "name": "Resonansi Elemental: Impetuous Winds",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenStone": {
     "name": "Resonansi Elemental: Woven Stone",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceEnduringRock": {
     "name": "Resonansi Elemental: Enduring Rock",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceWovenWeeds": {
     "name": "Resonansi Elemental: Woven Weeds",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ElementalResonanceSprawlingGreenery": {
     "name": "Resonansi Elemental: Sprawling Greenery",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TheBestestTravelCompanion": {
     "name": "The Bestest Travel Companion!",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "ChangingShifts": {
     "name": "Changing Shifts",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "TossUp": {
     "name": "Toss-Up",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Strategize": {
     "name": "Strategize",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "IHaventLostYet": {
     "name": "I Haven't Lost Yet!",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "LeaveItToMe": {
     "name": "Leave it to Me!",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "WhenTheCraneReturned": {
     "name": "When the Crane Returned",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Starsigns": {
     "name": "Starsigns",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "CalxsArts": {
     "name": "Calx's Arts",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "MasterOfWeaponry": {
     "name": "Master of Weaponry",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "BlessingOfTheDivineRelicsInstallation": {
     "name": "Blessing of the Divine Relic's Installation",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "QuickKnit": {
     "name": "Quick Knit",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "SendOff": {
     "name": "Send Off",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "GuardiansOath": {
     "name": "Guardian's Oath",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "AbyssalSummons": {
     "name": "Abyssal Summons",
-    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur keras dan gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "WindAndFreedom": {
+    "name": "Wind and Freedom",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "StoneAndContracts": {
+    "name": "Stone and Contracts",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "ThunderAndEternity": {
+    "name": "Thunder and Eternity",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "NatureAndWisdom": {
+    "name": "Nature and Wisdom",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FatuiConspiracy": {
+    "name": "Fatui Conspiracy",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "PlungingStrike": {
+    "name": "Plunging Strike",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "HeavyStrike": {
+    "name": "Heavy Strike",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "TheLegendOfVennessa": {
+    "name": "The Legend of Vennessa",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
+  },
+  "FriendshipEternal": {
+    "name": "Friendship Eternal",
+    "description": "Kartu permainan \"Genius Invokation TCG\", memiliki tekstur yang keras. Gambar ilustrasi pada kartu tersebut dicetak secara khusus dan terlihat halus."
   },
   "Origin": {
     "name": "Origin",
@@ -12974,6 +13818,10 @@
   "LazuriteSwirl": {
     "name": "Lazurite Swirl",
     "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Dikatakan bahwa Punggung Kartu yang bentuknya terlihat berbeda memiliki perbedaan dari segi bahan dan terasa saat disentuh. Beberapa pemain ada juga yang hobi mengumpulkan Punggung Kartu."
+  },
+  "TreasuresOfTheDeck": {
+    "name": "Treasures of the Deck",
+    "description": "Punggung Kartu \"Genius Invokation TCG\" yang bisa diganti-ganti. Konon Punggung Kartu dengan desain yang berbeda akan memiliki perbedaan dari segi bahan dan teksturnya. Ada beberapa pemain yang juga hobi mengumpulkan Punggung Kartu."
   },
   "BeginnerPlayerBadge": {
     "name": "Lencana Pemain Pemula",
@@ -13023,7 +13871,7 @@
     "name": "Gunnhildr's Legacy",
     "description": "Model pakaian Jean. Pakaian formal Knight yang elegan ini cocok dipakai untuk segala jenis acara."
   },
-  "Outrider": {
+  "100Outrider": {
     "name": "100% Outrider",
     "description": "Model pakaian Amber. Yang muncul kali ini, tidak lain adalah Outrider yang lebih keren dan lebih formal loh!"
   },
@@ -13253,7 +14101,7 @@
   },
   "SakuraHuedStreet": {
     "name": "Jalan Sakura",
-    "description": "Blueprint yang berisi langkah-langkah terperinci untuk memasang Jalan Sakura.\\nTiruan sempurna dari distrik perbelanjaan Kota Inazuma yang direncanakan dengan cermat.\\nTidak peduli bagaimana kondisi yang berkecamuk di luar, penduduk Inazuma masih dapat menjalani kehidupan dengan tenang dan damai. Jalanan yang sering dilalui penduduk secara tidak langsung mencerminkan kondisi kehidupan penduduk — yang merupakan penggambaran suasana kota yang paling tepat. Dengan mengikuti Thoma yang mengenal Inazuma luar dalam, dan melihat-lihat berbagai toko, seseorang pasti dapat memahami adat istiadat setempat dengan cepat.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Yoimiya, Thoma, Kuki Shinobu"
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk memasang Jalan Sakura.\\nTiruan sempurna dari distrik perbelanjaan Kota Inazuma yang direncanakan dengan cermat.\\nTidak peduli bagaimana kondisi yang berkecamuk di luar, penduduk Inazuma masih dapat menjalani kehidupan dengan tenang dan damai. Jalanan yang sering dilalui penduduk secara tidak langsung mencerminkan kondisi kehidupan penduduk — yang merupakan penggambaran suasana kota yang paling tepat. Dengan mengikuti Thoma yang mengenal Inazuma luar dalam, dan melihat-lihat berbagai toko, seseorang pasti dapat memahami adat istiadat setempat dengan cepat.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan.\\nRekan yang menyukai set perabot ini: Yoimiya, Thoma, Kuki Shinobu, dan Kirara"
   },
   "EternalDomainOfFleetingDreams": {
     "name": "Kamar Tidur Mimpi Keabadian",
@@ -13321,7 +14169,7 @@
   },
   "AmidstScentsAndSerenity": {
     "name": "Di Tengah Aroma dan Ketenangan",
-    "description": "Taman yang elegan dan tenang yang memanfaatkan gazebo yang diambil dari Razan Garden dan Pardis Dhyai. Tempat ini tidak terlalu peduli dengan kesatuan mutlak dari gaya arsitektur yang berbeda, tetapi lebih fokus untuk menciptakan suasana tenang secara keseluruhan.\\nBunga yang indah tertidur di sini dengan tenang, dan lampu yang membuat air pancur seolah bersinar... Saat malam hari mendekat, berjalan-jalan melalui taman ini dapat menyebabkan pikiran bising di kepalamu menghilang seperti awan tipis yang tertiup angin. Mungkin kamu juga bahkan bisa mendapatkan inspirasi yang biasanya sulit kamu dapatkan ....\\nRekan yang menyukai set perabot ini: Nahida, Kaveh"
+    "description": "Taman yang elegan dan tenang yang memanfaatkan gazebo yang diambil dari Razan Garden dan Pardis Dhyai. Tempat ini tidak terlalu peduli dengan kesatuan mutlak dari gaya arsitektur yang berbeda, tetapi lebih fokus untuk menciptakan suasana tenang secara keseluruhan.\\nBunga yang indah tertidur di sini dengan tenang, dan lampu yang membuat air pancur seolah bersinar... Saat malam hari mendekat, berjalan-jalan melalui taman ini dapat menyebabkan pikiran bising di kepalamu menghilang seperti awan tipis yang tertiup angin. Mungkin kamu juga bahkan bisa mendapatkan inspirasi yang biasanya sulit kamu dapatkan ....\\nRekan yang menyukai set perabot ini: Nahida, Kaveh, dan Kirara"
   },
   "ChorusOfDesertAndWood": {
     "name": "Paduan Suara Gurun dan Kayu",
@@ -13591,6 +14439,10 @@
     "name": "Gulungan Kota Kebijaksanaan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Gulungan Kota Kebijaksanaan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "TavernBookcaseEssentialKnowledge": {
+    "name": "Rak Buku Kedai - Pengetahuan Wajib",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rak Buku Kedai - Pengetahuan Wajib\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "SturdyLibraryTable": {
     "name": "Meja Perpustakaan Kokoh",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Perpustakaan Kokoh\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13679,6 +14531,10 @@
     "name": "Meja Athelwood Ringkas",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Athelwood Ringkas\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "RoundTavernTableLeapsAndBounds": {
+    "name": "Meja Bundar Kedai - Ribuan Lompatan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Meja Bundar Kedai - Ribuan Lompatan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Ranjang Sesejuk Angin\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13698,6 +14554,10 @@
   "AdhigamaWoodComfortBed": {
     "name": "Ranjang kayu Ephiphany: Ketenangan",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Ranjang kayu Ephiphany: Ketenangan.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "AdhigamaWoodReposeCouch": {
+    "name": "Sofa \"Jamuan\" dari Adhigama Wood",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Sofa 'Jamuan' dari Adhigama Wood\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "PineReceptionCounter": {
     "name": "Konter Penerima Tamu dari Kayu Pinus",
@@ -13766,6 +14626,22 @@
   "AdhigamaVineBackedChair": {
     "name": "Kursi Sandaran Rambat Adhigama",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kursi Sandaran Rambat Adhigama\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "SnekusThicket": {
+    "name": "Semak Belukar Sneku",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Semak Belukar Sneku\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "FinnicksCranberrySea": {
+    "name": "Lautan Cranberry Finnick",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Lautan Cranberry Finnick\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TavernDiningChairFlavorsMultiplicity": {
+    "name": "Kursi Makan Kedai - Cita Rasa Berlipat",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kursi Makan Kedai - Cita Rasa Berlipat\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TavernDiningChairAcceleratedSobriety": {
+    "name": "Kursi Makan Kedai - Ayo Cepat Sadar",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kursi Makan Kedai - Ayo Cepat Sadar\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland",
@@ -13923,6 +14799,26 @@
     "name": "Bara Murni",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Bara Murni\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
+  "LittleRosesMangroveHouse": {
+    "name": "Rumah Pohon Little Rose",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Rumah Pohon Little Rose\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "NightPilotsWatchtower": {
+    "name": "Menara Pengawas Night Pilot",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Menara Pengawas Night Pilot\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "BaobabsGoldenCradle": {
+    "name": "Ranjang Bayi Emas Baobab",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Ranjang Bayi Emas Baobab\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DionasMiniSofa": {
+    "name": "Sofa Mini Diona",
+    "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Sofa Mini Diona\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TavernDiningCartASnackBetweenDishes": {
+    "name": "Kereta Makan Kedai - Kudapan Antar Hidangan",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kereta Makan Kedai - Kudapan Antar Hidangan\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Karpet Mondstadt: Semangat Membara",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Karpet Mondstadt: Semangat Membara\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
@@ -13962,6 +14858,14 @@
   "PureLikeWheatSprouts": {
     "name": "Murni Bagaikan Kecambah Gandum",
     "description": "Blueprint yang berisi langkah-langkah untuk membuat Murni Bagaikan Kecambah Gandum.\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TavernCarpetPassionOfPlay": {
+    "name": "Karpet Kedai - Antusiasme Bermain",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Karpet Kedai - Antusiasme Bermain\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "TavernCarpetDuelistsWisdom": {
+    "name": "Karpet Kedai - Permainan yang Rasional",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Karpet Kedai - Permainan yang Rasional\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "TrustyPortableLamp": {
     "name": "Lentera yang Tidak Pernah Padam",
@@ -14182,6 +15086,18 @@
   "TheDustDifferential": {
     "name": "Di Antara Debu",
     "description": "Blueprint yang berisi langkah-langkah terperinci untuk membuat \"Di Antara Debu\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DeskComboMiddlelakeIsle": {
+    "name": "Kombinasi Meja - Pulau Tengah Danau",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kombinasi Meja - Pulau Tengah Danau\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "DeskComboVerdantTotem": {
+    "name": "Kombinasi Meja - Totem Hijau",
+    "description": "Blueprint yang berisi langkah-langkah untuk membuat \"Kombinasi Meja - Totem Hijau\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "PrincesWeepingFish": {
+    "name": "Ikan Menangis Prince",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Ikan Menangis Prince\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Kesadaran dari Tanah Kebijaksanaan\"",
@@ -15358,6 +16274,10 @@
   "BrightwoodFabricBoxPlatform": {
     "name": "Platform Kotak Kain dari Brightwood",
     "description": "Diagram yang berisi langkah-langkah untuk membuat \"Platform Kotak Kain dari Brightwood\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
+  },
+  "LeisureDevicePuffyTubby": {
+    "name": "Alat Bersantai - Bulat dan Terengah",
+    "description": "Diagram yang berisi langkah-langkah untuk membuat \"Alat Bersantai - Bulat dan Terengah\".\\nSetelah digunakan, blueprint ini dapat dilihat di dalam Menu Pembuatan."
   },
   "PottedPlantVerdantVastness": {
     "name": "Pot Tanaman: Hamparan Hijau",

@@ -151,7 +151,7 @@
   "constellation3": {
     "name": "Fırtına Sihirdarı",
     "description": {
-      "0": "<strong>Dalga Çağıran</strong> seviyesini 3 artırır.",
+      "0": "<strong>Dalga Çağıran</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -164,7 +164,7 @@
   "constellation5": {
     "name": "Kızıl Sudagezen",
     "description": {
-      "0": "<strong>Fırtına Kıran</strong> seviyesini 3 artırır.",
+      "0": "<strong>Fırtına Kıran</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

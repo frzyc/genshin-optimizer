@@ -128,7 +128,7 @@
   "constellation3": {
     "name": "Ateş ve Çelik",
     "description": {
-      "0": "<strong>Dağlayan Taarruz</strong> seviyesini 3 artırır.",
+      "0": "<strong>Dağlayan Taarruz</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -142,7 +142,7 @@
   "constellation5": {
     "name": "Şafak Habercisi Anka",
     "description": {
-      "0": "<strong>Şafak</strong> seviyesini 3 artırır.",
+      "0": "<strong>Şafak</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

@@ -75,7 +75,7 @@
       "0": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous <electro>Electro DMG</electro> to opponents within its AoE based on Shinobu's Max HP.",
       "1": "If Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.",
       "2": "<br/>",
-      "3": "<i>This was originally a technique used in weeding and in ritual prayers for the yearly harvest, but Shinobu has not forgotten it, though her life as a shrine maiden may have ended.</i>"
+      "3": "<i>This was originally a technique used in weeding and in ritual prayers for the yearly harvest, but Shinobu has not forgotten it, though her career as a shrine maiden may have ended.</i>"
     },
     "skillParams": {
       "0": "Single Instance DMG",

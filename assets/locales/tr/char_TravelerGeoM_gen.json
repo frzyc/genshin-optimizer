@@ -67,8 +67,8 @@
   "burst": {
     "name": "Dünyanın Uyanışı",
     "description": {
-      "0": "Yerin derinliklerindeki Toprağı harekete geçirerek büyüyen şok dalgaları yayar.",
-      "1": "Etraftaki düşmanları geri iter ve <geo>Toprak Alan Hasarı</geo> verir.",
+      "0": "Yerin derinliklerindeki Toprağı harekete geçirerek büyüyen şok dalgaları yayarsın.",
+      "1": "Şok dalgaları, etraftaki düşmanları geri iter ve <geo>Toprak Alan Hasarı</geo> verir.",
       "2": "Şok dalgasının kenarına taştan bir duvar örülür.",
       "3": "Taş duvar bir <geo>Toprak Yapısı</geo> sayılır ve saldırıları engellemek için kullanılabilir.",
       "4": "<br/>",
@@ -120,7 +120,7 @@
   "constellation3": {
     "name": "Kaya İradesi",
     "description": {
-      "0": "<strong>Dünyanın Uyanışı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Dünyanın Uyanışı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -134,7 +134,7 @@
   "constellation5": {
     "name": "Meteorit Etkisi",
     "description": {
-      "0": "<strong>Yıldızdüşen Kılıcı</strong> seviyesini 3 artırır.",
+      "0": "<strong>Yıldızdüşen Kılıcı</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

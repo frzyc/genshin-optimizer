@@ -157,7 +157,7 @@
   "constellation3": {
     "name": "Karanlıkta Parlayan Yeşim",
     "description": {
-      "0": "<strong>Taşların Efendisi</strong> seviyesini 3 artırır.",
+      "0": "<strong>Taşların Efendisi</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },
@@ -170,7 +170,7 @@
   "constellation5": {
     "name": "Düzenin Habercisi Gökcevher",
     "description": {
-      "0": "<strong>Düşen Gezegen</strong> seviyesini 3 artırır.",
+      "0": "<strong>Düşen Gezegen</strong> Seviyesini 3 artırır.",
       "1": "Maksimum yükseltme seviyesi 15'tir."
     }
   },

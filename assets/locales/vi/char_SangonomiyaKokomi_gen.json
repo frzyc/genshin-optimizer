@@ -39,12 +39,12 @@
     }
   },
   "skill": {
-    "name": "Lời Thề Ánh Trăng Biển",
+    "name": "Lời Thề Kurage",
     "description": {
-      "0": "Triệu hồi \"Vầng Trăng Biển\" chữa trị cho đồng đội.",
+      "0": "Triệu hồi \"Bake-Kurage\" chữa trị cho đồng đội.",
       "1": "Khi thi triển sẽ khiến Sangonomiya Kokomi vào trạng thái <hydro>Ẩm Ướt</hydro>.",
       "2": "<br/>",
-      "3": "<strong>Vầng Trăng Biển</strong>",
+      "3": "<strong>Bake-Kurage</strong>",
       "4": "Cứ cách một khoảng thời gian sẽ gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh và hồi HP cho nhân vật đang trong trận ở xung quanh, lượng hồi phục dựa vào giới hạn HP của Sangonomiya Kokomi.",
       "5": "<br/>",
       "6": "<i>Để đảm bảo trạng thái tốt nhất cho công việc, Kokomi cần bổ sung \"năng lượng\" kịp thời.</i>"
@@ -75,7 +75,7 @@
       "1": "<br/>",
       "2": "<strong>Lễ Phục Nghi Thức</strong>",
       "3": [
-        "Giúp Sangonomiya Kokomi tăng sát thương tấn công thường, trọng kích và sát thương do kỹ năng nguyên tố \"Vầng Trăng Biển\" gây ra, mức gia tăng sẽ dựa vào giới hạn HP của Kokomi;",
+        "Giúp Sangonomiya Kokomi tăng sát thương tấn công thường, trọng kích và sát thương \"Bake-Kurage\" do kỹ năng nguyên tố gây ra, mức gia tăng sẽ dựa vào giới hạn HP của Kokomi;",
         "Khi tấn công thường và trọng kích trúng kẻ địch sẽ hồi HP cho tất cả nhân vật trong đội gần đó, lượng hồi phục sẽ dựa vào giới hạn HP của Kokomi;",
         "Tăng khả năng kháng gián đoạn của Sangonomiya Kokomi, đồng thời khiến cô ấy có thể di chuyển trên mặt nước."
       ],
@@ -88,7 +88,7 @@
       "0": "Sát Thương Kỹ Năng",
       "1": "Tăng Sát Thương Đánh Thường",
       "2": "Tăng Sát Thương Trọng Kích",
-      "3": "Tăng Sát Thương Vầng Trăng Biển",
+      "3": "Tăng Sát Thương Bake-Kurage",
       "4": "Hồi HP khi đánh trúng địch",
       "5": "Thời Gian Kéo Dài",
       "6": "CD",
@@ -104,9 +104,9 @@
     }
   },
   "passive1": {
-    "name": "Rương Báu Tamanooya",
+    "name": "Rương Báu Tamakushi",
     "description": {
-      "0": "Khi thi triển <strong>Nghi Lễ Nereid</strong>, nếu trong trận có Vầng Trăng Biển của Sangonomiya Kokomi thì sẽ tái lập thời gian tồn tại của Vầng Trăng Biển."
+      "0": "Khi thi triển <strong>Nghi Lễ Nereid</strong>, nếu trong trận có Bake-Kurage của Sangonomiya Kokomi thì sẽ tái lập thời gian tồn tại của Bake-Kurage."
     }
   },
   "passive2": {
@@ -140,7 +140,7 @@
     "description": {
       "0": "Dựa vào giới hạn HP của Sangonomiya Kokomi để tăng lượng trị liệu cho nhân vật có lượng HP bằng hoặc thấp hơn 50% như sau:",
       "1": [
-        "Vầng Trăng Biển của <strong>Lời Thề Ánh Trăng Biển</strong>: 4.5% giới hạn HP.",
+        "Bake-Kurage của <strong>Lời Thề Kurage</strong>: 4.5% giới hạn HP.",
         "Tấn công thường và trọng kích của <strong>Nghi Lễ Nereid</strong>: 0.6% giới hạn HP."
       ]
     }
@@ -162,7 +162,7 @@
   "constellation5": {
     "name": "Nước Tụ Về Nguồn",
     "description": {
-      "0": "Cấp kỹ năng <strong>Lời Thề Ánh Trăng Biển</strong> +3.",
+      "0": "Cấp kỹ năng <strong>Lời Thề Kurage</strong> +3.",
       "1": "Tăng tối đa đến cấp 15."
     }
   },

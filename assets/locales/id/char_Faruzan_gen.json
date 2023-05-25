@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "The Wondrous Path of Truth",
     "description": {
-      "0": "CRIT DMG <strong>Anemo DMG</strong> yang diakibatkan Karakter yang berada dalam status Prayerful Wind's Benefit dari <anemo>The Wind's Secret Ways</anemo> meningkat 40%; Saat Karakter aktif yang berada dalam status Prayerful Wind's Benefit menerima DMG, akan memberikan Pressurized Collapse terhadap musuh ini. Efek ini bisa terpicu setiap 3 detik sekali, CD ini berlaku bagi seluruh anggota party."
+      "0": "CRIT DMG <strong>Anemo DMG</strong> yang diakibatkan Karakter yang berada dalam status Prayerful Wind's Benefit dari <anemo>The Wind's Secret Ways</anemo> meningkat 40%; Saat Karakter aktif yang berada dalam status Prayerful Wind's Benefit menghasilkan DMG, akan memberikan Pressurized Collapse terhadap musuh ini. Efek ini bisa terpicu setiap 3 detik sekali, CD ini berlaku bagi seluruh anggota party."
     }
   }
 }
