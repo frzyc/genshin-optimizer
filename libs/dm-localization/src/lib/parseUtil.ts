@@ -1,5 +1,6 @@
-import type { ColorTag, Language } from '@genshin-optimizer/pipeline'
-import { tagColor } from '@genshin-optimizer/pipeline'
+import type { ColorTag } from '@genshin-optimizer/dm'
+import { tagColor } from '@genshin-optimizer/dm'
+import type { Language } from '@genshin-optimizer/pipeline'
 
 export function preprocess(string: string): string {
   {

@@ -3,6 +3,7 @@ import {
   allLocationCharacterKeys,
   allWeaponKeys,
 } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { ArrowRightAlt } from '@mui/icons-material'
 import {
   Box,
@@ -24,7 +25,6 @@ import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import SqBadge from '../Components/SqBadge'
 import { artStatPercent } from '../Data/Artifacts/Artifact'
-import material from '../Data/Materials/Material'
 import { DatabaseContext } from '../Database/Database'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import { charKeyToCharName } from '../Types/consts'
@@ -397,9 +397,9 @@ function WeaponKeyPane() {
 }
 function MaterialKeyPane() {
   const { t } = useTranslation('material_gen')
-  const weaponKeysCode = `type MaterialKey\n  = ${Object.keys(material as any)
+  const weaponKeysCode = `type MaterialKey\n  = ${Object.keys(allStats.material)
     .sort()
-    .map((k) => `"${k}" //${t(`${k}.name`)}`)
+    .map((k) => `"${k}" // ${t(`${k}.name`)}`)
     .join(`\n  | `)}`
   return (
     <>

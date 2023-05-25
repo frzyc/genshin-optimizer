@@ -21,8 +21,9 @@
       "@genshin-optimizer/dm-localization": ["libs/dm/src/index.ts"],
       "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
+      "@genshin-optimizer/gi-pipeline": ["libs/gi-pipeline/src/index.ts"],
+      "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
-      "@genshin-optimizer/pipeline-runner": ["libs/pipeline/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
       "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"]

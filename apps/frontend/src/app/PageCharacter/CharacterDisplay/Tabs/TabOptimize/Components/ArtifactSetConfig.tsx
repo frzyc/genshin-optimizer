@@ -258,12 +258,12 @@ export default function ArtifactSetConfig({
                       t={t}
                       i18nKey="artSetConfig.modal.ArtSetFilter.title"
                     >
-                      Artifact Sets{' '}
+                      {'Artifact Sets '}
                       <ColorText color="success">
                         Allowed
                         <ShowChartIcon {...iconInlineProps} />
-                      </ColorText>{' '}
-                      /{' '}
+                      </ColorText>
+                      {' / '}
                       <ColorText color="secondary" variant="light">
                         Excluded
                         <BlockIcon {...iconInlineProps} />
@@ -400,11 +400,11 @@ export default function ArtifactSetConfig({
                           <ColorText color="success">
                             Allow <ShowChartIcon {...iconInlineProps} />
                           </ColorText>
-                          /
+                          {' / '}
                           <ColorText color="secondary" variant="light">
                             Exclude <BlockIcon {...iconInlineProps} />
                           </ColorText>
-                          Rainbow Builds
+                          {' Rainbow Builds'}
                         </Trans>
                       </strong>
                     </Typography>

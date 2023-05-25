@@ -800,6 +800,7 @@ function ReactionDropdown({
       ...(allowedAmpReactions[ele] ?? []),
       ...(allowedAmpReactions[infusionAura ?? ''] ?? []),
       ...(allowedAdditiveReactions[ele] ?? []),
+      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? []),
     ]),
   ]
   const title = reaction ? (

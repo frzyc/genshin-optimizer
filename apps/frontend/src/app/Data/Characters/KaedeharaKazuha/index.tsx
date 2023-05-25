@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import {
@@ -20,14 +20,13 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
-const data_gen = data_gen_src as CharacterData
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 
 const key: CharacterKey = 'KaedeharaKazuha'
 const elementKey: ElementKey = 'anemo'
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 const ct = charTemplates(key, data_gen.weaponTypeKey)
 
 let a = 0,

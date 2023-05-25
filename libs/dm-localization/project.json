@@ -18,7 +18,8 @@
       "executor": "@nrwl/js:node",
       "options": {
         "buildTarget": "dm-localization:build",
-        "watch": false
+        "watch": false,
+        "inspect": false
       },
       "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
     },

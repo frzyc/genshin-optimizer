@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
@@ -7,10 +7,9 @@ import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'BeaconOfTheReedSea'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const afterSkillAtkArr = [0.2, 0.25, 0.3, 0.35, 0.4]
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')

@@ -1,15 +1,14 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'CinnabarSpindle'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const eleDmgIncSrc = [0.4, 0.5, 0.6, 0.7, 0.8]

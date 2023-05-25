@@ -1,16 +1,15 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, target } from '../../../../Formula'
 import { equal, infoMut, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, stg, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'SapwoodBlade'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'passive')

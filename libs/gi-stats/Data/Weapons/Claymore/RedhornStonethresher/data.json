@@ -1,0 +1,66 @@
+{
+  "weaponType": "claymore",
+  "rarity": 5,
+  "mainStat": {
+    "type": "atk",
+    "base": 44.3358,
+    "curve": "GROW_CURVE_ATTACK_304"
+  },
+  "subStat": {
+    "type": "critDMG_",
+    "base": 0.192,
+    "curve": "GROW_CURVE_CRITICAL_301"
+  },
+  "addProps": [
+    {
+      "def_": 0.28
+    },
+    {
+      "def_": 0.35
+    },
+    {
+      "def_": 0.42
+    },
+    {
+      "def_": 0.49
+    },
+    {
+      "def_": 0.56
+    }
+  ],
+  "ascension": [
+    {
+      "addStats": {}
+    },
+    {
+      "addStats": {
+        "atk": 31.1
+      }
+    },
+    {
+      "addStats": {
+        "atk": 62.2
+      }
+    },
+    {
+      "addStats": {
+        "atk": 93.4
+      }
+    },
+    {
+      "addStats": {
+        "atk": 124.5
+      }
+    },
+    {
+      "addStats": {
+        "atk": 155.6
+      }
+    },
+    {
+      "addStats": {
+        "atk": 186.7
+      }
+    }
+  ]
+}
