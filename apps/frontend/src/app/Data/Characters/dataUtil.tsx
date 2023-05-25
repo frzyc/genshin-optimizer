@@ -25,11 +25,6 @@ import type {
 import { layeredAssignment, objectKeyMap, objectMap } from '../../Util/Util'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
-const charCurves = objectMap(allStats.char.expCurve, (value) => [
-  0,
-  ...Object.values(value),
-])
-
 const commonBasic = objectKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
   (key) => input.total[key]
@@ -238,7 +233,10 @@ export function dataObjForCharacterSheet(
   additional: Data = {}
 ): Data {
   function curve(base: number, lvlCurve: string): NumNode {
-    return prod(base, subscript<number>(input.lvl, charCurves[lvlCurve]))
+    return prod(
+      base,
+      subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
+    )
   }
   display.basic = { ...commonBasic }
   const data: Data = {

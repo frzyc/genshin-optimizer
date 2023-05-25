@@ -1,8 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type {
-  CharacterExpCurveData,
-  WeaponExpCurveData,
-} from '@genshin-optimizer/dm'
+import type { WeaponExpCurveData } from '@genshin-optimizer/dm'
 import {
   artifactMainstatData,
   artifactSubstatData,
@@ -55,10 +52,8 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
 export type { WeaponDataGen as WeaponData }
 
 //exp curve to generate  stats at every level
-dumpFile(`${path}/Weapons/expCurve.json`, weaponCurveExcelConfigData)
-dumpFile(`${path}/Weapons/weaponExpCurve.json`, weaponExpCurve)
-dumpFile(`${path}/Characters/expCurve.json`, avatarCurveExcelConfigData)
-dumpFile(`${path}/Weapons/weaponExpCurve.json`, charExpCurve)
+dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
+dumpFile(`${path}/Characters/expCurve.json`, charExpCurve)
 
 //dump artifact data
 dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
@@ -74,18 +69,12 @@ dumpFile(`${path}/Materials/material.json`, materialDataDump)
 
 export type AllStats = {
   char: {
-    /**
-     * @deprecated
-     */
-    expCurve: CharacterExpCurveData
+    expCurve: typeof charExpCurve
     skillParam: SkillParamData
     data: CharacterDatas
   }
   weapon: {
-    /**
-     * @deprecated
-     */
-    expCurve: WeaponExpCurveData
+    expCurve: typeof weaponExpCurve
     data: Record<WeaponKey, WeaponDataGen>
   }
   art: {
@@ -95,20 +84,16 @@ export type AllStats = {
     sub: any
   }
   material: any
-  // TODO: rename to char.expCurve once old value is deprecated
-  weaponExpCurve: typeof weaponExpCurve
-  // TODO: rename to weapon.expCurve once old value is deprecated
-  charExpCurve: typeof charExpCurve
 }
 
 const allStat: AllStats = {
   char: {
-    expCurve: avatarCurveExcelConfigData,
+    expCurve: charExpCurve,
     skillParam: characterSkillParamDump,
     data: characterDataDump,
   },
   weapon: {
-    expCurve: weaponCurveExcelConfigData,
+    expCurve: weaponExpCurve,
     data: weaponDataDump,
   },
   art: {
@@ -118,8 +103,6 @@ const allStat: AllStats = {
     sub: artifactSubstatData,
   },
   material: materialDataDump,
-  weaponExpCurve,
-  charExpCurve,
 }
 
 dumpFile(
