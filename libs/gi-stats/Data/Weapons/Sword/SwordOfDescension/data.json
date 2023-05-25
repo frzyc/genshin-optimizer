@@ -48,5 +48,32 @@
         "atk": 155.6
       }
     }
+  ],
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 38.7413,
+      "curve": "GROW_CURVE_ATTACK_101"
+    },
+    {
+      "key": "atk_",
+      "base": 0.0766,
+      "curve": "GROW_CURVE_CRITICAL_101"
+    }
+  ],
+  "refinementBonus": [],
+  "ascensionBonus": [
+    {
+      "key": "atk",
+      "values": [
+        0,
+        25.9,
+        51.9,
+        77.8,
+        103.7,
+        129.7,
+        155.6
+      ]
+    }
   ]
 }

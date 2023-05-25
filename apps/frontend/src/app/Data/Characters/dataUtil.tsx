@@ -229,7 +229,7 @@ export function dataObjForCharacterSheet(
   element: ElementKey | undefined,
   region: RegionKey | undefined,
   gen: {
-    weaponTypeKey: string
+    weaponType: string
     base: { hp: number; atk: number; def: number }
     curves: { [key in string]?: string }
     ascensions: { props: { [key in string]?: number } }[]
@@ -244,7 +244,7 @@ export function dataObjForCharacterSheet(
   const data: Data = {
     charKey: constant(key),
     base: {},
-    weaponType: constant(gen.weaponTypeKey),
+    weaponType: constant(gen.weaponType),
     premod: {},
     display,
   }
@@ -261,7 +261,7 @@ export function dataObjForCharacterSheet(
     ['teamBuff', 'tally', 'maxEleMas'],
     input.premod.eleMas
   )
-  if (gen.weaponTypeKey !== 'catalyst') {
+  if (gen.weaponType !== 'catalyst') {
     if (!data.display!.basic) data.display!.basic = {}
     data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
   }

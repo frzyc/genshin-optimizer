@@ -5,9 +5,7 @@ import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
-
-import charCurves from '../char/expCurve.gen.json'
-import weaponCurves from '../weapon/expCurve.gen.json'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 const data: Data = [
   ...dmg,
@@ -46,10 +44,10 @@ const data: Data = [
   selfBuff.common.count.add(0),
 
   // Char & weapon curves
-  ...Object.entries(charCurves).map(([k, v]) =>
+  ...Object.entries(allStats.charExpCurve).map(([k, v]) =>
     allStatics('static')[k].add(subscript(self.char.lvl, v))
   ),
-  ...Object.entries(weaponCurves).map(([k, v]) =>
+  ...Object.entries(allStats.weaponExpCurve).map(([k, v]) =>
     allStatics('static')[k].add(subscript(self.weapon.lvl, v))
   ),
 

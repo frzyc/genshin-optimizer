@@ -12,13 +12,16 @@ import {
   weaponCurveExcelConfigData,
 } from '@genshin-optimizer/dm'
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDatas } from './characterData'
+import type { CharacterDatas, CharacterDataGen } from './characterData'
 import characterData from './characterData'
 import type { SkillParamData } from './characterSkillParam'
 import characterSkillParam from './characterSkillParam'
+import { charExpCurve, weaponExpCurve } from './curves'
 import materialData from './materialData'
-import type { WeaponData } from './weaponData'
+import type { WeaponDataGen } from './weaponData'
 import weaponData from './weaponData'
+
+export type { CharacterDataGen, WeaponDataGen }
 
 const path = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi-stats/Data`
 
@@ -49,11 +52,13 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
     data
   )
 )
-export type { WeaponData }
+export type { WeaponDataGen as WeaponData }
 
 //exp curve to generate  stats at every level
 dumpFile(`${path}/Weapons/expCurve.json`, weaponCurveExcelConfigData)
+dumpFile(`${path}/Weapons/weaponExpCurve.json`, weaponExpCurve)
 dumpFile(`${path}/Characters/expCurve.json`, avatarCurveExcelConfigData)
+dumpFile(`${path}/Weapons/weaponExpCurve.json`, charExpCurve)
 
 //dump artifact data
 dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
@@ -69,13 +74,19 @@ dumpFile(`${path}/Materials/material.json`, materialDataDump)
 
 export type AllStats = {
   char: {
+    /**
+     * @deprecated
+     */
     expCurve: CharacterExpCurveData
     skillParam: SkillParamData
     data: CharacterDatas
   }
   weapon: {
+    /**
+     * @deprecated
+     */
     expCurve: WeaponExpCurveData
-    data: Record<WeaponKey, WeaponData>
+    data: Record<WeaponKey, WeaponDataGen>
   }
   art: {
     subRoll: any
@@ -84,6 +95,10 @@ export type AllStats = {
     sub: any
   }
   material: any
+  // TODO: rename to char.expCurve once old value is deprecated
+  weaponExpCurve: typeof weaponExpCurve
+  // TODO: rename to weapon.expCurve once old value is deprecated
+  charExpCurve: typeof charExpCurve
 }
 
 const allStat: AllStats = {
@@ -103,6 +118,8 @@ const allStat: AllStats = {
     sub: artifactSubstatData,
   },
   material: materialDataDump,
+  weaponExpCurve,
+  charExpCurve,
 }
 
 dumpFile(

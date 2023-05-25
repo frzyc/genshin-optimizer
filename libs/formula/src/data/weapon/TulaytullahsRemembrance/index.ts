@@ -1,14 +1,14 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
 import { allConditionals, percent, register, self, selfBuff } from '../../util'
-import type { WeaponDataGen } from '../util'
 import { entriesForWeapon } from '../util'
-import dg from './data.gen.json'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
 // premod atkSPD_ = subscript(refinement, atkSPD_arr)
 
-const data_gen = dg as WeaponDataGen
+const key: WeaponKey = 'TulaytullahsRemembrance'
+const data_gen = allStats.weapon.data[key]
 const time_normal_dmg_arr = [0.048, 0.06, 0.072, 0.084, 0.096]
 const hit_normal_dmg_arr = [0.096, 0.12, 0.144, 0.168, 0.192]
 const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]

@@ -1,11 +1,11 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { prod, subscript } from '@genshin-optimizer/waverider'
 import { customHeal, register, self, target } from '../../util'
-import type { WeaponDataGen } from '../util'
 import { entriesForWeapon } from '../util'
-import dg from './data.gen.json'
 
-const data_gen = dg as WeaponDataGen
+const key: WeaponKey = 'PrototypeAmber'
+const data_gen = allStats.weapon.data[key]
 const heal_arr = [0.04, 0.045, 0.05, 0.055, 0.06]
 
 const name: WeaponKey = 'PrototypeAmber'

@@ -13,19 +13,19 @@
   },
   "addProps": [
     {
-      "FIGHT_PROP_SHIELD_COST_MINUS_RATIO": 0.2
+      "shield_": 0.2
     },
     {
-      "FIGHT_PROP_SHIELD_COST_MINUS_RATIO": 0.25
+      "shield_": 0.25
     },
     {
-      "FIGHT_PROP_SHIELD_COST_MINUS_RATIO": 0.3
+      "shield_": 0.3
     },
     {
-      "FIGHT_PROP_SHIELD_COST_MINUS_RATIO": 0.35
+      "shield_": 0.35
     },
     {
-      "FIGHT_PROP_SHIELD_COST_MINUS_RATIO": 0.4
+      "shield_": 0.4
     }
   ],
   "ascension": [
@@ -61,6 +61,45 @@
       "addStats": {
         "atk": 186.7
       }
+    }
+  ],
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 45.9364,
+      "curve": "GROW_CURVE_ATTACK_301"
+    },
+    {
+      "key": "atk_",
+      "base": 0.108,
+      "curve": "GROW_CURVE_CRITICAL_301"
+    }
+  ],
+  "refinementBonus": [
+    {
+      "key": "shield_",
+      "values": [
+        -1,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4
+      ]
+    }
+  ],
+  "ascensionBonus": [
+    {
+      "key": "atk",
+      "values": [
+        0,
+        31.1,
+        62.2,
+        93.4,
+        124.5,
+        155.6,
+        186.7
+      ]
     }
   ]
 }

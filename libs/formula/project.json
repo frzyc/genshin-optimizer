@@ -40,6 +40,5 @@
       "dependsOn": ["^pipeline"]
     }
   },
-  "tags": [],
-  "implicitDependencies": ["pipeline-runner"]
+  "tags": []
 }

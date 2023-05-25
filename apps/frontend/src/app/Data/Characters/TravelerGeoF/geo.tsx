@@ -25,7 +25,7 @@ export default function geo(
 ) {
   const elementKey: ElementKey = 'geo'
   const condCharKey = 'TravelerGeo'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerGeoF
   let s = 0,

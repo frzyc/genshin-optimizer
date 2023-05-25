@@ -6,12 +6,14 @@ import type {
   RegionKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
+import { locCharKeyToCharKey } from '@genshin-optimizer/consts'
 import type {
   AnyNode,
   NumNode,
   RawTagMapEntries,
 } from '@genshin-optimizer/waverider'
 import { prod, subscript, sum } from '@genshin-optimizer/waverider'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
   allStatics,
@@ -28,20 +30,12 @@ export interface CharInfo {
   weaponType: WeaponTypeKey
   region: RegionKey | ''
 }
-export type CharDataGen = {
-  charKey: CharacterKey
-  ele?: ElementKey
-  weaponType: WeaponTypeKey
-  region?: RegionKey
-  lvlCurves: { key: string; base: number; curve: string }[]
-  ascensionBonus: { key: string; values: number[] }[]
-}
 export function dataGenToCharInfo(
-  data_gen: CharDataGen,
+  data_gen: CharacterDataGen,
   travelerEle: ElementKey = 'anemo'
 ): CharInfo {
   return {
-    key: data_gen.charKey,
+    key: locCharKeyToCharKey(data_gen.key, travelerEle),
     ele: data_gen.ele ?? travelerEle,
     weaponType: data_gen.weaponType,
     region: data_gen.region ?? '',

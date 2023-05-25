@@ -1,3 +1,5 @@
+import { CharacterKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   cmpEq,
   cmpGE,
@@ -22,10 +24,11 @@ import {
   team,
   teamBuff,
 } from '../../util'
-import type { CharDataGen } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from '../util'
-import data_gen from './data.gen.json'
-import skillParam_gen from './skillParam.gen.json'
+
+const key: CharacterKey = 'Nahida'
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
 
 let a = 0,
   s = 0,
@@ -97,7 +100,7 @@ const dm = {
   },
 } as const
 
-const info = dataGenToCharInfo(data_gen as CharDataGen)
+const info = dataGenToCharInfo(data_gen)
 const {
   final,
   char: { skill, burst, ascension, constellation },

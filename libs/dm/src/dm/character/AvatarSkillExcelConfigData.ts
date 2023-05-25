@@ -1,4 +1,4 @@
-import type { InternalElement } from '@genshin-optimizer/pipeline'
+import type { InternalElement } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type AvatarSkillExcelConfigData = {
