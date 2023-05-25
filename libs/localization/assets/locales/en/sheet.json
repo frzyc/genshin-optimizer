@@ -40,7 +40,8 @@
     "electro": "After dealing <electro>Electro DMG</electro>",
     "dendro": "After dealing <dendro>Dendro DMG</dendro>",
     "crit": "After dealing CRIT DMG",
-    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot"
+    "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
+    "self": "After being hit by an opponent"
   },
   "afterUse": {
     "skill": "After using Elemental Skill",

@@ -440,7 +440,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation2', {
         value: condC2,
         path: condC2Path,
-        name: st('takeDmg'),
+        name: st('hitOp.self'),
         states: Object.fromEntries(
           range(1, dm.constellation2.maxStack).map((i) => [
             i,
