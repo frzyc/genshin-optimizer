@@ -3,7 +3,7 @@ import {
   artifactMainstatData,
   artifactSubstatData,
   artifactSubstatRollCorrection,
-  artifactSubstatRollData
+  artifactSubstatRollData,
 } from '@genshin-optimizer/dm'
 import { dumpFile } from '@genshin-optimizer/pipeline'
 import type { CharacterDataGen, CharacterDatas } from './characterData'

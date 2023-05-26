@@ -43,7 +43,7 @@ export function dataObjForWeaponSheet(
       ),
       subscript(
         input.weapon.asc,
-        gen.ascension.map((x) => x.addStats[mainStat.type] ?? 0)
+        gen.ascensionBonus.find((ab) => ab.key === 'atk')?.values ?? []
       )
     ),
     KeyMap.info(mainStat.type)

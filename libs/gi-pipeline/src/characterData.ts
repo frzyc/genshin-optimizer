@@ -35,30 +35,8 @@ export type CharacterDataGen = {
     base: number
     curve: CharacterGrowCurveKey
   }[]
-  /**
-   * @deprecated
-   */
-  base: {
-    hp: number
-    atk: number
-    def: number
-  }
-  /**
-   * @deprecated
-   */
-  curves: {
-    hp: CharacterGrowCurveKey
-    atk: CharacterGrowCurveKey
-    def: CharacterGrowCurveKey
-  }
   rarity: 1 | 2 | 3 | 4 | 5
   ascensionBonus: { key: StatKey; values: number[] }[]
-  /**
-   * @deprecated
-   */
-  ascensions: {
-    props: { [key: string]: number }
-  }[]
   birthday: {
     month?: number
     day?: number
@@ -87,7 +65,7 @@ export default function characterData() {
           propTypeMap[type],
           growCurve,
         ])
-      ) as CharacterDataGen['curves']
+      ) as Record<'hp' | 'atk' | 'def', CharacterGrowCurveKey>
       const { infoBirthDay, infoBirthMonth, avatarAssocType } =
         fetterInfoExcelConfigData[charid]
       const skillDepot = avatarSkillDepotExcelConfigData[skillDepotId]
@@ -101,11 +79,8 @@ export default function characterData() {
         ele: burstInfo ? elementMap[burstInfo.costElemType] : undefined, // Traveler will be undefined
         region: regionMap[avatarAssocType],
         weaponType: weaponMap[weaponType],
-        base: { hp: hpBase, atk: attackBase, def: defenseBase },
-        curves,
         birthday: { month: infoBirthMonth, day: infoBirthDay },
         rarity: QualityTypeMap[qualityType] ?? 5,
-        ascensions: ascensionData[avatarPromoteId],
         lvlCurves: [
           { key: 'hp', base: hpBase, curve: curves.hp },
           { key: 'atk', base: attackBase, curve: curves.atk },

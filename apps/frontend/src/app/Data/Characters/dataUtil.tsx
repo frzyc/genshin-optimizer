@@ -1,8 +1,9 @@
 import type {
   CharacterKey,
   ElementKey,
-  RegionKey
+  RegionKey,
 } from '@genshin-optimizer/consts'
+import { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
@@ -18,7 +19,7 @@ import {
   prod,
   stringPrio,
   subscript,
-  sum
+  sum,
 } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
 import type { MainStatKey, SubstatKey } from '../../Types/artifact'
@@ -223,12 +224,7 @@ export function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKey | undefined,
   region: RegionKey | undefined,
-  gen: {
-    weaponType: string
-    base: { hp: number; atk: number; def: number }
-    curves: { [key in string]?: string }
-    ascensions: { props: { [key in string]?: number } }[]
-  },
+  gen: CharacterDataGen,
   display: { [key: string]: DisplaySub },
   additional: Data = {}
 ): Data {
@@ -267,15 +263,11 @@ export function dataObjForCharacterSheet(
   let foundSpecial: boolean | undefined
   for (const stat of [...allMainStatKeys, 'def' as const]) {
     const list: NumNode[] = []
-    if (gen.curves[stat]) list.push(curve(gen.base[stat], gen.curves[stat]!))
-    const asc = gen.ascensions.some((x) => x.props[stat])
-    if (asc)
-      list.push(
-        subscript(
-          input.asc,
-          gen.ascensions.map((x) => x.props[stat] ?? NaN)
-        )
-      )
+    const lvlCurveBase = gen.lvlCurves.find((lc) => lc.key === stat)
+    if (lvlCurveBase) list.push(curve(lvlCurveBase.base, lvlCurveBase.curve))
+
+    const asc = gen.ascensionBonus.find((ab) => ab.key === stat)
+    if (asc) list.push(subscript(input.asc, asc.values))
 
     if (!list.length) continue
 

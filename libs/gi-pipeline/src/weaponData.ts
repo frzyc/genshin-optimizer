@@ -25,14 +25,6 @@ export type WeaponDataGen = {
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
   subStat?: WeaponProp
-  /**
-   * @deprecated
-   */
-  addProps: Partial<Record<StatKey, number>>[]
-  /**
-   * @deprecated
-   */
-  ascension: { addStats: Partial<Record<StatKey, number>> }[]
   lvlCurves: { key: string; base: number; curve: WeaponGrowCurveKey }[]
   refinementBonus: { key: string; values: number[] }[]
   ascensionBonus: { key: string; values: number[] }[]
@@ -83,31 +75,6 @@ export default function weaponData() {
               curve: sub.type,
             }
           : undefined,
-        addProps: refData
-          ? refData.map((asc) =>
-              Object.fromEntries(
-                asc.addProps
-                  .filter((ap) => 'value' in ap)
-                  .map((ap) => [
-                    propTypeMap[ap.propType] ?? ap.propType,
-                    extrapolateFloat(ap.value),
-                  ])
-              )
-            )
-          : [],
-        ascension: ascData.map((asd) => {
-          if (!asd) return { addStats: {} }
-          return {
-            addStats: Object.fromEntries(
-              asd.addProps
-                .filter((a) => a.value && a.propType)
-                .map((a) => [
-                  propTypeMap[a.propType],
-                  extrapolateFloat(a.value),
-                ])
-            ),
-          }
-        }) as any,
         lvlCurves: [
           {
             key: propTypeMap[main.propType],
