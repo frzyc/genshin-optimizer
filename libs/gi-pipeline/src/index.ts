@@ -1,15 +1,12 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponExpCurveData } from '@genshin-optimizer/dm'
 import {
   artifactMainstatData,
   artifactSubstatData,
   artifactSubstatRollCorrection,
-  artifactSubstatRollData,
-  avatarCurveExcelConfigData,
-  weaponCurveExcelConfigData,
+  artifactSubstatRollData
 } from '@genshin-optimizer/dm'
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDatas, CharacterDataGen } from './characterData'
+import type { CharacterDataGen, CharacterDatas } from './characterData'
 import characterData from './characterData'
 import type { SkillParamData } from './characterSkillParam'
 import characterSkillParam from './characterSkillParam'
@@ -19,6 +16,7 @@ import type { WeaponDataGen } from './weaponData'
 import weaponData from './weaponData'
 
 export type { CharacterDataGen, WeaponDataGen }
+export type { WeaponDataGen as WeaponData }
 
 const path = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi-stats/Data`
 
@@ -49,7 +47,6 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
     data
   )
 )
-export type { WeaponDataGen as WeaponData }
 
 //exp curve to generate  stats at every level
 dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)

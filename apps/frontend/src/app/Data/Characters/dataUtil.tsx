@@ -1,3 +1,9 @@
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey
+} from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'
@@ -12,18 +18,12 @@ import {
   prod,
   stringPrio,
   subscript,
-  sum,
+  sum
 } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
 import type { MainStatKey, SubstatKey } from '../../Types/artifact'
 import { allMainStatKeys } from '../../Types/artifact'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/consts'
-import { layeredAssignment, objectKeyMap, objectMap } from '../../Util/Util'
-import { allStats } from '@genshin-optimizer/gi-stats'
+import { layeredAssignment, objectKeyMap } from '../../Util/Util'
 
 const commonBasic = objectKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
