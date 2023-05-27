@@ -1,3 +1,4 @@
+import type { InternalElement } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type AvatarSkillExcelConfigData = {
@@ -7,7 +8,7 @@ type AvatarSkillExcelConfigData = {
   descTextMapHash: number // 313107928,
   skillIcon: string // "Skill_E_Noel_01",
   CdTime?: number //15.0,
-  costElemType: string //"Rock",
+  costElemType: InternalElement //"Rock",
   CostElemVal?: number //60.0,
   maxChargeNum: number //1,
   triggerID: number //5,

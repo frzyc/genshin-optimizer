@@ -21,7 +21,7 @@ const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
 const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const atk_ = subscript(
   input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.atk_ ?? NaN)
+  data_gen.refinementBonus.find((rb) => rb.key === 'atk_')?.values ?? []
 )
 const heal = equal(
   input.weapon.key,

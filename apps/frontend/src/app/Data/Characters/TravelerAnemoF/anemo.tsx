@@ -35,7 +35,7 @@ export default function anemo(
   const elementKey: ElementKey = 'anemo'
   const condCharKey = 'TravelerAnemo'
   const [, ch] = trans('char', condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
 
   const skillParam_gen = allStats.char.skillParam.TravelerAnemoF
   let s = 0,

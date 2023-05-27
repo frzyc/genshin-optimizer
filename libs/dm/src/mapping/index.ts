@@ -63,6 +63,7 @@ export const propTypeMap = {
   FIGHT_PROP_BASE_HP: 'hp',
   FIGHT_PROP_BASE_ATTACK: 'atk',
   FIGHT_PROP_BASE_DEFENSE: 'def',
+  FIGHT_PROP_SHIELD_COST_MINUS_RATIO: 'shield_',
 } as const
 export type PropTypeKey = keyof typeof propTypeMap
 export type StatKey = (typeof propTypeMap)[keyof typeof propTypeMap]

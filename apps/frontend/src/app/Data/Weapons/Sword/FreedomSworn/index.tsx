@@ -16,7 +16,7 @@ const autoSrc = [0.16, 0.2, 0.24, 0.28, 0.32]
 const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.4]
 const dmg_ = subscript(
   input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.dmg_ ?? NaN)
+  data_gen.refinementBonus.find((rb) => rb.key === 'dmg_')?.values ?? []
 )
 // TODO: These should not stack, similar to NO. But I don't want to copy NO's
 // solution, since then these nodes won't show in the team buff panel. And it's

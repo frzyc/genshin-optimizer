@@ -20,13 +20,14 @@ type WeaponProp = {
   base: number
   curve: WeaponGrowCurveKey
 }
-export type WeaponData = {
+export type WeaponDataGen = {
   weaponType: WeaponTypeKey
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
   subStat?: WeaponProp
-  addProps: Partial<Record<StatKey, number>>[]
-  ascension: { addStats: Partial<Record<StatKey, number>> }[]
+  lvlCurves: { key: string; base: number; curve: WeaponGrowCurveKey }[]
+  refinementBonus: { key: string; values: number[] }[]
+  ascensionBonus: { key: string; values: number[] }[]
 }
 
 export default function weaponData() {
@@ -36,12 +37,30 @@ export default function weaponData() {
         weaponData
       const [main, sub] = weaponProp
       const [refinementDataId] = skillAffix
-      const refData =
-        refinementDataId && equipAffixExcelConfigData[refinementDataId]
-
+      const refData = refinementDataId
+        ? equipAffixExcelConfigData[refinementDataId]
+        : []
+      const refKeys = new Set(
+        refData
+          .filter((x) => x)
+          .flatMap((ref) =>
+            ref.addProps
+              .filter((a) => a.value && a.propType)
+              .map((p) => p.propType)
+          )
+      )
       const ascData = weaponPromoteExcelConfigData[weaponPromoteId]
+      const ascKeys = new Set(
+        ascData
+          .filter((x): x is NonNullable<typeof x> => x != null)
+          .flatMap((asc) =>
+            asc.addProps
+              .filter((a) => a.value && a.propType)
+              .map((a) => a.propType)
+          )
+      )
 
-      const result: WeaponData = {
+      const result: WeaponDataGen = {
         weaponType: weaponMap[weaponType],
         rarity: rankLevel,
         mainStat: {
@@ -56,35 +75,53 @@ export default function weaponData() {
               curve: sub.type,
             }
           : undefined,
-        addProps: refData
-          ? refData.map((asc) =>
-              Object.fromEntries(
-                asc.addProps
-                  .filter((ap) => 'value' in ap)
-                  .map((ap) => [
-                    propTypeMap[ap.propType] ?? ap.propType,
-                    extrapolateFloat(ap.value),
-                  ])
-              )
-            )
-          : [],
-        ascension: ascData.map((asd) => {
-          if (!asd) return { addStats: {} }
-          return {
-            addStats: Object.fromEntries(
-              asd.addProps
-                .filter((a) => a.value && a.propType)
-                .map((a) => [
-                  propTypeMap[a.propType],
-                  extrapolateFloat(a.value),
-                ])
+        lvlCurves: [
+          {
+            key: propTypeMap[main.propType],
+            base: extrapolateFloat(main.initValue),
+            curve: main.type,
+          },
+          ...(sub.propType
+            ? [
+                {
+                  key: propTypeMap[sub.propType],
+                  base: extrapolateFloat(sub.initValue),
+                  curve: sub.type,
+                },
+              ]
+            : []),
+        ],
+        refinementBonus: [...refKeys].map((key) => ({
+          key: propTypeMap[key],
+          values: [
+            -1,
+            ...refData.map(
+              (x) =>
+                x.addProps.reduce(
+                  (accu, x) =>
+                    x.propType === key
+                      ? accu + extrapolateFloat(x.value)
+                      : accu,
+                  0
+                ) ?? 0
             ),
-          }
-        }) as any,
+          ],
+        })),
+        ascensionBonus: [...ascKeys].map((key) => ({
+          key: propTypeMap[key],
+          values: ascData.map(
+            (x) =>
+              x?.addProps.reduce(
+                (accu, x) =>
+                  x.propType === key ? accu + extrapolateFloat(x.value) : accu,
+                0
+              ) ?? 0
+          ),
+        })),
       }
       return [weaponIdMap[weaponid], result]
     })
-  ) as Record<WeaponKey, WeaponData>
-  data.QuantumCatalyst = quantumCatalystData as WeaponData
+  ) as Record<WeaponKey, WeaponDataGen>
+  data.QuantumCatalyst = quantumCatalystData as WeaponDataGen
   return data
 }

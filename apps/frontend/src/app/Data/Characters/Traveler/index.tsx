@@ -73,7 +73,7 @@ export function travelerSheet(
   } as const
 
   const { talent, data, elementKey } = talentFunc(key, charKey, dmgFormulas)
-  const ct = charTemplates(key, data_gen.weaponTypeKey)
+  const ct = charTemplates(key, data_gen.weaponType)
 
   talent.auto = ct.talentTem('auto', [
     {
@@ -145,8 +145,8 @@ export function travelerSheet(
 const data_gen = allStats.char.data.Traveler
 export default {
   sheet: {
-    rarity: data_gen.star,
-    weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
+    rarity: data_gen.rarity,
+    weaponTypeKey: data_gen.weaponType as WeaponTypeKey,
   },
   data_gen,
 } as const
