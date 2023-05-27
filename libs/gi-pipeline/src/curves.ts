@@ -1,8 +1,10 @@
+import type {
+  WeaponGrowCurveKey,
+  CharacterGrowCurveKey,
+} from '@genshin-optimizer/dm'
 import {
   avatarCurveExcelConfigData,
   weaponCurveExcelConfigData,
-  WeaponGrowCurveKey,
-  CharacterGrowCurveKey,
 } from '@genshin-optimizer/dm'
 
 export const weaponExpCurve = Object.fromEntries(

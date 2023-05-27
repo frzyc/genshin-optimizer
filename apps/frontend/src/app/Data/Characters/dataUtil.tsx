@@ -3,7 +3,7 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/consts'
-import { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
