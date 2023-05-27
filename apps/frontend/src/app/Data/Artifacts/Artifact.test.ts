@@ -1,44 +1,45 @@
+import { allStats } from '@genshin-optimizer/gi-stats'
 import Artifact from './Artifact'
-import artifactSubstatRoll from './artifact_sub_rolls_gen.json'
 
+const artifactSubstatRoll = allStats.art.subRoll
 describe('Substat Rolls/efficiency', () => {
   test('should have valid rolls in substat roll table', () => {
-    expect(Object.keys(artifactSubstatRoll[4]?.['critRate_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[4]['critRate_'] ?? {})).toEqual(
       expect.arrayContaining(['5.6'])
     )
-    expect(Object.keys(artifactSubstatRoll[4]?.['critDMG_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[4]['critDMG_'] ?? {})).toEqual(
       expect.arrayContaining(['4.4'])
     )
-    expect(Object.keys(artifactSubstatRoll[4]?.['eleMas'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[4]['eleMas'] ?? {})).toEqual(
       expect.arrayContaining(['30'])
     )
-    expect(Object.keys(artifactSubstatRoll[4]?.['def_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[4]['def_'] ?? {})).toEqual(
       expect.arrayContaining(['5.8'])
     )
 
-    expect(Object.keys(artifactSubstatRoll[5]?.['critRate_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['critRate_'] ?? {})).toEqual(
       expect.arrayContaining(['6.6', '12.4'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['critDMG_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['critDMG_'] ?? {})).toEqual(
       expect.arrayContaining(['6.2', '12.4', '21.0'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['atk'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['atk'] ?? {})).toEqual(
       expect.arrayContaining(['33'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['def'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['def'] ?? {})).toEqual(
       expect.arrayContaining(['19', '63'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['def_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['def_'] ?? {})).toEqual(
       expect.arrayContaining(['19.0', '13.9'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['hp'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['hp'] ?? {})).toEqual(
       expect.arrayContaining(['239'])
     )
-    expect(Object.keys(artifactSubstatRoll[5]?.['eleMas'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['eleMas'] ?? {})).toEqual(
       expect.arrayContaining(['23'])
     )
 
-    expect(Object.keys(artifactSubstatRoll[5]?.['hp_'] ?? {})).toEqual(
+    expect(Object.keys(artifactSubstatRoll[5]['hp_'] ?? {})).toEqual(
       expect.arrayContaining(['26.3'])
     )
   })

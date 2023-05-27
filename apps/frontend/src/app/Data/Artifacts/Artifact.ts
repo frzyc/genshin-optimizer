@@ -4,6 +4,7 @@ import type {
   ArtifactSlotKey,
 } from '@genshin-optimizer/consts'
 import { allRarityKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import KeyMap, { cacheValueString } from '../../KeyMap'
 import type {
   ICachedArtifact,
@@ -13,9 +14,6 @@ import type {
 import { allSubstatKeys } from '../../Types/artifact'
 import type { ArtifactRarity, RollColorKey } from '../../Types/consts'
 import { clampPercent, objectKeyMap } from '../../Util/Util'
-import ArtifactMainStatsData from './artifact_main_gen.json'
-import ArtifactSubstatsData from './artifact_sub_gen.json'
-import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json'
 
 const maxStar: RarityKey = 5
 
@@ -27,13 +25,13 @@ export function artStatPercent(statkey: MainStatKey | SubstatKey) {
 }
 
 export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
-  const values = Object.keys(ArtifactSubstatLookupTable[rarity][key])
+  const values = Object.keys(allStats.art.subRoll[rarity][key])
   const low = parseFloat(values[0])
   const high = parseFloat(values[values.length - 1])
   return { low, high }
 }
 export function artifactSubRolls(rarity: ArtifactRarity, key: SubstatKey) {
-  return Object.keys(ArtifactSubstatLookupTable[rarity][key]).map((v) =>
+  return Object.keys(allStats.art.subRoll[rarity][key]).map((v) =>
     parseFloat(v)
   )
 }
@@ -125,8 +123,8 @@ export default class Artifact {
   ): readonly number[] => {
     if (statKey.endsWith('_'))
       // TODO: % CONVERSION
-      return ArtifactMainStatsData[numStar][statKey].map((k) => k * 100)
-    return ArtifactMainStatsData[numStar][statKey]
+      return allStats.art.main[numStar][statKey].map((k) => k * 100)
+    return allStats.art.main[numStar][statKey]
   }
   static mainStatValue = (
     key: MainStatKey,
@@ -145,7 +143,7 @@ export default class Artifact {
     rarity = maxStar,
     type: 'max' | 'min' | 'mid' = 'max'
   ): number => {
-    const substats = ArtifactSubstatsData[rarity][substatKey]
+    const substats = allStats.art.sub[rarity][substatKey]
     const value =
       type === 'max'
         ? Math.max(...substats)
@@ -176,8 +174,8 @@ export default class Artifact {
   static getSubstatRollData = (substatKey: SubstatKey, rarity: RarityKey) => {
     if (substatKey.endsWith('_'))
       // TODO: % CONVERSION
-      return ArtifactSubstatsData[rarity][substatKey].map((v) => v * 100)
-    return ArtifactSubstatsData[rarity][substatKey]
+      return allStats.art.sub[rarity][substatKey].map((v) => v * 100)
+    return allStats.art.sub[rarity][substatKey]
   }
 
   static getSubstatRolls = (
@@ -186,7 +184,7 @@ export default class Artifact {
     rarity: ArtifactRarity
   ): number[][] => {
     const rollData = Artifact.getSubstatRollData(substatKey, rarity)
-    const table = ArtifactSubstatLookupTable[rarity][substatKey]
+    const table = allStats.art.subRoll[rarity][substatKey]
     const lookupValue = cacheValueString(substatValue, KeyMap.unit(substatKey))
     return table[lookupValue]?.map((roll) => roll.map((i) => rollData[i])) ?? []
   }

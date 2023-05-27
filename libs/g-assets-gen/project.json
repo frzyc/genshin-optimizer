@@ -18,7 +18,8 @@
       "executor": "@nrwl/js:node",
       "options": {
         "buildTarget": "g-assets-gen:build",
-        "watch": false
+        "watch": false,
+        "inspect": false
       }
     },
     "lint": {

@@ -54,8 +54,10 @@ import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
+import IbisPiercer from './IbisPiercer'
 import IronPoint from './IronPoint'
 import IronSting from './IronSting'
+import JadefallsSplendor from './JadefallsSplendor'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KagurasVerity from './KagurasVerity'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
@@ -210,8 +212,10 @@ const data = {
   HarbingerOfDawn,
   HuntersBow,
   HuntersPath,
+  IbisPiercer,
   IronPoint,
   IronSting,
+  JadefallsSplendor,
   KagotsurubeIsshin,
   KagurasVerity,
   KatsuragikiriNagamasa,
