@@ -642,7 +642,10 @@ function ArtifactSetCard({
             </Box>
           </Box>
         </Box>
-        <SetInclusionButton setKey={setKey} sx={{ '.MuiButton-root': { borderRadius: 0 } }} />
+        <SetInclusionButton
+          setKey={setKey}
+          sx={{ '.MuiButton-root': { borderRadius: 0 } }}
+        />
 
         {!!set4CondNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>

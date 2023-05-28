@@ -289,9 +289,8 @@ function CompareArtifactModal({
               newLoc !== charKeyToLocCharKey(characterKey) &&
               allowLocationsState !== 'all' && (
                 <ExcludeEquipButton locationKey={newLoc} />
-              )
-            }
-          {newArtifact && <SetInclusionButton setKey={newArtifact.setKey} />}
+              )}
+            {newArtifact && <SetInclusionButton setKey={newArtifact.setKey} />}
           </Box>
         </CardContent>
       </CardDark>
