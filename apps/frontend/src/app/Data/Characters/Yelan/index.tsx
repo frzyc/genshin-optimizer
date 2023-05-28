@@ -134,10 +134,7 @@ const c4Hp_ = greaterEq(
 const hitEle = { hit: { ele: constant(elementKey) } }
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [
-      i,
-      dmgNode('atk', arr, 'normal'),
-    ])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
