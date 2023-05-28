@@ -84,8 +84,7 @@ const dm = {
     burst_dmg_: skillParam_gen.passive2[1][0],
   },
   constellation1: {
-    hpThresh: skillParam_gen.constellation1[0],
-    maxExtra: skillParam_gen.constellation1[1],
+    hpThresh: 1 / skillParam_gen.constellation1[0],
   },
   constellation2: {
     shieldMult_: skillParam_gen.constellation2[0],
@@ -254,7 +253,7 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
+  name: ct.chg('name'), // todo: change to ct.name when we get silly wisher names for them
   rarity: data_gen.rarity,
   elementKey: elementKey,
   weaponTypeKey: data_gen.weaponType,
