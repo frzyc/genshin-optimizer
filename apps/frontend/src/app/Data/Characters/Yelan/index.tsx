@@ -11,7 +11,6 @@ import {
   prod,
   subscript,
   sum,
-  unequal,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
@@ -132,15 +131,12 @@ const c4Hp_ = greaterEq(
   )
 )
 
-const [condC6ActivePath, condC6Active] = cond(key, 'c6Active')
-const c6Active = greaterEq(input.constellation, 6, equal(condC6Active, 'on', 1))
-
 const hitEle = { hit: { ele: constant(elementKey) } }
 const dmgFormulas = {
   normal: Object.fromEntries(
     dm.normal.hitArr.map((arr, i) => [
       i,
-      unequal(c6Active, 1, dmgNode('atk', arr, 'normal')),
+      dmgNode('atk', arr, 'normal'),
     ])
   ),
   charged: {
@@ -173,9 +169,9 @@ const dmgFormulas = {
     ),
   },
   constellation6: {
-    barbDmg: equal(
-      c6Active,
-      1,
+    barbDmg: greaterEq(
+      input.constellation,
+      6,
       customDmgNode(
         prod(
           subscript(input.total.autoIndex, dm.charged.barb, { unit: '%' }),
@@ -227,7 +223,6 @@ const sheet: ICharacterSheet = {
         text: ct.chg('auto.fields.normal'),
       },
       {
-        canShow: unequal(c6Active, 1, 1),
         fields: dm.normal.hitArr.map((_, i) => ({
           node: infoMut(dmgFormulas.normal[i], {
             name: ct.chg(`auto.skillParams.${i}`),
@@ -235,29 +230,22 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
-      ct.condTem('constellation6', {
-        path: condC6ActivePath,
-        value: condC6Active,
-        name: ct.ch('c6.condName'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: infoMut(dmgFormulas.constellation6.barbDmg, {
-                  name: ct.ch('c6.dmg'),
-                }),
-              },
-              {
-                text: st('charges'),
-                value: dm.constellation6.charges,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation6.duration,
-              },
-            ],
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation6.barbDmg, {
+              name: ct.ch('c6.dmg'),
+            }),
           },
-        },
+          {
+            text: st('charges'),
+            value: dm.constellation6.charges,
+          },
+          {
+            text: stg('duration'),
+            value: dm.constellation6.duration,
+          },
+        ],
       }),
       {
         text: ct.chg('auto.fields.charged'),
