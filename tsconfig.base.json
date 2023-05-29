@@ -27,6 +27,7 @@
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
       "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
+      "@genshin-optimizer/sr-formula": ["libs/sr-formula/src/index.ts"],
       "@genshin-optimizer/sr-pipeline": ["libs/sr-pipeline/src/index.ts"],
       "@genshin-optimizer/sr-stats": ["libs/sr-stats/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
