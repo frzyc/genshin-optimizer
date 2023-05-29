@@ -253,7 +253,7 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'), // todo: change to ct.name when we get silly wisher names for them
+  name: ct.name,
   rarity: data_gen.rarity,
   elementKey: elementKey,
   weaponTypeKey: data_gen.weaponType,

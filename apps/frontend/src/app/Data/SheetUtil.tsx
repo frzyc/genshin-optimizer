@@ -9,6 +9,7 @@ import { SillyContext } from '../Context/SillyContext'
 import type { ReadNode } from '../Formula/type'
 import { customStringRead } from '../Formula/utils'
 import type { CharacterSheetKey } from '../Types/consts'
+import { useTranslation } from 'react-i18next'
 
 export const st = (strKey: string, values?: object) => (
   <Translate ns="sheet" key18={strKey} values={values} />
@@ -76,6 +77,7 @@ function NameTrans({
   chg: (i18key: string) => Displayable
 }) {
   const { silly } = useContext(SillyContext)
-  if (silly) return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
+  const { i18n } = useTranslation('sillyWisher_charNames')
+  if (silly && i18n.exists(`sillyWisher_charNames:${cKey}`)) return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
   else return chg('name') as JSX.Element
 }
