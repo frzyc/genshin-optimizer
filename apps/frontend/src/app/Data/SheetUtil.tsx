@@ -78,6 +78,7 @@ function NameTrans({
 }) {
   const { silly } = useContext(SillyContext)
   const { i18n } = useTranslation('sillyWisher_charNames')
-  if (silly && i18n.exists(`sillyWisher_charNames:${cKey}`)) return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
+  if (silly && i18n.exists(`sillyWisher_charNames:${cKey}`))
+    return <Translate ns={`sillyWisher_charNames`} key18={cKey} />
   else return chg('name') as JSX.Element
 }
