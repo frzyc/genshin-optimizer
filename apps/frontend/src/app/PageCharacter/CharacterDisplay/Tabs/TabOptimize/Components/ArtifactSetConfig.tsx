@@ -644,7 +644,7 @@ function ArtifactSetCard({
         </Box>
         <SetInclusionButton
           setKey={setKey}
-          sx={{ '.MuiButton-root': { borderRadius: 0 } }}
+          buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
         />
 
         {!!set4CondNums.length && (

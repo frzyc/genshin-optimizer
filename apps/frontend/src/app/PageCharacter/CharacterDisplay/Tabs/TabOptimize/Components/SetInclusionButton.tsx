@@ -12,10 +12,10 @@ import useBuildSetting from '../useBuildSetting'
 
 export default function SetInclusionButton({
   setKey,
-  sx,
+  buttonGroupSx,
 }: {
   setKey: ArtifactSetKey
-  sx?: SxProps<Theme>
+  buttonGroupSx?: SxProps<Theme>
 }) {
   const { t } = useTranslation('sheet')
   const {
@@ -30,7 +30,7 @@ export default function SetInclusionButton({
   const exclude4 = setExclusionSet.includes(4)
 
   return (
-    <ButtonGroup sx={sx} fullWidth>
+    <ButtonGroup sx={buttonGroupSx} fullWidth>
       <Button
         startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
