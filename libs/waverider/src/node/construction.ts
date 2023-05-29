@@ -16,6 +16,7 @@ import type {
   Sum,
   SumFrac,
   TagOverride,
+  TagValRead,
   Threshold,
 } from './type'
 
@@ -149,11 +150,13 @@ export function subscript(
 
 export function tag(v: Num, tag: Tag): TagOverride<NumNode>
 export function tag(v: Str, tag: Tag): TagOverride<StrNode>
+export function tag(v: Val, tag: Tag): TagOverride<AnyNode>
 export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
 }
 export function dynTag(v: Num, tag: Record<string, Str>): DynamicTag<NumNode>
 export function dynTag(v: Str, tag: Record<string, Str>): DynamicTag<StrNode>
+export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode>
 export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode> {
   return {
     op: 'dtag',
@@ -161,6 +164,9 @@ export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode> {
     br: toVs(Object.values(tag)),
     ex: Object.keys(tag),
   }
+}
+export function tagVal(cat: string): TagValRead {
+  return { op: 'vtag', x: [], br: [], ex: cat }
 }
 
 export function read(tag: Tag, accu: Read['accu']): Read {

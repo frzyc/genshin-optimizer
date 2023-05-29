@@ -7,14 +7,6 @@ import type { WeaponKey } from '@genshin-optimizer/consts'
 import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
-// TODO: Remove this conversion after changing the file format
-const weaponCurves = Object.fromEntries(
-  Object.entries(allStats.weapon.expCurve).map(([key, value]) => [
-    key,
-    [0, ...Object.values(value)],
-  ])
-)
-
 export function dataObjForWeaponSheet(
   key: WeaponKey,
   gen: WeaponData,
@@ -47,11 +39,11 @@ export function dataObjForWeaponSheet(
     sum(
       prod(
         mainStat.base,
-        subscript(input.weapon.lvl, weaponCurves[mainStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
       subscript(
         input.weapon.asc,
-        gen.ascension.map((x) => x.addStats[mainStat.type] ?? 0)
+        gen.ascensionBonus.find((ab) => ab.key === 'atk')?.values ?? []
       )
     ),
     KeyMap.info(mainStat.type)
@@ -71,7 +63,7 @@ export function dataObjForWeaponSheet(
     const substatNode = infoMut(
       prod(
         subStat.base,
-        subscript(input.weapon.lvl, weaponCurves[subStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[subStat.curve])
       ),
       KeyMap.info(subStat.type)
     )

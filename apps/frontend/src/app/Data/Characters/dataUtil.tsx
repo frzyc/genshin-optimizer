@@ -1,3 +1,10 @@
+import type {
+  CharacterKey,
+  ElementKey,
+  RegionKey,
+} from '@genshin-optimizer/consts'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'
@@ -17,18 +24,7 @@ import {
 import KeyMap from '../../KeyMap'
 import type { MainStatKey, SubstatKey } from '../../Types/artifact'
 import { allMainStatKeys } from '../../Types/artifact'
-import type {
-  CharacterKey,
-  ElementKey,
-  RegionKey,
-} from '@genshin-optimizer/consts'
-import { layeredAssignment, objectKeyMap, objectMap } from '../../Util/Util'
-import { allStats } from '@genshin-optimizer/gi-stats'
-
-const charCurves = objectMap(allStats.char.expCurve, (value) => [
-  0,
-  ...Object.values(value),
-])
+import { layeredAssignment, objectKeyMap } from '../../Util/Util'
 
 const commonBasic = objectKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
@@ -117,20 +113,13 @@ export function dmgNode(
 ): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(
-    specialMultiplier
-      ? prod(
-          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
-            unit: '%',
-          }),
-          input.total[base],
-          specialMultiplier
-        )
-      : prod(
-          subscript(input.total[`${talentType}Index`], lvlMultiplier, {
-            unit: '%',
-          }),
-          input.total[base]
-        ),
+    prod(
+      subscript(input.total[`${talentType}Index`], lvlMultiplier, {
+        unit: '%',
+      }),
+      input.total[base],
+      ...(specialMultiplier ? [specialMultiplier] : [])
+    ),
     move,
     additional
   )
@@ -185,7 +174,8 @@ export function shieldNodeTalent(
   baseMultiplier: number[],
   flat: number[],
   move: 'normal' | 'charged' | 'plunging' | 'skill' | 'burst',
-  additional?: Data
+  additional?: Data,
+  multiplier?: NumNode | number
 ): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
@@ -193,7 +183,8 @@ export function shieldNodeTalent(
     sum(
       prod(
         subscript(talentIndex, baseMultiplier, { unit: '%' }),
-        input.total[base]
+        input.total[base],
+        ...(multiplier ? [multiplier] : [])
       ),
       subscript(talentIndex, flat)
     ),
@@ -233,23 +224,21 @@ export function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKey | undefined,
   region: RegionKey | undefined,
-  gen: {
-    weaponTypeKey: string
-    base: { hp: number; atk: number; def: number }
-    curves: { [key in string]?: string }
-    ascensions: { props: { [key in string]?: number } }[]
-  },
+  gen: CharacterDataGen,
   display: { [key: string]: DisplaySub },
   additional: Data = {}
 ): Data {
   function curve(base: number, lvlCurve: string): NumNode {
-    return prod(base, subscript<number>(input.lvl, charCurves[lvlCurve]))
+    return prod(
+      base,
+      subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
+    )
   }
   display.basic = { ...commonBasic }
   const data: Data = {
     charKey: constant(key),
     base: {},
-    weaponType: constant(gen.weaponTypeKey),
+    weaponType: constant(gen.weaponType),
     premod: {},
     display,
   }
@@ -266,7 +255,7 @@ export function dataObjForCharacterSheet(
     ['teamBuff', 'tally', 'maxEleMas'],
     input.premod.eleMas
   )
-  if (gen.weaponTypeKey !== 'catalyst') {
+  if (gen.weaponType !== 'catalyst') {
     if (!data.display!.basic) data.display!.basic = {}
     data.display!.basic!.physical_dmg_ = input.total.physical_dmg_
   }
@@ -274,15 +263,11 @@ export function dataObjForCharacterSheet(
   let foundSpecial: boolean | undefined
   for (const stat of [...allMainStatKeys, 'def' as const]) {
     const list: NumNode[] = []
-    if (gen.curves[stat]) list.push(curve(gen.base[stat], gen.curves[stat]!))
-    const asc = gen.ascensions.some((x) => x.props[stat])
-    if (asc)
-      list.push(
-        subscript(
-          input.asc,
-          gen.ascensions.map((x) => x.props[stat] ?? NaN)
-        )
-      )
+    const lvlCurveBase = gen.lvlCurves.find((lc) => lc.key === stat)
+    if (lvlCurveBase) list.push(curve(lvlCurveBase.base, lvlCurveBase.curve))
+
+    const asc = gen.ascensionBonus.find((ab) => ab.key === stat)
+    if (asc) list.push(subscript(input.asc, asc.values))
 
     if (!list.length) continue
 

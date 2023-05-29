@@ -71,6 +71,7 @@ export const nonTravelerCharacterKeys = [
   'KamisatoAyato',
   'Kaveh',
   'Keqing',
+  'Kirara',
   'Klee',
   'KujouSara',
   'KukiShinobu',
@@ -119,6 +120,13 @@ export const allTravelerKeys = [
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
 
+export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
+  anemo: 'TravelerAnemo',
+  geo: 'TravelerGeo',
+  electro: 'TravelerElectro',
+  dendro: 'TravelerDendro',
+} as const
+
 export const locationGenderedCharacterKeys = [
   ...nonTravelerCharacterKeys,
   'TravelerF',
@@ -155,4 +163,12 @@ export function charKeyToLocCharKey(
 ): LocationCharacterKey {
   if (allTravelerKeys.includes(charKey as TravelerKey)) return 'Traveler'
   return charKey as LocationCharacterKey
+}
+
+export function locCharKeyToCharKey(
+  locKey: LocationCharacterKey,
+  travelerEle: ElementKey = 'anemo'
+): CharacterKey {
+  if (locKey === 'Traveler') return travelerEleMap[travelerEle] as CharacterKey
+  return locKey as CharacterKey
 }

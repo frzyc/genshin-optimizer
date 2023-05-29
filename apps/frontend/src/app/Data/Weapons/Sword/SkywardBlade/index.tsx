@@ -42,7 +42,7 @@ const dmg = equal(
 )
 const critRate_ = subscript(
   input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.critRate_ ?? NaN)
+  data_gen.refinementBonus.find((rb) => rb.key === 'critRate_')?.values ?? []
 )
 
 const data = dataObjForWeaponSheet(

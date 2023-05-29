@@ -6,30 +6,24 @@
     "base": 32.93,
     "curve": "GROW_CURVE_ATTACK_101"
   },
-  "addProps": [],
-  "ascension": [
+  "lvlCurves": [
     {
-      "addStats": {}
-    },
+      "key": "atk",
+      "base": 32.93,
+      "curve": "GROW_CURVE_ATTACK_101"
+    }
+  ],
+  "refinementBonus": [],
+  "ascensionBonus": [
     {
-      "addStats": {
-        "atk": 11.7
-      }
-    },
-    {
-      "addStats": {
-        "atk": 23.3
-      }
-    },
-    {
-      "addStats": {
-        "atk": 35
-      }
-    },
-    {
-      "addStats": {
-        "atk": 46.7
-      }
+      "key": "atk",
+      "values": [
+        0,
+        11.7,
+        23.3,
+        35,
+        46.7
+      ]
     }
   ]
 }

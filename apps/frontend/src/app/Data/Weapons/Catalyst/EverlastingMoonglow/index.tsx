@@ -22,7 +22,7 @@ const normal_dmgInc = equal(
 )
 const heal_ = subscript(
   input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.heal_ ?? NaN)
+  data_gen.refinementBonus.find((rb) => rb.key === 'heal_')?.values ?? []
 )
 export const data = dataObjForWeaponSheet(
   key,

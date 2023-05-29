@@ -11,46 +11,31 @@
     "base": 0.096,
     "curve": "GROW_CURVE_CRITICAL_301"
   },
-  "addProps": [
-    {},
-    {},
-    {},
-    {},
-    {}
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 47.537,
+      "curve": "GROW_CURVE_ATTACK_302"
+    },
+    {
+      "key": "critDMG_",
+      "base": 0.096,
+      "curve": "GROW_CURVE_CRITICAL_301"
+    }
   ],
-  "ascension": [
+  "refinementBonus": [],
+  "ascensionBonus": [
     {
-      "addStats": {}
-    },
-    {
-      "addStats": {
-        "atk": 31.1
-      }
-    },
-    {
-      "addStats": {
-        "atk": 62.2
-      }
-    },
-    {
-      "addStats": {
-        "atk": 93.4
-      }
-    },
-    {
-      "addStats": {
-        "atk": 124.5
-      }
-    },
-    {
-      "addStats": {
-        "atk": 155.6
-      }
-    },
-    {
-      "addStats": {
-        "atk": 186.7
-      }
+      "key": "atk",
+      "values": [
+        0,
+        31.1,
+        62.2,
+        93.4,
+        124.5,
+        155.6,
+        186.7
+      ]
     }
   ]
 }

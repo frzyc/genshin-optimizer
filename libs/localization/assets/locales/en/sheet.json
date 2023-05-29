@@ -105,14 +105,19 @@
   "notProtectedByShield": "While not protected by a shield",
   "staminaDec_": "Stamina Consumption Decrease",
   "dmgAbsorption": {
-    "pyro": "Pyro DMG Absorption",
-    "cryo": "Cryo DMG Absorption",
-    "anemo": "Anemo DMG Absorption",
-    "hydro": "Hydro DMG Absorption",
-    "electro": "Electro DMG Absorption",
-    "dendro": "Dendro DMG Absorption",
-    "geo": "Geo DMG Absorption",
-    "none": "DMG Absorption"
+    "pyro": "Shield Pyro DMG Absorption",
+    "cryo": "Shield Cryo DMG Absorption",
+    "anemo": "Shield Anemo DMG Absorption",
+    "hydro": "Shield Hydro DMG Absorption",
+    "electro": "Shield Electro DMG Absorption",
+    "dendro": "Shield Dendro DMG Absorption",
+    "geo": "Shield Geo DMG Absorption",
+    "none": "Shield DMG Absorption",
+    "max": {
+      "none": "Max Shield DMG Absorption",
+      "pyro": "Max Shield Pyro DMG Absorption",
+      "dendro": "Max Shield Dendro DMG Absorption"
+    }
   },
   "1set": "1-Set",
   "2set": "2-Set",

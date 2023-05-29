@@ -27,7 +27,7 @@ export default function electro(
 ) {
   const elementKey: ElementKey = 'electro'
   const condCharKey = 'TravelerElectro'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerElectroF
   let s = 0,

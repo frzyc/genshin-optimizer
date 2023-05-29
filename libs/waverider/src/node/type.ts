@@ -14,6 +14,7 @@ export type OP =
   | 'match'
   | 'tag'
   | 'dtag'
+  | 'vtag'
   | 'read'
 interface Base<op extends OP, X, Br = never> {
   op: op // Operation Name
@@ -67,14 +68,21 @@ export interface Lookup<Output, PermitOP extends OP = OP>
 
 // Tagging
 
+/** x0 with attached static tag */
 export interface TagOverride<Output, PermitOP extends OP = OP>
   extends Base<'tag' & PermitOP, Output> {
   ex?: never
   tag: Tag
 }
+/** x0 with attached dynamic tag { [ex[i]]: br[i] } */
 export interface DynamicTag<Output, PermitOP extends OP = OP>
   extends Base<'dtag' & PermitOP, Output, StrNode<PermitOP>> {
   ex: string[]
+}
+/** Tag value associated with a category, or '' of the value does not exist */
+export interface TagValRead<PermitOP extends OP = OP>
+  extends Base<'vtag' & PermitOP, never> {
+  ex: string
 }
 export interface Read extends Base<'read', never> {
   ex?: never
@@ -108,6 +116,7 @@ export type StrNode<PermitOP extends OP = OP> =
   | Subscript<string, PermitOP>
   | TagOverride<StrNode<PermitOP>, PermitOP>
   | DynamicTag<StrNode<PermitOP>, PermitOP>
+  | TagValRead<PermitOP>
   | Read
 export type AnyNode<PermitOP extends OP = OP> =
   | Const<number | string>
@@ -122,6 +131,7 @@ export type AnyNode<PermitOP extends OP = OP> =
   | Subscript<number | string, PermitOP>
   | TagOverride<AnyNode<PermitOP>, PermitOP>
   | DynamicTag<AnyNode<PermitOP>, PermitOP>
+  | TagValRead<PermitOP>
   | Read
 
 export type NumOP = NumNode['op']

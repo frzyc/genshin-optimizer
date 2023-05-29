@@ -1,5 +1,64 @@
 import type { NonTravelerCharacterKey } from '@genshin-optimizer/consts'
 
+export type InternalElement =
+  | 'Fire'
+  | 'Grass'
+  | 'Electric'
+  | 'Wind'
+  | 'Ice'
+  | 'Water'
+  | 'Rock'
+type ElementKey =
+  | 'pyro'
+  | 'dendro'
+  | 'electro'
+  | 'anemo'
+  | 'cryo'
+  | 'hydro'
+  | 'geo'
+export const elementMap: Record<InternalElement, ElementKey> = {
+  Fire: 'pyro',
+  Grass: 'dendro',
+  Electric: 'electro',
+  Wind: 'anemo',
+  Ice: 'cryo',
+  Water: 'hydro',
+  Rock: 'geo',
+}
+
+export type AvatarAssocType =
+  | 'ASSOC_TYPE_MONDSTADT'
+  | 'ASSOC_TYPE_LIYUE'
+  | 'ASSOC_TYPE_INAZUMA'
+  | 'ASSOC_TYPE_SUMERU'
+  | 'ASSOC_TYPE_FONTAINE'
+  | 'ASSOC_TYPE_NATLAN'
+  | 'ASSOC_TYPE_FATUI'
+  | 'ASSOC_TYPE_KHAENRIAH'
+  | 'ASSOC_TYPE_MAINACTOR'
+  | 'ASSOC_TYPE_RANGER'
+type Regionkey =
+  | 'mondstadt'
+  | 'liyue'
+  | 'inazuma'
+  | 'sumeru'
+  | 'fontaine'
+  | 'natlan'
+  | 'snezhnaya'
+  | 'khaenriah'
+export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
+  ASSOC_TYPE_MONDSTADT: 'mondstadt',
+  ASSOC_TYPE_LIYUE: 'liyue',
+  ASSOC_TYPE_INAZUMA: 'inazuma',
+  ASSOC_TYPE_SUMERU: 'sumeru',
+  ASSOC_TYPE_FONTAINE: 'fontaine',
+  ASSOC_TYPE_NATLAN: 'natlan',
+  ASSOC_TYPE_FATUI: 'snezhnaya',
+  ASSOC_TYPE_KHAENRIAH: 'khaenriah',
+  ASSOC_TYPE_MAINACTOR: undefined, // Traveler
+  ASSOC_TYPE_RANGER: undefined, // Aloy
+}
+
 export const characterIdMap: Record<
   string,
   NonTravelerCharacterKey | 'TravelerM' | 'TravelerF'
@@ -53,6 +112,7 @@ export const characterIdMap: Record<
   10000058: 'YaeMiko',
   10000059: 'ShikanoinHeizou',
   10000060: 'Yelan',
+  10000061: 'Kirara',
   10000062: 'Aloy',
   10000063: 'Shenhe',
   10000064: 'YunJin',
