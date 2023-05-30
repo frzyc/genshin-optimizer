@@ -75,9 +75,9 @@ const dm = {
     cost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    cd: skillParam_gen.passive1[0][0],
+    shieldMult_: skillParam_gen.passive1[0][0],
     maxStacks: skillParam_gen.passive1[1][0],
-    shieldMult_: skillParam_gen.passive1[2][0],
+    cd: skillParam_gen.passive1[2][0],
   },
   passive2: {
     skill_dmg_: skillParam_gen.passive2[0][0],
