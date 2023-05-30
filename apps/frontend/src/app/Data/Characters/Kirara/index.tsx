@@ -119,7 +119,7 @@ const p1Shield = shieldNodeTalent(
   dm.skill.shield_base,
   'skill',
   undefined,
-  dm.passive1.shieldMult_
+  percent(dm.passive1.shieldMult_)
 )
 const c2Shield = shieldNodeTalent(
   'hp',
@@ -127,7 +127,7 @@ const c2Shield = shieldNodeTalent(
   dm.skill.maxShield_base,
   'skill',
   undefined,
-  dm.constellation2.shieldMult_
+  percent(dm.constellation2.shieldMult_)
 )
 
 const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
