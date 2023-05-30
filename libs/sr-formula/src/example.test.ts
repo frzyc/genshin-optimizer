@@ -38,8 +38,8 @@ describe('example', () => {
       calc.compute(sum(read({ cat1: 'value1', cat2: 'value1' }, 'max'), 5)).val
     ).toEqual(9) // max(R1, R2) + 5
     expect(
-      calc.compute(read({ cat1: 'value2', cat2: 'value1' }, undefined)).val
-    ).toEqual(5) // R3 (= R1 + R2)
+      calc.compute(read({ cat1: 'value2' }, undefined)).val
+    ).toEqual(4) // R3 (= R1)
     expect(
       calc.compute(read({ cat1: 'value2', cat2: 'value1' }, undefined)).val
     ).toEqual(5) // R3 with cat2:value1 (= R1 + R2)
