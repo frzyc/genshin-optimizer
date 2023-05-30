@@ -4,6 +4,7 @@ import Alhaitham from './Alhaitham'
 import Aloy from './Aloy'
 import Amber from './Amber'
 import AratakiItto from './AratakiItto'
+import Baizhu from './Baizhu'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
@@ -26,7 +27,9 @@ import KaedeharaKazuha from './KaedeharaKazuha'
 import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
 import KamisatoAyato from './KamisatoAyato'
+import Kaveh from './Kaveh'
 import Keqing from './Keqing'
+import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
@@ -77,6 +80,7 @@ const data = {
   Aloy,
   Amber,
   AratakiItto,
+  Baizhu,
   Barbara,
   Beidou,
   Bennett,
@@ -99,7 +103,9 @@ const data = {
   Kaeya,
   KamisatoAyaka,
   KamisatoAyato,
+  Kaveh,
   Keqing,
+  Kirara,
   Klee,
   KujouSara,
   KukiShinobu,

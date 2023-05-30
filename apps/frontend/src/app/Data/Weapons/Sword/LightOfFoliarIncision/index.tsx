@@ -1,15 +1,14 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'LightOfFoliarIncision'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const critRate_arr = [0.04, 0.05, 0.06, 0.07, 0.08]
 const critRate_ = equal(

@@ -1,15 +1,14 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'MagicGuide'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const dmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, 'BaneOfStormAndTide')

@@ -147,6 +147,11 @@ export function objectKeyValueMap<T, K extends string | number, V>(
   return Object.fromEntries(items.map((t, i) => map(t, i))) as any
 }
 
+/**
+ * @deprecated use the @genshin-optimizer/util `objMap` function.
+ * @param obj
+ * @param fn
+ */
 export function objectMap<K extends string, V, T>(
   obj: Record<K, Exclude<V, undefined>>,
   fn: (value: V, key: `${K}`, index: number) => T

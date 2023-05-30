@@ -11,7 +11,6 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
   Box,
   Button,
-  ButtonGroup,
   CardContent,
   Divider,
   Grid,
@@ -35,16 +34,17 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { DatabaseContext } from '../../../../../Database/Database'
 import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData'
+import { DatabaseContext } from '../../../../../Database/Database'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
 import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
 import { iconInlineProps } from '../../../../../SVGIcons'
 import type { SetNum } from '../../../../../Types/consts'
-import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import { deepClone, objectKeyMap } from '../../../../../Util/Util'
+import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'
+import SetInclusionButton from './SetInclusionButton'
 
 export default function ArtifactSetConfig({
   disabled,
@@ -258,12 +258,12 @@ export default function ArtifactSetConfig({
                       t={t}
                       i18nKey="artSetConfig.modal.ArtSetFilter.title"
                     >
-                      Artifact Sets{' '}
+                      {'Artifact Sets '}
                       <ColorText color="success">
                         Allowed
                         <ShowChartIcon {...iconInlineProps} />
-                      </ColorText>{' '}
-                      /{' '}
+                      </ColorText>
+                      {' / '}
                       <ColorText color="secondary" variant="light">
                         Excluded
                         <BlockIcon {...iconInlineProps} />
@@ -399,12 +399,12 @@ export default function ArtifactSetConfig({
                         <Trans t={t} i18nKey="artSetConfig.alExRainbow">
                           <ColorText color="success">
                             Allow <ShowChartIcon {...iconInlineProps} />
-                          </ColorText>{' '}
-                          /{' '}
+                          </ColorText>
+                          {' / '}
                           <ColorText color="secondary" variant="light">
                             Exclude <BlockIcon {...iconInlineProps} />
-                          </ColorText>{' '}
-                          Rainbow Builds
+                          </ColorText>
+                          {' Rainbow Builds'}
                         </Trans>
                       </strong>
                     </Typography>
@@ -541,7 +541,7 @@ function ArtifactSetCard({
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
-  const { buildSetting, buildSettingDispatch } = useBuildSetting(characterKey)
+  const { buildSetting } = useBuildSetting(characterKey)
   const { artSetExclusion } = buildSetting
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
   const allow4 = !setExclusionSet.includes(4)
@@ -554,8 +554,6 @@ function ArtifactSetCard({
       sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
     )
   }, [sheet.setEffects, allow4])
-  const exclude2 = setExclusionSet.includes(2)
-  const exclude4 = setExclusionSet.includes(4)
   return (
     <Grid item key={setKey} xs={1}>
       <CardLight
@@ -644,36 +642,10 @@ function ArtifactSetCard({
             </Box>
           </Box>
         </Box>
-        <ButtonGroup sx={{ '.MuiButton-root': { borderRadius: 0 } }} fullWidth>
-          <Button
-            startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />}
-            onClick={() =>
-              buildSettingDispatch({
-                artSetExclusion: handleArtSetExclusion(
-                  artSetExclusion,
-                  setKey,
-                  2
-                ),
-              })
-            }
-            color={exclude2 ? 'secondary' : 'success'}
-            endIcon={exclude2 ? <BlockIcon /> : <ShowChartIcon />}
-          >{t`2set`}</Button>
-          <Button
-            startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />}
-            onClick={() =>
-              buildSettingDispatch({
-                artSetExclusion: handleArtSetExclusion(
-                  artSetExclusion,
-                  setKey,
-                  4
-                ),
-              })
-            }
-            color={exclude4 ? 'secondary' : 'success'}
-            endIcon={exclude4 ? <BlockIcon /> : <ShowChartIcon />}
-          >{t`4set`}</Button>
-        </ButtonGroup>
+        <SetInclusionButton
+          setKey={setKey}
+          buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
+        />
 
         {!!set4CondNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>

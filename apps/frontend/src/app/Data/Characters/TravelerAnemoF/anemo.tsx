@@ -1,4 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import type { Data, DisplaySub } from '../../../Formula/type'
@@ -25,7 +26,6 @@ import {
 } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
-import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(
   key: CharacterSheetKey,
@@ -35,8 +35,9 @@ export default function anemo(
   const elementKey: ElementKey = 'anemo'
   const condCharKey = 'TravelerAnemo'
   const [, ch] = trans('char', condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
 
+  const skillParam_gen = allStats.char.skillParam.TravelerAnemoF
   let s = 0,
     b = 0
   const dm = {

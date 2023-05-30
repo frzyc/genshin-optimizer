@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
@@ -8,10 +8,9 @@ import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'MappaMare'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'InfusionScroll')
 

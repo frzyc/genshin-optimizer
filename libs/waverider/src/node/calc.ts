@@ -125,6 +125,8 @@ export class Calculator<M = undefined> {
           const index = internal(n.br[0]!)
           return meta(op, undefined, n.ex[index.val], [], [index], n.ex)
         }
+        case 'vtag':
+          return meta(op, undefined, cache.tag[n.ex] ?? '', [], [], n.ex)
         case 'tag': {
           const newCache = cache.with(n.tag)
           const result = self._compute(n.x[0]!, newCache)
