@@ -300,27 +300,11 @@ export default function loadTrans() {
     mapHashData.weaponNames[weaponKey] = nameTextMapHash
     mapHashData.weapon[weaponKey] = {
       name: nameTextMapHash,
-      description: descTextMapHash,
+      description: [descTextMapHash, 'paragraph'],
       passiveName: ascData ? ascData[0].nameTextMapHash : 0,
       passiveDescription: ascData
-        ? ascData.map((asc) => asc.descTextMapHash)
+        ? ascData.map((asc) => [asc.descTextMapHash, 'paragraph'])
         : [0, 0, 0, 0, 0],
-    }
-
-    layeredAssignment(
-      mapHashData,
-      ['weapon', weaponKey, 'description'],
-      [descTextMapHash, 'paragraph']
-    )
-
-    if (ascData) {
-      ascData.forEach((asc, i) => {
-        layeredAssignment(
-          mapHashData,
-          ['weapon', weaponKey, 'passiveDescription', i],
-          [asc.descTextMapHash, 'paragraph']
-        )
-      })
     }
   })
 
@@ -332,14 +316,8 @@ export default function loadTrans() {
     if (!key || mapHashData.material[key]) return
     mapHashData.material[key] = {
       name: nameTextMapHash,
-      description: descTextMapHash,
+      description: [descTextMapHash, 'paragraph'],
     }
-
-    layeredAssignment(
-      mapHashData,
-      ['material', key, 'description'],
-      [descTextMapHash, 'paragraph']
-    )
   })
 
   // Override

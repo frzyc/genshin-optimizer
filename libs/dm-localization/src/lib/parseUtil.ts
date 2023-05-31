@@ -78,7 +78,6 @@ const paragraph = (string) => {
   while (parsed[parsed.length - 1] === '<br/>') parsed.pop()
   return { ...parseBulletPoints(parsed) }
 }
-
 const autoFields = (string) => {
   const strings = string
     .split('\\n\\n<strong>')
