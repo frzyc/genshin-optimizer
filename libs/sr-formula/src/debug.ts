@@ -3,16 +3,9 @@ import type {
   ReRead,
   TagMapSubsetCache,
 } from '@genshin-optimizer/waverider'
-import {
-  TagMapExactValues,
-  TagMapKeys,
-  traverse,
-} from '@genshin-optimizer/waverider'
-import { keys } from './data'
+import { TagMapExactValues, traverse } from '@genshin-optimizer/waverider'
 import type { Read, Tag } from './data/util'
 import type { Calculator } from './calculator'
-
-const tagKeys = new TagMapKeys(keys)
 
 export function dependencyString(read: Read, calc: Calculator) {
   const str = listDependencies(read.tag, calc).map(({ tag, read, reread }) => {
@@ -37,7 +30,8 @@ export function listDependencies(
   const result: { tag: Tag; read: Tag[]; reread: Tag[] }[] = [],
     stack: Tag[] = []
   /** Stack depth when first encountered the tag, or 0 if already visited */
-  const openDepth = new TagMapExactValues<number>(keys.tagLen, {})
+  const tagKeys = calc.keys
+  const openDepth = new TagMapExactValues<number>(tagKeys.tagLen, {})
 
   function internal(cache: TagMapSubsetCache<AnyNode | ReRead>) {
     const tag = cache.tag,
