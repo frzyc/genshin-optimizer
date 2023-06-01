@@ -31,7 +31,7 @@ export const nonTrailblazerCharacterKeys = [
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
-const allCharacterKeys = [...nonTrailblazerCharacterKeys] as const
+export const allCharacterKeys = [...nonTrailblazerCharacterKeys] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
 export const damageType = [

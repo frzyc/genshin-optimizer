@@ -1,34 +1,40 @@
 import {
+  compileTagMapKeys,
   compileTagMapValues,
   constant,
   read,
   sum,
 } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
-import { keys, values } from './data'
 import type { TaggedFormulas } from './data/util'
 import { dependencyString, listDependencies } from './debug'
 import { translate } from './formulaText'
+const data: TaggedFormulas = [
+  /* R1 */ { tag: { cat1: 'value1' }, value: constant(4) },
+  /* R2 */ { tag: { cat1: 'value1', cat2: 'value1' }, value: constant(1) },
+  /* R3 */ {
+    tag: { cat1: 'value2' },
+    value: read({ cat1: 'value1' }, 'sum'),
+  },
+  /* R4 */ {
+    tag: { cat1: 'value3' },
+    value: read({ cat1: 'value1', cat2: null }, 'sum'),
+  },
+]
+const tags = [
+  // TODO: Add appropriate categories and values
+  { category: 'cat1', values: ['value1', 'value2', 'value3'] },
+  undefined, // Force tags to be in different encoded words
+  { category: 'cat2', values: ['value1', 'value2', 'value3'] },
+]
+const keys = compileTagMapKeys(tags) // TODO: Find optimum tag order
+const values = compileTagMapValues(keys, data)
 
 // This test acts as an example usage. It's mostly sufficient to test that the code
 // doesn't crash. Any test for correct values should go to `correctness` tests.
 // Should a test here fail, extract a minimized version to `correctness` test.
 describe('example', () => {
-  const data: TaggedFormulas = [
-      // TODO: Add team-specific data; members, member levels, etc.
-
-      /* R1 */ { tag: { cat1: 'value1' }, value: constant(4) },
-      /* R2 */ { tag: { cat1: 'value1', cat2: 'value1' }, value: constant(1) },
-      /* R3 */ {
-        tag: { cat1: 'value2' },
-        value: read({ cat1: 'value1' }, 'sum'),
-      },
-      /* R4 */ {
-        tag: { cat1: 'value3' },
-        value: read({ cat1: 'value1', cat2: null }, 'sum'),
-      },
-    ],
-    calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+  const calc = new Calculator(keys, values)
 
   test('calculate stats', () => {
     expect(calc.compute(read({ cat1: 'value1' }, undefined)).val).toEqual(4) // R1

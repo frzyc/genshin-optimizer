@@ -1,5 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDatas } from './characterData'
+import type { CharacterDatas, CharacterDataGen } from './characterData'
 import characterData from './characterData'
 
 const path = `${process.env['NX_WORKSPACE_ROOT']}/libs/sr-stats/Data`
@@ -11,6 +11,9 @@ Object.entries(characterDataDump).forEach(([characterKey, data]) =>
 
 export type AllStats = {
   char: CharacterDatas
+}
+export type {
+  CharacterDataGen
 }
 
 const allStat: AllStats = {

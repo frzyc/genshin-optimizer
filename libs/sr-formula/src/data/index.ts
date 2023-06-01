@@ -2,18 +2,38 @@ import {
   compileTagMapKeys,
   compileTagMapValues,
 } from '@genshin-optimizer/waverider'
-import { TaggedFormulas } from './util'
+import type { TaggedFormulas } from './util'
+
+import { allCharacterKeys } from "@genshin-optimizer/sr-consts"
+import { data as charData } from './char'
+const stats = [
+  'hp',
+  'hp_',
+  'atk',
+  'atk_',
+  'def',
+  'def_',
+  'spd',
+  'crit_',
+  'crit_dmg_',
+  'taunt',
+] as const
+
+const srcs = [
+  ...allCharacterKeys,
+] as const
+export type Stat = (typeof stats)[number]
+export type Source = (typeof srcs)[number]
 
 const data: TaggedFormulas = [
-  // TODO: Add global DB entries
+  ...charData
 ]
-const tags = [
-  // TODO: Add appropriate categories and values
-  { category: 'cat1', values: ['value1', 'value2', 'value3'] },
-  undefined, // Force tags to be in different encoded words
-  { category: 'cat2', values: ['value1', 'value2', 'value3'] },
+// TODO: hoist this type from wr2 lib
+type Tags = Parameters<typeof compileTagMapKeys>[0]
+const tags: Tags = [
+  { category: "src", values: [...allCharacterKeys] },
+  { category: "qt", values: ["base"] },
+  { category: "q", values: [...stats, "lvl", "ascension"] },
 ]
-const keys = compileTagMapKeys(tags) // TODO: Find optimum tag order
-const values = compileTagMapValues(keys, data)
-
-export { keys, values, data }
+export const keys = compileTagMapKeys(tags)
+export const values = compileTagMapValues(keys, data)
