@@ -1,4 +1,4 @@
-import {
+import type {
   AnyNode,
   ReRead,
   Tag as BaseTag,

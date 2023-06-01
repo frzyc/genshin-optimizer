@@ -1,4 +1,4 @@
-import {
+import type {
   DamageTypeKey,
   NonTrailblazerCharacterKey,
   PathKey,
@@ -18,26 +18,26 @@ type Promotion = {
   hp: Scaling
   spd: number
   crit_: number
-  critDmg_: number
+  crit_dmg_: number
   taunt: number
 }
 type Scaling = {
   base: number
   add: number
 }
-export type CharacterData = {
+export type CharacterDataGen = {
   rarity: RarityKey
   damageType: DamageTypeKey
   path: PathKey
   ascension: Promotion[]
 }
 
-export type CharacterDatas = Record<NonTrailblazerCharacterKey, CharacterData>
+export type CharacterDatas = Record<NonTrailblazerCharacterKey, CharacterDataGen>
 export default function characterData() {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
-        const result: CharacterData = {
+        const result: CharacterDataGen = {
           rarity: rarityMap[Rarity] as RarityKey,
           damageType: DamageType,
           path: avatarBaseTypeMap[AvatarBaseType],
@@ -68,7 +68,7 @@ export default function characterData() {
               },
               spd: SpeedBase.Value,
               crit_: CriticalChance.Value,
-              critDmg_: CriticalDamage.Value,
+              crit_dmg_: CriticalDamage.Value,
               taunt: BaseAggro.Value,
             })
           ),
