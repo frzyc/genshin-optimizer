@@ -498,7 +498,7 @@ const sheet: ICharacterSheet = {
                 node: c2_hydro_enemyRes_,
               },
               {
-                text: stg('duration'),
+                text: stg('effectDuration.hydro'),
                 value: dm.constellation2.duration,
                 unit: 's',
               },
@@ -513,7 +513,7 @@ const sheet: ICharacterSheet = {
                 node: c2_dendro_enemyRes_,
               },
               {
-                text: stg('duration'),
+                text: stg('effectDuration.dendro'),
                 value: dm.constellation2.duration,
                 unit: 's',
               },

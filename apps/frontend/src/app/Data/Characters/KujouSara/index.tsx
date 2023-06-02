@@ -1,5 +1,5 @@
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { input, target } from '../../../Formula'
+import { input } from '../../../Formula'
 import {
   constant,
   equal,
@@ -68,31 +68,18 @@ const dm = {
   },
 } as const
 
-const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(
-  key,
-  'TenguJuuraiAmbush'
-)
+const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, 'TenguJuuraiAmbush')
 const atkIncRatio = subscript(
   input.total.skillIndex,
   dm.skill.atkBonus.map((x) => x),
   { unit: '%' }
 )
-const skillTenguAmbush_disp = equal(
-  'TenguJuuraiAmbush',
-  condSkillTenguAmbush,
-  prod(input.base.atk, atkIncRatio)
-)
-const skillTenguAmbush_ = equal(
-  input.activeCharKey,
-  target.charKey,
-  skillTenguAmbush_disp
-)
+const skillTenguAmbush_ = equal(condSkillTenguAmbush, 'on', prod(input.base.atk, atkIncRatio))
 
-const [condC6Path, condC6] = cond(key, 'c6')
 const c6ElectroCritDmg_ = greaterEq(
   input.constellation,
   6,
-  equal('c6', condC6, percent(dm.constellation6.atkInc))
+  equal(condSkillTenguAmbush, 'on', percent(dm.constellation6.atkInc))
 )
 
 const dmgFormulas = {
@@ -126,7 +113,7 @@ const dmgFormulas = {
         4,
         prod(input.total.enerRech_, dm.passive2.energyGen)
       ),
-      { name: ct.ch('a4.enerRest'), fixed: 2 }
+      { name: stg('energyRegen'), fixed: 2 }
     ),
   },
   constellation2: {
@@ -236,12 +223,9 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: ct.chg('skill.skillParams.2'),
-            value: `${dm.skill.duration}s`,
-          },
-          {
             text: ct.chg('skill.skillParams.3'),
-            value: `${dm.skill.cd}s`,
+            value: dm.skill.cd,
+            unit: 's'
           },
         ],
       },
@@ -251,21 +235,36 @@ const sheet: ICharacterSheet = {
         name: ct.ch('skill.ambush'),
         teamBuff: true,
         states: {
-          TenguJuuraiAmbush: {
+          on: {
             fields: [
               {
-                text: ct.chg('skill.skillParams.1'),
-                value: (data) => data.get(atkIncRatio).value * 100,
-                unit: '%',
+                node: skillTenguAmbush_,
               },
               {
-                node: infoMut(skillTenguAmbush_disp, {
-                  name: st(`increase.atk`),
-                }),
+                text: ct.chg('skill.skillParams.2'),
+                value: dm.skill.duration,
+                unit: 's',
               },
             ],
           },
         },
+      }),
+      ct.headerTem('passive2', {
+        canShow: equal(condSkillTenguAmbush, 'on', 1),
+        fields: [
+          {
+            node: dmgFormulas.passive2.energyRegen
+          }
+        ]
+      }),
+      ct.headerTem('constellation6', {
+        teamBuff: true,
+        canShow: equal(condSkillTenguAmbush, 'on', 1),
+        fields: [
+          {
+            node: c6ElectroCritDmg_,
+          },
+        ],
       }),
     ]),
 
@@ -284,26 +283,20 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.2'),
-            value: `${dm.burst.cd}s`,
+            value: dm.burst.cd,
+            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.3'),
-            value: `${dm.burst.enerCost}`,
+            value: dm.burst.enerCost,
+            unit: 's',
           },
         ],
       },
     ]),
 
     passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2', [
-      ct.fieldsTem('passive2', {
-        fields: [
-          {
-            node: dmgFormulas.passive2.energyRegen,
-          },
-        ],
-      }),
-    ]),
+    passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
@@ -311,7 +304,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation2.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
+              name: st('dmg'),
             }),
           },
         ],
@@ -324,23 +317,7 @@ const sheet: ICharacterSheet = {
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.condTem('constellation6', {
-        value: condC6,
-        path: condC6Path,
-        teamBuff: true,
-        name: ct.ch('c6.electroCritDmg'),
-        states: {
-          c6: {
-            fields: [
-              {
-                node: c6ElectroCritDmg_,
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    constellation6: ct.talentTem('constellation6'),
   },
 }
 export default new CharacterSheet(sheet, data)

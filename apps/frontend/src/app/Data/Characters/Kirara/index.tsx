@@ -398,30 +398,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.headerTem('constellation2', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation2.shield, {
-              name: stg('dmgAbsorption'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation2.dendroShield, {
-              name: st(`dmgAbsorption.${elementKey}`),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.constellation2.duration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.constellation2.cd,
-            unit: 's',
-          },
-        ],
-      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -471,7 +447,32 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
+    constellation2: ct.talentTem('constellation2', [
+      {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation2.shield, {
+              name: stg('dmgAbsorption'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.constellation2.dendroShield, {
+              name: st(`dmgAbsorption.${elementKey}`),
+            }),
+          },
+          {
+            text: stg('duration'),
+            value: dm.constellation2.duration,
+            unit: 's',
+          },
+          {
+            text: stg('cd'),
+            value: dm.constellation2.cd,
+            unit: 's',
+          },
+        ],
+      },
+    ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },
     ]),

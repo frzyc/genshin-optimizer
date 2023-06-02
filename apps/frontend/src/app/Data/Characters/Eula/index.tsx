@@ -299,14 +299,19 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: ct.chg('skill.skillParams.8'),
-            value: `${dm.skill.pressCd}`,
-            unit: 's',
-          },
-          {
             node: infoMut(dmgFormulas.skill.hold, {
               name: ct.chg(`skill.skillParams.1`),
             }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill.icewhirl, {
+              name: ct.chg(`skill.skillParams.2`),
+            }),
+          },
+          {
+            text: ct.chg('skill.skillParams.8'),
+            value: `${dm.skill.pressCd}`,
+            unit: 's',
           },
           {
             text: stg('hold.cd'),
@@ -316,12 +321,7 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('burst.skillParams.3'),
             value: 2,
-          },
-          {
-            node: infoMut(dmgFormulas.skill.icewhirl, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
+          }
         ],
       },
       ct.condTem('skill', {
@@ -401,6 +401,11 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            text: stg('duration'),
+            value: 7,
+            unit: 's',
+          },
+          {
             text: ct.chg('burst.skillParams.4'),
             value: `${dm.burst.cd}`,
             unit: 's',
@@ -408,11 +413,6 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('burst.skillParams.5'),
             value: `${dm.burst.enerCost}`,
-          },
-          {
-            text: stg('duration'),
-            value: 7,
-            unit: 's',
           },
         ],
       },

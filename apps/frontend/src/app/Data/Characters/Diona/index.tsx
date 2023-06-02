@@ -103,7 +103,6 @@ const nodeC2skillDmg_ = greaterEq(
   2,
   percent(dm.constellation2.icyPawDmg_)
 )
-
 // Hold shield bonus is a separate multiplier
 const holdSkillShieldStr_ = percent(1.75)
 // C2 Shield bonus modifies everything at the very end, it's not a shield strength bonus
@@ -121,7 +120,14 @@ const nodeSkillShieldHold = prod(
   holdSkillShieldStr_,
   shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill')
 )
-
+const nodeC2ShieldPress = prod(
+  dm.constellation2.coopShield_,
+  nodeSkillShieldPress
+)
+const nodeC2ShieldHold = prod(
+  dm.constellation2.coopShield_,
+  nodeSkillShieldHold
+)
 const dmgFormulas = {
   normal: Object.fromEntries(
     dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
@@ -150,6 +156,12 @@ const dmgFormulas = {
     fieldDmg: dmgNode('atk', dm.burst.fieldDmg, 'burst'),
     healDot: healNodeTalent('hp', dm.burst.healHp_, dm.burst.healBase, 'burst'),
   },
+  constellation2: {
+    pressShield: nodeC2ShieldPress,
+    pressCryoShield: shieldElement(elementKey, nodeC2ShieldPress),
+    holdShield: nodeC2ShieldHold,
+    holdCryoShield: shieldElement(elementKey, nodeC2ShieldHold),
+  }
 }
 
 const nodeA1MoveSpeed = greaterEq(
@@ -330,6 +342,18 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
+      ct.headerTem('constellation2', {
+        fields: [
+          {
+            node: nodeC2skillDmg_
+          },
+          {
+            text: st('dmgAbsorption.increase'),
+            value: dm.constellation2.icyPawShield_*100,
+            unit: '%'
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -396,7 +420,35 @@ const sheet: ICharacterSheet = {
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
-      { fields: [{ node: nodeC2skillDmg_ }] },
+      {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation2.pressShield, {
+              name: ct.ch('pressShield')
+            })
+          },
+          {
+            node: infoMut(dmgFormulas.constellation2.pressCryoShield, {
+              name: ct.ch('pressCryoShield')
+            })
+          },
+          {
+            node: infoMut(dmgFormulas.constellation2.holdShield, {
+              name: ct.ch('holdShield')
+            })
+          },
+          {
+            node: infoMut(dmgFormulas.constellation2.holdCryoShield, {
+              name: ct.ch('holdCryoShield')
+            })
+          },
+          {
+            text: stg('duration'),
+            value: dm.constellation2.coopShieldDuration_,
+            unit: 's'
+          }
+        ]
+    },
     ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

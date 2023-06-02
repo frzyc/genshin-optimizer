@@ -420,13 +420,10 @@ const sheet: ICharacterSheet = {
         // The Wolf Within
         value: condTheWolfWithin,
         path: condTheWolfWithinPath,
-        name: st('afterUse.burst'),
+        name: ct.chg('burst.description.3'),
         states: {
           on: {
             fields: [
-              {
-                text: ct.chg('burst.description.3')
-              },
               {
                 node: atkSPD_,
               },

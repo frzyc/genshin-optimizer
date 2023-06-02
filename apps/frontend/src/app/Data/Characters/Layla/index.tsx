@@ -334,28 +334,6 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: a4_starDmgInc,
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation1.partyShield, {
-              name: stg('dmgAbsorption'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation1.partyCryoShield, {
-              name: st(`dmgAbsorption.${elementKey}`),
-              variant: elementKey,
-            }),
-          },
-        ],
-      }),
       ct.condTem('constellation4', {
         teamBuff: true,
         value: condC4Active,
@@ -378,6 +356,22 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('passive2', {
+        fields: [
+          {
+            node: a4_starDmgInc,
+          },
+        ],
+      }),
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            text: st('dmgAbsorption.increase'),
+            value: dm.constellation1.shield_*100,
+            unit: '%'
+          },
+        ],
       }),
       ct.headerTem('constellation6', {
         fields: [
@@ -428,7 +422,23 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.fieldsTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.partyShield, {
+              name: stg('dmgAbsorption'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.constellation1.partyCryoShield, {
+              name: st(`dmgAbsorption.${elementKey}`),
+              variant: elementKey,
+            }),
+          },
+        ],
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },

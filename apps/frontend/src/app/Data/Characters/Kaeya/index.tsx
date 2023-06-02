@@ -244,7 +244,8 @@ const sheet: ICharacterSheet = {
           },
           {
             canShow: (data) => data.get(input.constellation).value >= 2,
-            text: ct.ch('c2burstDuration'),
+            text: ct.chg('burst.skillParams.2'),
+            value: ct.ch('c2burstDuration'),
           },
           {
 

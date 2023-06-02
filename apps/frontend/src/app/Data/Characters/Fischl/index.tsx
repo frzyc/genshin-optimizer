@@ -236,14 +236,18 @@ const sheet: ICharacterSheet = {
               name: ct.chg(`auto.skillParams.6`),
             }),
           },
+        ],
+      },
+      ct.headerTem('passive1', {
+        canShow: greaterEq(input.asc, 1, 1),
+        fields: [
           {
-            canShow: (data) => data.get(input.asc).value >= 1,
             node: infoMut(dmgFormulas.charged.aimedChargedOz, {
               name: ct.ch('a1Name'),
             }),
           },
         ],
-      },
+      }),
       {
         text: ct.chg('auto.fields.plunging'),
       },
@@ -291,17 +295,29 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('skill.skillParams.3'),
-            value: `${dm.skill.cd}`,
+            value: dm.skill.cd,
             unit: 's',
           },
+        ],
+      },
+      ct.headerTem('passive2', {
+        canShow: greaterEq(input.asc, 4, 1),
+        fields: [
           {
-            canShow: (data) => data.get(input.constellation).value >= 2,
+            node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch('a2Name') }),
+          },
+        ],
+      }),
+      ct.headerTem('constellation2', {
+        canShow: greaterEq(input.constellation, 2, 1),
+        fields: [
+          {
             text: st('aoeInc'),
             value: 50,
             unit: '%',
           },
         ],
-      },
+      }),
       ct.headerTem('constellation6', {
         fields: [
           {
@@ -322,16 +338,6 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            canShow: (data) => data.get(input.constellation).value >= 4,
-            node: infoMut(dmgFormulas.burst.additionalDmg, {
-              name: ct.ch('c4AoeDmg'),
-            }),
-          },
-          {
-            canShow: (data) => data.get(input.constellation).value >= 4,
-            node: infoMut(dmgFormulas.burst.regen, { name: stg(`healing`) }),
-          },
-          {
             text: ct.chg('burst.skillParams.1'),
             value: `${dm.burst.cd}`,
             unit: 's',
@@ -342,18 +348,23 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-    ]),
-
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2', [
-      ct.fieldsTem('passive2', {
+      ct.headerTem('constellation4', {
+        canShow: greaterEq(input.constellation, 4, 1),
         fields: [
           {
-            node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch('a2Name') }),
+            node: infoMut(dmgFormulas.burst.additionalDmg, {
+              name: ct.ch('c4AoeDmg'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.burst.regen, { name: stg(`healing`) }),
           },
         ],
       }),
     ]),
+
+    passive1: ct.talentTem('passive1'),
+    passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1', [
       ct.fieldsTem('constellation1', {

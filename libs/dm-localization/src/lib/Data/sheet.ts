@@ -37,8 +37,8 @@ const data = {
   skillDMG: [2068254014, 'skillParam'],
   //Burst DMG
   burstDMG: [1434446270, 'skillParam'],
-  //DMG Absorption
-  dmgAbsorption: [1998234222, 'skillParam'],
+  //Shield DMG Absorption
+  dmgAbsorption: [3265472006, 'skillParam'],
   //Healing
   healing: [1082735766, 'skillParam'],
   //Continuous Healing

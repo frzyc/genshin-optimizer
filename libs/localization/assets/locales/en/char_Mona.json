@@ -1,6 +1,5 @@
 {
   "omen": "Opponent is affected by Omen",
-  "bubbleDuration": "Illusory Bubble Duration",
   "hitOp": {
     "affectedByOmen": "After hitting an opponent affected by Omen"
   },

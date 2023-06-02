@@ -535,6 +535,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.condTem('constellation4', {
+        teamBuff: true,
         path: condC4CountPath,
         value: condC4Count,
         name: ct.ch('c4CondName'),
