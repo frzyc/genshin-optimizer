@@ -1,4 +1,4 @@
-import { CharacterKey } from '@genshin-optimizer/sr-consts'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import {
   compileTagMapValues,
   constant, read
