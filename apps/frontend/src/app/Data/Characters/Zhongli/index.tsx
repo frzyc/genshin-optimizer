@@ -291,7 +291,7 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.shield, {
-              name: stg(`dmgAbsorption`),
+              name: stg('dmgAbsorption'),
             }),
           },
           {

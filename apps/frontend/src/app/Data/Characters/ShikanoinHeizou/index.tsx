@@ -325,7 +325,7 @@ const sheet: ICharacterSheet = {
                   text: st('aoeInc'),
                 },
                 {
-                  text: stg('duration'),
+                  text: ct.chg('skill.skillParams.3'),
                   value: dm.skill.declension_duration,
                   unit: 's',
                 },
@@ -356,6 +356,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('constellation6', {
+        canShow: unequal(condDeclensionStacks, undefined, 1),
         fields: [
           {
             node: c6_skill_critRate_,

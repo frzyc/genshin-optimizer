@@ -173,7 +173,7 @@ const dmgFormulas = {
   skill: {
     wheelDmg: dmgNode('atk', dm.skill.wheelDmg, 'skill'),
     kickPressDmg: dmgNode('atk', dm.skill.kickPressDmg, 'skill', {
-      premod: { skill_dmg_: sum(c2_kickDmg_, c2_kickPressDmg_) },
+      premod: { skill_dmg_: c2_kickPressDmg_ },
     }),
     kickHoldDmg: dmgNode('atk', dm.skill.kickHoldDmg, 'skill', {
       premod: { skill_dmg_: c2_kickDmg_ },
@@ -448,13 +448,6 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.ch('p2Aoe'),
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: ct.ch('c1Text'),
           },
         ],
       }),

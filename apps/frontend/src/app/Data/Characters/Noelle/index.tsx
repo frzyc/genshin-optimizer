@@ -9,9 +9,10 @@ import {
   percent,
   prod,
   subscript,
-  sum,
   unequal,
+  sum
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -104,27 +105,34 @@ const nodeBurstAtk = equal(
   condBurst,
   prod(
     input.total.def,
-    sum(
-      subscript(input.total.burstIndex, dm.burst.defToAtk, { unit: '%' }),
-      greaterEq(
-        input.constellation,
-        6,
-        percent(dm.constellation6.burstAtkBonus)
-      )
+    subscript(input.total.burstIndex, dm.burst.defToAtk, { unit: '%' })
+  ),
+  KeyMap.info('atk')
+)
+const nodeC6Atk = equal(
+  'on',
+  condBurst,
+  prod(
+    input.total.def,
+    greaterEq(
+      input.constellation,
+      6,
+      percent(dm.constellation6.burstAtkBonus)
     )
-  )
+  ),
+  KeyMap.info('atk')
 )
 
 const nodeSkillHealChanceBase = subscript(
   input.total.skillIndex,
   dm.skill.healChance,
-  { name: ct.ch('skillHeal_'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
 const nodeSkillHealChanceC1BurstOn = equal(
   'on',
   condBurst,
   percent(dm.constellation1.healingChance),
-  { name: ct.ch('skillHeal_'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
 const nodeSkillHealChanceC1BurstOff = unequal(
   'on',
@@ -205,7 +213,7 @@ export const data = dataObjForCharacterSheet(
       skillBoost: nodeC3,
       burstBoost: nodeC5,
       charged_dmg_: nodeC2ChargeDMG,
-      atk: nodeBurstAtk,
+      atk: sum(nodeBurstAtk, nodeC6Atk),
       staminaChargedDec_: nodeC2ChargeDec,
     },
     infusion: {
@@ -394,6 +402,14 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
+      ct.headerTem('constellation6', {
+        canShow: equal(condBurst, 'on', 1),
+        fields: [
+          {
+            node: nodeC6Atk,
+          }
+        ]
+      })
     ]),
 
     passive1: ct.talentTem('passive1', [

@@ -399,7 +399,14 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4'),
+    constellation4: ct.talentTem('constellation4', [{
+      fields: [
+        {
+          text: st('addlCharges'),
+          value: 1,
+        },
+      ],
+    }]),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),

@@ -344,7 +344,7 @@ const sheet: ICharacterSheet = {
               },
               {
                 node: infoMut(dmgFormulas.constellation6.heal, {
-                  name: st('healingPerHit'),
+                  name: stg('hpRegenPerHit'),
                   variant: 'heal',
                 }),
               },

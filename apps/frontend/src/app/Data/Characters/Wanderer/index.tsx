@@ -122,6 +122,14 @@ const skillPyro_atk_ = greaterEq(
     equal(condSkillPyroContact, 'pyro', datamine.passive1.pyro_atk_)
   )
 )
+const [condSkillHydroContactPath, condSkillHydroContact] = cond(
+  key,
+  'skillHydroContact'
+)
+const [condSkillElectroContactPath, condSkillElectroContact] = cond(
+  key,
+  'skillElectroContact'
+)
 const [condSkillCryoContactPath, condSkillCryoContact] = cond(
   key,
   'skillCryoContact'
@@ -287,6 +295,15 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
+      ct.headerTem('constellation6', {
+        canShow: equal(condAfterSkill, 'on', 1),
+        fields: datamine.normal.hitArr.map((_, i) => ({
+          node: infoMut(dmgFormulas.constellation6[i], {
+            name: ct.chg(`auto.skillParams.${i}`),
+            multi: i === 2 ? 2 : undefined,
+          }),
+        })),
+      }),
       {
         text: ct.chg('auto.fields.charged'),
       },
@@ -325,15 +342,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('constellation6', {
-        canShow: equal(condAfterSkill, 'on', 1),
-        fields: datamine.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.constellation6[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 2 ? 2 : undefined,
-          }),
-        })),
-      }),
     ]),
 
     skill: ct.talentTem('skill', [
@@ -382,6 +390,29 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: skillPyro_atk_,
+              },
+            ],
+          },
+          hydro: {
+            path: condSkillHydroContactPath,
+            value: condSkillHydroContact,
+            name: ct.ch('p1.hydroCondName'),
+            fields: [
+              {
+                text: ct.ch('p1.hydroEffect'),
+                value: datamine.passive1.hydro_point,
+              },
+            ],
+          },
+          electro: {
+            path: condSkillElectroContactPath,
+            value: condSkillElectroContact,
+            name: ct.ch('p1.electroCondName'),
+            fields: [
+              {
+                text: st('enerRegenPerHit'),
+                value: datamine.passive1.electro_energy,
+                fixed: 1,
               },
             ],
           },
@@ -458,7 +489,7 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.headerTem('constellation1', {
-        canShow: greaterEq(input.asc, 4, 1),
+        canShow: greaterEq(input.asc, 4, equal(condAfterSkill, 'on', 1)),
         fields: [
           {
             node: c1BonusScaling_,

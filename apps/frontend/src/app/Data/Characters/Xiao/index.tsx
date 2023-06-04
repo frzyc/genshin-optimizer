@@ -301,6 +301,11 @@ const sheet: ICharacterSheet = {
           inBurst: {
             fields: [
               {
+                text: (
+                  <ColorText color="anemo">{st('infusion.anemo')}</ColorText>
+                ),
+              },
+              {
                 node: normal_dmg_,
               },
               {
@@ -310,16 +315,10 @@ const sheet: ICharacterSheet = {
                 node: plunging_dmg_,
               },
               {
-                text: ct.ch('burst.incJump'),
-              },
-              {
                 text: ct.ch('burst.incAtkAoe'),
               },
               {
-                canShow: (data) => data.get(infusion).value === elementKey,
-                text: (
-                  <ColorText color="anemo">{st('infusion.anemo')}</ColorText>
-                ),
+                text: ct.ch('burst.incJump'),
               },
               {
                 node: infoMut(lifeDrain, {
@@ -358,7 +357,14 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [{
+      fields: [
+        {
+          text: st('addlCharges'),
+          value: 1,
+        },
+      ],
+    }]),
     constellation2: ct.talentTem('constellation2', [
       ct.condTem('constellation2', {
         value: condC2OffField,

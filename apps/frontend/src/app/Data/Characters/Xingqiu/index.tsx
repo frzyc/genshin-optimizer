@@ -267,6 +267,7 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: dmgFormulas.skill.dmgRed_,
+
               },
             ],
           },
@@ -278,6 +279,23 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            node: infoMut(dmgFormulas.burst.dmg, {
+              name: ct.chg(`burst.skillParams.0`),
+            }),
+          },
+          {
+            text: ct.chg('burst.skillParams.1'),
+            value: (data) =>
+              data.get(input.constellation).value >= 2
+                ? `${dm.burst.duration}s + ${
+                    dm.constellation2.burst_duration
+                  }s = ${
+                    dm.burst.duration + dm.constellation2.burst_duration
+                  }`
+                : `${dm.burst.duration}`,
+            unit: 's',
+          },
+          {
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.cd,
             unit: 's',
@@ -288,30 +306,13 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('burst', {
+      ct.condTem('constellation4', {
         value: condBurst,
         path: condBurstPath,
         name: ct.ch('burstCond'),
         states: {
           on: {
             fields: [
-              {
-                node: infoMut(dmgFormulas.burst.dmg, {
-                  name: ct.chg(`burst.skillParams.0`),
-                }),
-              },
-              {
-                text: ct.chg('burst.skillParams.1'),
-                value: (data) =>
-                  data.get(input.constellation).value >= 2
-                    ? `${dm.burst.duration}s + ${
-                        dm.constellation2.burst_duration
-                      }s = ${
-                        dm.burst.duration + dm.constellation2.burst_duration
-                      }`
-                    : `${dm.burst.duration}`,
-                unit: 's',
-              },
               {
                 node: nodeC4,
               },
@@ -326,7 +327,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive1.healing, {
-              name: stg(`healing`),
+              name: stg('healing'),
             }),
           },
         ],

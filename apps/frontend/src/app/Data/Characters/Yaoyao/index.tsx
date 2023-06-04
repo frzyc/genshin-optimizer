@@ -383,10 +383,12 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('passive2', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive2.heal, { name: ct.ch('a4Heal') }),
+            node: infoMut(dmgFormulas.passive2.heal, {
+              name: stg('contHealing'),
+            }),
           },
           {
-            text: stg('cd'),
+            text: st('interval'),
             value: dm.passive2.cd,
             unit: 's',
           },

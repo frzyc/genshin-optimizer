@@ -57,7 +57,8 @@ const data = {
   dot: [1521507646, 'skillParam'],
   //Additional Elemental DMG
   addEleDMG: [3006681174, 'skillParam'],
-
+  //HP Regeneration Per Hit
+  hpRegenPerHit: [3642811974, 'skillParam'],
   press: {
     //Press DMG
     dmg: [3774314422, 'skillParam'],
@@ -88,12 +89,12 @@ const data = {
     vaporize: 3111567595,
     melt: 3497793651,
     // Technically this should be 'rupture', but I don't see a 'rupture' string
-    bloom: 3593652061, // or maybe it is 4074539307
+    bloom: 1216168406,
     burgeon: 2021015747,
     hyperbloom: 2697794115,
     quicken: 347446227,
     aggravate: 2961120579,
-    spread: 2191579811, // or maybe it is 982642368
+    spread: 2191579811,
   },
 } as const
 export default data

@@ -61,7 +61,15 @@ const [condA1Path, condA1] = cond(key, 'QiqiA1')
 const [condC2Path, condC2] = cond(key, 'QiqiC2')
 
 // Values here doesn't exist in skillParam_gen
-const nodeA1HealingBonus = equal(condA1, 'on', greaterEq(input.asc, 1, 0.2))
+const nodeA1HealingBonus = greaterEq(
+  input.asc,
+  1,
+  equal(
+    condA1,
+    'on',
+    0.2
+  )
+)
 const nodeC2ChargedDmgInc = equal(
   condC2,
   'on',
@@ -127,8 +135,12 @@ export const data = dataObjForCharacterSheet(
       skillBoost: nodeC5,
       normal_dmg_: nodeC2NormalDmgInc,
       charged_dmg_: nodeC2ChargedDmgInc,
-      incHeal_: nodeA1HealingBonus,
     },
+    teamBuff: {
+      premod: {
+        incHeal_: nodeA1HealingBonus,
+      }
+    }
   }
 )
 
@@ -265,6 +277,7 @@ const sheet: ICharacterSheet = {
 
     passive1: ct.talentTem('passive1', [
       ct.condTem('passive1', {
+        teamBuff: true,
         name: ct.ch('a1C'),
         value: condA1,
         path: condA1Path,
@@ -272,7 +285,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: nodeA1HealingBonus,
+                node: nodeA1HealingBonus
               },
               {
                 text: stg('duration'),

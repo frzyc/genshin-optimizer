@@ -9,7 +9,7 @@ import {
   prod,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -58,6 +58,14 @@ const dm = {
   },
   passive2: {
     eleMas_dmg_: skillParam_gen.passive2[p2++][0],
+  },
+  constellation1: {
+    enerRest: skillParam_gen.constellation1[0]
+  },
+  constellation2: {
+    unknown1: skillParam_gen.constellation2[0], //what is this?
+    aoeInc: skillParam_gen.constellation2[1],
+    unknown2: skillParam_gen.constellation2[2] //what is this?
   },
   constellation4: {
     ele_dmg_: skillParam_gen.constellation4[0],
@@ -229,12 +237,55 @@ const sheet: ICharacterSheet = {
             value: dm.skill.duration,
             unit: 's',
           },
+
           {
             text: ct.chg('skill.skillParams.5'),
             value: dm.skill.cd,
           },
+          {
+            text: st('charges'),
+            value: 3,
+          },
         ],
       },
+      ct.headerTem('constellation2', {
+        fields: [
+          {
+            text: st('aoeInc'),
+            value: dm.constellation2.aoeInc*100,
+            unit: '%'
+          }
+        ]
+      }),
+      ct.condTem('constellation4', {
+        value: condC4,
+        path: condC4Path,
+        teamBuff: true,
+        name: ct.ch('c4'),
+        states: {
+          hit: {
+            fields: [
+              {
+                node: nodeC4,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation4.duration,
+                unit: 's',
+              },
+            ],
+          },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            text: ct.ch('c6'),
+            value: dm.constellation6.defIgn_*100,
+            unit: '%'
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -267,33 +318,21 @@ const sheet: ICharacterSheet = {
       { fields: [{ node: dmgFormulas.passive2.nodeAsc4 }] },
     ]),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      {
+        fields: [
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.constellation1.enerRest
+          }
+        ]
+      }
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.condTem('constellation4', {
-        value: condC4,
-        path: condC4Path,
-        teamBuff: true,
-        name: ct.ch('c4'),
-        states: {
-          hit: {
-            fields: [
-              {
-                node: nodeC4,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation4.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),

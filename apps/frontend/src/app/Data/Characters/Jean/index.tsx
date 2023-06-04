@@ -387,7 +387,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive1.a1Regen, {
-              name: stg(`healing`),
+              name: stg('healing'),
             }),
           },
         ],

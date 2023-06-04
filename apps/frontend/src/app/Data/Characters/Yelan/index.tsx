@@ -319,14 +319,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('addlCharge'),
-            value: dm.constellation1.addlCharge,
-          },
-        ],
-      }),
       ct.condTem('constellation4', {
         path: condC4StacksPath,
         value: condC4Stacks,
@@ -429,7 +421,14 @@ const sheet: ICharacterSheet = {
     ]),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [{
+      fields: [
+        {
+          text: st('addlCharges'),
+          value: 1,
+        },
+      ],
+    }]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: burstC3 }] },

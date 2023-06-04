@@ -359,7 +359,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: stg('duration'),
+            text: ct.chg('skill.skillParams.5'),
             value: dm.skill.duration,
             unit: 's',
           },

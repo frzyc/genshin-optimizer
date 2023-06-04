@@ -357,7 +357,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.burst.regen, { name: stg(`healing`) }),
+            node: infoMut(dmgFormulas.burst.regen, { name: stg('healing') }),
           },
         ],
       }),

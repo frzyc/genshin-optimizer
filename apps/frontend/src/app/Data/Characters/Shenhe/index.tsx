@@ -382,22 +382,14 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('addlCharges'),
-            value: 1,
-          },
-        ],
-      }),
       ct.condTem('constellation4', {
         value: condC4,
         path: condC4Path,
         name: ct.ch('c4'),
         states: objectKeyMap(
-          range(1, 50).map((i) => i.toString()),
+          range(1, 50).map((i) => i),
           (i) => ({
-            name: i.toString(),
+            name: st('stack', { count: i }),
             fields: [{ node: c4Inc }],
           })
         ),
@@ -497,7 +489,14 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [{
+      fields: [
+        {
+          text: st('addlCharges'),
+          value: 1,
+        },
+      ],
+    }]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

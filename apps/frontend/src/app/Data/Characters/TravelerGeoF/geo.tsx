@@ -188,7 +188,7 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: stg(`skillDMG`),
+              name: ct.chg('burst.skillParams.0'),
               multi: dm.burst.numShockwaves,
             }),
           },

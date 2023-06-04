@@ -388,7 +388,7 @@ const sheet: ICharacterSheet = {
               fields: [
                 {
                   node: infoMut(dmgFormulas.passive1.absorb, {
-                    name: stg(`addEleDMG`),
+                    name: stg('addEleDMG'),
                   }),
                 },
               ],
