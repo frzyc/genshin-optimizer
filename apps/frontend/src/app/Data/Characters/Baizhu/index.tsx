@@ -31,7 +31,7 @@ const elementKey: ElementKey = 'dendro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = -1,
   s = 0,
@@ -206,7 +206,10 @@ const dmgFormulas = {
           subscript(input.total.skillIndex, dm.skill.healHp, { unit: '%' }),
           percent(dm.constellation2.heal)
         ),
-        subscript(input.total.skillIndex, dm.skill.healBase)
+        prod(
+          subscript(input.total.skillIndex, dm.skill.healBase),
+          percent(dm.constellation2.heal)
+        )
       )
     ),
   },
@@ -224,7 +227,7 @@ const skillC5 = greaterEq(input.constellation, 5, 3)
 const data = dataObjForCharacterSheet(
   key,
   elementKey,
-  'sumeru',
+  'liyue',
   data_gen,
   dmgFormulas,
   {
@@ -246,10 +249,10 @@ const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
-  rarity: data_gen.star,
+  name: ct.name,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),

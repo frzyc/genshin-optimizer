@@ -14,9 +14,9 @@ import type {
   StrNode,
 } from './type'
 
-type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag'>>
-type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag'>>
-type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag'>>
+type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
+type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
+type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 
 export function detach(
   n: NumNode[],
@@ -117,6 +117,8 @@ export function detach(
         if (index.op === 'const') return constant(n.ex[index.ex]!)
         return { ...n, br: [index] }
       }
+      case 'vtag':
+        return constant(cache.tag[n.ex] ?? '')
       case 'tag':
         return map(n.x[0]!, cache.with(n.tag))
       case 'dtag': {

@@ -25,7 +25,7 @@ const key: CharacterKey = 'Yelan'
 const elementKey: ElementKey = 'hydro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -166,14 +166,18 @@ const dmgFormulas = {
     ),
   },
   constellation6: {
-    barbDmg: customDmgNode(
-      prod(
-        subscript(input.total.autoIndex, dm.charged.barb, { unit: '%' }),
-        percent(dm.constellation6.dmg_),
-        input.total.hp
-      ),
-      'charged',
-      hitEle
+    barbDmg: greaterEq(
+      input.constellation,
+      6,
+      customDmgNode(
+        prod(
+          subscript(input.total.autoIndex, dm.charged.barb, { unit: '%' }),
+          percent(dm.constellation6.dmg_),
+          input.total.hp
+        ),
+        'charged',
+        hitEle
+      )
     ),
   },
 }
@@ -204,9 +208,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
