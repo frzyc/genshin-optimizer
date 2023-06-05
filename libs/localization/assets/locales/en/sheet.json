@@ -41,7 +41,7 @@
     "pyro": "After dealing <pyro>Pyro DMG</pyro>",
     "electro": "After dealing <electro>Electro DMG</electro>",
     "dendro": "After dealing <dendro>Dendro DMG</dendro>",
-    "crit": "After dealing CRIT DMG",
+    "crit": "After dealing a CRIT Hit",
     "weakSpot": "After hitting an enemy Weak Spot with a Charged Shot",
     "self": "After being hit by an opponent"
   },

@@ -101,7 +101,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -159,7 +159,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -246,7 +246,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -322,7 +322,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.4
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -398,7 +398,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />

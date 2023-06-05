@@ -17,7 +17,7 @@
       },
       "devDiscord": {
         "title": "Genshin Dev Discord",
-        "tooltip": "Community of developers for Genshin"
+        "tooltip": "Community of Genshin tools developers"
       },
       "good": {
         "title": "GOOD Documentation",
@@ -25,7 +25,7 @@
       },
       "patchNotes": {
         "title": "Genshin Optimizer Patch Notes",
-        "tooltip": "All patch notes for GO"
+        "tooltip": "All of GO's patch notes"
       }
     }
   },
