@@ -4,7 +4,7 @@ import {
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from './util'
 
-import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
+import { allCharacterKeys, allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import { data as charData } from './char'
 const stats = [
   'hp',
@@ -27,7 +27,10 @@ const data: TaggedFormulas = [...charData]
 // TODO: hoist this type from wr2 lib
 type Tags = Parameters<typeof compileTagMapKeys>[0]
 const tags: Tags = [
-  { category: 'src', values: [...allCharacterKeys] },
+  // src are where the "buffs" come from
+  { category: 'src', values: [...allCharacterKeys, ...allLightConeKeys] },
+  // dest are where the buffs apply to. currently, it only applies to specific characters.
+  { category: 'dest', values: allCharacterKeys },
   { category: 'qt', values: ['base'] },
   { category: 'q', values: [...stats, 'lvl', 'ascension'] },
 ]

@@ -38,6 +38,6 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
   ]
 }
 
-const data: TaggedFormulas = [...allCharacterKeys.flatMap(handleCharacterGen)]
+const data: TaggedFormulas = allCharacterKeys.flatMap(handleCharacterGen)
 
 export { data }
