@@ -84,3 +84,22 @@ describe('lightcone test', () => {
     ).toBeCloseTo(hp)
   })
 })
+
+describe('char+lightcone test', () => {
+  it('calculate base stats', () => {
+    const charKey: CharacterKey = 'March7th'
+    const lcKey: LightConeKey = 'Amber'
+
+    const data: TaggedFormulas = [
+      ...handleLightConeGen(lcKey, charKey),
+      { tag: { src: charKey, q: 'lvl' }, value: constant(1) },
+      { tag: { src: charKey, q: 'ascension' }, value: constant(0) },
+      { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },
+      { tag: { src: lcKey, q: 'ascension' }, value: constant(0) },
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(
+      calc.compute(read({ dest: charKey, qt: 'base', q: 'atk' }, 'sum')).val
+    ).toBeCloseTo(100) // TODO: find a value that makes sense
+  })
+})
