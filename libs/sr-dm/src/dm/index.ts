@@ -1,3 +1,5 @@
 export * from './character/AvatarConfig'
 export * from './character/AvatarPropertyConfig'
 export * from './character/AvatarPromotionConfig'
+// export * from './lightcone/ItemConfigEquipment'
+export * from './lightcone/EquipmentConfig'

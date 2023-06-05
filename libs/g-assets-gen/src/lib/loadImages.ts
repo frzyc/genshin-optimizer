@@ -17,13 +17,14 @@ import {
   weaponExcelConfigData,
   weaponIdMap,
 } from '@genshin-optimizer/dm'
-import { dumpFile } from '@genshin-optimizer/pipeline'
+import { dumpFile, generateIndexFromObj } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import * as fs from 'fs'
 import * as path from 'path'
 
-export const PROJ_PATH =
-  `${__dirname}/../../../../../libs/g-assets/src` as const
+const WORKSPACE_ROOT_PATH = process.env['NX_WORKSPACE_ROOT']
+export const DEST_PROJ_PATH =
+  `${WORKSPACE_ROOT_PATH}/libs/g-assets/src` as const
 
 type CharacterIcon = {
   icon: string
@@ -214,7 +215,7 @@ export default function loadImages() {
     (icon, keys) => {
       copyFile(
         `${DM2D_PATH}/${icon}.png`,
-        `${PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
+        `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
       )
     }
   )
@@ -223,33 +224,5 @@ export default function loadImages() {
   AssetData.chars['Somnia'] = {} as CharacterIcon
   AssetData.weapons['QuantumCatalyst'] = {}
 
-  function crawlGen(obj, path) {
-    const keys = Object.keys(obj)
-    if (!keys.length) return
-    const isImg = typeof Object.values(obj)[0] === 'string'
-    // generate a index.ts using keys
-    const imports = Object.entries(obj)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
-      .join('\n')
-    const dataContent = keys
-      .sort()
-      .map((k) => `  ${k},`)
-      .join('\n')
-
-    const indexContent = `// This is a generated index file.
-${imports}
-
-const data = {
-${dataContent}
-} as const
-export default data
-`
-    fs.writeFileSync(`${path}/index.ts`, indexContent)
-
-    Object.entries(obj).forEach(([key, val]) => {
-      if (typeof val === 'object') crawlGen(val, `${path}/${key}`)
-    })
-  }
-  crawlGen(AssetData, `${PROJ_PATH}/gen`)
+  generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
 }

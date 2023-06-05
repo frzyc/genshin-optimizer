@@ -10,7 +10,6 @@ export default function Character() {
   const [charKey, setcharKey] = useState<CharacterKey>("March7th")
   const [level, setlevel] = useState(1)
   const [ascension, setAsc] = useState(0)
-  // const
 
   const calc = useMemo(() =>
     srCalculatorWithEntries([

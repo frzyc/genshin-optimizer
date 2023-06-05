@@ -5,7 +5,7 @@ import { characterIdMap } from '../../mapping'
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { DamageTypeKey, PathKey } from '@genshin-optimizer/sr-consts'
-import { HashId } from '../common'
+import type { HashId } from '../common'
 import { objFilterKeys } from '@genshin-optimizer/util'
 
 export type AvatarConfig = {

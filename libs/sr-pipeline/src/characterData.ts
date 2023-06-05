@@ -8,8 +8,9 @@ import {
   avatarBaseTypeMap,
   avatarConfig,
   avatarPromotionConfig,
+  avatarRarityMap,
   characterIdMap,
-  rarityMap,
+  lightConeRarityMap,
 } from '@genshin-optimizer/sr-dm'
 
 type Promotion = {
@@ -38,7 +39,7 @@ export default function characterData() {
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
         const result: CharacterDataGen = {
-          rarity: rarityMap[Rarity] as RarityKey,
+          rarity: avatarRarityMap[Rarity] as RarityKey,
           damageType: DamageType,
           path: avatarBaseTypeMap[AvatarBaseType],
           ascension: avatarPromotionConfig[avatarid].map(

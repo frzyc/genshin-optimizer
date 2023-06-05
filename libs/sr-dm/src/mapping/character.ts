@@ -46,7 +46,7 @@ export const avatarBaseTypeMap: Record<string, PathKey> = {
 
 export type AvatarBaseTypeKey = keyof typeof avatarBaseTypeMap
 
-export const rarityMap: Record<AvatarRarity, RarityKey> = {
+export const avatarRarityMap: Record<AvatarRarity, RarityKey> = {
   CombatPowerAvatarRarityType4: 4,
   CombatPowerAvatarRarityType5: 5,
 }
