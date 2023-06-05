@@ -20,7 +20,7 @@ export type { CharacterDataGen }
 
 const allStat = {
   char: characterDataDump,
-  lightcone:lightConeDataDump
+  lightcone: lightConeDataDump,
 } as const
 
 export type AllStats = typeof allStat

@@ -4,7 +4,10 @@ import {
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from './util'
 
-import { allCharacterKeys, allLightConeKeys } from '@genshin-optimizer/sr-consts'
+import {
+  allCharacterKeys,
+  allLightConeKeys,
+} from '@genshin-optimizer/sr-consts'
 import { data as charData } from './char'
 const stats = [
   'hp',

@@ -19,21 +19,32 @@ describe('character test', () => {
     const charKey: CharacterKey = 'March7th'
     const data: TaggedFormulas = [
       { tag: { src: charKey, dest: charKey, q: 'lvl' }, value: constant(lvl) },
-      { tag: { src: charKey, dest: charKey, q: 'ascension' }, value: constant(ascension) },
+      {
+        tag: { src: charKey, dest: charKey, q: 'ascension' },
+        value: constant(ascension),
+      },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
     expect(
-      calc.compute(read({ src: charKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)).val
+      calc.compute(
+        read({ src: charKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)
+      ).val
     ).toBeCloseTo(atk)
     expect(
-      calc.compute(read({ src: charKey, dest: charKey, qt: 'base', q: 'def' }, undefined)).val
+      calc.compute(
+        read({ src: charKey, dest: charKey, qt: 'base', q: 'def' }, undefined)
+      ).val
     ).toBeCloseTo(def)
     expect(
-      calc.compute(read({ src: charKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)).val
+      calc.compute(
+        read({ src: charKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)
+      ).val
     ).toBeCloseTo(hp)
     expect(
-      calc.compute(read({ src: charKey, dest: charKey, qt: 'base', q: 'spd' }, undefined)).val
+      calc.compute(
+        read({ src: charKey, dest: charKey, qt: 'base', q: 'spd' }, undefined)
+      ).val
     ).toBeCloseTo(spd)
   })
 })
@@ -49,18 +60,27 @@ describe('lightcone test', () => {
     const data: TaggedFormulas = [
       ...handleLightConeGen(lcKey, charKey),
       { tag: { src: lcKey, dest: charKey, q: 'lvl' }, value: constant(lvl) },
-      { tag: { src: lcKey, dest: charKey, q: 'ascension' }, value: constant(ascension) },
+      {
+        tag: { src: lcKey, dest: charKey, q: 'ascension' },
+        value: constant(ascension),
+      },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
     expect(
-      calc.compute(read({ src: lcKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)).val
+      calc.compute(
+        read({ src: lcKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)
+      ).val
     ).toBeCloseTo(atk)
     expect(
-      calc.compute(read({ src: lcKey, dest: charKey, qt: 'base', q: 'def' }, undefined)).val
+      calc.compute(
+        read({ src: lcKey, dest: charKey, qt: 'base', q: 'def' }, undefined)
+      ).val
     ).toBeCloseTo(def)
     expect(
-      calc.compute(read({ src: lcKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)).val
+      calc.compute(
+        read({ src: lcKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)
+      ).val
     ).toBeCloseTo(hp)
   })
 })

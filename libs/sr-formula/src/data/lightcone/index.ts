@@ -5,12 +5,15 @@ import {
   prod,
   read,
   subscript,
-  sum
+  sum,
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
 // Attach the base stats from the generated datamine
-export function handleLightConeGen(lck: LightConeKey, dest: CharacterKey): TaggedFormulas {
+export function handleLightConeGen(
+  lck: LightConeKey,
+  dest: CharacterKey
+): TaggedFormulas {
   const lcDataGen = allStats.lightcone[lck]
   const readAsc = read({ src: lck, q: 'ascension' }, undefined)
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
