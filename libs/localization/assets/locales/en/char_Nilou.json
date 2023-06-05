@@ -10,7 +10,7 @@
   "passive1": {
     "underChaliceEffect": "Under Golden Chalice's Bounty",
     "notDendroHydroTeam": "Hint: Set your team with only Dendro and Hydro characters to see additional conditionals and effects",
-    "condName": "After being hit by a <dendro>Dendro attack</dendro> while affected by Golden Chalice's Bounty",
+    "condName": "After taking <dendro>Dendro DMG</dendro> while affected by Golden Chalice's Bounty",
     "bountifulCores": "Bloom reaction will create Bountiful Cores"
   },
   "c1": {

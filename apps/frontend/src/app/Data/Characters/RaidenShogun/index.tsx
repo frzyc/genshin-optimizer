@@ -110,7 +110,11 @@ function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
   return dmgNode('atk', atkType, 'skill', {
     enemy: {
-      defIgn: greaterEq(input.constellation, 2, equal(condInBurst, 'on', dm.constellation2.def_ignore)),
+      defIgn: greaterEq(
+        input.constellation,
+        2,
+        equal(condInBurst, 'on', dm.constellation2.def_ignore)
+      ),
     },
   })
 }
@@ -530,18 +534,18 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 text: st('infusion.electro'),
-                variant: 'electro'
+                variant: 'electro',
               },
               {
-                text: st('incInterRes')
+                text: st('incInterRes'),
               },
               {
-                text: st('immuneToElectroCharged')
-              }
-            ]
-          }
-        }
-      })
+                text: st('immuneToElectroCharged'),
+              },
+            ],
+          },
+        },
+      }),
     ]),
 
     passive1: ct.talentTem('passive1'),

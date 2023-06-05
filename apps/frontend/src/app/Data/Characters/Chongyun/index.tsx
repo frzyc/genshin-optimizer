@@ -308,8 +308,8 @@ const sheet: ICharacterSheet = {
           {
             node: infoMut(nodeAsc1Disp, KeyMap.info('atkSPD_')),
           },
-        ]
-      })
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [

@@ -355,8 +355,8 @@ export default function anemo(
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's'
-              }
+                unit: 's',
+              },
             ],
           },
         },
@@ -382,8 +382,8 @@ export default function anemo(
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's'
-                }
+                  unit: 's',
+                },
               ],
             },
           ])

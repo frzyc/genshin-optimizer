@@ -61,15 +61,7 @@ const [condA1Path, condA1] = cond(key, 'QiqiA1')
 const [condC2Path, condC2] = cond(key, 'QiqiC2')
 
 // Values here doesn't exist in skillParam_gen
-const nodeA1HealingBonus = greaterEq(
-  input.asc,
-  1,
-  equal(
-    condA1,
-    'on',
-    0.2
-  )
-)
+const nodeA1HealingBonus = greaterEq(input.asc, 1, equal(condA1, 'on', 0.2))
 const nodeC2ChargedDmgInc = equal(
   condC2,
   'on',
@@ -139,8 +131,8 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         incHeal_: nodeA1HealingBonus,
-      }
-    }
+      },
+    },
   }
 )
 
@@ -285,7 +277,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: nodeA1HealingBonus
+                node: nodeA1HealingBonus,
               },
               {
                 text: stg('duration'),

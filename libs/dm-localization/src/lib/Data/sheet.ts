@@ -50,7 +50,7 @@ const data = {
   //Energy Cost
   energyCost: [3073197810, 'skillParam'],
   //Energy Regeneration
-  energyRegen: [2165261751,'skillParam'],
+  energyRegen: [2165261751, 'skillParam'],
   //Base DMG
   baseDMG: [430832806, 'skillParam'],
   //DoT

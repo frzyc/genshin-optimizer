@@ -380,23 +380,23 @@ const sheet: ICharacterSheet = {
         value: condBurst,
         path: condBurstPath,
         name: ct.ch('duringBurst'),
-        states:{
+        states: {
           on: {
             fields: [
               {
-                node: nodeBurstDmgRed_
-              }
-            ]
-          }
-        }
+                node: nodeBurstDmgRed_,
+              },
+            ],
+          },
+        },
       }),
       ct.headerTem('constellation6', {
         canShow: equal(condBurst, 'on', 1),
         fields: [
           {
             node: nodeBurstElectroResRed_,
-          }
-        ]
+          },
+        ],
       }),
     ]),
 

@@ -408,7 +408,7 @@ const sheet: ICharacterSheet = {
                 text: stg('duration'),
                 value: dm.constellation1.duration,
                 unit: 's',
-              }
+              },
             ],
           },
         },

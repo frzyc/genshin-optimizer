@@ -315,7 +315,7 @@ const sheet: ICharacterSheet = {
                 node: plunging_dmg_,
               },
               {
-                text: ct.ch('burst.incAtkAoe'),
+                text: st('attackAoeInc'),
               },
               {
                 text: ct.ch('burst.incJump'),
@@ -357,14 +357,16 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1', [{
-      fields: [
-        {
-          text: st('addlCharges'),
-          value: 1,
-        },
-      ],
-    }]),
+    constellation1: ct.talentTem('constellation1', [
+      {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      },
+    ]),
     constellation2: ct.talentTem('constellation2', [
       ct.condTem('constellation2', {
         value: condC2OffField,
@@ -374,12 +376,12 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: c2_enerRech_
-              }
-            ]
-          }
-        }
-      })
+                node: c2_enerRech_,
+              },
+            ],
+          },
+        },
+      }),
     ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

@@ -45,11 +45,11 @@ const sheet: IWeaponSheet = {
       name: trm('condName'),
       states: {
         oneOrNone: {
-          name: trm('opponents.oneOrNone'),
+          name: '≤1',
           fields: [{ node: atk_ }, { node: def_ }],
         },
         moreThanOne: {
-          name: trm('opponents.moreThanOne'),
+          name: '≥2',
           fields: [{ node: atk_ }, { node: def_ }],
         },
       },

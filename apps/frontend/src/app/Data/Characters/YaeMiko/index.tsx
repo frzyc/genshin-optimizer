@@ -60,12 +60,12 @@ const dm = {
     eleMas_dmg_: skillParam_gen.passive2[p2++][0],
   },
   constellation1: {
-    enerRest: skillParam_gen.constellation1[0]
+    enerRest: skillParam_gen.constellation1[0],
   },
   constellation2: {
     unknown1: skillParam_gen.constellation2[0], //what is this?
     aoeInc: skillParam_gen.constellation2[1],
-    unknown2: skillParam_gen.constellation2[2] //what is this?
+    unknown2: skillParam_gen.constellation2[2], //what is this?
   },
   constellation4: {
     ele_dmg_: skillParam_gen.constellation4[0],
@@ -252,10 +252,10 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             text: st('aoeInc'),
-            value: dm.constellation2.aoeInc*100,
-            unit: '%'
-          }
-        ]
+            value: dm.constellation2.aoeInc * 100,
+            unit: '%',
+          },
+        ],
       }),
       ct.condTem('constellation4', {
         value: condC4,
@@ -281,11 +281,11 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             text: ct.ch('c6'),
-            value: dm.constellation6.defIgn_*100,
-            unit: '%'
-          }
-        ]
-      })
+            value: dm.constellation6.defIgn_ * 100,
+            unit: '%',
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -323,10 +323,10 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             text: st('enerRegenPerHit'),
-            value: dm.constellation1.enerRest
-          }
-        ]
-      }
+            value: dm.constellation1.enerRest,
+          },
+        ],
+      },
     ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [

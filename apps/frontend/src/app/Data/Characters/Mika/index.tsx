@@ -350,7 +350,7 @@ const sheet: ICharacterSheet = {
               data.get(input.activeCharKey).value ===
                 data.get(target.charKey).value
                 ? `${dm.burst.plumeInterval}s - ${
-                    100*data.get(skillInSoulwind_atkSPD_disp).value
+                    100 * data.get(skillInSoulwind_atkSPD_disp).value
                   }% = ${(
                     dm.burst.plumeInterval *
                     (1 - data.get(skillInSoulwind_atkSPD_disp).value)

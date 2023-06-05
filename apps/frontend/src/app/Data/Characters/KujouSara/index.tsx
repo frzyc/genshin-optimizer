@@ -68,13 +68,20 @@ const dm = {
   },
 } as const
 
-const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(key, 'TenguJuuraiAmbush')
+const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(
+  key,
+  'TenguJuuraiAmbush'
+)
 const atkIncRatio = subscript(
   input.total.skillIndex,
   dm.skill.atkBonus.map((x) => x),
   { unit: '%' }
 )
-const skillTenguAmbush_ = equal(condSkillTenguAmbush, 'on', prod(input.base.atk, atkIncRatio))
+const skillTenguAmbush_ = equal(
+  condSkillTenguAmbush,
+  'on',
+  prod(input.base.atk, atkIncRatio)
+)
 
 const c6ElectroCritDmg_ = greaterEq(
   input.constellation,
@@ -225,7 +232,7 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('skill.skillParams.3'),
             value: dm.skill.cd,
-            unit: 's'
+            unit: 's',
           },
         ],
       },
@@ -253,9 +260,9 @@ const sheet: ICharacterSheet = {
         canShow: equal(condSkillTenguAmbush, 'on', 1),
         fields: [
           {
-            node: dmgFormulas.passive2.energyRegen
-          }
-        ]
+            node: dmgFormulas.passive2.energyRegen,
+          },
+        ],
       }),
       ct.headerTem('constellation6', {
         teamBuff: true,

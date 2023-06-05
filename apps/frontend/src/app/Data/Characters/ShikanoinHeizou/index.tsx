@@ -306,7 +306,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('skill', {
         path: condDeclensionStacksPath,
         value: condDeclensionStacks,
-        name: ct.ch('declensionStacks'),
+        name: ct.chg('skill.description.6'),
         states: Object.fromEntries(
           stacksArr.map((stacks) => [
             stacks,

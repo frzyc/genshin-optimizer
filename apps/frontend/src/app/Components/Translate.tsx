@@ -21,7 +21,7 @@ const textComponents = {
   shattered: <ColorText color="shattered" />,
   bloom: <ColorText color="bloom" />,
   burgeon: <ColorText color="burgeon" />,
-  hyperbloom: <ColorText color="hyperbloom" />
+  hyperbloom: <ColorText color="hyperbloom" />,
 }
 const badgeComponents = {
   anemo: <SqBadge color="anemo" />,
@@ -31,6 +31,17 @@ const badgeComponents = {
   pyro: <SqBadge color="pyro" />,
   electro: <SqBadge color="electro" />,
   dendro: <SqBadge color="dendro" />,
+  heal: <SqBadge color="heal" />,
+  vaporize: <SqBadge color="vaporize" />,
+  spread: <SqBadge color="spread" />,
+  aggravate: <SqBadge color="aggravate" />,
+  overloaded: <SqBadge color="overloaded" />,
+  superconduct: <SqBadge color="superconduct" />,
+  electrocharged: <SqBadge color="electrocharged" />,
+  shattered: <SqBadge color="shattered" />,
+  bloom: <SqBadge color="bloom" />,
+  burgeon: <SqBadge color="burgeon" />,
+  hyperbloom: <SqBadge color="hyperbloom" />,
 }
 
 /**

@@ -122,14 +122,6 @@ const skillPyro_atk_ = greaterEq(
     equal(condSkillPyroContact, 'pyro', datamine.passive1.pyro_atk_)
   )
 )
-const [condSkillHydroContactPath, condSkillHydroContact] = cond(
-  key,
-  'skillHydroContact'
-)
-const [condSkillElectroContactPath, condSkillElectroContact] = cond(
-  key,
-  'skillElectroContact'
-)
 const [condSkillCryoContactPath, condSkillCryoContact] = cond(
   key,
   'skillCryoContact'
@@ -390,29 +382,6 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: skillPyro_atk_,
-              },
-            ],
-          },
-          hydro: {
-            path: condSkillHydroContactPath,
-            value: condSkillHydroContact,
-            name: ct.ch('p1.hydroCondName'),
-            fields: [
-              {
-                text: ct.ch('p1.hydroEffect'),
-                value: datamine.passive1.hydro_point,
-              },
-            ],
-          },
-          electro: {
-            path: condSkillElectroContactPath,
-            value: condSkillElectroContact,
-            name: ct.ch('p1.electroCondName'),
-            fields: [
-              {
-                text: st('enerRegenPerHit'),
-                value: datamine.passive1.electro_energy,
-                fixed: 1,
               },
             ],
           },

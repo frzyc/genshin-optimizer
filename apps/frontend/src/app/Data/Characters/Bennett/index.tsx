@@ -302,13 +302,13 @@ const sheet: ICharacterSheet = {
             // Lvl 1
             node: infoMut(dmgFormulas.skill.hold1_1, {
               name: ct.chg(`skill.skillParams.1`),
-              textSuffix: '(1)'
+              textSuffix: '(1)',
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold1_2, {
               name: ct.chg(`skill.skillParams.1`),
-              textSuffix: '(2)'
+              textSuffix: '(2)',
             }),
           },
           {
@@ -320,13 +320,13 @@ const sheet: ICharacterSheet = {
             // Lvl 2
             node: infoMut(dmgFormulas.skill.hold2_1, {
               name: ct.chg(`skill.skillParams.2`),
-              textSuffix: '(1)'
+              textSuffix: '(1)',
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold2_2, {
               name: ct.chg(`skill.skillParams.2`),
-              textSuffix: '(2)'
+              textSuffix: '(2)',
             }),
           },
           {

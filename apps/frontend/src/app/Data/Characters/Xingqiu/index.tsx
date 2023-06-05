@@ -267,7 +267,6 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: dmgFormulas.skill.dmgRed_,
-
               },
             ],
           },
@@ -289,9 +288,7 @@ const sheet: ICharacterSheet = {
               data.get(input.constellation).value >= 2
                 ? `${dm.burst.duration}s + ${
                     dm.constellation2.burst_duration
-                  }s = ${
-                    dm.burst.duration + dm.constellation2.burst_duration
-                  }`
+                  }s = ${dm.burst.duration + dm.constellation2.burst_duration}`
                 : `${dm.burst.duration}`,
             unit: 's',
           },

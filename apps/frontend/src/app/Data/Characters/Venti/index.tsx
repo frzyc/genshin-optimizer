@@ -277,7 +277,7 @@ const sheet: ICharacterSheet = {
               name: ct.ch('addFullAimed'),
             }),
           },
-        ]
+        ],
       }),
       {
         text: ct.chg('auto.fields.plunging'),

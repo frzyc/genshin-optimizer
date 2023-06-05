@@ -323,25 +323,17 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            canShow: (data) => data.get(input.constellation).value >= 1,
-            text: st('charges'),
-            value: 2,
-          },
-          {
             text: stg('cd'),
             value: dm.skill.cd,
             unit: 's',
           },
-        ],
-      },
-      ct.headerTem('constellation1', {
-        fields: [
           {
-            text: st('addlCharges'),
-            value: 1,
+            canShow: (data) => data.get(input.constellation).value >= 1,
+            text: st('charges'),
+            value: 2,
           },
         ],
-      }),
+      },
     ]),
 
     burst: ct.talentTem('burst', [
@@ -475,7 +467,16 @@ const sheet: ICharacterSheet = {
         ],
       },
     ]),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      },
+    ]),
     constellation2: ct.talentTem('constellation2', [
       {
         fields: [

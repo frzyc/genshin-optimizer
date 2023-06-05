@@ -10,7 +10,7 @@ import {
   prod,
   subscript,
   unequal,
-  sum
+  sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
@@ -114,11 +114,7 @@ const nodeC6Atk = equal(
   condBurst,
   prod(
     input.total.def,
-    greaterEq(
-      input.constellation,
-      6,
-      percent(dm.constellation6.burstAtkBonus)
-    )
+    greaterEq(input.constellation, 6, percent(dm.constellation6.burstAtkBonus))
   ),
   KeyMap.info('atk')
 )
@@ -393,7 +389,7 @@ const sheet: ICharacterSheet = {
                 variant: 'geo',
               },
               {
-                text: ct.ch('qlarger'),
+                text: st('attackAoeInc'),
               },
               {
                 node: nodeBurstAtk,
@@ -407,9 +403,9 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: nodeC6Atk,
-          }
-        ]
-      })
+          },
+        ],
+      }),
     ]),
 
     passive1: ct.talentTem('passive1', [

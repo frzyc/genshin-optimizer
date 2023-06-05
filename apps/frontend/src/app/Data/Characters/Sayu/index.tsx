@@ -442,7 +442,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.extraHeal, {
-              name: ct.ch('p2Heal'),
+              name: stg('aoeInc'),
               variant: 'heal',
             }),
           },

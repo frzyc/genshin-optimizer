@@ -332,12 +332,12 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: c1_enerRech_
-              }
-            ]
-          }
-        }
-      })
+                node: c1_enerRech_,
+              },
+            ],
+          },
+        },
+      }),
     ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [

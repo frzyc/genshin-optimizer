@@ -148,9 +148,9 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            text: ct.ch('aoeGems')
-          }
-        ]
+            text: ct.ch('aoeGems'),
+          },
+        ],
       }),
       {
         text: ct.chg('auto.fields.charged'),
@@ -176,9 +176,9 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive1', {
         fields: [
           {
-            text: ct.ch('starJadeStaminaCost')
-          }
-        ]
+            text: ct.ch('starJadeStaminaCost'),
+          },
+        ],
       }),
       {
         text: ct.chg(`auto.fields.plunging`),
@@ -229,7 +229,7 @@ const sheet: ICharacterSheet = {
           {
             text: ct.ch('skillReset'),
           },
-        ]
+        ],
       }),
       ct.condTem('passive2', {
         teamBuff: true,
@@ -289,8 +289,8 @@ const sheet: ICharacterSheet = {
             text: ct.ch('c6bonus'),
             value: 7,
           },
-        ]
-      })
+        ],
+      }),
     ]),
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),

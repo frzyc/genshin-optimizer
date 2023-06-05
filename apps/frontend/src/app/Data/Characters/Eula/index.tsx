@@ -321,13 +321,13 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('burst.skillParams.3'),
             value: 2,
-          }
+          },
         ],
       },
       ct.condTem('skill', {
         value: condGrimheartStacks,
         path: condGrimheartStacksPath,
-        name: ct.ch('skillC.name'),
+        name: ct.chg('skill.description.6'),
         states: {
           stack1: {
             name: st('stack', { count: 1 }),
@@ -438,7 +438,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation4', {
         value: condC4,
         path: condC4Path,
-        name: ct.ch('c4C.name'),
+        name: st('enemyLessPercentHP', { percent: 50 }),
         states: {
           on: {
             fields: [

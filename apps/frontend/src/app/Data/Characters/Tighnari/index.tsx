@@ -281,8 +281,8 @@ const sheet: ICharacterSheet = {
               {
                 text: stg('duration'),
                 value: dm.passive1.duration,
-                unit: 's'
-              }
+                unit: 's',
+              },
             ],
           },
         },

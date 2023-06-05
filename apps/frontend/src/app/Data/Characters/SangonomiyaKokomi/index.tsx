@@ -368,15 +368,15 @@ const sheet: ICharacterSheet = {
         canShow: equal(condBurst, 'on', 1),
         fields: [
           {
-            node: c4AtkSpd_
+            node: c4AtkSpd_,
           },
           {
             text: st('enerRegenPerHit'),
             value: dm.c4.energy,
-            fixed: 1
-          }
+            fixed: 1,
+          },
         ],
-      })
+      }),
     ]),
 
     passive: ct.talentTem('passive', [

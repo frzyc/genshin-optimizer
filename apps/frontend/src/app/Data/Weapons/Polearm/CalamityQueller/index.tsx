@@ -1,5 +1,11 @@
 import { input } from '../../../../Formula'
-import { unequal, constant, lookup, prod, subscript } from '../../../../Formula/utils'
+import {
+  unequal,
+  constant,
+  lookup,
+  prod,
+  subscript,
+} from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'

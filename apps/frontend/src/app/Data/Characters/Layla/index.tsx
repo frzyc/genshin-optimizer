@@ -368,8 +368,8 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             text: st('dmgAbsorption.increase'),
-            value: dm.constellation1.shield_*100,
-            unit: '%'
+            value: dm.constellation1.shield_ * 100,
+            unit: '%',
           },
         ],
       }),

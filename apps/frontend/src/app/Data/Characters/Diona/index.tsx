@@ -161,7 +161,7 @@ const dmgFormulas = {
     pressCryoShield: shieldElement(elementKey, nodeC2ShieldPress),
     holdShield: nodeC2ShieldHold,
     holdCryoShield: shieldElement(elementKey, nodeC2ShieldHold),
-  }
+  },
 }
 
 const nodeA1MoveSpeed = greaterEq(
@@ -345,15 +345,15 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation2', {
         fields: [
           {
-            node: nodeC2skillDmg_
+            node: nodeC2skillDmg_,
           },
           {
             text: st('dmgAbsorption.increase'),
-            value: dm.constellation2.icyPawShield_*100,
-            unit: '%'
-          }
-        ]
-      })
+            value: dm.constellation2.icyPawShield_ * 100,
+            unit: '%',
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -424,31 +424,31 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation2.pressShield, {
-              name: ct.ch('pressShield')
-            })
+              name: ct.ch('pressShield'),
+            }),
           },
           {
             node: infoMut(dmgFormulas.constellation2.pressCryoShield, {
-              name: ct.ch('pressCryoShield')
-            })
+              name: ct.ch('pressCryoShield'),
+            }),
           },
           {
             node: infoMut(dmgFormulas.constellation2.holdShield, {
-              name: ct.ch('holdShield')
-            })
+              name: ct.ch('holdShield'),
+            }),
           },
           {
             node: infoMut(dmgFormulas.constellation2.holdCryoShield, {
-              name: ct.ch('holdCryoShield')
-            })
+              name: ct.ch('holdCryoShield'),
+            }),
           },
           {
             text: stg('duration'),
             value: dm.constellation2.coopShieldDuration_,
-            unit: 's'
-          }
-        ]
-    },
+            unit: 's',
+          },
+        ],
+      },
     ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

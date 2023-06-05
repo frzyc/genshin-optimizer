@@ -98,16 +98,6 @@ const dmgFormulas = {
     aimedCharged: dmgNode('atk', dm.charged.aimedCharged, 'charged', {
       hit: { ele: constant('electro') },
     }),
-    aimedChargedOz: greaterEq(
-      input.asc,
-      1,
-      prod(
-        percent(dm.passive1.dmg),
-        dmgNode('atk', dm.charged.aimedCharged, 'charged', {
-          hit: { ele: constant('electro') },
-        })
-      )
-    ),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
@@ -136,19 +126,17 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
-    additionalDmg: greaterEq(
-      input.constellation,
-      4,
-      customDmgNode(
-        prod(input.total.atk, percent(dm.constellation4.dmg)),
-        'burst',
-        { hit: { ele: constant('electro') } }
+  },
+  passive1: {
+    aimedChargedOz: greaterEq(
+      input.asc,
+      1,
+      prod(
+        percent(dm.passive1.dmg),
+        dmgNode('atk', dm.charged.aimedCharged, 'charged', {
+          hit: { ele: constant('electro') },
+        })
       )
-    ),
-    regen: greaterEq(
-      input.constellation,
-      4,
-      customHealNode(prod(input.total.hp, percent(dm.constellation4.regen)))
     ),
   },
   passive2: {
@@ -169,6 +157,22 @@ const dmgFormulas = {
         'normal',
         { hit: { ele: constant('physical') } }
       )
+    ),
+  },
+  constellation4: {
+    burstAdditionalDmg: greaterEq(
+      input.constellation,
+      4,
+      customDmgNode(
+        prod(input.total.atk, percent(dm.constellation4.dmg)),
+        'burst',
+        { hit: { ele: constant('electro') } }
+      )
+    ),
+    burstRegen: greaterEq(
+      input.constellation,
+      4,
+      customHealNode(prod(input.total.hp, percent(dm.constellation4.regen)))
     ),
   },
   constellation6: {
@@ -242,7 +246,7 @@ const sheet: ICharacterSheet = {
         canShow: greaterEq(input.asc, 1, 1),
         fields: [
           {
-            node: infoMut(dmgFormulas.charged.aimedChargedOz, {
+            node: infoMut(dmgFormulas.passive1.aimedChargedOz, {
               name: ct.ch('a1Name'),
             }),
           },
@@ -352,12 +356,14 @@ const sheet: ICharacterSheet = {
         canShow: greaterEq(input.constellation, 4, 1),
         fields: [
           {
-            node: infoMut(dmgFormulas.burst.additionalDmg, {
+            node: infoMut(dmgFormulas.constellation4.burstAdditionalDmg, {
               name: ct.ch('c4AoeDmg'),
             }),
           },
           {
-            node: infoMut(dmgFormulas.burst.regen, { name: stg('healing') }),
+            node: infoMut(dmgFormulas.constellation4.burstRegen, {
+              name: stg('healing'),
+            }),
           },
         ],
       }),

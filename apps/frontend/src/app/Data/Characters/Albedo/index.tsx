@@ -169,7 +169,7 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.burstDmg, 'burst'),
-    blossom: dmgNode('atk', dm.burst.blossomDmg, 'burst')
+    blossom: dmgNode('atk', dm.burst.blossomDmg, 'burst'),
   },
 }
 

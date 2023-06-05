@@ -523,6 +523,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         path: condC2QSAPath,
         value: condC2QSA,
+        canShow: equal(condC2Bloom, 'on', 1),
         name: ct.ch('c2.qasCondName'),
         states: {
           on: {

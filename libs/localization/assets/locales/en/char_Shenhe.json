@@ -1,7 +1,6 @@
 {
-  "quill": "Icy Quills active",
-  "c4": "Skyfrost Mantra",
-  "c4Bonus_": "Skyfrost Mantra Bonus",
+  "quill": "Icy Quill is active",
+  "c4": "Skyfrost Mantra Consumed",
   "pressQuota": "Press Trigger Quota",
   "holdQuota": "Hold Trigger Quota",
   "pressDuration": "Press Duration",

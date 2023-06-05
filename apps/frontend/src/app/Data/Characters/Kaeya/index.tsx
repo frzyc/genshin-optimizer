@@ -248,7 +248,6 @@ const sheet: ICharacterSheet = {
             value: ct.ch('c2burstDuration'),
           },
           {
-
             text: ct.chg('burst.skillParams.1'),
             value: dm.burst.cd,
             unit: 's',
