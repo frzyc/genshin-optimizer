@@ -33,7 +33,7 @@
   },
   "tags": [],
   "namedInputs": {
-    "sr-assets":[
+    "sr-assets": [
       "{workspaceRoot}/lib/sr-assets/src/**/*.png",
       "{workspaceRoot}/lib/sr-assets/src/**/*.ts"
     ]

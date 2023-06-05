@@ -19,9 +19,7 @@ Object.entries(lightConeDataDump).forEach(([key, data]) =>
 export type AllStats = {
   char: CharacterDatas
 }
-export type {
-  CharacterDataGen
-}
+export type { CharacterDataGen }
 
 const allStat: AllStats = {
   char: characterDataDump,

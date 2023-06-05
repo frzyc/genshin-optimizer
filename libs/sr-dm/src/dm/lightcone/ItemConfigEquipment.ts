@@ -1,40 +1,39 @@
-import { dumpFile, nameToKey } from "@genshin-optimizer/pipeline";
-import { objFilterKeys } from "@genshin-optimizer/util";
-import { PROJROOT_PATH } from "../../consts";
-import type { LightConeId } from "../../mapping/lightcone";
-import { lightconeIdMap } from "../../mapping/lightcone";
-import { TextMapEN } from "../../TextMapUtil";
-import { readDMJSON } from "../../util";
-import type { HashId } from "../common";
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
+import { objFilterKeys } from '@genshin-optimizer/util'
+import { PROJROOT_PATH } from '../../consts'
+import type { LightConeId } from '../../mapping/lightcone'
+import { lightconeIdMap } from '../../mapping/lightcone'
+import { TextMapEN } from '../../TextMapUtil'
+import { readDMJSON } from '../../util'
+import type { HashId } from '../common'
 
 export type ItemConfigEquipment = {
-  ID: number;
-  ItemMainType: ItemType;
-  ItemSubType: ItemType;
-  InventoryDisplayTag: number;
-  Rarity: Rarity;
-  isVisible: boolean;
-  ItemName: HashId;
-  ItemDesc: HashId;
-  ItemBGDesc: HashId;
-  ItemIconPath: string;
-  ItemFigureIconPath: string;
-  ItemCurrencyIconPath: string;
-  ItemAvatarIconPath: string;
-  PileLimit: number;
-  CustomDataList: any[];
-  IsSellable?: boolean;
-  ReturnItemIDList: ReturnItemIDList[];
+  ID: number
+  ItemMainType: ItemType
+  ItemSubType: ItemType
+  InventoryDisplayTag: number
+  Rarity: Rarity
+  isVisible: boolean
+  ItemName: HashId
+  ItemDesc: HashId
+  ItemBGDesc: HashId
+  ItemIconPath: string
+  ItemFigureIconPath: string
+  ItemCurrencyIconPath: string
+  ItemAvatarIconPath: string
+  PileLimit: number
+  CustomDataList: any[]
+  IsSellable?: boolean
+  ReturnItemIDList: ReturnItemIDList[]
 }
 
+type ItemType = 'Equipment'
 
-type ItemType = "Equipment";
-
-type Rarity = "Rare" | "VeryRare" | "SuperRare";
+type Rarity = 'Rare' | 'VeryRare' | 'SuperRare'
 
 type ReturnItemIDList = {
-  ItemID: number;
-  ItemNum: number;
+  ItemID: number
+  ItemNum: number
 }
 
 const ItemConfigEquipmentSrc = JSON.parse(

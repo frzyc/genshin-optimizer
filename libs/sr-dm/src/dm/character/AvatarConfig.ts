@@ -1,12 +1,12 @@
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
+import type { DamageTypeKey } from '@genshin-optimizer/sr-consts'
+import { objFilterKeys } from '@genshin-optimizer/util'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
 import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
-import type { DamageTypeKey, PathKey } from '@genshin-optimizer/sr-consts'
-import type { HashId } from '../common'
-import { objFilterKeys } from '@genshin-optimizer/util'
+import type { HashId, MaterialValue, Value } from '../common'
 
 export type AvatarConfig = {
   AvatarID: AvatarId
@@ -17,13 +17,13 @@ export type AvatarConfig = {
   Rarity: AvatarRarity
   JsonPath: string
   DamageType: DamageTypeKey
-  SPNeed: SPNeed
+  SPNeed: Value
   ExpGroup: number
   MaxPromotion: number
   MaxRank?: number
   RankIDList: number[]
-  RewardList: RewardList[]
-  RewardListMax: RewardList[]
+  RewardList: MaterialValue[]
+  RewardListMax: MaterialValue[]
   SkillList: number[]
   AvatarBaseType: AvatarBaseTypeKey
   DefaultAvatarModelPath: string
@@ -59,15 +59,6 @@ export type AIPath = 'Config/ConfigAI/Avatar_ComplexSkilll_AutoFight_AI.json'
 export type AvatarRarity =
   | 'CombatPowerAvatarRarityType4'
   | 'CombatPowerAvatarRarityType5'
-
-export type RewardList = {
-  ItemID: number
-  ItemNum: number
-}
-
-export type SPNeed = {
-  Value: number
-}
 
 const avatarConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarConfig.json')

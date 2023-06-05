@@ -33,7 +33,10 @@ export type CharacterDataGen = {
   ascension: Promotion[]
 }
 
-export type CharacterDatas = Record<NonTrailblazerCharacterKey, CharacterDataGen>
+export type CharacterDatas = Record<
+  NonTrailblazerCharacterKey,
+  CharacterDataGen
+>
 export default function characterData() {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(

@@ -1,5 +1,14 @@
-import type { LightConeKey, PathKey, RarityKey } from "@genshin-optimizer/sr-consts"
-import { avatarBaseTypeMap, equipmentConfig, lightconeIdMap, lightConeRarityMap } from "@genshin-optimizer/sr-dm"
+import type {
+  LightConeKey,
+  PathKey,
+  RarityKey,
+} from '@genshin-optimizer/sr-consts'
+import {
+  avatarBaseTypeMap,
+  equipmentConfig,
+  lightconeIdMap,
+  lightConeRarityMap,
+} from '@genshin-optimizer/sr-dm'
 
 export type LightConeDataGen = {
   rarity: RarityKey
@@ -17,6 +26,7 @@ export default function LightConeData() {
         }
         const lightConeKey = lightconeIdMap[lightconeId]
         return [lightConeKey, result] as const
-      })
+      }
+    )
   ) as LightConeDatas
 }

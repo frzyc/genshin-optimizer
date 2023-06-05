@@ -1,14 +1,12 @@
 import type {
   CharacterKey,
   GenderKey,
-  LightConeKey
+  LightConeKey,
 } from '@genshin-optimizer/sr-consts'
 // import artifacts from './gen/artifacts'
 import chars from './gen/chars'
 import lightcones from './gen/lightCones'
-type characterAssetKey =
-  | 'icon'
-  | 'cover'
+type characterAssetKey = 'icon' | 'cover'
 export function characterAsset(
   ck: CharacterKey,
   asset: characterAssetKey,
@@ -20,9 +18,7 @@ export function characterAsset(
       return chars[ck][asset] ?? ''
   }
 }
-export function lightConeAsset(
-  lck: LightConeKey
-) {
+export function lightConeAsset(lck: LightConeKey) {
   return lightcones[lck]
 }
 // export function artifactAsset(
