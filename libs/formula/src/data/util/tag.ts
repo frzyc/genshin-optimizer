@@ -43,6 +43,19 @@ export function priorityTable(
  *     <query>: Desc
  *   }
  * }
+ *
+ * The correct "final" value of a query must have `src:` be as specified
+ * by the corresponding `Desc`. They are treated as a rendezvous point
+ * for calculation to gather relevant components. Each of the `src:` here
+ * gather different values as shown in the table above. The "gathering"
+ * are done by adding appropriate entries, such as `src:agg <= src:custom`
+ * in `common/index`. Many of the entries are in either `common/index` or
+ * in dynamic util functions, e.g., `src:agg <= src:art` in `artifactsData`,
+ * and `src:agg <= src:<team member>` in `teamData`.
+ *
+ * In effect, `read`ing a `src:agg` entry will include contributions from
+ * team member, weapon, custom values, etc., while `read`ing a `src:iso` only
+ * include contributions from character and custom values.
  */
 
 type Desc = { src: Source | undefined; accu: Read['accu'] }
