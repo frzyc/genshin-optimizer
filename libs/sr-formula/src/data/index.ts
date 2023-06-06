@@ -1,6 +1,7 @@
 import {
   compileTagMapKeys,
-  compileTagMapValues
+  compileTagMapValues,
+  read
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from './util'
 
@@ -30,6 +31,14 @@ export type Source = (typeof srcs)[number]
 const data: TaggedFormulas = [
   ...charData,
   ...lcData,
+  // convert st:char to st:total for accumulation
+  {
+    tag: { st: "total" }, value: read({ st: "char" }, "sum")
+  },
+  // convert st:lightcone to st:total for accumulation
+  {
+    tag: { st: "total" }, value: read({ st: "lightcone" }, "sum")
+  }
 ]
 // TODO: hoist this type from wr2 lib
 type Tags = Parameters<typeof compileTagMapKeys>[0]

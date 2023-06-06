@@ -23,16 +23,13 @@ export function handleLightConeGen(
       const basePerAsc = lcDataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = lcDataGen.ascension.map((p) => p[sk].add)
       return {
-        tag: { src: lck, st: "lightcone", qt: 'base', q: sk },
+        tag: { src: lck, qt: 'base', q: sk },
         value: sum(
           subscript(readAsc, basePerAsc),
           prod(readLvl, subscript(readAsc, addPerAsc))
         ),
       }
-    }),
-    {
-      tag: { st: "total" }, value: read({ src: lck, st: "lightcone" }, "sum")
-    }
+    })
   ]
 }
 const data: TaggedFormulas = allLightConeKeys.flatMap(handleLightConeGen)

@@ -1,12 +1,15 @@
+import { dumpFile } from '@genshin-optimizer/pipeline'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 import {
   compileTagMapValues,
   constant,
-  read
+  read,
+  reread
 } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { TaggedFormulas } from './data/util'
+import { dependencyString } from './debug'
 
 describe('character test', () => {
   it.each([
@@ -22,9 +25,13 @@ describe('character test', () => {
         tag: { src: charKey, q: 'ascension', },
         value: constant(ascension),
       },
+      {
+        tag: { st: "char" },
+        value: reread({ st: null, src: charKey })
+      }
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { src: charKey, st: "char", qt: 'base' }
+    const commonTags = { st: "char", qt: 'base' }
 
     expect(
       calc.compute(
@@ -62,9 +69,13 @@ describe('lightcone test', () => {
         tag: { src: lcKey, q: 'ascension' },
         value: constant(ascension),
       },
+      {
+        tag: { st: "lightcone" },
+        value: reread({ st: null, src: lcKey })
+      }
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { src: lcKey, st: "lightcone", qt: 'base' }
+    const commonTags = { st: "lightcone", qt: 'base' }
 
     expect(
       calc.compute(
@@ -94,10 +105,18 @@ describe('char+lightcone test', () => {
       { tag: { src: charKey, q: 'ascension' }, value: constant(0) },
       { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },
       { tag: { src: lcKey, q: 'ascension' }, value: constant(0) },
+      {
+        tag: { st: "char" },
+        value: reread({ st: null, src: charKey })
+      },
+      {
+        tag: { st: "lightcone" },
+        value: reread({ st: null, src: lcKey })
+      },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
-      calc.compute(read({ st:"total", qt: 'base', q: 'atk' }, 'sum')).val
+      calc.compute(read({ st: "total", qt: 'base', q: 'atk' }, 'sum')).val
     ).toBeCloseTo(81.6)
   })
 })
