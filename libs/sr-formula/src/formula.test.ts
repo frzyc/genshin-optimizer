@@ -4,7 +4,7 @@ import {
   compileTagMapValues,
   constant,
   read,
-  reread
+  reread,
 } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
@@ -20,38 +20,30 @@ describe('character test', () => {
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
     const data: TaggedFormulas = [
-      { tag: { src: charKey, q: 'lvl', }, value: constant(lvl) },
+      { tag: { src: charKey, q: 'lvl' }, value: constant(lvl) },
       {
-        tag: { src: charKey, q: 'ascension', },
+        tag: { src: charKey, q: 'ascension' },
         value: constant(ascension),
       },
       {
-        tag: { st: "char" },
-        value: reread({ st: null, src: charKey })
-      }
+        tag: { st: 'char' },
+        value: reread({ st: null, src: charKey }),
+      },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { st: "char", qt: 'base' }
+    const commonTags = { st: 'char', qt: 'base' }
 
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'atk' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'atk' }, undefined)).val
     ).toBeCloseTo(atk)
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'def' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'def' }, undefined)).val
     ).toBeCloseTo(def)
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'hp' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'hp' }, undefined)).val
     ).toBeCloseTo(hp)
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'spd' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'spd' }, undefined)).val
     ).toBeCloseTo(spd)
   })
 })
@@ -70,27 +62,21 @@ describe('lightcone test', () => {
         value: constant(ascension),
       },
       {
-        tag: { st: "lightcone" },
-        value: reread({ st: null, src: lcKey })
-      }
+        tag: { st: 'lightcone' },
+        value: reread({ st: null, src: lcKey }),
+      },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { st: "lightcone", qt: 'base' }
+    const commonTags = { st: 'lightcone', qt: 'base' }
 
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'atk' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'atk' }, undefined)).val
     ).toBeCloseTo(atk)
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'def' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'def' }, undefined)).val
     ).toBeCloseTo(def)
     expect(
-      calc.compute(
-        read({ ...commonTags, q: 'hp' }, undefined)
-      ).val
+      calc.compute(read({ ...commonTags, q: 'hp' }, undefined)).val
     ).toBeCloseTo(hp)
   })
 })
@@ -106,17 +92,17 @@ describe('char+lightcone test', () => {
       { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },
       { tag: { src: lcKey, q: 'ascension' }, value: constant(0) },
       {
-        tag: { st: "char" },
-        value: reread({ st: null, src: charKey })
+        tag: { st: 'char' },
+        value: reread({ st: null, src: charKey }),
       },
       {
-        tag: { st: "lightcone" },
-        value: reread({ st: null, src: lcKey })
+        tag: { st: 'lightcone' },
+        value: reread({ st: null, src: lcKey }),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
-      calc.compute(read({ st: "total", qt: 'base', q: 'atk' }, 'sum')).val
+      calc.compute(read({ st: 'total', qt: 'base', q: 'atk' }, 'sum')).val
     ).toBeCloseTo(81.6)
   })
 })

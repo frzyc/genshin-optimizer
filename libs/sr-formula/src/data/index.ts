@@ -1,13 +1,13 @@
 import {
   compileTagMapKeys,
   compileTagMapValues,
-  read
+  read,
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from './util'
 
 import {
   allCharacterKeys,
-  allLightConeKeys
+  allLightConeKeys,
 } from '@genshin-optimizer/sr-consts'
 import { data as charData } from './char'
 import { data as lcData } from './lightcone'
@@ -33,12 +33,14 @@ const data: TaggedFormulas = [
   ...lcData,
   // convert st:char to st:total for accumulation
   {
-    tag: { st: "total" }, value: read({ st: "char" }, "sum")
+    tag: { st: 'total' },
+    value: read({ st: 'char' }, 'sum'),
   },
   // convert st:lightcone to st:total for accumulation
   {
-    tag: { st: "total" }, value: read({ st: "lightcone" }, "sum")
-  }
+    tag: { st: 'total' },
+    value: read({ st: 'lightcone' }, 'sum'),
+  },
 ]
 // TODO: hoist this type from wr2 lib
 type Tags = Parameters<typeof compileTagMapKeys>[0]
@@ -46,7 +48,7 @@ const tags: Tags = [
   // src are where the "buffs" come from
   { category: 'src', values: [...allCharacterKeys, ...allLightConeKeys] },
   // Source Type
-  { category: 'st', values: ["char", "lightcone", "total"] },
+  { category: 'st', values: ['char', 'lightcone', 'total'] },
   { category: 'qt', values: ['base'] },
   { category: 'q', values: [...stats, 'lvl', 'ascension'] },
 ]

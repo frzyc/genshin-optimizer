@@ -6,7 +6,7 @@ import {
   prod,
   read,
   subscript,
-  sum
+  sum,
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
@@ -22,11 +22,10 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
       const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
       return {
         tag: { src: ck, qt: 'base', q: sk },
-        value:
-          sum(
-            subscript(readAsc, basePerAsc),
-            prod(readLvl, subscript(readAsc, addPerAsc))
-          ),
+        value: sum(
+          subscript(readAsc, basePerAsc),
+          prod(readLvl, subscript(readAsc, addPerAsc))
+        ),
       }
     }),
     ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
