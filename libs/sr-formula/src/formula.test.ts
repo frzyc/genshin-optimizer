@@ -99,7 +99,7 @@ describe('char+lightcone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
-      calc.compute(read({ dest: charKey, qt: 'base', q: 'atk' }, 'sum')).val
+      calc.compute(read({ src: null, dest: charKey, qt: 'base', q: 'atk' }, 'sum')).val
     ).toBeCloseTo(100) // TODO: find a value that makes sense
   })
 })

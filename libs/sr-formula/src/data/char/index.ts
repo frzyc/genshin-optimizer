@@ -21,7 +21,7 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
       const basePerAsc = chardataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
       return {
-        tag: { src: ck, qt: 'base', q: sk },
+        tag: { src: ck, dest: ck, qt: 'base', q: sk },
         value: sum(
           subscript(readAsc, basePerAsc),
           prod(readLvl, subscript(readAsc, addPerAsc))
@@ -31,7 +31,7 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
     ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
       const statAsc = chardataGen.ascension.map((p) => p[sk])
       return {
-        tag: { src: ck, qt: 'base', q: sk },
+        tag: { src: ck, dest: ck, qt: 'base', q: sk },
         value: subscript(readAsc, statAsc),
       }
     }),
