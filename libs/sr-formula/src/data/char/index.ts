@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import {
   constant,
   prod,
@@ -8,7 +9,6 @@ import {
   sum,
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
-import { allStats } from '@genshin-optimizer/sr-stats'
 
 // Attach the base stats from the generated datamine
 function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
@@ -35,7 +35,7 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
         value: subscript(readAsc, statAsc),
       }
     }),
-  ]
+  ] as TaggedFormulas
 }
 
 const data: TaggedFormulas = allCharacterKeys.flatMap(handleCharacterGen)
