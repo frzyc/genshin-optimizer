@@ -1,14 +1,14 @@
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
+import { allStats } from '@genshin-optimizer/sr-stats'
 import {
   constant,
   prod,
   read,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
-import { allStats } from '@genshin-optimizer/sr-stats'
 
 // Attach the base stats from the generated datamine
 function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
@@ -21,21 +21,25 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
       const basePerAsc = chardataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
       return {
-        tag: { src: ck, dest: ck, qt: 'base', q: sk },
-        value: sum(
-          subscript(readAsc, basePerAsc),
-          prod(readLvl, subscript(readAsc, addPerAsc))
-        ),
+        tag: { src: ck, st: "char", qt: 'base', q: sk },
+        value:
+          sum(
+            subscript(readAsc, basePerAsc),
+            prod(readLvl, subscript(readAsc, addPerAsc))
+          ),
       }
     }),
     ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
       const statAsc = chardataGen.ascension.map((p) => p[sk])
       return {
-        tag: { src: ck, dest: ck, qt: 'base', q: sk },
+        tag: { src: ck, st: "char", qt: 'base', q: sk },
         value: subscript(readAsc, statAsc),
       }
     }),
-  ]
+    {
+      tag: { st: "total" }, value: read({ st: "char", src: ck }, "sum")
+    },
+  ] as TaggedFormulas
 }
 
 const data: TaggedFormulas = allCharacterKeys.flatMap(handleCharacterGen)

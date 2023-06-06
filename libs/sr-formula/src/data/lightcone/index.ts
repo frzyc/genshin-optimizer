@@ -1,18 +1,18 @@
-import { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
+import type { LightConeKey } from '@genshin-optimizer/sr-consts';
+import { allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
 import {
   constant,
   prod,
   read,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
 // Attach the base stats from the generated datamine
 export function handleLightConeGen(
-  lck: LightConeKey,
-  dest: CharacterKey
+  lck: LightConeKey
 ): TaggedFormulas {
   const lcDataGen = allStats.lightcone[lck]
   const readAsc = read({ src: lck, q: 'ascension' }, undefined)
@@ -23,12 +23,18 @@ export function handleLightConeGen(
       const basePerAsc = lcDataGen.ascension.map((p) => p[sk].base)
       const addPerAsc = lcDataGen.ascension.map((p) => p[sk].add)
       return {
-        tag: { src: lck, dest, qt: 'base', q: sk },
+        tag: { src: lck, st: "lightcone", qt: 'base', q: sk },
         value: sum(
           subscript(readAsc, basePerAsc),
           prod(readLvl, subscript(readAsc, addPerAsc))
         ),
       }
     }),
+    {
+      tag: { st: "total" }, value: read({ src: lck, st: "lightcone" }, "sum")
+    }
   ]
 }
+const data: TaggedFormulas = allLightConeKeys.flatMap(handleLightConeGen)
+
+export { data }

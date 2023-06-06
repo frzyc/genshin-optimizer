@@ -2,12 +2,11 @@ import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 import {
   compileTagMapValues,
   constant,
-  read,
+  read
 } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { TaggedFormulas } from './data/util'
-import { handleLightConeGen } from './data/lightcone'
 
 describe('character test', () => {
   it.each([
@@ -18,32 +17,33 @@ describe('character test', () => {
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
     const data: TaggedFormulas = [
-      { tag: { src: charKey, dest: charKey, q: 'lvl' }, value: constant(lvl) },
+      { tag: { src: charKey, q: 'lvl', }, value: constant(lvl) },
       {
-        tag: { src: charKey, dest: charKey, q: 'ascension' },
+        tag: { src: charKey, q: 'ascension', },
         value: constant(ascension),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const commonTags = { src: charKey, st: "char", qt: 'base' }
 
     expect(
       calc.compute(
-        read({ src: charKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)
+        read({ ...commonTags, q: 'atk' }, undefined)
       ).val
     ).toBeCloseTo(atk)
     expect(
       calc.compute(
-        read({ src: charKey, dest: charKey, qt: 'base', q: 'def' }, undefined)
+        read({ ...commonTags, q: 'def' }, undefined)
       ).val
     ).toBeCloseTo(def)
     expect(
       calc.compute(
-        read({ src: charKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)
+        read({ ...commonTags, q: 'hp' }, undefined)
       ).val
     ).toBeCloseTo(hp)
     expect(
       calc.compute(
-        read({ src: charKey, dest: charKey, qt: 'base', q: 'spd' }, undefined)
+        read({ ...commonTags, q: 'spd' }, undefined)
       ).val
     ).toBeCloseTo(spd)
   })
@@ -56,30 +56,29 @@ describe('lightcone test', () => {
     [20, 1, 72.72, 60.6, 193.92],
   ])('Calculate lightcone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
-    const charKey: CharacterKey = 'March7th'
     const data: TaggedFormulas = [
-      ...handleLightConeGen(lcKey, charKey),
-      { tag: { src: lcKey, dest: charKey, q: 'lvl' }, value: constant(lvl) },
+      { tag: { src: lcKey, q: 'lvl' }, value: constant(lvl) },
       {
-        tag: { src: lcKey, dest: charKey, q: 'ascension' },
+        tag: { src: lcKey, q: 'ascension' },
         value: constant(ascension),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const commonTags = { src: lcKey, st: "lightcone", qt: 'base' }
 
     expect(
       calc.compute(
-        read({ src: lcKey, dest: charKey, qt: 'base', q: 'atk' }, undefined)
+        read({ ...commonTags, q: 'atk' }, undefined)
       ).val
     ).toBeCloseTo(atk)
     expect(
       calc.compute(
-        read({ src: lcKey, dest: charKey, qt: 'base', q: 'def' }, undefined)
+        read({ ...commonTags, q: 'def' }, undefined)
       ).val
     ).toBeCloseTo(def)
     expect(
       calc.compute(
-        read({ src: lcKey, dest: charKey, qt: 'base', q: 'hp' }, undefined)
+        read({ ...commonTags, q: 'hp' }, undefined)
       ).val
     ).toBeCloseTo(hp)
   })
@@ -91,7 +90,6 @@ describe('char+lightcone test', () => {
     const lcKey: LightConeKey = 'Amber'
 
     const data: TaggedFormulas = [
-      ...handleLightConeGen(lcKey, charKey),
       { tag: { src: charKey, q: 'lvl' }, value: constant(1) },
       { tag: { src: charKey, q: 'ascension' }, value: constant(0) },
       { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },
@@ -99,7 +97,7 @@ describe('char+lightcone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
-      calc.compute(read({ src: null, dest: charKey, qt: 'base', q: 'atk' }, 'sum')).val
-    ).toBeCloseTo(100) // TODO: find a value that makes sense
+      calc.compute(read({ st:"total", qt: 'base', q: 'atk' }, 'sum')).val
+    ).toBeCloseTo(81.6)
   })
 })
