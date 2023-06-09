@@ -17,7 +17,7 @@ if (fs.existsSync(`${projectDir}/StarRailData`)) {
 }
 
 // Export and verify the hash file
-const curVersion = execSync(`git rev-parse origin/master`)?.toString() ?? 'ERR'
+const curVersion = execSync(`git rev-parse origin/master`, { cwd: `${projectDir}/StarRailData` })?.toString() ?? 'ERR'
 const fileHash =
   (fs.existsSync(hashFilePath) && fs.readFileSync(hashFilePath)?.toString()) ||
   ''
