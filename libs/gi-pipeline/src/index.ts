@@ -64,26 +64,7 @@ dumpFile(
 const materialDataDump = materialData()
 dumpFile(`${path}/Materials/material.json`, materialDataDump)
 
-export type AllStats = {
-  char: {
-    expCurve: typeof charExpCurve
-    skillParam: SkillParamData
-    data: CharacterDatas
-  }
-  weapon: {
-    expCurve: typeof weaponExpCurve
-    data: Record<WeaponKey, WeaponDataGen>
-  }
-  art: {
-    subRoll: any
-    subRollCorrection: any
-    main: any
-    sub: any
-  }
-  material: any
-}
-
-const allStat: AllStats = {
+const allStat = {
   char: {
     expCurve: charExpCurve,
     skillParam: characterSkillParamDump,
@@ -100,7 +81,9 @@ const allStat: AllStats = {
     sub: artifactSubstatData,
   },
   material: materialDataDump,
-}
+} as const
+
+export type AllStats = typeof allStat
 
 dumpFile(
   `${process.env['NX_WORKSPACE_ROOT']}/libs/gi-stats/src/allStat_gen.json`,

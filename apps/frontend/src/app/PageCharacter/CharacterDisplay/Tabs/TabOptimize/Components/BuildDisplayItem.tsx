@@ -38,6 +38,8 @@ import type { ICachedArtifact } from '../../../../../Types/artifact'
 import { toggleArr } from '../../../../../Util/Util'
 import useBuildSetting from '../useBuildSetting'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
+import SetInclusionButton from './SetInclusionButton'
+import useArtifact from '../../../../../ReactHooks/useArtifact'
 
 type NewOld = {
   newId: string
@@ -238,6 +240,8 @@ function CompareArtifactModal({
     onClose()
   }, [newId, database, characterKey, onClose])
   const newLoc = database.arts.get(newId)?.location ?? ''
+  const newArtifact = useArtifact(newId)
+
   return (
     <ModalWrapper
       open={!!newId}
@@ -286,6 +290,7 @@ function CompareArtifactModal({
               allowLocationsState !== 'all' && (
                 <ExcludeEquipButton locationKey={newLoc} />
               )}
+            {newArtifact && <SetInclusionButton setKey={newArtifact.setKey} />}
           </Box>
         </CardContent>
       </CardDark>
