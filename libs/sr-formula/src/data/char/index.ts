@@ -10,6 +10,7 @@ import {
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
+type Promotion = (typeof allStats.char)[CharacterKey]['ascension'][number]
 // Attach the base stats from the generated datamine
 function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
   const chardataGen = allStats.char[ck]
@@ -18,8 +19,8 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
   const readLvl = sum(constant(-1), read({ src: ck, q: 'lvl' }, undefined))
   return [
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
-      const basePerAsc = chardataGen.ascension.map((p) => p[sk].base)
-      const addPerAsc = chardataGen.ascension.map((p) => p[sk].add)
+      const basePerAsc = chardataGen.ascension.map((p: Promotion) => p[sk].base)
+      const addPerAsc = chardataGen.ascension.map((p: Promotion) => p[sk].add)
       return {
         tag: { src: ck, qt: 'base', q: sk },
         value: sum(
@@ -29,7 +30,7 @@ function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
       }
     }),
     ...(['spd', 'crit_', 'crit_dmg_', 'taunt'] as const).map((sk) => {
-      const statAsc = chardataGen.ascension.map((p) => p[sk])
+      const statAsc = chardataGen.ascension.map((p: Promotion) => p[sk])
       return {
         tag: { src: ck, qt: 'base', q: sk },
         value: subscript(readAsc, statAsc),

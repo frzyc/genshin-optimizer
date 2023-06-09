@@ -10,6 +10,7 @@ import {
 } from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
+type Promotion = (typeof allStats.lightcone)[LightConeKey]['ascension'][number]
 // Attach the base stats from the generated datamine
 export function handleLightConeGen(lck: LightConeKey): TaggedFormulas {
   const lcDataGen = allStats.lightcone[lck]
@@ -18,8 +19,8 @@ export function handleLightConeGen(lck: LightConeKey): TaggedFormulas {
   const readLvl = sum(constant(-1), read({ src: lck, q: 'lvl' }, undefined))
   return [
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
-      const basePerAsc = lcDataGen.ascension.map((p) => p[sk].base)
-      const addPerAsc = lcDataGen.ascension.map((p) => p[sk].add)
+      const basePerAsc = lcDataGen.ascension.map((p: Promotion) => p[sk].base)
+      const addPerAsc = lcDataGen.ascension.map((p: Promotion) => p[sk].add)
       return {
         tag: { src: lck, qt: 'base', q: sk },
         value: sum(

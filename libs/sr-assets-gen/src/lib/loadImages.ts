@@ -1,12 +1,19 @@
 import { dumpFile, generateIndexFromObj } from '@genshin-optimizer/pipeline'
-import type { CharacterKey, LightConeKey, RelicCavernSetKey, RelicPlanarSetKey } from '@genshin-optimizer/sr-consts'
+import type {
+  CharacterKey,
+  LightConeKey,
+  RelicCavernSetKey,
+  RelicPlanarSetKey,
+} from '@genshin-optimizer/sr-consts'
 import {
   avatarConfig,
   characterIdMap,
   DM2D_PATH,
   equipmentConfig,
   lightconeIdMap,
-  relicDataInfo, relicSetIdMap, relicSlotMap
+  relicDataInfo,
+  relicSetIdMap,
+  relicSlotMap,
 } from '@genshin-optimizer/sr-dm'
 import { crawlObject } from '@genshin-optimizer/util'
 import * as fs from 'fs'
@@ -25,15 +32,21 @@ type LightConeIcon = {
   cover: string
 }
 
-type RelicPlanarIcons = Record<RelicPlanarSetKey, { rope: string, sphere: string }>
-type RelicCavernIcons = Record<RelicCavernSetKey, { head: string, sphere: string }>
+type RelicPlanarIcons = Record<
+  RelicPlanarSetKey,
+  { rope: string; sphere: string }
+>
+type RelicCavernIcons = Record<
+  RelicCavernSetKey,
+  { head: string; sphere: string }
+>
 type RelicIcons = RelicPlanarIcons & RelicCavernIcons
 //An object to store all the asset related data.
 export const AssetData = {
   // artifacts: {},
   lightCones: {} as Record<LightConeKey, LightConeIcon>,
   chars: {} as Record<CharacterKey, CharacterIcon>,
-  relic: {} as RelicIcons
+  relic: {} as RelicIcons,
 }
 
 export default function loadImages() {
@@ -42,7 +55,7 @@ export default function loadImages() {
     return console.log(
       `libs/sr-dm/assets does not exist, no assets will be copied.`
     )
-  function copyFile(src, dest) {
+  function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
       console.warn('Cannot find file', src)
       return
@@ -54,13 +67,17 @@ export default function loadImages() {
   }
 
   // Get icons for each artifact piece
-  AssetData.relic = Object.fromEntries(Object.entries(relicDataInfo).map(([relicSetId, reflicDatas]) => [
-    relicSetIdMap[relicSetId],
-    Object.fromEntries(Object.entries(reflicDatas).map(([relicSlotKey, relicData]) => [
-      relicSlotMap[relicSlotKey],
-      relicData.ItemFigureIconPath
-    ]))
-  ])) as RelicIcons
+  AssetData.relic = Object.fromEntries(
+    Object.entries(relicDataInfo).map(([relicSetId, reflicDatas]) => [
+      relicSetIdMap[relicSetId],
+      Object.fromEntries(
+        Object.entries(reflicDatas).map(([relicSlotKey, relicData]) => [
+          relicSlotMap[relicSlotKey],
+          relicData.ItemFigureIconPath,
+        ])
+      ),
+    ])
+  ) as RelicIcons
 
   // parse baseStat/ascension/basic data for characters.
   Object.entries(avatarConfig).forEach(([charid, charData]) => {

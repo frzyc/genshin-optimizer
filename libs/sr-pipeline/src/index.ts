@@ -2,7 +2,7 @@ import { dumpFile } from '@genshin-optimizer/pipeline'
 import type { CharacterDataGen } from './characterData'
 import characterData from './characterData'
 import LightConeData from './lightConeData'
-import { main, sub } from "./relic"
+import { main, sub } from './relic'
 
 const path = `${process.env['NX_WORKSPACE_ROOT']}/libs/sr-stats/Data`
 const characterDataDump = characterData()
@@ -29,7 +29,7 @@ const allStat = {
   relic: {
     sub,
     main,
-  }
+  },
 } as const
 
 export type AllStats = typeof allStat

@@ -1,4 +1,13 @@
-import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
+import type {
+  AvatarSkillDepotExcelConfigData,
+  CharacterId,
+  WeaponId,
+} from '@genshin-optimizer/dm'
 import {
   artifactIdMap,
   artifactPiecesData,
@@ -35,8 +44,11 @@ type CharacterIcon = {
 type CharacterIconData = { [key: string]: CharacterIcon }
 //An object to store all the asset related data.
 export const AssetData = {
-  weapons: {},
-  artifacts: {},
+  weapons: {} as Record<WeaponKey, { icon: string; awakenIcon: string }>,
+  artifacts: {} as Record<
+    ArtifactSetKey,
+    Partial<Record<ArtifactSlotKey, string>>
+  >,
   chars: {} as CharacterIconData,
 }
 
@@ -46,7 +58,7 @@ export default function loadImages() {
     return console.log(
       `libs/dm/Texture2D does not exist, no assets will be copied.`
     )
-  function copyFile(src, dest) {
+  function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
       console.warn('Cannot find file', src)
       return
@@ -70,7 +82,7 @@ export default function loadImages() {
         const { icon, equipType } = pieceData
         return [artifactSlotMap[equipType], icon]
       })
-    )
+    ) as Partial<Record<ArtifactSlotKey, string>>
 
     AssetData.artifacts[artifactIdMap[setId]] = pieces
   })
@@ -78,7 +90,7 @@ export default function loadImages() {
   // Get the icon/awakened for each weapon
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { icon, awakenIcon } = weaponData
-    AssetData.weapons[weaponIdMap[weaponid]] = {
+    AssetData.weapons[weaponIdMap[weaponid as WeaponId]] = {
       icon,
       awakenIcon,
     }
@@ -89,7 +101,7 @@ export default function loadImages() {
     const { iconName, sideIconName } = charData
 
     let banner, bar
-    if (fetterCharacterCardExcelConfigData[charid]) {
+    if (fetterCharacterCardExcelConfigData[charid as CharacterId]) {
       const { rewardId } = fetterCharacterCardExcelConfigData[charid]
       const { rewardItemList } = rewardExcelConfigData[rewardId]
       const { itemId } = rewardItemList[0]
@@ -222,7 +234,10 @@ export default function loadImages() {
 
   // Add in manually added assets that can't be datamined
   AssetData.chars['Somnia'] = {} as CharacterIcon
-  AssetData.weapons['QuantumCatalyst'] = {}
+  AssetData.weapons['QuantumCatalyst'] = {} as {
+    icon: string
+    awakenIcon: string
+  }
 
   generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
 }
