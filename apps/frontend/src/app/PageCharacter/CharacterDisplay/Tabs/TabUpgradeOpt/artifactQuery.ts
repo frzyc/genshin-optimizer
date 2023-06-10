@@ -8,7 +8,7 @@ import { precompute, optimize } from '../../../../Formula/optimization'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 
 import type { ArtifactSlotKey, RarityKey } from '@genshin-optimizer/consts'
-import type { SubstatKey } from '@genshin-optimizer/pipeline'
+import type { SubstatKey } from '@genshin-optimizer/dm'
 
 function toStats(build: QueryBuild): DynStat {
   const stats: DynStat = {}

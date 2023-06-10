@@ -372,8 +372,7 @@ export default function TabUpopt() {
     const query = querySetup(
       nodes,
       valueFilter.map((x) => x.minimum),
-      curEquip,
-      data
+      curEquip
     )
 
     let artUpOpt = queryArts.map((art) =>
@@ -391,7 +390,6 @@ export default function TabUpopt() {
     characterKey,
     database,
     gender,
-    data,
     upgradeOptExpandSink,
     show20,
     useFilters,
