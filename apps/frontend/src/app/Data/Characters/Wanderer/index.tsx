@@ -458,7 +458,7 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.headerTem('constellation1', {
-        canShow: greaterEq(input.asc, 4, equal(condAfterSkill, 'on', 1)),
+        canShow: greaterEq(input.asc, 4, 1),
         fields: [
           {
             node: c1BonusScaling_,

@@ -287,12 +287,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: stg('press.cd'),
+            text: ct.chg(`skill.skillParams.3`),
             value: dm.skill.pressCd,
             unit: 's',
           },
           {
-            text: stg('hold.cd'),
+            text: ct.chg(`skill.skillParams.4`),
             value: (data) =>
               data.get(input.constellation).value >= 4
                 ? dm.skill.pressCd

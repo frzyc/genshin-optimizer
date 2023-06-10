@@ -334,6 +334,22 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
+      ct.headerTem('passive2', {
+        fields: [
+          {
+            node: a4_starDmgInc,
+          },
+        ],
+      }),
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            text: st('dmgAbsorption.increase'),
+            value: dm.constellation1.shield_ * 100,
+            unit: '%',
+          },
+        ],
+      }),
       ct.condTem('constellation4', {
         teamBuff: true,
         value: condC4Active,
@@ -356,22 +372,6 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
-      }),
-      ct.headerTem('passive2', {
-        fields: [
-          {
-            node: a4_starDmgInc,
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('dmgAbsorption.increase'),
-            value: dm.constellation1.shield_ * 100,
-            unit: '%',
-          },
-        ],
       }),
       ct.headerTem('constellation6', {
         fields: [

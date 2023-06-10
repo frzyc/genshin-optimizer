@@ -355,15 +355,6 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
-      ct.condTem('constellation6', {
-        canShow: equal(condBurst, 'on', 1),
-        path: condC6Path,
-        value: condC6,
-        name: ct.ch('c6'),
-        states: {
-          on: { fields: [{ node: c6Hydro_ }] },
-        },
-      }),
       ct.headerTem('constellation4', {
         canShow: equal(condBurst, 'on', 1),
         fields: [
@@ -376,6 +367,15 @@ const sheet: ICharacterSheet = {
             fixed: 1,
           },
         ],
+      }),
+      ct.condTem('constellation6', {
+        canShow: equal(condBurst, 'on', 1),
+        path: condC6Path,
+        value: condC6,
+        name: ct.ch('c6'),
+        states: {
+          on: { fields: [{ node: c6Hydro_ }] },
+        },
       }),
     ]),
 

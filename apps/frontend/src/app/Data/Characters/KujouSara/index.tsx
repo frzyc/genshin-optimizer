@@ -83,12 +83,12 @@ const skillTenguAmbush_ = equal(
   prod(input.base.atk, atkIncRatio)
 )
 
+const [condC6Path, condC6] = cond(key, 'c6')
 const c6ElectroCritDmg_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillTenguAmbush, 'on', percent(dm.constellation6.atkInc))
+  equal('c6', condC6, percent(dm.constellation6.atkInc))
 )
-
 const dmgFormulas = {
   normal: Object.fromEntries(
     dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
@@ -264,14 +264,20 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.headerTem('constellation6', {
+      ct.condTem('constellation6', {
+        value: condC6,
+        path: condC6Path,
         teamBuff: true,
-        canShow: equal(condSkillTenguAmbush, 'on', 1),
-        fields: [
-          {
-            node: c6ElectroCritDmg_,
+        name: ct.ch('c6.electroCritDmg'),
+        states: {
+          c6: {
+            fields: [
+              {
+                node: c6ElectroCritDmg_,
+              },
+            ],
           },
-        ],
+        },
       }),
     ]),
 

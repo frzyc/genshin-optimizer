@@ -128,13 +128,6 @@ const a4_bolt_dmgInc = greaterEq(
   prod(percent(dm.passive2.bolt_dmgInc_), input.total.eleMas)
 )
 
-const [condC1Path, condC1] = cond(key, 'c1')
-const c1_atkSPD_ = greaterEq(
-  input.constellation,
-  1,
-  equal(condC1, 'on', dm.constellation1.normal_atkSpd_)
-)
-
 const c2NormHitStacksArr = range(1, dm.constellation2.maxStacks)
 const [condC2NormHitStacksPath, condC2NormHitStacks] = cond(
   key,
@@ -242,7 +235,6 @@ export const data = dataObjForCharacterSheet(
       skillBoost: skillC5,
       eleMas: afterBurst_eleMas,
       skill_dmg_: a1Judication_skill_dmg_,
-      atkSPD_: c1_atkSPD_,
       electro_dmg_: c2_electro_dmg_,
     },
   }
@@ -433,25 +425,6 @@ const sheet: ICharacterSheet = {
               },
               {
                 text: st('immuneToElectroCharged'),
-              },
-            ],
-          },
-        },
-      }),
-      ct.condTem('constellation1', {
-        path: condC1Path,
-        value: condC1,
-        name: ct.ch('afterBurstOrJudication'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c1_atkSPD_,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation1.duration,
-                unit: 's',
               },
             ],
           },

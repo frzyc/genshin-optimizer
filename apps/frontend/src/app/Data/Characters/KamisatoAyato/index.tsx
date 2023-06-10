@@ -361,6 +361,25 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
+      ct.condTem('constellation1', {
+        value: condC1OppHp,
+        path: condC1OppHpPath,
+        name: st('enemyLessEqPercentHP', {
+          percent: dm.constellation1.oppHpThres_ * 100,
+        }),
+        states: {
+          on: {
+            fields: [
+              {
+                node: infoMut(c1Shun_dmg_, {
+                  name: ct.ch('c1.shun_dmg_'),
+                  unit: '%',
+                }),
+              },
+            ],
+          },
+        },
+      }),
       ct.headerTem('passive1', {
         fields: [
           {
@@ -387,25 +406,6 @@ const sheet: ICharacterSheet = {
             node: c2_hp_,
           },
         ],
-      }),
-      ct.condTem('constellation1', {
-        value: condC1OppHp,
-        path: condC1OppHpPath,
-        name: st('enemyLessEqPercentHP', {
-          percent: dm.constellation1.oppHpThres_ * 100,
-        }),
-        states: {
-          on: {
-            fields: [
-              {
-                node: infoMut(c1Shun_dmg_, {
-                  name: ct.ch('c1.shun_dmg_'),
-                  unit: '%',
-                }),
-              },
-            ],
-          },
-        },
       }),
     ]),
 
