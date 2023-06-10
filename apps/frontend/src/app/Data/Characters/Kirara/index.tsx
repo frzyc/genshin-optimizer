@@ -75,17 +75,16 @@ const dm = {
     cost: skillParam_gen.burst[b++][0],
   },
   passive1: {
-    cd: skillParam_gen.passive1[0][0],
+    shieldMult_: skillParam_gen.passive1[0][0],
     maxStacks: skillParam_gen.passive1[1][0],
-    shieldMult_: skillParam_gen.passive1[2][0],
+    cd: skillParam_gen.passive1[2][0],
   },
   passive2: {
     skill_dmg_: skillParam_gen.passive2[0][0],
     burst_dmg_: skillParam_gen.passive2[1][0],
   },
   constellation1: {
-    hpThresh: skillParam_gen.constellation1[0],
-    maxExtra: skillParam_gen.constellation1[1],
+    hpThresh: 1 / skillParam_gen.constellation1[0],
   },
   constellation2: {
     shieldMult_: skillParam_gen.constellation2[0],
@@ -120,7 +119,7 @@ const p1Shield = shieldNodeTalent(
   dm.skill.shield_base,
   'skill',
   undefined,
-  dm.passive1.shieldMult_
+  percent(dm.passive1.shieldMult_)
 )
 const c2Shield = shieldNodeTalent(
   'hp',
@@ -128,7 +127,7 @@ const c2Shield = shieldNodeTalent(
   dm.skill.maxShield_base,
   'skill',
   undefined,
-  dm.constellation2.shieldMult_
+  percent(dm.constellation2.shieldMult_)
 )
 
 const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
@@ -254,7 +253,7 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
+  name: ct.name,
   rarity: data_gen.rarity,
   elementKey: elementKey,
   weaponTypeKey: data_gen.weaponType,
