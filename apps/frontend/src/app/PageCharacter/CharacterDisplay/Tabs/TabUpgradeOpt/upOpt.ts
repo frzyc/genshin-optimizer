@@ -186,73 +186,108 @@ export class UpOptCalculator {
     })
   }
 
-  _calcFast(ix: number, calc4th = false) {
-    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
-    if (subs.length === 4) calc4th = false
-    const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
-
-    const sub4thOptions: { prob: number; sub?: SubstatKey }[] = []
-    if (!calc4th) {
-      sub4thOptions.push({ prob: 1 })
-    } else {
-      const subsToConsider = allSubstatKeys.filter(
-        (s) => !subs.includes(s) && s !== mainStat
-      )
-
-      const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
-      subsToConsider.forEach((sub) =>
-        sub4thOptions.push({ prob: fWeight[sub] / Z, sub })
-      )
-    }
-
-    const evalResults = sub4thOptions.map(({ prob, sub: subKey4 }) => {
-      const stats = { ...this.artifacts[ix].values }
-
-      // Increment stats to evaluate derivatives at "center" of upgrade distribution
-      subs.forEach((subKey) => {
-        stats[subKey] =
-          (stats[subKey] ?? 0) + (17 / 2) * (upgradesLeft / 4) * scale(subKey)
+  /* Fast distribution to result. */
+  toResult1(
+    distr: { prob: number; mu: number[]; cov: number[] }[]
+  ): UpOptResult {
+    let ptot = 0
+    let upAvgtot = 0
+    const gmm = distr.map(({ prob, mu, cov }) => {
+      const z = mu.map((mui, i) => {
+        return gaussianPE(mui, cov[i], this.thresholds[i])
       })
-      if (subKey4 !== undefined) {
-        stats[subKey4] =
-          (stats[subKey4] ?? 0) +
-          (17 / 2) * (upgradesLeft / 4 + 1) * scale(subKey4)
-      }
+      const p = Math.min(...z.map(({ p }) => p))
+      const cp = Math.min(...z.slice(1).map(({ p }) => p))
+      ptot += p * prob
+      upAvgtot += p * prob * z[0].upAvg
+      return { phi: prob, cp, mu: mu[0], sig2: cov[0] }
+    })
+    const lowers = gmm.map(({ mu, sig2 }) => mu - 4 * Math.sqrt(sig2))
+    const uppers = gmm.map(({ mu, sig2 }) => mu + 4 * Math.sqrt(sig2))
+    return {
+      p: ptot,
+      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
+      distr: { gmm, lower: Math.min(...lowers), upper: Math.max(...uppers) },
+      evalMode: ResultType.Fast,
+    }
+  }
 
-      // Compute upgrade estimates. For fast case, loop over probability for each stat
-      //   independently, and take the minimum probability.
-      const N = upgradesLeft
+  calcFast(ix: number, calc4th = true) {
+    if (this.artifacts[ix].subs.length === 4) calc4th = false
+    if (calc4th) this._calcFast4th(ix)
+    else this._calcFast(ix)
+  }
+
+  _calcFast(ix: number) {
+    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
+
+    const stats = { ...this.artifacts[ix].values }
+    subs.forEach((subKey) => {
+      stats[subKey] += (17 / 2) * (N / 4) * scale(subKey)
+    })
+    const objective = this.eval(stats, slotKey)
+    const results = objective.map(({ v: mu, grads }) => {
+      const ks = grads
+        .map((g, i) => g * scale(allSubstatKeys[i]))
+        .filter((g, i) => subs.includes(allSubstatKeys[i]))
+      const ksum = ks.reduce((a, b) => a + b, 0)
+      const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+      const sig2 = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
+
+      return { mu, sig2 }
+    })
+
+    this.artifacts[ix].result = this.toResult1([
+      {
+        prob: 1,
+        mu: results.map(({ mu }) => mu),
+        cov: results.map(({ sig2 }) => sig2),
+      },
+    ])
+  }
+
+  _calcFast4th(ix: number) {
+    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - 1 // Minus 1 because 4th slot takes 1.
+
+    const subsToConsider = allSubstatKeys.filter(
+      (s) => !subs.includes(s) && s !== mainStat
+    )
+
+    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
+    const distr = subsToConsider.map((subKey4) => {
+      const prob = fWeight[subKey4] / Z
+      const stats = { ...this.artifacts[ix].values }
+      subs.forEach((subKey) => {
+        stats[subKey] += (17 / 2) * (N / 4) * scale(subKey)
+      })
+      stats[subKey4] =
+        (stats[subKey4] ?? 0) + (17 / 2) * (N / 4 + 1) * scale(subKey4)
+
       const objective = this.eval(stats, slotKey)
-      const results: UpOptResult[] = objective.map(({ v: mean, grads }, fi) => {
+      const results = objective.map(({ v: mu, grads }) => {
         const ks = grads
           .map((g, i) => g * scale(allSubstatKeys[i]))
-          .filter(
-            (g, i) =>
-              subs.includes(allSubstatKeys[i]) || allSubstatKeys[i] === subKey4
-          )
-        const ksum = ks.reduce((a, b) => a + b, 0)
-        const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+          .filter((g, i) => subs.includes(allSubstatKeys[i]))
+        const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
+        const ksum = ks.reduce((a, b) => a + b, k4)
+        const ksum2 = ks.reduce((a, b) => a + b * b, k4 * k4)
+        const sig2 =
+          ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N + (5 / 4) * k4 * k4
 
-        let variance = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
-        if (subKey4) {
-          const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
-          variance += (5 / 4) * k4 ** 2
-        }
-
-        return {
-          ...gaussianPE(mean, variance, this.thresholds[fi]),
-          distr: {
-            gmm: [{ phi: 1, mu: mean, sig2: variance, cp: 1 }],
-            lower: mean - 4 * Math.sqrt(variance),
-            upper: mean + 4 * Math.sqrt(variance),
-          },
-          evalMode: ResultType.Fast,
-        }
+        return { mu, sig2 }
       })
 
-      results[0].p = Math.min(...results.map(({ p }) => p))
-      return { prob, result: results[0] }
+      return {
+        prob,
+        mu: results.map(({ mu }) => mu),
+        cov: results.map(({ sig2 }) => sig2),
+      }
     })
-    this.artifacts[ix].result = aggregateResults(evalResults)
+
+    this.artifacts[ix].result = this.toResult1(distr)
   }
+
+
 }
