@@ -22,21 +22,21 @@ enum ResultType {
 export type UpOptBuild = {
   [key in ArtifactSlotKey]: ArtifactBuildData | undefined
 }
-export type UpOptResult = {
-  p: number
-  upAvg: number
-  distr: GaussianMixture
-
-  evalMode: ResultType
-}
 export type UpOptArtifact = {
   id: string
   rollsLeft: number
+  mainStat: MainStatKey
   subs: SubstatKey[]
   values: DynStat
   slotKey: ArtifactSlotKey
 
   result?: UpOptResult
+}
+export type UpOptResult = {
+  p: number
+  upAvg: number
+  distr: GaussianMixture
+  evalMode: ResultType
 }
 type GaussianMixture = {
   gmm: {
@@ -51,17 +51,37 @@ type GaussianMixture = {
   upper: number
 }
 
-function scale(key: SubstatKey, rarity: RarityKey = 5) {
-  return key.endsWith('_')
-    ? Artifact.substatValue(key, rarity) / 1000
-    : Artifact.substatValue(key, rarity) / 10
+/* substat roll weights */
+const fWeight: StrictDict<SubstatKey, number> = {
+  hp: 6,
+  atk: 6,
+  def: 6,
+  hp_: 4,
+  atk_: 4,
+  def_: 4,
+  eleMas: 4,
+  enerRech_: 4,
+  critRate_: 3,
+  critDMG_: 3,
 }
 
+/* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
+function scale(key: SubstatKey, rarity: RarityKey = 5) {
+  return toDecimal(key, Artifact.substatValue(key, rarity)) / 10
+}
+
+/* Fixes silliness with percents and being multiplied by 100. */
 function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
   return key.endsWith('_') ? value / 100 : value
 }
 
 export class UpOptCalculator {
+  /**
+   * Calculator class to track artifacts and their evaluation status. Method overview:
+   *    constructor(OptNode[], number[], Build):  Upgrade problem setup
+   *    addArtifact(ICachedArtifact):             Add an artifact to be considered
+   *    evalFast/Slow/Exact(number, bool):        Evaluate an artifact with X method and keep track of results
+   */
   baseBuild: UpOptBuild
   nodes: OptNode[]
   thresholds: number[]
@@ -119,6 +139,7 @@ export class UpOptCalculator {
       id: art.id,
       rollsLeft: Artifact.rollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
+      mainStat: art.mainStatKey,
       subs: art.substats
         .map(({ key }) => key)
         .filter((v) => v !== '') as SubstatKey[],
@@ -137,48 +158,60 @@ export class UpOptCalculator {
     })
   }
 
-  evalFast(ix: number, subKey4th?: SubstatKey) {
-    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
-    const stats = { ...this.artifacts[ix].values }
-    const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
+  evalFast(ix: number, calc4th = false) {
+    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
 
-    // Increment stats to evaluate derivatives at "center" of upgrade distribution
-    subs.forEach((subKey) => {
-      stats[subKey] =
-        (stats[subKey] ?? 0) + (17 / 2) * (upgradesLeft / 4) * scale(subKey)
-    })
-    if (subKey4th !== undefined) {
-      stats[subKey4th] =
-        (stats[subKey4th] ?? 0) +
-        (17 / 2) * (upgradesLeft / 4 + 1) * scale(subKey4th)
+    const sub4thOptions: { prob: number; sub?: SubstatKey }[] = []
+    if (!calc4th) {
+      sub4thOptions.push({ prob: 1 })
+    } else {
+      const subsToConsider = allSubstatKeys.filter(
+        (s) => !subs.includes(s) && s !== mainStat
+      )
+
+      const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
+      subsToConsider.forEach((sub) =>
+        sub4thOptions.push({ prob: fWeight[sub] / Z, sub })
+      )
     }
 
-    // Compute upgrade estimates. For fast case, loop over probability for each stat
-    //   independently, and take the minimum probability.
-    const N = upgradesLeft
-    const obj = this.eval(stats, slotKey)
-    for (let ix = 0; ix < obj.length; ix++) {
-      const { v, grads } = obj[ix]
-      const ks = grads
-        .map((g, i) => g * scale(allSubstatKeys[i]))
-        .filter(
-          (g, i) =>
-            subs.includes(allSubstatKeys[i]) || allSubstatKeys[i] === subKey4th
-        )
-      const ksum = ks.reduce((a, b) => a + b, 0)
-      const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+    const evalResults = sub4thOptions.map(({ prob, sub: subKey4 }) => {
+      const stats = { ...this.artifacts[ix].values }
+      const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
 
-      const mean = v
-      let variance = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
-      if (subKey4th) {
-        const k4th = grads[allSubstatKeys.indexOf(subKey4th)] * scale(subKey4th)
-        variance += (5 / 4) * k4th * k4th
+      // Increment stats to evaluate derivatives at "center" of upgrade distribution
+      subs.forEach((subKey) => {
+        stats[subKey] =
+          (stats[subKey] ?? 0) + (17 / 2) * (upgradesLeft / 4) * scale(subKey)
+      })
+      if (subKey4 !== undefined) {
+        stats[subKey4] =
+          (stats[subKey4] ?? 0) +
+          (17 / 2) * (upgradesLeft / 4 + 1) * scale(subKey4)
       }
 
-      const { p, upAvg } = gaussianPE(mean, variance, this.thresholds[ix])
-      if (ix === 0) {
-        // Store fast eval result on first iteration.
-        this.artifacts[ix].result = {
+      // Compute upgrade estimates. For fast case, loop over probability for each stat
+      //   independently, and take the minimum probability.
+      const N = upgradesLeft
+      const obj = this.eval(stats, slotKey)
+      const results: UpOptResult[] = obj.map(({ v: mean, grads }, fi) => {
+        const ks = grads
+          .map((g, i) => g * scale(allSubstatKeys[i]))
+          .filter(
+            (g, i) =>
+              subs.includes(allSubstatKeys[i]) || allSubstatKeys[i] === subKey4
+          )
+        const ksum = ks.reduce((a, b) => a + b, 0)
+        const ksum2 = ks.reduce((a, b) => a + b * b, 0)
+
+        let variance = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
+        if (subKey4) {
+          const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
+          variance += (5 / 4) * k4 ** 2
+        }
+
+        const { p, upAvg } = gaussianPE(mean, variance, this.thresholds[fi])
+        return {
           p,
           upAvg,
           distr: {
@@ -188,8 +221,32 @@ export class UpOptCalculator {
           },
           evalMode: ResultType.Fast,
         }
-      }
-      this.artifacts[ix].result!.p = Math.min(p, this.artifacts[ix].result!.p)
+      })
+
+      results[0].p = Math.min(...results.map(({ p }) => p))
+      return { prob, result: results[0] }
+    })
+
+    const ptot = evalResults.reduce(
+      (ptot, { prob, result: { p } }) => ptot + prob * p,
+      0
+    )
+    const aggResult: UpOptResult = {
+      p: ptot,
+      upAvg: 0,
+      distr: { gmm: [], lower: Infinity, upper: -Infinity },
+      evalMode: ResultType.Fast,
     }
+
+    evalResults.forEach(({ prob, result: { p, upAvg, distr } }) => {
+      aggResult.upAvg += ptot < 1e-6 ? 0 : (prob * p * upAvg) / ptot
+      aggResult.distr.gmm.push(
+        ...distr.gmm.map((g) => ({ ...g, phi: prob * g.phi })) // Scale each component by `prob`
+      )
+      aggResult.distr.lower = Math.min(aggResult.distr.lower, distr.lower)
+      aggResult.distr.upper = Math.max(aggResult.distr.upper, distr.upper)
+    })
+
+    this.artifacts[ix].result = aggResult
   }
 }
