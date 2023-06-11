@@ -117,7 +117,7 @@ export class UpOptCalculator {
 
     this.artifacts.push({
       id: art.id,
-      rollsLeft: 0,
+      rollsLeft: Artifact.rollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
       subs: art.substats
         .map(({ key }) => key)
@@ -126,10 +126,12 @@ export class UpOptCalculator {
         [art.setKey]: 1,
         [art.mainStatKey]: toDecimal(art.mainStatKey, mainStatVal),
         ...Object.fromEntries(
-          art.substats.map((substat) => [
-            substat.key,
-            toDecimal(substat.key, substat.accurateValue),
-          ])
+          art.substats
+            .filter(({ key }) => key !== '')
+            .map((substat) => [
+              substat.key,
+              toDecimal(substat.key, substat.accurateValue),
+            ])
         ), // Assumes substats cannot match main stat key
       },
     })
@@ -138,31 +140,40 @@ export class UpOptCalculator {
   evalFast(ix: number, subKey4th?: SubstatKey) {
     const { subs, slotKey, rollsLeft } = this.artifacts[ix]
     const stats = { ...this.artifacts[ix].values }
+    const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
 
     // Increment stats to evaluate derivatives at "center" of upgrade distribution
     subs.forEach((subKey) => {
       stats[subKey] =
-        (stats[subKey] ?? 0) + (17 / 2) * (rollsLeft / 4) * scale(subKey)
+        (stats[subKey] ?? 0) + (17 / 2) * (upgradesLeft / 4) * scale(subKey)
     })
     if (subKey4th !== undefined) {
       stats[subKey4th] =
         (stats[subKey4th] ?? 0) +
-        (17 / 2) * (rollsLeft / 4 + 1) * scale(subKey4th)
+        (17 / 2) * (upgradesLeft / 4 + 1) * scale(subKey4th)
     }
 
     // Compute upgrade estimates. For fast case, loop over probability for each stat
     //   independently, and take the minimum probability.
-    const N = rollsLeft
+    const N = upgradesLeft
     const obj = this.eval(stats, slotKey)
     for (let ix = 0; ix < obj.length; ix++) {
       const { v, grads } = obj[ix]
-      const gsum = grads.reduce((a, b) => a + b, 0)
-      const gsum2 = grads.reduce((a, b) => a + b * b, 0)
+      const ks = grads
+        .map((g, i) => g * scale(allSubstatKeys[i]))
+        .filter(
+          (g, i) =>
+            subs.includes(allSubstatKeys[i]) || allSubstatKeys[i] === subKey4th
+        )
+      const ksum = ks.reduce((a, b) => a + b, 0)
+      const ksum2 = ks.reduce((a, b) => a + b * b, 0)
 
       const mean = v
-      const variance =
-        ((147 / 8) * gsum2 - (289 / 64) * gsum * gsum) * N +
-        (subKey4th === undefined ? (5 / 4) * grads[3] * grads[3] : 0)
+      let variance = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
+      if (subKey4th) {
+        const k4th = grads[allSubstatKeys.indexOf(subKey4th)] * scale(subKey4th)
+        variance += (5 / 4) * k4th * k4th
+      }
 
       const { p, upAvg } = gaussianPE(mean, variance, this.thresholds[ix])
       if (ix === 0) {
