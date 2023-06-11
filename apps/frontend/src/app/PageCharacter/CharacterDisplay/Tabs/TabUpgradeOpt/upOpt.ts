@@ -75,6 +75,27 @@ function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
   return key.endsWith('_') ? value / 100 : value
 }
 
+/* Aggregates `results`, each weighted by `prob`. Assumes `prob` sums to 1. */
+function aggregateResults(results: { prob: number; result: UpOptResult }[]) {
+  const ptot = results.reduce((a, { prob, result: { p } }) => a + prob * p, 0)
+  const aggResult: UpOptResult = {
+    p: ptot,
+    upAvg: 0,
+    distr: { gmm: [], lower: Infinity, upper: -Infinity },
+    evalMode: results[0].result.evalMode,
+  }
+
+  results.forEach(({ prob, result: { p, upAvg, distr } }) => {
+    aggResult.upAvg += ptot < 1e-6 ? 0 : (prob * p * upAvg) / ptot
+    aggResult.distr.gmm.push(
+      ...distr.gmm.map((g) => ({ ...g, phi: prob * g.phi })) // Scale each component by `prob`
+    )
+    aggResult.distr.lower = Math.min(aggResult.distr.lower, distr.lower)
+    aggResult.distr.upper = Math.max(aggResult.distr.upper, distr.upper)
+  })
+  return aggResult
+}
+
 export class UpOptCalculator {
   /**
    * Calculator class to track artifacts and their evaluation status. Method overview:
@@ -94,6 +115,12 @@ export class UpOptCalculator {
 
   artifacts: UpOptArtifact[] = []
 
+  /**
+   * Constructs UpOptCalculator.
+   * @param nodes Formulas to find upgrades for. nodes[0] is main objective, the rest are constraints.
+   * @param thresholds Constraint values. thresholds[0] will be auto-populated with current objective value.
+   * @param build Build to check 1-swaps against.
+   */
   constructor(nodes: OptNode[], thresholds: number[], build: UpOptBuild) {
     this.baseBuild = build
     this.nodes = nodes
@@ -127,6 +154,7 @@ export class UpOptCalculator {
     }
   }
 
+  /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
   addArtifact(art: ICachedArtifact) {
     const maxLevel = maxArtifactLevel[art.rarity]
     const mainStatVal = Artifact.mainStatValue(
@@ -158,8 +186,10 @@ export class UpOptCalculator {
     })
   }
 
-  evalFast(ix: number, calc4th = false) {
+  _calcFast(ix: number, calc4th = false) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
+    if (subs.length === 4) calc4th = false
+    const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
 
     const sub4thOptions: { prob: number; sub?: SubstatKey }[] = []
     if (!calc4th) {
@@ -177,7 +207,6 @@ export class UpOptCalculator {
 
     const evalResults = sub4thOptions.map(({ prob, sub: subKey4 }) => {
       const stats = { ...this.artifacts[ix].values }
-      const upgradesLeft = rollsLeft - (subs.length < 4 ? 1 : 0)
 
       // Increment stats to evaluate derivatives at "center" of upgrade distribution
       subs.forEach((subKey) => {
@@ -193,8 +222,8 @@ export class UpOptCalculator {
       // Compute upgrade estimates. For fast case, loop over probability for each stat
       //   independently, and take the minimum probability.
       const N = upgradesLeft
-      const obj = this.eval(stats, slotKey)
-      const results: UpOptResult[] = obj.map(({ v: mean, grads }, fi) => {
+      const objective = this.eval(stats, slotKey)
+      const results: UpOptResult[] = objective.map(({ v: mean, grads }, fi) => {
         const ks = grads
           .map((g, i) => g * scale(allSubstatKeys[i]))
           .filter(
@@ -210,10 +239,8 @@ export class UpOptCalculator {
           variance += (5 / 4) * k4 ** 2
         }
 
-        const { p, upAvg } = gaussianPE(mean, variance, this.thresholds[fi])
         return {
-          p,
-          upAvg,
+          ...gaussianPE(mean, variance, this.thresholds[fi]),
           distr: {
             gmm: [{ phi: 1, mu: mean, sig2: variance, cp: 1 }],
             lower: mean - 4 * Math.sqrt(variance),
@@ -226,27 +253,6 @@ export class UpOptCalculator {
       results[0].p = Math.min(...results.map(({ p }) => p))
       return { prob, result: results[0] }
     })
-
-    const ptot = evalResults.reduce(
-      (ptot, { prob, result: { p } }) => ptot + prob * p,
-      0
-    )
-    const aggResult: UpOptResult = {
-      p: ptot,
-      upAvg: 0,
-      distr: { gmm: [], lower: Infinity, upper: -Infinity },
-      evalMode: ResultType.Fast,
-    }
-
-    evalResults.forEach(({ prob, result: { p, upAvg, distr } }) => {
-      aggResult.upAvg += ptot < 1e-6 ? 0 : (prob * p * upAvg) / ptot
-      aggResult.distr.gmm.push(
-        ...distr.gmm.map((g) => ({ ...g, phi: prob * g.phi })) // Scale each component by `prob`
-      )
-      aggResult.distr.lower = Math.min(aggResult.distr.lower, distr.lower)
-      aggResult.distr.upper = Math.max(aggResult.distr.upper, distr.upper)
-    })
-
-    this.artifacts[ix].result = aggResult
+    this.artifacts[ix].result = aggregateResults(evalResults)
   }
 }
