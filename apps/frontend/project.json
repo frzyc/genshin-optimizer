@@ -29,7 +29,7 @@
             "output": "assets"
           },
           {
-            "input": "dist/libs/dm-localization/assets",
+            "input": "libs/dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },

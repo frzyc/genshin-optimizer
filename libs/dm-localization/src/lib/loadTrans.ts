@@ -404,7 +404,7 @@ export default function loadTrans() {
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${__dirname}/../../assets/locales/${lang}`
+    const fileDir = `${process.env['NX_WORKSPACE_ROOT']}/libs/dm-localization/assets/locales/${lang}`
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localization namespaces
