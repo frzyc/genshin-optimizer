@@ -12,7 +12,8 @@ import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
 import Artifact, { maxArtifactLevel } from '../../../../Data/Artifacts/Artifact'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
 
-import { gaussianPE } from './mvncdf'
+import { gaussianPE, mvnPE_bad } from './mvncdf'
+import { crawlUpgrades } from './artifactUpgradeCrawl'
 
 enum ResultType {
   Fast,
@@ -73,27 +74,6 @@ function scale(key: SubstatKey, rarity: RarityKey = 5) {
 /* Fixes silliness with percents and being multiplied by 100. */
 function toDecimal(key: SubstatKey | MainStatKey | '', value: number) {
   return key.endsWith('_') ? value / 100 : value
-}
-
-/* Aggregates `results`, each weighted by `prob`. Assumes `prob` sums to 1. */
-function aggregateResults(results: { prob: number; result: UpOptResult }[]) {
-  const ptot = results.reduce((a, { prob, result: { p } }) => a + prob * p, 0)
-  const aggResult: UpOptResult = {
-    p: ptot,
-    upAvg: 0,
-    distr: { gmm: [], lower: Infinity, upper: -Infinity },
-    evalMode: results[0].result.evalMode,
-  }
-
-  results.forEach(({ prob, result: { p, upAvg, distr } }) => {
-    aggResult.upAvg += ptot < 1e-6 ? 0 : (prob * p * upAvg) / ptot
-    aggResult.distr.gmm.push(
-      ...distr.gmm.map((g) => ({ ...g, phi: prob * g.phi })) // Scale each component by `prob`
-    )
-    aggResult.distr.lower = Math.min(aggResult.distr.lower, distr.lower)
-    aggResult.distr.upper = Math.max(aggResult.distr.upper, distr.upper)
-  })
-  return aggResult
 }
 
 export class UpOptCalculator {
@@ -227,10 +207,10 @@ export class UpOptCalculator {
       stats[subKey] += (17 / 2) * (N / 4) * scale(subKey)
     })
     const objective = this.eval(stats, slotKey)
-    const results = objective.map(({ v: mu, grads }) => {
-      const ks = grads
-        .map((g, i) => g * scale(allSubstatKeys[i]))
-        .filter((g, i) => subs.includes(allSubstatKeys[i]))
+    const gaussians = objective.map(({ v: mu, grads }) => {
+      const ks = subs.map(
+        (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+      )
       const ksum = ks.reduce((a, b) => a + b, 0)
       const ksum2 = ks.reduce((a, b) => a + b * b, 0)
       const sig2 = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
@@ -241,8 +221,8 @@ export class UpOptCalculator {
     this.artifacts[ix].result = this.toResult1([
       {
         prob: 1,
-        mu: results.map(({ mu }) => mu),
-        cov: results.map(({ sig2 }) => sig2),
+        mu: gaussians.map(({ mu }) => mu),
+        cov: gaussians.map(({ sig2 }) => sig2),
       },
     ])
   }
@@ -266,10 +246,10 @@ export class UpOptCalculator {
         (stats[subKey4] ?? 0) + (17 / 2) * (N / 4 + 1) * scale(subKey4)
 
       const objective = this.eval(stats, slotKey)
-      const results = objective.map(({ v: mu, grads }) => {
-        const ks = grads
-          .map((g, i) => g * scale(allSubstatKeys[i]))
-          .filter((g, i) => subs.includes(allSubstatKeys[i]))
+      const gaussians = objective.map(({ v: mu, grads }) => {
+        const ks = subs.map(
+          (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+        )
         const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
         const ksum = ks.reduce((a, b) => a + b, k4)
         const ksum2 = ks.reduce((a, b) => a + b * b, k4 * k4)
@@ -281,13 +261,111 @@ export class UpOptCalculator {
 
       return {
         prob,
-        mu: results.map(({ mu }) => mu),
-        cov: results.map(({ sig2 }) => sig2),
+        mu: gaussians.map(({ mu }) => mu),
+        cov: gaussians.map(({ sig2 }) => sig2),
       }
     })
 
     this.artifacts[ix].result = this.toResult1(distr)
   }
 
+  toResult2(
+    distr: { prob: number; mu: number[]; cov: number[][] }[]
+  ): UpOptResult {
+    let ptot = 0
+    let upAvgtot = 0
+    const gmm = distr.map(({ prob, mu, cov }) => {
+      const { p, upAvg, cp } = mvnPE_bad(mu, cov, this.thresholds)
+      ptot += prob * p
+      upAvgtot += prob * p * upAvg
+      return { phi: prob, cp, mu: mu[0], sig2: cov[0][0] }
+    })
+    const lowers = gmm.map(({ mu, sig2 }) => mu - 4 * Math.sqrt(sig2))
+    const uppers = gmm.map(({ mu, sig2 }) => mu + 4 * Math.sqrt(sig2))
+    return {
+      p: ptot,
+      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
+      distr: {
+        gmm,
+        lower: Math.min(...lowers, this.thresholds[0]),
+        upper: Math.max(...uppers, this.thresholds[0]),
+      },
+      evalMode: ResultType.Slow,
+    }
+  }
 
+  calcSlow(ix: number, calc4th = true) {
+    if (this.artifacts[ix].subs.length === 4) calc4th = false
+    if (calc4th) this._calcSlow4th(ix)
+    else this._calcSlow(ix)
+  }
+
+  _calcSlow(ix: number) {
+    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
+
+    const distrs: { prob: number; mu: number[]; cov: number[][] }[] = []
+    crawlUpgrades(N, (ns, prob) => {
+      const stats = { ...this.artifacts[ix].values }
+      subs.forEach((subKey, i) => {
+        stats[subKey] += (17 / 2) * ns[i] * scale(subKey)
+      })
+
+      const objective = this.eval(stats, slotKey)
+      const obj_ks = objective.map(({ grads }) =>
+        subs.map((sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub))
+      )
+      const mu = objective.map((o) => o.v)
+      const cov = obj_ks.map((k1) =>
+        obj_ks.map((k2) =>
+          k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
+        )
+      )
+      distrs.push({ prob, mu, cov })
+    })
+
+    this.artifacts[ix].result = this.toResult2(distrs)
+  }
+
+  _calcSlow4th(ix: number) {
+    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - 1 // only for 5*
+
+    const subsToConsider = allSubstatKeys.filter(
+      (s) => !subs.includes(s) && s !== mainStat
+    )
+
+    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
+    const distrs: { prob: number; mu: number[]; cov: number[][] }[] = []
+    subsToConsider.forEach((subKey4) => {
+      crawlUpgrades(N, (ns, prob) => {
+        prob = prob * (fWeight[subKey4] / Z)
+        const stats = { ...this.artifacts[ix].values }
+        ns[3] += 1 // last substat has initial roll
+        subs.forEach((subKey, i) => {
+          stats[subKey] += (17 / 2) * ns[i] * scale(subKey)
+        })
+        stats[subKey4] =
+          (stats[subKey4] ?? 0) + (17 / 2) * ns[3] * scale(subKey4)
+
+        const objective = this.eval(stats, slotKey)
+        const obj_ks = objective.map(({ grads }) => {
+          const ks = subs.map(
+            (sub) => grads[allSubstatKeys.indexOf(sub)] * scale(sub)
+          )
+          ks.push(grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4))
+          return ks
+        })
+        const mu = objective.map((o) => o.v)
+        const cov = obj_ks.map((k1) =>
+          obj_ks.map((k2) =>
+            k1.reduce((pv, cv, j) => pv + k1[j] * k2[j] * ns[j], 0)
+          )
+        )
+        distrs.push({ prob, mu, cov })
+      })
+    })
+
+    this.artifacts[ix].result = this.toResult2(distrs)
+  }
 }
