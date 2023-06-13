@@ -18,7 +18,6 @@ import {
 import { useCallback, useContext } from 'react'
 import Artifact from '../../Data/Artifacts/Artifact'
 import { DatabaseContext } from '../../Database/Database'
-import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
 import useArtifact from '../../ReactHooks/useArtifact'
 import type { ICachedSubstat } from '../../Types/artifact'
@@ -81,7 +80,6 @@ export default function ArtifactCardNano({
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
   )
-  const mainStatUnit = KeyMap.unit(mainStatKey)
   const element = allElementWithPhyKeys.find((ele) =>
     art.mainStatKey.includes(ele)
   )

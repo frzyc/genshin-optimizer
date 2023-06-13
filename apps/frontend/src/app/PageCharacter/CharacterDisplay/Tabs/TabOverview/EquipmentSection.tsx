@@ -1,10 +1,10 @@
+import type { ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
   allSubstatKeys,
-  ArtifactSlotKey,
   charKeyToLocCharKey,
-  WeaponTypeKey,
 } from '@genshin-optimizer/consts'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { Settings, SwapHoriz } from '@mui/icons-material'
 import {
@@ -51,7 +51,6 @@ import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
-import { useBoolState } from '@genshin-optimizer/react-util'
 import useCharMeta from '../../../../ReactHooks/useCharMeta'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
 import ArtifactSwapModal from './ArtifactSwapModal'

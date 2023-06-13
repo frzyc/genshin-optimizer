@@ -8,6 +8,8 @@ import {
   allWeaponTypeKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
+import { useBoolState, useForceUpdate } from '@genshin-optimizer/react-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { filterFunction } from '@genshin-optimizer/util'
 import SettingsIcon from '@mui/icons-material/Settings'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
@@ -49,9 +51,6 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
 import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
 import { allAllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
-import { useBoolState } from '@genshin-optimizer/react-util'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import type { ICachedCharacter } from '../../../../../Types/character'
 import { characterFilterConfigs } from '../../../../../Util/CharacterSort'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'

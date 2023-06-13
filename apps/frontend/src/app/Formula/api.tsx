@@ -11,25 +11,15 @@ import {
   crawlObject,
   layeredAssignment,
   objKeyMap,
-  objMap,
   objPathValue,
 } from '@genshin-optimizer/util'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
 import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
-import type { InputPremodKey } from './index'
 import { input, tally } from './index'
 import { deepNodeClone } from './internal'
-import type {
-  Data,
-  DisplaySub,
-  Info,
-  Input,
-  NumNode,
-  ReadNode,
-  StrNode,
-} from './type'
+import type { Data, DisplaySub, Info, NumNode, ReadNode, StrNode } from './type'
 import type { NodeDisplay } from './uiData'
 import { UIData } from './uiData'
 import {

@@ -59,8 +59,7 @@ export class WeaponDataManager extends DataManager<
     let { refinement, location, lock } = obj as IWeapon
 
     if (!allWeaponKeys.includes(key)) return
-    const rarity = allStats.weapon.data[key].rarity
-    const weaponType = allStats.weapon.data[key].weaponType
+    const { rarity, weaponType } = allStats.weapon.data[key]
     if (rawLevel > weaponMaxLevel[rarity]) return
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
