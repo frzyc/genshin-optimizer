@@ -1,7 +1,7 @@
 import type { LocationCharacterKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/consts'
 import { toggleArr } from '@genshin-optimizer/util'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
@@ -15,7 +15,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -34,7 +34,7 @@ import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
 import type {
   AllowLocationsState,
-  ArtSetExclusionKey,
+  ArtSetExclusionKey
 } from '../../../../../Database/DataManagers/BuildSettingData'
 import { allArtifactSetExclusionKeys } from '../../../../../Database/DataManagers/BuildSettingData'
 import { uiInput as input } from '../../../../../Formula'
