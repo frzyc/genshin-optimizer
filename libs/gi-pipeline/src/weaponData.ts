@@ -93,19 +93,16 @@ export default function weaponData() {
         ],
         refinementBonus: [...refKeys].map((key) => ({
           key: propTypeMap[key],
-          values: [
-            -1,
-            ...refData.map(
-              (x) =>
-                x.addProps.reduce(
-                  (accu, x) =>
-                    x.propType === key
-                      ? accu + extrapolateFloat(x.value)
-                      : accu,
-                  0
-                ) ?? 0
-            ),
-          ],
+          values: refData.map(
+            (x) =>
+              x.addProps.reduce(
+                (accu, x) =>
+                  x.propType === key
+                    ? accu + extrapolateFloat(x.value)
+                    : accu,
+                0
+              ) ?? 0
+          ),
         })),
         ascensionBonus: [...ascKeys].map((key) => ({
           key: propTypeMap[key],
