@@ -97,9 +97,7 @@ export default function weaponData() {
             (x) =>
               x.addProps.reduce(
                 (accu, x) =>
-                  x.propType === key
-                    ? accu + extrapolateFloat(x.value)
-                    : accu,
+                  x.propType === key ? accu + extrapolateFloat(x.value) : accu,
                 0
               ) ?? 0
           ),
