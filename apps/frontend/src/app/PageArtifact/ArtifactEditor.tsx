@@ -10,6 +10,7 @@ import {
 } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/g-assets'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
+import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
 import { clamp } from '@genshin-optimizer/util'
 import {
   Add,
@@ -69,8 +70,6 @@ import {
   validateArtifact,
 } from '../Database/DataManagers/ArtifactData'
 import StatIcon from '../KeyMap/StatIcon'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import { usePromise } from '@genshin-optimizer/react-util'
 import type { IArtifact, ICachedArtifact, ISubstat } from '../Types/artifact'
 import type { ArtifactRarity } from '../Types/consts'
 import { randomizeArtifact } from '../Util/randomizeArtifact'

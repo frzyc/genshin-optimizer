@@ -18,14 +18,20 @@ import {
 } from '@genshin-optimizer/util'
 import type { IArtifact, ISubstat } from '../Types/artifact'
 import type { ArtifactRarity } from '../Types/consts'
+import { allArtifactRarities } from '../Types/consts'
 
 // do not randomize Prayers since they don't have all slots
 const artSets = allArtifactSetKeys.filter((k) => !k.startsWith('Prayers'))
 export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   const setKey = base.setKey ?? getRandomElementFromArray(artSets)
   const data = allStats.art.data[setKey]
+  // GO only supports artifacts from 3 to 5 stars
   const rarity = (base.rarity ??
-    getRandomElementFromArray(data.rarities)) as ArtifactRarity
+    getRandomElementFromArray(
+      data.rarities.filter((r) =>
+        allArtifactRarities.includes(r as ArtifactRarity)
+      )
+    )) as ArtifactRarity
   const slot = base.slotKey ?? getRandomElementFromArray(data.slots)
   const mainStatKey =
     base.mainStatKey ?? getRandomElementFromArray(artSlotsData[slot].stats)

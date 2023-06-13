@@ -4,6 +4,7 @@ import {
   allWeaponTypeKeys,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
+import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
 import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import {
   DeleteForever,
@@ -51,8 +52,6 @@ import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../ReactHooks/useDBMeta'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
-import { useMediaQueryUp } from '@genshin-optimizer/react-util'
 import {
   characterFilterConfigs,
   characterSortConfigs,

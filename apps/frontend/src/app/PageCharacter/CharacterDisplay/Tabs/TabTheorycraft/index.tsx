@@ -1,12 +1,14 @@
-import {
-  allArtifactSlotKeys,
+import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-  artMaxLevel,
-  artSlotsData,
   MainStatKey,
   SubstatKey,
   WeaponTypeKey,
+} from '@genshin-optimizer/consts'
+import {
+  allArtifactSlotKeys,
+  artMaxLevel,
+  artSlotsData,
 } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import {
@@ -14,6 +16,7 @@ import {
   getMainStatDisplayValue,
   getSubstatValue,
 } from '@genshin-optimizer/gi-util'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { objMap } from '@genshin-optimizer/util'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
@@ -82,7 +85,6 @@ import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { constant, percent } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import StatIcon from '../../../../KeyMap/StatIcon'
-import { useBoolState } from '@genshin-optimizer/react-util'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'

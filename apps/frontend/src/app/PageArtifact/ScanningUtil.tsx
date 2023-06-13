@@ -465,9 +465,12 @@ export function findBestArtifact(
       {value} {value !== 1 ? 'Stars' : 'Star'}
     </>
   ))
-  addText('slotKey', slotKeys, 'Slot', (value: ArtifactSlotKey) => (
-    <>{artSlotsData[value].name}</>
-  ))
+  addText(
+    'slotKey',
+    slotKeys,
+    'Slot',
+    (value: ArtifactSlotKey) => artSlotsData[value].name
+  )
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <>{KeyMap.getStr(value)}</>
   ))
