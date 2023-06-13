@@ -25,6 +25,7 @@
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
+      "dependsOn": ["^pipeline"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
