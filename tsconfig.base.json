@@ -31,7 +31,6 @@
       "@genshin-optimizer/react-util": ["libs/react-util/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/svgicons": ["libs/svgicons/src/index.ts"],
-      "@genshin-optimizer/ui-common": ["libs/ui-common/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
       "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"]
     }
