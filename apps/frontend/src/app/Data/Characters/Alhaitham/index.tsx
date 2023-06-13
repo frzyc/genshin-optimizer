@@ -16,7 +16,7 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -133,7 +133,7 @@ const c2DebateStacks_eleMas = greaterEq(
   2,
   lookup(
     condDebateStacks,
-    objectKeyMap(debateStacksArr, (stack) =>
+    objKeyMap(debateStacksArr, (stack) =>
       prod(stack, dm.constellation2.eleMas)
     ),
     naught
@@ -151,7 +151,7 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(
     4,
     lookup(
       condMirrorsConsumed,
-      objectKeyMap(mirrorsConsumedArr, (count) =>
+      objKeyMap(mirrorsConsumedArr, (count) =>
         prod(count, dm.constellation4.eleMas)
       ),
       naught
@@ -177,7 +177,7 @@ const c4MirrorsGenerated_dendro_dmg_ = greaterEq(
     ),
     lookup(
       condMirrorsConsumed,
-      objectKeyMap(mirrorsConsumedArr, (count) =>
+      objKeyMap(mirrorsConsumedArr, (count) =>
         prod(3 - count, percent(dm.constellation4.dendro_dmg_))
       ),
       naught
@@ -422,7 +422,7 @@ const sheet: ICharacterSheet = {
         value: condMirrorsConsumed,
         teamBuff: true,
         name: ct.ch('mirrorsConsumed'),
-        states: objectKeyMap(mirrorsConsumedArr, (count) => ({
+        states: objKeyMap(mirrorsConsumedArr, (count) => ({
           name: `${count}`,
           fields: [
             {
@@ -451,7 +451,7 @@ const sheet: ICharacterSheet = {
         value: condDebateStacks,
         name: ct.ch('debateStacks'),
         teamBuff: true, // For Nahida A1
-        states: objectKeyMap(debateStacksArr, (stack) => ({
+        states: objKeyMap(debateStacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [{ node: c2DebateStacks_eleMas }],
         })),

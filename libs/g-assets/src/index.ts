@@ -9,6 +9,9 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/consts'
+
+export * from './assets'
+
 type characterAssetKey =
   | 'icon'
   | 'iconSide'
@@ -37,14 +40,21 @@ export function characterAsset(
     case 'iconSide':
       return chars[charKeyToLocGenderedCharKey(ck, gender)][asset] ?? '' //gender specific
     default:
-      return chars[ck][asset] ?? ''
+      return (chars[ck] as Record<characterAssetKey, string>)[asset] ?? ''
   }
 }
 export function artifactAsset(
   ak: ArtifactSetKey,
   slotKey: ArtifactSlotKey
 ): string {
-  return artifacts[ak][slotKey] ?? ''
+  if (
+    ak === 'PrayersForDestiny' ||
+    ak === 'PrayersForIllumination' ||
+    ak === 'PrayersForWisdom' ||
+    ak === 'PrayersToSpringtime'
+  )
+    return artifacts[ak].circlet
+  else return artifacts[ak][slotKey] ?? ''
 }
 export function weaponAsset(wk: WeaponKey, empowered = true) {
   return (

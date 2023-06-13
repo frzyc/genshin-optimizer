@@ -1,4 +1,11 @@
-import { artifactAsset } from '@genshin-optimizer/g-assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/g-assets'
+import {
+  artDisplayValue,
+  getMainStatDisplayStr,
+} from '@genshin-optimizer/gi-util'
+import { clamp, unit } from '@genshin-optimizer/util'
 import { BusinessCenter } from '@mui/icons-material'
 import {
   alpha,
@@ -9,16 +16,12 @@ import {
   useTheme,
 } from '@mui/material'
 import { useCallback, useContext } from 'react'
-import Assets from '../../Assets/Assets'
 import Artifact from '../../Data/Artifacts/Artifact'
 import { DatabaseContext } from '../../Database/Database'
-import KeyMap, { cacheValueString } from '../../KeyMap'
+import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
 import useArtifact from '../../ReactHooks/useArtifact'
 import type { ICachedSubstat } from '../../Types/artifact'
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { clamp } from '../../Util/Util'
 import BootstrapTooltip from '../BootstrapTooltip'
 import CardDark from '../Card/CardDark'
 import LocationIcon from '../Character/LocationIcon'
@@ -67,7 +70,7 @@ export default function ArtifactCardNano({
       >
         <Box
           component="img"
-          src={Assets.slot[pSlotKey]}
+          src={imgAssets.slot[pSlotKey]}
           sx={{ width: '25%', height: 'auto', opacity: 0.7 }}
         />
       </BGComponent>
@@ -182,15 +185,7 @@ export default function ArtifactCardNano({
                   <ColorText
                     color={mainStatLevel !== level ? 'warning' : undefined}
                   >
-                    {cacheValueString(
-                      Artifact.mainStatValue(
-                        mainStatKey,
-                        rarity,
-                        mainStatLevel
-                      ) ?? 0,
-                      KeyMap.unit(mainStatKey)
-                    )}
-                    {mainStatUnit}
+                    {getMainStatDisplayStr(mainStatKey, rarity, mainStatLevel)}
                   </ColorText>
                 </Typography>
               }
@@ -216,7 +211,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
   if (!stat.value) return null
   const numRolls = stat.rolls?.length ?? 0
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
-  const unit = KeyMap.unit(stat.key)
+  const statUnit = unit(stat.key)
   return (
     <Box display="flex" gap={1} alignContent="center">
       <Typography
@@ -237,10 +232,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
             <StatIcon statKey={stat.key} iconProps={{ fontSize: 'inherit' }} />
           </Box>
         </BootstrapTooltip>
-        <span>{`${cacheValueString(
-          stat.value,
-          KeyMap.unit(stat.key)
-        )}${unit}`}</span>
+        <span>{`${artDisplayValue(stat.value, statUnit)}${statUnit}`}</span>
       </Typography>
     </Box>
   )

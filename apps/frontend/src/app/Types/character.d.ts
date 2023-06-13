@@ -1,7 +1,11 @@
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import type {
+  ArtifactSlotKey,
+  MainStatKey,
+  SubstatKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
-import type { MainStatKey, SubstatKey } from './artifact'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
@@ -13,7 +17,6 @@ import type {
   InfusionAuraElements,
   Refinement,
   SubstatType,
-  WeaponKey,
 } from './consts'
 import type { IConditionalValues } from './sheet'
 

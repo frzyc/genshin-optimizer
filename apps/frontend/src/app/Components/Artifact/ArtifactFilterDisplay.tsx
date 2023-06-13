@@ -2,7 +2,10 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allMainStatKeys,
+  allSubstatKeys,
 } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
@@ -12,14 +15,9 @@ import { Suspense, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { DatabaseContext } from '../../Database/Database'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
-import {
-  allArtifactRarityKeys,
-  allMainStatKeys,
-  allSubstatKeys,
-} from '../../Types/artifact'
+import { allArtifactRarityKeys } from '../../Types/artifact'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'
-import { objectKeyMap } from '../../Util/Util'
 import BootstrapTooltip from '../BootstrapTooltip'
 import SolidToggleButtonGroup from '../SolidToggleButtonGroup'
 import { StarsDisplay } from '../StarDisplay'
@@ -53,7 +51,7 @@ export default function ArtifactFilterDisplay({
   const { t } = useTranslation(['artifact', 'ui'])
 
   const filteredIdMap = useMemo(
-    () => objectKeyMap(filteredIds, (_) => true),
+    () => objKeyMap(filteredIds, (_) => true),
     [filteredIds]
   )
 

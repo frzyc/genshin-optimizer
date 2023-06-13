@@ -1,6 +1,6 @@
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
 import { createContext } from 'react'
 import type { TeamData } from '../Context/DataContext'
-import type { CharacterKey, Gender } from '../Types/consts'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
@@ -130,7 +130,7 @@ export class ArtCharDatabase {
     this.dataEntries.map((de) => de.clear())
   }
   get gender() {
-    const gender: Gender = this.dbMeta.get().gender ?? 'F'
+    const gender: GenderKey = this.dbMeta.get().gender ?? 'F'
     return gender
   }
   exportGOOD() {

@@ -4,9 +4,11 @@ import type {
   LocationCharacterKey,
   TravelerKey,
 } from '@genshin-optimizer/consts'
-import { allLocationCharacterKeys } from '@genshin-optimizer/consts'
+import {
+  allLocationCharacterKeys,
+  travelerElements,
+} from '@genshin-optimizer/consts'
 import type { CustomMultiTarget } from '../Types/character'
-import { travelerElements } from '../Types/consts'
 import type { DBStorage } from './DBStorage'
 import type { IGO, IGOOD } from './exim'
 
@@ -202,7 +204,7 @@ export function migrate(storage: DBStorage) {
 
   // 8.22.0 - 8.27.0
   migrateVersion(21, () => {
-    function swap(from, to) {
+    function swap(from: string, to: string) {
       const data = storage.get(from)
       if (!data) return
       storage.remove(from)

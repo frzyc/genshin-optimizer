@@ -1,4 +1,5 @@
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { valueString } from '@genshin-optimizer/util'
 import {
   Button,
   CardContent,
@@ -20,7 +21,6 @@ import { DataContext } from '../../../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../../../Database/Database'
 import { input } from '../../../../../../Formula'
 import type { Unit } from '../../../../../../KeyMap'
-import { valueString } from '../../../../../../KeyMap'
 import type { ICachedArtifact } from '../../../../../../Types/artifact'
 import { ArtifactSetBadges } from '../ArtifactSetBadges'
 import type EnhancedPoint from './EnhancedPoint'
@@ -80,7 +80,8 @@ export default function CustomTooltip({
     artifactsBySlot &&
     allArtifactSlotKeys.every(
       (slotKey) =>
-        artifactsBySlot[slotKey]?.id === data.get(input.art[slotKey].id).value
+        artifactsBySlot[slotKey]?.id ===
+        data.get(input.art[slotKey].id).value.toString()
     )
 
   const generLabel = useMemo(

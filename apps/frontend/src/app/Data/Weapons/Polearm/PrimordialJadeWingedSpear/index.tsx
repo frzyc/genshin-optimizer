@@ -8,7 +8,7 @@ import {
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,7 +22,7 @@ const atkInc = [0.032, 0.039, 0.046, 0.053, 0.06]
 const allDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = lookup(
   condStack,
-  objectKeyMap(range(1, 7), (i) =>
+  objKeyMap(range(1, 7), (i) =>
     prod(subscript(input.weapon.refineIndex, atkInc, { unit: '%' }), i)
   ),
   naught

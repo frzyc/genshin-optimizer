@@ -1,17 +1,16 @@
-import { crawlObject } from '@genshin-optimizer/util'
+import {
+  allArtifactSetKeys,
+  allArtifactSlotKeys,
+  allElementWithPhyKeys,
+  allRegionKeys,
+} from '@genshin-optimizer/consts'
+import { crawlObject, objKeyMap, objKeyValMap } from '@genshin-optimizer/util'
 import KeyMap, { allEleEnemyResKeys } from '../KeyMap'
 import {
   crittableTransformativeReactions,
   transformativeReactionLevelMultipliers,
 } from '../KeyMap/StatConstants'
 import { artifactTr } from '../names'
-import {
-  allArtifactSetKeys,
-  allElementWithPhyKeys,
-  allRegionKeys,
-  allArtifactSlotKeys,
-} from '@genshin-optimizer/consts'
-import { objectKeyMap, objectKeyValueMap } from '../Util/Util'
 import { deepNodeClone } from './internal'
 import type { Data, Info, NodeData, NumNode, ReadNode, StrNode } from './type'
 import {
@@ -143,11 +142,11 @@ export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
 
 export type InputPremodKey = (typeof allInputPremodKeys)[number]
 
-const talent = objectKeyMap(allTalents, (_) => read())
-const allModStatNodes = objectKeyMap(allModStats, (key) =>
+const talent = objKeyMap(allTalents, (_) => read())
+const allModStatNodes = objKeyMap(allModStats, (key) =>
   read(undefined, KeyMap.info(key))
 )
-const allNonModStatNodes = objectKeyMap(allNonModStats, (key) =>
+const allNonModStatNodes = objKeyMap(allNonModStats, (key) =>
   read(undefined, KeyMap.info(key))
 )
 
@@ -215,7 +214,7 @@ const input = setReadNodeKeys(
       team: stringRead('small'),
     },
 
-    base: objectKeyMap(['atk', 'hp', 'def'], (key) =>
+    base: objKeyMap(['atk', 'hp', 'def'], (key) =>
       read('add', KeyMap.info(key))
     ),
     customBonus: withDefaultInfo(
@@ -230,10 +229,7 @@ const input = setReadNodeKeys(
       { prefix: 'total', pivot },
       {
         ...talent,
-        ...objectKeyValueMap(allTalents, (talent) => [
-          `${talent}Index`,
-          read(),
-        ]),
+        ...objKeyValMap(allTalents, (talent) => [`${talent}Index`, read()]),
         ...allModStatNodes,
         ...allNonModStatNodes,
         /** Total Crit Rate capped to [0%, 100%] */
@@ -244,14 +240,14 @@ const input = setReadNodeKeys(
     art: withDefaultInfo(
       { prefix: 'art', asConst },
       {
-        ...objectKeyMap(allArtModStats, (key) => allModStatNodes[key]),
-        ...objectKeyMap(allArtifactSlotKeys, (_) => ({
+        ...objKeyMap(allArtModStats, (key) => allModStatNodes[key]),
+        ...objKeyMap(allArtifactSlotKeys, (_) => ({
           id: stringRead(),
           set: stringRead(),
         })),
       }
     ),
-    artSet: objectKeyMap(allArtifactSetKeys, (set) =>
+    artSet: objKeyMap(allArtifactSetKeys, (set) =>
       read('add', { name: artifactTr(set) })
     ),
 
@@ -275,13 +271,13 @@ const input = setReadNodeKeys(
     enemy: {
       def: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
       transDef: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
-      ...objectKeyMap(
+      ...objKeyMap(
         allElements.map((ele) => `${ele}_resMulti_` as const),
         (_) => read()
       ),
 
       level: read(undefined, KeyMap.info('enemyLevel')),
-      ...objectKeyValueMap(allElements, (ele) => [
+      ...objKeyValMap(allElements, (ele) => [
         `${ele}_res_`,
         read(undefined, { prefix: 'base', ...KeyMap.info(`${ele}_enemyRes_`) }),
       ]),
@@ -312,7 +308,7 @@ markAccu('add', {
   customBonus,
   premod,
   art,
-  total: objectKeyMap(allModStats, (stat) => total[stat]),
+  total: objKeyMap(allModStats, (stat) => total[stat]),
 })
 base.atk.info = { ...KeyMap.info('atk'), prefix: 'base', pivot }
 delete total.critRate_.info!.pivot
@@ -330,13 +326,13 @@ const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), {
 const baseAddBonus = sum(one, prod(5, frac(total.eleMas, 1200)))
 
 const common: Data = {
-  base: objectKeyMap(
+  base: objKeyMap(
     ['atk', 'def', 'hp'],
     (key) => input.customBonus[`base_${key}`]
   ),
   premod: {
-    ...objectKeyMap(allTalents, (talent) => premod[`${talent}Boost`]),
-    ...objectKeyMap(allNonModStats, (key) => {
+    ...objKeyMap(allTalents, (talent) => premod[`${talent}Boost`]),
+    ...objKeyMap(allNonModStats, (key) => {
       const operands: NumNode[] = []
 
       if (key.endsWith('_enemyRes_'))
@@ -345,7 +341,7 @@ const common: Data = {
       const list = [...operands, customBonus[key]].filter((x) => x)
       return list.length === 1 ? list[0] : sum(...list)
     }),
-    ...objectKeyMap(allModStats, (key) => {
+    ...objKeyMap(allModStats, (key) => {
       const operands: NumNode[] = []
       const info = KeyMap.info(key)
       switch (key) {
@@ -359,7 +355,7 @@ const common: Data = {
             percent(0.05, { ...info, prefix: 'default' }),
             lookup(
               hit.move,
-              objectKeyMap(allMoves, (move) => premod[`${move}_critRate_`]),
+              objKeyMap(allMoves, (move) => premod[`${move}_critRate_`]),
               0
             )
           )
@@ -369,12 +365,12 @@ const common: Data = {
             percent(0.5, { ...info, prefix: 'default' }),
             lookup(
               hit.ele,
-              objectKeyMap(allElements, (ele) => premod[`${ele}_critDMG_`]),
+              objKeyMap(allElements, (ele) => premod[`${ele}_critDMG_`]),
               0
             ),
             lookup(
               hit.move,
-              objectKeyMap(allMoves, (ele) => premod[`${ele}_critDMG_`]),
+              objKeyMap(allMoves, (ele) => premod[`${ele}_critDMG_`]),
               0
             )
           )
@@ -388,10 +384,10 @@ const common: Data = {
     }),
   },
   total: {
-    ...objectKeyMap(allTalents, (talent) => premod[talent]),
-    ...objectKeyMap(allModStats, (key) => premod[key]),
-    ...objectKeyMap(allNonModStats, (key) => premod[key]),
-    ...objectKeyValueMap(allTalents, (talent) => [
+    ...objKeyMap(allTalents, (talent) => premod[talent]),
+    ...objKeyMap(allModStats, (key) => premod[key]),
+    ...objKeyMap(allNonModStats, (key) => premod[key]),
+    ...objKeyValMap(allTalents, (talent) => [
       `${talent}Index`,
       sum(total[talent], -1),
     ]),
@@ -408,12 +404,12 @@ const common: Data = {
       total.all_dmg_,
       lookup(
         hit.move,
-        objectKeyMap(allMoves, (move) => total[`${move}_dmg_`]),
+        objKeyMap(allMoves, (move) => total[`${move}_dmg_`]),
         naught
       ),
       lookup(
         hit.ele,
-        objectKeyMap(allElements, (ele) => total[`${ele}_dmg_`]),
+        objKeyMap(allElements, (ele) => total[`${ele}_dmg_`]),
         naught
       ),
       equal(
@@ -428,12 +424,12 @@ const common: Data = {
           total.all_dmgInc,
           lookup(
             hit.ele,
-            objectKeyMap(allElements, (element) => total[`${element}_dmgInc`]),
+            objKeyMap(allElements, (element) => total[`${element}_dmgInc`]),
             NaN
           ),
           lookup(
             hit.move,
-            objectKeyMap(allMoves, (move) => total[`${move}_dmgInc`]),
+            objKeyMap(allMoves, (move) => total[`${move}_dmgInc`]),
             NaN
           )
         ),
@@ -482,7 +478,7 @@ const common: Data = {
       enemy.def,
       lookup(
         hit.ele,
-        objectKeyMap(allElements, (ele) => enemy[`${ele}_resMulti_` as const]),
+        objKeyMap(allElements, (ele) => enemy[`${ele}_resMulti_` as const]),
         NaN
       ),
       hit.ampMulti
@@ -542,7 +538,7 @@ const common: Data = {
       )
     ),
     defRed: total.enemyDefRed_,
-    ...objectKeyValueMap(allElements, (ele) => [
+    ...objKeyValMap(allElements, (ele) => [
       `${ele}_resMulti_`,
       res(total[`${ele}_enemyRes_`]),
     ]),
@@ -552,7 +548,7 @@ const common: Data = {
 const target = setReadNodeKeys(deepNodeClone(input), ['target'])
 const _tally = setReadNodeKeys(
   {
-    ...objectKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
+    ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
   },
   ['tally']

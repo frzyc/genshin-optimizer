@@ -1,6 +1,6 @@
 import { createContext, useCallback, useState } from 'react'
 import type { NodeDisplay, UIData } from '../Formula/uiData'
-import useBoolState from '../ReactHooks/useBoolState'
+import { useBoolState } from '@genshin-optimizer/react-util'
 
 type FormulaDataContextObj = {
   data?: UIData

@@ -1,4 +1,11 @@
+import { allSubstatKeys, artSubstatRollData } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import {
+  artDisplayValue,
+  getSubstatSummedRolls,
+  getSubstatValuesPercent,
+} from '@genshin-optimizer/gi-util'
+import { clamp } from '@genshin-optimizer/util'
 import {
   Box,
   Button,
@@ -21,13 +28,10 @@ import DropdownButton from '../../../Components/DropdownMenu/DropdownButton'
 import PercentBadge from '../../../Components/PercentBadge'
 import SqBadge from '../../../Components/SqBadge'
 import TextButton from '../../../Components/TextButton'
-import Artifact, { artifactSubRolls } from '../../../Data/Artifacts/Artifact'
-import KeyMap, { cacheValueString } from '../../../KeyMap'
+import KeyMap from '../../../KeyMap'
 import StatIcon from '../../../KeyMap/StatIcon'
 import type { ICachedArtifact, ISubstat } from '../../../Types/artifact'
-import { allSubstatKeys } from '../../../Types/artifact'
 import type { RollColorKey } from '../../../Types/consts'
-import { clamp } from '../../../Util/Util'
 
 export default function SubstatInput({
   index,
@@ -58,10 +62,10 @@ export default function SubstatInput({
   if (artifact) {
     // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const rarity = artifact.rarity
-    const { numUpgrades, high } = Artifact.rollInfo(rarity)
+    const { numUpgrades, high } = artSubstatRollData[rarity]
     const maxRollNum = numUpgrades + high - 3
     allowedRolls = maxRollNum - rollNum
-    rollData = key ? Artifact.getSubstatRollData(key, rarity) : []
+    rollData = key ? getSubstatValuesPercent(key, rarity) : []
   }
   const rollOffset = 7 - rollData.length
 
@@ -76,7 +80,7 @@ export default function SubstatInput({
       key
         ? [
             { value: 0 },
-            ...artifactSubRolls(rarity, key).map((v) => ({ value: v })),
+            ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v })),
           ]
         : [{ value: 0 }],
     [key, rarity]
@@ -146,7 +150,7 @@ export default function SubstatInput({
             <TextButton>{t`editor.substat.nextRolls`}</TextButton>
           )}
           {rollData.map((v, i) => {
-            let newValue = cacheValueString(accurateValue + v, unit)
+            let newValue = artDisplayValue(accurateValue + v, unit)
             newValue =
               allStats.art.subRollCorrection[rarity]?.[key]?.[newValue] ??
               newValue
@@ -206,7 +210,7 @@ export default function SubstatInput({
                     )}.main`}
                     sx={{ ml: 1 }}
                   >
-                    {cacheValueString(val, unit)}
+                    {artDisplayValue(val, unit)}
                   </Typography>
                 ))}
             </Grid>

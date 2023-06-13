@@ -1,16 +1,17 @@
 import type {
   ArtifactSlotKey,
   CharacterKey,
-  TravelerKey,
   LocationCharacterKey,
+  TravelerKey,
 } from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
   allCharacterKeys,
-  charKeyToLocCharKey,
   allTravelerKeys,
+  charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import { validateLevelAsc } from '../../Data/LevelData'
+import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+import { clamp, objKeyMap } from '@genshin-optimizer/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
@@ -24,7 +25,6 @@ import {
   allHitModes,
   allInfusionAuraElements,
 } from '../../Types/consts'
-import { clamp, deepClone, objectKeyMap } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import type { TriggerString } from '../DataManager'
 import { DataManager } from '../DataManager'
@@ -157,7 +157,7 @@ export class CharacterDataManager extends DataManager<
     return {
       equippedArtifacts: oldChar
         ? oldChar.equippedArtifacts
-        : objectKeyMap(
+        : objKeyMap(
             allArtifactSlotKeys,
             (sk) =>
               Object.values(this.database.arts?.data ?? {}).find(
@@ -273,7 +273,7 @@ export class CharacterDataManager extends DataManager<
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
-      const equippedArtifacts = deepClone(char.equippedArtifacts)
+      const equippedArtifacts = structuredClone(char.equippedArtifacts)
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }
@@ -351,7 +351,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: 'avgHit',
-    equippedArtifacts: objectKeyMap(allArtifactSlotKeys, () => ''),
+    equippedArtifacts: objKeyMap(allArtifactSlotKeys, () => ''),
     equippedWeapon: '',
     conditional: {},
     bonusStats: {},

@@ -5,7 +5,7 @@ import {
   transformativeReactions,
 } from '../KeyMap/StatConstants'
 import { absorbableEle } from '../Types/consts'
-import { objectKeyMap } from '../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { infusionNode, input } from './index'
 import {
   constant,
@@ -49,7 +49,7 @@ const transMulti1 = subscript(
 )
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
-  ...objectKeyMap(Object.keys(transformativeReactions), (reaction) => {
+  ...objKeyMap(Object.keys(transformativeReactions), (reaction) => {
     const { multi, resist, canCrit } = transformativeReactions[reaction]
     return infoMut(
       prod(
@@ -98,7 +98,7 @@ const trans = {
       KeyMap.info(`${reaction}_hit`)
     )
   }),
-  swirl: objectKeyMap(transformativeReactions.swirl.variants, (ele) => {
+  swirl: objKeyMap(transformativeReactions.swirl.variants, (ele) => {
     const base = prod(
       prod(
         constant(

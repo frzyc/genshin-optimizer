@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -14,7 +15,6 @@ import {
   subscript,
   sum,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -103,7 +103,7 @@ const lightfallSwordBonusScaling = prod(
   }),
   lookup(
     condLightfallSword,
-    objectKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
+    objKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
     naught,
     { name: ct.ch('burstC.name') }
   )
@@ -421,7 +421,7 @@ const sheet: ICharacterSheet = {
         path: condLightfallSwordPath,
         name: ct.ch('burstC.name'),
         states: {
-          ...objectKeyMap(lightfallSwordStacks, (i) => ({
+          ...objKeyMap(lightfallSwordStacks, (i) => ({
             name: st('stack', { count: i }),
             fields: [
               {

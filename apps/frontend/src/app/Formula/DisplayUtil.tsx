@@ -1,3 +1,8 @@
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import { input } from '.'
 import ColorText from '../Components/ColoredText'
@@ -6,7 +11,6 @@ import { artifactDefIcon } from '../Data/Artifacts/ArtifactSheet'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import type { ArtCharDatabase } from '../Database/Database'
-import type { ArtifactSetKey, CharacterKey, WeaponKey } from '../Types/consts'
 import { range } from '../Util/Util'
 import type { DisplaySub } from './type'
 import type { NodeDisplay, UIData } from './uiData'
@@ -63,7 +67,7 @@ export function getDisplayHeader(
       }
     }
   } else {
-    const cKey = data.get(input.charKey).value
+    const cKey = data.get(input.charKey).value.toString()
     if (!cKey) return errHeader
     const sheet = getCharSheet(cKey as CharacterKey, database.gender)
     const talentKey = ['normal', 'charged', 'plunging'].includes(sectionKey)

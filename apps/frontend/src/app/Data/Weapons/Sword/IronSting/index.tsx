@@ -8,7 +8,7 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -23,7 +23,7 @@ const allDmgInc = [0.06, 0.075, 0.09, 0.105, 0.12]
 const all_dmg_ = prod(
   lookup(
     condPassive,
-    objectKeyMap(eleDmgDealtStack, (i) => constant(i)),
+    objKeyMap(eleDmgDealtStack, (i) => constant(i)),
     naught
   ),
   subscript(input.weapon.refineIndex, allDmgInc)

@@ -1,4 +1,5 @@
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/g-assets'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
@@ -14,7 +15,6 @@ import {
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import Assets from '../Assets/Assets'
 import CardLight from '../Components/Card/CardLight'
 import { LocationAutocomplete } from '../Components/Character/LocationAutocomplete'
 import LocationName from '../Components/Character/LocationName'
@@ -22,7 +22,6 @@ import ConditionalWrapper from '../Components/ConditionalWrapper'
 import ImgIcon from '../Components/Image/ImgIcon'
 import { StarsDisplay } from '../Components/StarDisplay'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { ascensionMaxLevel } from '../Data/LevelData'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
 import { uiInput as input } from '../Formula'
@@ -129,7 +128,7 @@ export default function WeaponCard({
                 component="div"
                 sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
               >
-                <ImgIcon size={2} src={Assets.weaponTypes?.[weaponTypeKey]} />
+                <ImgIcon size={2} src={imgAssets.weaponTypes[weaponTypeKey]} />
                 <Typography
                   noWrap
                   sx={{

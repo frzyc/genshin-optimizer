@@ -10,7 +10,7 @@ import type {
 } from '@genshin-optimizer/dm'
 import {
   artifactIdMap,
-  artifactPiecesData,
+  reliquaryExcelConfigData,
   artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -76,7 +76,7 @@ export default function loadImages() {
 
     const pieces = Object.fromEntries(
       containsList.map((pieceId) => {
-        const pieceData = artifactPiecesData[pieceId]
+        const pieceData = reliquaryExcelConfigData[pieceId]
         if (!pieceData)
           throw `No piece data with id ${pieceId} in setId ${setId}`
         const { icon, equipType } = pieceData

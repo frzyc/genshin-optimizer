@@ -2,6 +2,17 @@ import {
   allElementKeys,
   allElementWithPhyKeys,
 } from '@genshin-optimizer/consts'
+import {
+  AnemoIcon,
+  CryoIcon,
+  DendroIcon,
+  ElectroIcon,
+  GeoIcon,
+  HydroIcon,
+  PyroIcon,
+} from '@genshin-optimizer/gi-svgicons'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { objKeyValMap } from '@genshin-optimizer/util'
 import ElementCycle from '../Components/ElementCycle'
 import { Translate } from '../Components/Translate'
 import { input, tally } from '../Formula'
@@ -9,16 +20,7 @@ import { inferInfoMut } from '../Formula/api'
 import type { UIData } from '../Formula/uiData'
 import { equal, greaterEq, infoMut, percent, sum } from '../Formula/utils'
 import KeyMap from '../KeyMap'
-import { iconInlineProps } from '../SVGIcons'
-import AnemoIcon from '../SVGIcons/Element/AnemoIcon'
-import CryoIcon from '../SVGIcons/Element/CryoIcon'
-import DendroIcon from '../SVGIcons/Element/DendroIcon'
-import ElectroIcon from '../SVGIcons/Element/ElectroIcon'
-import GeoIcon from '../SVGIcons/Element/GeoIcon'
-import HydroIcon from '../SVGIcons/Element/HydroIcon'
-import PyroIcon from '../SVGIcons/Element/PyroIcon'
 import type { DocumentSection } from '../Types/sheet'
-import { objectKeyValueMap } from '../Util/Util'
 import { condReadNode, st, stg } from './SheetUtil'
 const tr = (strKey: string) => (
   <Translate ns="elementalResonance_gen" key18={strKey} />
@@ -38,7 +40,7 @@ type IResonance = {
 const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
 
 // Protective Canopy
-const pcNodes = objectKeyValueMap(allElementWithPhyKeys, (e) => [
+const pcNodes = objKeyValMap(allElementWithPhyKeys, (e) => [
   `${e}_res_`,
   equal(
     input.activeCharKey,

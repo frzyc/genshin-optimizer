@@ -1,5 +1,10 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
+import {
+  allElementKeys,
+  allWeaponTypeKeys,
+  charKeyToLocGenderedCharKey,
+} from '@genshin-optimizer/consts'
+import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import {
   DeleteForever,
   FactCheck,
@@ -46,17 +51,14 @@ import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../ReactHooks/useDBMeta'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp'
-import { charKeyToCharName } from '../Types/consts'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
+import { useMediaQueryUp } from '@genshin-optimizer/react-util'
 import {
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
 } from '../Util/CharacterSort'
-import { filterFunction, sortFunction } from '../Util/SortByFilters'
 import { catTotal } from '../Util/totalUtils'
-import { clamp } from '../Util/Util'
 const CharacterSelectionModal = React.lazy(
   () => import('./CharacterSelectionModal')
 )
@@ -117,7 +119,7 @@ export default function PageCharacter() {
         name = t(
           `${
             silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToCharName(cKey, gender)}`
+          }:${charKeyToLocGenderedCharKey(cKey, gender)}`
         )
 
       if (!window.confirm(t('removeCharacter', { value: name }))) return

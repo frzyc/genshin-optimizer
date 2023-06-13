@@ -1,4 +1,3 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
 import {
   artifactMainstatData,
   artifactSubstatData,
@@ -6,9 +5,9 @@ import {
   artifactSubstatRollData,
 } from '@genshin-optimizer/dm'
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDataGen, CharacterDatas } from './characterData'
+import artifactData from './artifactData'
+import type { CharacterDataGen } from './characterData'
 import characterData from './characterData'
-import type { SkillParamData } from './characterSkillParam'
 import characterSkillParam from './characterSkillParam'
 import { charExpCurve, weaponExpCurve } from './curves'
 import materialData from './materialData'
@@ -48,11 +47,14 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
   )
 )
 
+const artifactDataDump = artifactData()
+
 //exp curve to generate  stats at every level
 dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
 dumpFile(`${path}/Characters/expCurve.json`, charExpCurve)
 
 //dump artifact data
+dumpFile(`${path}/Artifacts/artifact_set.json`, artifactDataDump)
 dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
 dumpFile(`${path}/Artifacts/artifact_main.json`, artifactMainstatData)
 dumpFile(`${path}/Artifacts/artifact_sub_rolls.json`, artifactSubstatRollData)
@@ -75,6 +77,7 @@ const allStat = {
     data: weaponDataDump,
   },
   art: {
+    data: artifactDataDump,
     subRoll: artifactSubstatRollData,
     subRollCorrection: artifactSubstatRollCorrection,
     main: artifactMainstatData,

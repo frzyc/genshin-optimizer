@@ -1,3 +1,4 @@
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
@@ -19,7 +20,7 @@ import CardLight from '../Components/Card/CardLight'
 import { ArtCharDatabase, DatabaseContext } from '../Database/Database'
 import { SandboxStorage } from '../Database/DBStorage'
 import type { ImportResult, ImportResultCounter } from '../Database/exim'
-import { iconInlineProps } from '../SVGIcons'
+
 const InvisInput = styled('input')({
   display: 'none',
 })

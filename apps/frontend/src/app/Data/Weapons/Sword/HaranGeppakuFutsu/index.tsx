@@ -4,7 +4,7 @@ import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -30,7 +30,7 @@ const passive_dmg_ = Object.fromEntries(
 )
 const normal_dmg_ = lookup(
   condNode,
-  objectKeyMap(range(1, 2), (i) =>
+  objKeyMap(range(1, 2), (i) =>
     prod(i, subscript(input.weapon.refineIndex, stack_normal_dmg_))
   ),
   naught
@@ -58,7 +58,7 @@ const sheet: IWeaponSheet = {
       path: condPath,
       name: trm('consumed'),
       header: headerTemplate(key, st('conditional')),
-      states: objectKeyMap(range(1, 2), (i) => ({
+      states: objKeyMap(range(1, 2), (i) => ({
         name: st('stack', { count: i }),
         fields: [{ node: normal_dmg_ }],
       })),

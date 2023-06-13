@@ -1,8 +1,11 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allSubstatKeys,
 } from '@genshin-optimizer/consts'
+import { clamp } from '@genshin-optimizer/util'
 import type {
   ArtifactSortKey,
   FilterOption,
@@ -11,10 +14,7 @@ import {
   artifactSortKeys,
   initialFilterOption,
 } from '../../PageArtifact/ArtifactSort'
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
 import { allArtifactRarities } from '../../Types/consts'
-import { clamp } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
 import { validateArr, validateObject } from '../validationUtil'

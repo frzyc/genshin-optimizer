@@ -5,7 +5,7 @@ import ArtifactSetTooltip from '../../../../../Components/Artifact/ArtifactSetTo
 import SlotIcon from '../../../../../Components/Artifact/SlotIcon'
 import SqBadge from '../../../../../Components/SqBadge'
 import { getArtSheet } from '../../../../../Data/Artifacts'
-import { iconInlineProps } from '../../../../../SVGIcons'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import type { ICachedArtifact } from '../../../../../Types/artifact'
 
 type ArtifactSetBadgesProps = {

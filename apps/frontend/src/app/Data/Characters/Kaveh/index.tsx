@@ -14,7 +14,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -110,7 +110,7 @@ const a4_eleMas = greaterEq(
     'on',
     lookup(
       condA4Stacks,
-      objectKeyMap(a4StacksArr, (stack) => prod(stack, dm.passive2.eleMas)),
+      objKeyMap(a4StacksArr, (stack) => prod(stack, dm.passive2.eleMas)),
       naught
     )
   )
@@ -345,7 +345,8 @@ const sheet: ICharacterSheet = {
                 text: (
                   <ColorText color="dendro">{st('infusion.dendro')}</ColorText>
                 ),
-                canShow: (data) => data.get(input.activeCharKey).value === key,
+                canShow: (data) =>
+                  data.get(input.activeCharKey).value.toString() === key,
               },
               {
                 node: afterBurst_bloom_dmg_,
@@ -360,7 +361,7 @@ const sheet: ICharacterSheet = {
         canShow: equal(condAfterBurst, 'on', 1),
         teamBuff: true, // for nahida
         name: st('hitOp.normalChargedOrPlunging'),
-        states: objectKeyMap(a4StacksArr, (stack) => ({
+        states: objKeyMap(a4StacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [
             {

@@ -1,19 +1,24 @@
-import Artifact from '../Data/Artifacts/Artifact'
 import type {
-  ICachedArtifact,
+  ArtifactSetKey,
+  CharacterKey,
+  GenderKey,
   MainStatKey,
   SubstatKey,
-} from '../Types/artifact'
-import type { ICachedCharacter } from '../Types/character'
-import type { ArtifactSetKey, CharacterKey, Gender } from '../Types/consts'
-import { allElementsWithPhy } from '../Types/consts'
-import type { ICachedWeapon } from '../Types/weapon'
+} from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import { getMainStatDisplayValue } from '@genshin-optimizer/gi-util'
 import {
+  crawlObject,
   layeredAssignment,
-  objectKeyMap,
-  objectMap,
+  objKeyMap,
+  objMap,
   objPathValue,
-} from '../Util/Util'
+} from '@genshin-optimizer/util'
+import type { ICachedArtifact } from '../Types/artifact'
+import type { ICachedCharacter } from '../Types/character'
+import type { ICachedWeapon } from '../Types/weapon'
+import { objectMap } from '../Util/Util'
+import type { InputPremodKey } from './index'
 import { input, tally } from './index'
 import { deepNodeClone } from './internal'
 import type {
@@ -39,7 +44,6 @@ import {
   setReadNodeKeys,
   sum,
 } from './utils'
-import { crawlObject } from '@genshin-optimizer/util'
 const asConst = true as const,
   pivot = true as const
 
@@ -72,7 +76,7 @@ function dataObjForArtifact(
   art: ICachedArtifact,
   mainStatAssumptionLevel = 0
 ): Data {
-  const mainStatVal = Artifact.mainStatValue(
+  const mainStatVal = getMainStatDisplayValue(
     art.mainStatKey,
     art.rarity,
     Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)
@@ -116,8 +120,8 @@ function dataObjForCharacter(char: ICachedCharacter, sheetData?: Data): Data {
       burst: constant(char.talent.burst),
     },
     enemy: {
-      ...objectKeyMap(
-        allElementsWithPhy.map((ele) => `${ele}_res_`),
+      ...objKeyMap(
+        allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         (ele) =>
           percent(
             (char.enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100
@@ -205,7 +209,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY by dataObjForTeam
 function uiDataForTeam(
   teamData: Dict<CharacterKey, Data[]>,
-  gender: Gender,
+  gender: GenderKey,
   activeCharKey?: CharacterKey
 ): Dict<CharacterKey, { target: UIData; buffs: Dict<CharacterKey, UIData> }> {
   // May the goddess of wisdom bless any and all souls courageous
@@ -389,10 +393,8 @@ function computeUIData(data: Data[]): UIData {
   return new UIData(mergeData(data), undefined)
 }
 type ComparedNodeDisplay<V = number> = NodeDisplay<V> & { diff: V }
-function compareTeamBuffUIData(
-  uiData1: UIData,
-  uiData2: UIData
-): Input<ComparedNodeDisplay, ComparedNodeDisplay<string>> {
+function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): any {
+  //Input<ComparedNodeDisplay, ComparedNodeDisplay<string>>
   return compareInternal(uiData1.getTeamBuff(), uiData2.getTeamBuff())
 }
 function compareDisplayUIData(

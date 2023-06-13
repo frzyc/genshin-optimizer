@@ -1,4 +1,4 @@
-import { deepFreeze } from '../Util/Util'
+import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from './Database'
 import type { IGO, IGOOD, ImportResult } from './exim'
 export class DataManager<

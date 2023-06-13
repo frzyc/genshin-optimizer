@@ -1,29 +1,32 @@
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
+  MainStatKey,
   RarityKey,
+  SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
+  allMainStatKeys,
+  allSubstatKeys,
+  artSlotsData,
 } from '@genshin-optimizer/consts'
+import {
+  artDisplayValue,
+  getMainStatDisplayValue,
+  getMainStatDisplayValues,
+  getSubstatRolls,
+} from '@genshin-optimizer/gi-util'
+import { clamp, hammingDistance, objKeyMap } from '@genshin-optimizer/util'
 import type { RecognizeResult, Scheduler } from 'tesseract.js'
 import { createScheduler, createWorker } from 'tesseract.js'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'
-import Artifact from '../Data/Artifacts/Artifact'
-import KeyMap, { cacheValueString } from '../KeyMap'
-import type {
-  IArtifact,
-  ICachedArtifact,
-  ISubstat,
-  MainStatKey,
-  SubstatKey,
-} from '../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../Types/artifact'
+import KeyMap from '../KeyMap'
+import type { IArtifact, ICachedArtifact, ISubstat } from '../Types/artifact'
 import type { ArtifactRarity } from '../Types/consts'
 import { allArtifactRarities } from '../Types/consts'
-import { clamp, hammingDistance, objectKeyMap } from '../Util/Util'
 import { BorrowManager } from './BorrowManager'
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
@@ -251,7 +254,7 @@ export function findBestArtifact(
     ]
 
   // Rate each rarity
-  const rarityRates = objectKeyMap(allArtifactRarities, (rarity) => {
+  const rarityRates = objKeyMap(allArtifactRarities, (rarity) => {
     let score = 0
     if (textSetKeys.size) {
       const count = [...textSetKeys].reduce(
@@ -265,11 +268,8 @@ export function findBestArtifact(
       const count = substats.reduce(
         (count, substat) =>
           count +
-          (Artifact.getSubstatRolls(
-            substat.key as SubstatKey,
-            substat.value,
-            rarity
-          ).length
+          (getSubstatRolls(substat.key as SubstatKey, substat.value, rarity)
+            .length
             ? 1
             : 0),
         0
@@ -281,7 +281,7 @@ export function findBestArtifact(
 
   // Test all *probable* combinations
   for (const slotKey of allArtifactSlotKeys) {
-    for (const mainStatKey of Artifact.slotMainStats(slotKey)) {
+    for (const mainStatKey of artSlotsData[slotKey].stats) {
       const mainStatScore =
         (slotKeys.has(slotKey) ? 1 : 0) +
         (mainStatKeys.has(mainStatKey) ? 1 : 0)
@@ -303,7 +303,7 @@ export function findBestArtifact(
         if (rarityScore + 2 < bestScore) continue // Early bail out
 
         for (const minimumMainStatValue of relevantMainStatValues) {
-          const values = Artifact.mainStatValues(rarity, mainStatKey)
+          const values = getMainStatDisplayValues(rarity, mainStatKey)
           const level = Math.max(
             0,
             values.findIndex((level) => level >= minimumMainStatValue)
@@ -364,7 +364,7 @@ export function findBestArtifact(
   } as Dict<keyof ICachedArtifact, Set<string>>
 
   const result = bestArtifacts[0],
-    resultMainStatVal = Artifact.mainStatValue(
+    resultMainStatVal = getMainStatDisplayValue(
       result.mainStatKey,
       result.rarity,
       result.level
@@ -465,8 +465,8 @@ export function findBestArtifact(
       {value} {value !== 1 ? 'Stars' : 'Star'}
     </>
   ))
-  addText('slotKey', slotKeys, 'Slot', (value) => (
-    <>{Artifact.slotName(value)}</>
+  addText('slotKey', slotKeys, 'Slot', (value: ArtifactSlotKey) => (
+    <>{artSlotsData[value].name}</>
   ))
   addText('mainStatKey', mainStatKeys, 'Main Stat', (value) => (
     <>{KeyMap.getStr(value)}</>
@@ -480,7 +480,7 @@ export function findBestArtifact(
             {detectedText(substat, 'Sub Stat', (value) => (
               <>
                 {KeyMap.getStr(value.key)}+
-                {cacheValueString(value.value, KeyMap.unit(value.key))}
+                {artDisplayValue(value.value, KeyMap.unit(value.key))}
                 {KeyMap.unit(value.key)}
               </>
             ))}
@@ -491,7 +491,7 @@ export function findBestArtifact(
 
   const valueStrFunc = (value) => (
     <>
-      {cacheValueString(value, KeyMap.unit(result.mainStatKey))}
+      {artDisplayValue(value, KeyMap.unit(result.mainStatKey))}
       {KeyMap.unit(result.mainStatKey)}
     </>
   )
@@ -591,7 +591,7 @@ function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
       if (
         hammingDistance(
           text.replace(/\W/g, ''),
-          Artifact.slotName(key).replace(/\W/g, '')
+          artSlotsData[key].name.replace(/\W/g, '')
         ) <= 2
       )
         results.add(key)

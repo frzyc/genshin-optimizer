@@ -1,10 +1,21 @@
-import type {
+import {
+  allArtifactSlotKeys,
   ArtifactSetKey,
   ArtifactSlotKey,
+  artMaxLevel,
+  artSlotsData,
+  MainStatKey,
+  SubstatKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
+import {
+  artDisplayValue,
+  getMainStatDisplayValue,
+  getSubstatValue,
+} from '@genshin-optimizer/gi-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { objMap } from '@genshin-optimizer/util'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -61,7 +72,7 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { getArtSheet } from '../../../../Data/Artifacts'
-import Artifact, { maxArtifactLevel } from '../../../../Data/Artifacts/Artifact'
+import Artifact from '../../../../Data/Artifacts/Artifact'
 import { artifactDefIcon } from '../../../../Data/Artifacts/ArtifactSheet'
 import { getWeaponSheet } from '../../../../Data/Weapons'
 import { DatabaseContext } from '../../../../Database/Database'
@@ -69,16 +80,11 @@ import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { uiInput as input } from '../../../../Formula'
 import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { constant, percent } from '../../../../Formula/utils'
-import KeyMap, { cacheValueString } from '../../../../KeyMap'
+import KeyMap from '../../../../KeyMap'
 import StatIcon from '../../../../KeyMap/StatIcon'
-import useBoolState from '../../../../ReactHooks/useBoolState'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import useTeamData from '../../../../ReactHooks/useTeamData'
-import { iconInlineProps } from '../../../../SVGIcons'
-import type {
-  ICachedArtifact,
-  MainStatKey,
-  SubstatKey,
-} from '../../../../Types/artifact'
+import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'
 import type {
   ArtifactRarity,
@@ -87,7 +93,6 @@ import type {
 } from '../../../../Types/consts'
 import { substatType } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
-import { deepClone, objectMap } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import useCharTC from './useCharTC'
 const WeaponSelectionModal = React.lazy(
@@ -204,7 +209,7 @@ export default function TabTheorycraft() {
   }, [data])
   const setArtifact = useCallback(
     (artifact: ICharTC['artifact']) => {
-      const data_ = deepClone(data)
+      const data_ = structuredClone(data)
       data_.artifact = artifact
       setData(data_)
     },
@@ -213,7 +218,7 @@ export default function TabTheorycraft() {
 
   const setSubstatsType = useCallback(
     (t: SubstatType) => {
-      const data_ = deepClone(data)
+      const data_ = structuredClone(data)
       data_.artifact.substats.type = t
       setData(data_)
     },
@@ -222,7 +227,7 @@ export default function TabTheorycraft() {
 
   const setSubstats = useCallback(
     (setSubstats: Record<SubstatKey, number>) => {
-      const data_ = deepClone(data)
+      const data_ = structuredClone(data)
       data_.artifact.substats.stats = setSubstats
       setData(data_)
     },
@@ -236,13 +241,13 @@ export default function TabTheorycraft() {
       ({ statKey, rarity, level }) =>
         (stats[statKey] =
           (stats[statKey] ?? 0) +
-          Artifact.mainStatValue(statKey, rarity, level))
+          getMainStatDisplayValue(statKey, rarity, level))
     )
     return {
-      art: objectMap(stats, (v, k) =>
+      art: objMap(stats, (v, k) =>
         k.endsWith('_') ? percent(v / 100) : constant(v)
       ),
-      artSet: objectMap(deferredData.artifact.sets, (v) => constant(v)),
+      artSet: objMap(deferredData.artifact.sets, (v) => constant(v)),
     }
   }, [deferredData])
 
@@ -458,7 +463,7 @@ function ArtifactMainLevelCard({
 }) {
   const setSlot = useCallback(
     (slotKey: ArtifactSlotKey) => (slot: ICharTCArtifactSlot) => {
-      const artifactData_ = deepClone(artifactData)
+      const artifactData_ = structuredClone(artifactData)
       artifactData_.slots[slotKey] = slot
       setArtifactData(artifactData_)
     },
@@ -467,7 +472,7 @@ function ArtifactMainLevelCard({
 
   const setArtSet = useCallback(
     (artSet: ISet) => {
-      const artifactData_ = deepClone(artifactData)
+      const artifactData_ = structuredClone(artifactData)
       artifactData_.sets = artSet
       setArtifactData(artifactData_)
     },
@@ -506,7 +511,7 @@ function ArtifactMainLevelSlot({
   setSlot: (s: ICharTCArtifactSlot) => void
 }) {
   const { level, statKey, rarity } = slot
-  const keys = Artifact.slotMainStats(slotKey)
+  const keys = artSlotsData[slotKey].stats
   const setSlot = useCallback(
     (action: Partial<ICharTCArtifactSlot>) => {
       setSlotProp({ ...slot, ...action })
@@ -515,7 +520,7 @@ function ArtifactMainLevelSlot({
   )
   const setRarity = useCallback(
     (r: ArtifactRarity) => {
-      const mLvl = maxArtifactLevel[r] ?? 0
+      const mLvl = artMaxLevel[r] ?? 0
       if (level > mLvl) setSlot({ rarity: r, level: mLvl })
       else setSlot({ rarity: r })
     },
@@ -593,8 +598,8 @@ function ArtifactMainLevelSlot({
         inputProps={{ sx: { pl: 0.5, width: '2em' }, max: 20, min: 0 }}
       />
       <CardDark sx={{ height: '100%', minWidth: '4em' }}>
-        <Box p={1} textAlign="center">{`${cacheValueString(
-          Artifact.mainStatValue(statKey, rarity, level),
+        <Box p={1} textAlign="center">{`${artDisplayValue(
+          getMainStatDisplayValue(statKey, rarity, level),
           KeyMap.unit(statKey)
         )}${KeyMap.unit(statKey)}`}</Box>
       </CardDark>
@@ -757,11 +762,11 @@ function ArtifactSubCard({
   const { t } = useTranslation('page_character')
   const rv =
     Object.entries(substats).reduce(
-      (t, [k, v]) => t + v / Artifact.substatValue(k),
+      (t, [k, v]) => t + v / getSubstatValue(k),
       0
     ) * 100
   const rolls = Object.entries(substats).reduce(
-    (t, [k, v]) => t + v / Artifact.substatValue(k, undefined, substatsType),
+    (t, [k, v]) => t + v / getSubstatValue(k, undefined, substatsType),
     0
   )
   return (
@@ -836,14 +841,14 @@ function ArtifactSubstatEditor({
   mainStatKeys: MainStatKey[]
 }) {
   const { t } = useTranslation('page_character')
-  const substatValue = Artifact.substatValue(statKey, 5, substatsType)
+  const substatValue = getSubstatValue(statKey, 5, substatsType)
   const [rolls, setRolls] = useState(() => value / substatValue)
   useEffect(() => setRolls(value / substatValue), [value, substatValue])
 
   const unit = KeyMap.unit(statKey)
   const displayValue = rolls * substatValue
 
-  const rv = ((rolls * substatValue) / Artifact.substatValue(statKey)) * 100
+  const rv = ((rolls * substatValue) / getSubstatValue(statKey)) * 100
   const numMains = mainStatKeys.reduce(
     (t, ms) => t + (ms === statKey ? 1 : 0),
     0
@@ -952,7 +957,7 @@ function ArtifactSubstatEditor({
               }}
             >
               <span>
-                {cacheValueString(substatValue, unit)}
+                {artDisplayValue(substatValue, unit)}
                 {unit}
               </span>
               <span>x</span>
