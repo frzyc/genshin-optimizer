@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type {
-  ElementKey,
-  LocationCharacterKey,
-  TravelerKey,
+  LocationCharacterKey
 } from '@genshin-optimizer/consts'
 import {
   allLocationCharacterKeys,
-  travelerElements,
+  travelerElements
 } from '@genshin-optimizer/consts'
-import type { CustomMultiTarget } from '../Types/character'
-import type { DBStorage } from './DBStorage'
+import type { DBStorage } from '@genshin-optimizer/database'
 import type { IGO, IGOOD } from './exim'
 
 // MIGRATION STEP

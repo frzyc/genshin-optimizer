@@ -9,21 +9,21 @@ import {
   StyledEngineProvider,
   ThemeProvider,
   useScrollTrigger,
-  Zoom,
+  Zoom
 } from '@mui/material'
-import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react'
+import React, { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
+import { HashRouter, Routes, useMatch } from 'react-router-dom'
 // import './App.scss'
+import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
+import ErrorBoundary from './Components/ErrorBoundary'
+import Footer from './Components/Footer'
+import Header from './Components/Header'
 import { SillyContext, useSilly } from './Context/SillyContext'
 import { ArtCharDatabase, DatabaseContext } from './Database/Database'
-import { DBLocalStorage, SandboxStorage } from './Database/DBStorage'
-import './i18next/i18n'
 import useTitle from './Hooks/useTitle'
+import './i18next/i18n'
 import { theme } from './Theme'
-import ErrorBoundary from './Components/ErrorBoundary'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
 
 // const PageHome = lazy(() => import('./PageHome'))
 // const PageArtifact = lazy(() => import('./PageArtifact'))
