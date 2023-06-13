@@ -10,7 +10,7 @@ import {
   StyledEngineProvider,
   ThemeProvider,
   useScrollTrigger,
-  Zoom
+  Zoom,
 } from '@mui/material'
 import React, { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
