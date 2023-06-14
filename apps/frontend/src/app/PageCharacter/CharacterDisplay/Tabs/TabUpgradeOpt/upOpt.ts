@@ -15,6 +15,60 @@ import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
 import { gaussianPE, mvnPE_bad } from './mvncdf'
 import { crawlUpgrades } from './artifactUpgradeCrawl'
 
+/**
+ * Artifact upgrade distribution math summary.
+ *
+ * Let A be the upgrade distribution of some artifact. We write
+ *  art ~ A to say `art` is a random artifact drawn from the
+ *  upgrade distribution `A`.
+ * With f(art) being damage function of the 1-swap of an artifact,
+ *  we write dmg ~ f(A) to say `dmg` is a random number sampled by
+ *  the process:  art ~ A ; dmg = f(art)
+ *
+ * To approximate f(A), we take the linear approximation of upgrade
+ *  distribution of an artifact.
+ *           L(art) = f(art0) + ∂f/∂x_i * s_i * RV_i
+ *       L(art)  - Linear approximation of damage function
+ *       ∂f/∂x_i - derivative of f wrt substat i (at art0)
+ *       s_i     - "scale" of substat i
+ *       RV_i    - roll value of substat i
+ * Let k_i = ∂f/∂x_i * s_i below.
+ *
+ * The roll value is the sum of n_i uniform distributions {7, 8, 9, 10}.
+ *  We approximate it with a Normal distribution:
+ *          RV_i = N[ 8.5n_i, 1.25n_i ]
+ *     n_i - number of upgrades for substat i
+ * Magic numbers µ = 17/2 and ν = 5/4 come from the mean & std.dev of RV.
+ *
+ * The substat upgrades are chosen uniform randomly per roll, so
+ *  the n_i follow a multinomial distribution. So the linearized
+ *  dmg distribution `L(A)` can be written:
+ *    L(A) = sum σ(n1, n2, n3, n4) * (f(art0) + sum_i k_i * RV_i(n_i))
+ *          σ(n1, n2, n3, n4) - Multinomial distribution for upgrade numbers
+ *                              with total n1 + n2 + n3 + n4 = N
+ *  where the first sum is over the (n1, n2, n3, n4) of the multinomial
+ *  distribution.
+ *
+ * =========== SLOW APPROXIMATION ==========
+ * Because L(A) is written as the sum of Normal distributions, we
+ *  can write it as a Gaussian Mixture. We can perform probability
+ *  queries following the ordinary Gaussian Mixture methods.
+ * Note that in the code, `art0` is chosen as a function of n_i.
+ *
+ * =========== FAST APPROXIMATION ==========
+ * Tthe Fast method just matches the 1st and 2nd moment of the Mixture
+ *  distribution. This is not expected to be a good approximation; it's
+ *  only useful for a ball-park estimate of the upgrade probability.
+ * Note that in here, `art0` is fixed wrt n_i.
+ *  mean of L(A) = f(art0) + sum_i mean(n_i) * µ k_i
+ *  variance of L(A) = sum_i (mean(n_i)/4 * ν k_i^2 + N/4 (µ k_i)^2)
+ *                     - N * (sum_i µ/4 k_i)^2
+ */
+const up_rv_mean = 17 / 2
+const up_rv_stdev = 5 / 4
+const Q = (up_rv_mean * up_rv_mean + up_rv_stdev) / 4
+const W = (up_rv_mean / 4) ** 2
+
 enum ResultType {
   Fast,
   Slow,
@@ -99,9 +153,15 @@ export class UpOptCalculator {
    * Constructs UpOptCalculator.
    * @param nodes Formulas to find upgrades for. nodes[0] is main objective, the rest are constraints.
    * @param thresholds Constraint values. thresholds[0] will be auto-populated with current objective value.
+   * @param baseStats Character base stats
    * @param build Build to check 1-swaps against.
    */
-  constructor(nodes: OptNode[], thresholds: number[], build: UpOptBuild) {
+  constructor(
+    nodes: OptNode[],
+    thresholds: number[],
+    baseStats: DynStat,
+    build: UpOptBuild
+  ) {
     this.baseBuild = build
     this.nodes = nodes
     this.thresholds = thresholds
@@ -115,7 +175,7 @@ export class UpOptCalculator {
     })
     const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
-    const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
+    const evalFn = precompute(evalOpt, baseStats, (f) => f.path[1], 5)
     thresholds[0] = evalFn(Object.values(build))[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
@@ -204,7 +264,7 @@ export class UpOptCalculator {
 
     const stats = { ...this.artifacts[ix].values }
     subs.forEach((subKey) => {
-      stats[subKey] += (17 / 2) * (N / 4) * scale(subKey)
+      stats[subKey] += up_rv_mean * (N / 4) * scale(subKey)
     })
     const objective = this.eval(stats, slotKey)
     const gaussians = objective.map(({ v: mu, grads }) => {
@@ -213,7 +273,7 @@ export class UpOptCalculator {
       )
       const ksum = ks.reduce((a, b) => a + b, 0)
       const ksum2 = ks.reduce((a, b) => a + b * b, 0)
-      const sig2 = ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N
+      const sig2 = (Q * ksum2 - W * ksum ** 2) * N
 
       return { mu, sig2 }
     })
@@ -240,10 +300,10 @@ export class UpOptCalculator {
       const prob = fWeight[subKey4] / Z
       const stats = { ...this.artifacts[ix].values }
       subs.forEach((subKey) => {
-        stats[subKey] += (17 / 2) * (N / 4) * scale(subKey)
+        stats[subKey] += up_rv_mean * (N / 4) * scale(subKey)
       })
       stats[subKey4] =
-        (stats[subKey4] ?? 0) + (17 / 2) * (N / 4 + 1) * scale(subKey4)
+        (stats[subKey4] ?? 0) + up_rv_mean * (N / 4 + 1) * scale(subKey4)
 
       const objective = this.eval(stats, slotKey)
       const gaussians = objective.map(({ v: mu, grads }) => {
@@ -253,8 +313,7 @@ export class UpOptCalculator {
         const k4 = grads[allSubstatKeys.indexOf(subKey4)] * scale(subKey4)
         const ksum = ks.reduce((a, b) => a + b, k4)
         const ksum2 = ks.reduce((a, b) => a + b * b, k4 * k4)
-        const sig2 =
-          ((147 / 8) * ksum2 - (289 / 64) * ksum ** 2) * N + (5 / 4) * k4 * k4
+        const sig2 = (Q * ksum2 - W * ksum ** 2) * N + up_rv_stdev * k4 * k4
 
         return { mu, sig2 }
       })
@@ -308,7 +367,7 @@ export class UpOptCalculator {
     crawlUpgrades(N, (ns, prob) => {
       const stats = { ...this.artifacts[ix].values }
       subs.forEach((subKey, i) => {
-        stats[subKey] += (17 / 2) * ns[i] * scale(subKey)
+        stats[subKey] += up_rv_mean * ns[i] * scale(subKey)
       })
 
       const objective = this.eval(stats, slotKey)
@@ -343,10 +402,10 @@ export class UpOptCalculator {
         const stats = { ...this.artifacts[ix].values }
         ns[3] += 1 // last substat has initial roll
         subs.forEach((subKey, i) => {
-          stats[subKey] += (17 / 2) * ns[i] * scale(subKey)
+          stats[subKey] += up_rv_mean * ns[i] * scale(subKey)
         })
         stats[subKey4] =
-          (stats[subKey4] ?? 0) + (17 / 2) * ns[3] * scale(subKey4)
+          (stats[subKey4] ?? 0) + up_rv_mean * ns[3] * scale(subKey4)
 
         const objective = this.eval(stats, slotKey)
         const obj_ks = objective.map(({ grads }) => {
