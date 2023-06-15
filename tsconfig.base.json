@@ -23,6 +23,7 @@
       "@genshin-optimizer/formula": ["libs/formula/src/index.ts"],
       "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/g-assets-gen": ["libs/g-assets/src/index.ts"],
+      "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
       "@genshin-optimizer/gi-pipeline": ["libs/gi-pipeline/src/index.ts"],
       "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],

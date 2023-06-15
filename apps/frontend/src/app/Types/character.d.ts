@@ -1,21 +1,21 @@
 import type {
+  ArtifactRarity,
   ArtifactSlotKey,
+  AscensionKey,
+  CharacterKey,
   MainStatKey,
+  RefinementKey,
   SubstatKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
+import type { ICharacter } from '@genshin-optimizer/gi-good'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
-  ArtifactRarity,
-  ArtifactSetKey,
-  Ascension,
-  CharacterKey,
   HitModeKey,
   InfusionAuraElements,
-  Refinement,
   SubstatType,
 } from './consts'
 import type { IConditionalValues } from './sheet'
@@ -34,17 +34,7 @@ export interface CustomMultiTarget {
   targets: CustomTarget[]
 }
 
-export interface ICharacter {
-  key: CharacterKey
-  level: number
-  constellation: number
-  ascension: Ascension
-  talent: {
-    auto: number
-    skill: number
-    burst: number
-  }
-
+export interface IGOCharacter extends ICharacter {
   // GO-specific
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
@@ -66,7 +56,7 @@ export interface ICharacter {
   ]
   teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
 }
-export interface ICachedCharacter extends ICharacter {
+export interface ICachedCharacter extends IGOCharacter {
   equippedArtifacts: StrictDict<ArtifactSlotKey, string>
   equippedWeapon: string
 }
@@ -80,8 +70,8 @@ export type ICharTC = {
   weapon: {
     key: WeaponKey
     level: number
-    ascension: Ascension
-    refinement: Refinement
+    ascension: AscensionKey
+    refinement: RefinementKey
   }
   artifact: {
     slots: Record<ArtifactSlotKey, ICharTCArtifactSlot>

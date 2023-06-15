@@ -9,8 +9,6 @@ export const allAmpReactions = ['vaporize', 'melt'] as const
 export const allAdditiveReactions = ['spread', 'aggravate'] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 
-export const allArtifactRarities = [5, 4, 3] as const
-
 export const allInfusionAuraElements = [
   'pyro',
   'cryo',
@@ -26,7 +24,6 @@ export const allRollColorKeys = [
   'roll5',
   'roll6',
 ] as const
-export const allRefinement = [1, 2, 3, 4, 5] as const
 export const substatType = ['max', 'mid', 'min'] as const
 
 export const travelerFKeys = [
@@ -51,14 +48,11 @@ export type HitModeKey = (typeof allHitModes)[number]
 export type AmpReactionKey = (typeof allAmpReactions)[number]
 export type AdditiveReactionKey = (typeof allAdditiveReactions)[number]
 export type SetNum = (typeof allArtifactSetCount)[number]
-export type ArtifactRarity = (typeof allArtifactRarities)[number]
 export type InfusionAuraElements = (typeof allInfusionAuraElements)[number]
 
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
 
 export type RollColorKey = (typeof allRollColorKeys)[number]
-
-export type Refinement = (typeof allRefinement)[number]
 
 export const absorbableEle = [
   'hydro',

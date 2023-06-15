@@ -1,7 +1,7 @@
 import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
 import {
   allArtifactSetKeys,
-  allArtifactSlotKeys
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
 import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
@@ -18,7 +18,7 @@ import {
   Divider,
   Grid,
   Stack,
-  Typography
+  Typography,
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -41,7 +41,7 @@ import { DatabaseContext } from '../../../../../Database/Database'
 import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
 import {
   allArtifactSetExclusionKeys,
-  handleArtSetExclusion
+  handleArtSetExclusion,
 } from '../../../../../Database/DataManagers/BuildSettingData'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'

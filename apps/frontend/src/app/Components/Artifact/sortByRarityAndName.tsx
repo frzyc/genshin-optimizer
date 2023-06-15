@@ -1,6 +1,5 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { ArtifactRarity, ArtifactSetKey } from '@genshin-optimizer/consts'
 import i18n from '../../i18n'
-import type { ArtifactRarity } from '../../Types/consts'
 
 export default function sortByRarityAndName(
   a: { key: ArtifactSetKey; grouper: ArtifactRarity },
