@@ -1,5 +1,5 @@
 import { allSubstatKeys, artSubstatRollData } from '@genshin-optimizer/consts'
-import { ISubstat } from '@genshin-optimizer/gi-good'
+import type { ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   artDisplayValue,

@@ -1,4 +1,4 @@
-import type { IArtifact, ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
+import type { IArtifact, IWeapon } from '@genshin-optimizer/gi-good'
 import type { IGOCharacter } from '../Types/character'
 import type { BuildSetting } from './DataManagers/BuildSettingData'
 
@@ -32,14 +32,6 @@ export function newImportResult(
     keepNotInImport,
     ignoreDups,
   }
-}
-export type IGOOD = {
-  format: 'GOOD'
-  source: string
-  version: 1
-  characters?: ICharacter[]
-  artifacts?: IArtifact[]
-  weapons?: IWeapon[]
 }
 export type IGO = {
   dbVersion: number

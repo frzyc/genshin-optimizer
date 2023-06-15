@@ -1,7 +1,8 @@
+import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from './Database'
 import type { TriggerString } from './DataManager'
-import type { IGO, IGOOD, ImportResult } from './exim'
+import type { IGO, ImportResult } from './exim'
 
 export class DataEntry<
   Key extends string,

@@ -1,8 +1,9 @@
 import type { GenderKey } from '@genshin-optimizer/consts'
 import { allGenderKeys } from '@genshin-optimizer/consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 
 interface IDBMeta {
   name: string
