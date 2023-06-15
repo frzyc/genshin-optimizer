@@ -1,4 +1,5 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
@@ -88,11 +89,7 @@ import StatIcon from '../../../../KeyMap/StatIcon'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'
-import type {
-  ArtifactRarity,
-  SetNum,
-  SubstatType,
-} from '../../../../Types/consts'
+import type { SetNum, SubstatType } from '../../../../Types/consts'
 import { substatType } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'

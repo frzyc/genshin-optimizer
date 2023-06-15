@@ -1,4 +1,5 @@
 import type {
+  ArtifactRarity,
   CharacterKey,
   MainStatKey,
   WeaponKey,
@@ -11,7 +12,6 @@ import {
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
-import type { ArtifactRarity } from '../../Types/consts'
 import { substatType } from '../../Types/consts'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'

@@ -1,8 +1,8 @@
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi-util'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
-import type { IArtifact, ISubstat } from '../Types/artifact'
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,
 // and "upgrade rolls" that occurs when all 4 substats are added. They have different

@@ -1,4 +1,5 @@
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
@@ -15,7 +16,6 @@ import { Suspense, useContext, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { DatabaseContext } from '../../Database/Database'
 import type { FilterOption } from '../../PageArtifact/ArtifactSort'
-import { allArtifactRarityKeys } from '../../Types/artifact'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import { bulkCatTotal } from '../../Util/totalUtils'
 import BootstrapTooltip from '../BootstrapTooltip'

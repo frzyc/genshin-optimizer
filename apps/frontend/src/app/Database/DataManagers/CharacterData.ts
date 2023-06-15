@@ -16,7 +16,7 @@ import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget
 import type {
   CustomMultiTarget,
   ICachedCharacter,
-  ICharacter,
+  IGOCharacter,
 } from '../../Types/character'
 import type { InfusionAuraElements } from '../../Types/consts'
 import {
@@ -35,7 +35,7 @@ export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  ICharacter
+  IGOCharacter
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'characters')
@@ -47,13 +47,13 @@ export class CharacterDataManager extends DataManager<
         this.database.storage.remove(key)
     }
   }
-  validate(obj: unknown): ICharacter | undefined {
+  validate(obj: unknown): IGOCharacter | undefined {
     if (!obj || typeof obj !== 'object') return
     const {
       key: characterKey,
       level: rawLevel,
       ascension: rawAscension,
-    } = obj as ICharacter
+    } = obj as IGOCharacter
     let {
       hitMode,
       reaction,
@@ -67,7 +67,7 @@ export class CharacterDataManager extends DataManager<
       teamConditional,
       compareData,
       customMultiTarget,
-    } = obj as ICharacter
+    } = obj as IGOCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return // non-recoverable
 
@@ -112,7 +112,7 @@ export class CharacterDataManager extends DataManager<
         !team.find((ot, j) => i > j && t === ot)
           ? t
           : ''
-      ) as ICharacter['team']
+      ) as IGOCharacter['team']
 
     if (!teamConditional) teamConditional = {}
 
@@ -133,7 +133,7 @@ export class CharacterDataManager extends DataManager<
     customMultiTarget = customMultiTarget
       .map((cmt) => validateCustomMultiTarget(cmt))
       .filter((t) => t) as CustomMultiTarget[]
-    const char: ICharacter = {
+    const char: IGOCharacter = {
       key: characterKey,
       level,
       ascension,
@@ -152,7 +152,7 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
-  toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+  toCache(storageObj: IGOCharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedArtifacts: oldChar
@@ -173,7 +173,7 @@ export class CharacterDataManager extends DataManager<
       ...storageObj,
     }
   }
-  deCache(char: ICachedCharacter): ICharacter {
+  deCache(char: ICachedCharacter): IGOCharacter {
     const {
       key,
       level,
@@ -191,7 +191,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     } = char
-    const result: ICharacter = {
+    const result: IGOCharacter = {
       key,
       level,
       ascension,
@@ -299,7 +299,7 @@ export class CharacterDataManager extends DataManager<
     else setEq(key)
   }
 
-  hasDup(char: ICharacter, isGO: boolean) {
+  hasDup(char: IGOCharacter, isGO: boolean) {
     const db = this.getStorage(char.key)
     if (!db) return false
     if (isGO) {
@@ -326,10 +326,12 @@ export class CharacterDataManager extends DataManager<
       result.characters.import = characters.length
       const idsToRemove = new Set(this.keys)
       characters.forEach((c) => {
-        if (!c.key) result.characters.invalid.push(c)
+        if (!c.key) result.characters.invalid.push(c as IGOCharacter)
         idsToRemove.delete(c.key)
-        if (this.hasDup(c, source === GOSource))
-          result.characters.unchanged.push(c)
+        if (
+          this.hasDup({ ...initialCharacter(c.key), ...c }, source === GOSource)
+        )
+          result.characters.unchanged.push(c as IGOCharacter)
         else this.set(c.key, c)
       })
 
