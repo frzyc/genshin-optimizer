@@ -345,14 +345,13 @@ export default function loadTrans() {
       [],
       (v) =>
         typeof v === 'number' ||
-        (v?.length === 2 &&
-          Array.isArray(v) &&
+        (Array.isArray(v) && v?.length === 2 &&
           typeof v[0] === 'number' &&
           typeof v[1] === 'string'),
-      (value, keys) => {
+      (value: number | [id: number, processing: string], keys) => {
         // const [type, characterKey, skill, field] = keys
         if (value === 0)
-          return layeredAssignment(languageData, [lang, ...keys], '')
+          layeredAssignment(languageData, [lang, ...keys], '')
         if (typeof value === 'number') value = [value, 'string']
         const [stringID, processing] = value
         let rawString = langStrings[stringID]
@@ -379,14 +378,14 @@ export default function loadTrans() {
 
     // Add the traveler variants to charNames_gen
     allGenderKeys.forEach((gender) => {
-      ;(['Anemo', 'Geo', 'Electro', 'Dendro'] as const).forEach((ele) => {
+      ; (['Anemo', 'Geo', 'Electro', 'Dendro'] as const).forEach((ele) => {
         const transLocGenKey =
           languageData[lang as Language].charNames[
-            `Traveler${gender}` as LocationGenderedCharacterKey
+          `Traveler${gender}` as LocationGenderedCharacterKey
           ]
         const transEleKey =
           languageData[lang as Language].sheet.element[
-            ele.toLowerCase() as ElementKey
+          ele.toLowerCase() as ElementKey
           ]
         layeredAssignment(
           languageData,
