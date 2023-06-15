@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type {
-  LocationCharacterKey
-} from '@genshin-optimizer/consts'
+import type { LocationCharacterKey } from '@genshin-optimizer/consts'
 import {
   allLocationCharacterKeys,
-  travelerElements
+  travelerElements,
 } from '@genshin-optimizer/consts'
 import type { DBStorage } from '@genshin-optimizer/database'
 import type { IGO, IGOOD } from './exim'
