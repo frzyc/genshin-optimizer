@@ -38,8 +38,9 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
         allArtifactRarityKeys.includes(r as ArtifactRarity)
       )
     )) as ArtifactRarity
-  const slot:ArtifactSlotKey = base.slotKey ?? getRandomElementFromArray(data.slots)
-  const mainStatKey:MainStatKey =
+  const slot: ArtifactSlotKey =
+    base.slotKey ?? getRandomElementFromArray(data.slots)
+  const mainStatKey: MainStatKey =
     base.mainStatKey ?? getRandomElementFromArray(artSlotsData[slot].stats)
   const level =
     base.level ?? getRandomIntInclusive(0, artMaxLevel[rarity as RarityKey])
