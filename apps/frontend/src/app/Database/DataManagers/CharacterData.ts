@@ -10,6 +10,7 @@ import {
   allTravelerKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { clamp, objKeyMap } from '@genshin-optimizer/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
@@ -28,7 +29,7 @@ import {
 import type { ArtCharDatabase } from '../Database'
 import type { TriggerString } from '../DataManager'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
 
 export class CharacterDataManager extends DataManager<

@@ -15,7 +15,7 @@ import {
   artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   getMainStatDisplayValue,
@@ -28,7 +28,7 @@ import KeyMap from '../../KeyMap'
 import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 
 export class ArtifactDataManager extends DataManager<
   string,
