@@ -1,5 +1,5 @@
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { input } from '../../../Formula'
+import { input, target } from '../../../Formula'
 import {
   constant,
   equal,
@@ -77,10 +77,15 @@ const atkIncRatio = subscript(
   dm.skill.atkBonus.map((x) => x),
   { unit: '%' }
 )
-const skillTenguAmbush_ = equal(
+const skillTenguAmbush_disp = equal(
+  'TenguJuuraiAmbush',
   condSkillTenguAmbush,
-  'on',
   prod(input.base.atk, atkIncRatio)
+)
+const skillTenguAmbush_ = equal(
+  input.activeCharKey,
+  target.charKey,
+  skillTenguAmbush_disp
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
@@ -242,7 +247,7 @@ const sheet: ICharacterSheet = {
         name: ct.ch('skill.ambush'),
         teamBuff: true,
         states: {
-          on: {
+          TenguJuuraiAmbush: {
             fields: [
               {
                 node: skillTenguAmbush_,
@@ -257,7 +262,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('passive2', {
-        canShow: equal(condSkillTenguAmbush, 'on', 1),
+        canShow: equal(condSkillTenguAmbush, 'TenguJuuraiAmbush', 1),
         fields: [
           {
             node: dmgFormulas.passive2.energyRegen,
@@ -302,7 +307,6 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.enerCost,
-            unit: 's',
           },
         ],
       },
