@@ -21,7 +21,8 @@ export class CharMetaDataManager extends DataManager<
   CharacterKey,
   'charMetas',
   ICharMeta,
-  ICharMeta
+  ICharMeta,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'charMetas')

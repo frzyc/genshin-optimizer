@@ -1,23 +1,21 @@
 import type {
+  AdditiveReactionKey,
+  AmpReactionKey,
   ArtifactRarity,
   ArtifactSlotKey,
   AscensionKey,
   CharacterKey,
+  HitModeKey,
+  InfusionAuraElementKey,
   MainStatKey,
   RefinementKey,
   SubstatKey,
+  SubstatTypeKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import type { ICharacter } from '@genshin-optimizer/gi-good'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
-import type {
-  AdditiveReactionKey,
-  AmpReactionKey,
-  HitModeKey,
-  InfusionAuraElements,
-  SubstatType,
-} from './consts'
 import type { IConditionalValues } from './sheet'
 
 export interface CustomTarget {
@@ -25,7 +23,7 @@ export interface CustomTarget {
   path: string[]
   hitMode: HitModeKey
   reaction?: AmpReactionKey | AdditiveReactionKey
-  infusionAura?: InfusionAuraElements
+  infusionAura?: InfusionAuraElementKey
   bonusStats: Partial<Record<InputPremodKey, number>>
 }
 export interface CustomMultiTarget {
@@ -46,7 +44,7 @@ export interface IGOCharacter extends ICharacter {
       number
     >
   >
-  infusionAura: InfusionAuraElements | ''
+  infusionAura: InfusionAuraElementKey | ''
   compareData: boolean
   customMultiTarget: CustomMultiTarget[]
   team: [
@@ -76,7 +74,7 @@ export type ICharTC = {
   artifact: {
     slots: Record<ArtifactSlotKey, ICharTCArtifactSlot>
     substats: {
-      type: SubstatType
+      type: SubstatTypeKey
       stats: Record<SubstatKey, number>
     }
     sets: Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
