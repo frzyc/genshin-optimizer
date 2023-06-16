@@ -33,7 +33,6 @@ const dmg_Nodes = Object.fromEntries(
   ])
 )
 const atkInc = prod(
-  constant(1, {}),
   lookup(
     condStacks,
     objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
