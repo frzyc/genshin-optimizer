@@ -82,13 +82,13 @@ const [condCoilPath, condCoil] = cond(key, 'coil')
 const normal_dmg_ = lookup(
   condCoil,
   {
-    1: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, {
+    coil1: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus1, {
       unit: '%',
     }),
-    2: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, {
+    coil2: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus2, {
       unit: '%',
     }),
-    3: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, {
+    coil3: subscript(input.total.skillIndex, dm.skill.coilNormalDmgBonus3, {
       unit: '%',
     }),
     rush: subscript(input.total.skillIndex, dm.skill.rushingNormalDmgBonus, {
@@ -284,7 +284,7 @@ const sheet: ICharacterSheet = {
         states: {
           ...Object.fromEntries(
             range(1, 3).map((i) => [
-              i,
+              `coil${i}`,
               {
                 name: st('stack', { count: i }),
                 fields: [
