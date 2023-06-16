@@ -1,6 +1,6 @@
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
 import type { DBStorage } from '@genshin-optimizer/database'
-import { SandboxStorage } from '@genshin-optimizer/database'
+import { Database, SandboxStorage } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { createContext } from 'react'
 import type { TeamData } from '../Context/DataContext'
@@ -20,9 +20,7 @@ import { WeaponDataManager } from './DataManagers/WeaponData'
 import type { IGO, ImportResult } from './exim'
 import { GOSource, newImportResult } from './exim'
 import { currentDBVersion, migrate, migrateGOOD } from './migrate'
-
-export class ArtCharDatabase {
-  storage: DBStorage
+export class ArtCharDatabase extends Database {
   arts: ArtifactDataManager
   chars: CharacterDataManager
   charTCs: CharacterTCDataManager
@@ -42,8 +40,7 @@ export class ArtCharDatabase {
   dbVer: number
 
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
-    this.storage = storage
-
+    super(storage)
     migrate(storage)
     // Transfer non DataManager/DataEntry data from storage
     this.dbIndex = dbIndex

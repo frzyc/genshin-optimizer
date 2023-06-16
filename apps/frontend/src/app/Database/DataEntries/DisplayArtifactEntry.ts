@@ -6,7 +6,7 @@ import {
   allLocationCharacterKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/consts'
-import { clamp } from '@genshin-optimizer/util'
+import { clamp, validateArr, validateObject } from '@genshin-optimizer/util'
 import type {
   ArtifactSortKey,
   FilterOption,
@@ -17,7 +17,6 @@ import {
 } from '../../PageArtifact/ArtifactSort'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
-import { validateArr, validateObject } from '../validationUtil'
 
 export type IDisplayArtifact = {
   filterOption: FilterOption

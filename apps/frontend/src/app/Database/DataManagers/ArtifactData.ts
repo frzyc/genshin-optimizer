@@ -34,7 +34,8 @@ export class ArtifactDataManager extends DataManager<
   string,
   'artifacts',
   ICachedArtifact,
-  IArtifact
+  IArtifact,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'artifacts')

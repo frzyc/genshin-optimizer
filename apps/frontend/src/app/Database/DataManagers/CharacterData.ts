@@ -1,15 +1,21 @@
 import type {
   ArtifactSlotKey,
   CharacterKey,
+  InfusionAuraElementKey,
   LocationCharacterKey,
   TravelerKey,
 } from '@genshin-optimizer/consts'
 import {
+  allAdditiveReactions,
+  allAmpReactionKeys,
   allArtifactSlotKeys,
   allCharacterKeys,
+  allHitModeKeys,
+  allInfusionAuraElementKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
+import type { TriggerString } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { clamp, objKeyMap } from '@genshin-optimizer/util'
@@ -19,15 +25,7 @@ import type {
   ICachedCharacter,
   IGOCharacter,
 } from '../../Types/character'
-import type { InfusionAuraElements } from '../../Types/consts'
-import {
-  allAdditiveReactions,
-  allAmpReactions,
-  allHitModes,
-  allInfusionAuraElements,
-} from '../../Types/consts'
 import type { ArtCharDatabase } from '../Database'
-import type { TriggerString } from '../DataManager'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
@@ -36,7 +34,8 @@ export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  IGOCharacter
+  IGOCharacter,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'characters')
@@ -72,10 +71,12 @@ export class CharacterDataManager extends DataManager<
 
     if (!allCharacterKeys.includes(characterKey)) return // non-recoverable
 
-    if (!allHitModes.includes(hitMode)) hitMode = 'avgHit'
+    if (!allHitModeKeys.includes(hitMode)) hitMode = 'avgHit'
     if (
       reaction &&
-      !allAmpReactions.includes(reaction as (typeof allAmpReactions)[number]) &&
+      !allAmpReactionKeys.includes(
+        reaction as (typeof allAmpReactionKeys)[number]
+      ) &&
       !allAdditiveReactions.includes(
         reaction as (typeof allAdditiveReactions)[number]
       )
@@ -83,7 +84,9 @@ export class CharacterDataManager extends DataManager<
       reaction = undefined
     if (
       infusionAura !== '' &&
-      !allInfusionAuraElements.includes(infusionAura as InfusionAuraElements)
+      !allInfusionAuraElementKeys.includes(
+        infusionAura as InfusionAuraElementKey
+      )
     )
       infusionAura = ''
     if (
@@ -322,7 +325,7 @@ export class CharacterDataManager extends DataManager<
     result.characters.beforeMerge = this.values.length
 
     const source = good.source ?? 'Unknown'
-    const characters = good[this.goKey]
+    const characters = good[this.dataKey]
     if (Array.isArray(characters) && characters?.length) {
       result.characters.import = characters.length
       const idsToRemove = new Set(this.keys)
