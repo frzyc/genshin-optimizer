@@ -44,10 +44,10 @@ const data: Data = [
   selfBuff.common.count.add(0),
 
   // Char & weapon curves
-  ...Object.entries(allStats.charExpCurve).map(([k, v]) =>
+  ...Object.entries(allStats.char.expCurve).map(([k, v]) =>
     allStatics('static')[k].add(subscript(self.char.lvl, v))
   ),
-  ...Object.entries(allStats.weaponExpCurve).map(([k, v]) =>
+  ...Object.entries(allStats.weapon.expCurve).map(([k, v]) =>
     allStatics('static')[k].add(subscript(self.weapon.lvl, v))
   ),
 
