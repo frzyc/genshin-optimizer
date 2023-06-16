@@ -121,11 +121,11 @@ const nodeSkillShieldHold = prod(
   shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill')
 )
 const nodeC2ShieldPress = prod(
-  dm.constellation2.coopShield_,
+  percent(dm.constellation2.coopShield_),
   nodeSkillShieldPress
 )
 const nodeC2ShieldHold = prod(
-  dm.constellation2.coopShield_,
+  percent(dm.constellation2.coopShield_),
   nodeSkillShieldHold
 )
 const dmgFormulas = {
