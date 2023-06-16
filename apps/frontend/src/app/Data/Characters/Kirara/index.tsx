@@ -121,14 +121,7 @@ const p1Shield = shieldNodeTalent(
   undefined,
   percent(dm.passive1.shieldMult_)
 )
-const c2Shield = shieldNodeTalent(
-  'hp',
-  dm.skill.maxShield_hp_,
-  dm.skill.maxShield_base,
-  'skill',
-  undefined,
-  percent(dm.constellation2.shieldMult_)
-)
+const c2Shield = prod(percent(dm.constellation2.shieldMult_), maxSkillShield)
 
 const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
   key,
@@ -447,7 +440,7 @@ const sheet: ICharacterSheet = {
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
-      {
+      ct.fieldsTem('constellation2', {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation2.shield, {
@@ -470,7 +463,7 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
         ],
-      },
+      }),
     ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },
