@@ -198,7 +198,7 @@ export const dmgFormulas = {
     dance2Dmg: dmgNode('hp', dm.skill.dance2Dmg, 'skill'),
     whirl1Dmg: dmgNode('hp', dm.skill.whirl1Dmg, 'skill'),
     whirl2Dmg: dmgNode('hp', dm.skill.whirl2Dmg, 'skill'),
-    illusionDmg: dmgNode('hp', dm.skill.illusionDmg, 'skill', {
+    moonDmg: dmgNode('hp', dm.skill.illusionDmg, 'skill', {
       premod: { skill_dmg_: c1_illusion_dmg_ },
     }),
     wheelDmg: dmgNode('hp', dm.skill.wheelDmg, 'skill'),
@@ -339,7 +339,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.skill.illusionDmg, {
+            node: infoMut(dmgFormulas.skill.moonDmg, {
               name: ct.ch(`skill.illusion`),
             }),
           },
