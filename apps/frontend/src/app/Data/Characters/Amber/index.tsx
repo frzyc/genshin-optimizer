@@ -400,14 +400,14 @@ const sheet: ICharacterSheet = {
       { fields: [{ node: nodeC3 }] },
     ]),
     constellation4: ct.talentTem('constellation4', [
-      {
+      ct.fieldsTem('constellation4', {
         fields: [
           {
             text: st('addlCharges'),
             value: 1,
           },
         ],
-      },
+      }),
     ]),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },

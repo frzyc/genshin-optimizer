@@ -468,14 +468,14 @@ const sheet: ICharacterSheet = {
       },
     ]),
     constellation1: ct.talentTem('constellation1', [
-      {
+      ct.fieldsTem('constellation1', {
         fields: [
           {
             text: st('addlCharges'),
             value: 1,
           },
         ],
-      },
+      }),
     ]),
     constellation2: ct.talentTem('constellation2', [
       {

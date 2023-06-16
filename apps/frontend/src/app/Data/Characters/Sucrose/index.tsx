@@ -384,14 +384,14 @@ const sheet: ICharacterSheet = {
     ]),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1', [
-      {
+      ct.fieldsTem('constellation1', {
         fields: [
           {
             text: st('addlCharges'),
             value: 1,
           },
         ],
-      },
+      }),
     ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
