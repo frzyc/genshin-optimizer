@@ -361,11 +361,10 @@ const sheet: ICharacterSheet = {
         ],
       }),
       ct.condTem('constellation6', {
-        canShow: equal(condBurstBenefit, 'on', 1),
         teamBuff: true,
         path: condC6CritPath,
         value: condC6Crit,
-        name: ct.ch('baleCondName'),
+        name: ct.ch('giftCondName'),
         states: {
           on: {
             fields: [
