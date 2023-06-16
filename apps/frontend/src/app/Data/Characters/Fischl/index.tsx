@@ -243,7 +243,6 @@ const sheet: ICharacterSheet = {
         ],
       },
       ct.headerTem('passive1', {
-        canShow: greaterEq(input.asc, 1, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.passive1.aimedChargedOz, {
@@ -305,7 +304,6 @@ const sheet: ICharacterSheet = {
         ],
       },
       ct.headerTem('passive2', {
-        canShow: greaterEq(input.asc, 4, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.dmg, { name: ct.ch('a2Name') }),
@@ -353,7 +351,6 @@ const sheet: ICharacterSheet = {
         ],
       },
       ct.headerTem('constellation4', {
-        canShow: greaterEq(input.constellation, 4, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.burstAdditionalDmg, {
