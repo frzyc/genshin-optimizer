@@ -4,6 +4,7 @@ import {
   constant,
   equal,
   greaterEq,
+  unequal,
   infoMut,
   lookup,
   naught,
@@ -357,6 +358,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('passive2', {
+        canShow: unequal(dmgFormulas.passive2.boltDmgInc, 0, 1),
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.boltDmgInc, {
@@ -391,7 +393,7 @@ const sheet: ICharacterSheet = {
             }),
           })),
           {
-            text: stg('duration'),
+            text: ct.chg(`burst.skillParams.10`),
             value: dm.burst.duration,
             unit: 's',
           },
@@ -429,6 +431,16 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('passive2', {
+        canShow: unequal(dmgFormulas.passive2.burstNormalDmgInc, 0, 1),
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive2.burstNormalDmgInc, {
+              name: ct.ch('burstNormalDmgInc'),
+            }),
+          },
+        ],
       }),
     ]),
 
