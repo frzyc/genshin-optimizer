@@ -106,17 +106,11 @@ const skillEye_ = equal(
   )
 )
 const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
+const defIgn_ = greaterEq(input.constellation, 2, equal(condInBurst, 'on', dm.constellation2.def_ignore))
+
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
-  return dmgNode('atk', atkType, 'skill', {
-    enemy: {
-      defIgn: greaterEq(
-        input.constellation,
-        2,
-        equal(condInBurst, 'on', dm.constellation2.def_ignore)
-      ),
-    },
-  })
+  return dmgNode('atk', atkType, 'skill', {})
 }
 
 const energyCosts = [40, 50, 60, 70, 80, 90]
@@ -175,15 +169,6 @@ function burstResolve(mvArr: number[], initial = false) {
     {
       hit: {
         ele: constant('electro'),
-      },
-      enemy: {
-        // if Raiden is above or equal to C2, then account for DEF Ignore else not
-        defIgn: greaterEq(
-          input.constellation,
-          2,
-          dm.constellation2.def_ignore,
-          { unit: '%' }
-        ),
       },
     }
   )
@@ -277,6 +262,7 @@ export const data = dataObjForCharacterSheet(
       burstBoost: nodeC3,
       burst_dmg_: skillEye_,
       electro_dmg_: dmgFormulas.passive2.passive2ElecDmgBonus,
+      enemyDefIgn_: defIgn_
     },
     teamBuff: {
       premod: {
@@ -546,6 +532,14 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
+      ct.headerTem('constellation2', {
+        canShow: equal(condInBurst, 'on', 1),
+        fields: [
+          {
+            node: defIgn_
+          }
+        ]
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
