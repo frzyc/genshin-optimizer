@@ -1,11 +1,14 @@
 import { input } from '../../../../Formula'
 import {
+  equal,
   unequal,
   constant,
   lookup,
   prod,
+  sum,
   subscript,
 } from '../../../../Formula/utils'
+import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
@@ -18,7 +21,7 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'CalamityQueller'
 const data_gen = allStats.weapon.data[key]
 
-const [tr] = trans('weapon', key)
+const [, trm] = trans('weapon', key)
 
 const [condStacksPath, condStacks] = cond(key, 'stack')
 const [condOffFieldPath, condOffField] = cond(key, 'offField')
@@ -32,18 +35,22 @@ const dmg_Nodes = Object.fromEntries(
     subscript(input.weapon.refineIndex, dmg_),
   ])
 )
-const atkInc = prod(
-  lookup(
-    condStacks,
-    objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
-    0
+const atkInc = {
+  ...prod(
+    lookup(
+      condStacks,
+      objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
+      0
+    ),
+    subscript(input.weapon.refineIndex, atk_)
   ),
-  subscript(input.weapon.refineIndex, atk_, { unit: '%' })
-)
+  info: KeyMap.info('atk_'),
+}
+const atkIncOffField = equal(condOffField, 'on', atkInc, KeyMap.info('atk_'))
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...dmg_Nodes,
-    atk_: atkInc,
+    atk_: sum(atkInc, atkIncOffField),
   },
 })
 const sheet: IWeaponSheet = {
@@ -57,7 +64,7 @@ const sheet: IWeaponSheet = {
       path: condStacksPath,
       teamBuff: true,
       header: headerTemplate(key, st('stacks')),
-      name: tr('passiveName'),
+      name: trm('effectName'),
       states: Object.fromEntries(
         range(1, 6).map((i) => [
           i,
@@ -83,7 +90,7 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atkInc,
+              node: atkIncOffField,
             },
           ],
         },
