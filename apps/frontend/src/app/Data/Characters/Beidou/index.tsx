@@ -391,6 +391,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('constellation6', {
+        teamBuff: true,
         canShow: equal(condBurst, 'on', 1),
         fields: [
           {

@@ -250,7 +250,9 @@ const sheet: ICharacterSheet = {
           TenguJuuraiAmbush: {
             fields: [
               {
-                node: skillTenguAmbush_,
+                node: infoMut(skillTenguAmbush_disp, {
+                  name: st(`increase.atk`),
+                }),
               },
               {
                 text: ct.chg('skill.skillParams.2'),
