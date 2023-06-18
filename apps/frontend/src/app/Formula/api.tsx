@@ -303,7 +303,7 @@ function uiDataForTeam(
     crawlObject(
       buff ?? {},
       [],
-      (x) => x.operation,
+      (x) => (x as any).operation,
       (x: NumNode, path: string[]) => {
         // CAUTION
         // This is safe only because `buff` is created using only `resetData`
