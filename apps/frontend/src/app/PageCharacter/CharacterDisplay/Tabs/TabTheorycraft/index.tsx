@@ -1,10 +1,11 @@
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-  WeaponTypeKey} from '@genshin-optimizer/consts';
+  WeaponTypeKey,
+} from '@genshin-optimizer/consts'
 import {
   allArtifactSetKeys,
-  allArtifactSlotKeys
+  allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
@@ -61,7 +62,7 @@ import {
   StatWithUnit,
 } from '../../../../Components/StatDisplay'
 import { CharacterContext } from '../../../../Context/CharacterContext'
-import type { dataContextObj } from '../../../../Context/DataContext';
+import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { getArtSheet } from '../../../../Data/Artifacts'
 import Artifact, { maxArtifactLevel } from '../../../../Data/Artifacts/Artifact'
@@ -88,18 +89,16 @@ import { iconInlineProps } from '../../../../SVGIcons'
 import type {
   ICachedArtifact,
   MainStatKey,
-  SubstatKey} from '../../../../Types/artifact';
-import {
-  allSubstatKeys
+  SubstatKey,
 } from '../../../../Types/artifact'
+import { allSubstatKeys } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'
 import type {
   ArtifactRarity,
   SetNum,
-  SubstatType} from '../../../../Types/consts';
-import {
-  substatType,
+  SubstatType,
 } from '../../../../Types/consts'
+import { substatType } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
 import { deepClone, objectMap, objPathValue } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
@@ -452,22 +451,23 @@ export default function TabTheorycraft() {
         }
       }
       permute(distributedSubstats, realSubs)
-      if (process.env.NODE_ENV === 'development')
+      if (process.env.NODE_ENV === 'development') {
         console.log(`Took ${performance.now() - startTime} ms`)
-      console.log(maxBuffer)
-      console.log(
-        objectMap(maxBuffer!, (v, x) =>
-          allSubstatKeys.includes(x as any)
-            ? v /
-              (Artifact.substatValue(
-                x as SubstatKey,
-                5,
-                charTC.artifact.substats.type
-              ) /
-                comp(x))
-            : v
+        console.log(maxBuffer)
+        console.log(
+          objectMap(maxBuffer!, (v, x) =>
+            allSubstatKeys.includes(x as any)
+              ? v /
+                (Artifact.substatValue(
+                  x as SubstatKey,
+                  5,
+                  charTC.artifact.substats.type
+                ) /
+                  comp(x))
+              : v
+          )
         )
-      )
+      }
 
       if (apply) {
         const data_ = deepClone(charTC)
