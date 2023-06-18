@@ -14,6 +14,7 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -106,11 +107,16 @@ const skillEye_ = equal(
   )
 )
 const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
-const defIgn_ = greaterEq(input.constellation, 2, equal(condInBurst, 'on', dm.constellation2.def_ignore))
+const defIgn_ = greaterEq(
+  input.constellation,
+  2,
+  equal(condInBurst, 'on', dm.constellation2.def_ignore),
+  KeyMap.info('enemyDefIgn_')
+)
 
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
-  return dmgNode('atk', atkType, 'skill', {})
+  return dmgNode('atk', atkType, 'skill')
 }
 
 const energyCosts = [40, 50, 60, 70, 80, 90]
@@ -262,13 +268,15 @@ export const data = dataObjForCharacterSheet(
       burstBoost: nodeC3,
       burst_dmg_: skillEye_,
       electro_dmg_: dmgFormulas.passive2.passive2ElecDmgBonus,
-      enemyDefIgn_: defIgn_
     },
     teamBuff: {
       premod: {
         atk_: c4AtkBonus_,
         burst_dmg_: skillEyeTeamBurstDmgInc,
       },
+    },
+    enemy: {
+      defIgn: defIgn_,
     },
   }
 )
@@ -350,11 +358,13 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('skill.skillParams.2'),
-            value: `${dm.skill.duration}s`,
+            value: dm.skill.duration,
+            unit: 's',
           },
           {
             text: ct.chg('skill.skillParams.4'),
-            value: `${dm.skill.cd}s`,
+            value: dm.skill.cd,
+            unit: 's',
           },
         ],
       },
@@ -448,7 +458,7 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.9'),
-            value: `${dm.burst.stam}`,
+            value: dm.burst.stam,
           },
           {
             node: infoMut(dmgFormulas.burst.plunge, {
@@ -472,15 +482,17 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.13'),
-            value: `${dm.burst.duration}s`,
+            value: dm.burst.duration,
+            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.14'),
-            value: `${dm.burst.cd}s`,
+            value: dm.burst.cd,
+            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.15'),
-            value: `${dm.burst.enerCost}`,
+            value: dm.burst.enerCost,
           },
         ],
       },
@@ -536,10 +548,10 @@ const sheet: ICharacterSheet = {
         canShow: equal(condInBurst, 'on', 1),
         fields: [
           {
-            node: defIgn_
-          }
-        ]
-      })
+            node: defIgn_,
+          },
+        ],
+      }),
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -576,7 +588,8 @@ const sheet: ICharacterSheet = {
               },
               {
                 text: ct.chg('skill.skillParams.2'),
-                value: `${dm.constellation4.duration}s`,
+                value: dm.constellation4.duration,
+                unit: 's',
               },
             ],
           },
