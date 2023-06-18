@@ -9,6 +9,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -80,7 +81,8 @@ const atkIncRatio = subscript(
 const skillTenguAmbush_disp = equal(
   'TenguJuuraiAmbush',
   condSkillTenguAmbush,
-  prod(input.base.atk, atkIncRatio)
+  prod(input.base.atk, atkIncRatio),
+  KeyMap.info('atk')
 )
 const skillTenguAmbush_ = equal(
   input.activeCharKey,
@@ -250,9 +252,7 @@ const sheet: ICharacterSheet = {
           TenguJuuraiAmbush: {
             fields: [
               {
-                node: infoMut(skillTenguAmbush_disp, {
-                  name: st(`increase.atk`),
-                }),
+                node: skillTenguAmbush_disp,
               },
               {
                 text: ct.chg('skill.skillParams.2'),
