@@ -30,6 +30,7 @@ import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
+import NymphsDream from './NymphsDream'
 import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
 import PrayersForDestiny from './PrayersForDestiny'
@@ -48,6 +49,7 @@ import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
 import VermillionHereafter from './VermillionHereafter'
 import ViridescentVenerer from './ViridescentVenerer'
+import VourukashasGlow from './VourukashasGlow'
 import WanderersTroupe from './WanderersTroupe'
 
 const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
@@ -75,6 +77,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   MaidenBeloved,
   MartialArtist,
   NoblesseOblige,
+  NymphsDream,
   OceanHuedClam,
   PaleFlame,
   PrayersForDestiny,
@@ -93,6 +96,7 @@ const artifacts: Record<ArtifactSetKey, ArtifactSheet> = {
   TravelingDoctor,
   VermillionHereafter,
   ViridescentVenerer,
+  VourukashasGlow,
   WanderersTroupe,
 } as const
 

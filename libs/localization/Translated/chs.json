@@ -98,7 +98,8 @@
     "sub_other": "{{count}}个副词条",
     "cantDeleteLock": "无法删除，因为圣遗物已锁定",
     "equippedArt": "已装备的圣遗物",
-    "artInInv": "背包中的圣遗物"
+    "artInInv": "背包中的圣遗物",
+    "locationsTooltip": "关闭\"所有装备的圣遗物\"以使用单个角色的过滤器"
   },
   "languages": {
     "chs": "中文（简体）",
@@ -174,6 +175,13 @@
         "swap": "交换"
       },
       "currentDB": "当前数据库"
+    },
+    "sillyCard": {
+      "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+      "toggle": {
+        "enabled": "Silly Optimizer Enabled",
+        "disabled": "Silly Optimizer Disabled"
+      }
     }
   },
   "ui": {
@@ -227,7 +235,25 @@
     "gender": {
       "F": "女",
       "M": "男"
-    }
+    },
+    "statGroupKey": {
+      "basic_stats": "基本属性",
+      "elem_dmg_bonus": "元素伤害加成",
+      "enemy_debuffs": "敌人的debuff",
+      "self_res": "自身抗性",
+      "reaction_dmg_bonus": "反应伤害加成",
+      "reaction_crit": "反应暴击加成",
+      "elem_dmgInc": "元素伤害提升",
+      "talent_dmgInc": "天赋伤害提升",
+      "elem_crit": "元素暴击加成",
+      "talent_dmg_bonus": "天赋伤害加成",
+      "talent_crit": "天赋暴击加成",
+      "talent_level_boost": "天赋等级加成",
+      "base_stat_mod": "基本属性修正",
+      "stamina_buffs": "体力buff",
+      "misc": "杂项属性"
+    },
+    "sillyPageTitle": "Silly Optimizer"
   },
   "char_Eula": {
     "skillC": {
@@ -237,7 +263,8 @@
       "name": "光降之剑",
       "start5": "立即获得5层能量",
       "addStacks": "普通攻击、元素战技或元素爆发造成伤害使其积蓄能量层数时，有50%的概率额外获得一层",
-      "dmg": "光降之剑爆发伤害"
+      "dmg": "光降之剑爆发伤害",
+      "bonusScaling": "光降之剑增加伤害"
     },
     "c1C": {
       "name": "消耗<strong>冷酷之心</strong>层数",
@@ -245,7 +272,8 @@
     },
     "passive1": "残缺光降之剑伤害",
     "c4C": {
-      "name": "生命值低于50%的敌人"
+      "name": "生命值低于50%的敌人",
+      "dmgBonus": "光降之剑造成的伤害提高"
     }
   },
   "char_Noelle": {
@@ -288,14 +316,18 @@
       "crit": "命中敌人并造成暴击",
       "normalChargedOrPlunging": "普通/蓄力/下落攻击命中敌人",
       "dendro": "<dendro>草元素伤害</dendro>击中敌人",
-      "normalEle": "元素普攻命中敌人后"
+      "normalEle": "元素普攻命中敌人后",
+      "ele": "造成元素伤害后",
+      "weakSpot": "重击命中敌人弱点后"
     },
     "eleAbsor": "元素转化",
     "absorDot": "元素转化持续伤害",
     "afterUse": {
       "skill": "使用元素战技后",
       "burst": "使用元素爆发后",
-      "skillOrBurst": "释放元素战技或元素爆发后"
+      "skillOrBurst": "释放元素战技或元素爆发后",
+      "skillPress": "$t(afterUse.skill) ($t(press))",
+      "skillHold": "$t(afterUse.skill) ($t(hold))"
     },
     "increase": {
       "atk": "攻击加成"
@@ -418,7 +450,19 @@
       "skill": "技能伤害倍率"
     },
     "stamRestored": "回复体力",
-    "triggerQuota": "生效次数"
+    "triggerQuota": "生效次数",
+    "enemyAffected": {
+      "burningOrPyro": "敌人受到<pyro>燃烧</pyro>或<pyro>火元素</pyro>影响",
+      "frozenOrCryo": "敌人处于<cryo>冻结</cryo>状态或受到<cryo>冰元素</cryo>影响",
+      "pyroOrElectro": "敌人处于<pyro>火元素</pyro>或<electro>雷元素</electro>影响下",
+      "hydroOrCryo": "敌人处于<hydro>水元素</hydro>或<cryo>冰元素</cryo>影响下",
+      "hydroOrPyro": "敌人处于<hydro>水元素</hydro>或<pyro>火元素</pyro>影响下",
+      "hydroOrElectro": "敌人处于<hydro>水元素</hydro>或<electro>雷元素</electro>影响下",
+      "electro": "敌人处于<electro>雷元素</electro>影响下",
+      "cryo": "敌人处于<cryo>冰元素</cryo>影响下"
+    },
+    "getElementalOrbParticle": "获得元素晶球或元素微粒",
+    "notProtectedByShield": "不处于护盾庇护下"
   },
   "weapon_SongOfBrokenPines": {
     "name": "获得「千年的大乐章·揭旗之歌」效果"
@@ -545,7 +589,10 @@
       "jobTitle": {
         "leadDev": "开发负责人",
         "dev": "开发者",
-        "mod": "管理员"
+        "mod": "管理员",
+        "admin": "Admin",
+        "translator": "Translations Manager",
+        "TC": "TC Correspondant"
       }
     }
   },
@@ -553,14 +600,11 @@
     "intro": "<0>自动扫描器</0><1>自动扫描器能帮助你自动化扫描原神游戏内的数据。一般通过模拟你的鼠标运动，截图，识别截图内的信息来工作。 作为与游戏间接交互的工具，虽然它们的使用几乎无法检测到, <1>仍存在使用的风险。</1>建议用户酌情决定是否使用。</1><2>在 GO 中使用这些扫描仪，最重要方面是选择正确的输出格式:</2><3><0><0>对于<1>v5.21.0</1>, GO接受 <3>mona-uranai</3> 格式的导入。 </0><1>对于<1>v6.0.0</1>, GO接受 <3>Genshin Open Object Description (GOOD)</3> 格式的导入。.</1></0></3><4以下是几款经过 GO 测试的扫描仪。</4><5>上传导出的文件，请到 <1>数据库</1> 页面，在<strong>数据库上传</strong> 位置上传。</5>",
     "ik": {
       "title": "Inventory Kamera",
-      "p1": "这个轻量app可以扫描你所有角色及其武器和你背包中的圣遗物。按照app中的指引进行扫描。但此app只能扫描英文游戏文本。",
-      "p2": "这个扫描仪还可以为<1>Seelie.me</1>扫描所有材料。\n",
-      "p3": "此扫描仪只能扫描英文文本，并默认导出GOOD格式。"
+      "p1": "这个轻量app可以扫描你所有角色及其武器和你背包中的圣遗物。按照app中的指引进行扫描。但此app只能扫描英文游戏文本。"
     },
     "am": {
       "title": "「天目」-- Amenoma",
-      "p1": "可以扫描你背包内的所有圣遗物。请参照指引捕获游戏窗口并扫描。此扫描仪有中文版和英文版。(下载 <1>_EN.exe</1> 版本来扫描英文文本游戏)。 <3>mona-uranai</3> 和<5>GOOD</5> 格式都被GO接受。 推荐使用<7>GOOD</7> 格式导出。",
-      "p2": "这款扫描器也可以扫描材料以供<1>Seelie.me</1>使用"
+      "p1": "可以扫描你背包内的所有圣遗物。请参照指引捕获游戏窗口并扫描。此扫描仪有中文版和英文版。(下载 <1>_EN.exe</1> 版本来扫描英文文本游戏)。 <3>mona-uranai</3> 和<5>GOOD</5> 格式都被GO接受。 推荐使用<7>GOOD</7> 格式导出。"
     },
     "as": {
       "title": "AdeptiScanner",
@@ -575,14 +619,21 @@
       "ps": "PlayStation",
       "gameMani": "存在游戏操作",
       "materials": "材料",
-      "characters": "角色"
+      "characters": "角色",
+      "weapons": "Weapons",
+      "achievements": "Achievements"
     },
     "nb": {
       "title": "圣遗物扫描",
       "p1": "这个基于网页的扫描仪可以捕获你的游戏窗口，或者从截图或视频扫描。",
-      "p2": "截图或录屏可以是全屏的，并且不需要裁剪。",
-      "p3": "移动端/PlayStation只能通过截图或视频扫描"
-    }
+      "p2": "截图或录屏可以是全屏的，并且不需要裁剪。"
+    },
+    "ak": {
+      "title": "Akasha Scanner",
+      "p1": "Automatically scans artifacts as well as characters and weapons. Allows exporting of past scans as it keeps a history within the app. Scans only in English.",
+      "p2": "This app is also able to scan achievements for <1>Paimon.moe</1> and <1>Seelie.me</1>."
+    },
+    "seelieme": "这个扫描仪还可以为<1>Seelie.me</1>扫描所有材料。"
   },
   "weapon_Akuoumaru": {
     "party": "队伍元素能量总量"
@@ -770,9 +821,7 @@
   },
   "char_Mona": {
     "omen": "星异",
-    "omenDuration": "星异持续时间",
     "bubbleDuration": "泡影持续时间",
-    "phantomDuration": "虚影持续时间",
     "hitOp": {
       "affectedByOmen": "队伍中自己的角色攻击命中处于星异状态下的敌人"
     },
@@ -820,7 +869,8 @@
     "a2": "炽火崩破造成的伤害提高",
     "c2": "<strong>真红炽火之大铠</strong>的持续时间延长",
     "maxShield": "护盾吸收量上限",
-    "maxPyroShield": "护盾对火元素伤害的吸收量上限"
+    "maxPyroShield": "护盾对火元素伤害的吸收量上限",
+    "refreshBarrier": "获取或刷新<strong>烈烧佑命护盾</strong>后"
   },
   "char_Xiangling": {
     "afterChili": "拾取辣椒后",
@@ -938,10 +988,6 @@
   "weapon_BlackTassel": {
     "condName": "对史莱姆类敌人"
   },
-  "weapon_CrescentPike": {
-    "condName": "获得元素微粒或元素晶球后",
-    "hitName": "普通攻击和重击造成额外伤害"
-  },
   "weapon_Deathmatch": {
     "condName": "身边敌人数量",
     "opponents": {
@@ -977,7 +1023,9 @@
     "takeMoreDmg": "受到的伤害增加"
   },
   "weapon_Slingshot": {
-    "condName": "普通攻击和瞄准射击的箭矢在发射后的0.3秒内击中敌人"
+    "condName": "普通攻击和瞄准射击的箭矢在发射后的0.3秒内击中敌人",
+    "less": "在发射后的0.3秒内命中",
+    "more": "在发射后的0.3秒后命中"
   },
   "weapon_SnowTombedStarsilver": {
     "aoeDmg": "恒冰晶核伤害",
@@ -1085,10 +1133,17 @@
     "multiTarget": {
       "title": "多重优化目标配置",
       "addNewTarget": "添加新的自定义目标",
-      "addNewMTarget": "添加新的自定义多重目标"
+      "addNewMTarget": "添加新的自定义多重目标",
+      "info1": "说明：社区创建的自定义多重优化目标可以在<1>GO Discord</1>或者<3>KQM多重优化指南</3>找到，不过我们不保证这些配置的有效性。",
+      "info2": "用户有责任自行判断其准确性。",
+      "description": "描述",
+      "duplicate": "复制",
+      "target_one": "<0>{{count}}</0>个目标",
+      "target_other": "<0>{{count}}</0>个目标"
     },
     "addStats": {
-      "title": "怪物配置与增益状态"
+      "title": "怪物配置与增益状态",
+      "info": "你可以使用这些选项来添加GO没有直接支持的buff/debuff，比如食物buff，深渊卡片，或者超导，具体数值请参考<1>原神wiki</1>。"
     },
     "tabTheorycraft": {
       "substatType": {
@@ -1166,7 +1221,8 @@
       "assumptionLvl": {
         "no": "无等级假设",
         "lvl": "假设等级为{{lvl}}级"
-      }
+      },
+      "title": "Main Stat Filter/Configuration"
     },
     "tcGraph": {
       "vs": "绘制与优化目标的关系图",
@@ -1239,7 +1295,47 @@
     "currentlyEquippedBuild": "当前已装备的",
     "addBuildToList": "将配装加入列表",
     "graphBuildLabel": "图表 #<1>{{count}}</1>",
-    "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试"
+    "workerLoadFailed": "工作程序加载失败。单击此处重新加载页面并重试",
+    "excludeArt": {
+      "title_exclude": "排除的圣遗物",
+      "title_tooltip": "添加圣遗物到该角色的排除列表，排除列表里的圣遗物在配装时将不会考虑。",
+      "usingNum_one": "使用<1>{{count}}</1>件排除的圣遗物",
+      "usingNum_other": "使用<1>{{count}}</1>件排除的圣遗物",
+      "excNum_one": "<0>{{count}}</0>件圣遗物已排除",
+      "excNum_other": "<0>{{count}}</0>件圣遗物已排除",
+      "addExc": "添加圣遗物到该角色的排除列表",
+      "selExc": "选择圣遗物以添加到该角色的排除列表",
+      "deSelectExc": "点击圣遗物以从该角色的排除列表中移除",
+      "excludeArtifactTip": "如果排除了某件圣遗物，则该角色生成配装时不会使用该圣遗物。",
+      "excluded": "这件圣遗物已排除。",
+      "included": "这件圣遗物未排除。",
+      "button_txt": "Exclude Artifacts",
+      "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)"
+    },
+    "excludeChar": {
+      "title": "可装备的圣遗物配置",
+      "modal": {
+        "allow_all": "添加以下所有角色到允许列表",
+        "disallow_All": "将以下所有角色从允许列表中移除"
+      },
+      "allowEquip": "允许使用来自这些的圣遗物",
+      "usingNumTot_one": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
+      "usingNumTot_other": "使用来自<3>{{count}}</3>位角色的<1>{{arts}}</1>件圣遗物",
+      "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all equipped and unequipped artifacts.",
+      "chars": "Characters",
+      "artis": "Artifacts",
+      "states": {
+        "unequippedOnly": "Unequipped Only",
+        "customList": "Custom List",
+        "all": "All Artifacts"
+      },
+      "usingState": "Using"
+    },
+    "buildCompleted": "配装完成",
+    "notifyTooltip": "配装完成时发出声音，如果焦点不在本页面，还会显示提示。",
+    "bonusStats": {
+      "title": "Bonus Stats"
+    }
   },
   "weapon_CalamityQueller": {
     "inactiveKey": "后台额外提升"
@@ -1261,7 +1357,9 @@
     "c6": "受到<strong>风息激荡</strong>伤害的目标",
     "c4": "风涡剑持续期间，受到的伤害降低",
     "initialEleDmg": "初始切割伤害",
-    "maxEleDmg": "最大切割伤害"
+    "maxEleDmg": "最大切割伤害",
+    "stormEleDmg": "初始爆风伤害",
+    "stormEleMaxDmg": "最大爆风伤害"
   },
   "char_TravelerElectro": {
     "skill": {
@@ -1285,6 +1383,9 @@
     },
     "c2": {
       "key": "荒星爆炸伤害"
+    },
+    "c4": {
+      "energyRestore": "震荡波每击中一个敌人恢复能量"
     }
   },
   "page_newTab": {
@@ -1334,15 +1435,6 @@
       "condName": "<strong>七域舞步</strong>的翩转状态下的第三段舞步命中敌人后"
     }
   },
-  "weapon_MakhairaAquamarine": {
-    "condName": "增益效果产生"
-  },
-  "weapon_WanderingEvenstar": {
-    "condName": "增益效果产生"
-  },
-  "weapon_XiphosMoonlight": {
-    "condName": "增益效果产生"
-  },
   "char_Nahida": {
     "karmaDmg_": "灭净三业伤害提升",
     "karmaCritRate_": "灭净三业暴击率提升",
@@ -1364,7 +1456,8 @@
     "giftCondName": "受<strong>风的秘密方式</strong>祈祷风的益处影响",
     "a4CondName": "七窟遗智是有效的",
     "c2DurationInc": "赫耀多方面体的存在时间延长增长",
-    "c6Arrow": "造成伤害时发射另一支飓风箭"
+    "c6Arrow": "造成伤害时发射另一支飓风箭",
+    "baleCondName": "敌人受到诡风之祸影响"
   },
   "char_Layla": {
     "starDmgInc": "流星伤害增加",
@@ -1393,7 +1486,8 @@
     "debateStacks": "辩章层数",
     "mirrorsConsumed": "<strong>殊境·显象缚结</strong>施放消耗的琢光镜数量",
     "projectionAttack_dmg_": "光幕攻击伤害提升",
-    "excessMirror": "琢光镜数量已达到上限后，再产生琢光镜"
+    "excessMirror": "琢光镜数量已达到上限后，再产生琢光镜",
+    "projectionDmg": "光幕攻击伤害"
   },
   "char_Yaoyao": {
     "a4Heal": "白玉萝卜炸裂治疗量",
@@ -1401,5 +1495,298 @@
     "inLegacy": "处于桂子仙机状态",
     "megaDmg": "超厉害·大萝卜伤害",
     "megaHeal": "超厉害·大萝卜治疗量"
+  },
+  "page_error": {
+    "title": "🛑出现异常🛑",
+    "p1.1": "GO出现了异常，这可能是我们的锅，所以请让我们帮助你！",
+    "p1.2": "你可以尝试这些方法来解决问题：",
+    "fixes": {
+      "1": "刷新页面",
+      "2": "禁用扩展然后再次刷新页面",
+      "3": "从下面下载数据库，保存在安全的地方，点击“删除所有GO数据”按钮，然后重新上传数据库"
+    },
+    "p2": "如果你尝试了上面所有方法又回到了这个页面，请到我们的Github Issue页面或者Discord频道报告",
+    "report": {
+      "1": "从下面下载数据库",
+      "2": "从下面的对话框中复制报告文本",
+      "3": "点击<1>这里</1>以在Github中报告，在描述部分粘贴上述文本，填写复现步骤，并包含你的JSON文件（你或许需要修改它的扩展名为“.txt”）",
+      "4": "或者点击<1>这里</1>以在Discord中报告，打开#🐛bug-reports频道，创建一个新帖子，粘贴上述文本，填写复现步骤并上传你的JSON文件。"
+    },
+    "refresh": "刷新页面",
+    "caption": "工程师调查问题的实况镜头",
+    "confirmNuke": "你确定要删除所有GO数据么？该操作不可逆！",
+    "finishNuke": "删除所有GO数据，刷新页面。",
+    "nuke": "删除所有GO数据"
+  },
+  "char_Dehya": {
+    "inFieldAndTakeDmg": "净焰剑狱领域中的敌人受到伤害后",
+    "field_dmg_": "净焰剑狱伤害加成",
+    "initialHeal": "初始治疗量",
+    "dotHeal": "后续治疗量",
+    "critHitDuringBurst": "炽鬃拳暴击后"
+  },
+  "editor": {
+    "title": "标题",
+    "rarity": "稀有度",
+    "level": "等级",
+    "unknownPieceName": "未知圣遗物名称",
+    "unknownSetName": "未知套装",
+    "curSubEff": "当前副词条评分",
+    "curSubEffDesc": "圣遗物每升四级，随机升级一次副词条。<strong>副词条评分</strong> 计算了副词条升级值占最大升级值的比例。",
+    "maxSubEff": "最高副词条评分",
+    "maxSubEffDesc": "<strong>最高副词条评分</strong>计算了剩余副词条升级均为最大升级值时，圣遗物的评分。",
+    "substat": {
+      "selectSub": "选择一个副词条",
+      "error": {
+        "noCalc": "无法计算词条升级次数.",
+        "noOverRoll": "副词条无法进行超过{{value}} 次升级."
+      },
+      "noRoll": "未升级",
+      "RollCount_one": "{{count}} 升级次数",
+      "RollCount_other": "{{count}} 升级次数",
+      "noStat": "无评分",
+      "eff": "评分： <1></1>",
+      "noSubstat": "无副词条",
+      "substatFormat": "副词条 {{value}}",
+      "nextRolls": "下次升级："
+    },
+    "preview": "圣遗物预览",
+    "dupArt": "重复圣遗物检测",
+    "upArt": "升级圣遗物检测",
+    "beforeEdit": "编辑前",
+    "btnSave": "保存圣遗物",
+    "btnAdd": "添加圣遗物",
+    "btnClear": "清除",
+    "btnRandom": "随机化",
+    "btnUpdate": "更新圣遗物",
+    "clearPrompt": "仍有圣遗物正在编辑，确定要清空编辑器吗？"
+  },
+  "slot": "位置",
+  "setEffectNum": "{{setNum}}件套",
+  "slotName": {
+    "flower": "生之花",
+    "plume": "死之羽",
+    "sands": "时之沙",
+    "goblet": "空之杯",
+    "circlet": "理之冠"
+  },
+  "info": {
+    "title": "圣遗物编辑/管理指南",
+    "section1": "<0>副词条升级次数</0><1> <1>副词条升级次数</1>显示在副词条左侧。次数越多，副词条颜色越深：<3></3>.</1><2>副词条评分</2><3>副词条评分指副词条当前数值占5<1></1>最高数值的比例。如图所示，暴击伤害最高升级值一次为7.8%，在评分中： <3>5.8/7.8 = 69.2%.</3></3><4>当前评分 vs. 最高期望评分</4><5>当一个五<1></1>圣遗物经过9(4+5)次总升级，且每次升级都是最大数值升级，此时被认为是100%评分的圣遗物。然而，大部分圣遗物没有这么幸运。<3>当前副词条评分</3> 是该圣遗物与100%评分圣遗物相较的结果。<5>最高副词条评分</5> 是一个圣遗物接下来的升级都获得最高数值时，能获得的评分。</5><6>锁定圣遗物</6><7>通过锁定圣遗物 <1></1>，该圣遗物不会被配装生成器选入计算中。同样，已经被装备的圣遗物是默认被排除的。</7>",
+    "section2": "<0>圣遗物编辑器</0><1>支持任意3<1></1> 到 5<3></3>圣遗物的全功能编辑器。输入副词条后，能自动计算升级次数并评分。同时编辑器会确保你的升级次数与圣遗物等级匹配。</1><2>截图扫描</2><3>如果你不想手动输入圣遗物，可以通过截图扫描的方式识别输入圣遗物。在圣遗物编辑器界面，点击 <1>Show Me How!</1> 可见使用方法。</3><4>自动圣遗物扫描仪</4><5>如果你在PC上玩原神，你可以下载使用圣遗物扫描工具来为你扫描所有的圣遗物，并导入GO的 <1></1> 数据库内。<3>点此</3> 获取与 GO 兼容的扫描器列表。</5><6>重复/升级后圣遗物检测</6><7> GO可以检测出你导入的<1>重复</1> 圣遗物哦！原先拥有的圣遗物<3>升级后</3> 也会被检测出来。. 一旦检测到重复/升级的圣遗物，会出现预览界面允许你比较这些圣遗物（见图片）。</7>",
+    "section3": "<0>圣遗物背包</0><1>所有被添加到GO的圣遗物会在此显示。筛选器可以帮助你更好浏览你拥有的圣遗物。 </1><2>例如：精确找狗粮</2><3>使用圣遗物筛选器及圣遗物评分，你可以快速地确定狗粮圣遗物。</3><4>例如，这样设置你的筛选：</4><5><0>限制圣遗物等级0-8.</0><1>未排除的圣遗物</1><2>移除小生命，小防御及元素充能对潜力的计算。</2><3>按升序最大潜能评分排序。</3></0></5><6>这样圣遗物背包就会按照需要的词条筛选出最低评分的圣遗物。</6>"
+  },
+  "artifactFilter": "圣遗物筛选",
+  "efficiencyFilter": {
+    "title": "选择用于计算评分的副词条"
+  },
+  "filterLocation": {
+    "location": "位置",
+    "inventory": "背包",
+    "currentlyEquipped": "当前装备"
+  },
+  "button": {
+    "unequipArtifacts": "卸除圣遗物",
+    "deleteArtifacts": "删除圣遗物",
+    "lockArtifacts": "锁定圣遗物",
+    "unlockrtifacts": "解锁圣遗物"
+  },
+  "buttonHint": "注意:红色选项仅用于 <1>筛选后的圣遗物</1>",
+  "tipsOfTheDay": [
+    "单件4星圣遗物的评分上限为540%左右.",
+    "圣遗物的评分上限一般会随着等级提升而降低，这很正常！",
+    "含有\"1\"的副词条较难通过截图扫描识别.",
+    "如果所有强化都在同一个副词条上（累计6次），它会呈现紫色！",
+    "单击\"详情\"，了解如何添加在游戏内升级后的圣遗物.",
+    "目前支持多圣遗物截图扫描识别！"
+  ],
+  "sortMap": {
+    "level": "等级",
+    "efficiency": "当前副词条评分",
+    "mefficiency": "最高副词条评分"
+  },
+  "mainStat": "主词条",
+  "showingNum_one": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
+  "showingNum_other": "显示 {{value}}个中<1>{{count}}</1>个圣遗物",
+  "resetFilters": "重置过滤条件",
+  "edit": "编辑圣遗物",
+  "autocompleteLabels": {
+    "sets": "圣遗物套装",
+    "mainStats": "主词条",
+    "substats": "副词条",
+    "set": "圣遗物套装"
+  },
+  "substat_one": "{{count}}项副词条",
+  "substat_other": "{{count}}项副词条",
+  "sub_one": "{{count}}个副词条",
+  "sub_other": "{{count}}个副词条",
+  "addNew": "添加新圣遗物",
+  "cantDeleteLock": "无法删除，因为圣遗物已锁定",
+  "equippedArt": "已装备的圣遗物",
+  "artInInv": "背包中的圣遗物",
+  "locationsTooltip": "Disable \"All Equipped Artifacts\" to filter by specific characters",
+  "char_Mika": {
+    "inSoulwind": "In the Soulwind state",
+    "numDetectorStacks": "Detector",
+    "incDetectorStacks": "Max. Detector stacks Inc."
+  },
+  "weapon_MailedFlower": {
+    "condName": "After hitting an opponent with an Elemental Skill or triggering an Elemental Reaction"
+  },
+  "artifact_NymphsDream": {
+    "condName": "Mirrored Nymph"
+  },
+  "char_Somnia": {
+    "name": "Somnia",
+    "title": "Creation of Simulated Cognition",
+    "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
+    "constellationName": "Mathematica Felina",
+    "auto": {
+      "name": "Astral Abacus",
+      "fields": {
+        "normal": {
+          "0": "<strong><strong>Normal Attack</strong>",
+          "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
+        },
+        "charged": {
+          "0": "<strong>Charged Attack</strong>",
+          "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s",
+          "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+        },
+        "plunging": {
+          "0": "<strong>Plunging Attack</strong>",
+          "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
+        }
+      },
+      "skillParams": {
+        "0": "1-Hit DMG",
+        "1": "2-Hit DMG",
+        "2": "3-Hit DMG",
+        "3": "4-Hit DMG",
+        "4": "Charged Attack Stream DMG",
+        "5": "Charged Attack Stamina Cost",
+        "6": "Plunge DMG",
+        "7": "Low/High Plunge DMG"
+      }
+    },
+    "skill": {
+      "name": "Cosmic Calculator",
+      "description": {
+        "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
+        "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
+        "2": "<br/>",
+        "3": "<strong>Schrödinger Superposition</strong>",
+        "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
+        "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Duration",
+        "2": "CD"
+      }
+    },
+    "burst": {
+      "name": "Parallax Paws",
+      "description": {
+        "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
+        "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
+        "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simulatenously.",
+        "3": "<br/>",
+        "4": "<strong>Abacus Modes</strong>",
+        "5": [
+          "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
+          "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
+          "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
+        ]
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Elemental Mastery",
+        "2": "Celestial Cyclone DoT (Multiplication)",
+        "3": "Star Sunder DMG",
+        "4": "Celestial Cyclone DoT (Addition)",
+        "5": "Supernova DMG",
+        "6": "Celestial Cyclone DoT (Subtraction)"
+      }
+    },
+    "passive1": {
+      "name": "Quick Calculation",
+      "description": {
+        "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster"
+      }
+    },
+    "passive2": {
+      "name": "Math Whiz",
+      "description": {
+        "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
+      }
+    },
+    "passive3": {
+      "name": "Insomniac Iteration",
+      "description": {
+        "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+      }
+    },
+    "constellation1": {
+      "name": "Decimal Point",
+      "description": {
+        "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG"
+      }
+    },
+    "constellation2": {
+      "name": "Prime Number",
+      "description": {
+        "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
+      }
+    },
+    "constellation3": {
+      "name": "Infinite Series",
+      "description": {
+        "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation4": {
+      "name": "Perfect Square",
+      "description": {
+        "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
+        "1": "This effect can trigger once every 4s."
+      }
+    },
+    "constellation5": {
+      "name": "Catnip Coefficient",
+      "description": {
+        "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
+        "1": "Maximum upgrade level is 15."
+      }
+    },
+    "constellation6": {
+      "name": "Golden Ratio",
+      "description": {
+        "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5% respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+      }
+    },
+    "c1Key": "Normal and Charged Att. DMG Mult.",
+    "superpositionCond": "Under the Schrödinger Superposition effect",
+    "cycloneActiveCond": "Celestial Cyclone is active",
+    "multCond": "In Multiplication mode",
+    "subCond": "In Subtraction mode",
+    "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
+    "c1Cond": "Decimal Point trigger frequency",
+    "average": "Average",
+    "always": "Always",
+    "c2Cond": "Possesses a prime amount of Natural Number stacks"
+  },
+  "weapon_QuantumCatalyst": {
+    "name": "Quantum Cat-alyst",
+    "description": "This advanced Catalyst weapon is infused with the mysterious power of Quantum Mechanics and bears the likeness of a curious cat, with glowing green eyes, a tail that flickers with Electro energy and the occasional spark arcing between the ears.",
+    "passiveName": "Mewon Meowmentum",
+    "passiveDescription": {
+      "0": "Increases Energy Recharge by <cryo>18%</cryo>. Increases Normal and Charged Attack DMG by <cryo>6%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>10</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "1": "Increases Energy Recharge by <cryo>22.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>7.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>12</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "2": "Increases Energy Recharge by <cryo>27%</cryo>. Increases Normal and Charged Attack DMG by <cryo>9%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>14</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "3": "Increases Energy Recharge by <cryo>31.5%</cryo>. Increases Normal and Charged Attack DMG by <cryo>10.5%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>16</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently.",
+      "4": "Increases Energy Recharge by <cryo>36%</cryo>. Increases Normal and Charged Attack DMG by <cryo>12%</cryo> of Elemental Mastery. Upon triggering an <electro>Electro-related Elemental Reaction</electro>, gain <cryo>18</cryo> Elemental Mastery for 12 seconds. This effect can stack up to 5 times and stacks have their duration counted independently."
+    }
   }
 }

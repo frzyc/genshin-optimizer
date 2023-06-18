@@ -1,4 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import type { DisplaySub } from '../../../Formula/type'
 import {
@@ -18,7 +19,6 @@ import { charTemplates } from '../charTemplates'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
 import Traveler from '../Traveler'
-import skillParam_gen from './skillParam_gen.json'
 
 export default function electro(
   key: CharacterSheetKey,
@@ -27,8 +27,9 @@ export default function electro(
 ) {
   const elementKey: ElementKey = 'electro'
   const condCharKey = 'TravelerElectro'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
+  const skillParam_gen = allStats.char.skillParam.TravelerElectroF
   let s = 0,
     b = 0
   const dm = {

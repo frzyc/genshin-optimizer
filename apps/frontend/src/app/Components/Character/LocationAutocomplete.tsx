@@ -1,22 +1,22 @@
-import { characterAsset } from '@genshin-optimizer/g-assets'
+import type {
+  LocationCharacterKey,
+  LocationKey,
+} from '@genshin-optimizer/consts'
+import { allTravelerKeys, charKeyToLocCharKey } from '@genshin-optimizer/consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { DatabaseContext } from '../../Database/Database'
 import useDBMeta from '../../ReactHooks/useDBMeta'
-import type { LocationCharacterKey, LocationKey } from '../../Types/consts'
-import {
-  charKeyToCharName,
-  charKeyToLocCharKey,
-  travelerKeys,
-} from '../../Types/consts'
+import { charKeyToCharName } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocomplete } from '../GeneralAutocomplete'
-import ThumbSide from './ThumbSide'
+import CharIconSide from '../Image/CharIconSide'
 type LocationAutocompleteProps = {
   location: LocationKey
   setLocation: (v: LocationKey) => void
@@ -37,17 +37,26 @@ export function LocationAutocomplete({
   filter = () => true,
   autoCompleteProps = {},
 }: LocationAutocompleteProps) {
-  const { t } = useTranslation(['ui', 'artifact', 'charNames_gen'])
+  const { t } = useTranslation([
+    'ui',
+    'artifact',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
+  const { silly } = useContext(SillyContext)
   const { database } = useContext(DatabaseContext)
   const { gender } = useDBMeta()
   const toText = useCallback(
-    (key: LocationCharacterKey): string =>
-      t(
-        `charNames_gen:${charKeyToCharName(
-          database.chars.LocationToCharacterKey(key),
-          gender
-        )}`
-      ),
+    (silly: boolean) =>
+      (key: LocationCharacterKey): string =>
+        t(
+          `${
+            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          }:${charKeyToCharName(
+            database.chars.LocationToCharacterKey(key),
+            gender
+          )}`
+        ),
     [database, gender, t]
   )
   const toImg = useCallback(
@@ -55,21 +64,16 @@ export function LocationAutocomplete({
       key === '' ? (
         <BusinessCenter />
       ) : (
-        <ThumbSide
-          src={characterAsset(
-            database.chars.LocationToCharacterKey(key),
-            'iconSide',
-            gender
-          )}
-          sx={{ pr: 1 }}
+        <CharIconSide
+          characterKey={database.chars.LocationToCharacterKey(key)}
         />
       ),
-    [database, gender]
+    [database]
   )
   const isFavorite = useCallback(
     (key: LocationCharacterKey) =>
       key === 'Traveler'
-        ? travelerKeys.some((key) => database.charMeta.get(key).favorite)
+        ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
         ? database.charMeta.get(key).favorite
         : false,
@@ -91,14 +95,21 @@ export function LocationAutocomplete({
             .map((k) => charKeyToLocCharKey(k))
         )
       )
-        .map((v) => ({ key: v, label: toText(v), favorite: isFavorite(v) }))
+        .map(
+          (v): GeneralAutocompleteOption<LocationKey> => ({
+            key: v,
+            label: toText(silly)(v),
+            favorite: isFavorite(v),
+            alternateNames: silly ? [toText(!silly)(v)] : undefined,
+          })
+        )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
     ],
-    [t, toText, isFavorite, database, filter, gender]
+    [t, database.chars.keys, gender, filter, toText, silly, isFavorite]
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

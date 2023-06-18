@@ -1,10 +1,13 @@
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
 import {
+  artifactIdMap,
   artifactPiecesData,
+  artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
+  characterIdMap,
   DM2D_PATH,
   fetterCharacterCardExcelConfigData,
   materialExcelConfigData,
@@ -12,14 +15,9 @@ import {
   reliquarySetExcelConfigData,
   rewardExcelConfigData,
   weaponExcelConfigData,
-} from '@genshin-optimizer/dm'
-import {
-  artifactIdMap,
-  artifactSlotMap,
-  characterIdMap,
-  dumpFile,
   weaponIdMap,
-} from '@genshin-optimizer/pipeline'
+} from '@genshin-optimizer/dm'
+import { dumpFile } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -221,16 +219,29 @@ export default function loadImages() {
     }
   )
 
+  // Add in manually added assets that can't be datamined
+  AssetData.chars['Somnia'] = {} as CharacterIcon
+  AssetData.weapons['QuantumCatalyst'] = {}
+
   function crawlGen(obj, path) {
     const keys = Object.keys(obj)
+    if (!keys.length) return
     const isImg = typeof Object.values(obj)[0] === 'string'
     // generate a index.ts using keys
+    const imports = Object.entries(obj)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
+      .join('\n')
+    const dataContent = keys
+      .sort()
+      .map((k) => `  ${k},`)
+      .join('\n')
+
     const indexContent = `// This is a generated index file.
-${Object.entries(obj)
-  .map(([k, v]) => `import ${k} from "./${isImg ? `${v}.png` : k}"`)
-  .join('\n')}
+${imports}
+
 const data = {
-  ${keys.join(',\n  ')}
+${dataContent}
 } as const
 export default data
 `

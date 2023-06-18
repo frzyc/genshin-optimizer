@@ -1,0 +1,141 @@
+{
+  "name": "Somnia",
+  "title": "Creation of Simulated Cognition",
+  "description": "A combination of an array of concepts. She exists in a variety of states and phases. Is she even real?",
+  "constellationName": "Mathematica Felina",
+  "auto": {
+    "name": "Astral Abacus",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive attacks, launching beads that deal <electro>Electro DMG</electro> from her Astral Abacus."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to charge and unleash a continuous stream of Electro beads, dealing <electro>Electro DMG</electro> to up to 4 targets every 0.3s.",
+        "2": "Somnia gains resistance to interruption and is free to move while using her Charged Attack."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires Electro beads at the ground, dealing <electro>AoE Electro DMG</electro> upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack Stream DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG"
+    }
+  },
+  "skill": {
+    "name": "Cosmic Calculator",
+    "description": {
+      "0": "Somnia condenses immense energy from her Astral Abacus to create an explosion that deals <electro>AoE Electro DMG</electro> and create a Self-Containing Sigil with undefinable contents above her head.",
+      "1": "The Self-Containing Sigil grants her the Schrödinger Superposition effect.",
+      "2": "<br/>",
+      "3": "<strong>Schrödinger Superposition</strong>",
+      "4": "DMG dealt by Somnia's Normal and Charged Attacks is increased based on her Elemental Mastery.",
+      "5": "Schrödinger Superposition expires after Self-Containing Sigil's duration ends or when Somnia leaves the field."
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Duration",
+      "2": "CD"
+    }
+  },
+  "burst": {
+    "name": "Parallax Paws",
+    "description": {
+      "0": "Somnia summons a star-shaped Celestial Cyclone around her, unleashing a burst of <electro>Electro DMG</electro> as it expands. The field will linger and deal continuous <electro>AoE Electro DMG</electro> to enemies within every 1s.",
+      "1": "While Celestial Cyclone is active, Somnia's Elemental Mastery will be increased multiplicatively.",
+      "2": "Additionally, while Celestial Cyclone is active, Somnia gains Stellar Statistics. While in this state, Somnia can set her Astral Abacus to the Multiplication, Addition or Subtraction modes, each granting her attacks and Celestial Cyclone different buffs. Only one Abacus mode from Stellar Statistics may be active simultaneously.",
+      "3": "<br/>",
+      "4": "Abacus Modes",
+      "5": [
+        "<strong>Multiplication</strong>: Within Somnia's Celestial Cyclone, all Sword-, Claymore- and Polearm-wielding characters' weapons will be infused with <electro>Electro</electro>. Normal or Charged Attack hits within the field will trigger Star Sunder, a coordinated Electro blast that deals <electro>AoE Electro DMG</electro> based on Somnia's Elemental Mastery. Star Sunder can be triggered once every 1.5s.",
+        "<strong>Addition</strong>: Celestial Cyclone's AoE and DMG are increased. Upon hitting an enemy, Somnia's Normal and Charged attacks will trigger a Supernova that deals <electro>AoE Electro DMG</electro> based on her Elemental Mastery. This effect can be triggered once every 0.75s.",
+        "<strong>Subtraction</strong>: Celestial Cyclone has its AoE and DMG reduced, but applies the \"Less Than Three\" effect to enemies within it. \"Less Than Three\" reduces enemy Elemental and Physical RES based on Somnia's Elemental Mastery. Additionally, Somnia's Normal and Charged Attacks deal increased DMG based on her Elemental Mastery."
+      ]
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Elemental Mastery",
+      "2": "Celestial Cyclone DoT (Multiplication)",
+      "3": "Star Sunder DMG",
+      "4": "Celestial Cyclone DoT (Addition)",
+      "5": "Supernova DMG",
+      "6": "Celestial Cyclone DoT (Subtraction)"
+    }
+  },
+  "passive1": {
+    "name": "Quick Calculation",
+    "description": {
+      "0": "Somnia's Charged Attacks consume 20% less Stamina and charge up 20% faster."
+    }
+  },
+  "passive2": {
+    "name": "Math Whiz",
+    "description": {
+      "0": "For the duration of Celestial Cyclone, Somnia's Elemental Mastery increases by 5% for every hit dealt by Celestial Cyclone, Star Sunder and Supernova, up to a maximum of 25%."
+    }
+  },
+  "passive3": {
+    "name": "Insomniac Iteration",
+    "description": {
+      "0": "At night (18:00 - 6:00), speeds up Genshin Optimizer build speed by 10%."
+    }
+  },
+  "constellation1": {
+    "name": "Decimal Point",
+    "description": {
+      "0": "Somnia's Normal and Charged Attacks have a 25% chance to deal twice the DMG."
+    }
+  },
+  "constellation2": {
+    "name": "Prime Number",
+    "description": {
+      "0": "When Somnia is under the Schrödinger Superposition effect, each Normal or Charged Attack hit will give Somnia a stack of Natural Number. When the amount of Natural Number stacks is prime, Somnia's next Normal or Charged Attack will receive twice the DMG increase from Schrödinger Superposition."
+    }
+  },
+  "constellation3": {
+    "name": "Infinite Series",
+    "description": {
+      "0": "Increases the Level of <strong>Parallax Paws</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Perfect Square",
+    "description": {
+      "0": "When Somnia triggers an Electro reaction, 4 Elemental Energy is restored to herself and all nearby party members of Elements involved in the reaction.",
+      "1": "This effect can trigger once every 4s."
+    }
+  },
+  "constellation5": {
+    "name": "Catnip Coefficient",
+    "description": {
+      "0": "Increases the Level of <strong>Cosmic Calculator</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Golden Ratio",
+    "description": {
+      "0": "When Somnia's Charged Attack deals damage, her CRIT Rate and CRIT DMG are increased by 3% and 5%, respectively. This effect can be triggered once every 0.2s and stack up to 8 times. All Golden Ratio stacks are cleared 13s after the first stack was obtained."
+    }
+  },
+  "c1Key": "Normal and Charged Att. DMG Mult.",
+  "superpositionCond": "Under the Schrödinger Superposition effect",
+  "cycloneActiveCond": "Celestial Cyclone is active",
+  "multCond": "In Multiplication mode",
+  "subCond": "In Subtraction mode",
+  "lessThan3Cond": "Enemy is affected by \"Less Than Three\"",
+  "c1Cond": "Decimal Point trigger frequency",
+  "average": "Average",
+  "always": "Always",
+  "c2Cond": "Possesses a prime amount of Natural Number stacks"
+}

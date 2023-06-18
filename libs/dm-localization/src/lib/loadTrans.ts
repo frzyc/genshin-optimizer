@@ -1,30 +1,26 @@
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
 import {
+  artifactIdMap,
   artifactPiecesData,
+  artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
+  characterIdMap,
   equipAffixExcelConfigData,
   fetterInfoExcelConfigData,
   languageMap,
   materialExcelConfigData,
-  nameToKey,
   proudSkillExcelConfigData,
   reliquarySetExcelConfigData,
   TextMapEN,
   weaponExcelConfigData,
+  weaponIdMap,
 } from '@genshin-optimizer/dm'
 import type { Language } from '@genshin-optimizer/pipeline'
-import {
-  artifactIdMap,
-  artifactSlotMap,
-  characterIdMap,
-  dumpFile,
-  weaponIdMap,
-} from '@genshin-optimizer/pipeline'
+import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
-import { existsSync, mkdirSync } from 'fs'
 import { mapHashData, mapHashDataOverride } from './Data'
 import { parsingFunctions, preprocess } from './parseUtil'
 
@@ -378,15 +374,18 @@ export default function loadTrans() {
         )
       })
     })
+
+    // Add the Somnia and QuantumCatalyst
+    languageData[lang].charNames['Somnia'] = 'Somnia'
+    languageData[lang].weaponNames['QuantumCatalyst'] = 'Quantum Cat-alyst'
   })
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
     const fileDir = `${__dirname}/../../assets/locales/${lang}`
-    if (!existsSync(fileDir)) mkdirSync(fileDir, { recursive: true })
 
     Object.entries(data).forEach(([type, typeData]) => {
-      //general manual localiation namespaces
+      //general manual localization namespaces
       if (
         [
           'sheet',

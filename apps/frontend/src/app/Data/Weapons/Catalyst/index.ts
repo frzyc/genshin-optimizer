@@ -11,6 +11,7 @@ import FavoniusCodex from './FavoniusCodex'
 import Frostbearer from './Frostbearer'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
+import JadefallsSplendor from './JadefallsSplendor'
 import KagurasVerity from './KagurasVerity'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 import MagicGuide from './MagicGuide'
@@ -20,6 +21,7 @@ import OathswornEye from './OathswornEye'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
+import QuantumCatalyst from './QuantumCatalyst'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
 import SkywardAtlas from './SkywardAtlas'
@@ -42,6 +44,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   Frostbearer,
   FruitOfFulfillment,
   HakushinRing,
+  JadefallsSplendor,
   KagurasVerity,
   LostPrayerToTheSacredWinds,
   MagicGuide,
@@ -51,6 +54,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   OtherworldlyStory,
   PocketGrimoire,
   PrototypeAmber,
+  QuantumCatalyst,
   RoyalGrimoire,
   SacrificialFragments,
   SkywardAtlas,

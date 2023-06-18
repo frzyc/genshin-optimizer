@@ -21,10 +21,9 @@ import QuickLinksCard from './QuickLinksCard'
 import ResinCard from './ResinCard'
 import TeamCard from './TeamCard'
 import VidGuideCard from './VidGuideCard'
+import package_json from 'package.json'
 
 export default function PageHome() {
-  // TODO: translations
-  // const { t } = useTranslation("page_home")
   const theme = useTheme()
   const lg = useMediaQuery(theme.breakpoints.up('lg'))
   ReactGA.send({ hitType: 'pageview', page: '/home' })
@@ -98,7 +97,9 @@ function PatchNotesCard() {
   const { t } = useTranslation('page_home')
   const [{ isLoaded, text }, setState] = useState({ isLoaded: false, text: '' })
   useEffect(() => {
-    fetch(process.env.NX_URL_GITHUB_API_GO_RELEASES ?? '')
+    fetch(
+      process.env.NX_URL_GITHUB_API_GO_RELEASES + package_json.version ?? ''
+    )
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const decoder = new TextDecoder('utf-8')

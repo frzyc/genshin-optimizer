@@ -1,3 +1,4 @@
-export * from './lib/dm'
-export * from './lib/TextMapUtil'
-export * from './lib/consts'
+export * from './dm'
+export * from './TextMapUtil'
+export * from './consts'
+export * from './mapping'

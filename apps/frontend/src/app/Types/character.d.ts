@@ -1,3 +1,4 @@
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
 import type { InputPremodKey } from '../Formula'
 import type { EleEnemyResKey } from '../KeyMap'
 import type { MainStatKey, SubstatKey } from './artifact'
@@ -11,7 +12,6 @@ import type {
   HitModeKey,
   InfusionAuraElements,
   Refinement,
-  SlotKey,
   SubstatType,
   WeaponKey,
 } from './consts'
@@ -63,7 +63,7 @@ export interface ICharacter {
   teamConditional: Partial<Record<CharacterKey, IConditionalValues>>
 }
 export interface ICachedCharacter extends ICharacter {
-  equippedArtifacts: StrictDict<SlotKey, string>
+  equippedArtifacts: StrictDict<ArtifactSlotKey, string>
   equippedWeapon: string
 }
 
@@ -80,7 +80,7 @@ export type ICharTC = {
     refinement: Refinement
   }
   artifact: {
-    slots: Record<SlotKey, ICharTCArtifactSlot>
+    slots: Record<ArtifactSlotKey, ICharTCArtifactSlot>
     substats: {
       type: SubstatType
       stats: Record<SubstatKey, number>

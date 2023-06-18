@@ -127,7 +127,12 @@ export class DisplayArtifactEntry extends DataEntry<
       probabilityFilter,
     } as IDisplayArtifact
   }
-  set(value: Partial<IDisplayArtifact> | { action: 'reset' }): boolean {
+  set(
+    value:
+      | Partial<IDisplayArtifact>
+      | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)
+      | { action: 'reset' }
+  ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')
         return super.set({ filterOption: initialFilterOption() })

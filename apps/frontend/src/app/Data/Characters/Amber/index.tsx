@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -19,15 +19,13 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Amber'
 const elementKey: ElementKey = 'pyro'
 const region: RegionKey = 'mondstadt'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -193,10 +191,10 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
-  rarity: data_gen.star,
+  name: ct.name,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),

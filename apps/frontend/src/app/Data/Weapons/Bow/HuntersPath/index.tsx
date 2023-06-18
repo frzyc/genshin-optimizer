@@ -1,16 +1,15 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'HuntersPath'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const allEle_dmg_arr = [0.12, 0.15, 0.18, 0.21, 0.24]
 const allEle_dmg_ = Object.fromEntries(

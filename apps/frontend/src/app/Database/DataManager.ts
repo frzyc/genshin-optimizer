@@ -1,4 +1,4 @@
-import { deepClone, deepFreeze } from '../Util/Util'
+import { deepFreeze } from '../Util/Util'
 import type { ArtCharDatabase } from './Database'
 import type { IGO, IGOOD, ImportResult } from './exim'
 export class DataManager<
@@ -64,11 +64,18 @@ export class DataManager<
   }
   set(
     key: CacheKey,
-    value: Partial<StorageValue> | ((v: StorageValue) => Partial<StorageValue>),
+    valueOrFunc:
+      | Partial<StorageValue>
+      | ((v: StorageValue) => Partial<StorageValue> | void),
     notify = true
   ): boolean {
     const old = this.getStorage(key)
-    if (typeof value === 'function') value = value(deepClone(old))
+    if (typeof valueOrFunc === 'function' && !old) {
+      this.trigger(key, 'invalid', valueOrFunc)
+      return false
+    }
+    const value =
+      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
       this.trigger(key, 'invalid', value)

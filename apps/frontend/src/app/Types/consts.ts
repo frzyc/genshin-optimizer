@@ -1,5 +1,6 @@
 import type {
   allArtifactSetKeys,
+  LocationCharacterKey,
   WeaponBowKey,
   WeaponCatalystKey,
   WeaponClaymoreKey,
@@ -47,7 +48,12 @@ export const allElements = [
  * @deprecated
  */
 export const allElementsWithPhy = ['physical', ...allElements] as const
-export const allInfusionAuraElements = ['pyro', 'cryo', 'hydro'] as const
+export const allInfusionAuraElements = [
+  'pyro',
+  'cryo',
+  'hydro',
+  'electro',
+] as const
 /**
  * @deprecated
  */
@@ -165,10 +171,6 @@ export type ArtifactRarity = (typeof allArtifactRarities)[number]
 /**
  * @deprecated
  */
-export type SlotKey = (typeof allSlotKeys)[number]
-/**
- * @deprecated
- */
 export type ElementKey = (typeof allElements)[number]
 /**
  * @deprecated
@@ -184,10 +186,7 @@ export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]
  */
 export type CharacterKey = (typeof allCharacterKeys)[number]
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
-/**
- * @deprecated
- */
-export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
+
 /**
  * @deprecated
  */

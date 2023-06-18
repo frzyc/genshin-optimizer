@@ -274,6 +274,7 @@ const input = setReadNodeKeys(
 
     enemy: {
       def: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
+      transDef: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
       ...objectKeyMap(
         allElements.map((ele) => `${ele}_resMulti_` as const),
         (_) => read()
@@ -528,6 +529,14 @@ const common: Data = {
       sum(input.lvl, 100),
       prod(
         sum(enemy.level, 100),
+        sum(one, prod(-1, enemy.defRed)),
+        sum(one, prod(-1, enemy.defIgn))
+      )
+    ),
+    transDef: frac(
+      99999999,
+      prod(
+        sum(prod(5, enemy.level), 500),
         sum(one, prod(-1, enemy.defRed)),
         sum(one, prod(-1, enemy.defIgn))
       )

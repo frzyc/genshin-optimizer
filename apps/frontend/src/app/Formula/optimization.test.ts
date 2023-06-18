@@ -1,28 +1,25 @@
 import { forEachNodes } from './internal'
-import type { OptNode} from './optimization';
+import type { OptNode } from './optimization'
 import { precompute, testing } from './optimization'
 import type { AnyNode, ConstantNode, Data, Info } from './type'
 import {
   constant,
   customRead,
   data,
+  dynRead,
   infoMut,
   max,
   min,
   prod,
-  read,
   resetData,
-  setReadNodeKeys,
   sum,
 } from './utils'
 
 const { constantFold } = testing
-const deduplicate = testing.deduplicate as any as (nodes: AnyNode[]) => AnyNode
-const flatten = testing.flatten as any as (nodes: AnyNode[]) => AnyNode
+const deduplicate = testing.deduplicate
+const flatten = testing.flatten
 
-const inputs = setReadNodeKeys(
-  Object.fromEntries([...Array(6).keys()].map((i) => [i, read('add')]))
-)
+const inputs = [...Array(6).keys()].map((i) => dynRead(`${i}`))
 
 describe('optimization', () => {
   describe('flatten', () => {
@@ -49,21 +46,26 @@ describe('optimization', () => {
       expect(flatten([f])).toEqual([sum(r1, r2, r3, r4, r5, r6)])
     })
   })
-  test('deduplicate common terms', () => {
-    const r1 = inputs[0],
-      r2 = inputs[1],
-      r3 = inputs[2]
-    const r4 = inputs[3],
-      r5 = inputs[4],
-      r6 = inputs[5]
+  test('normal form & deduplicate identical terms', () => {
+    const r0 = inputs[0],
+      r1 = inputs[1],
+      r2 = inputs[2],
+      r3 = inputs[3]
+    const v0 = dynRead('0'),
+      v1 = dynRead('1'),
+      v2 = dynRead('2'),
+      v3 = dynRead('3')
+    const f1 = prod(sum(prod(r1, r0), 1), r2, r3)
+    const f2 = prod(v3, v2, sum(prod(v1, v0), 1))
 
-    const f1 = sum(r1, r2, r3, r4, r5, r6),
-      f2 = sum(r3, r4)
-    // TODO: Factoring process may reorder the term ( r3 + r4 ). May need to update the checking
-    expect(deduplicate([f1, f2])).toEqual([
-      sum(r1, r2, r5, r6, sum(r3, r4)),
-      sum(r3, r4),
-    ])
+    const dedup = deduplicate([sum(f1, f2)])[0]
+    expect(dedup.operands[0] === dedup.operands[1])
+    expect(dedup).toEqual(
+      sum(
+        prod(r2, r3, sum(1, prod(r0, r1))),
+        prod(r2, r3, sum(1, prod(r0, r1)))
+      )
+    )
   })
   test('constant folding', () => {
     const r1 = inputs[0],
@@ -132,7 +134,7 @@ describe('optimization', () => {
       const compute = precompute(
         [output1] as OptNode[],
         {},
-        (x) => x.path[0],
+        (x) => x.path[1],
         1
       )
       expect([...compute([{ values: { 0: 32, 1: 77 } }] as const).slice(0, 1)]).toEqual([
@@ -172,7 +174,7 @@ describe('optimization', () => {
       const compute = precompute(
         [output3, output3] as OptNode[],
         {},
-        (x) => x.path[0],
+        (x) => x.path[1],
         1
       )
       expect([

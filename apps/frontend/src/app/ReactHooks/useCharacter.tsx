@@ -6,11 +6,9 @@ export default function useCharacter(
   characterKey: CharacterKey | '' | undefined = ''
 ) {
   const { database } = useContext(DatabaseContext)
-  const [character, updateCharacter] = useState(
-    database.chars.get(characterKey)
-  )
+  const [character, setCharacter] = useState(database.chars.get(characterKey))
   useEffect(
-    () => updateCharacter(database.chars.get(characterKey)),
+    () => setCharacter(database.chars.get(characterKey)),
     [database, characterKey]
   )
   useEffect(
@@ -18,10 +16,10 @@ export default function useCharacter(
       characterKey
         ? database.chars.follow(
             characterKey,
-            (k, r, v) => r === 'update' && updateCharacter(v)
+            (k, r, v) => r === 'update' && setCharacter(v)
           )
         : undefined,
-    [characterKey, updateCharacter, database]
+    [characterKey, setCharacter, database]
   )
   return character
 }

@@ -1,10 +1,10 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/pipeline'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { artStatPercent } from '../../Data/Artifacts/Artifact'
 import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
 import { iconInlineProps } from '../../SVGIcons'
+import type { MainStatKey, SubstatKey } from '../../Types/artifact'
 import ColorText from '../ColoredText'
 
 // Special consideration for artifact stats, because in general only hp_, atk_ and def_ gets a percentage when displaying.

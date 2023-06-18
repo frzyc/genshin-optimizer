@@ -8,6 +8,7 @@ import {
 } from '@mui/icons-material'
 import {
   AppBar,
+  Avatar,
   Box,
   Button,
   Chip,
@@ -27,12 +28,14 @@ import {
   useTheme,
 } from '@mui/material'
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import Assets from './Assets/Assets'
+import { SillyContext } from './Context/SillyContext'
 import { DatabaseContext } from './Database/Database'
 import useDBMeta from './ReactHooks/useDBMeta'
 import useForceUpdate from './ReactHooks/useForceUpdate'
+import silly_icon from './silly_icon.png'
 import FlowerIcon from './SVGIcons/ArtifactSlot/FlowerIcon'
 type ITab = {
   i18Key: string
@@ -156,7 +159,7 @@ function HeaderContent({ anchor }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const { t } = useTranslation('ui')
-
+  const { silly } = useContext(SillyContext)
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -190,11 +193,18 @@ function HeaderContent({ anchor }) {
             component={RouterLink}
             to="/"
             label={
-              <Typography variant="h6" sx={{ px: 1 }}>
-                <Trans t={t} i18nKey="pageTitle">
-                  Genshin Optimizer
-                </Trans>
-              </Typography>
+              silly ? (
+                <Box display="flex" alignItems="center">
+                  <Avatar src={silly_icon} />
+                  <Typography variant="h6" sx={{ px: 1 }}>
+                    {t('sillyPageTitle')}
+                  </Typography>
+                </Box>
+              ) : (
+                <Typography variant="h6" sx={{ px: 1 }}>
+                  {t('pageTitle')}
+                </Typography>
+              )
             }
           />
           {maincontent.map(({ i18Key, value, to, icon, textSuffix }) => {
@@ -248,6 +258,7 @@ function MobileHeader({ anchor, currentTab }) {
   }
 
   const { t } = useTranslation('ui')
+  const { silly } = useContext(SillyContext)
   return (
     <>
       <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
@@ -269,7 +280,9 @@ function MobileHeader({ anchor, currentTab }) {
               disabled={currentTab === ''}
               onClick={handleDrawerToggle}
             >
-              <ListItemText>{t('pageTitle')}</ListItemText>
+              <ListItemText>
+                {silly ? t('sillyPageTitle') : t('pageTitle')}
+              </ListItemText>
             </ListItemButton>
             {mobileContent.map(
               ({ i18Key, value, to, icon, textSuffix: extra }) => (
@@ -299,11 +312,10 @@ function MobileHeader({ anchor, currentTab }) {
             sx={{ color: 'white' }}
             component={RouterLink}
             to="/"
+            startIcon={silly ? <Avatar src={silly_icon} /> : undefined}
           >
             <Typography variant="h6" noWrap component="div">
-              <Trans t={t} i18nKey="pageTitle">
-                Genshin Optimizer
-              </Trans>
+              {silly ? t('sillyPageTitle') : t('pageTitle')}
             </Typography>
           </Button>
           <Box flexGrow={1} />

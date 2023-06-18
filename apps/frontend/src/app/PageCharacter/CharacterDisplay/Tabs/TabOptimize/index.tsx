@@ -63,14 +63,18 @@ import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
+import useGlobalError from '../../../../ReactHooks/useGlobalError'
 import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import type { Build } from '../../../../Solver/common'
 import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
+import type { ICachedArtifact } from '../../../../Types/artifact'
+import { bulkCatTotal } from '../../../../Util/totalUtils'
 import { objectKeyMap, objPathValue, range } from '../../../../Util/Util'
 import { maxBuildsToShowList } from './Build'
+import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
@@ -79,15 +83,12 @@ import BuildAlert from './Components/BuildAlert'
 import BuildDisplayItem from './Components/BuildDisplayItem'
 import ChartCard from './Components/ChartCard'
 import ExcludeArt from './Components/ExcludeArt'
-import AllowChar from './Components/AllowChar'
 import MainStatSelectionCard from './Components/MainStatSelectionCard'
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
-import WorkerErr from './Components/WorkerErr'
 import { compactArtifacts, dynamicData } from './foreground'
 import useBuildResult from './useBuildResult'
 import useBuildSetting from './useBuildSetting'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 
 const audio = new Audio('notification.mp3')
 export default function TabBuild() {
@@ -175,13 +176,19 @@ export default function TabBuild() {
 
   const deferredArtsDirty = useDeferredValue(artsDirty)
   const deferredBuildSetting = useDeferredValue(buildSetting)
-  const { filteredArts, numEquippedUsed } = useMemo(() => {
-    const { mainStatKeys, allowLocations, artExclusion, levelLow, levelHigh } =
-      deferredArtsDirty && deferredBuildSetting
+  const filteredArts = useMemo(() => {
+    const {
+      mainStatKeys,
+      excludedLocations,
+      artExclusion,
+      levelLow,
+      levelHigh,
+      allowLocationsState,
+      useExcludedArts,
+    } = deferredArtsDirty && deferredBuildSetting
 
-    let numEquippedUsed = 0
-    const filteredArts = database.arts.values.filter((art) => {
-      if (artExclusion.includes(art.id)) return false
+    return database.arts.values.filter((art) => {
+      if (!useExcludedArts && artExclusion.includes(art.id)) return false
       if (art.level < levelLow) return false
       if (art.level > levelHigh) return false
       const mainStats = mainStatKeys[art.slotKey]
@@ -189,15 +196,20 @@ export default function TabBuild() {
         return false
 
       const locKey = charKeyToLocCharKey(characterKey)
-      if (art.location && art.location !== locKey) {
-        if (!allowLocations.includes(art.location)) return false
-        numEquippedUsed++
-      }
+      const unequippedStateAndEquippedElsewhere =
+        allowLocationsState === 'unequippedOnly' &&
+        art.location &&
+        art.location !== locKey
+      const customListStateAndNotOnList =
+        allowLocationsState === 'customList' &&
+        art.location &&
+        art.location !== locKey &&
+        excludedLocations.includes(art.location)
+      if (unequippedStateAndEquippedElsewhere || customListStateAndNotOnList)
+        return false
 
       return true
     })
-
-    return { filteredArts, numEquippedUsed }
   }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
 
   const filteredArtIdMap = useMemo(
@@ -208,18 +220,51 @@ export default function TabBuild() {
       ),
     [filteredArts]
   )
-  const levelTotal = useMemo(() => {
-    const { levelLow, levelHigh } = deferredBuildSetting
-    let total = 0,
-      current = 0
-    Object.entries(database.arts.data).forEach(([id, art]) => {
-      if (art.level >= levelLow && art.level <= levelHigh) {
-        total++
-        if (filteredArtIdMap[id]) current++
-      }
-    })
-    return `${current}/${total}`
-  }, [deferredBuildSetting, filteredArtIdMap, database])
+  const { levelTotal, allowListTotal, excludedTotal } = useMemo(() => {
+    const catKeys = {
+      levelTotal: ['in'],
+      allowListTotal: ['in'],
+      excludedTotal: ['in'],
+    } as const
+    return bulkCatTotal(catKeys, (ctMap) =>
+      Object.entries(database.arts.data).forEach(([id, art]) => {
+        const { level, location } = art
+        const {
+          levelLow,
+          levelHigh,
+          excludedLocations,
+          allowLocationsState,
+          artExclusion,
+        } = deferredArtsDirty && deferredBuildSetting
+        if (level >= levelLow && level <= levelHigh) {
+          ctMap.levelTotal.in.total++
+          if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
+        }
+        const locKey = charKeyToLocCharKey(characterKey)
+        const allStateAndEquippedSomewhereElse =
+          allowLocationsState === 'all' && location && location !== locKey
+        const customListStateAndNotOnList =
+          allowLocationsState === 'customList' &&
+          location &&
+          location !== locKey &&
+          !excludedLocations.includes(location)
+        if (allStateAndEquippedSomewhereElse || customListStateAndNotOnList) {
+          ctMap.allowListTotal.in.total++
+          if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
+        }
+        if (artExclusion.includes(id)) {
+          ctMap.excludedTotal.in.total++
+          if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
+        }
+      })
+    )
+  }, [
+    characterKey,
+    database.arts.data,
+    deferredArtsDirty,
+    deferredBuildSetting,
+    filteredArtIdMap,
+  ])
 
   const tabFocused = useRef(true)
   useEffect(() => {
@@ -237,7 +282,8 @@ export default function TabBuild() {
   const cancelToken = useRef(() => {})
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
-  const [workerErr, setWorkerErr] = useState(false)
+  const throwGlobalError = useGlobalError()
+
   const generateBuilds = useCallback(async () => {
     const {
       artSetExclusion,
@@ -297,7 +343,6 @@ export default function TabBuild() {
     setChartData(undefined)
 
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
-    setWorkerErr(false)
 
     const unoptimizedNodes = [
       ...valueFilter.map((x) => x.value),
@@ -396,7 +441,7 @@ export default function TabBuild() {
       if (e !== cancellationError) {
         console.log('Failed to load worker')
         console.log(e)
-        setWorkerErr(true)
+        if (e instanceof Error) throwGlobalError(e)
       }
 
       cancelToken.current()
@@ -413,16 +458,16 @@ export default function TabBuild() {
       })
     }
   }, [
-    t,
+    buildSetting,
     characterKey,
     filteredArts,
     database,
-    buildResultDispatch,
-    maxWorkers,
-    buildSetting,
-    notificationRef,
-    setChartData,
     gender,
+    setChartData,
+    maxWorkers,
+    buildResultDispatch,
+    t,
+    throwGlobalError,
   ])
 
   const characterName = characterSheet?.name ?? 'Character Name'
@@ -492,6 +537,7 @@ export default function TabBuild() {
                   onClickTeammate={onClickTeammate}
                 />
               </Box>
+              <BonusStatsCard />
             </Grid>
 
             {/* 2 */}
@@ -504,7 +550,37 @@ export default function TabBuild() {
               flexDirection="column"
               gap={1}
             >
+              {/* Level Filter */}
               <CardLight>
+                <CardContent sx={{ display: 'flex', gap: 1 }}>
+                  <Typography
+                    sx={{ fontWeight: 'bold' }}
+                  >{t`levelFilter`}</Typography>
+                  <SqBadge color="info">{levelTotal.in}</SqBadge>
+                </CardContent>
+                <Divider />
+                <CardContent>
+                  <ArtifactLevelSlider
+                    levelLow={levelLow}
+                    levelHigh={levelHigh}
+                    setLow={(levelLow) => buildSettingDispatch({ levelLow })}
+                    setHigh={(levelHigh) => buildSettingDispatch({ levelHigh })}
+                    setBoth={(levelLow, levelHigh) =>
+                      buildSettingDispatch({ levelLow, levelHigh })
+                    }
+                    disabled={generatingBuilds}
+                  />
+                </CardContent>
+              </CardLight>
+
+              {/* Main Stat Filters */}
+              <CardLight>
+                <CardContent>
+                  <Typography
+                    sx={{ fontWeight: 'bold' }}
+                  >{t`mainStat.title`}</Typography>
+                </CardContent>
+                <Divider />
                 <CardContent>
                   <Box display="flex" alignItems="center" gap={1}>
                     <AssumeFullLevelToggle
@@ -530,7 +606,6 @@ export default function TabBuild() {
                   filteredArtIdMap={filteredArtIdMap}
                 />
               </CardLight>
-              <BonusStatsCard />
             </Grid>
 
             {/* 3 */}
@@ -543,27 +618,13 @@ export default function TabBuild() {
               flexDirection="column"
               gap={1}
             >
-              {/* Level Filter */}
-              <CardLight>
-                <CardContent>
-                  {t`levelFilter`} <SqBadge color="info">{levelTotal}</SqBadge>
-                </CardContent>
-                <ArtifactLevelSlider
-                  levelLow={levelLow}
-                  levelHigh={levelHigh}
-                  setLow={(levelLow) => buildSettingDispatch({ levelLow })}
-                  setHigh={(levelHigh) => buildSettingDispatch({ levelHigh })}
-                  setBoth={(levelLow, levelHigh) =>
-                    buildSettingDispatch({ levelLow, levelHigh })
-                  }
-                  disabled={generatingBuilds}
-                />
-              </CardLight>
-
               <ArtifactSetConfig disabled={generatingBuilds} />
 
               {/* use excluded */}
-              <ExcludeArt disabled={generatingBuilds} />
+              <ExcludeArt
+                disabled={generatingBuilds}
+                excludedTotal={excludedTotal.in}
+              />
 
               <Button
                 fullWidth
@@ -582,7 +643,7 @@ export default function TabBuild() {
               {/* use equipped */}
               <AllowChar
                 disabled={generatingBuilds}
-                numArtsEquippedUsed={numEquippedUsed}
+                allowListTotal={allowListTotal.in}
               />
 
               {/*Minimum Final Stat Filter */}
@@ -684,7 +745,6 @@ export default function TabBuild() {
               </span>
             </BootstrapTooltip>
           </ButtonGroup>
-          {workerErr && <WorkerErr />}
           {!!characterKey && (
             <BuildAlert
               {...{ status: buildStatus, characterName, maxBuildsToShow }}
@@ -759,6 +819,7 @@ export default function TabBuild() {
               </Grid>
             </CardContent>
           </CardLight>
+
           <OptimizationTargetContext.Provider value={optimizationTarget}>
             {graphBuilds && (
               <BuildList
@@ -785,6 +846,7 @@ export default function TabBuild() {
     </Box>
   )
 }
+
 function BuildList({
   builds,
   setBuilds,

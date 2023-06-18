@@ -1,12 +1,19 @@
+import {
+  type ArtifactSlotKey,
+  type ArtifactSetKey,
+  allArtifactSlotKeys,
+} from '@genshin-optimizer/consts'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
-import type { ArtifactSetKey, SlotKey } from '../Types/consts'
-import { allSlotKeys } from '../Types/consts'
-import { objectKeyMap } from '../Util/Util'
-import { artSetPerm, exclusionToAllowed } from './common'
+import type { OptNode } from '../Formula/optimization'
+import { precompute } from '../Formula/optimization'
+import { dynRead, prod, sum, threshold } from '../Formula/utils'
+import { cartesian, objectKeyMap } from '../Util/Util'
+import type { ArtifactBuildData, ArtifactsBySlot } from './common'
+import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: StrictDict<SlotKey, ArtifactSetKey[]>
-): Iterable<StrictDict<SlotKey, ArtifactSetKey>> {
+  sets: StrictDict<ArtifactSlotKey, ArtifactSetKey[]>
+): Iterable<StrictDict<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
       for (const goblet of sets.goblet)
@@ -33,7 +40,7 @@ describe('common.ts', () => {
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
     for (const combination of allCombinations(
-      objectKeyMap(allSlotKeys, (_) => artSets)
+      objectKeyMap(allArtifactSlotKeys, (_) => artSets)
     )) {
       let shouldMatch = true,
         rainbowCount = 0
@@ -48,7 +55,7 @@ describe('common.ts', () => {
       }
       if (!allowedRainbows.has(rainbowCount)) shouldMatch = false
       const matchCount = perm.filter((filters) =>
-        allSlotKeys.every((slot) => {
+        allArtifactSlotKeys.every((slot) => {
           const art = combination[slot]
           const filter = filters[slot]
           switch (filter.kind) {
@@ -66,5 +73,58 @@ describe('common.ts', () => {
         expect(matchCount).toEqual(shouldMatch ? 1 : 0)
       })
     }
+  })
+
+  function testFormulasEqual(
+    f1: { nodes: OptNode[]; arts: ArtifactsBySlot },
+    f2: { nodes: OptNode[]; arts: ArtifactsBySlot }
+  ) {
+    const compute1 = precompute(f1.nodes, f1.arts.base, (f) => f.path[1], 5)
+    const compute2 = precompute(f2.nodes, f2.arts.base, (f) => f.path[1], 5)
+    const truth = cartesian(
+      ...allArtifactSlotKeys.map((slot) => f1.arts.values[slot])
+    ).map((aa) => compute1(aa))
+    const test = cartesian(
+      ...allArtifactSlotKeys.map((slot) => f2.arts.values[slot])
+    ).map((aa) => compute2(aa))
+
+    truth.forEach((trut, i) =>
+      trut.forEach((tru, j) => expect(tru).toBeCloseTo(test[i][j]))
+    )
+  }
+
+  describe('reaffine', () => {
+    const arts: ArtifactsBySlot = {
+      base: { atk: 10, atk_: 0.01, glad: 0, clam: 0 },
+      values: objectKeyMap(
+        allArtifactSlotKeys,
+        () =>
+          [
+            { id: '', values: { atk: 1, glad: 1 } },
+            { id: '', values: { atk_: 1, clam: 1 } },
+          ] as ArtifactBuildData[]
+      ),
+    }
+    test('basic', () => {
+      const node = sum(1, dynRead('atk'), prod(1500, dynRead('atk_')))
+      const z = pruneAll([node], [-Infinity], arts, 5, {}, { reaffine: true })
+
+      expect(z.nodes[0].operation).toEqual('read')
+      expect(Object.keys(z.arts.base).length).toEqual(1)
+
+      testFormulasEqual({ nodes: [node], arts }, z)
+    })
+    test('partial', () => {
+      const node = sum(
+        1,
+        dynRead('atk'),
+        prod(1500, dynRead('atk_')),
+        threshold(dynRead('glad'), 2, 0.18, 0)
+      )
+      const z = pruneAll([node], [-Infinity], arts, 5, {}, { reaffine: true })
+
+      expect(Object.keys(z.arts.base).length).toEqual(2)
+      testFormulasEqual({ nodes: [node], arts }, z)
+    })
   })
 })

@@ -33,7 +33,7 @@
     "btnClear": "Clear",
     "btnRandom": "Randomize",
     "btnUpdate": "Update Artifact",
-    "clearPrompt": "There is an artifact in editor. Are you sure you want to clear the editor?"
+    "clearPrompt": "There is an artifact being edited. Are you sure you want to clear the editor?"
   },
   "slot": "Slot",
   "setEffectNum": "{{setNum}}-Set",
@@ -65,14 +65,14 @@
     "lockArtifacts": "Lock Artifacts",
     "unlockrtifacts": "Unlock Artifacts"
   },
-  "buttonHint": "Note: the red buttons above only applies to <1>filtered artifacts</1>",
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered artifacts</1>",
   "tipsOfTheDay": [
-    "The maximum RV of a 4 star artifact is around 540%.",
+    "The maximum RV of a 4-star artifact is around 540%.",
     "The maximum RV of an artifact will usually decrease as you upgrade. It's perfectly normal!",
     "Substats with \"1\"s are the hardest to scan in screenshots.",
     "If all your rolls(6) went into a single substat, it will be purple!",
     "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
-    "You can now upload mutiple artifact screenshots to scan!"
+    "You can now upload multiple artifact screenshots to scan!"
   ],
   "sortMap": {
     "level": "Level",
@@ -95,6 +95,8 @@
   "sub_one": "{{count}} sub",
   "sub_other": "{{count}} subs",
   "addNew": "Add New Artifact",
+  "showDup": "Show Duplicates",
+  "noDupAlert": "There are no duplicate artifacts in your inventory.",
   "cantDeleteLock": "Cannot delete artifact because it is locked",
   "equippedArt": "All Equipped Artifacts",
   "artInInv": "All Unequipped Artifacts",

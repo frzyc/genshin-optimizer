@@ -57,6 +57,7 @@ export function optimize(
 ): OptNode[] {
   let opts = constantFold(formulas, topLevelData, shouldFold)
   opts = flatten(opts)
+  opts = constantFold(opts, {})
   return deduplicate(opts)
 }
 
@@ -170,130 +171,136 @@ function flatten(formulas: OptNode[]): OptNode[] {
     }
   )
 }
+
+function arrayCompare<T>(
+  a: readonly T[],
+  b: readonly T[],
+  cmp: (a: T, b: T) => number
+): number {
+  if (a.length !== b.length) return a.length - b.length
+  for (let i = 0; i < a.length; i++) {
+    const cc = cmp(a[i], b[i])
+    if (cc !== 0) return cc
+  }
+  return 0
+}
+/**
+ * Converts `formulas` to a unique normal form via sorting. Commutative operations are
+ * also sorted to enforce unique operand ordering. As a consequence, duplicated nodes
+ * become easy to find, so we combine identical nodes into the same reference. The
+ * sort follows the below fields sequentially:
+ *  ```
+ *    node height  - height of subtree; distance to furthest leaf.
+ *    node type    - Ordering is [const, read, add, mul, min, max, sum_frac, threshold, res]
+ *    When types are same:
+ *      const:             n.value
+ *      read:              alphabetical on path
+ *      add/mul/min/max:   sort the operands, then compare sequentially
+ *      frac/thresh/res:   compare operands sequentially
+ *  ```
+ *
+ * Sorting is efficient because sorting by ascending height first lets us memoize the
+ * ordering of all the children and find a bijection with the natual numbers.
+ */
 function deduplicate(formulas: OptNode[]): OptNode[] {
-  function elementCounts<T>(array: readonly T[]): Map<T, number> {
-    const result = new Map<T, number>()
-    for (const value of array) result.set(value, (result.get(value) ?? 0) + 1)
-    return result
-  }
-  function arrayFromCounts<T>(counts: Map<T, number>): T[] {
-    return [...counts].flatMap(([dep, count]) => Array(count).fill(dep))
-  }
-
-  const wrap = {
-    common: {
-      counts: new Map<OptNode, number>(),
-      formulas: new Set<OptNode>(),
-      operation: 'add' as Operation,
-    },
-  }
-
-  for (; ;) {
-    let next: typeof wrap.common | undefined
-
-    const factored: ComputeNode<OptNode> = {
-      operation: wrap.common.operation,
-      operands: arrayFromCounts(wrap.common.counts),
-    }
-
-    const candidatesByOperation = new Map<
-      Operation,
-      [ComputeNode<OptNode>, Map<OptNode, number>][]
-    >()
-    for (const operation of Object.keys(allCommutativeMonoidOperations))
-      candidatesByOperation.set(operation, [])
-
-    formulas = mapFormulas(
-      formulas,
-      (_formula) => {
-        if (wrap.common.formulas.has(_formula)) {
-          const formula = _formula as ComputeNode<OptNode>
-          const remainingCounts = new Map(wrap.common.counts)
-          const operands = formula.operands.filter((dep) => {
-            const count = remainingCounts.get(dep)
-            if (count) {
-              remainingCounts.set(dep, count - 1)
-              return false
-            }
-            return true
-          })
-
-          if (!operands.length) return factored
-          operands.push(factored)
-          return { ...formula, operands }
+  const nodeHeightMap = new Map<OptNode, number>()
+  const layers = [[]] as OptNode[][]
+  forEachNodes(
+    formulas,
+    (_) => {},
+    (n) => {
+      switch (n.operation) {
+        case 'const':
+        case 'read':
+          layers[0].push(n)
+          nodeHeightMap.set(n, 0)
+          break
+        default: {
+          const h =
+            Math.max(...n.operands.map((op) => nodeHeightMap.get(op)!)) + 1
+          if (layers.length <= h) layers.push([])
+          layers[h].push(n)
+          nodeHeightMap.set(n, h)
+          break
         }
-        return _formula
-      },
-      (_formula) => {
-        if (!commutativeMonoidOperationSet.has(_formula.operation as any))
-          return _formula
-        const formula = _formula as ComputeNode<OptNode>
-
-        if (next) {
-          if (next.operation === formula.operation) {
-            const currentCounts = elementCounts(formula.operands),
-              commonCounts = new Map<OptNode, number>()
-            const nextCounts = next.counts
-            let total = 0
-
-            for (const [dependency, currentCount] of currentCounts.entries()) {
-              const commonCount = Math.min(
-                currentCount,
-                nextCounts.get(dependency) ?? 0
-              )
-              if (commonCount) {
-                commonCounts.set(dependency, commonCount)
-                total += commonCount
-              } else commonCounts.delete(dependency)
-            }
-            if (total > 1) {
-              next.counts = commonCounts
-              next.formulas.add(formula)
-            }
-          }
-        } else {
-          const candidates = candidatesByOperation.get(formula.operation)!
-          const counts = elementCounts(formula.operands)
-
-          for (const [candidate, candidateCounts] of candidates) {
-            let total = 0
-
-            const commonCounts = new Map<OptNode, number>()
-            for (const [
-              dependency,
-              candidateCount,
-            ] of candidateCounts.entries()) {
-              const count = Math.min(
-                candidateCount,
-                counts.get(dependency) ?? 0
-              )
-              if (count) {
-                commonCounts.set(dependency, count)
-                total += count
-              }
-            }
-            if (total > 1) {
-              next = {
-                counts: commonCounts,
-                formulas: new Set([formula, candidate]),
-                operation: formula.operation,
-              }
-              candidatesByOperation.clear()
-              break
-            }
-          }
-          if (!next) candidates.push([formula, counts])
-        }
-
-        return formula
       }
-    )
+    }
+  )
 
-    if (next) wrap.common = next
-    else break
+  function cmpNode(n1: OptNode, n2: OptNode): number {
+    const h1 = nodeHeightMap.get(n1)!,
+      h2 = nodeHeightMap.get(n2)!
+    if (h1 !== h2) return h1 - h2
+    const op1 = n1.operation,
+      op2 = n2.operation
+    if (op1 !== op2) return op1.localeCompare(op2)
+
+    switch (op1) {
+      case 'const':
+        if (op1 !== op2) throw Error('ily jslint')
+        return n1.value - n2.value
+      case 'read':
+        if (op1 !== op2) throw Error('ily jslint')
+        return arrayCompare(n1.path, n2.path, (s1, s2) => s1.localeCompare(s2))
+      case 'res':
+      case 'threshold':
+      case 'sum_frac': {
+        if (op1 !== op2) throw Error('ily jslint')
+        const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
+          s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
+        return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
+      }
+      case 'add':
+      case 'mul':
+      case 'min':
+      case 'max': {
+        if (op1 !== op2) throw Error('ily jslint')
+        const s1 = n1.operands.map((op) => nodeSortMap.get(op)!),
+          s2 = n2.operands.map((op) => nodeSortMap.get(op)!)
+        s1.sort((a, b) => a - b)
+        s2.sort((a, b) => a - b)
+        return arrayCompare(s1, s2, (n1, n2) => n1 - n2)
+      }
+    }
   }
 
-  return formulas
+  let ix = 0
+  const nodeSortMap = new Map<OptNode, number>()
+  const sortedNodes = [] as OptNode[]
+  layers.forEach((layer) => {
+    layer.sort(cmpNode)
+    sortedNodes.push(layer[0])
+    nodeSortMap.set(layer[0], ix++)
+    for (let i = 1; i < layer.length; i++) {
+      if (cmpNode(layer[i - 1], layer[i]) === 0)
+        nodeSortMap.set(layer[i], nodeSortMap.get(layer[i - 1])!)
+      else {
+        sortedNodes.push(layer[i])
+        nodeSortMap.set(layer[i], ix++)
+      }
+    }
+  })
+
+  sortedNodes.forEach((n, i) => {
+    switch (n.operation) {
+      case 'add':
+      case 'mul':
+      case 'min':
+      case 'max':
+        sortedNodes[i] = {
+          ...n,
+          operands: [...n.operands].sort(
+            (a, b) => nodeSortMap.get(a)! - nodeSortMap.get(b)!
+          ),
+        }
+    }
+  })
+
+  return mapFormulas(
+    formulas,
+    (f) => sortedNodes[nodeSortMap.get(f)!],
+    (_) => _
+  )
 }
 
 /**

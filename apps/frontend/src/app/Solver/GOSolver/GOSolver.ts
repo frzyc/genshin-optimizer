@@ -12,7 +12,7 @@ import { pruneAll, pruneExclusion } from '../common'
 import { WorkerCoordinator } from '../coordinator'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
-  private maxIterateSize = 16_000_000
+  private maxIterateSize = 32_000_000
   private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
   private exclusion: Count['exclusion']
   private topN: number
@@ -80,6 +80,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     }
 
     nodes = pruneExclusion(nodes, exclusion)
+    nodes = optimize(nodes, {}, (_) => false)
     ;({ nodes, arts } = pruneAll(nodes, minimums, arts, topN, exclusion, {
       reaffine: true,
       pruneArtRange: true,

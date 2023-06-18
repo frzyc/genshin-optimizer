@@ -40,6 +40,7 @@ import CharacterCard from '../Components/Character/CharacterCard'
 import SortByButton from '../Components/SortByButton'
 import ElementToggle from '../Components/ToggleButton/ElementToggle'
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle'
+import { SillyContext } from '../Context/SillyContext'
 import { getCharSheet } from '../Data/Characters'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
@@ -64,7 +65,13 @@ const numToShowMap = { xs: 6, sm: 8, md: 12, lg: 16, xl: 16 }
 const sortKeys = Object.keys(characterSortMap)
 
 export default function PageCharacter() {
-  const { t } = useTranslation(['page_character', 'charNames_gen'])
+  const { t } = useTranslation([
+    'page_character',
+    // Always load these 2 so character names are loaded for searching/sorting
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
+  const { silly } = useContext(SillyContext)
   const { database } = useContext(DatabaseContext)
   const [state, setState] = useState(() => database.displayCharacter.get())
   useEffect(
@@ -97,23 +104,26 @@ export default function PageCharacter() {
 
   // character favorite updater
   useEffect(
-    () => database.charMeta.followAny(() => forceUpdate()),
+    () => database.charMeta.followAny((_s) => forceUpdate()),
     [forceUpdate, database]
   )
 
   const { gender } = useDBMeta()
   const deleteCharacter = useCallback(
     async (cKey: CharacterKey) => {
-      const chararcterSheet = await getCharSheet(cKey, gender)
-      let name = chararcterSheet?.name
+      let name = getCharSheet(cKey, gender).name
       // Use translated string
       if (typeof name === 'object')
-        name = t(`charNames_gen:${charKeyToCharName(cKey, gender)}`)
+        name = t(
+          `${
+            silly ? 'sillyWisher_charNames' : 'charNames_gen'
+          }:${charKeyToCharName(cKey, gender)}`
+        )
 
       if (!window.confirm(t('removeCharacter', { value: name }))) return
       database.chars.remove(cKey)
     },
-    [database, gender, t]
+    [database.chars, gender, silly, t]
   )
 
   const editCharacter = useCharSelectionCallback()
@@ -130,19 +140,19 @@ export default function PageCharacter() {
       .filter(
         filterFunction(
           { element, weaponType, name: deferredSearchTerm },
-          characterFilterConfigs(database)
+          characterFilterConfigs(database, silly)
         )
       )
       .sort(
         sortFunction(
           characterSortMap[sortType] ?? [],
           ascending,
-          characterSortConfigs(database),
+          characterSortConfigs(database, silly),
           ['new', 'favorite']
         )
       )
     return deferredDbDirty && { charKeyList, totalCharNum }
-  }, [deferredDbDirty, database, deferredState, deferredSearchTerm])
+  }, [database, deferredState, deferredSearchTerm, silly, deferredDbDirty])
 
   const { weaponType, element, sortType, ascending, pageIndex = 0 } = state
 

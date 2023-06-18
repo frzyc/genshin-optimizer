@@ -1,7 +1,7 @@
 import type {
   ArtifactSetKey,
   CharacterKey,
-  LocationKey,
+  LocationCharacterKey,
 } from '@genshin-optimizer/consts'
 import {
   allCharacterKeys,
@@ -17,6 +17,13 @@ import { deepClone, deepFreeze } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 import { validateArr } from '../validationUtil'
+
+export const allAllowLocationsState = [
+  'unequippedOnly',
+  'customList',
+  'all',
+] as const
+export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
 export type ArtSetExclusion = Dict<
   | Exclude<
@@ -45,8 +52,10 @@ export interface BuildSetting {
     flower?: never
     plume?: never
   }
-  allowLocations: LocationKey[]
+  excludedLocations: LocationCharacterKey[]
+  allowLocationsState: AllowLocationsState
   artExclusion: string[]
+  useExcludedArts: boolean
   optimizationTarget?: string[]
   mainStatAssumptionLevel: number
   allowPartial: boolean
@@ -81,11 +90,13 @@ export class BuildSettingDataManager extends DataManager<
     let {
       artSetExclusion,
       artExclusion,
+      useExcludedArts,
       statFilters,
       mainStatKeys,
       optimizationTarget,
       mainStatAssumptionLevel,
-      allowLocations,
+      excludedLocations,
+      allowLocationsState,
       allowPartial,
       maxBuildsToShow,
       plotBase,
@@ -126,13 +137,15 @@ export class BuildSettingDataManager extends DataManager<
         this.database.arts.keys.includes(id)
       )
 
-    allowLocations = validateArr(
-      allowLocations,
+    excludedLocations = validateArr(
+      excludedLocations,
       allLocationCharacterKeys.filter((k) => k !== key),
-      []
-    ).filter((lk) =>
-      this.database.chars.get(this.database.chars.LocationToCharacterKey(lk))
+      [] // Remove self from list
+    ).filter(
+      (lk) =>
+        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
     )
+    if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (
       !maxBuildsToShowList.includes(
@@ -145,6 +158,7 @@ export class BuildSettingDataManager extends DataManager<
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
     if (!artSetExclusion) artSetExclusion = {}
+    if (useExcludedArts === undefined) useExcludedArts = false
     if (!allowPartial) allowPartial = false
     artSetExclusion = Object.fromEntries(
       Object.entries(artSetExclusion as ArtSetExclusion)
@@ -154,11 +168,13 @@ export class BuildSettingDataManager extends DataManager<
     return {
       artSetExclusion,
       artExclusion,
+      useExcludedArts,
       statFilters,
       mainStatKeys,
       optimizationTarget,
       mainStatAssumptionLevel,
-      allowLocations: allowLocations,
+      excludedLocations,
+      allowLocationsState,
       allowPartial,
       maxBuildsToShow,
       plotBase,
@@ -175,6 +191,7 @@ export class BuildSettingDataManager extends DataManager<
 const initialBuildSettings: BuildSetting = deepFreeze({
   artSetExclusion: {},
   artExclusion: [],
+  useExcludedArts: false,
   statFilters: {},
   mainStatKeys: {
     sands: [...Artifact.slotMainStats('sands')],
@@ -183,7 +200,8 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
-  allowLocations: [],
+  excludedLocations: [],
+  allowLocationsState: 'unequippedOnly',
   allowPartial: false,
   maxBuildsToShow: 5,
   plotBase: undefined,
