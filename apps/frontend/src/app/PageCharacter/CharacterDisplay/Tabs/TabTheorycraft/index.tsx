@@ -3,10 +3,7 @@ import type {
   ArtifactSlotKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import {
-  allArtifactSetKeys,
-  allArtifactSlotKeys,
-} from '@genshin-optimizer/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import { CopyAll, DeleteForever, Info, Refresh } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -71,27 +68,18 @@ import { getWeaponSheet } from '../../../../Data/Weapons'
 import { DatabaseContext } from '../../../../Database/Database'
 import { initCharTC } from '../../../../Database/DataManagers/CharacterTCData'
 import { uiInput as input } from '../../../../Formula'
-import {
-  computeUIData,
-  dataObjForWeapon,
-  mergeData,
-  uiDataForTeam,
-} from '../../../../Formula/api'
-import { mapFormulas } from '../../../../Formula/internal'
-import { optimize, precompute } from '../../../../Formula/optimization'
-import type { NumNode } from '../../../../Formula/type'
+import { computeUIData, dataObjForWeapon } from '../../../../Formula/api'
 import { constant, percent } from '../../../../Formula/utils'
 import KeyMap, { cacheValueString } from '../../../../KeyMap'
 import StatIcon from '../../../../KeyMap/StatIcon'
 import useBoolState from '../../../../ReactHooks/useBoolState'
-import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
+import useTeamData from '../../../../ReactHooks/useTeamData'
 import { iconInlineProps } from '../../../../SVGIcons'
 import type {
   ICachedArtifact,
   MainStatKey,
   SubstatKey,
 } from '../../../../Types/artifact'
-import { allSubstatKeys } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'
 import type {
   ArtifactRarity,
@@ -100,18 +88,20 @@ import type {
 } from '../../../../Types/consts'
 import { substatType } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
-import { deepClone, objectMap, objPathValue } from '../../../../Util/Util'
+import { deepClone, objectMap } from '../../../../Util/Util'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
-import { dynamicData } from '../TabOptimize/foreground'
 import useCharTC from './useCharTC'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
+import { optimizeTc } from './optimizeTc'
 const WeaponSelectionModal = React.lazy(
   () => import('../../../../Components/Weapon/WeaponSelectionModal')
 )
 
 type ISet = Partial<Record<ArtifactSetKey, 1 | 2 | 4>>
-type SetCharTCAction = Partial<ICharTC> | ((v: ICharTC) => Partial<ICharTC>)
+export type SetCharTCAction =
+  | Partial<ICharTC>
+  | ((v: ICharTC) => Partial<ICharTC>)
 type CharTCContexObj = {
   charTC: ICharTC
   setCharTC: (action: SetCharTCAction) => void
@@ -341,144 +331,20 @@ export default function TabTheorycraft() {
   // We brute force iterate over all substats in the graph and compute the maximum
   // n.b. some substat combinations may not be materializable into real artifacts
   const optimizeSubstats = useCallback(
-    (apply: boolean) => () => {
-      const startTime = performance.now()
-      if (!characterKey || !optimizationTarget) return
-      const teamData = getTeamData(
-        database,
+    (apply: boolean) =>
+      optimizeTc(
         characterKey,
-        0,
+        optimizationTarget,
+        database,
         overriderArtData,
-        overrideWeapon
-      )
-      if (!teamData) return
-      const workerData = uiDataForTeam(teamData.teamData, gender, characterKey)[
-        characterKey
-      ]?.target.data![0]
-      if (!workerData) return
-      Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
-      const unoptimizedOptimizationTargetNode = objPathValue(
-        workerData.display ?? {},
-        optimizationTarget
-      ) as NumNode | undefined
-      if (!unoptimizedOptimizationTargetNode) return
-      const unoptimizedNodes = [unoptimizedOptimizationTargetNode]
-      let nodes = optimize(
-        unoptimizedNodes,
-        workerData,
-        ({ path: [p] }) => p !== 'dyn'
-      )
-      // Const fold the artifact set
-      nodes = mapFormulas(
-        nodes,
-        (f) => {
-          if (f.operation === 'read' && f.path[0] === 'dyn') {
-            const a = charTC.artifact.sets[f.path[1]]
-            if (a) {
-              return constant(a)
-            } else if (allArtifactSetKeys.includes(f.path[1] as any)) {
-              return constant(0)
-            }
-          }
-          return f
-        },
-        (f) => f
-      )
-      nodes = optimize(nodes, {}, (_) => false)
-
-      const subs = new Set<string>()
-      const compute = precompute(
-        nodes,
-        {},
-        (f) => {
-          subs.add(f.path[1])
-          return f.path[1]
-        },
-        2
-      )
-      const realSubs = [...subs].filter((x) =>
-        allSubstatKeys.includes(x as any)
-      )
-      if (
-        realSubs.reduce((p, x) => p + maxSubstats[x], 0) < distributedSubstats
-      )
-        realSubs.push('__unused__')
-      const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
-
-      let max = -Infinity
-      const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
-      let maxBuffer: typeof buffer | undefined
-      const bufferSubs = objectMap(
-        charTC.artifact.substats.stats,
-        (v, k) => v / comp(k)
-      )
-      const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
-        if (xs.length === 0) {
-          if (distributedSubstats > maxSubstats[x]) return
-          if (x !== '__unused__')
-            buffer[x] =
-              (Artifact.substatValue(
-                x as SubstatKey,
-                5,
-                charTC.artifact.substats.type
-              ) /
-                comp(x)) *
-              distributedSubstats
-          const [result] = compute([
-            { values: bufferSubs },
-            { values: buffer },
-          ] as const)
-          if (result > max) {
-            max = result
-            maxBuffer = structuredClone(buffer)
-          }
-          return
-        }
-        for (
-          let i = 0;
-          i <= Math.min(maxSubstats[x], distributedSubstats);
-          i++
-        ) {
-          buffer[x] =
-            (Artifact.substatValue(
-              x as SubstatKey,
-              5,
-              charTC.artifact.substats.type
-            ) /
-              comp(x)) *
-            i
-          permute(distributedSubstats - i, xs)
-        }
-      }
-      permute(distributedSubstats, realSubs)
-      if (process.env.NODE_ENV === 'development') {
-        console.log(`Took ${performance.now() - startTime} ms`)
-        console.log(maxBuffer)
-        console.log(
-          objectMap(maxBuffer!, (v, x) =>
-            allSubstatKeys.includes(x as any)
-              ? v /
-                (Artifact.substatValue(
-                  x as SubstatKey,
-                  5,
-                  charTC.artifact.substats.type
-                ) /
-                  comp(x))
-              : v
-          )
-        )
-      }
-
-      if (apply) {
-        const data_ = deepClone(charTC)
-        data_.artifact.substats.stats = objectMap(
-          charTC.artifact.substats.stats,
-          (v, k) => v + (maxBuffer![k] ?? 0) * comp(k)
-        )
-        data_.optimization.distributedSubstats = 0
-        setCharTC(data_)
-      }
-    },
+        overrideWeapon,
+        gender,
+        charTC,
+        maxSubstats,
+        distributedSubstats,
+        apply,
+        setCharTC
+      ),
     [
       charTC,
       characterKey,
