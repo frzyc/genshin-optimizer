@@ -1,14 +1,12 @@
 import { input } from '../../../../Formula'
 import {
-  equal,
+  compareEq,
   unequal,
   constant,
   lookup,
   prod,
-  sum,
   subscript,
 } from '../../../../Formula/utils'
-import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
@@ -23,7 +21,7 @@ const data_gen = allStats.weapon.data[key]
 
 const [, trm] = trans('weapon', key)
 
-const [condStacksPath, condStacks] = cond(key, 'stack')
+const [condStackPath, condStack] = cond(key, 'stack')
 const [condOffFieldPath, condOffField] = cond(key, 'offField')
 
 const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
@@ -35,22 +33,25 @@ const dmg_Nodes = Object.fromEntries(
     subscript(input.weapon.refineIndex, dmg_),
   ])
 )
-const atkInc = {
-  ...prod(
-    lookup(
-      condStacks,
-      objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
-      0
-    ),
-    subscript(input.weapon.refineIndex, atk_)
+const atkInc = prod(
+  compareEq(
+    condOffField,
+    'on',
+    constant(2, { name: trm('inactive') }),
+    constant(1, { name: trm('active') })
   ),
-  info: KeyMap.info('atk_'),
-}
-const atkIncOffField = equal(condOffField, 'on', atkInc, KeyMap.info('atk_'))
+  lookup(
+    condStack,
+    objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
+    0
+  ),
+  subscript(input.weapon.refineIndex, atk_)
+)
+
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...dmg_Nodes,
-    atk_: sum(atkInc, atkIncOffField),
+    atk_: atkInc,
   },
 })
 const sheet: IWeaponSheet = {
@@ -60,8 +61,21 @@ const sheet: IWeaponSheet = {
       fields: Object.values(dmg_Nodes).map((node) => ({ node })),
     },
     {
-      value: condStacks,
-      path: condStacksPath,
+      canShow: unequal(condStack, undefined, 1),
+      value: condOffField,
+      path: condOffFieldPath,
+      teamBuff: true,
+      header: headerTemplate(key, st('conditional')),
+      name: st('charOffField'),
+      states: {
+        on: {
+          fields: [],
+        },
+      },
+    },
+    {
+      value: condStack,
+      path: condStackPath,
       teamBuff: true,
       header: headerTemplate(key, st('stacks')),
       name: trm('effectName'),
@@ -78,23 +92,6 @@ const sheet: IWeaponSheet = {
           },
         ])
       ),
-    },
-    {
-      canShow: unequal(condStacks, undefined, 1),
-      value: condOffField,
-      path: condOffFieldPath,
-      teamBuff: true,
-      header: headerTemplate(key, st('conditional')),
-      name: st('charOffField'),
-      states: {
-        on: {
-          fields: [
-            {
-              node: atkIncOffField,
-            },
-          ],
-        },
-      },
     },
   ],
 }

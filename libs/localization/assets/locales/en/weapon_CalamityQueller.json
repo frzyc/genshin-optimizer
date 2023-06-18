@@ -1,3 +1,5 @@
 {
-  "effectName": "Consummation"
+  "effectName": "Consummation",
+  "active": "Active Multiplier",
+  "inactive": "Off-field Multiplier"
 }
