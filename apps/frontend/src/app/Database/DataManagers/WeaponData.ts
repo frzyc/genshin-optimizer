@@ -8,21 +8,23 @@ import {
   charKeyToLocCharKey,
   weaponMaxLevel,
 } from '@genshin-optimizer/consts'
+import type { IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import type { ICachedCharacter } from '../../Types/character'
-import type { ICachedWeapon, IWeapon } from '../../Types/weapon'
+import type { ICachedWeapon } from '../../Types/weapon'
 import { defaultInitialWeapon } from '../../Util/WeaponUtil'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterData'
 
 export class WeaponDataManager extends DataManager<
   string,
   'weapons',
   ICachedWeapon,
-  IWeapon
+  IWeapon,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'weapons')

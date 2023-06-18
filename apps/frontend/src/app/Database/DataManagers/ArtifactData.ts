@@ -1,5 +1,10 @@
-import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
+import type {
+  ArtifactRarity,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
@@ -10,6 +15,7 @@ import {
   artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
+import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import {
   getMainStatDisplayValue,
@@ -19,23 +25,17 @@ import {
 } from '@genshin-optimizer/gi-util'
 import { clamp } from '@genshin-optimizer/util'
 import KeyMap from '../../KeyMap'
-import type {
-  IArtifact,
-  ICachedArtifact,
-  ICachedSubstat,
-  ISubstat,
-} from '../../Types/artifact'
-import type { ArtifactRarity } from '../../Types/consts'
-import { allArtifactRarities } from '../../Types/consts'
+import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 
 export class ArtifactDataManager extends DataManager<
   string,
   'artifacts',
   ICachedArtifact,
-  IArtifact
+  IArtifact,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'artifacts')
@@ -458,7 +458,7 @@ export function validateArtifact(
     !allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarities.includes(rarity) ||
+    !allArtifactRarityKeys.includes(rarity) ||
     typeof level !== 'number' ||
     level < 0 ||
     level > 20

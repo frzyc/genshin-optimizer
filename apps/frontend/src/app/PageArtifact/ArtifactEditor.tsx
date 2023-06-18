@@ -1,4 +1,5 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
@@ -9,6 +10,7 @@ import {
   artSlotsData,
 } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/g-assets'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
 import { clamp } from '@genshin-optimizer/util'
@@ -70,9 +72,8 @@ import {
   validateArtifact,
 } from '../Database/DataManagers/ArtifactData'
 import StatIcon from '../KeyMap/StatIcon'
-import type { IArtifact, ICachedArtifact, ISubstat } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
-import { randomizeArtifact } from '../Util/randomizeArtifact'
+import type { ICachedArtifact } from '../Types/artifact'
+import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'

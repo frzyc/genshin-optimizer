@@ -1,4 +1,5 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
@@ -6,12 +7,14 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allMainStatKeys,
   allSubstatKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import {
   artDisplayValue,
   getMainStatDisplayValue,
@@ -24,9 +27,7 @@ import { createScheduler, createWorker } from 'tesseract.js'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'
 import KeyMap from '../KeyMap'
-import type { IArtifact, ICachedArtifact, ISubstat } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
-import { allArtifactRarities } from '../Types/consts'
+import type { ICachedArtifact } from '../Types/artifact'
 import { BorrowManager } from './BorrowManager'
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
@@ -254,7 +255,7 @@ export function findBestArtifact(
     ]
 
   // Rate each rarity
-  const rarityRates = objKeyMap(allArtifactRarities, (rarity) => {
+  const rarityRates = objKeyMap(allArtifactRarityKeys, (rarity) => {
     let score = 0
     if (textSetKeys.size) {
       const count = [...textSetKeys].reduce(

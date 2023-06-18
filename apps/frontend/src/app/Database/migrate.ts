@@ -10,7 +10,8 @@ import {
 } from '@genshin-optimizer/consts'
 import type { CustomMultiTarget } from '../Types/character'
 import type { DBStorage } from '@genshin-optimizer/database'
-import type { IGO, IGOOD } from './exim'
+import type { IGO } from './exim'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi-good'
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateVersion` calls
@@ -58,7 +59,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         ...character,
         customMultiTarget: targets,
         key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey,
-      })
+      } as ICharacter)
     })
   })
 

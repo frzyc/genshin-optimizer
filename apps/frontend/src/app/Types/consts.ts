@@ -1,22 +1,12 @@
 import type {
+  AdditiveReactionKey,
+  AmplifyingReactionKey,
   ElementKey,
   LocationCharacterKey,
 } from '@genshin-optimizer/consts'
 import { nonTravelerCharacterKeys } from '@genshin-optimizer/consts'
 
-export const allHitModes = ['hit', 'avgHit', 'critHit'] as const
-export const allAmpReactions = ['vaporize', 'melt'] as const
-export const allAdditiveReactions = ['spread', 'aggravate'] as const
 export const allArtifactSetCount = [1, 2, 3, 4, 5] as const
-
-export const allArtifactRarities = [5, 4, 3] as const
-
-export const allInfusionAuraElements = [
-  'pyro',
-  'cryo',
-  'hydro',
-  'electro',
-] as const
 
 export const allRollColorKeys = [
   'roll1',
@@ -26,8 +16,6 @@ export const allRollColorKeys = [
   'roll5',
   'roll6',
 ] as const
-export const allRefinement = [1, 2, 3, 4, 5] as const
-export const substatType = ['max', 'mid', 'min'] as const
 
 export const travelerFKeys = [
   'TravelerAnemoF',
@@ -47,18 +35,11 @@ export const allCharacterSheetKeys = [
   ...travelerFKeys,
   ...travelerMKeys,
 ]
-export type HitModeKey = (typeof allHitModes)[number]
-export type AmpReactionKey = (typeof allAmpReactions)[number]
-export type AdditiveReactionKey = (typeof allAdditiveReactions)[number]
 export type SetNum = (typeof allArtifactSetCount)[number]
-export type ArtifactRarity = (typeof allArtifactRarities)[number]
-export type InfusionAuraElements = (typeof allInfusionAuraElements)[number]
 
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
 
 export type RollColorKey = (typeof allRollColorKeys)[number]
-
-export type Refinement = (typeof allRefinement)[number]
 
 export const absorbableEle = [
   'hydro',
@@ -66,7 +47,7 @@ export const absorbableEle = [
   'cryo',
   'electro',
 ] as ElementKey[]
-export const allowedAmpReactions: Dict<ElementKey, AmpReactionKey[]> = {
+export const allowedAmpReactions: Dict<ElementKey, AmplifyingReactionKey[]> = {
   pyro: ['vaporize', 'melt'],
   hydro: ['vaporize'],
   cryo: ['melt'],
@@ -78,7 +59,5 @@ export const allowedAdditiveReactions: Dict<ElementKey, AdditiveReactionKey[]> =
     electro: ['aggravate'],
     anemo: ['aggravate'],
   }
-
-export type SubstatType = (typeof substatType)[number]
 
 export type LocationKey = LocationCharacterKey | ''

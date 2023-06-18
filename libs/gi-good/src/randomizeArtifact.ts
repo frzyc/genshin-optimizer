@@ -1,5 +1,12 @@
-import type { RarityKey, SubstatKey } from '@genshin-optimizer/consts'
+import type {
+  ArtifactRarity,
+  ArtifactSlotKey,
+  MainStatKey,
+  RarityKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allSubstatKeys,
   artMaxLevel,
@@ -16,18 +23,24 @@ import {
   getRandomIntInclusive,
   unit,
 } from '@genshin-optimizer/util'
-import type { IArtifact, ISubstat } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
+import type { IArtifact, ISubstat } from './IArtifact'
 
 // do not randomize Prayers since they don't have all slots
 const artSets = allArtifactSetKeys.filter((k) => !k.startsWith('Prayers'))
 export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
   const setKey = base.setKey ?? getRandomElementFromArray(artSets)
   const data = allStats.art.data[setKey]
+
   const rarity = (base.rarity ??
-    getRandomElementFromArray(data.rarities)) as ArtifactRarity
-  const slot = base.slotKey ?? getRandomElementFromArray(data.slots)
-  const mainStatKey =
+    getRandomElementFromArray(
+      data.rarities.filter((r: number) =>
+        // GO only supports artifacts from 3 to 5 stars
+        allArtifactRarityKeys.includes(r as ArtifactRarity)
+      )
+    )) as ArtifactRarity
+  const slot: ArtifactSlotKey =
+    base.slotKey ?? getRandomElementFromArray(data.slots)
+  const mainStatKey: MainStatKey =
     base.mainStatKey ?? getRandomElementFromArray(artSlotsData[slot].stats)
   const level =
     base.level ?? getRandomIntInclusive(0, artMaxLevel[rarity as RarityKey])

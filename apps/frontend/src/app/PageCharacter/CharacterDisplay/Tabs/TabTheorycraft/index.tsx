@@ -1,14 +1,17 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
   SubstatKey,
+  SubstatTypeKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import {
   allArtifactSlotKeys,
   artMaxLevel,
   artSlotsData,
+  substatTypeKeys,
 } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import {
@@ -88,12 +91,7 @@ import StatIcon from '../../../../KeyMap/StatIcon'
 import useTeamData from '../../../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { ICharTC, ICharTCArtifactSlot } from '../../../../Types/character'
-import type {
-  ArtifactRarity,
-  SetNum,
-  SubstatType,
-} from '../../../../Types/consts'
-import { substatType } from '../../../../Types/consts'
+import type { SetNum } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
 import { defaultInitialWeaponKey } from '../../../../Util/WeaponUtil'
 import useCharTC from './useCharTC'
@@ -219,7 +217,7 @@ export default function TabTheorycraft() {
   )
 
   const setSubstatsType = useCallback(
-    (t: SubstatType) => {
+    (t: SubstatTypeKey) => {
       const data_ = structuredClone(data)
       data_.artifact.substats.type = t
       setData(data_)
@@ -753,8 +751,8 @@ function ArtifactSubCard({
 }: {
   substats: Record<SubstatKey, number>
   setSubstats: (substats: Record<SubstatKey, number>) => void
-  substatsType: SubstatType
-  setSubstatsType: (t: SubstatType) => void
+  substatsType: SubstatTypeKey
+  setSubstatsType: (t: SubstatTypeKey) => void
   mainStatKeys: MainStatKey[]
 }) {
   const setValue = useCallback(
@@ -778,7 +776,7 @@ function ArtifactSubCard({
           fullWidth
           title={t(`tabTheorycraft.substatType.${substatsType}`)}
         >
-          {substatType.map((st) => (
+          {substatTypeKeys.map((st) => (
             <MenuItem
               key={st}
               disabled={substatsType === st}
@@ -839,7 +837,7 @@ function ArtifactSubstatEditor({
   statKey: SubstatKey
   value: number
   setValue: (v: number) => void
-  substatsType: SubstatType
+  substatsType: SubstatTypeKey
   mainStatKeys: MainStatKey[]
 }) {
   const { t } = useTranslation('page_character')

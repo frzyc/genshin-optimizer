@@ -206,3 +206,6 @@ export const weaponMaxLevel: Record<RarityKey, number> = {
   4: 90,
   5: 90,
 } as const
+
+export const allRefinementKeys = [1, 2, 3, 4, 5] as const
+export type RefinementKey = (typeof allRefinementKeys)[number]
