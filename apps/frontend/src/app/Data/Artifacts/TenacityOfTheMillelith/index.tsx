@@ -60,8 +60,8 @@ const sheet: IArtifactSheet = {
                 {
                   text: stg('duration'),
                   value: 3,
-                  unit: 's'
-                }
+                  unit: 's',
+                },
               ],
             },
           },

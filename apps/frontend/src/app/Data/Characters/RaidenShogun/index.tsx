@@ -14,7 +14,6 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
 import { objectKeyMap } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -110,8 +109,7 @@ const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
 const defIgn_ = greaterEq(
   input.constellation,
   2,
-  equal(condInBurst, 'on', dm.constellation2.def_ignore),
-  KeyMap.info('enemyDefIgn_')
+  equal(condInBurst, 'on', dm.constellation2.def_ignore)
 )
 
 function skillDmg(atkType: number[]) {
