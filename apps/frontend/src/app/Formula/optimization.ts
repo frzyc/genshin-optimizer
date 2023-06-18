@@ -105,8 +105,8 @@ const x0=0` // making sure `const` has at least one entry
           const key = binding(f)
           let arr = slotCount
             ? new Array(slotCount)
-              .fill(null)
-              .map((_, i) => `(b[${i}].values["${key}"] ?? 0)`)
+                .fill(null)
+                .map((_, i) => `(b[${i}].values["${key}"] ?? 0)`)
             : ['0']
           if (initial[key] && initial[key] !== 0) {
             arr = [initial[key].toString(), ...arr]
@@ -487,8 +487,8 @@ export function constantFold(
           else
             result = map(
               { operation: formula.accu, operands } as
-              | ComputeNode
-              | StrPrioNode,
+                | ComputeNode
+                | StrPrioNode,
               context
             )
           break

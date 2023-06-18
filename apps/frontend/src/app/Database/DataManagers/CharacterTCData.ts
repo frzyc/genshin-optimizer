@@ -1,16 +1,14 @@
 import type {
   ArtifactSlotKey,
   CharacterKey,
-  WeaponKey} from '@genshin-optimizer/consts';
-import {
-  allArtifactSlotKeys,
-  allWeaponKeys
+  WeaponKey,
 } from '@genshin-optimizer/consts'
+import { allArtifactSlotKeys, allWeaponKeys } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '../../Data/LevelData'
-import type { MainStatKey } from '../../Types/artifact';
+import type { MainStatKey } from '../../Types/artifact'
 import { allSubstatKeys } from '../../Types/artifact'
 import type { ICharTC } from '../../Types/character'
-import type { ArtifactRarity} from '../../Types/consts';
+import type { ArtifactRarity } from '../../Types/consts'
 import { substatType } from '../../Types/consts'
 import { objectKeyMap } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'

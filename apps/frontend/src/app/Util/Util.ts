@@ -123,11 +123,11 @@ export function crawlObject(
 export const getObjectKeysRecursive = (obj) =>
   typeof obj === 'object'
     ? Object.values(obj)
-      .flatMap(getObjectKeysRecursive)
-      .concat(Object.keys(obj))
+        .flatMap(getObjectKeysRecursive)
+        .concat(Object.keys(obj))
     : typeof obj === 'string'
-      ? [obj]
-      : []
+    ? [obj]
+    : []
 
 export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
   return typeof value === 'function' ? (value as any)(arg) : value
