@@ -7,6 +7,7 @@ import {
   equalStr,
   greaterEq,
   infoMut,
+  percent,
   lookup,
   prod,
   subscript,
@@ -90,33 +91,31 @@ const dm = {
   },
 } as const
 
-const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
-
 const burstAtkRatio = subscript(input.total.burstIndex, dm.burst.atkBonus, {
   unit: '%',
 })
 const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
-const c1AtkRatio = greaterEq(
-  input.constellation,
-  1,
-  dm.constellation1.atk_inc,
-  { name: ct.ch('additionalATKRatio_'), unit: '%' }
+const c1AddlAtk = infoMut(
+  greaterEq(
+    input.constellation,
+    1,
+    prod(percent(dm.constellation1.atk_inc), input.base.atk)
+  ),
+  { name: ct.ch('additionalATK') }
 )
-const c1AddlAtk = greaterEq(
-  input.constellation,
-  1,
-  prod(c1AtkRatio, input.base.atk)
-)
-const atkIncRatio = sum(burstAtkRatio, c1AtkRatio)
-const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
-
 const [condInAreaPath, condInArea] = cond(key, 'activeInArea')
 const activeInArea = equal(
   'activeInArea',
   condInArea,
   equal(input.activeCharKey, target.charKey, 1)
 )
+const activeInAreaAtkDisp = {
+  ...sum(burstAddlAtk, c1AddlAtk),
+  info: KeyMap.info('atk'),
+}
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
+
+const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
 
 const activeInAreaA4 = greaterEq(
   input.asc,
@@ -388,7 +387,7 @@ const sheet: ICharacterSheet = {
           activeInArea: {
             fields: [
               {
-                node: infoMut(burstAddlAtk, { name: st(`increase.atk`) }),
+                node: activeInAreaAtkDisp,
               },
             ],
           },
@@ -405,11 +404,10 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            node: infoMut(c1AddlAtk, { name: ct.ch('additionalATK') }),
+            node: c1AddlAtk,
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),
-        teamBuff: true,
       }),
       ct.headerTem('constellation6', {
         fields: [
