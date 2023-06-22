@@ -35,7 +35,7 @@ export function optimizeTc(
 ): () => void {
   return () => {
     const startTime = performance.now()
-    if (!characterKey || !optimizationTarget) return
+    if (!optimizationTarget) return
     const teamData = getTeamData(
       database,
       characterKey,
@@ -88,69 +88,73 @@ export function optimizeTc(
       },
       2
     )
-    const realSubs = [...subs].filter((x) => allSubstatKeys.includes(x as any))
-    if (realSubs.reduce((p, x) => p + maxSubstats[x], 0) < distributedSubstats)
-      realSubs.push('__unused__')
-    const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
 
-    let max = -Infinity
-    const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
-    let maxBuffer: typeof buffer | undefined
-    const bufferSubs = objectMap(
-      charTC.artifact.substats.stats,
-      (v, k) => v / comp(k)
-    )
-    const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
-      if (xs.length === 0) {
-        if (distributedSubstats > maxSubstats[x]) return
-        if (x !== '__unused__')
-          buffer[x] =
-            (Artifact.substatValue(
-              x as SubstatKey,
-              5,
-              charTC.artifact.substats.type
-            ) /
-              comp(x)) *
-            distributedSubstats
-        const [result] = compute([
-          { values: bufferSubs },
-          { values: buffer },
-        ] as const)
-        if (result > max) {
-          max = result
-          maxBuffer = structuredClone(buffer)
-        }
-        return
-      }
-      for (let i = 0; i <= Math.min(maxSubstats[x], distributedSubstats); i++) {
-        buffer[x] =
-          (Artifact.substatValue(
-            x as SubstatKey,
-            5,
-            charTC.artifact.substats.type
-          ) /
-            comp(x)) *
-          i
-        permute(distributedSubstats - i, xs)
-      }
-    }
-    permute(distributedSubstats, realSubs)
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`Took ${performance.now() - startTime} ms`)
-      console.log(maxBuffer)
-      console.log(
-        objectMap(maxBuffer!, (v, x) =>
-          allSubstatKeys.includes(x as any)
-            ? v /
-              (Artifact.substatValue(
-                x as SubstatKey,
-                5,
-                charTC.artifact.substats.type
-              ) /
-                comp(x))
-            : v
-        )
+    const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
+    const substatValue = (x: string, m: number) =>
+      (Artifact.substatValue(
+        x as SubstatKey,
+        5,
+        charTC.artifact.substats.type
+      ) /
+        comp(x)) *
+      m
+
+    let maxBuffer: Record<string, number> | undefined
+    const realSubs = [...subs].filter((x) => allSubstatKeys.includes(x as any))
+    if (
+      realSubs.reduce((a, x) => a + maxSubstats[x], 0) <= distributedSubstats
+    ) {
+      maxBuffer = Object.fromEntries(
+        realSubs.map((x) => [x, substatValue(x, maxSubstats[x])])
       )
+      if (process.env.NODE_ENV === 'development') console.log(maxBuffer)
+    } else {
+      let max = -Infinity
+      const buffer = Object.fromEntries([...subs].map((x) => [x, 0]))
+      const bufferSubs = objectMap(
+        charTC.artifact.substats.stats,
+        (v, k) => v / comp(k)
+      )
+      const permute = (distributedSubstats: number, [x, ...xs]: string[]) => {
+        if (xs.length === 0) {
+          if (distributedSubstats > maxSubstats[x]) return
+          const [result] = compute([
+            { values: bufferSubs },
+            { values: buffer },
+          ] as const)
+          if (result > max) {
+            max = result
+            maxBuffer = structuredClone(buffer)
+          }
+          return
+        }
+        for (
+          let i = 0;
+          i <= Math.min(maxSubstats[x], distributedSubstats);
+          i++
+        ) {
+          buffer[x] = substatValue(x, i)
+          permute(distributedSubstats - i, xs)
+        }
+      }
+      permute(distributedSubstats, realSubs)
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Took ${performance.now() - startTime} ms`)
+        console.log(maxBuffer)
+        console.log(
+          objectMap(maxBuffer!, (v, x) =>
+            allSubstatKeys.includes(x as any)
+              ? v /
+                (Artifact.substatValue(
+                  x as SubstatKey,
+                  5,
+                  charTC.artifact.substats.type
+                ) /
+                  comp(x))
+              : v
+          )
+        )
+      }
     }
 
     if (apply) {
