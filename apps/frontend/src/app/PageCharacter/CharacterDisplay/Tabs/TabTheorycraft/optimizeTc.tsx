@@ -102,7 +102,7 @@ export function optimizeTc(
     )
     const subsArr = [...subs]
     if (
-      realSubs.reduce((a, x) => a + maxSubstats[x], 0) <= distributedSubstats
+      subsArr.reduce((a, x) => a + maxSubstats[x], 0) <= distributedSubstats
     ) {
       maxBuffer = Object.fromEntries(
         subsArr.map((x) => [x, substatValue(x, maxSubstats[x])])
