@@ -1,5 +1,4 @@
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import Artifact from '../../../../Data/Artifacts/Artifact'
 import type { ArtCharDatabase } from '../../../../Database/Database'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
@@ -48,6 +47,8 @@ export function optimizeTc(
       characterKey
     ]?.target.data![0]
     if (!workerData) return
+    // TODO: It may be better to use different dynamic data and add extra nodes to workerData during optimize so that you don't need to re-constant fold artifact set nodes later.
+    // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138023281
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const unoptimizedOptimizationTargetNode = objPathValue(
       workerData.display ?? {},
@@ -60,17 +61,14 @@ export function optimizeTc(
       workerData,
       ({ path: [p] }) => p !== 'dyn'
     )
-    // Const fold the artifact set
+    // Const fold read nodes
     nodes = mapFormulas(
       nodes,
       (f) => {
         if (f.operation === 'read' && f.path[0] === 'dyn') {
           const a = charTC.artifact.sets[f.path[1]]
-          if (a) {
-            return constant(a)
-          } else if (allArtifactSetKeys.includes(f.path[1] as any)) {
-            return constant(0)
-          }
+          if (a) return constant(a)
+          if (!allSubstatKeys.includes(f.path[1] as any)) return constant(0)
         }
         return f
       },
@@ -99,13 +97,15 @@ export function optimizeTc(
         comp(x)) *
       m
 
-    let maxBuffer: Record<string, number> | undefined
-    const realSubs = [...subs].filter((x) => allSubstatKeys.includes(x as any))
+    let maxBuffer: Record<string, number> = Object.fromEntries(
+      [...subs].map((x) => [x, 0])
+    )
+    const subsArr = [...subs]
     if (
       realSubs.reduce((a, x) => a + maxSubstats[x], 0) <= distributedSubstats
     ) {
       maxBuffer = Object.fromEntries(
-        realSubs.map((x) => [x, substatValue(x, maxSubstats[x])])
+        subsArr.map((x) => [x, substatValue(x, maxSubstats[x])])
       )
       if (process.env.NODE_ENV === 'development') console.log(maxBuffer)
     } else {
@@ -137,7 +137,7 @@ export function optimizeTc(
           permute(distributedSubstats - i, xs)
         }
       }
-      permute(distributedSubstats, realSubs)
+      permute(distributedSubstats, subsArr)
       if (process.env.NODE_ENV === 'development') {
         console.log(`Took ${performance.now() - startTime} ms`)
         console.log(maxBuffer)
