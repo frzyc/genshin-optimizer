@@ -18,6 +18,10 @@ export function preprocess(string: string): string {
     )
   }
 
+  string = string
+    .replaceAll(/\{SPACE\}/g, ' ')
+    .replaceAll(/\{NON_BREAK_SPACE\}/g, '\u00A0')
+
   if (string.startsWith('#')) {
     // `{}` tags
     string = string
