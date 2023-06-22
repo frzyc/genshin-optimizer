@@ -82,7 +82,7 @@ dumpFile(
       )
     ),
   ]
-    .filter((s) => s && s !== 'NICKNAME')
+    .filter((s) => s)
     .sort()
 )
 

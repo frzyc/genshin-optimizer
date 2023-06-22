@@ -2,10 +2,11 @@ import type {
   NonTrailblazerCharacterKey,
   PathKey,
   RarityKey,
+  TrailBlazerGeneredKey,
 } from '@genshin-optimizer/sr-consts'
 import type { AvatarRarity } from '../dm'
 
-export const characterIdMap: Record<string, NonTrailblazerCharacterKey> = {
+export const characterIdMap: Record<string, NonTrailblazerCharacterKey | TrailBlazerGeneredKey> = {
   '1001': 'March7th',
   '1002': 'DanHeng',
   '1003': 'Himeko',
@@ -31,6 +32,10 @@ export const characterIdMap: Record<string, NonTrailblazerCharacterKey> = {
   '1206': 'Sushang',
   '1209': 'Yanqing',
   '1211': 'Bailu',
+  "8001": "TrailBlazerPhysicalM",
+  "8002": "TrailBlazerPhysicalF",
+  "8003": "TrailBlazerFireM",
+  "8004": "TrailBlazerFireF"
 } as const
 export type AvatarId = keyof typeof characterIdMap
 
