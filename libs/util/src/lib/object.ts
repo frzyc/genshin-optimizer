@@ -126,11 +126,11 @@ export function objClearEmpties(o: Record<string, unknown>) {
 export const getObjectKeysRecursive = (obj: unknown): string[] =>
   typeof obj === 'object'
     ? Object.values(obj as Record<string, unknown>)
-      .flatMap(getObjectKeysRecursive)
-      .concat(Object.keys(obj as Record<string, unknown>))
+        .flatMap(getObjectKeysRecursive)
+        .concat(Object.keys(obj as Record<string, unknown>))
     : typeof obj === 'string'
-      ? [obj]
-      : []
+    ? [obj]
+    : []
 
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
