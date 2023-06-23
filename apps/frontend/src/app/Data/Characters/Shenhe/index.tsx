@@ -11,7 +11,7 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -151,7 +151,7 @@ const c4Inc = greaterEq(
   4,
   lookup(
     condC4,
-    objectKeyMap(range(1, dm.constellation4.maxStacks), (i) =>
+    objKeyMap(range(1, dm.constellation4.maxStacks), (i) =>
       percent(i * dm.constellation4.dmg_)
     ),
     0
@@ -394,7 +394,7 @@ const sheet: ICharacterSheet = {
         value: condC4,
         path: condC4Path,
         name: ct.ch('c4'),
-        states: objectKeyMap(
+        states: objKeyMap(
           range(1, 50).map((i) => i.toString()),
           (i) => ({
             name: i.toString(),

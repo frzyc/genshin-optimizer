@@ -1,4 +1,4 @@
-import { toggleArr } from './Util'
+import { toggleArr } from '@genshin-optimizer/util'
 
 export function handleMultiSelect<T>(allKeys: T[]) {
   return (arr: T[], v: T): T[] => {

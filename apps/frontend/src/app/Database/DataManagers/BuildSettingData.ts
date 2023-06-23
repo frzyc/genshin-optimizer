@@ -2,21 +2,22 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   LocationCharacterKey,
+  MainStatKey,
 } from '@genshin-optimizer/consts'
 import {
+  allArtifactSetKeys,
   allCharacterKeys,
   allLocationCharacterKeys,
+  artSlotsData,
 } from '@genshin-optimizer/consts'
-import Artifact from '../../Data/Artifacts/Artifact'
-import {
-  maxBuildsToShowDefault,
-  maxBuildsToShowList,
-} from '../../PageCharacter/CharacterDisplay/Tabs/TabOptimize/Build'
-import type { MainStatKey } from '../../Types/artifact'
-import { deepClone, deepFreeze } from '../../Util/Util'
+import { deepFreeze } from '@genshin-optimizer/util'
+
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 import { validateArr } from '../validationUtil'
+
+export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
+export const maxBuildsToShowDefault = 5
 
 export const allAllowLocationsState = [
   'unequippedOnly',
@@ -25,7 +26,20 @@ export const allAllowLocationsState = [
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
-export type ArtSetExclusion = Dict<
+export const allArtifactSetExclusionKeys = [
+  ...allArtifactSetKeys.map(
+    (key) =>
+      ![
+        'PrayersForDestiny',
+        'PrayersForIllumination',
+        'PrayersForWisdom',
+        'PrayersToSpringtime',
+      ].includes(key)
+  ),
+  'rainbow',
+] as ArtSetExclusionKey[]
+
+export type ArtSetExclusionKey =
   | Exclude<
       ArtifactSetKey,
       | 'PrayersForDestiny'
@@ -33,9 +47,8 @@ export type ArtSetExclusion = Dict<
       | 'PrayersForWisdom'
       | 'PrayersToSpringtime'
     >
-  | 'rainbow',
-  (2 | 4)[]
->
+  | 'rainbow'
+export type ArtSetExclusion = Partial<Record<ArtSetExclusionKey, (2 | 4)[]>>
 
 export interface StatFilterSetting {
   value: number
@@ -113,12 +126,12 @@ export class BuildSettingDataManager extends DataManager<
       !mainStatKeys.goblet ||
       !mainStatKeys.circlet
     )
-      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
+      mainStatKeys = structuredClone(initialBuildSettings.mainStatKeys)
     else {
       // make sure the arrays are not empty
       ;(['sands', 'goblet', 'circlet'] as const).forEach((sk) => {
         if (!mainStatKeys[sk].length)
-          mainStatKeys[sk] = [...Artifact.slotMainStats(sk)]
+          mainStatKeys[sk] = [...artSlotsData[sk].stats]
       })
     }
 
@@ -194,9 +207,9 @@ const initialBuildSettings: BuildSetting = deepFreeze({
   useExcludedArts: false,
   statFilters: {},
   mainStatKeys: {
-    sands: [...Artifact.slotMainStats('sands')],
-    goblet: [...Artifact.slotMainStats('goblet')],
-    circlet: [...Artifact.slotMainStats('circlet')],
+    sands: [...artSlotsData['sands'].stats],
+    goblet: [...artSlotsData['goblet'].stats],
+    circlet: [...artSlotsData['circlet'].stats],
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
@@ -212,16 +225,17 @@ const initialBuildSettings: BuildSetting = deepFreeze({
 
 export function handleArtSetExclusion(
   currentArtSetExclusion: ArtSetExclusion,
-  setKey: ArtifactSetKey | 'rainbow',
+  setKey: ArtSetExclusionKey,
   num: 2 | 4
 ) {
-  const artSetExclusion = deepClone(currentArtSetExclusion)
-  if (!artSetExclusion[setKey]) artSetExclusion[setKey] = [num]
-  else if (!artSetExclusion[setKey].includes(num))
-    artSetExclusion[setKey] = [...artSetExclusion[setKey], num]
+  const artSetExclusion = structuredClone(currentArtSetExclusion)
+  const setExclusion = artSetExclusion[setKey]
+  if (!setExclusion) artSetExclusion[setKey] = [num]
+  else if (!setExclusion.includes(num))
+    artSetExclusion[setKey] = [...setExclusion, num]
   else {
-    artSetExclusion[setKey] = artSetExclusion[setKey].filter((n) => n !== num)
-    if (!artSetExclusion[setKey].length) delete artSetExclusion[setKey]
+    artSetExclusion[setKey] = setExclusion.filter((n) => n !== num)
+    if (!setExclusion.length) delete artSetExclusion[setKey]
   }
   return artSetExclusion
 }

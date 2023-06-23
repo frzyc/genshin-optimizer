@@ -1,6 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 
-export const artifactIdMap: Record<number, ArtifactSetKey> = {
+export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   10001: 'ResolutionOfSojourner',
   10002: 'BraveHeart',
   10003: 'DefendersWill',

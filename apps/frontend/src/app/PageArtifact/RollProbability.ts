@@ -1,13 +1,8 @@
-import type {
-  IArtifact,
-  ISubstat,
-  MainStatKey,
-  SubstatKey,
-} from '../Types/artifact'
-import { layeredAssignment } from '../Util/Util'
-import Artifact from '../Data/Artifacts/Artifact'
-import { crawlObject } from '@genshin-optimizer/util'
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi-util'
+import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 
 // We separate rolls into "filler rolls" that occurs when there are less than 4 substats,
 // and "upgrade rolls" that occurs when all 4 substats are added. They have different
@@ -171,13 +166,12 @@ function probability(
 
   if (required.size > numFillerSlots || Object.keys(target).length > 4) return 0 // Not enough filler rolls
 
-  const numUpgradeRolls =
-    Artifact.rollsRemaining(level, rarity) - numFillerSlots
+  const numUpgradeRolls = getRollsRemaining(level, rarity) - numFillerSlots
 
   // normalize `target`
   for (const [key, value] of Object.entries(target))
     target[key] = Math.max(
-      Math.ceil((10 * value) / Artifact.substatValue(key, rarity)),
+      Math.ceil((10 * value) / getSubstatValue(key, rarity)),
       1
     )
 

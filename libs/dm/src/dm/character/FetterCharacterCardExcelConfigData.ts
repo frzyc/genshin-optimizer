@@ -1,3 +1,4 @@
+import type { CharacterId } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 type FetterCharacterCardExcelConfigData = {
@@ -12,6 +13,6 @@ const fetterCharacterCardExcelConfigDataSrc = JSON.parse(
 //character data
 const fetterCharacterCardExcelConfigData = Object.fromEntries(
   fetterCharacterCardExcelConfigDataSrc.map((data) => [data.avatarId, data])
-) as { [avatarId: number]: FetterCharacterCardExcelConfigData }
+) as Record<CharacterId, FetterCharacterCardExcelConfigData>
 
 export { fetterCharacterCardExcelConfigData }

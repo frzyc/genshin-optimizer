@@ -1,8 +1,15 @@
-import { RESIN_MAX } from '../../PageTools/ResinCounter'
-import type { TimeZoneKey } from '../../PageTools/TeyvatTime'
-import { timeZones } from '../../PageTools/TeyvatTime'
+import { HOUR_MS } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
+
+export const RESIN_MAX = 160
+export const timeZones = {
+  America: -5 * HOUR_MS,
+  Europe: HOUR_MS,
+  Asia: 8 * HOUR_MS,
+  'TW, HK, MO': 8 * HOUR_MS,
+}
+export type TimeZoneKey = keyof typeof timeZones
 
 interface IDisplayToolEntry {
   resin: number

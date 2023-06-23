@@ -5,6 +5,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import { weaponAsset } from '@genshin-optimizer/g-assets'
 import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
+import { getLevelString } from '@genshin-optimizer/gi-util'
 import { displayDataMap } from '.'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
@@ -13,7 +14,6 @@ import { input } from '../../Formula'
 import type { Data } from '../../Formula/type'
 import type { IDocumentHeader } from '../../Types/sheet'
 import type { ICachedWeapon } from '../../Types/weapon'
-import { getLevelString } from '../LevelData'
 import type { IWeaponSheet } from './IWeaponSheet'
 export default class WeaponSheet {
   readonly key: WeaponKey

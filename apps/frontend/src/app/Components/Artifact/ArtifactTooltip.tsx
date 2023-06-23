@@ -1,13 +1,17 @@
+import {
+  artDisplayValue,
+  getMainStatDisplayStr,
+} from '@genshin-optimizer/gi-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { clamp, unit } from '@genshin-optimizer/util'
 import { Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { getArtSheet } from '../../Data/Artifacts'
 import Artifact from '../../Data/Artifacts/Artifact'
-import KeyMap, { cacheValueString } from '../../KeyMap'
+import KeyMap from '../../KeyMap'
 import StatIcon from '../../KeyMap/StatIcon'
-import { iconInlineProps } from '../../SVGIcons'
 import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
-import { clamp } from '../../Util/Util'
 import BootstrapTooltip from '../BootstrapTooltip'
 import LocationName from '../Character/LocationName'
 import SqBadge from '../SqBadge'
@@ -43,7 +47,6 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
   const sheet = getArtSheet(art.setKey)
   const { slotKey, level, rarity, mainStatKey, substats } = art
   const slotName = sheet.getSlotName(slotKey)
-  const mainStatUnit = KeyMap.unit(mainStatKey)
   const mainVariant = KeyMap.getVariant(mainStatKey)
   return (
     <Box p={1}>
@@ -52,12 +55,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
       </Typography>
       <Typography variant="subtitle1" color={`${mainVariant}.main`}>
         <StatIcon statKey={mainStatKey} iconProps={iconInlineProps} />{' '}
-        {tk(mainStatKey)}{' '}
-        {cacheValueString(
-          Artifact.mainStatValue(mainStatKey, rarity, level) ?? 0,
-          KeyMap.unit(mainStatKey)
-        )}
-        {mainStatUnit}
+        {tk(mainStatKey)} {getMainStatDisplayStr(mainStatKey, rarity, level)}
       </Typography>
       <Typography
         variant="subtitle2"
@@ -80,10 +78,9 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
               >
                 <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
                 {tk(stat.key)}{' '}
-                <strong>{`+${cacheValueString(
-                  stat.value,
-                  KeyMap.unit(stat.key)
-                )}${KeyMap.unit(stat.key)}`}</strong>
+                <strong>{`+${artDisplayValue(stat.value, unit(stat.key))}${unit(
+                  stat.key
+                )}`}</strong>
               </Typography>
             )
         )}

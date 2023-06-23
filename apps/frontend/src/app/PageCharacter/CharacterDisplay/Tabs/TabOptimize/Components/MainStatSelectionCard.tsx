@@ -1,4 +1,10 @@
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import { allElementWithPhyKeys, artSlotsData } from '@genshin-optimizer/consts'
+import {
+  AtkIcon,
+  FlowerIcon,
+  HpIcon,
+  PlumeIcon,
+} from '@genshin-optimizer/gi-svgicons'
 import {
   Box,
   Button,
@@ -14,14 +20,9 @@ import BootstrapTooltip from '../../../../../Components/BootstrapTooltip'
 import SqBadge from '../../../../../Components/SqBadge'
 import { StatColoredWithUnit } from '../../../../../Components/StatDisplay'
 import { CharacterContext } from '../../../../../Context/CharacterContext'
-import Artifact from '../../../../../Data/Artifacts/Artifact'
 import { DatabaseContext } from '../../../../../Database/Database'
 import StatIcon from '../../../../../KeyMap/StatIcon'
-import { iconInlineProps } from '../../../../../SVGIcons'
-import FlowerIcon from '../../../../../SVGIcons/ArtifactSlot/FlowerIcon'
-import PlumeIcon from '../../../../../SVGIcons/ArtifactSlot/PlumeIcon'
-import AtkIcon from '../../../../../SVGIcons/Stats/AtkIcon'
-import HpIcon from '../../../../../SVGIcons/Stats/HpIcon'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { handleMultiSelect } from '../../../../../Util/MultiSelect'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'
@@ -50,11 +51,11 @@ export default function MainStatSelectionCard({
   const { database } = useContext(DatabaseContext)
   const { mainStatSlotTots, slotTots } = useMemo(() => {
     const catKeys = {
-      flowerMainStatTots: Artifact.slotMainStats('flower'),
-      plumeMainStatTots: Artifact.slotMainStats('plume'),
-      sandsMainStatTots: Artifact.slotMainStats('sands'),
-      gobletMainStatTots: Artifact.slotMainStats('goblet'),
-      circletMainStatTots: Artifact.slotMainStats('circlet'),
+      flowerMainStatTots: artSlotsData['flower'].stats,
+      plumeMainStatTots: artSlotsData['plume'].stats,
+      sandsMainStatTots: artSlotsData['sands'].stats,
+      gobletMainStatTots: artSlotsData['goblet'].stats,
+      circletMainStatTots: artSlotsData['circlet'].stats,
       slotTots: artifactsSlotsToSelectMainStats,
     } as const
     const catTotals = bulkCatTotal(catKeys, (ctMap) =>
@@ -123,7 +124,7 @@ export default function MainStatSelectionCard({
       </Box>
       {artifactsSlotsToSelectMainStats.map((slotKey) => {
         const selectedMainKeys = mainStatKeys[slotKey]
-        const mainKeys = Artifact.slotMainStats(slotKey)
+        const mainKeys = artSlotsData[slotKey].stats
         const mainKeysHandler = handleMultiSelect([...mainKeys])
         return (
           <Box key={slotKey}>

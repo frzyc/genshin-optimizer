@@ -1,12 +1,13 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
+import { cartesian } from '../../../Util/Util'
 import {
   computeFullArtRange,
-  type ArtifactsBySlot,
   countBuilds,
   type ArtifactBuildData,
+  type ArtifactsBySlot,
 } from '../../common'
-import { cartesian, objectKeyMap } from '../../../Util/Util'
 import type { Linear } from './linearUB'
 
 /**
@@ -137,7 +138,7 @@ function splitArts(
   return cartesian(...partition)
     .map((partition) => ({
       base,
-      values: objectKeyMap(allArtifactSlotKeys, (_, i) => partition[i]),
+      values: objKeyMap(allArtifactSlotKeys, (_, i) => partition[i]),
     }))
     .sort((a, b) => countBuilds(b) - countBuilds(a))
 }

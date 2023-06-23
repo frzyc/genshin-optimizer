@@ -1,3 +1,5 @@
+import { useBoolState, useTimeout } from '@genshin-optimizer/react-util'
+import { arrayMove, clamp, objPathValue } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -51,8 +53,6 @@ import type { InputPremodKey } from '../Formula'
 import { allInputPremodKeys } from '../Formula'
 import type { NodeDisplay } from '../Formula/uiData'
 import { UIData } from '../Formula/uiData'
-import useBoolState from '../ReactHooks/useBoolState'
-import useTimeout from '../ReactHooks/useTimeout'
 import type { CustomMultiTarget, CustomTarget } from '../Types/character'
 import type {
   AdditiveReactionKey,
@@ -68,7 +68,6 @@ import {
   allowedAdditiveReactions,
   allowedAmpReactions,
 } from '../Types/consts'
-import { arrayMove, clamp, deepClone, objPathValue } from '../Util/Util'
 import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal'
 
@@ -414,7 +413,7 @@ function CustomMultiTargetDisplay({
   const dupCustomTarget = useCallback(
     (index: number) => () => {
       const targets = [...target.targets]
-      targets.splice(index, 0, deepClone(targets[index]))
+      targets.splice(index, 0, structuredClone(targets[index]))
       setTarget({ ...target, targets })
     },
     [target, setTarget]

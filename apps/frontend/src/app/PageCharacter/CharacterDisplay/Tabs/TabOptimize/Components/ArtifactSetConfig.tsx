@@ -3,6 +3,9 @@ import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { CheckBox, CheckBoxOutlineBlank, Replay } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -34,14 +37,15 @@ import type { dataContextObj } from '../../../../../Context/DataContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getArtSheet, setKeysByRarities } from '../../../../../Data/Artifacts'
 import { artifactDefIcon } from '../../../../../Data/Artifacts/ArtifactSheet'
-import { handleArtSetExclusion } from '../../../../../Database/DataManagers/BuildSettingData'
 import { DatabaseContext } from '../../../../../Database/Database'
+import type { ArtSetExclusionKey } from '../../../../../Database/DataManagers/BuildSettingData'
+import {
+  allArtifactSetExclusionKeys,
+  handleArtSetExclusion,
+} from '../../../../../Database/DataManagers/BuildSettingData'
 import { UIData } from '../../../../../Formula/uiData'
 import { constant } from '../../../../../Formula/utils'
-import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
-import { iconInlineProps } from '../../../../../SVGIcons'
 import type { SetNum } from '../../../../../Types/consts'
-import { deepClone, objectKeyMap } from '../../../../../Util/Util'
 import { bulkCatTotal } from '../../../../../Util/totalUtils'
 import useBuildSetting from '../useBuildSetting'
 import SetInclusionButton from './SetInclusionButton'
@@ -78,8 +82,8 @@ export default function ArtifactSetConfig({
     []
   )
   const { artKeys, artSlotCount } = useMemo(() => {
-    const artSlotCount = objectKeyMap(artKeysByRarity, (_) =>
-      objectKeyMap(allArtifactSlotKeys, (_) => 0)
+    const artSlotCount = objKeyMap(artKeysByRarity, (_) =>
+      objKeyMap(allArtifactSlotKeys, (_) => 0)
     )
     database.arts.values.forEach(
       (art) =>
@@ -126,7 +130,7 @@ export default function ArtifactSetConfig({
       data: new UIData(
         {
           ...dataContext.data.data[0],
-          artSet: objectKeyMap(allArtifactSetKeys, (_) => constant(4)),
+          artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4)),
         },
         undefined
       ),
@@ -143,7 +147,7 @@ export default function ArtifactSetConfig({
   }, [conditional, characterDispatch])
   const setAllExclusion = useCallback(
     (setnum: number, exclude = true) => {
-      const artSetExclusion_ = deepClone(artSetExclusion)
+      const artSetExclusion_ = structuredClone(artSetExclusion)
       artKeysByRarity.forEach((k) => {
         if (exclude)
           artSetExclusion_[k] = [...(artSetExclusion_[k] ?? []), setnum]
@@ -642,10 +646,12 @@ function ArtifactSetCard({
             </Box>
           </Box>
         </Box>
-        <SetInclusionButton
-          setKey={setKey}
-          buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
-        />
+        {allArtifactSetExclusionKeys.includes(setKey as ArtSetExclusionKey) && (
+          <SetInclusionButton
+            setKey={setKey as ArtSetExclusionKey}
+            buttonGroupSx={{ '.MuiButton-root': { borderRadius: 0 } }}
+          />
+        )}
 
         {!!set4CondNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>

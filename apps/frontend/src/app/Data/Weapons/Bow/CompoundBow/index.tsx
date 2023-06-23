@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -17,7 +17,7 @@ const [condPassivePath, condPassive] = cond(key, 'InfusionArrow')
 const atk_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 4), (i) =>
+    ...objKeyMap(range(1, 4), (i) =>
       prod(subscript(input.weapon.refineIndex, atk_s), i)
     ),
   },
@@ -26,7 +26,7 @@ const atk_ = lookup(
 const atkSPD_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 4), (i) =>
+    ...objKeyMap(range(1, 4), (i) =>
       prod(subscript(input.weapon.refineIndex, atkSPD_s), i)
     ),
   },

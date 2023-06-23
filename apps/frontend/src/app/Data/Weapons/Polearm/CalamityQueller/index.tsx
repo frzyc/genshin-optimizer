@@ -9,7 +9,7 @@ import {
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -43,7 +43,7 @@ const atkInc = prod(
   ),
   lookup(
     condStack,
-    objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
+    objKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
     0
   ),
   subscript(input.weapon.refineIndex, atk_, { unit: '%' })

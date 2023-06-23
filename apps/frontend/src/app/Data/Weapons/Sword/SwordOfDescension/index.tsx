@@ -11,7 +11,7 @@ import {
   percent,
   prod,
 } from '../../../../Formula/utils'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -23,7 +23,7 @@ const data_gen = allStats.weapon.data[key]
 
 const atk = lookup(
   input.charKey,
-  objectKeyMap(allTravelerKeys, (_) => constant(66)),
+  objKeyMap(allTravelerKeys, (_) => constant(66)),
   naught
 )
 const dmg_ = equal(

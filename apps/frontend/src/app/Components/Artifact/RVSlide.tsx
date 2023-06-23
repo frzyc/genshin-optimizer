@@ -1,6 +1,6 @@
+import { clamp } from '@genshin-optimizer/util'
 import { Card, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
-import { clamp } from '../../Util/Util'
 import CustomNumberInput from '../CustomNumberInput'
 
 export default function RVSlide({
@@ -47,7 +47,7 @@ export default function RVSlide({
     >
       <CustomNumberInput
         value={sliderLow}
-        onChange={(val) => setLow(clamp(val, 0, levelHigh))}
+        onChange={(val) => setLow(clamp(val ?? 0, 0, levelHigh))}
         sx={{ px: 1, pl: 2, width: 100, borderRadius: '4px 0 0 4px' }}
         inputProps={{ sx: { textAlign: 'right' } }}
         startAdornment={'RV: '}
@@ -66,7 +66,7 @@ export default function RVSlide({
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) => setHigh(clamp(val, levelLow, 900))}
+        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 900))}
         sx={{ px: 1, width: 50, borderRadius: '0 4px 4px 0' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}
