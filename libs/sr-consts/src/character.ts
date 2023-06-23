@@ -57,9 +57,9 @@ export const path = [
 export type PathKey = (typeof path)[number]
 
 export const allTrailblazerGeneredKeys = [
-  "TrailBlazerPhysicalM",
-  "TrailBlazerPhysicalF",
-  "TrailBlazerFireM",
-  "TrailBlazerFireF"
+  'TrailBlazerPhysicalM',
+  'TrailBlazerPhysicalF',
+  'TrailBlazerFireM',
+  'TrailBlazerFireF',
 ] as const
 export type TrailBlazerGeneredKey = (typeof allTrailblazerGeneredKeys)[number]
