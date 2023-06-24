@@ -1,4 +1,4 @@
-import { erf } from './mathUtil'
+import { erf, gaussPDF } from './mathUtil'
 // import { Module } from "wasmpack/assembly.js";
 
 /** From a 1D Gaussian mean & variance, get P(x > mu) and E[x | x > mu] */
@@ -14,7 +14,7 @@ export function gaussianPE(
 
   const z = (x - mean) / Math.sqrt(variance)
   const p = (1 - erf(z / Math.sqrt(2))) / 2
-  const phi = Math.exp((-z * z) / 2) / Math.sqrt(2 * Math.PI)
+  const phi = gaussPDF(z)
 
   const y2 = 1 / (z * z)
   // When z is small, p and phi are both nonzero so (phi/p - z) is ok.

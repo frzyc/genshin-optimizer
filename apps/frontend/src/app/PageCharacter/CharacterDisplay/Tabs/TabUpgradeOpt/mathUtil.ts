@@ -1,5 +1,5 @@
-// https://oeis.org/A008287
-// step 1: a basic LUT with a few steps of Pascal's triangle
+// `quadronomial` coefficients (See https://oeis.org/A008287)
+// step 1: a basic lookup-table with a few steps of Pascal's triangle
 const quadrinomials = [
   [1],
   [1, 1, 1, 1],
@@ -9,7 +9,7 @@ const quadrinomials = [
   [1, 5, 15, 35, 65, 101, 135, 155, 155, 135, 101, 65, 35, 15, 5, 1],
 ]
 
-// step 2: a function that builds out the LUT if it needs to.
+// step 2: a function that builds out the lookup-table if it needs to.
 export function quadrinomial(n: number, k: number) {
   while (n >= quadrinomials.length) {
     const s = quadrinomials.length
@@ -63,14 +63,16 @@ export function gaussPDF(x: number, mu?: number, sig2?: number) {
   )
 }
 
-// Manually cached multinomial distribution.
-// Example: sigma([2, 3, 0, 0], 5)
-//   gives the probability (n1=2, n2=3, n3=0, n4=0) given N=5 total rolls. (uniform distribution is assumed for the four bins)
-// `sigr` and `sig_arr` constitute a near perfect hash of all combinations for N=1 to N=5.
-// This function has undefined behavior for N > 5 and N = 0
+// `sigr` and `sig_arr` constitute a near perfect hash (https://en.wikipedia.org/wiki/Perfect_hash_function) of all combinations for N=1 to N=5.
 // prettier-ignore
 const sig_arr = [270 / 1024, 80 / 1024, 0, 12 / 256, 8 / 256, 120 / 1024, 0, 60 / 1024, 4 / 256, 60 / 1024, 4 / 256, 30 / 1024, 24 / 256, 160 / 1024, 1 / 64, 1 / 64, 24 / 256, 1 / 64, 12 / 256, 0, 6 / 256, 2 / 16, 6 / 256, 0, 81 / 256, 16 / 256, 0, 27 / 64, 12 / 64, 0, 1 / 16, 1 / 16, 12 / 64, 1 / 16, 6 / 64, 3 / 4, 2 / 4, 243 / 1024, 32 / 1024, 0, 108 / 256, 32 / 256, 0, 9 / 64, 6 / 64, 48 / 256, 0, 24 / 256, 3 / 64, 5 / 1024, 3 / 64, 5 / 1024, 0, 405 / 1024, 80 / 1024, 0, 54 / 256, 90 / 1024, 40 / 1024, 0, 1 / 256, 1 / 256, 40 / 1024, 1 / 256, 20 / 1024, 9 / 16, 4 / 16, 0, 1 / 4, 1 / 4, 0, 1 / 4, 27 / 64, 8 / 64, 0, 6 / 16, 4 / 16, 10 / 1024, 0, 10 / 1024, 2 / 16, 0, 0, 0, 15 / 1024, 10 / 1024, 1 / 1024, 1 / 1024, 0, 1 / 1024]
 const sigr = [35, 64, 70, 21, 33, 45, 12, 0, 53, 76, 48, 86]
+/**
+ * Manually cached multinomial distribution with uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
+ * Algebraically = N! / (n1! n2! n3! n4!) * (1/4)^N
+ *
+ * WARNING: This function has undefined behavior for N > 5 and N = 0
+ */
 function sigma(ss: number[], N: number) {
   const ssum = ss.reduce((a, b) => a + b)
   if (ss.length > 4 || ssum > N) return 0
