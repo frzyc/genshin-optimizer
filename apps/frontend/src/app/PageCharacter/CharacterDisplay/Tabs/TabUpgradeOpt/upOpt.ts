@@ -140,6 +140,7 @@ export class UpOptCalculator {
   baseBuild: UpOptBuild
   nodes: OptNode[]
   thresholds: number[]
+  calc4th = false
 
   skippableDerivatives: boolean[]
   eval: (
@@ -148,20 +149,15 @@ export class UpOptCalculator {
   ) => { v: number; grads: number[] }[]
 
   artifacts: UpOptArtifact[] = []
+  fixedIx = 0
 
   /**
    * Constructs UpOptCalculator.
    * @param nodes Formulas to find upgrades for. nodes[0] is main objective, the rest are constraints.
    * @param thresholds Constraint values. thresholds[0] will be auto-populated with current objective value.
-   * @param baseStats Character base stats
    * @param build Build to check 1-swaps against.
    */
-  constructor(
-    nodes: OptNode[],
-    thresholds: number[],
-    baseStats: DynStat,
-    build: UpOptBuild
-  ) {
+  constructor(nodes: OptNode[], thresholds: number[], build: UpOptBuild) {
     this.baseBuild = build
     this.nodes = nodes
     this.thresholds = thresholds
@@ -175,7 +171,7 @@ export class UpOptCalculator {
     })
     const evalOpt = optimize(toEval, {}, ({ path: [p] }) => p !== 'dyn')
 
-    const evalFn = precompute(evalOpt, baseStats, (f) => f.path[1], 5)
+    const evalFn = precompute(evalOpt, {}, (f) => f.path[1], 5)
     thresholds[0] = evalFn(Object.values(build))[0] // dmg threshold is current objective value
 
     this.skippableDerivatives = allSubstatKeys.map((sub) =>
@@ -224,6 +220,51 @@ export class UpOptCalculator {
         ), // Assumes substats cannot match main stat key
       },
     })
+  }
+
+  /** Calcs all artifacts using Fast method */
+  calcFastAll() {
+    function score(a: UpOptArtifact) {
+      return a.result!.p * a.result!.upAvg
+    }
+    this.artifacts.forEach((_, i) => this.calcFast(i, this.calc4th))
+    this.artifacts.sort((a, b) => score(b) - score(a))
+    this.fixedIx = 0
+  }
+
+  calcSlowToIndex(ix: number, lookahead = 5) {
+    const fixedList = this.artifacts.slice(0, this.fixedIx)
+    const arr = this.artifacts.slice(this.fixedIx)
+
+    function score(a: UpOptArtifact) {
+      return a.result!.p * a.result!.upAvg
+    }
+    function compare(a: UpOptArtifact, b: UpOptArtifact) {
+      if (score(a) > 1e-5 || score(b) > 1e-5) return score(b) - score(a)
+
+      const meanA = a.result!.distr.gmm.reduce(
+        (pv, { phi, mu }) => pv + phi * mu,
+        0
+      )
+      const meanB = b.result!.distr.gmm.reduce(
+        (pv, { phi, mu }) => pv + phi * mu,
+        0
+      )
+      return meanB - meanA
+    }
+
+    // Assume `fixedList` is all slowEval'd.
+    let i = 0
+    const end = Math.min(ix - this.fixedIx + lookahead, arr.length)
+    do {
+      for (; i < end; i++) this.calcSlow(this.fixedIx + i, this.calc4th)
+
+      arr.sort(compare)
+      this.artifacts = [...fixedList, ...arr]
+      for (i = 0; i < end; i++) {
+        if (arr[i].result!.evalMode === ResultType.Fast) break
+      }
+    } while (i < end)
   }
 
   /* Fast distribution to result. */
@@ -354,6 +395,7 @@ export class UpOptCalculator {
   }
 
   calcSlow(ix: number, calc4th = true) {
+    if (this.artifacts[ix].result?.evalMode === ResultType.Slow) return
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcSlow4th(ix)
     else this._calcSlow(ix)

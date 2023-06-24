@@ -32,12 +32,14 @@ import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import { gaussPDF } from './mathUtil'
+import type { UpOptArtifact } from './upOpt'
 
 type Data = {
-  upgradeOpt: QueryResult
+  upgradeOpt: UpOptArtifact
   showTrue?: boolean
   objMin: number
   objMax: number
+  thresholds: number[]
   ix?: number
 }
 type ChartData = {
@@ -63,6 +65,7 @@ const nbins = 50
 const plotPoints = 500
 export default function UpgradeOptChartCard({
   upgradeOpt,
+  thresholds,
   objMin,
   objMax,
 }: Data) {
@@ -74,7 +77,7 @@ export default function UpgradeOptChartCard({
     throw new Error(`artifact ${upgradeOpt.id} not found.`)
   }
 
-  const constrained = upgradeOpt.thresholds.length > 1
+  const constrained = thresholds.length > 1
 
   const slot = bla.slotKey
   const { data } = useContext(DataContext)
@@ -88,16 +91,16 @@ export default function UpgradeOptChartCard({
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 
   const gauss = (x: number) =>
-    upgradeOpt.distr.gmm.reduce(
+    upgradeOpt.result!.distr.gmm.reduce(
       (pv, { phi, mu, sig2 }) => pv + phi * gaussPDF(x, mu, sig2),
       0
     )
   const gaussConstrained = (x: number) =>
-    upgradeOpt.distr.gmm.reduce(
+    upgradeOpt.result!.distr.gmm.reduce(
       (pv, { phi, cp, mu, sig2 }) => pv + cp * phi * gaussPDF(x, mu, sig2),
       0
     )
-  const thresh = upgradeOpt.thresholds
+  const thresh = thresholds
   const thr0 = thresh[0]
   // const perc = (x: number) => 100 * (x - thr0) / thr0;
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
@@ -116,7 +119,7 @@ export default function UpgradeOptChartCard({
   // go back and add delta distributions.
   const deltas: { [key: number]: number } = {}
   const deltasConstrained: { [key: number]: number } = {}
-  upgradeOpt.distr.gmm.forEach(({ phi, mu, sig2, cp }) => {
+  upgradeOpt.result!.distr.gmm.forEach(({ phi, mu, sig2, cp }) => {
     if (sig2 <= 0) {
       deltas[mu] = (deltas[mu] ?? 0) + phi
       deltasConstrained[mu] = (deltasConstrained[mu] ?? 0) + phi * cp
@@ -141,36 +144,37 @@ export default function UpgradeOptChartCard({
     // When `calcExacts` is pressed, we may want to sink/swim this artifact to its proper spot.
     // Or not b/c people only really need a fuzzy ordering anyways.
     if (!calcExacts) return
-    const exactData = allUpgradeValues(upgradeOpt)
-    let true_p = 0
-    let true_e = 0
+    throw new Error('Not Implemented!')
+    // const exactData = allUpgradeValues(upgradeOpt)
+    // let true_p = 0
+    // let true_e = 0
 
-    const bins = new Array(nbins).fill(0)
-    const binsConstrained = new Array(nbins).fill(0)
-    const binstep = (maax - miin) / nbins
+    // const bins = new Array(nbins).fill(0)
+    // const binsConstrained = new Array(nbins).fill(0)
+    // const binstep = (maax - miin) / nbins
 
-    exactData.forEach(({ p, v }) => {
-      const whichBin = Math.min(Math.trunc((v[0] - miin) / binstep), nbins - 1)
-      bins[whichBin] += p
+    // exactData.forEach(({ p, v }) => {
+    //   const whichBin = Math.min(Math.trunc((v[0] - miin) / binstep), nbins - 1)
+    //   bins[whichBin] += p
 
-      if (v.every((val, ix) => ix === 0 || val > thresh[ix])) {
-        binsConstrained[whichBin] += p
-        if (v[0] > thr0) {
-          true_p += p
-          true_e += p * (v[0] - thr0)
-        }
-      }
-    })
-    if (true_p > 0) true_e = true_e / true_p
+    //   if (v.every((val, ix) => ix === 0 || val > thresh[ix])) {
+    //     binsConstrained[whichBin] += p
+    //     if (v[0] > thr0) {
+    //       true_p += p
+    //       true_e += p * (v[0] - thr0)
+    //     }
+    //   }
+    // })
+    // if (true_p > 0) true_e = true_e / true_p
 
-    const dataExact: ChartData[] = bins.map((dens, ix) => ({
-      x: perc(miin + ix * binstep),
-      exact: dens / binstep,
-      exactCons: binsConstrained[ix] / binstep,
-    }))
-    setTrueP(true_p)
-    setTrueE(true_e)
-    setTrueData(dataExact)
+    // const dataExact: ChartData[] = bins.map((dens, ix) => ({
+    //   x: perc(miin + ix * binstep),
+    //   exact: dens / binstep,
+    //   exactCons: binsConstrained[ix] / binstep,
+    // }))
+    // setTrueP(true_p)
+    // setTrueE(true_e)
+    // setTrueData(dataExact)
   }, [calcExacts, maax, miin, thr0, thresh, upgradeOpt, perc])
 
   if (trueData.length === 0) {
@@ -181,8 +185,8 @@ export default function UpgradeOptChartCard({
   }
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
-  const reportP = trueP >= 0 ? trueP : upgradeOpt.prob
-  const reportD = trueE >= 0 ? trueE : upgradeOpt.upAvg
+  const reportP = trueP >= 0 ? trueP : upgradeOpt.result!.p
+  const reportD = trueE >= 0 ? trueE : upgradeOpt.result!.upAvg
   const chartData = dataEst.concat(trueData)
 
   // console.log('repd', reportD, upgradeOpt.upAvg)

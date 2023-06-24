@@ -67,6 +67,8 @@ import {
 } from '@genshin-optimizer/consts'
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 
+import { UpOptCalculator } from './upOpt'
+
 export default function TabUpopt() {
   const {
     character: { key: characterKey },
@@ -139,6 +141,9 @@ export default function TabUpopt() {
   const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(
     undefined as UpgradeOptResult | undefined
   )
+  const [upOptCalc, setUpOptCalc] = useState(
+    undefined as UpOptCalculator | undefined
+  )
 
   const [show20, setShow20] = useState(true)
   const [check4th, setCheck4th] = useState(true)
@@ -192,7 +197,7 @@ export default function TabUpopt() {
   const artifactsToDisplayPerPage = 5
   const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } =
     useMemo(() => {
-      if (!artifactUpgradeOpts)
+      if (!artifactUpgradeOpts || !upOptCalc)
         return {
           artifactsToShow: [],
           numPages: 0,
@@ -204,20 +209,34 @@ export default function TabUpopt() {
         artifactUpgradeOpts.arts.length / artifactsToDisplayPerPage
       )
       const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-      const toShow = artifactUpgradeOpts.arts.slice(
+      const toShow_old = artifactUpgradeOpts.arts.slice(
         currentPageIndex * artifactsToDisplayPerPage,
         (currentPageIndex + 1) * artifactsToDisplayPerPage
       )
-      const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
+      const toShow = upOptCalc.artifacts.slice(
+        currentPageIndex * artifactsToDisplayPerPage,
+        (currentPageIndex + 1) * artifactsToDisplayPerPage
+      )
+      // const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
+      const thr = upOptCalc.thresholds[0]
+
+      console.log(toShow_old)
+      console.log(toShow)
 
       return {
         artifactsToShow: toShow,
         numPages,
         currentPageIndex,
-        minObj0: toShow.reduce((a, b) => Math.min(b.distr.lower, a), thr),
-        maxObj0: toShow.reduce((a, b) => Math.max(b.distr.upper, a), thr),
+        minObj0: toShow.reduce(
+          (a, b) => Math.min(b.result!.distr.lower, a),
+          thr
+        ),
+        maxObj0: toShow.reduce(
+          (a, b) => Math.max(b.result!.distr.upper, a),
+          thr
+        ),
       }
-    }, [artifactUpgradeOpts, artifactsToDisplayPerPage, pageIdex])
+    }, [artifactUpgradeOpts, pageIdex, upOptCalc])
 
   const setPage = useCallback(
     (e, value) => {
@@ -227,17 +246,10 @@ export default function TabUpopt() {
       const end = value * artifactsToDisplayPerPage
       const zz = upgradeOptExpandSink(artifactUpgradeOpts, start, end)
       setArtifactUpgradeOpts(zz)
+      upOptCalc?.calcSlowToIndex(end)
       setpageIdex(value - 1)
     },
-    [
-      setpageIdex,
-      setArtifactUpgradeOpts,
-      invScrollRef,
-      currentPageIndex,
-      artifactsToDisplayPerPage,
-      artifactUpgradeOpts,
-      upgradeOptExpandSink,
-    ]
+    [artifactUpgradeOpts, currentPageIndex, upgradeOptExpandSink, upOptCalc]
   )
 
   const generateBuilds = useCallback(async () => {
@@ -281,10 +293,6 @@ export default function TabUpopt() {
           return { value: filterNode, minimum }
         })
     )
-    // const valueFilter: { value: NumNode, minimum: number }[] = Object.entries(statFilters).map(([key, value]) => {
-    //   if (key.endsWith("_")) value = value / 100
-    //   return { value: input.total[key], minimum: value }
-    // }).filter(x => x.value && x.minimum > -Infinity)
 
     const equippedArts =
       database.chars.get(characterKey)?.equippedArtifacts ??
@@ -320,7 +328,7 @@ export default function TabUpopt() {
           case 5:
             return !artSetExclusion[setKey].includes(4)
           default:
-            throw Error('error in respectSex: num > 5')
+            throw Error('error in respectSetExclude: num > 5')
         }
       })
       if (!pass) return false
@@ -342,6 +350,41 @@ export default function TabUpopt() {
       }
     }
 
+    const nodesPreOpt = [
+      optimizationTargetNode,
+      ...valueFilter.map((x) => x.value),
+    ]
+    const nodes = optimize(
+      nodesPreOpt,
+      workerData,
+      ({ path: [p] }) => p !== 'dyn'
+    )
+    const upoptCalc = new UpOptCalculator(
+      nodes,
+      [-Infinity, ...valueFilter.map((x) => x.minimum)],
+      curEquip
+    )
+    upoptCalc.calc4th = check4th
+    database.arts.values
+      .filter((art) => art.rarity === 5)
+      .filter(respectSexExclusion)
+      .filter((art) => show20 || art.level !== 20)
+      .filter(
+        (art) =>
+          !useFilters ||
+          !mainStatKeys[art.slotKey]?.length ||
+          mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
+      )
+      .filter(
+        (art) =>
+          !useFilters || (levelLow <= art.level && art.level <= levelHigh)
+      )
+      .forEach((art) => upoptCalc.addArtifact(art))
+    upoptCalc.calcFastAll()
+    upoptCalc.calcSlowToIndex(5)
+    setUpOptCalc(upoptCalc)
+
+    // OLD METHOD
     const queryArts: QueryArtifact[] = database.arts.values
       .filter((art) => art.rarity === 5)
       .filter(respectSexExclusion)
@@ -357,18 +400,10 @@ export default function TabUpopt() {
           !useFilters || (levelLow <= art.level && art.level <= levelHigh)
       )
       .map((art) => toQueryArtifact(art, 20))
+
     const qaLookup: Dict<string, QueryArtifact> = {}
     queryArts.forEach((art) => (qaLookup[art.id] = art))
 
-    const nodesPreOpt = [
-      optimizationTargetNode,
-      ...valueFilter.map((x) => x.value),
-    ]
-    const nodes = optimize(
-      nodesPreOpt,
-      workerData,
-      ({ path: [p] }) => p !== 'dyn'
-    )
     const query = querySetup(
       nodes,
       valueFilter.map((x) => x.minimum),
@@ -378,6 +413,7 @@ export default function TabUpopt() {
     let artUpOpt = queryArts.map((art) =>
       evalArtifact(query, art, false, check4th)
     )
+
     artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
 
     // Re-sort & slow eval
@@ -385,6 +421,7 @@ export default function TabUpopt() {
     upOpt = upgradeOptExpandSink(upOpt, 0, 5)
     setArtifactUpgradeOpts(upOpt)
     console.log('result', upOpt)
+    // OLD METHOD
   }, [
     buildSetting,
     characterKey,
@@ -638,6 +675,7 @@ export default function TabUpopt() {
                           <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
                             <UpgradeOptChartCard
                               upgradeOpt={art}
+                              thresholds={upOptCalc?.thresholds ?? []}
                               objMax={maxObj0}
                               objMin={minObj0}
                             />
