@@ -362,6 +362,7 @@ const sheet: ICharacterSheet = {
       }),
       ct.condTem('constellation6', {
         teamBuff: true,
+        canShow: equal(condBurstBenefit, 'on', 1),
         path: condC6CritPath,
         value: condC6Crit,
         name: ct.ch('giftCondName'),

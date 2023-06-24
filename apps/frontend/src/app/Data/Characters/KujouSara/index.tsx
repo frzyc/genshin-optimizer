@@ -275,6 +275,7 @@ const sheet: ICharacterSheet = {
         value: condC6,
         path: condC6Path,
         teamBuff: true,
+        canShow: equal(condSkillTenguAmbush, 'TenguJuuraiAmbush', 1),
         name: ct.ch('c6.electroCritDmg'),
         states: {
           c6: {

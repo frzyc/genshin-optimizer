@@ -121,7 +121,7 @@ const a1DetectorStacks_physical_dmg_ = equal(
   target.charKey,
   a1DetectorStacks_physical_dmg_disp
 )
-
+const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6InSoulwind_physical_critDMG_disp = greaterEq(
   input.constellation,
   6,
@@ -315,12 +315,24 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
-      ct.headerTem('constellation6', {
+      ct.condTem('constellation6', {
         teamBuff: true,
-        fields: [
-          {
-            node: c6InSoulwind_physical_critDMG_disp,
+        canShow: equal(condInSoulwind, 'on', 1),
+        path: condC6CritPath,
+        value: condC6Crit,
+        name: ct.ch('inSoulwind'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c6InSoulwind_physical_critDMG_disp,
+              },
+            ],
           },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
           {
             text: ct.ch('incDetectorStacks'),
             value: dm.constellation6.extraStacks,
