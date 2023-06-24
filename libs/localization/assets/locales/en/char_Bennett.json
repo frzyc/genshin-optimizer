@@ -5,7 +5,7 @@
   },
   "additionalATK": {
     "name": "Additional ATK Bonus Scaling",
-    "value":  "20% Base ATK"
+    "value": "20% Base ATK"
   },
   "c4DMG": "Unexpected Odyssey DMG",
   "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion</pyro>"
