@@ -18,7 +18,7 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -111,7 +111,7 @@ const [condC4Path, condC4] = cond(key, 'C4')
 
 const enerRechElectroSigil_ = lookup(
   condElectroSigil,
-  objectKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
+  objKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
   naught,
   KeyMap.info('enerRech_')
 )
@@ -356,7 +356,7 @@ const sheet: ICharacterSheet = {
         path: condElectroSigilPath,
         name: ct.ch('electroSigil'),
         states: {
-          ...objectKeyMap(range(1, 3), (i) => ({
+          ...objKeyMap(range(1, 3), (i) => ({
             name: st('stack', { count: i }),
             fields: [
               {

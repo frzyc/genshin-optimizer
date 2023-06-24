@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -51,7 +51,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
       name: trm('condName'),
-      states: objectKeyMap(range(1, 3), (i) => ({
+      states: objKeyMap(range(1, 3), (i) => ({
         name: st('stack', { count: i }),
         fields: [
           {

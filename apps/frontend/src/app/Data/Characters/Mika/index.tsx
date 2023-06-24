@@ -12,7 +12,7 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -108,7 +108,7 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
     'on',
     lookup(
       condA1DetectorStacks,
-      objectKeyMap(detectorStacksArr, (stack) =>
+      objKeyMap(detectorStacksArr, (stack) =>
         prod(stack, percent(dm.passive1.physical_dmg_))
       ),
       naught,
@@ -306,7 +306,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         canShow: equal(condInSoulwind, 'on', 1),
         name: ct.ch('numDetectorStacks'),
-        states: objectKeyMap(detectorStacksArr, (stack) => ({
+        states: objKeyMap(detectorStacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [
             {

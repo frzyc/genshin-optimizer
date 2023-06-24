@@ -1,3 +1,4 @@
+import { objMap } from '@genshin-optimizer/util'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
@@ -8,7 +9,6 @@ import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { customRead } from '../../Formula/utils'
-import { objectMap } from '../../Util/Util'
 import CardDark from '../Card/CardDark'
 import CardHeaderCustom from '../Card/CardHeaderCustom'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
@@ -51,7 +51,7 @@ function Section({
   )
   const displayNsReads = useMemo(
     () =>
-      objectMap(displayNs, (n, nodeKey) =>
+      objMap(displayNs, (n, nodeKey) =>
         customRead(['display', sectionKey, nodeKey])
       ),
     [displayNs, sectionKey]

@@ -1,7 +1,16 @@
-import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
+import type {
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
+import type {
+  AvatarSkillDepotExcelConfigData,
+  CharacterId,
+  WeaponId,
+} from '@genshin-optimizer/dm'
 import {
   artifactIdMap,
-  artifactPiecesData,
+  reliquaryExcelConfigData,
   artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -17,13 +26,14 @@ import {
   weaponExcelConfigData,
   weaponIdMap,
 } from '@genshin-optimizer/dm'
-import { dumpFile } from '@genshin-optimizer/pipeline'
+import { dumpFile, generateIndexFromObj } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
 import * as fs from 'fs'
 import * as path from 'path'
 
-export const PROJ_PATH =
-  `${__dirname}/../../../../../libs/g-assets/src` as const
+const WORKSPACE_ROOT_PATH = process.env['NX_WORKSPACE_ROOT']
+export const DEST_PROJ_PATH =
+  `${WORKSPACE_ROOT_PATH}/libs/g-assets/src` as const
 
 type CharacterIcon = {
   icon: string
@@ -34,8 +44,11 @@ type CharacterIcon = {
 type CharacterIconData = { [key: string]: CharacterIcon }
 //An object to store all the asset related data.
 export const AssetData = {
-  weapons: {},
-  artifacts: {},
+  weapons: {} as Record<WeaponKey, { icon: string; awakenIcon: string }>,
+  artifacts: {} as Record<
+    ArtifactSetKey,
+    Partial<Record<ArtifactSlotKey, string>>
+  >,
   chars: {} as CharacterIconData,
 }
 
@@ -45,7 +58,7 @@ export default function loadImages() {
     return console.log(
       `libs/dm/Texture2D does not exist, no assets will be copied.`
     )
-  function copyFile(src, dest) {
+  function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
       console.warn('Cannot find file', src)
       return
@@ -63,13 +76,13 @@ export default function loadImages() {
 
     const pieces = Object.fromEntries(
       containsList.map((pieceId) => {
-        const pieceData = artifactPiecesData[pieceId]
+        const pieceData = reliquaryExcelConfigData[pieceId]
         if (!pieceData)
           throw `No piece data with id ${pieceId} in setId ${setId}`
         const { icon, equipType } = pieceData
         return [artifactSlotMap[equipType], icon]
       })
-    )
+    ) as Partial<Record<ArtifactSlotKey, string>>
 
     AssetData.artifacts[artifactIdMap[setId]] = pieces
   })
@@ -77,7 +90,7 @@ export default function loadImages() {
   // Get the icon/awakened for each weapon
   Object.entries(weaponExcelConfigData).forEach(([weaponid, weaponData]) => {
     const { icon, awakenIcon } = weaponData
-    AssetData.weapons[weaponIdMap[weaponid]] = {
+    AssetData.weapons[weaponIdMap[weaponid as WeaponId]] = {
       icon,
       awakenIcon,
     }
@@ -88,7 +101,7 @@ export default function loadImages() {
     const { iconName, sideIconName } = charData
 
     let banner, bar
-    if (fetterCharacterCardExcelConfigData[charid]) {
+    if (fetterCharacterCardExcelConfigData[charid as CharacterId]) {
       const { rewardId } = fetterCharacterCardExcelConfigData[charid]
       const { rewardItemList } = rewardExcelConfigData[rewardId]
       const { itemId } = rewardItemList[0]
@@ -214,42 +227,17 @@ export default function loadImages() {
     (icon, keys) => {
       copyFile(
         `${DM2D_PATH}/${icon}.png`,
-        `${PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
+        `${DEST_PROJ_PATH}/gen/${keys.slice(0, -1).join('/')}/${icon}.png`
       )
     }
   )
 
   // Add in manually added assets that can't be datamined
   AssetData.chars['Somnia'] = {} as CharacterIcon
-  AssetData.weapons['QuantumCatalyst'] = {}
-
-  function crawlGen(obj, path) {
-    const keys = Object.keys(obj)
-    if (!keys.length) return
-    const isImg = typeof Object.values(obj)[0] === 'string'
-    // generate a index.ts using keys
-    const imports = Object.entries(obj)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([k, v]) => `import ${k} from './${isImg ? `${v}.png` : k}'`)
-      .join('\n')
-    const dataContent = keys
-      .sort()
-      .map((k) => `  ${k},`)
-      .join('\n')
-
-    const indexContent = `// This is a generated index file.
-${imports}
-
-const data = {
-${dataContent}
-} as const
-export default data
-`
-    fs.writeFileSync(`${path}/index.ts`, indexContent)
-
-    Object.entries(obj).forEach(([key, val]) => {
-      if (typeof val === 'object') crawlGen(val, `${path}/${key}`)
-    })
+  AssetData.weapons['QuantumCatalyst'] = {} as {
+    icon: string
+    awakenIcon: string
   }
-  crawlGen(AssetData, `${PROJ_PATH}/gen`)
+
+  generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
 }

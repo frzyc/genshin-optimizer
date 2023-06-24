@@ -1,3 +1,4 @@
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
@@ -19,12 +20,11 @@ import {
 import type { Data } from '../Formula/type'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
-import type { CharacterKey, Gender } from '../Types/consts'
 import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
 import useDBMeta from './useDBMeta'
-import useForceUpdate from './useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -78,7 +78,7 @@ function getTeamDataCalc(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
-  gender: Gender,
+  gender: GenderKey,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {

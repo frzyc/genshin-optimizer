@@ -13,7 +13,7 @@ import {
   prod,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -152,7 +152,7 @@ const c6Electro_dmg_ = greaterEq(
   prod(
     lookup(
       condC6Stack,
-      objectKeyMap(range(1, 4), (i) => constant(i)),
+      objKeyMap(range(1, 4), (i) => constant(i)),
       constant(0)
     ),
     dm.constellation6.electroInc
@@ -392,7 +392,7 @@ const sheet: ICharacterSheet = {
         value: condC6Stack,
         path: condC6StackPath,
         name: st('hitOp.normalChargedSkillBurst'),
-        states: objectKeyMap(range(1, 4), (i) => ({
+        states: objKeyMap(range(1, 4), (i) => ({
           name: st('stack', { count: i }),
           fields: [
             {

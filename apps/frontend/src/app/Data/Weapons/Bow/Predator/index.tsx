@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { equal, lookup, naught, percent, prod } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -17,14 +17,14 @@ const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const normal_dmg_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 2), (i) => prod(normalInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(normalInc, i)),
   },
   naught
 )
 const charged_dmg_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
   },
   naught
 )

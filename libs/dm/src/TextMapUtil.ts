@@ -1,3 +1,4 @@
+import type { Language } from '@genshin-optimizer/pipeline'
 import { readDMJSON } from './util'
 
 export const TextMapCHS = JSON.parse(readDMJSON('TextMap/TextMapCHS.json'))
@@ -32,4 +33,4 @@ export const languageMap = {
   th: TextMapTH,
   tr: TextMapTR,
   vi: TextMapVI,
-} as const
+} as Record<Language, Record<string, string>>

@@ -3,7 +3,7 @@ import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -45,7 +45,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('conditional')),
       name: trm('condName'),
-      states: objectKeyMap(condPassiveStates, (state) => ({
+      states: objKeyMap(condPassiveStates, (state) => ({
         name: trm(state),
         fields: [
           {

@@ -1,5 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyValMap } from '@genshin-optimizer/util'
 import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import type { Data, DisplaySub } from '../../../Formula/type'
@@ -15,7 +16,6 @@ import {
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { absorbableEle } from '../../../Types/consts'
-import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import {
@@ -89,7 +89,7 @@ export default function anemo(
     6,
     equal(condC6, 'on', dm.constellation6.enemyRes_)
   )
-  const nodesC6 = objectKeyValueMap(absorbableEle, (ele) => [
+  const nodesC6 = objKeyValMap(absorbableEle, (ele) => [
     `${ele}_enemyRes_`,
     greaterEq(
       input.constellation,

@@ -11,7 +11,7 @@ import {
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, objectKeyValueMap, range } from '../../../Util/Util'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -88,7 +88,7 @@ const dm = {
   },
 } as const
 const [condSkillPath, condSkill] = cond(key, 'skill')
-const nodesSkill = objectKeyValueMap(allElementWithPhyKeys, (k) => [
+const nodesSkill = objKeyValMap(allElementWithPhyKeys, (k) => [
   `${k}_enemyRes_`,
   equal('on', condSkill, percent(dm.skill.enemyRes_)),
 ])
@@ -99,7 +99,7 @@ const nodeP1 = greaterEq(
   1,
   lookup(
     condP1,
-    objectKeyMap(range(1, 5), (i) => percent(dm.passive1.shield_ * i)),
+    objKeyMap(range(1, 5), (i) => percent(dm.passive1.shield_ * i)),
     naught
   )
 )

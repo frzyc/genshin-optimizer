@@ -2,6 +2,7 @@ import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   allWeaponKeys,
+  charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { ArrowRightAlt } from '@mui/icons-material'
@@ -27,7 +28,6 @@ import SqBadge from '../Components/SqBadge'
 import { artStatPercent } from '../Data/Artifacts/Artifact'
 import { DatabaseContext } from '../Database/Database'
 import useDBMeta from '../ReactHooks/useDBMeta'
-import { charKeyToCharName } from '../Types/consts'
 
 export default function PageDocumentation() {
   // const { t } = useTranslation("documentation")
@@ -356,7 +356,7 @@ function CharacterKeyPane() {
     .map(
       (k) =>
         `"${k}" //${t(
-          `charNames_gen:${charKeyToCharName(
+          `charNames_gen:${charKeyToLocGenderedCharKey(
             database.chars.LocationToCharacterKey(k),
             gender
           )}`

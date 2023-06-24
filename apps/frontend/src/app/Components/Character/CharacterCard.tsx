@@ -5,6 +5,8 @@ import type {
 } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { characterAsset } from '@genshin-optimizer/g-assets'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import { range } from '@genshin-optimizer/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,
@@ -23,7 +25,6 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { ascensionMaxLevel } from '../../Data/LevelData'
 import { DatabaseContext } from '../../Database/Database'
 import { uiInput as input } from '../../Formula'
 import useCharacter from '../../ReactHooks/useCharacter'
@@ -33,9 +34,8 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { ICachedCharacter } from '../../Types/character'
-import { iconAsset } from '../../Util/AssetUtil'
 import type { RollColorKey } from '../../Types/consts'
-import { range } from '../../Util/Util'
+import { iconAsset } from '../../Util/AssetUtil'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
 import CardLight from '../Card/CardLight'
 import ColorText from '../ColoredText'
@@ -356,7 +356,7 @@ function Header({
 function HeaderContent() {
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const characterEle = data.get(input.charEle).value as ElementKey
+  const characterEle = data.get(input.charEle).value.toString() as ElementKey
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
@@ -460,7 +460,7 @@ function Artifacts() {
     () =>
       allArtifactSlotKeys.map((k) => [
         k,
-        database.arts.get(data.get(input.art[k].id).value ?? ''),
+        database.arts.get(data.get(input.art[k].id).value?.toString() ?? ''),
       ]),
     [data, database]
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>

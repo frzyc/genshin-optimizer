@@ -9,7 +9,7 @@ import {
   sum,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -35,7 +35,7 @@ const set4_atk_ = greaterEq(
   4,
   lookup(
     condSet4,
-    objectKeyMap(stacksArr, (stack) => constant(atk_arr[stack - 1])),
+    objKeyMap(stacksArr, (stack) => constant(atk_arr[stack - 1])),
     naught
   )
 )
@@ -44,7 +44,7 @@ const set4_hydro_dmg_ = greaterEq(
   4,
   lookup(
     condSet4,
-    objectKeyMap(stacksArr, (stack) => constant(hydro_dmg_arr[stack - 1])),
+    objKeyMap(stacksArr, (stack) => constant(hydro_dmg_arr[stack - 1])),
     naught
   ),
   KeyMap.info('hydro_dmg_')
@@ -70,7 +70,7 @@ const sheet: IArtifactSheet = {
           value: condSet4,
           teamBuff: true,
           name: trm('condName'),
-          states: objectKeyMap(stacksArr, (stack) => ({
+          states: objKeyMap(stacksArr, (stack) => ({
             name: st('stack', { count: stack }),
             fields: [
               {

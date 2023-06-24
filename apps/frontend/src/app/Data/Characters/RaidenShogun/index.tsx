@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -14,7 +15,6 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
-import { objectKeyMap } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -125,7 +125,7 @@ const skillEyeTeamBurstDmgInc = unequal(
   prod(
     lookup(
       condSkillEyeTeam,
-      objectKeyMap(energyCosts, (i) => constant(i, { name: st('energy') })),
+      objKeyMap(energyCosts, (i) => constant(i, { name: st('energy') })),
       0
     ),
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
@@ -140,7 +140,7 @@ const [condResolveStackPath, condResolveStack] = cond(key, 'burstResolve')
 
 const resolveStackNode = lookup(
   condResolveStack,
-  objectKeyMap(resolveStacks, (i) => constant(i)),
+  objKeyMap(resolveStacks, (i) => constant(i)),
   0,
   { name: ct.ch('burst.resolves') }
 )

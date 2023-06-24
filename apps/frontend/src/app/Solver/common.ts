@@ -1,15 +1,23 @@
 import {
+  allArtifactSlotKeys,
   type ArtifactSetKey,
   type ArtifactSlotKey,
-  allArtifactSlotKeys,
 } from '@genshin-optimizer/consts'
-import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
+import {
+  assertUnreachable,
+  objKeyMap,
+  objMap,
+  range,
+} from '@genshin-optimizer/util'
+import type {
+  ArtSetExclusion,
+  ArtSetExclusionKey,
+} from '../Database/DataManagers/BuildSettingData'
 import { forEachNodes, mapFormulas } from '../Formula/internal'
 import type { OptNode } from '../Formula/optimization'
 import { allOperations, constantFold } from '../Formula/optimization'
 import type { ConstantNode } from '../Formula/type'
 import { constant, dynRead, max, min, sum, threshold } from '../Formula/utils'
-import { assertUnreachable, objectKeyMap, objectMap, range } from '../Util/Util'
 
 type MicropassOperation =
   | 'reaffine'
@@ -196,7 +204,7 @@ function reaffine(
     const values = constantFold(
       [...affineMap.keys()],
       {
-        dyn: objectMap(stat, (value) => constant(value)),
+        dyn: objMap(stat, (value) => constant(value)),
       } as any,
       (_) => true
     )
@@ -211,7 +219,7 @@ function reaffine(
     nodes,
     arts: {
       base: reaffineArt(arts.base),
-      values: objectKeyMap(allArtifactSlotKeys, (slot) =>
+      values: objKeyMap(allArtifactSlotKeys, (slot) =>
         arts.values[slot].map(({ id, set, values }) => ({
           id,
           set,
@@ -252,7 +260,7 @@ function pruneOrder(
       .filter(([_, v]) => v.includes(2) && !v.includes(4))
       .map(([k]) => k) as ArtifactSetKey[]
   )
-  const values = objectKeyMap(allArtifactSlotKeys, (slot) => {
+  const values = objKeyMap(allArtifactSlotKeys, (slot) => {
     const list = arts.values[slot]
     const newList = list.filter((art) => {
       let count = 0
@@ -290,10 +298,10 @@ function pruneArtRange(
   )
   const wrap = { arts }
   while (true) {
-    const artRanges = objectKeyMap(allArtifactSlotKeys, (slot) =>
+    const artRanges = objKeyMap(allArtifactSlotKeys, (slot) =>
       computeArtRange(wrap.arts.values[slot])
     )
-    const otherArtRanges = objectKeyMap(allArtifactSlotKeys, (key) =>
+    const otherArtRanges = objKeyMap(allArtifactSlotKeys, (key) =>
       addArtRange(
         Object.entries(artRanges)
           .map((a) => (a[0] === key ? baseRange : a[1]))
@@ -302,7 +310,7 @@ function pruneArtRange(
     )
 
     let progress = false
-    const values = objectKeyMap(allArtifactSlotKeys, (slot) => {
+    const values = objKeyMap(allArtifactSlotKeys, (slot) => {
       const result = wrap.arts.values[slot].filter((art) => {
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
@@ -511,7 +519,7 @@ export function filterArts(
 ): ArtifactsBySlot {
   return {
     base: arts.base,
-    values: objectKeyMap(allArtifactSlotKeys, (slot) => {
+    values: objKeyMap(allArtifactSlotKeys, (slot) => {
       const filter = filters[slot]
       switch (filter.kind) {
         case 'id':
@@ -564,7 +572,7 @@ export function* filterFeasiblePerm(
   filters: Iterable<RequestFilter>,
   _artSets: ArtifactsBySlot
 ): Iterable<RequestFilter> {
-  const artSets = objectMap(
+  const artSets = objMap(
     _artSets.values,
     (values) => new Set(values.map((v) => v.set))
   )
@@ -669,16 +677,16 @@ export function* artSetPerm(
   // Shapes are now calculated and merged, proceed to fill in the sets
 
   const noFilter = { kind: 'exclude' as const, sets: new Set<ArtifactSetKey>() }
-  const result: RequestFilter = objectKeyMap(
-    allArtifactSlotKeys,
-    (_) => noFilter
-  )
+  const result: RequestFilter = objKeyMap(allArtifactSlotKeys, (_) => noFilter)
 
   const counts = {
-    ...objectMap(exclusion, (_) => 0),
-    ...objectKeyMap(artSets, (_) => 0),
+    ...objMap(exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>, (_) => 0),
+    ...objKeyMap(artSets, (_) => 0),
   }
-  const allowedCounts = objectMap(exclusion, exclusionToAllowed)
+  const allowedCounts = objMap(
+    exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>,
+    exclusionToAllowed
+  )
 
   function* check(shape: number[]) {
     const used: Set<ArtifactSetKey> = new Set(),

@@ -1,7 +1,9 @@
+import { AnvilIcon, DiscordIcon } from '@genshin-optimizer/svgicons'
 import {
   Backpack,
   Computer,
   Download,
+  EmojiEvents,
   Gamepad,
   InsertLink,
   PersonSearch,
@@ -9,7 +11,6 @@ import {
   SportsEsports,
   Warning,
   YouTube,
-  EmojiEvents,
 } from '@mui/icons-material'
 import {
   Box,
@@ -27,13 +28,11 @@ import { Trans, useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
 import SqBadge from '../Components/SqBadge'
-import DiscordIcon from '../SVGIcons/DiscordIcon'
 import AdScanner from './AdeptiScanner.png'
+import AkashaScanner from './AkashaScanner.png'
 import Amenoma from './Amenoma.png'
 import Artiscan from './artiscan.png'
 import GIScanner from './GIScanner.png'
-import AkashaScanner from './AkashaScanner.png'
-import Assets from '../Assets/Assets'
 export default function PageScanner() {
   const { t } = useTranslation('page_scanner')
   ReactGA.send({ hitType: 'pageview', page: '/scanner' })
@@ -172,7 +171,7 @@ export default function PageScanner() {
                 <SqBadge
                   sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
                 >
-                  {Assets.svg.anvil}
+                  <AnvilIcon />
                   {t('tags.weapons') as string}
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
@@ -411,7 +410,7 @@ export default function PageScanner() {
                 <SqBadge
                   sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
                 >
-                  {Assets.svg.anvil}
+                  <AnvilIcon />
                   {t('tags.weapons') as string}
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>

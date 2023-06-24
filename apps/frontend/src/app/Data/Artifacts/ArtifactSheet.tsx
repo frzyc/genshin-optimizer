@@ -1,4 +1,8 @@
-import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
+import type {
+  ArtifactRarity,
+  ArtifactSetKey,
+  ArtifactSlotKey,
+} from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/g-assets'
 import artifactSheets from '.'
@@ -8,7 +12,7 @@ import { Translate } from '../../Components/Translate'
 import { input } from '../../Formula'
 import type { Data } from '../../Formula/type'
 import type { UIData } from '../../Formula/uiData'
-import type { ArtifactRarity, SetNum } from '../../Types/consts'
+import type { SetNum } from '../../Types/consts'
 import type { IDocumentHeader } from '../../Types/sheet'
 import { st } from '../SheetUtil'
 import type { IArtifactSheet, SetEffectEntry } from './IArtifactSheet'

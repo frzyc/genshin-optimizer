@@ -1,9 +1,9 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import { objectKeyMap, objectKeyValueMap, range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -16,12 +16,12 @@ const [condPassivePath, condPassive] = cond(key, 'InfusionScroll')
 
 const dmgBonus = [0.08, 0.1, 0.12, 0.14, 0.16]
 const allDmgInc = subscript(input.weapon.refineIndex, dmgBonus)
-const eleDmgs = objectKeyValueMap(allElementKeys, (e) => [
+const eleDmgs = objKeyValMap(allElementKeys, (e) => [
   `${e}_dmg_`,
   lookup(
     condPassive,
     {
-      ...objectKeyMap(range(1, 2), (i) => prod(allDmgInc, i)),
+      ...objKeyMap(range(1, 2), (i) => prod(allDmgInc, i)),
     },
     naught
   ),
@@ -38,7 +38,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
       name: st('afterReaction'),
-      states: objectKeyMap(range(1, 2), (i) => ({
+      states: objKeyMap(range(1, 2), (i) => ({
         name: st('stack', { count: i }),
         fields: [
           ...Object.values(eleDmgs).map((node) => ({ node })),

@@ -11,7 +11,7 @@ import {
   prod,
   threshold,
 } from '../../../Formula/utils'
-import { objectKeyMap } from '../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -127,7 +127,7 @@ const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
   key,
   'c6AfterSkillBurst'
 )
-const c6Ele_dmg_map = objectKeyMap(
+const c6Ele_dmg_map = objKeyMap(
   allElementKeys.map((ele) => `${ele}_dmg_`),
   (_ele) =>
     greaterEq(

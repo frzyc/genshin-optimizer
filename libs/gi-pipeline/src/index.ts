@@ -1,4 +1,3 @@
-import type { WeaponKey } from '@genshin-optimizer/consts'
 import {
   artifactMainstatData,
   artifactSubstatData,
@@ -6,9 +5,9 @@ import {
   artifactSubstatRollData,
 } from '@genshin-optimizer/dm'
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import type { CharacterDataGen, CharacterDatas } from './characterData'
+import artifactData from './artifactData'
+import type { CharacterDataGen } from './characterData'
 import characterData from './characterData'
-import type { SkillParamData } from './characterSkillParam'
 import characterSkillParam from './characterSkillParam'
 import { charExpCurve, weaponExpCurve } from './curves'
 import materialData from './materialData'
@@ -48,11 +47,14 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
   )
 )
 
+const artifactDataDump = artifactData()
+
 //exp curve to generate  stats at every level
 dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
 dumpFile(`${path}/Characters/expCurve.json`, charExpCurve)
 
 //dump artifact data
+dumpFile(`${path}/Artifacts/artifact_set.json`, artifactDataDump)
 dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
 dumpFile(`${path}/Artifacts/artifact_main.json`, artifactMainstatData)
 dumpFile(`${path}/Artifacts/artifact_sub_rolls.json`, artifactSubstatRollData)
@@ -64,26 +66,7 @@ dumpFile(
 const materialDataDump = materialData()
 dumpFile(`${path}/Materials/material.json`, materialDataDump)
 
-export type AllStats = {
-  char: {
-    expCurve: typeof charExpCurve
-    skillParam: SkillParamData
-    data: CharacterDatas
-  }
-  weapon: {
-    expCurve: typeof weaponExpCurve
-    data: Record<WeaponKey, WeaponDataGen>
-  }
-  art: {
-    subRoll: any
-    subRollCorrection: any
-    main: any
-    sub: any
-  }
-  material: any
-}
-
-const allStat: AllStats = {
+const allStat = {
   char: {
     expCurve: charExpCurve,
     skillParam: characterSkillParamDump,
@@ -94,13 +77,16 @@ const allStat: AllStats = {
     data: weaponDataDump,
   },
   art: {
+    data: artifactDataDump,
     subRoll: artifactSubstatRollData,
     subRollCorrection: artifactSubstatRollCorrection,
     main: artifactMainstatData,
     sub: artifactSubstatData,
   },
   material: materialDataDump,
-}
+} as const
+
+export type AllStats = typeof allStat
 
 dumpFile(
   `${process.env['NX_WORKSPACE_ROOT']}/libs/gi-stats/src/allStat_gen.json`,

@@ -1,6 +1,20 @@
-import type { LocationKey, RarityKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import type {
+  LocationKey,
+  RarityKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
+import {
+  allElementWithPhyKeys,
+  allSubstatKeys,
+} from '@genshin-optimizer/consts'
 import { artifactAsset } from '@genshin-optimizer/g-assets'
+import {
+  artDisplayValue,
+  getMainStatDisplayStr,
+  getSubstatValue,
+  getSubstatValuesPercent,
+} from '@genshin-optimizer/gi-util'
+import { clamp, clamp01 } from '@genshin-optimizer/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import EditIcon from '@mui/icons-material/Edit'
@@ -37,17 +51,11 @@ import { StarsDisplay } from '../Components/StarDisplay'
 import { getArtSheet } from '../Data/Artifacts'
 import Artifact from '../Data/Artifacts/Artifact'
 import { DatabaseContext } from '../Database/Database'
-import KeyMap, { cacheValueString } from '../KeyMap'
+import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
 import useArtifact from '../ReactHooks/useArtifact'
-import { iconInlineProps } from '../SVGIcons'
-import type {
-  ICachedArtifact,
-  ICachedSubstat,
-  SubstatKey,
-} from '../Types/artifact'
-import { allSubstatKeys } from '../Types/artifact'
-import { clamp, clamp01 } from '../Util/Util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
+import type { ICachedArtifact, ICachedSubstat } from '../Types/artifact'
 import type { ArtifactEditorProps } from './ArtifactEditor'
 
 const ArtifactEditor = lazy(() => import('./ArtifactEditor'))
@@ -164,7 +172,6 @@ export default function ArtifactCard({
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
   )
-  const mainStatUnit = KeyMap.unit(mainStatKey)
 
   const artifactValid = maxEfficiency !== 0
   const slotName = sheet?.getSlotName(slotKey)
@@ -276,15 +283,7 @@ export default function ArtifactCard({
                   <ColorText
                     color={mainStatLevel !== level ? 'warning' : undefined}
                   >
-                    {cacheValueString(
-                      Artifact.mainStatValue(
-                        mainStatKey,
-                        rarity,
-                        mainStatLevel
-                      ) ?? 0,
-                      KeyMap.unit(mainStatKey)
-                    )}
-                    {mainStatUnit}
+                    {getMainStatDisplayStr(mainStatKey, rarity, mainStatLevel)}
                   </ColorText>
                 </strong>
               </Typography>
@@ -460,9 +459,9 @@ function SubstatDisplay({
 }) {
   const { t: tk } = useTranslation('statKey_gen')
   const numRolls = stat.rolls?.length ?? 0
-  const maxRoll = stat.key ? Artifact.substatValue(stat.key) : 0
+  const maxRoll = stat.key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
-    () => (stat.key ? Artifact.getSubstatRollData(stat.key, rarity) : []),
+    () => (stat.key ? getSubstatValuesPercent(stat.key, rarity) : []),
     [stat.key, rarity]
   )
   const rollOffset = 7 - rollData.length
@@ -499,7 +498,7 @@ function SubstatDisplay({
       >
         <StatIcon statKey={stat.key} iconProps={iconInlineProps} />{' '}
         {tk(stat.key)}
-        {`+${cacheValueString(stat.value, KeyMap.unit(stat.key))}${unit}`}
+        {`+${artDisplayValue(stat.value, KeyMap.unit(stat.key))}${unit}`}
       </Typography>
       {progresses}
       <Typography

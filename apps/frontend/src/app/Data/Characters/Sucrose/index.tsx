@@ -13,7 +13,7 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { absorbableEle } from '../../../Types/consts'
-import { objectKeyMap } from '../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, condReadNode, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -80,11 +80,8 @@ const dm = {
 
 const [condAbsorptionPath, condAbsorption] = cond(key, 'absorption')
 // A1 Swirl Reaction Element
-const condSwirlPaths = objectKeyMap(absorbableEle, (ele) => [
-  key,
-  `swirl${ele}`,
-])
-const condSwirls = objectKeyMap(absorbableEle, (ele) =>
+const condSwirlPaths = objKeyMap(absorbableEle, (ele) => [key, `swirl${ele}`])
+const condSwirls = objKeyMap(absorbableEle, (ele) =>
   condReadNode(condSwirlPaths[ele])
 )
 // Set to "hit" if skill hit opponents
@@ -92,7 +89,7 @@ const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, 'skillHit')
 
 // Conditional Output
 const asc1Disp = greaterEq(input.asc, 1, dm.passive1.eleMas)
-const asc1 = objectKeyMap(absorbableEle, (ele) =>
+const asc1 = objKeyMap(absorbableEle, (ele) =>
   unequal(
     target.charKey,
     key, // Not applying to Sucrose
@@ -112,7 +109,7 @@ const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
 const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
-const c6Bonus = objectKeyMap(
+const c6Bonus = objKeyMap(
   absorbableEle.map((ele) => `${ele}_dmg_` as const),
   (key) => equal(condAbsorption, key.slice(0, -5), c6Base)
 )
@@ -337,7 +334,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         // Hide for Sucrose
         canShow: unequal(input.activeCharKey, key, 1),
-        states: objectKeyMap(absorbableEle, (ele) => ({
+        states: objKeyMap(absorbableEle, (ele) => ({
           path: condSwirlPaths[ele],
           value: condSwirls[ele],
           name: st(`swirlReaction.${ele}`),

@@ -2,7 +2,7 @@ import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -17,7 +17,7 @@ const emArr = [40, 50, 60, 70, 80]
 const [condPassiveStacksPath, condPassiveStacks] = cond(key, 'passiveStacks')
 const eleMas = lookup(
   condPassiveStacks,
-  objectKeyMap(stacksArr, (stack) =>
+  objKeyMap(stacksArr, (stack) =>
     prod(subscript(input.weapon.refineIndex, emArr), stack)
   ),
   naught

@@ -10,7 +10,7 @@ import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -46,7 +46,7 @@ const stacks_dmg_ = Object.fromEntries(
       ele,
       lookup(
         condNode,
-        objectKeyMap(stacks, (stack) =>
+        objKeyMap(stacks, (stack) =>
           subscript(input.weapon.refineIndex, stacksRefine[stack])
         ),
         naught,
