@@ -373,7 +373,8 @@ const sheet: ICharacterSheet = {
               },
               {
                 // Only show on Faruzan's page
-                canShow: (data) => data.get(input.activeCharKey).value.toString() === key,
+                canShow: (data) =>
+                  data.get(input.activeCharKey).value.toString() === key,
                 text: ct.ch('c6Arrow'),
               },
             ],
