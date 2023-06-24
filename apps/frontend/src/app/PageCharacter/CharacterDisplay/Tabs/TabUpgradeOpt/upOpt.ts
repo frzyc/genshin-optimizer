@@ -13,7 +13,8 @@ import Artifact, { maxArtifactLevel } from '../../../../Data/Artifacts/Artifact'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
 
 import { gaussianPE, mvnPE_bad } from './mvncdf'
-import { crawlUpgrades } from './artifactUpgradeCrawl'
+import { crawlUpgrades, quadrinomial } from './mathUtil'
+import { cartesian, range } from '../../../../Util/Util'
 
 /**
  * Artifact upgrade distribution math summary.
@@ -468,6 +469,64 @@ export class UpOptCalculator {
     })
 
     this.artifacts[ix].result = this.toResult2(distrs)
+  }
+
+  toResult3(distr: { prob: number; val: number[] }[]): UpOptResult {
+    let ptot = 0
+    let upAvgtot = 0
+    const gmm = distr.map(({ prob, val }) => {
+      if (val.every((vi, i) => vi >= this.thresholds[i])) {
+        ptot += prob
+        upAvgtot += prob * (val[0] - this.thresholds[0])
+        return { phi: prob, cp: 1, mu: val[0], sig2: 0 }
+      }
+      return { phi: prob, cp: 0, mu: val[0], sig2: 0 }
+    })
+
+    const vals = gmm.map(({ mu }) => mu)
+    return {
+      p: ptot,
+      upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
+      distr: { gmm, lower: Math.min(...vals), upper: Math.max(...vals) },
+      evalMode: ResultType.Exact,
+    }
+  }
+
+  _calcExact(ix: number) {
+    const { subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
+
+    const distrs: { prob: number; val: number[] }[] = []
+    crawlUpgrades(N, (ns, prob) => {
+      const base = { ...this.artifacts[ix].values }
+      const vals = ns.map((ni, i) =>
+        subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
+          ? range(7 * ni, 10 * ni)
+          : [NaN]
+      )
+
+      cartesian(...vals).forEach((upVals) => {
+        const stats = { ...base }
+        let p_upVals = 1
+        for (let i = 0; i < 4; i++) {
+          if (isNaN(upVals[i])) continue
+
+          const key = subs[i]
+          const val = upVals[i]
+          const ni = ns[i]
+          stats[key] = (stats[key] ?? 0) + val * scale(key)
+          const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
+          p_upVals *= p_val
+        }
+
+        distrs.push({
+          prob: prob * p_upVals,
+          val: this.eval(stats, slotKey).map((n) => n.v),
+        })
+      })
+    })
+
+    this.artifacts[ix].result = this.toResult3(distrs)
   }
 }
 
