@@ -24,8 +24,6 @@ import {
   Label,
 } from 'recharts'
 import CardLight from '../../../../Components/Card/CardLight'
-import type { QueryResult } from './artifactQuery'
-import { allUpgradeValues } from './artifactUpgradeCrawl'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
@@ -145,6 +143,9 @@ export default function UpgradeOptChartCard({
     // Or not b/c people only really need a fuzzy ordering anyways.
     if (!calcExacts) return
     throw new Error('Not Implemented!')
+    setTrueData([])
+    setTrueP(0)
+    setTrueE(0)
     // const exactData = allUpgradeValues(upgradeOpt)
     // let true_p = 0
     // let true_e = 0
@@ -191,9 +192,7 @@ export default function UpgradeOptChartCard({
 
   // console.log('repd', reportD, upgradeOpt.upAvg)
 
-  const CustomTooltip = ({
-    active,
-  }: TooltipProps<string, string>) => {
+  const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
     if (!active) return null
     // I kinda want the [average increase] to only appear when hovering the white dot.
     return (

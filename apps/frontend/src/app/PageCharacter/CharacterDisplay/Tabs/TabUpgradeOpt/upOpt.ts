@@ -470,3 +470,40 @@ export class UpOptCalculator {
     this.artifacts[ix].result = this.toResult2(distrs)
   }
 }
+
+/* ICachedArtifact to ArtifactBuildData. Maybe this should go in common? */
+export function toArtifact(art: ICachedArtifact): ArtifactBuildData {
+  const mainStatVal = Artifact.mainStatValue(
+    art.mainStatKey,
+    art.rarity,
+    art.level
+  ) // 5* only
+  const buildData = {
+    id: art.id,
+    slot: art.slotKey,
+    level: art.level,
+    rarity: art.rarity,
+    values: {
+      [art.setKey]: 1,
+      [art.mainStatKey]: art.mainStatKey.endsWith('_')
+        ? mainStatVal / 100
+        : mainStatVal,
+      ...Object.fromEntries(
+        art.substats
+          .map((substat) => [
+            substat.key,
+            substat.key.endsWith('_')
+              ? substat.accurateValue / 100
+              : substat.accurateValue,
+          ])
+          .filter(([, value]) => value !== 0)
+      ),
+    },
+    subs: art.substats.reduce((sub: SubstatKey[], x) => {
+      if (x.key !== '') sub.push(x.key)
+      return sub
+    }, []),
+  }
+  delete buildData.values['']
+  return buildData
+}

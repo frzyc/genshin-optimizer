@@ -47,13 +47,6 @@ import useBuildSetting from '../TabOptimize/useBuildSetting'
 import { dynamicData } from '../TabOptimize/foreground'
 import { clamp, objectKeyMap, objPathValue } from '../../../../Util/Util'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import { evalArtifact } from './evalArtifact'
-import type {
-  QueryArtifact,
-  QueryBuild,
-  UpgradeOptResult,
-} from './artifactQuery'
-import { querySetup, toQueryArtifact, cmpQuery } from './artifactQuery'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
 import { CharacterContext } from '../../../../Context/CharacterContext'
@@ -67,7 +60,8 @@ import {
 } from '@genshin-optimizer/consts'
 import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 
-import { UpOptCalculator } from './upOpt'
+import type { UpOptBuild } from './upOpt'
+import { UpOptCalculator, toArtifact } from './upOpt'
 
 export default function TabUpopt() {
   const {
@@ -138,9 +132,6 @@ export default function TabUpopt() {
     [filteredArts]
   )
 
-  const [artifactUpgradeOpts, setArtifactUpgradeOpts] = useState(
-    undefined as UpgradeOptResult | undefined
-  )
   const [upOptCalc, setUpOptCalc] = useState(
     undefined as UpOptCalculator | undefined
   )
@@ -149,47 +140,6 @@ export default function TabUpopt() {
   const [check4th, setCheck4th] = useState(true)
   const [useFilters, setUseMainStatFilter] = useState(false)
 
-  // Because upgradeOpt is a two-stage estimation method, we want to expand (slow-estimate) our artifacts lazily as they are needed.
-  // Lazy method means we need to take care to never 'lift' any artifacts past the current page, since that may cause a user to miss artifacts
-  //  that are lifted in the middle of an expansion. Increase lookahead to mitigate this issue.
-  const upgradeOptExpandSink = useCallback(
-    (
-      { query, arts }: UpgradeOptResult,
-      start: number,
-      expandTo: number
-    ): UpgradeOptResult => {
-      const lookahead = 5
-      // if (querySaved === undefined) return upOpt
-      const queryArts: QueryArtifact[] = database.arts.values
-        .filter((art) => art.rarity === 5)
-        .map((art) => toQueryArtifact(art, 20))
-
-      const qaLookup: Dict<string, QueryArtifact> = {}
-      queryArts.forEach((art) => (qaLookup[art.id] = art))
-
-      const fixedList = arts.slice(0, start)
-      const arr = arts.slice(start)
-
-      let i = 0
-      const end = Math.min(expandTo - start + lookahead, arr.length)
-      do {
-        for (; i < end; i++) {
-          const arti = qaLookup[arr[i].id]
-          if (arti) arr[i] = evalArtifact(query, arti, true, check4th)
-        }
-
-        // sort on only bottom half to prevent lifting
-        arr.sort(cmpQuery)
-        for (i = 0; i < end; i++) {
-          if (arr[i].evalMode === 'fast') break
-        }
-      } while (i < end)
-
-      return { query, arts: [...fixedList, ...arr] }
-    },
-    [database, check4th]
-  )
-
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
   const invScrollRef = useRef<HTMLDivElement>(null)
@@ -197,7 +147,7 @@ export default function TabUpopt() {
   const artifactsToDisplayPerPage = 5
   const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } =
     useMemo(() => {
-      if (!artifactUpgradeOpts || !upOptCalc)
+      if (!upOptCalc)
         return {
           artifactsToShow: [],
           numPages: 0,
@@ -206,22 +156,14 @@ export default function TabUpopt() {
           maxObj0: 0,
         }
       const numPages = Math.ceil(
-        artifactUpgradeOpts.arts.length / artifactsToDisplayPerPage
+        upOptCalc.artifacts.length / artifactsToDisplayPerPage
       )
       const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-      const toShow_old = artifactUpgradeOpts.arts.slice(
-        currentPageIndex * artifactsToDisplayPerPage,
-        (currentPageIndex + 1) * artifactsToDisplayPerPage
-      )
       const toShow = upOptCalc.artifacts.slice(
         currentPageIndex * artifactsToDisplayPerPage,
         (currentPageIndex + 1) * artifactsToDisplayPerPage
       )
-      // const thr = toShow.length > 0 ? toShow[0].thresholds[0] : 0
       const thr = upOptCalc.thresholds[0]
-
-      console.log(toShow_old)
-      console.log(toShow)
 
       return {
         artifactsToShow: toShow,
@@ -236,20 +178,17 @@ export default function TabUpopt() {
           thr
         ),
       }
-    }, [artifactUpgradeOpts, pageIdex, upOptCalc])
+    }, [pageIdex, upOptCalc])
 
   const setPage = useCallback(
     (e, value) => {
-      if (!artifactUpgradeOpts) return
+      if (!upOptCalc) return
       invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
-      const start = (currentPageIndex + 1) * artifactsToDisplayPerPage
       const end = value * artifactsToDisplayPerPage
-      const zz = upgradeOptExpandSink(artifactUpgradeOpts, start, end)
-      setArtifactUpgradeOpts(zz)
-      upOptCalc?.calcSlowToIndex(end)
+      upOptCalc.calcSlowToIndex(end)
       setpageIdex(value - 1)
     },
-    [artifactUpgradeOpts, currentPageIndex, upgradeOptExpandSink, upOptCalc]
+    [upOptCalc]
   )
 
   const generateBuilds = useCallback(async () => {
@@ -275,7 +214,7 @@ export default function TabUpopt() {
       optimizationTarget
     ) as NumNode | undefined
     if (!optimizationTargetNode) return
-    setArtifactUpgradeOpts(undefined)
+    setUpOptCalc(undefined)
     setpageIdex(0)
 
     const valueFilter: { value: NumNode; minimum: number }[] = Object.entries(
@@ -297,11 +236,11 @@ export default function TabUpopt() {
     const equippedArts =
       database.chars.get(characterKey)?.equippedArtifacts ??
       ({} as StrictDict<ArtifactSlotKey, string>)
-    const curEquip: QueryBuild = objectKeyMap(
+    const curEquip: UpOptBuild = objectKeyMap(
       allArtifactSlotKeys,
       (slotKey) => {
         const art = database.arts.get(equippedArts[slotKey] ?? '')
-        return art ? toQueryArtifact(art) : undefined
+        return art ? toArtifact(art) : undefined
       }
     )
     const curEquipSetKeys = objectKeyMap(allArtifactSlotKeys, (slotKey) => {
@@ -383,51 +322,11 @@ export default function TabUpopt() {
     upoptCalc.calcFastAll()
     upoptCalc.calcSlowToIndex(5)
     setUpOptCalc(upoptCalc)
-
-    // OLD METHOD
-    const queryArts: QueryArtifact[] = database.arts.values
-      .filter((art) => art.rarity === 5)
-      .filter(respectSexExclusion)
-      .filter((art) => show20 || art.level !== 20)
-      .filter(
-        (art) =>
-          !useFilters ||
-          !mainStatKeys[art.slotKey]?.length ||
-          mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
-      )
-      .filter(
-        (art) =>
-          !useFilters || (levelLow <= art.level && art.level <= levelHigh)
-      )
-      .map((art) => toQueryArtifact(art, 20))
-
-    const qaLookup: Dict<string, QueryArtifact> = {}
-    queryArts.forEach((art) => (qaLookup[art.id] = art))
-
-    const query = querySetup(
-      nodes,
-      valueFilter.map((x) => x.minimum),
-      curEquip
-    )
-
-    let artUpOpt = queryArts.map((art) =>
-      evalArtifact(query, art, false, check4th)
-    )
-
-    artUpOpt = artUpOpt.sort((a, b) => b.prob * b.upAvg - a.prob * a.upAvg)
-
-    // Re-sort & slow eval
-    let upOpt = { query: query, arts: artUpOpt }
-    upOpt = upgradeOptExpandSink(upOpt, 0, 5)
-    setArtifactUpgradeOpts(upOpt)
-    console.log('result', upOpt)
-    // OLD METHOD
   }, [
     buildSetting,
     characterKey,
     database,
     gender,
-    upgradeOptExpandSink,
     show20,
     useFilters,
     check4th,
@@ -631,7 +530,7 @@ export default function TabUpopt() {
                         <Grid item>
                           <ShowingArt
                             numShowing={artifactsToShow.length}
-                            total={artifactUpgradeOpts?.arts.length}
+                            total={upOptCalc?.artifacts.length}
                           />
                         </Grid>
                       </Grid>
@@ -701,7 +600,7 @@ export default function TabUpopt() {
                         <Grid item>
                           <ShowingArt
                             numShowing={artifactsToShow.length}
-                            total={artifactUpgradeOpts?.arts.length}
+                            total={upOptCalc?.artifacts.length}
                           />
                         </Grid>
                       </Grid>
