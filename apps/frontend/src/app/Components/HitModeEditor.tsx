@@ -1,4 +1,11 @@
 import type { ElementKey } from '@genshin-optimizer/consts'
+import {
+  CryoIcon,
+  ElectroIcon,
+  HydroIcon,
+  PyroIcon,
+} from '@genshin-optimizer/gi-svgicons'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import type { ToggleButtonGroupProps } from '@mui/material'
 import { MenuItem, ToggleButton } from '@mui/material'
 import { useContext } from 'react'
@@ -6,11 +13,6 @@ import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext } from '../Context/DataContext'
 import { infusionNode, uiInput as input } from '../Formula'
-import { iconInlineProps } from '../SVGIcons'
-import CryoIcon from '../SVGIcons/Element/CryoIcon'
-import ElectroIcon from '../SVGIcons/Element/ElectroIcon'
-import HydroIcon from '../SVGIcons/Element/HydroIcon'
-import PyroIcon from '../SVGIcons/Element/PyroIcon'
 import type { AdditiveReactionKey, AmpReactionKey } from '../Types/consts'
 import {
   allAmpReactions,
@@ -93,7 +95,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
     characterDispatch,
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const charEleKey = data.get(input.charEle).value as ElementKey
+  const charEleKey = data.get(input.charEle).value.toString() as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
   const reactions = [
     ...new Set([

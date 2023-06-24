@@ -1,5 +1,5 @@
-import type { ElementKey, WeaponTypeKey } from '../../Types/consts'
-import { allElements, allWeaponTypeKeys } from '../../Types/consts'
+import type { ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import { characterSortKeys } from '../../Util/CharacterSort'
 import type { ArtCharDatabase } from '../Database'
@@ -18,7 +18,7 @@ const initialState = (): IDisplayCharacterEntry => ({
   sortType: 'level',
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
-  element: [...allElements],
+  element: [...allElementKeys],
   pageIndex: 0,
 })
 
@@ -40,7 +40,7 @@ export class DisplayCharacterEntry extends DataEntry<
       sortType = 'level'
     if (typeof ascending !== 'boolean') ascending = false
     weaponType = validateArr(weaponType, allWeaponTypeKeys)
-    element = validateArr(element, allElements)
+    element = validateArr(element, allElementKeys)
     if (
       typeof pageIndex !== 'number' ||
       pageIndex < 0 ||

@@ -2,7 +2,11 @@ import type {
   LocationCharacterKey,
   LocationKey,
 } from '@genshin-optimizer/consts'
-import { allTravelerKeys, charKeyToLocCharKey } from '@genshin-optimizer/consts'
+import {
+  allTravelerKeys,
+  charKeyToLocCharKey,
+  charKeyToLocGenderedCharKey,
+} from '@genshin-optimizer/consts'
 import { BusinessCenter } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
@@ -13,7 +17,6 @@ import { getCharSheet } from '../../Data/Characters'
 import type CharacterSheet from '../../Data/Characters/CharacterSheet'
 import { DatabaseContext } from '../../Database/Database'
 import useDBMeta from '../../ReactHooks/useDBMeta'
-import { charKeyToCharName } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocomplete } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'
@@ -52,7 +55,7 @@ export function LocationAutocomplete({
         t(
           `${
             silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToCharName(
+          }:${charKeyToLocGenderedCharKey(
             database.chars.LocationToCharacterKey(key),
             gender
           )}`

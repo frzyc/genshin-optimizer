@@ -13,7 +13,7 @@ import CardLight from '../Components/Card/CardLight'
 import CloseButton from '../Components/CloseButton'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from '../Database/Database'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 import ArtifactCard from './ArtifactCard'
 import DifferenceIcon from '@mui/icons-material/Difference'
 export default function DupModal({ show, onHide }) {

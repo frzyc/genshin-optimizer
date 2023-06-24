@@ -1,15 +1,11 @@
-import { characterAsset } from '@genshin-optimizer/g-assets'
-import Assets from '../../Assets/Assets'
+import type { CharacterKey, WeaponTypeKey } from '@genshin-optimizer/consts'
+import { characterAsset, imgAssets } from '@genshin-optimizer/g-assets'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
 import { input } from '../../Formula'
 import type { NumNode } from '../../Formula/type'
 import { greaterEq } from '../../Formula/utils'
-import type {
-  CharacterKey,
-  CharacterSheetKey,
-  WeaponTypeKey,
-} from '../../Types/consts'
+import type { CharacterSheetKey } from '../../Types/consts'
 import { travelerFKeys, travelerMKeys } from '../../Types/consts'
 import type {
   DocumentConditional,
@@ -63,7 +59,7 @@ export const charTemplates = (
   const [chg, ch] = trans('char', cKey)
 
   const img = (tk: TalentSheetElementKey): string => {
-    if (tk === 'auto') return Assets.weaponTypes[wKey]
+    if (tk === 'auto') return imgAssets.weaponTypes[wKey]
     return characterAsset(charSheetKeyToCharKey(cKey), tk, 'F') // Should be all genderless assets
   }
 

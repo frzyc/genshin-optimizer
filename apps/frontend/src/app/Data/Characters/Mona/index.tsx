@@ -10,7 +10,7 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -130,7 +130,7 @@ const charged_dmg_ = greaterEq(
   6,
   lookup(
     condRoC,
-    objectKeyMap(range(1, 3), (i) => percent(i * dm.constellation6.dmgBonus)),
+    objKeyMap(range(1, 3), (i) => percent(i * dm.constellation6.dmgBonus)),
     0
   )
 )

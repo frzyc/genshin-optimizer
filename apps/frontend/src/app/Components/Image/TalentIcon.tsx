@@ -1,5 +1,5 @@
+import type { ElementKey } from '@genshin-optimizer/consts'
 import { styled } from '@mui/material'
-import type { ElementKey } from '../../Types/consts'
 
 interface TalentIconProps {
   element: ElementKey

@@ -3,7 +3,7 @@ import { lookup, naught, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
@@ -31,7 +31,7 @@ const dmgInc = subscript(input.weapon.refineIndex, arrowDmgInc)
 const normal_dmg_arrow_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
   KeyMap.info('normal_dmg_')
@@ -39,7 +39,7 @@ const normal_dmg_arrow_ = lookup(
 const charged_dmg_arrow_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
   },
   naught,
   KeyMap.info('charged_dmg_')
@@ -70,7 +70,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
       name: trm('condName'),
-      states: objectKeyMap(range(1, 5), (i) => ({
+      states: objKeyMap(range(1, 5), (i) => ({
         name: st('seconds', { count: i / 10 }),
         fields: [
           {

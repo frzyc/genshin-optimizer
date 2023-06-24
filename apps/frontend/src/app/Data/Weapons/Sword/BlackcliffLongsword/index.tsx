@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { constant, lookup, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -17,7 +17,7 @@ const atkInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = prod(
   lookup(
     condPassive,
-    objectKeyMap(opponentsDefeated, (i) => constant(i)),
+    objKeyMap(opponentsDefeated, (i) => constant(i)),
     0
   ),
   subscript(input.weapon.refineIndex, atkInc)

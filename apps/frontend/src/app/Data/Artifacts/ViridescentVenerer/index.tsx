@@ -1,13 +1,13 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import { absorbableEle } from '../../../Types/consts'
-import { objectKeyMap, objectKeyValueMap } from '../../../Util/Util'
-import { condReadNode, stg, st } from '../../SheetUtil'
+import { condReadNode, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'ViridescentVenerer'
 const setHeader = setHeaderTemplate(key)
@@ -15,12 +15,12 @@ const setHeader = setHeaderTemplate(key)
 const anemo_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 2, percent(0.15))
 const swirl_dmg_ = greaterEq(input.artSet.ViridescentVenerer, 4, percent(0.6))
 
-const condSwirlPaths = objectKeyMap(absorbableEle, (e) => [key, `swirl${e}`])
-const condSwirls = objectKeyMap(absorbableEle, (e) =>
+const condSwirlPaths = objKeyMap(absorbableEle, (e) => [key, `swirl${e}`])
+const condSwirls = objKeyMap(absorbableEle, (e) =>
   condReadNode(condSwirlPaths[e])
 )
 
-const condSwirlNodes = objectKeyValueMap(absorbableEle, (e) => [
+const condSwirlNodes = objKeyValMap(absorbableEle, (e) => [
   `${e}_enemyRes_`,
   greaterEq(
     input.artSet.ViridescentVenerer,

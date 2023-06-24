@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -20,7 +20,7 @@ const all_dmg_ = subscript(input.weapon.refineIndex, all_dmg_s, { unit: '%' })
 const all_dmg_stack = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 5), (i) => prod(all_dmg_, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(all_dmg_, i)),
   },
   naught
 )
@@ -39,7 +39,7 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('stacks')),
       name: st('activeCharField'),
       states: {
-        ...objectKeyMap(range(1, 5), (i) => ({
+        ...objKeyMap(range(1, 5), (i) => ({
           name: st('seconds', { count: i * 4 }),
           fields: [
             {

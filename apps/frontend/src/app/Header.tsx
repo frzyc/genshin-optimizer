@@ -1,3 +1,5 @@
+import { FlowerIcon } from '@genshin-optimizer/gi-svgicons'
+import { AnvilIcon } from '@genshin-optimizer/svgicons'
 import {
   Article,
   Construction,
@@ -30,13 +32,11 @@ import {
 import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
-import Assets from './Assets/Assets'
 import { SillyContext } from './Context/SillyContext'
 import { DatabaseContext } from './Database/Database'
 import useDBMeta from './ReactHooks/useDBMeta'
-import useForceUpdate from './ReactHooks/useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 import silly_icon from './silly_icon.png'
-import FlowerIcon from './SVGIcons/ArtifactSlot/FlowerIcon'
 type ITab = {
   i18Key: string
   icon: Displayable
@@ -53,7 +53,7 @@ const artifacts: ITab = {
 }
 const weapons: ITab = {
   i18Key: 'tabs.weapons',
-  icon: Assets.svg.anvil,
+  icon: <AnvilIcon />,
   to: '/weapons',
   value: 'weapons',
   textSuffix: <WeaponChip key="weaponAdd" />,
@@ -136,10 +136,10 @@ function WeaponChip() {
   return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
-export default function Header(props) {
+export default function Header({ anchor }: { anchor: string }) {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={56} />}>
-      <HeaderContent {...props} />
+      <HeaderContent anchor={anchor} />
     </Suspense>
   )
 }
@@ -153,7 +153,7 @@ const maincontent = [
   doc,
   setting,
 ] as const
-function HeaderContent({ anchor }) {
+function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
@@ -165,7 +165,8 @@ function HeaderContent({ anchor }) {
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
     params: { currentTab: '' },
   }
-  if (isMobile) return <MobileHeader anchor={anchor} currentTab={currentTab} />
+  if (isMobile)
+    return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
   return (
     <Box>
       <AppBar
@@ -250,7 +251,13 @@ const mobileContent = [
   doc,
   setting,
 ] as const
-function MobileHeader({ anchor, currentTab }) {
+function MobileHeader({
+  anchor,
+  currentTab,
+}: {
+  anchor: string
+  currentTab: string
+}) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const handleDrawerToggle = () => {

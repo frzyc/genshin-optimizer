@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
 
-export const weaponIdMap: Record<number, WeaponKey> = {
+export const weaponIdMap: Record<number | string, WeaponKey> = {
   //swords
   11101: 'DullBlade',
   11201: 'SilverSword',

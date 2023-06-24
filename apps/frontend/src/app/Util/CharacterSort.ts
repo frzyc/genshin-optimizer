@@ -3,12 +3,16 @@ import type {
   ElementKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
-import { getCharSheet } from '../Data/Characters'
+import {
+  allElementKeys,
+  allWeaponTypeKeys,
+  charKeyToLocCharKey,
+  charKeyToLocGenderedCharKey,
+} from '@genshin-optimizer/consts'
+import { allStats, getCharEle } from '@genshin-optimizer/gi-stats'
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database/Database'
 import i18n from '../i18n'
-import { charKeyToCharName } from '../Types/consts'
-import type { FilterConfigs, SortConfigs } from './SortByFilters'
 export const characterSortKeys = [
   'new',
   'level',
@@ -29,14 +33,14 @@ export function characterSortConfigs(
         .t(
           `${
             silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
-          }:${charKeyToCharName(ck, database.gender)}`
+          }:${charKeyToLocGenderedCharKey(ck, database.gender)}`
         )
         .toString(),
     level: (ck) => {
       const char = database.chars.get(ck as CharacterKey)
       return char ? char.level * (char.ascension + 1) : 0
     },
-    rarity: (ck) => getCharSheet(ck, database.gender).rarity ?? 0,
+    rarity: (ck) => allStats.char.data[charKeyToLocCharKey(ck)].rarity ?? 0,
     favorite: (ck) => (database.charMeta.get(ck).favorite ? 1 : 0),
   }
 }
@@ -58,23 +62,24 @@ export function characterFilterConfigs(
   silly: boolean
 ): CharacterFilterConfigs {
   return {
-    element: (ck, filter) =>
-      filter.includes(getCharSheet(ck, database.gender).elementKey),
+    element: (ck, filter) => filter.includes(getCharEle(ck)),
     weaponType: (ck, filter) =>
-      filter.includes(getCharSheet(ck, database.gender).weaponTypeKey),
+      filter.includes(allStats.char.data[charKeyToLocCharKey(ck)].weaponType),
     name: (ck, filter) =>
       filter === undefined ||
       i18n
         .t(
           `${
             silly ? 'sillyWisher_charNames' : 'charNames_gen' // Should already be loaded by caller
-          }:${charKeyToCharName(ck, database.gender)}`
+          }:${charKeyToLocGenderedCharKey(ck, database.gender)}`
         )
         .toLowerCase()
         .includes(filter.toLowerCase()) ||
       (silly &&
         i18n
-          .t(`charNames_gen:${charKeyToCharName(ck, database.gender)}`)
+          .t(
+            `charNames_gen:${charKeyToLocGenderedCharKey(ck, database.gender)}`
+          )
           .toLowerCase()
           .includes(filter.toLowerCase())),
     new: (ck, filter) =>

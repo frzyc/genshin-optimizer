@@ -8,7 +8,7 @@ import {
   prod,
   subscript,
 } from '../../../../Formula/utils'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -36,7 +36,7 @@ const normal_dmgInc = equal(
 const charged_dmgInc = { ...normal_dmgInc }
 const eleMas = lookup(
   condStacks,
-  objectKeyMap(eleMas_stacks, (stack) =>
+  objKeyMap(eleMas_stacks, (stack) =>
     prod(subscript(input.weapon.refineIndex, eleMas_arr), stack)
   ),
   naught
@@ -74,7 +74,7 @@ const sheet: IWeaponSheet = {
       teamBuff: true,
       header: headerTemplate(key, st('stacks')),
       name: st('elementalReaction.electro'),
-      states: objectKeyMap(eleMas_stacks, (i) => ({
+      states: objKeyMap(eleMas_stacks, (i) => ({
         name: st('stack', { count: i }),
         fields: [
           { node: eleMas },

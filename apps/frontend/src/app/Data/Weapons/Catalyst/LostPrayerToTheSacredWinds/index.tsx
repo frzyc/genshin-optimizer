@@ -9,7 +9,7 @@ import {
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -29,7 +29,7 @@ const eleDmgStacks = Object.fromEntries(
     lookup(
       condPassive,
       {
-        ...objectKeyMap(range(1, 4), (i) => prod(eleDmgInc, i)),
+        ...objKeyMap(range(1, 4), (i) => prod(eleDmgInc, i)),
       },
       naught
     ),
@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
       name: st('activeCharField'),
-      states: objectKeyMap(range(1, 4), (i) => ({
+      states: objKeyMap(range(1, 4), (i) => ({
         name: st('seconds', { count: i * 4 }),
         fields: allElementKeys.map((ele) => ({ node: eleDmgStacks[ele] })),
       })),

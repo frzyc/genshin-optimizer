@@ -1,11 +1,11 @@
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import type { Data } from '../../Formula/type'
-import type { CharacterKey, Gender } from '../../Types/consts'
-import { ascensionMaxLevel } from '../LevelData'
 import type { ICharacterSheet, TalentSheetElementKey } from './ICharacterSheet'
 
 export type AllCharacterSheets = (
   characterkey: CharacterKey,
-  gender: Gender
+  gender: GenderKey
 ) => CharacterSheet
 export default class CharacterSheet {
   sheet: ICharacterSheet

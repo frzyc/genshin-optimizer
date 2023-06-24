@@ -1,8 +1,12 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allSubstatKeys,
 } from '@genshin-optimizer/consts'
+import { clamp } from '@genshin-optimizer/util'
 import type {
   ArtifactSortKey,
   FilterOption,
@@ -11,10 +15,6 @@ import {
   artifactSortKeys,
   initialFilterOption,
 } from '../../PageArtifact/ArtifactSort'
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import { allArtifactRarities } from '../../Types/consts'
-import { clamp } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
 import { validateArr, validateObject } from '../validationUtil'
@@ -70,7 +70,7 @@ export class DisplayArtifactEntry extends DataEntry<
         lines,
       } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
-      rarity = validateArr(rarity, allArtifactRarities)
+      rarity = validateArr(rarity, allArtifactRarityKeys)
 
       if (typeof levelLow !== 'number') levelLow = 0
       else levelLow = clamp(levelLow, 0, 20)

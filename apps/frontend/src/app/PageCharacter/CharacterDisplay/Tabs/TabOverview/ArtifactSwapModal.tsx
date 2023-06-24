@@ -1,4 +1,7 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/g-assets'
+import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
+import { filterFunction } from '@genshin-optimizer/util'
 import {
   Box,
   CardContent,
@@ -17,7 +20,6 @@ import {
   useReducer,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import Assets from '../../../../Assets/Assets'
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
@@ -29,9 +31,6 @@ import {
   artifactFilterConfigs,
   initialFilterOption,
 } from '../../../../PageArtifact/ArtifactSort'
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
-import { filterFunction } from '../../../../Util/SortByFilters'
 import CompareBuildButton from './CompareBuildButton'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
@@ -107,7 +106,7 @@ export default function ArtifactSwapModal({
           }}
         >
           <Typography variant="h6">
-            {slotKey ? <ImgIcon src={Assets.slot[slotKey]} /> : null}{' '}
+            {slotKey ? <ImgIcon src={imgAssets.slot[slotKey]} /> : null}{' '}
             {t`tabEquip.swapArt`}
           </Typography>
           <CloseButton onClick={onClose} />

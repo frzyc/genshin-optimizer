@@ -1,11 +1,10 @@
 import type {
   CharacterKey,
   LocationCharacterKey,
+  SubstatKey,
 } from '@genshin-optimizer/consts'
-import { allTravelerKeys } from '@genshin-optimizer/consts'
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import { deepFreeze } from '../../Util/Util'
+import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/consts'
+import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 

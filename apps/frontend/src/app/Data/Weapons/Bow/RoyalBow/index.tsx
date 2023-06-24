@@ -2,7 +2,7 @@ import { input } from '../../../../Formula'
 import { lookup, naught, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -16,7 +16,7 @@ const [condPassivePath, condPassive] = cond(key, 'Focus')
 const critRate_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 5), (i) =>
+    ...objKeyMap(range(1, 5), (i) =>
       prod(subscript(input.weapon.refineIndex, critRate_s), i)
     ),
   },

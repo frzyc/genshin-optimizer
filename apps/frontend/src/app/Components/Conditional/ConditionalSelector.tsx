@@ -1,7 +1,7 @@
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import type { ButtonProps } from '@mui/material'
 import { Button, ButtonGroup, Divider, MenuItem } from '@mui/material'
-import React, { useCallback, useContext } from 'react'
+import { useCallback, useContext } from 'react'
 import { CharacterContext } from '../../Context/CharacterContext'
 import { DataContext } from '../../Context/DataContext'
 import type {
@@ -9,7 +9,7 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import { deepClone, deletePropPath, layeredAssignment } from '../../Util/Util'
+import { deletePropPath, layeredAssignment } from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'
@@ -57,7 +57,7 @@ function SimpleConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
+      const conditionalValues = structuredClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, conditional.path, v)
       } else {
@@ -99,7 +99,7 @@ function ExclusiveConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
+      const conditionalValues = structuredClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, conditional.path, v)
       } else {
@@ -167,7 +167,7 @@ function MultipleConditionalSelector({
   const { data } = useContext(DataContext)
   const setConditional = useCallback(
     (path: readonly string[], v?: string) => {
-      const conditionalValues = deepClone(character.conditional)
+      const conditionalValues = structuredClone(character.conditional)
       if (v) {
         layeredAssignment(conditionalValues, path, v)
       } else {

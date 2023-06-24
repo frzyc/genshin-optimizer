@@ -11,7 +11,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -133,7 +133,7 @@ const c6CritStacks_burst_critDMG_ = greaterEq(
   6,
   lookup(
     condC6CritStacks,
-    objectKeyMap(c6CritStacksArr, (stack) =>
+    objKeyMap(c6CritStacksArr, (stack) =>
       prod(stack, percent(dm.c6.burst_critDMG_))
     ),
     naught
@@ -419,7 +419,7 @@ const sheet: ICharacterSheet = {
         path: condC6CritStacksPath,
         value: condC6CritStacks,
         name: ct.ch('critHitDuringBurst'),
-        states: objectKeyMap(c6CritStacksArr, (stack) => ({
+        states: objKeyMap(c6CritStacksArr, (stack) => ({
           name: st('hits', { count: stack }),
           fields: [
             {

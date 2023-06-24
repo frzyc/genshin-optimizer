@@ -25,6 +25,7 @@
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
+      "dependsOn": ["^pipeline"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
@@ -55,6 +56,17 @@
         "linter": "eslint",
         "unitTestRunner": "none"
       }
+    },
+    "@nrwl/web:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "vitest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/web:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "vitest"
     }
   },
   "affected": {

@@ -1,6 +1,6 @@
+import { timeStringMs } from '@genshin-optimizer/util'
 import { Alert, Grid, LinearProgress, styled, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
-import { timeStringMs } from '../../../../../Util/TimeUtil'
 
 export const warningBuildNumber = 10000000
 export type BuildStatus = {

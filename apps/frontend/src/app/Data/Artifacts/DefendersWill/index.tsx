@@ -1,19 +1,19 @@
+import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import { allElementKeys } from '@genshin-optimizer/consts'
+import { objKeyValMap } from '@genshin-optimizer/util'
 import { input, tally } from '../../../Formula/index'
 import type { Data } from '../../../Formula/type'
 import { greaterEq, percent } from '../../../Formula/utils'
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyValueMap } from '../../../Util/Util'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
-import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
+import type { IArtifactSheet } from '../IArtifactSheet'
 
 const key: ArtifactSetKey = 'DefendersWill'
 const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.DefendersWill, 2, percent(0.3))
 
-const res_ = objectKeyValueMap(allElementKeys, (ele) => [
+const res_ = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_res_`,
   greaterEq(
     input.artSet.DefendersWill,

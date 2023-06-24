@@ -1,13 +1,14 @@
-import type { Gender } from '../../Types/consts'
-import { genderKeys } from '../../Types/consts'
+import type { GenderKey } from '@genshin-optimizer/consts'
+import { allGenderKeys } from '@genshin-optimizer/consts'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 
 interface IDBMeta {
   name: string
   lastEdit: number
-  gender: Gender
+  gender: GenderKey
 }
 
 function dbMetaInit(database: ArtCharDatabase): IDBMeta {
@@ -34,7 +35,7 @@ export class DBMetaEntry extends DataEntry<
       name = `Database ${this.database.storage.getDBIndex()}`
     if (typeof lastEdit !== 'number') console.warn('lastEdit INVALID')
     if (typeof lastEdit !== 'number') lastEdit = 0
-    if (!genderKeys.includes(gender)) gender = 'F'
+    if (!allGenderKeys.includes(gender)) gender = 'F'
 
     return { name, lastEdit, gender } as IDBMeta
   }

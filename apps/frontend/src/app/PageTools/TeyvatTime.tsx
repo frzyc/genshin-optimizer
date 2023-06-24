@@ -1,23 +1,17 @@
+import {
+  DAY_MS,
+  MINUTE_MS,
+  SECOND_MS,
+  timeString,
+} from '@genshin-optimizer/util'
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled'
 import { CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import CardDark from '../Components/Card/CardDark'
 import DropdownButton from '../Components/DropdownMenu/DropdownButton'
 import { DatabaseContext } from '../Database/Database'
-import {
-  DAY_MS,
-  HOUR_MS,
-  MINUTE_MS,
-  SECOND_MS,
-  timeString,
-} from '../Util/TimeUtil'
-export const timeZones = {
-  America: -5 * HOUR_MS,
-  Europe: HOUR_MS,
-  Asia: 8 * HOUR_MS,
-  'TW, HK, MO': 8 * HOUR_MS,
-}
-export type TimeZoneKey = keyof typeof timeZones
+import type { TimeZoneKey } from '../Database/DataEntries/DisplayTool'
+import { timeZones } from '../Database/DataEntries/DisplayTool'
 
 export function initToolsDisplayTimezone() {
   return { timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey }

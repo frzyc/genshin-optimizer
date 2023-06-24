@@ -1,6 +1,4 @@
-import { Button, ButtonGroup, MenuItem } from '@mui/material'
-import { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
+import type { AscensionKey } from '@genshin-optimizer/consts'
 import {
   ambiguousLevel,
   ambiguousLevelLow,
@@ -10,9 +8,11 @@ import {
   maxLevelLow,
   milestoneLevels,
   milestoneLevelsLow,
-} from '../Data/LevelData'
-import type { Ascension } from '../Types/consts'
-import { clamp } from '../Util/Util'
+} from '@genshin-optimizer/gi-util'
+import { clamp } from '@genshin-optimizer/util'
+import { Button, ButtonGroup, MenuItem } from '@mui/material'
+import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from './CustomNumberInput'
@@ -25,8 +25,8 @@ export default function LevelSelect({
   useLow = false,
 }: {
   level: number
-  ascension: Ascension
-  setBoth: (action: { level?: number; ascension?: Ascension }) => void
+  ascension: AscensionKey
+  setBoth: (action: { level?: number; ascension?: AscensionKey }) => void
   useLow?: boolean
 }) {
   const { t } = useTranslation('ui')
@@ -36,7 +36,7 @@ export default function LevelSelect({
       level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
       const ascension = ascensionMaxLevels.findIndex(
         (ascenML) => level <= ascenML
-      ) as Ascension
+      ) as AscensionKey
       setBoth({ level, ascension })
     },
     [setBoth, ascensionMaxLevels, useLow]
@@ -44,9 +44,9 @@ export default function LevelSelect({
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevels.findIndex(
       (ascenML) => level !== 90 && level === ascenML
-    ) as Ascension
+    ) as AscensionKey
     if (ascension === lowerAscension)
-      setBoth({ ascension: (ascension + 1) as Ascension })
+      setBoth({ ascension: (ascension + 1) as AscensionKey })
     else setBoth({ ascension: lowerAscension })
   }, [setBoth, ascensionMaxLevels, ascension, level])
   return (
