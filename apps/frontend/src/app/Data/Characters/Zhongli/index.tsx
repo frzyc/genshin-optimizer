@@ -317,7 +317,7 @@ const sheet: ICharacterSheet = {
         path: condP1Path,
         teamBuff: true,
         name: ct.ch('p1cond'),
-        states: objectKeyMap(range(1, 5), (i) => ({
+        states: objKeyMap(range(1, 5), (i) => ({
           name: st('stack', { count: i }),
           fields: [{ node: nodeP1 }],
         })),

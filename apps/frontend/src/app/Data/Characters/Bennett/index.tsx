@@ -94,25 +94,19 @@ const dm = {
 const burstAtkRatio = subscript(input.total.burstIndex, dm.burst.atkBonus, {
   unit: '%',
 })
-const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
-const c1AddlAtk = infoMut(
-  greaterEq(
-    input.constellation,
-    1,
-    prod(percent(dm.constellation1.atk_inc), input.base.atk)
-  ),
-  { name: ct.ch('additionalATK') }
+const c1AtkRatio = greaterEq(
+  input.constellation,
+  1,
+  percent(dm.constellation1.atk_inc)
 )
+const burstAddlAtk = prod(sum(burstAtkRatio, c1AtkRatio), input.base.atk)
 const [condInAreaPath, condInArea] = cond(key, 'activeInArea')
 const activeInArea = equal(
   'activeInArea',
   condInArea,
   equal(input.activeCharKey, target.charKey, 1)
 )
-const activeInAreaAtkDisp = {
-  ...sum(burstAddlAtk, c1AddlAtk),
-  info: KeyMap.info('atk'),
-}
+const activeInAreaAtkDisp = infoMut(burstAddlAtk, { ...KeyMap.info('atk') })
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
 
 const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
@@ -404,7 +398,8 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            node: c1AddlAtk,
+            text: ct.ch('additionalATK.name'),
+            value: ct.ch('additionalATK.value'),
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),
