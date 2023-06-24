@@ -1,7 +1,7 @@
 import { erf } from './mathUtil'
 // import { Module } from "wasmpack/assembly.js";
 
-// From a Gaussian mean & variance, get P(x > mu) and E[x | x > mu]
+/** From a 1D Gaussian mean & variance, get P(x > mu) and E[x | x > mu] */
 export function gaussianPE(
   mean: number,
   variance: number,
@@ -14,22 +14,21 @@ export function gaussianPE(
 
   const z = (x - mean) / Math.sqrt(variance)
   const p = (1 - erf(z / Math.sqrt(2))) / 2
-  if (z > 5) {
-    // Z-score large means p will be very small.
-    // We can use taylor expansion at infinity to evaluate upAvg.
-    const y = 1 / z,
-      y2 = y * y
-    return {
-      p: p,
-      upAvg: Math.sqrt(variance) * y * (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))),
-    }
-  }
-
   const phi = Math.exp((-z * z) / 2) / Math.sqrt(2 * Math.PI)
-  return { p: p, upAvg: mean - x + (Math.sqrt(variance) * phi) / p }
+
+  const y2 = 1 / (z * z)
+  // When z is small, p and phi are both nonzero so (phi/p - z) is ok.
+  // When p and phi are both small, we can take use the Taylor expansion
+  //  of (phi/p - z) at y=1/z=0. Using 7th order expansion to ensure
+  //  upAvg is continuous at z=5.
+  const ppz = z < 5 ? phi / p - z : (1 - 2 * y2 * (1 - y2 * (5 + 37 * y2))) / z
+  return { p, upAvg: Math.sqrt(variance) * ppz }
 }
 
-// From a multivariate Gaussian mean & variance, get P(x > mu) and E[x0 | x > mu]
+/**
+ * From a multivariate Gaussian mean & covariance, get P(x > mu) and E[x0 | x > mu]
+ * Javascript implementation ignores the cov off-diagonals (assumes all components are independent).
+ */
 export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   // TODO: an implementation without using the independence assumption
   let ptot = 1
@@ -47,19 +46,16 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
     if (i !== 0) cptot *= p
   }
 
-  // Naive 1st moment of truncated distribution: assume it's relatively stationary w.r.t. the
-  //  constraints. If the constraints greatly affects the moment, then its associated
-  //  conditional probability should also be small. Therefore in conjunction with the summation
-  //  method in `gmmNd()`, the overall approximation should be fairly good, even if the individual
-  //  upAvg terms may be very bad.
-  // Appears to work well in practice.
-  //
-  // More rigorous methods for estimating 1st moment of truncated multivariate distribution exist.
-  // https://www.cesarerobotti.com/wp-content/uploads/2019/04/JCGS-KR.pdf
   const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0])
   return { p: ptot, upAvg: upAvg, cp: cptot }
 }
 
+/**
+ * From a multivariate Gaussian mean & covariance, get P(x > mu) and E[x0 | x > mu]
+ * This is implemented in Fortran, but it does take into account the off-diagonals.
+ *
+ * TODO: re-implement the WebAssembly bridge.
+ */
 // export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
 //   let mvn: any = new Module.MVNHandle(mu.length);
 //   try {
