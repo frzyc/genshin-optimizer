@@ -82,7 +82,7 @@ const skillTenguAmbush_disp = equal(
   'TenguJuuraiAmbush',
   condSkillTenguAmbush,
   prod(input.base.atk, atkIncRatio),
-  KeyMap.info('atk')
+  { ...KeyMap.info('atk'), isTeamBuff: true }
 )
 const skillTenguAmbush_ = equal(
   input.activeCharKey,
