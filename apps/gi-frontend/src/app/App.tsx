@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import React, { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { HashRouter, Routes, useMatch } from 'react-router-dom'
+import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 // import './App.scss'
 import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
 import ErrorBoundary from './Components/ErrorBoundary'
@@ -24,6 +24,7 @@ import { ArtCharDatabase, DatabaseContext } from './Database/Database'
 import useTitle from './Hooks/useTitle'
 import './i18next/i18n'
 import { theme } from './Theme'
+import Character from './Character'
 
 // const PageHome = lazy(() => import('./PageHome'))
 // const PageArtifact = lazy(() => import('./PageArtifact'))
@@ -147,12 +148,12 @@ function Content() {
           <Routes>
             {/* <Route index element={<PageHome />} />
             <Route path="/artifacts" element={<PageArtifact />} />
-            <Route path="/weapons" element={<PageWeapon />} />
+            <Route path="/weapons" element={<PageWeapon />} /> */}
             <Route path="/characters/*">
-              <Route index element={<PageCharacter />} />
-              <Route path=":characterKey/*" element={<CharacterDisplay />} />
+              <Route index element={<Character />} />
+              {/* <Route path=":characterKey/*" element={<CharacterDisplay />} /> */}
             </Route>
-            <Route path="/tools" element={<PageTools />} />
+            {/* <Route path="/tools" element={<PageTools />} />
             <Route path="/setting" element={<PageSettings />} />
             <Route path="/doc/*" element={<PageDocumentation />} />
             <Route path="/scanner" element={<PageScanner />} /> */}

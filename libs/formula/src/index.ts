@@ -1,9 +1,11 @@
-import type { AnyNode, RawTagMapEntries } from '@genshin-optimizer/waverider'
+import type { AnyNode, RawTagMapEntries, ReRead } from '@genshin-optimizer/waverider'
 import { compileTagMapValues, constant } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export * from './formulaText'
 export * from './util'
+export * from './data/util'
+export { Calculator } from './calculator'
 
 export function genshinCalculatorWithValues(extras: RawTagMapEntries<number>) {
   return genshinCalculatorWithEntries(
@@ -11,7 +13,7 @@ export function genshinCalculatorWithValues(extras: RawTagMapEntries<number>) {
   )
 }
 export function genshinCalculatorWithEntries(
-  extras: RawTagMapEntries<AnyNode>
+  extras: RawTagMapEntries<AnyNode| ReRead>
 ) {
   const extraEntries = compileTagMapValues(keys, extras)
   return new Calculator(keys, values as any, extraEntries)
