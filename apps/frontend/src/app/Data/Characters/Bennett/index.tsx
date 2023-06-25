@@ -398,8 +398,8 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            text: ct.ch('additionalATK.name'),
-            value: ct.ch('additionalATK.value'),
+            text: ct.ch('additionalATK'),
+            value: ct.ch('additionalATKValue'),
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),

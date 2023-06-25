@@ -61,19 +61,6 @@ const sheet: IWeaponSheet = {
       fields: Object.values(dmg_Nodes).map((node) => ({ node })),
     },
     {
-      canShow: unequal(condStack, undefined, 1),
-      value: condOffField,
-      path: condOffFieldPath,
-      teamBuff: true,
-      header: headerTemplate(key, st('conditional')),
-      name: st('charOffField'),
-      states: {
-        on: {
-          fields: [],
-        },
-      },
-    },
-    {
       value: condStack,
       path: condStackPath,
       teamBuff: true,
@@ -92,6 +79,19 @@ const sheet: IWeaponSheet = {
           },
         ])
       ),
+    },
+    {
+      canShow: unequal(condStack, undefined, 1),
+      value: condOffField,
+      path: condOffFieldPath,
+      teamBuff: true,
+      header: headerTemplate(key, st('conditional')),
+      name: st('charOffField'),
+      states: {
+        on: {
+          fields: [],
+        },
+      },
     },
   ],
 }
