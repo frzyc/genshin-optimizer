@@ -81,7 +81,7 @@ export default function CustomTooltip({
     allArtifactSlotKeys.every(
       (slotKey) =>
         artifactsBySlot[slotKey]?.id ===
-        data.get(input.art[slotKey].id).value.toString()
+        data.get(input.art[slotKey].id).value?.toString()
     )
 
   const generLabel = useMemo(
