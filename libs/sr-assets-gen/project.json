@@ -5,17 +5,18 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/sr-assets-gen",
+        "outputFileName": "src/index.js",
         "main": "libs/sr-assets-gen/src/index.ts",
         "tsConfig": "libs/sr-assets-gen/tsconfig.lib.json",
         "assets": ["libs/sr-assets-gen/*.md"]
       }
     },
     "pipeline": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nx/js:node",
       "options": {
         "buildTarget": "sr-assets-gen:build",
         "watch": false,
@@ -24,7 +25,7 @@
       "inputs": ["default", "^production", "sr-assets"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/sr-assets-gen/**/*.ts"]

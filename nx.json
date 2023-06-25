@@ -41,7 +41,18 @@
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/web:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "vitest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nx/web:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "vitest"
+    },
+    "@nx/react": {
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
@@ -56,17 +67,6 @@
         "linter": "eslint",
         "unitTestRunner": "none"
       }
-    },
-    "@nrwl/web:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "vitest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/web:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "vitest"
     }
   },
   "affected": {

@@ -5,17 +5,18 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/g-assets-gen",
+        "outputFileName": "src/index.js",
         "main": "libs/g-assets-gen/src/index.ts",
         "tsConfig": "libs/g-assets-gen/tsconfig.lib.json",
         "assets": ["libs/g-assets-gen/*.md"]
       }
     },
     "pipeline": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nx/js:node",
       "options": {
         "buildTarget": "g-assets-gen:build",
         "watch": false,
@@ -23,7 +24,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/g-assets-gen/**/*.ts"]
