@@ -3,8 +3,6 @@
     "lvl1CD": "Charge Level 1 CD",
     "lvl2CD": "Charge Level 2 CD"
   },
-  "additionalATK": "ATK Inc. Bonus Scaling",
-  "additionalATKValue": "20% Base ATK",
   "c4DMG": "Unexpected Odyssey DMG",
   "c6PyroInfusion": "<pyro>Sword, Claymore and Polearm Pyro Infusion</pyro>"
 }

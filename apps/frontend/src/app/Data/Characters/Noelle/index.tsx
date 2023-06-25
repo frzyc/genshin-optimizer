@@ -12,7 +12,6 @@ import {
   unequal,
   sum,
 } from '../../../Formula/utils'
-import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -105,18 +104,15 @@ const nodeBurstAtk = equal(
   condBurst,
   prod(
     input.total.def,
-    subscript(input.total.burstIndex, dm.burst.defToAtk, { unit: '%' })
-  ),
-  KeyMap.info('atk')
-)
-const nodeC6Atk = equal(
-  'on',
-  condBurst,
-  prod(
-    input.total.def,
-    greaterEq(input.constellation, 6, percent(dm.constellation6.burstAtkBonus))
-  ),
-  KeyMap.info('atk')
+    sum(
+      subscript(input.total.burstIndex, dm.burst.defToAtk, { unit: '%' }),
+      greaterEq(
+        input.constellation,
+        6,
+        percent(dm.constellation6.burstAtkBonus)
+      )
+    )
+  )
 )
 
 const nodeSkillHealChanceBase = subscript(
@@ -209,7 +205,7 @@ export const data = dataObjForCharacterSheet(
       skillBoost: nodeC3,
       burstBoost: nodeC5,
       charged_dmg_: nodeC2ChargeDMG,
-      atk: sum(nodeBurstAtk, nodeC6Atk),
+      atk: nodeBurstAtk,
       staminaChargedDec_: nodeC2ChargeDec,
     },
     infusion: {
@@ -402,7 +398,11 @@ const sheet: ICharacterSheet = {
         canShow: equal(condBurst, 'on', 1),
         fields: [
           {
-            node: nodeC6Atk,
+            text: st('bonusScaling.atkInc'),
+            value: st('bonusScaling.percentStat', {
+              percent: `${dm.constellation6.burstAtkBonus * 100}%`,
+              stat: 'DEF',
+            }),
           },
         ],
       }),

@@ -398,8 +398,11 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            text: ct.ch('additionalATK'),
-            value: ct.ch('additionalATKValue'),
+            text: st('bonusScaling.atkInc'),
+            value: st('bonusScaling.percentStat', {
+              percent: `${dm.constellation1.atk_inc * 100}%`,
+              stat: 'Base ATK',
+            }),
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),
