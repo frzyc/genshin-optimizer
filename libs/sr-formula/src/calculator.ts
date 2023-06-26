@@ -25,7 +25,7 @@ export class Calculator extends Base<Output> {
     }
     const preConds = [
       // TODO: include [tag] if it is marked as conditional. It is `tag.qt === 'cond'` in `formula`
-      ...[...x, ..._br].map((x) => x?.meta.conds!),
+      ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
     ].filter((x) => x && x.length)
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 

@@ -26,7 +26,7 @@ export class Calculator extends Base<Output> {
     }
     const preConds = [
       tag?.qt === 'cond' ? [tag] : [],
-      ...[...x, ..._br].map((x) => x?.meta.conds!),
+      ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
     ].filter((x) => x && x.length)
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
 

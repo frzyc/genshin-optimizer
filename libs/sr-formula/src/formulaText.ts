@@ -42,9 +42,7 @@ export function translate(
   let formula: string, prec: number
   switch (op) {
     case 'const':
-      formula = false // TODO: check if `tag` indicates percent constant
-        ? `${(val * 100).toFixed(2)}%`
-        : `${val}`
+      formula = `${val}` // TODO: Add % here if `tag` indicates percent constant
       prec = Infinity
       break
     case 'sum':
