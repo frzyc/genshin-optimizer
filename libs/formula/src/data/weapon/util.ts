@@ -1,4 +1,4 @@
-import { WeaponDataGen } from '@genshin-optimizer/gi-pipeline'
+import type { WeaponDataGen } from '@genshin-optimizer/gi-pipeline'
 import type { AnyNode, RawTagMapEntries } from '@genshin-optimizer/waverider'
 import { prod, subscript } from '@genshin-optimizer/waverider'
 import type { Stat } from '../util'
