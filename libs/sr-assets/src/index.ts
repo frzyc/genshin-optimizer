@@ -1,16 +1,11 @@
-import type {
-  CharacterKey,
-  GenderKey,
-  LightConeKey,
-} from '@genshin-optimizer/sr-consts'
+import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 // import artifacts from './gen/artifacts'
 import chars from './gen/chars'
 import lightcones from './gen/lightCones'
 type characterAssetKey = 'icon' | 'cover'
 export function characterAsset(
   ck: CharacterKey,
-  asset: characterAssetKey,
-  gender: GenderKey = 'F'
+  asset: characterAssetKey
 ): string {
   switch (asset) {
     case 'icon':

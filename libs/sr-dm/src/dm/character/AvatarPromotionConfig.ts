@@ -1,7 +1,7 @@
 import { dumpFile } from '@genshin-optimizer/pipeline'
-import { objFilterKeys } from '@genshin-optimizer/util'
 import { PROJROOT_PATH } from '../../consts'
-import { AvatarId, characterIdMap } from '../../mapping'
+import type { AvatarId } from '../../mapping'
+import { characterIdMap } from '../../mapping'
 import { readDMJSON } from '../../util'
 
 export type AvatarPromotionConfig = {

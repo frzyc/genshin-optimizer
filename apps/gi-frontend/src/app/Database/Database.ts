@@ -77,7 +77,7 @@ export class ArtCharDatabase {
     this.displayTool = new DisplayToolEntry(this)
 
     // invalidates character when things change.
-    this.chars.followAny((key) => {
+    this.chars.followAny(() => {
       // this.invalidateTeamData(key)
       this.dbMeta.set({ lastEdit: Date.now() })
     })

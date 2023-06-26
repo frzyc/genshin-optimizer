@@ -1,4 +1,3 @@
-import { dumpFile } from '@genshin-optimizer/pipeline'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 import {
   compileTagMapValues,
@@ -9,7 +8,6 @@ import {
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { TaggedFormulas } from './data/util'
-import { dependencyString } from './debug'
 
 describe('character test', () => {
   it.each([

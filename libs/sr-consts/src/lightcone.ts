@@ -67,6 +67,6 @@ export const allLightConeKeys = [
   'WeAreWildfire',
   'WeWillMeetAgain',
   'WoofWalkTime',
-]
+] as const
 
 export type LightConeKey = (typeof allLightConeKeys)[number]

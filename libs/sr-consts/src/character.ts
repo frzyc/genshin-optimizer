@@ -31,9 +31,6 @@ export const nonTrailblazerCharacterKeys = [
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
-export const allCharacterKeys = [...nonTrailblazerCharacterKeys] as const
-export type CharacterKey = (typeof allCharacterKeys)[number]
-
 export const damageType = [
   'Physical',
   'Quantum',
@@ -63,3 +60,9 @@ export const allTrailblazerGeneredKeys = [
   'TrailBlazerFireF',
 ] as const
 export type TrailBlazerGeneredKey = (typeof allTrailblazerGeneredKeys)[number]
+
+export const allCharacterKeys = [
+  ...nonTrailblazerCharacterKeys,
+  ...allTrailblazerGeneredKeys,
+] as const
+export type CharacterKey = (typeof allCharacterKeys)[number]
