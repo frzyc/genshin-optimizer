@@ -91,7 +91,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
       {allArtifactSlotKeys.map((slotKey) => (
         <Grid item key={slotKey} xs={1}>
           <ArtifactCardNano
-            artifactId={data.get(input.art[slotKey].id).value.toString()}
+            artifactId={data.get(input.art[slotKey].id).value?.toString()}
             slotKey={slotKey}
             BGComponent={CardLight}
             onClick={onClick}

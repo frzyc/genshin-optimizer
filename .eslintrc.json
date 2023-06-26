@@ -25,11 +25,7 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
       "parserOptions": {
-        "project": [
-          "apps/*/tsconfig.json",
-          "apps/*/tsconfig.*?.json",
-          "libs/*/tsconfig.*?.json"
-        ]
+        "project": "./tsconfig.eslint.json"
       },
       "rules": {
         "@typescript-eslint/consistent-type-exports": "warn",
