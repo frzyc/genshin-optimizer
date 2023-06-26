@@ -593,15 +593,15 @@ function TempWeaponCard() {
           {name}: {calc.compute(read).val}
         </Box>
       ))}
-      {/* {'atk: '}
+      {'atk: '}
       {
         calc.compute(
           read(
-            { src: 'KeyOfKhajNisut', qt: 'base', q: 'atk', et: 'self' },
+            { member: 'member0', src: 'KeyOfKhajNisut', qt: 'base', q: 'atk', et: 'self' },
             'sum'
           )
         ).val
-      } */}
+      }
     </Box>
   )
 }
