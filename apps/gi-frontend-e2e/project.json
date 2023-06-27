@@ -14,6 +14,9 @@
       "configurations": {
         "production": {
           "devServerTarget": "gi-frontend:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "gi-frontend:serve-static"
         }
       }
     },

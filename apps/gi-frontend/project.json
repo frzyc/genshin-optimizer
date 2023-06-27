@@ -5,78 +5,59 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/gi-frontend",
-        "index": "apps/gi-frontend/src/index.html",
-        "baseHref": "/",
-        "main": "apps/gi-frontend/src/main.tsx",
-        "tsConfig": "apps/gi-frontend/tsconfig.app.json",
-        "assets": [
-          "apps/gi-frontend/src/assets",
-          {
-            "input": "libs/localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/dm-localization/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/silly-wisher-names/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }
-        ],
-        "styles": [],
-        "scripts": [],
-        "isolatedConfig": true,
-        "webpackConfig": "apps/gi-frontend/webpack.config.js"
+        "outputPath": "dist/apps/gi-frontend"
       },
       "configurations": {
         "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
+          "mode": "development"
         },
         "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/gi-frontend/src/environments/environment.ts",
-              "with": "apps/gi-frontend/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
+          "mode": "production"
         }
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
+      "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "gi-frontend:build",
-        "port": 4300,
-        "hmr": true
+        "buildTarget": "gi-frontend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "gi-frontend:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "gi-frontend:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "gi-frontend:build"
       },
       "configurations": {
         "development": {
           "buildTarget": "gi-frontend:build:development"
         },
         "production": {
-          "buildTarget": "gi-frontend:build:production",
-          "hmr": false
+          "buildTarget": "gi-frontend:build:production"
         }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/gi-frontend"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/gi-frontend"
       }
     },
     "lint": {
@@ -86,18 +67,10 @@
         "lintFilePatterns": ["apps/gi-frontend/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "serve-static": {
+      "executor": "@nx/web:file-server",
       "options": {
-        "jestConfig": "apps/gi-frontend/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "buildTarget": "gi-frontend:build"
       }
     }
   },
