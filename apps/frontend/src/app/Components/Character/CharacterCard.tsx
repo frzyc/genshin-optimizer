@@ -300,11 +300,7 @@ function Header({
     ),
     [onClick, characterKey]
   )
-  const banner = characterAsset(
-    characterKey,
-    'banner',
-    gender
-  )
+  const banner = characterAsset(characterKey, 'banner', gender)
   if (!characterSheet) return null
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -321,7 +317,7 @@ function Header({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.5,
+            opacity: 0.7,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
