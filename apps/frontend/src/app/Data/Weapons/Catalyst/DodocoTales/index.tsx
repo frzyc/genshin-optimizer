@@ -10,20 +10,20 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'DodocoTales'
 const data_gen = allStats.weapon.data[key]
 
-const chargedDmgInc = [0.16, 0.2, 0.24, 0.28, 0.32]
-const atkInc = [0.08, 0.1, 0.12, 0.14, 0.16]
+const chargedDmgInc = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const atkInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condNormalPath, condNormal] = cond(key, 'DodoventureNormal')
 const [condChargedPath, condCharged] = cond(key, 'DodoventureCharged')
 const charged_dmg_ = equal(
   'on',
   condNormal,
-  subscript(input.weapon.refineIndex, chargedDmgInc)
+  subscript(input.weapon.refinement, chargedDmgInc)
 )
 const atk_ = equal(
   'on',
   condCharged,
-  subscript(input.weapon.refineIndex, atkInc)
+  subscript(input.weapon.refinement, atkInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

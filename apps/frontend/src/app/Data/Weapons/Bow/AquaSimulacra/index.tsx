@@ -11,16 +11,16 @@ const key: WeaponKey = 'AquaSimulacra'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const hp_arr = [0.16, 0.2, 0.24, 0.28, 0.32]
-const dmg_arr = [0.2, 0.25, 0.3, 0.35, 0.4]
+const hp_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const dmg_arr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
 
-const base_hp_ = subscript(input.weapon.refineIndex, hp_arr)
+const base_hp_ = subscript(input.weapon.refinement, hp_arr)
 const cond_dmg_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refineIndex, dmg_arr)
+  subscript(input.weapon.refinement, dmg_arr)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

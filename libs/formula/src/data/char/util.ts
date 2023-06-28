@@ -130,17 +130,7 @@ export function fixedShield(
 
 export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
-  {
-    lvlCurves,
-    ascensionBonus,
-  }: {
-    lvlCurves: {
-      key: string
-      base: number
-      curve: string /* TODO: key of char curves */
-    }[]
-    ascensionBonus: { key: string; values: number[] }[]
-  }
+  { lvlCurves, ascensionBonus }: CharacterDataGen
 ): RawTagMapEntries<AnyNode> {
   const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
   specials.delete('atk')
@@ -153,7 +143,7 @@ export function entriesForChar(
     ...lvlCurves.map(({ key, base, curve }) =>
       selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))
     ),
-    ...ascensionBonus.map(({ key, values }) =>
+    ...Object.entries(ascensionBonus).map(([key, values]) =>
       selfBuff.base[key as Stat].add(subscript(ascension, values))
     ),
 

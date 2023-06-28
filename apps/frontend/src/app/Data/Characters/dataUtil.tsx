@@ -267,8 +267,8 @@ export function dataObjForCharacterSheet(
     const lvlCurveBase = gen.lvlCurves.find((lc) => lc.key === stat)
     if (lvlCurveBase) list.push(curve(lvlCurveBase.base, lvlCurveBase.curve))
 
-    const asc = gen.ascensionBonus.find((ab) => ab.key === stat)
-    if (asc) list.push(subscript(input.asc, asc.values))
+    const asc = gen.ascensionBonus[stat]
+    if (asc) list.push(subscript(input.asc, asc))
 
     if (!list.length) continue
 

@@ -23,13 +23,13 @@ const [tr, trm] = trans('weapon', key)
 const [condStackPath, condStack] = cond(key, 'stack')
 // const [condActivePath, condActive] = cond(key, "active")
 
-const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
-const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
+const dmg_ = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const atk_ = [-1, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const dmg_Nodes = Object.fromEntries(
   allElementKeys.map((e) => [
     `${e}_dmg_`,
-    subscript(input.weapon.refineIndex, dmg_),
+    subscript(input.weapon.refinement, dmg_),
   ])
 )
 const atkInc = prod(
@@ -46,7 +46,7 @@ const atkInc = prod(
     objKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
     0
   ),
-  subscript(input.weapon.refineIndex, atk_, { unit: '%' })
+  subscript(input.weapon.refinement, atk_, { unit: '%' })
 )
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

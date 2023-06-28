@@ -13,11 +13,11 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
-const eleMasArr = [60, 75, 90, 105, 120]
+const eleMasArr = [-1, 60, 75, 90, 105, 120]
 const eleMas_disp = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refineIndex, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr)
 )
 const eleMas = equal(input.activeCharKey, target.charKey, eleMas_disp)
 
