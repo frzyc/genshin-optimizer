@@ -101,14 +101,11 @@ export function deletePropPath(
 
 //get the value in a nested object, giving array of path
 export function objPathValue(
-  obj: Record<string, unknown> | undefined,
+  obj: object | undefined,
   keys: readonly string[]
 ): any {
   if (!obj || !keys) return undefined
-  return keys.reduce(
-    (a, k) => (a as Record<string, Record<string, unknown>>)?.[k],
-    obj
-  )
+  return keys.reduce((a, k) => (a as object | undefined)?.[k], obj)
 }
 
 export function objClearEmpties(o: Record<string, unknown>) {
