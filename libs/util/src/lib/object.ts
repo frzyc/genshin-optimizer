@@ -105,7 +105,7 @@ export function objPathValue(
   keys: readonly string[]
 ): any {
   if (!obj || !keys) return undefined
-  return keys.reduce((a, k) => (a as object | undefined)?.[k], obj)
+  return keys.reduce((a, k) => (a as any)?.[k], obj)
 }
 
 export function objClearEmpties(o: Record<string, unknown>) {
