@@ -8,7 +8,7 @@ import React, {
 } from 'react'
 import { DatabaseContext } from '../../../../Database/Database'
 import { DataContext } from '../../../../Context/DataContext'
-import Assets from '../../../../Assets/Assets'
+import { imgAssets } from '@genshin-optimizer/g-assets'
 import type { TooltipProps } from 'recharts'
 import {
   Line,
@@ -81,10 +81,9 @@ export default function UpgradeOptChartCard({
   const { data } = useContext(DataContext)
   const artifacts = useMemo(
     () =>
-      allArtifactSlotKeys.map((k) => [
-        k,
-        database.arts.get(data.get(input.art[k].id).value ?? ''),
-      ]),
+      allArtifactSlotKeys.map((k) => {
+        return [k, database.arts.get(input.art[k].id)]
+      }),
     [data, database]
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 
@@ -349,7 +348,7 @@ export default function UpgradeOptChartCard({
                           opacity: 0.7,
                         }}
                         component="img"
-                        src={Assets.slot[sk]}
+                        src={imgAssets.slot[sk]}
                       />
                     }
                     sx={{ minWidth: 0 }}

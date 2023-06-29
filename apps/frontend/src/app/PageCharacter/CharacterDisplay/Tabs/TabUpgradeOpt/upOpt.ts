@@ -6,15 +6,18 @@ import {
 } from '../../../../Formula/optimization'
 
 import type { ICachedArtifact } from '../../../../Types/artifact'
-import { allSubstatKeys } from '../../../../Types/artifact'
+import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/consts'
 import { ddx, zero_deriv } from '../../../../Formula/differentiate'
 import type { ArtifactBuildData, DynStat } from '../../../../Solver/common'
-import Artifact, { maxArtifactLevel } from '../../../../Data/Artifacts/Artifact'
+import {
+  getSubstatValue,
+  getRollsRemaining,
+  getMainStatDisplayValue,
+} from '@genshin-optimizer/gi-util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/dm'
-
 import { gaussianPE, mvnPE_bad } from './mvncdf'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
-import { cartesian, range } from '../../../../Util/Util'
+import { cartesian, range } from '@genshin-optimizer/util'
 
 /**
  * Artifact upgrade distribution math summary.
@@ -123,7 +126,8 @@ const fWeight: StrictDict<SubstatKey, number> = {
 
 /* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
 function scale(key: SubstatKey, rarity: RarityKey = 5) {
-  return toDecimal(key, Artifact.substatValue(key, rarity)) / 10
+  return getSubstatValue(key, rarity) / 10
+  // return toDecimal(key, Artifact.substatValue(key, rarity)) / 10
 }
 
 /* Fixes silliness with percents and being multiplied by 100. */
@@ -193,8 +197,8 @@ export class UpOptCalculator {
 
   /** Adds an artifact to be tracked by UpOptCalc. It is initially un-evaluated. */
   addArtifact(art: ICachedArtifact) {
-    const maxLevel = maxArtifactLevel[art.rarity]
-    const mainStatVal = Artifact.mainStatValue(
+    const maxLevel = artMaxLevel[art.rarity]
+    const mainStatVal = getMainStatDisplayValue(
       art.mainStatKey,
       art.rarity,
       maxLevel
@@ -202,7 +206,7 @@ export class UpOptCalculator {
 
     this.artifacts.push({
       id: art.id,
-      rollsLeft: Artifact.rollsRemaining(art.level, art.rarity),
+      rollsLeft: getRollsRemaining(art.level, art.rarity),
       slotKey: art.slotKey,
       mainStat: art.mainStatKey,
       subs: art.substats
@@ -532,10 +536,9 @@ export class UpOptCalculator {
 
 /* ICachedArtifact to ArtifactBuildData. Maybe this should go in common? */
 export function toArtifact(art: ICachedArtifact): ArtifactBuildData {
-  const mainStatVal = Artifact.mainStatValue(
+  const mainStatVal = toDecimal(
     art.mainStatKey,
-    art.rarity,
-    art.level
+    getMainStatDisplayValue(art.mainStatKey, art.rarity, art.level)
   ) // 5* only
   const buildData = {
     id: art.id,

@@ -45,7 +45,8 @@ import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCal
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import useBuildSetting from '../TabOptimize/useBuildSetting'
 import { dynamicData } from '../TabOptimize/foreground'
-import { clamp, objectKeyMap, objPathValue } from '../../../../Util/Util'
+import { objPathValue } from '../../../../Util/Util'
+import { clamp } from '@genshin-optimizer/util'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import UpgradeOptChartCard from './UpgradeOptChartCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -58,7 +59,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 
 import type { UpOptBuild } from './upOpt'
 import { UpOptCalculator, toArtifact } from './upOpt'
@@ -124,11 +125,7 @@ export default function TabUpopt() {
     })
   }, [database, characterKey, deferredArtsDirty, deferredBuildSetting])
   const filteredArtIdMap = useMemo(
-    () =>
-      objectKeyMap(
-        filteredArts.map(({ id }) => id),
-        (_) => true
-      ),
+    () => Object.fromEntries(filteredArts.map(({ id }) => [id, true])),
     [filteredArts]
   )
 
@@ -151,6 +148,7 @@ export default function TabUpopt() {
         return {
           artifactsToShow: [],
           numPages: 0,
+          currentPageIndex: 0,
           toShow: 0,
           minObj0: 0,
           maxObj0: 0,
@@ -236,17 +234,18 @@ export default function TabUpopt() {
     const equippedArts =
       database.chars.get(characterKey)?.equippedArtifacts ??
       ({} as StrictDict<ArtifactSlotKey, string>)
-    const curEquip: UpOptBuild = objectKeyMap(
-      allArtifactSlotKeys,
-      (slotKey) => {
+    const curEquip: UpOptBuild = Object.fromEntries(
+      allArtifactSlotKeys.map((slotKey) => {
         const art = database.arts.get(equippedArts[slotKey] ?? '')
-        return art ? toArtifact(art) : undefined
-      }
+        return [slotKey, art ? toArtifact(art) : undefined]
+      })
+    ) as UpOptBuild
+    const curEquipSetKeys = Object.fromEntries(
+      allArtifactSlotKeys.map((slotKey) => {
+        const art = database.arts.get(equippedArts[slotKey] ?? '')
+        return [slotKey, art?.setKey ?? '']
+      })
     )
-    const curEquipSetKeys = objectKeyMap(allArtifactSlotKeys, (slotKey) => {
-      const art = database.arts.get(equippedArts[slotKey] ?? '')
-      return art?.setKey ?? ''
-    })
     function respectSexExclusion(art: ICachedArtifact) {
       const newSK = { ...curEquipSetKeys }
       newSK[art.slotKey] = art.setKey
