@@ -345,8 +345,7 @@ const sheet: ICharacterSheet = {
                 text: (
                   <ColorText color="dendro">{st('infusion.dendro')}</ColorText>
                 ),
-                canShow: (data) =>
-                  data.get(input.activeCharKey).value.toString() === key,
+                canShow: (data) => data.get(input.activeCharKey).value === key,
               },
               {
                 node: afterBurst_bloom_dmg_,

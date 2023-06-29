@@ -84,7 +84,7 @@ export default function BuildDisplayItem({
     const char = database.chars.get(characterKey)
     if (!char) return
     allArtifactSlotKeys.forEach((s) => {
-      const aid = data.get(input.art[s].id).value.toString()
+      const aid = data.get(input.art[s].id).value?.toString()
       if (aid)
         database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
       else {
@@ -93,7 +93,7 @@ export default function BuildDisplayItem({
           database.arts.set(oldAid, { location: '' })
       }
     })
-    const weapon = data.get(input.weapon.id).value.toString()
+    const weapon = data.get(input.weapon.id).value
     if (weapon)
       database.weapons.set(weapon, {
         location: charKeyToLocCharKey(characterKey),
@@ -111,7 +111,7 @@ export default function BuildDisplayItem({
       Object.fromEntries(
         allArtifactSlotKeys.map((slotKey) => [
           slotKey,
-          data.get(input.art[slotKey].id).value.toString(),
+          data.get(input.art[slotKey].id).value?.toString(),
         ])
       ),
     [data]
@@ -151,7 +151,7 @@ export default function BuildDisplayItem({
     allArtifactSlotKeys.every(
       (slotKey) =>
         artifactIdsBySlot[slotKey] ===
-        oldData.get(input.art[slotKey].id).value.toString()
+        oldData.get(input.art[slotKey].id).value?.toString()
     ) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
 
   return (
@@ -207,7 +207,7 @@ export default function BuildDisplayItem({
             <Grid item xs={1}>
               <WeaponCardNano
                 showLocation
-                weaponId={data.get(input.weapon.id).value.toString()}
+                weaponId={data.get(input.weapon.id).value!}
               />
             </Grid>
             {artNanos}
