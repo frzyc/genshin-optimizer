@@ -353,7 +353,7 @@ function Header({
 function HeaderContent() {
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const characterEle = data.get(input.charEle).value.toString() as ElementKey
+  const characterEle = data.get(input.charEle).value as ElementKey
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value
