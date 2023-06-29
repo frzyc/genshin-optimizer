@@ -399,10 +399,10 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             text: st('bonusScaling.atkInc'),
-            value: st('bonusScaling.percentStat', {
-              percent: `${dm.constellation6.burstAtkBonus * 100}%`,
-              stat: 'DEF',
+            value: st('bonusScaling.value', {
+              value: dm.constellation6.burstAtkBonus * 100,
             }),
+            unit: stg('stat.def'),
           },
         ],
       }),

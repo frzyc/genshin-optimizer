@@ -152,7 +152,7 @@
   "bonusScaling": {
     "skill_": "Ele. Skill Bonus Scaling",
     "atkInc": "ATK Inc. Bonus Scaling",
-    "percentStat": "{{percent}} {{stat}}"
+    "value": "{{value}}% "
   },
   "dmgMult": {
     "normal": "Normal Att. DMG Mult.",

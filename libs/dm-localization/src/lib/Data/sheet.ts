@@ -96,5 +96,14 @@ const data = {
     aggravate: 2961120579,
     spread: 2191579811,
   },
+  stat: {
+    def: 3591287138, //maybe it's 527947494 or 1575853882
+    dmgBonus: {},
+    base: {
+      atk: 2634860079, //maybe it's 2334963823
+    },
+    res: {},
+    misc: {},
+  },
 } as const
 export default data
