@@ -67,7 +67,7 @@ export function getDisplayHeader(
       }
     }
   } else {
-    const cKey = data.get(input.charKey).value.toString()
+    const cKey = data.get(input.charKey).value
     if (!cKey) return errHeader
     const sheet = getCharSheet(cKey as CharacterKey, database.gender)
     const talentKey = ['normal', 'charged', 'plunging'].includes(sectionKey)

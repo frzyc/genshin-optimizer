@@ -151,7 +151,7 @@ export default function EquipmentSection() {
             <Grid item xs={12} sm={6} md={4} key={slotKey}>
               {data.get(input.art[slotKey].id).value ? (
                 <ArtifactCard
-                  artifactId={data.get(input.art[slotKey].id).value.toString()}
+                  artifactId={data.get(input.art[slotKey].id).value?.toString()}
                   effFilter={deferredRvSet}
                   extraButtons={<ArtifactSwapButton slotKey={slotKey} />}
                   editorProps={{}}

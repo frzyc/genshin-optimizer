@@ -375,12 +375,12 @@ const sheet: ICharacterSheet = {
               {
                 // Only show on Faruzan's page
                 canShow: (data) =>
-                  data.get(input.activeCharKey).value.toString() === key,
+                  data.get(input.activeCharKey).value === key,
                 text: ct.ch('c6Arrow'),
               },
             ],
           },
-        },
+        }
       }),
     ]),
 
