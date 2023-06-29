@@ -16,7 +16,7 @@
   "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
   "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
   "hitmode": {
-    "hit": "Non-CRIT DMG",
+    "hit": "Non-CRIT Hit DMG",
     "avgHit": "Avg. DMG",
     "critHit": "CRIT Hit DMG"
   },
