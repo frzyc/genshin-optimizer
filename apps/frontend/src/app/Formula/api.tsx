@@ -191,7 +191,6 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
       refinement: constant(weapon.refinement),
-      refineIndex: constant(weapon.refinement - 1),
     },
   }
 }

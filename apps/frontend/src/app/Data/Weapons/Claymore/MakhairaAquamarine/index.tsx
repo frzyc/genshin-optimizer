@@ -18,12 +18,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'MakhairaAquamarine'
 const data_gen = allStats.weapon.data[key]
 
-const atkArr = [0.24, 0.3, 0.36, 0.42, 0.48]
+const atkArr = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 const selfAtk = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, atkArr, { unit: '%' }),
+    subscript(input.weapon.refinement, atkArr, { unit: '%' }),
     input.premod.eleMas
   )
 )

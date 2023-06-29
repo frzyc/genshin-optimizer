@@ -11,13 +11,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'EndOfTheLine'
 const data_gen = allStats.weapon.data[key]
 
-const dmgArr = [0.8, 1, 1.2, 1.4, 1.6]
+const dmgArr = [-1, 0.8, 1, 1.2, 1.4, 1.6]
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgArr, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgArr, { unit: '%' }),
       input.total.atk
     ),
     'elemental'

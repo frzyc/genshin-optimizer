@@ -12,19 +12,19 @@ const key: WeaponKey = 'KingsSquire'
 const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
-const eleMasArr = [60, 80, 100, 120, 140]
+const eleMasArr = [-1, 60, 80, 100, 120, 140]
 const eleMas = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refineIndex, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr)
 )
-const dmg_arr = [1, 1.2, 1.4, 1.6, 1.8]
+const dmg_arr = [-1, 1, 1.2, 1.4, 1.6, 1.8]
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmg_arr, { unit: '%' }),
+      subscript(input.weapon.refinement, dmg_arr, { unit: '%' }),
       input.total.atk
     ),
     'elemental'

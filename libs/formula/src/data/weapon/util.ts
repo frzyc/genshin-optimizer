@@ -13,10 +13,10 @@ export function entriesForWeapon(
     ...gen.lvlCurves.map(({ key, base, curve }) =>
       selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))
     ),
-    ...gen.ascensionBonus.map(({ key, values }) =>
+    ...Object.entries(gen.ascensionBonus).map(([key, values]) =>
       selfBuff.base[key as Stat].add(subscript(ascension, values))
     ),
-    ...gen.refinementBonus.map(({ key, values }) =>
+    ...Object.entries(gen.refinementBonus).map(([key, values]) =>
       selfBuff.premod[key as Stat].add(subscript(refinement, values))
     ),
   ]

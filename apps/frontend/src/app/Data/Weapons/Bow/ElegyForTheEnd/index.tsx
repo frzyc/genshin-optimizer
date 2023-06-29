@@ -11,13 +11,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'ElegyForTheEnd'
 const [, trm] = trans('weapon', key)
 const data_gen = allStats.weapon.data[key]
-const eleMasInc = [60, 75, 90, 105, 120]
-const eleMasInc2 = [100, 125, 150, 175, 200]
-const atk_s = [0.2, 0.25, 0.3, 0.35, 0.4]
+const eleMasInc = [-1, 60, 75, 90, 105, 120]
+const eleMasInc2 = [-1, 100, 125, 150, 175, 200]
+const atk_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPath, condNode] = cond(key, 'ThePartingRefrain')
 const eleMas = subscript(
-  input.weapon.refineIndex,
+  input.weapon.refinement,
   eleMasInc,
   KeyMap.info('eleMas')
 )
@@ -27,9 +27,9 @@ const eleMas = subscript(
 const eleMas2 = equal(
   condNode,
   'on',
-  subscript(input.weapon.refineIndex, eleMasInc2, KeyMap.info('eleMas'))
+  subscript(input.weapon.refinement, eleMasInc2, KeyMap.info('eleMas'))
 )
-const atk_ = equal(condNode, 'on', subscript(input.weapon.refineIndex, atk_s))
+const atk_ = equal(condNode, 'on', subscript(input.weapon.refinement, atk_s))
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

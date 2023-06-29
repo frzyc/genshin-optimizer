@@ -10,14 +10,14 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'PrimordialJadeCutter'
 const data_gen = allStats.weapon.data[key]
 
-const hpSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
-const atkSrc = [0.012, 0.015, 0.018, 0.021, 0.024]
-const hp_ = subscript(input.weapon.refineIndex, hpSrc)
+const hpSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const atkSrc = [-1, 0.012, 0.015, 0.018, 0.021, 0.024]
+const hp_ = subscript(input.weapon.refinement, hpSrc)
 const atk = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, atkSrc, { unit: '%' }),
+    subscript(input.weapon.refinement, atkSrc, { unit: '%' }),
     input.premod.hp
   )
 )

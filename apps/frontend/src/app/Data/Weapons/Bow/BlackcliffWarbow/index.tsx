@@ -10,14 +10,14 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'BlackcliffWarbow'
 const data_gen = allStats.weapon.data[key]
-const atkInc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const atkInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const atk_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 3), (i) =>
-      prod(subscript(input.weapon.refineIndex, atkInc), i)
+      prod(subscript(input.weapon.refinement, atkInc), i)
     ),
   },
   naught
