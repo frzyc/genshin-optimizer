@@ -102,7 +102,11 @@ const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6Benefit_anemo_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_)
+  equal(
+    condBurstBenefit,
+    'on',
+    equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_)
+  )
 )
 
 const dmgFormulas = {

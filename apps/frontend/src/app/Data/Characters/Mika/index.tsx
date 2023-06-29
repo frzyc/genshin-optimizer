@@ -125,10 +125,14 @@ const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6InSoulwind_physical_critDMG_disp = greaterEq(
   input.constellation,
   6,
-  equal(condInSoulwind, 'on', dm.constellation6.physical_critDMG_, {
-    ...KeyMap.info('physical_critDMG_'),
-    isTeamBuff: true,
-  })
+  equal(
+    condInSoulwind,
+    'on',
+    equal(condC6Crit, 'on', dm.constellation6.physical_critDMG_, {
+      ...KeyMap.info('physical_critDMG_'),
+      isTeamBuff: true,
+    })
+  )
 )
 const c6InSoulwind_physical_critDMG_ = equal(
   input.activeCharKey,

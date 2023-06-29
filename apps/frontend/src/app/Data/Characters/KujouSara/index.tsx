@@ -94,7 +94,11 @@ const [condC6Path, condC6] = cond(key, 'c6')
 const c6ElectroCritDmg_ = greaterEq(
   input.constellation,
   6,
-  equal('c6', condC6, percent(dm.constellation6.atkInc))
+  equal(
+    condSkillTenguAmbush,
+    'TenguJuuraiAmbush',
+    equal('c6', condC6, percent(dm.constellation6.atkInc))
+  )
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
