@@ -5,23 +5,32 @@ import { self } from './data/util'
 
 const { arithmetic } = calculation
 
-type Output = {
+export type CalcMeta = {
   tag: Tag | undefined
-  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-  ops: CalcResult<number, Output>[]
+  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
+  ops: CalcResult<number, CalcMeta>[]
   conds: Tag[]
 }
 
-export class Calculator extends Base<Output> {
+export class Calculator extends Base<CalcMeta> {
+  override computeCustom(val: any[], op: string): any {
+    if (op == 'res') {
+      const [preRes] = val as [number]
+      if (preRes >= 0.75) return 1 / (1 + 4 * preRes)
+      if (preRes >= 0) return 1 - preRes
+      return 1 - 0.5 * preRes
+    }
+    return super.computeCustom(val, op)
+  }
   override computeMeta(
     op: Exclude<AnyOP, 'read'>,
     tag: Tag | undefined,
     val: any,
-    x: (CalcResult<any, Output> | undefined)[],
-    _br: CalcResult<any, Output>[],
+    x: (CalcResult<any, CalcMeta> | undefined)[],
+    _br: CalcResult<any, CalcMeta>[],
     ex: any
-  ): Output {
-    function constOverride(): Output {
+  ): CalcMeta {
+    function constOverride(): CalcMeta {
       return { tag, op: 'const', ops: [], conds: [] }
     }
     const preConds = [
@@ -39,7 +48,7 @@ export class Calculator extends Base<Output> {
         const empty = arithmetic[op]([], ex)
         const ops = x.filter((x) => x!.val !== empty) as CalcResult<
           number,
-          Output
+          CalcMeta
         >[]
         if (ops.length <= 1) return ops[0]?.meta ?? constOverride()
         if (op === 'prod' && val === 0) return constOverride()
@@ -58,6 +67,12 @@ export class Calculator extends Base<Output> {
         const { tag: baseTag, op, ops } = x[0]!.meta
         return { tag: baseTag ?? tag, op, ops, conds }
       }
+      case 'custom':
+        if (ex == 'res') {
+          const ops = x as [CalcResult<number, CalcMeta>]
+          return { tag, op: ex, ops, conds }
+        }
+        return constOverride()
       default:
         throw new Error('Should not reach this point')
     }

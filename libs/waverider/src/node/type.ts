@@ -16,6 +16,7 @@ export type OP =
   | 'dtag'
   | 'vtag'
   | 'read'
+  | 'custom'
 interface Base<op extends OP, X, Br = never> {
   op: op // Operation Name
   x: X[] // Arguments
@@ -94,6 +95,15 @@ export interface ReRead {
   tag: Tag
 }
 
+/**
+ * Custom computation with `ex` identifying the computation.
+ * The argument type must be the same as the result type.
+ */
+export interface Custom<Output, PermitOP extends OP = OP>
+  extends Base<'custom' & PermitOP, Output> {
+  ex: string
+}
+
 export type NumNode<PermitOP extends OP = OP> =
   | Const<number>
   | Sum<PermitOP>
@@ -108,6 +118,7 @@ export type NumNode<PermitOP extends OP = OP> =
   | TagOverride<NumNode<PermitOP>, PermitOP>
   | DynamicTag<NumNode<PermitOP>, PermitOP>
   | Read
+  | Custom<NumNode<PermitOP>, PermitOP>
 export type StrNode<PermitOP extends OP = OP> =
   | Const<string>
   | Threshold<StrNode<PermitOP>, PermitOP>
@@ -118,6 +129,7 @@ export type StrNode<PermitOP extends OP = OP> =
   | DynamicTag<StrNode<PermitOP>, PermitOP>
   | TagValRead<PermitOP>
   | Read
+  | Custom<StrNode<PermitOP>, PermitOP>
 export type AnyNode<PermitOP extends OP = OP> =
   | Const<number | string>
   | Sum<PermitOP>
@@ -133,6 +145,7 @@ export type AnyNode<PermitOP extends OP = OP> =
   | DynamicTag<AnyNode<PermitOP>, PermitOP>
   | TagValRead<PermitOP>
   | Read
+  | Custom<AnyNode<PermitOP>, PermitOP>
 
 export type NumOP = NumNode['op']
 export type StrOP = StrNode['op']

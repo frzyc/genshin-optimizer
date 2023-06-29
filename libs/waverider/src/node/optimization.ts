@@ -130,6 +130,8 @@ export function detach(
         )
         return map(n.x[0]!, cache)
       }
+      case 'custom':
+        return { ...n, x: n.x.map((x) => map(x, cache)) }
       default:
         assertUnreachable(op)
     }
@@ -238,31 +240,35 @@ export function compile(
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, number>,
-  defaultValue: number
+  defaultValue: number,
+  header?: string
 ): (_: Record<string, number>[]) => number[]
 export function compile(
   n: StrTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, string>,
-  defaultValue: string
+  defaultValue: string,
+  header?: string
 ): (_: Record<string, string>[]) => string[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, any>,
-  defaultValue: any
+  defaultValue: any,
+  header?: string
 ): (_: Record<string, any>[]) => any[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, any>,
-  defaultValue: any
+  defaultValue: any,
+  header: string = ''
 ): (_: Record<string, any>[]) => any[] {
   let i = 1,
-    body = `'use strict'; const x0=0` // making sure `const` has at least one entry
+    body = `'use strict';` + header + ';const x0=0' // making sure `const` has at least one entry
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
     const name = `x${i++}`
@@ -307,6 +313,10 @@ export function compile(
         )
         if (initial[key]) arr = [initial[key]!.toString(), ...arr]
         body += `,${name}=${arr.join('+')}`
+        break
+      }
+      case 'custom': {
+        body += `,${name}=${n.ex}(${argNames})`
         break
       }
       default:
