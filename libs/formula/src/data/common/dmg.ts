@@ -1,5 +1,5 @@
 import {
-  cmpGE,
+  custom,
   lookup,
   prod,
   subscript,
@@ -25,14 +25,7 @@ const infusionTable = priorityTable(infusionPrio),
   preRes = enemy.common.preRes
 
 const data: Data = [
-  enemyDebuff.common.postRes.add(
-    cmpGE(
-      preRes,
-      percent(0.75),
-      sumfrac(1, prod(4, preRes)),
-      cmpGE(preRes, 0, sum(1, prod(-1, preRes)), sum(1, prod(-0.5, preRes)))
-    )
-  ),
+  enemyDebuff.common.postRes.add(custom('res', preRes)),
   enemyDebuff.common.inDmg.add(
     prod(
       sumfrac(

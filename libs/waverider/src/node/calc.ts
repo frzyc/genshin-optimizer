@@ -172,12 +172,20 @@ export class Calculator<M = undefined> {
             }
           }
         }
+        case 'custom': {
+          const x = n.x.map((n) => internal(n)),
+            ex = n.ex
+          return meta(op, undefined, self.computeCustom(getV(x), ex), x, [], ex)
+        }
         default:
           assertUnreachable(op)
       }
     }
   }
 
+  computeCustom(_: any[], op: string): any {
+    throw new Error(`Unsupported custom node ${op} in Calculator`)
+  }
   computeMeta(
     _op: Exclude<AnyOP, 'read'>,
     _tag: Tag | undefined,

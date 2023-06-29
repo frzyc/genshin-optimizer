@@ -1,11 +1,5 @@
 import type { CalcResult } from '@genshin-optimizer/waverider'
-import type { Tag } from './data/util'
-
-type Output = {
-  tag: Tag | undefined
-  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-  ops: CalcResult<number, Output>[]
-}
+import type { CalcMeta } from './calculator'
 
 type FormulaText = {
   name: string | undefined
@@ -16,8 +10,8 @@ type FormulaText = {
   deps: FormulaText[]
 }
 export function translate(
-  data: CalcResult<number, Output>,
-  cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
+  data: CalcResult<number, CalcMeta>,
+  cache: Map<CalcResult<number, CalcMeta>, FormulaText> = new Map()
 ): FormulaText {
   const old = cache.get(data)
   if (old) return old
@@ -28,8 +22,8 @@ export function translate(
 
   const deps = new Set<FormulaText>()
   function getString(
-    ops: CalcResult<number, Output>[],
-    prec: number
+    ops: CalcResult<number, CalcMeta>[],
+    prec: number // precedence of the encompassing/parent term
   ): string[] {
     return ops.map((op) => {
       const text = translate(op, cache)
@@ -56,12 +50,29 @@ export function translate(
       }
       break
     case 'sumfrac': {
-      const [dem] = getString(ops, 2)
-      const [num1, num2] = getString(ops, 1)
+      const [dem] = getString(ops, details.prod.prec)
+      const [num1, num2] = getString(ops, details.sum.prec)
 
       formula = `${dem} / (${num1} + ${num2})`
       prec = details.prod.prec
+      break
     }
+    case 'res': {
+      const [preRes] = ops
+      if (preRes.val >= 0.75) {
+        formula = `1 / (1 + 4 * ${getString(ops, details.prod.prec)})`
+        prec = details.prod.prec
+      } else if (preRes.val >= 0) {
+        formula = `1 - ${getString(ops, details.sum.prec)}`
+        prec = details.sum.prec
+      } else {
+        formula = `1 - ${getString(ops, details.prod.prec)} / 2`
+        prec = details.sum.prec
+      }
+      break
+    }
+    default:
+      throw new Error('Unreachable')
   }
   let name: string | undefined, src: string | undefined
   if (tag) {
