@@ -250,7 +250,7 @@ export function compile(
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, any>,
-  header: string = ''
+  header = ''
 ): (_: Record<string, any>[]) => any[] {
   let i = 1,
     body = `'use strict';` + header + ';const x0=0' // making sure `const` has at least one entry
