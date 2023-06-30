@@ -94,7 +94,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
     characterDispatch,
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const charEleKey = data.get(input.charEle).value.toString() as ElementKey
+  const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
   const reactions = [
     ...new Set([

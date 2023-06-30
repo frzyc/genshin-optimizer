@@ -15,7 +15,7 @@ const [condPassivePath, condPassive] = cond(key, 'MillennialMovement')
 const autoSrc = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const atk_Src = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const dmg_ = subscript(
-  input.weapon.refinementx,
+  input.weapon.refinement,
   data_gen.refinementBonus['dmg_']
 )
 // TODO: These should not stack, similar to NO. But I don't want to copy NO's
