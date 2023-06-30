@@ -2,6 +2,7 @@ import type {
   AnyNode,
   ReRead,
   TagMapSubsetCache,
+  Read,
 } from '@genshin-optimizer/waverider'
 import {
   TagMapExactValues,
@@ -10,7 +11,7 @@ import {
 } from '@genshin-optimizer/waverider'
 import type { Calculator } from './calculator'
 import { keys } from './data'
-import type { Read, Tag } from './data/util'
+import type { Tag } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 
