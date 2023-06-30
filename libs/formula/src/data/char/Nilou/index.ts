@@ -2,6 +2,7 @@ import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
 import {
+  allBoolConditionals,
   allConditionals,
   enemyDebuff,
   percent,
@@ -94,8 +95,10 @@ const {
   final,
   char: { ascension, constellation },
 } = self
-const { a1AfterSkill, a1AfterHit, c2Hydro, c2Dendro, c4AfterPirHit } =
-  allConditionals(info.key)
+const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
+  info.key
+)
+const { c2Hydro, c2Dendro } = allConditionals(info.key, 'none')
 
 const onlyDendroHydroTeam = cmpGE(
   team.common.count.dendro,
@@ -105,12 +108,10 @@ const onlyDendroHydroTeam = cmpGE(
 const isGoldenChaliceBountyActive = cmpGE(
   ascension,
   1,
-  cmpEq(onlyDendroHydroTeam, 1, cmpEq(a1AfterSkill, 'on', 1))
+  a1AfterSkill.ifOn(cmpEq(onlyDendroHydroTeam, 1, 1))
 )
-const a1AfterSkillAndHit_eleMas = cmpEq(
-  isGoldenChaliceBountyActive,
-  1,
-  cmpEq(a1AfterHit, 'on', dm.passive1.eleMas)
+const a1AfterSkillAndHit_eleMas = a1AfterHit.ifOn(
+  cmpEq(isGoldenChaliceBountyActive, 1, dm.passive1.eleMas)
 )
 
 const bountifulBloom_dmg_ = cmpGE(
@@ -155,7 +156,7 @@ const c2_dendro_enemyRes_ = cmpGE(
 const c4_burst_dmg_ = cmpGE(
   constellation,
   4,
-  cmpEq(c4AfterPirHit, 'on', percent(dm.constellation4.burst_dmg_))
+  c4AfterPirHit.ifOn(percent(dm.constellation4.burst_dmg_))
 )
 const c6_critRate_ = cmpGE(
   constellation,

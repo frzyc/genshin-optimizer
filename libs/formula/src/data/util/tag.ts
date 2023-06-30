@@ -1,5 +1,5 @@
 import type { NumNode } from '@genshin-optimizer/waverider'
-import { constant } from '@genshin-optimizer/waverider'
+import { cmpEq, cmpNE, constant } from '@genshin-optimizer/waverider'
 import type { Source, Stat } from './listing'
 import type { Tag } from './read'
 import { Read, reader, tag } from './read'
@@ -198,7 +198,10 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
-export const allConditionals = (src: Source) => allCustoms(src, 'cond')
+export const allConditionals = (
+  src: Source,
+  accu: Read['accu'] | 'none' = 'sum'
+) => allCustoms(src, 'cond', accu !== 'none' ? reader[accu] : reader)
 export const allStatics = (src: Source) => allCustoms(src, 'misc')
 export const allStacks = (
   src: Source
@@ -212,15 +215,32 @@ export const allStacks = (
     }
   ) as any
 }
+
+type BoolConditional = {
+  ifOn: (on: NumNode | number, off?: NumNode | number) => NumNode
+  ifOff: (off: NumNode | number) => NumNode
+}
+export const allBoolConditionals = (
+  src: Source
+): Record<string, BoolConditional> =>
+  new Proxy(reader.sum.withTag({ et: 'self', src, qt: 'cond' })._withAll('q'), {
+    get: (dict, q: string) => {
+      queries.add(q)
+      const cond = dict[q]
+      return {
+        ifOn: (node: NumNode | number, off?: NumNode | number) =>
+          cmpNE(cond, 0, node, off),
+        ifOff: (node: NumNode | number) => cmpEq(cond, 0, node),
+      }
+    },
+  }) as any
+
 function allCustoms(
   src: Source,
   qt: string,
-  tag: Omit<Tag, 'src' | 'qt' | 'q' | 'name'> = {}
+  r: Read = reader
 ): Record<string, Read> {
-  return new Proxy(
-    reader.withTag({ et: 'self', src, qt, ...tag })._withAll('q'),
-    {
-      get: (dict, q: string) => (queries.add(q), dict[q]),
-    }
-  )
+  return new Proxy(r.withTag({ et: 'self', src, qt })._withAll('q'), {
+    get: (dict, q: string) => (queries.add(q), dict[q]),
+  })
 }

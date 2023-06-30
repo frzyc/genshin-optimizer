@@ -30,14 +30,15 @@ export class Calculator extends Base<CalcMeta> {
     _br: CalcResult<any, CalcMeta>[],
     ex: any
   ): CalcMeta {
-    function constOverride(): CalcMeta {
-      return { tag, op: 'const', ops: [], conds: [] }
-    }
     const preConds = [
       tag?.qt === 'cond' ? [tag] : [],
       ...[...x, ..._br].map((x) => x?.meta.conds as Tag[]),
     ].filter((x) => x && x.length)
     const conds = preConds.length <= 1 ? preConds[0] ?? [] : preConds.flat()
+
+    function constOverride(): CalcMeta {
+      return { tag, op: 'const', ops: [], conds }
+    }
 
     switch (op) {
       case 'sum':
@@ -50,7 +51,12 @@ export class Calculator extends Base<CalcMeta> {
           number,
           CalcMeta
         >[]
-        if (ops.length <= 1) return ops[0]?.meta ?? constOverride()
+        if (ops.length <= 1) {
+          if (ops.length && ops[0].meta.conds !== conds)
+            // Preserve `conds` even when short-circuiting
+            return { ...ops[0].meta, conds }
+          return ops[0]?.meta ?? constOverride()
+        }
         if (op === 'prod' && val === 0) return constOverride()
         return { tag, op, ops, conds }
       }
