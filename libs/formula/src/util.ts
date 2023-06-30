@@ -3,6 +3,7 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
+import type { IWeapon, ICharacter } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/waverider'
 import type { Data, Member, Preset, Stat } from './data/util'
 import {
@@ -20,30 +21,21 @@ export function withMember(member: Member, ...data: Data): Data {
   return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
 }
 
-export function charData(data: {
-  name: CharacterKey
-  lvl: number
-  tlvl: { auto: number; skill: number; burst: number }
-  ascension: number
-  constellation: number
-  conds: Record<string, number | string>
-}): Data {
-  const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char,
-    conds = allConditionals(data.name)
+export function charData(data: ICharacter): Data {
+  const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
 
   return [
-    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.key })),
     reader
       .withTag({ src: 'iso', et: 'self' })
-      .reread(reader.withTag({ src: data.name })),
+      .reread(reader.withTag({ src: data.key })),
 
-    lvl.add(data.lvl),
-    auto.add(data.tlvl.auto),
-    skill.add(data.tlvl.skill),
-    burst.add(data.tlvl.burst),
+    lvl.add(data.level),
+    auto.add(data.talent.auto),
+    skill.add(data.talent.skill),
+    burst.add(data.talent.burst),
     ascension.add(data.ascension),
     constellation.add(data.constellation),
-    ...Object.entries(data.conds).map(([k, v]) => conds[k].add(v)),
 
     // Default char
     selfBuff.base.critRate_.add(0.05),
@@ -51,23 +43,15 @@ export function charData(data: {
   ]
 }
 
-export function weaponData(data: {
-  name: WeaponKey
-  lvl: number
-  ascension: number
-  refinement: number
-  conds: Record<string, number | string>
-}): Data {
-  const { lvl, ascension, refinement } = selfBuff.weapon,
-    conds = allConditionals(data.name)
+export function weaponData(data: IWeapon): Data {
+  const { lvl, ascension, refinement } = selfBuff.weapon
 
   return [
-    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.name })),
+    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.key })),
 
-    lvl.add(data.lvl),
+    lvl.add(data.level),
     ascension.add(data.ascension),
     refinement.add(data.refinement),
-    ...Object.entries(data.conds).map(([k, v]) => conds[k].add(v)),
   ]
 }
 
@@ -75,8 +59,7 @@ export function artifactsData(
   data: {
     set: ArtifactSetKey
     stats: readonly { key: Stat; value: number }[]
-  }[],
-  conds: Partial<Record<ArtifactSetKey, Record<string, number | string>>>
+  }[]
 ): Data {
   const {
     common: { count },
@@ -102,11 +85,17 @@ export function artifactsData(
       count.with('src', k as ArtifactSetKey).add(v)
     ),
     ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
-    ...Object.entries(conds).flatMap(([art, v]) => {
-      const conds = allConditionals(art as ArtifactSetKey)
-      return Object.entries(v).map(([k, v]) => conds[k].add(v))
-    }),
   ]
+}
+
+type CondKey = CharacterKey | WeaponKey | ArtifactSetKey
+export function conditionalData(
+  data: Partial<Record<CondKey, Record<string, string | number>>>
+) {
+  return Object.entries(data).flatMap(([key, entries]) => {
+    const conds = allConditionals(key as CondKey)
+    return Object.entries(entries).map(([k, v]) => conds[k].add(v))
+  })
 }
 
 export function teamData(

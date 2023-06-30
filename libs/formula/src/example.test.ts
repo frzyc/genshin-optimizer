@@ -1,4 +1,5 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import {
   compile,
   compileTagMapValues,
@@ -19,9 +20,11 @@ import {
   userBuff,
 } from './data/util'
 import {} from './debug'
+import rawData from './example.test.json'
 import {
   artifactsData,
   charData,
+  conditionalData,
   teamData,
   weaponData,
   withMember,
@@ -36,74 +39,24 @@ describe('example', () => {
 
       ...withMember(
         'member0',
-        ...charData({
-          name: 'Nahida',
-          lvl: 12,
-          tlvl: { auto: 0, skill: 0, burst: 0 },
-          ascension: 0,
-          constellation: 2,
-          conds: {
-            a1ActiveInBurst: 'off',
-            c2Bloom: 'on',
-            c2QSA: 'off',
-            c4Count: 'off',
-          },
-        }),
-        ...weaponData({
-          name: 'TulaytullahsRemembrance',
-          lvl: 42,
-          ascension: 2,
-          refinement: 2,
-          conds: {
-            timePassive: 0,
-            hitPassive: 0,
-          },
-        }),
-        ...artifactsData(
-          [
-            /* per art stat */
-          ],
-          {
-            /* conditionals */
-          }
-        ),
+        ...charData(rawData[0].char as ICharacter),
+        ...weaponData(rawData[0].weapon as IWeapon),
+        ...artifactsData([
+          /* per art stat */
+        ]),
+        ...conditionalData(rawData[0].conditionals),
 
         // custom buff
         userBuff.premod.def.add(30)
       ),
       ...withMember(
         'member1',
-        ...charData({
-          name: 'Nilou',
-          lvl: 33,
-          tlvl: { auto: 0, skill: 0, burst: 0 },
-          ascension: 1,
-          constellation: 3,
-          conds: {
-            a1AfterSkill: 'off',
-            a1AfterHit: 'off',
-            c2Hydro: 'off',
-            c2Dendro: 'off',
-            c4AfterPirHit: 'off',
-          },
-        }),
-        ...weaponData({
-          name: 'KeyOfKhajNisut',
-          lvl: 59,
-          ascension: 3,
-          refinement: 3,
-          conds: {
-            afterSkillStacks: 3,
-          },
-        }),
-        ...artifactsData(
-          [
-            /* per art stat */
-          ],
-          {
-            /* conditionals */
-          }
-        )
+        ...charData(rawData[1].char as ICharacter),
+        ...weaponData(rawData[1].weapon as IWeapon),
+        ...artifactsData([
+          /* per art stat */
+        ]),
+        ...conditionalData(rawData[1].conditionals)
       ),
 
       // Enemy
