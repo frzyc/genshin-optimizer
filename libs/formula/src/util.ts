@@ -23,11 +23,12 @@ export function withMember(member: Member, ...data: Data): Data {
 export function charData(data: {
   name: CharacterKey
   lvl: number
+  tlvl: { auto: number; skill: number; burst: number }
   ascension: number
   constellation: number
   conds: Record<string, number | string>
 }): Data {
-  const { lvl, ascension, constellation } = selfBuff.char,
+  const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char,
     conds = allConditionals(data.name)
 
   return [
@@ -37,6 +38,9 @@ export function charData(data: {
       .reread(reader.withTag({ src: data.name })),
 
     lvl.add(data.lvl),
+    auto.add(data.tlvl.auto),
+    skill.add(data.tlvl.skill),
+    burst.add(data.tlvl.burst),
     ascension.add(data.ascension),
     constellation.add(data.constellation),
     ...Object.entries(data.conds).map(([k, v]) => conds[k].add(v)),
@@ -92,9 +96,7 @@ export function artifactsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader
-      .withTag({ src: 'agg', et: 'self' })
-      .reread(reader.withTag({ src: 'art' })),
+    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: 'art' })),
 
     ...Object.entries(sets).map(([k, v]) =>
       count.with('src', k as ArtifactSetKey).add(v)

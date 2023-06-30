@@ -20,8 +20,13 @@ export function registerArt(
    */
 
   function internal({ tag: oldTag, value }: Data[number]): Data[number] {
+    if (oldTag.src === src)
+      // Special entries (usually stack count) that override `stack`
+      return { tag: oldTag, value }
+
+    // Add `src:art` to the tag and add `tag(src:<<src>>, value)` to set tags for calculation
     if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
-      // This reuses `value` since it is already changing tags
+      // Reuses `value` since it is already changing tags
       value = { ...value, tag: { ...value.tag, src } }
     else value = tag(value, { src })
     return { tag: { ...oldTag, src: 'art' }, value }

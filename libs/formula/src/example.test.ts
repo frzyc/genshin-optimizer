@@ -1,4 +1,16 @@
-import { compileTagMapValues } from '@genshin-optimizer/waverider'
+import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import {
+  ReRead,
+  TagMapSubsetValues,
+  compile,
+  compileTagMapValues,
+  constant,
+  detach,
+  flatten,
+  read,
+  reread,
+  transform,
+} from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { Data } from './data/util'
@@ -32,6 +44,7 @@ describe('example', () => {
         ...charData({
           name: 'Nahida',
           lvl: 12,
+          tlvl: { auto: 0, skill: 0, burst: 0 },
           ascension: 0,
           constellation: 2,
           conds: {
@@ -68,6 +81,7 @@ describe('example', () => {
         ...charData({
           name: 'Nilou',
           lvl: 33,
+          tlvl: { auto: 0, skill: 0, burst: 0 },
           ascension: 1,
           constellation: 3,
           conds: {
@@ -226,7 +240,77 @@ describe('example', () => {
     // tag equality, which may not be worth it.
     expect(conds[1]).toEqual(conds[0])
   })
-  test.skip('create optimization calculation', () => {
-    throw new Error('Add test')
+  test('create optimization calculation', () => {
+    // Step 0: One-time setup DB dynamic tags; can be shared across compilations
+    const dynTagData = compileTagMapValues<ReRead>(keys, [
+      {
+        // All premod art stats from 'self' at the first member
+        tag: { et: 'self', src: 'art', qt: 'premod', member: 'member0' },
+        value: reread({}),
+      },
+      {
+        // CAUTION:
+        // If this includes too many unrelated entries, we may have to include `src:`
+        // Art set counter
+        tag: { q: 'count', member: 'member0' },
+        value: reread({}),
+      },
+    ])
+    const dynTags = new TagMapSubsetValues(keys.tagLen, dynTagData)
+
+    // Step 1: Pick formula(s), anything that `calc.compute` can handle will work
+    const nodes = [
+      read(
+        calc
+          .listFormulas({ member: 'member0' })
+          .find((x) => x.name === 'normal_0')!,
+        undefined
+      ),
+      member0.char.auto,
+      member0.final.atk,
+    ]
+
+    // Step 2: Detach nodes from Calculator
+    let detached = detach(nodes, calc, dynTags)
+
+    // Step 3: Optimize nodes, as needed
+
+    // Step 3.1: Reset `Read.tag` and put relevant field in `q:`
+    const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
+    detached = transform(detached, (n, map) => {
+      if (n.op !== 'read') {
+        const x = n.x.map(map)
+        const br = n.br.map(map)
+        return { ...n, x, br } as (typeof detached)[number]
+      }
+
+      const {
+        tag: { src, q },
+      } = n
+      if (q !== 'count') return read({ q }, undefined) // Art bonus stat
+      if (allArts.has(src as any)) return read({ q: src }, undefined) // Art count
+
+      // Unrelated entries, may be useful to track these entries
+      return constant(0)
+    })
+    // Step 3.2: General optimization
+    detached = flatten(detached)
+
+    // Step 4: Compile for quick iteration
+    const compiled = compile(
+      detached,
+      'q', // Tag category for object key
+      2, // Number of slots
+      {}, // Initial values
+      // Header; includes custom formulas, such as `res`
+      `function res(res) {
+      if (res < 0) return 1 - res / 2
+      else if (res >= 0.75) return 1 / (res * 4 + 1)
+      return 1 - res
+    }`
+    )
+
+    // Step 5: Calculate the value
+    compiled([{ atk: 10 }, { atk_: 0.5 }])
   })
 })

@@ -22,6 +22,7 @@ interface Base<op extends OP, X, Br = never> {
   x: X[] // Arguments
   br: Br[] // Branching Arguments
   ex?: any // Extra information for calculation
+  tag?: Tag // Tag used by read- and tag-related nodes
 }
 
 export interface Const<V> extends Base<'const', never> {
