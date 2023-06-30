@@ -1,19 +1,14 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import {
-  ReRead,
-  TagMapSubsetValues,
   compile,
   compileTagMapValues,
-  constant,
   detach,
   flatten,
   read,
-  reread,
-  transform,
 } from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import type { Data } from './data/util'
+import type { Data, Tag } from './data/util'
 import {
   convert,
   enemyDebuff,
@@ -241,24 +236,7 @@ describe('example', () => {
     expect(conds[1]).toEqual(conds[0])
   })
   test('create optimization calculation', () => {
-    // Step 0: One-time setup DB dynamic tags; can be shared across compilations
-    const dynTagData = compileTagMapValues<ReRead>(keys, [
-      {
-        // All premod art stats from 'self' at the first member
-        tag: { et: 'self', src: 'art', qt: 'premod', member: 'member0' },
-        value: reread({}),
-      },
-      {
-        // CAUTION:
-        // If this includes too many unrelated entries, we may have to include `src:`
-        // Art set counter
-        tag: { q: 'count', member: 'member0' },
-        value: reread({}),
-      },
-    ])
-    const dynTags = new TagMapSubsetValues(keys.tagLen, dynTagData)
-
-    // Step 1: Pick formula(s), anything that `calc.compute` can handle will work
+    // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
     const nodes = [
       read(
         calc
@@ -271,29 +249,19 @@ describe('example', () => {
     ]
 
     // Step 2: Detach nodes from Calculator
-    let detached = detach(nodes, calc, dynTags)
+    const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
+    let detached = detach(nodes, calc, (tag: Tag) => {
+      if (tag['member'] != 'member0') return undefined // Wrong member
+      if (tag['et'] != 'self') return undefined // Not applied (only) to self
+
+      if (tag['src'] === 'art' && tag['qt'] === 'premod')
+        return { q: tag['q']! } // Art stat bonus
+      if (tag['q'] === 'count' && allArts.has(tag['src'] as any))
+        return { q: tag['src']! } // Art set counter
+      return undefined
+    })
 
     // Step 3: Optimize nodes, as needed
-
-    // Step 3.1: Reset `Read.tag` and put relevant field in `q:`
-    const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
-    detached = transform(detached, (n, map) => {
-      if (n.op !== 'read') {
-        const x = n.x.map(map)
-        const br = n.br.map(map)
-        return { ...n, x, br } as (typeof detached)[number]
-      }
-
-      const {
-        tag: { src, q },
-      } = n
-      if (q !== 'count') return read({ q }, undefined) // Art bonus stat
-      if (allArts.has(src as any)) return read({ q: src }, undefined) // Art count
-
-      // Unrelated entries, may be useful to track these entries
-      return constant(0)
-    })
-    // Step 3.2: General optimization
     detached = flatten(detached)
 
     // Step 4: Compile for quick iteration

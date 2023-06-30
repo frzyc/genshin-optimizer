@@ -1,9 +1,9 @@
-import type { TagMapSubsetCache, TagMapSubsetValues } from '../tag'
+import type { Tag, TagMapSubsetCache } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, Const, NumNode, OP, Read, ReRead, StrNode } from './type'
+import type { AnyNode, Const, NumNode, OP, ReRead, Read, StrNode } from './type'
 
 type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
@@ -12,35 +12,34 @@ type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 export function detach(
   n: NumNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<ReRead>
+  dynTag: (_: Tag) => Tag | undefined
 ): NumTagFree[]
 export function detach(
   n: StrNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<ReRead>
+  dynTag: (_: Tag) => Tag | undefined
 ): StrTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<ReRead>
+  dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<ReRead>
+  dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[] {
-  function readAll(
+  function detachRead(
     cache: TagMapSubsetCache<AnyNode | ReRead>,
     accu: Read['accu'],
     dynNodes: Read[]
   ): AnyTagFree[] {
-    dynNodes.push(
-      ...dynTags.subset(cache.id).map((x) => read(cache.with(x.tag).tag, accu))
-    )
+    const dyn = dynTag(cache.tag)
+    if (dyn) dynNodes.push(read(dyn, accu))
     return cache.subset().flatMap((n) => {
       return n.op !== 'reread'
         ? map(n, cache)
-        : readAll(cache.with(n.tag), accu, dynNodes)
+        : detachRead(cache.with(n.tag), accu, dynNodes)
     })
   }
   function fold(
@@ -58,29 +57,18 @@ export function detach(
     return { op: accu, x, br: [] }
   }
 
-  function map(
-    n: NumNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): NumTagFree
-  function map(
-    n: StrNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): StrTagFree
-  function map(
-    n: AnyNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): AnyTagFree
-  function map(
-    n: AnyNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): AnyTagFree {
+  type Cache = TagMapSubsetCache<AnyNode | ReRead>
+  function map(n: NumNode, cache: Cache): NumTagFree
+  function map(n: StrNode, cache: Cache): StrTagFree
+  function map(n: AnyNode, cache: Cache): AnyTagFree
+  function map(n: AnyNode, cache: Cache): AnyTagFree {
     const { op } = n
     switch (op) {
       case 'const':
         return n
       case 'read': {
         const dyn: Read[] = []
-        const x = readAll(cache.with(n.tag), n.accu, dyn)
+        const x = detachRead(cache.with(n.tag), n.accu, dyn)
         x.push(...dyn)
         if (n.accu === undefined) return x[0] ?? constant(undefined as any)
         return fold(x as NumTagFree[], n.accu, n.ex)
