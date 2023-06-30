@@ -1,5 +1,5 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
-import { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import {
   compile,
   compileTagMapValues,
