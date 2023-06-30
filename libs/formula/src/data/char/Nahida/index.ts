@@ -12,6 +12,7 @@ import {
 } from '@genshin-optimizer/waverider'
 import {
   activeCharBuff,
+  allBoolConditionals,
   allConditionals,
   allStatics,
   customDmg,
@@ -105,16 +106,16 @@ const {
   final,
   char: { skill, burst, ascension, constellation },
 } = self
-const { a1ActiveInBurst, c2Bloom, c2QSA, c4Count, partyInBurst } =
-  allConditionals(info.key)
+const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst } = allBoolConditionals(
+  info.key
+)
+const { c4Count } = allConditionals(info.key)
 const { c2_critRate_, c2_critDMG_, c2qsa_defRed_ } = allStatics(info.key)
 
 const count = team.common.count
 
 const pyroLevel = sum(count.pyro, cmpGE(constellation, 1, 1))
-const burst_karma_dmg_ = cmpEq(
-  partyInBurst,
-  'on',
+const burst_karma_dmg_ = partyInBurst.ifOn(
   percent(
     cmpGE(
       pyroLevel,
@@ -130,9 +131,7 @@ const burst_karma_dmg_ = cmpEq(
 )
 
 const electroLevel = sum(count.electro, cmpGE(constellation, 1, 1))
-const _burst_skillIntervalDec = cmpEq(
-  partyInBurst,
-  'on',
+const _burst_skillIntervalDec = partyInBurst.ifOn(
   percent(
     cmpGE(
       electroLevel,
@@ -148,9 +147,7 @@ const _burst_skillIntervalDec = cmpEq(
 )
 
 const hydroLevel = sum(count.hydro, cmpGE(constellation, 1, 1))
-const _burst_durationInc = cmpEq(
-  partyInBurst,
-  'on',
+const _burst_durationInc = partyInBurst.ifOn(
   percent(
     cmpGE(
       hydroLevel,
@@ -168,12 +165,10 @@ const _burst_durationInc = cmpEq(
 const a1InBurst_eleMas = cmpGE(
   ascension,
   1,
-  cmpEq(
-    a1ActiveInBurst,
-    'on',
+  a1ActiveInBurst.ifOn(
     // Either party is in burst, or this is a teammate
     cmpGE(
-      sum(cmpEq(partyInBurst, 'on', 1), cmpNE(target.common.isActive, 1, 1)),
+      sum(partyInBurst.ifOn(1), cmpNE(target.common.isActive, 1, 1)),
       1,
       min(
         prod(percent(dm.passive1.eleMas_), team.premod.eleMas.max),
@@ -215,11 +210,7 @@ export default register(
   activeCharBuff.final.eleMas.add(a1InBurst_eleMas),
 
   c2_critRate_.add(
-    cmpGE(
-      constellation,
-      2,
-      cmpEq(c2Bloom, 'on', percent(dm.constellation2.critRate_))
-    )
+    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critRate_)))
   ),
   teamBuff.premod.critRate_.burning.reread(c2_critRate_),
   teamBuff.premod.critRate_.bloom.reread(c2_critRate_),
@@ -227,11 +218,7 @@ export default register(
   teamBuff.premod.critRate_.burgeon.reread(c2_critRate_),
 
   c2_critDMG_.add(
-    cmpGE(
-      constellation,
-      2,
-      cmpEq(c2Bloom, 'on', percent(dm.constellation2.critDMG_))
-    )
+    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critDMG_)))
   ),
   teamBuff.premod.critDMG_.burning.reread(c2_critDMG_),
   teamBuff.premod.critDMG_.bloom.reread(c2_critDMG_),
@@ -239,11 +226,7 @@ export default register(
   teamBuff.premod.critDMG_.burgeon.reread(c2_critDMG_),
 
   c2qsa_defRed_.add(
-    cmpGE(
-      constellation,
-      2,
-      cmpEq(c2QSA, 'on', percent(dm.constellation2.defDec_))
-    )
+    cmpGE(constellation, 2, c2QSA.ifOn(percent(dm.constellation2.defDec_)))
   ),
   enemyDebuff.common.defRed_.reread(c2qsa_defRed_),
 

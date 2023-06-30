@@ -1,7 +1,7 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { cmpEq, cmpGE } from '@genshin-optimizer/waverider'
 import {
-  allConditionals,
+  allBoolConditionals,
   allStacks,
   percent,
   selfBuff,
@@ -11,7 +11,7 @@ import { artCount, entriesForArt, registerArt } from './util'
 
 const name: ArtifactSetKey = 'NoblesseOblige',
   count = artCount(name)
-const { set4 } = allConditionals(name),
+const { set4 } = allBoolConditionals(name),
   { canNO4 } = allStacks(name)
 
 export default registerArt(
@@ -19,6 +19,6 @@ export default registerArt(
   entriesForArt(name),
   selfBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
 
-  canNO4.in.add(cmpGE(count, 4, cmpEq(set4, 'on', 1))),
+  canNO4.in.add(set4.ifOn(cmpGE(count, 4, 1))),
   teamBuff.premod.atk_.add(cmpEq(canNO4.out, 1, percent(0.2)))
 )

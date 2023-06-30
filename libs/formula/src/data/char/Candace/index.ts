@@ -1,10 +1,10 @@
-import { allStats } from '@genshin-optimizer/gi-stats'
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { cmpEq, cmpGE, prod, sum } from '@genshin-optimizer/waverider'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { cmpGE, prod, sum } from '@genshin-optimizer/waverider'
 import { infusionPrio } from '../../common/dmg'
 import {
-  allConditionals,
+  allBoolConditionals,
   customDmg,
   percent,
   register,
@@ -78,23 +78,19 @@ const {
   final,
   char: { ascension, constellation },
 } = self
-const { afterBurst, c2AfterSkillHit } = allConditionals(info.key)
+const { afterBurst, c2AfterSkillHit } = allBoolConditionals(info.key)
 
-const normalEle_dmg_ = cmpEq(afterBurst, 'on', percent(dm.burst.dmg_bonus_))
+const normalEle_dmg_ = afterBurst.ifOn(percent(dm.burst.dmg_bonus_))
 
 const a4_normalEle_dmg_ = cmpGE(
   ascension,
   4,
-  cmpEq(
-    afterBurst,
-    'on',
-    prod(percent(dm.passive2.normalEle_dmg_), final.hp, 1 / 1000)
-  )
+  afterBurst.ifOn(prod(percent(dm.passive2.normalEle_dmg_), final.hp, 1 / 1000))
 )
 const c2_hp_ = cmpGE(
   constellation,
   2,
-  cmpEq(c2AfterSkillHit, 'on', percent(dm.constellation2.hp_))
+  c2AfterSkillHit.ifOn(percent(dm.constellation2.hp_))
 )
 
 export default register(
@@ -108,9 +104,7 @@ export default register(
   allElementKeys.map((ele) =>
     teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))
   ),
-  teamBuff.reaction.infusionIndex.add(
-    cmpEq(afterBurst, 'on', infusionPrio.team.hydro)
-  ),
+  teamBuff.reaction.infusionIndex.add(afterBurst.ifOn(infusionPrio.team.hydro)),
 
   // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>

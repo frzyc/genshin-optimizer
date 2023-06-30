@@ -21,14 +21,7 @@
     },
     "conditionals": {
       "Nahida": {
-        "a1ActiveInBurst": "off",
-        "c2Bloom": "on",
-        "c2QSA": "off",
-        "c4Count": "off"
-      },
-      "TulaytullahsRemembrance": {
-        "timePassive": 0,
-        "hitPassive": 0
+        "c2Bloom": 1
       }
     }
   },
@@ -53,13 +46,6 @@
       "lock": false
     },
     "conditionals": {
-      "Nilou": {
-        "a1AfterSkill": "off",
-        "a1AfterHit": "off",
-        "c2Hydro": "off",
-        "c2Dendro": "off",
-        "c4AfterPirHit": "off"
-      },
       "KeyOfKhajNisut": {
         "afterSkillStacks": 3
       }
