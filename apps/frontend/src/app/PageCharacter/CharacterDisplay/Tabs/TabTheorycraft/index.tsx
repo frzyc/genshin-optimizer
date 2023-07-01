@@ -326,10 +326,6 @@ export default function TabTheorycraft() {
 
   const { gender } = useDBMeta()
 
-  // This solves
-  // $\argmax_{x\in N^k, \sum x <= n, x <= x_max} f(x)$ without assumptions on the properties of $f$
-  // We brute force iterate over all substats in the graph and compute the maximum
-  // n.b. some substat combinations may not be materializable into real artifacts
   const optimizeSubstats = useCallback(
     (apply: boolean) =>
       optimizeTc(

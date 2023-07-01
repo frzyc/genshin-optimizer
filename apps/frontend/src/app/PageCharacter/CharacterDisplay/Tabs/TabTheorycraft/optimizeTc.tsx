@@ -16,6 +16,11 @@ import { deepClone, objectMap, objPathValue } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
 import type { SetCharTCAction } from '.'
 
+// This solves
+// $\argmax_{x\in N^k, \sum x <= `distributedSubstats`, x <= `maxSubstats`} `optimizationTarget`(x)$ without assumptions on the properties of `optimizationTarget`
+// where $N$ are the natural numbers and $k$ is the number of `SubstatKey`s
+// We brute force iterate over all substats in the graph and compute the maximum
+// n.b. some substat combinations may not be materializable into real artifacts
 export function optimizeTc(
   characterKey: CharacterKey,
   optimizationTarget: string[] | undefined,
@@ -133,6 +138,8 @@ export function optimizeTc(
           i <= Math.min(maxSubstats[x], distributedSubstats);
           i++
         ) {
+          // TODO: Making sure that i + \sum { maxSubstats[xs] } >= distributedSubstats in each recursion will reduce unnecessary recursion considerably for large problems. It will also tighten the possibilities for the leaf recursion, so you don't need so many checkings.
+          // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138083742
           buffer[x] = substatValue(x, i)
           permute(distributedSubstats - i, xs)
         }
