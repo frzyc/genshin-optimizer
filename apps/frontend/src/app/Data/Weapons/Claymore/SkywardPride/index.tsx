@@ -17,15 +17,15 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SkywardPride'
 const data_gen = allStats.weapon.data[key]
 
-const dmgInc = [0.08, 0.1, 0.12, 0.14, 0.16]
-const dmgPerc = [0.8, 1, 1.2, 1.4, 1.6]
-const all_dmg_ = subscript(input.weapon.refineIndex, dmgInc)
+const dmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
+const dmgPerc = [-1, 0.8, 1, 1.2, 1.4, 1.6]
+const all_dmg_ = subscript(input.weapon.refinement, dmgInc)
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgPerc, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

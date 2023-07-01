@@ -12,11 +12,11 @@ const key: WeaponKey = 'SerpentSpine'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const all_dmg_s = [0.06, 0.07, 0.08, 0.09, 0.1]
-const takeDMG_s = [3, 2.7, 2.4, 2.2, 2]
+const all_dmg_s = [-1, 0.06, 0.07, 0.08, 0.09, 0.1]
+const takeDMG_s = [-1, 3, 2.7, 2.4, 2.2, 2]
 
 const [condPassivePath, condPassive] = cond(key, 'Wavesplitter')
-const all_dmg_ = subscript(input.weapon.refineIndex, all_dmg_s, { unit: '%' })
+const all_dmg_ = subscript(input.weapon.refinement, all_dmg_s, { unit: '%' })
 const all_dmg_stack = lookup(
   condPassive,
   {
@@ -48,7 +48,7 @@ const sheet: IWeaponSheet = {
             {
               text: trm('takeMoreDmg'),
               value: (data) =>
-                takeDMG_s[data.get(input.weapon.refineIndex).value] * i,
+                takeDMG_s[data.get(input.weapon.refinement).value] * i,
               unit: '%',
             },
           ],

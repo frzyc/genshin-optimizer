@@ -12,10 +12,10 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'HakushinRing'
 const data_gen = allStats.weapon.data[key]
 
-const refinementEleBonusSrc = [0.1, 0.125, 0.15, 0.175, 0.2]
+const refinementEleBonusSrc = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
 
 const [condPassivePath, condPassive] = cond(key, 'SakuraSaiguu')
-const eleDmg = subscript(input.weapon.refineIndex, refinementEleBonusSrc)
+const eleDmg = subscript(input.weapon.refinement, refinementEleBonusSrc)
 const anemo_dmg_disp = equal('anemo', condPassive, eleDmg)
 const cryo_dmg_disp = equal('cryo', condPassive, eleDmg)
 const geo_dmg_disp = equal('geo', condPassive, eleDmg)

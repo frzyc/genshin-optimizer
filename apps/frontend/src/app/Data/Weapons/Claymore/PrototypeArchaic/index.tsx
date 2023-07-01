@@ -17,13 +17,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'PrototypeArchaic'
 const data_gen = allStats.weapon.data[key]
 
-const dmg_Src = [2.4, 3, 3.6, 4.2, 4.8]
+const dmg_Src = [-1, 2.4, 3, 3.6, 4.2, 4.8]
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmg_Src, { unit: '%' }),
+      subscript(input.weapon.refinement, dmg_Src, { unit: '%' }),
       input.premod.atk
     ),
     'elemental',

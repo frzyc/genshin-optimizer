@@ -3,7 +3,7 @@ import type {
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
 import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
 import { getLevelString } from '@genshin-optimizer/gi-util'
 import { displayDataMap } from '.'
@@ -103,6 +103,6 @@ export function headerTemplate(
     ),
     action: action && <SqBadge color="success">{action}</SqBadge>,
     description: (data) =>
-      tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
+      tr(`passiveDescription.${data.get(input.weapon.refinement).value - 1}`),
   }
 }

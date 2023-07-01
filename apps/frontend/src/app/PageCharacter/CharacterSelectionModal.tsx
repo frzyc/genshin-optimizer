@@ -4,7 +4,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { useBoolState, useForceUpdate } from '@genshin-optimizer/react-util'
 import { filterFunction, sortFunction } from '@genshin-optimizer/util'

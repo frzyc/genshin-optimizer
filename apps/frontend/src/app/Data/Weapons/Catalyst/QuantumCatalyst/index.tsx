@@ -17,19 +17,19 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'QuantumCatalyst'
 const data_gen = allStats.weapon.data[key]
 
-const enerRech_arr = [0.18, 0.225, 0.27, 0.315, 0.36]
-const normCharged_dmgIncArr = [0.06, 0.075, 0.09, 0.105, 0.12]
-const eleMas_arr = [10, 12, 14, 16, 18]
+const enerRech_arr = [-1, 0.18, 0.225, 0.27, 0.315, 0.36]
+const normCharged_dmgIncArr = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
+const eleMas_arr = [-1, 10, 12, 14, 16, 18]
 const eleMas_stacks = range(1, 5)
 
 const [condStacksPath, condStacks] = cond(key, 'stacks')
 
-const enerRech_ = subscript(input.weapon.refineIndex, enerRech_arr)
+const enerRech_ = subscript(input.weapon.refinement, enerRech_arr)
 const normal_dmgInc = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, normCharged_dmgIncArr, { unit: '%' }),
+    subscript(input.weapon.refinement, normCharged_dmgIncArr, { unit: '%' }),
     input.total.eleMas
   )
 )
@@ -37,7 +37,7 @@ const charged_dmgInc = { ...normal_dmgInc }
 const eleMas = lookup(
   condStacks,
   objKeyMap(eleMas_stacks, (stack) =>
-    prod(subscript(input.weapon.refineIndex, eleMas_arr), stack)
+    prod(subscript(input.weapon.refinement, eleMas_arr), stack)
   ),
   naught
 )

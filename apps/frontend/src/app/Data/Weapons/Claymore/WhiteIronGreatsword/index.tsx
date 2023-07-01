@@ -11,7 +11,7 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'WhiteIronGreatsword'
 const data_gen = allStats.weapon.data[key]
 
-const hpRegen = [0.08, 0.1, 0.12, 0.14, 0.16]
+const hpRegen = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPath, condNode] = cond(key, 'CullTheWeak')
 const heal = equal(
   input.weapon.key,
@@ -21,7 +21,7 @@ const heal = equal(
     'on',
     customHealNode(
       prod(
-        subscript(input.weapon.refineIndex, hpRegen, { unit: '%' }),
+        subscript(input.weapon.refinement, hpRegen, { unit: '%' }),
         input.total.hp
       )
     )

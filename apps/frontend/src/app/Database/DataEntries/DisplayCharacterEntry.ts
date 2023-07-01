@@ -1,10 +1,10 @@
 import type { ElementKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { allElementKeys, allWeaponTypeKeys } from '@genshin-optimizer/consts'
+import { validateArr } from '@genshin-optimizer/util'
 import type { CharacterSortKey } from '../../Util/CharacterSort'
 import { characterSortKeys } from '../../Util/CharacterSort'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
-import { validateArr } from '../validationUtil'
 
 export interface IDisplayCharacterEntry {
   sortType: CharacterSortKey

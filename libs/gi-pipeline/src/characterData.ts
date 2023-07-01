@@ -36,7 +36,7 @@ export type CharacterDataGen = {
     curve: CharacterGrowCurveKey
   }[]
   rarity: 1 | 2 | 3 | 4 | 5
-  ascensionBonus: { key: StatKey; values: number[] }[]
+  ascensionBonus: { [key in StatKey]?: number[] }
   birthday: {
     month?: number
     day?: number
@@ -71,9 +71,17 @@ export default function characterData() {
       const skillDepot = avatarSkillDepotExcelConfigData[skillDepotId]
       const burstInfo = avatarSkillExcelConfigData[skillDepot.energySkill]
       const ascensions = ascensionData[avatarPromoteId]
-      const ascensionKeys = new Set(
-        ascensions.flatMap((a) => Object.keys(a.props))
-      )
+
+      const ascensionBonus: CharacterDataGen['ascensionBonus'] = {}
+      const emptyBonus = new Array(ascensions.length).fill(0)
+      ascensions.forEach((data, i) => {
+        for (const [k, value] of Object.entries(data.props)) {
+          const key = k as StatKey
+          if (!(key in ascensionBonus)) ascensionBonus[key] = [...emptyBonus]
+          ascensionBonus[key]![i] += value
+        }
+      })
+
       const result: CharacterDataGen = {
         key: locCharKey,
         ele: burstInfo ? elementMap[burstInfo.costElemType] : undefined, // Traveler will be undefined
@@ -86,10 +94,7 @@ export default function characterData() {
           { key: 'atk', base: attackBase, curve: curves.atk },
           { key: 'def', base: defenseBase, curve: curves.def },
         ],
-        ascensionBonus: [...ascensionKeys].map((key) => ({
-          key: key as StatKey,
-          values: ascensions.map((a) => a.props[key] ?? 0),
-        })),
+        ascensionBonus,
       }
       return [locCharKey, result]
     })

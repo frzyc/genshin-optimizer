@@ -191,7 +191,6 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
       refinement: constant(weapon.refinement),
-      refineIndex: constant(weapon.refinement - 1),
     },
   }
 }
@@ -303,7 +302,7 @@ function uiDataForTeam(
     crawlObject(
       buff ?? {},
       [],
-      (x) => x.operation,
+      (x) => (x as any).operation,
       (x: NumNode, path: string[]) => {
         // CAUTION
         // This is safe only because `buff` is created using only `resetData`

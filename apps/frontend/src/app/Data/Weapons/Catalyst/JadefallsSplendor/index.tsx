@@ -13,8 +13,8 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'condPassive')
-const ele_dmg_arr = [0.003, 0.005, 0.007, 0.009, 0.011]
-const maxEle_dmg_arr = [0.12, 0.2, 0.28, 0.36, 0.44]
+const ele_dmg_arr = [-1, 0.003, 0.005, 0.007, 0.009, 0.011]
+const maxEle_dmg_arr = [-1, 0.12, 0.2, 0.28, 0.36, 0.44]
 const ele_dmg_ = equal(
   input.weapon.key,
   key,
@@ -22,9 +22,9 @@ const ele_dmg_ = equal(
     condPassive,
     'on',
     min(
-      subscript(input.weapon.refineIndex, maxEle_dmg_arr, { unit: '%' }),
+      subscript(input.weapon.refinement, maxEle_dmg_arr, { unit: '%' }),
       prod(
-        subscript(input.weapon.refineIndex, ele_dmg_arr, { unit: '%' }),
+        subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' }),
         // TODO: verify this... there is no way to atm. Pretty sure this is premod,
         // but lets leave it as total because it is prettier formatted
         input.total.hp,
