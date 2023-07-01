@@ -6,7 +6,7 @@ import {
   detach,
   flatten,
   read,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { Data, Tag } from './data/util'

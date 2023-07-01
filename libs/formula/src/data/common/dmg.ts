@@ -5,7 +5,7 @@ import {
   subscript,
   sum,
   sumfrac,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import {
   enemy,

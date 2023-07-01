@@ -4,8 +4,8 @@ import type {
   ElementWithPhyKey,
   MoveKey,
 } from '@genshin-optimizer/consts'
-import type { NumNode, StrNode } from '@genshin-optimizer/waverider'
-import { prod } from '@genshin-optimizer/waverider'
+import type { NumNode, StrNode } from '@genshin-optimizer/pando'
+import { prod } from '@genshin-optimizer/pando'
 import type { Data, Source, Stat } from '.'
 import { reader, self, selfBuff, tag, teamBuff, usedNames } from '.'
 

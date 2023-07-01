@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { cmpEq, prod, subscript } from '@genshin-optimizer/waverider'
+import { cmpEq, prod, subscript } from '@genshin-optimizer/pando'
 import {
   allConditionals,
   percent,

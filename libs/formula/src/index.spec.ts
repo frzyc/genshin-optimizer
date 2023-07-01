@@ -1,4 +1,4 @@
-import { compileTagMapValues } from '@genshin-optimizer/waverider'
+import { compileTagMapValues } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import type { Data, Member, Source } from './data/util'

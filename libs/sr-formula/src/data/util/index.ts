@@ -3,7 +3,7 @@ import type {
   ReRead,
   Tag as BaseTag,
   Read as BaseRead,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 
 export type TaggedFormula = { tag: Tag; value: AnyNode | ReRead }
 export type TaggedFormulas = TaggedFormula[]

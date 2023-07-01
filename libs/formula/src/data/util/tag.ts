@@ -1,5 +1,5 @@
-import type { NumNode } from '@genshin-optimizer/waverider'
-import { cmpEq, cmpNE, constant } from '@genshin-optimizer/waverider'
+import type { NumNode } from '@genshin-optimizer/pando'
+import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
 import type { Tag } from './read'
 import { Read, reader, tag } from './read'

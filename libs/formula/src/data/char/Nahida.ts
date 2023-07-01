@@ -9,7 +9,7 @@ import {
   prod,
   subscript,
   sum,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import {
   activeCharBuff,
   allBoolConditionals,

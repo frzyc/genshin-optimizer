@@ -3,12 +3,12 @@ import type {
   ReRead,
   TagMapSubsetCache,
   Read,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import {
   TagMapExactValues,
   TagMapKeys,
   traverse,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import type { Calculator } from './calculator'
 import { keys } from './data'
 import type { Tag } from './data/util'

@@ -8,8 +8,8 @@ import type {
 } from '@genshin-optimizer/consts'
 import { locCharKeyToCharKey } from '@genshin-optimizer/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
-import type { NumNode } from '@genshin-optimizer/waverider'
-import { prod, subscript, sum } from '@genshin-optimizer/waverider'
+import type { NumNode } from '@genshin-optimizer/pando'
+import { prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
   addStatCurve,

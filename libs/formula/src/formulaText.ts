@@ -1,4 +1,4 @@
-import type { CalcResult } from '@genshin-optimizer/waverider'
+import type { CalcResult } from '@genshin-optimizer/pando'
 import type { CalcMeta } from './calculator'
 
 type FormulaText = {

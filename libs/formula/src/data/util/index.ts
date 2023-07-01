@@ -1,4 +1,4 @@
-import type { AnyNode, ReRead } from '@genshin-optimizer/waverider'
+import type { AnyNode, ReRead } from '@genshin-optimizer/pando'
 import type { Tag } from './read'
 
 export * from './listing'
