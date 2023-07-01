@@ -1,4 +1,4 @@
-import type { CalcResult } from '@genshin-optimizer/waverider'
+import type { CalcResult } from '@genshin-optimizer/pando'
 import type { Tag } from './data/util'
 
 type Output = {

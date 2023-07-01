@@ -1,6 +1,6 @@
 import { allWeaponKeys, type WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { prod, subscript } from '@genshin-optimizer/waverider'
+import { prod, subscript } from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import { addStatCurve, allStatics, register, self } from '../util'
 import CalamityQueller from './CalamityQueller'

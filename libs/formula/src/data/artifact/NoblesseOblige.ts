@@ -1,5 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cmpEq, cmpGE } from '@genshin-optimizer/waverider'
+import { cmpEq, cmpGE } from '@genshin-optimizer/pando'
 import {
   allBoolConditionals,
   allStacks,

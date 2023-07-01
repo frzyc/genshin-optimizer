@@ -4,7 +4,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import type { IWeapon, ICharacter } from '@genshin-optimizer/gi-good'
-import { cmpEq } from '@genshin-optimizer/waverider'
+import { cmpEq } from '@genshin-optimizer/pando'
 import type { Data, Member, Preset, Stat } from './data/util'
 import {
   allConditionals,

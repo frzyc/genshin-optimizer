@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/waverider'
+import { cmpEq, cmpGE, max, min, prod, sum } from '@genshin-optimizer/pando'
 import {
   allBoolConditionals,
   allConditionals,

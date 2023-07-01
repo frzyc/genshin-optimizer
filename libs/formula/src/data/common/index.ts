@@ -1,5 +1,5 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { max, min, prod, subscript, sum } from '@genshin-optimizer/waverider'
+import { max, min, prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'

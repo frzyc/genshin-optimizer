@@ -1,5 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import type { NumNode } from '@genshin-optimizer/waverider'
+import type { NumNode } from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import { self, tag } from '../util'
 

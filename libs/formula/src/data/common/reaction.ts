@@ -7,7 +7,7 @@ import {
   allElementWithPhyKeys,
   allTransformativeReactionKeys,
 } from '@genshin-optimizer/consts'
-import type { NumNode, StrNode } from '@genshin-optimizer/waverider'
+import type { NumNode, StrNode } from '@genshin-optimizer/pando'
 import {
   cmpEq,
   lookup,
@@ -15,7 +15,7 @@ import {
   subscript,
   sum,
   sumfrac,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import { percent, self, selfBuff, tag } from '../util'
 

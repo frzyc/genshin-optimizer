@@ -14,13 +14,13 @@ import type {
   StrNode,
   TagOverride,
   TagValRead,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import {
   constant,
   reread,
   tag as baseTag,
   tagVal as baseTagVal,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import { entryTypes, members, presets, srcs } from './listing'
 
 export const fixedTags = {

@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { prod, subscript } from '@genshin-optimizer/waverider'
+import { prod, subscript } from '@genshin-optimizer/pando'
 import { customHeal, register, self, target } from '../util'
 
 const key: WeaponKey = 'PrototypeAmber'

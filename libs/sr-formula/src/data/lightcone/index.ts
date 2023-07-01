@@ -7,7 +7,7 @@ import {
   read,
   subscript,
   sum,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import type { TaggedFormulas } from '../util'
 
 type Promotion = (typeof allStats.lightcone)[LightConeKey]['ascension'][number]

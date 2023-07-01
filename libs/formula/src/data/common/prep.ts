@@ -1,4 +1,4 @@
-import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/waverider'
+import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/pando'
 import type { Data } from '../util'
 import { enemy, percent, self, selfBuff, tagVal } from '../util'
 

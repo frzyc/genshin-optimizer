@@ -1,7 +1,7 @@
 import {
   compileTagMapKeys,
   compileTagMapValues,
-} from '@genshin-optimizer/waverider'
+} from '@genshin-optimizer/pando'
 import artifact from './artifact'
 import character from './char'
 import common from './common'
