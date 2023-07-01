@@ -207,7 +207,7 @@ describe('example', () => {
       if (tag['member'] != 'member0') return undefined // Wrong member
       if (tag['et'] != 'self') return undefined // Not applied (only) to self
 
-      if (tag['src'] === 'art' && tag['qt'] === 'premod')
+      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus
       if (tag['q'] === 'count' && allArts.has(tag['src'] as any))
         return { q: tag['src']! } // Art set counter

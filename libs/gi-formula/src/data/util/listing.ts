@@ -47,6 +47,7 @@ export const srcs = [
   ...allWeaponKeys,
   ...allArtifactSetKeys,
   'art',
+  'dyn',
   'enemy',
   'custom',
 ] as const

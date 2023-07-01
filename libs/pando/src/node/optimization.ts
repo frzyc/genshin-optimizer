@@ -31,16 +31,16 @@ export function detach(
 ): AnyTagFree[] {
   function detachRead(
     cache: TagMapSubsetCache<AnyNode | ReRead>,
-    accu: Read['accu'],
-    dynNodes: Read[]
+    accu: Read['accu']
   ): AnyTagFree[] {
     const dyn = dynTag(cache.tag)
-    if (dyn) dynNodes.push(read(dyn, accu))
-    return cache.subset().flatMap((n) => {
-      return n.op !== 'reread'
-        ? map(n, cache)
-        : detachRead(cache.with(n.tag), accu, dynNodes)
-    })
+    return dyn
+      ? [read(dyn, accu)]
+      : cache.subset().flatMap((n) => {
+          return n.op !== 'reread'
+            ? map(n, cache)
+            : detachRead(cache.with(n.tag), accu)
+        })
   }
   function fold(
     x: NumTagFree[],
@@ -67,9 +67,7 @@ export function detach(
       case 'const':
         return n
       case 'read': {
-        const dyn: Read[] = []
-        const x = detachRead(cache.with(n.tag), n.accu, dyn)
-        x.push(...dyn)
+        const x = detachRead(cache.with(n.tag), n.accu)
         if (n.accu === undefined) return x[0] ?? constant(undefined as any)
         return fold(x as NumTagFree[], n.accu, n.ex)
       }

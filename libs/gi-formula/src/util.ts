@@ -1,9 +1,9 @@
-import type {
-  ArtifactSetKey,
-  CharacterKey,
-  WeaponKey,
+import {
+  type ArtifactSetKey,
+  type CharacterKey,
+  type WeaponKey,
 } from '@genshin-optimizer/consts'
-import type { IWeapon, ICharacter } from '@genshin-optimizer/gi-good'
+import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/pando'
 import type { Data, Member, Preset, Stat } from './data/util'
 import {
@@ -81,10 +81,17 @@ export function artifactsData(
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
     reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: 'art' })),
 
+    // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
+    reader
+      .withTag({ src: 'art', qt: 'premod' })
+      .reread(reader.with('src', 'dyn')),
+    ...Object.entries(stats).map(([k, v]) =>
+      premod[k as Stat].with('src', 'dyn').add(v)
+    ),
+
     ...Object.entries(sets).map(([k, v]) =>
       count.with('src', k as ArtifactSetKey).add(v)
     ),
-    ...Object.entries(stats).map(([k, v]) => premod[k as Stat].add(v)),
   ]
 }
 
