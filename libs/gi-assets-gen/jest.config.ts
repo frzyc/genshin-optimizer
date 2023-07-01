@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'g-assets-gen',
+  displayName: 'gi-assets-gen',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/libs/g-assets-gen',
+  coverageDirectory: '../../coverage/libs/gi-assets-gen',
 }

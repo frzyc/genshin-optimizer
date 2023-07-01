@@ -3,7 +3,7 @@ import type {
   WeaponKey,
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
 import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
 import { getLevelString } from '@genshin-optimizer/gi-util'
 import { displayDataMap } from '.'

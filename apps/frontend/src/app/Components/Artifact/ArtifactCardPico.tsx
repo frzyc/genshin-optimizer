@@ -1,6 +1,6 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { artifactAsset, imgAssets } from '@genshin-optimizer/g-assets'
+import { artifactAsset, imgAssets } from '@genshin-optimizer/gi-assets'
 import { Box, Typography } from '@mui/material'
 import Artifact from '../../Data/Artifacts/Artifact'
 import StatIcon from '../../KeyMap/StatIcon'

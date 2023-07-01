@@ -1,5 +1,5 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
 import { filterFunction } from '@genshin-optimizer/util'
 import {

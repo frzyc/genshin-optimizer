@@ -1,5 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'

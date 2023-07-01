@@ -1,7 +1,7 @@
 import { charCard } from '@genshin-optimizer/char-cards'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { getLevelString } from '@genshin-optimizer/gi-util'
 import { splash } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
