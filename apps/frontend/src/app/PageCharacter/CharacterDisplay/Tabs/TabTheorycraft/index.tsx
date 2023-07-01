@@ -13,7 +13,7 @@ import {
   artSlotsData,
   substatTypeKeys,
 } from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
 import {
   artDisplayValue,
   getMainStatDisplayValue,

@@ -9,7 +9,7 @@ import {
   allSubstatKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/g-assets'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'

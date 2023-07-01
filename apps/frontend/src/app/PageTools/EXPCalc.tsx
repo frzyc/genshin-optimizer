@@ -1,4 +1,4 @@
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { clamp, objMap } from '@genshin-optimizer/util'
 import { Check } from '@mui/icons-material'
 import {

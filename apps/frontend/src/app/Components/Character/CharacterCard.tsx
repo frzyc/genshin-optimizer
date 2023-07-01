@@ -4,7 +4,7 @@ import type {
   ElementKey,
 } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { range } from '@genshin-optimizer/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'

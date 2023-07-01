@@ -33,7 +33,7 @@ import * as path from 'path'
 
 const WORKSPACE_ROOT_PATH = process.env['NX_WORKSPACE_ROOT']
 export const DEST_PROJ_PATH =
-  `${WORKSPACE_ROOT_PATH}/libs/g-assets/src` as const
+  `${WORKSPACE_ROOT_PATH}/libs/gi-assets/src` as const
 
 type CharacterIcon = {
   icon: string

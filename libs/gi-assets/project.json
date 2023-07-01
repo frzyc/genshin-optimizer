@@ -1,7 +1,7 @@
 {
-  "name": "g-assets",
+  "name": "gi-assets",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/g-assets/src",
+  "sourceRoot": "libs/gi-assets/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,7 +9,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/g-assets/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/gi-assets/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
@@ -17,7 +17,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/g-assets"
+        "outputPath": "dist/libs/gi-assets"
       },
       "configurations": {
         "development": {
@@ -30,5 +30,5 @@
       "dependsOn": ["^pipeline"]
     }
   },
-  "implicitDependencies": ["g-assets-gen"]
+  "implicitDependencies": ["gi-assets-gen"]
 }

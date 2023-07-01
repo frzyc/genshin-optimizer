@@ -1,24 +1,24 @@
 {
-  "name": "g-assets-gen",
+  "name": "gi-assets-gen",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/g-assets-gen/src",
+  "sourceRoot": "libs/gi-assets-gen/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/g-assets-gen",
+        "outputPath": "dist/libs/gi-assets-gen",
         "outputFileName": "src/index.js",
-        "main": "libs/g-assets-gen/src/index.ts",
-        "tsConfig": "libs/g-assets-gen/tsconfig.lib.json",
-        "assets": ["libs/g-assets-gen/*.md"]
+        "main": "libs/gi-assets-gen/src/index.ts",
+        "tsConfig": "libs/gi-assets-gen/tsconfig.lib.json",
+        "assets": ["libs/gi-assets-gen/*.md"]
       }
     },
     "pipeline": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "g-assets-gen:build",
+        "buildTarget": "gi-assets-gen:build",
         "watch": false,
         "inspect": false
       }
@@ -27,7 +27,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/g-assets-gen/**/*.ts"]
+        "lintFilePatterns": ["libs/gi-assets-gen/**/*.ts"]
       }
     }
   },
