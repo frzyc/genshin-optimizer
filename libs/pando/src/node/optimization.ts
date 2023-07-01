@@ -177,7 +177,7 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
       case 'sum':
       case 'prod':
       case 'min':
-      case 'max':
+      case 'max': {
         const constX = n.x.filter((x) => x.op === 'const') as Const<number>[]
         if (constX.length > 1) {
           const varX = n.x.filter((x) => x.op !== 'const') as NumNode<I>[]
@@ -194,6 +194,7 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
 
           return { ...n, x: [constant(constVal), ...varX] } as NumNode<I>
         }
+      }
     }
     return n
   })
