@@ -7,13 +7,9 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { locCharKeyToCharKey } from '@genshin-optimizer/consts'
-import type {
-  AnyNode,
-  NumNode,
-  RawTagMapEntries,
-} from '@genshin-optimizer/waverider'
-import { prod, subscript, sum } from '@genshin-optimizer/waverider'
 import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import type { NumNode } from '@genshin-optimizer/waverider'
+import { prod, subscript, sum } from '@genshin-optimizer/waverider'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
   addStatCurve,
