@@ -1,4 +1,3 @@
-export * from './lib/ui-common'
 export * from './components/Card/CardThemed'
 export * from './components/Card/CardHeaderCustom'
 
