@@ -19,7 +19,9 @@
       "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
       "@genshin-optimizer/database": ["libs/database/src/index.ts"],
       "@genshin-optimizer/dm": ["libs/dm/src/index.ts"],
-      "@genshin-optimizer/dm-localization": ["libs/dm-localization/src/index.ts"],
+      "@genshin-optimizer/dm-localization": [
+        "libs/dm-localization/src/index.ts"
+      ],
       "@genshin-optimizer/g-assets": ["libs/g-assets/src/index.ts"],
       "@genshin-optimizer/g-assets-gen": ["libs/g-assets-gen/src/index.ts"],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
