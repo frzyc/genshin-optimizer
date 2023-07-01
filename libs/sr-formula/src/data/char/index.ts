@@ -1,12 +1,5 @@
-import type {
-  CharacterKey,
-  NonTrailblazerCharacterKey,
-} from '@genshin-optimizer/sr-consts'
-import {
-  allCharacterKeys,
-  allTrailblazerGeneredKeys,
-  nonTrailblazerCharacterKeys,
-} from '@genshin-optimizer/sr-consts'
+import type { NonTrailblazerCharacterKey } from '@genshin-optimizer/sr-consts'
+import { nonTrailblazerCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
 import {
   constant,
