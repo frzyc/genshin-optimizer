@@ -3,12 +3,34 @@ import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, Const, NumNode, OP, ReRead, Read, StrNode } from './type'
+import type {
+  AnyNode,
+  Const,
+  NumNode,
+  ReRead,
+  Read,
+  StrNode,
+  OP as TaggedOP,
+} from './type'
 
-type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
-type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
-type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
+/**
+ * Most of functions here cache the calculation/traversal, and will skip any nodes
+ * that they visit more than once. This caching will not work on nodes containing
+ * `Tag`-related nodes. So they are default disallowed here, as reflected in the
+ * `OP` redeclaration here.
+ */
+type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
+type NumTagFree = NumNode<OP>
+type StrTagFree = StrNode<OP>
+type AnyTagFree = AnyNode<OP>
 
+/**
+ * Apply all tag-related nodes from `n` calculation and replace `Read` nodes where
+ * `dynTag(tag)` is not truthy. The replaced `Read` nodes are not evaluated further.
+ *
+ * The resulting nodes becomes "Tag"-free and can be evaluated without the need for
+ * a calculator, given appropriate values for the replaced `Read` nodes.
+ */
 export function detach(
   n: NumNode[],
   calc: Calculator,
@@ -123,57 +145,154 @@ export function detach(
   return n.map((n) => map(n, cache))
 }
 
-export function flatten(n: NumTagFree[]): NumTagFree[]
-export function flatten(n: StrTagFree[]): StrTagFree[]
-export function flatten(n: AnyTagFree[]): AnyTagFree[]
-export function flatten(n: AnyTagFree[]): AnyTagFree[] {
-  return transform(n, (n, map) => {
+/** Combine nested `sum`/`prod`/`min`/`max`, e.g., turn `sum(..., sum(...))` into `sum(...)` */
+export function flatten<I extends OP>(n: NumNode<I>[]): NumNode<I>[]
+export function flatten<I extends OP>(n: StrNode<I>[]): StrNode<I>[]
+export function flatten<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[]
+export function flatten<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
+  return mapBottomUp(n, (n) => {
     const { op } = n
-    let x = n.x.map(map) as NumTagFree[]
     switch (op) {
       case 'sum':
       case 'prod':
       case 'min':
-      case 'max': {
-        const constX = x.filter((x) => x.op === 'const') as Const<number>[]
-        const sameX = x.filter((x) => x.op === op)
-        const remaining = x.filter((x) => x.op !== 'const' && x.op !== op)
-        if (constX.length > 1 || sameX.length > 0) {
-          // We can either flatten constant values or nested nodes, so we try both
-          const mergedConst =
-            constX.length > 1
-              ? [
-                  constant(
-                    arithmetic[op](
-                      constX.map((n) => n.ex),
-                      n.ex
-                    )
-                  ),
-                ]
-              : constX
-          x = [...mergedConst, ...sameX.flatMap((x) => x.x), ...remaining]
+      case 'max':
+        if (n.x.some((x) => x.op === op)) {
+          const x = n.x.flatMap((x) => (x.op === op ? x.x : [x]))
+          return { ...n, x } as NumNode<I>
         }
-        if (x.length === 1) return x[0] as AnyTagFree
-        if (!x.length) return constant(arithmetic[op]([], n.ex))
-      }
     }
-    return { ...n, x, br: n.br.map(map) } as AnyTagFree
+    return n
   })
 }
 
-export function transform<I extends OP, O extends OP>(
+/** Combine constants in `sum`/`prod`/`min`/`max`, e.g., turn `sum(1, 2, ...)` into `sum(3, ...)` */
+export function combineConst<I extends OP>(n: NumNode<I>[]): NumNode<I>[]
+export function combineConst<I extends OP>(n: StrNode<I>[]): StrNode<I>[]
+export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[]
+export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
+  return mapBottomUp(n, (n) => {
+    const { op } = n
+    switch (op) {
+      case 'sum':
+      case 'prod':
+      case 'min':
+      case 'max':
+        const constX = n.x.filter((x) => x.op === 'const') as Const<number>[]
+        if (constX.length > 1) {
+          const varX = n.x.filter((x) => x.op !== 'const') as NumNode<I>[]
+          const constVal = arithmetic[op](
+            constX.map((x) => x.ex),
+            n.ex
+          )
+
+          // Constant-only; replace with `Const` node
+          if (!varX.length) return constant(constVal)
+          // Vacuous const part; don't add the unnecessary const term
+          if (constVal === arithmetic[op]([], n.ex))
+            return { ...n, x: varX } as NumNode<I>
+
+          return { ...n, x: [constant(constVal), ...varX] } as NumNode<I>
+        }
+    }
+    return n
+  })
+}
+
+/** Replace all nodes with constant values with Const nodes */
+export function applyConst<I extends OP>(n: NumNode<I>[]): NumNode<I>[]
+export function applyConst<I extends OP>(n: StrNode<I>[]): StrNode<I>[]
+export function applyConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[]
+export function applyConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
+  return mapBottomUp(n, (n) => {
+    const { op } = n
+    switch (op) {
+      case 'sum':
+      case 'prod':
+      case 'min':
+      case 'max':
+      case 'sumfrac':
+        if (n.x.every((x) => x.op === 'const'))
+          return constant(
+            arithmetic[op](
+              n.x.map((x) => x.ex),
+              n.ex
+            )
+          )
+        break
+      case 'lookup':
+      case 'thres':
+      case 'match':
+        if (n.br.every((br) => br.op === 'const')) {
+          const index = branching[op](
+            n.br.map((br) => br.ex),
+            n.ex
+          )
+          return n.x[index]
+        }
+        if (n.x.every((x) => x.op === 'const' && x.ex === n.x[0]!.ex))
+          return n.x[0]
+        break
+      case 'subscript':
+        if (n.br[0]!.op === 'const') return n.ex[n.br[0]!.ex!]
+        break
+      case 'const':
+      case 'read':
+      case 'custom':
+        break
+      default:
+        assertUnreachable(op)
+    }
+    return n
+  })
+}
+
+export function mapBottomUp<I extends OP, O extends OP>(
+  n: NumNode<I>[],
+  map: (_: AnyNode<I>) => AnyNode<O>
+): NumNode<O>[]
+export function mapBottomUp<I extends OP, O extends OP>(
+  n: StrNode<I>[],
+  map: (_: AnyNode<I>) => AnyNode<O>
+): StrNode<O>[]
+export function mapBottomUp<I extends OP, O extends OP>(
+  n: AnyNode<I>[],
+  map: (_: AnyNode<I>) => AnyNode<O>
+): AnyNode<O>[]
+export function mapBottomUp<I extends OP, O extends OP>(
+  n: AnyNode<I>[],
+  map: (_: AnyNode<I>) => AnyNode<O>
+): AnyNode<O>[] {
+  const cache = new Map<AnyNode<I>, AnyNode<O>>()
+
+  function internal(n: AnyNode<I>): AnyNode<O> {
+    const old = cache.get(n)
+    if (old) return old
+
+    const x = dedupMapArray(n.x, internal)
+    const br = dedupMapArray(n.br, internal)
+    if (n.x !== x || n.br !== br) n = { ...n, x, br } as any
+
+    const result = map(n)
+    cache.set(n, result)
+    return result
+  }
+  return dedupMapArray(n, internal)
+}
+
+export function map<I extends OP, O extends OP>(
   n: NumNode<I>[],
   map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
 ): NumNode<O>[]
-export function transform<I extends OP, O extends OP>(
+export function map<I extends OP, O extends OP>(
   n: StrNode<I>[],
   map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
 ): StrNode<O>[]
-export function transform<I extends OP, O extends OP>(
+export function map<I extends OP, O extends OP>(
   n: AnyNode<I>[],
   map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
 ): AnyNode<O>[]
-export function transform<I extends OP, O extends OP>(
+export function map<I extends OP, O extends OP>(
   n: AnyNode<I>[],
   map: (n: AnyNode<I>, map: (n: AnyNode<I>) => AnyNode<O>) => AnyNode<O>
 ): AnyNode<O>[] {
@@ -183,32 +302,15 @@ export function transform<I extends OP, O extends OP>(
     const old = cache.get(n)
     if (old) return old
 
-    // If they are the same, we can save memory
-    let result = map(n, internal)
-    if (
-      result.op === n.op &&
-      result.ex === n.ex &&
-      result.tag === n.tag &&
-      (result.x === n.x ||
-        (result.x.length === n.x.length &&
-          result.x.every((x, i) => n.x[i] === x))) &&
-      (result.br === n.br ||
-        (result.br.length === n.br.length &&
-          result.br.every((br, i) => n.br[i] === br)))
-    )
-      result = n as AnyNode<O>
-
+    const result = map(n, internal)
     cache.set(n, result)
     return result
   }
 
-  const result = n.map(internal)
-  return result.every((result, i) => n[i] === result)
-    ? (n as AnyNode<O>[])
-    : result
+  return dedupMapArray(n, internal)
 }
 
-export function traverse<P extends OP>(
+export function traverse<P extends TaggedOP>(
   n: AnyNode<P>[],
   visit: (n: AnyNode<P>, visit: (n: AnyNode<P>) => void) => void
 ) {
@@ -220,6 +322,11 @@ export function traverse<P extends OP>(
     visited.add(n)
   }
   n.forEach(internal)
+}
+
+function dedupMapArray<I, O>(x: I[], map: (_: I) => O): O[] {
+  const newX = x.map(map)
+  return x.every((x, i) => (x as any) === newX[i]) ? (x as any) : newX
 }
 
 export function compile(
@@ -286,8 +393,6 @@ export function compile(
       case 'thres':
         body += `,${name}=${brNames[0]}>=${brNames[1]}?${argNames[0]}:${argNames[1]}`
         break
-      case 'lookup':
-        throw new Error(`Unsupported operation: ${op}`) // TODO
       case 'subscript':
         body += `,${name}=[${n.ex}][${brNames[0]}]`
         break
@@ -304,6 +409,8 @@ export function compile(
         body += `,${name}=${n.ex}(${argNames})`
         break
       }
+      case 'lookup':
+        throw new Error(`Unsupported operation: ${op}`) // TODO
       default:
         assertUnreachable(op)
     }

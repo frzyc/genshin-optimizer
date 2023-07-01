@@ -1,6 +1,7 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import {
+  combineConst,
   compile,
   compileTagMapValues,
   detach,
@@ -216,6 +217,7 @@ describe('example', () => {
 
     // Step 3: Optimize nodes, as needed
     detached = flatten(detached)
+    detached = combineConst(detached)
 
     // Step 4: Compile for quick iteration
     const compiled = compile(
