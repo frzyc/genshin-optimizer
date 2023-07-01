@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { min, prod, subscript, sum } from '@genshin-optimizer/waverider'
-import { allConditionals, percent, register, self, selfBuff } from '../../util'
+import { allConditionals, percent, register, self, selfBuff } from '../util'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
 // premod atkSPD_ = subscript(refinement, atkSPD_arr)

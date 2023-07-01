@@ -2,7 +2,7 @@ import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { cmpGE, prod, sum } from '@genshin-optimizer/waverider'
-import { infusionPrio } from '../../common/dmg'
+import { infusionPrio } from '../common/dmg'
 import {
   allBoolConditionals,
   customDmg,
@@ -11,8 +11,8 @@ import {
   self,
   selfBuff,
   teamBuff,
-} from '../../util'
-import { dataGenToCharInfo, dmg, entriesForChar, shield } from '../util'
+} from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar, shield } from './util'
 
 const key: CharacterKey = 'Candace'
 const data_gen = allStats.char.data[key]

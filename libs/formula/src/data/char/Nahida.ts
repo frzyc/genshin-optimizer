@@ -24,8 +24,8 @@ import {
   target,
   team,
   teamBuff,
-} from '../../util'
-import { dataGenToCharInfo, dmg, entriesForChar } from '../util'
+} from '../util'
+import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
 const key: CharacterKey = 'Nahida'
 const data_gen = allStats.char.data[key]

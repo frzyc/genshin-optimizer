@@ -16,6 +16,7 @@ import { prod, subscript, sum } from '@genshin-optimizer/waverider'
 import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
+  addStatCurve,
   allStatics,
   customDmg,
   customShield,
@@ -151,7 +152,7 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))
+      addStatCurve(key, prod(base, allStatics('static')[curve]))
     ),
     ...ascensionBonus.map(({ key, values }) =>
       selfBuff.base[key as Stat].add(subscript(ascension, values))

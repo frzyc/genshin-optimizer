@@ -7,7 +7,7 @@ import {
   self,
   selfBuff,
   teamBuff,
-} from '../../util'
+} from '../util'
 
 const key: WeaponKey = 'KeyOfKhajNisut'
 const selfEmSrc = [NaN, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
