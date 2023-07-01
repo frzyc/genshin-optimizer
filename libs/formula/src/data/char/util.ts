@@ -16,6 +16,7 @@ import { prod, subscript, sum } from '@genshin-optimizer/waverider'
 import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import type { Data, FormulaArg, Stat } from '../util'
 import {
+  addStatCurve,
   allStatics,
   customDmg,
   customShield,
@@ -131,7 +132,7 @@ export function fixedShield(
 export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
-): RawTagMapEntries<AnyNode> {
+): Data {
   const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
   specials.delete('atk')
   specials.delete('def')
@@ -141,10 +142,10 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      selfBuff.base[key as Stat].add(prod(base, allStatics('static')[curve]))
+      addStatCurve(key, prod(base, allStatics('static')[curve]))
     ),
     ...Object.entries(ascensionBonus).map(([key, values]) =>
-      selfBuff.base[key as Stat].add(subscript(ascension, values))
+      addStatCurve(key, subscript(ascension, values))
     ),
 
     // Constants

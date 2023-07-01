@@ -6,7 +6,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { NumNode, StrNode } from '@genshin-optimizer/waverider'
 import { prod } from '@genshin-optimizer/waverider'
-import type { Data, Source } from '.'
+import type { Data, Source, Stat } from '.'
 import { reader, self, selfBuff, tag, teamBuff, usedNames } from '.'
 
 // Use `registerArt` for artifacts
@@ -21,6 +21,14 @@ export function register(
   return data.flatMap((data) =>
     Array.isArray(data) ? data.map(internal) : internal(data)
   )
+}
+
+export function addStatCurve(key: string, value: NumNode): Data[number] {
+  return (
+    key.endsWith('_dmg_')
+      ? selfBuff.premod['dmg_'][key.slice(0, -5) as ElementWithPhyKey]
+      : selfBuff.base[key as Stat]
+  ).add(value)
 }
 
 export type FormulaArg = {
