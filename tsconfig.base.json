@@ -32,7 +32,7 @@
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/svgicons": ["libs/svgicons/src/index.ts"],
       "@genshin-optimizer/util": ["libs/util/src/index.ts"],
-      "@genshin-optimizer/waverider": ["libs/waverider/src/index.ts"]
+      "@genshin-optimizer/pando": ["libs/pando/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
