@@ -4,7 +4,7 @@ import {
   allWeaponKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
-import { imgAssets, weaponAsset } from '@genshin-optimizer/g-assets'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
 import {
   Box,
   CardActionArea,

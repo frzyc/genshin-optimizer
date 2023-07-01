@@ -7,7 +7,7 @@ import {
   allElementWithPhyKeys,
   allSubstatKeys,
 } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/g-assets'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import {
   artDisplayValue,
   getMainStatDisplayStr,

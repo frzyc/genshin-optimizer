@@ -1,6 +1,6 @@
 import type { WeaponTypeKey } from '@genshin-optimizer/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
 import { handleMultiSelect } from '../../Util/MultiSelect'
 import ImgIcon from '../Image/ImgIcon'

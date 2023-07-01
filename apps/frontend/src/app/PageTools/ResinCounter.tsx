@@ -1,4 +1,4 @@
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { MINUTE_MS, timeString } from '@genshin-optimizer/util'
 import {
   Button,

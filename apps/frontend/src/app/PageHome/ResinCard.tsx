@@ -1,4 +1,4 @@
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { SECOND_MS } from '@genshin-optimizer/util'
 import { AccessTimeFilled } from '@mui/icons-material'
 import {
