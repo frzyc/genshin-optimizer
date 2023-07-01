@@ -1,10 +1,5 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import type {
-  AnyNode,
-  NumNode,
-  RawTagMapEntries,
-  ReRead,
-} from '@genshin-optimizer/waverider'
+import type { NumNode } from '@genshin-optimizer/waverider'
 import type { Data } from '../util'
 import { self, tag } from '../util'
 
@@ -38,10 +33,4 @@ export function registerArt(
 
 export function artCount(name: ArtifactSetKey): NumNode {
   return self.common.count.with('src', name)
-}
-
-export function entriesForArt(
-  _: ArtifactSetKey
-): RawTagMapEntries<AnyNode | ReRead> {
-  return []
 }

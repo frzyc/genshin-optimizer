@@ -7,7 +7,7 @@ import {
   selfBuff,
   teamBuff,
 } from '../util'
-import { artCount, entriesForArt, registerArt } from './util'
+import { artCount, registerArt } from './util'
 
 const name: ArtifactSetKey = 'NoblesseOblige',
   count = artCount(name)
@@ -16,7 +16,6 @@ const { set4 } = allBoolConditionals(name),
 
 export default registerArt(
   name,
-  entriesForArt(name),
   selfBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
 
   canNO4.in.add(set4.ifOn(cmpGE(count, 4, 1))),
