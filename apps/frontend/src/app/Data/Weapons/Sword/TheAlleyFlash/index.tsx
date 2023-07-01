@@ -12,11 +12,11 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'ItinerantHero')
-const bonusInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const bonusInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const all_dmg_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, bonusInc, { unit: '%' })
+  subscript(input.weapon.refineIndex, bonusInc, { unit: '%' })
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

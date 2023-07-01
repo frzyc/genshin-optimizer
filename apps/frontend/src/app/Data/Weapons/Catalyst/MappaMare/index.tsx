@@ -14,8 +14,8 @@ const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'InfusionScroll')
 
-const dmgBonus = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
-const allDmgInc = subscript(input.weapon.refinement, dmgBonus)
+const dmgBonus = [0.08, 0.1, 0.12, 0.14, 0.16]
+const allDmgInc = subscript(input.weapon.refineIndex, dmgBonus)
 const eleDmgs = objKeyValMap(allElementKeys, (e) => [
   `${e}_dmg_`,
   lookup(

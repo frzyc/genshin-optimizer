@@ -11,16 +11,16 @@ const key: WeaponKey = 'SkyriderSword'
 const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'Determination')
-const bonusInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const bonusInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, bonusInc, { unit: '%' })
+  subscript(input.weapon.refineIndex, bonusInc, { unit: '%' })
 )
 const moveSPD_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, bonusInc, { unit: '%' })
+  subscript(input.weapon.refineIndex, bonusInc, { unit: '%' })
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

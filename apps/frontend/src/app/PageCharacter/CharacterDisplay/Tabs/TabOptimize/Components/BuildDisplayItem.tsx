@@ -93,7 +93,7 @@ export default function BuildDisplayItem({
           database.arts.set(oldAid, { location: '' })
       }
     })
-    const weapon = data.get(input.weapon.id).value
+    const weapon = data.get(input.weapon.id).value.toString()
     if (weapon)
       database.weapons.set(weapon, {
         location: charKeyToLocCharKey(characterKey),
@@ -207,7 +207,7 @@ export default function BuildDisplayItem({
             <Grid item xs={1}>
               <WeaponCardNano
                 showLocation
-                weaponId={data.get(input.weapon.id).value!}
+                weaponId={data.get(input.weapon.id).value.toString()}
               />
             </Grid>
             {artNanos}

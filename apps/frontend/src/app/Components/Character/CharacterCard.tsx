@@ -300,14 +300,13 @@ function Header({
     ),
     [onClick, characterKey]
   )
-  const banner = characterAsset(characterKey, 'banner', gender)
   if (!characterSheet) return null
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <Box
         display="flex"
         position="relative"
-        className={!banner ? `grad-${characterSheet.rarity}star` : undefined}
+        className={`grad-${characterSheet.rarity}star`}
         sx={{
           '&::before': {
             content: '""',
@@ -317,8 +316,12 @@ function Header({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.7,
-            backgroundImage: `url(${banner})`,
+            opacity: 0.5,
+            backgroundImage: `url(${characterAsset(
+              characterKey,
+              'banner',
+              gender
+            )})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           },
@@ -353,7 +356,7 @@ function Header({
 function HeaderContent() {
   const { characterSheet } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const characterEle = data.get(input.charEle).value as ElementKey
+  const characterEle = data.get(input.charEle).value.toString() as ElementKey
   const characterLevel = data.get(input.lvl).value
   const constellation = data.get(input.constellation).value
   const ascension = data.get(input.asc).value

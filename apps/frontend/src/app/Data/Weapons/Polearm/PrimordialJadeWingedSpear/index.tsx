@@ -18,19 +18,19 @@ const key: WeaponKey = 'PrimordialJadeWingedSpear'
 const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const atkInc = [-1, 0.032, 0.039, 0.046, 0.053, 0.06]
-const allDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const atkInc = [0.032, 0.039, 0.046, 0.053, 0.06]
+const allDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = lookup(
   condStack,
   objKeyMap(range(1, 7), (i) =>
-    prod(subscript(input.weapon.refinement, atkInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refineIndex, atkInc, { unit: '%' }), i)
   ),
   naught
 )
 const all_dmg_ = equal(
   condStack,
   '7',
-  subscript(input.weapon.refinement, allDmgInc, { unit: '%' })
+  subscript(input.weapon.refineIndex, allDmgInc, { unit: '%' })
 )
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

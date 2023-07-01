@@ -1,13 +1,18 @@
-import type { NonTrailblazerCharacterKey } from '@genshin-optimizer/sr-consts'
-import { nonTrailblazerCharacterKeys } from '@genshin-optimizer/sr-consts'
+import type { CharacterKey } from '@genshin-optimizer/sr-consts'
+import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
-import { constant, prod, read, subscript, sum } from '@genshin-optimizer/pando'
+import {
+  constant,
+  prod,
+  read,
+  subscript,
+  sum,
+} from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from '../util'
 
-type Promotion =
-  (typeof allStats.char)[NonTrailblazerCharacterKey]['ascension'][number]
+type Promotion = (typeof allStats.char)[CharacterKey]['ascension'][number]
 // Attach the base stats from the generated datamine
-function handleCharacterGen(ck: NonTrailblazerCharacterKey): TaggedFormulas {
+function handleCharacterGen(ck: CharacterKey): TaggedFormulas {
   const chardataGen = allStats.char[ck]
   const readAsc = read({ src: ck, q: 'ascension' }, undefined)
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
@@ -34,7 +39,6 @@ function handleCharacterGen(ck: NonTrailblazerCharacterKey): TaggedFormulas {
   ] as TaggedFormulas
 }
 
-const data: TaggedFormulas =
-  nonTrailblazerCharacterKeys.flatMap(handleCharacterGen)
+const data: TaggedFormulas = allCharacterKeys.flatMap(handleCharacterGen)
 
 export { data }

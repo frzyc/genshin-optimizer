@@ -10,12 +10,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'DragonsBane'
 const data_gen = allStats.weapon.data[key]
 
-const dmgInc = [-1, 0.2, 0.24, 0.28, 0.32, 0.36]
+const dmgInc = [0.2, 0.24, 0.28, 0.32, 0.36]
 const [condPassivePath, condPassive] = cond(key, 'BaneOfFlameAndWater')
 const all_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, dmgInc)
+  subscript(input.weapon.refineIndex, dmgInc)
 )
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

@@ -26,8 +26,8 @@ export type WeaponDataGen = {
   mainStat: WeaponProp
   subStat?: WeaponProp
   lvlCurves: { key: string; base: number; curve: WeaponGrowCurveKey }[]
-  refinementBonus: { [key in string]: number[] }
-  ascensionBonus: { [key in string]: number[] }
+  refinementBonus: { key: string; values: number[] }[]
+  ascensionBonus: { key: string; values: number[] }[]
 }
 
 export default function weaponData() {
@@ -40,32 +40,25 @@ export default function weaponData() {
       const refData = refinementDataId
         ? equipAffixExcelConfigData[refinementDataId]
         : []
+      const refKeys = new Set(
+        refData
+          .filter((x) => x)
+          .flatMap((ref) =>
+            ref.addProps
+              .filter((a) => a.value && a.propType)
+              .map((p) => p.propType)
+          )
+      )
       const ascData = weaponPromoteExcelConfigData[weaponPromoteId]
-
-      const refinementBonus: WeaponDataGen['refinementBonus'] = {}
-      // Use -1 as placeholder for debugging purpose
-      const emptyRefinement = [-1, ...new Array(refData.length).fill(0)]
-      refData.forEach((data, i) => {
-        for (const { propType, value } of data.addProps) {
-          if (!propType || !value) continue
-          const key = propTypeMap[propType]
-          if (!(key in refinementBonus))
-            refinementBonus[key] = [...emptyRefinement]
-          // Refinement uses 1-based index, hence the +1
-          refinementBonus[key][i + 1] += extrapolateFloat(value)
-        }
-      })
-      const ascensionBonus: WeaponDataGen['ascensionBonus'] = {}
-      const emptyAscension = new Array(ascData.length).fill(0)
-      ascData.forEach((data, i) => {
-        for (const { propType, value } of data?.addProps ?? []) {
-          if (!propType || !value) continue
-          const key = propTypeMap[propType]
-          if (!(key in ascensionBonus))
-            ascensionBonus[key] = [...emptyAscension]
-          ascensionBonus[key][i] += extrapolateFloat(value)
-        }
-      })
+      const ascKeys = new Set(
+        ascData
+          .filter((x): x is NonNullable<typeof x> => x != null)
+          .flatMap((asc) =>
+            asc.addProps
+              .filter((a) => a.value && a.propType)
+              .map((a) => a.propType)
+          )
+      )
 
       const result: WeaponDataGen = {
         weaponType: weaponMap[weaponType],
@@ -98,8 +91,28 @@ export default function weaponData() {
               ]
             : []),
         ],
-        refinementBonus,
-        ascensionBonus,
+        refinementBonus: [...refKeys].map((key) => ({
+          key: propTypeMap[key],
+          values: refData.map(
+            (x) =>
+              x.addProps.reduce(
+                (accu, x) =>
+                  x.propType === key ? accu + extrapolateFloat(x.value) : accu,
+                0
+              ) ?? 0
+          ),
+        })),
+        ascensionBonus: [...ascKeys].map((key) => ({
+          key: propTypeMap[key],
+          values: ascData.map(
+            (x) =>
+              x?.addProps.reduce(
+                (accu, x) =>
+                  x.propType === key ? accu + extrapolateFloat(x.value) : accu,
+                0
+              ) ?? 0
+          ),
+        })),
       }
       return [weaponIdMap[weaponid], result]
     })

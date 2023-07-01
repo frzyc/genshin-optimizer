@@ -206,7 +206,7 @@ export default function WeaponEditor({
                 <Typography gutterBottom>
                   {weaponSheet.passiveName &&
                     weaponSheet.passiveDescription(
-                      weaponUIData.get(input.weapon.refinement).value - 1
+                      weaponUIData.get(input.weapon.refineIndex).value
                     )}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>

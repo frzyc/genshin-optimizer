@@ -19,17 +19,17 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'TulaytullahsRemembrance'
 const data_gen = allStats.weapon.data[key]
-const atkSPD_arr = [-1, 0.1, 0.125, 0.15, 0.175, 0.2]
-const time_normal_dmg_arr = [-1, 0.048, 0.06, 0.072, 0.084, 0.096]
+const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
+const time_normal_dmg_arr = [0.048, 0.06, 0.072, 0.084, 0.096]
 const time_normal_dmg_stacksArr = range(1, 12)
-const hit_normal_dmg_arr = [-1, 0.096, 0.12, 0.144, 0.168, 0.192]
+const hit_normal_dmg_arr = [0.096, 0.12, 0.144, 0.168, 0.192]
 const hit_normal_dmg_stacksArr = range(1, 5) // Max stacks before we hit the normal dmg max
-const max_normal_dmg_arr = [-1, 0.48, 0.6, 0.72, 0.84, 0.96]
+const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const atkSPD_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, atkSPD_arr)
+  subscript(input.weapon.refineIndex, atkSPD_arr)
 )
 
 const [condTimePassivePath, condTimePassive] = cond(key, 'timePassive')
@@ -43,7 +43,7 @@ const time_normal_dmg_ = equal(
         time,
         prod(
           time,
-          subscript(input.weapon.refinement, time_normal_dmg_arr, {
+          subscript(input.weapon.refineIndex, time_normal_dmg_arr, {
             unit: '%',
           })
         ),
@@ -65,7 +65,7 @@ const hit_normal_dmg_ = equal(
         hit,
         prod(
           hit,
-          subscript(input.weapon.refinement, hit_normal_dmg_arr, { unit: '%' })
+          subscript(input.weapon.refineIndex, hit_normal_dmg_arr, { unit: '%' })
         ),
       ])
     ),
@@ -75,7 +75,7 @@ const hit_normal_dmg_ = equal(
 )
 
 const finalNormal_dmg_ = min(
-  subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' }),
+  subscript(input.weapon.refineIndex, max_normal_dmg_arr, { unit: '%' }),
   sum(time_normal_dmg_, hit_normal_dmg_)
 )
 

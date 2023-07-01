@@ -13,14 +13,17 @@
       "curve": "GROW_CURVE_ATTACK_101"
     }
   ],
-  "refinementBonus": {},
-  "ascensionBonus": {
-    "atk": [
-      0,
-      11.7,
-      23.3,
-      35,
-      46.7
-    ]
-  }
+  "refinementBonus": [],
+  "ascensionBonus": [
+    {
+      "key": "atk",
+      "values": [
+        0,
+        11.7,
+        23.3,
+        35,
+        46.7
+      ]
+    }
+  ]
 }

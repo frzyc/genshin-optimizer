@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/sr-consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { srCalculatorWithEntries } from '@genshin-optimizer/sr-formula'
-import { constant, read } from '@genshin-optimizer/pando'
+import { constant, read } from '@genshin-optimizer/waverider'
 import {
   Box,
   Card,

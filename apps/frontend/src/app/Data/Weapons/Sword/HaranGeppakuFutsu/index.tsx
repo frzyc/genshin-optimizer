@@ -14,15 +14,15 @@ const key: WeaponKey = 'HaranGeppakuFutsu'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const passiveRefine = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
-const stack_normal_dmg_ = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
+const stack_normal_dmg_ = [0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPath, condNode] = cond(key, 'HonedFlow')
 const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     subscript(
-      input.weapon.refinement,
+      input.weapon.refineIndex,
       passiveRefine,
       KeyMap.info(`${ele}_dmg_`)
     ),
@@ -31,7 +31,7 @@ const passive_dmg_ = Object.fromEntries(
 const normal_dmg_ = lookup(
   condNode,
   objKeyMap(range(1, 2), (i) =>
-    prod(i, subscript(input.weapon.refinement, stack_normal_dmg_))
+    prod(i, subscript(input.weapon.refineIndex, stack_normal_dmg_))
   ),
   naught
 )

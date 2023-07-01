@@ -1,5 +1,5 @@
-import type { AnyOP, CalcResult } from '@genshin-optimizer/pando'
-import { calculation, Calculator as Base } from '@genshin-optimizer/pando'
+import type { AnyOP, CalcResult } from '@genshin-optimizer/waverider'
+import { calculation, Calculator as Base } from '@genshin-optimizer/waverider'
 import type { Tag } from './data/util'
 
 const { arithmetic } = calculation

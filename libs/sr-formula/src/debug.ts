@@ -2,8 +2,8 @@ import type {
   AnyNode,
   ReRead,
   TagMapSubsetCache,
-} from '@genshin-optimizer/pando'
-import { TagMapExactValues, traverse } from '@genshin-optimizer/pando'
+} from '@genshin-optimizer/waverider'
+import { TagMapExactValues, traverse } from '@genshin-optimizer/waverider'
 import type { Read, Tag } from './data/util'
 import type { Calculator } from './calculator'
 

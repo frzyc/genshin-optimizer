@@ -2,7 +2,7 @@ import {
   compileTagMapKeys,
   compileTagMapValues,
   read,
-} from '@genshin-optimizer/pando'
+} from '@genshin-optimizer/waverider'
 import type { TaggedFormulas } from './util'
 
 import {

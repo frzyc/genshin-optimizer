@@ -12,14 +12,14 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
-const all_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const all_dmg_arr = [0.16, 0.2, 0.24, 0.28, 0.32]
 const all_dmg_ = equal(
   input.weapon.key,
   key,
   equal(
     condPassive,
     'on',
-    subscript(input.weapon.refinement, all_dmg_arr, { unit: '%' })
+    subscript(input.weapon.refineIndex, all_dmg_arr, { unit: '%' })
   )
 )
 

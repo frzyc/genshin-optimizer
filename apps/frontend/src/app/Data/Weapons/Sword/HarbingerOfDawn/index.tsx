@@ -11,11 +11,11 @@ const key: WeaponKey = 'HarbingerOfDawn'
 const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'SkyPiercingMight')
-const critRateSrc_ = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
+const critRateSrc_ = [0.14, 0.175, 0.21, 0.245, 0.28]
 const critRate_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, critRateSrc_)
+  subscript(input.weapon.refineIndex, critRateSrc_)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

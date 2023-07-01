@@ -10,8 +10,8 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'WhiteTassel'
 const data_gen = allStats.weapon.data[key]
 
-const dmgInc = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
-const normal_dmg_ = subscript(input.weapon.refinement, dmgInc)
+const dmgInc = [0.24, 0.3, 0.36, 0.42, 0.48]
+const normal_dmg_ = subscript(input.weapon.refineIndex, dmgInc)
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     normal_dmg_,

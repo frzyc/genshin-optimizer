@@ -17,17 +17,17 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'AquilaFavonia'
 const data_gen = allStats.weapon.data[key]
 
-const atkDealt = [-1, 2, 2.3, 2.6, 2.9, 3.2]
-const hpRegen = [-1, 1, 1.15, 1.3, 1.45, 1.6]
+const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
+const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
 const atk_ = subscript(
-  input.weapon.refinement,
-  data_gen.refinementBonus['atk_']
+  input.weapon.refineIndex,
+  data_gen.refinementBonus.find((rb) => rb.key === 'atk_')?.values ?? []
 )
 const heal = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refinement, hpRegen, { unit: '%' }),
+    subscript(input.weapon.refineIndex, hpRegen, { unit: '%' }),
     input.premod.atk
   )
 )
@@ -36,7 +36,7 @@ const dmg = equal(
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refinement, atkDealt, { unit: '%' }),
+      subscript(input.weapon.refineIndex, atkDealt, { unit: '%' }),
       input.premod.atk
     ),
     'elemental',

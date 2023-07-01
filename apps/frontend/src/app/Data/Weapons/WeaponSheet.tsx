@@ -103,6 +103,6 @@ export function headerTemplate(
     ),
     action: action && <SqBadge color="success">{action}</SqBadge>,
     description: (data) =>
-      tr(`passiveDescription.${data.get(input.weapon.refinement).value - 1}`),
+      tr(`passiveDescription.${data.get(input.weapon.refineIndex).value}`),
   }
 }

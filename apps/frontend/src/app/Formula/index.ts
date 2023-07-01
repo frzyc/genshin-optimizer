@@ -197,105 +197,110 @@ function markAccu<T>(accu: ReadNode<number>['accu'], value: T): void {
 }
 
 /** All read nodes */
-const inputBase = {
-  activeCharKey: stringRead(),
-  charKey: stringRead(),
-  charEle: stringRead(),
-  weaponType: stringRead(),
-  lvl: read(undefined, { ...KeyMap.info('level'), prefix: 'char' }),
-  constellation: read(),
-  asc: read(),
-  special: read(),
+const input = setReadNodeKeys(
+  deepNodeClone({
+    activeCharKey: stringRead(),
+    charKey: stringRead(),
+    charEle: stringRead(),
+    weaponType: stringRead(),
+    lvl: read(undefined, { ...KeyMap.info('level'), prefix: 'char' }),
+    constellation: read(),
+    asc: read(),
+    special: read(),
 
-  infusion: {
-    overridableSelf: stringRead('small'),
-    nonOverridableSelf: stringRead('small'),
-    team: stringRead('small'),
-  },
+    infusion: {
+      overridableSelf: stringRead('small'),
+      nonOverridableSelf: stringRead('small'),
+      team: stringRead('small'),
+    },
 
-  base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', KeyMap.info(key))),
-  customBonus: withDefaultInfo(
-    { prefix: 'custom', pivot },
-    {
-      ...allModStatNodes,
-      ...allNonModStatNodes,
-    }
-  ),
-  premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
-  total: withDefaultInfo(
-    { prefix: 'total', pivot },
-    {
-      ...talent,
-      ...objKeyValMap(allTalents, (talent) => [`${talent}Index`, read()]),
-      ...allModStatNodes,
-      ...allNonModStatNodes,
-      /** Total Crit Rate capped to [0%, 100%] */
-      cappedCritRate: read(undefined, KeyMap.info('critRate_')),
-    }
-  ),
-
-  art: withDefaultInfo(
-    { prefix: 'art', asConst },
-    {
-      ...objKeyMap(allArtModStats, (key) => allModStatNodes[key]),
-      ...objKeyMap(allArtifactSlotKeys, (_) => ({
-        id: stringRead(),
-        set: stringRead(),
-      })),
-    }
-  ),
-  artSet: objKeyMap(allArtifactSetKeys, (set) =>
-    read('add', { name: artifactTr(set) })
-  ),
-
-  weapon: withDefaultInfo(
-    { prefix: 'weapon', asConst },
-    {
-      id: stringRead(),
-      key: stringRead(),
-      type: stringRead(),
-
-      lvl: read(),
-      asc: read(),
-      refinement: read(),
-      main: read(),
-      sub: read(),
-      sub2: read(),
-    }
-  ),
-
-  enemy: {
-    def: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
-    transDef: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
-    ...objKeyMap(
-      allElements.map((ele) => `${ele}_resMulti_` as const),
-      (_) => read()
+    base: objKeyMap(['atk', 'hp', 'def'], (key) =>
+      read('add', KeyMap.info(key))
+    ),
+    customBonus: withDefaultInfo(
+      { prefix: 'custom', pivot },
+      {
+        ...allModStatNodes,
+        ...allNonModStatNodes,
+      }
+    ),
+    premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
+    total: withDefaultInfo(
+      { prefix: 'total', pivot },
+      {
+        ...talent,
+        ...objKeyValMap(allTalents, (talent) => [`${talent}Index`, read()]),
+        ...allModStatNodes,
+        ...allNonModStatNodes,
+        /** Total Crit Rate capped to [0%, 100%] */
+        cappedCritRate: read(undefined, KeyMap.info('critRate_')),
+      }
     ),
 
-    level: read(undefined, KeyMap.info('enemyLevel')),
-    ...objKeyValMap(allElements, (ele) => [
-      `${ele}_res_`,
-      read(undefined, { prefix: 'base', ...KeyMap.info(`${ele}_enemyRes_`) }),
-    ]),
-    defRed: read(undefined),
-    defIgn: read('add', { ...KeyMap.info('enemyDefIgn_'), pivot }),
-  },
+    art: withDefaultInfo(
+      { prefix: 'art', asConst },
+      {
+        ...objKeyMap(allArtModStats, (key) => allModStatNodes[key]),
+        ...objKeyMap(allArtifactSlotKeys, (_) => ({
+          id: stringRead(),
+          set: stringRead(),
+        })),
+      }
+    ),
+    artSet: objKeyMap(allArtifactSetKeys, (set) =>
+      read('add', { name: artifactTr(set) })
+    ),
 
-  hit: {
-    reaction: stringRead(),
-    ele: stringRead(),
-    move: stringRead(),
-    hitMode: stringRead(),
-    base: read('add', KeyMap.info('base')),
-    ampMulti: read(),
-    addTerm: read(undefined, { pivot }),
+    weapon: withDefaultInfo(
+      { prefix: 'weapon', asConst },
+      {
+        id: stringRead(),
+        key: stringRead(),
+        type: stringRead(),
 
-    dmgBonus: read('add', { ...KeyMap.info('dmg_'), pivot }),
-    dmgInc: read('add', KeyMap.info('dmgInc')),
-    dmg: read(),
-  },
-}
-const input = setReadNodeKeys(deepNodeClone(inputBase))
+        lvl: read(),
+        asc: read(),
+        refinement: read(),
+        refineIndex: read(),
+        main: read(),
+        sub: read(),
+        sub2: read(),
+      }
+    ),
+
+    enemy: {
+      def: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
+      transDef: read('add', { ...KeyMap.info('enemyDef_multi_'), pivot }),
+      ...objKeyMap(
+        allElements.map((ele) => `${ele}_resMulti_` as const),
+        (_) => read()
+      ),
+
+      level: read(undefined, KeyMap.info('enemyLevel')),
+      ...objKeyValMap(allElements, (ele) => [
+        `${ele}_res_`,
+        read(undefined, { prefix: 'base', ...KeyMap.info(`${ele}_enemyRes_`) }),
+      ]),
+      defRed: read(undefined),
+      defIgn: read('add', { ...KeyMap.info('enemyDefIgn_'), pivot }),
+    },
+
+    hit: {
+      reaction: stringRead(),
+      ele: stringRead(),
+      move: stringRead(),
+      hitMode: stringRead(),
+      base: read('add', KeyMap.info('base')),
+      ampMulti: read(),
+      addTerm: read(undefined, { pivot }),
+
+      dmgBonus: read('add', { ...KeyMap.info('dmg_'), pivot }),
+      dmgInc: read('add', KeyMap.info('dmgInc')),
+      dmg: read(),
+    },
+  })
+)
+
 const { base, customBonus, premod, total, art, hit, enemy } = input
 
 // Adjust `info` for printing

@@ -4,7 +4,7 @@ import {
   constant,
   read,
   reread,
-} from '@genshin-optimizer/pando'
+} from '@genshin-optimizer/waverider'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 import type { TaggedFormulas } from './data/util'

@@ -17,7 +17,7 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'CrescentPike'
 const data_gen = allStats.weapon.data[key]
 
-const atkInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 
 const hit = equal(
   input.weapon.key,
@@ -25,7 +25,7 @@ const hit = equal(
   customDmgNode(
     prod(
       input.total.atk,
-      subscript(input.weapon.refinement, atkInc, { unit: '%' })
+      subscript(input.weapon.refineIndex, atkInc, { unit: '%' })
     ),
     'elemental',
     {

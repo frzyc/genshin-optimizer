@@ -12,13 +12,13 @@ const key: WeaponKey = 'IbisPiercer'
 const data_gen = allStats.weapon.data[key]
 
 const stacksArr = range(1, 2)
-const emArr = [-1, 40, 50, 60, 70, 80]
+const emArr = [40, 50, 60, 70, 80]
 
 const [condPassiveStacksPath, condPassiveStacks] = cond(key, 'passiveStacks')
 const eleMas = lookup(
   condPassiveStacks,
   objKeyMap(stacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, emArr), stack)
+    prod(subscript(input.weapon.refineIndex, emArr), stack)
   ),
   naught
 )

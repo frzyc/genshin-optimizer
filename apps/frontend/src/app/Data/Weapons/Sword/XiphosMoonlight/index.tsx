@@ -18,12 +18,12 @@ import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = 'XiphosMoonlight'
 const data_gen = allStats.weapon.data[key]
 
-const enerRech_arr = [-1, 0.00036, 0.00045, 0.00054, 0.00063, 0.00072]
+const enerRech_arr = [0.00036, 0.00045, 0.00054, 0.00063, 0.00072]
 const selfEnerRech_ = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refinement, enerRech_arr, {
+    subscript(input.weapon.refineIndex, enerRech_arr, {
       unit: '%',
       fixed: 3,
     }),

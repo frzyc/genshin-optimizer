@@ -15,13 +15,13 @@ const data_gen = allStats.weapon.data[key]
 
 const [condPath, condNode] = cond(key, 'KaguraDance')
 const totems = range(1, 3)
-const dmg_ = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
 const skill_dmg_s = totems.map((i) =>
   equal(
     condNode,
     i.toString(),
     subscript(
-      input.weapon.refinement,
+      input.weapon.refineIndex,
       dmg_.map((d) => d * i)
     ),
     KeyMap.info('skill_dmg_')
@@ -30,7 +30,7 @@ const skill_dmg_s = totems.map((i) =>
 const ele_dmg_s = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    equal(condNode, '3', subscript(input.weapon.refinement, dmg_)),
+    equal(condNode, '3', subscript(input.weapon.refineIndex, dmg_)),
   ])
 )
 

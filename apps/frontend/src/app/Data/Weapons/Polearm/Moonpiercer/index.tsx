@@ -13,11 +13,11 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const [condPassivePath, condPassive] = cond(key, 'passive')
-const atk_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const atk_arr = [0.16, 0.2, 0.24, 0.28, 0.32]
 const atk_disp = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, atk_arr, { unit: '%' })
+  subscript(input.weapon.refineIndex, atk_arr, { unit: '%' })
 )
 const atk_ = equal(input.activeCharKey, target.charKey, atk_disp)
 const data = dataObjForWeaponSheet(key, data_gen, {

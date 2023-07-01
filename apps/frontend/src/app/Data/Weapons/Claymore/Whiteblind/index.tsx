@@ -12,18 +12,18 @@ const key: WeaponKey = 'Whiteblind'
 const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const bonusInc = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
+const bonusInc = [0.06, 0.075, 0.09, 0.105, 0.12]
 const atk_ = lookup(
   condStack,
   objKeyMap(range(1, 4), (i) =>
-    prod(subscript(input.weapon.refinement, bonusInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refineIndex, bonusInc, { unit: '%' }), i)
   ),
   naught
 )
 const def_ = lookup(
   condStack,
   objKeyMap(range(1, 4), (i) =>
-    prod(subscript(input.weapon.refinement, bonusInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refineIndex, bonusInc, { unit: '%' }), i)
   ),
   naught
 )

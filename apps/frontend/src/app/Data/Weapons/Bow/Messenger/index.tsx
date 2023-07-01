@@ -17,12 +17,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'Messenger'
 const data_gen = allStats.weapon.data[key]
 
-const dmg_s = [-1, 1, 1.25, 1.5, 1.75, 2]
+const dmg_s = [1, 1.25, 1.5, 1.75, 2]
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
-    prod(subscript(input.weapon.refinement, dmg_s), input.total.atk),
+    prod(subscript(input.weapon.refineIndex, dmg_s), input.total.atk),
     'elemental',
     { hit: { ele: constant('physical') } }
   )
