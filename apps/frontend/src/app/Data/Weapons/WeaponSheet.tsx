@@ -9,12 +9,13 @@ import { getLevelString } from '@genshin-optimizer/gi-util'
 import { displayDataMap } from '.'
 import ImgIcon from '../../Components/Image/ImgIcon'
 import SqBadge from '../../Components/SqBadge'
-import { Translate } from '../../Components/Translate'
 import { input } from '../../Formula'
 import type { Data } from '../../Formula/type'
 import type { IDocumentHeader } from '../../Types/sheet'
 import type { ICachedWeapon } from '../../Types/weapon'
 import type { IWeaponSheet } from './IWeaponSheet'
+import { trans } from '../SheetUtil'
+
 export default class WeaponSheet {
   readonly key: WeaponKey
   readonly sheet: IWeaponSheet
@@ -33,17 +34,14 @@ export default class WeaponSheet {
     this.sheet = weaponSheet
     this.data = data
   }
-  static trm(key: string) {
-    return (strKey: string) => <Translate ns={`weapon_${key}`} key18={strKey} />
+
+  static trm(key: WeaponKey) {
+    return trans('weapon', key)[1]
   }
-  static tr(key: string) {
-    return (strKey: string) => (
-      <Translate
-        ns={key === 'QuantumCatalyst' ? `weapon_${key}` : `weapon_${key}_gen`}
-        key18={strKey}
-      />
-    )
+  static tr(key: WeaponKey) {
+    return trans('weapon', key)[0]
   }
+
   static getAllDataOfType(weaponType: WeaponTypeKey) {
     return displayDataMap[weaponType]
   }
@@ -83,16 +81,7 @@ export function headerTemplate(
   weaponKey: WeaponKey,
   action?: Displayable
 ): IDocumentHeader {
-  const tr = (strKey: string) => (
-    <Translate
-      ns={
-        weaponKey === 'QuantumCatalyst'
-          ? `weapon_${weaponKey}`
-          : `weapon_${weaponKey}_gen`
-      }
-      key18={strKey}
-    />
-  )
+  const tr = WeaponSheet.tr(weaponKey)
   return {
     title: tr(`passiveName`),
     icon: (data) => (
