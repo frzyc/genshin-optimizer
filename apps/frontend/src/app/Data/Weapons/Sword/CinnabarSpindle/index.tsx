@@ -11,7 +11,7 @@ const key: WeaponKey = 'CinnabarSpindle'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const eleDmgIncSrc = [0.4, 0.5, 0.6, 0.7, 0.8]
+const eleDmgIncSrc = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, 'SpotlessHeart')
 const skill_dmgInc = equal(
   input.weapon.key,
@@ -20,7 +20,7 @@ const skill_dmgInc = equal(
     'on',
     condPassive,
     prod(
-      subscript(input.weapon.refineIndex, eleDmgIncSrc, { unit: '%' }),
+      subscript(input.weapon.refinement, eleDmgIncSrc, { unit: '%' }),
       input.premod.def
     )
   )

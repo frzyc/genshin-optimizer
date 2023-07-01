@@ -2,6 +2,7 @@ import type { Tag } from '../tag'
 import type {
   AnyNode,
   Const,
+  Custom,
   DynamicTag,
   Lookup,
   Match,
@@ -174,6 +175,13 @@ export function read(tag: Tag, accu: Read['accu']): Read {
 }
 export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }
+}
+
+export function custom(op: string, ...v: Num[]): Custom<NumNode>
+export function custom(op: string, ...v: Str[]): Custom<StrNode>
+export function custom(op: string, ...v: Val[]): Custom<AnyNode>
+export function custom(op: string, ...v: Val[]): Custom<AnyNode> {
+  return { op: 'custom', x: toVs(v), br: [], ex: op }
 }
 
 function toV(val: Num): NumNode

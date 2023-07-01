@@ -23,7 +23,8 @@ export class WeaponDataManager extends DataManager<
   string,
   'weapons',
   ICachedWeapon,
-  IWeapon
+  IWeapon,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'weapons')

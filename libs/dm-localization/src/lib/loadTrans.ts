@@ -345,14 +345,13 @@ export default function loadTrans() {
       [],
       (v) =>
         typeof v === 'number' ||
-        (v?.length === 2 &&
-          Array.isArray(v) &&
+        (Array.isArray(v) &&
+          v?.length === 2 &&
           typeof v[0] === 'number' &&
           typeof v[1] === 'string'),
-      (value, keys) => {
+      (value: number | [id: number, processing: string], keys) => {
         // const [type, characterKey, skill, field] = keys
-        if (value === 0)
-          return layeredAssignment(languageData, [lang, ...keys], '')
+        if (value === 0) layeredAssignment(languageData, [lang, ...keys], '')
         if (typeof value === 'number') value = [value, 'string']
         const [stringID, processing] = value
         let rawString = langStrings[stringID]

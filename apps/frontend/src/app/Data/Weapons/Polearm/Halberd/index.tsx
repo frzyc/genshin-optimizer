@@ -17,13 +17,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'Halberd'
 const data_gen = allStats.weapon.data[key]
 
-const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
+const dmgPerc = [-1, 1.6, 2, 2.4, 2.8, 3.2]
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgPerc, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

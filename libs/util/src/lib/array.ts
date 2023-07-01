@@ -37,3 +37,8 @@ export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {
   arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0])
   return arr
 }
+
+// Transpose a 2D array
+export function transposeArray<T>(arr: T[][]): T[][] {
+  return arr[0].map((_, i) => arr.map((row) => row[i]))
+}

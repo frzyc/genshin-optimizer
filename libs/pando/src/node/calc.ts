@@ -24,7 +24,7 @@ type PreRead<M> = {
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V; meta: M }
-export class Calculator<M = undefined> {
+export class Calculator<M = any> {
   keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
   calculated: TagMapExactValues<PreRead<M>>
@@ -172,12 +172,20 @@ export class Calculator<M = undefined> {
             }
           }
         }
+        case 'custom': {
+          const x = n.x.map((n) => internal(n)),
+            ex = n.ex
+          return meta(op, undefined, self.computeCustom(getV(x), ex), x, [], ex)
+        }
         default:
           assertUnreachable(op)
       }
     }
   }
 
+  computeCustom(_: any[], op: string): any {
+    throw new Error(`Unsupported custom node ${op} in Calculator`)
+  }
   computeMeta(
     _op: Exclude<AnyOP, 'read'>,
     _tag: Tag | undefined,

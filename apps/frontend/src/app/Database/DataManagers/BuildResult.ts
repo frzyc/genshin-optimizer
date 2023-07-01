@@ -15,7 +15,8 @@ export class BuildResultDataManager extends DataManager<
   CharacterKey,
   'buildResults',
   IBuildResult,
-  IBuildResult
+  IBuildResult,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'buildResults')

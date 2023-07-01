@@ -23,30 +23,25 @@
       "curve": "GROW_CURVE_CRITICAL_301"
     }
   ],
-  "refinementBonus": [
-    {
-      "key": "critRate_",
-      "values": [
-        0.08,
-        0.1,
-        0.12,
-        0.14,
-        0.16
-      ]
-    }
-  ],
-  "ascensionBonus": [
-    {
-      "key": "atk",
-      "values": [
-        0,
-        31.1,
-        62.2,
-        93.4,
-        124.5,
-        155.6,
-        186.7
-      ]
-    }
-  ]
+  "refinementBonus": {
+    "critRate_": [
+      -1,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16
+    ]
+  },
+  "ascensionBonus": {
+    "atk": [
+      0,
+      31.1,
+      62.2,
+      93.4,
+      124.5,
+      155.6,
+      186.7
+    ]
+  }
 }

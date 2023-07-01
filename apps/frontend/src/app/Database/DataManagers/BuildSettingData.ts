@@ -10,11 +10,9 @@ import {
   allLocationCharacterKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
-import { deepFreeze } from '@genshin-optimizer/util'
-
+import { deepFreeze, validateArr } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import { validateArr } from '../validationUtil'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -83,7 +81,8 @@ export class BuildSettingDataManager extends DataManager<
   CharacterKey,
   'buildSettings',
   BuildSetting,
-  BuildSetting
+  BuildSetting,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'buildSettings')

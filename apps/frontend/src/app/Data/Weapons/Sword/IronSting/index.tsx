@@ -19,14 +19,14 @@ const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'InfusionStinger')
 const eleDmgDealtStack = range(1, 2)
-const allDmgInc = [0.06, 0.075, 0.09, 0.105, 0.12]
+const allDmgInc = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
 const all_dmg_ = prod(
   lookup(
     condPassive,
     objKeyMap(eleDmgDealtStack, (i) => constant(i)),
     naught
   ),
-  subscript(input.weapon.refineIndex, allDmgInc)
+  subscript(input.weapon.refinement, allDmgInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

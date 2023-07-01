@@ -12,13 +12,13 @@ const key: WeaponKey = 'ThrillingTalesOfDragonSlayers'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const atkSrc = [0.24, 0.3, 0.36, 0.42, 0.48]
+const atkSrc = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 
 const [condPassivePath, condPassive] = cond(key, 'Heritage')
 const atk_Disp = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, atkSrc)
+  subscript(input.weapon.refinement, atkSrc)
 )
 const atk_ = unequal(
   input.activeCharKey,

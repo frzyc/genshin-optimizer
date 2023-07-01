@@ -21,14 +21,14 @@ const data_gen = allStats.weapon.data[key]
 
 const [condStacksPath, condStacks] = cond(key, 'stacks')
 
-const baseAtkArr = [0.52, 0.65, 0.78, 0.91, 1.04]
-const stacksAttArr = [0.28, 0.35, 0.42, 0.49, 0.56]
+const baseAtkArr = [-1, 0.52, 0.65, 0.78, 0.91, 1.04]
+const stacksAttArr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const stacksArr = range(1, 3)
 const baseAtk = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, baseAtkArr, { unit: '%' }),
+    subscript(input.weapon.refinement, baseAtkArr, { unit: '%' }),
     input.premod.eleMas
   ),
   KeyMap.info('atk')
@@ -40,7 +40,7 @@ const stacksAtk = lookup(
       stack,
       prod(
         stack,
-        subscript(input.weapon.refineIndex, stacksAttArr, { unit: '%' }),
+        subscript(input.weapon.refinement, stacksAttArr, { unit: '%' }),
         input.premod.eleMas
       ),
     ])

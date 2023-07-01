@@ -10,9 +10,9 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'Rust'
 const data_gen = allStats.weapon.data[key]
 
-const normal_dmg_s = [0.4, 0.5, 0.6, 0.7, 0.8]
+const normal_dmg_s = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 
-const normal_dmg_ = subscript(input.weapon.refineIndex, normal_dmg_s)
+const normal_dmg_ = subscript(input.weapon.refinement, normal_dmg_s)
 const charged_dmg_ = constant(-0.1)
 
 const data = dataObjForWeaponSheet(key, data_gen, {

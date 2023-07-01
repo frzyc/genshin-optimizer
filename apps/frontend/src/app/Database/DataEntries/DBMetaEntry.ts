@@ -1,5 +1,6 @@
 import type { GenderKey } from '@genshin-optimizer/consts'
 import { allGenderKeys } from '@genshin-optimizer/consts'
+import type { Database } from '@genshin-optimizer/database'
 import type { IGOOD } from '@genshin-optimizer/gi-good'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
@@ -11,7 +12,7 @@ interface IDBMeta {
   gender: GenderKey
 }
 
-function dbMetaInit(database: ArtCharDatabase): IDBMeta {
+function dbMetaInit(database: Database): IDBMeta {
   return {
     name: `Database ${database.storage.getDBIndex()}`,
     lastEdit: 0,

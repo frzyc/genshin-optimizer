@@ -1,18 +1,9 @@
-import type { TagMapSubsetCache, TagMapSubsetValues } from '../tag'
+import type { Tag, TagMapSubsetCache } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
-import { constant } from './construction'
+import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'
-import type {
-  AnyNode,
-  AnyOP,
-  Const,
-  NumNode,
-  OP,
-  Read,
-  ReRead,
-  StrNode,
-} from './type'
+import type { AnyNode, Const, NumNode, OP, ReRead, Read, StrNode } from './type'
 
 type NumTagFree = NumNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 type StrTagFree = StrNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
@@ -21,81 +12,74 @@ type AnyTagFree = AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
 export function detach(
   n: NumNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<Read>
+  dynTag: (_: Tag) => Tag | undefined
 ): NumTagFree[]
 export function detach(
   n: StrNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<Read>
+  dynTag: (_: Tag) => Tag | undefined
 ): StrTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<Read>
+  dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTags: TagMapSubsetValues<Read>
+  dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[] {
-  const allDynTags = new Set(dynTags.allValues())
-
-  function read(cache: TagMapSubsetCache<AnyNode | ReRead>): AnyTagFree[] {
-    return [
-      ...cache.subset().flatMap((n) => {
-        if (n.op !== 'reread') return map(n, cache)
-        cache = cache.with(n.tag)
-        return read(cache).map((x) => map(x, cache))
-      }),
-      ...dynTags.subset(cache.id),
-    ]
+  function detachRead(
+    cache: TagMapSubsetCache<AnyNode | ReRead>,
+    accu: Read['accu'],
+    dynNodes: Read[]
+  ): AnyTagFree[] {
+    const dyn = dynTag(cache.tag)
+    if (dyn) dynNodes.push(read(dyn, accu))
+    return cache.subset().flatMap((n) => {
+      return n.op !== 'reread'
+        ? map(n, cache)
+        : detachRead(cache.with(n.tag), accu, dynNodes)
+    })
+  }
+  function fold(
+    x: NumTagFree[],
+    accu: keyof typeof arithmetic,
+    ex: any
+  ): NumTagFree {
+    if (x.every((x) => x.op === 'const'))
+      return constant(
+        arithmetic[accu](
+          x.map((x) => x.ex),
+          ex
+        )
+      )
+    return { op: accu, x, br: [] }
   }
 
-  function map(
-    n: NumNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): NumTagFree
-  function map(
-    n: StrNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): StrTagFree
-  function map(
-    n: AnyNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): AnyTagFree
-  function map(
-    n: AnyNode,
-    cache: TagMapSubsetCache<AnyNode | ReRead>
-  ): AnyTagFree {
-    if (allDynTags.has(n as Read)) return n as Read
-
-    if (n.op === 'read') {
-      const x = read(cache.with(n.tag))
-      if (n.accu === undefined) return x[0] ?? constant(undefined as any)
-      n = { op: n.accu, x: x as NumTagFree[], br: [] } as AnyNode<
-        Exclude<AnyOP, 'read'>
-      >
-    }
-
+  type Cache = TagMapSubsetCache<AnyNode | ReRead>
+  function map(n: NumNode, cache: Cache): NumTagFree
+  function map(n: StrNode, cache: Cache): StrTagFree
+  function map(n: AnyNode, cache: Cache): AnyTagFree
+  function map(n: AnyNode, cache: Cache): AnyTagFree {
     const { op } = n
     switch (op) {
       case 'const':
-      case 'read':
         return n
+      case 'read': {
+        const dyn: Read[] = []
+        const x = detachRead(cache.with(n.tag), n.accu, dyn)
+        x.push(...dyn)
+        if (n.accu === undefined) return x[0] ?? constant(undefined as any)
+        return fold(x as NumTagFree[], n.accu, n.ex)
+      }
       case 'sum':
       case 'prod':
       case 'min':
       case 'max':
       case 'sumfrac': {
-        const x = n.x.map((x) => map(x, cache)) as Const<number>[]
-        if (x.every((x) => x.op === 'const'))
-          return constant(
-            arithmetic[n.op](
-              x.map((x) => x.ex),
-              n.ex
-            )
-          )
-        return { ...n, x }
+        const x = n.x.map((x) => map(x, cache))
+        return fold(x, op, n.ex)
       }
       case 'thres':
       case 'match':
@@ -125,17 +109,20 @@ export function detach(
         const tags = n.br.map((br) => map(br, cache)) as Const<string>[]
         if (tags.some((x) => x.op !== 'const'))
           throw new Error('Dynamic tag must be resolvable during detachment')
-        cache = cache.with(
+        const newCache = cache.with(
           Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.ex]))
         )
-        return map(n.x[0]!, cache)
+        return map(n.x[0]!, newCache)
       }
+      case 'custom':
+        return { ...n, x: n.x.map((x) => map(x, cache)) }
       default:
         assertUnreachable(op)
     }
   }
 
-  return n.map((n) => map(n, calc.nodes.cache(calc.keys)))
+  const cache = calc.nodes.cache(calc.keys)
+  return n.map((n) => map(n, cache))
 }
 
 export function flatten(n: NumTagFree[]): NumTagFree[]
@@ -155,18 +142,21 @@ export function flatten(n: AnyTagFree[]): AnyTagFree[] {
         const remaining = x.filter((x) => x.op !== 'const' && x.op !== op)
         if (constX.length > 1 || sameX.length > 0) {
           // We can either flatten constant values or nested nodes, so we try both
-          const mergedConst = constX.length
-            ? [
-                constant(
-                  arithmetic[op](
-                    constX.map((n) => n.ex),
-                    n.ex
-                  )
-                ),
-              ]
-            : []
+          const mergedConst =
+            constX.length > 1
+              ? [
+                  constant(
+                    arithmetic[op](
+                      constX.map((n) => n.ex),
+                      n.ex
+                    )
+                  ),
+                ]
+              : constX
           x = [...mergedConst, ...sameX.flatMap((x) => x.x), ...remaining]
         }
+        if (x.length === 1) return x[0] as AnyTagFree
+        if (!x.length) return constant(arithmetic[op]([], n.ex))
       }
     }
     return { ...n, x, br: n.br.map(map) } as AnyTagFree
@@ -195,11 +185,12 @@ export function transform<I extends OP, O extends OP>(
     const old = cache.get(n)
     if (old) return old
 
-    // If they are the same, we can save on memory
+    // If they are the same, we can save memory
     let result = map(n, internal)
     if (
       result.op === n.op &&
       result.ex === n.ex &&
+      result.tag === n.tag &&
       (result.x === n.x ||
         (result.x.length === n.x.length &&
           result.x.every((x, i) => n.x[i] === x))) &&
@@ -238,31 +229,31 @@ export function compile(
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, number>,
-  defaultValue: number
+  header?: string
 ): (_: Record<string, number>[]) => number[]
 export function compile(
   n: StrTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, string>,
-  defaultValue: string
+  header?: string
 ): (_: Record<string, string>[]) => string[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, any>,
-  defaultValue: any
+  header?: string
 ): (_: Record<string, any>[]) => any[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
   initial: Record<string, any>,
-  defaultValue: any
+  header = ''
 ): (_: Record<string, any>[]) => any[] {
   let i = 1,
-    body = `'use strict'; const x0=0` // making sure `const` has at least one entry
+    body = `'use strict';` + header + ';const x0=0' // making sure `const` has at least one entry
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
     const name = `x${i++}`
@@ -280,7 +271,9 @@ export function compile(
         break
       case 'sum':
       case 'prod':
-        body += `,${name}=${argNames.join(op == 'sum' ? '+' : '*')}`
+        body += `,${name}=`
+        if (argNames.length) body += argNames.join(op == 'sum' ? '+' : '*')
+        else body += op == 'sum' ? 0 : 1
         break
       case 'min':
       case 'max':
@@ -290,23 +283,27 @@ export function compile(
         body += `,${name}=${argNames[0]}/(${argNames[0]} + ${argNames[1]})`
         break
       case 'match':
-        body += `,${name}=${brNames[0]}>=${brNames[1]}?${argNames[0]}:${argNames[1]}`
+        body += `,${name}=${brNames[0]}===${brNames[1]}?${argNames[0]}:${argNames[1]}`
         break
       case 'thres':
-        body += `,${name}=${brNames[0]}===${brNames[1]}?${argNames[0]}:${argNames[1]}`
+        body += `,${name}=${brNames[0]}>=${brNames[1]}?${argNames[0]}:${argNames[1]}`
         break
       case 'lookup':
         throw new Error(`Unsupported operation: ${op}`) // TODO
       case 'subscript':
-        body += `,${name}=[${n.ex}][${argNames[0]}]`
+        body += `,${name}=[${n.ex}][${brNames[0]}]`
         break
       case 'read': {
         const key = n.tag[dynTagCategory]!
         let arr = [...new Array(slotCount)].map(
-          (_, i) => `(b[${i}].values['${key}'] ?? ${defaultValue})`
+          (_, i) => `(b[${i}]['${key}'] ?? 0)`
         )
         if (initial[key]) arr = [initial[key]!.toString(), ...arr]
         body += `,${name}=${arr.join('+')}`
+        break
+      }
+      case 'custom': {
+        body += `,${name}=${n.ex}(${argNames})`
         break
       }
       default:

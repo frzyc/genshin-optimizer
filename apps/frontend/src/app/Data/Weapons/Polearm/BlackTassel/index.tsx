@@ -11,12 +11,12 @@ const key: WeaponKey = 'BlackTassel'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const dmgInc = [0.4, 0.5, 0.6, 0.7, 0.8]
+const dmgInc = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const all_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, dmgInc)
+  subscript(input.weapon.refinement, dmgInc)
 )
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

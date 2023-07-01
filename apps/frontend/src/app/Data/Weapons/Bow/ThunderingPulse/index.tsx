@@ -12,19 +12,19 @@ const key: WeaponKey = 'ThunderingPulse'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const atkSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
-const naStack1 = [0.12, 0.15, 0.18, 0.21, 0.24]
-const naStack2 = [0.24, 0.3, 0.36, 0.42, 0.48]
-const naStack3 = [0.4, 0.5, 0.6, 0.7, 0.8]
+const atkSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const naStack1 = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const naStack2 = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
+const naStack3 = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 
 const [condPassivePath, condPassive] = cond(key, 'RuleByThunder')
-const atk_ = subscript(input.weapon.refineIndex, atkSrc)
+const atk_ = subscript(input.weapon.refinement, atkSrc)
 const normal_dmg_ = lookup(
   condPassive,
   {
-    '1': subscript(input.weapon.refineIndex, naStack1),
-    '2': subscript(input.weapon.refineIndex, naStack2),
-    '3': subscript(input.weapon.refineIndex, naStack3),
+    '1': subscript(input.weapon.refinement, naStack1),
+    '2': subscript(input.weapon.refinement, naStack2),
+    '3': subscript(input.weapon.refinement, naStack3),
   },
   naught
 )

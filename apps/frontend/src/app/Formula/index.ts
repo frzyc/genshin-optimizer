@@ -258,7 +258,6 @@ const inputBase = {
       lvl: read(),
       asc: read(),
       refinement: read(),
-      refineIndex: read(),
       main: read(),
       sub: read(),
       sub2: read(),
