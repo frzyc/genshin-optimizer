@@ -18,21 +18,21 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SkywardAtlas'
 const data_gen = allStats.weapon.data[key]
 
-const dmgBonus = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const dmgBonus = [0.12, 0.15, 0.18, 0.21, 0.24]
 const eleBonus_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    subscript(input.weapon.refinement, dmgBonus),
+    subscript(input.weapon.refineIndex, dmgBonus),
   ])
 )
-const dmgPerc = [-1, 1.6, 2, 2.4, 2.8, 3.2]
+const dmgPerc = [1.6, 2, 2.4, 2.8, 3.2]
 
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refinement, dmgPerc, { unit: '%' }),
+      subscript(input.weapon.refineIndex, dmgPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

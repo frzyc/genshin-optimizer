@@ -11,14 +11,14 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'AlleyHunter'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
-const dmgInc = [-1, 0.02, 0.025, 0.03, 0.035, 0.04]
+const dmgInc = [0.02, 0.025, 0.03, 0.035, 0.04]
 
 const [condPassivePath, condPassive] = cond(key, 'OppidanAmbush')
 const all_dmg_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 10), (i) =>
-      prod(subscript(input.weapon.refinement, dmgInc), i)
+      prod(subscript(input.weapon.refineIndex, dmgInc), i)
     ),
   },
   naught

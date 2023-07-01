@@ -18,15 +18,15 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'VortexVanquisher'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
-const shieldSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
-const atkSrc = [-1, 0.04, 0.05, 0.06, 0.07, 0.08]
+const shieldSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkSrc = [0.04, 0.05, 0.06, 0.07, 0.08]
 
 const [condPassivePath, condPassive] = cond(key, 'GoldenMajesty')
-const shield_ = subscript(input.weapon.refinement, shieldSrc)
+const shield_ = subscript(input.weapon.refineIndex, shieldSrc)
 
 const [condWithShieldPath, condWithShield] = cond(key, 'WithShield')
 
-const atkInc = subscript(input.weapon.refinement, atkSrc)
+const atkInc = subscript(input.weapon.refineIndex, atkSrc)
 const atkStacks = prod(
   sum(1, equal(condWithShield, 'protected', 1)),
   lookup(

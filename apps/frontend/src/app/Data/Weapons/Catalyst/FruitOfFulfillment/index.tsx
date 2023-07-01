@@ -18,7 +18,7 @@ const key: WeaponKey = 'FruitOfFulfillment'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const eleMasArr = [-1, 24, 27, 30, 33, 36]
+const eleMasArr = [24, 27, 30, 33, 36]
 const [condStacksPath, condStacks] = cond(key, 'stacks')
 const stacksArr = range(1, 5)
 const eleMas = lookup(
@@ -26,7 +26,7 @@ const eleMas = lookup(
   Object.fromEntries(
     stacksArr.map((stacks) => [
       stacks,
-      prod(subscript(input.weapon.refinement, eleMasArr), stacks),
+      prod(subscript(input.weapon.refineIndex, eleMasArr), stacks),
     ])
   ),
   naught

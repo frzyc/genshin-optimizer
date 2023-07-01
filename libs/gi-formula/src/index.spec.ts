@@ -8,7 +8,7 @@ import { teamData } from './util'
 
 describe('calculator', () => {
   describe('correctness', () => {
-    describe.skip('team member', () => {
+    describe('team member', () => {
       test('stats', () => {
         throw new Error('Add test')
       })
@@ -16,7 +16,7 @@ describe('calculator', () => {
         throw new Error('Add test')
       })
     })
-    describe.skip('team', () => {
+    describe('team', () => {
       test('stats', () => {
         throw new Error('Add test')
       })
@@ -30,7 +30,7 @@ describe('calculator', () => {
         throw new Error('Add test')
       })
     })
-    test.skip('custom buff', () => {
+    test('custom buff', () => {
       throw new Error('Add test')
     })
     test('stacking', () => {

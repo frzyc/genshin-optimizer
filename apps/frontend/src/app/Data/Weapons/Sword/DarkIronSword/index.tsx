@@ -10,12 +10,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'DarkIronSword'
 const data_gen = allStats.weapon.data[key]
 
-const atkInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.5]
+const atkInc = [0.2, 0.25, 0.3, 0.35, 0.5]
 const [condPassivePath, condPassive] = cond(key, 'Overloaded')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, atkInc, { unit: '%' })
+  subscript(input.weapon.refineIndex, atkInc, { unit: '%' })
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

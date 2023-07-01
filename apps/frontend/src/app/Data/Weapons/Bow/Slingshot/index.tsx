@@ -13,7 +13,7 @@ const key: WeaponKey = 'Slingshot'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const dmg_arr = [-1, 0.36, 0.42, 0.48, 0.54, 0.6]
+const dmg_arr = [0.36, 0.42, 0.48, 0.54, 0.6]
 
 const [condPassivePath, condPassive] = cond(key, 'Slingshot')
 const condPassiveStates = ['less', 'more']
@@ -21,7 +21,7 @@ const normal_dmg_ = lookup(
   condPassive,
   {
     less: subscript(
-      input.weapon.refinement,
+      input.weapon.refineIndex,
       dmg_arr,
       KeyMap.info('normal_dmg_')
     ),

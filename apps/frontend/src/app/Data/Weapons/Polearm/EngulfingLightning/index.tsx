@@ -17,26 +17,26 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'EngulfingLightning'
 const data_gen = allStats.weapon.data[key]
 
-const atk = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
-const atkMax = [-1, 0.8, 0.9, 1, 1.1, 1.2]
+const atk = [0.28, 0.35, 0.42, 0.49, 0.56]
+const atkMax = [0.8, 0.9, 1, 1.1, 1.2]
 const atk_ = equal(
   input.weapon.key,
   key,
   min(
     prod(
-      subscript(input.weapon.refinement, atk),
+      subscript(input.weapon.refineIndex, atk),
       sum(input.premod.enerRech_, percent(-1))
     ),
-    subscript(input.weapon.refinement, atkMax)
+    subscript(input.weapon.refineIndex, atkMax)
   )
 )
 
-const enerRech = [-1, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55]
+const enerRech = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55]
 const [condPassivePath, condPassive] = cond(key, 'TimelessDream')
 const enerRech_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, enerRech)
+  subscript(input.weapon.refineIndex, enerRech)
 )
 
 export const data = dataObjForWeaponSheet(

@@ -11,16 +11,16 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'TheBlackSword'
 const data_gen = allStats.weapon.data[key]
 
-const autoSrc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
-const hpRegenSrc = [-1, 0.6, 0.7, 0.8, 0.9, 1]
-const normal_dmg_ = subscript(input.weapon.refinement, autoSrc)
-const charged_dmg_ = subscript(input.weapon.refinement, autoSrc)
+const autoSrc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const hpRegenSrc = [0.6, 0.7, 0.8, 0.9, 1]
+const normal_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
+const charged_dmg_ = subscript(input.weapon.refineIndex, autoSrc)
 const heal = equal(
   input.weapon.key,
   key,
   customHealNode(
     prod(
-      subscript(input.weapon.refinement, hpRegenSrc, { unit: '%' }),
+      subscript(input.weapon.refineIndex, hpRegenSrc, { unit: '%' }),
       input.total.atk
     )
   )

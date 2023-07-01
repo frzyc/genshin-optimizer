@@ -18,9 +18,9 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SkywardHarp'
 const data_gen = allStats.weapon.data[key]
 
-const critd_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const critd_s = [0.2, 0.25, 0.3, 0.35, 0.4]
 const dmgPerc = percent(1.25)
-const critDMG_ = subscript(input.weapon.refinement, critd_s)
+const critDMG_ = subscript(input.weapon.refineIndex, critd_s)
 const dmg = equal(
   input.weapon.key,
   key,

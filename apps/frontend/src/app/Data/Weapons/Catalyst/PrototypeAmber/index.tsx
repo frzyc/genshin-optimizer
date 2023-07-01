@@ -12,14 +12,14 @@ const key: WeaponKey = 'PrototypeAmber'
 const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'Gliding')
-const healPerc = [-1, 0.04, 0.045, 0.05, 0.055, 0.06]
+const healPerc = [0.04, 0.045, 0.05, 0.055, 0.06]
 
 const heal = equal(
   input.weapon.key,
   key,
   customHealNode(
     prod(
-      subscript(input.weapon.refinement, healPerc, { unit: '%' }),
+      subscript(input.weapon.refineIndex, healPerc, { unit: '%' }),
       input.total.hp
     )
   )

@@ -10,13 +10,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'WineAndSong'
 const data_gen = allStats.weapon.data[key]
 
-const atkInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condPassivePath, condPassive] = cond(key, 'EverChanging')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, atkInc)
+  subscript(input.weapon.refineIndex, atkInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

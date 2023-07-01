@@ -10,15 +10,15 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'LightOfFoliarIncision'
 const data_gen = allStats.weapon.data[key]
 
-const critRate_arr = [-1, 0.04, 0.05, 0.06, 0.07, 0.08]
+const critRate_arr = [0.04, 0.05, 0.06, 0.07, 0.08]
 const critRate_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, critRate_arr)
+  subscript(input.weapon.refineIndex, critRate_arr)
 )
 
 const [condAfterNormalElePath, condAfterNormalEle] = cond(key, 'afterNormalEle')
-const dmgIncArr = [-1, 1.2, 1.5, 1.8, 2.1, 2.4]
+const dmgIncArr = [1.2, 1.5, 1.8, 2.1, 2.4]
 // TODO: Check if this is total or premod. Probably will be total since it is dmgInc
 const normal_dmgInc = equal(
   input.weapon.key,
@@ -27,7 +27,7 @@ const normal_dmgInc = equal(
     condAfterNormalEle,
     'on',
     prod(
-      subscript(input.weapon.refinement, dmgIncArr, { unit: '%' }),
+      subscript(input.weapon.refineIndex, dmgIncArr, { unit: '%' }),
       input.total.eleMas
     )
   )

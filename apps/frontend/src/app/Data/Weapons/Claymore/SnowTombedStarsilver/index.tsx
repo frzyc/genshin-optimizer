@@ -17,14 +17,14 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SnowTombedStarsilver'
 const data_gen = allStats.weapon.data[key]
 
-const dmgAoePerc = [-1, 0.8, 0.95, 1.1, 1.25, 1.4]
-const dmgCryoPerc = [-1, 2, 2.4, 2.8, 3.2, 3.6]
+const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
+const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
 const dmgAoe = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refinement, dmgAoePerc, { unit: '%' }),
+      subscript(input.weapon.refineIndex, dmgAoePerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',
@@ -38,7 +38,7 @@ const dmgOnCryoOp = equal(
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refinement, dmgCryoPerc, { unit: '%' }),
+      subscript(input.weapon.refineIndex, dmgCryoPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

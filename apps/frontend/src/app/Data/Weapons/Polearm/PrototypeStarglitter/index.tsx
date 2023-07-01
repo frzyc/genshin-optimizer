@@ -12,18 +12,18 @@ const key: WeaponKey = 'PrototypeStarglitter'
 const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const dmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
+const dmgInc = [0.08, 0.1, 0.12, 0.14, 0.16]
 const normal_dmg_ = lookup(
   condStack,
   objKeyMap(range(1, 2), (i) =>
-    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refineIndex, dmgInc, { unit: '%' }), i)
   ),
   naught
 )
 const charged_dmg_ = lookup(
   condStack,
   objKeyMap(range(1, 2), (i) =>
-    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refineIndex, dmgInc, { unit: '%' }), i)
   ),
   naught
 )

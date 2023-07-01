@@ -11,12 +11,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'RecurveBow'
 const data_gen = allStats.weapon.data[key]
 
-const healing_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
+const healing_s = [0.08, 0.1, 0.12, 0.14, 0.16]
 const healing = equal(
   input.weapon.key,
   key,
   customHealNode(
-    prod(input.total.hp, subscript(input.weapon.refinement, healing_s))
+    prod(input.total.hp, subscript(input.weapon.refineIndex, healing_s))
   )
 )
 

@@ -17,12 +17,12 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 
 const key: WeaponKey = 'LostPrayerToTheSacredWinds'
 const data_gen = allStats.weapon.data[key]
-const ele_dmg_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
+const ele_dmg_s = [0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, 'BoundlessBlessing')
 
 const moveSPD_ = percent(0.1)
-const eleDmgInc = subscript(input.weapon.refinement, ele_dmg_s, { unit: '%' })
+const eleDmgInc = subscript(input.weapon.refineIndex, ele_dmg_s, { unit: '%' })
 const eleDmgStacks = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,

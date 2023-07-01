@@ -10,9 +10,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'WindblumeOde'
 const data_gen = allStats.weapon.data[key]
 
-const atk_s = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
+const atk_s = [0.16, 0.2, 0.24, 0.28, 0.32]
 const [condPassivePath, condPassive] = cond(key, 'WindblumeWish')
-const atk_ = equal(condPassive, 'on', subscript(input.weapon.refinement, atk_s))
+const atk_ = equal(
+  condPassive,
+  'on',
+  subscript(input.weapon.refineIndex, atk_s)
+)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

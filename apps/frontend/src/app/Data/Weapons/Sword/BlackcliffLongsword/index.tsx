@@ -13,14 +13,14 @@ const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const opponentsDefeated = range(1, 3)
-const atkInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const atkInc = [0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = prod(
   lookup(
     condPassive,
     objKeyMap(opponentsDefeated, (i) => constant(i)),
     0
   ),
-  subscript(input.weapon.refinement, atkInc)
+  subscript(input.weapon.refineIndex, atkInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

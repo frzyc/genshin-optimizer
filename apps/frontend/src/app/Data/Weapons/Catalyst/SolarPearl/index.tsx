@@ -10,11 +10,11 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SolarPearl'
 const data_gen = allStats.weapon.data[key]
 
-const refinementVals = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const refinementVals = [0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condNormalPath, condNormal] = cond(key, 'solarShineNormal')
 const [condSkillBurstPath, condSkillBurst] = cond(key, 'solarShineSkillBurst')
-const refineVal = subscript(input.weapon.refinement, refinementVals)
+const refineVal = subscript(input.weapon.refineIndex, refinementVals)
 const skill_dmg_ = equal('normal', condNormal, refineVal)
 const burst_dmg_ = { ...skill_dmg_ }
 const normal_dmg_ = equal('skillBurst', condSkillBurst, refineVal)
