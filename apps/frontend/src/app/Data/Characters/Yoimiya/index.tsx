@@ -277,6 +277,16 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
+      ct.headerTem('constellation6', {
+        canShow: equal(condSkill, 'skill', 1),
+        fields: dm.normal.hitArr.map(
+          (_, i): INodeFieldDisplay => ({
+            node: infoMut(dmgFormulas.constellation6[i], {
+              name: ct.chg(`auto.skillParams.${i}`),
+            }),
+          })
+        ),
+      }),
       {
         text: ct.chg('auto.fields.charged'),
       },
@@ -341,10 +351,10 @@ const sheet: ICharacterSheet = {
           skill: {
             fields: [
               {
-                node: normal_dmgMult,
+                text: ct.ch('normPyroInfus'),
               },
               {
-                text: ct.ch('normPyroInfus'),
+                node: normal_dmgMult,
               },
               {
                 text: ct.chg('skill.skillParams.1'),
@@ -378,16 +388,6 @@ const sheet: ICharacterSheet = {
               ],
             },
           ])
-        ),
-      }),
-      ct.headerTem('constellation6', {
-        canShow: equal(condSkill, 'skill', 1),
-        fields: dm.normal.hitArr.map(
-          (_, i): INodeFieldDisplay => ({
-            node: infoMut(dmgFormulas.constellation6[i], {
-              name: ct.chg(`auto.skillParams.${i}`),
-            }),
-          })
         ),
       }),
     ]),

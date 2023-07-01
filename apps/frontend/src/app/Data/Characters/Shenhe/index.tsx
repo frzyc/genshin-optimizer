@@ -123,7 +123,7 @@ const nodeAsc1 = equal(input.activeCharKey, target.charKey, nodeAsc1Disp)
 const [condAsc4Path, condAsc4] = cond(key, 'asc4')
 const nodeAsc4 = greaterEq(
   input.asc,
-  1,
+  4,
   equal(condAsc4, 'press', dm.passive2.press_dmg_)
 )
 const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
@@ -131,7 +131,7 @@ const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
 const [condAsc4HoldPath, condAsc4Hold] = cond(key, 'asc4Hold')
 const nodeAsc4Hold = greaterEq(
   input.asc,
-  1,
+  4,
   equal(condAsc4Hold, 'hold', dm.passive2.hold_dmg_)
 )
 const nodeAsc4Hold_normal_dmg_ = { ...nodeAsc4Hold }
@@ -155,8 +155,7 @@ const c4Inc = greaterEq(
       percent(i * dm.constellation4.dmg_)
     ),
     0
-  ),
-  { name: ct.ch('c4Bonus_') }
+  )
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
@@ -195,6 +194,7 @@ export const data = dataObjForCharacterSheet(
     premod: {
       skillBoost: nodeC3,
       burstBoost: nodeC5,
+      skill_dmg_: c4Inc,
     },
     teamBuff: {
       premod: {
@@ -293,7 +293,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.trigger,
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.cd,
             unit: 's',
           },
@@ -312,7 +312,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.triggerHold,
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.cdHold,
             unit: 's',
           },
@@ -382,22 +382,14 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('addlCharges'),
-            value: 1,
-          },
-        ],
-      }),
       ct.condTem('constellation4', {
         value: condC4,
         path: condC4Path,
         name: ct.ch('c4'),
         states: objKeyMap(
-          range(1, 50).map((i) => i.toString()),
+          range(1, 50).map((i) => i),
           (i) => ({
-            name: i.toString(),
+            name: st('stack', { count: i }),
             fields: [{ node: c4Inc }],
           })
         ),
@@ -497,7 +489,16 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.fieldsTem('constellation1', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

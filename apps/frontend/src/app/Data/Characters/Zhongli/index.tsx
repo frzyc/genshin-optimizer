@@ -275,24 +275,24 @@ const sheet: ICharacterSheet = {
             value: (data) => (data.get(input.constellation).value >= 1 ? 2 : 1),
           },
           {
-            text: st('pressCD'),
-            value: dm.skill.pressCD,
-            unit: 's',
-          },
-          {
             node: infoMut(dmgFormulas.skill.holdDMG, {
               name: ct.chg(`skill.skillParams.2`),
             }),
           },
           {
-            text: st('holdCD'),
-            value: dm.skill.holdCD,
+            node: infoMut(dmgFormulas.skill.shield, {
+              name: stg('dmgAbsorption'),
+            }),
+          },
+          {
+            text: stg('press.cd'),
+            value: dm.skill.pressCD,
             unit: 's',
           },
           {
-            node: infoMut(dmgFormulas.skill.shield, {
-              name: stg(`dmgAbsorption`),
-            }),
+            text: stg('hold.cd'),
+            value: dm.skill.holdCD,
+            unit: 's',
           },
           {
             text: ct.chg('skill.skillParams.5'),
@@ -312,6 +312,16 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
+      ct.condTem('passive1', {
+        value: condP1,
+        path: condP1Path,
+        teamBuff: true,
+        name: ct.ch('p1cond'),
+        states: objKeyMap(range(1, 5), (i) => ({
+          name: st('stack', { count: i }),
+          fields: [{ node: nodeP1 }],
+        })),
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -329,7 +339,7 @@ const sheet: ICharacterSheet = {
                 ? dm.burst.duration[data.get(input.total.burstIndex).value]
                 : `${
                     dm.burst.duration[data.get(input.total.burstIndex).value]
-                  }s +${dm.constellation4.durationInc}`,
+                  }s + ${dm.constellation4.durationInc}`,
             fixed: 1,
             unit: 's',
           },
@@ -346,18 +356,7 @@ const sheet: ICharacterSheet = {
       },
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.condTem('passive1', {
-        value: condP1,
-        path: condP1Path,
-        teamBuff: true,
-        name: ct.ch('p1cond'),
-        states: objKeyMap(range(1, 5), (i) => ({
-          name: st('stack', { count: i }),
-          fields: [{ node: nodeP1 }],
-        })),
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2', [
       ct.fieldsTem('passive2', {
         fields: [

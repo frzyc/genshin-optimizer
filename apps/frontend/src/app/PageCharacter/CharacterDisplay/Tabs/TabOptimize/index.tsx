@@ -507,10 +507,10 @@ export default function TabBuild() {
         <Alert severity="warning" variant="filled">
           <Trans t={t} i18nKey="noArtis">
             Oops! It looks like you haven't added any artifacts to GO yet! You
-            should go to the{' '}
+            should go to the
             <Link component={RouterLink} to="/artifacts">
               Artifacts
-            </Link>{' '}
+            </Link>
             page and add some!
           </Trans>
         </Alert>

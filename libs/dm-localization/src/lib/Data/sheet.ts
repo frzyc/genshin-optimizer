@@ -37,23 +37,28 @@ const data = {
   skillDMG: [2068254014, 'skillParam'],
   //Burst DMG
   burstDMG: [1434446270, 'skillParam'],
-  //DMG Absorption
-  dmgAbsorption: [1339275302, 'skillParam'],
+  //Shield DMG Absorption
+  dmgAbsorption: [3265472006, 'skillParam'],
   //Healing
   healing: [1082735766, 'skillParam'],
+  //Continuous Healing
+  contHealing: [3331608342, 'skillParam'],
   //Duration
   duration: [1150944327, 'skillParam'],
   //CD
   cd: [2052795463, 'skillParam'],
   //Energy Cost
   energyCost: [3073197810, 'skillParam'],
+  //Energy Regeneration
+  energyRegen: [2165261751, 'skillParam'],
   //Base DMG
   baseDMG: [430832806, 'skillParam'],
   //DoT
   dot: [1521507646, 'skillParam'],
   //Additional Elemental DMG
   addEleDMG: [3006681174, 'skillParam'],
-
+  //HP Regeneration Per Hit
+  hpRegenPerHit: [3642811974, 'skillParam'],
   press: {
     //Press DMG
     dmg: [3774314422, 'skillParam'],
@@ -84,12 +89,21 @@ const data = {
     vaporize: 3111567595,
     melt: 3497793651,
     // Technically this should be 'rupture', but I don't see a 'rupture' string
-    bloom: 3593652061, // or maybe it is 4074539307
+    bloom: 1216168406,
     burgeon: 2021015747,
     hyperbloom: 2697794115,
     quicken: 347446227,
     aggravate: 2961120579,
-    spread: 2191579811, // or maybe it is 982642368
+    spread: 2191579811,
+  },
+  stat: {
+    def: 3591287138, //maybe it's 527947494 or 1575853882
+    dmgBonus: {},
+    base: {
+      atk: 2634860079, //maybe it's 2334963823
+    },
+    res: {},
+    misc: {},
   },
 } as const
 export default data

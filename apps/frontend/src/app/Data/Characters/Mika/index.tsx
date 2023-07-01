@@ -121,14 +121,18 @@ const a1DetectorStacks_physical_dmg_ = equal(
   target.charKey,
   a1DetectorStacks_physical_dmg_disp
 )
-
+const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6InSoulwind_physical_critDMG_disp = greaterEq(
   input.constellation,
   6,
-  equal(condInSoulwind, 'on', dm.constellation6.physical_critDMG_, {
-    ...KeyMap.info('physical_critDMG_'),
-    isTeamBuff: true,
-  })
+  equal(
+    condInSoulwind,
+    'on',
+    equal(condC6Crit, 'on', dm.constellation6.physical_critDMG_, {
+      ...KeyMap.info('physical_critDMG_'),
+      isTeamBuff: true,
+    })
+  )
 )
 const c6InSoulwind_physical_critDMG_ = equal(
   input.activeCharKey,
@@ -315,12 +319,24 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
-      ct.headerTem('constellation6', {
+      ct.condTem('constellation6', {
         teamBuff: true,
-        fields: [
-          {
-            node: c6InSoulwind_physical_critDMG_disp,
+        canShow: equal(condInSoulwind, 'on', 1),
+        path: condC6CritPath,
+        value: condC6Crit,
+        name: ct.ch('inSoulwind'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c6InSoulwind_physical_critDMG_disp,
+              },
+            ],
           },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
           {
             text: ct.ch('incDetectorStacks'),
             value: dm.constellation6.extraStacks,
@@ -350,7 +366,7 @@ const sheet: ICharacterSheet = {
               data.get(input.activeCharKey).value ===
                 data.get(target.charKey).value
                 ? `${dm.burst.plumeInterval}s - ${
-                    data.get(skillInSoulwind_atkSPD_disp).value
+                    data.get(skillInSoulwind_atkSPD_disp).value * 100
                   }% = ${(
                     dm.burst.plumeInterval *
                     (1 - data.get(skillInSoulwind_atkSPD_disp).value)

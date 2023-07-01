@@ -345,7 +345,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: (data) =>
               data.get(input.constellation).value >= 1
                 ? `${dm.skill.cdHold} - 10% = ${dm.skill.cdHold * (1 - 0.1)}`
@@ -354,7 +354,7 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('skill', {
+      ct.fieldsTem('skill', {
         fields: [
           {
             node: infoMut(dmgFormulas.skill.pdmg, {
@@ -372,6 +372,29 @@ const sheet: ICharacterSheet = {
             }),
           },
         ],
+      }),
+      ct.condTem('passive1', {
+        // Skill Absorption
+        value: condSkillAbsorption,
+        path: condSkillAbsorptionPath,
+        name: st('eleAbsor'),
+        states: Object.fromEntries(
+          absorbableEle.map((eleKey) => [
+            eleKey,
+            {
+              name: (
+                <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
+              ),
+              fields: [
+                {
+                  node: infoMut(dmgFormulas.passive1.absorb, {
+                    name: stg('addEleDMG'),
+                  }),
+                },
+              ],
+            },
+          ])
+        ),
       }),
       ct.headerTem('constellation1', {
         fields: [
@@ -477,31 +500,7 @@ const sheet: ICharacterSheet = {
       }),
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.condTem('passive1', {
-        // Skill Absorption
-        value: condSkillAbsorption,
-        path: condSkillAbsorptionPath,
-        name: st('eleAbsor'),
-        states: Object.fromEntries(
-          absorbableEle.map((eleKey) => [
-            eleKey,
-            {
-              name: (
-                <ColorText color={eleKey}>{stg(`element.${eleKey}`)}</ColorText>
-              ),
-              fields: [
-                {
-                  node: infoMut(dmgFormulas.passive1.absorb, {
-                    name: stg(`addEleDMG`),
-                  }),
-                },
-              ],
-            },
-          ])
-        ),
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2', [
       ct.condTem('passive2', {
         // Poetics of Fuubutsu
@@ -518,7 +517,7 @@ const sheet: ICharacterSheet = {
                   node: asc4[`${ele}_dmg_`],
                 },
                 {
-                  text: stg('duration'),
+                  text: st(`effectDuration.${ele}`),
                   value: dm.passive2.duration,
                   unit: 's',
                 },

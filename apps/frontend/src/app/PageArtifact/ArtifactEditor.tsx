@@ -643,7 +643,7 @@ export default function ArtifactEditor({
                               <Grid item flexGrow={1}>
                                 <Typography>
                                   <span>
-                                    Screenshots in file-queue:{' '}
+                                    Screenshots in file-queue:
                                     <b>{remaining}</b>
                                     {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                                   </span>

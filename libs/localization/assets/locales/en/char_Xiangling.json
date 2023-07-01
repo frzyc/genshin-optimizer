@@ -3,5 +3,5 @@
   "explosionDMG": "Explosion DMG",
   "afterGuobaHit": "Opponent's been hit by Guoba's attacks",
   "duringPyronado": "Pyronado is active",
-  "c6Exception": "This does not affect <pyro>1-Hit Swing DMG</pyro>, <pyro>2-Hit Swing DMG</pyro>, or <pyro>Pyronado DMG</pyro>"
+  "c6Exception": "This cannot affect <pyro>1-Hit Swing DMG</pyro>, <pyro>2-Hit Swing DMG</pyro>, or <pyro>Pyronado DMG</pyro>"
 }

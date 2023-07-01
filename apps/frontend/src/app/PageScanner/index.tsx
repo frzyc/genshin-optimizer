@@ -52,11 +52,11 @@ export default function PageScanner() {
               Below are several scanners that have been tested with GO.
             </Typography>
             <Typography variant="subtitle2">
-              To upload the exported file, go to {'the '}
+              To upload the exported file, go to the
               <Link component={RouterLink} to="/setting">
                 Settings
               </Link>
-              page, and upload your file in the{' '}
+              page, and upload your file in the
               {'<strong>Database Upload</strong>'}
               section.
             </Typography>
@@ -100,7 +100,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -158,7 +158,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -205,7 +205,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This app only scans in English and exports to{' '}
+                  This app only scans in English and exports to
                   <code>GOOD</code>
                   format.
                 </Trans>
@@ -245,7 +245,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -275,7 +275,7 @@ export default function PageScanner() {
               </Typography>
               <Typography gutterBottom>
                 <Trans t={t} i18nKey="goodeng">
-                  This app only scans in English and exports to{' '}
+                  This app only scans in English and exports to
                   <code>GOOD</code>
                   format.
                 </Trans>
@@ -321,7 +321,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.4
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
@@ -346,7 +346,7 @@ export default function PageScanner() {
                   Scans all the artifacts in your inventory. Follow the
                   instructions to capture the window and scan. Has both Chinese
                   and English versions (download the <code>_EN.exe</code>
-                  version to scan in English). GO only accepts the{' '}
+                  version to scan in English). GO only accepts the
                   <code>GOOD</code> format.
                 </Trans>
               </Typography>
@@ -397,7 +397,7 @@ export default function PageScanner() {
                   sx={{ display: 'flex', alignItems: 'center' }}
                 >
                   <Gamepad sx={{ pr: 0.5 }} />
-                  3.5
+                  3.7
                 </SqBadge>
                 <SqBadge sx={{ display: 'flex', alignItems: 'center' }}>
                   <Computer sx={{ pr: 0.5 }} />
