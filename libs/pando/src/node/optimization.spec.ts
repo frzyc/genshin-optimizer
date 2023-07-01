@@ -1,8 +1,5 @@
 import { cmpGE, constant, read, sum } from './construction'
 import { applyConst, combineConst, compile, flatten } from './optimization'
-import { NumNode, OP as TaggedOP } from './type'
-
-type OP = Exclude<TaggedOP, 'tag' | 'vtag' | 'dtag'>
 
 describe('optimization', () => {
   const read0 = read({ q: '0' }, undefined)
@@ -12,7 +9,7 @@ describe('optimization', () => {
     sum(3, sum(4, sum(5)), read1), // Nested consts
     cmpGE(2, 1, read0, read1), // Const branching
     cmpGE(read1, 1, 3, 3), // Futile branching
-  ] as any as NumNode<OP>[]
+  ]
 
   test('flatten', () => {
     expect(flatten(x)).toEqual([

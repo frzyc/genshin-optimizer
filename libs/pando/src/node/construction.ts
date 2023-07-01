@@ -9,6 +9,7 @@ import type {
   Max,
   Min,
   NumNode,
+  OP,
   Prod,
   Read,
   ReRead,
@@ -22,9 +23,9 @@ import type {
 } from './type'
 
 type _value = number | string
-type Num = NumNode | number
-type Str = StrNode | string
-type Val = AnyNode | _value
+type Num<P extends OP> = NumNode<P> | number
+type Str<P extends OP> = StrNode<P> | string
+type Val<P extends OP> = AnyNode<P> | _value
 
 export function constant(val: number): Const<number>
 export function constant(val: string): Const<string>
@@ -33,102 +34,203 @@ export function constant(val: _value): Const<_value> {
   return { op: 'const', x: [], br: [], ex: val }
 }
 
-function arithmetic<Op extends string>(op: Op, x: Num[]) {
+/** x0 + x1 + ... */
+export const sum = <P extends OP = never>(...x: Num<P>[]): Sum<P | 'sum'> =>
+  arithmetic('sum', x)
+/** x0 * x1 * ... */
+export const prod = <P extends OP = never>(...x: Num<P>[]): Prod<P | 'prod'> =>
+  arithmetic('prod', x)
+/** min( x0, x1, ... ) */
+export const min = <P extends OP = never>(...x: Num<P>[]): Min<P | 'min'> =>
+  arithmetic('min', x)
+/** max( x0, x1, ... ) */
+export const max = <P extends OP = never>(...x: Num<P>[]): Max<P | 'max'> =>
+  arithmetic('max', x)
+/** x / (x + c) */
+export const sumfrac = <P extends OP = never>(
+  x: Num<P>,
+  c: Num<P>
+): SumFrac<P | 'sumfrac'> => arithmetic('sumfrac', [x, c])
+function arithmetic<Op extends string, P extends OP>(op: Op, x: Num<P>[]) {
   return { op, x: toVs(x), br: [] }
 }
-/** x0 + x1 + ... */
-export const sum = (...x: Num[]): Sum => arithmetic('sum', x)
-/** x0 * x1 * ... */
-export const prod = (...x: Num[]): Prod => arithmetic('prod', x)
-/** min( x0, x1, ... ) */
-export const min = (...x: Num[]): Min => arithmetic('min', x)
-/** max( x0, x1, ... ) */
-export const max = (...x: Num[]): Max => arithmetic('max', x)
-/** x / (x + c) */
-export const sumfrac = (x: Num, c: Num): SumFrac =>
-  arithmetic('sumfrac', [x, c])
 
 /** v1 == v2 ? eq : neq */
-export function cmpEq(v1: Num, v2: Num, eq: Num, neq?: Num): Match<NumNode>
-export function cmpEq(v1: Num, v2: Num, eq: Str, neq: Str): Match<StrNode>
-export function cmpEq(v1: Str, v2: Str, eq: Num, neq?: Num): Match<NumNode>
-export function cmpEq(v1: Str, v2: Str, eq: Str, neq: Str): Match<StrNode>
-export function cmpEq(v1: Val, v2: Val, eq: Val, neq: Val = 0): Match<AnyNode> {
+export function cmpEq<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  eq: Num<P>,
+  neq?: Num<P>
+): Match<NumNode<P>, P | 'match'>
+export function cmpEq<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  eq: Str<P>,
+  neq: Str<P>
+): Match<StrNode<P>, P | 'match'>
+export function cmpEq<P extends OP = never>(
+  v1: Str<P>,
+  v2: Str<P>,
+  eq: Num<P>,
+  neq?: Num<P>
+): Match<NumNode<P>, P | 'match'>
+export function cmpEq<P extends OP = never>(
+  v1: Str<P>,
+  v2: Str<P>,
+  eq: Str<P>,
+  neq: Str<P>
+): Match<StrNode<P>, P | 'match'>
+export function cmpEq<P extends OP = never>(
+  v1: Val<P>,
+  v2: Val<P>,
+  eq: Val<P>,
+  neq: Val<P> = 0
+): Match<AnyNode<P>, P | 'match'> {
   return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
 }
 /** v1 != v2 ? neq : eq */
-export function cmpNE(v1: Num, v2: Num, neq: Num, eq?: Num): Match<NumNode>
-export function cmpNE(v1: Num, v2: Num, neq: Str, eq: Str): Match<StrNode>
-export function cmpNE(v1: Str, v2: Str, neq: Num, eq?: Num): Match<NumNode>
-export function cmpNE(v1: Str, v2: Str, neq: Str, eq: Str): Match<StrNode>
-export function cmpNE(v1: Val, v2: Val, neq: Val, eq: Val = 0): Match<AnyNode> {
+export function cmpNE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  neq: Num<P>,
+  eq?: Num<P>
+): Match<NumNode<P>, P | 'match'>
+export function cmpNE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  neq: Str<P>,
+  eq: Str<P>
+): Match<StrNode<P>, P | 'match'>
+export function cmpNE<P extends OP = never>(
+  v1: Str<P>,
+  v2: Str<P>,
+  neq: Num<P>,
+  eq?: Num<P>
+): Match<NumNode<P>, P | 'match'>
+export function cmpNE<P extends OP = never>(
+  v1: Str<P>,
+  v2: Str<P>,
+  neq: Str<P>,
+  eq: Str<P>
+): Match<StrNode<P>, P | 'match'>
+export function cmpNE<P extends OP = never>(
+  v1: Val<P>,
+  v2: Val<P>,
+  neq: Val<P>,
+  eq: Val<P> = 0
+): Match<AnyNode<P>, P | 'match'> {
   return { op: 'match', x: toVs([eq, neq]), br: toVs([v1, v2]) }
 }
 
 /** v1 >= v2 ? ge : lt */
-function thres(v1: Num, v2: Num, ge: Val, lt: Val): Threshold<AnyNode> {
-  return { op: 'thres', x: toVs([ge, lt]), br: toVs([v1, v2]) }
-}
-/** v1 >= v2 ? ge : lt */
-export function cmpGE(v1: Num, v2: Num, ge: Num, lt?: Num): Threshold<NumNode>
-export function cmpGE(v1: Num, v2: Num, ge: Str, lt: Str): Threshold<StrNode>
-export function cmpGE(
-  v1: Num,
-  v2: Num,
-  ge: Val,
-  lt: Val = 0
-): Threshold<AnyNode> {
+export function cmpGE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  ge: Num<P>,
+  lt?: Num<P>
+): Threshold<NumNode<P>, P | 'thres'>
+export function cmpGE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  ge: Str<P>,
+  lt: Str<P>
+): Threshold<StrNode<P>, P | 'thres'>
+export function cmpGE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  ge: Val<P>,
+  lt: Val<P> = 0
+): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v1, v2, ge, lt)
 }
 /** v1 < v2 ? lt : ge */
-export function cmpLT(v1: Num, v2: Num, lt: Num, ge?: Num): Threshold<NumNode>
-export function cmpLT(v1: Num, v2: Num, lt: Str, ge: Str): Threshold<StrNode>
-export function cmpLT(
-  v1: Num,
-  v2: Num,
-  lt: Val,
-  ge: Val = 0
-): Threshold<AnyNode> {
+export function cmpLT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  lt: Num<P>,
+  ge?: Num<P>
+): Threshold<NumNode<P>, P | 'thres'>
+export function cmpLT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  lt: Str<P>,
+  ge: Str<P>
+): Threshold<StrNode<P>, P | 'thres'>
+export function cmpLT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  lt: Val<P>,
+  ge: Val<P> = 0
+): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v1, v2, ge, lt)
 }
 /** v1 <= v2 ? le : gt */
-export function cmpLE(v1: Num, v2: Num, le: Num, gt?: Num): Threshold<NumNode>
-export function cmpLE(v1: Num, v2: Num, le: Str, gt: Str): Threshold<StrNode>
-export function cmpLE(
-  v1: Num,
-  v2: Num,
-  le: Val,
-  gt: Val = 0
-): Threshold<AnyNode> {
+export function cmpLE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  le: Num<P>,
+  gt?: Num<P>
+): Threshold<NumNode<P>, P | 'thres'>
+export function cmpLE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  le: Str<P>,
+  gt: Str<P>
+): Threshold<StrNode<P>, P | 'thres'>
+export function cmpLE<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  le: Val<P>,
+  gt: Val<P> = 0
+): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v2, v1, le, gt)
 }
 /** v1 > v2 ? gt : le */
-export function cmpGT(v1: Num, v2: Num, gt: Num, le?: Num): Threshold<NumNode>
-export function cmpGT(v1: Num, v2: Num, gt: Str, le: Str): Threshold<StrNode>
-export function cmpGT(
-  v1: Num,
-  v2: Num,
-  gt: Val,
-  le: Val = 0
-): Threshold<AnyNode> {
+export function cmpGT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  gt: Num<P>,
+  le?: Num<P>
+): Threshold<NumNode<P>, P | 'thres'>
+export function cmpGT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  gt: Str<P>,
+  le: Str<P>
+): Threshold<StrNode<P> | P | 'thres'>
+export function cmpGT<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  gt: Val<P>,
+  le: Val<P> = 0
+): Threshold<AnyNode<P> | P | 'thres'> {
   return thres(v2, v1, le, gt)
+}
+/** v1 >= v2 ? ge : lt */
+function thres<P extends OP = never>(
+  v1: Num<P>,
+  v2: Num<P>,
+  ge: Val<P>,
+  lt: Val<P>
+): Threshold<AnyNode<P>, P | 'thres'> {
+  return { op: 'thres', x: toVs([ge, lt]), br: toVs([v1, v2]) }
 }
 
 /** table[index] ?? defaultNode */
-export function lookup(
-  index: StrNode,
-  table: Record<string, Num>,
-  defaultV?: Num
+export function lookup<P extends OP>(
+  index: StrNode<P>,
+  table: Record<string, Num<P>>,
+  defaultV?: Num<P>
 ): Lookup<NumNode>
-export function lookup(
-  index: StrNode,
-  table: Record<string, Str>,
-  defaultV?: Str
+export function lookup<P extends OP>(
+  index: StrNode<P>,
+  table: Record<string, Str<P>>,
+  defaultV?: Str<P>
 ): Lookup<StrNode>
-export function lookup(
-  index: StrNode,
-  table: Record<string, Val>,
-  defaultV?: Val
+export function lookup<P extends OP>(
+  index: StrNode<P>,
+  table: Record<string, Val<P>>,
+  defaultV?: Val<P>
 ): Lookup<AnyNode> {
   return {
     op: 'lookup',
@@ -138,27 +240,57 @@ export function lookup(
   }
 }
 /** table[index] */
-export function subscript(index: NumNode, table: number[]): Subscript<number>
-export function subscript(index: NumNode, table: string[]): Subscript<string>
-export function subscript(
-  index: NumNode,
+export function subscript<P extends OP>(
+  index: NumNode<P>,
+  table: number[]
+): Subscript<number, P | 'subscript'>
+export function subscript<P extends OP>(
+  index: NumNode<P>,
+  table: string[]
+): Subscript<string, P | 'subscript'>
+export function subscript<P extends OP>(
+  index: NumNode<P>,
   table: number[] | string[]
-): Subscript<number | string> {
+): Subscript<number | string, P | 'subscript'> {
   return { op: 'subscript', ex: table, x: [], br: [toV(index)] }
 }
 
 // Tagging
 
-export function tag(v: Num, tag: Tag): TagOverride<NumNode>
-export function tag(v: Str, tag: Tag): TagOverride<StrNode>
-export function tag(v: Val, tag: Tag): TagOverride<AnyNode>
-export function tag(v: Val, tag: Tag): TagOverride<AnyNode> {
+export function tag<P extends OP = never>(
+  v: Num<P>,
+  tag: Tag
+): TagOverride<NumNode<P>, P | 'tag'>
+export function tag<P extends OP = never>(
+  v: Str<P>,
+  tag: Tag
+): TagOverride<StrNode<P>, P | 'tag'>
+export function tag<P extends OP = never>(
+  v: Val<P>,
+  tag: Tag
+): TagOverride<AnyNode<P>, P | 'tag'>
+export function tag<P extends OP = never>(
+  v: Val<P>,
+  tag: Tag
+): TagOverride<AnyNode<P>, P | 'tag'> {
   return { op: 'tag', x: [toV(v)], br: [], tag }
 }
-export function dynTag(v: Num, tag: Record<string, Str>): DynamicTag<NumNode>
-export function dynTag(v: Str, tag: Record<string, Str>): DynamicTag<StrNode>
-export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode>
-export function dynTag(v: Val, tag: Record<string, Str>): DynamicTag<AnyNode> {
+export function dynTag<P extends OP = never>(
+  v: Num<P>,
+  tag: Record<string, Str<P>>
+): DynamicTag<NumNode<P>, P | 'dtag'>
+export function dynTag<P extends OP = never>(
+  v: Str<P>,
+  tag: Record<string, Str<P>>
+): DynamicTag<StrNode, P | 'dtag'>
+export function dynTag<P extends OP = never>(
+  v: Val<P>,
+  tag: Record<string, Str<P>>
+): DynamicTag<AnyNode, P | 'dtag'>
+export function dynTag<P extends OP = never>(
+  v: Val<P>,
+  tag: Record<string, Str<P>>
+): DynamicTag<AnyNode, P | 'dtag'> {
   return {
     op: 'dtag',
     x: [toV(v)],
@@ -177,24 +309,36 @@ export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }
 }
 
-export function custom(op: string, ...v: Num[]): Custom<NumNode>
-export function custom(op: string, ...v: Str[]): Custom<StrNode>
-export function custom(op: string, ...v: Val[]): Custom<AnyNode>
-export function custom(op: string, ...v: Val[]): Custom<AnyNode> {
+export function custom<P extends OP = never>(
+  op: string,
+  ...v: Num<P>[]
+): Custom<NumNode<P>, P | 'custom'>
+export function custom<P extends OP = never>(
+  op: string,
+  ...v: Str<P>[]
+): Custom<StrNode<P>, P | 'custom'>
+export function custom<P extends OP = never>(
+  op: string,
+  ...v: Val<P>[]
+): Custom<AnyNode<P>, P | 'custom'>
+export function custom<P extends OP = never>(
+  op: string,
+  ...v: Val<P>[]
+): Custom<AnyNode<P>, P | 'custom'> {
   return { op: 'custom', x: toVs(v), br: [], ex: op }
 }
 
-function toV(val: Num): NumNode
-function toV(val: Str): StrNode
-function toV(val: Val): AnyNode
-function toV(val: Val): AnyNode {
+function toVs<P extends OP>(vals: Num<P>[]): NumNode<P>[]
+function toVs<P extends OP>(vals: Str<P>[]): StrNode<P>[]
+function toVs<P extends OP>(vals: Val<P>[]): AnyNode<P>[]
+function toVs<P extends OP>(vals: Val<P>[]): AnyNode<P>[] {
+  return vals.map(toV<P>)
+}
+function toV<P extends OP>(val: Num<P>): NumNode<P>
+function toV<P extends OP>(val: Str<P>): StrNode<P>
+function toV<P extends OP>(val: Val<P>): AnyNode<P>
+function toV<P extends OP>(val: Val<P>): AnyNode<P> {
   if (typeof val === 'number') return constant(val)
   if (typeof val === 'string') return constant(val)
   return val
-}
-function toVs(vals: Num[]): NumNode[]
-function toVs(vals: Str[]): StrNode[]
-function toVs(vals: Val[]): AnyNode[]
-function toVs(vals: Val[]): AnyNode[] {
-  return vals.map(toV)
 }
