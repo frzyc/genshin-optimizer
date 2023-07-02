@@ -12,9 +12,9 @@ export const mapHashData = {
     WeaponKey,
     {
       name: number
-      description: number
+      description: (string | number)[]
       passiveName: number
-      passiveDescription: number[]
+      passiveDescription: [number, string][] | number[]
     }
   >, // will be populated from datamine parsing pipeline
   weaponNames: {} as Record<WeaponKey, number>, // will be populated from datamine parsing pipeline
@@ -27,7 +27,10 @@ export const mapHashData = {
     }
   >, // will be populated from datamine parsing pipeline
   artifactNames: {} as Record<ArtifactSetKey, number>, // will be populated from datamine parsing pipeline
-  material: {} as Record<string, { name: number; description: number }>, // will be populated from datamine parsing pipeline
+  material: {} as Record<
+    string,
+    { name: number; description: [number, string] }
+  >, // will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
     sword: 1338971918,
