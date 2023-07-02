@@ -309,7 +309,7 @@ export default function loadTrans() {
       description: [descTextMapHash, 'paragraph'],
       passiveName: ascData ? ascData[0].nameTextMapHash : 0,
       passiveDescription: ascData
-        ? ascData.map((asc) => [asc.descTextMapHash, 'paragraph'])
+        ? ascData.map((asc) => [asc.descTextMapHash, 'paragraph'] as [number, string])
         : [0, 0, 0, 0, 0],
     }
   })
