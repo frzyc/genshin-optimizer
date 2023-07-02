@@ -4,7 +4,7 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { allRarityKeys } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { filterFunction, sortFunction } from '@genshin-optimizer/util'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'

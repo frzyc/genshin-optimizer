@@ -1,7 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {
   equal,
@@ -314,6 +313,11 @@ const sheet: ICharacterSheet = {
             value: dm.skill.bloodBlossomDuration,
             unit: 's',
           },
+          {
+            text: ct.chg('skill.skillParams.5'),
+            value: dm.skill.cd,
+            unit: 's',
+          },
         ],
       },
       ct.condTem('skill', {
@@ -326,22 +330,21 @@ const sheet: ICharacterSheet = {
               {
                 text: ct.chg('skill.skillParams.0'),
                 value: dm.skill.activationCost * 100, // Convert to percentage
-                unit: '% Current HP',
+                unit: st('percentCurrentHP'),
               },
               {
                 node: atk,
               },
               {
-                text: <ColorText color="pyro">Pyro Infusion</ColorText>,
+                text: st('infusion.pyro'),
+                variant: 'pyro',
+              },
+              {
+                text: st('incInterRes'),
               },
               {
                 text: ct.chg('skill.skillParams.4'),
                 value: dm.skill.duration,
-                unit: 's',
-              },
-              {
-                text: ct.chg('skill.skillParams.5'),
-                value: dm.skill.cd,
                 unit: 's',
               },
             ],
@@ -482,6 +485,9 @@ const sheet: ICharacterSheet = {
               ...allElementWithPhyKeys.map((ele) => ({ node: ele_res_s[ele] })),
               {
                 node: critRate_,
+              },
+              {
+                text: st('incInterRes'),
               },
               {
                 text: stg('duration'),

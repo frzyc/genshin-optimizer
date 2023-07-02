@@ -2,7 +2,7 @@ import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { equal, greaterEq, percent } from '../../../Formula/utils'
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cond, st } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -56,6 +56,11 @@ const sheet: IArtifactSheet = {
                 },
                 {
                   node: set4Shield,
+                },
+                {
+                  text: stg('duration'),
+                  value: 3,
+                  unit: 's',
                 },
               ],
             },

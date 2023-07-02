@@ -311,12 +311,6 @@ const sheet: ICharacterSheet = {
                 node: nodeSkill,
               },
               {
-                node: nodeC2,
-              },
-              {
-                node: nodeC6,
-              },
-              {
                 text: ct.chg('burst.skillParams.2'),
                 value: dm.burst.duration,
                 unit: 's',
@@ -328,6 +322,20 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('constellation2', {
+        fields: [
+          {
+            node: nodeC2,
+          },
+        ],
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: nodeC6,
+          },
+        ],
       }),
       ct.condTem('constellation4', {
         // C4 conditional in teambuff panel if burst is enabled

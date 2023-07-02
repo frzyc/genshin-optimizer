@@ -259,13 +259,17 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.constellation1.aimed, {
-              name: ct.ch('addAimed'),
-            }),
-          },
-          {
             node: infoMut(dmgFormulas.charged.fully, {
               name: ct.chg(`auto.skillParams.7`),
+            }),
+          },
+        ],
+      },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.aimed, {
+              name: ct.ch('addAimed'),
             }),
           },
           {
@@ -274,7 +278,7 @@ const sheet: ICharacterSheet = {
             }),
           },
         ],
-      },
+      }),
       {
         text: ct.chg('auto.fields.plunging'),
       },
@@ -318,7 +322,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.holdCD,
             unit: 's',
           },

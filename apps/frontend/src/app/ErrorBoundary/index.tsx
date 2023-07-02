@@ -114,7 +114,7 @@ class ErrorBoundary extends Component<Props, State> {
                           <Typography>
                             <li>
                               <Trans t={t} i18nKey="report.3">
-                                Click{' '}
+                                Click
                                 <a
                                   href={`${process.env.NX_URL_GITHUB_GO}/issues/new?title=Unexpected%20Crash%Occurred`}
                                   style={{ color: 'white' }}
@@ -122,7 +122,7 @@ class ErrorBoundary extends Component<Props, State> {
                                   rel="noreferrer"
                                 >
                                   here
-                                </a>{' '}
+                                </a>
                                 to report on GitHub. Paste the text in the
                                 description, and include your JSON files (you
                                 might need to rename them to end with '.txt')
@@ -132,7 +132,7 @@ class ErrorBoundary extends Component<Props, State> {
                           <Typography>
                             <li>
                               <Trans t={t} i18nKey="report.4">
-                                Or click{' '}
+                                Or click
                                 <a
                                   href={process.env.NX_URL_DISCORD_GO}
                                   style={{ color: 'white' }}
@@ -140,7 +140,7 @@ class ErrorBoundary extends Component<Props, State> {
                                   rel="noreferrer"
                                 >
                                   here
-                                </a>{' '}
+                                </a>
                                 to report on Discord. Open the #🐛bug-reports
                                 channel, create a new thread and paste the text
                                 in the message box. Also upload your JSON files.

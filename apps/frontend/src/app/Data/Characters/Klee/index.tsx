@@ -249,6 +249,10 @@ const sheet: ICharacterSheet = {
             value: `${dm.skill.cd}`,
             unit: 's',
           },
+          {
+            text: st('charges'),
+            value: 2,
+          },
         ],
       },
     ]),

@@ -1,10 +1,11 @@
-export function crawlObject(
-  obj: any,
+// crawl an object, calling a callback on every object that passes a validation function
+export function crawlObject<T, O>(
+  obj: Record<string, T> | T,
   keys: string[] = [],
-  validate: (o: any, keys: string[]) => boolean,
-  cb: (o: any, keys: string[]) => void
+  validate: (o: unknown, keys: string[]) => boolean,
+  cb: (o: O, keys: string[]) => void
 ) {
-  if (validate(obj, keys)) cb(obj, keys)
+  if (validate(obj as T, keys)) cb(obj as O, keys)
   else
     obj &&
       typeof obj === 'object' &&
@@ -13,17 +14,20 @@ export function crawlObject(
       )
 }
 
-//assign obj.[keys...] = value
-export function layeredAssignment<T>(
-  obj: any,
+// assign a value to a nested object, creating the path if it doesn't exist yet. obj.[keys...] = value
+export function layeredAssignment<T, Obj>(
+  obj: Obj,
   keys: readonly (number | string)[],
   value: T
-) {
+): Obj {
   keys.reduce((accu, key, i, arr) => {
-    if (i === arr.length - 1) return (accu[key] = value)
+    if (i === arr.length - 1) {
+      accu[key] = value
+      return accu
+    }
     if (!accu[key]) accu[key] = {}
-    return accu[key]
-  }, obj)
+    return accu[key] as Record<number | string, unknown>
+  }, obj as Record<number | string, unknown>)
   return obj
 }
 
@@ -101,14 +105,11 @@ export function deletePropPath(
 
 //get the value in a nested object, giving array of path
 export function objPathValue(
-  obj: Record<string, unknown> | undefined,
+  obj: object | undefined,
   keys: readonly string[]
 ): any {
   if (!obj || !keys) return undefined
-  return keys.reduce(
-    (a, k) => (a as Record<string, Record<string, unknown>>)?.[k],
-    obj
-  )
+  return keys.reduce((a, k) => (a as any)?.[k], obj)
 }
 
 export function objClearEmpties(o: Record<string, unknown>) {

@@ -84,7 +84,6 @@ const dm = {
   },
 } as const
 
-const [condBurstBlossomPath, condBurstBlossom] = cond(key, 'burstBlossom')
 const [condBurstUsedPath, condBurstUsed] = cond(key, 'burstUsed')
 const p2Burst_eleMas = equal(
   condBurstUsed,
@@ -170,11 +169,7 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.burstDmg, 'burst'),
-    blossom: equal(
-      'isoOnField',
-      condBurstBlossom,
-      dmgNode('atk', dm.burst.blossomDmg, 'burst')
-    ),
+    blossom: dmgNode('atk', dm.burst.blossomDmg, 'burst'),
   },
 }
 
@@ -372,6 +367,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.blossom, {
+              name: ct.chg(`burst.skillParams.1`),
+              multi: dm.burst.blossomAmt,
+            }),
+          },
+          {
             text: stg('cd'),
             value: dm.burst.cd,
             unit: 's',
@@ -382,23 +383,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('burst', {
-        value: condBurstBlossom,
-        path: condBurstBlossomPath,
-        name: ct.ch('isotomaOnField'),
-        states: {
-          isoOnField: {
-            fields: [
-              {
-                node: infoMut(dmgFormulas.burst.blossom, {
-                  name: ct.chg(`burst.skillParams.1`),
-                  multi: dm.burst.blossomAmt,
-                }),
-              },
-            ],
-          },
-        },
-      }),
       ct.condTem('passive2', {
         value: condBurstUsed,
         path: condBurstUsedPath,

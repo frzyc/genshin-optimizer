@@ -8,11 +8,11 @@ import {
   allArtifactSlotKeys,
   allSubstatKeys,
   allWeaponKeys,
+  substatTypeKeys,
 } from '@genshin-optimizer/consts'
 import { validateLevelAsc } from '@genshin-optimizer/gi-util'
 import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
-import { substatType } from '../../Types/consts'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -20,7 +20,8 @@ export class CharacterTCDataManager extends DataManager<
   CharacterKey,
   'charTCs',
   ICharTC,
-  ICharTC
+  ICharTC,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'charTCs')
@@ -105,7 +106,7 @@ function validateCharTCArtifact(
   const { sets } = artifact
   slots = validateCharTCArtifactSlots(slots)
   if (!slots) return
-  if (!substatType.includes(type)) type = 'max'
+  if (!substatTypeKeys.includes(type)) type = 'max'
   if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
   stats = objKeyMap(allSubstatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0

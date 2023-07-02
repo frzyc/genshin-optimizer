@@ -10,18 +10,18 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'TwinNephrite'
 const data_gen = allStats.weapon.data[key]
 
-const refineInc = [0.12, 0.14, 0.16, 0.18, 0.2]
+const refineInc = [-1, 0.12, 0.14, 0.16, 0.18, 0.2]
 
 const [condPassivePath, condPassive] = cond(key, 'GuerillaTactics')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, refineInc)
+  subscript(input.weapon.refinement, refineInc)
 )
 const moveSPD_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, refineInc)
+  subscript(input.weapon.refinement, refineInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

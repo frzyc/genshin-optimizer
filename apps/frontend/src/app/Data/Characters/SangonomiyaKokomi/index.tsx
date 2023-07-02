@@ -314,6 +314,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.heal, {
+              name: ct.chg(`burst.skillParams.4`),
+              variant: 'heal',
+            }),
+          },
+          {
             text: ct.chg('burst.skillParams.6'),
             value: dm.burst.cd,
             unit: 's',
@@ -341,18 +347,34 @@ const sheet: ICharacterSheet = {
                 node: burstSkillDmgInc,
               },
               {
-                node: infoMut(dmgFormulas.burst.heal, {
-                  name: ct.chg(`burst.skillParams.4`),
-                  variant: 'heal',
-                }),
-              },
-              {
                 text: ct.chg('burst.skillParams.5'),
                 value: dm.burst.duration,
                 unit: 's',
               },
             ],
           },
+        },
+      }),
+      ct.headerTem('constellation4', {
+        canShow: equal(condBurst, 'on', 1),
+        fields: [
+          {
+            node: c4AtkSpd_,
+          },
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.c4.energy,
+            fixed: 1,
+          },
+        ],
+      }),
+      ct.condTem('constellation6', {
+        canShow: equal(condBurst, 'on', 1),
+        path: condC6Path,
+        value: condC6,
+        name: ct.ch('c6'),
+        states: {
+          on: { fields: [{ node: c6Hydro_ }] },
         },
       }),
     ]),
@@ -403,22 +425,11 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      { fields: [{ node: c4AtkSpd_ }] },
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.condTem('constellation6', {
-        path: condC6Path,
-        value: condC6,
-        name: ct.ch('c6'),
-        states: {
-          on: { fields: [{ node: c6Hydro_ }] },
-        },
-      }),
-    ]),
+    constellation6: ct.talentTem('constellation6'),
   },
 }
 export default new CharacterSheet(sheet, data)

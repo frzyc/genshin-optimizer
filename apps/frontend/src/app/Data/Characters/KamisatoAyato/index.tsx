@@ -96,28 +96,22 @@ const dm = {
   },
 } as const
 
-const [condInSkillPath, condInSkill] = cond(key, 'inSkill')
-
 const [condSkillStacksPath, condSkillStacks] = cond(key, 'skillStacks')
-const skillStacks_dmgInc = equal(
-  condInSkill,
-  'on',
-  lookup(
-    condSkillStacks,
-    Object.fromEntries(
-      range(1, 5).map((stacks) => [
+const skillStacks_dmgInc = lookup(
+  condSkillStacks,
+  Object.fromEntries(
+    range(1, 5).map((stacks) => [
+      stacks,
+      prod(
         stacks,
-        prod(
-          stacks,
-          subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
-            unit: '%',
-          }),
-          input.total.hp
-        ),
-      ])
-    ),
-    naught
-  )
+        subscript(input.total.skillIndex, dm.skill.stackHpDmgInc, {
+          unit: '%',
+        }),
+        input.total.hp
+      ),
+    ])
+  ),
+  naught
 )
 
 const [condBurstInAreaPath, condBurstInArea] = cond(key, 'burstInArea')
@@ -143,19 +137,15 @@ const c1Shun_dmg_ = greaterEq(
 const c2_hp_ = greaterEq(
   input.constellation,
   2,
-  equal(
-    condInSkill,
-    'on',
-    lookup(
-      condSkillStacks,
-      Object.fromEntries(
-        range(dm.constellation2.stackThresh, 5).map((stacks) => [
-          stacks,
-          percent(dm.constellation2.hp_),
-        ])
-      ),
-      naught
-    )
+  lookup(
+    condSkillStacks,
+    Object.fromEntries(
+      range(dm.constellation2.stackThresh, 5).map((stacks) => [
+        stacks,
+        percent(dm.constellation2.hp_),
+      ])
+    ),
+    naught
   )
 )
 
@@ -193,17 +183,13 @@ const dmgFormulas = {
     ...Object.fromEntries(
       dm.skill.dmgArr.map((arr, i) => [
         `dmg${i}`,
-        equal(
-          condInSkill,
-          'on',
-          customDmgNode(
-            prod(
-              subscript(input.total.skillIndex, arr, { unit: '%' }),
-              input.total.atk
-            ),
-            'normal',
-            shunAddl
-          )
+        customDmgNode(
+          prod(
+            subscript(input.total.skillIndex, arr, { unit: '%' }),
+            input.total.atk
+          ),
+          'normal',
+          shunAddl
         ),
       ])
     ),
@@ -316,6 +302,11 @@ const sheet: ICharacterSheet = {
     skill: ct.talentTem('skill', [
       {
         fields: [
+          ...dm.skill.dmgArr.map((_, i) => ({
+            node: infoMut(dmgFormulas.skill[`dmg${i}`], {
+              name: ct.chg(`skill.skillParams.${i}`),
+            }),
+          })),
           {
             node: infoMut(dmgFormulas.skill.illusionDmg, {
               name: ct.chg(`skill.skillParams.5`),
@@ -333,38 +324,20 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('skill', {
-        value: condInSkill,
-        path: condInSkillPath,
-        name: st('afterUse.skill'),
-        states: {
-          on: {
-            fields: [
-              ...dm.skill.dmgArr.map((_, i) => ({
-                node: infoMut(dmgFormulas.skill[`dmg${i}`], {
-                  name: ct.chg(`skill.skillParams.${i}`),
-                }),
-              })),
-              {
-                text: st('incInterRes'),
-              },
-              {
-                text: ct.ch('skill.unableToAuto'),
-              },
-              {
-                text: stg('duration'),
-                value: dm.skill.stateDuration,
-                unit: 's',
-              },
-            ],
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation6.dmg, {
+              name: ct.ch('c6.dmg'),
+              multi: dm.constellation6.extraStrikes,
+            }),
           },
-        },
+        ],
       }),
       ct.condTem('skill', {
         value: condSkillStacks,
         path: condSkillStacksPath,
         name: ct.ch('skill.namisenStacks'),
-        canShow: equal(condInSkill, 'on', 1),
         states: Object.fromEntries(
           range(1, 5).map((stacks) => [
             stacks,
@@ -388,8 +361,26 @@ const sheet: ICharacterSheet = {
           ])
         ),
       }),
+      ct.condTem('constellation1', {
+        value: condC1OppHp,
+        path: condC1OppHpPath,
+        name: st('enemyLessEqPercentHP', {
+          percent: dm.constellation1.oppHpThres_ * 100,
+        }),
+        states: {
+          on: {
+            fields: [
+              {
+                node: infoMut(c1Shun_dmg_, {
+                  name: ct.ch('c1.shun_dmg_'),
+                  unit: '%',
+                }),
+              },
+            ],
+          },
+        },
+      }),
       ct.headerTem('passive1', {
-        canShow: equal(condInSkill, 'on', 1),
         fields: [
           {
             text: ct.ch('passive1.afterUse'),
@@ -404,26 +395,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.condTem('constellation1', {
-        value: condC1OppHp,
-        path: condC1OppHpPath,
-        name: st('enemyLessEqPercentHP', {
-          percent: dm.constellation1.oppHpThres_ * 100,
-        }),
-        canShow: equal(condInSkill, 'on', 1),
-        states: {
-          on: {
-            fields: [
-              {
-                node: infoMut(c1Shun_dmg_, {
-                  name: ct.ch('c1.shun_dmg_'),
-                  unit: '%',
-                }),
-              },
-            ],
-          },
-        },
-      }),
       ct.headerTem('constellation2', {
         fields: [
           {
@@ -433,17 +404,6 @@ const sheet: ICharacterSheet = {
           {
             canShow: (data) => data.get(c2_hp_).value !== 0,
             node: c2_hp_,
-          },
-        ],
-      }),
-      ct.headerTem('constellation6', {
-        canShow: equal(condInSkill, 'on', 1),
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation6.dmg, {
-              name: ct.ch('c6.dmg'),
-              multi: dm.constellation6.extraStrikes,
-            }),
           },
         ],
       }),

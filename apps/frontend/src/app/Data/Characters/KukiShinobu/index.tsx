@@ -273,7 +273,7 @@ const sheet: ICharacterSheet = {
           {
             text: ct.chg('skill.skillParams.3'),
             value: dm.skill.cost * 100,
-            unit: ct.ch('skill.cost'),
+            unit: st('percentCurrentHP'),
           },
           {
             text: stg('duration'),

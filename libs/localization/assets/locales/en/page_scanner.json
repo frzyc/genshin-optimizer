@@ -1,5 +1,5 @@
 {
-  "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to <1>Settings</1> page and upload your file in the <strong>Database Upload</strong> section.</3>",
+  "intro": "<0>Scanners</0><1>Scanners are Genshin tools that can automatically scan game data from screenshots or directly from the game.</1><2>Below are several scanners that have been tested with GO.</2><3>To upload the exported file, go to the <1>Settings</1> page and upload your file in the <strong>Database Upload</strong> section.</3>",
   "tosWarn": "As any tools that indirectly interact with the game, although their usage is virtually undetectable, <1>there could still be risk with using them.</1> User discretion is advised.",
   "tags": {
     "pc": "PC",

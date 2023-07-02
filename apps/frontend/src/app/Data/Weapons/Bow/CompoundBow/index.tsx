@@ -11,14 +11,14 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'CompoundBow'
 const data_gen = allStats.weapon.data[key]
 
-const atk_s = [0.04, 0.05, 0.06, 0.07, 0.08]
-const atkSPD_s = [0.012, 0.015, 0.018, 0.021, 0.024]
+const atk_s = [-1, 0.04, 0.05, 0.06, 0.07, 0.08]
+const atkSPD_s = [-1, 0.012, 0.015, 0.018, 0.021, 0.024]
 const [condPassivePath, condPassive] = cond(key, 'InfusionArrow')
 const atk_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 4), (i) =>
-      prod(subscript(input.weapon.refineIndex, atk_s), i)
+      prod(subscript(input.weapon.refinement, atk_s), i)
     ),
   },
   naught
@@ -27,7 +27,7 @@ const atkSPD_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 4), (i) =>
-      prod(subscript(input.weapon.refineIndex, atkSPD_s), i)
+      prod(subscript(input.weapon.refinement, atkSPD_s), i)
     ),
   },
   naught

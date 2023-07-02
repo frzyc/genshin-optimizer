@@ -98,10 +98,15 @@ const burstHit_anemo_enemyRes_ = equal(
 
 const [condA4ActivePath, condA4Active] = cond(key, 'a4Active')
 
+const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6Benefit_anemo_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condBurstBenefit, 'on', datamine.constellation6.anemo_critDMG_)
+  equal(
+    condBurstBenefit,
+    'on',
+    equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_)
+  )
 )
 
 const dmgFormulas = {
@@ -359,20 +364,26 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.headerTem('constellation6', {
-        canShow: equal(condBurstBenefit, 'on', 1),
+      ct.condTem('constellation6', {
         teamBuff: true,
-        fields: [
-          {
-            node: c6Benefit_anemo_critDMG_,
+        canShow: equal(condBurstBenefit, 'on', 1),
+        path: condC6CritPath,
+        value: condC6Crit,
+        name: ct.ch('giftCondName'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c6Benefit_anemo_critDMG_,
+              },
+              {
+                // Only show on Faruzan's page
+                canShow: (data) => data.get(input.activeCharKey).value === key,
+                text: ct.ch('c6Arrow'),
+              },
+            ],
           },
-          {
-            // Only show on Faruzan's page
-            canShow: (data) =>
-              data.get(input.activeCharKey).value.toString() === key,
-            text: ct.ch('c6Arrow'),
-          },
-        ],
+        },
       }),
     ]),
 

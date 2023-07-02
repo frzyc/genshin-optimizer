@@ -278,6 +278,11 @@ const sheet: ICharacterSheet = {
               {
                 node: a1AfterWreath_eleMas,
               },
+              {
+                text: stg('duration'),
+                value: dm.passive1.duration,
+                unit: 's',
+              },
             ],
           },
         },

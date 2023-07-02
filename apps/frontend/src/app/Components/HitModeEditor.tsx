@@ -1,4 +1,9 @@
-import type { ElementKey } from '@genshin-optimizer/consts'
+import type {
+  AdditiveReactionKey,
+  AmpReactionKey,
+  ElementKey,
+} from '@genshin-optimizer/consts'
+import { allAmpReactionKeys, allHitModeKeys } from '@genshin-optimizer/consts'
 import {
   CryoIcon,
   ElectroIcon,
@@ -13,13 +18,7 @@ import { useTranslation } from 'react-i18next'
 import { CharacterContext } from '../Context/CharacterContext'
 import { DataContext } from '../Context/DataContext'
 import { infusionNode, uiInput as input } from '../Formula'
-import type { AdditiveReactionKey, AmpReactionKey } from '../Types/consts'
-import {
-  allAmpReactions,
-  allHitModes,
-  allowedAdditiveReactions,
-  allowedAmpReactions,
-} from '../Types/consts'
+import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import AdditiveReactionModeText from './AdditiveReactionModeText'
 import AmpReactionModeText from './AmpReactionModeText'
 import type { DropdownButtonProps } from './DropdownMenu/DropdownButton'
@@ -95,7 +94,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
     characterDispatch,
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
-  const charEleKey = data.get(input.charEle).value.toString() as ElementKey
+  const charEleKey = data.get(input.charEle).value as ElementKey
   const infusion = data.get(infusionNode).value as ElementKey
   const reactions = [
     ...new Set([
@@ -116,7 +115,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
       <ToggleButton value="" disabled={!reaction}>{t`noReaction`}</ToggleButton>
       {reactions.map((rm) => (
         <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
-          {([...allAmpReactions] as string[]).includes(rm) ? (
+          {([...allAmpReactionKeys] as string[]).includes(rm) ? (
             <AmpReactionModeText reaction={rm as AmpReactionKey} />
           ) : (
             <AdditiveReactionModeText reaction={rm as AdditiveReactionKey} />
@@ -141,7 +140,7 @@ export function HitModeToggle(props: HitModeToggleProps) {
       onChange={(_, hitMode) => characterDispatch({ hitMode })}
       {...props}
     >
-      {allHitModes.map((hm) => (
+      {allHitModeKeys.map((hm) => (
         <ToggleButton key={hm} value={hm} disabled={hitMode === hm}>
           {t(`hitmode.${hm}`)}
         </ToggleButton>

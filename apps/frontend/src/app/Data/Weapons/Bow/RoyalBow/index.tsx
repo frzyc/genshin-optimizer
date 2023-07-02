@@ -11,13 +11,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'RoyalBow'
 const data_gen = allStats.weapon.data[key]
 
-const critRate_s = [0.08, 0.1, 0.12, 0.14, 0.16]
+const critRate_s = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const [condPassivePath, condPassive] = cond(key, 'Focus')
 const critRate_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 5), (i) =>
-      prod(subscript(input.weapon.refineIndex, critRate_s), i)
+      prod(subscript(input.weapon.refinement, critRate_s), i)
     ),
   },
   naught
@@ -35,7 +35,7 @@ const sheet: IWeaponSheet = {
       value: condPassive,
       path: condPassivePath,
       header: headerTemplate(key, st('stacks')),
-      name: st('opponentsDamaged'),
+      name: st('stacks'),
       states: Object.fromEntries(
         range(1, 5).map((i) => [
           i,

@@ -18,16 +18,16 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'SkywardSpine'
 const data_gen = allStats.weapon.data[key]
 
-const critRateInc = [0.08, 0.1, 0.12, 0.14, 0.16]
-const dmgPerc = [0.4, 0.55, 0.7, 0.85, 1]
+const critRateInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
+const dmgPerc = [-1, 0.4, 0.55, 0.7, 0.85, 1]
 const atkSPD_ = percent(0.12)
-const critRate_ = subscript(input.weapon.refineIndex, critRateInc)
+const critRate_ = subscript(input.weapon.refinement, critRateInc)
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgPerc, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

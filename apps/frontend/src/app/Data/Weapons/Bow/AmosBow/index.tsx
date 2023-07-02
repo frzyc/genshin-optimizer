@@ -12,22 +12,22 @@ import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = 'AmosBow'
 const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
-const autoDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
-const arrowDmgInc = [0.08, 0.1, 0.12, 0.14, 0.16]
+const autoDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const arrowDmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, 'StrongWilled')
 const normal_dmg_ = subscript(
-  input.weapon.refineIndex,
+  input.weapon.refinement,
   autoDmgInc,
   KeyMap.info('normal_dmg_')
 )
 const charged_dmg_ = subscript(
-  input.weapon.refineIndex,
+  input.weapon.refinement,
   autoDmgInc,
   KeyMap.info('charged_dmg_')
 )
 
-const dmgInc = subscript(input.weapon.refineIndex, arrowDmgInc)
+const dmgInc = subscript(input.weapon.refinement, arrowDmgInc)
 const normal_dmg_arrow_ = lookup(
   condPassive,
   {

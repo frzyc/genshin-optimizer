@@ -1,0 +1,42 @@
+{
+  "name": "sr-pipeline",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-pipeline/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sr-pipeline",
+        "outputFileName": "src/index.js",
+        "main": "libs/sr-pipeline/src/index.ts",
+        "tsConfig": "libs/sr-pipeline/tsconfig.lib.json",
+        "assets": ["libs/sr-pipeline/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "sr-pipeline:build",
+        "watch": false,
+        "inspect": false
+      },
+      "inputs": ["default", "^production", "sr-stats"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr-pipeline/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "namedInputs": {
+    "sr-stats": [
+      "{workspaceRoot}/lib/sr-stats/Data/**/*.json",
+      "{workspaceRoot}/lib/sr-stats/src/allStat_gen.json"
+    ]
+  }
+}

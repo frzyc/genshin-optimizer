@@ -7,6 +7,7 @@ import {
   equalStr,
   greaterEq,
   infoMut,
+  percent,
   lookup,
   prod,
   subscript,
@@ -90,33 +91,25 @@ const dm = {
   },
 } as const
 
-const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
-
 const burstAtkRatio = subscript(input.total.burstIndex, dm.burst.atkBonus, {
   unit: '%',
 })
-const burstAddlAtk = prod(burstAtkRatio, input.base.atk)
 const c1AtkRatio = greaterEq(
   input.constellation,
   1,
-  dm.constellation1.atk_inc,
-  { name: ct.ch('additionalATKRatio_'), unit: '%' }
+  percent(dm.constellation1.atk_inc)
 )
-const c1AddlAtk = greaterEq(
-  input.constellation,
-  1,
-  prod(c1AtkRatio, input.base.atk)
-)
-const atkIncRatio = sum(burstAtkRatio, c1AtkRatio)
-const activeInAreaAtkDisp = prod(atkIncRatio, input.base.atk)
-
+const burstAddlAtk = prod(sum(burstAtkRatio, c1AtkRatio), input.base.atk)
 const [condInAreaPath, condInArea] = cond(key, 'activeInArea')
 const activeInArea = equal(
   'activeInArea',
   condInArea,
   equal(input.activeCharKey, target.charKey, 1)
 )
+const activeInAreaAtkDisp = infoMut(burstAddlAtk, { ...KeyMap.info('atk') })
 const activeInAreaAtk = equal(activeInArea, 1, activeInAreaAtkDisp)
+
+const a1SkillCd = greaterEq(input.asc, 1, dm.passive1.cd_red)
 
 const activeInAreaA4 = greaterEq(
   input.asc,
@@ -290,7 +283,7 @@ const sheet: ICharacterSheet = {
           {
             // Press
             node: infoMut(dmgFormulas.skill.press, {
-              name: ct.ch('skill.pressDMG'),
+              name: ct.chg(`skill.skillParams.0`),
             }),
           },
           {
@@ -301,12 +294,14 @@ const sheet: ICharacterSheet = {
           {
             // Lvl 1
             node: infoMut(dmgFormulas.skill.hold1_1, {
-              name: ct.ch('skill.lvl1_1DMG'),
+              name: ct.chg(`skill.skillParams.1`),
+              textSuffix: '(1)',
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold1_2, {
-              name: ct.ch('skill.lvl1_2DMG'),
+              name: ct.chg(`skill.skillParams.1`),
+              textSuffix: '(2)',
             }),
           },
           {
@@ -317,17 +312,19 @@ const sheet: ICharacterSheet = {
           {
             // Lvl 2
             node: infoMut(dmgFormulas.skill.hold2_1, {
-              name: ct.ch('skill.lvl2_1DMG'),
+              name: ct.chg(`skill.skillParams.2`),
+              textSuffix: '(1)',
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.hold2_2, {
-              name: ct.ch('skill.lvl2_2DMG'),
+              name: ct.chg(`skill.skillParams.2`),
+              textSuffix: '(2)',
             }),
           },
           {
             node: infoMut(dmgFormulas.skill.explosion, {
-              name: ct.ch('skill.explDMG'),
+              name: ct.chg(`skill.skillParams.3`),
             }),
           },
           {
@@ -384,13 +381,7 @@ const sheet: ICharacterSheet = {
           activeInArea: {
             fields: [
               {
-                text: ct.chg('burst.skillParams.2'),
-                value: (data) => data.get(burstAtkRatio).value * 100,
-                unit: '%',
-                fixed: 1,
-              },
-              {
-                node: infoMut(burstAddlAtk, { name: st(`increase.atk`) }),
+                node: activeInAreaAtkDisp,
               },
             ],
           },
@@ -407,15 +398,14 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation1', {
         fields: [
           {
-            text: ct.ch('additionalATKRatio'),
-            node: c1AtkRatio,
-          },
-          {
-            node: infoMut(c1AddlAtk, { name: ct.ch('additionalATK') }),
+            text: st('bonusScaling.atkInc'),
+            value: st('bonusScaling.value', {
+              value: dm.constellation1.atk_inc * 100,
+            }),
+            unit: stg('stat.base.atk'),
           },
         ],
         canShow: equal(condInArea, 'activeInArea', 1),
-        teamBuff: true,
       }),
       ct.headerTem('constellation6', {
         fields: [

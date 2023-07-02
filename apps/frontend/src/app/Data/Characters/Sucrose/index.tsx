@@ -343,7 +343,7 @@ const sheet: ICharacterSheet = {
               node: infoMut(asc1Disp, KeyMap.info('eleMas')),
             },
             {
-              text: stg('duration'),
+              text: st(`effectDuration.${ele}`),
               value: dm.passive1.duration,
               unit: 's',
             },
@@ -380,7 +380,16 @@ const sheet: ICharacterSheet = {
       }),
     ]),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.fieldsTem('constellation1', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

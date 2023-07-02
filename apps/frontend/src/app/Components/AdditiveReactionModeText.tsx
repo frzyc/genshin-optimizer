@@ -1,9 +1,9 @@
+import type { AdditiveReactionKey } from '@genshin-optimizer/consts'
 import { DendroIcon, ElectroIcon } from '@genshin-optimizer/gi-svgicons'
 import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { ElementIcon } from '../KeyMap/StatIcon'
-import type { AdditiveReactionKey } from '../Types/consts'
 import ColorText from './ColoredText'
 import SqBadge from './SqBadge'
 

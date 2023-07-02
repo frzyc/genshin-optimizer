@@ -9,7 +9,7 @@ import {
   allSubstatKeys,
   artSlotsData,
 } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/g-assets'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
 import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
 import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
@@ -643,7 +643,7 @@ export default function ArtifactEditor({
                               <Grid item flexGrow={1}>
                                 <Typography>
                                   <span>
-                                    Screenshots in file-queue:{' '}
+                                    Screenshots in file-queue:
                                     <b>{remaining}</b>
                                     {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                                   </span>

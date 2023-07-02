@@ -397,8 +397,12 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.heal, {
-              name: stg('healing'),
+              name: stg('hpRegenPerHit'),
             }),
+          },
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.c4.energyRestore,
           },
           {
             text: stg('cd'),

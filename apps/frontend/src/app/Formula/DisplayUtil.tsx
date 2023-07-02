@@ -3,7 +3,7 @@ import type {
   CharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
 import { input } from '.'
 import ColorText from '../Components/ColoredText'
 import { getArtSheet } from '../Data/Artifacts'
@@ -67,7 +67,7 @@ export function getDisplayHeader(
       }
     }
   } else {
-    const cKey = data.get(input.charKey).value.toString()
+    const cKey = data.get(input.charKey).value
     if (!cKey) return errHeader
     const sheet = getCharSheet(cKey as CharacterKey, database.gender)
     const talentKey = ['normal', 'charged', 'plunging'].includes(sectionKey)

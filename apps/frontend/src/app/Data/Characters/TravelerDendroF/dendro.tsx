@@ -200,7 +200,7 @@ export default function dendro(
             }),
           },
           {
-            text: stg('duration'),
+            text: ct.chg('burst.skillParams.2'),
             value: (data) =>
               data.get(input.constellation).value >= 2
                 ? `${dm.burst.lampDuration}s + ${

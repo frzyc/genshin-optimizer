@@ -275,6 +275,15 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.dmg, {
+              name: ct.ch('c1DMG'),
+            }),
+          },
+        ],
+      }),
       ct.condTem('passive1', {
         value: condAfterRecast,
         path: condAfterRecastPath,
@@ -354,17 +363,7 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1', [
-      ct.fieldsTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation1.dmg, {
-              name: ct.ch('c1DMG'),
-            }),
-          },
-        ],
-      }),
-    ]),
+    constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
@@ -392,7 +391,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation6', {
         value: condC6Stack,
         path: condC6StackPath,
-        name: ct.ch('effectTriggers'),
+        name: st('hitOp.normalChargedSkillBurst'),
         states: objKeyMap(range(1, 4), (i) => ({
           name: st('stack', { count: i }),
           fields: [

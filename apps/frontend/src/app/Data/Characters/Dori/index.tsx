@@ -318,7 +318,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.energyRegen, {
-              name: st('energyRegen'),
+              name: stg('energyRegen'),
             }),
           },
         ],
@@ -344,7 +344,7 @@ const sheet: ICharacterSheet = {
               },
               {
                 node: infoMut(dmgFormulas.constellation6.heal, {
-                  name: ct.ch('c6Heal'),
+                  name: stg('hpRegenPerHit'),
                   variant: 'heal',
                 }),
               },
@@ -375,7 +375,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: (data) =>
               data.get(subscript(input.total.burstIndex, dm.burst.energyRegen))
                 .value,

@@ -1,3 +1,5 @@
+import type { AmpReactionKey } from '@genshin-optimizer/consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/consts'
 import { ExpandMore } from '@mui/icons-material'
 import {
   Accordion,
@@ -36,8 +38,6 @@ import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil'
 import type { DisplaySub } from '../../Formula/type'
 import type { NodeDisplay } from '../../Formula/uiData'
 import { nodeVStr } from '../../Formula/uiData'
-import type { AmpReactionKey } from '../../Types/consts'
-import { allAmpReactions } from '../../Types/consts'
 
 export default function FormulaModal() {
   const { modalOpen } = useContext(FormulaDataContext)
@@ -141,7 +141,9 @@ function FormulaAccordian({ node }: { node: NodeDisplay }) {
           <ColorText color={node.info.variant}>{node.info.name}</ColorText>{' '}
           <strong>{nodeVStr(node)}</strong>
         </Typography>
-        {allAmpReactions.includes(node.info.variant as 'vaporize' | 'melt') && (
+        {allAmpReactionKeys.includes(
+          node.info.variant as 'vaporize' | 'melt'
+        ) && (
           <Box sx={{ display: 'inline-block', ml: 'auto', mr: 2 }}>
             <AmpReactionModeText
               reaction={node.info.variant as AmpReactionKey}

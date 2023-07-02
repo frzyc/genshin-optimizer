@@ -1,4 +1,4 @@
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
 import { milestoneLevelsLow } from '@genshin-optimizer/gi-util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import {
@@ -206,7 +206,7 @@ export default function WeaponEditor({
                 <Typography gutterBottom>
                   {weaponSheet.passiveName &&
                     weaponSheet.passiveDescription(
-                      weaponUIData.get(input.weapon.refineIndex).value
+                      weaponUIData.get(input.weapon.refinement).value - 1
                     )}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>

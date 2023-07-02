@@ -83,7 +83,7 @@ const dm = {
     duration: skillParam_gen.constellation1[5],
   },
   constellation4: {
-    critRateIncNeg: Math.abs(skillParam_gen.constellation4[0]), // why do they even keep this as a negative??
+    critRateInc: Math.abs(skillParam_gen.constellation4[0]), // why do they even keep this as a negative??
   },
   constellation6: {
     unknown: skillParam_gen.constellation6[0], // what is this?
@@ -117,11 +117,10 @@ const vaporize_dmg_ = greaterEq(
   equal('on', condPoS, percent(dm.constellation1.vaporizeDmgInc))
 )
 
-const [condPoOPath, condPoO] = cond(key, 'ProphecyOfOblivion')
 const critRate_ = greaterEq(
   input.constellation,
   4,
-  equal('on', condPoO, percent(dm.constellation4.critRateIncNeg))
+  percent(dm.constellation4.critRateInc)
 )
 
 const [condRoCPath, condRoC] = cond(key, 'RhetoricsOfCalamitas')
@@ -288,7 +287,7 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
-            text: ct.ch('bubbleDuration'),
+            text: ct.chg('burst.skillParams.0'),
             value: dm.burst.bubbleDuration,
             unit: 's',
           },
@@ -328,6 +327,15 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('constellation4', {
+        canShow: equal(condOmen, 'on', 1),
+        teamBuff: true,
+        fields: [
+          {
+            node: critRate_,
+          },
+        ],
       }),
     ]),
 
@@ -396,6 +404,11 @@ const sheet: ICharacterSheet = {
                 value: dm.constellation1.frozenExtension * 100, // Convert to percentage
                 unit: '%',
               },
+              {
+                text: stg('duration'),
+                value: dm.constellation1.duration,
+                unit: 's',
+              },
             ],
           },
         },
@@ -405,23 +418,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.condTem('constellation4', {
-        value: condPoO,
-        path: condPoOPath,
-        teamBuff: true,
-        name: ct.ch('hitOp.affectedByOmen'),
-        states: {
-          on: {
-            fields: [
-              {
-                node: critRate_,
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),
@@ -434,7 +431,7 @@ const sheet: ICharacterSheet = {
           range(1, 3).map((i) => [
             i,
             {
-              name: st('stack', { count: i }),
+              name: st('seconds', { count: i }),
               fields: [
                 { node: charged_dmg_ },
                 {

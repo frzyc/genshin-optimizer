@@ -443,12 +443,12 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.pressCd,
             unit: 's',
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.holdCd,
             unit: 's',
           },
@@ -535,6 +535,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.condTem('constellation4', {
+        teamBuff: true,
         path: condC4CountPath,
         value: condC4Count,
         name: ct.ch('c4CondName'),
