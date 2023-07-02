@@ -400,7 +400,11 @@ export class UpOptCalculator {
   }
 
   calcSlow(ix: number, calc4th = true) {
-    if (this.artifacts[ix].result?.evalMode === ResultType.Slow) return
+    if (
+      this.artifacts[ix].result?.evalMode === ResultType.Slow ||
+      this.artifacts[ix].result?.evalMode === ResultType.Exact
+    )
+      return
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcSlow4th(ix)
     else this._calcSlow(ix)
@@ -496,6 +500,13 @@ export class UpOptCalculator {
     }
   }
 
+  calcExact(ix: number, calc4th = true) {
+    if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return
+    if (this.artifacts[ix].subs.length === 4) calc4th = false
+    if (calc4th) this._calcExact4th(ix)
+    else this._calcExact(ix)
+  }
+
   _calcExact(ix: number) {
     const { subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
@@ -526,6 +537,51 @@ export class UpOptCalculator {
         distrs.push({
           prob: prob * p_upVals,
           val: this.eval(stats, slotKey).map((n) => n.v),
+        })
+      })
+    })
+
+    this.artifacts[ix].result = this.toResult3(distrs)
+  }
+
+  _calcExact4th(ix: number) {
+    const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
+    const N = rollsLeft - 1 // only for 5*
+
+    const subsToConsider = allSubstatKeys.filter(
+      (s) => !subs.includes(s) && s !== mainStat
+    )
+    const Z = subsToConsider.reduce((tot, sub) => tot + fWeight[sub], 0)
+    const distrs: { prob: number; val: number[] }[] = []
+    subsToConsider.forEach((subKey4) => {
+      const prob_sub = fWeight[subKey4] / Z
+      crawlUpgrades(N, (ns, prob) => {
+        const base = { ...this.artifacts[ix].values }
+        ns[3] += 1 // last substat has initial roll
+        const vals = ns.map((ni, i) =>
+          subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
+            ? range(7 * ni, 10 * ni)
+            : [NaN]
+        )
+
+        cartesian(...vals).forEach((upVals) => {
+          const stats = { ...base }
+          let p_upVals = 1
+          for (let i = 0; i < 4; i++) {
+            if (isNaN(upVals[i])) continue
+
+            const key = subs[i]
+            const val = upVals[i]
+            const ni = ns[i]
+            stats[key] = (stats[key] ?? 0) + val * scale(key)
+            const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
+            p_upVals *= p_val
+          }
+
+          distrs.push({
+            prob: prob_sub * prob * p_upVals,
+            val: this.eval(stats, slotKey).map((n) => n.v),
+          })
         })
       })
     })
