@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import 'vite/client'
 
 import App from './App'
 
