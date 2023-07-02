@@ -53,30 +53,30 @@ export function detach(
 ): AnyTagFree[] {
   function detachRead(
     cache: TagMapSubsetCache<AnyNode | ReRead>,
-    accu: Read['accu']
+    ex: Read['ex']
   ): AnyTagFree[] {
     const dyn = dynTag(cache.tag)
     return dyn
-      ? [read(dyn, accu)]
+      ? [read(dyn, ex)]
       : cache.subset().flatMap((n) => {
           return n.op !== 'reread'
             ? map(n, cache)
-            : detachRead(cache.with(n.tag), accu)
+            : detachRead(cache.with(n.tag), ex)
         })
   }
   function fold(
     x: NumTagFree[],
-    accu: keyof typeof arithmetic,
+    op: keyof typeof arithmetic,
     ex: any
   ): NumTagFree {
     if (x.every((x) => x.op === 'const'))
       return constant(
-        arithmetic[accu](
+        arithmetic[op](
           x.map((x) => x.ex),
           ex
         )
       )
-    return { op: accu, x, br: [] }
+    return { op, x, br: [] }
   }
 
   type Cache = TagMapSubsetCache<AnyNode | ReRead>
@@ -89,9 +89,9 @@ export function detach(
       case 'const':
         return n
       case 'read': {
-        const x = detachRead(cache.with(n.tag), n.accu)
-        if (n.accu === undefined) return x[0] ?? constant(undefined as any)
-        return fold(x as NumTagFree[], n.accu, n.ex)
+        const x = detachRead(cache.with(n.tag), n.ex)
+        if (n.ex === undefined) return x[0] ?? constant(undefined as any)
+        return fold(x as NumTagFree[], n.ex, n.ex)
       }
       case 'sum':
       case 'prod':

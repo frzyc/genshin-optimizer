@@ -18,7 +18,7 @@ type TagCache = TagMapSubsetCache<AnyNode | ReRead>
 type PreRead<M> = {
   pre: CalcResult<number | string, M>[]
   computed: Partial<
-    Record<NonNullable<Read['accu']>, CalcResult<number | string, M>>
+    Record<NonNullable<Read['ex']>, CalcResult<number | string, M>>
   >
 }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
@@ -143,9 +143,9 @@ export class Calculator<M = any> {
         case 'read': {
           const newCache = cache.with(n.tag)
           const { pre, computed } = self._preread(newCache),
-            accu = n.accu
+            ex = n.ex
 
-          switch (accu) {
+          switch (ex) {
             case undefined:
               if (pre.length !== 1) {
                 const errorMsg = `Found ${
@@ -165,10 +165,10 @@ export class Calculator<M = any> {
                 []
               )
             default: {
-              if (computed[accu]) return computed[accu]!
-              const val = arithmetic[accu](getV(pre) as number[], undefined)
-              computed[accu] = meta(accu, newCache.tag, val, pre, [])
-              return computed[accu]!
+              if (computed[ex]) return computed[ex]!
+              const val = arithmetic[ex](getV(pre) as number[], undefined)
+              computed[ex] = meta(ex, newCache.tag, val, pre, [])
+              return computed[ex]!
             }
           }
         }

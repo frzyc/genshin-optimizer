@@ -50,13 +50,16 @@ export class Read implements BaseRead {
   x = []
   br = []
   tag: Tag
-  accu: BaseRead['accu']
+  ex: BaseRead['ex']
 
   constructor(tag: Tag, accu: Read['accu']) {
     this.tag = tag
-    this.accu = accu
+    this.ex = accu
   }
 
+  get accu(): BaseRead['ex'] {
+    return this.ex
+  }
   name(name: string): Read {
     return usedNames.add(name), this.with('name', name)
   }

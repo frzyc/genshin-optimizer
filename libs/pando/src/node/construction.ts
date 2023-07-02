@@ -302,8 +302,8 @@ export function tagVal(cat: string): TagValRead {
   return { op: 'vtag', x: [], br: [], ex: cat }
 }
 
-export function read(tag: Tag, accu: Read['accu']): Read {
-  return { op: 'read', x: [], br: [], tag, accu }
+export function read(tag: Tag, ex: Read['ex']): Read {
+  return { op: 'read', x: [], br: [], tag, ex }
 }
 export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }

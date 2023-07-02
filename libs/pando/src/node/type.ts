@@ -87,9 +87,9 @@ export interface TagValRead<PermitOP extends OP = OP>
   ex: string
 }
 export interface Read extends Base<'read', never> {
-  ex?: never
+  /** Accumulator for multiple matches */
+  ex: (Sum | Prod | Min | Max)['op'] | undefined
   tag: Tag
-  accu: (Sum | Prod | Min | Max)['op'] | undefined
 }
 export interface ReRead {
   op: 'reread'
