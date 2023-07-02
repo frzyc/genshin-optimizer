@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
+import { resolve } from 'path'
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/gi-frontend',
@@ -39,5 +40,13 @@ export default defineConfig({
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+  },
+
+  // Resolve aliases. If we ever alias to non-libs folder, need to update this
+  resolve: {
+    alias: [
+      // e.g. Resolves '@genshin-optimizer/pando' -> 'libs/pando/src'
+      { find: /@genshin-optimizer(.*)/, replacement: resolve('libs/$1/src') },
+    ],
   },
 })

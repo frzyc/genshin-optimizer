@@ -6,7 +6,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "jsxImportSource": "@emotion/react",
-    "types": ["vite/client", "vitest"]
+    "types": ["vite/client", "vitest"],
+    "resolveJsonModule": true
   },
   "files": [],
   "include": [],

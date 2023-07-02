@@ -5,14 +5,14 @@ import type {
   TagMapSubsetCache,
 } from '../tag'
 import {
-  mergeTagMapValues,
   TagMapExactValues,
   TagMapKeys,
   TagMapSubsetValues,
+  mergeTagMapValues,
 } from '../tag'
 import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, AnyOP, NumNode, Read, ReRead, StrNode } from './type'
+import type { AnyNode, AnyOP, NumNode, ReRead, Read, StrNode } from './type'
 
 type TagCache = TagMapSubsetCache<AnyNode | ReRead>
 type PreRead<M> = {
@@ -153,8 +153,7 @@ export class Calculator<M = any> {
                 } nodes while reading tag ${tagString(
                   newCache.tag
                 )} with no accumulator`
-                if (process.env['NODE_ENV'] !== 'production')
-                  throw new Error(errorMsg)
+                if (!import.meta.env.PROD) throw new Error(errorMsg)
                 else console.error(errorMsg)
               }
               return meta(
