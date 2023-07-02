@@ -197,13 +197,13 @@ export function cmpGT<P extends OP = never>(
   v2: Num<P>,
   gt: Str<P>,
   le: Str<P>
-): Threshold<StrNode<P> | P | 'thres'>
+): Threshold<StrNode<P>, P | 'thres'>
 export function cmpGT<P extends OP = never>(
   v1: Num<P>,
   v2: Num<P>,
   gt: Val<P>,
   le: Val<P> = 0
-): Threshold<AnyNode<P> | P | 'thres'> {
+): Threshold<AnyNode<P>, P | 'thres'> {
   return thres(v2, v1, le, gt)
 }
 /** v1 >= v2 ? ge : lt */
@@ -221,17 +221,17 @@ export function lookup<P extends OP>(
   index: StrNode<P>,
   table: Record<string, Num<P>>,
   defaultV?: Num<P>
-): Lookup<NumNode>
+): Lookup<NumNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
   index: StrNode<P>,
   table: Record<string, Str<P>>,
   defaultV?: Str<P>
-): Lookup<StrNode>
+): Lookup<StrNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
   index: StrNode<P>,
   table: Record<string, Val<P>>,
   defaultV?: Val<P>
-): Lookup<AnyNode> {
+): Lookup<AnyNode<P>, P | 'lookup'> {
   return {
     op: 'lookup',
     br: [toV(index)],
@@ -251,7 +251,7 @@ export function subscript<P extends OP>(
 export function subscript<P extends OP>(
   index: NumNode<P>,
   table: number[] | string[]
-): Subscript<number | string, P | 'subscript'> {
+): Subscript<_value, P | 'subscript'> {
   return { op: 'subscript', ex: table, x: [], br: [toV(index)] }
 }
 
@@ -282,15 +282,15 @@ export function dynTag<P extends OP = never>(
 export function dynTag<P extends OP = never>(
   v: Str<P>,
   tag: Record<string, Str<P>>
-): DynamicTag<StrNode, P | 'dtag'>
+): DynamicTag<StrNode<P>, P | 'dtag'>
 export function dynTag<P extends OP = never>(
   v: Val<P>,
   tag: Record<string, Str<P>>
-): DynamicTag<AnyNode, P | 'dtag'>
+): DynamicTag<AnyNode<P>, P | 'dtag'>
 export function dynTag<P extends OP = never>(
   v: Val<P>,
   tag: Record<string, Str<P>>
-): DynamicTag<AnyNode, P | 'dtag'> {
+): DynamicTag<AnyNode<P>, P | 'dtag'> {
   return {
     op: 'dtag',
     x: [toV(v)],
