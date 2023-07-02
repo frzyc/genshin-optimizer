@@ -1,33 +1,28 @@
-import { Button, CardContent, Grid, Box } from '@mui/material'
-import React, {
-  useEffect,
-  useState,
-  useContext,
-  useMemo,
-  useCallback,
-} from 'react'
-import { DatabaseContext } from '../../../../Database/Database'
-import { DataContext } from '../../../../Context/DataContext'
-import { imgAssets } from '@genshin-optimizer/g-assets'
+import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
+import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { linspace } from '@genshin-optimizer/util'
+import { Box, Button, CardContent, Grid } from '@mui/material'
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import type { TooltipProps } from 'recharts'
 import {
-  Line,
   Area,
   ComposedChart,
+  Label,
   Legend,
-  ReferenceLine,
+  Line,
   ReferenceDot,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
-  Label,
 } from 'recharts'
-import CardLight from '../../../../Components/Card/CardLight'
-import { uiInput as input } from '../../../../Formula'
 import ArtifactCardPico from '../../../../Components/Artifact/ArtifactCardPico'
-import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import CardLight from '../../../../Components/Card/CardLight'
+import { DataContext } from '../../../../Context/DataContext'
+import { DatabaseContext } from '../../../../Database/Database'
+import { uiInput as input } from '../../../../Formula'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import { gaussPDF } from './mathUtil'
 import type { UpOptArtifact } from './upOpt'
@@ -47,16 +42,6 @@ type ChartData = {
   exact?: number
   exactCons?: number
   expInc?: number
-}
-
-// linspace with non-inclusive endpoint.
-function linspace(lower = 0, upper = 1, steps = 50): number[] {
-  const arr: number[] = []
-  const step = (upper - lower) / steps
-  for (let i = 0; i < steps; ++i) {
-    arr.push(lower + i * step)
-  }
-  return arr
 }
 
 const nbins = 50
@@ -82,7 +67,7 @@ export default function UpgradeOptChartCard({
   const artifacts = useMemo(
     () =>
       allArtifactSlotKeys.map((k) => {
-        return [k, database.arts.get(input.art[k].id)]
+        return [k, database.arts.get(data.get(input.art[k].id).value)]
       }),
     [data, database]
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
@@ -106,11 +91,13 @@ export default function UpgradeOptChartCard({
   const maax = objMax
 
   let ymax = 0
-  const dataEst: ChartData[] = linspace(miin, maax, plotPoints).map((v) => {
-    const est = gauss(v)
-    ymax = Math.max(ymax, est)
-    return { x: perc(v), est: est, estCons: gaussConstrained(v) }
-  })
+  const dataEst: ChartData[] = linspace(miin, maax, plotPoints, false).map(
+    (v) => {
+      const est = gauss(v)
+      ymax = Math.max(ymax, est)
+      return { x: perc(v), est: est, estCons: gaussConstrained(v) }
+    }
+  )
   if (ymax === 0) ymax = nbins / (maax - miin)
 
   // go back and add delta distributions.
