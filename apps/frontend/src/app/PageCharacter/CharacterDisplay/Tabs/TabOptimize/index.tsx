@@ -48,6 +48,7 @@ import {
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import InfoTooltip from '../../../../Components/InfoTooltip'
+import NoArtWarning from '../../../../Components/NoArtWarning'
 import SolidToggleButtonGroup from '../../../../Components/SolidToggleButtonGroup'
 import SqBadge from '../../../../Components/SqBadge'
 import { CharacterContext } from '../../../../Context/CharacterContext'
@@ -503,18 +504,7 @@ export default function TabBuild() {
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
   return (
     <Box display="flex" flexDirection="column" gap={1}>
-      {noArtifact && (
-        <Alert severity="warning" variant="filled">
-          <Trans t={t} i18nKey="noArtis">
-            Oops! It looks like you haven't added any artifacts to GO yet! You
-            should go to the
-            <Link component={RouterLink} to="/artifacts">
-              Artifacts
-            </Link>
-            page and add some!
-          </Trans>
-        </Alert>
-      )}
+      {noArtifact && <NoArtWarning />}
       {/* Build Generator Editor */}
       {dataContext && (
         <DataContext.Provider value={dataContext}>

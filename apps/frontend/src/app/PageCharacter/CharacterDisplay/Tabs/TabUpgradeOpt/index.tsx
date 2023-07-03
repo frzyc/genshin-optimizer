@@ -1,30 +1,33 @@
-import { Upgrade, CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
+import { CheckBox, CheckBoxOutlineBlank, Upgrade } from '@mui/icons-material'
 import {
-  Alert,
   Box,
   Button,
   CardContent,
   Grid,
-  Link,
+  Pagination,
   Skeleton,
   Typography,
-  Pagination,
 } from '@mui/material'
-import { Link as RouterLink } from 'react-router-dom'
-import CardDark from '../../../../Components/Card/CardDark'
 import CardLight from '../../../../Components/Card/CardLight'
 import CharacterCard from '../../../../Components/Character/CharacterCard'
-import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
-import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
-import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
-import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
-import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
+import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
+import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
+import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
+import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
+import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 
+import type { ArtifactSlotKey, CharacterKey } from '@genshin-optimizer/consts'
+import {
+  allArtifactSlotKeys,
+  charKeyToLocCharKey,
+} from '@genshin-optimizer/consts'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
+import { clamp } from '@genshin-optimizer/util'
 import {
   Suspense,
   useCallback,
@@ -32,37 +35,32 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { Trans } from 'react-i18next'
+import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
+import { CharacterContext } from '../../../../Context/CharacterContext'
 import type { dataContextObj } from '../../../../Context/DataContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
+import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
-import useBuildSetting from '../TabOptimize/useBuildSetting'
-import { dynamicData } from '../TabOptimize/foreground'
-import { objPathValue } from '../../../../Util/Util'
-import { clamp } from '@genshin-optimizer/util'
-import { mergeData, uiDataForTeam } from '../../../../Formula/api'
-import UpgradeOptChartCard from './UpgradeOptChartCard'
-import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
-import { CharacterContext } from '../../../../Context/CharacterContext'
-import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
-import type { ICachedArtifact } from '../../../../Types/artifact'
 import type { DynStat } from '../../../../Solver/common'
-import type { ArtifactSlotKey, CharacterKey } from '@genshin-optimizer/consts'
-import {
-  allArtifactSlotKeys,
-  charKeyToLocCharKey,
-} from '@genshin-optimizer/consts'
-import { useForceUpdate } from '@genshin-optimizer/react-util'
+import type { ICachedArtifact } from '../../../../Types/artifact'
+import { objPathValue } from '../../../../Util/Util'
+import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
+import { dynamicData } from '../TabOptimize/foreground'
+import useBuildSetting from '../TabOptimize/useBuildSetting'
+import UpgradeOptChartCard from './UpgradeOptChartCard'
 
+import { Stack } from '@mui/system'
+import AddArtInfo from '../../../../Components/AddArtInfo'
+import NoArtWarning from '../../../../Components/NoArtWarning'
 import type { UpOptBuild } from './upOpt'
-import { UpOptCalculator, toArtifact } from './upOpt'
+import { toArtifact, UpOptCalculator } from './upOpt'
 
 export default function TabUpopt() {
   const {
@@ -139,7 +137,6 @@ export default function TabUpopt() {
 
   // Paging logic
   const [pageIdex, setpageIdex] = useState(0)
-  const invScrollRef = useRef<HTMLDivElement>(null)
 
   const artifactsToDisplayPerPage = 5
   const { artifactsToShow, numPages, currentPageIndex, minObj0, maxObj0 } =
@@ -181,7 +178,6 @@ export default function TabUpopt() {
   const setPage = useCallback(
     (e, value) => {
       if (!upOptCalc) return
-      invScrollRef.current?.scrollIntoView({ behavior: 'smooth' })
       const end = value * artifactsToDisplayPerPage
       upOptCalc.calcSlowToIndex(end)
       setpageIdex(value - 1)
@@ -335,280 +331,242 @@ export default function TabUpopt() {
     return data && teamData && { data, teamData }
   }, [data, teamData])
 
+  const pagination = numPages > 1 && (
+    <CardLight>
+      <CardContent>
+        <Grid container>
+          <Grid item flexGrow={1}>
+            <Pagination
+              count={numPages}
+              page={currentPageIndex + 1}
+              onChange={setPage}
+            />
+          </Grid>
+          <Grid item>
+            <ShowingArt
+              numShowing={artifactsToShow.length}
+              total={upOptCalc?.artifacts.length}
+            />
+          </Grid>
+        </Grid>
+      </CardContent>
+    </CardLight>
+  )
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
-      {noArtifact && (
-        <Alert severity="warning" variant="filled">
-          {' '}
-          Opps! It looks like you haven't added any artifacts to GO yet! You
-          should go to the{' '}
-          <Link component={RouterLink} to="/artifact">
-            Artifacts
-          </Link>{' '}
-          page and add some!
-        </Alert>
-      )}
+      {noArtifact && <NoArtWarning />}
       {/* Build Generator Editor */}
       {dataContext && (
         <DataContext.Provider value={dataContext}>
-          <Grid container spacing={1}>
-            {/* 1*/}
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              lg={3}
-              display="flex"
-              flexDirection="column"
-              gap={1}
-            >
-              {/* character card */}
-              <Box>
-                <CharacterCard
-                  characterKey={characterKey}
-                  onClickTeammate={onClickTeammate}
-                />
-              </Box>
-              <BonusStatsCard />
-            </Grid>
+          <Stack spacing={1}>
+            <Grid container spacing={1}>
+              {/* 1*/}
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={3}
+                display="flex"
+                flexDirection="column"
+                gap={1}
+              >
+                {/* character card */}
+                <Box>
+                  <CharacterCard
+                    characterKey={characterKey}
+                    onClickTeammate={onClickTeammate}
+                  />
+                </Box>
+                <BonusStatsCard />
+              </Grid>
 
-            {/* 2 */}
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              lg={9}
-              display="flex"
-              flexDirection="column"
-              gap={1}
-            >
-              <Grid container spacing={1}>
-                <Grid item lg={4} display="flex" flexDirection="column" gap={1}>
-                  <CardLight>
-                    <CardContent>
-                      <span>Optimization Target: </span>
-                      {
-                        <OptimizationTargetSelector
-                          optimizationTarget={optimizationTarget}
-                          setTarget={(target) =>
-                            buildSettingDispatch({ optimizationTarget: target })
+              {/* 2 */}
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={9}
+                display="flex"
+                flexDirection="column"
+                gap={1}
+              >
+                <Grid container spacing={1}>
+                  <Grid
+                    item
+                    lg={4}
+                    display="flex"
+                    flexDirection="column"
+                    gap={1}
+                  >
+                    <CardLight>
+                      <CardContent>
+                        <span>Optimization Target: </span>
+                        {
+                          <OptimizationTargetSelector
+                            optimizationTarget={optimizationTarget}
+                            setTarget={(target) =>
+                              buildSettingDispatch({
+                                optimizationTarget: target,
+                              })
+                            }
+                            disabled={false}
+                          />
+                        }
+                      </CardContent>
+                    </CardLight>
+                    <CardLight>
+                      <CardContent>
+                        <StatFilterCard disabled={false} />
+                      </CardContent>
+                    </CardLight>
+                    {useFilters && (
+                      <CardLight>
+                        <CardContent sx={{ py: 1 }}>
+                          Artifact Level Filter
+                        </CardContent>
+                        <ArtifactLevelSlider
+                          levelLow={levelLow}
+                          levelHigh={levelHigh}
+                          setLow={(levelLow) =>
+                            buildSettingDispatch({ levelLow })
+                          }
+                          setHigh={(levelHigh) =>
+                            buildSettingDispatch({ levelHigh })
+                          }
+                          setBoth={(levelLow, levelHigh) =>
+                            buildSettingDispatch({ levelLow, levelHigh })
                           }
                           disabled={false}
                         />
-                      }
-                    </CardContent>
-                  </CardLight>
-                  <CardLight>
-                    <CardContent>
-                      <StatFilterCard disabled={false} />
-                    </CardContent>
-                  </CardLight>
-                  {useFilters && (
+                        <CardContent>
+                          <MainStatSelectionCard
+                            disabled={false}
+                            filteredArtIdMap={filteredArtIdMap}
+                          />
+                        </CardContent>
+                      </CardLight>
+                    )}
+                  </Grid>
+                  <Grid
+                    item
+                    lg={8}
+                    display="flex"
+                    flexDirection="column"
+                    gap={1}
+                  >
                     <CardLight>
-                      <CardContent sx={{ py: 1 }}>
-                        Artifact Level Filter
-                      </CardContent>
-                      <ArtifactLevelSlider
-                        levelLow={levelLow}
-                        levelHigh={levelHigh}
-                        setLow={(levelLow) =>
-                          buildSettingDispatch({ levelLow })
-                        }
-                        setHigh={(levelHigh) =>
-                          buildSettingDispatch({ levelHigh })
-                        }
-                        setBoth={(levelLow, levelHigh) =>
-                          buildSettingDispatch({ levelLow, levelHigh })
-                        }
-                        disabled={false}
-                      />
                       <CardContent>
-                        <MainStatSelectionCard
-                          disabled={false}
-                          filteredArtIdMap={filteredArtIdMap}
-                        />
+                        <ArtifactSetConfig disabled={false} />
                       </CardContent>
                     </CardLight>
-                  )}
-                </Grid>
-                <Grid item lg={8} display="flex" flexDirection="column" gap={1}>
-                  <CardLight>
-                    <CardContent>
-                      <ArtifactSetConfig disabled={false} />
-                    </CardContent>
-                  </CardLight>
-                  <CardLight>
-                    <CardContent>
-                      <Grid container spacing={1}>
-                        <Grid item>
-                          <Button
-                            startIcon={
-                              show20 ? <CheckBox /> : <CheckBoxOutlineBlank />
-                            }
-                            color={show20 ? 'success' : 'secondary'}
-                            onClick={() => setShow20(!show20)}
-                          >
-                            show lvl 20
-                          </Button>
-                        </Grid>
-                        <Grid item>
-                          <Button
-                            startIcon={
-                              check4th ? <CheckBox /> : <CheckBoxOutlineBlank />
-                            }
-                            color={check4th ? 'success' : 'secondary'}
-                            onClick={() => setCheck4th(!check4th)}
-                          >
-                            compute 4th sub
-                          </Button>
-                        </Grid>
-                        <Grid item>
-                          <Button
-                            startIcon={
-                              useFilters ? (
-                                <CheckBox />
-                              ) : (
-                                <CheckBoxOutlineBlank />
-                              )
-                            }
-                            color={useFilters ? 'success' : 'secondary'}
-                            onClick={() => setUseMainStatFilter(!useFilters)}
-                          >
-                            enable filters
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </CardContent>
-                  </CardLight>
-                </Grid>
-              </Grid>
-              <Grid container spacing={1}>
-                <Grid item lg={12}>
-                  <CardLight>
-                    <CardContent>
-                      <Grid container spacing={1}>
-                        <Grid item>
-                          <Button
-                            disabled={
-                              !characterKey ||
-                              !optimizationTarget ||
-                              !objPathValue(
-                                data?.getDisplay(),
-                                optimizationTarget
-                              )
-                            }
-                            color={characterKey ? 'success' : 'warning'}
-                            onClick={generateBuilds}
-                            startIcon={<Upgrade />}
-                          >
-                            Calc Upgrade Priority
-                          </Button>
-                        </Grid>
-                        <Grid item>
-                          <HitModeToggle size="small" />
-                        </Grid>
-                        <Grid item>
-                          <ReactionToggle size="small" />
-                        </Grid>
-                      </Grid>
-                    </CardContent>
-                  </CardLight>
-                </Grid>
-
-                {numPages > 1 && (
-                  <CardDark>
-                    <CardContent>
-                      <Grid container>
-                        <Grid item flexGrow={1}>
-                          <Pagination
-                            count={numPages}
-                            page={currentPageIndex + 1}
-                            onChange={setPage}
-                          />
-                        </Grid>
-                        <Grid item>
-                          <ShowingArt
-                            numShowing={artifactsToShow.length}
-                            total={upOptCalc?.artifacts.length}
-                          />
-                        </Grid>
-                      </Grid>
-                    </CardContent>
-                  </CardDark>
-                )}
-
-                <Grid item lg={12} spacing={1}>
-                  <Grid container display="flex" flexDirection="column" gap={1}>
-                    {noArtifact && (
-                      <Alert severity="info" variant="filled">
-                        Looks like you haven't added any artifacts yet. If you
-                        want, there are{' '}
-                        <Link
-                          color="warning.main"
-                          component={RouterLink}
-                          to="/scanner"
-                        >
-                          automatic scanners
-                        </Link>{' '}
-                        that can speed up the import process!
-                      </Alert>
-                    )}
-                    <Suspense
-                      fallback={
-                        <Skeleton
-                          variant="rectangular"
-                          sx={{ width: '100%', height: 600, minHeight: 5000 }}
-                        />
-                      }
-                    >
-                      {/* <Grid item display="flex" flexDirection="column" gap={1}> */}
-                      {artifactsToShow.map((art) => (
-                        <Grid container key={art.id + 'asdfsf'} spacing={1}>
-                          <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-                            <ArtifactCard
-                              artifactId={art.id}
-                              editorProps={{}}
-                            />
+                    <CardLight>
+                      <CardContent>
+                        <Grid container spacing={1}>
+                          <Grid item>
+                            <Button
+                              startIcon={
+                                show20 ? <CheckBox /> : <CheckBoxOutlineBlank />
+                              }
+                              color={show20 ? 'success' : 'secondary'}
+                              onClick={() => setShow20(!show20)}
+                            >
+                              show lvl 20
+                            </Button>
                           </Grid>
-                          <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-                            <UpgradeOptChartCard
-                              upgradeOpt={art}
-                              thresholds={upOptCalc?.thresholds ?? []}
-                              objMax={maxObj0}
-                              objMin={minObj0}
-                            />
+                          <Grid item>
+                            <Button
+                              startIcon={
+                                check4th ? (
+                                  <CheckBox />
+                                ) : (
+                                  <CheckBoxOutlineBlank />
+                                )
+                              }
+                              color={check4th ? 'success' : 'secondary'}
+                              onClick={() => setCheck4th(!check4th)}
+                            >
+                              compute 4th sub
+                            </Button>
+                          </Grid>
+                          <Grid item>
+                            <Button
+                              startIcon={
+                                useFilters ? (
+                                  <CheckBox />
+                                ) : (
+                                  <CheckBoxOutlineBlank />
+                                )
+                              }
+                              color={useFilters ? 'success' : 'secondary'}
+                              onClick={() => setUseMainStatFilter(!useFilters)}
+                            >
+                              enable filters
+                            </Button>
                           </Grid>
                         </Grid>
-                      ))}
-                      {/* </Grid> */}
-                    </Suspense>
+                      </CardContent>
+                    </CardLight>
                   </Grid>
                 </Grid>
-
-                {numPages > 1 && (
-                  <CardDark>
-                    <CardContent>
-                      <Grid container>
-                        <Grid item flexGrow={1}>
-                          <Pagination
-                            count={numPages}
-                            page={currentPageIndex + 1}
-                            onChange={setPage}
-                          />
-                        </Grid>
-                        <Grid item>
-                          <ShowingArt
-                            numShowing={artifactsToShow.length}
-                            total={upOptCalc?.artifacts.length}
-                          />
-                        </Grid>
-                      </Grid>
-                    </CardContent>
-                  </CardDark>
-                )}
               </Grid>
             </Grid>
-          </Grid>
+            <CardLight>
+              <CardContent>
+                <Grid container spacing={1}>
+                  <Grid item>
+                    <Button
+                      disabled={
+                        !characterKey ||
+                        !optimizationTarget ||
+                        !objPathValue(data?.getDisplay(), optimizationTarget)
+                      }
+                      color={characterKey ? 'success' : 'warning'}
+                      onClick={generateBuilds}
+                      startIcon={<Upgrade />}
+                    >
+                      Calc Upgrade Priority
+                    </Button>
+                  </Grid>
+                  <Grid item>
+                    <HitModeToggle size="small" />
+                  </Grid>
+                  <Grid item>
+                    <ReactionToggle size="small" />
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </CardLight>
+            {pagination}
+            {noArtifact && <AddArtInfo />}
+            <Suspense
+              fallback={
+                <Skeleton
+                  variant="rectangular"
+                  sx={{ width: '100%', height: 600, minHeight: 5000 }}
+                />
+              }
+            >
+              {artifactsToShow.map((art) => (
+                <Box key={art.id}>
+                  <Grid container spacing={1}>
+                    <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
+                      <ArtifactCard artifactId={art.id} editorProps={{}} />
+                    </Grid>
+                    <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
+                      <UpgradeOptChartCard
+                        upgradeOpt={art}
+                        thresholds={upOptCalc?.thresholds ?? []}
+                        objMax={maxObj0}
+                        objMin={minObj0}
+                      />
+                    </Grid>
+                  </Grid>
+                </Box>
+              ))}
+            </Suspense>
+            {pagination}
+          </Stack>
         </DataContext.Provider>
       )}
     </Box>
