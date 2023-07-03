@@ -126,8 +126,7 @@ const fWeight: StrictDict<SubstatKey, number> = {
 
 /* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
 function scale(key: SubstatKey, rarity: RarityKey = 5) {
-  return getSubstatValue(key, rarity) / 10
-  // return toDecimal(key, Artifact.substatValue(key, rarity)) / 10
+  return toDecimal(key, getSubstatValue(key, rarity) / 10)
 }
 
 /* Fixes silliness with percents and being multiplied by 100. */
@@ -603,16 +602,12 @@ export function toArtifact(art: ICachedArtifact): ArtifactBuildData {
     rarity: art.rarity,
     values: {
       [art.setKey]: 1,
-      [art.mainStatKey]: art.mainStatKey.endsWith('_')
-        ? mainStatVal / 100
-        : mainStatVal,
+      [art.mainStatKey]: mainStatVal,
       ...Object.fromEntries(
         art.substats
           .map((substat) => [
             substat.key,
-            substat.key.endsWith('_')
-              ? substat.accurateValue / 100
-              : substat.accurateValue,
+            toDecimal(substat.key, substat.accurateValue),
           ])
           .filter(([, value]) => value !== 0)
       ),
