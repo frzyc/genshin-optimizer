@@ -44,7 +44,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run Tests
         run: |
-          yarn run nx run-many --target=test
+          NODE_OPTIONS="--experimental-vm-modules" yarn run nx run-many --target=test
   format:
     runs-on: ubuntu-latest
     timeout-minutes: 10
