@@ -1,5 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
   equal,
@@ -12,19 +12,19 @@ import {
   subscript,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode, healNodeTalent } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Mika'
 const elementKey: ElementKey = 'cryo'
-const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = -1,
   s = 0,
@@ -108,7 +108,7 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
     'on',
     lookup(
       condA1DetectorStacks,
-      objectKeyMap(detectorStacksArr, (stack) =>
+      objKeyMap(detectorStacksArr, (stack) =>
         prod(stack, percent(dm.passive1.physical_dmg_))
       ),
       naught,
@@ -121,14 +121,18 @@ const a1DetectorStacks_physical_dmg_ = equal(
   target.charKey,
   a1DetectorStacks_physical_dmg_disp
 )
-
+const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6InSoulwind_physical_critDMG_disp = greaterEq(
   input.constellation,
   6,
-  equal(condInSoulwind, 'on', dm.constellation6.physical_critDMG_, {
-    ...KeyMap.info('physical_critDMG_'),
-    isTeamBuff: true,
-  })
+  equal(
+    condInSoulwind,
+    'on',
+    equal(condC6Crit, 'on', dm.constellation6.physical_critDMG_, {
+      ...KeyMap.info('physical_critDMG_'),
+      isTeamBuff: true,
+    })
+  )
 )
 const c6InSoulwind_physical_critDMG_ = equal(
   input.activeCharKey,
@@ -196,9 +200,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -306,7 +310,7 @@ const sheet: ICharacterSheet = {
         teamBuff: true,
         canShow: equal(condInSoulwind, 'on', 1),
         name: ct.ch('numDetectorStacks'),
-        states: objectKeyMap(detectorStacksArr, (stack) => ({
+        states: objKeyMap(detectorStacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [
             {
@@ -315,12 +319,24 @@ const sheet: ICharacterSheet = {
           ],
         })),
       }),
-      ct.headerTem('constellation6', {
+      ct.condTem('constellation6', {
         teamBuff: true,
-        fields: [
-          {
-            node: c6InSoulwind_physical_critDMG_disp,
+        canShow: equal(condInSoulwind, 'on', 1),
+        path: condC6CritPath,
+        value: condC6Crit,
+        name: ct.ch('inSoulwind'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c6InSoulwind_physical_critDMG_disp,
+              },
+            ],
           },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
           {
             text: ct.ch('incDetectorStacks'),
             value: dm.constellation6.extraStacks,
@@ -350,7 +366,7 @@ const sheet: ICharacterSheet = {
               data.get(input.activeCharKey).value ===
                 data.get(target.charKey).value
                 ? `${dm.burst.plumeInterval}s - ${
-                    data.get(skillInSoulwind_atkSPD_disp).value
+                    data.get(skillInSoulwind_atkSPD_disp).value * 100
                   }% = ${(
                     dm.burst.plumeInterval *
                     (1 - data.get(skillInSoulwind_atkSPD_disp).value)

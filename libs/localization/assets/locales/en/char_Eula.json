@@ -1,7 +1,4 @@
 {
-  "skillC": {
-    "name": "Grimheart Stacks"
-  },
   "burstC": {
     "name": "Lightfall Sword Energy Stacks",
     "dmg": "Lightfall Sword Explosion DMG",
@@ -14,7 +11,6 @@
     "durationStack": "6s + 6s per stack, up to 18s"
   },
   "c4C": {
-    "name": "Opponents have less than 50% HP",
     "dmgBonus": "Lightfall Sword Explosion DMG Bonus"
   },
   "passive1": "Shattered Lightfall Sword DMG"

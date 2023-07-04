@@ -1,5 +1,11 @@
 /* eslint @typescript-eslint/no-unused-vars: [ "warn", { "argsIgnorePattern": "^_|^t$" } ] */
 import {
+  DiscordIcon,
+  PatreonIcon,
+  PaypalIcon,
+  TwitchIcon,
+} from '@genshin-optimizer/svgicons'
+import {
   Article,
   Description,
   GitHub,
@@ -21,10 +27,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import CardDark from '../Components/Card/CardDark'
-import DiscordIcon from '../SVGIcons/DiscordIcon'
-import PatreonIcon from '../SVGIcons/PatreonIcon'
-import PaypalIcon from '../SVGIcons/PaypalIcon'
-import TwitchIcon from '../SVGIcons/TwitchIcon'
 
 const buttons = [
   {

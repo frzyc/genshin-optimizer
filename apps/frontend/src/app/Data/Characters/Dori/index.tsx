@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import {
@@ -30,15 +30,13 @@ import {
   dmgNode,
   healNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Dori'
 const elementKey: ElementKey = 'electro'
 const regionKey: RegionKey = 'sumeru'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -226,9 +224,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -320,7 +318,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.energyRegen, {
-              name: st('energyRegen'),
+              name: stg('energyRegen'),
             }),
           },
         ],
@@ -346,7 +344,7 @@ const sheet: ICharacterSheet = {
               },
               {
                 node: infoMut(dmgFormulas.constellation6.heal, {
-                  name: ct.ch('c6Heal'),
+                  name: stg('hpRegenPerHit'),
                   variant: 'heal',
                 }),
               },
@@ -377,7 +375,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: (data) =>
               data.get(subscript(input.total.burstIndex, dm.burst.energyRegen))
                 .value,

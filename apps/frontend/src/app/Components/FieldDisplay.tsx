@@ -1,3 +1,6 @@
+import type { AmpReactionKey } from '@genshin-optimizer/consts'
+import { allAmpReactionKeys } from '@genshin-optimizer/consts'
+import { valueString } from '@genshin-optimizer/util'
 import { Groups } from '@mui/icons-material'
 import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
@@ -15,9 +18,6 @@ import { DataContext } from '../Context/DataContext'
 import { FormulaDataContext } from '../Context/FormulaDataContext'
 import type { NodeDisplay } from '../Formula/api'
 import { nodeVStr } from '../Formula/uiData'
-import { valueString } from '../KeyMap'
-import type { AmpReactionKey } from '../Types/consts'
-import { allAmpReactions } from '../Types/consts'
 import type { IBasicFieldDisplay, IFieldDisplay } from '../Types/fieldDisplay'
 import { evalIfFunc } from '../Util/Util'
 import AmpReactionModeText from './AmpReactionModeText'
@@ -160,7 +160,7 @@ export function NodeFieldDisplay({
                     <Skeleton variant="rectangular" width={300} height={30} />
                   }
                 >
-                  {allAmpReactions.includes(node.info.variant as any) && (
+                  {allAmpReactionKeys.includes(node.info.variant as any) && (
                     <Box sx={{ display: 'inline-flex', gap: 1, mr: 1 }}>
                       <Box>
                         <AmpReactionModeText

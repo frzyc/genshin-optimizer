@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
   equal,
@@ -11,20 +11,18 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Shenhe'
 const elementKey: ElementKey = 'cryo'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let s = 0,
   b = 0,
@@ -125,7 +123,7 @@ const nodeAsc1 = equal(input.activeCharKey, target.charKey, nodeAsc1Disp)
 const [condAsc4Path, condAsc4] = cond(key, 'asc4')
 const nodeAsc4 = greaterEq(
   input.asc,
-  1,
+  4,
   equal(condAsc4, 'press', dm.passive2.press_dmg_)
 )
 const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
@@ -133,7 +131,7 @@ const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
 const [condAsc4HoldPath, condAsc4Hold] = cond(key, 'asc4Hold')
 const nodeAsc4Hold = greaterEq(
   input.asc,
-  1,
+  4,
   equal(condAsc4Hold, 'hold', dm.passive2.hold_dmg_)
 )
 const nodeAsc4Hold_normal_dmg_ = { ...nodeAsc4Hold }
@@ -153,12 +151,11 @@ const c4Inc = greaterEq(
   4,
   lookup(
     condC4,
-    objectKeyMap(range(1, dm.constellation4.maxStacks), (i) =>
+    objKeyMap(range(1, dm.constellation4.maxStacks), (i) =>
       percent(i * dm.constellation4.dmg_)
     ),
     0
-  ),
-  { name: ct.ch('c4Bonus_') }
+  )
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
@@ -197,6 +194,7 @@ export const data = dataObjForCharacterSheet(
     premod: {
       skillBoost: nodeC3,
       burstBoost: nodeC5,
+      skill_dmg_: c4Inc,
     },
     teamBuff: {
       premod: {
@@ -218,9 +216,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -295,7 +293,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.trigger,
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.cd,
             unit: 's',
           },
@@ -314,7 +312,7 @@ const sheet: ICharacterSheet = {
             value: dm.skill.triggerHold,
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.cdHold,
             unit: 's',
           },
@@ -384,22 +382,14 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: st('addlCharges'),
-            value: 1,
-          },
-        ],
-      }),
       ct.condTem('constellation4', {
         value: condC4,
         path: condC4Path,
         name: ct.ch('c4'),
-        states: objectKeyMap(
-          range(1, 50).map((i) => i.toString()),
+        states: objKeyMap(
+          range(1, 50).map((i) => i),
           (i) => ({
-            name: i.toString(),
+            name: st('stack', { count: i }),
             fields: [{ node: c4Inc }],
           })
         ),
@@ -499,7 +489,16 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.fieldsTem('constellation1', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },

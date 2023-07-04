@@ -1,8 +1,12 @@
 import {
-  allElementKeys,
   allArtifactSlotKeys,
+  allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { FlowerIcon } from '@genshin-optimizer/gi-svgicons'
+import { AnvilIcon } from '@genshin-optimizer/svgicons'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { BusinessCenter, People } from '@mui/icons-material'
 import {
   CardActionArea,
@@ -17,7 +21,6 @@ import {
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
-import Assets from '../Assets/Assets'
 import SlotIcon from '../Components/Artifact/SlotIcon'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
@@ -27,8 +30,6 @@ import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
 import { ElementIcon } from '../KeyMap/StatIcon'
 import useDBMeta from '../ReactHooks/useDBMeta'
-import FlowerIcon from '../SVGIcons/ArtifactSlot/FlowerIcon'
-import { objectKeyMap } from '../Util/Util'
 
 export default function InventoryCard() {
   const { t } = useTranslation(['page_home', 'ui'])
@@ -36,7 +37,7 @@ export default function InventoryCard() {
   const { gender } = useDBMeta()
   const { characterTally, characterTotal } = useMemo(() => {
     const chars = database.chars.keys
-    const tally = objectKeyMap(allElementKeys, () => 0)
+    const tally = objKeyMap(allElementKeys, () => 0)
     chars.forEach((ck) => {
       const elementKey = getCharSheet(ck, gender).elementKey
       tally[elementKey] = tally[elementKey] + 1
@@ -46,7 +47,7 @@ export default function InventoryCard() {
 
   const { weaponTally, weaponTotal } = useMemo(() => {
     const weapons = database.weapons.values
-    const tally = objectKeyMap(allWeaponTypeKeys, () => 0)
+    const tally = objKeyMap(allWeaponTypeKeys, () => 0)
     weapons.forEach((wp) => {
       const type = getWeaponSheet(wp.key).weaponType
       tally[type] = tally[type] + 1
@@ -55,7 +56,7 @@ export default function InventoryCard() {
   }, [database])
 
   const { artifactTally, artifactTotal } = useMemo(() => {
-    const tally = objectKeyMap(allArtifactSlotKeys, () => 0)
+    const tally = objKeyMap(allArtifactSlotKeys, () => 0)
     const arts = database.arts.values
     arts.forEach((art) => {
       const slotKey = art.slotKey
@@ -129,7 +130,7 @@ export default function InventoryCard() {
                   {t(`ui:tabs.weapons`)} {weaponTotal}
                 </strong>
               }
-              icon={Assets.svg.anvil}
+              icon={<AnvilIcon />}
               sx={{
                 flexBasis: smaller ? '100%' : 'auto',
                 flexGrow: 1,
@@ -142,7 +143,7 @@ export default function InventoryCard() {
                 key={wt}
                 sx={{ flexGrow: 1, cursor: 'pointer' }}
                 color={num ? 'success' : 'secondary'}
-                icon={<ImgIcon src={Assets.weaponTypes?.[wt]} size={2} />}
+                icon={<ImgIcon src={imgAssets.weaponTypes?.[wt]} size={2} />}
                 label={<strong>{num}</strong>}
               />
             ))}

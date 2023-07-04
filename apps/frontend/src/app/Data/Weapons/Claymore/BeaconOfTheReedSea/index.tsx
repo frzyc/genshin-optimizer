@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
@@ -7,12 +7,11 @@ import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'BeaconOfTheReedSea'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const afterSkillAtkArr = [0.2, 0.25, 0.3, 0.35, 0.4]
+const afterSkillAtkArr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const afterSkill_atk_ = equal(
   input.weapon.key,
@@ -20,13 +19,13 @@ const afterSkill_atk_ = equal(
   equal(
     condAfterSkill,
     'on',
-    subscript(input.weapon.refineIndex, afterSkillAtkArr, {
+    subscript(input.weapon.refinement, afterSkillAtkArr, {
       ...KeyMap.info('atk_'),
     })
   )
 )
 
-const afterDmgAtkArr = [0.2, 0.25, 0.3, 0.35, 0.4]
+const afterDmgAtkArr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const [condAfterDmgPath, condAfterDmg] = cond(key, 'afterDmg')
 const afterDmg_atk_ = equal(
   input.weapon.key,
@@ -34,13 +33,13 @@ const afterDmg_atk_ = equal(
   equal(
     condAfterDmg,
     'on',
-    subscript(input.weapon.refineIndex, afterDmgAtkArr, {
+    subscript(input.weapon.refinement, afterDmgAtkArr, {
       ...KeyMap.info('atk_'),
     })
   )
 )
 
-const noShieldHpArr = [0.32, 0.4, 0.48, 0.56, 0.64]
+const noShieldHpArr = [-1, 0.32, 0.4, 0.48, 0.56, 0.64]
 const [condNoShieldPath, condNoShield] = cond(key, 'noShield')
 const noShield_hp_ = equal(
   input.weapon.key,
@@ -48,7 +47,7 @@ const noShield_hp_ = equal(
   equal(
     condNoShield,
     'on',
-    subscript(input.weapon.refineIndex, noShieldHpArr, {
+    subscript(input.weapon.refinement, noShieldHpArr, {
       ...KeyMap.info('hp_'),
     })
   )

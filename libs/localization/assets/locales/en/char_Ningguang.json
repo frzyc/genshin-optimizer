@@ -1,8 +1,8 @@
 {
-  "aoeGems": "Gems do AoE Geo DMG",
-  "starJadeStaminaCost": "50; With Star Jade: 0",
-  "skillReset": "Resets CD on shatter, every 6s",
+  "aoeGems": "Normal Attacks deal AoE DMG",
+  "starJadeStaminaCost": "Charged Attacks cost no Stamina when Ningguang has Star Jades",
+  "skillReset": "CD is reset upon shattering, every 6s",
   "a4toggle": "After passing through Jade Screen",
   "c4toggle": "Within 10m of Jade Screen",
-  "c6bonus": "Star Jade gained"
+  "c6bonus": "Star Jades gained"
 }

@@ -1,3 +1,5 @@
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { SECOND_MS } from '@genshin-optimizer/util'
 import { AccessTimeFilled } from '@mui/icons-material'
 import {
   CardActionArea,
@@ -8,14 +10,12 @@ import {
 } from '@mui/material'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import Assets from '../Assets/Assets'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ImgIcon from '../Components/Image/ImgIcon'
 import { DatabaseContext } from '../Database/Database'
-import { RESIN_MAX, RESIN_RECH_MS } from '../PageTools/ResinCounter'
-import { timeZones } from '../PageTools/TeyvatTime'
-import { SECOND_MS } from '../Util/TimeUtil'
+import { RESIN_MAX, timeZones } from '../Database/DataEntries/DisplayTool'
+import { RESIN_RECH_MS } from '../PageTools/ResinCounter'
 
 export default function ResinCard() {
   const { database } = useContext(DatabaseContext)
@@ -94,7 +94,7 @@ export default function ResinCard() {
         <CardLight>
           <CardActionArea sx={{ p: 2 }} component={RouterLink} to="/tools">
             <Typography variant="h2" sx={{ textAlign: 'center' }}>
-              <ImgIcon src={Assets.resin.fragile} />
+              <ImgIcon src={imgAssets.resin.fragile} />
               <span>
                 {resin}/{RESIN_MAX}
               </span>

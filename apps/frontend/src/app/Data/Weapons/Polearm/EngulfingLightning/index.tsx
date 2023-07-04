@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -9,35 +8,35 @@ import {
   sum,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'EngulfingLightning'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const atk = [0.28, 0.35, 0.42, 0.49, 0.56]
-const atkMax = [0.8, 0.9, 1, 1.1, 1.2]
+const atk = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
+const atkMax = [-1, 0.8, 0.9, 1, 1.1, 1.2]
 const atk_ = equal(
   input.weapon.key,
   key,
   min(
     prod(
-      subscript(input.weapon.refineIndex, atk),
+      subscript(input.weapon.refinement, atk),
       sum(input.premod.enerRech_, percent(-1))
     ),
-    subscript(input.weapon.refineIndex, atkMax)
+    subscript(input.weapon.refinement, atkMax)
   )
 )
 
-const enerRech = [0.3, 0.35, 0.4, 0.45, 0.5, 0.55]
+const enerRech = [-1, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55]
 const [condPassivePath, condPassive] = cond(key, 'TimelessDream')
 const enerRech_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, enerRech)
+  subscript(input.weapon.refinement, enerRech)
 )
 
 export const data = dataObjForWeaponSheet(

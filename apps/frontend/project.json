@@ -5,7 +5,7 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -29,7 +29,7 @@
             "output": "assets"
           },
           {
-            "input": "dist/libs/dm-localization/assets",
+            "input": "libs/dm-localization/assets",
             "glob": "**/*",
             "output": "assets"
           },
@@ -71,7 +71,7 @@
       "dependsOn": ["^build", "^pipeline"]
     },
     "serve": {
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "frontend:build",
@@ -93,14 +93,14 @@
       "dependsOn": ["build"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/frontend/jest.config.ts",
@@ -112,7 +112,6 @@
   "tags": [],
   "implicitDependencies": [
     "localization",
-    "pipeline-runner",
     "dm-localization",
     "silly-wisher-names"
   ]

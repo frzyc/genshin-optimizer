@@ -1,8 +1,8 @@
+import type { AmpReactionKey } from '@genshin-optimizer/consts'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { ElementIcon } from '../KeyMap/StatIcon'
-import { iconInlineProps } from '../SVGIcons'
-import type { AmpReactionKey } from '../Types/consts'
 import ColorText from './ColoredText'
 import SqBadge from './SqBadge'
 

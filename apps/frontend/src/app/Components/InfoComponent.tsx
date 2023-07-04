@@ -1,3 +1,5 @@
+import { useBoolState } from '@genshin-optimizer/react-util'
+import { getRandomElementFromArray } from '@genshin-optimizer/util'
 import HelpIcon from '@mui/icons-material/Help'
 import {
   Button,
@@ -8,8 +10,6 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useCallback, useState } from 'react'
-import useBoolState from '../ReactHooks/useBoolState'
-import { getRandomElementFromArray } from '../Util/Util'
 import CardDark from './Card/CardDark'
 import CloseButton from './CloseButton'
 import ModalWrapper from './ModalWrapper'

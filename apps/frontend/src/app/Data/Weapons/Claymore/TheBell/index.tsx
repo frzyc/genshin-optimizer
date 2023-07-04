@@ -1,19 +1,18 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { infoMut, equal, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'TheBell'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const shieldSrc = [0.2, 0.23, 0.26, 0.29, 0.32]
-const allDmgSrc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const shieldSrc = [-1, 0.2, 0.23, 0.26, 0.29, 0.32]
+const allDmgSrc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const [condPassivePath, condPassive] = cond(key, 'RebelliousGuardian')
 const shield = equal(
   input.weapon.key,
@@ -23,7 +22,7 @@ const shield = equal(
     'on',
     customShieldNode(
       prod(
-        subscript(input.weapon.refineIndex, shieldSrc, { unit: '%' }),
+        subscript(input.weapon.refinement, shieldSrc, { unit: '%' }),
         input.total.hp
       )
     )
@@ -33,7 +32,7 @@ const [condWithShieldPath, condWithShield] = cond(key, 'WithShield')
 const all_dmg_ = equal(
   condWithShield,
   'protected',
-  subscript(input.weapon.refineIndex, allDmgSrc, { unit: '%' })
+  subscript(input.weapon.refinement, allDmgSrc, { unit: '%' })
 )
 
 const data = dataObjForWeaponSheet(

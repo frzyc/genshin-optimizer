@@ -1,5 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/consts'
+import { useForceUpdate, useMediaQueryUp } from '@genshin-optimizer/react-util'
+import { objKeyMap, objPathValue, range } from '@genshin-optimizer/util'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -55,6 +57,7 @@ import { GraphContext } from '../../../../Context/GraphContext'
 import { OptimizationTargetContext } from '../../../../Context/OptimizationTargetContext'
 import { DatabaseContext } from '../../../../Database/Database'
 import { defThreads } from '../../../../Database/DataEntries/DisplayOptimizeEntry'
+import { maxBuildsToShowList } from '../../../../Database/DataManagers/BuildSettingData'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { optimize } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
@@ -62,9 +65,7 @@ import type { UIData } from '../../../../Formula/uiData'
 import useCharacterReducer from '../../../../ReactHooks/useCharacterReducer'
 import useCharSelectionCallback from '../../../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../../../ReactHooks/useDBMeta'
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
 import useGlobalError from '../../../../ReactHooks/useGlobalError'
-import useMediaQueryUp from '../../../../ReactHooks/useMediaQueryUp'
 import useTeamData, { getTeamData } from '../../../../ReactHooks/useTeamData'
 import type { OptProblemInput } from '../../../../Solver'
 import type { Build } from '../../../../Solver/common'
@@ -72,8 +73,6 @@ import { mergeBuilds, mergePlot } from '../../../../Solver/common'
 import { GOSolver } from '../../../../Solver/GOSolver/GOSolver'
 import type { ICachedArtifact } from '../../../../Types/artifact'
 import { bulkCatTotal } from '../../../../Util/totalUtils'
-import { objectKeyMap, objPathValue, range } from '../../../../Util/Util'
-import { maxBuildsToShowList } from './Build'
 import AllowChar from './Components/AllowChar'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
@@ -214,7 +213,7 @@ export default function TabBuild() {
 
   const filteredArtIdMap = useMemo(
     () =>
-      objectKeyMap(
+      objKeyMap(
         filteredArts.map(({ id }) => id),
         (_) => true
       ),
@@ -508,10 +507,10 @@ export default function TabBuild() {
         <Alert severity="warning" variant="filled">
           <Trans t={t} i18nKey="noArtis">
             Oops! It looks like you haven't added any artifacts to GO yet! You
-            should go to the{' '}
+            should go to the
             <Link component={RouterLink} to="/artifacts">
               Artifacts
-            </Link>{' '}
+            </Link>
             page and add some!
           </Trans>
         </Alert>

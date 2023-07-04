@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally } from '../../../Formula'
 import {
   equal,
@@ -21,14 +21,12 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'YunJin'
 const elementKey: ElementKey = 'geo'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -183,9 +181,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -313,12 +311,6 @@ const sheet: ICharacterSheet = {
                 node: nodeSkill,
               },
               {
-                node: nodeC2,
-              },
-              {
-                node: nodeC6,
-              },
-              {
                 text: ct.chg('burst.skillParams.2'),
                 value: dm.burst.duration,
                 unit: 's',
@@ -330,6 +322,20 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('constellation2', {
+        fields: [
+          {
+            node: nodeC2,
+          },
+        ],
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            node: nodeC6,
+          },
+        ],
       }),
       ct.condTem('constellation4', {
         // C4 conditional in teambuff panel if burst is enabled

@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -8,24 +7,24 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'FilletBlade'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const dmg_Src = [2.4, 2.8, 3.2, 3.6, 4]
-const cd_Src = [15, 14, 13, 12, 11]
+const dmg_Src = [-1, 2.4, 2.8, 3.2, 3.6, 4]
+const cd_Src = [-1, 15, 14, 13, 12, 11]
 const dmg_ = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmg_Src, { unit: '%' }),
+      subscript(input.weapon.refinement, dmg_Src, { unit: '%' }),
       input.premod.atk
     ),
     'elemental',
@@ -48,7 +47,7 @@ const sheet: IWeaponSheet = {
         },
         {
           text: stg('cd'),
-          value: (data) => cd_Src[data.get(input.weapon.refineIndex).value],
+          value: (data) => cd_Src[data.get(input.weapon.refinement).value],
           unit: 's',
         },
       ],

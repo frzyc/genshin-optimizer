@@ -1,4 +1,5 @@
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { weaponAsset } from '@genshin-optimizer/gi-assets'
+import { milestoneLevelsLow } from '@genshin-optimizer/gi-util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import {
   Box,
@@ -25,12 +26,11 @@ import { StarsDisplay } from '../Components/StarDisplay'
 import { DataContext } from '../Context/DataContext'
 import { getCharSheet } from '../Data/Characters'
 import type CharacterSheet from '../Data/Characters/CharacterSheet'
-import { milestoneLevelsLow } from '../Data/LevelData'
 import { getWeaponSheet } from '../Data/Weapons'
 import { DatabaseContext } from '../Database/Database'
 import { uiInput as input } from '../Formula'
 import { computeUIData, dataObjForWeapon } from '../Formula/api'
-import useBoolState from '../ReactHooks/useBoolState'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import useDBMeta from '../ReactHooks/useDBMeta'
 import useWeapon from '../ReactHooks/useWeapon'
 import type { LocationKey } from '../Types/consts'
@@ -206,7 +206,7 @@ export default function WeaponEditor({
                 <Typography gutterBottom>
                   {weaponSheet.passiveName &&
                     weaponSheet.passiveDescription(
-                      weaponUIData.get(input.weapon.refineIndex).value
+                      weaponUIData.get(input.weapon.refinement).value - 1
                     )}
                 </Typography>
                 <Box display="flex" flexDirection="column" gap={1}>

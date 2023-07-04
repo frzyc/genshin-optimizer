@@ -1,23 +1,18 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { equal, percent, subscript } from '../../../../Formula/utils'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'PrototypeCrescent'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const atk_s = [0.36, 0.45, 0.54, 0.63, 0.72]
+const atk_s = [-1, 0.36, 0.45, 0.54, 0.63, 0.72]
 const [condPassivePath, condPassive] = cond(key, 'Unreturning')
-const atk_ = equal(
-  condPassive,
-  'on',
-  subscript(input.weapon.refineIndex, atk_s)
-)
+const atk_ = equal(condPassive, 'on', subscript(input.weapon.refinement, atk_s))
 const moveSPD_ = equal(condPassive, 'on', percent(0.1))
 
 const data = dataObjForWeaponSheet(key, data_gen, {

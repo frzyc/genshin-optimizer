@@ -1,6 +1,8 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyValMap } from '@genshin-optimizer/util'
 import ColorText from '../../../Components/ColoredText'
-import { input, target } from '../../../Formula'
+import { input } from '../../../Formula'
 import type { Data, DisplaySub } from '../../../Formula/type'
 import {
   constant,
@@ -14,7 +16,6 @@ import {
 import KeyMap from '../../../KeyMap'
 import type { CharacterSheetKey } from '../../../Types/consts'
 import { absorbableEle } from '../../../Types/consts'
-import { objectKeyValueMap } from '../../../Util/Util'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { charTemplates } from '../charTemplates'
 import {
@@ -25,7 +26,6 @@ import {
 } from '../dataUtil'
 import type { TalentSheet } from '../ICharacterSheet'
 import Traveler from '../Traveler'
-import skillParam_gen from './skillParam_gen.json'
 
 export default function anemo(
   key: CharacterSheetKey,
@@ -35,8 +35,9 @@ export default function anemo(
   const elementKey: ElementKey = 'anemo'
   const condCharKey = 'TravelerAnemo'
   const [, ch] = trans('char', condCharKey)
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
 
+  const skillParam_gen = allStats.char.skillParam.TravelerAnemoF
   let s = 0,
     b = 0
   const dm = {
@@ -88,7 +89,7 @@ export default function anemo(
     6,
     equal(condC6, 'on', dm.constellation6.enemyRes_)
   )
-  const nodesC6 = objectKeyValueMap(absorbableEle, (ele) => [
+  const nodesC6 = objKeyValMap(absorbableEle, (ele) => [
     `${ele}_enemyRes_`,
     greaterEq(
       input.constellation,
@@ -351,28 +352,22 @@ export default function anemo(
               {
                 node: infoMut(nodeC6, KeyMap.info('anemo_enemyRes_')),
               },
+              {
+                text: stg('duration'),
+                value: 10,
+                unit: 's',
+              },
             ],
           },
         },
       }),
-      ct.headerTem('constellation6', {
-        // C6 elemental self-display
-        canShow: unequal(
-          condBurstAbsorption,
-          undefined,
-          equal(condC6, 'on', equal(target.charKey, key, 1))
-        ),
-        fields: absorbableEle.map((eleKey) => ({
-          node: nodesC6[`${eleKey}_enemyRes_`],
-        })),
-      }),
       ct.condTem('constellation6', {
-        // C6 elemental team-display
+        // C6 elemental
         value: condBurstAbsorption,
         path: condBurstAbsorptionPath,
         name: st('eleAbsor'),
         teamBuff: true,
-        canShow: equal(condC6, 'on', unequal(input.activeCharKey, key, 1)),
+        canShow: equal(condC6, 'on', 1),
         states: Object.fromEntries(
           absorbableEle.map((eleKey) => [
             eleKey,
@@ -383,6 +378,11 @@ export default function anemo(
               fields: [
                 {
                   node: nodesC6[`${eleKey}_enemyRes_`],
+                },
+                {
+                  text: stg('duration'),
+                  value: 10,
+                  unit: 's',
                 },
               ],
             },

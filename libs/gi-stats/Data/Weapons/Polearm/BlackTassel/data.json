@@ -1,0 +1,38 @@
+{
+  "weaponType": "polearm",
+  "rarity": 3,
+  "mainStat": {
+    "type": "atk",
+    "base": 37.6075,
+    "curve": "GROW_CURVE_ATTACK_104"
+  },
+  "subStat": {
+    "type": "hp_",
+    "base": 0.102133,
+    "curve": "GROW_CURVE_CRITICAL_101"
+  },
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 37.6075,
+      "curve": "GROW_CURVE_ATTACK_104"
+    },
+    {
+      "key": "hp_",
+      "base": 0.102133,
+      "curve": "GROW_CURVE_CRITICAL_101"
+    }
+  ],
+  "refinementBonus": {},
+  "ascensionBonus": {
+    "atk": [
+      0,
+      19.5,
+      38.9,
+      58.4,
+      77.8,
+      97.3,
+      116.7
+    ]
+  }
+}

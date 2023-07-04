@@ -1,19 +1,18 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'TheStringless'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const refinementVals = [0.24, 0.3, 0.36, 0.42, 0.48]
-const skill_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
-const burst_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
+const refinementVals = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
+const skill_dmg_ = subscript(input.weapon.refinement, refinementVals)
+const burst_dmg_ = subscript(input.weapon.refinement, refinementVals)
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -8,24 +7,24 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { range } from '../../../../Util/Util'
 import { cond, st, stg } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'KeyOfKhajNisut'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const selfEmSrc = [0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
-const teamEmSrc = [0.002, 0.0025, 0.003, 0.0035, 0.004]
+const selfEmSrc = [-1, 0.0012, 0.0015, 0.0018, 0.0021, 0.0024]
+const teamEmSrc = [-1, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 const stacksArr = range(1, 3)
-const hp_arr = [0.2, 0.25, 0.3, 0.35, 0.4]
+const hp_arr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const hp_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refineIndex, hp_arr, { unit: '%' })
+  subscript(input.weapon.refinement, hp_arr, { unit: '%' })
 )
 
 const [condAfterSkillStacksPath, condAfterSkillStacks] = cond(key, 'afterSkill')
@@ -39,7 +38,7 @@ const selfEleMas = equal(
         stack,
         prod(
           stack,
-          subscript(input.weapon.refineIndex, selfEmSrc, {
+          subscript(input.weapon.refinement, selfEmSrc, {
             unit: '%',
             fixed: 2,
           }),
@@ -57,7 +56,7 @@ const teamEleMas = equal(
     condAfterSkillStacks,
     '3',
     prod(
-      subscript(input.weapon.refineIndex, teamEmSrc, { unit: '%', fixed: 2 }),
+      subscript(input.weapon.refinement, teamEmSrc, { unit: '%', fixed: 2 }),
       input.total.hp
     )
   )

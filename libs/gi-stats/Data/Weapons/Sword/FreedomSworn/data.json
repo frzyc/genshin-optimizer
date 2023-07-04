@@ -1,0 +1,47 @@
+{
+  "weaponType": "sword",
+  "rarity": 5,
+  "mainStat": {
+    "type": "atk",
+    "base": 45.9364,
+    "curve": "GROW_CURVE_ATTACK_301"
+  },
+  "subStat": {
+    "type": "eleMas",
+    "base": 43.2,
+    "curve": "GROW_CURVE_CRITICAL_301"
+  },
+  "lvlCurves": [
+    {
+      "key": "atk",
+      "base": 45.9364,
+      "curve": "GROW_CURVE_ATTACK_301"
+    },
+    {
+      "key": "eleMas",
+      "base": 43.2,
+      "curve": "GROW_CURVE_CRITICAL_301"
+    }
+  ],
+  "refinementBonus": {
+    "dmg_": [
+      -1,
+      0.1,
+      0.125,
+      0.15,
+      0.175,
+      0.2
+    ]
+  },
+  "ascensionBonus": {
+    "atk": [
+      0,
+      31.1,
+      62.2,
+      93.4,
+      124.5,
+      155.6,
+      186.7
+    ]
+  }
+}

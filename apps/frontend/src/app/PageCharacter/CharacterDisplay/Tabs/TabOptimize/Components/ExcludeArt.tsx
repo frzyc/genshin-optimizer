@@ -1,3 +1,9 @@
+import {
+  useBoolState,
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/react-util'
+import { filterFunction } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -36,10 +42,6 @@ import {
   artifactFilterConfigs,
   initialFilterOption,
 } from '../../../../../PageArtifact/ArtifactSort'
-import useBoolState from '../../../../../ReactHooks/useBoolState'
-import useForceUpdate from '../../../../../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../../../../../ReactHooks/useMediaQueryUp'
-import { filterFunction } from '../../../../../Util/SortByFilters'
 import useBuildSetting from '../useBuildSetting'
 
 export default function ExcludeArt({
@@ -64,7 +66,7 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: [...artExclusion, id],
-        useExcludedArts: true,
+        useExcludedArts: false,
       })
     },
     [buildSettingDispatch, artExclusion]
@@ -73,7 +75,7 @@ export default function ExcludeArt({
     (id: string) => {
       buildSettingDispatch({
         artExclusion: artExclusion.filter((i) => i !== id),
-        useExcludedArts: true,
+        useExcludedArts: false,
       })
     },
     [buildSettingDispatch, artExclusion]
@@ -146,16 +148,25 @@ export default function ExcludeArt({
       <ButtonGroup sx={{ display: 'flex', width: '100%' }}>
         <Button
           onClick={toggleArtExclusion}
-          disabled={disabled}
+          disabled={disabled || !numExcludedArt}
           startIcon={
-            useExcludedArts ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
+            useExcludedArts ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />
           }
-          color={useExcludedArts ? 'success' : 'secondary'}
+          color={useExcludedArts ? 'secondary' : 'success'}
           sx={{ flexGrow: 1 }}
         >
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <Box>{t('excludeArt.button_text')}</Box>
-            <SqBadge sx={{ whiteSpace: 'normal' }}>
+            <Box>{t('excludeArt.button_txt')}</Box>
+            <SqBadge
+              sx={{ whiteSpace: 'normal' }}
+              color={
+                !numExcludedArt
+                  ? 'secondary'
+                  : useExcludedArts
+                  ? 'warning'
+                  : 'primary'
+              }
+            >
               {useExcludedArts ? (
                 <Trans t={t} i18nKey="excludeArt.usingNum">
                   Using {{ totalStr: excludedTotal } as TransObject} excluded

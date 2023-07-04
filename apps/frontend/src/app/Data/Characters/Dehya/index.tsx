@@ -1,5 +1,5 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   equal,
@@ -11,7 +11,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -22,14 +22,12 @@ import {
   splitScaleDmgNode,
 } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Dehya'
 const elementKey: ElementKey = 'pyro'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -135,7 +133,7 @@ const c6CritStacks_burst_critDMG_ = greaterEq(
   6,
   lookup(
     condC6CritStacks,
-    objectKeyMap(c6CritStacksArr, (stack) =>
+    objKeyMap(c6CritStacksArr, (stack) =>
       prod(stack, percent(dm.c6.burst_critDMG_))
     ),
     naught
@@ -229,9 +227,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -399,8 +397,12 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.heal, {
-              name: stg('healing'),
+              name: stg('hpRegenPerHit'),
             }),
+          },
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.c4.energyRestore,
           },
           {
             text: stg('cd'),
@@ -421,7 +423,7 @@ const sheet: ICharacterSheet = {
         path: condC6CritStacksPath,
         value: condC6CritStacks,
         name: ct.ch('critHitDuringBurst'),
-        states: objectKeyMap(c6CritStacksArr, (stack) => ({
+        states: objKeyMap(c6CritStacksArr, (stack) => ({
           name: st('hits', { count: stack }),
           fields: [
             {

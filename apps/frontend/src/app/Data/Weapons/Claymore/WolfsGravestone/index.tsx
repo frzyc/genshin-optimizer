@@ -1,25 +1,24 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'WolfsGravestone'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const atk_Src = [0.2, 0.25, 0.3, 0.35, 0.4]
-const atkTeam_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
+const atk_Src = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const atkTeam_Src = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 const [condPassivePath, condPassive] = cond(key, 'WolfishTracker')
-const atk_ = subscript(input.weapon.refineIndex, atk_Src)
+const atk_ = subscript(input.weapon.refinement, atk_Src)
 const atkTeam_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, atkTeam_Src, KeyMap.info('atk_'))
+  subscript(input.weapon.refinement, atkTeam_Src, KeyMap.info('atk_'))
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

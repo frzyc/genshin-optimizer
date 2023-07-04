@@ -1,8 +1,10 @@
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import type { CharacterKey, LocationCharacterKey } from '../../Types/consts'
-import { travelerKeys } from '../../Types/consts'
-import { deepFreeze } from '../../Util/Util'
+import type {
+  CharacterKey,
+  LocationCharacterKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
+import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/consts'
+import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -19,7 +21,8 @@ export class CharMetaDataManager extends DataManager<
   CharacterKey,
   'charMetas',
   ICharMeta,
-  ICharMeta
+  ICharMeta,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'charMetas')
@@ -44,7 +47,9 @@ export class CharMetaDataManager extends DataManager<
     return `${storageHash}${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
-    return travelerKeys.find((k) => this.keys.includes(k)) ?? travelerKeys[0]
+    return (
+      allTravelerKeys.find((k) => this.keys.includes(k)) ?? allTravelerKeys[0]
+    )
   }
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === 'Traveler' ? this.getTravelerCharacterKey() : key

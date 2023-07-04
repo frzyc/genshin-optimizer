@@ -1,13 +1,36 @@
+import type {
+  ArtifactSetKey,
+  LocationGenderedCharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
 import char from './Characters'
 import sheet from './sheet'
 export const mapHashData = {
   char,
-  charNames: {}, // will be populated from datamine parsing pipeline
-  weapon: {}, // will be populated from datamine parsing pipeline
-  weaponNames: {}, // will be populated from datamine parsing pipeline
-  artifact: {}, // will be populated from datamine parsing pipeline
-  artifactNames: {}, // will be populated from datamine parsing pipeline
-  material: {}, // will be populated from datamine parsing pipeline
+  charNames: {} as Record<LocationGenderedCharacterKey, number>, // will be populated from datamine parsing pipeline
+  weapon: {} as Record<
+    WeaponKey,
+    {
+      name: number
+      description: (string | number)[]
+      passiveName: number
+      passiveDescription: [number, string][] | number[]
+    }
+  >, // will be populated from datamine parsing pipeline
+  weaponNames: {} as Record<WeaponKey, number>, // will be populated from datamine parsing pipeline
+  artifact: {} as Record<
+    ArtifactSetKey,
+    {
+      setName: number
+      setEffects: Record<string, number>
+      pieces: Record<string, { name: number; desc: number }>
+    }
+  >, // will be populated from datamine parsing pipeline
+  artifactNames: {} as Record<ArtifactSetKey, number>, // will be populated from datamine parsing pipeline
+  material: {} as Record<
+    string,
+    { name: number; description: [number, string] }
+  >, // will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
     sword: 1338971918,
@@ -71,10 +94,12 @@ export const mapHashData = {
     cryo_dmg_: 4054347456,
     dendro_dmg_: 1824382851,
   },
-}
+} as const
 export function mapHashDataOverride() {
-  ;(mapHashData.charNames as { TravelerF: number }).TravelerF = 3241049361
-  ;(mapHashData.charNames as { TravelerM: number }).TravelerM = 2329553598
-  ;(mapHashData.char as any).TravelerF.name = 3241049361
-  ;(mapHashData.char as any).TravelerM.name = 2329553598
+  mapHashData.charNames.TravelerF = 3241049361
+  mapHashData.charNames.TravelerM = 2329553598
+  if (!mapHashData.char.TravelerF) mapHashData.char.TravelerF = {}
+  mapHashData.char.TravelerF['name'] = 3241049361
+  if (!mapHashData.char.TravelerM) mapHashData.char.TravelerM = {}
+  mapHashData.char.TravelerM['name'] = 2329553598
 }

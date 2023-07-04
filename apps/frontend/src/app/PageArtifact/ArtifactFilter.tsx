@@ -198,7 +198,7 @@ export function ArtifactRedButtons({ artifactIds }: { artifactIds: string[] }) {
       <Grid item xs={12} display="flex" justifyContent="space-around">
         <Typography variant="caption" color="text.secondary">
           <Trans t={t} i18nKey="buttonHint">
-            Note: the red buttons above only applies to{' '}
+            Note: the red buttons above only apply to
             <b>currently filtered artifacts</b>
           </Trans>
         </Typography>

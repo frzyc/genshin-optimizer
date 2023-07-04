@@ -1,7 +1,7 @@
 {
   "skill": {
     "unableToAuto": "Unable to use Charged or Plunging attacks",
-    "namisenStacks": "Namisen stacks",
+    "namisenStacks": "Namisen",
     "shun_dmgInc": "<hydro>Shunsuiken DMG Increase</hydro>"
   },
   "passive1": {
@@ -12,7 +12,7 @@
     "shun_dmg_": "<hydro>Shunsuiken DMG Bonus</hydro"
   },
   "c2": {
-    "addlStacks": "Max Namisen stack increase"
+    "addlStacks": "Max Namisen Stack Inc."
   },
   "c6": {
     "dmg": "Boundless Origin DMG"

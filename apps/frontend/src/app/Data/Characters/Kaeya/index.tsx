@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import { equal, greaterEq, infoMut, percent } from '../../../Formula/utils'
 import type {
@@ -17,15 +17,13 @@ import {
   shieldElement,
   shieldNode,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Kaeya'
 const elementKey: ElementKey = 'cryo'
 const region: RegionKey = 'mondstadt'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -148,9 +146,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -239,9 +237,15 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            canShow: (data) => data.get(input.constellation).value < 2,
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.duration,
             unit: 's',
+          },
+          {
+            canShow: (data) => data.get(input.constellation).value >= 2,
+            text: ct.chg('burst.skillParams.2'),
+            value: ct.ch('c2burstDuration'),
           },
           {
             text: ct.chg('burst.skillParams.1'),
@@ -252,10 +256,6 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.enerCost,
           },
-          {
-            canShow: (data) => data.get(input.constellation).value >= 2,
-            text: ct.ch('c2burstDuration'),
-          },
         ],
       },
     ]),
@@ -264,7 +264,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive1', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch('p1heal') }),
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
           },
         ],
       }),

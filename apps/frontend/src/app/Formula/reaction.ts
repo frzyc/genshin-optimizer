@@ -5,13 +5,14 @@ import {
   transformativeReactions,
 } from '../KeyMap/StatConstants'
 import { absorbableEle } from '../Types/consts'
-import { objectKeyMap } from '../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { infusionNode, input } from './index'
 import {
   constant,
   data,
   equal,
   frac,
+  greaterEq,
   infoMut,
   lookup,
   max,
@@ -48,7 +49,7 @@ const transMulti1 = subscript(
 )
 const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
 const trans = {
-  ...objectKeyMap(Object.keys(transformativeReactions), (reaction) => {
+  ...objKeyMap(Object.keys(transformativeReactions), (reaction) => {
     const { multi, resist, canCrit } = transformativeReactions[reaction]
     return infoMut(
       prod(
@@ -91,12 +92,13 @@ const trans = {
           },
           NaN
         ),
+        input.enemy.transDef,
         input.enemy[`${resist}_resMulti_`]
       ),
       KeyMap.info(`${reaction}_hit`)
     )
   }),
-  swirl: objectKeyMap(transformativeReactions.swirl.variants, (ele) => {
+  swirl: objKeyMap(transformativeReactions.swirl.variants, (ele) => {
     const base = prod(
       prod(
         constant(
@@ -137,11 +139,19 @@ const trans = {
 }
 const infusionReactions = {
   overloaded: infoMut(
-    equal(infusionNode, 'pyro', trans.overloaded),
+    greaterEq(
+      sum(equal(infusionNode, 'pyro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.overloaded
+    ),
     KeyMap.info('overloaded_hit')
   ),
   electrocharged: infoMut(
-    equal(infusionNode, 'hydro', trans.electrocharged),
+    greaterEq(
+      sum(equal(infusionNode, 'hydro', 1), equal(infusionNode, 'electro', 1)),
+      1,
+      trans.electrocharged
+    ),
     KeyMap.info('electrocharged_hit')
   ),
   superconduct: infoMut(
@@ -159,6 +169,10 @@ const infusionReactions = {
   burgeon: infoMut(
     equal(infusionNode, 'pyro', trans.burgeon),
     KeyMap.info('burgeon_hit')
+  ),
+  hyperbloom: infoMut(
+    equal(infusionNode, 'electro', trans.hyperbloom),
+    KeyMap.info('hyperbloom_hit')
   ),
 }
 export const reactions = {
@@ -194,6 +208,7 @@ export const reactions = {
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
   },
   electro: {
     overloaded: trans.overloaded,
@@ -213,6 +228,7 @@ export const reactions = {
     superconduct: infusionReactions.superconduct,
     burning: infusionReactions.burning,
     burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
   },
   pyro: {
     overloaded: trans.overloaded,
@@ -222,6 +238,7 @@ export const reactions = {
     electrocharged: infusionReactions.electrocharged,
     superconduct: infusionReactions.superconduct,
     bloom: infusionReactions.bloom,
+    hyperbloom: infusionReactions.hyperbloom,
   },
   cryo: {
     superconduct: trans.superconduct,
@@ -231,6 +248,7 @@ export const reactions = {
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
   },
   dendro: {
     shattered: trans.shattered,
@@ -240,5 +258,6 @@ export const reactions = {
     electrocharged: infusionReactions.electrocharged,
     superconduct: infusionReactions.superconduct,
     burgeon: infusionReactions.burgeon,
+    hyperbloom: infusionReactions.hyperbloom,
   },
 }

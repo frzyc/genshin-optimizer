@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   compareEq,
@@ -20,14 +20,12 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Aloy'
 const elementKey: ElementKey = 'cryo'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -99,13 +97,17 @@ const normal_dmg_ = lookup(
   },
   naught
 )
+
+const [condA1Path, condA1] = cond(key, 'A1')
 const atk_ = greaterEq(
   input.asc,
   1,
-  unequal(condCoil, undefined, percent(dm.passive1.atkInc))
+  equal(
+    condA1,
+    'on',
+    equal(input.activeCharKey, key, percent(dm.passive1.atkInc))
+  )
 )
-
-const [condA1Path, condA1] = cond(key, 'A1')
 const teamAtk_ = greaterEq(
   input.asc,
   1,
@@ -184,9 +186,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -280,30 +282,19 @@ const sheet: ICharacterSheet = {
         path: condCoilPath,
         name: ct.ch('skill.coil'),
         states: {
-          coil1: {
-            name: ct.ch('skill.coil1'),
-            fields: [
+          ...Object.fromEntries(
+            range(1, 3).map((i) => [
+              `coil${i}`,
               {
-                node: normal_dmg_,
+                name: st('stack', { count: i }),
+                fields: [
+                  {
+                    node: normal_dmg_,
+                  },
+                ],
               },
-            ],
-          },
-          coil2: {
-            name: ct.ch('skill.coil2'),
-            fields: [
-              {
-                node: normal_dmg_,
-              },
-            ],
-          },
-          coil3: {
-            name: ct.ch('skill.coil3'),
-            fields: [
-              {
-                node: normal_dmg_,
-              },
-            ],
-          },
+            ])
+          ),
           rush: {
             name: ct.ch('skill.rush'),
             fields: [
@@ -346,22 +337,9 @@ const sheet: ICharacterSheet = {
     ]),
 
     passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: atk_,
-          },
-          {
-            text: stg('duration'),
-            value: dm.passive1.duration,
-            unit: 's',
-          },
-        ],
-      }),
       ct.condTem('passive1', {
         value: condA1,
         path: condA1Path,
-        canShow: unequal(input.activeCharKey, key, 1),
         teamBuff: true,
         name: ct.ch('a1CondName'),
         states: {
@@ -369,6 +347,9 @@ const sheet: ICharacterSheet = {
             fields: [
               {
                 node: infoMut(teamAtk_, KeyMap.info('atk_')),
+              },
+              {
+                node: infoMut(atk_, KeyMap.info('atk_')),
               },
               {
                 text: stg('duration'),
@@ -390,7 +371,7 @@ const sheet: ICharacterSheet = {
           range(1, 10).map((i) => [
             i,
             {
-              name: st('stack', { count: i }),
+              name: st('seconds', { count: i }),
               fields: [{ node: cryo_dmg_ }],
             },
           ])

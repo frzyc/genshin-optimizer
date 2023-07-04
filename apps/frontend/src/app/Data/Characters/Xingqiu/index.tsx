@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula/index'
 import {
   compareEq,
@@ -20,13 +20,13 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customHealNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Xingqiu'
 const elementKey: ElementKey = 'hydro'
-const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let s = 0,
   b = 0
@@ -164,9 +164,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -278,6 +278,21 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            node: infoMut(dmgFormulas.burst.dmg, {
+              name: ct.chg(`burst.skillParams.0`),
+            }),
+          },
+          {
+            text: ct.chg('burst.skillParams.1'),
+            value: (data) =>
+              data.get(input.constellation).value >= 2
+                ? `${dm.burst.duration}s + ${
+                    dm.constellation2.burst_duration
+                  }s = ${dm.burst.duration + dm.constellation2.burst_duration}`
+                : `${dm.burst.duration}`,
+            unit: 's',
+          },
+          {
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.cd,
             unit: 's',
@@ -288,30 +303,13 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('burst', {
+      ct.condTem('constellation4', {
         value: condBurst,
         path: condBurstPath,
         name: ct.ch('burstCond'),
         states: {
           on: {
             fields: [
-              {
-                node: infoMut(dmgFormulas.burst.dmg, {
-                  name: ct.chg(`burst.skillParams.0`),
-                }),
-              },
-              {
-                text: ct.chg('burst.skillParams.1'),
-                value: (data) =>
-                  data.get(input.constellation).value >= 2
-                    ? `${dm.burst.duration}s + ${
-                        dm.constellation2.burst_duration
-                      }s = ${
-                        dm.burst.duration + dm.constellation2.burst_duration
-                      }`
-                    : `${dm.burst.duration}`,
-                unit: 's',
-              },
               {
                 node: nodeC4,
               },
@@ -326,7 +324,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive1.healing, {
-              name: stg(`healing`),
+              name: stg('healing'),
             }),
           },
         ],

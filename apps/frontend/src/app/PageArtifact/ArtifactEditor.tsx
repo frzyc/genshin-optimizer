@@ -1,6 +1,19 @@
-import type { ArtifactSetKey, ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { artifactAsset } from '@genshin-optimizer/g-assets'
+import type {
+  ArtifactRarity,
+  ArtifactSetKey,
+  ArtifactSlotKey,
+  MainStatKey,
+} from '@genshin-optimizer/consts'
+import {
+  allElementWithPhyKeys,
+  allSubstatKeys,
+  artSlotsData,
+} from '@genshin-optimizer/consts'
+import { artifactAsset } from '@genshin-optimizer/gi-assets'
+import type { IArtifact, ISubstat } from '@genshin-optimizer/gi-good'
+import { getMainStatDisplayStr } from '@genshin-optimizer/gi-util'
+import { useForceUpdate, usePromise } from '@genshin-optimizer/react-util'
+import { clamp } from '@genshin-optimizer/util'
 import {
   Add,
   ChevronRight,
@@ -58,20 +71,9 @@ import {
   cachedArtifact,
   validateArtifact,
 } from '../Database/DataManagers/ArtifactData'
-import KeyMap, { cacheValueString } from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import usePromise from '../ReactHooks/usePromise'
-import type {
-  IArtifact,
-  ICachedArtifact,
-  ISubstat,
-  MainStatKey,
-} from '../Types/artifact'
-import { allSubstatKeys } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
-import { randomizeArtifact } from '../Util/ArtifactUtil'
-import { clamp, deepClone } from '../Util/Util'
+import type { ICachedArtifact } from '../Types/artifact'
+import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import ArtifactCard from './ArtifactCard'
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard'
 import SubstatInput from './ArtifactEditor/Components/SubstatInput'
@@ -284,7 +286,7 @@ export default function ArtifactEditor({
       setShow(true)
       artifactDispatch({
         type: 'overwrite',
-        artifact: deepClone(databaseArtifact),
+        artifact: structuredClone(databaseArtifact),
       })
     }
   }, [artifactIdToEdit, database, dirtyDatabase])
@@ -327,7 +329,7 @@ export default function ArtifactEditor({
       if (newValue.slotKey)
         newValue.mainStatKey = pick(
           artifact?.mainStatKey,
-          Artifact.slotMainStats(newValue.slotKey)
+          artSlotsData[newValue.slotKey].stats
         )
 
       if (newValue.mainStatKey) {
@@ -541,7 +543,7 @@ export default function ArtifactEditor({
                     disabled={!sheet}
                     color={color}
                   >
-                    {Artifact.slotMainStats(slotKey).map((mainStatK) => (
+                    {artSlotsData[slotKey].stats.map((mainStatK) => (
                       <MenuItem
                         key={mainStatK}
                         selected={artifact?.mainStatKey === mainStatK}
@@ -555,14 +557,11 @@ export default function ArtifactEditor({
                   <CardLight sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                     <Typography color="text.secondary">
                       {artifact
-                        ? `${cacheValueString(
-                            Artifact.mainStatValue(
-                              artifact.mainStatKey,
-                              rarity,
-                              level
-                            ),
-                            KeyMap.unit(artifact.mainStatKey)
-                          )}${KeyMap.unit(artifact.mainStatKey)}`
+                        ? getMainStatDisplayStr(
+                            artifact.mainStatKey,
+                            rarity,
+                            level
+                          )
                         : t`mainStat`}
                     </Typography>
                   </CardLight>
@@ -644,7 +643,7 @@ export default function ArtifactEditor({
                               <Grid item flexGrow={1}>
                                 <Typography>
                                   <span>
-                                    Screenshots in file-queue:{' '}
+                                    Screenshots in file-queue:
                                     <b>{remaining}</b>
                                     {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
                                   </span>

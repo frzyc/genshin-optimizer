@@ -1,0 +1,42 @@
+{
+  "name": "gi-pipeline",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-pipeline/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/gi-pipeline",
+        "outputFileName": "src/index.js",
+        "main": "libs/gi-pipeline/src/index.ts",
+        "tsConfig": "libs/gi-pipeline/tsconfig.lib.json",
+        "assets": ["libs/gi-pipeline/*.md"]
+      }
+    },
+    "pipeline": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "gi-pipeline:build",
+        "watch": false,
+        "inspect": false
+      },
+      "inputs": ["default", "^production", "gi-stats"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/gi-pipeline/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "namedInputs": {
+    "gi-stats": [
+      "{workspaceRoot}/lib/gi-stats/Data/**/*.json",
+      "{workspaceRoot}/lib/gi-stats/src/allStat_gen.json"
+    ]
+  }
+}

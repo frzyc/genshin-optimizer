@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -8,24 +7,24 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'Frostbearer'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const dmgAoePerc = [0.8, 0.95, 1.1, 1.25, 1.4]
-const dmgCryoPerc = [2, 2.4, 2.8, 3.2, 3.6]
+const dmgAoePerc = [-1, 0.8, 0.95, 1.1, 1.25, 1.4]
+const dmgCryoPerc = [-1, 2, 2.4, 2.8, 3.2, 3.6]
 const dmgAoe = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgAoePerc, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgAoePerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',
@@ -39,7 +38,7 @@ const dmgOnCryoOp = equal(
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmgCryoPerc, { unit: '%' }),
+      subscript(input.weapon.refinement, dmgCryoPerc, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

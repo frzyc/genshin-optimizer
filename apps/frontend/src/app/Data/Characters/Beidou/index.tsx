@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -9,6 +9,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
+import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
@@ -22,13 +23,13 @@ import {
   shieldNode,
   shieldNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Beidou'
 const elementKey: ElementKey = 'electro'
-const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -87,11 +88,11 @@ const dm = {
   },
 } as const
 
-//Toggable stuff:
+//Toggleable stuff:
 // A4: Unleashing <b>Tidecaller</b> with its maximum DMG Bonus
-// C6: During the duration of <b>Stormbreaker</b>
+// Burst: During the duration of <b>Stormbreaker</b>
 
-const [condC6Path, condC6] = cond(key, 'Constellation6')
+const [condBurstPath, condBurst] = cond(key, 'burst')
 const [condA4Path, condA4] = cond(key, 'Ascension4')
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -104,10 +105,15 @@ const skillDmgTwoHits = dm.skill.dmgBase.map(
   (dmg, i) => dmg + 2 * dm.skill.onHitDmgBonus[i]
 )
 
+const nodeBurstDmgRed_ = equal(
+  condBurst,
+  'on',
+  subscript(input.total.burstIndex, dm.burst.damageReduction)
+)
 const nodeBurstElectroResRed_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', percent(dm.constellation6.electroResShred_))
+  equal(condBurst, 'on', percent(dm.constellation6.electroResShred_))
 )
 const nodeSkillNormalDmg_ = greaterEq(
   input.asc,
@@ -196,6 +202,7 @@ export const data = dataObjForCharacterSheet(
     teamBuff: {
       premod: {
         electro_enemyRes_: nodeBurstElectroResRed_,
+        dmgRed_: infoMut(nodeBurstDmgRed_, KeyMap.info('dmgRed_')),
       },
     },
   }
@@ -204,9 +211,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -353,12 +360,6 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(
-              subscript(input.total.burstIndex, dm.burst.damageReduction),
-              { name: ct.ch('burstDmgRed_'), unit: '%' }
-            ),
-          },
-          {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.duration,
             unit: 's',
@@ -374,20 +375,29 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('constellation6', {
+      ct.condTem('burst', {
         teamBuff: true,
-        value: condC6,
-        path: condC6Path,
+        value: condBurst,
+        path: condBurstPath,
         name: ct.ch('duringBurst'),
         states: {
           on: {
             fields: [
               {
-                node: nodeBurstElectroResRed_,
+                node: nodeBurstDmgRed_,
               },
             ],
           },
         },
+      }),
+      ct.headerTem('constellation6', {
+        teamBuff: true,
+        canShow: equal(condBurst, 'on', 1),
+        fields: [
+          {
+            node: nodeBurstElectroResRed_,
+          },
+        ],
       }),
     ]),
 

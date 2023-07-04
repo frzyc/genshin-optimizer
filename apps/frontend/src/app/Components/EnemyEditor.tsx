@@ -1,5 +1,6 @@
 import type { ElementWithPhyKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -23,7 +24,6 @@ import { uiInput as input } from '../Formula'
 import { nodeVStr } from '../Formula/uiData'
 import KeyMap from '../KeyMap'
 import { ElementIcon } from '../KeyMap/StatIcon'
-import { iconInlineProps } from '../SVGIcons'
 import CardLight from './Card/CardLight'
 import ColorText from './ColoredText'
 import ExpandButton from './ExpandButton'

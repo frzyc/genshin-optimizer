@@ -1,20 +1,20 @@
+import { objMap } from '@genshin-optimizer/util'
 import { Close, Difference } from '@mui/icons-material'
 import { Button, Skeleton, Tooltip, Typography } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CharacterContext } from '../../../../Context/CharacterContext'
 import {
   HitModeToggle,
   ReactionToggle,
 } from '../../../../Components/HitModeEditor'
 import ModalWrapper from '../../../../Components/ModalWrapper'
-import { DatabaseContext } from '../../../../Database/Database'
+import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
-import useBoolState from '../../../../ReactHooks/useBoolState'
+import { DatabaseContext } from '../../../../Database/Database'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import useTeamData from '../../../../ReactHooks/useTeamData'
-import { objectMap } from '../../../../Util/Util'
-import useBuildSetting from '../TabOptimize/useBuildSetting'
 import BuildDisplayItem from '../TabOptimize/Components/BuildDisplayItem'
+import useBuildSetting from '../TabOptimize/useBuildSetting'
 
 export default function CompareBuildButton({
   artId,
@@ -66,7 +66,7 @@ function CompareContent({
   const { data: oldData } = useContext(DataContext)
   const build = useMemo(() => {
     const newArt = database.arts.get(artId ?? '')
-    const artmap = objectMap(equippedArtifacts, (id, slot) =>
+    const artmap = objMap(equippedArtifacts, (id, slot) =>
       slot === newArt?.slotKey ? newArt : database.arts.get(id)
     )
     return Object.values(artmap).filter((a) => a)

@@ -4,7 +4,9 @@ import type {
   ElementKey,
 } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { characterAsset } from '@genshin-optimizer/g-assets'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
+import { range } from '@genshin-optimizer/util'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
   Box,
@@ -23,7 +25,6 @@ import type { dataContextObj } from '../../Context/DataContext'
 import { DataContext } from '../../Context/DataContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { ascensionMaxLevel } from '../../Data/LevelData'
 import { DatabaseContext } from '../../Database/Database'
 import { uiInput as input } from '../../Formula'
 import useCharacter from '../../ReactHooks/useCharacter'
@@ -33,9 +34,8 @@ import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import type { ICachedArtifact } from '../../Types/artifact'
 import type { ICachedCharacter } from '../../Types/character'
-import { iconAsset } from '../../Util/AssetUtil'
 import type { RollColorKey } from '../../Types/consts'
-import { range } from '../../Util/Util'
+import { iconAsset } from '../../Util/AssetUtil'
 import ArtifactCardPico from '../Artifact/ArtifactCardPico'
 import CardLight from '../Card/CardLight'
 import ColorText from '../ColoredText'
@@ -300,13 +300,14 @@ function Header({
     ),
     [onClick, characterKey]
   )
+  const banner = characterAsset(characterKey, 'banner', gender)
   if (!characterSheet) return null
   return (
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <Box
         display="flex"
         position="relative"
-        className={`grad-${characterSheet.rarity}star`}
+        className={!banner ? `grad-${characterSheet.rarity}star` : undefined}
         sx={{
           '&::before': {
             content: '""',
@@ -316,12 +317,8 @@ function Header({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.5,
-            backgroundImage: `url(${characterAsset(
-              characterKey,
-              'banner',
-              gender
-            )})`,
+            opacity: 0.7,
+            backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           },
@@ -460,7 +457,7 @@ function Artifacts() {
     () =>
       allArtifactSlotKeys.map((k) => [
         k,
-        database.arts.get(data.get(input.art[k].id).value ?? ''),
+        database.arts.get(data.get(input.art[k].id).value?.toString() ?? ''),
       ]),
     [data, database]
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>

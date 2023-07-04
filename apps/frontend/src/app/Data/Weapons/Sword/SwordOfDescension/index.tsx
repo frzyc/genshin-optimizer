@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { allTravelerKeys } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -11,20 +11,19 @@ import {
   percent,
   prod,
 } from '../../../../Formula/utils'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'SwordOfDescension'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const atk = lookup(
   input.charKey,
-  objectKeyMap(allTravelerKeys, (_) => constant(66)),
+  objKeyMap(allTravelerKeys, (_) => constant(66)),
   naught
 )
 const dmg_ = equal(

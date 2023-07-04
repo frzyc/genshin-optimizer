@@ -1,3 +1,5 @@
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { MINUTE_MS, timeString } from '@genshin-optimizer/util'
 import {
   Button,
   ButtonGroup,
@@ -8,13 +10,11 @@ import {
   Typography,
 } from '@mui/material'
 import { useContext, useEffect, useRef, useState } from 'react'
-import Assets from '../Assets/Assets'
 import CardDark from '../Components/Card/CardDark'
 import ImgIcon from '../Components/Image/ImgIcon'
 import { DatabaseContext } from '../Database/Database'
-import { MINUTE_MS, timeString } from '../Util/TimeUtil'
+import { RESIN_MAX } from '../Database/DataEntries/DisplayTool'
 
-export const RESIN_MAX = 160
 export const RESIN_RECH_MS = 8 * MINUTE_MS
 
 export default function ResinCounter() {
@@ -79,7 +79,7 @@ export default function ResinCounter() {
     <CardDark>
       <Grid container sx={{ px: 2, py: 1 }} spacing={2}>
         <Grid item>
-          <ImgIcon src={Assets.resin.fragile} size={2} />
+          <ImgIcon src={imgAssets.resin.fragile} size={2} />
         </Grid>
         <Grid item>
           <Typography variant="h6">Resin Counter</Typography>
@@ -90,7 +90,7 @@ export default function ResinCounter() {
         <Grid container spacing={2}>
           <Grid item>
             <Typography variant="h2">
-              <ImgIcon src={Assets.resin.fragile} />
+              <ImgIcon src={imgAssets.resin.fragile} />
               <InputBase
                 type="number"
                 sx={{ width: '2em', fontSize: '4rem' }}

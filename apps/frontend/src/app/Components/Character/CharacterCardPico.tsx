@@ -1,13 +1,13 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
 import { Suspense, useCallback, useContext, useEffect, useState } from 'react'
-import Assets from '../../Assets/Assets'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
-import { ascensionMaxLevel } from '../../Data/LevelData'
 import { ElementIcon } from '../../KeyMap/StatIcon'
 import useCharacter from '../../ReactHooks/useCharacter'
 import useCharMeta from '../../ReactHooks/useCharMeta'
@@ -212,7 +212,7 @@ export function BlankCharacterCardPico({ index }: { index: number }) {
     >
       <Box
         component="img"
-        src={Assets.team[`team${index + 2}`]}
+        src={imgAssets.team[`team${index + 2}`]}
         sx={{ width: '75%', height: 'auto', opacity: 0.7 }}
       />
     </CardDark>
