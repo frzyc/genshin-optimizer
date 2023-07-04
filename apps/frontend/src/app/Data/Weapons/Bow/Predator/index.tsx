@@ -1,16 +1,15 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, lookup, naught, percent, prod } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'Predator'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const normalInc = percent(0.1)
 const chargedInc = percent(0.1)
@@ -18,14 +17,14 @@ const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const normal_dmg_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 2), (i) => prod(normalInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(normalInc, i)),
   },
   naught
 )
 const charged_dmg_ = lookup(
   condPassive,
   {
-    ...objectKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
   },
   naught
 )

@@ -1,28 +1,7 @@
-export function crawlObject(
-  obj: any,
-  keys: string[] = [],
-  validate: (o: any, keys: string[]) => boolean,
-  cb: (o: any, keys: string[]) => void
-) {
-  if (validate(obj, keys)) cb(obj, keys)
-  else
-    obj &&
-      typeof obj === 'object' &&
-      Object.entries(obj).forEach(([key, val]) =>
-        crawlObject(val, [...keys, key], validate, cb)
-      )
+export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
+  return typeof value === 'function' ? (value as any)(arg) : value
 }
 
-//assign obj.[keys...] = value
-export function layeredAssignment<T>(
-  obj: any,
-  keys: Array<number | string>,
-  value: T
-) {
-  keys.reduce((accu, key, i, arr) => {
-    if (i === arr.length - 1) return (accu[key] = value)
-    if (!accu[key]) accu[key] = {}
-    return accu[key]
-  }, obj)
-  return obj
+export function assertUnreachable(value: never): never {
+  throw new Error(`Should not reach this with value ${value}`)
 }

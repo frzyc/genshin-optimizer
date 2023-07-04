@@ -1,3 +1,4 @@
+import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
 import { KeyboardArrowUp } from '@mui/icons-material'
 import {
   Box,
@@ -17,7 +18,6 @@ import { HashRouter, Route, Routes, useMatch } from 'react-router-dom'
 import './App.scss'
 import { SillyContext, useSilly } from './Context/SillyContext'
 import { ArtCharDatabase, DatabaseContext } from './Database/Database'
-import { DBLocalStorage, SandboxStorage } from './Database/DBStorage'
 import ErrorBoundary from './ErrorBoundary'
 import Footer from './Footer'
 import Header from './Header'

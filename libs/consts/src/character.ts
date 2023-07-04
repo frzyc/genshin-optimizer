@@ -40,12 +40,34 @@ export const allMoveKeys = [
 ] as const
 export type MoveKey = (typeof allMoveKeys)[number]
 
+export const characterSpecializedStatKeys = [
+  'hp_',
+  'atk_',
+  'def_',
+  'eleMas',
+  'enerRech_',
+  'heal_',
+  'critRate_',
+  'critDMG_',
+  'physical_dmg_',
+  'anemo_dmg_',
+  'geo_dmg_',
+  'electro_dmg_',
+  'hydro_dmg_',
+  'pyro_dmg_',
+  'cryo_dmg_',
+  'dendro_dmg_',
+] as const
+export type CharacterSpecializedStatKey =
+  (typeof characterSpecializedStatKeys)[number]
+
 export const nonTravelerCharacterKeys = [
   'Albedo',
   'Alhaitham',
   'Aloy',
   'Amber',
   'AratakiItto',
+  'Baizhu',
   'Barbara',
   'Beidou',
   'Bennett',
@@ -68,7 +90,9 @@ export const nonTravelerCharacterKeys = [
   'Kaeya',
   'KamisatoAyaka',
   'KamisatoAyato',
+  'Kaveh',
   'Keqing',
+  'Kirara',
   'Klee',
   'KujouSara',
   'KukiShinobu',
@@ -107,6 +131,10 @@ export const nonTravelerCharacterKeys = [
   'YunJin',
   'Zhongli',
 ] as const
+export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
+
+export const travelerElements = ['anemo', 'geo', 'electro', 'dendro'] as const
+export type TravelerElementKey = (typeof travelerElements)[number]
 
 export const allTravelerKeys = [
   'TravelerAnemo',
@@ -115,6 +143,13 @@ export const allTravelerKeys = [
   'TravelerDendro',
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
+
+export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
+  anemo: 'TravelerAnemo',
+  geo: 'TravelerGeo',
+  electro: 'TravelerElectro',
+  dendro: 'TravelerDendro',
+} as const
 
 export const locationGenderedCharacterKeys = [
   ...nonTravelerCharacterKeys,
@@ -152,4 +187,18 @@ export function charKeyToLocCharKey(
 ): LocationCharacterKey {
   if (allTravelerKeys.includes(charKey as TravelerKey)) return 'Traveler'
   return charKey as LocationCharacterKey
+}
+
+export function locCharKeyToCharKey(
+  locKey: LocationCharacterKey,
+  travelerEle: ElementKey = 'anemo'
+): CharacterKey {
+  if (locKey === 'Traveler') return travelerEleMap[travelerEle] as CharacterKey
+  return locKey as CharacterKey
+}
+
+export function travelerElement(element: TravelerElementKey): TravelerKey {
+  return ('Traveler' +
+    element.toUpperCase().slice(0, 1) +
+    element.slice(1)) as TravelerKey
 }

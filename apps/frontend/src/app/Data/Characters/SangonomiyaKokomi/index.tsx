@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -21,13 +21,12 @@ import {
   dmgNode,
   healNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'SangonomiyaKokomi'
 const elementKey: ElementKey = 'hydro'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -221,9 +220,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -315,6 +314,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.heal, {
+              name: ct.chg(`burst.skillParams.4`),
+              variant: 'heal',
+            }),
+          },
+          {
             text: ct.chg('burst.skillParams.6'),
             value: dm.burst.cd,
             unit: 's',
@@ -342,18 +347,34 @@ const sheet: ICharacterSheet = {
                 node: burstSkillDmgInc,
               },
               {
-                node: infoMut(dmgFormulas.burst.heal, {
-                  name: ct.chg(`burst.skillParams.4`),
-                  variant: 'heal',
-                }),
-              },
-              {
                 text: ct.chg('burst.skillParams.5'),
                 value: dm.burst.duration,
                 unit: 's',
               },
             ],
           },
+        },
+      }),
+      ct.headerTem('constellation4', {
+        canShow: equal(condBurst, 'on', 1),
+        fields: [
+          {
+            node: c4AtkSpd_,
+          },
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.c4.energy,
+            fixed: 1,
+          },
+        ],
+      }),
+      ct.condTem('constellation6', {
+        canShow: equal(condBurst, 'on', 1),
+        path: condC6Path,
+        value: condC6,
+        name: ct.ch('c6'),
+        states: {
+          on: { fields: [{ node: c6Hydro_ }] },
         },
       }),
     ]),
@@ -404,22 +425,11 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      { fields: [{ node: c4AtkSpd_ }] },
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),
-    constellation6: ct.talentTem('constellation6', [
-      ct.condTem('constellation6', {
-        path: condC6Path,
-        value: condC6,
-        name: ct.ch('c6'),
-        states: {
-          on: { fields: [{ node: c6Hydro_ }] },
-        },
-      }),
-    ]),
+    constellation6: ct.talentTem('constellation6'),
   },
 }
 export default new CharacterSheet(sheet, data)

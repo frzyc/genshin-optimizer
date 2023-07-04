@@ -1,6 +1,9 @@
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
+import type { DBStorage } from '@genshin-optimizer/database'
+import { Database, SandboxStorage } from '@genshin-optimizer/database'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
 import { createContext } from 'react'
 import type { TeamData } from '../Context/DataContext'
-import type { CharacterKey, Gender } from '../Types/consts'
 import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayArtifactEntry } from './DataEntries/DisplayArtifactEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
@@ -14,14 +17,10 @@ import { CharacterDataManager } from './DataManagers/CharacterData'
 import { CharacterTCDataManager } from './DataManagers/CharacterTCData'
 import { CharMetaDataManager } from './DataManagers/CharMetaData'
 import { WeaponDataManager } from './DataManagers/WeaponData'
-import type { DBStorage } from './DBStorage'
-import { SandboxStorage } from './DBStorage'
-import type { IGO, IGOOD, ImportResult } from './exim'
+import type { IGO, ImportResult } from './exim'
 import { GOSource, newImportResult } from './exim'
 import { currentDBVersion, migrate, migrateGOOD } from './migrate'
-
-export class ArtCharDatabase {
-  storage: DBStorage
+export class ArtCharDatabase extends Database {
   arts: ArtifactDataManager
   chars: CharacterDataManager
   charTCs: CharacterTCDataManager
@@ -41,8 +40,7 @@ export class ArtCharDatabase {
   dbVer: number
 
   constructor(dbIndex: 1 | 2 | 3 | 4, storage: DBStorage) {
-    this.storage = storage
-
+    super(storage)
     migrate(storage)
     // Transfer non DataManager/DataEntry data from storage
     this.dbIndex = dbIndex
@@ -130,7 +128,7 @@ export class ArtCharDatabase {
     this.dataEntries.map((de) => de.clear())
   }
   get gender() {
-    const gender: Gender = this.dbMeta.get().gender ?? 'F'
+    const gender: GenderKey = this.dbMeta.get().gender ?? 'F'
     return gender
   }
   exportGOOD() {

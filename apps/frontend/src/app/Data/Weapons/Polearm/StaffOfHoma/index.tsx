@@ -1,24 +1,23 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, infoMut, prod, subscript, sum } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'StaffOfHoma'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const hpInc = [0.2, 0.25, 0.3, 0.35, 0.4]
-const atkInc = [0.008, 0.01, 0.012, 0.014, 0.016]
-const lowHpAtkInc = [0.01, 0.012, 0.014, 0.016, 0.018]
-const hp_ = subscript(input.weapon.refineIndex, hpInc, { unit: '%' })
+const hpInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const atkInc = [-1, 0.008, 0.01, 0.012, 0.014, 0.016]
+const lowHpAtkInc = [-1, 0.01, 0.012, 0.014, 0.016, 0.018]
+const hp_ = subscript(input.weapon.refinement, hpInc, { unit: '%' })
 const [condPassivePath, condPassive] = cond(key, 'RecklessCinnabar')
 const atk1 = prod(
-  subscript(input.weapon.refineIndex, atkInc, { unit: '%' }),
+  subscript(input.weapon.refinement, atkInc, { unit: '%' }),
   input.premod.hp
 )
 const atk2 = equal(
@@ -28,7 +27,7 @@ const atk2 = equal(
     'on',
     condPassive,
     prod(
-      subscript(input.weapon.refineIndex, lowHpAtkInc, { unit: '%' }),
+      subscript(input.weapon.refinement, lowHpAtkInc, { unit: '%' }),
       input.premod.hp
     ),
     KeyMap.info('atk')

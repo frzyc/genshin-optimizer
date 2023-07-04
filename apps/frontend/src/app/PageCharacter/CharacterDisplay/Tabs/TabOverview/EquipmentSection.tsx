@@ -1,5 +1,11 @@
 import type { ArtifactSlotKey, WeaponTypeKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+  charKeyToLocCharKey,
+} from '@genshin-optimizer/consts'
+import { useBoolState } from '@genshin-optimizer/react-util'
+import { iconInlineProps } from '@genshin-optimizer/svgicons'
 import { Settings, SwapHoriz } from '@mui/icons-material'
 import {
   Box,
@@ -45,11 +51,7 @@ import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
-import useBoolState from '../../../../ReactHooks/useBoolState'
 import useCharMeta from '../../../../ReactHooks/useCharMeta'
-import { iconInlineProps } from '../../../../SVGIcons'
-import { allSubstatKeys } from '../../../../Types/artifact'
-import { charKeyToLocCharKey } from '../../../../Types/consts'
 import type { IFieldDisplay } from '../../../../Types/fieldDisplay'
 import ArtifactSwapModal from './ArtifactSwapModal'
 import WeaponSwapModal from './WeaponSwapModal'
@@ -149,7 +151,7 @@ export default function EquipmentSection() {
             <Grid item xs={12} sm={6} md={4} key={slotKey}>
               {data.get(input.art[slotKey].id).value ? (
                 <ArtifactCard
-                  artifactId={data.get(input.art[slotKey].id).value}
+                  artifactId={data.get(input.art[slotKey].id).value?.toString()}
                   effFilter={deferredRvSet}
                   extraButtons={<ArtifactSwapButton slotKey={slotKey} />}
                   editorProps={{}}

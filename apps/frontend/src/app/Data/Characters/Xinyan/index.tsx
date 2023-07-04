@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, target } from '../../../Formula'
 import {
   constant,
@@ -10,7 +10,6 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -21,14 +20,12 @@ import {
   shieldElement,
   shieldNodeTalent,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Xinyan'
 const elementKey: ElementKey = 'pyro'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -100,8 +97,6 @@ const dm = {
     charged_atkBonus: skillParam_gen.constellation6[1],
   },
 } as const
-
-const [condSkillHitNumPath, condSkillHitNum] = cond(key, 'skillHitNum')
 
 const [condP2ShieldPath, condP2Shield] = cond(key, 'p2Shield')
 const p2Shield_physical_dmg_Disp = greaterEq(
@@ -224,9 +219,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -317,57 +312,53 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.skill['normShield1'], {
+              name: ct.chg('skill.skillParams.1'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill['pyroShield1'], {
+              name: ct.ch('skill.pyroShield.1'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill['normShield2'], {
+              name: ct.chg('skill.skillParams.2'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill['pyroShield2'], {
+              name: ct.ch('skill.pyroShield.2'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill['normShield3'], {
+              name: ct.chg('skill.skillParams.3'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill['pyroShield3'], {
+              name: ct.ch('skill.pyroShield.3'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.skill.lvl3Dmg, {
+              name: ct.chg(`skill.skillParams.4`),
+            }),
+          },
+          {
+            text: ct.chg('skill.skillParams.5'),
+            value: dm.skill.duration,
+            unit: 's',
+          },
+          {
             text: stg('cd'),
             value: dm.skill.cd,
             unit: 's',
           },
         ],
       },
-      ct.condTem('skill', {
-        value: condSkillHitNum,
-        path: condSkillHitNumPath,
-        name: ct.ch('skill.shieldLevel'),
-        states: Object.fromEntries(
-          range(1, 3).map((lvl) => [
-            // For each level
-            lvl,
-            {
-              name: ct.ch(`skill.shieldLevels.${lvl}`),
-              fields: [
-                ...(['norm', 'pyro'] as const).flatMap((type) => [
-                  {
-                    // For each type of shield
-                    node: infoMut(
-                      dmgFormulas.skill[`${type}Shield${lvl}`], // Make the node
-                      {
-                        name:
-                          type === 'norm' // And change the key to match
-                            ? ct.chg(`skill.skillParams.${lvl}`)
-                            : ct.ch(`skill.pyroShield.${lvl}`),
-                      }
-                    ),
-                  },
-                ]),
-                {
-                  text: stg('duration'),
-                  value: dm.skill.duration,
-                  unit: 's',
-                },
-                // Level 3 damage
-                ...(lvl === 3
-                  ? [
-                      {
-                        node: infoMut(dmgFormulas.skill.lvl3Dmg, {
-                          name: ct.chg(`skill.skillParams.4`),
-                        }),
-                      },
-                    ]
-                  : []),
-              ],
-            },
-          ])
-        ),
-      }),
+
       ct.headerTem('passive1', {
         fields: [
           {

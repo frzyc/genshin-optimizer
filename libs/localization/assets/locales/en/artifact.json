@@ -95,6 +95,8 @@
   "sub_one": "{{count}} sub",
   "sub_other": "{{count}} subs",
   "addNew": "Add New Artifact",
+  "showDup": "Show Duplicates",
+  "noDupAlert": "There are no duplicate artifacts in your inventory.",
   "cantDeleteLock": "Cannot delete artifact because it is locked",
   "equippedArt": "All Equipped Artifacts",
   "artInInv": "All Unequipped Artifacts",

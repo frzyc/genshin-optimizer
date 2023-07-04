@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   equal,
@@ -8,30 +7,30 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'PrimordialJadeWingedSpear'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const [condStackPath, condStack] = cond(key, 'stack')
-const atkInc = [0.032, 0.039, 0.046, 0.053, 0.06]
-const allDmgInc = [0.12, 0.15, 0.18, 0.21, 0.24]
+const atkInc = [-1, 0.032, 0.039, 0.046, 0.053, 0.06]
+const allDmgInc = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = lookup(
   condStack,
-  objectKeyMap(range(1, 7), (i) =>
-    prod(subscript(input.weapon.refineIndex, atkInc, { unit: '%' }), i)
+  objKeyMap(range(1, 7), (i) =>
+    prod(subscript(input.weapon.refinement, atkInc, { unit: '%' }), i)
   ),
   naught
 )
 const all_dmg_ = equal(
   condStack,
   '7',
-  subscript(input.weapon.refineIndex, allDmgInc, { unit: '%' })
+  subscript(input.weapon.refinement, allDmgInc, { unit: '%' })
 )
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

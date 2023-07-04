@@ -3,7 +3,6 @@ import {
   allArtifactSlotKeys,
   allCharacterKeys,
 } from '@genshin-optimizer/consts'
-import { deepFreeze } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -16,7 +15,8 @@ export class BuildResultDataManager extends DataManager<
   CharacterKey,
   'buildResults',
   IBuildResult,
-  IBuildResult
+  IBuildResult,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'buildResults')
@@ -65,7 +65,7 @@ export class BuildResultDataManager extends DataManager<
   }
 }
 
-const initialBuildResult: IBuildResult = deepFreeze({
+const initialBuildResult: IBuildResult = structuredClone({
   builds: [],
   buildDate: 0,
 })

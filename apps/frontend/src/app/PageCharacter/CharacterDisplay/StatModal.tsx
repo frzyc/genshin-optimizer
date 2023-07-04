@@ -79,10 +79,10 @@ function BonusStatsEditor() {
               <Trans i18nKey={'addStats.info'} t={t}>
                 You can use these fields to add buffs/debuffs not directly
                 supported in GO, such as food buffs, abyss cards, or
-                Superconduct. Please refer to the{' '}
+                Superconduct. Please refer to the
                 <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki">
-                  Genshin Impact wiki
-                </a>{' '}
+                  Genshin Impact Wiki
+                </a>
                 for specific values.
               </Trans>
             </Alert>

@@ -1,22 +1,21 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'HarbingerOfDawn'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'SkyPiercingMight')
-const critRateSrc_ = [0.14, 0.175, 0.21, 0.245, 0.28]
+const critRateSrc_ = [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
 const critRate_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, critRateSrc_)
+  subscript(input.weapon.refinement, critRateSrc_)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

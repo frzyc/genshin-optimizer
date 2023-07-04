@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -9,18 +8,18 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'SkywardBlade'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
 const [condPassivePath, condPassive] = cond(key, 'SkyPiercingMight')
-const atkSrc_ = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkSrc_ = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const moveSPD_ = equal('on', condPassive, percent(0.1))
 const atkSPD_ = equal('on', condPassive, percent(0.1))
 const dmg = equal(
@@ -31,7 +30,7 @@ const dmg = equal(
     condPassive,
     customDmgNode(
       prod(
-        subscript(input.weapon.refineIndex, atkSrc_, { unit: '%' }),
+        subscript(input.weapon.refinement, atkSrc_, { unit: '%' }),
         input.premod.atk
       ),
       'elemental',
@@ -42,8 +41,8 @@ const dmg = equal(
   )
 )
 const critRate_ = subscript(
-  input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.critRate_ ?? NaN)
+  input.weapon.refinement,
+  data_gen.refinementBonus['critRate_']
 )
 
 const data = dataObjForWeaponSheet(

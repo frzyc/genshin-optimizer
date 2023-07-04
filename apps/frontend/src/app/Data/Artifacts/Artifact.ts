@@ -1,21 +1,15 @@
 import type {
   ArtifactSetKey,
-  RarityKey,
   ArtifactSlotKey,
-} from '@genshin-optimizer/consts'
-import { allRarityKeys, allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import KeyMap, { cacheValueString } from '../../KeyMap'
-import type {
-  ICachedArtifact,
   MainStatKey,
+  RarityKey,
   SubstatKey,
-} from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import type { ArtifactRarity, RollColorKey } from '../../Types/consts'
-import { clampPercent, objectKeyMap } from '../../Util/Util'
-import ArtifactMainStatsData from './artifact_main_gen.json'
-import ArtifactSubstatsData from './artifact_sub_gen.json'
-import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json'
+} from '@genshin-optimizer/consts'
+import { allRarityKeys, allSubstatKeys } from '@genshin-optimizer/consts'
+import { getRollsRemaining, getSubstatValue } from '@genshin-optimizer/gi-util'
+import { objKeyMap } from '@genshin-optimizer/util'
+import type { ICachedArtifact } from '../../Types/artifact'
+import type { RollColorKey } from '../../Types/consts'
 
 const maxStar: RarityKey = 5
 
@@ -26,80 +20,6 @@ export function artStatPercent(statkey: MainStatKey | SubstatKey) {
     : ''
 }
 
-export function artifactSubRange(rarity: ArtifactRarity, key: SubstatKey) {
-  const values = Object.keys(ArtifactSubstatLookupTable[rarity][key])
-  const low = parseFloat(values[0])
-  const high = parseFloat(values[values.length - 1])
-  return { low, high }
-}
-export function artifactSubRolls(rarity: ArtifactRarity, key: SubstatKey) {
-  return Object.keys(ArtifactSubstatLookupTable[rarity][key]).map((v) =>
-    parseFloat(v)
-  )
-}
-
-export const maxArtifactLevel = {
-  1: 4,
-  2: 4,
-  3: 12,
-  4: 16,
-  5: 20,
-} as const
-
-const ArtifactSubstatRollData: StrictDict<
-  RarityKey,
-  { low: number; high: number; numUpgrades: number }
-> = {
-  1: { low: 0, high: 0, numUpgrades: 1 },
-  2: { low: 0, high: 1, numUpgrades: 2 },
-  3: { low: 1, high: 2, numUpgrades: 3 },
-  4: { low: 2, high: 3, numUpgrades: 4 },
-  5: { low: 3, high: 4, numUpgrades: 5 },
-}
-export const artifactSandsStatKeys = [
-  'hp_',
-  'def_',
-  'atk_',
-  'eleMas',
-  'enerRech_',
-] as const
-export type ArtifactSandsStatKey = (typeof artifactSandsStatKeys)[number]
-
-export const artifactGobletStatKeys = [
-  'hp_',
-  'def_',
-  'atk_',
-  'eleMas',
-  'physical_dmg_',
-  'anemo_dmg_',
-  'geo_dmg_',
-  'electro_dmg_',
-  'hydro_dmg_',
-  'pyro_dmg_',
-  'cryo_dmg_',
-  'dendro_dmg_',
-] as const
-export type ArtifactGobletStatKey = (typeof artifactGobletStatKeys)[number]
-
-export const artifactCircletStatKeys = [
-  'hp_',
-  'def_',
-  'atk_',
-  'eleMas',
-  'critRate_',
-  'critDMG_',
-  'heal_',
-] as const
-export type ArtifactCircletStatKey = (typeof artifactCircletStatKeys)[number]
-
-const ArtifactSlotsData = {
-  flower: { name: 'Flower of Life', stats: ['hp'] },
-  plume: { name: 'Plume of Death', stats: ['atk'] },
-  sands: { name: 'Sands of Eon', stats: artifactSandsStatKeys },
-  goblet: { name: 'Goblet of Eonothem', stats: artifactGobletStatKeys },
-  circlet: { name: 'Circlet of Logos', stats: artifactCircletStatKeys },
-} as const
-
 export default class Artifact {
   //do not instantiate.
   constructor() {
@@ -107,99 +27,17 @@ export default class Artifact {
       throw Error('A static class cannot be instantiated.')
   }
 
-  //SLOT
-  static slotName = (slotKey: ArtifactSlotKey): string =>
-    ArtifactSlotsData[slotKey].name
-  static slotMainStats = (slotKey: ArtifactSlotKey): readonly MainStatKey[] =>
-    ArtifactSlotsData[slotKey].stats
-
-  static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]) =>
-    objectKeyMap(allArtifactSlotKeys, (slotKey) =>
-      databaseObj.filter((art) => art.slotKey === slotKey)
-    )
-
-  //MAIN STATS
-  static mainStatValues = (
-    numStar: RarityKey,
-    statKey: MainStatKey
-  ): readonly number[] => {
-    if (statKey.endsWith('_'))
-      // TODO: % CONVERSION
-      return ArtifactMainStatsData[numStar][statKey].map((k) => k * 100)
-    return ArtifactMainStatsData[numStar][statKey]
-  }
-  static mainStatValue = (
-    key: MainStatKey,
-    rarity: RarityKey,
-    level: number
-  ): number => Artifact.mainStatValues(rarity, key)[level]
-
-  //SUBSTATS
-  static rollInfo = (
-    rarity: RarityKey
-  ): { low: number; high: number; numUpgrades: number } =>
-    ArtifactSubstatRollData[rarity]
-
-  static substatValue = (
-    substatKey: SubstatKey,
-    rarity = maxStar,
-    type: 'max' | 'min' | 'mid' = 'max'
-  ): number => {
-    const substats = ArtifactSubstatsData[rarity][substatKey]
-    const value =
-      type === 'max'
-        ? Math.max(...substats)
-        : type === 'min'
-        ? Math.min(...substats)
-        : substats.reduce((a, b) => a + b, 0) / substats.length
-    return substatKey.endsWith('_') ? value * 100 : value
-  }
-
-  static maxSubstatRollEfficiency = objectKeyMap(
+  static maxSubstatRollEfficiency = objKeyMap(
     allRarityKeys,
     (rarity) =>
       100 *
       Math.max(
         ...allSubstatKeys.map(
           (substat) =>
-            Artifact.substatValue(substat, rarity) /
-            Artifact.substatValue(substat, maxStar)
+            getSubstatValue(substat, rarity) / getSubstatValue(substat, maxStar)
         )
       )
   )
-
-  static totalPossibleRolls = (rarity: RarityKey): number =>
-    ArtifactSubstatRollData[rarity].high +
-    ArtifactSubstatRollData[rarity].numUpgrades
-  static rollsRemaining = (level: number, rarity: RarityKey) =>
-    Math.ceil((rarity * 4 - level) / 4)
-  static getSubstatRollData = (substatKey: SubstatKey, rarity: RarityKey) => {
-    if (substatKey.endsWith('_'))
-      // TODO: % CONVERSION
-      return ArtifactSubstatsData[rarity][substatKey].map((v) => v * 100)
-    return ArtifactSubstatsData[rarity][substatKey]
-  }
-
-  static getSubstatRolls = (
-    substatKey: SubstatKey,
-    substatValue: number,
-    rarity: ArtifactRarity
-  ): number[][] => {
-    const rollData = Artifact.getSubstatRollData(substatKey, rarity)
-    const table = ArtifactSubstatLookupTable[rarity][substatKey]
-    const lookupValue = cacheValueString(substatValue, KeyMap.unit(substatKey))
-    return table[lookupValue]?.map((roll) => roll.map((i) => rollData[i])) ?? []
-  }
-  static getSubstatEfficiency = (
-    substatKey: SubstatKey | '',
-    rolls: number[]
-  ): number => {
-    const sum = rolls.reduce((a, b) => a + b, 0)
-    const max = substatKey
-      ? Artifact.substatValue(substatKey) * rolls.length
-      : 0
-    return max ? clampPercent((sum / max) * 100) : 0
-  }
 
   //ARTIFACT IN GENERAL
   static getArtifactEfficiency(
@@ -212,7 +50,7 @@ export default class Artifact {
       .filter(({ key }) => key && filter.has(key))
       .reduce((sum, { efficiency }) => sum + (efficiency ?? 0), 0)
 
-    const rollsRemaining = Artifact.rollsRemaining(level, rarity)
+    const rollsRemaining = getRollsRemaining(level, rarity)
     const emptySlotCount = substats.filter((s) => !s.key).length
     const matchedSlotCount = substats.filter(
       (s) => s.key && filter.has(s.key)

@@ -1,19 +1,11 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { inferInfoMut, mergeData } from '../../Formula/api'
-import type { WeaponKey } from '../../Types/consts'
-import _weaponCurves from './expCurve_gen.json'
 import { input } from '../../Formula'
 import type { Data, DisplaySub } from '../../Formula/type'
 import { infoMut, prod, constant, subscript, sum } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
-
-// TODO: Remove this conversion after changing the file format
-const weaponCurves = Object.fromEntries(
-  Object.entries(_weaponCurves).map(([key, value]) => [
-    key,
-    [0, ...Object.values(value)],
-  ])
-)
+import type { WeaponKey } from '@genshin-optimizer/consts'
+import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 
 export function dataObjForWeaponSheet(
   key: WeaponKey,
@@ -47,12 +39,9 @@ export function dataObjForWeaponSheet(
     sum(
       prod(
         mainStat.base,
-        subscript(input.weapon.lvl, weaponCurves[mainStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
-      subscript(
-        input.weapon.asc,
-        gen.ascension.map((x) => x.addStats[mainStat.type] ?? 0)
-      )
+      subscript(input.weapon.asc, gen.ascensionBonus['atk'])
     ),
     KeyMap.info(mainStat.type)
   )
@@ -71,7 +60,7 @@ export function dataObjForWeaponSheet(
     const substatNode = infoMut(
       prod(
         subStat.base,
-        subscript(input.weapon.lvl, weaponCurves[subStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[subStat.curve])
       ),
       KeyMap.info(subStat.type)
     )

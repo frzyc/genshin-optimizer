@@ -1,15 +1,14 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
-const data_gen = data_gen_json as WeaponData
 const key: WeaponKey = 'WasterGreatsword'
+const data_gen = allStats.weapon.data[key]
 export const data = dataObjForWeaponSheet(key, data_gen)
 const sheet: IWeaponSheet = {
-  ...(data_gen as WeaponData),
+  ...data_gen,
   document: [],
 }
 export default new WeaponSheet(key, sheet, data_gen, data)

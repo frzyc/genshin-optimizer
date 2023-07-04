@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   equal,
@@ -23,14 +23,12 @@ import {
   dmgNode,
   shieldElement,
 } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Yanfei'
 const elementKey: ElementKey = 'pyro'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   b = 0
@@ -207,9 +205,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -295,33 +293,6 @@ const sheet: ICharacterSheet = {
             }),
           },
         ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: ct.ch('c1.sealChargedStam_'),
-            value: dm.c1.sealStaminaRed_ * -100,
-            textSuffix: ct.ch('perSeal'),
-            unit: '%',
-          },
-          {
-            text: st('incInterRes'),
-          },
-        ],
-      }),
-      ct.condTem('constellation2', {
-        value: condC2EnemyHp,
-        path: condC2EnemyHpPath,
-        name: st('enemyLessPercentHP', { percent: dm.c2.hpThresh * 100 }),
-        states: {
-          on: {
-            fields: [
-              {
-                node: c2EnemyHp_critRate_,
-              },
-            ],
-          },
-        },
       }),
       ct.headerTem('constellation6', {
         fields: [
@@ -413,7 +384,46 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
-      ct.headerTem('constellation4', {
+    ]),
+    passive1: ct.talentTem('passive1'),
+    passive2: ct.talentTem('passive2'),
+    passive3: ct.talentTem('passive3'),
+    constellation1: ct.talentTem('constellation1', [
+      {
+        fields: [
+          {
+            text: ct.ch('c1.sealChargedStam_'),
+            value: dm.c1.sealStaminaRed_ * -100,
+            textSuffix: ct.ch('perSeal'),
+            unit: '%',
+          },
+          {
+            text: st('incInterRes'),
+          },
+        ],
+      },
+    ]),
+    constellation2: ct.talentTem('constellation2', [
+      ct.condTem('constellation2', {
+        value: condC2EnemyHp,
+        path: condC2EnemyHpPath,
+        name: st('enemyLessPercentHP', { percent: dm.c2.hpThresh * 100 }),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c2EnemyHp_critRate_,
+              },
+            ],
+          },
+        },
+      }),
+    ]),
+    constellation3: ct.talentTem('constellation3', [
+      { fields: [{ node: skillC3 }] },
+    ]),
+    constellation4: ct.talentTem('constellation4', [
+      {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.norm_shield, {
@@ -431,17 +441,8 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
         ],
-      }),
+      },
     ]),
-    passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2'),
-    passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
-    constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
-    ]),
-    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: burstC5 }] },
     ]),

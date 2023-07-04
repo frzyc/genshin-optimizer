@@ -1,0 +1,43 @@
+{
+  "name": "sr-dm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-dm/src",
+  "projectType": "library",
+  "targets": {
+    "loadDM": {
+      "command": "ts-node libs/sr-dm/scripts/loadDM.ts"
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sr-dm",
+        "main": "libs/sr-dm/src/index.ts",
+        "tsConfig": "libs/sr-dm/tsconfig.lib.json",
+        "assets": ["libs/sr-dm/*.md"]
+      },
+      "dependsOn": ["loadDM", "^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/sr-dm/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "namedInputs": {
+    "production": [
+      "{projectRoot}/version.hash",
+      "{projectRoot}/src/**/*",
+      "{projectRoot}/scripts/**/*",
+      "sharedGlobals",
+      "{projectRoot}/.eslintrc.json",
+      "{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "{projectRoot}/tsconfig.spec.json",
+      "{projectRoot}/jest.config.[jt]s"
+    ]
+  }
+}

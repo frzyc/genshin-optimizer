@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -19,15 +19,13 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Faruzan'
 const elementKey: ElementKey = 'anemo'
 const region: RegionKey = 'sumeru'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -100,10 +98,15 @@ const burstHit_anemo_enemyRes_ = equal(
 
 const [condA4ActivePath, condA4Active] = cond(key, 'a4Active')
 
+const [condC6CritPath, condC6Crit] = cond(key, 'c6Crit')
 const c6Benefit_anemo_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condBurstBenefit, 'on', datamine.constellation6.anemo_critDMG_)
+  equal(
+    condBurstBenefit,
+    'on',
+    equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_)
+  )
 )
 
 const dmgFormulas = {
@@ -173,9 +176,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -361,19 +364,26 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.headerTem('constellation6', {
-        canShow: equal(condBurstBenefit, 'on', 1),
+      ct.condTem('constellation6', {
         teamBuff: true,
-        fields: [
-          {
-            node: c6Benefit_anemo_critDMG_,
+        canShow: equal(condBurstBenefit, 'on', 1),
+        path: condC6CritPath,
+        value: condC6Crit,
+        name: ct.ch('giftCondName'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c6Benefit_anemo_critDMG_,
+              },
+              {
+                // Only show on Faruzan's page
+                canShow: (data) => data.get(input.activeCharKey).value === key,
+                text: ct.ch('c6Arrow'),
+              },
+            ],
           },
-          {
-            // Only show on Faruzan's page
-            canShow: (data) => data.get(input.activeCharKey).value === key,
-            text: ct.ch('c6Arrow'),
-          },
-        ],
+        },
       }),
     ]),
 

@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -8,27 +7,27 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'AquilaFavonia'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const atkDealt = [2, 2.3, 2.6, 2.9, 3.2]
-const hpRegen = [1, 1.15, 1.3, 1.45, 1.6]
+const atkDealt = [-1, 2, 2.3, 2.6, 2.9, 3.2]
+const hpRegen = [-1, 1, 1.15, 1.3, 1.45, 1.6]
 const atk_ = subscript(
-  input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.atk_ ?? NaN)
+  input.weapon.refinement,
+  data_gen.refinementBonus['atk_']
 )
 const heal = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, hpRegen, { unit: '%' }),
+    subscript(input.weapon.refinement, hpRegen, { unit: '%' }),
     input.premod.atk
   )
 )
@@ -37,7 +36,7 @@ const dmg = equal(
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, atkDealt, { unit: '%' }),
+      subscript(input.weapon.refinement, atkDealt, { unit: '%' }),
       input.premod.atk
     ),
     'elemental',

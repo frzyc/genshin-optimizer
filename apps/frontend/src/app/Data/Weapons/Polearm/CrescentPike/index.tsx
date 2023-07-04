@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -8,17 +7,17 @@ import {
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'CrescentPike'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const atkInc = [0.2, 0.25, 0.3, 0.35, 0.4]
+const atkInc = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const hit = equal(
   input.weapon.key,
@@ -26,7 +25,7 @@ const hit = equal(
   customDmgNode(
     prod(
       input.total.atk,
-      subscript(input.weapon.refineIndex, atkInc, { unit: '%' })
+      subscript(input.weapon.refinement, atkInc, { unit: '%' })
     ),
     'elemental',
     {

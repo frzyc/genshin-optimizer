@@ -1,6 +1,8 @@
 import { charCard } from '@genshin-optimizer/char-cards'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/consts'
 import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { getLevelString } from '@genshin-optimizer/gi-util'
 import { splash } from '@genshin-optimizer/silly-wisher'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import {
@@ -15,7 +17,6 @@ import {
 } from '@mui/material'
 import { useCallback, useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Assets from '../../../../Assets/Assets'
 import ArtifactCardNano from '../../../../Components/Artifact/ArtifactCardNano'
 import CardLight from '../../../../Components/Card/CardLight'
 import CharacterCardPico, {
@@ -30,7 +31,6 @@ import { CharacterContext } from '../../../../Context/CharacterContext'
 import { DataContext } from '../../../../Context/DataContext'
 import { SillyContext } from '../../../../Context/SillyContext'
 import type { TalentSheetElementKey } from '../../../../Data/Characters/ICharacterSheet'
-import { getLevelString } from '../../../../Data/LevelData'
 import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import { ElementIcon } from '../../../../KeyMap/StatIcon'
@@ -91,7 +91,7 @@ function EquipmentRow({ onClick }: { onClick: () => void }) {
       {allArtifactSlotKeys.map((slotKey) => (
         <Grid item key={slotKey} xs={1}>
           <ArtifactCardNano
-            artifactId={data.get(input.art[slotKey].id).value}
+            artifactId={data.get(input.art[slotKey].id).value?.toString()}
             slotKey={slotKey}
             BGComponent={CardLight}
             onClick={onClick}
@@ -316,7 +316,9 @@ function CharChip() {
           <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
             {characterSheet.name}
           </Box>
-          <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />
+          <ImgIcon
+            src={imgAssets.weaponTypes?.[characterSheet.weaponTypeKey]}
+          />
         </Typography>
       }
     />

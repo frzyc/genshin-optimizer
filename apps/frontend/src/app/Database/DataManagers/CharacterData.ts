@@ -1,41 +1,41 @@
 import type {
   ArtifactSlotKey,
   CharacterKey,
-  TravelerKey,
+  InfusionAuraElementKey,
   LocationCharacterKey,
+  TravelerKey,
 } from '@genshin-optimizer/consts'
 import {
+  allAdditiveReactions,
+  allAmpReactionKeys,
   allArtifactSlotKeys,
   allCharacterKeys,
-  charKeyToLocCharKey,
+  allHitModeKeys,
+  allInfusionAuraElementKeys,
   allTravelerKeys,
+  charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import { validateLevelAsc } from '../../Data/LevelData'
+import type { TriggerString } from '@genshin-optimizer/database'
+import type { IGOOD } from '@genshin-optimizer/gi-good'
+import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+import { clamp, objKeyMap } from '@genshin-optimizer/util'
 import { validateCustomMultiTarget } from '../../PageCharacter/CustomMultiTarget'
 import type {
   CustomMultiTarget,
   ICachedCharacter,
-  ICharacter,
+  IGOCharacter,
 } from '../../Types/character'
-import type { InfusionAuraElements } from '../../Types/consts'
-import {
-  allAdditiveReactions,
-  allAmpReactions,
-  allHitModes,
-  allInfusionAuraElements,
-} from '../../Types/consts'
-import { clamp, deepClone, objectKeyMap } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
-import type { TriggerString } from '../DataManager'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 import { GOSource } from '../exim'
 
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  ICharacter
+  IGOCharacter,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'characters')
@@ -47,13 +47,13 @@ export class CharacterDataManager extends DataManager<
         this.database.storage.remove(key)
     }
   }
-  validate(obj: unknown): ICharacter | undefined {
+  validate(obj: unknown): IGOCharacter | undefined {
     if (!obj || typeof obj !== 'object') return
     const {
       key: characterKey,
       level: rawLevel,
       ascension: rawAscension,
-    } = obj as ICharacter
+    } = obj as IGOCharacter
     let {
       hitMode,
       reaction,
@@ -67,14 +67,16 @@ export class CharacterDataManager extends DataManager<
       teamConditional,
       compareData,
       customMultiTarget,
-    } = obj as ICharacter
+    } = obj as IGOCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return // non-recoverable
 
-    if (!allHitModes.includes(hitMode)) hitMode = 'avgHit'
+    if (!allHitModeKeys.includes(hitMode)) hitMode = 'avgHit'
     if (
       reaction &&
-      !allAmpReactions.includes(reaction as (typeof allAmpReactions)[number]) &&
+      !allAmpReactionKeys.includes(
+        reaction as (typeof allAmpReactionKeys)[number]
+      ) &&
       !allAdditiveReactions.includes(
         reaction as (typeof allAdditiveReactions)[number]
       )
@@ -82,7 +84,9 @@ export class CharacterDataManager extends DataManager<
       reaction = undefined
     if (
       infusionAura !== '' &&
-      !allInfusionAuraElements.includes(infusionAura as InfusionAuraElements)
+      !allInfusionAuraElementKeys.includes(
+        infusionAura as InfusionAuraElementKey
+      )
     )
       infusionAura = ''
     if (
@@ -112,7 +116,7 @@ export class CharacterDataManager extends DataManager<
         !team.find((ot, j) => i > j && t === ot)
           ? t
           : ''
-      ) as ICharacter['team']
+      ) as IGOCharacter['team']
 
     if (!teamConditional) teamConditional = {}
 
@@ -133,7 +137,7 @@ export class CharacterDataManager extends DataManager<
     customMultiTarget = customMultiTarget
       .map((cmt) => validateCustomMultiTarget(cmt))
       .filter((t) => t) as CustomMultiTarget[]
-    const char: ICharacter = {
+    const char: IGOCharacter = {
       key: characterKey,
       level,
       ascension,
@@ -152,12 +156,12 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
-  toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+  toCache(storageObj: IGOCharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedArtifacts: oldChar
         ? oldChar.equippedArtifacts
-        : objectKeyMap(
+        : objKeyMap(
             allArtifactSlotKeys,
             (sk) =>
               Object.values(this.database.arts?.data ?? {}).find(
@@ -173,7 +177,7 @@ export class CharacterDataManager extends DataManager<
       ...storageObj,
     }
   }
-  deCache(char: ICachedCharacter): ICharacter {
+  deCache(char: ICachedCharacter): IGOCharacter {
     const {
       key,
       level,
@@ -191,7 +195,7 @@ export class CharacterDataManager extends DataManager<
       compareData,
       customMultiTarget,
     } = char
-    const result: ICharacter = {
+    const result: IGOCharacter = {
       key,
       level,
       ascension,
@@ -273,7 +277,7 @@ export class CharacterDataManager extends DataManager<
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
       if (!char) return
-      const equippedArtifacts = deepClone(char.equippedArtifacts)
+      const equippedArtifacts = structuredClone(char.equippedArtifacts)
       equippedArtifacts[slotKey] = artid
       super.setCached(k, { ...char, equippedArtifacts })
     }
@@ -299,7 +303,7 @@ export class CharacterDataManager extends DataManager<
     else setEq(key)
   }
 
-  hasDup(char: ICharacter, isGO: boolean) {
+  hasDup(char: IGOCharacter, isGO: boolean) {
     const db = this.getStorage(char.key)
     if (!db) return false
     if (isGO) {
@@ -321,15 +325,17 @@ export class CharacterDataManager extends DataManager<
     result.characters.beforeMerge = this.values.length
 
     const source = good.source ?? 'Unknown'
-    const characters = good[this.goKey]
+    const characters = good[this.dataKey]
     if (Array.isArray(characters) && characters?.length) {
       result.characters.import = characters.length
       const idsToRemove = new Set(this.keys)
       characters.forEach((c) => {
-        if (!c.key) result.characters.invalid.push(c)
+        if (!c.key) result.characters.invalid.push(c as IGOCharacter)
         idsToRemove.delete(c.key)
-        if (this.hasDup(c, source === GOSource))
-          result.characters.unchanged.push(c)
+        if (
+          this.hasDup({ ...initialCharacter(c.key), ...c }, source === GOSource)
+        )
+          result.characters.unchanged.push(c as IGOCharacter)
         else this.set(c.key, c)
       })
 
@@ -351,7 +357,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: 'avgHit',
-    equippedArtifacts: objectKeyMap(allArtifactSlotKeys, () => ''),
+    equippedArtifacts: objKeyMap(allArtifactSlotKeys, () => ''),
     equippedWeapon: '',
     conditional: {},
     bonusStats: {},

@@ -1,3 +1,17 @@
+import type {
+  AdditiveReactionKey,
+  AmpReactionKey,
+  HitModeKey,
+  InfusionAuraElementKey,
+} from '@genshin-optimizer/consts'
+import {
+  allAdditiveReactions,
+  allAmpReactionKeys,
+  allHitModeKeys,
+  allInfusionAuraElementKeys,
+} from '@genshin-optimizer/consts'
+import { useBoolState, useTimeout } from '@genshin-optimizer/react-util'
+import { arrayMove, clamp, objPathValue } from '@genshin-optimizer/util'
 import AddIcon from '@mui/icons-material/Add'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
@@ -51,24 +65,8 @@ import type { InputPremodKey } from '../Formula'
 import { allInputPremodKeys } from '../Formula'
 import type { NodeDisplay } from '../Formula/uiData'
 import { UIData } from '../Formula/uiData'
-import useBoolState from '../ReactHooks/useBoolState'
-import useTimeout from '../ReactHooks/useTimeout'
 import type { CustomMultiTarget, CustomTarget } from '../Types/character'
-import type {
-  AdditiveReactionKey,
-  AmpReactionKey,
-  HitModeKey,
-  InfusionAuraElements,
-} from '../Types/consts'
-import {
-  allAdditiveReactions,
-  allAmpReactions,
-  allHitModes,
-  allInfusionAuraElements,
-  allowedAdditiveReactions,
-  allowedAmpReactions,
-} from '../Types/consts'
-import { arrayMove, clamp, deepClone, objPathValue } from '../Util/Util'
+import { allowedAdditiveReactions, allowedAmpReactions } from '../Types/consts'
 import OptimizationTargetSelector from './CharacterDisplay/Tabs/TabOptimize/Components/OptimizationTargetSelector'
 import { TargetSelectorModal } from './CharacterDisplay/Tabs/TabOptimize/Components/TargetSelectorModal'
 
@@ -107,18 +105,18 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   if (
     !hitMode ||
     typeof hitMode !== 'string' ||
-    !allHitModes.includes(hitMode as HitModeKey)
+    !allHitModeKeys.includes(hitMode as HitModeKey)
   )
     hitMode = 'avgHit'
 
   if (
     reaction &&
-    !(allAmpReactions as readonly string[]).includes(reaction) &&
+    !(allAmpReactionKeys as readonly string[]).includes(reaction) &&
     !(allAdditiveReactions as readonly string[]).includes(reaction)
   )
     reaction = undefined
 
-  if (infusionAura && !allInfusionAuraElements.includes(infusionAura))
+  if (infusionAura && !allInfusionAuraElementKeys.includes(infusionAura))
     infusionAura = undefined
 
   if (!bonusStats) bonusStats = {}
@@ -294,15 +292,15 @@ export function CustomMultiTargetButton() {
                     <Typography>
                       <Trans t={t} i18nKey="multiTarget.info1">
                         Note: Community created custom Multi-Optimization
-                        Targets can be found within the{' '}
+                        Targets can be found within the
                         <a
                           href={process.env.NX_URL_DISCORD_GO}
                           target="_blank"
                           rel="noreferrer"
                         >
                           GO Discord
-                        </a>{' '}
-                        or{' '}
+                        </a>
+                        or
                         <a
                           href={process.env.NX_URL_KQM_MULTI_GUIDE}
                           target="_blank"
@@ -414,7 +412,7 @@ function CustomMultiTargetDisplay({
   const dupCustomTarget = useCallback(
     (index: number) => () => {
       const targets = [...target.targets]
-      targets.splice(index, 0, deepClone(targets[index]))
+      targets.splice(index, 0, structuredClone(targets[index]))
       setTarget({ ...target, targets })
     },
     [target, setTarget]
@@ -707,7 +705,7 @@ function CustomTargetDisplay({
             />
           )}
           <DropdownButton title={t(`hitmode.${hitMode}`)}>
-            {allHitModes.map((hm) => (
+            {allHitModeKeys.map((hm) => (
               <MenuItem
                 key={hm}
                 value={hm}
@@ -784,7 +782,7 @@ function ReactionDropdown({
   node: NodeDisplay
   reaction?: AmpReactionKey | AdditiveReactionKey
   setReactionMode: (r?: AmpReactionKey | AdditiveReactionKey) => void
-  infusionAura?: InfusionAuraElements
+  infusionAura?: InfusionAuraElementKey
 }) {
   const ele = node.info.variant ?? 'physical'
   const { t } = useTranslation('page_character')
@@ -800,10 +798,11 @@ function ReactionDropdown({
       ...(allowedAmpReactions[ele] ?? []),
       ...(allowedAmpReactions[infusionAura ?? ''] ?? []),
       ...(allowedAdditiveReactions[ele] ?? []),
+      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? []),
     ]),
   ]
   const title = reaction ? (
-    ([...allAmpReactions] as string[]).includes(reaction) ? (
+    ([...allAmpReactionKeys] as string[]).includes(reaction) ? (
       <AmpReactionModeText reaction={reaction as AmpReactionKey} />
     ) : (
       <AdditiveReactionModeText reaction={reaction as AdditiveReactionKey} />
@@ -822,7 +821,7 @@ function ReactionDropdown({
           disabled={reaction === rm}
           onClick={() => setReactionMode(rm)}
         >
-          {([...allAmpReactions] as string[]).includes(rm) ? (
+          {([...allAmpReactionKeys] as string[]).includes(rm) ? (
             <AmpReactionModeText reaction={rm} />
           ) : (
             <AdditiveReactionModeText reaction={rm} />

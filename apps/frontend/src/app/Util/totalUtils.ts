@@ -1,4 +1,4 @@
-import { objectMap } from './Util'
+import { objMap } from '@genshin-optimizer/util'
 type Entry = {
   total: number
   current: number
@@ -9,9 +9,9 @@ export function bulkCatTotal(
   catTotals: Record<CatTotalKey, readonly CatTotalKey[]>,
   cb: (ctMap: Record<CatTotalKey, Record<CatTotalKey, Entry>>) => void
 ) {
-  const ctMap = objectMap(catTotals, (keys) => catTotalObj(keys))
+  const ctMap = objMap(catTotals, (keys) => catTotalObj(keys))
   cb(ctMap)
-  return objectMap(ctMap, (ct) => catTotalToStringObj(ct))
+  return objMap(ctMap, (ct) => catTotalToStringObj(ct))
 }
 // A helper function to generate a `current/total` formated string object with categories
 export function catTotal<T extends CatTotalKey>(
@@ -32,7 +32,7 @@ function catTotalObj<T extends CatTotalKey>(
 }
 
 function catTotalToStringObj<T extends CatTotalKey>(tot: Record<T, Entry>) {
-  return objectMap(tot, ({ total, current }) =>
+  return objMap(tot, ({ total, current }) =>
     current === total ? `${total}` : `${current}/${total}`
   ) as Record<T, string>
 }

@@ -1,21 +1,20 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'SolarPearl'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const refinementVals = [0.2, 0.25, 0.3, 0.35, 0.4]
+const refinementVals = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condNormalPath, condNormal] = cond(key, 'solarShineNormal')
 const [condSkillBurstPath, condSkillBurst] = cond(key, 'solarShineSkillBurst')
-const refineVal = subscript(input.weapon.refineIndex, refinementVals)
+const refineVal = subscript(input.weapon.refinement, refinementVals)
 const skill_dmg_ = equal('normal', condNormal, refineVal)
 const burst_dmg_ = { ...skill_dmg_ }
 const normal_dmg_ = equal('skillBurst', condSkillBurst, refineVal)

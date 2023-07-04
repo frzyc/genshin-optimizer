@@ -4,6 +4,8 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { allRarityKeys } from '@genshin-optimizer/consts'
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { filterFunction, sortFunction } from '@genshin-optimizer/util'
 import { Add } from '@mui/icons-material'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import {
@@ -27,7 +29,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import Assets from '../../../../Assets/Assets'
 import CardDark from '../../../../Components/Card/CardDark'
 import CloseButton from '../../../../Components/CloseButton'
 import ImgIcon from '../../../../Components/Image/ImgIcon'
@@ -37,9 +38,8 @@ import WeaponSelectionModal from '../../../../Components/Weapon/WeaponSelectionM
 import { DatabaseContext } from '../../../../Database/Database'
 import WeaponCard from '../../../../PageWeapon/WeaponCard'
 import WeaponEditor from '../../../../PageWeapon/WeaponEditor'
-import useForceUpdate from '../../../../ReactHooks/useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 import { handleMultiSelect } from '../../../../Util/MultiSelect'
-import { filterFunction, sortFunction } from '../../../../Util/SortByFilters'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
@@ -141,7 +141,7 @@ export default function WeaponSwapModal({
             <Grid item flexGrow={1}>
               <Typography variant="h6">
                 {weaponTypeKey ? (
-                  <ImgIcon src={Assets.weaponTypes[weaponTypeKey]} />
+                  <ImgIcon src={imgAssets.weaponTypes[weaponTypeKey]} />
                 ) : null}{' '}
                 {t`page_character:tabEquip.swapWeapon`}
               </Typography>

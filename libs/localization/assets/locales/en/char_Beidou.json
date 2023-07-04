@@ -1,9 +1,8 @@
 {
-  "skillOneHit": "One hit DMG",
-  "skillTwoHit": "Two hit DMG",
-  "duringBurst": "During the duration of Stormbreaker",
-  "tidecallerMaxDmg": "After unleashing Tidecaller with its maximum DMG bonus",
+  "skillOneHit": "DMG w/ 1 hit",
+  "skillTwoHit": "DMG w/ 2 hits",
+  "duringBurst": "Stormbreaker is active",
+  "tidecallerMaxDmg": "After unleashing Tidecaller with maximum DMG bonus",
   "a4charge": "Reduced delay before unleashing Charged Attacks",
-  "c4dmg": "Stunning Revenge Electro DMG",
-  "burstDmgRed_": "DMG Reduction"
+  "c4dmg": "Stunning Revenge Electro DMG"
 }

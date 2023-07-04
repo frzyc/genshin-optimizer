@@ -1,4 +1,4 @@
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input, tally } from '../../../Formula/index'
 import {
   equal,
@@ -17,13 +17,13 @@ import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
 
 const key: CharacterKey = 'Nilou'
 const elementKey: ElementKey = 'hydro'
-const data_gen = data_gen_src as CharacterData
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -50,7 +50,7 @@ export const dm = {
     skillDmg: skillParam_gen.skill[s++],
     whirl1Dmg: skillParam_gen.skill[s++],
     whirl2Dmg: skillParam_gen.skill[s++],
-    moonDmg: skillParam_gen.skill[s++],
+    illusionDmg: skillParam_gen.skill[s++],
     wheelDmg: skillParam_gen.skill[s++],
     dance1Dmg: skillParam_gen.skill[s++],
     dance2Dmg: skillParam_gen.skill[s++],
@@ -76,7 +76,7 @@ export const dm = {
     maxDmg_: skillParam_gen.passive2[2][0],
   },
   constellation1: {
-    moon_dmg_: skillParam_gen.constellation1[0],
+    illusion_dmg_: skillParam_gen.constellation1[0],
     durationInc: skillParam_gen.constellation1[1],
   },
   constellation2: {
@@ -127,10 +127,10 @@ const bountifulBloom_dmg_ = greaterEq(
   )
 )
 
-const c1_moon_dmg_ = greaterEq(
+const c1_illusion_dmg_ = greaterEq(
   input.constellation,
   1,
-  percent(dm.constellation1.moon_dmg_, { name: ct.ch(`c1.moon_dmg_`) })
+  percent(dm.constellation1.illusion_dmg_, { name: ct.ch(`c1.illusion_dmg_`) })
 )
 
 const [condC2HydroPath, condC2Hydro] = cond(key, 'c2Hydro')
@@ -198,8 +198,8 @@ export const dmgFormulas = {
     dance2Dmg: dmgNode('hp', dm.skill.dance2Dmg, 'skill'),
     whirl1Dmg: dmgNode('hp', dm.skill.whirl1Dmg, 'skill'),
     whirl2Dmg: dmgNode('hp', dm.skill.whirl2Dmg, 'skill'),
-    moonDmg: dmgNode('hp', dm.skill.moonDmg, 'skill', {
-      premod: { skill_dmg_: c1_moon_dmg_ },
+    moonDmg: dmgNode('hp', dm.skill.illusionDmg, 'skill', {
+      premod: { skill_dmg_: c1_illusion_dmg_ },
     }),
     wheelDmg: dmgNode('hp', dm.skill.wheelDmg, 'skill'),
   },
@@ -245,9 +245,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -340,7 +340,7 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.skill.moonDmg, {
-              name: ct.ch(`skill.moon`),
+              name: ct.ch(`skill.illusion`),
             }),
           },
           {
@@ -386,7 +386,7 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                text: st('energyRegen'),
+                text: stg('energyRegen'),
                 value: dm.constellation4.energyRegen,
               },
               {
@@ -498,7 +498,7 @@ const sheet: ICharacterSheet = {
                 node: c2_hydro_enemyRes_,
               },
               {
-                text: stg('duration'),
+                text: stg('effectDuration.hydro'),
                 value: dm.constellation2.duration,
                 unit: 's',
               },
@@ -513,7 +513,7 @@ const sheet: ICharacterSheet = {
                 node: c2_dendro_enemyRes_,
               },
               {
-                text: stg('duration'),
+                text: stg('effectDuration.dendro'),
                 value: dm.constellation2.duration,
                 unit: 's',
               },

@@ -1,4 +1,3 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input, tally, target } from '../../../../Formula'
 import {
   equal,
@@ -12,19 +11,19 @@ import {
 } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'AThousandFloatingDreams'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const self_eleMasArr = [32, 40, 48, 56, 64]
-const self_eleDmg_arr = [0.1, 0.14, 0.18, 0.22, 0.26]
-const team_eleMasArr = [40, 42, 44, 46, 48]
+const self_eleMasArr = [-1, 32, 40, 48, 56, 64]
+const self_eleDmg_arr = [-1, 0.1, 0.14, 0.18, 0.22, 0.26]
+const team_eleMasArr = [-1, 40, 42, 44, 46, 48]
 
 const numSameElement = lookup(
   input.charEle,
@@ -39,7 +38,7 @@ const numSameElement = lookup(
 const partySize = sum(...allElementKeys.map((ele) => tally[ele]))
 const self_eleMas = prod(
   numSameElement,
-  subscript(input.weapon.refineIndex, self_eleMasArr)
+  subscript(input.weapon.refinement, self_eleMasArr)
 )
 const self_eleDmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
@@ -51,7 +50,7 @@ const self_eleDmg_ = Object.fromEntries(
         infoMut(sum(partySize, -1, prod(numSameElement, -1)), {
           asConst: true,
         }),
-        subscript(input.weapon.refineIndex, self_eleDmg_arr, { unit: '%' })
+        subscript(input.weapon.refinement, self_eleDmg_arr, { unit: '%' })
       )
     ),
   ])
@@ -60,7 +59,7 @@ const self_eleDmg_ = Object.fromEntries(
 const team_eleMasDisp = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refineIndex, team_eleMasArr),
+  subscript(input.weapon.refinement, team_eleMasArr),
   { ...KeyMap.info('eleMas'), isTeamBuff: true }
 )
 const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)

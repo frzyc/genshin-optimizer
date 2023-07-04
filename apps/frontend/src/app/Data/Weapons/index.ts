@@ -1,14 +1,13 @@
-import claymore from './Claymore'
-import sword from './Sword'
-import polearm from './Polearm'
-import bow from './Bow'
-import type { WeaponKey } from '../../Types/consts'
-import catalyst from './Catalyst'
-import type WeaponSheet from './WeaponSheet'
-import type { WeaponTypeKey } from '@genshin-optimizer/consts'
+import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/consts'
 import { allWeaponTypeKeys } from '@genshin-optimizer/consts'
 import { mergeData } from '../../Formula/api'
 import type { Data } from '../../Formula/type'
+import bow from './Bow'
+import catalyst from './Catalyst'
+import claymore from './Claymore'
+import polearm from './Polearm'
+import sword from './Sword'
+import type WeaponSheet from './WeaponSheet'
 
 const WeaponData: Record<WeaponKey, WeaponSheet> = {
   ...sword,

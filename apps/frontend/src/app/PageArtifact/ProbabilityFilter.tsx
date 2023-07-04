@@ -1,10 +1,10 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
+import { allSubstatKeys } from '@genshin-optimizer/consts'
 import { CardContent, Divider, Grid, Typography } from '@mui/material'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ColorText from '../Components/ColoredText'
 import StatEditorList from '../Components/StatEditorList'
-import type { SubstatKey } from '../Types/artifact'
-import { allSubstatKeys } from '../Types/artifact'
 const keys = [...allSubstatKeys]
 export default function ProbabilityFilter({
   probabilityFilter: statFilters = {},
@@ -27,7 +27,7 @@ export default function ProbabilityFilter({
             <CardLight>
               <CardContent>
                 <Typography>
-                  This UI only pops up when "Sort by"{' '}
+                  This UI only pops up when "Sort by"
                   <strong>Probability</strong>. In conjunction with the Artifact
                   Filters above, this UI allows you to set a criteria for
                   substats values, and it will sort the artifacts by those with

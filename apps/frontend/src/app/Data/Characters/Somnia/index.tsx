@@ -1,6 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import type { CharacterData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import ColorText from '../../../Components/ColoredText'
 import { input, target } from '../../../Formula'
 import {
@@ -19,20 +19,18 @@ import {
   unequal,
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import type { ICharacterSheet } from '../ICharacterSheet'
-import data_gen_src from './data_gen.json'
-import skillParam_gen from './skillParam_gen.json'
-
-const data_gen = data_gen_src as CharacterData
 
 const key: CharacterKey = 'Somnia'
 const elementKey: ElementKey = 'electro'
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const data_gen = allStats.char.data[key]
+const skillParam_gen = allStats.char.skillParam[key]
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -90,8 +88,7 @@ const dm = {
     dmg: skillParam_gen.constellation1[1],
   },
   constellation2: {
-    primes: skillParam_gen.constellation2[0] as number[],
-    dmg: skillParam_gen.constellation2[1] as number,
+    dmg: skillParam_gen.constellation2[0],
   },
   constellation4: {
     energyRestore: skillParam_gen.constellation4[0],
@@ -206,7 +203,7 @@ const c6_critRate_ = greaterEq(
   6,
   lookup(
     condC6Stacks,
-    objectKeyMap(c6StacksArr, (stack) =>
+    objKeyMap(c6StacksArr, (stack) =>
       prod(percent(dm.constellation6.critRate_), stack)
     ),
     naught
@@ -217,7 +214,7 @@ const c6_critDMG_ = greaterEq(
   6,
   lookup(
     condC6Stacks,
-    objectKeyMap(c6StacksArr, (stack) =>
+    objKeyMap(c6StacksArr, (stack) =>
       prod(percent(dm.constellation6.critDMG_), stack)
     ),
     naught
@@ -262,7 +259,7 @@ const dmgFormulas = {
     ),
     sub_normal_dmgInc: subtraction_normCharged_dmgInc,
     sub_charged_dmgInc: { ...subtraction_normCharged_dmgInc },
-    ...objectKeyMap(allElementWithPhyKeys, (_) => ({ ...lessThan3_eleRes_ })),
+    ...objKeyMap(allElementWithPhyKeys, (_) => ({ ...lessThan3_eleRes_ })),
   },
   passive2: {
     eleMas: greaterEq(
@@ -273,7 +270,7 @@ const dmgFormulas = {
         'on',
         lookup(
           condA4EnemiesHit,
-          objectKeyMap(a4EnemiesArr, (stack) =>
+          objKeyMap(a4EnemiesArr, (stack) =>
             prod(percent(dm.passive2.elemas), stack, input.premod.eleMas)
           ),
           naught
@@ -335,9 +332,9 @@ const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.chg('name'),
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -629,7 +626,7 @@ const sheet: ICharacterSheet = {
         path: condA4EnemiesHitPath,
         canShow: equal(condCycloneActive, 'on', 1),
         name: st('hitOp.burst'),
-        states: objectKeyMap(a4EnemiesArr, (stack) => ({
+        states: objKeyMap(a4EnemiesArr, (stack) => ({
           name: st('hits', { count: stack }),
           fields: [
             {
@@ -657,7 +654,7 @@ const sheet: ICharacterSheet = {
         value: condC6Stacks,
         path: condC6StacksPath,
         name: ct.chg('constellation6.name'),
-        states: objectKeyMap(c6StacksArr, (stack) => ({
+        states: objKeyMap(c6StacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [
             {

@@ -1,4 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/consts'
 import { PersonAdd } from '@mui/icons-material'
 import type { AutocompleteProps } from '@mui/material'
 import {
@@ -28,12 +29,12 @@ import { DataContext } from '../../../Context/DataContext'
 import { SillyContext } from '../../../Context/SillyContext'
 import { dataSetEffects, getArtSheet } from '../../../Data/Artifacts'
 import { getCharSheet } from '../../../Data/Characters'
+import type CharacterSheet from '../../../Data/Characters/CharacterSheet'
 import { resonanceSheets } from '../../../Data/Resonance'
 import { DatabaseContext } from '../../../Database/Database'
 import type { NodeDisplay } from '../../../Formula/uiData'
 import useCharSelectionCallback from '../../../ReactHooks/useCharSelectionCallback'
 import useDBMeta from '../../../ReactHooks/useDBMeta'
-import { charKeyToCharName } from '../../../Types/consts'
 import { objPathValue, range } from '../../../Util/Util'
 
 export default function TabTeambuffs() {
@@ -61,18 +62,18 @@ export default function TabTeambuffs() {
 }
 export function TeamBuffDisplay() {
   const { data, oldData } = useContext(DataContext)
-  const teamBuffs = data.getTeamBuff()
+  const teamBuffs = data.getTeamBuff() as any
   const nodes: Array<[string[], NodeDisplay<number>]> = []
   Object.entries(teamBuffs.total ?? {}).forEach(
-    ([key, node]) =>
+    ([key, node]: [key: string, node: any]) =>
       !node.isEmpty && node.value !== 0 && nodes.push([['total', key], node])
   )
   Object.entries(teamBuffs.premod ?? {}).forEach(
-    ([key, node]) =>
+    ([key, node]: [key: string, node: any]) =>
       !node.isEmpty && node.value !== 0 && nodes.push([['premod', key], node])
   )
   Object.entries(teamBuffs.enemy ?? {}).forEach(
-    ([key, node]) =>
+    ([key, node]: [key: string, node: any]) =>
       !node.isEmpty &&
       typeof node.value === 'number' &&
       node.value !== 0 &&
@@ -279,7 +280,7 @@ function CharTalentCondDisplay() {
     character: { key: charKey },
   } = useContext(CharacterContext)
   const { teamData } = useContext(DataContext)
-  const characterSheet = teamData[charKey]!.characterSheet
+  const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet
   const sections = Object.values(characterSheet.talent).flatMap(
     (sts) => sts.sections
   )
@@ -323,7 +324,7 @@ function TeammateAutocomplete({
         ? `${t(
             `${
               silly ? 'sillyWisher_charNames' : 'charNames_gen'
-            }:${charKeyToCharName(key, gender)}`
+            }:${charKeyToLocGenderedCharKey(key, gender)}`
           )} (${t(
             `sheet_gen:element.${getCharSheet(key, gender)?.elementKey}`
           )})`

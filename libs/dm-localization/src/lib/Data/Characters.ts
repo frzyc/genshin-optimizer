@@ -1,4 +1,16 @@
-const char = {
+import type {
+  LocationCharacterKey,
+  LocationGenderedCharacterKey,
+} from '@genshin-optimizer/consts'
+import type { Translatable } from '../common'
+
+type CharData = Record<
+  string,
+  Translatable | Record<string, Translatable | Record<string, Translatable>>
+>
+const char: Partial<
+  Record<LocationCharacterKey | LocationGenderedCharacterKey, CharData>
+> = {
   // Albedo,
   // Amber,
   // Barbara,
@@ -70,5 +82,5 @@ const char = {
   Zhongli: {
     constellationName: 2721221067,
   },
-} as const
+}
 export default char

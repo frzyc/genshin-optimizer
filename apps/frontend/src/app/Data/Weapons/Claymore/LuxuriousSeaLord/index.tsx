@@ -1,5 +1,5 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import {
   constant,
@@ -13,20 +13,19 @@ import { st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'LuxuriousSeaLord'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const burst_dmg_Src = [0.12, 0.15, 0.18, 0.21, 0.24]
-const dmg_Src = [1, 1.25, 1.5, 1.75, 2]
-const burst_dmg_ = subscript(input.weapon.refineIndex, burst_dmg_Src)
+const burst_dmg_Src = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const dmg_Src = [-1, 1, 1.25, 1.5, 1.75, 2]
+const burst_dmg_ = subscript(input.weapon.refinement, burst_dmg_Src)
 const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(
     prod(
-      subscript(input.weapon.refineIndex, dmg_Src, { unit: '%' }),
+      subscript(input.weapon.refinement, dmg_Src, { unit: '%' }),
       input.total.atk
     ),
     'elemental',

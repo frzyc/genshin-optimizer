@@ -8,7 +8,7 @@
       "command": "ts-node libs/dm/scripts/loadDM.ts"
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/dm",
@@ -20,7 +20,7 @@
       "inputs": ["production", "^production"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["libs/dm/**/*.ts"]

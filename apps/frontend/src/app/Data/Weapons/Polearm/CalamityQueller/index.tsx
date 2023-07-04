@@ -1,54 +1,53 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import {
   compareEq,
+  unequal,
   constant,
   lookup,
   prod,
   subscript,
 } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'CalamityQueller'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const [tr, trm] = trans('weapon', key)
+const [, trm] = trans('weapon', key)
 
 const [condStackPath, condStack] = cond(key, 'stack')
-// const [condActivePath, condActive] = cond(key, "active")
+const [condOffFieldPath, condOffField] = cond(key, 'offField')
 
-const dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
-const atk_ = [0.032, 0.04, 0.048, 0.056, 0.064]
+const dmg_ = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
+const atk_ = [-1, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const dmg_Nodes = Object.fromEntries(
   allElementKeys.map((e) => [
     `${e}_dmg_`,
-    subscript(input.weapon.refineIndex, dmg_),
+    subscript(input.weapon.refinement, dmg_),
   ])
 )
 const atkInc = prod(
   compareEq(
-    input.activeCharKey,
-    input.charKey,
-    constant(1, {
-      /* TODO: Add key for active char */
-    }),
-    constant(2, { name: trm('inactiveKey') })
+    condOffField,
+    'on',
+    constant(2, { name: trm('inactive') }),
+    constant(1, { name: trm('active') })
   ),
   lookup(
     condStack,
-    objectKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
+    objKeyMap(range(1, 6), (i) => constant(i, { name: st('stacks') })),
     0
   ),
-  subscript(input.weapon.refineIndex, atk_, { unit: '%' })
+  subscript(input.weapon.refinement, atk_)
 )
+
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {
     ...dmg_Nodes,
@@ -66,16 +65,33 @@ const sheet: IWeaponSheet = {
       path: condStackPath,
       teamBuff: true,
       header: headerTemplate(key, st('stacks')),
-      name: tr('passiveName'),
+      name: trm('effectName'),
       states: Object.fromEntries(
         range(1, 6).map((i) => [
           i,
           {
             name: st('stack', { count: i }),
-            fields: [{ node: atkInc }],
+            fields: [
+              {
+                node: atkInc,
+              },
+            ],
           },
         ])
       ),
+    },
+    {
+      canShow: unequal(condStack, undefined, 1),
+      value: condOffField,
+      path: condOffFieldPath,
+      teamBuff: true,
+      header: headerTemplate(key, st('conditional')),
+      name: st('charOffField'),
+      states: {
+        on: {
+          fields: [],
+        },
+      },
     },
   ],
 }

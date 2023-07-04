@@ -1,20 +1,19 @@
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/pipeline'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { input } from '../../../../Formula'
 import { lookup, naught, percent, subscript } from '../../../../Formula/utils'
 import KeyMap from '../../../../KeyMap'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'Slingshot'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
-const dmg_arr = [0.36, 0.42, 0.48, 0.54, 0.6]
+const dmg_arr = [-1, 0.36, 0.42, 0.48, 0.54, 0.6]
 
 const [condPassivePath, condPassive] = cond(key, 'Slingshot')
 const condPassiveStates = ['less', 'more']
@@ -22,7 +21,7 @@ const normal_dmg_ = lookup(
   condPassive,
   {
     less: subscript(
-      input.weapon.refineIndex,
+      input.weapon.refinement,
       dmg_arr,
       KeyMap.info('normal_dmg_')
     ),
@@ -46,7 +45,7 @@ const sheet: IWeaponSheet = {
       path: condPassivePath,
       header: headerTemplate(key, st('conditional')),
       name: trm('condName'),
-      states: objectKeyMap(condPassiveStates, (state) => ({
+      states: objKeyMap(condPassiveStates, (state) => ({
         name: trm(state),
         fields: [
           {

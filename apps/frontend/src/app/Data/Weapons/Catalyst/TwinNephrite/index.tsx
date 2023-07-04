@@ -1,28 +1,27 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { cond, stg, st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'TwinNephrite'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const refineInc = [0.12, 0.14, 0.16, 0.18, 0.2]
+const refineInc = [-1, 0.12, 0.14, 0.16, 0.18, 0.2]
 
 const [condPassivePath, condPassive] = cond(key, 'GuerillaTactics')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, refineInc)
+  subscript(input.weapon.refinement, refineInc)
 )
 const moveSPD_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refineIndex, refineInc)
+  subscript(input.weapon.refinement, refineInc)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

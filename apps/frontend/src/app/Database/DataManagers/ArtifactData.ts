@@ -1,34 +1,41 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
+import type {
+  ArtifactRarity,
+  MainStatKey,
+  SubstatKey,
+} from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allMainStatKeys,
+  allSubstatKeys,
   artMaxLevel,
+  artSlotsData,
+  artSubstatRollData,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
-import { getArtSheet } from '../../Data/Artifacts'
-import Artifact, { artifactSubRange } from '../../Data/Artifacts/Artifact'
+import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import {
+  getMainStatDisplayValue,
+  getSubstatRange,
+  getSubstatRolls,
+  getSubstatValue,
+} from '@genshin-optimizer/gi-util'
+import { clamp } from '@genshin-optimizer/util'
 import KeyMap from '../../KeyMap'
-import type {
-  IArtifact,
-  ICachedArtifact,
-  ICachedSubstat,
-  ISubstat,
-  SubstatKey,
-} from '../../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../../Types/artifact'
-import type { ArtifactRarity } from '../../Types/consts'
-import { allArtifactRarities } from '../../Types/consts'
-import { clamp } from '../../Util/Util'
+import type { ICachedArtifact, ICachedSubstat } from '../../Types/artifact'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 
 export class ArtifactDataManager extends DataManager<
   string,
   'artifacts',
   ICachedArtifact,
-  IArtifact
+  IArtifact,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'artifacts')
@@ -303,7 +310,7 @@ export function cachedArtifact(
   const level = Math.round(
     Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
   )
-  const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
+  const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
 
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map((substat) => ({
@@ -331,7 +338,7 @@ export function cachedArtifact(
   let totalUnambiguousRolls = 0
 
   function efficiency(value: number, key: SubstatKey): number {
-    return (value / Artifact.substatValue(key)) * 100
+    return (value / getSubstatValue(key)) * 100
   }
 
   substats.forEach((substat, index) => {
@@ -339,7 +346,7 @@ export function cachedArtifact(
     if (!key) return (substat.value = 0)
     substat.efficiency = efficiency(value, key)
 
-    const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
+    const possibleRolls = getSubstatRolls(key, value, rarity)
 
     if (possibleRolls.length) {
       // Valid Substat
@@ -370,7 +377,7 @@ export function cachedArtifact(
 
   if (errors.length) return { artifact: validated, errors }
 
-  const { low, high } = Artifact.rollInfo(rarity),
+  const { low, high } = artSubstatRollData[rarity],
     lowerBound = low + Math.floor(level / 4),
     upperBound = high + Math.floor(level / 4)
 
@@ -451,15 +458,15 @@ export function validateArtifact(
     !allArtifactSetKeys.includes(setKey) ||
     !allArtifactSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarities.includes(rarity) ||
+    !allArtifactRarityKeys.includes(rarity) ||
     typeof level !== 'number' ||
     level < 0 ||
     level > 20
   )
     return // non-recoverable
-  const sheet = getArtSheet(setKey as ArtifactSetKey)
-  if (!sheet.slots.includes(slotKey)) return
-  if (!sheet.rarity.includes(rarity)) return
+  const data = allStats.art.data[setKey]
+  if (!data.slots.includes(slotKey)) return
+  if (!data.rarities.includes(rarity)) return
   level = Math.round(level)
   if (level > artMaxLevel[rarity]) return
 
@@ -467,8 +474,8 @@ export function validateArtifact(
   // substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return
   lock = !!lock
-  const plausibleMainStats = Artifact.slotMainStats(slotKey)
-  if (!plausibleMainStats.includes(mainStatKey))
+  const plausibleMainStats = artSlotsData[slotKey].stats
+  if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
@@ -505,7 +512,7 @@ function parseSubstats(
         value = key.endsWith('_')
           ? Math.round(value * 10) / 10
           : Math.round(value)
-        const { low, high } = artifactSubRange(rarity, key)
+        const { low, high } = getSubstatRange(rarity, key)
         value = clamp(value, allowZeroSub ? 0 : low, high)
       } else value = 0
       return { key, value }

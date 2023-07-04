@@ -1,25 +1,24 @@
-import type { WeaponData } from '@genshin-optimizer/pipeline'
 import { input } from '../../../../Formula'
 import { equal, prod, subscript } from '../../../../Formula/utils'
 import type { WeaponKey } from '@genshin-optimizer/consts'
+import { allStats } from '@genshin-optimizer/gi-stats'
 import { st } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
-import data_gen_json from './data_gen.json'
 
 const key: WeaponKey = 'RedhornStonethresher'
-const data_gen = data_gen_json as WeaponData
+const data_gen = allStats.weapon.data[key]
 
-const def_Src = [0.28, 0.35, 0.42, 0.49, 0.56]
-const normal_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
-const charged_dmg_Src = [0.4, 0.5, 0.6, 0.7, 0.8]
-const def_ = subscript(input.weapon.refineIndex, def_Src)
+const def_Src = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
+const normal_dmg_Src = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
+const charged_dmg_Src = [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
+const def_ = subscript(input.weapon.refinement, def_Src)
 const normal_dmgInc = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, normal_dmg_Src, { unit: '%' }),
+    subscript(input.weapon.refinement, normal_dmg_Src, { unit: '%' }),
     input.premod.def
   )
 )
@@ -27,7 +26,7 @@ const charged_dmgInc = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, charged_dmg_Src, { unit: '%' }),
+    subscript(input.weapon.refinement, charged_dmg_Src, { unit: '%' }),
     input.premod.def
   )
 )

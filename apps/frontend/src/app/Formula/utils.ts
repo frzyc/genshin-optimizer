@@ -1,4 +1,4 @@
-import { objectKeyMap } from '../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import type { OptNode } from './optimization'
 import type {
   ComputeNode,
@@ -369,7 +369,7 @@ export function setReadNodeKeys<T extends NodeList>(
       )
     return { ...nodeList, path: prefix }
   } else {
-    return objectKeyMap(Object.keys(nodeList), (key) =>
+    return objKeyMap(Object.keys(nodeList), (key) =>
       setReadNodeKeys(nodeList[key], [...prefix, key])
     ) as any
   }

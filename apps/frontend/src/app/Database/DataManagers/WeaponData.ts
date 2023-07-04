@@ -1,29 +1,30 @@
-import { getCharSheet } from '../../Data/Characters'
-import { validateLevelAsc } from '../../Data/LevelData'
-import { getWeaponSheet } from '../../Data/Weapons'
-import type { ICachedCharacter } from '../../Types/character'
 import type {
   CharacterKey,
   LocationCharacterKey,
 } from '@genshin-optimizer/consts'
 import {
-  allWeaponKeys,
-  weaponMaxLevel,
-  charKeyToLocCharKey,
   allLocationCharacterKeys,
+  allWeaponKeys,
+  charKeyToLocCharKey,
+  weaponMaxLevel,
 } from '@genshin-optimizer/consts'
-import type { ICachedWeapon, IWeapon } from '../../Types/weapon'
+import type { IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
+import { allStats } from '@genshin-optimizer/gi-stats'
+import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+import type { ICachedCharacter } from '../../Types/character'
+import type { ICachedWeapon } from '../../Types/weapon'
 import { defaultInitialWeapon } from '../../Util/WeaponUtil'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { IGO, IGOOD, ImportResult } from '../exim'
+import type { IGO, ImportResult } from '../exim'
 import { initialCharacter } from './CharacterData'
 
 export class WeaponDataManager extends DataManager<
   string,
   'weapons',
   ICachedWeapon,
-  IWeapon
+  IWeapon,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'weapons')
@@ -47,12 +48,11 @@ export class WeaponDataManager extends DataManager<
   ) {
     const char = this.database.chars.get(charKey)
     if (char?.equippedWeapon) return
-    const weapon = defaultInitialWeapon(
-      getCharSheet(charKey, 'F').weaponTypeKey
-    )
+    const locKey = charKeyToLocCharKey(charKey)
+    const weapon = defaultInitialWeapon(allStats.char.data[locKey].weaponType)
     const weaponId = this.generateKey(weaponIds)
     weaponIds.add(weaponId)
-    this.set(weaponId, { ...weapon, location: charKeyToLocCharKey(charKey) })
+    this.set(weaponId, { ...weapon, location: locKey })
     return weapon
   }
   validate(obj: unknown): IWeapon | undefined {
@@ -61,16 +61,16 @@ export class WeaponDataManager extends DataManager<
     let { refinement, location, lock } = obj as IWeapon
 
     if (!allWeaponKeys.includes(key)) return
-    const sheet = getWeaponSheet(key)
-    if (rawLevel > weaponMaxLevel[sheet.rarity]) return
+    const { rarity, weaponType } = allStats.weapon.data[key]
+    if (rawLevel > weaponMaxLevel[rarity]) return
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
       refinement = 1
     if (location && !allLocationCharacterKeys.includes(location)) location = ''
     if (
       location &&
-      getCharSheet(this.database.chars.LocationToCharacterKey(location))
-        .weaponTypeKey !== sheet.weaponType
+      allStats.char.data[location as LocationCharacterKey].weaponType !==
+        weaponType
     )
       return
     lock = !!lock
