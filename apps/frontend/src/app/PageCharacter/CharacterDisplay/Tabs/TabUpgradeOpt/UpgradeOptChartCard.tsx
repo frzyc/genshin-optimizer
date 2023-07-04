@@ -109,6 +109,8 @@ export default function UpgradeOptChartCard({
       ]
     }
   )
+  dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
+  dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
 
   const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0)
   const xpercent = (thr0 - objMin) / (objMax - objMin)
