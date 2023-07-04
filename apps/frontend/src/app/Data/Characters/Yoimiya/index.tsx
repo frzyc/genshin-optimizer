@@ -144,7 +144,11 @@ const atk_ = greaterEq(
     )
   )
 )
-const c1atk_ = equal(condC1, 'c1', percent(dm.constellation1.atk_))
+const c1atk_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'c1', percent(dm.constellation1.atk_))
+)
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,

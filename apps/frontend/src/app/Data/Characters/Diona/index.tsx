@@ -157,10 +157,18 @@ const dmgFormulas = {
     healDot: healNodeTalent('hp', dm.burst.healHp_, dm.burst.healBase, 'burst'),
   },
   constellation2: {
-    pressShield: nodeC2ShieldPress,
-    pressCryoShield: shieldElement(elementKey, nodeC2ShieldPress),
-    holdShield: nodeC2ShieldHold,
-    holdCryoShield: shieldElement(elementKey, nodeC2ShieldHold),
+    pressShield: greaterEq(input.constellation, 2, nodeC2ShieldPress),
+    pressCryoShield: greaterEq(
+      input.constellation,
+      2,
+      shieldElement(elementKey, nodeC2ShieldPress)
+    ),
+    holdShield: greaterEq(input.constellation, 2, nodeC2ShieldHold),
+    holdCryoShield: greaterEq(
+      input.constellation,
+      2,
+      shieldElement(elementKey, nodeC2ShieldHold)
+    ),
   },
 }
 

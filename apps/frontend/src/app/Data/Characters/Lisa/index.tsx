@@ -65,15 +65,15 @@ const dm = {
 const [condA4Path, condA4] = cond(key, 'LisaA4')
 const [condC2Path, condC2] = cond(key, 'LisaC2')
 
-const nodeA4DefShred = equal(
-  condA4,
-  'on',
-  greaterEq(input.asc, 1, dm.passive2.defShred)
+const nodeA4DefShred = greaterEq(
+  input.asc,
+  1,
+  equal(condA4, 'on', dm.passive2.defShred)
 )
-const nodeC2DefIncrease = equal(
-  condC2,
-  'on',
-  greaterEq(input.constellation, 2, constant(0.25))
+const nodeC2DefIncrease = greaterEq(
+  input.constellation,
+  2,
+  equal(condC2, 'on', constant(0.25))
 ) // Doesn't exist in skillParam_gen
 
 const dmgFormulas = {

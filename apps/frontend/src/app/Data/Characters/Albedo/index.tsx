@@ -92,10 +92,10 @@ const p2Burst_eleMas = equal(
 )
 
 const [condP1EnemyHpPath, condP1EnemyHp] = cond(key, 'p1EnemyHp')
-const p1_blossom_dmg_ = equal(
-  condP1EnemyHp,
-  'belowHp',
-  greaterEq(input.asc, 1, dm.passive1.blossomDmgInc)
+const p1_blossom_dmg_ = greaterEq(
+  input.asc,
+  1,
+  equal(condP1EnemyHp, 'belowHp', dm.passive1.blossomDmgInc)
 )
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
