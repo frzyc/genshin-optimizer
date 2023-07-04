@@ -243,7 +243,7 @@ const sheet: ICharacterSheet = {
               textSuffix: ct.ch('secondArrow'),
             }),
           },
-        ]
+        ],
       }),
       {
         text: ct.chg('auto.fields.plunging'),
