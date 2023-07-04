@@ -13,14 +13,12 @@ import {
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import NotificationsOffIcon from '@mui/icons-material/NotificationsOff'
 import {
-  Alert,
   Box,
   Button,
   ButtonGroup,
   CardContent,
   Divider,
   Grid,
-  Link,
   MenuItem,
   Skeleton,
   ToggleButton,
@@ -37,7 +35,7 @@ import React, {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ArtifactLevelSlider from '../../../../Components/Artifact/ArtifactLevelSlider'
 import BootstrapTooltip from '../../../../Components/BootstrapTooltip'
 import CardLight from '../../../../Components/Card/CardLight'

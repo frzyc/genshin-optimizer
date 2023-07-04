@@ -3,7 +3,7 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { linspace } from '@genshin-optimizer/util'
 import { Box, Button, CardContent, Grid } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import type { TooltipProps } from 'recharts'
 import {
   Area,
@@ -24,7 +24,7 @@ import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import type { ICachedArtifact } from '../../../../Types/artifact'
-import { erf, gaussPDF } from './mathUtil'
+import { erf } from './mathUtil'
 import { ResultType } from './upOpt'
 import type { UpOptArtifact } from './upOpt'
 
