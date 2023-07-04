@@ -131,6 +131,8 @@ export default function TabUpopt() {
     undefined as UpOptCalculator | undefined
   )
 
+  const [, setForceUpdate] = useForceUpdate()
+
   const [show20, setShow20] = useState(true)
   const [check4th, setCheck4th] = useState(true)
   const [useFilters, setUseMainStatFilter] = useState(false)
@@ -561,8 +563,9 @@ export default function TabUpopt() {
                         objMin={minObj0}
                         calcExactCallback={() => {
                           console.log(`called with ${i}`)
+                          // FIXME: the `calcExact` function should take art.id as argument, because `i` is relative to the displayed arts here.
                           upOptCalc?.calcExact(i)
-                          setUpOptCalc(upOptCalc)
+                          setForceUpdate()
                         }}
                       />
                     </Grid>
