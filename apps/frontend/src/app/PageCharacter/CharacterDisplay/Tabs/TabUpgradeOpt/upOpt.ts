@@ -556,22 +556,38 @@ export class UpOptCalculator {
     subsToConsider.forEach((subKey4) => {
       const prob_sub = fWeight[subKey4] / Z
       crawlUpgrades(N, (ns, prob) => {
-        ns[3] += 1 // last substat has initial roll
-        const vals = ns.map((ni, i) =>
-          subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
+        const vals = ns.map((ni, i) => {
+          if (i === 3) {
+            // 4th sub gets 1 initial roll.
+            ni += 1
+            return !this.skippableDerivatives[allSubstatKeys.indexOf(subKey4)]
+              ? range(7 * ni, 10 * ni)
+              : [NaN]
+          }
+          return subs[i] &&
+            !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
             ? range(7 * ni, 10 * ni)
             : [NaN]
-        )
+        })
 
         cartesian(...vals).forEach((upVals) => {
           const stats = { ...this.artifacts[ix].values }
           let p_upVals = 1
-          for (let i = 0; i < 4; i++) {
+          for (let i = 0; i < 3; i++) {
             if (isNaN(upVals[i])) continue
 
             const key = subs[i]
             const val = upVals[i]
             const ni = ns[i]
+            stats[key] = (stats[key] ?? 0) + val * scale(key)
+            const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
+            p_upVals *= p_val
+          }
+          if (!isNaN(upVals[3])) {
+            // i = 3 case
+            const key = subKey4
+            const val = upVals[3]
+            const ni = ns[3] + 1
             stats[key] = (stats[key] ?? 0) + val * scale(key)
             const p_val = 4 ** -ni * quadrinomial(ni, val - 7 * ni)
             p_upVals *= p_val
