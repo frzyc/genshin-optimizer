@@ -1,0 +1,157 @@
+{
+  "name": "Klee",
+  "title": "Kaçan Güneş Işığı",
+  "description": "Bir patlayıcı uzmanı ve Favonius Şövalyeleri hapishanesinin müdavimi. Ayrıca Kaçan Güneş Işığı olarak da bilinir.",
+  "constellationName": "Dört Yapraklı Yonca",
+  "auto": {
+    "name": "Bom!",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Bir şeye çarpınca havaya uçan patlayıcılar fırlatır! Arka arkaya, <pyro>Ateş Alan Hasarı</pyro> veren en fazla 3 patlayıcı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra belirli miktarda Dayanıklılık harcayarak düşmanlara <pyro>Ateş Alan Hasarı</pyro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Klee, Ateşin gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <pyro>Ateş Alan Hasarı</pyro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Zıpzıp Bodur",
+    "description": {
+      "0": "Zıpzıp Bodur, insanın içini kıpır kıpır eder! ",
+      "1": "Zıpzıp Bodur, fırlatıldığında üç kez zıplar ve her zıplamada alanı yakarak <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "2": "<br/>",
+      "3": "Üçüncü zıplamada bomba parçalanarak çok sayıda mayına dönüşür.",
+      "4": "Mayınlar düşmanlara temas edince patlar veya kısa bir süre sonra <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "5": "<br/>",
+      "6": "2 yük ile başlar.",
+      "7": "<br/>",
+      "8": "<i>Zıpzıp Bodur ve Klee çok iyi arkadaştır! Klee onu herkesle tanıştırmadan edemez.</i>"
+    },
+    "skillParams": {
+      "0": "Zıpzıp Bodur Hasarı",
+      "1": "Mayın Hasarı",
+      "2": "Mayın Süresi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kıvılcımlar ve Patlama",
+    "description": {
+      "0": "Klee'nin Alev Almış Neşesi! Bu becerinin süresi boyunca sürekli Kıvılcımlar ve Patlama çıkararak yakındaki düşmanlara saldırıp <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "1": "<br/>",
+      "2": "<i>Tüm şövalyeler, henüz kendini bombalarıyla patlatmadığı için Klee'nin çok şanslı olduğunu düşünüyor.</i>"
+    },
+    "skillParams": {
+      "0": "Kıvılcımlar ve Patlama Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ezici Sürpriz",
+    "description": {
+      "0": "<strong>Zıpzıp Bodur</strong> ve Normal Saldırılar Hasar verdiğinde Klee, %50 ihtimalle Patlayıcı Kıvılcım elde eder.",
+      "1": "Patlayıcı Kıvılcım sonraki Yüklü Saldırıda harcanır. Bu saldırı Dayanıklılık harcamaz ve %50 daha fazla Hasar verir."
+    }
+  },
+  "passive2": {
+    "name": "Işıltılı Patlama",
+    "description": {
+      "0": "Klee'nin Yüklü Saldırısı, Kritik Vuruş yaptığında tüm grup üyeleri 2 Element Enerjisi elde eder."
+    }
+  },
+  "passive3": {
+    "name": "Hazinelerim!",
+    "description": {
+      "0": "Yakınlardaki <strong>Mondstadt'a özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Zincirleme Tepkimeler",
+    "description": {
+      "0": "Saldırılar ve Beceriler bir ihtimalle düşmanları kıvılcım yağmuruna tutar, <strong>Kıvılcımlar ve Patlama</strong> becerisinin %120'sine denk Hasar verir."
+    }
+  },
+  "constellation2": {
+    "name": "Patlayıcı Parçalar",
+    "description": {
+      "0": "<strong>Zıpzıp Bodur</strong> mayınlarının vurduğu düşmanların 10 saniyeliğine Savunması %23 azalır."
+    }
+  },
+  "constellation3": {
+    "name": "Muhteşem Bileşim",
+    "description": {
+      "0": "<strong>Zıpzıp Bodur</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kıvılcımlı Patlama",
+    "description": {
+      "0": "Klee, <strong>Kıvılcımlar ve Patlama</strong> süresince savaş alanından ayrıldığında bir patlama meydana gelir. Bu patlama Klee'nin Saldırısının %555'ine denk <pyro>Ateş Alan Hasarı</pyro> verir."
+    }
+  },
+  "constellation5": {
+    "name": "Yıldız Patlaması",
+    "description": {
+      "0": "<strong>Kıvılcımlar ve Patlama</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Alevli Neşe",
+    "description": {
+      "0": "Klee, <strong>Kıvılcımlar ve Patlama</strong> etkisi altındayken 3 saniyede bir (Klee hariç) tüm grup üyeleri için 3 Enerji yeniler.",
+      "1": "<strong>Kıvılcımlar ve Patlama</strong> kullanıldığında tüm grup üyeleri 25 saniyeliğine %10 <pyro>Ateş Hasarı Bonusu</pyro> kazanır."
+    }
+  }
+}

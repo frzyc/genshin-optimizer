@@ -1,0 +1,29 @@
+{
+  "setName": "Meteorite inverso",
+  "setEffects": {
+    "2": "Efficacia scudo +35%.",
+    "4": "Sotto la protezione di uno scudo, ottieni un ulteriore aumento dei DAN da attacchi normali e caricati di un 40%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore delle notti d'estate",
+      "desc": "Un fiore artigianale perennemente sbocciato. Che celi davvero della vita dentro di sé?"
+    },
+    "plume": {
+      "name": "Gran finale delle notti d'estate",
+      "desc": "Un dardo di legno deliziosamente inciso. Si fermerà solo quando avrà raggiunto la sua destinazione."
+    },
+    "sands": {
+      "name": "Orologio delle notti d'estate",
+      "desc": "Un orologio che ha smesso di funzionare."
+    },
+    "goblet": {
+      "name": "Pallone d'acqua delle notti d'estate",
+      "desc": "I palloni d'acqua non sono un oggetto raro da trovare in occasione del festival d'estate, ma nessuno è finemente lavorato come questo."
+    },
+    "circlet": {
+      "name": "Maschera delle notti d'estate",
+      "desc": "Una maschera popolare raffigurante l'immagine di una divinità come descritto nelle leggende."
+    }
+  }
+}

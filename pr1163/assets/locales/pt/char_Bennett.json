@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "pressDMG": "Dano ao Pressionar",
+    "lvl1_1DMG": "Dano do 1º Ataque no Nív. 1",
+    "lvl1_2DMG": "Dano do 2º Ataque no Nív. 1",
+    "lvl2_1DMG": "Dano do 1º Ataque no Nív. 2",
+    "lvl2_2DMG": "Dano do 2º Ataque no Nív. 2",
+    "explDMG": "Dano da Explosão",
+    "lvl1CD": "Cooldown do Nív. 1",
+    "lvl2CD": "Cooldown do Nív. 2"
+  },
+  "additionalATK": "Aumento de ATQ Adicional",
+  "additionalATKRatio_": "Taxa do Bônus de ATQ Adicional",
+  "c4DMG": "Dano da Odisseia Inesperada",
+  "c6PyroInfusion": "<pyro>Infusão Pyro nas Espadas, Espadões e Lanças"
+}

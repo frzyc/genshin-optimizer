@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+  "showingNum_other": "<1>{{count}}</1> 무기 표시중 (총 {{value}})",
+  "edit": "무기 편집",
+  "weaponName": "무기 이름",
+  "removeWeapon": "{{value}}을/를 정말 제거하시겠습니까?",
+  "addWeapon": "새 무기 추가"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Valse nocturne",
+  "description": {
+    "0": "Un arc peint de la couleur des nuits de péché et de fantaisie."
+  },
+  "passiveName": "Duetto de nuit",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de <cryo>20 %</cryo> pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de <cryo>20 %</cryo> pendant 5 s."
+    },
+    "1": {
+      "0": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de <cryo>25 %</cryo> pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de <cryo>25 %</cryo> pendant 5 s."
+    },
+    "2": {
+      "0": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de <cryo>30 %</cryo> pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de <cryo>30 %</cryo> pendant 5 s."
+    },
+    "3": {
+      "0": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de <cryo>35 %</cryo> pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de <cryo>35 %</cryo> pendant 5 s."
+    },
+    "4": {
+      "0": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de <cryo>40 %</cryo> pendant 5 s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de <cryo>40 %</cryo> pendant 5 s."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "p1": "Wind Blade DMG",
+  "c4": "DMG Reduction while casting",
+  "c6": "Enemy's been hit by <strong>Gust Surge</strong>",
+  "initialEleDmg": "Initial Cutting Absorption DMG",
+  "maxEleDmg": "Max Cutting Absorption DMG",
+  "stormEleDmg": "Initial Storm Absorption DMG",
+  "stormEleMaxDmg": "Max Storm Absorption DMG"
+}

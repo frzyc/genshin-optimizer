@@ -1,0 +1,7 @@
+{
+  "inFieldAndTakeDmg": "Setelah karakter aktif menerima damage di dalam Fiery Sanctum",
+  "field_dmg_": "DMG Bonus Fiery Sanctum",
+  "initialHeal": "Initial Healing",
+  "dotHeal": "Tambahan Healing",
+  "critHitDuringBurst": "Jumlah hit CRIT selama sekali penggunaan <strong>The Lioness' Bite</strong>"
+}

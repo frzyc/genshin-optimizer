@@ -1,0 +1,24 @@
+{
+  "name": "Guia de Magia",
+  "description": {
+    "0": "12ª edição. Uma reedição com correção da 11ª edição e novas adições baseadas nos desenvolvimentos atuais."
+  },
+  "passiveName": "Destruição de Tempestade e Maré",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em <cryo>12%</cryo>."
+    },
+    "1": {
+      "0": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em <cryo>15%</cryo>."
+    },
+    "2": {
+      "0": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em <cryo>18%</cryo>."
+    },
+    "3": {
+      "0": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em <cryo>21%</cryo>."
+    },
+    "4": {
+      "0": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em <cryo>24%</cryo>."
+    }
+  }
+}

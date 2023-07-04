@@ -1,0 +1,12 @@
+{
+  "setName": "Orações para a Primavera",
+  "setEffects": {
+    "1": "Reduz a duração dos efeitos causados por Cryo em 40%."
+  },
+  "pieces": {
+    "circlet": {
+      "name": "Tiara de Gelo",
+      "desc": "Uma coroa usada por sacerdotes durante cerimônias antigamente. Sua exposição prolongada ao gelo e ao frio deu-lhe uma resistência incrível."
+    }
+  }
+}

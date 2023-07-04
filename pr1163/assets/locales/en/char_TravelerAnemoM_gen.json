@@ -1,0 +1,153 @@
+{
+  "auto": {
+    "name": "Foreign Ironwind",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Palm Vortex",
+    "description": {
+      "0": "Grasping the wind's might, you form a vortex of vacuum in your palm, causing continuous <anemo>Anemo DMG</anemo> to opponents in front of you.",
+      "1": "The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
+      "2": "<br/>",
+      "3": "<strong>Hold</strong>",
+      "4": "DMG and AoE will gradually increase.",
+      "5": "<br/>",
+      "6": "<strong>Elemental Absorption</strong>",
+      "7": "If the vortex comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "8": "Elemental Absorption may only occur once per use.",
+      "9": "<br/>",
+      "10": "<i>You discussed the way to grasp the formless wind with Paimon.</i>"
+    },
+    "skillParams": {
+      "0": "Initial Cutting DMG",
+      "1": "Max Cutting DMG",
+      "2": "Initial Storm DMG",
+      "3": "Max Storm DMG",
+      "4": "Base CD",
+      "5": "Max Charging CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gust Surge",
+    "description": {
+      "0": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous <anemo>Anemo DMG</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Elemental Absorption</strong>",
+      "3": "If the tornado comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "4": "Elemental Absorption may only occur once per use.",
+      "5": "<br/>",
+      "6": "<i>You and Paimon studied the flapping of a butterfly's wings.</i>"
+    },
+    "skillParams": {
+      "0": "Tornado DMG",
+      "1": "Additional Elemental DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Slitting Wind",
+    "description": {
+      "0": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as <anemo>Anemo DMG</anemo> to all opponents in its path."
+    }
+  },
+  "passive2": {
+    "name": "Second Wind",
+    "description": {
+      "0": "<strong>Palm Vortex</strong> kills regenerate 2% HP for 5s.",
+      "1": "This effect can only occur once every 5s."
+    }
+  },
+  "constellation1": {
+    "name": "Raging Vortex",
+    "description": {
+      "0": "<strong>Palm Vortex</strong> pulls in opponents and objects within a 5m radius."
+    }
+  },
+  "constellation2": {
+    "name": "Uprising Whirlwind",
+    "description": {
+      "0": "Increases Energy Recharge by 16%."
+    }
+  },
+  "constellation3": {
+    "name": "Sweeping Gust",
+    "description": {
+      "0": "Increases the Level of <strong>Gust Surge</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Cherishing Breezes",
+    "description": {
+      "0": "Reduces DMG taken while casting <strong>Palm Vortex</strong> by 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Vortex Stellaris",
+    "description": {
+      "0": "Increases the Level of <strong>Palm Vortex</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Intertwined Winds",
+    "description": {
+      "0": "Targets who take DMG from <strong>Gust Surge</strong> have their <anemo>Anemo RES</anemo> decreased by 20%.",
+      "1": "If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "addNew": "Add Character",
+  "tabs": {
+    "overview": "Overview",
+    "talent": "Talents",
+    "teambuffs": "Team Buffs",
+    "optimize": "Optimize",
+    "theorycraft": "Theorycraft"
+  },
+  "formulas": "Formulas",
+  "calculations": "Calculations",
+  "selectCharacter": "Select a Character",
+  "removeCharacter": "Are you sure you want to remove {{value}}?",
+  "delete": "Delete Character",
+  "teammates": "Teammates",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Character",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Characters",
+  "hitmode": {
+    "hit": "Non-CRIT Hit DMG",
+    "avgHit": "Avg. DMG",
+    "critHit": "CRIT Hit DMG"
+  },
+  "noReaction": "No Reactions",
+  "tabEquip": {
+    "swapWeapon": "Swap Weapon",
+    "swapArt": "Swap Artifact",
+    "compare": "Compare with current Build",
+    "unequipArts": "Unequip all artifacts"
+  },
+  "characterName": "Character Name",
+  "teammate": "Teammate {{count}}",
+  "multiTarget": {
+    "title": "Multi-Optimization Target Config",
+    "info1": "Note: Community-created Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM's Multi-Optimization Guide</3>, however, the validity of such configurations cannot be guaranteed.",
+    "info2": "It is the responsibility of the user to make sure configs accurately represent their use case.",
+    "addNewTarget": "Add Target",
+    "addNewMTarget": "Create Multi-Opt",
+    "description": "Description",
+    "duplicate": "Duplicate",
+    "target_one": "<0>{{count}}</0> Target",
+    "target_other": "<0>{{count}}</0> Targets"
+  },
+  "addStats": {
+    "title": "Enemy Config + Bonus Stats",
+    "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values."
+  },
+  "tabTheorycraft": {
+    "substatType": {
+      "min": "Use minimum substat rolls",
+      "max": "Use maximum substat rolls",
+      "mid": "Use median substat rolls"
+    },
+    "maxTotalRolls": "A \"valid\" build can only have a maximum of 45 rolls.",
+    "maxRolls": "This substat can have a maximum of 30 rolls.",
+    "maxRollsMain": "Because at least one main stat has the same attribute, this substat can have a maximum of {{value}} rolls."
+  },
+  "tabTeambuff": {
+    "team_reso": "Team Resonance",
+    "resonance_tip": "The party must be full with 4 characters in order for Elemental Resonance to take effect."
+  }
+}

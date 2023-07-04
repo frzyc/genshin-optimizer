@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "Menampilkan <1>{{count}}</1> dari {{value}} Senjata",
+  "showingNum_other": "Menampilkan <1>{{count}}</1> dari {{value}} Senjata",
+  "edit": "Edit Senjata",
+  "weaponName": "Nama Senjata",
+  "removeWeapon": "Kamu yakin ingin menghapus {{value}}?",
+  "addWeapon": "Tambah Senjata Baru"
+}

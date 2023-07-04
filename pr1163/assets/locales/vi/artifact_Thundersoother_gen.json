@@ -1,0 +1,29 @@
+{
+  "setName": "Tôn Giả Trầm Lặng",
+  "setEffects": {
+    "2": "Kháng nguyên tố Lôi tăng 40%.",
+    "4": "Tăng 35% sát thương tạo thành cho kẻ địch bị ảnh hưởng nguyên tố Lôi."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Trái Tim Bình Lôi",
+      "desc": "Đóa hoa nở rộ trong sấm sét, đến nay vẫn có thể ban tặng dũng khí cho những nhà lữ hành đi trong sấm sét."
+    },
+    "plume": {
+      "name": "Lông Vũ Bình Lôi",
+      "desc": "Trong truyền thuyết, đây là huy chương dành tặng cho anh hùng đã đứng lên tiêu diệt lôi điện."
+    },
+    "sands": {
+      "name": "Khoảnh Khắc Bình Lôi",
+      "desc": "Đồng hồ của người dũng sĩ thần phục lôi điện, những mảnh vỡ của sấm sét trong đó chảy xuống báo hiệu thời gian dần trôi qua."
+    },
+    "goblet": {
+      "name": "Ly Bình Lôi",
+      "desc": "Ly rượu của dũng sĩ Bình Lôi, nghe nói những anh hùng tiêu diệt Lôi Ma Thú đã dùng chiếc ly này đựng đầy tử điện để uống."
+    },
+    "circlet": {
+      "name": "Nón Bình Lôi",
+      "desc": "Vương miện của dũng sĩ Bình Lôi, nhận được khi các anh hùng cổ đại tiêu diệt Lôi Ma Thú làm hại đại lục."
+    }
+  }
+}

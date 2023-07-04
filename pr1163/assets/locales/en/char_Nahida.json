@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "Tri-Karma Purification DMG Bonus",
+  "karmaCritRate_": "Tri-Karma Purification CRIT Rate Bonus",
+  "karmaIntervalDec": "Tri-Karma Purification Trigger Interval Decrease",
+  "noBurstEffect": "Hint: No Burst effects active. Enable C1 and/or add <pyro>Pyro</pyro>, <electro>Electro</electro>, and/or <hydro>Hydro</hydro> teammates",
+  "partyInBurst": "Party in field",
+  "c1Key": "Additional <pyro>Pyro</pyro>, <electro>Electro</electro>, and <hydro>Hydro</hydro> members for <strong>Shrine of Maya</strong>'s bonus",
+  "c2": {
+    "bloomCondName": "Opponent is marked by <strong>Seed of Skandha</strong>",
+    "qasCondName": "After triggering <spread>Quicken</spread> <aggravate>Aggravate</aggravate>, or <spread>Spread</spread> on the opponent marked by Seeds of Skandha"
+  },
+  "c4CondName": "Opponents affected by <strong>Seeds of Skandha</strong>",
+  "c6KarmicDmg": "Karmic Oblivion DMG"
+}

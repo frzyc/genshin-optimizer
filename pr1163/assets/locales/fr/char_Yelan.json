@@ -1,0 +1,12 @@
+{
+  "c2": {
+    "dmg": "DGT d'Offert par la maison"
+  },
+  "c4": {
+    "condName": "Nombre d'ennemis marqués par la ligne vitale"
+  },
+  "c6": {
+    "condName": "Dans l'état de Stratége",
+    "dmg": "DGT de flèches perçantes spéciales"
+  }
+}

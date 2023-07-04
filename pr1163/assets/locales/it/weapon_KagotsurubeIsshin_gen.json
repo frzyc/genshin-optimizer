@@ -1,0 +1,12 @@
+{
+  "name": "Kagotsurube Isshin",
+  "description": {
+    "0": "Questa famosa spada è stata forgiata in una nazione all'estremo nord. Numerose azioni malvage compiute nel nome di Isshin hanno però macchiato la fama di quest'arma nel corso del suo viaggio verso casa."
+  },
+  "passiveName": "Chiarezza dell'arte Isshin",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando un attacco normale, caricato o in picchiata colpisce un avversario, crea una Burrasca tagliente, infliggendo DAN ad area pari a un 180% dell'ATT e aumentando l'ATT di un 15% per 8 s. Quest'effetto può attivarsi una volta ogni 8 s."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "skill": {
+    "stele": "Stone Stele DMG",
+    "resonance": "Resonance DMG",
+    "maxStele": "Maximum number of Steles",
+    "nearShield": "Enemy is near the <strong>Jade Shield</strong>"
+  },
+  "p1cond": "After the <strong>Jade Shield</strong> has taken DMG",
+  "c6heal": "Maximum Health Regen"
+}

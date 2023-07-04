@@ -1,0 +1,24 @@
+{
+  "name": "Đại Kiếm Phi Thiên",
+  "description": {
+    "0": "Kiếm bằng gang, truyền thuyết nói rằng \"Ngự Kiếm Công Tử\" từng muốn dùng nó để bay lên trời lần nữa."
+  },
+  "passiveName": "Dũng Khí",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng <cryo>6%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+    },
+    "1": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng <cryo>7%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+    },
+    "2": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng <cryo>8%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+    },
+    "3": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng <cryo>9%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+    },
+    "4": {
+      "0": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng <cryo>10%</cryo>, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+    }
+  }
+}

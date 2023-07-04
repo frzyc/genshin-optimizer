@@ -1,0 +1,24 @@
+{
+  "name": "Kiếm Li Cốt",
+  "description": {
+    "0": "Binh khí hiếm đến từ biển cổ đại, múa kiếm vùn vụt như sóng dữ."
+  },
+  "passiveName": "Phá Sóng",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi nhân vật ra trận, mỗi 4s tăng <cryo>6%</cryo> sát thương gây ra, <cryo>3%</cryo> sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+    },
+    "1": {
+      "0": "Khi nhân vật ra trận, mỗi 4s tăng <cryo>7%</cryo> sát thương gây ra, <cryo>2.7%</cryo> sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+    },
+    "2": {
+      "0": "Khi nhân vật ra trận, mỗi 4s tăng <cryo>8%</cryo> sát thương gây ra, <cryo>2.4%</cryo> sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+    },
+    "3": {
+      "0": "Khi nhân vật ra trận, mỗi 4s tăng <cryo>9%</cryo> sát thương gây ra, <cryo>2.2%</cryo> sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+    },
+    "4": {
+      "0": "Khi nhân vật ra trận, mỗi 4s tăng <cryo>10%</cryo> sát thương gây ra, <cryo>2%</cryo> sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+    }
+  }
+}

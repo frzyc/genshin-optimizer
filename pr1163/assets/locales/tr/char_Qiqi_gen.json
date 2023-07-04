@@ -1,0 +1,161 @@
+{
+  "name": "Qiqi",
+  "title": "Buzul Diriliş",
+  "description": "Bubu Eczanesinde talebe ve otacı. Kemik beyazı tene sahip bir ölümsüz. Pek konuşmaz ve duygularını belli etmez.",
+  "constellationName": "Antik Çan",
+  "auto": {
+    "name": "Kadim Kılıç Sanatı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Adeptus Büyüsü: Ayazın Habercisi",
+    "description": {
+      "0": "Qiqi, Buzdamarı Tılsımını kullanarak Ayazın Habercisini çağırır ve etrafındaki düşmanlara <cryo>Buz Hasarı</cryo> verir.",
+      "1": "<br/>",
+      "2": "<strong>Ayazın Habercisi</strong>",
+      "3": [
+        "Qiqi'nin Normal ve Yüklü Saldırıları isabet ettiğinde grup üyelerinin ve yakındaki takım arkadaşlarının Canını yeniler. İyileştirme, Qiqi'nin Saldırısına göre belirlenir.",
+        "Aktif karakterinin Canını belirli aralıklarla yeniler.",
+        "Karakteri takip eder ve yoluna çıkan düşmanlara <cryo>Buz Hasarı</cryo> verir."
+      ],
+      "4": "<br/>",
+      "5": "<i>Bunu Dr. Bai'nin kıymetli malzemeleri ısınmasın ve çürümesin diye kullanıyorum. Aynen öyle.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Vuruş ile Yenilenme",
+      "2": "Sürekli Yenilenme",
+      "3": "Ayazın Habercisi Hasarı",
+      "4": "Süre",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Adeptus Büyüsü: Nazar",
+    "description": {
+      "0": "Qiqi, vücudunda saklı olan Adeptus gücünü açığa çıkararak yakındaki düşmanlara <cryo>Buz Hasarı</cryo> veren bir Nazar Tılsımıyla işaretler.",
+      "1": "<br/>",
+      "2": "<strong>Nazar Tılsımı</strong>",
+      "3": "Bu Tılsımdan etkilenen düşmanlar Hasar aldığında bu Hasarı veren karakter Can yeniler.",
+      "4": "<br/>",
+      "5": "<i>\"Ben Uğur Getirenim. Dirilişin Hanımıyım.\"</i>",
+      "6": "<i>- Qiqi bu sözleri hatırlamıyor.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "İyileştirme",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ömür Uzatma Yöntemleri",
+    "description": {
+      "0": "<strong>Adeptus Büyüsü: Ayazın Habercisi</strong> etkisindeki bir karakter, bir Element Tepkimesi tetiklediğinde 8 saniyeliğine Gelen İyileştirme Bonusu %20 artar."
+    }
+  },
+  "passive2": {
+    "name": "Bilinmezliğe Bir Bakış",
+    "description": {
+      "0": "Qiqi, Normal ve Yüklü Saldırı ile vurduğu düşmanlara %50 ihtimalle 6 saniyeliğine Nazar Tılsımı uygulayabilir. Bu etki 30 saniyede bir uygulanabilir."
+    }
+  },
+  "passive3": {
+    "name": "Geçmiş Yaşamın Anıları",
+    "description": {
+      "0": "Yakınlardaki <strong>Liyue'ye özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Buzul Çile",
+    "description": {
+      "0": "Ayazın Habercisi, Nazar Tılsımı ile işaretlenmiş bir düşmana vurduğunda Qiqi 2 Enerji yeniler."
+    }
+  },
+  "constellation2": {
+    "name": "İliklerine Kadar Donmuş",
+    "description": {
+      "0": "<cryo>Buz</cryo> etkisindeki düşmanlara karşı Qiqi'nin Normal ve Yüklü Saldırı Hasarı %15 artar."
+    }
+  },
+  "constellation3": {
+    "name": "Göklere Övgü",
+    "description": {
+      "0": "<strong>Adeptus Büyüsü: Nazar</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kutsal Baskı",
+    "description": {
+      "0": "Nazar Tılsımı ile işaretlenmiş hedeflerin Saldırısı %20 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Kızıl Nilüfer Çiçeği",
+    "description": {
+      "0": "<strong>Adeptus Büyüsü: Ayazın Habercisi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Canlandırma Ayini",
+    "description": {
+      "0": "<strong>Adeptus Büyüsü: Nazar</strong> kullanıldığında saf dışı kalmış tüm grup üyeleri dirilir ve Canlarının %50'si yenilenir.",
+      "1": "Bu etki 15 dakikada bir uygulanabilir."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Verbannter",
+  "setEffects": {
+    "2": "Erhöht die Aufladerate um 20 %.",
+    "4": "Stellt allen Truppenmitgliedern (außer sich selbst) bei Anwendung von Spezialfähigkeiten 6 s lang alle 2 s 2 Punkte Elementarenergie wieder her, nicht stapelbar."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Blume des Verbannten",
+      "desc": "Eine verblasste Blume, die man sich anstecken kann. Wenn selbst ein Verbannter sie immer bei sich trägt, muss sie wohl eine tiefere Bedeutung haben."
+    },
+    "plume": {
+      "name": "Feder des Verbannten",
+      "desc": "Diese Feder war ursprünglich nicht als Schmuck gedacht. Sie blieb einfach an der Kleidung ihres neuen Besitzers hängen."
+    },
+    "sands": {
+      "name": "Taschenuhr des Verbannten",
+      "desc": "Die Abdeckung aus Kristallglas ist zersprungen und auch die Zeiger sind verschwunden. Doch selbst in diesem Zustand wollte sie ihr Besitzer nicht missen."
+    },
+    "goblet": {
+      "name": "Kelch des Verbannten",
+      "desc": "Ein trüber Kelch aus schwerem Metall, in das früher Edelsteine eingesetzt waren. Sie wurden aber nachträglich entfernt."
+    },
+    "circlet": {
+      "name": "Haarreif des Verbannten",
+      "desc": "Ein wertvoller Haarreif mit einem zerkratzten Wappen, das vormals dessen Zugehörigkeit zeigte. Somit wird klar, dass der Besitzer seinen einstigen Titel verloren hat."
+    }
+  }
+}

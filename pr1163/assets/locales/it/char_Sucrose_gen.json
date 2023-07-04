@@ -1,0 +1,155 @@
+{
+  "name": "Sucrose",
+  "title": "Dolcezza innocua",
+  "description": "Un'alchimista dalla vivace curiosità verso ogni cosa. Il suo campo di ricerca è la bioalchimia.",
+  "constellationName": "Ampulla",
+  "auto": {
+    "name": "Creazione dello spirito dei venti",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 attacchi usando gli Spiriti dei venti, infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <anemo>DAN da Anemo ad area</anemo> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Richiamando il potere dei suoi Spiriti dei venti, Sucrose si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Creazione Anemoipostasi astabile n. 6308",
+    "description": {
+      "0": "Crea un piccolo Spirito dei venti che attira gli avversari e gli oggetti verso la sua posizione, scaglia via gli avversari nella sua area d'effetto e infligge <anemo>DAN da Anemo</anemo>.",
+      "1": "<br/>",
+      "2": "<i>È un po' imbarazzante ma, nonostante le forme di vita elementali nate attraverso questa procedura si dissipino molto rapidamente, sono incredibilmente utili all'avventura. Persino gli esperimenti falliti possono avere applicazioni pratiche.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Creazione proibita: Isomero 75 Tipo II",
+    "description": {
+      "0": "Sucrose lancia un miscuglio instabile che crea un Grande Spirito dei venti.",
+      "1": "Finché persiste, tale Spirito attira costantemente gli oggetti e gli avversari circostanti, scagliandoli via e infliggendo <anemo>DAN da Anemo</anemo>.",
+      "2": "<br/>",
+      "3": "<strong>Assorbimento elementale</strong>",
+      "4": "Se lo Spirito dei venti entra in contatto con energia di <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",
+      "5": "L'assorbimento elementale avviene una volta per utilizzo.",
+      "6": "<br/>",
+      "7": "<i>Sucrose era solita dare nomi alle sue Ipostasi di Anemo volatili, ma la loro discendenza superò in poco tempo quella di Baron Coniglio DCCCXCIII.</i>"
+    },
+    "skillParams": {
+      "0": "DAN nel tempo",
+      "1": "DAN elementali aggiuntivi",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Conversione del catalizzatore",
+    "description": {
+      "0": "Quando Sucrose innesca una reazione di Turbinio, la maestria elementale di tutti i personaggi del gruppo (esclusa Sucrose) con l'elemento corrispondente aumenta di 50 per 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Mollis Favonius",
+    "description": {
+      "0": "Quando <strong>Creazione Anemoipostasi astabile n. 6308</strong> o <strong>Creazione proibita: Isomero 75 Tipo II</strong> colpisce un avversario, la maestria elementale di tutti i membri del gruppo (esclusa Sucrose) aumenta di una quantità pari a un 20% della maestria elementale di Sucrose per 8 s."
+    }
+  },
+  "passive3": {
+    "name": "Ingegnosità astabile",
+    "description": {
+      "0": "Quando Sucrose crea materiali per il potenziamento di armi e personaggi, ha un 10% di probabilità di ottenere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Ammasso di vuoto gravitazionale",
+    "description": {
+      "0": "<strong>Creazione Anemoipostasi astabile n. 6308</strong> ottiene 1 carica aggiuntiva."
+    }
+  },
+  "constellation2": {
+    "name": "Beth: forma eterea",
+    "description": {
+      "0": "La durata di <strong>Creazione proibita: Isomero 75 Tipo II</strong> si estende di 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "Alchimista infallibile",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Creazione Anemoipostasi astabile n. 6308</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Alchimania",
+    "description": {
+      "0": "Sucrose riduce di 1-7 s il TdR di <strong>Creazione Anemoipostasi astabile n. 6308</strong> per ogni 7 attacchi normali o caricati messi a segno sugli avversari.",
+      "1": "Un colpo può essere calcolato ogni 0,1 s."
+    }
+  },
+  "constellation5": {
+    "name": "Attenzione, ampolla ordinaria",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Creazione proibita: Isomero 75 Tipo II</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Entropia caotica",
+    "description": {
+      "0": "Se <strong>Creazione proibita: Isomero 75 Tipo II</strong> innesca un assorbimento elementale, tutti i membri del gruppo ottengono un 20% di bonus DAN dell'elemento assorbito per la sua durata."
+    }
+  }
+}

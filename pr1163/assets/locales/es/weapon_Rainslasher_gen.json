@@ -1,0 +1,24 @@
+{
+  "name": "Segadora de la Lluvia",
+  "description": {
+    "0": "Una gran espada fluorescente y sin punta que hace añicos a los enemigos con fuerza bruta y poder."
+  },
+  "passiveName": "Perdición de la tormenta y la marea",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>20%</cryo> el daño contra los enemigos afectados por Hydro o Electro."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>24%</cryo> el daño contra los enemigos afectados por Hydro o Electro."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>28%</cryo> el daño contra los enemigos afectados por Hydro o Electro."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>32%</cryo> el daño contra los enemigos afectados por Hydro o Electro."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>36%</cryo> el daño contra los enemigos afectados por Hydro o Electro."
+    }
+  }
+}

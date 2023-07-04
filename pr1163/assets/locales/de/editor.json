@@ -1,0 +1,36 @@
+{
+  "title": "Artefakt Editor",
+  "rarity": "Qualität",
+  "level": "Level",
+  "unknownPieceName": "Name nicht bekannt",
+  "unknownSetName": "Unknown Set Name",
+  "curSubEff": "Aktuelle Bonusattributseffizienz",
+  "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Bonusattributseffizienz</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
+  "maxSubEff": "Maximale Bonusattributseffizienz",
+  "maxSubEffDesc": "Die <strong>Maximale Bonusattributseffizienz</strong> eines Artefakts berechnet die Effizienz unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
+  "substat": {
+    "selectSub": "Bonusattribut auswählen",
+    "error": {
+      "noCalc": "Zufällige Aufwertungen konnten nicht automatisch bestimmt werden.",
+      "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
+    },
+    "noRoll": "Keine zufälligen Aufwertungen",
+    "RollCount_one": "{{count}} Roll",
+    "RollCount_other": "{{count}} Rolls",
+    "noStat": "Kein Wert",
+    "eff": "Effizenz: <1></1>",
+    "noSubstat": "Kein Bonusattribut",
+    "substatFormat": "Bonusattribut {{value}}",
+    "nextRolls": "Next rolls:"
+  },
+  "preview": "Artefaktvorschau",
+  "dupArt": "Artefaktduplikate entdeckt.",
+  "upArt": "Verstärktes Artefakt entdeckt.",
+  "beforeEdit": "Vor dem Bearbeiten",
+  "btnSave": "Artefakt sichern",
+  "btnAdd": "Artefakt hinzufügen",
+  "btnClear": "Eingaben löschen",
+  "btnRandom": "Zufällig ausfüllen",
+  "btnUpdate": "Artefakt aktualisieren",
+  "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?"
+}

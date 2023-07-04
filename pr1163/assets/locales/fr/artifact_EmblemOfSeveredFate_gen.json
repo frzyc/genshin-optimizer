@@ -1,0 +1,29 @@
+{
+  "setName": "Emblème du destin brisé",
+  "setEffects": {
+    "2": "Augmente la recharge d'énergie de 20 %.",
+    "4": "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés d'un maximum de 75 % de cette manière."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Tsuba magnifique",
+      "desc": "Les légendes prétendent que ce garde-main orné était autrefois monté sur une épée offerte au oni qui a trahi la Shogun."
+    },
+    "plume": {
+      "name": "Plume brisée",
+      "desc": "Ceci était autrefois la plume noire d'un certain guerrier tengu, et également le souvenir précieux d'un grand samouraï du passé."
+    },
+    "sands": {
+      "name": "Inro de la tempête",
+      "desc": "Une boîte en laque violet foncé exquise qui peut être utilisée pour ranger des objets, décorée de coquillages incrustés brillants et d'orfèvrerie complexe."
+    },
+    "goblet": {
+      "name": "Gourde pourpre",
+      "desc": "Un récipient à vin à la conception complexe dans lequel un artiste martial de renommée mondiale a une fois bu."
+    },
+    "circlet": {
+      "name": "Kabuto orné",
+      "desc": "Un casque robuste et dur porté comme armure par un noble samouraï."
+    }
+  }
+}

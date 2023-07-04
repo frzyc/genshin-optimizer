@@ -1,0 +1,12 @@
+{
+  "soulCompanion": {
+    "1": "Soul Companion 1-Hit DMG",
+    "2": "Soul Companion 2-Hit DMG",
+    "3": "Soul Companion 3-Hit DMG",
+    "4": "Soul Companion 4-Hit DMG"
+  },
+  "electroSigil": "Electro Sigil",
+  "electroSigilAbsorbed": "Energy Regenerated if Electro Sigils are Cleared",
+  "opHitWithClawAndThunder": "Opponent's been hit by <strong>Claw and Thunder</strong> (Press)",
+  "electroSigilPerProc": "Electro Sigils Per Proc"
+}

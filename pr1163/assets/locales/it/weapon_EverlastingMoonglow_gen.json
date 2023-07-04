@@ -1,0 +1,24 @@
+{
+  "name": "Luna perenne",
+  "description": {
+    "0": "Un'arma di diaspro proveniente dalle profondità marine. Brilla di una luminosità pura e distante come quella della luna."
+  },
+  "passiveName": "Notte di luna",
+  "passiveDescription": {
+    "0": {
+      "0": "Il bonus di guarigione aumenta di un <cryo>10%</cryo> e i DAN da attacco normale aumentano per un <cryo>1%</cryo> dei PS max del personaggio con quest'arma equipaggiata. Per 12 s dopo l'uso di un Tripudio elementale, gli attacchi normali che colpiscono gli avversari ripristineranno 0,6 di energia una volta ogni 0,1 s."
+    },
+    "1": {
+      "0": "Il bonus di guarigione aumenta di un <cryo>12,5%</cryo> e i DAN da attacco normale aumentano per un <cryo>1,5%</cryo> dei PS max del personaggio con quest'arma equipaggiata. Per 12 s dopo l'uso di un Tripudio elementale, gli attacchi normali che colpiscono gli avversari ripristineranno 0,6 di energia una volta ogni 0,1 s."
+    },
+    "2": {
+      "0": "Il bonus di guarigione aumenta di un <cryo>15%</cryo> e i DAN da attacco normale aumentano per un <cryo>2%</cryo> dei PS max del personaggio con quest'arma equipaggiata. Per 12 s dopo l'uso di un Tripudio elementale, gli attacchi normali che colpiscono gli avversari ripristineranno 0,6 di energia una volta ogni 0,1 s."
+    },
+    "3": {
+      "0": "Il bonus di guarigione aumenta di un <cryo>17,5%</cryo> e i DAN da attacco normale aumentano per un <cryo>2,5%</cryo> dei PS max del personaggio con quest'arma equipaggiata. Per 12 s dopo l'uso di un Tripudio elementale, gli attacchi normali che colpiscono gli avversari ripristineranno 0,6 di energia una volta ogni 0,1 s."
+    },
+    "4": {
+      "0": "Il bonus di guarigione aumenta di un <cryo>20%</cryo> e i DAN da attacco normale aumentano per un <cryo>3%</cryo> dei PS max del personaggio con quest'arma equipaggiata. Per 12 s dopo l'uso di un Tripudio elementale, gli attacchi normali che colpiscono gli avversari ripristineranno 0,6 di energia una volta ogni 0,1 s."
+    }
+  }
+}

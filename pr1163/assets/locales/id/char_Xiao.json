@@ -1,0 +1,12 @@
+{
+  "burst": {
+    "autoAtkDmgBonus_": "DMG Bonus Normal/Charged/Plunging Attack",
+    "lifeDrain_": "Pengurangan HP",
+    "currentHPPerSec": "(HP/dtk saat ini)",
+    "incJump": "Kemampuan melompat meningkat",
+    "incAtkAoe": "Serangan AoE meningkat",
+    "inBurst": "Di bawah pengaruh <strong>Bane of All Evil</strong>",
+    "stack": "Waktu yang dihabiskan di <strong>Bane of All Evil</strong>"
+  },
+  "skillStack": "Penggunaan <strong>Lemniscatic Wind Cycling</strong> sebelumnya"
+}

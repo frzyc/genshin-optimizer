@@ -1,0 +1,24 @@
+{
+  "name": "Piqûre de fer",
+  "description": {
+    "0": "Une longue rapière exotique qui a été introduite à Liyue par des commerçants étrangers. Légère et tranchante."
+  },
+  "passiveName": "Dard énergisant",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de <cryo>6 %</cryo> pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les secondes."
+    },
+    "1": {
+      "0": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de <cryo>7,5 %</cryo> pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les secondes."
+    },
+    "2": {
+      "0": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de <cryo>9 %</cryo> pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les secondes."
+    },
+    "3": {
+      "0": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de <cryo>10,5 %</cryo> pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les secondes."
+    },
+    "4": {
+      "0": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de <cryo>12 %</cryo> pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les secondes."
+    }
+  }
+}

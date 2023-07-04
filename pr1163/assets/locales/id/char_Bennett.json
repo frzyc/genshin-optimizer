@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "pressDMG": "DMG Tekan",
+    "lvl1_1DMG": "Lvl 1 Tahap 1 Hit DMG",
+    "lvl1_2DMG": "Lvl 1 Tahap 2 Hit DMG",
+    "lvl2_1DMG": "Lvl 2 Tahap 1 Hit DMG",
+    "lvl2_2DMG": "Lvl 2 Tahap 2 Hit DMG",
+    "explDMG": "DMG Ledakan",
+    "lvl1CD": "Lvl 1 CD",
+    "lvl2CD": "Lvl 2 CD"
+  },
+  "additionalATK": "Peningkatan ATK Tambahan",
+  "additionalATKRatio_": "Rasio Bonus ATK Tambahan",
+  "c4DMG": "DMG Odyssey tak terduga",
+  "c6PyroInfusion": "<pyro>Sword, Claymore dan Polearm Pyro Infusion"
+}

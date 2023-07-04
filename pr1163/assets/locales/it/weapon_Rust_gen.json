@@ -1,0 +1,24 @@
+{
+  "name": "Ossidazione meschina",
+  "description": {
+    "0": "Un grande arco di ferro coperto di ruggine. Una persona normale non avrebbe neanche la forza di sollevarlo, figuriamoci di usarlo."
+  },
+  "passiveName": "Fuoco rapido",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta i DAN da attacchi normali di un <cryo>40%</cryo>, ma riduce quelli da attacchi caricati di un 10%."
+    },
+    "1": {
+      "0": "Aumenta i DAN da attacchi normali di un <cryo>50%</cryo>, ma riduce quelli da attacchi caricati di un 10%."
+    },
+    "2": {
+      "0": "Aumenta i DAN da attacchi normali di un <cryo>60%</cryo>, ma riduce quelli da attacchi caricati di un 10%."
+    },
+    "3": {
+      "0": "Aumenta i DAN da attacchi normali di un <cryo>70%</cryo>, ma riduce quelli da attacchi caricati di un 10%."
+    },
+    "4": {
+      "0": "Aumenta i DAN da attacchi normali di un <cryo>80%</cryo>, ma riduce quelli da attacchi caricati di un 10%."
+    }
+  }
+}

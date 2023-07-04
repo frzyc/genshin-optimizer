@@ -1,0 +1,5 @@
+{
+  "condName": "Обычная / заряженная атака поражает в течение 0,3 с",
+  "less": "Within 0.3s of being fired",
+  "more": "After 0.3s of being fired"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Scion de la victoire",
+  "description": {
+    "0": "Une lance rouge tranchante qui fut autrefois l'arme chérie d'un gladiateur. Le sang d'innombrables ennemis, hommes et bêtes, a teinté sa lame."
+  },
+  "passiveName": "Gladiateur",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>16 %</cryo> et la DÉF de <cryo>16 %</cryo> si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de <cryo>24 %</cryo> dans le cas contraire."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo> et la DÉF de <cryo>20 %</cryo> si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de <cryo>30 %</cryo> dans le cas contraire."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>24 %</cryo> et la DÉF de <cryo>24 %</cryo> si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de <cryo>36 %</cryo> dans le cas contraire."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>28 %</cryo> et la DÉF de <cryo>28 %</cryo> si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de <cryo>42 %</cryo> dans le cas contraire."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>32 %</cryo> et la DÉF de <cryo>32 %</cryo> si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de <cryo>48 %</cryo> dans le cas contraire."
+    }
+  }
+}

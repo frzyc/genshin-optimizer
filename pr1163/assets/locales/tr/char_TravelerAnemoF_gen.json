@@ -1,0 +1,153 @@
+{
+  "auto": {
+    "name": "Yabancı Demir Fırtınası",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Avuç Girdabı",
+    "description": {
+      "0": "Rüzgarın kudretini avucunda toplayarak bir girdap oluşturursun. Böylece önündeki düşmanlara sürekli <anemo>Rüzgar Hasarı</anemo> verirsin.",
+      "1": "Beceri süresi bittiğinde girdap patlar ve büyük bir alana çok büyük miktarda Rüzgar Hasarı verir.",
+      "2": "<br/>",
+      "3": "<strong>Basılı Tut</strong>",
+      "4": "Hasar ve Etki Alanı kademeli olarak artar.",
+      "5": "<br/>",
+      "6": "<strong>Element Emilimi</strong>",
+      "7": "Girdap, <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile etkileşime girdiğinde o element türünden ek Element Hasarı verir.",
+      "8": "Her kullanıldığında Element Emilimi yalnızca bir defa gerçekleşebilir.",
+      "9": "<br/>",
+      "10": "<i>Biçimsiz rüzgarı avucuna nasıl aldığını Paimon'a anlatıyorsun.</i>"
+    },
+    "skillParams": {
+      "0": "Başlangıç Kesme Hasarı",
+      "1": "Maksimum Kesme Hasarı",
+      "2": "Başlangıç Fırtına Hasarı",
+      "3": "Maksimum Fırtına Hasarı",
+      "4": "Temel BS",
+      "5": "Maksimum Yükleme BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ani Rüzgar Dalgası",
+    "description": {
+      "0": "Rüzgar akımına yön verir ve nesnelerle düşmanları kendine çekip sürekli <anemo>Rüzgar Hasarı</anemo> vererek ilerleyen bir hortum çağırırsın.",
+      "1": "<br/>",
+      "2": "<strong>Element Emilimi</strong>",
+      "3": "Hortum, <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile etkileşime girdiğinde o element türünden ek Element Hasarı verir.",
+      "4": "Her kullanıldığında Element Emilimi yalnızca bir defa gerçekleşebilir.",
+      "5": "<br/>",
+      "6": "<i>Paimon'la bir kelebeğin kanatlarını çırpışını gözlemledin.</i>"
+    },
+    "skillParams": {
+      "0": "Hortum Hasarı",
+      "1": "Ek Element Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kesici Rüzgar",
+    "description": {
+      "0": "Normal Saldırı kombosunun son vuruşu bir rüzgar kılıcı ortaya çıkarır. Bu kılıç önündeki tüm düşmanlara Saldırının %60'ı kadar <anemo>Rüzgar Hasarı</anemo> verir."
+    }
+  },
+  "passive2": {
+    "name": "Taze Kan",
+    "description": {
+      "0": "<strong>Avuç Girdabı</strong> ile düşman öldürüldüğünde 5 saniyeliğine %2 Can yenilenir.",
+      "1": "Bu etki 5 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation1": {
+    "name": "Hiddetli Girdap",
+    "description": {
+      "0": "<strong>Avuç Girdabı</strong> 5 metre yakınındaki düşmanları ve nesneleri içine çeker."
+    }
+  },
+  "constellation2": {
+    "name": "Yükselen Hortum",
+    "description": {
+      "0": "Enerji Yüklemesini %16 artırır."
+    }
+  },
+  "constellation3": {
+    "name": "Süpürücü Ani Rüzgar",
+    "description": {
+      "0": "<strong>Ani Rüzgar Dalgası</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Bağrına Basan Yeller",
+    "description": {
+      "0": "<strong>Avuç Girdabı</strong> becerisini kullanırken alınan Hasarı %10 azaltır."
+    }
+  },
+  "constellation5": {
+    "name": "Yıldız Girdabı",
+    "description": {
+      "0": "<strong>Avuç Girdabı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Örülü Rüzgarlar",
+    "description": {
+      "0": "<strong>Ani Rüzgar Dalgası</strong> becerisinden Hasar alan hedeflerin <anemo>Rüzgar Direnci</anemo> %20 azalır.",
+      "1": "Bir Element Emilimi gerçekleştiyse söz konusu Elemente olan dirençleri de %20 azalır."
+    }
+  }
+}

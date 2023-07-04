@@ -1,0 +1,71 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Артефакты",
+    "characters": "Персонажи",
+    "tools": "Инструменты",
+    "weapons": "Оружия",
+    "doc": "Документация",
+    "setting": "Настройки",
+    "scanner": "Сканеры"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "unselect": "Отменить",
+  "ascending": "По возрастанию",
+  "descending": "По убыванию",
+  "loading": "Загрузка...",
+  "rightsDisclaimer": "Genshin Optimizer не сотрудничает и не поддерживается HoYoverse.",
+  "appVersion": "$t(pageTitle) Версия: {{version}}",
+  "underConstruction": "В разработке",
+  "error": "Ошибка",
+  "reset": "Сбросить",
+  "info": "Информация",
+  "inventory": "Инвентарь",
+  "close": "Закрыть",
+  "sortMap": {
+    "new": "Новое",
+    "name": "Имя",
+    "level": "Уровень",
+    "rarity": "Редкость",
+    "efficiency": "Текущая ЦР",
+    "mefficiency": "Максимальная ЦР",
+    "artsetkey": "Набор артефактов",
+    "probability": "Вероятные хар-ки"
+  },
+  "link": {
+    "download": "Ссылка на скачивание",
+    "discord": "Приглашение в Discord"
+  },
+  "sortBy": "Сортировать по:",
+  "delete": "Удалить",
+  "locked": "Заблокировано",
+  "unlocked": "Разблокировано",
+  "refinement": "Ранг пробуждения {{value}}",
+  "selectlevel": "Выбрать Уровень",
+  "gender": {
+    "F": "Женский",
+    "M": "Мужской"
+  },
+  "statGroupKey": {
+    "basic_stats": "Basic Stats",
+    "elem_dmg_bonus": "Elemental DMG Bonuses",
+    "enemy_debuffs": "Enemy Debuffs",
+    "self_res": "Self Resistances",
+    "reaction_dmg_bonus": "Reaction DMG Bonuses",
+    "reaction_crit": "Reaction CRIT Bonuses",
+    "elem_dmgInc": "Elemental Damage Increases",
+    "talent_dmgInc": "Talent Damage Increases",
+    "elem_crit": "Elemental CRIT Bonuses",
+    "talent_dmg_bonus": "Talent DMG Bonuses",
+    "talent_crit": "Talent CRIT Bonuses",
+    "talent_level_boost": "Talent Level Boosts",
+    "base_stat_mod": "Base Stat Modifications",
+    "stamina_buffs": "Stamina Buffs",
+    "misc": "Misc. Stats"
+  },
+  "sillyPageTitle": "Silly Optimizer"
+}

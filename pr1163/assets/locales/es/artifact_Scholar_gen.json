@@ -1,0 +1,29 @@
+{
+  "setName": "Erudita",
+  "setEffects": {
+    "2": "Recarga de Energía +20%.",
+    "4": "Al obtener partículas u orbes elementales, los miembros del equipo que usen arco o catalizador recuperan 3 pts. adicionales de Energía Elemental. Solo puede suceder una vez cada 3 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Marcapáginas de la Erudita",
+      "desc": "Una flor seca que se usa como marcapáginas. Ha absorbido el aroma de los libros."
+    },
+    "plume": {
+      "name": "Pluma de la Erudita",
+      "desc": "La pluma de un pájaro que sirve como herramienta para escribir. La punta lleva mucho tiempo teñida de negro."
+    },
+    "sands": {
+      "name": "Reloj de la Erudita",
+      "desc": "Un pequeño reloj de escritorio. Proporciona la única referencia sobre la hora para los eruditos que están todo el día estudiando."
+    },
+    "goblet": {
+      "name": "Tintero de la Erudita",
+      "desc": "Originalmente un recipiente para agua potable. Se ha teñido de negro después de haber sido utilizado para limpiar pinceles."
+    },
+    "circlet": {
+      "name": "Monóculo de la Erudita",
+      "desc": "Este objeto fue creado para mitigar el daño que la lectura intensiva causa a los ojos."
+    }
+  }
+}

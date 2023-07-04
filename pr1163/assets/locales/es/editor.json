@@ -1,0 +1,36 @@
+{
+  "title": "Editor de Artefactos",
+  "rarity": "Rareza",
+  "level": "Nivel",
+  "unknownPieceName": "Nombre de Pieza Desconocido",
+  "unknownSetName": "Set de artefactos desconocido",
+  "curSubEff": "Valor de Tirada Actual",
+  "curSubEffDesc": "Cada 4 niveles de mejora de artefacto, se obtiene una tirada de substat. El <strong>Valor de Tirada</strong> calcula cómo de alta fué la tirada de substat como un porcentaje.",
+  "maxSubEff": "Valor de Tirada Máx.",
+  "maxSubEffDesc": "El <strong>Valor de Tirada de Substat Máximo</strong> de un artefacto calcula el VdT si las mejoras restantes obtuvieran sus valores máximos.",
+  "substat": {
+    "selectSub": "Selecciona un Substat",
+    "error": {
+      "noCalc": "No se pueden calcular las tiradas de stat.",
+      "noOverRoll": "El substat no se puede tirar más de {{value}} veces."
+    },
+    "noRoll": "Sin Tiradas",
+    "RollCount_one": "{{count}} Tirada",
+    "RollCount_other": "{{count}} Tiradas",
+    "noStat": "Sin Valor",
+    "eff": "VdT: <1></1>",
+    "noSubstat": "Sin Substat",
+    "substatFormat": "Substat {{value}}",
+    "nextRolls": "Siguientes tiradas:"
+  },
+  "preview": "Vista Previa del Artefacto",
+  "dupArt": "Artefacto duplicado detectado.",
+  "upArt": "Artefacto mejorado detectado.",
+  "beforeEdit": "Anterior a la Edición",
+  "btnSave": "Guardar Artefacto",
+  "btnAdd": "Agregar Artefacto",
+  "btnClear": "Borrar",
+  "btnRandom": "Aleatorizar",
+  "btnUpdate": "Actualizar Artefacto",
+  "clearPrompt": "Hay un artefacto en el editor. ¿Estás seguro de que quieres borrar el editor?"
+}

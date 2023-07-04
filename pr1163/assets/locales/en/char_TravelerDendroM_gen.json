@@ -1,0 +1,152 @@
+{
+  "auto": {
+    "name": "Foreign Fieldcleaver",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Razorgrass Blade",
+    "description": {
+      "0": "With a flourish of your blade, you unleash a spray of razor-sharp leaves that go before you and deal <dendro>Dendro DMG</dendro>.",
+      "1": "<br/>",
+      "2": "<i>You and Paimon observed the flowing edges of grass and leaf.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Surgent Manifestation",
+    "description": {
+      "0": "Calling upon the might of the flora all around you, you create a Lea Lotus Lamp.",
+      "1": "This Lamp will deal continuous <dendro>Dendro DMG</dendro> to opponents within its AoE.",
+      "2": "<br/>",
+      "3": "<strong>Lotuslight Transfiguration</strong>",
+      "4": "The Lea Lotus Lamp will undergo the following changes after it comes into contact with <hydro>Hydro</hydro>/<electro>Electro</electro>/<pyro>Pyro</pyro>:",
+      "5": [
+        "<hydro>Hydro</hydro>: the Lamp's AoE and the AoE of its attacks are increased.",
+        "<electro>Electro</electro>: the Lamp's ATK SPD is increased.",
+        "<pyro>Pyro</pyro>: the Lamp will explode after a short delay and then disappear, dealing <dendro>AoE Dendro DMG</dendro>."
+      ],
+      "6": "The Lea Lotus Lamp can only undergo one Lotuslight Transfiguration in its duration.",
+      "7": "<br/>",
+      "8": "Only one Lamp created by the Traveler can exist at any one time.",
+      "9": "<br/>",
+      "10": "<i>You and Paimon studied the sounds of plants that sprout after the rain.</i>"
+    },
+    "skillParams": {
+      "0": "Lea Lotus Lamp Attack DMG",
+      "1": "Explosion DMG",
+      "2": "Lea Lotus Lamp Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Verdant Overgrowth",
+    "description": {
+      "0": "<strong>Lea Lotus Lamp</strong> will obtain one level of Overflowing Lotuslight every second it is on the field, increasing the Elemental Mastery of active character(s) within its AoE by 6. Overflowing Lotuslight has a maximum of 10 stacks."
+    }
+  },
+  "passive2": {
+    "name": "Verdant Luxury",
+    "description": {
+      "0": "Every point of Elemental Mastery the Traveler possesses increases the DMG dealt by <strong>Razorgrass Blade</strong> by 0.15% and the DMG dealt by <strong>Surgent Manifestation</strong> by 0.1%."
+    }
+  },
+  "constellation1": {
+    "name": "Symbiotic Creeper",
+    "description": {
+      "0": "After <strong>Razorgrass Blade</strong> hits an opponent, it will regenerate 3.5 Energy for the Traveler."
+    }
+  },
+  "constellation2": {
+    "name": "Green Resilience",
+    "description": {
+      "0": "<strong>Lea Lotus Lamp</strong>'s duration is increased by 3s."
+    }
+  },
+  "constellation3": {
+    "name": "Whirling Weeds",
+    "description": {
+      "0": "Increases the Level of <strong>Razorgrass Blade</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Treacle Grass",
+    "description": {
+      "0": "After the <strong>Lea Lotus Lamp</strong> triggers a Lotuslight Transfiguration, it will obtain 5 stacks of the Overflowing Lotuslight effect from the Passive Talent \"Verdant Overgrowth.\"",
+      "1": "You must have unlocked this Passive Talent first."
+    }
+  },
+  "constellation5": {
+    "name": "Viridian Transience",
+    "description": {
+      "0": "Increases the Level of <strong>Surgent Manifestation</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Withering Aggregation",
+    "description": {
+      "0": "The <dendro>Dendro DMG Bonus</dendro> of the character under the effect of Overflowing Lotuslight as created by the <strong>Lea Lotus Lamp</strong> is increased by 12%. If the Lamp has experienced a Lotuslight Transfiguration previously, the character will also gain 12% DMG Bonus for the corresponding element."
+    }
+  }
+}

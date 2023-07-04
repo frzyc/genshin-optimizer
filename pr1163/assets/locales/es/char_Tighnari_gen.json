@@ -1,0 +1,156 @@
+{
+  "name": "Tignari",
+  "title": "El Caminante de la Espesura",
+  "description": "Un joven erudito experto en botánica que desempeña el cargo de guarda forestal en el Bosque Avidya. Es muy franco, entusiasta y bueno instruyendo a las personas con menos conocimientos.",
+  "constellationName": "Vulpes Zerda",
+  "auto": {
+    "name": "Khanda rompebarreras",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, el poder de las plantas se acumulará en la punta de la flecha antes de que sea disparada. Sus efectos serán distintos dependiendo de durante cuánto tiempo se ha cargado:",
+        "3": "Carga 1: dispara una flecha imbuida del elemento Dendro que inflige <dendro>Daño Dendro</dendro>.",
+        "4": "Carga 2: dispara una flecha floral que inflige <dendro>Daño Dendro</dendro>. Al golpear a cualquier objetivo, la flecha se divide en otras 4 flechas de inflorescencia que persiguen por sí solas a los enemigos cercanos para infligirles <dendro>Daño Dendro</dendro>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga 1)",
+      "6": "Daño de flecha floral",
+      "7": "Daño de flecha de inflorescencia",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Frutos del vijñana",
+    "description": {
+      "0": "Tignari lanza hacia el frente un núcleo vijñana, el cual inflige <dendro>Daño Dendro en el AdE</dendro> y crea un área vijñana que genera una misteriosa ilusión la cual provoca continuamente los enemigos que hay dentro de ella y atrae su atención.",
+      "1": "Además, Tignari obtiene el efecto de “perforación vijñana”, el cual reduce en 2.4 s el tiempo de carga de las flechas florales. Este efecto desaparece cuando termina su duración o cuando Tignari haya disparado 3 flechas florales.",
+      "2": "<br/>",
+      "3": "<i>Si una semilla se seca estando fuera de la tierra, seguirá siendo una semilla. Pero si se devuelve a la tierra, se multiplicará millones de veces.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración del área vijñana",
+      "2": "Duración de perforación vijñana",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Flecha enredadora artificial",
+    "description": {
+      "0": "Reúne el poder de las semillas para lanzar 6 flechas enredadoras que persiguen a los enemigos y les infligen <dendro>Daño Dendro</dendro>.",
+      "1": "Al golpear al objetivo, dichas flechas crean flechas enredadoras secundarias que persiguen a los enemigos cercanos y les infligen <dendro>Daño Dendro</dendro> al golpearlos.",
+      "2": "<br/>",
+      "3": "<i>“No creas que te vas a librar tan fácilmente. De las enredaderas crecen aún más enredaderas. Si no te deshaces de ellas por completo, lamentarás las consecuencias”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de flechas enredadoras",
+      "1": "Daño de flechas enredadoras secundarias",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Visión aguda",
+    "description": {
+      "0": "Tras disparar una <strong>flecha floral</strong>, la Maestría Elemental de Tignari aumenta en 50 pts. durante 4 s."
+    }
+  },
+  "passive2": {
+    "name": "Conocedor de la flora",
+    "description": {
+      "0": "El daño del Ataque Cargado y las <strong>flechas enredadoras</strong> de Tignari aumenta en un 0.06% por cada punto de Maestría Elemental que tenga.",
+      "1": "El daño de dichos ataques puede aumentar, como máximo, en un 60% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Erudición botánica",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Sumeru</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Raíz primigenia",
+    "description": {
+      "0": "La Prob. CRIT del Ataque Cargado de Tignari aumenta en un 15%."
+    }
+  },
+  "constellation2": {
+    "name": "Tallo primordial",
+    "description": {
+      "0": "Si en el área vijñana de <strong>Frutos del vijñana</strong> hay algún enemigo, Tignari obtiene un 20% de <dendro>Bono de Daño Dendro</dendro>.",
+      "1": "Este efecto permanecerá hasta 6 s después de que termine la duración del área vijñana o cuando ya no haya enemigos en ella."
+    }
+  },
+  "constellation3": {
+    "name": "Ramas creadoras",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Flecha enredadora artificial</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hojas marchitas",
+    "description": {
+      "0": "Al usar <strong>Flecha enredadora artificial</strong>, la Maestría Elemental de todos los miembros del equipo cercanos aumenta en 60 pts. durante 8 s. Si esta habilidad causa una reacción de Quemadura, Florecimiento, Aceleración o Propagación, la Maestría Elemental aumenta en 60 pts. adicionales y se reinicia la duración de esta bonificación de estado."
+    }
+  },
+  "constellation5": {
+    "name": "Despertar de las flores",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Frutos del vijñana</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fruto kármico",
+    "description": {
+      "0": "El tiempo de carga de la <strong>flecha floral</strong> se reduce en 0.9 s y, al golpear al objetivo, crea una flecha de inflorescencia adicional que inflige daño equivalente al 150% del ATQ de Tignari."
+    }
+  }
+}

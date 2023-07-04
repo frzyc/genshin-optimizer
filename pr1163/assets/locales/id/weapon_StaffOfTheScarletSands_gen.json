@@ -1,0 +1,24 @@
+{
+  "name": "Staff of the Scarlet Sands",
+  "description": {
+    "0": "Salah satu dari sepasang tongkat yang dibuat dari obsidian. Legenda mengatakan bahwa tongkat ini memberikan hak untuk memerintah penduduk padang pasir, tetapi sekarang tidak ada punggawa yang dapat membedakan penampilan yang tepat dari senjata raja ini ...."
+  },
+  "passiveName": "Heat Haze at Horizon's End",
+  "passiveDescription": {
+    "0": {
+      "0": "Mendapatkan Bonus ATK berdasarkan <cryo>52%</cryo> Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan <cryo>28%</cryo> Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
+    },
+    "1": {
+      "0": "Mendapatkan Bonus ATK berdasarkan <cryo>65%</cryo> Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan <cryo>35%</cryo> Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
+    },
+    "2": {
+      "0": "Mendapatkan Bonus ATK berdasarkan <cryo>78%</cryo> Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan <cryo>42%</cryo> Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
+    },
+    "3": {
+      "0": "Mendapatkan Bonus ATK berdasarkan <cryo>91%</cryo> Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan <cryo>49%</cryo> Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
+    },
+    "4": {
+      "0": "Mendapatkan Bonus ATK berdasarkan <cryo>104%</cryo> Elemental Mastery Karakter yang mengenakan. Saat Elemental Skill mengenai musuh, akan menghasilkan efek Dream of the Scarlet Sands yang bertahan 10 detik: Mendapatkan Bonus ATK berdasarkan <cryo>56%</cryo> Elemental Mastery Karakter yang mengenakan, efek ini dapat ditumpuk sampai 3 lapis."
+    }
+  }
+}

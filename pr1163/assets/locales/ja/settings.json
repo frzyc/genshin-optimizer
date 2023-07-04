@@ -1,0 +1,13 @@
+{
+  "title": "設定",
+  "languageCard": {
+    "selectLanguage": "言語",
+    "languageFormat": "言語: {{language}}"
+  },
+  "uploadCard": {
+    "title": "データベースをアップロード",
+    "replaceDatabase": "データベースを入れ替え",
+    "hint": "こちらでJSONファイルをアップロードするか...",
+    "hintPaste": "...下記欄に張り付けてください。"
+  }
+}

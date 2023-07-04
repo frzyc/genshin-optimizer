@@ -1,0 +1,12 @@
+{
+  "a1": {
+    "condName": "Após disparar uma Flecha Congelante",
+    "critRateInc": "Aumento de Taxa Crítica das Flechas Congelantes"
+  },
+  "c1": {
+    "condName": "O inimigo levou Dano de uma Flecha Congelante ou da Explosão da Flecha Congelante"
+  },
+  "c4": {
+    "lingerDuration": "Permanência do Efeito"
+  }
+}

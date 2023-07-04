@@ -1,0 +1,14 @@
+{
+  "karmaDmg_": "DMG Bonus Tri-Karma Purification",
+  "karmaCritRate_": "Tri-Karma Purification Crit Rate Bonus",
+  "karmaIntervalDec": "Pemicu Penurunan Interval Tri-Karma Purification",
+  "noBurstEffect": "Petunjuk: Tidak ada efek ledakan yang aktif. Aktifkan C1 dan/atau tambahkan rekan tim <pyro>Pyro</pyro>, <electro>Electro</electro>, dan/atau <hydro>Hydro</hydro>",
+  "partyInBurst": "Party di medan pertempuran",
+  "c1Key": "Tambahan bonus <strong>Shrine of Maya</strong> untuk anggota party  <pyro>Pyro</pyro>, <electro>Electro</electro>, dan <hydro>Hydro</hydro>",
+  "c2": {
+    "bloomCondName": "Musuh yang ditandai oleh <strong>Seeds of Skandha</strong>",
+    "qasCondName": "Musuh yang terkena Quicken, Aggravate, atau Spread setelah ditandai oleh <strong>Seeds of Skandha</strong"
+  },
+  "c4CondName": "Musuh terdekat yang terpengaruh oleh Seeds of Skandha milik <strong>All Schemes To Know</strong>",
+  "c6KarmicDmg": "DMG Karmic Oblivion"
+}

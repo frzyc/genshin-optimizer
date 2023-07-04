@@ -1,0 +1,24 @@
+{
+  "name": "Thiên Nham Cổ Kiếm",
+  "description": {
+    "0": "Đại kiếm được mài giũa từ đá ở Liyue."
+  },
+  "passiveName": "Thiên Nham Quyết - Đồng Tâm",
+  "passiveDescription": {
+    "0": {
+      "0": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận <cryo>7%</cryo> tăng tấn công và <cryo>3%</cryo> tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+    },
+    "1": {
+      "0": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận <cryo>8%</cryo> tăng tấn công và <cryo>4%</cryo> tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+    },
+    "2": {
+      "0": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận <cryo>9%</cryo> tăng tấn công và <cryo>5%</cryo> tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+    },
+    "3": {
+      "0": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận <cryo>10%</cryo> tăng tấn công và <cryo>6%</cryo> tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+    },
+    "4": {
+      "0": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận <cryo>11%</cryo> tăng tấn công và <cryo>7%</cryo> tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+    }
+  }
+}

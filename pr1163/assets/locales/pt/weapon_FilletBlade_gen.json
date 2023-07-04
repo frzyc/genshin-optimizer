@@ -1,0 +1,24 @@
+{
+  "name": "Lâmina de Filés",
+  "description": {
+    "0": "Uma faca afiada com uma lâmina longa."
+  },
+  "passiveName": "Determinação",
+  "passiveDescription": {
+    "0": {
+      "0": "Ao acertar, possui 50% de chance de infligir <cryo>240%</cryo> de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada <cryo>15</cryo>s."
+    },
+    "1": {
+      "0": "Ao acertar, possui 50% de chance de infligir <cryo>280%</cryo> de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada <cryo>14</cryo>s."
+    },
+    "2": {
+      "0": "Ao acertar, possui 50% de chance de infligir <cryo>320%</cryo> de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada <cryo>13</cryo>s."
+    },
+    "3": {
+      "0": "Ao acertar, possui 50% de chance de infligir <cryo>360%</cryo> de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada <cryo>12</cryo>s."
+    },
+    "4": {
+      "0": "Ao acertar, possui 50% de chance de infligir <cryo>400%</cryo> de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada <cryo>11</cryo>s."
+    }
+  }
+}

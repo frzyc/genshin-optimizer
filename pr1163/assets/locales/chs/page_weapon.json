@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "显示{{value}}把武器中的<1>{{count}}</1>把",
+  "showingNum_other": "显示{{value}}把武器中的<1>{{count}}</1>把",
+  "edit": "编辑武器",
+  "weaponName": "武器名称",
+  "removeWeapon": "你确定要移除{{value}}吗？",
+  "addWeapon": "添加新武器"
+}

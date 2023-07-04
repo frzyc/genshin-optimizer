@@ -1,0 +1,165 @@
+{
+  "name": "Barbara",
+  "title": "Idol sfavillante",
+  "description": "Ogni abitante di Mondstadt ha un debole per Barbara. Quest'ultima ha imparato la parola \"idol\" da una rivista.",
+  "constellationName": "Cratere",
+  "auto": {
+    "name": "Sussurro d'acqua",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 attacchi d'acqua che infliggono <hydro>DAN da Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <hydro>DAN da Hydro ad area</hydro> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Hydro, Barbara si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Che lo spettacolo abbia inizio♪",
+    "description": {
+      "0": "Evoca gocce d'acqua simili a note musicali che formano un Cerchio melodioso, infliggendo <hydro>DAN da Hydro</hydro> agli avversari circostanti e applicando a essi lo stato di <hydro>Umidità</hydro>.",
+      "1": "<br/>",
+      "2": "<strong>Cerchio melodioso</strong>",
+      "3": [
+        " Quando vanno a segno, gli attacchi normali di Barbara ripristinano una determinata quantità di PS dei membri del tuo gruppo e dei compagni di squadra vicini, in base ai PS max di Barbara.",
+        " Quando va a segno, l'attacco caricato di Barbara fornisce il quadruplo della guarigione.",
+        " Rigenera periodicamente i PS del tuo personaggio attivo.",
+        " Applica lo stato di <hydro>Umidità</hydro> al personaggio e agli avversari che vi entrano in contatto."
+      ],
+      "4": "<br/>",
+      "5": "<i>La musica di Barbara è la magia che guarisce i suoi compagni.</i>"
+    },
+    "skillParams": {
+      "0": "RIGEN PS per colpo",
+      "1": "RIGEN continua",
+      "2": "DAN da goccia",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Miracolo scintillante♪",
+    "description": {
+      "0": "Ripristina una grande quantità di PS dei membri del tuo gruppo e dei compagni di squadra vicini, in base ai PS max di Barbara.",
+      "1": "<br/>",
+      "2": "<i>Il desiderio di Barbara di guarire gli altri rafforza la sua volontà di combattere e cantare.</i>"
+    },
+    "skillParams": {
+      "0": "RIGEN",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Stagione gloriosa",
+    "description": {
+      "0": "Il consumo di vigore dei personaggi all'interno del Cerchio melodioso di <strong>Che lo spettacolo abbia inizio♪</strong> si riduce di un 12%."
+    }
+  },
+  "passive2": {
+    "name": "Bis!",
+    "description": {
+      "0": "Quando il tuo personaggio attivo ottiene una particella o una sfera elementale, la durata del Cerchio melodioso di <strong>Che lo spettacolo abbia inizio♪</strong> si estende di 1 s.",
+      "1": "L'estensione massima è di 5 s."
+    }
+  },
+  "passive3": {
+    "name": "Con tutto il mio cuore♪",
+    "description": {
+      "0": "Quando si ottiene una preparazione perfetta di un piatto con effetti rigeneranti, c'è un 12% di probabilità di ottenere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Ballata della gioia",
+    "description": {
+      "0": "Barbara rigenera 1 di energia ogni 10 s."
+    }
+  },
+  "constellation2": {
+    "name": "Tripudio di vitalità",
+    "description": {
+      "0": "Riduce il TdR di <strong>Che lo spettacolo abbia inizio♪</strong> di un 15%.",
+      "1": "Finché l'abilità è attiva, il tuo personaggio attivo ottiene un 15% di <hydro>bonus DAN da Hydro</hydro>."
+    }
+  },
+  "constellation3": {
+    "name": "Stella del domani",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Miracolo scintillante♪</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "I miei sforzi sono la mia forza",
+    "description": {
+      "0": "Ogni volta che Barbara colpisce un avversario con un attacco caricato, la sua energia si ripristina di 1.",
+      "1": "In questo modo può essere rigenerato fino a 5 di energia a ogni attacco caricato."
+    }
+  },
+  "constellation5": {
+    "name": "La promessa più sincera",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Che lo spettacolo abbia inizio♪</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Solo il meglio per te",
+    "description": {
+      "0": "Quando Barbara è nel gruppo ma non sul campo, e uno dei membri del tuo gruppo viene sconfitto:",
+      "1": [
+        " rianima automaticamente il personaggio sconfitto;",
+        " ripristina i PS del personaggio rianimato al massimo."
+      ],
+      "2": "Si può verificare una sola volta ogni 15 min."
+    }
+  }
+}

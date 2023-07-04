@@ -1,0 +1,24 @@
+{
+  "name": "Spadone del tempo",
+  "description": {
+    "0": "Uno spadone pesante. L'orologio con cui è abbellito è rimasto danneggiato da tempo immemore."
+  },
+  "passiveName": "Guardiano ribelle",
+  "passiveDescription": {
+    "0": {
+      "0": "Subire DAN genera uno scudo che li assorbe fino a un <cryo>20%</cryo> dei PS max. Lo scudo dura per 10 s o finché non viene infranto, e può essere attivato una sola volta ogni <cryo>45</cryo> s. Mentre è protetto dallo scudo, il personaggio ottiene un <cryo>12%</cryo> di aumento dei DAN."
+    },
+    "1": {
+      "0": "Subire DAN genera uno scudo che li assorbe fino a un <cryo>23%</cryo> dei PS max. Lo scudo dura per 10 s o finché non viene infranto, e può essere attivato una sola volta ogni <cryo>45</cryo> s. Mentre è protetto dallo scudo, il personaggio ottiene un <cryo>15%</cryo> di aumento dei DAN."
+    },
+    "2": {
+      "0": "Subire DAN genera uno scudo che li assorbe fino a un <cryo>26%</cryo> dei PS max. Lo scudo dura per 10 s o finché non viene infranto, e può essere attivato una sola volta ogni <cryo>45</cryo> s. Mentre è protetto dallo scudo, il personaggio ottiene un <cryo>18%</cryo> di aumento dei DAN."
+    },
+    "3": {
+      "0": "Subire DAN genera uno scudo che li assorbe fino a un <cryo>29%</cryo> dei PS max. Lo scudo dura per 10 s o finché non viene infranto, e può essere attivato una sola volta ogni <cryo>45</cryo> s. Mentre è protetto dallo scudo, il personaggio ottiene un <cryo>21%</cryo> di aumento dei DAN."
+    },
+    "4": {
+      "0": "Subire DAN genera uno scudo che li assorbe fino a un <cryo>32%</cryo> dei PS max. Lo scudo dura per 10 s o finché non viene infranto, e può essere attivato una sola volta ogni <cryo>45</cryo> s. Mentre è protetto dallo scudo, il personaggio ottiene un <cryo>24%</cryo> di aumento dei DAN."
+    }
+  }
+}

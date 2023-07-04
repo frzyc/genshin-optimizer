@@ -1,0 +1,24 @@
+{
+  "name": "Guide de magie",
+  "description": {
+    "0": "12e édition. Comprend les corrections apportées à la 11e édition, ainsi que des ajouts justifiés par les récents progrès dans le domaine."
+  },
+  "passiveName": "Fléau d'eau et de foudre",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de <cryo>24 %</cryo>."
+    }
+  }
+}

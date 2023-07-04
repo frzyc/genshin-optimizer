@@ -1,0 +1,24 @@
+{
+  "name": "Giuramento di libertà",
+  "description": {
+    "0": "Del colore del cielo, questa spada dritta testimonia il passato e i giuramenti di libertà resi nella Terra del Vento."
+  },
+  "passiveName": "Inno alla rivolta",
+  "passiveDescription": {
+    "0": {
+      "0": "Una parte del Concerto millenario che fluttua nel vento. Aumenta i DAN di un <cryo>10%</cryo>. Quando il personaggio che brandisce quest'arma innesca reazioni elementali, ottiene un Sigillo della rivolta. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio non si trova sul campo. Se possiedi 2 Sigilli della rivolta, entrambi saranno consumati e tutti i membri del gruppo vicini otterranno l'effetto Concerto millenario: Canto della resistenza per 12 s. Concerto millenario: Canto della resistenza aumenta i DAN da attacco normale, caricato e in picchiata di un <cryo>16%</cryo> e l'ATT di un <cryo>20%</cryo>. Una volta attivato l'effetto, non otterrai altri Sigilli della rivolta per 20 s. Gli effetti dello stesso tipo di Concerto millenario non sono cumulabili."
+    },
+    "1": {
+      "0": "Una parte del Concerto millenario che fluttua nel vento. Aumenta i DAN di un <cryo>12,5%</cryo>. Quando il personaggio che brandisce quest'arma innesca reazioni elementali, ottiene un Sigillo della rivolta. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio non si trova sul campo. Se possiedi 2 Sigilli della rivolta, entrambi saranno consumati e tutti i membri del gruppo vicini otterranno l'effetto Concerto millenario: Canto della resistenza per 12 s. Concerto millenario: Canto della resistenza aumenta i DAN da attacco normale, caricato e in picchiata di un <cryo>20%</cryo> e l'ATT di un <cryo>25%</cryo>. Una volta attivato l'effetto, non otterrai altri Sigilli della rivolta per 20 s. Gli effetti dello stesso tipo di Concerto millenario non sono cumulabili."
+    },
+    "2": {
+      "0": "Una parte del Concerto millenario che fluttua nel vento. Aumenta i DAN di un <cryo>15%</cryo>. Quando il personaggio che brandisce quest'arma innesca reazioni elementali, ottiene un Sigillo della rivolta. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio non si trova sul campo. Se possiedi 2 Sigilli della rivolta, entrambi saranno consumati e tutti i membri del gruppo vicini otterranno l'effetto Concerto millenario: Canto della resistenza per 12 s. Concerto millenario: Canto della resistenza aumenta i DAN da attacco normale, caricato e in picchiata di un <cryo>24%</cryo> e l'ATT di un <cryo>30%</cryo>. Una volta attivato l'effetto, non otterrai altri Sigilli della rivolta per 20 s. Gli effetti dello stesso tipo di Concerto millenario non sono cumulabili."
+    },
+    "3": {
+      "0": "Una parte del Concerto millenario che fluttua nel vento. Aumenta i DAN di un <cryo>17,5%</cryo>. Quando il personaggio che brandisce quest'arma innesca reazioni elementali, ottiene un Sigillo della rivolta. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio non si trova sul campo. Se possiedi 2 Sigilli della rivolta, entrambi saranno consumati e tutti i membri del gruppo vicini otterranno l'effetto Concerto millenario: Canto della resistenza per 12 s. Concerto millenario: Canto della resistenza aumenta i DAN da attacco normale, caricato e in picchiata di un <cryo>28%</cryo> e l'ATT di un <cryo>35%</cryo>. Una volta attivato l'effetto, non otterrai altri Sigilli della rivolta per 20 s. Gli effetti dello stesso tipo di Concerto millenario non sono cumulabili."
+    },
+    "4": {
+      "0": "Una parte del Concerto millenario che fluttua nel vento. Aumenta i DAN di un <cryo>20%</cryo>. Quando il personaggio che brandisce quest'arma innesca reazioni elementali, ottiene un Sigillo della rivolta. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio non si trova sul campo. Se possiedi 2 Sigilli della rivolta, entrambi saranno consumati e tutti i membri del gruppo vicini otterranno l'effetto Concerto millenario: Canto della resistenza per 12 s. Concerto millenario: Canto della resistenza aumenta i DAN da attacco normale, caricato e in picchiata di un <cryo>32%</cryo> e l'ATT di un <cryo>40%</cryo>. Una volta attivato l'effetto, non otterrai altri Sigilli della rivolta per 20 s. Gli effetti dello stesso tipo di Concerto millenario non sono cumulabili."
+    }
+  }
+}

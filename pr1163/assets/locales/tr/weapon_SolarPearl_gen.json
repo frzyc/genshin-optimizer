@@ -1,0 +1,24 @@
+{
+  "name": "Güneş İncisi",
+  "description": {
+    "0": "Güneşin ve ayın ışığını barındıran, mat altından yapılmış bir inci. Etrafı sıcak bir güçle sarılıdır."
+  },
+  "passiveName": "Güneş Parıltısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal Saldırı vuruşları 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarını <cryo>%20</cryo> artırır. Benzer şekilde Element Becerisi ve Element Patlaması vuruşları da 6 saniyeliğine Normal Saldırı Hasarını <cryo>%20</cryo> artırır."
+    },
+    "1": {
+      "0": "Normal Saldırı vuruşları 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarını <cryo>%25</cryo> artırır. Benzer şekilde Element Becerisi ve Element Patlaması vuruşları da 6 saniyeliğine Normal Saldırı Hasarını <cryo>%25</cryo> artırır."
+    },
+    "2": {
+      "0": "Normal Saldırı vuruşları 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarını <cryo>%30</cryo> artırır. Benzer şekilde Element Becerisi ve Element Patlaması vuruşları da 6 saniyeliğine Normal Saldırı Hasarını <cryo>%30</cryo> artırır."
+    },
+    "3": {
+      "0": "Normal Saldırı vuruşları 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarını <cryo>%35</cryo> artırır. Benzer şekilde Element Becerisi ve Element Patlaması vuruşları da 6 saniyeliğine Normal Saldırı Hasarını <cryo>%35</cryo> artırır."
+    },
+    "4": {
+      "0": "Normal Saldırı vuruşları 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarını <cryo>%40</cryo> artırır. Benzer şekilde Element Becerisi ve Element Patlaması vuruşları da 6 saniyeliğine Normal Saldırı Hasarını <cryo>%40</cryo> artırır."
+    }
+  }
+}

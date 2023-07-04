@@ -1,0 +1,24 @@
+{
+  "name": "Pergamino Celestial",
+  "description": {
+    "0": "Un atlas de nubes que simboliza a Stormterror y al Arconte Anemo, su antiguo maestro. Registra detalladamente y contiene el poder de los vientos y las nubes de los cielos del norte."
+  },
+  "passiveName": "Nubes pasajeras",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta en un <cryo>12%</cryo> el bono de Daño Elemental. Al atacar con un Ataque Normal, hay un 50% de probabilidad de conseguir la gracia de las nubes. Estas buscarán durante 15 s enemigos a los que atacar, infligiendo un <cryo>160%</cryo> de daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
+    },
+    "1": {
+      "0": "Aumenta en un <cryo>15%</cryo> el bono de Daño Elemental. Al atacar con un Ataque Normal, hay un 50% de probabilidad de conseguir la gracia de las nubes. Estas buscarán durante 15 s enemigos a los que atacar, infligiendo un <cryo>200%</cryo> de daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
+    },
+    "2": {
+      "0": "Aumenta en un <cryo>18%</cryo> el bono de Daño Elemental. Al atacar con un Ataque Normal, hay un 50% de probabilidad de conseguir la gracia de las nubes. Estas buscarán durante 15 s enemigos a los que atacar, infligiendo un <cryo>240%</cryo> de daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
+    },
+    "3": {
+      "0": "Aumenta en un <cryo>21%</cryo> el bono de Daño Elemental. Al atacar con un Ataque Normal, hay un 50% de probabilidad de conseguir la gracia de las nubes. Estas buscarán durante 15 s enemigos a los que atacar, infligiendo un <cryo>280%</cryo> de daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
+    },
+    "4": {
+      "0": "Aumenta en un <cryo>24%</cryo> el bono de Daño Elemental. Al atacar con un Ataque Normal, hay un 50% de probabilidad de conseguir la gracia de las nubes. Estas buscarán durante 15 s enemigos a los que atacar, infligiendo un <cryo>320%</cryo> de daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
+    }
+  }
+}

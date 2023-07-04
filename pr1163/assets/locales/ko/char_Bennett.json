@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "pressDMG": "짧은 터치 피해",
+    "lvl1_1DMG": "1단 차지 처음 피해",
+    "lvl1_2DMG": "1단 차지 두번째 피해",
+    "lvl2_1DMG": "2단 차지 처음 피해",
+    "lvl2_2DMG": "2단 차지 두번째 피해",
+    "explDMG": "폭발 피해",
+    "lvl1CD": "1단 차지 재사용 대기시간",
+    "lvl2CD": "2단 차지 재사용 대기시간"
+  },
+  "additionalATK": "추가 공격력 증가",
+  "additionalATKRatio_": "추가 공격력 증가 비율",
+  "c4DMG": "열정 과부화 피해",
+  "c6PyroInfusion": "<pyro>한손검, 양손검, 장병기 캐릭터에 불 원소 부여 효과"
+}

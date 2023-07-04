@@ -1,0 +1,24 @@
+{
+  "name": "La voie du chasseur",
+  "description": {
+    "0": "Cet arc doré a été réalisé à l'aide de branches blanches précieuses. Il a abattu d'innombrables bêtes méchantes qui tentaient de s'infiltrer dans les bois."
+  },
+  "passiveName": "Arrivée du sentier bestial",
+  "passiveDescription": {
+    "0": {
+      "0": "Accorde un bonus de DGT élémentaires de <cryo>12 %</cryo>. Lorsqu'une attaque chargée a touché un ennemi, l'effet Chasse infatigable est accordé, augmentant les DGT d'attaque chargée d'une valeur équivalant à <cryo>160 %</cryo> de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+    },
+    "1": {
+      "0": "Accorde un bonus de DGT élémentaires de <cryo>15 %</cryo>. Lorsqu'une attaque chargée a touché un ennemi, l'effet Chasse infatigable est accordé, augmentant les DGT d'attaque chargée d'une valeur équivalant à <cryo>200 %</cryo> de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+    },
+    "2": {
+      "0": "Accorde un bonus de DGT élémentaires de <cryo>18 %</cryo>. Lorsqu'une attaque chargée a touché un ennemi, l'effet Chasse infatigable est accordé, augmentant les DGT d'attaque chargée d'une valeur équivalant à <cryo>240 %</cryo> de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+    },
+    "3": {
+      "0": "Accorde un bonus de DGT élémentaires de <cryo>21 %</cryo>. Lorsqu'une attaque chargée a touché un ennemi, l'effet Chasse infatigable est accordé, augmentant les DGT d'attaque chargée d'une valeur équivalant à <cryo>280 %</cryo> de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+    },
+    "4": {
+      "0": "Accorde un bonus de DGT élémentaires de <cryo>24 %</cryo>. Lorsqu'une attaque chargée a touché un ennemi, l'effet Chasse infatigable est accordé, augmentant les DGT d'attaque chargée d'une valeur équivalant à <cryo>320 %</cryo> de la maîtrise élémentaire. Cet effet disparaît après 10 s ou après 12 attaques chargées. Cet effet peut être déclenché une fois toutes les 12 s."
+    }
+  }
+}

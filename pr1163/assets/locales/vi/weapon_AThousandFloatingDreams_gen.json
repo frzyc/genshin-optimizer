@@ -1,0 +1,24 @@
+{
+  "name": "Cõi Mộng Ngàn Đêm",
+  "description": {
+    "0": "Ngọn đèn ánh lên cõi mộng ngàn đêm, trong ánh sáng xanh lục ấy ẩn chứa khúc ca của ngày trước."
+  },
+  "passiveName": "Khúc Ca Bình Minh Ngàn Đêm",
+  "passiveDescription": {
+    "0": {
+      "0": "Căn cứ xem loại nguyên tố của mỗi nhân vật khác trong đội có tương đồng với người trang bị vũ khí này hay không, từ đó nhận được các loại hiệu quả sau. Giống nhau: Tinh Thông Nguyên Tố tăng <cryo>32</cryo> điểm. Khác nhau: Buff sát thương loại nguyên tố của người trang bị tăng <cryo>10%</cryo>. Hiệu quả nói trên mỗi loại tối đa cộng dồn 3 tầng. Ngoài ra, sẽ tăng <cryo>40</cryo> điểm Tinh Thông Nguyên Tố cho nhân vật trong đội gần đó (trừ người trang bị vũ khí này). Hiệu quả này có thể cộng dồn từ nhiều vũ khí cùng tên."
+    },
+    "1": {
+      "0": "Căn cứ xem loại nguyên tố của mỗi nhân vật khác trong đội có tương đồng với người trang bị vũ khí này hay không, từ đó nhận được các loại hiệu quả sau. Giống nhau: Tinh Thông Nguyên Tố tăng <cryo>40</cryo> điểm. Khác nhau: Buff sát thương loại nguyên tố của người trang bị tăng <cryo>14%</cryo>. Hiệu quả nói trên mỗi loại tối đa cộng dồn 3 tầng. Ngoài ra, sẽ tăng <cryo>42</cryo> điểm Tinh Thông Nguyên Tố cho nhân vật trong đội gần đó (trừ người trang bị vũ khí này). Hiệu quả này có thể cộng dồn từ nhiều vũ khí cùng tên."
+    },
+    "2": {
+      "0": "Căn cứ xem loại nguyên tố của mỗi nhân vật khác trong đội có tương đồng với người trang bị vũ khí này hay không, từ đó nhận được các loại hiệu quả sau. Giống nhau: Tinh Thông Nguyên Tố tăng <cryo>48</cryo> điểm. Khác nhau: Buff sát thương loại nguyên tố của người trang bị tăng <cryo>18%</cryo>. Hiệu quả nói trên mỗi loại tối đa cộng dồn 3 tầng. Ngoài ra, sẽ tăng <cryo>44</cryo> điểm Tinh Thông Nguyên Tố cho nhân vật trong đội gần đó (trừ người trang bị vũ khí này). Hiệu quả này có thể cộng dồn từ nhiều vũ khí cùng tên."
+    },
+    "3": {
+      "0": "Căn cứ xem loại nguyên tố của mỗi nhân vật khác trong đội có tương đồng với người trang bị vũ khí này hay không, từ đó nhận được các loại hiệu quả sau. Giống nhau: Tinh Thông Nguyên Tố tăng <cryo>56</cryo> điểm. Khác nhau: Buff sát thương loại nguyên tố của người trang bị tăng <cryo>22%</cryo>. Hiệu quả nói trên mỗi loại tối đa cộng dồn 3 tầng. Ngoài ra, sẽ tăng <cryo>46</cryo> điểm Tinh Thông Nguyên Tố cho nhân vật trong đội gần đó (trừ người trang bị vũ khí này). Hiệu quả này có thể cộng dồn từ nhiều vũ khí cùng tên."
+    },
+    "4": {
+      "0": "Căn cứ xem loại nguyên tố của mỗi nhân vật khác trong đội có tương đồng với người trang bị vũ khí này hay không, từ đó nhận được các loại hiệu quả sau. Giống nhau: Tinh Thông Nguyên Tố tăng <cryo>64</cryo> điểm. Khác nhau: Buff sát thương loại nguyên tố của người trang bị tăng <cryo>26%</cryo>. Hiệu quả nói trên mỗi loại tối đa cộng dồn 3 tầng. Ngoài ra, sẽ tăng <cryo>48</cryo> điểm Tinh Thông Nguyên Tố cho nhân vật trong đội gần đó (trừ người trang bị vũ khí này). Hiệu quả này có thể cộng dồn từ nhiều vũ khí cùng tên."
+    }
+  }
+}

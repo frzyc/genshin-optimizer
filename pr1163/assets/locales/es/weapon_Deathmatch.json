@@ -1,0 +1,7 @@
+{
+  "condName": "Total de Enemigos Cercanos",
+  "opponents": {
+    "oneOrNone": "Menos de dos enemigos",
+    "moreThanOne": "Al menos dos enemigos"
+  }
+}

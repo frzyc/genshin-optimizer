@@ -1,0 +1,24 @@
+{
+  "name": "The Black Sword",
+  "description": {
+    "0": "Longsword hitam yang haus akan konflik dan pertempuran. Dikatakan bahwa pedang ini bisa membuat pemiliknya menjadi haus darah dan pembantaian."
+  },
+  "passiveName": "Justice",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak <cryo>60%</cryo> dari ATK. Dapat terpicu setiap 5 detik."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>25%</cryo> DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak <cryo>70%</cryo> dari ATK. Dapat terpicu setiap 5 detik."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>30%</cryo> DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak <cryo>80%</cryo> dari ATK. Dapat terpicu setiap 5 detik."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>35%</cryo> DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak <cryo>90%</cryo> dari ATK. Dapat terpicu setiap 5 detik."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>40%</cryo> DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak <cryo>100%</cryo> dari ATK. Dapat terpicu setiap 5 detik."
+    }
+  }
+}

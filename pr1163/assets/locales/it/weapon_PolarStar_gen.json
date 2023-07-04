@@ -1,0 +1,24 @@
+{
+  "name": "Stella polare",
+  "description": {
+    "0": "Un arco immacolato, pungente come i ghiacciai del lontano nord."
+  },
+  "passiveName": "Augurio del giorno",
+  "passiveDescription": {
+    "0": {
+      "0": "I DAN da abilità e Tripudio elementali aumentano di un <cryo>12%</cryo>. Se un attacco normale o caricato, un'abilità o un Tripudio elementale colpisce un avversario, riceverai 1 Stella cinerea per 12 s. Se ottieni 1/2/3/4 Stelle cineree, l'ATT aumenta di un <cryo>10/20/30/48%</cryo> rispettivamente. Il totale cumulato di Stelle cineree generato da attacco normale, attacco caricato, abilità elementale o Tripudio elementale viene calcolato in maniera indipendente."
+    },
+    "1": {
+      "0": "I DAN da abilità e Tripudio elementali aumentano di un <cryo>15%</cryo>. Se un attacco normale o caricato, un'abilità o un Tripudio elementale colpisce un avversario, riceverai 1 Stella cinerea per 12 s. Se ottieni 1/2/3/4 Stelle cineree, l'ATT aumenta di un <cryo>12,5/25/37,5/60%</cryo> rispettivamente. Il totale cumulato di Stelle cineree generato da attacco normale, attacco caricato, abilità elementale o Tripudio elementale viene calcolato in maniera indipendente."
+    },
+    "2": {
+      "0": "I DAN da abilità e Tripudio elementali aumentano di un <cryo>18%</cryo>. Se un attacco normale o caricato, un'abilità o un Tripudio elementale colpisce un avversario, riceverai 1 Stella cinerea per 12 s. Se ottieni 1/2/3/4 Stelle cineree, l'ATT aumenta di un <cryo>15/30/45/72%</cryo> rispettivamente. Il totale cumulato di Stelle cineree generato da attacco normale, attacco caricato, abilità elementale o Tripudio elementale viene calcolato in maniera indipendente."
+    },
+    "3": {
+      "0": "I DAN da abilità e Tripudio elementali aumentano di un <cryo>21%</cryo>. Se un attacco normale o caricato, un'abilità o un Tripudio elementale colpisce un avversario, riceverai 1 Stella cinerea per 12 s. Se ottieni 1/2/3/4 Stelle cineree, l'ATT aumenta di un <cryo>17,5/35/52,5/84%</cryo> rispettivamente. Il totale cumulato di Stelle cineree generato da attacco normale, attacco caricato, abilità elementale o Tripudio elementale viene calcolato in maniera indipendente."
+    },
+    "4": {
+      "0": "I DAN da abilità e Tripudio elementali aumentano di un <cryo>24%</cryo>. Se un attacco normale o caricato, un'abilità o un Tripudio elementale colpisce un avversario, riceverai 1 Stella cinerea per 12 s. Se ottieni 1/2/3/4 Stelle cineree, l'ATT aumenta di un <cryo>20/40/60/96%</cryo> rispettivamente. Il totale cumulato di Stelle cineree generato da attacco normale, attacco caricato, abilità elementale o Tripudio elementale viene calcolato in maniera indipendente."
+    }
+  }
+}

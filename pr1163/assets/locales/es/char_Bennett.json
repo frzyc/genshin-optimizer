@@ -1,0 +1,16 @@
+{
+  "skill": {
+    "pressDMG": "Daño al Pulsar una vez",
+    "lvl1_1DMG": "Daño del 1er Golpe a Nivel 1",
+    "lvl1_2DMG": "Daño del 2o Golpe a Nivel 1",
+    "lvl2_1DMG": "Daño del 1er Golpe a Nivel 2",
+    "lvl2_2DMG": "Daño del 2o Golpe a Nivel 2",
+    "explDMG": "Daño de Explosión",
+    "lvl1CD": "TdE Nivel 1",
+    "lvl2CD": "TdE Nivel 2"
+  },
+  "additionalATK": "Aumento de ATQ adicional",
+  "additionalATKRatio_": "Ratio de Bono de ATQ adicional",
+  "c4DMG": "Daño de Calidez inagotable",
+  "c6PyroInfusion": "<pyro>Espada Ligera, Mandoble y Lanza imbuidos con Pyro"
+}

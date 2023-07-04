@@ -1,0 +1,24 @@
+{
+  "name": "Espada Negra",
+  "description": {
+    "0": "Una espada larga oscura que ansía el conflicto y el combate. Se dice que sume a su portador en el violento deseo de mancharse de sangre en una masacre."
+  },
+  "passiveName": "Justicia",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta el daño de Ataque Normal y Cargado en un <cryo>20%</cryo>. Además, al asestar un golpe crítico con Ataque Normal o Cargado, recuperas Vida equivalente al <cryo>60%</cryo> del ATQ. Este efecto puede activarse una vez cada 5 s."
+    },
+    "1": {
+      "0": "Aumenta el daño de Ataque Normal y Cargado en un <cryo>25%</cryo>. Además, al asestar un golpe crítico con Ataque Normal o Cargado, recuperas Vida equivalente al <cryo>70%</cryo> del ATQ. Este efecto puede activarse una vez cada 5 s."
+    },
+    "2": {
+      "0": "Aumenta el daño de Ataque Normal y Cargado en un <cryo>30%</cryo>. Además, al asestar un golpe crítico con Ataque Normal o Cargado, recuperas Vida equivalente al <cryo>80%</cryo> del ATQ. Este efecto puede activarse una vez cada 5 s."
+    },
+    "3": {
+      "0": "Aumenta el daño de Ataque Normal y Cargado en un <cryo>35%</cryo>. Además, al asestar un golpe crítico con Ataque Normal o Cargado, recuperas Vida equivalente al <cryo>90%</cryo> del ATQ. Este efecto puede activarse una vez cada 5 s."
+    },
+    "4": {
+      "0": "Aumenta el daño de Ataque Normal y Cargado en un <cryo>40%</cryo>. Además, al asestar un golpe crítico con Ataque Normal o Cargado, recuperas Vida equivalente al <cryo>100%</cryo> del ATQ. Este efecto puede activarse una vez cada 5 s."
+    }
+  }
+}

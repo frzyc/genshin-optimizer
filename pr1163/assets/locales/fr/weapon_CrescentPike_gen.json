@@ -1,0 +1,24 @@
+{
+  "name": "Pique du croissant de lune",
+  "description": {
+    "0": "Cette lance d'origine étrangère, arrivée à Liyue par les voies commerciales, possède une lame en forme de croissant à l'extrémité d'un manche fin et long. Avec un peu de pratique, vous devriez pouvoir libérer sa puissance destructrice."
+  },
+  "passiveName": "Aiguille énergisante",
+  "passiveDescription": {
+    "0": {
+      "0": "Chaque particule ou orbe élémentaires obtenus confèrent pendant 5 s un bonus de DGT équivalant à <cryo>20</cryo> % de l'ATQ."
+    },
+    "1": {
+      "0": "Chaque particule ou orbe élémentaires obtenus confèrent pendant 5 s un bonus de DGT équivalant à <cryo>25</cryo> % de l'ATQ."
+    },
+    "2": {
+      "0": "Chaque particule ou orbe élémentaires obtenus confèrent pendant 5 s un bonus de DGT équivalant à <cryo>30</cryo> % de l'ATQ."
+    },
+    "3": {
+      "0": "Chaque particule ou orbe élémentaires obtenus confèrent pendant 5 s un bonus de DGT équivalant à <cryo>35</cryo> % de l'ATQ."
+    },
+    "4": {
+      "0": "Chaque particule ou orbe élémentaires obtenus confèrent pendant 5 s un bonus de DGT équivalant à <cryo>40</cryo> % de l'ATQ."
+    }
+  }
+}

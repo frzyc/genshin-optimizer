@@ -1,0 +1,29 @@
+{
+  "setName": "Emblem of Severed Fate",
+  "setEffects": {
+    "2": "Energy Recharge +20%.",
+    "4": "Meningkatkan DMG Elemental Burst sebesar 25% dari Energy Recharge. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah 75%."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Magnificent Tsuba",
+      "desc": "Legenda mengatakan bahwa pelindung tangan yang penuh hiasan ini pernah dipasang pada pedang yang diberikan kepada oni yang mengkhianati Shogun."
+    },
+    "plume": {
+      "name": "Sundered Feather",
+      "desc": "Benda ini dulunya adalah bulu hitam prajurit tengu tertentu, dan merupakan kenangan berharga dari pendekar pedang kuno."
+    },
+    "sands": {
+      "name": "Storm Cage",
+      "desc": "Sebuah sangkar indah bermotif bunga pansy yang dilukis dengan latar belakang berwarna hitam, dihias menggunakan kerang hias yang berkilau dan karya emas yang rumit."
+    },
+    "goblet": {
+      "name": "Scarlet Vessel",
+      "desc": "Wadah anggur dengan desain rumit yang darinyalah pernah seorang seniman bela diri terkenal di dunia meneguk anggurnya."
+    },
+    "circlet": {
+      "name": "Ornate Kabuto",
+      "desc": "Helm yang kokoh dan keras dikenakan sebagai pelindung tubuh bagi seorang samurai yang mulia."
+    }
+  }
+}

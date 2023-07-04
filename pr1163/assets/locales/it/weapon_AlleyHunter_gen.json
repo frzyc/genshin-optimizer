@@ -1,0 +1,24 @@
+{
+  "name": "Cacciatore urbano",
+  "description": {
+    "0": "Un arco lungo opulento ed elaborato, appartenuto a un ladro gentiluomo che non è mai stato preso."
+  },
+  "passiveName": "Imboscata urbana",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio equipaggiato con quest'arma è nel gruppo ma non sul campo, i suoi DAN aumentano di un <cryo>2%</cryo> ogni secondo fino a un <cryo>20%</cryo> max. Quando il personaggio è sul campo per oltre 4 s, l'aumento dei DAN si riduce di un <cryo>4%</cryo> al secondo fino ad azzerarsi."
+    },
+    "1": {
+      "0": "Quando il personaggio equipaggiato con quest'arma è nel gruppo ma non sul campo, i suoi DAN aumentano di un <cryo>2,5%</cryo> ogni secondo fino a un <cryo>25%</cryo> max. Quando il personaggio è sul campo per oltre 4 s, l'aumento dei DAN si riduce di un <cryo>5%</cryo> al secondo fino ad azzerarsi."
+    },
+    "2": {
+      "0": "Quando il personaggio equipaggiato con quest'arma è nel gruppo ma non sul campo, i suoi DAN aumentano di un <cryo>3%</cryo> ogni secondo fino a un <cryo>30%</cryo> max. Quando il personaggio è sul campo per oltre 4 s, l'aumento dei DAN si riduce di un <cryo>6%</cryo> al secondo fino ad azzerarsi."
+    },
+    "3": {
+      "0": "Quando il personaggio equipaggiato con quest'arma è nel gruppo ma non sul campo, i suoi DAN aumentano di un <cryo>3,5%</cryo> ogni secondo fino a un <cryo>35%</cryo> max. Quando il personaggio è sul campo per oltre 4 s, l'aumento dei DAN si riduce di un <cryo>7%</cryo> al secondo fino ad azzerarsi."
+    },
+    "4": {
+      "0": "Quando il personaggio equipaggiato con quest'arma è nel gruppo ma non sul campo, i suoi DAN aumentano di un <cryo>4%</cryo> ogni secondo fino a un <cryo>40%</cryo> max. Quando il personaggio è sul campo per oltre 4 s, l'aumento dei DAN si riduce di un <cryo>8%</cryo> al secondo fino ad azzerarsi."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "触发燃烧、原激化、绽放反应后",
+    "cond3ele": "触发超激化、蔓激化、超绽放、烈绽放反应后"
+  },
+  "EnduringRock": {
+    "hitCond": "处于护盾保护下的角色对敌人造成伤害后"
+  }
+}

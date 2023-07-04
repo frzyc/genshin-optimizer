@@ -1,0 +1,29 @@
+{
+  "setName": "Taşordu'nun Azmi",
+  "setEffects": {
+    "2": "+%20 Can.",
+    "4": "Bir Element Becerisi bir düşmana isabet ettiğinde, 3 saniye boyunca çevredeki tüm grup üyelerinin Saldırısı %20 ve Kalkan Güçleri %30 artar. Bu etki 0,5 saniyede bir uygulanabilir. Bu yadigar setini kuşanan karakter savaş alanında olmasa bile bu etki tetiklenir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Övgü Çiçeği",
+      "desc": "Altın yapraklı bir çiçek. Sahibinin şanını ve onurunu simgeler."
+    },
+    "plume": {
+      "name": "Merasim Savaş Tüyü",
+      "desc": "Yalnızca ayinlerde takılan bir şahin tüyü. Dış dünyaya Liyue Limanı'nın saygınlığını ve azmini gösteriyor."
+    },
+    "sands": {
+      "name": "Altın Güneş Saati",
+      "desc": "Basit bir güneş saati. Taşordu tarafından savaş zamanlarında temin edilirdi."
+    },
+    "goblet": {
+      "name": "Asilzadenin Bağlılık Kupası",
+      "desc": "Taşordu tarafından yemin etmek için kullanılan altın bir kupa. İçinden hâlâ şarabın güzel kokusu geliyor."
+    },
+    "circlet": {
+      "name": "Kadim General Miğferi",
+      "desc": "Kadim zamanlardan kalma harika bir miğfer. Üzerindeki tozu temizleyerek ilk günkü haline getirebilirsin."
+    }
+  }
+}

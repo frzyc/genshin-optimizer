@@ -1,0 +1,24 @@
+{
+  "name": "Deathmatch",
+  "description": {
+    "0": "A sharp crimson polearm that was once a gladiator's priceless treasure. Its awl has been stained by the blood of countless beasts and men."
+  },
+  "passiveName": "Gladiator",
+  "passiveDescription": {
+    "0": {
+      "0": "If there are at least 2 opponents nearby, ATK is increased by <cryo>16%</cryo> and DEF is increased by <cryo>16%</cryo>. If there are fewer than 2 opponents nearby, ATK is increased by <cryo>24%</cryo>."
+    },
+    "1": {
+      "0": "If there are at least 2 opponents nearby, ATK is increased by <cryo>20%</cryo> and DEF is increased by <cryo>20%</cryo>. If there are fewer than 2 opponents nearby, ATK is increased by <cryo>30%</cryo>."
+    },
+    "2": {
+      "0": "If there are at least 2 opponents nearby, ATK is increased by <cryo>24%</cryo> and DEF is increased by <cryo>24%</cryo>. If there are fewer than 2 opponents nearby, ATK is increased by <cryo>36%</cryo>."
+    },
+    "3": {
+      "0": "If there are at least 2 opponents nearby, ATK is increased by <cryo>28%</cryo> and DEF is increased by <cryo>28%</cryo>. If there are fewer than 2 opponents nearby, ATK is increased by <cryo>42%</cryo>."
+    },
+    "4": {
+      "0": "If there are at least 2 opponents nearby, ATK is increased by <cryo>32%</cryo> and DEF is increased by <cryo>32%</cryo>. If there are fewer than 2 opponents nearby, ATK is increased by <cryo>48%</cryo>."
+    }
+  }
+}

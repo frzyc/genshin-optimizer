@@ -1,0 +1,24 @@
+{
+  "name": "Royal Greatsword",
+  "description": {
+    "0": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by the nobility only."
+  },
+  "passiveName": "Focus",
+  "passiveDescription": {
+    "0": {
+      "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>8%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    },
+    "1": {
+      "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>10%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    },
+    "2": {
+      "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>12%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    },
+    "3": {
+      "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>14%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    },
+    "4": {
+      "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>16%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    }
+  }
+}

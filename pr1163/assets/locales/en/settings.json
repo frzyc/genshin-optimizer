@@ -1,0 +1,66 @@
+{
+  "title": "Settings",
+  "languageCard": {
+    "selectLanguage": "Select Language",
+    "languageFormat": "Language: {{language}}"
+  },
+  "sillyCard": {
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene spliced them into Genshin Optimizer.",
+    "toggle": {
+      "enabled": "Silly Optimizer Enabled",
+      "disabled": "Silly Optimizer Disabled"
+    }
+  },
+  "count": {
+    "chars": "Characters:",
+    "arts": "Artifacts:",
+    "weapons": "Weapons:",
+    "total": "Total:",
+    "new": "New:",
+    "updated": "Updated:",
+    "removed": "Removed:",
+    "unchanged": "Unchanged:",
+    "upgraded": "Upgraded:",
+    "invalid": "Invalid:",
+    "dbTotal": "Merged Total:",
+    "notInImport": "Not in Import:"
+  },
+  "DatabaseCard": {
+    "title": "Database",
+    "button": {
+      "download": "Download",
+      "copy": "Clipboard",
+      "delete": "Delete",
+      "upload": "Upload",
+      "swap": "Swap"
+    },
+    "currentDB": "Current Database"
+  },
+  "uploadCard": {
+    "title": "Database Upload",
+    "replaceDatabase": "Update Database",
+    "hint": "Load your JSON file here...",
+    "hintPaste": "...or paste your data below.",
+    "dbSource": "Data source:",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
+    },
+    "error": {
+      "jsonParse": "Unable to parse JSON file.",
+      "unknown": "Unknown file format.",
+      "monaInvalid": "Invalid Mona-Uranai file format",
+      "goInvalid": "Invalid GO backup file format."
+    },
+    "buttons": {
+      "open": "Open",
+      "detectDups": "Detect Updates/Dupes",
+      "delNotInImport": "Delete items not in import"
+    },
+    "tooltip": {
+      "detectdup": "Find upgrades/duplicates in the GO inventory and merge the import into GO.",
+      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing GO inventory.",
+      "delNotInImport": "Assume the import is your full inventory. Items in the GO Inventory that don't exist in the import will be deleted.",
+      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
+    }
+  }
+}

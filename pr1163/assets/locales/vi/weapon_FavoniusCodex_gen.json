@@ -1,0 +1,24 @@
+{
+  "name": "Tây Phong Mật Điển",
+  "description": {
+    "0": "Mật điển được học giả Đội Kỵ Sĩ Tây Phong lưu truyền. Ghi chép đạo lý và sức mạnh của vật chất và Nguyên Tố."
+  },
+  "passiveName": "Đi Cùng Với Gió",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi tạo thành bạo kích có tỷ lệ <cryo>60%</cryo> sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi <cryo>12</cryo>s mới thi triển 1 lần."
+    },
+    "1": {
+      "0": "Khi tạo thành bạo kích có tỷ lệ <cryo>70%</cryo> sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi <cryo>10.5</cryo>s mới thi triển 1 lần."
+    },
+    "2": {
+      "0": "Khi tạo thành bạo kích có tỷ lệ <cryo>80%</cryo> sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi <cryo>9</cryo>s mới thi triển 1 lần."
+    },
+    "3": {
+      "0": "Khi tạo thành bạo kích có tỷ lệ <cryo>90%</cryo> sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi <cryo>7.5</cryo>s mới thi triển 1 lần."
+    },
+    "4": {
+      "0": "Khi tạo thành bạo kích có tỷ lệ <cryo>100%</cryo> sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi <cryo>6</cryo>s mới thi triển 1 lần."
+    }
+  }
+}

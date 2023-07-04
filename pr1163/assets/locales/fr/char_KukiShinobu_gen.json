@@ -1,0 +1,161 @@
+{
+  "name": "Kuki Shinobu",
+  "title": "Réparatrice d'afflictions",
+  "description": "La fiable et talentueuse cheffe adjointe du gang Arataki... Veuillez noter que ces adjectifs ne s'appliquent pas au gang Arataki à son ensemble, mais seulement à sa cheffe adjointe.",
+  "constellationName": "Tribulatio Demptio",
+  "auto": {
+    "name": "Lame volante",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Anneau de consécration",
+    "description": {
+      "0": "Sacrifie une partie des PV pour créer un anneau d'herbes de consécration qui inflige des <electro>DGT Électro</electro> aux ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Anneau d'herbes de consécration</strong>",
+      "3": "Suit le personnage déployé pour infliger des <electro>DGT Électro</electro> aux ennemis proches et restaurer les PV des personnages déployés à portée d'une valeur proportionnelle aux PV max de Kuki Shinobu, ces deux effets se déclenchant une fois toutes les 1,5 s.",
+      "4": "<br/>",
+      "5": "Le sacrifice de PV de cette compétence ne fera pas tomber les PV de Kuki Shinobu en dessous de 20 %.",
+      "6": "<br/>",
+      "7": "<i>Enroulez les herbes à sanglots autour de votre taille et ça exorcisera le mal !</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins d'anneau d'herbes de consécration",
+      "2": "DGT anneau d'herbes de consécration",
+      "3": "PV consommés",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Rituel des semoirs de Narukami",
+    "description": {
+      "0": "Enfonce une lame d'adjuration dans le sol pour créer une barrière qui purifie la zone de tout ce qui est malsain, infligeant de façon continue des <electro>DGT Électro</electro> aux ennemis à l'intérieur selon les PV max de Kuki Shinobu.",
+      "1": "Si les PV de Shinobu sont inférieurs ou égaux à 50 % lors de l'utilisation de cette compétence, la barrière dure plus longtemps.",
+      "2": "<br/>",
+      "3": "<i>C'était à l'origine une technique utilisée pour le désherbage et les prières rituelles en vue des récoltes annuelles, mais Shinobu ne l'a pas oubliée, même si sa vie de prêtresse du sanctuaire est déjà derrière elle.</i>"
+    },
+    "skillParams": {
+      "0": "DGT uniques",
+      "1": "DGT totaux",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Désir libérateur",
+    "description": {
+      "0": "Augmente le bonus de soins de 15 % quand les PV de Kuki Shinobu sont inférieurs ou égaux à 50 %."
+    }
+  },
+  "passive2": {
+    "name": "Quiétude du cœur",
+    "description": {
+      "0": "L'effet <strong>Anneau de consécration</strong> s'améliore selon la maîtrise élémentaire de Kuki Shinobu :",
+      "1": [
+        " Augmente les soins de 75 % de sa maîtrise.",
+        " Augmente les DGT de 25 % de sa maîtrise."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Prière prolongée",
+    "description": {
+      "0": "Augmente les récompenses d'une expédition de 20 h à Inazuma de 25 %."
+    }
+  },
+  "constellation1": {
+    "name": "Pour cloîtrer la compassion",
+    "description": {
+      "0": "La zone d'effet de <strong>Rituel des semoirs de Narukami</strong> augmente de 50 %."
+    }
+  },
+  "constellation2": {
+    "name": "Pour renier la fortune",
+    "description": {
+      "0": "La durée des <strong>anneaux d'herbes de consécration</strong> augmente de 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Pour séquestrer le chagrin",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Anneau de consécration</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Pour rompre le scellement",
+    "description": {
+      "0": "Lorsqu'une attaque normale, chargée ou plongeante d'un personnage affecté par un <strong>anneau d'herbes de consécration</strong> de Kuki Shinobu touche un ennemi, une marque d'herbes tonitruantes est apposée à l'emplacement de l'ennemi pour infliger des <electro>DGT Électro de zone</electro> d'une valeur équivalant à 9,7 % des PV max de Shinobu.",
+      "1": "Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  },
+  "constellation5": {
+    "name": "Pour cesser les courtoisies",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Rituel des semoirs de Narukami</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pour parer à la faiblesse",
+    "description": {
+      "0": "Lorsque Kuki Shinobu subit des DGT mortels, elle n'est pas vaincue cette fois-ci. Cet effet se déclenche automatiquement lorsque Kuki Shinobu a 1 PV et peut être déclenché une fois toutes les 60 s.",
+      "1": "Lorsque les PV de Kuki Shinobu passent sous le seuil des 25 %, sa maîtrise élémentaire augmente de 150 pts pendant 15 s. Cet effet peut être déclenché une fois toutes les 60 s."
+    }
+  }
+}

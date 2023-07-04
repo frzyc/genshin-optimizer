@@ -1,0 +1,24 @@
+{
+  "name": "Pique Crescente",
+  "description": {
+    "0": "Uma arma exótica com uma lâmina extremamente comprida no topo e uma lâmina crescente na parte de baixo. Foi parar em Liyue através de comerciantes estrangeiros. Com prática, pode causar grandes danos."
+  },
+  "passiveName": "Agulha Energética",
+  "passiveDescription": {
+    "0": {
+      "0": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de <cryo>20%</cryo> de Dano Físico por 5s."
+    },
+    "1": {
+      "0": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de <cryo>25%</cryo> de Dano Físico por 5s."
+    },
+    "2": {
+      "0": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de <cryo>30%</cryo> de Dano Físico por 5s."
+    },
+    "3": {
+      "0": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de <cryo>35%</cryo> de Dano Físico por 5s."
+    },
+    "4": {
+      "0": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de <cryo>40%</cryo> de Dano Físico por 5s."
+    }
+  }
+}

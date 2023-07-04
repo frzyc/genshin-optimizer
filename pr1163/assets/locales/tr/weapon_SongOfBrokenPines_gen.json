@@ -1,0 +1,24 @@
+{
+  "name": "Kırık Çamların Şarkısı",
+  "description": {
+    "0": "Yaprakların ve ağaçların nefesi kadar hafif bir kılıç, yine de bir kasırga kadar yıkıcı."
+  },
+  "passiveName": "Asi Sancak Marşı",
+  "passiveDescription": {
+    "0": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Saldırıyı <cryo>%16</cryo> artırır, Normal ve Yüklü Saldırılar düşmanlara isabet ettiğinde karakter bir Fısıltılar Mührü kazanır. Bu etki 0,3 saniyede bir uygulanabilir. 4 adet Fısıltılar Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Sancak Marşı\" kazanır. \"Milenyum Hareketi: Sancak Marşı\" ile Normal Saldırı Hızı <cryo>%12</cryo>, Saldırı <cryo>%20</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Fısıltılar Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "1": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Saldırıyı <cryo>%20</cryo> artırır, Normal ve Yüklü Saldırılar düşmanlara isabet ettiğinde karakter bir Fısıltılar Mührü kazanır. Bu etki 0,3 saniyede bir uygulanabilir. 4 adet Fısıltılar Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Sancak Marşı\" kazanır. \"Milenyum Hareketi: Sancak Marşı\" ile Normal Saldırı Hızı <cryo>%15</cryo>, Saldırı <cryo>%25</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Fısıltılar Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "2": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Saldırıyı <cryo>%24</cryo> artırır, Normal ve Yüklü Saldırılar düşmanlara isabet ettiğinde karakter bir Fısıltılar Mührü kazanır. Bu etki 0,3 saniyede bir uygulanabilir. 4 adet Fısıltılar Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Sancak Marşı\" kazanır. \"Milenyum Hareketi: Sancak Marşı\" ile Normal Saldırı Hızı <cryo>%18</cryo>, Saldırı <cryo>%30</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Fısıltılar Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "3": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Saldırıyı <cryo>%28</cryo> artırır, Normal ve Yüklü Saldırılar düşmanlara isabet ettiğinde karakter bir Fısıltılar Mührü kazanır. Bu etki 0,3 saniyede bir uygulanabilir. 4 adet Fısıltılar Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Sancak Marşı\" kazanır. \"Milenyum Hareketi: Sancak Marşı\" ile Normal Saldırı Hızı <cryo>%21</cryo>, Saldırı <cryo>%35</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Fısıltılar Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "4": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Saldırıyı <cryo>%32</cryo> artırır, Normal ve Yüklü Saldırılar düşmanlara isabet ettiğinde karakter bir Fısıltılar Mührü kazanır. Bu etki 0,3 saniyede bir uygulanabilir. 4 adet Fısıltılar Mührüne sahip olduğunda, mühürlerin tamamı kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Sancak Marşı\" kazanır. \"Milenyum Hareketi: Sancak Marşı\" ile Normal Saldırı Hızı <cryo>%24</cryo>, Saldırı <cryo>%40</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca Fısıltılar Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    }
+  }
+}

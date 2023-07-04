@@ -1,0 +1,36 @@
+{
+  "title": "Éditeur d'artéfact",
+  "rarity": "Rareté",
+  "level": "Niveau",
+  "unknownPieceName": "Nom de Pièce Inconnu",
+  "unknownSetName": "Unknown Set Name",
+  "curSubEff": "Efficacité Substat actuelle",
+  "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
+  "maxSubEff": "Efficacité Substat maximum",
+  "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+  "substat": {
+    "selectSub": "Sélectionner une Substat",
+    "error": {
+      "noCalc": "Impossible de calculer les rolls de la stat.",
+      "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
+    },
+    "noRoll": "Aucun Roll",
+    "RollCount_one": "{{count}} Roll",
+    "RollCount_other": "{{count}} Rolls",
+    "noStat": "Pas de valeur",
+    "eff": "Efficacité: <1></1>",
+    "noSubstat": "Pas de Substat",
+    "substatFormat": "Substat {{value}}",
+    "nextRolls": "Next rolls:"
+  },
+  "preview": "Prévisualisation d'artéfact",
+  "dupArt": "Doublon d'artéfact détecté.",
+  "upArt": "Artéfact amélioré détecté.",
+  "beforeEdit": "Avant modification",
+  "btnSave": "Enregistrer l'Artéfact",
+  "btnAdd": "Ajouter",
+  "btnClear": "Effacer",
+  "btnRandom": "Randomiser",
+  "btnUpdate": "Mettre à jour l'artéfact",
+  "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
+}

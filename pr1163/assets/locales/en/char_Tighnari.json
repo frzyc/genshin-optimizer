@@ -1,0 +1,6 @@
+{
+  "p1Cond": "After firing a <strong>Wreath Arrow</strong>",
+  "c4ReactCond": "After <strong>Tanglevine Shaft</strong> triggers a reaction",
+  "c6DmgKey": "Additional Clusterbloom Arrow DMG",
+  "c6WreathRed": "<strong>Wreath Arrow</strong> Charge Time Red."
+}

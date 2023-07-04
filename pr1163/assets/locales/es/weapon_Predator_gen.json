@@ -1,0 +1,14 @@
+{
+  "name": "Depredador",
+  "description": {
+    "0": "Un arco con un diseño único que no debe de pertenecer a este mundo."
+  },
+  "passiveName": "Golpe contundente",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>Solo disponible en las siguientes plataformas:</cryo>",
+      "1": "<cryo>“PlayStation Network”</cryo>.",
+      "2": "Tras infligir Daño Cryo a los enemigos, el daño de los Ataques Normales y Cargados aumenta en un 10% durante 6 s. Puede acumularse hasta 2 veces. Además, cuando Aloy equipa el arma Depredador, su ATQ aumenta en 66 pts."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "降临之剑",
+  "description": {
+    "0": "造型独特的剑。看起来并不属于这个世界。"
+  },
+  "passiveName": "降世",
+  "passiveDescription": {
+    "0": {
+      "0": "<cryo>仅在以下平台生效：</cryo>",
+      "1": "<cryo>\"PlayStation Network\"</cryo>",
+      "2": "普通攻击与重击命中敌人后有<cryo>50%</cryo>概率在小范围内造成<cryo>200%</cryo>攻击力的伤害。该效果每10秒只能触发一次；此外，旅行者装备降临之剑时，攻击力提升<cryo>66</cryo>点。"
+    }
+  }
+}

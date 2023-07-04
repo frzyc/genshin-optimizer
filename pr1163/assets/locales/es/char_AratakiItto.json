@@ -1,0 +1,15 @@
+{
+  "a1": {
+    "name": "Cuando Arataki Itto realiza ataques de Espada Kesagiri continuos"
+  },
+  "a4": {
+    "dmgInc": "Aumenta el Daño de los golpes de Espada Kesagiri"
+  },
+  "c1": {
+    "initialGain": "Cargas de Fuerza sobrenatural obtenidas",
+    "timedGain": "Tras 1s, cargas de Fuerza sobrenatural obtenidas cada 0,5s durante 1,5s"
+  },
+  "c4": {
+    "name": "Cuando el estado de Rey Oni enfurecido provocado por <strong>Rey Oni maligno: ¡Itto contra todos!</strong> termina"
+  }
+}

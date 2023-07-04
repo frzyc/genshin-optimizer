@@ -1,0 +1,24 @@
+{
+  "name": "Lance de jade ailée",
+  "description": {
+    "0": "Une lance longue et pointue en jade ensorcelé, avec laquelle vous pourriez vaincre les puissants monstres marins des temps préhistoriques."
+  },
+  "passiveName": "Lance d'aigle de la justice",
+  "passiveDescription": {
+    "0": {
+      "0": "Les ennemis touchés confèrent un bonus d'ATQ de <cryo>3,2 %</cryo> pendant 6 s. Cet effet peut être déclenché une fois toutes les 0,3 s, et peut être cumulé 7 fois maximum. Lorsque les cumuls sont au maximum, les DGT augmentent de <cryo>12 %</cryo>."
+    },
+    "1": {
+      "0": "Les ennemis touchés confèrent un bonus d'ATQ de <cryo>3,9 %</cryo> pendant 6 s. Cet effet peut être déclenché une fois toutes les 0,3 s, et peut être cumulé 7 fois maximum. Lorsque les cumuls sont au maximum, les DGT augmentent de <cryo>15 %</cryo>."
+    },
+    "2": {
+      "0": "Les ennemis touchés confèrent un bonus d'ATQ de <cryo>4,6 %</cryo> pendant 6 s. Cet effet peut être déclenché une fois toutes les 0,3 s, et peut être cumulé 7 fois maximum. Lorsque les cumuls sont au maximum, les DGT augmentent de <cryo>18 %</cryo>."
+    },
+    "3": {
+      "0": "Les ennemis touchés confèrent un bonus d'ATQ de <cryo>5,3 %</cryo> pendant 6 s. Cet effet peut être déclenché une fois toutes les 0,3 s, et peut être cumulé 7 fois maximum. Lorsque les cumuls sont au maximum, les DGT augmentent de <cryo>21 %</cryo>."
+    },
+    "4": {
+      "0": "Les ennemis touchés confèrent un bonus d'ATQ de <cryo>6 %</cryo> pendant 6 s. Cet effet peut être déclenché une fois toutes les 0,3 s, et peut être cumulé 7 fois maximum. Lorsque les cumuls sont au maximum, les DGT augmentent de <cryo>24 %</cryo>."
+    }
+  }
+}

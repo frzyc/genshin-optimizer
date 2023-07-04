@@ -1,0 +1,11 @@
+{
+  "passive2": {
+    "key": "Dano da Rocha Turbulenta"
+  },
+  "c2": {
+    "key": "Dano da Pedra Derretida"
+  },
+  "c4": {
+    "energyRestore": "Energia regenerada a cada "
+  }
+}

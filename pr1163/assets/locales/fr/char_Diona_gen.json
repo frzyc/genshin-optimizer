@@ -1,0 +1,171 @@
+{
+  "name": "Diona",
+  "title": "Cocktail façon Queue de Chat",
+  "description": "Une jeune fille au sang pas tout à fait humain. Elle travaille comme barmaid à La Queue de Chat où elle est très appréciée.",
+  "constellationName": "Feles",
+  "auto": {
+    "name": "Archerie de chasse",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Cryo, infligeant de considérables <cryo>DGT Cryo</cryo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT tir visé",
+      "6": "DGT tir visé (pleine charge)",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Griffes Cryo",
+    "description": {
+      "0": "Libère des griffes de chat Cryo qui infligent des <cryo>DGT Cryo</cryo>, et génèrent un bouclier lorsqu'elles touchent.",
+      "1": "Le bouclier peut absorber une quantité de DGT proportionnelle aux PV max de Diona, et sa durée dépend du nombre de cibles touchées.",
+      "2": "<br/>",
+      "3": "<strong>Appui simple</strong>",
+      "4": "Exécute rapidement deux attaques consécutives de Griffes Cryo.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Bat rapidement en retraite, et libère 5 Griffes Cryo.",
+      "8": "Le bouclier généré lors d'un appui long obtient un bonus de 75 % d'absorption de DGT.",
+      "9": "<br/>",
+      "10": "Le bouclier est efficace à 250 % contre les <cryo>DGT Cryo</cryo>, et applique l'élément <cryo>Cryo</cryo> au personnage déployé pendant un court instant lorsque le bouclier est généré.",
+      "11": "<br/>",
+      "12": "<i>En théorie, la glace versée dans un breuvage est sans danger pour celui qui le boit. Ceci était exact jusqu'à ce que Diona utilise son œil divin pour créer une glace capable de geler jusqu'au cerveau... 5 étoiles !</i>"
+    },
+    "skillParams": {
+      "0": "DGT Griffes Cryo",
+      "1": "Absorption de base du bouclier",
+      "2": "Durée",
+      "3": "TdR appui simple",
+      "4": "TdR appui long",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Cuvée spéciale",
+    "description": {
+      "0": "Diona lance un cocktail gelé de sa fabrication, infligeant des <cryo>DGT Cryo de zone</cryo>, et génère un champ de vapeur d'alcool.",
+      "1": "<br/>",
+      "2": "<strong>Champ de vapeur d'alcool</strong>",
+      "3": [
+        " Inflige aux ennemis présents dans la zone des <cryo>DGT Cryo continus</cryo>.",
+        " Restaure les PV des personnages présents dans la zone."
+      ],
+      "4": "<br/>",
+      "5": "<i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT de zone continus",
+      "2": "Soins continus",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Menu secret de La Queue de Chat",
+    "description": {
+      "0": "Augmente de 10 % la VIT de déplacement des personnages sous la protection du bouclier généré par les <strong>Griffes Cryo</strong>. Leur consommation d'endurance est de plus réduite de 10 %."
+    }
+  },
+  "passive2": {
+    "name": "Joyeuse ébriété",
+    "description": {
+      "0": "Les ennemis entrant dans le champ de vapeur d'alcool de <strong>Cuvée Spéciale</strong> voient leur ATQ baisser de 10 % pendant 15 s."
+    }
+  },
+  "passive3": {
+    "name": "Apéritif offert",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait."
+    }
+  },
+  "constellation1": {
+    "name": "Cocktail maison",
+    "description": {
+      "0": "Diona récupère 15 pts d'énergie élémentaire à la fin de <strong>Cuvée spéciale</strong>."
+    }
+  },
+  "constellation2": {
+    "name": "On the rocks",
+    "description": {
+      "0": "Les DGT infligés par <strong>Griffes Cryo</strong> augmentent de 15 %, et le bouclier absorbe 15 % de DGT en plus.",
+      "1": "De plus, lorsque la compétence touche, elle confère aux personnages déployés à proximité un bouclier pendant 5 s, dont le pouvoir absorbant équivaut à la moitié de celui de <strong>Griffes Cryo</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Un dernier pour la route",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Cuvée spéciale</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Mixologie",
+    "description": {
+      "0": "Le temps de charge du tir visé de Diona est réduit de 60 % lorsqu'elle se trouve dans le champ de vapeur d'alcool de <strong>Cuvée spéciale</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Un double avec glaçons",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Griffes Cryo</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Dernière tournée",
+    "description": {
+      "0": "Les personnages se trouvant dans le champ d'alcool de <strong>Cuvée spéciale</strong> bénéficient des effets suivants selon les PV qu'il leur reste :",
+      "1": [
+        " Bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.",
+        " Maîtrise élémentaire augmentée de 200 si les PV sont supérieurs à 50 %."
+      ]
+    }
+  }
+}

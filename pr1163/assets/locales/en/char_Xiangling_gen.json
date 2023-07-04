@@ -1,0 +1,150 @@
+{
+  "name": "Xiangling",
+  "title": "Exquisite Delicacy",
+  "description": "A renowned chef from Liyue. She's extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+  "constellationName": "Trulla",
+  "auto": {
+    "name": "Dough-Fu",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Attack</strong>",
+        "1": "Performs up to five consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guoba Attack",
+    "description": {
+      "0": "Summons Guoba, who will continuously breathe fire at opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Guoba loves to eat spicy food. Problem is, his stomach can't handle something this spicy.</i>"
+    },
+    "skillParams": {
+      "0": "Flame DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pyronado",
+    "description": {
+      "0": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her.",
+      "1": "The Pyronado will move with your character for the ability's duration, dealing <pyro>Pyro DMG</pyro> to all opponents in its path.",
+      "2": "<br/>",
+      "3": "<i>There will never be enough heat. Never.</i>"
+    },
+    "skillParams": {
+      "0": "1-Hit Swing DMG",
+      "1": "2-Hit Swing DMG",
+      "2": "3-Hit Swing DMG",
+      "3": "Pyronado DMG",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Crossfire",
+    "description": {
+      "0": "Increases the flame range of Guoba by 20%."
+    }
+  },
+  "passive2": {
+    "name": "Beware, It's Super Hot!",
+    "description": {
+      "0": "When <strong>Guoba Attack</strong>'s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s."
+    }
+  },
+  "passive3": {
+    "name": "Chef de Cuisine",
+    "description": {
+      "0": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product."
+    }
+  },
+  "constellation1": {
+    "name": "Crispy Outside, Tender Inside",
+    "description": {
+      "0": "Opponents hit by Guoba's attacks have their <pyro>Pyro RES</pyro> reduced by 15% for 6s."
+    }
+  },
+  "constellation2": {
+    "name": "Oil Meets Fire",
+    "description": {
+      "0": "The last attack in a Normal Attack sequence applies the Implode status onto the opponent for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling's ATK as <pyro>AoE Pyro DMG</pyro>."
+    }
+  },
+  "constellation3": {
+    "name": "Deepfry",
+    "description": {
+      "0": "Increases the Level of <strong>Pyronado</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Slowbake",
+    "description": {
+      "0": "<strong>Pyronado</strong>'s duration is increased by 40%."
+    }
+  },
+  "constellation5": {
+    "name": "Guoba Mad",
+    "description": {
+      "0": "Increases the Level of <strong>Guoba Attack</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Condensed Pyronado",
+    "description": {
+      "0": "For the duration of <strong>Pyronado</strong>, all party members receive a 15% <pyro>Pyro DMG Bonus</pyro>."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Yeşil Gölge",
+  "setEffects": {
+    "2": "+%15 Rüzgar Hasarı Bonusu.",
+    "4": "Girdap Hasarını %60 artırır. Girdapta kullanılan elemente karşı 10 saniyeliğine düşmanın Element Direncini %40 azaltır."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Yeşil Tarlaların Hatırası",
+      "desc": "Bir zamanlar geldiği yerin her yerinde görülebilen vahşi bir çiçek. Bu çiçeği göğsüne takmak için bir avcı tarafından koparılmış."
+    },
+    "plume": {
+      "name": "Yeşil Ok Tüyü",
+      "desc": "Bir zamanlar avını delip geçen ve hiçbir leke almayan bir okun tüyü."
+    },
+    "sands": {
+      "name": "Yeşil Gölge Kararlılığı",
+      "desc": "Bir zamanlar bir avcının kullandığı harika bir pusula. Her daim seni avına götürür."
+    },
+    "goblet": {
+      "name": "Yeşil Gölge Matarası",
+      "desc": "Yeşil Gölge tarafından kullanılan bir matara. İçi dışından çok daha büyük."
+    },
+    "circlet": {
+      "name": "Yeşil Gölge Tacı",
+      "desc": "Daha önce Yeşil Gölgeye ait olan görkemli bir taç. Rüzgarın doğadaki esintisi gibi yemyeşil."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "SprawlingGreenery": {
+    "cond2ele": "After triggering <pyro>Burning</pyro>, <spread>Quicken</spread>, or <bloom>Bloom</bloom>",
+    "cond3ele": "After triggering <aggravate>Aggravate</aggravate>, <spread>Spread</spread>, <hyperbloom>Hyperbloom</hyperbloom>, or <burgeon>Burgeon</burgeon"
+  },
+  "EnduringRock": {
+    "hitCond": "After dealing DMG to enemies while protected by a shield"
+  }
+}

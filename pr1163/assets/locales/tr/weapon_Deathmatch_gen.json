@@ -1,0 +1,24 @@
+{
+  "name": "Ölümsaçan",
+  "description": {
+    "0": "Bir zamanlar bir gladyatörün en değerli silahı olan keskin ve kızıl mızrak. Bıçağında sayısız insanın ve canavarın kanı var."
+  },
+  "passiveName": "Gladyatör",
+  "passiveDescription": {
+    "0": {
+      "0": "Yakınlarda 2 veya daha fazla düşman olduğunda, Saldırı ve Savunma <cryo>%16</cryo> artırılır. Aksi takdirde sadece Saldırı <cryo>%24</cryo> artırılır."
+    },
+    "1": {
+      "0": "Yakınlarda 2 veya daha fazla düşman olduğunda, Saldırı ve Savunma <cryo>%20</cryo> artırılır. Aksi takdirde sadece Saldırı <cryo>%30</cryo> artırılır."
+    },
+    "2": {
+      "0": "Yakınlarda 2 veya daha fazla düşman olduğunda, Saldırı ve Savunma <cryo>%24</cryo> artırılır. Aksi takdirde sadece Saldırı <cryo>%36</cryo> artırılır."
+    },
+    "3": {
+      "0": "Yakınlarda 2 veya daha fazla düşman olduğunda, Saldırı ve Savunma <cryo>%28</cryo> artırılır. Aksi takdirde sadece Saldırı <cryo>%42</cryo> artırılır."
+    },
+    "4": {
+      "0": "Yakınlarda 2 veya daha fazla düşman olduğunda, Saldırı ve Savunma <cryo>%32</cryo> artırılır. Aksi takdirde sadece Saldırı <cryo>%48</cryo> artırılır."
+    }
+  }
+}

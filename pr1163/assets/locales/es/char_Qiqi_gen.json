@@ -1,0 +1,161 @@
+{
+  "name": "Qiqi",
+  "title": "La Resurrección del Hielo",
+  "description": "Una aprendiz y recolectora de hierbas en la Farmacia Bubu. Una zombi con una tez blanca como el hueso, de pocas palabras y emociones.",
+  "constellationName": "Pristina Nola",
+  "auto": {
+    "name": "Técnica de espada antigua",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Magia Adeptus: Heraldo de la escarcha",
+    "description": {
+      "0": "Usando su talismán de sangre helada, Qiqi invoca al Heraldo de la escarcha, infligiendo <cryo>Daño Cryo</cryo> a todos los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Heraldo de la escarcha</strong>",
+      "3": [
+        "Cuando Qiqi golpea a un objetivo con sus Ataques Normales o Cargados, regenera Vida para todos los miembros de tu equipo y todos los personajes aliados cercanos. La cantidad de Vida regenerada es proporcional al ATQ de Qiqi.",
+        "Regenera una cierta cantidad de Vida del personaje en uso a intervalos regulares.",
+        "Sigue al personaje en uso para infligir <cryo>Daño Cryo</cryo> a todos los enemigos que se encuentre a su paso."
+      ],
+      "4": "<br/>",
+      "5": "<i>“Utilizo esto para evitar el aumento de la temperatura y la podredumbre de... las valiosas hierbas medicinales del Dr. Baizhu”</i>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación al golpear",
+      "2": "Curación continua",
+      "3": "Daño de Heraldo de la escarcha",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Magia Adeptus: Preservadora de la fortuna",
+    "description": {
+      "0": "Qiqi libera el poder Adeptus sellado dentro de su cuerpo, marcando a los enemigos cercanos con un talismán de conservación de la fortuna que inflige <cryo>Daño Cryo</cryo>.",
+      "1": "<br/>",
+      "2": "<strong>Talismán de conservación de la fortuna</strong>",
+      "3": "Cuando los enemigos marcados con el talismán reciben daño, el personaje que infligió el daño regenera Vida para sí mismo.",
+      "4": "<br/>",
+      "5": "<i>“Soy la Preservadora de la Fortuna, la Doncella de la Resurrección”.</i>",
+      "6": "<i>—Qiqi no recuerda cuándo dijo estas palabras.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Elixir de vida",
+    "description": {
+      "0": "Cuando un personaje bajo el efecto de <strong>Magia Adeptus: Heraldo de la escarcha</strong> provoca una Reacción Elemental, aumenta su Bono de Curación recibida en un 20% durante 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Apertura arcana",
+    "description": {
+      "0": "Cuando Qiqi golpea a sus enemigos con un Ataque Normal o Cargado, tiene un 50% de probabilidad de ponerles un talismán de conservación de la fortuna durante 6 s. Este efecto solo puede activarse una vez cada 30 s."
+    }
+  },
+  "passive3": {
+    "name": "Recuerdos de una vida pasada",
+    "description": {
+      "0": "Muestra la ubicación de los <strong>objetos típicos de Liyue</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Ascetismo de la escarcha",
+    "description": {
+      "0": "Qiqi regenera 2 pts. de Energía Elemental cuando el Heraldo de la escarcha golpea a un enemigo marcado por un talismán de conservación de la fortuna."
+    }
+  },
+  "constellation2": {
+    "name": "Frío polar",
+    "description": {
+      "0": "El daño del Ataque Normal y Cargado de Qiqi aumenta en un 15% contra enemigos afectados por <cryo>Cryo</cryo>."
+    }
+  },
+  "constellation3": {
+    "name": "Mandato celestial",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Magia Adeptus: Preservadora de la fortuna</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Supresión divina",
+    "description": {
+      "0": "Reduce en un 20% el ATQ de los objetivos marcados por el talismán de conservación de la fortuna."
+    }
+  },
+  "constellation5": {
+    "name": "Flor de loto carmesí",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Magia Adeptus: Heraldo de la escarcha</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rito de la resurrección",
+    "description": {
+      "0": "Al lanzar la habilidad <strong>Magia Adeptus: Preservadora de la fortuna</strong>, revive a todos los miembros del equipo cercanos que han sido derrotados y regenera un 50% de su Vida.",
+      "1": "Solo puede ocurrir una vez cada 15 min."
+    }
+  }
+}

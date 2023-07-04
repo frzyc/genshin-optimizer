@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "In the <strong>Paramita Papilio</strong> state",
+    "end": "After the <strong>Paramita Papilio</strong> state ends"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "Applies <strong>Blood Blossom</strong> effect"
+  },
+  "constellation4": {
+    "condName": "After defeating an enemy affected by a <strong>Blood Blossom</strong>"
+  },
+  "constellation6": {
+    "condName": "After HP drops below 25% or suffering a lethal strike"
+  }
+}

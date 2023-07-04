@@ -1,0 +1,24 @@
+{
+  "name": "Blackcliff Pole",
+  "description": {
+    "0": "Senjata yang terbuat dari blackstone dan aerosiderite. Bercahaya merah tua pada bilah hitamnya."
+  },
+  "passiveName": "Press the Advantage",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah mengalahkan musuh, meningkatkan <cryo>12%</cryo> ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+    },
+    "1": {
+      "0": "Setelah mengalahkan musuh, meningkatkan <cryo>15%</cryo> ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+    },
+    "2": {
+      "0": "Setelah mengalahkan musuh, meningkatkan <cryo>18%</cryo> ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+    },
+    "3": {
+      "0": "Setelah mengalahkan musuh, meningkatkan <cryo>21%</cryo> ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+    },
+    "4": {
+      "0": "Setelah mengalahkan musuh, meningkatkan <cryo>24%</cryo> ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+    }
+  }
+}

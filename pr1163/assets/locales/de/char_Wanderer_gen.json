@@ -1,0 +1,178 @@
+{
+  "name": "Wanderer",
+  "title": "Bis in die Ewigkeit driften",
+  "description": "Ein Wanderer, dessen Identität ein Geheimnis ist. Er kleidet sich wie ein Shugenja, spielt aber nicht die Rolle eines solchen.",
+  "constellationName": "Peregrinus",
+  "auto": {
+    "name": "Yuuban Meigen",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Standardangriff</strong>",
+        "1": "Entfesselt Windklingen, um bis zu 3 Angriffe auszuführen und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und konzentriert nach kurzer Aufladezeit vor sich ein Hochdruckfeld, das <anemo>Anemo-Flächenschaden</anemo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Anemo-Kraft, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hanega – Gesang des Windes",
+    "description": {
+      "0": "Konzentriert die Kraft einer großen Luftmenge, um damit die Fesseln der Erde abzuwerfen. Verursacht in der Umgebung <anemo>Anemo-Schaden</anemo> und steigt in die Höhe, um in den Zustand „Haltung des eleganten Windes“ einzutreten.",
+      "1": "<br/>",
+      "2": "<strong>Haltung des eleganten Windes</strong>",
+      "3": "In diesem Zustand kann der Wanderer keinen Angriff aus dem Fall ausführen. Sein Standardangriff und heftiger Schlag werden zu Kuugo – Fushoudan und Kuugo – Toufukai, deren Schaden als Schaden von Standardangriffen bzw. Schaden heftiger Schläge betrachtet werden. Beide Fähigkeiten erhalten einen erhöhten Wirkungsbereich und verursachen mehr Schaden. Kuugo – Toufukai verbraucht keine Ausdauer.",
+      "4": "In diesem Zustand kann der Wanderer fortlaufend in der Luft schweben und seine Aktionen haben die folgenden Eigenschaften:",
+      "5": [
+        " Verbraucht fortlaufend „Kuugoryoku“ und bleibt im Schwebezustand.",
+        " Beim Rennen in der Luft wird zusätzlich Kuugoryoku verbraucht. Beim Gedrückthalten zum Beschleunigen wird fortlaufend Kuugoryoku verbraucht, um die schnelle Fortbewegung aufrechtzuerhalten, dieser Effekt ersetzt das Rennen.",
+        " Beim Springen wird zusätzlich Kuugoryoku verbraucht, um die Schwebehöhe zu erhöhen. Beim Gedrückthalten zum Springen wird fortlaufend Kuugoryoku verbraucht, um die Schwebehöhe fortlaufend zu erhöhen."
+      ],
+      "6": "<br/>",
+      "7": "Wird Kuugoryoku aufgebraucht, endet dieser Schwebezustand.",
+      "8": "Wird diese Fähigkeit innerhalb der Dauer von „Haltung des eleganten Windes“ erneut ausgelöst, endet dieser Zustand.",
+      "9": "<br/>",
+      "10": "<i>„Die profane Welt tanzt ausgelassen und das Geheimnis schwebt wie eine Blüte, selbstvergessen.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH von Kuugo – Fushoudan",
+      "2": "SCH von Kuugo – Toufukai",
+      "3": "Anfängliches Kuugoryoku",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kyougen – Fünf rituelle Stücke",
+    "description": {
+      "0": "Komprimiert die Luft zu einem alle Sorgen zerschmetternden Vakuum und verursacht dabei mehrfach <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "Im Zustand Haltung des eleganten Windes der Elementarfähigkeit „Hanega – Gesang des Windes“ wird dieser Zustand nach dem Auslösen beendet.",
+      "2": "<br/>",
+      "3": "<i>„Stück für Stück klart der Himmel auf, Träume, die waren und Träume, die sind, schweben im Wind.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Jadeblume",
+    "description": {
+      "0": "Verleiht dem diesmaligen Zustand „Haltung des eleganten Windes“ der Figur bei der Anwendung von <strong>Hanega – Gesang des Windes</strong> nach Kontakt mit dem <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Element die entsprechenden Verstärkungseffekte, je nachdem, mit welchem Element interagiert wurde:",
+      "1": [
+        " <hydro>Hydro</hydro>: Erhöht das max. Kuugoryoku um 20 Punkte.",
+        " <pyro>Pyro</pyro>: Erhöht den ANG um 30 %.",
+        " <cryo>Kryo</cryo>: Erhöht die KT um 20 %.",
+        " <electro>Elektro</electro>: Stellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen 0,8 Punkte Elementarenergie wieder her, Abklingzeit 0,2 s."
+      ],
+      "2": "<br/>",
+      "3": "Es können gleichzeitig höchstens 2 unterschiedliche Verstärkungseffekte der entsprechenden Elemente verliehen werden."
+    }
+  },
+  "passive2": {
+    "name": "Brise der Träumerei",
+    "description": {
+      "0": "Erhält beim Treffen von Gegnern mit Kuugo – Fushoudan oder Kuugo – Toufukai des Wanderers im Zustand <strong>„Haltung des eleganten Windes“</strong> mit einer Wahrscheinlichkeit von 16 % den Effekt „Anmut des Windes“: Beschleunigt der Wanderer im diesmaligen Zustand „Haltung des eleganten Windes“ in der Luft, wird dieser Effekt entfernt, sodass diese Beschleunigung in der Luft kein Kuugoryoku verbraucht und 4 Windpfeile abgeschossen werden, die jeweils <anemo>Anemo-Schaden</anemo> in Höhe von 35 % ANG verursachen.",
+      "1": "Erzeugt ein Kuugo – Fushoudan oder Kuugo – Toufukai nicht den Effekt „Anmut des Windes“, wird die Wahrscheinlichkeit des Auslösens beim nächsten Treffer um 12 % erhöht. 0,1 s Abklingzeit für die Beurteilung der Effekterzeugung."
+    }
+  },
+  "passive3": {
+    "name": "Saiten der wirbelnden Wolken",
+    "description": {
+      "0": "Verringert die für den Aufstieg von Katalysatoren oder Bögen verbrauchte Menge an Mora um 50 %."
+    }
+  },
+  "constellation1": {
+    "name": "Shoban – Pompöses Gefieder",
+    "description": {
+      "0": "Erhöht die Angriffs-GSW des Wanderers mit Kuugo – Fushoudan und Kuugo – Toufukai im Zustand <strong>Haltung des eleganten Windes</strong> um 10 %.",
+      "1": "Die Windpfeile vom passiven Talent „Brise der Träumerei“ verursachen zusätzlich Schaden in Höhe von 25 % ANG, dafür muss zuerst das passive Talent „Brise der Träumerei“ freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Niban – Insel inmitten weißer Wellen",
+    "description": {
+      "0": "Erhöht im Zustand <strong>Haltung des eleganten Windes</strong> den Schaden von <strong>Kyougen – Fünf rituelle Stücke</strong> für jeden Punkt anhand des Unterschiedes zwischen dem Maximum an möglichen Punkten von Kuugoryoku und der gegenwärtigen Punktzahl von Kuugoryoku um 4 %.",
+      "1": "Auf diese Weise kann der Schaden von Kyougen – Fünf rituelle Stücke höchstens um 200 % erhöht werden."
+    }
+  },
+  "constellation3": {
+    "name": "Sanban – Mondblumen-Kusemai",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Kyougen – Fünf rituelle Stücke</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Yonban – Aufbruch ins Frühjahr",
+    "description": {
+      "0": "Erhält die Figur durch das passive Talent „Jadeblume“ beim Auslösen von <strong>Hanega – Gesang des Windes</strong> den entsprechenden Verstärkungseffekt in Abhängigkeit von dem Elementartyp, mit dem sie in Kontakt gekommen ist, wird ihr ein zufälliger weiterer noch nicht vergebener Verstärkungseffekt verliehen. Es können höchstens drei Elementen entsprechende Verstärkungseffekte gleichzeitig aktiv sein.",
+      "1": "Das passive Talent „Jadeblume“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation5": {
+    "name": "Matsuban – Erleuchtung aus der Ferne",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Hanega – Gesang des Windes</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Shugen – Traurig schwingender Vorhang",
+    "description": {
+      "0": "Im Zustand <strong>Haltung des eleganten Windes</strong> ruft Kuugo – Fushoudan des Wanderers beim Treffen von Gegnern folgende Effekte hervor:",
+      "1": [
+        " Verursacht an der getroffenen Stelle ein zusätzliches Kuugo – Fushoudan, welches Schaden in Höhe von 40 % des ursprünglichen Schadens verursacht. Dieser Schaden wird als Schaden von Standardangriffen betrachtet.",
+        " Stellt dem Wanderer 4 Punkte Kuugoryoku wieder her, wenn sein Kuugoryoku unter 40 Punkte sinkt. Auf diese Weise kann alle 0,2 s einmal Kuugoryoku wiederhergestellt werden. Dieser Effekt kann innerhalb der Dauer von Haltung des eleganten Windes bis zu fünfmal ausgelöst werden."
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "Показано <1>{{count}}</1> из {{value}} оружия",
+  "showingNum_other": "Показано <1>{{count}}</1> из {{value}} оружий",
+  "edit": "Редактировать оружие",
+  "weaponName": "Название оружия",
+  "removeWeapon": "Вы уверены что хотите удалить {{value}}?",
+  "addWeapon": "Добавить Новое Оружие"
+}

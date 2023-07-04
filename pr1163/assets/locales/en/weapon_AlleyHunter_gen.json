@@ -1,0 +1,24 @@
+{
+  "name": "Alley Hunter",
+  "description": {
+    "0": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught."
+  },
+  "passiveName": "Oppidan Ambush",
+  "passiveDescription": {
+    "0": {
+      "0": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by <cryo>2%</cryo> every second up to a max of <cryo>20%</cryo>. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by <cryo>4%</cryo> per second until it reaches 0%."
+    },
+    "1": {
+      "0": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by <cryo>2.5%</cryo> every second up to a max of <cryo>25%</cryo>. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by <cryo>5%</cryo> per second until it reaches 0%."
+    },
+    "2": {
+      "0": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by <cryo>3%</cryo> every second up to a max of <cryo>30%</cryo>. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by <cryo>6%</cryo> per second until it reaches 0%."
+    },
+    "3": {
+      "0": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by <cryo>3.5%</cryo> every second up to a max of <cryo>35%</cryo>. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by <cryo>7%</cryo> per second until it reaches 0%."
+    },
+    "4": {
+      "0": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by <cryo>4%</cryo> every second up to a max of <cryo>40%</cryo>. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by <cryo>8%</cryo> per second until it reaches 0%."
+    }
+  }
+}

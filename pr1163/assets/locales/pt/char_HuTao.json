@@ -1,0 +1,15 @@
+{
+  "paramita": {
+    "enter": "Sob o estado de Dança da Borboleta",
+    "end": "Após o estado de Dança da Borboleta acabar"
+  },
+  "constellation2": {
+    "applyBloodBlossom": "Aplica o efeito de Pétalas Sangrentas (C2)"
+  },
+  "constellation4": {
+    "condName": "Após derrotar um inimigo afetado por Pétalas Sangrentas"
+  },
+  "constellation6": {
+    "condName": "Após a Vida cair abaixo de 25% ou sofrer Dano letal"
+  }
+}

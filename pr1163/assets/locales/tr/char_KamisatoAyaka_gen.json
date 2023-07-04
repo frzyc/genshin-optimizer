@@ -1,0 +1,177 @@
+{
+  "burst": {
+    "cutting": "Kesme Hasarı",
+    "bloom": "Çiçeklenme Hasarı",
+    "name": "Kamisato Sanatı: Soumetsu",
+    "description": {
+      "0": "Çok şiddetli esen bir kar fırtınası çıkarır ve amansız bir şekilde ilerleyen Buzdan Seki no To gönderir.",
+      "1": "<br/>",
+      "2": "<strong>Buzdan Seki no To</strong>",
+      "3": [
+        "Dokunduğu her düşmana tekrar tekrar vurarak <cryo>Buz Hasarı</cryo> veren buz gibi bir fırtınadır.",
+        "Süresi bitince kar fırtınası patlar ve <cryo>Buz Alan Hasarı</cryo> verir."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Yüreği yaralı balıkçılın aklından geçenler kar fırtınasında gizlidir.\"</i>"
+    },
+    "skillParams": {
+      "0": "Kesme Hasarı",
+      "1": "Çiçeklenme Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "name": "Kamisato Ayaka",
+  "title": "Buz Balıkçılı",
+  "description": "Yashiro Heyetinden Kamisato Klanının kızı. Onurlu ve zarif olmasının yanı sıra bilge ve güçlüdür.",
+  "constellationName": "Kar Turnası",
+  "auto": {
+    "name": "Kamisato Sanatı - Kabuki",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak kılıçla ki fırtınası çıkarır."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kamisato Sanatı: Hyouka",
+    "description": {
+      "0": "Yerden buz çıkararak yakındaki düşmanları havaya fırlatır ve <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "<br/>",
+      "2": "<i>\"Bulutlar geceyi aydınlatan ayı örter. Özlem, yola çıkmak için can atanın üzerine sis gibi çöker.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "sprint": {
+    "name": "Kamisato Sanatı: Senho",
+    "description": {
+      "0": "<strong>Alternatif Depar</strong>",
+      "1": "Ayaka, Dayanıklılık harcayarak kendini onunla birlikte hareket eden donmuş sisle kaplar.",
+      "2": "<br/>",
+      "3": "Senho formunda suda hızla hareket eder.",
+      "4": "Yeniden belirdiğinde aşağıdaki etkiler ortaya çıkar:",
+      "5": [
+        "Ayaka, donuk enerji açığa çıkararak yakındaki düşmanlara <cryo>Buz</cryo> uygular.",
+        "Soğuk, Ayaka'nın kılıcı etrafında toplanır ve kısa süreliğine saldırılarına <cryo>Buz</cryo> etkisi verir."
+      ],
+      "6": "<br/>",
+      "7": "<i>\"Islak tüylerle / suda gezer balıkçıl / nasıl da güzel\"</i>"
+    }
+  },
+  "passive1": {
+    "name": "Amatsumi Kunitsumi Kutsaması",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Hyouka</strong> kullanıldıktan sonra 6 saniyeliğine Kamisato Ayaka'nın Normal ve Yüklü Saldırıları %30 daha fazla Hasar verir."
+    }
+  },
+  "passive2": {
+    "name": "Kanten Senmyou Lütfu",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Senho</strong> sonunda kullanılan Buz bir düşmana vurursa Kamisato Ayaka aşağıdaki etkileri kazanır:",
+      "1": [
+        "10 Dayanıklılık yeniler.",
+        "10 saniyeliğine %18 <cryo>Buz Hasarı Bonusu</cryo> kazanır."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Shinsa Meyveleri",
+    "description": {
+      "0": "Ayaka, Silah Yükseltme Malzemesi üretirken elde ettiği ürünü %10 ihtimalle iki katına çıkarır."
+    }
+  },
+  "constellation1": {
+    "name": "Karlı Kiraz Çiçeği",
+    "description": {
+      "0": "Kamisato Ayaka'nın Normal veya Yüklü Saldırısı düşmanlara <cryo>Buz Hasarı</cryo> verdiğinde <strong>Kamisato Sanatı: Hyouka</strong> becerisinin Bekleme Süresi %50 ihtimalle 0,3 saniye azalır. Bu etki 0,1 saniyede bir uygulanabilir."
+    }
+  },
+  "constellation2": {
+    "name": "Tipi Kılıcı Seki no To",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> kullanıldığında ek olarak 2 adet ufak Buzdan Seki no To meydana gelir. Her biri asıl tipinin Hasarının %20'si kadar Hasar verir."
+    }
+  },
+  "constellation3": {
+    "name": "Ayaz Çiçeklerinin Yağmuru",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Metcezir",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Soumetsu</strong> becerisinin oluşturduğu Buzdan Seki no To'dan Hasar alan düşmanların 6 saniyeliğine Savunması %30 azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Çiçek Bulutu Irutsuki",
+    "description": {
+      "0": "<strong>Kamisato Sanatı: Hyouka</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Suigetsu Dansı",
+    "description": {
+      "0": "Kamisato Ayaka her 10 saniyede bir Usurahi Butou kazanır, bu sayede Yüklü Saldırı Hasarı %298 artar. Ayaka'nın Yüklü Saldırısı düşmana isabet ettikten 0,5 saniye sonra bu güçlendirme kaybolur. Kaybolmasının ardından becerinin sayacı tekrar başlar."
+    }
+  }
+}

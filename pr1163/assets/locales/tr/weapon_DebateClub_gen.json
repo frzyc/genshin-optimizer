@@ -1,0 +1,24 @@
+{
+  "name": "İkna Sopası",
+  "description": {
+    "0": "Kaliteli çelikten yapılmış kullanışlı bir sopa. Bir münazaracının en ikna edici argümanı."
+  },
+  "passiveName": "Kesin Sonuç",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullandıktan sonra, isabet eden Normal ve Yüklü Saldırılar küçük bir alanda etkili olacak <cryo>%60</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 15 saniye sürer ve sadece 3 saniyede bir Hasar uygulanır."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullandıktan sonra, isabet eden Normal ve Yüklü Saldırılar küçük bir alanda etkili olacak <cryo>%75</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 15 saniye sürer ve sadece 3 saniyede bir Hasar uygulanır."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullandıktan sonra, isabet eden Normal ve Yüklü Saldırılar küçük bir alanda etkili olacak <cryo>%90</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 15 saniye sürer ve sadece 3 saniyede bir Hasar uygulanır."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullandıktan sonra, isabet eden Normal ve Yüklü Saldırılar küçük bir alanda etkili olacak <cryo>%105</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 15 saniye sürer ve sadece 3 saniyede bir Hasar uygulanır."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullandıktan sonra, isabet eden Normal ve Yüklü Saldırılar küçük bir alanda etkili olacak <cryo>%120</cryo> Saldırı kadar ek Hasara yol açar. Bu etki 15 saniye sürer ve sadece 3 saniyede bir Hasar uygulanır."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Özgürlük Yemini",
+  "description": {
+    "0": "Mavi bir düz kılıç, kadim şarkıları andırır ve Rüzgar Diyarının özgürlük yemini kadar inatçıdır."
+  },
+  "passiveName": "Devrim Marşı",
+  "passiveDescription": {
+    "0": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Hasarı <cryo>%10</cryo> artırır. Bu silahı kuşanan karakter Element Tepkimesi tetiklerse bir İsyan Mührü kazanır. Bu etki 0,5 saniyede bir uygulanabilir ve kuşanan karakter sahada değilken bile tetiklenir. 2 adet İsyan Mührüne sahip olduğunda, ikisi de kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Direniş Şarkısı\" kazanır. \"Milenyum Hareketi: Direniş Şarkısı\" ile Normal, Yüklü ve Havadan Saldırı Hasarı <cryo>%16</cryo>, Saldırı <cryo>%20</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca İsyan Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "1": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Hasarı <cryo>%12,5</cryo> artırır. Bu silahı kuşanan karakter Element Tepkimesi tetiklerse bir İsyan Mührü kazanır. Bu etki 0,5 saniyede bir uygulanabilir ve kuşanan karakter sahada değilken bile tetiklenir. 2 adet İsyan Mührüne sahip olduğunda, ikisi de kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Direniş Şarkısı\" kazanır. \"Milenyum Hareketi: Direniş Şarkısı\" ile Normal, Yüklü ve Havadan Saldırı Hasarı <cryo>%20</cryo>, Saldırı <cryo>%25</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca İsyan Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "2": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Hasarı <cryo>%15</cryo> artırır. Bu silahı kuşanan karakter Element Tepkimesi tetiklerse bir İsyan Mührü kazanır. Bu etki 0,5 saniyede bir uygulanabilir ve kuşanan karakter sahada değilken bile tetiklenir. 2 adet İsyan Mührüne sahip olduğunda, ikisi de kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Direniş Şarkısı\" kazanır. \"Milenyum Hareketi: Direniş Şarkısı\" ile Normal, Yüklü ve Havadan Saldırı Hasarı <cryo>%24</cryo>, Saldırı <cryo>%30</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca İsyan Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "3": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Hasarı <cryo>%17,5</cryo> artırır. Bu silahı kuşanan karakter Element Tepkimesi tetiklerse bir İsyan Mührü kazanır. Bu etki 0,5 saniyede bir uygulanabilir ve kuşanan karakter sahada değilken bile tetiklenir. 2 adet İsyan Mührüne sahip olduğunda, ikisi de kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Direniş Şarkısı\" kazanır. \"Milenyum Hareketi: Direniş Şarkısı\" ile Normal, Yüklü ve Havadan Saldırı Hasarı <cryo>%28</cryo>, Saldırı <cryo>%35</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca İsyan Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    },
+    "4": {
+      "0": "\"Milenyum Hareketi\" koleksiyonunun rüzgarla birlikte hareket eden bir parçası. Hasarı <cryo>%20</cryo> artırır. Bu silahı kuşanan karakter Element Tepkimesi tetiklerse bir İsyan Mührü kazanır. Bu etki 0,5 saniyede bir uygulanabilir ve kuşanan karakter sahada değilken bile tetiklenir. 2 adet İsyan Mührüne sahip olduğunda, ikisi de kullanılır ve çevredeki tüm grup üyeleri 12 saniyeliğine \"Milenyum Hareketi: Direniş Şarkısı\" kazanır. \"Milenyum Hareketi: Direniş Şarkısı\" ile Normal, Yüklü ve Havadan Saldırı Hasarı <cryo>%32</cryo>, Saldırı <cryo>%40</cryo> artar. Bu etki tetiklendikten sonra 20 saniye boyunca İsyan Mührü kazanılamaz. \"Milenyum Hareketi\"nin etkileri arasından aynı türde güçlendirmeler birbirine eklenmez."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Falcão",
+  "description": {
+    "0": "A alma dos Cavaleiros de Favonius. Milênios depois, ainda chama pelos ventos para expulsar todo o mal - assim como a última heroína que a manejava."
+  },
+  "passiveName": "Resistência do Falcão do Oeste",
+  "passiveDescription": {
+    "0": {
+      "0": "O ATQ aumenta em <cryo>20%</cryo>; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a <cryo>100%</cryo> do ATQ e causando <cryo>200%</cryo> do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+    },
+    "1": {
+      "0": "O ATQ aumenta em <cryo>25%</cryo>; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a <cryo>115%</cryo> do ATQ e causando <cryo>230%</cryo> do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+    },
+    "2": {
+      "0": "O ATQ aumenta em <cryo>30%</cryo>; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a <cryo>130%</cryo> do ATQ e causando <cryo>260%</cryo> do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+    },
+    "3": {
+      "0": "O ATQ aumenta em <cryo>35%</cryo>; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a <cryo>145%</cryo> do ATQ e causando <cryo>290%</cryo> do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+    },
+    "4": {
+      "0": "O ATQ aumenta em <cryo>40%</cryo>; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a <cryo>160%</cryo> do ATQ e causando <cryo>320%</cryo> do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+    }
+  }
+}

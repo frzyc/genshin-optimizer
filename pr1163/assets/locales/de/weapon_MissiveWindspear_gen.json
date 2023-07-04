@@ -1,0 +1,24 @@
+{
+  "name": "Spitze der klingenden Winde",
+  "description": {
+    "0": "Eine Wetterfahne, die die Windrichtung anzeigt. Die Idylle der Winde bleibt nicht immer sanft ..."
+  },
+  "passiveName": "Nicht ankommender Wind",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um <cryo>12 %</cryo> und die Elementarkunde um <cryo>48</cryo> Punkte."
+    },
+    "1": {
+      "0": "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um <cryo>15 %</cryo> und die Elementarkunde um <cryo>60</cryo> Punkte."
+    },
+    "2": {
+      "0": "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um <cryo>18 %</cryo> und die Elementarkunde um <cryo>72</cryo> Punkte."
+    },
+    "3": {
+      "0": "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um <cryo>21 %</cryo> und die Elementarkunde um <cryo>84</cryo> Punkte."
+    },
+    "4": {
+      "0": "Erhöht 10 s lang nach Auslösen einer Elementarreaktion den ANG um <cryo>24 %</cryo> und die Elementarkunde um <cryo>96</cryo> Punkte."
+    }
+  }
+}

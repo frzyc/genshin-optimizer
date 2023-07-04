@@ -1,0 +1,24 @@
+{
+  "name": "Wine and Song",
+  "description": {
+    "0": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw."
+  },
+  "passiveName": "Ever-Changing",
+  "passiveDescription": {
+    "0": {
+      "0": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by <cryo>14%</cryo> for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by <cryo>20%</cryo> for 5s."
+    },
+    "1": {
+      "0": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by <cryo>16%</cryo> for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by <cryo>25%</cryo> for 5s."
+    },
+    "2": {
+      "0": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by <cryo>18%</cryo> for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by <cryo>30%</cryo> for 5s."
+    },
+    "3": {
+      "0": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by <cryo>20%</cryo> for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by <cryo>35%</cryo> for 5s."
+    },
+    "4": {
+      "0": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by <cryo>22%</cryo> for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by <cryo>40%</cryo> for 5s."
+    }
+  }
+}

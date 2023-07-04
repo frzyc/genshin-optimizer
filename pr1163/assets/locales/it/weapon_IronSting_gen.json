@@ -1,0 +1,24 @@
+{
+  "name": "Spina di ferro",
+  "description": {
+    "0": "Una lunga spada esotica arrivata a Liyue per mezzo di mercanti stranieri. Leggera, agile e affilata."
+  },
+  "passiveName": "Puntura energizzante",
+  "passiveDescription": {
+    "0": {
+      "0": "Infliggere DAN elementali aumenta tutti i DAN di un <cryo>6%</cryo> per 6 s. Cumulabile fino a 2 volte. Si può verificare una volta ogni 1 s."
+    },
+    "1": {
+      "0": "Infliggere DAN elementali aumenta tutti i DAN di un <cryo>7,5%</cryo> per 6 s. Cumulabile fino a 2 volte. Si può verificare una volta ogni 1 s."
+    },
+    "2": {
+      "0": "Infliggere DAN elementali aumenta tutti i DAN di un <cryo>9%</cryo> per 6 s. Cumulabile fino a 2 volte. Si può verificare una volta ogni 1 s."
+    },
+    "3": {
+      "0": "Infliggere DAN elementali aumenta tutti i DAN di un <cryo>10,5%</cryo> per 6 s. Cumulabile fino a 2 volte. Si può verificare una volta ogni 1 s."
+    },
+    "4": {
+      "0": "Infliggere DAN elementali aumenta tutti i DAN di un <cryo>12%</cryo> per 6 s. Cumulabile fino a 2 volte. Si può verificare una volta ogni 1 s."
+    }
+  }
+}

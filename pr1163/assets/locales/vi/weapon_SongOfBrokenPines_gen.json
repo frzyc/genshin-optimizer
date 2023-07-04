@@ -1,0 +1,24 @@
+{
+  "name": "Tiếng Gió Trong Rừng Thông",
+  "description": {
+    "0": "Đại kiếm có nhát chém mềm mại như hơi thở của cỏ cây, là vũ khí có sức mạnh như bão tố quật ngã cây cối."
+  },
+  "passiveName": "Bài Ca Phản Nghịch",
+  "passiveDescription": {
+    "0": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng <cryo>16%</cryo>; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm sẽ tiêu hao tất cả, khiến tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng <cryo>12%</cryo>, tấn công tăng <cryo>20%</cryo>. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+    },
+    "1": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng <cryo>20%</cryo>; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng <cryo>15%</cryo>, tấn công tăng <cryo>25%</cryo>. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+    },
+    "2": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng <cryo>24%</cryo>; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng <cryo>18%</cryo>, tấn công tăng <cryo>30%</cryo>. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+    },
+    "3": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng <cryo>28%</cryo>; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng <cryo>21%</cryo>, tấn công tăng <cryo>35%</cryo>. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+    },
+    "4": {
+      "0": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng <cryo>32%</cryo>; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng <cryo>24%</cryo>, tấn công tăng <cryo>40%</cryo>. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+    }
+  }
+}

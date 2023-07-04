@@ -1,0 +1,12 @@
+{
+  "addAimed": "Daño Adicional de Disparo Preciso",
+  "addFullAimed": "Daño Adicional con Carga Completa de Disparo Preciso",
+  "upcurrentDuration": "Duración de corrientes de viento ascendentes",
+  "regenEner": "Regenera 15 pts. de Energía a Venti cuando el efecto termina",
+  "c6": "Objetivos que reciben daño por <strong>Gran Oda del Viento</strong>",
+  "q": "Restaura 15 pts. de Energía a todos los personajes con el elemento correspondiente en el equipo.",
+  "c2": {
+    "hit": "Enemigo golpeado",
+    "launched": "Enemigo lanzado"
+  }
+}

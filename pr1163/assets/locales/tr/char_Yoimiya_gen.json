@@ -1,0 +1,167 @@
+{
+  "name": "Yoimiya",
+  "title": "Neşeli Alevler",
+  "description": "Naganohara Havai Fişekleri'nin sahibi. \"Yaz Festivali Kraliçesi\" olarak bilinir, insanların umutlarını ve hayallerini simgeleyen havai fişekleri üretme konusunda ustadır.",
+  "constellationName": "Küçük Kırmızı Balık",
+  "auto": {
+    "name": "Havai Fişek Patlaması",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 5 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren <strong>Hedefli Atış</strong> yapar.",
+        "2": "Ok atılmadan önce nişan alırken okun ucunda alevler toplanır. Gösterdiği etki, enerjinin ne kadar süre yük biriktirdiğine göre değişir:",
+        "3": [
+          "1. Seviye Yük: <pyro>Ateş Hasarı</pyro> veren alevli bir ok atar.",
+          "2. Seviye Yük: Yük biriktirme süresine göre Hedefli Atışla en fazla 3 Tutuşmuş Ok atar. Tutuşmuş Oklar yakındaki düşmanlara güdümlenir ve isabet ettiğinde <pyro>Ateş Hasarı</pyro> verir."
+        ]
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Hedefli Atış",
+      "6": "Tam Yüklü Hedefli Atış",
+      "7": "Tutuşmuş Ok Hasarı",
+      "8": "Havadan Saldırı Hasarı",
+      "9": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Niwabi Ateş Dansı",
+    "description": {
+      "0": "Yoimiya, bir maytap sallayarak etrafında güherçileden bir halka oluşturur.",
+      "1": "<br/>",
+      "2": "<strong>Niwabi Enshou</strong>",
+      "3": "Bu süre boyunca Yoimiya'nın Normal Saldırısıyla atılan oklar Alevlenmiş Ok olur ve Hasarları artarak <pyro>Ateş Hasarına</pyro> dönüşür. Bu sırada Havai Fişek Patlaması Normal Saldırısı, 2. Seviye Yükte Tutuşmuş Ok oluşturmaz.",
+      "4": "<br/>",
+      "5": "Bu etki, Yoimiya alandan ayrıldığında devre dışı kalır.",
+      "6": "<br/>",
+      "7": "<i>\"Niwabi\", Yoimiya'nın bizzat ürettiği tütsülü havai fişektir. Hiçbir eğitim veya hazırlık gerektirmeden yakılabildiği için çok tutmuştu. Onca yangından sonra Tenryou Heyeti, \"Niwabi\" kullanımını yasakladı ama geceleri hâlâ küçük, parlak ışıltıların yükseldiği görülebilir. Yukarıdan bakıldığında parıldayan küçük yıldızlara benzerler.</i>"
+    },
+    "skillParams": {
+      "0": "Alevlenmiş Ok Hasarı",
+      "1": "Süre",
+      "2": "BS",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Taşkıran Ryuukin",
+    "description": {
+      "0": "Yoimiya, kendi ürettiği \"Taşkıran Ryuukin\" ile birlikte havaya zıplar ve sürpriz dolu, <pyro>Ateş Alan Hasarı</pyro> veren alevli havai fişekler fırlatarak isabet alan düşmanlardan birini Altın Alevle işaretler.",
+      "1": "<br/>",
+      "2": "<strong>Altın Alev</strong>",
+      "3": "Yoimiya dışında herhangi bir grup üyesinin Altın Alevle işaretlenmiş bir düşmana vuran tüm Normal/Yüklü/Havadan Saldırıları, Element Patlamaları ve Element Becerileri bir patlama tetikleyerek <pyro>Ateş Alan Hasarı</pyro> verir.",
+      "4": "Altın Alev etkisindeki bir düşman, Altın Alevin süresi bitmeden önce yenilirse etki yakındaki başka bir düşmana geçer. Kalan süre bu düşmana aktarılır.",
+      "5": "<br/>",
+      "6": "2 saniyede bir Altın Alev patlaması tetiklenebilir. Yoimiya saf dışı kaldığında becerileriyle oluşturduğu Altın Alevin etkileri geçersiz olur.",
+      "7": "<br/>",
+      "8": "<i>Havai fişekler, beşeri yıldız parıltıları veya göğe fırlatılan kuyruklu yıldızlar gibidir. Bir anda geçip gitseler bile güzelliklerinin hatırası hafızalardan asla silinmez.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Altın Alev Patlama Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Haylaz Muziplikler",
+    "description": {
+      "0": "<strong>Niwabi Ateş Dansı</strong> sırasında Yoimiya'nın yaptığı Normal Saldırılar, <pyro>Ateş Hasarı Bonusunu</pyro> vuruş başına %2 artırır. Bu etki 3 saniye sürer ve maksimum 10 kademeye kadar birikebilir."
+    }
+  },
+  "passive2": {
+    "name": "Yaz Şafağı Sökerken",
+    "description": {
+      "0": "<strong>Taşkıran Ryuukin</strong> kullanıldığında 15 saniyeliğine yakındaki (Yoimiya hariç) grup üyelerinin Saldırısı %10 artar. Buna ek olarak <strong>Taşkıran Ryuukin</strong> becerisini kullanırken Yoimiya'nın sahip olduğu \"Haylaz Muziplikler\" kademelerinin sayısına göre daha fazla Saldırı Bonusu eklenir. Her kademe bu Saldırı Bonusunu %1 artırır."
+    }
+  },
+  "passive3": {
+    "name": "Alevli Kibrit",
+    "description": {
+      "0": "Yoimiya Dekorasyon, Süs Eşyası veya Peyzaj türü Dekorasyonlar üretirken kullanılan malzemelerin bir kısmını %100 ihtimalle iade eder."
+    }
+  },
+  "constellation1": {
+    "name": "Akik Ryuukin",
+    "description": {
+      "0": "<strong>Taşkıran Ryuukin</strong> becerisinin oluşturduğu Altın Alev 4 saniye daha uzun sürer.",
+      "1": "Buna ek olarak Altın Alev etkisindeki bir düşman, beceri süresi dahilinde yenilirse 20 saniyeliğine Yoimiya'nın Saldırısı %20 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Kamp Ateşi Etkisi",
+    "description": {
+      "0": "Yoimiya'nın verdiği <pyro>Ateş Hasarı</pyro> Kritik Vuruş yaptığında Yoimiya, 6 saniyeliğine %25 <pyro>Ateş Hasarı Bonusu</pyro> kazanır.",
+      "1": "Bu etki Yoimiya aktif karakter değilken bile tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Hokkabazın Alevi",
+    "description": {
+      "0": "<strong>Niwabi Ateş Dansı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Havai Fişek Uzmanı",
+    "description": {
+      "0": "Yoimiya'nın Altın Alevi bir patlamayı tetiklediğinde <strong>Niwabi Ateş Dansı</strong> becerisinin Bekleme Süresi 1,2 saniye azalır."
+    }
+  },
+  "constellation5": {
+    "name": "Yaz Festivali Arifesi",
+    "description": {
+      "0": "<strong>Taşkıran Ryuukin</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Naganohara Meteor Yağmuru",
+    "description": {
+      "0": "<strong>Niwabi Ateş Dansı</strong> sırasında Yoimiya'nın Normal Saldırıları %50 ihtimalle fazladan bir tane Alevlenmiş Ok atar ve asıl ok Hasarının %60'ına denk hasar verir. Bu hasar, Normal Saldırı Hasarı sayılır."
+    }
+  }
+}

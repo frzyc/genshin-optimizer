@@ -1,0 +1,36 @@
+{
+  "title": "聖遺物編輯器",
+  "rarity": "稀有度",
+  "level": "等級",
+  "unknownPieceName": "未知的道具名稱",
+  "unknownSetName": "未知的套裝名稱",
+  "curSubEff": "目前估值",
+  "curSubEffDesc": "聖遺物每升級 4 次，就會得到一次副詞條的追加提升。<strong>估值</strong>會計算單一副詞條的提升比例。",
+  "maxSubEff": "最高估值",
+  "maxSubEffDesc": "聖遺物的<strong>最高副詞條估值</strong>指計算持續提升副詞條至最高數值的估計值。",
+  "substat": {
+    "selectSub": "選擇一個副詞條",
+    "error": {
+      "noCalc": "無法計算詞條數",
+      "noOverRoll": "副詞條不可超過 {{value}} 個"
+    },
+    "noRoll": "沒有詞條",
+    "RollCount_one": "{{count}} Roll",
+    "RollCount_other": "提升 {{count}} 次",
+    "noStat": "沒有數值",
+    "eff": "估值：<1></1>",
+    "noSubstat": "無副詞條",
+    "substatFormat": "副詞條 {{value}}",
+    "nextRolls": "下次提升："
+  },
+  "preview": "聖遺物預覽",
+  "dupArt": "偵測到重複的聖遺物",
+  "upArt": "偵測到已升級的聖遺物",
+  "beforeEdit": "編輯前",
+  "btnSave": "鋤存聖遺物",
+  "btnAdd": "新增聖遺物",
+  "btnClear": "清除",
+  "btnRandom": "隨機化",
+  "btnUpdate": "更新聖遺物",
+  "clearPrompt": "目前編輯器裡有一個聖遺物。您確定要清除編輯器嗎？"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Göklerin Omurgası",
+  "description": {
+    "0": "Dvalin'in amansız kararlılığını simgeleyen bir mızrak. Rüzgarın ve gökyüzünün gücünü taşıyan bu silahın dimdik sapı gökleri işaret ediyor."
+  },
+  "passiveName": "Kara Kanat",
+  "passiveDescription": {
+    "0": {
+      "0": "Kritik Oranını <cryo>%8</cryo>, Normal Saldırı Hızını <cryo>%12</cryo> artırır. Ayrıca düşmanlara isabet eden Normal ve Yüklü Saldırı vuruşları <cryo>%50</cryo> ihtimalle bir vakum kılıcı tetikleyerek küçük bir alana <cryo>%40</cryo> Saldırı kadar Hasar verir. Bu etki en fazla 2 saniyede bir uygulanabilir."
+    },
+    "1": {
+      "0": "Kritik Oranını <cryo>%10</cryo>, Normal Saldırı Hızını <cryo>%12</cryo> artırır. Ayrıca düşmanlara isabet eden Normal ve Yüklü Saldırı vuruşları <cryo>%50</cryo> ihtimalle bir vakum kılıcı tetikleyerek küçük bir alana <cryo>%55</cryo> Saldırı kadar Hasar verir. Bu etki en fazla 2 saniyede bir uygulanabilir."
+    },
+    "2": {
+      "0": "Kritik Oranını <cryo>%12</cryo>, Normal Saldırı Hızını <cryo>%12</cryo> artırır. Ayrıca düşmanlara isabet eden Normal ve Yüklü Saldırı vuruşları <cryo>%50</cryo> ihtimalle bir vakum kılıcı tetikleyerek küçük bir alana <cryo>%70</cryo> Saldırı kadar Hasar verir. Bu etki en fazla 2 saniyede bir uygulanabilir."
+    },
+    "3": {
+      "0": "Kritik Oranını <cryo>%14</cryo>, Normal Saldırı Hızını <cryo>%12</cryo> artırır. Ayrıca düşmanlara isabet eden Normal ve Yüklü Saldırı vuruşları <cryo>%50</cryo> ihtimalle bir vakum kılıcı tetikleyerek küçük bir alana <cryo>%85</cryo> Saldırı kadar Hasar verir. Bu etki en fazla 2 saniyede bir uygulanabilir."
+    },
+    "4": {
+      "0": "Kritik Oranını <cryo>%16</cryo>, Normal Saldırı Hızını <cryo>%12</cryo> artırır. Ayrıca düşmanlara isabet eden Normal ve Yüklü Saldırı vuruşları <cryo>%50</cryo> ihtimalle bir vakum kılıcı tetikleyerek küçük bir alana <cryo>%100</cryo> Saldırı kadar Hasar verir. Bu etki en fazla 2 saniyede bir uygulanabilir."
+    }
+  }
+}

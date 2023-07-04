@@ -1,0 +1,24 @@
+{
+  "name": "Skyward Spine",
+  "description": {
+    "0": "Tombak polearm yang melambangkan kebulatan hati Dvalin. Bagian atas gagangnya menengadah ke langit, dan terbelah di hadapan kekuatan angin dan langit."
+  },
+  "passiveName": "Black Wing",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>8%</cryo> CRIT Rate dan <cryo>12%</cryo> Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar <cryo>40%</cryo> ATK. Efek ini dapat terpicu setiap 2 detik."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>10%</cryo> CRIT Rate dan <cryo>12%</cryo> Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar <cryo>55%</cryo> ATK. Efek ini dapat terpicu setiap 2 detik."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>12%</cryo> CRIT Rate dan <cryo>12%</cryo> Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar <cryo>70%</cryo> ATK. Efek ini dapat terpicu setiap 2 detik."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>14%</cryo> CRIT Rate dan <cryo>12%</cryo> Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar <cryo>85%</cryo> ATK. Efek ini dapat terpicu setiap 2 detik."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>16%</cryo> CRIT Rate dan <cryo>12%</cryo> Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar <cryo>100%</cryo> ATK. Efek ini dapat terpicu setiap 2 detik."
+    }
+  }
+}

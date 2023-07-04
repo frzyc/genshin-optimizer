@@ -1,0 +1,29 @@
+{
+  "setName": "Echi di un'offerta",
+  "setEffects": {
+    "2": "ATT +18%.",
+    "4": "Quando gli attacchi normali colpiscono gli avversari, hanno un 36% di probabilità di innescare Rito della valle, che aumenta i DAN da attacchi normali di un 70% dell'ATT. Questo effetto si disperde 0,05 s dopo che un attacco normale infligge DAN. Se un attacco normale non innesca Rito della valle, le probabilità di attivare l'effetto la volta successiva aumentano di un 20%. È possibile attivare l'effetto una volta ogni 0,2 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Fiore dell'aromaspirito",
+      "desc": "Della giada intagliata a forma di fiore su cui aleggia un aroma fantasma."
+    },
+    "plume": {
+      "name": "Foglia di giada",
+      "desc": "Un ornamento di giada a forma di foglia. Sembra che un tempo avesse un significato profondo tra alcuni amici."
+    },
+    "sands": {
+      "name": "Simbolo di giubilo",
+      "desc": "Un ornamento di giada dalla forma circolare. Secondo la leggenda, un tempo veniva usato come simbolo per dare inizio ai rituali."
+    },
+    "goblet": {
+      "name": "Tazza della sorgente",
+      "desc": "Questa tazza da tè trabocca costantemente di acqua fresca. Potrebbe trattarsi di un dono da parte di un Adeptus, di una sua reliquia o di un oggetto che ha smarrito."
+    },
+    "circlet": {
+      "name": "Orecchini mutevoli",
+      "desc": "Un paio di orecchini ricavati da un unico blocco di giada. Sono particolarmente delicati."
+    }
+  }
+}

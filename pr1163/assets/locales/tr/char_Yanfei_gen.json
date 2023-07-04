@@ -1,0 +1,163 @@
+{
+  "name": "Yanfei",
+  "title": "Masum Bilgelik",
+  "description": "Liyue Limanı'nda faaliyet gösteren tanınmış bir hukuk danışmanı. Damarlarında aydınlanmış bir yaratığın kanı akan zeki ve genç bir kadın.",
+  "constellationName": "Adalet Yaratığı",
+  "auto": {
+    "name": "Tasdik Mührü",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "En fazla üç defa <pyro>Ateş Hasarı</pyro> veren ateş topları fırlatır.",
+        "2": "Yanfei'nin Normal Saldırıları düşmanlara isabet ettiğinde Yanfei bir Kızıl Mühür elde eder. Yanfei en fazla 3 Kızıl Mühre sahip olabilir. Bu etki her tetiklendiğinde mevcut Kızıl Mühürlerin süresi yenilenir.",
+        "3": "Her Kızıl Mühür, Yanfei'nin Dayanıklılık tüketimini azaltır ve Yanfei alandan ayrıldığında kaybolur."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Kısa süre kullanıldıktan sonra Dayanıklılığı ve tüm Kızıl Mühürleri harcar, ardından düşmanlara <pyro>Ateş Alan Hasarı</pyro> verir.",
+        "2": "Bu Yüklü Saldırının Etki Alanı ve Hasarı, tüketilen Kızıl Mühür sayısına bağlı olarak artar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Yanfei, Ateşin gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <pyro>Ateş Alan Hasarı</pyro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Kızıl Mühür Dayanıklılık Tüketimi Azalışı",
+      "6": "Kızıl Mühür Süresi",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kızıl Ferman",
+    "description": {
+      "0": "<pyro>Ateş Alan Hasarı</pyro> veren yakıcı alevler çıkarır.",
+      "1": "Ateşin vurduğu düşmanlar Yanfei'ye maksimum sayıda Kızıl Mühür verir.",
+      "2": "<br/>",
+      "3": "<i>Yanfei'nin mühürlerinin yasal kullanımları dışında özel şartları ve koşulları var. Sivil İşler Bakanlığı, doğanın kanunlarını değiştiremiyor tabii.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Son Karar",
+    "description": {
+      "0": "Yakındaki düşmanları kızgın ateşle yakar ve <pyro>Ateş Alan Hasarı</pyro> verir. Yanfei, maksimum sayıda Kızıl Mühür elde eder ve Parlaklık etkisi kazanır.",
+      "1": "<br/>",
+      "2": "<strong>Parlaklık</strong>",
+      "3": "Aşağıdaki etkiler uygulanır:",
+      "4": [
+        "Yanfei'ye belirli aralıklarla Kızıl Mühür verir.",
+        "Yüklü Saldırılarının verdiği Hasar artar."
+      ],
+      "5": "Parlaklık etkileri Yanfei alandan ayrılırsa veya savaşta saf dışı kalırsa sona erer.",
+      "6": "<br/>",
+      "7": "<i>\"İşte bu ölüm kalım mevzusunun tüm şartları bunlar. Tabii burada ben kalacağım. Sen öleceksin!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "",
+      "2": "Kızıl Mühür Kazanma Aralığı",
+      "3": "Yüklü Saldırı Hasar Bonusu",
+      "4": "Süre",
+      "5": "BS",
+      "6": "Enerji Maliyeti",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sözleşme Şartları",
+    "description": {
+      "0": "Yanfei'nin Yüklü Saldırı yaparak tükettiği her Kızıl Mühür, onun <pyro>Ateş Hasarı Bonusunu</pyro> %5 artırır. Bu etki 6 saniye sürer. Etki süresince tekrar Yüklü Saldırı yapılırsa bir önceki etkiyi ortadan kaldırır."
+    }
+  },
+  "passive2": {
+    "name": "Alev Almış Gözler",
+    "description": {
+      "0": "Yanfei'nin Yüklü Saldırısı düşmanlara Kritik Vuruş yaptığında ek olarak Saldırısının %80'i kadar <pyro>Ateş Alan Hasarı</pyro> verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır."
+    }
+  },
+  "passive3": {
+    "name": "Hukuk Ansiklopedisi",
+    "description": {
+      "0": "Yakınlardaki <strong>Liyue'ye özgü kaynakların</strong> yerini mini haritada gösterir."
+    }
+  },
+  "constellation1": {
+    "name": "Kanunlar Affetmez",
+    "description": {
+      "0": "Yanfei Yüklü Saldırı yaparken var olan her bir Kızıl Mühür, bu Yüklü Saldırının dayanıklılık maliyetini %10 azaltır ve müdahale direncini de artırır."
+    }
+  },
+  "constellation2": {
+    "name": "Son Karar Hakkı",
+    "description": {
+      "0": "Can oranı %50'nin altında olan düşmanlara karşı Yanfei'nin Yüklü Saldırı Kritik Oranını %20 artırır."
+    }
+  },
+  "constellation3": {
+    "name": "Gerçeğin Alevli Mührü",
+    "description": {
+      "0": "<strong>Kızıl Ferman</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Üstün Yetki",
+    "description": {
+      "0": "<strong>Son Karar</strong> kullanıldığında:",
+      "1": "15 saniyeliğine Yanfei'nin Maks. Canının %45'i kadar Hasar emen bir kalkan oluşturur.",
+      "2": "Bu kalkan <pyro>Ateş Hasarını</pyro> %250 daha fazla verimlilikle emer."
+    }
+  },
+  "constellation5": {
+    "name": "Ebedi Beyanname",
+    "description": {
+      "0": "<strong>Son Karar</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Ek Madde",
+    "description": {
+      "0": "Maksimum Kızıl Mühür sayısını 1 artırır."
+    }
+  }
+}

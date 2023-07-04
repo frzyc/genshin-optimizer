@@ -1,0 +1,24 @@
+{
+  "name": "Von den Heldentaten der Drachenbezwinger",
+  "description": {
+    "0": "Eine schlecht und unorganisiert geschriebene Geschichte über fünf Helden, die gemeinsam auf Drachenjagd gehen. Der Misserfolg ist die wichtigste Lehre, die man diesem Buch entnehmen kann."
+  },
+  "passiveName": "Überlieferung",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um <cryo>24 %</cryo>. 20 s Abklingzeit."
+    },
+    "1": {
+      "0": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um <cryo>30 %</cryo>. 20 s Abklingzeit."
+    },
+    "2": {
+      "0": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um <cryo>36 %</cryo>. 20 s Abklingzeit."
+    },
+    "3": {
+      "0": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um <cryo>42 %</cryo>. 20 s Abklingzeit."
+    },
+    "4": {
+      "0": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um <cryo>48 %</cryo>. 20 s Abklingzeit."
+    }
+  }
+}

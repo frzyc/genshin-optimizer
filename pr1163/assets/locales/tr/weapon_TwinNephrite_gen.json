@@ -1,0 +1,24 @@
+{
+  "name": "İkiz Yeşimtaşı",
+  "description": {
+    "0": "İki parça yeşimden yapılmış zarif bir madalyon."
+  },
+  "passiveName": "Gerilla Taktikleri",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir düşmanı yenmek 15 saniyeliğine Hareket Hızını ve Saldırıyı <cryo>%12</cryo> artırır."
+    },
+    "1": {
+      "0": "Bir düşmanı yenmek 15 saniyeliğine Hareket Hızını ve Saldırıyı <cryo>%14</cryo> artırır."
+    },
+    "2": {
+      "0": "Bir düşmanı yenmek 15 saniyeliğine Hareket Hızını ve Saldırıyı <cryo>%16</cryo> artırır."
+    },
+    "3": {
+      "0": "Bir düşmanı yenmek 15 saniyeliğine Hareket Hızını ve Saldırıyı <cryo>%18</cryo> artırır."
+    },
+    "4": {
+      "0": "Bir düşmanı yenmek 15 saniyeliğine Hareket Hızını ve Saldırıyı <cryo>%20</cryo> artırır."
+    }
+  }
+}

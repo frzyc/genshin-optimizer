@@ -1,0 +1,24 @@
+{
+  "name": "Arco da caccia smeraldo",
+  "description": {
+    "0": "Un arco da caccia di colore verde, che un tempo apparteneva a un cacciatore che abitava nella foresta."
+  },
+  "passiveName": "Vento verdeggiante",
+  "passiveDescription": {
+    "0": {
+      "0": "Per colpo a segno, gli attacchi normali e caricati hanno un 50% di probabilità di generare un Ciclone, che attrarrà costantemente gli avversari circostanti, infliggendo loro DAN pari a un <cryo>40%</cryo> dell'ATT ogni 0,5 s per 4 s. Si può verificare una sola volta ogni <cryo>14</cryo> s."
+    },
+    "1": {
+      "0": "Per colpo a segno, gli attacchi normali e caricati hanno un 50% di probabilità di generare un Ciclone, che attrarrà costantemente gli avversari circostanti, infliggendo loro DAN pari a un <cryo>50%</cryo> dell'ATT ogni 0,5 s per 4 s. Si può verificare una sola volta ogni <cryo>13</cryo> s."
+    },
+    "2": {
+      "0": "Per colpo a segno, gli attacchi normali e caricati hanno un 50% di probabilità di generare un Ciclone, che attrarrà costantemente gli avversari circostanti, infliggendo loro DAN pari a un <cryo>60%</cryo> dell'ATT ogni 0,5 s per 4 s. Si può verificare una sola volta ogni <cryo>12</cryo> s."
+    },
+    "3": {
+      "0": "Per colpo a segno, gli attacchi normali e caricati hanno un 50% di probabilità di generare un Ciclone, che attrarrà costantemente gli avversari circostanti, infliggendo loro DAN pari a un <cryo>70%</cryo> dell'ATT ogni 0,5 s per 4 s. Si può verificare una sola volta ogni <cryo>11</cryo> s."
+    },
+    "4": {
+      "0": "Per colpo a segno, gli attacchi normali e caricati hanno un 50% di probabilità di generare un Ciclone, che attrarrà costantemente gli avversari circostanti, infliggendo loro DAN pari a un <cryo>80%</cryo> dell'ATT ogni 0,5 s per 4 s. Si può verificare una sola volta ogni <cryo>10</cryo> s."
+    }
+  }
+}

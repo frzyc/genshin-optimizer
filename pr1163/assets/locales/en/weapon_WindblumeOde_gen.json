@@ -1,0 +1,24 @@
+{
+  "name": "Windblume Ode",
+  "description": {
+    "0": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person."
+  },
+  "passiveName": "Windblume Wish",
+  "passiveDescription": {
+    "0": {
+      "0": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by <cryo>16%</cryo> for 6s."
+    },
+    "1": {
+      "0": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by <cryo>20%</cryo> for 6s."
+    },
+    "2": {
+      "0": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by <cryo>24%</cryo> for 6s."
+    },
+    "3": {
+      "0": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by <cryo>28%</cryo> for 6s."
+    },
+    "4": {
+      "0": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by <cryo>32%</cryo> for 6s."
+    }
+  }
+}

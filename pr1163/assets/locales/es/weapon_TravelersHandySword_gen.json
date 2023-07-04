@@ -1,0 +1,24 @@
+{
+  "name": "Espada del Viajero",
+  "description": {
+    "0": "Una práctica espada de acero que esconde en su empuñadura unas tijeras, una lupa y yesca, entre otras cosas..."
+  },
+  "passiveName": "Viaje",
+  "passiveDescription": {
+    "0": {
+      "0": "Restaura un <cryo>1%</cryo> de Vida al obtener un orbe o partícula elemental."
+    },
+    "1": {
+      "0": "Restaura un <cryo>1.25%</cryo> de Vida al obtener un orbe o partícula elemental."
+    },
+    "2": {
+      "0": "Restaura un <cryo>1.5%</cryo> de Vida al obtener un orbe o partícula elemental."
+    },
+    "3": {
+      "0": "Restaura un <cryo>1.75%</cryo> de Vida al obtener un orbe o partícula elemental."
+    },
+    "4": {
+      "0": "Restaura un <cryo>2%</cryo> de Vida al obtener un orbe o partícula elemental."
+    }
+  }
+}

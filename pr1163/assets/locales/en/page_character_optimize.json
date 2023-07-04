@@ -1,0 +1,122 @@
+{
+  "mainStat": {
+    "levelAssTooltip": {
+      "title": "Main Stat Level Assumption",
+      "desc": "Sets main stat value to at least that of the specified level. Does not change substats."
+    },
+    "assumptionLvl": {
+      "no": "No Main Stat Lv. Assumption",
+      "lvl": "Assume Main Stat at least Lv. {{lvl}}"
+    },
+    "title": "Main Stat Filter/Configuration"
+  },
+  "tcGraph": {
+    "vs": "Graph Optimization Target vs.",
+    "notSel": "Not Selected",
+    "showStatThr": "Show Stat Threshold Line",
+    "downloadData": "Download Data",
+    "generatedBuilds": "Generated Builds",
+    "statReqThr": "Stat Requirement Threshold Line",
+    "desc": "Using data from the builder, this will generate a graph to visualize Optimization Target vs. the selected Graph Target. The graph will show the maximum Optimization Target value per 0.01 of the selected Graph Target. Enabling this is optional, and doing so will slow down build times",
+    "currentBuild": "Current Build",
+    "highlightedBuilds": "Highlighted Builds",
+    "buildAlreadyInList": "Build is already in the list"
+  },
+  "levelFilter": "Artifact Level Filter",
+  "excludeArt": {
+    "title_exclude": "Excluded Artifacts",
+    "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
+    "button_txt": "Exclude Artifacts",
+    "usingNum": "Using <1>{{totalStr}}</1> excluded artifact(s)",
+    "excNum_one": "<0>{{count}}</0> artifact is excluded",
+    "excNum_other": "<0>{{count}}</0> artifacts are excluded",
+    "addExc": "Add artifact to this character's exclusion list",
+    "selExc": "Select artifact to add to this character's exclusion list",
+    "deSelectExc": "Click on an artifact to remove it from the exclusion list",
+    "excludeArtifactTip": "Excluding an artifact will prevent the build generator from using it for this character.",
+    "excluded": "This artifact is excluded.",
+    "included": "This artifact is not excluded."
+  },
+  "excludeChar": {
+    "title": "Equipped Artifact Configuration",
+    "tooltip": "Add characters to this character's allow list. Characters in the allow list will be considered for build generation. You can also toggle between using only unequipped artifacts, your custom allow list, and using all artifacts.",
+    "modal": {
+      "allow_all": "Add all shown characters to the allow list",
+      "disallow_All": "Remove all shown characters from the allow list"
+    },
+    "allowEquip": "Allow using artifacts from",
+    "usingNumTot_one": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> character",
+    "usingNumTot_other": "Using <1>{{arts}}</1> artifacts from <3>{{count}}</3> characters",
+    "chars": "Characters",
+    "artis": "Artifacts",
+    "states": {
+      "unequippedOnly": "Unequipped Only",
+      "customList": "Custom List",
+      "all": "All Artifacts"
+    },
+    "usingState": "Using"
+  },
+  "allowPartial": "Allow Partial Builds (<5 artifacts)",
+  "constraintFilter": {
+    "title": "Minimum Build Constraints",
+    "tooltip": "Set certain minimum requirements that generated builds must conform to; e.g., have at least 140% Energy Recharge."
+  },
+  "artSetConfig": {
+    "title": "Artifact Set Configuration",
+    "setEffCond": "Set Effect Conditionals",
+    "enabled": "Enabled",
+    "allowed": "Allowed",
+    "excluded": "Excluded",
+    "selected": "Selected",
+    "2rainbow": "3-Rainbow",
+    "4rainbow": "5-Rainbow",
+    "allowAll2set": "Allow All 2-Set",
+    "excludeAll2set": "Exclude All 2-Set",
+    "allowAll4set": "Allow All 4-Set",
+    "excludeAll4set": "Exclude All 4-Set",
+    "alExRainbow": "<0>Allow <1></1></0> / <2>Exclude <1></1></2> Rainbow Builds",
+    "modal": {
+      "setCond": {
+        "title": "Artifact Set Conditional Effects",
+        "reset": "Reset Conditionals",
+        "text": "Some artifact set effects provide conditional stats. This window allows you to select those effects, so they can contribute stats when a build that satifies a set effect is calculated during optimization."
+      },
+      "ArtSetFilter": {
+        "title": "Artifact Sets <1>Allowed<1></1></1> / <3>Excluded<1></1></3>",
+        "intro": "You can allow/exclude which sets you want the builder to consider. In the following examples, <strong>A</strong> is on-set, and <strong>R</strong> is rainbow(off-set)",
+        "2set": "<0><0>Excluding<1></1> 2-Set</0></0> would exclude 2-Set builds: <2><0>AA</0>RRR</2> and <4><0>AAA</0>RR</4>.",
+        "4set": "<0><0>Excluding<1></1> 4-Set</0></0> would exclude 4-Set builds: <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+        "2rain": "<0><0>Excluding<1></1> 3-Rainbow</0></0> would exclude 2-Set + 3-Rainbow builds: <2>AA<1>RRR</1></2> and <4>AAA<1>RR</1></4>.",
+        "4rain": "<0><0>Excluding<1></1> 5-Rainbow</0></0> would exclude full 5-Rainbow builds: <2><0>RRRRR</0></2>."
+      }
+    }
+  },
+  "bonusStats": {
+    "title": "Bonus Stats"
+  },
+  "buildDropdownDesc": "Decreasing the number of generated build will decrease build calculation time for large number of builds.",
+  "threadDropdownDesc": "Increasing the number of threads will speed up build time, but will use more CPU power.",
+  "noArtis": "Oops! It looks like you haven't added any artifacts to GO yet! You should go to the <1>Artifacts</1> page and add some!",
+  "build_one": "<0>{{count}}</0> Build",
+  "build_other": "<0>{{count}}</0> Builds",
+  "thread_one": "<0>{{count}}</0> Thread",
+  "thread_other": "<0>{{count}}</0> Threads",
+  "targetSelector": {
+    "selectOptTarget": "Select an Optimization Target",
+    "selectGraphTarget": "Select a Graph Target",
+    "selectBuildTarget": "Select a Build Constraint Target",
+    "invalidTarget": "INVALID TARGET"
+  },
+  "selectTargetFirst": "Select an Optimization Target first",
+  "generateButton": {
+    "cancel": "Cancel",
+    "generateBuilds": "Generate Builds"
+  },
+  "removeBuildButton": "Remove Build",
+  "theorycraftButton": "Theorycraft",
+  "currentlyEquippedBuild": "Currently Equipped",
+  "addBuildToList": "Add build to list",
+  "graphBuildLabel": "Graph #<1>{{count}}</1>",
+  "buildCompleted": "Build Completed",
+  "notifyTooltip": "Play a sound when builds finish generating. Will also show an alarm prompt when tabbed out."
+}

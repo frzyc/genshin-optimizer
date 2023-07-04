@@ -1,0 +1,24 @@
+{
+  "name": "Subjugadora de Calamidades",
+  "description": {
+    "0": "Uma arma afiada forjada de algum cristal estranho. Sua luz azul tênue parece murmurar incontáveis histórias do passado."
+  },
+  "passiveName": "Preceito Extinguidor",
+  "passiveDescription": {
+    "0": {
+      "0": "Obtém um Bônus de Dano Elemental para todos os Elementos de <cryo>12%</cryo>; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente <cryo>3.2%</cryo> por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
+    },
+    "1": {
+      "0": "Obtém um Bônus de Dano Elemental para todos os Elementos de <cryo>15%</cryo>; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente <cryo>4%</cryo> por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
+    },
+    "2": {
+      "0": "Obtém um Bônus de Dano Elemental para todos os Elementos de <cryo>18%</cryo>; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente <cryo>4.8%</cryo> por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
+    },
+    "3": {
+      "0": "Obtém um Bônus de Dano Elemental para todos os Elementos de <cryo>21%</cryo>; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente <cryo>5.6%</cryo> por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
+    },
+    "4": {
+      "0": "Obtém um Bônus de Dano Elemental para todos os Elementos de <cryo>24%</cryo>; após lançar uma Habilidade Elemental, obtém Consumação por 20s, fazendo com que o Ataque aumente <cryo>6.4%</cryo> por segundo. Este efeito pode ser acumulado em até 6 vezes. Quando o personagem da equipe que estiver com esta arma equipada não for o ativo no campo de batalha, o aumento do Ataque de Consumação será duplicado."
+    }
+  }
+}

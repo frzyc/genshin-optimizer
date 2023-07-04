@@ -1,0 +1,24 @@
+{
+  "name": "Xiphos'un Ay Işığı",
+  "description": {
+    "0": "Bu kadim çift ağızlı keskin kılıç ay ışığı gibi parlar. İçinde uykuda olan bir Cin olduğu söylenir."
+  },
+  "passiveName": "Cinin Fısıltıları",
+  "passiveDescription": {
+    "0": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine sahip olduğu her bir Element Ustalığı puanı için <cryo>%0,036</cryo> Enerji Yüklemesi kazanır. Grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "1": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine sahip olduğu her bir Element Ustalığı puanı için <cryo>%0,045</cryo> Enerji Yüklemesi kazanır. Grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "2": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine sahip olduğu her bir Element Ustalığı puanı için <cryo>%0,054</cryo> Enerji Yüklemesi kazanır. Grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "3": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine sahip olduğu her bir Element Ustalığı puanı için <cryo>%0,063</cryo> Enerji Yüklemesi kazanır. Grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    },
+    "4": {
+      "0": "Bu etki her 10 saniyede bir tetiklenir: Kuşanan karakter 12 saniyeliğine sahip olduğu her bir Element Ustalığı puanı için <cryo>%0,072</cryo> Enerji Yüklemesi kazanır. Grup üyeleri aynı süre ile bu güçlendirmenin %30'unu kazanırlar. Silahın aynı anda farklı karakterlerde kullanılması bu güçlendirmeyi biriktirebilir. Bu etki, karakter savaş alanında olmasa da tetiklenir."
+    }
+  }
+}

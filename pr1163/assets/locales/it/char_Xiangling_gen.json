@@ -1,0 +1,150 @@
+{
+  "name": "Xiangling",
+  "title": "Maestra culinaria di Liyue",
+  "description": "Una cuoca rinomata di Liyue. Nutre una grande passione per la cucina ed eccelle nella preparazione di piatti piccanti e speziati.",
+  "constellationName": "Trulla",
+  "auto": {
+    "name": "Kung food",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Guobattacco",
+    "description": {
+      "0": "Evoca Guoba, che sputa continuamente fuoco sugli avversari, infliggendo <pyro>DAN da Pyro ad area</pyro>.",
+      "1": "<br/>",
+      "2": "<i>Guoba adora mangiare piccante. Il problema è che il suo stomaco non può sopportare qualcosa di così tanto piccante.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da fiamme",
+      "1": "TdR",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Pyronado",
+    "description": {
+      "0": "Sfoggiando la sua maestria con fuoco e lance, Xiangling richiama un Pyronado che turbina intorno a lei.",
+      "1": "Il Pyronado si sposta insieme al personaggio finché l'abilità è attiva, infliggendo <pyro>DAN da Pyro</pyro> a tutti gli avversari sul suo percorso.",
+      "2": "<br/>",
+      "3": "<i>Il calore non sarà mai abbastanza. Mai.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da 1ª sferzata",
+      "1": "DAN da 2ª sferzata",
+      "2": "DAN da 3ª sferzata",
+      "3": "DAN da Pyronado",
+      "4": "Durata",
+      "5": "TdR",
+      "6": "Costo energia",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fuoco incrociato",
+    "description": {
+      "0": "Aumenta la portata delle fiamme di Guoba di un 20%."
+    }
+  },
+  "passive2": {
+    "name": "Attenzione, S-C-O-T-T-A!",
+    "description": {
+      "0": "Quando gli effetti di <strong>Guobattacco</strong> terminano, Guoba lascia un peperoncino sul terreno nel punto in cui scompare. Raccogliere il peperoncino aumenta l'ATT di un 10% per 10 s."
+    }
+  },
+  "passive3": {
+    "name": "Capocuoca",
+    "description": {
+      "0": "Quando Xiangling prepara alla perfezione un piatto che aumenta l'ATT, ha un 12% di probabilità di ricevere il doppio del prodotto."
+    }
+  },
+  "constellation1": {
+    "name": "Croccante fuori, soffice dentro",
+    "description": {
+      "0": "La <pyro>RES a Pyro</pyro> degli avversari colpiti dagli attacchi di Guoba si riduce di un 15% per 6 s."
+    }
+  },
+  "constellation2": {
+    "name": "Olio e fuoco",
+    "description": {
+      "0": "L'ultimo attacco di una sequenza di attacchi normali applica lo stato di Implosione all'avversario per 2 s. Al termine della sua durata, si verifica un'esplosione che infligge <pyro>DAN da Pyro ad area</pyro> pari a un 75% dell'ATT di Xiangling."
+    }
+  },
+  "constellation3": {
+    "name": "Ben cotto",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Pyronado</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "A fuoco lento",
+    "description": {
+      "0": "La durata di <strong>Pyronado</strong> aumenta di un 40%."
+    }
+  },
+  "constellation5": {
+    "name": "Guoba furioso",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Guobattacco</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Concentrato di Pyronado",
+    "description": {
+      "0": "Finché <strong>Pyronado</strong> è attivo, tutti i membri del gruppo ricevono un <pyro>bonus DAN da Pyro</pyro> di un 15%."
+    }
+  }
+}

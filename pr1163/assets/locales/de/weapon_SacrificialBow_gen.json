@@ -1,0 +1,24 @@
+{
+  "name": "Opferbogen",
+  "description": {
+    "0": "Ein über die Zeit verkrusteter Bogen mit noch gut zu erkennenden Ornamenten. Mit ihm kann man die Winde der Zeit gut überstehen."
+  },
+  "passiveName": "Göttliche Fügung",
+  "passiveDescription": {
+    "0": {
+      "0": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von <cryo>40 %</cryo>, <cryo>30</cryo> s Abklingzeit."
+    },
+    "1": {
+      "0": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von <cryo>50 %</cryo>, <cryo>26</cryo> s Abklingzeit."
+    },
+    "2": {
+      "0": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von <cryo>60 %</cryo>, <cryo>22</cryo> s Abklingzeit."
+    },
+    "3": {
+      "0": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von <cryo>70 %</cryo>, <cryo>19</cryo> s Abklingzeit."
+    },
+    "4": {
+      "0": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von <cryo>80 %</cryo>, <cryo>16</cryo> s Abklingzeit."
+    }
+  }
+}

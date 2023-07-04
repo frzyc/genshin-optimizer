@@ -1,0 +1,170 @@
+{
+  "name": "Cyno",
+  "title": "Sırlar Hakimi",
+  "description": "Akademi araştırmacılarını gözetmekle yükümlü General Mahamatra. İşe koyulduğunda Kshahrewar tarafından yapılan \"Büyük Vayuvyastra\"dan bile daha verimli olduğu söylenir.",
+  "constellationName": "Altın Kurt",
+  "auto": {
+    "name": "Çağrı Mızrağı",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Saklı Ayin: Ahir Rehberi",
+    "description": {
+      "0": "Hızla öne atılır ve yoluna çıkan düşmanlara <electro>Elektrik Hasarı</electro> verir.",
+      "1": "<br/>",
+      "2": "Cyno Kutsal Ayin: Kurt Çevikliği tarafından tetiklenen Sadık Öncü durumundayken korkunç bir <strong>Elektrik Alan Hasarı</strong> veren ve Sadık Öncünün süresini uzatan bir <electro>Ölüm Ayini</electro> gerçekleştirir.",
+      "3": "<br/>",
+      "4": "<i>\"Bu hüküm başka bir seçenek bırakmıyor. Burada ne kabul ne de inkar var... Bu hükme ezelden beri bağlıyız.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Ölüm Ayini Hasarı",
+      "2": "Sadık Öncü Süre Bonusu",
+      "3": "BS",
+      "4": "Ölüm Ayini BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kutsal Ayin: Kurt Çevikliği",
+    "description": {
+      "0": "Kutsal bir ruhu kendisini kullanması için çağırır ve Sadık Öncüye dönüşür.",
+      "1": "<br/>",
+      "2": "<strong>Sadık Öncü</strong>",
+      "3": "Cyno'nun Normal, Yüklü ve Havadan Saldırıları <electro>Elektrik Hasarına</electro> çevrilir. Bu sonradan değiştirilemez.",
+      "4": [
+        "Cyno'nun Element Ustalığı ve müdahaleye karşı direnci artar. Elektrik Yüklü Hasara karşı bağışıklık kazanır."
+      ],
+      "5": "<br/>",
+      "6": "Bu etki, 18sn sonrasında veya Cyno savaş alanında ayrıldığında kaybolur.",
+      "7": "<br/>",
+      "8": "<i>Kadim ulustan geçen saklı ayinler General Mahamatra'nın hükmündedir.</i>",
+      "9": "<i>Ne geçmişte ne de şimdi; ister büyük fırtına, ister yılan olsun, kimse kanunların hükümdarını deviremez.</i>"
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "Element Ustalığı Bonusu",
+      "10": "Temel Süre",
+      "11": "BS",
+      "12": "Enerji Maliyeti",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tüy Yargısı",
+    "description": {
+      "0": "Cyno, <strong>Kutsal Ayin: Kurt Çevikliği</strong> tarafından tetiklenen Sadık Öncü durumundayken aralıklarla Akıbet Gören duruşuna girer. Cyno, bu duruşun etkisi altındayken <strong>Saklı Ayin: Ahir Rehberini</strong> etkinleştirirse Saklı Ayin: Ahir Rehberi Hasarını %35 artıran ve Cyno'nun Saldırısının %100'ü kadar <electro>Elektrik Hasarı</electro> veren 3 adet Yaban Yıldırımı atan Hakim etkisini etkinleştirir.",
+      "1": "Yaban Yıldırımı Hasarı, Element Becerisi Hasarı olarak sayılır."
+    }
+  },
+  "passive2": {
+    "name": "Dokuz Okun Hakimi",
+    "description": {
+      "0": "Cyno'nun Hasar değerleri Element Ustalığına göre şu şekilde artar:",
+      "1": [
+        "Sadık Öncünün Normal Saldırı Hasarı Element Ustalığının %150'si kadar artar.",
+        "Tüy Yargısı Pasif Yeteneğinden gelen Yaban Yıldırımı Hasarı Element Ustalığının %250'si kadar artar."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Sessizliğin Lütfu",
+    "description": {
+      "0": "20 saatliğine bir Sumeru Keşfine gönderildiğinde %25 daha fazla ödül kazanır."
+    }
+  },
+  "constellation1": {
+    "name": "Yazgı: Ebedi Nöbet",
+    "description": {
+      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullanıldıktan sonra 10 saniyeliğine Cyno'nun Normal Saldırı Hızı %20 artar. Tüy Yargısı Pasif Yeteneğinin Hakim etkisi <strong>Saklı Ayin: Ahir Rehberi</strong> sırasında tetiklenirse bu artışın süresi yenilenir.",
+      "1": "\"Tüy Yargısı\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation2": {
+    "name": "Ayin: Ruhların Dönüşü",
+    "description": {
+      "0": "Cyno'nun Normal Saldırıları düşmana vurduğunda 4 saniyeliğine <electro>Elektrik Hasarı Bonusu</electro> %10 artar. Bu etki her 0,1 saniyede bir tetiklenebilir. 5 kademeye kadar birikir."
+    }
+  },
+  "constellation3": {
+    "name": "Kaide: Adil İnfazcı",
+    "description": {
+      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "İdare: Kısıtlayıcı Muhafız",
+    "description": {
+      "0": "Cyno, <strong>Kutsal Ayin: Kurt Çevikliği</strong> tarafından tetiklenen Sadık Öncü durumundayken Elektrik Yüklü, Süper İletim, Yüksek Voltaj, Hızlanma, Şiddetlenme, Aşırı Çiçeklenme veya Elektrik Girdap tepkimelerini tetiklerse kendisi hariç tüm grup üyeleri için 3 Element Enerjisi yeniler.",
+      "1": "Bu etki her <strong>Kutsal Ayin: Kurt Çevikliği</strong> sırasında 5 kere tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Cenaze: Yıldız Işığının Sönüşü",
+    "description": {
+      "0": "<strong>Saklı Ayin: Ahir Rehberi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Kıyafet: Adalet Terazisi",
+    "description": {
+      "0": "<strong>Kutsal Ayin: Kurt Çevikliği</strong> kullandıktan veya \"Tüy Yargısı\" Pasif Yeteneğinin Hakim etkisini tetikledikten sonra Cyno, \"Çakal Günü\" etkisinden 4 kademe biriktirir. Düşmanlara Normal Saldırı ile vurduğunda bir Yaban Yıldırımı atmak için 1 \"Çakal Günü\" kademesi harcar.",
+      "1": "\"Çakal Günü\" 8 saniye sürer. 8 kademeye kadar birikebilir. Sadık Öncü sona erdiğinde iptal olur.",
+      "2": "Her 0,4 saniyede 1 Yaban Yıldırımı atılabilir.",
+      "3": "\"Tüy Yargısı\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  }
+}

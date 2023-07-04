@@ -1,0 +1,24 @@
+{
+  "name": "Prototipo Estelar",
+  "description": {
+    "0": "Una alabarda descubierta en la Forja Peñasco Oscuro. Los destellos que produce el brillo de su afilada punta son como estrellas en el firmamento."
+  },
+  "passiveName": "Fanático de la magia",
+  "passiveDescription": {
+    "0": {
+      "0": "Después de usar una Habilidad Elemental, aumenta el daño de Ataque Normal y Cargado en un <cryo>8%</cryo> durante 12 s. Puede acumularse hasta 2 veces."
+    },
+    "1": {
+      "0": "Después de usar una Habilidad Elemental, aumenta el daño de Ataque Normal y Cargado en un <cryo>10%</cryo> durante 12 s. Puede acumularse hasta 2 veces."
+    },
+    "2": {
+      "0": "Después de usar una Habilidad Elemental, aumenta el daño de Ataque Normal y Cargado en un <cryo>12%</cryo> durante 12 s. Puede acumularse hasta 2 veces."
+    },
+    "3": {
+      "0": "Después de usar una Habilidad Elemental, aumenta el daño de Ataque Normal y Cargado en un <cryo>14%</cryo> durante 12 s. Puede acumularse hasta 2 veces."
+    },
+    "4": {
+      "0": "Después de usar una Habilidad Elemental, aumenta el daño de Ataque Normal y Cargado en un <cryo>16%</cryo> durante 12 s. Puede acumularse hasta 2 veces."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Mouvement vagabond",
+  "description": {
+    "0": "Un épais carnet couvert de notes. Bien qu'il soit abîmé et rongé par les vers, un grand pouvoir existe dans les mots couchés à la main."
+  },
+  "passiveName": "Musique d'ouverture",
+  "passiveDescription": {
+    "0": {
+      "0": "Le personnage obtient pendant 10 s une mélodie aléatoire lorsqu'il est déployé au combat. Cet effet peut être déclenché une fois toutes les 30 s. Récital : augmente l'ATQ de <cryo>60 %</cryo> ; Aria : augmente les DGT élémentaires de <cryo>48 %</cryo> ; Interlude : augmente la maîtrise élémentaire de <cryo>240</cryo> pts."
+    },
+    "1": {
+      "0": "Le personnage obtient pendant 10 s une mélodie aléatoire lorsqu'il est déployé au combat. Cet effet peut être déclenché une fois toutes les 30 s. Récital : augmente l'ATQ de <cryo>75 %</cryo> ; Aria : augmente les DGT élémentaires de <cryo>60 %</cryo> ; Interlude : augmente la maîtrise élémentaire de <cryo>300</cryo> pts."
+    },
+    "2": {
+      "0": "Le personnage obtient pendant 10 s une mélodie aléatoire lorsqu'il est déployé au combat. Cet effet peut être déclenché une fois toutes les 30 s. Récital : augmente l'ATQ de <cryo>90 %</cryo> ; Aria : augmente les DGT élémentaires de <cryo>72 %</cryo> ; Interlude : augmente la maîtrise élémentaire de <cryo>360</cryo> pts."
+    },
+    "3": {
+      "0": "Le personnage obtient pendant 10 s une mélodie aléatoire lorsqu'il est déployé au combat. Cet effet peut être déclenché une fois toutes les 30 s. Récital : augmente l'ATQ de <cryo>105 %</cryo> ; Aria : augmente les DGT élémentaires de <cryo>84 %</cryo> ; Interlude : augmente la maîtrise élémentaire de <cryo>420</cryo> pts."
+    },
+    "4": {
+      "0": "Le personnage obtient pendant 10 s une mélodie aléatoire lorsqu'il est déployé au combat. Cet effet peut être déclenché une fois toutes les 30 s. Récital : augmente l'ATQ de <cryo>120 %</cryo> ; Aria : augmente les DGT élémentaires de <cryo>96 %</cryo> ; Interlude : augmente la maîtrise élémentaire de <cryo>480</cryo> pts."
+    }
+  }
+}

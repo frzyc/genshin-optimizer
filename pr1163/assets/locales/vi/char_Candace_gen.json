@@ -1,0 +1,166 @@
+{
+  "name": "Candace",
+  "title": "Thề Nguyện Ánh Kim",
+  "description": "Hậu duệ của Vua Deshret với con mắt bên trái màu hổ phách, là người thủ hộ của Làng Aaru.",
+  "constellationName": "Cung Tiễn Thuẫn",
+  "auto": {
+    "name": "Thương Thuật Lấp Lánh - Thế Thủ",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Nghi Thức Thần Thánh - Vạc Trời Bảo Hộ",
+    "description": {
+      "0": "Phong cách chiến đấu của Candace, như thế trận chống lại đại hồng thủy.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Xung kích bằng khiên, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> về phía trước.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn giữ</strong>",
+      "6": "Giơ khiên chống đỡ đòn tấn công của kẻ địch xung quanh, tạo thành lá chắn hấp thụ sát thương dựa vào giới hạn HP của Candace, đồng thời có 250% khả năng hấp thụ <hydro>Sát Thương Nguyên Tố Thủy</hydro>. Lá chắn duy trì đến khi kết thúc Kỹ Năng Nguyên Tố.",
+      "7": "Sau khi nhấn giữ một thời gian, Candace sẽ hoàn thành tụ lực, khi thả kỹ năng, kết thúc thời gian duy trì hoặc lá chắn bị phá, Candace sẽ nhảy lên tấn công, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> lên kẻ địch phía trước.",
+      "8": "<br/>",
+      "9": "<i>Lời thề kế thừa từ những người bảo hộ, phải vững vàng hơn cả tấm khiên kế thừa của họ.</i>"
+    },
+    "skillParams": {
+      "0": "Khiên hấp thụ",
+      "1": "Sát Thương Cơ Bản",
+      "2": "Sát Thương Hoàn Thành Tụ Lực",
+      "3": "CD Nhấn",
+      "4": "CD Nhấn Giữ",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Nghi Thức Thần Thánh - Thủy Triều Chìa Vôi",
+    "description": {
+      "0": "Giơ cao vũ khí, triệu hồi lời cầu phúc thần thánh, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> dựa vào giới hạn HP của Candace, đồng thời liên tục cung cấp trạng thái \"Lời Chúc Vương Miện Đỏ\" cho nhân vật của bản thân đang trong trận.",
+      "1": "<br/>",
+      "2": "<strong>Lời Chúc Vương Miện Đỏ</strong>",
+      "3": "Có đặc tính sau:",
+      "4": [
+        "Đòn đánh thường của nhân vật khi gây sát thương nguyên tố cho kẻ địch sẽ gia tăng sát thương gây ra;",
+        "Khi nhân vật ra trận sẽ phát động Sóng Nước Xung Kích, gây <hydro>Sát Thương Nguyên Tố Thủy</hydro> cho kẻ địch xung quanh. Số lần kích hoạt trong thời gian duy trì hiệu quả này là có giới hạn;",
+        "Nhân vật sử dụng kiếm đơn, trọng kiếm, vũ khí cán dài khi ở trong trạng thái này sẽ nhận được <hydro>đính kèm Nguyên Tố Thủy</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<i>Nghi thức kế thừa nhiều đời của gia tộc Candace. Cho dù tín ngưỡng cổ đại đã chìm sâu theo năm tháng, nhưng biển cát mênh mông vẫn sẽ bảo vệ hậu duệ của vương quốc cổ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "Tăng Sát Thương",
+      "3": "Sát Thương Sóng Nước Xung Kích",
+      "4": "Số Lần Kích Hoạt Sóng Nước Xung Kích",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lá Chắn Lông Vũ",
+    "description": {
+      "0": "Khi Candace bị tấn công trong lúc nhấn giữ <strong>Nghi Thức Thần Thánh - Vạc Trời Bảo Hộ</strong> sẽ hoàn thành tụ lực ngay."
+    }
+  },
+  "passive2": {
+    "name": "Cát Chảy Uốn Lượn",
+    "description": {
+      "0": "Nhân vật trong trạng thái Lời Chúc Vương Miện Đỏ của kỹ năng <strong>Nghi Thức Thần Thánh - Thủy Triều Chìa Vôi</strong>, đòn đánh thường gây Sát Thương Nguyên Tố cho kẻ địch sẽ tăng 0.5% sát thương dựa trên mỗi 1000 giới hạn HP của Candace."
+    }
+  },
+  "passive3": {
+    "name": "Tia Sáng Hừng Đông",
+    "description": {
+      "0": "Giảm 20% tiêu hao thể lực khi leo trèo cho nhân vật trong đội của bản thân.",
+      "1": "Không thể cộng dồn với buff thiên phú cố định có cùng hiệu quả."
+    }
+  },
+  "constellation1": {
+    "name": "Hậu Duệ Cát Đỏ",
+    "description": {
+      "0": "Thời gian duy trì trạng thái Lời Chúc Vương Miện Đỏ của <strong>Nghi Thức Thần Thánh - Thủy Triều Chìa Vôi</strong> kéo dài thêm 3s."
+    }
+  },
+  "constellation2": {
+    "name": "Tia Sáng Xuyên Trăng",
+    "description": {
+      "0": "<strong>Nghi Thức Thần Thánh - Vạc Trời Bảo Hộ</strong> khi đánh trúng kẻ địch, giới hạn HP của Candace sẽ tăng 20%, duy trì 15s."
+    }
+  },
+  "constellation3": {
+    "name": "Tế Lễ Thợ Săn",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nghi Thức Thần Thánh - Thủy Triều Chìa Vôi</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lời Thề Thủ Hộ",
+    "description": {
+      "0": "Rút ngắn thời gian chờ Nhấn Giữ của kỹ năng <strong>Nghi Thức Thần Thánh - Vạc Trời Bảo Hộ</strong> đến tương đồng với thời gian chờ của Nhấn."
+    }
+  },
+  "constellation5": {
+    "name": "Con Ngươi Ánh Vàng",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Nghi Thức Thần Thánh - Vạc Trời Bảo Hộ</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Thủy Triều Dâng Trào",
+    "description": {
+      "0": "Nhân vật đang trong trận hiện tại khi trong trạng thái Lời Chúc Vương Miện Đỏ của <strong>Nghi Thức Thần Thánh - Thủy Triều Chìa Vôi</strong> (không bao gồm bản thân Candace), nếu tấn công thường trúng kẻ địch gây sát thương nguyên tố, sẽ thi triển Thủy Triều Xung Kích, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro> tương đương 15% giới hạn HP của Candace.",
+      "1": "Hiệu quả này mỗi 2.3s tối đa kích hoạt một lần, sát thương gây ra được tính là sát thương kỹ năng nộ."
+    }
+  }
+}

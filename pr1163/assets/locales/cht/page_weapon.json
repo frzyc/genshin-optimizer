@@ -1,0 +1,8 @@
+{
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Weapon",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Weapons",
+  "edit": "編輯武器",
+  "weaponName": "武器名稱",
+  "removeWeapon": "您確定要移除 {{value}} 嗎？",
+  "addWeapon": "新增武器"
+}

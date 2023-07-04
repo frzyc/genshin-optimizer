@@ -1,0 +1,49 @@
+{
+  "intro": "<strong>월등한</strong> <3><i>원신</i></3> 계산기 GO에 당신의 성유물/무기/캐릭터를 저장하시면, 당신이 가지고 있고 당신이 사용하는 것들로 최고의 구성을 만드는데 도움이 될것입니다.",
+  "quickLinksCard": {
+    "title": "링크들",
+    "buttons": {
+      "tyGuide": {
+        "title": "유투브 설명 동영상 리스트",
+        "tooltip": "Genshin Optimizer의 사용법을 알아봅시다"
+      },
+      "scanners": {
+        "title": "자동 스캐너",
+        "tooltip": "게임내 성유물을 자동으로 읽어주는 스캐너들입니다"
+      },
+      "kqm": {
+        "title": "KeqingMains",
+        "tooltip": "이론을 연구하고 가이드를 제공하는 커뮤니티"
+      },
+      "devDiscord": {
+        "title": "Genshin Dev 디스코드",
+        "tooltip": "원신과 관련된 개발을 하는 사람들의 커뮤니티"
+      },
+      "good": {
+        "title": "GOOD 설명문서",
+        "tooltip": "Genshin Open Object Descriptor 설명문서"
+      },
+      "patchNotes": {
+        "title": "Genshin Optimizer 패치 노트",
+        "tooltip": "GO의 패치 노트가 모여 있습니다"
+      }
+    }
+  },
+  "inventoryCard": {
+    "title": "GO 보관함"
+  },
+  "vidGuideCard": {
+    "title": "가이드 동영상"
+  },
+  "teamCard": {
+    "title": "팀원 소개",
+    "jobTitle": {
+      "leadDev": "개발팀장",
+      "dev": "개발자",
+      "mod": "모더레이터",
+      "admin": "관리자",
+      "translator": "번역 관리자",
+      "TC": "이론 연구가"
+    }
+  }
+}

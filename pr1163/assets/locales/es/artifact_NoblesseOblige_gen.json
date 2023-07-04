@@ -1,0 +1,29 @@
+{
+  "setName": "Ritual Antiguo de la Nobleza",
+  "setEffects": {
+    "2": "Daño de Habilidad Definitiva +20%.",
+    "4": "Después de lanzar una Habilidad Definitiva, aumenta el ATQ de todos los miembros del equipo en un 20% durante 12 s. Este efecto no puede acumularse."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flora Real",
+      "desc": "Una flor de seda azul que servía como un distinguido elemento decorativo para llevar en eventos de gala. Su apariencia todavía es igual de fresca que antes de ser abandonada por su dueño."
+    },
+    "plume": {
+      "name": "Pluma Real",
+      "desc": "Una pluma que llevaban en el sombrero los miembros de la nobleza de Mondstadt durante sus cacerías. Todavía permanece intacta después de tanto tiempo."
+    },
+    "sands": {
+      "name": "Reloj de Bolsillo Real",
+      "desc": "Un reloj de bolsillo de los aristócratas de Mondstadt. Ha pasado por las manos de innumerables generaciones."
+    },
+    "goblet": {
+      "name": "Urna Plateada Real",
+      "desc": "Antigua urna ornamental que perteneció a una familia noble de Mondstadt. El melancólico viento del tiempo todavía resuena en su interior."
+    },
+    "circlet": {
+      "name": "Máscara Real",
+      "desc": "Una máscara que llevaban los aristócratas en las veladas de fiestas en Mondstadt. Si miras a través de los agujeros de los ojos, podrás ver las grandes celebraciones del pasado."
+    }
+  }
+}

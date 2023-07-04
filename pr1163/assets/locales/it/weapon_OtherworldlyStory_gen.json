@@ -1,0 +1,24 @@
+{
+  "name": "Storie dell'altro mondo",
+  "description": {
+    "0": "Un romanzo senza alcun valore e di pura fantasia, così come la pretesa che sia dotato di poteri catalizzatori."
+  },
+  "passiveName": "Immersione energetica",
+  "passiveDescription": {
+    "0": {
+      "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1%</cryo> di PS."
+    },
+    "1": {
+      "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,25%</cryo> di PS."
+    },
+    "2": {
+      "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,5%</cryo> di PS."
+    },
+    "3": {
+      "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>1,75%</cryo> di PS."
+    },
+    "4": {
+      "0": "Ogni sfera elementale o particella raccolta ripristina un <cryo>2%</cryo> di PS."
+    }
+  }
+}

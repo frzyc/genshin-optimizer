@@ -1,0 +1,21 @@
+{
+  "hp": "Can",
+  "hp_": "Can",
+  "atk": "Saldırı",
+  "atk_": "Saldırı",
+  "def": "Savunma",
+  "def_": "Savunma",
+  "eleMas": "Element Ustalığı",
+  "enerRech_": "Enerji Yüklemesi",
+  "critRate_": "Kritik Oranı",
+  "critDMG_": "Kritik Hasar",
+  "heal_": "İyileştirme Bonusu",
+  "physical_dmg_": "Fiziksel Hasar Bonusu",
+  "anemo_dmg_": "Rüzgar Hasarı Bonusu",
+  "geo_dmg_": "Toprak Hasarı Bonusu",
+  "electro_dmg_": "Elektrik Hasarı Bonusu",
+  "hydro_dmg_": "Su Hasarı Bonusu",
+  "pyro_dmg_": "Ateş Hasarı Bonusu",
+  "cryo_dmg_": "Buz Hasarı Bonusu",
+  "dendro_dmg_": "Doğa Hasarı Bonusu"
+}

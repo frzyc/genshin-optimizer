@@ -1,0 +1,24 @@
+{
+  "name": "Anillo de Hakushin",
+  "description": {
+    "0": "Un catalizador que conserva los antiguos pensamientos de la Sacerdotisa Kitsune. Sin embargo, estos pensamientos eran tantos que no fue posible que todos cupieran en este objeto."
+  },
+  "passiveName": "Palacio del Cerezo",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un <cryo>10%</cryo> de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    },
+    "1": {
+      "0": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un <cryo>12.5%</cryo> de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    },
+    "2": {
+      "0": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un <cryo>15%</cryo> de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    },
+    "3": {
+      "0": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un <cryo>17.5%</cryo> de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    },
+    "4": {
+      "0": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un <cryo>20%</cryo> de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Mondschein-Prototyp",
+  "description": {
+    "0": "Der Prototyp eines Langbogens, versteckt in der Schwarzsteinschmiede. Beim Schießen des Pfeils macht man eine Figur, die an den leuchtenden Mond erinnert."
+  },
+  "passiveName": "Ohne Wiederkehr",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um <cryo>36 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um <cryo>45 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um <cryo>54 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um <cryo>63 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um <cryo>72 %</cryo>."
+    }
+  }
+}

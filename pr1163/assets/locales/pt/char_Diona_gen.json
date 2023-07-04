@@ -1,0 +1,164 @@
+{
+  "name": "Diona",
+  "title": "Coquetel da Cauda do Gato",
+  "description": "Uma jovem que herdou pequenas quantidades de sangue não humano. Ela é a Barmaid incrivelmente popular da taverna da Cauda do Gato.",
+  "constellationName": "Feles",
+  "auto": {
+    "name": "Pontaria do Caçador",
+    "fields": {
+      "normal": {
+        "0": "<strong><strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 disparos consecutivos com o arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um ataque <strong>Disparo com Mira</strong> mais preciso e com mais dano.",
+        "2": "Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará <cryo>Dano Cryo</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong> Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando Dano AdE no impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Disparo com Mira",
+      "6": "Disparo com Mira com Energização Completa",
+      "7": "Dano Durante a Queda",
+      "8": "Dano de Queda de Baixa/Alta Altitude",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Garra de Gato Gelada",
+    "description": {
+      "0": "Dispara uma Garra de Gato Gelada que causa <cryo>Dano Cryo</cryo> e cria um escudo.",
+      "1": "A Absorção de Dano do escudo é baseada na Vida Máxima de Diona, e sua duração depende do número de garras que atingem seu objetivo.",
+      "2": "<br/>",
+      "3": "<strong>Tocar</strong>",
+      "4": "Dispara rapidamente 2 Garras de Gato Gelada.",
+      "5": "<br/>",
+      "6": "<strong>Manter Pressionado</strong> Retrocede rapidamente e dispara 5 Garras de Gato Geladas.",
+      "7": "O escudo criado pelo ataque Manter Pressionado ganhará um bônus de 75% de Absorção de Dano.",
+      "8": "<br/>",
+      "9": "O escudo tem um bônus de 250% de Absorção de <cryo>Dano Cryo</cryo>, e ao ser formado aplica o <cryo>Elemento Cryo</cryo> em seu próprio personagem por uma curta duração.",
+      "10": "<br/>",
+      "11": "<i>Normalmente, nenhuma quantidade de gelo no copo de um bêbado faria mal algum, até que Diona usou sua Visão para criar gelo frio o suficiente para congelar o cérebro. Nota 10!</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Garras do Gato",
+      "1": "Absorção Básica de Escudo",
+      "2": "Duração",
+      "3": "Recarga ao Pressionar",
+      "4": "Recarga ao Manter Pressionado",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Coquetel Assassino",
+    "description": {
+      "0": "Atira um coquetel gelado especial que causa <cryo>Dano Cryo em uma AdE</cryo> e cria uma Névoa Embriagada em uma AdE.",
+      "1": "<br/>",
+      "2": "<strong>Névoa Embriagada</strong>",
+      "3": "Causa <cryo>Dano Cryo</cryo> contínuo nos inimigos dentro da AdE.",
+      "4": "Regenera continuamente a Vida dos personagens dentro da AdE.",
+      "5": "<br/>",
+      "6": "<i>Uma mistura horrível que até mesmo Diona considera desumana. O gosto horrível deve ser deixado apenas para os inimigos. Tem um sabor muito fresco, mas infelizmente só se pode sentir no nariz e na pele.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo de Área",
+      "2": "Cura Contínua",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Menu Secreto da Cauda do Gato",
+    "description": {
+      "0": "Os personagens protegidos por <strong>Garras de Gato Gelado</strong> têm sua Veloc. Mov. aumentado em 10% e seu Consumo de Stamina diminuído em 10%."
+    }
+  },
+  "passive2": {
+    "name": "Diversão dos Bêbados",
+    "description": {
+      "0": "Inimigos que entram na AdE do <strong>Coquetel Assassino</strong> tem seu ATQ reduzido em 10% por 15s."
+    }
+  },
+  "passive3": {
+    "name": "Aperitivos Grátis",
+    "description": {
+      "0": "Quando uma Culinária Perfeita é feita em uma comida com efeito de recuperação, tem uma chance de 12% de receber o dobro de produção."
+    }
+  },
+  "constellation1": {
+    "name": "Coquetel da Casa",
+    "description": {
+      "0": "Regenera 15 de Energia para Diona depois dos efeitos de <strong>Coquetel Assassino</strong> terminarem."
+    }
+  },
+  "constellation2": {
+    "name": "Garra de Gato Tremendo de Frio",
+    "description": {
+      "0": "Aumenta o dano da <strong>Garra de Gato Gelada</strong> em 15%, e aumenta a Absorção de Dano do escudo em 15%. Quando a habilidade atinge um alvo, cria um escudo para outros personagens nos arredores que absorve até 50% do dano <strong>Garra de Gato Gelada</strong> por 5s."
+    }
+  },
+  "constellation3": {
+    "name": "Q-quer outro copo?",
+    "description": {
+      "0": "Aumenta o nível do <strong>Coquetel Assassino</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Assassina da indústria do vinho\"",
+    "description": {
+      "0": "Na AdE do <strong>Coquetel Assassino</strong>, o tempo do Disparo com Mira de Diona é reduzido em 60%."
+    }
+  },
+  "constellation5": {
+    "name": "Dose dupla com gelo",
+    "description": {
+      "0": "Aumenta o nível da <strong>Garra de Gato Gelada</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Encerrando o Expediente na Cauda do Gato",
+    "description": {
+      "0": "Os personagens dentro da AdE do <strong>Coquetel Assassino</strong> de acordo com a Vida obtém o seguinte efeito:",
+      "1": "Quando a Vida é igual ou inferior a 50%, o Bônus de Cura Recebida aumenta 30%;",
+      "2": "Quando a Vida é superior a 50%, a Proficiência Elemental aumenta 200."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Twin Nephrite",
+  "description": {
+    "0": "A jade pendant formed by piecing together two jade stones."
+  },
+  "passiveName": "Guerilla Tactics",
+  "passiveDescription": {
+    "0": {
+      "0": "Defeating an opponent increases Movement SPD and ATK by <cryo>12%</cryo> for 15s."
+    },
+    "1": {
+      "0": "Defeating an opponent increases Movement SPD and ATK by <cryo>14%</cryo> for 15s."
+    },
+    "2": {
+      "0": "Defeating an opponent increases Movement SPD and ATK by <cryo>16%</cryo> for 15s."
+    },
+    "3": {
+      "0": "Defeating an opponent increases Movement SPD and ATK by <cryo>18%</cryo> for 15s."
+    },
+    "4": {
+      "0": "Defeating an opponent increases Movement SPD and ATK by <cryo>20%</cryo> for 15s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Serbagelo",
+  "description": {
+    "0": "Un frutto che possiede una strana volontà glaciale. Emana un debole senso d'agonia."
+  },
+  "passiveName": "Sepoltura gelata",
+  "passiveDescription": {
+    "0": {
+      "0": "Colpire un avversario con attacchi normali e caricati fornisce un <cryo>60%</cryo> di probabilità di formare una stalattite di Etergelo sopra di esso, che infligge DAN ad area pari a un <cryo>80%</cryo> dell'ATT. Se gli avversari sono sotto l'effetto di Cryo, subiscono DAN pari a un <cryo>200%</cryo> dell'ATT. Si può verificare una sola volta ogni 10 s."
+    },
+    "1": {
+      "0": "Colpire un avversario con attacchi normali e caricati fornisce un <cryo>70%</cryo> di probabilità di formare una stalattite di Etergelo sopra di esso, che infligge DAN ad area pari a un <cryo>95%</cryo> dell'ATT. Se gli avversari sono sotto l'effetto di Cryo, subiscono DAN pari a un <cryo>240%</cryo> dell'ATT. Si può verificare una sola volta ogni 10 s."
+    },
+    "2": {
+      "0": "Colpire un avversario con attacchi normali e caricati fornisce un <cryo>80%</cryo> di probabilità di formare una stalattite di Etergelo sopra di esso, che infligge DAN ad area pari a un <cryo>110%</cryo> dell'ATT. Se gli avversari sono sotto l'effetto di Cryo, subiscono DAN pari a un <cryo>280%</cryo> dell'ATT. Si può verificare una sola volta ogni 10 s."
+    },
+    "3": {
+      "0": "Colpire un avversario con attacchi normali e caricati fornisce un <cryo>90%</cryo> di probabilità di formare una stalattite di Etergelo sopra di esso, che infligge DAN ad area pari a un <cryo>125%</cryo> dell'ATT. Se gli avversari sono sotto l'effetto di Cryo, subiscono DAN pari a un <cryo>320%</cryo> dell'ATT. Si può verificare una sola volta ogni 10 s."
+    },
+    "4": {
+      "0": "Colpire un avversario con attacchi normali e caricati fornisce un <cryo>100%</cryo> di probabilità di formare una stalattite di Etergelo sopra di esso, che infligge DAN ad area pari a un <cryo>140%</cryo> dell'ATT. Se gli avversari sono sotto l'effetto di Cryo, subiscono DAN pari a un <cryo>360%</cryo> dell'ATT. Si può verificare una sola volta ogni 10 s."
+    }
+  }
+}
