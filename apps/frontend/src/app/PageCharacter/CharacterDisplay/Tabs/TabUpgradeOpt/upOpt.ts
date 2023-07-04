@@ -541,6 +541,7 @@ export class UpOptCalculator {
     })
 
     this.artifacts[ix].result = this.toResult3(distrs)
+    console.log('calc exact called.', this.artifacts[ix].result!.p)
   }
 
   _calcExact4th(ix: number) {
@@ -555,7 +556,6 @@ export class UpOptCalculator {
     subsToConsider.forEach((subKey4) => {
       const prob_sub = fWeight[subKey4] / Z
       crawlUpgrades(N, (ns, prob) => {
-        const base = { ...this.artifacts[ix].values }
         ns[3] += 1 // last substat has initial roll
         const vals = ns.map((ni, i) =>
           subs[i] && !this.skippableDerivatives[allSubstatKeys.indexOf(subs[i])]
@@ -564,7 +564,7 @@ export class UpOptCalculator {
         )
 
         cartesian(...vals).forEach((upVals) => {
-          const stats = { ...base }
+          const stats = { ...this.artifacts[ix].values }
           let p_upVals = 1
           for (let i = 0; i < 4; i++) {
             if (isNaN(upVals[i])) continue
@@ -586,6 +586,7 @@ export class UpOptCalculator {
     })
 
     this.artifacts[ix].result = this.toResult3(distrs)
+    console.log('calc exact4th called.', this.artifacts[ix].result!.p)
   }
 }
 

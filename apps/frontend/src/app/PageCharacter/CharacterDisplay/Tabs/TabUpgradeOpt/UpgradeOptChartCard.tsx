@@ -34,6 +34,7 @@ type Data = {
   objMax: number
   thresholds: number[]
   ix?: number
+  calcExactCallback: () => void
 }
 type ChartData = {
   x: number
@@ -51,6 +52,7 @@ export default function UpgradeOptChartCard({
   thresholds,
   objMin,
   objMax,
+  calcExactCallback,
 }: Data) {
   const [calcExacts, setCalcExacts] = useState(false)
 
@@ -109,13 +111,15 @@ export default function UpgradeOptChartCard({
       deltasConstrained[mu] = (deltasConstrained[mu] ?? 0) + phi * cp
     }
   })
-  Object.entries(deltas).forEach(([mu, p]) =>
+  Object.entries(deltas).forEach(([mu, p]) => {
+    const mun = parseFloat(mu)
     dataEst.push({
-      x: perc(parseFloat(mu)),
-      est: (p * nbins) / (maax - miin),
-      estCons: (deltasConstrained[mu] * nbins) / (maax - miin),
+      x: perc(mun),
+      est: (p * nbins) / (maax - miin) + gauss(mun),
+      estCons:
+        (deltasConstrained[mu] * nbins) / (maax - miin) + gaussConstrained(mun),
     })
-  )
+  })
 
   dataEst.sort((a, b) => a.x - b.x)
   const xpercent = (thr0 - miin) / (maax - miin)
@@ -125,10 +129,13 @@ export default function UpgradeOptChartCard({
   const [trueE, setTrueE] = useState(-1)
 
   useEffect(() => {
+    // calcExactCallback()
+    return
+
     // When `calcExacts` is pressed, we may want to sink/swim this artifact to its proper spot.
     // Or not b/c people only really need a fuzzy ordering anyways.
-    if (!calcExacts) return
-    throw new Error('Not Implemented!')
+    // if (!calcExacts) return
+    // throw new Error('Not Implemented!')
     setTrueData([])
     setTrueP(0)
     setTrueE(0)
@@ -322,7 +329,10 @@ export default function UpgradeOptChartCard({
                   <Button
                     variant="contained"
                     style={{ height: '100%', width: '100%' }}
-                    onClick={() => setCalcExacts(true)}
+                    onClick={() => {
+                      calcExactCallback()
+                      setCalcExacts(true)
+                    }}
                     startIcon={
                       <Box
                         sx={{

@@ -547,7 +547,7 @@ export default function TabUpopt() {
                 />
               }
             >
-              {artifactsToShow.map((art) => (
+              {artifactsToShow.map((art, i) => (
                 <Box key={art.id}>
                   <Grid container spacing={1}>
                     <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
@@ -559,6 +559,11 @@ export default function TabUpopt() {
                         thresholds={upOptCalc?.thresholds ?? []}
                         objMax={maxObj0}
                         objMin={minObj0}
+                        calcExactCallback={() => {
+                          console.log(`called with ${i}`)
+                          upOptCalc?.calcExact(i)
+                          setUpOptCalc(upOptCalc)
+                        }}
                       />
                     </Grid>
                   </Grid>
