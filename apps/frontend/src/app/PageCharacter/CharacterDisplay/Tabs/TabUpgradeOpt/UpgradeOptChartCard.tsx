@@ -39,11 +39,8 @@ type Data = {
 }
 type ChartData = {
   x: number
-  est?: number
-  estCons?: number
-  exact?: number
-  exactCons?: number
-  expInc?: number
+  est: number
+  estCons: number
 }
 
 const nbins = 50
