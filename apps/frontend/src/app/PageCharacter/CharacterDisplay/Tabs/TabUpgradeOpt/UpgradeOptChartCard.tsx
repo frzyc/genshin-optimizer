@@ -24,7 +24,8 @@ import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
 import type { ICachedArtifact } from '../../../../Types/artifact'
-import { gaussPDF } from './mathUtil'
+import { erf, gaussPDF } from './mathUtil'
+import { ResultType } from './upOpt'
 import type { UpOptArtifact } from './upOpt'
 
 type Data = {
@@ -46,7 +47,6 @@ type ChartData = {
 }
 
 const nbins = 50
-const plotPoints = 500
 export default function UpgradeOptChartCard({
   upgradeOpt,
   thresholds,
@@ -74,116 +74,55 @@ export default function UpgradeOptChartCard({
     [data, database]
   ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 
-  const gauss = (x: number) =>
-    upgradeOpt.result!.distr.gmm.reduce(
-      (pv, { phi, mu, sig2 }) => pv + phi * gaussPDF(x, mu, sig2),
-      0
-    )
-  const gaussConstrained = (x: number) =>
-    upgradeOpt.result!.distr.gmm.reduce(
-      (pv, { phi, cp, mu, sig2 }) => pv + cp * phi * gaussPDF(x, mu, sig2),
-      0
-    )
-  const thresh = thresholds
-  const thr0 = thresh[0]
-  // const perc = (x: number) => 100 * (x - thr0) / thr0;
+  // Returns P(a < DMG < b)
+  const integral = (a: number, b: number) =>
+    upgradeOpt.result!.distr.gmm.reduce((pv, { phi, mu, sig2 }) => {
+      const sig = Math.sqrt(sig2)
+      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
+      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+      return pv + (phi * P) / 2
+    }, 0)
+  const integralCons = (a: number, b: number) =>
+    upgradeOpt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
+      const sig = Math.sqrt(sig2)
+      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
+      const P = erf((mu - a) / sig) - erf((mu - b) / sig)
+      return pv + (cp * phi * P) / 2
+    }, 0)
+  const thr0 = thresholds[0]
   const perc = useCallback((x: number) => (100 * (x - thr0)) / thr0, [thr0])
 
-  const miin = objMin
-  const maax = objMax
-
-  let ymax = 0
-  const dataEst: ChartData[] = linspace(miin, maax, plotPoints, false).map(
+  const step = (objMax - objMin) / nbins
+  const dataHist: ChartData[] = linspace(objMin, objMax, nbins, false).flatMap(
     (v) => {
-      const est = gauss(v)
-      ymax = Math.max(ymax, est)
-      return { x: perc(v), est: est, estCons: gaussConstrained(v) }
+      return [
+        {
+          x: perc(v),
+          est: integral(v, v + step),
+          estCons: integralCons(v, v + step),
+        },
+        {
+          x: perc(v + step),
+          est: integral(v, v + step),
+          estCons: integralCons(v, v + step),
+        },
+      ]
     }
   )
-  if (ymax === 0) ymax = nbins / (maax - miin)
 
-  // go back and add delta distributions.
-  const deltas: { [key: number]: number } = {}
-  const deltasConstrained: { [key: number]: number } = {}
-  upgradeOpt.result!.distr.gmm.forEach(({ phi, mu, sig2, cp }) => {
-    if (sig2 <= 0) {
-      deltas[mu] = (deltas[mu] ?? 0) + phi
-      deltasConstrained[mu] = (deltasConstrained[mu] ?? 0) + phi * cp
-    }
-  })
-  Object.entries(deltas).forEach(([mu, p]) => {
-    const mun = parseFloat(mu)
-    dataEst.push({
-      x: perc(mun),
-      est: (p * nbins) / (maax - miin) + gauss(mun),
-      estCons:
-        (deltasConstrained[mu] * nbins) / (maax - miin) + gaussConstrained(mun),
-    })
-  })
-
-  dataEst.sort((a, b) => a.x - b.x)
-  const xpercent = (thr0 - miin) / (maax - miin)
-
-  const [trueData, setTrueData] = useState<ChartData[]>([])
-  const [trueP, setTrueP] = useState(-1)
-  const [trueE, setTrueE] = useState(-1)
-
-  useEffect(() => {
-    // calcExactCallback()
-    return
-
-    // When `calcExacts` is pressed, we may want to sink/swim this artifact to its proper spot.
-    // Or not b/c people only really need a fuzzy ordering anyways.
-    // if (!calcExacts) return
-    // throw new Error('Not Implemented!')
-    setTrueData([])
-    setTrueP(0)
-    setTrueE(0)
-    // const exactData = allUpgradeValues(upgradeOpt)
-    // let true_p = 0
-    // let true_e = 0
-
-    // const bins = new Array(nbins).fill(0)
-    // const binsConstrained = new Array(nbins).fill(0)
-    // const binstep = (maax - miin) / nbins
-
-    // exactData.forEach(({ p, v }) => {
-    //   const whichBin = Math.min(Math.trunc((v[0] - miin) / binstep), nbins - 1)
-    //   bins[whichBin] += p
-
-    //   if (v.every((val, ix) => ix === 0 || val > thresh[ix])) {
-    //     binsConstrained[whichBin] += p
-    //     if (v[0] > thr0) {
-    //       true_p += p
-    //       true_e += p * (v[0] - thr0)
-    //     }
-    //   }
-    // })
-    // if (true_p > 0) true_e = true_e / true_p
-
-    // const dataExact: ChartData[] = bins.map((dens, ix) => ({
-    //   x: perc(miin + ix * binstep),
-    //   exact: dens / binstep,
-    //   exactCons: binsConstrained[ix] / binstep,
-    // }))
-    // setTrueP(true_p)
-    // setTrueE(true_e)
-    // setTrueData(dataExact)
-  }, [calcExacts, maax, miin, thr0, thresh, upgradeOpt, perc])
-
-  if (trueData.length === 0) {
-    const binstep = (maax - miin) / nbins
-    for (let i = 0; i < nbins; i++) {
-      trueData.push({ x: perc(miin + i * binstep), exact: 0, exactCons: 0 })
-    }
-  }
+  const ymax = dataHist.reduce((max, { est }) => Math.max(max, est!), 0)
+  const xpercent = (thr0 - objMin) / (objMax - objMin)
 
   // if trueP/E have been calculated, otherwise use upgradeOpt's estimate
-  const reportP = trueP >= 0 ? trueP : upgradeOpt.result!.p
-  const reportD = trueE >= 0 ? trueE : upgradeOpt.result!.upAvg
-  const chartData = dataEst.concat(trueData)
+  const reportP = upgradeOpt.result!.p
+  const reportD = upgradeOpt.result!.upAvg
+  const chartData = dataHist
+  const isExact = upgradeOpt.result!.evalMode === ResultType.Exact
 
-  // console.log('repd', reportD, upgradeOpt.upAvg)
+  const reportBin = linspace(objMin, objMax, nbins, false).reduce((a, b) =>
+    b < thr0 + reportD ? b : a
+  )
+  const reportY = integralCons(reportBin, reportBin + step)
 
   const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
     if (!active) return null
@@ -192,12 +131,10 @@ export default function UpgradeOptChartCard({
       <div className="custom-tooltip">
         <p className="label"></p>
         <p className="desc">
-          prob. upgrade{trueP >= 0 ? '' : ' (est.)'}:{' '}
-          {(100 * reportP).toFixed(1)}%
+          prob. upgrade{isExact ? '' : ' (est.)'}: {(100 * reportP).toFixed(1)}%
         </p>
         <p className="desc">
-          average increase{trueE >= 0 ? '' : ' (est.)'}:{' '}
-          {reportD <= 0 ? '' : '+'}
+          average increase{isExact ? '' : ' (est.)'}: {reportD <= 0 ? '' : '+'}
           {((100 * reportD) / thr0).toFixed(1)}%
         </p>
       </div>
@@ -307,7 +244,7 @@ export default function UpgradeOptChartCard({
             />
             <ReferenceDot
               x={perc(thr0 + reportD)}
-              y={(gaussConstrained(thr0 + reportD) || ymax) / 2}
+              y={reportY / 2}
               shape={<circle radius={1} opacity={0.5} />}
             />
 

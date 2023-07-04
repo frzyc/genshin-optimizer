@@ -73,7 +73,7 @@ const up_rv_stdev = 5 / 4
 const Q = (up_rv_mean * up_rv_mean + up_rv_stdev) / 4
 const W = (up_rv_mean / 4) ** 2
 
-enum ResultType {
+export enum ResultType {
   Fast,
   Slow,
   Exact,
