@@ -59,6 +59,8 @@
   "GalaExcitement": {},
   "FestiveTicket": {},
   "InvokationCoupons": {},
+  "JoyeuxVoucher": {},
+  "FascinatingPhenocryst": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -231,10 +233,10 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "KaedeharaKazuha": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Yanfei": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Yoimiya": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -306,7 +308,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Candace": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Nahida": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -4594,6 +4596,9 @@
   "PlumeOfPurifyingLight": {
     "type": "MATERIAL_CONSUME"
   },
+  "VoucherBox": {
+    "type": "MATERIAL_CONSUME"
+  },
   "Dish": {
     "type": "MATERIAL_FOOD"
   },
@@ -7912,6 +7917,18 @@
   "WarriorsSpiritSwordfightingArenaTicket": {
     "type": "MATERIAL_QUEST"
   },
+  "ScatteredYetWellPreservedPagesI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ScatteredYetWellPreservedPagesII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ScatteredYetWellPreservedPagesIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ScatteredYetWellPreservedPagesIV": {
+    "type": "MATERIAL_QUEST"
+  },
   "VentisNote": {
     "type": "MATERIAL_QUEST"
   },
@@ -8002,6 +8019,33 @@
   "KorybantesScoreVedana": {
     "type": "MATERIAL_QUEST"
   },
+  "ReturningCuriosMementoI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ReturningCuriosMementoII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "ReturningCuriosMementoIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MementoCollectionBox": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MysteriousMoraPocketwatch": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MuralFragmentSwirlingClouds": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MuralFragmentCentralHub": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MuralFragmentSkyKeep": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MuralFragmentFlowerOfTheValley": {
+    "type": "MATERIAL_QUEST"
+  },
   "JuliensDrawingBoard": {
     "type": "MATERIAL_QUEST"
   },
@@ -8009,6 +8053,18 @@
     "type": "MATERIAL_QUEST"
   },
   "HaniyyahsGiftOfMarvelousJellies": {
+    "type": "MATERIAL_QUEST"
+  },
+  "OldGear": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MountaineeringRope": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FamiliarLookingCandyBox": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TravelLamp": {
     "type": "MATERIAL_QUEST"
   },
   "BoxOfSpecialPotions": {
@@ -8027,6 +8083,15 @@
     "type": "MATERIAL_QUEST"
   },
   "KingOfInvokations": {
+    "type": "MATERIAL_QUEST"
+  },
+  "KeyToTheCastlesSecretChamber": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientHexCleansingRemedy": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheGreatEscapePropBook": {
     "type": "MATERIAL_QUEST"
   },
   "NamelessAdventurersNotes": {
@@ -8057,6 +8122,12 @@
     "type": "MATERIAL_QUEST"
   },
   "EmberglowLeaf": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SadifesMarkedMap": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SadifesCase": {
     "type": "MATERIAL_QUEST"
   },
   "AkademiyaInvestigationTeamsLogsI": {
@@ -8108,6 +8179,18 @@
     "type": "MATERIAL_QUEST"
   },
   "KhvarenaMonumentInscription": {
+    "type": "MATERIAL_QUEST"
+  },
+  "BeautifullyWrappedGiftBox": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RipeGrapes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PrinceQubadsIntaglio": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AbsolutionSeekersTestament": {
     "type": "MATERIAL_QUEST"
   },
   "SilkFlowerSeed": {
@@ -9325,6 +9408,9 @@
   "TravelNotesSecrets": {
     "type": "MATERIAL_NAMECARD"
   },
+  "TravelNotesVividIllumination": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "AnemoculusResonanceStone": {
     "type": "MATERIAL_WIDGET"
   },
@@ -9524,6 +9610,15 @@
     "type": "MATERIAL_WIDGET"
   },
   "SearchCompass": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "FlowingJoyspar": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "FelicitousJoyspar": {
+    "type": "MATERIAL_WIDGET"
+  },
+  "InscribedMirror": {
     "type": "MATERIAL_WIDGET"
   },
   "InstructionsAnemoculusResonanceStone": {
@@ -9850,6 +9945,15 @@
   "EmbersRekindled": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "TheOverflow": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "RightOfFinalInterpretation": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "PoeticsOfFuubutsu": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "MagicGuide": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -10006,6 +10110,9 @@
   "ShimenawasReminiscence": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "FruitOfFulfillment": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "LiyueHarborWharf": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -10094,6 +10201,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Rana": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "MasterZhang": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalResonanceWovenIce": {
@@ -10210,6 +10320,15 @@
   "FriendshipEternal": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "AncientCourtyard": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "CovenantOfRock": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "RhythmOfTheGreatDream": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -10286,6 +10405,12 @@
     "type": "MATERIAL_COSTUME"
   },
   "ASobriquetUnderShade": {
+    "type": "MATERIAL_COSTUME"
+  },
+  "BlossomingStarlight": {
+    "type": "MATERIAL_COSTUME"
+  },
+  "SailwindShadow": {
     "type": "MATERIAL_COSTUME"
   },
   "AdventurerCamp": {
@@ -10619,6 +10744,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "LightsConstancy": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "ShiningSpotlight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "GlowingAmusementParkCandyLamp": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "EfflorescentIllumination": {
@@ -11488,6 +11619,18 @@
   "DodocosSummertime": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "ChooChooCartRestStop": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SampleAmusementParkEngineering": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SampleAmusementParkBuilding": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AmusementParkCelebrationTent": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "RitualShrine": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12079,6 +12222,18 @@
   "LeisureDevicePuffyTubby": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "ScriptsRequirementsAndPrinciples": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "VIPGuestBleachers": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "HeyHaHooSlimeBoxTrio": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "WindUpGreatOwlSpiritMechanism": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "PottedPlantVerdantVastness": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12316,6 +12471,9 @@
   "KshahrewarFlag": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "AmusementParkBroadcastTower": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "WroughtIronCarvedStreetLight": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -12419,6 +12577,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "PearOrchardSeatGatheredInJoy": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DeadlineWhatDeadlineDirectorsChair": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "TwoStoryHilichurlSentryTower": {
