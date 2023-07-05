@@ -30,14 +30,14 @@ jobs:
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           yarn run nx run frontend:build:production --base-href=""
-      - name: Checkout gh-pages
+      - name: Checkout external gh-pages
         uses: actions/checkout@v3
         with:
           repository: ${{ vars.PR_REPO }}
           ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
           ref: gh-pages
           path: gh-pages
-      - name: Move to gh-pages
+      - name: Move to external gh-pages
         run: |
           mkdir --parents "gh-pages/pr${{ github.event.number }}"
           rm -rfv "gh-pages/pr/${{ github.event.number }}" || true
@@ -50,3 +50,7 @@ jobs:
           git commit -m "build pr/${{ github.event.number }} $(git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
+      - name: Echo deployment URL
+        run: |
+          IFS=- read -r account repo <<< ${{ vars.PR_REPO }}
+          echo 'Deployed to https://$account.github.io/$repo/pr/${{ github.event.number }}'
