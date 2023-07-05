@@ -39,15 +39,15 @@ jobs:
           path: gh-pages
       - name: Move to gh-pages
         run: |
-          mkdir --parents "gh-pages/pr${{ github.event.number }}"
-          rm -rfv "gh-pages/pr/${{ github.event.number }}" || true
-          mv "dist/apps/frontend" "gh-pages/pr/${{ github.event.number }}"
+          mkdir --parents "gh-pages/${{ github.event.number }}"
+          rm -rfv "gh-pages/${{ github.event.number }}" || true
+          mv "dist/apps/frontend" "gh-pages/${{ github.event.number }}"
       - name: Make commit to deploy
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ./pr/${{ github.event.number }}
-          git commit -m "build pr/${{ github.event.number }} $(git rev-parse HEAD)"
+          git add ./${{ github.event.number }}
+          git commit -m "build pr #${{ github.event.number }} $(git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
       - name: Update deployment message
