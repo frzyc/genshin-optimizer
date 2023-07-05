@@ -30,6 +30,10 @@ jobs:
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
           NX_DAEMON="false" \
           yarn run nx run frontend:build:production --base-href=""
+      - name: Cat logs
+        if: ${{ failure() }}
+        run: |
+          cat node_modules/.cache/nx/d/daemon.log
       - name: Checkout gh-pages
         uses: actions/checkout@v3
         with:
@@ -47,9 +51,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./${{ github.event.number }}
-          git commit -m "build pr #${{ github.event.number }} $(git rev-parse HEAD)"
+          git commit -m "build pr #${{ github.event.number }} $(cd .. && git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
-      - name: Update deployment message
-        run: |
-          echo "DEPLOY_MESSAGE=Deployed to https://${{ github.repository_owner }}.github.io/${GITHUB_REPOSITORY#*/}/pr/${{ github.event.number }}" >> $GITHUB_ENV
