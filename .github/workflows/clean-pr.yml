@@ -12,6 +12,8 @@ jobs:
       - name: Checkout gh-pages
         uses: actions/checkout@v3
         with:
+          repository: ${{ vars.PR_REPO }}
+          ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
           ref: gh-pages
           path: gh-pages
       - name: Make commit to deploy
