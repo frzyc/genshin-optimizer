@@ -1,4 +1,4 @@
-import { TagMapEntry } from '../tag'
+import type { TagMapEntry } from '../tag'
 import type { Tag } from '../tag/type'
 import type { Read } from './type'
 
