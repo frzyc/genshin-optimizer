@@ -373,7 +373,7 @@ export function compile(
 
     switch (op) {
       case 'const':
-        names.set(n, `(${n.ex})`)
+        names.set(n, typeof n.ex !== 'string' ? `(${n.ex})` : `('${n.ex}')`)
         break
       case 'sum':
       case 'prod':
@@ -395,7 +395,8 @@ export function compile(
         body += `,${name}=${brNames[0]}>=${brNames[1]}?${argNames[0]}:${argNames[1]}`
         break
       case 'subscript':
-        body += `,${name}=[${n.ex}][${brNames[0]}]`
+        // `JSON.stringify` on `number[] | string[]`
+        body += `,${name}=${JSON.stringify(n.ex)}[${brNames[0]}]`
         break
       case 'read': {
         const key = n.tag[dynTagCategory]!
@@ -406,16 +407,19 @@ export function compile(
         body += `,${name}=${arr.join('+')}`
         break
       }
-      case 'custom': {
+      case 'custom':
         body += `,${name}=${n.ex}(${argNames})`
         break
-      }
       case 'lookup':
-        throw new Error(`Unsupported operation: ${op}`) // TODO
+        // `JSON.stringify` on `Record<string, number>`
+        body += `,${name}=([${argNames}])[(${JSON.stringify(n.ex)})[${
+          brNames[0]
+        }] ?? 0]`
+        break
       default:
         assertUnreachable(op)
     }
   })
   body += `;return [${n.map((n) => names.get(n)!)}]`
-  return new (Function as any)(`b`, body)
+  return new Function(`b`, body) as any
 }

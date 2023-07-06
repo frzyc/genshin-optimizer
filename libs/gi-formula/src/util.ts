@@ -1,7 +1,7 @@
-import {
-  type ArtifactSetKey,
-  type CharacterKey,
-  type WeaponKey,
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  WeaponKey,
 } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/pando'

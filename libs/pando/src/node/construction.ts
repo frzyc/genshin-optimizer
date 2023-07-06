@@ -218,17 +218,17 @@ function thres<P extends OP = never>(
 
 /** table[index] ?? defaultNode */
 export function lookup<P extends OP>(
-  index: StrNode<P>,
+  index: Str<P>,
   table: Record<string, Num<P>>,
   defaultV?: Num<P>
 ): Lookup<NumNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
-  index: StrNode<P>,
+  index: Str<P>,
   table: Record<string, Str<P>>,
   defaultV?: Str<P>
 ): Lookup<StrNode<P>, P | 'lookup'>
 export function lookup<P extends OP>(
-  index: StrNode<P>,
+  index: Str<P>,
   table: Record<string, Val<P>>,
   defaultV?: Val<P>
 ): Lookup<AnyNode<P>, P | 'lookup'> {
@@ -241,15 +241,15 @@ export function lookup<P extends OP>(
 }
 /** table[index] */
 export function subscript<P extends OP>(
-  index: NumNode<P>,
+  index: Num<P>,
   table: number[]
 ): Subscript<number, P | 'subscript'>
 export function subscript<P extends OP>(
-  index: NumNode<P>,
+  index: Num<P>,
   table: string[]
 ): Subscript<string, P | 'subscript'>
 export function subscript<P extends OP>(
-  index: NumNode<P>,
+  index: Num<P>,
   table: number[] | string[]
 ): Subscript<_value, P | 'subscript'> {
   return { op: 'subscript', ex: table, x: [], br: [toV(index)] }
