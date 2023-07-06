@@ -10,7 +10,7 @@ import { locCharKeyToCharKey } from '@genshin-optimizer/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
 import type { NumNode } from '@genshin-optimizer/pando'
 import { prod, subscript, sum } from '@genshin-optimizer/pando'
-import type { Data, FormulaArg, Stat } from '../util'
+import type { TaggedFormulas, FormulaArg, Stat } from '../util'
 import {
   addStatCurve,
   allStatics,
@@ -46,8 +46,8 @@ export function dmg(
   levelScaling: number[],
   move: Exclude<MoveKey, 'elemental'>,
   arg: { ele?: ElementWithPhyKey; baseMulti?: NumNode } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TaggedFormulas
+): TaggedFormulas {
   let { ele } = arg
   if (!ele)
     switch (move) {
@@ -93,8 +93,8 @@ export function shield(
   flat: number[],
   talent: 'auto' | 'skill' | 'burst',
   arg: { ele?: ElementKey } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TaggedFormulas
+): TaggedFormulas {
   const lvl = self.char[talent]
   return customShield(
     name,
@@ -114,8 +114,8 @@ export function fixedShield(
   percent: number | NumNode,
   flat: number | NumNode,
   arg: { ele?: ElementKey } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TaggedFormulas
+): TaggedFormulas {
   return customShield(
     name,
     arg.ele,
@@ -128,7 +128,7 @@ export function fixedShield(
 export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
-): Data {
+): TaggedFormulas {
   const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
   specials.delete('atk')
   specials.delete('def')

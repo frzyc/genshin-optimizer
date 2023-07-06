@@ -16,7 +16,7 @@ import {
   sum,
   sumfrac,
 } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TaggedFormulas } from '../util'
 import { percent, self, selfBuff, tag } from '../util'
 
 const transLvlMultis = [
@@ -312,7 +312,7 @@ function trigger(
       trigger(ele, trans, immediateFromEle)
 }
 
-const data: Data = [
+const data: TaggedFormulas = [
   selfBuff.reaction.ampBase.add(eleMasMulti(25 / 9, 1400)),
   selfBuff.reaction.ampMulti.melt.cryo.add(prod(1.5, ampBase)),
   selfBuff.reaction.ampMulti.melt.pyro.add(prod(2.0, ampBase)),

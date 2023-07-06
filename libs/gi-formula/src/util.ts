@@ -5,7 +5,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/pando'
-import type { Data, Member, Preset, Stat } from './data/util'
+import type { TaggedFormulas, Member, Preset, Stat } from './data/util'
 import {
   allConditionals,
   convert,
@@ -14,14 +14,20 @@ import {
   selfTag,
 } from './data/util'
 
-export function withPreset(preset: Preset, ...data: Data): Data {
+export function withPreset(
+  preset: Preset,
+  ...data: TaggedFormulas
+): TaggedFormulas {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
-export function withMember(member: Member, ...data: Data): Data {
+export function withMember(
+  member: Member,
+  ...data: TaggedFormulas
+): TaggedFormulas {
   return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
 }
 
-export function charData(data: ICharacter): Data {
+export function charData(data: ICharacter): TaggedFormulas {
   const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
 
   return [
@@ -43,7 +49,7 @@ export function charData(data: ICharacter): Data {
   ]
 }
 
-export function weaponData(data: IWeapon): Data {
+export function weaponData(data: IWeapon): TaggedFormulas {
   const { lvl, ascension, refinement } = selfBuff.weapon
 
   return [
@@ -60,7 +66,7 @@ export function artifactsData(
     set: ArtifactSetKey
     stats: readonly { key: Stat; value: number }[]
   }[]
-): Data {
+): TaggedFormulas {
   const {
     common: { count },
     premod,
@@ -108,7 +114,7 @@ export function conditionalData(
 export function teamData(
   active: readonly Member[],
   members: readonly Member[]
-): Data {
+): TaggedFormulas {
   const teamEntry = reader.withTag({ et: 'team' })
   const stack = {
     in: reader.withTag({ qt: 'stackIn' }),

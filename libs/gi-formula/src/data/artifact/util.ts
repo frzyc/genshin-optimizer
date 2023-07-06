@@ -1,12 +1,12 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import type { NumNode } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TaggedFormula, TaggedFormulas } from '../util'
 import { self, tag } from '../util'
 
 export function registerArt(
   src: ArtifactSetKey,
-  ...data: (Data | Data[number])[]
-): Data {
+  ...data: (TaggedFormula | TaggedFormulas)[]
+): TaggedFormulas {
   /* Unlike character and weapon, artifact buff is all-or-nothing, so we can register every
    * buff as `src:art` and tag the formula as `src:src`. This means that `src:art`, which is
    * read on each `et:agg`, does not need to reread `src:src`. This greatly reduce `Read`
@@ -14,7 +14,7 @@ export function registerArt(
    * for each `src:art` read.
    */
 
-  function internal({ tag: oldTag, value }: Data[number]): Data[number] {
+  function internal({ tag: oldTag, value }: TaggedFormula): TaggedFormula {
     if (oldTag.src === src)
       // Special entries (usually stack count) that override `stack`
       return { tag: oldTag, value }

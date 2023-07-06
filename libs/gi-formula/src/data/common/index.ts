@@ -1,13 +1,13 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { max, min, prod, subscript, sum } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TaggedFormulas } from '../util'
 import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
-const data: Data = [
+const data: TaggedFormulas = [
   ...dmg,
   ...prep,
   ...reaction,

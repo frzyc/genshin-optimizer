@@ -1,5 +1,5 @@
-import type { Data } from '../util'
+import type { TaggedFormulas } from '../util'
 import NoblesseOblige from './NoblesseOblige'
 
-const data: Data[] = [NoblesseOblige]
+const data: TaggedFormulas[] = [NoblesseOblige]
 export default data.flat()

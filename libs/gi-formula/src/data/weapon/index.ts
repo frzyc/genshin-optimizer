@@ -1,14 +1,14 @@
 import { allWeaponKeys, type WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { prod, subscript } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TaggedFormulas } from '../util'
 import { addStatCurve, allStatics, register, self } from '../util'
 import CalamityQueller from './CalamityQueller'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import PrototypeAmber from './PrototypeAmber'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 
-const data: Data[] = [
+const data: TaggedFormulas[] = [
   CalamityQueller,
   KeyOfKhajNisut,
   PrototypeAmber,
@@ -16,7 +16,7 @@ const data: Data[] = [
   ...allWeaponKeys.map(entriesForWeapon),
 ]
 
-function entriesForWeapon(key: WeaponKey): Data {
+function entriesForWeapon(key: WeaponKey): TaggedFormulas {
   const gen = allStats.weapon.data[key]
   const { refinement, ascension } = self.weapon
 

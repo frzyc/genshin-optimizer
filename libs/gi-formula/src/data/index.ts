@@ -5,11 +5,11 @@ import {
 import artifact from './artifact'
 import character from './char'
 import common from './common'
-import type { Data } from './util'
+import type { TaggedFormulas } from './util'
 import { fixedTags, queries, queryTypes, usedNames } from './util'
 import weapon from './weapon'
 
-const data: Data = [...common, ...artifact, ...character, ...weapon]
+const data: TaggedFormulas = [...common, ...artifact, ...character, ...weapon]
 const tags = [
   { category: 'qt', values: [...queryTypes] },
   { category: 'q', values: ['_', ...queries] },
