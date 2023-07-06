@@ -61,6 +61,7 @@ export class TagMapKeys {
     let firstReplacedByte = this.tagLen
     for (const [category, value] of Object.entries(extra)) {
       const entry = this.data[category]!
+      if (!entry) console.error(category, entry)
       // Make sure `category` existed during compilation. Otherwise, it
       // would crash here, and this non-shaming text would be visible.
       const {
