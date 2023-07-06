@@ -18,9 +18,9 @@ export class TagMapKeys {
     for (const [category, value] of Object.entries(tag)) {
       if (value === null) continue
       const entry = this.data[category]!
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value]: word },
       } = entry
@@ -39,9 +39,9 @@ export class TagMapKeys {
     for (const [category, value] of Object.entries(tag)) {
       if (value === null) continue
       const entry = this.data[category]!
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value]: word },
         mask,
@@ -62,9 +62,9 @@ export class TagMapKeys {
     for (const [category, value] of Object.entries(extra)) {
       const entry = this.data[category]!
       if (!entry) console.error(category, entry)
-      // Make sure `category` existed during compilation. Otherwise, it
-      // would crash here, and this non-shaming text would be visible.
       const {
+        // Make sure `category` existed during compilation. Otherwise, it
+        // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value!]: word },
         mask,

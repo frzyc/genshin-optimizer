@@ -23,13 +23,13 @@ export type RawTagMapValues<V> = {
 } & { ''?: V[] }
 
 /** Uncompiled entry for `TagMap<V>` */
-export type TagMapEntry<V> = { tag: Tag; value: V }
+export type TagMapEntry<V, T = Tag> = { tag: T; value: V }
 /** Uncompiled entries for `TagMap<V>` */
-export type TagMapEntries<V> = TagMapEntry<V>[]
+export type TagMapEntries<V, T = Tag> = TagMapEntry<V, T>[]
 
 export function compileTagMapKeys(
   tags: readonly (
-    | { category: TagCategory; values: readonly TagValue[] }
+    | { category: TagCategory; values: Set<TagValue> }
     | undefined
   )[]
 ): RawTagMapKeys {
@@ -43,7 +43,8 @@ export function compileTagMapKeys(
       continue
     }
 
-    const bitNeeded = 32 - Math.clz32(tag.values.length)
+    const values = [...new Set(tag.values)]
+    const bitNeeded = 32 - Math.clz32(values.length)
     if (bitOffset + bitNeeded > 32) {
       byteOffset++
       bitOffset = 0
@@ -52,9 +53,7 @@ export function compileTagMapKeys(
     data[tag.category] = {
       offset: byteOffset,
       mask: ((1 << bitNeeded) - 1) << bitOffset,
-      ids: Object.fromEntries(
-        tag.values.map((v, i) => [v, (i + 1) << bitOffset])
-      ),
+      ids: Object.fromEntries(values.map((v, i) => [v, (i + 1) << bitOffset])),
     }
     bitOffset += bitNeeded
   }

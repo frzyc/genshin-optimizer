@@ -6,6 +6,10 @@ import type {
 } from './compilation'
 import { compileTagMapKeys, compileTagMapValues } from './compilation'
 
+function tagList(category: string, n: number) {
+  return { category, values: new Set([...Array(n)].map((_, i) => `val${i}`)) }
+}
+
 describe('TagMapValues', () => {
   it('can process simple queries', () => {
     const { keys, values } = compileTagMapEntries([
@@ -34,9 +38,9 @@ describe('TagMapValues', () => {
   })
   it('can support multiple-word lookup', () => {
     const keys = compileTagMapKeys([
-      { category: `cat1`, values: [...Array(8)].map((_, i) => `val${i}`) },
+      tagList('cat1', 8),
       undefined,
-      { category: `cat2`, values: [...Array(16)].map((_, i) => `val${i}`) },
+      tagList('cat2', 16),
     ])
     const values = compileTagMapValues(keys, [
         { value: 1, tag: { cat1: 'val0' } },
@@ -96,7 +100,10 @@ function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
     }
   }
   const keys = compileTagMapKeys(
-    [...tags].map(([category, val]) => ({ category, values: [...val] }))
+    [...tags].map(([category, val]) => ({
+      category,
+      values: new Set([...val]),
+    }))
   )
   const values = compileTagMapValues(new TagMapKeys(keys), entries)
   return { keys, values }

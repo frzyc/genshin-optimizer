@@ -1,5 +1,5 @@
-import { TagMapNodeEntries, TagMapNodeEntry } from '.'
-import { Source } from './listing'
+import type { TagMapNodeEntries, TagMapNodeEntry } from '.'
+import type { Source } from './listing'
 
 export function register(
   src: Source,

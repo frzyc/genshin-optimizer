@@ -2,7 +2,7 @@ import { compileTagMapValues, reread } from '@genshin-optimizer/pando'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import { register, self, selfBuff, type TagMapNodeEntries } from './data/util'
+import { self, selfBuff, type TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([

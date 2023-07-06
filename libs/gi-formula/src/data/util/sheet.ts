@@ -7,7 +7,7 @@ import type {
 import type { NumNode, StrNode } from '@genshin-optimizer/pando'
 import { prod } from '@genshin-optimizer/pando'
 import type { TagMapNodeEntries, Source, Stat, TagMapNodeEntry } from '.'
-import { reader, self, selfBuff, tag, teamBuff, usedNames } from '.'
+import { reader, self, selfBuff, tag, teamBuff } from '.'
 
 // Use `registerArt` for artifacts
 export function register(
@@ -104,7 +104,7 @@ function registerFormula(
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  usedNames.add(name)
+  reader.name(name) // register name:<name>
   const buff = team ? teamBuff : selfBuff
   return [
     buff.formula.listing.add(tag(cond, { name })),

@@ -160,29 +160,13 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
       Object.fromEntries(
         Object.entries(v).map(([q, { src, accu }]) =>
           src
-            ? [q, new Read({ src, qt, q, ...tag }, accu)]
-            : [q, new Read({ qt, q, ...tag }, accu)]
+            ? [q, new Read({ src, qt, q }, accu).withTag(tag)]
+            : [q, new Read({ qt, q }, accu).withTag(tag)]
         )
       ),
     ])
   ) as any
 }
-
-// For tag key compilation
-export const queries = new Set(
-  [...Object.values(selfTag), ...Object.values(enemyTag)].flatMap((x) =>
-    Object.keys(x)
-  )
-)
-export const queryTypes = new Set([
-  ...Object.keys(selfTag),
-  ...Object.keys(enemyTag),
-  'cond',
-  'misc',
-  'stackIn',
-  'stackInt',
-  'stackOut',
-])
 
 // Default queries
 export const self = convert(selfTag, { et: 'self' })
@@ -220,7 +204,18 @@ function allCustoms<T>(
   qt: string,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
-  return reader
-    .withTag({ et: 'self', src, qt })
-    ._withAll('q', (r, q) => (queries.add(q), transform(r, q)))
+  return reader.withTag({ et: 'self', src, qt }).withAll('q', transform)
 }
+
+export const queryTypes = new Set([
+  ...Object.keys(selfTag),
+  ...Object.keys(enemyTag),
+  'cond',
+  'misc',
+  'stackIn',
+  'stackInt',
+  'stackOut',
+])
+// Register `q:`
+for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
+  for (const q of Object.keys(values)) reader.with('q', q)

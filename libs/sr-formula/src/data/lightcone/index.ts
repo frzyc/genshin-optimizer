@@ -1,4 +1,4 @@
-import { prod, read, subscript, sum } from '@genshin-optimizer/pando'
+import { prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import { allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
