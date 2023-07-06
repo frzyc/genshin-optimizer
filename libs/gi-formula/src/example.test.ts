@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import type { Data, Tag } from './data/util'
+import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
@@ -35,7 +35,7 @@ import {
 // doesn't crash. Any test for correct values should go to `correctness` tests.
 // Should a test here fail, extract a minimized version to `correctness` test.
 describe('example', () => {
-  const data: Data = [
+  const data: TagMapNodeEntries = [
       ...teamData(['member0'], ['member0', 'member1']),
 
       ...withMember(

@@ -1,13 +1,17 @@
-import type { Tag } from './type'
-import type { CompiledTagMapValues } from './compilation'
+import type { RawTagMapValues } from './compilation'
 import type { TagID, TagMapKeys } from './keys'
+import type { Tag } from './type'
 
-export type TagMapSubsetCache<V> = Cache<V>
+/**
+ * `TagMap` speciallized in finding entries with matching tags, ignoring
+ * extraneous tag categories in the entry tags. Operates on `TagID`
+ * instead of `Tag`.
+ */
 export class TagMapSubsetValues<V> {
   internal: Internal<V>
   tagLen: number
 
-  constructor(tagLen: number, compiled: CompiledTagMapValues<V>) {
+  constructor(tagLen: number, compiled: RawTagMapValues<V>) {
     this.internal = new Internal(compiled)
     this.tagLen = tagLen
   }
@@ -31,11 +35,16 @@ export class TagMapSubsetValues<V> {
     return crawl(this.internal, 0), result
   }
 
-  cache(keys: TagMapKeys): Cache<V> {
+  cache(keys: TagMapKeys): TagMapSubsetCache<V> {
     const tagLen = keys.tagLen
     let last = new InternalCache(undefined as any, [this.internal])
     for (let i = 0; i < tagLen; i++) last = last.child(0)
-    return new Cache<V>(new Int32Array(tagLen).fill(0), {}, keys, last)
+    return new TagMapSubsetCache<V>(
+      new Int32Array(tagLen).fill(0),
+      {},
+      keys,
+      last
+    )
   }
 }
 
@@ -43,7 +52,7 @@ class Internal<V> {
   children: Map<number, Map<number, Internal<V>>>
   values: V[]
 
-  constructor(compiled: CompiledTagMapValues<V>) {
+  constructor(compiled: RawTagMapValues<V>) {
     const { '': values, ...remaining } = compiled
     this.children = new Map()
     this.values = values ?? []
@@ -52,7 +61,7 @@ class Internal<V> {
       const map = new Map<number, Internal<V>>()
       this.children.set(+k, map)
       for (const [k, vv] of Object.entries(v!))
-        map.set(+k, new Internal(vv as CompiledTagMapValues<V>))
+        map.set(+k, new Internal(vv as RawTagMapValues<V>))
     }
   }
 
@@ -63,7 +72,8 @@ class Internal<V> {
   }
 }
 
-class Cache<V> {
+/** Precomputed `TagMapSubset.subset(tagA)`, can be chained to `subset({ ...tagA, ...tagB })` using `with` */
+export class TagMapSubsetCache<V> {
   id: Int32Array
   tag: Tag
   keys: TagMapKeys
@@ -86,14 +96,19 @@ class Cache<V> {
   subset(): V[] {
     return this.internal.entries.flatMap((x) => x.values)
   }
-  with(tag: Tag): Cache<V> {
+  with(tag: Tag): TagMapSubsetCache<V> {
     const { tagLen } = this.keys,
       { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
 
     let current = this.internal
     for (let i = first; i < tagLen; i++) current = current.parent
     for (let i = first; i < tagLen; i++) current = current.child(id[i]!)
-    return new Cache(id, { ...this.tag, ...tag }, this.keys, current)
+    return new TagMapSubsetCache(
+      id,
+      { ...this.tag, ...tag },
+      this.keys,
+      current
+    )
   }
 }
 class InternalCache<V> {

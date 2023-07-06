@@ -6,10 +6,10 @@ import {
   sum,
 } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
-import type { TaggedFormulas } from './data/util'
+import type { TagMapNodeEntries } from './data/util'
 import { dependencyString, listDependencies } from './debug'
 import { translate } from './formulaText'
-const data: TaggedFormulas = [
+const data: TagMapNodeEntries = [
   /* R1 */ { tag: { cat1: 'value1' }, value: constant(4) },
   /* R2 */ { tag: { cat1: 'value1', cat2: 'value1' }, value: constant(1) },
   /* R3 */ {

@@ -1,5 +1,5 @@
-import type { TaggedFormulas } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import NoblesseOblige from './NoblesseOblige'
 
-const data: TaggedFormulas[] = [NoblesseOblige]
+const data: TagMapNodeEntries[] = [NoblesseOblige]
 export default data.flat()

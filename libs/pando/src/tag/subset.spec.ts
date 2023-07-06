@@ -1,9 +1,10 @@
-import { TagMapSubset } from './'
-import {
-  compileTagMapEntries,
-  compileTagMapKeys,
-  compileTagMapValues,
+import { TagMapKeys, TagMapSubset } from './'
+import type {
+  RawTagMapKeys,
+  RawTagMapValues,
+  TagMapEntries,
 } from './compilation'
+import { compileTagMapKeys, compileTagMapValues } from './compilation'
 
 describe('TagMapValues', () => {
   it('can process simple queries', () => {
@@ -81,3 +82,22 @@ describe('TagMapValues', () => {
     })
   })
 })
+
+function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
+  keys: RawTagMapKeys
+  values: RawTagMapValues<V>
+} {
+  const tags = new Map<string, Set<string>>()
+  for (const { tag } of entries) {
+    for (const [cat, val] of Object.entries(tag)) {
+      if (val === null) continue
+      if (!tags.has(cat)) tags.set(cat, new Set())
+      tags.get(cat)!.add(val)
+    }
+  }
+  const keys = compileTagMapKeys(
+    [...tags].map(([category, val]) => ({ category, values: [...val] }))
+  )
+  const values = compileTagMapValues(new TagMapKeys(keys), entries)
+  return { keys, values }
+}

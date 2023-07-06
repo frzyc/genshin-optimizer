@@ -3,7 +3,7 @@ import {
   compileTagMapValues,
   read,
 } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from './util'
+import type { TagMapNodeEntries } from './util'
 
 import {
   allCharacterKeys,
@@ -28,7 +28,7 @@ const srcs = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
 export type Source = (typeof srcs)[number]
 
-const data: TaggedFormulas = [
+const data: TagMapNodeEntries = [
   ...charData,
   ...lcData,
   // convert st:char to st:total for accumulation

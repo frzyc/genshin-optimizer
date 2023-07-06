@@ -1,12 +1,13 @@
-import type { CompiledTagMapKeys } from './compilation'
+import type { RawTagMapKeys } from './compilation'
 import type { Tag } from './type'
 
 export type TagID = Int32Array
+/** Mapping from `Tag` to a faster internal representation `TagID`. */
 export class TagMapKeys {
-  data: CompiledTagMapKeys['data']
-  tagLen: CompiledTagMapKeys['tagLen']
+  data: RawTagMapKeys['data']
+  tagLen: RawTagMapKeys['tagLen']
 
-  constructor(compiled: CompiledTagMapKeys) {
+  constructor(compiled: RawTagMapKeys) {
     this.data = compiled.data
     this.tagLen = compiled.tagLen
   }

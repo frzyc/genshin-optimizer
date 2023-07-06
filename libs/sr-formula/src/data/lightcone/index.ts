@@ -2,11 +2,11 @@ import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import { allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
 import { constant, prod, read, subscript, sum } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from '../util'
+import type { TagMapNodeEntries } from '../util'
 
 type Promotion = (typeof allStats.lightcone)[LightConeKey]['ascension'][number]
 // Attach the base stats from the generated datamine
-export function handleLightConeGen(lck: LightConeKey): TaggedFormulas {
+export function handleLightConeGen(lck: LightConeKey): TagMapNodeEntries {
   const lcDataGen = allStats.lightcone[lck]
   const readAsc = read({ src: lck, q: 'ascension' }, undefined)
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
@@ -25,6 +25,6 @@ export function handleLightConeGen(lck: LightConeKey): TaggedFormulas {
     }),
   ]
 }
-const data: TaggedFormulas = allLightConeKeys.flatMap(handleLightConeGen)
+const data: TagMapNodeEntries = allLightConeKeys.flatMap(handleLightConeGen)
 
 export { data }

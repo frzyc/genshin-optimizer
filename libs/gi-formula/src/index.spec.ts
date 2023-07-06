@@ -1,7 +1,7 @@
 import { compileTagMapValues } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
-import type { Data, Member, Source } from './data/util'
+import type { Member, Source, TagMapNodeEntries } from './data/util'
 import { allStacks, srcs } from './data/util'
 import {} from './debug'
 import { teamData } from './util'
@@ -38,7 +38,7 @@ describe('calculator', () => {
       const { hp: test1, hp_: test2 } = allStacks('CalamityQueller')
       const { hp: test3, hp_: test4 } = allStacks('NoblesseOblige')
       const members: Member[] = ['member0', 'member1', 'member2'],
-        data: Data = [
+        data: TagMapNodeEntries = [
           ...teamData(['member0', 'member2'], members),
           // Multiple members with 1
           test1.in.with('member', 'member1').add(1),

@@ -5,7 +5,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/pando'
-import type { TaggedFormulas, Member, Preset, Stat } from './data/util'
+import type { TagMapNodeEntries, Member, Preset, Stat } from './data/util'
 import {
   allConditionals,
   convert,
@@ -16,18 +16,18 @@ import {
 
 export function withPreset(
   preset: Preset,
-  ...data: TaggedFormulas
-): TaggedFormulas {
+  ...data: TagMapNodeEntries
+): TagMapNodeEntries {
   return data.map(({ tag, value }) => ({ tag: { ...tag, preset }, value }))
 }
 export function withMember(
   member: Member,
-  ...data: TaggedFormulas
-): TaggedFormulas {
+  ...data: TagMapNodeEntries
+): TagMapNodeEntries {
   return data.map(({ tag, value }) => ({ tag: { ...tag, member }, value }))
 }
 
-export function charData(data: ICharacter): TaggedFormulas {
+export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
 
   return [
@@ -49,7 +49,7 @@ export function charData(data: ICharacter): TaggedFormulas {
   ]
 }
 
-export function weaponData(data: IWeapon): TaggedFormulas {
+export function weaponData(data: IWeapon): TagMapNodeEntries {
   const { lvl, ascension, refinement } = selfBuff.weapon
 
   return [
@@ -66,7 +66,7 @@ export function artifactsData(
     set: ArtifactSetKey
     stats: readonly { key: Stat; value: number }[]
   }[]
-): TaggedFormulas {
+): TagMapNodeEntries {
   const {
     common: { count },
     premod,
@@ -114,7 +114,7 @@ export function conditionalData(
 export function teamData(
   active: readonly Member[],
   members: readonly Member[]
-): TaggedFormulas {
+): TagMapNodeEntries {
   const teamEntry = reader.withTag({ et: 'team' })
   const stack = {
     in: reader.withTag({ qt: 'stackIn' }),

@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import type { TaggedFormulas } from './data/util'
+import type { TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([
@@ -17,7 +17,7 @@ describe('character test', () => {
     [80, 6, 511.56, 573.3, 1058.4, 101],
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
-    const data: TaggedFormulas = [
+    const data: TagMapNodeEntries = [
       { tag: { src: charKey, q: 'lvl' }, value: constant(lvl) },
       {
         tag: { src: charKey, q: 'ascension' },
@@ -53,7 +53,7 @@ describe('lightcone test', () => {
     [20, 1, 72.72, 60.6, 193.92],
   ])('Calculate lightcone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
-    const data: TaggedFormulas = [
+    const data: TagMapNodeEntries = [
       { tag: { src: lcKey, q: 'lvl' }, value: constant(lvl) },
       {
         tag: { src: lcKey, q: 'ascension' },
@@ -84,7 +84,7 @@ describe('char+lightcone test', () => {
     const charKey: CharacterKey = 'March7th'
     const lcKey: LightConeKey = 'Amber'
 
-    const data: TaggedFormulas = [
+    const data: TagMapNodeEntries = [
       { tag: { src: charKey, q: 'lvl' }, value: constant(1) },
       { tag: { src: charKey, q: 'ascension' }, value: constant(0) },
       { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },

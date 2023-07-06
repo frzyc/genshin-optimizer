@@ -1,6 +1,6 @@
 import type {
-  CompiledTagMapKeys,
-  CompiledTagMapValues,
+  RawTagMapKeys,
+  RawTagMapValues,
   Tag,
   TagMapSubsetCache,
 } from '../tag'
@@ -30,8 +30,8 @@ export class Calculator<M = any> {
   calculated: TagMapExactValues<PreRead<M>>
 
   constructor(
-    keys: CompiledTagMapKeys,
-    ...values: CompiledTagMapValues<AnyNode | ReRead>[]
+    keys: RawTagMapKeys,
+    ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
     this.keys = new TagMapKeys(keys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))

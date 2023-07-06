@@ -6,5 +6,7 @@ export * from './read'
 export * from './sheet'
 export * from './tag'
 
-export type TaggedFormula = { tag: Tag; value: AnyNode | ReRead }
-export type TaggedFormulas = TaggedFormula[]
+/** See `TagMapEntry`. This tighten `Tag` to a `gi-formula` version, so we cannot use `TagMapEntry<Node>`. */
+export type TagMapNodeEntry = { tag: Tag; value: AnyNode | ReRead }
+/** See `TagMapEntries` */
+export type TagMapNodeEntries = TagMapNodeEntry[]

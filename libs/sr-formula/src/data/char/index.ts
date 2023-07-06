@@ -2,12 +2,12 @@ import type { NonTrailblazerCharacterKey } from '@genshin-optimizer/sr-consts'
 import { nonTrailblazerCharacterKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
 import { constant, prod, read, subscript, sum } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from '../util'
+import type { TagMapNodeEntries } from '../util'
 
 type Promotion =
   (typeof allStats.char)[NonTrailblazerCharacterKey]['ascension'][number]
 // Attach the base stats from the generated datamine
-function handleCharacterGen(ck: NonTrailblazerCharacterKey): TaggedFormulas {
+function handleCharacterGen(ck: NonTrailblazerCharacterKey): TagMapNodeEntries {
   const chardataGen = allStats.char[ck]
   const readAsc = read({ src: ck, q: 'ascension' }, undefined)
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
@@ -31,10 +31,10 @@ function handleCharacterGen(ck: NonTrailblazerCharacterKey): TaggedFormulas {
         value: subscript(readAsc, statAsc),
       }
     }),
-  ] as TaggedFormulas
+  ] as TagMapNodeEntries
 }
 
-const data: TaggedFormulas =
+const data: TagMapNodeEntries =
   nonTrailblazerCharacterKeys.flatMap(handleCharacterGen)
 
 export { data }

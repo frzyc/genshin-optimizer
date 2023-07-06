@@ -1,10 +1,10 @@
 import { cmpEq, dynTag, lookup, prod, sum } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import { enemy, percent, self, selfBuff, tagVal } from '../util'
 
 const { ele, amp, cata } = self.prep
 
-const data: TaggedFormulas = [
+const data: TagMapNodeEntries = [
   // Formulas
   // If any `prep` nodes are available, put them in `dynTag` or note them here
   selfBuff.formula.dmg.add(

@@ -1,7 +1,7 @@
-import type { TaggedFormulas } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import Candace from './Candace'
 import Nahida from './Nahida'
 import Nilou from './Nilou'
 
-const data: TaggedFormulas[] = [Candace, Nahida, Nilou]
+const data: TagMapNodeEntries[] = [Candace, Nahida, Nilou]
 export default data.flat()
