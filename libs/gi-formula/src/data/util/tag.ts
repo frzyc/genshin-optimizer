@@ -198,49 +198,29 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
+export const allStatics = (src: Source) => allCustoms(src, 'misc', (x) => x)
 export const allConditionals = (
   src: Source,
   accu: Read['accu'] | 'none' = 'sum'
-) => allCustoms(src, 'cond', accu !== 'none' ? reader[accu] : reader)
-export const allStatics = (src: Source) => allCustoms(src, 'misc')
-export const allStacks = (
-  src: Source
-): Record<string, { in: Read; out: Read }> => {
-  const i = allCustoms(src, 'stackIn')
-  const o = allCustoms(src, 'stackOut')
-  return new Proxy(
-    {},
-    {
-      get: (_, q: string) => ({ in: i[q], out: o[q] }),
-    }
-  ) as any
-}
+) => allCustoms(src, 'cond', (r) => (accu !== 'none' ? r[accu] : r))
+export const allStacks = (src: Source) =>
+  allCustoms(src, 'stackOut', (out) => ({
+    in: out.with('qt', 'stackIn'),
+    out,
+  }))
+export const allBoolConditionals = (src: Source) =>
+  allCustoms(src, 'cond', ({ sum: r }) => ({
+    ifOn: (node: NumNode | number, off?: NumNode | number) =>
+      cmpNE(r, 0, node, off),
+    ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
+  }))
 
-type BoolConditional = {
-  ifOn: (on: NumNode | number, off?: NumNode | number) => NumNode
-  ifOff: (off: NumNode | number) => NumNode
-}
-export const allBoolConditionals = (
-  src: Source
-): Record<string, BoolConditional> =>
-  new Proxy(reader.sum.withTag({ et: 'self', src, qt: 'cond' })._withAll('q'), {
-    get: (dict, q: string) => {
-      queries.add(q)
-      const cond = dict[q]
-      return {
-        ifOn: (node: NumNode | number, off?: NumNode | number) =>
-          cmpNE(cond, 0, node, off),
-        ifOff: (node: NumNode | number) => cmpEq(cond, 0, node),
-      }
-    },
-  }) as any
-
-function allCustoms(
+function allCustoms<T>(
   src: Source,
   qt: string,
-  r: Read = reader
-): Record<string, Read> {
-  return new Proxy(r.withTag({ et: 'self', src, qt })._withAll('q'), {
-    get: (dict, q: string) => (queries.add(q), dict[q]),
-  })
+  transform: (r: Read, q: string) => T
+): Record<string, T> {
+  return reader
+    .withTag({ et: 'self', src, qt })
+    ._withAll('q', (r, q) => (queries.add(q), transform(r, q)))
 }

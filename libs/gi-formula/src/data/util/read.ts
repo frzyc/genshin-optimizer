@@ -8,18 +8,18 @@ import {
 } from '@genshin-optimizer/consts'
 import type {
   AnyNode,
-  NumNode,
   Read as BaseRead,
+  NumNode,
   ReRead,
   StrNode,
   TagOverride,
   TagValRead,
 } from '@genshin-optimizer/pando'
 import {
-  constant,
-  reread,
   tag as baseTag,
   tagVal as baseTagVal,
+  constant,
+  reread,
 } from '@genshin-optimizer/pando'
 import { entryTypes, members, presets, srcs } from './listing'
 
@@ -69,13 +69,13 @@ export class Read implements BaseRead {
   withTag(tag: Omit<Tag, 'name' | 'q'>, accu?: Read['accu']): Read {
     return new Read({ ...this.tag, ...tag }, accu ?? this.accu)
   }
-  _withAll<C extends keyof Tag>(
+  _withAll<C extends keyof Tag, T>(
     cat: C,
-    accu?: Read['accu']
-  ): Record<AllTag[C], Read> {
+    transform: (r: Read, k: AllTag[C]) => T
+  ): Record<AllTag[C], T> {
     return new Proxy(this, {
       get(t, p: AllTag[C]) {
-        return t.with(cat, p, accu)
+        return transform(t.with(cat, p), p)
       },
     }) as any
   }
