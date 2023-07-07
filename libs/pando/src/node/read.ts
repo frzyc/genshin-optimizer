@@ -17,7 +17,7 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
 
   /** Callback for when a tag `<cat>:<val>` is generated */
   register<C extends keyof T>(_cat: C, _val: T[C]) {}
-  /** A constructor that creates an instance of `Subclass` */
+  /** Return an instance of `Subclass` with given `tag` and `ex` */
   ctor(_tag: T, _ex: Read['ex']): Subclass {
     throw new Error('Must be implemented by subclass')
   }
@@ -30,10 +30,15 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
     return this.ctor({ ...this.tag, ...tag }, this.ex)
   }
+  withAll<C extends keyof T>(cat: C): Record<T[C] & string, Subclass>
   withAll<C extends keyof T, V>(
     cat: C,
     transform: (r: Subclass, k: T[C] & string) => V
-  ): Record<T[C] & string, V> {
+  ): Record<T[C] & string, V>
+  withAll<C extends keyof T, V>(
+    cat: C,
+    transform: (r: Subclass, k: T[C] & string) => V | Subclass = (x) => x
+  ): Record<T[C] & string, V | Subclass> {
     return new Proxy(this, {
       get(t, p: T[C] & string) {
         return transform(t.with(cat, p), p)

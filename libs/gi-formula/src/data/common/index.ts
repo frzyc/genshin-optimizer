@@ -12,12 +12,8 @@ const data: TagMapNodeEntries = [
   ...prep,
   ...reaction,
 
-  reader
-    .withTag({ src: 'iso', et: 'self' })
-    .reread(reader.withTag({ src: 'custom' })),
-  reader
-    .withTag({ src: 'agg', et: 'self' })
-    .reread(reader.withTag({ src: 'custom' })),
+  reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src('custom')),
+  reader.withTag({ src: 'agg', et: 'self' }).reread(reader.src('custom')),
 
   // Final <= Premod <= Base
   reader

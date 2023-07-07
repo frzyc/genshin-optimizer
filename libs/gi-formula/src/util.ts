@@ -4,7 +4,7 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
-import { cmpEq } from '@genshin-optimizer/pando'
+import { cmpEq, cmpGE } from '@genshin-optimizer/pando'
 import type { Member, Preset, Stat, TagMapNodeEntries } from './data/util'
 import {
   allConditionals,
@@ -31,10 +31,8 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, auto, skill, burst, ascension, constellation } = selfBuff.char
 
   return [
-    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.key })),
-    reader
-      .withTag({ src: 'iso', et: 'self' })
-      .reread(reader.withTag({ src: data.key })),
+    reader.src('agg').reread(reader.src(data.key)),
+    reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src(data.key)),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -53,7 +51,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
   const { lvl, ascension, refinement } = selfBuff.weapon
 
   return [
-    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: data.key })),
+    reader.src('agg').reread(reader.src(data.key)),
 
     lvl.add(data.level),
     ascension.add(data.ascension),
@@ -85,7 +83,7 @@ export function artifactsData(
   }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: 'art' })),
+    reader.src('agg').reread(reader.src('art')),
 
     // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
     reader.withTag({ src: 'art', qt: 'premod' }).reread(reader.src('dyn')),
@@ -110,40 +108,33 @@ export function conditionalData(
 }
 
 export function teamData(
-  active: readonly Member[],
+  activeMembers: readonly Member[],
   members: readonly Member[]
 ): TagMapNodeEntries {
-  const teamEntry = reader.withTag({ et: 'team' })
-  const stack = {
-    in: reader.withTag({ qt: 'stackIn' }),
-    int: reader.withTag({ qt: 'stackInt' }),
-    out: reader.withTag({ qt: 'stackOut' }),
-  }
+  const teamEntry = reader.with('et', 'team')
+  const { active, self, teamBuff } = reader.src('agg').withAll('et')
+  const { stackIn, stackInt, stackOut } = reader.withAll('qt')
   return [
     // Active Member Buff
-    ...active.flatMap((dst) => {
-      const entry = reader.withTag({ member: dst, src: 'agg', et: 'self' })
+    activeMembers.flatMap((dst) => {
+      const entry = self.with('member', dst)
       return members.map((src) =>
-        entry.reread(
-          reader.withTag({ dst, member: src, src: 'agg', et: 'active' })
-        )
+        entry.reread(active.withTag({ dst, member: src }))
       )
     }),
     // Team Buff
-    ...members.flatMap((dst) => {
-      const entry = reader.withTag({ member: dst, src: 'agg', et: 'self' })
+    members.flatMap((dst) => {
+      const entry = self.with('member', dst)
       return members.map((src) =>
-        entry.reread(
-          reader.withTag({ dst, member: src, src: 'agg', et: 'teamBuff' })
-        )
+        entry.reread(teamBuff.withTag({ dst, member: src }))
       )
     }),
     // Stacking
-    ...members.map((member, i) =>
-      stack.int.add(cmpEq(stack.in.withTag({ member }).sum, 1, i + 1))
+    members.map((member, i) =>
+      stackInt.add(cmpGE(stackIn.withTag({ member }).max, 1, i + 1))
     ),
-    ...members.map((member, i) =>
-      stack.out.withTag({ member }).add(cmpEq(stack.int.max, i + 1, 1))
+    members.map((member, i) =>
+      stackOut.withTag({ member }).add(cmpEq(stackInt.max, i + 1, 1))
     ),
     // Total Team Stat
     //
@@ -154,8 +145,8 @@ export function teamData(
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    ...members.map((member) =>
+    members.map((member) =>
       teamEntry.add(reader.withTag({ member, et: 'self' }).sum)
     ),
-  ]
+  ].flat()
 }

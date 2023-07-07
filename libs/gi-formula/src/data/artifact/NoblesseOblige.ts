@@ -18,6 +18,6 @@ export default registerArt(
   name,
   selfBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
 
-  canNO4.in.add(set4.ifOn(cmpGE(count, 4, 1))),
-  teamBuff.premod.atk_.add(cmpEq(canNO4.out, 1, percent(0.2)))
+  canNO4.add(set4.ifOn(cmpGE(count, 4, 1))),
+  teamBuff.premod.atk_.add(canNO4.apply(percent(0.2)))
 )

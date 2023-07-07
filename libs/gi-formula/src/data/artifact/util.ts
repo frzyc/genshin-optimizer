@@ -31,6 +31,6 @@ export function registerArt(
   )
 }
 
-export function artCount(name: ArtifactSetKey): NumNode {
-  return self.common.count.src(name)
+export function artCount(src: ArtifactSetKey): NumNode {
+  return self.common.count.src(src)
 }
