@@ -1,6 +1,6 @@
 import { compileTagMapValues } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
-import { data, keys, values } from './data'
+import { entries, keys, values } from './data'
 import type { Member, Source, TagMapNodeEntries } from './data/util'
 import { allStacks, srcs, tag } from './data/util'
 import { teamData, withMember } from './util'
@@ -78,10 +78,10 @@ describe('calculator', () => {
       ).toEqual([0, 0, 0])
     })
     test('name uniqueness', () => {
-      const entries = Object.fromEntries(
+      const namesBySrc = Object.fromEntries(
         srcs.map((src) => [src, new Set()])
       ) as Record<Source, Set<string>>
-      for (const { tag, value } of data)
+      for (const { tag, value } of entries)
         if (tag.qt === 'formula' && tag.q === 'listing') {
           // `name` has a specific structure; it must be the top `tag` in the entry
           const src = tag.src!,
@@ -91,9 +91,9 @@ describe('calculator', () => {
           expect(name).toBeTruthy()
 
           // Listing entry
-          if (entries[src].has(name))
+          if (namesBySrc[src].has(name))
             throw new Error(`Duplicated formula names ${src}:${name}`)
-          entries[src].add(name)
+          namesBySrc[src].add(name)
         }
     })
   })

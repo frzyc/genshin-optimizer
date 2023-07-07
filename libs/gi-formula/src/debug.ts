@@ -1,8 +1,8 @@
 import type {
   AnyNode,
   ReRead,
-  TagMapSubsetCache,
   Read,
+  TagMapSubsetCache,
 } from '@genshin-optimizer/pando'
 import {
   TagMapExactValues,
@@ -11,7 +11,7 @@ import {
 } from '@genshin-optimizer/pando'
 import type { Calculator } from './calculator'
 import { keys } from './data'
-import type { Tag } from './data/util'
+import type { Tag, TagMapNodeEntry } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 
@@ -87,4 +87,69 @@ export function listDependencies(
   }
   internal(calc.nodes.cache(calc.keys).with(tag))
   return result
+}
+
+export function printEntry({ tag, value }: TagMapNodeEntry): string {
+  function printTag(tag: Tag, ex?: string): string {
+    const {
+      name,
+      preset,
+      member,
+      dst,
+      et,
+      src,
+      region,
+      ele,
+      q,
+      qt,
+      move,
+      trans,
+      amp,
+      cata,
+      ...remaining
+    } = tag
+
+    if (Object.keys(remaining).length) console.error(remaining)
+
+    let result = '{ '
+    if (name) result += '#' + name + ' '
+    if (preset) result += preset + ' '
+    if (member) result += member + ' '
+    if (dst) result += `(${dst}) `
+    if (src) result += src + ' '
+    if (et) result += et + ' '
+    if (qt && q) result += `${qt}.${q} `
+    else if (qt) result += `${qt}. `
+    else if (q) result += `.${q} `
+    if (ex) result += `[${ex}] `
+
+    result += '| '
+
+    if (region) result += region + ' '
+    if (move) result += move + ' '
+    if (ele) result += ele + ' '
+    if (trans) result += trans + ' '
+    if (amp) result += amp + ' '
+    if (cata) result += cata + ' '
+    return result + '}'
+  }
+  function printNode({ op, ex, tag, br, x }: AnyNode): string {
+    if (op === 'const') return `${ex}`
+    if (op === 'read') return printTag(tag, ex)
+    if (op === 'subscript') ex = undefined
+    const args: string[] = []
+    if (ex) args.push(JSON.stringify(ex))
+    if (tag) args.push(printTag(tag))
+    args.push(...br.map(printNode), ...x.map(printNode))
+    return `${op}(` + args.join(', ') + ')'
+  }
+
+  function clean(str: string): string {
+    str = str.replaceAll(/\| }/g, '}')
+    str = str.replaceAll(/{ \|/g, '{')
+    return str
+  }
+  if (value.op === 'reread')
+    return clean(printTag(tag) + ' <-- ' + printTag(value.tag))
+  return clean(printTag(tag) + ' <= ' + printNode(value))
 }

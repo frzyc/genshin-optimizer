@@ -1,8 +1,8 @@
 import type { NumNode } from '@genshin-optimizer/pando'
 import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
-import type { Tag } from './read'
-import { Read, reader, tag } from './read'
+import type { Read, Tag } from './read'
+import { reader, tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })

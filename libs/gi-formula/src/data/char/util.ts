@@ -129,7 +129,7 @@ export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
 ): TagMapNodeEntries {
-  const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
+  const specials = new Set(lvlCurves.map(({ key }) => key))
   specials.delete('atk')
   specials.delete('def')
   specials.delete('hp')

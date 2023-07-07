@@ -9,7 +9,7 @@ import type { TagMapNodeEntries } from './util'
 import { fixedTags, queryTypes, usedNames, usedQ } from './util'
 import weapon from './weapon'
 
-const data: TagMapNodeEntries = [
+const entries: TagMapNodeEntries = [
   ...common,
   ...artifact,
   ...character,
@@ -25,6 +25,6 @@ const keys = compileTagMapKeys([
   })),
   { category: 'name', values: usedNames },
 ]) // TODO: Find optimum tag order
-const values = compileTagMapValues(keys, data)
+const values = compileTagMapValues(keys, entries)
 
-export { data, keys, values }
+export { entries, keys, values }
