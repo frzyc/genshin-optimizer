@@ -58,7 +58,7 @@ export function priorityTable(
  * include contributions from character and custom values.
  */
 
-type Desc = { src: Source | undefined; accu: Read['accu'] }
+type Desc = { src: Source | undefined; accu: Read['ex'] }
 const aggStr: Desc = { src: 'agg', accu: undefined }
 const agg: Desc = { src: 'agg', accu: 'sum' }
 const iso: Desc = { src: 'iso', accu: undefined }

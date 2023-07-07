@@ -1,8 +1,6 @@
 import type { Tag, TagMapEntry } from '../tag'
 import type { Read } from './type'
 
-type Accu = Read['ex'] | 'unique'
-
 export class TypedRead<T extends Tag, Subclass> implements Read {
   op = 'read' as const
   x = []
@@ -10,9 +8,9 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   tag: T
   ex: Read['ex']
 
-  constructor(tag: T, accu: Accu) {
+  constructor(tag: T, ex: Read['ex']) {
     this.tag = tag
-    this.ex = accu === 'unique' ? undefined : accu
+    this.ex = ex
   }
 
   // Subclass interfaces
@@ -20,17 +18,17 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   /** Callback for when a tag `<cat>:<val>` is generated */
   register<C extends keyof T>(_cat: C, _val: T[C]) {}
   /** A constructor that creates an instance of `Subclass` */
-  ctor(_tag: T, _accu: Accu): Subclass {
+  ctor(_tag: T, _ex: Read['ex']): Subclass {
     throw new Error('Must be implemented by subclass')
   }
 
   with<C extends keyof T>(cat: C, val: T[C]): Subclass {
     this.register(cat, val)
-    return this.ctor({ ...this.tag, [cat]: val }, this.accu)
+    return this.ctor({ ...this.tag, [cat]: val }, this.ex)
   }
   withTag(tag: T): Subclass {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
-    return this.ctor({ ...this.tag, ...tag }, this.accu)
+    return this.ctor({ ...this.tag, ...tag }, this.ex)
   }
   withAll<C extends keyof T, V>(
     cat: C,
@@ -50,7 +48,7 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   }
 
   // Accumulator
-  get accu(): Accu {
+  get accu() {
     return this.ex ?? 'unique'
   }
   get prod() {
@@ -66,6 +64,6 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
     return this.ctor(this.tag, 'min')
   }
   get unique() {
-    return this.ctor(this.tag, 'unique')
+    return this.ctor(this.tag, undefined)
   }
 }

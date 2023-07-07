@@ -47,8 +47,8 @@ export class Read extends TypedRead<Tag, Read> {
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
   }
-  override ctor(tag: Tag, accu: Read['accu']): Read {
-    return new Read(tag, accu)
+  override ctor(tag: Tag, ex: Read['ex']): Read {
+    return new Read(tag, ex)
   }
 
   name(name: string): Read {
