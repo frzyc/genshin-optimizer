@@ -5,7 +5,7 @@ import type {
 } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import { cmpEq } from '@genshin-optimizer/pando'
-import type { TagMapNodeEntries, Member, Preset, Stat } from './data/util'
+import type { Member, Preset, Stat, TagMapNodeEntries } from './data/util'
 import {
   allConditionals,
   convert,
@@ -88,15 +88,13 @@ export function artifactsData(
     reader.withTag({ src: 'agg' }).reread(reader.withTag({ src: 'art' })),
 
     // Add `src:dyn` between the stat and the buff so that we can `detach` them easily
-    reader
-      .withTag({ src: 'art', qt: 'premod' })
-      .reread(reader.with('src', 'dyn')),
+    reader.withTag({ src: 'art', qt: 'premod' }).reread(reader.src('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      premod[k as Stat].with('src', 'dyn').add(v)
+      premod[k as Stat].src('dyn').add(v)
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.with('src', k as ArtifactSetKey).add(v)
+      count.src(k as ArtifactSetKey).add(v)
     ),
   ]
 }

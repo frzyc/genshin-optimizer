@@ -1,6 +1,6 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import type { NumNode } from '@genshin-optimizer/pando'
-import type { TagMapNodeEntry, TagMapNodeEntries } from '../util'
+import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { self, tag } from '../util'
 
 export function registerArt(
@@ -32,5 +32,5 @@ export function registerArt(
 }
 
 export function artCount(name: ArtifactSetKey): NumNode {
-  return self.common.count.with('src', name)
+  return self.common.count.src(name)
 }

@@ -1,54 +1,36 @@
-import type { TagMapEntry } from '../tag'
-import type { Tag } from '../tag/type'
+import type { Tag, TagMapEntry } from '../tag'
 import type { Read } from './type'
 
-type Accu = Read['ex']
-type UsedTags<T extends Tag> = { [k in keyof T]?: Set<NonNullable<T[k]>> }
+type Accu = Read['ex'] | 'unique'
 
 export class TypedRead<T extends Tag, Subclass> implements Read {
   op = 'read' as const
   x = []
   br = []
   tag: T
-  ex: Accu
+  ex: Read['ex']
 
-  // Excluded from `JSON.stringify`
-  ctor: (tag: T, accu: Accu, tracker: UsedTags<T>) => Subclass
-  tracker!: UsedTags<T>
-
-  constructor(
-    ctor: (tag: T, accu: Accu, tracker: UsedTags<T>) => Subclass,
-    tag: T,
-    accu: Accu,
-    tracker: UsedTags<T>
-  ) {
+  constructor(tag: T, accu: Accu) {
     this.tag = tag
-    this.ex = accu
-
-    // Excluded from `JSON.stringify`
-    this.ctor = ctor
-    Object.defineProperty(this, 'tracker', {
-      get() {
-        return tracker
-      },
-    })
+    this.ex = accu === 'unique' ? undefined : accu
   }
 
-  get accu(): Read['ex'] {
-    return this.ex
+  // Subclass interfaces
+
+  /** Callback for when a tag `<cat>:<val>` is generated */
+  register<C extends keyof T>(_cat: C, _val: T[C]) {}
+  /** A constructor that creates an instance of `Subclass` */
+  ctor(_tag: T, _accu: Accu): Subclass {
+    throw new Error('Must be implemented by subclass')
   }
 
-  with<C extends keyof T>(cat: C, val: T[C], accu?: Accu): Subclass {
+  with<C extends keyof T>(cat: C, val: T[C]): Subclass {
     this.register(cat, val)
-    return this.ctor(
-      { ...this.tag, [cat]: val },
-      accu ?? this.accu,
-      this.tracker
-    )
+    return this.ctor({ ...this.tag, [cat]: val }, this.accu)
   }
-  withTag(tag: T, accu?: Accu): Subclass {
+  withTag(tag: T): Subclass {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
-    return this.ctor({ ...this.tag, ...tag }, accu ?? this.accu, this.tracker)
+    return this.ctor({ ...this.tag, ...tag }, this.accu)
   }
   withAll<C extends keyof T, V>(
     cat: C,
@@ -60,13 +42,6 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
       },
     }) as any
   }
-
-  register<C extends keyof T>(cat: C, val: T[C]) {
-    if (val !== null && val !== undefined) this.tracker![cat]?.add(val)
-  }
-  usedTags<C extends keyof T>(cat: C) {
-    return this.tracker[cat] ?? new Set()
-  }
   toEntry<V>(value: V): TagMapEntry<V, T> {
     return {
       tag: this.tag,
@@ -75,19 +50,22 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
   }
 
   // Accumulator
+  get accu(): Accu {
+    return this.ex ?? 'unique'
+  }
   get prod() {
-    return this.ctor(this.tag, 'prod', this.tracker)
+    return this.ctor(this.tag, 'prod')
   }
   get sum() {
-    return this.ctor(this.tag, 'sum', this.tracker)
+    return this.ctor(this.tag, 'sum')
   }
   get max() {
-    return this.ctor(this.tag, 'max', this.tracker)
+    return this.ctor(this.tag, 'max')
   }
   get min() {
-    return this.ctor(this.tag, 'min', this.tracker)
+    return this.ctor(this.tag, 'min')
   }
-  get noAccu() {
-    return this.ctor(this.tag, undefined, this.tracker)
+  get unique() {
+    return this.ctor(this.tag, 'unique')
   }
 }

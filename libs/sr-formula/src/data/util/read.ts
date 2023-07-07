@@ -14,7 +14,7 @@ import {
   reread,
 } from '@genshin-optimizer/pando'
 import { damageType } from '@genshin-optimizer/sr-consts'
-import { type Source, entryTypes, members, moves, srcs } from './listing'
+import { entryTypes, members, moves, srcs, type Source } from './listing'
 
 export const fixedTags = {
   member: members,
@@ -29,13 +29,14 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-const tracker = {
-  name: new Set<string>(),
-  q: new Set('_'),
-}
 export class Read extends TypedRead<Tag, Read> {
-  constructor(tag: Tag, accu: Read['accu']) {
-    super((t, a) => new Read(t, a), tag, accu, tracker)
+  override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
+    if (val == null) return // null | undefined
+    if (cat === 'name') usedNames.add(val)
+    else if (cat === 'q') usedQ.add(val)
+  }
+  override ctor(tag: Tag, accu: Read['accu']): Read {
+    return new Read(tag, accu)
   }
 
   name(name: string): Read {
@@ -108,3 +109,5 @@ export function tagVal(cat: keyof Tag): TagValRead {
 }
 
 export const reader = new Read({}, undefined)
+export const usedNames = new Set<string>()
+export const usedQ = new Set('_')

@@ -147,10 +147,8 @@ export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
 // Custom tags
 export const allStatics = (src: Source) => allCustoms(src, 'misc', (x) => x)
-export const allConditionals = (
-  src: Source,
-  accu: Read['accu'] | 'none' = 'sum'
-) => allCustoms(src, 'cond', (r) => (accu !== 'none' ? r[accu] : r))
+export const allConditionals = (src: Source, accu: Read['accu'] = 'sum') =>
+  allCustoms(src, 'cond', (r) => r[accu])
 export const allStacks = (src: Source) =>
   allCustoms(src, 'stackOut', (out) => ({
     in: out.with('qt', 'stackIn'),
