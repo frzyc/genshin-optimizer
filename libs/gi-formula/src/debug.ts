@@ -1,7 +1,5 @@
 import type {
   AnyNode,
-  AnyOP,
-  CalcResult,
   ReRead,
   Read,
   TagMapSubsetCache,
@@ -10,7 +8,6 @@ import {
   TagMapExactValues,
   TagMapKeys,
   traverse,
-  Calculator as BaseCalc,
 } from '@genshin-optimizer/pando'
 import type { Calculator } from './calculator'
 import { keys } from './data'
@@ -95,7 +92,8 @@ export function listDependencies(
 
 export function printEntry({ tag, value }: TagMapNodeEntry): string {
   function printNode(node: AnyNode): string {
-    let { op, ex, tag, br, x } = node
+    const { op, tag, br, x } = node
+    let { ex } = node
     if (op === 'const') return JSON.stringify(ex)
     if (op === 'read') return `${node}`
     if (op === 'subscript') ex = undefined
