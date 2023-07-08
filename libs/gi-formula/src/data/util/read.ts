@@ -65,6 +65,66 @@ export class Read extends TypedRead<Tag, Read> {
     return super.toEntry(reread(r.tag))
   }
 
+  override toString(): string {
+    const {
+      tag: {
+        name,
+        preset,
+        member,
+        dst,
+        et,
+        src,
+        region,
+        ele,
+        q,
+        qt,
+        move,
+        trans,
+        amp,
+        cata,
+        ...remaining
+      },
+      ex,
+    } = this
+
+    if (Object.keys(remaining).length) console.error(remaining)
+
+    let result = '{ ',
+      includedRequired = false,
+      includedBar = false
+    function required(str: string | undefined | null) {
+      if (!str) return
+      result += str + ' '
+      includedRequired = true
+    }
+    function optional(str: string | undefined | null) {
+      if (!str) return
+      if (includedRequired && !includedBar) {
+        includedBar = true
+        result += '| '
+      }
+      result += str + ' '
+    }
+    required(name && `#${name}`)
+    required(preset)
+    required(member)
+    required(dst && `(${dst})`)
+    required(src)
+    required(et)
+    if (qt && q) required(`${qt}.${q}`)
+    else if (qt) required(`${qt}.`)
+    else if (q) required(`.${q}`)
+    required(ex && `[${ex}]`)
+
+    optional(region)
+    optional(move)
+    optional(ele)
+    optional(trans)
+    optional(amp)
+    optional(cata)
+    return result + '}'
+  }
+
   // Optional Modifiers
 
   // Move
