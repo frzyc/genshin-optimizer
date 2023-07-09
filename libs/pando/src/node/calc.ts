@@ -1,4 +1,4 @@
-import { assertUnreachable } from '@genshin-optimizer/util'
+import { assertUnreachable } from '../util'
 import type {
   RawTagMapKeys,
   RawTagMapValues,

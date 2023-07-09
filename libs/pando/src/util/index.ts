@@ -1,5 +1,9 @@
 import type { Tag } from '../tag'
 
+export function assertUnreachable(value: never): never {
+  throw new Error(`Should not reach this with value ${value}`)
+}
+
 export const tagString = (record: Tag): string =>
   `{ ${Object.entries(record)
     .map(([k, v]) => `${k}:${v}`)
