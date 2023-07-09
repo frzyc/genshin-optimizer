@@ -95,11 +95,11 @@ export class Calculator<M = any> {
 
     function meta(
       n: AnyNode,
-      val: any,
-      x: (CalcResult<any, M> | undefined)[],
-      br: CalcResult<any, M>[],
+      val: number | string,
+      x: (CalcResult<number | string, M> | undefined)[],
+      br: CalcResult<number | string, M>[],
       tag?: Tag
-    ): CalcResult<any, M> {
+    ): CalcResult<number | string, M> {
       return { val, meta: self.computeMeta(n, val, x, br, tag) }
     }
     function internal(n: StrNode): CalcResult<string, M>
@@ -130,7 +130,7 @@ export class Calculator<M = any> {
         }
         case 'subscript': {
           const index = internal(n.br[0]!)
-          return meta(n, n.ex[index.val], [], [index])
+          return meta(n, n.ex[index.val]!, [], [index])
         }
         case 'vtag':
           return meta(n, cache.tag[n.ex] ?? '', [], [])
@@ -164,11 +164,13 @@ export class Calculator<M = any> {
                   throw new Error(
                     errorMsg +
                       ': ' +
-                      pre.map((pre) => JSON.stringify(pre.entryTag!)).join(', ')
+                      pre
+                        .map((pre) => JSON.stringify(pre.entryTag![0]))
+                        .join(', ')
                   )
                 } else console.error(errorMsg)
               }
-              return meta(n, pre[0]?.val ?? undefined, pre, [], newCache.tag)
+              return meta(n, pre[0]?.val ?? undefined!, pre, [], newCache.tag)
             default: {
               if (computed[ex]) return computed[ex]!
               const val = arithmetic[ex](getV(pre) as number[], undefined)
@@ -193,9 +195,9 @@ export class Calculator<M = any> {
   }
   computeMeta(
     _n: AnyNode,
-    _value: any,
-    _x: (CalcResult<any, M> | undefined)[],
-    _br: CalcResult<any, M>[],
+    _value: number | string,
+    _x: (CalcResult<number | string, M> | undefined)[],
+    _br: CalcResult<number | string, M>[],
     _tag: Tag | undefined
   ): M {
     return undefined as any

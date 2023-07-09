@@ -20,9 +20,9 @@ export class Calculator extends Base<CalcMeta> {
   }
   override computeMeta(
     { op, ex }: AnyNode,
-    val: any,
-    x: (CalcResult<any, CalcMeta> | undefined)[],
-    _br: CalcResult<any, CalcMeta>[],
+    val: number | string,
+    x: (CalcResult<number | string, CalcMeta> | undefined)[],
+    _br: CalcResult<number | string, CalcMeta>[],
     tag: Tag | undefined
   ): CalcMeta {
     const preConds = [

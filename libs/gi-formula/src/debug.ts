@@ -108,8 +108,9 @@ export function printEntry({ tag, value }: TagMapNodeEntry): string {
 }
 
 export type DebugMeta = {
+  valText: string
   text: string
-  dependencies: DebugMeta[]
+  deps: DebugMeta[]
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   override computeCustom(val: any[], op: string): any {
@@ -117,64 +118,113 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     return super.computeCustom(val, op)
   }
   override computeMeta(
-    { op, ex, tag: nTag }: AnyNode,
-    val: any,
-    x: (CalcResult<any, DebugMeta> | undefined)[],
-    br: CalcResult<any, DebugMeta>[],
+    n: AnyNode,
+    val: number | string,
+    x: (CalcResult<number | string, DebugMeta> | undefined)[],
+    br: CalcResult<number | string, DebugMeta>[],
     tag: Tag | undefined
   ): DebugMeta {
-    if (op === 'const') return { text: JSON.stringify(val), dependencies: [] }
-    if (op === 'read') {
-      const args = x as CalcResult<any, DebugMeta>[]
-      const extraTag = Object.fromEntries(
-        Object.entries(tag!).filter(([key]) => !nTag![key])
-      )
-      return {
-        text: tagStr(nTag!, ex) + `(+ ${tagStr(extraTag!)})`,
-        dependencies: [
-          {
-            text: 'expand ' + tagStr(tag!, ex),
-            dependencies: args.map(({ val, meta, entryTag }) => {
-              return {
-                text: `${entryTag!
-                  .map((tag) => tagStr(tag))
-                  .join(' <- ')} <= (${val}) ${meta.text}`,
-                dependencies: meta.dependencies,
-              }
-            }),
-          },
-        ],
+    function valStr(val: number | string): string {
+      if (typeof val !== 'number') return `"${val}"`
+      if (Math.round(val) === val) return `${val}`
+      return val.toFixed(2)
+    }
+    const valText = valStr(val)
+
+    const { op, ex, tag: nTag } = n
+    switch (op) {
+      case 'const':
+        return { valText, text: valText, deps: [] }
+      case 'read':
+        const args = x as CalcResult<number | string, DebugMeta>[]
+        return {
+          valText,
+          text: tagStr(nTag!, ex),
+          deps: [
+            {
+              valText,
+              text: `expand ${tagStr(nTag!, ex)} (${tagStr(tag!)})`,
+              deps: args.map(({ meta, entryTag }) => ({
+                ...meta,
+                text: `${entryTag!.map((tag) => tagStr(tag)).join(' <- ')} <= ${
+                  meta.text
+                }`,
+              })),
+            },
+          ],
+        }
+      case 'match':
+      case 'thres':
+      case 'lookup':
+        const { text, deps } = x.find((x) => x)!.meta
+        return {
+          valText,
+          text: `${op}(${br.map((br) => br.meta.text).join(', ')} => ${text})`,
+          deps: [...br.map((br) => br.meta.deps), deps].flat(),
+        }
+      case 'subscript': {
+        const [index] = br
+        const chosen = valStr(ex[index.val as number]!)
+        return {
+          valText,
+          text: `subscript(${index.meta.text} => ${chosen})`,
+          deps: index.meta.deps,
+        }
       }
-    }
-    if (op === 'subscript') ex = undefined
+      case 'tag':
+        return {
+          ...x[0]!.meta,
+          text: `tag(${tagStr(nTag!)}, ${x[0]!.meta.text})`,
+        }
+      case 'dtag': {
+        const brText = br.map((br, i) => `${ex[i]} => ${br.meta.text}`)
+        return {
+          valText: x[0]!.meta.text,
+          text: `dtag(${brText.join(', ')}; ${x[0]!.meta.text})`,
+          deps: [...br.map((br) => br.meta.deps), x[0]!.meta.deps].flat(),
+        }
+      }
+      default: {
+        const dependencies: DebugMeta[] = []
+        function print(
+          x: CalcResult<number | string, DebugMeta> | undefined
+        ): string {
+          if (!x) return ''
+          dependencies.push(...x.meta.deps)
+          return x.meta.text
+        }
 
-    const dependencies: DebugMeta[] = []
-    function print(x: CalcResult<any, DebugMeta> | undefined): string {
-      if (!x) return ''
-      dependencies.push(...x.meta.dependencies)
-      return x.meta.text
-    }
+        const specialArgs: string[] = []
+        if (ex) specialArgs.push(JSON.stringify(ex))
+        const brArgs = br.map(print)
+        const xArgs = x.map(print)
+        const args = [specialArgs, brArgs, xArgs].map((x) => x.join(', '))
 
-    const specialArgs: string[] = []
-    if (ex) specialArgs.push(JSON.stringify(ex))
-    if (tag) specialArgs.push(tagStr(tag))
-    const brArgs = br.map(print)
-    const xArgs = x.map(print)
-    const args = [specialArgs, brArgs, xArgs].map((x) => x.join(', '))
-
-    return {
-      text: `${op}(` + args.filter((x) => x.length).join('; ') + ')',
-      dependencies,
+        return {
+          valText,
+          text: `${op}(` + args.filter((x) => x.length).join('; ') + ')',
+          deps: dependencies,
+        }
+      }
     }
   }
 
   debug(node: AnyNode): string[] {
     const { meta } = this.compute(node)
     const result: string[] = []
+    const found = new Set<DebugMeta>()
 
     function print(meta: DebugMeta, level: number) {
-      result.push(Array(2 * level + 1).join(' ') + meta.text)
-      meta.dependencies.forEach((dep) => print(dep, level + 1))
+      const indent = Array(2 * level + 1).join(' ')
+      const line = `${meta.valText} ${meta.text}`
+
+      if (found.has(meta)) {
+        result.push(indent + line + ' (Dup)')
+      } else {
+        found.add(meta)
+        result.push(indent + line)
+        meta.deps.forEach((dep) => print(dep, level + 1))
+      }
     }
     print(meta, 0)
     return result

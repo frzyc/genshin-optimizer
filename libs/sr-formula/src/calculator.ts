@@ -15,9 +15,9 @@ type Output = {
 export class Calculator extends Base<Output> {
   override computeMeta(
     { op, ex }: AnyNode,
-    val: any,
-    x: (CalcResult<any, Output> | undefined)[],
-    _br: CalcResult<any, Output>[],
+    val: number | string,
+    x: (CalcResult<number | string, Output> | undefined)[],
+    _br: CalcResult<number | string, Output>[],
     tag: Tag | undefined
   ): Output {
     function constOverride(): Output {

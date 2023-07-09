@@ -230,7 +230,6 @@ export function tagStr(tag: Tag, ex?: any): string {
   if (qt && q) required(`${qt}.${q}`)
   else if (qt) required(`${qt}.`)
   else if (q) required(`.${q}`)
-  required(ex && `[${ex}]`)
 
   optional(region)
   optional(move)
@@ -238,6 +237,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(trans)
   optional(amp)
   optional(cata)
+  required(ex && `[${ex}]`)
   return result + '}'
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
