@@ -20,7 +20,7 @@ import {
   team,
   userBuff,
 } from './data/util'
-import {} from './debug'
+import { DebugCalculator } from './debug'
 import rawData from './example.test.json'
 import {
   artifactsData,
@@ -171,7 +171,7 @@ describe('example', () => {
     expect(cata).toEqual('spread')
   })
   test('list conditionals affecting a given node', () => {
-    const result = calc.compute(member0.common.cappedCritRate_.burgeon)
+    const result = calc.compute(member0.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
     expect(conds.length).toEqual(2)
@@ -235,5 +235,22 @@ describe('example', () => {
 
     // Step 5: Calculate the value
     compiled([{ atk: 10 }, { atk_: 0.5 }])
+  })
+
+  test.skip('debug formula', () => {
+    // Pick formula
+    const normal0 = calc
+      .listFormulas({ member: 'member1' })
+      .find((x) => x.name === 'normal_0')!
+
+    // Use `DebugCalculator` instead of `Calculator`, same constructor
+    const debugCalc = new DebugCalculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    )
+
+    // Print calculation steps
+    console.log(debugCalc.debug(reader.withTag(normal0)))
   })
 })

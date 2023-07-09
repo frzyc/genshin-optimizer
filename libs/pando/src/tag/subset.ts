@@ -1,4 +1,5 @@
 import type { RawTagMapValues } from './compilation'
+import { debugTag } from './debug'
 import type { TagID, TagMapKeys } from './keys'
 import type { Tag } from './type'
 
@@ -51,11 +52,16 @@ export class TagMapSubsetValues<V> {
 class Internal<V> {
   children: Map<number, Map<number, Internal<V>>>
   values: V[]
+  tags!: Tag[]
 
   constructor(compiled: RawTagMapValues<V>) {
     const { '': values, ...remaining } = compiled
     this.children = new Map()
     this.values = values ?? []
+    if (process.env['NODE_ENV'] !== 'production') {
+      this.tags = remaining[debugTag] ?? []
+      delete remaining[debugTag]
+    }
 
     for (const [k, v] of Object.entries(remaining)) {
       const map = new Map<number, Internal<V>>()
@@ -95,6 +101,12 @@ export class TagMapSubsetCache<V> {
 
   subset(): V[] {
     return this.internal.entries.flatMap((x) => x.values)
+  }
+  /** List the tags associated with `subset` results. Works only in debug and test modes */
+  tags(): Tag[] {
+    if (process.env['NODE_ENV'] === 'production')
+      throw new Error('Tags are not tracked in production')
+    return this.internal.entries.flatMap((x) => x.tags)
   }
   with(tag: Tag): TagMapSubsetCache<V> {
     const { tagLen } = this.keys,

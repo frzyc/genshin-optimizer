@@ -1,3 +1,4 @@
+import { debugTag } from './debug'
 import { TagMapKeys } from './keys'
 import type { Tag, TagCategory, TagValue } from './type'
 
@@ -20,7 +21,7 @@ export type RawTagMapKeys = {
  */
 export type RawTagMapValues<V> = {
   [key in string]?: RawTagMapValues<V>
-} & { ''?: V[] }
+} & { ''?: V[]; [debugTag]?: Tag[] }
 
 /** Uncompiled entry for `TagMap<V>` */
 export type TagMapEntry<V, T = Tag> = { tag: T; value: V }
@@ -81,6 +82,10 @@ export function compileTagMapValues<V>(
     }
     if (!current['']) current[''] = []
     current[''].push(value)
+    if (process.env['NODE_ENV'] !== 'production') {
+      if (!current[debugTag]) current[debugTag] = []
+      current[debugTag].push(tag)
+    }
   }
   return result
 }

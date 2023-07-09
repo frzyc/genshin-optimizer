@@ -1,5 +1,6 @@
-import type { AnyOP, CalcResult } from '@genshin-optimizer/pando'
-import { calculation, Calculator as Base } from '@genshin-optimizer/pando'
+import type { AnyNode, CalcResult } from '@genshin-optimizer/pando'
+import { Calculator as Base, calculation } from '@genshin-optimizer/pando'
+import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Tag } from './data/util'
 import { self } from './data/util'
 
@@ -14,21 +15,15 @@ export type CalcMeta = {
 
 export class Calculator extends Base<CalcMeta> {
   override computeCustom(val: any[], op: string): any {
-    if (op == 'res') {
-      const [preRes] = val as [number]
-      if (preRes >= 0.75) return 1 / (1 + 4 * preRes)
-      if (preRes >= 0) return 1 - preRes
-      return 1 - 0.5 * preRes
-    }
+    if (op == 'res') return res(val[0])
     return super.computeCustom(val, op)
   }
   override computeMeta(
-    op: Exclude<AnyOP, 'read'>,
-    tag: Tag | undefined,
+    { op, ex }: AnyNode,
     val: any,
     x: (CalcResult<any, CalcMeta> | undefined)[],
     _br: CalcResult<any, CalcMeta>[],
-    ex: any
+    tag: Tag | undefined
   ): CalcMeta {
     const preConds = [
       tag?.qt === 'cond' ? [tag] : [],
@@ -40,6 +35,10 @@ export class Calculator extends Base<CalcMeta> {
       return { tag, op: 'const', ops: [], conds }
     }
 
+    if (op === 'read' && ex !== undefined) {
+      op = ex
+      ex = undefined
+    }
     switch (op) {
       case 'sum':
       case 'prod':
@@ -62,6 +61,7 @@ export class Calculator extends Base<CalcMeta> {
       }
 
       case 'const':
+      case 'vtag':
       case 'subscript':
         return constOverride()
       case 'match':
@@ -69,6 +69,7 @@ export class Calculator extends Base<CalcMeta> {
       case 'lookup':
         return { ...x.find((x) => x)!.meta, conds }
       case 'tag':
+      case 'read':
       case 'dtag': {
         const { tag: baseTag, op, ops } = x[0]!.meta
         return { tag: baseTag ?? tag, op, ops, conds }
@@ -80,7 +81,7 @@ export class Calculator extends Base<CalcMeta> {
         }
         return constOverride()
       default:
-        throw new Error('Should not reach this point')
+        assertUnreachable(op)
     }
   }
 
@@ -99,4 +100,9 @@ export class Calculator extends Base<CalcMeta> {
       })
       .filter((x) => x.q)
   }
+}
+export function res(x: number): number {
+  if (x >= 0.75) return 1 / (1 + 4 * x)
+  if (x >= 0) return 1 - x
+  return 1 - 0.5 * x
 }

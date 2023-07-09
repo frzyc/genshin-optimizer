@@ -1,5 +1,5 @@
 import type { Tag, TagMapSubsetCache } from '../tag'
-import { assertUnreachable } from '../util'
+import { assertUnreachable } from '@genshin-optimizer/util'
 import type { Calculator } from './calc'
 import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'

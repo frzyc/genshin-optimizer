@@ -1,17 +1,16 @@
-import type {
-  AnyNode,
-  ReRead,
-  Read,
-  TagMapSubsetCache,
-} from '@genshin-optimizer/pando'
 import {
+  AnyNode,
+  Calculator as BaseCalculator,
+  CalcResult,
+  ReRead,
   TagMapExactValues,
   TagMapKeys,
+  TagMapSubsetCache,
   traverse,
 } from '@genshin-optimizer/pando'
-import type { Calculator } from './calculator'
+import { Calculator, res } from './calculator'
 import { keys } from './data'
-import { reader, type Tag, type TagMapNodeEntry } from './data/util'
+import { Read, tagStr, type Tag, type TagMapNodeEntry } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 export const debugKey = Symbol('tagSource')
@@ -99,12 +98,85 @@ export function printEntry({ tag, value }: TagMapNodeEntry): string {
     if (op === 'subscript') ex = undefined
     const args: string[] = []
     if (ex) args.push(JSON.stringify(ex))
-    if (tag) args.push(`${reader.withTag(tag)}`)
+    if (tag) args.push(tagStr(tag))
     args.push(...br.map(printNode), ...x.map(printNode))
     return `${op}(` + args.join(', ') + ')'
   }
 
-  if (value.op === 'reread')
-    return reader.withTag(tag) + ` <-- ` + reader.withTag(value.tag)
-  return reader.withTag(tag) + ` <= ` + printNode(value)
+  if (value.op === 'reread') return tagStr(tag) + ` <- ` + tagStr(value.tag)
+  return tagStr(tag) + ` <= ` + printNode(value)
+}
+
+export type DebugMeta = {
+  text: string
+  dependencies: DebugMeta[]
+}
+export class DebugCalculator extends BaseCalculator<DebugMeta> {
+  override computeCustom(val: any[], op: string): any {
+    if (op == 'res') return res(val[0])
+    return super.computeCustom(val, op)
+  }
+  override computeMeta(
+    { op, ex, tag: nTag }: AnyNode,
+    val: any,
+    x: (CalcResult<any, DebugMeta> | undefined)[],
+    br: CalcResult<any, DebugMeta>[],
+    tag: Tag | undefined
+  ): DebugMeta {
+    if (op === 'const') return { text: JSON.stringify(val), dependencies: [] }
+    if (op === 'read') {
+      const args = x as CalcResult<any, DebugMeta>[]
+      const extraTag = Object.fromEntries(
+        Object.entries(tag!).filter(([key]) => !nTag![key])
+      )
+      return {
+        text: tagStr(nTag!, ex) + `(+ ${tagStr(extraTag!)})`,
+        dependencies: [
+          {
+            text: 'expand ' + tagStr(tag!, ex),
+            dependencies: args.map(({ val, meta, entryTag }) => {
+              return {
+                text: `${entryTag!
+                  .map((tag) => tagStr(tag))
+                  .join(' <- ')} <= (${val}) ${meta.text}`,
+                dependencies: meta.dependencies,
+              }
+            }),
+          },
+        ],
+      }
+    }
+    if (op === 'subscript') ex = undefined
+
+    const dependencies: DebugMeta[] = []
+    function print(x: CalcResult<any, DebugMeta> | undefined): string {
+      if (!x) return ''
+      dependencies.push(...x.meta.dependencies)
+      return x.meta.text
+    }
+
+    const specialArgs: string[] = []
+    if (ex) specialArgs.push(JSON.stringify(ex))
+    if (tag) specialArgs.push(tagStr(tag))
+    const brArgs = br.map(print)
+    const xArgs = x.map(print)
+    const args = [specialArgs, brArgs, xArgs].map((x) => x.join(', '))
+
+    return {
+      text: `${op}(` + args.filter((x) => x.length).join('; ') + ')',
+      dependencies,
+    }
+  }
+
+  debug(node: AnyNode): string[] {
+    const { meta } = this.compute(node)
+    const result: string[] = []
+
+    function print(meta: DebugMeta, level: number) {
+      result.push(Array(2 * level + 1).join(' ') + meta.text)
+      meta.dependencies.forEach((dep) => print(dep, level + 1))
+    }
+    print(meta, 0)
+    return result
+  }
 }
