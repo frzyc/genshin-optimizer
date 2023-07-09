@@ -1,4 +1,3 @@
-import { assertUnreachable } from '../util'
 import type {
   RawTagMapKeys,
   RawTagMapValues,
@@ -11,7 +10,7 @@ import {
   TagMapSubsetValues,
   mergeTagMapValues,
 } from '../tag'
-import { extract, tagString } from '../util'
+import { assertUnreachable, extract, tagString } from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
 
