@@ -21,7 +21,7 @@ describe('Priority queue', () => {
 })
 
 describe('FIFO queue', () => {
-  test('Insertion', () => {
+  test('insertion', () => {
     const fifo = new FIFO<number>()
     const data = Array(100)
       .fill(0)

@@ -2,7 +2,6 @@ import {
   crawlObject,
   getObjectKeysRecursive,
   layeredAssignment,
-  objMultiplication,
   objPathValue,
 } from './object'
 
@@ -24,12 +23,6 @@ test('layeredAssignment', () => {
   const keys = ['a', 'b', 'c', 'd']
   const expected = { a: { b: { c: { d: 'test' } } } }
   expect(layeredAssignment(obj, keys, 'test')).toEqual(expected)
-})
-
-test('objMultiplication', () => {
-  const obj = { a: { b: { c: 3 }, d: 'e', f: 5 } }
-  objMultiplication(obj, 2)
-  expect(obj).toEqual({ a: { b: { c: 6 }, d: 'e', f: 10 } })
 })
 
 describe('getObjectKeysRecursive', () => {

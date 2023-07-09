@@ -1,5 +1,5 @@
 export const getRandomElementFromArray = <T>(array: readonly T[]): T =>
-  array[Math.floor(Math.random() * array.length)]
+  array[Math.floor(Math.random() * array.length)]!
 export function getRandomInt(min: number, max: number) {
   min = Math.ceil(min)
   max = Math.floor(max)

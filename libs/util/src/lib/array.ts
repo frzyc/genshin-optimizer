@@ -1,5 +1,5 @@
-export function getArrLastElement<E>(arr: E[]): E | null {
-  return arr.length ? arr[arr.length - 1] : null
+export function getArrLastElement<E>(arr: E[]): E | undefined {
+  return arr[arr.length - 1]
 }
 
 const rangeGen = function* (from: number, to: number): Iterable<number> {
@@ -34,11 +34,11 @@ export function toggleArr<T>(arr: T[], value: T) {
 export function arrayMove<T>(arr: T[], oldIndex: number, newIndex: number) {
   if (newIndex < 0 || newIndex >= arr.length) return arr
   if (oldIndex < 0 || oldIndex >= arr.length) return arr
-  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0])
+  arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]!)
   return arr
 }
 
 // Transpose a 2D array
 export function transposeArray<T>(arr: T[][]): T[][] {
-  return arr[0].map((_, i) => arr.map((row) => row[i]))
+  return arr[0]?.map((_, i) => arr.map((row) => row[i]!)) ?? []
 }

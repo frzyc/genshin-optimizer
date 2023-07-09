@@ -77,20 +77,6 @@ export function objKeyValMap<
   return Object.fromEntries(items.map((t, i) => map(t, i))) as Record<K2, V>
 }
 
-//multiplies every numerical value in the obj by a multiplier.
-export function objMultiplication(obj: Record<string, unknown>, multi: number) {
-  if (multi === 1) return obj
-  Object.keys(obj).forEach((prop: any) => {
-    if (typeof obj[prop] === 'object')
-      objMultiplication(
-        (obj as Record<string, Record<string, unknown>>)[prop],
-        multi
-      )
-    if (typeof obj[prop] === 'number')
-      obj[prop] = (obj as Record<string, number>)[prop] * multi
-  })
-  return obj
-}
 //delete the value denoted by the path. Will also delete empty objects as well.
 export function deletePropPath(
   obj: Record<string, unknown>,
