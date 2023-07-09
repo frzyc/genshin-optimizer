@@ -1,16 +1,18 @@
-import {
+import type {
   AnyNode,
-  Calculator as BaseCalculator,
   CalcResult,
   ReRead,
+  TagMapSubsetCache,
+} from '@genshin-optimizer/pando'
+import {
+  Calculator as BaseCalculator,
   TagMapExactValues,
   TagMapKeys,
-  TagMapSubsetCache,
   traverse,
 } from '@genshin-optimizer/pando'
-import { Calculator, res } from './calculator'
+import { res, type Calculator } from './calculator'
 import { keys } from './data'
-import { Read, tagStr, type Tag, type TagMapNodeEntry } from './data/util'
+import { tagStr, type Read, type Tag, type TagMapNodeEntry } from './data/util'
 
 const tagKeys = new TagMapKeys(keys)
 export const debugKey = Symbol('tagSource')
@@ -124,25 +126,38 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     br: CalcResult<number | string, DebugMeta>[],
     tag: Tag | undefined
   ): DebugMeta {
+    const result: DebugMeta = {
+      valText: valStr(val),
+      text: '',
+      deps: [],
+    }
+    function toStr(
+      x: CalcResult<number | string, DebugMeta> | undefined
+    ): string {
+      if (!x) return ''
+      result.deps.push(...x.meta.deps)
+      return x.meta.text
+    }
+
     function valStr(val: number | string): string {
       if (typeof val !== 'number') return `"${val}"`
       if (Math.round(val) === val) return `${val}`
       return val.toFixed(2)
     }
-    const valText = valStr(val)
 
     const { op, ex, tag: nTag } = n
     switch (op) {
       case 'const':
-        return { valText, text: valText, deps: [] }
-      case 'read':
+        result.text = result.valText
+        break
+      case 'read': {
         const args = x as CalcResult<number | string, DebugMeta>[]
         return {
-          valText,
+          valText: result.valText,
           text: tagStr(nTag!, ex),
           deps: [
             {
-              valText,
+              valText: result.valText,
               text: `expand ${tagStr(nTag!, ex)} (${tagStr(tag!)})`,
               deps: args.map(({ meta, entryTag }) => ({
                 ...meta,
@@ -153,60 +168,38 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
             },
           ],
         }
+      }
       case 'match':
       case 'thres':
-      case 'lookup':
-        const { text, deps } = x.find((x) => x)!.meta
-        return {
-          valText,
-          text: `${op}(${br.map((br) => br.meta.text).join(', ')} => ${text})`,
-          deps: [...br.map((br) => br.meta.deps), deps].flat(),
-        }
+      case 'lookup': {
+        const chosen = x.find((x) => x)!
+        result.text = `${op}(${br.map(toStr).join(', ')} => ${toStr(chosen)})`
+        break
+      }
       case 'subscript': {
         const [index] = br
         const chosen = valStr(ex[index.val as number]!)
-        return {
-          valText,
-          text: `subscript(${index.meta.text} => ${chosen})`,
-          deps: index.meta.deps,
-        }
+        result.text = `subscript(${toStr(index)} => ${chosen})`
+        break
       }
       case 'tag':
-        return {
-          ...x[0]!.meta,
-          text: `tag(${tagStr(nTag!)}, ${x[0]!.meta.text})`,
-        }
-      case 'dtag': {
-        const brText = br.map((br, i) => `${ex[i]} => ${br.meta.text}`)
-        return {
-          valText: x[0]!.meta.text,
-          text: `dtag(${brText.join(', ')}; ${x[0]!.meta.text})`,
-          deps: [...br.map((br) => br.meta.deps), x[0]!.meta.deps].flat(),
-        }
-      }
+        result.text = `tag(${tagStr(nTag!)}, ${toStr(x[0])})`
+        break
+      case 'dtag':
+        result.text = `dtag(${br
+          .map((br, i) => `${ex[i]} => ${toStr(br)}`)
+          .join(', ')}; ${toStr(x[0])})`
+        break
       default: {
-        const dependencies: DebugMeta[] = []
-        function print(
-          x: CalcResult<number | string, DebugMeta> | undefined
-        ): string {
-          if (!x) return ''
-          dependencies.push(...x.meta.deps)
-          return x.meta.text
-        }
-
-        const specialArgs: string[] = []
-        if (ex) specialArgs.push(JSON.stringify(ex))
-        const brArgs = br.map(print)
-        const xArgs = x.map(print)
+        const specialArgs = ex ? [JSON.stringify(ex)] : []
+        const brArgs = br.map(toStr)
+        const xArgs = x.map(toStr)
         const args = [specialArgs, brArgs, xArgs].map((x) => x.join(', '))
 
-        return {
-          valText,
-          text: `${op}(` + args.filter((x) => x.length).join('; ') + ')',
-          deps: dependencies,
-        }
+        result.text = `${op}(` + args.filter((x) => x.length).join('; ') + ')'
       }
     }
+    return result
   }
 
   debug(node: AnyNode): string[] {
