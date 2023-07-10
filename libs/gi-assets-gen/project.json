@@ -4,21 +4,15 @@
   "sourceRoot": "libs/gi-assets-gen/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "build-ts": {
       "options": {
-        "outputPath": "dist/libs/gi-assets-gen",
-        "outputFileName": "src/index.js",
-        "main": "libs/gi-assets-gen/src/index.ts",
-        "tsConfig": "libs/gi-assets-gen/tsconfig.lib.json",
-        "assets": ["libs/gi-assets-gen/*.md"]
+        "outputFileName": "src/index.js"
       }
     },
     "pipeline": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "gi-assets-gen:build",
+        "buildTarget": "gi-assets-gen:build-ts",
         "watch": false,
         "inspect": false
       }

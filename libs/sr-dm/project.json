@@ -7,17 +7,8 @@
     "loadDM": {
       "command": "ts-node libs/sr-dm/scripts/loadDM.ts"
     },
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/sr-dm",
-        "main": "libs/sr-dm/src/index.ts",
-        "tsConfig": "libs/sr-dm/tsconfig.lib.json",
-        "assets": ["libs/sr-dm/*.md"]
-      },
-      "dependsOn": ["loadDM", "^build", "^build-vite", "^build-ts"],
-      "inputs": ["production", "^production"]
+    "build-ts": {
+      "dependsOn": ["loadDM", "^build", "^build-vite", "^build-ts"]
     },
     "lint": {}
   },

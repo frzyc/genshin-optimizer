@@ -4,15 +4,9 @@
   "sourceRoot": "libs/sr-pipeline/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "build-ts": {
       "options": {
-        "outputPath": "dist/libs/sr-pipeline",
-        "outputFileName": "src/index.js",
-        "main": "libs/sr-pipeline/src/index.ts",
-        "tsConfig": "libs/sr-pipeline/tsconfig.lib.json",
-        "assets": ["libs/sr-pipeline/*.md"]
+        "outputFileName": "src/index.js"
       }
     },
     "pipeline": {

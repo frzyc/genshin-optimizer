@@ -4,16 +4,7 @@
   "sourceRoot": "libs/util/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/util",
-        "main": "libs/util/src/index.ts",
-        "tsConfig": "libs/util/tsconfig.lib.json",
-        "assets": ["libs/util/*.md"]
-      }
-    },
+    "build-ts": {},
     "lint": {},
     "test": {}
   },

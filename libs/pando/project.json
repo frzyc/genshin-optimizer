@@ -4,16 +4,7 @@
   "sourceRoot": "libs/pando/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/pando",
-        "main": "libs/pando/src/index.ts",
-        "tsConfig": "libs/pando/tsconfig.lib.json",
-        "assets": ["libs/pando/*.md"]
-      }
-    },
+    "build-ts": {},
     "publish": {
       "executor": "nx:run-commands",
       "options": {

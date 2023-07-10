@@ -4,16 +4,7 @@
   "sourceRoot": "libs/consts/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/consts",
-        "main": "libs/consts/src/index.ts",
-        "tsConfig": "libs/consts/tsconfig.lib.json",
-        "assets": ["libs/consts/*.md"]
-      }
-    },
+    "build-ts": {},
     "publish": {
       "executor": "nx:run-commands",
       "options": {

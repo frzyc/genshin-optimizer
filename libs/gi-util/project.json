@@ -4,16 +4,7 @@
   "sourceRoot": "libs/gi-util/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-util",
-        "main": "libs/gi-util/src/index.ts",
-        "tsConfig": "libs/gi-util/tsconfig.lib.json",
-        "assets": ["libs/gi-util/*.md"]
-      }
-    },
+    "build-ts": {},
     "lint": {},
     "test": {
       "configurations": {

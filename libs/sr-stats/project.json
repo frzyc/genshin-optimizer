@@ -4,15 +4,7 @@
   "sourceRoot": "libs/sr-stats/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/sr-stats",
-        "main": "libs/sr-stats/src/index.ts",
-        "tsConfig": "libs/sr-stats/tsconfig.lib.json",
-        "assets": ["libs/sr-stats/*.md"]
-      },
+    "build-ts": {
       "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
     "lint": {}

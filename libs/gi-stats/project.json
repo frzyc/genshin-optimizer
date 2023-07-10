@@ -4,15 +4,7 @@
   "sourceRoot": "libs/gi-stats/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-stats",
-        "main": "libs/gi-stats/src/index.ts",
-        "tsConfig": "libs/gi-stats/tsconfig.lib.json",
-        "assets": ["libs/gi-stats/*.md"]
-      },
+    "build-ts": {
       "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
     "lint": {}

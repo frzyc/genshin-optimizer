@@ -4,15 +4,9 @@
   "sourceRoot": "libs/sr-assets-gen/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "build-ts": {
       "options": {
-        "outputPath": "dist/libs/sr-assets-gen",
-        "outputFileName": "src/index.js",
-        "main": "libs/sr-assets-gen/src/index.ts",
-        "tsConfig": "libs/sr-assets-gen/tsconfig.lib.json",
-        "assets": ["libs/sr-assets-gen/*.md"]
+        "outputFileName": "src/index.js"
       }
     },
     "pipeline": {

@@ -4,16 +4,7 @@
   "sourceRoot": "libs/sr-formula/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/sr-formula",
-        "main": "libs/sr-formula/src/index.ts",
-        "tsConfig": "libs/sr-formula/tsconfig.lib.json",
-        "assets": ["libs/sr-formula/*.md"]
-      }
-    },
+    "build-ts": {},
     "lint": {},
     "test": {}
   },

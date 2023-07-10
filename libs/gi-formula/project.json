@@ -4,15 +4,7 @@
   "sourceRoot": "libs/gi-formula/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-formula",
-        "main": "libs/gi-formula/src/index.ts",
-        "tsConfig": "libs/gi-formula/tsconfig.lib.json",
-        "assets": ["libs/gi-formula/*.md"]
-      },
+    "build-ts": {
       "dependsOn": ["^pipeline"],
       "inputs": ["!{projectRoot}/**/*.gen.ts"]
     },

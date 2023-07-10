@@ -4,16 +4,7 @@
   "sourceRoot": "libs/pipeline/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/pipeline",
-        "main": "libs/pipeline/src/index.ts",
-        "tsConfig": "libs/pipeline/tsconfig.lib.json",
-        "assets": ["libs/pipeline/*.md"]
-      }
-    },
+    "build-ts": {},
     "lint": {},
     "test": {}
   },

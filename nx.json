@@ -40,6 +40,17 @@
       "dependsOn": ["^build", "^build-vite", "^build-ts"],
       "inputs": ["production", "^production"]
     },
+    "build-ts": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "{workspaceRoot}/dist/{projectRoot}",
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.lib.json"
+      },
+      "dependsOn": ["^build", "^build-vite", "^build-ts"],
+      "inputs": ["production", "^production"]
+    },
     "pipeline": {
       "dependsOn": ["build", "build-vite", "build-ts"],
       "inputs": ["production", "^production"]

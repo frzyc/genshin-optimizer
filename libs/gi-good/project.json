@@ -4,16 +4,7 @@
   "sourceRoot": "libs/gi-good/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-good",
-        "main": "libs/gi-good/src/index.ts",
-        "tsConfig": "libs/gi-good/tsconfig.lib.json",
-        "assets": ["libs/gi-good/*.md"]
-      }
-    },
+    "build-ts": {},
     "lint": {},
     "test": {
       "configurations": {
