@@ -13,7 +13,7 @@
     "pipeline": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "sr-pipeline:build",
+        "buildTarget": "sr-pipeline:build-ts",
         "watch": false,
         "inspect": false
       },
