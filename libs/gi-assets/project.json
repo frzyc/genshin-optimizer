@@ -6,23 +6,7 @@
   "tags": [],
   "targets": {
     "lint": {},
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/libs/gi-assets"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
-      },
-      "dependsOn": ["^pipeline"]
-    }
+    "build-vite": { "dependsOn": ["^pipeline"] }
   },
   "implicitDependencies": ["gi-assets-gen"]
 }

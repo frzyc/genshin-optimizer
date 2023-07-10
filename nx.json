@@ -19,11 +19,29 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^build-vite", "^build-ts"],
+      "inputs": ["production", "^production"]
+    },
+    "build-vite": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/{projectRoot}"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      },
+      "dependsOn": ["^build", "^build-vite", "^build-ts"],
       "inputs": ["production", "^production"]
     },
     "pipeline": {
-      "dependsOn": ["build"],
+      "dependsOn": ["build", "build-vite", "build-ts"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
