@@ -4,6 +4,7 @@
   "sourceRoot": "libs/gi-good/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {},
     "lint": {},
     "test": {

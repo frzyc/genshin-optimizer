@@ -5,6 +5,7 @@
   "sourceRoot": "apps/sr-frontend/src",
   "tags": [],
   "targets": {
+    "build": {},
     "build-vite": {},
     "serve": {
       "executor": "@nx/vite:dev-server",

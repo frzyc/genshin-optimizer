@@ -4,8 +4,9 @@
   "sourceRoot": "libs/sr-stats/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {
-      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
+      "dependsOn": ["^build", "^pipeline"]
     },
     "lint": {}
   },

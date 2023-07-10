@@ -4,6 +4,7 @@
   "sourceRoot": "libs/util/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {},
     "lint": {},
     "test": {}

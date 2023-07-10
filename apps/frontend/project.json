@@ -4,7 +4,8 @@
   "sourceRoot": "apps/frontend/src",
   "projectType": "application",
   "targets": {
-    "build": {
+    "build": {},
+    "build-webpack": {
       "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
@@ -68,7 +69,7 @@
           "baseHref": "/genshin-optimizer/"
         }
       },
-      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
+      "dependsOn": ["^build", "^pipeline"]
     },
     "serve": {
       "executor": "@nx/webpack:dev-server",
@@ -86,15 +87,15 @@
           "hmr": false
         }
       },
-      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
+      "dependsOn": ["^build", "^pipeline"]
     },
     "deploy": {
       "command": "gh-pages -d dist/apps/frontend",
-      "dependsOn": ["build", "build-vite", "build-ts"]
+      "dependsOn": ["build"]
     },
     "lint": {},
     "test": {
-      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
+      "dependsOn": ["^build", "^pipeline"]
     }
   },
   "tags": [],

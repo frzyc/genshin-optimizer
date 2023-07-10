@@ -4,6 +4,7 @@
   "sourceRoot": "apps/gi-frontend/src",
   "projectType": "application",
   "targets": {
+    "build": {},
     "build-vite": {},
     "serve": {
       "executor": "@nx/vite:dev-server",

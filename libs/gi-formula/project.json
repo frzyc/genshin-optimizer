@@ -4,6 +4,7 @@
   "sourceRoot": "libs/gi-formula/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {
       "dependsOn": ["^pipeline"],
       "inputs": ["!{projectRoot}/**/*.gen.ts"]
@@ -13,7 +14,7 @@
       "options": {
         "command": "node tools/scripts/publish.mjs gi-formula {args.ver} {args.tag}"
       },
-      "dependsOn": ["build", "build-vite", "build-ts"]
+      "dependsOn": ["build"]
     },
     "lint": {},
     "test": {

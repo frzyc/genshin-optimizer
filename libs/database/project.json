@@ -4,6 +4,7 @@
   "sourceRoot": "libs/database/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {},
     "lint": {},
     "test": {

@@ -4,13 +4,14 @@
   "sourceRoot": "libs/sr-consts/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {},
     "publish": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs sr-consts {args.ver} {args.tag}"
       },
-      "dependsOn": ["build", "build-vite", "build-ts"]
+      "dependsOn": ["build"]
     },
     "lint": {}
   },

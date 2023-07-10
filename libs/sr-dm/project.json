@@ -7,8 +7,9 @@
     "loadDM": {
       "command": "ts-node libs/sr-dm/scripts/loadDM.ts"
     },
+    "build": {},
     "build-ts": {
-      "dependsOn": ["loadDM", "^build", "^build-vite", "^build-ts"]
+      "dependsOn": ["loadDM", "^build"]
     },
     "lint": {}
   },

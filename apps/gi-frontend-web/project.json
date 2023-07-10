@@ -4,7 +4,8 @@
   "sourceRoot": "apps/gi-frontend-web/src",
   "projectType": "application",
   "targets": {
-    "build": {
+    "build": {},
+    "build-webpack": {
       "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",

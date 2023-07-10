@@ -4,6 +4,7 @@
   "sourceRoot": "libs/sr-pipeline/src",
   "projectType": "library",
   "targets": {
+    "build": {},
     "build-ts": {
       "options": {
         "outputFileName": "src/index.js"
