@@ -19,15 +19,9 @@
       "options": {
         "command": "node tools/scripts/publish.mjs consts {args.ver} {args.tag}"
       },
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "build-vite", "build-ts"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/consts/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

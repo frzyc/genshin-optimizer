@@ -68,7 +68,7 @@
           "baseHref": "/genshin-optimizer/"
         }
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
     "serve": {
       "executor": "@nx/webpack:dev-server",
@@ -86,19 +86,13 @@
           "hmr": false
         }
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
     "deploy": {
       "command": "gh-pages -d dist/apps/frontend",
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "build-vite", "build-ts"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
+    "lint": {},
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -106,7 +100,7 @@
         "jestConfig": "apps/frontend/jest.config.ts",
         "passWithNoTests": true
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     }
   },
   "tags": [],

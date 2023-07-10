@@ -24,13 +24,7 @@
       },
       "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/dm-localization/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

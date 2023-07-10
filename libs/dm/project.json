@@ -16,16 +16,10 @@
         "tsConfig": "libs/dm/tsconfig.lib.json",
         "assets": ["libs/dm/*.md"]
       },
-      "dependsOn": ["loadDM", "^build"],
+      "dependsOn": ["loadDM", "^build", "^build-vite", "^build-ts"],
       "inputs": ["production", "^production"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/dm/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": [],
   "namedInputs": {

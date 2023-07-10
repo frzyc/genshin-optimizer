@@ -13,15 +13,9 @@
         "tsConfig": "libs/gi-stats/tsconfig.lib.json",
         "assets": ["libs/gi-stats/*.md"]
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-stats/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": [],
   "implicitDependencies": ["gi-pipeline"]

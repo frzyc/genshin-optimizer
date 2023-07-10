@@ -24,13 +24,7 @@
       },
       "inputs": ["default", "^production", "sr-stats"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr-pipeline/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": [],
   "namedInputs": {

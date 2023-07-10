@@ -13,15 +13,9 @@
         "tsConfig": "libs/sr-stats/tsconfig.lib.json",
         "assets": ["libs/sr-stats/*.md"]
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["^build", "^build-vite", "^build-ts", "^pipeline"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr-stats/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": [],
   "implicitDependencies": ["sr-pipeline"]

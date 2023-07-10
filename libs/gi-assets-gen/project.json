@@ -23,13 +23,7 @@
         "inspect": false
       }
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-assets-gen/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

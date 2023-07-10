@@ -5,7 +5,15 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "pipeline", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "build-vite",
+          "build-ts",
+          "pipeline",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -22,6 +30,11 @@
       "inputs": ["default", "^production"]
     },
     "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"]
+      },
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {

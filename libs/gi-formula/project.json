@@ -21,15 +21,9 @@
       "options": {
         "command": "node tools/scripts/publish.mjs gi-formula {args.ver} {args.tag}"
       },
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "build-vite", "build-ts"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-formula/**/*.ts"]
-      }
-    },
+    "lint": {},
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],

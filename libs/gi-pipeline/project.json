@@ -24,13 +24,7 @@
       },
       "inputs": ["default", "^production", "gi-stats"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-pipeline/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": [],
   "namedInputs": {
