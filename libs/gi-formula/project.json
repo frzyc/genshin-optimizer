@@ -25,12 +25,6 @@
     },
     "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/gi-formula/jest.config.ts",
-        "passWithNoTests": true
-      },
       "dependsOn": ["^pipeline"]
     }
   },

@@ -7,12 +7,6 @@
   "targets": {
     "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/ui-common/jest.config.ts",
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,

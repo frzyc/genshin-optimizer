@@ -56,7 +56,14 @@
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
-      "dependsOn": ["^pipeline"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.ts",
+        "coverageDirectory": "{workspaceRoot}/coverage/{projectRoot}",
+        "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
+        "passWithNoTests": true
+      },
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },

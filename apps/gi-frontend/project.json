@@ -38,12 +38,7 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/gi-frontend"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/gi-frontend"
-      }
+      "executor": "@nx/vite:test"
     },
     "lint": {},
     "serve-static": {
