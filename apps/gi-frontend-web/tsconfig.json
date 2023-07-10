@@ -1,22 +1,18 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "allowJs": false,
     "esModuleInterop": false,
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "noImplicitOverride": false,
     "jsxImportSource": "@emotion/react"
   },
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.spec.json" }
   ],
   "extends": "../../tsconfig.base.json"
 }
