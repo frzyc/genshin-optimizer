@@ -6,6 +6,5 @@
   "files.trimTrailingWhitespace": true,
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.eol": "\n",
-  "eslint.validate": ["json"]
+  "files.eol": "\n"
 }
