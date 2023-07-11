@@ -2,9 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "commonjs",
-    "exactOptionalPropertyTypes": true,
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
     "downlevelIteration": true,
     "esModuleInterop": true
   },

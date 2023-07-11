@@ -1,4 +1,3 @@
-import type { SyncRepoExecutorSchema } from './schema'
 import executor, { getLocalRepoHash } from './executor'
 import * as path from 'path'
 import * as fs from 'fs'

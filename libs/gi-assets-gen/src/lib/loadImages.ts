@@ -114,7 +114,7 @@ export default function loadImages() {
           icon: iconName,
           iconSide: sideIconName,
           banner,
-          bar,
+          bar: bar!,
         }
       : {
           icon: iconName,

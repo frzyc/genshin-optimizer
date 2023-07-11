@@ -24,7 +24,7 @@ export type WeaponDataGen = {
   weaponType: WeaponTypeKey
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
-  subStat?: WeaponProp
+  subStat?: WeaponProp | undefined
   lvlCurves: { key: string; base: number; curve: WeaponGrowCurveKey }[]
   refinementBonus: { [key in string]: number[] }
   ascensionBonus: { [key in string]: number[] }

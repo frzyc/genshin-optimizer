@@ -34,8 +34,8 @@ type Scaling = {
 type SkillTree = {
   pointId: string
   anchor: Anchor
-  levels?: SkillTreeNode[]
-  skillParamList?: Array<number[]>
+  levels?: SkillTreeNode[] | undefined
+  skillParamList?: Array<number[]> | undefined
   pointType: number
 }
 type SkillTreeNode = {
@@ -58,7 +58,7 @@ export default function characterData() {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
-        const skillTreeList = Object.entries(
+        const skillTreeList: SkillTree[] = Object.entries(
           avatarSkillTreeConfig[avatarid]
         ).map(([pointId, skillTree]) => {
           const { Anchor, PointType, LevelUpSkillID } = skillTree[0]

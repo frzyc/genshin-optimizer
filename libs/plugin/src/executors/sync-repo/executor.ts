@@ -19,9 +19,7 @@ export default async function runExecutor(
       console.log('Local and remote hashes differ, fetching')
       execSync(`git fetch -q --depth 1`, { cwd })
       execSync(`git reset -q --hard origin/master`, { cwd })
-    } else {
-      console.log('Repo already exists with the latest commit')
-    }
+    } else console.log('Repo already existed with the latest commit')
   } else {
     // Clone
     console.log(`Cloning ${name}`)

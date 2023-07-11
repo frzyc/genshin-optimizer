@@ -21,6 +21,8 @@
     "noImplicitReturns": true,
     "resolveJsonModule": true,
     "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "strictNullChecks": true,
     "allowJs": false,
     "paths": {
       "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],

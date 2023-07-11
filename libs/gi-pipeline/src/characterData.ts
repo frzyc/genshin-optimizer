@@ -27,8 +27,8 @@ export type CharacterGrowCurveKey =
   | 'GROW_CURVE_ATTACK_S5'
 export type CharacterDataGen = {
   key: LocationCharacterKey
-  ele?: ElementKey
-  region?: RegionKey
+  ele?: ElementKey | undefined
+  region?: RegionKey | undefined
   weaponType: WeaponTypeKey
   lvlCurves: {
     key: 'hp' | 'atk' | 'def'
