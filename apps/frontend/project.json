@@ -89,10 +89,6 @@
       },
       "dependsOn": ["^build", "^pipeline"]
     },
-    "deploy": {
-      "command": "gh-pages -d dist/apps/frontend",
-      "dependsOn": ["build"]
-    },
     "lint": {},
     "test": {
       "dependsOn": ["^build", "^pipeline"]

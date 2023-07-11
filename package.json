@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "frontend": "nx serve frontend",
-    "deploy": "nx deploy frontend",
     "buildall": "nx run-many --target=build",
     "mini-ci": "nx affected -t test,lint --max-warnings=0"
   },
@@ -14,10 +13,10 @@
     "@emotion/babel-plugin": "11.11.0",
     "@nx/cypress": "16.4.3",
     "@nx/eslint-plugin": "16.4.3",
-    "@nx/jest": "16.5.1",
-    "@nx/js": "16.5.1",
+    "@nx/jest": "16.4.3",
+    "@nx/js": "16.4.3",
     "@nx/linter": "16.4.3",
-    "@nx/plugin": "^16.5.1",
+    "@nx/plugin": "16.4.3",
     "@nx/react": "16.4.3",
     "@nx/vite": "16.4.3",
     "@nx/web": "16.4.3",
