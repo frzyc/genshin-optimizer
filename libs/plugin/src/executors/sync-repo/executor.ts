@@ -1,4 +1,4 @@
-import { SyncRepoExecutorSchema } from './schema'
+import type { SyncRepoExecutorSchema } from './schema'
 import { workspaceRoot } from '@nx/devkit'
 import { execSync } from 'child_process'
 import * as fs from 'fs'
