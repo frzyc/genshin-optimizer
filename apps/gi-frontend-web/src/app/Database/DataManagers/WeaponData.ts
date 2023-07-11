@@ -158,7 +158,7 @@ export class WeaponDataManager extends DataManager<
     result.weapons.import = weapons.length
     const idsToRemove = new Set(this.values.map((w) => w.id))
     const hasEquipment = weapons.some((w) => w.location)
-    weapons.forEach((w):void => {
+    weapons.forEach((w): void => {
       const weapon = this.validate(w)
       if (!weapon) {
         result.weapons.invalid.push(w)
