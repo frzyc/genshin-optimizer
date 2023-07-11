@@ -4,7 +4,6 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "noPropertyAccessFromIndexSignature": false,
-    "noImplicitReturns": false,
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
     "strictNullChecks": false,

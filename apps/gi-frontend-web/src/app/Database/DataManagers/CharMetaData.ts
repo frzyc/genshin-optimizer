@@ -33,7 +33,7 @@ export class CharMetaDataManager extends DataManager<
         this.database.storage.remove(key)
   }
   override validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object') return
+    if (typeof obj !== 'object') return undefined
 
     let { rvFilter, favorite } = obj
     if (!Array.isArray(rvFilter)) rvFilter = []

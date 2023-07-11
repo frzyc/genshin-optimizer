@@ -47,7 +47,7 @@ export class CharacterDataManager extends DataManager<
     }
   }
   override validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return
+    if (!obj || typeof obj !== 'object') return undefined
     const {
       key: characterKey,
       level: rawLevel,
@@ -68,7 +68,7 @@ export class CharacterDataManager extends DataManager<
       customMultiTarget,
     } = obj as ICharacter
 
-    if (!allCharacterKeys.includes(characterKey)) return // non-recoverable
+    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
     if (!allHitModes.includes(hitMode)) hitMode = 'avgHit'
     if (

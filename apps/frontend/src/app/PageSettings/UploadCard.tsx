@@ -42,17 +42,17 @@ export default function UploadCard({
   const [ignoreDups, setIgnoreDups] = useState(false)
   const { importResult, importedDatabase } =
     useMemo(() => {
-      if (!data) return
+      if (!data) return undefined
       let parsed: any
       try {
         parsed = JSON.parse(data)
         if (typeof parsed !== 'object') {
           setErrorMsg('uploadCard.error.jsonParse')
-          return
+          return undefined
         }
       } catch (e) {
         setErrorMsg('uploadCard.error.jsonParse')
-        return
+        return undefined
       }
       // Figure out the file format
       if (parsed.format === 'GOOD') {
@@ -70,13 +70,13 @@ export default function UploadCard({
         )
         if (!importResult) {
           setErrorMsg('uploadCard.error.goInvalid')
-          return
+          return undefined
         }
 
         return { importResult, importedDatabase }
       }
       setErrorMsg('uploadCard.error.unknown')
-      return
+      return undefined
     }, [data, database, keepNotInImport, ignoreDups, index]) ?? {}
   const reset = () => {
     setdata('')

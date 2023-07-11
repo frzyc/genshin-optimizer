@@ -35,7 +35,7 @@ export class DisplayToolEntry extends DataEntry<
     super(database, 'display_tool', initialTabOptimize, 'display_tool')
   }
   override validate(obj: any): IDisplayToolEntry | undefined {
-    if (typeof obj !== 'object') return
+    if (typeof obj !== 'object') return undefined
     let { timeZoneKey, resin, resinDate } = obj
     if (!Object.keys(timeZones).includes(timeZoneKey))
       timeZoneKey = Object.keys(timeZones)[0]

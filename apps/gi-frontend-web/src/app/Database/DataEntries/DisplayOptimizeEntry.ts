@@ -21,7 +21,7 @@ export class DisplayOptimizeEntry extends DataEntry<
     super(database, 'display_optimize', initialTabOptimize, 'display_optimize')
   }
   override validate(obj: unknown): IDisplayOptimizeEntry | undefined {
-    if (typeof obj !== 'object') return
+    if (typeof obj !== 'object') return undefined
     let { threads } = obj as IDisplayOptimizeEntry
     if (
       typeof threads !== 'number' ||

@@ -97,8 +97,8 @@ export class BuildSettingDataManager extends DataManager<
     return `buildSetting_${key}`
   }
   override validate(obj: object, key: string): BuildSetting | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return
-    if (typeof obj !== 'object') return
+    if (!allCharacterKeys.includes(key as CharacterKey)) return undefined
+    if (typeof obj !== 'object') return undefined
     let {
       artSetExclusion,
       artExclusion,

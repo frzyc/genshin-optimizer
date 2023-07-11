@@ -41,7 +41,7 @@ export class DisplayArtifactEntry extends DataEntry<
     super(database, 'display_artifact', initialState, 'display_artifact')
   }
   override validate(obj: unknown): IDisplayArtifact | undefined {
-    if (typeof obj !== 'object') return
+    if (typeof obj !== 'object') return undefined
     let { filterOption, ascending, sortType, effFilter, probabilityFilter } =
       obj as IDisplayArtifact
 

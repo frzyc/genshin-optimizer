@@ -29,8 +29,8 @@ export class BuildResultDataManager extends DataManager<
     return `buildResult_${key}`
   }
   override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
-    if (typeof obj !== 'object') return
-    if (!allCharacterKeys.includes(key)) return
+    if (typeof obj !== 'object') return undefined
+    if (!allCharacterKeys.includes(key)) return undefined
     let { builds, buildDate } = obj as IBuildResult
 
     if (!Array.isArray(builds)) {

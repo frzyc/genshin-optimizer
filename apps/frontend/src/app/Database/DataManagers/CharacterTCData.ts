@@ -34,11 +34,11 @@ export class CharacterTCDataManager extends DataManager<
     }
   }
   override validate(obj: any): ICharTC | undefined {
-    if (typeof obj !== 'object') return
+    if (typeof obj !== 'object') return undefined
     const weapon = validateCharTCWeapon(obj.weapon)
-    if (!weapon) return
+    if (!weapon) return undefined
     const artifact = validateCharTCArtifact(obj.artifact)
-    if (!artifact) return
+    if (!artifact) return undefined
     return { artifact, weapon }
   }
   override toStorageKey(key: CharacterKey): string {
@@ -86,10 +86,10 @@ function initCharTCArtifactSlots() {
 }
 
 function validateCharTCWeapon(weapon: any): ICharTC['weapon'] | undefined {
-  if (typeof weapon !== 'object') return
+  if (typeof weapon !== 'object') return undefined
   const { key, level: rawLevel, ascension: rawAscension } = weapon
   let { refinement } = weapon
-  if (!allWeaponKeys.includes(key)) return
+  if (!allWeaponKeys.includes(key)) return undefined
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
   const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
@@ -98,14 +98,14 @@ function validateCharTCWeapon(weapon: any): ICharTC['weapon'] | undefined {
 function validateCharTCArtifact(
   artifact: any
 ): ICharTC['artifact'] | undefined {
-  if (typeof artifact !== 'object') return
+  if (typeof artifact !== 'object') return undefined
   let {
     slots,
     substats: { type, stats },
   } = artifact as ICharTC['artifact']
   const { sets } = artifact
   slots = validateCharTCArtifactSlots(slots)
-  if (!slots) return
+  if (!slots) return undefined
   if (!substatTypeKeys.includes(type)) type = 'max'
   if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
   stats = objKeyMap(allSubstatKeys, (k) =>
