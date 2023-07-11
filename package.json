@@ -7,7 +7,7 @@
     "frontend": "nx serve frontend",
     "deploy": "nx deploy frontend",
     "buildall": "nx run-many --target=build",
-    "mini-ci": "nx affected -t test,lint"
+    "mini-ci": "nx affected -t test,lint --max-warnings=0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",

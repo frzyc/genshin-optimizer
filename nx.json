@@ -81,6 +81,7 @@
         "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}",
         "passWithNoTests": true
       },
+      "dependsOn": ["^pipeline"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },

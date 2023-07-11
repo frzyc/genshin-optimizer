@@ -1,4 +1,4 @@
-import { SyncRepoExecutorSchema } from './schema'
+import type { SyncRepoExecutorSchema } from './schema'
 import executor from './executor'
 
 const options: SyncRepoExecutorSchema = {

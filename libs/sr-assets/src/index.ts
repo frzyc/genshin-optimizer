@@ -4,19 +4,19 @@ import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
 // import lightcones from './gen/lightCones'
 type characterAssetKey = 'icon' | 'cover'
 export function characterAsset(
-  ck: CharacterKey,
+  _ck: CharacterKey,
   asset: characterAssetKey
 ): string {
   switch (asset) {
     case 'icon':
     default:
       // return chars[ck][asset] ?? ''
-      throw 'TODO'
+      throw new Error('TODO')
   }
 }
-export function lightConeAsset(lck: LightConeKey) {
+export function lightConeAsset(_lck: LightConeKey) {
   // return lightcones[lck]
-  throw 'TODO'
+  throw new Error('TODO')
 }
 // export function artifactAsset(
 //   ak: ArtifactSetKey,
