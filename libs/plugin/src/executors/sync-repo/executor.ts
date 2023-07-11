@@ -8,17 +8,24 @@ export default async function runExecutor(
   options: SyncRepoExecutorSchema
 ): Promise<{ success: boolean }> {
   const cwd = path.join(workspaceRoot, options.localPath)
+  const url = options.repoUrl
   const name = path.basename(cwd)
 
-  if (fs.existsSync(cwd))
+  if (fs.existsSync(cwd)) {
     // Fetch & reset
-    execSync('git fetch -q && git reset -q --hard origin/master', { cwd })
-  else {
+    const remoteHash =
+      execSync(`git ls-remote -q ${url} HEAD`).toString().split('\t')[0] + '\n'
+    const localHash = execSync(`git rev-parse -q HEAD`, { cwd }).toString()
+    if (remoteHash !== localHash) {
+      console.log('Local and remote hashes differ, fetching')
+      execSync(`git fetch -q --depth 1`, { cwd })
+      execSync(`git reset -q --hard origin/master`, { cwd })
+    }
+  } else {
     // Clone
     const parent = path.dirname(cwd)
-    const url = options.repoUrl
     fs.mkdirSync(parent, { recursive: true })
-    execSync(`git clone -q ${url} --depth 1 ${name}`, { cwd: parent })
+    execSync(`git clone ${url} -q --depth 1 ${name}`, { cwd: parent })
   }
 
   // Compute hash
