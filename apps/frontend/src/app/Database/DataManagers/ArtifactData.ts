@@ -43,10 +43,13 @@ export class ArtifactDataManager extends DataManager<
       if (key.startsWith('artifact_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  validate(obj: unknown): IArtifact | undefined {
+  override validate(obj: unknown): IArtifact | undefined {
     return validateArtifact(obj)
   }
-  toCache(storageObj: IArtifact, id: string): ICachedArtifact | undefined {
+  override toCache(
+    storageObj: IArtifact,
+    id: string
+  ): ICachedArtifact | undefined {
     // Generate cache fields
     const newArt = cachedArtifact(storageObj, id).artifact
 
@@ -93,7 +96,7 @@ export class ArtifactDataManager extends DataManager<
         this.database.chars.triggerCharacter(newArt.location, 'update')
     return newArt
   }
-  deCache(artifact: ICachedArtifact): IArtifact {
+  override deCache(artifact: ICachedArtifact): IArtifact {
     const {
       setKey,
       rarity,
@@ -124,7 +127,7 @@ export class ArtifactDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  remove(key: string, notify = true) {
+  override remove(key: string, notify = true) {
     const art = this.get(key)
     if (!art) return
     art.location &&
@@ -135,10 +138,10 @@ export class ArtifactDataManager extends DataManager<
     const art = this.get(id)
     if (art) this.setCached(id, { ...art, probability })
   }
-  clear(): void {
+  override clear(): void {
     super.clear()
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.artifacts.beforeMerge = this.values.length
 
     // Match artifacts for counter, metadata, and locations

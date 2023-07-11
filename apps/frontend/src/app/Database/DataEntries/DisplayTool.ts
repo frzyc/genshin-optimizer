@@ -34,7 +34,7 @@ export class DisplayToolEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_tool', initialTabOptimize, 'display_tool')
   }
-  validate(obj: any): IDisplayToolEntry | undefined {
+  override validate(obj: any): IDisplayToolEntry | undefined {
     if (typeof obj !== 'object') return
     let { timeZoneKey, resin, resinDate } = obj
     if (!Object.keys(timeZones).includes(timeZoneKey))

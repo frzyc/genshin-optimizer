@@ -47,7 +47,7 @@ export class CharacterDataManager extends DataManager<
         this.database.storage.remove(key)
     }
   }
-  validate(obj: unknown): IGOCharacter | undefined {
+  override validate(obj: unknown): IGOCharacter | undefined {
     if (!obj || typeof obj !== 'object') return
     const {
       key: characterKey,
@@ -156,7 +156,10 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
-  toCache(storageObj: IGOCharacter, id: CharacterKey): ICachedCharacter {
+  override toCache(
+    storageObj: IGOCharacter,
+    id: CharacterKey
+  ): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedArtifacts: oldChar
@@ -177,7 +180,7 @@ export class CharacterDataManager extends DataManager<
       ...storageObj,
     }
   }
-  deCache(char: ICachedCharacter): IGOCharacter {
+  override deCache(char: ICachedCharacter): IGOCharacter {
     const {
       key,
       level,
@@ -214,7 +217,7 @@ export class CharacterDataManager extends DataManager<
     }
     return result
   }
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `char_${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
@@ -233,7 +236,7 @@ export class CharacterDataManager extends DataManager<
     return this.get(key) as ICachedCharacter
   }
 
-  remove(key: CharacterKey) {
+  override remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
     for (const artKey of Object.values(char.equippedArtifacts)) {
@@ -321,7 +324,7 @@ export class CharacterDataManager extends DataManager<
       allTravelerKeys.forEach((ck) => this.trigger(ck, reason, this.get(ck)))
     else this.trigger(key, reason, this.get(key))
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.characters.beforeMerge = this.values.length
 
     const source = good.source ?? 'Unknown'

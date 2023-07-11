@@ -33,7 +33,7 @@ export class CharMetaDataManager extends DataManager<
       )
         this.database.storage.remove(key)
   }
-  validate(obj: any): ICharMeta | undefined {
+  override validate(obj: any): ICharMeta | undefined {
     if (typeof obj !== 'object') return
 
     let { rvFilter, favorite } = obj
@@ -43,7 +43,7 @@ export class CharMetaDataManager extends DataManager<
     return { rvFilter, favorite }
   }
 
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `${storageHash}${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
@@ -54,7 +54,7 @@ export class CharMetaDataManager extends DataManager<
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === 'Traveler' ? this.getTravelerCharacterKey() : key
   }
-  get(key: CharacterKey): ICharMeta {
+  override get(key: CharacterKey): ICharMeta {
     return this.data[key] ?? initCharMeta
   }
 }

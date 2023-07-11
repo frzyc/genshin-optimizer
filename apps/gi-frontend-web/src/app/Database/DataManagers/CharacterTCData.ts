@@ -32,7 +32,7 @@ export class CharacterTCDataManager extends DataManager<
         database.storage.remove(key)
     }
   }
-  validate(obj: any): ICharTC | undefined {
+  override validate(obj: any): ICharTC | undefined {
     if (typeof obj !== 'object') return
     const weapon = validateCharTCWeapon(obj.weapon)
     if (!weapon) return
@@ -40,10 +40,10 @@ export class CharacterTCDataManager extends DataManager<
     if (!artifact) return
     return { artifact, weapon }
   }
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `charTC_${key}`
   }
-  remove(key: CharacterKey) {
+  override remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
     super.remove(key)

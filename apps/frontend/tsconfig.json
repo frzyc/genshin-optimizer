@@ -6,7 +6,8 @@
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": false,
     "noImplicitAny": false,
-    "noImplicitOverride": false,
+    "exactOptionalPropertyTypes": false,
+    "strictNullChecks": false,
     "jsxImportSource": "@emotion/react"
   },
   "files": [],

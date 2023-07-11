@@ -31,7 +31,7 @@ export class DisplayCharacterEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_character', initialState, 'display_character')
   }
-  validate(obj: any): IDisplayCharacterEntry | undefined {
+  override validate(obj: any): IDisplayCharacterEntry | undefined {
     if (typeof obj !== 'object') return
     let { sortType, ascending, weaponType, element, pageIndex } = obj
 

@@ -53,7 +53,7 @@ export class WeaponDataManager extends DataManager<
     this.set(weaponId, { ...weapon, location: locKey })
     return weapon
   }
-  validate(obj: unknown): IWeapon | undefined {
+  override validate(obj: unknown): IWeapon | undefined {
     if (typeof obj !== 'object') return
     const { key, level: rawLevel, ascension: rawAscension } = obj as IWeapon
     let { refinement, location, lock } = obj as IWeapon
@@ -75,7 +75,7 @@ export class WeaponDataManager extends DataManager<
     lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }
-  toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
+  override toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }
     const oldWeapon = super.get(id)
     // Disallow unequipping of weapons
@@ -122,7 +122,7 @@ export class WeaponDataManager extends DataManager<
         this.database.chars.triggerCharacter(newWeapon.location, 'update')
     return newWeapon
   }
-  deCache(weapon: ICachedWeapon): IWeapon {
+  override deCache(weapon: ICachedWeapon): IWeapon {
     const { key, level, ascension, refinement, location, lock } = weapon
     return { key, level, ascension, refinement, location, lock }
   }
@@ -132,12 +132,12 @@ export class WeaponDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  remove(key: string, notify = true) {
+  override remove(key: string, notify = true) {
     const weapon = this.get(key)
     if (!weapon || weapon.location) return // Can't delete equipped weapon here
     super.remove(key, notify)
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.weapons.beforeMerge = this.values.length
 
     // Match weapons for counter, metadata, and locations.

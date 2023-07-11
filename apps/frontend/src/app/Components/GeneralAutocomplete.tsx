@@ -75,7 +75,7 @@ export function GeneralAutocomplete<T extends string>({
         return (
           <TextField
             {...params}
-            {...textFieldProps}
+            {...(textFieldProps as TextFieldProps)}
             label={label}
             InputProps={{
               ...params.InputProps,

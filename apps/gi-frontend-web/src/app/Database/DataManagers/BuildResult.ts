@@ -25,10 +25,10 @@ export class BuildResultDataManager extends DataManager<
         if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
   }
-  toStorageKey(key: string): string {
+  override toStorageKey(key: string): string {
     return `buildResult_${key}`
   }
-  validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
+  override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
     if (typeof obj !== 'object') return
     if (!allCharacterKeys.includes(key)) return
     let { builds, buildDate } = obj as IBuildResult
@@ -59,7 +59,7 @@ export class BuildResultDataManager extends DataManager<
 
     return { builds, buildDate }
   }
-  get(key: CharacterKey) {
+  override get(key: CharacterKey) {
     return super.get(key) ?? initialBuildResult
   }
 }

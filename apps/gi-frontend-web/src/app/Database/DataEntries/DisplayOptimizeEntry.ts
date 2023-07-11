@@ -20,7 +20,7 @@ export class DisplayOptimizeEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_optimize', initialTabOptimize, 'display_optimize')
   }
-  validate(obj: unknown): IDisplayOptimizeEntry | undefined {
+  override validate(obj: unknown): IDisplayOptimizeEntry | undefined {
     if (typeof obj !== 'object') return
     let { threads } = obj as IDisplayOptimizeEntry
     if (
