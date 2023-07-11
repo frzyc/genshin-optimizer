@@ -2,7 +2,6 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
     "noPropertyAccessFromIndexSignature": false,
     "noImplicitAny": false,
     "exactOptionalPropertyTypes": false,
