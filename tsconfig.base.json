@@ -40,6 +40,7 @@
       "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
       "@genshin-optimizer/pando": ["libs/pando/src/index.ts"],
       "@genshin-optimizer/pipeline": ["libs/pipeline/src/index.ts"],
+      "@genshin-optimizer/plugin": ["libs/plugin/src/index.ts"],
       "@genshin-optimizer/react-util": ["libs/react-util/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/sr-assets": ["libs/sr-assets/src/index.ts"],

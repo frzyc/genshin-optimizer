@@ -5,7 +5,11 @@
   "projectType": "library",
   "targets": {
     "loadDM": {
-      "command": "ts-node libs/sr-dm/scripts/loadDM.ts"
+      "executor": "@genshin-optimizer/plugin:sync-repo",
+      "options": {
+        "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
+        "localPath": "libs/sr-dm/StarRailData"
+      }
     },
     "build": {},
     "build-ts": {

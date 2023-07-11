@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "SyncRepo executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "repoUrl": {
+      "type": "string",
+      "description": "Git repo URL"
+    },
+    "localPath": {
+      "type": "string",
+      "description": "Local repo path (including the repo name)"
+    }
+  },
+  "required": []
+}
