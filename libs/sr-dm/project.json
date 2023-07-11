@@ -9,7 +9,8 @@
       "options": {
         "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
         "localPath": "libs/sr-dm/StarRailData"
-      }
+      },
+      "outputs": ["{projectRoot}/StarRailData.hash"]
     },
     "build": {},
     "build-ts": {

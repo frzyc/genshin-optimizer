@@ -9,7 +9,8 @@
       "options": {
         "repoUrl": "https://gitlab.com/Dimbreath/AnimeGameData.git",
         "localPath": "libs/dm/GenshinData"
-      }
+      },
+      "outputs": ["{projectRoot}/GenshinData.hash"]
     },
     "build": {},
     "build-ts": {
