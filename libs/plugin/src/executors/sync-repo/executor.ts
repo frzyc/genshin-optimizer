@@ -10,17 +10,18 @@ export default async function runExecutor(
   const cwd = path.join(workspaceRoot, options.localPath)
   const name = path.basename(cwd)
 
-  // Fetch existing or clone a new repo
-  if (fs.existsSync(cwd)) execSync('git fetch -q', { cwd })
+  if (fs.existsSync(cwd))
+    // Fetch & reset
+    execSync('git fetch -q && git reset -q --hard origin/master', { cwd })
   else {
+    // Clone
     const parent = path.dirname(cwd)
     const url = options.repoUrl
     fs.mkdirSync(parent, { recursive: true })
     execSync(`git clone -q ${url} --depth 1 ${name}`, { cwd: parent })
   }
 
-  // Reset and compute hash
-  execSync(`git reset -q --hard origin/master`, { cwd })
+  // Compute hash
   const hash = execSync(`git rev-parse -q HEAD`, { cwd })
   console.log(`Synced ${name} with hash ${hash}`)
 
