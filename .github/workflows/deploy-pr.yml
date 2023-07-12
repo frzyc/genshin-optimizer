@@ -25,6 +25,15 @@ jobs:
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
           ENVFILE: ${{ secrets.ENVFILE }}
+      - name: Output date
+        id: output-date
+        run: echo "date=$(date -u)"
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.output-date.outputs.date }}] - Building new version
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
       - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
@@ -55,9 +64,12 @@ jobs:
         run: |
           IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
           echo "url=Deployed to https://$account.github.io/$repo/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
-      - name: maintain-comment
+      - name: Output date
+        id: output-date2
+        run: echo "date=$(date -u)"
+      - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
           body: |
-            ${{ steps.export-url.outputs.url }}
+            [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
