@@ -73,7 +73,8 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx,js,jsx}"],
+        "fix": true
       },
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
