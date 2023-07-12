@@ -46,7 +46,6 @@
       "@genshin-optimizer/react-util": ["libs/react-util/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/sr-assets": ["libs/sr-assets/src/index.ts"],
-      "@genshin-optimizer/sr-assets-gen": ["libs/sr-assets-gen/src/index.ts"],
       "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
       "@genshin-optimizer/sr-dm": ["libs/sr-dm/src/index.ts"],
       "@genshin-optimizer/sr-formula": ["libs/sr-formula/src/index.ts"],

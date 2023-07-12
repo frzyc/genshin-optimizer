@@ -1,4 +1,5 @@
-import { dumpFile, generateIndexFromObj } from '@genshin-optimizer/pipeline'
+import { GenAssetsExecutorSchema } from './schema'
+import { generateIndexFromObj } from '@genshin-optimizer/pipeline'
 import type {
   CharacterKey,
   LightConeKey,
@@ -18,9 +19,9 @@ import {
 import { crawlObject } from '@genshin-optimizer/util'
 import * as fs from 'fs'
 import * as path from 'path'
+import { workspaceRoot } from '@nx/devkit'
 
-const WORKSPACE_ROOT_PATH = process.env['NX_WORKSPACE_ROOT']
-const DEST_PROJ_PATH = `${WORKSPACE_ROOT_PATH}/libs/sr-assets/src` as const
+const DEST_PROJ_PATH = `${workspaceRoot}/libs/sr-assets/src` as const
 
 type CharacterIcon = {
   icon: string
@@ -49,12 +50,15 @@ export const AssetData = {
   relic: {} as RelicIcons,
 }
 
-export default function loadImages() {
-  const hasAssetsDir = fs.existsSync(DM2D_PATH)
-  if (!hasAssetsDir)
-    return console.log(
-      `libs/sr-dm/assets does not exist, no assets will be copied.`
-    )
+export default async function runExecutor(
+  options: GenAssetsExecutorSchema
+): Promise<{ success: boolean }> {
+  // Best effort and silently fail since most of the time we don't use this
+
+  if (!fs.existsSync(DM2D_PATH)) {
+    console.log(`\`assets\` folder does not exist, no assets will be copied.`)
+    return { success: true }
+  }
   function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
       console.warn('Cannot find file', src)
@@ -101,10 +105,11 @@ export default function loadImages() {
   })
 
   // Dump out the asset List.
-  dumpFile(
-    `${WORKSPACE_ROOT_PATH}/libs/sr-assets-gen/src/lib/AssetData_gen.json`,
-    AssetData
-  )
+
+  // dumpFile(
+  //   `${WORKSPACE_ROOT_PATH}/libs/sr-assets/src/lib/AssetData_gen.json`,
+  //   AssetData
+  // )
   crawlObject(
     AssetData,
     [],
@@ -118,6 +123,6 @@ export default function loadImages() {
       )
     }
   )
-
   generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
+  return { success: true }
 }
