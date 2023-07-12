@@ -26,7 +26,7 @@
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
     "genfile": {
-      "dependsOn": ["load-dm", "^load-dm", "^genfile"]
+      "dependsOn": ["^genfile"]
     },
     "build": {
       "executor": "nx:noop",

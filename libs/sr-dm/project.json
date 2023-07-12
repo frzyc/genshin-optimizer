@@ -15,10 +15,12 @@
         }
       ]
     },
-    "build": {},
-    "build-ts": {
-      "dependsOn": ["load-dm", "^build"]
+    "genfile": {
+      "executor": "nx:noop",
+      "dependsOn": ["load-dm", "^genfile"]
     },
+    "build": {},
+    "build-ts": {},
     "lint": {}
   },
   "tags": [],
