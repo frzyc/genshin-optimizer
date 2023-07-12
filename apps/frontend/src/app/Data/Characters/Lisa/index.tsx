@@ -107,8 +107,7 @@ const dmgFormulas = {
   burst: {
     summon: customDmgNode(
       prod(percent(dm.burst.summon), input.total.atk),
-      'burst',
-      { hit: { ele: constant(elementKey) } }
+      'burst'
     ),
     tick: dmgNode('atk', dm.burst.tick, 'burst'),
   },
