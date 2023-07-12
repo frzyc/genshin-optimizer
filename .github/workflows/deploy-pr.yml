@@ -39,7 +39,7 @@ jobs:
           path: gh-pages
       - name: Move to external gh-pages
         run: |
-          mkdir --parents "gh-pages/pr${{ github.event.number }}"
+          mkdir --parents "gh-pages/pr/${{ github.event.number }}"
           rm -rfv "gh-pages/pr/${{ github.event.number }}" || true
           mv "dist/apps/frontend" "gh-pages/pr/${{ github.event.number }}"
       - name: Make commit to deploy
