@@ -20,7 +20,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm ./pr/${{ github.event.number }} || true
-          git commit -m "pr/${{ github.event.number }} build" || true
+          git rm ./${{ github.event.number }} || true
+          git commit -m "${{ github.event.number }} build" || true
           git push origin gh-pages || true
         working-directory: gh-pages
