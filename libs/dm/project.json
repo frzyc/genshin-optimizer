@@ -4,17 +4,21 @@
   "sourceRoot": "libs/dm/src",
   "projectType": "library",
   "targets": {
-    "loadDM": {
-      "executor": "@genshin-optimizer/plugin:sync-repo",
+    "load-dm": {
       "options": {
         "repoUrl": "https://gitlab.com/Dimbreath/AnimeGameData.git",
         "localPath": "libs/dm/GenshinData"
       },
+      "inputs": [
+        {
+          "runtime": "git ls-remote -q https://gitlab.com/Dimbreath/AnimeGameData.git HEAD"
+        }
+      ],
       "outputs": ["{projectRoot}/GenshinData.hash"]
     },
     "build": {},
     "build-ts": {
-      "dependsOn": ["loadDM", "^build"]
+      "dependsOn": ["load-dm", "^build"]
     },
     "lint": {}
   },

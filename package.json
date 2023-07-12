@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "frontend": "nx serve frontend",
-    "buildall": "nx run-many --target=build",
-    "mini-ci": "nx format:write && nx affected -t test,lint --max-warnings=0"
+    "build-all": "nx run-many -t build",
+    "mini-ci": "nx format:write && nx affected -t test,lint --max-warnings=0",
+    "reload-dm": "nx run-many -t load-dm --skip-nx-cache"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",

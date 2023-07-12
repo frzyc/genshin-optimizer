@@ -16,13 +16,11 @@ export default async function runExecutor(
     const remoteHash = getRemoteRepoHash(url)
     const localHash = getLocalRepoHash(cwd)
     if (remoteHash !== localHash) {
-      console.log('Local and remote hashes differ, fetching')
       execSync(`git fetch -q --depth 1`, { cwd })
       execSync(`git reset -q --hard origin/master`, { cwd })
     } else console.log('Repo already existed with the latest commit')
   } else {
     // Clone
-    console.log(`Cloning ${name}`)
     const parent = path.dirname(cwd)
     fs.mkdirSync(parent, { recursive: true })
     execSync(`git clone ${url} -q --depth 1 ${name}`, { cwd: parent })

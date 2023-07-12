@@ -6,11 +6,12 @@
       "runner": "nx/tasks-runners/default",
       "options": {
         "cacheableOperations": [
+          "load-dm",
+          "pipeline",
           "build",
           "build-webpack",
           "build-vite",
           "build-ts",
-          "pipeline",
           "lint",
           "test",
           "e2e"
@@ -19,6 +20,9 @@
     }
   },
   "targetDefaults": {
+    "load-dm": {
+      "executor": "@genshin-optimizer/plugin:sync-repo"
+    },
     "build": {
       "executor": "nx:noop",
       "dependsOn": ["build-webpack", "build-vite", "build-ts"],
