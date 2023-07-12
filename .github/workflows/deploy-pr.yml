@@ -50,7 +50,14 @@ jobs:
           git commit -m "build ${{ github.event.number }} $(git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
-      - name: Echo deployment URL
+      - name: Export url
+        id: export-url
         run: |
           IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
-          echo "Deployed to https://$account.github.io/$repo/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)"
+          echo "url=Deployed to https://$account.github.io/$repo/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+      - name: maintain-comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            "${{ steps.export-url.outputs.url }}"
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
