@@ -25,6 +25,15 @@ jobs:
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
         env:
           ENVFILE: ${{ secrets.ENVFILE }}
+      - name: Output date
+        id: output-date
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.output-date.outputs.date }}] - Building new version
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
       - name: Build genshin-optimizer
         run: |
           NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
@@ -47,6 +56,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./${{ github.event.number }}
-          git commit -m "build pr #${{ github.event.number }} $(cd .. && git rev-parse HEAD)"
+          git commit -m "build ${{ github.event.number }} ${{ github.repository }}@$(cd .. && git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
+      - name: Export url
+        id: export-url
+        run: |
+          IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
+          echo "url=Deployed to https://$account.github.io/$repo/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+      - name: Output date
+        id: output-date2
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
