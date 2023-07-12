@@ -56,7 +56,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ./${{ github.event.number }}
-          git commit -m "build ${{ github.event.number }} $(git rev-parse HEAD)"
+          git commit -m "build ${{ github.event.number }} ${{ github.repository }}@$(cd .. && git rev-parse HEAD)"
           git push origin gh-pages
         working-directory: gh-pages
       - name: Export url
