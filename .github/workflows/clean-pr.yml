@@ -24,3 +24,12 @@ jobs:
           git commit -m "${{ github.event.number }} build" || true
           git push origin gh-pages || true
         working-directory: gh-pages
+      - name: Output date
+        id: output-date
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.output-date.outputs.date }}] - Deleted deployment
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
