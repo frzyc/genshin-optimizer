@@ -53,4 +53,4 @@ jobs:
       - name: Echo deployment URL
         run: |
           IFS=- read -r account repo <<< ${{ vars.PR_REPO }}
-          echo 'Deployed to https://$account.github.io/$repo/pr/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)'
+          echo "Deployed to https://$account.github.io/$repo/pr/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)"
