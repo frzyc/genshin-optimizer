@@ -27,7 +27,7 @@ jobs:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
         id: output-date
-        run: echo "date=$(date -u)"
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
@@ -66,7 +66,7 @@ jobs:
           echo "url=Deployed to https://$account.github.io/$repo/${{ github.event.number }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2
-        run: echo "date=$(date -u)"
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
