@@ -1,3 +1,4 @@
+import type { GenAssetsExecutorSchema } from './schema'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
@@ -26,14 +27,13 @@ import {
   weaponExcelConfigData,
   weaponIdMap,
 } from '@genshin-optimizer/dm'
-import { dumpFile, generateIndexFromObj } from '@genshin-optimizer/pipeline'
+import { generateIndexFromObj } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
+import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
 import * as path from 'path'
 
-const WORKSPACE_ROOT_PATH = process.env['NX_WORKSPACE_ROOT']
-export const DEST_PROJ_PATH =
-  `${WORKSPACE_ROOT_PATH}/libs/gi-assets/src` as const
+export const DEST_PROJ_PATH = `${workspaceRoot}/libs/gi-assets/src` as const
 
 type CharacterIcon = {
   icon: string
@@ -52,12 +52,15 @@ export const AssetData = {
   chars: {} as CharacterIconData,
 }
 
-export default function loadImages() {
-  const hasTexture2D = fs.existsSync(DM2D_PATH)
-  if (!hasTexture2D)
-    return console.log(
-      `libs/dm/Texture2D does not exist, no assets will be copied.`
-    )
+export default async function runExecutor(
+  options: GenAssetsExecutorSchema
+): Promise<{ success: boolean }> {
+  // Best effort and silently fail since most of the time we don't use this
+
+  if (!fs.existsSync(DM2D_PATH)) {
+    console.log(`Texture2D does not exist, no assets will be copied.`)
+    return { success: true }
+  }
   function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
       console.warn('Cannot find file', src)
@@ -218,8 +221,10 @@ export default function loadImages() {
       genTalentHash(cKey, avatarSkillDepotExcelConfigData[skillDepotId])
     }
   })
+
   // Dump out the asset List.
-  dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
+
+  // dumpFile(`${__dirname}/AssetData_gen.json`, assetChar)
   crawlObject(
     AssetData,
     [],
@@ -238,6 +243,6 @@ export default function loadImages() {
     icon: string
     awakenIcon: string
   }
-
   generateIndexFromObj(AssetData, `${DEST_PROJ_PATH}/gen`)
+  return { success: true }
 }

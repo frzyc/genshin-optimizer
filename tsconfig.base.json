@@ -34,7 +34,6 @@
         "libs/dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/gi-assets": ["libs/gi-assets/src/index.ts"],
-      "@genshin-optimizer/gi-assets-gen": ["libs/gi-assets-gen/src/index.ts"],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
       "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
       "@genshin-optimizer/gi-pipeline": ["libs/gi-pipeline/src/index.ts"],

@@ -48,6 +48,7 @@ ${dataContent}
 } as const
 export default data
 `
+  mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, indexContent)
 
   Object.entries(obj).forEach(([key, val]) => {

@@ -8,5 +8,6 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
-  }
+  },
+  "executors": "./executors.json"
 }

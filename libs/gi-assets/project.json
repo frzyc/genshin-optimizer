@@ -5,9 +5,12 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "genfile": {
+      "executor": "@genshin-optimizer/gi-assets:gen-assets",
+      "outputs": ["${projectRoot}/src/gen/**/*"]
+    },
     "lint": {},
     "build": {},
-    "build-vite": { "dependsOn": ["^pipeline"] }
-  },
-  "implicitDependencies": ["gi-assets-gen"]
+    "build-vite": {}
+  }
 }
