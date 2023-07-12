@@ -9,7 +9,7 @@
       "type": "string",
       "description": "Git repo URL"
     },
-    "localPath": {
+    "outputPath": {
       "type": "string",
       "description": "Local repo path (including the repo name)"
     },

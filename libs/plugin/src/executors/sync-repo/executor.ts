@@ -7,35 +7,39 @@ import * as path from 'path'
 export default async function runExecutor(
   options: SyncRepoExecutorSchema
 ): Promise<{ success: boolean }> {
-  const { localPath, repoUrl: url, prefixPath: prefix = true } = options
-  const cwd = prefix ? path.join(workspaceRoot, localPath) : localPath
+  const { outputPath, repoUrl: url, prefixPath: prefix = true } = options
+  const cwd = prefix ? path.join(workspaceRoot, outputPath) : outputPath
+  const remoteHash = getRemoteRepoHash(url)
   const name = path.basename(cwd)
+
+  console.log('Caution: if this is part of nx cache replay,')
+  console.log('         no git command is actually executed.')
+  console.log(' ')
 
   if (fs.existsSync(cwd)) {
     // Fetch & reset
-    const remoteHash = getRemoteRepoHash(url)
     const localHash = getLocalRepoHash(cwd)
     if (remoteHash !== localHash) {
-      execSync(`git fetch -q --depth 1`, { cwd })
-      execSync(`git reset -q --hard origin/master`, { cwd })
+      execSync(`git fetch --depth 1`, { cwd })
+      execSync(`git reset --hard origin/master`, { cwd })
     } else console.log('Repo already existed with the latest commit')
   } else {
     // Clone
     const parent = path.dirname(cwd)
     fs.mkdirSync(parent, { recursive: true })
-    execSync(`git clone ${url} -q --depth 1 ${name}`, { cwd: parent })
+    execSync(`git clone ${url} --depth 1 ${name}`, { cwd: parent })
   }
 
   // Compute hash
-  const hash = getLocalRepoHash(cwd)
-  console.log(`Synced ${name} with hash ${hash}`)
+  const localHash = getLocalRepoHash(cwd)
+  console.log(`Synced ${name} with hash ${localHash}`)
 
   const hashPath = path.format({ ...path.parse(cwd), base: '', ext: '.hash' })
-  fs.writeFileSync(hashPath, hash)
-  return { success: true }
+  fs.writeFileSync(hashPath, localHash)
+  return { success: remoteHash === localHash }
 }
 
 export const getLocalRepoHash = (cwd: string): string =>
-  `${execSync(`git rev-parse -q HEAD`, { cwd })}`.trimEnd()
+  `${execSync(`git rev-parse HEAD`, { cwd })}`.trimEnd()
 export const getRemoteRepoHash = (url: string): string =>
-  `${execSync(`git ls-remote -q ${url} HEAD`)}`.replace(/\s+HEAD\s*$/, '')
+  `${execSync(`git ls-remote ${url} HEAD`)}`.replace(/\s+HEAD\s*$/, '')

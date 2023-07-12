@@ -21,7 +21,8 @@
   },
   "targetDefaults": {
     "load-dm": {
-      "executor": "@genshin-optimizer/plugin:sync-repo"
+      "executor": "@genshin-optimizer/plugin:sync-repo",
+      "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
     "build": {
       "executor": "nx:noop",

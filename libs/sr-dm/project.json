@@ -7,14 +7,13 @@
     "load-dm": {
       "options": {
         "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
-        "localPath": "libs/sr-dm/StarRailData"
+        "outputPath": "libs/sr-dm/StarRailData"
       },
       "inputs": [
         {
           "runtime": "git ls-remote -q https://github.com/Dimbreath/StarRailData.git HEAD"
         }
-      ],
-      "outputs": ["{projectRoot}/StarRailData.hash"]
+      ]
     },
     "build": {},
     "build-ts": {

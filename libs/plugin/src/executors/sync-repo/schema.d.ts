@@ -1,5 +1,5 @@
 export interface SyncRepoExecutorSchema {
   repoUrl: string
-  localPath: string
+  outputPath: string
   prefixPath?: boolean
 }
