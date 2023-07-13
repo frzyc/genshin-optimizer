@@ -4013,6 +4013,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-plugin@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@nrwl/nx-plugin@npm:16.4.3"
+  dependencies:
+    "@nx/plugin": 16.4.3
+  checksum: d3d395701785816fb77552431cb7eea0127ce4480621d6b98d6274be86943ee8728c7f9a4d018f005bfd1d9ab380a1187fcd9b2065a4cb08c7d49c70f5922584
+  languageName: node
+  linkType: hard
+
 "@nrwl/react@npm:16.4.3":
   version: 16.4.3
   resolution: "@nrwl/react@npm:16.4.3"
@@ -4274,6 +4283,23 @@ __metadata:
   version: 16.4.3
   resolution: "@nx/nx-win32-x64-msvc@npm:16.4.3"
   conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@nx/plugin@npm:16.4.3":
+  version: 16.4.3
+  resolution: "@nx/plugin@npm:16.4.3"
+  dependencies:
+    "@nrwl/nx-plugin": 16.4.3
+    "@nx/devkit": 16.4.3
+    "@nx/jest": 16.4.3
+    "@nx/js": 16.4.3
+    "@nx/linter": 16.4.3
+    "@phenomnomnominal/tsquery": ~5.0.1
+    dotenv: ~10.0.0
+    fs-extra: ^11.1.0
+    tslib: ^2.3.0
+  checksum: 90f9a14ebf66b7b300c6bae6731ee43fb2dcfc0ecec0e94255e78ed25848efd9c66a350b1713114b994b93120d70726efa5d530f9c1be628ef43d6c2da53a684
   languageName: node
   linkType: hard
 
@@ -4742,6 +4768,39 @@ __metadata:
     "@svgr/plugin-jsx": 8.0.1
     "@svgr/plugin-svgo": 8.0.1
   checksum: e5e28be53ecf049056ea959040edabfc2d2e717e9ec7f4a549fa262cd1e2d9c6479836ea2eb1586196b9fee74855a0087dbb88257e872fe6b31157c5c0a52dcc
+  languageName: node
+  linkType: hard
+
+"@swc-node/core@npm:^1.8.2":
+  version: 1.10.4
+  resolution: "@swc-node/core@npm:1.10.4"
+  peerDependencies:
+    "@swc/core": ">= 1.3"
+  checksum: 0c6469d1410a20f5bbbac61447dd869773a180e9ba7ae8b8a5d3392e94167daea83ea2358e476195bf7dc3f6ca8c1e08c712a4c5069d77129e250452b18aa963
+  languageName: node
+  linkType: hard
+
+"@swc-node/register@npm:~1.4.2":
+  version: 1.4.2
+  resolution: "@swc-node/register@npm:1.4.2"
+  dependencies:
+    "@swc-node/core": ^1.8.2
+    "@swc-node/sourcemap-support": ^0.1.11
+    chalk: 4
+    debug: ^4.3.3
+    pirates: ^4.0.4
+    tslib: ^2.3.1
+    typescript: ^4.5.3
+  checksum: cb4a62f07ade0f207c42ef282243502ec24d0f8e4593973394eac94a364ac53b8c1fb3652afcd14191237ae0843eeb0fb6574ce1fc0696b017e271f06a14e248
+  languageName: node
+  linkType: hard
+
+"@swc-node/sourcemap-support@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "@swc-node/sourcemap-support@npm:0.1.11"
+  dependencies:
+    source-map-support: ^0.5.21
+  checksum: 1dd5007d3516c9d034757d5012a03fc05cbe63935a5432c2e414611e0f8006a591d7505fb4243842da3c88efb6dbbc419e9297f526210365bd819938baa6956d
   languageName: node
   linkType: hard
 
@@ -7320,6 +7379,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:4, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -7328,16 +7397,6 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -10285,10 +10344,12 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.120
     "@mui/material": ^5.11.10
     "@nx/cypress": 16.4.3
+    "@nx/devkit": 16.4.3
     "@nx/eslint-plugin": 16.4.3
     "@nx/jest": 16.4.3
     "@nx/js": 16.4.3
     "@nx/linter": 16.4.3
+    "@nx/plugin": 16.4.3
     "@nx/react": 16.4.3
     "@nx/vite": 16.4.3
     "@nx/web": 16.4.3
@@ -10296,6 +10357,7 @@ __metadata:
     "@nx/workspace": 16.4.3
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.10
     "@svgr/webpack": 8.0.1
+    "@swc-node/register": ~1.4.2
     "@swc/cli": ~0.1.62
     "@swc/core": ~1.3.51
     "@swc/helpers": ~0.5.0
@@ -16520,7 +16582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:~0.5.20":
+"source-map-support@npm:^0.5.21, source-map-support@npm:~0.5.20":
   version: 0.5.21
   resolution: "source-map-support@npm:0.5.21"
   dependencies:
@@ -17492,6 +17554,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.3.1":
+  version: 2.6.0
+  resolution: "tslib@npm:2.6.0"
+  checksum: c01066038f950016a18106ddeca4649b4d76caa76ec5a31e2a26e10586a59fceb4ee45e96719bf6c715648e7c14085a81fee5c62f7e9ebee68e77a5396e5538f
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^2.5.0":
   version: 2.5.0
   resolution: "tslib@npm:2.5.0"
@@ -17592,6 +17661,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.5.3":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
+  languageName: node
+  linkType: hard
+
 "typescript@npm:~5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
@@ -17609,6 +17688,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 32a25b2e128a4616f999d4ee502aabb1525d5647bc8955e6edf05d7fbc53af8aa98252e2f6ba80bcedfc0260c982b885f3c09cfac8bb65d2924f3133ad1e1e62
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.5.3#~builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
   languageName: node
   linkType: hard
 

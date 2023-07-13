@@ -4,7 +4,7 @@ import type { Data, DisplaySub } from '../../Formula/type'
 import { infoMut, prod, constant, subscript, sum } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
+import type { WeaponData } from '@genshin-optimizer/gi-stats'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
 export function dataObjForWeaponSheet(

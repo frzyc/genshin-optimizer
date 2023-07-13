@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "allowJs": false,
     "esModuleInterop": false,
-    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "exactOptionalPropertyTypes": false,
+    "strictNullChecks": false,
     "jsxImportSource": "@emotion/react"
   },
   "files": [],
