@@ -1,3 +1,4 @@
+"use client"
 import type { CardProps } from '@mui/material'
 import { Card, styled } from '@mui/material'
 interface StyledCardProps extends CardProps {
