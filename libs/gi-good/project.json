@@ -4,30 +4,10 @@
   "sourceRoot": "libs/gi-good/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-good",
-        "main": "libs/gi-good/src/index.ts",
-        "tsConfig": "libs/gi-good/tsconfig.lib.json",
-        "assets": ["libs/gi-good/*.md"]
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-good/**/*.ts"]
-      }
-    },
+    "build": {},
+    "build-ts": {},
+    "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/gi-good/jest.config.ts",
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,

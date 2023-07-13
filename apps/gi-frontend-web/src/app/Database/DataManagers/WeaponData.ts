@@ -45,7 +45,7 @@ export class WeaponDataManager extends DataManager<
     weaponIds: Set<string> = new Set(this.keys)
   ) {
     const char = this.database.chars.get(charKey)
-    if (char?.equippedWeapon) return
+    if (char?.equippedWeapon) return undefined
     const locKey = charKeyToLocCharKey(charKey)
     const weapon = defaultInitialWeapon(allStats.char.data[locKey].weaponType)
     const weaponId = this.generateKey(weaponIds)
@@ -53,15 +53,15 @@ export class WeaponDataManager extends DataManager<
     this.set(weaponId, { ...weapon, location: locKey })
     return weapon
   }
-  validate(obj: unknown): IWeapon | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: unknown): IWeapon | undefined {
+    if (typeof obj !== 'object') return undefined
     const { key, level: rawLevel, ascension: rawAscension } = obj as IWeapon
     let { refinement, location, lock } = obj as IWeapon
 
-    if (!allWeaponKeys.includes(key)) return
+    if (!allWeaponKeys.includes(key)) return undefined
     const rarity = allStats.weapon.data[key].rarity
     const weaponType = allStats.weapon.data[key].weaponType
-    if (rawLevel > weaponMaxLevel[rarity]) return
+    if (rawLevel > weaponMaxLevel[rarity]) return undefined
     const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
     if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
       refinement = 1
@@ -71,15 +71,15 @@ export class WeaponDataManager extends DataManager<
       allStats.char.data[location as LocationCharacterKey].weaponType !==
         weaponType
     )
-      return
+      return undefined
     lock = !!lock
     return { key, level, ascension, refinement, location, lock }
   }
-  toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
+  override toCache(storageObj: IWeapon, id: string): ICachedWeapon | undefined {
     const newWeapon = { ...storageObj, id }
     const oldWeapon = super.get(id)
     // Disallow unequipping of weapons
-    if (!newWeapon.location && oldWeapon?.location) return
+    if (!newWeapon.location && oldWeapon?.location) return undefined
 
     // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
     const getWithInit = (lk: LocationCharacterKey): ICachedCharacter => {
@@ -122,7 +122,7 @@ export class WeaponDataManager extends DataManager<
         this.database.chars.triggerCharacter(newWeapon.location, 'update')
     return newWeapon
   }
-  deCache(weapon: ICachedWeapon): IWeapon {
+  override deCache(weapon: ICachedWeapon): IWeapon {
     const { key, level, ascension, refinement, location, lock } = weapon
     return { key, level, ascension, refinement, location, lock }
   }
@@ -132,12 +132,12 @@ export class WeaponDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  remove(key: string, notify = true) {
+  override remove(key: string, notify = true) {
     const weapon = this.get(key)
     if (!weapon || weapon.location) return // Can't delete equipped weapon here
     super.remove(key, notify)
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.weapons.beforeMerge = this.values.length
 
     // Match weapons for counter, metadata, and locations.
@@ -158,9 +158,12 @@ export class WeaponDataManager extends DataManager<
     result.weapons.import = weapons.length
     const idsToRemove = new Set(this.values.map((w) => w.id))
     const hasEquipment = weapons.some((w) => w.location)
-    weapons.forEach((w) => {
+    weapons.forEach((w): void => {
       const weapon = this.validate(w)
-      if (!weapon) return result.weapons.invalid.push(w)
+      if (!weapon) {
+        result.weapons.invalid.push(w)
+        return
+      }
 
       let importWeapon = weapon
       let importId: string | undefined = (w as ICachedWeapon).id

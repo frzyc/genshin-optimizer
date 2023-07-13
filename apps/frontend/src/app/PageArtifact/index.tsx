@@ -109,7 +109,7 @@ export default function PageArtifact() {
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
   useEffect(() => {
-    if (!showProbability) return
+    if (!showProbability) return undefined
     database.arts.values.forEach((art) =>
       database.arts.setProbability(
         art.id,
