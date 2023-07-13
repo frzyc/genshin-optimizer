@@ -8,12 +8,6 @@
       "executor": "@genshin-optimizer/dm-localization:gen-locale",
       "outputs": ["{projectRoot}/assets/locales"]
     },
-    "build": {},
-    "build-ts": {
-      "options": {
-        "outputFileName": "src/index.js"
-      }
-    },
     "lint": {}
   },
   "tags": []
