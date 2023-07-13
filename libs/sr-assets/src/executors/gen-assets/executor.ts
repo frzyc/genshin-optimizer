@@ -51,7 +51,7 @@ export const AssetData = {
 }
 
 export default async function runExecutor(
-  options: GenAssetsExecutorSchema
+  _options: GenAssetsExecutorSchema
 ): Promise<{ success: boolean }> {
   // Best effort and silently fail since most of the time we don't use this
 

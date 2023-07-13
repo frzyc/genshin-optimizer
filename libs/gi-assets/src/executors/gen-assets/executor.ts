@@ -53,7 +53,7 @@ export const AssetData = {
 }
 
 export default async function runExecutor(
-  options: GenAssetsExecutorSchema
+  _options: GenAssetsExecutorSchema
 ): Promise<{ success: boolean }> {
   // Best effort and silently fail since most of the time we don't use this
 
@@ -81,7 +81,7 @@ export default async function runExecutor(
       containsList.map((pieceId) => {
         const pieceData = reliquaryExcelConfigData[pieceId]
         if (!pieceData)
-          throw `No piece data with id ${pieceId} in setId ${setId}`
+          throw new Error(`No piece data with id ${pieceId} in setId ${setId}`)
         const { icon, equipType } = pieceData
         return [artifactSlotMap[equipType], icon]
       })

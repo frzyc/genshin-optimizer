@@ -49,14 +49,14 @@ const allStat = {
 
 export type AllStats = typeof allStat
 
-export default async function runExecutor(options: GenStatsExecutorSchema) {
-  console.log('Writing basic character data')
+export default async function runExecutor(_options: GenStatsExecutorSchema) {
+  console.log(`Writing basic character data to ${path}/Characters`)
   Object.entries(characterDataDump).forEach(([characterKey, data]) =>
     dumpFile(`${path}/Characters/${characterKey}/data.json`, data)
   )
 
   // dumpFile(`${__dirname}/allChar_gen.json`, characterSkillParamDump)
-  console.log('Writing weapon data')
+  console.log(`Writing weapon data to ${path}/Weapons`)
   Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
     dumpFile(
       `${path}/Weapons/${
@@ -65,17 +65,15 @@ export default async function runExecutor(options: GenStatsExecutorSchema) {
       data
     )
   )
+  dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
 
-  console.log('Writing character data')
+  console.log(`Writing character data to ${path}/Characters`)
   Object.entries(characterSkillParamDump).forEach(([characterKey, data]) =>
     dumpFile(`${path}/Characters/${characterKey}/skillParam.json`, data)
   )
-
-  console.log('Writing exp curves')
-  dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
   dumpFile(`${path}/Characters/expCurve.json`, charExpCurve)
 
-  console.log('Writing artifact data')
+  console.log(`Writing artifact data to ${path}/Artifacts`)
   dumpFile(`${path}/Artifacts/artifact_set.json`, artifactDataDump)
   dumpFile(`${path}/Artifacts/artifact_sub.json`, artifactSubstatData)
   dumpFile(`${path}/Artifacts/artifact_main.json`, artifactMainstatData)
@@ -85,10 +83,10 @@ export default async function runExecutor(options: GenStatsExecutorSchema) {
     artifactSubstatRollCorrection
   )
 
-  console.log('Writing material data')
+  console.log(`Writing material data to ${path}/Materials`)
   dumpFile(`${path}/Materials/material.json`, materialDataDump)
 
-  console.log('Writing all data')
+  console.log(`Writing combined data to ${proj_path}/src/allStats_gen.json`)
   dumpFile(`${proj_path}/src/allStat_gen.json`, allStat)
 
   return { success: true }

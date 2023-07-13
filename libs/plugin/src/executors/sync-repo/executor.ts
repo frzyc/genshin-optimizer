@@ -12,9 +12,11 @@ export default async function runExecutor(
   const remoteHash = getRemoteRepoHash(url)
   const name = path.basename(cwd)
 
-  console.log('Caution: if this is part of nx cache replay,')
-  console.log('         no git command is actually executed.')
-  console.log(' ')
+  console.log(
+    `
+Caution: if this is part of nx cache replay,
+         no git command is actually executed.` + '\n '
+  )
 
   if (fs.existsSync(cwd)) {
     // Fetch & reset
