@@ -74,19 +74,19 @@
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "frontend:build",
+        "buildTarget": "frontend:build-webpack",
         "hmr": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "frontend:build:development"
+          "buildTarget": "frontend:build-webpack:development"
         },
         "production": {
-          "buildTarget": "frontend:build:production",
+          "buildTarget": "frontend:build-webpack:production",
           "hmr": false
         }
       },
-      "dependsOn": ["build"]
+      "dependsOn": ["build-webpack"]
     },
     "lint": {},
     "test": {}

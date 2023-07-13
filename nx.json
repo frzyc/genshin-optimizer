@@ -53,7 +53,7 @@
           "mode": "production"
         }
       },
-      "dependsOn": ["genfile", "genfile", "^build", "^pipeline"],
+      "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
       "inputs": ["production", "^production"]
     },
     "build-ts": {
