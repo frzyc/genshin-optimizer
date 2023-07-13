@@ -5,20 +5,8 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/ui-common/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
+    "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/ui-common/jest.config.ts",
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,

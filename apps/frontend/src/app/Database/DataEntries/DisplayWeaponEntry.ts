@@ -29,8 +29,8 @@ export class DisplayWeaponEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_weapon', initialState, 'display_weapon')
   }
-  validate(obj: any): IDisplayWeapon | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: any): IDisplayWeapon | undefined {
+    if (typeof obj !== 'object') return undefined
     let { sortType, ascending, rarity, weaponType } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId

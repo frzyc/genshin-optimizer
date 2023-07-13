@@ -4,25 +4,16 @@
   "sourceRoot": "libs/sr-stats/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/sr-stats",
-        "main": "libs/sr-stats/src/index.ts",
-        "tsConfig": "libs/sr-stats/tsconfig.lib.json",
-        "assets": ["libs/sr-stats/*.md"]
-      },
-      "dependsOn": ["^build", "^pipeline"]
+    "genfile": {
+      "executor": "@genshin-optimizer/sr-stats:gen-stats",
+      "outputs": [
+        "{projectRoot}/Data/**/*",
+        "{projectRoot}/src/allStat_gen.json"
+      ]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr-stats/**/*.ts"]
-      }
-    }
+    "build": {},
+    "build-ts": {},
+    "lint": {}
   },
-  "tags": [],
-  "implicitDependencies": ["sr-pipeline"]
+  "tags": []
 }

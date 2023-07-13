@@ -103,7 +103,7 @@ function artifactReducer(
 ): IEditorArtifact | undefined {
   switch (action.type) {
     case 'reset':
-      return
+      return undefined
     case 'substat': {
       const { index, substat } = action
       const oldIndex = substat.key

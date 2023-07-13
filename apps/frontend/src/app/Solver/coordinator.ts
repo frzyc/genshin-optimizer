@@ -77,9 +77,9 @@ export class WorkerCoordinator<
     this.cancel(new Error(`Worker Error: ${e.message}`))
   }
   onMessage(msg: Command | Response, worker: Worker) {
-    if (msg.command !== undefined) this.add(msg)
+    if (msg.command !== undefined) this.add(msg as Command)
     else if (msg.resultType === 'done') this.workDone.get(worker)!()
-    else this.callback(msg, worker)
+    else this.callback(msg as Response, worker)
   }
   /** May be ignored after `execute` ends */
   add(command: Command) {
