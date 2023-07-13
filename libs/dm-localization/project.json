@@ -4,20 +4,15 @@
   "sourceRoot": "libs/dm-localization/src",
   "projectType": "application",
   "targets": {
+    "genfile": {
+      "executor": "@genshin-optimizer/dm-localization:gen-locale",
+      "outputs": ["{projectRoot}/assets/locales"]
+    },
     "build": {},
     "build-ts": {
       "options": {
         "outputFileName": "src/index.js"
       }
-    },
-    "pipeline": {
-      "executor": "@nx/js:node",
-      "options": {
-        "buildTarget": "dm-localization:build-ts",
-        "watch": false,
-        "inspect": false
-      },
-      "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
     },
     "lint": {}
   },

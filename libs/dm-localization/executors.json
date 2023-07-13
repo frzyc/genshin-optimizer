@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "gen-locale": {
+      "implementation": "./src/executors/gen-locale/executor",
+      "schema": "./src/executors/gen-locale/schema.json",
+      "description": "gen-locale executor"
+    }
+  }
+}

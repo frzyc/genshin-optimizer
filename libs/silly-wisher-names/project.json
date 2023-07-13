@@ -4,9 +4,12 @@
   "sourceRoot": "libs/silly-wisher-names/src",
   "projectType": "library",
   "targets": {
-    "pipeline": {
-      "command": "ts-node libs/silly-wisher-names/src/loadTrans.ts",
-      "inputs": ["production"]
+    "genfile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node libs/silly-wisher-names/src/loadTrans.ts"
+      },
+      "outputs": ["{projectRoot}/assets/locales"]
     },
     "lint": {}
   },
