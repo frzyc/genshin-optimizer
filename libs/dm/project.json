@@ -15,10 +15,7 @@
         }
       ]
     },
-    "genfile": {
-      "executor": "nx:noop",
-      "dependsOn": ["load-dm", "^genfile"]
-    },
+    "genfile": {},
     "build": {},
     "build-ts": {},
     "lint": {}

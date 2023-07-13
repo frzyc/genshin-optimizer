@@ -25,9 +25,7 @@
       "executor": "@genshin-optimizer/plugin:sync-repo",
       "outputs": ["{workspaceRoot}/{options.outputPath}.hash"]
     },
-    "genfile": {
-      "dependsOn": ["^genfile"]
-    },
+    "genfile": {},
     "build": {
       "executor": "nx:noop",
       "dependsOn": ["build-webpack", "build-vite", "build-ts"],
