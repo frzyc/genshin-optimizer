@@ -6,20 +6,16 @@
   "targets": {
     "build": {},
     "build-ts": {
-      "dependsOn": ["^pipeline"],
       "inputs": ["!{projectRoot}/**/*.gen.ts"]
     },
     "publish": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs gi-formula {args.ver} {args.tag}"
-      },
-      "dependsOn": ["build"]
+      }
     },
     "lint": {},
-    "test": {
-      "dependsOn": ["^pipeline"]
-    }
+    "test": {}
   },
   "tags": []
 }

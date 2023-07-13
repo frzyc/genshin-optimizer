@@ -95,6 +95,9 @@
       },
       "dependsOn": ["genfile", "^genfile", "^pipeline"],
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    },
+    "publish": {
+      "dependsOn": ["build"]
     }
   },
   "namedInputs": {

@@ -68,8 +68,7 @@
           "vendorChunk": false,
           "baseHref": "/genshin-optimizer/"
         }
-      },
-      "dependsOn": ["^build", "^pipeline"]
+      }
     },
     "serve": {
       "executor": "@nx/webpack:dev-server",
@@ -87,12 +86,10 @@
           "hmr": false
         }
       },
-      "dependsOn": ["^build", "^pipeline"]
+      "dependsOn": ["build"]
     },
     "lint": {},
-    "test": {
-      "dependsOn": ["^build", "^pipeline"]
-    }
+    "test": {}
   },
   "tags": [],
   "implicitDependencies": [
