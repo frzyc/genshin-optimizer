@@ -18,7 +18,7 @@ import {
   regionMap,
   weaponMap,
 } from '@genshin-optimizer/dm'
-import somniaData from './Somnia/data.json'
+import * as somniaData from './Somnia/data.json'
 
 export type CharacterGrowCurveKey =
   | 'GROW_CURVE_HP_S4'

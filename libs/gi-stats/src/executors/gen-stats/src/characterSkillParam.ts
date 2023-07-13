@@ -14,7 +14,7 @@ import {
 } from '@genshin-optimizer/dm'
 import { extrapolateFloat } from '@genshin-optimizer/pipeline'
 import { layeredAssignment } from '@genshin-optimizer/util'
-import somniaData from './Somnia/skillParam.json'
+import * as somniaData from './Somnia/skillParam.json'
 
 type CharacterSkillParams = {
   auto: number[][]

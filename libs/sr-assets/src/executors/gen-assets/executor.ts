@@ -1,4 +1,4 @@
-import { GenAssetsExecutorSchema } from './schema'
+import type { GenAssetsExecutorSchema } from './schema'
 import { generateIndexFromObj } from '@genshin-optimizer/pipeline'
 import type {
   CharacterKey,

@@ -13,7 +13,7 @@ import {
   weaponPromoteExcelConfigData,
 } from '@genshin-optimizer/dm'
 import { extrapolateFloat } from '@genshin-optimizer/pipeline'
-import quantumCatalystData from './QuantumCatalyst/data.json'
+import * as quantumCatalystData from './QuantumCatalyst/data.json'
 
 type WeaponProp = {
   type: StatKey

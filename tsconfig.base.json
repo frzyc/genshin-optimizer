@@ -24,7 +24,7 @@
     "noImplicitOverride": true,
     "exactOptionalPropertyTypes": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": false,
     "paths": {
       "@genshin-optimizer/char-cards": ["libs/char-cards/src/index.ts"],
       "@genshin-optimizer/consts": ["libs/consts/src/index.ts"],
@@ -36,7 +36,6 @@
       "@genshin-optimizer/gi-assets": ["libs/gi-assets/src/index.ts"],
       "@genshin-optimizer/gi-formula": ["libs/gi-formula/src/index.ts"],
       "@genshin-optimizer/gi-good": ["libs/gi-good/src/index.ts"],
-      "@genshin-optimizer/gi-pipeline": ["libs/gi-pipeline/src/index.ts"],
       "@genshin-optimizer/gi-stats": ["libs/gi-stats/src/index.ts"],
       "@genshin-optimizer/gi-svgicons": ["libs/gi-svgicons/src/index.ts"],
       "@genshin-optimizer/gi-util": ["libs/gi-util/src/index.ts"],
