@@ -3,8 +3,8 @@ import type { Read } from './type'
 
 export class TypedRead<T extends Tag, Subclass> implements Read {
   op = 'read' as const
-  x = []
-  br = []
+  x: never[] = []
+  br: never[] = []
   tag: T
   ex: Read['ex']
 

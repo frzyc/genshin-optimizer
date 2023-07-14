@@ -27,11 +27,15 @@ type Num<P extends OP> = NumNode<P> | number
 type Str<P extends OP> = StrNode<P> | string
 type Val<P extends OP> = AnyNode<P> | _value
 
+// Convenient empty arguments
+const x = Object.freeze([]) as never[]
+const br = Object.freeze([]) as never[]
+
 export function constant(val: number): Const<number>
 export function constant(val: string): Const<string>
 export function constant(val: _value): Const<_value>
 export function constant(val: _value): Const<_value> {
-  return { op: 'const', x: [], br: [], ex: val }
+  return { op: 'const', x, br, ex: val }
 }
 
 /** x0 + x1 + ... */
@@ -52,7 +56,7 @@ export const sumfrac = <P extends OP = never>(
   c: Num<P>
 ): SumFrac<P | 'sumfrac'> => arithmetic('sumfrac', [x, c])
 function arithmetic<Op extends string, P extends OP>(op: Op, x: Num<P>[]) {
-  return { op, x: toVs(x), br: [] }
+  return { op, x: toVs(x), br }
 }
 
 /** v1 == v2 ? eq : neq */
@@ -252,7 +256,7 @@ export function subscript<P extends OP>(
   index: Num<P>,
   table: number[] | string[]
 ): Subscript<_value, P | 'subscript'> {
-  return { op: 'subscript', ex: table, x: [], br: [toV(index)] }
+  return { op: 'subscript', ex: table, x, br: [toV(index)] }
 }
 
 // Tagging
@@ -273,7 +277,7 @@ export function tag<P extends OP = never>(
   v: Val<P>,
   tag: Tag
 ): TagOverride<AnyNode<P>, P | 'tag'> {
-  return { op: 'tag', x: [toV(v)], br: [], tag }
+  return { op: 'tag', x: [toV(v)], br, tag }
 }
 export function dynTag<P extends OP = never>(
   v: Num<P>,
@@ -299,11 +303,11 @@ export function dynTag<P extends OP = never>(
   }
 }
 export function tagVal(cat: string): TagValRead {
-  return { op: 'vtag', x: [], br: [], ex: cat }
+  return { op: 'vtag', x, br, ex: cat }
 }
 
 export function read(tag: Tag, ex: Read['ex']): Read {
-  return { op: 'read', x: [], br: [], tag, ex }
+  return { op: 'read', x, br, tag, ex }
 }
 export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }
@@ -325,7 +329,7 @@ export function custom<P extends OP = never>(
   op: string,
   ...v: Val<P>[]
 ): Custom<AnyNode<P>, P | 'custom'> {
-  return { op: 'custom', x: toVs(v), br: [], ex: op }
+  return { op: 'custom', x: toVs(v), br, ex: op }
 }
 
 function toVs<P extends OP>(vals: Num<P>[]): NumNode<P>[]
