@@ -82,7 +82,7 @@ export default function UpgradeOptChartCard({
   const integralCons = (a: number, b: number) =>
     upgradeOpt.result!.distr.gmm.reduce((pv, { cp, phi, mu, sig2 }) => {
       const sig = Math.sqrt(sig2)
-      if (sig < 1e-3) return a <= mu && mu < b ? phi + pv : pv
+      if (sig < 1e-3) return a <= mu && mu < b ? cp * phi + pv : pv
       const P = erf((mu - a) / sig) - erf((mu - b) / sig)
       return pv + (cp * phi * P) / 2
     }, 0)
@@ -180,13 +180,13 @@ export default function UpgradeOptChartCard({
                 x2={xpercent}
                 y2="0"
               >
-                <stop offset={1} stopColor="orange" stopOpacity={0} />
-                <stop offset={0} stopColor="orange" stopOpacity={1} />
+                <stop offset={1} stopColor={isExact ? '#2f6fa2' : 'orange'} stopOpacity={0} />
+                <stop offset={0} stopColor={isExact ? '#2f6fa2' : 'orange'} stopOpacity={1} />
               </linearGradient>
             </defs>
 
             <Line dataKey="dne" stroke="red" name="Current Damage" />
-            {constrained && !calcExacts && (
+            {constrained && (
               <Area
                 type="monotone"
                 dataKey="est"
@@ -199,41 +199,20 @@ export default function UpgradeOptChartCard({
                 activeDot={false}
               />
             )}
-            {constrained && calcExacts && (
-              <Area
-                type="stepAfter"
-                dataKey="exact"
-                dot={false}
-                legendType="none"
-                tooltipType="none"
-                opacity={0.7}
-                activeDot={false}
-                fill="grey"
-                stroke="grey"
-              />
-            )}
             <Area
               type="monotone"
               dataKey="estCons"
-              stroke="orange"
+              stroke={isExact ? '#2f6fa2' : 'orange'}
               dot={false}
               fill={`url(#splitOpacity${upgradeOpt.id})`}
               opacity={0.5}
-              name={`Estimated Distribution`}
+              name={
+                isExact
+                  ? `Exact${constrained ? ' Constrained' : ''} Distribution`
+                  : `Estimated Distribution`
+              }
               activeDot={false}
             />
-            {calcExacts && (
-              <Area
-                type="stepAfter"
-                dataKey="exactCons"
-                dot={false}
-                opacity={0.7}
-                name={`Exact${
-                  constrained ? ' Constrained' : ''
-                } Distribution (Histogram)`}
-                activeDot={false}
-              />
-            )}
 
             <ReferenceLine
               x={perc(thr0)}
