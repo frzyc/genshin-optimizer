@@ -562,9 +562,9 @@ export default function TabUpopt() {
                         objMax={maxObj0}
                         objMin={minObj0}
                         calcExactCallback={() => {
-                          console.log(`called with ${i}`)
-                          // FIXME: the `calcExact` function should take art.id as argument, because `i` is relative to the displayed arts here.
-                          upOptCalc?.calcExact(i)
+                          const ix =
+                            currentPageIndex * artifactsToDisplayPerPage + i
+                          upOptCalc?.calcExact(ix)
                           setForceUpdate()
                         }}
                       />
