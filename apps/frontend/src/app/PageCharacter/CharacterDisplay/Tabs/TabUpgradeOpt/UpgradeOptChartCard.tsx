@@ -3,7 +3,7 @@ import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
 import { imgAssets } from '@genshin-optimizer/gi-assets'
 import { linspace } from '@genshin-optimizer/util'
 import { Box, Button, CardContent, Grid } from '@mui/material'
-import { useCallback, useContext, useMemo, useState } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import type { TooltipProps } from 'recharts'
 import {
   Area,
@@ -51,8 +51,6 @@ export default function UpgradeOptChartCard({
   objMax,
   calcExactCallback,
 }: Data) {
-  const [calcExacts, setCalcExacts] = useState(false)
-
   const { database } = useContext(DatabaseContext)
   const bla = database.arts.get(upgradeOpt.id)
   if (!bla) {
@@ -180,8 +178,16 @@ export default function UpgradeOptChartCard({
                 x2={xpercent}
                 y2="0"
               >
-                <stop offset={1} stopColor={isExact ? '#f17704' : 'orange'} stopOpacity={0} />
-                <stop offset={0} stopColor={isExact ? '#f17704' : 'orange'} stopOpacity={1} />
+                <stop
+                  offset={1}
+                  stopColor={isExact ? '#f17704' : 'orange'}
+                  stopOpacity={0}
+                />
+                <stop
+                  offset={0}
+                  stopColor={isExact ? '#f17704' : 'orange'}
+                  stopOpacity={1}
+                />
               </linearGradient>
             </defs>
 
@@ -246,7 +252,6 @@ export default function UpgradeOptChartCard({
                     style={{ height: '100%', width: '100%' }}
                     onClick={() => {
                       calcExactCallback()
-                      setCalcExacts(true)
                     }}
                     startIcon={
                       <Box
