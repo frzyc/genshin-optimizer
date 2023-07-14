@@ -6,6 +6,7 @@ import type {
 import { compileTagMapValues, constant } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
+export type { CalcMeta } from './calculator'
 export { Calculator } from './calculator'
 export * from './data/util'
 export * from './formulaText'

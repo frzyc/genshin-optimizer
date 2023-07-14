@@ -10,15 +10,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "gi-frontend:build:development",
+          "buildTarget": "gi-frontend:build-vite:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "gi-frontend:build:production",
+          "buildTarget": "gi-frontend:build-vite:production",
           "hmr": false
         }
       }
@@ -27,14 +27,14 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       },
       "configurations": {
         "development": {
-          "buildTarget": "gi-frontend:build:development"
+          "buildTarget": "gi-frontend:build-vite:development"
         },
         "production": {
-          "buildTarget": "gi-frontend:build:production"
+          "buildTarget": "gi-frontend:build-vite:production"
         }
       }
     },
@@ -45,7 +45,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "gi-frontend:build"
+        "buildTarget": "gi-frontend:build-vite"
       }
     }
   },

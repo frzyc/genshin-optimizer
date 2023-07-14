@@ -7,6 +7,7 @@ import {
   allArtifactSlotKeys,
   type CharacterKey,
 } from '@genshin-optimizer/consts'
+import { characterAsset } from '@genshin-optimizer/gi-assets'
 import type { Calculator } from '@genshin-optimizer/gi-formula'
 import {
   artifactsData,
@@ -16,11 +17,9 @@ import {
   genshinCalculatorWithEntries,
   selfTag,
   teamData,
-  translate,
   weaponData,
   withMember,
 } from '@genshin-optimizer/gi-formula'
-import { characterAsset } from '@genshin-optimizer/gi-assets'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi-util'
 import { read } from '@genshin-optimizer/pando'
 import { range } from '@genshin-optimizer/util'
@@ -42,8 +41,10 @@ import { DatabaseContext } from '../../Database/Database'
 import useCharMeta from '../../Hooks/useCharMeta'
 import useDBMeta from '../../Hooks/useDBMeta'
 import type { ICachedArtifact } from '../../Types/artifact'
-import type { ICachedCharacter } from '../../Types/character'
+// import type { ICachedCharacter } from '../../Types/character'
+import { CardThemed } from '@genshin-optimizer/ui-common'
 import { iconAsset } from '../../Util/AssetUtil'
+import { NodeFieldDisplay } from '../FieldDisplay'
 
 type CharacterCardProps = {
   characterKey: CharacterKey
@@ -59,48 +60,48 @@ type CharacterCardProps = {
 }
 export default function CharacterCard({
   characterKey,
-  artifactChildren,
-  weaponChildren,
-  characterChildren,
-  onClick,
-  onClickHeader,
-  onClickTeammate,
+  // artifactChildren,
+  // weaponChildren,
+  // characterChildren,
+  // onClick,
+  // onClickHeader,
+  // onClickTeammate,
   footer,
-  hideStats,
-  isTeammateCard,
+  hideStats = false,
+  isTeammateCard = false,
 }: CharacterCardProps) {
   const { database } = useContext(DatabaseContext)
   // const teamData = useTeamData(characterKey)
   // const character = useCharacter(characterKey)
-  const character: ICachedCharacter = {
-    key: characterKey,
-    level: 50,
-    constellation: 3,
-    ascension: 3,
-    talent: {
-      auto: 5,
-      skill: 5,
-      burst: 5,
-    },
-    hitMode: 'avgHit',
-    conditional: {},
-    bonusStats: {},
-    enemyOverride: {},
-    infusionAura: '',
-    compareData: false,
-    customMultiTarget: [],
-    team: ['', '', ''],
-    teamConditional: {},
-    equippedArtifacts: {
-      flower: '',
-      plume: '',
-      sands: '',
-      goblet: '',
-      circlet: '',
-    },
-    equippedWeapon: 'test',
-  }
-  const { gender } = useDBMeta()
+  // const character: ICachedCharacter = {
+  //   key: characterKey,
+  //   level: 50,
+  //   constellation: 3,
+  //   ascension: 3,
+  //   talent: {
+  //     auto: 5,
+  //     skill: 5,
+  //     burst: 5,
+  //   },
+  //   hitMode: 'avgHit',
+  //   conditional: {},
+  //   bonusStats: {},
+  //   enemyOverride: {},
+  //   infusionAura: '',
+  //   compareData: false,
+  //   customMultiTarget: [],
+  //   team: ['', '', ''],
+  //   teamConditional: {},
+  //   equippedArtifacts: {
+  //     flower: '',
+  //     plume: '',
+  //     sands: '',
+  //     goblet: '',
+  //     circlet: '',
+  //   },
+  //   equippedWeapon: 'test',
+  // }
+  // const { gender } = useDBMeta()
   // const characterSheet = getCharSheet(characterKey, gender)
   // const characterDispatch = useCharacterReducer(characterKey)
   // const data = teamData?.[characterKey]?.target
@@ -195,49 +196,50 @@ export default function CharacterCard({
         />
       }
     >
-      {/* <CardLight
+      <CardThemed
+        bgt="light"
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-      > */}
-      <Box
-        sx={{
-          display: 'flex',
-          position: 'absolute',
-          zIndex: 2,
-          opacity: 0.7,
-        }}
       >
-        <IconButton
-          sx={{ p: 0.5 }}
-          onClick={(_) =>
-            database.charMeta.set(characterKey, { favorite: !favorite })
-          }
+        <Box
+          sx={{
+            display: 'flex',
+            position: 'absolute',
+            zIndex: 2,
+            opacity: 0.7,
+          }}
         >
-          {favorite ? <Favorite /> : <FavoriteBorder />}
-        </IconButton>
-      </Box>
-      {/* <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+          <IconButton
+            sx={{ p: 0.5 }}
+            onClick={(_) =>
+              database.charMeta.set(characterKey, { favorite: !favorite })
+            }
+          >
+            {favorite ? <Favorite /> : <FavoriteBorder />}
+          </IconButton>
+        </Box>
+        {/* <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
           {character && dataContextObj && characterContextObj ? ( */}
-      <ExistingCharacterCardContent
-        // characterContextObj={characterContextObj}
-        // dataContextObj={dataContextObj}
-        calcContextObj={calcContextObj}
-        characterKey={characterKey}
-        onClick={onClick}
-        onClickHeader={onClickHeader}
-        isTeammateCard={isTeammateCard}
-        character={character}
-        onClickTeammate={onClickTeammate}
-        hideStats={hideStats}
-        // weaponChildren={weaponChildren}
-        // artifactChildren={artifactChildren}
-        // characterChildren={characterChildren}
-      />
-      {/* ) : (
+        <ExistingCharacterCardContent
+          // characterContextObj={characterContextObj}
+          // dataContextObj={dataContextObj}
+          calcContextObj={calcContextObj}
+          characterKey={characterKey}
+          // onClick={onClick}
+          // onClickHeader={onClickHeader}
+          isTeammateCard={isTeammateCard}
+          // character={character}
+          // onClickTeammate={onClickTeammate}
+          hideStats={hideStats}
+          // weaponChildren={weaponChildren}
+          // artifactChildren={artifactChildren}
+          // characterChildren={characterChildren}
+        />
+        {/* ) : (
             <NewCharacterCardContent characterKey={characterKey} />
           )} */}
-      {/* </ConditionalWrapper> */}
-      {footer}
-      {/* </CardLight> */}
+        {/* </ConditionalWrapper> */}
+        {footer}
+      </CardThemed>
     </Suspense>
   )
 }
@@ -247,11 +249,11 @@ type ExistingCharacterCardContentProps = {
   // dataContextObj: dataContextObj
   calcContextObj: CalcContextObj
   characterKey: CharacterKey
-  onClick?: (characterKey: CharacterKey) => void
-  onClickHeader?: (characterKey: CharacterKey) => void
+  // onClick?: (characterKey: CharacterKey) => void
+  // onClickHeader?: (characterKey: CharacterKey) => void
   isTeammateCard?: boolean
-  character: ICachedCharacter
-  onClickTeammate?: (characterKey: CharacterKey) => void
+  // character: ICachedCharacter
+  // onClickTeammate?: (characterKey: CharacterKey) => void
   hideStats?: boolean
   weaponChildren?: Displayable
   artifactChildren?: Displayable
@@ -262,11 +264,11 @@ function ExistingCharacterCardContent({
   // dataContextObj,
   calcContextObj,
   characterKey,
-  onClick,
-  onClickHeader,
+  // onClick,
+  // onClickHeader,
   isTeammateCard,
-  character,
-  onClickTeammate,
+  // character,
+  // onClickTeammate,
   hideStats,
   weaponChildren,
   artifactChildren,
@@ -278,7 +280,7 @@ function ExistingCharacterCardContent({
     <CalcContext.Provider value={calcContextObj}>
       <Header
         characterKey={characterKey}
-        onClick={!onClick ? onClickHeader : undefined}
+        // onClick={!onClick ? onClickHeader : undefined}
       >
         <HeaderContent />
       </Header>
@@ -328,38 +330,38 @@ function ExistingCharacterCardContent({
   )
 }
 
-function NewCharacterCardContent({
-  characterKey,
-}: {
-  characterKey: CharacterKey
-}) {
-  return (
-    <>
-      <Header characterKey={characterKey}>
-        <HeaderContentNew characterKey={characterKey} />
-      </Header>
-      <CardContent
-        sx={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1,
-          flexGrow: 1,
-          height: '100%',
-        }}
-      ></CardContent>
-    </>
-  )
-}
+// function NewCharacterCardContent({
+//   characterKey,
+// }: {
+//   characterKey: CharacterKey
+// }) {
+//   return (
+//     <>
+//       <Header characterKey={characterKey}>
+//         <HeaderContentNew characterKey={characterKey} />
+//       </Header>
+//       <CardContent
+//         sx={{
+//           width: '100%',
+//           display: 'flex',
+//           flexDirection: 'column',
+//           gap: 1,
+//           flexGrow: 1,
+//           height: '100%',
+//         }}
+//       ></CardContent>
+//     </>
+//   )
+// }
 
 function Header({
   children,
   characterKey,
-  onClick,
-}: {
+}: // onClick,
+{
   children: JSX.Element
   characterKey: CharacterKey
-  onClick?: (characterKey: CharacterKey) => void
+  // onClick?: (characterKey: CharacterKey) => void
 }) {
   const { gender } = useDBMeta()
   const { silly } = useContext(SillyContext)
@@ -507,31 +509,31 @@ function HeaderContent() {
   )
 }
 
-function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
-  const { gender } = useDBMeta()
-  // const sheet = getCharSheet(characterKey, gender)
+// function HeaderContentNew({ characterKey }: { characterKey: CharacterKey }) {
+//   // const { gender } = useDBMeta()
+//   // const sheet = getCharSheet(characterKey, gender)
 
-  // if (!sheet) return null
-  return (
-    <>
-      <Chip
-        label={<Typography variant="subtitle1">todo</Typography>}
-        size="small"
-        // color={sheet.elementKey}
-        sx={{ opacity: 0.85 }}
-      />
-      <Box mt={1}>
-        <Typography variant="h4">{/* <SqBadge>NEW</SqBadge> */}</Typography>
-      </Box>
-      <Typography mt={1.5}>
-        {/* <StarsDisplay stars={sheet.rarity} colored /> */}
-      </Typography>
-    </>
-  )
-}
+//   // if (!sheet) return null
+//   return (
+//     <>
+//       <Chip
+//         label={<Typography variant="subtitle1">{characterKey}</Typography>}
+//         size="small"
+//         // color={sheet.elementKey}
+//         sx={{ opacity: 0.85 }}
+//       />
+//       <Box mt={1}>
+//         <Typography variant="h4">{/* <SqBadge>NEW</SqBadge> */}</Typography>
+//       </Box>
+//       <Typography mt={1.5}>
+//         {/* <StarsDisplay stars={sheet.rarity} colored /> */}
+//       </Typography>
+//     </>
+//   )
+// }
 
 function Artifacts() {
-  const { database } = useContext(DatabaseContext)
+  // const { database } = useContext(DatabaseContext)
   // const { data } = useContext(DataContext)
   const artifacts = useMemo(
     () =>
@@ -546,7 +548,7 @@ function Artifacts() {
   return (
     <Grid direction="row" container spacing={0.75} columns={5}>
       {artifacts.map(
-        ([key, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => (
+        ([key, _art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => (
           <Grid item key={key} xs={1}>
             {/* <ArtifactCardPico artifactObj={art} slotKey={key} /> */}
           </Grid>
@@ -562,14 +564,8 @@ function Stats() {
   if (!calc) return null
   return (
     <Box sx={{ width: '100%' }}>
-      {Object.entries(member0.final).map(([name, read]) => (
-        <Box key={name} p={1}>
-          {name}: {calc.compute(read).val}
-          <br />
-          name: {translate(calc.compute(read)).name}
-          <br />
-          formula: {translate(calc.compute(read)).formula}
-        </Box>
+      {Object.entries(member0.final).map(([_name, read]) => (
+        <NodeFieldDisplay calcResult={calc.compute(read)} />
       ))}
       {/* {Object.values(data.getDisplay().basic).map((n) => (
         <NodeFieldDisplay key={JSON.stringify(n.info)} node={n} />
