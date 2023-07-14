@@ -11,12 +11,16 @@ export function preprocess(string: string): string {
       /<(\/?)color(?:=#([0-9A-F]{8}))?>/g,
       (_match, isClosed, color) => {
         if (isClosed) return `</${stack.pop()}>`
-        const tag = tagColor[color]
+        const tag = tagColor[color as keyof typeof tagColor]
         stack.push(tag)
         return `<${tag}>`
       }
     )
   }
+
+  string = string
+    .replaceAll(/\{SPACE\}/g, ' ')
+    .replaceAll(/\{NON_BREAK_SPACE\}/g, '\u00A0')
 
   if (string.startsWith('#')) {
     // `{}` tags
@@ -55,7 +59,7 @@ export function parseBulletPoints(strings: string[]): string[] {
 }
 
 //for parsing plunging string
-function plungeUtil(lang, string, low) {
+function plungeUtil(lang: Language, string: string, low: boolean) {
   const res = low ? '$2' : '$3'
   string = string.split('|')[0]
   switch (lang) {
@@ -73,12 +77,12 @@ function plungeUtil(lang, string, low) {
   }
   return string
 }
-const paragraph = (string) => {
+const paragraph = (string: string) => {
   const parsed = string.split('\\n').map((s) => s || '<br/>')
   while (parsed[parsed.length - 1] === '<br/>') parsed.pop()
   return { ...parseBulletPoints(parsed) }
 }
-const autoFields = (string) => {
+const autoFields = (string: string) => {
   const strings = string
     .split('\\n\\n<strong>')
     .filter((s) => s)

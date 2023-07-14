@@ -1,19 +1,19 @@
 import type {
+  ArtifactRarity,
   ArtifactSetKey,
   ArtifactSlotKey,
   LocationCharacterKey,
-} from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import Artifact from '../Data/Artifacts/Artifact'
-import type {
-  ICachedArtifact,
   MainStatKey,
   SubstatKey,
-} from '../Types/artifact'
-import { allSubstatKeys } from '../Types/artifact'
-import type { ArtifactRarity } from '../Types/consts'
-import { allArtifactRarities } from '../Types/consts'
-import type { FilterConfigs, SortConfigs } from '../Util/SortByFilters'
+} from '@genshin-optimizer/consts'
+import {
+  allArtifactRarityKeys,
+  allArtifactSlotKeys,
+  allSubstatKeys,
+} from '@genshin-optimizer/consts'
+import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/util'
+import Artifact from '../Data/Artifacts/Artifact'
+import type { ICachedArtifact } from '../Types/artifact'
 import { probability } from './RollProbability'
 export const artifactSortKeys = [
   'rarity',
@@ -45,7 +45,7 @@ export type FilterOption = {
 export function initialFilterOption(): FilterOption {
   return {
     artSetKeys: [],
-    rarity: [...allArtifactRarities],
+    rarity: [...allArtifactRarityKeys],
     levelLow: 0,
     levelHigh: 20,
     slotKeys: [...allArtifactSlotKeys],

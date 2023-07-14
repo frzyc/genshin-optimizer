@@ -8,7 +8,7 @@ import {
   naught,
   sum,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -28,7 +28,7 @@ const set4_skill_dmg_ = greaterEq(
     0.1,
     lookup(
       condSet4,
-      objectKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
+      objKeyMap(stacksArr, (stack) => constant(stack * 0.08)),
       naught
     )
   )
@@ -55,7 +55,7 @@ const sheet: IArtifactSheet = {
           path: condSet4Path,
           value: condSet4,
           name: st('takeDmg'),
-          states: objectKeyMap(stacksArr, (stack) => ({
+          states: objKeyMap(stacksArr, (stack) => ({
             name: st('stack', { count: stack }),
             fields: [
               {

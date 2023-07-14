@@ -3,6 +3,7 @@ import {
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/consts'
+import { toggleArr } from '@genshin-optimizer/util'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -31,15 +32,18 @@ import { CharacterContext } from '../../../../../Context/CharacterContext'
 import { DataContext } from '../../../../../Context/DataContext'
 import { getCharSheet } from '../../../../../Data/Characters'
 import { DatabaseContext } from '../../../../../Database/Database'
-import type { AllowLocationsState } from '../../../../../Database/DataManagers/BuildSettingData'
+import type {
+  AllowLocationsState,
+  ArtSetExclusionKey,
+} from '../../../../../Database/DataManagers/BuildSettingData'
+import { allArtifactSetExclusionKeys } from '../../../../../Database/DataManagers/BuildSettingData'
 import { uiInput as input } from '../../../../../Formula'
 import ArtifactCard from '../../../../../PageArtifact/ArtifactCard'
+import useArtifact from '../../../../../ReactHooks/useArtifact'
 import type { ICachedArtifact } from '../../../../../Types/artifact'
-import { toggleArr } from '../../../../../Util/Util'
 import useBuildSetting from '../useBuildSetting'
 import { ArtifactSetBadges } from './ArtifactSetBadges'
 import SetInclusionButton from './SetInclusionButton'
-import useArtifact from '../../../../../ReactHooks/useArtifact'
 
 type NewOld = {
   newId: string
@@ -80,7 +84,7 @@ export default function BuildDisplayItem({
     const char = database.chars.get(characterKey)
     if (!char) return
     allArtifactSlotKeys.forEach((s) => {
-      const aid = data.get(input.art[s].id).value
+      const aid = data.get(input.art[s].id).value?.toString()
       if (aid)
         database.arts.set(aid, { location: charKeyToLocCharKey(characterKey) })
       else {
@@ -107,7 +111,7 @@ export default function BuildDisplayItem({
       Object.fromEntries(
         allArtifactSlotKeys.map((slotKey) => [
           slotKey,
-          data.get(input.art[slotKey].id).value,
+          data.get(input.art[slotKey].id).value?.toString(),
         ])
       ),
     [data]
@@ -146,7 +150,8 @@ export default function BuildDisplayItem({
   const currentlyEquipped =
     allArtifactSlotKeys.every(
       (slotKey) =>
-        artifactIdsBySlot[slotKey] === oldData.get(input.art[slotKey].id).value
+        artifactIdsBySlot[slotKey] ===
+        oldData.get(input.art[slotKey].id).value?.toString()
     ) && data.get(input.weapon.id).value === oldData.get(input.weapon.id).value
 
   return (
@@ -202,7 +207,7 @@ export default function BuildDisplayItem({
             <Grid item xs={1}>
               <WeaponCardNano
                 showLocation
-                weaponId={data.get(input.weapon.id).value}
+                weaponId={data.get(input.weapon.id).value!}
               />
             </Grid>
             {artNanos}
@@ -290,7 +295,14 @@ function CompareArtifactModal({
               allowLocationsState !== 'all' && (
                 <ExcludeEquipButton locationKey={newLoc} />
               )}
-            {newArtifact && <SetInclusionButton setKey={newArtifact.setKey} />}
+            {newArtifact &&
+              allArtifactSetExclusionKeys.includes(
+                newArtifact.setKey as ArtSetExclusionKey
+              ) && (
+                <SetInclusionButton
+                  setKey={newArtifact.setKey as ArtSetExclusionKey}
+                />
+              )}
           </Box>
         </CardContent>
       </CardDark>

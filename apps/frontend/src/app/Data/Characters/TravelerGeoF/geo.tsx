@@ -188,7 +188,7 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: stg(`skillDMG`),
+              name: ct.chg('burst.skillParams.0'),
               multi: dm.burst.numShockwaves,
             }),
           },
@@ -237,7 +237,7 @@ export default function geo(
       ct.headerTem('constellation4', {
         fields: [
           {
-            text: ch('c4.energyRestore'),
+            text: st('enerRegenPerHit'),
             value: dm.constellation4.energyRestore,
           },
         ],

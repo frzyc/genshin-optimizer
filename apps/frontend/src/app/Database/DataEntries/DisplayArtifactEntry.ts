@@ -1,8 +1,12 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
 import {
+  allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
+  allSubstatKeys,
 } from '@genshin-optimizer/consts'
+import { clamp, validateArr, validateObject } from '@genshin-optimizer/util'
 import type {
   ArtifactSortKey,
   FilterOption,
@@ -11,13 +15,8 @@ import {
   artifactSortKeys,
   initialFilterOption,
 } from '../../PageArtifact/ArtifactSort'
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import { allArtifactRarities } from '../../Types/consts'
-import { clamp } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
-import { validateArr, validateObject } from '../validationUtil'
 
 export type IDisplayArtifact = {
   filterOption: FilterOption
@@ -46,8 +45,8 @@ export class DisplayArtifactEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_artifact', initialState, 'display_artifact')
   }
-  validate(obj: unknown): IDisplayArtifact | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: unknown): IDisplayArtifact | undefined {
+    if (typeof obj !== 'object') return undefined
     let { filterOption, ascending, sortType, effFilter, probabilityFilter } =
       obj as IDisplayArtifact
 
@@ -70,7 +69,7 @@ export class DisplayArtifactEntry extends DataEntry<
         lines,
       } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
-      rarity = validateArr(rarity, allArtifactRarities)
+      rarity = validateArr(rarity, allArtifactRarityKeys)
 
       if (typeof levelLow !== 'number') levelLow = 0
       else levelLow = clamp(levelLow, 0, 20)
@@ -127,7 +126,7 @@ export class DisplayArtifactEntry extends DataEntry<
       probabilityFilter,
     } as IDisplayArtifact
   }
-  set(
+  override set(
     value:
       | Partial<IDisplayArtifact>
       | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)

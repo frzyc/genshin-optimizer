@@ -1,7 +1,13 @@
+import type {
+  ElementKey,
+  LocationGenderedCharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/consts'
+import { allGenderKeys } from '@genshin-optimizer/consts'
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/dm'
 import {
   artifactIdMap,
-  artifactPiecesData,
+  reliquaryExcelConfigData,
   artifactSlotMap,
   avatarExcelConfigData,
   avatarSkillDepotExcelConfigData,
@@ -51,7 +57,7 @@ export default function loadTrans() {
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
     // Don't override constellation name if manually specified. For Zhongli
-    !mapHashData.char[characterIdMap[charid]].constellationName &&
+    !mapHashData.char[characterIdMap[charid]]?.['constellationName'] &&
       layeredAssignment(
         mapHashData,
         ['char', charKey, 'constellationName'],
@@ -264,7 +270,7 @@ export default function loadTrans() {
 
     const pieces = Object.fromEntries(
       containsList.map((pieceId) => {
-        const pieceData = artifactPiecesData[pieceId]
+        const pieceData = reliquaryExcelConfigData[pieceId]
         if (!pieceData)
           throw `No piece data with id ${pieceId} in setId ${setId}`
         const { equipType, nameTextMapHash, descTextMapHash } = pieceData
@@ -295,14 +301,17 @@ export default function loadTrans() {
     const [ascensionDataId] = skillAffix
     const ascData =
       ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
+    const weaponKey = weaponIdMap[weaponid]
 
-    mapHashData.weaponNames[weaponIdMap[weaponid]] = nameTextMapHash
-    mapHashData.weapon[weaponIdMap[weaponid]] = {
+    mapHashData.weaponNames[weaponKey] = nameTextMapHash
+    mapHashData.weapon[weaponKey] = {
       name: nameTextMapHash,
-      description: descTextMapHash,
+      description: [descTextMapHash, 'paragraph'],
       passiveName: ascData ? ascData[0].nameTextMapHash : 0,
       passiveDescription: ascData
-        ? ascData.map((asc) => asc.descTextMapHash)
+        ? ascData.map(
+            (asc) => [asc.descTextMapHash, 'paragraph'] as [number, string]
+          )
         : [0, 0, 0, 0, 0],
     }
   })
@@ -315,7 +324,7 @@ export default function loadTrans() {
     if (!key || mapHashData.material[key]) return
     mapHashData.material[key] = {
       name: nameTextMapHash,
-      description: descTextMapHash,
+      description: [descTextMapHash, 'paragraph'],
     }
   })
 
@@ -323,21 +332,29 @@ export default function loadTrans() {
   mapHashDataOverride()
 
   //Main localization dumping
-  const languageData = {} as object
+  const languageData = {} as Record<
+    Language,
+    {
+      charNames: Record<LocationGenderedCharacterKey, string>
+      weaponNames: Record<WeaponKey, string>
+      sheet: {
+        element: Record<ElementKey, string>
+      }
+    }
+  >
   Object.entries(languageMap).forEach(([lang, langStrings]) => {
     crawlObject(
       mapHashData,
       [],
       (v) =>
         typeof v === 'number' ||
-        (v?.length === 2 &&
-          Array.isArray(v) &&
+        (Array.isArray(v) &&
+          v?.length === 2 &&
           typeof v[0] === 'number' &&
           typeof v[1] === 'string'),
-      (value, keys) => {
+      (value: number | [id: number, processing: string], keys) => {
         // const [type, characterKey, skill, field] = keys
-        if (value === 0)
-          return layeredAssignment(languageData, [lang, ...keys], '')
+        if (value === 0) layeredAssignment(languageData, [lang, ...keys], '')
         if (typeof value === 'number') value = [value, 'string']
         const [stringID, processing] = value
         let rawString = langStrings[stringID]
@@ -363,26 +380,33 @@ export default function loadTrans() {
     )
 
     // Add the traveler variants to charNames_gen
-    ;['F', 'M'].forEach((gender: string) => {
-      ;['Anemo', 'Geo', 'Electro', 'Dendro'].forEach((ele: string) => {
+    allGenderKeys.forEach((gender) => {
+      ;(['Anemo', 'Geo', 'Electro', 'Dendro'] as const).forEach((ele) => {
+        const transLocGenKey =
+          languageData[lang as Language].charNames[
+            `Traveler${gender}` as LocationGenderedCharacterKey
+          ]
+        const transEleKey =
+          languageData[lang as Language].sheet.element[
+            ele.toLowerCase() as ElementKey
+          ]
         layeredAssignment(
           languageData,
           [lang, 'charNames', `Traveler${ele}${gender}`],
-          `${languageData[lang].charNames[`Traveler${gender}`]} (${
-            languageData[lang].sheet.element[ele.toLowerCase()]
-          })`
+          `${transLocGenKey} (${transEleKey})`
         )
       })
     })
 
     // Add the Somnia and QuantumCatalyst
-    languageData[lang].charNames['Somnia'] = 'Somnia'
-    languageData[lang].weaponNames['QuantumCatalyst'] = 'Quantum Cat-alyst'
+    languageData[lang as Language].charNames['Somnia'] = 'Somnia'
+    languageData[lang as Language].weaponNames['QuantumCatalyst'] =
+      'Quantum Cat-alyst'
   })
 
   //dump the language data to files
   Object.entries(languageData).forEach(([lang, data]) => {
-    const fileDir = `${__dirname}/../../assets/locales/${lang}`
+    const fileDir = `${process.env['NX_WORKSPACE_ROOT']}/libs/dm-localization/assets/locales/${lang}`
 
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localization namespaces

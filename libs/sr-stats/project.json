@@ -1,0 +1,19 @@
+{
+  "name": "sr-stats",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-stats/src",
+  "projectType": "library",
+  "targets": {
+    "genfile": {
+      "executor": "@genshin-optimizer/sr-stats:gen-stats",
+      "outputs": [
+        "{projectRoot}/Data/**/*",
+        "{projectRoot}/src/allStat_gen.json"
+      ]
+    },
+    "build": {},
+    "build-ts": {},
+    "lint": {}
+  },
+  "tags": []
+}

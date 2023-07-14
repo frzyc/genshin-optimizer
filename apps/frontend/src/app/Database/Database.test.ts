@@ -1,12 +1,11 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
-import type { IArtifact } from '../Types/artifact'
-import type { IWeapon } from '../Types/weapon'
-import { randomizeArtifact } from '../Util/ArtifactUtil'
+import { DBLocalStorage, SandboxStorage } from '@genshin-optimizer/database'
+import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi-good'
+import { randomizeArtifact } from '@genshin-optimizer/gi-good'
 import { defaultInitialWeapon, initialWeapon } from '../Util/WeaponUtil'
 import { ArtCharDatabase } from './Database'
 import { initialCharacter } from './DataManagers/CharacterData'
-import { DBLocalStorage, SandboxStorage } from './DBStorage'
-import type { IGO, IGOOD } from './exim'
+import type { IGO } from './exim'
 
 const dbStorage = new DBLocalStorage(localStorage)
 const dbIndex = 1
@@ -649,7 +648,7 @@ describe('Database', () => {
       const art = randomizeArtifact({ location: 'Albedo', slotKey: 'flower' })
       const oldId = database.arts.new(art)
       const newId = 'newTestId'
-      database.arts.changeId(oldId, newId)
+      expect(database.arts.changeId(oldId, newId)).toBeTruthy()
 
       expect(database.arts.get(oldId)).toBeUndefined()
 

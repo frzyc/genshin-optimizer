@@ -4,11 +4,14 @@ import type {
   LocationCharacterKey,
   TravelerKey,
 } from '@genshin-optimizer/consts'
-import { allLocationCharacterKeys } from '@genshin-optimizer/consts'
+import {
+  allLocationCharacterKeys,
+  travelerElements,
+} from '@genshin-optimizer/consts'
 import type { CustomMultiTarget } from '../Types/character'
-import { travelerElements } from '../Types/consts'
-import type { DBStorage } from './DBStorage'
-import type { IGO, IGOOD } from './exim'
+import type { DBStorage } from '@genshin-optimizer/database'
+import type { IGO } from './exim'
+import type { ICharacter, IGOOD } from '@genshin-optimizer/gi-good'
 
 // MIGRATION STEP
 // 0. DO NOT change old `migrateVersion` calls
@@ -56,7 +59,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         ...character,
         customMultiTarget: targets,
         key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey,
-      })
+      } as ICharacter)
     })
   })
 
@@ -202,7 +205,7 @@ export function migrate(storage: DBStorage) {
 
   // 8.22.0 - 8.27.0
   migrateVersion(21, () => {
-    function swap(from, to) {
+    function swap(from: string, to: string) {
       const data = storage.get(from)
       if (!data) return
       storage.remove(from)

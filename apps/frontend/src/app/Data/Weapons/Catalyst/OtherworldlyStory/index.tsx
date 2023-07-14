@@ -11,13 +11,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'OtherworldlyStory'
 const data_gen = allStats.weapon.data[key]
 
-const healPerc = [0.01, 0.0125, 0.015, 0.0175, 0.02]
+const healPerc = [-1, 0.01, 0.0125, 0.015, 0.0175, 0.02]
 const heal = equal(
   input.weapon.key,
   key,
   customHealNode(
     prod(
-      subscript(input.weapon.refineIndex, healPerc, { unit: '%' }),
+      subscript(input.weapon.refinement, healPerc, { unit: '%' }),
       input.total.hp
     )
   )

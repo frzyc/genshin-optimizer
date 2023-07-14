@@ -1,26 +1,28 @@
 import type { ElementWithPhyKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
+import {
+  AnemoIcon,
+  AtkIcon,
+  CdRedIcon,
+  CritDmgIcon,
+  CritRateIcon,
+  CryoIcon,
+  DefIcon,
+  DendroIcon,
+  ElectroIcon,
+  EleMasIcon,
+  EnerRechIcon,
+  GeoIcon,
+  HealAddIcon,
+  HealingBonusIcon,
+  HpIcon,
+  HydroIcon,
+  PhysicalIcon,
+  PyroIcon,
+  ShieldStrIcon,
+  StaminaIcon,
+} from '@genshin-optimizer/gi-svgicons'
 import type { SvgIconProps } from '@mui/material'
-import AnemoIcon from '../SVGIcons/Element/AnemoIcon'
-import CryoIcon from '../SVGIcons/Element/CryoIcon'
-import DendroIcon from '../SVGIcons/Element/DendroIcon'
-import ElectroIcon from '../SVGIcons/Element/ElectroIcon'
-import GeoIcon from '../SVGIcons/Element/GeoIcon'
-import HydroIcon from '../SVGIcons/Element/HydroIcon'
-import PhysicalIcon from '../SVGIcons/Element/PhysicalIcon'
-import PyroIcon from '../SVGIcons/Element/PyroIcon'
-import AtkIcon from '../SVGIcons/Stats/AtkIcon'
-import CdRedIcon from '../SVGIcons/Stats/CdRedIcon'
-import CritDmgIcon from '../SVGIcons/Stats/CritDmgIcon'
-import CritRateIcon from '../SVGIcons/Stats/CritRateIcon'
-import DefIcon from '../SVGIcons/Stats/DefIcon'
-import EleMasIcon from '../SVGIcons/Stats/EleMasIcon'
-import EnerRechIcon from '../SVGIcons/Stats/EnerRechIcon'
-import HealAddIcon from '../SVGIcons/Stats/HealAddIcon'
-import HealingBonusIcon from '../SVGIcons/Stats/HealingBonusIcon'
-import HpIcon from '../SVGIcons/Stats/HpIcon'
-import ShieldStrIcon from '../SVGIcons/Stats/ShieldStrIcon'
-import StaminaIcon from '../SVGIcons/Stats/StaminaIcon'
 
 export default function StatIcon({
   statKey,

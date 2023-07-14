@@ -173,7 +173,7 @@ const dmgFormulas = {
   skill: {
     wheelDmg: dmgNode('atk', dm.skill.wheelDmg, 'skill'),
     kickPressDmg: dmgNode('atk', dm.skill.kickPressDmg, 'skill', {
-      premod: { skill_dmg_: sum(c2_kickDmg_, c2_kickPressDmg_) },
+      premod: { skill_dmg_: c2_kickPressDmg_ },
     }),
     kickHoldDmg: dmgNode('atk', dm.skill.kickHoldDmg, 'skill', {
       premod: { skill_dmg_: c2_kickDmg_ },
@@ -442,19 +442,12 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.extraHeal, {
-              name: ct.ch('p2Heal'),
+              name: stg('aoeInc'),
               variant: 'heal',
             }),
           },
           {
             text: ct.ch('p2Aoe'),
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: ct.ch('c1Text'),
           },
         ],
       }),
@@ -501,7 +494,7 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('constellation4', {
         fields: [
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: dm.constellation4.ener,
             fixed: 1,
           },

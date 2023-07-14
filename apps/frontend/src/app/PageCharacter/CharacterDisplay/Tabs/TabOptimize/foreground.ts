@@ -1,27 +1,31 @@
-import Artifact from '../../../../Data/Artifacts/Artifact'
+import {
+  allMainStatKeys,
+  allSubstatKeys,
+  artMaxLevel,
+} from '@genshin-optimizer/consts'
+import { getMainStatDisplayValue } from '@genshin-optimizer/gi-util'
+import { objKeyMap, objMap } from '@genshin-optimizer/util'
 import { input } from '../../../../Formula'
 import { computeUIData } from '../../../../Formula/api'
 import { formulaString } from '../../../../Formula/debug'
 import type { Data, NumNode } from '../../../../Formula/type'
 import { constant, setReadNodeKeys } from '../../../../Formula/utils'
-import type { ICachedArtifact } from '../../../../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../../../../Types/artifact'
-import { deepClone, objectKeyMap, objectMap } from '../../../../Util/Util'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
   DynStat,
 } from '../../../../Solver/common'
-
+import type { ICachedArtifact } from '../../../../Types/artifact'
+import { deepClone } from '../../../../Util/Util'
 const dynamic = setReadNodeKeys(
   deepClone({ dyn: { ...input.art, ...input.artSet } })
 )
 export const dynamicData = {
-  art: objectKeyMap(
+  art: objKeyMap(
     [...allMainStatKeys, ...allSubstatKeys],
     (key) => dynamic.dyn[key]
   ),
-  artSet: objectMap(input.artSet, (_, key) => dynamic.dyn[key]),
+  artSet: objMap(input.artSet, (_, key) => dynamic.dyn[key]),
 }
 
 export function compactArtifacts(
@@ -36,10 +40,13 @@ export function compactArtifacts(
   const keys = new Set<string>()
 
   for (const art of arts) {
-    const mainStatVal = Artifact.mainStatValue(
+    const mainStatVal = getMainStatDisplayValue(
       art.mainStatKey,
       art.rarity,
-      Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)
+      Math.max(
+        Math.min(mainStatAssumptionLevel, artMaxLevel[art.rarity]),
+        art.level
+      )
     )
 
     const data: ArtifactBuildData = {
@@ -64,7 +71,7 @@ export function compactArtifacts(
     result.values[art.slotKey].push(data)
     Object.keys(data.values).forEach((x) => keys.add(x))
   }
-  result.base = objectKeyMap([...keys], (_) => 0)
+  result.base = objKeyMap([...keys], (_) => 0)
   if (allowPartial)
     for (const value of Object.values(result.values))
       value.push({ id: '', values: {} })

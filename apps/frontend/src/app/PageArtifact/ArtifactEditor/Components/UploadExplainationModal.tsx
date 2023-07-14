@@ -36,7 +36,7 @@ export default function UploadExplainationModal({
         <Divider />
         <CardContent>
           <Alert variant="outlined" severity="warning">
-            NOTE: Artifact Scanning currently only work for{' '}
+            NOTE: Artifact Scanning currently only works for
             <strong>ENGLISH</strong> artifacts.
           </Alert>
           <Grid container spacing={1} mt={1}>

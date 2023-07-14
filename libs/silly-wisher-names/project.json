@@ -8,13 +8,7 @@
       "command": "ts-node libs/silly-wisher-names/src/loadTrans.ts",
       "inputs": ["production"]
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/silly-wisher-names/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

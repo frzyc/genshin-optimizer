@@ -418,7 +418,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('constellation4', {
         fields: [
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: dm.c4.energyRestore,
           },
         ],

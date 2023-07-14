@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@emotion/react'
+import { ReadOnlyTextArea } from '@genshin-optimizer/react-util'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import ErrorIcon from '@mui/icons-material/Error'
 import RefreshIcon from '@mui/icons-material/Refresh'
@@ -18,7 +19,6 @@ import { Component, Suspense } from 'react'
 import type { WithTranslation } from 'react-i18next'
 import { Trans, withTranslation } from 'react-i18next'
 import CardLight from '../Components/Card/CardLight'
-import ReadOnlyTextArea from '../Components/ReadOnlyTextArea'
 import DatabaseCard from '../PageSettings/DatabaseCard'
 import { theme } from '../Theme'
 import SpaghettiCode from './SpaghettiCode.png'
@@ -32,7 +32,7 @@ interface State {
 }
 
 class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
+  public override state: State = {
     error: undefined,
   }
 
@@ -41,11 +41,11 @@ class ErrorBoundary extends Component<Props, State> {
     return { error }
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  public override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Uncaught error:', error, errorInfo)
   }
 
-  public render() {
+  public override render() {
     if (this.state.error) {
       document.title = 'ERROR'
       const t = this.props.t
@@ -114,7 +114,7 @@ class ErrorBoundary extends Component<Props, State> {
                           <Typography>
                             <li>
                               <Trans t={t} i18nKey="report.3">
-                                Click{' '}
+                                Click
                                 <a
                                   href={`${process.env.NX_URL_GITHUB_GO}/issues/new?title=Unexpected%20Crash%Occurred`}
                                   style={{ color: 'white' }}
@@ -122,7 +122,7 @@ class ErrorBoundary extends Component<Props, State> {
                                   rel="noreferrer"
                                 >
                                   here
-                                </a>{' '}
+                                </a>
                                 to report on GitHub. Paste the text in the
                                 description, and include your JSON files (you
                                 might need to rename them to end with '.txt')
@@ -132,7 +132,7 @@ class ErrorBoundary extends Component<Props, State> {
                           <Typography>
                             <li>
                               <Trans t={t} i18nKey="report.4">
-                                Or click{' '}
+                                Or click
                                 <a
                                   href={process.env.NX_URL_DISCORD_GO}
                                   style={{ color: 'white' }}
@@ -140,7 +140,7 @@ class ErrorBoundary extends Component<Props, State> {
                                   rel="noreferrer"
                                 >
                                   here
-                                </a>{' '}
+                                </a>
                                 to report on Discord. Open the #🐛bug-reports
                                 channel, create a new thread and paste the text
                                 in the message box. Also upload your JSON files.

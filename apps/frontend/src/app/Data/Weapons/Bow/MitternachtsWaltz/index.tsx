@@ -10,8 +10,8 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'MitternachtsWaltz'
 const data_gen = allStats.weapon.data[key]
 
-const skill_dmg_s = [0.2, 0.25, 0.3, 0.35, 0.4]
-const normal_dmg_s = [0.2, 0.25, 0.3, 0.35, 0.4]
+const skill_dmg_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
+const normal_dmg_s = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 
 const [condSkillPath, condSkill] = cond(key, 'EvernightDuetSkill')
 const [condNormalPath, condNormal] = cond(key, 'EvernightDuetNormal')
@@ -19,12 +19,12 @@ const [condNormalPath, condNormal] = cond(key, 'EvernightDuetNormal')
 const skill_dmg_ = equal(
   condSkill,
   'on',
-  subscript(input.weapon.refineIndex, skill_dmg_s)
+  subscript(input.weapon.refinement, skill_dmg_s)
 )
 const normal_dmg_ = equal(
   condNormal,
   'on',
-  subscript(input.weapon.refineIndex, normal_dmg_s)
+  subscript(input.weapon.refinement, normal_dmg_s)
 )
 
 const data = dataObjForWeaponSheet(key, data_gen, {

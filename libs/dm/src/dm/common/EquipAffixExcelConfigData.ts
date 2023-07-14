@@ -43,7 +43,7 @@ const equipAffixExcelConfigDataSrc = JSON.parse(
 ) as EquipAffixExcelConfigData[]
 
 const equipAffixExcelConfigData = {} as Record<
-  number,
+  WeaponId,
   EquipAffixExcelConfigData[]
 >
 equipAffixExcelConfigDataSrc.forEach((data) => {

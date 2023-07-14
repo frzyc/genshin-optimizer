@@ -1,10 +1,14 @@
 import type {
   CharacterKey,
   ElementKey,
+  MainStatKey,
   RegionKey,
+  SubstatKey,
 } from '@genshin-optimizer/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import { allMainStatKeys } from '@genshin-optimizer/consts'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-stats'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { layeredAssignment, objKeyMap } from '@genshin-optimizer/util'
 import { infusionNode, input } from '../../Formula'
 import { inferInfoMut, mergeData } from '../../Formula/api'
 import { reactions } from '../../Formula/reaction'
@@ -22,11 +26,8 @@ import {
   sum,
 } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
-import type { MainStatKey, SubstatKey } from '../../Types/artifact'
-import { allMainStatKeys } from '../../Types/artifact'
-import { layeredAssignment, objectKeyMap } from '../../Util/Util'
 
-const commonBasic = objectKeyMap(
+const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
   (key) => input.total[key]
 )
@@ -266,8 +267,8 @@ export function dataObjForCharacterSheet(
     const lvlCurveBase = gen.lvlCurves.find((lc) => lc.key === stat)
     if (lvlCurveBase) list.push(curve(lvlCurveBase.base, lvlCurveBase.curve))
 
-    const asc = gen.ascensionBonus.find((ab) => ab.key === stat)
-    if (asc) list.push(subscript(input.asc, asc.values))
+    const asc = gen.ascensionBonus[stat]
+    if (asc) list.push(subscript(input.asc, asc))
 
     if (!list.length) continue
 

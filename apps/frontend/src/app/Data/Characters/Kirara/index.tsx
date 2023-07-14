@@ -11,7 +11,7 @@ import {
   prod,
   threshold,
 } from '../../../Formula/utils'
-import { objectKeyMap } from '../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import type { ICharacterSheet } from '../ICharacterSheet'
@@ -121,20 +121,13 @@ const p1Shield = shieldNodeTalent(
   undefined,
   percent(dm.passive1.shieldMult_)
 )
-const c2Shield = shieldNodeTalent(
-  'hp',
-  dm.skill.maxShield_hp_,
-  dm.skill.maxShield_base,
-  'skill',
-  undefined,
-  percent(dm.constellation2.shieldMult_)
-)
+const c2Shield = prod(percent(dm.constellation2.shieldMult_), maxSkillShield)
 
 const [condC6AfterSkillBurstPath, condC6AfterSkillBurst] = cond(
   key,
   'c6AfterSkillBurst'
 )
-const c6Ele_dmg_map = objectKeyMap(
+const c6Ele_dmg_map = objKeyMap(
   allElementKeys.map((ele) => `${ele}_dmg_`),
   (_ele) =>
     greaterEq(
@@ -397,30 +390,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       }),
-      ct.headerTem('constellation2', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation2.shield, {
-              name: stg('dmgAbsorption'),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.constellation2.dendroShield, {
-              name: st(`dmgAbsorption.${elementKey}`),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.constellation2.duration,
-            unit: 's',
-          },
-          {
-            text: stg('cd'),
-            value: dm.constellation2.cd,
-            unit: 's',
-          },
-        ],
-      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -470,7 +439,32 @@ const sheet: ICharacterSheet = {
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
-    constellation2: ct.talentTem('constellation2'),
+    constellation2: ct.talentTem('constellation2', [
+      ct.fieldsTem('constellation2', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation2.shield, {
+              name: stg('dmgAbsorption'),
+            }),
+          },
+          {
+            node: infoMut(dmgFormulas.constellation2.dendroShield, {
+              name: st(`dmgAbsorption.${elementKey}`),
+            }),
+          },
+          {
+            text: stg('duration'),
+            value: dm.constellation2.duration,
+            unit: 's',
+          },
+          {
+            text: stg('cd'),
+            value: dm.constellation2.cd,
+            unit: 's',
+          },
+        ],
+      }),
+    ]),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },
     ]),

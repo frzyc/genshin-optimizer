@@ -297,12 +297,18 @@ const sheet: ICharacterSheet = {
                 unit: 's',
                 fixed: 1,
               },
-              {
-                node: infoMut(nodeAsc1Disp, KeyMap.info('atkSPD_')),
-              },
             ],
           },
         },
+      }),
+      ct.headerTem('passive1', {
+        teamBuff: true,
+        canShow: equal(condSkill, 'activeInArea', 1),
+        fields: [
+          {
+            node: infoMut(nodeAsc1Disp, KeyMap.info('atkSPD_')),
+          },
+        ],
       }),
     ]),
 

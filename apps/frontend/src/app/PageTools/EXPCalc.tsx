@@ -1,3 +1,5 @@
+import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { clamp, objMap } from '@genshin-optimizer/util'
 import { Check } from '@mui/icons-material'
 import {
   Alert,
@@ -10,7 +12,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
-import Assets from '../Assets/Assets'
 import CardDark from '../Components/Card/CardDark'
 import CardLight from '../Components/Card/CardLight'
 import ColorText from '../Components/ColoredText'
@@ -20,25 +21,24 @@ import CustomNumberInput, {
 import ImgFullwidth from '../Components/Image/ImgFullwidth'
 import ImgIcon from '../Components/Image/ImgIcon'
 import TextButton from '../Components/TextButton'
-import { clamp, objectMap } from '../Util/Util'
 const booksData = {
   advice: {
     name: "Wanderer's Advice",
     exp: 1000,
     cost: 200,
-    img: Assets.exp_books.advice,
+    img: imgAssets.exp_books.advice,
   },
   experience: {
     name: "Adventurer's Experience",
     exp: 5000,
     cost: 1000,
-    img: Assets.exp_books.experience,
+    img: imgAssets.exp_books.experience,
   },
   wit: {
     name: "Hero's Wit",
     exp: 20000,
     cost: 4000,
-    img: Assets.exp_books.wit,
+    img: imgAssets.exp_books.wit,
   },
 }
 const levelExp = [
@@ -166,7 +166,7 @@ export default function EXPCalc() {
                 <CustomNumberInput
                   value={level}
                   onChange={(val) =>
-                    setState({ ...state, level: clamp(val, 0, 90) })
+                    setState({ ...state, level: clamp(val ?? 0, 0, 90) })
                   }
                   sx={{ px: 2 }}
                 />
@@ -184,7 +184,7 @@ export default function EXPCalc() {
                   onChange={(val) =>
                     setState({
                       ...state,
-                      curExp: clamp(val, 0, (levelExp[level] || 1) - 1),
+                      curExp: clamp(val ?? 0, 0, (levelExp[level] || 1) - 1),
                     })
                   }
                   endAdornment={`/${levelExp[level] || 0}`}
@@ -343,7 +343,7 @@ export default function EXPCalc() {
                   ...state,
                   level: finalLvl,
                   curExp: finalExp,
-                  books: objectMap(
+                  books: objMap(
                     bookResultObj,
                     (val, bookKey) => books[bookKey] - val
                   ) as any,

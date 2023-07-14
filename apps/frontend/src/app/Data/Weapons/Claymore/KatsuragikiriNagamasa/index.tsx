@@ -10,8 +10,8 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'KatsuragikiriNagamasa'
 const data_gen = allStats.weapon.data[key]
 
-const skill_dmg_Src = [0.06, 0.075, 0.09, 0.105, 0.12]
-const skill_dmg_ = subscript(input.weapon.refineIndex, skill_dmg_Src)
+const skill_dmg_Src = [-1, 0.06, 0.075, 0.09, 0.105, 0.12]
+const skill_dmg_ = subscript(input.weapon.refinement, skill_dmg_Src)
 
 const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

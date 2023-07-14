@@ -1,3 +1,4 @@
+import type { CharacterKey, GenderKey } from '@genshin-optimizer/consts'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../Context/DataContext'
 import { allArtifactData } from '../Data/Artifacts'
@@ -19,12 +20,11 @@ import {
 import type { Data } from '../Formula/type'
 import type { ICachedArtifact } from '../Types/artifact'
 import type { ICachedCharacter } from '../Types/character'
-import type { CharacterKey, Gender } from '../Types/consts'
 import type { ICachedWeapon } from '../Types/weapon'
 import { objectMap } from '../Util/Util'
 import { defaultInitialWeapon } from '../Util/WeaponUtil'
 import useDBMeta from './useDBMeta'
-import useForceUpdate from './useForceUpdate'
+import { useForceUpdate } from '@genshin-optimizer/react-util'
 
 type TeamDataBundle = {
   teamData: Dict<CharacterKey, Data[]>
@@ -78,11 +78,11 @@ function getTeamDataCalc(
   database: ArtCharDatabase,
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
-  gender: Gender,
+  gender: GenderKey,
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamData | undefined {
-  if (!characterKey) return
+  if (!characterKey) return undefined
 
   // Retrive from cache
   if (!mainStatAssumptionLevel && !overrideArt && !overrideWeapon) {
@@ -97,7 +97,7 @@ function getTeamDataCalc(
       overrideArt,
       overrideWeapon
     ) ?? {}
-  if (!teamData || !teamBundle) return
+  if (!teamData || !teamBundle) return undefined
 
   const calcData = uiDataForTeam(teamData, gender, characterKey)
 
@@ -117,9 +117,9 @@ export function getTeamData(
   overrideArt?: ICachedArtifact[] | Data,
   overrideWeapon?: ICachedWeapon
 ): TeamDataBundle | undefined {
-  if (!characterKey) return
+  if (!characterKey) return undefined
   const character = database.chars.get(characterKey)
-  if (!character) return
+  if (!character) return undefined
 
   const char1DataBundle = getCharDataBundle(
     database,
@@ -135,7 +135,7 @@ export function getTeamData(
         .map((a) => database.arts.get(a))
         .filter((a) => a) as ICachedArtifact[])
   )
-  if (!char1DataBundle) return
+  if (!char1DataBundle) return undefined
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Dict<CharacterKey, Data[]> = {
     [characterKey]: char1DataBundle.data,
@@ -179,9 +179,9 @@ function getCharDataBundle(
   artifacts: ICachedArtifact[] | Data
 ): CharBundle | undefined {
   const characterSheet = getCharSheet(character.key, database.gender)
-  if (!characterSheet) return
+  if (!characterSheet) return undefined
   const weaponSheet = getWeaponSheet(weapon.key)
-  if (!weaponSheet) return
+  if (!weaponSheet) return undefined
 
   const weaponSheetsDataOfType = WeaponSheet.getAllDataOfType(
     characterSheet.weaponTypeKey

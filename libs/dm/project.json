@@ -4,28 +4,21 @@
   "sourceRoot": "libs/dm/src",
   "projectType": "library",
   "targets": {
-    "loadDM": {
-      "command": "ts-node libs/dm/scripts/loadDM.ts"
-    },
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "load-dm": {
       "options": {
-        "outputPath": "dist/libs/dm",
-        "main": "libs/dm/src/index.ts",
-        "tsConfig": "libs/dm/tsconfig.lib.json",
-        "assets": ["libs/dm/*.md"]
+        "repoUrl": "https://gitlab.com/Dimbreath/AnimeGameData.git",
+        "outputPath": "libs/dm/GenshinData"
       },
-      "dependsOn": ["loadDM", "^build"],
-      "inputs": ["production", "^production"]
+      "inputs": [
+        {
+          "runtime": "git ls-remote -q https://gitlab.com/Dimbreath/AnimeGameData.git HEAD"
+        }
+      ]
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/dm/**/*.ts"]
-      }
-    }
+    "genfile": {},
+    "build": {},
+    "build-ts": {},
+    "lint": {}
   },
   "tags": [],
   "namedInputs": {

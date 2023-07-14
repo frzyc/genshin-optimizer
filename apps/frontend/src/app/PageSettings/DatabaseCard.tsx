@@ -16,7 +16,7 @@ import CardLight from '../Components/Card/CardLight'
 import { StyledInputBase } from '../Components/CustomNumberInput'
 import ModalWrapper from '../Components/ModalWrapper'
 import { DatabaseContext } from '../Database/Database'
-import useBoolState from '../ReactHooks/useBoolState'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import { range } from '../Util/Util'
 import UploadCard from './UploadCard'
 

@@ -12,13 +12,7 @@
       "command": "ts-node libs/localization/src/mainGen.ts",
       "inputs": ["production"]
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/localization/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import {
@@ -14,7 +15,6 @@ import {
   subscript,
   sum,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -103,7 +103,7 @@ const lightfallSwordBonusScaling = prod(
   }),
   lookup(
     condLightfallSword,
-    objectKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
+    objKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
     naught,
     { name: ct.ch('burstC.name') }
   )
@@ -299,17 +299,22 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: ct.chg('skill.skillParams.8'),
-            value: `${dm.skill.pressCd}`,
-            unit: 's',
-          },
-          {
             node: infoMut(dmgFormulas.skill.hold, {
               name: ct.chg(`skill.skillParams.1`),
             }),
           },
           {
-            text: st('holdCD'),
+            node: infoMut(dmgFormulas.skill.icewhirl, {
+              name: ct.chg(`skill.skillParams.2`),
+            }),
+          },
+          {
+            text: ct.chg('skill.skillParams.8'),
+            value: `${dm.skill.pressCd}`,
+            unit: 's',
+          },
+          {
+            text: stg('hold.cd'),
             value: `${dm.skill.holdCd}`,
             unit: 's',
           },
@@ -317,17 +322,12 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.3'),
             value: 2,
           },
-          {
-            node: infoMut(dmgFormulas.skill.icewhirl, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
-          },
         ],
       },
       ct.condTem('skill', {
         value: condGrimheartStacks,
         path: condGrimheartStacksPath,
-        name: ct.ch('skillC.name'),
+        name: ct.chg('skill.description.6'),
         states: {
           stack1: {
             name: st('stack', { count: 1 }),
@@ -401,6 +401,11 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            text: stg('duration'),
+            value: 7,
+            unit: 's',
+          },
+          {
             text: ct.chg('burst.skillParams.4'),
             value: `${dm.burst.cd}`,
             unit: 's',
@@ -409,11 +414,6 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.5'),
             value: `${dm.burst.enerCost}`,
           },
-          {
-            text: stg('duration'),
-            value: 7,
-            unit: 's',
-          },
         ],
       },
       ct.condTem('burst', {
@@ -421,7 +421,7 @@ const sheet: ICharacterSheet = {
         path: condLightfallSwordPath,
         name: ct.ch('burstC.name'),
         states: {
-          ...objectKeyMap(lightfallSwordStacks, (i) => ({
+          ...objKeyMap(lightfallSwordStacks, (i) => ({
             name: st('stack', { count: i }),
             fields: [
               {
@@ -438,7 +438,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation4', {
         value: condC4,
         path: condC4Path,
-        name: ct.ch('c4C.name'),
+        name: st('enemyLessPercentHP', { percent: 50 }),
         states: {
           on: {
             fields: [

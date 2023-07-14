@@ -1,0 +1,13 @@
+{
+  "name": "sr-formula",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-formula/src",
+  "projectType": "library",
+  "targets": {
+    "build": {},
+    "build-ts": {},
+    "lint": {},
+    "test": {}
+  },
+  "tags": []
+}

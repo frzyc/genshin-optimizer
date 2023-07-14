@@ -4,25 +4,16 @@
   "sourceRoot": "libs/gi-stats/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-stats",
-        "main": "libs/gi-stats/src/index.ts",
-        "tsConfig": "libs/gi-stats/tsconfig.lib.json",
-        "assets": ["libs/gi-stats/*.md"]
-      },
-      "dependsOn": ["^build", "^pipeline"]
+    "genfile": {
+      "executor": "@genshin-optimizer/gi-stats:gen-stats",
+      "outputs": [
+        "{projectRoot}/Data/**/*",
+        "{projectRoot}/src/allStat_gen.json"
+      ]
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-stats/**/*.ts"]
-      }
-    }
+    "build": {},
+    "build-ts": {},
+    "lint": {}
   },
-  "tags": [],
-  "implicitDependencies": ["gi-pipeline"]
+  "tags": []
 }

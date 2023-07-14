@@ -1,0 +1,20 @@
+{
+  "name": "gi-good",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-good/src",
+  "projectType": "library",
+  "targets": {
+    "build": {},
+    "build-ts": {},
+    "lint": {},
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

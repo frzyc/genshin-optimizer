@@ -1,9 +1,11 @@
-import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { allArtifactSetKeys } from '@genshin-optimizer/consts'
+import type { ArtifactRarity, ArtifactSetKey } from '@genshin-optimizer/consts'
+import {
+  allArtifactRarityKeys,
+  allArtifactSetKeys,
+} from '@genshin-optimizer/consts'
 import type { UIData } from '../../Formula/api'
 import { mergeData } from '../../Formula/api'
-import type { ArtifactRarity, SetNum } from '../../Types/consts'
-import { allArtifactRarities } from '../../Types/consts'
+import type { SetNum } from '../../Types/consts'
 import type { ArtifactSheet } from './ArtifactSheet'
 
 import Adventurer from './Adventurer'
@@ -105,7 +107,7 @@ export function getArtSheet(sKey: ArtifactSetKey) {
 }
 
 export const setKeysByRarities = Object.fromEntries(
-  allArtifactRarities.map((r) => [r, [] as ArtifactSetKey[]])
+  allArtifactRarityKeys.map((r) => [r, [] as ArtifactSetKey[]])
 ) as Record<ArtifactRarity, ArtifactSetKey[]>
 allArtifactSetKeys.forEach((setKey) => {
   const sheet = getArtSheet(setKey)

@@ -1,4 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
+import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/consts'
+import { useBoolState } from '@genshin-optimizer/react-util'
 import {
   BarChart,
   Calculate,
@@ -50,13 +52,11 @@ import { GraphContext } from '../../Context/GraphContext'
 import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { DatabaseContext } from '../../Database/Database'
-import useBoolState from '../../ReactHooks/useBoolState'
 import useCharacter from '../../ReactHooks/useCharacter'
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer'
 import useDBMeta from '../../ReactHooks/useDBMeta'
 import useTeamData from '../../ReactHooks/useTeamData'
 import useTitle from '../../ReactHooks/useTitle'
-import { charKeyToCharName } from '../../Types/consts'
 import { CustomMultiTargetButton } from '../CustomMultiTarget'
 import CharSelectButton from './CharSelectButton'
 import FormulaModal from './FormulaModal'
@@ -125,7 +125,7 @@ function CharacterDisplayCard({
         `${t(
           `${
             silly ? 'sillyWisher_charNames' : 'charNames_gen'
-          }:${charKeyToCharName(characterKey, gender)}`
+          }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
         )} - ${t(`page_character:tabs.${tab}`)}`,
       [t, silly, characterKey, gender, tab]
     )

@@ -18,7 +18,7 @@ import type {
   ElementKey,
   RegionKey,
 } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -111,7 +111,7 @@ const [condC4Path, condC4] = cond(key, 'C4')
 
 const enerRechElectroSigil_ = lookup(
   condElectroSigil,
-  objectKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
+  objKeyMap(range(1, 3), (i) => prod(i, percent(dm.skill.erBonus))),
   naught,
   KeyMap.info('enerRech_')
 )
@@ -356,7 +356,7 @@ const sheet: ICharacterSheet = {
         path: condElectroSigilPath,
         name: ct.ch('electroSigil'),
         states: {
-          ...objectKeyMap(range(1, 3), (i) => ({
+          ...objKeyMap(range(1, 3), (i) => ({
             name: st('stack', { count: i }),
             fields: [
               {
@@ -387,32 +387,23 @@ const sheet: ICharacterSheet = {
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg1, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.0'),
+              name: ct.ch('soulCompanion.1'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg2, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.1'),
+              name: ct.ch('soulCompanion.2'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg3, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.2'),
+              name: ct.ch('soulCompanion.3'),
             }),
           },
           {
             node: infoMut(dmgFormulas.burst.companionDmg4, {
-              name: ct.chg(`burst.skillParams.1`),
-              textSuffix: ct.chg('auto.skillParams.3'),
+              name: ct.ch('soulCompanion.4'),
             }),
-          },
-          {
-            text: ct.chg('burst.skillParams.4'),
-            value: dm.burst.duration,
-            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.5'),
@@ -434,13 +425,21 @@ const sheet: ICharacterSheet = {
           on: {
             fields: [
               {
-                node: electro_res_,
-              },
-              {
                 node: atkSPD_,
               },
               {
+                node: electro_res_,
+              },
+              {
                 text: st('incInterRes'),
+              },
+              {
+                text: st('immuneToElectroCharged'),
+              },
+              {
+                text: ct.chg('burst.skillParams.4'),
+                value: dm.burst.duration,
+                unit: 's',
               },
             ],
           },

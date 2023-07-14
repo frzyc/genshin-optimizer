@@ -26,7 +26,7 @@ jobs:
           yarn install --immutable --immutable-cache
       - name: Run lint
         run: |
-          NODE_OPTIONS="--max-old-space-size=4096" yarn run nx run-many --target=lint --max-warnings=0
+          yarn run nx run-many --target=lint --fix=false --max-warnings=0
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10

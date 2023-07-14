@@ -4,7 +4,7 @@ import {
   allWeaponKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/consts'
-import { weaponAsset } from '@genshin-optimizer/g-assets'
+import { imgAssets, weaponAsset } from '@genshin-optimizer/gi-assets'
 import {
   Box,
   CardActionArea,
@@ -23,7 +23,6 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import Assets from '../../Assets/Assets'
 import { getWeaponSheet } from '../../Data/Weapons'
 import type WeaponSheet from '../../Data/Weapons/WeaponSheet'
 import { DatabaseContext } from '../../Database/Database'
@@ -43,7 +42,7 @@ type WeaponSelectionModalProps = {
   onHide: () => void
   onSelect: (wKey: WeaponKey) => void
   filter?: (sheet: WeaponSheet) => boolean
-  weaponTypeFilter?: WeaponTypeKey
+  weaponTypeFilter?: WeaponTypeKey | ''
 }
 
 export default function WeaponSelectionModal({
@@ -191,7 +190,9 @@ export default function WeaponSelectionModal({
                         >
                           <ImgIcon
                             size={1.5}
-                            src={Assets.weaponTypes?.[weaponSheet.weaponType]}
+                            src={
+                              imgAssets.weaponTypes?.[weaponSheet.weaponType]
+                            }
                           />
                           <StarsDisplay stars={weaponSheet.rarity} colored />
                         </Typography>

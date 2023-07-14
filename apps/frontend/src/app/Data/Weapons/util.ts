@@ -4,7 +4,7 @@ import type { Data, DisplaySub } from '../../Formula/type'
 import { infoMut, prod, constant, subscript, sum } from '../../Formula/utils'
 import KeyMap from '../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
-import type { WeaponData } from '@genshin-optimizer/gi-pipeline'
+import type { WeaponData } from '@genshin-optimizer/gi-stats'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
 export function dataObjForWeaponSheet(
@@ -41,10 +41,7 @@ export function dataObjForWeaponSheet(
         mainStat.base,
         subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
       ),
-      subscript(
-        input.weapon.asc,
-        gen.ascensionBonus.find((ab) => ab.key === 'atk')?.values ?? []
-      )
+      subscript(input.weapon.asc, gen.ascensionBonus['atk'])
     ),
     KeyMap.info(mainStat.type)
   )

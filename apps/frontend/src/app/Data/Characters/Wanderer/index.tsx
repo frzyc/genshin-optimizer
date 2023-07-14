@@ -287,6 +287,15 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
+      ct.headerTem('constellation6', {
+        canShow: equal(condAfterSkill, 'on', 1),
+        fields: datamine.normal.hitArr.map((_, i) => ({
+          node: infoMut(dmgFormulas.constellation6[i], {
+            name: ct.chg(`auto.skillParams.${i}`),
+            multi: i === 2 ? 2 : undefined,
+          }),
+        })),
+      }),
       {
         text: ct.chg('auto.fields.charged'),
       },
@@ -325,15 +334,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.headerTem('constellation6', {
-        canShow: equal(condAfterSkill, 'on', 1),
-        fields: datamine.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.constellation6[i], {
-            name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 2 ? 2 : undefined,
-          }),
-        })),
-      }),
     ]),
 
     skill: ct.talentTem('skill', [

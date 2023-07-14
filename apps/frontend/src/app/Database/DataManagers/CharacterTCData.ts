@@ -1,16 +1,19 @@
 import type {
+  ArtifactRarity,
   ArtifactSlotKey,
   CharacterKey,
+  MainStatKey,
   WeaponKey,
 } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys, allWeaponKeys } from '@genshin-optimizer/consts'
-import { validateLevelAsc } from '../../Data/LevelData'
-import type { MainStatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
+import {
+  allArtifactSlotKeys,
+  allSubstatKeys,
+  allWeaponKeys,
+  substatTypeKeys,
+} from '@genshin-optimizer/consts'
+import { validateLevelAsc } from '@genshin-optimizer/gi-util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import type { ICharTC } from '../../Types/character'
-import type { ArtifactRarity } from '../../Types/consts'
-import { substatType } from '../../Types/consts'
-import { objectKeyMap } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -18,7 +21,8 @@ export class CharacterTCDataManager extends DataManager<
   CharacterKey,
   'charTCs',
   ICharTC,
-  ICharTC
+  ICharTC,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'charTCs')
@@ -30,22 +34,22 @@ export class CharacterTCDataManager extends DataManager<
         database.storage.remove(key)
     }
   }
-  validate(obj: unknown): ICharTC | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: unknown): ICharTC | undefined {
+    if (typeof obj !== 'object') return undefined
     const { weapon, artifact, optimization } = obj as ICharTC
     const _weapon = validateCharTCWeapon(weapon)
-    if (!_weapon) return
+    if (!_weapon) return undefined
 
     const _artifact = validateCharTCArtifact(artifact)
-    if (!_artifact) return
+    if (!_artifact) return undefined
     const _optimization = validateCharTcOptimization(optimization)
-    if (!_optimization) return
+    if (!_optimization) return undefined
     return { artifact: _artifact, weapon: _weapon, optimization: _optimization }
   }
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `charTC_${key}`
   }
-  remove(key: CharacterKey) {
+  override remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
     super.remove(key)
@@ -68,7 +72,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
       slots: initCharTCArtifactSlots(),
       substats: {
         type: 'max',
-        stats: objectKeyMap(allSubstatKeys, () => 0),
+        stats: objKeyMap(allSubstatKeys, () => 0),
       },
       sets: {},
     },
@@ -80,7 +84,7 @@ export function initCharTC(weaponKey: WeaponKey): ICharTC {
   }
 }
 function initCharTCArtifactSlots() {
-  return objectKeyMap(allArtifactSlotKeys, (s) => ({
+  return objKeyMap(allArtifactSlotKeys, (s) => ({
     level: 20,
     rarity: 5 as ArtifactRarity,
     statKey: (s === 'flower'
@@ -92,10 +96,10 @@ function initCharTCArtifactSlots() {
 }
 
 function validateCharTCWeapon(weapon: unknown): ICharTC['weapon'] | undefined {
-  if (typeof weapon !== 'object') return
+  if (typeof weapon !== 'object') return undefined
   const { key } = weapon as ICharTC['weapon']
   let { level, ascension, refinement } = weapon as ICharTC['weapon']
-  if (!allWeaponKeys.includes(key)) return
+  if (!allWeaponKeys.includes(key)) return undefined
   if (typeof refinement !== 'number' || refinement < 1 || refinement > 5)
     refinement = 1
   const { level: _level, ascension: _ascension } = validateLevelAsc(
@@ -108,18 +112,18 @@ function validateCharTCWeapon(weapon: unknown): ICharTC['weapon'] | undefined {
 function validateCharTCArtifact(
   artifact: unknown
 ): ICharTC['artifact'] | undefined {
-  if (typeof artifact !== 'object') return
+  if (typeof artifact !== 'object') return undefined
   let {
     slots,
     substats: { type, stats },
     sets,
   } = artifact as ICharTC['artifact']
   const _slots = validateCharTCArtifactSlots(slots)
-  if (!_slots) return
+  if (!_slots) return undefined
   slots = _slots
-  if (!substatType.includes(type)) type = 'max'
-  if (typeof stats !== 'object') stats = objectKeyMap(allSubstatKeys, () => 0)
-  stats = objectKeyMap(allSubstatKeys, (k) =>
+  if (!substatTypeKeys.includes(type)) type = 'max'
+  if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
+  stats = objKeyMap(allSubstatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0
   )
 
@@ -145,18 +149,18 @@ function validateCharTCArtifactSlots(
 function validateCharTcOptimization(
   optimization: unknown
 ): ICharTC['optimization'] | undefined {
-  if (typeof optimization !== 'object') return
+  if (typeof optimization !== 'object') return undefined
   let { target, distributedSubstats, maxSubstats } =
     optimization as ICharTC['optimization']
   if (!Array.isArray(target)) target = undefined
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
     maxSubstats = initCharTcOptimizationMaxSubstats()
-  maxSubstats = objectKeyMap([...allSubstatKeys], (k) =>
+  maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
   return { target, distributedSubstats, maxSubstats }
 }
 function initCharTcOptimizationMaxSubstats(): ICharTC['optimization']['maxSubstats'] {
-  return objectKeyMap(allSubstatKeys, () => 30)
+  return objKeyMap(allSubstatKeys, () => 30)
 }

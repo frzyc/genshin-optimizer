@@ -1,11 +1,10 @@
 import type {
   CharacterKey,
   LocationCharacterKey,
+  SubstatKey,
 } from '@genshin-optimizer/consts'
-import { allTravelerKeys } from '@genshin-optimizer/consts'
-import type { SubstatKey } from '../../Types/artifact'
-import { allSubstatKeys } from '../../Types/artifact'
-import { deepFreeze } from '../../Util/Util'
+import { allSubstatKeys, allTravelerKeys } from '@genshin-optimizer/consts'
+import { deepFreeze } from '@genshin-optimizer/util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -22,7 +21,8 @@ export class CharMetaDataManager extends DataManager<
   CharacterKey,
   'charMetas',
   ICharMeta,
-  ICharMeta
+  ICharMeta,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'charMetas')
@@ -33,8 +33,8 @@ export class CharMetaDataManager extends DataManager<
       )
         this.database.storage.remove(key)
   }
-  validate(obj: any): ICharMeta | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: any): ICharMeta | undefined {
+    if (typeof obj !== 'object') return undefined
 
     let { rvFilter, favorite } = obj
     if (!Array.isArray(rvFilter)) rvFilter = []
@@ -43,7 +43,7 @@ export class CharMetaDataManager extends DataManager<
     return { rvFilter, favorite }
   }
 
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `${storageHash}${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
@@ -54,7 +54,7 @@ export class CharMetaDataManager extends DataManager<
   LocationToCharacterKey(key: LocationCharacterKey): CharacterKey {
     return key === 'Traveler' ? this.getTravelerCharacterKey() : key
   }
-  get(key: CharacterKey): ICharMeta {
+  override get(key: CharacterKey): ICharMeta {
     return this.data[key] ?? initCharMeta
   }
 }

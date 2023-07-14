@@ -1,0 +1,54 @@
+[
+  {
+    "char": {
+      "key": "Nahida",
+      "level": 12,
+      "talent": {
+        "auto": 0,
+        "skill": 0,
+        "burst": 0
+      },
+      "ascension": 0,
+      "constellation": 2
+    },
+    "weapon": {
+      "key": "TulaytullahsRemembrance",
+      "level": 42,
+      "ascension": 2,
+      "refinement": 2,
+      "location": "Nahida",
+      "lock": false
+    },
+    "conditionals": {
+      "Nahida": {
+        "c2Bloom": 1
+      }
+    }
+  },
+  {
+    "char": {
+      "key": "Nilou",
+      "level": 33,
+      "talent": {
+        "auto": 0,
+        "skill": 0,
+        "burst": 0
+      },
+      "ascension": 1,
+      "constellation": 3
+    },
+    "weapon": {
+      "key": "KeyOfKhajNisut",
+      "level": 59,
+      "ascension": 3,
+      "refinement": 3,
+      "location": "Nilou",
+      "lock": false
+    },
+    "conditionals": {
+      "KeyOfKhajNisut": {
+        "afterSkillStacks": 3
+      }
+    }
+  }
+]

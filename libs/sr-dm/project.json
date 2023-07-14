@@ -1,0 +1,36 @@
+{
+  "name": "sr-dm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sr-dm/src",
+  "projectType": "library",
+  "targets": {
+    "load-dm": {
+      "options": {
+        "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
+        "outputPath": "libs/sr-dm/StarRailData"
+      },
+      "inputs": [
+        {
+          "runtime": "git ls-remote -q https://github.com/Dimbreath/StarRailData.git HEAD"
+        }
+      ]
+    },
+    "genfile": {},
+    "build": {},
+    "build-ts": {},
+    "lint": {}
+  },
+  "tags": [],
+  "namedInputs": {
+    "production": [
+      "{projectRoot}/version.hash",
+      "{projectRoot}/src/**/*",
+      "{projectRoot}/scripts/**/*",
+      "sharedGlobals",
+      "{projectRoot}/.eslintrc.json",
+      "{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "{projectRoot}/tsconfig.spec.json",
+      "{projectRoot}/jest.config.[jt]s"
+    ]
+  }
+}
