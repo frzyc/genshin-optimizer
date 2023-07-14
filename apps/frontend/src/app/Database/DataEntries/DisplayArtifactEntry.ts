@@ -45,8 +45,8 @@ export class DisplayArtifactEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'display_artifact', initialState, 'display_artifact')
   }
-  validate(obj: unknown): IDisplayArtifact | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: unknown): IDisplayArtifact | undefined {
+    if (typeof obj !== 'object') return undefined
     let { filterOption, ascending, sortType, effFilter, probabilityFilter } =
       obj as IDisplayArtifact
 
@@ -126,7 +126,7 @@ export class DisplayArtifactEntry extends DataEntry<
       probabilityFilter,
     } as IDisplayArtifact
   }
-  set(
+  override set(
     value:
       | Partial<IDisplayArtifact>
       | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)

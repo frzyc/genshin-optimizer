@@ -8,9 +8,10 @@ import CharIconSide from '../Image/CharIconSide'
 export default function LocationIcon({
   characterKey,
 }: {
-  characterKey: CharacterKey
+  characterKey: CharacterKey | ''
 }) {
   const { gender } = useDBMeta()
+  if (!characterKey) return null
   const characterSheet = getCharSheet(characterKey, gender)
   if (!characterSheet) return null
   return (

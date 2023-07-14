@@ -29,8 +29,8 @@ export class DBMetaEntry extends DataEntry<
   constructor(database: ArtCharDatabase) {
     super(database, 'dbMeta', dbMetaInit, 'dbMeta')
   }
-  validate(obj: any): IDBMeta | undefined {
-    if (typeof obj !== 'object') return
+  override validate(obj: any): IDBMeta | undefined {
+    if (typeof obj !== 'object') return undefined
     let { name, lastEdit, gender } = obj
     if (typeof name !== 'string')
       name = `Database ${this.database.storage.getDBIndex()}`
@@ -40,7 +40,7 @@ export class DBMetaEntry extends DataEntry<
 
     return { name, lastEdit, gender } as IDBMeta
   }
-  importGOOD(go: IGO & IGOOD, _result: ImportResult): void {
+  override importGOOD(go: IGO & IGOOD, _result: ImportResult): void {
     const data = go[this.goKey]
     if (data) {
       // Don't copy over lastEdit data
