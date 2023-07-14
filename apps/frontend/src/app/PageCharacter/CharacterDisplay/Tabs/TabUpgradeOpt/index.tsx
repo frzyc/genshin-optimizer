@@ -551,25 +551,18 @@ export default function TabUpopt() {
             >
               {artifactsToShow.map((art, i) => (
                 <Box key={art.id}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
-                      <ArtifactCard artifactId={art.id} editorProps={{}} />
-                    </Grid>
-                    <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
-                      <UpgradeOptChartCard
-                        upgradeOpt={art}
-                        thresholds={upOptCalc?.thresholds ?? []}
-                        objMax={maxObj0}
-                        objMin={minObj0}
-                        calcExactCallback={() => {
-                          const ix =
-                            currentPageIndex * artifactsToDisplayPerPage + i
-                          upOptCalc?.calcExact(ix)
-                          setForceUpdate()
-                        }}
-                      />
-                    </Grid>
-                  </Grid>
+                  <UpgradeOptChartCard
+                    upgradeOpt={art}
+                    thresholds={upOptCalc?.thresholds ?? []}
+                    objMax={maxObj0}
+                    objMin={minObj0}
+                    calcExactCallback={() => {
+                      const ix =
+                        currentPageIndex * artifactsToDisplayPerPage + i
+                      upOptCalc?.calcExact(ix)
+                      setForceUpdate()
+                    }}
+                  />
                 </Box>
               ))}
             </Suspense>

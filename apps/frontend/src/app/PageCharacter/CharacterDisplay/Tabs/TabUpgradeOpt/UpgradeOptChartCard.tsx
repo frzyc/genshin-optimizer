@@ -1,8 +1,7 @@
 import type { ArtifactSlotKey } from '@genshin-optimizer/consts'
-import { allArtifactSlotKeys } from '@genshin-optimizer/consts'
-import { imgAssets } from '@genshin-optimizer/gi-assets'
+import { useTimeout } from '@genshin-optimizer/react-util'
 import { linspace } from '@genshin-optimizer/util'
-import { Box, Button, CardContent, Grid } from '@mui/material'
+import { Box, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import type { TooltipProps } from 'recharts'
 import {
@@ -23,12 +22,12 @@ import CardLight from '../../../../Components/Card/CardLight'
 import { DataContext } from '../../../../Context/DataContext'
 import { DatabaseContext } from '../../../../Database/Database'
 import { uiInput as input } from '../../../../Formula'
-import type { ICachedArtifact } from '../../../../Types/artifact'
+import ArtifactCard from '../../../../PageArtifact/ArtifactCard'
 import { erf } from './mathUtil'
-import { ResultType } from './upOpt'
 import type { UpOptArtifact } from './upOpt'
+import { ResultType } from './upOpt'
 
-type Data = {
+type Props = {
   upgradeOpt: UpOptArtifact
   showTrue?: boolean
   objMin: number
@@ -44,13 +43,27 @@ type ChartData = {
 }
 
 const nbins = 50
-export default function UpgradeOptChartCard({
+
+export default function UpgradeOptChartCard(props: Props) {
+  return (
+    <Grid container spacing={1}>
+      <Grid item xs={5} sm={4} md={4} lg={3} xl={3}>
+        <ArtifactCard artifactId={props.upgradeOpt.id} editorProps={{}} />
+      </Grid>
+      <Grid item xs={7} sm={8} md={8} lg={9} xl={9}>
+        <UpgradeOptChartCardGraph {...props} />
+      </Grid>
+    </Grid>
+  )
+}
+
+function UpgradeOptChartCardGraph({
   upgradeOpt,
   thresholds,
   objMin,
   objMax,
   calcExactCallback,
-}: Data) {
+}: Props) {
   const { database } = useContext(DatabaseContext)
   const bla = database.arts.get(upgradeOpt.id)
   if (!bla) {
@@ -58,16 +71,6 @@ export default function UpgradeOptChartCard({
   }
 
   const constrained = thresholds.length > 1
-
-  const slot = bla.slotKey
-  const { data } = useContext(DataContext)
-  const artifacts = useMemo(
-    () =>
-      allArtifactSlotKeys.map((k) => {
-        return [k, database.arts.get(data.get(input.art[k].id).value)]
-      }),
-    [data, database]
-  ) as Array<[ArtifactSlotKey, ICachedArtifact | undefined]>
 
   // Returns P(a < DMG < b)
   const integral = (a: number, b: number) =>
@@ -120,26 +123,51 @@ export default function UpgradeOptChartCard({
     b < thr0 + reportD ? b : a
   )
   const reportY = integralCons(reportBin, reportBin + step)
+  const timeoutFunc = useTimeout()
+  if (!isExact) timeoutFunc(calcExactCallback, 1000) // lazy load the exact calculation
 
+  const probUpgradeText = (
+    <span>
+      Prob. upgrade{isExact ? '' : ' (est.)'}:{' '}
+      <strong>{(100 * reportP).toFixed(1)}%</strong>
+    </span>
+  )
+  const avgIncText = (
+    <span>
+      Average increase{isExact ? '' : ' (est.)'}:{' '}
+      <strong>
+        {reportD <= 0 ? '' : '+'}
+        {((100 * reportD) / thr0).toFixed(1)}%
+      </strong>
+    </span>
+  )
   const CustomTooltip = ({ active }: TooltipProps<string, string>) => {
     if (!active) return null
     // I kinda want the [average increase] to only appear when hovering the white dot.
     return (
       <div className="custom-tooltip">
         <p className="label"></p>
-        <p className="desc">
-          prob. upgrade{isExact ? '' : ' (est.)'}: {(100 * reportP).toFixed(1)}%
-        </p>
-        <p className="desc">
-          average increase{isExact ? '' : ' (est.)'}: {reportD <= 0 ? '' : '+'}
-          {((100 * reportD) / thr0).toFixed(1)}%
-        </p>
+        <p className="desc">{probUpgradeText}</p>
+        <p className="desc">{avgIncText}</p>
       </div>
     )
   }
 
   return (
     <CardLight>
+      <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
+            <Typography>{probUpgradeText}</Typography>
+            <Typography sx={{ flexGrow: 1 }}>{avgIncText}</Typography>
+            <Typography>Currently Equipped</Typography>
+          </Box>
+        </CardContent>
+        <Box sx={{ height: 50, width: 50 }}>
+          <EquippedArtifact slotKey={bla.slotKey} />
+        </Box>
+      </Box>
+
       <CardContent>
         <ResponsiveContainer width="100%" aspect={2.5} key={upgradeOpt.id}>
           <ComposedChart
@@ -235,51 +263,17 @@ export default function UpgradeOptChartCard({
             <Tooltip content={<CustomTooltip />} cursor={false} />
           </ComposedChart>
         </ResponsiveContainer>
-
-        <Grid direction="row" container spacing={0.75} columns={12}>
-          {artifacts.map(
-            ([sk, art]: [ArtifactSlotKey, ICachedArtifact | undefined]) => {
-              if (sk !== slot)
-                return (
-                  <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}>
-                    <ArtifactCardPico slotKey={sk} artifactObj={art} />
-                  </Grid>
-                )
-              return (
-                <Grid item key={`${sk}_${upgradeOpt.id}`} xs={1}>
-                  <Button
-                    variant="contained"
-                    style={{ height: '100%', width: '100%' }}
-                    onClick={() => {
-                      calcExactCallback()
-                    }}
-                    startIcon={
-                      <Box
-                        sx={{
-                          position: 'absolute',
-                          width: '70%',
-                          height: '70%',
-                          left: '50%',
-                          top: '50%',
-                          transform: 'translate(-50%, -50%)',
-                          opacity: 0.7,
-                        }}
-                        component="img"
-                        src={imgAssets.slot[sk]}
-                      />
-                    }
-                    sx={{ minWidth: 0 }}
-                  />
-                </Grid>
-              )
-            }
-          )}
-        </Grid>
-
-        <br />
-        <span>Click above to calculate Exact upgrade distribution</span>
-        <br />
       </CardContent>
     </CardLight>
   )
+}
+
+function EquippedArtifact({ slotKey }: { slotKey: ArtifactSlotKey }) {
+  const { database } = useContext(DatabaseContext)
+  const { data } = useContext(DataContext)
+  const artifact = useMemo(
+    () => database.arts.get(data.get(input.art[slotKey].id).value),
+    [slotKey, data, database]
+  )
+  return <ArtifactCardPico slotKey={slotKey} artifactObj={artifact} />
 }
