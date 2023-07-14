@@ -180,8 +180,8 @@ export default function UpgradeOptChartCard({
                 x2={xpercent}
                 y2="0"
               >
-                <stop offset={1} stopColor={isExact ? '#2f6fa2' : 'orange'} stopOpacity={0} />
-                <stop offset={0} stopColor={isExact ? '#2f6fa2' : 'orange'} stopOpacity={1} />
+                <stop offset={1} stopColor={isExact ? '#f17704' : 'orange'} stopOpacity={0} />
+                <stop offset={0} stopColor={isExact ? '#f17704' : 'orange'} stopOpacity={1} />
               </linearGradient>
             </defs>
 
@@ -202,7 +202,7 @@ export default function UpgradeOptChartCard({
             <Area
               type="monotone"
               dataKey="estCons"
-              stroke={isExact ? '#2f6fa2' : 'orange'}
+              stroke={isExact ? '#f17704' : 'orange'}
               dot={false}
               fill={`url(#splitOpacity${upgradeOpt.id})`}
               opacity={0.5}
