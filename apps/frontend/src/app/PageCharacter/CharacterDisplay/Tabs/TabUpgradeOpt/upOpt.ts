@@ -544,7 +544,6 @@ export class UpOptCalculator {
     })
 
     this.artifacts[ix].result = this.toResult3(distrs)
-    console.log('calc exact called.', this.artifacts[ix].result!.p)
   }
 
   _calcExact4th(ix: number) {
@@ -605,7 +604,6 @@ export class UpOptCalculator {
     })
 
     this.artifacts[ix].result = this.toResult3(distrs)
-    console.log('calc exact4th called.', this.artifacts[ix].result!.p)
   }
 }
 
