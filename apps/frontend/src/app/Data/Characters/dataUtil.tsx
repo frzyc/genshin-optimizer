@@ -6,7 +6,7 @@ import type {
   SubstatKey,
 } from '@genshin-optimizer/consts'
 import { allMainStatKeys } from '@genshin-optimizer/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-stats'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { layeredAssignment, objKeyMap } from '@genshin-optimizer/util'
 import { infusionNode, input } from '../../Formula'

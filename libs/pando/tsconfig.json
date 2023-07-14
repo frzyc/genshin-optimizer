@@ -2,16 +2,6 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "module": "ES2022",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "allowJs": false,
-    "exactOptionalPropertyTypes": true,
-    "noUncheckedIndexedAccess": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
     "types": ["vite/client"]
@@ -19,11 +9,7 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
+    { "path": "./tsconfig.lib.json" },
+    { "path": "./tsconfig.spec.json" }
   ]
 }

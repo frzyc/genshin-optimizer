@@ -1,0 +1,35 @@
+name: Clean PR Deployment
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout external gh-pages
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ vars.PR_REPO }}
+          ssh-key: ${{ secrets.PR_REPO_SSH_KEY }}
+          ref: gh-pages
+          path: gh-pages
+      - name: Make commit to deploy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm ./${{ github.event.number }} || true
+          git commit -m "clean ${{ github.event.number }}" || true
+          git push origin gh-pages || true
+        working-directory: gh-pages
+      - name: Output date
+        id: output-date
+        run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
+      - name: Maintain comment
+        uses: actions-cool/maintain-one-comment@v3
+        with:
+          body: |
+            [${{ steps.output-date.outputs.date }}] - Deleted deployment
+          body-include: '<!-- Created by actions-cool/maintain-one-comment -->'

@@ -1002,7 +1002,7 @@ function DataContextWrapper({ children, characterKey, build, oldData }: Prop) {
   )
   const providerValue = useMemo(() => {
     const tdc = teamData?.[characterKey]
-    if (!tdc) return
+    if (!tdc) return undefined
     return { data: tdc.target, teamData, oldData }
   }, [teamData, oldData, characterKey])
   if (!providerValue) return null

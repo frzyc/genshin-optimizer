@@ -4,33 +4,22 @@
   "sourceRoot": "libs/dm-localization/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "build": {},
+    "build-ts": {
       "options": {
-        "outputPath": "dist/libs/dm-localization",
-        "outputFileName": "src/index.js",
-        "main": "libs/dm-localization/src/index.ts",
-        "tsConfig": "libs/dm-localization/tsconfig.lib.json",
-        "assets": ["libs/dm-localization/*.md"]
+        "outputFileName": "src/index.js"
       }
     },
     "pipeline": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "dm-localization:build",
+        "buildTarget": "dm-localization:build-ts",
         "watch": false,
         "inspect": false
       },
       "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/dm-localization/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

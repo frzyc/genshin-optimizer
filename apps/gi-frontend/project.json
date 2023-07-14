@@ -4,22 +4,8 @@
   "sourceRoot": "apps/gi-frontend/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/apps/gi-frontend"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
-      }
-    },
+    "build": {},
+    "build-vite": {},
     "serve": {
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
@@ -53,21 +39,9 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/gi-frontend"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/gi-frontend",
-        "config": "apps/gi-frontend/vitest.config.ts"
-      }
+      "executor": "@nx/vite:test"
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/gi-frontend/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
+    "lint": {},
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
