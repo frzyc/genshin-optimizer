@@ -482,7 +482,7 @@ export class UpOptCalculator {
     let ptot = 0
     let upAvgtot = 0
     const gmm = distr.map(({ prob, val }) => {
-      if (val.every((vi, i) => vi >= this.thresholds[i])) {
+      if (val.every((vi, i) => i === 0 || vi >= this.thresholds[i])) {
         ptot += prob
         upAvgtot += prob * (val[0] - this.thresholds[0])
         return { phi: prob, cp: 1, mu: val[0], sig2: 0 }
