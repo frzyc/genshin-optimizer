@@ -5,14 +5,12 @@
   "projectType": "library",
   "targets": {
     "genfile": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          "ts-node libs/localization/src/loadTrans.ts",
-          "ts-node libs/localization/src/mainGen.ts"
-        ]
-      },
-      "outputs": ["{projectRoot}/assets/locales", "{projectRoot}/main_gen.json"]
+      "executor": "@genshin-optimizer/localization:gen-locale",
+      "outputs": [
+        "{projectRoot}/Translated",
+        "{projectRoot}/assets/locales",
+        "{projectRoot}/main_gen.json"
+      ]
     },
     "lint": {}
   },
