@@ -4,30 +4,10 @@
   "sourceRoot": "libs/gi-util/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/gi-util",
-        "main": "libs/gi-util/src/index.ts",
-        "tsConfig": "libs/gi-util/tsconfig.lib.json",
-        "assets": ["libs/gi-util/*.md"]
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-util/**/*.ts"]
-      }
-    },
+    "build": {},
+    "build-ts": {},
+    "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/gi-util/jest.config.ts",
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,

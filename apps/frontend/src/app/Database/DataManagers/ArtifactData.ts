@@ -43,10 +43,13 @@ export class ArtifactDataManager extends DataManager<
       if (key.startsWith('artifact_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  validate(obj: unknown): IArtifact | undefined {
+  override validate(obj: unknown): IArtifact | undefined {
     return validateArtifact(obj)
   }
-  toCache(storageObj: IArtifact, id: string): ICachedArtifact | undefined {
+  override toCache(
+    storageObj: IArtifact,
+    id: string
+  ): ICachedArtifact | undefined {
     // Generate cache fields
     const newArt = cachedArtifact(storageObj, id).artifact
 
@@ -93,7 +96,7 @@ export class ArtifactDataManager extends DataManager<
         this.database.chars.triggerCharacter(newArt.location, 'update')
     return newArt
   }
-  deCache(artifact: ICachedArtifact): IArtifact {
+  override deCache(artifact: ICachedArtifact): IArtifact {
     const {
       setKey,
       rarity,
@@ -124,7 +127,7 @@ export class ArtifactDataManager extends DataManager<
     this.set(id, value)
     return id
   }
-  remove(key: string, notify = true) {
+  override remove(key: string, notify = true) {
     const art = this.get(key)
     if (!art) return
     art.location &&
@@ -135,10 +138,10 @@ export class ArtifactDataManager extends DataManager<
     const art = this.get(id)
     if (art) this.setCached(id, { ...art, probability })
   }
-  clear(): void {
+  override clear(): void {
     super.clear()
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.artifacts.beforeMerge = this.values.length
 
     // Match artifacts for counter, metadata, and locations
@@ -159,9 +162,12 @@ export class ArtifactDataManager extends DataManager<
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(this.values.map((a) => a.id))
     const hasEquipment = artifacts.some((a) => a.location)
-    artifacts.forEach((a) => {
+    artifacts.forEach((a): void => {
       const art = this.validate(a)
-      if (!art) return result.artifacts.invalid.push(a)
+      if (!art) {
+        result.artifacts.invalid.push(a)
+        return
+      }
 
       let importArt = art
       let importId: string | undefined = (a as ICachedArtifact).id
@@ -341,9 +347,12 @@ export function cachedArtifact(
     return (value / getSubstatValue(key)) * 100
   }
 
-  substats.forEach((substat, index) => {
+  substats.forEach((substat, index): void => {
     const { key, value } = substat
-    if (!key) return (substat.value = 0)
+    if (!key) {
+      substat.value = 0
+      return
+    }
     substat.efficiency = efficiency(value, key)
 
     const possibleRolls = getSubstatRolls(key, value, rarity)
@@ -450,7 +459,7 @@ export function validateArtifact(
   obj: unknown = {},
   allowZeroSub = false
 ): IArtifact | undefined {
-  if (!obj || typeof obj !== 'object') return
+  if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
   let { level, mainStatKey, substats, location, lock } = obj as IArtifact
 
@@ -463,21 +472,21 @@ export function validateArtifact(
     level < 0 ||
     level > 20
   )
-    return // non-recoverable
+    return undefined // non-recoverable
   const data = allStats.art.data[setKey]
-  if (!data.slots.includes(slotKey)) return
-  if (!data.rarities.includes(rarity)) return
+  if (!data.slots.includes(slotKey)) return undefined
+  if (!data.rarities.includes(rarity)) return undefined
   level = Math.round(level)
-  if (level > artMaxLevel[rarity]) return
+  if (level > artMaxLevel[rarity]) return undefined
 
   substats = parseSubstats(substats, rarity, allowZeroSub)
   // substat cannot have same key as mainstat
-  if (substats.find((sub) => sub.key === mainStatKey)) return
+  if (substats.find((sub) => sub.key === mainStatKey)) return undefined
   lock = !!lock
   const plausibleMainStats = artSlotsData[slotKey].stats
   if (!(plausibleMainStats as unknown as MainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
-    else return // ambiguous mainstat
+    else return undefined // ambiguous mainstat
   if (!location || !allLocationCharacterKeys.includes(location)) location = ''
   return {
     setKey,

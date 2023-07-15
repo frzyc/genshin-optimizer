@@ -42,7 +42,7 @@ type WeaponSelectionModalProps = {
   onHide: () => void
   onSelect: (wKey: WeaponKey) => void
   filter?: (sheet: WeaponSheet) => boolean
-  weaponTypeFilter?: WeaponTypeKey
+  weaponTypeFilter?: WeaponTypeKey | ''
 }
 
 export default function WeaponSelectionModal({
