@@ -20,6 +20,8 @@
   "uses_other": "{{count}} Uses",
   "opponents_one": "{{count}} Opponent",
   "opponents_other": "{{count}} Opponents",
+  "members_one": "{{count}} Member",
+  "members_other": "{{count}} Members",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "none": "After hitting an opponent",
