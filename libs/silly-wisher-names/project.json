@@ -5,11 +5,8 @@
   "projectType": "library",
   "targets": {
     "genfile": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "ts-node libs/silly-wisher-names/src/loadTrans.ts"
-      },
-      "outputs": ["{projectRoot}/assets/locales"]
+      "executor": "@genshin-optimizer/silly-wisher-names:gen-assets",
+      "outputs": ["{projectRoot}/assets/locales", "{projectRoot}/Translated"]
     },
     "lint": {}
   },

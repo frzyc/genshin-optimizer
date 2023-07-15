@@ -1,5 +1,11 @@
 import type { GenLocaleExecutorSchema } from './schema'
-import { readdir, readFileSync, existsSync, mkdirSync, writeFileSync } from 'fs'
+import {
+  readdirSync,
+  readFileSync,
+  existsSync,
+  mkdirSync,
+  writeFileSync,
+} from 'fs'
 
 export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/localization`
 
@@ -8,8 +14,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   const transDir = `${PROJROOT_PATH}/Translated/`
   const localeDir = `${PROJROOT_PATH}/assets/locales/`
   const logging = false
-  readdir(transDir, (err, files) => {
-    files = files.filter((fn) => fn.includes('.json'))
+  {
+    const files = readdirSync(transDir).filter((fn) => fn.includes('.json'))
     files.forEach((file) => {
       const lang = file.split('.json')[0]
       const raw = readFileSync(transDir + file).toString()
@@ -23,13 +29,15 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (logging) console.log('Generated JSON at', fileName)
       })
     })
-  })
+  }
 
   //put all manual(english) translation into one file, to upload to POEditor to update translations.
   const enDir = `${PROJROOT_PATH}/assets/locales/en/`
-  readdir(enDir, (err, files) => {
+  {
+    const files = readdirSync(enDir).filter(
+      (fn) => fn.includes('.json') && !fn.includes('_gen')
+    )
     const main = {} as { [key: string]: object }
-    files = files.filter((fn) => fn.includes('.json') && !fn.includes('_gen'))
     files.forEach((file) => {
       const filename = file.split('.json')[0]
       const raw = readFileSync(enDir + file).toString()
@@ -40,7 +48,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     const mainFile = `${PROJROOT_PATH}/main_gen.json`
     writeFileSync(mainFile, data)
     console.log('Generated MAIN JSON at ', mainFile)
-  })
+  }
 
   return { success: true }
 }

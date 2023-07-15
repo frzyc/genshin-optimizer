@@ -46,7 +46,7 @@
       "@genshin-optimizer/react-util": ["libs/react-util/src/index.ts"],
       "@genshin-optimizer/silly-wisher": ["libs/silly-wisher/src/index.ts"],
       "@genshin-optimizer/silly-wisher-names": [
-        "libs/silly-wisher/src/index.ts"
+        "libs/silly-wisher-names/src/index.ts"
       ],
       "@genshin-optimizer/sr-assets": ["libs/sr-assets/src/index.ts"],
       "@genshin-optimizer/sr-consts": ["libs/sr-consts/src/index.ts"],
