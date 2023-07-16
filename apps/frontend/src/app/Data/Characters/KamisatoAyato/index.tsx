@@ -133,7 +133,6 @@ const c1Shun_dmg_ = greaterEq(
   equal(condC1OppHp, 'on', dm.constellation1.shunDmg_)
 )
 
-// Not sure what "Max HP increased by 50%" means
 const c2_hp_ = greaterEq(
   input.constellation,
   2,
