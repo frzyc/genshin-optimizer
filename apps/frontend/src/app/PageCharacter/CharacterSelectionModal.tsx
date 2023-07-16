@@ -318,7 +318,9 @@ function SelectionCard({
             <Box
               display="flex"
               position="relative"
-              className={!banner ? `grad-${characterSheet?.rarity}star` : undefined}
+              className={
+                !banner ? `grad-${characterSheet?.rarity}star` : undefined
+              }
               sx={{
                 '&::before': {
                   content: '""',
