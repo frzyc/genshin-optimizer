@@ -8,7 +8,6 @@
         "cacheableOperations": [
           "load-dm",
           "genfile",
-          "pipeline",
           "build",
           "build-webpack",
           "build-vite",
@@ -27,7 +26,8 @@
     },
     "genfile": {
       "executor": "nx:noop",
-      "dependsOn": ["load-dm", "^genfile"]
+      "dependsOn": ["load-dm", "^genfile"],
+      "inputs": ["production", "^production"]
     },
     "build": {
       "executor": "nx:noop",
@@ -65,10 +65,6 @@
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       },
       "dependsOn": ["genfile", "^genfile", "^build", "^pipeline"],
-      "inputs": ["production", "^production"]
-    },
-    "pipeline": {
-      "dependsOn": ["build"],
       "inputs": ["production", "^production"]
     },
     "e2e": {
