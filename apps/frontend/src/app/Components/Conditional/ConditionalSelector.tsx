@@ -9,7 +9,11 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import { deletePropPath, evalIfFunc, layeredAssignment } from '@genshin-optimizer/util'
+import {
+  deletePropPath,
+  evalIfFunc,
+  layeredAssignment,
+} from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'
@@ -23,7 +27,10 @@ export default function ConditionalSelector({
   disabled = false,
 }: ConditionalSelectorProps) {
   const { data } = useContext(DataContext)
-  if (Object.keys(evalIfFunc(conditional.states, data)).length === 1 && 'path' in conditional) {
+  if (
+    Object.keys(evalIfFunc(conditional.states, data)).length === 1 &&
+    'path' in conditional
+  ) {
     return (
       <SimpleConditionalSelector
         conditional={conditional}
@@ -113,9 +120,7 @@ function ExclusiveConditionalSelector({
 
   const conditionalValue = data.get(conditional.value).value
   const condStates = evalIfFunc(conditional.states, data)
-  const state = conditionalValue
-    ? condStates[conditionalValue]
-    : undefined
+  const state = conditionalValue ? condStates[conditionalValue] : undefined
   const badge = state ? (
     getStateBadge(state.name)
   ) : (
@@ -128,7 +133,7 @@ function ExclusiveConditionalSelector({
   // or changing a condition that disables another state
   if (!state && conditionalValue) {
     // Clear out the value
-    setConditional(undefined);
+    setConditional(undefined)
   }
 
   return (
@@ -195,26 +200,28 @@ function MultipleConditionalSelector({
       disableElevation
       color="secondary"
     >
-      {Object.entries(evalIfFunc(conditional.states, data)).map(([stateKey, st]) => {
-        const conditionalValue = data.get(st.value).value
-        const isSelected = conditionalValue === stateKey
-        return (
-          <Button
-            color={isSelected ? 'success' : 'primary'}
-            disabled={disabled}
-            fullWidth
-            key={stateKey}
-            onClick={() =>
-              setConditional(st.path, conditionalValue ? undefined : stateKey)
-            }
-            size="small"
-            startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
-            sx={{ borderRadius: 0 }}
-          >
-            {getCondName(st.name)}
-          </Button>
-        )
-      })}
+      {Object.entries(evalIfFunc(conditional.states, data)).map(
+        ([stateKey, st]) => {
+          const conditionalValue = data.get(st.value).value
+          const isSelected = conditionalValue === stateKey
+          return (
+            <Button
+              color={isSelected ? 'success' : 'primary'}
+              disabled={disabled}
+              fullWidth
+              key={stateKey}
+              onClick={() =>
+                setConditional(st.path, conditionalValue ? undefined : stateKey)
+              }
+              size="small"
+              startIcon={isSelected ? <CheckBox /> : <CheckBoxOutlineBlank />}
+              sx={{ borderRadius: 0 }}
+            >
+              {getCondName(st.name)}
+            </Button>
+          )
+        }
+      )}
     </ButtonGroup>
   )
 }

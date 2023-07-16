@@ -337,28 +337,31 @@ const sheet: ICharacterSheet = {
         value: condSkillStacks,
         path: condSkillStacksPath,
         name: ct.ch('skill.namisenStacks'),
-        states: (data) => Object.fromEntries(
-          range(1, data.get(input.constellation).value >= 2 ? 5 : 4).map((stacks) => [
-            stacks,
-            {
-              name: st('stack', { count: stacks }),
-              fields: [
+        states: (data) =>
+          Object.fromEntries(
+            range(1, data.get(input.constellation).value >= 2 ? 5 : 4).map(
+              (stacks) => [
+                stacks,
                 {
-                  node: infoMut(skillStacks_dmgInc, {
-                    name: ct.ch('skill.shun_dmgInc'),
-                  }),
+                  name: st('stack', { count: stacks }),
+                  fields: [
+                    {
+                      node: infoMut(skillStacks_dmgInc, {
+                        name: ct.ch('skill.shun_dmgInc'),
+                      }),
+                    },
+                    {
+                      text: st('maxStacks'),
+                      value: (data) =>
+                        data.get(input.constellation).value >= 2
+                          ? dm.skill.maxStacks + dm.constellation2.extraStacks
+                          : dm.skill.maxStacks,
+                    },
+                  ],
                 },
-                {
-                  text: st('maxStacks'),
-                  value: (data) =>
-                    data.get(input.constellation).value >= 2
-                      ? dm.skill.maxStacks + dm.constellation2.extraStacks
-                      : dm.skill.maxStacks,
-                },
-              ],
-            },
-          ])
-        ),
+              ]
+            )
+          ),
       }),
       ct.condTem('constellation1', {
         value: condC1OppHp,

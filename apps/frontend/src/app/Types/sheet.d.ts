@@ -31,22 +31,26 @@ type ExclusiveConditionalStates = {
   }
 }
 type MultipleConditionalStates = {
-    [key: string]: {
-      path: readonly string[]
-      value: ReadNode<string>
-      name: Displayable
-      fields: IFieldDisplay[]
-    }
+  [key: string]: {
+    path: readonly string[]
+    value: ReadNode<string>
+    name: Displayable
+    fields: IFieldDisplay[]
+  }
 }
 
 interface IDocumentConditionalExclusiveBase extends IDocumentBase {
   path: readonly string[]
   value: ReadNode<string>
   name: Displayable
-  states: ExclusiveConditionalStates | ((data: UIData) => ExclusiveConditionalStates)
+  states:
+    | ExclusiveConditionalStates
+    | ((data: UIData) => ExclusiveConditionalStates)
 }
 interface IDocumentConditionalMultipleBase extends IDocumentBase {
-  states: MultipleConditionalStates | ((data: UIData) => MultipleConditionalStates)
+  states:
+    | MultipleConditionalStates
+    | ((data: UIData) => MultipleConditionalStates)
 }
 export type DocumentConditionalBase =
   | IDocumentConditionalExclusiveBase
