@@ -1,6 +1,9 @@
+import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
+  constant,
   equal,
   greaterEq,
   infoMut,
@@ -10,12 +13,10 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { range } from '../../../Util/Util'
-import { cond, stg, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
-import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
+import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
   customShieldNode,
@@ -111,19 +112,17 @@ const afterBurst_charged_dmg_ = equal(
 )
 
 const [condP1SealsPath, condP1Seals] = cond(key, 'p1Seals')
+const sealsArr = range(1, 4)
 const p1_pyro_dmg_ = greaterEq(
   input.asc,
   1,
-  // TODO: Should be changing number of seals shown based on C6
-  lookup(
-    condP1Seals,
-    Object.fromEntries(
-      range(1, 4).map((seals) => [
-        seals,
-        prod(seals, dm.passive1.seal_pyro_dmg_),
-      ])
+  prod(
+    lookup(
+      condP1Seals,
+      objKeyMap(sealsArr, (seal) => constant(seal)),
+      naught
     ),
-    naught
+    dm.passive1.seal_pyro_dmg_
   )
 )
 
@@ -265,25 +264,27 @@ const sheet: ICharacterSheet = {
         value: condP1Seals,
         path: condP1SealsPath,
         name: ct.ch('passive1.sealsConsumed'),
-        // TODO: Should be changing number of seals shown based on C6
-        states: Object.fromEntries(
-          range(1, 4).map((seals) => [
-            seals,
-            {
-              name: ct.ch(`seals.${seals}`),
-              fields: [
+        states: (data) =>
+          Object.fromEntries(
+            range(1, data.get(input.constellation).value >= 6 ? 4 : 3).map(
+              (seals) => [
+                seals,
                 {
-                  node: p1_pyro_dmg_,
+                  name: ct.ch(`seals.${seals}`),
+                  fields: [
+                    {
+                      node: p1_pyro_dmg_,
+                    },
+                    {
+                      text: stg('duration'),
+                      value: dm.passive1.duration,
+                      unit: 's',
+                    },
+                  ],
                 },
-                {
-                  text: stg('duration'),
-                  value: dm.passive1.duration,
-                  unit: 's',
-                },
-              ],
-            },
-          ])
-        ),
+              ]
+            )
+          ),
       }),
       ct.headerTem('passive2', {
         fields: [

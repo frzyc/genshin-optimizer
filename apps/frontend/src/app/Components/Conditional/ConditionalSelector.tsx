@@ -9,7 +9,7 @@ import type {
   IDocumentConditionalExclusive,
   IDocumentConditionalMultiple,
 } from '../../Types/sheet'
-import { deletePropPath, layeredAssignment } from '@genshin-optimizer/util'
+import { deletePropPath, evalIfFunc, layeredAssignment } from '@genshin-optimizer/util'
 import DropdownButton from '../DropdownMenu/DropdownButton'
 import SqBadge from '../SqBadge'
 import { Translate } from '../Translate'
@@ -22,7 +22,8 @@ export default function ConditionalSelector({
   conditional,
   disabled = false,
 }: ConditionalSelectorProps) {
-  if (Object.keys(conditional.states).length === 1 && 'path' in conditional) {
+  const { data } = useContext(DataContext)
+  if (Object.keys(evalIfFunc(conditional.states, data)).length === 1 && 'path' in conditional) {
     return (
       <SimpleConditionalSelector
         conditional={conditional}
@@ -69,7 +70,7 @@ function SimpleConditionalSelector({
   )
 
   const conditionalValue = data.get(conditional.value).value
-  const [stateKey, st] = Object.entries(conditional.states)[0]
+  const [stateKey, st] = Object.entries(evalIfFunc(conditional.states, data))[0]
   const badge = getStateBadge(st.name)
   const condName = getCondName(conditional.name)
 
@@ -111,8 +112,9 @@ function ExclusiveConditionalSelector({
   )
 
   const conditionalValue = data.get(conditional.value).value
+  const condStates = evalIfFunc(conditional.states, data)
   const state = conditionalValue
-    ? conditional.states[conditionalValue]
+    ? condStates[conditionalValue]
     : undefined
   const badge = state ? (
     getStateBadge(state.name)
@@ -120,6 +122,14 @@ function ExclusiveConditionalSelector({
     <SqBadge color="secondary">Not Active</SqBadge>
   )
   const condName = getCondName(conditional.name)
+
+  // Conditional value is present, but there is no corresponding state.
+  // Can be caused by old db, or by changing constellation
+  // or changing a condition that disables another state
+  if (!state && conditionalValue) {
+    // Clear out the value
+    setConditional(undefined);
+  }
 
   return (
     <DropdownButton
@@ -142,7 +152,7 @@ function ExclusiveConditionalSelector({
         <span>Not Active</span>
       </MenuItem>
       <Divider />
-      {Object.entries(conditional.states).map(([stateKey, st]) => (
+      {Object.entries(condStates).map(([stateKey, st]) => (
         <MenuItem
           key={stateKey}
           onClick={() => setConditional(stateKey)}
@@ -185,7 +195,7 @@ function MultipleConditionalSelector({
       disableElevation
       color="secondary"
     >
-      {Object.entries(conditional.states).map(([stateKey, st]) => {
+      {Object.entries(evalIfFunc(conditional.states, data)).map(([stateKey, st]) => {
         const conditionalValue = data.get(st.value).value
         const isSelected = conditionalValue === stateKey
         return (

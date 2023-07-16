@@ -14,12 +14,12 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { range } from '../../../Util/Util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
 import { customDmgNode, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
+import { range } from '@genshin-optimizer/util'
 
 const key: CharacterKey = 'KamisatoAyato'
 const elementKey: ElementKey = 'hydro'
@@ -338,8 +338,8 @@ const sheet: ICharacterSheet = {
         value: condSkillStacks,
         path: condSkillStacksPath,
         name: ct.ch('skill.namisenStacks'),
-        states: Object.fromEntries(
-          range(1, 5).map((stacks) => [
+        states: (data) => Object.fromEntries(
+          range(1, data.get(input.constellation).value >= 2 ? 5 : 4).map((stacks) => [
             stacks,
             {
               name: st('stack', { count: stacks }),
