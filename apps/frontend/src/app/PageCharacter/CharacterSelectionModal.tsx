@@ -283,6 +283,7 @@ function SelectionCard({
   const [open, onOpen, onClose] = useBoolState()
 
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
+  const banner = characterAsset(characterKey, 'banner', gender)
   return (
     <CustomTooltip
       enterDelay={300}
@@ -317,7 +318,7 @@ function SelectionCard({
             <Box
               display="flex"
               position="relative"
-              className={`grad-${characterSheet?.rarity}star`}
+              className={!banner ? `grad-${characterSheet?.rarity}star` : undefined}
               sx={{
                 '&::before': {
                   content: '""',
@@ -327,12 +328,8 @@ function SelectionCard({
                   top: 0,
                   width: '100%',
                   height: '100%',
-                  opacity: 0.5,
-                  backgroundImage: `url(${characterAsset(
-                    characterKey,
-                    'banner',
-                    gender
-                  )})`,
+                  opacity: 0.7,
+                  backgroundImage: `url(${banner})`,
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                 },
