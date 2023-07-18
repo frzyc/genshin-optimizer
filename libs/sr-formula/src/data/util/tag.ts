@@ -1,8 +1,8 @@
 import type { NumNode } from '@genshin-optimizer/pando'
 import { cmpEq, cmpNE, constant } from '@genshin-optimizer/pando'
 import type { Source, Stat } from './listing'
-import type { Read, Tag } from './read'
-import { reader, tag } from './read'
+import type { Tag } from './read'
+import { Read, reader, tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -58,45 +58,34 @@ export function priorityTable(
  * include contributions from character and custom values.
  */
 
-type Desc = { src: Source | undefined; accu: Read['accu'] }
-const aggStr: Desc = { src: 'agg', accu: 'unique' }
+type Desc = { src: Source | undefined; accu: Read['ex'] }
+const aggStr: Desc = { src: 'agg', accu: undefined }
 const agg: Desc = { src: 'agg', accu: 'sum' }
-const iso: Desc = { src: 'iso', accu: 'unique' }
+const iso: Desc = { src: 'iso', accu: undefined }
 const isoSum: Desc = { src: 'iso', accu: 'sum' }
 /** `src:`-agnostic calculation */
-const fixed: Desc = { src: 'static', accu: 'unique' }
+const fixed: Desc = { src: 'static', accu: undefined }
 /** The calculation must have a matching `src:` */
-const prep: Desc = { src: undefined, accu: 'unique' }
+const prep: Desc = { src: undefined, accu: undefined }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
-  hp_: agg,
   atk: agg,
-  atk_: agg,
   def: agg,
-  def_: agg,
-  eleMas: agg,
-  enerRech_: agg,
-  critRate_: agg,
-  critDMG_: agg,
-  dmg_: agg,
-  heal_: agg,
+  spd: agg,
+  crit_: agg,
+  crit_dmg_: agg,
+  taunt: agg,
 } as const
 export const selfTag = {
-  base: { ...stats, shield_: agg },
-  premod: stats,
-  final: stats,
+  stat: stats,
   char: {
     lvl: iso,
     ele: iso,
     ascension: iso,
-    constellation: iso,
-    auto: agg,
-    skill: agg,
-    burst: agg,
-    stamina: agg,
+    eidolon: iso,
   },
-  weapon: { lvl: iso, refinement: iso, ascension: iso },
+  lightcone: { lvl: iso, ascension: iso, superimposition: iso },
   common: {
     isActive: iso,
     weaponType: iso,
@@ -106,44 +95,20 @@ export const selfTag = {
     count: isoSum,
     eleCount: fixed,
   },
-  reaction: {
-    infusion: iso,
-    infusionIndex: agg,
-    ampBase: iso,
-    ampMulti: { ...agg, accu: 'prod' },
-    transBase: iso,
-    transMulti: iso,
-    cataBase: iso,
-    cataAddi: agg,
-    bonus: agg,
-  },
-  trans: {
-    multi: fixed,
-    out: fixed,
-    cappedCritRate_: fixed,
-    critRate_: agg,
-    critDMG_: agg,
-    critMulti: fixed,
-  },
   dmg: { out: fixed, critMulti: fixed },
-  prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
+  prep: { ele: prep, move: prep },
   formula: {
     base: agg,
     listing: aggStr,
     dmg: prep,
     shield: prep,
     heal: prep,
-    trans: prep,
-    transCrit: prep,
-    swirl: prep,
   },
 } as const
 export const enemyTag = {
   common: {
     lvl: fixed,
     inDmg: fixed,
-    defRed_: agg,
-    defIgn: agg,
     preRes: agg,
     postRes: fixed,
   },
@@ -154,13 +119,17 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
 ): { [j in keyof V]: { [k in keyof V[j]]: Read } } {
-  return reader.withTag(tag).withAll('qt', (r, qt) =>
-    r.withAll('q', (r, q) => {
-      const { src, accu } = v[qt][q]
-      // `tag.src` overrides `Desc`
-      if (src && !tag.src) r = r.src(src)
-      return r[accu]
-    })
+  return Object.fromEntries(
+    Object.entries(v).map(([qt, v]) => [
+      qt,
+      Object.fromEntries(
+        Object.entries(v).map(([q, { src, accu }]) =>
+          src
+            ? [q, new Read({ src, qt, q, ...tag }, accu)]
+            : [q, new Read({ qt, q, ...tag }, accu)]
+        )
+      ),
+    ])
   ) as any
 }
 
@@ -173,7 +142,6 @@ export const enemy = convert(enemyTag, { et: 'enemy' })
 // Default tag DB keys
 export const selfBuff = convert(selfTag, { et: 'self' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
-export const activeCharBuff = convert(selfTag, { et: 'active' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', src: 'custom' })
 
@@ -183,9 +151,8 @@ export const allConditionals = (src: Source, accu: Read['accu'] = 'sum') =>
   allCustoms(src, 'cond', (r) => r[accu])
 export const allStacks = (src: Source) =>
   allCustoms(src, 'stackOut', (out) => ({
-    add: (cond: NumNode | number) => out.with('qt', 'stackIn').add(cond),
-    apply: (val: NumNode | number, otherwise: NumNode | number = 0) =>
-      cmpEq(out, 1, val, otherwise),
+    in: out.with('qt', 'stackIn'),
+    out,
   }))
 export const allBoolConditionals = (src: Source) =>
   allCustoms(src, 'cond', ({ sum: r }) => ({
@@ -211,6 +178,7 @@ export const queryTypes = new Set([
   'stackInt',
   'stackOut',
 ])
-// Register `q:`
+
+// Register q:
 for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
-  for (const q of Object.keys(values)) reader.with('q', q)
+  for (const q of Object.keys(values)) reader.register('q', q)

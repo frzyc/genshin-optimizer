@@ -1,40 +1,24 @@
 import {
-  allArtifactSetKeys,
   allCharacterKeys,
-  allWeaponKeys,
-} from '@genshin-optimizer/consts'
+  allLightConeKeys,
+  allRelicSetKeys,
+} from '@genshin-optimizer/sr-consts'
 
 const stats = [
   'hp',
-  'hp_',
   'atk',
-  'atk_',
   'def',
-  'def_',
-  'eleMas',
-  'enerRech_',
-  'critRate_',
-  'critDMG_',
-  'dmg_',
-  'heal_',
+  'spd',
+  'crit_',
+  'crit_dmg_',
+  'taunt',
 ] as const
 
-export const presets = [
-  'preset0',
-  'preset1',
-  'preset2',
-  'preset3',
-  'preset4',
-  'preset5',
-  'preset6',
-  'preset7',
-  'preset8',
-  'preset9',
-] as const
+export const moves = ['basic', 'skill', 'ult', 'followup', 'dot'] as const
+
 export const entryTypes = [
   'self',
   'teamBuff',
-  'active',
   'enemy',
   'team',
   'target',
@@ -44,9 +28,11 @@ export const srcs = [
   'iso',
   'static',
   ...allCharacterKeys,
-  ...allWeaponKeys,
-  ...allArtifactSetKeys,
-  'art',
+  ...allLightConeKeys,
+  ...allRelicSetKeys,
+  'char',
+  'lightcone',
+  'relic',
   'dyn',
   'enemy',
   'custom',
@@ -54,7 +40,7 @@ export const srcs = [
 export const members = ['member0', 'member1', 'member2', 'member3'] as const
 
 export type Stat = (typeof stats)[number]
-export type Preset = (typeof presets)[number]
+export type Move = (typeof moves)[number]
 export type EntryType = (typeof entryTypes)[number]
 export type Source = (typeof srcs)[number]
 export type Member = (typeof members)[number]
