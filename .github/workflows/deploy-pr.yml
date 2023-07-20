@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     # Skip for drafts or for forked PRs, as they lack secret access and cannot deploy
-    if: github.event.pull_request.draft != true || !github.event.pull_request.head.repo.fork
+    if: github.event.pull_request.draft != true || github.event.pull_request.head.repo.fork
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
