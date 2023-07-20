@@ -1,5 +1,4 @@
 import { erf, gaussPDF } from './mathUtil'
-// import { Module } from "wasmpack/assembly.js";
 
 /**
  * mvncdf stands for Multivariate Normal Cumulative Distributive Function. File
@@ -22,6 +21,7 @@ export function gaussianPE(
   const phi = gaussPDF(z)
 
   const y2 = 1 / (z * z)
+
   // When z is small, p and phi are both nonzero so (phi/p - z) is ok.
   // When p and phi are both small, we can take use the Taylor expansion
   //  of (phi/p - z) at z=inf (or if y=1/z, at y=0). Using 7th order expansion to ensure
@@ -54,24 +54,3 @@ export function mvnPE_bad(mu: number[], cov: number[][], x: number[]) {
   const { upAvg } = gaussianPE(mu[0], cov[0][0], x[0])
   return { p: ptot, upAvg: upAvg, cp: cptot }
 }
-
-/**
- * From a multivariate Gaussian mean & covariance, get P(x > mu) and E[x0 | x > mu]
- * This is implemented in Fortran, but it does take into account the off-diagonals.
- *
- * TODO: re-implement the WebAssembly bridge.
- */
-// export function mvnPE_good(mu: number[], cov: number[][], x: number[]) {
-//   let mvn: any = new Module.MVNHandle(mu.length);
-//   try {
-//     x.forEach(xi => mvn.pushX(xi));
-//     mu.forEach(mui => mvn.pushMu(mui));
-//     cov.forEach(arr => arr.forEach(c => mvn.pushCov(c)));
-
-//     mvn.compute()
-//     return { p: mvn.p, upAvg: mvn.Eup, cp: mvn.cp }
-//   }
-//   finally {
-//     mvn.delete();
-//   }
-// }
