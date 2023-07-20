@@ -33,6 +33,7 @@ jobs:
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date.outputs.date }}] - Building new version
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
@@ -72,6 +73,7 @@ jobs:
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'

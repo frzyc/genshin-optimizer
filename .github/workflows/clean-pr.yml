@@ -3,6 +3,8 @@ name: Clean PR Deployment
 on:
   pull_request:
     types: [closed]
+permissions:
+  pull-requests: write
 
 jobs:
   deploy:
@@ -30,6 +32,7 @@ jobs:
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
