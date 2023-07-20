@@ -3,11 +3,10 @@ name: Clean PR Deployment
 on:
   pull_request:
     types: [closed]
-permissions:
-  pull-requests: write
 
 jobs:
   deploy:
+    if: !github.event.pull_request.head.repo.fork
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -31,7 +30,6 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        continue-on-error: true
         with:
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment

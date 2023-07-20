@@ -4,10 +4,12 @@ on:
   pull_request:
     branches:
       - master
+    types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
   deploy:
-    if: github.event.pull_request.draft != true
+    # Skip for drafts or for forked PRs, as they lack secret access and cannot deploy
+    if: github.event.pull_request.draft != true || !github.event.pull_request.head.repo.fork
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -30,7 +32,6 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        continue-on-error: true
         with:
           body: |
             [${{ steps.output-date.outputs.date }}] - Building new version
@@ -70,7 +71,6 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        continue-on-error: true
         with:
           body: |
             [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
