@@ -9,18 +9,18 @@ import {
 import type {
   AnyNode,
   NumNode,
-  Read as BaseRead,
-  ReRead,
   StrNode,
   TagOverride,
   TagValRead,
 } from '@genshin-optimizer/pando'
 import {
-  constant,
-  reread,
+  TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
+  constant,
+  reread,
 } from '@genshin-optimizer/pando'
+import type { Source, TagMapNodeEntry } from '.'
 import { entryTypes, members, presets, srcs } from './listing'
 
 export const fixedTags = {
@@ -41,179 +41,204 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-type AllTag = {
-  [key in keyof Tag]-?: Exclude<Tag[key], null>
-}
-
-export class Read implements BaseRead {
-  op = 'read' as const
-  x = []
-  br = []
-  tag: Tag
-  accu: BaseRead['accu']
-
-  constructor(tag: Tag, accu: Read['accu']) {
-    this.tag = tag
-    this.accu = accu
+export class Read extends TypedRead<Tag, Read> {
+  override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
+    if (val == null) return // null | undefined
+    if (cat === 'name') usedNames.add(val)
+    else if (cat === 'q') usedQ.add(val)
+  }
+  override ctor(tag: Tag, ex: Read['ex']): Read {
+    return new Read(tag, ex)
   }
 
   name(name: string): Read {
-    return usedNames.add(name), this.with('name', name)
+    return super.with('name', name)
   }
-  with<C extends keyof Tag>(cat: C, val: AllTag[C], accu?: Read['accu']): Read {
-    return new Read({ ...this.tag, [cat]: val }, accu ?? this.accu)
-  }
-  withTag(tag: Omit<Tag, 'name' | 'q'>, accu?: Read['accu']): Read {
-    return new Read({ ...this.tag, ...tag }, accu ?? this.accu)
-  }
-  _withAll<C extends keyof Tag>(
-    cat: C,
-    accu?: Read['accu']
-  ): Record<AllTag[C], Read> {
-    return new Proxy(this, {
-      get(t, p: AllTag[C]) {
-        return t.with(cat, p, accu)
-      },
-    }) as any
-  }
-  add(value: number | string | AnyNode): { tag: Tag; value: AnyNode } {
-    return {
-      tag: this.tag,
-      value: typeof value === 'object' ? value : constant(value),
-    }
-  }
-  reread(r: Read): { tag: Tag; value: ReRead } {
-    return { tag: this.tag, value: reread(r.tag) }
+  src(src: Source): Read {
+    return super.with('src', src)
   }
 
-  // Accumulator
-  get prod() {
-    return new Read(this.tag, 'prod')
+  add(value: number | string | AnyNode): TagMapNodeEntry {
+    return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
-  get sum() {
-    return new Read(this.tag, 'sum')
+  reread(r: Read): TagMapNodeEntry {
+    return super.toEntry(reread(r.tag))
   }
-  get max() {
-    return new Read(this.tag, 'max')
-  }
-  get min() {
-    return new Read(this.tag, 'min')
+
+  override toString(): string {
+    return tagStr(this.tag, this.ex)
   }
 
   // Optional Modifiers
 
   // Move
   get normal(): Read {
-    return this.with('move', 'normal')
+    return super.with('move', 'normal')
   }
   get charged(): Read {
-    return this.with('move', 'charged')
+    return super.with('move', 'charged')
   }
   get plunging(): Read {
-    return this.with('move', 'plunging')
+    return super.with('move', 'plunging')
   }
   get skill(): Read {
-    return this.with('move', 'skill')
+    return super.with('move', 'skill')
   }
   get burst(): Read {
-    return this.with('move', 'burst')
+    return super.with('move', 'burst')
   }
   get elemental(): Read {
-    return this.with('move', 'elemental')
+    return super.with('move', 'elemental')
   }
 
   // Element
   get anemo(): Read {
-    return this.with('ele', 'anemo')
+    return super.with('ele', 'anemo')
   }
   get pyro(): Read {
-    return this.with('ele', 'pyro')
+    return super.with('ele', 'pyro')
   }
   get hydro(): Read {
-    return this.with('ele', 'hydro')
+    return super.with('ele', 'hydro')
   }
   get geo(): Read {
-    return this.with('ele', 'geo')
+    return super.with('ele', 'geo')
   }
   get cryo(): Read {
-    return this.with('ele', 'cryo')
+    return super.with('ele', 'cryo')
   }
   get electro(): Read {
-    return this.with('ele', 'electro')
+    return super.with('ele', 'electro')
   }
   get dendro(): Read {
-    return this.with('ele', 'dendro')
+    return super.with('ele', 'dendro')
   }
   get physical(): Read {
-    return this.with('ele', 'physical')
+    return super.with('ele', 'physical')
   }
 
   // Reaction
   get overloaded(): Read {
-    return this.with('trans', 'overloaded')
+    return super.with('trans', 'overloaded')
   }
   get shattered(): Read {
-    return this.with('trans', 'shattered')
+    return super.with('trans', 'shattered')
   }
   get electrocharged(): Read {
-    return this.with('trans', 'electrocharged')
+    return super.with('trans', 'electrocharged')
   }
   get superconduct(): Read {
-    return this.with('trans', 'superconduct')
+    return super.with('trans', 'superconduct')
   }
   get swirl(): Read {
-    return this.with('trans', 'swirl')
+    return super.with('trans', 'swirl')
   }
   get burning(): Read {
-    return this.with('trans', 'burning')
+    return super.with('trans', 'burning')
   }
   get bloom(): Read {
-    return this.with('trans', 'bloom')
+    return super.with('trans', 'bloom')
   }
   get burgeon(): Read {
-    return this.with('trans', 'burgeon')
+    return super.with('trans', 'burgeon')
   }
   get hyperbloom(): Read {
-    return this.with('trans', 'hyperbloom')
+    return super.with('trans', 'hyperbloom')
   }
   get vaporize(): Read {
-    return this.with('amp', 'vaporize')
+    return super.with('amp', 'vaporize')
   }
   get melt(): Read {
-    return this.with('amp', 'melt')
+    return super.with('amp', 'melt')
   }
   get spread(): Read {
-    return this.with('cata', 'spread')
+    return super.with('cata', 'spread')
   }
   get aggravate(): Read {
-    return this.with('cata', 'aggravate')
+    return super.with('cata', 'aggravate')
   }
 
   // Region
   get mondstadt(): Read {
-    return this.with('region', 'mondstadt')
+    return super.with('region', 'mondstadt')
   }
   get liyue(): Read {
-    return this.with('region', 'liyue')
+    return super.with('region', 'liyue')
   }
   get inazuma(): Read {
-    return this.with('region', 'inazuma')
+    return super.with('region', 'inazuma')
   }
   get sumeru(): Read {
-    return this.with('region', 'sumeru')
+    return super.with('region', 'sumeru')
   }
   get fontaine(): Read {
-    return this.with('region', 'fontaine')
+    return super.with('region', 'fontaine')
   }
   get natlan(): Read {
-    return this.with('region', 'natlan')
+    return super.with('region', 'natlan')
   }
   get snezhnaya(): Read {
-    return this.with('region', 'snezhnaya')
+    return super.with('region', 'snezhnaya')
   }
   get khaenriah(): Read {
-    return this.with('region', 'khaenriah')
+    return super.with('region', 'khaenriah')
   }
+}
+export function tagStr(tag: Tag, ex?: any): string {
+  const {
+    name,
+    preset,
+    member,
+    dst,
+    et,
+    src,
+    region,
+    ele,
+    q,
+    qt,
+    move,
+    trans,
+    amp,
+    cata,
+    ...remaining
+  } = tag
+
+  if (Object.keys(remaining).length) console.error(remaining)
+
+  let result = '{ ',
+    includedRequired = false,
+    includedBar = false
+  function required(str: string | undefined | null) {
+    if (!str) return
+    result += str + ' '
+    includedRequired = true
+  }
+  function optional(str: string | undefined | null) {
+    if (!str) return
+    if (includedRequired && !includedBar) {
+      includedBar = true
+      result += '| '
+    }
+    result += str + ' '
+  }
+  required(name && `#${name}`)
+  required(preset)
+  required(member)
+  required(dst && `(${dst})`)
+  required(src)
+  required(et)
+  if (qt && q) required(`${qt}.${q}`)
+  else if (qt) required(`${qt}.`)
+  else if (q) required(`.${q}`)
+
+  optional(region)
+  optional(move)
+  optional(ele)
+  optional(trans)
+  optional(amp)
+  optional(cata)
+  required(ex && `[${ex}]`)
+  return result + '}'
 }
 export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
 export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
@@ -233,3 +258,4 @@ export function tagVal(cat: keyof Tag): TagValRead {
 
 export const reader = new Read({}, undefined)
 export const usedNames = new Set<string>()
+export const usedQ = new Set('_')

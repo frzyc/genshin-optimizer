@@ -1,3 +1,4 @@
+import type { GenLocaleExecutorSchema } from './schema'
 import type {
   ElementKey,
   LocationGenderedCharacterKey,
@@ -27,10 +28,10 @@ import {
 import type { Language } from '@genshin-optimizer/pipeline'
 import { dumpFile, nameToKey } from '@genshin-optimizer/pipeline'
 import { crawlObject, layeredAssignment } from '@genshin-optimizer/util'
-import { mapHashData, mapHashDataOverride } from './Data'
-import { parsingFunctions, preprocess } from './parseUtil'
+import { mapHashData, mapHashDataOverride } from './lib/Data'
+import { parsingFunctions, preprocess } from './lib/parseUtil'
 
-export default function loadTrans() {
+export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   //generate the MapHashes for localization for characters
   Object.entries(avatarExcelConfigData).forEach(([charid, charData]) => {
     const {
@@ -430,4 +431,5 @@ export default function loadTrans() {
       )
     })
   })
+  return { success: true }
 }

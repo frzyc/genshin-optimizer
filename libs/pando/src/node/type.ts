@@ -46,13 +46,6 @@ export interface Max<PermitOP extends OP = OP>
 /** x0 / ( x0 + x1 ) */
 export interface SumFrac<PermitOP extends OP = OP>
   extends Base<'sumfrac' & PermitOP, NumNode<PermitOP>> {}
-/** ex[x0] */
-export interface Subscript<
-  Type extends number | string,
-  PermitOP extends OP = OP
-> extends Base<'subscript' & PermitOP, never, NumNode<PermitOP>> {
-  ex: Type[]
-}
 
 // Branching
 
@@ -66,6 +59,13 @@ export interface Match<Output, PermitOP extends OP = OP>
 export interface Lookup<Output, PermitOP extends OP = OP>
   extends Base<'lookup' & PermitOP, Output, StrNode<PermitOP>> {
   ex: Record<string, number>
+}
+/** ex[br0] */
+export interface Subscript<
+  Type extends number | string,
+  PermitOP extends OP = OP
+> extends Base<'subscript' & PermitOP, never, NumNode<PermitOP>> {
+  ex: Type[]
 }
 
 // Tagging
@@ -87,9 +87,9 @@ export interface TagValRead<PermitOP extends OP = OP>
   ex: string
 }
 export interface Read extends Base<'read', never> {
-  ex?: never
+  /** Accumulator for multiple matches */
+  ex: (Sum | Prod | Min | Max)['op'] | undefined
   tag: Tag
-  accu: (Sum | Prod | Min | Max)['op'] | undefined
 }
 export interface ReRead {
   op: 'reread'
