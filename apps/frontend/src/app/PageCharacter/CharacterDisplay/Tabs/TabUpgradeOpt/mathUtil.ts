@@ -1,4 +1,4 @@
-// `quadronomial` coefficients (See https://oeis.org/A008287)
+// Quadronomial coefficients (See https://oeis.org/A008287)
 // step 1: a basic lookup-table with a few steps of Pascal's triangle
 const quadrinomials = [
   [1],
@@ -10,6 +10,10 @@ const quadrinomials = [
 ]
 
 // step 2: a function that builds out the lookup-table if it needs to.
+/**
+ * Quadronomial coefficients (See https://oeis.org/A008287).
+ * Returns the coefficient of x^k in (1 + x + x^2 + x^3)^n.
+ */
 export function quadrinomial(n: number, k: number) {
   while (n >= quadrinomials.length) {
     const s = quadrinomials.length
@@ -28,8 +32,10 @@ export function quadrinomial(n: number, k: number) {
   return quadrinomials[n][k] ?? 0
 }
 
-// https://hewgill.com/picomath/javascript/erf.js.html
-// very good algebraic approximation of erf function. Maximum deviation below 1.5e-7
+/**
+ * Very good algebraic approximation of erf function. Maximum deviation below 1.5e-7.
+ * Source: https://hewgill.com/picomath/javascript/erf.js.html
+ */
 export function erf(x: number) {
   // constants
   const a1 = 0.254829592,
@@ -52,7 +58,7 @@ export function erf(x: number) {
   return sign * y
 }
 
-// Gaussian probability distribution. mean & variance can be omitted for standard Gaussian.
+/** Gaussian probability distribution. mean & variance can be omitted for a standard Gaussian. */
 export function gaussPDF(x: number, mu?: number, sig2?: number) {
   if (mu === undefined) mu = 0
   if (sig2 === undefined) sig2 = 1
@@ -105,8 +111,8 @@ export function crawlUpgrades(
     for (let i2 = n - i1; i2 >= 0; i2--) {
       for (let i3 = n - i1 - i2; i3 >= 0; i3--) {
         const i4 = n - i1 - i2 - i3
-        const p_comb = multinomial4([i1, i2, i3, i4], n)
-        fn([i1, i2, i3, i4], p_comb)
+        const p_combination = multinomial4([i1, i2, i3, i4], n)
+        fn([i1, i2, i3, i4], p_combination)
       }
     }
   }
