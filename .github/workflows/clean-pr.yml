@@ -31,8 +31,8 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
+        continue-on-error: true
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'

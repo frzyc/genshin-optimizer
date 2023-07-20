@@ -4,8 +4,6 @@ on:
   pull_request:
     branches:
       - master
-permissions:
-  pull-requests: write
 
 jobs:
   deploy:
@@ -32,8 +30,8 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
+        continue-on-error: true
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date.outputs.date }}] - Building new version
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
@@ -72,8 +70,8 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
+        continue-on-error: true
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
