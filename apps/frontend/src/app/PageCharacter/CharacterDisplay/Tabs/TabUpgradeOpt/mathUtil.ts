@@ -69,31 +69,22 @@ export function gaussPDF(x: number, mu?: number, sig2?: number) {
   )
 }
 
-// `sigr` and `sig_arr` constitute a near perfect hash (https://en.wikipedia.org/wiki/Perfect_hash_function) of all combinations for N=1 to N=5.
-// prettier-ignore
-const sig_arr = [270 / 1024, 80 / 1024, 0, 12 / 256, 8 / 256, 120 / 1024, 0, 60 / 1024, 4 / 256, 60 / 1024, 4 / 256, 30 / 1024, 24 / 256, 160 / 1024, 1 / 64, 1 / 64, 24 / 256, 1 / 64, 12 / 256, 0, 6 / 256, 2 / 16, 6 / 256, 0, 81 / 256, 16 / 256, 0, 27 / 64, 12 / 64, 0, 1 / 16, 1 / 16, 12 / 64, 1 / 16, 6 / 64, 3 / 4, 2 / 4, 243 / 1024, 32 / 1024, 0, 108 / 256, 32 / 256, 0, 9 / 64, 6 / 64, 48 / 256, 0, 24 / 256, 3 / 64, 5 / 1024, 3 / 64, 5 / 1024, 0, 405 / 1024, 80 / 1024, 0, 54 / 256, 90 / 1024, 40 / 1024, 0, 1 / 256, 1 / 256, 40 / 1024, 1 / 256, 20 / 1024, 9 / 16, 4 / 16, 0, 1 / 4, 1 / 4, 0, 1 / 4, 27 / 64, 8 / 64, 0, 6 / 16, 4 / 16, 10 / 1024, 0, 10 / 1024, 2 / 16, 0, 0, 0, 15 / 1024, 10 / 1024, 1 / 1024, 1 / 1024, 0, 1 / 1024]
-const sigr = [35, 64, 70, 21, 33, 45, 12, 0, 53, 76, 48, 86]
+const facts = [1, 1, 2, 6, 24, 120, 720]
+/** Computes factorial `n!` for integer n. */
+export function factorial(n: number) {
+  while (n >= facts.length) facts.push(facts.length * facts[facts.length - 1])
+  return facts[n]
+}
+
 /**
- * Manually cached multinomial distribution with uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
+ * Multinomial distribution with 4 uniform bins. Returns probability of (n1, n2, n3, n4) given N total rolls.
  * Algebraically = N! / (n1! n2! n3! n4!) * (1/4)^N
  *
- * WARNING: This function has undefined behavior for N > 5 and N = 0
+ * @param ni rolls numbers for each bin. Expects exactly 4 `ni` and for their sum to equal `N`.
  */
-function multinomial4(ss: number[], N: number) {
-  const ssum = ss.reduce((a, b) => a + b)
-  if (ss.length > 4 || ssum > N) return 0
-  if (ss.length === 4 && ssum !== N) return 0
-  if (ss.length === 3) ss = [...ss, N - ssum]
-  ss.sort().reverse()
-
-  // t = 12
-  // offset = -14
-  let v = 13 * N + ss.length - 14 + 16 * ss[0]
-  if (ss.length > 1) v += 4 * ss[1]
-  const x = v % 12
-  const y = Math.trunc(v / 12) // integer divide
-
-  return sig_arr[x + sigr[y]]
+function multinomial4(ni: number[], N: number) {
+  if (ni.reduce((a, b) => a + b) !== N) return 0
+  return factorial(N) * ni.reduce((prv, v) => prv / factorial(v), 1) * 4 ** -N
 }
 
 /** Crawl the upgrade distribution for `n` upgrades, with a callback function that accepts fn([n1, n2, n3, n4], prob) */
