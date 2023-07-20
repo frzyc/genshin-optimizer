@@ -1,30 +1,27 @@
+import { prod, subscript, sum } from '@genshin-optimizer/pando'
 import type { LightConeKey } from '@genshin-optimizer/sr-consts'
 import { allLightConeKeys } from '@genshin-optimizer/sr-consts'
 import { allStats } from '@genshin-optimizer/sr-stats'
-import { constant, prod, read, subscript, sum } from '@genshin-optimizer/pando'
-import type { TaggedFormulas } from '../util'
+import { register, self, selfBuff, type TagMapNodeEntries } from '../util'
 
-type Promotion = (typeof allStats.lightcone)[LightConeKey]['ascension'][number]
 // Attach the base stats from the generated datamine
-export function handleLightConeGen(lck: LightConeKey): TaggedFormulas {
-  const lcDataGen = allStats.lightcone[lck]
-  const readAsc = read({ src: lck, q: 'ascension' }, undefined)
-  // The "add" only applies to currLvl - 1, since "base" is stat at lvl1
-  const readLvl = sum(constant(-1), read({ src: lck, q: 'lvl' }, undefined))
-  return [
+export function lightConeBaseStats(src: LightConeKey): TagMapNodeEntries {
+  const dataGen = allStats.lightcone[src]
+  const { ascension } = self.lightcone
+  // The "add" only applies to lvl - 1, since "base" is stat at lvl1
+  const lvl1 = sum(self.lightcone.lvl, -1)
+  return register(src, [
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
-      const basePerAsc = lcDataGen.ascension.map((p: Promotion) => p[sk].base)
-      const addPerAsc = lcDataGen.ascension.map((p: Promotion) => p[sk].add)
-      return {
-        tag: { src: lck, qt: 'base', q: sk },
-        value: sum(
-          subscript(readAsc, basePerAsc),
-          prod(readLvl, subscript(readAsc, addPerAsc))
-        ),
-      }
+      const basePerAsc = dataGen.ascension.map((p) => p[sk].base)
+      const addPerAsc = dataGen.ascension.map((p) => p[sk].add)
+      return selfBuff.stat[sk].add(
+        sum(
+          subscript(ascension, basePerAsc),
+          prod(lvl1, subscript(ascension, addPerAsc))
+        )
+      )
     }),
-  ]
+  ])
 }
-const data: TaggedFormulas = allLightConeKeys.flatMap(handleLightConeGen)
-
-export { data }
+const data: TagMapNodeEntries = allLightConeKeys.flatMap(lightConeBaseStats)
+export default data

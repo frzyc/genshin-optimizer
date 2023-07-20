@@ -1,9 +1,14 @@
-import { TagMapSubset } from './'
-import {
-  compileTagMapEntries,
-  compileTagMapKeys,
-  compileTagMapValues,
+import { TagMapKeys, TagMapSubset } from './'
+import type {
+  RawTagMapKeys,
+  RawTagMapValues,
+  TagMapEntries,
 } from './compilation'
+import { compileTagMapKeys, compileTagMapValues } from './compilation'
+
+function tagList(category: string, n: number) {
+  return { category, values: new Set([...Array(n)].map((_, i) => `val${i}`)) }
+}
 
 describe('TagMapValues', () => {
   it('can process simple queries', () => {
@@ -33,9 +38,9 @@ describe('TagMapValues', () => {
   })
   it('can support multiple-word lookup', () => {
     const keys = compileTagMapKeys([
-      { category: `cat1`, values: [...Array(8)].map((_, i) => `val${i}`) },
+      tagList('cat1', 8),
       undefined,
-      { category: `cat2`, values: [...Array(16)].map((_, i) => `val${i}`) },
+      tagList('cat2', 16),
     ])
     const values = compileTagMapValues(keys, [
         { value: 1, tag: { cat1: 'val0' } },
@@ -81,3 +86,25 @@ describe('TagMapValues', () => {
     })
   })
 })
+
+function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
+  keys: RawTagMapKeys
+  values: RawTagMapValues<V>
+} {
+  const tags = new Map<string, Set<string>>()
+  for (const { tag } of entries) {
+    for (const [cat, val] of Object.entries(tag)) {
+      if (val === null) continue
+      if (!tags.has(cat)) tags.set(cat, new Set())
+      tags.get(cat)!.add(val)
+    }
+  }
+  const keys = compileTagMapKeys(
+    [...tags].map(([category, val]) => ({
+      category,
+      values: new Set([...val]),
+    }))
+  )
+  const values = compileTagMapValues(new TagMapKeys(keys), entries)
+  return { keys, values }
+}

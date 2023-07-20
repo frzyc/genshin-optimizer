@@ -1,13 +1,8 @@
+import { compileTagMapValues, reread } from '@genshin-optimizer/pando'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr-consts'
-import {
-  compileTagMapValues,
-  constant,
-  read,
-  reread,
-} from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import type { TaggedFormulas } from './data/util'
+import { self, selfBuff, type TagMapNodeEntries } from './data/util'
 
 describe('character test', () => {
   it.each([
@@ -17,32 +12,20 @@ describe('character test', () => {
     [80, 6, 511.56, 573.3, 1058.4, 101],
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
-    const data: TaggedFormulas = [
-      { tag: { src: charKey, q: 'lvl' }, value: constant(lvl) },
+    const data: TagMapNodeEntries = [
+      selfBuff.char.lvl.add(lvl),
+      selfBuff.char.ascension.add(ascension),
       {
-        tag: { src: charKey, q: 'ascension' },
-        value: constant(ascension),
-      },
-      {
-        tag: { st: 'char' },
-        value: reread({ st: null, src: charKey }),
+        tag: { src: 'char' },
+        value: reread({ src: charKey }),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { st: 'char', qt: 'base' }
 
-    expect(
-      calc.compute(read({ ...commonTags, q: 'atk' }, undefined)).val
-    ).toBeCloseTo(atk)
-    expect(
-      calc.compute(read({ ...commonTags, q: 'def' }, undefined)).val
-    ).toBeCloseTo(def)
-    expect(
-      calc.compute(read({ ...commonTags, q: 'hp' }, undefined)).val
-    ).toBeCloseTo(hp)
-    expect(
-      calc.compute(read({ ...commonTags, q: 'spd' }, undefined)).val
-    ).toBeCloseTo(spd)
+    expect(calc.compute(self.stat.atk.src('char')).val).toBeCloseTo(atk)
+    expect(calc.compute(self.stat.def.src('char')).val).toBeCloseTo(def)
+    expect(calc.compute(self.stat.hp.src('char')).val).toBeCloseTo(hp)
+    expect(calc.compute(self.stat.spd.src('char')).val).toBeCloseTo(spd)
   })
 })
 
@@ -53,29 +36,19 @@ describe('lightcone test', () => {
     [20, 1, 72.72, 60.6, 193.92],
   ])('Calculate lightcone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
-    const data: TaggedFormulas = [
-      { tag: { src: lcKey, q: 'lvl' }, value: constant(lvl) },
+    const data: TagMapNodeEntries = [
+      selfBuff.lightcone.lvl.add(lvl),
+      selfBuff.lightcone.ascension.add(ascension),
       {
-        tag: { src: lcKey, q: 'ascension' },
-        value: constant(ascension),
-      },
-      {
-        tag: { st: 'lightcone' },
-        value: reread({ st: null, src: lcKey }),
+        tag: { src: 'lightcone' },
+        value: reread({ src: lcKey }),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const commonTags = { st: 'lightcone', qt: 'base' }
 
-    expect(
-      calc.compute(read({ ...commonTags, q: 'atk' }, undefined)).val
-    ).toBeCloseTo(atk)
-    expect(
-      calc.compute(read({ ...commonTags, q: 'def' }, undefined)).val
-    ).toBeCloseTo(def)
-    expect(
-      calc.compute(read({ ...commonTags, q: 'hp' }, undefined)).val
-    ).toBeCloseTo(hp)
+    expect(calc.compute(self.stat.atk.src('lightcone')).val).toBeCloseTo(atk)
+    expect(calc.compute(self.stat.def.src('lightcone')).val).toBeCloseTo(def)
+    expect(calc.compute(self.stat.hp.src('lightcone')).val).toBeCloseTo(hp)
   })
 })
 
@@ -84,23 +57,21 @@ describe('char+lightcone test', () => {
     const charKey: CharacterKey = 'March7th'
     const lcKey: LightConeKey = 'Amber'
 
-    const data: TaggedFormulas = [
-      { tag: { src: charKey, q: 'lvl' }, value: constant(1) },
-      { tag: { src: charKey, q: 'ascension' }, value: constant(0) },
-      { tag: { src: lcKey, q: 'lvl' }, value: constant(1) },
-      { tag: { src: lcKey, q: 'ascension' }, value: constant(0) },
+    const data: TagMapNodeEntries = [
+      self.char.lvl.add(1),
+      self.char.ascension.add(0),
+      self.lightcone.lvl.add(1),
+      self.lightcone.ascension.add(0),
       {
-        tag: { st: 'char' },
-        value: reread({ st: null, src: charKey }),
+        tag: { src: 'char' },
+        value: reread({ src: charKey }),
       },
       {
-        tag: { st: 'lightcone' },
-        value: reread({ st: null, src: lcKey }),
+        tag: { src: 'lightcone' },
+        value: reread({ src: lcKey }),
       },
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    expect(
-      calc.compute(read({ st: 'total', qt: 'base', q: 'atk' }, 'sum')).val
-    ).toBeCloseTo(81.6)
+    expect(calc.compute(self.stat.atk).val).toBeCloseTo(81.6)
   })
 })
