@@ -167,7 +167,7 @@ function Content() {
     </Grid>
   )
 }
-function MatchTitle() {
+function MatchTitle(): null {
   const { t } = useTranslation('ui')
   const {
     params: { page = '' },

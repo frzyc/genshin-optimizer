@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "gen-stats": {
+      "implementation": "./src/executors/gen-stats/executor",
+      "schema": "./src/executors/gen-stats/schema.json",
+      "description": "gen-stats executor"
+    }
+  }
+}

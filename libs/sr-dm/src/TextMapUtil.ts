@@ -1,6 +1,6 @@
 import { readDMJSON } from './util'
 
-export const TextMapCN = JSON.parse(readDMJSON('TextMap/TextMapCN.json'))
+export const TextMapCHS = JSON.parse(readDMJSON('TextMap/TextMapCHS.json'))
 export const TextMapCHT = JSON.parse(readDMJSON('TextMap/TextMapCHT.json'))
 export const TextMapDE = JSON.parse(readDMJSON('TextMap/TextMapDE.json'))
 export const TextMapEN = JSON.parse(readDMJSON('TextMap/TextMapEN.json'))
@@ -17,7 +17,7 @@ export const TextMapTH = JSON.parse(readDMJSON('TextMap/TextMapTH.json'))
 export const TextMapVI = JSON.parse(readDMJSON('TextMap/TextMapVI.json'))
 
 export const languageMap = {
-  chs: TextMapCN,
+  chs: TextMapCHS,
   cht: TextMapCHT,
   de: TextMapDE,
   en: TextMapEN,

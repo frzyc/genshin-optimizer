@@ -4,28 +4,21 @@
   "sourceRoot": "libs/sr-dm/src",
   "projectType": "library",
   "targets": {
-    "loadDM": {
-      "command": "ts-node libs/sr-dm/scripts/loadDM.ts"
-    },
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+    "load-dm": {
       "options": {
-        "outputPath": "dist/libs/sr-dm",
-        "main": "libs/sr-dm/src/index.ts",
-        "tsConfig": "libs/sr-dm/tsconfig.lib.json",
-        "assets": ["libs/sr-dm/*.md"]
+        "repoUrl": "https://github.com/Dimbreath/StarRailData.git",
+        "outputPath": "libs/sr-dm/StarRailData"
       },
-      "dependsOn": ["loadDM", "^build"],
-      "inputs": ["production", "^production"]
+      "inputs": [
+        {
+          "runtime": "git ls-remote -q https://github.com/Dimbreath/StarRailData.git HEAD"
+        }
+      ]
     },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/sr-dm/**/*.ts"]
-      }
-    }
+    "genfile": {},
+    "build": {},
+    "build-ts": {},
+    "lint": {}
   },
   "tags": [],
   "namedInputs": {

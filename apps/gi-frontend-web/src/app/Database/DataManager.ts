@@ -132,6 +132,7 @@ export class DataManager<
   }
   get goKeySingle() {
     if (this.goKey.endsWith('s')) return this.goKey.slice(0, -1)
+    return undefined
   }
   generateKey(keys: Set<string> = new Set(this.keys)): string {
     let ind = keys.size

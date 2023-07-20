@@ -20,9 +20,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm ./${{ github.event.number }} || true
-          git commit -m "clean ${{ github.event.number }}" || true
-          git push origin gh-pages || true
+          git rm -r ./${{ github.event.number }}
+          git commit -m "clean ${{ github.event.number }}"
+          git push origin gh-pages
         working-directory: gh-pages
       - name: Output date
         id: output-date

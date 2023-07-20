@@ -1,14 +1,11 @@
-import { mkdirSync, writeFile, writeFileSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import { dirname } from 'path'
 
 export function dumpFile(filename: string, obj: unknown, print = false) {
   mkdirSync(dirname(filename), { recursive: true })
   const fileStr = JSON.stringify(obj, undefined, 2)
-  writeFile(
-    filename,
-    fileStr,
-    () => print && console.log('Generated JSON at', filename)
-  )
+  writeFileSync(filename, fileStr)
+  if (print) console.log('Generated JSON at', filename)
 }
 
 export function nameToKey(name: string) {
@@ -48,6 +45,7 @@ ${dataContent}
 } as const
 export default data
 `
+  mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, indexContent)
 
   Object.entries(obj).forEach(([key, val]) => {

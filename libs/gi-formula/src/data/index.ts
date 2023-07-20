@@ -5,19 +5,26 @@ import {
 import artifact from './artifact'
 import character from './char'
 import common from './common'
-import type { Data } from './util'
-import { fixedTags, queries, queryTypes, usedNames } from './util'
+import type { TagMapNodeEntries } from './util'
+import { fixedTags, queryTypes, usedNames, usedQ } from './util'
 import weapon from './weapon'
 
-const data: Data = [...common, ...artifact, ...character, ...weapon]
-const tags = [
-  { category: 'qt', values: [...queryTypes] },
-  { category: 'q', values: ['_', ...queries] },
-  undefined,
-  ...Object.entries(fixedTags).map(([k, v]) => ({ category: k, values: v })),
-  { category: 'name', values: [...usedNames] },
+const entries: TagMapNodeEntries = [
+  ...common,
+  ...artifact,
+  ...character,
+  ...weapon,
 ]
-const keys = compileTagMapKeys(tags) // TODO: Find optimum tag order
-const values = compileTagMapValues(keys, data)
+const keys = compileTagMapKeys([
+  { category: 'qt', values: queryTypes },
+  { category: 'q', values: usedQ },
+  undefined,
+  ...Object.entries(fixedTags).map(([k, v]) => ({
+    category: k,
+    values: new Set(v),
+  })),
+  { category: 'name', values: usedNames },
+]) // TODO: Find optimum tag order
+const values = compileTagMapValues(keys, entries)
 
-export { keys, values, data }
+export { entries, keys, values }

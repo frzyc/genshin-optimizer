@@ -10,7 +10,7 @@ export class MaxPrio<V> {
     if (node) this.addNode(node, node.children.length)
   }
   pop(): V | undefined {
-    if (!this.maxNode) return
+    if (!this.maxNode) return undefined
     const { value, children } = this.maxNode
     children.forEach((child, i) => this.addNode(child, i))
 
