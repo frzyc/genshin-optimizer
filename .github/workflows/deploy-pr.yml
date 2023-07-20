@@ -4,10 +4,12 @@ on:
   pull_request:
     branches:
       - master
+    types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
   deploy:
-    if: github.event.pull_request.draft != true
+    # Skip for drafts or for forked PRs, as they lack secret access and cannot deploy
+    if: (github.event.pull_request.draft != true) && (github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
