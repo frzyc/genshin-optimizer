@@ -274,8 +274,15 @@ export class UpOptCalculator {
     } while (i < end)
   }
 
-  /* Fast distribution to result. */
-  toResult1(
+  /**
+   * Convert Fast method numbers to Result type.
+   *
+   * Each target/constraint is treated as an independent 1D Gaussian, but we try
+   *   to over-estimate the true constraint probability by using the min() probability
+   *   of each constraint (rather than their product). If multiple Gaussians are
+   *   present in `distr[]`, they are aggregated following standard mixture distribution methods.
+   */
+  toResultFast(
     distr: { prob: number; mu: number[]; cov: number[] }[]
   ): UpOptResult {
     let ptot = 0
@@ -300,12 +307,20 @@ export class UpOptCalculator {
     }
   }
 
+  /**
+   * Evaluates artifact using Fast method.
+   * Selection details based on artifacts[ix]
+   */
   calcFast(ix: number, calc4th = true) {
     if (this.artifacts[ix].subs.length === 4) calc4th = false
     if (calc4th) this._calcFast4th(ix)
     else this._calcFast(ix)
   }
 
+  /**
+   * Fast evaluation of 4-line artifact.
+   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
+   */
   _calcFast(ix: number) {
     const { subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
@@ -326,7 +341,7 @@ export class UpOptCalculator {
       return { mu, sig2 }
     })
 
-    this.artifacts[ix].result = this.toResult1([
+    this.artifacts[ix].result = this.toResultFast([
       {
         prob: 1,
         mu: gaussians.map(({ mu }) => mu),
@@ -335,6 +350,10 @@ export class UpOptCalculator {
     ])
   }
 
+  /**
+   * Fast evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
+   * Passing a 4-line artifact will result in inaccurate results.
+   */
   _calcFast4th(ix: number) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - 1 // Minus 1 because 4th slot takes 1.
@@ -373,10 +392,16 @@ export class UpOptCalculator {
       }
     })
 
-    this.artifacts[ix].result = this.toResult1(distr)
+    this.artifacts[ix].result = this.toResultFast(distr)
   }
 
-  toResult2(
+  /**
+   * Convert Slow method numbers to Result type.
+   * Here, targets and constraints are treated as multi-dimensional Gaussians with
+   *   non-zero covariances. The probabilities are evaluated using `mvncdf` and aggregated
+   *   following standard mixture distribution methods.
+   */
+  toResultSlow(
     distr: { prob: number; mu: number[]; cov: number[][] }[]
   ): UpOptResult {
     let ptot = 0
@@ -401,6 +426,7 @@ export class UpOptCalculator {
     }
   }
 
+  /** Selects evaluation method based on details of artifacts[ix] */
   calcSlow(ix: number, calc4th = true) {
     if (
       this.artifacts[ix].result?.evalMode === ResultType.Slow ||
@@ -412,6 +438,10 @@ export class UpOptCalculator {
     else this._calcSlow(ix)
   }
 
+  /**
+   * Slow evaluation of 4-line artifact.
+   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
+   */
   _calcSlow(ix: number) {
     const { subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
@@ -436,9 +466,13 @@ export class UpOptCalculator {
       distrs.push({ prob, mu, cov })
     })
 
-    this.artifacts[ix].result = this.toResult2(distrs)
+    this.artifacts[ix].result = this.toResultSlow(distrs)
   }
 
+  /**
+   * Slow evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
+   * Passing a 4-line artifact will result in inaccurate results.
+   */
   _calcSlow4th(ix: number) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - 1 // only for 5*
@@ -478,9 +512,15 @@ export class UpOptCalculator {
       })
     })
 
-    this.artifacts[ix].result = this.toResult2(distrs)
+    this.artifacts[ix].result = this.toResultSlow(distrs)
   }
 
+  /**
+   * Convert Exact method numbers to Result type.
+   *
+   * Exact results have no variance, so we can directly check each upgrade branch
+   *   to compute the exact probability and upgrade value.
+   */
   toResult3(distr: { prob: number; val: number[] }[]): UpOptResult {
     let ptot = 0
     let upAvgtot = 0
@@ -503,6 +543,10 @@ export class UpOptCalculator {
     }
   }
 
+  /**
+   * Evaluates artifact using Exact method.
+   * Selection details based on artifacts[ix]
+   */
   calcExact(ix: number, calc4th = true) {
     if (this.artifacts[ix].result?.evalMode === ResultType.Exact) return
     if (this.artifacts[ix].subs.length === 4) calc4th = false
@@ -510,6 +554,10 @@ export class UpOptCalculator {
     else this._calcExact(ix)
   }
 
+  /**
+   * Exact evaluation of 4-line artifact.
+   * If a 3-line artifact is passed, the 4th substat possibilities are ignored.
+   */
   _calcExact(ix: number) {
     const { subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - (subs.length < 4 ? 1 : 0) // only for 5*
@@ -547,6 +595,10 @@ export class UpOptCalculator {
     this.artifacts[ix].result = this.toResult3(distrs)
   }
 
+  /**
+   * Exact evaluation of a 3-line artifact, considering all possiblilties for its 4th stats.
+   * Passing a 4-line artifact will result in inaccurate results.
+   */
   _calcExact4th(ix: number) {
     const { mainStat, subs, slotKey, rollsLeft } = this.artifacts[ix]
     const N = rollsLeft - 1 // only for 5*
