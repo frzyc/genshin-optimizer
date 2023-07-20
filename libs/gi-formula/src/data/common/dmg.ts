@@ -6,7 +6,7 @@ import {
   sum,
   sumfrac,
 } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import {
   enemy,
   enemyDebuff,
@@ -24,7 +24,7 @@ export const infusionPrio = {
 const infusionTable = priorityTable(infusionPrio),
   preRes = enemy.common.preRes
 
-const data: Data = [
+const data: TagMapNodeEntries = [
   enemyDebuff.common.postRes.add(custom('res', preRes)),
   enemyDebuff.common.inDmg.add(
     prod(

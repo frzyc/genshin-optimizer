@@ -3,9 +3,9 @@ import { Calculator } from './calc'
 import { constant } from './construction'
 
 const keys = compileTagMapKeys([
-  { category: 'cat1', values: [...Array(4)].map((_, i) => `val${i}`) },
-  { category: 'cat2', values: [...Array(4)].map((_, i) => `val${i}`) },
-  { category: 'cat3', values: [...Array(4)].map((_, i) => `val${i}`) },
+  { category: 'cat1', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
+  { category: 'cat2', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
+  { category: 'cat3', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
 ])
 
 describe('Calculator', () => {

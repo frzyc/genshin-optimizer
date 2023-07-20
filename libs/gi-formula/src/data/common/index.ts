@@ -1,23 +1,19 @@
 import { allElementKeys } from '@genshin-optimizer/consts'
 import { max, min, prod, subscript, sum } from '@genshin-optimizer/pando'
-import type { Data } from '../util'
+import type { TagMapNodeEntries } from '../util'
 import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
 import { allStats } from '@genshin-optimizer/gi-stats'
 
-const data: Data = [
+const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
   ...reaction,
 
-  reader
-    .withTag({ src: 'iso', et: 'self' })
-    .reread(reader.withTag({ src: 'custom' })),
-  reader
-    .withTag({ src: 'agg', et: 'self' })
-    .reread(reader.withTag({ src: 'custom' })),
+  reader.withTag({ src: 'iso', et: 'self' }).reread(reader.src('custom')),
+  reader.withTag({ src: 'agg', et: 'self' }).reread(reader.src('custom')),
 
   // Final <= Premod <= Base
   reader
