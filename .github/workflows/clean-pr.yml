@@ -3,12 +3,30 @@ name: Clean PR Deployment
 on:
   pull_request:
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      deployment_name:
+        description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
+        type: string
+        default: 'master'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    if: |
+      (github.event_name == 'workflow_dispatch')
+      || (github.event.pull_request.head.repo.full_name == github.repository)
     steps:
+      - name: Determine build information
+        id: build-info
+        run: |
+          if [[ "${{ github.event.name }}" == "workflow_dispatch" ]]
+          then
+            echo "deploy_path=${{ github.event.inputs.deployment_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "deploy_path=${{ github.event.number }}" >> $GITHUB_OUTPUT
+          fi
       - name: Checkout external gh-pages
         uses: actions/checkout@v3
         with:
@@ -20,8 +38,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm -r ./${{ github.event.number }}
-          git commit -m "clean ${{ github.event.number }}"
+          git rm -r ./${{ steps.build-info.outputs.deploy_path }}
+          git commit -m "clean ${{ steps.build-info.outputs.deploy_path }}"
           git push origin gh-pages
         working-directory: gh-pages
       - name: Output date
@@ -29,6 +47,7 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
+        if: github.event.name != 'workflow_dispatch'
         with:
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment
