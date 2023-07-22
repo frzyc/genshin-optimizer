@@ -124,10 +124,10 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const [condAfterRecastPath, condAfterRecast] = cond(key, 'afterRecast')
-const afterRecastInfusion = equalStr(
-  'afterRecast',
-  condAfterRecast,
-  greaterEqStr(input.asc, 1, elementKey)
+const afterRecastInfusion = greaterEqStr(
+  input.asc,
+  1,
+  equalStr('afterRecast', condAfterRecast, elementKey)
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')

@@ -108,10 +108,10 @@ const nodeA4Bonus = greaterEq(
   equal(condBurst, 'on', dm.passive2.pyroInc)
 )
 
-const nodeC1Bonus = equal(
-  condC1,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.dmgInc)
+const nodeC1Bonus = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'on', dm.constellation1.dmgInc)
 )
 const nodeC2AtkBonus = greaterEq(
   input.constellation,
@@ -143,15 +143,15 @@ const nodeC2SpdBonus = greaterEq(
     KeyMap.info('atkSPD_')
   )
 )
-const nodeC6DmgBonus = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, dm.constellation6.dmgInc)
+const nodeC6DmgBonus = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', dm.constellation6.dmgInc)
 )
-const nodeC6SpdBonus = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, dm.constellation6.atkSpdInc),
+const nodeC6SpdBonus = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', dm.constellation6.atkSpdInc),
   KeyMap.info('atkSPD_')
 )
 

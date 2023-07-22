@@ -144,22 +144,18 @@ const critRateTeam_2 = greaterEq(
 )
 
 const [condC6Path, condC6] = cond(key, 'ButterflysEmbrace')
-const critRate_ = equal(
-  'on',
-  condC6,
-  greaterEq(input.constellation, 6, percent(dm.constellation6.critRateInc))
+const critRate_ = greaterEq(
+  input.constellation,
+  6,
+  equal('on', condC6, percent(dm.constellation6.critRateInc))
 )
 const ele_res_s = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [
     ele,
-    equal(
-      'on',
-      condC6,
-      greaterEq(
-        input.constellation,
-        6,
-        percent(dm.constellation6.elePhysResInc)
-      )
+    greaterEq(
+      input.constellation,
+      6,
+      equal('on', condC6, percent(dm.constellation6.elePhysResInc))
     ),
   ])
 )
