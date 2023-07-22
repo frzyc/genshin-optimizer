@@ -10,9 +10,9 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'TheStringless'
 const data_gen = allStats.weapon.data[key]
 
-const refinementVals = [0.24, 0.3, 0.36, 0.42, 0.48]
-const skill_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
-const burst_dmg_ = subscript(input.weapon.refineIndex, refinementVals)
+const refinementVals = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
+const skill_dmg_ = subscript(input.weapon.refinement, refinementVals)
+const burst_dmg_ = subscript(input.weapon.refinement, refinementVals)
 
 export const data = dataObjForWeaponSheet(key, data_gen, {
   premod: {

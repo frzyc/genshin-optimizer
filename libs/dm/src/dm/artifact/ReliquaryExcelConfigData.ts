@@ -40,22 +40,22 @@ type ReliquaryExcelConfigData = {
   rank: number //10,
   gadgetId: number //70600041
 }
-const artifactPiecesDataSrc = JSON.parse(
+const reliquaryExcelConfigDataSrc = JSON.parse(
   readDMJSON('ExcelBinOutput/ReliquaryExcelConfigData.json')
 ) as ReliquaryExcelConfigData[]
 
-const artifactPiecesData = Object.fromEntries(
-  artifactPiecesDataSrc.map((data) => [data.id, data])
+const reliquaryExcelConfigData = Object.fromEntries(
+  reliquaryExcelConfigDataSrc.map((data) => [data.id, data])
 ) as Record<number, ReliquaryExcelConfigData>
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/artifact/ReliquaryExcelConfigData_idmap_gen.json`,
   Object.fromEntries(
-    artifactPiecesDataSrc.map((data) => [
+    reliquaryExcelConfigDataSrc.map((data) => [
       data.id,
       [data.setId, nameToKey(TextMapEN[data.nameTextMapHash])],
     ])
   )
 )
 
-export { artifactPiecesData }
+export { reliquaryExcelConfigData }

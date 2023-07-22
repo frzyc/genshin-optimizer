@@ -11,13 +11,13 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'TravelersHandySword'
 const data_gen = allStats.weapon.data[key]
 
-const hpRegenSrc = [0.01, 0.0125, 0.015, 0.0175, 0.02]
+const hpRegenSrc = [-1, 0.01, 0.0125, 0.015, 0.0175, 0.02]
 const heal = equal(
   input.weapon.key,
   key,
   customHealNode(
     prod(
-      subscript(input.weapon.refineIndex, hpRegenSrc, { unit: '%' }),
+      subscript(input.weapon.refinement, hpRegenSrc, { unit: '%' }),
       input.total.hp
     )
   )

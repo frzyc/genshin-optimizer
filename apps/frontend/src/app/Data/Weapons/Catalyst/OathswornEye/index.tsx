@@ -10,10 +10,10 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'OathswornEye'
 const data_gen = allStats.weapon.data[key]
 
-const refinementVals = [0.24, 0.3, 0.36, 0.42, 0.48]
+const refinementVals = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 
 const [condSkillBurstPath, condSkillBurst] = cond(key, 'faLight')
-const refineVal = subscript(input.weapon.refineIndex, refinementVals)
+const refineVal = subscript(input.weapon.refinement, refinementVals)
 const enerRech_ = equal('skillBurst', condSkillBurst, refineVal)
 
 const data = dataObjForWeaponSheet(key, data_gen, {

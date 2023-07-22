@@ -1,9 +1,8 @@
+import type { CharacterKey } from '@genshin-optimizer/consts'
 import { useCallback, useContext } from 'react'
 import { DatabaseContext } from '../Database/Database'
 import type { ICachedCharacter } from '../Types/character'
-import type { CharacterKey } from '../Types/consts'
 import type { IConditionalValues } from '../Types/sheet'
-import { deepClone } from '../Util/Util'
 
 type characterReducerBonusStatsAction = {
   type: 'editStats'
@@ -59,7 +58,7 @@ export default function useCharacterReducer(characterKey: CharacterKey | '') {
           }
           case 'editStats': {
             const { statKey, value } = action
-            const bonusStats = deepClone(character.bonusStats)
+            const bonusStats = structuredClone(character.bonusStats)
             if (bonusStats[statKey] === value) break
             if (!value) delete bonusStats[statKey]
             else bonusStats[statKey] = value
@@ -75,7 +74,7 @@ export default function useCharacterReducer(characterKey: CharacterKey | '') {
           }
           case 'teamConditional': {
             const { teamMateKey, conditional } = action
-            const teamConditional = deepClone(character.teamConditional)
+            const teamConditional = structuredClone(character.teamConditional)
             teamConditional[teamMateKey] = conditional
             database.chars.set(characterKey, { ...character, teamConditional })
             break

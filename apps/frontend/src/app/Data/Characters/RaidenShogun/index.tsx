@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { input } from '../../../Formula'
 import {
   constant,
@@ -14,7 +15,6 @@ import {
   sum,
   unequal,
 } from '../../../Formula/utils'
-import { objectKeyMap } from '../../../Util/Util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -24,7 +24,7 @@ import type { ICharacterSheet } from '../ICharacterSheet.d'
 const key: CharacterKey = 'RaidenShogun'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -105,14 +105,16 @@ const skillEye_ = equal(
     })
   )
 )
+const [condInBurstPath, condInBurst] = cond(key, 'InBurst')
+const defIgn_ = greaterEq(
+  input.constellation,
+  2,
+  equal(condInBurst, 'on', dm.constellation2.def_ignore)
+)
 
 function skillDmg(atkType: number[]) {
   // if Raiden is above or equal to C2, then account for DEF Ignore else not
-  return dmgNode('atk', atkType, 'skill', {
-    enemy: {
-      defIgn: greaterEq(input.constellation, 2, dm.constellation2.def_ignore),
-    },
-  })
+  return dmgNode('atk', atkType, 'skill')
 }
 
 const energyCosts = [40, 50, 60, 70, 80, 90]
@@ -123,7 +125,7 @@ const skillEyeTeamBurstDmgInc = unequal(
   prod(
     lookup(
       condSkillEyeTeam,
-      objectKeyMap(energyCosts, (i) => constant(i, { name: st('energy') })),
+      objKeyMap(energyCosts, (i) => constant(i, { name: st('energy') })),
       0
     ),
     subscript(input.total.skillIndex, dm.skill.burstDmg_bonus, {
@@ -138,7 +140,7 @@ const [condResolveStackPath, condResolveStack] = cond(key, 'burstResolve')
 
 const resolveStackNode = lookup(
   condResolveStack,
-  objectKeyMap(resolveStacks, (i) => constant(i)),
+  objKeyMap(resolveStacks, (i) => constant(i)),
   0,
   { name: ct.ch('burst.resolves') }
 )
@@ -171,15 +173,6 @@ function burstResolve(mvArr: number[], initial = false) {
     {
       hit: {
         ele: constant('electro'),
-      },
-      enemy: {
-        // if Raiden is above or equal to C2, then account for DEF Ignore else not
-        defIgn: greaterEq(
-          input.constellation,
-          2,
-          dm.constellation2.def_ignore,
-          { unit: '%' }
-        ),
       },
     }
   )
@@ -252,10 +245,14 @@ const dmgFormulas = {
         100
       )
     ),
-    energyRestore: infoMut(a4EnergyRestore_, {
-      name: ct.ch('a4.enerRest'),
-      unit: '%',
-    }),
+    energyRestore: greaterEq(
+      input.asc,
+      4,
+      infoMut(a4EnergyRestore_, {
+        name: ct.ch('a4.enerRest'),
+        unit: '%',
+      })
+    ),
   },
 }
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -280,15 +277,18 @@ export const data = dataObjForCharacterSheet(
         burst_dmg_: skillEyeTeamBurstDmgInc,
       },
     },
+    enemy: {
+      defIgn: defIgn_,
+    },
   }
 )
 
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: 'electro',
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -360,11 +360,13 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('skill.skillParams.2'),
-            value: `${dm.skill.duration}s`,
+            value: dm.skill.duration,
+            unit: 's',
           },
           {
             text: ct.chg('skill.skillParams.4'),
-            value: `${dm.skill.cd}s`,
+            value: dm.skill.cd,
+            unit: 's',
           },
         ],
       },
@@ -458,7 +460,7 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.9'),
-            value: `${dm.burst.stam}`,
+            value: dm.burst.stam,
           },
           {
             node: infoMut(dmgFormulas.burst.plunge, {
@@ -482,15 +484,17 @@ const sheet: ICharacterSheet = {
           },
           {
             text: ct.chg('burst.skillParams.13'),
-            value: `${dm.burst.duration}s`,
+            value: dm.burst.duration,
+            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.14'),
-            value: `${dm.burst.cd}s`,
+            value: dm.burst.cd,
+            unit: 's',
           },
           {
             text: ct.chg('burst.skillParams.15'),
-            value: `${dm.burst.enerCost}`,
+            value: dm.burst.enerCost,
           },
         ],
       },
@@ -520,6 +524,35 @@ const sheet: ICharacterSheet = {
             },
           ])
         ),
+      }),
+      ct.condTem('burst', {
+        value: condInBurst,
+        path: condInBurstPath,
+        name: ct.ch('burst.active'),
+        states: {
+          on: {
+            fields: [
+              {
+                text: st('infusion.electro'),
+                variant: 'electro',
+              },
+              {
+                text: st('incInterRes'),
+              },
+              {
+                text: st('immuneToElectroCharged'),
+              },
+            ],
+          },
+        },
+      }),
+      ct.headerTem('constellation2', {
+        canShow: equal(condInBurst, 'on', 1),
+        fields: [
+          {
+            node: defIgn_,
+          },
+        ],
       }),
     ]),
 
@@ -557,7 +590,8 @@ const sheet: ICharacterSheet = {
               },
               {
                 text: ct.chg('skill.skillParams.2'),
-                value: `${dm.constellation4.duration}s`,
+                value: dm.constellation4.duration,
+                unit: 's',
               },
             ],
           },

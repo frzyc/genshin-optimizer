@@ -1,0 +1,27 @@
+{
+  "name": "gi-frontend-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/gi-frontend-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/gi-frontend-e2e/cypress.config.ts",
+        "devServerTarget": "gi-frontend:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "gi-frontend:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "gi-frontend:serve-static"
+        }
+      }
+    },
+    "lint": {}
+  },
+  "tags": [],
+  "implicitDependencies": ["gi-frontend"]
+}

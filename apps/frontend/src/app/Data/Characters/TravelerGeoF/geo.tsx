@@ -25,7 +25,7 @@ export default function geo(
 ) {
   const elementKey: ElementKey = 'geo'
   const condCharKey = 'TravelerGeo'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerGeoF
   let s = 0,
@@ -188,7 +188,7 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: stg(`skillDMG`),
+              name: ct.chg('burst.skillParams.0'),
               multi: dm.burst.numShockwaves,
             }),
           },
@@ -237,7 +237,7 @@ export default function geo(
       ct.headerTem('constellation4', {
         fields: [
           {
-            text: ch('c4.energyRestore'),
+            text: st('enerRegenPerHit'),
             value: dm.constellation4.energyRestore,
           },
         ],

@@ -1,19 +1,20 @@
 import type { ArtifactSetKey, WeaponKey } from '@genshin-optimizer/consts'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/consts'
-import { crawlObject } from '@genshin-optimizer/util'
+import {
+  assertUnreachable,
+  crawlObject,
+  layeredAssignment,
+  objPathValue,
+  valueString,
+} from '@genshin-optimizer/util'
 import { useContext } from 'react'
 import { uiInput } from '.'
 import ColorText from '../Components/ColoredText'
 import { Translate } from '../Components/Translate'
 import { SillyContext } from '../Context/SillyContext'
-import KeyMap, { valueString } from '../KeyMap'
+import KeyMap from '../KeyMap'
 import type { CharacterSheetKey } from '../Types/consts'
 import { allCharacterSheetKeys } from '../Types/consts'
-import {
-  assertUnreachable,
-  layeredAssignment,
-  objPathValue,
-} from '../Util/Util'
 import { allOperations } from './optimization'
 import type {
   ComputeNode,
@@ -627,7 +628,7 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 function mergeInfo(base: Info, override: Info): Info {
   const result = { ...base }
   for (const [key, value] of Object.entries(override))
-    if (value) result[key] = value as any
+    if (value) (result[key] as any) = value as any
   return result
 }
 

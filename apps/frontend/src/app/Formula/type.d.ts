@@ -1,15 +1,11 @@
+import type { ElementWithPhyKey, WeaponKey } from '@genshin-optimizer/consts'
 import type { KeyMapPrefix, Unit } from '../KeyMap'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
   TransformativeReactionsKey,
 } from '../KeyMap/StatConstants'
-import type {
-  ArtifactSetKey,
-  CharacterSheetKey,
-  ElementKeyWithPhy,
-  WeaponKey,
-} from '../Types/consts'
+import type { ArtifactSetKey, CharacterSheetKey } from '../Types/consts'
 import type { input, uiInput } from './index'
 
 export type NumNode =
@@ -48,7 +44,7 @@ interface Info {
   textSuffix?: Displayable
 }
 export type Variant =
-  | ElementKeyWithPhy
+  | ElementWithPhyKey
   | TransformativeReactionsKey
   | AmplifyingReactionsKey
   | AdditiveReactionsKey

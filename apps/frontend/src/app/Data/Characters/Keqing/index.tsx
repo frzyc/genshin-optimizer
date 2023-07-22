@@ -13,7 +13,7 @@ import {
   prod,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -24,7 +24,7 @@ const key: CharacterKey = 'Keqing'
 const elementKey: ElementKey = 'electro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -124,10 +124,10 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const [condAfterRecastPath, condAfterRecast] = cond(key, 'afterRecast')
-const afterRecastInfusion = equalStr(
-  'afterRecast',
-  condAfterRecast,
-  greaterEqStr(input.asc, 1, elementKey)
+const afterRecastInfusion = greaterEqStr(
+  input.asc,
+  1,
+  equalStr('afterRecast', condAfterRecast, elementKey)
 )
 
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
@@ -152,7 +152,7 @@ const c6Electro_dmg_ = greaterEq(
   prod(
     lookup(
       condC6Stack,
-      objectKeyMap(range(1, 4), (i) => constant(i)),
+      objKeyMap(range(1, 4), (i) => constant(i)),
       constant(0)
     ),
     dm.constellation6.electroInc
@@ -183,9 +183,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -275,6 +275,15 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.dmg, {
+              name: ct.ch('c1DMG'),
+            }),
+          },
+        ],
+      }),
       ct.condTem('passive1', {
         value: condAfterRecast,
         path: condAfterRecastPath,
@@ -354,17 +363,7 @@ const sheet: ICharacterSheet = {
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1', [
-      ct.fieldsTem('constellation1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.constellation1.dmg, {
-              name: ct.ch('c1DMG'),
-            }),
-          },
-        ],
-      }),
-    ]),
+    constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
@@ -392,8 +391,8 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation6', {
         value: condC6Stack,
         path: condC6StackPath,
-        name: ct.ch('effectTriggers'),
-        states: objectKeyMap(range(1, 4), (i) => ({
+        name: st('hitOp.normalChargedSkillBurst'),
+        states: objKeyMap(range(1, 4), (i) => ({
           name: st('stack', { count: i }),
           fields: [
             {

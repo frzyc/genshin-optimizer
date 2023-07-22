@@ -1,0 +1,21 @@
+{
+  "name": "gi-formula",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gi-formula/src",
+  "projectType": "library",
+  "targets": {
+    "build": {},
+    "build-ts": {
+      "inputs": ["!{projectRoot}/**/*.gen.ts"]
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs gi-formula {args.ver} {args.tag}"
+      }
+    },
+    "lint": {},
+    "test": {}
+  },
+  "tags": []
+}

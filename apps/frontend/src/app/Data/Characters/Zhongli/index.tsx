@@ -11,7 +11,7 @@ import {
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap, objectKeyValueMap, range } from '../../../Util/Util'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/util'
 import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -28,7 +28,7 @@ const key: CharacterKey = 'Zhongli'
 const elementKey: ElementKey = 'geo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -88,7 +88,7 @@ const dm = {
   },
 } as const
 const [condSkillPath, condSkill] = cond(key, 'skill')
-const nodesSkill = objectKeyValueMap(allElementWithPhyKeys, (k) => [
+const nodesSkill = objKeyValMap(allElementWithPhyKeys, (k) => [
   `${k}_enemyRes_`,
   equal('on', condSkill, percent(dm.skill.enemyRes_)),
 ])
@@ -99,7 +99,7 @@ const nodeP1 = greaterEq(
   1,
   lookup(
     condP1,
-    objectKeyMap(range(1, 5), (i) => percent(dm.passive1.shield_ * i)),
+    objKeyMap(range(1, 5), (i) => percent(dm.passive1.shield_ * i)),
     naught
   )
 )
@@ -198,9 +198,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -275,24 +275,24 @@ const sheet: ICharacterSheet = {
             value: (data) => (data.get(input.constellation).value >= 1 ? 2 : 1),
           },
           {
-            text: st('pressCD'),
-            value: dm.skill.pressCD,
-            unit: 's',
-          },
-          {
             node: infoMut(dmgFormulas.skill.holdDMG, {
               name: ct.chg(`skill.skillParams.2`),
             }),
           },
           {
-            text: st('holdCD'),
-            value: dm.skill.holdCD,
+            node: infoMut(dmgFormulas.skill.shield, {
+              name: stg('dmgAbsorption'),
+            }),
+          },
+          {
+            text: stg('press.cd'),
+            value: dm.skill.pressCD,
             unit: 's',
           },
           {
-            node: infoMut(dmgFormulas.skill.shield, {
-              name: stg(`dmgAbsorption`),
-            }),
+            text: stg('hold.cd'),
+            value: dm.skill.holdCD,
+            unit: 's',
           },
           {
             text: ct.chg('skill.skillParams.5'),
@@ -312,6 +312,16 @@ const sheet: ICharacterSheet = {
           },
         },
       }),
+      ct.condTem('passive1', {
+        value: condP1,
+        path: condP1Path,
+        teamBuff: true,
+        name: ct.ch('p1cond'),
+        states: objKeyMap(range(1, 5), (i) => ({
+          name: st('stack', { count: i }),
+          fields: [{ node: nodeP1 }],
+        })),
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -329,7 +339,7 @@ const sheet: ICharacterSheet = {
                 ? dm.burst.duration[data.get(input.total.burstIndex).value]
                 : `${
                     dm.burst.duration[data.get(input.total.burstIndex).value]
-                  }s +${dm.constellation4.durationInc}`,
+                  }s + ${dm.constellation4.durationInc}`,
             fixed: 1,
             unit: 's',
           },
@@ -346,18 +356,7 @@ const sheet: ICharacterSheet = {
       },
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.condTem('passive1', {
-        value: condP1,
-        path: condP1Path,
-        teamBuff: true,
-        name: ct.ch('p1cond'),
-        states: objectKeyMap(range(1, 5), (i) => ({
-          name: st('stack', { count: i }),
-          fields: [{ node: nodeP1 }],
-        })),
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2', [
       ct.fieldsTem('passive2', {
         fields: [

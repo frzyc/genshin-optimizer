@@ -27,7 +27,7 @@ export default function electro(
 ) {
   const elementKey: ElementKey = 'electro'
   const condCharKey = 'TravelerElectro'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
   const [, ch] = trans('char', condCharKey)
   const skillParam_gen = allStats.char.skillParam.TravelerElectroF
   let s = 0,
@@ -168,6 +168,28 @@ export default function electro(
             }),
           },
           {
+            canShow: (data) => data.get(input.constellation).value < 4,
+            node: subscript(input.total.skillIndex, dm.skill.energyRestore, {
+              name: ch(`skill.enerRest.none`),
+            }),
+          },
+          {
+            canShow: (data) => data.get(input.constellation).value >= 4,
+            node: subscript(input.total.skillIndex, dm.skill.energyRestore, {
+              name: ch('skill.enerRest.over35'),
+            }),
+          },
+          {
+            canShow: (data) => data.get(input.constellation).value >= 4,
+            node: infoMut(
+              prod(
+                subscript(input.total.skillIndex, dm.skill.energyRestore),
+                2
+              ),
+              { name: ch('skill.enerRest.under35') }
+            ),
+          },
+          {
             text: ch('skill.amuletGenAmt'),
             value: (data) =>
               data.get(input.constellation).value >= 1
@@ -196,13 +218,6 @@ export default function electro(
           on: {
             fields: [
               {
-                node: subscript(
-                  input.total.skillIndex,
-                  dm.skill.energyRestore,
-                  { name: ct.chg(`skill.skillParams.1`) }
-                ),
-              },
-              {
                 node: infoMut(
                   skillAmulet_enerRech_Disp,
                   KeyMap.info('enerRech_')
@@ -227,7 +242,10 @@ export default function electro(
       ct.headerTem('passive2', {
         fields: [
           {
-            node: infoMut(p2_enerRech_, { name: ch('passive2.enerRech_') }),
+            node: infoMut(p2_enerRech_, {
+              name: ch('passive2.enerRech_'),
+              unit: '%',
+            }),
           },
         ],
       }),
@@ -260,6 +278,7 @@ export default function electro(
           {
             node: infoMut(burstEnergyRestore, {
               name: ct.chg(`burst.skillParams.2`),
+              fixed: 1,
             }),
           },
           {

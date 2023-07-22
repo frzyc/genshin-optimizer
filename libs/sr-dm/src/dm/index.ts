@@ -1,0 +1,13 @@
+export * from './character/AvatarConfig'
+export * from './character/AvatarPropertyConfig'
+export * from './character/AvatarPromotionConfig'
+export * from './character/AvatarSkillTreeConfig'
+export * from './character/AvatarSkillConfig'
+// export * from './lightcone/ItemConfigEquipment'
+export * from './lightcone/EquipmentConfig'
+export * from './lightcone/EquipmentPromotionConfig'
+
+export * from './relic/RelicMainAffixConfig'
+export * from './relic/RelicSubAffixConfig'
+export * from './relic/RelicSetConfig'
+export * from './relic/RelicDataInfo'

@@ -21,7 +21,7 @@ const key: CharacterKey = 'Albedo'
 const elementKey: ElementKey = 'geo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -84,7 +84,6 @@ const dm = {
   },
 } as const
 
-const [condBurstBlossomPath, condBurstBlossom] = cond(key, 'burstBlossom')
 const [condBurstUsedPath, condBurstUsed] = cond(key, 'burstUsed')
 const p2Burst_eleMas = equal(
   condBurstUsed,
@@ -93,10 +92,10 @@ const p2Burst_eleMas = equal(
 )
 
 const [condP1EnemyHpPath, condP1EnemyHp] = cond(key, 'p1EnemyHp')
-const p1_blossom_dmg_ = equal(
-  condP1EnemyHp,
-  'belowHp',
-  greaterEq(input.asc, 1, dm.passive1.blossomDmgInc)
+const p1_blossom_dmg_ = greaterEq(
+  input.asc,
+  1,
+  equal(condP1EnemyHp, 'belowHp', dm.passive1.blossomDmgInc)
 )
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
@@ -170,11 +169,7 @@ const dmgFormulas = {
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.burstDmg, 'burst'),
-    blossom: equal(
-      'isoOnField',
-      condBurstBlossom,
-      dmgNode('atk', dm.burst.blossomDmg, 'burst')
-    ),
+    blossom: dmgNode('atk', dm.burst.blossomDmg, 'burst'),
   },
 }
 
@@ -206,9 +201,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -372,6 +367,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            node: infoMut(dmgFormulas.burst.blossom, {
+              name: ct.chg(`burst.skillParams.1`),
+              multi: dm.burst.blossomAmt,
+            }),
+          },
+          {
             text: stg('cd'),
             value: dm.burst.cd,
             unit: 's',
@@ -382,23 +383,6 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('burst', {
-        value: condBurstBlossom,
-        path: condBurstBlossomPath,
-        name: ct.ch('isotomaOnField'),
-        states: {
-          isoOnField: {
-            fields: [
-              {
-                node: infoMut(dmgFormulas.burst.blossom, {
-                  name: ct.chg(`burst.skillParams.1`),
-                  multi: dm.burst.blossomAmt,
-                }),
-              },
-            ],
-          },
-        },
-      }),
       ct.condTem('passive2', {
         value: condBurstUsed,
         path: condBurstUsedPath,

@@ -34,7 +34,7 @@ const key: CharacterKey = 'Nahida'
 const elementKey: ElementKey = 'dendro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -346,9 +346,9 @@ const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -443,12 +443,12 @@ const sheet: ICharacterSheet = {
             unit: 's',
           },
           {
-            text: st('pressCD'),
+            text: stg('press.cd'),
             value: dm.skill.pressCd,
             unit: 's',
           },
           {
-            text: st('holdCD'),
+            text: stg('hold.cd'),
             value: dm.skill.holdCd,
             unit: 's',
           },
@@ -535,6 +535,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.condTem('constellation4', {
+        teamBuff: true,
         path: condC4CountPath,
         value: condC4Count,
         name: ct.ch('c4CondName'),

@@ -1,3 +1,5 @@
+import type { MainStatKey, SubstatKey } from '@genshin-optimizer/consts'
+import { allMainStatKeys, allSubstatKeys } from '@genshin-optimizer/consts'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
@@ -15,8 +17,6 @@ import { artStatPercent } from '../Data/Artifacts/Artifact'
 import type { InputPremodKey } from '../Formula'
 import KeyMap from '../KeyMap'
 import StatIcon from '../KeyMap/StatIcon'
-import type { MainStatKey, SubstatKey } from '../Types/artifact'
-import { allMainStatKeys, allSubstatKeys } from '../Types/artifact'
 import CustomNumberInput, {
   CustomNumberInputButtonGroupWrapper,
 } from './CustomNumberInput'

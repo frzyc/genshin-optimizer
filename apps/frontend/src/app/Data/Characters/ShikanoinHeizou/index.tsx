@@ -28,7 +28,7 @@ const key: CharacterKey = 'ShikanoinHeizou'
 const elementKey: ElementKey = 'anemo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -229,9 +229,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -306,7 +306,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('skill', {
         path: condDeclensionStacksPath,
         value: condDeclensionStacks,
-        name: ct.ch('declensionStacks'),
+        name: ct.chg('skill.description.6'),
         states: Object.fromEntries(
           stacksArr.map((stacks) => [
             stacks,
@@ -325,7 +325,7 @@ const sheet: ICharacterSheet = {
                   text: st('aoeInc'),
                 },
                 {
-                  text: stg('duration'),
+                  text: ct.chg('skill.skillParams.3'),
                   value: dm.skill.declension_duration,
                   unit: 's',
                 },
@@ -356,6 +356,7 @@ const sheet: ICharacterSheet = {
         },
       }),
       ct.headerTem('constellation6', {
+        canShow: unequal(condDeclensionStacks, undefined, 1),
         fields: [
           {
             node: c6_skill_critRate_,

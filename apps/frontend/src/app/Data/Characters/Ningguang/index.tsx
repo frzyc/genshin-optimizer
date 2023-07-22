@@ -20,7 +20,7 @@ const key: CharacterKey = 'Ningguang'
 const elementKey: ElementKey = 'geo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -125,9 +125,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -143,12 +143,15 @@ const sheet: ICharacterSheet = {
               name: ct.chg(`auto.skillParams.0`),
             }),
           },
+        ],
+      },
+      ct.headerTem('constellation1', {
+        fields: [
           {
-            canShow: (data) => data.get(input.constellation).value >= 1,
             text: ct.ch('aoeGems'),
           },
         ],
-      },
+      }),
       {
         text: ct.chg('auto.fields.charged'),
       },
@@ -165,17 +168,18 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            canShow: (data) => data.get(input.asc).value < 1,
             text: ct.chg('auto.skillParams.3'),
             value: dm.charged.stamina,
           },
-          {
-            canShow: (data) => data.get(input.asc).value >= 1,
-            text: ct.chg('auto.skillParams.3'),
-            value: ct.ch('starJadeStaminaCost'),
-          },
         ],
       },
+      ct.headerTem('passive1', {
+        fields: [
+          {
+            text: ct.ch('starJadeStaminaCost'),
+          },
+        ],
+      }),
       {
         text: ct.chg(`auto.fields.plunging`),
       },
@@ -218,12 +222,15 @@ const sheet: ICharacterSheet = {
             value: dm.burst.cd,
             unit: 's',
           },
+        ],
+      },
+      ct.headerTem('constellation2', {
+        fields: [
           {
-            canShow: (data) => data.get(input.constellation).value >= 2,
             text: ct.ch('skillReset'),
           },
         ],
-      },
+      }),
       ct.condTem('passive2', {
         teamBuff: true,
         value: condA4,
@@ -274,13 +281,16 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.enerCost,
           },
+        ],
+      },
+      ct.headerTem('constellation6', {
+        fields: [
           {
-            canShow: (data) => data.get(input.constellation).value >= 6,
             text: ct.ch('c6bonus'),
             value: 7,
           },
         ],
-      },
+      }),
     ]),
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),

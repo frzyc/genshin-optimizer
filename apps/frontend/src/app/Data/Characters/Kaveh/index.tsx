@@ -14,7 +14,7 @@ import {
   prod,
   subscript,
 } from '../../../Formula/utils'
-import { objectKeyMap, range } from '../../../Util/Util'
+import { objKeyMap, range } from '@genshin-optimizer/util'
 import { cond, st, stg } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
@@ -31,7 +31,7 @@ const elementKey: ElementKey = 'dendro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -110,7 +110,7 @@ const a4_eleMas = greaterEq(
     'on',
     lookup(
       condA4Stacks,
-      objectKeyMap(a4StacksArr, (stack) => prod(stack, dm.passive2.eleMas)),
+      objKeyMap(a4StacksArr, (stack) => prod(stack, dm.passive2.eleMas)),
       naught
     )
   )
@@ -206,10 +206,10 @@ export const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
-  rarity: data_gen.star,
+  name: ct.name,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -360,7 +360,7 @@ const sheet: ICharacterSheet = {
         canShow: equal(condAfterBurst, 'on', 1),
         teamBuff: true, // for nahida
         name: st('hitOp.normalChargedOrPlunging'),
-        states: objectKeyMap(a4StacksArr, (stack) => ({
+        states: objKeyMap(a4StacksArr, (stack) => ({
           name: st('stack', { count: stack }),
           fields: [
             {

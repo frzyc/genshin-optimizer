@@ -31,7 +31,7 @@ const key: CharacterKey = 'Sayu'
 const elementKey: ElementKey = 'anemo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let s = 0,
   b = 0
@@ -173,7 +173,7 @@ const dmgFormulas = {
   skill: {
     wheelDmg: dmgNode('atk', dm.skill.wheelDmg, 'skill'),
     kickPressDmg: dmgNode('atk', dm.skill.kickPressDmg, 'skill', {
-      premod: { skill_dmg_: sum(c2_kickDmg_, c2_kickPressDmg_) },
+      premod: { skill_dmg_: c2_kickPressDmg_ },
     }),
     kickHoldDmg: dmgNode('atk', dm.skill.kickHoldDmg, 'skill', {
       premod: { skill_dmg_: c2_kickDmg_ },
@@ -255,9 +255,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -442,19 +442,12 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.extraHeal, {
-              name: ct.ch('p2Heal'),
+              name: stg('aoeInc'),
               variant: 'heal',
             }),
           },
           {
             text: ct.ch('p2Aoe'),
-          },
-        ],
-      }),
-      ct.headerTem('constellation1', {
-        fields: [
-          {
-            text: ct.ch('c1Text'),
           },
         ],
       }),
@@ -501,7 +494,7 @@ const sheet: ICharacterSheet = {
       ct.fieldsTem('constellation4', {
         fields: [
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: dm.constellation4.ener,
             fixed: 1,
           },

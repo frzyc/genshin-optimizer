@@ -11,10 +11,10 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'DebateClub'
 const data_gen = allStats.weapon.data[key]
 
-const dmgPerc = [0.6, 0.75, 0.9, 1.05, 1.2]
+const dmgPerc = [-1, 0.6, 0.75, 0.9, 1.05, 1.2]
 const dmg = customDmgNode(
   prod(
-    subscript(input.weapon.refineIndex, dmgPerc, { unit: '%' }),
+    subscript(input.weapon.refinement, dmgPerc, { unit: '%' }),
     input.total.atk
   ),
   'elemental',

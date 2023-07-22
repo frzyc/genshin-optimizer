@@ -1,13 +1,14 @@
 import {
-  type ArtifactSlotKey,
-  type ArtifactSetKey,
   allArtifactSlotKeys,
+  type ArtifactSetKey,
+  type ArtifactSlotKey,
 } from '@genshin-optimizer/consts'
+import { objKeyMap } from '@genshin-optimizer/util'
 import type { ArtSetExclusion } from '../Database/DataManagers/BuildSettingData'
 import type { OptNode } from '../Formula/optimization'
 import { precompute } from '../Formula/optimization'
 import { dynRead, prod, sum, threshold } from '../Formula/utils'
-import { cartesian, objectKeyMap } from '../Util/Util'
+import { cartesian } from '../Util/Util'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
@@ -40,7 +41,7 @@ describe('common.ts', () => {
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
     for (const combination of allCombinations(
-      objectKeyMap(allArtifactSlotKeys, (_) => artSets)
+      objKeyMap(allArtifactSlotKeys, (_) => artSets)
     )) {
       let shouldMatch = true,
         rainbowCount = 0
@@ -96,7 +97,7 @@ describe('common.ts', () => {
   describe('reaffine', () => {
     const arts: ArtifactsBySlot = {
       base: { atk: 10, atk_: 0.01, glad: 0, clam: 0 },
-      values: objectKeyMap(
+      values: objKeyMap(
         allArtifactSlotKeys,
         () =>
           [

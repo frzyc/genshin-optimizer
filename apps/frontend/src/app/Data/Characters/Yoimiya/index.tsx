@@ -29,7 +29,7 @@ const elementKey: ElementKey = 'pyro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 const dm = {
   normal: {
@@ -144,7 +144,11 @@ const atk_ = greaterEq(
     )
   )
 )
-const c1atk_ = equal(condC1, 'c1', percent(dm.constellation1.atk_))
+const c1atk_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'c1', percent(dm.constellation1.atk_))
+)
 const c2pyro_dmg_ = greaterEq(
   input.constellation,
   2,
@@ -208,13 +212,9 @@ export const dmgFormulas = {
     full: dmgNode('atk', dm.charged.full, 'charged', {
       hit: { ele: constant(elementKey) },
     }),
-    kindling: unequal(
-      condSkill,
-      'skill',
-      dmgNode('atk', dm.charged.kindling, 'charged', {
-        hit: { ele: constant(elementKey) },
-      })
-    ),
+    kindling: dmgNode('atk', dm.charged.kindling, 'charged', {
+      hit: { ele: constant(elementKey) },
+    }),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [
@@ -258,9 +258,9 @@ export const dataObj = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -277,6 +277,16 @@ const sheet: ICharacterSheet = {
           }),
         })),
       },
+      ct.headerTem('constellation6', {
+        canShow: equal(condSkill, 'skill', 1),
+        fields: dm.normal.hitArr.map(
+          (_, i): INodeFieldDisplay => ({
+            node: infoMut(dmgFormulas.constellation6[i], {
+              name: ct.chg(`auto.skillParams.${i}`),
+            }),
+          })
+        ),
+      }),
       {
         text: ct.chg('auto.fields.charged'),
       },
@@ -341,10 +351,10 @@ const sheet: ICharacterSheet = {
           skill: {
             fields: [
               {
-                node: normal_dmgMult,
+                text: ct.ch('normPyroInfus'),
               },
               {
-                text: ct.ch('normPyroInfus'),
+                node: normal_dmgMult,
               },
               {
                 text: ct.chg('skill.skillParams.1'),
@@ -378,16 +388,6 @@ const sheet: ICharacterSheet = {
               ],
             },
           ])
-        ),
-      }),
-      ct.headerTem('constellation6', {
-        canShow: equal(condSkill, 'skill', 1),
-        fields: dm.normal.hitArr.map(
-          (_, i): INodeFieldDisplay => ({
-            node: infoMut(dmgFormulas.constellation6[i], {
-              name: ct.chg(`auto.skillParams.${i}`),
-            }),
-          })
         ),
       }),
     ]),

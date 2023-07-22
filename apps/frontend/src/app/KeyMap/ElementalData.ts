@@ -1,9 +1,9 @@
-import type { ElementKey } from '../Types/consts'
+import type { ElementWithPhyKey } from '@genshin-optimizer/consts'
 
 /**
  * @deprecated use the translated element keys
  */
-const elementalData: StrictDict<ElementKey | 'physical', { name: string }> = {
+const elementalData: StrictDict<ElementWithPhyKey, { name: string }> = {
   physical: { name: 'Physical' },
   anemo: { name: 'Anemo' },
   geo: { name: 'Geo' },

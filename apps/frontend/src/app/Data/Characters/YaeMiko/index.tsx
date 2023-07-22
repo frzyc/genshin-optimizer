@@ -9,7 +9,7 @@ import {
   prod,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
-import { cond, stg } from '../../SheetUtil'
+import { cond, stg, st } from '../../SheetUtil'
 import CharacterSheet from '../CharacterSheet'
 import { charTemplates } from '../charTemplates'
 import type { ICharacterSheet } from '../ICharacterSheet.d'
@@ -19,7 +19,7 @@ const key: CharacterKey = 'YaeMiko'
 const elementKey: ElementKey = 'electro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -58,6 +58,14 @@ const dm = {
   },
   passive2: {
     eleMas_dmg_: skillParam_gen.passive2[p2++][0],
+  },
+  constellation1: {
+    enerRest: skillParam_gen.constellation1[0],
+  },
+  constellation2: {
+    unknown1: skillParam_gen.constellation2[0], //what is this?
+    aoeInc: skillParam_gen.constellation2[1],
+    unknown2: skillParam_gen.constellation2[2], //what is this?
   },
   constellation4: {
     ele_dmg_: skillParam_gen.constellation4[0],
@@ -143,9 +151,9 @@ const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -229,12 +237,55 @@ const sheet: ICharacterSheet = {
             value: dm.skill.duration,
             unit: 's',
           },
+
           {
             text: ct.chg('skill.skillParams.5'),
             value: dm.skill.cd,
           },
+          {
+            text: st('charges'),
+            value: 3,
+          },
         ],
       },
+      ct.headerTem('constellation2', {
+        fields: [
+          {
+            text: st('aoeInc'),
+            value: dm.constellation2.aoeInc * 100,
+            unit: '%',
+          },
+        ],
+      }),
+      ct.condTem('constellation4', {
+        value: condC4,
+        path: condC4Path,
+        teamBuff: true,
+        name: ct.ch('c4'),
+        states: {
+          hit: {
+            fields: [
+              {
+                node: nodeC4,
+              },
+              {
+                text: stg('duration'),
+                value: dm.constellation4.duration,
+                unit: 's',
+              },
+            ],
+          },
+        },
+      }),
+      ct.headerTem('constellation6', {
+        fields: [
+          {
+            text: ct.ch('c6'),
+            value: dm.constellation6.defIgn_ * 100,
+            unit: '%',
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -261,6 +312,14 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            text: st('enerRegenPerHit'),
+            value: dm.constellation1.enerRest,
+          },
+        ],
+      }),
     ]),
     passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2', [
@@ -272,28 +331,7 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4', [
-      ct.condTem('constellation4', {
-        value: condC4,
-        path: condC4Path,
-        teamBuff: true,
-        name: ct.ch('c4'),
-        states: {
-          hit: {
-            fields: [
-              {
-                node: nodeC4,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation4.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),

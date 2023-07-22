@@ -19,7 +19,7 @@ const key: CharacterKey = 'Xiangling'
 const elementKey: ElementKey = 'pyro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -174,9 +174,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -248,6 +248,26 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.condTem('passive2', {
+        value: condAfterChili,
+        path: condAfterChiliPath,
+        name: ct.ch('afterChili'),
+        teamBuff: true,
+        states: {
+          afterChili: {
+            fields: [
+              {
+                node: afterChili,
+              },
+              {
+                text: stg('duration'),
+                value: dm.passive2.duration,
+                unit: 's',
+              },
+            ],
+          },
+        },
+      }),
       ct.condTem('constellation1', {
         value: condAfterGuobaHit,
         path: condAfterGuobaHitPath,
@@ -334,18 +354,13 @@ const sheet: ICharacterSheet = {
           duringPyronado: {
             fields: [
               {
+                node: duringPyronado,
+              },
+              {
                 text: ct.ch('c6Exception'),
                 canShow: (data) =>
                   data.get(input.constellation).value >= 6 &&
                   data.get(condDuringPyronado).value === 'duringPyronado',
-              },
-              {
-                node: duringPyronado,
-              },
-              {
-                text: stg('duration'),
-                value: dm.constellation1.duration,
-                unit: 's',
               },
             ],
           },
@@ -354,28 +369,7 @@ const sheet: ICharacterSheet = {
     ]),
 
     passive1: ct.talentTem('passive1'),
-    passive2: ct.talentTem('passive2', [
-      ct.condTem('passive2', {
-        value: condAfterChili,
-        path: condAfterChiliPath,
-        name: ct.ch('afterChili'),
-        teamBuff: true,
-        states: {
-          afterChili: {
-            fields: [
-              {
-                node: afterChili,
-              },
-              {
-                text: stg('duration'),
-                value: dm.passive2.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+    passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [

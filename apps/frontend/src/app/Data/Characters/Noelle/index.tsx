@@ -9,8 +9,8 @@ import {
   percent,
   prod,
   subscript,
-  sum,
   unequal,
+  sum,
 } from '../../../Formula/utils'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { cond, stg, st } from '../../SheetUtil'
@@ -31,7 +31,7 @@ const key: CharacterKey = 'Noelle'
 const elementKey: ElementKey = 'geo'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -118,13 +118,13 @@ const nodeBurstAtk = equal(
 const nodeSkillHealChanceBase = subscript(
   input.total.skillIndex,
   dm.skill.healChance,
-  { name: ct.ch('skillHeal_'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
 const nodeSkillHealChanceC1BurstOn = equal(
   'on',
   condBurst,
   percent(dm.constellation1.healingChance),
-  { name: ct.ch('skillHeal_'), unit: '%' }
+  { name: ct.chg('skill.skillParams.3'), unit: '%' }
 )
 const nodeSkillHealChanceC1BurstOff = unequal(
   'on',
@@ -217,9 +217,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: 'geo',
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -385,7 +385,7 @@ const sheet: ICharacterSheet = {
                 variant: 'geo',
               },
               {
-                text: ct.ch('qlarger'),
+                text: st('attackAoeInc'),
               },
               {
                 node: nodeBurstAtk,
@@ -393,6 +393,18 @@ const sheet: ICharacterSheet = {
             ],
           },
         },
+      }),
+      ct.headerTem('constellation6', {
+        canShow: equal(condBurst, 'on', 1),
+        fields: [
+          {
+            text: st('bonusScaling.atkInc'),
+            value: st('bonusScaling.value', {
+              value: dm.constellation6.burstAtkBonus * 100,
+            }),
+            unit: stg('stat.def'),
+          },
+        ],
       }),
     ]),
 

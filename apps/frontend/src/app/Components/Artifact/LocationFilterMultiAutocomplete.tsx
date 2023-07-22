@@ -2,6 +2,7 @@ import type { LocationCharacterKey } from '@genshin-optimizer/consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
+  charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/consts'
 import { Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
@@ -10,7 +11,6 @@ import { SillyContext } from '../../Context/SillyContext'
 import { getCharSheet } from '../../Data/Characters'
 import { DatabaseContext } from '../../Database/Database'
 import useDBMeta from '../../ReactHooks/useDBMeta'
-import { charKeyToCharName } from '../../Types/consts'
 import type { GeneralAutocompleteOption } from '../GeneralAutocomplete'
 import { GeneralAutocompleteMulti } from '../GeneralAutocomplete'
 import CharIconSide from '../Image/CharIconSide'
@@ -39,7 +39,7 @@ export default function LocationFilterMultiAutocomplete({
       t(
         `${
           silly ? 'sillyWisher_charNames' : 'charNames_gen'
-        }:${charKeyToCharName(
+        }:${charKeyToLocGenderedCharKey(
           database.chars.LocationToCharacterKey(key),
           gender
         )}`

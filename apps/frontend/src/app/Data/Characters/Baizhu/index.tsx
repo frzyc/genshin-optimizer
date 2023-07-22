@@ -31,7 +31,7 @@ const elementKey: ElementKey = 'dendro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = -1,
   s = 0,
@@ -206,7 +206,10 @@ const dmgFormulas = {
           subscript(input.total.skillIndex, dm.skill.healHp, { unit: '%' }),
           percent(dm.constellation2.heal)
         ),
-        subscript(input.total.skillIndex, dm.skill.healBase)
+        prod(
+          subscript(input.total.skillIndex, dm.skill.healBase),
+          percent(dm.constellation2.heal)
+        )
       )
     ),
   },
@@ -224,7 +227,7 @@ const skillC5 = greaterEq(input.constellation, 5, 3)
 const data = dataObjForCharacterSheet(
   key,
   elementKey,
-  'sumeru',
+  'liyue',
   data_gen,
   dmgFormulas,
   {
@@ -246,10 +249,10 @@ const data = dataObjForCharacterSheet(
 
 const sheet: ICharacterSheet = {
   key,
-  name: ct.chg('name'),
-  rarity: data_gen.star,
+  name: ct.name,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -320,25 +323,17 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            canShow: (data) => data.get(input.constellation).value >= 1,
-            text: st('charges'),
-            value: 2,
-          },
-          {
             text: stg('cd'),
             value: dm.skill.cd,
             unit: 's',
           },
-        ],
-      },
-      ct.headerTem('constellation1', {
-        fields: [
           {
-            text: st('addlCharges'),
-            value: 1,
+            canShow: (data) => data.get(input.constellation).value >= 1,
+            text: st('charges'),
+            value: 2,
           },
         ],
-      }),
+      },
     ]),
 
     burst: ct.talentTem('burst', [
@@ -472,7 +467,16 @@ const sheet: ICharacterSheet = {
         ],
       },
     ]),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.fieldsTem('constellation1', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2', [
       {
         fields: [

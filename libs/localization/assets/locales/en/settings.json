@@ -5,7 +5,7 @@
     "languageFormat": "Language: {{language}}"
   },
   "sillyCard": {
-    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene splice it into Genshin Optimizer.",
+    "desc": "We <1>stole</1> borrowed (with permission) all the character assets from <strong>Silly Wisher</strong> and gene spliced them into Genshin Optimizer.",
     "toggle": {
       "enabled": "Silly Optimizer Enabled",
       "disabled": "Silly Optimizer Disabled"
@@ -57,9 +57,9 @@
       "delNotInImport": "Delete items not in import"
     },
     "tooltip": {
-      "detectdup": "Find upgrade/duplicates in the GO inventory and merge the import into GO.",
-      "ignoreDup": "Do not detect upgrades/duplicates, the import is added on top of existing GO inventory.",
-      "delNotInImport": "Assume the import to be the full inventory. Items in GO Inventory that doesn't exist in the import are deleted.",
+      "detectdup": "Find upgrades/duplicates in the GO inventory and merge the import into GO.",
+      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing GO inventory.",
+      "delNotInImport": "Assume the import is your full inventory. Items in the GO Inventory that don't exist in the import will be deleted.",
       "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted."
     }
   }

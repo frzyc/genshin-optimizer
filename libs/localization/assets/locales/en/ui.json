@@ -11,7 +11,7 @@
     "scanner": "Scanners"
   },
   "social": {
-    "paypal": "Paypal",
+    "paypal": "PayPal",
     "patreon": "Patreon",
     "discord": "Discord"
   },
@@ -19,7 +19,7 @@
     "download": "Download Link",
     "discord": "Discord Invite Link"
   },
-  "unselect": "Unselect",
+  "unselect": "Deselect",
   "inventory": "Inventory",
   "ascending": "Ascending",
   "descending": "Descending",
@@ -30,7 +30,7 @@
   "underConstruction": "Under Construction",
   "error": "Error",
   "reset": "Reset",
-  "info": "INFO",
+  "info": "Info",
   "close": "Close",
   "sortMap": {
     "new": "New",

@@ -1,12 +1,12 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nx"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "enforceBuildableLibDependency": true,
@@ -23,20 +23,14 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
+      "extends": ["plugin:@nx/typescript"],
       "parserOptions": {
-        "project": [
-          "apps/*/tsconfig.json",
-          "apps/*/tsconfig.*?.json",
-          "libs/*/tsconfig.*?.json"
-        ]
+        "project": "./tsconfig.eslint.json"
       },
       "rules": {
         "@typescript-eslint/consistent-type-exports": "warn",
         "@typescript-eslint/consistent-type-imports": "warn",
-        // "@typescript-eslint/explicit-module-boundary-types": ["warn", { "allowArgumentsExplicitlyTypedAsAny": true }],
         "@typescript-eslint/no-duplicate-imports": "warn",
-        // "@typescript-eslint/no-unnecessary-condition": "warn",
         "@typescript-eslint/no-unused-vars": [
           "warn",
           {
@@ -53,7 +47,7 @@
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
+      "extends": ["plugin:@nx/javascript"],
       "rules": {}
     },
     {
@@ -67,9 +61,18 @@
       "files": ["*"],
       "rules": {
         "array-callback-return": "off",
-        "no-constant-condition": ["error", { "checkLoops": false }]
-        // "sort-imports": "error"
+        "no-constant-condition": [
+          "error",
+          {
+            "checkLoops": false
+          }
+        ]
       }
+    },
+    {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {}
     }
   ]
 }

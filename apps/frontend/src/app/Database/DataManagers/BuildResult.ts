@@ -3,7 +3,6 @@ import {
   allArtifactSlotKeys,
   allCharacterKeys,
 } from '@genshin-optimizer/consts'
-import { deepFreeze } from '../../Util/Util'
 import type { ArtCharDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
@@ -16,7 +15,8 @@ export class BuildResultDataManager extends DataManager<
   CharacterKey,
   'buildResults',
   IBuildResult,
-  IBuildResult
+  IBuildResult,
+  ArtCharDatabase
 > {
   constructor(database: ArtCharDatabase) {
     super(database, 'buildResults')
@@ -26,12 +26,12 @@ export class BuildResultDataManager extends DataManager<
         if (!this.set(charKey, {})) this.database.storage.remove(key)
       }
   }
-  toStorageKey(key: string): string {
+  override toStorageKey(key: string): string {
     return `buildResult_${key}`
   }
-  validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
-    if (typeof obj !== 'object') return
-    if (!allCharacterKeys.includes(key)) return
+  override validate(obj: unknown, key: CharacterKey): IBuildResult | undefined {
+    if (typeof obj !== 'object') return undefined
+    if (!allCharacterKeys.includes(key)) return undefined
     let { builds, buildDate } = obj as IBuildResult
 
     if (!Array.isArray(builds)) {
@@ -60,12 +60,12 @@ export class BuildResultDataManager extends DataManager<
 
     return { builds, buildDate }
   }
-  get(key: CharacterKey) {
+  override get(key: CharacterKey) {
     return super.get(key) ?? initialBuildResult
   }
 }
 
-const initialBuildResult: IBuildResult = deepFreeze({
+const initialBuildResult: IBuildResult = structuredClone({
   builds: [],
   buildDate: 0,
 })

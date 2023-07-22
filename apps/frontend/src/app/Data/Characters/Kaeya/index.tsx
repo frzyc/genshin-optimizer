@@ -23,7 +23,7 @@ const elementKey: ElementKey = 'cryo'
 const region: RegionKey = 'mondstadt'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -92,7 +92,11 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
   },
   passive1: {
-    heal: healNode('atk', percent(dm.passive2.healAtk_), 0),
+    heal: greaterEq(
+      input.asc,
+      1,
+      healNode('atk', percent(dm.passive2.healAtk_), 0)
+    ),
   },
   constellation4: {
     shield: greaterEq(
@@ -116,15 +120,15 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 //Conditional C1: Oppo affected by Cryo
 const [condC1Path, condC1Cryo] = cond(key, 'CryoC1')
-const nodeC1NormalCritRate = equal(
-  condC1Cryo,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.critRate_)
+const nodeC1NormalCritRate = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
 )
-const nodeC1ChargeCritRate = equal(
-  condC1Cryo,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.critRate_)
+const nodeC1ChargeCritRate = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
 )
 
 export const data = dataObjForCharacterSheet(
@@ -146,9 +150,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -237,9 +241,15 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
+            canShow: (data) => data.get(input.constellation).value < 2,
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.duration,
             unit: 's',
+          },
+          {
+            canShow: (data) => data.get(input.constellation).value >= 2,
+            text: ct.chg('burst.skillParams.2'),
+            value: ct.ch('c2burstDuration'),
           },
           {
             text: ct.chg('burst.skillParams.1'),
@@ -250,10 +260,6 @@ const sheet: ICharacterSheet = {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.enerCost,
           },
-          {
-            canShow: (data) => data.get(input.constellation).value >= 2,
-            text: ct.ch('c2burstDuration'),
-          },
         ],
       },
     ]),
@@ -262,7 +268,7 @@ const sheet: ICharacterSheet = {
       ct.headerTem('passive1', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: ct.ch('p1heal') }),
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
           },
         ],
       }),

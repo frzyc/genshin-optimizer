@@ -10,7 +10,7 @@ import KeyMap from '../../../../KeyMap'
 import type { WeaponKey } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
 import { allElementKeys } from '@genshin-optimizer/consts'
-import { objectKeyMap } from '../../../../Util/Util'
+import { objKeyMap } from '@genshin-optimizer/util'
 import { cond, st, trans } from '../../../SheetUtil'
 import { dataObjForWeaponSheet } from '../../util'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -21,18 +21,18 @@ const data_gen = allStats.weapon.data[key]
 const [, trm] = trans('weapon', key)
 
 const stacks = ['1', '2', '3'] as const
-const passiveRefine = [0.12, 0.15, 0.18, 0.21, 0.24]
+const passiveRefine = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const stacksRefine = {
-  '1': [0.08, 0.1, 0.12, 0.14, 0.16],
-  '2': [0.16, 0.2, 0.24, 0.28, 0.32],
-  '3': [0.28, 0.35, 0.42, 0.49, 0.56],
+  '1': [-1, 0.08, 0.1, 0.12, 0.14, 0.16],
+  '2': [-1, 0.16, 0.2, 0.24, 0.28, 0.32],
+  '3': [-1, 0.28, 0.35, 0.42, 0.49, 0.56],
 }
 const [condPath, condNode] = cond(key, 'MistsplittersEmblem')
 const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     subscript(
-      input.weapon.refineIndex,
+      input.weapon.refinement,
       passiveRefine,
       KeyMap.info(`${ele}_dmg_`)
     ),
@@ -46,8 +46,8 @@ const stacks_dmg_ = Object.fromEntries(
       ele,
       lookup(
         condNode,
-        objectKeyMap(stacks, (stack) =>
-          subscript(input.weapon.refineIndex, stacksRefine[stack])
+        objKeyMap(stacks, (stack) =>
+          subscript(input.weapon.refinement, stacksRefine[stack])
         ),
         naught,
         KeyMap.info(`${ele}_dmg_`)

@@ -28,7 +28,7 @@ export default function dendro(
 ) {
   const elementKey: ElementKey = 'dendro'
   const condCharKey = 'TravelerDendro'
-  const ct = charTemplates(key, Traveler.data_gen.weaponTypeKey)
+  const ct = charTemplates(key, Traveler.data_gen.weaponType)
 
   const skillParam_gen = allStats.char.skillParam.TravelerDendroF
   let s = 0,
@@ -200,7 +200,7 @@ export default function dendro(
             }),
           },
           {
-            text: stg('duration'),
+            text: ct.chg('burst.skillParams.2'),
             value: (data) =>
               data.get(input.constellation).value >= 2
                 ? `${dm.burst.lampDuration}s + ${

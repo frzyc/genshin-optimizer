@@ -4,32 +4,11 @@
   "sourceRoot": "libs/dm-localization/src",
   "projectType": "application",
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/dm-localization",
-        "main": "libs/dm-localization/src/index.ts",
-        "tsConfig": "libs/dm-localization/tsconfig.lib.json",
-        "assets": ["libs/dm-localization/*.md"]
-      }
+    "genfile": {
+      "executor": "@genshin-optimizer/dm-localization:gen-locale",
+      "outputs": ["{projectRoot}/assets/locales"]
     },
-    "pipeline": {
-      "executor": "@nrwl/js:node",
-      "options": {
-        "buildTarget": "dm-localization:build",
-        "watch": false,
-        "inspect": false
-      },
-      "outputs": ["{workspaceRoot}/dist/libs/dm-localization/assets"]
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/dm-localization/**/*.ts"]
-      }
-    }
+    "lint": {}
   },
   "tags": []
 }

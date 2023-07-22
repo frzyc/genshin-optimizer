@@ -24,7 +24,7 @@ const elementKey: ElementKey = 'pyro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -108,10 +108,10 @@ const nodeA4Bonus = greaterEq(
   equal(condBurst, 'on', dm.passive2.pyroInc)
 )
 
-const nodeC1Bonus = equal(
-  condC1,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.dmgInc)
+const nodeC1Bonus = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'on', dm.constellation1.dmgInc)
 )
 const nodeC2AtkBonus = greaterEq(
   input.constellation,
@@ -143,15 +143,15 @@ const nodeC2SpdBonus = greaterEq(
     KeyMap.info('atkSPD_')
   )
 )
-const nodeC6DmgBonus = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, dm.constellation6.dmgInc)
+const nodeC6DmgBonus = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', dm.constellation6.dmgInc)
 )
-const nodeC6SpdBonus = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, dm.constellation6.atkSpdInc),
+const nodeC6SpdBonus = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', dm.constellation6.atkSpdInc),
   KeyMap.info('atkSPD_')
 )
 
@@ -228,9 +228,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -440,7 +440,7 @@ const sheet: ICharacterSheet = {
       ct.condTem('constellation2', {
         value: condC2,
         path: condC2Path,
-        name: st('takeDmg'),
+        name: st('hitOp.self'),
         states: Object.fromEntries(
           range(1, dm.constellation2.maxStack).map((i) => [
             i,

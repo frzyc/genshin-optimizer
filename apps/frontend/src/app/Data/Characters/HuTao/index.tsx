@@ -1,7 +1,6 @@
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/consts'
 import { allStats } from '@genshin-optimizer/gi-stats'
-import ColorText from '../../../Components/ColoredText'
 import { input } from '../../../Formula'
 import {
   equal,
@@ -26,7 +25,7 @@ const key: CharacterKey = 'HuTao'
 const elementKey: ElementKey = 'pyro'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -145,22 +144,18 @@ const critRateTeam_2 = greaterEq(
 )
 
 const [condC6Path, condC6] = cond(key, 'ButterflysEmbrace')
-const critRate_ = equal(
-  'on',
-  condC6,
-  greaterEq(input.constellation, 6, percent(dm.constellation6.critRateInc))
+const critRate_ = greaterEq(
+  input.constellation,
+  6,
+  equal('on', condC6, percent(dm.constellation6.critRateInc))
 )
 const ele_res_s = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [
     ele,
-    equal(
-      'on',
-      condC6,
-      greaterEq(
-        input.constellation,
-        6,
-        percent(dm.constellation6.elePhysResInc)
-      )
+    greaterEq(
+      input.constellation,
+      6,
+      equal('on', condC6, percent(dm.constellation6.elePhysResInc))
     ),
   ])
 )
@@ -242,9 +237,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -314,6 +309,11 @@ const sheet: ICharacterSheet = {
             value: dm.skill.bloodBlossomDuration,
             unit: 's',
           },
+          {
+            text: ct.chg('skill.skillParams.5'),
+            value: dm.skill.cd,
+            unit: 's',
+          },
         ],
       },
       ct.condTem('skill', {
@@ -326,22 +326,21 @@ const sheet: ICharacterSheet = {
               {
                 text: ct.chg('skill.skillParams.0'),
                 value: dm.skill.activationCost * 100, // Convert to percentage
-                unit: '% Current HP',
+                unit: st('percentCurrentHP'),
               },
               {
                 node: atk,
               },
               {
-                text: <ColorText color="pyro">Pyro Infusion</ColorText>,
+                text: st('infusion.pyro'),
+                variant: 'pyro',
+              },
+              {
+                text: st('incInterRes'),
               },
               {
                 text: ct.chg('skill.skillParams.4'),
                 value: dm.skill.duration,
-                unit: 's',
-              },
-              {
-                text: ct.chg('skill.skillParams.5'),
-                value: dm.skill.cd,
                 unit: 's',
               },
             ],
@@ -482,6 +481,9 @@ const sheet: ICharacterSheet = {
               ...allElementWithPhyKeys.map((ele) => ({ node: ele_res_s[ele] })),
               {
                 node: critRate_,
+              },
+              {
+                text: st('incInterRes'),
               },
               {
                 text: stg('duration'),

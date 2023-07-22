@@ -31,7 +31,7 @@ const elementKey: ElementKey = 'hydro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -171,7 +171,10 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       6,
-      customDmgNode(prod(dm.constellation6.dmg, input.total.hp), 'burst')
+      customDmgNode(
+        prod(percent(dm.constellation6.dmg), input.total.hp),
+        'burst'
+      )
     ),
   },
 }
@@ -204,9 +207,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -287,12 +290,12 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('pressCD'),
+            text: ct.chg(`skill.skillParams.3`),
             value: dm.skill.pressCd,
             unit: 's',
           },
           {
-            text: st('holdCD'),
+            text: ct.chg(`skill.skillParams.4`),
             value: (data) =>
               data.get(input.constellation).value >= 4
                 ? dm.skill.pressCd

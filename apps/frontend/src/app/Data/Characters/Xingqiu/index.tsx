@@ -26,7 +26,7 @@ const elementKey: ElementKey = 'hydro'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let s = 0,
   b = 0
@@ -106,7 +106,7 @@ const nodeSkillDmgRed_ = equal(
   )
 )
 
-const nodeA4Heal = customHealNode(
+const nodeA1Heal = customHealNode(
   greaterEq(input.asc, 1, prod(input.total.hp, percent(0.06)))
 )
 
@@ -130,7 +130,7 @@ export const dmgFormulas = {
     dmgRed_: nodeSkillDmgRed_,
   },
   passive1: {
-    healing: nodeA4Heal,
+    healing: nodeA1Heal,
   },
   burst: {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst', {
@@ -164,9 +164,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'M',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -278,6 +278,21 @@ const sheet: ICharacterSheet = {
       {
         fields: [
           {
+            node: infoMut(dmgFormulas.burst.dmg, {
+              name: ct.chg(`burst.skillParams.0`),
+            }),
+          },
+          {
+            text: ct.chg('burst.skillParams.1'),
+            value: (data) =>
+              data.get(input.constellation).value >= 2
+                ? `${dm.burst.duration}s + ${
+                    dm.constellation2.burst_duration
+                  }s = ${dm.burst.duration + dm.constellation2.burst_duration}`
+                : `${dm.burst.duration}`,
+            unit: 's',
+          },
+          {
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.cd,
             unit: 's',
@@ -288,30 +303,13 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
-      ct.condTem('burst', {
+      ct.condTem('constellation4', {
         value: condBurst,
         path: condBurstPath,
         name: ct.ch('burstCond'),
         states: {
           on: {
             fields: [
-              {
-                node: infoMut(dmgFormulas.burst.dmg, {
-                  name: ct.chg(`burst.skillParams.0`),
-                }),
-              },
-              {
-                text: ct.chg('burst.skillParams.1'),
-                value: (data) =>
-                  data.get(input.constellation).value >= 2
-                    ? `${dm.burst.duration}s + ${
-                        dm.constellation2.burst_duration
-                      }s = ${
-                        dm.burst.duration + dm.constellation2.burst_duration
-                      }`
-                    : `${dm.burst.duration}`,
-                unit: 's',
-              },
               {
                 node: nodeC4,
               },
@@ -326,7 +324,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive1.healing, {
-              name: stg(`healing`),
+              name: stg('healing'),
             }),
           },
         ],

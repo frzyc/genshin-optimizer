@@ -26,7 +26,7 @@ const elementKey: ElementKey = 'dendro'
 const region: RegionKey = 'sumeru'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -88,12 +88,6 @@ const dm = {
   },
 } as const
 
-const c1_enerRech_ = greaterEq(
-  input.constellation,
-  1,
-  dm.constellation1.enerRech_
-)
-
 const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const c4AfterBurst_eleMasDisp = greaterEq(
   input.constellation,
@@ -104,6 +98,12 @@ const c4AfterBurst_eleMas = unequal(
   target.charKey,
   key,
   c4AfterBurst_eleMasDisp
+)
+const [condC1OffFieldPath, condC1OffField] = cond(key, 'offField')
+const c1_enerRech_ = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1OffField, 'on', dm.constellation1.enerRech_)
 )
 
 const dmgFormulas = {
@@ -178,9 +178,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -252,6 +252,20 @@ const sheet: ICharacterSheet = {
           },
         ],
       },
+      ct.headerTem('passive1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.passive1.dmg, {
+              name: ct.ch('sproutDmg'),
+            }),
+          },
+          {
+            text: stg('duration'),
+            value: dm.passive1.duration,
+            unit: 's',
+          },
+        ],
+      }),
     ]),
 
     burst: ct.talentTem('burst', [
@@ -306,25 +320,25 @@ const sheet: ICharacterSheet = {
       }),
     ]),
 
-    passive1: ct.talentTem('passive1', [
-      ct.fieldsTem('passive1', {
-        fields: [
-          {
-            node: infoMut(dmgFormulas.passive1.dmg, {
-              name: ct.ch('sproutDmg'),
-            }),
-          },
-          {
-            text: stg('duration'),
-            value: dm.passive1.duration,
-            unit: 's',
-          },
-        ],
-      }),
-    ]),
+    passive1: ct.talentTem('passive1'),
     passive2: ct.talentTem('passive2'),
     passive3: ct.talentTem('passive3'),
-    constellation1: ct.talentTem('constellation1'),
+    constellation1: ct.talentTem('constellation1', [
+      ct.condTem('constellation1', {
+        value: condC1OffField,
+        path: condC1OffFieldPath,
+        name: st('charOffField'),
+        states: {
+          on: {
+            fields: [
+              {
+                node: c1_enerRech_,
+              },
+            ],
+          },
+        },
+      }),
+    ]),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: skillC3 }] },

@@ -36,7 +36,7 @@ const elementKey: ElementKey = 'electro'
 const regionKey: RegionKey = 'sumeru'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -224,9 +224,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -318,7 +318,7 @@ const sheet: ICharacterSheet = {
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.energyRegen, {
-              name: st('energyRegen'),
+              name: stg('energyRegen'),
             }),
           },
         ],
@@ -344,7 +344,7 @@ const sheet: ICharacterSheet = {
               },
               {
                 node: infoMut(dmgFormulas.constellation6.heal, {
-                  name: ct.ch('c6Heal'),
+                  name: stg('hpRegenPerHit'),
                   variant: 'heal',
                 }),
               },
@@ -375,7 +375,7 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            text: st('energyRegen'),
+            text: stg('energyRegen'),
             value: (data) =>
               data.get(subscript(input.total.burstIndex, dm.burst.energyRegen))
                 .value,

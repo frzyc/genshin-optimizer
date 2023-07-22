@@ -1,0 +1,12 @@
+{
+  "name": "react-util",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-util/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {},
+    "build": {},
+    "build-vite": {}
+  }
+}

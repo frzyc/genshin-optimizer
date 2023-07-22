@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "esModuleInterop": false,
+    "jsxImportSource": "@emotion/react",
+    "types": ["vite/client"]
+  },
+  "files": [],
+  "include": [],
+  "references": [{ "path": "./tsconfig.lib.json" }],
+  "extends": "../../tsconfig.base.json"
+}

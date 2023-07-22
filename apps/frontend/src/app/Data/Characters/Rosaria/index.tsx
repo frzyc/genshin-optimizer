@@ -22,7 +22,7 @@ const elementKey: ElementKey = 'cryo'
 
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -89,10 +89,10 @@ const [condA4Path, condA4] = cond(key, 'RosariaA4')
 const [condC1Path, condC1] = cond(key, 'RosariaC1')
 const [condC6Path, condC6] = cond(key, 'DilucC6')
 
-const nodeA1CritInc = equal(
-  condA1,
-  'on',
-  greaterEq(input.asc, 1, dm.passive1.crInc)
+const nodeA1CritInc = greaterEq(
+  input.asc,
+  1,
+  equal(condA1, 'on', dm.passive1.crInc)
 )
 const nodeA4OptTarget = infoMut(
   greaterEq(
@@ -108,20 +108,20 @@ const nodeA4OptTarget = infoMut(
 const nodeA4CritBonusDisp = equal(condA4, 'on', nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
 
-const nodeC1AtkSpd = equal(
-  condC1,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.atkSpdInc)
+const nodeC1AtkSpd = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'on', dm.constellation1.atkSpdInc)
 )
-const nodeC1NormalInc = equal(
-  condC1,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.dmgInc)
+const nodeC1NormalInc = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1, 'on', dm.constellation1.dmgInc)
 )
-const nodeC6PhysShred = equal(
-  condC6,
-  'on',
-  greaterEq(input.constellation, 6, -dm.constellation6.physShred)
+const nodeC6PhysShred = greaterEq(
+  input.constellation,
+  6,
+  equal(condC6, 'on', -dm.constellation6.physShred)
 )
 
 const dmgFormulas = {
@@ -181,9 +181,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey: elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),

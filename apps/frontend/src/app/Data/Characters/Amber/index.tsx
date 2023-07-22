@@ -25,7 +25,7 @@ const elementKey: ElementKey = 'pyro'
 const region: RegionKey = 'mondstadt'
 const data_gen = allStats.char.data[key]
 const skillParam_gen = allStats.char.skillParam[key]
-const ct = charTemplates(key, data_gen.weaponTypeKey)
+const ct = charTemplates(key, data_gen.weaponType)
 
 let a = 0,
   s = 0,
@@ -118,6 +118,25 @@ const dmgFormulas = {
     aimedCharged: dmgNode('atk', dm.charged.aimedCharged, 'charged', {
       hit: { ele: constant('pyro') },
     }),
+  },
+  plunging: Object.fromEntries(
+    Object.entries(dm.plunging).map(([key, value]) => [
+      key,
+      dmgNode('atk', value, 'plunging'),
+    ])
+  ),
+  skill: {
+    inheritedHp: prod(
+      subscript(input.total.skillIndex, dm.skill.inheritedHp),
+      input.total.hp
+    ),
+    dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+  },
+  burst: {
+    rainDmg: dmgNode('atk', dm.burst.rainDmg, 'burst'),
+    dmgPerWave: dmgNode('atk', dm.burst.dmgPerWave, 'burst'),
+  },
+  constellation1: {
     secondAimed: greaterEq(
       input.constellation,
       1,
@@ -136,23 +155,6 @@ const dmgFormulas = {
         percent(dm.constellation1.secArrowDmg)
       )
     ),
-  },
-  plunging: Object.fromEntries(
-    Object.entries(dm.plunging).map(([key, value]) => [
-      key,
-      dmgNode('atk', value, 'plunging'),
-    ])
-  ),
-  skill: {
-    inheritedHp: prod(
-      subscript(input.total.skillIndex, dm.skill.inheritedHp),
-      input.total.hp
-    ),
-    dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
-  },
-  burst: {
-    rainDmg: dmgNode('atk', dm.burst.rainDmg, 'burst'),
-    dmgPerWave: dmgNode('atk', dm.burst.dmgPerWave, 'burst'),
   },
   constellation2: {
     manualDetonationDmg: greaterEq(
@@ -192,9 +194,9 @@ export const data = dataObjForCharacterSheet(
 const sheet: ICharacterSheet = {
   key,
   name: ct.name,
-  rarity: data_gen.star,
+  rarity: data_gen.rarity,
   elementKey,
-  weaponTypeKey: data_gen.weaponTypeKey,
+  weaponTypeKey: data_gen.weaponType,
   gender: 'F',
   constellationName: ct.chg('constellationName'),
   title: ct.chg('title'),
@@ -221,24 +223,28 @@ const sheet: ICharacterSheet = {
             }),
           },
           {
-            node: infoMut(dmgFormulas.charged.secondAimed, {
+            node: infoMut(dmgFormulas.charged.aimedCharged, {
+              name: ct.chg(`auto.skillParams.6`),
+            }),
+          },
+        ],
+      },
+      ct.headerTem('constellation1', {
+        fields: [
+          {
+            node: infoMut(dmgFormulas.constellation1.secondAimed, {
               name: ct.chg(`auto.skillParams.5`),
               textSuffix: ct.ch('secondArrow'),
             }),
           },
           {
-            node: infoMut(dmgFormulas.charged.aimedCharged, {
-              name: ct.chg(`auto.skillParams.6`),
-            }),
-          },
-          {
-            node: infoMut(dmgFormulas.charged.secondAimedCharged, {
+            node: infoMut(dmgFormulas.constellation1.secondAimedCharged, {
               name: ct.chg(`auto.skillParams.6`),
               textSuffix: ct.ch('secondArrow'),
             }),
           },
         ],
-      },
+      }),
       {
         text: ct.chg('auto.fields.plunging'),
       },
@@ -399,7 +405,16 @@ const sheet: ICharacterSheet = {
     constellation3: ct.talentTem('constellation3', [
       { fields: [{ node: nodeC3 }] },
     ]),
-    constellation4: ct.talentTem('constellation4'),
+    constellation4: ct.talentTem('constellation4', [
+      ct.fieldsTem('constellation4', {
+        fields: [
+          {
+            text: st('addlCharges'),
+            value: 1,
+          },
+        ],
+      }),
+    ]),
     constellation5: ct.talentTem('constellation5', [
       { fields: [{ node: nodeC5 }] },
     ]),

@@ -1,4 +1,12 @@
+import type { SubstatKey } from '@genshin-optimizer/consts'
+import {
+  useBoolState,
+  useForceUpdate,
+  useMediaQueryUp,
+} from '@genshin-optimizer/react-util'
+import { clamp, filterFunction, sortFunction } from '@genshin-optimizer/util'
 import { Add } from '@mui/icons-material'
+import DifferenceIcon from '@mui/icons-material/Difference'
 import {
   Alert,
   Box,
@@ -29,13 +37,7 @@ import CardDark from '../Components/Card/CardDark'
 import InfoComponent from '../Components/InfoComponent'
 import SortByButton from '../Components/SortByButton'
 import { DatabaseContext } from '../Database/Database'
-import useBoolState from '../ReactHooks/useBoolState'
 import useDisplayArtifact from '../ReactHooks/useDisplayArtifact'
-import useForceUpdate from '../ReactHooks/useForceUpdate'
-import useMediaQueryUp from '../ReactHooks/useMediaQueryUp'
-import type { SubstatKey } from '../Types/artifact'
-import { filterFunction, sortFunction } from '../Util/SortByFilters'
-import { clamp } from '../Util/Util'
 import ArtifactCard from './ArtifactCard'
 import ArtifactFilter, { ArtifactRedButtons } from './ArtifactFilter'
 import {
@@ -44,10 +46,9 @@ import {
   artifactSortKeys,
   artifactSortMap,
 } from './ArtifactSort'
+import DupModal from './DupModal'
 import ProbabilityFilter from './ProbabilityFilter'
 import { probability } from './RollProbability'
-import DifferenceIcon from '@mui/icons-material/Difference'
-import DupModal from './DupModal'
 
 //lazy load the weapon display
 const ArtifactEditor = React.lazy(() => import('./ArtifactEditor'))
@@ -108,7 +109,7 @@ export default function PageArtifact() {
   const deferredArtifactDisplayState = useDeferredValue(artifactDisplayState)
   const deferredProbabilityFilter = useDeferredValue(probabilityFilter)
   useEffect(() => {
-    if (!showProbability) return
+    if (!showProbability) return undefined
     database.arts.values.forEach((art) =>
       database.arts.setProbability(
         art.id,
@@ -198,10 +199,10 @@ export default function PageArtifact() {
 
       {noArtifact && (
         <Alert severity="info" variant="filled">
-          Looks like you haven't added any artifacts yet. If you want, there are{' '}
+          Looks like you haven't added any artifacts yet. If you want, there are
           <Link color="warning.main" component={RouterLink} to="/scanner">
             automatic scanners
-          </Link>{' '}
+          </Link>
           that can speed up the import process!
         </Alert>
       )}

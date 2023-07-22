@@ -1,0 +1,47 @@
+{
+  "name": "sr-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/sr-frontend/src",
+  "tags": [],
+  "targets": {
+    "build": {},
+    "build-vite": {},
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sr-frontend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sr-frontend:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "sr-frontend:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sr-frontend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sr-frontend:build:development"
+        },
+        "production": {
+          "buildTarget": "sr-frontend:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test"
+    },
+    "lint": {}
+  }
+}

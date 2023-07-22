@@ -10,19 +10,19 @@ import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 const key: WeaponKey = 'EverlastingMoonglow'
 const data_gen = allStats.weapon.data[key]
 
-const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
+const hp_conv = [-1, 0.01, 0.015, 0.02, 0.025, 0.03]
 const [, trm] = trans('weapon', key)
 const normal_dmgInc = equal(
   input.weapon.key,
   key,
   prod(
-    subscript(input.weapon.refineIndex, hp_conv, { unit: '%' }),
+    subscript(input.weapon.refinement, hp_conv, { unit: '%' }),
     input.premod.hp
   )
 )
 const heal_ = subscript(
-  input.weapon.refineIndex,
-  data_gen.addProps.map((x) => x.heal_ ?? NaN)
+  input.weapon.refinement,
+  data_gen.refinementBonus['heal_']
 )
 export const data = dataObjForWeaponSheet(
   key,
