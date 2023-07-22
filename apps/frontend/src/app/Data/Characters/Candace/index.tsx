@@ -171,7 +171,10 @@ const dmgFormulas = {
     dmg: greaterEq(
       input.constellation,
       6,
-      customDmgNode(prod(dm.constellation6.dmg, input.total.hp), 'burst')
+      customDmgNode(
+        prod(percent(dm.constellation6.dmg), input.total.hp),
+        'burst'
+      )
     ),
   },
 }

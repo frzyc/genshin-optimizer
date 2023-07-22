@@ -212,13 +212,9 @@ export const dmgFormulas = {
     full: dmgNode('atk', dm.charged.full, 'charged', {
       hit: { ele: constant(elementKey) },
     }),
-    kindling: unequal(
-      condSkill,
-      'skill',
-      dmgNode('atk', dm.charged.kindling, 'charged', {
-        hit: { ele: constant(elementKey) },
-      })
-    ),
+    kindling: dmgNode('atk', dm.charged.kindling, 'charged', {
+      hit: { ele: constant(elementKey) },
+    }),
   },
   plunging: Object.fromEntries(
     Object.entries(dm.plunging).map(([key, value]) => [

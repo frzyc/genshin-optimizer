@@ -46,8 +46,8 @@ export class CharacterDataManager extends DataManager<
         this.database.storage.remove(key)
     }
   }
-  validate(obj: unknown): ICharacter | undefined {
-    if (!obj || typeof obj !== 'object') return
+  override validate(obj: unknown): ICharacter | undefined {
+    if (!obj || typeof obj !== 'object') return undefined
     const {
       key: characterKey,
       level: rawLevel,
@@ -68,7 +68,7 @@ export class CharacterDataManager extends DataManager<
       customMultiTarget,
     } = obj as ICharacter
 
-    if (!allCharacterKeys.includes(characterKey)) return // non-recoverable
+    if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
     if (!allHitModes.includes(hitMode)) hitMode = 'avgHit'
     if (
@@ -151,7 +151,7 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
-  toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+  override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedArtifacts: oldChar
@@ -172,7 +172,7 @@ export class CharacterDataManager extends DataManager<
       ...storageObj,
     }
   }
-  deCache(char: ICachedCharacter): ICharacter {
+  override deCache(char: ICachedCharacter): ICharacter {
     const {
       key,
       level,
@@ -209,7 +209,7 @@ export class CharacterDataManager extends DataManager<
     }
     return result
   }
-  toStorageKey(key: CharacterKey): string {
+  override toStorageKey(key: CharacterKey): string {
     return `char_${key}`
   }
   getTravelerCharacterKey(): CharacterKey {
@@ -228,7 +228,7 @@ export class CharacterDataManager extends DataManager<
     return this.get(key) as ICachedCharacter
   }
 
-  remove(key: CharacterKey) {
+  override remove(key: CharacterKey) {
     const char = this.get(key)
     if (!char) return
     for (const artKey of Object.values(char.equippedArtifacts)) {
@@ -316,7 +316,7 @@ export class CharacterDataManager extends DataManager<
       allTravelerKeys.forEach((ck) => this.trigger(ck, reason, this.get(ck)))
     else this.trigger(key, reason, this.get(key))
   }
-  importGOOD(good: IGOOD & IGO, result: ImportResult) {
+  override importGOOD(good: IGOOD & IGO, result: ImportResult) {
     result.characters.beforeMerge = this.values.length
 
     const source = good.source ?? 'Unknown'

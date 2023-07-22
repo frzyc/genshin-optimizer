@@ -7,10 +7,10 @@ import type {
   WeaponTypeKey,
 } from '@genshin-optimizer/consts'
 import { locCharKeyToCharKey } from '@genshin-optimizer/consts'
-import type { CharacterDataGen } from '@genshin-optimizer/gi-pipeline'
+import type { CharacterDataGen } from '@genshin-optimizer/gi-stats'
 import type { NumNode } from '@genshin-optimizer/pando'
 import { prod, subscript, sum } from '@genshin-optimizer/pando'
-import type { Data, FormulaArg, Stat } from '../util'
+import type { TagMapNodeEntries, FormulaArg, Stat } from '../util'
 import {
   addStatCurve,
   allStatics,
@@ -46,8 +46,8 @@ export function dmg(
   levelScaling: number[],
   move: Exclude<MoveKey, 'elemental'>,
   arg: { ele?: ElementWithPhyKey; baseMulti?: NumNode } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   let { ele } = arg
   if (!ele)
     switch (move) {
@@ -93,8 +93,8 @@ export function shield(
   flat: number[],
   talent: 'auto' | 'skill' | 'burst',
   arg: { ele?: ElementKey } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   const lvl = self.char[talent]
   return customShield(
     name,
@@ -114,8 +114,8 @@ export function fixedShield(
   percent: number | NumNode,
   flat: number | NumNode,
   arg: { ele?: ElementKey } & FormulaArg = {},
-  ...extra: Data
-): Data {
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
   return customShield(
     name,
     arg.ele,
@@ -128,8 +128,8 @@ export function fixedShield(
 export function entriesForChar(
   { ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
-): Data {
-  const specials = new Set(Object.keys(lvlCurves.map(({ key }) => key)))
+): TagMapNodeEntries {
+  const specials = new Set(lvlCurves.map(({ key }) => key))
   specials.delete('atk')
   specials.delete('def')
   specials.delete('hp')

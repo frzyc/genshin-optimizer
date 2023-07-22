@@ -4,31 +4,10 @@
   "sourceRoot": "libs/pipeline/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/pipeline",
-        "main": "libs/pipeline/src/index.ts",
-        "tsConfig": "libs/pipeline/tsconfig.lib.json",
-        "assets": ["libs/pipeline/*.md"]
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/pipeline/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "libs/pipeline/jest.config.ts",
-        "passWithNoTests": true
-      }
-    }
+    "build": {},
+    "build-ts": {},
+    "lint": {},
+    "test": {}
   },
   "tags": []
 }

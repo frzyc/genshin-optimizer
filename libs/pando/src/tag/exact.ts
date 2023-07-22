@@ -1,11 +1,12 @@
-import type { CompiledTagMapValues } from './compilation'
+import type { RawTagMapValues } from './compilation'
 import type { TagID } from './keys'
 
+/** `TagMap` values speciallized in finding entries with matching tags. This operates on `TagID` instead of `Tag`. */
 export class TagMapExactValues<V> {
   internal: Internal<V>
   tagLen: number
 
-  constructor(tagLen: number, compiled: CompiledTagMapValues<V>) {
+  constructor(tagLen: number, compiled: RawTagMapValues<V>) {
     this.internal = new Internal(compiled)
     this.tagLen = tagLen
   }
@@ -22,14 +23,14 @@ class Internal<V> {
   children: Map<number, Internal<V>>
   values: V[]
 
-  constructor(compiled: CompiledTagMapValues<V>) {
+  constructor(compiled: RawTagMapValues<V>) {
     const { '': values, ...remaining } = compiled
     this.children = new Map()
     this.values = values ?? []
 
     for (const v of Object.values(remaining))
       for (const [k, vv] of Object.entries(v!))
-        this.children.set(+k, new Internal(vv as CompiledTagMapValues<V>))
+        this.children.set(+k, new Internal(vv as RawTagMapValues<V>))
   }
 
   exact(id: number): Internal<V> {

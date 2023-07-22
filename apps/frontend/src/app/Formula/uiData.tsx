@@ -628,7 +628,7 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
 function mergeInfo(base: Info, override: Info): Info {
   const result = { ...base }
   for (const [key, value] of Object.entries(override))
-    if (value) result[key] = value as any
+    if (value) (result[key] as any) = value as any
   return result
 }
 

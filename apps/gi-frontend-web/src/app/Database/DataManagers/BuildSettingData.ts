@@ -93,12 +93,12 @@ export class BuildSettingDataManager extends DataManager<
       )
         this.database.storage.remove(key)
   }
-  toStorageKey(key: string): string {
+  override toStorageKey(key: string): string {
     return `buildSetting_${key}`
   }
-  validate(obj: object, key: string): BuildSetting | undefined {
-    if (!allCharacterKeys.includes(key as CharacterKey)) return
-    if (typeof obj !== 'object') return
+  override validate(obj: object, key: string): BuildSetting | undefined {
+    if (!allCharacterKeys.includes(key as CharacterKey)) return undefined
+    if (typeof obj !== 'object') return undefined
     let {
       artSetExclusion,
       artExclusion,
@@ -195,7 +195,7 @@ export class BuildSettingDataManager extends DataManager<
       levelHigh,
     }
   }
-  get(key: CharacterKey) {
+  override get(key: CharacterKey) {
     return super.get(key) ?? initialBuildSettings
   }
 }

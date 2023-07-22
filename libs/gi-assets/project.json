@@ -5,30 +5,12 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/gi-assets/**/*.{ts,tsx,js,jsx}"]
-      }
+    "genfile": {
+      "executor": "@genshin-optimizer/gi-assets:gen-assets",
+      "outputs": ["${projectRoot}/src/gen/**/*"]
     },
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/libs/gi-assets"
-      },
-      "configurations": {
-        "development": {
-          "mode": "development"
-        },
-        "production": {
-          "mode": "production"
-        }
-      },
-      "dependsOn": ["^pipeline"]
-    }
-  },
-  "implicitDependencies": ["gi-assets-gen"]
+    "lint": {},
+    "build": {},
+    "build-vite": {}
+  }
 }

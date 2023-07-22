@@ -1,6 +1,7 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi-good'
 import {
+  combineConst,
   compile,
   compileTagMapValues,
   detach,
@@ -9,7 +10,7 @@ import {
 } from '@genshin-optimizer/pando'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
-import type { Data, Tag } from './data/util'
+import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
@@ -19,8 +20,8 @@ import {
   team,
   userBuff,
 } from './data/util'
-import {} from './debug'
-import rawData from './example.test.json'
+import { DebugCalculator } from './debug'
+import * as rawData from './example.test.json'
 import {
   artifactsData,
   charData,
@@ -34,7 +35,7 @@ import {
 // doesn't crash. Any test for correct values should go to `correctness` tests.
 // Should a test here fail, extract a minimized version to `correctness` test.
 describe('example', () => {
-  const data: Data = [
+  const data: TagMapNodeEntries = [
       ...teamData(['member0'], ['member0', 'member1']),
 
       ...withMember(
@@ -170,7 +171,7 @@ describe('example', () => {
     expect(cata).toEqual('spread')
   })
   test('list conditionals affecting a given node', () => {
-    const result = calc.compute(member0.common.cappedCritRate_.burgeon)
+    const result = calc.compute(member0.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
     expect(conds.length).toEqual(2)
@@ -207,7 +208,7 @@ describe('example', () => {
       if (tag['member'] != 'member0') return undefined // Wrong member
       if (tag['et'] != 'self') return undefined // Not applied (only) to self
 
-      if (tag['src'] === 'art' && tag['qt'] === 'premod')
+      if (tag['src'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus
       if (tag['q'] === 'count' && allArts.has(tag['src'] as any))
         return { q: tag['src']! } // Art set counter
@@ -216,6 +217,7 @@ describe('example', () => {
 
     // Step 3: Optimize nodes, as needed
     detached = flatten(detached)
+    detached = combineConst(detached)
 
     // Step 4: Compile for quick iteration
     const compiled = compile(
@@ -233,5 +235,22 @@ describe('example', () => {
 
     // Step 5: Calculate the value
     compiled([{ atk: 10 }, { atk_: 0.5 }])
+  })
+
+  test.skip('debug formula', () => {
+    // Pick formula
+    const normal0 = calc
+      .listFormulas({ member: 'member1' })
+      .find((x) => x.name === 'normal_0')!
+
+    // Use `DebugCalculator` instead of `Calculator`, same constructor
+    const debugCalc = new DebugCalculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    )
+
+    // Print calculation steps
+    console.log(debugCalc.debug(reader.withTag(normal0)))
   })
 })

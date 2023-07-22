@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "sync-repo": {
+      "implementation": "./src/executors/sync-repo/executor",
+      "schema": "./src/executors/sync-repo/schema.json",
+      "description": "sync-repo executor"
+    }
+  }
+}

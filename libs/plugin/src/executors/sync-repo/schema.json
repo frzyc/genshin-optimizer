@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "SyncRepo executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "repoUrl": {
+      "type": "string",
+      "description": "Git repo URL"
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "Local repo path (including the repo name)"
+    },
+    "prefixPath": {
+      "type": "boolean",
+      "description": "Whether to prepend `localPath` with `{workspaceRoot}`. Default: true"
+    }
+  },
+  "required": []
+}
