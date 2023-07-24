@@ -67,6 +67,7 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional Skill Charge",
   "addlCharges": "Additional Skill Charges",
+  "charOnField": "Character is on-field",
   "charOffField": "Character is off-field",
   "activeCharField": "Character is inside the ability's field",
   "opponentsField": "Opponent is inside the ability's field",

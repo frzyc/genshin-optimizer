@@ -2,15 +2,13 @@ import { input } from '../../../Formula'
 import type { Data } from '../../../Formula/type'
 import { greaterEq, infoMut, percent, prod } from '../../../Formula/utils'
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
-import { cond, stg, st } from '../../SheetUtil'
+import { stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 
 const key: ArtifactSetKey = 'TravelingDoctor'
 const setHeader = setHeaderTemplate(key)
-
-const [condStatePath, condState] = cond(key, 'state')
 
 const set2 = greaterEq(input.artSet.TravelingDoctor, 2, percent(0.2))
 const heal = greaterEq(
@@ -40,21 +38,14 @@ const sheet: IArtifactSheet = {
       document: [
         {
           header: setHeader(4),
-          value: condState,
-          path: condStatePath,
-          name: st('afterUse.burst'),
-          states: {
-            on: {
-              fields: [
-                {
-                  node: infoMut(heal, {
-                    name: stg('healing'),
-                    variant: 'heal',
-                  }),
-                },
-              ],
+          fields: [
+            {
+              node: infoMut(heal, {
+                name: stg('healing'),
+                variant: 'heal',
+              }),
             },
-          },
+          ],
         },
       ],
     },
