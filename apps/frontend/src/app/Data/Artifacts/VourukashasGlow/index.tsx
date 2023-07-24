@@ -10,7 +10,7 @@ import {
 } from '../../../Formula/utils'
 import { objKeyMap, range } from '@genshin-optimizer/util'
 import KeyMap from '../../../KeyMap'
-import { cond, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -95,6 +95,11 @@ const sheet: IArtifactSheet = {
               },
               {
                 node: set4_stacks_burst_dmg_,
+              },
+              {
+                text: stg('duration'),
+                value: 5,
+                unit: 's',
               },
             ],
           })),
