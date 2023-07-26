@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["./apps/**/*", "./libs/**/*"]
+  "include": ["./apps/*/src/**/*.ts", "./apps/*/src/**/*.tsx", "./libs/*/src/**/*.ts", "./libs/*/src/**/*.tsx"]
 }
