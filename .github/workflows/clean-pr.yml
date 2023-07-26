@@ -21,7 +21,7 @@ jobs:
       - name: Determine build information
         id: build-info
         run: |
-          if [[ "${{ github.event.name }}" == "workflow_dispatch" ]]
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]
           then
             echo "deploy_path=${{ github.event.inputs.deployment_name }}" >> $GITHUB_OUTPUT
           else
@@ -47,7 +47,7 @@ jobs:
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        if: github.event.name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         with:
           body: |
             [${{ steps.output-date.outputs.date }}] - Deleted deployment
