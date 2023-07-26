@@ -35,19 +35,19 @@ jobs:
       - name: Determine build information
         id: build-info
         run: |
-          if [[ "${{ github.event.name }}" == "workflow_dispatch" ]]
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]
           then
             echo "repo_name=${{ github.event.inputs.repo_full_name }}" >> $GITHUB_OUTPUT
           else
             echo "repo_name=${{ github.repository }}" >> $GITHUB_OUTPUT
           fi
-          if [[ "${{ github.event.name }}" == "workflow_dispatch" ]]
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]
           then
             echo "ref=${{ github.event.inputs.ref }}" >> $GITHUB_OUTPUT
           else
             echo "ref=${{ github.head_ref }}" >> $GITHUB_OUTPUT
           fi
-          if [[ "${{ github.event.name }}" == "workflow_dispatch" ]]
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]
           then
             echo "deploy_path=${{ github.event.inputs.deployment_name }}" >> $GITHUB_OUTPUT
           else
@@ -72,11 +72,11 @@ jobs:
           ENVFILE: ${{ secrets.ENVFILE }}
       - name: Output date
         id: output-date
-        if: github.event.name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        if: github.event.name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         with:
           body: |
             [${{ steps.output-date.outputs.date }}] - Building new version
@@ -113,11 +113,11 @@ jobs:
           echo "url=Deployed to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2
-        if: github.event.name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
       - name: Maintain comment
         uses: actions-cool/maintain-one-comment@v3
-        if: github.event.name != 'workflow_dispatch'
+        if: github.event_name != 'workflow_dispatch'
         with:
           body: |
             [${{ steps.output-date2.outputs.date }}] - ${{ steps.export-url.outputs.url }}
