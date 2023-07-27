@@ -1,4 +1,5 @@
 name: Clean PR Deployment
+run-name: Clean deployment ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}${{ github.event.inputs.ref }}
 
 on:
   pull_request:
