@@ -112,6 +112,7 @@ jobs:
         run: |
           IFS=/ read -r account repo <<< ${{ vars.PR_REPO }}
           echo "url=Deployed to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+          echo "eployed to https://$account.github.io/$repo/${{ steps.build-info.outputs.deploy_path }} (Takes 3-5 minutes after this completes to be available)"
       - name: Output date
         id: output-date2
         if: github.event_name != 'workflow_dispatch'
