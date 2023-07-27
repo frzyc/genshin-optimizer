@@ -1,5 +1,5 @@
 name: Deploy PR
-run-name: Deploy ${{ github.event.number }}${{ github.event.inputs.deployment_name }}
+run-name: Deploy ${{ github.event.number }}${{ github.event.inputs.deployment_name }} - ${{ github.event.pull_request.title }}${{ github.event.inputs.ref }}
 
 on:
   pull_request:
