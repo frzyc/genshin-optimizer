@@ -2,7 +2,7 @@
   "setName": "Lueur du vourukasha",
   "setEffects": {
     "2": "Les PV sont augmentés de 20 %.",
-    "4": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de 10 %. Lorsque le personnage équipé de l'artéfact a subi des DGT, cet effet de bonus de DGT augmente de 80{NON_BREAK_SPACE}% pendant 5 s. Cet effet peut être cumulé 5 fois maximum, la durée de chaque cumul étant calculée de façon indépendante. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé."
+    "4": "Les DGT infligés par les compétences et déchaînements élémentaires augmentent de 10 %. Lorsque le personnage équipé de l'artéfact a subi des DGT, cet effet de bonus de DGT augmente de 80 % pendant 5 s. Cet effet peut être cumulé 5 fois maximum, la durée de chaque cumul étant calculée de façon indépendante. Cet effet peut être déclenché même si le personnage fait partie de l'équipe mais n'est pas déployé."
   },
   "pieces": {
     "flower": {

@@ -1,6 +1,8 @@
 {
   "name": "Lama smussata",
-  "description": "Sogni di gioventù e brivido dell'avventura. Se questo non bastasse, aggiungi molto coraggio.",
+  "description": {
+    "0": "Sogni di gioventù e brivido dell'avventura. Se questo non bastasse, aggiungi molto coraggio."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

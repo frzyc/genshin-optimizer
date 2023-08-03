@@ -2,7 +2,7 @@
   "setName": "Cronache del Padiglione nel deserto",
   "setEffects": {
     "2": "Bonus DAN da Anemo +15%.",
-    "4": "Quando gli attacchi caricati colpiscono gli avversari, la VEL dell'attacco normale del personaggio aumenta di un 10%, mentre i DAN da attacco normale, caricato e in picchiata aumentano di un 40% per 15{NON_BREAK_SPACE}s."
+    "4": "Quando gli attacchi caricati colpiscono gli avversari, la VEL dell'attacco normale del personaggio aumenta di un 10%, mentre i DAN da attacco normale, caricato e in picchiata aumentano di un 40% per 15 s."
   },
   "pieces": {
     "flower": {

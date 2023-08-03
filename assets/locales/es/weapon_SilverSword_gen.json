@@ -1,6 +1,8 @@
 {
   "name": "Espada Plateada",
-  "description": "Una espada para ahuyentar a los demonios. Todo el mundo sabe que está hecha de una aleación de plata, no de plata pura.",
+  "description": {
+    "0": "Una espada para ahuyentar a los demonios. Todo el mundo sabe que está hecha de una aleación de plata, no de plata pura."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

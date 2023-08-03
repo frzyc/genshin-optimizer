@@ -161,7 +161,7 @@
   "constellation6": {
     "name": "Pluie de météores de Naganohara",
     "description": {
-      "0": "Tant que <strong>Danse du feu «{NON_BREAK_SPACE}Niwabi »</strong> est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale."
+      "0": "Tant que <strong>Danse du feu « Niwabi »</strong> est active, les attaques normales de Yoimiya ont 50 % de chances de libérer une flèche enflammée supplémentaire qui inflige 60 % des DGT d'origine. Ces DGT sont considérés comme des DGT d'attaque normale."
     }
   }
 }

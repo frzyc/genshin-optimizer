@@ -44,7 +44,7 @@
       "0": "Sacrifie une partie des PV pour créer un anneau d'herbes de consécration qui inflige des <electro>DGT Électro</electro> aux ennemis proches.",
       "1": "<br/>",
       "2": "<strong>Anneau d'herbes de consécration</strong>",
-      "3": "Suit le personnage déployé pour infliger des <electro>DGT Électro</electro> aux ennemis proches et restaurer les PV des personnages déployés à portée d'une valeur proportionnelle aux PV max de Kuki Shinobu, ces deux effets se déclenchant une fois toutes les 1,5{NON_BREAK_SPACE}s.",
+      "3": "Suit le personnage déployé pour infliger des <electro>DGT Électro</electro> aux ennemis proches et restaurer les PV des personnages déployés à portée d'une valeur proportionnelle aux PV max de Kuki Shinobu, ces deux effets se déclenchant une fois toutes les 1,5 s.",
       "4": "<br/>",
       "5": "Le sacrifice de PV de cette compétence ne fera pas tomber les PV de Kuki Shinobu en dessous de 20 %.",
       "6": "<br/>",

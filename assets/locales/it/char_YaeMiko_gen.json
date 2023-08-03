@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Canalizzazione del sakura",
     "description": {
-      "0": "Quando il fulmine di un <strong>Sakura Sesshou</strong> colpisce gli avversari, il <electro>bonus DAN da Electro</electro> di tutti i membri vicini del gruppo aumenta di un 20% per 5{NON_BREAK_SPACE}s."
+      "0": "Quando il fulmine di un <strong>Sakura Sesshou</strong> colpisce gli avversari, il <electro>bonus DAN da Electro</electro> di tutti i membri vicini del gruppo aumenta di un 20% per 5 s."
     }
   },
   "constellation5": {

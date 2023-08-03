@@ -1,6 +1,8 @@
 {
   "name": "Silver Sword",
-  "description": "Pedang perak yang ditakuti iblis. Tapi semua orang tahu, sebenarnya ini bukan perak murni, melainkan perak campuran.",
+  "description": {
+    "0": "Pedang perak yang ditakuti iblis. Tapi semua orang tahu, sebenarnya ini bukan perak murni, melainkan perak campuran."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

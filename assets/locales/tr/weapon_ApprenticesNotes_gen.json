@@ -1,6 +1,8 @@
 {
   "name": "Çırağın Notları",
-  "description": "Parlak bir öğrencinin notları. Göz alıcı bir el yazısıyla yazılmış en kullanışlı büyüleri içerir.",
+  "description": {
+    "0": "Parlak bir öğrencinin notları. Göz alıcı bir el yazısıyla yazılmış en kullanışlı büyüleri içerir."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

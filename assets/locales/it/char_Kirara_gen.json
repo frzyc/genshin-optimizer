@@ -49,10 +49,10 @@
       "5": "<br/>",
       "6": "<strong>Nekopacco urgente</strong>",
       "7": [
-        " Infligge <dendro>DAN da Dendro</dendro> agli avversari contro cui si scaraventa. Questo effetto può attivarsi su ciascun avversario una volta ogni 0,5{NON_BREAK_SPACE}s.",
+        " Infligge <dendro>DAN da Dendro</dendro> agli avversari contro cui si scaraventa. Questo effetto può attivarsi su ciascun avversario una volta ogni 0,5 s.",
         " Quando è in questo stato, la velocità di movimento, la velocità di arrampicata e la potenza di salto di Kirara aumentano, così come il suo consumo di vigore durante l'arrampicata.",
         " Quando la durata termina o l'abilità viene usata di nuovo, scatena un Assalto graffiante più potente dell'attacco eseguito nella variante a pressione, infliggendo <dendro>DAN da Dendro ad area</dendro>.",
-        " Lo stato di Nekopacco urgente dura fino a un massimo di 10{NON_BREAK_SPACE}s. Al termine di quest'ultimo, il TdR dell'abilità si riavvia. Più tempo Kirara trascorre in questo stato, più lungo sarà il TdR.",
+        " Lo stato di Nekopacco urgente dura fino a un massimo di 10 s. Al termine di quest'ultimo, il TdR dell'abilità si riavvia. Più tempo Kirara trascorre in questo stato, più lungo sarà il TdR.",
         " Lo stato termina immediatamente se si usa uno Scatto o si annulla attivamente una scalata."
       ],
       "8": "<br/>",
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Code ammalianti",
     "description": {
-      "0": "Quando Kirara è nello stato di Nekopacco urgente di <strong>Calcio Miaoteoritico</strong>, ciascun impatto contro l'avversario le conferisce un accumulo di <strong>Imballaggio rinforzato</strong>. Quest'effetto può attivarsi una volta per ciascun colpo a segno ogni 0,5{NON_BREAK_SPACE}s. Massimo 3 accumuli. Al termine dello stato di Nekopacco urgente, ciascun accumulo di Imballaggio rinforzato crea 1 Scudo di trasporto sicuro per Kirara. Gli scudi così creati offrono un 20% dell'assorbimento DAN dello Scudo di trasporto sicuro creato da <strong>Calcio Miaoteoritico</strong>. Se Kirara è già sotto la protezione di uno Scudo di trasporto sicuro creato da Calcio Miaoteoritico, il suo assorbimento DAN si accumula con quello di questi scudi e la sua durata viene reimpostata."
+      "0": "Quando Kirara è nello stato di Nekopacco urgente di <strong>Calcio Miaoteoritico</strong>, ciascun impatto contro l'avversario le conferisce un accumulo di <strong>Imballaggio rinforzato</strong>. Quest'effetto può attivarsi una volta per ciascun colpo a segno ogni 0,5 s. Massimo 3 accumuli. Al termine dello stato di Nekopacco urgente, ciascun accumulo di Imballaggio rinforzato crea 1 Scudo di trasporto sicuro per Kirara. Gli scudi così creati offrono un 20% dell'assorbimento DAN dello Scudo di trasporto sicuro creato da <strong>Calcio Miaoteoritico</strong>. Se Kirara è già sotto la protezione di uno Scudo di trasporto sicuro creato da Calcio Miaoteoritico, il suo assorbimento DAN si accumula con quello di questi scudi e la sua durata viene reimpostata."
     }
   },
   "passive2": {
@@ -132,7 +132,7 @@
     "description": {
       "0": "Quando Kirara è nello stato di Nekopacco urgente di <strong>Calcio Miaoteoritico</strong>, conferisce degli Scudi di trasporto critico agli altri membri del gruppo contro cui si schianta.",
       "1": "L'assorbimento DAN di uno Scudo di trasporto critico è pari a un 40% dell'assorbimento massimo di un normale Scudo di trasporto sicuro creato da <strong>Calcio Miaoteoritico</strong>, e assorbe i <dendro>DAN da Dendro</dendro> con un 250% di efficacia.",
-      "2": "Gli Scudi di trasporto critico durano 12{NON_BREAK_SPACE}s e possono essere attivati una volta ogni 10{NON_BREAK_SPACE}s su ciascun personaggio."
+      "2": "Gli Scudi di trasporto critico durano 12 s e possono essere attivati una volta ogni 10 s su ciascun personaggio."
     }
   },
   "constellation3": {
@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Destriera di Skanda",
     "description": {
-      "0": "Quando i personaggi attivi protetti da <strong>Scudi di trasporto sicuro</strong> o <strong>Scudi di trasporto critico</strong> colpiscono gli avversari con attacchi normali, caricati o in picchiata, Kirara esegue un attacco coordinato usando dei <strong>Mini Cardamomi di erba gatta</strong>, infliggendo <dendro>DAN da Dendro</dendro> pari a un 200% del suo ATT. I DAN inflitti in questo modo sono considerati DAN da Tripudio elementale. Quest'effetto può attivarsi una volta ogni 3,8{NON_BREAK_SPACE}s. Questo TdR è condiviso tra tutti i membri del gruppo."
+      "0": "Quando i personaggi attivi protetti da <strong>Scudi di trasporto sicuro</strong> o <strong>Scudi di trasporto critico</strong> colpiscono gli avversari con attacchi normali, caricati o in picchiata, Kirara esegue un attacco coordinato usando dei <strong>Mini Cardamomi di erba gatta</strong>, infliggendo <dendro>DAN da Dendro</dendro> pari a un 200% del suo ATT. I DAN inflitti in questo modo sono considerati DAN da Tripudio elementale. Quest'effetto può attivarsi una volta ogni 3,8 s. Questo TdR è condiviso tra tutti i membri del gruppo."
     }
   },
   "constellation5": {
@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Panorami infiniti",
     "description": {
-      "0": "Quando Kirara usa l'abilità o il Tripudio elementale, fornisce a tutti membri del gruppo vicini un 12% di bonus DAN per tutti gli elementi per 15{NON_BREAK_SPACE}s."
+      "0": "Quando Kirara usa l'abilità o il Tripudio elementale, fornisce a tutti membri del gruppo vicini un 12% di bonus DAN per tutti gli elementi per 15 s."
     }
   }
 }

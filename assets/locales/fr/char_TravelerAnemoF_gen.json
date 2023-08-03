@@ -77,7 +77,7 @@
       "3": "La tornade absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels elle entre en contact, ceux-ci conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.",
       "4": "Un seul élément peut être absorbé à la fois.",
       "5": "<br/>",
-      "6": "<i>Vous avez étudié le battement des ailes du papillon avec Paimon.</i>"
+      "6": "<i>Paimon et vous avez étudié les battements qui agitent les ailes des papillons...</i>"
     },
     "skillParams": {
       "0": "DGT tornade",

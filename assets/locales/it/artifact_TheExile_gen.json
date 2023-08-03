@@ -2,7 +2,7 @@
   "setName": "Esule",
   "setEffects": {
     "2": "Ricarica d'energia +20%.",
-    "4": "L'uso di un Tripudio elementale rigenera 2 di energia per tutti i membri del gruppo (escluso il personaggio che equipaggia il set) ogni 2{NON_BREAK_SPACE}s per 6{NON_BREAK_SPACE}s. Non cumulabile."
+    "4": "L'uso di un Tripudio elementale rigenera 2 di energia per tutti i membri del gruppo (escluso il personaggio che equipaggia il set) ogni 2 s per 6 s. Non cumulabile."
   },
   "pieces": {
     "flower": {

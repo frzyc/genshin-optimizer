@@ -104,13 +104,13 @@
   "passive1": {
     "name": "Lunga vita",
     "description": {
-      "0": "Quando un personaggio sotto l'effetto di <strong>Arte dell'Adeptus: Messaggero del gelo</strong> innesca una reazione elementale, il bonus di guarigione ricevuta aumenta di un 20% per 8{NON_BREAK_SPACE}s."
+      "0": "Quando un personaggio sotto l'effetto di <strong>Arte dell'Adeptus: Messaggero del gelo</strong> innesca una reazione elementale, il bonus di guarigione ricevuta aumenta di un 20% per 8 s."
     }
   },
   "passive2": {
     "name": "Mistero arcano",
     "description": {
-      "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 30{NON_BREAK_SPACE}s."
+      "0": "Quando Qiqi colpisce gli avversari con gli attacchi normali e caricati, ha un 50% di probabilità di marchiarli con un Talismano proteggi fortuna per 6 s. Si può verificare una sola volta ogni 30 s."
     }
   },
   "passive3": {
@@ -155,7 +155,7 @@
     "name": "Rito della rinascita",
     "description": {
       "0": "<strong>Arte dell'Adeptus: Protettrice della fortuna</strong> rianima tutti i membri sconfitti del gruppo e rigenera un 50% dei loro PS.",
-      "1": "Si può verificare una sola volta ogni 15{NON_BREAK_SPACE}min."
+      "1": "Si può verificare una sola volta ogni 15 min."
     }
   }
 }

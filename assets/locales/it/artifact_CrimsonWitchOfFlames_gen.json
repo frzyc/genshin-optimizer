@@ -2,7 +2,7 @@
   "setName": "Strega cremisi delle fiamme",
   "setEffects": {
     "2": "Bonus DAN da Pyro +15%.",
-    "4": "Aumenta di un 40% i DAN da Sovraccarico, Ustione e Germinazione, e di un 15% quelli da Vaporizzazione e Fusione. Usare un'abilità elementale aumenta il bonus del set da 2 pezzi di un 50% del suo valore iniziale per 10{NON_BREAK_SPACE}s. Cumulabile fino a 3 volte."
+    "4": "Aumenta di un 40% i DAN da Sovraccarico, Ustione e Germinazione, e di un 15% quelli da Vaporizzazione e Fusione. Usare un'abilità elementale aumenta il bonus del set da 2 pezzi di un 50% del suo valore iniziale per 10 s. Cumulabile fino a 3 volte."
   },
   "pieces": {
     "flower": {

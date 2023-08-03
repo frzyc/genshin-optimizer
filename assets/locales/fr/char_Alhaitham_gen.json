@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Intuition",
     "description": {
-      "0": "Lorsqu'une attaque de rayonnement touche un ennemi, le TdR d'<strong>Universalité : Élaboration de forme</strong> diminue de 1,2{NON_BREAK_SPACE}s. Cet effet peut être déclenché une fois toutes les secondes."
+      "0": "Lorsqu'une attaque de rayonnement touche un ennemi, le TdR d'<strong>Universalité : Élaboration de forme</strong> diminue de 1,2 s. Cet effet peut être déclenché une fois toutes les secondes."
     }
   },
   "constellation2": {
@@ -168,7 +168,7 @@
       "0": "Alhaitham bénéficie des effets suivants :",
       "1": [
         " 2 s après l'utilisation de <strong>Champ particulier : Liens de phénomène</strong>, il génère 3 miroirs de diffraction, peu importe le nombre de miroirs consommés.",
-        " Si Alhaitham génère un miroir de diffraction alors que leur nombre a déjà atteint le maximum, il augmente son taux CRIT de 10 % et ses DGT CRIT de 70 % pendant 6 s. Lorsque cet effet se déclenche à nouveau alors que sa durée n'est pas écoulée, la durée augmente de 6{NON_BREAK_SPACE}s."
+        " Si Alhaitham génère un miroir de diffraction alors que leur nombre a déjà atteint le maximum, il augmente son taux CRIT de 10 % et ses DGT CRIT de 70 % pendant 6 s. Lorsque cet effet se déclenche à nouveau alors que sa durée n'est pas écoulée, la durée augmente de 6 s."
       ]
     }
   }

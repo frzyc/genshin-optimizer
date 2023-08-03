@@ -174,8 +174,8 @@
     "name": "Fruit d'aboutissement rationnel",
     "description": {
       "0": "Lorsque Nahida touche un ennemi affecté par une graine de Skandha d'<strong>Omniscience des plans</strong> avec une attaque normale ou chargée après avoir utilisé <strong>Cœur illusoire</strong>, elle utilise une « Purification trikarmique : Oubli karmique » sur cet ennemi et tous les autres ennemis liés, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 200 % de son ATQ et 400 % de sa maîtrise élémentaire.",
-      "1": "Les DGT infligés par la «{NON_BREAK_SPACE}Purification trikarmique : Oubli karmique » sont considérés comme des DGT de compétence élémentaire et peuvent être déclenchés une fois tous les 0,2 s.",
-      "2": "Cet effet dure 10 s ou disparaît après avoir déclenché une «{NON_BREAK_SPACE}Purification trikarmique : Oubli karmique » 6 fois."
+      "1": "Les DGT infligés par la « Purification trikarmique : Oubli karmique » sont considérés comme des DGT de compétence élémentaire et peuvent être déclenchés une fois tous les 0,2 s.",
+      "2": "Cet effet dure 10 s ou disparaît après avoir déclenché une « Purification trikarmique : Oubli karmique » 6 fois."
     }
   }
 }

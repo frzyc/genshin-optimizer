@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Resilienza arborea",
     "description": {
-      "0": "La durata della <strong>Lampada di loto Lea</strong> aumenta di 3{NON_BREAK_SPACE}s."
+      "0": "La durata della <strong>Lampada di loto Lea</strong> aumenta di 3 s."
     }
   },
   "constellation3": {

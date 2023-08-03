@@ -123,8 +123,8 @@
   "passive2": {
     "name": "Geläutertes Erwachen",
     "description": {
-      "0": "Erhöht für jeden Punkt von Nahidas Elementarkunde über 200 Punkten den mit der dreifachen Karma-Läuterung von <strong>Kennerin aller Tricks</strong> verursachten Schaden um 0,1{NON_BREAK_SPACE}% und KT der dreifachen Karma-Läuterung um 0,03{NON_BREAK_SPACE}%.",
-      "1": "Auf diese Weise kann der Schaden der dreifachen Karma-Läuterung höchstens um 80{NON_BREAK_SPACE}% und ihre KT höchstens um 24{NON_BREAK_SPACE}% erhöht werden."
+      "0": "Erhöht für jeden Punkt von Nahidas Elementarkunde über 200 Punkten den mit der dreifachen Karma-Läuterung von <strong>Kennerin aller Tricks</strong> verursachten Schaden um 0,1 % und KT der dreifachen Karma-Läuterung um 0,03 %.",
+      "1": "Auf diese Weise kann der Schaden der dreifachen Karma-Läuterung höchstens um 80 % und ihre KT höchstens um 24 % erhöht werden."
     }
   },
   "passive3": {
@@ -173,7 +173,7 @@
   "constellation6": {
     "name": "Frucht der Kulmination der Vernunft",
     "description": {
-      "0": "Trifft Nahida nach Auslösen von <strong>Illusorisches Herz</strong> einen mit Samen von Skandha von <strong>Kennerin aller Tricks</strong> markierten Gegner mit einem Standardangriff oder einem heftigen Schlag, wird diesem Gegner und allen mit diesem verketteten Gegnern „Dreifache Karma-Läuterung – karmisches Vergessen“ zugefügt. Dadurch wird diesen Gegnern <dendro>Dendro-Schaden</dendro> basierend auf 200{NON_BREAK_SPACE}% von Nahidas ANG und 400{NON_BREAK_SPACE}% ihrer Elementarkunde zugefügt.",
+      "0": "Trifft Nahida nach Auslösen von <strong>Illusorisches Herz</strong> einen mit Samen von Skandha von <strong>Kennerin aller Tricks</strong> markierten Gegner mit einem Standardangriff oder einem heftigen Schlag, wird diesem Gegner und allen mit diesem verketteten Gegnern „Dreifache Karma-Läuterung – karmisches Vergessen“ zugefügt. Dadurch wird diesen Gegnern <dendro>Dendro-Schaden</dendro> basierend auf 200 % von Nahidas ANG und 400 % ihrer Elementarkunde zugefügt.",
       "1": "Der von „Dreifache Karma-Läuterung – karmisches Vergessen“ verursachte Schaden gilt als Schaden der Elementarfähigkeit, 0,2 s Abklingzeit.",
       "2": "Dieser Effekt hält höchstens 10 s und wird entfernt, sobald Nahida 6-mal „Dreifache Karma-Läuterung – karmisches Vergessen“ ausgelöst hat."
     }

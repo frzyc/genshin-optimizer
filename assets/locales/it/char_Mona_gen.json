@@ -129,8 +129,8 @@
   "passive1": {
     "name": "\"Prova a prendermi, vecchia megera!\"",
     "description": {
-      "0": "Dopo aver usato <strong>Torrente illusorio</strong> per 2{NON_BREAK_SPACE}s, se ci sono avversari nelle vicinanze Mona genererà automaticamente un Fantasma.",
-      "1": "La durata del Fantasma è di 2{NON_BREAK_SPACE}s, e i suoi DAN da esplosione sono pari a un 50% di <strong>Condanna riflessa</strong>."
+      "0": "Dopo aver usato <strong>Torrente illusorio</strong> per 2 s, se ci sono avversari nelle vicinanze Mona genererà automaticamente un Fantasma.",
+      "1": "La durata del Fantasma è di 2 s, e i suoi DAN da esplosione sono pari a un 50% di <strong>Condanna riflessa</strong>."
     }
   },
   "passive2": {
@@ -148,7 +148,7 @@
   "constellation1": {
     "name": "Profezia sommersa",
     "description": {
-      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8{NON_BREAK_SPACE}s.",
+      "0": "Quando un membro del tuo gruppo colpisce un avversario sotto l'effetto di un Presagio, gli effetti delle <hydro>reazioni elementali di Hydro</hydro> sono potenziati per 8 s.",
       "1": [
         " I DAN da Electrocarica aumentano di un 15%.",
         " I DAN da Vaporizzazione aumentano di un 15%.",
@@ -161,7 +161,7 @@
     "name": "Catena lunare",
     "description": {
       "0": "Dopo che un attacco normale va a segno, c'è un 20% di probabilità che venga effettuato un attacco caricato.",
-      "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 5 s."
     }
   },
   "constellation3": {
@@ -188,7 +188,7 @@
     "name": "Retorica delle calamità",
     "description": {
       "0": "Quando entra in <strong>Torrente illusorio</strong>, Mona ottiene un 60% di aumento dei DAN del suo prossimo attacco caricato per ogni secondo in movimento.",
-      "1": "In questo modo è possibile ottenere fino a un 180% di bonus DAN. Quest'effetto non dura più di 8{NON_BREAK_SPACE}s."
+      "1": "In questo modo è possibile ottenere fino a un 180% di bonus DAN. Quest'effetto non dura più di 8 s."
     }
   }
 }

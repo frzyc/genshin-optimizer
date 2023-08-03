@@ -1,6 +1,8 @@
 {
   "name": "Kiếm Dụng Binh",
-  "description": "Kiếm cổ rất nặng và kiên cố, được tôi luyện qua năm tháng và chiến tranh.",
+  "description": {
+    "0": "Kiếm cổ rất nặng và kiên cố, được tôi luyện qua năm tháng và chiến tranh."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

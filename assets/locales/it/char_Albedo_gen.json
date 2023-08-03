@@ -46,7 +46,7 @@
       "2": "<strong>Isotoma solare</strong>",
       "3": [
         " Quando gli avversari all'interno dell'Isotoma solare subiscono dei DAN, l'Isotoma solare genera Boccioli effimeri che infliggono <geo>DAN da Geo ad area</geo>. I DAN inflitti variano in base alla DIF di Albedo.",
-        " I Boccioli effimeri possono essere generati una volta ogni 2{NON_BREAK_SPACE}s.",
+        " I Boccioli effimeri possono essere generati una volta ogni 2 s.",
         " Quando un personaggio si trova nella posizione dell'Isotoma solare, l'Isotoma solare accumula potere di Geo per formare una piattaforma cristallizzata che solleva il personaggio fino a una certa altezza. Può esistere solo una piattaforma cristallizzata alla volta.",
         " L'Isotoma solare è considerato un <geo>costrutto di Geo</geo>. Può esistere solo un'Isotoma solare creata da Albedo stesso alla volta. "
       ],
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Saggezza degli Homunculi",
     "description": {
-      "0": "Usando <strong>Rito della discendenza: Ondata tettonica</strong>, la maestria elementale dei membri del gruppo vicini aumenta di 125 per 10{NON_BREAK_SPACE}s."
+      "0": "Usando <strong>Rito della discendenza: Ondata tettonica</strong>, la maestria elementale dei membri del gruppo vicini aumenta di 125 per 10 s."
     }
   },
   "passive3": {
@@ -130,7 +130,7 @@
   "constellation2": {
     "name": "Eone Fanerozoico",
     "description": {
-      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30{NON_BREAK_SPACE}s:",
+      "0": "I Boccioli effimeri generati da <strong>Abiogenesi: Isotoma solare</strong> forniscono ad Albedo Giudizio fatale per 30 s:",
       "1": [
         " rilasciare <strong>Rito della discendenza: Ondata tettonica</strong> consuma tutti gli accumuli di Giudizio fatale. Ciascun accumulo consumato aumenta i DAN inflitti dai Boccioli fatali e da Rito della discendenza: Ondata tettonica di una quantità pari a un 30% della DIF di Albedo;",
         " cumulabile fino a 4 volte."

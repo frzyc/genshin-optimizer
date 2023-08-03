@@ -73,7 +73,7 @@
       "1": "<br/>",
       "2": "<strong>Éclaireur sermenté</strong>",
       "3": [
-        " Les DGT infligés par les attaques normales, chargées ou plongeantes de Cyno seront convertis en <electro>DGT Électro</electro> ne pouvant pas être enchantés.",
+        " Les DGT infligés par les attaques normales, chargées et plongeantes de Cyno seront convertis en <electro>DGT Électro</electro> ne pouvant pas être enchantés.",
         " La maîtrise élémentaire et la RÉS à l'interruption de Cyno augmentent et il devient immunisé contre les DGT infligés par les réactions d'Électrocution."
       ],
       "4": "<br/>",
@@ -162,8 +162,8 @@
     "name": "Ascension : Balance de justice",
     "description": {
       "0": "Après avoir utilisé <strong>Liturgie : Rapidité lupine</strong> ou déclenché l'effet Ordalie de l'aptitude passive « Jugement des plumes », Cyno obtient 4 cumuls de rite charognard. En touchant un ennemi avec une attaque normale, Cyno consomme 1 cumul pour tirer un éclair de sable.",
-      "1": "L'effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum, et est annulé à la fin de l'effet d'éclaireur sermenté de « Liturgie{NON_BREAK_SPACE}: Rapidité lupine ».",
-      "2": "L'éclair de sable peut être déclenché une fois toutes les 0,4{NON_BREAK_SPACE}s de cette manière.",
+      "1": "L'effet Rite charognard dure 8 s, peut être cumulé 8 fois maximum, et est annulé à la fin de l'effet d'éclaireur sermenté de « Liturgie : Rapidité lupine ».",
+      "2": "L'éclair de sable peut être déclenché une fois toutes les 0,4 s de cette manière.",
       "3": "L'aptitude passive « Jugement des plumes » doit être déjà débloquée."
     }
   }

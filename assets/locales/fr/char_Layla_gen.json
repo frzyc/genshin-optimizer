@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Sommeil imperturbable",
     "description": {
-      "0": "Augmente les DGT infligés par les étoiles filantes tirées par <strong>Nuits de solennité</strong> d'une valeur équivalant à 1,5{NON_BREAK_SPACE}% des PV max de Layla."
+      "0": "Augmente les DGT infligés par les étoiles filantes tirées par <strong>Nuits de solennité</strong> d'une valeur équivalant à 1,5 % des PV max de Layla."
     }
   },
   "passive3": {

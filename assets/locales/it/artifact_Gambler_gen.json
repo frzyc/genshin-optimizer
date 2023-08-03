@@ -2,7 +2,7 @@
   "setName": "Scommettitrice",
   "setEffects": {
     "2": "DAN da abilità elementale +20%.",
-    "4": "Sconfiggere un avversario fornisce un 100% di probabilità di azzerare il TdR dell'abilità elementale. Può verificarsi una sola volta ogni 15{NON_BREAK_SPACE}s."
+    "4": "Sconfiggere un avversario fornisce un 100% di probabilità di azzerare il TdR dell'abilità elementale. Può verificarsi una sola volta ogni 15 s."
   },
   "pieces": {
     "flower": {

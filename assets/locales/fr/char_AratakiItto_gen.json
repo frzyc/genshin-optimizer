@@ -1,7 +1,7 @@
 {
   "name": "Arataki Itto",
   "title": "Héros de Hanamizaka",
-  "description": "Le premier et plus grand chef du gang Arataki, célèbre dans tout Hanamizaka, à la Cité d'Inazuma... Hein, quoi ? Jamais entendu parler d'eux ? Sérieux{NON_BREAK_SPACE}?",
+  "description": "Le premier et plus grand chef du gang Arataki, célèbre dans tout Hanamizaka, à la Cité d'Inazuma... Hein, quoi ? Jamais entendu parler d'eux ? Sérieux ?",
   "constellationName": "Taurus Iracundus",
   "auto": {
     "name": "Légende de la baston",
@@ -48,7 +48,7 @@
     "description": {
       "0": "Projette Ushi, le jeune taureau akaushi et membre auxiliaire du gang Arataki, pour infliger des <geo>DGT Géo</geo> ! Lorsqu'Ushi touche un ennemi, il accorde à Arataki Itto 1 cumul de mégaforce superlative.",
       "1": "<br/>",
-      "2": "Ushi reste ensuite sur le terrain et apporte son aide des façons suivantes{NON_BREAK_SPACE}:",
+      "2": "Ushi reste ensuite sur le terrain et apporte son aide des façons suivantes :",
       "3": [
         " Il nargue les ennemis proches et attire leur attention.",
         " Il hérite d'un pourcentage des PV max d'Arataki Itto.",
@@ -61,7 +61,7 @@
       "7": "<br/>",
       "8": "Ushi est considéré comme une <geo>construction Géo</geo>, et Arataki Itto ne peut générer qu'un seul Ushi à la fois.",
       "9": "<br/>",
-      "10": "<i>Le nom de cette technique est dérivé d'« Onibudo », un roman écrit par Junkichi. Cependant, l'appeler «{NON_BREAK_SPACE}Zetsugi anti-oni{NON_BREAK_SPACE}» constituerait probablement une violation de droits d'auteur... Sans parler du fait qu'Itto lui-même est un Oni...</i>"
+      "10": "<i>Le nom de cette technique est dérivé d'« Onibudo », un roman écrit par Junkichi. Cependant, l'appeler « Zetsugi anti-oni » constituerait probablement une violation de droits d'auteur... Sans parler du fait qu'Itto lui-même est un Oni...</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -121,9 +121,9 @@
   "passive1": {
     "name": "Arataki au top",
     "description": {
-      "0": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants{NON_BREAK_SPACE}:",
+      "0": "Lorsqu'Arataki Itto effectue une série de kesa giri d'Arataki, il obtient les effets suivants :",
       "1": [
-        " Chaque frappe augmente la VIT d'attaque de la prochaine de 10{NON_BREAK_SPACE}%. La VIT d'attaque peut être augmentée d'un maximum de 30{NON_BREAK_SPACE}% de cette manière.",
+        " Chaque frappe augmente la VIT d'attaque de la prochaine de 10 %. La VIT d'attaque peut être augmentée d'un maximum de 30 % de cette manière.",
         " Sa RÉS à l'interruption augmente."
       ],
       "2": "<br/>",
@@ -156,7 +156,7 @@
     }
   },
   "constellation3": {
-    "name": "Le taureau par les cornes{NON_BREAK_SPACE}!",
+    "name": "Le taureau par les cornes !",
     "description": {
       "0": "Niveau d'aptitude <strong>Zetsugi anti-démon : Catapultage d'akaushi</strong> +3.",
       "1": "Niveau max : 15"
@@ -165,7 +165,7 @@
   "constellation4": {
     "name": "Au pain sec et à l'eau !",
     "description": {
-      "0": "Lorsque l'état Roi oni courroucé accordé par <strong>Roi oni maléfique : Avènement d'Itto</strong> prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20{NON_BREAK_SPACE}% pendant 10{NON_BREAK_SPACE}s."
+      "0": "Lorsque l'état Roi oni courroucé accordé par <strong>Roi oni maléfique : Avènement d'Itto</strong> prend fin, la DÉF et l'ATQ de tous les personnages de l'équipe à proximité augmentent de 20 % pendant 10 s."
     }
   },
   "constellation5": {
@@ -176,7 +176,7 @@
     }
   },
   "constellation6": {
-    "name": "Arataki Itto, présent{NON_BREAK_SPACE}!",
+    "name": "Arataki Itto, présent !",
     "description": {
       "0": "Les DGT CRIT des attaques chargées d'Arataki Itto augmentent de 70 %. De plus, lorsqu'il utilise une série de kesa giri d'Arataki, il a 50 % de chances de ne pas consommer de mégaforce superlative."
     }

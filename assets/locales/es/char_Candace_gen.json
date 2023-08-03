@@ -127,7 +127,7 @@
   "constellation1": {
     "name": "Heredera de las arenas escarlata",
     "description": {
-      "0": "Aumenta en 3{NON_BREAK_SPACE}s la duración del estado de oración de la corona escarlata de <strong>Rito sagrado: Marea de aguzanieves</strong>."
+      "0": "Aumenta en 3 s la duración del estado de oración de la corona escarlata de <strong>Rito sagrado: Marea de aguzanieves</strong>."
     }
   },
   "constellation2": {
@@ -160,7 +160,7 @@
     "name": "Marea inundatoria",
     "description": {
       "0": "Cuando un personaje en uso (a excepción de Candace) que está en el estado de oración de la corona escarlata de <strong>Rito sagrado: Marea de aguzanieves</strong> inflige Daño Elemental con un Ataque Normal contra un enemigo, se libera una onda de agua de Rito sagrado: Marea de aguzanieves que inflige <hydro>Daño Hydro en el AdE</hydro> en una cantidad equivalente al 15% de la Vida Máx. de Candace.",
-      "1": "Este efecto solo se puede activar una vez cada 2.3{NON_BREAK_SPACE}s y su daño se considera daño de Habilidad Definitiva."
+      "1": "Este efecto solo se puede activar una vez cada 2.3 s y su daño se considera daño de Habilidad Definitiva."
     }
   }
 }

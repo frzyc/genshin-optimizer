@@ -1,12 +1,24 @@
 {
   "name": "Spada d'osso di serpente",
-  "description": "Un'arma rara, originaria dell'oceano. Brandendola, puoi quasi sentire il suono delle onde eterne.",
+  "description": {
+    "0": "Un'arma rara, originaria dell'oceano. Brandendola, puoi quasi sentire il suono delle onde eterne."
+  },
   "passiveName": "Frangionde",
   "passiveDescription": {
-    "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>6%</cryo> e un <cryo>3%</cryo> di DAN in più ogni 4{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN.",
-    "1": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>7%</cryo> e un <cryo>2,7%</cryo> di DAN in più ogni 4{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN.",
-    "2": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>8%</cryo> e un <cryo>2,4%</cryo> di DAN in più ogni 4{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN.",
-    "3": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>9%</cryo> e un <cryo>2,2%</cryo> di DAN in più ogni 4{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN.",
-    "4": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>10%</cryo> e un <cryo>2%</cryo> di DAN in più ogni 4{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    "0": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>6%</cryo> e un <cryo>3%</cryo> di DAN in più ogni 4 s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    },
+    "1": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>7%</cryo> e un <cryo>2,7%</cryo> di DAN in più ogni 4 s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    },
+    "2": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>8%</cryo> e un <cryo>2,4%</cryo> di DAN in più ogni 4 s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    },
+    "3": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>9%</cryo> e un <cryo>2,2%</cryo> di DAN in più ogni 4 s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    },
+    "4": {
+      "0": "Quando è in campo, il personaggio infligge e subisce rispettivamente un <cryo>10%</cryo> e un <cryo>2%</cryo> di DAN in più ogni 4 s. Cumulabile fino a 5 volte. Il personaggio perde 1 accumulo quando subisce DAN."
+    }
   }
 }

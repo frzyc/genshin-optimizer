@@ -1,8 +1,0 @@
-{
-  "omen": "Opponent is affected by Omen",
-  "hitOp": {
-    "affectedByOmen": "After hitting an opponent affected by Omen"
-  },
-  "frozenDuration": "<shattered>Frozen</shattered> Duration",
-  "uponSprint": "After using Illusory Torrent"
-}

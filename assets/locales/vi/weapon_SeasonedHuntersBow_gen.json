@@ -1,6 +1,8 @@
 {
   "name": "Cung Săn Bắn Tôi Luyện",
-  "description": "Cung được tôi luyện kỹ và bảo dưỡng tốt, trải qua năm tháng dài, dường như đã tự biết phối hợp với người thợ săn.",
+  "description": {
+    "0": "Cung được tôi luyện kỹ và bảo dưỡng tốt, trải qua năm tháng dài, dường như đã tự biết phối hợp với người thợ săn."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

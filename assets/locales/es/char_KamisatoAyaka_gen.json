@@ -162,7 +162,7 @@
   "constellation4": {
     "name": "Retorno preeminente",
     "description": {
-      "0": "La DEF de los enemigos se reduce en un 30% durante 6{NON_BREAK_SPACE}s al recibir Daño mediante la ráfaga de ventisca creada por medio de <strong>Estilo Kamisato: Devastación glacial</strong>."
+      "0": "La DEF de los enemigos se reduce en un 30% durante 6 s al recibir Daño mediante la ráfaga de ventisca creada por medio de <strong>Estilo Kamisato: Devastación glacial</strong>."
     }
   },
   "constellation5": {

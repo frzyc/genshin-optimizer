@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Bénédiction éveillée",
     "description": {
-      "0": "Chaque point de maîtrise élémentaire que Yae Miko possède augmente les DGT des <strong>sakura dévastateurs</strong> de 0,15{NON_BREAK_SPACE}%."
+      "0": "Chaque point de maîtrise élémentaire que Yae Miko possède augmente les DGT des <strong>sakura dévastateurs</strong> de 0,15 %."
     }
   },
   "passive3": {

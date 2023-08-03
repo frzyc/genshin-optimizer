@@ -1,7 +1,7 @@
 {
   "name": "Sucrose",
   "title": "Dolcezza innocua",
-  "description": "Un'alchimista dalla vivace curiosità verso ogni cosa e ricercatrice bioalchemica.",
+  "description": "Un'alchimista dalla vivace curiosità verso ogni cosa. Il suo campo di ricerca è la bioalchimia.",
   "constellationName": "Ampulla",
   "auto": {
     "name": "Creazione dello spirito dei venti",
@@ -67,8 +67,8 @@
   "burst": {
     "name": "Creazione proibita: Isomero 75 Tipo II",
     "description": {
-      "0": "Sucrose lancia un miscuglio instabile che crea uno Spirito dei venti grande.",
-      "1": "Finché persiste, lo Spirito dei venti grande attira costantemente gli oggetti e gli avversari circostanti, scagliandoli via e infliggendo <anemo>DAN da Anemo</anemo>.",
+      "0": "Sucrose lancia un miscuglio instabile che crea un Grande Spirito dei venti.",
+      "1": "Finché persiste, tale Spirito attira costantemente gli oggetti e gli avversari circostanti, scagliandoli via e infliggendo <anemo>DAN da Anemo</anemo>.",
       "2": "<br/>",
       "3": "<strong>Assorbimento elementale</strong>",
       "4": "Se lo Spirito dei venti entra in contatto con energia di <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, infliggerà DAN elementali aggiuntivi di quel tipo.",
@@ -98,13 +98,13 @@
   "passive1": {
     "name": "Conversione del catalizzatore",
     "description": {
-      "0": "Quando Sucrose innesca una reazione di Turbinio, la maestria elementale di tutti i personaggi del gruppo (esclusa Sucrose) con l'elemento corrispondente aumenta di 50 per 8{NON_BREAK_SPACE}s."
+      "0": "Quando Sucrose innesca una reazione di Turbinio, la maestria elementale di tutti i personaggi del gruppo (esclusa Sucrose) con l'elemento corrispondente aumenta di 50 per 8 s."
     }
   },
   "passive2": {
     "name": "Mollis Favonius",
     "description": {
-      "0": "Quando <strong>Creazione Anemoipostasi astabile n. 6308</strong> o <strong>Creazione proibita: Isomero 75 Tipo II</strong> colpisce un avversario, la maestria elementale di tutti i membri del gruppo (esclusa Sucrose) aumenta di una quantità pari a un 20% della maestria elementale di Sucrose per 8{NON_BREAK_SPACE}s."
+      "0": "Quando <strong>Creazione Anemoipostasi astabile n. 6308</strong> o <strong>Creazione proibita: Isomero 75 Tipo II</strong> colpisce un avversario, la maestria elementale di tutti i membri del gruppo (esclusa Sucrose) aumenta di una quantità pari a un 20% della maestria elementale di Sucrose per 8 s."
     }
   },
   "passive3": {
@@ -122,7 +122,7 @@
   "constellation2": {
     "name": "Beth: forma eterea",
     "description": {
-      "0": "La durata di <strong>Creazione proibita: Isomero 75 Tipo II</strong> si estende di 2{NON_BREAK_SPACE}s."
+      "0": "La durata di <strong>Creazione proibita: Isomero 75 Tipo II</strong> si estende di 2 s."
     }
   },
   "constellation3": {
@@ -135,8 +135,8 @@
   "constellation4": {
     "name": "Alchimania",
     "description": {
-      "0": "Sucrose ridurrà di 1-7 s il TdR di <strong>Creazione Anemoipostasi astabile n. 6308</strong> per ogni 7 attacchi normali o caricati messi a segno sugli avversari.",
-      "1": "Un colpo può essere calcolato ogni 0,1{NON_BREAK_SPACE}s."
+      "0": "Sucrose riduce di 1-7 s il TdR di <strong>Creazione Anemoipostasi astabile n. 6308</strong> per ogni 7 attacchi normali o caricati messi a segno sugli avversari.",
+      "1": "Un colpo può essere calcolato ogni 0,1 s."
     }
   },
   "constellation5": {

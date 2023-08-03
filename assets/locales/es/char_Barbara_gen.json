@@ -107,8 +107,8 @@
   "passive2": {
     "name": "Bis",
     "description": {
-      "0": "Cuando tu personaje en uso recoja un orbe o una partícula elemental, aumenta en 1{NON_BREAK_SPACE}s la duración de los círculos melódicos de <strong>Que empiece el concierto ♪</strong>.",
-      "1": "Puede aumentarse hasta un máximo de 5{NON_BREAK_SPACE}s."
+      "0": "Cuando tu personaje en uso recoja un orbe o una partícula elemental, aumenta en 1 s la duración de los círculos melódicos de <strong>Que empiece el concierto ♪</strong>.",
+      "1": "Puede aumentarse hasta un máximo de 5 s."
     }
   },
   "passive3": {
@@ -120,7 +120,7 @@
   "constellation1": {
     "name": "Canción de júbilo",
     "description": {
-      "0": "Bárbara regenera 1{NON_BREAK_SPACE}pt. de Energía Elemental cada 10{NON_BREAK_SPACE}s."
+      "0": "Bárbara regenera 1 pt. de Energía Elemental cada 10 s."
     }
   },
   "constellation2": {
@@ -134,21 +134,21 @@
     "name": "Estrella del mañana",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Milagro brillante ♪</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "El esfuerzo será mi magia",
     "description": {
-      "0": "Bárbara regenera 1{NON_BREAK_SPACE}pt. de Energía Elemental por cada enemigo que golpee con su Ataque Cargado.",
-      "1": "Solo se puede regenerar un máximo de 5{NON_BREAK_SPACE}pts. de Energía por Ataque Cargado de esta manera."
+      "0": "Bárbara regenera 1 pt. de Energía Elemental por cada enemigo que golpee con su Ataque Cargado.",
+      "1": "Solo se puede regenerar un máximo de 5 pts. de Energía por Ataque Cargado de esta manera."
     }
   },
   "constellation5": {
     "name": "Vínculo de inocencia",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Que empiece el concierto ♪</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
@@ -159,7 +159,7 @@
         "El personaje revive automáticamente.",
         "Su vida se restaura en un 100%."
       ],
-      "2": "Este efecto solo puede ocurrir una vez cada 15{NON_BREAK_SPACE}min."
+      "2": "Este efecto solo puede ocurrir una vez cada 15 min."
     }
   }
 }

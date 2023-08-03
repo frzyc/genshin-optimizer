@@ -2,7 +2,7 @@
   "setName": "Memorie di Boscoprofondo",
   "setEffects": {
     "2": "Bonus DAN da Dendro +15%.",
-    "4": "Se gli avversari vengono colpiti dalle abilità elementali o dai Tripudi elementali, la loro RES a Dendro sarà ridotta di un 30% per 8{NON_BREAK_SPACE}s. Quest'effetto si applica anche se il personaggio che equipaggia questo set non è in campo."
+    "4": "Se gli avversari vengono colpiti dalle abilità elementali o dai Tripudi elementali, la loro RES a Dendro sarà ridotta di un 30% per 8 s. Quest'effetto si applica anche se il personaggio che equipaggia questo set non è in campo."
   },
   "pieces": {
     "flower": {

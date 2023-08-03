@@ -137,7 +137,7 @@
     "name": "Trueno resonante",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Rayo de la rosa</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -150,7 +150,7 @@
     "name": "Electrocución",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Arco violeta</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

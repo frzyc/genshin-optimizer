@@ -1,7 +1,0 @@
-{
-  "condName": "Total Musuh Terdekat",
-  "opponents": {
-    "oneOrNone": "Kurang dari dua musuh",
-    "moreThanOne": "Setidaknya dua musuh"
-  }
-}

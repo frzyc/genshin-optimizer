@@ -113,7 +113,7 @@
   "passive2": {
     "name": "Sueño de la danza eónica",
     "description": {
-      "0": "Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados los 30{NON_BREAK_SPACE}000 pts. de Vida Máx., el daño de los núcleos feraces creados por los personajes en el estado de cáliz de la abundancia aumenta en un 9%.",
+      "0": "Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados los 30 000 pts. de Vida Máx., el daño de los núcleos feraces creados por los personajes en el estado de cáliz de la abundancia aumenta en un 9%.",
       "1": "El daño infligido con los núcleos feraces solo puede aumentar un máximo del 400% de esta manera."
     }
   },

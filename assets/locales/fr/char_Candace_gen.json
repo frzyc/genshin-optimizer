@@ -81,7 +81,7 @@
       "4": [
         " Lorsque l'attaque normale d'un personnage inflige des DGT élémentaires à un ennemi, les DGT infligés augmentent.",
         " Lorsqu'un personnage est déployé au combat, un impact hydrique est déclenché, infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches. Le nombre d'impacts pouvant être déclenchés pendant la durée de cette compétence est limité.",
-        " Sous l'effet de cet état, les personnages maniant une épée à une ou deux mains ou une arme d'hast obtiennent un <hydro>enchantement Hydro</hydro>."
+        " Sous l'effet de cet état, les personnages armés d'une épée à une main, à deux mains ou d'une arme d'hast obtiennent un <hydro>enchantement Hydro</hydro>."
       ],
       "5": "<br/>",
       "6": "<i>Ce rite secret a été transmis à travers le clan de Candace de génération en génération. Bien que les anciennes croyances se soient perdues au fil des ans, les sables protègent toujours les héritiers de l'ancien royaume.</i>"
@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Dôme céleste de sable",
     "description": {
-      "0": "Lorsqu'un personnage affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1{NON_BREAK_SPACE}000 PV max de Candace."
+      "0": "Lorsqu'un personnage affecté par l'état Prière de couronne cramoisie de <strong>Liturgie : Marée de la bergeronnette</strong> inflige des DGT élémentaires à un ennemi avec une attaque normale, les DGT augmentent de 0,5 % pour chaque tranche de 1 000 PV max de Candace."
     }
   },
   "passive3": {

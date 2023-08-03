@@ -2,7 +2,7 @@
   "setName": "Perseveranza dei Milleliti",
   "setEffects": {
     "2": "PS +20%.",
-    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT e l'efficacia dello scudo di tutti i membri del gruppo vicini aumentano rispettivamente di un 20% e di un 30% per 3{NON_BREAK_SPACE}s. Quest'effetto può attivarsi una volta ogni 0,5{NON_BREAK_SPACE}s, anche se il personaggio che sta usando questo set di manufatti non è sul campo."
+    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT e l'efficacia dello scudo di tutti i membri del gruppo vicini aumentano rispettivamente di un 20% e di un 30% per 3 s. Quest'effetto può attivarsi una volta ogni 0,5 s, anche se il personaggio che sta usando questo set di manufatti non è sul campo."
   },
   "pieces": {
     "flower": {

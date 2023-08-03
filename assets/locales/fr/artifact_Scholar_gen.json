@@ -2,7 +2,7 @@
   "setName": "Érudit",
   "setEffects": {
     "2": "Augmente la recharge d'énergie de 20 %.",
-    "4": "Les personnages maniant l'arc et le catalyseur récupèrent 3 pts d'énergie supplémentaire à chaque fois qu'une particule ou un orbe élémentaires sont récupérés. Cet effet peut être déclenché une fois toutes les 3 s."
+    "4": "Les personnages armés d'un arc ou d'un catalyseur récupèrent 3 pts d'énergie supplémentaire à chaque fois qu'une particule ou un orbe élémentaires sont récupérés. Cet effet peut être déclenché une fois toutes les 3 s."
   },
   "pieces": {
     "flower": {

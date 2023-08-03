@@ -77,7 +77,7 @@
         "Aumenta la Maestría Elemental y la RES a interrupción de Cyno y lo vuelve inmune al daño de Electrocargado."
       ],
       "4": "<br/>",
-      "5": "Este efecto dura un máximo de 18{NON_BREAK_SPACE}s y desaparece cuando Cyno es retirado de combate.",
+      "5": "Este efecto dura un máximo de 18 s y desaparece cuando Cyno es retirado de combate.",
       "6": "<br/>",
       "7": "<i>Para el Gran Juez, los ritos secretos heredados de las civilizaciones de la antigüedad son como un juicio final.</i>",
       "8": "<i>Ya sea el pasado, el presente, una tormenta de arena o una serpiente pitón, nada ni nadie puede hacer que el poder de la ley se estremezca.</i>"
@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Gracia del silencio",
     "description": {
-      "0": "Aumenta en un 25% las recompensas de las expediciones de 20{NON_BREAK_SPACE}h en Sumeru."
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Sumeru."
     }
   },
   "constellation1": {
@@ -155,15 +155,15 @@
     "name": "Exequias: Luz del tránsito",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Rito secreto: Guía de las almas abismales</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Liturgia: Balanza del juicio",
     "description": {
       "0": "Tras usar <strong>Rito sagrado: Celeridad lupina</strong> o tras activar el efecto de sentencia del talento pasivo “Juicio de la pluma”, Cyno obtiene 4 cargas del efecto “rito chacálico”. Al golpear a un enemigo con un Ataque Normal, consume una carga y lanza un rayo catastrófico.",
-      "1": "Rito chacálico dura 8{NON_BREAK_SPACE}s, puede acumularse un máximo de 8 veces y se anulará cuando termine la duración del estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina.",
-      "2": "Como máximo, puede lanzar un rayo catastrófico cada 0.4{NON_BREAK_SPACE}s de esta manera.",
+      "1": "Rito chacálico dura 8 s, puede acumularse un máximo de 8 veces y se anulará cuando termine la duración del estado de abrecaminos del juramento de Rito sagrado: Celeridad lupina.",
+      "2": "Como máximo, puede lanzar un rayo catastrófico cada 0.4 s de esta manera.",
       "3": "Es necesario desbloquear el talento pasivo “Juicio de la pluma”."
     }
   }

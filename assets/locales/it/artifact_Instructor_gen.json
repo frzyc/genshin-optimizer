@@ -2,7 +2,7 @@
   "setName": "Istruttore",
   "setEffects": {
     "2": "Maestria elementale +80.",
-    "4": "Dopo l'innesco di una reazione elementale, aumenta la maestria elementale di tutti i membri del gruppo di 120 per 8{NON_BREAK_SPACE}s."
+    "4": "Dopo l'innesco di una reazione elementale, aumenta la maestria elementale di tutti i membri del gruppo di 120 per 8 s."
   },
   "pieces": {
     "flower": {

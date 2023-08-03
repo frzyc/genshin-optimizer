@@ -95,13 +95,13 @@
   "passive1": {
     "name": "Regina probationum",
     "description": {
-      "0": "Quando Rosaria attacca un avversario alle spalle usando <strong>Confessione devastante</strong>, il suo tasso di CRIT aumenta di un 12% per 5{NON_BREAK_SPACE}s."
+      "0": "Quando Rosaria attacca un avversario alle spalle usando <strong>Confessione devastante</strong>, il suo tasso di CRIT aumenta di un 12% per 5 s."
     }
   },
   "passive2": {
     "name": "Rinfianco umbratile",
     "description": {
-      "0": "Usando <strong>Sacramento finale</strong>, il tasso di CRIT di tutti i membri del gruppo vicini (esclusa Rosaria) aumenta di una quantità pari a un 15% del tasso di CRIT di Rosaria per 10{NON_BREAK_SPACE}s.",
+      "0": "Usando <strong>Sacramento finale</strong>, il tasso di CRIT di tutti i membri del gruppo vicini (esclusa Rosaria) aumenta di una quantità pari a un 15% del tasso di CRIT di Rosaria per 10 s.",
       "1": "In questo modo è possibile ottenere fino a un 15% di bonus del tasso di CRIT."
     }
   },
@@ -115,13 +115,13 @@
   "constellation1": {
     "name": "Rivelazione impura",
     "description": {
-      "0": "Quando Rosaria infligge un colpo CRIT, la sua VEL d'ATT aumenta di un 10% e i DAN da attacco normale aumentano di un 10% per 4{NON_BREAK_SPACE}s."
+      "0": "Quando Rosaria infligge un colpo CRIT, la sua VEL d'ATT aumenta di un 10% e i DAN da attacco normale aumentano di un 10% per 4 s."
     }
   },
   "constellation2": {
     "name": "Terra sconsacrata",
     "description": {
-      "0": "La durata dell'Asta di ghiaccio creata da <strong>Sacramento finale</strong> si estende di 4{NON_BREAK_SPACE}s."
+      "0": "La durata dell'Asta di ghiaccio creata da <strong>Sacramento finale</strong> si estende di 4 s."
     }
   },
   "constellation3": {
@@ -148,7 +148,7 @@
   "constellation6": {
     "name": "Punizione divina",
     "description": {
-      "0": "L'attacco di <strong>Sacramento finale</strong> riduce di un 20% la RES fisica degli avversari per 10{NON_BREAK_SPACE}s."
+      "0": "L'attacco di <strong>Sacramento finale</strong> riduce di un 20% la RES fisica degli avversari per 10 s."
     }
   }
 }

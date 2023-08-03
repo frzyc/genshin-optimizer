@@ -100,7 +100,7 @@
   "passive2": {
     "name": "¡Cuidado, que pica!",
     "description": {
-      "0": "Cuando termina el <strong>Ataque de Guoba</strong>, Guoba deja un chile en el lugar donde desaparece. Al recogerlo, el ATQ del personaje aumentará en un 10% durante 10{NON_BREAK_SPACE}s."
+      "0": "Cuando termina el <strong>Ataque de Guoba</strong>, Guoba deja un chile en el lugar donde desaparece. Al recogerlo, el ATQ del personaje aumentará en un 10% durante 10 s."
     }
   },
   "passive3": {
@@ -112,20 +112,20 @@
   "constellation1": {
     "name": "Crujiente por fuera, tierno por dentro",
     "description": {
-      "0": "Reduce la <pyro>RES Pyro</pyro> de los enemigos atacados por Guoba en un 15% durante 6{NON_BREAK_SPACE}s."
+      "0": "Reduce la <pyro>RES Pyro</pyro> de los enemigos atacados por Guoba en un 15% durante 6 s."
     }
   },
   "constellation2": {
     "name": "Aceite y fuego",
     "description": {
-      "0": "El último golpe del Ataque Normal aplica sobre el enemigo un estado de implosión durante 2{NON_BREAK_SPACE}s. Tras ese tiempo, ocurrirá una explosión que inflige un 75% de <pyro>Daño Pyro en el AdE</pyro>."
+      "0": "El último golpe del Ataque Normal aplica sobre el enemigo un estado de implosión durante 2 s. Tras ese tiempo, ocurrirá una explosión que inflige un 75% de <pyro>Daño Pyro en el AdE</pyro>."
     }
   },
   "constellation3": {
     "name": "Que quede bien frito",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Pyronado</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -138,7 +138,7 @@
     "name": "Guoba furioso",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Ataque de Guoba</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

@@ -167,7 +167,7 @@
   "constellation6": {
     "name": "Feu et courage",
     "description": {
-      "0": "Le champ de <strong>Merveilleux voyage</strong> confère à tous les personnages de l'équipe déployés et maniant une épée à une ou deux mains ou une arme d'hast qui s'y trouvent un <pyro>bonus de DGT Pyro</pyro> de 15 %, ainsi qu'un <pyro>enchantement Pyro</pyro>."
+      "0": "Le champ de <strong>Merveilleux voyage</strong> confère à tous les personnages de l'équipe déployés et armés d'une épée à une main, à deux mains ou d'une arme d'hast qui s'y trouvent un <pyro>bonus de DGT Pyro</pyro> de 15 %, ainsi qu'un <pyro>enchantement Pyro</pyro>."
     }
   }
 }

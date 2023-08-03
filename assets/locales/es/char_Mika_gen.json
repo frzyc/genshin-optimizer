@@ -117,7 +117,7 @@
     "name": "Levantamiento topográfico",
     "description": {
       "0": "Cuando un personaje en uso afectado a la vez por los estados pluma aquilae de <strong>Himno plumiceleste</strong> y aeroánima de <strong>Vórtice hieloastral</strong> inflige un crítico al atacar, el estado de aeroánima generará 1 carga de detección del talento pasivo “Supresión fuegorrápido”. Solo se puede generar 1 carga de detección de esta manera durante un estado de aeroánima.",
-      "1": "Además, aumenta en{NON_BREAK_SPACE}1 el máximo de acumulaciones de detección durante ese estado.",
+      "1": "Además, aumenta en 1 el máximo de acumulaciones de detección durante ese estado.",
       "2": "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”."
     }
   },
@@ -143,21 +143,21 @@
   "constellation3": {
     "name": "Batidor veterano",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Himno plumiceleste</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Himno plumiceleste</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Alabanza de la cencellada",
     "description": {
-      "0": "Cuando el estado de pluma aquilae de <strong>Himno plumiceleste</strong> de Mika cura a los personajes del equipo, Mika recupera 3{NON_BREAK_SPACE}pts. de Energía Elemental. Solo se puede regenerar Energía Elemental hasta 5 veces mediante un estado de pluma aquilae creado con Himno plumiceleste."
+      "0": "Cuando el estado de pluma aquilae de <strong>Himno plumiceleste</strong> de Mika cura a los personajes del equipo, Mika recupera 3 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental hasta 5 veces mediante un estado de pluma aquilae creado con Himno plumiceleste."
     }
   },
   "constellation5": {
     "name": "Flecha tintineante",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Vórtice hieloastral</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Vórtice hieloastral</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

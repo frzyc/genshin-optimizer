@@ -1,6 +1,8 @@
 {
   "name": "傭兵の重剣",
-  "description": "重くてしっかりしている古い大剣、戦火と歳月の洗練を経た優れもの。",
+  "description": {
+    "0": "重くてしっかりしている古い大剣、戦火と歳月の洗練を経た優れもの。"
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

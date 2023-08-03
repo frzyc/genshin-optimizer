@@ -127,13 +127,13 @@
   "constellation1": {
     "name": "Ritorno dell'ereditiera delle sabbie scarlatte",
     "description": {
-      "0": "La durata dell'effetto Lode della Corona cremisi innescato da <strong>Rito sacro: Marea della cutrettola</strong> aumenta di 3{NON_BREAK_SPACE}s."
+      "0": "La durata dell'effetto Lode della Corona cremisi innescato da <strong>Rito sacro: Marea della cutrettola</strong> aumenta di 3 s."
     }
   },
   "constellation2": {
     "name": "Fulgore Trapassaluna",
     "description": {
-      "0": "Quando <strong>Rito sacro: Santuario dell'airone</strong> colpisce gli avversari, i PS max di Candace aumentano di un 20% per 15{NON_BREAK_SPACE}s."
+      "0": "Quando <strong>Rito sacro: Santuario dell'airone</strong> colpisce gli avversari, i PS max di Candace aumentano di un 20% per 15 s."
     }
   },
   "constellation3": {
@@ -160,7 +160,7 @@
     "name": "Trabocco",
     "description": {
       "0": "Quando i personaggi (esclusa Candace) sotto l'effetto di Lode della Corona cremisi derivante da <strong>Rito sacro: Marea della cutrettola</strong> infliggono DAN elementali agli avversari tramite gli attacchi normali, viene sprigionata un'onda d'urto che infligge <hydro>DAN da Hydro ad area</hydro> pari a un 15% dei PS max di Candace.",
-      "1": "Quest'effetto può attivarsi una volta ogni 2,3{NON_BREAK_SPACE}s e i DAN che infligge sono considerati DAN da Tripudio elementale."
+      "1": "Quest'effetto può attivarsi una volta ogni 2,3 s e i DAN che infligge sono considerati DAN da Tripudio elementale."
     }
   }
 }

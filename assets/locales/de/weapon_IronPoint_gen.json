@@ -1,6 +1,8 @@
 {
   "name": "Eisenlanze",
-  "description": "Spitz an einem Ende, geeignet für Angriff und Verteidigung. Äußerst beliebt bei Reisenden.",
+  "description": {
+    "0": "Spitz an einem Ende, geeignet für Angriff und Verteidigung. Äußerst beliebt bei Reisenden."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

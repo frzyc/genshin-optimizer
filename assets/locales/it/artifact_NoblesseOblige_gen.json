@@ -2,7 +2,7 @@
   "setName": "Noblesse oblige",
   "setEffects": {
     "2": "DAN da Tripudio elementale +20%.",
-    "4": "L'uso di un Tripudio elementale aumenta di un 20% l'ATT di tutti i membri del gruppo per 12{NON_BREAK_SPACE}s. Non cumulabile."
+    "4": "L'uso di un Tripudio elementale aumenta di un 20% l'ATT di tutti i membri del gruppo per 12 s. Non cumulabile."
   },
   "pieces": {
     "flower": {

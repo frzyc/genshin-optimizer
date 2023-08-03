@@ -107,14 +107,14 @@
   "passive2": {
     "name": "Vento rigenerativo",
     "description": {
-      "0": "Le uccisioni da <strong>Vortice del palmo</strong> rigenerano un 2% di PS per 5{NON_BREAK_SPACE}s.",
-      "1": "Questo effetto può avvenire solo una volta ogni 5{NON_BREAK_SPACE}s."
+      "0": "Le uccisioni da <strong>Vortice del palmo</strong> rigenerano un 2% di PS per 5 s.",
+      "1": "Questo effetto può avvenire solo una volta ogni 5 s."
     }
   },
   "constellation1": {
     "name": "Vortice furente",
     "description": {
-      "0": "<strong>Vortice del palmo</strong> attira gli avversari e gli oggetti in un raggio di 5{NON_BREAK_SPACE}m."
+      "0": "<strong>Vortice del palmo</strong> attira gli avversari e gli oggetti in un raggio di 5 m."
     }
   },
   "constellation2": {

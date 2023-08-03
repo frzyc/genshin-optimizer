@@ -120,7 +120,7 @@
   "passive2": {
     "name": "Tormenta eléctrica",
     "description": {
-      "0": "Al lanzar <strong>Invocadora de mareas</strong> con el máximo bono de daño posible, obtendrás los siguientes efectos durante 10{NON_BREAK_SPACE}s:",
+      "0": "Al lanzar <strong>Invocadora de mareas</strong> con el máximo bono de daño posible, obtendrás los siguientes efectos durante 10 s:",
       "1": [
         "Aumenta en un 15% el daño y la Vel. de Ataque Normal y de Ataque Cargado.",
         "Reduce considerablemente el tiempo de preparación de los Ataques Cargados."
@@ -137,7 +137,7 @@
   "constellation1": {
     "name": "Cazadora de ictiosaurios",
     "description": {
-      "0": "Al activar <strong>Quebrantatormentas</strong>, crea un escudo que absorbe daño en una cantidad equivalente al 16% de la Vida Máx. de Beidou durante 15{NON_BREAK_SPACE}s.",
+      "0": "Al activar <strong>Quebrantatormentas</strong>, crea un escudo que absorbe daño en una cantidad equivalente al 16% de la Vida Máx. de Beidou durante 15 s.",
       "1": "El escudo tiene un 250% de eficiencia de absorción de <electro>Daño Electro</electro>."
     }
   },
@@ -150,21 +150,21 @@
   "constellation3": {
     "name": "Invocadora de la tormenta",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Invocadora de mareas</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Invocadora de mareas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Venganza súbita",
     "description": {
-      "0": "Tras ser atacada, los Ataques Normales de Beidou obtienen un 20% de <electro>Daño Electro</electro> adicional durante 10{NON_BREAK_SPACE}s."
+      "0": "Tras ser atacada, los Ataques Normales de Beidou obtienen un 20% de <electro>Daño Electro</electro> adicional durante 10 s."
     }
   },
   "constellation5": {
     "name": "Caminante de mareas carmesí",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Quebrantatormentas</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Quebrantatormentas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

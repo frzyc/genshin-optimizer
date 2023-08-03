@@ -69,7 +69,7 @@
     "name": "Rinascita olistica",
     "description": {
       "0": "Entra nello stato di Purezza pulsante, creando uno Scudo assoluto che assorbe <dendro>DAN da Dendro</dendro> con un 250% di efficacia.",
-      "1": "Quando è in questo stato, Baizhu genera un nuovo Scudo assoluto ogni 2,5{NON_BREAK_SPACE}s.",
+      "1": "Quando è in questo stato, Baizhu genera un nuovo Scudo assoluto ogni 2,5 s.",
       "2": "<br/>",
       "3": "Lo Scudo assoluto guarisce il tuo personaggio attivo in base ai PS max di Baizhu e attacca i nemici scatenando Meridiani spiritici, infliggendo <dendro>DAN da Dendro</dendro> nelle seguenti circostanze:",
       "4": [
@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Tutto si origina dalla terra",
     "description": {
-      "0": "I personaggi che vengono guariti dagli <strong>Scudi assoluti</strong> ottengono l'effetto di Anno della Grazia verdeggiante: per ogni 1.000 PS max che Baizhu possiede, fino a un massimo di 50.000, i DAN da reazioni di Ustione, Fioritura, Iperfioritura e Germinazione inflitti da questi personaggi aumentano di un 2%, e i DAN da reazioni di Accentuazione e Propagazione aumentano di uno 0,8%. Quest'effetto dura 6{NON_BREAK_SPACE}s."
+      "0": "I personaggi che vengono guariti dagli <strong>Scudi assoluti</strong> ottengono l'effetto di Anno della Grazia verdeggiante: per ogni 1.000 PS max che Baizhu possiede, fino a un massimo di 50.000, i DAN da reazioni di Ustione, Fioritura, Iperfioritura e Germinazione inflitti da questi personaggi aumentano di un 2%, e i DAN da reazioni di Accentuazione e Propagazione aumentano di uno 0,8%. Quest'effetto dura 6 s."
     }
   },
   "passive3": {
@@ -132,7 +132,7 @@
       "0": "Quando il tuo personaggio attivo colpisce un avversario vicino con i suoi attacchi, Baizhu usa Armonispirito: Giuntura.",
       "1": "Armonispirito: Giuntura sferra 1 attacco che infligge un 250% dell'ATT di Baizhu come <dendro>DAN da Dendro</dendro>, per poi tornare e fornire una guarigione da <strong>Diagnosi universale</strong> pari a un 20% della guarigione normale di Armonispirito.",
       "2": "I DAN inflitti in questo modo sono considerati DAN da abilità elementale.",
-      "3": "Quest'effetto può attivarsi una volta ogni 5{NON_BREAK_SPACE}s."
+      "3": "Quest'effetto può attivarsi una volta ogni 5 s."
     }
   },
   "constellation3": {
@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Antica arte della percezione",
     "description": {
-      "0": "Durante i 15{NON_BREAK_SPACE}s successivi all'uso di <strong>Rinascita olistica</strong>, Baizhu aumenta di 80 la maestria elementale di tutti i membri del gruppo vicini."
+      "0": "Durante i 15 s successivi all'uso di <strong>Rinascita olistica</strong>, Baizhu aumenta di 80 la maestria elementale di tutti i membri del gruppo vicini."
     }
   },
   "constellation5": {

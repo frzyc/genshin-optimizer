@@ -156,7 +156,7 @@
     "name": "La luna, guardiana delle acque",
     "description": {
       "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, la VEL dell'attacco normale di Sangonomiya Kokomi aumenta di un 10%, e gli attacchi normali che colpiscono gli avversari ripristinano la sua energia di 0,8.",
-      "1": "Si può verificare una sola volta ogni 0,2{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 0,2 s."
     }
   },
   "constellation5": {
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, Sangonomiya Kokomi ottiene un <hydro>Bonus DAN da Hydro</hydro> di un 40% per 4{NON_BREAK_SPACE}s quando i suoi attacchi normali e caricati guariscono, o guarirebbero, i membri del gruppo i cui PS sono pari o superiori a un 80%."
+      "0": "Quando indossa l'Abito cerimoniale creato da <strong>Ascensione della Nereide</strong>, Sangonomiya Kokomi ottiene un <hydro>Bonus DAN da Hydro</hydro> di un 40% per 4 s quando i suoi attacchi normali e caricati guariscono, o guarirebbero, i membri del gruppo i cui PS sono pari o superiori a un 80%."
     }
   }
 }

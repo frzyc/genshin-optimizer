@@ -141,7 +141,7 @@
     "name": "Aperto a tutti",
     "description": {
       "0": "Quando <strong>Dado raffinato</strong> sferra un attacco coordinato, scocca una freccia acquatica aggiuntiva che infligge DAN da Hydro pari a un 14% dei PS max di Yelan.",
-      "1": "Questo effetto si può attivare una volta ogni 1,8{NON_BREAK_SPACE}s."
+      "1": "Questo effetto si può attivare una volta ogni 1,8 s."
     }
   },
   "constellation3": {
@@ -154,7 +154,7 @@
   "constellation4": {
     "name": "Scambio favorevole",
     "description": {
-      "0": "Aumenta di un 10% i PS max di tutti i membri del gruppo per 25{NON_BREAK_SPACE}s per ogni avversario marchiato dalla <strong>Linea salvavita</strong> quando essa esplode. È possibile ottenere un aumento massimo di un 40% dei PS max in questo modo."
+      "0": "Aumenta di un 10% i PS max di tutti i membri del gruppo per 25 s per ogni avversario marchiato dalla <strong>Linea salvavita</strong> quando essa esplode. È possibile ottenere un aumento massimo di un 40% dei PS max in questo modo."
     }
   },
   "constellation5": {
@@ -170,7 +170,7 @@
       "0": "Dopo aver usato <strong>Dado Chiaroprofondo</strong>, Yelan entra nello stato di Mente superiore.",
       "1": "In questo stato, tutti gli attacchi normali di Yelan saranno convertiti in Frecce squarcianti speciali. Queste Frecce squarcianti possiedono abilità simili a quelle normali e i DAN inflitti sono considerati DAN da attacco caricato, infliggendo un 156% dei DAN da Freccia squarciante normale.",
       "2": "<br/>",
-      "3": "Lo stato Mente superiore ha una durata di 20{NON_BREAK_SPACE}s e termina quando Yelan scocca 5 frecce."
+      "3": "Lo stato Mente superiore ha una durata di 20 s e termina quando Yelan scocca 5 frecce."
     }
   }
 }

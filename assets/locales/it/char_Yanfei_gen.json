@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Clausola condizionale",
     "description": {
-      "0": "Quando Yanfei consuma Sigilli scarlatti usando un attacco caricato, ciascuno di essi aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 5%. Quest'effetto dura per 6{NON_BREAK_SPACE}s. Quando un attacco caricato viene usato di nuovo mentre l'effetto è attivo, l'effetto precedente svanirà."
+      "0": "Quando Yanfei consuma Sigilli scarlatti usando un attacco caricato, ciascuno di essi aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 5%. Quest'effetto dura per 6 s. Quando un attacco caricato viene usato di nuovo mentre l'effetto è attivo, l'effetto precedente svanirà."
     }
   },
   "passive2": {
@@ -142,7 +142,7 @@
   "constellation4": {
     "name": "Assoluzione suprema",
     "description": {
-      "0": "Quando <strong>Affare fatto</strong> viene usato, genera uno scudo che assorbe fino a un 45% dei PS max di Yanfei per 15{NON_BREAK_SPACE}s.",
+      "0": "Quando <strong>Affare fatto</strong> viene usato, genera uno scudo che assorbe fino a un 45% dei PS max di Yanfei per 15 s.",
       "1": "Lo scudo assorbe <pyro>DAN da Pyro</pyro> con un'efficacia superiore di un 250%."
     }
   },

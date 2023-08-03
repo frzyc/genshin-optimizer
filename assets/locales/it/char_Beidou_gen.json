@@ -139,7 +139,7 @@
     "description": {
       "0": "Quando si usa <strong>Tempesta tagliente</strong>:",
       "1": [
-        " genera uno scudo che assorbe fino a un 16% dei PS max di Beidou per 15{NON_BREAK_SPACE}s;",
+        " genera uno scudo che assorbe fino a un 16% dei PS max di Beidou per 15 s;",
         " lo scudo assorbe <electro>DAN da Electro</electro> con un'efficacia superiore di un 250%."
       ]
     }
@@ -160,7 +160,7 @@
   "constellation4": {
     "name": "Vendetta perfetta",
     "description": {
-      "0": "Quando Beidou viene attaccata, i suoi attacchi normali infliggono un 20% di <electro>DAN da Electro</electro> extra per 10{NON_BREAK_SPACE}s."
+      "0": "Quando Beidou viene attaccata, i suoi attacchi normali infliggono un 20% di <electro>DAN da Electro</electro> extra per 10 s."
     }
   },
   "constellation5": {

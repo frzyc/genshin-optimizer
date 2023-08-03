@@ -1,6 +1,8 @@
 {
   "name": "Ponta de Ferro",
-  "description": "Afiada e pontiaguda em sua extremidade, é uma arma balanceada e bastante popular entre os viajantes.",
+  "description": {
+    "0": "Afiada e pontiaguda em sua extremidade, é uma arma balanceada e bastante popular entre os viajantes."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

@@ -118,7 +118,7 @@
   "passive3": {
     "name": "Den Weg erhellende Wälzer",
     "description": {
-      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25{NON_BREAK_SPACE}% mehr Belohnungen."
+      "0": "Bringt bei 20-stündigen Erkundungsentsendungen in Sumeru 25 % mehr Belohnungen."
     }
   },
   "constellation1": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Wundersamer Pfad der Wahrheit",
     "description": {
-      "0": "Erhöht den KSCH des <anemo>Anemo-Schadens</anemo> durch die Figuren mit dem Effekt „Seligkeit des frommen Windes“ der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 40{NON_BREAK_SPACE}%. Verursacht die aktuelle Figur mit dem Effekt „Seligkeit des frommen Windes“ Schaden, wird dem getroffenen Gegner der Effekt „Stürmischer Einsturz“ verliehen, 3 s Abklingzeit, die Abklingzeit gilt für alle Truppenmitglieder gemeinsam."
+      "0": "Erhöht den KSCH des <anemo>Anemo-Schadens</anemo> durch die Figuren mit dem Effekt „Seligkeit des frommen Windes“ der Fähigkeit <strong>Geheime Pfade der Winde</strong> um 40 %. Verursacht die aktuelle Figur mit dem Effekt „Seligkeit des frommen Windes“ Schaden, wird dem getroffenen Gegner der Effekt „Stürmischer Einsturz“ verliehen, 3 s Abklingzeit, die Abklingzeit gilt für alle Truppenmitglieder gemeinsam."
     }
   }
 }

@@ -26,12 +26,15 @@
   "burstDMG": "DGT explosifs",
   "dmgAbsorption": "PV du bouclier",
   "healing": "Soins",
+  "contHealing": "Soins continus",
   "duration": "Durée",
   "cd": "Temps de recharge",
   "energyCost": "Énergie élémentaire",
+  "energyRegen": "Restauration énergie élémentaire",
   "baseDMG": "DGT de base",
   "dot": "DGT continus",
   "addEleDMG": "Bonus DGT élémentaires",
+  "hpRegenPerHit": "Soins équipe",
   "press": {
     "dmg": "DGT appui simple",
     "cd": "TdR appui simple"
@@ -57,11 +60,17 @@
     "superconduct": "Supraconduction",
     "vaporize": "Évaporation",
     "melt": "Fonte",
-    "bloom": "Bloom",
+    "bloom": "Fleurissement",
     "burgeon": "Bourgeonnement",
     "hyperbloom": "Exubérance",
     "quicken": "Stimulation",
     "aggravate": "Suractivation",
     "spread": "Propagation"
+  },
+  "stat": {
+    "def": "DÉF",
+    "base": {
+      "atk": "ATQ de base"
+    }
   }
 }

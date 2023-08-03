@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Saggezza perduta delle Sette Caverne",
     "description": {
-      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> che infliggono <anemo>DAN da Anemo</anemo> usando attacchi normali, caricati, in picchiata, abilità elementali o Tripudi elementali, ottengono l'effetto Uragano protettivo: questi DAN aumentano di un 32% dell'ATT di base di Faruzan. Uragano protettivo può attivarsi una volta ogni 0,8{NON_BREAK_SPACE}s. Il bonus DAN svanisce dopo che Dono del vento devoto cessa o dopo che l'effetto viene attivato una volta."
+      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> che infliggono <anemo>DAN da Anemo</anemo> usando attacchi normali, caricati, in picchiata, abilità elementali o Tripudi elementali, ottengono l'effetto Uragano protettivo: questi DAN aumentano di un 32% dell'ATT di base di Faruzan. Uragano protettivo può attivarsi una volta ogni 0,8 s. Il bonus DAN svanisce dopo che Dono del vento devoto cessa o dopo che l'effetto viene attivato una volta."
     }
   },
   "passive3": {
@@ -130,7 +130,7 @@
   "constellation2": {
     "name": "Intelletto zelante",
     "description": {
-      "0": "La durata del Poliedro abbagliante creato da <strong>Le vie segrete del vento</strong> aumenta di 6{NON_BREAK_SPACE}s."
+      "0": "La durata del Poliedro abbagliante creato da <strong>Le vie segrete del vento</strong> aumenta di 6 s."
     }
   },
   "constellation3": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "La meravigliosa via della verità",
     "description": {
-      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> ottengono un 40% di aumento DAN da CRIT quando infliggono <anemo>DAN da Anemo</anemo>. Quando il tuo personaggio attivo infligge DAN mentre sotto l'influsso del Dono del vento devoto, applica Collasso pressurizzato all'avversario danneggiato. Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s e il suo TdR è condiviso tra tutti i membri del gruppo."
+      "0": "I personaggi sotto l'effetto del Dono del vento devoto de <strong>Le vie segrete del vento</strong> ottengono un 40% di aumento DAN da CRIT quando infliggono <anemo>DAN da Anemo</anemo>. Quando il tuo personaggio attivo infligge DAN mentre sotto l'influsso del Dono del vento devoto, applica Collasso pressurizzato all'avversario danneggiato. Quest'effetto può attivarsi una volta ogni 3 s e il suo TdR è condiviso tra tutti i membri del gruppo."
     }
   }
 }

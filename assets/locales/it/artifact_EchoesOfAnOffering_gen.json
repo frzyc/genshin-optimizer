@@ -2,7 +2,7 @@
   "setName": "Echi di un'offerta",
   "setEffects": {
     "2": "ATT +18%.",
-    "4": "Quando gli attacchi normali colpiscono gli avversari, hanno un 36% di probabilità di innescare Rito della valle, che aumenta i DAN da attacchi normali di un 70% dell'ATT. Questo effetto si disperde 0,05{NON_BREAK_SPACE}s dopo che un attacco normale infligge DAN. Se un attacco normale non innesca Rito della valle, le probabilità di attivare l'effetto la volta successiva aumentano di un 20%. È possibile attivare l'effetto una volta ogni 0,2{NON_BREAK_SPACE}s."
+    "4": "Quando gli attacchi normali colpiscono gli avversari, hanno un 36% di probabilità di innescare Rito della valle, che aumenta i DAN da attacchi normali di un 70% dell'ATT. Questo effetto si disperde 0,05 s dopo che un attacco normale infligge DAN. Se un attacco normale non innesca Rito della valle, le probabilità di attivare l'effetto la volta successiva aumentano di un 20%. È possibile attivare l'effetto una volta ogni 0,2 s."
   },
   "pieces": {
     "flower": {

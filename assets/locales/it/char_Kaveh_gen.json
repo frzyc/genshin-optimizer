@@ -100,13 +100,13 @@
   "passive1": {
     "name": "Impresa dell'architetto",
     "description": {
-      "0": "Quando subisce DAN inflitti da un nucleo di Dendro (inclusi i DAN da Germinazione e Iperfioritura), Kaveh ripristina PS pari a un 300% della sua maestria elementale. Quest'effetto può attivarsi una volta ogni 0,5{NON_BREAK_SPACE}s."
+      "0": "Quando subisce DAN inflitti da un nucleo di Dendro (inclusi i DAN da Germinazione e Iperfioritura), Kaveh ripristina PS pari a un 300% della sua maestria elementale. Quest'effetto può attivarsi una volta ogni 0,5 s."
     }
   },
   "passive2": {
     "name": "Ideazioni estrose",
     "description": {
-      "0": "Durante l'effetto di <strong>Volta dipinta</strong>, dopo che un attacco normale, caricato o in picchiata di Kaveh colpisce un avversario, la sua maestria elementale aumenta di 25. Quest'effetto può attivarsi una volta ogni 0,1{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte.",
+      "0": "Durante l'effetto di <strong>Volta dipinta</strong>, dopo che un attacco normale, caricato o in picchiata di Kaveh colpisce un avversario, la sua maestria elementale aumenta di 25. Quest'effetto può attivarsi una volta ogni 0,1 s. Cumulabile fino a 4 volte.",
       "1": "Quest'effetto si annulla al termine dell'effetto di Volta dipinta."
     }
   },
@@ -119,7 +119,7 @@
   "constellation1": {
     "name": "Saluti eccelsi",
     "description": {
-      "0": "Entro 3{NON_BREAK_SPACE}s dopo aver usato <strong>Ingegno artistico</strong>, Kaveh ottiene un aumento della <dendro>RES a Dendro</dendro> e del bonus di guarigione ricevuta pari rispettivamente a un 50% e a un 25%."
+      "0": "Entro 3 s dopo aver usato <strong>Ingegno artistico</strong>, Kaveh ottiene un aumento della <dendro>RES a Dendro</dendro> e del bonus di guarigione ricevuta pari rispettivamente a un 50% e a un 25%."
     }
   },
   "constellation2": {
@@ -151,7 +151,7 @@
   "constellation6": {
     "name": "Sogni del Pairidaeza",
     "description": {
-      "0": "Quando gli attacchi normali, caricati o in picchiata di Kaveh colpiscono gli avversari durante <strong>Volta dipinta</strong>, viene sprigionata la Luce del Pairidaeza nella posizione dell'avversario, che infligge <dendro>DAN da Dendro ad area</dendro> pari a un 61,8% dell'ATT di Kaveh e causa l'esplosione di tutti i nuclei di Dendro all'interno di quell'area. Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s."
+      "0": "Quando gli attacchi normali, caricati o in picchiata di Kaveh colpiscono gli avversari durante <strong>Volta dipinta</strong>, viene sprigionata la Luce del Pairidaeza nella posizione dell'avversario, che infligge <dendro>DAN da Dendro ad area</dendro> pari a un 61,8% dell'ATT di Kaveh e causa l'esplosione di tutti i nuclei di Dendro all'interno di quell'area. Quest'effetto può attivarsi una volta ogni 3 s."
     }
   }
 }

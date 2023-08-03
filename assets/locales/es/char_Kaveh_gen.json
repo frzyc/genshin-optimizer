@@ -100,13 +100,13 @@
   "passive1": {
     "name": "Deber arquitectónico",
     "description": {
-      "0": "Cuando Kaveh es golpeado por el daño que infligen los núcleos Dendro (incluyendo el daño infligido con Crepitar y Sobreflorecimiento), recuperará Vida en una cantidad equivalente al 300% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 0.5{NON_BREAK_SPACE}s."
+      "0": "Cuando Kaveh es golpeado por el daño que infligen los núcleos Dendro (incluyendo el daño infligido con Crepitar y Sobreflorecimiento), recuperará Vida en una cantidad equivalente al 300% de su Maestría Elemental. Este efecto solo se puede activar una vez cada 0.5 s."
     }
   },
   "passive2": {
     "name": "Ideas curiosas de un alarife",
     "description": {
-      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, su Maestría Elemental aumenta en 25{NON_BREAK_SPACE}pts. Esto solo puede activarse una vez cada 0.1{NON_BREAK_SPACE}s y acumularse un máximo de 4{NON_BREAK_SPACE}veces.",
+      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, su Maestría Elemental aumenta en 25 pts. Esto solo puede activarse una vez cada 0.1 s y acumularse un máximo de 4 veces.",
       "1": "Este efecto se anulará una vez terminada la duración de Bóveda policromada."
     }
   },
@@ -119,7 +119,7 @@
   "constellation1": {
     "name": "Modales pudientes",
     "description": {
-      "0": "Durante 3{NON_BREAK_SPACE}s tras usar <strong>Genio de la arquitectura</strong>, la <dendro>RES Dendro</dendro> de Kaveh aumenta en un 50% y el Bono de Curación recibida, en un 25%."
+      "0": "Durante 3 s tras usar <strong>Genio de la arquitectura</strong>, la <dendro>RES Dendro</dendro> de Kaveh aumenta en un 50% y el Bono de Curación recibida, en un 25%."
     }
   },
   "constellation2": {
@@ -131,8 +131,8 @@
   "constellation3": {
     "name": "Oblación de Dur Untash",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Bóveda policromada</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Bóveda policromada</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -144,14 +144,14 @@
   "constellation5": {
     "name": "Galería sagrada",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Genio de la arquitectura</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Genio de la arquitectura</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Canon del paraíso",
     "description": {
-      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, libera una luz empírea en la ubicación de dicho enemigo que inflige <dendro>Daño Dendro en el AdE</dendro> en una cantidad equivalente al 61.8% del ATQ de Kaveh y hace explotar todos los núcleos Dendro activos en dicha AdE. Este efecto solo puede activarse una vez cada 3{NON_BREAK_SPACE}s."
+      "0": "Mientras <strong>Bóveda policromada</strong> está activa, cuando Kaveh golpea a un enemigo con un Ataque Normal, Cargado o Descendente, libera una luz empírea en la ubicación de dicho enemigo que inflige <dendro>Daño Dendro en el AdE</dendro> en una cantidad equivalente al 61.8% del ATQ de Kaveh y hace explotar todos los núcleos Dendro activos en dicha AdE. Este efecto solo puede activarse una vez cada 3 s."
     }
   }
 }

@@ -48,7 +48,7 @@
       "4": "In questo stato, Kamisato Ayato usa la sua Shunsuiken per sferrare attacchi incredibilmente veloci, e i DAN dei suoi attacchi normali vengono convertiti in <hydro>DAN da Hydro ad area</hydro> che non possono essere contrastati da altre infusioni elementali.",
       "5": "Questo stato possiede anche le seguenti proprietà:",
       "6": [
-        " quando la Shunsuiken colpisce un avversario, Ayato riceve l'effetto Namisen, che aumenta i DAN da Shunsuiken inflitti in base ai suoi PS max attuali. Inizialmente, il numero massimo di accumuli di Namisen è 4, ed è possibile ottenerne 1 accumulo tramite la Shunsuiken ogni 0,1{NON_BREAK_SPACE}s. Questo effetto si annulla al termine di Takimeguri Kanka;",
+        " quando la Shunsuiken colpisce un avversario, Ayato riceve l'effetto Namisen, che aumenta i DAN da Shunsuiken inflitti in base ai suoi PS max attuali. Inizialmente, il numero massimo di accumuli di Namisen è 4, ed è possibile ottenerne 1 accumulo tramite la Shunsuiken ogni 0,1 s. Questo effetto si annulla al termine di Takimeguri Kanka;",
         " la resistenza all'interruzione di Kamisato Ayato aumenta;",
         " non è possibile eseguire attacchi caricati o in picchiata."
       ],
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Flusso infinito",
     "description": {
-      "0": "Dopo aver usato <strong>Arte Kamisato: Suiyuu</strong>, la VEL dell'attacco normale di tutti i membri del gruppo vicini aumenta di un 15% per 15{NON_BREAK_SPACE}s."
+      "0": "Dopo aver usato <strong>Arte Kamisato: Suiyuu</strong>, la VEL dell'attacco normale di tutti i membri del gruppo vicini aumenta di un 15% per 15 s."
     }
   },
   "constellation5": {

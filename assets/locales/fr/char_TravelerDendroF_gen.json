@@ -77,7 +77,7 @@
       "7": "<br/>",
       "8": "{M#Le voyageur}{F#La voyageuse} ne peut générer qu'un seul lotus lumineux à la fois.",
       "9": "<br/>",
-      "10": "<i>Paimon et vous étudiez les sons des plantes qui poussent après la pluie...</i>"
+      "10": "<i>Paimon et vous avez étudié les sons des plantes qui poussent après la pluie...</i>"
     },
     "skillParams": {
       "0": "DGT lotus lumineux",
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Luxe verdoyant",
     "description": {
-      "0": "Chaque point de maîtrise élémentaire que {M#le voyageur}{F#la voyageuse} possède augmente les DGT infligés par <strong>Gerbe acérée</strong> de 0,15{NON_BREAK_SPACE}%, et ceux de <strong>Manifestation surgente</strong> de 0,1 %."
+      "0": "Chaque point de maîtrise élémentaire que {M#le voyageur}{F#la voyageuse} possède augmente les DGT infligés par <strong>Gerbe acérée</strong> de 0,15 %, et ceux de <strong>Manifestation surgente</strong> de 0,1 %."
     }
   },
   "constellation1": {

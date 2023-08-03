@@ -78,7 +78,7 @@
         " la sua energia si rigenera continuamente;",
         " subisce l'influenza di <electro>Electro</electro>."
       ],
-      "5": "Quando il Connettore tra il djinn e il personaggio tocca gli avversari, infligge loro <electro>DAN da Electro</electro> ogni 0,4{NON_BREAK_SPACE}s.",
+      "5": "Quando il Connettore tra il djinn e il personaggio tocca gli avversari, infligge loro <electro>DAN da Electro</electro> ogni 0,4 s.",
       "6": "<br/>",
       "7": "Può esistere solo un djinn alla volta.",
       "8": "<br/>",
@@ -106,8 +106,8 @@
   "passive1": {
     "name": "Fiuto per gli affari",
     "description": {
-      "0": "Quando il personaggio connesso al <strong>djinn</strong> innesca una reazione di Electrocarica, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura, Turbinio di Electro o Cristallizzazione, il TdR di <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> si riduce di 1{NON_BREAK_SPACE}s.",
-      "1": "Quest'effetto può attivarsi una volta ogni 3{NON_BREAK_SPACE}s."
+      "0": "Quando il personaggio connesso al <strong>djinn</strong> innesca una reazione di Electrocarica, Superconduzione, Sovraccarico, Vivificazione, Accentuazione, Iperfioritura, Turbinio di Electro o Cristallizzazione, il TdR di <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> si riduce di 1 s.",
+      "1": "Quest'effetto può attivarsi una volta ogni 3 s."
     }
   },
   "passive2": {
@@ -162,10 +162,10 @@
   "constellation6": {
     "name": "Peso leggero",
     "description": {
-      "0": "Dopo aver utilizzato <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> Dori ottiene i seguenti effetti per 3{NON_BREAK_SPACE}s:",
+      "0": "Dopo aver utilizzato <strong>Lampada sigilla spiriti: Cannone solvitutto</strong> Dori ottiene i seguenti effetti per 3 s:",
       "1": [
         " <electro>infusione di Electro</electro>;",
-        " quando un attacco normale colpisce un avversario, tutti i membri del gruppo nelle vicinanze guariscono di una quantità equivalente a un 4% dei PS max di Dori. Quest'effetto può verificarsi una volta ogni 0,1{NON_BREAK_SPACE}s."
+        " quando un attacco normale colpisce un avversario, tutti i membri del gruppo nelle vicinanze guariscono di una quantità equivalente a un 4% dei PS max di Dori. Quest'effetto può verificarsi una volta ogni 0,1 s."
       ]
     }
   }

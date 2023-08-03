@@ -127,7 +127,7 @@
     "name": "Baile de escarcha",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Golpe de escarcha</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -145,7 +145,7 @@
     "name": "Abrazo helado",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Vals gélido</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

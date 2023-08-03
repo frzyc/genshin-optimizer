@@ -24,14 +24,17 @@
   "maxStacks": "Limite de Recargas de Energia",
   "skillDMG": "Dano de Habilidade",
   "burstDMG": "Dano de Explosão",
-  "dmgAbsorption": "Dano de Absorção",
+  "dmgAbsorption": "Absorção de Escudo",
   "healing": "Cura",
+  "contHealing": "Cura Contínua",
   "duration": "Duração",
   "cd": "Tempo de Recarga",
   "energyCost": "Energia Elemental",
+  "energyRegen": "Regeneração de Energia Elemental",
   "baseDMG": "Dano Básico",
   "dot": "Dano de Contínuo",
   "addEleDMG": "Adição de Dano Elemental",
+  "hpRegenPerHit": "Regeneração de Vida por Acerto",
   "press": {
     "dmg": "Dano de Toque",
     "cd": "Recarga ao Pressionar"
@@ -57,11 +60,17 @@
     "superconduct": "Supercondutor",
     "vaporize": "Vaporizar",
     "melt": "Fundir",
-    "bloom": "Bloom",
+    "bloom": "Florescimento",
     "burgeon": "Germinação",
     "hyperbloom": "Superflorescimento",
     "quicken": "Aceleração",
     "aggravate": "Intensificação",
     "spread": "Propagação"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "ATQ Básico"
+    }
   }
 }

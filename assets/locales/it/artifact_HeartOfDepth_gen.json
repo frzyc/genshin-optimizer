@@ -2,7 +2,7 @@
   "setName": "Cuore profondo",
   "setEffects": {
     "2": "Bonus DAN da Hydro +15%.",
-    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 30% i DAN da attacchi normali e caricati per 15{NON_BREAK_SPACE}s."
+    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 30% i DAN da attacchi normali e caricati per 15 s."
   },
   "pieces": {
     "flower": {

@@ -57,7 +57,7 @@
       "8": "<strong>Appui long</strong>",
       "9": "Ajuste la zone où la compétence sera lancée.",
       "10": "<br/>",
-      "11": "<i>« Adoptez cette formation et nous serons en sécurité, je vous le garantis{NON_BREAK_SPACE}! » En tant que général et chef des troupes, la dernière chose que Gorou veut, c'est de voir ses soldats blessés.</i>"
+      "11": "<i>« Adoptez cette formation et nous serons en sécurité, je vous le garantis ! » En tant que général et chef des troupes, la dernière chose que Gorou veut, c'est de voir ses soldats blessés.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -94,7 +94,7 @@
       "6": "Si une bannière de général créée par Gorou est présente lors de l'utilisation, elle sera détruite. De plus, si Gorou utilise sa compétence élémentaire « Défense intégrale d'Inuzaka » alors qu'un prestige de général est actif, il ne crée pas de bannière de général.",
       "7": "Si Gorou est vaincu, les effets du prestige de général sont annulés.",
       "8": "<br/>",
-      "9": "<i>« Le terrain est à notre avantage{NON_BREAK_SPACE}!{NON_BREAK_SPACE}» Gorou peut s'approprier la topographie du champ de bataille pour faire pencher la balance en sa faveur. Cette technique lui a permis de traverser de nombreux combats contre une opposition en apparence supérieure.</i>"
+      "9": "<i>« Le terrain est à notre avantage ! » Gorou peut s'approprier la topographie du champ de bataille pour faire pencher la balance en sa faveur. Cette technique lui a permis de traverser de nombreux combats contre une opposition en apparence supérieure.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -161,7 +161,7 @@
   "constellation4": {
     "name": "Léchouille canine : Bonté de l'eau",
     "description": {
-      "0": "Lorsque le <strong>prestige de général</strong> est dans l'état Imprenabilité ou Fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5{NON_BREAK_SPACE}s d'une valeur équivalant à 50{NON_BREAK_SPACE}% de la DÉF de Gorou."
+      "0": "Lorsque le <strong>prestige de général</strong> est dans l'état Imprenabilité ou Fracas, il restaure également les PV du personnage déployé dans la zone d'effet toutes les 1,5 s d'une valeur équivalant à 50 % de la DÉF de Gorou."
     }
   },
   "constellation5": {
@@ -174,7 +174,7 @@
   "constellation6": {
     "name": "Vaillance canine : Fidélité de la terre",
     "description": {
-      "0": "Pendant 12 s après <strong>Défense intégrale d'Inuzaka</strong> ou <strong>Crocs bestiaux : Vers la victoire</strong>, les DGT CRIT des <geo>DGT Géo</geo> de tous les personnages de l'équipe à proximité augmentent en fonction du niveau du champ au moment de l'utilisation de la compétence{NON_BREAK_SPACE}:",
+      "0": "Pendant 12 s après <strong>Défense intégrale d'Inuzaka</strong> ou <strong>Crocs bestiaux : Vers la victoire</strong>, les DGT CRIT des <geo>DGT Géo</geo> de tous les personnages de l'équipe à proximité augmentent en fonction du niveau du champ au moment de l'utilisation de la compétence :",
       "1": [
         " Pied ferme : +10 %.",
         " Imprenabilité : +20 %.",

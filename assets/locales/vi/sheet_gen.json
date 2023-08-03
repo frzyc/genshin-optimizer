@@ -24,14 +24,17 @@
   "maxStacks": "Giới Hạn Số Tầng Năng Lượng",
   "skillDMG": "Sát Thương Kỹ Năng",
   "burstDMG": "ST Bạo Phát",
-  "dmgAbsorption": "Lượng hấp thu",
+  "dmgAbsorption": "Sát thương hấp thụ",
   "healing": "Lượng trị liệu",
+  "contHealing": "Lượng Trị Liệu",
   "duration": "Thời Gian Kéo Dài",
   "cd": "CD",
   "energyCost": "Năng Lượng Nguyên Tố",
+  "energyRegen": "Hồi Phục Năng Lượng Nguyên Tố",
   "baseDMG": "Sát Thương Cơ Bản",
   "dot": "Sát Thương Kéo Dài",
   "addEleDMG": "Sát Thương Nguyên Tố Kèm Theo",
+  "hpRegenPerHit": "Hồi HP khi đánh trúng địch",
   "press": {
     "dmg": "Sát Thương Nhấn",
     "cd": "CD Nhấn"
@@ -57,11 +60,17 @@
     "superconduct": "Siêu Dẫn",
     "vaporize": "Bốc Hơi",
     "melt": "Tan Chảy",
-    "bloom": "Bloom",
+    "bloom": "Sum Suê",
     "burgeon": "Bung Tỏa",
     "hyperbloom": "Nở Rộ",
     "quicken": "Sinh Trưởng",
     "aggravate": "Tăng Cường",
     "spread": "Lan Tràn"
+  },
+  "stat": {
+    "def": "Phòng Ngự",
+    "base": {
+      "atk": "Tấn Công Căn Bản"
+    }
   }
 }

@@ -19,7 +19,7 @@
         "0": "<strong>Risacca</strong>",
         "1": "Gli avversari affetti da Risacca subiscono gli effetti dei <hydro>DAN da Hydro ad area</hydro> quando sono attaccati da Tartaglia in vari modi. I DAN inflitti in questo modo si considerano DAN da attacco normale.",
         "2": [
-          " Lampo di Risacca: un attacco mirato a piena carica che colpisce un avversario affetto da Risacca infligge DAN ad area continui. Può verificarsi una volta ogni 0,7{NON_BREAK_SPACE}s.",
+          " Lampo di Risacca: un attacco mirato a piena carica che colpisce un avversario affetto da Risacca infligge DAN ad area continui. Può verificarsi una volta ogni 0,7 s.",
           " Scoppio di Risacca: sconfiggere un avversario affetto da Risacca crea uno scoppio di Hydro che infligge lo stato di Risacca agli avversari vicini colpiti."
         ]
       },
@@ -61,10 +61,10 @@
       "7": "Consuma una determinata quantità di vigore per rilasciare un colpo incrociato, infliggendo <hydro>DAN da Hydro</hydro>.",
       "8": "<br/>",
       "9": "<strong>Sferzata di Risacca</strong>",
-      "10": "Colpire un avversario affetto da Risacca con un attacco in mischia rilascia una Sferzata di Risacca che infligge <hydro>DAN da Hydro ad area</hydro>. I DAN inflitti in questo modo si considerano DAN da abilità elementale e si possono verificare solo una volta ogni 1,5{NON_BREAK_SPACE}s.",
+      "10": "Colpire un avversario affetto da Risacca con un attacco in mischia rilascia una Sferzata di Risacca che infligge <hydro>DAN da Hydro ad area</hydro>. I DAN inflitti in questo modo si considerano DAN da abilità elementale e si possono verificare solo una volta ogni 1,5 s.",
       "11": "<br/>",
       "12": "Dopo 30 s, o quando il talento viene nuovamente attivato, l'abilità termina. Tartaglia torna nella sua posizione a distanza e la sua abilità entra in TdR. Più tempo Tartaglia resta in posizione da mischia, più lungo sarà il TdR.",
-      "13": "Se il ritorno alla posizione a distanza avviene automaticamente dopo 30{NON_BREAK_SPACE}s, il TdR è ancora più lungo.",
+      "13": "Se il ritorno alla posizione a distanza avviene automaticamente dopo 30 s, il TdR è ancora più lungo.",
       "14": "<br/>",
       "15": "<i>Ha scelto l'arco come sua arma proprio per superare la sua debolezza con esso. Ma una lotta impegnativa gli richiede di fare sul serio...</i>"
     },
@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Caos abissale: Hydrogetto",
     "description": {
-      "0": "Se Tartaglia è nella posizione da mischia di <strong>Eredità immonda: Marea infuriata</strong>, rilascia Sferzata di Risacca ogni 4{NON_BREAK_SPACE}s contro gli avversari sotto l'effetto di Risacca presenti sul campo, oppure rilascia Lampo di Risacca.",
+      "0": "Se Tartaglia è nella posizione da mischia di <strong>Eredità immonda: Marea infuriata</strong>, rilascia Sferzata di Risacca ogni 4 s contro gli avversari sotto l'effetto di Risacca presenti sul campo, oppure rilascia Lampo di Risacca.",
       "1": "Sferzate di Risacca e Lampi di Risacca innescati da quest'effetto della costellazione non sono soggetti agli intervalli di tempo che si applicano generalmente a questi due effetti, né hanno alcun effetto su tali intervalli di tempo."
     }
   },

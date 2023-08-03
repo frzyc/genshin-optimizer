@@ -1,7 +1,7 @@
 {
   "name": "Diona",
   "title": "Barista Kätzlein",
-  "description": "Una fanciulla che ha ereditato in minima parte sangue non umano. Barista incredibilmente popolare della taverna Coda di Gatto.",
+  "description": "Una fanciulla che ha ereditato in minima parte sangue non umano. È la barista della taverna Coda di Gatto, ed è incredibilmente popolare.",
   "constellationName": "Feles",
   "auto": {
     "name": "Stile Kätzlein",
@@ -54,7 +54,7 @@
       "9": "<br/>",
       "10": "Lo scudo ha un bonus Assorbimento <cryo>DAN da Cryo</cryo> di un 250% e fa sì che il tuo personaggio attivo subisca l'effetto di <cryo>Cryo</cryo> nel punto di formazione per una breve durata.",
       "11": "<br/>",
-      "12": "<i>Quando iniziò a servire al bar, Diona scoprì che non importava quanto ghiaccio mettesse nei suoi cocktail, dato che questo non avrebbe mai fatto del male a un ubriacone. Tutto cambiò quando ricevette la sua Visione: ora può formare del ghiaccio abbastanza freddo da causare un forte congelamento cerebrale. Una tecnica sopraffina!</i>"
+      "12": "<i>Quando iniziò a servire al bar, Diona scoprì che non importava quanto ghiaccio mettesse nei suoi cocktail, dato che questo non avrebbe mai fatto del male a un ubriacone. Tutto cambiò quando ricevette la sua Visione: ora può formare del ghiaccio gelido al punto da causare una fortissima cefalea da freddo. Una tecnica sopraffina!</i>"
     },
     "skillParams": {
       "0": "DAN da Zampa glaciale",
@@ -90,7 +90,7 @@
     },
     "skillParams": {
       "0": "DAN da abilità",
-      "1": "DAN da campo continuo",
+      "1": "DAN da campo continui",
       "2": "RIGEN PS nel tempo",
       "3": "Durata",
       "4": "TdR",
@@ -110,13 +110,13 @@
   "passive1": {
     "name": "Menù segreto della Coda di Gatto",
     "description": {
-      "0": "Aumenta la VEL di movimento dei personaggi protetti da <strong>Zampe glaciali</strong> e riduce il loro consumo di vigore di un 10%."
+      "0": "Aumenta la VEL di movimento e riduce il consumo di vigore dei personaggi protetti da <strong>Zampe glaciali</strong> di un 10%."
     }
   },
   "passive2": {
     "name": "Farsa inebriante",
     "description": {
-      "0": "L'ATT degli avversari nell'area d'effetto di <strong>Miscela d'autore</strong> si riduce di un 10% per 15{NON_BREAK_SPACE}s."
+      "0": "L'ATT degli avversari nell'area d'effetto di <strong>Miscela d'autore</strong> si riduce di un 10% per 15 s."
     }
   },
   "passive3": {
@@ -135,7 +135,7 @@
     "name": "Agitato, non \"miaoscolato\"",
     "description": {
       "0": "Aumenta i DAN di <strong>Zampe glaciali</strong> e l'assorbimento DAN del suo scudo di un 15%.",
-      "1": "Inoltre, quando le zampe colpiscono i loro bersagli, si genera uno scudo che protegge i personaggi vicini sul campo. Ha un 50% di assorbimento DAN dello scudo di <strong>Zampe glaciali</strong> e dura 5{NON_BREAK_SPACE}s."
+      "1": "Inoltre, quando le zampe colpiscono i loro bersagli, si genera uno scudo che protegge i personaggi vicini sul campo. Tale scudo possiede un 50% di assorbimento DAN dello scudo di <strong>Zampe glaciali</strong> e dura 5 s."
     }
   },
   "constellation3": {
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Assassina dell'industria del vino",
     "description": {
-      "0": "Nel raggio di <strong>Miscela d'autore</strong>, il tempo di ricarica degli attacchi mirati di Diona si riduce di un 60%."
+      "0": "Nel raggio di <strong>Miscela d'autore</strong>, il tempo di carica degli attacchi mirati di Diona si riduce di un 60%."
     }
   },
   "constellation5": {
@@ -161,10 +161,10 @@
   "constellation6": {
     "name": "Orario di chiusura",
     "description": {
-      "0": "I personaggi nel raggio di <strong>Miscela d'autore</strong> riceveranno i seguenti effetti sulla base della loro quantità di PS:",
+      "0": "I personaggi nel raggio di <strong>Miscela d'autore</strong> ricevono i seguenti effetti in base alla loro quantità di PS:",
       "1": [
-        " aumenta di un 30% il bonus di guarigione ricevuta quando i PS sono inferiori o pari a un 50%;",
-        " aumenta di 200 la maestria elementale quando i PS sono superiori a un 50%."
+        " se i PS sono pari o inferiori a un 50%, il bonus di guarigione ricevuta aumenta di un 30%;",
+        " se i PS sono superiori a un 50%, la maestria elementale aumenta di 200."
       ]
     }
   }

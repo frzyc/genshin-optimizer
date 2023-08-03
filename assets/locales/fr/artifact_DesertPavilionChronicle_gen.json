@@ -2,7 +2,7 @@
   "setName": "Chronique du Pavillon du désert",
   "setEffects": {
     "2": "Confère un bonus de DGT Anémo de 15 %.",
-    "4": "Lorsqu'une attaque chargée a touché un ennemi, la VIT d'attaque normale du personnage augmente de 10 % et les DGT infligés par ses attaques normales, chargées et plongeantes augmentent de 40{NON_BREAK_SPACE}%, pendant 15 s."
+    "4": "Lorsqu'une attaque chargée a touché un ennemi, la VIT d'attaque normale du personnage augmente de 10 % et les DGT infligés par ses attaques normales, chargées et plongeantes augmentent de 40 %, pendant 15 s."
   },
   "pieces": {
     "flower": {

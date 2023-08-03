@@ -117,13 +117,13 @@
   "passive1": {
     "name": "Stelle sparse",
     "description": {
-      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, Yaoyao lancia continuamente dei Ravanelli di giada bianca quando scatta, salta o corre. Può lanciare un Ravanello di giada bianca in questo modo ogni 0,6{NON_BREAK_SPACE}s."
+      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, Yaoyao lancia continuamente dei Ravanelli di giada bianca quando scatta, salta o corre. Può lanciare un Ravanello di giada bianca in questo modo ogni 0,6 s."
     }
   },
   "passive2": {
     "name": "Per il bene di tutti",
     "description": {
-      "0": "Quando i <strong>Ravanelli di giada bianca</strong> esplodono, i PS dei personaggi presenti nella loro area d'effetto vengono ripristinati di uno 0,8% dei PS max di Yaoyao ogni secondo. L'effetto dura 5{NON_BREAK_SPACE}s."
+      "0": "Quando i <strong>Ravanelli di giada bianca</strong> esplodono, i PS dei personaggi presenti nella loro area d'effetto vengono ripristinati di uno 0,8% dei PS max di Yaoyao ogni secondo. L'effetto dura 5 s."
     }
   },
   "passive3": {
@@ -136,13 +136,13 @@
   "constellation1": {
     "name": "Formazione adeptica",
     "description": {
-      "0": "Quando i <strong>Ravanelli di giada bianca</strong> esplodono, i personaggi attivi presenti nella loro area d'effetto ottengono un 15% di <dendro>bonus DAN da Dendro</dendro> per 8{NON_BREAK_SPACE}s, e il loro vigore si ripristina di 15. Questa forma di recupero del vigore può verificarsi solo una volta ogni 5{NON_BREAK_SPACE}s."
+      "0": "Quando i <strong>Ravanelli di giada bianca</strong> esplodono, i personaggi attivi presenti nella loro area d'effetto ottengono un 15% di <dendro>bonus DAN da Dendro</dendro> per 8 s, e il loro vigore si ripristina di 15. Questa forma di recupero del vigore può verificarsi solo una volta ogni 5 s."
     }
   },
   "constellation2": {
     "name": "Innocenza",
     "description": {
-      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, se i Ravanelli di giada bianca esplodono e colpiscono i nemici, l'energia di Yaoyao si ripristina di 3. Questa forma di recupero dell'energia può verificarsi solo una volta ogni 0,8{NON_BREAK_SPACE}s."
+      "0": "Mentre l'effetto dell'Eredità adeptica generata da <strong>Cascata di giada lunare</strong> è attivo, se i Ravanelli di giada bianca esplodono e colpiscono i nemici, l'energia di Yaoyao si ripristina di 3. Questa forma di recupero dell'energia può verificarsi solo una volta ogni 0,8 s."
     }
   },
   "constellation3": {
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Tenerezza",
     "description": {
-      "0": "Dopo aver usato <strong>Ravanelli a grappolo</strong> o <strong>Cascata di giada lunare</strong>, la maestria elementale di Yaoyao aumenta di uno 0,3% dei suoi PS max per 8{NON_BREAK_SPACE}s. È possibile ottenere in questo modo fino a 120 di maestria elementale."
+      "0": "Dopo aver usato <strong>Ravanelli a grappolo</strong> o <strong>Cascata di giada lunare</strong>, la maestria elementale di Yaoyao aumenta di uno 0,3% dei suoi PS max per 8 s. È possibile ottenere in questo modo fino a 120 di maestria elementale."
     }
   },
   "constellation5": {

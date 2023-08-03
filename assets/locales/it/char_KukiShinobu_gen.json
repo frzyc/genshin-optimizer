@@ -44,7 +44,7 @@
       "0": "Crea un Anello d'erba purificatore spendendo parte dei suoi PS, infliggendo <electro>DAN da Electro</electro> agli avversari vicini.",
       "1": "<br/>",
       "2": "<strong>Anello d'erba purificatore</strong>",
-      "3": "Segue il tuo personaggio attivo. Infligge <electro>DAN da Electro</electro> agli avversari vicini ogni 1,5{NON_BREAK_SPACE}s e ripristina i PS dei personaggi attivi all'interno dell'area d'effetto dell'anello in base ai PS max di Kuki Shinobu.",
+      "3": "Segue il tuo personaggio attivo. Infligge <electro>DAN da Electro</electro> agli avversari vicini ogni 1,5 s e ripristina i PS dei personaggi attivi all'interno dell'area d'effetto dell'anello in base ai PS max di Kuki Shinobu.",
       "4": "<br/>",
       "5": "Il consumo di PS per l'uso di questa abilità può ridurre i suoi PS fino a un 20%.",
       "6": "<br/>",
@@ -127,7 +127,7 @@
   "constellation2": {
     "name": "Fortuna abbandonata",
     "description": {
-      "0": "La durata di <strong>Anello d'erba purificatore</strong> aumenta di 3{NON_BREAK_SPACE}s."
+      "0": "La durata di <strong>Anello d'erba purificatore</strong> aumenta di 3 s."
     }
   },
   "constellation3": {
@@ -141,7 +141,7 @@
     "name": "Sigillo spezzato",
     "description": {
       "0": "Quando gli attacchi normali, caricati o in picchiata del personaggio sotto l'effetto di <strong>Anello d'erba purificatore</strong> di Shinobu colpiscono gli avversari, un Marchio Tuonerba cade nella posizione dell'avversario infliggendo <electro>DAN da Electro ad area</electro> in base a un 9,7% dei PS max di Shinobu.",
-      "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 5 s."
     }
   },
   "constellation5": {
@@ -154,8 +154,8 @@
   "constellation6": {
     "name": "Debolezza interrotta",
     "description": {
-      "0": "Quando Kuki Shinobu subisce DAN letali, non viene sconfitta. Questo effetto si innesca automaticamente quando i suoi PS scendono a 1 e si attiva una volta ogni 60{NON_BREAK_SPACE}s.",
-      "1": "Quando i PS di Shinobu scendono sotto un 25%, la sua maestria elementale aumenta di 150 per 15{NON_BREAK_SPACE}s. Quest'effetto si attiva una volta ogni 60{NON_BREAK_SPACE}s."
+      "0": "Quando Kuki Shinobu subisce DAN letali, non viene sconfitta. Questo effetto si innesca automaticamente quando i suoi PS scendono a 1 e si attiva una volta ogni 60 s.",
+      "1": "Quando i PS di Shinobu scendono sotto un 25%, la sua maestria elementale aumenta di 150 per 15 s. Quest'effetto si attiva una volta ogni 60 s."
     }
   }
 }

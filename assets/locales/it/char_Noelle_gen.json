@@ -110,16 +110,16 @@
     "name": "Devozione",
     "description": {
       "0": "Quando Noelle è nel gruppo ma non sul campo, quest'abilità si attiva automaticamente quando i PS del personaggio attivo scendono al di sotto di un 30%.",
-      "1": "Genera uno scudo per il personaggio attivo che dura 20{NON_BREAK_SPACE}s e assorbe DAN pari a un 400% della DIF di Noelle.",
+      "1": "Genera uno scudo per il personaggio attivo che dura 20 s e assorbe DAN pari a un 400% della DIF di Noelle.",
       "2": "Lo scudo ha un'efficacia di assorbimento DAN pari a un 150% contro tutti i DAN elementali e fisici.",
-      "3": "Questo effetto si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
+      "3": "Questo effetto si può verificare una sola volta ogni 60 s."
     }
   },
   "passive2": {
     "name": "Pulito e ordinato",
     "description": {
       "0": "Noelle ridurrà di 1 s il TdR di <strong>Corazza</strong> per ogni 4 attacchi normali o caricati messi a segno sugli avversari.",
-      "1": "Un colpo può essere contato ogni 0,1{NON_BREAK_SPACE}s."
+      "1": "Un colpo può essere contato ogni 0,1 s."
     }
   },
   "passive3": {
@@ -164,7 +164,7 @@
     "name": "Pulizia impeccabile",
     "description": {
       "0": "<strong>Pulizia completa</strong> aumenta l'ATT di Noelle di una quantità pari a un 50% della sua DIF.",
-      "1": "Inoltre, ogni avversario sconfitto mentre l'abilità è attiva aggiunge 1{NON_BREAK_SPACE}s alla sua durata, fino a un massimo di 10{NON_BREAK_SPACE}s."
+      "1": "Inoltre, ogni avversario sconfitto mentre l'abilità è attiva aggiunge 1 s alla sua durata, fino a un massimo di 10 s."
     }
   }
 }

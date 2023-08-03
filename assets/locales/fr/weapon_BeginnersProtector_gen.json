@@ -1,6 +1,8 @@
 {
   "name": "Lance du débutant",
-  "description": "Une lance droite comme un mât, idéale en situation de combat. Elle dégage une présence imposante.",
+  "description": {
+    "0": "Une lance droite comme un mât, idéale en situation de combat. Elle dégage une présence imposante."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

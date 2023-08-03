@@ -1,6 +1,8 @@
 {
   "name": "Grimoire de poche",
-  "description": "Un petit carnet rempli de notes concernant un examen de magie.",
+  "description": {
+    "0": "Un petit carnet rempli de notes concernant un examen de magie."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

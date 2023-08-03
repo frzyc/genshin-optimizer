@@ -2,7 +2,7 @@
   "setName": "Fulgor de Vurukasha",
   "setEffects": {
     "2": "Vida +20%.",
-    "4": "El daño de la Habilidad Elemental y Definitiva aumenta en un 10%. Cuando el portador de este artefacto recibe daño, el incremento de daño anteriormente mencionado aumenta en un 80% durante 5{NON_BREAK_SPACE}s. Este efecto puede acumularse hasta 5 veces, cada acumulación se calcula de manera independiente y se puede activar incluso cuando el portador está en tu equipo pero no en combate."
+    "4": "El daño de la Habilidad Elemental y Definitiva aumenta en un 10%. Cuando el portador de este artefacto recibe daño, el incremento de daño anteriormente mencionado aumenta en un 80% durante 5 s. Este efecto puede acumularse hasta 5 veces, cada acumulación se calcula de manera independiente y se puede activar incluso cuando el portador está en tu equipo pero no en combate."
   },
   "pieces": {
     "flower": {

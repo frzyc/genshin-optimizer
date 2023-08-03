@@ -108,7 +108,7 @@
   "passive2": {
     "name": "Campo elettrostatico",
     "description": {
-      "0": "La DIF degli avversari colpiti da <strong>Rosa fulminante</strong> diminuisce di un 15% per 10{NON_BREAK_SPACE}s."
+      "0": "La DIF degli avversari colpiti da <strong>Rosa fulminante</strong> diminuisce di un 15% per 10 s."
     }
   },
   "passive3": {
@@ -158,7 +158,7 @@
     "name": "Strega pulsante",
     "description": {
       "0": "Quando Lisa entra in campo, applica 3 cariche di Conduzione di <strong>Tuono violetto</strong> agli avversari vicini.",
-      "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 5 s."
     }
   }
 }

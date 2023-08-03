@@ -1,6 +1,8 @@
 {
   "name": "Waster Greatsword",
-  "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
+  "description": {
+    "0": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

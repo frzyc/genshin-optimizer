@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Venti avvolgenti",
     "description": {
-      "0": "Usando la variante a pressione prolungata di <strong>Sonetto celeste</strong>, si crea una corrente ascendente di 20{NON_BREAK_SPACE}s."
+      "0": "Usando la variante a pressione prolungata di <strong>Sonetto celeste</strong>, si crea una corrente ascendente di 20 s."
     }
   },
   "passive2": {
@@ -133,7 +133,7 @@
   "constellation2": {
     "name": "Brezza della reminiscenza",
     "description": {
-      "0": "<strong>Sonetto celeste</strong> riduce la <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari di un 12% per 10{NON_BREAK_SPACE}s.",
+      "0": "<strong>Sonetto celeste</strong> riduce la <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari di un 12% per 10 s.",
       "1": "La <anemo>RES ad Anemo</anemo> e la RES fisica degli avversari scaraventati in aria da <strong>Sonetto celeste</strong> si riducono di un ulteriore 12%."
     }
   },
@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Uragano della libertà",
     "description": {
-      "0": "Quando Venti raccoglie una particella o sfera elementale, riceve un <anemo>bonus DAN da Anemo</anemo> di un 25% per 10{NON_BREAK_SPACE}s."
+      "0": "Quando Venti raccoglie una particella o sfera elementale, riceve un <anemo>bonus DAN da Anemo</anemo> di un 25% per 10 s."
     }
   },
   "constellation5": {

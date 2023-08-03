@@ -1,6 +1,8 @@
 {
   "name": "Waster Greatsword",
-  "description": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun.",
+  "description": {
+    "0": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

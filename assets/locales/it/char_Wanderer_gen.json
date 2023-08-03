@@ -111,7 +111,7 @@
         " <hydro>Hydro</hydro>: il limite di punti di Kuugoryoku aumenta di 20.",
         " <pyro>Pyro</pyro>: l'ATT aumenta di un 30%.",
         " <cryo>Cryo</cryo>: il tasso di CRIT aumenta di un 20%.",
-        " <electro>Electro</electro>: quando gli attacchi normali e caricati colpiscono gli avversari, il personaggio ottiene 0,8 di energia. È possibile ottenere energia in questo modo ogni 0,2{NON_BREAK_SPACE}s."
+        " <electro>Electro</electro>: quando gli attacchi normali e caricati colpiscono gli avversari, il personaggio ottiene 0,8 di energia. È possibile ottenere energia in questo modo ogni 0,2 s."
       ],
       "2": "<br/>",
       "3": "Puoi beneficiare di max 2 di questi effetti positivi contemporaneamente."
@@ -121,7 +121,7 @@
     "name": "Fantasticheria burrascosa",
     "description": {
       "0": "Quando il Vagabondo colpisce gli avversari con Kuugo: Fushoudan o Kuugo: Toufukai nel suo stato di <strong>Vento prospero</strong> ha un 16% di probabilità di ottenere l'effetto Discesa: la volta successiva che il Vagabondo accelera a mezz'aria mentre è in stato di Vento prospero, questo effetto viene rimosso. In questo caso, l'accelerazione non consuma alcun punto di Kuugoryoku, e il personaggio scocca 4 frecce di vento che infliggono <anemo>DAN da Anemo</anemo> ciascuna pari a un 35% del suo ATT.",
-      "1": "Per ogni Kuugo: Fushoudan e Kuugo: Toufukai che non produce quest'effetto, l'attacco successivo di uno dei due tipi ha un 12% di probabilità in più di produrlo. Il calcolo della produzione dell'effetto viene effettuato ogni 0,1{NON_BREAK_SPACE}s."
+      "1": "Per ogni Kuugo: Fushoudan e Kuugo: Toufukai che non produce quest'effetto, l'attacco successivo di uno dei due tipi ha un 12% di probabilità in più di produrlo. Il calcolo della produzione dell'effetto viene effettuato ogni 0,1 s."
     }
   },
   "passive3": {

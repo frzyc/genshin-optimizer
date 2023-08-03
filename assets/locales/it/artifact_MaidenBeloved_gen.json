@@ -2,7 +2,7 @@
   "setName": "Amata fanciulla",
   "setEffects": {
     "2": "Efficacia guarigione personaggio +15%.",
-    "4": "Usare un'abilità o un Tripudio elementale aumenta di un 20% la guarigione ricevuta da tutti i membri del gruppo per 10{NON_BREAK_SPACE}s."
+    "4": "Usare un'abilità o un Tripudio elementale aumenta di un 20% la guarigione ricevuta da tutti i membri del gruppo per 10 s."
   },
   "pieces": {
     "flower": {

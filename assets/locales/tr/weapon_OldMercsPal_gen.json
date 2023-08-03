@@ -1,6 +1,8 @@
 {
   "name": "İhtiyar Lejyonerin Dostu",
-  "description": "Savaşlara ve yıllara meydan okumuş sağlam bir kılıç.",
+  "description": {
+    "0": "Savaşlara ve yıllara meydan okumuş sağlam bir kılıç."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

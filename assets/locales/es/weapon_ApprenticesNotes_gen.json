@@ -1,6 +1,8 @@
 {
   "name": "Apuntes del Aprendiz",
-  "description": "Notas escritas por un estudiante brillante. Dejó anotados muchos hechizos útiles. Su letra es hermosa.",
+  "description": {
+    "0": "Notas escritas por un estudiante brillante. Dejó anotados muchos hechizos útiles. Su letra es hermosa."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

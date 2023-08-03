@@ -56,8 +56,8 @@
       "11": "Per la durata di ogni singolo Santuario infuocato è possibile usare 1 sola Fiamma estesa.",
       "12": "<br/>",
       "13": "<strong>Santuario infuocato</strong>",
-      "14": "Quando un avversario all'interno di questo campo subisce DAN, viene sprigionato un attacco coordinato che infligge <pyro>DAN da Pyro ad area</pyro> in base all'ATT e ai PS max di Dehya. Quest'effetto può attivarsi una volta ogni 2,5{NON_BREAK_SPACE}s.",
-      "15": "I personaggi attivi all'interno del campo ottengono un aumento della resistenza all'interruzione e, quando subiscono DAN, una porzione di questi viene mitigata e confluisce nel Sangue di Rossomanto. Dopodiché, Dehya subisce tali DAN nell'arco di 10{NON_BREAK_SPACE}s. Quando i DAN mitigati accumulati dal Sangue di Rossomanto raggiungono o superano una certa percentuale dei PS max di Dehya, tale mitigazione si interrompe.",
+      "14": "Quando un avversario all'interno di questo campo subisce DAN, viene sprigionato un attacco coordinato che infligge <pyro>DAN da Pyro ad area</pyro> in base all'ATT e ai PS max di Dehya. Quest'effetto può attivarsi una volta ogni 2,5 s.",
+      "15": "I personaggi attivi all'interno del campo ottengono un aumento della resistenza all'interruzione e, quando subiscono DAN, una porzione di questi viene mitigata e confluisce nel Sangue di Rossomanto. Dopodiché, Dehya subisce tali DAN nell'arco di 10 s. Quando i DAN mitigati accumulati dal Sangue di Rossomanto raggiungono o superano una certa percentuale dei PS max di Dehya, tale mitigazione si interrompe.",
       "16": "<br/>",
       "17": "Può esistere 1 solo Santuario infuocato creato da Dehya alla volta.",
       "18": "<br/>",
@@ -91,7 +91,7 @@
       "3": "In questo stato, Dehya non è in grado di usare la sua abilità elementale, né di eseguire attacchi normali, caricati o in picchiata. Attacco normale: Tempesta dorata e Inferno colante vengono sostituiti da Raffica ruggente.",
       "4": "<br/>",
       "5": "<strong>Raffica ruggente</strong>",
-      "6": "Scatenare Raffica ruggente entro 0,4{NON_BREAK_SPACE}s dopo ogni Pugno della Chiomardente aumenta la velocità con cui il Pugno della Chiomardente successivo viene scagliato.",
+      "6": "Scatenare Raffica ruggente entro 0,4 s dopo ogni Pugno della Chiomardente aumenta la velocità con cui il Pugno della Chiomardente successivo viene scagliato.",
       "7": "<br/>",
       "8": "<i>Perfino le fiamme fluttuanti devono sottostare alla sua furia, e al suo comando si tramutano in artigli e in zanne al suo servizio.</i>"
     },
@@ -117,15 +117,15 @@
   "passive1": {
     "name": "Generosa assistenza",
     "description": {
-      "0": "Entro 6{NON_BREAK_SPACE}s dal recupero del campo Santuario infuocato tramite <strong>Inferno colante: Fiamma estesa</strong> o <strong>Morso leonino</strong>, Dehya subisce un 60% di DAN in meno dal Sangue di Rossomanto.",
-      "1": "Quest'effetto può attivarsi una volta ogni 2{NON_BREAK_SPACE}s.",
-      "2": "Inoltre, entro 9{NON_BREAK_SPACE}s dal rilascio di <strong>Inferno colante: Fiamma indomita</strong>, garantisce a tutti i membri del gruppo lo stato di Forma aurea. Quest'ultimo aumenta ulteriormente la resistenza all'interruzione di un personaggio all'interno del campo Santuario infuocato. Lo stato di Forma aurea può attivarsi una volta ogni 18{NON_BREAK_SPACE}s."
+      "0": "Entro 6 s dal recupero del campo Santuario infuocato tramite <strong>Inferno colante: Fiamma estesa</strong> o <strong>Morso leonino</strong>, Dehya subisce un 60% di DAN in meno dal Sangue di Rossomanto.",
+      "1": "Quest'effetto può attivarsi una volta ogni 2 s.",
+      "2": "Inoltre, entro 9 s dal rilascio di <strong>Inferno colante: Fiamma indomita</strong>, garantisce a tutti i membri del gruppo lo stato di Forma aurea. Quest'ultimo aumenta ulteriormente la resistenza all'interruzione di un personaggio all'interno del campo Santuario infuocato. Lo stato di Forma aurea può attivarsi una volta ogni 18 s."
     }
   },
   "passive2": {
     "name": "Onesta rettitudine",
     "description": {
-      "0": "Quando i suoi PS sono inferiori a un 40%, Dehya rigenera un 20% dei suoi PS max e ne recupera un ulteriore 6% ogni 2{NON_BREAK_SPACE}s per i 10{NON_BREAK_SPACE}s successivi. Quest'effetto può attivarsi una volta ogni 20{NON_BREAK_SPACE}s."
+      "0": "Quando i suoi PS sono inferiori a un 40%, Dehya rigenera un 20% dei suoi PS max e ne recupera un ulteriore 6% ogni 2 s per i 10 s successivi. Quest'effetto può attivarsi una volta ogni 20 s."
     }
   },
   "passive3": {
@@ -148,7 +148,7 @@
   "constellation2": {
     "name": "Scintillio delle lame di sabbia",
     "description": {
-      "0": "Quando Dehya utilizza <strong>Inferno colante: Fiamma estesa</strong>, la durata del Santuario infuocato ricreato aumenta di 6{NON_BREAK_SPACE}s.",
+      "0": "Quando Dehya utilizza <strong>Inferno colante: Fiamma estesa</strong>, la durata del Santuario infuocato ricreato aumenta di 6 s.",
       "1": "In aggiunta, quando un Santuario infuocato è presente sul campo e i personaggi attivi al suo interno vengono attaccati, i DAN inflitti dal suo attacco coordinato successivo aumentano di un 50%."
     }
   },
@@ -162,7 +162,7 @@
   "constellation4": {
     "name": "Un giuramento da rispettare",
     "description": {
-      "0": "Quando gli attacchi Pugno della Chiomardente e Calcio inceneritore sprigionati durante <strong>Morso leonino</strong> colpiscono gli avversari, Dehya recupera 1,5 di energia e un 2,5% dei suoi PS max. Quest'effetto può attivarsi una volta ogni 0,2{NON_BREAK_SPACE}s."
+      "0": "Quando gli attacchi Pugno della Chiomardente e Calcio inceneritore sprigionati durante <strong>Morso leonino</strong> colpiscono gli avversari, Dehya recupera 1,5 di energia e un 2,5% dei suoi PS max. Quest'effetto può attivarsi una volta ogni 0,2 s."
     }
   },
   "constellation5": {
@@ -176,7 +176,7 @@
     "name": "Squarcio degli artigli ardenti",
     "description": {
       "0": "Il tasso di CRIT di <strong>Morso leonino</strong> aumenta di un 10%.",
-      "1": "In più, se un Pugno della Chiomardente infligge colpi CRIT a un avversario durante un singolo stato di Leonessa fiammante, i DAN da CRIT di Morso leonino aumentano di un 15% per il resto della durata di Leonessa fiammante, estendendone la durata di 0,5{NON_BREAK_SPACE}s. Quest'effetto può essere attivato ogni 0,2{NON_BREAK_SPACE}s. La durata può essere estesa fino a un massimo di 2{NON_BREAK_SPACE}s, e in questo modo i DAN da CRIT possono aumentare fino a un 60% max."
+      "1": "In più, se un Pugno della Chiomardente infligge colpi CRIT a un avversario durante un singolo stato di Leonessa fiammante, i DAN da CRIT di Morso leonino aumentano di un 15% per il resto della durata di Leonessa fiammante, estendendone la durata di 0,5 s. Quest'effetto può essere attivato ogni 0,2 s. La durata può essere estesa fino a un massimo di 2 s, e in questo modo i DAN da CRIT possono aumentare fino a un 60% max."
     }
   }
 }

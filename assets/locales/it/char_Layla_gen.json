@@ -45,7 +45,7 @@
       "1": "L'assorbimento DAN della Cortina onirica si basa sui PS max di Layla, e assorbe i <cryo>DAN da Cryo</cryo> con un 250% di efficacia. Quando lo scudo è attivato, a Layla sarà applicato <cryo>Cryo</cryo> per un breve periodo.",
       "2": "<br/>",
       "3": "<strong>Stelle notturne e cadenti</strong>",
-      "4": "Mentre è attiva, la Cortina onirica creerà 1 Stella notturna ogni 1,5{NON_BREAK_SPACE}s. Quando un personaggio protetto da questo scudo userà un'abilità elementale, saranno generate 2 Stelle notturne. Le Stelle notturne si possono generare una volta ogni 0,3{NON_BREAK_SPACE}s. È possibile accumulare fino a 4 Stelle notturne ogni volta.",
+      "4": "Mentre è attiva, la Cortina onirica creerà 1 Stella notturna ogni 1,5 s. Quando un personaggio protetto da questo scudo userà un'abilità elementale, saranno generate 2 Stelle notturne. Le Stelle notturne si possono generare una volta ogni 0,3 s. È possibile accumulare fino a 4 Stelle notturne ogni volta.",
       "5": "In presenza di avversari vicini, quando la Cortina onirica avrà accumulato 4 Stelle notturne, queste si trasformeranno in Stelle cadenti, che saranno scagliate in sequenza infliggendo <cryo>DAN da Cryo</cryo> a tutti gli avversari colpiti.",
       "6": "Se la Cortina onirica terminerà o verrà distrutta, le Stelle notturne scompariranno. Se saranno in procinto di trasformarsi in Stelle cadenti, queste ultime dureranno fino al termine dell'ondata dei colpi.",
       "7": "<br/>",
@@ -76,7 +76,7 @@
     "name": "Culla dei sogni stellati",
     "description": {
       "0": "Attiva un'Onirisfera celestiale che scaglia continuamente Proiettili stellari contro gli avversari nell'area d'effetto, infliggendo <cryo>DAN da Cryo</cryo>.",
-      "1": "Quando un Proiettile stellare fa centro, genera 1 Stella notturna per le Cortine oniriche vicine. In questo modo, ciascuna Cortina onirica può acquisire 1 Stella notturna ogni 0,5{NON_BREAK_SPACE}s.",
+      "1": "Quando un Proiettile stellare fa centro, genera 1 Stella notturna per le Cortine oniriche vicine. In questo modo, ciascuna Cortina onirica può acquisire 1 Stella notturna ogni 0,5 s.",
       "2": "<br/>",
       "3": "<i>\"Ora dormi... Che molti destini possano esserti rivelati all'interno dei tuoi sogni stellati.\"</i>"
     },
@@ -125,7 +125,7 @@
     "name": "Fortezza fantastica",
     "description": {
       "0": "L'Assorbimento dello scudo della Cortina onirica generata da <strong>Concentrazione solenne</strong> aumenta di un 20%.",
-      "1": "Inoltre, quando si attiva Concentrazione solenne, sarà generato uno scudo per ogni membro del gruppo vicino non protetto da una Cortina onirica. Questo scudo assorbirà un 35% della Cortina onirica per 12{NON_BREAK_SPACE}s, oltre ai <cryo>DAN da Cryo</cryo> con un 250% di efficacia."
+      "1": "Inoltre, quando si attiva Concentrazione solenne, sarà generato uno scudo per ogni membro del gruppo vicino non protetto da una Cortina onirica. Questo scudo assorbirà un 35% della Cortina onirica per 12 s, oltre ai <cryo>DAN da Cryo</cryo> con un 250% di efficacia."
     }
   },
   "constellation2": {
@@ -145,7 +145,7 @@
     "name": "Illuminazione stellare",
     "description": {
       "0": "Quando <strong>Concentrazione solenne</strong> comincia a scagliare Stelle cadenti, concede ai membri del gruppo vicini l'effetto Stella del mattino, incrementando i loro DAN da attacco normale e caricato in base a un 5% dei PS max di Layla.",
-      "1": "Stella del mattino può durare fino a 3{NON_BREAK_SPACE}s e sarà rimosso 0,05{NON_BREAK_SPACE}s dopo aver inflitto DAN da attacco normale o caricato."
+      "1": "Stella del mattino può durare fino a 3 s e sarà rimosso 0,05 s dopo aver inflitto DAN da attacco normale o caricato."
     }
   },
   "constellation5": {

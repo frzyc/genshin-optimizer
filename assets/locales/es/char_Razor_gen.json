@@ -149,7 +149,7 @@
     "name": "Alma de la bestia",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Colmillo relámpago</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -162,7 +162,7 @@
     "name": "Garras afiladas",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Garra y trueno</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

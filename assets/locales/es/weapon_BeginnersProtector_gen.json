@@ -1,6 +1,8 @@
 {
   "name": "Lanza del Principiante",
-  "description": "Una arma tan recta como el asta de una bandera y adecuada para la mayoría de las situaciones. Quien la porte sentirá una gran magnificencia al blandirla.",
+  "description": {
+    "0": "Una arma tan recta como el asta de una bandera y adecuada para la mayoría de las situaciones. Quien la porte sentirá una gran magnificencia al blandirla."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

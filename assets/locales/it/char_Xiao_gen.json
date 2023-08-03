@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Conquistatore del male: Domatore di demoni",
     "description": {
-      "0": "Sotto gli effetti di <strong>Castigo di ogni male</strong>, tutti i DAN inflitti da Xiao aumentano di un 5%. I DAN aumentano di un ulteriore 5% ogni 3{NON_BREAK_SPACE}s finché l'abilità è attiva.",
+      "0": "Sotto gli effetti di <strong>Castigo di ogni male</strong>, tutti i DAN inflitti da Xiao aumentano di un 5%. I DAN aumentano di un ulteriore 5% ogni 3 s finché l'abilità è attiva.",
       "1": "Il bonus DAN massimo corrisponde a un 25%."
     }
   },
@@ -114,7 +114,7 @@
     "name": "Dissoluzione cosmica: Caduta celeste",
     "description": {
       "0": "Usare <strong>Ciclone lemniscatico</strong> aumenta di un 15% i DAN dei suoi usi successivi.",
-      "1": "Questo effetto dura per 7{NON_BREAK_SPACE}s ed è cumulabile per un massimo di 3 volte. Ottenere un nuovo accumulo ripristina la durata dell'effetto."
+      "1": "Questo effetto dura per 7 s ed è cumulabile per un massimo di 3 volte. Ottenere un nuovo accumulo ripristina la durata dell'effetto."
     }
   },
   "passive3": {
@@ -159,7 +159,7 @@
   "constellation6": {
     "name": "Conquistatore del male: Guardiano Yaksha",
     "description": {
-      "0": "Sotto l'effetto di <strong>Castigo di ogni male</strong>, se Xiao colpisce almeno 2 avversari con l'attacco in picchiata, otterrà immediatamente 1 carica di <strong>Ciclone lemniscatico</strong>, e per 1{NON_BREAK_SPACE}s successivo potrà usare Ciclone lemniscatico ignorando il suo TdR."
+      "0": "Sotto l'effetto di <strong>Castigo di ogni male</strong>, se Xiao colpisce almeno 2 avversari con l'attacco in picchiata, otterrà immediatamente 1 carica di <strong>Ciclone lemniscatico</strong>, e per 1 s successivo potrà usare Ciclone lemniscatico ignorando il suo TdR."
     }
   }
 }

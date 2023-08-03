@@ -24,14 +24,17 @@
   "maxStacks": "Numero accumuli massimi",
   "skillDMG": "DAN da abilità",
   "burstDMG": "DAN da esplosione",
-  "dmgAbsorption": "Assorbimento DAN",
+  "dmgAbsorption": "Assorbimento DAN scudo",
   "healing": "Guarigione",
+  "contHealing": "Guarigione continua",
   "duration": "Durata",
   "cd": "TdR",
   "energyCost": "Costo energia",
+  "energyRegen": "RIGEN energia",
   "baseDMG": "DAN base",
   "dot": "DAN nel tempo",
   "addEleDMG": "DAN elementali aggiuntivi",
+  "hpRegenPerHit": "RIGEN PS per colpo",
   "press": {
     "dmg": "DAN variante a pressione",
     "cd": "TdR pressione"
@@ -57,11 +60,17 @@
     "superconduct": "Superconduzione",
     "vaporize": "Vaporizzazione",
     "melt": "Fusione",
-    "bloom": "Bloom",
+    "bloom": "Fioritura",
     "burgeon": "Germinazione",
     "hyperbloom": "Iperfioritura",
     "quicken": "Vivificazione",
     "aggravate": "Accentuazione",
     "spread": "Propagazione"
+  },
+  "stat": {
+    "def": "DIF",
+    "base": {
+      "atk": "ATT di base"
+    }
   }
 }

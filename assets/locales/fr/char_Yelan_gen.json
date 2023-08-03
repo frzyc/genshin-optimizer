@@ -17,7 +17,7 @@
       },
       "breakthrough": {
         "0": "<strong>Percée</strong>",
-        "1": "Si l'équipe est hors combat pendant 5{NON_BREAK_SPACE}s, Yelan entre dans l'état Percée permettant de diminuer le temps de charge de son prochain tir visé de 80{NON_BREAK_SPACE}%, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max."
+        "1": "Si l'équipe est hors combat pendant 5 s, Yelan entre dans l'état Percée permettant de diminuer le temps de charge de son prochain tir visé de 80 %, et une fois le tir complètement chargé, elle peut tirer une flèche perçante qui inflige des <hydro>DGT Hydro de zone</hydro> selon ses PV max."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -115,13 +115,13 @@
   "passive1": {
     "name": "Contrôle stratégique",
     "description": {
-      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6{NON_BREAK_SPACE}%/12{NON_BREAK_SPACE}%/18{NON_BREAK_SPACE}%/30{NON_BREAK_SPACE}%."
+      "0": "Si l'équipe comprend des personnages de 1/2/3/4 types élémentaires, les PV max de Yelan augmentent de 6 %/12 %/18 %/30 %."
     }
   },
   "passive2": {
     "name": "Adaptation aisée",
     "description": {
-      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par votre personnage déployé augmentent de 1 %, puis de 3,5{NON_BREAK_SPACE}% supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
+      "0": "Tant qu'un <strong>dé exquis</strong> est en combat, les DGT infligés par votre personnage déployé augmentent de 1 %, puis de 3,5 % supplémentaires toutes les secondes. Les DGT peuvent être augmentés d'un maximum de 50 % de cette manière.",
       "1": "Utiliser à nouveau Dé exquis des profondeurs pendant la durée de l'effet décrit ci-dessus dissipera ce dernier."
     }
   },
@@ -168,7 +168,7 @@
     "name": "Tout pour le vainqueur",
     "description": {
       "0": "Après avoir utilisé <strong>Dé exquis des profondeurs</strong>, Yelan entre dans l'état Stratège.",
-      "1": "Ses attaques normales deviennent alors des flèches perçantes spéciales. Ces flèches possèdent les mêmes capacités que les flèches perçantes normales, et les DGT qu'elles infligent sont considérés comme des DGT d'attaque chargée infligeant 156{NON_BREAK_SPACE}% des DGT des flèches perçantes normales.",
+      "1": "Ses attaques normales deviennent alors des flèches perçantes spéciales. Ces flèches possèdent les mêmes capacités que les flèches perçantes normales, et les DGT qu'elles infligent sont considérés comme des DGT d'attaque chargée infligeant 156 % des DGT des flèches perçantes normales.",
       "2": "<br/>",
       "3": "L'état Stratège dure 20 s maximum ou est annulé après avoir tiré 5 flèches."
     }

@@ -1,6 +1,8 @@
 {
   "name": "Darmaduman Büyük Kılıcı",
-  "description": "Kalın ve sağlam bir demir levhadan yapılmış bir kılıç, güçlü bir iradeyle savrulduğunda dağları bile yerinden oynatabilir.",
+  "description": {
+    "0": "Kalın ve sağlam bir demir levhadan yapılmış bir kılıç, güçlü bir iradeyle savrulduğunda dağları bile yerinden oynatabilir."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

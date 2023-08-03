@@ -1,6 +1,8 @@
 {
   "name": "Avcı Yayı",
-  "description": "Bir avcının şarkısında iki nota olur: Gerilen yayın sesi ve okların ıslığı.",
+  "description": {
+    "0": "Bir avcının şarkısında iki nota olur: Gerilen yayın sesi ve okların ıslığı."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

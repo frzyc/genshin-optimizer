@@ -146,7 +146,7 @@
   "constellation4": {
     "name": "Supplément discrétionnaire",
     "description": {
-      "0": "Le personnage relié au <strong>djinn</strong> obtient les bonus suivants selon ses PV et son énergie élémentaire{NON_BREAK_SPACE}:",
+      "0": "Le personnage relié au <strong>djinn</strong> obtient les bonus suivants selon ses PV et son énergie élémentaire :",
       "1": [
         " Bonus de soins reçus de 50 % si les PV sont inférieurs à 50 %.",
         " Recharge d'énergie augmentée de 30 % si l'énergie élémentaire est inférieure à 50 %."

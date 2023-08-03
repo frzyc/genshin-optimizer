@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Lost Wisdom of the Seven Caverns",
     "description": {
-      "0": "When characters affected by <strong>The Wind's Secret Ways</strong>' Prayerful Wind's Gift deal <anemo>Anemo DMG</anemo> using Normal, Charged, Plunging Attacks, Elemental Skills, or Elemental Bursts to opponents, they will gain the Hurricane Guard effect: This DMG will be increased based on 32% of Faruzan's Base ATK. 1 instance of Hurricane Guard can occur once every 0.8s. This DMG Bonus will be cleared after Prayerful Wind's Benefit expires or after the effect is triggered once."
+      "0": "When characters affected by <strong>The Wind's Secret Ways</strong>' Prayerful Wind's Benefit deal <anemo>Anemo DMG</anemo> using Normal, Charged, Plunging Attacks, Elemental Skills, or Elemental Bursts to opponents, they will gain the Hurricane Guard effect: This DMG will be increased based on 32% of Faruzan's Base ATK. 1 instance of Hurricane Guard can occur once every 0.8s. This DMG Bonus will be cleared after Prayerful Wind's Benefit expires or after the effect is triggered once."
     }
   },
   "passive3": {

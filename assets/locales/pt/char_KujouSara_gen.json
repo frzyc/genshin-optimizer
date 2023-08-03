@@ -40,7 +40,7 @@
     }
   },
   "skill": {
-    "name": "Tempestade Tengu",
+    "name": "Invocação da Tempestade Tengu",
     "description": {
       "0": "Retira-se rapidamente com a velocidade de um tengu, invocando a proteção da Pena do Corvo.",
       "1": "Ganha a Proteção da Pena do Corvo por 18s, e quando a Kujou Sara dispara um tiro com mira totalmente carregada, a Proteção da Pena do Corvo será consumida, e deixará uma Pena do Corvo no local alvo.",

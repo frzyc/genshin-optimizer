@@ -102,7 +102,7 @@
   "passive2": {
     "name": "Eisjägerschwert",
     "description": {
-      "0": "Erschafft beim Verschwinden des Wirkungsbereichs von <strong>Seelenklinge – Schichtfrost</strong> eine Seelenklinge, die Gegner in der Nähe automatisch angreift und <cryo>Kryo-Flächenschaden</cryo> in Höhe von 100 % des Schadens von Seelenklinge – Schichtfrost verursacht. Verringert den <cryo>Kryo-WDS</cryo> getroffener Gegner 8 s lang um 10 %."
+      "0": "Erschafft beim Verschwinden des Schichtfrostfeldes von <strong>Seelenklinge – Schichtfrost</strong> eine Seelenklinge, die Gegner in der Nähe automatisch angreift und <cryo>Kryo-Flächenschaden</cryo> in Höhe von 100 % des Schadens von Seelenklinge – Schichtfrost verursacht. Verringert den <cryo>Kryo-WDS</cryo> getroffener Gegner 8 s lang um 10 %."
     }
   },
   "passive3": {

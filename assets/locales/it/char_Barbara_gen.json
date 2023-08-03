@@ -107,8 +107,8 @@
   "passive2": {
     "name": "Bis!",
     "description": {
-      "0": "Quando il tuo personaggio attivo ottiene una particella o una sfera elementale, la durata del Cerchio melodioso di <strong>Che lo spettacolo abbia inizio♪</strong> si estende di 1{NON_BREAK_SPACE}s.",
-      "1": "L'estensione massima è di 5{NON_BREAK_SPACE}s."
+      "0": "Quando il tuo personaggio attivo ottiene una particella o una sfera elementale, la durata del Cerchio melodioso di <strong>Che lo spettacolo abbia inizio♪</strong> si estende di 1 s.",
+      "1": "L'estensione massima è di 5 s."
     }
   },
   "passive3": {
@@ -120,7 +120,7 @@
   "constellation1": {
     "name": "Ballata della gioia",
     "description": {
-      "0": "Barbara rigenera 1 di energia ogni 10{NON_BREAK_SPACE}s."
+      "0": "Barbara rigenera 1 di energia ogni 10 s."
     }
   },
   "constellation2": {
@@ -159,7 +159,7 @@
         " rianima automaticamente il personaggio sconfitto;",
         " ripristina i PS del personaggio rianimato al massimo."
       ],
-      "2": "Si può verificare una sola volta ogni 15{NON_BREAK_SPACE}min."
+      "2": "Si può verificare una sola volta ogni 15 min."
     }
   }
 }

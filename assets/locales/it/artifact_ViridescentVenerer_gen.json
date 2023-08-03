@@ -2,7 +2,7 @@
   "setName": "Cacciatrice smeraldo",
   "setEffects": {
     "2": "Bonus DAN da Anemo +15%.",
-    "4": "Aumenta di un 60% i DAN da Turbinio. Riduce di un 40% la RES dell'avversario all'elemento infuso dal Turbinio per 10{NON_BREAK_SPACE}s."
+    "4": "Aumenta di un 60% i DAN da Turbinio. Riduce di un 40% la RES dell'avversario all'elemento infuso dal Turbinio per 10 s."
   },
   "pieces": {
     "flower": {

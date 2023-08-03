@@ -1,6 +1,8 @@
 {
   "name": "Söldnerzweihänder",
-  "description": "Ein altes, schweres, aber stabiles Großschwert, das schon viele Jahre und Kämpfe überstanden hat.",
+  "description": {
+    "0": "Ein altes, schweres, aber stabiles Großschwert, das schon viele Jahre und Kämpfe überstanden hat."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

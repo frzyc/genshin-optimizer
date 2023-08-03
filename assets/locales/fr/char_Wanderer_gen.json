@@ -45,7 +45,7 @@
       "1": "<br/>",
       "2": "<strong>Bienfait venteux</strong>",
       "3": "Dans cet état, le Nomade ne peut pas effectuer d'attaques plongeantes, mais ses attaques normales et chargées sont respectivement converties en Kuugo : Fushoudan et Kuugo : Toufukai, dont les DGT et la zone d'effet augmentent, les DGT étant alors respectivement considérés comme des DGT d'attaque normale ou comme des DGT d'attaque chargée. De plus, Kuugo : Toufukai ne consomme pas d'endurance.",
-      "4": "Dans cet état, le Nomade flotte de façon continue dans les airs et ses actions déclenchent les effets suivants{NON_BREAK_SPACE}:",
+      "4": "Dans cet état, le Nomade flotte de façon continue dans les airs et ses actions déclenchent les effets suivants :",
       "5": [
         " Il consomme de façon continue du Kuugoryoku pour maintenir l'état de flottaison.",
         " Son sprint consomme une quantité de Kuugoryoku supplémentaire pour qu'il puisse accélérer dans les airs. Maintenir le sprint consomme du Kuugoryoku de façon continue afin de maintenir la vitesse. Cet effet remplace le sprint.",
@@ -55,7 +55,7 @@
       "7": "L'état prend fin une fois le Kuugoryoku épuisé.",
       "8": "Utiliser à nouveau la compétence pendant la durée du bienfait venteux met fin à l'état.",
       "9": "<br/>",
-      "10": "<i>« Le monde danse dans un tourbillon d'apesanteur, présentant un secret qui ne peut être décelé que dans les fleurs.{NON_BREAK_SPACE}»</i>"
+      "10": "<i>« Le monde danse dans un tourbillon d'apesanteur, présentant un secret qui ne peut être décelé que dans les fleurs. »</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -110,7 +110,7 @@
       "1": [
         " <hydro>Hydro</hydro> : la limite de Kuugoryoku augmente de 20 pts.",
         " <pyro>Pyro</pyro> : l'ATQ augmente de 30 %.",
-        " <cryo>Cryo</cryo> : le taux CRIT augmente de 20{NON_BREAK_SPACE}%.",
+        " <cryo>Cryo</cryo> : le taux CRIT augmente de 20 %.",
         " <electro>Électro</electro> : les attaques normales et chargées restaurent 0,8 pt d'énergie élémentaire après avoir touché un ennemi. L'énergie élémentaire peut être restaurée une fois toutes les 0,2 s de cette manière."
       ],
       "2": "<br/>",
@@ -120,21 +120,21 @@
   "passive2": {
     "name": "Rafales de rêverie",
     "description": {
-      "0": "Lorsque le Nomade touche un ennemi avec Kuugo : Fushoudan ou Kuugo{NON_BREAK_SPACE}: Toufukai pendant l'état <strong>Bienfait venteux</strong>, il a 16 % de chances d'obtenir l'effet Descente : la prochaine fois qu'il accélère dans les airs pendant cet état Bienfait venteux, l'effet est annulé, l'accélération ne consomme aucun point de Kuugoryoku et il tire 4 flèches de vent qui infligent chacune des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 35 % de son ATQ.",
-      "1": "Si Kuugo : Fushoudan ou Kuugo{NON_BREAK_SPACE}: Toufukai ne déclenche pas l'effet Descente, les chances de le déclencher la fois suivante augmentent de 12 %. Le calcul du déclenchement de l'effet se fait une fois toutes les 0,1 s."
+      "0": "Lorsque le Nomade touche un ennemi avec Kuugo : Fushoudan ou Kuugo : Toufukai pendant l'état <strong>Bienfait venteux</strong>, il a 16 % de chances d'obtenir l'effet Descente : la prochaine fois qu'il accélère dans les airs pendant cet état Bienfait venteux, l'effet est annulé, l'accélération ne consomme aucun point de Kuugoryoku et il tire 4 flèches de vent qui infligent chacune des <anemo>DGT Anémo</anemo> d'une valeur équivalant à 35 % de son ATQ.",
+      "1": "Si Kuugo : Fushoudan ou Kuugo : Toufukai ne déclenche pas l'effet Descente, les chances de le déclencher la fois suivante augmentent de 12 %. Le calcul du déclenchement de l'effet se fait une fois toutes les 0,1 s."
     }
   },
   "passive3": {
     "name": "Accord des vents tourbillonnants",
     "description": {
-      "0": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs sont réduits de 50{NON_BREAK_SPACE}%."
+      "0": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs sont réduits de 50 %."
     }
   },
   "constellation1": {
     "name": "Shoban : Pennage ostentatoire",
     "description": {
-      "0": "Pendant l'état <strong>Bienfait venteux</strong>, la VIT d'attaque de Kuugo{NON_BREAK_SPACE}: Fushoudan et de Kuugo : Toufukai du Nomade augmente de 10 %.",
-      "1": "De plus, les flèches de vent tirées par l'aptitude passive « Rafales de rêverie » infligent des DGT supplémentaires équivalant à 25{NON_BREAK_SPACE}% de l'ATQ. L'aptitude passive «{NON_BREAK_SPACE}Rafales de rêverie » doit être déjà débloquée pour cet effet."
+      "0": "Pendant l'état <strong>Bienfait venteux</strong>, la VIT d'attaque de Kuugo : Fushoudan et de Kuugo : Toufukai du Nomade augmente de 10 %.",
+      "1": "De plus, les flèches de vent tirées par l'aptitude passive « Rafales de rêverie » infligent des DGT supplémentaires équivalant à 25 % de l'ATQ. L'aptitude passive « Rafales de rêverie » doit être déjà débloquée pour cet effet."
     }
   },
   "constellation2": {

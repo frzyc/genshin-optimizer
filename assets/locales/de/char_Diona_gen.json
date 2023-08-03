@@ -1,7 +1,7 @@
 {
   "name": "Diona",
   "title": "Putzige Mischung",
-  "description": "Eine junge Frau, die nicht-menschliches Blut in sich trägt. Zudem ist sie die äußerst beliebte Wirtin der Taverne „Zum Katzenschwanz“.",
+  "description": "Ein Mädchen, das nicht-menschliches Blut in sich trägt. Zudem ist sie die äußerst beliebte Wirtin der Taverne „Zum Katzenschwanz“.",
   "constellationName": "Feles",
   "auto": {
     "name": "Schießkunst der Jäger",
@@ -46,7 +46,7 @@
       "1": "Die Schildstärke hängt von Dionas max. LP ab, die Wirkungsdauer von der Anzahl der am Treffer beteiligten Eistatzen.",
       "2": "<br/>",
       "3": "<strong>Drücken</strong>",
-      "4": "Schießt schnell zwei Eispfoten ab.",
+      "4": "Schießt schnell zwei Eistatzen ab.",
       "5": "<br/>",
       "6": "<strong>Gedrückt halten</strong>",
       "7": "Springt geschwind zurück und feuert fünf Eistatzen ab.",
@@ -54,7 +54,7 @@
       "9": "<br/>",
       "10": "Schilde halten bei <cryo>Kryo-Schaden</cryo> 250 % ab und verleihen der aktuellen Figur beim Entstehen für kurze Zeit das <cryo>Kryo-Attribut</cryo>.",
       "11": "<br/>",
-      "12": "<i>Das Eis im Schnapps hatte bisher noch keinem Trunkenbold geschadet, bis Diona ihr Göttliches Auge erhielt und Eis herstellte, das einem die Zunge taub werden lässt. Einsame Spitze!</i>"
+      "12": "<i>Das Eis im Schnaps hatte bisher noch keinem Trunkenbold geschadet, bis Diona ihr Göttliches Auge erhielt und Eis herstellte, das einem die Zunge taub werden lässt. Einsame Spitze!</i>"
     },
     "skillParams": {
       "0": "SCH pro Tatze",
@@ -78,7 +78,7 @@
   "burst": {
     "name": "Eisgekühlter Branntwein",
     "description": {
-      "0": "Wirft besonders starken eisgekühlten Alkohol nach vorn und verursacht <cryo>Kryo-Flächenschaden</cryo> sowie ein Kältedunstfeld.",
+      "0": "Wirft besonders starken eisgekühlten Alkohol, verursacht <cryo>Kryo-Flächenschaden</cryo> und erzeugt ein Kältedunstfeld.",
       "1": "<br/>",
       "2": "<strong>Kältedunstfeld</strong>",
       "3": [
@@ -134,8 +134,8 @@
   "constellation2": {
     "name": "Eiskalte Pfoten",
     "description": {
-      "0": "Erhöht den mit <strong>Eistatzen</strong> verursachten Schaden um 15 % und den mit Schilden abzuhaltenden Schaden um 15 %.",
-      "1": "Erstellt anderen aktuellen Figuren in der Nähe außerdem bei Treffern einen Schutzschild, der Schaden in Höhe von 50 % von <strong>Eistatzen</strong> abhält, hält 5 s."
+      "0": "Erhöht den mit <strong>Eistatzen</strong> verursachten Schaden um 15 % und die Schildstärke um 15 %.",
+      "1": "Erstellt anderen aktuellen Figuren in der Nähe außerdem bei Treffern einen Schutzschild, der Schaden in Höhe von 50 % der Schildstärke von <strong>Eistatzen</strong> abhält, hält 5 s."
     }
   },
   "constellation3": {

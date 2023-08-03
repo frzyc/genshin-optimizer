@@ -47,7 +47,7 @@
       "3": "<strong>Mantener pulsado</strong>",
       "4": "Apunta para escoger una AdE y una cantidad de enemigos determinadas. Mientras lo hace, aumenta la RES a interrupción de Nahida.",
       "5": "Al terminar de apuntar, inflige <dendro>Daño Dendro</dendro> contra los enemigos seleccionados y les pone una semilla skandha.",
-      "6": "Se puede apuntar durante un máximo de 5{NON_BREAK_SPACE}s y se pueden escoger hasta 8 enemigos.",
+      "6": "Se puede apuntar durante un máximo de 5 s y se pueden escoger hasta 8 enemigos.",
       "7": "<br/>",
       "8": "<strong>Semilla skandha</strong>",
       "9": "Los enemigos afectados por una semilla skandha serán encadenados entre sí hasta una cierta distancia.",
@@ -146,15 +146,15 @@
       "0": "Los enemigos afectados por una <strong>semilla skandha</strong> aplicada por Nahida reciben los siguientes efectos:",
       "1": [
         "El daño que reciben por medio de las reacciones de Quemadura, Florecimiento, Sobreflorecimiento y Crepitar puede infligir críticos contra ellos, con una Prob. CRIT fija del 20% y un Daño CRIT fijo del 100%.",
-        "La DEF de dichos enemigos se reduce en un 30% durante 8{NON_BREAK_SPACE}s al ser afectados por las reacciones de Aceleración, Intensificación y Propagación."
+        "La DEF de dichos enemigos se reduce en un 30% durante 8 s al ser afectados por las reacciones de Aceleración, Intensificación y Propagación."
       ]
     }
   },
   "constellation3": {
     "name": "Brotes del karma",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Omnisciencia</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Omnisciencia</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -166,16 +166,16 @@
   "constellation5": {
     "name": "Hojas de la iluminación discursiva",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Corazón ilusorio</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Corazón ilusorio</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Frutos de la culminación racional",
     "description": {
       "0": "Tras usar <strong>Corazón ilusorio</strong>, cuando Nahida golpea con un Ataque Normal o Cargado a un enemigo afectado por una semilla skandha de <strong>Omnisciencia</strong>, libera un trikarma acrisolador: expiación kármica contra ese enemigo y contra todos los enemigos encadenados con él para infligir <dendro>Daño Dendro</dendro> en función del 200% del ATQ y el 400% de la Maestría Elemental de Nahida.",
-      "1": "El daño del trikarma acrisolador: expiación kármica se considera daño de Habilidad Elemental, y solo se puede activar una vez cada 0.2{NON_BREAK_SPACE}s.",
-      "2": "Este efecto dura 10{NON_BREAK_SPACE}s y se elimina una vez que Nahida haya liberado 6 veces el trikarma acrisolador: expiación kármica."
+      "1": "El daño del trikarma acrisolador: expiación kármica se considera daño de Habilidad Elemental, y solo se puede activar una vez cada 0.2 s.",
+      "2": "Este efecto dura 10 s y se elimina una vez que Nahida haya liberado 6 veces el trikarma acrisolador: expiación kármica."
     }
   }
 }

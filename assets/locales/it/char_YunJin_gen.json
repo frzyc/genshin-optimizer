@@ -132,7 +132,7 @@
   "constellation2": {
     "name": "Regia teatrale",
     "description": {
-      "0": "Dopo che <strong>Stendardo del Frantumarupi</strong> è stato rilasciato, i DAN da attacco normale di tutti i membri vicini del gruppo aumentano di un 15% per 12{NON_BREAK_SPACE}s."
+      "0": "Dopo che <strong>Stendardo del Frantumarupi</strong> è stato rilasciato, i DAN da attacco normale di tutti i membri vicini del gruppo aumentano di un 15% per 12 s."
     }
   },
   "constellation3": {
@@ -145,7 +145,7 @@
   "constellation4": {
     "name": "Un fiore come scudo",
     "description": {
-      "0": "Quando Yun Jin innesca una reazione di Cristallizzazione, la sua DIF aumenta di un 20% per 12{NON_BREAK_SPACE}s."
+      "0": "Quando Yun Jin innesca una reazione di Cristallizzazione, la sua DIF aumenta di un 20% per 12 s."
     }
   },
   "constellation5": {

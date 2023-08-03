@@ -2,7 +2,7 @@
   "setName": "Sueño de la Ninfa",
   "setEffects": {
     "2": "Bono de Daño Hydro +15%.",
-    "4": "Tras golpear a un enemigo con un Ataque Normal, Cargado o Descendente o una Habilidad Elemental o Definitiva, se genera 1 carga de “reflejo de la ninfa” durante 8{NON_BREAK_SPACE}s. Con 1/2/3 o más cargas, el ATQ aumenta en un 7/16/25% y el Bono de Daño Hydro aumenta en un 4/9/15%. Las cargas de reflejo de la ninfa creadas con un Ataque Normal, Cargado o Descendente o con la Habilidad Elemental o Definitiva son independientes entre sí."
+    "4": "Tras golpear a un enemigo con un Ataque Normal, Cargado o Descendente o una Habilidad Elemental o Definitiva, se genera 1 carga de “reflejo de la ninfa” durante 8 s. Con 1/2/3 o más cargas, el ATQ aumenta en un 7/16/25% y el Bono de Daño Hydro aumenta en un 4/9/15%. Las cargas de reflejo de la ninfa creadas con un Ataque Normal, Cargado o Descendente o con la Habilidad Elemental o Definitiva son independientes entre sí."
   },
   "pieces": {
     "flower": {

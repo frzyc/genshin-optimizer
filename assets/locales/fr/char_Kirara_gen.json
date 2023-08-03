@@ -132,7 +132,7 @@
     "description": {
       "0": "Lorsque Kirara est dans l'état Neko-colis urgent de <strong>Coup de patte miaou-téorite</strong>, elle accorde un bouclier de transport critique aux personnages de l'équipe qu'elle percute.",
       "1": "Les boucliers de transport critique possèdent une absorption de DGT équivalant à 40 % de l'absorption maximum d'un bouclier de transport sécurisé de <strong>Coup de patte miaou-téorite</strong> et absorbent les <dendro>DGT Dendro</dendro> 250 % plus efficacement.",
-      "2": "Les boucliers de transport critique durent 12 s et peuvent être déclenchés sur un même personnage une fois toutes les 10{NON_BREAK_SPACE}s."
+      "2": "Les boucliers de transport critique durent 12 s et peuvent être déclenchés sur un même personnage une fois toutes les 10 s."
     }
   },
   "constellation3": {

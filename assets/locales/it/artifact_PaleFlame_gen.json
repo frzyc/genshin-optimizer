@@ -2,7 +2,7 @@
   "setName": "Fiamma fioca",
   "setEffects": {
     "2": "DAN fisici +25%.",
-    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT aumenta di un 9% per 7{NON_BREAK_SPACE}s. Cumulabile fino a 2 volte, si può attivare una volta ogni 0,3{NON_BREAK_SPACE}s. Raggiunta la quantità massima cumulabile, l'effetto del set da 2 pezzi aumenta di un 100%."
+    "4": "Quando un'abilità elementale colpisce un avversario, l'ATT aumenta di un 9% per 7 s. Cumulabile fino a 2 volte, si può attivare una volta ogni 0,3 s. Raggiunta la quantità massima cumulabile, l'effetto del set da 2 pezzi aumenta di un 100%."
   },
   "pieces": {
     "flower": {

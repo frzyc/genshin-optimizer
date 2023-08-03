@@ -53,7 +53,7 @@
       ],
       "5": "<br/>",
       "6": "<strong>Bocciolo di sangue</strong>",
-      "7": "I nemici affetti da Bocciolo di sangue subiscono <pyro>DAN da Pyro</pyro> ogni 4{NON_BREAK_SPACE}s. Questo tipo di DAN è considerato DAN da abilità elementale.",
+      "7": "I nemici affetti da Bocciolo di sangue subiscono <pyro>DAN da Pyro</pyro> ogni 4 s. Questo tipo di DAN è considerato DAN da abilità elementale.",
       "8": "Ogni nemico può subire un solo effetto di Bocciolo di sangue alla volta e la durata può essere ripristinata da Hu Tao.",
       "9": "<br/>",
       "10": "<strong>Paramita Papilio</strong> smette di avere effetto al termine della sua durata, quando Hu Tao lascia il campo di battaglia o quando viene sconfitta.",
@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Farfalla nascosta",
     "description": {
-      "0": "Quando lo stato di <strong>Paramita Papilio</strong> attivato da <strong>Guida all'aldilà</strong> termina, il tasso di CRIT di tutti gli alleati nel gruppo (esclusa Hu Tao) aumenta di un 12% per 8{NON_BREAK_SPACE}s."
+      "0": "Quando lo stato di <strong>Paramita Papilio</strong> attivato da <strong>Guida all'aldilà</strong> termina, il tasso di CRIT di tutti gli alleati nel gruppo (esclusa Hu Tao) aumenta di un 12% per 8 s."
     }
   },
   "passive2": {
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Giardino dell'eterno riposo",
     "description": {
-      "0": "Quando viene sconfitto un nemico sotto l'effetto di <strong>Bocciolo di sangue</strong> applicato da Hu Tao, il tasso di CRIT di tutti gli alleati vicini del gruppo (esclusa Hu Tao) aumenterà di un 12% per 15{NON_BREAK_SPACE}s."
+      "0": "Quando viene sconfitto un nemico sotto l'effetto di <strong>Bocciolo di sangue</strong> applicato da Hu Tao, il tasso di CRIT di tutti gli alleati vicini del gruppo (esclusa Hu Tao) aumenterà di un 12% per 15 s."
     }
   },
   "constellation5": {
@@ -162,9 +162,9 @@
     "name": "L'abbraccio della farfalla",
     "description": {
       "0": "Si attiva quando i PS di Hu Tao scendono al di sotto di un 25% o quando subisce un colpo letale:",
-      "1": "Hu Tao non verrà sconfitta a causa dei DAN subiti. Inoltre, per i 10{NON_BREAK_SPACE}s successivi, la sua RES elementale e fisica aumenta di un 200%, il suo tasso di CRIT aumenta di un 100%, e la sua resistenza all'interruzione aumenta notevolmente.",
+      "1": "Hu Tao non verrà sconfitta a causa dei DAN subiti. Inoltre, per i 10 s successivi, la sua RES elementale e fisica aumenta di un 200%, il suo tasso di CRIT aumenta di un 100%, e la sua resistenza all'interruzione aumenta notevolmente.",
       "2": "Questo effetto si attiva in automatico quando Hu Tao ha 1 PS rimanente.",
-      "3": "Si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
+      "3": "Si può verificare una sola volta ogni 60 s."
     }
   }
 }

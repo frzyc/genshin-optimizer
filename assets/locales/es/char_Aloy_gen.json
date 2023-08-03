@@ -44,7 +44,7 @@
     "description": {
       "0": "Lanza una bomba helada hacia la dirección en la que apunta y, al impactar, produce una explosión que inflige <cryo>Daño Cryo</cryo>. Al explotar, la bomba se divide en varias minibombas ultracongelantes que explotan al entrar en contacto con un enemigo o tras cierto tiempo, infligiendo <cryo>Daño Cryo</cryo>.",
       "1": "Al golpear a un enemigo con la bomba helada o las minibombas ultracongelantes, se reduce el ATQ de dicho enemigo y Aloy obtiene una carga del efecto de inducción.",
-      "2": "Solo se puede obtener una carga de inducción cada 0.1{NON_BREAK_SPACE}s.",
+      "2": "Solo se puede obtener una carga de inducción cada 0.1 s.",
       "3": "<br/>",
       "4": "<strong>Inducción</strong>",
       "5": [
@@ -53,7 +53,7 @@
       ],
       "6": "<br/>",
       "7": "En el estado de hielo galopante, Aloy no podrá beneficiarse de inducción.",
-      "8": "Los efectos de inducción se perderán 30{NON_BREAK_SPACE}s después de que Aloy sea retirada de combate.",
+      "8": "Los efectos de inducción se perderán 30 s después de que Aloy sea retirada de combate.",
       "9": "<br/>",
       "10": "<i>¿Crees que eso está frío? Eso es porque nunca has estado en El Tajo.</i>"
     },

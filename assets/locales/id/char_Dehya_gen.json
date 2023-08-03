@@ -131,7 +131,7 @@
   "passive3": {
     "name": "The Sunlit Way",
     "description": {
-      "0": "Saat pagi sampai sore hari (6:00{NON_BREAK_SPACE}-{NON_BREAK_SPACE}18:00), meningkatkan 10% Movement SPD anggota party sendiri.",
+      "0": "Saat pagi sampai sore hari (6:00 - 18:00), meningkatkan 10% Movement SPD anggota party sendiri.",
       "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss. Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
     }
   },

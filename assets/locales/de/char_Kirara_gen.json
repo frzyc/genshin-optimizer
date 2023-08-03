@@ -131,7 +131,7 @@
     "name": "Perfekt verpackt",
     "description": {
       "0": "Kirara verleiht anderen Truppenmitgliedern, die sie im Zustand Neko-Sonderzustellung des <strong>Miauteoritentritts</strong> rammt, Schild für sicheren Transport – Einschreiben.",
-      "1": "Die Schildstärke des Schilds für sicheren Transport – Einschreiben entspricht 40 % der Schildstärke des durch den <strong>Miauteoritentritt</strong> erzeugten Schild für sicheren Transport und hält bei <dendro>Dendro-Schaden</dendro> 250{NON_BREAK_SPACE}% ab.",
+      "1": "Die Schildstärke des Schilds für sicheren Transport – Einschreiben entspricht 40 % der Schildstärke des durch den <strong>Miauteoritentritt</strong> erzeugten Schild für sicheren Transport und hält bei <dendro>Dendro-Schaden</dendro> 250 % ab.",
       "2": "Der Schild für sicheren Transport – Einschreiben hält 12 s, 10 s Abklingzeit für jedes Truppenmitglied."
     }
   },

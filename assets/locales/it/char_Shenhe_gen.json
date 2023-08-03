@@ -115,8 +115,8 @@
     "description": {
       "0": "Dopo aver usato <strong>Evocazione dello spirito primaverile</strong>, Shenhe conferisce a tutti i membri del gruppo vicini i seguenti effetti:",
       "1": [
-        " Pressione: DAN da abilità elementale e Tripudio elementale aumentati di un 15% per 10{NON_BREAK_SPACE}s;",
-        " Pressione prolungata: DAN da attacco normale, caricato e in picchiata aumentati di un 15% per 15{NON_BREAK_SPACE}s."
+        " Pressione: DAN da abilità elementale e Tripudio elementale aumentati di un 15% per 10 s;",
+        " Pressione prolungata: DAN da attacco normale, caricato e in picchiata aumentati di un 15% per 15 s."
       ]
     }
   },
@@ -135,7 +135,7 @@
   "constellation2": {
     "name": "Concentrazione spirituale",
     "description": {
-      "0": "<strong>Salvezza della divina damigella</strong> dura 6{NON_BREAK_SPACE}s in più. I personaggi attivi all'interno del campo dell'abilità infliggono un 15% di DAN da CRIT da <cryo>Cryo</cryo> extra."
+      "0": "<strong>Salvezza della divina damigella</strong> dura 6 s in più. I personaggi attivi all'interno del campo dell'abilità infliggono un 15% di DAN da CRIT da <cryo>Cryo</cryo> extra."
     }
   },
   "constellation3": {
@@ -151,7 +151,7 @@
       "0": "Quando i personaggi sotto l'effetto di <strong>Aculeo di ghiaccio</strong> applicato da Shenhe attivano i suoi effetti bonus DAN, Shenhe otterrà un accumulo di Mantra Gelocielo:",
       "1": [
         " quando Shenhe usa <strong>Evocazione dello spirito primaverile</strong>, consumerà tutti gli accumuli di Mantra Gelocielo, aumentando di un 5% i DAN inflitti da Evocazione dello spirito primaverile per ogni accumulo usato;",
-        " cumulabile fino a 50 volte. Ogni accumulo dura 60{NON_BREAK_SPACE}s."
+        " cumulabile fino a 50 volte. Ogni accumulo dura 60 s."
       ]
     }
   },

@@ -133,7 +133,7 @@
   "constellation2": {
     "name": "Sonderfranchise",
     "description": {
-      "0": "Feuert während eines Kampfes von der Position der verbundenen Figur eine Dschinn-Kanone ab und verursacht Schaden in Höhe von 50{NON_BREAK_SPACE}% ANG von Dori, wenn der <strong>Flaschengeist</strong> die mit ihm verbundene Figur heilt."
+      "0": "Feuert während eines Kampfes von der Position der verbundenen Figur eine Dschinn-Kanone ab und verursacht Schaden in Höhe von 50 % ANG von Dori, wenn der <strong>Flaschengeist</strong> die mit ihm verbundene Figur heilt."
     }
   },
   "constellation3": {
@@ -148,8 +148,8 @@
     "description": {
       "0": "Verleiht der Figur, die mit dem <strong>Flaschengeist</strong> verbunden ist, jeweils die folgenden Boni, je nach ihren aktuellen LP und ihrer Elementarenergie:",
       "1": [
-        " Erhöht den passiven Heilungsbonus um 50{NON_BREAK_SPACE}%, wenn ihre LP weniger als 50{NON_BREAK_SPACE}% betragen.",
-        " Erhöht ihre Aufladerate um 30{NON_BREAK_SPACE}%, wenn ihre Elementarenergie weniger als 50{NON_BREAK_SPACE}% beträgt."
+        " Erhöht den passiven Heilungsbonus um 50 %, wenn ihre LP weniger als 50 % betragen.",
+        " Erhöht ihre Aufladerate um 30 %, wenn ihre Elementarenergie weniger als 50 % beträgt."
       ]
     }
   },

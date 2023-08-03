@@ -76,7 +76,7 @@
       "2": "<strong>Velo di fulmine</strong>",
       "3": "Quando gli attacchi normali o caricati del tuo personaggio attivo colpiscono gli avversari, richiamano una Pioggia di tuoni, infliggendo <electro>DAN da Electro</electro>.",
       "4": "Quando Pioggia di tuoni colpisce gli avversari, rigenera energia per quel personaggio.",
-      "5": "È possibile generare una Pioggia di tuoni ogni 0,5{NON_BREAK_SPACE}s.",
+      "5": "È possibile generare una Pioggia di tuoni ogni 0,5 s.",
       "6": "<br/>",
       "7": "<i>Tu e Paimon avete studiato la luce che lampeggia tra le nuvole.</i>"
     },
@@ -102,7 +102,7 @@
   "passive1": {
     "name": "Lampo della folgore",
     "description": {
-      "0": "Quando un altro personaggio del gruppo vicino ottiene un Amuleto dell'abbondanza creato da <strong>Lama di fulmine</strong>, il TdR di <strong>Lama di fulmine</strong> si riduce di 1,5{NON_BREAK_SPACE}s."
+      "0": "Quando un altro personaggio del gruppo vicino ottiene un Amuleto dell'abbondanza creato da <strong>Lama di fulmine</strong>, il TdR di <strong>Lama di fulmine</strong> si riduce di 1,5 s."
     }
   },
   "passive2": {
@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Veemenza violetta",
     "description": {
-      "0": "Quando la Pioggia di tuoni generata da <strong>Tuono roboante</strong> colpisce un avversario, la sua <electro>RES a Electro</electro> si riduce di un 15% per 8{NON_BREAK_SPACE}s."
+      "0": "Quando la Pioggia di tuoni generata da <strong>Tuono roboante</strong> colpisce un avversario, la sua <electro>RES a Electro</electro> si riduce di un 15% per 8 s."
     }
   },
   "constellation3": {

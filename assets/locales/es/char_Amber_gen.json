@@ -110,7 +110,7 @@
   "passive2": {
     "name": "Flecha precisa",
     "description": {
-      "0": "Al infligir daño en los puntos débiles del enemigo usando Disparo Preciso, el ATQ aumenta en un 15% durante 10{NON_BREAK_SPACE}s."
+      "0": "Al infligir daño en los puntos débiles del enemigo usando Disparo Preciso, el ATQ aumenta en un 15% durante 10 s."
     }
   },
   "passive3": {
@@ -137,7 +137,7 @@
     "name": "¡Quémalo todo!",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Lluvia ardiente</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -150,7 +150,7 @@
     "name": "¡Es Barón Bunny!",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Marioneta explosiva</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

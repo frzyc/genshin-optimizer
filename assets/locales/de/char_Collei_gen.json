@@ -117,7 +117,7 @@
   "constellation1": {
     "name": "Hüterin im tiefen Wald",
     "description": {
-      "0": "Erhöht Colleis Aufladerate um 20{NON_BREAK_SPACE}%, wenn sie inaktiv in der Truppe ist."
+      "0": "Erhöht Colleis Aufladerate um 20 %, wenn sie inaktiv in der Truppe ist."
     }
   },
   "constellation2": {

@@ -1,6 +1,8 @@
 {
   "name": "Arco do Caçador",
-  "description": "A melodia de um caçador consiste em dois tipos de sons: o som do tensionamento da corda do seu arco e o som da flecha atravessando o ar.",
+  "description": {
+    "0": "A melodia de um caçador consiste em dois tipos de sons: o som do tensionamento da corda do seu arco e o som da flecha atravessando o ar."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

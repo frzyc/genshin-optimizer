@@ -24,14 +24,17 @@
   "maxStacks": "Maks. Kademe Sayısı",
   "skillDMG": "Beceri Hasarı",
   "burstDMG": "Patlama Hasarı",
-  "dmgAbsorption": "Hasar Emilimi",
+  "dmgAbsorption": "Kalkanın Hasar Emilimi",
   "healing": "İyileştirme",
+  "contHealing": "Sürekli İyileştirme",
   "duration": "Süre",
   "cd": "BS",
   "energyCost": "Enerji Maliyeti",
+  "energyRegen": "Enerji Yenilenmesi",
   "baseDMG": "Temel Hasar",
   "dot": "Süreli Hasar",
   "addEleDMG": "Ek Element Hasarı",
+  "hpRegenPerHit": "Vuruş Başına Yenilenen Can",
   "press": {
     "dmg": "Basma Hasarı",
     "cd": "Basma BS"
@@ -57,11 +60,17 @@
     "superconduct": "Süper İletim",
     "vaporize": "Buharlaştı",
     "melt": "Eridi",
-    "bloom": "Işıklandırma",
+    "bloom": "Çiçeklenme",
     "burgeon": "Filizlenme",
     "hyperbloom": "Aşırı Çiçeklenme",
     "quicken": "Hızlandı",
     "aggravate": "Şiddetlenme",
     "spread": "Yayılma"
+  },
+  "stat": {
+    "def": "Savunma",
+    "base": {
+      "atk": "Temel Saldırı"
+    }
   }
 }

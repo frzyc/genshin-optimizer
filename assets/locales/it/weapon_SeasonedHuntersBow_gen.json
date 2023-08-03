@@ -1,6 +1,8 @@
 {
   "name": "Arco da caccia per esperti",
-  "description": "Un arco vecchio ma conservato egregiamente. Sembra quasi un'estensione del braccio dell'arciere.",
+  "description": {
+    "0": "Un arco vecchio ma conservato egregiamente. Sembra quasi un'estensione del braccio dell'arciere."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

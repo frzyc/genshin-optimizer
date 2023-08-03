@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Topazio, indistruttibile e intrepido",
     "description": {
-      "0": "Aumenta di un 20% l'area d'effetto di <strong>Pioggia meteoritica</strong> ed estende di 2{NON_BREAK_SPACE}s la durata dell'effetto Pietrificazione di Pioggia meteoritica."
+      "0": "Aumenta di un 20% l'area d'effetto di <strong>Pioggia meteoritica</strong> ed estende di 2 s la durata dell'effetto Pietrificazione di Pioggia meteoritica."
     }
   },
   "constellation5": {

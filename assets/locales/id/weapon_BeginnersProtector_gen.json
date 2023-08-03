@@ -1,6 +1,8 @@
 {
   "name": "Beginner's Protector",
-  "description": "Sebuah polearm yang sangat lurus seperti sebuah tiang bendera. Cocok digunakan di berbagai situasi.",
+  "description": {
+    "0": "Sebuah polearm yang sangat lurus seperti sebuah tiang bendera. Cocok digunakan di berbagai situasi."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

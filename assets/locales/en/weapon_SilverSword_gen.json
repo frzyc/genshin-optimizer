@@ -1,6 +1,8 @@
 {
   "name": "Silver Sword",
-  "description": "A sword for exorcising demons. Everyone knows it's made of a silver alloy, not pure silver.",
+  "description": {
+    "0": "A sword for exorcising demons. Everyone knows it's made of a silver alloy, not pure silver."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

@@ -82,7 +82,7 @@
     "description": {
       "0": "Crea un Campo di catene specifico e infligge molteplici iterazioni di <dendro>DAN da Dendro ad area</dendro>.",
       "1": "Se sono presenti degli Specchi cesellaluce quando viene scatenata quest'abilità, tutti gli Specchi vengono consumati aumentando il numero di iterazioni di DAN inflitte.",
-      "2": "2{NON_BREAK_SPACE}s dopo l'utilizzo di questa abilità, se sono stati consumati 0/1/2/3 Specchi, Alhaitham ne genera rispettivamente altri 3/2/1/0.",
+      "2": "2 s dopo l'utilizzo di questa abilità, se sono stati consumati 0/1/2/3 Specchi, Alhaitham ne genera rispettivamente altri 3/2/1/0.",
       "3": "<br/>",
       "4": "<i>\"Se un ricercatore fa della saggezza il suo obiettivo, deve essere preparato a inimicarsi ogni parola che legge. Solo in questo modo è possibile evitare i pregiudizi.\"</i>"
     },
@@ -108,7 +108,7 @@
   "passive1": {
     "name": "Correzione tetracausale",
     "description": {
-      "0": "Quando gli attacchi caricati o in picchiata di Alhaitham colpiscono gli avversari, generano 1 Specchio cesellaluce. Quest'effetto può attivarsi una volta ogni 12{NON_BREAK_SPACE}s."
+      "0": "Quando gli attacchi caricati o in picchiata di Alhaitham colpiscono gli avversari, generano 1 Specchio cesellaluce. Quest'effetto può attivarsi una volta ogni 12 s."
     }
   },
   "passive2": {
@@ -127,13 +127,13 @@
   "constellation1": {
     "name": "Intuito",
     "description": {
-      "0": "Quando un Attacco proiettante colpisce un avversario, il TdR di <strong>Universalità: Elaborazione della forma</strong> si riduce di 1,2{NON_BREAK_SPACE}s. Quest'effetto può attivarsi una volta ogni 1{NON_BREAK_SPACE}s."
+      "0": "Quando un Attacco proiettante colpisce un avversario, il TdR di <strong>Universalità: Elaborazione della forma</strong> si riduce di 1,2 s. Quest'effetto può attivarsi una volta ogni 1 s."
     }
   },
   "constellation2": {
     "name": "Persuasione",
     "description": {
-      "0": "Quando Alhaitham genera uno Specchio cesellaluce, la sua maestria elementale aumenta di 50 per 8{NON_BREAK_SPACE}s. Cumulabile fino a 4 volte. La durata di ciascun accumulo è contata in modo indipendente. Quest'effetto può attivarsi anche dopo aver raggiunto il numero massimo di Specchi cesellaluce."
+      "0": "Quando Alhaitham genera uno Specchio cesellaluce, la sua maestria elementale aumenta di 50 per 8 s. Cumulabile fino a 4 volte. La durata di ciascun accumulo è contata in modo indipendente. Quest'effetto può attivarsi anche dopo aver raggiunto il numero massimo di Specchi cesellaluce."
     }
   },
   "constellation3": {
@@ -148,8 +148,8 @@
     "description": {
       "0": "Quando <strong>Campo specifico: Catene fenomeniche</strong> viene scatenato, si producono i seguenti effetti in base al numero di Specchi cesellaluce consumati e creati in quel momento.",
       "1": [
-        " Ogni Specchio consumato aumenta di 30 la maestria elementale di tutti gli altri membri del gruppo vicini per 15{NON_BREAK_SPACE}s.",
-        " Ogni Specchio generato fornisce ad Alhaitham un 10% di <dendro>bonus DAN da Dendro</dendro> per 15{NON_BREAK_SPACE}s."
+        " Ogni Specchio consumato aumenta di 30 la maestria elementale di tutti gli altri membri del gruppo vicini per 15 s.",
+        " Ogni Specchio generato fornisce ad Alhaitham un 10% di <dendro>bonus DAN da Dendro</dendro> per 15 s."
       ],
       "2": "<br/>",
       "3": "Se usi Campo specifico: Catene fenomeniche una seconda volta mentre gli effetti sono attivi, la loro durata precedente viene annullata."
@@ -168,7 +168,7 @@
       "0": "Alhaitham ottiene i seguenti effetti:",
       "1": [
         " 2 s dopo aver sprigionato <strong>Campo specifico: Catene fenomeniche</strong>, genera 3 Specchi cesellaluce a prescindere dal numero di specchi consumati;",
-        " se Alhaitham genera Specchi cesellaluce dopo averne raggiunto il limite massimo, il suo tasso di CRIT e i suoi DAN da CRIT aumentano rispettivamente di un 10% e di un 70% per 6{NON_BREAK_SPACE}s. Se quest'effetto viene attivato nuovamente durante la sua durata iniziale, la durata residua aumenta di 6{NON_BREAK_SPACE}s."
+        " se Alhaitham genera Specchi cesellaluce dopo averne raggiunto il limite massimo, il suo tasso di CRIT e i suoi DAN da CRIT aumentano rispettivamente di un 10% e di un 70% per 6 s. Se quest'effetto viene attivato nuovamente durante la sua durata iniziale, la durata residua aumenta di 6 s."
       ]
     }
   }

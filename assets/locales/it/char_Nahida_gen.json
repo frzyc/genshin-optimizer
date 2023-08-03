@@ -47,7 +47,7 @@
       "3": "<strong>Pressione prolungata</strong>",
       "4": "Entra nella modalità di mira, consentendoti di selezionare un numero limitato di avversari in una determinata area. Durante questa modalità, la resistenza all'interruzione di Nahida è aumentata.",
       "5": "Quando viene rilasciata, l'abilità infligge <dendro>DAN da Dendro</dendro> agli avversari selezionati e li marchia con il Seme di Skandha.",
-      "6": "La modalità di mira dura fino a 5{NON_BREAK_SPACE}s e ti consente di selezionare un massimo di 8 avversari.",
+      "6": "La modalità di mira dura fino a 5 s e ti consente di selezionare un massimo di 8 avversari.",
       "7": "<br/>",
       "8": "<strong>Seme di Skandha</strong>",
       "9": "Gli avversari marchiati con il Seme di Skandha saranno vincolati tra loro entro una certa distanza.",
@@ -148,7 +148,7 @@
       "0": "Gli avversari marchiati con i <strong>Semi di Skandha</strong> applicati da Nahida subiscono gli effetti seguenti:",
       "1": [
         " i DAN delle reazioni di Ustione, Fioritura, Iperfioritura e Germinazione possono infliggere colpi CRIT. Il tasso di CRIT e i DAN da CRIT sono fissi, rispettivamente a un 20% e a un 100%;",
-        " entro 8{NON_BREAK_SPACE}s dall'attivazione dell'effetto di Vivificazione, Accentuazione e Propagazione, la DIF si riduce di un 30%."
+        " entro 8 s dall'attivazione dell'effetto di Vivificazione, Accentuazione e Propagazione, la DIF si riduce di un 30%."
       ]
     }
   },
@@ -176,8 +176,8 @@
     "name": "Frutto della ragione",
     "description": {
       "0": "Dopo aver attivato <strong>Cuore illusorio</strong>, quando Nahida colpisce un avversario affetto dai Semi di Skandha di <strong>Karma vincolante</strong> con attacchi normali o caricati, applica Purificazione trikarmica: Oblio karmico a tale avversario e a tutti quelli vincolati, infliggendo <dendro>DAN da Dendro</dendro> pari a un 200% del suo ATT e a un 400% della sua maestria elementale.",
-      "1": "I DAN inflitti da Purificazione trikarmica: Oblio karmico sono considerati DAN da abilità elementale, e sono attivabili una volta ogni 0,2{NON_BREAK_SPACE}s.",
-      "2": "L'effetto può durare fino a 10{NON_BREAK_SPACE}s, e sarà rimosso dopo che Nahida avrà applicato 6 volte Purificazione trikarmica: Oblio karmico."
+      "1": "I DAN inflitti da Purificazione trikarmica: Oblio karmico sono considerati DAN da abilità elementale, e sono attivabili una volta ogni 0,2 s.",
+      "2": "L'effetto può durare fino a 10 s, e sarà rimosso dopo che Nahida avrà applicato 6 volte Purificazione trikarmica: Oblio karmico."
     }
   }
 }

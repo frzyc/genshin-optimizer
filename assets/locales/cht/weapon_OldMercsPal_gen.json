@@ -1,6 +1,8 @@
 {
   "name": "傭兵重劍",
-  "description": "沉重堅實的古舊大劍，飽經戰火與歲月的洗鍊。",
+  "description": {
+    "0": "沉重堅實的古舊大劍，飽經戰火與歲月的洗鍊。"
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

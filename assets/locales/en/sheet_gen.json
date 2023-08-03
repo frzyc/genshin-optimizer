@@ -24,14 +24,17 @@
   "maxStacks": "Maximum Stacks",
   "skillDMG": "Skill DMG",
   "burstDMG": "Burst DMG",
-  "dmgAbsorption": "DMG Absorption",
+  "dmgAbsorption": "Shield DMG Absorption",
   "healing": "Healing",
+  "contHealing": "Continuous Healing",
   "duration": "Duration",
   "cd": "CD",
   "energyCost": "Energy Cost",
+  "energyRegen": "Energy Regeneration",
   "baseDMG": "Base DMG",
   "dot": "DoT",
   "addEleDMG": "Additional Elemental DMG",
+  "hpRegenPerHit": "HP Regeneration Per Hit",
   "press": {
     "dmg": "Press DMG",
     "cd": "Press CD"
@@ -63,5 +66,11 @@
     "quicken": "Quicken",
     "aggravate": "Aggravate",
     "spread": "Spread"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "Base ATK"
+    }
   }
 }

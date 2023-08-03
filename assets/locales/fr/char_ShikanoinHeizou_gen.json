@@ -122,7 +122,7 @@
   "constellation1": {
     "name": "Justice juvénile",
     "description": {
-      "0": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 10{NON_BREAK_SPACE}s."
+      "0": "Pendant les 5 s qui suivent l'arrivée de Shikanoin Heizou sur le terrain, la VIT d'attaque de ses attaques normales augmente de 15 % et il obtient 1 cumul de détection pour <strong>Poing d'arrêt cardiaque</strong>. Cet effet peut être déclenché une fois toutes les 10 s."
     }
   },
   "constellation2": {

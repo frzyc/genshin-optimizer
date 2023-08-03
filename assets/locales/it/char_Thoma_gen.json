@@ -115,8 +115,8 @@
   "passive1": {
     "name": "Armatura a strati",
     "description": {
-      "0": "Quando il personaggio attivo ottiene o ripristina una <strong>Barriera ardente</strong>, la sua efficacia dello scudo aumenta di un 5% per 6{NON_BREAK_SPACE}s.",
-      "1": "Quest'effetto può attivarsi una volta ogni 0,3{NON_BREAK_SPACE}s. Cumulabile fino a 5 volte."
+      "0": "Quando il personaggio attivo ottiene o ripristina una <strong>Barriera ardente</strong>, la sua efficacia dello scudo aumenta di un 5% per 6 s.",
+      "1": "Quest'effetto può attivarsi una volta ogni 0,3 s. Cumulabile fino a 5 volte."
     }
   },
   "passive2": {
@@ -134,14 +134,14 @@
   "constellation1": {
     "name": "Compagno fedele",
     "description": {
-      "0": "Quando un personaggio protetto da <strong>Barriera ardente</strong> di Thoma (escluso Thoma) viene attaccato, il TdR di <strong>Benedizione ardente</strong> di Thoma e del suo <strong>Ooyoroi cremisi</strong> si riducono di 3{NON_BREAK_SPACE}s.",
-      "1": "Quest'effetto può attivarsi una volta ogni 20{NON_BREAK_SPACE}s."
+      "0": "Quando un personaggio protetto da <strong>Barriera ardente</strong> di Thoma (escluso Thoma) viene attaccato, il TdR di <strong>Benedizione ardente</strong> di Thoma e del suo <strong>Ooyoroi cremisi</strong> si riducono di 3 s.",
+      "1": "Quest'effetto può attivarsi una volta ogni 20 s."
     }
   },
   "constellation2": {
     "name": "Le abilità di un sottoposto",
     "description": {
-      "0": "La durata di <strong>Ooyoroi cremisi</strong> aumenta di 3{NON_BREAK_SPACE}s."
+      "0": "La durata di <strong>Ooyoroi cremisi</strong> aumenta di 3 s."
     }
   },
   "constellation3": {
@@ -167,7 +167,7 @@
   "constellation6": {
     "name": "Cuore ardente",
     "description": {
-      "0": "Quando una <strong>Barriera ardente</strong> viene ottenuta o ripristinata, i DAN inflitti dagli attacchi normali, caricati e in picchiata di tutti i membri del gruppo aumentano di un 15% per 6{NON_BREAK_SPACE}s."
+      "0": "Quando una <strong>Barriera ardente</strong> viene ottenuta o ripristinata, i DAN inflitti dagli attacchi normali, caricati e in picchiata di tutti i membri del gruppo aumentano di un 15% per 6 s."
     }
   }
 }

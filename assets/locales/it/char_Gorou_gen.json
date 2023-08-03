@@ -52,7 +52,7 @@
         " 3 personaggi di Geo: aggiunge Scricchiolio (<geo>bonus DAN da Geo</geo>)."
       ],
       "5": "<br/>",
-      "6": "Gorou può schierare sul campo solo 1 Stendardo bellico del generale alla volta. I personaggi possono trarre vantaggio da solo 1 Stendardo bellico del generale alla volta. Quando un membro del gruppo lascia il campo di battaglia, l'effetto positivo attivo dura per 2{NON_BREAK_SPACE}s.",
+      "6": "Gorou può schierare sul campo solo 1 Stendardo bellico del generale alla volta. I personaggi possono trarre vantaggio da solo 1 Stendardo bellico del generale alla volta. Quando un membro del gruppo lascia il campo di battaglia, l'effetto positivo attivo dura per 2 s.",
       "7": "<br/>",
       "8": "<strong>Pressione prolungata</strong>",
       "9": "Regola la posizione dell'abilità.",
@@ -87,8 +87,8 @@
       "3": "Il campo ha le seguenti proprietà:",
       "4": [
         " similmente allo Stendardo bellico del generale creato da Difesa a tutto tondo Inuzaka, esso conferisce effetti positivi ai personaggi attivi all'interno dell'area d'effetto dell'abilità in base al numero di personaggi di <geo>Geo</geo> presenti nel gruppo. Inoltre, si muove insieme al tuo personaggio attivo;",
-        " genera 1 Crollo cristallino ogni 1,5{NON_BREAK_SPACE}s che infligge <geo>DAN da Geo ad area</geo> a 1 avversario all'interno dell'area d'effetto dell'abilità;",
-        " attira 1 frammento elementale nell'area d'effetto dell'abilità verso la posizione del tuo personaggio attivo ogni 1,5{NON_BREAK_SPACE}s (i frammenti elementali sono creati dalle reazioni di Cristallizzazione)."
+        " genera 1 Crollo cristallino ogni 1,5 s che infligge <geo>DAN da Geo ad area</geo> a 1 avversario all'interno dell'area d'effetto dell'abilità;",
+        " attira 1 frammento elementale nell'area d'effetto dell'abilità verso la posizione del tuo personaggio attivo ogni 1,5 s (i frammenti elementali sono creati dalle reazioni di Cristallizzazione)."
       ],
       "5": "<br/>",
       "6": "Se uno Stendardo bellico del generale creato da Gorou è presente sul campo quando quest'abilità viene usata, sarà distrutto. Inoltre, mentre il campo Gloria del generale è attivo, l'abilità elementale di Gorou Difesa a tutto tondo Inuzaka non creerà lo Stendardo bellico del generale.",
@@ -118,7 +118,7 @@
   "passive1": {
     "name": "Sprezzo delle intemperie",
     "description": {
-      "0": "Dopo aver usato <strong>Juuga: Avanti verso la vittoria</strong>, la DIF di tutti i membri vicini del gruppo aumenta di un 25% per 12{NON_BREAK_SPACE}s."
+      "0": "Dopo aver usato <strong>Juuga: Avanti verso la vittoria</strong>, la DIF di tutti i membri vicini del gruppo aumenta di un 25% per 12 s."
     }
   },
   "passive2": {
@@ -140,15 +140,15 @@
   "constellation1": {
     "name": "Segugio fuggente: Veloce come il vento",
     "description": {
-      "0": "Quando i personaggi (escluso Gorou) nell'area d'effetto di <strong>Stendardo bellico del generale</strong> o di <strong>Gloria del generale</strong> di Gorou infliggono DAN da Geo agli avversari, il TdR di <strong>Difesa a tutto tondo Inuzaka</strong> di Gorou si riduce di 2{NON_BREAK_SPACE}s.",
-      "1": "Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s."
+      "0": "Quando i personaggi (escluso Gorou) nell'area d'effetto di <strong>Stendardo bellico del generale</strong> o di <strong>Gloria del generale</strong> di Gorou infliggono DAN da Geo agli avversari, il TdR di <strong>Difesa a tutto tondo Inuzaka</strong> di Gorou si riduce di 2 s.",
+      "1": "Si può verificare una sola volta ogni 10 s."
     }
   },
   "constellation2": {
     "name": "Segugio seduto: Affidabile come un orologio",
     "description": {
-      "0": "Mentre <strong>Gloria del generale</strong> è attiva, la sua durata si estende di 1{NON_BREAK_SPACE}s quando un personaggio attivo vicino ottiene un frammento elementale tramite una reazione di Cristallizzazione. ",
-      "1": "Si può verificare una sola volta ogni 0,1{NON_BREAK_SPACE}s. La durata può estendersi fino a 3{NON_BREAK_SPACE}s."
+      "0": "Mentre <strong>Gloria del generale</strong> è attiva, la sua durata si estende di 1 s quando un personaggio attivo vicino ottiene un frammento elementale tramite una reazione di Cristallizzazione. ",
+      "1": "Si può verificare una sola volta ogni 0,1 s. La durata può estendersi fino a 3 s."
     }
   },
   "constellation3": {
@@ -161,7 +161,7 @@
   "constellation4": {
     "name": "Lingua del segugio: Mite come l'acqua",
     "description": {
-      "0": "Quando <strong>Gloria del generale</strong> è nello stato di Impenetrabilità o Scricchiolio, Gorou guarirà i personaggi attivi nella sua area d'effetto di una quantità pari a un 50% della sua DIF ogni 1,5{NON_BREAK_SPACE}s."
+      "0": "Quando <strong>Gloria del generale</strong> è nello stato di Impenetrabilità o Scricchiolio, Gorou guarirà i personaggi attivi nella sua area d'effetto di una quantità pari a un 50% della sua DIF ogni 1,5 s."
     }
   },
   "constellation5": {

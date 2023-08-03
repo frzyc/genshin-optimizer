@@ -1,6 +1,8 @@
 {
   "name": "Kör Kılıç",
-  "description": "Gençlik hayalleri ve maceranın heyecanı yetersiz kalıyorsa, açığı cesaretle kapat.",
+  "description": {
+    "0": "Gençlik hayalleri ve maceranın heyecanı yetersiz kalıyorsa, açığı cesaretle kapat."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

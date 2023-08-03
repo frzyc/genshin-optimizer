@@ -24,14 +24,17 @@
   "maxStacks": "Lapisan Maks.",
   "skillDMG": "DMG Skill",
   "burstDMG": "DMG Burst",
-  "dmgAbsorption": "Penahanan DMG",
+  "dmgAbsorption": "Pertahanan Perisai",
   "healing": "Pemulihan HP",
+  "contHealing": "Heal Berkelanjutan",
   "duration": "Durasi",
   "cd": "Cooldown",
   "energyCost": "Konsumsi Energy",
+  "energyRegen": "Pemulihan Energy",
   "baseDMG": "Base DMG",
   "dot": "DMG Berkelanjutan",
   "addEleDMG": "Tambahan Elemental DMG",
+  "hpRegenPerHit": "Pemulihan HP/Hit",
   "press": {
     "dmg": "DMG Tekan",
     "cd": "Cooldown (Mode Tekan)"
@@ -63,5 +66,11 @@
     "quicken": "Quicken",
     "aggravate": "Aggravate",
     "spread": "Spread"
+  },
+  "stat": {
+    "def": "DEF",
+    "base": {
+      "atk": "Base ATK"
+    }
   }
 }

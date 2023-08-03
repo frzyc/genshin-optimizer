@@ -110,7 +110,7 @@
   "passive2": {
     "name": "Riserva strategica",
     "description": {
-      "0": "Un personaggio che attraversa il <strong>Paravento di giada</strong> ottiene un 12% di <geo>bonus DAN da Geo</geo> per 10{NON_BREAK_SPACE}s."
+      "0": "Un personaggio che attraversa il <strong>Paravento di giada</strong> ottiene un 12% di <geo>bonus DAN da Geo</geo> per 10 s."
     }
   },
   "passive3": {
@@ -129,11 +129,11 @@
     "name": "Effetto shock",
     "description": {
       "0": "Quando il <strong>Paravento di giada</strong> viene distrutto, il suo TdR viene azzerato.",
-      "1": "Si può verificare una sola volta ogni 6{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 6 s."
     }
   },
   "constellation3": {
-    "name": "Maestose son le{NON_BREAK_SPACE}stelle",
+    "name": "Maestose son le stelle",
     "description": {
       "0": "Aumenta di 3 il livello di <strong>Spaccastelle</strong>.",
       "1": "Il livello di potenziamento massimo è 15."
@@ -146,14 +146,14 @@
     }
   },
   "constellation5": {
-    "name": "Insuperabile è il{NON_BREAK_SPACE}paravento di{NON_BREAK_SPACE}giada",
+    "name": "Insuperabile è il paravento di giada",
     "description": {
       "0": "Aumenta di 3 il livello di <strong>Paravento di giada</strong>.",
       "1": "Il livello di potenziamento massimo è 15."
     }
   },
   "constellation6": {
-    "name": "Grandiose son le{NON_BREAK_SPACE}Sette{NON_BREAK_SPACE}Stelle",
+    "name": "Grandiose son le Sette Stelle",
     "description": {
       "0": "Quando si usa <strong>Spaccastelle</strong>, Ningguang ottiene 7 pietre di Giada stellare."
     }

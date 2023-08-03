@@ -1,6 +1,8 @@
 {
   "name": "佣兵重剑",
-  "description": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。",
+  "description": {
+    "0": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。"
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

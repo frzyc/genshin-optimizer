@@ -44,7 +44,7 @@
     "description": {
       "0": "Aloy lancia una Bomba congelante nella direzione indicata, che esplode all'impatto infliggendo <cryo>DAN da Cryo</cryo>. Dopo l'esplosione, la Bomba congelante si divide in tanti Frammenti di Acquagelida che esplodono a contatto con gli avversari o dopo un breve lasso di tempo, infliggendo <cryo>DAN da Cryo</cryo>.",
       "1": "Quando una Bomba congelante o un Frammento di Acquagelida colpisce un avversario, l'ATT dell'avversario si riduce e Aloy ottiene 1 accumulo di Bobina.",
-      "2": "Aloy può ottenere fino a 1 accumulo di Bobina ogni 0,1{NON_BREAK_SPACE}s.",
+      "2": "Aloy può ottenere fino a 1 accumulo di Bobina ogni 0,1 s.",
       "3": "<br/>",
       "4": "<strong>Bobina</strong>",
       "5": [
@@ -53,7 +53,7 @@
       ],
       "6": "<br/>",
       "7": "Mentre è nello stato di Frenesia di gelo, Aloy non può accumulare Bobina.",
-      "8": "Gli effetti di Bobina si annullano 30{NON_BREAK_SPACE}s dopo che Aloy abbandona il combattimento.",
+      "8": "Gli effetti di Bobina si annullano 30 s dopo che Aloy abbandona il combattimento.",
       "9": "<br/>",
       "10": "<i>Credi che faccia freddo? Allora non hai mai visitato il Tumulo.</i>"
     },
@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Sovraccarico offensivo",
     "description": {
-      "0": "Quando Aloy riceve l'effetto Bobina da <strong>Natura congelata</strong>, il suo ATT aumenta di un 16%, mentre l'ATT dei membri vicini del gruppo aumenta di un 8%. Quest'effetto dura 10{NON_BREAK_SPACE}s."
+      "0": "Quando Aloy riceve l'effetto Bobina da <strong>Natura congelata</strong>, il suo ATT aumenta di un 16%, mentre l'ATT dei membri vicini del gruppo aumenta di un 8%. Quest'effetto dura 10 s."
     }
   },
   "passive2": {

@@ -106,13 +106,13 @@
   "passive1": {
     "name": "Penitenza del tuono",
     "description": {
-      "0": "Dopo aver usato di nuovo <strong>Ripristino stellare</strong> mentre uno Stiletto saettante è attivo, l'arma di Keqing ottiene un'<electro>infusione di Electro</electro> per 5{NON_BREAK_SPACE}s."
+      "0": "Dopo aver usato di nuovo <strong>Ripristino stellare</strong> mentre uno Stiletto saettante è attivo, l'arma di Keqing ottiene un'<electro>infusione di Electro</electro> per 5 s."
     }
   },
   "passive2": {
     "name": "Dignità aristocratica",
     "description": {
-      "0": "Quando si usa <strong>Spada celestiale</strong>, il tasso di CRIT e la ricarica d'energia di Keqing aumentano di un 15%. Quest'effetto dura 8{NON_BREAK_SPACE}s."
+      "0": "Quando si usa <strong>Spada celestiale</strong>, il tasso di CRIT e la ricarica d'energia di Keqing aumentano di un 15%. Quest'effetto dura 8 s."
     }
   },
   "passive3": {
@@ -131,7 +131,7 @@
     "name": "Tassazione elevata",
     "description": {
       "0": "Quando gli attacchi normali e caricati di Keqing colpiscono gli avversari sotto l'effetto di <electro>Electro</electro>, hanno una probabilità di un 50% di generare una particella elementale.",
-      "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 5 s."
     }
   },
   "constellation3": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Stella tenace",
     "description": {
-      "0": "Quando Keqing usa un attacco normale, un attacco caricato, un'abilità elementale o un Tripudio elementale, ottiene un <electro>bonus DAN da Electro</electro> di un 6% per 8{NON_BREAK_SPACE}s.",
+      "0": "Quando Keqing usa un attacco normale, un attacco caricato, un'abilità elementale o un Tripudio elementale, ottiene un <electro>bonus DAN da Electro</electro> di un 6% per 8 s.",
       "1": "Gli effetti attivati dagli attacchi normali e caricati, e da abilità elementali e Tripudi elementali, sono indipendenti gli uni dagli altri."
     }
   }

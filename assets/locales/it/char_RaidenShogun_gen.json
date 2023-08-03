@@ -49,7 +49,7 @@
         " I DAN da Tripudio elementale dei personaggi che ottengono Occhio del giudizio tempestoso aumentano in base al costo d'energia del Tripudio elementale finché l'Occhio è attivo."
       ],
       "4": "<br/>",
-      "5": "L'Occhio può avviare un attacco coordinato ogni 0,9{NON_BREAK_SPACE}s per gruppo.",
+      "5": "L'Occhio può avviare un attacco coordinato ogni 0,9 s per gruppo.",
       "6": "Gli attacchi coordinati generati dai personaggi non controllati dal giocatore infliggono un 20% dei DAN normali.",
       "7": "<br/>",
       "8": "<i>Gli esseri divini possono influenzare tutto ciò che sorvegliano, e l'Archon di Electro può manipolare le stesse stelle minacciose per difendere i suoi servitori e riversare la sua tonante sentenza sui loro nemici.</i>"
@@ -89,7 +89,7 @@
       "10": "Quando i membri del gruppo vicini (esclusa la Shogun Raiden) usano i loro Tripudi elementali, la Shogun Raiden accumula Risoluzione in base al costo di energia dei Tripudi elementali.",
       "11": "Il numero massimo di accumuli di Risoluzione è 60.",
       "12": "<br/>",
-      "13": "La Risoluzione ottenuta con Chakra Desiderata si azzera 300{NON_BREAK_SPACE}s dopo che la Shogun Raiden lascia il campo di battaglia.",
+      "13": "La Risoluzione ottenuta con Chakra Desiderata si azzera 300 s dopo che la Shogun Raiden lascia il campo di battaglia.",
       "14": "<br/>",
       "15": "<i>Questa è la nuova tecnica della Shogun Raiden. Abbandonando il \"Musou\" simile al vuoto, ora si fa carico di un nuovo \"Musou\", ossia i sogni e le ambizioni di tutti. Proprio come \"shinsetsu\", \"verità\", significa anche \"novità\", così ha inizio un nuovo capitolo della storia di Inazuma.</i>"
     },
@@ -116,7 +116,7 @@
     "name": "Aspirazione infinita",
     "description": {
       "0": "Quando i membri del gruppo vicini ottengono sfere o particelle elementali, <strong>Chakra Desiderata</strong> ottiene 2 accumuli di Risoluzione.",
-      "1": "Si può verificare una sola volta ogni 3{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 3 s."
     }
   },
   "passive2": {
@@ -157,7 +157,7 @@
   "constellation4": {
     "name": "Giuramento di decoro",
     "description": {
-      "0": "Quando la durata dello stato di <strong>Musou Isshin</strong> applicato da <strong>Arte segreta: Musou Shinsetsu</strong> termina, tutti i membri vicini del gruppo (esclusa la Shogun Raiden) ricevono un bonus ATT di un 30% per 10{NON_BREAK_SPACE}s."
+      "0": "Quando la durata dello stato di <strong>Musou Isshin</strong> applicato da <strong>Arte segreta: Musou Shinsetsu</strong> termina, tutti i membri vicini del gruppo (esclusa la Shogun Raiden) ricevono un bonus ATT di un 30% per 10 s."
     }
   },
   "constellation5": {
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Custode di desideri",
     "description": {
-      "0": "Quando è nello stato di <strong>Musou Isshin</strong> applicato da <strong>Arte segreta: Musou Shinsetsu</strong>, gli attacchi della Shogun Raiden considerati parte del suo Tripudio elementale che colpiscono gli avversari riducono di 1{NON_BREAK_SPACE}s il TdR del Tripudio elementale di tutti i membri vicini del gruppo (esclusa la Shogun Raiden).",
+      "0": "Quando è nello stato di <strong>Musou Isshin</strong> applicato da <strong>Arte segreta: Musou Shinsetsu</strong>, gli attacchi della Shogun Raiden considerati parte del suo Tripudio elementale che colpiscono gli avversari riducono di 1 s il TdR del Tripudio elementale di tutti i membri vicini del gruppo (esclusa la Shogun Raiden).",
       "1": "Quest'effetto si può attivare una volta ogni secondo per un totale di 5 volte mentre Musou Isshin è attivo."
     }
   }

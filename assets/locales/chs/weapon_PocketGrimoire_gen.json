@@ -1,6 +1,8 @@
 {
   "name": "口袋魔导书",
-  "description": "精心编纂，只留下考试重点的魔导参考小册。",
+  "description": {
+    "0": "精心编纂，只留下考试重点的魔导参考小册。"
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

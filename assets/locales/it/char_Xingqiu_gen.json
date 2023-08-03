@@ -135,7 +135,7 @@
     "name": "Arcobaleno a ciel sereno",
     "description": {
       "0": "Estende di 3 s la durata di <strong>Spada Guhua: Fendipioggia</strong>.",
-      "1": "Riduce di un 15% la <hydro>RES a Hydro</hydro> degli avversari colpiti dagli attacchi di pioggia di spade per 4{NON_BREAK_SPACE}s."
+      "1": "Riduce di un 15% la <hydro>RES a Hydro</hydro> degli avversari colpiti dagli attacchi di pioggia di spade per 4 s."
     }
   },
   "constellation3": {

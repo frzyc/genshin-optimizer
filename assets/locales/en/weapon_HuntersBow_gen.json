@@ -1,6 +1,8 @@
 {
   "name": "Hunter's Bow",
-  "description": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+  "description": {
+    "0": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

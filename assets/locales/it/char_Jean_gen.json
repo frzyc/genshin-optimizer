@@ -124,13 +124,13 @@
   "constellation1": {
     "name": "Tempesta di lame",
     "description": {
-      "0": "Aumenta la velocità di trascinamento di <strong>Lama burrascosa</strong> dopo una pressione prolungata maggiore di 1{NON_BREAK_SPACE}s, e aumenta i DAN inflitti di un 40%."
+      "0": "Aumenta la velocità di trascinamento di <strong>Lama burrascosa</strong> dopo una pressione prolungata maggiore di 1 s, e aumenta i DAN inflitti di un 40%."
     }
   },
   "constellation2": {
     "name": "Egida del popolo",
     "description": {
-      "0": "Quando Jean raccoglie una particella o sfera elementale, la VEL di movimento e di attacco di tutti i membri del gruppo aumenta di un 15% per 15{NON_BREAK_SPACE}s."
+      "0": "Quando Jean raccoglie una particella o sfera elementale, la VEL di movimento e di attacco di tutti i membri del gruppo aumenta di un 15% per 15 s."
     }
   },
   "constellation3": {
@@ -141,7 +141,7 @@
     }
   },
   "constellation4": {
-    "name": "Regno dei denti di{NON_BREAK_SPACE}leone",
+    "name": "Regno dei denti di leone",
     "description": {
       "0": "La <strong>RES ad Anemo</strong> di tutti gli avversari all'interno del campo generato da <anemo>Brezza dei denti di leone</anemo> si riduce di un 40%."
     }
@@ -154,9 +154,9 @@
     }
   },
   "constellation6": {
-    "name": "Zanna del leone, giusta protettrice di{NON_BREAK_SPACE}Mondstadt",
+    "name": "Zanna del leone, giusta protettrice di Mondstadt",
     "description": {
-      "0": "I DAN subiti all'interno del campo generato da <strong>Brezza dei denti di leone</strong> si riducono di un 35%. Dopo aver abbandonato il Campo di denti di leone, quest'effetto dura per 3 attacchi o 10{NON_BREAK_SPACE}s."
+      "0": "I DAN subiti all'interno del campo generato da <strong>Brezza dei denti di leone</strong> si riducono di un 35%. Dopo aver abbandonato il Campo di denti di leone, quest'effetto dura per 3 attacchi o 10 s."
     }
   }
 }

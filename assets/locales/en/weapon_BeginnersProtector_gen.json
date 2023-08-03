@@ -1,6 +1,8 @@
 {
   "name": "Beginner's Protector",
-  "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+  "description": {
+    "0": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

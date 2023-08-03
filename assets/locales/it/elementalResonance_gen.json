@@ -25,10 +25,10 @@
   },
   "EnduringRock": {
     "name": "Roccia infrangibile",
-    "desc": "Aumenta l'efficacia dello scudo di un 15%. Inoltre, i personaggi protetti da uno scudo otterranno i seguenti effetti speciali: i DAN inflitti aumentano di un 15%, e infliggere DAN ai nemici ridurrà la loro RES a Geo di un 20% per 15{NON_BREAK_SPACE}s."
+    "desc": "Aumenta l'efficacia dello scudo di un 15%. Inoltre, i personaggi protetti da uno scudo otterranno i seguenti effetti speciali: i DAN inflitti aumentano di un 15%, e infliggere DAN ai nemici ridurrà la loro RES a Geo di un 20% per 15 s."
   },
   "SprawlingGreenery": {
     "name": "Vegetazione proliferante",
-    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione o Fioritura, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6{NON_BREAK_SPACE}s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 sec. La durata di ciascun effetto è contata in modo indipendente."
+    "desc": "La maestria elementale aumenta di 50. Dopo aver attivato reazioni di Ustione, Vivificazione o Fioritura, la maestria elementale di tutti i membri del gruppo vicini aumenta di 30 per 6 s. Dopo aver attivato le reazioni di Accentuazione, Propagazione, Iperfioritura o Germinazione, la maestria elementale di tutti i membri del gruppo aumenta di 20 per 6 sec. La durata di ciascun effetto è contata in modo indipendente."
   }
 }

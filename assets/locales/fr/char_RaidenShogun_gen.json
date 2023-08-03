@@ -132,7 +132,7 @@
   "passive3": {
     "name": "Préservation suprême",
     "description": {
-      "0": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50{NON_BREAK_SPACE}%."
+      "0": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %."
     }
   },
   "constellation1": {

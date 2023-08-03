@@ -1,6 +1,8 @@
 {
   "name": "Anotações do Aprendiz",
-  "description": "Notas deixadas por um estudante brilhante que deixou uma lista de magias muito úteis. Sua caligrafia é muito bonita.",
+  "description": {
+    "0": "Notas deixadas por um estudante brilhante que deixou uma lista de magias muito úteis. Sua caligrafia é muito bonita."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

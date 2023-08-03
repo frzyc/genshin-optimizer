@@ -83,7 +83,7 @@
       "3": "Se un membro del gruppo diverso da Yoimiya colpisce un avversario marcato da Vampata aurea con attacchi normali/caricati/in picchiata, abilità elementali e Tripudi elementali, innescherà un'esplosione infliggendo <pyro>DAN da Pyro ad area</pyro>.",
       "4": "Quando un avversario colpito da Vampata aurea viene sconfitto prima del termine della sua durata, l'effetto sarà trasferito a un altro avversario vicino, che ne erediterà la durata rimanente.",
       "5": "<br/>",
-      "6": "Un'esplosione di Vampata aurea può attivarsi ogni 2{NON_BREAK_SPACE}s. Quando Yoimiya è a terra, gli effetti di Vampata aurea causati dalle sue abilità saranno disattivati.",
+      "6": "Un'esplosione di Vampata aurea può attivarsi ogni 2 s. Quando Yoimiya è a terra, gli effetti di Vampata aurea causati dalle sue abilità saranno disattivati.",
       "7": "<br/>",
       "8": "<i>I fuochi d'artificio rappresentano le stelle create dall'uomo, delle comete sparate nel cielo. Anche se non durano per più di un istante, la memoria del loro fulgore continuerà a vivere.</i>"
     },
@@ -109,13 +109,13 @@
   "passive1": {
     "name": "Trucchi da combinaguai",
     "description": {
-      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, l'attacco normale di Yoimiya aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 2% per ogni colpo andato a segno. Quest'effetto dura per 3{NON_BREAK_SPACE}s ed è cumulabile fino a 10 volte."
+      "0": "Durante la <strong>Danza del fuoco Niwabi</strong>, l'attacco normale di Yoimiya aumenta il suo <pyro>bonus DAN da Pyro</pyro> di un 2% per ogni colpo andato a segno. Quest'effetto dura per 3 s ed è cumulabile fino a 10 volte."
     }
   },
   "passive2": {
     "name": "Alba d'una notte d'estate",
     "description": {
-      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15{NON_BREAK_SPACE}s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
+      "0": "Usando <strong>Sassifraga Ryuukin</strong>, l'ATT dei membri del gruppo vicini (esclusa Yoimiya) aumenta di un 10% per 15 s. Inoltre, viene aggiunto un ulteriore bonus ATT in base al numero di accumuli di Trucchi da combinaguai che Yoimiya possiede quando usa <strong>Sassifraga Ryuukin</strong>. Il bonus ATT aumenta di un 1% per ogni accumulo."
     }
   },
   "passive3": {
@@ -127,14 +127,14 @@
   "constellation1": {
     "name": "Ryuukin d'agata",
     "description": {
-      "0": "La Vampata aurea creata da <strong>Sassifraga Ryuukin</strong> dura 4{NON_BREAK_SPACE}s in più.",
-      "1": "Inoltre, quando un avversario viene sconfitto mentre è affetto da Vampata aurea, l'ATT di Yoimiya aumenta di un 20% per 20{NON_BREAK_SPACE}s."
+      "0": "La Vampata aurea creata da <strong>Sassifraga Ryuukin</strong> dura 4 s in più.",
+      "1": "Inoltre, quando un avversario viene sconfitto mentre è affetto da Vampata aurea, l'ATT di Yoimiya aumenta di un 20% per 20 s."
     }
   },
   "constellation2": {
     "name": "Corteo fiammeggiante",
     "description": {
-      "0": "Quando i <pyro>DAN da Pyro</pyro> di Yoimiya infliggono un colpo CRIT, Yoimiya otterrà un <pyro>bonus DAN da Pyro</pyro> di un 25% per 6{NON_BREAK_SPACE}s.",
+      "0": "Quando i <pyro>DAN da Pyro</pyro> di Yoimiya infliggono un colpo CRIT, Yoimiya otterrà un <pyro>bonus DAN da Pyro</pyro> di un 25% per 6 s.",
       "1": "Quest'effetto può attivarsi anche quando Yoimiya non è il personaggio attivo."
     }
   },
@@ -148,7 +148,7 @@
   "constellation4": {
     "name": "Esperta di pirotecnica",
     "description": {
-      "0": "Quando la Vampata aurea di Yoimiya innesca un'esplosione, il TdR di <strong>Danza del fuoco Niwabi</strong> si riduce di 1,2{NON_BREAK_SPACE}s."
+      "0": "Quando la Vampata aurea di Yoimiya innesca un'esplosione, il TdR di <strong>Danza del fuoco Niwabi</strong> si riduce di 1,2 s."
     }
   },
   "constellation5": {

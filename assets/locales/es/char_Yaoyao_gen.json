@@ -117,13 +117,13 @@
   "passive1": {
     "name": "Propagación estelar",
     "description": {
-      "0": "Cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, al esprintar, saltar o correr, lanza rábanos jadeados de manera continua a los enemigos cercanos. Solo se puede lanzar 1 rábano jadeado de esta manera una vez cada 0.6{NON_BREAK_SPACE}s."
+      "0": "Cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, al esprintar, saltar o correr, lanza rábanos jadeados de manera continua a los enemigos cercanos. Solo se puede lanzar 1 rábano jadeado de esta manera una vez cada 0.6 s."
     }
   },
   "passive2": {
     "name": "Circunspección",
     "description": {
-      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de dicho rábano recupera Vida una vez por segundo en una cantidad equivalente al 0.8% de la Vida Máx. de Yaoyao. Este efecto dura 5{NON_BREAK_SPACE}s."
+      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de dicho rábano recupera Vida una vez por segundo en una cantidad equivalente al 0.8% de la Vida Máx. de Yaoyao. Este efecto dura 5 s."
     }
   },
   "passive3": {
@@ -136,33 +136,33 @@
   "constellation1": {
     "name": "Tutelaje adéptico",
     "description": {
-      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de la explosión obtiene un 15% de <dendro>Bono de Daño Dendro</dendro> durante 8{NON_BREAK_SPACE}s y recupera 15{NON_BREAK_SPACE}pts. de Aguante. Solo se puede recuperar Aguante de esta manera una vez cada 5{NON_BREAK_SPACE}s."
+      "0": "Cuando explota un <strong>rábano jadeado</strong>, el personaje en uso dentro del AdE de la explosión obtiene un 15% de <dendro>Bono de Daño Dendro</dendro> durante 8 s y recupera 15 pts. de Aguante. Solo se puede recuperar Aguante de esta manera una vez cada 5 s."
     }
   },
   "constellation2": {
     "name": "Rectitud inocente",
     "description": {
-      "0": "Si un rábano jadeado explota y golpea a un enemigo cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, Yaoyao recupera 3{NON_BREAK_SPACE}pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.8{NON_BREAK_SPACE}s."
+      "0": "Si un rábano jadeado explota y golpea a un enemigo cuando Yaoyao está en el estado de iluminación adéptica de <strong>Jadestello fugaz</strong>, Yaoyao recupera 3 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental de esta manera una vez cada 0.8 s."
     }
   },
   "constellation3": {
     "name": "Lealtad bondadosa",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Rabanal de las nubes</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Rabanal de las nubes</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
     "name": "Tierna dulzura",
     "description": {
-      "0": "Tras usar <strong>Rabanal de las nubes</strong> o <strong>Jadestello fugaz</strong>, la Maestría Elemental de Yaoyao aumenta en una cantidad equivalente al 0.3% de su Vida Máx. durante 8{NON_BREAK_SPACE}s. La Maestría Elemental solo puede aumentar en un máximo de 120{NON_BREAK_SPACE}pts. de esta manera."
+      "0": "Tras usar <strong>Rabanal de las nubes</strong> o <strong>Jadestello fugaz</strong>, la Maestría Elemental de Yaoyao aumenta en una cantidad equivalente al 0.3% de su Vida Máx. durante 8 s. La Maestría Elemental solo puede aumentar en un máximo de 120 pts. de esta manera."
     }
   },
   "constellation5": {
     "name": "Compasión pura",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Jadestello fugaz</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Jadestello fugaz</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

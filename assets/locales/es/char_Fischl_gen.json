@@ -137,7 +137,7 @@
     "name": "Alas sombrías",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Vigía de la noche</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -151,13 +151,13 @@
     "name": "Noche silenciosa",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Ilusión nocturna</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Ave de la Noche Eterna",
     "description": {
-      "0": "Aumenta la duración de la invocación de Oz en 2{NON_BREAK_SPACE}s. Mientras Oz esté presente, atacará junto a tu personaje en uso e infligirá un 30% del ATQ de Fischl como <electro>Daño Electro</electro>."
+      "0": "Aumenta la duración de la invocación de Oz en 2 s. Mientras Oz esté presente, atacará junto a tu personaje en uso e infligirá un 30% del ATQ de Fischl como <electro>Daño Electro</electro>."
     }
   }
 }

@@ -1,6 +1,8 @@
 {
   "name": "Espada del Mercenario",
-  "description": "Una gran espada antigua y pesada que ha vivido innumerables batallas.",
+  "description": {
+    "0": "Una gran espada antigua y pesada que ha vivido innumerables batallas."
+  },
   "passiveName": "",
   "passiveDescription": {
     "0": "",

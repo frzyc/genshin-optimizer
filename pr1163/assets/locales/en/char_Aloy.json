@@ -1,9 +1,0 @@
-{
-  "skill": {
-    "coil": "Coil",
-    "rush": "Rushing Ice",
-    "rushState": "Time spent in the Rushing Ice state"
-  },
-  "a1CondName": "After receiving the Coil effect",
-  "normCryoInfus": "<cryo>Normal Att. Cryo Infusion</cryo>"
-}

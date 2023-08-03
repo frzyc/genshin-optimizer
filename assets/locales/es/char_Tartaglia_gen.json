@@ -19,7 +19,7 @@
         "0": "<strong>Obstrucción del flujo</strong>",
         "1": "Inflige <hydro>Daño Hydro en el AdE</hydro> cuando Tartaglia ataca a un objetivo afectado por obstrucción del flujo. El daño infligido por este estado se considera daño de Ataque Normal.",
         "2": [
-          "Obstrucción del flujo - Destello: cuando se dispara un Disparo Preciso totalmente cargado contra un enemigo bajo los efectos de obstrucción del flujo, inflige daño continuo en el AdE. Solo puede activarse una vez cada 0.7{NON_BREAK_SPACE}s.",
+          "Obstrucción del flujo - Destello: cuando se dispara un Disparo Preciso totalmente cargado contra un enemigo bajo los efectos de obstrucción del flujo, inflige daño continuo en el AdE. Solo puede activarse una vez cada 0.7 s.",
           "Obstrucción del flujo - Explosión: al derrotar a un enemigo bajo los efectos de obstrucción del flujo, se provocará una explosión Hydro que aplicará dicho efecto sobre los enemigos cercanos."
         ]
       },
@@ -61,10 +61,10 @@
       "7": "Consume cierta cantidad de Aguante para desatar un doble golpe de espadas que inflige <hydro>Daño Hydro</hydro>.",
       "8": "<br/>",
       "9": "<strong>Obstrucción del flujo - Corte</strong>",
-      "10": "Al golpear con un ataque cuerpo a cuerpo a un enemigo bajo los efectos de obstrucción del flujo, Tartaglia realiza Obstrucción del flujo - Corte, infligiendo <hydro>Daño Hydro en el AdE</hydro>. Este daño es considerado como daño de Habilidad Elemental, y solo se puede activar una vez cada 1.5{NON_BREAK_SPACE}s.",
+      "10": "Al golpear con un ataque cuerpo a cuerpo a un enemigo bajo los efectos de obstrucción del flujo, Tartaglia realiza Obstrucción del flujo - Corte, infligiendo <hydro>Daño Hydro en el AdE</hydro>. Este daño es considerado como daño de Habilidad Elemental, y solo se puede activar una vez cada 1.5 s.",
       "11": "<br/>",
-      "12": "Después de 30{NON_BREAK_SPACE}s, o tras volver a activar la habilidad, Tartaglia regresa a su posición de combate a distancia, y esta habilidad entra en TdE. Cuanto más tiempo permanezca Tartaglia en su posición de combate cuerpo a cuerpo, más durará el TdE.",
-      "13": "Si el retorno a la posición de combate a distancia se produce automáticamente después de 30{NON_BREAK_SPACE}s, el TdE será aún más largo.",
+      "12": "Después de 30 s, o tras volver a activar la habilidad, Tartaglia regresa a su posición de combate a distancia, y esta habilidad entra en TdE. Cuanto más tiempo permanezca Tartaglia en su posición de combate cuerpo a cuerpo, más durará el TdE.",
+      "13": "Si el retorno a la posición de combate a distancia se produce automáticamente después de 30 s, el TdE será aún más largo.",
       "14": "<br/>",
       "15": "<i>Elige usar un arco para superar su torpe manejo de dicha arma. Cuando la ocasión lo requiere, usará su verdadera fuerza...</i>"
     },
@@ -151,14 +151,14 @@
   "constellation2": {
     "name": "Legado del mal: Trasfondo",
     "description": {
-      "0": "Cuando los enemigos afectados por obstrucción del flujo son derrotados, Tartaglia recupera 4{NON_BREAK_SPACE}pts. de Energía Elemental."
+      "0": "Cuando los enemigos afectados por obstrucción del flujo son derrotados, Tartaglia recupera 4 pts. de Energía Elemental."
     }
   },
   "constellation3": {
     "name": "Calamidad del Abismo: Fuente del conflicto",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Legado del mal: Olas furiosas</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -172,7 +172,7 @@
     "name": "Caos: Corte líquido",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Caos: Obliteración</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

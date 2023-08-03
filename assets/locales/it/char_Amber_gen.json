@@ -111,7 +111,7 @@
   "passive2": {
     "name": "Tiro perfetto",
     "description": {
-      "0": "I colpi mirati che colpiscono i punti deboli aumentano l'ATT di un 15% per 10{NON_BREAK_SPACE}s."
+      "0": "I colpi mirati che colpiscono i punti deboli aumentano l'ATT di un 15% per 10 s."
     }
   },
   "passive3": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Fuoco selvaggio",
     "description": {
-      "0": "<strong>Pioggia di Frecce</strong> aumenta la VEL di movimento e l'ATT di tutti i membri del gruppo di un 15% per 10{NON_BREAK_SPACE}s."
+      "0": "<strong>Pioggia di Frecce</strong> aumenta la VEL di movimento e l'ATT di tutti i membri del gruppo di un 15% per 10 s."
     }
   }
 }

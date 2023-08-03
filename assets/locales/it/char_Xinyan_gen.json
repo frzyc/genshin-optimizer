@@ -129,8 +129,8 @@
   "constellation1": {
     "name": "Accelerazione letale",
     "description": {
-      "0": "Quando viene messo a segno un colpo CRIT, la VEL d'ATT normale e caricato di Xinyan aumenta di un 12% per 5{NON_BREAK_SPACE}s.",
-      "1": "Si può verificare una sola volta ogni 5{NON_BREAK_SPACE}s."
+      "0": "Quando viene messo a segno un colpo CRIT, la VEL d'ATT normale e caricato di Xinyan aumenta di un 12% per 5 s.",
+      "1": "Si può verificare una sola volta ogni 5 s."
     }
   },
   "constellation2": {
@@ -149,7 +149,7 @@
   "constellation4": {
     "name": "Ritmo di fuoco",
     "description": {
-      "0": "I DAN da sferzata di <strong>Esecuzione sfrenata</strong> riducono la RES fisica degli avversari di un 15% per 12{NON_BREAK_SPACE}s."
+      "0": "I DAN da sferzata di <strong>Esecuzione sfrenata</strong> riducono la RES fisica degli avversari di un 15% per 12 s."
     }
   },
   "constellation5": {

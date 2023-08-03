@@ -2,7 +2,7 @@
   "setName": "Miracolo",
   "setEffects": {
     "2": "RES a tutti gli elementi +20%.",
-    "4": "I DAN elementali subiti aumentano la RES elementale corrispondente di un 30% per 10{NON_BREAK_SPACE}s. Si può verificare una sola volta ogni 10{NON_BREAK_SPACE}s."
+    "4": "I DAN elementali subiti aumentano la RES elementale corrispondente di un 30% per 10 s. Si può verificare una sola volta ogni 10 s."
   },
   "pieces": {
     "flower": {

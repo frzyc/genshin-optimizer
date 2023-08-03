@@ -2,7 +2,7 @@
   "setName": "Sogno della ninfa",
   "setEffects": {
     "2": "Bonus DAN da Hydro +15%.",
-    "4": "Dopo che gli attacchi normali, caricati e in picchiata, e le abilità e i Tripudi elementali colpiscono un avversario, si innesca 1 accumulo di Ninfa speculare della durata di 8{NON_BREAK_SPACE}s. Mentre sono sotto l'effetto di 1, 2, 3 o più accumuli di Ninfa speculare, l'ATT e il bonus DAN da Hydro aumentano rispettivamente di un 7%/16%/25% e di un 4%/9%/15%. Gli accumuli di Ninfa speculare generati da attacchi normali, caricati e in picchiata e da abilità e Tripudi elementali esistono indipendentemente."
+    "4": "Dopo che gli attacchi normali, caricati e in picchiata, e le abilità e i Tripudi elementali colpiscono un avversario, si innesca 1 accumulo di Ninfa speculare della durata di 8 s. Mentre sono sotto l'effetto di 1, 2, 3 o più accumuli di Ninfa speculare, l'ATT e il bonus DAN da Hydro aumentano rispettivamente di un 7%/16%/25% e di un 4%/9%/15%. Gli accumuli di Ninfa speculare generati da attacchi normali, caricati e in picchiata e da abilità e Tripudi elementali esistono indipendentemente."
   },
   "pieces": {
     "flower": {

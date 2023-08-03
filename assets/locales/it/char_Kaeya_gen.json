@@ -120,7 +120,7 @@
   "constellation2": {
     "name": "Esibizione eterna",
     "description": {
-      "0": "Finché è attivo, ogni volta che <strong>Valzer glaciale</strong> sconfigge un avversario, la sua durata aumenta di 2,5{NON_BREAK_SPACE}s, fino a un massimo di 15{NON_BREAK_SPACE}s."
+      "0": "Finché è attivo, ogni volta che <strong>Valzer glaciale</strong> sconfigge un avversario, la sua durata aumenta di 2,5 s, fino a un massimo di 15 s."
     }
   },
   "constellation3": {
@@ -135,10 +135,10 @@
     "description": {
       "0": "Quando i PS di Kaeya scendono al di sotto di un 20%:",
       "1": [
-        " genera uno scudo che assorbe danni pari a un 30% dei PS max di Kaeya. Dura 20{NON_BREAK_SPACE}s."
+        " genera uno scudo che assorbe danni pari a un 30% dei PS max di Kaeya. Dura 20 s."
       ],
       "2": "Lo scudo ha un 250% di efficienza di Assorbimento <cryo>DAN da Cryo</cryo>.",
-      "3": "Si può verificare una sola volta ogni 60{NON_BREAK_SPACE}s."
+      "3": "Si può verificare una sola volta ogni 60 s."
     }
   },
   "constellation5": {

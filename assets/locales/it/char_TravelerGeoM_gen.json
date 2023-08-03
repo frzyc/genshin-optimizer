@@ -95,7 +95,7 @@
   "passive1": {
     "name": "Rocciascura frantumata",
     "description": {
-      "0": "Riduce il TdR di <strong>Lama stellare</strong> di 2{NON_BREAK_SPACE}s."
+      "0": "Riduce il TdR di <strong>Lama stellare</strong> di 2 s."
     }
   },
   "passive2": {
@@ -140,8 +140,8 @@
   "constellation6": {
     "name": "Macigno perpetuo",
     "description": {
-      "0": "La barriera generata da <strong>Risveglio terrestre</strong> dura 5{NON_BREAK_SPACE}s in più.",
-      "1": "Il meteorite generato da <strong>Lama stellare</strong> dura 10{NON_BREAK_SPACE}s in più."
+      "0": "La barriera generata da <strong>Risveglio terrestre</strong> dura 5 s in più.",
+      "1": "Il meteorite generato da <strong>Lama stellare</strong> dura 10 s in più."
     }
   }
 }

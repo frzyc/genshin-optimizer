@@ -8,7 +8,7 @@
       "1": "<br/>",
       "2": "<strong>Pressione</strong>",
       "3": "Eula colpisce rapidamente con la sua claymore, infliggendo <cryo>DAN da Cryo</cryo>.",
-      "4": "Quando colpisce un avversario, Eula ottiene un accumulo di Cuortetro, per un massimo di 2 accumuli. Ogni accumulo può essere ottenuto solo una volta ogni 0,3{NON_BREAK_SPACE}s.",
+      "4": "Quando colpisce un avversario, Eula ottiene un accumulo di Cuortetro, per un massimo di 2 accumuli. Ogni accumulo può essere ottenuto solo una volta ogni 0,3 s.",
       "5": "<br/>",
       "6": "<strong>Cuortetro</strong>",
       "7": "Aumenta la resistenza all'interruzione e la DIF di Eula.",
@@ -82,8 +82,8 @@
   "burst": {
     "name": "Illuminazione glaciale",
     "description": {
-      "0": "Brandisce il suo spadone, infliggendo <cryo>DAN da Cryo</cryo> agli avversari vicini e creando una Spada di luce cadente che la segue per un massimo di 7{NON_BREAK_SPACE}s.",
-      "1": "Mentre è attiva, la Spada di luce cadente aumenta la resistenza all'interruzione di Eula. Quando l'attacco normale, l'abilità elementale e il Tripudio elementale di Eula infliggono DAN agli avversari, i DAN caricano la Spada di luce cadente, che può ottenere un accumulo di energia ogni 0,1{NON_BREAK_SPACE}s.",
+      "0": "Brandisce il suo spadone, infliggendo <cryo>DAN da Cryo</cryo> agli avversari vicini e creando una Spada di luce cadente che la segue per un massimo di 7 s.",
+      "1": "Mentre è attiva, la Spada di luce cadente aumenta la resistenza all'interruzione di Eula. Quando l'attacco normale, l'abilità elementale e il Tripudio elementale di Eula infliggono DAN agli avversari, i DAN caricano la Spada di luce cadente, che può ottenere un accumulo di energia ogni 0,1 s.",
       "2": "Al termine della sua durata, la Spada di luce cadente discende ed esplode con violenza, infliggendo DAN fisici agli avversari vicini.",
       "3": "I DAN variano in base al numero di accumuli di energia della Spada di luce cadente.",
       "4": "Se Eula lascia il campo di battaglia, la Spada di luce cadente esplode all'istante.",
@@ -130,8 +130,8 @@
   "constellation1": {
     "name": "Illusione delle maree",
     "description": {
-      "0": "Ogni volta che gli accumuli di Cuortetro di <strong>Vortice algido</strong> vengono consumati, i DAN fisici di Eula aumentano di un 30% per 6{NON_BREAK_SPACE}s.",
-      "1": "Ogni accumulo consumato aumenterà la durata di questo effetto di 6{NON_BREAK_SPACE}s, fino a un massimo di 18{NON_BREAK_SPACE}s."
+      "0": "Ogni volta che gli accumuli di Cuortetro di <strong>Vortice algido</strong> vengono consumati, i DAN fisici di Eula aumentano di un 30% per 6 s.",
+      "1": "Ogni accumulo consumato aumenterà la durata di questo effetto di 6 s, fino a un massimo di 18 s."
     }
   },
   "constellation2": {

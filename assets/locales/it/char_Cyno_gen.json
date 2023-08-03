@@ -77,7 +77,7 @@
         " La maestria elementale e la resistenza all'interruzione di Cyno aumentano, donandogli anche immunità ai DAN da Electrocarica."
       ],
       "5": "<br/>",
-      "6": "Questo effetto viene annullato quando Cyno esce dal campo o dopo un massimo di 18{NON_BREAK_SPACE}s.",
+      "6": "Questo effetto viene annullato quando Cyno esce dal campo o dopo un massimo di 18 s.",
       "7": "<br/>",
       "8": "<i>Per il generale Mahamatra, i sacri rituali tramandati nell'antica nazione sono come una sentenza suprema.</i>",
       "9": "<i>Che si tratti del presente o del passato, di un'implacabile tempesta o di un gigantesco serpente, nessuno scalfirà la maestà della legge.</i>"
@@ -127,14 +127,14 @@
   "constellation1": {
     "name": "Ordinanza: Guardia instancabile",
     "description": {
-      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10{NON_BREAK_SPACE}s. Se l'effetto Verdetto del suo talento passivo Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
+      "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong>, la VEL d'ATT normale di Cyno aumenta di un 20% per 10 s. Se l'effetto Verdetto del suo talento passivo Giudizio della piuma cadente viene attivato durante <strong>Rito arcano: Guida delle anime del baratro</strong>, la durata dell'incremento viene ripristinata.",
       "1": "Devi prima sbloccare il talento passivo Giudizio della piuma cadente."
     }
   },
   "constellation2": {
     "name": "Cerimonia: Raduno degli spiriti",
     "description": {
-      "0": "Quando Cyno colpisce gli avversari con attacchi normali, il suo <electro>bonus DAN da Electro</electro> aumenta di un 10% per 4{NON_BREAK_SPACE}s. Quest'effetto può attivarsi una volta ogni 0,1{NON_BREAK_SPACE}s e accumularsi per un massimo di 5 volte."
+      "0": "Quando Cyno colpisce gli avversari con attacchi normali, il suo <electro>bonus DAN da Electro</electro> aumenta di un 10% per 4 s. Quest'effetto può attivarsi una volta ogni 0,1 s e accumularsi per un massimo di 5 volte."
     }
   },
   "constellation3": {
@@ -162,8 +162,8 @@
     "name": "Veste: Bilancia dell'equità",
     "description": {
       "0": "Dopo aver usato <strong>Rito sacro: Destrezza del lupo</strong> o attivato l'effetto Verdetto del talento passivo Giudizio della piuma cadente, Cyno ottiene 4 accumuli dell'effetto Giorno dello sciacallo. Quando colpisce gli avversari con gli attacchi normali, consuma 1 accumulo di Giorno dello sciacallo per scagliare un Dardo del braccatore.",
-      "1": "Giorno dello sciacallo dura 8{NON_BREAK_SPACE}s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
-      "2": "È possibile scagliare 1 Dardo del braccatore in questo modo ogni 0,4{NON_BREAK_SPACE}s.",
+      "1": "Giorno dello sciacallo dura 8 s e può essere accumulato per un massimo di 8 volte. I suoi effetti si annullano al termine di Precorritore giurato.",
+      "2": "È possibile scagliare 1 Dardo del braccatore in questo modo ogni 0,4 s.",
       "3": "Devi prima sbloccare il talento passivo Giudizio della piuma cadente."
     }
   }

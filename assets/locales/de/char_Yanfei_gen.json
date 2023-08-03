@@ -9,13 +9,13 @@
       "normal": {
         "0": "<strong><strong>Standardangriff</strong>",
         "1": "Schießt mehrere Feuerbälle nacheinander ab und verursacht bis zu dreimal <pyro>Pyro-Schaden</pyro>.",
-        "2": "Jeder Treffer gibt Yanfei ein flammendes Siegel. Kann anfänglich bis zu drei flammende Siegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen flammenden Siegel aktualisiert.",
-        "3": "Jedes flammende Siegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird."
+        "2": "Jeder Treffer gibt Yanfei ein Flammensiegel. Kann anfänglich bis zu drei Flammensiegel besitzen. Bei jedem Auslösen wird die Dauer der vorhandenen Flammensiegel aktualisiert.",
+        "3": "Jedes Flammensiegel verringert Yanfeis Ausdauerverbrauch und verschwindet, wenn sie ausgewechselt wird."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
-        "1": "Verbraucht Ausdauer sowie nach kurzem Aufladen alle flammenden Siegel und verursacht vor sich <pyro>Pyro-Flächenschaden</pyro>.",
-        "2": "Verstärkt basierend auf der Anzahl der verbrauchten flammenden Siegel die Reichweite und den Schaden des heftigen Schlags."
+        "1": "Verbraucht Ausdauer sowie nach kurzem Aufladen alle Flammensiegel und verursacht vor sich <pyro>Pyro-Flächenschaden</pyro>.",
+        "2": "Verstärkt basierend auf der Anzahl der verbrauchten Flammensiegel die Reichweite und den Schaden des heftigen Schlags."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -28,8 +28,8 @@
       "2": "SCH Phase 3",
       "3": "SCH heftiger Schläge",
       "4": "Ausdauerverbrauch heftiger Schläge",
-      "5": "Verringerung des Ausdauerverbrauchs für flammende Siegel",
-      "6": "Dauer der flammenden Siegel",
+      "5": "Verringerung des Ausdauerverbrauchs für Flammensiegel",
+      "6": "Dauer der Flammensiegel",
       "7": "SCH beim Fallen",
       "8": "SCH beim Fallen aus niedriger/großer Höhe",
       "9": "",
@@ -45,7 +45,7 @@
     "name": "Pakt des Feuers",
     "description": {
       "0": "Beschwört lodernde Flammen und verursacht <pyro>Pyro-Flächenschaden</pyro>.",
-      "1": "Bekommt beim Treffen von Gegnern die Höchstzahl an flammenden Siegeln.",
+      "1": "Bekommt beim Treffen von Gegnern die Höchstzahl an Flammensiegeln.",
       "2": "<br/>",
       "3": "<i>Der Pakt des Feuers beinhaltet nicht nur die geltenden Gesetze, sondern auch die von Yanfei selbst formulierten Klauseln, denn der Rat für Allgemeine Angelegenheiten allein ist nicht in der Lage, die Naturgesetze zu ändern.</i>"
     },
@@ -71,12 +71,12 @@
   "burst": {
     "name": "Pakt des flammenden Infernos",
     "description": {
-      "0": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht <pyro>Pyro-Flächenschaden</pyro>. Gibt dabei Yanfei die Höchstzahl an flammenden Siegeln und den Effekt Sengende Hitze.",
+      "0": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht <pyro>Pyro-Flächenschaden</pyro>. Gibt dabei Yanfei die Höchstzahl an Flammensiegeln und den Effekt Sengende Hitze.",
       "1": "<br/>",
       "2": "<strong>Sengende Hitze</strong>",
       "3": "Löst folgende Effekte aus:",
       "4": [
-        " Gibt Yanfei in gleichen zeitlichen Abständen je ein flammendes Siegel.",
+        " Gibt Yanfei in gleichen zeitlichen Abständen je ein Flammensiegel.",
         " Erhöht den Schaden heftiger Schläge."
       ],
       "5": "Endet, wenn Yanfei ausgewechselt wird.",
@@ -86,7 +86,7 @@
     "skillParams": {
       "0": "Fähigkeits-SCH",
       "1": "",
-      "2": "Intervall der flammenden Siegel",
+      "2": "Intervall der Flammensiegel",
       "3": "SCH-Bonus für heftige Schläge",
       "4": "Dauer",
       "5": "Abklingzeit",
@@ -105,7 +105,7 @@
   "passive1": {
     "name": "Koppelungsklausel",
     "description": {
-      "0": "Erhöht mit jedem verbrauchten flammenden Siegel durch heftige Schläge den <pyro>Pyro-Schadensbonus</pyro> 6 s lang um 5 %. Falls die Figur innerhalb der Wirkungsdauer des Effekts nochmals heftige Schläge anwendet, wird der vorige Effekt zuerst entfernt."
+      "0": "Erhöht mit jedem verbrauchten Flammensiegel durch heftige Schläge den <pyro>Pyro-Schadensbonus</pyro> 6 s lang um 5 %. Falls die Figur innerhalb der Wirkungsdauer des Effekts nochmals heftige Schläge anwendet, wird der vorige Effekt zuerst entfernt."
     }
   },
   "passive2": {
@@ -123,7 +123,7 @@
   "constellation1": {
     "name": "Rechthaberei",
     "description": {
-      "0": "Erhöht mit jedem flammenden Siegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag."
+      "0": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag."
     }
   },
   "constellation2": {
@@ -157,7 +157,7 @@
   "constellation6": {
     "name": "Extraklausel",
     "description": {
-      "0": "Erhöht die Höchstmenge an flammenden Siegeln um 1."
+      "0": "Erhöht die Höchstmenge an Flammensiegeln um 1."
     }
   }
 }

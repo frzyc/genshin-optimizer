@@ -2,7 +2,7 @@
   "setName": "Marzialista",
   "setEffects": {
     "2": "DAN da attacchi normali e caricati +15%.",
-    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 25% i DAN da attacchi normali e caricati per 8{NON_BREAK_SPACE}s."
+    "4": "Dopo l'uso di un'abilità elementale, aumenta di un 25% i DAN da attacchi normali e caricati per 8 s."
   },
   "pieces": {
     "flower": {

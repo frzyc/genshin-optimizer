@@ -124,7 +124,7 @@
   "constellation2": {
     "name": "Schegge esplosive",
     "description": {
-      "0": "Quando un avversario viene colpito dalle mine di <strong>Coniglio Bumbum</strong>, la sua DIF si riduce di un 23% per 10{NON_BREAK_SPACE}s."
+      "0": "Quando un avversario viene colpito dalle mine di <strong>Coniglio Bumbum</strong>, la sua DIF si riduce di un 23% per 10 s."
     }
   },
   "constellation3": {
@@ -150,8 +150,8 @@
   "constellation6": {
     "name": "Delizia ardente",
     "description": {
-      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristinerà 3 di energia a tutti i membri del gruppo (esclusa Klee) ogni 3{NON_BREAK_SPACE}s.",
-      "1": "Quando <strong>Schizzi e scintille</strong> viene usata, tutti i membri del gruppo otterranno un <pyro>bonus DAN da Pyro</pyro> di un 10% per 25{NON_BREAK_SPACE}s."
+      "0": "Mentre è sotto l'effetto di <strong>Schizzi e scintille</strong>, Klee ripristinerà 3 di energia a tutti i membri del gruppo (esclusa Klee) ogni 3 s.",
+      "1": "Quando <strong>Schizzi e scintille</strong> viene usata, tutti i membri del gruppo otterranno un <pyro>bonus DAN da Pyro</pyro> di un 10% per 25 s."
     }
   }
 }

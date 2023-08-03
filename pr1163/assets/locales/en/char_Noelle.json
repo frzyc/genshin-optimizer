@@ -1,6 +1,0 @@
-{
-  "p4cd": "24s -1s every 4 hits",
-  "c6duration": "15s + 1s every kill (max 25s)",
-  "qlarger": "Larger attack AoE",
-  "c4dmg": "Breastplate Shatter DMG"
-}

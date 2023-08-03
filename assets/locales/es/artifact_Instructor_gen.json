@@ -1,7 +1,7 @@
 {
   "setName": "Instructor",
   "setEffects": {
-    "2": "Maestría Elemental +80.",
+    "2": "Maestría Elemental +80 pts.",
     "4": "Después de activar una Reacción Elemental, aumenta la Maestría Elemental de todos los miembros del equipo en 120 pts. durante 8 s."
   },
   "pieces": {

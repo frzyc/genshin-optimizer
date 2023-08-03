@@ -2,7 +2,7 @@
   "setName": "Épica del Pabellón del Desierto",
   "setEffects": {
     "2": "Bono de Daño Anemo +15%.",
-    "4": "Tras golpear a un enemigo con un Ataque Cargado, la Vel. de Ataque Normal del personaje aumenta en un 10%, y el daño de Ataque Normal, Cargado y Descendente aumenta en un 40% durante 15{NON_BREAK_SPACE}s."
+    "4": "Tras golpear a un enemigo con un Ataque Cargado, la Vel. de Ataque Normal del personaje aumenta en un 10%, y el daño de Ataque Normal, Cargado y Descendente aumenta en un 40% durante 15 s."
   },
   "pieces": {
     "flower": {

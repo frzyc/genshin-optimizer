@@ -1,7 +1,7 @@
 {
   "setName": "Orquesta del Errante",
   "setEffects": {
-    "2": "Maestría Elemental +80.",
+    "2": "Maestría Elemental +80 pts.",
     "4": "Aumenta el daño de ATQ Cargado en un 35% si el personaje usa catalizador o arco."
   },
   "pieces": {

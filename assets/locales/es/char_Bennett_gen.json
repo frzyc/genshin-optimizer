@@ -144,8 +144,8 @@
   "constellation3": {
     "name": "Pasión ardiente",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Sobrecarga de pasión</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Sobrecarga de pasión</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -158,8 +158,8 @@
   "constellation5": {
     "name": "Explorador verdadero",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Aventura maravillosa</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Aventura maravillosa</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {

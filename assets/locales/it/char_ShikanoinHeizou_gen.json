@@ -103,13 +103,13 @@
   "passive1": {
     "name": "Pratica paradossale",
     "description": {
-      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1{NON_BREAK_SPACE}s."
+      "0": "Quando Shikanoin Heizou attiva la reazione di Turbinio mentre è sul campo di battaglia, ottiene 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 0,1 s."
     }
   },
   "passive2": {
     "name": "Ragionamento penetrante",
     "description": {
-      "0": "Dopo che il <strong>Colpo cardiaco</strong> di Shikanoin Heizou colpisce un avversario, aumenta la maestria elementale di tutti i membri del gruppo (tranne Shikanoin Heizou) di 80 per 10{NON_BREAK_SPACE}s."
+      "0": "Dopo che il <strong>Colpo cardiaco</strong> di Shikanoin Heizou colpisce un avversario, aumenta la maestria elementale di tutti i membri del gruppo (tranne Shikanoin Heizou) di 80 per 10 s."
     }
   },
   "passive3": {
@@ -122,13 +122,13 @@
   "constellation1": {
     "name": "Giustizia esuberante",
     "description": {
-      "0": "Per 5 s dopo che Shikanoin Heizou scende in campo, la sua VEL d'attacco normale aumenta di un 15%. Ottiene anche 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 10{NON_BREAK_SPACE}s."
+      "0": "Per 5 s dopo che Shikanoin Heizou scende in campo, la sua VEL d'attacco normale aumenta di un 15%. Ottiene anche 1 accumulo di Deterioramento per <strong>Colpo cardiaco</strong>. Quest'effetto può attivarsi una volta ogni 10 s."
     }
   },
   "constellation2": {
     "name": "Raccolta investigativa",
     "description": {
-      "0": "Potenzia l'effetto di attrazione del Tunnel di vento creato da <strong>Calcio acchiappavento</strong> ed estende la sua durata a 1{NON_BREAK_SPACE}s."
+      "0": "Potenzia l'effetto di attrazione del Tunnel di vento creato da <strong>Calcio acchiappavento</strong> ed estende la sua durata a 1 s."
     }
   },
   "constellation3": {

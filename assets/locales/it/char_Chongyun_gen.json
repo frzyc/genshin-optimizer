@@ -102,7 +102,7 @@
   "passive2": {
     "name": "Lama del cacciatore di brina",
     "description": {
-      "0": "Quando il campo creato da <strong>Lama spirituale: Gelo stratificato di Chonghua</strong> scompare, viene evocata un'altra lama spirituale per colpire gli avversari vicini, infliggendo <cryo>DAN da Cryo ad area</cryo> pari a un 100% dei DAN da abilità di Gelo stratificato di Chonghua. La <cryo>RES a Cryo</cryo> degli avversari colpiti dalla lama si riduce di un 10% per 8{NON_BREAK_SPACE}s."
+      "0": "Quando il campo creato da <strong>Lama spirituale: Gelo stratificato di Chonghua</strong> scompare, viene evocata un'altra lama spirituale per colpire gli avversari vicini, infliggendo <cryo>DAN da Cryo ad area</cryo> pari a un 100% dei DAN da abilità di Gelo stratificato di Chonghua. La <cryo>RES a Cryo</cryo> degli avversari colpiti dalla lama si riduce di un 10% per 8 s."
     }
   },
   "passive3": {
@@ -114,7 +114,7 @@
   "constellation1": {
     "name": "Potenza di ghiaccio",
     "description": {
-      "0": "L'ultimo attacco di una combo d'attacco normale di Chongyun rilascia 3 lame di ghiaccio. Ogni lama infligge a tutti gli avversari davanti a sé <cryo>DAN da Cryo</cryo> pari a un 50% dell'ATT di Chongyun."
+      "0": "L'ultimo attacco di una combo d'attacco normale di Chongyun rilascia 3 lame di ghiaccio. Ogni lama infligge a tutti gli avversari sul suo percorso <cryo>DAN da Cryo</cryo> pari a un 50% dell'ATT di Chongyun."
     }
   },
   "constellation2": {
@@ -134,7 +134,7 @@
     "name": "Cieli ghiacciati",
     "description": {
       "0": "L'energia di Chongyun si rigenera di 1 ogni volta che colpisce un avversario sotto l'effetto di <cryo>Cryo</cryo>.",
-      "1": "Si può verificare una sola volta ogni 2{NON_BREAK_SPACE}s."
+      "1": "Si può verificare una sola volta ogni 2 s."
     }
   },
   "constellation5": {

@@ -136,7 +136,7 @@
   "constellation1": {
     "name": "Istinto del lupo",
     "description": {
-      "0": "Quando viene raccolta una particella o sfera elementale, i DAN di Razor aumentano di un 10% per 8{NON_BREAK_SPACE}s."
+      "0": "Quando viene raccolta una particella o sfera elementale, i DAN di Razor aumentano di un 10% per 8 s."
     }
   },
   "constellation2": {
@@ -155,7 +155,7 @@
   "constellation4": {
     "name": "Morso",
     "description": {
-      "0": "Quando <strong>Artiglio tonante</strong> viene usato (pressione), la DIF degli avversari colpiti si riduce di un 15% per 7{NON_BREAK_SPACE}s."
+      "0": "Quando <strong>Artiglio tonante</strong> viene usato (pressione), la DIF degli avversari colpiti si riduce di un 15% per 7 s."
     }
   },
   "constellation5": {

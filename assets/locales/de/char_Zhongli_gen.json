@@ -164,7 +164,7 @@
   "constellation4": {
     "name": "Gebrochen und doch hart",
     "description": {
-      "0": "Vergrößert den Wirkungsbereich von <strong>Einstürzender Himmel</strong> um 20{NON_BREAK_SPACE}%.",
+      "0": "Vergrößert den Wirkungsbereich von <strong>Einstürzender Himmel</strong> um 20 %.",
       "1": "Verlängert den Effekt der Versteinerung von Einstürzender Himmel um 2 s."
     }
   },

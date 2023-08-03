@@ -50,7 +50,7 @@
       "3": "Un 20% del <hydro>Bono de Daño Hydro</hydro> de Xingchiu se convertirá en reducción de daño adicional de las espadas de lluvia.",
       "4": "<br/>",
       "5": "La cantidad máxima de reducción de daño que se puede obtener de esta manera es del 24%.",
-      "6": "El número máximo inicial de espadas de lluvia es de{NON_BREAK_SPACE}3.",
+      "6": "El número máximo inicial de espadas de lluvia es de 3.",
       "7": "El uso de esta habilidad aplica el estado de <hydro>Mojado</hydro> sobre el personaje.",
       "8": "<br/>",
       "9": "<i>“Es más fácil degollar a un dragón que cortar la lluvia”</i>."
@@ -133,14 +133,14 @@
   "constellation2": {
     "name": "Arcoíris brillante",
     "description": {
-      "0": "Extiende la duración de <strong>Espada Guhua: Sable de lluvia</strong> en 3{NON_BREAK_SPACE}s y reduce en un 15% durante 4{NON_BREAK_SPACE}s la <hydro>RES Hydro</hydro> de los enemigos golpeados por la lluvia de espadas."
+      "0": "Extiende la duración de <strong>Espada Guhua: Sable de lluvia</strong> en 3 s y reduce en un 15% durante 4 s la <hydro>RES Hydro</hydro> de los enemigos golpeados por la lluvia de espadas."
     }
   },
   "constellation3": {
     "name": "Tejedor de versos",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Espada Guhua: Sable de lluvia</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Espada Guhua: Sable de lluvia</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -152,14 +152,14 @@
   "constellation5": {
     "name": "Baile bajo la lluvia",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Espada Guhua: Lluvia torrencial mortal</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Espada Guhua: Lluvia torrencial mortal</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Colección de poesía",
     "description": {
-      "0": "Con cada 2 ataques de lluvia de espadas de <strong>Espada Guhua: Sable de lluvia</strong>, la siguiente lluvia de espadas se fortalece considerablemente y, al golpear a un enemigo, regenera 3{NON_BREAK_SPACE}pts. de Energía Elemental para Xingchiu."
+      "0": "Con cada 2 ataques de lluvia de espadas de <strong>Espada Guhua: Sable de lluvia</strong>, la siguiente lluvia de espadas se fortalece considerablemente y, al golpear a un enemigo, regenera 3 pts. de Energía Elemental para Xingchiu."
     }
   }
 }

@@ -123,7 +123,7 @@
   "passive2": {
     "name": "Poesia di Fuubutsu",
     "description": {
-      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà per 8{NON_BREAK_SPACE}s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
+      "0": "Innescando una reazione di Turbinio, Kaedehara Kazuha fornirà per 8 s a tutti i membri del gruppo uno 0,04% di bonus DAN elementali all'elemento assorbito dalla reazione per ogni suo punto di maestria elementale. Possono coesistere più bonus di diversi elementi ottenuti in questo modo."
     }
   },
   "passive3": {
@@ -179,7 +179,7 @@
   "constellation6": {
     "name": "Autunno cremisi",
     "description": {
-      "0": "Dopo aver usato <strong>Chihayaburu</strong> o <strong>Fendente di Kazuha</strong>, Kaedehara Kazuha ottiene un'<anemo>infusione di Anemo</anemo> per 5{NON_BREAK_SPACE}s. Inoltre, ogni punto di maestria elementale aumenterà di uno 0,2% i DAN inflitti dagli attacchi normali, caricati e in picchiata di Kaedehara Kazuha."
+      "0": "Dopo aver usato <strong>Chihayaburu</strong> o <strong>Fendente di Kazuha</strong>, Kaedehara Kazuha ottiene un'<anemo>infusione di Anemo</anemo> per 5 s. Inoltre, ogni punto di maestria elementale aumenterà di uno 0,2% i DAN inflitti dagli attacchi normali, caricati e in picchiata di Kaedehara Kazuha."
     }
   }
 }

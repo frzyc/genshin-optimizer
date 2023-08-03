@@ -1,7 +1,0 @@
-{
-  "inFieldAndTakeDmg": "After an active character takes damage within the Fiery Sanctum field",
-  "field_dmg_": "Fiery Sanctum DMG Bonus",
-  "initialHeal": "Initial Healing",
-  "dotHeal": "Additional Healing",
-  "critHitDuringBurst": "After Flame-Mane's Fist deals a CRIT hit"
-}

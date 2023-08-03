@@ -24,14 +24,17 @@
   "maxStacks": "エネルギー数上限",
   "skillDMG": "スキルダメージ",
   "burstDMG": "爆発ダメージ",
-  "dmgAbsorption": "吸収量",
+  "dmgAbsorption": "シールド吸収量",
   "healing": "回復量",
+  "contHealing": "持続回復量",
   "duration": "継続時間",
   "cd": "クールタイム",
   "energyCost": "元素エネルギー",
+  "energyRegen": "元素エネルギー回復",
   "baseDMG": "基礎ダメージ",
   "dot": "継続ダメージ",
   "addEleDMG": "付加元素ダメージ",
+  "hpRegenPerHit": "命中回復量",
   "press": {
     "dmg": "一回押しダメージ",
     "cd": "一回押しクールタイム"
@@ -57,11 +60,17 @@
     "superconduct": "超電導",
     "vaporize": "蒸発",
     "melt": "溶解",
-    "bloom": "Bloom",
+    "bloom": "開花",
     "burgeon": "烈開花",
     "hyperbloom": "超開花",
     "quicken": "原激化",
     "aggravate": "超激化",
     "spread": "草激化"
+  },
+  "stat": {
+    "def": "防御力",
+    "base": {
+      "atk": "基礎攻撃力"
+    }
   }
 }

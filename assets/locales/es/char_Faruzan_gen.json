@@ -118,7 +118,7 @@
   "passive3": {
     "name": "Conocimiento deslumbrante",
     "description": {
-      "0": "Aumenta en un 25% las recompensas de las expediciones de 20{NON_BREAK_SPACE}h en Sumeru."
+      "0": "Aumenta en un 25% las recompensas de las expediciones de 20 h en Sumeru."
     }
   },
   "constellation1": {
@@ -130,14 +130,14 @@
   "constellation2": {
     "name": "Sabiduría informe",
     "description": {
-      "0": "Aumenta en 6{NON_BREAK_SPACE}s la duración del poliedro fulgurante de <strong>Camino del ascenso</strong>."
+      "0": "Aumenta en 6 s la duración del poliedro fulgurante de <strong>Camino del ascenso</strong>."
     }
   },
   "constellation3": {
     "name": "Sosiego en el jardín",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Cielo ventoso del Nasamjñin</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Cielo ventoso del Nasamjñin</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -150,14 +150,14 @@
   "constellation5": {
     "name": "Plano de la reflexión",
     "description": {
-      "0": "Aumenta el nivel de habilidad de <strong>Camino del ascenso</strong>{NON_BREAK_SPACE}+3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "0": "Aumenta el nivel de habilidad de <strong>Camino del ascenso</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
     "name": "Esencia de la verdad",
     "description": {
-      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo>, el Daño CRIT de ese ataque aumenta en un 40%. Por otro lado, cuando tu personaje en combate inflige daño contra un enemigo mientras está bajo los efectos de la bendición vientosacro, aplicará el efecto de derribo tormentoso sobre dicho enemigo. Este efecto solo se puede activar una vez cada 3{NON_BREAK_SPACE}s y su TdE se comparte entre todos los miembros del equipo."
+      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo>, el Daño CRIT de ese ataque aumenta en un 40%. Por otro lado, cuando tu personaje en combate inflige daño contra un enemigo mientras está bajo los efectos de la bendición vientosacro, aplicará el efecto de derribo tormentoso sobre dicho enemigo. Este efecto solo se puede activar una vez cada 3 s y su TdE se comparte entre todos los miembros del equipo."
     }
   }
 }

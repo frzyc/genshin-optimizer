@@ -2,7 +2,7 @@
   "setName": "Sueños Áureos",
   "setEffects": {
     "2": "Maestría Elemental +80 pts.",
-    "4": "Tras causar una Reacción Elemental, el personaje que lleve equipado este conjunto obtiene durante 8 s los siguientes fortalecimientos en función de los tipos elementales de los miembros del equipo: por cada personaje del mismo tipo elemental que el portador de este conjunto, el ATQ aumenta en un 14%; por cada personaje de tipo elemental distinto al portador de este conjunto, la Maestría Elemental aumenta en 50 pts. Cada uno de estos efectos se calcula para un máximo de 3 personajes. Este efecto solo se puede activar una vez cada 8 s, y se activará incluso cuando el personaje que lleva este conjunto equipado esté en tu equipo pero no en combate."
+    "4": "Tras causar una Reacción Elemental, el personaje que lleve equipado este conjunto obtiene durante 8 s los siguientes fortalecimientos en función de los tipos elementales de los miembros del equipo: por cada personaje del mismo tipo elemental que el portador de este conjunto, el ATQ aumenta en un 14%; por cada personaje de tipo elemental distinto al portador de este conjunto, la Maestría Elemental aumenta en 50 pts. Cada uno de estos efectos se calcula para un máximo de 3 personajes. Este efecto solo se puede activar una vez cada 8 s, y se activará incluso cuando el personaje que lleva este conjunto equipado esté en tu equipo pero no en combate."
   },
   "pieces": {
     "flower": {

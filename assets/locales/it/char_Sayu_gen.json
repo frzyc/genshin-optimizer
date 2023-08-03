@@ -53,7 +53,7 @@
       "8": "In questo lasso di tempo, Sayu può controllare la direzione in cui rotola e può usare di nuovo l'abilità per interrompere il suo stato di Turbine Fuufuu e sferrare una versione più forte del Calcio turbine Fuufuu.",
       "9": "In caso di pressione prolungata, è possibile innescare l'assorbimento elementale.",
       "10": "<br/>",
-      "11": "L'abilità ha una durata massima di 10{NON_BREAK_SPACE}s e il TdR comincia quando il suo effetto termina. Più tempo Sayu resta nel suo stato di Turbine Fuufuu, più lungo sarà il TdR.",
+      "11": "L'abilità ha una durata massima di 10 s e il TdR comincia quando il suo effetto termina. Più tempo Sayu resta nel suo stato di Turbine Fuufuu, più lungo sarà il TdR.",
       "12": "<br/>",
       "13": "<strong>Assorbimento elementale</strong>",
       "14": "Se Sayu entra in contatto con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> mentre è nello stato di Turbine Fuufuu, infliggerà DAN elementali aggiuntivi di quel tipo.",
@@ -118,7 +118,7 @@
     "name": "Qualcuno più qualificato",
     "description": {
       "0": "Quando Sayu innesca una reazione di Turbinio mentre è attiva, ripristina 300 PS di tutti i personaggi e alleati vicini. Inoltre, ripristina 1,2 PS aggiuntivi per ogni punto di maestria elementale in suo possesso.",
-      "1": "Quest'effetto può attivarsi una volta ogni 2{NON_BREAK_SPACE}s."
+      "1": "Quest'effetto può attivarsi una volta ogni 2 s."
     }
   },
   "passive2": {
@@ -155,7 +155,7 @@
     }
   },
   "constellation3": {
-    "name": "Lascia che ci pensi il{NON_BREAK_SPACE}Bunshin",
+    "name": "Lascia che ci pensi il Bunshin",
     "description": {
       "0": "Aumenta di 3 il livello di <strong>Arte Yoohoo: Frullio Mujina</strong>.",
       "1": "Il livello di potenziamento massimo è 15."
@@ -165,7 +165,7 @@
     "name": "Pigrizia: nuove tecniche",
     "description": {
       "0": "Quando Sayu innesca una reazione di Turbinio, la sua energia si ripristina di 1,2.",
-      "1": "L'effetto si può verificare una sola volta ogni 2{NON_BREAK_SPACE}s."
+      "1": "L'effetto si può verificare una sola volta ogni 2 s."
     }
   },
   "constellation5": {

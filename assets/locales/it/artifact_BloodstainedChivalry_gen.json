@@ -2,7 +2,7 @@
   "setName": "Cavalleria sanguinaria",
   "setEffects": {
     "2": "DAN fisici +25%.",
-    "4": "Dopo aver sconfitto un avversario, aumenta di un 50% i DAN da attacco caricato e ne azzera il costo in vigore per 10{NON_BREAK_SPACE}s."
+    "4": "Dopo aver sconfitto un avversario, aumenta di un 50% i DAN da attacco caricato e ne azzera il costo in vigore per 10 s."
   },
   "pieces": {
     "flower": {

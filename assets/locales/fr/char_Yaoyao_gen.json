@@ -130,7 +130,7 @@
     "name": "Sur la pointe des pieds",
     "description": {
       "0": "Quand Yaoyao fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains animaux, tels que le papillon cristallin.",
-      "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet «{NON_BREAK_SPACE}Divers{NON_BREAK_SPACE}» dans la section « Faune » du Bestiaire des Archives."
+      "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet « Divers » dans la section « Faune » du Bestiaire des Archives."
     }
   },
   "constellation1": {
@@ -171,7 +171,7 @@
       "0": "Tous les 3 radis de jade blanc envoyés par un <strong>Yuegui lanceur</strong>, ce dernier envoie également un méga-radis destructeur dont la zone d'effet est plus grande que celle d'un radis normal et qui produit les effets suivants en explosant :",
       "1": [
         " Inflige des <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 75 % de l'ATQ de Yaoyao.",
-        " Restaure les PV des personnages déployés dans la zone d'une valeur équivalant à 7,5{NON_BREAK_SPACE}% des PV max de Yaoyao."
+        " Restaure les PV des personnages déployés dans la zone d'une valeur équivalant à 7,5 % des PV max de Yaoyao."
       ],
       "2": "<br/>",
       "3": "Chaque Yuegui lanceur peut envoyer un maximum de 2 méga-radis destructeurs."

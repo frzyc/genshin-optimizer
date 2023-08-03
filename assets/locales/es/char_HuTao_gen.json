@@ -142,7 +142,7 @@
     "name": "Persistencia escarlata",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Guía hacia el más allá</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Ofrenda de incienso",
     "description": {
       "0": "Aumenta el nivel de habilidad de <strong>Calma de los espíritus</strong> +3.",
-      "1": "Puede ser aumentado hasta Niv.{NON_BREAK_SPACE}15."
+      "1": "Puede ser aumentado hasta Niv. 15."
     }
   },
   "constellation6": {
