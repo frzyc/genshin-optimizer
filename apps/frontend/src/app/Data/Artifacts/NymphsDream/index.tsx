@@ -10,7 +10,7 @@ import {
 } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import { objKeyMap, range } from '@genshin-optimizer/util'
-import { cond, st, trans } from '../../SheetUtil'
+import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
 import type { IArtifactSheet } from '../IArtifactSheet'
@@ -78,6 +78,11 @@ const sheet: IArtifactSheet = {
               },
               {
                 node: set4_hydro_dmg_,
+              },
+              {
+                text: stg('duration'),
+                value: 8,
+                unit: 's',
               },
             ],
           })),

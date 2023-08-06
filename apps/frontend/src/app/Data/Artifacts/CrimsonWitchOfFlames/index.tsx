@@ -4,7 +4,7 @@ import { greaterEq, lookup, naught, percent, sum } from '../../../Formula/utils'
 import KeyMap from '../../../KeyMap'
 import type { ArtifactSetKey } from '@genshin-optimizer/consts'
 import { range } from '../../../Util/Util'
-import { cond, st } from '../../SheetUtil'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { IArtifactSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -89,7 +89,16 @@ const sheet: IArtifactSheet = {
               i,
               {
                 name: st('stack', { count: i }),
-                fields: [{ node: set4Pyro_dmg_ }],
+                fields: [
+                  {
+                    node: set4Pyro_dmg_,
+                  },
+                  {
+                    text: stg('duration'),
+                    value: 10,
+                    unit: 's',
+                  },
+                ],
               },
             ])
           ),
