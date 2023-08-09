@@ -92,7 +92,11 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
   },
   passive1: {
-    heal: healNode('atk', percent(dm.passive2.healAtk_), 0),
+    heal: greaterEq(
+      input.asc,
+      1,
+      healNode('atk', percent(dm.passive2.healAtk_), 0)
+    ),
   },
   constellation4: {
     shield: greaterEq(
@@ -116,15 +120,15 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 //Conditional C1: Oppo affected by Cryo
 const [condC1Path, condC1Cryo] = cond(key, 'CryoC1')
-const nodeC1NormalCritRate = equal(
-  condC1Cryo,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.critRate_)
+const nodeC1NormalCritRate = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
 )
-const nodeC1ChargeCritRate = equal(
-  condC1Cryo,
-  'on',
-  greaterEq(input.constellation, 1, dm.constellation1.critRate_)
+const nodeC1ChargeCritRate = greaterEq(
+  input.constellation,
+  1,
+  equal(condC1Cryo, 'on', dm.constellation1.critRate_)
 )
 
 export const data = dataObjForCharacterSheet(

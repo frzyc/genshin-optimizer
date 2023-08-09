@@ -20,6 +20,8 @@
   "uses_other": "{{count}} Uses",
   "opponents_one": "{{count}} Opponent",
   "opponents_other": "{{count}} Opponents",
+  "members_one": "{{count}} Member",
+  "members_other": "{{count}} Members",
   "afterDefeatEnemy": "After defeating an opponent",
   "hitOp": {
     "none": "After hitting an opponent",
@@ -67,6 +69,7 @@
   "cooldown": "Cooldown",
   "addlCharge": "Additional Skill Charge",
   "addlCharges": "Additional Skill Charges",
+  "charOnField": "Character is on-field",
   "charOffField": "Character is off-field",
   "activeCharField": "Character is inside the ability's field",
   "opponentsField": "Opponent is inside the ability's field",

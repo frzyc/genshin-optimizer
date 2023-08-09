@@ -79,24 +79,24 @@ const dm = {
 } as const
 
 const [condA1Path, condA1] = cond(key, 'PoundingSurprise')
-const charged_dmg_ = equal(
-  'on',
-  condA1,
-  greaterEq(input.asc, 1, percent(dm.passive1.charged_dmg_))
+const charged_dmg_ = greaterEq(
+  input.asc,
+  1,
+  equal('on', condA1, percent(dm.passive1.charged_dmg_))
 )
 
 const [condC2Path, condC2] = cond(key, 'ExplosiveFrags')
-const enemyDefRed_ = equal(
-  'on',
-  condC2,
-  greaterEq(input.constellation, 2, percent(dm.constellation2.enemyDefRed_))
+const enemyDefRed_ = greaterEq(
+  input.constellation,
+  2,
+  equal('on', condC2, percent(dm.constellation2.enemyDefRed_))
 )
 
 const [condC6Path, condC6] = cond(key, 'BlazingDelight')
-const pyro_dmg_ = equal(
-  'on',
-  condC6,
-  greaterEq(input.constellation, 6, percent(dm.constellation6.pyro_dmg_))
+const pyro_dmg_ = greaterEq(
+  input.constellation,
+  6,
+  equal('on', condC6, percent(dm.constellation6.pyro_dmg_))
 )
 
 const dmgFormulas = {
