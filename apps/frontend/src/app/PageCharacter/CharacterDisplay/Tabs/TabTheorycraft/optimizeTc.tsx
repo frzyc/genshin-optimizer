@@ -1,5 +1,12 @@
-import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/consts'
-import Artifact from '../../../../Data/Artifacts/Artifact'
+import type { GenderKey, SubstatKey } from '@genshin-optimizer/consts'
+import {
+  allSubstatKeys,
+  type ArtifactSetKey,
+  type CharacterKey,
+} from '@genshin-optimizer/consts'
+import { getSubstatValue } from '@genshin-optimizer/gi-util'
+import { objMap } from '@genshin-optimizer/util'
+import type { SetCharTCAction } from '.'
 import type { ArtCharDatabase } from '../../../../Database/Database'
 import { mergeData, uiDataForTeam } from '../../../../Formula/api'
 import { mapFormulas } from '../../../../Formula/internal'
@@ -7,14 +14,10 @@ import { optimize, precompute } from '../../../../Formula/optimization'
 import type { NumNode } from '../../../../Formula/type'
 import { constant } from '../../../../Formula/utils'
 import { getTeamData } from '../../../../ReactHooks/useTeamData'
-import type { SubstatKey } from '../../../../Types/artifact'
-import { allSubstatKeys } from '../../../../Types/artifact'
 import type { ICharTC } from '../../../../Types/character'
-import type { Gender } from '../../../../Types/consts'
 import type { ICachedWeapon } from '../../../../Types/weapon'
-import { deepClone, objectMap, objPathValue } from '../../../../Util/Util'
+import { deepClone, objPathValue, objectMap } from '../../../../Util/Util'
 import { dynamicData } from '../TabOptimize/foreground'
-import type { SetCharTCAction } from '.'
 
 // This solves
 // $\argmax_{x\in N^k, \sum x <= `distributedSubstats`, x <= `maxSubstats`} `optimizationTarget`(x)$ without assumptions on the properties of `optimizationTarget`
@@ -30,7 +33,7 @@ export function optimizeTc(
     artSet: Partial<Record<ArtifactSetKey, NumNode>>
   },
   overrideWeapon: ICachedWeapon,
-  gender: Gender,
+  gender: GenderKey,
   charTC: ICharTC,
   maxSubstats: Record<SubstatKey, number>,
   distributedSubstats: number,
@@ -94,11 +97,7 @@ export function optimizeTc(
 
     const comp = (statKey: string) => (statKey.endsWith('_') ? 100 : 1)
     const substatValue = (x: string, m: number) =>
-      (Artifact.substatValue(
-        x as SubstatKey,
-        5,
-        charTC.artifact.substats.type
-      ) /
+      (getSubstatValue(x as SubstatKey, 5, charTC.artifact.substats.type) /
         comp(x)) *
       m
 
@@ -149,10 +148,10 @@ export function optimizeTc(
         console.log(`Took ${performance.now() - startTime} ms`)
         console.log(maxBuffer)
         console.log(
-          objectMap(maxBuffer!, (v, x) =>
+          objMap(maxBuffer!, (v, x) =>
             allSubstatKeys.includes(x as any)
               ? v /
-                (Artifact.substatValue(
+                (getSubstatValue(
                   x as SubstatKey,
                   5,
                   charTC.artifact.substats.type

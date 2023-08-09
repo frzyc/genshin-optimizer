@@ -968,7 +968,7 @@ function ArtifactSubstatEditor({
   maxSubstat: number
   setMaxSubstat: (v: number) => void
 }) {
-  const { t } = useTranslation('page_character')
+  // const { t } = useTranslation('page_character')
   const substatValue = getSubstatValue(statKey, 5, substatsType)
   const [rolls, setRolls] = useState(() => value / substatValue)
   useEffect(() => setRolls(value / substatValue), [value, substatValue])
