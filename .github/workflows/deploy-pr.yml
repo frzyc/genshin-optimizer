@@ -80,7 +80,7 @@ jobs:
         if: github.event_name != 'workflow_dispatch'
         with:
           body: |
-            [${{ steps.output-date.outputs.date }}] - Building new version
+            [${{ steps.output-date.outputs.date }}] - Building version ${{ github.sha }}
           body-include: '<!-- Created by actions-cool/maintain-one-comment -->'
       - name: Build genshin-optimizer
         run: |
