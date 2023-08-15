@@ -22,7 +22,6 @@ import CinnabarSpindle from './CinnabarSpindle'
 import CompoundBow from './CompoundBow'
 import CoolSteel from './CoolSteel'
 import CrescentPike from './CrescentPike'
-import CrossingOfFleuveCendre from './CrossingOfFleuveCendre'
 import DarkIronSword from './DarkIronSword'
 import Deathmatch from './Deathmatch'
 import DebateClub from './DebateClub'
@@ -46,6 +45,7 @@ import FerrousShadow from './FerrousShadow'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
+import FleuveCendreFerryman from './FleuveCendreFerryman'
 import FlowingPurity from './FlowingPurity'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
@@ -192,7 +192,6 @@ const data = {
   CompoundBow,
   CoolSteel,
   CrescentPike,
-  CrossingOfFleuveCendre,
   DarkIronSword,
   Deathmatch,
   DebateClub,
@@ -216,6 +215,7 @@ const data = {
   FesteringDesire,
   FilletBlade,
   FinaleOfTheDeep,
+  FleuveCendreFerryman,
   FlowingPurity,
   ForestRegalia,
   FreedomSworn,

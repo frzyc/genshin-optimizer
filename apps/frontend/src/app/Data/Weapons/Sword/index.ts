@@ -5,19 +5,18 @@ import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
-import CrossingOfFleuveCendre from './CrossingOfFleuveCendre'
-import KagotsurubeIsshin from './KagotsurubeIsshin'
 import DarkIronSword from './DarkIronSword'
 import DullBlade from './DullBlade'
 import FavoniusSword from './FavoniusSword'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
-import ToukabouShigure from './ToukabouShigure'
+import FleuveCendreFerryman from './FleuveCendreFerryman'
 import FreedomSworn from './FreedomSworn'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
 import IronSting from './IronSting'
+import KagotsurubeIsshin from './KagotsurubeIsshin'
 import KeyOfKhajNisut from './KeyOfKhajNisut'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
@@ -35,6 +34,7 @@ import SwordOfDescension from './SwordOfDescension'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBlackSword from './TheBlackSword'
 import TheFlute from './TheFlute'
+import ToukabouShigure from './ToukabouShigure'
 import TravelersHandySword from './TravelersHandySword'
 import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
@@ -44,19 +44,18 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   BlackcliffLongsword,
   CinnabarSpindle,
   CoolSteel,
-  CrossingOfFleuveCendre,
-  KagotsurubeIsshin,
   DarkIronSword,
   DullBlade,
   FavoniusSword,
   FesteringDesire,
   FilletBlade,
   FinaleOfTheDeep,
-  ToukabouShigure,
+  FleuveCendreFerryman,
   FreedomSworn,
   HaranGeppakuFutsu,
   HarbingerOfDawn,
   IronSting,
+  KagotsurubeIsshin,
   KeyOfKhajNisut,
   LightOfFoliarIncision,
   LionsRoar,
@@ -74,6 +73,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   TheAlleyFlash,
   TheBlackSword,
   TheFlute,
+  ToukabouShigure,
   TravelersHandySword,
   WolfFang,
   XiphosMoonlight,

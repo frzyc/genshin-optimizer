@@ -34,7 +34,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11422: 'ToukabouShigure',
   11424: 'WolfFang',
   11425: 'FinaleOfTheDeep',
-  11426: 'CrossingOfFleuveCendre',
+  11426: 'FleuveCendreFerryman',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
   11503: 'FreedomSworn',

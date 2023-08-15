@@ -7,7 +7,7 @@ import type { IWeaponSheet } from '../../IWeaponSheet'
 import WeaponSheet, { headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
 
-const key: WeaponKey = 'CrossingOfFleuveCendre'
+const key: WeaponKey = 'FleuveCendreFerryman'
 const data_gen = allStats.weapon.data[key]
 
 const skill_critRate_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
