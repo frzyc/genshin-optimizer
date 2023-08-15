@@ -5,12 +5,14 @@ import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
+import CrossingOfFleuveCendre from './CrossingOfFleuveCendre'
 import KagotsurubeIsshin from './KagotsurubeIsshin'
 import DarkIronSword from './DarkIronSword'
 import DullBlade from './DullBlade'
 import FavoniusSword from './FavoniusSword'
 import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
+import FinaleOfTheDeep from './FinaleOfTheDeep'
 import ToukabouShigure from './ToukabouShigure'
 import FreedomSworn from './FreedomSworn'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
@@ -34,6 +36,7 @@ import TheAlleyFlash from './TheAlleyFlash'
 import TheBlackSword from './TheBlackSword'
 import TheFlute from './TheFlute'
 import TravelersHandySword from './TravelersHandySword'
+import WolfFang from './WolfFang'
 import XiphosMoonlight from './XiphosMoonlight'
 const sword: Record<WeaponSwordKey, WeaponSheet> = {
   AmenomaKageuchi,
@@ -41,12 +44,14 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   BlackcliffLongsword,
   CinnabarSpindle,
   CoolSteel,
+  CrossingOfFleuveCendre,
   KagotsurubeIsshin,
   DarkIronSword,
   DullBlade,
   FavoniusSword,
   FesteringDesire,
   FilletBlade,
+  FinaleOfTheDeep,
   ToukabouShigure,
   FreedomSworn,
   HaranGeppakuFutsu,
@@ -70,6 +75,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   TheBlackSword,
   TheFlute,
   TravelersHandySword,
+  WolfFang,
   XiphosMoonlight,
 } as const
 export default sword

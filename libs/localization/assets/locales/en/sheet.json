@@ -150,7 +150,9 @@
   },
   "elementalReaction": {
     "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
-    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction"
+    "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction",
+    "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
+    "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
   },
   "bonusScaling": {
     "skill_": "Ele. Skill Bonus Scaling",
@@ -172,7 +174,13 @@
     "burningOrPyro": "Enemy is affected by <pyro>Burning</pyro> or <pyro>Pyro</pyro>",
     "electro": "Enemy is affected by <electro>Electro</electro>",
     "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
-    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>"
+    "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
+    "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
   },
-  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle"
+  "getElementalOrbParticle": "After picking up an Elemental Orb or Particle",
+  "hpChange": "After character's HP changes",
+  "afterHeal": "After character is healed",
+  "selfAffected": {
+    "pyro": "Character affected by <pyro>Pyro</pyro>"
+  }
 }
